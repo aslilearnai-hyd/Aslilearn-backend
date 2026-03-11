@@ -1,0 +1,177 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Changes Around Us: Physical and Chemical",
+    "difficulty": "Easy",
+    "source_pdf": "changes_around_us_class7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Paper Transformation",
+            "objective": "Distinguish between a physical and chemical change using paper",
+            "materials": [
+                "Two sheets of paper",
+                "Scissors",
+                "Matchbox"
+            ],
+            "steps": [
+                "Cut the first sheet of paper into small pieces",
+                "Burn the second sheet of paper (under adult supervision)",
+                "Observe if you can get the original paper back in both cases"
+            ],
+            "learning_outcome": "Identifies that cutting is a physical change while burning is a chemical change",
+            "evaluation": "Correct identification of reversible and irreversible changes (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Ice to Steam Cycle",
+            "objective": "Observe physical changes in states of matter",
+            "materials": [
+                "Ice cubes",
+                "Steel bowl",
+                "Stove/Heat source"
+            ],
+            "steps": [
+                "Place ice cubes in a bowl and watch them melt into water",
+                "Heat the water until it turns into steam",
+                "Hold a cold lid over the steam to collect water drops",
+                "Explain why this is a physical change"
+            ],
+            "learning_outcome": "Understands that change in state is a physical change because no new substance is formed",
+            "evaluation": "Correct description of the water cycle steps (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Sugar Dissolving vs. Charring",
+            "objective": "Compare a physical process with a chemical reaction",
+            "materials": [
+                "Sugar",
+                "Water",
+                "Spoon",
+                "Metal cap"
+            ],
+            "steps": [
+                "Dissolve a spoon of sugar in water and taste it",
+                "Heat a small amount of sugar in a metal cap until it turns black and smells",
+                "Note which process created a new substance"
+            ],
+            "learning_outcome": "Recognizes dissolving as physical and charring as chemical",
+            "evaluation": "Accurate observation of the properties of the end products (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Rusty Nail Watch",
+            "objective": "Observe a slow chemical change",
+            "materials": [
+                "Iron nail",
+                "Wet cotton/Water",
+                "Small plate"
+            ],
+            "steps": [
+                "Place an iron nail on wet cotton on a plate",
+                "Leave it undisturbed for 2-3 days",
+                "Observe the brown powdery substance (rust) formed on the surface"
+            ],
+            "learning_outcome": "Identifies rusting as a chemical change that creates a new substance",
+            "evaluation": "Description of the appearance of rust (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Inflating a Balloon",
+            "objective": "Understand physical change in shape and size",
+            "materials": [
+                "Balloon"
+            ],
+            "steps": [
+                "Blow air into a balloon to change its size",
+                "Release the air and observe the balloon return to its original state",
+                "Discuss if the material of the balloon changed"
+            ],
+            "learning_outcome": "Learns that changes in shape or size without new substance formation are physical",
+            "evaluation": "Successful demonstration and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Kitchen Indicator Magic",
+            "objective": "Observe color change as a sign of chemical change",
+            "materials": [
+                "Turmeric",
+                "Soap solution",
+                "Lemon juice"
+            ],
+            "steps": [
+                "Mix turmeric with water to make yellow paste",
+                "Add soap solution and observe it turn red",
+                "Add lemon juice to the red spot and watch it turn yellow again"
+            ],
+            "learning_outcome": "Identifies color change as an indicator of chemical reactions",
+            "evaluation": "Accurate recording of color transitions (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Fruit Browning Experiment",
+            "objective": "Observe chemical changes in food",
+            "materials": [
+                "Apple or Banana",
+                "Knife"
+            ],
+            "steps": [
+                "Cut an apple or banana into slices",
+                "Leave the slices in the open air for 30 minutes",
+                "Observe the change in color of the exposed surface"
+            ],
+            "learning_outcome": "Understands that the browning of fruit is a chemical reaction with oxygen",
+            "evaluation": "Explanation of why the color changed (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Dough to Roti",
+            "objective": "Distinguish between reversible and irreversible changes in cooking",
+            "materials": [
+                "Wheat flour",
+                "Water",
+                "Tawa/Pan"
+            ],
+            "steps": [
+                "Mix flour and water to make dough (Physical change)",
+                "Roll it into a circle and then crumble it back (Reversible)",
+                "Bake the roti on a hot tawa (Chemical change/Irreversible)"
+            ],
+            "learning_outcome": "Recognizes that heat often causes irreversible chemical changes in food",
+            "evaluation": "Categorizing each step of the cooking process correctly (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Stretching Test",
+            "objective": "Explore physical change through elasticity",
+            "materials": [
+                "Rubber band",
+                "Spring",
+                "Clay"
+            ],
+            "steps": [
+                "Stretch the rubber band and the spring",
+                "Mould the clay into a different shape",
+                "Observe that no new material is formed in any of these actions"
+            ],
+            "learning_outcome": "Reinforces that changes in physical properties are physical changes",
+            "evaluation": "Verification that the material remains the same (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Sorting Game: Change Box",
+            "objective": "Reinforce classification skills",
+            "materials": [
+                "Small cards",
+                "Pen"
+            ],
+            "steps": [
+                "Write 10 examples of changes (e.g., milk turning sour, breaking glass, bursting crackers)",
+                "Make two columns: Physical and Chemical",
+                "Sort the cards into the correct columns and discuss the reasons"
+            ],
+            "learning_outcome": "Consolidates the ability to classify any change correctly",
+            "evaluation": "Accuracy of sorting the examples (10 marks)"
+        }
+    ]
+}

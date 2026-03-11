@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: How do Organisms Reproduce?",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-10T23:51:15",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is reproduction?",
+            "answer": "Reproduction is the biological process by which living organisms produce new individuals of their own kind.",
+            "key_concepts": ["definition", "biological process"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the basic event in reproduction?",
+            "answer": "The basic event in reproduction is the creation of a DNA copy.",
+            "key_concepts": ["DNA copying"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the two main types of reproduction.",
+            "answer": "Asexual reproduction and Sexual reproduction.",
+            "key_concepts": ["types of reproduction"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How does Amoeba reproduce?",
+            "answer": "Amoeba reproduces by binary fission, where the parent cell divides into two equal daughter cells.",
+            "key_concepts": ["binary fission", "Amoeba"],
+            "marks": 1,
+            "source_section": "Section 8.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Name the organism that causes Kala-azar and its mode of reproduction.",
+            "answer": "Leishmania; it reproduces by binary fission in a definite orientation.",
+            "key_concepts": ["Leishmania", "binary fission"],
+            "marks": 1,
+            "source_section": "Section 8.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is multiple fission? Give an example.",
+            "answer": "Multiple fission is the division of a parent cell into many daughter cells simultaneously, as seen in Plasmodium.",
+            "key_concepts": ["multiple fission", "Plasmodium"],
+            "marks": 1,
+            "source_section": "Section 8.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "How does Spirogyra reproduce asexually?",
+            "answer": "Spirogyra reproduces by fragmentation, where it simply breaks up into smaller pieces upon maturation.",
+            "key_concepts": ["fragmentation", "Spirogyra"],
+            "marks": 1,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Define regeneration with an example.",
+            "answer": "Regeneration is the ability of an organism to give rise to a new individual from its body parts. Example: Hydra or Planaria.",
+            "key_concepts": ["regeneration", "Planaria"],
+            "marks": 1,
+            "source_section": "Section 8.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is budding? Give an example.",
+            "answer": "Budding is a process where an outgrowth (bud) develops on the parent body, matures, and detaches to become a new individual. Example: Yeast or Hydra.",
+            "key_concepts": ["budding", "Hydra"],
+            "marks": 1,
+            "source_section": "Section 8.2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is vegetative propagation?",
+            "answer": "It is a mode of asexual reproduction where new plants are produced from vegetative parts like roots, stems, or leaves.",
+            "key_concepts": ["vegetative propagation"],
+            "marks": 1,
+            "source_section": "Section 8.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Which plant reproduces through buds present in the notches of leaves?",
+            "answer": "Bryophyllum.",
+            "key_concepts": ["Bryophyllum", "leaf buds"],
+            "marks": 1,
+            "source_section": "Section 8.2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the asexual reproductive structures in Rhizopus.",
+            "answer": "Spores (produced within sporangia).",
+            "key_concepts": ["spore formation", "Rhizopus"],
+            "marks": 1,
+            "source_section": "Section 8.2.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is sexual reproduction important?",
+            "answer": "It allows for the combination of DNA from two different individuals, leading to variations in the offspring.",
+            "key_concepts": ["variation", "sexual reproduction"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What are the male and female reproductive parts of a flower?",
+            "answer": "The male part is the Stamen and the female part is the Carpel (or Pistil).",
+            "key_concepts": ["flower structure", "stamen", "carpel"],
+            "marks": 1,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Define pollination.",
+            "answer": "Pollination is the transfer of pollen grains from the anther to the stigma of a flower.",
+            "key_concepts": ["pollination"],
+            "marks": 1,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is fertilization in plants?",
+            "answer": "Fertilization is the fusion of the male germ-cell (pollen) with the female germ-cell (ovule) to form a zygote.",
+            "key_concepts": ["fertilization", "zygote"],
+            "marks": 1,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is puberty?",
+            "answer": "Puberty is the period during adolescence when the rate of general body growth begins to slow down and reproductive tissues begin to mature.",
+            "key_concepts": ["puberty", "adolescence"],
+            "marks": 1,
+            "source_section": "Section 8.3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Where are sperms produced in the human male?",
+            "answer": "In the testes.",
+            "key_concepts": ["testes", "sperm production"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the function of the prostate gland and seminal vesicles?",
+            "answer": "They add their secretions to the vas deferens so that the sperms are in a fluid which makes transport easier and provides nutrition.",
+            "key_concepts": ["gland secretions", "semen"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Where does fertilization take place in the human female?",
+            "answer": "In the fallopian tube (Oviduct).",
+            "key_concepts": ["fallopian tube", "fertilization"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the placenta?",
+            "answer": "The placenta is a special disc-like tissue that connects the embryo to the mother's uterine wall for nutrition and waste removal.",
+            "key_concepts": ["placenta", "embryo nutrition"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is menstruation?",
+            "answer": "It is the periodic breakdown and removal of the inner thick and spongy lining of the uterus along with blood and mucus, if fertilization does not occur.",
+            "key_concepts": ["menstruation"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Name one bacterial and one viral STD (Sexually Transmitted Disease).",
+            "answer": "Bacterial: Gonorrhoea or Syphilis. Viral: Warts or HIV-AIDS.",
+            "key_concepts": ["STD", "pathogens"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the function of the Copper-T?",
+            "answer": "It is a contraceptive device placed in the uterus to prevent pregnancy by blocking the entry of sperm or preventing implantation.",
+            "key_concepts": ["IUCD", "contraception"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What is a unisexual flower? Give an example.",
+            "answer": "A flower that contains either stamens or carpels, but not both. Example: Papaya or Watermelon.",
+            "key_concepts": ["unisexual flower"],
+            "marks": 1,
+            "source_section": "Section 8.3.1"
+        }
+    ]
+}

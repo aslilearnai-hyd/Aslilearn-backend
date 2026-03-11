@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Mijbil the Otter",
+  "difficulty": "Medium",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Behavior Analysis Chart",
+      "objective": "Analyze Mijbil’s behavior and habits.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "List 5 notable behaviors of Mijbil",
+        "Explain why he behaved that way",
+        "Give examples from the chapter to support your explanation"
+      ],
+      "learning_outcome": "Students will understand animal behavior and character observation.",
+      "evaluation": "Accuracy, clarity, and textual support"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Traits Study",
+      "objective": "Compare Mijbil’s traits with a common pet.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select a common pet (dog, cat, etc.)",
+        "List similarities and differences in behavior with Mijbil",
+        "Write a short paragraph comparing them"
+      ],
+      "learning_outcome": "Students will develop analytical and comparative skills.",
+      "evaluation": "Relevance and clarity of comparison"
+    },
+    {
+      "sl_no": 3,
+      "title": "Diary Entry from Owner’s Perspective",
+      "objective": "Understand human-animal interaction.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are the owner for a day",
+        "Write a diary entry describing Mijbil’s actions and your reactions",
+        "Include observations, emotions, and care tips"
+      ],
+      "learning_outcome": "Students will enhance empathy and creative writing skills.",
+      "evaluation": "Creativity, relevance, and expression of emotions"
+    },
+    {
+      "sl_no": 4,
+      "title": "Event Cause and Effect Chart",
+      "objective": "Analyze how events influence Mijbil’s behavior.",
+      "materials": ["Notebook", "Pen", "Chart Paper"],
+      "steps": [
+        "Identify 4 major events in the story",
+        "Write the cause and effect of each event on Mijbil",
+        "Discuss how events affected his personality or habits"
+      ],
+      "learning_outcome": "Students will develop analytical reasoning and sequencing skills.",
+      "evaluation": "Correctness, clarity, and logical explanation"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Story Extension",
+      "objective": "Extend the story creatively.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine an event not described in the chapter",
+        "Write 5–6 sentences continuing the story",
+        "Include realistic behavior of Mijbil and interaction with humans"
+      ],
+      "learning_outcome": "Students will enhance imagination while staying faithful to character traits.",
+      "evaluation": "Creativity, plausibility, and textual relevance"
+    },
+    {
+      "sl_no": 6,
+      "title": "Vocabulary Application Paragraph",
+      "objective": "Apply new words in context.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select 8–10 new words from the chapter",
+        "Write their meanings",
+        "Use all words in a short paragraph describing Mijbil’s day"
+      ],
+      "learning_outcome": "Students will strengthen vocabulary and writing skills.",
+      "evaluation": "Correct usage, sentence structure, and clarity"
+    },
+    {
+      "sl_no": 7,
+      "title": "Poster – Caring for Pets",
+      "objective": "Promote responsibility and empathy towards animals.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "List 5 care tips for keeping pets happy and healthy",
+        "Add illustrations of Mijbil or other pets",
+        "Present your poster to the class"
+      ],
+      "learning_outcome": "Students will learn responsible pet care and express ideas visually.",
+      "evaluation": "Relevance, creativity, and clarity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Role Play – Mijbil’s Adventure",
+      "objective": "Experience events from the story actively.",
+      "materials": ["Simple props, Notebook"],
+      "steps": [
+        "Assign roles (Mijbil, owner, family)",
+        "Enact a scene showing Mijbil’s mischievous or playful behavior",
+        "Reflect on the interaction and emotions in the scene"
+      ],
+      "learning_outcome": "Students will enhance expressive skills, teamwork, and empathy.",
+      "evaluation": "Participation, expression, and understanding of characters"
+    },
+    {
+      "sl_no": 9,
+      "title": "Event Timeline with Emotions",
+      "objective": "Understand emotional progression of Mijbil and owner.",
+      "materials": ["Notebook", "Colored pencils", "Pen"],
+      "steps": [
+        "Identify 5–6 key events in the chapter",
+        "Assign emotions to Mijbil and the owner for each event",
+        "Draw a timeline showing events and emotional progression"
+      ],
+      "learning_outcome": "Students will connect actions with emotional responses.",
+      "evaluation": "Accuracy, clarity, and creativity"
+    },
+    {
+      "sl_no": 10,
+      "title": "Q&A Comprehension Activity",
+      "objective": "Develop deeper understanding of the story.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write 5–7 questions about events, characters, or behaviors",
+        "Answer them in complete sentences",
+        "Pair up with a classmate to discuss answers"
+      ],
+      "learning_outcome": "Students will improve comprehension and critical thinking.",
+      "evaluation": "Correctness, completeness, and explanation"
+    }
+  ]
+}

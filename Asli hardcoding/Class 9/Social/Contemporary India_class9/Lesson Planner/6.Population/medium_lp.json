@@ -1,0 +1,180 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter_name": "Population",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept and importance of population",
+        "Explain population size and distribution in India",
+        "Analyze population density variations",
+        "Understand population growth and its measurement",
+        "Explain processes of population change",
+        "Understand migration and urbanization",
+        "Learn about adolescent population and population policy"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Population",
+            "topics_covered": [
+                "Meaning of population",
+                "Population as a resource",
+                "Importance of population in social studies"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Example-based teaching",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Write definition of population",
+                "Discuss role of people in resource development"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick concept check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Population Size of India",
+            "topics_covered": [
+                "India's population according to Census 2011",
+                "Share of India's population in the world",
+                "Most populous states"
+            ],
+            "teaching_strategy": [
+                "Data explanation",
+                "Map demonstration"
+            ],
+            "student_activities": [
+                "Locate populous states on map",
+                "Write important census facts"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Population Distribution",
+            "topics_covered": [
+                "Uneven population distribution",
+                "Regions with high population",
+                "Factors affecting distribution"
+            ],
+            "teaching_strategy": [
+                "Map-based explanation",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Identify densely populated regions",
+                "Discuss reasons for uneven distribution"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Population Density",
+            "topics_covered": [
+                "Definition of population density",
+                "Population density in India",
+                "States with high and low density"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Example-based learning"
+            ],
+            "student_activities": [
+                "Calculate population density using examples",
+                "Write reasons for density variation"
+            ],
+            "assessment": [
+                "Concept-based questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Population Growth",
+            "topics_covered": [
+                "Meaning of population growth",
+                "Absolute increase",
+                "Growth rate"
+            ],
+            "teaching_strategy": [
+                "Graph explanation",
+                "Data interpretation"
+            ],
+            "student_activities": [
+                "Observe population growth chart",
+                "Write conclusions from data"
+            ],
+            "assessment": [
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Processes of Population Change",
+            "topics_covered": [
+                "Birth rate",
+                "Death rate",
+                "Migration"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Real-life examples"
+            ],
+            "student_activities": [
+                "Define demographic terms",
+                "Discuss causes of migration"
+            ],
+            "assessment": [
+                "Concept-based questions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Adolescent Population and National Population Policy",
+            "topics_covered": [
+                "Adolescent population",
+                "Health issues among adolescents",
+                "National Population Policy 2000",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Summary discussion",
+                "Concept recap"
+            ],
+            "student_activities": [
+                "Discuss importance of adolescent population",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Geography textbook",
+        "Map of India",
+        "Population charts and graphs"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Class discussion",
+        "Participation in activities"
+    ],
+    "teacher_tip": "Use census data and population maps to help students understand population distribution and density clearly."
+}

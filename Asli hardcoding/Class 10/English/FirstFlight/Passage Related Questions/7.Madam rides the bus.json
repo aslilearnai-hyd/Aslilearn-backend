@@ -1,0 +1,70 @@
+{
+  "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 7: Madam Rides the Bus",
+    "title": "Extended Reading Passages with Questions – Madam Rides the Bus",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "Madam Rides the Bus",
+        "paragraph": "Madam, a young girl, is curious about the city. She decides to take a bus ride alone, despite her mother’s warnings.",
+        "questions": [
+          "Who is Madam and what does she want?",
+          "Why does she take the bus alone?",
+          "What does her curiosity tell you about her character?",
+          "Which words show independence?",
+          "How does this paragraph set the story’s plot?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "Madam Rides the Bus",
+        "paragraph": "During the ride, Madam observes people and their behaviors. She notices the differences between village life and city life and feels excited by the new experiences.",
+        "questions": [
+          "What does Madam observe during the bus ride?",
+          "How does city life differ from village life?",
+          "Which words show her excitement?",
+          "What new experiences does she encounter?",
+          "Why is this paragraph important to the story?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "Madam Rides the Bus",
+        "paragraph": "Madam talks to a kind woman on the bus who explains some aspects of city life. She listens attentively and learns new things, feeling proud of her courage.",
+        "questions": [
+          "Who does Madam talk to on the bus?",
+          "What does she learn from the woman?",
+          "Which words show her attentiveness?",
+          "How does she feel about herself?",
+          "Why is this interaction significant in the story?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "Madam Rides the Bus",
+        "paragraph": "As the bus journey continues, Madam enjoys the sights and sounds of the city. She experiences a sense of freedom and independence she had never felt before.",
+        "questions": [
+          "What does Madam enjoy during the journey?",
+          "Which words show her sense of freedom?",
+          "How does the city affect her feelings?",
+          "Why is this moment important for her character?",
+          "What is the main idea of this paragraph?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "Madam Rides the Bus",
+        "paragraph": "By the end of the ride, Madam returns home with stories to tell and lessons learned. Her adventure teaches her self-confidence and the joy of exploring new places.",
+        "questions": [
+          "What happens at the end of Madam’s journey?",
+          "What does she learn from the adventure?",
+          "Which words show self-confidence?",
+          "How does this ride change her perspective?",
+          "What is the main idea of this paragraph?"
+        ]
+      }
+    ]
+  }

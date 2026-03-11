@@ -1,0 +1,139 @@
+{
+"class": "Class 8",
+"subject": "Mathematics",
+"chapter": "Exploring Some Geometric Themes",
+"difficulty": "Medium",
+"source_pdf": "hegp204.pdf",
+"activities_projects": [
+{
+"sl_no": 1,
+"title": "Counting Squares in Sierpinski Carpet",
+"objective": "Understand pattern growth in fractals",
+"materials": ["Notebook", "Pencil"],
+"steps": [
+"Draw Step 0, Step 1 and Step 2 of the Sierpinski Carpet",
+"Count the number of remaining squares at each step",
+"Write the pattern you observe"
+],
+"learning_outcome": "Recognises exponential growth in fractal patterns",
+"evaluation": "Correct pattern identification (10 marks)"
+},
+{
+"sl_no": 2,
+"title": "Triangle Division Investigation",
+"objective": "Understand triangle subdivision",
+"materials": ["Notebook", "Scale", "Pencil"],
+"steps": [
+"Draw an equilateral triangle",
+"Join the midpoints of all sides",
+"Count the number of smaller triangles formed"
+],
+"learning_outcome": "Understands geometric subdivision",
+"evaluation": "Correct construction and reasoning (10 marks)"
+},
+{
+"sl_no": 3,
+"title": "Sierpinski Triangle Area Pattern",
+"objective": "Explore how area changes in fractals",
+"materials": ["Notebook", "Pencil"],
+"steps": [
+"Draw Step 0 and Step 1 of Sierpinski Triangle",
+"Assume the original area is 1 square unit",
+"Find the area remaining after Step 1"
+],
+"learning_outcome": "Understands reduction patterns in fractals",
+"evaluation": "Correct calculation (10 marks)"
+},
+{
+"sl_no": 4,
+"title": "Koch Snowflake Side Count",
+"objective": "Identify pattern in number of sides",
+"materials": ["Notebook"],
+"steps": [
+"Draw Step 0, Step 1 and Step 2 of the Koch Snowflake",
+"Count the number of sides in each step",
+"Identify the pattern"
+],
+"learning_outcome": "Recognises pattern growth",
+"evaluation": "Correct observation (10 marks)"
+},
+{
+"sl_no": 5,
+"title": "Cube Net Investigation",
+"objective": "Identify valid cube nets",
+"materials": ["Chart paper", "Scissors", "Glue"],
+"steps": [
+"Draw two possible nets of a cube",
+"Cut them out",
+"Check which ones fold into a cube"
+],
+"learning_outcome": "Understands different cube nets",
+"evaluation": "Correct identification (10 marks)"
+},
+{
+"sl_no": 6,
+"title": "Faces, Edges and Vertices Table",
+"objective": "Compare properties of solids",
+"materials": ["Notebook"],
+"steps": [
+"Make a table for cube, prism and pyramid",
+"Write number of faces, edges and vertices",
+"Compare them"
+],
+"learning_outcome": "Understands structure of 3D shapes",
+"evaluation": "Correct table (10 marks)"
+},
+{
+"sl_no": 7,
+"title": "Projection Observation",
+"objective": "Understand projections of objects",
+"materials": ["Torch", "Object", "Wall"],
+"steps": [
+"Place a cube under torch light",
+"Observe its shadow on the wall",
+"Sketch the projection"
+],
+"learning_outcome": "Understands concept of projection",
+"evaluation": "Correct sketch (10 marks)"
+},
+{
+"sl_no": 8,
+"title": "Solid Profile Exploration",
+"objective": "Understand how solids look from different views",
+"materials": ["Notebook", "Cube block"],
+"steps": [
+"Place a cube on a table",
+"Observe from top, front and side",
+"Draw each view"
+],
+"learning_outcome": "Develops spatial visualisation",
+"evaluation": "Accuracy of drawings (10 marks)"
+},
+{
+"sl_no": 9,
+"title": "Isometric Cube Drawing",
+"objective": "Draw solids using isometric grid",
+"materials": ["Isometric paper", "Pencil"],
+"steps": [
+"Draw one cube",
+"Extend it to form a row of three cubes",
+"Shade visible faces"
+],
+"learning_outcome": "Understands isometric representation",
+"evaluation": "Correct drawing (10 marks)"
+},
+{
+"sl_no": 10,
+"title": "Solid Net Creation",
+"objective": "Design nets of solids",
+"materials": ["Chart paper", "Scissors"],
+"steps": [
+"Draw a net for a triangular prism",
+"Cut and fold it",
+"Verify the shape"
+],
+"learning_outcome": "Connects 2D nets to 3D solids",
+"evaluation": "Correct model (10 marks)"
+}
+]
+}

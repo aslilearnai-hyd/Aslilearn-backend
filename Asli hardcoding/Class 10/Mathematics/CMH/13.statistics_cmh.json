@@ -1,0 +1,67 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter: Statistics",
+    "generated_at": "2026-02-28T10:55:00",
+    "concepts": [
+        {
+            "concept_name": "Statistical Data",
+            "difficulty": "easy",
+            "lesson": "Statistical data consists of numerical information collected for a specific purpose. Data may be primary or secondary and is analysed to identify patterns, trends, and relationships.",
+            "real_example": "Marks obtained by students.",
+            "key_points": [
+                "Data collected for analysis",
+                "Can be numerical or categorical",
+                "May be primary or secondary"
+            ],
+            "source_section": "Section 13.1"
+        },
+        {
+            "concept_name": "Mean",
+            "difficulty": "easy",
+            "lesson": "The mean is the average value of a data set and is calculated by dividing the sum of all observations by the number of observations. It provides a central value but is sensitive to extreme values.",
+            "real_example": "Average marks scored by a student.",
+            "key_points": [
+                "Mean = Sum / Number",
+                "Affected by extreme values",
+                "Can be fractional"
+            ],
+            "source_section": "Section 13.2"
+        },
+        {
+            "concept_name": "Median",
+            "difficulty": "medium",
+            "lesson": "The median is the middle value of a data set arranged in order. It divides the data into two equal parts and is less affected by extreme values.",
+            "real_example": "Middle income level.",
+            "key_points": [
+                "Data must be arranged",
+                "Less affected by extremes",
+                "Divides data equally"
+            ],
+            "source_section": "Section 13.3"
+        },
+        {
+            "concept_name": "Mode",
+            "difficulty": "medium",
+            "lesson": "The mode is the value that appears most frequently in a data set. It is useful for identifying common trends, especially in qualitative data.",
+            "real_example": "Most common shoe size.",
+            "key_points": [
+                "May not exist",
+                "Can be more than one",
+                "Useful for categorical data"
+            ],
+            "source_section": "Section 13.4"
+        },
+        {
+            "concept_name": "Graphical Representation of Data",
+            "difficulty": "hard",
+            "lesson": "Graphs such as bar graphs, histograms, and ogives visually represent data, making it easier to interpret trends and comparisons. Graphical methods are essential for data analysis.",
+            "real_example": "Population growth graph.",
+            "key_points": [
+                "Bar graphs → discrete data",
+                "Histograms → continuous data",
+                "Ogives → cumulative data"
+            ],
+            "source_section": "Section 13.5"
+        }
+    ]
+}

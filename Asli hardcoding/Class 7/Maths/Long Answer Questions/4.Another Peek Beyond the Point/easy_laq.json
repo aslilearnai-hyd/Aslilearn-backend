@@ -1,0 +1,386 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Another Peek Beyond the Point (Basic Geometrical Ideas)",
+    "generated_at": "2026-03-05T01:21:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a 'Point' in geometry? How is it usually represented and named?",
+            "answer": "A point is a location in space that has no size—no length, width, or depth. It is represented by a small dot and is usually named with a single capital letter, like point A or point B.",
+            "answer_outline": [
+                "Definition of a point",
+                "Physical representation (dot)",
+                "Naming convention (capital letters)"
+            ],
+            "key_concepts": [
+                "point",
+                "dimensionless"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define a 'Line Segment'. How does it differ from a 'Line'?",
+            "answer": "A line segment is a portion of a line that has two definite endpoints. Unlike a line, which extends infinitely in both directions, a line segment has a measurable length.",
+            "answer_outline": [
+                "Definition of line segment",
+                "Endpoints concept",
+                "Comparison with infinite lines"
+            ],
+            "key_concepts": [
+                "line segment",
+                "endpoints"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a 'Ray'? Give two real-life examples of rays.",
+            "answer": "A ray is a part of a line that has one fixed starting point (called the initial point) and extends infinitely in one direction. Examples: 1. A beam of light from a torch. 2. Sun rays starting from the Sun.",
+            "answer_outline": [
+                "Definition of ray",
+                "Directionality concept",
+                "Real-world examples"
+            ],
+            "key_concepts": [
+                "ray",
+                "initial point"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of 'Intersecting Lines' with the help of a diagram description.",
+            "answer": "Two lines are called intersecting lines if they have one common point. This common point is called the 'Point of Intersection'. For example, the letter 'X' consists of two intersecting line segments.",
+            "answer_outline": [
+                "Definition of intersection",
+                "Point of intersection",
+                "Visual example (Letter X)"
+            ],
+            "key_concepts": [
+                "intersecting lines",
+                "common point"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "What are 'Parallel Lines'? Provide an example from your surroundings.",
+            "answer": "Parallel lines are lines in a plane that never meet, no matter how far they are extended. They always maintain the same distance apart. Example: The opposite edges of a ruler or the tracks of a straight railway line.",
+            "answer_outline": [
+                "Definition of parallel lines",
+                "Fixed distance concept",
+                "Real-world examples"
+            ],
+            "key_concepts": [
+                "parallel lines",
+                "equidistant"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 6,
+            "question": "How many lines can pass through: (a) one given point? (b) two given points?",
+            "answer": "(a) An infinite number of lines can pass through a single point. (b) Exactly one unique line can pass through two distinct given points.",
+            "answer_outline": [
+                "Single point rule",
+                "Two point rule"
+            ],
+            "key_concepts": [
+                "collinearity",
+                "uniqueness of lines"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Define a 'Curve' in geometry. What is the difference between an 'Open Curve' and a 'Closed Curve'?",
+            "answer": "A curve is a trace left by a moving point. An open curve has endpoints that do not meet (like the letter 'C'), whereas a closed curve has no endpoints and forms a complete loop (like the letter 'O').",
+            "answer_outline": [
+                "General definition of curve",
+                "Open vs Closed description",
+                "Alphabet examples"
+            ],
+            "key_concepts": [
+                "curves",
+                "topology"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.7"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a 'Polygon'? Name a polygon with the least number of sides.",
+            "answer": "A polygon is a simple closed curve made up entirely of line segments. The polygon with the least number of sides is a 'Triangle' (3 sides).",
+            "answer_outline": [
+                "Definition of polygon",
+                "Requirement of line segments",
+                "Identify triangle"
+            ],
+            "key_concepts": [
+                "polygon",
+                "triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the three parts of a closed curve (Interior, Boundary, Exterior).",
+            "answer": "1. Interior: The inside region of the curve. 2. Boundary: The curve itself. 3. Exterior: The region outside the curve.",
+            "answer_outline": [
+                "List three regions",
+                "Explain each relative to the curve"
+            ],
+            "key_concepts": [
+                "region",
+                "interior/exterior"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.7.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Define 'Vertices' and 'Sides' of a polygon.",
+            "answer": "The line segments forming a polygon are called its 'Sides'. The meeting point of a pair of sides is called a 'Vertex' (plural: vertices).",
+            "answer_outline": [
+                "Definition of sides",
+                "Definition of vertex"
+            ],
+            "key_concepts": [
+                "vertex",
+                "sides"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 11,
+            "question": "What are 'Adjacent Sides' in a polygon?",
+            "answer": "Any two sides of a polygon that share a common vertex are called adjacent sides. For example, in a square ABCD, sides AB and BC are adjacent.",
+            "answer_outline": [
+                "Common endpoint concept",
+                "Naming example"
+            ],
+            "key_concepts": [
+                "adjacency",
+                "polygon sides"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 12,
+            "question": "Define 'Diagonals' of a polygon.",
+            "answer": "A diagonal is a line segment connecting two non-adjacent vertices of a polygon.",
+            "answer_outline": [
+                "Definition",
+                "Key condition (non-adjacent)"
+            ],
+            "key_concepts": [
+                "diagonal",
+                "vertices"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 13,
+            "question": "What is an 'Angle'? How is it formed?",
+            "answer": "An angle is formed when two rays originate from a common initial point. The rays are called the 'arms' or 'sides' of the angle, and the common point is the 'vertex'.",
+            "answer_outline": [
+                "Formation by rays",
+                "Identify arms and vertex"
+            ],
+            "key_concepts": [
+                "angle",
+                "vertex"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.9"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the naming convention for an angle using three letters.",
+            "answer": "To name an angle, we use three capital letters where the vertex is always written in the middle. For angle ∠ABC, B is the vertex, and AB and BC are the arms.",
+            "answer_outline": [
+                "Three-letter rule",
+                "Placement of vertex",
+                "Symbol usage (∠)"
+            ],
+            "key_concepts": [
+                "angle notation"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.9"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a 'Triangle'? List its vertices and sides for a triangle ABC.",
+            "answer": "A triangle is a three-sided polygon. For triangle ABC: Vertices are A, B, and C. Sides are line segments AB, BC, and CA.",
+            "answer_outline": [
+                "Definition",
+                "Listing components"
+            ],
+            "key_concepts": [
+                "triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.10"
+        },
+        {
+            "question_number": 16,
+            "question": "Define a 'Quadrilateral'. How many sides and angles does it have?",
+            "answer": "A quadrilateral is a four-sided polygon. it has four sides and four angles.",
+            "answer_outline": [
+                "Definition",
+                "Count of components"
+            ],
+            "key_concepts": [
+                "quadrilateral"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.11"
+        },
+        {
+            "question_number": 17,
+            "question": "In a quadrilateral PQRS, name: (a) Two pairs of opposite sides. (b) Two pairs of opposite angles.",
+            "answer": "(a) Opposite sides: (PQ, RS) and (QR, SP). (b) Opposite angles: (∠P, ∠R) and (∠Q, ∠S).",
+            "answer_outline": [
+                "Identify non-adjacent sides",
+                "Identify non-adjacent angles"
+            ],
+            "key_concepts": [
+                "opposite sides",
+                "opposite angles"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.11"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a 'Circle'? Mention its center.",
+            "answer": "A circle is a simple closed curve where every point on the boundary is at an equal distance from a fixed point inside called the 'Center'.",
+            "answer_outline": [
+                "Definition of circle",
+                "Role of the center"
+            ],
+            "key_concepts": [
+                "circle",
+                "center"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 19,
+            "question": "Define 'Radius' and 'Diameter' of a circle.",
+            "answer": "Radius is the line segment connecting the center to any point on the circle. Diameter is a line segment passing through the center with both endpoints on the circle.",
+            "answer_outline": [
+                "Definition of radius",
+                "Definition of diameter"
+            ],
+            "key_concepts": [
+                "radius",
+                "diameter"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a 'Chord' of a circle? How is it different from a diameter?",
+            "answer": "A chord is a line segment with its endpoints on the circle. A diameter is a special chord that passes through the center of the circle.",
+            "answer_outline": [
+                "General chord definition",
+                "Diameter as a specific case"
+            ],
+            "key_concepts": [
+                "chord",
+                "diameter"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 21,
+            "question": "Define 'Circumference' of a circle.",
+            "answer": "Circumference is the distance around the boundary of the circle, essentially its perimeter.",
+            "answer_outline": [
+                "Definition",
+                "Perimeter comparison"
+            ],
+            "key_concepts": [
+                "circumference"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 22,
+            "question": "What is an 'Arc' and a 'Sector' of a circle?",
+            "answer": "An arc is a portion of the circumference. A sector is the interior region enclosed by an arc and two radii.",
+            "answer_outline": [
+                "Arc definition",
+                "Sector definition"
+            ],
+            "key_concepts": [
+                "arc",
+                "sector"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain 'Segment' of a circle.",
+            "answer": "A segment is the region in the interior of a circle enclosed by an arc and a chord.",
+            "answer_outline": [
+                "Components forming a segment",
+                "Chord and arc relationship"
+            ],
+            "key_concepts": [
+                "segment",
+                "chord"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 24,
+            "question": "What are 'Concurrent Lines'?",
+            "answer": "When three or more lines pass through the same point, they are called concurrent lines. The common point is called the point of concurrence.",
+            "answer_outline": [
+                "Count of lines (3+)",
+                "Common point name"
+            ],
+            "key_concepts": [
+                "concurrency"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Is a circle a polygon? Why or why not?",
+            "answer": "No, a circle is not a polygon. A polygon must be made of line segments, while a circle is a curved closed loop.",
+            "answer_outline": [
+                "Answer (No)",
+                "Contrast polygon definition with circle"
+            ],
+            "key_concepts": [
+                "polygon properties",
+                "circle properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.12"
+        }
+    ]
+}

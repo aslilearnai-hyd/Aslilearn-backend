@@ -1,0 +1,141 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Wisdom Paves the Way",
+  "difficulty": "Hard",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Theme and Message Analysis",
+      "objective": "Critically analyse the central theme and message of the story",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the story carefully",
+        "Identify the main theme and supporting ideas",
+        "Explain how wisdom influences the outcome of the story",
+        "Write a detailed paragraph analysing the theme"
+      ],
+      "learning_outcome": "Students develop critical thinking and thematic interpretation skills",
+      "evaluation": "Depth of analysis and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Analysis Essay",
+      "objective": "Examine the personality traits and motivations of key characters",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify the main characters in the story",
+        "Analyse their actions and decisions",
+        "Explain how wisdom influences their behaviour",
+        "Write a short essay describing the character traits with textual support"
+      ],
+      "learning_outcome": "Students learn to support character analysis with evidence",
+      "evaluation": "Quality of reasoning and supporting details (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Conflict and Resolution Study",
+      "objective": "Understand how conflicts develop and are resolved in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify the main conflict presented in the story",
+        "Describe the challenges faced by the characters",
+        "Explain how wisdom leads to the resolution",
+        "Create a short written explanation of the conflict and resolution"
+      ],
+      "learning_outcome": "Students understand narrative conflict and problem-solving strategies",
+      "evaluation": "Accuracy and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Narrative Structure Mapping",
+      "objective": "Analyse the structure of the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify the introduction, rising action, climax, and resolution",
+        "Write these sections in sequence",
+        "Explain how the climax changes the direction of the story"
+      ],
+      "learning_outcome": "Students learn to recognise narrative structure in storytelling",
+      "evaluation": "Correct identification of story elements (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Comparative Wisdom Activity",
+      "objective": "Compare the concept of wisdom in this story with another story",
+      "materials": ["Textbook", "Notebook", "Library books"],
+      "steps": [
+        "Choose another story that highlights wisdom",
+        "Compare the main characters and how they use intelligence",
+        "Write a comparative paragraph explaining similarities and differences"
+      ],
+      "learning_outcome": "Students develop comparative analysis skills",
+      "evaluation": "Quality of comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Dialogue Reconstruction",
+      "objective": "Develop creative writing skills by reconstructing dialogues",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a key moment from the story",
+        "Rewrite the scene in dialogue form",
+        "Ensure that the dialogue reflects the characters' personalities and wisdom"
+      ],
+      "learning_outcome": "Students enhance creative writing and character understanding",
+      "evaluation": "Creativity and clarity of dialogue (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Vocabulary and Context Analysis",
+      "objective": "Analyse how vocabulary conveys meaning in the story",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Select five challenging words from the story",
+        "Explain their meanings using context clues",
+        "Use them in new sentences that reflect similar meanings"
+      ],
+      "learning_outcome": "Students develop contextual vocabulary understanding",
+      "evaluation": "Correct interpretation and sentence formation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Real-Life Application Discussion",
+      "objective": "Connect the story’s lesson with real-life situations",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Discuss situations in daily life where wisdom helps solve problems",
+        "Relate those situations to the story",
+        "Write a short reflection describing the connection"
+      ],
+      "learning_outcome": "Students learn to apply literary lessons to real-life contexts",
+      "evaluation": "Depth and relevance of reflection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Creative Problem-Solving Scenario",
+      "objective": "Encourage strategic thinking and imagination",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine a new problem faced by the characters",
+        "Describe how the characters might solve it using wisdom",
+        "Write a short story continuation based on your idea"
+      ],
+      "learning_outcome": "Students develop creative storytelling and reasoning",
+      "evaluation": "Originality and logical problem-solving (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Reflective Essay on Wisdom",
+      "objective": "Encourage deeper thinking about the value of wisdom in society",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Reflect on the importance of wisdom in decision-making",
+        "Use examples from the story to support your ideas",
+        "Write a short essay explaining how wisdom guides people in life"
+      ],
+      "learning_outcome": "Students develop analytical and reflective writing skills",
+      "evaluation": "Clarity of ideas and logical explanation (10 marks)"
+    }
+  ]
+}

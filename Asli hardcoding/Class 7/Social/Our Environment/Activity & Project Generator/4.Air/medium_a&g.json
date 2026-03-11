@@ -1,0 +1,192 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Air",
+    "difficulty": "Medium",
+    "source_pdf": "our_environment_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Atmospheric Pressure and Temperature Correlation",
+            "objective": "Observe how heat affects air density and pressure",
+            "materials": [
+                "Two identical paper bags",
+                "A wooden stick",
+                "Thread",
+                "A candle"
+            ],
+            "steps": [
+                "Hang two paper bags in inverted position on the two ends of a wooden stick",
+                "Tie a thread in the middle of the stick to balance it like a scale",
+                "Put a burning candle below one of the bags carefully",
+                "Observe the balance of the stick as the air inside the bag warms up"
+            ],
+            "learning_outcome": "Demonstrates that warm air is lighter (less dense) and rises, creating low pressure",
+            "evaluation": "Explanation of why the balance was disturbed and the direction of air movement (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Mapping Global Pressure Belts",
+            "objective": "Identify the permanent pressure systems of the Earth",
+            "materials": [
+                "World outline map",
+                "Different colored pencils",
+                "Ruler"
+            ],
+            "steps": [
+                "Mark the Equator, Tropics, and Polar circles on the map",
+                "Shade the Equatorial Low Pressure belt (Doldrums) in one color",
+                "Mark the Subtropical Highs and Subpolar Lows",
+                "Draw arrows to show the direction of 'Trade Winds' and 'Westerlies' between these belts"
+            ],
+            "learning_outcome": "Visualizes the relationship between planetary winds and pressure belts",
+            "evaluation": "Accuracy of the belt locations and correct wind direction arrows (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Mechanism of Rainfall Model",
+            "objective": "Distinguish between Convectional, Orographic, and Cyclonic rainfall",
+            "materials": [
+                "Cardboard",
+                "Cotton wool",
+                "Markers",
+                "Small pebbles"
+            ],
+            "steps": [
+                "Divide a board into three sections for the three types of rainfall",
+                "Model a mountain (Orographic) and show air rising on the windward side",
+                "Model the ground heating up (Convectional) with vertical arrows",
+                "Model warm and cold air meeting (Cyclonic) with swirling arrows",
+                "Paste cotton 'clouds' at the point where condensation occurs"
+            ],
+            "learning_outcome": "Identifies the three main types of rainfall based on how air is lifted",
+            "evaluation": "Clarity of the models and correct labeling of the lifting mechanisms (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Relative Humidity Investigation",
+            "objective": "Understand how the air's capacity to hold moisture changes",
+            "materials": [
+                "Sponge",
+                "Measuring cylinder",
+                "Water"
+            ],
+            "steps": [
+                "Take a dry sponge and slowly pour water over it using a measuring cylinder",
+                "Note the amount of water the sponge absorbs before it starts dripping (Saturation)",
+                "Relate the sponge to 'Air' and the water to 'Moisture'",
+                "Discuss what happens to the 'capacity' if the sponge is squeezed (cooling air)"
+            ],
+            "learning_outcome": "Explains the concept of air saturation and condensation point",
+            "evaluation": "Correlation between sponge capacity and air temperature/humidity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Local Wind Case Study: Loo and Sea Breeze",
+            "objective": "Observe the difference between permanent and local winds",
+            "materials": [
+                "Chart paper",
+                "Access to weather news or elders' interviews"
+            ],
+            "steps": [
+                "Research the 'Loo' (North India) or 'Sea Breeze' (Coastal areas)",
+                "Draw a diagram showing the movement of air during the day vs. night for sea/land breeze",
+                "Explain why these are called 'Local Winds' and not 'Permanent Winds'",
+                "List the time of day and the season when these winds are most active"
+            ],
+            "learning_outcome": "Differentiates between different categories of wind systems",
+            "evaluation": "Accuracy of the breeze diagrams and local wind characteristics (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Stratosphere vs. Troposphere: The Ozone Filter",
+            "objective": "Analyze the importance of the second layer of the atmosphere",
+            "materials": [
+                "Transparent sheet",
+                "Black marker",
+                "Flashlight"
+            ],
+            "steps": [
+                "Shine a flashlight (Sun) through a clear sheet (Troposphere) onto a paper",
+                "Dabble black spots on the sheet to represent the Ozone layer in the Stratosphere",
+                "Observe how the intensity of 'UV rays' reaching the paper changes",
+                "Research why airplanes prefer flying in the lower Stratosphere"
+            ],
+            "learning_outcome": "Evaluates the protective role of Ozone and the stability of the Stratosphere",
+            "evaluation": "Description of Ozone's function and atmospheric layer properties (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Weather Instrument Station",
+            "objective": "Learn to use and read weather measurement tools",
+            "materials": [
+                "Thermometer",
+                "Barometer (or DIY model)",
+                "Anemometer (DIY with cups)",
+                "Wind Vane"
+            ],
+            "steps": [
+                "Set up the instruments in a safe outdoor location",
+                "Take readings for Temperature, Pressure, and Wind Speed at the same time for 3 days",
+                "Observe if a drop in pressure correlates with a change in weather (cloudiness)",
+                "Create a small table of your 'Meteorological' data"
+            ],
+            "learning_outcome": "Develops technical skills in monitoring atmospheric conditions",
+            "evaluation": "Precision of readings and correlation of pressure with weather (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Carbon Dioxide Sink Experiment",
+            "objective": "Understand how plants maintain the oxygen-CO2 balance",
+            "materials": [
+                "Two airtight jars",
+                "Small plant",
+                "Two candles"
+            ],
+            "steps": [
+                "Jar A: Place a lighted candle and a plant. Seal it.",
+                "Jar B: Place only a lighted candle. Seal it.",
+                "Note which candle stays lit longer and explain why",
+                "Relate this to why deforestation leads to Global Warming"
+            ],
+            "learning_outcome": "Connects the biological process of photosynthesis to atmospheric stability",
+            "evaluation": "Scientific explanation of the gas exchange within the jars (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Cyclonic Circulation Model",
+            "objective": "Observe the spiraling nature of wind in low-pressure systems",
+            "materials": [
+                "Large bowl of water",
+                "Dropper",
+                "Ink",
+                "Stirrer"
+            ],
+            "steps": [
+                "Stir the water in a circular motion to create a vortex (Low pressure center)",
+                "Drop ink at the edge of the bowl and watch it get pulled toward the center",
+                "Observe the spiral pattern formed",
+                "Research why cyclones in the Northern Hemisphere rotate counter-clockwise"
+            ],
+            "learning_outcome": "Visualizes air movement in a low-pressure system (Cyclone)",
+            "evaluation": "Sketch of the spiral pattern and identification of the center (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Longevity of the Atmosphere",
+            "objective": "Investigate how gravity holds the atmosphere",
+            "materials": [
+                "Calculations",
+                "Reference data on Moon vs. Earth"
+            ],
+            "steps": [
+                "Research the gravity of the Moon and compare it with Earth",
+                "Explain why the Moon has no atmosphere while Earth does",
+                "Calculate the approximate height of the atmosphere where 99% of air is found",
+                "Discuss why mountain climbers carry oxygen cylinders"
+            ],
+            "learning_outcome": "Analyzes the physical factors that allow Earth to retain its air",
+            "evaluation": "Logical comparison between Earth and the Moon's atmosphere (10 marks)"
+        }
+    ]
+}

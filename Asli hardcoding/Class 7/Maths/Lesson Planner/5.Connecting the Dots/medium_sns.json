@@ -1,0 +1,73 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Connecting the Dots (Data Handling)",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Calculate the Arithmetic Mean of a dataset",
+        "Determine the Range of data",
+        "Understand and find the Mode",
+        "Construct Bar Graphs with appropriate scales",
+        "Interpret data trends from visual representations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Mean, Range, and Mode",
+            "topics_covered": [
+                "Arithmetic Mean as the 'Average'",
+                "Finding the spread of data using Range",
+                "Identifying the most frequent value (Mode)"
+            ],
+            "teaching_strategy": [
+                "Step-by-step formula derivation",
+                "Example of mode in real life (most popular shoe size)",
+                "[Image showing calculation of mean, median, and mode for a data set]"
+            ],
+            "student_activities": [
+                "Calculate the mean height of a group of 5 students",
+                "Find the range and mode of a set of test marks"
+            ],
+            "assessment": [
+                "Calculation speed drill",
+                "Exit slip: 'Can a dataset have two modes?'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Constructing Bar Graphs",
+            "topics_covered": [
+                "Choosing a suitable scale for the Y-axis",
+                "Drawing bars of uniform width and spacing",
+                "Labeling axes and giving a title"
+            ],
+            "teaching_strategy": [
+                "Graph paper demonstration",
+                "Discussion on how scale choice affects the look of the graph",
+                ""
+            ],
+            "student_activities": [
+                "Draw a bar graph showing 'Hours of TV watched' by different students",
+                "Re-draw a graph using a different scale to see the visual change"
+            ],
+            "assessment": [
+                "Bar graph neatness and accuracy rubric",
+                "Scale-selection quiz"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Graph paper",
+        "Rulers and colored pencils",
+        "Sets of pre-collected school data",
+        "Large-scale graph board"
+    ],
+    "evaluation_methods": [
+        "Mean/Mode/Range problem sets",
+        "Graph construction project",
+        "Peer-evaluation of graphs"
+    ],
+    "teacher_tip": "If a bar graph looks 'too tall' or 'too squashed,' the scale needs to be adjusted. Remind students to pick a scale that uses at least half of the graph paper."
+}

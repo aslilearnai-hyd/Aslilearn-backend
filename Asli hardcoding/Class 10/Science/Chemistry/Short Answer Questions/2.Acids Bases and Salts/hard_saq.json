@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Acids, Bases and Salts",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are the products formed at the anode and cathode during the electrolysis of brine? Why is it called the Chlor-alkali process?",
+            "answer": "Chlorine gas is formed at the anode, and Hydrogen gas is formed at the cathode. Sodium hydroxide ($NaOH$) is formed near the cathode. It is called Chlor-alkali because of the products: 'Chlor' for chlorine and 'alkali' for sodium hydroxide.",
+            "key_concepts": ["Chlor-alkali process", "electrolysis"],
+            "marks": 3,
+            "source_section": "Section 2.4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the role of tartaric acid in baking powder.",
+            "answer": "Baking powder is a mixture of baking soda ($NaHCO_3$) and tartaric acid. When heated or mixed with water, the acid reacts with the soda to release $CO_2$. The tartaric acid also neutralizes the sodium carbonate formed, preventing a bitter taste in the food.",
+            "key_concepts": ["baking powder", "neutralization"],
+            "marks": 3,
+            "source_section": "Section 2.4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A milkman adds a very small amount of baking soda to fresh milk. Why does he shift the pH of the fresh milk from 6 to slightly alkaline?",
+            "answer": "He makes it alkaline to prevent the milk from turning sour quickly. The alkaline medium delays the action of bacteria that produce lactic acid, which causes the milk to curdle.",
+            "key_concepts": ["pH", "preservation"],
+            "marks": 2,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why does this milk (with baking soda) take a long time to set as curd?",
+            "answer": "Since the milk is slightly alkaline, the lactic acid produced by the bacteria is first used up to neutralize the baking soda. Only after neutralization can the pH fall enough to coagulate the proteins into curd.",
+            "key_concepts": ["neutralization", "pH change"],
+            "marks": 2,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "How is the pH of a solution affected when the concentration of $H^+(aq)$ ions increases? Explain the relationship.",
+            "answer": "As the concentration of $H^+$ ions increases, the pH of the solution decreases. The relationship is inverse; lower pH values indicate a higher concentration of hydrogen ions.",
+            "key_concepts": ["pH scale", "logarithmic scale"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the difference between a 'Dilute Acid' and a 'Weak Acid'?",
+            "answer": "A 'Weak Acid' refers to the degree of ionization (partially ionized in water, like acetic acid). A 'Dilute Acid' refers to the concentration of the acid in a given volume of water (less acid per unit volume).",
+            "key_concepts": ["acid strength", "concentration"],
+            "marks": 3,
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Write the chemical equation for the reaction between Zinc and Sodium Hydroxide. Name the salt formed.",
+            "answer": "$Zn(s) + 2NaOH(aq) \\rightarrow Na_2ZnO_2(aq) + H_2(g)$. The salt formed is Sodium Zincate.",
+            "key_concepts": ["amphoteric behavior", "sodium zincate"],
+            "marks": 2,
+            "source_section": "Section 2.1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why do Alcohols and Glucose contain hydrogen but are not categorized as acids?",
+            "answer": "Although they contain hydrogen, they do not dissociate in water to produce $H^+(aq)$ ions. Therefore, they do not show acidic properties or conduct electricity in solution.",
+            "key_concepts": ["ionization", "acidic behavior"],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why 'Acid Rain' happens when the pH of rain falls below 5.6.",
+            "answer": "Pollutants like $SO_2$ and $NO_2$ in the atmosphere react with water vapor to form sulphuric and nitric acids. When these mix with rain, the pH drops, making it 'acid rain' which harms aquatic life and buildings.",
+            "key_concepts": ["acid rain", "environment pH"],
+            "marks": 2,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What happens when you heat blue Copper Sulphate crystals? Why does the color change?",
+            "answer": "$CuSO_4 \\cdot 5H_2O \\xrightarrow{\\Delta} CuSO_4 + 5H_2O$. The blue color is due to water of crystallisation; heating removes this water, leaving behind white anhydrous copper sulphate.",
+            "key_concepts": ["water of crystallisation", "hydration"],
+            "marks": 2,
+            "source_section": "Section 2.4.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is Plaster of Paris written as $CaSO_4 \\cdot \\frac{1}{2}H_2O$? Can half a water molecule exist?",
+            "answer": "Half a molecule cannot exist alone. The formula means that two formula units of $CaSO_4$ share one molecule of water: $(CaSO_4)_2 \\cdot H_2O$.",
+            "key_concepts": ["formula unit", "Plaster of Paris"],
+            "marks": 2,
+            "source_section": "Section 2.4.4"
+        },
+        {
+            "question_number": 12,
+            "question": "How does the pH of the mouth change after eating? Suggest a way to prevent decay.",
+            "answer": "Bacteria degrade sugar left in the mouth, producing acids that lower the pH. To prevent decay, use toothpaste (which is basic) to neutralize the excess acid.",
+            "key_concepts": ["tooth decay", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Give the chemical names of (i) blue vitriol and (ii) gypsum.",
+            "answer": "(i) Copper Sulphate Pentahydrate ($CuSO_4 \\cdot 5H_2O$) (ii) Calcium Sulphate Dihydrate ($CaSO_4 \\cdot 2H_2O$).",
+            "key_concepts": ["chemical nomenclature"],
+            "marks": 2,
+            "source_section": "Section 2.4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is 'Self-defense by animals and plants through chemical warfare'? Give two examples.",
+            "answer": "It refers to the use of acids/bases for protection. Examples: 1. Nettle leaves have stinging hair that inject methanoic acid. 2. Ant stings also inject methanoic acid.",
+            "key_concepts": ["natural acids", "defense mechanisms"],
+            "marks": 3,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Five solutions A, B, C, D and E when tested with universal indicator showed pH as 4, 1, 11, 7 and 9. Arrange them in increasing order of $H^+$ ion concentration.",
+            "answer": "Increasing order of $H^+$ (Lowest to Highest): C (pH 11) < E (pH 9) < D (pH 7) < A (pH 4) < B (pH 1).",
+            "key_concepts": ["pH", "universal indicator"],
+            "marks": 3,
+            "source_section": "Section 2.3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Write the balanced chemical equation for the preparation of Sodium Hydrogen Carbonate via Solvay process.",
+            "answer": "$NaCl + H_2O + CO_2 + NH_3 \\rightarrow NH_4Cl + NaHCO_3$.",
+            "key_concepts": ["Solvay process", "baking soda"],
+            "marks": 3,
+            "source_section": "Section 2.4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the nature of the salt formed when a strong acid reacts with a weak base? Give an example.",
+            "answer": "The salt is acidic in nature (pH < 7). Example: Ammonium chloride ($NH_4Cl$) formed from $HCl$ and $NH_4OH$.",
+            "key_concepts": ["salt hydrolysis", "pH of salts"],
+            "marks": 2,
+            "source_section": "Section 2.4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the nature of the salt formed when a weak acid reacts with a strong base? Give an example.",
+            "answer": "The salt is basic in nature (pH > 7). Example: Sodium acetate ($CH_3COONa$) formed from $CH_3COOH$ and $NaOH$.",
+            "key_concepts": ["salt hydrolysis", "pH of salts"],
+            "marks": 2,
+            "source_section": "Section 2.4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Identify the acid and base used to form the salt Magnesium Sulphate.",
+            "answer": "Acid: Sulphuric acid ($H_2SO_4$); Base: Magnesium hydroxide ($Mg(OH)_2$).",
+            "key_concepts": ["neutralization"],
+            "marks": 2,
+            "source_section": "Section 2.4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "How can you identify a salt as belonging to the 'sodium family'?",
+            "answer": "Salts having the same positive radical ($Na^+$) belong to the sodium family. Examples: $NaCl, Na_2SO_4, NaNO_3$.",
+            "key_concepts": ["families of salts"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the dissociation of water into $H^+$ and $OH^-$ ions very small at room temperature?",
+            "answer": "Water is a very weak electrolyte; only about 1 in $10^7$ molecules is dissociated at 25°C.",
+            "key_concepts": ["auto-ionization of water"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What happens when $CO_2$ gas is passed through an aqueous solution of Sodium Carbonate?",
+            "answer": "Sodium Hydrogen Carbonate is formed: $Na_2CO_3 + H_2O + CO_2 \\rightarrow 2NaHCO_3$.",
+            "key_concepts": ["baking soda preparation"],
+            "marks": 2,
+            "source_section": "Section 2.4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is the heat of neutralization of a strong acid and a strong base always constant?",
+            "answer": "Because the net reaction is always the same: $H^+(aq) + OH^-(aq) \\rightarrow H_2O(l)$, involving the formation of water from its ions.",
+            "key_concepts": ["neutralization", "enthalpy"],
+            "marks": 3,
+            "source_section": "Section 2.1.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why Venus has an atmosphere of thick white and yellowish clouds.",
+            "answer": "The clouds of Venus are made of sulphuric acid ($H_2SO_4$). This makes life as we know it impossible on the planet.",
+            "key_concepts": ["natural occurrence of acids"],
+            "marks": 1,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the difference between slaked lime and lime water?",
+            "answer": "Slaked lime is solid calcium hydroxide ($Ca(OH)_2$). Lime water is a clear, filtered aqueous solution of slaked lime.",
+            "key_concepts": ["calcium hydroxide"],
+            "marks": 1,
+            "source_section": "Section 2.1.3"
+        }
+    ]
+}

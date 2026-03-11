@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Life Processes in Animals",
+  "generated_at": "2026-03-06T23:57:45",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the specific role of the Pancreatic juice in the human digestive system?",
+      "options": {
+        "A": "It only breaks down fats into fatty acids",
+        "B": "It acts on carbohydrates, proteins, and fats to change them into simpler forms",
+        "C": "It only provides an acidic medium for digestion",
+        "D": "It helps in the mechanical churning of food"
+      },
+      "correct_answer": "B",
+      "explanation": "Pancreatic juice contains enzymes that act on all three major food components: carbohydrates, fats, and proteins.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The process by which the absorbed food is transported via blood vessels to different organs is part of:",
+      "options": {
+        "A": "Absorption",
+        "B": "Assimilation",
+        "C": "Ingestion",
+        "D": "Egestion"
+      },
+      "correct_answer": "B",
+      "explanation": "Assimilation involves the transport and use of absorbed nutrients for building complex substances like proteins.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is the correct path of food in the human body?",
+      "options": {
+        "A": "Mouth → Stomach → Oesophagus → Small Intestine → Large Intestine",
+        "B": "Mouth → Oesophagus → Stomach → Small Intestine → Large Intestine",
+        "C": "Mouth → Oesophagus → Small Intestine → Stomach → Large Intestine",
+        "D": "Mouth → Stomach → Small Intestine → Oesophagus → Large Intestine"
+      },
+      "correct_answer": "B",
+      "explanation": "Food travels from the buccal cavity through the food pipe to the stomach, then the small intestine, and finally the large intestine.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 4,
+      "question": "In ruminants, the cellulose of grass is digested by the action of:",
+      "options": {
+        "A": "Hydrochloric acid in the stomach",
+        "B": "Certain bacteria present in the rumen",
+        "C": "Digestive juices from the liver",
+        "D": "Mechanical grinding by the teeth only"
+      },
+      "correct_answer": "B",
+      "explanation": "Ruminants have specific bacteria in their rumen that can break down cellulose, which humans cannot digest.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 5,
+      "question": "The 'pop' sound sometimes heard during swallowing is related to the epiglottis. What is its function?",
+      "options": {
+        "A": "To push food into the stomach",
+        "B": "To prevent food from entering the windpipe",
+        "C": "To mix saliva with food",
+        "D": "To produce sound for speech"
+      },
+      "correct_answer": "B",
+      "explanation": "The epiglottis is a flap-like valve that closes the passage of the windpipe during swallowing.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Diarrhoea is a condition where one passes watery stools frequently. It can lead to severe dehydration. How is it treated initially?",
+      "options": {
+        "A": "By giving high-protein food",
+        "B": "By giving Oral Rehydration Solution (ORS)",
+        "C": "By stopping water intake",
+        "D": "By giving solid food only"
+      },
+      "correct_answer": "B",
+      "explanation": "ORS (boiled water with a pinch of salt and sugar) helps replenish lost water and salts.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "The inner lining of the small intestine has thousands of finger-like outgrowths called villi. These villi are rich in:",
+      "options": {
+        "A": "Digestive enzymes",
+        "B": "Blood vessels",
+        "C": "Hydrochloric acid",
+        "D": "Muscle fibers"
+      },
+      "correct_answer": "B",
+      "explanation": "Villi are highly vascularized (filled with blood vessels) to efficiently transport absorbed food to the bloodstream.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "What happens to the glucose during assimilation in the cells?",
+      "options": {
+        "A": "It is converted back into starch",
+        "B": "It breaks down with the help of oxygen into carbon dioxide and water",
+        "C": "It is excreted through the kidneys",
+        "D": "It is turned into protein"
+      },
+      "correct_answer": "B",
+      "explanation": "In the cells, glucose is oxidized during respiration to release energy, $CO_2$, and water.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Amoeba is a microscopic single-celled organism. Where does it store its undigested waste before egestion?",
+      "options": {
+        "A": "In the nucleus",
+        "B": "In the food vacuole",
+        "C": "In the pseudopodia",
+        "D": "It does not store waste"
+      },
+      "correct_answer": "B",
+      "explanation": "The undigested residue is expelled outside by the vacuole in Amoeba.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Which part of the digestive canal is involved in the killing of bacteria?",
+      "options": {
+        "A": "Buccal cavity",
+        "B": "Stomach",
+        "C": "Small intestine",
+        "D": "Large intestine"
+      },
+      "correct_answer": "B",
+      "explanation": "The hydrochloric acid secreted by the stomach lining kills many bacteria that enter with the food.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "The length of the small intestine in a human adult is approximately:",
+      "options": {
+        "A": "1.5 metres",
+        "B": "7.5 metres",
+        "C": "2.5 metres",
+        "D": "10 metres"
+      },
+      "correct_answer": "B",
+      "explanation": "The small intestine is a highly coiled tube about 7.5 metres long.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the function of the Large Intestine?",
+      "options": {
+        "A": "Complete digestion of fats",
+        "B": "Absorption of water and some salts from undigested food",
+        "C": "Digestion of proteins",
+        "D": "Secretion of bile"
+      },
+      "correct_answer": "B",
+      "explanation": "The large intestine is wider and shorter than the small intestine and primarily absorbs water.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Ruminants have a large sac-like structure between the oesophagus and the small intestine called:",
+      "options": {
+        "A": "Rumen",
+        "B": "Caecum",
+        "C": "Stomach",
+        "D": "Villi"
+      },
+      "correct_answer": "B",
+      "explanation": "The caecum is the site where cellulose is digested by bacteria in grass-eating animals.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "The teeth that are used for grinding and chewing and have a total count of 12 in an adult are:",
+      "options": {
+        "A": "Incisors",
+        "B": "Molars",
+        "C": "Canines",
+        "D": "Premolars"
+      },
+      "correct_answer": "B",
+      "explanation": "There are 6 molars in each jaw (total 12) used for grinding food.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Bile juice is essential for the digestion of fats because it:",
+      "options": {
+        "A": "Changes fats into glucose",
+        "B": "Emulsifies fats into smaller droplets",
+        "C": "Neutralizes the acid from the stomach",
+        "D": "Breaks down fats into amino acids"
+      },
+      "correct_answer": "B",
+      "explanation": "Bile breaks down large fat globules into smaller ones so enzymes can act on them efficiently.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "When we eat in a hurry, we might cough or get hiccups. This happens because:",
+      "options": {
+        "A": "Food enters the windpipe",
+        "B": "Food enters the food pipe too fast",
+        "C": "Saliva is not mixed properly",
+        "D": "The stomach is full"
+      },
+      "correct_answer": "A",
+      "explanation": "If food particles enter the windpipe (trachea) instead of the oesophagus, a cough reflex is triggered to clear the passage.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 17,
+      "question": "The 'milky' appearance of the solution when testing for starch with iodine changes to:",
+      "options": {
+        "A": "Blue-Black",
+        "B": "Red",
+        "C": "Green",
+        "D": "No change"
+      },
+      "correct_answer": "A",
+      "explanation": "Iodine solution turns blue-black in the presence of starch.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of these is NOT a part of the 'Nutrition' process?",
+      "options": {
+        "A": "Assimilation",
+        "B": "Circulation",
+        "C": "Ingestion",
+        "D": "Digestion"
+      },
+      "correct_answer": "B",
+      "explanation": "Nutrition consists of Ingestion, Digestion, Absorption, Assimilation, and Egestion. Circulation is a different life process.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 19,
+      "question": "The partially digested food that leaves the stomach and enters the small intestine is called:",
+      "options": {
+        "A": "Cud",
+        "B": "Chyme",
+        "C": "Bolus",
+        "D": "Villus"
+      },
+      "correct_answer": "B",
+      "explanation": "Chyme is the semi-fluid mass of partially digested food.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Enzymes present in the saliva act on which component of food?",
+      "options": {
+        "A": "Proteins",
+        "B": "Starch",
+        "C": "Fats",
+        "D": "Vitamins"
+      },
+      "correct_answer": "B",
+      "explanation": "Salivary amylase breaks down complex starch into simple sugars like maltose.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "The permanent set of teeth usually starts falling off at the age of:",
+      "options": {
+        "A": "6-8 years",
+        "B": "During old age",
+        "C": "10-12 years",
+        "D": "Infancy"
+      },
+      "correct_answer": "B",
+      "explanation": "Milk teeth fall off around 6-8 years, but permanent teeth typically last through life unless lost to disease or old age.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which part of the digestive system absorbs the maximum amount of digested food?",
+      "options": {
+        "A": "Stomach",
+        "B": "Small Intestine",
+        "C": "Large Intestine",
+        "D": "Oesophagus"
+      },
+      "correct_answer": "B",
+      "explanation": "The small intestine is the principal organ for the absorption of nutrients due to the presence of villi.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the function of mucus in the stomach?",
+      "options": {
+        "A": "To digest proteins",
+        "B": "To protect the lining of the stomach",
+        "C": "To kill bacteria",
+        "D": "To break down fats"
+      },
+      "correct_answer": "B",
+      "explanation": "Mucus forms a protective barrier so that the stomach's own acid does not digest the stomach wall.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "The process of rumination is necessary for grass-eating animals because:",
+      "options": {
+        "A": "Grass is very soft",
+        "B": "Grass contains cellulose which is hard to digest",
+        "C": "They don't have enough saliva",
+        "D": "They eat only once a day"
+      },
+      "correct_answer": "B",
+      "explanation": "Chewing the cud helps in the mechanical and bacterial breakdown of tough cellulose.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 25,
+      "question": "In Amoeba, the process of 'Ingestion' occurs through:",
+      "options": {
+        "A": "A fixed mouth",
+        "B": "Pseudopodia",
+        "C": "Contractile vacuole",
+        "D": "The nucleus"
+      },
+      "correct_answer": "B",
+      "explanation": "Amoeba pushes out pseudopodia to engulf food particles, forming a food vacuole.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    }
+  ]
+}

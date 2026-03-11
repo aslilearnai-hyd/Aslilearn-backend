@@ -1,0 +1,44 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science",
+    "chapter": "Electoral Politics",
+    "difficulty": "Medium",
+    "source_pdf": "dem9_3.pdf",
+    "short_notes": {
+        "key_points": [
+            "Elections are essential for choosing representatives and forming governments in a democracy",
+            "Democratic elections must provide real choice to voters among different candidates and parties",
+            "Political competition encourages leaders to perform better to win public support",
+            "Universal Adult Franchise ensures that every citizen above 18 years has equal voting rights",
+            "The country is divided into electoral constituencies to ensure equal representation",
+            "The voters list or electoral roll contains the names of eligible voters in each constituency",
+            "Reserved constituencies ensure representation of Scheduled Castes and Scheduled Tribes",
+            "Election campaigns allow candidates to present their policies and ideas to voters",
+            "Polling is the process where voters cast their votes at polling booths",
+            "The Election Commission of India supervises elections to ensure they are free and fair"
+        ],
+        "examples": [
+            "National election example: Lok Sabha elections",
+            "State election example: Legislative Assembly elections",
+            "Technology used in voting: Electronic Voting Machine (EVM)",
+            "Example of political campaign: Public meetings and rallies",
+            "Example of reserved seats: Constituencies reserved for SC/ST candidates",
+            "Example of election supervision: Election observers monitoring polling stations"
+        ],
+        "formulas": [
+            "Democratic Election → Election where people freely choose representatives",
+            "Political Competition → Contest among parties and candidates to win elections",
+            "Constituency → Geographic area represented by an elected member",
+            "Electoral Roll → Official list of eligible voters in a constituency",
+            "By-election → Election held to fill a vacant legislative seat",
+            "Voter Turnout → Percentage of registered voters who actually vote"
+        ],
+        "exam_tips": [
+            "Remember that elections must be conducted regularly in a democracy",
+            "Universal adult franchise is a key feature of democratic elections",
+            "Election symbols help illiterate voters identify parties",
+            "Reserved constituencies ensure fair representation of weaker sections",
+            "Election Commission ensures fairness and transparency in elections"
+        ]
+    }
+}

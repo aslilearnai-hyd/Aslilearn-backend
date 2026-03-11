@@ -1,0 +1,401 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 13: Our Environment",
+    "generated_at": "2026-03-11T01:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why energy flow in ecosystems is unidirectional and non-cyclic, unlike nutrient cycling. Relate this to the second law of thermodynamics.",
+            "answer": "Energy enters as sunlight and is progressively lost as heat at each trophic level due to inefficient conversions (second law: entropy increases). Nutrients are recycled via decomposers without net loss. Energy cannot be recycled as it degrades to unusable heat.",
+            "answer_outline": [
+                "Unidirectional loss to heat",
+                "Second law of thermodynamics",
+                "Contrast with cyclic nutrients"
+            ],
+            "key_concepts": [
+                "energy flow",
+                "thermodynamics",
+                "nutrient cycling"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 2,
+            "question": "If producers in an ecosystem capture 1,00,000 J of solar energy, calculate the energy theoretically available at the level of tertiary consumers in a five-step food chain. Explain why such long food chains are rare in nature.",
+            "answer": "T1 (producers): 1,00,000 J; T2: 10,000 J; T3: 1,000 J; T4: 100 J; T5 (tertiary): 10 J. Long chains are rare because energy becomes too low to sustain viable populations at higher levels.",
+            "answer_outline": [
+                "Stepwise 10% calculation",
+                "Only 10 J at T5",
+                "Insufficient energy for population"
+            ],
+            "key_concepts": [
+                "10% law application",
+                "trophic level limitation"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why can the pyramid of numbers be inverted in some ecosystems while the pyramid of energy cannot? Give a specific example and explain the underlying reason.",
+            "answer": "Pyramid of numbers can invert when one large producer supports many small consumers (e.g., a single tree supporting thousands of insects). Energy pyramid remains upright due to consistent 90% loss at each level regardless of organism size.",
+            "answer_outline": [
+                "Size/number difference",
+                "Tree-insect example",
+                "Energy loss independent of size"
+            ],
+            "key_concepts": [
+                "inverted pyramid of numbers",
+                "energy pyramid upright"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the mechanism of biomagnification of mercury in aquatic food chains and why it poses a greater risk to human health than direct exposure to mercury in water.",
+            "answer": "Mercury enters water, gets methylated by bacteria, absorbed by phytoplankton, then magnified in zooplankton → small fish → large predatory fish. Humans eating large fish accumulate high levels in fat tissues, causing neurological damage (Minamata disease).",
+            "answer_outline": [
+                "Methylation and uptake",
+                "Stepwise magnification",
+                "Human consumption of top predators"
+            ],
+            "key_concepts": [
+                "biomagnification mercury",
+                "aquatic chain"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the catalytic cycle by which a single chlorine atom from CFCs can destroy thousands of ozone molecules. Write the key reactions involved.",
+            "answer": "Cl• + O₃ → ClO• + O₂; ClO• + O → Cl• + O₂. Chlorine is regenerated, acting as a catalyst. One Cl atom can destroy ~100,000 O₃ molecules before being removed.",
+            "answer_outline": [
+                "Cl + O₃ → ClO + O₂",
+                "ClO + O → Cl + O₂",
+                "Catalytic regeneration"
+            ],
+            "key_concepts": [
+                "ozone depletion cycle",
+                "chlorine catalysis"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does the Antarctic ozone hole form predominantly in spring (September–November) and not during winter? Explain the role of polar stratospheric clouds (PSCs).",
+            "answer": "Winter cold forms PSCs that convert reservoir Cl compounds (HCl, ClONO₂) into active Cl₂. Spring sunlight photolyses Cl₂ into Cl radicals, triggering massive depletion. Winter lacks sunlight for radical formation.",
+            "answer_outline": [
+                "PSCs in winter cold",
+                "Cl activation on surfaces",
+                "Spring UV release"
+            ],
+            "key_concepts": [
+                "Antarctic ozone hole timing",
+                "PSCs role"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why introducing a non-native predator species can cause rapid collapse of native food webs even if the invader does not directly compete for resources.",
+            "answer": "Non-native predator may lack natural enemies and over-prey on native species without co-evolved defenses → decimates prey populations → trophic cascade affecting producers, competitors, and other predators → biodiversity loss and ecosystem instability.",
+            "answer_outline": [
+                "Over-predation on natives",
+                "Lack of natural controls",
+                "Trophic cascade"
+            ],
+            "key_concepts": [
+                "invasive predator impact",
+                "trophic cascade"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How does eutrophication caused by agricultural runoff disrupt aquatic ecosystems? Describe the sequence of events leading to fish kills.",
+            "answer": "Excess nitrates/phosphates → algal bloom → algae die → bacterial decomposition consumes oxygen → hypoxic/anoxic conditions → fish and other aerobes die → dead zones form.",
+            "answer_outline": [
+                "Nutrient enrichment → bloom",
+                "Decomposition → oxygen depletion",
+                "Fish mortality"
+            ],
+            "key_concepts": [
+                "eutrophication process",
+                "dead zones"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is reliance on single-use plastics ecologically more damaging than paper or cloth alternatives in the long term, even though paper is biodegradable?",
+            "answer": "Plastics persist for centuries, fragment into microplastics, enter food chains, cause entanglement/ingestion deaths. Paper degrades quickly but production causes deforestation and higher energy/water use; cloth is reusable → lower overall impact.",
+            "answer_outline": [
+                "Persistence and microplastics",
+                "Wildlife harm vs paper production",
+                "Reusable advantage"
+            ],
+            "key_concepts": [
+                "plastic vs alternatives",
+                "long-term impact"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why removing decomposers from an ecosystem would eventually cause producers to decline even if sunlight and nutrients are available initially.",
+            "answer": "Decomposers recycle nutrients from dead matter back to soil. Without them, nutrients remain locked in dead biomass → producers cannot access sufficient N, P, etc. → reduced growth → collapse of entire food web.",
+            "answer_outline": [
+                "Locked nutrients",
+                "No recycling",
+                "Producer starvation"
+            ],
+            "key_concepts": [
+                "decomposers essential",
+                "nutrient lock-up"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 11,
+            "question": "How does the 10% law explain why ecosystems with more trophic levels tend to have lower total biomass at higher levels even when primary production is high?",
+            "answer": "Only ~10% energy transfers upward → cumulative losses mean higher trophic levels support progressively less biomass. High primary production increases base biomass but cannot compensate for exponential decline at top levels.",
+            "answer_outline": [
+                "Cumulative 10% transfers",
+                "Exponential biomass decline",
+                "Base size limitation"
+            ],
+            "key_concepts": [
+                "biomass distribution",
+                "10% law implication"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why did the Montreal Protocol succeed in reducing ozone depletion where many other environmental agreements have struggled? Analyze key factors.",
+            "answer": "Clear scientific evidence linking CFCs to ozone loss, feasible alternatives (HCFCs, HFCs), strong industry cooperation, universal participation, binding phase-out targets, and financial aid to developing countries enabled success.",
+            "answer_outline": [
+                "Scientific consensus",
+                "Alternatives and binding targets",
+                "Global cooperation"
+            ],
+            "key_concepts": [
+                "Montreal Protocol success factors"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how excessive pesticide use can lead to the emergence of pesticide-resistant pests and secondary pest outbreaks.",
+            "answer": "Pesticides kill susceptible individuals → resistant survivors breed → resistant population dominates. Killing natural predators/parasites of pests removes biological control → secondary pests increase unchecked.",
+            "answer_outline": [
+                "Selection for resistance",
+                "Loss of natural enemies",
+                "Secondary outbreak"
+            ],
+            "key_concepts": [
+                "pesticide resistance",
+                "biological control loss"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are food webs generally more resilient to species loss than simple food chains? Illustrate with a hypothetical scenario.",
+            "answer": "Webs have multiple pathways; loss of one species allows energy rerouting through alternatives. In chains, loss of a key link (e.g., primary consumer) collapses higher levels. Scenario: remove one herbivore in a web → omnivores shift diet; in chain → carnivores starve.",
+            "answer_outline": [
+                "Multiple vs single pathways",
+                "Rerouting vs collapse",
+                "Hypothetical illustration"
+            ],
+            "key_concepts": [
+                "food web resilience"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How does biomagnification of persistent organic pollutants (POPs) explain why breastfeeding infants in industrialized regions can have higher toxin levels than their mothers?",
+            "answer": "POPs (e.g., PCBs, DDT) are fat-soluble and stored in maternal adipose tissue. During lactation, mobilized fats transfer concentrated toxins to breast milk → infants receive higher doses per body weight than mothers accumulated over years.",
+            "answer_outline": [
+                "Fat-soluble storage",
+                "Mobilization in lactation",
+                "Higher infant exposure"
+            ],
+            "key_concepts": [
+                "POPs biomagnification",
+                "breast milk transfer"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why increased UV radiation due to ozone depletion is likely to have a greater long-term impact on phytoplankton than on terrestrial plants.",
+            "answer": "Phytoplankton float near surface → direct UV exposure damages DNA/photosynthetic pigments → reduced primary production. Terrestrial plants have protective cuticles, pigments, and repair mechanisms; oceans rely heavily on phytoplankton base.",
+            "answer_outline": [
+                "Surface exposure in water",
+                "Lack of protection",
+                "Base of aquatic chain"
+            ],
+            "key_concepts": [
+                "UV impact phytoplankton"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does the inverted pyramid of biomass occur in some aquatic ecosystems but not in terrestrial ones? Discuss implications for ecosystem stability.",
+            "answer": "Phytoplankton have rapid turnover/high productivity but low standing biomass; zooplankton consume them quickly. Terrestrial producers (trees) have high biomass. Aquatic systems are fragile—small producer depletion quickly affects consumers.",
+            "answer_outline": [
+                "Rapid turnover low biomass",
+                "Contrast with terrestrial",
+                "Fragility implication"
+            ],
+            "key_concepts": [
+                "inverted biomass aquatic"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Analyze why landfilling mixed municipal waste is environmentally inferior to segregated waste management followed by composting and recycling.",
+            "answer": "Mixed waste prevents decomposition of organics → methane production, leachate toxins. Segregation allows composting (nutrient return) and recycling (resource conservation) → reduces greenhouse gases, pollution, and conserves landfill space.",
+            "answer_outline": [
+                "Methane and leachate in mixed",
+                "Compost + recycle benefits",
+                "Overall reduction"
+            ],
+            "key_concepts": [
+                "landfill vs segregated management"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 19,
+            "question": "How can overexploitation of a keystone species lead to ecosystem collapse even if many other species remain? Give an example.",
+            "answer": "Keystone species disproportionately influence structure (e.g., sea otter controls sea urchins → kelp forests). Removal → urchin explosion → kelp deforestation → loss of habitat for many species → cascade collapse despite other species present.",
+            "answer_outline": [
+                "Disproportionate influence",
+                "Trophic cascade example",
+                "Habitat loss"
+            ],
+            "key_concepts": [
+                "keystone species",
+                "cascade collapse"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why banning CFCs alone was insufficient to fully protect the ozone layer and what additional factors are needed for complete recovery.",
+            "answer": "Existing CFCs persist for decades–centuries; illegal production, substitutes (HCFCs still deplete), and natural variability delay recovery. Full recovery needs continued monitoring, elimination of all ODS, and addressing climate change interactions.",
+            "answer_outline": [
+                "Long atmospheric lifetime",
+                "Substitutes and illegal use",
+                "Need for comprehensive action"
+            ],
+            "key_concepts": [
+                "ozone recovery challenges"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is reducing consumption at the source (reduce → reuse → recycle) considered the most effective strategy in waste management hierarchy?",
+            "answer": "Prevents resource extraction, energy use, and pollution generation at every stage. Reuse avoids processing; recycling still requires energy. Reduction minimizes overall environmental footprint most efficiently.",
+            "answer_outline": [
+                "Prevents upstream damage",
+                "Hierarchy effectiveness",
+                "Lowest footprint"
+            ],
+            "key_concepts": [
+                "waste hierarchy",
+                "source reduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 22,
+            "question": "How does climate change interact with ozone depletion to potentially worsen UV exposure in some regions?",
+            "answer": "Cooler stratosphere from greenhouse gases slows ozone recovery; altered circulation changes ozone distribution. Stronger polar vortex prolongs Antarctic hole; increased cloud cover in some areas reduces natural UV protection.",
+            "answer_outline": [
+                "Stratospheric cooling",
+                "Circulation changes",
+                "Prolonged depletion"
+            ],
+            "key_concepts": [
+                "climate-ozone interaction"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why ecosystems with high biodiversity are generally more resistant to invasive species than those with low biodiversity.",
+            "answer": "High diversity → more competition, predation, and niche occupancy → invaders face resistance. Low diversity → empty niches, fewer competitors/predators → easier establishment and spread of invasives.",
+            "answer_outline": [
+                "Competition and predation",
+                "Niche occupancy",
+                "Resistance vs vulnerability"
+            ],
+            "key_concepts": [
+                "biodiversity and invasion resistance"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why do persistent organic pollutants (POPs) pose a transboundary and intergenerational environmental problem?",
+            "answer": "POPs are long-lived, volatile, and lipid-soluble → travel via air/water currents across borders. Accumulate in food chains, pass to offspring via placenta/breast milk → affect future generations even after emission stops.",
+            "answer_outline": [
+                "Long-range transport",
+                "Bioaccumulation across generations",
+                "Transboundary nature"
+            ],
+            "key_concepts": [
+                "POPs characteristics",
+                "intergenerational issue"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Integrate the concepts of energy flow, biomagnification, and waste disposal to argue why preventing pollution at the source is environmentally superior to end-of-pipe treatment.",
+            "answer": "Preventing entry stops biomagnification before it begins, preserves energy flow by protecting trophic levels, avoids waste treatment energy costs and residual pollution. End-of-pipe only captures fraction → allows leakage and downstream damage.",
+            "answer_outline": [
+                "Stops magnification early",
+                "Protects trophic integrity",
+                "Avoids treatment inefficiency"
+            ],
+            "key_concepts": [
+                "source prevention superiority",
+                "integrated impact"
+            ],
+            "marks": 3,
+            "source_section": "Sections 13.2, 13.3, 13.5"
+        }
+    ]
+}

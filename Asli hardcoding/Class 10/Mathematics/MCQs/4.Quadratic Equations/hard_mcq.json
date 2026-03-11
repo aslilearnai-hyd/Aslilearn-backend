@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-02-27T20:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If the discriminant of a quadratic equation is negative, the roots are",
+            "options": {
+                "A": "Real and equal",
+                "B": "Real and distinct",
+                "C": "Imaginary",
+                "D": "Zero"
+            },
+            "correct_answer": "C",
+            "explanation": "D < 0 gives no real roots.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Which quadratic equation has equal roots?",
+            "options": {
+                "A": "x² − 4 = 0",
+                "B": "x² = 0",
+                "C": "x² + 1 = 0",
+                "D": "x² − 1 = 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Repeated root x=0.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "The graph of y = ax² opens upward when",
+            "options": {
+                "A": "a < 0",
+                "B": "a = 0",
+                "C": "a > 0",
+                "D": "a = 1 only"
+            },
+            "correct_answer": "C",
+            "explanation": "Positive a opens upward.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which method always gives exact roots?",
+            "options": {
+                "A": "Graphical",
+                "B": "Factorisation",
+                "C": "Quadratic formula",
+                "D": "Trial"
+            },
+            "correct_answer": "C",
+            "explanation": "Formula works for all cases.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "The roots of x² − 5x + 6 = 0 are",
+            "options": {
+                "A": "1,6",
+                "B": "2,3",
+                "C": "−2,−3",
+                "D": "0,6"
+            },
+            "correct_answer": "B",
+            "explanation": "Factorisation.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which equation has no real roots?",
+            "options": {
+                "A": "x² − 9 = 0",
+                "B": "x² + 4 = 0",
+                "C": "x² = 0",
+                "D": "x² − 1 = 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Always positive.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 7,
+            "question": "If discriminant is zero, roots are",
+            "options": {
+                "A": "Distinct",
+                "B": "Imaginary",
+                "C": "Equal",
+                "D": "Unequal"
+            },
+            "correct_answer": "C",
+            "explanation": "D=0.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Roots of quadratic equation are points where parabola cuts the",
+            "options": {
+                "A": "y-axis",
+                "B": "origin",
+                "C": "x-axis",
+                "D": "any axis"
+            },
+            "correct_answer": "C",
+            "explanation": "x-intercepts.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which coefficient decides the direction of opening of parabola?",
+            "options": {
+                "A": "a",
+                "B": "b",
+                "C": "c",
+                "D": "D"
+            },
+            "correct_answer": "A",
+            "explanation": "Sign of a.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Sum of roots of ax² + bx + c = 0 is",
+            "options": {
+                "A": "c/a",
+                "B": "−b/a",
+                "C": "b/a",
+                "D": "−c/a"
+            },
+            "correct_answer": "B",
+            "explanation": "Sum = −b/a.",
+            "difficulty": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Product of roots of quadratic equation is",
+            "options": {
+                "A": "b/a",
+                "B": "−b/a",
+                "C": "c/a",
+                "D": "−c/a"
+            },
+            "correct_answer": "C",
+            "explanation": "Product = c/a.",
+            "difficulty": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which quadratic equation has vertex at x = 0?",
+            "options": {
+                "A": "x² + 2x",
+                "B": "x² − 4",
+                "C": "2x² + x",
+                "D": "x² + x + 1"
+            },
+            "correct_answer": "B",
+            "explanation": "No x term.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "If a < 0, the parabola opens",
+            "options": {
+                "A": "Upward",
+                "B": "Downward",
+                "C": "Sideways",
+                "D": "No direction"
+            },
+            "correct_answer": "B",
+            "explanation": "Negative a opens downward.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which equation represents area problems usually?",
+            "options": {
+                "A": "Linear",
+                "B": "Quadratic",
+                "C": "Cubic",
+                "D": "Constant"
+            },
+            "correct_answer": "B",
+            "explanation": "Area gives quadratic.",
+            "difficulty": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 15,
+            "question": "If discriminant is positive, roots are",
+            "options": {
+                "A": "Equal",
+                "B": "Imaginary",
+                "C": "Real and distinct",
+                "D": "Zero"
+            },
+            "correct_answer": "C",
+            "explanation": "D>0.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Quadratic equation always has at most how many roots?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "Degree 2.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which method is best when factorisation is not possible?",
+            "options": {
+                "A": "Graphical",
+                "B": "Quadratic formula",
+                "C": "Trial",
+                "D": "Factorisation"
+            },
+            "correct_answer": "B",
+            "explanation": "Formula works always.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which equation has imaginary roots?",
+            "options": {
+                "A": "x² − 1 = 0",
+                "B": "x² + 9 = 0",
+                "C": "x² − 9 = 0",
+                "D": "x² = 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Negative discriminant.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "The axis of symmetry of parabola y = ax² + bx + c is",
+            "options": {
+                "A": "x = −b/2a",
+                "B": "y = −b/2a",
+                "C": "x = b/2a",
+                "D": "y = b/2a"
+            },
+            "correct_answer": "A",
+            "explanation": "Formula for axis.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Quadratic equation represents which curve?",
+            "options": {
+                "A": "Line",
+                "B": "Circle",
+                "C": "Parabola",
+                "D": "Ellipse"
+            },
+            "correct_answer": "C",
+            "explanation": "Graph is parabola.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "If roots are equal, discriminant equals",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "One"
+            },
+            "correct_answer": "C",
+            "explanation": "D=0.",
+            "difficulty": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which coefficient affects axis of symmetry?",
+            "options": {
+                "A": "a only",
+                "B": "b only",
+                "C": "c only",
+                "D": "a and b"
+            },
+            "correct_answer": "D",
+            "explanation": "Axis = −b/2a.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Roots of quadratic equation represent",
+            "options": {
+                "A": "y-intercepts",
+                "B": "x-intercepts",
+                "C": "Slopes",
+                "D": "Vertices"
+            },
+            "correct_answer": "B",
+            "explanation": "Roots are x-intercepts.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which equation has maximum roots?",
+            "options": {
+                "A": "Linear",
+                "B": "Quadratic",
+                "C": "Cubic",
+                "D": "Constant"
+            },
+            "correct_answer": "C",
+            "explanation": "Higher degree → more roots possible.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Quadratic equations are equations of degree",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Degree 2.",
+            "difficulty": "hard",
+            "source_section": "Section 4.2"
+        }
+    ]
+}

@@ -1,0 +1,366 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-04T13:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define fractals and explain the concept of self-similarity.",
+            "answer": "Fractals are geometric figures that display self-similarity, meaning the same pattern appears repeatedly at smaller scales.",
+            "answer_outline": [
+                "Definition of fractals",
+                "Self-similarity concept"
+            ],
+            "key_concepts": [
+                "fractals",
+                "self similarity"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how the Sierpinski Carpet is constructed.",
+            "answer": "A square is divided into 9 smaller squares and the central square is removed. This process is repeated for the remaining squares.",
+            "answer_outline": [
+                "Divide square",
+                "Remove central square",
+                "Repeat process"
+            ],
+            "key_concepts": [
+                "Sierpinski Carpet"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the construction of the Sierpinski Triangle.",
+            "answer": "An equilateral triangle is divided into four smaller triangles by joining the midpoints of its sides and removing the central triangle.",
+            "answer_outline": [
+                "Triangle division",
+                "Remove central triangle"
+            ],
+            "key_concepts": [
+                "Sierpinski Triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the steps involved in constructing the Koch Snowflake.",
+            "answer": "Start with an equilateral triangle, divide each side into three equal parts and construct a triangular bump on the middle segment.",
+            "answer_outline": [
+                "Initial triangle",
+                "Divide sides",
+                "Add triangular bump"
+            ],
+            "key_concepts": [
+                "Koch Snowflake"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why fractals are important in mathematics and nature.",
+            "answer": "Fractals describe complex natural patterns and help model structures like clouds, mountains and plants.",
+            "answer_outline": [
+                "Mathematical importance",
+                "Natural examples"
+            ],
+            "key_concepts": [
+                "fractal patterns"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Define faces, edges and vertices with an example.",
+            "answer": "Faces are flat surfaces, edges are line segments joining faces and vertices are points where edges meet.",
+            "answer_outline": [
+                "Faces definition",
+                "Edges definition",
+                "Vertices definition"
+            ],
+            "key_concepts": [
+                "faces",
+                "edges",
+                "vertices"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the structure of a prism.",
+            "answer": "A prism has two identical polygon bases connected by parallelogram faces.",
+            "answer_outline": [
+                "Definition",
+                "Structure"
+            ],
+            "key_concepts": [
+                "prism"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the structure of a pyramid.",
+            "answer": "A pyramid has a polygon base and triangular faces meeting at a single vertex.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "pyramid"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a net of a solid? Give an example.",
+            "answer": "A net is a flat pattern that can be folded to form a three-dimensional solid.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "net of solid"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how to construct a cube using a net.",
+            "answer": "Six connected squares are drawn and folded along edges to form a cube.",
+            "answer_outline": [
+                "Draw squares",
+                "Fold edges"
+            ],
+            "key_concepts": [
+                "cube net"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of projection.",
+            "answer": "Projection is the image of a three-dimensional object on a two-dimensional plane.",
+            "answer_outline": [
+                "Definition",
+                "Purpose"
+            ],
+            "key_concepts": [
+                "projection"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain front, top and side views of an object.",
+            "answer": "Front view shows the object from the front, top view from above and side view from the side.",
+            "answer_outline": [
+                "Front view",
+                "Top view",
+                "Side view"
+            ],
+            "key_concepts": [
+                "orthographic views"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the relationship between shadows and projections.",
+            "answer": "A shadow formed by light falling on an object represents a projection of that object onto a surface.",
+            "answer_outline": [
+                "Light source",
+                "Shadow formation"
+            ],
+            "key_concepts": [
+                "shadow",
+                "projection"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why projections of parallel lines remain parallel.",
+            "answer": "Projection preserves the direction of lines, so parallel lines remain parallel after projection.",
+            "answer_outline": [
+                "Parallel lines",
+                "Projection effect"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the shortest path concept on a cube surface.",
+            "answer": "By unfolding the cube into a net, the shortest surface path becomes a straight line on the net.",
+            "answer_outline": [
+                "Cube net",
+                "Straight line path"
+            ],
+            "key_concepts": [
+                "shortest path"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how projections help represent solids in engineering drawings.",
+            "answer": "Engineers use front, top and side views to represent objects accurately.",
+            "answer_outline": [
+                "Multiple views",
+                "Engineering use"
+            ],
+            "key_concepts": [
+                "engineering drawing"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Define isometric projection.",
+            "answer": "Isometric projection is a method of representing a three-dimensional object on a two-dimensional plane using equal angles between axes.",
+            "answer_outline": [
+                "Definition",
+                "Axes concept"
+            ],
+            "key_concepts": [
+                "isometric projection"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the purpose of isometric grids.",
+            "answer": "Isometric grids help draw three-dimensional figures accurately with equal spacing along three axes.",
+            "answer_outline": [
+                "Grid structure",
+                "Drawing purpose"
+            ],
+            "key_concepts": [
+                "isometric grid"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why cube stacking problems help understand projections.",
+            "answer": "Observing stacked cubes from different directions helps understand how projections represent three-dimensional structures.",
+            "answer_outline": [
+                "Cube stacking",
+                "Projection views"
+            ],
+            "key_concepts": [
+                "cube projection"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how shadows change when the light source moves farther away.",
+            "answer": "As the light source moves farther away, the shadow becomes closer to the object's projection.",
+            "answer_outline": [
+                "Distance effect",
+                "Shadow change"
+            ],
+            "key_concepts": [
+                "shadow geometry"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why projections are useful in geometry.",
+            "answer": "Projections help understand shapes and spatial relationships of objects.",
+            "answer_outline": [
+                "Spatial understanding",
+                "Representation"
+            ],
+            "key_concepts": [
+                "visual geometry"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the relationship between nets and solids.",
+            "answer": "A net is a two-dimensional layout that folds to form a three-dimensional solid.",
+            "answer_outline": [
+                "Flat layout",
+                "Folding concept"
+            ],
+            "key_concepts": [
+                "nets"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how fractals demonstrate repeating patterns.",
+            "answer": "Fractals repeat the same pattern at smaller scales, creating complex structures.",
+            "answer_outline": [
+                "Repeating pattern",
+                "Scaling concept"
+            ],
+            "key_concepts": [
+                "fractal repetition"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how engineers use projections to design objects.",
+            "answer": "Engineers use projections to communicate the dimensions and shape of objects accurately.",
+            "answer_outline": [
+                "Design communication",
+                "Technical drawing"
+            ],
+            "key_concepts": [
+                "engineering projections"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how isometric drawing helps visualize three-dimensional structures.",
+            "answer": "Isometric drawing provides a clear representation of three-dimensional objects on a flat surface.",
+            "answer_outline": [
+                "3D representation",
+                "Visualization"
+            ],
+            "key_concepts": [
+                "isometric drawing"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        }
+    ]
+}

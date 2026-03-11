@@ -1,0 +1,191 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Carbon and its Compounds",
+    "difficulty": "Hard",
+    "source_pdf": "carbon_compounds_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Orbital Geometry & Bond Angles",
+            "objective": "Analyze the spatial arrangement of carbon bonds in different allotropes",
+            "materials": [
+                "Protractor",
+                "3D Molecular models",
+                "Notebook"
+            ],
+            "steps": [
+                "Build a tetrahedral model of Methane ($CH_4$) and measure the bond angles",
+                "Compare this to the planar hexagonal structure of Graphite",
+                "Research why Diamond has a bond angle of $109.5^\circ$ while Graphite's is $120^\circ$",
+                "Explain the relationship between bond angle, hybridization (sp3 vs sp2), and physical hardness"
+            ],
+            "learning_outcome": "Evaluates how molecular geometry dictates the extreme differences in physical properties of carbon allotropes",
+            "evaluation": "Technical explanation of bond angles and their impact on structural rigidity (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "IUPAC Nomenclature of Complex Isomers",
+            "objective": "Master naming rules for branched and functionalized hydrocarbons",
+            "materials": [
+                "IUPAC Rulebook/NCERT Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw all structural isomers for Hexane ($C_6H_{14}$)",
+                "Apply IUPAC rules to name each (e.g., 2-methylpentane, 2,3-dimethylbutane)",
+                "Identify the 'longest carbon chain' and the lowest locant rule for substituents",
+                "Draw a molecule containing both a ketone group and a methyl branch and name it correctly"
+            ],
+            "learning_outcome": "Demonstrates precision in identifying and naming structural isomers of higher alkanes",
+            "evaluation": "Accuracy of the 5 structural isomers of hexane and their corresponding IUPAC names (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Mechanism of Addition Reactions",
+            "objective": "Investigate the industrial hydrogenation of vegetable oils",
+            "materials": [
+                "Research paper on Nickel/Palladium catalysts",
+                "Chemical equation of Ethene to Ethane conversion"
+            ],
+            "steps": [
+                "Study the reaction: $CH_2=CH_2 + H_2 \xrightarrow{Ni/Pd} CH_3-CH_3$",
+                "Explain the role of the catalyst in breaking the $\pi$-bond of the alkene",
+                "Discuss the health implications of 'trans-fats' produced during partial hydrogenation of oils",
+                "Calculate the mass of Hydrogen required to saturate 1 mole of Ethene"
+            ],
+            "learning_outcome": "Analyzes the chemical process of converting liquid unsaturated fats into solid saturated fats",
+            "evaluation": "Detailed description of the catalytic mechanism and health-related research findings (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Esterification Equilibrium",
+            "objective": "Understand the reversible nature of ester formation and yield optimization",
+            "materials": [
+                "Glacial Ethanoic acid",
+                "Ethanol",
+                "Conc. $H_2SO_4$",
+                "Sodium Carbonate solution"
+            ],
+            "steps": [
+                "Perform the esterification reaction and isolate the ester using a separating funnel",
+                "Calculate the theoretical yield of Ethyl Acetate from 5g of Ethanol",
+                "Research why concentrated $H_2SO_4$ acts as both a catalyst and a dehydrating agent",
+                "Apply Le Chatelier's Principle to explain how removing water increases ester yield"
+            ],
+            "learning_outcome": "Synthesizes knowledge of chemical equilibrium and stoichiometry in organic synthesis",
+            "evaluation": "Correct calculation of theoretical yield and explanation of the dehydrating agent's role (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Saponification: Quantitative Analysis",
+            "objective": "Determine the saponification value of different oils",
+            "materials": [
+                "Coconut oil",
+                "Sunflower oil",
+                "Potassium Hydroxide ($KOH$)",
+                "Phenolphthalein",
+                "Standard HCl for back-titration"
+            ],
+            "steps": [
+                "Boil a known mass of oil with an excess of alcoholic $KOH$",
+                "Titrate the unreacted $KOH$ against standard $HCl$",
+                "Calculate the amount of $KOH$ consumed by the oil",
+                "Relate the saponification value to the average chain length of fatty acids in the oil"
+            ],
+            "learning_outcome": "Applies quantitative titration to determine the chemical characteristics of fats",
+            "evaluation": "Precision of titration data and calculation of the saponification value (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Combustion Analysis of Hydrocarbons",
+            "objective": "Determine the empirical formula of an unknown fuel",
+            "materials": [
+                "Data set: Mass of $CO_2$ and $H_2O$ produced by burning 1g of fuel",
+                "Calculator"
+            ],
+            "steps": [
+                "Use the mass of $CO_2$ to find the mass of Carbon in the sample",
+                "Use the mass of $H_2O$ to find the mass of Hydrogen",
+                "Calculate the mole ratio of C to H",
+                "Determine if the fuel is an alkane, alkene, or alkyne based on the ratio"
+            ],
+            "learning_outcome": "Uses quantitative combustion data to identify the class of organic compounds",
+            "evaluation": "Mathematical derivation of the empirical formula from the provided data (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Properties of Denatured Spirit",
+            "objective": "Investigate the chemical additives used to prevent ethanol misuse",
+            "materials": [
+                "Ethanol",
+                "Methanol (representation)",
+                "Copper Sulphate",
+                "Pyridine (research based)"
+            ],
+            "steps": [
+                "Research why Methanol is highly toxic to the human optic nerve",
+                "Explain why Copper Sulphate is added to industrial ethanol (visual warning)",
+                "Identify the chemical formula of Pyridine and why it is added to 'denature' the spirit",
+                "Draft a warning label explaining the chemical dangers of consuming industrial alcohol"
+            ],
+            "learning_outcome": "Evaluates the social and biological implications of industrial chemical additives",
+            "evaluation": "Comprehensive report on the toxicity of methanol and the purpose of denaturing (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Structure-Activity Relationship of Micelles",
+            "objective": "Analyze the Critical Micelle Concentration (CMC)",
+            "materials": [
+                "Soap solution",
+                "Distilled water",
+                "Laser pointer",
+                "Graduated beaker"
+            ],
+            "steps": [
+                "Slowly add soap to distilled water while passing a laser beam through it",
+                "Identify the exact concentration where the Tyndall effect becomes visible (indicating micelle formation)",
+                "Research how temperature (Krafft point) affects this concentration",
+                "Explain the thermodynamics of why the hydrophobic tails cluster together"
+            ],
+            "learning_outcome": "Understands the physical chemistry behind the aggregation of surfactant molecules",
+            "evaluation": "Explanation of the Tyndall effect in relation to CMC and entropy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Oxidizing Agents: Chromic Acid vs. Permanganate",
+            "objective": "Compare the efficiency of different agents in producing carboxylic acids",
+            "materials": [
+                "Propan-1-ol",
+                "Acidified $K_2Cr_2O_7$",
+                "Alkaline $KMnO_4$",
+                "Distillation setup"
+            ],
+            "steps": [
+                "Perform the oxidation of propanol with both agents in separate setups",
+                "Observe the color change from orange to green ($Cr^{6+} \rightarrow Cr^{3+}$)",
+                "Test the final product with $NaHCO_3$ to confirm acid formation",
+                "Research which agent is more selective for producing aldehydes vs. acids"
+            ],
+            "learning_outcome": "Differentiates between the strengths and color indicators of major oxidizing agents",
+            "evaluation": "Correct identification of oxidation states and product testing results (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Polymerization Research Project",
+            "objective": "Study the formation of Polythene and PVC from monomers",
+            "materials": [
+                "Samples of different plastics (labeled 1-7)",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw the structure of the Ethene monomer and its repeating unit in Polythene",
+                "Contrast this with Vinyl Chloride and its polymer PVC",
+                "Research the difference between Addition Polymerization and Condensation Polymerization",
+                "Categorize common household plastics based on their recycling codes and chemical structure"
+            ],
+            "learning_outcome": "Synthesizes the link between small organic monomers and large industrial polymers",
+            "evaluation": "Detailed structural diagrams of monomers and their corresponding polymers (10 marks)"
+        }
+    ]
+}

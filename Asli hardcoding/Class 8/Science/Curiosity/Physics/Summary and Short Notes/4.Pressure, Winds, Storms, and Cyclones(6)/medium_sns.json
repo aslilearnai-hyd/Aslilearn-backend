@@ -1,0 +1,34 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Pressure, Winds, Storms and Cyclones",
+  "difficulty": "Medium",
+  "source_pdf": "hecu106.pdf",
+  "short_notes": {
+    "key_points": [
+      "Pressure depends on the force applied and the area over which it acts",
+      "Atmospheric pressure is caused by the weight of the air above us",
+      "Air moves from regions of high pressure to low pressure creating winds",
+      "Heating of air causes it to rise and form low-pressure areas",
+      "Differences in temperature and pressure in the atmosphere lead to wind formation",
+      "Cyclones develop when warm moist air rises over warm ocean waters creating a low-pressure center"
+    ],
+    "examples": [
+      "Sharp nails penetrate wood easily due to high pressure on a small area",
+      "Wide tyres of tractors reduce pressure on the ground",
+      "Warm air rising over oceans can lead to cyclone formation",
+      "Barometers are used to measure atmospheric pressure"
+    ],
+    "formulas": [
+      "Pressure = Force / Area",
+      "SI unit of pressure = Pascal (Pa)",
+      "Wind movement: Air flows from high pressure region to low pressure region"
+    ],
+    "exam_tips": [
+      "Explain clearly how pressure changes with force and area",
+      "Understand the relationship between temperature, pressure and wind formation",
+      "Learn the conditions required for cyclone formation",
+      "Use diagrams when explaining cyclone structure and wind movement"
+    ]
+  }
+}

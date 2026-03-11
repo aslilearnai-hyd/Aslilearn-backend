@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-03-01T15:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a linear equation in two variables?",
+            "answer": "An equation of the form ax + by + c = 0.",
+            "key_points": [
+                "definition"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the graph of a linear equation?",
+            "answer": "A straight line.",
+            "key_points": [
+                "graph"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How many variables are there in a pair of linear equations?",
+            "answer": "Two variables.",
+            "key_points": [
+                "variables"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What does the solution of linear equations represent?",
+            "answer": "The point of intersection of two lines.",
+            "key_points": [
+                "solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What kind of lines have one solution?",
+            "answer": "Intersecting lines.",
+            "key_points": [
+                "unique solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What kind of lines have no solution?",
+            "answer": "Parallel lines.",
+            "key_points": [
+                "no solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What kind of lines have infinitely many solutions?",
+            "answer": "Coincident lines.",
+            "key_points": [
+                "infinite solutions"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a consistent pair of equations?",
+            "answer": "A pair having at least one solution.",
+            "key_points": [
+                "consistent"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an inconsistent pair of equations?",
+            "answer": "A pair having no solution.",
+            "key_points": [
+                "inconsistent"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which method uses graphs to solve equations?",
+            "answer": "Graphical method.",
+            "key_points": [
+                "method"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which method eliminates one variable?",
+            "answer": "Elimination method.",
+            "key_points": [
+                "method"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which method substitutes one variable?",
+            "answer": "Substitution method.",
+            "key_points": [
+                "method"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What type of solutions does graphical method give?",
+            "answer": "Approximate solutions.",
+            "key_points": [
+                "graphical"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What type of solutions do algebraic methods give?",
+            "answer": "Exact solutions.",
+            "key_points": [
+                "algebraic"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the degree of a linear equation?",
+            "answer": "One.",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How many equations are there in a pair?",
+            "answer": "Two equations.",
+            "key_points": [
+                "pair"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What does an ordered pair represent?",
+            "answer": "A solution of the equations.",
+            "key_points": [
+                "ordered pair"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the shape of parallel lines?",
+            "answer": "They never intersect.",
+            "key_points": [
+                "parallel"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is cross-multiplication method used for?",
+            "answer": "To solve linear equations quickly.",
+            "key_points": [
+                "method"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What does a common solution satisfy?",
+            "answer": "Both equations.",
+            "key_points": [
+                "solution"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the slope of parallel lines?",
+            "answer": "Same slope.",
+            "key_points": [
+                "slope"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the slope of intersecting lines?",
+            "answer": "Different slopes.",
+            "key_points": [
+                "slope"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What does graphical intersection indicate?",
+            "answer": "Solution of equations.",
+            "key_points": [
+                "intersection"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which method is easiest when coefficient is 1?",
+            "answer": "Substitution method.",
+            "key_points": [
+                "method choice"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Linear equations model what type of relationship?",
+            "answer": "Straight line relationship.",
+            "key_points": [
+                "application"
+            ],
+            "source_section": "3.1"
+        }
+    ]
+}

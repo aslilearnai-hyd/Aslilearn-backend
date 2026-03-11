@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 4: A Truly Beautiful Mind",
+    "generated_at": "2026-03-08T01:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how Ramanujan’s environment influenced his mathematical talent.",
+            "answer": "Despite limited resources, his curiosity and access to mathematics books nurtured his talent, showing that determination and passion can overcome environmental constraints.",
+            "key_concepts": ["environment", "influence", "talent"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Analyze the role of intuition in Ramanujan’s problem-solving.",
+            "answer": "Ramanujan relied on intuition rather than formal proofs, allowing him to discover novel formulas and patterns that others could not easily identify.",
+            "key_concepts": ["intuition", "problem-solving"],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "How did Ramanujan’s failures in other subjects affect his pursuit of mathematics?",
+            "answer": "His poor performance in non-mathematical subjects made him focus more on mathematics, deepening his skills and leading to extraordinary achievements.",
+            "key_concepts": ["academic performance", "focus"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Discuss the significance of Ramanujan’s self-study in his early learning.",
+            "answer": "Self-study allowed him to explore complex problems independently, develop original solutions, and strengthen his mathematical intuition.",
+            "key_concepts": ["self-study", "learning significance"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how mentorship shaped Ramanujan’s career.",
+            "answer": "Mentors like Professor Hardy provided guidance, opportunities, and recognition, helping Ramanujan publish his work and gain international fame.",
+            "key_concepts": ["mentorship", "career development"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why was Ramanujan’s talent considered extraordinary by his contemporaries?",
+            "answer": "He discovered complex mathematical results intuitively without formal training, demonstrating originality and brilliance beyond his peers.",
+            "key_concepts": ["extraordinary talent", "comparison"],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How did Ramanujan overcome challenges posed by a foreign environment?",
+            "answer": "He adapted to cultural differences, harsh climate, and isolation with resilience and focus on mathematics, maintaining productivity despite difficulties.",
+            "key_concepts": ["resilience", "adaptation"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Evaluate the role of books in developing Ramanujan’s mathematical intuition.",
+            "answer": "Books exposed him to advanced theorems and formulas, inspiring exploration and allowing him to develop intuition beyond his formal education.",
+            "key_concepts": ["books", "intuition"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "How did Ramanujan’s health issues influence his mathematical work?",
+            "answer": "Despite frequent illness, he remained committed to mathematics, showing determination and prioritizing intellectual pursuits over physical challenges.",
+            "key_concepts": ["health", "dedication"],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how Ramanujan’s correspondence with Hardy changed his life.",
+            "answer": "The letters led to mentorship, recognition, and an invitation to Cambridge, which provided him a platform to collaborate and gain global fame.",
+            "key_concepts": ["correspondence", "opportunity"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "How did Ramanujan’s cultural background shape his approach to mathematics?",
+            "answer": "His traditional Indian education emphasized mental calculation and intuition, which influenced his unique, non-formal approach to problem-solving.",
+            "key_concepts": ["cultural influence", "approach"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Analyze the balance between Ramanujan’s formal education and self-learning.",
+            "answer": "While formal education was limited, self-learning compensated by allowing him to explore complex problems freely, leading to original discoveries.",
+            "key_concepts": ["formal vs self-learning", "balance"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What makes Ramanujan’s discoveries still relevant today?",
+            "answer": "His formulas, patterns, and insights continue to inspire research in number theory and applied mathematics, showing timeless significance.",
+            "key_concepts": ["relevance", "impact"],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Discuss how Ramanujan’s passion contributed to overcoming obstacles.",
+            "answer": "His love for mathematics motivated him to persist through poverty, health problems, and cultural challenges, ensuring continuous progress.",
+            "key_concepts": ["passion", "overcoming obstacles"],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Evaluate the importance of collaboration in Ramanujan’s mathematical career.",
+            "answer": "Collaboration with Hardy allowed validation, expansion, and global recognition of his work, enhancing both his influence and learning.",
+            "key_concepts": ["collaboration", "career impact"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "How did Ramanujan’s early failures in exams shape his persistence?",
+            "answer": "Failures motivated him to focus on mathematics, cultivating resilience and self-confidence in his true strength.",
+            "key_concepts": ["failure", "persistence"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Analyze the connection between intuition and proof in Ramanujan’s work.",
+            "answer": "He relied on intuition to propose results, which collaborators like Hardy then formally proved, combining creativity with rigor.",
+            "key_concepts": ["intuition", "proof"],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the influence of mentors on Ramanujan’s international recognition.",
+            "answer": "Mentors identified his talent, encouraged communication with the international community, and facilitated publication in prestigious journals.",
+            "key_concepts": ["mentorship", "recognition"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "How did Ramanujan’s intuition lead to discoveries that surprised established mathematicians?",
+            "answer": "His unconventional approaches and ability to see patterns without formal derivations produced results that were novel and unexpected.",
+            "key_concepts": ["intuition", "novelty"],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss the significance of Ramanujan’s achievements given his limited resources.",
+            "answer": "Despite limited books, formal training, and financial support, his achievements demonstrate exceptional innate talent and dedication.",
+            "key_concepts": ["achievement", "resources limitation"],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how Ramanujan’s life exemplifies the role of passion in learning.",
+            "answer": "His continuous engagement with mathematics despite obstacles shows that passion drives perseverance, creativity, and mastery.",
+            "key_concepts": ["passion", "learning"],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "How did Ramanujan’s correspondence reflect his determination?",
+            "answer": "Writing to Hardy despite lack of recognition shows initiative, courage, and commitment to pursuing his mathematical ideas.",
+            "key_concepts": ["correspondence", "determination"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Analyze the influence of cultural and academic environments on Ramanujan’s discoveries.",
+            "answer": "Traditional Indian education fostered mental calculation and intuition, while Cambridge provided formal rigor and validation, complementing his abilities.",
+            "key_concepts": ["environment", "influence"],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "How did Ramanujan’s early interest in patterns shape his mathematical contributions?",
+            "answer": "His fascination with patterns led to discoveries in number theory, infinite series, and continued fractions, forming the basis of his originality.",
+            "key_concepts": ["patterns", "contribution"],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Evaluate Ramanujan’s life as an example of the power of self-belief.",
+            "answer": "Belief in his talent enabled him to pursue mathematics independently, reach out to mentors, and achieve extraordinary results despite challenges.",
+            "key_concepts": ["self-belief", "evaluation"],
+            "marks": 3,
+            "source_section": "4.4"
+        }
+    ]
+}

@@ -1,0 +1,162 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Number Systems",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand natural numbers, whole numbers, integers and rational numbers",
+        "Understand irrational numbers",
+        "Represent numbers on the number line",
+        "Understand square roots of numbers",
+        "Identify rational and irrational numbers",
+        "Understand decimal expansion of rational numbers"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Number Systems",
+            "topics_covered": [
+                "Natural numbers",
+                "Whole numbers",
+                "Integers",
+                "Examples of each type"
+            ],
+            "teaching_strategy": [
+                "Revision questioning",
+                "Board explanation",
+                "Number examples discussion"
+            ],
+            "student_activities": [
+                "List natural numbers up to 20",
+                "Identify integers from a given list"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick MCQ quiz"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Rational Numbers",
+            "topics_covered": [
+                "Definition of rational numbers",
+                "Fraction form p/q",
+                "Examples of rational numbers",
+                "Representation on number line"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation",
+                "Demonstration using number line"
+            ],
+            "student_activities": [
+                "Write five rational numbers",
+                "Represent 1/2 and 3/4 on number line"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Irrational Numbers",
+            "topics_covered": [
+                "Definition of irrational numbers",
+                "Examples: √2, √3, π",
+                "Difference between rational and irrational numbers"
+            ],
+            "teaching_strategy": [
+                "Concept explanation using decimals",
+                "Comparison table"
+            ],
+            "student_activities": [
+                "Identify irrational numbers from a list",
+                "Group discussion"
+            ],
+            "assessment": [
+                "True or False questions",
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Real Numbers",
+            "topics_covered": [
+                "Definition of real numbers",
+                "Classification of real numbers",
+                "Examples"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Board examples"
+            ],
+            "student_activities": [
+                "Draw classification diagram of real numbers",
+                "Write examples of rational and irrational numbers"
+            ],
+            "assessment": [
+                "Notebook activity check",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Square Roots",
+            "topics_covered": [
+                "Concept of square numbers",
+                "Square roots of numbers",
+                "Examples such as √4, √9, √16"
+            ],
+            "teaching_strategy": [
+                "Demonstration using multiplication",
+                "Example solving"
+            ],
+            "student_activities": [
+                "Find square roots of 25, 36 and 49",
+                "Write five perfect squares"
+            ],
+            "assessment": [
+                "Board problems",
+                "Short exercise"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Decimal Expansion and Chapter Revision",
+            "topics_covered": [
+                "Terminating decimals",
+                "Non-terminating repeating decimals",
+                "Examples of decimal expansion",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Flowchart explanation",
+                "Problem solving"
+            ],
+            "student_activities": [
+                "Convert fractions to decimals",
+                "Classify decimals into terminating and repeating"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Mathematics textbook",
+        "Number charts"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "MCQs",
+        "Class discussion"
+    ],
+    "teacher_tip": "Use number line diagrams and simple numerical examples so students clearly understand the difference between rational and irrational numbers."
+}

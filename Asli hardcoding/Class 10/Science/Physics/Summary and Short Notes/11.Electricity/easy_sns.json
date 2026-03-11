@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Electricity",
+    "difficulty": "Easy",
+    "source_pdf": "science_textbook_class10_chapter11.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric current is the flow of electric charge through a conductor",
+            "The SI unit of electric current is ampere (A)",
+            "Potential difference is the work done to move a unit charge between two points",
+            "Resistance is the opposition offered by a conductor to the flow of current",
+            "Ohm’s law states that voltage is directly proportional to current when temperature remains constant"
+        ],
+        "examples": [
+            "Electric current flows through a wire when it is connected to a battery",
+            "An electric bulb glows when current passes through its filament",
+            "A switch is used to open or close an electric circuit",
+            "Copper wire is commonly used in circuits because it is a good conductor"
+        ],
+        "formulas": [
+            "Electric current → I = Q/t",
+            "Ohm’s Law → V = IR",
+            "Electric power → P = VI",
+            "Electrical energy → E = P × t"
+        ],
+        "exam_tips": [
+            "Remember the basic definitions of current, potential difference and resistance",
+            "Learn the SI units of current, voltage and resistance",
+            "Practice simple numerical problems using Ohm’s law",
+            "Understand the basic components of an electric circuit"
+        ]
+    }
+}

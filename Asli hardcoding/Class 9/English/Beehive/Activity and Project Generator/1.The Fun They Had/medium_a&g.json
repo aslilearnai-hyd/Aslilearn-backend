@@ -1,0 +1,163 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "The Fun They Had",
+  "difficulty": "Medium",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Story Summary Writing",
+      "objective": "Develop the ability to summarize the story",
+      "materials": [
+        "Notebook",
+        "Textbook"
+      ],
+      "steps": [
+        "Read the story carefully",
+        "Identify the main events in the story",
+        "Write a short summary of the story in about 8–10 sentences"
+      ],
+      "learning_outcome": "Improves comprehension and summarizing skills",
+      "evaluation": "Clarity and completeness of summary (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Analysis",
+      "objective": "Understand the personalities of Margie and Tommy",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write about Margie’s feelings toward her school",
+        "Write about Tommy’s interest in the old book",
+        "Compare their attitudes toward learning"
+      ],
+      "learning_outcome": "Develops analytical thinking about characters",
+      "evaluation": "Quality of comparison (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Compare Schools Activity",
+      "objective": "Analyze differences between old schools and future schools",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Make two columns titled 'Old Schools' and 'Future Schools'",
+        "List at least five differences mentioned in the story",
+        "Explain which type of school you prefer"
+      ],
+      "learning_outcome": "Enhances comparison and reasoning skills",
+      "evaluation": "Correct points and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Vocabulary Builder",
+      "objective": "Expand vocabulary from the story",
+      "materials": [
+        "Notebook",
+        "Dictionary"
+      ],
+      "steps": [
+        "Find 8 new words from the story",
+        "Write their meanings",
+        "Use each word in a meaningful sentence"
+      ],
+      "learning_outcome": "Improves vocabulary and sentence construction",
+      "evaluation": "Correct meanings and sentences (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Technology in Education Discussion",
+      "objective": "Understand the role of technology in learning",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write how technology is used in Margie’s school",
+        "Discuss advantages of mechanical teachers",
+        "Discuss disadvantages compared to human teachers"
+      ],
+      "learning_outcome": "Develops critical thinking about technology in education",
+      "evaluation": "Balanced discussion (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Event Sequencing Activity",
+      "objective": "Understand the structure of the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "List important events from the story",
+        "Arrange them in chronological order",
+        "Write one sentence explaining each event"
+      ],
+      "learning_outcome": "Improves understanding of story flow",
+      "evaluation": "Correct sequence (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Dialogue Writing",
+      "objective": "Practice creative dialogue writing",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Imagine a conversation between Margie and a student from an old school",
+        "Write at least 8 lines of dialogue",
+        "Include questions about both types of schools"
+      ],
+      "learning_outcome": "Develops creative writing and dialogue skills",
+      "evaluation": "Creativity and relevance (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Theme Identification",
+      "objective": "Identify the central theme of the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Think about what the story teaches about education",
+        "Write the main theme in 4–5 sentences",
+        "Give examples from the story"
+      ],
+      "learning_outcome": "Understands deeper meaning of the story",
+      "evaluation": "Clarity of theme explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Future Classroom Design",
+      "objective": "Imagine improvements in future education",
+      "materials": [
+        "Drawing sheet",
+        "Pencil",
+        "Colors"
+      ],
+      "steps": [
+        "Design a future classroom using technology",
+        "Label the important parts such as screens, computers, or robots",
+        "Explain your design in 3–4 sentences"
+      ],
+      "learning_outcome": "Encourages imagination and design thinking",
+      "evaluation": "Creativity and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Opinion Writing",
+      "objective": "Express personal views about the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write your opinion about mechanical teachers",
+        "Explain whether you would prefer them or human teachers",
+        "Support your answer with reasons"
+      ],
+      "learning_outcome": "Develops opinion writing and reasoning",
+      "evaluation": "Logical explanation (10 marks)"
+    }
+  ]
+}

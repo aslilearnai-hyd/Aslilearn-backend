@@ -1,0 +1,711 @@
+{
+  "subject": "English",
+  "book": "Beehive",
+  "Content": "Letter Writing",
+  "class": "9",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Diary Entry as Margie",
+      "question": "Write a letter to your friend describing your excitement after discovering the old book about schools."
+    },
+    {
+      "id": 2,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Mechanical Teacher",
+      "question": "Write a letter to a cousin explaining your thoughts about learning from a mechanical teacher."
+    },
+    {
+      "id": 3,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Past vs Present School",
+      "question": "Write a letter to a friend comparing school in the past with school in the present."
+    },
+    {
+      "id": 4,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Tommy’s Discovery",
+      "question": "Write a letter as Tommy to a friend describing your excitement about the old book."
+    },
+    {
+      "id": 5,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Daily Routine",
+      "question": "Write a letter describing Margie’s school routine and your reflections on it."
+    },
+    {
+      "id": 6,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Evelyn Glennie’s Journey",
+      "question": "Write a letter to a friend describing how music influenced your life despite being deaf."
+    },
+    {
+      "id": 7,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Feeling Music",
+      "question": "Write a letter explaining how you sensed music through vibrations."
+    },
+    {
+      "id": 8,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Passion for Music",
+      "question": "Write a letter to your teacher explaining how music inspired you to pursue your dreams."
+    },
+    {
+      "id": 9,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Early Struggles",
+      "question": "Write a letter describing the difficulties you faced while learning music initially."
+    },
+    {
+      "id": 10,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Performance",
+      "question": "Write a letter describing your feelings performing for a large audience."
+    },
+    {
+      "id": 11,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Meeting the Old Lady",
+      "question": "Write a letter as the little girl describing your first meeting with the old lady."
+    },
+    {
+      "id": 12,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Life Lessons",
+      "question": "Write a letter explaining the lessons you learnt from the old lady."
+    },
+    {
+      "id": 13,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Curiosity",
+      "question": "Write a letter describing your curiosity about the world and new experiences."
+    },
+    {
+      "id": 14,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Fear and Wonder",
+      "question": "Write a letter reflecting on your feelings of fear and excitement during the adventure."
+    },
+    {
+      "id": 15,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Appreciation of Kindness",
+      "question": "Write a letter appreciating the kindness shown by the old lady."
+    },
+    {
+      "id": 16,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Early Genius",
+      "question": "Write a letter as Shakuntala Devi describing your early interest in mathematics."
+    },
+    {
+      "id": 17,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Love for Numbers",
+      "question": "Write a letter to a friend explaining how numbers fascinated you from childhood."
+    },
+    {
+      "id": 18,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Memorable Calculation",
+      "question": "Write a letter describing a calculation that amazed your teachers or friends."
+    },
+    {
+      "id": 19,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Inspiration for Students",
+      "question": "Write a letter inspiring children to pursue their talents and passions."
+    },
+    {
+      "id": 20,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Overcoming Challenges",
+      "question": "Write a letter describing how determination helped you succeed in mathematics."
+    },
+    {
+      "id": 21,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Facing Fear",
+      "question": "Write a letter as Vikram describing your fear when you saw the snake in the mirror."
+    },
+    {
+      "id": 22,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Lesson Learnt",
+      "question": "Write a letter describing the lesson learnt about fear and imagination."
+    },
+    {
+      "id": 23,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Controlling Panic",
+      "question": "Write a letter explaining how you controlled panic during the incident."
+    },
+    {
+      "id": 24,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Self-Reflection",
+      "question": "Write a letter reflecting on how fear can change perception."
+    },
+    {
+      "id": 25,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Observation Skills",
+      "question": "Write a letter explaining how careful observation could prevent fear."
+    },
+    {
+      "id": 26,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Early Memories",
+      "question": "Write a letter describing your earliest childhood memories."
+    },
+    {
+      "id": 27,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "School Days",
+      "question": "Write a letter about your experiences during your first school days."
+    },
+    {
+      "id": 28,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Family Influence",
+      "question": "Write a letter reflecting on how your family shaped your early years."
+    },
+    {
+      "id": 29,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Lessons from Childhood",
+      "question": "Write a letter on important lessons learnt during childhood."
+    },
+    {
+      "id": 30,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Play and Imagination",
+      "question": "Write a letter describing your favourite childhood games and imaginative play."
+    },
+    {
+      "id": 31,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Determination and Goals",
+      "question": "Write a letter about your determination to achieve your goals."
+    },
+    {
+      "id": 32,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Facing Challenges",
+      "question": "Write a letter describing challenges you faced and how you overcame them."
+    },
+    {
+      "id": 33,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Success Through Effort",
+      "question": "Write a letter reflecting on the effort required to succeed."
+    },
+    {
+      "id": 34,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Inspiration from Others",
+      "question": "Write a letter on how observing others inspired you to do your best."
+    },
+    {
+      "id": 35,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Final Reflections",
+      "question": "Write a letter summarising your journey of striving to achieve excellence."
+    },
+    {
+      "id": 36,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Importance of Books",
+      "question": "Write a letter to a friend explaining why books from the past can teach us valuable lessons."
+    },
+    {
+      "id": 37,
+      "chapter": "The Fun They Had",
+      "source": "Beehive – Chapter 1",
+      "title": "Sharing Discovery",
+      "question": "Write a letter to a cousin describing your excitement in discovering old educational methods."
+    },
+    {
+      "id": 38,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Inspiring Others",
+      "question": "Write a letter encouraging a friend to pursue a passion despite difficulties."
+    },
+    {
+      "id": 39,
+      "chapter": "The Sound of Music",
+      "source": "Beehive – Chapter 2",
+      "title": "Music and Emotions",
+      "question": "Write a letter explaining how music can express feelings better than words."
+    },
+    {
+      "id": 40,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Curiosity and Learning",
+      "question": "Write a letter to a younger sibling encouraging curiosity and exploration."
+    },
+    {
+      "id": 41,
+      "chapter": "The Little Girl",
+      "source": "Beehive – Chapter 3",
+      "title": "Value of Kindness",
+      "question": "Write a letter describing how kindness can make a difference in someone’s life."
+    },
+    {
+      "id": 42,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Encouraging Excellence",
+      "question": "Write a letter to a friend motivating them to develop their hidden talents."
+    },
+    {
+      "id": 43,
+      "chapter": "A Truly Beautiful Mind",
+      "source": "Beehive – Chapter 4",
+      "title": "Overcoming Challenges",
+      "question": "Write a letter about overcoming challenges to achieve success in studies."
+    },
+    {
+      "id": 44,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Facing Fears",
+      "question": "Write a letter advising a friend on how to face fears calmly and wisely."
+    },
+    {
+      "id": 45,
+      "chapter": "The Snake and the Mirror",
+      "source": "Beehive – Chapter 5",
+      "title": "Self-Control",
+      "question": "Write a letter explaining the importance of self-control in frightening situations."
+    },
+    {
+      "id": 46,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Learning from Childhood",
+      "question": "Write a letter reflecting on how childhood experiences shape our character."
+    },
+    {
+      "id": 47,
+      "chapter": "My Childhood",
+      "source": "Beehive – Chapter 6",
+      "title": "Memorable Events",
+      "question": "Write a letter to a friend describing a funny or memorable childhood incident."
+    },
+    {
+      "id": 48,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Goal Setting",
+      "question": "Write a letter advising a friend on how to set and achieve meaningful goals."
+    },
+    {
+      "id": 49,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Sportsmanship",
+      "question": "Write a letter explaining how healthy competition helps in personal growth."
+    },
+    {
+      "id": 50,
+      "chapter": "Reach for the Top",
+      "source": "Beehive – Chapter 7",
+      "title": "Motivation",
+      "question": "Write a letter to a friend motivating them to never give up despite failures."
+    },
+    {
+      "id": 51,
+      "chapter": "General",
+      "source": "All Chapters – Beehive",
+      "title": "Value of Education",
+      "question": "Write a letter to your cousin explaining the importance of education in life."
+    },
+    {
+      "id": 52,
+      "chapter": "General",
+      "source": "All Chapters – Beehive",
+      "title": "Importance of Reading",
+      "question": "Write a letter to a friend on how reading books develops knowledge and imagination."
+    },
+    {
+      "id": 53,
+      "chapter": "Formal Letter",
+      "source": "General Writing",
+      "title": "Application for Leave",
+      "question": "Write a letter to your principal requesting leave due to illness."
+    },
+    {
+      "id": 54,
+      "chapter": "Formal Letter",
+      "source": "General Writing",
+      "title": "Complaint Letter",
+      "question": "Write a letter to the municipal office complaining about unhygienic conditions near your house."
+    },
+    {
+      "id": 55,
+      "chapter": "Formal Letter",
+      "source": "General Writing",
+      "title": "Letter to the Editor",
+      "question": "Write a letter to the editor about the importance of environmental awareness."
+    },
+    {
+      "id": 56,
+      "chapter": "Informal Letter",
+      "source": "General Writing",
+      "title": "Sharing an Experience",
+      "question": "Write a letter to your friend describing an interesting experience you had in school."
+    },
+    {
+      "id": 57,
+      "chapter": "Informal Letter",
+      "source": "General Writing",
+      "title": "Advice to a Friend",
+      "question": "Write a letter advising a friend on the importance of honesty."
+    },
+    {
+      "id": 58,
+      "chapter": "Informal Letter",
+      "source": "General Writing",
+      "title": "Thanking a Friend",
+      "question": "Write a letter thanking a friend who helped you during difficult times."
+    },
+    {
+      "id": 59,
+      "chapter": "Value-Based",
+      "source": "All Chapters – Beehive",
+      "title": "Trust",
+      "question": "Write a letter describing the importance of trust in relationships."
+    },
+    {
+      "id": 60,
+      "chapter": "Value-Based",
+      "source": "All Chapters – Beehive",
+      "title": "Courage",
+      "question": "Write a letter explaining how courage can help overcome obstacles."
+    },
+    {
+      "id": 61,
+      "chapter": "Value-Based",
+      "source": "All Chapters – Beehive",
+      "title": "Responsibility",
+      "question": "Write a letter on being responsible citizens."
+    },
+    {
+      "id": 62,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Beehive",
+      "title": "Facing Failure",
+      "question": "Write a letter advising a friend on how to deal with failure positively."
+    },
+    {
+      "id": 63,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Beehive",
+      "title": "Decision Making",
+      "question": "Write a letter explaining the importance of making correct decisions in life."
+    },
+    {
+      "id": 64,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Beehive",
+      "title": "Learning from Mistakes",
+      "question": "Write a letter advising a friend to learn from mistakes and improve."
+    },
+    {
+      "id": 65,
+      "chapter": "Student Perspective",
+      "source": "All Chapters – Beehive",
+      "title": "Favourite Chapter",
+      "question": "Write a letter describing your favourite chapter and what you learnt from it."
+    },
+    [
+      {
+        "id": 66,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Cultural Experiences",
+        "question": "Write a letter to a friend describing the unique cultural experiences you had in Kathmandu."
+      },
+      {
+        "id": 67,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Scenery and Nature",
+        "question": "Write a letter to your cousin describing the natural beauty and landscapes of Kathmandu."
+      },
+      {
+        "id": 68,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Memorable Events",
+        "question": "Write a letter describing the most memorable events from your visit to Kathmandu."
+      },
+      {
+        "id": 69,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Interaction with Locals",
+        "question": "Write a letter to a friend explaining how interacting with locals gave you a better understanding of the city."
+      },
+      {
+        "id": 70,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Lessons Learnt",
+        "question": "Write a letter reflecting on the lessons you learnt during your visit to Kathmandu."
+      },
+      {
+        "id": 71,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Stepping into Another’s Life",
+        "question": "Write a letter to a friend reflecting on how it feels to live a day in someone else’s life."
+      },
+      {
+        "id": 72,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Understanding Responsibilities",
+        "question": "Write a letter explaining what you learnt about responsibilities when imagining yourself as another person."
+      },
+      {
+        "id": 73,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Decision Making",
+        "question": "Write a letter describing the decisions you would take if you were in someone else’s shoes."
+      },
+      {
+        "id": 74,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Empathy",
+        "question": "Write a letter reflecting on how imagining yourself as another person develops empathy and understanding."
+      },
+      {
+        "id": 75,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Handling Challenges",
+        "question": "Write a letter describing the challenges you might face if you were in someone else’s position."
+      },
+      {
+        "id": 76,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Final Reflection",
+        "question": "Write a letter summarising the lessons learnt from imagining yourself in another person’s life."
+      },
+      {
+        "id": 77,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Travel Recommendations",
+        "question": "Write a letter recommending Kathmandu to a friend and suggest places to visit."
+      },
+      {
+        "id": 78,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Cultural Festivals",
+        "question": "Write a letter describing a festival you witnessed in Kathmandu and its significance."
+      },
+      {
+        "id": 79,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Local Cuisine",
+        "question": "Write a letter to a friend describing the local food you enjoyed in Kathmandu."
+      },
+      {
+        "id": 80,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Adventure Activities",
+        "question": "Write a letter describing adventurous experiences you had in Kathmandu, such as hiking or sightseeing."
+      },
+      {
+        "id": 81,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Learning from Travel",
+        "question": "Write a letter explaining how your trip to Kathmandu taught you new lessons about life."
+      },
+      {
+        "id": 82,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Problem Solving",
+        "question": "Write a letter describing how you would solve a problem differently if you were in someone else’s position."
+      },
+      {
+        "id": 83,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Learning Empathy",
+        "question": "Write a letter explaining to a friend how imagining another person’s life helps develop empathy."
+      },
+      {
+        "id": 84,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Role Reversal",
+        "question": "Write a letter describing an experience where stepping into someone else’s role changed your perspective."
+      },
+      {
+        "id": 85,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Reflection on Life Choices",
+        "question": "Write a letter reflecting on how imagining yourself as someone else helps you make better life choices."
+      },
+      {
+        "id": 86,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Handling Responsibilities",
+        "question": "Write a letter to a friend explaining how you would handle responsibilities differently if you were someone else."
+      },
+      {
+        "id": 87,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Memories to Share",
+        "question": "Write a letter to a friend sharing the memories and experiences you will cherish from Kathmandu."
+      },
+      {
+        "id": 88,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Photography and Art",
+        "question": "Write a letter describing how you captured the beauty of Kathmandu through sketches or photographs."
+      },
+      {
+        "id": 89,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Travel Diary Summary",
+        "question": "Write a letter summarising your travel diary notes about Kathmandu for a friend."
+      },
+      {
+        "id": 90,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Learning from Others",
+        "question": "Write a letter explaining the importance of learning from other people’s experiences."
+      },
+      {
+        "id": 91,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Empathy and Friendship",
+        "question": "Write a letter to a friend describing how empathy strengthens friendships."
+      },
+      {
+        "id": 92,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Facing Challenges",
+        "question": "Write a letter explaining how imagining yourself as someone else can help overcome challenges."
+      },
+      {
+        "id": 93,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Perspective Taking",
+        "question": "Write a letter describing a situation where seeing things from another person’s perspective changed your opinion."
+      },
+      {
+        "id": 94,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Cultural Lessons",
+        "question": "Write a letter explaining the cultural lessons you learnt from visiting Kathmandu."
+      },
+      {
+        "id": 95,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Tourist Guide",
+        "question": "Write a letter as a tourist guide giving tips to friends visiting Kathmandu for the first time."
+      },
+      {
+        "id": 96,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Decision Reflection",
+        "question": "Write a letter describing a decision you would take differently if you were someone else."
+      },
+      {
+        "id": 97,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Understanding Others",
+        "question": "Write a letter to a friend explaining how imagining yourself as others helps you understand them better."
+      },
+      {
+        "id": 98,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Historical Monuments",
+        "question": "Write a letter describing the historical monuments of Kathmandu and their significance."
+      },
+      {
+        "id": 99,
+        "chapter": "Kathmandu",
+        "source": "Beehive – Chapter 8",
+        "title": "Final Thoughts on Trip",
+        "question": "Write a letter summarising your overall impressions and experiences of Kathmandu."
+      },
+      {
+        "id": 100,
+        "chapter": "If I Were You",
+        "source": "Beehive – Chapter 9",
+        "title": "Lessons for Life",
+        "question": "Write a letter reflecting on the lessons you learnt by imagining yourself as someone else."
+      }
+    ]
+  ]
+}

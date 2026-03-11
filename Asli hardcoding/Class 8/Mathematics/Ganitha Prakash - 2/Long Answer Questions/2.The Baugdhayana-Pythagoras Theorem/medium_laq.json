@@ -1,0 +1,316 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-05T14:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how the diagonal of a square can be used to construct a square with double the area.",
+            "answer": "The diagonal divides the square into two congruent right triangles. A new square constructed using the diagonal as its side has an area exactly twice that of the original square.",
+            "answer_outline": [
+                "Draw square and diagonal",
+                "Diagonal forms right triangles",
+                "Construct new square on diagonal"
+            ],
+            "key_concepts": ["doubling square"],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the hypotenuse of a right triangle whose sides are 6 cm and 8 cm.",
+            "answer": "Using Pythagoras theorem: c² = 6² + 8² = 36 + 64 = 100, therefore c = 10 cm.",
+            "answer_outline": [
+                "Apply Pythagoras theorem",
+                "Calculate squares",
+                "Find square root"
+            ],
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Show that (5,12,13) is a Pythagorean triple.",
+            "answer": "5² + 12² = 25 + 144 = 169 and √169 = 13. Hence it satisfies a² + b² = c².",
+            "answer_outline": [
+                "Square numbers",
+                "Verify equality"
+            ],
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the diagonal of a square whose side is 7 cm.",
+            "answer": "The diagonal of a square is a√2. Therefore diagonal = 7√2 cm.",
+            "answer_outline": [
+                "Formula for diagonal",
+                "Substitute value"
+            ],
+            "key_concepts": ["square diagonal"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the diagonal of a rectangle whose sides are 9 cm and 12 cm.",
+            "answer": "d² = 9² + 12² = 81 + 144 = 225, therefore d = 15 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Find squares",
+                "Square root"
+            ],
+            "key_concepts": ["rectangle diagonal"],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the concept of primitive Pythagorean triples with an example.",
+            "answer": "Primitive Pythagorean triples are triples of integers satisfying a² + b² = c² that have no common factor other than 1. Example: (3,4,5).",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["primitive triples"],
+            "marks": 3,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the missing side if the hypotenuse is 13 cm and one side is 5 cm.",
+            "answer": "Other side² = 13² − 5² = 169 − 25 = 144, so side = 12 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Subtract squares",
+                "Find root"
+            ],
+            "key_concepts": ["right triangle"],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how the areas of squares on the sides of a right triangle are related.",
+            "answer": "The area of the square constructed on the hypotenuse equals the sum of the areas of the squares constructed on the other two sides.",
+            "answer_outline": [
+                "Area of squares",
+                "Sum relation"
+            ],
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 3,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the diagonal of a square whose side is 10 cm.",
+            "answer": "Diagonal = 10√2 cm.",
+            "answer_outline": [
+                "Use formula",
+                "Substitute value"
+            ],
+            "key_concepts": ["square diagonal"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the hypotenuse of a triangle whose sides are 7 cm and 24 cm.",
+            "answer": "c² = 7² + 24² = 49 + 576 = 625, therefore c = 25 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain what scaled Pythagorean triples are.",
+            "answer": "Scaled triples are obtained by multiplying each number of a primitive Pythagorean triple by the same integer.",
+            "answer_outline": [
+                "Primitive triple",
+                "Multiplication process"
+            ],
+            "key_concepts": ["scaled triples"],
+            "marks": 3,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the diagonal of a rectangle with sides 8 cm and 15 cm.",
+            "answer": "d² = 8² + 15² = 64 + 225 = 289, so d = 17 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": ["rectangle diagonal"],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the significance of the Pythagoras theorem in geometry.",
+            "answer": "The theorem helps determine unknown sides of right triangles and calculate distances and diagonals in geometric shapes.",
+            "answer_outline": [
+                "Right triangle relation",
+                "Finding unknown sides",
+                "Distance calculation"
+            ],
+            "key_concepts": ["geometry application"],
+            "marks": 3,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the diagonal of a square whose side is 12 cm.",
+            "answer": "Diagonal = 12√2 cm.",
+            "answer_outline": [
+                "Formula",
+                "Substitution"
+            ],
+            "key_concepts": ["square diagonal"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Verify that (8,15,17) forms a Pythagorean triple.",
+            "answer": "8² + 15² = 64 + 225 = 289 = 17².",
+            "answer_outline": [
+                "Square numbers",
+                "Verify relation"
+            ],
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the missing side if the hypotenuse is 17 cm and one side is 8 cm.",
+            "answer": "Other side² = 17² − 8² = 289 − 64 = 225, so side = 15 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Subtract squares"
+            ],
+            "key_concepts": ["right triangle"],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why the diagonal of a square forms a right triangle.",
+            "answer": "The diagonal divides the square into two equal right triangles because the angles of the square are 90°.",
+            "answer_outline": [
+                "Angles of square",
+                "Triangle formation"
+            ],
+            "key_concepts": ["square geometry"],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the diagonal of a rectangle with sides 12 cm and 16 cm.",
+            "answer": "d² = 12² + 16² = 144 + 256 = 400, so d = 20 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": ["rectangle diagonal"],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of Pythagorean triples in mathematics.",
+            "answer": "They help identify right triangles and simplify calculations involving integer side lengths.",
+            "answer_outline": [
+                "Right triangle identification",
+                "Integer solutions"
+            ],
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 3,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the diagonal of a square whose side is 14 cm.",
+            "answer": "Diagonal = 14√2 cm.",
+            "answer_outline": [
+                "Use formula",
+                "Substitute value"
+            ],
+            "key_concepts": ["square diagonal"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the hypotenuse if the sides of a triangle are 9 cm and 40 cm.",
+            "answer": "c² = 9² + 40² = 81 + 1600 = 1681, therefore c = 41 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Calculate squares"
+            ],
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the geometric interpretation of the Pythagoras theorem.",
+            "answer": "The theorem states that the area of the square built on the hypotenuse equals the sum of the areas of the squares built on the other two sides.",
+            "answer_outline": [
+                "Squares on triangle sides",
+                "Area equality"
+            ],
+            "key_concepts": ["geometric interpretation"],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the diagonal of a rectangle whose sides are 15 cm and 20 cm.",
+            "answer": "d² = 225 + 400 = 625, so d = 25 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square root"
+            ],
+            "key_concepts": ["rectangle diagonal"],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how the theorem is useful in construction work.",
+            "answer": "Builders use the theorem to check right angles and measure diagonal distances in structures.",
+            "answer_outline": [
+                "Right angle verification",
+                "Distance measurement"
+            ],
+            "key_concepts": ["real-life application"],
+            "marks": 3,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how the Pythagoras theorem is used to calculate distances on a map.",
+            "answer": "Distances between two points can be calculated by forming a right triangle and applying the Pythagoras relation.",
+            "answer_outline": [
+                "Right triangle formation",
+                "Distance calculation"
+            ],
+            "key_concepts": ["distance calculation"],
+            "marks": 3,
+            "source_section": "Section 2.7"
+        }
+    ]
+}

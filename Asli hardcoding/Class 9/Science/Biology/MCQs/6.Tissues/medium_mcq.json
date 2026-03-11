@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-05T23:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which feature is characteristic of meristematic cells?",
+            "options": {
+                "A": "Large vacuole",
+                "B": "Dense cytoplasm",
+                "C": "Thick cell wall",
+                "D": "Dead cells"
+            },
+            "correct_answer": "B",
+            "explanation": "Meristematic cells have dense cytoplasm and actively divide.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which tissue helps plants bend without breaking?",
+            "options": {
+                "A": "Parenchyma",
+                "B": "Collenchyma",
+                "C": "Sclerenchyma",
+                "D": "Phloem"
+            },
+            "correct_answer": "B",
+            "explanation": "Collenchyma provides flexibility to plant parts.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which plant tissue has thick lignified cell walls?",
+            "options": {
+                "A": "Parenchyma",
+                "B": "Collenchyma",
+                "C": "Sclerenchyma",
+                "D": "Epidermis"
+            },
+            "correct_answer": "C",
+            "explanation": "Sclerenchyma cells have thick lignified walls for strength.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which element of xylem stores food?",
+            "options": {
+                "A": "Tracheids",
+                "B": "Vessels",
+                "C": "Xylem parenchyma",
+                "D": "Xylem fibres"
+            },
+            "correct_answer": "C",
+            "explanation": "Xylem parenchyma stores food.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which phloem component is living?",
+            "options": {
+                "A": "Phloem fibres",
+                "B": "Sieve tubes",
+                "C": "Xylem fibres",
+                "D": "Tracheids"
+            },
+            "correct_answer": "B",
+            "explanation": "Sieve tubes are living cells that transport food.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which tissue covers internal organs and body cavities?",
+            "options": {
+                "A": "Muscular",
+                "B": "Connective",
+                "C": "Epithelial",
+                "D": "Nervous"
+            },
+            "correct_answer": "C",
+            "explanation": "Epithelial tissue forms protective layers.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which epithelial tissue lines the kidney tubules?",
+            "options": {
+                "A": "Squamous",
+                "B": "Cuboidal",
+                "C": "Columnar",
+                "D": "Ciliated"
+            },
+            "correct_answer": "B",
+            "explanation": "Cuboidal epithelium lines kidney tubules.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Which connective tissue attaches bones to bones?",
+            "options": {
+                "A": "Tendon",
+                "B": "Ligament",
+                "C": "Cartilage",
+                "D": "Adipose"
+            },
+            "correct_answer": "B",
+            "explanation": "Ligaments connect bones together.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which muscle type is involuntary and found in blood vessels?",
+            "options": {
+                "A": "Striated",
+                "B": "Smooth",
+                "C": "Cardiac",
+                "D": "Skeletal"
+            },
+            "correct_answer": "B",
+            "explanation": "Smooth muscles control involuntary movements.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which muscle type has striations and multiple nuclei?",
+            "options": {
+                "A": "Smooth",
+                "B": "Cardiac",
+                "C": "Striated",
+                "D": "Involuntary"
+            },
+            "correct_answer": "C",
+            "explanation": "Striated muscles are multinucleate and striated.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which structure in neurons carries impulses away from the cell body?",
+            "options": {
+                "A": "Dendrite",
+                "B": "Axon",
+                "C": "Cytoplasm",
+                "D": "Nucleus"
+            },
+            "correct_answer": "B",
+            "explanation": "Axon carries nerve impulses away from the cell body.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which tissue forms the framework of the body?",
+            "options": {
+                "A": "Blood",
+                "B": "Bone",
+                "C": "Adipose",
+                "D": "Areolar"
+            },
+            "correct_answer": "B",
+            "explanation": "Bone tissue supports the body structure.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which tissue helps repair damaged tissues?",
+            "options": {
+                "A": "Areolar tissue",
+                "B": "Bone",
+                "C": "Cartilage",
+                "D": "Muscle"
+            },
+            "correct_answer": "A",
+            "explanation": "Areolar tissue supports and repairs tissues.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which tissue forms glands?",
+            "options": {
+                "A": "Connective",
+                "B": "Muscular",
+                "C": "Epithelial",
+                "D": "Nervous"
+            },
+            "correct_answer": "C",
+            "explanation": "Glands are made of glandular epithelial tissue.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Which plant tissue has large air cavities for floating?",
+            "options": {
+                "A": "Chlorenchyma",
+                "B": "Aerenchyma",
+                "C": "Sclerenchyma",
+                "D": "Collenchyma"
+            },
+            "correct_answer": "B",
+            "explanation": "Aerenchyma helps aquatic plants float.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which cells surround stomata?",
+            "options": {
+                "A": "Epidermal cells",
+                "B": "Guard cells",
+                "C": "Parenchyma",
+                "D": "Collenchyma"
+            },
+            "correct_answer": "B",
+            "explanation": "Guard cells control the opening of stomata.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which tissue is responsible for voluntary movements?",
+            "options": {
+                "A": "Smooth muscle",
+                "B": "Cardiac muscle",
+                "C": "Striated muscle",
+                "D": "Connective tissue"
+            },
+            "correct_answer": "C",
+            "explanation": "Striated muscles are voluntary muscles.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which connective tissue stores fat?",
+            "options": {
+                "A": "Bone",
+                "B": "Adipose",
+                "C": "Cartilage",
+                "D": "Blood"
+            },
+            "correct_answer": "B",
+            "explanation": "Adipose tissue stores fat and provides insulation.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which tissue is found between skin and muscles?",
+            "options": {
+                "A": "Adipose",
+                "B": "Areolar",
+                "C": "Bone",
+                "D": "Blood"
+            },
+            "correct_answer": "B",
+            "explanation": "Areolar tissue fills spaces between organs.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which tissue forms the lining of lungs?",
+            "options": {
+                "A": "Squamous epithelium",
+                "B": "Cuboidal epithelium",
+                "C": "Columnar epithelium",
+                "D": "Striated muscle"
+            },
+            "correct_answer": "A",
+            "explanation": "Squamous epithelium forms thin lining for gas exchange.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which tissue transports hormones and nutrients?",
+            "options": {
+                "A": "Bone",
+                "B": "Blood",
+                "C": "Cartilage",
+                "D": "Ligament"
+            },
+            "correct_answer": "B",
+            "explanation": "Blood transports substances throughout the body.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which plant tissue conducts water upward?",
+            "options": {
+                "A": "Phloem",
+                "B": "Xylem",
+                "C": "Parenchyma",
+                "D": "Collenchyma"
+            },
+            "correct_answer": "B",
+            "explanation": "Xylem conducts water from roots upward.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which muscle tissue works continuously throughout life?",
+            "options": {
+                "A": "Smooth",
+                "B": "Striated",
+                "C": "Cardiac",
+                "D": "Voluntary"
+            },
+            "correct_answer": "C",
+            "explanation": "Cardiac muscles continuously pump blood.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which part of neuron receives impulses?",
+            "options": {
+                "A": "Axon",
+                "B": "Dendrite",
+                "C": "Cell membrane",
+                "D": "Cytoplasm"
+            },
+            "correct_answer": "B",
+            "explanation": "Dendrites receive nerve impulses.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which tissue protects the body against mechanical injury?",
+            "options": {
+                "A": "Epithelial tissue",
+                "B": "Nervous tissue",
+                "C": "Muscle tissue",
+                "D": "Blood tissue"
+            },
+            "correct_answer": "A",
+            "explanation": "Epithelial tissue protects body surfaces.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3.1"
+        }
+    ]
+}

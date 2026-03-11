@@ -1,0 +1,196 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Acids, Bases and Salts",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A dry pellet of a common base 'B', when kept in the open, absorbs moisture and turns sticky. The compound is also a byproduct of the Chlor-alkali process. Identify 'B'. What type of reaction occurs when 'B' is treated with an acidic oxide? Write the balanced chemical equation.",
+            "answer": "The base 'B' is Sodium Hydroxide (NaOH). It is hygroscopic (absorbs moisture). When NaOH (a base) reacts with an acidic oxide (like $CO_2$), it forms salt and water, which is a neutralization reaction. Equation: $2NaOH + CO_2 \rightarrow Na_2CO_3 + H_2O$.",
+            "answer_outline": [
+                "Identification of Base 'B' (Sodium Hydroxide)",
+                "Explanation of hygroscopic nature",
+                "Classification of reaction with acidic oxides",
+                "Balanced chemical equation"
+            ],
+            "key_concepts": [
+                "sodium hydroxide",
+                "hygroscopic",
+                "acidic oxide",
+                "neutralization"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Five solutions A, B, C, D and E when tested with universal indicator showed pH as 4, 1, 11, 7 and 9 respectively. (i) Arrange the pH in increasing order of hydrogen-ion concentration. (ii) Which solution is strongly alkaline and which is strongly acidic?",
+            "answer": "(i) Hydrogen ion concentration is inversely proportional to pH. Increasing order of $[H^+]$ concentration: C (pH 11) < E (pH 9) < D (pH 7) < A (pH 4) < B (pH 1). (ii) Solution C (pH 11) is strongly alkaline, and Solution B (pH 1) is strongly acidic.",
+            "answer_outline": [
+                "Relationship between pH and H+ concentration",
+                "Ranking solutions by concentration",
+                "Identifying extremes (Strong acid vs Strong base)"
+            ],
+            "key_concepts": [
+                "universal indicator",
+                "hydrogen ion concentration",
+                "pH scale",
+                "alkalinity"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does dry HCl gas not change the color of dry litmus paper? Explain with the help of the Arrhenius concept of acids.",
+            "answer": "According to the Arrhenius concept, acids produce $H^+$ ions only in the presence of water. Dry HCl gas does not contain moisture, so it cannot dissociate to release $H^+$ ions. Since the acidic behavior and the ability to change litmus color depend on the presence of these ions, dry HCl shows no effect on dry litmus.",
+            "answer_outline": [
+                "Role of water in ionization",
+                "Dissociation of HCl into H+ and Cl-",
+                "Absence of ions in dry state",
+                "Requirement of ions for indicator color change"
+            ],
+            "key_concepts": [
+                "ionization",
+                "dissociation",
+                "aqueous solution",
+                "litmus test"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "A compound 'X' of sodium is commonly used in the kitchen for making crispy pakoras. When 'X' is heated, it evolves a gas 'Y' which turns lime water milky. (i) Identify 'X' and 'Y'. (ii) Write the equation for the heating of 'X'. (iii) What happens if 'X' is mixed with tartaric acid?",
+            "answer": "(i) 'X' is Sodium Hydrogencarbonate ($NaHCO_3$) and 'Y' is Carbon Dioxide ($CO_2$). (ii) $2NaHCO_3 \xrightarrow{\Delta} Na_2CO_3 + H_2O + CO_2$. (iii) When mixed with tartaric acid, it forms 'Baking Powder'. Upon heating/wetting, the acid reacts with $NaHCO_3$ to release $CO_2$, which makes bread/cake rise.",
+            "answer_outline": [
+                "Identification of X and Y",
+                "Thermal decomposition equation",
+                "Interaction with tartaric acid",
+                "Function of Baking Powder"
+            ],
+            "key_concepts": [
+                "sodium hydrogencarbonate",
+                "carbon dioxide",
+                "baking powder",
+                "thermal decomposition"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the 'Self-defense by animals and plants' through chemical warfare with three specific examples.",
+            "answer": "1. Honey-bee stings leave an acid (formic acid) which causes pain; treating with a mild base like baking soda provides relief. 2. Stinging hair of Nettle leaves inject methanoic acid causing burning pain. 3. Dock plant (basic) often grows near Nettle and is used as a traditional remedy to neutralize the acid.",
+            "answer_outline": [
+                "Bee sting and formic acid",
+                "Nettle leaves and methanoic acid",
+                "Dock plant as a natural remedy",
+                "Neutralization in nature"
+            ],
+            "key_concepts": [
+                "methanoic acid",
+                "neutralization",
+                "nettle leaf",
+                "pH in nature"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "While diluting an acid, why is it recommended that the acid should be added to water and not water to the acid? What would happen if the process is reversed?",
+            "answer": "The process of dissolving a concentrated acid in water is highly exothermic. If water is added to acid, the large amount of heat evolved at once can cause the mixture to splash out and cause burns. The glass container may also break due to excessive local heating. Adding acid to water slowly with stirring allows the heat to dissipate safely.",
+            "answer_outline": [
+                "Exothermic nature of dilution",
+                "Risk of splashing/acid burns",
+                "Thermal shock to glass containers",
+                "Proper safety procedure"
+            ],
+            "key_concepts": [
+                "dilution",
+                "exothermic",
+                "concentration",
+                "safety protocols"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the 'Water of Crystallisation'? How can you demonstrate its presence in Copper Sulphate crystals experimentally?",
+            "answer": "Water of crystallisation is the fixed number of water molecules in one formula unit of a salt. Experiment: Heat blue Copper Sulphate ($CuSO_4 \cdot 5H_2O$) in a dry test tube. The blue color disappears and it turns white (anhydrous). Droplets of water appear on the tube sides. Adding a few drops of water restores the blue color.",
+            "answer_outline": [
+                "Definition of Water of Crystallisation",
+                "Experimental setup (Heating crystals)",
+                "Observation (Color change and condensation)",
+                "Reversible nature of hydration"
+            ],
+            "key_concepts": [
+                "hydrated salt",
+                "anhydrous",
+                "copper sulphate",
+                "crystallisation"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.4.4"
+        },
+        {
+            "question_number": 8,
+            "question": "State the chemical formula for Gypsum and Plaster of Paris. Explain the 'Setting of Plaster' with a chemical equation.",
+            "answer": "Gypsum is $CaSO_4 \cdot 2H_2O$ and Plaster of Paris (POP) is $CaSO_4 \cdot \frac{1}{2}H_2O$. When POP is mixed with water, it rehydrates to form Gypsum, which sets into a hard solid mass. Equation: $CaSO_4 \cdot \frac{1}{2}H_2O + 1 \frac{1}{2}H_2O \rightarrow CaSO_4 \cdot 2H_2O$.",
+            "answer_outline": [
+                "Formulas for both compounds",
+                "Explanation of the setting process",
+                "Balanced chemical equation for rehydration"
+            ],
+            "key_concepts": [
+                "plaster of paris",
+                "gypsum",
+                "hydration",
+                "crystallization"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4.4"
+        },
+        {
+            "question_number": 9,
+            "question": "A metal 'M' reacts with dilute HCl to liberate a gas 'G'. 'G' burns with a pop sound. 'M' also reacts with NaOH to liberate the same gas 'G'. Identify 'M' and 'G' and write equations for both.",
+            "answer": "Metal 'M' is Zinc (Zn) and gas 'G' is Hydrogen ($H_2$). Zinc is amphoteric-like in its reaction with bases. Equations: 1. $Zn + 2HCl \rightarrow ZnCl_2 + H_2$. 2. $Zn + 2NaOH \rightarrow Na_2ZnO_2$ (Sodium Zincate) $+ H_2$.",
+            "answer_outline": [
+                "Identification of Zinc and Hydrogen",
+                "Test for Hydrogen (Pop sound)",
+                "Equation with acid",
+                "Equation with base (formation of Zincate)"
+            ],
+            "key_concepts": [
+                "amphoteric behavior",
+                "hydrogen gas",
+                "sodium zincate",
+                "metal-acid reaction"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why an aqueous solution of Sodium Carbonate is basic, while an aqueous solution of Ammonium Chloride is acidic.",
+            "answer": "This is due to salt hydrolysis. $Na_2CO_3$ is a salt of a strong base (NaOH) and a weak acid ($H_2CO_3$), so its solution is basic (pH > 7). $NH_4Cl$ is a salt of a strong acid (HCl) and a weak base ($NH_4OH$), so its solution is acidic (pH < 7).",
+            "answer_outline": [
+                "Concept of salt parentage (Acid + Base)",
+                "Nature of Sodium Carbonate",
+                "Nature of Ammonium Chloride",
+                "Comparison of pH levels"
+            ],
+            "key_concepts": [
+                "salt hydrolysis",
+                "strong/weak acids",
+                "strong/weak bases",
+                "pH"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        }
+    ]
+}

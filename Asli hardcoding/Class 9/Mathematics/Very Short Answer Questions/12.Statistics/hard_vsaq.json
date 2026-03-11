@@ -1,0 +1,184 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 12: Statistics",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T03:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the formula for mean of grouped data using step deviation method.",
+            "answer": "Mean = A + Σf·u × h / Σf, where A = assumed mean, u = (x - A)/h, h = class width, f = frequency.",
+            "key_points": ["mean", "grouped data", "step deviation", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Derive the formula for median of grouped data using cumulative frequency.",
+            "answer": "Median = L + [(N/2 - CF)/f] × h, where L = lower boundary of median class, N = total frequency, CF = cumulative frequency before median class, f = frequency of median class, h = class width.",
+            "key_points": ["median", "grouped data", "formula", "derivation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Derive the formula for mode of grouped data using frequency table.",
+            "answer": "Mode = L + [(f1 - f0)/(2f1 - f0 - f2)] × h, where L = lower boundary of modal class, f1 = frequency of modal class, f0 = frequency of previous class, f2 = frequency of next class, h = class width.",
+            "key_points": ["mode", "grouped data", "derivation", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the relationship between mean, median and mode in a moderately skewed distribution.",
+            "answer": "Empirical relation: Mode ≈ 3 Median - 2 Mean; If Mean > Median > Mode, distribution is positively skewed; If Mean < Median < Mode, distribution is negatively skewed.",
+            "key_points": ["mean", "median", "mode", "skewness", "empirical relation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 5,
+            "question": "How do you estimate median from a less than cumulative frequency ogive?",
+            "answer": "Locate N/2 on Y-axis, draw a horizontal line to meet the ogive, drop vertical to X-axis; intersection gives median.",
+            "key_points": ["median", "ogive", "estimation"],
+            "source_section": "Section 12.3, 12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How do you estimate median from a more than cumulative frequency ogive?",
+            "answer": "Locate N/2 on Y-axis (from top), draw horizontal line to meet ogive, drop vertical to X-axis; intersection gives median.",
+            "key_points": ["median", "more than ogive", "estimation"],
+            "source_section": "Section 12.3, 12.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain how to find mode from a histogram using graphical method.",
+            "answer": "Draw histogram, identify modal class (highest bar), draw diagonals from top of adjacent bars to top of modal bar; intersection with modal bar gives mode.",
+            "key_points": ["mode", "histogram", "graphical method"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the step deviation method for calculating mean with an example.",
+            "answer": "Choose an assumed mean A, calculate u = (x - A)/h for all class midpoints, multiply by frequency f, sum Σf·u, divide by Σf and add A to get mean.",
+            "key_points": ["mean", "step deviation", "example"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain less than and more than ogives and their uses.",
+            "answer": "Less than ogive: cumulative frequencies plotted against upper class boundaries; More than ogive: cumulative frequencies plotted from top downward. Used to estimate median, percentiles, quartiles.",
+            "key_points": ["ogive", "less than", "more than", "uses"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Define percentile and explain how to find the p-th percentile from grouped data.",
+            "answer": "Percentile: value below which p% of observations fall. Pth percentile = L + [(pN/100 - CF)/f] × h, L = lower boundary, N = total frequency, CF = cumulative frequency before class, f = frequency, h = class width.",
+            "key_points": ["percentile", "grouped data", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Define quartiles and how to find them from grouped data.",
+            "answer": "Quartiles divide data into 4 equal parts. Q1 = L + [(N/4 - CF)/f] × h, Q2 = median, Q3 = L + [3N/4 - CF)/f] × h.",
+            "key_points": ["quartiles", "grouped data", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the cumulative frequency of the last class in a distribution?",
+            "answer": "It equals the total frequency (N) of the data set.",
+            "key_points": ["cumulative frequency", "last class", "definition"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How do you calculate mean deviation about the mean for grouped data?",
+            "answer": "MD = Σf·|x - mean| / Σf, where x = class midpoint, f = frequency.",
+            "key_points": ["mean deviation", "grouped data", "formula"],
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain variance and standard deviation for grouped data.",
+            "answer": "Variance σ² = Σf(x - mean)² / Σf; Standard deviation σ = √σ², x = class midpoint, f = frequency.",
+            "key_points": ["variance", "standard deviation", "grouped data", "formula"],
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 15,
+            "question": "How do you identify the modal class from a histogram?",
+            "answer": "The class corresponding to the highest bar in the histogram is the modal class.",
+            "key_points": ["modal class", "histogram"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the difference between grouped and ungrouped data in calculating mean.",
+            "answer": "Ungrouped mean = sum of observations / number of observations; Grouped mean = sum(f·x)/Σf, where x = class midpoints.",
+            "key_points": ["grouped vs ungrouped", "mean calculation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 17,
+            "question": "How can you estimate the mode from a cumulative frequency graph?",
+            "answer": "Draw less than and more than ogives, intersection gives median; use formula for mode with modal class.",
+            "key_points": ["mode", "ogive", "estimation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the difference between median and mean using skewness.",
+            "answer": "In positive skew: mean > median > mode; In negative skew: mean < median < mode; median less affected by extreme values than mean.",
+            "key_points": ["mean", "median", "skewness", "comparison"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How can cumulative frequency be used to estimate quartiles?",
+            "answer": "Q1: cumulative frequency = N/4, Q2: N/2 (median), Q3: 3N/4; use formula: Q = L + [(CF_target - CF)/f] × h.",
+            "key_points": ["quartiles", "cumulative frequency", "estimation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how to calculate coefficient of variation for grouped data.",
+            "answer": "CV = (standard deviation / mean) × 100%.",
+            "key_points": ["coefficient of variation", "grouped data", "formula"],
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how to draw frequency polygon from grouped data.",
+            "answer": "Plot midpoints of each class on X-axis, frequencies on Y-axis, join points with straight lines; extend lines to meet X-axis at first and last midpoint.",
+            "key_points": ["frequency polygon", "grouped data", "drawing"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 22,
+            "question": "How do you convert raw data to a frequency table?",
+            "answer": "Group data into classes, count number of observations in each class, record as frequencies.",
+            "key_points": ["raw data", "frequency table", "steps"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how to find percentiles from a cumulative frequency graph.",
+            "answer": "Locate pth percentile on Y-axis, draw horizontal line to meet ogive, drop vertical to X-axis; intersection is pth percentile.",
+            "key_points": ["percentiles", "ogive", "graphical method"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the importance of using class midpoints in grouped data?",
+            "answer": "Class midpoints are representative values of classes for estimating mean, variance, and other statistics.",
+            "key_points": ["class midpoints", "grouped data", "importance"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how to calculate mean deviation about median for grouped data.",
+            "answer": "MD = Σf·|x - median| / Σf, where x = class midpoint, f = frequency.",
+            "key_points": ["mean deviation", "median", "grouped data", "formula"],
+            "source_section": "Section 12.5"
+        }
+    ]
+}

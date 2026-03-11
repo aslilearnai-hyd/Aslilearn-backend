@@ -1,0 +1,42 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Linear Equations in Two Variables",
+    "difficulty": "Hard",
+    "source_pdf": "m9_4.pdf",
+    "short_notes": {
+        "key_points": [
+            "A linear equation in two variables represents a relationship between two variables with degree 1",
+            "The standard algebraic form of a linear equation is ax + by + c = 0",
+            "a and b cannot both be zero in a linear equation",
+            "Solutions of linear equations are expressed as ordered pairs",
+            "Every solution corresponds to a point on the Cartesian plane",
+            "Linear equations have infinitely many solutions because many ordered pairs satisfy them",
+            "Graphing linear equations helps visualize relationships between variables",
+            "Two or more points are required to draw the graph of a linear equation",
+            "Graphs of linear equations are always straight lines",
+            "Linear equations are widely used to represent relationships in mathematics and real-life problems"
+        ],
+        "examples": [
+            "Equation example: x + y = 10",
+            "Equation example: 3x + 2y = 12",
+            "Solution of x + y = 10 → (6,4)",
+            "Solution of 3x + y = 10 → (3,1)",
+            "Ordered pair example: (8,2)",
+            "Standard form example: 3x + 2y − 12 = 0"
+        ],
+        "formulas": [
+            "General linear equation form → ax + by + c = 0",
+            "Solution verification → substitute x and y into equation",
+            "Graph property → a straight line passes through all solution points",
+            "Graph rule → two points are sufficient to determine a straight line"
+        ],
+        "exam_tips": [
+            "Check whether variables have power 1 when identifying linear equations",
+            "Verify solutions by substituting ordered pairs into the equation",
+            "Use tables of values to generate multiple solutions",
+            "Plot at least two or three points for accurate graphs",
+            "Remember that every point on the graph represents a valid solution"
+        ]
+    }
+}

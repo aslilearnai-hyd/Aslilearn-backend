@@ -1,0 +1,269 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: Federalism",
+  "generated_at": "2026-03-11T13:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is federalism? Explain its importance in a country like India.",
+      "answer": "Federalism is a system of government in which power is divided between a central authority and various constituent units such as states. It is important in India because it helps manage diversity while maintaining national unity.",
+      "answer_outline": [
+        "Definition of federalism",
+        "Division of powers",
+        "Importance in a diverse country"
+      ],
+      "key_concepts": ["federalism", "power sharing"],
+      "marks": 5,
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain any four key features of federalism.",
+      "answer": "Federalism has several key features including multiple levels of government, division of powers through the constitution, financial autonomy, and the role of judiciary in resolving disputes between governments.",
+      "answer_outline": [
+        "Multiple levels of government",
+        "Division of powers",
+        "Judicial authority",
+        "Financial autonomy"
+      ],
+      "key_concepts": ["features of federalism"],
+      "marks": 5,
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 3,
+      "question": "Differentiate between 'coming together' and 'holding together' federations.",
+      "answer": "In coming together federations, independent states join together to form a larger nation with equal powers, such as the USA. In holding together federations, a large country divides power between central and state governments, such as India.",
+      "answer_outline": [
+        "Definition of coming together federation",
+        "Definition of holding together federation",
+        "Examples"
+      ],
+      "key_concepts": ["types of federation"],
+      "marks": 5,
+      "source_section": "Formation of Federations"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the three lists used in the Indian Constitution for power distribution.",
+      "answer": "The Indian Constitution divides legislative powers into the Union List, State List, and Concurrent List. These lists specify which level of government can make laws on particular subjects.",
+      "answer_outline": ["Union List", "State List", "Concurrent List"],
+      "key_concepts": ["distribution of powers"],
+      "marks": 5,
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 5,
+      "question": "Why does the Union List contain subjects of national importance?",
+      "answer": "Subjects of national importance such as defence, foreign affairs, and banking are included in the Union List to maintain uniform policies across the country.",
+      "answer_outline": [
+        "Definition of Union List",
+        "Examples of subjects",
+        "Importance of national uniformity"
+      ],
+      "key_concepts": ["Union List"],
+      "marks": 4,
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the role of the Concurrent List in Indian federalism.",
+      "answer": "The Concurrent List contains subjects on which both Union and State governments can make laws. If conflicts arise between the two laws, the Union law prevails.",
+      "answer_outline": ["Definition", "Examples", "Conflict resolution"],
+      "key_concepts": ["Concurrent List"],
+      "marks": 4,
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 7,
+      "question": "Why was India declared a 'Union of States' instead of a federation?",
+      "answer": "The Constitution described India as a Union of States to emphasize that the Indian federation was not formed by agreement among states but created by the Constitution.",
+      "answer_outline": ["Meaning of Union of States", "Historical context"],
+      "key_concepts": ["Union of States"],
+      "marks": 4,
+      "source_section": "What makes India a federal country?"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the importance of linguistic states in India.",
+      "answer": "Linguistic states were created so that people speaking the same language could live in the same state. This improved administrative efficiency and strengthened national unity.",
+      "answer_outline": [
+        "Meaning of linguistic states",
+        "Reasons for creation",
+        "Impact"
+      ],
+      "key_concepts": ["linguistic states"],
+      "marks": 5,
+      "source_section": "Linguistic States"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the language policy adopted in India.",
+      "answer": "India adopted a flexible language policy where Hindi is the official language but English continues to be used for official purposes. The Constitution also recognizes 22 scheduled languages.",
+      "answer_outline": [
+        "Official language",
+        "Role of English",
+        "Scheduled languages"
+      ],
+      "key_concepts": ["language policy"],
+      "marks": 5,
+      "source_section": "Language Policy"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how coalition governments strengthened federalism in India.",
+      "answer": "Coalition governments required national parties to work with regional parties, which increased the influence of states in national decision making.",
+      "answer_outline": [
+        "Coalition governments",
+        "Role of regional parties",
+        "Impact on federalism"
+      ],
+      "key_concepts": ["coalition governments"],
+      "marks": 5,
+      "source_section": "Centre-State Relations"
+    },
+
+    {
+      "question_number": 11,
+      "question": "What is decentralisation and why is it important?",
+      "answer": "Decentralisation refers to the transfer of power from central and state governments to local governments so that local issues can be handled effectively.",
+      "answer_outline": ["Definition", "Purpose", "Benefits"],
+      "key_concepts": ["decentralisation"],
+      "marks": 4,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the structure of Panchayati Raj institutions.",
+      "answer": "Panchayati Raj institutions operate at three levels: Gram Panchayat at village level, Panchayat Samiti at block level, and Zilla Parishad at district level.",
+      "answer_outline": ["Village level", "Block level", "District level"],
+      "key_concepts": ["Panchayati Raj"],
+      "marks": 5,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the role of Gram Sabha in village governance.",
+      "answer": "The Gram Sabha consists of all adult members of the village and supervises the work of the Gram Panchayat and approves development plans.",
+      "answer_outline": ["Definition", "Members", "Functions"],
+      "key_concepts": ["Gram Sabha"],
+      "marks": 4,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how urban local governments function.",
+      "answer": "Urban areas are governed by municipalities and municipal corporations that manage services such as sanitation, roads, water supply, and public health.",
+      "answer_outline": [
+        "Municipalities",
+        "Municipal corporations",
+        "Urban services"
+      ],
+      "key_concepts": ["urban governance"],
+      "marks": 4,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the role of the judiciary in federal systems.",
+      "answer": "The judiciary interprets the constitution and resolves disputes between different levels of government to maintain the federal balance.",
+      "answer_outline": ["Interpret constitution", "Resolve disputes"],
+      "key_concepts": ["judiciary"],
+      "marks": 4,
+      "source_section": "Key Features of Federalism"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Why are financial resources important in a federal system?",
+      "answer": "Financial resources ensure that each level of government can perform its functions independently without depending completely on another level of government.",
+      "answer_outline": ["Revenue sources", "Financial autonomy"],
+      "key_concepts": ["financial autonomy"],
+      "marks": 4,
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how federalism promotes democracy.",
+      "answer": "Federalism promotes democracy by distributing power among different levels of government and encouraging citizen participation in governance.",
+      "answer_outline": ["Power distribution", "Citizen participation"],
+      "key_concepts": ["federalism", "democracy"],
+      "marks": 4,
+      "source_section": "Federalism in India"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how federalism manages diversity in India.",
+      "answer": "Federalism allows different regions to govern themselves while remaining part of a unified country, thereby accommodating cultural, linguistic, and regional diversity.",
+      "answer_outline": ["Regional autonomy", "Unity in diversity"],
+      "key_concepts": ["diversity management"],
+      "marks": 4,
+      "source_section": "Federalism in India"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the role of regional parties in Indian politics.",
+      "answer": "Regional parties represent the interests of specific states or regions and often play an important role in coalition governments at the national level.",
+      "answer_outline": ["Regional representation", "Coalition politics"],
+      "key_concepts": ["regional parties"],
+      "marks": 4,
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the importance of constitutional amendments in strengthening local governance.",
+      "answer": "The 73rd and 74th Constitutional Amendments strengthened local governance by giving constitutional status to Panchayats and Municipalities and making elections mandatory.",
+      "answer_outline": ["73rd Amendment", "74th Amendment", "Impact"],
+      "key_concepts": ["constitutional amendments"],
+      "marks": 5,
+      "source_section": "Decentralisation in India"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain how federalism helps maintain unity in India.",
+      "answer": "Federalism allows regional governments to manage local affairs while maintaining a unified national government, thus balancing unity and diversity.",
+      "answer_outline": ["Regional autonomy", "National unity"],
+      "key_concepts": ["federalism"],
+      "marks": 4,
+      "source_section": "Federalism in India"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why India has both central and state governments.",
+      "answer": "India has both central and state governments to ensure efficient governance across a large and diverse country.",
+      "answer_outline": ["Large country", "Diverse population"],
+      "key_concepts": ["levels of government"],
+      "marks": 4,
+      "source_section": "What makes India a federal country?"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how decentralisation increases public participation.",
+      "answer": "Decentralisation allows people to participate directly in decision making through local government institutions.",
+      "answer_outline": ["Local participation", "Democratic decision making"],
+      "key_concepts": ["decentralisation"],
+      "marks": 4,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the role of local governments in rural development.",
+      "answer": "Local governments plan and implement development projects such as roads, sanitation, and education facilities at the village level.",
+      "answer_outline": ["Village development", "Local administration"],
+      "key_concepts": ["local governance"],
+      "marks": 4,
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why federalism is suitable for large countries.",
+      "answer": "Federalism allows large countries to manage diverse populations and regions effectively by distributing power among different levels of government.",
+      "answer_outline": ["Large population", "Regional governance"],
+      "key_concepts": ["federalism"],
+      "marks": 5,
+      "source_section": "What is Federalism?"
+    }
+  ]
+}

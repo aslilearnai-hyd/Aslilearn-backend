@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Electricity: Circuits and their Components",
+    "generated_at": "2026-03-05T22:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which combination of components is essential to make a bulb glow in a simple circuit?",
+            "options": {
+                "A": "Cell, bulb, connecting wires",
+                "B": "Bulb and switch only",
+                "C": "Cell and bulb only",
+                "D": "Cell and switch only"
+            },
+            "correct_answer": "A",
+            "explanation": "A simple circuit requires a power source (cell), a load (bulb), and connecting wires to complete the path.",
+            "difficulty": "medium",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why does a bulb not glow when the circuit is open?",
+            "options": {
+                "A": "Voltage increases",
+                "B": "Resistance becomes zero",
+                "C": "Current cannot flow through a broken path",
+                "D": "Bulb filament melts"
+            },
+            "correct_answer": "C",
+            "explanation": "In an open circuit, the path is broken, preventing electric current from flowing.",
+            "difficulty": "medium",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "In a series circuit, if one bulb fuses, what happens to the other bulbs?",
+            "options": {
+                "A": "They glow brighter",
+                "B": "They stop glowing",
+                "C": "They glow dimly",
+                "D": "Nothing happens"
+            },
+            "correct_answer": "B",
+            "explanation": "In a series circuit, all components share the same path. If one bulb fuses, the circuit breaks and current stops everywhere.",
+            "difficulty": "medium",
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 4,
+            "question": "Which property of a material determines whether it is a good conductor or insulator?",
+            "options": {
+                "A": "Density",
+                "B": "Resistance",
+                "C": "Color",
+                "D": "Weight"
+            },
+            "correct_answer": "B",
+            "explanation": "Materials with low resistance are good conductors, while those with high resistance are insulators.",
+            "difficulty": "medium",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Which instrument should be connected in series to measure current?",
+            "options": {
+                "A": "Voltmeter",
+                "B": "Ammeter",
+                "C": "Thermometer",
+                "D": "Barometer"
+            },
+            "correct_answer": "B",
+            "explanation": "An ammeter is connected in series so that the entire current flows through it for measurement.",
+            "difficulty": "medium",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are household appliances connected in parallel circuits?",
+            "options": {
+                "A": "To increase resistance",
+                "B": "To reduce voltage",
+                "C": "So each appliance works independently",
+                "D": "To stop current flow"
+            },
+            "correct_answer": "C",
+            "explanation": "Parallel circuits allow each appliance to receive the same voltage and operate independently.",
+            "difficulty": "medium",
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the main function of a fuse?",
+            "options": {
+                "A": "Increase current",
+                "B": "Store electrical energy",
+                "C": "Protect circuit from excess current",
+                "D": "Measure voltage"
+            },
+            "correct_answer": "C",
+            "explanation": "A fuse melts when excess current flows, breaking the circuit and protecting devices.",
+            "difficulty": "medium",
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 8,
+            "question": "What happens to current when resistance increases while voltage remains constant?",
+            "options": {
+                "A": "Current increases",
+                "B": "Current decreases",
+                "C": "Current remains constant",
+                "D": "Current becomes zero"
+            },
+            "correct_answer": "B",
+            "explanation": "According to Ohm’s Law (I = V/R), increasing resistance reduces current when voltage is constant.",
+            "difficulty": "medium",
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following materials is a better conductor than iron?",
+            "options": {
+                "A": "Copper",
+                "B": "Rubber",
+                "C": "Plastic",
+                "D": "Wood"
+            },
+            "correct_answer": "A",
+            "explanation": "Copper has lower resistance and conducts electricity better than iron.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which symbol is used to represent a cell in a circuit diagram?",
+            "options": {
+                "A": "Two parallel lines of unequal length",
+                "B": "A zigzag line",
+                "C": "A circle",
+                "D": "A triangle"
+            },
+            "correct_answer": "A",
+            "explanation": "A cell is represented by two parallel lines of unequal length in circuit diagrams.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are electrical wires coated with plastic?",
+            "options": {
+                "A": "To increase current",
+                "B": "To reduce resistance",
+                "C": "To prevent electric shocks",
+                "D": "To improve conductivity"
+            },
+            "correct_answer": "C",
+            "explanation": "Plastic is an insulator and prevents accidental electric shocks.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following causes a short circuit?",
+            "options": {
+                "A": "High resistance path",
+                "B": "Direct contact between live and neutral wires",
+                "C": "Low voltage supply",
+                "D": "Broken wire"
+            },
+            "correct_answer": "B",
+            "explanation": "When live and neutral wires come into direct contact, a short circuit occurs causing large current flow.",
+            "difficulty": "medium",
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the unit of electric current?",
+            "options": {
+                "A": "Volt",
+                "B": "Ampere",
+                "C": "Ohm",
+                "D": "Watt"
+            },
+            "correct_answer": "B",
+            "explanation": "Electric current is measured in amperes (A).",
+            "difficulty": "medium",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Which component converts electrical energy into heat energy in a bulb?",
+            "options": {
+                "A": "Glass cover",
+                "B": "Filament",
+                "C": "Wire",
+                "D": "Switch"
+            },
+            "correct_answer": "B",
+            "explanation": "The filament heats up due to resistance and emits light.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which factor affects resistance of a wire?",
+            "options": {
+                "A": "Length of wire",
+                "B": "Material of wire",
+                "C": "Thickness of wire",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Resistance depends on the material, length, and thickness of the wire.",
+            "difficulty": "medium",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which safety device automatically switches off electricity during overload?",
+            "options": {
+                "A": "Fuse",
+                "B": "MCB",
+                "C": "Bulb",
+                "D": "Switch"
+            },
+            "correct_answer": "B",
+            "explanation": "MCB (Miniature Circuit Breaker) automatically trips during overload.",
+            "difficulty": "medium",
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the main advantage of parallel circuits?",
+            "options": {
+                "A": "Less wiring required",
+                "B": "Current decreases",
+                "C": "Devices operate independently",
+                "D": "Voltage becomes zero"
+            },
+            "correct_answer": "C",
+            "explanation": "In parallel circuits, each device gets the same voltage and works independently.",
+            "difficulty": "medium",
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 18,
+            "question": "What does earthing help prevent?",
+            "options": {
+                "A": "Bulb damage",
+                "B": "Electric shocks",
+                "C": "Voltage loss",
+                "D": "Current increase"
+            },
+            "correct_answer": "B",
+            "explanation": "Earthing safely directs excess current into the ground, preventing shocks.",
+            "difficulty": "medium",
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 19,
+            "question": "If voltage increases and resistance remains constant, current will:",
+            "options": {
+                "A": "Increase",
+                "B": "Decrease",
+                "C": "Remain constant",
+                "D": "Become zero"
+            },
+            "correct_answer": "A",
+            "explanation": "From Ohm’s Law, increasing voltage increases current if resistance remains constant.",
+            "difficulty": "medium",
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following materials is commonly used as an insulator in wires?",
+            "options": {
+                "A": "Copper",
+                "B": "Aluminum",
+                "C": "PVC",
+                "D": "Iron"
+            },
+            "correct_answer": "C",
+            "explanation": "PVC (plastic) is used as insulation around electrical wires.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Which condition will make a bulb glow brighter?",
+            "options": {
+                "A": "Lower voltage",
+                "B": "Higher voltage",
+                "C": "Broken circuit",
+                "D": "High resistance"
+            },
+            "correct_answer": "B",
+            "explanation": "Increasing voltage increases current, making the bulb glow brighter.",
+            "difficulty": "medium",
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 22,
+            "question": "Which diagram helps electricians understand connections in circuits?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Circuit diagram",
+                "C": "Flow chart",
+                "D": "Pie chart"
+            },
+            "correct_answer": "B",
+            "explanation": "Circuit diagrams represent electrical connections using symbols.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which part of a bulb prevents filament from burning in air?",
+            "options": {
+                "A": "Glass bulb filled with inert gas",
+                "B": "Copper wire",
+                "C": "Switch",
+                "D": "Fuse"
+            },
+            "correct_answer": "A",
+            "explanation": "The glass bulb contains inert gas which prevents filament from burning.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following increases resistance in a wire?",
+            "options": {
+                "A": "Increasing thickness",
+                "B": "Decreasing length",
+                "C": "Increasing length",
+                "D": "Using copper"
+            },
+            "correct_answer": "C",
+            "explanation": "Longer wires have greater resistance.",
+            "difficulty": "medium",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "What happens when too many appliances are connected to one socket?",
+            "options": {
+                "A": "Voltage increases",
+                "B": "Overloading occurs",
+                "C": "Current stops",
+                "D": "Resistance becomes zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Too many appliances draw excessive current, causing overloading.",
+            "difficulty": "medium",
+            "source_section": "Section 3.9"
+        }
+    ]
+}

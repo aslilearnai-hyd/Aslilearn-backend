@@ -1,0 +1,184 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Exploring Substances: Acidic, Basic and Neutral",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify acidic, basic, and neutral substances using indicators",
+        "Understand the properties of acids and bases",
+        "Differentiate between natural and synthetic indicators",
+        "Perform simple tests with litmus paper and turmeric",
+        "Understand the concept of neutralization in daily life",
+        "Recognize common substances used at home as acids or bases",
+        "Maintain safety while handling chemical substances"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Acids and Bases",
+            "topics_covered": [
+                "Taste of common substances (lemon, curd, baking soda)",
+                "Definition of Acids and Bases in simple terms",
+                "Natural occurrence of acids (organic acids)"
+            ],
+            "teaching_strategy": [
+                "Inquiry-based learning (asking about tastes)",
+                "Real-life examples",
+                "Table demonstration on board"
+            ],
+            "student_activities": [
+                "List 5 sour and 5 bitter substances found in the kitchen",
+                "Discuss the 'soapy' feel of soap water"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Classifying a list of items as sour/bitter/other"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Natural Indicators: Litmus",
+            "topics_covered": [
+                "What are indicators?",
+                "Litmus as a natural dye (Lichens)",
+                "Effect of acidic and basic solutions on blue/red litmus"
+            ],
+            "teaching_strategy": [
+                "Live demonstration with litmus paper",
+                "Color change visualization chart"
+            ],
+            "student_activities": [
+                "Test lemon juice and soap solution with litmus paper",
+                "Record observations in a table"
+            ],
+            "assessment": [
+                "Notebook checking of observation tables",
+                "Spot test: Identifying unknown liquids using litmus"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Other Natural Indicators",
+            "topics_covered": [
+                "Turmeric as an indicator",
+                "China Rose (Gudhal) as an indicator",
+                "Color changes in different mediums"
+            ],
+            "teaching_strategy": [
+                "Experimental demonstration",
+                "Comparative chart showing color results"
+            ],
+            "student_activities": [
+                "Prepare turmeric paper strips",
+                "Observe the change in turmeric when soap is applied"
+            ],
+            "assessment": [
+                "Short written quiz on color changes",
+                "Peer checking of activity results"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Neutral Substances and pH Basics",
+            "topics_covered": [
+                "Definition of neutral substances",
+                "Examples: Water, Salt, Sugar",
+                "Introduction to the concept of the pH scale (Simplified)"
+            ],
+            "teaching_strategy": [
+                "Logic-based discussion (Why doesn't water change litmus color?)",
+                "Visual aid showing a simple pH 1-14 color bar"
+            ],
+            "student_activities": [
+                "Test distilled water and common salt solution",
+                "Draw a color-coded pH scale in notebooks"
+            ],
+            "assessment": [
+                "Exit slip: Name two neutral substances",
+                "Drawing evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Process of Neutralization",
+            "topics_covered": [
+                "Reaction between an acid and a base",
+                "Formation of Salt and Water",
+                "Evolution of heat in neutralization"
+            ],
+            "teaching_strategy": [
+                "Teacher-led demonstration (Dilute HCl + Dilute NaOH)",
+                "Step-by-step equation explanation"
+            ],
+            "student_activities": [
+                "Observe the temperature change during a demonstration",
+                "Write the word equation: Acid + Base -> Salt + Water"
+            ],
+            "assessment": [
+                "Individual worksheet on the neutralization reaction",
+                "Board practice for word equations"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Neutralization in Everyday Life",
+            "topics_covered": [
+                "Indigestion (Antacids)",
+                "Ant sting (Formic acid and calamine)",
+                "Soil treatment and Factory waste"
+            ],
+            "teaching_strategy": [
+                "Storytelling/Scenario-based learning",
+                "Group discussion on household remedies"
+            ],
+            "student_activities": [
+                "Roleplay: A doctor treating a patient with acidity",
+                "Case study: How to treat acidic soil"
+            ],
+            "assessment": [
+                "Group presentation on one real-life application",
+                "Teacher evaluation of the application logic"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Summary of Acids, Bases, and Neutralizers",
+                "Recap of indicator color changes",
+                "Safety precautions in the lab"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision",
+                "Flashcard activity for indicator colors",
+                "Doubt clearing session"
+            ],
+            "student_activities": [
+                "Participate in a team quiz",
+                "Complete a summary concept map"
+            ],
+            "assessment": [
+                "Short test (15 marks)",
+                "MCQs and matching column questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard/Whiteboard",
+        "Litmus paper (Red/Blue), Turmeric, China Rose petals",
+        "Common samples: Lemon, Vinegar, Soap solution, Baking soda, Milk of Magnesia",
+        "NCERT Science Textbook",
+        "Safety goggles and gloves"
+    ],
+    "evaluation_methods": [
+        "Lab observation",
+        "Notebook checking",
+        "MCQs",
+        "Oral quiz",
+        "Matching columns (Substance vs Indicator color)",
+        "Short answer tests"
+    ],
+    "teacher_tip": "Focus heavily on the 'Color Change' table for litmus, turmeric, and china rose, as students often swap the results for acids and bases. Use mnemonics like 'BAR' (Blue to Red is Acid) to help them remember."
+}

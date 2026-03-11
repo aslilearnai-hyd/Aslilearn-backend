@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 5: Introduction to Euclid’s Geometry",
+    "generated_at": "2026-03-05T21:45:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is geometry?",
+                "correct_answer": "A branch of mathematics that deals with shapes, sizes and properties of space",
+                "explanation": "The word geometry comes from Greek words meaning 'earth measurement'.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "question": "Who was Euclid?",
+                "correct_answer": "A Greek mathematician who organised geometry in a systematic way",
+                "explanation": "Euclid compiled the famous mathematical work called 'Elements'.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "question": "What are undefined terms in geometry?",
+                "correct_answer": "Basic terms such as point, line and plane that are not formally defined",
+                "explanation": "They are understood intuitively and used to build other concepts.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What is an axiom?",
+                "correct_answer": "A statement accepted as true without proof",
+                "explanation": "Axioms are universal truths used throughout mathematics.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What is a postulate?",
+                "correct_answer": "An assumption specific to geometry that is accepted without proof",
+                "explanation": "Postulates describe basic geometric constructions.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "State Euclid’s first postulate.",
+                "correct_answer": "A straight line may be drawn from any one point to any other point",
+                "explanation": "It states that a straight line can connect any two points.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What does Euclid’s second postulate state?",
+                "correct_answer": "A terminated line can be produced indefinitely",
+                "explanation": "A line segment can be extended endlessly in both directions.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What does Euclid’s third postulate state?",
+                "correct_answer": "A circle can be drawn with any centre and any radius",
+                "explanation": "This postulate forms the basis of circle construction.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What does Euclid’s fourth postulate state?",
+                "correct_answer": "All right angles are equal to one another",
+                "explanation": "Any right angle has the same measure of 90 degrees.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What is a theorem?",
+                "correct_answer": "A mathematical statement that is proved using axioms, postulates and definitions",
+                "explanation": "Theorems are derived through logical reasoning.",
+                "source_section": "Section 5.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Undefined Terms",
+                "content": "Point, line and plane are basic undefined terms in geometry.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Euclid’s Elements",
+                "content": "Euclid compiled geometric knowledge into thirteen books called Elements.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "title": "Axioms",
+                "content": "Axioms are universal truths accepted without proof.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Postulates",
+                "content": "Postulates are assumptions that apply specifically to geometry.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Theorem",
+                "content": "A theorem is a statement proved logically using axioms, definitions and postulates.",
+                "source_section": "Section 5.2"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Geometry originated from the need to measure land.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "fact": "Euclid organised geometric knowledge into a logical system.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "fact": "Axioms and postulates are accepted without proof.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "fact": "Two distinct lines cannot intersect at more than one point.",
+                "source_section": "Section 5.2"
+            }
+        ]
+    }
+}

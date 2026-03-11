@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Geography)",
+  "chapter": "Forest and Wildlife Resources",
+  "difficulty": "Medium",
+  "source_pdf": "jess102.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Biodiversity Web Analysis",
+      "objective": "Understand interdependence in ecosystems",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Create a simple ecosystem example such as a forest",
+        "List plants, animals, and microorganisms in it",
+        "Draw connections showing how they depend on each other"
+      ],
+      "learning_outcome": "Students understand ecological interdependence",
+      "evaluation": "Accuracy of ecosystem connections (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Causes of Biodiversity Loss",
+      "objective": "Identify major threats to flora and fauna",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "List five human activities responsible for biodiversity loss",
+        "Explain how each activity affects forests and wildlife",
+        "Suggest one prevention method for each"
+      ],
+      "learning_outcome": "Students understand environmental threats and mitigation strategies",
+      "evaluation": "Logical explanations and solutions (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Forest Classification Comparison",
+      "objective": "Compare types of forest categories in India",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a table with Reserved, Protected, and Unclassed forests",
+        "Write definitions and characteristics of each",
+        "Add examples of states where these forests exist"
+      ],
+      "learning_outcome": "Students understand differences in forest management types",
+      "evaluation": "Correct comparison table (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Wildlife Protection Timeline",
+      "objective": "Understand major conservation initiatives",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Create a timeline of wildlife conservation in India",
+        "Include Wildlife Protection Act (1972) and Project Tiger (1973)",
+        "Add two more conservation initiatives"
+      ],
+      "learning_outcome": "Students understand historical efforts in wildlife conservation",
+      "evaluation": "Completeness of timeline (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Mapping Tiger Reserves",
+      "objective": "Identify major tiger reserves in India",
+      "materials": ["Map of India", "Notebook"],
+      "steps": [
+        "Locate five tiger reserves on the map of India",
+        "Write the state of each reserve",
+        "Mention one species protected in each reserve"
+      ],
+      "learning_outcome": "Students learn geographic distribution of conservation areas",
+      "evaluation": "Correct mapping (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Community Conservation Case Study",
+      "objective": "Understand role of local communities",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write about a community conservation example such as Chipko Movement",
+        "Explain how local people protected forests",
+        "Describe its environmental impact"
+      ],
+      "learning_outcome": "Students learn importance of community participation",
+      "evaluation": "Quality of case study explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Sacred Groves Investigation",
+      "objective": "Explore traditional conservation practices",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Define sacred groves",
+        "Research one sacred grove example in India",
+        "Explain how cultural beliefs help conserve biodiversity"
+      ],
+      "learning_outcome": "Students understand traditional ecological conservation",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Joint Forest Management Study",
+      "objective": "Learn about participatory forest management",
+      "materials": ["Notebook"],
+      "steps": [
+        "Explain what Joint Forest Management (JFM) is",
+        "Describe how communities participate in forest protection",
+        "List benefits of JFM to local communities"
+      ],
+      "learning_outcome": "Students understand cooperative forest management",
+      "evaluation": "Clarity and completeness (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Endangered Species Report",
+      "objective": "Study endangered wildlife species",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Choose one endangered species in India",
+        "Write about its habitat and threats",
+        "Suggest measures to protect it"
+      ],
+      "learning_outcome": "Students understand wildlife conservation needs",
+      "evaluation": "Quality of research and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Environment Conservation Essay",
+      "objective": "Encourage environmental responsibility",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short essay about practices that protect forests and wildlife",
+        "Include at least three examples from daily life",
+        "Suggest how students can contribute to conservation"
+      ],
+      "learning_outcome": "Students develop awareness and responsibility towards environment",
+      "evaluation": "Clarity and relevance of ideas (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Our Changing Earth",
+    "difficulty": "Hard",
+    "source_pdf": "jegy103.pdf",
+    "short_notes": {
+        "key_points": [
+            "Lithospheric plates move due to convection currents in the mantle; the heat causes magma to rise, cool, and sink in a continuous circular motion.",
+            "Earthquakes generate three types of seismic waves: P-waves (longitudinal), S-waves (transverse), and L-waves (surface waves).",
+            "The intensity of an earthquake is highest at the epicenter and decreases as the distance from the center increases.",
+            "Delta formation occurs at the 'mouth' of the river where the velocity of water decreases significantly, causing the river to deposit its entire load.",
+            "Glacial action involves 'Plucking' and 'Abrasion', where ice carves out U-shaped valleys and leaves behind unsorted sediments called moraines."
+        ],
+        "examples": [
+            "Seismic Activity: The Bhuj earthquake (January 26, 2001) measured 6.9 on the Richter scale and caused massive structural failure.",
+            "Erosional Remnants: Sea Stacks are formed when the roofs of Sea Arches collapse due to continuous wave erosion.",
+            "Depositional Features: Loess deposits in China are formed when wind carries very fine, light sand over long distances and deposits it over large areas.",
+            "River Dynamics: Formation of distributaries happens when a river is unable to carry its load and splits into numerous channels before entering the sea."
+        ],
+        "formulas": [
+            "Richter Scale Logarithm: $Magnitude \ 7.0 = 10 \times \text{Intensity of Magnitude } 6.0$ (approx. 32 times more energy)",
+            "River Gradient: $\text{Velocity} \propto \frac{1}{\text{Sediment Load}}$ (As load increases and slope decreases, deposition begins)"
+        ],
+        "exam_tips": [
+            "Distinguish between 'Focus' (hypocenter) where energy is released and 'Epicenter' (on the surface) where damage is usually maximum.",
+            "Understand that an earthquake of 2.0 or less is hardly felt, while over 7.0 is classified as a major disaster.",
+            "Note that meanders are characteristic of 'plain' areas where the river has a gentle gradient, not 'mountainous' areas.",
+            "Be precise: Sand dunes are 'depositional' features of wind, while mushroom rocks are 'erosional' features."
+        ]
+    }
+}

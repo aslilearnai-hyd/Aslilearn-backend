@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: The World of Metals and Non-metals",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-06T22:28:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is malleability?",
+            "answer": "The property of metals that allows them to be beaten into thin sheets.",
+            "key_concepts": ["physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name a metal that is liquid at room temperature.",
+            "answer": "Mercury.",
+            "key_concepts": ["metals"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is ductility?",
+            "answer": "The property of metals by which they can be drawn into thin wires.",
+            "key_concepts": ["physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name a non-metal that is a good conductor of electricity.",
+            "answer": "Graphite.",
+            "key_concepts": ["non-metals", "conductivity"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which metal is stored in kerosene to prevent it from reacting with air?",
+            "answer": "Sodium (or Potassium).",
+            "key_concepts": ["reactivity", "metals"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What does 'sonorous' mean?",
+            "answer": "The property of metals to produce a ringing sound when struck.",
+            "key_concepts": ["physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Name the gas produced when a metal reacts with a dilute acid.",
+            "answer": "Hydrogen gas.",
+            "key_concepts": ["chemical reactions"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the nature of metallic oxides?",
+            "answer": "Metallic oxides are generally basic in nature.",
+            "key_concepts": ["chemical properties"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Name a non-metal which is essential for our life and all living beings inhale it.",
+            "answer": "Oxygen.",
+            "key_concepts": ["non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Which metal is used to make foil for wrapping food?",
+            "answer": "Aluminium.",
+            "key_concepts": ["uses of metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Name a non-metal that is liquid at room temperature.",
+            "answer": "Bromine.",
+            "key_concepts": ["non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the nature of non-metallic oxides?",
+            "answer": "Non-metallic oxides are generally acidic in nature.",
+            "key_concepts": ["chemical properties"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Name two metals which can be cut with a knife.",
+            "answer": "Sodium and Potassium.",
+            "key_concepts": ["metals"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is lustrous property?",
+            "answer": "The property by which metals have a shiny appearance.",
+            "key_concepts": ["physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Which non-metal is used in purple-colored solution applied on wounds as an antiseptic?",
+            "answer": "Iodine.",
+            "key_concepts": ["uses of non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Are metals generally good or poor conductors of heat?",
+            "answer": "Metals are generally good conductors of heat.",
+            "key_concepts": ["thermal conductivity"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Name a metal which is used in thermometers.",
+            "answer": "Mercury.",
+            "key_concepts": ["uses of metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which non-metal is used in firecrackers?",
+            "answer": "Sulphur and Phosphorus.",
+            "key_concepts": ["uses of non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What happens when a pop sound is heard during a chemical test?",
+            "answer": "The pop sound indicates the presence of Hydrogen gas.",
+            "key_concepts": ["chemical test"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Name the metal used for making electric wires.",
+            "answer": "Copper (or Aluminium).",
+            "key_concepts": ["conductivity", "uses of metals"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which non-metal is used in water purification to kill germs?",
+            "answer": "Chlorine.",
+            "key_concepts": ["uses of non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Are non-metals generally brittle or tough?",
+            "answer": "Non-metals are generally brittle.",
+            "key_concepts": ["physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which metal is used to make ornaments because of its shine?",
+            "answer": "Gold (or Silver).",
+            "key_concepts": ["lustre", "uses of metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the hardest natural substance known?",
+            "answer": "Diamond (an allotrope of Carbon).",
+            "key_concepts": ["non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which non-metal is used in fertilizers to enhance plant growth?",
+            "answer": "Nitrogen.",
+            "key_concepts": ["uses of non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        }
+    ]
+}

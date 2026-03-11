@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Is Matter Around Us Pure",
+    "generated_at": "2026-03-06T18:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A saturated solution of Potassium Chloride is prepared at 353 K and then cooled to room temperature (293 K). What observation is most scientifically accurate?",
+            "options": {
+                "A": "The solution remains saturated with no physical change.",
+                "B": "Crystals of Potassium Chloride precipitate out because solubility decreases with lower temperature.",
+                "C": "The solution becomes unsaturated.",
+                "D": "The boiling point of the solution increases upon cooling."
+            },
+            "correct_answer": "B",
+            "explanation": "Solubility of most solid salts in water is directly proportional to temperature. Cooling a saturated solution leads to crystallization of the excess solute.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following describes the 'Tyndall Effect' in terms of the wavelength of light?",
+            "options": {
+                "A": "It occurs when the particle size is much larger than the wavelength of light.",
+                "B": "It occurs when the particle size is roughly comparable to the wavelength of visible light.",
+                "C": "It is independent of the size of dispersed particles.",
+                "D": "It only occurs with ultraviolet light."
+            },
+            "correct_answer": "B",
+            "explanation": "Colloidal particles (1-1000 nm) are large enough to interfere with and scatter visible light waves (400-700 nm), making the beam visible.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "If 50 g of sugar is dissolved in 250 mL of water at 30°C and the resulting solution has a volume of 270 mL, what is the 'mass by volume' percentage?",
+            "options": {
+                "A": "20%",
+                "B": "18.51%",
+                "C": "16.67%",
+                "D": "22.2%"
+            },
+            "correct_answer": "B",
+            "explanation": "Mass by volume % = (Mass of solute / Volume of solution) × 100. Calculation: (50 / 270) × 100 = 18.51%.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which sequence of techniques would best separate a mixture of Sand, Salt, and Ammonium Chloride?",
+            "options": {
+                "A": "Filtration -> Evaporation -> Sublimation",
+                "B": "Sublimation -> Dissolution in water -> Filtration -> Evaporation",
+                "C": "Dissolution in water -> Filtration -> Sublimation",
+                "D": "Distillation -> Crystallization -> Filtration"
+            },
+            "correct_answer": "B",
+            "explanation": "Sublimation removes Ammonium Chloride first; adding water dissolves Salt; filtration removes the insoluble Sand; evaporation recovers Salt.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "In the fractional distillation of air, which gas is obtained first as the temperature of the liquid air is gradually increased?",
+            "options": {
+                "A": "Oxygen (B.P. -183°C)",
+                "B": "Argon (B.P. -186°C)",
+                "C": "Nitrogen (B.P. -196°C)",
+                "D": "Carbon Dioxide"
+            },
+            "correct_answer": "C",
+            "explanation": "Nitrogen has the lowest boiling point (-196°C) and thus distills out first as the liquid air warms up.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following is a 'Liquid in Solid' colloid (Gel)?",
+            "options": {
+                "A": "Butter",
+                "B": "Jelly",
+                "C": "Cheese",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Gels are systems where a liquid phase is dispersed within a solid dispersing medium.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "A chemical change is almost always accompanied by:",
+            "options": {
+                "A": "Absorption or evolution of energy",
+                "B": "Change in mass of the total system",
+                "C": "Preservation of the physical state",
+                "D": "A change in the nucleus of the atoms"
+            },
+            "correct_answer": "A",
+            "explanation": "Chemical reactions involve breaking and forming bonds, which inherently involves energy changes (exothermic or endothermic).",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Solubility of a gas in a liquid generally ______ with an increase in pressure.",
+            "options": {
+                "A": "Decreases",
+                "B": "Increases",
+                "C": "Remains unaffected",
+                "D": "Becomes zero"
+            },
+            "correct_answer": "B",
+            "explanation": "According to Henry's Law, the solubility of a gas is directly proportional to the partial pressure of the gas above the liquid.",
+            "difficulty": "hard",
+            "source_section": "HOTS"
+        },
+        {
+            "question_number": 9,
+            "question": "What happens when a beam of light is passed through a solution of copper sulphate?",
+            "options": {
+                "A": "The path of light becomes visible (Tyndall Effect).",
+                "B": "The path of light is not visible.",
+                "C": "The solution turns milky.",
+                "D": "The light is reflected back."
+            },
+            "correct_answer": "B",
+            "explanation": "Copper sulphate forms a true solution where particle size is < 1 nm; such small particles cannot scatter light.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "A mixture of Acetone (B.P. 56°C) and Water (B.P. 100°C) is best separated by:",
+            "options": {
+                "A": "Simple Distillation",
+                "B": "Fractional Distillation",
+                "C": "Separating Funnel",
+                "D": "Centrifugation"
+            },
+            "correct_answer": "A",
+            "explanation": "Since the boiling point difference (44°C) is significantly more than 25 K, simple distillation is sufficient.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 11,
+            "question": "The purity of a solid substance can be checked by measuring its:",
+            "options": {
+                "A": "Density",
+                "B": "Sharp melting point",
+                "C": "Volume",
+                "D": "Solubility in water"
+            },
+            "correct_answer": "B",
+            "explanation": "Pure substances have a sharp and fixed melting point, whereas impurities lower the melting point and cause it to occur over a range.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is not an allotrope of carbon (a pure element)?",
+            "options": {
+                "A": "Diamond",
+                "B": "Graphite",
+                "C": "Buckminsterfullerene",
+                "D": "Coal"
+            },
+            "correct_answer": "D",
+            "explanation": "Coal is a complex mixture of carbon, hydrogen, oxygen, nitrogen, and sulfur; it is not a pure element.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the concentration of a solution prepared by mixing 20 g of salt in 180 g of water, expressed as mass percentage?",
+            "options": {
+                "A": "11.1%",
+                "B": "10%",
+                "C": "9%",
+                "D": "20%"
+            },
+            "correct_answer": "B",
+            "explanation": "(20 / (20+180)) * 100 = 10%.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which dispersed phase and dispersing medium combination forms 'Smoke'?",
+            "options": {
+                "A": "Liquid in Gas",
+                "B": "Solid in Gas",
+                "C": "Gas in Solid",
+                "D": "Solid in Liquid"
+            },
+            "correct_answer": "B",
+            "explanation": "Smoke is an aerosol consisting of solid soot/dust particles dispersed in air.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Chromatography works on the principle of difference in ______ of components in a specific solvent.",
+            "options": {
+                "A": "Boiling points",
+                "B": "Densities",
+                "C": "Solubilities",
+                "D": "Vapor pressures"
+            },
+            "correct_answer": "C",
+            "explanation": "Different components move at different rates based on their solubility in the mobile phase and affinity for the stationary phase.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following elements is a metalloid that behaves as a semiconductor?",
+            "options": {
+                "A": "Silicon",
+                "B": "Germanium",
+                "C": "Arsenic",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "These elements have properties of both metals and non-metals and are widely used in electronics.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Separation of two miscible liquids with very close boiling points (< 25 K) requires a 'fractionating column' because:",
+            "options": {
+                "A": "It increases the pressure.",
+                "B": "It provides a large surface area for repeated condensation and vaporization.",
+                "C": "It acts as a filter.",
+                "D": "It cools the mixture down."
+            },
+            "correct_answer": "B",
+            "explanation": "The fractionating column allows more volatile components to rise while less volatile ones condense back, ensuring purity.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 18,
+            "question": "A student accidentally mixed water and kerosene oil. Which property of the liquids will allow for their separation?",
+            "options": {
+                "A": "Difference in boiling points",
+                "B": "Difference in densities and immiscibility",
+                "C": "Difference in solubilities",
+                "D": "Difference in freezing points"
+            },
+            "correct_answer": "B",
+            "explanation": "Immiscible liquids of different densities form layers and can be separated using a separating funnel.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "The law of 'Definite Proportions' applies to which of the following?",
+            "options": {
+                "A": "Mixtures",
+                "B": "Compounds",
+                "C": "Colloids",
+                "D": "Suspensions"
+            },
+            "correct_answer": "B",
+            "explanation": "Compounds always contain the same elements in the same proportion by mass.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 20,
+            "question": "When a small amount of salt is added to a large amount of water, which component is the 'solvent'?",
+            "options": {
+                "A": "Salt",
+                "B": "Water",
+                "C": "The whole solution",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "The component present in a larger quantity that dissolves the other is the solvent.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Water is a compound because:",
+            "options": {
+                "A": "It can be separated into $H_2$ and $O_2$ by physical means.",
+                "B": "Its properties are the same as Hydrogen and Oxygen.",
+                "C": "Its composition is fixed and elements are chemically combined.",
+                "D": "It can be mixed in any ratio."
+            },
+            "correct_answer": "C",
+            "explanation": "Compounds have a fixed ratio of elements and require chemical methods for decomposition.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Milk is a colloid. On centrifugation, which component settles at the bottom?",
+            "options": {
+                "A": "Cream",
+                "B": "Skimmed Milk (Water/Proteins)",
+                "C": "Both settle equally",
+                "D": "Nothing settles"
+            },
+            "correct_answer": "B",
+            "explanation": "Centrifugation pushes denser particles (skimmed milk) to the bottom while lighter cream stays on top.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following is an example of an 'Aerosol'?",
+            "options": {
+                "A": "Milk",
+                "B": "Fog",
+                "C": "Sponge",
+                "D": "Face cream"
+            },
+            "correct_answer": "B",
+            "explanation": "Aerosols are colloids with a gas dispersing medium (Fog is liquid in gas).",
+            "difficulty": "hard",
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens to the solubility of a gas in water if the temperature is increased?",
+            "options": {
+                "A": "Increases",
+                "B": "Decreases",
+                "C": "Stays the same",
+                "D": "First increases then decreases"
+            },
+            "correct_answer": "B",
+            "explanation": "Gases generally become less soluble in liquids as temperature rises because higher kinetic energy allows gas molecules to escape the liquid phase.",
+            "difficulty": "hard",
+            "source_section": "HOTS"
+        },
+        {
+            "question_number": 25,
+            "question": "Tincture of Iodine consists of:",
+            "options": {
+                "A": "Solid Iodine in Solid Alcohol",
+                "B": "Liquid Iodine in Water",
+                "C": "Solid Iodine (solute) in Alcohol (solvent)",
+                "D": "Alcohol (solute) in Iodine (solvent)"
+            },
+            "correct_answer": "C",
+            "explanation": "It is a solution used as an antiseptic where iodine is dissolved in alcohol.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

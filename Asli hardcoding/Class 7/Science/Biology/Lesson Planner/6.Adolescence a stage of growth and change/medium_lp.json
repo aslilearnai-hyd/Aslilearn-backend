@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Adolescence: A Stage of Growth and Change",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the physiological changes associated with puberty",
+        "Describe the function of endocrine glands and major hormones",
+        "Understand the reproductive phase of life in humans",
+        "Explain the chromosomal basis of sex determination",
+        "Analyze the importance of nutritional and emotional health during adolescence",
+        "Identify the impact of hormones on the life cycle of insects and frogs",
+        "Discuss the social and legal aspects of the age of marriage"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Puberty and Physical Development",
+            "topics_covered": [
+                "Growth patterns and height calculation",
+                "Development of secondary sexual characteristics",
+                "Activity of sweat and sebaceous glands"
+            ],
+            "teaching_strategy": [
+                "Data interpretation (Height charts)",
+                "Comparative discussion",
+                "Diagram-based explanation"
+            ],
+            "student_activities": [
+                "Calculate individual predicted height using the NCERT formula",
+                "Brainstorm the difference between primary and secondary sexual traits"
+            ],
+            "assessment": [
+                "Calculation-based worksheet",
+                "Oral quiz on physical changes"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Endocrine System",
+            "topics_covered": [
+                "Exocrine vs. Endocrine glands",
+                "Role of Pituitary, Thyroid, Pancreas, and Adrenals",
+                "Hormonal control of puberty (Testosterone and Estrogen)"
+            ],
+            "teaching_strategy": [
+                "Chart-based teaching",
+                "Concept mapping of gland functions",
+                "Problem-solving (e.g., Why do people get Goitre?)"
+            ],
+            "student_activities": [
+                "Draw a map of the human body showing gland locations",
+                "Table completion: Gland vs. Hormone vs. Function"
+            ],
+            "assessment": [
+                "Labeling activity",
+                "Short answer quiz on deficiency diseases"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Reproductive Phase and Menstruation",
+            "topics_covered": [
+                "Onset and duration of the reproductive phase",
+                "The menstrual cycle and its significance",
+                "Menarche and Menopause"
+            ],
+            "teaching_strategy": [
+                "Biological cycle diagram",
+                "Sensitivity-focused lecture",
+                "Group discussion on hygiene"
+            ],
+            "student_activities": [
+                "Create a timeline of the 28-day menstrual cycle",
+                "Discuss social taboos and provide scientific counter-arguments"
+            ],
+            "assessment": [
+                "Cycle-sequencing worksheet",
+                "Peer-led Q&A session"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Sex Determination and Genetics",
+            "topics_covered": [
+                "Chromosomes in human cells",
+                "Sex chromosomes (X and Y)",
+                "Genetic logic: Why the mother is not responsible for the child's sex"
+            ],
+            "teaching_strategy": [
+                "Flowchart of genetic crossing",
+                "Logical deduction/Proof-based teaching",
+                "Social awareness discussion"
+            ],
+            "student_activities": [
+                "Draw a cross-diagram showing XX and XY combinations",
+                "Role-play a community awareness scenario"
+            ],
+            "assessment": [
+                "Diagram assessment",
+                "Fact-check quiz on sex determination"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Hormones in Other Animals",
+            "topics_covered": [
+                "Metamorphosis in frogs (Role of Thyroxine)",
+                "Insect hormones and life cycles",
+                "Importance of Iodine in water for tadpole growth"
+            ],
+            "teaching_strategy": [
+                "Comparative biology",
+                "Video/Slide presentation",
+                "Cause-and-effect analysis"
+            ],
+            "student_activities": [
+                "Draw the life cycle of a frog and indicate the hormonal stage",
+                "Research the effect of iodine-deficient water on tadpoles"
+            ],
+            "assessment": [
+                "Comparison table (Human vs. Frog hormones)",
+                "Short response questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Health and Well-being",
+            "topics_covered": [
+                "Nutritional requirements (Iron, Calcium, etc.)",
+                "Personal hygiene and infection prevention",
+                "Saying 'No' to drugs and managing peer pressure"
+            ],
+            "teaching_strategy": [
+                "Case studies on nutrition",
+                "Brainstorming 'Refusal Skills'",
+                "Interactive seminar"
+            ],
+            "student_activities": [
+                "Analyze food labels for nutritional content",
+                "Practice 'Saying No' scripts for different peer pressure scenarios"
+            ],
+            "assessment": [
+                "Diet plan proposal",
+                "Reflection journal entry"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Recap of Endocrine functions",
+                "Clarification of misconceptions",
+                "Social and Legal age of marriage"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision",
+                "Discussion on legal age and health impacts",
+                "Review of key scientific terms"
+            ],
+            "student_activities": [
+                "Participate in a team-based 'Science Bowl'",
+                "Complete a comprehensive mixed practice worksheet"
+            ],
+            "assessment": [
+                "Unit Test (20 marks)",
+                "Evaluation of MCQ and descriptive questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Endocrine system posters",
+        "Height-weight growth charts",
+        "NCERT Science Textbook",
+        "Video clips of frog metamorphosis",
+        "Samples of iron-rich foods or pictures"
+    ],
+    "evaluation_methods": [
+        "Notebook evaluation",
+        "Diagrammatic accuracy",
+        "Scientific reasoning tests",
+        "MCQs and Assertion questions",
+        "Class participation in health discussions"
+    ],
+    "teacher_tip": "While teaching sex determination, emphasize that both parents contribute genetic material, but the father's gamete is the deciding factor for sex, purely by chance. This helps address significant social misinformation."
+}

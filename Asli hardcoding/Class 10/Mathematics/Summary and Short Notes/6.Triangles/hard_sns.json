@@ -1,0 +1,26 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh106.pdf",
+    "short_notes": {
+        "key_points": [
+            "Logical reasoning is required in complex triangle problems",
+            "Multiple properties may be used in a single problem",
+            "Diagrams play a crucial role in HOTS questions"
+        ],
+        "examples": [
+            "Multi-angle reasoning problems",
+            "Case-study based triangle problems"
+        ],
+        "formulas": [
+            "Angle sum property",
+            "Triangle inequality property"
+        ],
+        "exam_tips": [
+            "Write complete reasoning steps",
+            "Support answers with proper diagrams"
+        ]
+    }
+}

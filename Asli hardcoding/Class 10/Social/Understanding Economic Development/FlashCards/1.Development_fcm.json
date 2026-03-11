@@ -1,0 +1,131 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Development",
+  "difficulty": "Medium",
+  "generated_at": "2026-02-27T17:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is per capita income used to compare countries?",
+      "options": {
+        "A": "It shows total population",
+        "B": "It shows average income of a person",
+        "C": "It measures exports",
+        "D": "It shows literacy rate"
+      },
+      "correct_answer": "B",
+      "explanation": "Per capita income helps compare the average income and living standards of people."
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is NOT a component of Human Development Index (HDI)?",
+      "options": {
+        "A": "Life expectancy",
+        "B": "Education level",
+        "C": "Per capita income",
+        "D": "Population size"
+      },
+      "correct_answer": "D",
+      "explanation": "HDI includes health, education, and income — not population size."
+    },
+    {
+      "question_number": 3,
+      "question": "Why is income alone not a sufficient measure of development?",
+      "options": {
+        "A": "It ignores health and education factors",
+        "B": "It shows population growth",
+        "C": "It measures exports only",
+        "D": "It shows trade balance"
+      },
+      "correct_answer": "A",
+      "explanation": "Development also includes health, education, equality and quality of life."
+    },
+    {
+      "question_number": 4,
+      "question": "Which example shows conflicting goals of development?",
+      "options": {
+        "A": "Building a hospital",
+        "B": "Setting up a factory causing pollution",
+        "C": "Improving schools",
+        "D": "Providing clean water"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial growth may conflict with environmental protection."
+    },
+    {
+      "question_number": 5,
+      "question": "Public facilities are important because they:",
+      "options": {
+        "A": "Increase exports",
+        "B": "Improve quality of life",
+        "C": "Reduce population",
+        "D": "Increase private profit"
+      },
+      "correct_answer": "B",
+      "explanation": "Public facilities like hospitals and schools improve living standards."
+    },
+    {
+      "question_number": 6,
+      "question": "Which state is often ranked high in HDI in India?",
+      "options": {
+        "A": "Bihar",
+        "B": "Kerala",
+        "C": "Jharkhand",
+        "D": "Odisha"
+      },
+      "correct_answer": "B",
+      "explanation": "Kerala ranks high due to better education and health indicators."
+    },
+    {
+      "question_number": 7,
+      "question": "Sustainable development mainly focuses on:",
+      "options": {
+        "A": "Maximum use of resources",
+        "B": "Using resources carefully for future generations",
+        "C": "Ignoring environment",
+        "D": "Increasing pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Sustainable development ensures future needs are not compromised."
+    },
+    {
+      "question_number": 8,
+      "question": "Which indicator reflects health conditions of a country?",
+      "options": {
+        "A": "Infant Mortality Rate",
+        "B": "Export rate",
+        "C": "Import duty",
+        "D": "Trade deficit"
+      },
+      "correct_answer": "A",
+      "explanation": "IMR shows number of infant deaths per 1000 births."
+    },
+    {
+      "question_number": 9,
+      "question": "What does literacy rate measure?",
+      "options": {
+        "A": "Income level",
+        "B": "Education level of population",
+        "C": "Export growth",
+        "D": "Industrial output"
+      },
+      "correct_answer": "B",
+      "explanation": "Literacy rate indicates level of education."
+    },
+    {
+      "question_number": 10,
+      "question": "Why do people have different development goals?",
+      "options": {
+        "A": "Same income level",
+        "B": "Different needs and priorities",
+        "C": "Equal resources",
+        "D": "Identical lifestyles"
+      },
+      "correct_answer": "B",
+      "explanation": "Development goals vary based on needs and aspirations."
+    }
+  ]
+}

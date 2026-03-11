@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter: Light – Mirrors and Lenses",
+  "difficulty": "Medium",
+  "source_pdf": "hecu110.pdf",
+  "short_notes": {
+    "key_points": [
+      "Light travels in straight lines and allows us to see objects when it reflects into our eyes",
+      "Reflection occurs when light rays strike a surface and bounce back",
+      "A plane mirror forms a virtual, upright image that is the same size as the object",
+      "Concave mirrors can converge light rays and form magnified or real images depending on object distance",
+      "Convex mirrors diverge light rays and always form smaller virtual images",
+      "Lenses refract light and can converge or diverge light rays"
+    ],
+    "examples": [
+      "Plane mirrors used in dressing mirrors",
+      "Concave mirrors used in shaving mirrors to produce enlarged images",
+      "Convex mirrors used as rear-view mirrors in vehicles",
+      "Convex lenses used in magnifying glasses",
+      "Concave lenses used in spectacles for correcting short-sightedness"
+    ],
+    "formulas": [
+      "Law of reflection → Angle of incidence = Angle of reflection",
+      "Reflection rule → Incident ray, reflected ray, and normal lie in the same plane",
+      "Refraction → Bending of light when it passes from one medium to another"
+    ],
+    "exam_tips": [
+      "Understand the differences between concave and convex mirrors",
+      "Remember common uses of mirrors and lenses in daily life",
+      "Practice simple ray diagrams for mirrors and lenses",
+      "Explain reflection and refraction with examples in answers"
+    ]
+  }
+}

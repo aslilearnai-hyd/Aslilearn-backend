@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Light – Mirrors and Lenses",
+  "generated_at": "2026-03-05T22:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following correctly describes reflection of light?",
+      "options": {
+        "A": "Bending of light when it passes through water",
+        "B": "Bouncing back of light from a surface",
+        "C": "Absorption of light by an object",
+        "D": "Scattering of light in air"
+      },
+      "correct_answer": "B",
+      "explanation": "Reflection is the bouncing back of light from a surface such as a mirror.",
+      "difficulty": "medium",
+      "source_section": "Reflection of Light"
+    },
+    {
+      "question_number": 2,
+      "question": "What type of image is formed by a plane mirror?",
+      "options": {
+        "A": "Real and inverted",
+        "B": "Virtual and upright",
+        "C": "Real and magnified",
+        "D": "Virtual and inverted"
+      },
+      "correct_answer": "B",
+      "explanation": "Plane mirrors form virtual and upright images.",
+      "difficulty": "medium",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 3,
+      "question": "Why do convex mirrors provide a wider field of view?",
+      "options": {
+        "A": "They reflect light inward",
+        "B": "They spread light rays outward",
+        "C": "They absorb light",
+        "D": "They bend light inward"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex mirrors diverge light rays, allowing a larger area to be seen.",
+      "difficulty": "medium",
+      "source_section": "Convex Mirrors"
+    },
+    {
+      "question_number": 4,
+      "question": "Which mirror can form both real and virtual images depending on the object position?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Convex mirror",
+        "C": "Concave mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Concave mirrors can form real or virtual images depending on object distance.",
+      "difficulty": "medium",
+      "source_section": "Concave Mirrors"
+    },
+    {
+      "question_number": 5,
+      "question": "Which device uses two plane mirrors to allow viewing objects from hidden positions?",
+      "options": {
+        "A": "Microscope",
+        "B": "Periscope",
+        "C": "Camera",
+        "D": "Thermometer"
+      },
+      "correct_answer": "B",
+      "explanation": "Periscopes use two plane mirrors to reflect light to the observer.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 6,
+      "question": "What happens to light rays when they pass through a convex lens?",
+      "options": {
+        "A": "They spread out",
+        "B": "They converge to a point",
+        "C": "They stop moving",
+        "D": "They disappear"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex lenses converge parallel light rays to a focal point.",
+      "difficulty": "medium",
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 7,
+      "question": "Which lens is used in spectacles to correct long-sightedness?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane lens",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Convex lenses help focus light correctly for long-sighted eyes.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do we see our image in a mirror?",
+      "options": {
+        "A": "Light is absorbed by the mirror",
+        "B": "Light reflects from the mirror into our eyes",
+        "C": "The mirror produces light",
+        "D": "The mirror bends light"
+      },
+      "correct_answer": "B",
+      "explanation": "Reflection of light from the mirror forms the image.",
+      "difficulty": "medium",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 9,
+      "question": "Which property of light causes shadows to form?",
+      "options": {
+        "A": "Light travels in straight lines",
+        "B": "Light bends easily",
+        "C": "Light disappears",
+        "D": "Light slows down"
+      },
+      "correct_answer": "A",
+      "explanation": "Shadows form because light travels in straight lines and is blocked by objects.",
+      "difficulty": "medium",
+      "source_section": "Light and Shadows"
+    },
+    {
+      "question_number": 10,
+      "question": "Which mirror always produces upright and smaller images?",
+      "options": {
+        "A": "Concave mirror",
+        "B": "Plane mirror",
+        "C": "Convex mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Convex mirrors always produce upright and smaller images.",
+      "difficulty": "medium",
+      "source_section": "Convex Mirrors"
+    },
+    {
+      "question_number": 11,
+      "question": "What happens when light passes from air into water?",
+      "options": {
+        "A": "It disappears",
+        "B": "It bends",
+        "C": "It stops",
+        "D": "It reflects completely"
+      },
+      "correct_answer": "B",
+      "explanation": "Light bends when passing between different media. This is called refraction.",
+      "difficulty": "medium",
+      "source_section": "Refraction"
+    },
+    {
+      "question_number": 12,
+      "question": "Which instrument uses lenses to observe distant objects?",
+      "options": {
+        "A": "Microscope",
+        "B": "Telescope",
+        "C": "Periscope",
+        "D": "Barometer"
+      },
+      "correct_answer": "B",
+      "explanation": "Telescopes use lenses to observe distant celestial objects.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are concave mirrors used as shaving mirrors?",
+      "options": {
+        "A": "They form smaller images",
+        "B": "They produce magnified images when the object is close",
+        "C": "They produce inverted images",
+        "D": "They absorb light"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave mirrors enlarge images when the object is close.",
+      "difficulty": "medium",
+      "source_section": "Uses of Mirrors"
+    },
+    {
+      "question_number": 14,
+      "question": "Which lens spreads light rays outward?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane lens",
+        "D": "Flat lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave lenses diverge light rays.",
+      "difficulty": "medium",
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following best explains lateral inversion?",
+      "options": {
+        "A": "Top becomes bottom",
+        "B": "Left appears right in a mirror image",
+        "C": "Image becomes smaller",
+        "D": "Image disappears"
+      },
+      "correct_answer": "B",
+      "explanation": "Lateral inversion is the sideways reversal of images in mirrors.",
+      "difficulty": "medium",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 16,
+      "question": "Which device uses lenses to take photographs?",
+      "options": {
+        "A": "Camera",
+        "B": "Microscope",
+        "C": "Periscope",
+        "D": "Compass"
+      },
+      "correct_answer": "A",
+      "explanation": "Cameras use lenses to focus light and capture images.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 17,
+      "question": "Which property of light allows us to see objects around us?",
+      "options": {
+        "A": "Reflection from objects",
+        "B": "Absorption by objects",
+        "C": "Destruction of light",
+        "D": "Stopping of light"
+      },
+      "correct_answer": "A",
+      "explanation": "Light reflects from objects and enters our eyes.",
+      "difficulty": "medium",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 18,
+      "question": "Which optical device uses both mirrors and lenses?",
+      "options": {
+        "A": "Telescope",
+        "B": "Thermometer",
+        "C": "Compass",
+        "D": "Barometer"
+      },
+      "correct_answer": "A",
+      "explanation": "Many telescopes use mirrors and lenses to observe distant objects.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 19,
+      "question": "Which mirror is used in solar cookers to concentrate sunlight?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Convex mirror",
+        "C": "Concave mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Concave mirrors focus sunlight to a point.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 20,
+      "question": "Which device uses convex lenses to magnify very small objects?",
+      "options": {
+        "A": "Microscope",
+        "B": "Camera",
+        "C": "Periscope",
+        "D": "Torch"
+      },
+      "correct_answer": "A",
+      "explanation": "Microscopes use convex lenses for magnification.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 21,
+      "question": "Which law states that the angle of incidence equals the angle of reflection?",
+      "options": {
+        "A": "Law of reflection",
+        "B": "Law of refraction",
+        "C": "Law of motion",
+        "D": "Law of gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "The law of reflection states that the angles of incidence and reflection are equal.",
+      "difficulty": "medium",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 22,
+      "question": "Which mirror forms images behind the mirror surface?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Both A and C"
+      },
+      "correct_answer": "D",
+      "explanation": "Both plane and convex mirrors form images behind the mirror.",
+      "difficulty": "medium",
+      "source_section": "Mirrors"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor affects the brightness of an image in a mirror?",
+      "options": {
+        "A": "Amount of reflected light",
+        "B": "Temperature of the room",
+        "C": "Size of the room",
+        "D": "Color of the mirror frame"
+      },
+      "correct_answer": "A",
+      "explanation": "More reflected light makes images appear brighter.",
+      "difficulty": "medium",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 24,
+      "question": "Which phenomenon explains why a straw appears bent in water?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Diffusion",
+        "D": "Absorption"
+      },
+      "correct_answer": "B",
+      "explanation": "Light bends when passing between air and water.",
+      "difficulty": "medium",
+      "source_section": "Refraction"
+    },
+    {
+      "question_number": 25,
+      "question": "Which type of mirror is most suitable for security mirrors in shops?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Convex mirrors provide a wide field of view for security.",
+      "difficulty": "medium",
+      "source_section": "Applications"
+    }
+  ]
+}

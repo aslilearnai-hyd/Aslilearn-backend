@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "difficulty": "Hard",
+  "generated_at": "2026-03-05T23:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why would removing producers collapse a food chain?",
+      "answer": "Because producers supply the initial energy source for all other organisms.",
+      "key_points": ["energy flow"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 2,
+      "question": "Why can the disappearance of one species affect an entire ecosystem?",
+      "answer": "Because organisms are interconnected through food webs and ecological interactions.",
+      "key_points": ["ecosystem interaction"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 3,
+      "question": "What could happen if predators were removed from a food chain?",
+      "answer": "Prey populations may increase uncontrollably and disturb ecosystem balance.",
+      "key_points": ["predator-prey balance"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is biodiversity important for ecosystem stability?",
+      "answer": "Higher biodiversity allows ecosystems to recover more easily from disturbances.",
+      "key_points": ["biodiversity"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 5,
+      "question": "Why are decomposers essential for nutrient cycling?",
+      "answer": "They convert dead organisms into nutrients that plants can reuse.",
+      "key_points": ["nutrient cycle"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 6,
+      "question": "How can pollution disrupt aquatic ecosystems?",
+      "answer": "Pollution reduces oxygen levels and harms aquatic organisms.",
+      "key_points": ["pollution"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does habitat destruction threaten biodiversity?",
+      "answer": "It removes the natural environment required for species survival.",
+      "key_points": ["habitat destruction"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 8,
+      "question": "Why are food webs more resilient than food chains?",
+      "answer": "Because organisms have alternative food sources within the web.",
+      "key_points": ["food web stability"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "How can climate change affect ecosystems?",
+      "answer": "It alters habitats and may threaten species survival.",
+      "key_points": ["climate change"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are forests considered vital ecosystems?",
+      "answer": "They support biodiversity and regulate climate and oxygen levels.",
+      "key_points": ["forests"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 11,
+      "question": "How do predators help maintain ecological balance?",
+      "answer": "They regulate prey populations and prevent overgrazing.",
+      "key_points": ["predator regulation"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 12,
+      "question": "Why can invasive species disrupt ecosystems?",
+      "answer": "They compete with native species and disturb ecological balance.",
+      "key_points": ["invasive species"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are nutrient cycles important in ecosystems?",
+      "answer": "They ensure that essential minerals are reused by plants and organisms.",
+      "key_points": ["nutrient cycle"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Why is sunlight considered the main energy source for ecosystems?",
+      "answer": "Plants use sunlight to produce food through photosynthesis.",
+      "key_points": ["photosynthesis"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are mangrove forests important for coastal protection?",
+      "answer": "They reduce coastal erosion and protect against storms.",
+      "key_points": ["mangroves"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 16,
+      "question": "How does competition affect species survival?",
+      "answer": "Species compete for limited resources such as food, water, and space.",
+      "key_points": ["competition"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is ecosystem conservation important for humans?",
+      "answer": "Healthy ecosystems provide essential resources and environmental stability.",
+      "key_points": ["conservation"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 18,
+      "question": "Why does removing decomposers disrupt ecosystems?",
+      "answer": "Because nutrients would not return to the soil for plant growth.",
+      "key_points": ["decomposers"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 19,
+      "question": "How can overfishing affect marine ecosystems?",
+      "answer": "It disrupts food chains and reduces fish populations.",
+      "key_points": ["overfishing"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "Why do ecosystems rely on balanced species populations?",
+      "answer": "Balanced populations help maintain ecological stability.",
+      "key_points": ["population balance"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 21,
+      "question": "How does biodiversity improve ecosystem resilience?",
+      "answer": "Multiple species can perform similar roles if one species declines.",
+      "key_points": ["ecosystem resilience"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are protected areas important for ecosystems?",
+      "answer": "They protect habitats and conserve wildlife populations.",
+      "key_points": ["protected areas"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "How does energy decrease at higher trophic levels?",
+      "answer": "Energy is lost as heat during each transfer in the food chain.",
+      "key_points": ["energy transfer"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is sustainable resource use important?",
+      "answer": "It ensures resources remain available for future generations.",
+      "key_points": ["sustainability"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are ecosystems interconnected across the planet?",
+      "answer": "Environmental processes such as climate and nutrient cycles link ecosystems globally.",
+      "key_points": ["ecosystem connections"],
+      "source_section": "Section 12.4"
+    }
+  ]
+}

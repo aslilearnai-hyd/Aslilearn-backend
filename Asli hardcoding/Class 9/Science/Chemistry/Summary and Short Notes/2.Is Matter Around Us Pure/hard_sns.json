@@ -1,0 +1,38 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 2: Is Matter Around Us Pure",
+  "difficulty": "Hard",
+  "short_notes": {
+    "key_points": [
+      "Pure substances have fixed composition and distinct physical and chemical properties",
+      "Elements contain only one type of atom; compounds contain two or more elements chemically combined in fixed proportions",
+      "Mixtures can be separated by physical methods, while compounds require chemical methods for separation",
+      "Solutions, colloids, and suspensions differ in particle size, stability, and light scattering",
+      "Colloids show Brownian motion and Tyndall effect but do not settle on standing",
+      "Saturated, unsaturated, and supersaturated solutions depend on solute quantity relative to solubility at a given temperature",
+      "Separation techniques include: filtration, evaporation, distillation, fractional distillation, centrifugation, chromatography, and crystallization",
+      "Fractional distillation separates miscible liquids with close boiling points; chromatography separates solutes based on solubility and adsorption"
+    ],
+    "examples": [
+      "Distillation of water separates it from impurities or salts",
+      "Fractional distillation separates ethanol and water due to different boiling points",
+      "Chromatography separates pigments in ink based on solubility",
+      "Centrifugation separates cream from milk due to density differences",
+      "Crystallization purifies salts from impure solutions"
+    ],
+    "formulas": [
+      "Solubility = Mass of solute / Volume of solvent × 100",
+      "Density = Mass / Volume",
+      "Semi-perimeter for Heron’s formula: s = (a+b+c)/2 (used for triangles, sometimes in solution problems in lab)",
+      "Saturated solution: solute present = maximum solubility at given temperature"
+    ],
+    "exam_tips": [
+      "Explain differences between elements, compounds, and mixtures with examples",
+      "Describe separation techniques clearly, including principle and example",
+      "Use Tyndall effect and Brownian motion to distinguish colloids from solutions and suspensions",
+      "Understand saturated, unsaturated, and supersaturated solutions numerically",
+      "Apply solubility formulas and separation methods in practical or numerical questions"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Easy",
+    "source_pdf": "jemh113.pdf",
+    "short_notes": {
+        "key_points": [
+            "Statistics deals with collection and analysis of data",
+            "Mean, median, and mode are measures of central tendency",
+            "Graphs help in visual representation of data"
+        ],
+        "examples": [
+            "Mean of marks",
+            "Median of grouped data"
+        ],
+        "formulas": [
+            "Mean = Sum of observations / Number of observations"
+        ],
+        "exam_tips": [
+            "Arrange data properly",
+            "Choose correct method",
+            "Show steps clearly"
+        ]
+    }
+}

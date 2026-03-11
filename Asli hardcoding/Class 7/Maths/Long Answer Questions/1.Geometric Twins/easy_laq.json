@@ -1,0 +1,388 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Geometric Twins (Congruence of Triangles)",
+    "generated_at": "2026-03-05T01:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define the term 'congruence' and explain its meaning in geometry.",
+            "answer": "Congruence is the relationship between two figures that are exactly the same in shape and size. In geometry, two figures are congruent if they are copies of each other and can be superimposed to cover each other perfectly.",
+            "answer_outline": [
+                "Definition of congruence",
+                "Explanation of shape and size",
+                "Concept of superposition"
+            ],
+            "key_concepts": [
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Give three examples of congruent objects we see in our daily lives.",
+            "answer": "1. Two ₹5 coins of the same year. 2. Two identical biscuits from the same packet. 3. Two pages of the same notebook. These objects are congruent because they have the same dimensions and shape.",
+            "answer_outline": [
+                "Listing three examples",
+                "Reason for congruence"
+            ],
+            "key_concepts": [
+                "real-life congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the congruence of line segments with an example.",
+            "answer": "Two line segments are congruent if they have the same length. If line segment AB = 7 cm and CD = 7 cm, then AB ≅ CD. If they have different lengths, they are not congruent.",
+            "answer_outline": [
+                "Condition for line segment congruence",
+                "Numerical example",
+                "Notation"
+            ],
+            "key_concepts": [
+                "line segments",
+                "length"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the condition for two angles to be congruent?",
+            "answer": "Two angles are congruent if they have the same measure. For example, if ∠A = 60° and ∠B = 60°, then ∠A ≅ ∠B. The length of the arms of the angle does not affect congruence.",
+            "answer_outline": [
+                "Condition (same measure)",
+                "Example",
+                "Clarification on arm length"
+            ],
+            "key_concepts": [
+                "angle measure",
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain what it means for two triangles to be congruent.",
+            "answer": "Two triangles are congruent if they are copies of each other. When superimposed, their corresponding vertices, sides, and angles match exactly. This is denoted by the symbol ≅.",
+            "answer_outline": [
+                "Definition for triangles",
+                "Concept of matching parts",
+                "Symbol notation"
+            ],
+            "key_concepts": [
+                "congruent triangles"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Define 'Correspondence' in the context of congruent triangles.",
+            "answer": "Correspondence refers to the specific pairing of vertices, sides, and angles between two triangles. For ΔABC ≅ ΔPQR, the vertex A corresponds to P, B to Q, and C to R.",
+            "answer_outline": [
+                "Definition of correspondence",
+                "Example of vertex pairing",
+                "Significance in congruence"
+            ],
+            "key_concepts": [
+                "correspondence",
+                "vertices"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "State and explain the SSS congruence criterion.",
+            "answer": "SSS stands for Side-Side-Side. If three sides of one triangle are equal to the three corresponding sides of another triangle, then the triangles are congruent.",
+            "answer_outline": [
+                "Full form",
+                "Statement of criterion",
+                "Condition for equality"
+            ],
+            "key_concepts": [
+                "SSS criterion"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Draw and explain a case where SSS congruence is applied.",
+            "answer": "In ΔABC and ΔXYZ, if AB=XY, BC=YZ, and AC=XZ, then ΔABC ≅ ΔXYZ by SSS criterion. This ensures the two triangles are identical 'twins'.",
+            "answer_outline": [
+                "Condition listing",
+                "Application of criterion",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "SSS application"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the SAS congruence criterion.",
+            "answer": "SAS stands for Side-Angle-Side. If two sides and the angle included between them of one triangle are equal to the corresponding sides and included angle of another triangle, they are congruent.",
+            "answer_outline": [
+                "Full form",
+                "Statement of criterion",
+                "Importance of 'included'"
+            ],
+            "key_concepts": [
+                "SAS criterion"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why must the angle be 'included' in the SAS criterion?",
+            "answer": "The angle must be 'included' (the angle between the two sides) to fix the third side's length. If the equal angle is not between the two equal sides, the triangles might not be congruent.",
+            "answer_outline": [
+                "Meaning of included angle",
+                "Reasoning",
+                "Possibility of non-congruence"
+            ],
+            "key_concepts": [
+                "included angle",
+                "SAS"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Define the ASA congruence criterion.",
+            "answer": "ASA stands for Angle-Side-Angle. If two angles and the included side of one triangle are equal to the two corresponding angles and included side of another triangle, they are congruent.",
+            "answer_outline": [
+                "Full form",
+                "Statement of criterion",
+                "Description of included side"
+            ],
+            "key_concepts": [
+                "ASA criterion"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the 'included side' in ASA congruence?",
+            "answer": "The included side is the side that forms the common arm for both the specified angles. In ΔABC, if we take ∠B and ∠C, the included side is BC.",
+            "answer_outline": [
+                "Definition of included side",
+                "Example using a triangle"
+            ],
+            "key_concepts": [
+                "included side",
+                "ASA"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "State the RHS congruence criterion.",
+            "answer": "RHS stands for Right angle-Hypotenuse-Side. If the hypotenuse and one side of a right-angled triangle are equal to the hypotenuse and one side of another right-angled triangle, they are congruent.",
+            "answer_outline": [
+                "Full form",
+                "Applicable triangle type",
+                "Condition statement"
+            ],
+            "key_concepts": [
+                "RHS criterion"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What are the three mandatory parts to check for RHS congruence?",
+            "answer": "1. Both must have a Right angle (90°). 2. Their Hypotenuses must be equal. 3. Any one of the other two Sides must be equal.",
+            "answer_outline": [
+                "Right angle requirement",
+                "Hypotenuse equality",
+                "Side equality"
+            ],
+            "key_concepts": [
+                "RHS components"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "If ΔABC ≅ ΔPQR, list all the corresponding equal parts.",
+            "answer": "Sides: AB=PQ, BC=QR, AC=PR. Angles: ∠A=∠P, ∠B=∠Q, ∠C=∠R. Vertices: A↔P, B↔Q, C↔R.",
+            "answer_outline": [
+                "Listing equal sides",
+                "Listing equal angles",
+                "Listing vertex correspondence"
+            ],
+            "key_concepts": [
+                "CPCT",
+                "correspondence"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Can two triangles with the same area always be congruent? Explain.",
+            "answer": "No, two triangles with the same area are not always congruent. Congruence requires the same shape and size, whereas area only measures space. A triangle with base 4 and height 3 has area 6, and a triangle with base 6 and height 2 also has area 6, but they are not congruent.",
+            "answer_outline": [
+                "Answer (No)",
+                "Difference between area and congruence",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "area vs congruence"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Is AAA a criterion for congruence? Why or why not?",
+            "answer": "No, AAA (Angle-Angle-Angle) is not a congruence criterion. Two triangles can have the same angles but different sizes (one can be an enlarged version of the other).",
+            "answer_outline": [
+                "Answer (No)",
+                "Explanation of size difference",
+                "Concept of similarity vs congruence"
+            ],
+            "key_concepts": [
+                "AAA",
+                "limitations"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the difference between SSS and SAS criteria.",
+            "answer": "SSS requires all three sides of both triangles to be equal. SAS requires only two sides to be equal, provided the angle between them is also equal.",
+            "answer_outline": [
+                "SSS requirements",
+                "SAS requirements",
+                "Key difference"
+            ],
+            "key_concepts": [
+                "SSS",
+                "SAS",
+                "comparison"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "If two squares have the same area, are they congruent? Justify.",
+            "answer": "Yes. If squares have the same area, their sides must be equal ($Side = \sqrt{Area}$). Since all angles in a square are 90°, if the sides are equal, the squares are congruent.",
+            "answer_outline": [
+                "Answer (Yes)",
+                "Mathematical justification",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the importance of the Hypotenuse in RHS congruence?",
+            "answer": "In a right-angled triangle, the hypotenuse is the longest side. In RHS congruence, the equality of the hypotenuse is a specific requirement that distinguishes it from the SAS criterion.",
+            "answer_outline": [
+                "Definition of hypotenuse",
+                "Role in RHS",
+                "Comparison with other criteria"
+            ],
+            "key_concepts": [
+                "hypotenuse",
+                "RHS"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe the relation between congruent triangles and their perimeters.",
+            "answer": "If two triangles are congruent, their perimeters must be equal because all their corresponding sides are equal in length, and perimeter is the sum of all sides.",
+            "answer_outline": [
+                "Definition of perimeter",
+                "Relation to congruence",
+                "Logic"
+            ],
+            "key_concepts": [
+                "perimeter",
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "How do you denote that ΔPQR is a 'twin' of ΔABC?",
+            "answer": "We use the congruence symbol ≅. It is written as ΔABC ≅ ΔPQR. This symbol combines '=' (equal size) and '~' (same shape).",
+            "answer_outline": [
+                "Notation",
+                "Meaning of the symbol"
+            ],
+            "key_concepts": [
+                "congruence symbol"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the concept of 'Superposition' with respect to two congruent circles.",
+            "answer": "Two circles are congruent if they have the same radius. Superposition means that if you place one circle over the other, they will coincide perfectly, with no part of either circle sticking out.",
+            "answer_outline": [
+                "Condition for circle congruence",
+                "Superposition meaning"
+            ],
+            "key_concepts": [
+                "superposition",
+                "circles"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is 'Geometric Twins' a good name for congruent triangles?",
+            "answer": "Twins look exactly alike and have the same characteristics. Similarly, congruent triangles have the same shape and size, making them identical in every geometric aspect.",
+            "answer_outline": [
+                "Analogy explanation",
+                "Linking to shape and size"
+            ],
+            "key_concepts": [
+                "congruence analogy"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "List the four main criteria for triangle congruence learned in Class 7.",
+            "answer": "The four criteria are: 1. SSS (Side-Side-Side), 2. SAS (Side-Angle-Side), 3. ASA (Angle-Side-Angle), and 4. RHS (Right angle-Hypotenuse-Side).",
+            "answer_outline": [
+                "Listing the four criteria"
+            ],
+            "key_concepts": [
+                "congruence criteria"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        }
+    ]
+}

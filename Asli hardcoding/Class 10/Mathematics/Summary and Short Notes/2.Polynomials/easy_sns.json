@@ -1,0 +1,33 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Easy",
+    "source_pdf": "jemh102.pdf",
+    "short_notes": {
+        "key_points": [
+            "A polynomial is an algebraic expression made up of variables and coefficients",
+            "The power of the variable in a polynomial is always a whole number",
+            "The highest power of the variable is called the degree of the polynomial",
+            "Polynomials are classified as linear, quadratic, cubic, etc., based on degree",
+            "Zeroes of a polynomial are the values of x for which the polynomial becomes zero"
+        ],
+        "examples": [
+            "Linear polynomial: x + 3",
+            "Quadratic polynomial: x² − 5x + 6",
+            "Cubic polynomial: x³ + 2x² − 1",
+            "Zero of x − 4 is 4"
+        ],
+        "formulas": [
+            "Linear polynomial → ax + b",
+            "Quadratic polynomial → ax² + bx + c",
+            "Zeroes of p(x) are values of x for which p(x) = 0"
+        ],
+        "exam_tips": [
+            "The number of zeroes of a polynomial is at most equal to its degree",
+            "Zeroes of a polynomial are the x-intercepts of its graph",
+            "Degree of a constant polynomial is 0",
+            "Degree of zero polynomial is not defined"
+        ]
+    }
+}

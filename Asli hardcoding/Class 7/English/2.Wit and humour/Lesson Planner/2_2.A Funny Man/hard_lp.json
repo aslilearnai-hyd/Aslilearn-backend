@@ -1,0 +1,147 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "A Funny Man",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Deconstruct the poem as a satirical commentary on human accountability and denial",
+    "Analyze the structural function of the 'nursery rhyme' meter in creating ironic contrast with the theme of 'crime'",
+    "Identify and evaluate sophisticated literary devices: Paradox, Metonymy, and Anaphora",
+    "Examine the psychological concept of the 'Shadow Self' through the character of Mr. Nobody",
+    "Master advanced lexical nuances and the use of irregular archaic verb forms",
+    "Synthesize the poem’s message into a critical argument about social hypocrisy"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Paradox and Existence",
+      "topics_covered": [
+        "The ontology of 'Nobody': How a non-entity possesses agency",
+        "Satire in domestic literature",
+        "The 'unseen' protagonist as a narrative tool"
+      ],
+      "teaching_strategy": [
+        "Seminar-style debate: 'Is Mr. Nobody a character or a collective psychological construct?'",
+        "Analysis of the opening paradox: 'I know a funny man... as quiet as a mouse'",
+        "Exploring the 'Universal Truth' behind household myths"
+      ],
+      "student_activities": [
+        "Annotate the text for contradictions (e.g., quietness vs. the noise of breaking plates)",
+        "Write a 150-word philosophical abstract on the 'agency of the invisible'"
+      ],
+      "assessment": ["Critical annotations", "Philosophical abstract quality"]
+    },
+    {
+      "period": 2,
+      "title": "Structural Irony and Meter",
+      "topics_covered": [
+        "Dactylic and Trochaic influences in the rhythm",
+        "The juxtaposition of 'nursery' tone with 'criminal' inventory",
+        "Rhyme scheme analysis as a tool for predictability"
+      ],
+      "teaching_strategy": [
+        "Teacher-led scansion of the poem to reveal the 'galloping' rhythm",
+        "Discussion: How does the light rhythm minimize the 'gravity' of the mischief?",
+        "Identifying Metonymy (where the broken object represents the 'broken' honesty of the family)"
+      ],
+      "student_activities": [
+        "Scan a stanza and identify the stressed/unstressed syllables",
+        "Map the rhyme scheme and discuss how the 'bouncy' rhythm contributes to the humor"
+      ],
+      "assessment": ["Scansion worksheet", "Structural analysis responses"]
+    },
+    {
+      "period": 3,
+      "title": "The Psychology of Scapegoating",
+      "topics_covered": [
+        "The social function of 'blame' in family dynamics",
+        "Analyzing the line: 'No one ever sees his face'",
+        "The convenience of the 'Collective Agreement'"
+      ],
+      "teaching_strategy": [
+        "Lecture on the 'Shadow Self'—Mr. Nobody as the embodiment of our own errors",
+        "Socratic Seminar: Why does the family 'agree' on a lie?",
+        "Evaluating the word 'Funny'—Is it humorous or suspicious?"
+      ],
+      "student_activities": [
+        "Identify 3 instances where the 'crime' mentioned is a direct result of human neglect",
+        "Draft a character analysis focusing on the 'moral invisibility' of the family"
+      ],
+      "assessment": ["Socratic Seminar participation", "Character analysis draft"]
+    },
+    {
+      "period": 4,
+      "title": "Lexical Precision and Archaisms",
+      "topics_covered": [
+        "Advanced vocabulary: 'Afloat', 'Mislaid', 'Heedless', 'Consensus'",
+        "The use of irregular past participles",
+        "Connotative meaning of 'Quiet' and 'Mischief'"
+      ],
+      "teaching_strategy": [
+        "Vocabulary workshop: Exploring the weight of 'Mischief' in Victorian vs. Modern contexts",
+        "Analyzing verb choices: Why 'cracked' instead of 'broke'?",
+        "Exercise on rewriting stanzas using high-level synonyms"
+      ],
+      "student_activities": [
+        "Rewrite the second stanza using academic vocabulary while maintaining the meter",
+        "Complete a 'Verb Nuance' worksheet"
+      ],
+      "assessment": ["Vocabulary transformation task", "Lexical nuance quiz"]
+    },
+    {
+      "period": 5,
+      "title": "Satirical Synthesis",
+      "topics_covered": [
+        "Comparing 'Mr. Nobody' to other literary 'Nolans' or 'Nobodies'",
+        "Satire as a mirror to household hypocrisy",
+        "Synthesizing the theme of 'The Convenient Truth'"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis: Connecting the poem to the concept of 'Denial' in adult life",
+        "Workshop on writing a satirical piece about a modern inconvenience (e.g., 'Mr. Wi-Fi Down')",
+        "Peer-review of satirical drafts"
+      ],
+      "student_activities": [
+        "Draft a satirical response poem titled 'Mr. Somebody'—the person who finally takes blame",
+        "Write a 200-word critical essay on the 'Social Contract of the Family' in the poem"
+      ],
+      "assessment": ["Satirical poem creativity", "Critical essay depth"]
+    },
+    {
+      "period": 6,
+      "title": "Elocution and Critical Review",
+      "topics_covered": [
+        "The art of 'Deadpan' delivery",
+        "Comprehensive thematic review",
+        "Final Mastery Assessment"
+      ],
+      "teaching_strategy": [
+        "Elocution contest: Performing the poem with an emphasis on its ironic undertones",
+        "Conducting a final 'Literary Device Hunt' under timed conditions",
+        "Final Unit Exam focusing on inference and structural purpose"
+      ],
+      "student_activities": [
+        "Perform a dramatic, ironic reading of the poem",
+        "Complete the 'Hard-Level' comprehensive exam"
+      ],
+      "assessment": ["Performance evaluation", "Final unit exam score"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Dictionary of Etymology",
+    "Metronome for rhythmic analysis",
+    "Rubric for Satirical Writing",
+    "Examples of Victorian household inventories"
+  ],
+  "evaluation_methods": [
+    "Critical Essay on domestic hypocrisy",
+    "Satirical poem composition",
+    "Poetic scansion and device test",
+    "Dramatic recitation performance",
+    "Final unit exam"
+  ],
+  "teacher_tip": "At this level, the goal is to peel back the 'childish' layer of the poem to reveal the biting social commentary underneath. Ask students: 'If Mr. Nobody represents our mistakes, why do we call him 'funny' instead of 'guilty'?'"
+}

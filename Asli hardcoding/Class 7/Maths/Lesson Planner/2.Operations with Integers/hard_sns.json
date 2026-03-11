@@ -1,0 +1,72 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Operations with Integers",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Master the Distributive Property of Multiplication over Addition",
+        "Solve complex expressions using BODMAS/PEMDAS with integers",
+        "Apply closure, associative, and commutative properties to solve long strings of numbers",
+        "Analyze and solve high-level word problems (Elevation, multi-stage finance)",
+        "Predict results of operations without calculating (Sign analysis)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Properties and Distributive Law",
+            "topics_covered": [
+                "Distributive property: a(b+c) = ab + ac",
+                "Using properties to simplify calculations (e.g., 26 x -48 + -48 x -36)",
+                "Closure under addition vs. division"
+            ],
+            "teaching_strategy": [
+                "",
+                "Group terms method for mental math",
+                "Logic puzzles using integer properties"
+            ],
+            "student_activities": [
+                "Solve 102 x (-5) using (100+2) x (-5)",
+                "Identify which property is used in a given solved step"
+            ],
+            "assessment": [
+                "Property identification test",
+                "Simplification challenge (No long multiplication allowed)"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced Applications and Order of Ops",
+            "topics_covered": [
+                "BODMAS with nested brackets and negative signs",
+                "Complex word problems (e.g., Temperature rate of change over time)",
+                "Sign analysis in power notation (e.g., (-1) raised to even vs odd power)"
+            ],
+            "teaching_strategy": [
+                "Flowcharting the order of operations",
+                "Scaffolding complex word problems into small equations"
+            ],
+            "student_activities": [
+                "Solve: [(-15) x (-2)] + [(-10) ÷ 5] - (-4)",
+                "Analyze a diving problem: 'A diver descends 3m every minute. Where is he after 10 mins relative to a 2m platform?'"
+            ],
+            "assessment": [
+                "Full-length chapter assessment",
+                "Peer-created 'Challenge of the Day' evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "BODMAS Priority Pyramids",
+        "Real-life data sets (Stock market changes, Depth charts)",
+        "Advanced worksheets with nested parentheses",
+        "Math Olympiad past papers"
+    ],
+    "evaluation_methods": [
+        "Comprehensive written examination",
+        "Logical reasoning rubrics",
+        "Self-correction exercises"
+    ],
+    "teacher_tip": "Challenge students to solve expressions like 999 x -45 using distributive property—it shows them why algebra is a superpower for mental math!"
+}

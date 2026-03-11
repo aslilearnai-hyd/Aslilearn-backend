@@ -1,0 +1,120 @@
+{
+  "subject": "English",
+  "course_code": "JEF P101",
+  "chapter": "Magnifying Glass",
+  "title": "Extended Reading Passages with Questions – Magnifying Glass",
+  "total_passages": 10,
+  "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+  "passages": [
+    {
+      "passage_number": 1,
+      "paragraph": "A magnifying glass is a simple tool that helps us see tiny objects more clearly. When we look through it, small things appear larger and reveal details that are normally hidden from our eyes.",
+      "questions": [
+        "What is a magnifying glass?",
+        "What does a magnifying glass help us see?",
+        "How do objects appear through a magnifying glass?",
+        "Why are tiny objects easier to see with it?",
+        "What does the magnifying glass reveal?"
+      ]
+    },
+    {
+      "passage_number": 2,
+      "paragraph": "The poet uses a magnifying glass to explore the natural world. By looking closely at ordinary things, the poet discovers that nature is full of surprising patterns and details.",
+      "questions": [
+        "What tool does the poet use?",
+        "What does the poet explore with the magnifying glass?",
+        "What does the poet discover about nature?",
+        "Why does the poet look closely at ordinary things?",
+        "What does this observation reveal?"
+      ]
+    },
+    {
+      "passage_number": 3,
+      "paragraph": "When the poet looks at a scrap of chalk through the magnifying glass, it appears full of tiny shells. This surprising sight shows that even simple objects contain hidden structures.",
+      "questions": [
+        "What object does the poet observe?",
+        "How does the chalk appear through the magnifying glass?",
+        "What does the poet notice inside the chalk?",
+        "What does this observation show about simple objects?",
+        "Why is the sight surprising?"
+      ]
+    },
+    {
+      "passage_number": 4,
+      "paragraph": "An inch of moss appears like a small forest when seen through the magnifying glass. Tiny stems and shapes look like trees and plants, creating the image of a miniature world.",
+      "questions": [
+        "What does the poet observe in this passage?",
+        "How does moss appear through the magnifying glass?",
+        "What do the tiny stems look like?",
+        "What image does the moss create?",
+        "Why does the poet call it a miniature world?"
+      ]
+    },
+    {
+      "passage_number": 5,
+      "paragraph": "A drop of water also reveals surprising activity when magnified. The poet compares it to a hive of bees because it seems full of movement and energy.",
+      "questions": [
+        "What object is described in the passage?",
+        "What happens when the drop of water is magnified?",
+        "What does the poet compare the drop of water to?",
+        "Why is this comparison used?",
+        "What does the drop of water appear to contain?"
+      ]
+    },
+    {
+      "passage_number": 6,
+      "paragraph": "The poet carefully watches a spider spinning its web. Through the magnifying glass, the spider’s claws and movements appear detailed and powerful.",
+      "questions": [
+        "Which creature does the poet observe?",
+        "What is the spider doing?",
+        "How do the spider’s claws appear?",
+        "Why are the spider’s movements interesting?",
+        "What tool helps the poet see these details?"
+      ]
+    },
+    {
+      "passage_number": 7,
+      "paragraph": "The spider creates its web using fine silk from its spinnerets. This delicate thread forms a strong web that traps small insects that fly into it.",
+      "questions": [
+        "What does the spider use to create its web?",
+        "Where does the silk come from?",
+        "What kind of web does the spider create?",
+        "What happens to insects that enter the web?",
+        "Why is the web important for the spider?"
+      ]
+    },
+    {
+      "passage_number": 8,
+      "paragraph": "Through careful observation, the poet realizes that even the smallest objects in nature have complex structures. A magnifying glass allows people to appreciate these hidden details.",
+      "questions": [
+        "What does the poet realize?",
+        "What kind of structures do small objects have?",
+        "What tool helps reveal these structures?",
+        "Why is observation important?",
+        "What does the magnifying glass help people appreciate?"
+      ]
+    },
+    {
+      "passage_number": 9,
+      "paragraph": "The poet believes that curiosity helps us discover the wonders of nature. When we observe the world closely, we can find beauty even in the smallest things.",
+      "questions": [
+        "What quality helps people discover nature’s wonders?",
+        "What happens when we observe the world closely?",
+        "Where can beauty be found?",
+        "Why is curiosity important?",
+        "What lesson does the poet share?"
+      ]
+    },
+    {
+      "passage_number": 10,
+      "paragraph": "The poem teaches that careful observation reveals hidden beauty in nature. With curiosity and attention, even tiny objects can become fascinating and meaningful.",
+      "questions": [
+        "What does the poem teach?",
+        "What reveals hidden beauty in nature?",
+        "What qualities help people make discoveries?",
+        "How can tiny objects appear when observed carefully?",
+        "Why is this message important?"
+      ]
+    }
+  ]
+}

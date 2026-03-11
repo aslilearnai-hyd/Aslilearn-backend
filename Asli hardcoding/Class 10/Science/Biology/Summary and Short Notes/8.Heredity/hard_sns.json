@@ -1,0 +1,40 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Heredity",
+    "difficulty": "Hard",
+    "source_pdf": "science_textbook_class10_chapter8.pdf",
+    "short_notes": {
+        "key_points": [
+            "Heredity is controlled by genes which are segments of DNA present on chromosomes",
+            "During reproduction, genes from both parents combine to determine offspring traits",
+            "Mendel’s experiments established the laws of inheritance including dominance, segregation, and independent assortment",
+            "Homologous chromosomes carry genes controlling the same traits",
+            "Variations arise due to recombination of genes during meiosis and random fertilization",
+            "Sex determination in humans occurs through X and Y chromosomes",
+            "Genetic inheritance plays an important role in evolution and biodiversity"
+        ],
+        "examples": [
+            "Monohybrid cross between TT and tt results in Tt offspring showing dominant trait",
+            "Dihybrid cross between RrYy plants produces phenotypic ratio of 9:3:3:1",
+            "Human blood group system shows codominance with IA and IB alleles",
+            "Snapdragon flower colour demonstrates incomplete dominance producing pink flowers",
+            "Sex determination occurs when X or Y chromosome from sperm fertilizes the ovum"
+        ],
+        "formulas": [
+            "Monohybrid F2 phenotypic ratio → 3 : 1",
+            "Monohybrid genotypic ratio → 1 : 2 : 1",
+            "Dihybrid F2 phenotypic ratio → 9 : 3 : 3 : 1",
+            "Alleles → Alternative forms of a gene controlling a trait",
+            "Genotype → Genetic constitution",
+            "Phenotype → Physical expression of traits"
+        ],
+        "exam_tips": [
+            "Practice detailed Mendelian cross problems including dihybrid crosses",
+            "Understand chromosomal basis of inheritance and meiosis",
+            "Revise concepts of codominance, incomplete dominance, and multiple alleles",
+            "Study sex determination carefully as it is commonly asked in exams",
+            "Focus on reasoning questions related to variation and evolution"
+        ]
+    }
+}

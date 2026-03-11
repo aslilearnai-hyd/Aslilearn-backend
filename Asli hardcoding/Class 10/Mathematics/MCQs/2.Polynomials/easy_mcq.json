@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-02-27T19:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is a polynomial?",
+            "options": {
+                "A": "1/x",
+                "B": "x² + 2x + 1",
+                "C": "√x",
+                "D": "x⁻¹"
+            },
+            "correct_answer": "B",
+            "explanation": "All powers of x are non-negative integers.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Degree of polynomial 7x³ − x is",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "7"
+            },
+            "correct_answer": "C",
+            "explanation": "Highest power of x is 3.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "A polynomial of degree 1 is called",
+            "options": {
+                "A": "Linear",
+                "B": "Quadratic",
+                "C": "Cubic",
+                "D": "Constant"
+            },
+            "correct_answer": "A",
+            "explanation": "Degree 1 polynomial is linear.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How many zeroes can a quadratic polynomial have at most?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "C",
+            "explanation": "Maximum number of zeroes equals the degree.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Zero of polynomial x − 4 is",
+            "options": {
+                "A": "−4",
+                "B": "0",
+                "C": "4",
+                "D": "1"
+            },
+            "correct_answer": "C",
+            "explanation": "x − 4 = 0 ⇒ x = 4.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Graph of a linear polynomial is a",
+            "options": {
+                "A": "Circle",
+                "B": "Parabola",
+                "C": "Straight line",
+                "D": "Ellipse"
+            },
+            "correct_answer": "C",
+            "explanation": "Linear polynomial forms a straight line.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which polynomial has no zero?",
+            "options": {
+                "A": "x",
+                "B": "x − 1",
+                "C": "x² + 1",
+                "D": "x + 2"
+            },
+            "correct_answer": "C",
+            "explanation": "x² + 1 never becomes zero for real x.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Value of p(1) for p(x) = x² + 3 is",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "1",
+                "D": "0"
+            },
+            "correct_answer": "B",
+            "explanation": "1² + 3 = 4.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which is a constant polynomial?",
+            "options": {
+                "A": "x",
+                "B": "x²",
+                "C": "5",
+                "D": "x + 1"
+            },
+            "correct_answer": "C",
+            "explanation": "Constant polynomial has degree 0.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Number of terms in 3x² + 2x + 1 is",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "There are three terms.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Degree of constant polynomial is",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "Undefined"
+            },
+            "correct_answer": "A",
+            "explanation": "Constant polynomial has degree 0.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Which is a cubic polynomial?",
+            "options": {
+                "A": "x²",
+                "B": "x³ + 1",
+                "C": "x",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "Degree 3 polynomial is cubic.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Zero of polynomial x + 7 is",
+            "options": {
+                "A": "7",
+                "B": "−7",
+                "C": "0",
+                "D": "1"
+            },
+            "correct_answer": "B",
+            "explanation": "x + 7 = 0 ⇒ x = −7.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which polynomial has exactly one zero?",
+            "options": {
+                "A": "x²",
+                "B": "x",
+                "C": "x² − 1",
+                "D": "x² + 1"
+            },
+            "correct_answer": "B",
+            "explanation": "Linear polynomial has one zero.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Graph of quadratic polynomial is a",
+            "options": {
+                "A": "Straight line",
+                "B": "Circle",
+                "C": "Parabola",
+                "D": "Ellipse"
+            },
+            "correct_answer": "C",
+            "explanation": "Quadratic graphs are parabolas.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Polynomial x² − 4 has how many zeroes?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "C",
+            "explanation": "x² − 4 = 0 gives two solutions.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which term determines degree?",
+            "options": {
+                "A": "Constant",
+                "B": "Lowest power",
+                "C": "Highest power",
+                "D": "Coefficient"
+            },
+            "correct_answer": "C",
+            "explanation": "Degree is highest power of variable.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Polynomial in y with degree 2 is",
+            "options": {
+                "A": "y",
+                "B": "y² + 1",
+                "C": "1/y",
+                "D": "√y"
+            },
+            "correct_answer": "B",
+            "explanation": "Degree is 2.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which is NOT a polynomial?",
+            "options": {
+                "A": "x² + 1",
+                "B": "x + 2",
+                "C": "1/x",
+                "D": "3"
+            },
+            "correct_answer": "C",
+            "explanation": "Negative power of x.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Value of p(0) for p(x) = 5x + 2 is",
+            "options": {
+                "A": "0",
+                "B": "2",
+                "C": "5",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "Substitute x = 0.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which polynomial has no real zero?",
+            "options": {
+                "A": "x² + 1",
+                "B": "x − 1",
+                "C": "x",
+                "D": "x² − 4"
+            },
+            "correct_answer": "A",
+            "explanation": "x² + 1 > 0 always.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Coefficient of x in 3x² + 5x is",
+            "options": {
+                "A": "3",
+                "B": "5",
+                "C": "2",
+                "D": "1"
+            },
+            "correct_answer": "B",
+            "explanation": "Coefficient of x is 5.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Polynomial of degree 0 is called",
+            "options": {
+                "A": "Linear",
+                "B": "Constant",
+                "C": "Quadratic",
+                "D": "Cubic"
+            },
+            "correct_answer": "B",
+            "explanation": "Degree 0 polynomial is constant.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Zero of polynomial 2x is",
+            "options": {
+                "A": "2",
+                "B": "1",
+                "C": "0",
+                "D": "−2"
+            },
+            "correct_answer": "C",
+            "explanation": "2x = 0 ⇒ x = 0.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which graph cuts x-axis twice?",
+            "options": {
+                "A": "Linear",
+                "B": "Constant",
+                "C": "Quadratic",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "Quadratic can have two zeroes.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

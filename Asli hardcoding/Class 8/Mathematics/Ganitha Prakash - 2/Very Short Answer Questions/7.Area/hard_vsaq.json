@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Area",
+  "generated_at": "2026-03-05T13:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The base of a triangle is 18 cm and its area is 72 cm². Find its height.",
+      "answer": "8 cm.",
+      "key_points": ["triangle area formula", "height calculation"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The area of a square is 256 cm². Find the length of its side.",
+      "answer": "16 cm.",
+      "key_points": ["square area", "inverse calculation"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "The area of a rectangle is 180 cm² and its width is 9 cm. Find its length.",
+      "answer": "20 cm.",
+      "key_points": ["rectangle formula"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Find the base of a parallelogram if its area is 120 cm² and height is 10 cm.",
+      "answer": "12 cm.",
+      "key_points": ["parallelogram area"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 5,
+      "question": "The diagonals of a rhombus are 14 cm and 16 cm. Find its area.",
+      "answer": "112 cm².",
+      "key_points": ["rhombus formula"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 6,
+      "question": "The area of a triangle is 90 cm² and its base is 15 cm. Find the height.",
+      "answer": "12 cm.",
+      "key_points": ["triangle formula"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 7,
+      "question": "A parallelogram has base 16 cm and area 144 cm². Find the height.",
+      "answer": "9 cm.",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 8,
+      "question": "A square field has area 625 m². Find the length of one side.",
+      "answer": "25 m.",
+      "key_points": ["square"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 9,
+      "question": "A rectangle has area 300 cm² and length 15 cm. Find its width.",
+      "answer": "20 cm.",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 10,
+      "question": "A rhombus has diagonals 20 cm and 12 cm. Find its area.",
+      "answer": "120 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 11,
+      "question": "The area of a trapezium is 96 cm², its parallel sides are 10 cm and 14 cm. Find its height.",
+      "answer": "8 cm.",
+      "key_points": ["trapezium formula"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 12,
+      "question": "The area of a triangle is 48 cm² and height is 6 cm. Find its base.",
+      "answer": "16 cm.",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 13,
+      "question": "A parallelogram has area 200 cm² and base 25 cm. Find the height.",
+      "answer": "8 cm.",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 14,
+      "question": "The diagonals of a rhombus are 30 cm and 18 cm. Find its area.",
+      "answer": "270 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 15,
+      "question": "A trapezium has parallel sides 18 cm and 12 cm and height 10 cm. Find its area.",
+      "answer": "150 cm².",
+      "key_points": ["trapezium"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 16,
+      "question": "A triangle has area 120 cm² and base 20 cm. Find its height.",
+      "answer": "12 cm.",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 17,
+      "question": "A rectangle has area 420 cm² and width 14 cm. Find its length.",
+      "answer": "30 cm.",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 18,
+      "question": "The area of a square is 361 cm². Find the side.",
+      "answer": "19 cm.",
+      "key_points": ["square"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 19,
+      "question": "A parallelogram has base 24 cm and height 11 cm. Find its area.",
+      "answer": "264 cm².",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 20,
+      "question": "The diagonals of a rhombus are 24 cm and 10 cm. Find its area.",
+      "answer": "120 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 21,
+      "question": "Find the area of a trapezium with parallel sides 20 cm and 16 cm and height 9 cm.",
+      "answer": "162 cm².",
+      "key_points": ["trapezium"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 22,
+      "question": "The base of a triangle is 30 cm and its area is 150 cm². Find its height.",
+      "answer": "10 cm.",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 23,
+      "question": "The area of a rectangle is 540 cm² and length is 27 cm. Find its width.",
+      "answer": "20 cm.",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 24,
+      "question": "A rhombus has diagonals 26 cm and 14 cm. Find its area.",
+      "answer": "182 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 25,
+      "question": "A parallelogram has area 360 cm² and height 12 cm. Find its base.",
+      "answer": "30 cm.",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    }
+  ]
+}

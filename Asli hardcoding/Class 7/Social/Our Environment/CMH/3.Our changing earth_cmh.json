@@ -1,0 +1,103 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Our Changing Earth",
+    "generated_at": "2026-03-07T18:18:00",
+    "concepts": [
+        {
+            "concept_name": "Lithospheric Plates",
+            "difficulty": "easy",
+            "lesson": "The lithosphere is broken into a number of plates known as Lithospheric plates. These plates move around very slowly—just a few millimeters each year. This movement is caused by the movement of the molten magma inside the earth, which moves in a circular manner. The movement of these plates causes changes on the surface of the earth.",
+            "real_example": "The slow drift of continents over millions of years is due to the movement of these massive plates.",
+            "key_points": [
+                "Earth's crust is divided into plates",
+                "Plates move due to molten magma inside",
+                "Movement is extremely slow but constant"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Endogenic and Exogenic Forces",
+            "difficulty": "easy",
+            "lesson": "The forces that act in the interior of the earth are called Endogenic forces, while the forces that work on the surface of the earth are called Exogenic forces. Endogenic forces often produce sudden movements like earthquakes and volcanoes, while exogenic forces result in erosional and depositional activities.",
+            "real_example": "An earthquake is caused by endogenic forces, while a river carving a valley is caused by exogenic forces.",
+            "key_points": [
+                "Endogenic: Interior forces (Sudden or Diastrophic)",
+                "Exogenic: Exterior forces (Weathering, Erosion)",
+                "Both forces continuously reshape the Earth"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Volcanoes and Earthquakes",
+            "difficulty": "easy",
+            "lesson": "A volcano is a vent (opening) in the earth's crust through which molten material erupts suddenly. An earthquake occurs when Lithospheric plates move and the earth's surface vibrates. The place in the crust where the movement starts is the focus, and the place on the surface above the focus is the epicenter.",
+            "real_example": "The 2001 Bhuj earthquake in Gujarat was a major tectonic event recorded on a seismograph.",
+            "key_points": [
+                "Volcano: Vent for molten magma",
+                "Earthquake vibrations travel as waves",
+                "Vibrations are strongest near the epicenter"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Weathering and Erosion",
+            "difficulty": "medium",
+            "lesson": "The landscape is being continuously worn away by two processes: weathering and erosion. Weathering is the breaking up of the rocks on the earth's surface. Erosion is the wearing away of the landscape by different agents like water, wind, and ice. The eroded material is eventually deposited, creating new landforms.",
+            "real_example": "Wind carrying sand particles in a desert to form sand dunes.",
+            "key_points": [
+                "Weathering: Breaking of rocks in situ",
+                "Erosion: Removal of material by agents",
+                "Deposition: Settling of eroded material"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Work of a River",
+            "difficulty": "medium",
+            "lesson": "As a river flows, it creates various landforms. When it falls at a steep angle over hard rocks, it forms a waterfall. In plains, it twists and turns forming meanders. Due to continuous erosion and deposition, meander loops cut off to form ox-bow lakes. At the mouth, the river breaks into distributaries and deposits sediments to form a delta.",
+            "real_example": "The Sundarban Delta formed by the Ganga and Brahmaputra rivers.",
+            "key_points": [
+                "Meanders and Ox-bow lakes in plains",
+                "Floodplains and Levees near banks",
+                "Deltas at the point of entry into the sea"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Work of Sea Waves",
+            "difficulty": "medium",
+            "lesson": "The erosion and deposition of sea waves give rise to coastal landforms. Hollow-like caves formed on rocks are called sea caves. As these cavities become bigger, only the roof remains, forming sea arches. Further erosion breaks the roof and only walls are left, called stacks. Sea waves also deposit sediments to form beaches.",
+            "real_example": "The high rocky coasts of Goa showing distinct sea caves and arches.",
+            "key_points": [
+                "Erosion forms Sea Caves, Arches, and Stacks",
+                "Sea Cliff is the steep rocky coast",
+                "Beaches are depositional features"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Work of Ice and Wind",
+            "difficulty": "hard",
+            "lesson": "Glaciers are 'rivers of ice' which erode the landscape by bulldozing soil and stones to expose solid rock below. They carve out deep hollows; as ice melts, they get filled with water and become beautiful lakes. Wind is an active agent in deserts, forming mushroom rocks (wider at top, narrow at base), sand dunes, and loess.",
+            "real_example": "Large deposits of loess found in China, or mushroom rocks in the Thar Desert.",
+            "key_points": [
+                "Glaciers form glacial moraines",
+                "Wind forms Mushroom rocks and Sand dunes",
+                "Loess is formed when fine sand is deposited over large areas"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Earthquake Preparedness",
+            "difficulty": "hard",
+            "lesson": "Although earthquakes cannot be predicted, the impact can be minimized through preparedness. Safe spots include under a kitchen counter or table. Stay away from fireplaces, chimneys, and windows. Spreading awareness and having a disaster kit are essential for safety during such sudden endogenic events.",
+            "real_example": "Drop, Cover, and Hold on technique practiced during school safety drills.",
+            "key_points": [
+                "Identify safe spots during tremors",
+                "Stay away from glass and heavy furniture",
+                "Community awareness reduces damage"
+            ],
+            "source_section": "Section 3.1"
+        }
+    ]
+}

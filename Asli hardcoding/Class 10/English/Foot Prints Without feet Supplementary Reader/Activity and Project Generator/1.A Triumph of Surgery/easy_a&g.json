@@ -1,0 +1,156 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "A Triumph of Surgery",
+    "author": "James Herriot",
+    "difficulty": "Easy",
+    "source_pdf": "jefp101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Main Characters List",
+            "objective": "Identify the main characters in the prose",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "List the main characters mentioned",
+                "Write one sentence about each character"
+            ],
+            "learning_outcome": "Identifies characters and their roles",
+            "evaluation": "Correct listing and description (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Tricki",
+            "objective": "Understand the character of Tricki",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the description of Tricki",
+                "Write 4–5 lines describing Tricki’s condition and behaviour"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Relevant points included (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Mrs Pumphrey’s Behaviour",
+            "objective": "Analyse Mrs Pumphrey’s role in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson",
+                "Write three points showing how Mrs Pumphrey treats Tricki"
+            ],
+            "learning_outcome": "Understands cause of conflict in the story",
+            "evaluation": "Correct identification of points (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Cause of Tricki’s Illness",
+            "objective": "Understand the reason for Tricki’s illness",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify what made Tricki unhealthy",
+                "Write the reasons in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands cause–effect relationship",
+            "evaluation": "Clarity and correctness (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Treatment Given by the Vet",
+            "objective": "Understand the treatment method used",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part describing Tricki’s treatment",
+                "List the steps taken by the narrator to cure Tricki"
+            ],
+            "learning_outcome": "Understands simple treatment approach",
+            "evaluation": "Correct steps listed (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Title Justification",
+            "objective": "Understand the meaning of the title",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the title of the lesson",
+                "Write 3–4 sentences explaining why it is suitable"
+            ],
+            "learning_outcome": "Understands title relevance",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four major events in the story",
+                "Write them in the correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct sequencing (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary from the Lesson",
+            "objective": "Improve vocabulary using the prose",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five new words from the lesson",
+                "Write their meanings and use them in sentences"
+            ],
+            "learning_outcome": "Builds vocabulary skills",
+            "evaluation": "Correct meanings and usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Moral of the Story",
+            "objective": "Understand the moral message",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the lesson’s message",
+                "Write the moral in your own words"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear moral explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Real-Life Connection",
+            "objective": "Relate the prose to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about over-care or overfeeding in real life",
+                "Write 3–4 sentences connecting it to the lesson"
+            ],
+            "learning_outcome": "Applies lesson to real-life situations",
+            "evaluation": "Meaningful connection (10 marks)"
+        }
+    ]
+}

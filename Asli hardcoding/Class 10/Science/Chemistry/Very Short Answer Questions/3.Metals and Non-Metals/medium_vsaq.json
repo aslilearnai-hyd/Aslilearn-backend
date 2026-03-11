@@ -1,0 +1,208 @@
+{
+    "content_type": "Medium Questions",
+    "chapter": "Chapter: METALS AND NON-METALS",
+    "generated_at": "2026-03-10T23:41:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are amphoteric oxides? Give two examples of such oxides.",
+            "answer": "Amphoteric oxides are metal oxides that react with both acids and bases to produce salt and water. Examples: Aluminium oxide ($Al_2O_3$) and Zinc oxide ($ZnO$).",
+            "key_concepts": ["amphoteric oxides", "chemical properties"],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name two metals which will displace hydrogen from dilute acids, and two metals which will not.",
+            "answer": "Metals that displace hydrogen: Magnesium (Mg) and Zinc (Zn). Metals that do not displace hydrogen: Copper (Cu) and Silver (Ag).",
+            "key_concepts": ["reactivity series", "displacement"],
+            "marks": 3,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is sodium kept immersed in kerosene oil?",
+            "answer": "Sodium is highly reactive; it reacts vigorously with oxygen and moisture in the air, catching fire. Keeping it in kerosene prevents contact with air and water.",
+            "key_concepts": ["reactivity", "safety"],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Show the formation of $Na_2O$ and $MgO$ by the transfer of electrons.",
+            "answer": "In $Na_2O$, two Na atoms each lose 1 electron to one O atom ($2Na^+ O^{2-}$). In $MgO$, one Mg atom loses 2 electrons to one O atom ($Mg^{2+} O^{2-}$).",
+            "key_concepts": ["electron transfer", "ionic bond"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Why do ionic compounds have high melting points?",
+            "answer": "Ionic compounds are held together by strong electrostatic forces of attraction between oppositely charged ions. A large amount of energy is required to break these bonds.",
+            "key_concepts": ["lattice energy", "ionic properties"],
+            "marks": 3,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Define the terms: (i) Mineral, (ii) Ore, and (iii) Gangue.",
+            "answer": "(i) Mineral: Naturally occurring elements/compounds in earth's crust. (ii) Ore: Minerals containing high metal percentage for profitable extraction. (iii) Gangue: Impurities like soil/sand in ore.",
+            "key_concepts": ["metallurgy terms"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Differentiate between roasting and calcination.",
+            "answer": "Roasting is heating sulphide ores in excess air to form oxides. Calcination is heating carbonate ores in limited air to form oxides.",
+            "key_concepts": ["extraction of metals"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the Thermite process? Give its chemical equation and one application.",
+            "answer": "The reaction of iron oxide with aluminium powder ($Fe_2O_3 + 2Al \rightarrow 2Fe + Al_2O_3 + Heat$). It is used to join cracked railway tracks.",
+            "key_concepts": ["thermite reaction", "displacement"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "In the electrolytic refining of a metal M, what would you take as the anode, the cathode and the electrolyte?",
+            "answer": "Anode: Thick block of impure metal M. Cathode: Thin strip of pure metal M. Electrolyte: A water-soluble salt solution of metal M.",
+            "key_concepts": ["electrolytic refining"],
+            "marks": 3,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how the properties of an alloy are different from its constituent metals.",
+            "answer": "Alloys generally have higher strength, lower melting points, and higher resistance to corrosion compared to their pure constituent metals.",
+            "key_concepts": ["alloys", "material properties"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is copper used to make hot water tanks but not steel (an alloy of iron)?",
+            "answer": "Copper does not react with water or steam, even at high temperatures. Iron reacts with steam, leading to corrosion (rusting) and weakening of the tank.",
+            "key_concepts": ["reactivity with water"],
+            "marks": 3,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Name two metals which are found in nature in the free state. Why are they found so?",
+            "answer": "Gold and Platinum. They are found in the free state because they are at the bottom of the reactivity series and are chemically very unreactive.",
+            "key_concepts": ["occurrence of metals"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is 'Anodising'? How does it protect aluminium from corrosion?",
+            "answer": "Anodising is forming a thick oxide layer on aluminium using electrolysis. This oxide layer prevents further reaction of the underlying metal with oxygen.",
+            "key_concepts": ["anodising", "corrosion prevention"],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does calcium start floating when added to water?",
+            "answer": "Calcium reacts with water to form hydrogen gas. The bubbles of hydrogen gas produced stick to the surface of the metal, making it float.",
+            "key_concepts": ["reaction with water"],
+            "marks": 3,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the meaning of 'malleable' and 'ductile'.",
+            "answer": "Malleable means a substance can be beaten into thin sheets (e.g., Gold). Ductile means a substance can be drawn into thin wires (e.g., Copper).",
+            "key_concepts": ["physical properties"],
+            "marks": 3,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens when iron(III) oxide is heated with aluminium powder? Write the equation.",
+            "answer": "A highly exothermic displacement reaction occurs, producing molten iron and aluminium oxide ($Fe_2O_3 + 2Al \rightarrow 2Fe + Al_2O_3$).",
+            "key_concepts": ["displacement reaction", "thermite"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "State three reasons why metals conduct electricity.",
+            "answer": "Metals have: 1. A lattice structure of ions. 2. A 'sea' of free delocalized electrons. 3. These electrons move freely when a potential difference is applied.",
+            "key_concepts": ["electrical conductivity"],
+            "marks": 3,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is 24 carat gold? Why is it not suitable for making jewelry?",
+            "answer": "24 carat gold is 100% pure gold. It is not used for jewelry because it is very soft; it is alloyed with silver or copper (usually 22 carat) to make it hard.",
+            "key_concepts": ["alloys of gold"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "How are metals of medium reactivity extracted from their ores?",
+            "answer": "The ores (usually sulphides or carbonates) are first converted to oxides by roasting or calcination, then reduced to metal using carbon (coke).",
+            "key_concepts": ["extraction", "reduction"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is 'Galvanisation'? How does it protect iron?",
+            "answer": "Galvanisation is coating iron with a thin layer of Zinc. Zinc is more reactive; it corrodes preferentially and forms a protective layer even if the coating is scratched.",
+            "key_concepts": ["galvanisation", "sacrificial protection"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Compare the properties of metals and non-metals with respect to their oxides.",
+            "answer": "Metal oxides are generally basic and can form alkalis with water. Non-metal oxides are generally acidic or neutral.",
+            "key_concepts": ["oxides", "chemical properties"],
+            "marks": 3,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why cannot sodium be obtained by heating its oxide with carbon?",
+            "answer": "Sodium has a higher affinity for oxygen than carbon does. Carbon is not a strong enough reducing agent to displace sodium from its oxide.",
+            "key_concepts": ["reactivity series", "reduction"],
+            "marks": 3,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 23,
+            "question": "What is an amalgam? Give an example.",
+            "answer": "An amalgam is an alloy where one of the constituent metals is Mercury. Example: Sodium amalgam or Silver-mercury amalgam used in dentistry.",
+            "key_concepts": ["alloys", "mercury"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why ionic compounds conduct electricity in molten state but not in solid state.",
+            "answer": "In solid state, ions are fixed in a lattice and cannot move. In molten state, the electrostatic forces are overcome, allowing ions to move and carry charge.",
+            "key_concepts": ["electrical conductivity", "ions"],
+            "marks": 3,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Write the chemical equation for the reaction of Zinc with Steam.",
+            "answer": "$Zn(s) + H_2O(g) \rightarrow ZnO(s) + H_2(g)$. Note that Zinc only reacts with steam, not cold or hot water.",
+            "key_concepts": ["reaction with steam"],
+            "marks": 3,
+            "source_section": "Section 3.2.2"
+        }
+    ]
+}

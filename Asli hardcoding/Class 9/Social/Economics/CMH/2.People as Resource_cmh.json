@@ -1,0 +1,79 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: People as Resource",
+  "generated_at": "2026-03-06T23:16:00",
+  "concepts": [
+    {
+      "concept_name": "Human Capital Formation",
+      "difficulty": "easy",
+      "lesson": "People become a resource when investments are made in their education, training, and medical care. This investment transforms a human being into 'Human Capital,' which is the stock of skill and productive knowledge embodied in them.",
+      "real_example": "Sakal's parents invested in his education and vocational training in computers, which led him to a high-paying job in a firm. ",
+      "key_points": [
+        "Education increases the efficiency and productivity of a person.",
+        "Investment in human capital yields a return just like physical capital.",
+        "Human resource is superior to other resources because it can make use of land and capital."
+      ],
+      "source_section": "Section 2.1"
+    },
+    {
+      "concept_name": "Economic Activities by Men and Women",
+      "difficulty": "medium",
+      "lesson": "Activities are classified into 'Market Activities' (performed for pay or profit) and 'Non-Market Activities' (production for self-consumption). Historically, there is a division of labor where women generally look after domestic chores and men work in fields.",
+      "real_example": "Vilas’s mother, Geeta, earned an income by selling fish (Market Activity), whereas Sakal’s mother, Sheela, looked after domestic chores (Non-Market Activity).",
+      "key_points": [
+        "Market activities include remuneration to anyone who performs an activity.",
+        "Household work performed by women is not recognized in the National Income.",
+        "Education and skill are the major determinants of the earnings of any individual in the market."
+      ],
+      "source_section": "Section 2.2"
+    },
+    {
+      "concept_name": "Quality of Population: Education",
+      "difficulty": "medium",
+      "lesson": "The quality of the population depends upon the literacy rate, health of a person, and skill formation. Education opens new horizons, provides new aspirations, and develops values of life.",
+      "real_example": "Government initiatives like 'Sarva Shiksha Abhiyan' aim to provide elementary education to all children aged 6–14 years.",
+      "key_points": [
+        "Literacy rates have increased from 18% in 1951 to 74% in 2010-11.",
+        "There is a huge difference in literacy between males and females and between urban and rural areas.",
+        "Vocational education is being developed to provide occupation-related knowledge."
+      ],
+      "source_section": "Section 2.3.1"
+    },
+    {
+      "concept_name": "Quality of Population: Health",
+      "difficulty": "medium",
+      "lesson": "Health is an indispensable basis for realizing one's well-being. An unhealthy person becomes a liability for an organization. The National Health Policy aims at improving the accessibility of healthcare, family welfare, and nutritional service.",
+      "real_example": "Improvement in life expectancy (up to 68.3 years in 2014) and reduction in Infant Mortality Rate (IMR). ",
+      "key_points": [
+        "A healthy person can realize their potential and be productive.",
+        "Infant Mortality Rate is the death of a child below one year of age.",
+        "There is still a vast difference in health infrastructure across different states in India."
+      ],
+      "source_section": "Section 2.3.2"
+    },
+    {
+      "concept_name": "Rural Unemployment: Seasonal and Disguised",
+      "difficulty": "hard",
+      "lesson": "In rural areas, unemployment is often 'Seasonal' (lack of work during non-harvest periods) or 'Disguised' (more people are working than required). In disguised unemployment, the marginal productivity of extra workers is zero.",
+      "real_example": "A family of eight working on a small plot that only requires five people; the three extra people are 'disguisedly' unemployed. ",
+      "key_points": [
+        "Seasonal unemployment happens when people are unable to find jobs during some months of the year.",
+        "Disguised unemployment is a major problem in the agricultural sector.",
+        "It leads to a wastage of manpower resource."
+      ],
+      "source_section": "Section 2.4"
+    },
+    {
+      "concept_name": "Urban Unemployment: Educated Unemployment",
+      "difficulty": "medium",
+      "lesson": "A peculiar feature of urban areas is educated unemployment. Many youth with matriculation, graduation, and post-graduation degrees are not able to find jobs, leading to a 'paradoxical manpower situation.'",
+      "real_example": "A surplus of manpower in certain categories (like general graduates) coexisting with a shortage of manpower in others (like technical skills).",
+      "key_points": [
+        "Unemployment leads to a feeling of hopelessness and despair among the youth.",
+        "It increases the economic overload on the working population.",
+        "The quality of life of an individual as well as of society is adversely affected."
+      ],
+      "source_section": "Section 2.4"
+    }
+  ]
+}

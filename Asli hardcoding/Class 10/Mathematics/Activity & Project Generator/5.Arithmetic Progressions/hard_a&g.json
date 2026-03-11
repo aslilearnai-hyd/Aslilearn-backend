@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Arithmetic Progressions",
+    "difficulty": "Hard",
+    "source_pdf": "jemh105.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Salary Growth Analysis",
+            "objective": "Analyse salary increments using AP",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect data",
+                "Model using AP"
+            ],
+            "learning_outcome": "Financial application",
+            "evaluation": "Correct modelling (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Loan Repayment Study",
+            "objective": "Study repayments using AP",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Create repayment plan",
+                "Analyse AP"
+            ],
+            "learning_outcome": "Real-life application",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Staircase Design Project",
+            "objective": "Apply AP in design",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Measure steps",
+                "Form AP"
+            ],
+            "learning_outcome": "Design application",
+            "evaluation": "Design accuracy (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "AP vs GP Comparison",
+            "objective": "Compare arithmetic and geometric progressions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List examples",
+                "Compare growth"
+            ],
+            "learning_outcome": "Concept comparison",
+            "evaluation": "Explanation clarity (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Sequence Study",
+            "objective": "Study sequences in daily life",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Observe sequences",
+                "Classify"
+            ],
+            "learning_outcome": "Observation skill",
+            "evaluation": "Relevance (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "AP Table and Graph",
+            "objective": "Represent AP graphically",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Create table",
+                "Plot graph"
+            ],
+            "learning_outcome": "Representation skill",
+            "evaluation": "Graph accuracy (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Term Prediction Model",
+            "objective": "Predict long-term AP behaviour",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse pattern",
+                "Predict terms"
+            ],
+            "learning_outcome": "Prediction skill",
+            "evaluation": "Logical reasoning (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Historical AP Usage",
+            "objective": "Study history of AP usage",
+            "materials": [
+                "Internet"
+            ],
+            "steps": [
+                "Research examples",
+                "Summarise findings"
+            ],
+            "learning_outcome": "Historical awareness",
+            "evaluation": "Research depth (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "AP Error Analysis",
+            "objective": "Analyse errors in AP formation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Study wrong APs",
+                "Correct them"
+            ],
+            "learning_outcome": "Error analysis",
+            "evaluation": "Correction accuracy (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "AP-Based Mini Research",
+            "objective": "Conduct a mini research using AP",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Choose topic",
+                "Analyse using AP"
+            ],
+            "learning_outcome": "Research skill",
+            "evaluation": "Depth and clarity (20 marks)"
+        }
+    ]
+}

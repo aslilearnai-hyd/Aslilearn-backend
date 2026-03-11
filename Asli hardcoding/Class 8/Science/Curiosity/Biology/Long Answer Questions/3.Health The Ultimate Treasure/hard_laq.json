@@ -1,0 +1,193 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-05T13:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why health is considered a balance between physical, mental, and social well-being rather than just the absence of disease.",
+      "answer": "Health involves proper body functioning, mental stability, and positive relationships. Even if a person is free from disease, stress, loneliness, or poor social interaction can affect overall well-being.",
+      "answer_outline": [
+        "Definition of health",
+        "Three dimensions of health",
+        "Importance of balance"
+      ],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze how excessive screen time can affect both physical and mental health.",
+      "answer": "Excessive screen time can lead to eye strain, obesity, sleep disturbances, and reduced social interaction. It can also increase stress and anxiety.",
+      "answer_outline": [
+        "Physical effects",
+        "Mental health effects",
+        "Preventive measures"
+      ],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Evaluate the importance of a balanced lifestyle in preventing diseases.",
+      "answer": "A balanced lifestyle including nutritious food, exercise, proper sleep, and stress management helps maintain immunity and reduces the risk of many diseases.",
+      "marks": 5,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Discuss the relationship between environmental conditions and the spread of diseases.",
+      "answer": "Poor sanitation, polluted water, and unclean surroundings create conditions for pathogens to multiply and spread diseases.",
+      "marks": 5,
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Analyze how urban pollution can affect respiratory health.",
+      "answer": "Air pollution from vehicles and industries introduces harmful particles that irritate the respiratory system and may cause asthma or breathing problems.",
+      "marks": 5,
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how symptoms and signs help doctors diagnose diseases.",
+      "answer": "Symptoms describe how a patient feels while signs are observable indicators. Together they help doctors identify diseases accurately.",
+      "marks": 5,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Analyze the difference between communicable and non-communicable diseases with suitable examples.",
+      "answer": "Communicable diseases spread through pathogens while non-communicable diseases are caused by lifestyle or environmental factors.",
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the role of pathogens in causing infectious diseases.",
+      "answer": "Pathogens such as bacteria, viruses, fungi, and protozoa invade the body, multiply, and interfere with normal body functions causing diseases.",
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the different modes through which communicable diseases spread.",
+      "answer": "Diseases spread through air droplets, contaminated water and food, direct contact, and vectors such as mosquitoes.",
+      "marks": 5,
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Evaluate the impact of mosquito breeding in stagnant water on community health.",
+      "answer": "Stagnant water allows mosquitoes to breed and increases the risk of diseases such as malaria and dengue.",
+      "marks": 5,
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how improved sanitation can reduce the spread of communicable diseases.",
+      "answer": "Sanitation prevents contamination of water and food sources and reduces the transmission of pathogens.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Analyze why non-communicable diseases are increasing in modern society.",
+      "answer": "Changes in lifestyle, increased consumption of processed food, lack of exercise, and longer life expectancy contribute to the rise of non-communicable diseases.",
+      "marks": 5,
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how lifestyle factors contribute to diseases like diabetes and obesity.",
+      "answer": "Poor diet, lack of physical activity, and excessive sugar consumption increase the risk of diabetes and obesity.",
+      "marks": 5,
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Describe the concept of immunity and its role in protecting the body from infections.",
+      "answer": "Immunity is the body's natural defense mechanism that identifies and destroys pathogens.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how vaccines help the immune system recognize pathogens.",
+      "answer": "Vaccines introduce harmless forms of pathogens, enabling the immune system to recognize them and respond quickly during future infections.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Analyze the significance of vaccination programs in controlling infectious diseases.",
+      "answer": "Vaccination programs prevent the spread of diseases by building immunity in large populations.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how Edward Jenner’s experiment contributed to modern vaccination.",
+      "answer": "Edward Jenner discovered that exposure to cowpox protected against smallpox, leading to the development of the first vaccine.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Evaluate India's role in global vaccine production.",
+      "answer": "India is one of the largest producers of vaccines and supplies them to many countries worldwide.",
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how antibiotics help in treating bacterial infections.",
+      "answer": "Antibiotics kill bacteria or prevent them from multiplying, helping cure bacterial infections.",
+      "marks": 4,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Analyze why antibiotics are ineffective against viral infections.",
+      "answer": "Antibiotics target bacterial structures and cannot affect viruses because viruses have different biological structures.",
+      "marks": 4,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the concept of antibiotic resistance and how it develops.",
+      "answer": "Antibiotic resistance occurs when bacteria evolve to survive antibiotic treatments due to overuse or misuse of antibiotics.",
+      "marks": 5,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Discuss how misuse of antibiotics can affect future medical treatments.",
+      "answer": "Misuse of antibiotics allows bacteria to develop resistance, making infections more difficult to treat.",
+      "marks": 5,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how emotional stress can affect the immune system.",
+      "answer": "Stress weakens the immune system and increases susceptibility to diseases.",
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Discuss the importance of community awareness programs in preventing diseases.",
+      "answer": "Community awareness programs educate people about hygiene, vaccination, and sanitation, reducing disease spread.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Evaluate the combined role of hygiene, vaccination, and healthy lifestyle in maintaining good health.",
+      "answer": "Hygiene prevents pathogen spread, vaccination builds immunity, and a healthy lifestyle strengthens the body, together ensuring overall health.",
+      "marks": 5,
+      "source_section": "Section 3.5"
+    }
+  ]
+}

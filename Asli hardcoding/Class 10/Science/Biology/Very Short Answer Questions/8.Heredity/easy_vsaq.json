@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 8: Heredity",
+    "generated_at": "2026-03-11T01:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is heredity?",
+            "answer": "Transmission of traits from parents to offspring.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a gene?",
+            "answer": "A segment of DNA that controls a specific trait.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What are variations?",
+            "answer": "Differences in traits among individuals of the same species.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Who is known as the father of genetics?",
+            "answer": "Gregor Johann Mendel.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a monohybrid cross?",
+            "answer": "Cross involving one pair of contrasting traits.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "State Mendel's law of dominance.",
+            "answer": "Only dominant trait appears in F1 generation.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the F2 phenotypic ratio in a monohybrid cross?",
+            "answer": "3:1",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What are alleles?",
+            "answer": "Different forms of the same gene.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a dihybrid cross?",
+            "answer": "Cross involving two pairs of contrasting traits.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "State Mendel's law of independent assortment.",
+            "answer": "Alleles of different genes segregate independently.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the F2 phenotypic ratio in a dihybrid cross?",
+            "answer": "9:3:3:1",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "How is sex determined in humans?",
+            "answer": "By sex chromosomes: XX in females, XY in males.",
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What are homologous chromosomes?",
+            "answer": "Pair of chromosomes with same genes at same loci.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is genotype?",
+            "answer": "Genetic constitution of an organism.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is phenotype?",
+            "answer": "Observable physical traits of an organism.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What are acquired traits?",
+            "answer": "Traits developed during lifetime, not inherited.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are acquired traits not inherited?",
+            "answer": "They do not change the DNA of germ cells.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What determines human blood groups?",
+            "answer": "Multiple alleles of the blood group gene.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Who is homogametic in humans?",
+            "answer": "Female (XX).",
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Who is heterogametic in humans?",
+            "answer": "Male (XY).",
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is a pure breeding line?",
+            "answer": "Line that produces identical offspring when selfed.",
+            "marks": 2,
+            "source_section": "Section 8.2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why are variations important for species?",
+            "answer": "They help in adaptation and survival.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is codominance?",
+            "answer": "Both alleles express equally in heterozygote.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Give one example of incomplete dominance.",
+            "answer": "Pink flowers from red and white parents in snapdragon.",
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do offspring resemble but differ from parents?",
+            "answer": "Due to inheritance of genes and occurrence of variations.",
+            "marks": 2,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

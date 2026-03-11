@@ -1,0 +1,35 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 1: Matter in Our Surroundings",
+  "difficulty": "Easy",
+  "short_notes": {
+    "key_points": [
+      "Matter is anything that has mass and occupies space",
+      "Particles of matter are very small",
+      "Particles of matter have spaces between them",
+      "Particles of matter are continuously moving",
+      "Particles of matter attract each other",
+      "Matter exists in three common states: solid, liquid and gas",
+      "Change of state occurs due to change in temperature or pressure"
+    ],
+    "examples": [
+      "Air, water and soil are examples of matter",
+      "Ice is solid water, water is liquid and steam is gaseous form",
+      "Perfume smell spreading in a room shows diffusion of particles",
+      "Sugar dissolving in water shows particles of matter have space between them"
+    ],
+    "formulas": [
+      "Temperature in Kelvin = Temperature in Celsius + 273",
+      "Melting point: Temperature at which solid changes into liquid",
+      "Boiling point: Temperature at which liquid changes into gas"
+    ],
+    "exam_tips": [
+      "Remember the properties of particles of matter",
+      "Learn the characteristics of solids, liquids and gases",
+      "Understand change of state: melting, freezing, evaporation and condensation",
+      "Use Kelvin scale in scientific temperature calculations",
+      "Give daily life examples for states of matter in exams"
+    ]
+  }
+}

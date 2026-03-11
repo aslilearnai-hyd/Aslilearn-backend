@@ -1,0 +1,127 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "From Trade to Territory",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand why the East India Company came to India",
+    "Learn about trading factories and early trade activities",
+    "Understand the Battle of Plassey and its importance",
+    "Learn about the Battle of Buxar",
+    "Understand the meaning of Diwani rights",
+    "Explain how the Company changed from traders to rulers"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to the East India Company",
+      "topics_covered": [
+        "Arrival of European trading companies",
+        "The East India Company",
+        "Goods traded in India"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Class discussion",
+        "Use of map showing trade routes"
+      ],
+      "student_activities": [
+        "List goods traded by the East India Company",
+        "Locate major trading cities like Surat and Madras on a map"
+      ],
+      "assessment": ["Oral questioning", "Student participation"]
+    },
+    {
+      "period": 2,
+      "title": "Trading Factories and Early Settlements",
+      "topics_covered": [
+        "Meaning of trading factories",
+        "Important trading centers",
+        "Growth of British influence"
+      ],
+      "teaching_strategy": ["Map-based explanation", "Example discussion"],
+      "student_activities": [
+        "Mark trading centers on a map",
+        "Write two functions of trading factories"
+      ],
+      "assessment": ["Short written activity", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Battle of Plassey",
+      "topics_covered": [
+        "Siraj-ud-Daulah",
+        "Robert Clive",
+        "Causes and results of the Battle of Plassey"
+      ],
+      "teaching_strategy": ["Narrative storytelling", "Timeline explanation"],
+      "student_activities": [
+        "Write key events of the Battle of Plassey",
+        "Create a small timeline for the battle"
+      ],
+      "assessment": ["Group discussion", "Teacher feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Battle of Buxar",
+      "topics_covered": [
+        "Events leading to the Battle of Buxar",
+        "Leaders involved in the battle",
+        "Importance of the battle"
+      ],
+      "teaching_strategy": ["Event explanation", "Question–answer discussion"],
+      "student_activities": [
+        "List the leaders involved in the Battle of Buxar",
+        "Write two results of the battle"
+      ],
+      "assessment": ["Oral questioning", "Notebook checking"]
+    },
+    {
+      "period": 5,
+      "title": "Diwani Rights and Company Power",
+      "topics_covered": [
+        "Meaning of Diwani rights",
+        "Grant of Diwani in 1765",
+        "Company collecting revenue"
+      ],
+      "teaching_strategy": ["Concept explanation", "Example-based teaching"],
+      "student_activities": [
+        "Explain Diwani rights in simple words",
+        "Discuss how revenue collection increased Company power"
+      ],
+      "assessment": ["Short written responses", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "From Trade to Territory and Revision",
+      "topics_covered": [
+        "Expansion of Company rule",
+        "Change from trade to political power",
+        "Chapter recap"
+      ],
+      "teaching_strategy": ["Concept recap", "Question–answer session"],
+      "student_activities": [
+        "Write three reasons for the expansion of Company rule",
+        "Participate in a short quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Map of India",
+    "Timeline chart"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Participation in activities"
+  ],
+  "teacher_tip": "Use stories and maps while teaching the chapter so that students can easily understand how a trading company gradually became a ruling power in India."
+}

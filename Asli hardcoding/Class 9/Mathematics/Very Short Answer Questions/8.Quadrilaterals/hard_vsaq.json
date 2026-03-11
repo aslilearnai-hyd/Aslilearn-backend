@@ -1,0 +1,250 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 8: Quadrilaterals",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T00:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In a parallelogram, the diagonals are 12 cm and 16 cm and one side is 10 cm. Find the area of the parallelogram.",
+            "answer": "Area = 1/2 × d1 × d2 × sin θ, using angle between diagonals or height; detailed calculation depends on given angle.",
+            "key_points": [
+                "parallelogram area",
+                "diagonal method"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 2,
+            "question": "A rhombus has sides 13 cm and one diagonal 10 cm. Find the other diagonal and area.",
+            "answer": "Other diagonal = 24 cm, Area = 1/2 × 10 × 24 = 120 cm²",
+            "key_points": [
+                "Pythagoras theorem",
+                "rhombus area"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "In a rectangle, length = 15 cm, breadth = 8 cm. Verify if the triangles formed by the diagonal are congruent.",
+            "answer": "Yes, triangles are congruent by RHS rule (right angle, hypotenuse = diagonal, one side equal).",
+            "key_points": [
+                "triangle congruence",
+                "RHS"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "A trapezium has parallel sides 10 cm and 6 cm and non-parallel sides 5 cm each. Find its area.",
+            "answer": "Height = √(5² - ((10-6)/2)²) = √(25 - 4) = √21 cm, Area = 1/2 × (10+6) × √21 ≈ 32.49 cm²",
+            "key_points": [
+                "trapezium area",
+                "height calculation"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "In a kite, diagonals are 12 cm and 16 cm. Verify that diagonals bisect at right angles and find area.",
+            "answer": "Diagonals intersect at right angles, Area = 1/2 × 12 × 16 = 96 cm²",
+            "key_points": [
+                "kite area",
+                "diagonal intersection"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "A rhombus has diagonals in the ratio 3:4 and side 5 cm. Find the lengths of diagonals.",
+            "answer": "Let diagonals = 3x, 4x; using Pythagoras on half diagonals: (3x/2)² + (4x/2)² = 5² → 9x²/4 + 16x²/4 = 25 → 25x²/4 = 25 → x = 2 → diagonals = 6 cm, 8 cm",
+            "key_points": [
+                "rhombus",
+                "Pythagoras theorem"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "In a parallelogram, sides are 10 cm and 8 cm, and the angle between them is 60°. Find the area.",
+            "answer": "Area = ab sinθ = 10 × 8 × sin60° = 80 × (√3/2) = 40√3 cm²",
+            "key_points": [
+                "parallelogram area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "A rectangle has length 20 cm and breadth 15 cm. Find the length of diagonal and verify Pythagoras theorem.",
+            "answer": "Diagonal = √(20² + 15²) = √(400+225)=√625=25 cm",
+            "key_points": [
+                "rectangle",
+                "diagonal"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "In a square, diagonal = 14√2 cm. Find side length and area of the square.",
+            "answer": "Side = diagonal/√2 = 14 cm, Area = 14² = 196 cm²",
+            "key_points": [
+                "square",
+                "diagonal relation"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "The diagonals of a rectangle intersect at 90°. Identify the quadrilateral.",
+            "answer": "It is a square, since only in a square diagonals intersect at right angles.",
+            "key_points": [
+                "rectangle vs square",
+                "diagonal property"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "A trapezium has bases 12 cm and 8 cm and height 5 cm. Find the area.",
+            "answer": "Area = 1/2 × (12 + 8) × 5 = 50 cm²",
+            "key_points": [
+                "trapezium area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "In a kite, diagonals intersect at right angles, lengths 9 cm and 12 cm. Find area.",
+            "answer": "Area = 1/2 × 9 × 12 = 54 cm²",
+            "key_points": [
+                "kite area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Diagonals of a rhombus are 16 cm and 30 cm. Find side and area of rhombus.",
+            "answer": "Side = √((16/2)² + (30/2)²) = √(64+225)=√289=17 cm, Area = 1/2 × 16 × 30 = 240 cm²",
+            "key_points": [
+                "rhombus diagonal formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "A parallelogram has sides 8 cm, 6 cm and one angle 60°. Find length of diagonal using cosine law.",
+            "answer": "Diagonal² = 8² + 6² - 2×8×6 cos120° = 64+36 -(-48)=64+36+48=148 → diagonal ≈ 12.17 cm",
+            "key_points": [
+                "cosine law",
+                "parallelogram diagonal"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "In a square, side = 10 cm. Find length of diagonal and area of the square.",
+            "answer": "Diagonal = 10√2 cm, Area = 100 cm²",
+            "key_points": [
+                "square",
+                "diagonal"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "In a rhombus, one diagonal = 24 cm and side = 13 cm. Find other diagonal.",
+            "answer": "Other diagonal = 2 × √(13² - (24/2)²) = 2 × √(169 - 144) = 2 × 5 = 10 cm",
+            "key_points": [
+                "Pythagoras theorem"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "A parallelogram has sides 9 cm and 12 cm, angle between sides = 45°. Find area.",
+            "answer": "Area = 9×12×sin45° = 108 × 0.707 ≈ 76.36 cm²",
+            "key_points": [
+                "parallelogram",
+                "area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "In a rectangle, length = 24 cm, breadth = 7 cm. Find diagonal.",
+            "answer": "Diagonal = √(24² + 7²) = √(576+49)=√625=25 cm",
+            "key_points": [
+                "rectangle diagonal"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "A trapezium has bases 14 cm and 10 cm, non-parallel sides 5 cm each. Find height.",
+            "answer": "Height = √(5² - ((14-10)/2)²) = √(25 - 4) = √21 cm",
+            "key_points": [
+                "height formula",
+                "trapezium"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "In a kite, diagonals are perpendicular and lengths are 10 cm and 24 cm. Find area.",
+            "answer": "Area = 1/2 × 10 × 24 = 120 cm²",
+            "key_points": [
+                "kite area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "In a parallelogram, sides are 15 cm and 20 cm, angle = 60°. Find lengths of diagonals using cosine law.",
+            "answer": "Diagonal1² = 15² + 20² - 2×15×20 cos60° = 225+400-300=325 → ≈ 18.03 cm, Diagonal2² = 15² + 20² - 2×15×20 cos120° = 225+400+300=925 → ≈ 30.41 cm",
+            "key_points": [
+                "cosine law",
+                "parallelogram diagonals"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Diagonals of a rhombus are 18 cm and 24 cm. Find side and perimeter of rhombus.",
+            "answer": "Side = √((18/2)² + (24/2)²) = √(81+144)=√225=15 cm, Perimeter = 4×15 = 60 cm",
+            "key_points": [
+                "rhombus side and perimeter"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "A square has area 196 cm². Find side and diagonal.",
+            "answer": "Side = √196 = 14 cm, Diagonal = 14√2 ≈ 19.8 cm",
+            "key_points": [
+                "square",
+                "diagonal"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "In a trapezium, parallel sides = 16 cm and 10 cm, height = 6 cm. Find area.",
+            "answer": "Area = 1/2 × (16 + 10) × 6 = 78 cm²",
+            "key_points": [
+                "trapezium area formula"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "In a parallelogram, diagonals are perpendicular. Identify the quadrilateral.",
+            "answer": "It is a rhombus, as only rhombus has perpendicular diagonals.",
+            "key_points": [
+                "parallelogram",
+                "rhombus identification"
+            ],
+            "source_section": "Section 8.2"
+        }
+    ]
+}

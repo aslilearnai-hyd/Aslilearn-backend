@@ -1,0 +1,127 @@
+{
+  "class": "Class 8",
+  "subject": "Civics",
+  "chapter_name": "Public Facilities",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse the concept and importance of public facilities",
+    "Examine the role of government in providing essential services",
+    "Evaluate the importance of clean drinking water as a public facility",
+    "Understand the differences between public and private services",
+    "Analyse inequality in access to public facilities",
+    "Evaluate the role of citizens and government in ensuring equal access"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Concept and Importance of Public Facilities",
+      "topics_covered": [
+        "Definition of public facilities",
+        "Examples such as water supply, sanitation and transport",
+        "Importance of these services in society"
+      ],
+      "teaching_strategy": [
+        "Concept explanation",
+        "Discussion method",
+        "Real-life examples"
+      ],
+      "student_activities": [
+        "Analyse how public services affect daily life",
+        "Write examples of essential public facilities"
+      ],
+      "assessment": ["Concept questioning", "Student participation"]
+    },
+    {
+      "period": 2,
+      "title": "Clean Drinking Water as a Public Facility",
+      "topics_covered": [
+        "Importance of clean drinking water",
+        "Health and sanitation issues",
+        "Water supply systems"
+      ],
+      "teaching_strategy": ["Case discussion", "Example-based explanation"],
+      "student_activities": [
+        "Discuss problems caused by lack of clean water",
+        "Explain why water supply should be a public responsibility"
+      ],
+      "assessment": ["Short written activity", "Teacher observation"]
+    },
+    {
+      "period": 3,
+      "title": "Role of Government in Public Facilities",
+      "topics_covered": [
+        "Government responsibility",
+        "Use of taxes to fund services",
+        "Ensuring equal access"
+      ],
+      "teaching_strategy": ["Interactive questioning", "Example explanation"],
+      "student_activities": [
+        "Discuss how governments provide services like hospitals and roads",
+        "List examples of services funded by taxes"
+      ],
+      "assessment": ["Notebook checking", "Teacher feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Public and Private Services",
+      "topics_covered": [
+        "Differences between public and private services",
+        "Advantages and limitations of private services",
+        "Need for regulation"
+      ],
+      "teaching_strategy": ["Comparative analysis", "Discussion method"],
+      "student_activities": [
+        "Compare government hospitals and private hospitals",
+        "Discuss why some services should remain public"
+      ],
+      "assessment": ["Class discussion", "Short written response"]
+    },
+    {
+      "period": 5,
+      "title": "Inequality in Access to Public Facilities",
+      "topics_covered": [
+        "Unequal distribution of services",
+        "Impact on poor communities",
+        "Need for fair distribution"
+      ],
+      "teaching_strategy": ["Case examples", "Critical thinking discussion"],
+      "student_activities": [
+        "Analyse examples where facilities are not equally available",
+        "Suggest solutions to improve access"
+      ],
+      "assessment": ["Group discussion", "Teacher observation"]
+    },
+    {
+      "period": 6,
+      "title": "Citizen Responsibility and Chapter Review",
+      "topics_covered": [
+        "Role of citizens in protecting public facilities",
+        "Importance of responsible use",
+        "Comprehensive chapter revision"
+      ],
+      "teaching_strategy": ["Reflection discussion", "Revision quiz"],
+      "student_activities": [
+        "Write a short reflection on responsible use of public services",
+        "Participate in a quiz covering the chapter"
+      ],
+      "assessment": ["Short test (10 marks)", "Concept clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Civics textbook",
+    "Case study examples",
+    "Charts showing public services"
+  ],
+  "evaluation_methods": [
+    "Concept-based questioning",
+    "Notebook checking",
+    "Short analytical tasks",
+    "Group discussions",
+    "Revision quizzes"
+  ],
+  "teacher_tip": "Encourage students to examine local examples of public facilities and analyse how equal access to services can improve social welfare and development."
+}

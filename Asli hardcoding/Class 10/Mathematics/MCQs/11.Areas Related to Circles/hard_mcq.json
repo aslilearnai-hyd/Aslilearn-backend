@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Areas Related to Circles",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T07:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The formula used to find the area of a circle of radius r is?",
+            "options": {
+                "A": "2πr",
+                "B": "πr²",
+                "C": "πd",
+                "D": "2πr²"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of circle = πr².",
+            "difficulty": "hard",
+            "source_section": "Circle Area"
+        },
+        {
+            "question_number": 2,
+            "question": "The area of a semicircle of radius r is?",
+            "options": {
+                "A": "πr²",
+                "B": "2πr²",
+                "C": "½πr²",
+                "D": "¼πr²"
+            },
+            "correct_answer": "C",
+            "explanation": "Semicircle area = ½πr².",
+            "difficulty": "hard",
+            "source_section": "Semicircle"
+        },
+        {
+            "question_number": 3,
+            "question": "The area of a sector of angle θ (in degrees) and radius r is?",
+            "options": {
+                "A": "(θ/360) × πr²",
+                "B": "πr²",
+                "C": "2πr",
+                "D": "(θ/180) × πr²"
+            },
+            "correct_answer": "A",
+            "explanation": "Area of sector = (θ/360)πr².",
+            "difficulty": "hard",
+            "source_section": "Sector Area"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following has maximum area for the same radius?",
+            "options": {
+                "A": "Semicircle",
+                "B": "Quadrant",
+                "C": "Sector of 60°",
+                "D": "Full circle"
+            },
+            "correct_answer": "D",
+            "explanation": "Full circle has maximum area.",
+            "difficulty": "hard",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 5,
+            "question": "If the radius of a circle is doubled, its area becomes?",
+            "options": {
+                "A": "2 times",
+                "B": "3 times",
+                "C": "4 times",
+                "D": "8 times"
+            },
+            "correct_answer": "C",
+            "explanation": "Area ∝ r², doubling radius gives 4 times area.",
+            "difficulty": "hard",
+            "source_section": "Concept Application"
+        },
+        {
+            "question_number": 6,
+            "question": "The area of a quadrant of a circle of radius r is?",
+            "options": {
+                "A": "πr²",
+                "B": "½πr²",
+                "C": "¼πr²",
+                "D": "⅓πr²"
+            },
+            "correct_answer": "C",
+            "explanation": "Quadrant area = ¼πr².",
+            "difficulty": "hard",
+            "source_section": "Quadrant"
+        },
+        {
+            "question_number": 7,
+            "question": "The perimeter of a semicircle includes?",
+            "options": {
+                "A": "Only curved part",
+                "B": "Only diameter",
+                "C": "Curved part + diameter",
+                "D": "Curved part × 2"
+            },
+            "correct_answer": "C",
+            "explanation": "Perimeter includes arc and diameter.",
+            "difficulty": "hard",
+            "source_section": "Perimeter"
+        },
+        {
+            "question_number": 8,
+            "question": "The length of the arc of a sector of angle θ is?",
+            "options": {
+                "A": "(θ/360) × 2πr",
+                "B": "(θ/180) × πr",
+                "C": "πr²",
+                "D": "(θ/360) × πr²"
+            },
+            "correct_answer": "A",
+            "explanation": "Arc length = (θ/360) × circumference.",
+            "difficulty": "hard",
+            "source_section": "Arc Length"
+        },
+        {
+            "question_number": 9,
+            "question": "Which value of π is generally used for numerical problems?",
+            "options": {
+                "A": "22/7",
+                "B": "3.14",
+                "C": "Both A and B",
+                "D": "3"
+            },
+            "correct_answer": "C",
+            "explanation": "Both values are commonly used.",
+            "difficulty": "hard",
+            "source_section": "Constants"
+        },
+        {
+            "question_number": 10,
+            "question": "The region enclosed between an arc and the two radii is called?",
+            "options": {
+                "A": "Segment",
+                "B": "Sector",
+                "C": "Quadrant",
+                "D": "Diameter"
+            },
+            "correct_answer": "B",
+            "explanation": "That region is a sector.",
+            "difficulty": "hard",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 11,
+            "question": "The area of a circle is numerically equal to?",
+            "options": {
+                "A": "π × diameter²",
+                "B": "π × radius²",
+                "C": "2πr",
+                "D": "πr"
+            },
+            "correct_answer": "B",
+            "explanation": "Area formula is πr².",
+            "difficulty": "hard",
+            "source_section": "Formula Check"
+        },
+        {
+            "question_number": 12,
+            "question": "If the circumference of a circle is given, which formula is used to find radius?",
+            "options": {
+                "A": "C / π",
+                "B": "C / 2π",
+                "C": "2π / C",
+                "D": "π / C"
+            },
+            "correct_answer": "B",
+            "explanation": "C = 2πr ⇒ r = C / 2π.",
+            "difficulty": "hard",
+            "source_section": "Reverse Calculation"
+        },
+        {
+            "question_number": 13,
+            "question": "Which shape has area equal to half of a circle?",
+            "options": {
+                "A": "Sector of 90°",
+                "B": "Quadrant",
+                "C": "Semicircle",
+                "D": "Segment"
+            },
+            "correct_answer": "C",
+            "explanation": "Semicircle = half of circle.",
+            "difficulty": "hard",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following has both straight and curved boundaries?",
+            "options": {
+                "A": "Circle",
+                "B": "Sector",
+                "C": "Arc",
+                "D": "Circumference"
+            },
+            "correct_answer": "B",
+            "explanation": "Sector has straight radii and curved arc.",
+            "difficulty": "hard",
+            "source_section": "Figures"
+        },
+        {
+            "question_number": 15,
+            "question": "Which formula gives the circumference of a circle?",
+            "options": {
+                "A": "πr²",
+                "B": "2πr",
+                "C": "πd²",
+                "D": "½πr"
+            },
+            "correct_answer": "B",
+            "explanation": "Circumference = 2πr.",
+            "difficulty": "hard",
+            "source_section": "Circumference"
+        },
+        {
+            "question_number": 16,
+            "question": "If the diameter of a circle is 14 cm, its area is?",
+            "options": {
+                "A": "154 cm²",
+                "B": "308 cm²",
+                "C": "616 cm²",
+                "D": "77 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "r = 7, area = π×49 = 154 cm².",
+            "difficulty": "hard",
+            "source_section": "Numerical Application"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following quantities changes when the radius changes?",
+            "options": {
+                "A": "Area",
+                "B": "Circumference",
+                "C": "Both A and B",
+                "D": "Neither"
+            },
+            "correct_answer": "C",
+            "explanation": "Both depend on radius.",
+            "difficulty": "hard",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 18,
+            "question": "Which shape is obtained by removing a sector from a circle?",
+            "options": {
+                "A": "Segment",
+                "B": "Ring",
+                "C": "Arc",
+                "D": "Polygon"
+            },
+            "correct_answer": "A",
+            "explanation": "Remaining region is a segment.",
+            "difficulty": "hard",
+            "source_section": "Segments"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following has the least area for the same radius?",
+            "options": {
+                "A": "Circle",
+                "B": "Semicircle",
+                "C": "Quadrant",
+                "D": "Sector of 120°"
+            },
+            "correct_answer": "C",
+            "explanation": "Quadrant = ¼ of circle.",
+            "difficulty": "hard",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 20,
+            "question": "The length of the diameter is always?",
+            "options": {
+                "A": "Half the radius",
+                "B": "Equal to radius",
+                "C": "Twice the radius",
+                "D": "Four times the radius"
+            },
+            "correct_answer": "C",
+            "explanation": "Diameter = 2r.",
+            "difficulty": "hard",
+            "source_section": "Relations"
+        },
+        {
+            "question_number": 21,
+            "question": "Which figure has area directly proportional to the square of radius?",
+            "options": {
+                "A": "Arc",
+                "B": "Circumference",
+                "C": "Circle",
+                "D": "Diameter"
+            },
+            "correct_answer": "C",
+            "explanation": "Area of circle ∝ r².",
+            "difficulty": "hard",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 22,
+            "question": "Which formula is used to find the area of a ring?",
+            "options": {
+                "A": "π(r1² − r2²)",
+                "B": "π(r1 − r2)²",
+                "C": "2πr",
+                "D": "πr²"
+            },
+            "correct_answer": "A",
+            "explanation": "Area of ring = difference of areas.",
+            "difficulty": "hard",
+            "source_section": "Ring"
+        },
+        {
+            "question_number": 23,
+            "question": "If area of a circle is zero, its radius is?",
+            "options": {
+                "A": "1",
+                "B": "Undefined",
+                "C": "0",
+                "D": "∞"
+            },
+            "correct_answer": "C",
+            "explanation": "Area zero implies radius zero.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 24,
+            "question": "Which part of a circle has only curved boundary?",
+            "options": {
+                "A": "Sector",
+                "B": "Segment",
+                "C": "Arc",
+                "D": "Semicircle"
+            },
+            "correct_answer": "C",
+            "explanation": "Arc is purely curved.",
+            "difficulty": "hard",
+            "source_section": "Boundaries"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following is always true?",
+            "options": {
+                "A": "Area of semicircle = area of quadrant",
+                "B": "Area of circle depends on radius",
+                "C": "Circumference depends on area",
+                "D": "Area depends on diameter only"
+            },
+            "correct_answer": "B",
+            "explanation": "Area depends on radius.",
+            "difficulty": "hard",
+            "source_section": "Summary"
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Hard",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "Local Credit System Research Project",
+      "objective": "To study and analyze different sources of credit available in the local area.",
+      "materials": "Survey questionnaire, notebook, pen, calculator",
+      "steps": [
+        "Prepare a questionnaire about loan sources, interest rates, and repayment conditions.",
+        "Collect responses from at least 15 people (formal and informal borrowers).",
+        "Compare data using tables and analyze which source is safer and why."
+      ],
+      "learning_outcome": "Students understand real-world credit systems and risks involved.",
+      "evaluation": "Assess survey quality, data accuracy, comparison, and analytical conclusions."
+    },
+    {
+      "title": "Impact of Interest Rates Study",
+      "objective": "To analyze how different interest rates affect borrowers.",
+      "materials": "Calculator, notebook, internet/textbook",
+      "steps": [
+        "Collect sample loan data with varying interest rates.",
+        "Calculate total repayment amounts.",
+        "Prepare a report explaining how high interest leads to debt traps."
+      ],
+      "learning_outcome": "Students critically evaluate the burden of high interest rates.",
+      "evaluation": "Check calculation accuracy and depth of explanation."
+    },
+    {
+      "title": "Formal vs Informal Sector Case Study",
+      "objective": "To compare formal and informal credit systems through real examples.",
+      "materials": "Interview questions, notebook",
+      "steps": [
+        "Interview one person who borrowed from a bank and one from a moneylender.",
+        "Compare documentation, interest rate, and repayment flexibility.",
+        "Prepare a comparative report with findings."
+      ],
+      "learning_outcome": "Students understand practical differences and financial safety issues.",
+      "evaluation": "Evaluate research depth, clarity of comparison, and logical conclusions."
+    },
+    {
+      "title": "Digital Banking Awareness Campaign",
+      "objective": "To promote safe digital banking practices.",
+      "materials": "Chart paper, markers, research materials",
+      "steps": [
+        "Research digital payment methods and common fraud risks.",
+        "Design awareness posters or pamphlets about safe usage.",
+        "Present the campaign message in class."
+      ],
+      "learning_outcome": "Students understand advantages and risks of digital transactions.",
+      "evaluation": "Assess creativity, accuracy of information, and clarity of awareness message."
+    },
+    {
+      "title": "Debt Trap Analysis Project",
+      "objective": "To examine causes and consequences of debt traps.",
+      "materials": "Case studies, notebook, internet resources",
+      "steps": [
+        "Study a real or textbook case of a farmer or small trader in debt.",
+        "Identify causes of debt trap.",
+        "Suggest preventive measures and policy solutions."
+      ],
+      "learning_outcome": "Students understand financial vulnerability and preventive strategies.",
+      "evaluation": "Check analytical reasoning and practicality of suggestions."
+    },
+    {
+      "title": "Banking Services Field Study",
+      "objective": "To analyze services offered by banks and their importance.",
+      "materials": "Observation sheet, notebook",
+      "steps": [
+        "Visit a bank (or research online) and list key services.",
+        "Categorize them into deposit, loan, and digital services.",
+        "Prepare a structured report explaining their role in development."
+      ],
+      "learning_outcome": "Students connect banking services with economic growth.",
+      "evaluation": "Assess completeness of services listed and clarity of explanation."
+    },
+    {
+      "title": "Microfinance and Self-Help Groups Study",
+      "objective": "To explore the role of microfinance in rural development.",
+      "materials": "Internet research, notebook",
+      "steps": [
+        "Research how Self-Help Groups (SHGs) provide credit.",
+        "Identify benefits for women and small entrepreneurs.",
+        "Present findings with examples."
+      ],
+      "learning_outcome": "Students understand inclusive banking and rural credit systems.",
+      "evaluation": "Evaluate research accuracy and analytical depth."
+    },
+    {
+      "title": "Savings and Investment Planning Project",
+      "objective": "To create a long-term financial plan.",
+      "materials": "Calculator, notebook, internet resources",
+      "steps": [
+        "Select a future financial goal (e.g., higher education).",
+        "Calculate monthly savings needed with simple interest assumptions.",
+        "Prepare a financial plan with justification."
+      ],
+      "learning_outcome": "Students develop financial planning and decision-making skills.",
+      "evaluation": "Check planning accuracy and logical reasoning."
+    },
+    {
+      "title": "Evolution of Money Documentary",
+      "objective": "To creatively present the evolution of money.",
+      "materials": "Mobile phone camera, chart paper, editing app (optional)",
+      "steps": [
+        "Research stages from barter to digital currency.",
+        "Create a short documentary or presentation.",
+        "Explain how each stage improved transactions."
+      ],
+      "learning_outcome": "Students understand historical development of money systems.",
+      "evaluation": "Assess creativity, historical accuracy, and clarity of explanation."
+    },
+    {
+      "title": "Credit Policy Recommendation Report",
+      "objective": "To suggest measures for improving access to formal credit.",
+      "materials": "Internet research, notebook",
+      "steps": [
+        "Study challenges faced by small borrowers in accessing bank loans.",
+        "Identify gaps in current credit system.",
+        "Prepare a recommendation report with practical solutions."
+      ],
+      "learning_outcome": "Students develop policy thinking and analytical skills.",
+      "evaluation": "Evaluate depth of research, feasibility of recommendations, and clarity of report."
+    }
+  ]
+}

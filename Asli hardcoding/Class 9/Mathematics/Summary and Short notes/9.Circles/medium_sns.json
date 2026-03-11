@@ -1,0 +1,36 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Medium",
+    "short_notes": {
+        "key_points": [
+            "The angle subtended by a chord at the center is twice the angle subtended at any point on the remaining part of the circle.",
+            "The perpendicular from the center to a chord bisects the chord.",
+            "Equal chords of a circle are equidistant from the center.",
+            "The sum of the opposite angles of a cyclic quadrilateral is 180°.",
+            "Tangent to a circle is perpendicular to the radius at the point of contact.",
+            "Two tangents drawn from an external point to a circle are equal in length."
+        ],
+        "formulas": [
+            "Angle at center: ∠AOB = 2 × ∠ACB",
+            "Length of chord: l = 2√(r² - d²), where d = distance from center to chord",
+            "Length of tangent from external point P: PT = √(PA² - r²), PA = distance from center to P",
+            "Area of sector: A = (θ/360) × πr², θ in degrees",
+            "Length of arc: L = (θ/360) × 2πr"
+        ],
+        "examples": [
+            "A chord AB of length 8 cm is 3 cm from the center. Find the radius → r = √(d² + (l/2)²) = √(3² + 4²) = 5 cm",
+            "Two tangents from point P outside the circle are equal. If distance from center to P is 13 cm and radius 5 cm, find tangent length → √(13²-5²)=12 cm",
+            "Angle at center is 100°, angle on remaining circle = 100/2 = 50°",
+            "Cyclic quadrilateral ABCD has ∠A = 70°, find ∠C → 180°-70°=110°"
+        ],
+        "exam_tips": [
+            "Use the perpendicular from center to chord for length or distance problems.",
+            "Always check if quadrilateral is cyclic to apply sum of opposite angles.",
+            "For tangent problems, radius ⊥ tangent at point of contact.",
+            "Angles in the same segment of a circle are equal.",
+            "Convert angles to radians if needed for arc length or sector area formulas."
+        ]
+    }
+}

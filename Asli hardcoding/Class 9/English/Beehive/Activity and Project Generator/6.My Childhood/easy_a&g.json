@@ -1,0 +1,139 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "My Childhood",
+  "difficulty": "Easy",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Chapter Summary Writing",
+      "objective": "Develop the ability to summarize the story",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Read the chapter carefully",
+        "Identify the key events from the author’s childhood",
+        "Write a summary in 8–10 sentences"
+      ],
+      "learning_outcome": "Improves comprehension and summarizing skills",
+      "evaluation": "Clarity and completeness of summary (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Study",
+      "objective": "Understand the personality of the author as a child",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the traits and qualities of the author in childhood",
+        "Give examples from the text illustrating these traits",
+        "Write 5–6 sentences describing the child’s personality"
+      ],
+      "learning_outcome": "Develops analytical thinking about characters",
+      "evaluation": "Accuracy and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Event Sequencing Activity",
+      "objective": "Understand the sequence of events in the author’s childhood",
+      "materials": ["Notebook"],
+      "steps": [
+        "List important incidents from the childhood described",
+        "Arrange them in chronological order",
+        "Write one sentence explaining each incident"
+      ],
+      "learning_outcome": "Improves understanding of story flow",
+      "evaluation": "Correct sequence (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Vocabulary Builder",
+      "objective": "Learn new words from the chapter",
+      "materials": ["Notebook", "Dictionary"],
+      "steps": [
+        "Find 8 new words from the chapter",
+        "Write their meanings",
+        "Use each word in a meaningful sentence"
+      ],
+      "learning_outcome": "Enhances vocabulary and sentence construction",
+      "evaluation": "Correct meanings and usage (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Personal Reflection Writing",
+      "objective": "Relate to the author’s childhood experiences",
+      "materials": ["Notebook"],
+      "steps": [
+        "Think about a memory from your own childhood",
+        "Write 6–8 sentences describing it",
+        "Compare it with the author’s experiences in the chapter"
+      ],
+      "learning_outcome": "Develops reflective and expressive writing skills",
+      "evaluation": "Clarity, relevance, and personal insight (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Dialogue Writing",
+      "objective": "Practice creative dialogue writing",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine a conversation between the child author and a friend or parent",
+        "Write at least 6–8 lines of dialogue",
+        "Include discussion about daily childhood activities"
+      ],
+      "learning_outcome": "Improves creative writing and dialogue skills",
+      "evaluation": "Creativity and relevance (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Theme Identification",
+      "objective": "Identify the main theme of the chapter",
+      "materials": ["Notebook"],
+      "steps": [
+        "Think about the importance of childhood, learning, and innocence",
+        "Write the main theme in 3–4 sentences",
+        "Give examples from the chapter supporting the theme"
+      ],
+      "learning_outcome": "Develops understanding of the story’s moral and deeper meaning",
+      "evaluation": "Clarity and relevance of explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Role Play Activity",
+      "objective": "Understand the character through acting",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Select a scene from the chapter",
+        "Act the roles of the child author and another character",
+        "Practice the dialogue with classmates"
+      ],
+      "learning_outcome": "Improves communication and presentation skills",
+      "evaluation": "Participation and performance (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Creative Illustration",
+      "objective": "Visualize a memorable childhood scene",
+      "materials": ["Drawing sheet", "Pencil", "Colors"],
+      "steps": [
+        "Draw a scene described in the chapter",
+        "Include expressions and environment",
+        "Write a short description of the scene"
+      ],
+      "learning_outcome": "Enhances creative expression and understanding",
+      "evaluation": "Creativity and clarity of visualization (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Opinion Writing",
+      "objective": "Express personal views about the story",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write your opinion about the author’s childhood experiences",
+        "Explain whether they are relatable or inspiring",
+        "Support your ideas with examples from the chapter"
+      ],
+      "learning_outcome": "Develops opinion writing and reasoning skills",
+      "evaluation": "Logical explanation and clarity (10 marks)"
+    }
+  ]
+}

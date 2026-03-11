@@ -1,0 +1,180 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter_name": "The Story of Village Palampur",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Critically analyze the interdependence of the four factors of production in a shifting economy",
+        "Evaluate the long-term ecological and economic trade-offs of the Green Revolution",
+        "Deconstruct the structural inequalities in rural land and labor markets",
+        "Analyze the credit market distortions and the mechanics of the rural debt trap",
+        "Assess the role of infrastructure and human capital in rural diversification",
+        "Synthesize agricultural surplus theories with capital reinvestment cycles"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Theoretical Framework of Production",
+            "topics_covered": [
+                "Advanced analysis of Land, Labour, Physical Capital, and Human Capital",
+                "The 'Human Capital' catalyst: Why it is the superior factor",
+                "Fixed vs. Working Capital in high-tech agricultural settings"
+            ],
+            "teaching_strategy": [
+                "Socratic seminar on factor substitution",
+                "Comparative analysis of production functions"
+            ],
+            "student_activities": [
+                "Draft a thesis on why Human Capital is essential to activate Land and Capital",
+                "Categorize capital for a high-tech organic farm vs. a traditional farm"
+            ],
+            "assessment": [
+                "Analytical essay on the 'Superiority of Human Capital'",
+                "Critical peer review of production plans"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Intensive Cultivation & Diminishing Returns",
+            "topics_covered": [
+                "Multiple cropping vs. modern farming: A marginal utility perspective",
+                "The role of institutional infrastructure (electricity) in economic shifts",
+                "Calculation of yield per hectare using modern vs. traditional inputs"
+            ],
+            "teaching_strategy": [
+                "Mathematical modeling of crop yields",
+                "Discussion on the 'Law of Diminishing Returns' in fixed land scenarios"
+            ],
+            "student_activities": [
+                "Calculate the percentage increase in yield from textbook data",
+                "Graph the relationship between fertilizer input and total output"
+            ],
+            "assessment": [
+                "Numerical problem set on agricultural productivity",
+                "Graph accuracy check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Green Revolution: A Cost-Benefit Audit",
+            "topics_covered": [
+                "HYV seed technology and the 'Package' approach",
+                "Socio-economic disparities: The widening gap between large and small farmers",
+                "Regional imbalance in Indian agricultural growth"
+            ],
+            "teaching_strategy": [
+                "Data-driven lecture using 1960s-2020s production stats",
+                "Debate: 'The Green Revolution: A Boon or a Bane for the Small Farmer?'"
+            ],
+            "student_activities": [
+                "Interpret complex bar graphs of food grain production over 50 years",
+                "Identify the 'Externalities' of modern farming (pollution, health costs)"
+            ],
+            "assessment": [
+                "Comparative report on regional agricultural disparities",
+                "Debate participation and evidence usage"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Environmental Sustainability & Natural Capital",
+            "topics_covered": [
+                "Soil fertility degradation and chemical toxicity",
+                "Groundwater depletion: The 'Tragedy of the Commons' in Palampur",
+                "Scientific reports vs. short-term economic gains"
+            ],
+            "teaching_strategy": [
+                "Case study analysis of water table fall in North-West India",
+                "Discussion on 'Natural Capital' as a finite resource"
+            ],
+            "student_activities": [
+                "Propose a sustainable 'Master Plan' for water conservation in Palampur",
+                "Write a critical analysis on the loss of soil microorganisms due to chemical usage"
+            ],
+            "assessment": [
+                "Evaluation of the 'Palampur Sustainability Proposal'",
+                "Short answer test on environmental externalities"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Labour Market Distortions & Wage Theory",
+            "topics_covered": [
+                "Land distribution inequality (Gini coefficient concept)",
+                "Why wages remain below government-mandated minimums",
+                "The relationship between landlessness and bargaining power"
+            ],
+            "teaching_strategy": [
+                "Pie chart analysis of land ownership inequality",
+                "Lecture on the 'Supply and Demand' of rural labor"
+            ],
+            "student_activities": [
+                "Construct a detailed pie chart of land distribution in Palampur",
+                "Analyze the 'Story of Dala' to understand wage suppression"
+            ],
+            "assessment": [
+                "Analytical note on 'Bargaining Power in Rural Labour Markets'",
+                "Pie chart precision check"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Rural Finance: Credit Cycles & Reinvestment",
+            "topics_covered": [
+                "Mechanics of the debt trap for small farmers",
+                "Interest rate arbitrage: Moneylenders vs. Banks",
+                "Surplus reinvestment cycles for large farmers"
+            ],
+            "teaching_strategy": [
+                "Flowcharting the 'Vicious Cycle' of debt vs. the 'Virtuous Cycle' of profit",
+                "Calculation of compound interest from informal sources"
+            ],
+            "student_activities": [
+                "Compare the total repayment of Savita (moneylender) vs. a bank loan",
+                "Map the reinvestment path of Tejpal Singh’s surplus wheat profits"
+            ],
+            "assessment": [
+                "Financial problem set on rural credit costs",
+                "Flowchart accuracy check"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Diversification & The Multiplier Effect",
+            "topics_covered": [
+                "Non-farm activities: Dairy, Transport, and IT as growth engines",
+                "The 'Multiplier Effect' of infrastructure (roads, electricity) on village GDP",
+                "Barriers to entry for small-scale rural manufacturing"
+            ],
+            "teaching_strategy": [
+                "Mind mapping the 'Multiplier Effect' of education (Kareem’s center)",
+                "Summary synthesis of the entire chapter"
+            ],
+            "student_activities": [
+                "Develop a 'Strategic Development Plan' for Palampur's non-farm sector",
+                "Participate in a high-level chapter-end synthesis quiz"
+            ],
+            "assessment": [
+                "Comprehensive essay test (30 marks) on 'The Future of Rural India'",
+                "Doubt clarification and final wrap-up"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT Economics Textbook",
+        "Complex data sets on Indian agriculture and land distribution",
+        "Financial interest rate comparison sheets",
+        "Case study handouts on Savita and Tejpal Singh",
+        "Pie charts representing inequality"
+    ],
+    "evaluation_methods": [
+        "Advanced Data Interpretation",
+        "Mathematical Interest and Yield Calculations",
+        "Strategic Policy Drafting",
+        "Socratic Seminar and Debate",
+        "Comprehensive High-Level Essay Test"
+    ],
+    "teacher_tip": "Challenge students to find the link between 'Marketable Surplus' and the ability to innovate; focus on why capital concentration in few hands limits the growth of the overall village economy."
+}

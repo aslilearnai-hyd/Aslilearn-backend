@@ -1,0 +1,110 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Life Processes in Plants (Nutrition in Plants)",
+    "generated_at": "2026-03-07T01:24:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What are the essential raw materials required for photosynthesis?",
+                "difficulty": "Easy",
+                "correct_answer": "Water, Carbon dioxide, Chlorophyll, and Sunlight",
+                "explanation": "Plants use these four components to synthesize food in the form of carbohydrates.",
+                "source_section": "Photosynthesis — Food Making Process in Plants"
+            },
+            {
+                "question": "How do 'Stomata' contribute to the process of photosynthesis?",
+                "difficulty": "Medium",
+                "correct_answer": "They allow Carbon dioxide to enter the leaf from the atmosphere",
+                "explanation": "These tiny pores, guarded by guard cells, facilitate the gas exchange necessary for food production.",
+                "source_section": "Photosynthesis — Food Making Process in Plants"
+            },
+            {
+                "question": "Explain the symbiotic relationship found in Lichens.",
+                "difficulty": "Hard",
+                "correct_answer": "An Alga (provides food) and a Fungus (provides shelter, water, and minerals) live together",
+                "explanation": "The alga contains chlorophyll and makes food, while the fungus protects the alga and provides raw materials.",
+                "source_section": "Symbiosis"
+            },
+            {
+                "question": "Why is 'Cuscuta' (Amarbel) classified as a parasite?",
+                "difficulty": "Easy",
+                "correct_answer": "It lacks chlorophyll and takes ready-made food from a host plant",
+                "explanation": "It climbs on other trees and deprives the host of valuable nutrients for its own growth.",
+                "source_section": "Other Modes of Nutrition in Plants"
+            },
+            {
+                "question": "How do Saprotrophs like fungi digest their food?",
+                "difficulty": "Medium",
+                "correct_answer": "They secrete digestive juices onto dead matter and absorb the resulting solution",
+                "explanation": "This is a mode of nutrition where organisms take in nutrients from dead and decaying matter.",
+                "source_section": "Saprotrophs"
+            },
+            {
+                "question": "What is the primary function of 'Rhizobium' bacteria in the soil?",
+                "difficulty": "Medium",
+                "correct_answer": "To convert atmospheric nitrogen into a soluble form for plants",
+                "explanation": "Rhizobium lives in the root nodules of leguminous plants like peas and grams, helping replenish soil nitrogen.",
+                "source_section": "How Nutrients are Replenished in Soil"
+            },
+            {
+                "question": "Describe the 'Insectivorous' mode of nutrition using the Pitcher plant as an example.",
+                "difficulty": "Hard",
+                "correct_answer": "The plant traps and digests insects to fulfill its nitrogen requirements",
+                "explanation": "Even though they are green and perform photosynthesis, they eat insects because the soil they grow in lacks nitrogen.",
+                "source_section": "Other Modes of Nutrition in Plants"
+            },
+            {
+                "question": "Which chemical is used to test for the presence of starch in a leaf?",
+                "difficulty": "Easy",
+                "correct_answer": "Iodine solution",
+                "explanation": "A blue-black color change indicates that photosynthesis has occurred and starch is present.",
+                "source_section": "Photosynthesis — Food Making Process in Plants"
+            },
+            {
+                "question": "What happens to the oxygen produced during photosynthesis?",
+                "difficulty": "Medium",
+                "correct_answer": "It is released into the atmosphere through the stomata",
+                "explanation": "Oxygen is a byproduct of the reaction and is vital for the survival of all aerobic organisms.",
+                "source_section": "Photosynthesis — Food Making Process in Plants"
+            },
+            {
+                "question": "How do non-green leaves (like those that are red or brown) perform photosynthesis?",
+                "difficulty": "Hard",
+                "correct_answer": "They contain chlorophyll that is masked by large amounts of other pigments",
+                "explanation": "The presence of red or brown pigments doesn't mean chlorophyll is absent; it is simply hidden from view.",
+                "source_section": "Photosynthesis — Food Making Process in Plants"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Autotrophs vs Heterotrophs",
+                "content": "Autotrophs make food (plants), while heterotrophs depend on others for food (animals and parasitic plants).",
+                "source_section": "Mode of Nutrition"
+            },
+            {
+                "title": "Solar Energy Storage",
+                "content": "Solar energy is captured by the leaves and stored in the plant in the form of chemical energy (food).",
+                "source_section": "Photosynthesis"
+            },
+            {
+                "title": "Vessels",
+                "content": "Water and minerals are transported to the leaves by pipe-like vessels called xylem.",
+                "source_section": "Photosynthesis"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Starch is a complex carbohydrate and is the stored form of glucose in plants.",
+                "source_section": "Photosynthesis"
+            },
+            {
+                "fact": "Fungal spores are generally present in the air and grow on warm, humid surfaces.",
+                "source_section": "Saprotrophs"
+            },
+            {
+                "fact": "Forests are often called the 'green lungs' of the earth because they produce oxygen through photosynthesis.",
+                "source_section": "Photosynthesis"
+            }
+        ]
+    }
+}

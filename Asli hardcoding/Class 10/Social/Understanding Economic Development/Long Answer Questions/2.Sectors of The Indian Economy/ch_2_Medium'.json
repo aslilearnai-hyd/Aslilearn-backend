@@ -1,0 +1,257 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Class 10 Economics - Chapter 2: Sectors of the Indian Economy",
+  "difficulty": "Medium to Hard",
+  "generated_at": "2026-02-28T05:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the classification of economic activities into primary, secondary and tertiary sectors with examples.",
+      "answer": "Economic activities are classified based on the nature of work. The primary sector involves extraction of natural resources such as agriculture, fishing and mining. The secondary sector involves manufacturing and converting raw materials into finished goods like textiles and automobiles. The tertiary sector provides services such as banking, transport, education and healthcare.",
+      "answer_outline": [
+        "Basis of classification",
+        "Primary sector with examples",
+        "Secondary sector with examples",
+        "Tertiary sector with examples"
+      ],
+      "key_concepts": ["primary sector", "secondary sector", "tertiary sector"],
+      "marks": 8
+    },
+    {
+      "question_number": 2,
+      "question": "Why is the tertiary sector growing rapidly in India?",
+      "answer": "The tertiary sector is growing due to increasing demand for services such as education, healthcare, banking and communication. Economic development and urbanisation have also increased service requirements.",
+      "answer_outline": [
+        "Increased demand for services",
+        "Urbanisation",
+        "Contribution to GDP"
+      ],
+      "key_concepts": ["service sector growth", "urbanisation"],
+      "marks": 8
+    },
+    {
+      "question_number": 3,
+      "question": "What is GDP? How is it calculated?",
+      "answer": "GDP (Gross Domestic Product) is the total value of final goods and services produced within a country in a year. It is calculated by adding the value added by all sectors of the economy.",
+      "answer_outline": [
+        "Definition of GDP",
+        "Final goods and services",
+        "Value addition"
+      ],
+      "key_concepts": ["GDP", "value addition"],
+      "marks": 8
+    },
+    {
+      "question_number": 4,
+      "question": "Explain disguised unemployment with a suitable example.",
+      "answer": "Disguised unemployment occurs when more workers are employed than required. For example, in a farm, if five workers are working but only three are required, the extra two workers are disguisedly unemployed.",
+      "answer_outline": [
+        "Definition",
+        "Example from agriculture",
+        "No change in output"
+      ],
+      "key_concepts": ["disguised unemployment", "agriculture"],
+      "marks": 8
+    },
+    {
+      "question_number": 5,
+      "question": "Differentiate between organised and unorganised sectors.",
+      "answer": "The organised sector consists of registered companies that follow government rules and provide job security and benefits. The unorganised sector consists of small units that are not registered and do not provide job security.",
+      "answer_outline": [
+        "Definition of organised sector",
+        "Definition of unorganised sector",
+        "Differences in job security and rules"
+      ],
+      "key_concepts": ["organised sector", "unorganised sector"],
+      "marks": 8
+    },
+    {
+      "question_number": 6,
+      "question": "Why do workers in the unorganised sector need protection?",
+      "answer": "Workers in the unorganised sector face low wages, job insecurity and lack of social security benefits. Government protection ensures fair wages and safe working conditions.",
+      "answer_outline": ["Problems faced", "Need for government intervention"],
+      "key_concepts": ["worker protection", "labour rights"],
+      "marks": 8
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the interdependence of different sectors of the economy.",
+      "answer": "The primary sector supplies raw materials, the secondary sector manufactures goods and the tertiary sector provides services. Each sector depends on the others for smooth functioning.",
+      "answer_outline": ["Role of each sector", "Examples of interdependence"],
+      "key_concepts": ["interdependence", "production chain"],
+      "marks": 8
+    },
+    {
+      "question_number": 8,
+      "question": "Discuss the importance of the agricultural sector in India.",
+      "answer": "Agriculture provides employment to a large population and supplies raw materials to industries. It is crucial for food security and rural development.",
+      "answer_outline": [
+        "Employment generation",
+        "Raw material supply",
+        "Food security"
+      ],
+      "key_concepts": ["agriculture", "rural economy"],
+      "marks": 8
+    },
+    {
+      "question_number": 9,
+      "question": "What is underemployment? How is it different from unemployment?",
+      "answer": "Underemployment occurs when people work below their skill level or for fewer hours. Unemployment refers to complete lack of work.",
+      "answer_outline": [
+        "Definition of underemployment",
+        "Definition of unemployment",
+        "Difference"
+      ],
+      "key_concepts": ["underemployment", "unemployment"],
+      "marks": 8
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the role of public sector in economic development.",
+      "answer": "The public sector provides essential services, infrastructure and promotes welfare rather than profit. It ensures equitable development.",
+      "answer_outline": [
+        "Government ownership",
+        "Public welfare",
+        "Infrastructure development"
+      ],
+      "key_concepts": ["public sector", "welfare"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 11,
+      "question": "What is the role of private sector in the economy?",
+      "answer": "The private sector aims at profit maximisation, increases production and generates employment.",
+      "answer_outline": ["Profit motive", "Employment generation"],
+      "key_concepts": ["private sector", "profit motive"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 12,
+      "question": "How can more employment be generated in rural areas?",
+      "answer": "By promoting irrigation projects, small-scale industries and government schemes like MGNREGA.",
+      "answer_outline": ["Government schemes", "Rural industries"],
+      "key_concepts": ["rural employment", "MGNREGA"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 13,
+      "question": "Explain the concept of value addition with example.",
+      "answer": "Value addition means increasing the value of raw materials by converting them into finished goods, e.g., cotton into cloth.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["value addition", "manufacturing"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 14,
+      "question": "Why is GDP an important indicator of economic performance?",
+      "answer": "GDP measures the total production in a country and reflects economic growth.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["GDP", "economic growth"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 15,
+      "question": "Discuss the contribution of service sector to Indian economy.",
+      "answer": "The service sector contributes the largest share to GDP and provides employment in areas like IT, banking and transport.",
+      "answer_outline": ["GDP contribution", "Employment"],
+      "key_concepts": ["service sector", "IT industry"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 16,
+      "question": "Why is unemployment a serious issue in India?",
+      "answer": "Unemployment leads to poverty, low living standards and economic inequality.",
+      "answer_outline": ["Impact on income", "Social consequences"],
+      "key_concepts": ["unemployment", "poverty"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 17,
+      "question": "How does government regulate organised sector?",
+      "answer": "Through labour laws, minimum wages and working condition regulations.",
+      "answer_outline": ["Labour laws", "Regulation"],
+      "key_concepts": ["regulation", "labour laws"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 18,
+      "question": "Explain the importance of small-scale industries.",
+      "answer": "Small-scale industries generate employment and promote regional development.",
+      "answer_outline": ["Employment", "Local development"],
+      "key_concepts": ["small industries", "regional growth"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 19,
+      "question": "How does sectoral composition change with development?",
+      "answer": "As development increases, contribution of primary sector declines while secondary and tertiary sectors grow.",
+      "answer_outline": ["Shift in sectors", "Economic growth pattern"],
+      "key_concepts": ["sectoral shift", "economic transition"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 20,
+      "question": "What are the problems faced by unorganised sector workers?",
+      "answer": "They face low wages, job insecurity and lack of benefits.",
+      "answer_outline": ["Low wages", "No security"],
+      "key_concepts": ["unorganised labour", "job insecurity"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain how tertiary sector supports primary and secondary sectors.",
+      "answer": "It provides transport, banking, communication and marketing services.",
+      "answer_outline": ["Support services", "Examples"],
+      "key_concepts": ["interdependence", "service support"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 22,
+      "question": "Why is employment generation more important than GDP growth alone?",
+      "answer": "GDP growth without employment does not improve living standards of people.",
+      "answer_outline": ["Income distribution", "Job creation"],
+      "key_concepts": ["inclusive growth", "employment"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 23,
+      "question": "Explain the significance of MGNREGA.",
+      "answer": "MGNREGA guarantees 100 days of employment to rural households, reducing unemployment.",
+      "answer_outline": ["Employment guarantee", "Rural support"],
+      "key_concepts": ["MGNREGA", "rural employment"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 24,
+      "question": "How can industrial development reduce unemployment?",
+      "answer": "Industries create job opportunities and increase production capacity.",
+      "answer_outline": ["Job creation", "Economic growth"],
+      "key_concepts": ["industrialisation", "employment"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 25,
+      "question": "Discuss the importance of balanced sectoral growth.",
+      "answer": "Balanced growth ensures development of all sectors, reducing inequality and promoting stable economic growth.",
+      "answer_outline": ["All sector development", "Stable economy"],
+      "key_concepts": ["balanced growth", "economic stability"],
+      "marks": 8
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Life Processes in Plants",
+    "difficulty": "Easy",
+    "source_pdf": "jesc106.pdf",
+    "short_notes": {
+        "key_points": [
+            "Plants are autotrophs, meaning they make their own food through the process of photosynthesis.",
+            "Photosynthesis occurs mainly in the leaves, which are the food factories of the plant.",
+            "Chlorophyll is the green pigment in leaves that captures energy from sunlight.",
+            "Stomata are tiny pores on the leaf surface used for gas exchange (taking in $CO_2$ and releasing $O_2$).",
+            "Plants also respire, taking in oxygen and releasing carbon dioxide, especially at night."
+        ],
+        "examples": [
+            "Raw Materials: Water (from soil), Carbon Dioxide (from air), and Sunlight.",
+            "Storage: Extra food made by plants is stored as starch in leaves, roots, or fruits.",
+            "Insectivorous Plants: Pitcher plant and Venus flytrap, which eat insects to get nitrogen.",
+            "Saprophytes: Fungi like mushrooms that grow on dead and decaying matter."
+        ],
+        "formulas": [
+            "Photosynthesis: Carbon Dioxide + Water + Sunlight + Chlorophyll → Glucose + Oxygen",
+            "Test for Starch: Iodine solution turns Blue-Black in the presence of starch."
+        ],
+        "exam_tips": [
+            "Remember that sunlight is the ultimate source of energy for all living organisms.",
+            "Note that plants with red or brown leaves also have chlorophyll, but it is masked by other colors.",
+            "Identify 'Guard cells' as the cells that control the opening and closing of stomata.",
+            "Understand that algae are also autotrophs and can perform photosynthesis."
+        ]
+    }
+}

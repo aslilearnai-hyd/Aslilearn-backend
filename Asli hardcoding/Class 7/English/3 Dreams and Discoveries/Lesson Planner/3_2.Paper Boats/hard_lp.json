@@ -1,0 +1,109 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Paper Boats (Rabindranath Tagore)",
+  "lesson_level": "Hard",
+  "total_periods": 4,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically analyze the poem through the lens of 'Transcendentalism' and Tagore’s philosophy of the child-soul",
+    "Deconstruct the juxtaposition between the 'Finite' (the physical boat/village) and the 'Infinite' (the unknown/the sky)",
+    "Evaluate the structural role of personification and celestial imagery in establishing a 'Micro-Macro' connection",
+    "Analyze the poem's rhythmic fluidity and its rejection of rigid Victorian rhyme in favor of emotional cadence",
+    "Synthesize the symbolic significance of the 'Shiuli' flower as a representation of ephemeral beauty and mortality",
+    "Explore the psychological concept of 'Projection' in the child’s vision of the clouds as playmates"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Existentialism and the Search for Identity",
+      "topics_covered": [
+        "The boat as a vessel for the 'Self' in the stream of time",
+        "The act of naming as a quest for immortality and recognition",
+        "Vocabulary: 'Ephemeral', 'Anonymity', 'Vanguard', 'Transcendental'"
+      ],
+      "teaching_strategy": [
+        "Seminar-style discussion: 'Is the child's act one of play or a profound attempt to bridge the gap between self and the world?'",
+        "Analysis of 'Big black letters'—the weight of identity against the fluid nature of the stream",
+        "Contextualizing Tagore’s portrayal of childhood as a state of higher spiritual awareness"
+      ],
+      "student_activities": [
+        "Write a 150-word analytical paragraph on how the 'running stream' serves as a metaphor for the passage of time",
+        "Identify the 'Paradox of the Unknown'—why the child seeks an unknown playmate"
+      ],
+      "assessment": ["Critical paragraph writing", "Participation in philosophical discourse"]
+    },
+    {
+      "period": 2,
+      "title": "Aesthetics of the Ephemeral: Shiuli and Dawn",
+      "topics_covered": [
+        "Shiuli flowers (Nyctanthes arbor-tristis) as a motif of transience",
+        "The symbolism of 'Laden'—the weight of hopes vs. the fragility of paper",
+        "Contrast analysis: 'Land in the night' vs. 'Blooms of the dawn'"
+      ],
+      "teaching_strategy": [
+        "Close reading of the second stanza: Why choose a flower that falls at dawn?",
+        "Lecture on the 'Aesthetic of the Fragile' in Tagore’s poetry",
+        "Connecting the cargo of flowers to the concept of 'offering' (Puja)"
+      ],
+      "student_activities": [
+        "Deconstruct the phrase 'blooms of the dawn'—how does it function as a temporal metaphor?",
+        "Annotate the text for sensory transitions from light (dawn) to dark (night)"
+      ],
+      "assessment": ["Metaphorical deconstruction task", "Annotation check"]
+    },
+    {
+      "period": 3,
+      "title": "The Celestial Parallel: Micro-Macrocosm",
+      "topics_covered": [
+        "The 'Sky Stream' vs. the 'Earth Stream'",
+        "Personification of clouds as celestial competitors/playmates",
+        "The 'Fairies of Sleep' and the intersection of Myth and Reality"
+      ],
+      "teaching_strategy": [
+        "Analyzing the 'Mirror Effect': How the child project's earthly actions onto the heavens",
+        "Exploring the 'Sails' metaphor—comparing the visual texture of clouds to paper",
+        "Discussion: 'Does the cloud-playmate represent a god, a double, or nature itself?'"
+      ],
+      "student_activities": [
+        "Create a comparative table between the 'Earthly Boat' and the 'Cloud Sail'",
+        "Draft a short essay on the role of 'Dream-Logic' in the final lines of the poem"
+      ],
+      "assessment": ["Comparative table depth", "Drafted essay outline"]
+    },
+    {
+      "period": 4,
+      "title": "Prosody, Tone, and Rhythmical Cadence",
+      "topics_covered": [
+        "Free Verse and the 'Musicality of Thought'",
+        "Analysis of the 'Naive Tone' as a deliberate poetic mask",
+        "Synthesizing the theme of Universal Connection"
+      ],
+      "teaching_strategy": [
+        "Comparing the original Bengali rhythm (if possible) to the English translation's flow",
+        "Workshop on 'Elocution of the Soul'—reciting with an emphasis on internal rhythm rather than end-rhymes",
+        "Final review: The poem as a 'Prayer for Connection'"
+      ],
+      "student_activities": [
+        "Identify 3 instances where the lack of rhyme creates a sense of 'natural' or 'childlike' speech",
+        "Final Unit Exam: Focus on high-level inference and symbolic interpretation"
+      ],
+      "assessment": ["Final Unit Exam", "Recitation with tonal complexity"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Excerpts from Tagore’s 'Gitanjali' for thematic comparison",
+    "Visual aids showing the life cycle of the Shiuli flower",
+    "Rubric for analytical essay writing",
+    "Recordings of Tagore songs (Rabindra Sangeet) for atmosphere"
+  ],
+  "evaluation_methods": [
+    "Analytical Essay on 'The Finite and the Infinite'",
+    "Thematic Synthesis Quiz",
+    "Symbolic interpretation test",
+    "Socratic Seminar contribution",
+    "Final recitation focusing on cadence"
+  ],
+  "teacher_tip": "At this level, avoid the word 'cute.' Challenge the students to see the child as a philosopher. Ask them: 'If the boats sink, is the child's effort wasted?' Connect this to the idea that in Tagore’s world, the *effort* to connect is the most sacred part of being human."
+}

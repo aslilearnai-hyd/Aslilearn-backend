@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-05T10:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a right-angled triangle?",
+            "answer": "A right-angled triangle is a triangle in which one angle is exactly 90°.",
+            "key_concepts": ["right triangle"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the hypotenuse of a right triangle?",
+            "answer": "The hypotenuse is the side opposite the right angle in a right triangle and it is the longest side.",
+            "key_concepts": ["hypotenuse"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "State the Baudhāyana-Pythagoras theorem.",
+            "answer": "In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.",
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the mathematical form of the Pythagoras theorem.",
+            "answer": "The mathematical form is a² + b² = c².",
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a Pythagorean triple?",
+            "answer": "A Pythagorean triple is a set of three integers that satisfy the relation a² + b² = c².",
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 2,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Give one example of a Pythagorean triple.",
+            "answer": "One example is (3, 4, 5).",
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "What is meant by a primitive Pythagorean triple?",
+            "answer": "A primitive Pythagorean triple is a set of three numbers that satisfy a² + b² = c² and have no common factor other than 1.",
+            "key_concepts": ["primitive triples"],
+            "marks": 2,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the diagonal of a square of side 1 unit?",
+            "answer": "The diagonal of a square of side 1 unit is √2 units.",
+            "key_concepts": ["square diagonal"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What type of number is √2?",
+            "answer": "√2 is an irrational number.",
+            "key_concepts": ["irrational numbers"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What does the square of a number represent?",
+            "answer": "The square of a number represents the product of the number multiplied by itself.",
+            "key_concepts": ["square numbers"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which side is always the longest in a right triangle?",
+            "answer": "The hypotenuse is always the longest side.",
+            "key_concepts": ["hypotenuse"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the square of 5?",
+            "answer": "The square of 5 is 25.",
+            "key_concepts": ["square numbers"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Name two mathematicians associated with the Pythagoras theorem.",
+            "answer": "Baudhāyana and Pythagoras.",
+            "key_concepts": ["history of mathematics"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the hypotenuse when the other two sides are 3 and 4?",
+            "answer": "The hypotenuse is 5.",
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the diagonal of a square with side a?",
+            "answer": "The diagonal of a square with side a is a√2.",
+            "key_concepts": ["square diagonal"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which triple represents a right triangle?",
+            "answer": "(5, 12, 13) represents a right triangle.",
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 2,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the square of 12?",
+            "answer": "The square of 12 is 144.",
+            "key_concepts": ["square numbers"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which triangle satisfies the Pythagoras theorem?",
+            "answer": "A right-angled triangle satisfies the Pythagoras theorem.",
+            "key_concepts": ["right triangle"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the diagonal of a rectangle with sides 6 and 8?",
+            "answer": "The diagonal is 10 units.",
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 2,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the approximate value of √2?",
+            "answer": "The approximate value of √2 is 1.414.",
+            "key_concepts": ["irrational numbers"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the square of the hypotenuse equal to?",
+            "answer": "The square of the hypotenuse is equal to the sum of the squares of the other two sides.",
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which number completes the triple (8, 15, ?)?",
+            "answer": "17 completes the triple.",
+            "key_concepts": ["Pythagorean triples"],
+            "marks": 2,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is Fermat’s Last Theorem in simple terms?",
+            "answer": "It states that there are no positive integers satisfying aⁿ + bⁿ = cⁿ for n greater than 2.",
+            "key_concepts": ["Fermat theorem"],
+            "marks": 2,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the diagonal of a square with side 5 units?",
+            "answer": "The diagonal is 5√2 units.",
+            "key_concepts": ["square diagonal"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Where is the Pythagoras theorem commonly used?",
+            "answer": "It is commonly used to calculate distances, diagonals and unknown sides in right triangles.",
+            "key_concepts": ["applications"],
+            "marks": 2,
+            "source_section": "Section 2.7"
+        }
+    ]
+}

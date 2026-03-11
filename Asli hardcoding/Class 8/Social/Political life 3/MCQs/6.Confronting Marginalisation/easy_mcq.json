@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Confronting Marginalisation",
+  "generated_at": "2026-03-07T13:35:00",
+  "difficulty": "easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What does the term 'marginalisation' mean?",
+      "options": {
+        "A": "Giving equal opportunities",
+        "B": "Being pushed to the edge of society",
+        "C": "Having more power",
+        "D": "Becoming wealthy"
+      },
+      "correct_answer": "B",
+      "explanation": "Marginalisation refers to groups being pushed to the edge of society and denied opportunities.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which group in India has historically faced marginalisation?",
+      "options": {
+        "A": "Adivasis",
+        "B": "Scientists",
+        "C": "Teachers",
+        "D": "Doctors"
+      },
+      "correct_answer": "A",
+      "explanation": "Adivasis are among the groups that have faced marginalisation in India.",
+      "difficulty": "easy",
+      "source_section": "Adivasis"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the meaning of 'Adivasi'?",
+      "options": {
+        "A": "Modern citizens",
+        "B": "Original inhabitants of a region",
+        "C": "Urban workers",
+        "D": "Government officials"
+      },
+      "correct_answer": "B",
+      "explanation": "Adivasis are the original inhabitants or tribal communities of a region.",
+      "difficulty": "easy",
+      "source_section": "Adivasis"
+    },
+    {
+      "question_number": 4,
+      "question": "Which term is commonly used to refer to Scheduled Castes?",
+      "options": {
+        "A": "Dalits",
+        "B": "Farmers",
+        "C": "Workers",
+        "D": "Traders"
+      },
+      "correct_answer": "A",
+      "explanation": "Dalits is a commonly used term for Scheduled Castes.",
+      "difficulty": "easy",
+      "source_section": "Dalits"
+    },
+    {
+      "question_number": 5,
+      "question": "Which document protects the rights of marginalised groups in India?",
+      "options": {
+        "A": "The Constitution",
+        "B": "Newspaper",
+        "C": "School rules",
+        "D": "Market rules"
+      },
+      "correct_answer": "A",
+      "explanation": "The Indian Constitution protects the rights of marginalised communities.",
+      "difficulty": "easy",
+      "source_section": "Indian Constitution"
+    },
+    {
+      "question_number": 6,
+      "question": "What does the Constitution guarantee to all citizens?",
+      "options": {
+        "A": "Equality",
+        "B": "Discrimination",
+        "C": "Conflict",
+        "D": "Division"
+      },
+      "correct_answer": "A",
+      "explanation": "The Constitution guarantees equality to all citizens.",
+      "difficulty": "easy",
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 7,
+      "question": "Which term refers to unfair treatment of certain groups?",
+      "options": {
+        "A": "Equality",
+        "B": "Discrimination",
+        "C": "Justice",
+        "D": "Freedom"
+      },
+      "correct_answer": "B",
+      "explanation": "Discrimination means treating people unfairly because of their identity.",
+      "difficulty": "easy",
+      "source_section": "Discrimination"
+    },
+    {
+      "question_number": 8,
+      "question": "Which community is often linked with tribal culture in India?",
+      "options": {
+        "A": "Adivasis",
+        "B": "Scientists",
+        "C": "Teachers",
+        "D": "Engineers"
+      },
+      "correct_answer": "A",
+      "explanation": "Adivasis are tribal communities with unique cultural traditions.",
+      "difficulty": "easy",
+      "source_section": "Adivasis"
+    },
+    {
+      "question_number": 9,
+      "question": "Which law helps protect Dalits from discrimination?",
+      "options": {
+        "A": "Civil Rights Act",
+        "B": "Forest Act",
+        "C": "Trade Act",
+        "D": "Transport Act"
+      },
+      "correct_answer": "A",
+      "explanation": "The Civil Rights Act protects Dalits from discrimination.",
+      "difficulty": "easy",
+      "source_section": "Civil Rights"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the aim of laws protecting marginalised groups?",
+      "options": {
+        "A": "Promote equality",
+        "B": "Create division",
+        "C": "Increase discrimination",
+        "D": "Ignore problems"
+      },
+      "correct_answer": "A",
+      "explanation": "These laws aim to promote equality and justice.",
+      "difficulty": "easy",
+      "source_section": "Legal Protection"
+    },
+    {
+      "question_number": 11,
+      "question": "What does the term 'social justice' mean?",
+      "options": {
+        "A": "Fair treatment for all",
+        "B": "Power for few",
+        "C": "Ignoring inequality",
+        "D": "Promoting conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice ensures fairness and equality in society.",
+      "difficulty": "easy",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 12,
+      "question": "Which group often faces discrimination due to caste?",
+      "options": {
+        "A": "Dalits",
+        "B": "Scientists",
+        "C": "Doctors",
+        "D": "Farmers"
+      },
+      "correct_answer": "A",
+      "explanation": "Dalits have historically faced discrimination based on caste.",
+      "difficulty": "easy",
+      "source_section": "Dalits"
+    },
+    {
+      "question_number": 13,
+      "question": "Which value helps reduce marginalisation?",
+      "options": {
+        "A": "Equality",
+        "B": "Discrimination",
+        "C": "Bias",
+        "D": "Conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality helps ensure fair opportunities for everyone.",
+      "difficulty": "easy",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 14,
+      "question": "What does the Constitution aim to eliminate?",
+      "options": {
+        "A": "Untouchability",
+        "B": "Education",
+        "C": "Healthcare",
+        "D": "Trade"
+      },
+      "correct_answer": "A",
+      "explanation": "The Constitution abolishes untouchability.",
+      "difficulty": "easy",
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 15,
+      "question": "Which institution helps enforce laws protecting marginalised groups?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Market",
+        "C": "School",
+        "D": "Transport"
+      },
+      "correct_answer": "A",
+      "explanation": "Courts ensure that laws protecting marginalised groups are followed.",
+      "difficulty": "easy",
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 16,
+      "question": "Which concept ensures equal treatment of citizens?",
+      "options": {
+        "A": "Equality before law",
+        "B": "Colonial rule",
+        "C": "Economic power",
+        "D": "Political authority"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality before law ensures fairness in legal treatment.",
+      "difficulty": "easy",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 17,
+      "question": "Which community traditionally lives in forests and hills?",
+      "options": {
+        "A": "Adivasis",
+        "B": "Teachers",
+        "C": "Doctors",
+        "D": "Engineers"
+      },
+      "correct_answer": "A",
+      "explanation": "Adivasis often live in forest and hill regions.",
+      "difficulty": "easy",
+      "source_section": "Adivasis"
+    },
+    {
+      "question_number": 18,
+      "question": "Which law prohibits untouchability in India?",
+      "options": {
+        "A": "Civil Rights Act",
+        "B": "Trade Act",
+        "C": "Transport Act",
+        "D": "Education Act"
+      },
+      "correct_answer": "A",
+      "explanation": "The Civil Rights Act prohibits untouchability.",
+      "difficulty": "easy",
+      "source_section": "Civil Rights"
+    },
+    {
+      "question_number": 19,
+      "question": "Which value promotes fairness and equality?",
+      "options": {
+        "A": "Justice",
+        "B": "Bias",
+        "C": "Discrimination",
+        "D": "Conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Justice ensures fairness in society.",
+      "difficulty": "easy",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 20,
+      "question": "Which concept ensures that everyone gets equal opportunities?",
+      "options": {
+        "A": "Equality",
+        "B": "Colonialism",
+        "C": "Imperialism",
+        "D": "Feudalism"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality ensures equal opportunities for all.",
+      "difficulty": "easy",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 21,
+      "question": "Which institution makes laws to protect marginalised groups?",
+      "options": {
+        "A": "Parliament",
+        "B": "Market",
+        "C": "Hospital",
+        "D": "School"
+      },
+      "correct_answer": "A",
+      "explanation": "Parliament makes laws to protect citizens’ rights.",
+      "difficulty": "easy",
+      "source_section": "Law Making"
+    },
+    {
+      "question_number": 22,
+      "question": "Which idea helps people live together peacefully?",
+      "options": {
+        "A": "Respect for diversity",
+        "B": "Discrimination",
+        "C": "Conflict",
+        "D": "Division"
+      },
+      "correct_answer": "A",
+      "explanation": "Respecting diversity promotes peaceful coexistence.",
+      "difficulty": "easy",
+      "source_section": "Diversity"
+    },
+    {
+      "question_number": 23,
+      "question": "Which concept protects the rights of weaker sections?",
+      "options": {
+        "A": "Social justice",
+        "B": "Colonial rule",
+        "C": "Political authority",
+        "D": "Economic dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice aims to protect the rights of weaker sections.",
+      "difficulty": "easy",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 24,
+      "question": "Which action helps reduce discrimination?",
+      "options": {
+        "A": "Promoting equality",
+        "B": "Encouraging bias",
+        "C": "Ignoring rights",
+        "D": "Supporting inequality"
+      },
+      "correct_answer": "A",
+      "explanation": "Promoting equality reduces discrimination.",
+      "difficulty": "easy",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 25,
+      "question": "Which principle helps protect marginalised communities in a democracy?",
+      "options": {
+        "A": "Equality and justice",
+        "B": "Colonial rule",
+        "C": "Political control",
+        "D": "Economic dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality and justice protect marginalised communities.",
+      "difficulty": "easy",
+      "source_section": "Conclusion"
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: Tracing Changes Through a Thousand Years",
+    "generated_at": "2026-03-08T21:51:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who was Al-Idrisi?",
+            "answer": "Al-Idrisi was an Arab geographer who made a famous map of the world in 1154 CE.",
+            "answer_outline": [
+                "Arab geographer",
+                "World map",
+                "1154 CE"
+            ],
+            "key_concepts": [
+                "Al-Idrisi",
+                "cartography"
+            ],
+            "marks": 1,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a 'Cartographer'?",
+            "answer": "A cartographer is a person who makes maps.",
+            "answer_outline": [
+                "Person",
+                "Map making"
+            ],
+            "key_concepts": [
+                "cartographer",
+                "maps"
+            ],
+            "marks": 1,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 3,
+            "question": "What difference do we see between Al-Idrisi's map and the French cartographer's map?",
+            "answer": "Al-Idrisi's map showed South India at the top where North India should be, whereas the French map (made 600 years later) was much more familiar to us today.",
+            "answer_outline": [
+                "Al-Idrisi: South India at top",
+                "French map: More familiar/accurate",
+                "Time gap of 600 years"
+            ],
+            "key_concepts": [
+                "map differences",
+                "historical perspective"
+            ],
+            "marks": 3,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 4,
+            "question": "What does the term 'Archives' mean?",
+            "answer": "An archive is a place where documents and manuscripts are stored.",
+            "answer_outline": [
+                "Storage place",
+                "Documents and manuscripts"
+            ],
+            "key_concepts": [
+                "archives",
+                "storage"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Why did historians use manuscripts in the past?",
+            "answer": "Historians used manuscripts because there were no printing presses in those days, so scribes copied documents by hand.",
+            "answer_outline": [
+                "No printing press",
+                "Handwritten copies",
+                "Scribes"
+            ],
+            "key_concepts": [
+                "manuscripts",
+                "scribes"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Who were 'Scribes'?",
+            "answer": "Scribes were professionals who copied manuscripts by hand in the days before printing.",
+            "answer_outline": [
+                "Professional copyists",
+                "Handwritten work"
+            ],
+            "key_concepts": [
+                "scribes",
+                "copying"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What problem did scribes face while copying manuscripts?",
+            "answer": "Scribes sometimes found it difficult to read the original handwriting, so they introduced small changes or guesses, which grew over time.",
+            "answer_outline": [
+                "Difficult handwriting",
+                "Small changes",
+                "Errors over time"
+            ],
+            "key_concepts": [
+                "manuscript errors",
+                "copying problems"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What did the term 'Hindustan' mean in the 13th century?",
+            "answer": "In the 13th century, Minhaj-i-Siraj used 'Hindustan' to mean the areas of Punjab, Haryana, and the lands between the Ganga and Yamuna.",
+            "answer_outline": [
+                "Minhaj-i-Siraj",
+                "13th century",
+                "Punjab, Haryana, Ganga-Yamuna"
+            ],
+            "key_concepts": [
+                "Hindustan",
+                "geographical term"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 9,
+            "question": "How did Babur define 'Hindustan' in the 16th century?",
+            "answer": "Babur used 'Hindustan' to describe the geography, the fauna (animals), and the culture of the inhabitants of the subcontinent.",
+            "answer_outline": [
+                "Geography",
+                "Fauna",
+                "Culture"
+            ],
+            "key_concepts": [
+                "Babur",
+                "Hindustan definition"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What did the word 'Foreigner' mean in the past?",
+            "answer": "In the past, a 'foreigner' was any stranger who was not a part of a particular society or culture, even if they were from a nearby village.",
+            "answer_outline": [
+                "Stranger",
+                "Different society/culture",
+                "Pardesi/Ajnabi"
+            ],
+            "key_concepts": [
+                "foreigner",
+                "historical meaning"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What are the main sources of information for historians?",
+            "answer": "Historians use coins, inscriptions, architecture, and textual records (manuscripts) as sources of information.",
+            "answer_outline": [
+                "Coins",
+                "Inscriptions",
+                "Architecture",
+                "Textual records"
+            ],
+            "key_concepts": [
+                "historical sources",
+                "evidence"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why did the number of textual records increase during this period?",
+            "answer": "Textual records increased because paper became cheaper and more widely available for people to write on.",
+            "answer_outline": [
+                "Cheap paper",
+                "Wide availability",
+                "Increased writing"
+            ],
+            "key_concepts": [
+                "paper",
+                "textual records"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What were some of the new technologies introduced between 700 and 1750?",
+            "answer": "New technologies included the Persian wheel for irrigation, the spinning wheel for weaving, and firearms for combat.",
+            "answer_outline": [
+                "Persian wheel",
+                "Spinning wheel",
+                "Firearms"
+            ],
+            "key_concepts": [
+                "technology",
+                "innovation"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Mention some new foods and beverages that arrived in the subcontinent during this time.",
+            "answer": "Potatoes, corn, chillies, tea, and coffee were new foods and beverages that arrived.",
+            "answer_outline": [
+                "Potatoes and corn",
+                "Chillies",
+                "Tea and coffee"
+            ],
+            "key_concepts": [
+                "food history",
+                "cultural exchange"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Who were the 'Rajputs'?",
+            "answer": "The Rajputs were a group of warriors who claimed 'Kshatriya' status. The name comes from 'Rajaputra', meaning the son of a ruler.",
+            "answer_outline": [
+                "Warrior group",
+                "Kshatriya status",
+                "Son of a ruler"
+            ],
+            "key_concepts": [
+                "Rajputs",
+                "warriors"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What qualities were attributed to Rajputs by poets?",
+            "answer": "Poets attributed qualities like extreme valour and a great sense of loyalty to the Rajputs.",
+            "answer_outline": [
+                "Valour (bravery)",
+                "Loyalty"
+            ],
+            "key_concepts": [
+                "Rajput qualities",
+                "chivalry"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a 'Jati'?",
+            "answer": "As society became more complex, people were grouped into 'jatis' or sub-castes based on their backgrounds and occupations.",
+            "answer_outline": [
+                "Sub-castes",
+                "Occupations",
+                "Rankings"
+            ],
+            "key_concepts": [
+                "jati",
+                "caste system"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "How were Jatis regulated?",
+            "answer": "Jatis had their own rules and regulations managed by an assembly of elders, often called a 'jati panchayat'.",
+            "answer_outline": [
+                "Rules and regulations",
+                "Assembly of elders",
+                "Jati panchayat"
+            ],
+            "key_concepts": [
+                "jati panchayat",
+                "self-regulation"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What does 'Pan-Regional Empire' mean?",
+            "answer": "A pan-regional empire is an empire that spans across diverse and different geographical regions.",
+            "answer_outline": [
+                "Large empire",
+                "Diverse regions"
+            ],
+            "key_concepts": [
+                "pan-regional",
+                "empire"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Who were the 'Ulama'?",
+            "answer": "The Ulama were learned theologians and jurists of Islam.",
+            "answer_outline": [
+                "Islamic scholars",
+                "Theologians",
+                "Jurists"
+            ],
+            "key_concepts": [
+                "Ulama",
+                "Islam"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What are the two main branches of Islam mentioned?",
+            "answer": "The two main branches are Shia (who believe Ali was the leader) and Sunni (who accepted the authority of the Khalifas).",
+            "answer_outline": [
+                "Shia Islam",
+                "Sunni Islam"
+            ],
+            "key_concepts": [
+                "Shia",
+                "Sunni",
+                "branches of Islam"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "How did British historians divide the history of India in the 19th century?",
+            "answer": "British historians divided Indian history into three periods: Hindu, Muslim, and British.",
+            "answer_outline": [
+                "Hindu period",
+                "Muslim period",
+                "British period"
+            ],
+            "key_concepts": [
+                "periodization",
+                "British historians"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is the 7th to 18th century period difficult to study as one unit?",
+            "answer": "It is difficult because the period saw massive changes in society, economy, and religion, making the 8th century very different from the 11th or 18th.",
+            "answer_outline": [
+                "Huge time span",
+                "Constant change",
+                "Different centuries"
+            ],
+            "key_concepts": [
+                "historical continuity",
+                "change"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 24,
+            "question": "What was the 'Persian Wheel' used for?",
+            "answer": "The Persian Wheel was a new technology used for irrigation to draw water for crops.",
+            "answer_outline": [
+                "Technology",
+                "Irrigation",
+                "Drawing water"
+            ],
+            "key_concepts": [
+                "Persian wheel",
+                "agriculture"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Who was Ziyauddin Barani?",
+            "answer": "Ziyauddin Barani was a 14th-century chronicler who wrote his chronicle in two versions, which were quite different from each other.",
+            "answer_outline": [
+                "14th-century chronicler",
+                "Wrote two versions",
+                "Difference in texts"
+            ],
+            "key_concepts": [
+                "Barani",
+                "chronicle"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A House Is Not a Home",
+    "title": "Lesson Planner – A House Is Not a Home",
+    "author": "Zan Gaudioso",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify the main characters and events",
+        "Understand the emotional struggles of the author",
+        "Recognise the importance of kindness and friendship",
+        "Develop reading and comprehension skills",
+        "Relate the theme of the lesson to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Story",
+            "topics_covered": [
+                "Introduction to Zan Gaudioso",
+                "Background of the story",
+                "Overview of the lesson"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Story narration",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share experiences about changing schools"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Beginning of the Story and Characters",
+            "topics_covered": [
+                "Author’s new school experience",
+                "Feeling of loneliness and insecurity",
+                "Introduction to family and the cat"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Discussion on characters"
+            ],
+            "student_activities": [
+                "List main characters",
+                "Write a few sentences about the author’s feelings"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Fire Incident",
+            "topics_covered": [
+                "How the fire started",
+                "Mother saving important documents",
+                "Firefighters helping the family"
+            ],
+            "teaching_strategy": [
+                "Sequential storytelling",
+                "Cause–effect explanation"
+            ],
+            "student_activities": [
+                "Write the sequence of events during the fire",
+                "Discuss the mother’s bravery"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "After the Fire",
+            "topics_covered": [
+                "Loss of the house and belongings",
+                "Author’s sadness about the missing cat",
+                "Embarrassment at school"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Explain the author’s emotions",
+                "Discuss how disasters affect people"
+            ],
+            "assessment": [
+                "Written responses",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Kindness and Support",
+            "topics_covered": [
+                "Help from schoolmates",
+                "Importance of kindness",
+                "Author making new friends"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "List ways classmates helped the author",
+                "Discuss the importance of helping others"
+            ],
+            "assessment": [
+                "Short paragraph writing",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Conclusion, Theme, and Revision",
+            "topics_covered": [
+                "Return of the cat",
+                "Meaning of the title",
+                "Summary and revision of the lesson"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Theme explanation"
+            ],
+            "student_activities": [
+                "Write the theme of the story",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Pictures or flashcards related to the story"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to discuss how kindness and support from others can help people overcome difficult situations."
+}

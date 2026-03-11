@@ -1,0 +1,358 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-03-02T13:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Justify that a quadratic equation cannot have more than two real roots.",
+            "answer": "The graph of a quadratic equation is a parabola, which can intersect the x-axis at most at two points, so it cannot have more than two real roots.",
+            "answer_outline": [
+                "Graphical reasoning",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "roots"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why the discriminant fully determines the nature of roots.",
+            "answer": "Because it directly indicates whether the square root term in the quadratic formula is real, zero or imaginary.",
+            "answer_outline": [
+                "Discriminant",
+                "Reason"
+            ],
+            "key_concepts": [
+                "discriminant"
+            ],
+            "marks": 5,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why completing the square is fundamental to the quadratic formula.",
+            "answer": "The quadratic formula is derived by completing the square on the general quadratic equation.",
+            "answer_outline": [
+                "Derivation",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "quadratic formula"
+            ],
+            "marks": 5,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why parabolas model many real-life situations accurately.",
+            "answer": "Many natural motions follow curved paths that are mathematically parabolic.",
+            "answer_outline": [
+                "Parabola",
+                "Real-life modelling"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why roots of quadratic equations represent points of intersection.",
+            "answer": "Roots represent x-values where the parabola intersects the x-axis.",
+            "answer_outline": [
+                "Roots",
+                "Intersection"
+            ],
+            "key_concepts": [
+                "x-intercepts"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why quadratic equations are central to optimisation problems.",
+            "answer": "Optimisation problems often involve maximum or minimum values obtained from parabolas.",
+            "answer_outline": [
+                "Optimisation",
+                "Parabola"
+            ],
+            "key_concepts": [
+                "maximum and minimum"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why imaginary roots have no graphical x-intercepts.",
+            "answer": "Because the parabola does not intersect the x-axis when roots are imaginary.",
+            "answer_outline": [
+                "Imaginary roots",
+                "Graph"
+            ],
+            "key_concepts": [
+                "imaginary roots"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why quadratic equations are polynomial equations of degree two.",
+            "answer": "They involve the variable raised to the second power and satisfy polynomial conditions.",
+            "answer_outline": [
+                "Degree",
+                "Polynomial"
+            ],
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why graphical solutions are approximate in nature.",
+            "answer": "Because graph drawing and reading depend on scale and accuracy.",
+            "answer_outline": [
+                "Approximation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why quadratic formula is preferred in competitive examinations.",
+            "answer": "Because it provides a direct and reliable method applicable to all quadratic equations.",
+            "answer_outline": [
+                "Preference",
+                "Reason"
+            ],
+            "key_concepts": [
+                "quadratic formula"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why the sign of coefficient a affects the end behaviour of a parabola.",
+            "answer": "The sign of a determines whether the parabola opens upward or downward.",
+            "answer_outline": [
+                "Coefficient a",
+                "End behaviour"
+            ],
+            "key_concepts": [
+                "parabola direction"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why every quadratic equation has exactly two roots (real or complex).",
+            "answer": "A quadratic equation has two roots which may be real and distinct, real and equal, or complex.",
+            "answer_outline": [
+                "Roots",
+                "Cases"
+            ],
+            "key_concepts": [
+                "nature of roots"
+            ],
+            "marks": 5,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the role of symmetry in quadratic graphs.",
+            "answer": "Parabolas are symmetric about their axis of symmetry.",
+            "answer_outline": [
+                "Symmetry",
+                "Axis"
+            ],
+            "key_concepts": [
+                "axis of symmetry"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why quadratic equations are used in structural engineering.",
+            "answer": "They help analyse curves, loads, and stress patterns.",
+            "answer_outline": [
+                "Engineering",
+                "Use"
+            ],
+            "key_concepts": [
+                "engineering applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why discriminant equal to zero represents equal roots.",
+            "answer": "Because the square root term becomes zero, giving identical roots.",
+            "answer_outline": [
+                "Zero discriminant",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "equal roots"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of quadratic equations in calculus.",
+            "answer": "They form the basis for understanding curves, limits, and optimisation.",
+            "answer_outline": [
+                "Calculus",
+                "Importance"
+            ],
+            "key_concepts": [
+                "calculus foundation"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why negative discriminant has no real-life meaning in some problems.",
+            "answer": "Because some real-life problems require real solutions only.",
+            "answer_outline": [
+                "Negative discriminant",
+                "Limitation"
+            ],
+            "key_concepts": [
+                "real solutions"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why quadratic equations are preferred over higher-degree equations in modelling.",
+            "answer": "They balance simplicity and accuracy.",
+            "answer_outline": [
+                "Simplicity",
+                "Accuracy"
+            ],
+            "key_concepts": [
+                "modelling"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the historical importance of quadratic equations.",
+            "answer": "They were among the earliest equations studied in algebra.",
+            "answer_outline": [
+                "History",
+                "Importance"
+            ],
+            "key_concepts": [
+                "history"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why quadratic equations are fundamental in mathematics education.",
+            "answer": "They introduce problem solving, algebraic thinking, and graphical interpretation.",
+            "answer_outline": [
+                "Education",
+                "Foundation"
+            ],
+            "key_concepts": [
+                "education"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how quadratic equations help in understanding parabolic motion.",
+            "answer": "Parabolic motion equations are quadratic in nature.",
+            "answer_outline": [
+                "Motion",
+                "Equation"
+            ],
+            "key_concepts": [
+                "parabolic motion"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why solving quadratic equations builds analytical thinking.",
+            "answer": "It requires method selection, reasoning, and interpretation.",
+            "answer_outline": [
+                "Analytical thinking",
+                "Reason"
+            ],
+            "key_concepts": [
+                "thinking skills"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why quadratic equations are used in business optimisation problems.",
+            "answer": "They help determine maximum profit and minimum cost.",
+            "answer_outline": [
+                "Business",
+                "Optimisation"
+            ],
+            "key_concepts": [
+                "business applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why quadratic equations remain relevant in modern science.",
+            "answer": "They are used in physics, engineering, economics and data modelling.",
+            "answer_outline": [
+                "Modern science",
+                "Relevance"
+            ],
+            "key_concepts": [
+                "relevance"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the overall importance of quadratic equations in mathematics.",
+            "answer": "Quadratic equations are essential for understanding algebra, graphs, optimisation and real-life modelling.",
+            "answer_outline": [
+                "Overall importance",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 5,
+            "source_section": "4.1"
+        }
+    ]
+}

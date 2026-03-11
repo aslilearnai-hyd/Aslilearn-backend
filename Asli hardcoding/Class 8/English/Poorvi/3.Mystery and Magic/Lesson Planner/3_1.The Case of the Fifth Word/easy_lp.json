@@ -1,0 +1,142 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter_name": "The Case of the Fifth Word",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the mystery story involving Encyclopedia Brown",
+    "Identify the main characters and events in the story",
+    "Develop logical thinking and problem-solving skills",
+    "Understand the importance of observation and reasoning",
+    "Learn how coded messages can hide information",
+    "Improve reading comprehension and vocabulary skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Mystery Stories",
+      "topics_covered": [
+        "Meaning of mystery and detective stories",
+        "Role of observation in solving mysteries",
+        "Introduction to Encyclopedia Brown"
+      ],
+      "teaching_strategy": [
+        "Class discussion about mystery stories",
+        "Teacher explanation of detective characters",
+        "Reading the introduction of the chapter"
+      ],
+      "student_activities": [
+        "Share examples of mystery stories they know",
+        "Discuss qualities of a good detective"
+      ],
+      "assessment": ["Oral questioning", "Group discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Characters and Story Background",
+      "topics_covered": [
+        "Encyclopedia Brown",
+        "Chief Brown",
+        "Introduction to Tim Nolan and Daniel Davenport"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the story",
+        "Teacher explanation of the background events"
+      ],
+      "student_activities": [
+        "Identify main characters",
+        "Discuss their roles in the story"
+      ],
+      "assessment": ["Short oral questions", "Character identification"]
+    },
+    {
+      "period": 3,
+      "title": "The Mystery Begins",
+      "topics_covered": [
+        "The jewellery robbery",
+        "Tim Nolan’s death",
+        "The mysterious note found with the will"
+      ],
+      "teaching_strategy": [
+        "Teacher narration of the story events",
+        "Discussion on why the note was suspicious"
+      ],
+      "student_activities": [
+        "Explain why the case puzzled the police",
+        "Discuss what clues detectives should look for"
+      ],
+      "assessment": ["Comprehension questions", "Class discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Understanding the Code",
+      "topics_covered": [
+        "The coded words 'Nom Utes Sweden Hurts'",
+        "Connection between the words and days of the week",
+        "Role of the missing fifth word"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation of the coded message",
+        "Demonstration using days of the week"
+      ],
+      "student_activities": [
+        "Decode the four words",
+        "Guess the missing fifth word"
+      ],
+      "assessment": ["Puzzle solving", "Short written answers"]
+    },
+    {
+      "period": 5,
+      "title": "Solving the Mystery",
+      "topics_covered": [
+        "Encyclopedia Brown’s reasoning",
+        "The clue about the fir tree",
+        "Discovery of the hidden jewellery"
+      ],
+      "teaching_strategy": [
+        "Discussion of the story’s climax",
+        "Teacher explanation of logical reasoning"
+      ],
+      "student_activities": [
+        "Explain how the code helped solve the mystery",
+        "Discuss why logical thinking is important"
+      ],
+      "assessment": ["Short paragraph writing", "Oral explanation"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Revision Activities",
+      "topics_covered": [
+        "Vocabulary from the story",
+        "Phrasal verbs",
+        "Reported speech and grammar exercises"
+      ],
+      "teaching_strategy": [
+        "Grammar exercises from the textbook",
+        "Revision quiz"
+      ],
+      "student_activities": [
+        "Match phrasal verbs with meanings",
+        "Convert direct speech to indirect speech"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Character chart",
+    "Printed puzzle or code activity"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Puzzle-solving activities",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to think like detectives by analysing clues and patterns in the coded message. Let them attempt to decode the message before revealing the answer."
+}

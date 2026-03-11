@@ -1,0 +1,34 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 3: Atoms and Molecules",
+  "difficulty": "Medium",
+  "short_notes": {
+    "key_points": [
+      "Atoms are indivisible in chemical reactions and retain their identity",
+      "Molecules are formed when two or more atoms combine chemically",
+      "Elements consist of only one kind of atom; compounds consist of two or more elements in fixed proportion",
+      "Law of multiple proportions: When two elements form more than one compound, the masses of one element combining with fixed mass of the other are in ratio of small whole numbers",
+      "Chemical formula shows number and type of atoms in a molecule",
+      "Molecular mass and formula mass can be calculated using atomic masses"
+    ],
+    "examples": [
+      "CO and CO₂ are different compounds formed by carbon and oxygen; their mass ratios follow the law of multiple proportions",
+      "Water (H₂O) and hydrogen peroxide (H₂O₂) are compounds of hydrogen and oxygen",
+      "Oxygen molecule O₂ contains two atoms; ozone O₃ contains three atoms",
+      "Ammonia (NH₃) contains 1 nitrogen and 3 hydrogen atoms per molecule"
+    ],
+    "formulas": [
+      "Molecular mass = Sum of atomic masses of all atoms in the molecule",
+      "Percentage of element = (Mass of element in molecule / Molecular mass) × 100",
+      "Mass ratio in compounds can be calculated using atomic masses and chemical formula"
+    ],
+    "exam_tips": [
+      "Apply law of multiple proportions to identify ratios in compounds",
+      "Calculate molecular mass and percentage composition of elements",
+      "Distinguish between atoms and molecules using examples",
+      "Remember chemical formulas of common compounds",
+      "Practice numerical problems involving mass ratios and molecular masses"
+    ]
+  }
+}

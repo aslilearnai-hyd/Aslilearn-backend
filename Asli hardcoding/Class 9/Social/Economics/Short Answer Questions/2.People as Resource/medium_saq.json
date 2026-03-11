@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "2. People as Resource",
+  "generated_at": "2026-03-07T00:39:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How does investment in human capital yield a return similar to physical capital?",
+      "answer": "Investment in human capital (through education and health) increases the productivity and efficiency of an individual. This leads to higher earnings for the individual and contributes more to the National Income, just as a better machine yields more output.",
+      "key_concepts": ["productivity", "return on investment", "national income"],
+      "marks": 3,
+      "source_section": "2.1 Overview"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the role of education in the 'Sakal' case study.",
+      "answer": "Education provided Sakal with new aspirations and developed values of life. It enhanced his total productivity, which in turn added to the growth of the economy and earned him a higher salary and promotion in his firm.",
+      "key_concepts": ["total productivity", "aspirations", "economic growth"],
+      "marks": 3,
+      "source_section": "2.1 Overview"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is Japan considered a developed country despite having no natural resources?",
+      "answer": "Japan invested heavily in human resources, particularly in the fields of education and health. Its people made efficient use of other resources like land and capital through their specialized skills and technology.",
+      "key_concepts": ["human resource investment", "technology", "efficiency"],
+      "marks": 3,
+      "source_section": "2.1 Overview"
+    },
+    {
+      "question_number": 4,
+      "question": "Distinguish between Market Activities and Non-Market Activities.",
+      "answer": "Market activities involve remuneration to the performer and are done for pay or profit (e.g., a teacher in a school). Non-market activities are production for self-consumption (e.g., a mother cooking for her family).",
+      "key_concepts": ["remuneration", "self-consumption", "profit"],
+      "marks": 3,
+      "source_section": "2.2 Economic Activities"
+    },
+    {
+      "question_number": 5,
+      "question": "What are the three main sectors of the economy? Give one example of each.",
+      "answer": "1. Primary Sector: Agriculture. 2. Secondary Sector: Manufacturing. 3. Tertiary Sector: Banking and Transport.",
+      "key_concepts": ["primary", "secondary", "tertiary"],
+      "marks": 3,
+      "source_section": "2.2 Economic Activities"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are women often paid less than men in the unorganized labor market?",
+      "answer": "Earnings depend on education and skill. Historically, women have had less access to education and skill formation compared to men. Additionally, women often work where there is lack of job security and legal protection.",
+      "key_concepts": ["skill gap", "unorganized sector", "gender disparity"],
+      "marks": 3,
+      "source_section": "2.2 Economic Activities"
+    },
+    {
+      "question_number": 7,
+      "question": "How does the 'Quality of Population' affect the growth rate of a country?",
+      "answer": "The quality of population depends on the literacy rate, health status (life expectancy), and skill formation. An illiterate and unhealthy population is a liability, whereas a literate and healthy population is an asset that drives economic growth.",
+      "key_concepts": ["literacy", "life expectancy", "economic asset"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the 'Sarva Shiksha Abhiyan'?",
+      "answer": "It is a time-bound central government initiative in partnership with states to achieve the goal of universal elementary education for children aged 6-14 years.",
+      "key_concepts": ["universal education", "elementary school", "6-14 years"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the significance of the Mid-day Meal scheme.",
+      "answer": "The scheme was implemented to improve the nutritional status of children, increase their enrollment in schools, and encourage their regular attendance and retention.",
+      "key_concepts": ["nutrition", "retention", "enrollment"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 10,
+      "question": "What is 'Gross Enrolment Ratio' (GER) in higher education?",
+      "answer": "GER refers to the total enrollment in higher education as a percentage of the population in the age group of 18-23 years. India aims to increase this through various distance and vocational programs.",
+      "key_concepts": ["higher education", "18-23 age group", "enrollment"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is health indispensable for an individual’s potential?",
+      "answer": "Health allows a person to realize their potential and provides the ability to fight illness. An unhealthy person becomes a liability to an organization and cannot maximize their productivity.",
+      "key_concepts": ["productivity", "liability", "potential"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the difference between Birth Rate and Death Rate?",
+      "answer": "Birth Rate is the number of babies born for every 1000 people during a particular period. Death Rate is the number of people per 1000 who die during a particular period.",
+      "key_concepts": ["birth rate", "death rate", "population dynamics"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 13,
+      "question": "Define Unemployment as per the Indian workforce age group.",
+      "answer": "Unemployment is when people in the age group of 15-59 years are willing to work at prevailing wages but cannot find a job.",
+      "key_concepts": ["15-59 age group", "willingness to work", "prevailing wages"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain Seasonal Unemployment with an example.",
+      "answer": "It occurs when people are jobless during certain months of a year. For example, agricultural laborers may find work during sowing and harvesting but remain idle during the months in between.",
+      "key_concepts": ["agricultural cycles", "off-season", "labor"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 15,
+      "question": "What is Disguised Unemployment in the agricultural sector?",
+      "answer": "It is a situation where more people appear to be employed than needed. For instance, if a farm requires 5 workers but 8 members of a family are working on it, the 3 extra people are disguisedly unemployed.",
+      "key_concepts": ["marginal productivity", "surplus labor", "family farms"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is educated unemployment a 'paradox' in urban areas?",
+      "answer": "It is a paradox because while there is a surplus of manpower in certain categories (like general graduates), there is a simultaneous shortage of manpower with technical and professional skills required for industries.",
+      "key_concepts": ["skill mismatch", "technical manpower", "urban employment"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 17,
+      "question": "How does unemployment lead to 'Economic Overload'?",
+      "answer": "Unemployment increases the number of dependents who rely on the working population. This puts a burden on the working members of society and decreases the overall standard of living.",
+      "key_concepts": ["dependency ratio", "standard of living", "burden"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 18,
+      "question": "What are the social consequences of high unemployment?",
+      "answer": "High unemployment leads to a feeling of hopelessness and despair among the youth. It causes social unrest and can lead to a decline in the health status of the population as families struggle to afford basics.",
+      "key_concepts": ["social unrest", "despair", "health decline"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 19,
+      "question": "Why is the primary sector the most labor-absorbing sector of the economy?",
+      "answer": "Agriculture requires a large amount of manual labor for various activities like sowing, weeding, and harvesting. Due to lack of alternate skills, a large part of the rural population remains in this sector.",
+      "key_concepts": ["labor-intensive", "rural employment", "agriculture"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the significance of the Secondary sector in generating employment?",
+      "answer": "The secondary sector involves manufacturing (small scale or large scale). It absorbs surplus labor from agriculture by providing jobs in factories and processing units.",
+      "key_concepts": ["manufacturing", "labor shift", "industrialization"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 21,
+      "question": "Mention the new services appearing in the Tertiary sector in recent years.",
+      "answer": "New services like Information Technology (IT), Biotechnology, and various data-driven services are emerging as major employment generators in the tertiary sector.",
+      "key_concepts": ["IT", "biotechnology", "service sector"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 22,
+      "question": "How did education change the life of 'Sakal' compared to 'Vilas'?",
+      "answer": "Sakal’s education and computer degree led him to a high-paying job in a private firm. Vilas, lacking education and health support, had to sell fish like his mother for a very low income.",
+      "key_concepts": ["human capital", "income disparity", "opportunity"],
+      "marks": 3,
+      "source_section": "2.1 Overview"
+    },
+    {
+      "question_number": 23,
+      "question": "What is meant by 'Vocationalization' of education?",
+      "answer": "It refers to introducing skill-based training and practical courses in schools to prepare students for specific occupations, thereby reducing educated unemployment.",
+      "key_concepts": ["skill development", "occupational training", "employability"],
+      "marks": 3,
+      "source_section": "2.3 Quality of Population"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the 'Dependency Ratio' in the context of unemployment?",
+      "answer": "It is the ratio between the unemployed (dependents) and the working population. A high dependency ratio means the working people have to spend more on supporting others rather than on investment.",
+      "key_concepts": ["dependents", "working population", "consumption"],
+      "marks": 3,
+      "source_section": "2.4 Unemployment"
+    },
+    {
+      "question_number": 25,
+      "question": "Describe the term 'Human Resource' in your own words.",
+      "answer": "Human resource is the population seen as a productive asset. It represents the collective skills, education, and health of a nation's people that can be used to create economic value.",
+      "key_concepts": ["productive asset", "collective skills", "economic value"],
+      "marks": 3,
+      "source_section": "2.1 Overview"
+    }
+  ]
+}

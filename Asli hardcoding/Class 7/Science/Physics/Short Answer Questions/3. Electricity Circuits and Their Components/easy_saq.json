@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 3: Electricity: Circuits and their Components",
+    "generated_at": "2026-03-05T20:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is an electric circuit?",
+            "answer": "An electric circuit is a closed path through which electric current flows from a power source through various components and back to the source.",
+            "key_concepts": ["electric circuit"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the difference between an open circuit and a closed circuit.",
+            "answer": "A closed circuit allows electric current to flow because the path is complete, while an open circuit has a break in the path and therefore current cannot flow.",
+            "key_concepts": ["open circuit", "closed circuit"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What role does a battery play in an electric circuit?",
+            "answer": "A battery provides the electrical energy needed to push electrons through the circuit, enabling current to flow.",
+            "key_concepts": ["battery", "energy source"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is an electric current?",
+            "answer": "Electric current is the flow of electric charges, usually electrons, through a conductor.",
+            "key_concepts": ["electric current"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Name two materials that are good conductors of electricity and explain why.",
+            "answer": "Copper and aluminum are good conductors because they allow electric charges to move through them easily.",
+            "key_concepts": ["conductors"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What are insulators? Give two examples.",
+            "answer": "Insulators are materials that do not allow electric current to pass through easily. Examples include rubber and plastic.",
+            "key_concepts": ["insulators"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the function of a switch in an electric circuit?",
+            "answer": "A switch is used to open or close a circuit, thereby controlling the flow of electric current.",
+            "key_concepts": ["switch"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain what a resistor does in an electric circuit.",
+            "answer": "A resistor limits or controls the amount of current flowing through a circuit.",
+            "key_concepts": ["resistor", "resistance"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "What is meant by resistance?",
+            "answer": "Resistance is the opposition offered by a material to the flow of electric current.",
+            "key_concepts": ["resistance"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Name the instrument used to measure electric current.",
+            "answer": "An ammeter is used to measure electric current in a circuit.",
+            "key_concepts": ["ammeter"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Name the instrument used to measure voltage.",
+            "answer": "A voltmeter is used to measure the potential difference (voltage) between two points in a circuit.",
+            "key_concepts": ["voltmeter"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 12,
+            "question": "What is meant by potential difference?",
+            "answer": "Potential difference is the work done in moving a unit charge from one point to another in a circuit.",
+            "key_concepts": ["potential difference"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 13,
+            "question": "What is Ohm’s Law?",
+            "answer": "Ohm’s Law states that the current flowing through a conductor is directly proportional to the voltage across it, provided temperature remains constant.",
+            "key_concepts": ["Ohm's law"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a series circuit?",
+            "answer": "A series circuit is a circuit in which components are connected one after another so that current flows through each component in the same path.",
+            "key_concepts": ["series circuit"],
+            "marks": 3,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a parallel circuit?",
+            "answer": "A parallel circuit is a circuit where components are connected in separate branches so that current has multiple paths to flow.",
+            "key_concepts": ["parallel circuit"],
+            "marks": 3,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are household appliances connected in parallel circuits?",
+            "answer": "Household appliances are connected in parallel so that each appliance receives the same voltage and can operate independently.",
+            "key_concepts": ["parallel circuits", "household wiring"],
+            "marks": 3,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a fuse and what is its purpose?",
+            "answer": "A fuse is a safety device that melts and breaks the circuit if excessive current flows, protecting electrical appliances.",
+            "key_concepts": ["fuse", "safety device"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the concept of short circuit.",
+            "answer": "A short circuit occurs when current flows through an unintended path with very low resistance, causing excessive current flow.",
+            "key_concepts": ["short circuit"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 19,
+            "question": "What are circuit diagrams?",
+            "answer": "Circuit diagrams are graphical representations of electrical circuits using standardized symbols.",
+            "key_concepts": ["circuit diagram"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are standard symbols used in circuit diagrams?",
+            "answer": "Standard symbols make circuit diagrams easier to read and understand universally.",
+            "key_concepts": ["circuit symbols"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What is meant by electric power?",
+            "answer": "Electric power is the rate at which electrical energy is consumed or produced in a circuit.",
+            "key_concepts": ["electric power"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why copper wires are commonly used in electrical circuits.",
+            "answer": "Copper is used because it has low resistance and allows electric current to flow easily.",
+            "key_concepts": ["conductors", "copper"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a load in an electric circuit?",
+            "answer": "A load is a component that uses electrical energy to perform a function, such as a bulb, fan, or heater.",
+            "key_concepts": ["load"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how a bulb glows in a circuit.",
+            "answer": "When current flows through the filament of a bulb, it heats up and emits light due to high temperature.",
+            "key_concepts": ["bulb filament"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is insulation necessary in electrical wires?",
+            "answer": "Insulation prevents electric shocks and stops current from leaking out of the wire.",
+            "key_concepts": ["wire insulation"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        }
+    ]
+}

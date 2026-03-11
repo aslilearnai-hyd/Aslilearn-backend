@@ -1,0 +1,31 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Real Numbers",
+    "difficulty": "Easy",
+    "source_pdf": "jemh101.pdf",
+    "short_notes": {
+        "key_points": [
+            "Real numbers include natural, whole, integers, rational and irrational numbers",
+            "Prime numbers have exactly two factors",
+            "Composite numbers have more than two factors",
+            "HCF means greatest common factor",
+            "LCM means smallest common multiple"
+        ],
+        "examples": [
+            "Prime number: 5",
+            "Composite number: 12",
+            "Rational number: 3/4",
+            "Irrational number: √2"
+        ],
+        "formulas": [
+            "HCF → lowest power of common prime factors",
+            "LCM → highest power of all prime factors"
+        ],
+        "exam_tips": [
+            "1 is not a prime number",
+            "Write prime factorisation clearly",
+            "Do not confuse HCF with LCM"
+        ]
+    }
+}

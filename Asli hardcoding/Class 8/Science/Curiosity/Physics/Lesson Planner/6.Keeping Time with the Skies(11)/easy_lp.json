@@ -1,0 +1,135 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter_name": "Keeping Time with the Skies",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand how day and night occur",
+    "Learn how the Sun helps measure time",
+    "Understand phases of the Moon",
+    "Identify basic constellations in the sky",
+    "Understand the concept of eclipses",
+    "Recognize how early humans measured time using the sky"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Time and the Sky",
+      "topics_covered": [
+        "Meaning of time measurement",
+        "Role of the Sun in measuring time",
+        "Day and night cycle"
+      ],
+      "teaching_strategy": [
+        "Concept explanation",
+        "Question-answer discussion",
+        "Use of globe and torch demonstration"
+      ],
+      "student_activities": [
+        "Observe how sunlight changes during the day",
+        "Explain why day and night occur"
+      ],
+      "assessment": ["Oral questioning", "Short written answers"]
+    },
+    {
+      "period": 2,
+      "title": "Earth’s Rotation and Day-Night Cycle",
+      "topics_covered": [
+        "Rotation of Earth",
+        "How rotation causes day and night"
+      ],
+      "teaching_strategy": ["Globe demonstration", "Diagram explanation"],
+      "student_activities": [
+        "Rotate a globe to observe day and night",
+        "Draw a labelled diagram"
+      ],
+      "assessment": ["Notebook checking", "Concept questions"]
+    },
+    {
+      "period": 3,
+      "title": "Phases of the Moon",
+      "topics_covered": [
+        "Moon phases",
+        "New moon and full moon",
+        "Lunar cycle"
+      ],
+      "teaching_strategy": [
+        "Ball and torch demonstration",
+        "Visual explanation"
+      ],
+      "student_activities": [
+        "Observe Moon shape for several days",
+        "Draw Moon phases in notebook"
+      ],
+      "assessment": ["Observation discussion", "Short answer questions"]
+    },
+    {
+      "period": 4,
+      "title": "Constellations",
+      "topics_covered": [
+        "Meaning of constellation",
+        "Examples such as Orion and Ursa Major"
+      ],
+      "teaching_strategy": ["Star chart explanation", "Picture demonstration"],
+      "student_activities": [
+        "Draw simple constellation patterns",
+        "Identify constellations in a chart"
+      ],
+      "assessment": ["Class questioning", "Diagram activity"]
+    },
+    {
+      "period": 5,
+      "title": "Eclipses",
+      "topics_covered": [
+        "Solar eclipse",
+        "Lunar eclipse",
+        "Alignment of Sun, Earth and Moon"
+      ],
+      "teaching_strategy": [
+        "Model demonstration using globe and ball",
+        "Diagram explanation"
+      ],
+      "student_activities": [
+        "Draw diagrams of solar and lunar eclipses",
+        "Explain eclipse formation"
+      ],
+      "assessment": ["Short written answers", "Diagram labeling"]
+    },
+    {
+      "period": 6,
+      "title": "Ancient Timekeeping and Revision",
+      "topics_covered": [
+        "Sundials and early time measurement",
+        "Importance of Sun and Moon in calendars",
+        "Chapter revision"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Group revision activity"
+      ],
+      "student_activities": [
+        "Discuss how ancient people measured time",
+        "Participate in revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification session"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Globe",
+    "Torch or flashlight",
+    "Star charts",
+    "Ball to represent Moon"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Diagram drawing",
+    "Class discussion"
+  ],
+  "teacher_tip": "Use visual demonstrations such as globe and torch models to help students clearly understand Earth’s rotation, Moon phases, and eclipse formation."
+}

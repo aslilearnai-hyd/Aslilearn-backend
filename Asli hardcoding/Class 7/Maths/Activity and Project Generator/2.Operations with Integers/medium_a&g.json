@@ -1,0 +1,167 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Operations with Integers",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class7_maths_ch1_integers.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Distributive Law Mural",
+            "objective": "Visualize the distributive property of multiplication over addition",
+            "materials": [
+                "Grid paper",
+                "Color pencils",
+                "Ruler"
+            ],
+            "steps": [
+                "Represent $5 \times (3 + 2)$ by drawing a $5 \times 3$ rectangle and a $5 \times 2$ rectangle side by side",
+                "Calculate the area of each and then the total area",
+                "Compare it with $5 \times 5$ and write the generalized rule: $a \times (b + c) = (a \times b) + (a \times c)$"
+            ],
+            "learning_outcome": "Geometrically understands the distributive property",
+            "evaluation": "Correct grid representation and calculation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Integer Division Investigation",
+            "objective": "Understand the relationship between multiplication and division of integers",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Write three multiplication facts involving negative integers (e.g., $-5 \times 4 = -20$)",
+                "For each fact, derive two corresponding division facts (e.g., $-20 \div 4 = -5$ and $-20 \div -5 = 4$)",
+                "Explain how the sign of the quotient is determined"
+            ],
+            "learning_outcome": "Relates multiplication and division rules for integers",
+            "evaluation": "Accuracy of derived division facts (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Profit and Loss Ledger",
+            "objective": "Apply integer addition and subtraction to financial data",
+            "materials": [
+                "Notebook",
+                "Calculator (optional for verification)"
+            ],
+            "steps": [
+                "Create a hypothetical shop ledger for 7 days",
+                "Use positive integers for profit and negative integers for loss",
+                "Calculate the net profit or loss for the week by summing all integers",
+                "Find the average daily profit or loss using division"
+            ],
+            "learning_outcome": "Applies integer operations to basic accounting",
+            "evaluation": "Correct calculation of net and average values (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Sign Change Challenge",
+            "objective": "Practice subtracting negative integers",
+            "materials": [
+                "Flash cards",
+                "Notebook"
+            ],
+            "steps": [
+                "Write expressions like $10 - (-5)$ and $-8 - (-3)$ on cards",
+                "Rewrite each expression as an addition problem (e.g., $10 + 5$)",
+                "Solve and explain why 'subtracting a negative is like adding a positive'"
+            ],
+            "learning_outcome": "Masters the rule of additive inverses in subtraction",
+            "evaluation": "Correct conversion and calculation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Integer Magic Square",
+            "objective": "Practice mental addition of positive and negative integers",
+            "materials": [
+                "Grid paper"
+            ],
+            "steps": [
+                "Create a $3 \times 3$ grid",
+                "Fill the grid with integers so that every row, column, and diagonal adds up to the same number (e.g., 0 or -3)",
+                "Verify the sum of all 8 directions"
+            ],
+            "learning_outcome": "Enhances speed and accuracy in adding multiple integers",
+            "evaluation": "Correct construction of a balanced magic square (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Simplification with Brackets",
+            "objective": "Apply BODMAS/PEDMAS with integers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve the expression: $-20 + [(-5) \times 2] \div (-2)$",
+                "Break down the steps showing which operation was performed first",
+                "Create your own expression with at least three different operations and solve it"
+            ],
+            "learning_outcome": "Applies order of operations to complex integer expressions",
+            "evaluation": "Step-by-step logical accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Elevation Map",
+            "objective": "Use integers to measure depth and height",
+            "materials": [
+                "Paper",
+                "Colors"
+            ],
+            "steps": [
+                "Draw a landscape featuring a mountain (2000m), sea level (0m), and a submarine (-500m)",
+                "Calculate the vertical distance between the mountain top and the submarine",
+                "If the submarine dives another 200m, show its new position as an integer"
+            ],
+            "learning_outcome": "Visualizes absolute distance vs. integer position",
+            "evaluation": "Correct distance calculations using $|a - b|$ (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Multiplication Property Explorer",
+            "objective": "Verify the Associative property of multiplication",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take three integers $a=-2, b=3, c=-4$",
+                "Calculate $(a \times b) \times c$ and $a \times (b \times c)$ separately",
+                "Repeat with a different set of integers where all three are negative",
+                "Write a conclusion on whether the grouping affects the result"
+            ],
+            "learning_outcome": "Verifies the associative property for negative numbers",
+            "evaluation": "Correct calculation and observation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Integer Quiz Master",
+            "objective": "Test understanding of product and quotient signs",
+            "materials": [
+                "Cards"
+            ],
+            "steps": [
+                "Write 10 problems such as 'Is $(-2) \times (-3) \times (-4)$ positive or negative?'",
+                "Solve them and find a rule for the sign based on the number of negative factors",
+                "Exchange with a partner and check answers"
+            ],
+            "learning_outcome": "Discovers the 'even/odd' rule for multiplying negative integers",
+            "evaluation": "Correct identification of product signs (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Division by Zero Inquiry",
+            "objective": "Understand why division by zero is undefined",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Try to divide $-10$ by 0 using the reverse multiplication method (i.e., $0 \times ? = -10$)",
+                "Explain why no integer can satisfy this equation",
+                "Compare this with $0 \div (-10)$ and explain the difference"
+            ],
+            "learning_outcome": "Conceptualizes the meaning of undefined operations",
+            "evaluation": "Quality of conceptual explanation (10 marks)"
+        }
+    ]
+}

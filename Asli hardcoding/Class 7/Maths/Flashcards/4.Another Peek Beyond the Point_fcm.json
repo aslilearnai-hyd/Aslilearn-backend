@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 13: Another Peek Beyond the Point (Solid Shapes)",
+    "generated_at": "2026-03-05T01:21:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What are the three dimensions of a solid shape?",
+                "correct_answer": "Length, Breadth, and Height (or Depth)",
+                "explanation": "Unlike 2D shapes, 3D solids occupy volume in space.",
+                "source_section": "Section 13.1"
+            },
+            {
+                "question": "What is a 'Face' of a solid?",
+                "correct_answer": "The flat surface of a 3D figure",
+                "explanation": "For example, a cube has six square faces.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "Define an 'Edge' in a polyhedron.",
+                "correct_answer": "A line segment where two faces of a solid meet",
+                "explanation": "Edges form the 'skeleton' or outline of the solid.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What is a 'Vertex'?",
+                "correct_answer": "A corner point where edges meet",
+                "explanation": "Plural is 'vertices'. A cone has one vertex (apex).",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What is a 'Net' of a solid?",
+                "correct_answer": "A 2D pattern that can be folded to form a 3D solid",
+                "explanation": "It is the 'unfolded' version of a shape.",
+                "source_section": "Section 13.3"
+            },
+            {
+                "question": "What is the difference between an Oblique and an Isometric sketch?",
+                "correct_answer": "Oblique sketches show depth visually; Isometric sketches use dots to maintain exact measurements",
+                "explanation": "Isometric sketches are drawn on a dot grid for accuracy.",
+                "source_section": "Section 13.4"
+            },
+            {
+                "question": "What is Euler’s Formula for polyhedra?",
+                "correct_answer": "$F + V - E = 2$",
+                "explanation": "Where $F$ is Faces, $V$ is Vertices, and $E$ is Edges.",
+                "source_section": "Section 13.7"
+            },
+            {
+                "question": "What shape is a horizontal cross-section of a cylinder?",
+                "correct_answer": "A circle",
+                "explanation": "Slicing a cylinder parallel to its base always results in a circle.",
+                "source_section": "Section 13.5"
+            },
+            {
+                "question": "What is the 'Plan' view of an object?",
+                "correct_answer": "The view from the top",
+                "explanation": "Architects use plan views to show floor layouts.",
+                "source_section": "Section 13.8"
+            },
+            {
+                "question": "Can a sphere cast a square shadow?",
+                "correct_answer": "No",
+                "explanation": "A sphere always casts a circular shadow regardless of the light's direction.",
+                "source_section": "Section 13.6"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Identifying Polyhedrons",
+                "content": "Solids with flat faces like cubes and pyramids are polyhedrons; spheres and cylinders are not.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "title": "Shadow Play",
+                "content": "A 2D shadow is a projection of a 3D object onto a flat surface.",
+                "source_section": "Section 13.6"
+            },
+            {
+                "title": "Cross-Sections",
+                "content": "A vertical slice of a cone through the vertex results in a triangle.",
+                "source_section": "Section 13.5"
+            },
+            {
+                "title": "Drawing Aids",
+                "content": "Squared paper is best for oblique sketches, while dot paper is best for isometric ones.",
+                "source_section": "Section 13.4"
+            },
+            {
+                "title": "Euler's Verification",
+                "content": "For a triangular pyramid: $4 (Faces) + 4 (Vertices) - 6 (Edges) = 2$.",
+                "source_section": "Section 13.7"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "A cube has 11 possible distinct nets.",
+                "source_section": "Section 13.3"
+            },
+            {
+                "fact": "Engineering drawings rely on front, side, and top views to represent a part accurately.",
+                "source_section": "Section 13.8"
+            },
+            {
+                "fact": "A cylinder has 2 circular faces and 1 curved surface.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "fact": "Perspective viewing makes distant parts of a solid look smaller.",
+                "source_section": "Section 13.1"
+            }
+        ]
+    }
+}

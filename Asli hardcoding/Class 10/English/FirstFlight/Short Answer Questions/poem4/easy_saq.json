@@ -1,0 +1,88 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Poem – Amanda",
+  "generated_at": "2026-03-09T14:40:00",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is the author of the poem 'Amanda'?",
+      "answer": "The poem was written by Robin Klein, an Australian author known for her insightful stories about children and adolescents.",
+      "key_concepts": ["author"],
+      "marks": 2,
+      "source_section": "Poem Intro"
+    },
+    {
+      "question_number": 2,
+      "question": "What repeated word emphasizes the parent’s nagging tone in the poem?",
+      "answer": "The repeated use of the name 'Amanda!' at the end of every instruction emphasizes the constant and repetitive nature of the nagging.",
+      "key_concepts": ["repetition", "tone"],
+      "marks": 2,
+      "source_section": "Poetic Devices"
+    },
+    {
+      "question_number": 3,
+      "question": "Which imaginary character does Amanda first become in the poem?",
+      "answer": "Amanda first imagines herself as a mermaid, drifting blissfully in a calm, emerald sea, far away from the voices of authority.",
+      "key_concepts": ["imagination", "mermaid"],
+      "marks": 2,
+      "source_section": "Stanza 2"
+    },
+    {
+      "question_number": 4,
+      "question": "What does Amanda imagine when she assumes the persona of an orphan?",
+      "answer": "As an orphan, she imagines the freedom of wandering the streets alone, enjoying the 'golden silence' and making patterns in the soft dust with her bare feet.",
+      "key_concepts": ["freedom", "orphan fantasy"],
+      "marks": 2,
+      "source_section": "Stanza 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which well-known fairy-tale character does Amanda imagine herself as later in the poem?",
+      "answer": "She imagines herself as Rapunzel, living a 'tranquil and rare' life in a high tower where she never has to let down her hair for anyone.",
+      "key_concepts": ["allusion", "Rapunzel"],
+      "marks": 2,
+      "source_section": "Stanza 6"
+    },
+    {
+      "question_number": 6,
+      "question": "Why does Amanda feel the need to escape into her imagination?",
+      "answer": "Amanda escapes into her imagination to find the peace and freedom that are denied to her in real life due to constant parental control and nagging.",
+      "key_concepts": ["escapism", "motivation"],
+      "marks": 2,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 7,
+      "question": "What central theme is reflected in Amanda’s various fantasies?",
+      "answer": "The central theme is the conflict between adult-imposed restrictions and a child's natural desire for independence and self-expression.",
+      "key_concepts": ["theme", "freedom vs restriction"],
+      "marks": 2,
+      "source_section": "Thematic Analysis"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the purpose of the parentheses (brackets) used in the imaginary stanzas?",
+      "answer": "The parentheses are used to show that these stanzas are Amanda's private thoughts, creating a visual and structural contrast between her inner world and her outer reality.",
+      "key_concepts": ["structure", "parentheses"],
+      "marks": 2,
+      "source_section": "Poetic Form"
+    },
+    {
+      "question_number": 9,
+      "question": "What is ironic about Amanda’s desire to be Rapunzel?",
+      "answer": "It is ironic because Rapunzel was a prisoner in a tower, but Amanda sees that isolation as a form of freedom because it means being alone and away from nagging.",
+      "key_concepts": ["irony"],
+      "marks": 2,
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 10,
+      "question": "What overall message does the poem convey about parent-child relationships?",
+      "answer": "The poem suggests that parents should balance guidance with freedom, as constant nagging can cause a child to withdraw emotionally and stop listening entirely.",
+      "key_concepts": ["moral", "relationships"],
+      "marks": 2,
+      "source_section": "Final Summary"
+    }
+  ]
+}

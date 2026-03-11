@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Proportional Reasoning - 1",
+  "difficulty": "Medium",
+  "source_pdf": "ch-7_PROPORTINAL_REASONING-1.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Proportion Verification Challenge",
+      "objective": "Verify proportional relationships using cross multiplication",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write five pairs of ratios such as 4:5 and 16:20",
+        "Use cross multiplication to test if they are proportional",
+        "Explain why each pair is proportional or not"
+      ],
+      "learning_outcome": "Applies cross multiplication to verify proportions",
+      "evaluation": "Correct verification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Scale Drawing Investigation",
+      "objective": "Understand proportional scaling",
+      "materials": ["Graph paper", "Pencil", "Ruler"],
+      "steps": [
+        "Draw a rectangle with width 4 cm and height 3 cm",
+        "Scale the rectangle by a factor of 2 and redraw it",
+        "Compare the ratios of the original and scaled rectangles"
+      ],
+      "learning_outcome": "Understands scaling and similarity",
+      "evaluation": "Accuracy of drawing and ratio comparison (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Ratio Pattern Investigation",
+      "objective": "Explore patterns in proportional ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose a ratio such as 3:5",
+        "Generate at least five equivalent ratios",
+        "Explain how the ratios are related"
+      ],
+      "learning_outcome": "Recognises equivalent ratio patterns",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Recipe Scaling Project",
+      "objective": "Apply proportional reasoning to real-life cooking",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a recipe for 4 people",
+        "Adjust the quantities for 10 people",
+        "Explain how proportional reasoning was used"
+      ],
+      "learning_outcome": "Applies ratios to practical situations",
+      "evaluation": "Correct proportional adjustment (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Distance–Time Proportion Activity",
+      "objective": "Understand proportional relationships between distance and time",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Assume a car travels 60 km in 1 hour",
+        "Calculate distances for 2, 3 and 5 hours",
+        "Explain how the relationship shows proportional reasoning"
+      ],
+      "learning_outcome": "Understands proportional relationships in motion",
+      "evaluation": "Correct calculations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Proportional Rectangle Investigation",
+      "objective": "Explore similar rectangles",
+      "materials": ["Graph paper", "Ruler"],
+      "steps": [
+        "Draw three rectangles with width-height ratios of 3:2",
+        "Measure the sides",
+        "Explain why the rectangles are similar"
+      ],
+      "learning_outcome": "Understands similarity and proportional dimensions",
+      "evaluation": "Correct drawings and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Missing Term in Proportion",
+      "objective": "Solve complex proportion problems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write proportions like 7:9 :: x:27",
+        "Use cross multiplication to find the missing value",
+        "Verify the solution"
+      ],
+      "learning_outcome": "Develops problem-solving using proportions",
+      "evaluation": "Correct answers and method (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Ratio Graph Investigation",
+      "objective": "Represent proportional relationships graphically",
+      "materials": ["Graph paper", "Pencil"],
+      "steps": [
+        "Create a table of proportional values such as (2,4), (4,8), (6,12)",
+        "Plot the points on graph paper",
+        "Observe the pattern formed"
+      ],
+      "learning_outcome": "Understands graphical representation of proportions",
+      "evaluation": "Correct plotting and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Class Data Ratio Analysis",
+      "objective": "Analyse ratios using collected data",
+      "materials": ["Notebook"],
+      "steps": [
+        "Collect data such as number of students in different classes",
+        "Write ratios between classes",
+        "Check if any ratios are proportional"
+      ],
+      "learning_outcome": "Applies ratios to real data analysis",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Proportional Reasoning Research",
+      "objective": "Explore applications of proportional reasoning",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Research examples of proportional reasoning in daily life",
+        "Prepare a chart with at least three examples",
+        "Explain how ratios and proportions are used"
+      ],
+      "learning_outcome": "Understands real-world applications of proportional reasoning",
+      "evaluation": "Clarity and correctness of explanation (10 marks)"
+    }
+  ]
+}

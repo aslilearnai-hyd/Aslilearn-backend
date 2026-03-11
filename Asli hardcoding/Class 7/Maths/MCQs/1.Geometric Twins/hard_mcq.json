@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Geometric Twins (Congruence of Triangles)",
+    "generated_at": "2026-03-05T02:06:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In △ABC and △PQR, AB = PQ and BC = QR. The triangles are congruent if the altitude from A to BC equals the altitude from P to QR. Which criterion proves this?",
+            "options": {
+                "A": "SSS",
+                "B": "SAS",
+                "C": "RHS then SAS",
+                "D": "ASA"
+            },
+            "correct_answer": "C",
+            "explanation": "Equal altitudes and hypotenuses (AB=PQ) in the smaller right triangles give congruence by RHS. This proves ∠B = ∠Q, leading to SAS for the main triangles.",
+            "difficulty": "hard",
+            "source_section": "Advanced Congruence Proofs"
+        },
+        {
+            "question_number": 2,
+            "question": "If △ABC ≅ △PQR, and the ratio of the area of △ABC to its perimeter is 'k', then the ratio of the area of △PQR to its perimeter is:",
+            "options": {
+                "A": "k/2",
+                "B": "k",
+                "C": "2k",
+                "D": "k²"
+            },
+            "correct_answer": "B",
+            "explanation": "Since the triangles are congruent, their areas and perimeters are identical, so the ratio remains unchanged.",
+            "difficulty": "hard",
+            "source_section": "Properties of Congruence"
+        },
+        {
+            "question_number": 3,
+            "question": "In △ABC, AB = AC. Points D and E are on BC such that BD = CE. Which of the following is true?",
+            "options": {
+                "A": "△ABD ≅ △ACE",
+                "B": "△ABE ≅ △ACD",
+                "C": "AD = AE",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "By SAS, △ABD ≅ △ACE. By adding DE to both BD and CE, BE = CD, so △ABE ≅ △ACD. By CPCT, AD = AE.",
+            "difficulty": "hard",
+            "source_section": "SAS and CPCT"
+        },
+        {
+            "question_number": 4,
+            "question": "In a triangle, if two altitudes are equal, the triangle must be:",
+            "options": {
+                "A": "Scalene",
+                "B": "Isosceles",
+                "C": "Right-angled",
+                "D": "Equilateral"
+            },
+            "correct_answer": "B",
+            "explanation": "Using RHS on the triangles formed by the altitudes and the sides, we prove the base angles are equal, making it isosceles.",
+            "difficulty": "hard",
+            "source_section": "Application of RHS"
+        },
+        {
+            "question_number": 5,
+            "question": "In △PQR, if the median PS is perpendicular to QR, then △PQR is:",
+            "options": {
+                "A": "Scalene",
+                "B": "Isosceles",
+                "C": "Right-angled only",
+                "D": "None of these"
+            },
+            "correct_answer": "B",
+            "explanation": "In △PQS and △PRS, QS=RS (median), PS=PS (common), and ∠PSQ=∠PSR=90°. By SAS, the triangles are congruent, so PQ=PR.",
+            "difficulty": "hard",
+            "source_section": "Medians and Congruence"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following conditions is sufficient to prove two right-angled triangles are congruent?",
+            "options": {
+                "A": "Two sides are equal",
+                "B": "One side and one acute angle are equal",
+                "C": "The hypotenuse and one side are equal",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "Option B uses ASA/AAS (since the 90° angle is fixed). Option C is the RHS criterion.",
+            "difficulty": "hard",
+            "source_section": "Congruence Criteria"
+        },
+        {
+            "question_number": 7,
+            "question": "In △ABC, if ∠A = 40° and ∠B = 70°, and in △PQR, ∠Q = 70° and ∠R = 70°, then for congruence we need:",
+            "options": {
+                "A": "AB = PQ",
+                "B": "BC = QR",
+                "C": "AC = PR",
+                "D": "Any of these sides to be equal"
+            },
+            "correct_answer": "D",
+            "explanation": "In △ABC, ∠C = 180-(40+70) = 70°. In △PQR, ∠P = 40°. Both are 40-70-70 triangles. Any matching side proves ASA.",
+            "difficulty": "hard",
+            "source_section": "Angle Sum Property and ASA"
+        },
+        {
+            "question_number": 8,
+            "question": "If the bisector of the vertical angle of a triangle also bisects the base, the triangle is:",
+            "options": {
+                "A": "Isosceles",
+                "B": "Equilateral",
+                "C": "Scalene",
+                "D": "Obtuse"
+            },
+            "correct_answer": "A",
+            "explanation": "By SAS (two sides and included angle) or producing the median to a point, we can prove the remaining sides are equal.",
+            "difficulty": "hard",
+            "source_section": "Triangle Properties"
+        },
+        {
+            "question_number": 9,
+            "question": "In △ABC and △DEF, ∠A = ∠D, ∠B = ∠E. The triangles are congruent if:",
+            "options": {
+                "A": "BC = EF",
+                "B": "AC = DF",
+                "C": "AB = DE",
+                "D": "Any of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "If two angles are equal, the third is equal. Matching any corresponding side satisfies ASA or AAS.",
+            "difficulty": "hard",
+            "source_section": "AAS Criterion"
+        },
+        {
+            "question_number": 10,
+            "question": "In a quadrilateral ABCD, if AB=AD and BC=CD, then the diagonal AC:",
+            "options": {
+                "A": "Bisects ∠A and ∠C",
+                "B": "Is perpendicular to BD",
+                "C": "Divides it into two congruent triangles",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "This forms a kite. △ABC ≅ △ADC by SSS. CPCT proves the angle bisections and perpendicularity.",
+            "difficulty": "hard",
+            "source_section": "Quadrilateral Congruence"
+        },
+        {
+            "question_number": 11,
+            "question": "If △ABC ≅ △PQR, then the distance from the centroid of △ABC to A is:",
+            "options": {
+                "A": "Greater than the distance from the centroid of △PQR to P",
+                "B": "Less than the distance from the centroid of △PQR to P",
+                "C": "Equal to the distance from the centroid of △PQR to P",
+                "D": "Zero"
+            },
+            "correct_answer": "C",
+            "explanation": "Centroids are determined by medians. Since triangles are congruent, medians are equal, and the centroid divides them in the same ratio.",
+            "difficulty": "hard",
+            "source_section": "Advanced Properties"
+        },
+        {
+            "question_number": 12,
+            "question": "In △ABC and △PQR, AB = PQ, AC = PR and altitude AM = altitude PN. Are they congruent?",
+            "options": {
+                "A": "No",
+                "B": "Yes, by RHS and then SSS",
+                "C": "Yes, by SAS only",
+                "D": "Only if they are right-angled"
+            },
+            "correct_answer": "B",
+            "explanation": "RHS on △ABM and △PQN proves ∠B = ∠Q. Then SSS or SAS can be applied to the whole triangle.",
+            "difficulty": "hard",
+            "source_section": "Complex Criteria"
+        },
+        {
+            "question_number": 13,
+            "question": "Two triangles are congruent if two sides and the angle opposite to one of them are equal, only if:",
+            "options": {
+                "A": "The angle is acute",
+                "B": "The side opposite the angle is the longest side",
+                "C": "The angle is 90°",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "SSA is generally not a criterion unless it's RHS (90°) or the side opposite is the longest (preventing the 'ambiguous case').",
+            "difficulty": "hard",
+            "source_section": "SSA Ambiguity"
+        },
+        {
+            "question_number": 14,
+            "question": "In △ABC, AB=AC. D is a point in the interior such that ∠DBC = ∠DCB. Then:",
+            "options": {
+                "A": "AD bisects ∠BAC",
+                "B": "△ABD ≅ △ACD",
+                "C": "AD is perpendicular to BC",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Since ∠DBC=∠DCB, DB=DC. With AB=AC and AD common, △ABD ≅ △ACD by SSS. CPCT proves the rest.",
+            "difficulty": "hard",
+            "source_section": "SSS and Isosceles"
+        },
+        {
+            "question_number": 15,
+            "question": "Given △ABC and △DEF where AB/DE = BC/EF = AC/DF = 1. This implies:",
+            "options": {
+                "A": "Similarity only",
+                "B": "Congruence by SSS",
+                "C": "Nothing can be concluded",
+                "D": "The triangles are equilateral"
+            },
+            "correct_answer": "B",
+            "explanation": "A ratio of 1 means the side lengths are equal, satisfying the SSS criterion.",
+            "difficulty": "hard",
+            "source_section": "SSS Criterion"
+        },
+        {
+            "question_number": 16,
+            "question": "If two triangles satisfy the AAA condition and have the same area, they:",
+            "options": {
+                "A": "Are only similar",
+                "B": "Are congruent",
+                "C": "Must be equilateral",
+                "D": "Cannot exist"
+            },
+            "correct_answer": "B",
+            "explanation": "Similar triangles (AAA) with equal area must have a scale factor of 1, meaning they are congruent.",
+            "difficulty": "hard",
+            "source_section": "Similarity vs Congruence"
+        },
+        {
+            "question_number": 17,
+            "question": "In △ABC, AD is the median. If AD = 1/2 BC, then ∠A is:",
+            "options": {
+                "A": "60°",
+                "B": "90°",
+                "C": "45°",
+                "D": "120°"
+            },
+            "correct_answer": "B",
+            "explanation": "If AD=BD=CD, then △ABD and △ACD are isosceles. Summing angles shows 2(∠B + ∠C) = 180, so ∠A = 90.",
+            "difficulty": "hard",
+            "source_section": "Median Properties"
+        },
+        {
+            "question_number": 18,
+            "question": "If △ABC ≅ △PQR, and 'O' is the circumcenter of △ABC, then 'O' corresponds to the:",
+            "options": {
+                "A": "Incenter of △PQR",
+                "B": "Centroid of △PQR",
+                "C": "Circumcenter of △PQR",
+                "D": "Orthocenter of △PQR"
+            },
+            "correct_answer": "C",
+            "explanation": "Congruent triangles have identical geometric centers relative to their vertices.",
+            "difficulty": "hard",
+            "source_section": "Geometric Centers"
+        },
+        {
+            "question_number": 19,
+            "question": "In a parallelogram ABCD, the diagonal AC divides it into two triangles. These triangles are:",
+            "options": {
+                "A": "Congruent by SSS",
+                "B": "Congruent by SAS",
+                "C": "Congruent by ASA",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Opposite sides are equal (SSS), opposite sides + alternate interior angles (SAS/ASA), all work here.",
+            "difficulty": "hard",
+            "source_section": "Parallelogram Properties"
+        },
+        {
+            "question_number": 20,
+            "question": "To prove SAS congruence, if we have two sides equal, we MUST have:",
+            "options": {
+                "A": "The angles opposite the sides equal",
+                "B": "The angle included between the sides equal",
+                "C": "The sum of the other two angles equal",
+                "D": "The third side equal"
+            },
+            "correct_answer": "B",
+            "explanation": "The 'A' in SAS strictly refers to the included angle.",
+            "difficulty": "hard",
+            "source_section": "SAS Criterion"
+        },
+        {
+            "question_number": 21,
+            "question": "In △ABC and △PQR, ∠A=∠P, AB=PQ. To use ASA, we need:",
+            "options": {
+                "A": "∠B = ∠Q",
+                "B": "∠C = ∠R",
+                "C": "BC = QR",
+                "D": "AC = PR"
+            },
+            "correct_answer": "A",
+            "explanation": "ASA requires the side (AB) to be between the two angles (∠A and ∠B).",
+            "difficulty": "hard",
+            "source_section": "ASA Criterion"
+        },
+        {
+            "question_number": 22,
+            "question": "The congruence of two circles depends only on their radii. The congruence of two squares depends only on their:",
+            "options": {
+                "A": "Diagonals",
+                "B": "Sides",
+                "C": "Perimeters",
+                "D": "Any of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "In a square, side, diagonal, and perimeter are all linked. If one is equal, all are equal.",
+            "difficulty": "hard",
+            "source_section": "Congruence of Polygons"
+        },
+        {
+            "question_number": 23,
+            "question": "In △ABC, if the bisector of ∠B and ∠C meet at I, and in △PQR the bisectors meet at O. If △ABC ≅ △PQR, then ∠BIC equals:",
+            "options": {
+                "A": "∠POQ",
+                "B": "∠QOR",
+                "C": "∠POR",
+                "D": "∠Q + ∠R"
+            },
+            "correct_answer": "B",
+            "explanation": "∠BIC = 90 + ∠A/2. Since ∠A = ∠P, ∠BIC = ∠QOR.",
+            "difficulty": "hard",
+            "source_section": "CPCT and Incenters"
+        },
+        {
+            "question_number": 24,
+            "question": "If △ABC ≅ △FED, which side of △FED is equal to BC?",
+            "options": {
+                "A": "FE",
+                "B": "ED",
+                "C": "FD",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "B is 2nd, C is 3rd. In FED, 2nd is E and 3rd is D. So, BC = ED.",
+            "difficulty": "hard",
+            "source_section": "Congruence Notation"
+        },
+        {
+            "question_number": 25,
+            "question": "If two triangles are congruent, their corresponding 'Inradii' are:",
+            "options": {
+                "A": "Different",
+                "B": "Equal",
+                "C": "Proportional to their areas",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "All corresponding linear measurements (altitudes, medians, inradii) of congruent triangles are equal.",
+            "difficulty": "hard",
+            "source_section": "Properties of Congruence"
+        }
+    ]
+}

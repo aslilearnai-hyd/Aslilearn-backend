@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 12: Improvement in Food Resources",
+    "generated_at": "2026-03-05T22:50:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is meant by improvement in food resources?",
+                "correct_answer": "Increasing the production of crops and livestock using scientific methods",
+                "explanation": "Improvement in food resources involves better farming practices and livestock management to meet the food demand of a growing population.",
+                "source_section": "Introduction"
+            },
+            {
+                "question": "What are cereals mainly used for in our diet?",
+                "correct_answer": "They provide carbohydrates for energy",
+                "explanation": "Cereals such as rice, wheat and maize are rich sources of carbohydrates.",
+                "source_section": "12.1 Improvement in Crop Yields"
+            },
+            {
+                "question": "What are pulses an important source of?",
+                "correct_answer": "Proteins",
+                "explanation": "Pulses such as gram, peas and lentils are rich in protein and are important for body growth.",
+                "source_section": "12.1 Improvement in Crop Yields"
+            },
+            {
+                "question": "What is hybridisation in crop variety improvement?",
+                "correct_answer": "Crossing between genetically dissimilar plants",
+                "explanation": "Hybridisation helps combine desirable traits like higher yield and disease resistance.",
+                "source_section": "12.1.1 Crop Variety Improvement"
+            },
+            {
+                "question": "What are macronutrients in plants?",
+                "correct_answer": "Nutrients required by plants in large quantities",
+                "explanation": "Examples include nitrogen, phosphorus, potassium, calcium, magnesium and sulphur.",
+                "source_section": "12.1.2 Nutrient Management"
+            },
+            {
+                "question": "What is irrigation?",
+                "correct_answer": "The artificial supply of water to crops",
+                "explanation": "Irrigation ensures crops receive adequate water for growth even when rainfall is insufficient.",
+                "source_section": "12.1.2 Irrigation"
+            },
+            {
+                "question": "What is mixed cropping?",
+                "correct_answer": "Growing two or more crops simultaneously on the same piece of land",
+                "explanation": "Mixed cropping reduces the risk of crop failure and improves productivity.",
+                "source_section": "12.1.2 Cropping Patterns"
+            },
+            {
+                "question": "What are weeds?",
+                "correct_answer": "Unwanted plants that grow along with crops",
+                "explanation": "Weeds compete with crops for nutrients, sunlight and water.",
+                "source_section": "12.1.3 Crop Protection Management"
+            },
+            {
+                "question": "What is animal husbandry?",
+                "correct_answer": "Scientific management of livestock",
+                "explanation": "It includes feeding, breeding and disease control of animals like cattle, poultry and fish.",
+                "source_section": "12.2 Animal Husbandry"
+            },
+            {
+                "question": "What is composite fish culture?",
+                "correct_answer": "Raising different fish species together in a single pond",
+                "explanation": "Different species use different food resources in the pond, increasing overall fish production.",
+                "source_section": "12.2.3 Fish Production"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Crop Variety Improvement",
+                "content": "Crop variety improvement focuses on developing crop varieties with higher yield, better quality and resistance to diseases and environmental stresses.",
+                "source_section": "12.1.1 Crop Variety Improvement"
+            },
+            {
+                "title": "Manure",
+                "content": "Manure is organic matter obtained from plant and animal waste that improves soil fertility and structure.",
+                "source_section": "12.1.2 Nutrient Management"
+            },
+            {
+                "title": "Fertilizers",
+                "content": "Fertilizers are commercially produced chemicals that supply nutrients like nitrogen, phosphorus and potassium to plants.",
+                "source_section": "12.1.2 Nutrient Management"
+            },
+            {
+                "title": "Animal Husbandry",
+                "content": "Animal husbandry includes cattle farming, poultry farming, fisheries and bee-keeping to produce food and other useful products.",
+                "source_section": "12.2 Animal Husbandry"
+            },
+            {
+                "title": "Bee-Keeping",
+                "content": "Bee-keeping or apiculture is the maintenance of bee colonies to produce honey and wax.",
+                "source_section": "12.2.4 Bee-Keeping"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "India's food production increased greatly after the Green Revolution.",
+                "source_section": "Introduction"
+            },
+            {
+                "fact": "Macronutrients are required in large quantities while micronutrients are needed in small quantities.",
+                "source_section": "12.1.2 Nutrient Management"
+            },
+            {
+                "fact": "Crop rotation helps maintain soil fertility and reduce pest problems.",
+                "source_section": "12.1.2 Cropping Patterns"
+            },
+            {
+                "fact": "Composite fish culture increases fish yield by using different feeding levels in the pond.",
+                "source_section": "12.2.3 Fish Production"
+            }
+        ]
+    }
+}

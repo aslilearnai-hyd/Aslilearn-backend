@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 5: Introduction to Euclid’s Geometry",
+    "difficulty": "hard",
+    "generated_at": "2026-03-05T23:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why are point, line and plane treated as undefined terms?",
+            "answer": "Because defining them leads to an endless chain of definitions.",
+            "key_points": [
+                "undefined terms"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why did mathematicians stop using Euclid’s definition of a point?",
+            "answer": "Because it required defining other terms that were themselves unclear.",
+            "key_points": [
+                "definition limitation"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is Euclid’s fifth postulate considered complex?",
+            "answer": "Because it involves conditions about interior angles and line intersections.",
+            "key_points": [
+                "parallel postulate"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why can two distinct lines not intersect at more than one point?",
+            "answer": "Because only one unique line can pass through two distinct points.",
+            "key_points": [
+                "unique line axiom"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What assumption is used when proving that two lines cannot intersect twice?",
+            "answer": "The assumption that the lines intersect at two points leads to contradiction.",
+            "key_points": [
+                "contradiction method"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are axioms considered universal truths?",
+            "answer": "Because they apply to all branches of mathematics.",
+            "key_points": [
+                "universal truths"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why did Greek mathematicians emphasise deductive reasoning?",
+            "answer": "To logically prove geometric statements.",
+            "key_points": [
+                "logical proofs"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Which axiom is used to prove AB + BC = AC?",
+            "answer": "The axiom that things which coincide with one another are equal.",
+            "key_points": [
+                "coincide axiom"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does extending a line indefinitely not change its nature?",
+            "answer": "Because a line is defined as extending infinitely in both directions.",
+            "key_points": [
+                "infinite line"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why are surfaces considered boundaries of solids?",
+            "answer": "Because they separate one region of space from another.",
+            "key_points": [
+                "space separation"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is Euclid’s geometry considered a logical system?",
+            "answer": "Because all results are derived step by step from axioms and postulates.",
+            "key_points": [
+                "logical structure"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are diagrams important in geometry?",
+            "answer": "Because they help visualise geometric relationships.",
+            "key_points": [
+                "visualisation"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why must axioms be consistent?",
+            "answer": "To ensure no contradictions occur in the system.",
+            "key_points": [
+                "consistency"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are definitions important in geometry?",
+            "answer": "Because they explain the meaning of geometric terms clearly.",
+            "key_points": [
+                "definitions"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are assumptions necessary in mathematical systems?",
+            "answer": "They provide the starting point for logical reasoning.",
+            "key_points": [
+                "assumptions"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are the ends of a line represented by points?",
+            "answer": "Because points represent exact positions without dimension.",
+            "key_points": [
+                "points"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is geometry useful in daily life?",
+            "answer": "Because it helps measure land and construct buildings.",
+            "key_points": [
+                "applications"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is Euclid called the father of geometry?",
+            "answer": "Because he organised geometry into a logical system.",
+            "key_points": [
+                "Euclid"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is deductive reasoning important in mathematics?",
+            "answer": "It helps derive correct conclusions from known facts.",
+            "key_points": [
+                "logical reasoning"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are geometric constructions important?",
+            "answer": "They help illustrate geometric concepts practically.",
+            "key_points": [
+                "construction"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are magnitudes of different kinds not comparable?",
+            "answer": "Because they represent different quantities.",
+            "key_points": [
+                "different magnitudes"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is Euclid’s Elements important?",
+            "answer": "It organised geometric knowledge systematically.",
+            "key_points": [
+                "Elements"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is the concept of dimension important?",
+            "answer": "It describes how objects occupy space.",
+            "key_points": [
+                "dimension"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are theorems important in mathematics?",
+            "answer": "They establish truths that can be used to prove other results.",
+            "key_points": [
+                "theorems"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are postulates necessary in geometry?",
+            "answer": "They provide basic assumptions for geometric reasoning.",
+            "key_points": [
+                "postulates"
+            ],
+            "source_section": "Section 5.2"
+        }
+    ]
+}

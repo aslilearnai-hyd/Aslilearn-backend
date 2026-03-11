@@ -1,0 +1,325 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Gender, Religion and Caste",
+  "generated_at": "2026-03-11T17:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning of gender division in society.",
+      "answer": "Gender division refers to the unequal roles and responsibilities assigned to men and women by society. These roles are socially constructed rather than purely biological and often result in women being confined to domestic work while men dominate public life.",
+      "answer_outline": [
+        "Definition of gender division",
+        "Social expectations and roles",
+        "Impact on society"
+      ],
+      "key_concepts": ["gender division", "social roles"],
+      "marks": 5,
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the concept of sexual division of labour.",
+      "answer": "Sexual division of labour refers to a system where household work such as cooking and childcare is mainly done by women, while men engage in paid work outside the home. This system often undervalues women’s contributions.",
+      "answer_outline": [
+        "Definition",
+        "Examples of household and outside work",
+        "Impact on women’s status"
+      ],
+      "key_concepts": ["sexual division of labour"],
+      "marks": 5,
+      "source_section": "Public/Private Division"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the role of feminist movements in promoting gender equality.",
+      "answer": "Feminist movements advocate equal rights and opportunities for women in education, employment, and politics. They aim to eliminate discrimination and ensure equal participation of women in all aspects of society.",
+      "answer_outline": [
+        "Meaning of feminism",
+        "Goals of feminist movements",
+        "Impact on society"
+      ],
+      "key_concepts": ["feminism", "gender equality"],
+      "marks": 5,
+      "source_section": "Political Expression of Gender Division"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the challenges faced by women in India despite improvements since independence.",
+      "answer": "Women in India still face discrimination in education, employment, wages, and political representation. They often receive lower wages than men and face issues such as domestic violence and gender bias.",
+      "answer_outline": [
+        "Educational inequality",
+        "Wage discrimination",
+        "Social challenges"
+      ],
+      "key_concepts": ["gender inequality"],
+      "marks": 5,
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain why women’s representation in political institutions is important.",
+      "answer": "Women’s representation ensures that their concerns and issues receive proper attention in decision-making. It promotes gender equality and strengthens democratic participation.",
+      "answer_outline": [
+        "Importance of representation",
+        "Impact on policies",
+        "Democratic participation"
+      ],
+      "key_concepts": ["political representation", "gender equality"],
+      "marks": 5,
+      "source_section": "Women’s Political Representation"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the meaning of communalism in politics.",
+      "answer": "Communalism is the belief that religion is the primary basis of social identity and political interests. It often leads to conflict between religious groups when one group seeks dominance over others.",
+      "answer_outline": [
+        "Definition of communalism",
+        "Role of religion in politics",
+        "Consequences"
+      ],
+      "key_concepts": ["communalism"],
+      "marks": 5,
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the different forms of communalism in politics.",
+      "answer": "Communalism can appear as religious prejudice, political mobilization based on religion, or even communal violence when conflicts arise between religious communities.",
+      "answer_outline": [
+        "Religious prejudice",
+        "Political mobilization",
+        "Communal violence"
+      ],
+      "key_concepts": ["communal politics"],
+      "marks": 5,
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of a secular state.",
+      "answer": "A secular state does not promote any particular religion and treats all religions equally. It guarantees freedom of religion and ensures that the government does not discriminate based on religious beliefs.",
+      "answer_outline": [
+        "Definition of secularism",
+        "Equality of religions",
+        "Role of constitution"
+      ],
+      "key_concepts": ["secularism"],
+      "marks": 5,
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how the Indian Constitution promotes secularism.",
+      "answer": "The Constitution ensures freedom of religion, prohibits discrimination on religious grounds, and allows the state to intervene in religious matters to ensure equality.",
+      "answer_outline": [
+        "Freedom of religion",
+        "Prohibition of discrimination",
+        "Equality provisions"
+      ],
+      "key_concepts": ["constitutional secularism"],
+      "marks": 5,
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the traditional caste system in India.",
+      "answer": "The caste system divided society into hierarchical groups based on occupation and birth. It restricted social interaction and led to discrimination against lower castes.",
+      "answer_outline": ["Definition", "Hierarchy", "Social restrictions"],
+      "key_concepts": ["caste system"],
+      "marks": 5,
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how caste inequalities developed historically in India.",
+      "answer": "Caste inequalities developed because certain groups had access to education and resources while others were denied these opportunities for centuries.",
+      "answer_outline": [
+        "Historical inequality",
+        "Access to resources",
+        "Social discrimination"
+      ],
+      "key_concepts": ["caste inequality"],
+      "marks": 5,
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the role of social reformers in reducing caste discrimination.",
+      "answer": "Social reformers such as Jyotiba Phule, Mahatma Gandhi, and B.R. Ambedkar worked to eliminate caste discrimination and promote equality in society.",
+      "answer_outline": [
+        "Role of reformers",
+        "Movements against caste discrimination",
+        "Impact on society"
+      ],
+      "key_concepts": ["social reform"],
+      "marks": 5,
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how urbanization and education have changed caste relations in India.",
+      "answer": "Urbanization and education have weakened traditional caste hierarchies by increasing occupational mobility and social interaction among different caste groups.",
+      "answer_outline": ["Urbanization", "Education", "Social mobility"],
+      "key_concepts": ["caste transformation"],
+      "marks": 5,
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how caste influences electoral politics in India.",
+      "answer": "Political parties often consider caste composition while selecting candidates and forming alliances to gain electoral support.",
+      "answer_outline": [
+        "Candidate selection",
+        "Voter mobilization",
+        "Election strategies"
+      ],
+      "key_concepts": ["caste politics"],
+      "marks": 5,
+      "source_section": "Caste and Politics"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why caste alone does not determine election results in India.",
+      "answer": "Election results depend on many factors including political ideology, leadership, development issues, and voter preferences, not just caste identity.",
+      "answer_outline": [
+        "Multiple factors",
+        "Voter diversity",
+        "Political competition"
+      ],
+      "key_concepts": ["electoral behaviour"],
+      "marks": 5,
+      "source_section": "Caste and Politics"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how caste can play a positive role in politics.",
+      "answer": "Caste-based mobilization can help disadvantaged communities gain representation and voice their demands in the political system.",
+      "answer_outline": [
+        "Representation of marginalized groups",
+        "Political participation",
+        "Social justice"
+      ],
+      "key_concepts": ["caste representation"],
+      "marks": 5,
+      "source_section": "Caste and Politics"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the negative effects of caste politics.",
+      "answer": "Excessive focus on caste identity may create divisions, promote discrimination, and distract attention from issues such as development and governance.",
+      "answer_outline": [
+        "Social division",
+        "Political conflict",
+        "Neglect of development issues"
+      ],
+      "key_concepts": ["caste politics"],
+      "marks": 5,
+      "source_section": "Caste and Politics"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the relationship between social divisions and politics.",
+      "answer": "Social divisions such as gender, religion, and caste often influence political behaviour and policies in democratic societies.",
+      "answer_outline": [
+        "Types of social divisions",
+        "Political expression",
+        "Impact on democracy"
+      ],
+      "key_concepts": ["social divisions"],
+      "marks": 5,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why social diversity does not necessarily threaten democracy.",
+      "answer": "Social diversity can strengthen democracy when different groups are allowed to express their interests peacefully through political participation.",
+      "answer_outline": [
+        "Meaning of diversity",
+        "Democratic participation",
+        "Peaceful representation"
+      ],
+      "key_concepts": ["democracy", "social diversity"],
+      "marks": 5,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how social divisions can sometimes benefit disadvantaged groups.",
+      "answer": "When social divisions become political issues, marginalized groups can demand rights, representation, and social justice.",
+      "answer_outline": [
+        "Political awareness",
+        "Demand for equality",
+        "Improvement in representation"
+      ],
+      "key_concepts": ["political mobilization"],
+      "marks": 5,
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the importance of equality in a democratic society.",
+      "answer": "Equality ensures that all citizens have equal rights, opportunities, and participation in governance regardless of gender, religion, or caste.",
+      "answer_outline": [
+        "Equal rights",
+        "Equal opportunities",
+        "Democratic participation"
+      ],
+      "key_concepts": ["equality", "democracy"],
+      "marks": 5,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how discrimination affects social development.",
+      "answer": "Discrimination limits opportunities for certain groups and prevents societies from fully utilizing the talents of all citizens.",
+      "answer_outline": [
+        "Meaning of discrimination",
+        "Impact on individuals",
+        "Impact on society"
+      ],
+      "key_concepts": ["social discrimination"],
+      "marks": 5,
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why communalism is considered a threat to democracy.",
+      "answer": "Communalism promotes division and conflict between religious groups, weakening unity and democratic values.",
+      "answer_outline": [
+        "Communal divisions",
+        "Conflict and violence",
+        "Threat to democracy"
+      ],
+      "key_concepts": ["communalism", "democracy"],
+      "marks": 5,
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how democracy helps manage social diversity.",
+      "answer": "Democracy allows different groups to express their interests peacefully and ensures fair representation through elections and policies.",
+      "answer_outline": [
+        "Political participation",
+        "Representation",
+        "Peaceful conflict resolution"
+      ],
+      "key_concepts": ["democracy", "diversity management"],
+      "marks": 5,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how social equality can strengthen national unity.",
+      "answer": "When all groups feel respected and treated equally, social harmony improves and national unity becomes stronger.",
+      "answer_outline": [
+        "Equality among groups",
+        "Social harmony",
+        "National integration"
+      ],
+      "key_concepts": ["social equality", "national unity"],
+      "marks": 5,
+      "source_section": "Overview"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Exploring the Investigative World of Science",
+  "difficulty": "Hard",
+  "source_pdf": "hecu101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Design Your Own Scientific Investigation",
+      "objective": "Develop the ability to design a complete scientific investigation",
+      "materials": ["Notebook", "Pen", "Simple household materials"],
+      "steps": [
+        "Choose a question from daily life (e.g., Which material melts ice fastest?)",
+        "Write a hypothesis",
+        "Design an experiment with variables and controls",
+        "Record observations and conclude results"
+      ],
+      "learning_outcome": "Understands the full process of scientific investigation",
+      "evaluation": "Quality of experimental design and conclusion (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Variable Identification Activity",
+      "objective": "Understand independent, dependent, and controlled variables",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select a simple experiment like plant growth in sunlight",
+        "Identify the independent variable",
+        "Identify the dependent variable",
+        "List controlled variables"
+      ],
+      "learning_outcome": "Recognises different types of variables in experiments",
+      "evaluation": "Correct identification of variables (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Experimental Error Analysis",
+      "objective": "Understand possible errors in experiments",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Observe a simple experiment demonstration",
+        "List possible sources of error",
+        "Suggest ways to reduce those errors"
+      ],
+      "learning_outcome": "Develops critical thinking about experimental accuracy",
+      "evaluation": "Quality of error analysis (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Scientific Method Flowchart",
+      "objective": "Analyse and represent the scientific method",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Study the steps of scientific investigation",
+        "Create a flowchart showing each step",
+        "Include observation, hypothesis, experiment, and conclusion"
+      ],
+      "learning_outcome": "Deep understanding of the scientific method",
+      "evaluation": "Completeness and clarity of flowchart (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Real-Life Phenomenon Investigation",
+      "objective": "Apply scientific thinking to explain real-life phenomena",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a daily phenomenon (e.g., why dough rises)",
+        "Write observations about it",
+        "Propose a scientific explanation",
+        "Suggest an experiment to test it"
+      ],
+      "learning_outcome": "Applies scientific reasoning to everyday life",
+      "evaluation": "Logical explanation and experiment design (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Observation Data Table Project",
+      "objective": "Learn systematic data recording",
+      "materials": ["Notebook", "Ruler"],
+      "steps": [
+        "Observe a process such as ice melting or plant growth",
+        "Record observations in a structured table",
+        "Analyse patterns in the data"
+      ],
+      "learning_outcome": "Improves scientific data recording and interpretation",
+      "evaluation": "Accuracy and organisation of data (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Hypothesis Testing Challenge",
+      "objective": "Test multiple hypotheses for a scientific question",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a scientific question",
+        "Write two different hypotheses",
+        "Design experiments to test each hypothesis",
+        "Predict possible outcomes"
+      ],
+      "learning_outcome": "Develops advanced reasoning skills",
+      "evaluation": "Quality of hypotheses and testing plan (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Controlled Experiment Planning",
+      "objective": "Understand the importance of controlling variables",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Plan an experiment where only one factor changes",
+        "List all other factors that must remain constant",
+        "Explain why controlling variables is important"
+      ],
+      "learning_outcome": "Understands controlled experiments",
+      "evaluation": "Correct identification of controls (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Scientific Investigation Report",
+      "objective": "Write a formal scientific report",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Perform a simple investigation",
+        "Write the aim, hypothesis, procedure, results, and conclusion",
+        "Present the report clearly"
+      ],
+      "learning_outcome": "Develops scientific documentation skills",
+      "evaluation": "Structure and clarity of report (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Compare Observation and Experiment",
+      "objective": "Distinguish between observation and experimentation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose one natural event to observe",
+        "Describe observations without testing",
+        "Design an experiment to investigate it further"
+      ],
+      "learning_outcome": "Understands difference between observation and experimentation",
+      "evaluation": "Quality of explanation (10 marks)"
+    }
+  ]
+}

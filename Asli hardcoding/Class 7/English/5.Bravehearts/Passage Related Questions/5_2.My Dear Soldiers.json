@@ -1,0 +1,120 @@
+{
+  "subject": "English",
+  "course_code": "JEF P101",
+  "chapter": "My Dear Soldiers",
+  "title": "Extended Reading Passages with Questions – My Dear Soldiers",
+  "total_passages": 10,
+  "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+  "passages": [
+    {
+      "passage_number": 1,
+      "paragraph": "Soldiers serve the nation with courage and dedication. They leave their homes and families to protect the country from threats. Their life is disciplined and demanding, but they remain committed to their duty.",
+      "questions": [
+        "Who do soldiers serve?",
+        "What qualities do soldiers show?",
+        "What do soldiers leave behind?",
+        "Why is their life demanding?",
+        "What keeps soldiers committed?"
+      ]
+    },
+    {
+      "passage_number": 2,
+      "paragraph": "Training is an important part of a soldier's life. It prepares them physically and mentally for difficult situations. Through rigorous exercises, soldiers learn teamwork, endurance, and how to face challenges bravely.",
+      "questions": [
+        "Why is training important for soldiers?",
+        "How does training prepare them?",
+        "What types of exercises do they do?",
+        "What qualities do soldiers learn through training?",
+        "How does training help them face challenges?"
+      ]
+    },
+    {
+      "passage_number": 3,
+      "paragraph": "Soldiers often face dangerous situations during their service. Despite fear and uncertainty, they remain calm and make quick decisions. Their courage and determination inspire respect and admiration.",
+      "questions": [
+        "What kind of situations do soldiers face?",
+        "How do soldiers handle fear?",
+        "What kind of decisions do they make?",
+        "Which qualities inspire respect?",
+        "Why are they admired?"
+      ]
+    },
+    {
+      "passage_number": 4,
+      "paragraph": "Discipline is essential for a soldier. It ensures that orders are followed properly and missions are completed efficiently. Without discipline, the army would not function effectively.",
+      "questions": [
+        "Why is discipline essential?",
+        "What does discipline ensure?",
+        "How does discipline affect mission completion?",
+        "What happens without discipline?",
+        "Why is it important for the army?"
+      ]
+    },
+    {
+      "passage_number": 5,
+      "paragraph": "Patriotism drives soldiers to protect the nation. They put the country’s safety above personal comfort or desires. This selfless attitude earns them the respect of citizens and leaders alike.",
+      "questions": [
+        "What drives soldiers to serve?",
+        "What do soldiers prioritize?",
+        "How do they show selflessness?",
+        "Who respects the soldiers?",
+        "Why are soldiers admired by citizens?"
+      ]
+    },
+    {
+      "passage_number": 6,
+      "paragraph": "Soldiers work as a team to achieve success. Teamwork ensures that each member supports others and coordinates actions effectively. Without cooperation, missions could fail and risks would increase.",
+      "questions": [
+        "Why do soldiers work as a team?",
+        "What does teamwork ensure?",
+        "How do soldiers support each other?",
+        "What happens without cooperation?",
+        "Why is teamwork important for missions?"
+      ]
+    },
+    {
+      "passage_number": 7,
+      "paragraph": "Communication is a key part of military life. Soldiers use clear signals and messages to coordinate strategies. They also maintain contact with their families, which provides emotional support during difficult times.",
+      "questions": [
+        "Why is communication important for soldiers?",
+        "How do soldiers coordinate strategies?",
+        "What kind of messages do they use?",
+        "Why do they communicate with families?",
+        "How does family communication help soldiers?"
+      ]
+    },
+    {
+      "passage_number": 8,
+      "paragraph": "Leadership within the army is crucial. Commanders guide soldiers, make decisions in critical situations, and maintain morale. A strong leader ensures that soldiers perform their duties efficiently and safely.",
+      "questions": [
+        "Why is leadership important in the army?",
+        "Who guides the soldiers?",
+        "What decisions do leaders make?",
+        "How do leaders maintain morale?",
+        "What ensures soldiers perform efficiently?"
+      ]
+    },
+    {
+      "passage_number": 9,
+      "paragraph": "Soldiers often make personal sacrifices, such as missing family events or enduring harsh conditions. These sacrifices protect civilians, maintain peace, and strengthen national security.",
+      "questions": [
+        "What personal sacrifices do soldiers make?",
+        "Why do soldiers endure harsh conditions?",
+        "Who benefits from these sacrifices?",
+        "How do these sacrifices affect peace?",
+        "Why are these sacrifices important for national security?"
+      ]
+    },
+    {
+      "passage_number": 10,
+      "paragraph": "The story of soldiers teaches us about bravery, dedication, and patriotism. Their courage, discipline, and teamwork are examples for everyone. Respecting and understanding their sacrifices helps us appreciate the value of national service.",
+      "questions": [
+        "What lessons do we learn from soldiers?",
+        "Which qualities make soldiers exemplary?",
+        "Why is bravery important?",
+        "How should we respond to soldiers’ sacrifices?",
+        "Why is national service valuable?"
+      ]
+    }
+  ]
+}

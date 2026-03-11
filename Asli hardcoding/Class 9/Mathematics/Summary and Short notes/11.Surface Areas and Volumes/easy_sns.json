@@ -1,0 +1,34 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Surface Areas and Volumes",
+    "difficulty": "Easy",
+    "short_notes": {
+        "key_points": [
+            "Surface area is the total area covering the outside of a 3D object.",
+            "Volume is the amount of space occupied by a 3D object.",
+            "Units: cm², m² for area; cm³, m³ for volume.",
+            "Surface areas and volumes formulas vary for different solids: cube, cuboid, sphere, cone, cylinder, etc."
+        ],
+        "formulas": [
+            "Cube → Surface Area = 6a²; Volume = a³",
+            "Cuboid → Surface Area = 2(lb+bh+hl); Volume = l×b×h",
+            "Sphere → Surface Area = 4πr²; Volume = (4/3)πr³",
+            "Hemisphere → Surface Area = 3πr²; Volume = (2/3)πr³",
+            "Cylinder → Surface Area = 2πr(h+r); Volume = πr²h",
+            "Cone → Surface Area = πr(l+r); Volume = (1/3)πr²h"
+        ],
+        "examples": [
+            "Cube with side 5 cm → SA = 6×25 = 150 cm²; V = 125 cm³",
+            "Cylinder r = 7 cm, h = 10 cm → SA = 2π×7(7+10) ≈ 747.7 cm²; V = π×49×10 ≈ 1539.4 cm³",
+            "Sphere r = 14 cm → SA = 4π×196 ≈ 2460.8 cm²; V = (4/3)π×2744 ≈ 11497.3 cm³"
+        ],
+        "exam_tips": [
+            "Always write units.",
+            "Check whether surface area required is total or curved.",
+            "For composite solids, calculate parts separately and add.",
+            "Use π ≈ 3.14 unless exact value is needed.",
+            "For hemispheres, curved surface area = 2πr²; total surface area = 3πr²."
+        ]
+    }
+}

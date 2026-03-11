@@ -1,0 +1,178 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - Geography)",
+    "chapter": "Water: Our Lifeline",
+    "difficulty": "Easy",
+    "source_pdf": "cbse_class7_geography_ch5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Water Sources Map Activity",
+            "objective": "Identify major rivers, lakes, and groundwater sources in India",
+            "materials": [
+                "Map of India",
+                "Color pencils",
+                "Atlas or textbook"
+            ],
+            "steps": [
+                "Take a blank political map of India",
+                "Mark major rivers, lakes, and groundwater sources",
+                "Write one important fact about each source"
+            ],
+            "learning_outcome": "Students learn the geographical distribution of water sources in India",
+            "evaluation": "Correct marking and labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Rainwater Harvesting Model",
+            "objective": "Understand methods of water conservation",
+            "materials": [
+                "Plastic bottle or container",
+                "Clay or sand",
+                "Small stones",
+                "Water"
+            ],
+            "steps": [
+                "Cut a plastic bottle and prepare a simple model showing rainwater collection",
+                "Use sand, clay, and stones to filter water",
+                "Demonstrate how water can be stored and used"
+            ],
+            "learning_outcome": "Students understand practical ways to conserve water",
+            "evaluation": "Model creativity and functionality (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Daily Water Usage Diary",
+            "objective": "Understand personal water consumption",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Record all water used in a day at home or school",
+                "Categorize usage as drinking, cleaning, bathing, or gardening",
+                "Reflect on how to reduce water wastage"
+            ],
+            "learning_outcome": "Students become aware of water usage and conservation methods",
+            "evaluation": "Completeness and reflection accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Water Pollution Poster",
+            "objective": "Learn about causes and effects of water pollution",
+            "materials": [
+                "A3 paper",
+                "Colors",
+                "Pictures from magazines or internet"
+            ],
+            "steps": [
+                "Choose one type of water pollution (industrial, domestic, or agricultural)",
+                "Create a poster showing its causes and effects",
+                "Suggest ways to reduce water pollution"
+            ],
+            "learning_outcome": "Students understand water pollution and its impact",
+            "evaluation": "Creativity and information accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Experiment: Water Filtration",
+            "objective": "Observe how water can be purified",
+            "materials": [
+                "Plastic bottle",
+                "Gravel, sand, cotton",
+                "Dirty water"
+            ],
+            "steps": [
+                "Cut the bottle and layer cotton, sand, and gravel inside",
+                "Pour dirty water through the filter",
+                "Observe and note the changes in water clarity"
+            ],
+            "learning_outcome": "Students learn basic water filtration techniques",
+            "evaluation": "Experiment observation and reporting (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Comparison of Rivers Activity",
+            "objective": "Understand differences in river sources and uses",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Textbook or atlas"
+            ],
+            "steps": [
+                "Select two rivers from different regions of India",
+                "Compare their sources, length, and usage (irrigation, drinking, transport)",
+                "Write a short summary of similarities and differences"
+            ],
+            "learning_outcome": "Students understand regional diversity of rivers and their importance",
+            "evaluation": "Accuracy and completeness of comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Creative Writing: A Day Without Water",
+            "objective": "Develop awareness about water scarcity",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Imagine a day without any water at home or school",
+                "Write a short story describing challenges faced",
+                "Suggest solutions to conserve water"
+            ],
+            "learning_outcome": "Students understand importance of water in daily life",
+            "evaluation": "Creativity and relevance to chapter concepts (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Water Conservation Slogan Activity",
+            "objective": "Promote water conservation through creative expression",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Chart paper"
+            ],
+            "steps": [
+                "Create five slogans promoting water conservation",
+                "Illustrate them with small drawings or symbols",
+                "Share slogans with classmates"
+            ],
+            "learning_outcome": "Students express understanding of water conservation in a creative way",
+            "evaluation": "Creativity and clarity of message (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Mini Quiz on Water",
+            "objective": "Reinforce chapter knowledge",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Question cards"
+            ],
+            "steps": [
+                "Prepare 10 simple questions on water sources, uses, and conservation",
+                "Ask classmates to answer them",
+                "Keep score for correct answers"
+            ],
+            "learning_outcome": "Students strengthen knowledge through peer learning",
+            "evaluation": "Question quality and participation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Field Visit: Local Water Body",
+            "objective": "Observe a real water source and its uses",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Camera (optional)"
+            ],
+            "steps": [
+                "Visit a nearby pond, lake, or river",
+                "Observe and note its uses and condition",
+                "Discuss with classmates ways to protect it"
+            ],
+            "learning_outcome": "Students connect theoretical knowledge with real-life observation",
+            "evaluation": "Observation detail and reflection (10 marks)"
+        }
+    ]
+}

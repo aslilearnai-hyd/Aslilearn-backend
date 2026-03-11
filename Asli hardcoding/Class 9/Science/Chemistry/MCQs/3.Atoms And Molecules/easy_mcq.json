@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T18:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who proposed the 'Law of Conservation of Mass'?",
+            "options": {
+                "A": "John Dalton",
+                "B": "Antoine L. Lavoisier",
+                "C": "Joseph Proust",
+                "D": "J.J. Thomson"
+            },
+            "correct_answer": "B",
+            "explanation": "Antoine L. Lavoisier established that mass is neither created nor destroyed in a chemical reaction.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The Law of Constant Proportions is also known as:",
+            "options": {
+                "A": "Law of Definite Proportions",
+                "B": "Law of Multiple Proportions",
+                "C": "Law of Conservation of Mass",
+                "D": "Dalton's Atomic Theory"
+            },
+            "correct_answer": "A",
+            "explanation": "It states that a chemical compound always contains its component elements in a fixed ratio by mass.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the building block of all matter?",
+            "options": {
+                "A": "Molecules",
+                "B": "Atoms",
+                "C": "Compounds",
+                "D": "Elements"
+            },
+            "correct_answer": "B",
+            "explanation": "Atoms are the smallest particles of an element that can take part in a chemical reaction.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "The atomic radius is measured in:",
+            "options": {
+                "A": "Millimeters",
+                "B": "Nanometers",
+                "C": "Centimeters",
+                "D": "Meters"
+            },
+            "correct_answer": "B",
+            "explanation": "Atomic radius is extremely small, typically measured in nanometers ($10^{-9}$ m).",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is the symbol for Iron?",
+            "options": {
+                "A": "Ir",
+                "B": "In",
+                "C": "Fe",
+                "D": "I"
+            },
+            "correct_answer": "C",
+            "explanation": "The symbol Fe comes from its Latin name 'Ferrum'.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "The number of atoms constituting a molecule is known as its:",
+            "options": {
+                "A": "Valency",
+                "B": "Atomic mass",
+                "C": "Atomicity",
+                "D": "Isotope"
+            },
+            "correct_answer": "C",
+            "explanation": "Atomicity describes whether a molecule is monoatomic, diatomic, polyatomic, etc.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "The atomicity of Oxygen ($O_2$) is:",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Oxygen exists as a diatomic molecule ($O_2$), meaning it has two atoms.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "The chemical symbol for Sodium is derived from its Latin name:",
+            "options": {
+                "A": "Stannum",
+                "B": "Natrium",
+                "C": "Kalium",
+                "D": "Plumbum"
+            },
+            "correct_answer": "B",
+            "explanation": "Sodium's symbol is Na, derived from Natrium.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "The molecular mass of $H_2O$ is: (Atomic mass of H=1, O=16)",
+            "options": {
+                "A": "17 u",
+                "B": "18 u",
+                "C": "16 u",
+                "D": "20 u"
+            },
+            "correct_answer": "B",
+            "explanation": "$1 \times 2 + 16 = 18$ u.",
+            "difficulty": "easy",
+            "source_section": "Section 3.5.1"
+        },
+        {
+            "question_number": 10,
+            "question": "A group of atoms carrying a fixed charge on them is called:",
+            "options": {
+                "A": "Molecules",
+                "B": "Polyatomic ions",
+                "C": "Isotopes",
+                "D": "Valency"
+            },
+            "correct_answer": "B",
+            "explanation": "Ions consisting of more than one atom are called polyatomic ions (e.g., $OH^{-}$, $SO_4^{2-}$).",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following is a monoatomic molecule?",
+            "options": {
+                "A": "Hydrogen",
+                "B": "Helium",
+                "C": "Nitrogen",
+                "D": "Chlorine"
+            },
+            "correct_answer": "B",
+            "explanation": "Noble gases like Helium exist as single atoms.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Valency of Magnesium is:",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Magnesium (Mg) belongs to group 2 and has a valency of 2.",
+            "difficulty": "easy",
+            "source_section": "Section 3.4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "The chemical formula for Magnesium Chloride is:",
+            "options": {
+                "A": "MgCl",
+                "B": "$MgCl_2$",
+                "C": "$Mg_2Cl$",
+                "D": "$Mg_2Cl_2$"
+            },
+            "correct_answer": "B",
+            "explanation": "Mg has valency 2 and Cl has valency 1. Criss-crossing gives $MgCl_2$.",
+            "difficulty": "easy",
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "1 Atomic Mass Unit (u) is defined as exactly:",
+            "options": {
+                "A": "Mass of one Oxygen atom",
+                "B": "1/12th the mass of one Carbon-12 atom",
+                "C": "Mass of one Hydrogen atom",
+                "D": "1/16th the mass of one Oxygen atom"
+            },
+            "correct_answer": "B",
+            "explanation": "Carbon-12 is the standard reference for atomic mass units.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "The formula of Calcium Oxide is:",
+            "options": {
+                "A": "CaO",
+                "B": "$Ca_2O$",
+                "C": "$CaO_2$",
+                "D": "$Ca_2O_2$"
+            },
+            "correct_answer": "A",
+            "explanation": "Both Ca and O have a valency of 2, so they combine in a 1:1 ratio.",
+            "difficulty": "easy",
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "The abbreviation used for the name of an element is called its:",
+            "options": {
+                "A": "Atomicity",
+                "B": "Valency",
+                "C": "Symbol",
+                "D": "Atomic number"
+            },
+            "correct_answer": "C",
+            "explanation": "Symbols like H, He, and Li represent elements.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Molecules of elements contain ______ types of atoms.",
+            "options": {
+                "A": "Different",
+                "B": "Same",
+                "C": "Both same and different",
+                "D": "No"
+            },
+            "correct_answer": "B",
+            "explanation": "Molecules of elements like $H_2$ or $P_4$ contain only one kind of atom.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "The valency of Carbon is:",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "1"
+            },
+            "correct_answer": "C",
+            "explanation": "Carbon is tetravalent, meaning it has a valency of 4.",
+            "difficulty": "easy",
+            "source_section": "Section 3.4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Water ($H_2O$) always contains Hydrogen and Oxygen in the ratio ______ by mass.",
+            "options": {
+                "A": "1:8",
+                "B": "8:1",
+                "C": "2:1",
+                "D": "1:2"
+            },
+            "correct_answer": "A",
+            "explanation": "$2 \text{g of H} : 16 \text{g of O} = 1:8$.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A positively charged ion is called a/an:",
+            "options": {
+                "A": "Anion",
+                "B": "Cation",
+                "C": "Neutron",
+                "D": "Isotope"
+            },
+            "correct_answer": "B",
+            "explanation": "Cations are positive ions, like $Na^+$.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "A negatively charged ion is called a/an:",
+            "options": {
+                "A": "Cation",
+                "B": "Anion",
+                "C": "Proton",
+                "D": "Electron"
+            },
+            "correct_answer": "B",
+            "explanation": "Anions are negative ions, like $Cl^-$.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Atomicity of Phosphorus ($P_4$) is:",
+            "options": {
+                "A": "Diatomic",
+                "B": "Triatomic",
+                "C": "Tetra-atomic",
+                "D": "Monoatomic"
+            },
+            "correct_answer": "C",
+            "explanation": "Phosphorus exists as a $P_4$ molecule.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Symbol for Silver is:",
+            "options": {
+                "A": "Si",
+                "B": "Ag",
+                "C": "Au",
+                "D": "S"
+            },
+            "correct_answer": "B",
+            "explanation": "Ag comes from the Latin name 'Argentum'.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Dalton's atomic theory stated that atoms are ______.",
+            "options": {
+                "A": "Divisible",
+                "B": "Indivisible",
+                "C": "Large",
+                "D": "Created in reactions"
+            },
+            "correct_answer": "B",
+            "explanation": "Dalton proposed that atoms were indivisible particles that cannot be created or destroyed.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "The combining capacity of an atom is its:",
+            "options": {
+                "A": "Valency",
+                "B": "Molecule",
+                "C": "Atomic mass",
+                "D": "Atomicity"
+            },
+            "correct_answer": "A",
+            "explanation": "Valency determines how atoms combine with each other to form compounds.",
+            "difficulty": "easy",
+            "source_section": "Section 3.4.1"
+        }
+    ]
+}

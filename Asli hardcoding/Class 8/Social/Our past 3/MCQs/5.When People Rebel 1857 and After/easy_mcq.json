@@ -1,0 +1,68 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: When People Rebel – 1857 and After",
+  "difficulty": "easy",
+  "total_questions": 5,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "In which year did the Revolt of 1857 begin?",
+      "options": {
+        "A": "1757",
+        "B": "1857",
+        "C": "1905",
+        "D": "1947"
+      },
+      "correct_answer": "B",
+      "explanation": "The Revolt of 1857 started in the year 1857."
+    },
+    {
+      "question_number": 2,
+      "question": "Where did the Revolt of 1857 begin?",
+      "options": {
+        "A": "Delhi",
+        "B": "Meerut",
+        "C": "Lucknow",
+        "D": "Kanpur"
+      },
+      "correct_answer": "B",
+      "explanation": "The revolt began at Meerut when sepoys rebelled against British officers."
+    },
+    {
+      "question_number": 3,
+      "question": "Who was the last Mughal emperor during the Revolt of 1857?",
+      "options": {
+        "A": "Bahadur Shah Zafar",
+        "B": "Akbar",
+        "C": "Aurangzeb",
+        "D": "Shah Jahan"
+      },
+      "correct_answer": "A",
+      "explanation": "Bahadur Shah Zafar was declared the leader of the rebels during the revolt."
+    },
+    {
+      "question_number": 4,
+      "question": "Who was the queen of Jhansi who fought bravely in the Revolt of 1857?",
+      "options": {
+        "A": "Rani Lakshmibai",
+        "B": "Rani Durgavati",
+        "C": "Begum Hazrat Mahal",
+        "D": "Rani Chennamma"
+      },
+      "correct_answer": "A",
+      "explanation": "Rani Lakshmibai of Jhansi played an important role in the revolt."
+    },
+    {
+      "question_number": 5,
+      "question": "Who were the Indian soldiers in the British army called?",
+      "options": {
+        "A": "Sepoys",
+        "B": "Planters",
+        "C": "Merchants",
+        "D": "Farmers"
+      },
+      "correct_answer": "A",
+      "explanation": "Indian soldiers serving in the British army were known as sepoys."
+    }
+  ]
+}

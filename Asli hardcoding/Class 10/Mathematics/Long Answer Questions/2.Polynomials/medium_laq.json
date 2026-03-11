@@ -1,0 +1,362 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-01T23:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain with examples how polynomials are classified based on the number of terms.",
+            "answer": "Polynomials are classified based on the number of terms as monomials (one term), binomials (two terms) and trinomials (three terms). For example, 5x is a monomial, x + 3 is a binomial and x² + 2x + 1 is a trinomial.",
+            "answer_outline": [
+                "Classification",
+                "Explanation",
+                "Examples"
+            ],
+            "key_concepts": [
+                "monomial",
+                "binomial",
+                "trinomial"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why x⁻² + 3x is not a polynomial.",
+            "answer": "The expression x⁻² + 3x is not a polynomial because it contains a variable with a negative power. In a polynomial, the powers of variables must be non-negative integers.",
+            "answer_outline": [
+                "Polynomial rule",
+                "Reason"
+            ],
+            "key_concepts": [
+                "conditions of polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the relationship between the degree of a polynomial and the shape of its graph.",
+            "answer": "The degree of a polynomial determines the general shape of its graph. A degree one polynomial has a straight-line graph, degree two has a parabolic graph, and higher-degree polynomials have more curves.",
+            "answer_outline": [
+                "Degree",
+                "Graph shape"
+            ],
+            "key_concepts": [
+                "degree and graph"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how the value of a polynomial is found at a given point.",
+            "answer": "To find the value of a polynomial at a given point, substitute the value of the variable into the polynomial and simplify the expression.",
+            "answer_outline": [
+                "Substitution",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "value of polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain with a graph how zeroes of a polynomial are obtained.",
+            "answer": "Zeroes of a polynomial are obtained from the graph by finding the x-coordinates where the graph intersects the x-axis. These points indicate where the polynomial value becomes zero.",
+            "answer_outline": [
+                "Graph",
+                "X-axis intersection"
+            ],
+            "key_concepts": [
+                "zeroes",
+                "graph"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why a linear polynomial can have only one zero.",
+            "answer": "A linear polynomial has degree one and its graph is a straight line. A straight line can intersect the x-axis at only one point, so it can have only one zero.",
+            "answer_outline": [
+                "Graph reasoning",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "linear polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why a quadratic polynomial may have two, one or no zeroes.",
+            "answer": "A quadratic polynomial has a parabolic graph. Depending on whether the parabola cuts, touches or does not intersect the x-axis, it may have two, one or no zeroes.",
+            "answer_outline": [
+                "Parabola cases",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "quadratic polynomial"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the importance of arranging a polynomial in standard form.",
+            "answer": "Arranging a polynomial in standard form helps in easily identifying its degree, leading coefficient and type of polynomial.",
+            "answer_outline": [
+                "Standard form",
+                "Importance"
+            ],
+            "key_concepts": [
+                "standard form"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why the degree of a non-zero constant polynomial is zero.",
+            "answer": "A non-zero constant polynomial has no variable term. Since the highest power of the variable is zero, its degree is zero.",
+            "answer_outline": [
+                "Constant polynomial",
+                "Degree"
+            ],
+            "key_concepts": [
+                "constant polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why a polynomial cannot have fractional powers of variables.",
+            "answer": "Fractional powers violate the definition of a polynomial, which requires all exponents of variables to be non-negative integers.",
+            "answer_outline": [
+                "Definition rule",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "polynomial definition"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how the number of zeroes of a polynomial is related to its degree using examples.",
+            "answer": "The maximum number of zeroes of a polynomial is equal to its degree. For example, a linear polynomial has at most one zero and a quadratic polynomial has at most two zeroes.",
+            "answer_outline": [
+                "Statement",
+                "Examples"
+            ],
+            "key_concepts": [
+                "degree and zeroes"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the graph of a polynomial is continuous.",
+            "answer": "The graph of a polynomial is continuous because it has no breaks or gaps for any real value of the variable.",
+            "answer_outline": [
+                "Continuity",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "polynomial graph"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how polynomials are useful in modelling real-life situations.",
+            "answer": "Polynomials are used to model relationships involving area, profit and loss, speed, distance and other real-life situations with predictable patterns.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why the zero polynomial has no defined degree.",
+            "answer": "The zero polynomial has all coefficients equal to zero, so there is no highest power of the variable to determine its degree.",
+            "answer_outline": [
+                "Zero polynomial",
+                "Reason"
+            ],
+            "key_concepts": [
+                "zero polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the role of coefficients in determining the value of a polynomial.",
+            "answer": "Coefficients determine the contribution of each term in the polynomial and influence the value of the polynomial for different variable values.",
+            "answer_outline": [
+                "Coefficients",
+                "Effect"
+            ],
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why a polynomial of degree three can have at most three zeroes.",
+            "answer": "Because the degree of the polynomial is three, and the maximum number of zeroes possible equals the degree.",
+            "answer_outline": [
+                "Degree",
+                "Zeroes"
+            ],
+            "key_concepts": [
+                "cubic polynomial"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how graphs help in comparing different polynomials.",
+            "answer": "Graphs help compare polynomials by showing their shapes, intercepts, and relative positions on the coordinate plane.",
+            "answer_outline": [
+                "Graphs",
+                "Comparison"
+            ],
+            "key_concepts": [
+                "graph comparison"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why every polynomial is an algebraic expression but not every algebraic expression is a polynomial.",
+            "answer": "All polynomials are algebraic expressions, but algebraic expressions containing negative or fractional powers are not polynomials.",
+            "answer_outline": [
+                "Inclusion",
+                "Condition"
+            ],
+            "key_concepts": [
+                "algebraic expressions"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why the x-intercepts of a polynomial graph represent its zeroes.",
+            "answer": "At x-intercepts, the value of y is zero, meaning the polynomial equals zero at those x-values.",
+            "answer_outline": [
+                "X-intercepts",
+                "Zeroes"
+            ],
+            "key_concepts": [
+                "x-intercepts"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how the leading coefficient affects the graph of a polynomial.",
+            "answer": "The leading coefficient affects the direction and steepness of the graph of the polynomial.",
+            "answer_outline": [
+                "Leading coefficient",
+                "Graph effect"
+            ],
+            "key_concepts": [
+                "leading coefficient"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of polynomials in higher mathematics.",
+            "answer": "Polynomials form the basis for equations, functions, calculus and many advanced mathematical concepts.",
+            "answer_outline": [
+                "Importance",
+                "Higher math"
+            ],
+            "key_concepts": [
+                "importance of polynomials"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how polynomial functions differ from rational functions.",
+            "answer": "Polynomial functions have only non-negative integer powers, while rational functions may contain variables in denominators.",
+            "answer_outline": [
+                "Difference",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "polynomial vs rational"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why polynomials are easier to graph than other algebraic expressions.",
+            "answer": "Polynomials are continuous and smooth, making their graphs easier to draw and interpret.",
+            "answer_outline": [
+                "Continuity",
+                "Graphing"
+            ],
+            "key_concepts": [
+                "graphing polynomials"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how zeroes of polynomials help in solving equations.",
+            "answer": "Zeroes help identify values of variables that satisfy polynomial equations.",
+            "answer_outline": [
+                "Zeroes",
+                "Equations"
+            ],
+            "key_concepts": [
+                "solutions"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the role of polynomials in mathematical modelling.",
+            "answer": "Polynomials help represent and analyze relationships between variables in real-life models.",
+            "answer_outline": [
+                "Modelling",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "modelling"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        }
+    ]
+}

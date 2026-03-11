@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 4: Food Security in India",
+  "generated_at": "2026-03-07T00:42:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is food security?",
+      "answer": "Food security means availability, accessibility, and affordability of food to all people at all times.",
+      "key_concepts": ["food security", "definition"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Name the three dimensions of food security.",
+      "answer": "The three dimensions are Availability, Accessibility, and Affordability.",
+      "key_concepts": ["dimensions", "availability", "accessibility", "affordability"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is meant by 'Availability of food'?",
+      "answer": "Availability means food production within the country, food imports, and the stock stored in government granaries.",
+      "key_concepts": ["availability", "production", "imports", "stocks"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Define 'Accessibility' of food.",
+      "answer": "Accessibility means food is within reach of every person without any barrier.",
+      "key_concepts": ["accessibility", "reach"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What does 'Affordability' of food imply?",
+      "answer": "Affordability implies that an individual has enough money to buy sufficient, safe, and nutritious food to meet one's dietary needs.",
+      "key_concepts": ["affordability", "purchasing power"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which was the most devastating famine in India?",
+      "answer": "The Famine of Bengal in 1943 was the most devastating famine in India, which killed 30 lakh people.",
+      "key_concepts": ["Bengal Famine", "1943"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What is chronic hunger?",
+      "answer": "Chronic hunger is a consequence of diets persistently inadequate in terms of quantity and/or quality.",
+      "key_concepts": ["chronic hunger", "poverty"],
+      "marks": 2,
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is seasonal hunger?",
+      "answer": "Seasonal hunger is related to cycles of food growing and harvesting, occurring when work is unavailable.",
+      "key_concepts": ["seasonal hunger", "agriculture cycles"],
+      "marks": 2,
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Define 'Buffer Stock'.",
+      "answer": "Buffer Stock is the stock of foodgrains, namely wheat and rice, procured by the government through the Food Corporation of India (FCI).",
+      "key_concepts": ["buffer stock", "FCI", "storage"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What is Minimum Support Price (MSP)?",
+      "answer": "MSP is the pre-announced price at which the government purchases crops from the farmers to provide them with a guaranteed income.",
+      "key_concepts": ["MSP", "farmers", "incentive"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What is 'Issue Price'?",
+      "answer": "Issue Price is the subsidized price at which the government distributes foodgrains from buffer stocks through ration shops.",
+      "key_concepts": ["issue price", "subsidized food"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Define Public Distribution System (PDS).",
+      "answer": "PDS is the system through which the food procured by the FCI is distributed through government-regulated ration shops among the poorer sections of society.",
+      "key_concepts": ["PDS", "ration shops", "distribution"],
+      "marks": 2,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 13,
+      "question": "What are Fair Price Shops?",
+      "answer": "Fair Price Shops, commonly known as ration shops, keep stocks of foodgrains, sugar, and kerosene and sell them at prices lower than the market rate.",
+      "key_concepts": ["Fair Price Shops", "ration"],
+      "marks": 2,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the full form of FCI?",
+      "answer": "The full form of FCI is the Food Corporation of India.",
+      "key_concepts": ["FCI", "Food Corporation"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Name two states where the Green Revolution was most successful.",
+      "answer": "Punjab and Haryana achieved the highest growth rates in foodgrain production during the Green Revolution.",
+      "key_concepts": ["Punjab", "Haryana", "Green Revolution"],
+      "marks": 2,
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the Antyodaya Anna Yojana (AAY)?",
+      "answer": "AAY is a scheme launched in 2000 that provides highly subsidized foodgrains to the poorest of the poor among BPL families.",
+      "key_concepts": ["AAY", "poorest families"],
+      "marks": 2,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Mention one target group of the Integrated Child Development Services (ICDS).",
+      "answer": "Children under the age of six years and pregnant/nursing mothers are the primary target group of ICDS.",
+      "key_concepts": ["ICDS", "nutrition", "children"],
+      "marks": 2,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the National Food Security Act, 2013?",
+      "answer": "This act provides for food and nutritional security by ensuring access to adequate quality food at affordable prices to eligible households.",
+      "key_concepts": ["NFSA 2013", "legal right to food"],
+      "marks": 2,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 19,
+      "question": "What is a 'Subsidy'?",
+      "answer": "A subsidy is a payment that the government makes to a producer or supplier to keep the price of a commodity low for the consumers.",
+      "key_concepts": ["subsidy", "financial aid"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which cooperative society provides milk and vegetables in Delhi?",
+      "answer": "Mother Dairy is making strides in providing milk and vegetables at controlled rates in Delhi.",
+      "key_concepts": ["Mother Dairy", "Delhi", "cooperative"],
+      "marks": 2,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the 'White Revolution'?",
+      "answer": "The White Revolution refers to the massive increase in milk production in India, led by cooperatives like Amul.",
+      "key_concepts": ["Amul", "milk production", "White Revolution"],
+      "marks": 2,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Mention one malnutrition-related scheme for senior citizens.",
+      "answer": "The Annapurna Scheme (APS) provides 10 kg of foodgrains free of cost to indigent senior citizens.",
+      "key_concepts": ["Annapurna", "senior citizens", "free grain"],
+      "marks": 2,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What happens to the price of food grains during a drought?",
+      "answer": "During a drought, the total production of foodgrains decreases, leading to a shortage, which results in a rise in prices.",
+      "key_concepts": ["drought", "price rise", "shortage"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "What are 'Grain Banks'?",
+      "answer": "Grain Banks are community-based safety nets where villagers store grain to borrow during lean seasons or calamities.",
+      "key_concepts": ["grain banks", "Maharashtra", "ADS"],
+      "marks": 2,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Who are the most food-insecure groups in urban areas?",
+      "answer": "In urban areas, food-insecure people include casual laborers, workers in ill-paid occupations, and seasonal workers.",
+      "key_concepts": ["urban insecure", "casual labor", "low wages"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    }
+  ]
+}

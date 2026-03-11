@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 7: Triangles",
+    "generated_at": "2026-03-05T19:20:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a triangle?",
+                "correct_answer": "A polygon with three sides and three angles",
+                "explanation": "It is the simplest polygon with three edges and vertices.",
+                "source_section": "Section 7.1"
+            },
+            {
+                "question": "How are triangles classified by sides?",
+                "correct_answer": "Equilateral, isosceles, and scalene",
+                "explanation": "Equilateral: all sides equal; Isosceles: two sides equal; Scalene: all sides different.",
+                "source_section": "Section 7.2"
+            },
+            {
+                "question": "How are triangles classified by angles?",
+                "correct_answer": "Acute-angled, right-angled, obtuse-angled",
+                "explanation": "Based on the measure of angles: all <90°, one =90°, one >90° respectively.",
+                "source_section": "Section 7.2"
+            },
+            {
+                "question": "What is the sum of angles in a triangle?",
+                "correct_answer": "180 degrees",
+                "explanation": "The sum of interior angles in any triangle always equals 180°.",
+                "source_section": "Section 7.3"
+            },
+            {
+                "question": "State Pythagoras Theorem.",
+                "correct_answer": "In a right-angled triangle, the square of hypotenuse = sum of squares of other two sides",
+                "explanation": "c² = a² + b² for right-angled triangle with hypotenuse c.",
+                "source_section": "Section 7.4"
+            },
+            {
+                "question": "What is a median of a triangle?",
+                "correct_answer": "A line joining a vertex to the midpoint of the opposite side",
+                "explanation": "It divides the opposite side into two equal parts.",
+                "source_section": "Section 7.5"
+            },
+            {
+                "question": "What is an altitude of a triangle?",
+                "correct_answer": "A perpendicular from a vertex to the opposite side or its extension",
+                "explanation": "It represents the height corresponding to the base.",
+                "source_section": "Section 7.5"
+            },
+            {
+                "question": "Define congruent triangles.",
+                "correct_answer": "Triangles that are identical in shape and size",
+                "explanation": "All corresponding sides and angles are equal.",
+                "source_section": "Section 7.6"
+            },
+            {
+                "question": "Name the criteria for triangle congruence.",
+                "correct_answer": "SSS, SAS, ASA, RHS",
+                "explanation": "Side-Side-Side, Side-Angle-Side, Angle-Side-Angle, Right-angle-Hypotenuse-Side are standard criteria.",
+                "source_section": "Section 7.6"
+            },
+            {
+                "question": "What is the relation between sides and angles in a triangle?",
+                "correct_answer": "The greater side lies opposite the greater angle",
+                "explanation": "This helps in comparing sides or angles based on the triangle’s geometry.",
+                "source_section": "Section 7.7"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Triangle Basics",
+                "content": "A triangle has 3 sides and 3 angles; sum of angles = 180°.",
+                "source_section": "Section 7.1"
+            },
+            {
+                "title": "Types of Triangles by Sides",
+                "content": "Equilateral, isosceles, scalene triangles based on side lengths.",
+                "source_section": "Section 7.2"
+            },
+            {
+                "title": "Types of Triangles by Angles",
+                "content": "Acute, right, obtuse based on interior angles.",
+                "source_section": "Section 7.2"
+            },
+            {
+                "title": "Triangle Congruence",
+                "content": "SSS, SAS, ASA, RHS rules to determine congruence of triangles.",
+                "source_section": "Section 7.6"
+            },
+            {
+                "title": "Pythagoras Theorem",
+                "content": "In right-angled triangle, hypotenuse² = sum of squares of other two sides.",
+                "source_section": "Section 7.4"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The sum of angles in any triangle is always 180°.",
+                "source_section": "Section 7.3"
+            },
+            {
+                "fact": "All medians of a triangle intersect at a point called centroid.",
+                "source_section": "Section 7.5"
+            },
+            {
+                "fact": "Right-angled triangle can use Pythagoras theorem for side calculations.",
+                "source_section": "Section 7.4"
+            },
+            {
+                "fact": "Congruent triangles have equal corresponding sides and angles.",
+                "source_section": "Section 7.6"
+            },
+            {
+                "fact": "The greater side in a triangle is opposite the greater angle.",
+                "source_section": "Section 7.7"
+            }
+        ]
+    }
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: What is Democracy? Why Democracy?",
+    "generated_at": "2026-03-07T22:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Democracy is a form of government in which:",
+            "options": {
+                "A": "The military rules",
+                "B": "Rulers are elected by the people",
+                "C": "Kings rule",
+                "D": "Only rich people rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy means a government where people elect their rulers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The word democracy comes from which language?",
+            "options": {
+                "A": "Latin",
+                "B": "French",
+                "C": "Greek",
+                "D": "German"
+            },
+            "correct_answer": "C",
+            "explanation": "The word democracy originates from the Greek language.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What does the Greek word 'demos' mean?",
+            "options": {
+                "A": "People",
+                "B": "Government",
+                "C": "Vote",
+                "D": "Law"
+            },
+            "correct_answer": "A",
+            "explanation": "The Greek word 'demos' means people.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What does the Greek word 'kratia' mean?",
+            "options": {
+                "A": "Justice",
+                "B": "Power or rule",
+                "C": "Rights",
+                "D": "Government office"
+            },
+            "correct_answer": "B",
+            "explanation": "'Kratia' means power or rule.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Who elects the rulers in a democracy?",
+            "options": {
+                "A": "Judges",
+                "B": "Military",
+                "C": "People",
+                "D": "Kings"
+            },
+            "correct_answer": "C",
+            "explanation": "Citizens elect rulers through elections.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which is a key feature of democracy?",
+            "options": {
+                "A": "Military rule",
+                "B": "Free and fair elections",
+                "C": "Rule by kings",
+                "D": "Single party rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Free and fair elections are essential for democracy.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "The principle 'one person, one vote, one value' refers to:",
+            "options": {
+                "A": "Economic equality",
+                "B": "Political equality",
+                "C": "Social equality",
+                "D": "Religious equality"
+            },
+            "correct_answer": "B",
+            "explanation": "It means every citizen’s vote has equal value.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Universal adult franchise means:",
+            "options": {
+                "A": "Only men can vote",
+                "B": "Only rich people can vote",
+                "C": "Every adult citizen has the right to vote",
+                "D": "Only educated people can vote"
+            },
+            "correct_answer": "C",
+            "explanation": "Universal adult franchise gives voting rights to all adults.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which country example in the chapter shows military rule?",
+            "options": {
+                "A": "India",
+                "B": "Pakistan",
+                "C": "USA",
+                "D": "Japan"
+            },
+            "correct_answer": "B",
+            "explanation": "Pakistan under General Musharraf had military influence.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which country had elections but candidates needed approval from the Communist Party?",
+            "options": {
+                "A": "Mexico",
+                "B": "China",
+                "C": "India",
+                "D": "Brazil"
+            },
+            "correct_answer": "B",
+            "explanation": "In China candidates require approval from the Communist Party.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which country had one dominant party for many years?",
+            "options": {
+                "A": "Mexico",
+                "B": "India",
+                "C": "Germany",
+                "D": "France"
+            },
+            "correct_answer": "A",
+            "explanation": "Mexico had one party dominating elections for decades.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Democracy improves:",
+            "options": {
+                "A": "Quality of decision making",
+                "B": "Military strength only",
+                "C": "Power of kings",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Discussion and consultation improve decisions.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Democracy allows conflicts to be resolved through:",
+            "options": {
+                "A": "War",
+                "B": "Violence",
+                "C": "Peaceful discussion",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "C",
+            "explanation": "Democracy promotes peaceful conflict resolution.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Democracy enhances the dignity of:",
+            "options": {
+                "A": "Kings",
+                "B": "Citizens",
+                "C": "Military leaders",
+                "D": "Judges only"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy treats citizens as equal participants.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Democracy is considered an accountable government because:",
+            "options": {
+                "A": "Leaders must answer to citizens",
+                "B": "Military controls government",
+                "C": "Kings control government",
+                "D": "Citizens cannot question government"
+            },
+            "correct_answer": "A",
+            "explanation": "Leaders are accountable to citizens through elections.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Democracy allows correction of mistakes through:",
+            "options": {
+                "A": "War",
+                "B": "Elections",
+                "C": "Military rule",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens can replace rulers through elections.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Democracy helps manage:",
+            "options": {
+                "A": "Natural disasters",
+                "B": "Social diversity",
+                "C": "Weather conditions",
+                "D": "Earthquakes"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy helps people from diverse backgrounds live together peacefully.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Representative democracy means:",
+            "options": {
+                "A": "People rule directly",
+                "B": "People elect representatives",
+                "C": "Kings rule",
+                "D": "Military rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens elect representatives to govern.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Democracy as a principle means:",
+            "options": {
+                "A": "Rule by kings",
+                "B": "Decision making through consultation",
+                "C": "Military control",
+                "D": "Single party rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy encourages participation and consultation.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which value is important in democracy?",
+            "options": {
+                "A": "Equality",
+                "B": "Freedom",
+                "C": "Participation",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Democracy is based on equality, freedom and participation.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which system allows people to change rulers peacefully?",
+            "options": {
+                "A": "Dictatorship",
+                "B": "Democracy",
+                "C": "Military rule",
+                "D": "Monarchy"
+            },
+            "correct_answer": "B",
+            "explanation": "Elections allow peaceful change of rulers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which is NOT a feature of democracy?",
+            "options": {
+                "A": "Free elections",
+                "B": "Political equality",
+                "C": "Military dictatorship",
+                "D": "Rule of law"
+            },
+            "correct_answer": "C",
+            "explanation": "Military dictatorship is not democratic.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which principle ensures equality in voting?",
+            "options": {
+                "A": "One party rule",
+                "B": "One person one vote",
+                "C": "Monarchy",
+                "D": "Military control"
+            },
+            "correct_answer": "B",
+            "explanation": "Each citizen’s vote has equal value.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Democracy mainly depends on:",
+            "options": {
+                "A": "Kings",
+                "B": "Citizens participation",
+                "C": "Military rule",
+                "D": "Dictators"
+            },
+            "correct_answer": "B",
+            "explanation": "Active participation of citizens is essential for democracy.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement about democracy is correct?",
+            "options": {
+                "A": "People elect rulers",
+                "B": "Citizens have equal voting rights",
+                "C": "Government follows the constitution",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "All these are key features of democracy.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

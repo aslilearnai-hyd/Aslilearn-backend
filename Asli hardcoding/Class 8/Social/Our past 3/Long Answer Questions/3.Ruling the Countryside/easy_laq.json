@@ -1,0 +1,209 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Ruling the Countryside",
+  "difficulty": "Easy",
+  "generated_at": "2026-03-05T21:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is land revenue?",
+      "answer": "Land revenue is the tax that farmers had to pay to the government for using agricultural land.",
+      "answer_outline": ["Definition of land revenue", "Paid by farmers"],
+      "key_concepts": ["land revenue"],
+      "marks": 3
+    },
+    {
+      "question_number": 2,
+      "question": "Why was land revenue important for the British government?",
+      "answer": "Land revenue was the main source of income for the British administration in India.",
+      "answer_outline": ["Main source of income", "Used for administration"],
+      "key_concepts": ["land revenue"],
+      "marks": 3
+    },
+    {
+      "question_number": 3,
+      "question": "What was the Permanent Settlement?",
+      "answer": "The Permanent Settlement was a land revenue system introduced by Lord Cornwallis in 1793 in Bengal.",
+      "answer_outline": ["Introduced in 1793", "Lord Cornwallis"],
+      "key_concepts": ["Permanent Settlement"],
+      "marks": 3
+    },
+    {
+      "question_number": 4,
+      "question": "Who were zamindars?",
+      "answer": "Zamindars were landowners who collected land revenue from peasants and paid it to the British government.",
+      "answer_outline": ["Landowners", "Collected revenue"],
+      "key_concepts": ["zamindars"],
+      "marks": 3
+    },
+    {
+      "question_number": 5,
+      "question": "What responsibilities did zamindars have under the Permanent Settlement?",
+      "answer": "Zamindars were responsible for collecting revenue from peasants and paying a fixed amount to the British government.",
+      "answer_outline": ["Collecting revenue", "Paying fixed tax"],
+      "key_concepts": ["zamindars", "Permanent Settlement"],
+      "marks": 4
+    },
+    {
+      "question_number": 6,
+      "question": "Who were peasants?",
+      "answer": "Peasants were farmers who cultivated land and paid taxes to the zamindars or government.",
+      "answer_outline": ["Farmers", "Paid taxes"],
+      "key_concepts": ["peasants"],
+      "marks": 3
+    },
+    {
+      "question_number": 7,
+      "question": "Why did many peasants fall into debt?",
+      "answer": "Peasants often borrowed money from moneylenders to pay high land taxes.",
+      "answer_outline": ["High taxes", "Borrowing from moneylenders"],
+      "key_concepts": ["peasants", "debt"],
+      "marks": 3
+    },
+    {
+      "question_number": 8,
+      "question": "What is indigo?",
+      "answer": "Indigo is a plant used to produce blue dye for colouring cloth.",
+      "answer_outline": ["Plant", "Used for blue dye"],
+      "key_concepts": ["indigo"],
+      "marks": 3
+    },
+    {
+      "question_number": 9,
+      "question": "Why was indigo cultivation important for the British?",
+      "answer": "Indigo dye was in great demand in European markets for colouring textiles.",
+      "answer_outline": ["Demand in Europe", "Used for textile dye"],
+      "key_concepts": ["indigo"],
+      "marks": 3
+    },
+    {
+      "question_number": 10,
+      "question": "Who were indigo planters?",
+      "answer": "Indigo planters were European landowners who forced Indian peasants to grow indigo.",
+      "answer_outline": ["European planters", "Controlled indigo farming"],
+      "key_concepts": ["indigo planters"],
+      "marks": 3
+    },
+    {
+      "question_number": 11,
+      "question": "What was the advance system in indigo cultivation?",
+      "answer": "The advance system involved giving loans to peasants and forcing them to grow indigo crops.",
+      "answer_outline": ["Loans given to farmers", "Forced indigo cultivation"],
+      "key_concepts": ["advance system"],
+      "marks": 4
+    },
+    {
+      "question_number": 12,
+      "question": "Why did peasants dislike growing indigo?",
+      "answer": "Indigo cultivation reduced food crop production and gave farmers very little profit.",
+      "answer_outline": ["Low profit", "Reduced food crops"],
+      "key_concepts": ["indigo cultivation"],
+      "marks": 3
+    },
+    {
+      "question_number": 13,
+      "question": "What was the Indigo Revolt?",
+      "answer": "The Indigo Revolt was a protest by peasants in Bengal against indigo planters in 1859–1860.",
+      "answer_outline": ["Peasant protest", "Against indigo planters"],
+      "key_concepts": ["Indigo Revolt"],
+      "marks": 3
+    },
+    {
+      "question_number": 14,
+      "question": "Why did peasants start the Indigo Revolt?",
+      "answer": "Peasants revolted because they were forced to grow indigo and received very little profit.",
+      "answer_outline": ["Forced cultivation", "Economic hardship"],
+      "key_concepts": ["Indigo Revolt"],
+      "marks": 4
+    },
+    {
+      "question_number": 15,
+      "question": "How did peasants protest during the Indigo Revolt?",
+      "answer": "Peasants refused to grow indigo and organised protests against the planters.",
+      "answer_outline": ["Refused cultivation", "Organised protests"],
+      "key_concepts": ["Indigo Revolt"],
+      "marks": 3
+    },
+    {
+      "question_number": 16,
+      "question": "What action did the British government take after the Indigo Revolt?",
+      "answer": "The British government appointed a commission to investigate the problems faced by indigo farmers.",
+      "answer_outline": ["Investigation", "Indigo Commission"],
+      "key_concepts": ["Indigo Commission"],
+      "marks": 4
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the role of moneylenders in rural society.",
+      "answer": "Moneylenders provided loans to peasants, but high interest rates often trapped farmers in debt.",
+      "answer_outline": ["Loans to farmers", "Debt problems"],
+      "key_concepts": ["moneylenders"],
+      "marks": 4
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how British policies affected Indian farmers.",
+      "answer": "British land revenue policies placed heavy taxes on farmers and created economic difficulties.",
+      "answer_outline": ["High taxes", "Economic hardship"],
+      "key_concepts": ["land revenue"],
+      "marks": 4
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why land revenue systems caused problems for peasants.",
+      "answer": "High revenue demands forced peasants to borrow money and fall into debt.",
+      "answer_outline": ["High revenue", "Debt"],
+      "key_concepts": ["peasants"],
+      "marks": 4
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the relationship between zamindars and peasants.",
+      "answer": "Zamindars collected revenue from peasants and paid a fixed amount to the British government.",
+      "answer_outline": ["Collection of tax", "Role of zamindars"],
+      "key_concepts": ["zamindars", "peasants"],
+      "marks": 4
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why indigo was grown mainly in Bengal.",
+      "answer": "Bengal had suitable soil and climate for indigo cultivation.",
+      "answer_outline": ["Favourable climate", "Suitable soil"],
+      "key_concepts": ["indigo cultivation"],
+      "marks": 3
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how indigo cultivation affected food production.",
+      "answer": "Indigo cultivation reduced the land available for growing food crops.",
+      "answer_outline": ["Land used for indigo", "Reduced food crops"],
+      "key_concepts": ["indigo cultivation"],
+      "marks": 4
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of the Indigo Revolt in Indian history.",
+      "answer": "The Indigo Revolt showed the power of peasant resistance against unfair colonial policies.",
+      "answer_outline": ["Peasant protest", "Impact on colonial policies"],
+      "key_concepts": ["Indigo Revolt"],
+      "marks": 4
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how British land policies changed rural life in India.",
+      "answer": "British policies introduced new revenue systems that changed the relationship between landowners and farmers.",
+      "answer_outline": ["New land systems", "Changes in rural society"],
+      "key_concepts": ["land revenue"],
+      "marks": 4
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why studying the Indigo Revolt is important.",
+      "answer": "Studying the Indigo Revolt helps us understand the struggles of farmers under colonial rule.",
+      "answer_outline": ["Understanding farmer struggles", "Colonial impact"],
+      "key_concepts": ["Indigo Revolt"],
+      "marks": 4
+    }
+  ]
+}

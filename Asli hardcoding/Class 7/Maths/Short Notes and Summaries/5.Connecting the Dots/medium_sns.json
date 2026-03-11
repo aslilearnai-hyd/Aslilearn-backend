@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Connecting the Dots (Data Handling)",
+    "difficulty": "Medium",
+    "source_pdf": "jemh111.pdf",
+    "short_notes": {
+        "key_points": [
+            "Representative values (Mean, Median, Mode) describe the central tendency of data",
+            "Arithmetic Mean is the average value of the data set",
+            "Range gives the spread of the data (difference between max and min)",
+            "Bar graphs use bars of uniform width to represent data visually"
+        ],
+        "examples": [
+            "Mean: Average of 2, 4, 6 is $(2+4+6) \\div 3 = 4$",
+            "Range: In the set [5, 12, 18, 3], Range is $18 - 3 = 15$",
+            "Bar Graph: Rainfall in cm for different months represented by vertical bars ",
+            "Scale: 1 unit = 10 units of data on the Y-axis"
+        ],
+        "formulas": [
+            "Mean $\\rightarrow \\frac{\\text{Sum of all observations}}{\\text{Number of observations}}$",
+            "Range $\\rightarrow \\text{Highest observation} - \\text{Lowest observation}$"
+        ],
+        "exam_tips": [
+            "The Mean always lies between the smallest and the largest values of the data",
+            "When drawing bar graphs, keep the width of bars and the gaps between them equal",
+            "Write the chosen 'Scale' clearly at the top right corner of the graph",
+            "Label both the X-axis and Y-axis to make the graph self-explanatory"
+        ]
+    }
+}

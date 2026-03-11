@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 12: Improvement in Food Resources",
+    "generated_at": "2026-03-05T23:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which activity mainly provides food for humans?",
+            "options": {
+                "A": "Agriculture",
+                "B": "Mining",
+                "C": "Construction",
+                "D": "Transport"
+            },
+            "correct_answer": "A",
+            "explanation": "Agriculture produces crops and livestock that supply food.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Which revolution increased food grain production in India?",
+            "options": {
+                "A": "White Revolution",
+                "B": "Green Revolution",
+                "C": "Blue Revolution",
+                "D": "Industrial Revolution"
+            },
+            "correct_answer": "B",
+            "explanation": "Green Revolution significantly increased crop production.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 3,
+            "question": "Which crops mainly provide carbohydrates?",
+            "options": {
+                "A": "Cereals",
+                "B": "Pulses",
+                "C": "Oil seeds",
+                "D": "Vegetables"
+            },
+            "correct_answer": "A",
+            "explanation": "Cereals like rice and wheat provide carbohydrates.",
+            "difficulty": "easy",
+            "source_section": "12.1 Improvement in Crop Yields"
+        },
+        {
+            "question_number": 4,
+            "question": "Which crops are rich in protein?",
+            "options": {
+                "A": "Pulses",
+                "B": "Cereals",
+                "C": "Fruits",
+                "D": "Oil seeds"
+            },
+            "correct_answer": "A",
+            "explanation": "Pulses such as gram and peas are protein rich.",
+            "difficulty": "easy",
+            "source_section": "12.1 Improvement in Crop Yields"
+        },
+        {
+            "question_number": 5,
+            "question": "Which crops are grown during the rainy season?",
+            "options": {
+                "A": "Rabi crops",
+                "B": "Kharif crops",
+                "C": "Winter crops",
+                "D": "Summer crops"
+            },
+            "correct_answer": "B",
+            "explanation": "Kharif crops are grown from June to October during monsoon.",
+            "difficulty": "easy",
+            "source_section": "Crop Seasons"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following is a Rabi crop?",
+            "options": {
+                "A": "Rice",
+                "B": "Maize",
+                "C": "Wheat",
+                "D": "Cotton"
+            },
+            "correct_answer": "C",
+            "explanation": "Wheat is grown during winter and is a Rabi crop.",
+            "difficulty": "easy",
+            "source_section": "Crop Seasons"
+        },
+        {
+            "question_number": 7,
+            "question": "Hybridisation refers to:",
+            "options": {
+                "A": "Crossing genetically similar plants",
+                "B": "Crossing genetically dissimilar plants",
+                "C": "Growing crops in winter",
+                "D": "Applying fertilizers"
+            },
+            "correct_answer": "B",
+            "explanation": "Hybridisation involves crossing genetically different plants.",
+            "difficulty": "easy",
+            "source_section": "12.1.1 Crop Variety Improvement"
+        },
+        {
+            "question_number": 8,
+            "question": "Which nutrients are required in large amounts by plants?",
+            "options": {
+                "A": "Micronutrients",
+                "B": "Macronutrients",
+                "C": "Minerals",
+                "D": "Vitamins"
+            },
+            "correct_answer": "B",
+            "explanation": "Macronutrients like nitrogen and phosphorus are needed in large amounts.",
+            "difficulty": "easy",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 9,
+            "question": "Manure is prepared from:",
+            "options": {
+                "A": "Chemical compounds",
+                "B": "Animal and plant waste",
+                "C": "Mineral rocks",
+                "D": "Synthetic materials"
+            },
+            "correct_answer": "B",
+            "explanation": "Manure is produced by decomposing plant and animal waste.",
+            "difficulty": "easy",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 10,
+            "question": "Which is a chemical nutrient for plants?",
+            "options": {
+                "A": "Fertilizer",
+                "B": "Manure",
+                "C": "Compost",
+                "D": "Vermicompost"
+            },
+            "correct_answer": "A",
+            "explanation": "Fertilizers are chemically manufactured nutrients.",
+            "difficulty": "easy",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 11,
+            "question": "Irrigation means:",
+            "options": {
+                "A": "Removing weeds",
+                "B": "Supplying water to crops",
+                "C": "Adding fertilizers",
+                "D": "Harvesting crops"
+            },
+            "correct_answer": "B",
+            "explanation": "Irrigation is the artificial supply of water to crops.",
+            "difficulty": "easy",
+            "source_section": "Irrigation"
+        },
+        {
+            "question_number": 12,
+            "question": "Growing two or more crops together is called:",
+            "options": {
+                "A": "Crop rotation",
+                "B": "Mixed cropping",
+                "C": "Irrigation",
+                "D": "Harvesting"
+            },
+            "correct_answer": "B",
+            "explanation": "Mixed cropping means growing multiple crops on the same land.",
+            "difficulty": "easy",
+            "source_section": "Cropping Patterns"
+        },
+        {
+            "question_number": 13,
+            "question": "Unwanted plants growing with crops are called:",
+            "options": {
+                "A": "Fungi",
+                "B": "Weeds",
+                "C": "Crops",
+                "D": "Seeds"
+            },
+            "correct_answer": "B",
+            "explanation": "Weeds compete with crops for nutrients and sunlight.",
+            "difficulty": "easy",
+            "source_section": "Crop Protection Management"
+        },
+        {
+            "question_number": 14,
+            "question": "Which chemicals kill weeds?",
+            "options": {
+                "A": "Insecticides",
+                "B": "Herbicides",
+                "C": "Fungicides",
+                "D": "Pesticides"
+            },
+            "correct_answer": "B",
+            "explanation": "Herbicides are chemicals used to control weeds.",
+            "difficulty": "easy",
+            "source_section": "Crop Protection Management"
+        },
+        {
+            "question_number": 15,
+            "question": "Animal husbandry refers to:",
+            "options": {
+                "A": "Growing crops",
+                "B": "Management of livestock",
+                "C": "Harvesting crops",
+                "D": "Selling food"
+            },
+            "correct_answer": "B",
+            "explanation": "Animal husbandry includes feeding, breeding and care of livestock.",
+            "difficulty": "easy",
+            "source_section": "Animal Husbandry"
+        },
+        {
+            "question_number": 16,
+            "question": "Which animals are mainly reared for milk?",
+            "options": {
+                "A": "Milch animals",
+                "B": "Draught animals",
+                "C": "Wild animals",
+                "D": "Pet animals"
+            },
+            "correct_answer": "A",
+            "explanation": "Milch animals are raised for milk production.",
+            "difficulty": "easy",
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 17,
+            "question": "Poultry farming mainly produces:",
+            "options": {
+                "A": "Milk and wool",
+                "B": "Eggs and meat",
+                "C": "Fish",
+                "D": "Honey"
+            },
+            "correct_answer": "B",
+            "explanation": "Poultry farming raises birds for eggs and meat.",
+            "difficulty": "easy",
+            "source_section": "Poultry Farming"
+        },
+        {
+            "question_number": 18,
+            "question": "Fish farming in ponds is called:",
+            "options": {
+                "A": "Aquaculture",
+                "B": "Agriculture",
+                "C": "Forestry",
+                "D": "Sericulture"
+            },
+            "correct_answer": "A",
+            "explanation": "Aquaculture refers to farming of fish and aquatic organisms.",
+            "difficulty": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 19,
+            "question": "Raising different fish species together is called:",
+            "options": {
+                "A": "Mixed farming",
+                "B": "Composite fish culture",
+                "C": "Crop rotation",
+                "D": "Irrigation"
+            },
+            "correct_answer": "B",
+            "explanation": "Composite fish culture increases fish production.",
+            "difficulty": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 20,
+            "question": "Bee-keeping is also known as:",
+            "options": {
+                "A": "Sericulture",
+                "B": "Apiculture",
+                "C": "Pisciculture",
+                "D": "Floriculture"
+            },
+            "correct_answer": "B",
+            "explanation": "Apiculture refers to rearing bees for honey production.",
+            "difficulty": "easy",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 21,
+            "question": "Which product is obtained from bees?",
+            "options": {
+                "A": "Milk",
+                "B": "Honey",
+                "C": "Eggs",
+                "D": "Fish"
+            },
+            "correct_answer": "B",
+            "explanation": "Bees produce honey and wax.",
+            "difficulty": "easy",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 22,
+            "question": "Which fish culture system uses multiple fish species?",
+            "options": {
+                "A": "Marine fishery",
+                "B": "Composite fish culture",
+                "C": "Capture fishing",
+                "D": "Deep sea fishing"
+            },
+            "correct_answer": "B",
+            "explanation": "Composite fish culture uses different species to maximize food usage.",
+            "difficulty": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 23,
+            "question": "Which method improves soil fertility naturally?",
+            "options": {
+                "A": "Using pesticides",
+                "B": "Using manure",
+                "C": "Using herbicides",
+                "D": "Using machines"
+            },
+            "correct_answer": "B",
+            "explanation": "Manure improves soil fertility naturally.",
+            "difficulty": "easy",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 24,
+            "question": "Which factor can damage stored grains?",
+            "options": {
+                "A": "Insects",
+                "B": "Rodents",
+                "C": "Moisture",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Stored grains can be damaged by insects, rodents and moisture.",
+            "difficulty": "easy",
+            "source_section": "Storage of Grains"
+        },
+        {
+            "question_number": 25,
+            "question": "Which practice combines crop production with livestock rearing?",
+            "options": {
+                "A": "Mixed farming",
+                "B": "Crop rotation",
+                "C": "Intercropping",
+                "D": "Irrigation"
+            },
+            "correct_answer": "A",
+            "explanation": "Mixed farming includes crops and livestock together.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        }
+    ]
+}

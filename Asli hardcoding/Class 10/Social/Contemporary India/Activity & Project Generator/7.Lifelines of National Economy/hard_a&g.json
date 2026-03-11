@@ -1,0 +1,149 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter": "Lifelines of National Economy",
+  "difficulty": "Hard",
+  "source_pdf": "jess107.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Transport Efficiency Comparative Study",
+      "objective": "Evaluate the efficiency of different transport modes for economic development",
+      "materials": ["Notebook", "Atlas", "Internet"],
+      "steps": [
+        "Select four modes of transport: roadways, railways, waterways and airways",
+        "Collect data about cost, speed, cargo capacity and environmental impact",
+        "Create a comparative table and identify the most efficient mode for different scenarios",
+        "Write a conclusion explaining the role of each mode in national development"
+      ],
+      "learning_outcome": "Develops analytical and evaluative understanding of transport systems",
+      "evaluation": "Depth of analysis and logical justification (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Golden Quadrilateral Economic Impact Study",
+      "objective": "Analyse how major highway projects influence economic growth",
+      "materials": ["Map of India", "Atlas", "Notebook"],
+      "steps": [
+        "Locate the Golden Quadrilateral and the North–South and East–West corridors on the map",
+        "Identify major cities connected by these highways",
+        "Study how these highways influence trade, industry and urban growth",
+        "Prepare a short report explaining the economic benefits"
+      ],
+      "learning_outcome": "Understands infrastructure development and its economic effects",
+      "evaluation": "Accuracy of map work and economic reasoning (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Railway Network Distribution Analysis",
+      "objective": "Investigate the geographical factors affecting railway distribution in India",
+      "materials": ["Atlas", "Notebook"],
+      "steps": [
+        "Identify regions with dense railway networks such as the Northern Plains",
+        "Identify regions with sparse railway networks such as the Himalayas and desert areas",
+        "Analyse factors such as terrain, population density and economic activity",
+        "Prepare a written explanation supported by map references"
+      ],
+      "learning_outcome": "Develops geographical reasoning and spatial analysis skills",
+      "evaluation": "Quality of explanation and geographical accuracy (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Pipeline Transport Case Study",
+      "objective": "Understand the strategic importance of pipeline transport in energy distribution",
+      "materials": ["Atlas", "Notebook", "Internet"],
+      "steps": [
+        "Identify the HVJ (Hazira–Vijaipur–Jagdishpur) pipeline route",
+        "List the states connected by this pipeline",
+        "Research how pipelines reduce transportation costs and delays",
+        "Explain the importance of pipelines for industrial growth"
+      ],
+      "learning_outcome": "Learns about modern energy infrastructure systems",
+      "evaluation": "Research depth and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Major Ports Trade Analysis",
+      "objective": "Analyse the role of sea ports in India's international trade",
+      "materials": ["Atlas", "Notebook"],
+      "steps": [
+        "Locate at least six major ports such as Mumbai, Chennai, Kochi and Vishakhapatnam",
+        "Identify the types of goods handled at each port",
+        "Explain how ports influence regional economic development",
+        "Prepare a report discussing their role in global trade"
+      ],
+      "learning_outcome": "Develops understanding of maritime trade networks",
+      "evaluation": "Depth of analysis and correct examples (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Air Connectivity and Regional Development",
+      "objective": "Examine the role of air transport in connecting remote regions",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Study the importance of airways in mountainous and remote regions",
+        "Research the UDAN scheme for regional connectivity",
+        "Identify regions where air transport plays a crucial role",
+        "Write a case study on how air connectivity supports economic development"
+      ],
+      "learning_outcome": "Understands strategic infrastructure planning",
+      "evaluation": "Quality of case study and analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Communication Systems Impact Study",
+      "objective": "Analyse the role of communication networks in economic and social development",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "List major communication systems such as postal services, telecom, television and internet",
+        "Research the development of India's telecom network",
+        "Explain how communication technologies influence business and governance",
+        "Present findings in a structured report"
+      ],
+      "learning_outcome": "Develops understanding of communication infrastructure",
+      "evaluation": "Depth of research and clarity of presentation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "International Trade Pattern Study",
+      "objective": "Analyse India's export and import patterns",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "List major export commodities such as gems, jewellery and IT services",
+        "List major import commodities such as petroleum and machinery",
+        "Analyse how these trade patterns influence India's economy",
+        "Explain favourable and unfavourable balance of trade with examples"
+      ],
+      "learning_outcome": "Develops economic analysis skills",
+      "evaluation": "Accuracy and economic reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Tourism Development Strategy Project",
+      "objective": "Design a sustainable tourism plan for a selected region",
+      "materials": ["Notebook", "Map", "Internet"],
+      "steps": [
+        "Select a tourist destination in India",
+        "Identify its natural, cultural or historical attractions",
+        "Suggest strategies for promoting sustainable tourism",
+        "Explain how tourism can generate employment and economic growth"
+      ],
+      "learning_outcome": "Develops planning and critical thinking skills",
+      "evaluation": "Creativity, feasibility and research depth (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Transport and Communication Policy Review",
+      "objective": "Critically evaluate the role of transport and communication as lifelines of the economy",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Study different transport and communication systems in India",
+        "Analyse their role in facilitating trade and economic activities",
+        "Identify current challenges such as congestion, infrastructure gaps and environmental impact",
+        "Write a critical essay proposing improvements for future development"
+      ],
+      "learning_outcome": "Develops critical thinking and policy analysis skills",
+      "evaluation": "Depth of critical analysis and originality (10 marks)"
+    }
+  ]
+}

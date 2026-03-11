@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 11: Light: Shadows and Reflections",
+    "generated_at": "2026-03-06T12:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What determines the length of a shadow?",
+            "answer": "The position of the light source and the distance of the object from it determine the shadow length.",
+            "key_concepts": ["shadow length", "light source", "object distance"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why does a concave mirror form a magnified image for nearby objects?",
+            "answer": "When the object is within the focal length, reflected rays diverge and appear larger to the eye.",
+            "key_concepts": ["concave mirror", "magnified image", "focal length"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is lateral inversion observed in plane mirrors?",
+            "answer": "Because plane mirrors reverse the left and right sides of the image.",
+            "key_concepts": ["lateral inversion", "plane mirror"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the difference between umbra and penumbra?",
+            "answer": "Umbra is the fully dark part of a shadow; penumbra is the partially shaded part.",
+            "key_concepts": ["umbra", "penumbra", "shadow"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why do convex mirrors give a wider field of view?",
+            "answer": "Because they diverge light rays, making the reflected area appear smaller and more spread out.",
+            "key_concepts": ["convex mirror", "field of view", "diverging rays"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 6,
+            "question": "How does diffused reflection help in seeing objects clearly?",
+            "answer": "Diffused reflection scatters light in many directions, allowing the eyes to receive light from all points of an object.",
+            "key_concepts": ["diffused reflection", "clear vision"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why shadows change direction during the day.",
+            "answer": "Because the Sun appears to move across the sky, changing the angle of light falling on objects.",
+            "key_concepts": ["shadow direction", "Sun's movement"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is the image in a concave mirror inverted for distant objects?",
+            "answer": "Because the object is beyond the focal length, reflected rays converge to form a real, inverted image.",
+            "key_concepts": ["concave mirror", "inverted image", "real image"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the significance of the focal point of a concave mirror?",
+            "answer": "It is the point where parallel rays converge, important for magnifying or projecting images.",
+            "key_concepts": ["concave mirror", "focal point"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 10,
+            "question": "Why are convex mirrors preferred for vehicle rear-view mirrors?",
+            "answer": "They provide a diminished, upright image and a wider field of view for safety.",
+            "key_concepts": ["convex mirror", "rear-view mirror", "field of view"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 11,
+            "question": "How does a sundial indicate time?",
+            "answer": "By the movement of the gnomon's shadow along hour markings as the Sun moves.",
+            "key_concepts": ["sundial", "shadow", "time"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why plane mirrors do not change image size.",
+            "answer": "Because the distance of the image from the mirror equals the object distance and angles remain the same.",
+            "key_concepts": ["plane mirror", "image size", "distance"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Why do shadows become longer in the morning and evening?",
+            "answer": "Because the Sun is low in the sky, making light rays strike objects at a shallow angle.",
+            "key_concepts": ["shadow length", "Sun angle"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How do periscopes allow viewing over obstacles?",
+            "answer": "By using plane mirrors to reflect light down the tube to the viewer’s eye.",
+            "key_concepts": ["periscope", "mirrors", "reflection"],
+            "marks": 2,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the difference between regular and diffused reflection?",
+            "answer": "Regular reflection occurs on smooth surfaces forming clear images; diffused reflection occurs on rough surfaces scattering light.",
+            "key_concepts": ["regular reflection", "diffused reflection"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does a concave mirror form a real image that can be projected?",
+            "answer": "Because reflected rays converge at a point in front of the mirror.",
+            "key_concepts": ["concave mirror", "real image", "projection"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 17,
+            "question": "Why do extended light sources produce blurred shadows?",
+            "answer": "Because light rays from different points overlap and create a fuzzy edge.",
+            "key_concepts": ["extended source", "shadow blur"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the effect of a point light source on shadow sharpness?",
+            "answer": "It produces sharp and well-defined shadows.",
+            "key_concepts": ["point source", "shadow sharpness"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are images in a convex mirror always virtual?",
+            "answer": "Because reflected rays diverge and do not actually meet, forming a virtual image.",
+            "key_concepts": ["convex mirror", "virtual image"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is diffused reflection necessary for reading text?",
+            "answer": "It scatters light uniformly from the paper, allowing the eyes to perceive letters clearly.",
+            "key_concepts": ["diffused reflection", "reading text"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the relationship between shadow size and object distance from light?",
+            "answer": "The closer the object to the light, the larger the shadow; the farther, the smaller.",
+            "key_concepts": ["shadow size", "object distance"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the image in a concave mirror magnified when the object is close?",
+            "answer": "Because the object is within the focal length, causing diverging rays to appear larger.",
+            "key_concepts": ["concave mirror", "magnified image", "focal length"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 23,
+            "question": "Why does a convex mirror reduce image size?",
+            "answer": "Because it diverges rays, causing the reflected image to appear smaller.",
+            "key_concepts": ["convex mirror", "image size"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 24,
+            "question": "Why do shadows have a lighter edge called penumbra?",
+            "answer": "Because some light from the source reaches around the object, partially illuminating the edge.",
+            "key_concepts": ["penumbra", "shadow", "partial illumination"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What happens to the shadow when the object is moved closer to the light source?",
+            "answer": "The shadow becomes larger as light rays diverge more around the object.",
+            "key_concepts": ["shadow size", "object distance", "light source"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        }
+    ]
+}

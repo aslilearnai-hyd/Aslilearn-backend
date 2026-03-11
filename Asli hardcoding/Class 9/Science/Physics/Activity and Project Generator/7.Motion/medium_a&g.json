@@ -1,0 +1,188 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Motion",
+    "difficulty": "Medium",
+    "source_pdf": "s9_7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Uniform Motion Experiment",
+            "objective": "Study motion with constant speed",
+            "materials": [
+                "Toy car",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Mark a straight track of 5 meters",
+                "Move a toy car with nearly constant speed",
+                "Record time taken for each meter",
+                "Analyze whether the motion is uniform"
+            ],
+            "learning_outcome": "Understands characteristics of uniform motion",
+            "evaluation": "Accuracy of data recording and analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Distance–Time Graph Construction",
+            "objective": "Represent motion graphically",
+            "materials": [
+                "Graph paper",
+                "Scale",
+                "Pencil",
+                "Recorded distance-time data"
+            ],
+            "steps": [
+                "Collect distance and time data from a moving object",
+                "Plot time on X-axis and distance on Y-axis",
+                "Join the plotted points",
+                "Interpret the nature of motion"
+            ],
+            "learning_outcome": "Learns graphical representation of motion",
+            "evaluation": "Correct plotting and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Average Speed Calculation",
+            "objective": "Calculate average speed using real data",
+            "materials": [
+                "Bicycle",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Measure a 50 meter path",
+                "Ride a bicycle along the path",
+                "Record time taken",
+                "Calculate average speed using formula speed = distance / time"
+            ],
+            "learning_outcome": "Applies speed formula in practical situations",
+            "evaluation": "Correct calculations and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Velocity Identification Activity",
+            "objective": "Differentiate speed and velocity",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Observe vehicles moving in different directions",
+                "Record their speed and direction",
+                "Identify which examples represent velocity",
+                "Explain why direction is important"
+            ],
+            "learning_outcome": "Understands velocity as speed with direction",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Acceleration Observation",
+            "objective": "Understand changing velocity",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Place a ramp on a table",
+                "Release the toy car from the top",
+                "Observe how speed increases",
+                "Explain the concept of acceleration"
+            ],
+            "learning_outcome": "Recognizes acceleration in motion",
+            "evaluation": "Observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Velocity-Time Graph Activity",
+            "objective": "Understand velocity-time graphs",
+            "materials": [
+                "Graph paper",
+                "Pencil",
+                "Scale"
+            ],
+            "steps": [
+                "Collect velocity data at regular time intervals",
+                "Plot velocity on Y-axis and time on X-axis",
+                "Draw the velocity-time graph",
+                "Interpret the motion represented"
+            ],
+            "learning_outcome": "Understands graphical representation of velocity",
+            "evaluation": "Accuracy of graph and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Distance vs Displacement Comparison",
+            "objective": "Distinguish between distance and displacement",
+            "materials": [
+                "Measuring tape",
+                "Playground",
+                "Notebook"
+            ],
+            "steps": [
+                "Walk along a triangular path",
+                "Measure total distance travelled",
+                "Measure straight-line displacement",
+                "Compare both values"
+            ],
+            "learning_outcome": "Identifies difference between distance and displacement",
+            "evaluation": "Correct comparison and explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Uniform Circular Motion Demonstration",
+            "objective": "Understand circular motion",
+            "materials": [
+                "Thread",
+                "Small stone"
+            ],
+            "steps": [
+                "Tie a stone to a thread",
+                "Rotate it in a circular path",
+                "Observe change in direction",
+                "Discuss why acceleration occurs"
+            ],
+            "learning_outcome": "Explains uniform circular motion",
+            "evaluation": "Observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Speed Conversion Activity",
+            "objective": "Convert units of speed",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Take sample speeds in km/h",
+                "Convert them into m/s",
+                "Verify results using formula",
+                "Prepare a small table of conversions"
+            ],
+            "learning_outcome": "Understands speed unit conversions",
+            "evaluation": "Accuracy of calculations (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Motion Examples Chart",
+            "objective": "Classify types of motion",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "List examples of linear, circular, and accelerated motion",
+                "Draw simple diagrams for each",
+                "Label the type of motion",
+                "Present the chart in class"
+            ],
+            "learning_outcome": "Recognizes different types of motion",
+            "evaluation": "Clarity and correctness of chart (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG9_8",
+    "chapter": "A House Is Not a Home",
+    "title": "Extended Reading Passages with Questions – A House Is Not a Home",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "The narrator had recently joined a new high school after leaving junior high school. He felt lonely because his close friends had joined a different school. The new school was much bigger, and he found it difficult to adjust to the unfamiliar environment.",
+            "questions": [
+                "Where had the narrator recently joined?",
+                "Why did the narrator feel lonely?",
+                "What happened to his close friends?",
+                "How was the new school different from his previous school?",
+                "Why was it difficult for the narrator to adjust?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "The narrator often visited his old teachers because he missed the familiar environment of his previous school. They advised him to take part in school activities so that he could make new friends and gradually become comfortable in his new school.",
+            "questions": [
+                "Why did the narrator visit his old teachers?",
+                "What advice did the teachers give him?",
+                "How could school activities help the narrator?",
+                "What was the narrator missing?",
+                "What was the teachers’ intention behind their advice?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "One Sunday afternoon, while the narrator was sitting at the dining table doing homework, he noticed smoke coming through the seams of the ceiling. Soon the room began to fill with smoke, and it became clear that the house had caught fire.",
+            "questions": [
+                "Where was the narrator sitting?",
+                "What was he doing at that time?",
+                "What unusual thing did he notice?",
+                "What filled the room shortly after?",
+                "What did the narrator realise about the house?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "The narrator and his mother quickly rushed out of the house. However, his mother suddenly ran back into the burning house to rescue important documents and photographs of her late husband, which held great emotional value for her.",
+            "questions": [
+                "What did the narrator and his mother do first?",
+                "Why did the mother run back into the house?",
+                "What items did she try to rescue?",
+                "Why were these items important to her?",
+                "What does this action reveal about the mother?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "A firefighter stopped the narrator from entering the burning house to search for his cat. The narrator was helpless as he watched his house and belongings being destroyed by the flames.",
+            "questions": [
+                "Who stopped the narrator?",
+                "Why did the narrator want to enter the house?",
+                "What was happening to the house?",
+                "How did the narrator feel at that moment?",
+                "What does this scene show about the narrator’s emotions?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "After the fire, the narrator and his mother stayed at his grandparents’ house. The narrator felt extremely sad because he believed that his beloved cat had died in the fire.",
+            "questions": [
+                "Where did the narrator stay after the fire?",
+                "Who stayed with him there?",
+                "Why did the narrator feel sad?",
+                "What did he believe had happened to his cat?",
+                "How did the fire affect the narrator emotionally?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "When the narrator returned to school, he felt embarrassed because he had lost all his clothes, books, and school supplies in the fire. He felt as if everyone was looking at him with sympathy.",
+            "questions": [
+                "Why did the narrator feel embarrassed at school?",
+                "What had he lost in the fire?",
+                "How did he feel about others’ sympathy?",
+                "Why was returning to school difficult for him?",
+                "What does this reveal about teenage feelings?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Soon the narrator’s classmates gathered around him and presented a collection of clothes, notebooks, and school supplies. Their kindness surprised him because many of them had never spoken to him before.",
+            "questions": [
+                "Who gathered around the narrator?",
+                "What did they present to him?",
+                "Why was the narrator surprised?",
+                "What does this act show about the classmates?",
+                "How did their kindness affect the narrator?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "A kind woman later found the narrator’s lost cat about a mile away from the house. She identified the owner through the phone number on its collar and returned the cat to him.",
+            "questions": [
+                "Who found the narrator’s cat?",
+                "How far away was the cat found?",
+                "How did the woman identify the owner?",
+                "What did she do after finding the cat?",
+                "Why was this moment important for the narrator?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Eventually, the narrator’s house was rebuilt. As he watched the new house being constructed with his friends beside him, he realised that his life was also being rebuilt through kindness, friendship, and support.",
+            "questions": [
+                "What happened to the narrator’s house later?",
+                "Who stood beside the narrator during this time?",
+                "What did the narrator realise about his life?",
+                "What helped rebuild his life emotionally?",
+                "What message does this moment convey?"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A Legend of the Northland",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the poem’s narrative structure and legend-based storytelling",
+        "Interpret moral, symbolic, and cultural elements in the poem",
+        "Examine character traits and their significance",
+        "Develop critical thinking and literary analysis skills",
+        "Understand the use of rhyme, rhythm, and repetition in folklore poetry"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Background of Northland legends and folklore",
+                "Poet’s style in narrative and moral poems",
+                "Theme: selfishness, consequences, and moral lessons"
+            ],
+            "teaching_strategy": [
+                "Lecture on folklore and legend traditions",
+                "Discussion on why legends are used to teach morals"
+            ],
+            "student_activities": [
+                "Take notes on folklore context",
+                "Discuss other examples of moral stories or legends"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Narrative Analysis – Story Flow",
+            "topics_covered": [
+                "Stanza-by-stanza breakdown of events",
+                "Examine the actions of the little woman and Saint Peter",
+                "Cause-effect relationships in the story"
+            ],
+            "teaching_strategy": [
+                "Explain chronological events and plot twists",
+                "Encourage students to map story events visually"
+            ],
+            "student_activities": [
+                "Create a flowchart of story events",
+                "Annotate the text with causes and consequences"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Oral explanation of plot events"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Character Analysis and Symbolism",
+            "topics_covered": [
+                "Character traits of the little woman and Saint Peter",
+                "Symbolism of transformation into a woodpecker",
+                "Interpretation of moral lessons"
+            ],
+            "teaching_strategy": [
+                "Discuss traits and symbolic meaning",
+                "Ask students to justify character actions"
+            ],
+            "student_activities": [
+                "Write character sketches",
+                "Explain symbolic meaning of the transformation in own words"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Poetic Devices and Rhyme Scheme",
+            "topics_covered": [
+                "Rhyme, rhythm, repetition, and narrative techniques",
+                "How devices enhance storytelling and mood",
+                "Examine imagery and descriptive language"
+            ],
+            "teaching_strategy": [
+                "Highlight examples from text",
+                "Discuss effect of rhyme and rhythm on the story’s flow"
+            ],
+            "student_activities": [
+                "Identify rhyme scheme and repetition",
+                "Write examples of imagery and descriptive words"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Moral, Ethical Reflection, and Cultural Context",
+            "topics_covered": [
+                "Analyze the moral of the poem",
+                "Discuss ethical lessons about selfishness and consequences",
+                "Connect to cultural storytelling traditions"
+            ],
+            "teaching_strategy": [
+                "Class debate on moral and ethical implications",
+                "Guide discussion on relevance to modern life"
+            ],
+            "student_activities": [
+                "Write reflective paragraph on moral lessons",
+                "Participate in class debate/discussion"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Analytical Writing, and Assessment",
+            "topics_covered": [
+                "Recap story events, characters, and moral lessons",
+                "Short analytical and reflective writing on poem",
+                "Discussion on cultural significance of folklore poetry"
+            ],
+            "teaching_strategy": [
+                "Quick recap of key points and devices",
+                "Guide students to write analytical summary"
+            ],
+            "student_activities": [
+                "Write analytical essay connecting story, characters, and moral",
+                "Peer review and class discussion"
+            ],
+            "assessment": [
+                "Short written analytical essay",
+                "Class discussion participation",
+                "Notebook checking"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts highlighting characters, plot, and moral lessons",
+        "Handouts with reflection and analysis questions"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short analytical essays",
+        "Class discussion participation",
+        "Peer feedback"
+    ],
+    "teacher_tip": "Encourage students to analyze the legend critically, interpret symbolic elements, connect the moral to their own experiences, and explore the use of poetic devices in narrative storytelling."
+}

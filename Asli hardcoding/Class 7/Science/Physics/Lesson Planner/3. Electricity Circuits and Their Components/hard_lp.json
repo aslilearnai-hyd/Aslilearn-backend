@@ -1,0 +1,203 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Electricity: Circuits and Their Components",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand current, voltage, and resistance quantitatively",
+        "Apply Ohm’s Law in calculations",
+        "Construct and analyze complex series-parallel circuits",
+        "Measure current and voltage using meters",
+        "Calculate total resistance in series and parallel circuits",
+        "Understand real-life applications of electricity",
+        "Identify and correct faulty circuits",
+        "Emphasize electricity safety and troubleshooting"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Review of Basic Electricity",
+            "topics_covered": [
+                "Current, voltage, resistance definitions",
+                "Conductors and insulators",
+                "Importance of electricity"
+            ],
+            "teaching_strategy": [
+                "Quick revision discussion",
+                "Board explanation of concepts"
+            ],
+            "student_activities": [
+                "List electrical appliances with voltage ratings",
+                "Identify conductors/insulators in class"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick written check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Series Circuits and Analysis",
+            "topics_covered": [
+                "Constructing series circuits",
+                "Measuring current and voltage",
+                "Effect of adding/removing components"
+            ],
+            "teaching_strategy": [
+                "Demonstration with meters",
+                "Step-by-step circuit construction"
+            ],
+            "student_activities": [
+                "Build a series circuit with 3 bulbs",
+                "Measure current and voltage"
+            ],
+            "assessment": [
+                "Practical observation",
+                "Notebook recording"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Parallel Circuits and Analysis",
+            "topics_covered": [
+                "Constructing parallel circuits",
+                "Measuring current and voltage",
+                "Comparing with series circuits"
+            ],
+            "teaching_strategy": [
+                "Hands-on demonstration",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Build a parallel circuit",
+                "Record and compare measurements"
+            ],
+            "assessment": [
+                "Practical evaluation",
+                "Group discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Ohm’s Law Applications",
+            "topics_covered": [
+                "Formula I = V/R",
+                "Solving numerical problems",
+                "Real-life examples of resistance"
+            ],
+            "teaching_strategy": [
+                "Step-by-step worked examples",
+                "Guided problem-solving"
+            ],
+            "student_activities": [
+                "Solve 5 numerical problems",
+                "Calculate resistance of a component"
+            ],
+            "assessment": [
+                "Worksheet evaluation",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Series-Parallel Combined Circuits",
+            "topics_covered": [
+                "Constructing complex circuits",
+                "Analyzing current and voltage distribution",
+                "Calculating total resistance"
+            ],
+            "teaching_strategy": [
+                "Circuit diagram walkthrough",
+                "Hands-on construction and testing"
+            ],
+            "student_activities": [
+                "Build a series-parallel circuit",
+                "Measure voltage and current at multiple points"
+            ],
+            "assessment": [
+                "Practical evaluation",
+                "Problem-solving assessment"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Faulty Circuit Identification",
+            "topics_covered": [
+                "Detecting open and short circuits",
+                "Correcting wiring mistakes"
+            ],
+            "teaching_strategy": [
+                "Demonstration of faulty circuits",
+                "Group problem-solving"
+            ],
+            "student_activities": [
+                "Identify faults in a given circuit",
+                "Correct the circuit and explain solution"
+            ],
+            "assessment": [
+                "Observation of practical skills",
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Electricity in Real Life",
+            "topics_covered": [
+                "Appliances and electrical devices",
+                "Power ratings and energy consumption",
+                "Safety precautions"
+            ],
+            "teaching_strategy": [
+                "Discussion with examples",
+                "Show real-life devices"
+            ],
+            "student_activities": [
+                "List appliances and their voltage/current ratings",
+                "Calculate power using P = VI for simple devices"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Complete chapter revision",
+                "Numerical problems with Ohm’s Law",
+                "Series and parallel analysis"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision",
+                "Practical demonstration",
+                "Rapid-fire oral round"
+            ],
+            "student_activities": [
+                "Solve mixed numerical problems",
+                "Demonstrate circuits built"
+            ],
+            "assessment": [
+                "Short test (15 marks)",
+                "Practical evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Circuit kits",
+        "Batteries, bulbs, switches, wires",
+        "Ammeter and voltmeter",
+        "Blackboard/whiteboard",
+        "Markers or chalk"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Practical demonstration",
+        "Numerical worksheets",
+        "Notebook checking",
+        "Group discussion"
+    ],
+    "teacher_tip": "Focus on understanding current, voltage, and resistance quantitatively; allow students to experiment with combined circuits for deep understanding."
+}

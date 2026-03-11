@@ -1,0 +1,76 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Constructions and Tilings",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Construct triangles using ASA and RHS criteria",
+        "Solve complex construction problems involving multiple steps",
+        "Analyze the interior angles of regular polygons to justify tilings",
+        "Identify and create semi-regular tilings",
+        "Explore the work of M.C. Escher and mathematical art"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "ASA and RHS Constructions",
+            "topics_covered": [
+                "Two angles and the side between them (ASA)",
+                "Right-angle, Hypotenuse, and Side (RHS)",
+                "Checking for uniqueness of the construction"
+            ],
+            "teaching_strategy": [
+                "Problem-solving for 'Ambiguous' cases",
+                "Demonstrating the 'swinging' arc for RHS hypotenuse",
+                "",
+                ""
+            ],
+            "student_activities": [
+                "Construct a right triangle with Hypotenuse 10 cm and Side 6 cm",
+                "Construct a triangle given $\\angle A=40^{\\circ}, \\angle B=60^{\\circ}$ and $AB=5$ cm"
+            ],
+            "assessment": [
+                "Complex construction test",
+                "Error-analysis: 'Find what went wrong in this RHS drawing'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Geometry of Tilings",
+            "topics_covered": [
+                "Interior angle formula: $\\frac{(n-2) \\times 180}{n}$",
+                "Why regular pentagons don't tile ($108^{\\circ}$ doesn't divide $360^{\\circ}$)",
+                "Honeycomb geometry (Hexagonal tiling)"
+            ],
+            "teaching_strategy": [
+                "Mathematical proof for regular tilings",
+                "Slide show of complex tessellations (Escher style)",
+                "",
+                ""
+            ],
+            "student_activities": [
+                "Calculate interior angles of polygons from 3 to 8 sides",
+                "Design a semi-regular tiling using squares and octagons",
+                "Tiling challenge: 'Will a regular heptagon tile?'"
+            ],
+            "assessment": [
+                "Tiling justification report",
+                "Final chapter examination"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Advanced geometry kits",
+        "Angle sum charts",
+        "Art prints of M.C. Escher",
+        "Tessellation software or digital applets"
+    ],
+    "evaluation_methods": [
+        "Technical drawing examination",
+        "Mathematical tiling project",
+        "Analytical quiz on angle properties"
+    ],
+    "teacher_tip": "Show students that the only regular polygons that tile the plane by themselves are Equilateral Triangles, Squares, and Hexagons. Let them try to prove why using the $360^{\\circ}$ rule!"
+}

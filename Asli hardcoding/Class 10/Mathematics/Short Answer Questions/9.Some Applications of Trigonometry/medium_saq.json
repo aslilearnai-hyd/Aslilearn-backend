@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 9: Some Applications of Trigonometry",
+    "generated_at": "2026-03-01T21:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why tangent ratio is commonly used in height and distance problems.",
+            "answer": "Tangent ratio is commonly used because it directly relates the height of the object and the horizontal distance from the observer.",
+            "key_concepts": [
+                "tangent ratio"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are angle of elevation and angle of depression often equal?",
+            "answer": "They are equal because they form alternate interior angles between two parallel horizontal lines.",
+            "key_concepts": [
+                "alternate interior angles"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is observer height added in some trigonometric problems?",
+            "answer": "Observer height is added because the angle of elevation is measured from the observer’s eye level, not from the ground.",
+            "key_concepts": [
+                "observer height"
+            ],
+            "marks": 2,
+            "source_section": "Examples"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is used when hypotenuse is known and why?",
+            "answer": "Sine or cosine ratio is used because they involve the hypotenuse of the triangle.",
+            "key_concepts": [
+                "sine",
+                "cosine"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the relationship between sine and cosecant?",
+            "answer": "Sine and cosecant are reciprocal of each other.",
+            "key_concepts": [
+                "reciprocal ratios"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is a ladder problem represented as a right-angled triangle?",
+            "answer": "Because the wall and the ground are perpendicular to each other, forming a right angle.",
+            "key_concepts": [
+                "right-angled triangle"
+            ],
+            "marks": 2,
+            "source_section": "Examples"
+        },
+        {
+            "question_number": 7,
+            "question": "What happens to the angle of elevation when the observer moves closer to the object?",
+            "answer": "The angle of elevation increases when the observer moves closer to the object.",
+            "key_concepts": [
+                "angle of elevation"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is trigonometry considered an indirect measurement method?",
+            "answer": "Because it is used to find heights and distances that cannot be measured directly.",
+            "key_concepts": [
+                "indirect measurement"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 9,
+            "question": "Which trigonometric ratio is reciprocal of cosine?",
+            "answer": "Secant is the reciprocal of cosine.",
+            "key_concepts": [
+                "secant"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the value of cot 30°.",
+            "answer": "cot 30° = √3.",
+            "key_concepts": [
+                "cot 30"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is angle of elevation always acute?",
+            "answer": "Because the object is always above the horizontal level of the observer.",
+            "key_concepts": [
+                "acute angle"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the value of tan 90° and why?",
+            "answer": "tan 90° is undefined because the adjacent side becomes zero.",
+            "key_concepts": [
+                "undefined tan"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the importance of horizontal line in trigonometric problems.",
+            "answer": "The horizontal line is used as a reference line to measure angles of elevation and depression.",
+            "key_concepts": [
+                "horizontal reference"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which trigonometric ratio is used when base and hypotenuse are known?",
+            "answer": "Cosine ratio is used when base and hypotenuse are known.",
+            "key_concepts": [
+                "cosine ratio"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is sin 90° equal to 1?",
+            "answer": "Because the opposite side is equal to the hypotenuse.",
+            "key_concepts": [
+                "sin 90"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the value of cos 90°?",
+            "answer": "cos 90° = 0.",
+            "key_concepts": [
+                "cos 90"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 17,
+            "question": "Which ratio gives the steepness of a slope?",
+            "answer": "Tangent ratio gives the steepness of a slope.",
+            "key_concepts": [
+                "slope"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is trigonometry useful in construction work?",
+            "answer": "It helps in measuring heights of buildings and towers without direct measurement.",
+            "key_concepts": [
+                "construction"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the value of sin 0°?",
+            "answer": "sin 0° = 0.",
+            "key_concepts": [
+                "sin 0"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 20,
+            "question": "Which ratio is reciprocal of tangent?",
+            "answer": "Cotangent is the reciprocal of tangent.",
+            "key_concepts": [
+                "cotangent"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are right triangles used in trigonometry?",
+            "answer": "Because trigonometric ratios are defined only for right-angled triangles.",
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the value of tan 0°?",
+            "answer": "tan 0° = 0.",
+            "key_concepts": [
+                "tan 0"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 23,
+            "question": "Which trigonometric ratio involves all three sides?",
+            "answer": "None of the trigonometric ratios involve all three sides together.",
+            "key_concepts": [
+                "ratios"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are obtuse angles not used in basic trigonometry?",
+            "answer": "Because trigonometric ratios are defined for acute angles in right triangles.",
+            "key_concepts": [
+                "acute angles"
+            ],
+            "marks": 2,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 25,
+            "question": "State two applications of trigonometry.",
+            "answer": "Trigonometry is used in surveying and construction.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 2,
+            "source_section": "Summary"
+        }
+    ]
+}

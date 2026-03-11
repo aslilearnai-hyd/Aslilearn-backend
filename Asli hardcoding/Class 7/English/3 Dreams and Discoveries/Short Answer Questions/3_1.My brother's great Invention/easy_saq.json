@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "My Brother's Great Invention",
+  "generated_at": "2026-03-10T00:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is the narrator of the story?",
+      "answer": "The narrator is Anita, a fourteen-year-old girl.",
+      "key_concepts": ["narrator", "Anita"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Who is Anand and how old is he?",
+      "answer": "Anand is Anita’s younger brother, and he is thirteen years old.",
+      "key_concepts": ["Anand", "age"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "What does Anand consider himself to be?",
+      "answer": "Anand considers himself to be a scientist and an inventor.",
+      "key_concepts": ["identity", "scientist"],
+      "marks": 2,
+      "source_section": "Character"
+    },
+    {
+      "question_number": 4,
+      "question": "Why did Anand decide to invent a burglar alarm?",
+      "answer": "He decided to invent it because there had been a series of thefts in their colony.",
+      "key_concepts": ["thefts", "burglar alarm"],
+      "marks": 2,
+      "source_section": "The Burglar Alarm"
+    },
+    {
+      "question_number": 5,
+      "question": "What happened to Papa when he entered the house?",
+      "answer": "He got soaked with water from a water bag that was part of Anand's burglar alarm.",
+      "key_concepts": ["Papa", "water bag"],
+      "marks": 2,
+      "source_section": "The Burglar Alarm"
+    },
+    {
+      "question_number": 6,
+      "question": "How was the burglar alarm supposed to work?",
+      "answer": "It was designed to ring a bell and drop a water bag when the door was opened gently.",
+      "key_concepts": ["mechanism", "gentle opening"],
+      "marks": 2,
+      "source_section": "The Burglar Alarm"
+    },
+    {
+      "question_number": 7,
+      "question": "What movie inspired Anand’s next big project?",
+      "answer": "The movie 'Back to the Future' inspired him.",
+      "key_concepts": ["inspiration", "Back to the Future"],
+      "marks": 2,
+      "source_section": "The Time Machine"
+    },
+    {
+      "question_number": 8,
+      "question": "What was Anand's second major invention?",
+      "answer": "His second major invention was a time machine.",
+      "key_concepts": ["invention", "time machine"],
+      "marks": 2,
+      "source_section": "The Time Machine"
+    },
+    {
+      "question_number": 9,
+      "question": "Where did Anand build his time machine?",
+      "answer": "He built it in his own bedroom.",
+      "key_concepts": ["location", "workshop"],
+      "marks": 2,
+      "source_section": "The Time Machine"
+    },
+    {
+      "question_number": 10,
+      "question": "What did Anita warn Anand about while helping him?",
+      "answer": "She warned him not to involve her if their inventions got them into trouble.",
+      "key_concepts": ["warning", "responsibility"],
+      "marks": 2,
+      "source_section": "Siblings"
+    },
+    {
+      "question_number": 11,
+      "question": "Why did Papa hide his toolbox?",
+      "answer": "He hid it to prevent Anand from taking more tools for his messy experiments.",
+      "key_concepts": ["toolbox", "prevention"],
+      "marks": 2,
+      "source_section": "The Time Machine"
+    },
+    {
+      "question_number": 12,
+      "question": "Where did the parents go for one night?",
+      "answer": "They went to a wedding in Kharagpur.",
+      "key_concepts": ["wedding", "Kharagpur"],
+      "marks": 2,
+      "source_section": "The Incident"
+    },
+    {
+      "question_number": 13,
+      "question": "What promise did Anand make to his parents before they left?",
+      "answer": "He promised not to touch or use the time machine while they were away.",
+      "key_concepts": ["promise", "safety"],
+      "marks": 2,
+      "source_section": "The Incident"
+    },
+    {
+      "question_number": 14,
+      "question": "Who entered the house while the parents were away?",
+      "answer": "A man named Boppa, who was a ruffian/sweeper in the neighborhood.",
+      "key_concepts": ["intruder", "Boppa"],
+      "marks": 2,
+      "source_section": "The Intruder"
+    },
+    {
+      "question_number": 15,
+      "question": "How did Boppa threaten the children?",
+      "answer": "He threatened them with a stick and demanded to know where their father’s room was.",
+      "key_concepts": ["threat", "stick"],
+      "marks": 2,
+      "source_section": "The Intruder"
+    },
+    {
+      "question_number": 16,
+      "question": "Where did Anand tell Boppa to go?",
+      "answer": "He tricked Boppa into going into his own room (the one with the time machine).",
+      "key_concepts": ["trick", "room"],
+      "marks": 2,
+      "source_section": "The Intruder"
+    },
+    {
+      "question_number": 17,
+      "question": "What strange noises came from Anand’s room after Boppa entered?",
+      "answer": "There were clanging, humming, and thumping sounds.",
+      "key_concepts": ["sounds", "suspense"],
+      "marks": 2,
+      "source_section": "The Intruder"
+    },
+    {
+      "question_number": 18,
+      "question": "Who came to help the children?",
+      "answer": "Neighbors like Mr. and Mrs. Sharma and Dr. Mohan came to help.",
+      "key_concepts": ["neighbors", "rescue"],
+      "marks": 2,
+      "source_section": "The Rescue"
+    },
+    {
+      "question_number": 19,
+      "question": "What did the neighbors find when they opened Anand's room?",
+      "answer": "They found the time machine humming, but Boppa was gone.",
+      "key_concepts": ["disappearance", "humming"],
+      "marks": 2,
+      "source_section": "The Rescue"
+    },
+    {
+      "question_number": 20,
+      "question": "What object belonging to Boppa was left behind?",
+      "answer": "His green scarf was left near the time machine.",
+      "key_concepts": ["green scarf", "evidence"],
+      "marks": 2,
+      "source_section": "The Rescue"
+    },
+    {
+      "question_number": 21,
+      "question": "What did Anand believe happened to Boppa?",
+      "answer": "Anand believed that Boppa had been transported through time by the machine.",
+      "key_concepts": ["belief", "time travel"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 22,
+      "question": "What did Papa do with the time machine eventually?",
+      "answer": "He dismantled it because he thought it was unsafe.",
+      "key_concepts": ["dismantle", "safety"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 23,
+      "question": "What was Anand’s next project at the end of the story?",
+      "answer": "He started building a telephone to talk to aliens.",
+      "key_concepts": ["aliens", "telephone"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 24,
+      "question": "What does 'tinkering' mean in the story?",
+      "answer": "It means playing with or trying to fix gadgets in a creative way.",
+      "key_concepts": ["vocabulary", "tinkering"],
+      "marks": 2,
+      "source_section": "General"
+    },
+    {
+      "question_number": 25,
+      "question": "Is Anand discouraged by his failed inventions?",
+      "answer": "No, he remains confident and moves quickly on to his next idea.",
+      "key_concepts": ["confidence", "resilience"],
+      "marks": 2,
+      "source_section": "Theme"
+    }
+  ]
+}

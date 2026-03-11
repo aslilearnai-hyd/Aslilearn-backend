@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Land, Soil, Water, Natural Vegetation and Wildlife Resources",
+  "generated_at": "2026-03-06T15:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is sustainable land use necessary for environmental balance?",
+      "answer": "Sustainable land use prevents land degradation, protects ecosystems, and ensures that land resources remain productive for future generations.",
+      "key_concepts": ["sustainable land use"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "How can industrialization lead to land degradation?",
+      "answer": "Industrialization can damage land through mining, pollution, and removal of vegetation, which reduces soil fertility.",
+      "key_concepts": ["industrialization impact"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "Why does removal of vegetation increase the risk of soil erosion?",
+      "answer": "Without vegetation roots to hold soil particles together, wind and water can easily wash away the topsoil.",
+      "key_concepts": ["soil erosion"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 4,
+      "question": "How does overgrazing contribute to land degradation?",
+      "answer": "Overgrazing removes grass cover, leaving soil exposed to erosion by wind and water.",
+      "key_concepts": ["overgrazing"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is topsoil essential for plant growth?",
+      "answer": "Topsoil contains organic matter and nutrients necessary for plant roots to grow and absorb nutrients.",
+      "key_concepts": ["topsoil"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "How does climate affect soil formation?",
+      "answer": "Temperature and rainfall influence the rate of weathering and decomposition of organic matter, affecting soil formation.",
+      "key_concepts": ["soil formation"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does sandy soil drain water quickly compared to clayey soil?",
+      "answer": "Sandy soil has larger particles and more spaces between them, allowing water to pass through quickly.",
+      "key_concepts": ["soil texture"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "How does terrace farming reduce soil erosion in mountainous regions?",
+      "answer": "Terrace farming creates step-like fields that slow down water flow and prevent soil from being washed away.",
+      "key_concepts": ["terrace farming"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is freshwater scarcity increasing in many parts of the world?",
+      "answer": "Increasing population, pollution, and excessive use of water resources are reducing the availability of freshwater.",
+      "key_concepts": ["water scarcity"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "How does groundwater depletion occur?",
+      "answer": "Groundwater depletion occurs when water is extracted faster than it can be naturally replenished.",
+      "key_concepts": ["groundwater depletion"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is rainwater harvesting considered a sustainable solution to water shortages?",
+      "answer": "It stores rainwater for future use and helps recharge groundwater supplies.",
+      "key_concepts": ["rainwater harvesting"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "How does vegetation cover influence the climate of a region?",
+      "answer": "Vegetation regulates temperature, increases humidity, and influences rainfall patterns.",
+      "key_concepts": ["vegetation-climate relation"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 13,
+      "question": "Why do tropical forests support high biodiversity?",
+      "answer": "Warm temperatures and abundant rainfall provide ideal conditions for a wide variety of plants and animals.",
+      "key_concepts": ["tropical forests"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 14,
+      "question": "How does climate determine vegetation distribution across the world?",
+      "answer": "Temperature and rainfall patterns determine which plants can survive in a particular region.",
+      "key_concepts": ["vegetation distribution"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are forests important for maintaining soil fertility?",
+      "answer": "Falling leaves and organic matter decompose and enrich the soil with nutrients.",
+      "key_concepts": ["forest ecosystem"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 16,
+      "question": "How does deforestation threaten wildlife populations?",
+      "answer": "Deforestation destroys habitats and reduces food sources, leading to population decline.",
+      "key_concepts": ["wildlife habitat"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is biodiversity important for ecosystem stability?",
+      "answer": "Biodiversity maintains balanced food chains and allows ecosystems to adapt to environmental changes.",
+      "key_concepts": ["biodiversity"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 18,
+      "question": "How do protected areas help conserve wildlife?",
+      "answer": "Protected areas like national parks provide safe habitats and prevent hunting and habitat destruction.",
+      "key_concepts": ["protected areas"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "How can climate change affect vegetation patterns?",
+      "answer": "Changes in temperature and rainfall can alter plant growth conditions and shift vegetation zones.",
+      "key_concepts": ["climate change"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is sustainable development important for natural resource management?",
+      "answer": "It ensures that natural resources are used responsibly without harming future generations.",
+      "key_concepts": ["sustainable development"],
+      "marks": 2,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 21,
+      "question": "How can community participation help conserve natural resources?",
+      "answer": "Local communities can protect forests, manage water resources, and promote sustainable practices.",
+      "key_concepts": ["community conservation"],
+      "marks": 2,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 22,
+      "question": "Why is afforestation an effective conservation method?",
+      "answer": "Afforestation restores vegetation cover, improves soil quality, and supports wildlife habitats.",
+      "key_concepts": ["afforestation"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 23,
+      "question": "How are soil and water resources interconnected?",
+      "answer": "Soil stores water and supports plant growth, while water influences soil formation and fertility.",
+      "key_concepts": ["soil-water relation"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 24,
+      "question": "Why can removal of vegetation increase the risk of floods?",
+      "answer": "Without vegetation to absorb water, rainfall flows rapidly across land, increasing flood risk.",
+      "key_concepts": ["vegetation loss"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are land, soil, water, vegetation, and wildlife considered interdependent resources?",
+      "answer": "Each resource supports the others in ecosystems, helping maintain environmental balance and life on Earth.",
+      "key_concepts": ["ecosystem interdependence"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

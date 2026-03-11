@@ -1,0 +1,401 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T13:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of gravitation with examples.",
+            "answer": "Gravitation is the force of attraction between any two objects in the universe. It is responsible for objects falling to the ground and for keeping planets in orbit around the Sun.",
+            "answer_outline": [
+                "Definition of gravitation",
+                "Force of attraction",
+                "Examples such as falling objects and planetary motion"
+            ],
+            "key_concepts": [
+                "gravitation"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State and explain the universal law of gravitation.",
+            "answer": "The universal law of gravitation states that every object in the universe attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+            "answer_outline": [
+                "Statement of the law",
+                "Dependence on masses",
+                "Inverse square relation with distance"
+            ],
+            "key_concepts": [
+                "universal law of gravitation"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain free fall and acceleration due to gravity.",
+            "answer": "Free fall is the motion of an object falling under the influence of gravity alone. The acceleration produced in the object due to gravity is called acceleration due to gravity and its value near Earth's surface is about 9.8 m/s².",
+            "answer_outline": [
+                "Definition of free fall",
+                "Acceleration due to gravity",
+                "Value of g"
+            ],
+            "key_concepts": [
+                "free fall",
+                "acceleration due to gravity"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the difference between mass and weight.",
+            "answer": "Mass is the amount of matter in an object and remains constant everywhere. Weight is the gravitational force acting on an object and varies with location.",
+            "answer_outline": [
+                "Definition of mass",
+                "Definition of weight",
+                "Differences"
+            ],
+            "key_concepts": [
+                "mass",
+                "weight"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why the weight of an object on the Moon is less than on Earth.",
+            "answer": "The gravitational force of the Moon is weaker than that of the Earth. Therefore, the weight of an object on the Moon is about one-sixth of its weight on Earth.",
+            "answer_outline": [
+                "Moon gravity",
+                "Weight relation",
+                "1/6 weight"
+            ],
+            "key_concepts": [
+                "Moon gravity"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain thrust and pressure.",
+            "answer": "Thrust is the force acting perpendicular to a surface. Pressure is defined as thrust per unit area.",
+            "answer_outline": [
+                "Definition of thrust",
+                "Definition of pressure",
+                "Formula P = F/A"
+            ],
+            "key_concepts": [
+                "thrust",
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why sharp knives cut better than blunt knives.",
+            "answer": "Sharp knives have smaller surface area, which increases pressure for the same force, making cutting easier.",
+            "answer_outline": [
+                "Pressure formula",
+                "Effect of smaller area",
+                "Cutting efficiency"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the concept of buoyancy.",
+            "answer": "Buoyancy is the upward force exerted by a fluid on an object placed in it.",
+            "answer_outline": [
+                "Definition",
+                "Upward force",
+                "Effect on objects"
+            ],
+            "key_concepts": [
+                "buoyancy"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why objects float or sink in water.",
+            "answer": "Objects float when the buoyant force acting on them is greater than or equal to their weight, and they sink when their weight is greater than the buoyant force.",
+            "answer_outline": [
+                "Floating condition",
+                "Sinking condition"
+            ],
+            "key_concepts": [
+                "floating",
+                "buoyant force"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "State and explain Archimedes' principle.",
+            "answer": "Archimedes' principle states that when a body is immersed in a fluid, it experiences an upward buoyant force equal to the weight of the fluid displaced by it.",
+            "answer_outline": [
+                "Statement",
+                "Upward force",
+                "Displaced fluid"
+            ],
+            "key_concepts": [
+                "Archimedes principle"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of density in relation to floating objects.",
+            "answer": "Objects float if their density is less than that of the fluid and sink if their density is greater.",
+            "answer_outline": [
+                "Density definition",
+                "Relation to floating"
+            ],
+            "key_concepts": [
+                "density"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why camels can walk easily on sand.",
+            "answer": "Camels have broad feet that increase the surface area, reducing pressure on sand and preventing them from sinking.",
+            "answer_outline": [
+                "Pressure formula",
+                "Large area",
+                "Reduced pressure"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why wide tyres are used in heavy vehicles.",
+            "answer": "Wide tyres increase the area of contact with the ground and reduce pressure.",
+            "answer_outline": [
+                "Pressure concept",
+                "Large area"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why ships float on water.",
+            "answer": "Ships float because they displace a large volume of water, producing enough buoyant force to balance their weight.",
+            "answer_outline": [
+                "Water displacement",
+                "Buoyant force",
+                "Balance of forces"
+            ],
+            "key_concepts": [
+                "buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the concept of apparent weight.",
+            "answer": "Apparent weight is the reduced weight of an object when immersed in a fluid due to buoyant force.",
+            "answer_outline": [
+                "Definition",
+                "Effect of buoyant force"
+            ],
+            "key_concepts": [
+                "apparent weight"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of gravitational force in nature.",
+            "answer": "Gravitational force keeps planets in orbit, holds the atmosphere around Earth and causes objects to fall.",
+            "answer_outline": [
+                "Planetary motion",
+                "Atmosphere",
+                "Falling objects"
+            ],
+            "key_concepts": [
+                "gravity"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how submarines float and sink.",
+            "answer": "Submarines control their density by adjusting ballast tanks to change buoyancy.",
+            "answer_outline": [
+                "Ballast tanks",
+                "Density control",
+                "Buoyancy"
+            ],
+            "key_concepts": [
+                "submarine buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the relationship between pressure and area.",
+            "answer": "Pressure is inversely proportional to the area on which the force acts.",
+            "answer_outline": [
+                "Pressure formula",
+                "Inverse relation"
+            ],
+            "key_concepts": [
+                "pressure relation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why dams are thicker at the bottom.",
+            "answer": "Water pressure increases with depth, so dams are thicker at the bottom to withstand higher pressure.",
+            "answer_outline": [
+                "Pressure with depth",
+                "Structural strength"
+            ],
+            "key_concepts": [
+                "fluid pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the use of hydrometers.",
+            "answer": "Hydrometers are instruments used to measure the density of liquids based on Archimedes' principle.",
+            "answer_outline": [
+                "Instrument",
+                "Density measurement",
+                "Archimedes principle"
+            ],
+            "key_concepts": [
+                "hydrometer"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why a balloon filled with helium rises in air.",
+            "answer": "Helium is less dense than air, so the buoyant force of air pushes the balloon upward.",
+            "answer_outline": [
+                "Density difference",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "air buoyancy"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why astronauts float in space.",
+            "answer": "Astronauts float because they are in continuous free fall around Earth.",
+            "answer_outline": [
+                "Free fall",
+                "Orbit motion"
+            ],
+            "key_concepts": [
+                "weightlessness"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of Archimedes' principle in ship design.",
+            "answer": "Ship design uses Archimedes' principle to ensure enough buoyant force is generated to support the ship's weight.",
+            "answer_outline": [
+                "Buoyant force",
+                "Ship stability"
+            ],
+            "key_concepts": [
+                "ship design"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why heavy ships float but small iron nails sink.",
+            "answer": "Ships float because they displace a large volume of water and generate sufficient buoyant force, while nails displace very little water.",
+            "answer_outline": [
+                "Water displacement",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the relationship between gravitational force and planetary motion.",
+            "answer": "Gravitational force between the Sun and planets keeps the planets moving in their orbits.",
+            "answer_outline": [
+                "Sun gravity",
+                "Planetary orbit"
+            ],
+            "key_concepts": [
+                "planetary motion"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 9.1"
+        }
+    ]
+}

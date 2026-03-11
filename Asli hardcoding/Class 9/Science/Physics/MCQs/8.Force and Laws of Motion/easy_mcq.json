@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Force and Laws of Motion",
+    "generated_at": "2026-03-06T15:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Force is defined as:",
+            "options": {
+                "A": "Energy",
+                "B": "Push or pull",
+                "C": "Speed",
+                "D": "Mass"
+            },
+            "correct_answer": "B",
+            "explanation": "Force is a push or pull acting on an object.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The SI unit of force is:",
+            "options": {
+                "A": "Joule",
+                "B": "Newton",
+                "C": "Watt",
+                "D": "Pascal"
+            },
+            "correct_answer": "B",
+            "explanation": "Force is measured in Newton (N).",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Balanced forces result in:",
+            "options": {
+                "A": "Change in motion",
+                "B": "Acceleration",
+                "C": "No change in motion",
+                "D": "Increase in speed"
+            },
+            "correct_answer": "C",
+            "explanation": "Balanced forces cancel each other and do not change motion.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Unbalanced forces cause:",
+            "options": {
+                "A": "No motion",
+                "B": "Change in motion",
+                "C": "No change in shape",
+                "D": "Equal forces"
+            },
+            "correct_answer": "B",
+            "explanation": "Unbalanced forces cause acceleration or change in motion.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 5,
+            "question": "The tendency of an object to resist change in motion is called:",
+            "options": {
+                "A": "Friction",
+                "B": "Momentum",
+                "C": "Inertia",
+                "D": "Velocity"
+            },
+            "correct_answer": "C",
+            "explanation": "Inertia is the resistance to change in motion.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which quantity measures inertia?",
+            "options": {
+                "A": "Mass",
+                "B": "Velocity",
+                "C": "Force",
+                "D": "Acceleration"
+            },
+            "correct_answer": "A",
+            "explanation": "Mass is the measure of inertia.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Newton’s First Law is also called:",
+            "options": {
+                "A": "Law of motion",
+                "B": "Law of inertia",
+                "C": "Law of gravity",
+                "D": "Law of acceleration"
+            },
+            "correct_answer": "B",
+            "explanation": "The first law explains inertia.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Momentum is defined as:",
+            "options": {
+                "A": "Mass × velocity",
+                "B": "Force × velocity",
+                "C": "Mass × acceleration",
+                "D": "Velocity × acceleration"
+            },
+            "correct_answer": "A",
+            "explanation": "Momentum is the product of mass and velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 9,
+            "question": "The formula for momentum is:",
+            "options": {
+                "A": "F = ma",
+                "B": "p = mv",
+                "C": "v = u + at",
+                "D": "E = mc²"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum equals mass multiplied by velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "The SI unit of momentum is:",
+            "options": {
+                "A": "kg m/s",
+                "B": "N",
+                "C": "m/s",
+                "D": "kg"
+            },
+            "correct_answer": "A",
+            "explanation": "Momentum unit is kilogram metre per second.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Newton’s Second Law gives the relation:",
+            "options": {
+                "A": "p = mv",
+                "B": "F = ma",
+                "C": "v = u + at",
+                "D": "W = mg"
+            },
+            "correct_answer": "B",
+            "explanation": "The second law relates force, mass and acceleration.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Acceleration is defined as:",
+            "options": {
+                "A": "Rate of change of speed",
+                "B": "Rate of change of velocity",
+                "C": "Distance per time",
+                "D": "Force per mass"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration is the rate of change of velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "The SI unit of acceleration is:",
+            "options": {
+                "A": "m/s",
+                "B": "m/s²",
+                "C": "kg",
+                "D": "N"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration is measured in metres per second squared.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Newton’s Third Law states:",
+            "options": {
+                "A": "Objects remain at rest",
+                "B": "F = ma",
+                "C": "For every action there is equal and opposite reaction",
+                "D": "Momentum is conserved"
+            },
+            "correct_answer": "C",
+            "explanation": "The third law describes action and reaction forces.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Action and reaction forces act on:",
+            "options": {
+                "A": "Same object",
+                "B": "Different objects",
+                "C": "Same direction",
+                "D": "Different magnitudes"
+            },
+            "correct_answer": "B",
+            "explanation": "Action and reaction forces act on different objects.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Friction is a force that:",
+            "options": {
+                "A": "Increases motion",
+                "B": "Opposes motion",
+                "C": "Produces light",
+                "D": "Produces heat only"
+            },
+            "correct_answer": "B",
+            "explanation": "Friction opposes the motion of objects.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Passengers fall forward when a bus stops suddenly due to:",
+            "options": {
+                "A": "Friction",
+                "B": "Inertia",
+                "C": "Gravity",
+                "D": "Velocity"
+            },
+            "correct_answer": "B",
+            "explanation": "Due to inertia of motion.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which law explains rocket motion?",
+            "options": {
+                "A": "First law",
+                "B": "Second law",
+                "C": "Third law",
+                "D": "Law of gravitation"
+            },
+            "correct_answer": "C",
+            "explanation": "Rocket propulsion works on Newton’s Third Law.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 19,
+            "question": "The momentum of a body at rest is:",
+            "options": {
+                "A": "Maximum",
+                "B": "Minimum",
+                "C": "Zero",
+                "D": "Infinite"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum equals mass × velocity, and velocity is zero.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which scientist proposed the laws of motion?",
+            "options": {
+                "A": "Albert Einstein",
+                "B": "Isaac Newton",
+                "C": "Galileo",
+                "D": "Darwin"
+            },
+            "correct_answer": "B",
+            "explanation": "Sir Isaac Newton formulated the laws of motion.",
+            "difficulty": "easy",
+            "source_section": "Section 8"
+        },
+        {
+            "question_number": 21,
+            "question": "Momentum depends on:",
+            "options": {
+                "A": "Mass only",
+                "B": "Velocity only",
+                "C": "Mass and velocity",
+                "D": "Acceleration"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum = mass × velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Force is a:",
+            "options": {
+                "A": "Scalar quantity",
+                "B": "Vector quantity",
+                "C": "Constant",
+                "D": "Unit"
+            },
+            "correct_answer": "B",
+            "explanation": "Force has both magnitude and direction.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Momentum is a:",
+            "options": {
+                "A": "Scalar quantity",
+                "B": "Vector quantity",
+                "C": "Constant",
+                "D": "Energy"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum has both magnitude and direction.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 24,
+            "question": "The SI unit of mass is:",
+            "options": {
+                "A": "kg",
+                "B": "g",
+                "C": "N",
+                "D": "m/s"
+            },
+            "correct_answer": "A",
+            "explanation": "Mass is measured in kilograms.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Seat belts are used in cars to overcome:",
+            "options": {
+                "A": "Friction",
+                "B": "Inertia",
+                "C": "Velocity",
+                "D": "Mass"
+            },
+            "correct_answer": "B",
+            "explanation": "Seat belts prevent forward motion due to inertia.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        }
+    ]
+}

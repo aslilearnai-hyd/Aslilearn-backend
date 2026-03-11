@@ -1,0 +1,237 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "difficulty": "easy",
+    "generated_at": "2026-03-05T22:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a line segment?",
+            "answer": "A line segment is a part of a line with two endpoints.",
+            "key_points": [
+                "line segment",
+                "two endpoints"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a ray?",
+            "answer": "A ray is a part of a line with one endpoint extending infinitely in one direction.",
+            "key_points": [
+                "ray",
+                "one endpoint"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is an angle?",
+            "answer": "An angle is formed when two rays meet at a common point called the vertex.",
+            "key_points": [
+                "angle",
+                "vertex"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is an acute angle?",
+            "answer": "An acute angle is an angle whose measure is greater than 0° but less than 90°.",
+            "key_points": [
+                "acute angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a right angle?",
+            "answer": "A right angle is an angle measuring exactly 90°.",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is an obtuse angle?",
+            "answer": "An obtuse angle is an angle greater than 90° but less than 180°.",
+            "key_points": [
+                "obtuse angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a straight angle?",
+            "answer": "A straight angle is an angle measuring 180°.",
+            "key_points": [
+                "straight angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What are complementary angles?",
+            "answer": "Complementary angles are two angles whose sum is 90°.",
+            "key_points": [
+                "complementary angles"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What are supplementary angles?",
+            "answer": "Supplementary angles are two angles whose sum is 180°.",
+            "key_points": [
+                "supplementary angles"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What are adjacent angles?",
+            "answer": "Adjacent angles are two angles that share a common vertex and a common arm.",
+            "key_points": [
+                "adjacent angles"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a linear pair of angles?",
+            "answer": "A linear pair consists of two adjacent angles whose non-common arms form a straight line.",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the sum of angles in a linear pair?",
+            "answer": "The sum of angles in a linear pair is 180°.",
+            "key_points": [
+                "linear pair sum"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What are vertically opposite angles?",
+            "answer": "Vertically opposite angles are the angles opposite each other when two lines intersect.",
+            "key_points": [
+                "vertically opposite angles"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the relationship between vertically opposite angles?",
+            "answer": "Vertically opposite angles are equal.",
+            "key_points": [
+                "equal angles"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What are parallel lines?",
+            "answer": "Parallel lines are lines in the same plane that never intersect.",
+            "key_points": [
+                "parallel lines"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the distance between two parallel lines?",
+            "answer": "The distance between two parallel lines is constant.",
+            "key_points": [
+                "parallel distance"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a transversal?",
+            "answer": "A transversal is a line that intersects two or more lines at different points.",
+            "key_points": [
+                "transversal"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What are corresponding angles?",
+            "answer": "Corresponding angles are angles in matching positions when a transversal cuts two lines.",
+            "key_points": [
+                "corresponding angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What are alternate interior angles?",
+            "answer": "Alternate interior angles are angles on opposite sides of a transversal inside two lines.",
+            "key_points": [
+                "alternate interior angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the sum of angles around a point?",
+            "answer": "The sum of angles around a point is 360°.",
+            "key_points": [
+                "angles around a point"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What happens if corresponding angles are equal?",
+            "answer": "The two lines cut by the transversal are parallel.",
+            "key_points": [
+                "parallel lines"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What happens if alternate interior angles are equal?",
+            "answer": "The lines are parallel.",
+            "key_points": [
+                "alternate angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What type of angle is 120°?",
+            "answer": "120° is an obtuse angle.",
+            "key_points": [
+                "obtuse angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of angle is 45°?",
+            "answer": "45° is an acute angle.",
+            "key_points": [
+                "acute angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 25,
+            "question": "State the theorem about lines parallel to the same line.",
+            "answer": "Lines parallel to the same line are parallel to each other.",
+            "key_points": [
+                "parallel line theorem"
+            ],
+            "source_section": "Section 6.5"
+        }
+    ]
+}

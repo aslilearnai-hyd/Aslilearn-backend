@@ -1,0 +1,161 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solutes, Solvents, and Solutions",
+  "difficulty": "Medium",
+  "source_pdf": "The Amazing World of Solutes Solvents and Solutions.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Comparing Solubility of Sugar and Salt",
+      "objective": "Investigate differences in solubility of substances",
+      "materials": ["Two beakers", "Water", "Sugar", "Salt", "Spoon"],
+      "steps": [
+        "Take equal amounts of water in two beakers",
+        "Add sugar in one beaker and salt in the other",
+        "Stir both solutions until the solute dissolves",
+        "Observe and compare how much dissolves"
+      ],
+      "learning_outcome": "Students learn that different substances have different solubility levels",
+      "evaluation": "Observation record and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Preparing Dilute and Concentrated Solutions",
+      "objective": "Understand concentration in solutions",
+      "materials": ["Water", "Salt", "Two beakers", "Spoon"],
+      "steps": [
+        "Prepare one solution with one spoon of salt in water",
+        "Prepare another with three spoons of salt in the same amount of water",
+        "Compare the appearance and taste (teacher supervised)",
+        "Discuss which is dilute and which is concentrated"
+      ],
+      "learning_outcome": "Students understand relative concentration",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Solubility of Solids in Cold vs Hot Water",
+      "objective": "Study the effect of temperature on solubility",
+      "materials": [
+        "Two beakers",
+        "Cold water",
+        "Hot water",
+        "Salt or sugar",
+        "Spoon"
+      ],
+      "steps": [
+        "Add equal amounts of solute to cold and hot water",
+        "Stir both solutions",
+        "Observe the rate of dissolving",
+        "Record which dissolves faster"
+      ],
+      "learning_outcome": "Students learn that higher temperature increases solubility for many solids",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Testing Solubility in Different Liquids",
+      "objective": "Compare solubility in water, oil, and vinegar",
+      "materials": ["Water", "Oil", "Vinegar", "Salt", "Three cups"],
+      "steps": [
+        "Add equal amounts of salt to water, oil, and vinegar",
+        "Stir each mixture",
+        "Observe whether salt dissolves",
+        "Record results in a table"
+      ],
+      "learning_outcome": "Students understand that solubility depends on the solvent",
+      "evaluation": "Observation table and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Measuring Volume of Liquid Samples",
+      "objective": "Practice accurate measurement of liquids",
+      "materials": ["Measuring cylinder", "Water", "Colored liquid"],
+      "steps": [
+        "Pour water into measuring cylinder up to 30 mL",
+        "Observe the meniscus carefully",
+        "Record the reading",
+        "Repeat with colored liquid"
+      ],
+      "learning_outcome": "Students learn to read the meniscus correctly",
+      "evaluation": "Accuracy of recorded readings (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Comparing Density of Different Objects",
+      "objective": "Calculate density of multiple solids",
+      "materials": [
+        "Digital balance",
+        "Measuring cylinder",
+        "Water",
+        "Metal object",
+        "Stone"
+      ],
+      "steps": [
+        "Measure mass of each object",
+        "Find volume using displacement method",
+        "Calculate density using Density = Mass / Volume",
+        "Compare densities"
+      ],
+      "learning_outcome": "Students understand density differences among materials",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Floating and Sinking Objects",
+      "objective": "Investigate how density affects floating",
+      "materials": ["Water", "Plastic ball", "Coin", "Wood piece"],
+      "steps": [
+        "Place each object in water",
+        "Observe whether it floats or sinks",
+        "Record observations",
+        "Relate results to density"
+      ],
+      "learning_outcome": "Students understand the relationship between density and buoyancy",
+      "evaluation": "Observation chart (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Density of Liquids Experiment",
+      "objective": "Compare density of oil and water",
+      "materials": ["Glass", "Water", "Cooking oil"],
+      "steps": [
+        "Pour water into a glass",
+        "Add oil slowly",
+        "Observe layer formation",
+        "Discuss density differences"
+      ],
+      "learning_outcome": "Students learn that less dense liquids float above denser ones",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Evaporation to Obtain Salt",
+      "objective": "Understand how salt can be separated from a solution",
+      "materials": ["Salt water", "Evaporation dish", "Heat source"],
+      "steps": [
+        "Prepare salt water solution",
+        "Heat gently until water evaporates",
+        "Observe formation of salt crystals",
+        "Record observations"
+      ],
+      "learning_outcome": "Students learn separation by evaporation",
+      "evaluation": "Observation notes (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Investigating Air as a Solution",
+      "objective": "Understand that air is a mixture of gases",
+      "materials": ["Balloon", "Air pump"],
+      "steps": [
+        "Inflate a balloon",
+        "Discuss gases present in air",
+        "Relate air composition to solution concept",
+        "Record findings"
+      ],
+      "learning_outcome": "Students understand air as a gaseous solution",
+      "evaluation": "Explanation and discussion (10 marks)"
+    }
+  ]
+}

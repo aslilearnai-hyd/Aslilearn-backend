@@ -1,0 +1,182 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter_name": "The Story of Village Palampur",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the interdependency of the four factors of production",
+        "Evaluate the transition from traditional to modern farming methods",
+        "Assess the socio-economic impact of the Green Revolution",
+        "Examine the challenges of land sustainability and groundwater depletion",
+        "Understand the credit cycle and debt traps in rural economies",
+        "Investigate the growth potential of non-farm sectors"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Organization of Production & Capital Theory",
+            "topics_covered": [
+                "Detailed study of the four requirements of production",
+                "Deep dive into Physical Capital: Fixed vs. Working",
+                "The role of Human Capital in coordinating resources"
+            ],
+            "teaching_strategy": [
+                "Case study analysis of a small business",
+                "Comparative charting of different capital types"
+            ],
+            "student_activities": [
+                "Create a 'Production Plan' for a hypothetical local business",
+                "Categorize assets into Fixed and Working capital with justification"
+            ],
+            "assessment": [
+                "Short analytical paragraph on the importance of Human Capital",
+                "Classification exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Intensive Farming & Multiple Cropping",
+            "topics_covered": [
+                "Techniques to increase yield from fixed land",
+                "The role of electricity in transforming irrigation",
+                "Multiple cropping vs. modern farming"
+            ],
+            "teaching_strategy": [
+                "Graphical representation of crop cycles",
+                "Discussion on the efficiency of electric tubewells"
+            ],
+            "student_activities": [
+                "Calculate crop intensity for a 2-hectare plot",
+                "Map the change in Palampur's irrigation over decades"
+            ],
+            "assessment": [
+                "Problem-solving on multiple cropping yields",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Green Revolution: Success and Costs",
+            "topics_covered": [
+                "Introduction of HYV seeds and chemical inputs",
+                "Regional disparities in agricultural growth",
+                "Initial surge in productivity"
+            ],
+            "teaching_strategy": [
+                "Data analysis of wheat and rice production (1965-present)",
+                "Comparative study of Punjab vs. other states"
+            ],
+            "student_activities": [
+                "Interpret a bar graph showing the rise in food grain production",
+                "Identify the specific inputs required for an HYV 'package'"
+            ],
+            "assessment": [
+                "Data interpretation test",
+                "Oral questioning on Green Revolution mechanics"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Land Sustainability & Environmental Ethics",
+            "topics_covered": [
+                "Scientific reports on soil fertility loss",
+                "Groundwater table depletion",
+                "The trade-off between current yield and future resources"
+            ],
+            "teaching_strategy": [
+                "Socratic questioning on 'Will the land sustain?'",
+                "Presentation on chemical fertilizer impact on soil microorganisms"
+            ],
+            "student_activities": [
+                "Write a 'Letter to the Editor' regarding falling water tables",
+                "Group discussion on sustainable farming alternatives"
+            ],
+            "assessment": [
+                "Evaluation of the 'Sustainability Report' written by students",
+                "Peer feedback"
+            ]
+        },
+        {
+            "sl_no": 5,
+            "period": 5,
+            "title": "Social Structure and Land Distribution",
+            "topics_covered": [
+                "Inequality in land ownership (450 families case study)",
+                "The plight of landless laborers and small farmers",
+                "Wages and work conditions in rural markets"
+            ],
+            "teaching_strategy": [
+                "Using pie charts to visualize inequality",
+                "Discussion on why wages are lower than government minimums"
+            ],
+            "student_activities": [
+                "Construct a pie chart based on Palampur's land distribution data",
+                "Role-play a wage negotiation between a laborer and a large farmer"
+            ],
+            "assessment": [
+                "Pie chart accuracy check",
+                "Analytical note on rural labor competition"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Rural Credit and the Debt Trap",
+            "objective": "Understand how capital is arranged and the risks involved",
+            "topics_covered": [
+                "Sources of capital for small vs. large farmers",
+                "Interest rates and the cycle of debt",
+                "The concept of 'Marketable Surplus'"
+            ],
+            "teaching_strategy": [
+                "Mathematical comparison of moneylender vs. bank interest",
+                "Flowcharting the profit reinvestment of large farmers"
+            ],
+            "student_activities": [
+                "Calculate the total repayment for a small farmer's loan",
+                "Analyze the 'Story of Savita' to identify her economic barriers"
+            ],
+            "assessment": [
+                "Numerical problem on interest rates",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Diversification & Non-Farm Economy",
+            "topics_covered": [
+                "Dairy, Small manufacturing, and Trade",
+                "The role of transport and IT in village growth",
+                "Barriers to starting non-farm activities"
+            ],
+            "teaching_strategy": [
+                "Brainstorming 'Start-up' ideas for Palampur",
+                "Summary mind-mapping of the entire chapter"
+            ],
+            "student_activities": [
+                "Draft a mini-business plan for a village-based non-farm activity",
+                "Participate in a whole-chapter revision quiz"
+            ],
+            "assessment": [
+                "Chapter-end descriptive test (25 marks)",
+                "Final evaluation of business plans"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT Economics Textbook",
+        "Data sheets on Indian agricultural production",
+        "Pie charts and bar graphs",
+        "Financial calculators for interest problems",
+        "Case study handouts (Savita and Tejpal Singh)"
+    ],
+    "evaluation_methods": [
+        "Data Interpretation Exercises",
+        "Mathematical Problem Solving (Interest/Yield)",
+        "Comparative Essay Writing",
+        "Classroom Debates",
+        "Comprehensive Unit Test"
+    ],
+    "teacher_tip": "Focus on the 'vicious cycle' of debt for small farmers versus the 'virtuous cycle' of reinvestment for large farmers to help students grasp systemic inequality."
+}

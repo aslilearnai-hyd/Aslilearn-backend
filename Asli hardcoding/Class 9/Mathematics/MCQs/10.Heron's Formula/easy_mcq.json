@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 10: Heron's Formula",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Heron's formula is used to find the",
+            "options": {
+                "A": "Perimeter of a triangle",
+                "B": "Area of a triangle",
+                "C": "Height of a triangle",
+                "D": "Base of a triangle"
+            },
+            "correct_answer": "B",
+            "explanation": "Heron's formula calculates the area of a triangle using its three sides.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "If a triangle has sides 3 cm, 4 cm, 5 cm, its semi-perimeter is",
+            "options": {
+                "A": "6 cm",
+                "B": "5 cm",
+                "C": "12 cm",
+                "D": "7 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Semi-perimeter s = (a+b+c)/2 = (3+4+5)/2 = 6 cm.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The area of a triangle with sides 3 cm, 4 cm, 5 cm using Heron's formula is",
+            "options": {
+                "A": "6 cm²",
+                "B": "12 cm²",
+                "C": "24 cm²",
+                "D": "10 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = 6, Area = √[s(s-a)(s-b)(s-c)] = √[6×3×2×1] = √36 = 6 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Heron’s formula can be applied to",
+            "options": {
+                "A": "Only equilateral triangles",
+                "B": "Any triangle",
+                "C": "Right triangles only",
+                "D": "Isosceles triangles only"
+            },
+            "correct_answer": "B",
+            "explanation": "Heron's formula works for all types of triangles as long as side lengths are known.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 5,
+            "question": "The semi-perimeter of a triangle is half of its",
+            "options": {
+                "A": "Height",
+                "B": "Area",
+                "C": "Perimeter",
+                "D": "Base"
+            },
+            "correct_answer": "C",
+            "explanation": "Semi-perimeter s = (a+b+c)/2, which is half of the perimeter.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 6,
+            "question": "For a triangle with sides 5 cm, 5 cm, 6 cm, the semi-perimeter is",
+            "options": {
+                "A": "8 cm",
+                "B": "7 cm",
+                "C": "16 cm",
+                "D": "10 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (5+5+6)/2 = 16/2 = 8 cm.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Area of triangle using Heron's formula is given by",
+            "options": {
+                "A": "√[s(s-a)(s-b)(s-c)]",
+                "B": "1/2 × base × height",
+                "C": "a × b × c",
+                "D": "s²"
+            },
+            "correct_answer": "A",
+            "explanation": "Heron's formula states Area = √[s(s-a)(s-b)(s-c)] where s = semi-perimeter.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "The sides of a triangle are 7 cm, 8 cm, 9 cm. Its semi-perimeter is",
+            "options": {
+                "A": "12 cm",
+                "B": "11 cm",
+                "C": "24 cm",
+                "D": "14 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (7+8+9)/2 = 24/2 = 12 cm.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which value is needed along with sides of a triangle to use Heron's formula?",
+            "options": {
+                "A": "Height",
+                "B": "Semi-perimeter",
+                "C": "Base",
+                "D": "Angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Heron's formula uses the semi-perimeter calculated from the sides.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 10,
+            "question": "If a triangle has sides 6 cm, 8 cm, 10 cm, its area using Heron's formula is",
+            "options": {
+                "A": "24 cm²",
+                "B": "48 cm²",
+                "C": "12 cm²",
+                "D": "30 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (6+8+10)/2 = 12; Area = √[12(12-6)(12-8)(12-10)] = √[12×6×4×2] = √576 = 24 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Heron's formula was discovered by",
+            "options": {
+                "A": "Pythagoras",
+                "B": "Heron of Alexandria",
+                "C": "Euclid",
+                "D": "Archimedes"
+            },
+            "correct_answer": "B",
+            "explanation": "Heron of Alexandria, a Greek mathematician, discovered this formula.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A triangle has sides 13 cm, 14 cm, 15 cm. Its semi-perimeter is",
+            "options": {
+                "A": "21 cm",
+                "B": "20 cm",
+                "C": "22 cm",
+                "D": "19 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (13+14+15)/2 = 42/2 = 21 cm.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 13,
+            "question": "The area of a triangle cannot be calculated using Heron’s formula if",
+            "options": {
+                "A": "The sides are not known",
+                "B": "The semi-perimeter is known",
+                "C": "The triangle is scalene",
+                "D": "The triangle is isosceles"
+            },
+            "correct_answer": "A",
+            "explanation": "Heron's formula requires the three sides; without them, area cannot be calculated.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 14,
+            "question": "For a triangle with sides a=b=c, Heron’s formula gives area as",
+            "options": {
+                "A": "√[3s(s-a)]",
+                "B": "(√3/4) × a²",
+                "C": "1/2 × a × h",
+                "D": "a²"
+            },
+            "correct_answer": "B",
+            "explanation": "For equilateral triangle, area = (√3/4) × a², which is consistent with Heron’s formula.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Heron's formula is useful when",
+            "options": {
+                "A": "Only base and height are known",
+                "B": "All three sides are known",
+                "C": "Only perimeter is known",
+                "D": "Angles are known"
+            },
+            "correct_answer": "B",
+            "explanation": "Heron's formula calculates area directly from the three sides, without height.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Triangle sides 9 cm, 12 cm, 15 cm. Area using Heron’s formula is",
+            "options": {
+                "A": "54 cm²",
+                "B": "72 cm²",
+                "C": "36 cm²",
+                "D": "60 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (9+12+15)/2 = 18; Area = √[18×(18-9)(18-12)(18-15)] = √[18×9×6×3] = √2916 = 54 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "In Heron’s formula, the symbol 's' stands for",
+            "options": {
+                "A": "Side of triangle",
+                "B": "Semi-perimeter",
+                "C": "Slope",
+                "D": "Segment"
+            },
+            "correct_answer": "B",
+            "explanation": "'s' is the semi-perimeter of the triangle, half of its perimeter.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Heron's formula is also called",
+            "options": {
+                "A": "Triangle area formula",
+                "B": "Quadratic formula",
+                "C": "Perimeter formula",
+                "D": "Base-height formula"
+            },
+            "correct_answer": "A",
+            "explanation": "It is a general formula to calculate the area of any triangle.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 19,
+            "question": "For triangle with sides 8 cm, 15 cm, 17 cm, the semi-perimeter is",
+            "options": {
+                "A": "20 cm",
+                "B": "25 cm",
+                "C": "30 cm",
+                "D": "15 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (8+15+17)/2 = 40/2 = 20 cm.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Heron’s formula works best for triangles when",
+            "options": {
+                "A": "Angles are given",
+                "B": "All sides are known",
+                "C": "Height is given",
+                "D": "Base is unknown"
+            },
+            "correct_answer": "B",
+            "explanation": "It requires all three sides; angles or height are not necessary.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Area of triangle with sides 7 cm, 24 cm, 25 cm using Heron’s formula is",
+            "options": {
+                "A": "84 cm²",
+                "B": "70 cm²",
+                "C": "60 cm²",
+                "D": "50 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (7+24+25)/2 = 28; Area = √[28×(28-7)(28-24)(28-25)] = √[28×21×4×3] = √7056 = 84 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Heron’s formula requires which of the following calculations?",
+            "options": {
+                "A": "Addition, subtraction, multiplication, square root",
+                "B": "Division only",
+                "C": "Addition only",
+                "D": "Subtraction only"
+            },
+            "correct_answer": "A",
+            "explanation": "You calculate semi-perimeter (addition/division), differences (subtraction), multiply, and take square root.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 23,
+            "question": "If a triangle is equilateral with side 'a', Heron’s formula gives area as",
+            "options": {
+                "A": "a²/2",
+                "B": "√3/4 × a²",
+                "C": "a²",
+                "D": "a²/4"
+            },
+            "correct_answer": "B",
+            "explanation": "For equilateral triangle, area = (√3/4) × a².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "A triangle with sides 10 cm, 10 cm, 12 cm. Area using Heron’s formula is",
+            "options": {
+                "A": "48 cm²",
+                "B": "60 cm²",
+                "C": "50 cm²",
+                "D": "55 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (10+10+12)/2 = 16; Area = √[16×(16-10)(16-10)(16-12)] = √[16×6×6×4] = √2304 = 48 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "The area of a right-angled triangle using Heron’s formula is equal to",
+            "options": {
+                "A": "1/2 × base × height",
+                "B": "Sum of squares of sides",
+                "C": "Perimeter × semi-perimeter",
+                "D": "Base × height"
+            },
+            "correct_answer": "A",
+            "explanation": "For right-angled triangles, Heron's formula simplifies to the familiar 1/2 × base × height.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        }
+    ]
+}

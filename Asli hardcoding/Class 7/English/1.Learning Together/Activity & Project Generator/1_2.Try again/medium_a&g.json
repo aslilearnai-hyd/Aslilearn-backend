@@ -1,0 +1,139 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "Try Again",
+  "difficulty": "Medium",
+  "source_pdf": "learning_together_ch.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Analyzing the Poet's Tone",
+      "objective": "Identify the mood and tone of the poem",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the poem 'Try Again' aloud twice.",
+        "List three adjectives that describe the poet's tone (e.g., encouraging, firm, patient).",
+        "Find two lines from the poem that support each adjective you chose."
+      ],
+      "learning_outcome": "Students understand how word choice creates tone in poetry.",
+      "evaluation": "Correct identification of tone with textual evidence (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Deciphering the 'Task' Metaphor",
+      "objective": "Interpret the metaphorical meaning of 'task' in the poem",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "In the poem, the poet mentions a 'task' that should be kept in view.",
+        "Write a 50-word paragraph explaining what this 'task' represents in real life.",
+        "Discuss with a partner: Is the task the same for everyone?"
+      ],
+      "learning_outcome": "Students learn to interpret metaphors and abstract concepts.",
+      "evaluation": "Depth of interpretation and clarity of expression (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "The Meaning of 'Disgrace'",
+      "objective": "Explore the poet's perspective on failure",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "The poet says, 'If we strive, ’tis no disgrace.' Explain what this means in your own words.",
+        "Write a short response arguing why failing is not shameful as long as effort is present.",
+        "Give one real-life example of a famous person who failed before succeeding."
+      ],
+      "learning_outcome": "Students develop critical thinking regarding social stigmas of failure.",
+      "evaluation": "Logical reasoning and relevant examples (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Vocabulary: Contextual Usage",
+      "objective": "Master formal vocabulary from the poem",
+      "materials": ["Dictionary", "Notebook"],
+      "steps": [
+        "Look up the meanings of: 'Prevail', 'Strive', 'Heed', and 'Patience'.",
+        "Write a separate sentence for each word, but the sentence must be about a school-related situation.",
+        "Example: 'To excel in math, one must strive to solve difficult problems daily.'"
+      ],
+      "learning_outcome": "Students apply poetic vocabulary to practical, everyday contexts.",
+      "evaluation": "Grammatical accuracy and contextual relevance (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Paraphrasing Stanzas",
+      "objective": "Practice summarization and comprehension",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Choose the second stanza of the poem.",
+        "Rewrite the entire stanza in modern, simple prose (plain English).",
+        "Ensure you don't lose the original meaning while changing the 'old-fashioned' phrasing."
+      ],
+      "learning_outcome": "Students improve their ability to translate poetic language into prose.",
+      "evaluation": "Accuracy of the paraphrase and clarity (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Creative Writing: Advice to a Younger Self",
+      "objective": "Practice first-person narrative using poetic themes",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are 10 years older. Write a short letter (80 words) to your current self.",
+        "Incorporate the phrase 'Try Again' at least twice in the letter.",
+        "Mention a specific goal you currently have and why you shouldn't give up on it."
+      ],
+      "learning_outcome": "Students practice narrative voice and thematic application.",
+      "evaluation": "Creativity, tone, and use of thematic elements (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Grammar: Conditional Sentences",
+      "objective": "Identify and use 'If' clauses (Conditionals)",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "The poem uses many 'If' sentences (e.g., 'If at first you don't succeed...').",
+        "Find three conditional sentences in the poem.",
+        "Create three new conditional sentences of your own that offer advice to a classmate."
+      ],
+      "learning_outcome": "Students recognize and construct conditional (Type 0 and Type 1) sentences.",
+      "evaluation": "Correct grammatical structure of 'If' clauses (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "The 'Persistence' Interview",
+      "objective": "Practice speaking and interviewing skills",
+      "materials": ["Notebook", "Recording device (optional)"],
+      "steps": [
+        "Interview a teacher or a family member about a time they had to 'Try Again'.",
+        "Ask three specific questions: What was the challenge? How many times did they try? What did they learn?",
+        "Write a brief summary of their story in your notebook."
+      ],
+      "learning_outcome": "Students develop communication skills and learn from external experiences.",
+      "evaluation": "Quality of questions and summary (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Poetic Structure Analysis",
+      "objective": "Analyze the repetition and its effect",
+      "materials": ["Textbook", "Highlighters"],
+      "steps": [
+        "Highlight every time the phrase 'Try Again' appears in the poem.",
+        "Explain in 2-3 sentences why you think the poet repeats this phrase so often.",
+        "How would the poem feel different if it was only said once at the end?"
+      ],
+      "learning_outcome": "Students understand the rhetorical effect of repetition in literature.",
+      "evaluation": "Depth of insight into poetic techniques (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Theme-based Mind Map",
+      "objective": "Organize the poem's concepts visually",
+      "materials": ["Chart Paper", "Markers"],
+      "steps": [
+        "Create a mind map with 'Success' at the center.",
+        "Branch out into the qualities mentioned in the poem (Patience, Courage, Effort).",
+        "For each branch, add a quote from the poem that matches the quality."
+      ],
+      "learning_outcome": "Students synthesize and categorize thematic information visually.",
+      "evaluation": "Organization, accuracy of quotes, and visual clarity (10 marks)"
+    }
+  ]
+}

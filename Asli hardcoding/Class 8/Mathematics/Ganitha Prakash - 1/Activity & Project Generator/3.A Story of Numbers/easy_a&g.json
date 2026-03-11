@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "A Story of Numbers",
+  "difficulty": "Easy",
+  "source_pdf": "ch-3_A_STORY_OF_NUMBERS.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Counting with Sticks",
+      "objective": "Understand early counting methods",
+      "materials": ["Sticks or matchsticks", "Notebook"],
+      "steps": [
+        "Place one stick for each object counted",
+        "Count up to 10 using sticks",
+        "Write the numbers represented"
+      ],
+      "learning_outcome": "Understands early counting methods",
+      "evaluation": "Correct representation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Tally Mark Activity",
+      "objective": "Learn tally mark representation",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 20",
+        "Represent each number using tally marks",
+        "Check the correctness of tally groups"
+      ],
+      "learning_outcome": "Understands tally mark counting",
+      "evaluation": "Accuracy of tally marks (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Roman Numeral Writing",
+      "objective": "Learn Roman numerals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write Roman numerals for numbers from 1 to 20",
+        "Practice writing numbers like 25, 30 and 40",
+        "Check the answers with the textbook"
+      ],
+      "learning_outcome": "Recognises Roman numerals",
+      "evaluation": "Correct numeral writing (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Number System Timeline",
+      "objective": "Understand the evolution of numbers",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Draw a timeline on chart paper",
+        "Add early number systems like tally marks and Roman numerals",
+        "Include the Hindu-Arabic number system"
+      ],
+      "learning_outcome": "Understands history of number systems",
+      "evaluation": "Correct timeline representation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Body Counting Activity",
+      "objective": "Learn counting using body parts",
+      "materials": ["Notebook"],
+      "steps": [
+        "Count numbers using fingers",
+        "Write the numbers counted",
+        "Discuss how people used body parts for counting"
+      ],
+      "learning_outcome": "Understands body-part counting systems",
+      "evaluation": "Explanation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Roman Numeral Match",
+      "objective": "Match numbers with Roman numerals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers from 1 to 15 in one column",
+        "Write Roman numerals in another column",
+        "Match them correctly"
+      ],
+      "learning_outcome": "Improves Roman numeral recognition",
+      "evaluation": "Correct matching (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Number Representation Chart",
+      "objective": "Compare different number systems",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Choose five numbers",
+        "Represent them using tally marks",
+        "Represent the same numbers in Roman numerals"
+      ],
+      "learning_outcome": "Understands different number representations",
+      "evaluation": "Accuracy and presentation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Create Your Own Number System",
+      "objective": "Understand the idea of number systems",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Create symbols for numbers from 1 to 10",
+        "Use the symbols to represent larger numbers",
+        "Explain how your system works"
+      ],
+      "learning_outcome": "Understands concept of number systems",
+      "evaluation": "Creativity and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Roman Numeral Practice",
+      "objective": "Practice reading Roman numerals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write Roman numerals like X, XV, XX and XXX",
+        "Convert them into Hindu-Arabic numbers",
+        "Check answers with the teacher"
+      ],
+      "learning_outcome": "Improves numeral conversion skills",
+      "evaluation": "Correct conversions (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Number Story Writing",
+      "objective": "Connect numbers with storytelling",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short story about how ancient people counted objects",
+        "Include examples like sticks or tally marks",
+        "Share the story with classmates"
+      ],
+      "learning_outcome": "Understands historical context of numbers",
+      "evaluation": "Creativity and concept clarity (10 marks)"
+    }
+  ]
+}

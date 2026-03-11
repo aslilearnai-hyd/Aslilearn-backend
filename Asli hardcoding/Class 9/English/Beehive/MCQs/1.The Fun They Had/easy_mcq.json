@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Fun They Had",
+    "generated_at": "2026-03-07T19:26:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of 'The Fun They Had'?",
+            "options": {
+                "A": "Roald Dahl",
+                "B": "Isaac Asimov",
+                "C": "Enid Blyton",
+                "D": "Ruskin Bond"
+            },
+            "correct_answer": "B",
+            "explanation": "The story is written by Isaac Asimov.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who finds the old book in the story?",
+            "options": {
+                "A": "Margie",
+                "B": "Tommy",
+                "C": "Their teacher",
+                "D": "Margie's mother"
+            },
+            "correct_answer": "B",
+            "explanation": "Tommy finds the old book in the attic.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is Margie’s age in the story?",
+            "options": {
+                "A": "10",
+                "B": "11",
+                "C": "12",
+                "D": "13"
+            },
+            "correct_answer": "A",
+            "explanation": "Margie is 10 years old.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How does Margie feel about school?",
+            "options": {
+                "A": "Excited",
+                "B": "Bored",
+                "C": "Happy",
+                "D": "Confused"
+            },
+            "correct_answer": "B",
+            "explanation": "Margie finds her schooling boring.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What kind of school does Margie attend?",
+            "options": {
+                "A": "Regular school with a teacher",
+                "B": "Online school",
+                "C": "Home school with a mechanical teacher",
+                "D": "Community school"
+            },
+            "correct_answer": "C",
+            "explanation": "Margie studies at home with a mechanical teacher.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Where do Margie and Tommy live?",
+            "options": {
+                "A": "In the city",
+                "B": "In a village",
+                "C": "In the future",
+                "D": "In the past"
+            },
+            "correct_answer": "C",
+            "explanation": "The story is set in the future.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What surprised Margie about the old book?",
+            "options": {
+                "A": "It had pictures",
+                "B": "It had printed words",
+                "C": "It was heavy",
+                "D": "It was torn"
+            },
+            "correct_answer": "B",
+            "explanation": "Margie was surprised that the old book had printed words.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How did children in the past learn?",
+            "options": {
+                "A": "With mechanical teachers",
+                "B": "By reading printed books in schools",
+                "C": "Through tablets",
+                "D": "At home with parents"
+            },
+            "correct_answer": "B",
+            "explanation": "Children in the past learned in schools with printed books.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Who tells Margie that schools were fun in the past?",
+            "options": {
+                "A": "Her teacher",
+                "B": "Tommy",
+                "C": "Her mother",
+                "D": "A neighbor"
+            },
+            "correct_answer": "B",
+            "explanation": "Tommy tells Margie about the fun of past schools.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why did Margie laugh at the idea of school in the past?",
+            "options": {
+                "A": "She thought it was boring",
+                "B": "She found it unusual and strange",
+                "C": "She disliked books",
+                "D": "She hated teachers"
+            },
+            "correct_answer": "B",
+            "explanation": "Margie found the idea of going to a school with other children unusual and strange.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What did Tommy and Margie compare in the story?",
+            "options": {
+                "A": "Books and tablets",
+                "B": "Old schools and new schools",
+                "C": "Games and studies",
+                "D": "Friends and teachers"
+            },
+            "correct_answer": "B",
+            "explanation": "They compared old schools with new mechanical schooling.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Where was the old book kept?",
+            "options": {
+                "A": "In a cupboard",
+                "B": "In the attic",
+                "C": "On the table",
+                "D": "In the library"
+            },
+            "correct_answer": "B",
+            "explanation": "The book was kept in the attic of Tommy’s house.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why did Margie’s mechanical teacher get angry?",
+            "options": {
+                "A": "Margie broke it",
+                "B": "Margie didn’t answer correctly",
+                "C": "Margie laughed",
+                "D": "Margie went outside"
+            },
+            "correct_answer": "B",
+            "explanation": "The mechanical teacher scolded Margie for incorrect answers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What was Margie’s reaction to learning from the old book?",
+            "options": {
+                "A": "Curious and excited",
+                "B": "Indifferent",
+                "C": "Angry",
+                "D": "Confused"
+            },
+            "correct_answer": "A",
+            "explanation": "She was curious and excited about learning from a real book.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "In the story, books are described as:",
+            "options": {
+                "A": "Electronic",
+                "B": "Printed",
+                "C": "Mechanical",
+                "D": "Invisible"
+            },
+            "correct_answer": "B",
+            "explanation": "The story refers to old printed books.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the main theme of the story?",
+            "options": {
+                "A": "Importance of modern technology",
+                "B": "Value of traditional schools and books",
+                "C": "Friendship among children",
+                "D": "Adventure in school"
+            },
+            "correct_answer": "B",
+            "explanation": "The story highlights the value and fun of traditional schooling.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "How does Tommy describe schools in the past?",
+            "options": {
+                "A": "Dull and boring",
+                "B": "Fun and interesting",
+                "C": "Mechanical",
+                "D": "Strict"
+            },
+            "correct_answer": "B",
+            "explanation": "Tommy explains that schools in the past were fun and interesting.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What does Margie learn from the old book?",
+            "options": {
+                "A": "Mathematics",
+                "B": "History",
+                "C": "Stories of old schools",
+                "D": "Science experiments"
+            },
+            "correct_answer": "C",
+            "explanation": "She reads about how children went to school and had fun learning.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why did children in the past like going to school?",
+            "options": {
+                "A": "Because of mechanical teachers",
+                "B": "Because they met friends and had fun",
+                "C": "Because of computers",
+                "D": "Because of online games"
+            },
+            "correct_answer": "B",
+            "explanation": "Children enjoyed social interaction and the fun activities in schools.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "How does the story compare past and future education?",
+            "options": {
+                "A": "Past education was stricter",
+                "B": "Future education is more mechanical",
+                "C": "Past education was boring",
+                "D": "Future education is similar to past"
+            },
+            "correct_answer": "B",
+            "explanation": "The story shows that in the future, mechanical teachers replace human teachers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Margie’s father is described as:",
+            "options": {
+                "A": "Teacher",
+                "B": "Farmer",
+                "C": "Works in the office",
+                "D": "Unknown"
+            },
+            "correct_answer": "D",
+            "explanation": "The story does not give details about Margie’s father.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is Margie’s schoolroom like?",
+            "options": {
+                "A": "Large and crowded",
+                "B": "Empty and at home",
+                "C": "Full of children",
+                "D": "Outside in the open"
+            },
+            "correct_answer": "B",
+            "explanation": "Margie studies at home in an empty room with a mechanical teacher.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does the mechanical teacher correct Margie?",
+            "options": {
+                "A": "It punishes her",
+                "B": "It gives a mark",
+                "C": "It scolds her",
+                "D": "It ignores her"
+            },
+            "correct_answer": "C",
+            "explanation": "The mechanical teacher scolds Margie for wrong answers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is Margie curious about the past?",
+            "options": {
+                "A": "Because of old stories",
+                "B": "Because of books and Tommy’s talk",
+                "C": "Because of her mother",
+                "D": "Because of her mechanical teacher"
+            },
+            "correct_answer": "B",
+            "explanation": "Margie becomes curious after reading the old book and talking to Tommy.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "The story highlights that education in the future is:",
+            "options": {
+                "A": "Fun and social",
+                "B": "Mechanical and solitary",
+                "C": "Based on games",
+                "D": "Outdoor learning"
+            },
+            "correct_answer": "B",
+            "explanation": "Education in the future is mechanical and children study alone at home.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

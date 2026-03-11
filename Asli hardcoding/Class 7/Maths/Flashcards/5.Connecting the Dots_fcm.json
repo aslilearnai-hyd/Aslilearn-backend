@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 11: Connecting the Dots (Visualising Data)",
+    "generated_at": "2026-03-05T01:23:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is 'frequency' in a dataset?",
+                "correct_answer": "The number of times a particular observation occurs",
+                "explanation": "Tally marks are used to count the frequency of each data point.",
+                "source_section": "Section 11.1"
+            },
+            {
+                "question": "How do you calculate the Arithmetic Mean?",
+                "correct_answer": "Sum of all observations divided by the total number of observations",
+                "explanation": "It provides the average value of the data set.",
+                "source_section": "Section 11.2"
+            },
+            {
+                "question": "What is the 'Range' of data?",
+                "correct_answer": "The difference between the highest and lowest observations",
+                "explanation": "Range = Highest value - Lowest value.",
+                "source_section": "Section 11.2"
+            },
+            {
+                "question": "What is the 'Mode'?",
+                "correct_answer": "The observation that occurs most frequently",
+                "explanation": "A dataset can have more than one mode if multiple values have the same highest frequency.",
+                "source_section": "Section 11.3"
+            },
+            {
+                "question": "How do you find the Median?",
+                "correct_answer": "Arrange data in order and find the middle value",
+                "explanation": "The median divides the data into two equal numerical halves.",
+                "source_section": "Section 11.4"
+            },
+            {
+                "question": "What does a 'Scale' represent in a bar graph?",
+                "correct_answer": "The value assigned to a unit length of a bar",
+                "explanation": "For example, 1 unit length could represent 5 students.",
+                "source_section": "Section 11.5"
+            },
+            {
+                "question": "What is the purpose of a Double Bar Graph?",
+                "correct_answer": "To compare two sets of data for the same categories",
+                "explanation": "It allows for easy visual comparison of changes or differences.",
+                "source_section": "Section 11.6"
+            },
+            {
+                "question": "What is the probability of an event?",
+                "correct_answer": "Number of favorable outcomes divided by total possible outcomes",
+                "explanation": "Probability is always a value between 0 and 1.",
+                "source_section": "Section 11.7"
+            },
+            {
+                "question": "When is an event considered 'Certain'?",
+                "correct_answer": "When its probability is equal to 1",
+                "explanation": "An impossible event has a probability of 0.",
+                "source_section": "Section 11.7"
+            },
+            {
+                "question": "Which measure of central tendency is best for 'most popular' items?",
+                "correct_answer": "The Mode",
+                "explanation": "Mode shows what happens most often, like the most popular shirt size.",
+                "source_section": "Section 11.3"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Tally Mark Rule",
+                "content": "Every 5th mark is a diagonal line across the previous four vertical lines.",
+                "source_section": "Section 11.1"
+            },
+            {
+                "title": "Representative Values",
+                "content": "Mean, Median, and Mode are all different ways to describe the 'center' of data.",
+                "source_section": "Section 11.2-11.4"
+            },
+            {
+                "title": "Median Preparation",
+                "content": "Never calculate the median without first sorting the data in ascending or descending order.",
+                "source_section": "Section 11.4"
+            },
+            {
+                "title": "Equally Likely Outcomes",
+                "content": "When tossing a fair coin, getting a Head or a Tail are equally likely outcomes.",
+                "source_section": "Section 11.7"
+            },
+            {
+                "title": "Choosing a Scale",
+                "content": "Pick a scale that makes the tallest bar fit on the graph but still clearly shows small differences.",
+                "source_section": "Section 11.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The Mean always lies between the greatest and the smallest observations of the data.",
+                "source_section": "Section 11.2"
+            },
+            {
+                "fact": "A dataset with two modes is called 'Bimodal'.",
+                "source_section": "Section 11.3"
+            },
+            {
+                "fact": "Bar graphs must have bars of equal width with equal spacing between them.",
+                "source_section": "Section 11.5"
+            },
+            {
+                "fact": "Probability helps in predicting trends in weather, sports, and insurance.",
+                "source_section": "Applications Section"
+            }
+        ]
+    }
+}

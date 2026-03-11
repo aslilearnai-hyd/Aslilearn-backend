@@ -1,0 +1,116 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 7: Triangles",
+    "generated_at": "2026-03-05T17:30:00",
+    "concepts": [
+        {
+            "concept_name": "Basic Properties of Triangles",
+            "difficulty": "easy",
+            "lesson": "A triangle is a polygon with three sides and three angles. The sum of the interior angles of any triangle is always 180°. Triangles are classified based on their sides (equilateral, isosceles, scalene) and angles (acute, right, obtuse). Understanding these properties helps in identifying triangles and applying geometric rules for construction and calculation.",
+            "real_example": "A triangle with sides 5 cm, 5 cm, 8 cm is isosceles.",
+            "key_points": [
+                "Three sides and three angles",
+                "Sum of angles = 180°",
+                "Classified by sides and angles"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "concept_name": "Pythagoras Theorem",
+            "difficulty": "medium",
+            "lesson": "In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. This theorem is essential for calculating distances and constructing triangles with given dimensions. It applies only to right-angled triangles and forms the basis for many problems involving lengths and heights in geometry.",
+            "real_example": "For a triangle with sides 3 cm, 4 cm, and 5 cm, 5² = 3² + 4²",
+            "key_points": [
+                "Applies only to right-angled triangles",
+                "Hypotenuse² = base² + height²",
+                "Used in distance calculations"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "concept_name": "Congruence of Triangles",
+            "difficulty": "medium",
+            "lesson": "Two triangles are congruent if all corresponding sides and angles are equal. Triangles can be proven congruent using criteria such as SSS (Side-Side-Side), SAS (Side-Angle-Side), ASA (Angle-Side-Angle), and RHS (Right angle-Hypotenuse-Side). Congruence helps in proving equality of lengths and angles and is widely used in geometric proofs.",
+            "real_example": "Triangles with sides 5 cm, 6 cm, 7 cm and 5 cm, 6 cm, 7 cm are congruent by SSS.",
+            "key_points": [
+                "All corresponding sides and angles equal",
+                "Congruence criteria: SSS, SAS, ASA, RHS",
+                "Useful in proofs"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "concept_name": "Similarity of Triangles",
+            "difficulty": "medium",
+            "lesson": "Two triangles are similar if their corresponding angles are equal and corresponding sides are in the same ratio. Similarity is used in problems involving indirect measurement, scale drawings, and proportional reasoning. Similarity criteria include AAA (Angle-Angle-Angle), SAS (Side-Angle-Side), and SSS (Side-Side-Side ratio).",
+            "real_example": "Triangles with angles 60°, 60°, 60° and 60°, 60°, 60° are similar (AAA).",
+            "key_points": [
+                "Corresponding angles equal",
+                "Corresponding sides proportional",
+                "Criteria: AAA, SAS, SSS ratio"
+            ],
+            "source_section": "Section 7.4"
+        },
+        {
+            "concept_name": "Area of a Triangle",
+            "difficulty": "easy",
+            "lesson": "The area of a triangle is given by ½ × base × height. For triangles with sides a, b, c, Heron’s formula can be used: Area = √[s(s-a)(s-b)(s-c)], where s = (a+b+c)/2. Calculating area is crucial for practical problems involving land measurement, architecture, and other applications.",
+            "real_example": "A triangle with base 6 cm and height 4 cm has area = ½ × 6 × 4 = 12 cm².",
+            "key_points": [
+                "Area = ½ × base × height",
+                "Heron’s formula for side lengths",
+                "Used in practical measurements"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "concept_name": "Inequalities in Triangles",
+            "difficulty": "hard",
+            "lesson": "The sum of any two sides of a triangle is always greater than the third side. Similarly, the difference of any two sides is less than the third side. These inequalities are essential for checking the possibility of forming a triangle with given sides and for solving geometric inequalities in proofs.",
+            "real_example": "For sides 3 cm, 4 cm, and 8 cm, 3+4 < 8, so a triangle cannot be formed.",
+            "key_points": [
+                "Sum of any two sides > third side",
+                "Difference of any two sides < third side",
+                "Useful to check triangle existence"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "concept_name": "Altitude, Median, and Angle Bisector",
+            "difficulty": "medium",
+            "lesson": "An altitude is a perpendicular drawn from a vertex to the opposite side. A median joins a vertex to the midpoint of the opposite side. An angle bisector divides an angle into two equal parts. These lines are important in proving congruence, similarity, and in constructing triangles.",
+            "real_example": "In triangle ABC, line from A to midpoint of BC is median.",
+            "key_points": [
+                "Altitude = perpendicular from vertex",
+                "Median = vertex to midpoint",
+                "Angle bisector divides angle equally"
+            ],
+            "source_section": "Section 7.7"
+        },
+        {
+            "concept_name": "Pythagorean Triplets",
+            "difficulty": "easy",
+            "lesson": "Pythagorean triplets are sets of three positive integers a, b, c satisfying a² + b² = c². They are useful for quickly identifying right-angled triangles and constructing them without measurements. Common examples include (3, 4, 5) and (5, 12, 13).",
+            "real_example": "3² + 4² = 5² → 9 + 16 = 25",
+            "key_points": [
+                "a² + b² = c²",
+                "Used in right triangle identification",
+                "Common examples: (3,4,5), (5,12,13)"
+            ],
+            "source_section": "Section 7.2 Examples"
+        },
+        {
+            "concept_name": "Centroid, Circumcenter, Incenter",
+            "difficulty": "hard",
+            "lesson": "Centroid is the intersection of medians, circumcenter is intersection of perpendicular bisectors, and incenter is intersection of angle bisectors. These points have important properties: centroid divides medians in 2:1 ratio, circumcenter is equidistant from vertices, incenter is equidistant from sides. They are key in triangle constructions and advanced geometry problems.",
+            "real_example": "In triangle ABC, medians meet at G (centroid).",
+            "key_points": [
+                "Centroid = intersection of medians",
+                "Circumcenter = intersection of perpendicular bisectors",
+                "Incenter = intersection of angle bisectors",
+                "Equidistance properties important"
+            ],
+            "source_section": "Section 7.8"
+        }
+    ]
+}

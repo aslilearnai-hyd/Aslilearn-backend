@@ -1,0 +1,709 @@
+{
+  "subject": "English",
+  "book": "Poorvi",
+  "Content": "Letter Writing",
+  "class": "7",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Learning from Nature",
+      "question": "Write a letter to your friend describing what you learned from the river."
+    },
+    {
+      "id": 2,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Listening Skills",
+      "question": "Write a letter explaining the importance of listening carefully."
+    },
+    {
+      "id": 3,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Patience",
+      "question": "Write a letter to your sibling explaining how patience helps in life."
+    },
+    {
+      "id": 4,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Never Give Up",
+      "question": "Write a letter encouraging your friend not to give up easily."
+    },
+    {
+      "id": 5,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Learning from Failure",
+      "question": "Write a letter explaining how failure teaches us important lessons."
+    },
+    {
+      "id": 6,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Perseverance",
+      "question": "Write a letter describing the importance of perseverance."
+    },
+    {
+      "id": 7,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Value of Senses",
+      "question": "Write a letter explaining why we should value our senses."
+    },
+    {
+      "id": 8,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Appreciation",
+      "question": "Write a letter to your friend explaining how to appreciate life."
+    },
+    {
+      "id": 9,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Making Life Meaningful",
+      "question": "Write a letter explaining how small experiences make life meaningful."
+    },
+    {
+      "id": 10,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Love for Animals",
+      "question": "Write a letter explaining why we should love and care for animals."
+    },
+    {
+      "id": 11,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Helping Animals",
+      "question": "Write a letter describing how we can help animals in need."
+    },
+    {
+      "id": 12,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Animal Communication",
+      "question": "Write a letter explaining what we can learn from observing animals."
+    },
+    {
+      "id": 13,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Importance of Humour",
+      "question": "Write a letter to a friend explaining why humour is important."
+    },
+    {
+      "id": 14,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Spreading Joy",
+      "question": "Write a letter describing how making others laugh brings joy."
+    },
+    {
+      "id": 15,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Positive Attitude",
+      "question": "Write a letter explaining how humour helps maintain a positive attitude."
+    },
+    {
+      "id": 16,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Speaking Wisely",
+      "question": "Write a letter advising a friend on the importance of speaking wisely."
+    },
+    {
+      "id": 17,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Choosing Words",
+      "question": "Write a letter explaining how choosing words carefully helps avoid misunderstandings."
+    },
+    {
+      "id": 18,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Power of Words",
+      "question": "Write a letter describing the power of words in daily life."
+    },
+    {
+      "id": 19,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Innovation",
+      "question": "Write a letter explaining the importance of being innovative."
+    },
+    {
+      "id": 20,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Encouraging Creativity",
+      "question": "Write a letter encouraging a friend to be creative."
+    },
+    {
+      "id": 21,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Simple Joys",
+      "question": "Write a letter describing a simple pleasure that made you happy."
+    },
+    {
+      "id": 22,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Childhood Memories",
+      "question": "Write a letter sharing a childhood memory involving nature."
+    },
+    {
+      "id": 23,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Exploration",
+      "question": "Write a letter explaining the joy of exploring new places."
+    },
+    {
+      "id": 24,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Cultural Awareness",
+      "question": "Write a letter describing what you learned about different cultures."
+    },
+    {
+      "id": 25,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Adventure",
+      "question": "Write a letter sharing an adventurous experience you had."
+    },
+    {
+      "id": 26,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Facing Challenges",
+      "question": "Write a letter describing how you overcame a challenge during an adventure."
+    },
+    {
+      "id": 27,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Travel Experience",
+      "question": "Write a letter describing a memorable travel experience."
+    },
+    {
+      "id": 28,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Learning While Traveling",
+      "question": "Write a letter explaining what you learned while traveling."
+    },
+    {
+      "id": 29,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Goal Achievement",
+      "question": "Write a letter explaining how determination helps achieve goals."
+    },
+    {
+      "id": 30,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Teamwork",
+      "question": "Write a letter describing how teamwork helped in achieving success."
+    },
+    {
+      "id": 31,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Bravery",
+      "question": "Write a letter describing the bravery of soldiers."
+    },
+    {
+      "id": 32,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Respect Soldiers",
+      "question": "Write a letter thanking soldiers for protecting our country."
+    },
+    {
+      "id": 33,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Patriotism",
+      "question": "Write a letter explaining why patriotism is important."
+    },
+    {
+      "id": 34,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Inspired by Courage",
+      "question": "Write a letter explaining how soldiers’ courage inspires you."
+    },
+    {
+      "id": 35,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Heroic Women",
+      "question": "Write a letter describing the bravery of Rani Abbakka."
+    },
+    {
+      "id": 36,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Women in History",
+      "question": "Write a letter explaining why it is important to remember women heroes."
+    },
+    {
+      "id": 37,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Honesty",
+      "question": "Write a letter explaining the importance of honesty."
+    },
+    {
+      "id": 38,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Friendship",
+      "question": "Write a letter describing the value of friendship."
+    },
+    {
+      "id": 39,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Respect Teachers",
+      "question": "Write a letter thanking your teacher for guidance."
+    },
+    {
+      "id": 40,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Helping Others",
+      "question": "Write a letter explaining why we should help others."
+    },
+    {
+      "id": 41,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Time Management",
+      "question": "Write a letter explaining the importance of managing time wisely."
+    },
+    {
+      "id": 42,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Facing Challenges",
+      "question": "Write a letter advising a friend on how to face challenges in life."
+    },
+    {
+      "id": 43,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Courage",
+      "question": "Write a letter explaining why courage is important."
+    },
+    {
+      "id": 44,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Kindness",
+      "question": "Write a letter explaining why kindness matters."
+    },
+    {
+      "id": 45,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Self Discipline",
+      "question": "Write a letter explaining the importance of self-discipline."
+    },
+    {
+      "id": 46,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning from Books",
+      "question": "Write a letter explaining what books teach us."
+    },
+    {
+      "id": 47,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Personal Growth",
+      "question": "Write a letter describing your personal growth after reading stories."
+    },
+    {
+      "id": 48,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Positive Thinking",
+      "question": "Write a letter explaining the importance of positive thinking."
+    },
+    {
+      "id": 49,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Good Citizen",
+      "question": "Write a letter explaining how to be a good citizen."
+    },
+    {
+      "id": 50,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Helping Society",
+      "question": "Write a letter explaining our responsibility to society."
+    },
+    {
+      "id": 51,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Environmental Care",
+      "question": "Write a letter explaining how we can protect rivers and water bodies."
+    },
+    {
+      "id": 52,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Overcoming Obstacles",
+      "question": "Write a letter to your friend on how to overcome obstacles in studies."
+    },
+    {
+      "id": 53,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Appreciating Nature",
+      "question": "Write a letter describing the beauty of nature around you."
+    },
+    {
+      "id": 54,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Animal Protection",
+      "question": "Write a letter encouraging people to save endangered species."
+    },
+    {
+      "id": 55,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Laughter is Medicine",
+      "question": "Write a letter explaining how laughter can reduce stress."
+    },
+    {
+      "id": 56,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Effective Communication",
+      "question": "Write a letter describing how good communication helps in friendship."
+    },
+    {
+      "id": 57,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Problem Solving",
+      "question": "Write a letter explaining how inventions solve daily problems."
+    },
+    {
+      "id": 58,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Simple Games",
+      "question": "Write a letter describing a fun game you played with friends."
+    },
+    {
+      "id": 59,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Learning from Travel",
+      "question": "Write a letter explaining what you learned about people while traveling."
+    },
+    {
+      "id": 60,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Exploring Fear",
+      "question": "Write a letter describing how you faced your fear during an adventure."
+    },
+    {
+      "id": 61,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Travel Memories",
+      "question": "Write a letter sharing a travel memory that taught you a lesson."
+    },
+    {
+      "id": 62,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Hard Work",
+      "question": "Write a letter explaining how hard work leads to success."
+    },
+    {
+      "id": 63,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Learning from Soldiers",
+      "question": "Write a letter describing what we can learn from soldiers' discipline."
+    },
+    {
+      "id": 64,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Gratitude",
+      "question": "Write a letter expressing gratitude to soldiers for their sacrifices."
+    },
+    {
+      "id": 65,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Leadership",
+      "question": "Write a letter explaining how Rani Abbakka showed leadership."
+    },
+    {
+      "id": 66,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Respect Elders",
+      "question": "Write a letter describing why respecting elders is important."
+    },
+    {
+      "id": 67,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Value of Education",
+      "question": "Write a letter explaining why education is important in life."
+    },
+    {
+      "id": 68,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Goal Setting",
+      "question": "Write a letter advising a friend on setting personal goals."
+    },
+    {
+      "id": 69,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Gratitude",
+      "question": "Write a letter explaining why we should be grateful every day."
+    },
+    {
+      "id": 70,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Reading",
+      "question": "Write a letter describing how reading improves our mind."
+    },
+    {
+      "id": 71,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Environmental Awareness",
+      "question": "Write a letter asking your friend to join a river cleaning drive."
+    },
+    {
+      "id": 72,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Encouraging Friends",
+      "question": "Write a letter motivating a friend who failed an exam."
+    },
+    {
+      "id": 73,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Observing Life",
+      "question": "Write a letter explaining the importance of observing small things."
+    },
+    {
+      "id": 74,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Animal Habitats",
+      "question": "Write a letter describing how humans can protect animal habitats."
+    },
+    {
+      "id": 75,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Cheerfulness",
+      "question": "Write a letter describing how being cheerful improves life."
+    },
+    {
+      "id": 76,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Avoiding Conflicts",
+      "question": "Write a letter advising a friend on using words to avoid fights."
+    },
+    {
+      "id": 77,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Encouraging Innovation",
+      "question": "Write a letter describing how innovation can help society."
+    },
+    {
+      "id": 78,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Childhood Fun",
+      "question": "Write a letter sharing a memory of playing with friends outdoors."
+    },
+    {
+      "id": 79,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Geography Fun",
+      "question": "Write a letter explaining how learning geography helps us."
+    },
+    {
+      "id": 80,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Courage",
+      "question": "Write a letter sharing how you mustered courage during a tough situation."
+    },
+    {
+      "id": 81,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Travel Lessons",
+      "question": "Write a letter describing an important lesson you learned while traveling."
+    },
+    {
+      "id": 82,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Persistence",
+      "question": "Write a letter explaining why persistence is key to achieving dreams."
+    },
+    {
+      "id": 83,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Sacrifice",
+      "question": "Write a letter describing the sacrifices soldiers make for the country."
+    },
+    {
+      "id": 84,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Soldiers as Role Models",
+      "question": "Write a letter explaining how soldiers can inspire young people."
+    },
+    {
+      "id": 85,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Women Leadership",
+      "question": "Write a letter encouraging girls to learn from women leaders in history."
+    },
+    {
+      "id": 86,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Good Habits",
+      "question": "Write a letter describing the importance of developing good habits."
+    },
+    {
+      "id": 87,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Decision Making",
+      "question": "Write a letter advising a friend on making smart decisions."
+    },
+    {
+      "id": 88,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Forgiveness",
+      "question": "Write a letter explaining why forgiving others is important."
+    },
+    {
+      "id": 89,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Self Improvement",
+      "question": "Write a letter describing how you improved yourself this year."
+    },
+    {
+      "id": 90,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Helping Nature",
+      "question": "Write a letter explaining how small efforts can help protect nature."
+    },
+    {
+      "id": 91,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Celebrating Festivals",
+      "question": "Write a letter describing your favourite festival and why you like it."
+    },
+    {
+      "id": 92,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "School Memories",
+      "question": "Write a letter sharing your favourite school memory with a friend."
+    },
+    {
+      "id": 93,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Time Saving Tips",
+      "question": "Write a letter suggesting ways to save time in daily routine."
+    },
+    {
+      "id": 94,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Sharing",
+      "question": "Write a letter describing why sharing with others is important."
+    },
+    {
+      "id": 95,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Overcoming Laziness",
+      "question": "Write a letter advising a friend how to overcome laziness."
+    },
+    {
+      "id": 96,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Healthy Lifestyle",
+      "question": "Write a letter explaining the importance of a healthy lifestyle."
+    },
+    {
+      "id": 97,
+      "chapter": "General",
+      "source": "All Chapters – Poorvi",
+      "title": "Celebrating Achievements",
+      "question": "Write a letter describing a personal achievement and how it made you feel."
+    },
+    {
+      "id": 98,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Poorvi",
+      "title": "Study Tips",
+      "question": "Write a letter sharing your best study tips with a friend."
+    },
+    {
+      "id": 99,
+      "chapter": "Values",
+      "source": "All Chapters – Poorvi",
+      "title": "Helping the Poor",
+      "question": "Write a letter explaining why it is important to help the less fortunate."
+    },
+    {
+      "id": 100,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Life Lessons",
+      "question": "Write a letter summarising the important life lessons you have learned."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: The Case of the Fifth Word",
+  "generated_at": "2026-03-09T11:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is Encyclopedia Brown and why is he famous?",
+      "answer": "Encyclopedia Brown is a young boy known for solving difficult mysteries using his intelligence.",
+      "key_concepts": ["Encyclopedia Brown", "mystery solving"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Why did people call Leroy Brown 'Encyclopedia'?",
+      "answer": "Because he knew many facts and never forgot anything he read.",
+      "key_concepts": ["nickname", "knowledge"],
+      "marks": 2,
+      "source_section": "Character Description"
+    },
+    {
+      "question_number": 3,
+      "question": "What role did Chief Brown play in the story?",
+      "answer": "Chief Brown was the Chief of Police and Encyclopedia’s father who discussed difficult cases with him.",
+      "key_concepts": ["Chief Brown", "police"],
+      "marks": 2,
+      "source_section": "Characters"
+    },
+    {
+      "question_number": 4,
+      "question": "Why did Chief Brown come home worried one evening?",
+      "answer": "Because he could not solve a mystery related to Tim Nolan.",
+      "key_concepts": ["mystery", "Tim Nolan"],
+      "marks": 2,
+      "source_section": "Story Conflict"
+    },
+    {
+      "question_number": 5,
+      "question": "Who was Tim Nolan and why was he suspicious?",
+      "answer": "Tim Nolan was suspected of being involved in a jewellery robbery years earlier.",
+      "key_concepts": ["Tim Nolan", "robbery"],
+      "marks": 2,
+      "source_section": "Background"
+    },
+    {
+      "question_number": 6,
+      "question": "What kind of business did Nolan run after leaving prison?",
+      "answer": "He ran a small palm-tree nursery.",
+      "key_concepts": ["palm tree nursery"],
+      "marks": 2,
+      "source_section": "Background"
+    },
+    {
+      "question_number": 7,
+      "question": "Who was Daniel Davenport?",
+      "answer": "Daniel Davenport was Nolan’s friend who was also suspected in the robbery.",
+      "key_concepts": ["Daniel Davenport"],
+      "marks": 2,
+      "source_section": "Story Conflict"
+    },
+    {
+      "question_number": 8,
+      "question": "What important document did Nolan leave before he died?",
+      "answer": "He left his will on the kitchen table.",
+      "key_concepts": ["will"],
+      "marks": 2,
+      "source_section": "Clue"
+    },
+    {
+      "question_number": 9,
+      "question": "What strange clue was attached to Nolan’s will?",
+      "answer": "A calendar sheet containing four unusual words.",
+      "key_concepts": ["clue", "calendar sheet"],
+      "marks": 2,
+      "source_section": "Clue"
+    },
+    {
+      "question_number": 10,
+      "question": "What were the four coded words written by Nolan?",
+      "answer": "Nom, Utes, Sweden, and Hurts.",
+      "key_concepts": ["coded words"],
+      "marks": 2,
+      "source_section": "Clue"
+    },
+    {
+      "question_number": 11,
+      "question": "Why were the four words confusing to the Browns at first?",
+      "answer": "Because they appeared to have unrelated meanings.",
+      "key_concepts": ["confusion"],
+      "marks": 2,
+      "source_section": "Discussion"
+    },
+    {
+      "question_number": 12,
+      "question": "How did Mrs. Brown interpret the words?",
+      "answer": "She explained them as separate meanings like grammar terms and place names.",
+      "key_concepts": ["interpretation"],
+      "marks": 2,
+      "source_section": "Discussion"
+    },
+    {
+      "question_number": 13,
+      "question": "What made Encyclopedia suspect the words were a code?",
+      "answer": "He realized they were written on a calendar sheet.",
+      "key_concepts": ["calendar clue"],
+      "marks": 2,
+      "source_section": "Investigation"
+    },
+    {
+      "question_number": 14,
+      "question": "What question did Encyclopedia ask his father?",
+      "answer": "He asked if there was a young fir tree in Nolan’s nursery.",
+      "key_concepts": ["fir tree"],
+      "marks": 2,
+      "source_section": "Investigation"
+    },
+    {
+      "question_number": 15,
+      "question": "Why was the fir tree important in solving the mystery?",
+      "answer": "Because it represented the fifth word in the coded message.",
+      "key_concepts": ["fifth word"],
+      "marks": 2,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 16,
+      "question": "What did the four words actually represent?",
+      "answer": "They represented the days Monday, Tuesday, Wednesday, and Thursday.",
+      "key_concepts": ["days of week"],
+      "marks": 2,
+      "source_section": "Solution"
+    },
+    {
+      "question_number": 17,
+      "question": "What was the hidden fifth word in the code?",
+      "answer": "Friday.",
+      "key_concepts": ["Friday"],
+      "marks": 2,
+      "source_section": "Solution"
+    },
+    {
+      "question_number": 18,
+      "question": "How did the coded words form the days of the week?",
+      "answer": "They were formed from the remaining letters after removing the word 'day'.",
+      "key_concepts": ["code method"],
+      "marks": 2,
+      "source_section": "Solution"
+    },
+    {
+      "question_number": 19,
+      "question": "Where was the stolen jewellery finally found?",
+      "answer": "Under the young fir tree in Nolan’s nursery.",
+      "key_concepts": ["hidden jewellery"],
+      "marks": 2,
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 20,
+      "question": "Why had Nolan written the coded message?",
+      "answer": "To secretly tell Davenport where the jewellery was hidden.",
+      "key_concepts": ["secret message"],
+      "marks": 2,
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 21,
+      "question": "What skill helped Encyclopedia solve the case quickly?",
+      "answer": "His sharp observation and logical thinking.",
+      "key_concepts": ["critical thinking"],
+      "marks": 2,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does Chief Brown trust Encyclopedia’s thinking?",
+      "answer": "Because Encyclopedia has solved many difficult mysteries before.",
+      "key_concepts": ["trust"],
+      "marks": 2,
+      "source_section": "Character"
+    },
+    {
+      "question_number": 23,
+      "question": "What does the story reveal about Encyclopedia’s personality?",
+      "answer": "It shows that he is intelligent, observant, and thoughtful.",
+      "key_concepts": ["character traits"],
+      "marks": 2,
+      "source_section": "Character"
+    },
+    {
+      "question_number": 24,
+      "question": "What lesson can readers learn from this mystery?",
+      "answer": "Careful observation and reasoning can help solve problems.",
+      "key_concepts": ["lesson"],
+      "marks": 2,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the story titled 'The Case of the Fifth Word'?",
+      "answer": "Because solving the mystery depended on identifying the missing fifth word.",
+      "key_concepts": ["title meaning"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    }
+  ]
+}

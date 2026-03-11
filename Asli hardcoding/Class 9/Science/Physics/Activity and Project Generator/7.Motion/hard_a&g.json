@@ -1,0 +1,189 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Motion",
+    "difficulty": "Hard",
+    "source_pdf": "s9_7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Equation of Motion Investigation",
+            "objective": "Verify equations of motion experimentally",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Release a toy car down a ramp",
+                "Measure time and distance travelled",
+                "Calculate acceleration",
+                "Verify the equation v = u + at"
+            ],
+            "learning_outcome": "Understands equations of motion experimentally",
+            "evaluation": "Accuracy of calculations and conclusions (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Velocity-Time Graph Analysis",
+            "objective": "Determine displacement using graphs",
+            "materials": [
+                "Graph paper",
+                "Pencil",
+                "Scale"
+            ],
+            "steps": [
+                "Plot velocity-time data for a moving object",
+                "Calculate area under the graph",
+                "Determine displacement from the area",
+                "Compare with measured distance"
+            ],
+            "learning_outcome": "Relates graphical area to displacement",
+            "evaluation": "Correct interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Acceleration Measurement Project",
+            "objective": "Measure acceleration of a moving object",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Stopwatch",
+                "Meter scale"
+            ],
+            "steps": [
+                "Release toy car from different ramp heights",
+                "Record time taken for fixed distance",
+                "Calculate acceleration",
+                "Analyze variation with height"
+            ],
+            "learning_outcome": "Understands factors affecting acceleration",
+            "evaluation": "Accuracy of experiment and analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Distance-Time Graph Comparison",
+            "objective": "Analyze motion types using graphs",
+            "materials": [
+                "Graph paper",
+                "Pencil",
+                "Scale"
+            ],
+            "steps": [
+                "Plot distance-time graphs for two objects",
+                "Compare slopes of graphs",
+                "Determine which object moves faster",
+                "Explain your reasoning"
+            ],
+            "learning_outcome": "Understands slope as speed",
+            "evaluation": "Correct analysis (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Speed Survey",
+            "objective": "Study speeds of real vehicles",
+            "materials": [
+                "Stopwatch",
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Observe vehicles passing a fixed point",
+                "Estimate distance travelled",
+                "Record time taken",
+                "Calculate speeds and compare"
+            ],
+            "learning_outcome": "Applies motion concepts to real situations",
+            "evaluation": "Accuracy of collected data (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Uniform vs Non-Uniform Motion Experiment",
+            "objective": "Compare different types of motion",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Move toy car on flat surface",
+                "Repeat experiment on ramp",
+                "Record time intervals",
+                "Compare motion patterns"
+            ],
+            "learning_outcome": "Differentiates uniform and accelerated motion",
+            "evaluation": "Clarity of observations (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Circular Motion Investigation",
+            "objective": "Study direction change in circular motion",
+            "materials": [
+                "Thread",
+                "Stone",
+                "Notebook"
+            ],
+            "steps": [
+                "Rotate a stone tied to a thread",
+                "Observe change in direction at every point",
+                "Release the stone",
+                "Record direction of motion"
+            ],
+            "learning_outcome": "Explains acceleration in circular motion",
+            "evaluation": "Observation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Speed-Time Data Analysis",
+            "objective": "Interpret motion using data tables",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Collect speed-time data",
+                "Analyze how speed changes with time",
+                "Determine acceleration",
+                "Explain the results"
+            ],
+            "learning_outcome": "Applies mathematical analysis to motion",
+            "evaluation": "Correct calculations (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Equation Application Project",
+            "objective": "Apply equations of motion in real scenarios",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Create motion problems based on daily life",
+                "Solve them using equations of motion",
+                "Explain each step clearly",
+                "Discuss results with classmates"
+            ],
+            "learning_outcome": "Applies theoretical equations to practical problems",
+            "evaluation": "Correct problem solving (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Motion Concept Presentation",
+            "objective": "Explain motion concepts through presentation",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Prepare diagrams of motion concepts",
+                "Explain distance, speed, velocity, and acceleration",
+                "Use examples from daily life",
+                "Present findings in class"
+            ],
+            "learning_outcome": "Develops conceptual clarity and communication",
+            "evaluation": "Clarity and presentation quality (10 marks)"
+        }
+    ]
+}

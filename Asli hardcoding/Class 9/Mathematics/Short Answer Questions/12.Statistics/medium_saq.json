@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 12: Statistics",
+    "generated_at": "2026-03-06T10:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the formula to calculate mean from a frequency distribution?",
+            "answer": "Mean = Σ(f × x)/Σf, where f is the frequency and x is the value of each observation.",
+            "key_concepts": ["mean", "frequency distribution", "formula"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 2,
+            "question": "How do you calculate median from a grouped frequency table?",
+            "answer": "Median = L + [(N/2 − CF)/f] × h, where L = lower boundary of median class, N = total frequency, CF = cumulative frequency before median class, f = frequency of median class, h = class width.",
+            "key_concepts": ["median", "grouped data", "formula"],
+            "marks": 3,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 3,
+            "question": "How is the mode calculated from a grouped frequency table?",
+            "answer": "Mode = L + [(f1 − f0)/(2f1 − f0 − f2)] × h, where L = lower boundary of modal class, f1 = frequency of modal class, f0 = frequency of previous class, f2 = frequency of next class, h = class width.",
+            "key_concepts": ["mode", "grouped data", "formula"],
+            "marks": 3,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between ungrouped and grouped data.",
+            "answer": "Ungrouped data are raw data presented as individual observations. Grouped data are arranged in classes with frequencies.",
+            "key_concepts": ["ungrouped data", "grouped data", "difference"],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the cumulative frequency of a class?",
+            "answer": "It is the sum of the frequencies of all classes up to and including that class.",
+            "key_concepts": ["cumulative frequency", "grouped data"],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How do you construct a histogram from a frequency table?",
+            "answer": "Draw adjacent bars representing the class intervals on x-axis and frequencies on y-axis; height of bar = frequency.",
+            "key_concepts": ["histogram", "frequency table", "construction"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 7,
+            "question": "How is a frequency polygon different from a histogram?",
+            "answer": "A frequency polygon uses points at class midpoints joined by lines; histogram uses adjacent bars.",
+            "key_concepts": ["frequency polygon", "histogram", "difference"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Define cumulative frequency curve (ogive) and its types.",
+            "answer": "An ogive is a graph showing cumulative frequencies; types are less than type and more than type.",
+            "key_concepts": ["ogive", "cumulative frequency", "types"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the mean of the data: 2, 5, 7, 10, 14.",
+            "answer": "Mean = (2 + 5 + 7 + 10 + 14)/5 = 38/5 = 7.6.",
+            "key_concepts": ["mean", "ungrouped data", "numerical"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the median of the data: 3, 8, 12, 15, 18, 20.",
+            "answer": "Median = average of middle two numbers = (12 + 15)/2 = 13.5.",
+            "key_concepts": ["median", "ungrouped data", "numerical"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the mode of the data: 2, 3, 5, 5, 7, 5, 9.",
+            "answer": "Mode = 5, as it occurs most frequently.",
+            "key_concepts": ["mode", "ungrouped data", "numerical"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the range of the dataset: 5, 8, 12, 15, 20?",
+            "answer": "Range = 20 − 5 = 15.",
+            "key_concepts": ["range", "numerical data"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Construct a frequency table for the data: 2, 3, 2, 5, 3, 4, 5, 2.",
+            "answer": "Value: 2 3 4 5; Frequency: 3 2 1 2.",
+            "key_concepts": ["frequency table", "numerical", "construction"],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Construct a cumulative frequency table from previous question.",
+            "answer": "Cumulative frequency: 2 → 3, 3 → 5, 4 → 6, 5 → 8.",
+            "key_concepts": ["cumulative frequency", "table", "numerical"],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the difference between primary and secondary data with one example each.",
+            "answer": "Primary data: collected firsthand (e.g., survey); Secondary data: collected by others (e.g., census report).",
+            "key_concepts": ["primary data", "secondary data", "difference", "examples"],
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "How do you identify the modal class from a frequency distribution?",
+            "answer": "The class with highest frequency is the modal class.",
+            "key_concepts": ["modal class", "frequency distribution"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are class intervals necessary in statistics?",
+            "answer": "Class intervals help in organizing large data sets and make patterns visible.",
+            "key_concepts": ["class interval", "purpose"],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of graph is suitable for qualitative data?",
+            "answer": "Bar graph or pictograph is suitable for qualitative data.",
+            "key_concepts": ["qualitative data", "bar graph", "pictograph"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of graph is suitable for continuous data?",
+            "answer": "Histogram or frequency polygon is suitable for continuous data.",
+            "key_concepts": ["continuous data", "histogram", "frequency polygon"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Define variable, attribute, and observation with examples.",
+            "answer": "Variable: characteristic measured (e.g., height); Attribute: quality/category (e.g., gender); Observation: one measurement or data point (e.g., height of one person).",
+            "key_concepts": ["variable", "attribute", "observation", "examples"],
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the difference between discrete and continuous variables?",
+            "answer": "Discrete variables take countable values (e.g., number of students); Continuous variables take any value in a range (e.g., height).",
+            "key_concepts": ["discrete variable", "continuous variable", "difference"],
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain less than type ogive with example.",
+            "answer": "A less than type ogive plots cumulative frequencies up to upper class boundaries; e.g., cumulative frequency graph for ≤ class limits.",
+            "key_concepts": ["ogive", "less than type", "example"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain more than type ogive with example.",
+            "answer": "A more than type ogive plots cumulative frequencies down from upper boundary; e.g., cumulative frequency for ≥ class limits.",
+            "key_concepts": ["ogive", "more than type", "example"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 24,
+            "question": "How can mean, median and mode be used together?",
+            "answer": "They can describe central tendency; if mean ≈ median ≈ mode, distribution is symmetric.",
+            "key_concepts": ["mean", "median", "mode", "central tendency"],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is graphical representation important in statistics?",
+            "answer": "Graphs make data easy to visualize, interpret, and compare patterns or trends.",
+            "key_concepts": ["importance", "graphs", "statistics"],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        }
+    ]
+}

@@ -1,0 +1,312 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 6: Manufacturing Industries",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-11T12:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of manufacturing and why it is important for a country's development.",
+      "answer": "Manufacturing refers to producing goods in large quantities by processing raw materials into finished products. It is important because it creates employment, increases production, supports trade and strengthens the economy.",
+      "answer_outline": [
+        "Meaning of manufacturing",
+        "Conversion of raw materials",
+        "Role in economic growth"
+      ],
+      "key_concepts": ["manufacturing", "economic growth"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how manufacturing industries help in modernising agriculture.",
+      "answer": "Manufacturing industries produce tools, machines, fertilizers and pesticides that help farmers improve productivity and efficiency in agriculture.",
+      "answer_outline": [
+        "Industrial products for agriculture",
+        "Improved productivity",
+        "Support to farming"
+      ],
+      "key_concepts": ["agro-industries", "agriculture support"],
+      "marks": 5,
+      "source_section": "Importance of Manufacturing"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the relationship between agriculture and manufacturing industries.",
+      "answer": "Agriculture provides raw materials to industries while industries provide machinery, fertilizers and equipment that improve agricultural production.",
+      "answer_outline": [
+        "Raw material supply",
+        "Industrial support to agriculture",
+        "Mutual dependence"
+      ],
+      "key_concepts": ["agriculture industry relationship"],
+      "marks": 5,
+      "source_section": "Importance of Manufacturing"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe how industries are classified on the basis of raw materials.",
+      "answer": "Industries are classified as agro-based industries that depend on agricultural raw materials and mineral-based industries that depend on minerals and metals.",
+      "answer_outline": [
+        "Agro-based industries",
+        "Mineral-based industries",
+        "Examples"
+      ],
+      "key_concepts": ["industry classification"],
+      "marks": 4,
+      "source_section": "Classification of Industries"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the difference between basic industries and consumer industries.",
+      "answer": "Basic industries produce raw materials used by other industries, while consumer industries produce goods directly used by people.",
+      "answer_outline": [
+        "Definition of basic industries",
+        "Definition of consumer industries",
+        "Examples"
+      ],
+      "key_concepts": ["basic industry", "consumer industry"],
+      "marks": 5,
+      "source_section": "Classification of Industries"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how industries are classified on the basis of ownership.",
+      "answer": "Industries may be public sector industries owned by the government, private sector industries owned by individuals, joint sector industries owned jointly by government and private groups, and cooperative industries owned by producers.",
+      "answer_outline": [
+        "Public sector",
+        "Private sector",
+        "Joint sector",
+        "Cooperative sector"
+      ],
+      "key_concepts": ["industry ownership"],
+      "marks": 5,
+      "source_section": "Classification of Industries"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the importance of the cotton textile industry in India.",
+      "answer": "The cotton textile industry contributes to employment, industrial production and export earnings. It also supports many related industries.",
+      "answer_outline": [
+        "Employment generation",
+        "Industrial production",
+        "Export earnings"
+      ],
+      "key_concepts": ["cotton textile industry"],
+      "marks": 5,
+      "source_section": "Cotton Textiles"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the factors responsible for the location of cotton textile industries.",
+      "answer": "The cotton textile industry developed in areas with raw cotton supply, good transport facilities, labour availability, favourable climate and market access.",
+      "answer_outline": [
+        "Raw material availability",
+        "Transport facilities",
+        "Labour and market"
+      ],
+      "key_concepts": ["industrial location"],
+      "marks": 5,
+      "source_section": "Cotton Textiles"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why the jute industry is concentrated along the Hugli River in West Bengal.",
+      "answer": "The jute industry developed along the Hugli River due to availability of raw jute, cheap labour, good transport facilities and access to markets and ports.",
+      "answer_outline": [
+        "Raw material availability",
+        "Transport facilities",
+        "Labour supply"
+      ],
+      "key_concepts": ["jute industry location"],
+      "marks": 5,
+      "source_section": "Jute Industry"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why the iron and steel industry is called a basic industry.",
+      "answer": "The iron and steel industry is called a basic industry because many other industries depend on steel for machinery, tools and construction materials.",
+      "answer_outline": [
+        "Definition of basic industry",
+        "Use of steel in industries",
+        "Industrial dependency"
+      ],
+      "key_concepts": ["iron and steel industry"],
+      "marks": 5,
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the importance of the iron and steel industry in industrial development.",
+      "answer": "Iron and steel are used in machinery, construction, transport and manufacturing, making them essential for industrial development.",
+      "answer_outline": [
+        "Role in industrial machinery",
+        "Construction use",
+        "Industrial growth"
+      ],
+      "key_concepts": ["steel industry"],
+      "marks": 4,
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe the main raw materials used in steel production.",
+      "answer": "The main raw materials used in steel production are iron ore, coking coal and limestone, along with manganese for strengthening steel.",
+      "answer_outline": ["Iron ore", "Coking coal", "Limestone"],
+      "key_concepts": ["steel raw materials"],
+      "marks": 4,
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the advantages of the Chhotanagpur plateau for iron and steel industries.",
+      "answer": "The Chhotanagpur plateau has rich mineral resources, cheap labour, good transport networks and a large domestic market.",
+      "answer_outline": [
+        "Mineral availability",
+        "Labour availability",
+        "Transport network"
+      ],
+      "key_concepts": ["industrial location"],
+      "marks": 5,
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the characteristics and uses of aluminium.",
+      "answer": "Aluminium is light, corrosion resistant and a good conductor of heat and electricity. It is used in aircraft, utensils, wires and transport industries.",
+      "answer_outline": ["Properties of aluminium", "Industrial uses"],
+      "key_concepts": ["aluminium smelting"],
+      "marks": 4,
+      "source_section": "Aluminium Industry"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why the chemical industry is important for modern industries.",
+      "answer": "The chemical industry produces fertilizers, plastics, medicines, dyes and synthetic fibres that support agriculture, healthcare and manufacturing.",
+      "answer_outline": ["Types of chemical products", "Industrial importance"],
+      "key_concepts": ["chemical industry"],
+      "marks": 4,
+      "source_section": "Chemical Industry"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the role of the fertilizer industry in agricultural development.",
+      "answer": "Fertilizers improve soil fertility and crop yields, helping increase agricultural productivity and food production.",
+      "answer_outline": ["Fertilizer types", "Impact on agriculture"],
+      "key_concepts": ["fertilizer industry"],
+      "marks": 4,
+      "source_section": "Fertilizer Industry"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the importance of the cement industry for infrastructure development.",
+      "answer": "Cement is essential for constructing houses, roads, bridges, dams and factories, making it vital for infrastructure development.",
+      "answer_outline": ["Construction use", "Infrastructure development"],
+      "key_concepts": ["cement industry"],
+      "marks": 4,
+      "source_section": "Cement Industry"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the factors responsible for the growth of the automobile industry in India.",
+      "answer": "The automobile industry has grown due to increasing demand, technological development and economic liberalisation.",
+      "answer_outline": [
+        "Demand for vehicles",
+        "Technological development",
+        "Economic reforms"
+      ],
+      "key_concepts": ["automobile industry"],
+      "marks": 5,
+      "source_section": "Automobile Industry"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the development of the electronics and IT industry in India.",
+      "answer": "The electronics and IT industries produce communication equipment, computers and electronic devices and provide employment opportunities.",
+      "answer_outline": [
+        "Electronics manufacturing",
+        "IT growth",
+        "Employment generation"
+      ],
+      "key_concepts": ["IT industry"],
+      "marks": 5,
+      "source_section": "IT and Electronics Industry"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the different types of industrial pollution.",
+      "answer": "Industrial pollution includes air pollution, water pollution, land pollution and noise pollution caused by industrial activities.",
+      "answer_outline": [
+        "Air pollution",
+        "Water pollution",
+        "Land pollution",
+        "Noise pollution"
+      ],
+      "key_concepts": ["industrial pollution"],
+      "marks": 5,
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how industrial activities cause air pollution.",
+      "answer": "Factories release harmful gases and smoke from burning fuels and manufacturing processes, which pollute the air.",
+      "answer_outline": ["Gas emissions", "Factory smoke", "Health impact"],
+      "key_concepts": ["air pollution"],
+      "marks": 4,
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how industries contribute to water pollution.",
+      "answer": "Industries release untreated chemicals, dyes and wastes into rivers and lakes which contaminate water sources.",
+      "answer_outline": [
+        "Industrial effluents",
+        "Chemical waste",
+        "Impact on water bodies"
+      ],
+      "key_concepts": ["water pollution"],
+      "marks": 4,
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the steps that can be taken to reduce industrial pollution.",
+      "answer": "Industrial pollution can be reduced by treating industrial waste, recycling water, using cleaner fuels and installing pollution control equipment.",
+      "answer_outline": [
+        "Waste treatment",
+        "Water recycling",
+        "Pollution control equipment"
+      ],
+      "key_concepts": ["pollution control"],
+      "marks": 5,
+      "source_section": "Control of Environmental Degradation"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of sustainable industrial development.",
+      "answer": "Sustainable development ensures that industries grow economically while protecting the environment and conserving resources for future generations.",
+      "answer_outline": [
+        "Economic development",
+        "Environmental protection",
+        "Resource conservation"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 5,
+      "source_section": "Environmental Protection"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how industrial development helps increase international trade.",
+      "answer": "Industrial production increases the availability of manufactured goods which can be exported to other countries, bringing foreign exchange.",
+      "answer_outline": [
+        "Manufactured goods",
+        "Exports",
+        "Foreign exchange earnings"
+      ],
+      "key_concepts": ["industrial trade"],
+      "marks": 5,
+      "source_section": "Importance of Manufacturing"
+    }
+  ]
+}

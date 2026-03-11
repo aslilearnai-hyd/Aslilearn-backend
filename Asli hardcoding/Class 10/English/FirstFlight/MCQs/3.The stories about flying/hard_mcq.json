@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: The Story of Flying",
+  "generated_at": "2026-03-01T15:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why did the Wright Brothers focus on designing a control system before adding a powerful engine?",
+      "options": {
+        "A": "Because control was the key challenge in sustaining flight",
+        "B": "Because engines were unavailable",
+        "C": "Because they wanted to build a glider first",
+        "D": "Because they were inspired by balloons"
+      },
+      "correct_answer": "A",
+      "explanation": "The major difficulty in flight was controlling the airplane; engine power alone was insufficient.",
+      "difficulty": "hard",
+      "source_section": "Wright Brothers"
+    },
+    {
+      "question_number": 2,
+      "question": "What does Bleriot’s successful Channel flight suggest about early 20th-century aviation?",
+      "options": {
+        "A": "Long-distance powered flights were becoming feasible",
+        "B": "Gliders were obsolete",
+        "C": "Flying was purely experimental",
+        "D": "Safety was guaranteed"
+      },
+      "correct_answer": "A",
+      "explanation": "Bleriot’s flight proved that aircraft could cover significant distances over water.",
+      "difficulty": "hard",
+      "source_section": "Pioneers of Aviation"
+    },
+    {
+      "question_number": 3,
+      "question": "Why was trial and error important for aviation pioneers?",
+      "options": {
+        "A": "It helped them understand aerodynamics and refine designs",
+        "B": "It ensured immediate success",
+        "C": "It allowed them to avoid flying",
+        "D": "It was only for fun"
+      },
+      "correct_answer": "A",
+      "explanation": "Repeated experimentation revealed principles of lift, balance, and control necessary for flight.",
+      "difficulty": "hard",
+      "source_section": "Early Flight"
+    },
+    {
+      "question_number": 4,
+      "question": "Why can Amelia Earhart’s solo Atlantic flight be seen as more than just an aviation milestone?",
+      "options": {
+        "A": "It challenged gender barriers in society",
+        "B": "It was faster than all previous flights",
+        "C": "It used a new engine technology",
+        "D": "It was the first-ever flight"
+      },
+      "correct_answer": "A",
+      "explanation": "Her flight showed that women could achieve in fields dominated by men.",
+      "difficulty": "hard",
+      "source_section": "Aviation Milestones"
+    },
+    {
+      "question_number": 5,
+      "question": "How did the choice of location affect the Wright Brothers’ experiments?",
+      "options": {
+        "A": "Strong winds and soft sand reduced risks during glider tests",
+        "B": "They wanted a remote location for privacy only",
+        "C": "They needed high altitudes",
+        "D": "They preferred cold weather for engine efficiency"
+      },
+      "correct_answer": "A",
+      "explanation": "The winds helped lift, and sand softened crashes, making experimentation safer.",
+      "difficulty": "hard",
+      "source_section": "Wright Brothers"
+    },
+    {
+      "question_number": 6,
+      "question": "What does the evolution from balloons to gliders to powered airplanes signify?",
+      "options": {
+        "A": "Progressive understanding of aerodynamics and control",
+        "B": "Random experimentation",
+        "C": "Failure of earlier machines",
+        "D": "Only technological luck"
+      },
+      "correct_answer": "A",
+      "explanation": "Each stage allowed humans to learn principles that enabled safer, sustained flight.",
+      "difficulty": "hard",
+      "source_section": "History of Flying"
+    },
+    {
+      "question_number": 7,
+      "question": "Why was control considered more important than speed in early aircraft?",
+      "options": {
+        "A": "Uncontrolled planes would crash regardless of speed",
+        "B": "Speed was irrelevant",
+        "C": "Pilots were unskilled",
+        "D": "Speed was impossible to achieve"
+      },
+      "correct_answer": "A",
+      "explanation": "Flight without control was dangerous; safety depended on balance and steering.",
+      "difficulty": "hard",
+      "source_section": "Wright Brothers"
+    },
+    {
+      "question_number": 8,
+      "question": "Which skill did pioneers like Bleriot and Lindbergh rely on besides technical knowledge?",
+      "options": {
+        "A": "Courage, perseverance, and observation",
+        "B": "Wealth and social status",
+        "C": "Luck only",
+        "D": "Physical strength"
+      },
+      "correct_answer": "A",
+      "explanation": "Bravery, patience, and careful observation were essential to their success.",
+      "difficulty": "hard",
+      "source_section": "Pioneers of Aviation"
+    },
+    {
+      "question_number": 9,
+      "question": "What does the text imply about the relationship between failure and innovation?",
+      "options": {
+        "A": "Failures provided crucial learning opportunities",
+        "B": "Failures indicated incompetence",
+        "C": "Innovation avoided failure entirely",
+        "D": "Success required luck only"
+      },
+      "correct_answer": "A",
+      "explanation": "Early aviators learned from crashes and errors to improve designs.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 10,
+      "question": "How did technological advancements affect the distance and safety of flights?",
+      "options": {
+        "A": "Better engines and control systems allowed longer and safer flights",
+        "B": "Distance increased but safety decreased",
+        "C": "Safety improved but distance remained short",
+        "D": "There was no effect"
+      },
+      "correct_answer": "A",
+      "explanation": "Improvements in engine power, aerodynamics, and controls allowed more reliable and longer flights.",
+      "difficulty": "hard",
+      "source_section": "History of Flying"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is the story of flying considered a lesson in human perseverance?",
+      "options": {
+        "A": "It shows how repeated trials and courage can overcome seemingly impossible challenges",
+        "B": "It demonstrates luck is sufficient",
+        "C": "It discourages trying after failure",
+        "D": "It only celebrates wealthy inventors"
+      },
+      "correct_answer": "A",
+      "explanation": "Persistent effort and learning from mistakes allowed humans to achieve flight.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 12,
+      "question": "What inference can be drawn about early aviation inventions?",
+      "options": {
+        "A": "They required interdisciplinary knowledge of physics, mechanics, and observation",
+        "B": "They relied on guesswork only",
+        "C": "They were simple and immediate",
+        "D": "They were purely theoretical"
+      },
+      "correct_answer": "A",
+      "explanation": "Successful flight required understanding of aerodynamics, mechanics, and careful observation.",
+      "difficulty": "hard",
+      "source_section": "Early Flight"
+    },
+    {
+      "question_number": 13,
+      "question": "Why does the author include multiple examples of pioneers from different countries?",
+      "options": {
+        "A": "To show that innovation was a global effort",
+        "B": "To confuse the reader",
+        "C": "To show Europe was the only place of aviation",
+        "D": "To highlight failure"
+      },
+      "correct_answer": "A",
+      "explanation": "Aviation progressed due to contributions from pioneers worldwide.",
+      "difficulty": "hard",
+      "source_section": "Pioneers of Aviation"
+    },
+    {
+      "question_number": 14,
+      "question": "Which principle was fundamental to the Wright Brothers’ success?",
+      "options": {
+        "A": "Controlled, powered, and sustained flight",
+        "B": "Flying highest possible",
+        "C": "Ignoring physics",
+        "D": "Speed over control"
+      },
+      "correct_answer": "A",
+      "explanation": "Their innovation allowed airplanes to be flown under control, for a sustained duration.",
+      "difficulty": "hard",
+      "source_section": "Wright Brothers"
+    },
+    {
+      "question_number": 15,
+      "question": "How did the story of flying show the importance of observation?",
+      "options": {
+        "A": "Careful observation helped pioneers understand wind, lift, and control",
+        "B": "Observation was irrelevant",
+        "C": "Observation replaced experimentation",
+        "D": "Observation was only for safety"
+      },
+      "correct_answer": "A",
+      "explanation": "Observation allowed pioneers to improve designs and flight techniques.",
+      "difficulty": "hard",
+      "source_section": "Early Flight"
+    },
+    {
+      "question_number": 16,
+      "question": "Why was the successful flight over the English Channel historically significant?",
+      "options": {
+        "A": "It proved cross-water flights were possible",
+        "B": "It was the first airplane",
+        "C": "It was the first glider",
+        "D": "It was the first hot air balloon"
+      },
+      "correct_answer": "A",
+      "explanation": "This flight demonstrated that aircraft could safely cover significant distances over water.",
+      "difficulty": "hard",
+      "source_section": "Pioneers of Aviation"
+    },
+    {
+      "question_number": 17,
+      "question": "What does the chapter imply about the relationship between experimentation and progress?",
+      "options": {
+        "A": "Systematic experimentation leads to technological breakthroughs",
+        "B": "Progress depends on luck",
+        "C": "Experimentation is optional",
+        "D": "Success is immediate"
+      },
+      "correct_answer": "A",
+      "explanation": "Testing, failing, and refining ideas were essential to achieving controlled flight.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is the chapter titled 'The Story of Flying' instead of focusing on one individual?",
+      "options": {
+        "A": "Because it covers contributions of many pioneers globally",
+        "B": "Because one person did not exist",
+        "C": "Because it is fictional",
+        "D": "Because it is about birds"
+      },
+      "correct_answer": "A",
+      "explanation": "The chapter emphasizes collective human effort in the history of aviation.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 19,
+      "question": "How did early experiments with gliders influence powered flight?",
+      "options": {
+        "A": "They provided essential lessons in control and balance",
+        "B": "They replaced the need for engines",
+        "C": "They were purely decorative",
+        "D": "They slowed progress"
+      },
+      "correct_answer": "A",
+      "explanation": "Understanding glider behavior helped the Wright Brothers design controlled powered planes.",
+      "difficulty": "hard",
+      "source_section": "Early Flight"
+    },
+    {
+      "question_number": 20,
+      "question": "Which factor was NOT a challenge for early aviators?",
+      "options": {
+        "A": "Weather and wind conditions",
+        "B": "Controlling aircraft",
+        "C": "Human curiosity",
+        "D": "Engine reliability"
+      },
+      "correct_answer": "C",
+      "explanation": "Human curiosity was a motivator, not a challenge; the others posed real obstacles.",
+      "difficulty": "hard",
+      "source_section": "Early Flight"
+    },
+    {
+      "question_number": 21,
+      "question": "How does the chapter connect human imagination with technological progress?",
+      "options": {
+        "A": "Curiosity and vision led to experimentation and invention",
+        "B": "Imagination replaced technical skills",
+        "C": "Progress happens randomly",
+        "D": "Only historical events mattered"
+      },
+      "correct_answer": "A",
+      "explanation": "Human creativity inspired experiments that resulted in successful flights.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 22,
+      "question": "What role did perseverance play in the development of aviation?",
+      "options": {
+        "A": "It allowed pioneers to overcome repeated failures",
+        "B": "It was not important",
+        "C": "It only helped in balloon flights",
+        "D": "It guaranteed instant success"
+      },
+      "correct_answer": "A",
+      "explanation": "Persistent effort was essential to solving the complex problems of flight.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 23,
+      "question": "Why were long-distance flights significant milestones in aviation?",
+      "options": {
+        "A": "They demonstrated the practical potential of airplanes for transportation",
+        "B": "They were only for entertainment",
+        "C": "They proved hot air balloons were outdated",
+        "D": "They were simpler than short flights"
+      },
+      "correct_answer": "A",
+      "explanation": "These flights showed that airplanes could be used for real-world travel and communication.",
+      "difficulty": "hard",
+      "source_section": "History of Flying"
+    },
+    {
+      "question_number": 24,
+      "question": "How does the chapter illustrate the concept of learning from failure?",
+      "options": {
+        "A": "By showing how crashes and mistakes guided improvements",
+        "B": "By ignoring failed attempts",
+        "C": "By focusing on successes only",
+        "D": "By discouraging experimentation"
+      },
+      "correct_answer": "A",
+      "explanation": "Pioneers analyzed failures to refine designs and improve safety.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 25,
+      "question": "The overarching theme of 'The Story of Flying' can be summarized as:",
+      "options": {
+        "A": "Human innovation, courage, and perseverance can turn imagination into reality",
+        "B": "Flying is impossible",
+        "C": "Only accidents lead to progress",
+        "D": "Technological advancement is random"
+      },
+      "correct_answer": "A",
+      "explanation": "The chapter emphasizes that determination, creativity, and persistence enabled humans to achieve flight.",
+      "difficulty": "hard",
+      "source_section": "Theme"
+    }
+  ]
+}

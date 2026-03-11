@@ -1,0 +1,40 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Linear Equations in Two Variables",
+    "difficulty": "Medium",
+    "source_pdf": "m9_4.pdf",
+    "short_notes": {
+        "key_points": [
+            "A linear equation in two variables contains two variables with power 1",
+            "The standard form of a linear equation is ax + by + c = 0",
+            "a and b represent coefficients while c represents the constant term",
+            "Solutions of a linear equation are written as ordered pairs (x, y)",
+            "Substitution of values helps verify whether a pair is a solution",
+            "Linear equations in two variables have infinitely many solutions",
+            "Each solution corresponds to a point on the graph",
+            "The graphical representation of a linear equation is a straight line"
+        ],
+        "examples": [
+            "Linear equation example: x + y = 6",
+            "Linear equation example: 2x + 3y = 9",
+            "Solution of x + y = 6 → (2,4)",
+            "Solution of 2x + y = 7 → (3,1)",
+            "Ordered pair example: (5,2)",
+            "Standard form example: 2x + 3y − 9 = 0"
+        ],
+        "formulas": [
+            "General form → ax + by + c = 0",
+            "Example equation → x + y = 6",
+            "Solution verification → substitute ordered pair values",
+            "Graph rule → two distinct solution points determine a line"
+        ],
+        "exam_tips": [
+            "Always check the degree of variables to confirm linear equations",
+            "Substitute ordered pairs to verify solutions",
+            "Remember that many ordered pairs satisfy a linear equation",
+            "Graphs of linear equations always form straight lines",
+            "Use two or more points to draw accurate graphs"
+        ]
+    }
+}

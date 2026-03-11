@@ -1,0 +1,70 @@
+{
+  "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 5: Glimpses of India",
+    "title": "Extended Reading Passages with Questions – Glimpses of India",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "Glimpses of India",
+        "paragraph": "Jawaharlal Nehru shares his observations about India’s diverse culture and heritage. He admires the richness of traditions and the vibrancy of Indian life.",
+        "questions": [
+          "Who is sharing observations about India?",
+          "What aspects of India does Nehru describe?",
+          "What does he admire about India?",
+          "Which words show the vibrancy of life?",
+          "Why is this paragraph important for understanding India?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "Glimpses of India",
+        "paragraph": "Nehru describes the festivals, music, and art that are unique to different regions. He observes that despite the differences, a sense of unity connects the people.",
+        "questions": [
+          "What cultural elements does Nehru describe?",
+          "How does he explain the diversity in India?",
+          "What connects the people despite differences?",
+          "Which words show unity among diversity?",
+          "Why is this paragraph significant for understanding Indian culture?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "Glimpses of India",
+        "paragraph": "He also notices the natural beauty of India, from mountains to rivers, and how people live in harmony with nature. Nehru feels that the land itself tells a story of its people.",
+        "questions": [
+          "What natural features does Nehru observe?",
+          "How do people live in relation to nature?",
+          "Which words indicate harmony with nature?",
+          "What does the land tell according to Nehru?",
+          "Why is nature important in understanding India?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "Glimpses of India",
+        "paragraph": "Nehru reflects on the simplicity of village life and the contrast with bustling cities. He notices the struggles and resilience of ordinary people.",
+        "questions": [
+          "What contrasts does Nehru observe in India?",
+          "What aspects of village life does he highlight?",
+          "Which words show the struggles of ordinary people?",
+          "How does he describe resilience?",
+          "Why is this reflection important to understand India’s society?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "Glimpses of India",
+        "paragraph": "Overall, Nehru’s narrative emphasizes pride in India’s heritage while recognizing the challenges faced by its people. He encourages appreciation for the diversity and unity that define the nation.",
+        "questions": [
+          "What does Nehru emphasize about India?",
+          "How does he balance pride and challenges?",
+          "Which words show appreciation for diversity?",
+          "What does Nehru encourage readers to do?",
+          "What is the main idea of this paragraph?"
+        ]
+      }
+    ]
+  }

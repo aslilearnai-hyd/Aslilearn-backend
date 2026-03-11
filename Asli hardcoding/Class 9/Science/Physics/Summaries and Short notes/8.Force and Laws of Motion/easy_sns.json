@@ -1,0 +1,42 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Force and Laws of Motion",
+    "difficulty": "Easy",
+    "source_pdf": "s9_8.pdf",
+    "short_notes": {
+        "key_points": [
+            "Force is a push or pull acting on an object that can change its motion or shape",
+            "Forces can change the speed, direction or shape of an object",
+            "Balanced forces are equal forces acting in opposite directions that do not change the motion of an object",
+            "Unbalanced forces cause a change in the state of motion of an object",
+            "Inertia is the tendency of an object to resist change in its state of rest or motion",
+            "Mass of an object is a measure of its inertia",
+            "Newton’s First Law states that an object remains at rest or in uniform motion unless acted upon by an unbalanced force",
+            "Momentum is defined as the product of mass and velocity of an object",
+            "Newton’s Second Law states that force equals mass multiplied by acceleration (F = ma)",
+            "Newton’s Third Law states that for every action there is an equal and opposite reaction"
+        ],
+        "examples": [
+            "A book resting on a table shows balanced forces",
+            "Pushing a stationary box causes motion due to unbalanced force",
+            "Passengers move forward when a bus stops suddenly due to inertia of motion",
+            "Passengers move backward when a bus starts suddenly due to inertia of rest",
+            "Recoil of a gun when a bullet is fired illustrates Newton’s Third Law",
+            "Rocket propulsion works on the principle of action and reaction"
+        ],
+        "formulas": [
+            "Momentum → p = m × v",
+            "Force → F = m × a",
+            "Acceleration → a = (v − u) / t",
+            "Impulse → Force × time = Change in momentum"
+        ],
+        "exam_tips": [
+            "Remember that inertia depends on mass of the object",
+            "Newton’s First Law is also called the Law of Inertia",
+            "Momentum increases with increase in mass or velocity",
+            "Action and reaction forces act on different objects but are equal in magnitude",
+            "Force, momentum and acceleration are vector quantities"
+        ]
+    }
+}

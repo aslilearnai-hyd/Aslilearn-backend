@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 8: Introduction to Trigonometry",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-01T22:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Express tan A in terms of sin A and cos A.",
+            "answer": "tan A = sin A / cos A.",
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the value of sin 60°.",
+            "answer": "sin 60° = √3/2.",
+            "key_concepts": [
+                "sin 60"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the value of cos 30°.",
+            "answer": "cos 30° = √3/2.",
+            "key_concepts": [
+                "cos 30"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "State the identity 1 + tan²A.",
+            "answer": "1 + tan²A = sec²A.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 5,
+            "question": "State the identity 1 + cot²A.",
+            "answer": "1 + cot²A = cosec²A.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Find A if sin A = 1/2.",
+            "answer": "A = 30°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Find A if tan A = 1.",
+            "answer": "A = 45°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the value of cot 45°.",
+            "answer": "cot 45° = 1.",
+            "key_concepts": [
+                "cot"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which ratio increases from 0 to 1 as angle increases?",
+            "answer": "Sine.",
+            "key_concepts": [
+                "sin"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which ratio decreases from 1 to 0 as angle increases?",
+            "answer": "Cosine.",
+            "key_concepts": [
+                "cos"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Express sec A in terms of cos A.",
+            "answer": "sec A = 1 / cos A.",
+            "key_concepts": [
+                "sec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Express cosec A in terms of sin A.",
+            "answer": "cosec A = 1 / sin A.",
+            "key_concepts": [
+                "cosec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the value of tan 30°.",
+            "answer": "tan 30° = 1/√3.",
+            "key_concepts": [
+                "tan 30"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the value of cot 60°.",
+            "answer": "cot 60° = 1/√3.",
+            "key_concepts": [
+                "cot 60"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which identity is derived from Pythagoras theorem?",
+            "answer": "sin²A + cos²A = 1.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the value of cos 45°.",
+            "answer": "cos 45° = 1/√2.",
+            "key_concepts": [
+                "cos 45"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the value of sin 45°.",
+            "answer": "sin 45° = 1/√2.",
+            "key_concepts": [
+                "sin 45"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the value of sec 60°.",
+            "answer": "sec 60° = 2.",
+            "key_concepts": [
+                "sec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the value of cosec 30°.",
+            "answer": "cosec 30° = 2.",
+            "key_concepts": [
+                "cosec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which ratio represents height/distance?",
+            "answer": "Tangent.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Find A if sin A = cos A.",
+            "answer": "A = 45°.",
+            "key_concepts": [
+                "angles"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which ratio is undefined at 90°?",
+            "answer": "Sec 90°.",
+            "key_concepts": [
+                "undefined"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which ratio is undefined at 0°?",
+            "answer": "Cosec 0°.",
+            "key_concepts": [
+                "undefined"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Find tan A if sec A = √2.",
+            "answer": "tan A = 1.",
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Find sin A if cosec A = 2.",
+            "answer": "sin A = 1/2.",
+            "key_concepts": [
+                "sin"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "jemh109: Applications of Trigonometry",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is line of sight?",
+                "correct_answer": "The line drawn from observer’s eye to the object.",
+                "explanation": "Used in height and distance problems.",
+                "source_section": "Basics"
+            },
+            {
+                "question": "What is angle of elevation?",
+                "correct_answer": "Angle between line of sight and horizontal when object is above.",
+                "explanation": "Measured upwards.",
+                "source_section": "Angles"
+            },
+            {
+                "question": "What is angle of depression?",
+                "correct_answer": "Angle between line of sight and horizontal when object is below.",
+                "explanation": "Measured downwards.",
+                "source_section": "Angles"
+            },
+            {
+                "question": "From where are elevation and depression measured?",
+                "correct_answer": "Horizontal line",
+                "explanation": "Always from horizontal.",
+                "source_section": "Concept"
+            },
+            {
+                "question": "Which trigonometric ratio is commonly used?",
+                "correct_answer": "tan θ",
+                "explanation": "Relates height and distance.",
+                "source_section": "Ratios"
+            },
+            {
+                "question": "What forms the perpendicular in problems?",
+                "correct_answer": "Height of the object",
+                "explanation": "Vertical height.",
+                "source_section": "Diagram"
+            },
+            {
+                "question": "What forms the base?",
+                "correct_answer": "Distance on ground",
+                "explanation": "Horizontal distance.",
+                "source_section": "Diagram"
+            },
+            {
+                "question": "What type of triangle is formed?",
+                "correct_answer": "Right-angled triangle",
+                "explanation": "Needed for ratios.",
+                "source_section": "Diagram"
+            },
+            {
+                "question": "Why is diagram important?",
+                "correct_answer": "It helps avoid mistakes.",
+                "explanation": "Clarifies angles and sides.",
+                "source_section": "Method"
+            },
+            {
+                "question": "Angle of depression equals which angle?",
+                "correct_answer": "Angle of elevation",
+                "explanation": "Alternate interior angles.",
+                "source_section": "Concept"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Line of Sight",
+                "content": "The imaginary line joining the observer’s eye and the object.",
+                "source_section": "Basics"
+            },
+            {
+                "title": "Elevation & Depression",
+                "content": "Angles measured from the horizontal.",
+                "source_section": "Angles"
+            },
+            {
+                "title": "Ratio Used",
+                "content": "tan θ is mainly used for height and distance.",
+                "source_section": "Ratios"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "All application problems form right-angled triangles.",
+                "source_section": "Diagram"
+            },
+            {
+                "fact": "Angles are always measured from the horizontal.",
+                "source_section": "Concept"
+            }
+        ]
+    }
+}

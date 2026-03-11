@@ -1,0 +1,101 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 6: Algebra Play",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-04T20:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the algebra behind the 'Think of a Number' trick that always gives the result 2.",
+      "answer": "Let the number be x. Double it: 2x. Add 4: 2x + 4. Divide by 2: x + 2. Subtract the original number: x + 2 − x = 2.",
+      "answer_outline": ["Assume number as x", "Apply steps", "Simplify"],
+      "key_concepts": ["algebraic expressions", "number tricks"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how algebra helps in understanding mathematical tricks.",
+      "answer": "Algebra represents numbers using variables, allowing us to analyze operations and understand why tricks always produce the same result.",
+      "answer_outline": ["Variables", "Algebraic representation"],
+      "key_concepts": ["algebra"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the rule used in number pyramids.",
+      "answer": "In a number pyramid each number is the sum of the two numbers directly below it.",
+      "answer_outline": ["Definition", "Rule"],
+      "key_concepts": ["number pyramids"],
+      "marks": 4,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Derive the algebraic expression for the top of a three-row number pyramid.",
+      "answer": "If the bottom row numbers are a, b, c then the second row numbers are a+b and b+c. The top number becomes a + 2b + c.",
+      "answer_outline": ["Assign variables", "Add expressions"],
+      "key_concepts": ["algebraic expressions"],
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the pattern used in calendar grid puzzles.",
+      "answer": "Numbers in a calendar increase by 1 horizontally and by 7 vertically.",
+      "answer_outline": ["Horizontal pattern", "Vertical pattern"],
+      "key_concepts": ["calendar grids"],
+      "marks": 5,
+      "source_section": "Section 6.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Find the algebraic expression for the sum of a 2×2 calendar grid.",
+      "answer": "Let the top-left number be a. Then the other numbers are a+1, a+7 and a+8. Their sum is 4a + 16.",
+      "answer_outline": ["Variable assignment", "Add terms"],
+      "key_concepts": ["algebraic expressions"],
+      "marks": 5,
+      "source_section": "Section 6.4"
+    },
+
+    { "question_number": 7, "question": "Explain how algebra helps solve grid puzzles.", "answer": "Algebra assigns variables to shapes and forms equations that help find unknown values.", "answer_outline": ["Assign variables", "Solve equations"], "key_concepts": ["equations"], "marks": 5, "source_section": "Section 6.4" },
+
+    { "question_number": 8, "question": "Explain the idea behind the largest product puzzle.", "answer": "Digits are arranged in different orders and multiplied to determine which arrangement gives the largest value.", "answer_outline": ["Arrange digits", "Compare results"], "key_concepts": ["product comparison"], "marks": 5, "source_section": "Section 6.5" },
+
+    { "question_number": 9, "question": "List all possible arrangements of digits 2, 3 and 5 for multiplication.", "answer": "Possible products include 23×5, 25×3, 32×5, 35×2, 52×3 and 53×2.", "answer_outline": ["List permutations"], "key_concepts": ["digit arrangement"], "marks": 5, "source_section": "Section 6.5" },
+
+    { "question_number": 10, "question": "Explain why reversing digits of a number can reveal divisibility patterns.", "answer": "Representing digits algebraically allows comparison between numbers and helps reveal divisibility properties.", "answer_outline": ["Represent digits", "Analyze difference"], "key_concepts": ["divisibility"], "marks": 5, "source_section": "Section 6.6" },
+
+    { "question_number": 11, "question": "Write the algebraic form of a two-digit number.", "answer": "A two-digit number with digits a and b can be written as 10a + b.", "answer_outline": ["Representation"], "key_concepts": ["digits"], "marks": 4, "source_section": "Section 6.6" },
+
+    { "question_number": 12, "question": "Write the algebraic form of its reversed number.", "answer": "The reversed number becomes 10b + a.", "answer_outline": ["Representation"], "key_concepts": ["digits"], "marks": 4, "source_section": "Section 6.6" },
+
+    { "question_number": 13, "question": "Show that the difference between a two-digit number and its reverse is divisible by 9.", "answer": "Difference = (10b+a) − (10a+b) = 9(b−a), which is divisible by 9.", "answer_outline": ["Represent digits", "Simplify"], "key_concepts": ["divisibility"], "marks": 5, "source_section": "Section 6.6" },
+
+    { "question_number": 14, "question": "Explain how algebra can represent unknown numbers.", "answer": "Letters such as x, y or a represent unknown values in equations.", "answer_outline": ["Variables"], "key_concepts": ["variables"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 15, "question": "Explain why algebra is useful in solving puzzles.", "answer": "Algebra reveals patterns and helps form equations to solve puzzles.", "answer_outline": ["Patterns", "Equations"], "key_concepts": ["algebra"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 16, "question": "Explain the relationship between patterns and algebra.", "answer": "Patterns can be represented using algebraic expressions that describe the relationship between numbers.", "answer_outline": ["Patterns", "Expressions"], "key_concepts": ["patterns"], "marks": 4, "source_section": "Section 6.3" },
+
+    { "question_number": 17, "question": "Explain how mathematical tricks entertain while teaching concepts.", "answer": "They make learning interactive and show how algebra explains surprising results.", "answer_outline": ["Engagement", "Concept learning"], "key_concepts": ["math tricks"], "marks": 4, "source_section": "Section 6.2" },
+
+    { "question_number": 18, "question": "Explain the importance of algebra in mathematics.", "answer": "Algebra is widely used to model patterns, relationships and solve mathematical problems.", "answer_outline": ["Applications"], "key_concepts": ["algebra"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 19, "question": "Explain why variables are important in algebra.", "answer": "Variables allow representation of unknown quantities and general relationships.", "answer_outline": ["Unknown numbers"], "key_concepts": ["variables"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 20, "question": "Explain how algebra explains divisibility rules.", "answer": "Digits can be represented as algebraic expressions which show divisibility properties.", "answer_outline": ["Digit representation"], "key_concepts": ["divisibility"], "marks": 5, "source_section": "Section 6.6" },
+
+    { "question_number": 21, "question": "Explain why patterns are important in mathematics.", "answer": "Patterns help identify relationships and simplify problem solving.", "answer_outline": ["Pattern recognition"], "key_concepts": ["patterns"], "marks": 4, "source_section": "Section 6.3" },
+
+    { "question_number": 22, "question": "Explain how puzzles improve logical thinking.", "answer": "Puzzles require reasoning and problem solving which strengthen mathematical thinking.", "answer_outline": ["Logical thinking"], "key_concepts": ["problem solving"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 23, "question": "Explain how algebra helps generalize patterns.", "answer": "Algebra expresses patterns in formulas that work for many numbers.", "answer_outline": ["Generalization"], "key_concepts": ["expressions"], "marks": 4, "source_section": "Section 6.3" },
+
+    { "question_number": 24, "question": "Explain the role of algebra in real-life problem solving.", "answer": "Algebra models real-world situations using equations and formulas.", "answer_outline": ["Applications"], "key_concepts": ["applications"], "marks": 4, "source_section": "Section 6.1" },
+
+    { "question_number": 25, "question": "Explain why algebra is called a universal language of mathematics.", "answer": "Because it expresses general mathematical relationships using symbols and equations.", "answer_outline": ["Symbolic language"], "key_concepts": ["algebra"], "marks": 5, "source_section": "Section 6.1" }
+  ]
+}

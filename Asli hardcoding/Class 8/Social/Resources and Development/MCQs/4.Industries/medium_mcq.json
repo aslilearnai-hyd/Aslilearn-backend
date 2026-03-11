@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Industries",
+  "generated_at": "2026-03-06T13:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which sector of industry involves the extraction of natural resources?",
+      "options": {
+        "A": "Primary sector",
+        "B": "Secondary sector",
+        "C": "Tertiary sector",
+        "D": "Quaternary sector"
+      },
+      "correct_answer": "A",
+      "explanation": "Primary industries involve extraction of natural resources such as mining, fishing, and forestry.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which industry converts raw materials into finished goods?",
+      "options": {
+        "A": "Primary industry",
+        "B": "Secondary industry",
+        "C": "Tertiary industry",
+        "D": "Service industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Secondary industries manufacture products by processing raw materials.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is an example of a tertiary industry?",
+      "options": {
+        "A": "Mining",
+        "B": "Fishing",
+        "C": "Banking",
+        "D": "Textile manufacturing"
+      },
+      "correct_answer": "C",
+      "explanation": "Tertiary industries provide services such as banking, transport, and trade.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which factor is most important for industries that use heavy raw materials?",
+      "options": {
+        "A": "Location near markets",
+        "B": "Location near raw materials",
+        "C": "Location near ports",
+        "D": "Location near cities"
+      },
+      "correct_answer": "B",
+      "explanation": "Industries using heavy raw materials are often located near the source to reduce transport costs.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which component of the industrial system includes manufacturing activities?",
+      "options": {
+        "A": "Input",
+        "B": "Process",
+        "C": "Output",
+        "D": "Market"
+      },
+      "correct_answer": "B",
+      "explanation": "The process stage involves manufacturing or transformation of raw materials into finished goods.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is an example of an agro-based industry?",
+      "options": {
+        "A": "Steel industry",
+        "B": "Textile industry",
+        "C": "Shipbuilding industry",
+        "D": "Petroleum industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Textile industries use agricultural products like cotton as raw materials.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Which type of industry uses ocean resources as raw materials?",
+      "options": {
+        "A": "Forest-based industry",
+        "B": "Marine-based industry",
+        "C": "Mineral-based industry",
+        "D": "Agro-based industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Marine-based industries depend on ocean resources such as fish and seaweed.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following industries is mineral-based?",
+      "options": {
+        "A": "Paper industry",
+        "B": "Sugar industry",
+        "C": "Iron and steel industry",
+        "D": "Cotton textile industry"
+      },
+      "correct_answer": "C",
+      "explanation": "Iron and steel industries use mineral resources such as iron ore and coal.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which factor ensures the movement of goods from industries to markets?",
+      "options": {
+        "A": "Labor",
+        "B": "Transport",
+        "C": "Climate",
+        "D": "Raw materials"
+      },
+      "correct_answer": "B",
+      "explanation": "Transport systems help industries distribute products to markets.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "Which factor provides energy to operate industrial machinery?",
+      "options": {
+        "A": "Capital",
+        "B": "Power",
+        "C": "Labor",
+        "D": "Market"
+      },
+      "correct_answer": "B",
+      "explanation": "Power supply is necessary for operating machines in industries.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the main reason industries are located near markets?",
+      "options": {
+        "A": "To reduce labor cost",
+        "B": "To reduce distribution cost",
+        "C": "To reduce power usage",
+        "D": "To increase raw materials"
+      },
+      "correct_answer": "B",
+      "explanation": "Industries located near markets reduce transportation and distribution costs.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 12,
+      "question": "Which type of industry requires large capital and advanced machinery?",
+      "options": {
+        "A": "Cottage industry",
+        "B": "Small-scale industry",
+        "C": "Large-scale industry",
+        "D": "Handicraft industry"
+      },
+      "correct_answer": "C",
+      "explanation": "Large-scale industries require heavy investment and modern technology.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following is a characteristic of small-scale industries?",
+      "options": {
+        "A": "Large investment",
+        "B": "Use of advanced machinery",
+        "C": "Limited capital and labor",
+        "D": "Large workforce"
+      },
+      "correct_answer": "C",
+      "explanation": "Small-scale industries operate with limited capital and fewer workers.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 14,
+      "question": "Industrial regions are characterized by:",
+      "options": {
+        "A": "Large agricultural land",
+        "B": "Clusters of industries",
+        "C": "Large forests",
+        "D": "Large rivers"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial regions have many industries concentrated in one area.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which type of pollution is mainly caused by factory smoke?",
+      "options": {
+        "A": "Water pollution",
+        "B": "Air pollution",
+        "C": "Land pollution",
+        "D": "Noise pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Smoke from factories releases harmful gases into the atmosphere causing air pollution.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 16,
+      "question": "Industrial waste dumped into rivers mainly causes:",
+      "options": {
+        "A": "Air pollution",
+        "B": "Water pollution",
+        "C": "Noise pollution",
+        "D": "Soil fertility"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial chemicals entering rivers contaminate water sources.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "Which concept focuses on balancing industrial growth with environmental protection?",
+      "options": {
+        "A": "Urbanization",
+        "B": "Industrialization",
+        "C": "Sustainable development",
+        "D": "Globalization"
+      },
+      "correct_answer": "C",
+      "explanation": "Sustainable development promotes industrial growth while protecting the environment.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 18,
+      "question": "Which practice helps reduce industrial waste?",
+      "options": {
+        "A": "Burning waste",
+        "B": "Dumping chemicals",
+        "C": "Recycling materials",
+        "D": "Increasing production"
+      },
+      "correct_answer": "C",
+      "explanation": "Recycling helps reuse materials and reduce industrial waste.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor helps industries attract skilled workers?",
+      "options": {
+        "A": "Labor availability",
+        "B": "Climate",
+        "C": "Rivers",
+        "D": "Forests"
+      },
+      "correct_answer": "A",
+      "explanation": "Availability of skilled labor is an important factor for industrial growth.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following activities belongs to the tertiary sector?",
+      "options": {
+        "A": "Manufacturing steel",
+        "B": "Mining coal",
+        "C": "Transport services",
+        "D": "Harvesting crops"
+      },
+      "correct_answer": "C",
+      "explanation": "Transport services are part of the tertiary or service sector.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which industry uses forest resources as raw materials?",
+      "options": {
+        "A": "Forest-based industry",
+        "B": "Marine-based industry",
+        "C": "Mineral-based industry",
+        "D": "Agro-based industry"
+      },
+      "correct_answer": "A",
+      "explanation": "Forest-based industries use timber, rubber, and other forest products.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which sector mainly focuses on providing services?",
+      "options": {
+        "A": "Primary sector",
+        "B": "Secondary sector",
+        "C": "Tertiary sector",
+        "D": "Manufacturing sector"
+      },
+      "correct_answer": "C",
+      "explanation": "Tertiary industries provide services such as banking, trade, and transport.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which industry mainly uses fish as raw material?",
+      "options": {
+        "A": "Forest-based industry",
+        "B": "Marine-based industry",
+        "C": "Agro-based industry",
+        "D": "Mineral-based industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Marine-based industries depend on ocean resources such as fish.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor helps industries sell their products easily?",
+      "options": {
+        "A": "Market availability",
+        "B": "Climate",
+        "C": "Rivers",
+        "D": "Forests"
+      },
+      "correct_answer": "A",
+      "explanation": "Markets are important for industries to sell their finished goods.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 25,
+      "question": "Which sector of industry focuses on manufacturing goods?",
+      "options": {
+        "A": "Primary sector",
+        "B": "Secondary sector",
+        "C": "Tertiary sector",
+        "D": "Service sector"
+      },
+      "correct_answer": "B",
+      "explanation": "Secondary industries manufacture goods from raw materials.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Applications of Trigonometry",
+    "generated_at": "2026-02-27T22:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Applications of trigonometry mainly deal with finding?",
+            "options": {
+                "A": "Areas",
+                "B": "Volumes",
+                "C": "Heights and distances",
+                "D": "Angles only"
+            },
+            "correct_answer": "C",
+            "explanation": "This chapter focuses on heights and distances.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Angle of elevation is measured from?",
+            "options": {
+                "A": "Vertical line",
+                "B": "Horizontal line",
+                "C": "Slant line",
+                "D": "Ground level"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle of elevation is measured from the horizontal.",
+            "difficulty": "easy",
+            "source_section": "Angles of Elevation"
+        },
+        {
+            "question_number": 3,
+            "question": "Angle of depression is measured from?",
+            "options": {
+                "A": "Horizontal line",
+                "B": "Vertical line",
+                "C": "Ground",
+                "D": "Object"
+            },
+            "correct_answer": "A",
+            "explanation": "Angle of depression is measured from the horizontal line.",
+            "difficulty": "easy",
+            "source_section": "Angles of Depression"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is generally used to find height?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ = height / distance.",
+            "difficulty": "easy",
+            "source_section": "Heights and Distances"
+        },
+        {
+            "question_number": 5,
+            "question": "Line of sight is?",
+            "options": {
+                "A": "Vertical line",
+                "B": "Horizontal line",
+                "C": "Line joining eye and object",
+                "D": "Ground line"
+            },
+            "correct_answer": "C",
+            "explanation": "Line of sight joins the observer’s eye and the object.",
+            "difficulty": "easy",
+            "source_section": "Line of Sight"
+        },
+        {
+            "question_number": 6,
+            "question": "Angle between line of sight and horizontal when object is above eye level is called?",
+            "options": {
+                "A": "Angle of depression",
+                "B": "Right angle",
+                "C": "Angle of elevation",
+                "D": "Acute angle"
+            },
+            "correct_answer": "C",
+            "explanation": "This is angle of elevation.",
+            "difficulty": "easy",
+            "source_section": "Angles of Elevation"
+        },
+        {
+            "question_number": 7,
+            "question": "Angle between line of sight and horizontal when object is below eye level is?",
+            "options": {
+                "A": "Angle of elevation",
+                "B": "Angle of depression",
+                "C": "Obtuse angle",
+                "D": "Straight angle"
+            },
+            "correct_answer": "B",
+            "explanation": "This is angle of depression.",
+            "difficulty": "easy",
+            "source_section": "Angles of Depression"
+        },
+        {
+            "question_number": 8,
+            "question": "Which trigonometric ratio relates opposite and adjacent sides?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ = Opposite / Adjacent.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 9,
+            "question": "Which angle is usually given in height and distance problems?",
+            "options": {
+                "A": "Obtuse angle",
+                "B": "Right angle",
+                "C": "Angle of elevation or depression",
+                "D": "Straight angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Problems involve angles of elevation or depression.",
+            "difficulty": "easy",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 10,
+            "question": "Which trigonometric ratio is used if height and hypotenuse are known?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cot θ"
+            },
+            "correct_answer": "A",
+            "explanation": "sin θ = height / hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 11,
+            "question": "Which trigonometric ratio is used if distance and hypotenuse are known?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "B",
+            "explanation": "cos θ = base / hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 12,
+            "question": "Height of an object usually represents which side of triangle?",
+            "options": {
+                "A": "Adjacent",
+                "B": "Hypotenuse",
+                "C": "Opposite",
+                "D": "Base"
+            },
+            "correct_answer": "C",
+            "explanation": "Height is opposite to the angle.",
+            "difficulty": "easy",
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 13,
+            "question": "Distance on the ground usually represents?",
+            "options": {
+                "A": "Hypotenuse",
+                "B": "Adjacent side",
+                "C": "Opposite side",
+                "D": "Height"
+            },
+            "correct_answer": "B",
+            "explanation": "Ground distance is adjacent side.",
+            "difficulty": "easy",
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 14,
+            "question": "Observer’s eye level is usually assumed to be?",
+            "options": {
+                "A": "Zero",
+                "B": "At ground",
+                "C": "Negligible or given",
+                "D": "Infinite"
+            },
+            "correct_answer": "C",
+            "explanation": "Eye level is either negligible or specified.",
+            "difficulty": "easy",
+            "source_section": "Assumptions"
+        },
+        {
+            "question_number": 15,
+            "question": "Which diagram best represents height and distance problems?",
+            "options": {
+                "A": "Circle",
+                "B": "Square",
+                "C": "Right-angled triangle",
+                "D": "Rectangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Problems are modeled using right triangles.",
+            "difficulty": "easy",
+            "source_section": "Representation"
+        },
+        {
+            "question_number": 16,
+            "question": "Angle of elevation is always?",
+            "options": {
+                "A": "Obtuse",
+                "B": "Right",
+                "C": "Acute",
+                "D": "Straight"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle of elevation is always acute.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 17,
+            "question": "Angle of depression is always?",
+            "options": {
+                "A": "Obtuse",
+                "B": "Right",
+                "C": "Acute",
+                "D": "Straight"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle of depression is acute.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 18,
+            "question": "Which trigonometric value is used when opposite and adjacent sides are given?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ relates opposite and adjacent.",
+            "difficulty": "easy",
+            "source_section": "Ratios"
+        },
+        {
+            "question_number": 19,
+            "question": "Which is NOT required to solve height and distance problems?",
+            "options": {
+                "A": "Angle",
+                "B": "Distance",
+                "C": "Right triangle",
+                "D": "Circle"
+            },
+            "correct_answer": "D",
+            "explanation": "Circle is not required.",
+            "difficulty": "easy",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 20,
+            "question": "Which trigonometric ratio is most commonly used in this chapter?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ is most commonly used.",
+            "difficulty": "easy",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 21,
+            "question": "Line of sight, height, and ground distance form?",
+            "options": {
+                "A": "Circle",
+                "B": "Square",
+                "C": "Right triangle",
+                "D": "Rectangle"
+            },
+            "correct_answer": "C",
+            "explanation": "They form a right-angled triangle.",
+            "difficulty": "easy",
+            "source_section": "Representation"
+        },
+        {
+            "question_number": 22,
+            "question": "Angle of elevation is taken when observer looks?",
+            "options": {
+                "A": "Downward",
+                "B": "Straight",
+                "C": "Upward",
+                "D": "Sideways"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle of elevation is measured upward.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 23,
+            "question": "Angle of depression is taken when observer looks?",
+            "options": {
+                "A": "Upward",
+                "B": "Downward",
+                "C": "Straight",
+                "D": "Sideways"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle of depression is measured downward.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 24,
+            "question": "Which ratio relates adjacent side and hypotenuse?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cot θ"
+            },
+            "correct_answer": "B",
+            "explanation": "cos θ = Adjacent / Hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Ratios"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "Angle of elevation is measured from vertical",
+                "B": "Angle of depression is measured from vertical",
+                "C": "Height and distance problems use trigonometry",
+                "D": "No triangle is involved"
+            },
+            "correct_answer": "C",
+            "explanation": "Heights and distances problems are solved using trigonometry.",
+            "difficulty": "easy",
+            "source_section": "Summary"
+        }
+    ]
+}

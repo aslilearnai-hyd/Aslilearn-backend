@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-05T18:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How many triangles appear after the third step of the Sierpinski Triangle construction?",
+            "answer": "27 triangles.",
+            "key_points": ["Sierpinski triangle", "fractal growth"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How many squares remain after the second step in the Sierpinski Carpet?",
+            "answer": "64 squares.",
+            "key_points": ["Sierpinski carpet"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What happens to the perimeter of the Koch Snowflake as iterations continue?",
+            "answer": "The perimeter increases infinitely.",
+            "key_points": ["Koch snowflake", "fractal perimeter"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What happens to the area of the Koch Snowflake despite increasing perimeter?",
+            "answer": "The area approaches a finite value.",
+            "key_points": ["fractal area"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which mathematical idea explains the infinite complexity of fractals?",
+            "answer": "Recursive geometric construction.",
+            "key_points": ["recursion", "fractals"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the number of edges in a pentagonal prism?",
+            "answer": "15 edges.",
+            "key_points": ["prism edges"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How many faces does a pentagonal pyramid have?",
+            "answer": "6 faces.",
+            "key_points": ["pyramid faces"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the relationship between vertices, edges and faces in polyhedra?",
+            "answer": "Euler’s formula: V − E + F = 2.",
+            "key_points": ["Euler's formula"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is unfolding a cube into a net useful for shortest path problems?",
+            "answer": "It converts surface paths into straight lines.",
+            "key_points": ["nets", "shortest path"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What geometric concept explains that different solids may share the same projection?",
+            "answer": "Loss of depth information in projection.",
+            "key_points": ["projection geometry"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are three views often required in orthographic projection?",
+            "answer": "To completely represent the length, width and height of an object.",
+            "key_points": ["orthographic projection"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What property ensures that lengths remain proportional in isometric drawings?",
+            "answer": "Equal scaling along three axes.",
+            "key_points": ["isometric scaling"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What angle separates the three axes in isometric projection?",
+            "answer": "120 degrees.",
+            "key_points": ["isometric axes"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do circles appear as ellipses in isometric drawings?",
+            "answer": "Because of the angled projection of circular faces.",
+            "key_points": ["isometric circles"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What mathematical pattern describes the number of triangles in Sierpinski construction?",
+            "answer": "A geometric sequence with ratio 3.",
+            "key_points": ["fractal sequence"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What mathematical pattern describes the number of squares in the Sierpinski Carpet?",
+            "answer": "A geometric sequence with ratio 8.",
+            "key_points": ["fractal growth"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "How does recursion help construct fractals?",
+            "answer": "It repeatedly applies the same geometric rule.",
+            "key_points": ["recursive geometry"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What real-life structures resemble fractal patterns?",
+            "answer": "Coastlines, trees and snowflakes.",
+            "key_points": ["fractal applications"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are fractals useful in computer graphics?",
+            "answer": "They help model complex natural shapes realistically.",
+            "key_points": ["computer graphics"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What geometric reasoning helps solve shortest path problems on cubes?",
+            "answer": "Surface unfolding using nets.",
+            "key_points": ["nets", "surface geometry"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Why can two different solids produce identical top views?",
+            "answer": "Because projection removes height information.",
+            "key_points": ["projection limitation"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which geometric skill helps interpret isometric diagrams?",
+            "answer": "Spatial visualization.",
+            "key_points": ["visualization"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What mathematical idea explains patterns repeating indefinitely in fractals?",
+            "answer": "Infinite recursion.",
+            "key_points": ["infinite patterns"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What field commonly applies geometric projections for technical design?",
+            "answer": "Engineering drawing.",
+            "key_points": ["engineering graphics"],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What type of reasoning is needed to interpret 3D shapes from 2D projections?",
+            "answer": "Spatial reasoning.",
+            "key_points": ["spatial reasoning"],
+            "source_section": "Section 4.2"
+        }
+    ]
+}

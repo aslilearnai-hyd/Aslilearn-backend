@@ -1,0 +1,35 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Number Systems",
+    "difficulty": "Hard",
+    "source_pdf": "m9_1.pdf",
+    "short_notes": {
+        "key_points": [
+            "The real number system consists of rational and irrational numbers",
+            "Rational numbers have decimal expansions that either terminate or repeat infinitely",
+            "Irrational numbers have non-terminating and non-repeating decimal expansions",
+            "Square roots of non-perfect squares are irrational numbers",
+            "Simplification of radicals uses prime factorization",
+            "Real numbers can be represented as points on the number line"
+        ],
+        "examples": [
+            "Rational number: 7/9",
+            "Repeating decimal: 0.333...",
+            "Irrational number: √7",
+            "Radical simplification: √72 = 6√2",
+            "Non-perfect square root: √10"
+        ],
+        "formulas": [
+            "Rational decimal rule → terminating or repeating",
+            "Radical simplification → √(a×b) = √a × √b",
+            "Example → √72 = √(36×2) = 6√2"
+        ],
+        "exam_tips": [
+            "Use prime factorization to simplify square roots",
+            "Identify whether decimal expansions terminate or repeat",
+            "Practice writing radicals in simplest form",
+            "Remember that irrational numbers cannot be written as fractions"
+        ]
+    }
+}

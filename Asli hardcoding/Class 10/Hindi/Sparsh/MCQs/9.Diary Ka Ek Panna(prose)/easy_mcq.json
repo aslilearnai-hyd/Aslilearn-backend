@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Diary Ka Ek Panna",
+  "generated_at": "2026-03-10T00:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "‘डायरी का एक पन्ना’ पाठ के लेखक कौन हैं?",
+      "options": {
+        "A": "सीताराम सेकसरिया",
+        "B": "प्रेमचंद",
+        "C": "हरिवंश राय बच्चन",
+        "D": "रामधारी सिंह दिनकर"
+      },
+      "correct_answer": "A",
+      "explanation": "‘डायरी का एक पन्ना’ पाठ के लेखक सीताराम सेकसरिया हैं।",
+      "difficulty": "easy",
+      "source_section": "लेखक परिचय"
+    },
+    {
+      "question_number": 2,
+      "question": "लेखक का जन्म कहाँ हुआ था?",
+      "options": {
+        "A": "राजस्थान",
+        "B": "दिल्ली",
+        "C": "बिहार",
+        "D": "पंजाब"
+      },
+      "correct_answer": "A",
+      "explanation": "सीताराम सेकसरिया का जन्म राजस्थान में हुआ था।",
+      "difficulty": "easy",
+      "source_section": "लेखक परिचय"
+    },
+    {
+      "question_number": 3,
+      "question": "‘डायरी का एक पन्ना’ में किस दिन की घटना का वर्णन है?",
+      "options": {
+        "A": "26 जनवरी 1931",
+        "B": "15 अगस्त 1947",
+        "C": "2 अक्टूबर 1930",
+        "D": "1 जनवरी 1931"
+      },
+      "correct_answer": "A",
+      "explanation": "इस पाठ में 26 जनवरी 1931 की घटनाओं का वर्णन है।",
+      "difficulty": "easy",
+      "source_section": "पाठ प्रवेश"
+    },
+    {
+      "question_number": 4,
+      "question": "26 जनवरी को किस दिवस के रूप में मनाया गया था?",
+      "options": {
+        "A": "स्वतंत्रता दिवस",
+        "B": "गणतंत्र दिवस",
+        "C": "शिक्षक दिवस",
+        "D": "बाल दिवस"
+      },
+      "correct_answer": "A",
+      "explanation": "उस समय 26 जनवरी को स्वतंत्रता दिवस के रूप में मनाया जाता था।",
+      "difficulty": "easy",
+      "source_section": "पाठ प्रवेश"
+    },
+    {
+      "question_number": 5,
+      "question": "यह घटना किस शहर में हुई थी?",
+      "options": {
+        "A": "कोलकाता",
+        "B": "मुंबई",
+        "C": "दिल्ली",
+        "D": "चेन्नई"
+      },
+      "correct_answer": "A",
+      "explanation": "इस पाठ में कोलकाता शहर की घटनाओं का वर्णन है।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 6,
+      "question": "26 जनवरी 1931 के दिन लोगों ने क्या फहराया?",
+      "options": {
+        "A": "राष्ट्रीय झंडा",
+        "B": "सफेद झंडा",
+        "C": "नीला झंडा",
+        "D": "हरा झंडा"
+      },
+      "correct_answer": "A",
+      "explanation": "लोगों ने अपने घरों और स्थानों पर राष्ट्रीय झंडा फहराया।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 7,
+      "question": "सुभाष बाबू कौन थे?",
+      "options": {
+        "A": "स्वतंत्रता सेनानी",
+        "B": "शिक्षक",
+        "C": "व्यापारी",
+        "D": "कवि"
+      },
+      "correct_answer": "A",
+      "explanation": "सुभाष बाबू एक प्रमुख स्वतंत्रता सेनानी थे।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 8,
+      "question": "सुभाष बाबू किस नारे को जोर से बोल रहे थे?",
+      "options": {
+        "A": "वंदे मातरम्",
+        "B": "जय हिंद",
+        "C": "भारत माता की जय",
+        "D": "इंकलाब जिंदाबाद"
+      },
+      "correct_answer": "A",
+      "explanation": "सुभाष बाबू 'वंदे मातरम्' का नारा लगा रहे थे।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 9,
+      "question": "सभा कहाँ होने वाली थी?",
+      "options": {
+        "A": "मोन्यूमेंट के नीचे",
+        "B": "स्कूल में",
+        "C": "मंदिर में",
+        "D": "बाजार में"
+      },
+      "correct_answer": "A",
+      "explanation": "सभा मोन्यूमेंट के नीचे होने वाली थी।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 10,
+      "question": "पुलिस ने लोगों को रोकने के लिए क्या किया?",
+      "options": {
+        "A": "लाठीचार्ज किया",
+        "B": "भाषण दिया",
+        "C": "गीत गाया",
+        "D": "खेल कराया"
+      },
+      "correct_answer": "A",
+      "explanation": "पुलिस ने भीड़ को रोकने के लिए लाठीचार्ज किया।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 11,
+      "question": "सभा में बड़ी संख्या में कौन लोग शामिल हुए थे?",
+      "options": {
+        "A": "सामान्य जनता",
+        "B": "केवल सैनिक",
+        "C": "केवल व्यापारी",
+        "D": "केवल छात्र"
+      },
+      "correct_answer": "A",
+      "explanation": "सभा में बड़ी संख्या में सामान्य जनता शामिल हुई थी।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 12,
+      "question": "पुलिस ने सुभाष बाबू के साथ क्या किया?",
+      "options": {
+        "A": "गिरफ्तार किया",
+        "B": "सम्मानित किया",
+        "C": "पुरस्कार दिया",
+        "D": "भाषण दिलवाया"
+      },
+      "correct_answer": "A",
+      "explanation": "पुलिस ने सुभाष बाबू को गिरफ्तार कर लिया था।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 13,
+      "question": "इस आंदोलन में महिलाओं की क्या भूमिका थी?",
+      "options": {
+        "A": "उन्होंने भी जुलूस में भाग लिया",
+        "B": "वे घर पर रहीं",
+        "C": "उन्होंने खेल खेला",
+        "D": "उन्होंने भाषण नहीं दिया"
+      },
+      "correct_answer": "A",
+      "explanation": "महिलाओं ने भी आंदोलन में सक्रिय भाग लिया।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 14,
+      "question": "पुलिस ने कई लोगों को कहाँ भेजा?",
+      "options": {
+        "A": "लालबाजार लॉकअप",
+        "B": "अस्पताल",
+        "C": "विद्यालय",
+        "D": "घर"
+      },
+      "correct_answer": "A",
+      "explanation": "पुलिस ने कई लोगों को लालबाजार लॉकअप में भेज दिया।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 15,
+      "question": "इस दिन कितनी महिलाओं को गिरफ्तार किया गया?",
+      "options": {
+        "A": "105",
+        "B": "50",
+        "C": "20",
+        "D": "10"
+      },
+      "correct_answer": "A",
+      "explanation": "उस दिन 105 महिलाओं को गिरफ्तार किया गया था।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 16,
+      "question": "घायल लोगों की देखभाल कौन कर रहा था?",
+      "options": {
+        "A": "डॉ. दासगुप्ता",
+        "B": "डॉ. शर्मा",
+        "C": "डॉ. सिंह",
+        "D": "डॉ. वर्मा"
+      },
+      "correct_answer": "A",
+      "explanation": "डॉ. दासगुप्ता घायल लोगों की देखभाल कर रहे थे।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 17,
+      "question": "लोग राष्ट्रीय झंडा क्यों फहरा रहे थे?",
+      "options": {
+        "A": "स्वतंत्रता की भावना दिखाने के लिए",
+        "B": "खेल जीतने के लिए",
+        "C": "त्योहार मनाने के लिए",
+        "D": "सजावट के लिए"
+      },
+      "correct_answer": "A",
+      "explanation": "लोग स्वतंत्रता की भावना दिखाने के लिए झंडा फहरा रहे थे।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 18,
+      "question": "पुलिस ने मैदानों और पार्कों को क्यों घेर लिया था?",
+      "options": {
+        "A": "सभा रोकने के लिए",
+        "B": "खेल कराने के लिए",
+        "C": "मेले के लिए",
+        "D": "यात्रा के लिए"
+      },
+      "correct_answer": "A",
+      "explanation": "पुलिस ने सभा को रोकने के लिए मैदानों को घेर लिया था।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 19,
+      "question": "इस पाठ में किस आंदोलन का वर्णन है?",
+      "options": {
+        "A": "स्वतंत्रता आंदोलन",
+        "B": "भक्ति आंदोलन",
+        "C": "हरित आंदोलन",
+        "D": "शिक्षा आंदोलन"
+      },
+      "correct_answer": "A",
+      "explanation": "इस पाठ में स्वतंत्रता आंदोलन की घटनाओं का वर्णन है।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 20,
+      "question": "डायरी क्या होती है?",
+      "options": {
+        "A": "दैनिक घटनाओं का लेख",
+        "B": "कविता",
+        "C": "नाटक",
+        "D": "उपन्यास"
+      },
+      "correct_answer": "A",
+      "explanation": "डायरी में दैनिक जीवन की घटनाओं को लिखा जाता है।",
+      "difficulty": "easy",
+      "source_section": "योग्यता विस्तार"
+    },
+    {
+      "question_number": 21,
+      "question": "लोगों ने 26 जनवरी क्यों मनाई?",
+      "options": {
+        "A": "पूर्ण स्वतंत्रता की मांग के लिए",
+        "B": "त्योहार के लिए",
+        "C": "खेल प्रतियोगिता के लिए",
+        "D": "यात्रा के लिए"
+      },
+      "correct_answer": "A",
+      "explanation": "लोगों ने पूर्ण स्वतंत्रता की मांग के लिए यह दिवस मनाया।",
+      "difficulty": "easy",
+      "source_section": "पाठ प्रवेश"
+    },
+    {
+      "question_number": 22,
+      "question": "सभा में लोगों की भीड़ कैसी थी?",
+      "options": {
+        "A": "बहुत बड़ी",
+        "B": "बहुत छोटी",
+        "C": "न के बराबर",
+        "D": "केवल कुछ लोग"
+      },
+      "correct_answer": "A",
+      "explanation": "सभा में हजारों लोगों की बड़ी भीड़ थी।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 23,
+      "question": "सुभाष बाबू किसके साथ जुलूस में आए थे?",
+      "options": {
+        "A": "लोगों के साथ",
+        "B": "पुलिस के साथ",
+        "C": "अंग्रेजों के साथ",
+        "D": "विदेशियों के साथ"
+      },
+      "correct_answer": "A",
+      "explanation": "सुभाष बाबू लोगों के साथ जुलूस में आए थे।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 24,
+      "question": "पुलिस ने सभा को क्यों रोका?",
+      "options": {
+        "A": "अंग्रेजी सरकार के आदेश से",
+        "B": "बारिश के कारण",
+        "C": "त्योहार के कारण",
+        "D": "खेल के कारण"
+      },
+      "correct_answer": "A",
+      "explanation": "अंग्रेजी सरकार के आदेश से पुलिस ने सभा को रोका।",
+      "difficulty": "easy",
+      "source_section": "पाठ"
+    },
+    {
+      "question_number": 25,
+      "question": "‘डायरी का एक पन्ना’ पाठ का मुख्य विषय क्या है?",
+      "options": {
+        "A": "स्वतंत्रता आंदोलन की घटनाएँ",
+        "B": "खेल प्रतियोगिता",
+        "C": "विद्यालय जीवन",
+        "D": "यात्रा वर्णन"
+      },
+      "correct_answer": "A",
+      "explanation": "इस पाठ में स्वतंत्रता आंदोलन की घटनाओं का वर्णन है।",
+      "difficulty": "easy",
+      "source_section": "निष्कर्ष"
+    }
+  ]
+}

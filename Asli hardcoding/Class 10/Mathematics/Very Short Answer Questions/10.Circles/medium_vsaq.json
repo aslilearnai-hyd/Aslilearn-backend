@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Circles",
+    "difficulty": "Medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is a tangent perpendicular to the radius at the point of contact?",
+            "answer": "Because the radius is the shortest distance from the centre to the tangent.",
+            "key_points": [
+                "tangent property"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why can only one tangent be drawn at a point on a circle?",
+            "answer": "Because only one line can be perpendicular to the radius at that point.",
+            "key_points": [
+                "single tangent"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does a tangent not cut a circle?",
+            "answer": "Because it touches the circle at only one point.",
+            "key_points": [
+                "tangent"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is a tangent a special case of a secant?",
+            "answer": "Because the two points of intersection of the secant coincide.",
+            "key_points": [
+                "secant"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why can no tangent be drawn from a point inside a circle?",
+            "answer": "All lines through that point intersect the circle at two points.",
+            "key_points": [
+                "internal point"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why can two tangents be drawn from a point outside a circle?",
+            "answer": "Because two lines from that point touch the circle at exactly one point each.",
+            "key_points": [
+                "external point"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why are the two tangents from an external point equal?",
+            "answer": "Because the triangles formed are congruent by RHS.",
+            "key_points": [
+                "equal tangents"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is meant by the length of a tangent?",
+            "answer": "The distance between the external point and the point of contact.",
+            "key_points": [
+                "length of tangent"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is the radius called the normal at the point of contact?",
+            "answer": "Because it is perpendicular to the tangent.",
+            "key_points": [
+                "normal"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is OP the shortest distance from centre to tangent?",
+            "answer": "Because the perpendicular distance is the shortest.",
+            "key_points": [
+                "shortest distance"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What happens to a secant when its chord length becomes zero?",
+            "answer": "It becomes a tangent.",
+            "key_points": [
+                "secant to tangent"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are parallel tangents possible to a circle?",
+            "answer": "Because tangents can touch the circle on opposite sides.",
+            "key_points": [
+                "parallel tangents"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What geometric concept explains the equality of tangents?",
+            "answer": "Congruence of triangles.",
+            "key_points": [
+                "congruence"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is the angle between radius and tangent always 90°?",
+            "answer": "Because the radius is perpendicular to the tangent at the point of contact.",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the relation between tangent and chord at contact?",
+            "answer": "The tangent is perpendicular to the radius drawn to the point of contact.",
+            "key_points": [
+                "tangent relation"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does a tangent from an external point touch only once?",
+            "answer": "Because touching more than once would make it a secant.",
+            "key_points": [
+                "tangent property"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does OP bisect the angle between two tangents?",
+            "answer": "Because the triangles formed are congruent.",
+            "key_points": [
+                "angle bisector"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What condition makes a line a tangent?",
+            "answer": "It must touch the circle at exactly one point.",
+            "key_points": [
+                "condition"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does every tangent have a unique point of contact?",
+            "answer": "Because touching at more points makes it a secant.",
+            "key_points": [
+                "point of contact"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are radii equal in tangent constructions?",
+            "answer": "All radii of a circle are equal.",
+            "key_points": [
+                "radii"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the centre equidistant from points of contact?",
+            "answer": "Because both distances are radii.",
+            "key_points": [
+                "centre"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Why do tangents not pass through the interior of circle?",
+            "answer": "Because they only touch the boundary.",
+            "key_points": [
+                "boundary"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What ensures tangent is unique at a point?",
+            "answer": "Perpendicularity with radius.",
+            "key_points": [
+                "uniqueness"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does a chord touching inner circle get bisected?",
+            "answer": "Because radius drawn is perpendicular to the chord.",
+            "key_points": [
+                "bisector"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is tangent considered linear contact?",
+            "answer": "Because it touches the circle at only one point.",
+            "key_points": [
+                "linear contact"
+            ],
+            "source_section": "10.2"
+        }
+    ]
+}

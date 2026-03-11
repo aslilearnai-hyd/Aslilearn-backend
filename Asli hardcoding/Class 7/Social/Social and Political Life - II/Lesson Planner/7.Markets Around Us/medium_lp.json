@@ -1,0 +1,152 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Markets Around Us",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand market operations and buyer-seller interactions",
+        "Observe price variations and market types",
+        "Compare traditional and modern markets",
+        "Develop research and analytical skills",
+        "Relate market concepts to daily life and local economy"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Local Market Observation",
+            "topics_covered": [
+                "Definition and purpose of markets",
+                "Observation of local markets or shops"
+            ],
+            "teaching_strategy": [
+                "Discuss markets students visit",
+                "Show pictures and videos of local markets"
+            ],
+            "student_activities": [
+                "List markets they have seen",
+                "Identify goods and services available",
+                "Take notes on market layout and shop types"
+            ],
+            "assessment": [
+                "Observation notes",
+                "Oral discussion participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Types of Markets and Comparison",
+            "topics_covered": [
+                "Local markets, weekly haats, supermarkets",
+                "Differences in size, goods, and crowd"
+            ],
+            "teaching_strategy": [
+                "Show examples via charts or slides",
+                "Ask students to compare two markets"
+            ],
+            "student_activities": [
+                "Fill a comparison table of two markets",
+                "Discuss differences and similarities"
+            ],
+            "assessment": [
+                "Accuracy of comparison",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Goods and Services Analysis",
+            "topics_covered": [
+                "Categorizing goods vs services",
+                "Examples from observed markets"
+            ],
+            "teaching_strategy": [
+                "Use pictures or real objects",
+                "Ask students to sort items into goods and services"
+            ],
+            "student_activities": [
+                "Create a table of at least 5 goods and 5 services",
+                "Present examples to classmates"
+            ],
+            "assessment": [
+                "Completeness of table",
+                "Presentation clarity"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Price Study and Bargaining",
+            "topics_covered": [
+                "Price variations in different shops",
+                "Introduction to bargaining techniques"
+            ],
+            "teaching_strategy": [
+                "Demonstrate price differences via charts or pictures",
+                "Role-play a buyer-seller scenario"
+            ],
+            "student_activities": [
+                "Record prices of 3 items in two shops",
+                "Simulate bargaining with classmates"
+            ],
+            "assessment": [
+                "Accuracy of recorded prices",
+                "Participation and role-play effectiveness"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Trade and Exchange Systems",
+            "topics_covered": [
+                "Barter system and modern money trade",
+                "How trade helps people get what they need"
+            ],
+            "teaching_strategy": [
+                "Use props to simulate trade",
+                "Discuss real-life examples of barter vs cash transactions"
+            ],
+            "student_activities": [
+                "Simulate barter or trade in class",
+                "Identify items that can be exchanged or sold"
+            ],
+            "assessment": [
+                "Participation in activity",
+                "Oral reflection"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Discussion, and Mini Project",
+            "topics_covered": [
+                "Recap market types, goods, services, and trade",
+                "Discuss observations from visits or role-plays"
+            ],
+            "teaching_strategy": [
+                "Mini project presentation",
+                "Class discussion connecting markets to local economy"
+            ],
+            "student_activities": [
+                "Prepare a short report or poster about a local market",
+                "Share key findings with the class"
+            ],
+            "assessment": [
+                "Project completion and quality",
+                "Class participation",
+                "Notebook notes"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Pictures and videos of markets",
+        "Charts and props for trade demonstration",
+        "Notebooks and pens for observation",
+        "Drawing sheets and colors for mini project"
+    ],
+    "evaluation_methods": [
+        "Observation notes checking",
+        "Oral questioning",
+        "Class discussion",
+        "Mini project evaluation"
+    ],
+    "teacher_tip": "Encourage students to relate markets to their own shopping experiences. Use charts, role-plays, and observation activities to develop analytical thinking."
+}

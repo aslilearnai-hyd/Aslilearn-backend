@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter": "Water Resources",
+  "difficulty": "Medium",
+  "source_pdf": "jess103.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Hydrological Cycle Explanation",
+      "objective": "Explain how the hydrological cycle makes water a renewable resource",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Draw the hydrological cycle diagram",
+        "Describe the processes of evaporation, condensation, precipitation and runoff",
+        "Explain how these processes continuously renew water resources"
+      ],
+      "learning_outcome": "Students explain why water is considered a renewable resource",
+      "evaluation": "Concept clarity and correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Case Study of Water Scarcity",
+      "objective": "Analyze reasons for water scarcity in a region",
+      "materials": ["Notebook", "Internet or newspaper"],
+      "steps": [
+        "Choose a city or region facing water scarcity",
+        "Identify at least three causes of the problem",
+        "Suggest possible solutions to manage water resources"
+      ],
+      "learning_outcome": "Students develop analytical understanding of water scarcity issues",
+      "evaluation": "Quality of analysis (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Multipurpose River Project Study",
+      "objective": "Understand the role of dams in water resource management",
+      "materials": ["Notebook", "Atlas"],
+      "steps": [
+        "Select one multipurpose river project such as Bhakra Nangal or Hirakud",
+        "Describe its location, river, and purpose",
+        "Explain how it supports irrigation, electricity generation, and flood control"
+      ],
+      "learning_outcome": "Students understand functions of multipurpose river projects",
+      "evaluation": "Completeness of information (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Advantages vs Disadvantages of Dams",
+      "objective": "Evaluate impacts of large dams",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a two-column table",
+        "List at least five advantages of dams",
+        "List at least five disadvantages affecting environment and society"
+      ],
+      "learning_outcome": "Students evaluate both positive and negative impacts of dams",
+      "evaluation": "Balanced comparison (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Rainwater Harvesting System Design",
+      "objective": "Design a simple rainwater harvesting system",
+      "materials": ["Chart paper", "Sketch pens", "Scale"],
+      "steps": [
+        "Draw a rooftop rainwater harvesting system",
+        "Label components such as roof, pipes, filter and storage tank",
+        "Explain how collected rainwater can be reused"
+      ],
+      "learning_outcome": "Students understand the structure and function of rainwater harvesting",
+      "evaluation": "Accuracy of diagram and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Traditional Water Harvesting Methods Research",
+      "objective": "Explore indigenous water conservation techniques",
+      "materials": ["Notebook", "Reference materials"],
+      "steps": [
+        "Research three traditional water harvesting systems in India",
+        "Explain how each system works",
+        "Identify the regions where they are practiced"
+      ],
+      "learning_outcome": "Students understand traditional ecological knowledge of water conservation",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Water Consumption Calculation",
+      "objective": "Estimate daily household water usage",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Record daily water usage for activities like bathing, cooking and cleaning",
+        "Estimate the amount of water used for each activity",
+        "Calculate the total daily water consumption"
+      ],
+      "learning_outcome": "Students understand patterns of water consumption",
+      "evaluation": "Accuracy of calculations (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Industrial Water Pollution Study",
+      "objective": "Understand how industries affect water resources",
+      "materials": ["Notebook", "Internet or newspaper"],
+      "steps": [
+        "Find examples of industries that pollute water resources",
+        "Describe the type of pollutants released",
+        "Suggest methods to reduce water pollution"
+      ],
+      "learning_outcome": "Students understand environmental impacts of industrial activities",
+      "evaluation": "Clarity and relevance of examples (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Inter-State Water Disputes Analysis",
+      "objective": "Understand conflicts over water sharing",
+      "materials": ["Notebook", "Atlas"],
+      "steps": [
+        "Research one inter-state water dispute in India",
+        "Explain the states involved and the river concerned",
+        "Describe the reasons for the conflict"
+      ],
+      "learning_outcome": "Students understand political and geographical aspects of water disputes",
+      "evaluation": "Accuracy of explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Water Conservation Action Plan",
+      "objective": "Develop strategies to conserve water locally",
+      "materials": ["Notebook"],
+      "steps": [
+        "List common ways water is wasted in homes or schools",
+        "Suggest at least five practical water conservation methods",
+        "Prepare a short action plan for implementing them"
+      ],
+      "learning_outcome": "Students develop responsible attitudes toward water conservation",
+      "evaluation": "Practicality of solutions (10 marks)"
+    }
+  ]
+}

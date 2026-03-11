@@ -1,0 +1,389 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+    "generated_at": "2026-03-10T23:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define magnetic field and magnetic field lines. State the properties of magnetic field lines.",
+            "answer": "Magnetic field is the region around a magnet or current-carrying conductor where magnetic force is experienced. Magnetic field lines are imaginary lines showing the direction of magnetic field. Properties: They emerge from North pole and enter South pole, form closed loops, never intersect, closer lines indicate stronger field, tangent gives direction.",
+            "answer_outline": [
+                "Definition of magnetic field",
+                "Magnetic field lines",
+                "Key properties (at least 4-5)"
+            ],
+            "key_concepts": [
+                "magnetic field",
+                "field lines",
+                "properties"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why do two magnetic field lines never intersect each other? Explain with reason.",
+            "answer": "Two magnetic field lines never intersect because at any point, the magnetic field has a unique direction. If they intersect, it would mean two directions at one point, which is impossible. They represent the direction of magnetic field uniquely.",
+            "answer_outline": [
+                "Unique direction at a point",
+                "Impossibility of two directions",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "field lines intersection",
+                "direction"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe an activity to show that a current-carrying conductor produces a magnetic field around it.",
+            "answer": "Activity: Take a straight conductor, connect to battery, place compass near it. Deflection of compass needle shows magnetic field. When current is switched off, needle returns to north-south. Reversing current reverses deflection, confirming Oersted's observation.",
+            "answer_outline": [
+                "Setup with conductor and compass",
+                "Observation on current flow",
+                "Effect of switching off/reversing"
+            ],
+            "key_concepts": [
+                "Oersted experiment",
+                "current produces magnetism"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 4,
+            "question": "State and explain Right-hand thumb rule for a straight current-carrying conductor.",
+            "answer": "Right-hand thumb rule: If thumb of right hand points in direction of current, curled fingers give direction of magnetic field lines. Field lines form concentric circles around conductor. Strength decreases with distance.",
+            "answer_outline": [
+                "Statement of rule",
+                "How to apply",
+                "Field pattern description"
+            ],
+            "key_concepts": [
+                "right-hand thumb rule",
+                "circular field"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Draw the pattern of magnetic field lines around a current-carrying circular loop. Mention the direction at centre.",
+            "answer": "Magnetic field lines form closed loops passing through loop plane. At centre, field is perpendicular to plane. Use right-hand rule: fingers curl in current direction, thumb gives field direction at centre. Field stronger inside loop.",
+            "answer_outline": [
+                "Field pattern description",
+                "Direction at centre",
+                "Right-hand rule application"
+            ],
+            "key_concepts": [
+                "circular loop field",
+                "centre direction"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the magnetic field due to a current-carrying solenoid. Draw the field lines.",
+            "answer": "Solenoid acts like a bar magnet. Field inside is uniform and parallel to axis, from south to north pole. Outside weak. Strength depends on current, turns, length. Field lines emerge from one end (north), enter other (south).",
+            "answer_outline": [
+                "Solenoid as bar magnet",
+                "Inside uniform field",
+                "Field lines diagram description"
+            ],
+            "key_concepts": [
+                "solenoid",
+                "uniform field"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "How can we increase the strength of magnetic field of a solenoid? List factors.",
+            "answer": "Increase current, increase number of turns, insert soft iron core (electromagnet), decrease length. Core concentrates field lines, making it stronger.",
+            "answer_outline": [
+                "Factors: current, turns, core, length",
+                "Role of iron core"
+            ],
+            "key_concepts": [
+                "electromagnet strength"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 8,
+            "question": "State Fleming's left-hand rule and explain its use in electric motor.",
+            "answer": "Fleming's left-hand rule: Thumb - force, forefinger - field, middle finger - current (all perpendicular). Used to find direction of motion of conductor in motor when current and field directions are known.",
+            "answer_outline": [
+                "Rule statement with fingers",
+                "Application in motor"
+            ],
+            "key_concepts": [
+                "Fleming's left-hand rule",
+                "motor"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the construction and working of an electric motor with diagram.",
+            "answer": "Parts: Rectangular coil, magnet, split ring commutator, brushes, axle. Working: Current in coil experiences force (Fleming left), rotates coil. Commutator reverses current every half turn to maintain rotation direction. Converts electrical to mechanical energy.",
+            "answer_outline": [
+                "Construction components",
+                "Working principle with forces",
+                "Role of commutator"
+            ],
+            "key_concepts": [
+                "electric motor",
+                "commutator"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the principle of electromagnetic induction. State Faraday's law.",
+            "answer": "Electromagnetic induction: Changing magnetic field through coil induces emf/current. Faraday's law: Induced emf equals negative rate of change of magnetic flux (ε = -dΦ/dt).",
+            "answer_outline": [
+                "Definition and principle",
+                "Faraday's law statement"
+            ],
+            "key_concepts": [
+                "electromagnetic induction",
+                "Faraday's law"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe an experiment to demonstrate electromagnetic induction.",
+            "answer": "Move magnet in/out of coil connected to galvanometer. Deflection shows induced current. Faster movement or stronger magnet gives larger deflection. No motion, no current.",
+            "answer_outline": [
+                "Setup: coil, magnet, galvanometer",
+                "Observations on motion",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "induction experiment"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 12,
+            "question": "State Fleming's right-hand rule and its application in electric generator.",
+            "answer": "Fleming's right-hand rule: Thumb - motion, forefinger - field, middle finger - induced current. Used to find direction of induced current in generator when coil moves in magnetic field.",
+            "answer_outline": [
+                "Rule statement",
+                "Application in AC/DC generator"
+            ],
+            "key_concepts": [
+                "Fleming's right-hand rule",
+                "generator"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the working of an AC electric generator with diagram.",
+            "answer": "Coil rotates in magnetic field, induced emf alternates (AC). Slip rings collect current. Working based on electromagnetic induction. Frequency depends on rotation speed.",
+            "answer_outline": [
+                "Construction: coil, magnet, slip rings",
+                "Working and induction",
+                "AC output explanation"
+            ],
+            "key_concepts": [
+                "AC generator",
+                "slip rings"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Differentiate between AC and DC generators.",
+            "answer": "AC generator: produces alternating current (direction reverses), uses slip rings. DC generator: produces direct current (one direction), uses split-ring commutator. AC easier to transmit long distances.",
+            "answer_outline": [
+                "Current type",
+                "Commutator vs slip rings",
+                "Advantages"
+            ],
+            "key_concepts": [
+                "AC vs DC generator"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why the current induced in a coil is called alternating current in a generator.",
+            "answer": "As coil rotates, flux change direction reverses every half rotation, inducing emf/current that reverses direction periodically → alternating current (AC).",
+            "answer_outline": [
+                "Flux change in rotation",
+                "Periodic reversal",
+                "AC nature"
+            ],
+            "key_concepts": [
+                "alternating current",
+                "induction"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is an electromagnet? How is it different from a permanent magnet?",
+            "answer": "Electromagnet: Temporary magnet produced by current in solenoid with iron core. Difference: Can be turned on/off, strength varied by current/turns; loses magnetism when current off. Permanent magnet always magnetic.",
+            "answer_outline": [
+                "Definition and making",
+                "Differences (temporary, controllable)"
+            ],
+            "key_concepts": [
+                "electromagnet"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the force experienced by a current-carrying conductor in a magnetic field. When is force maximum?",
+            "answer": "Force F = BIL sinθ. Maximum when conductor perpendicular to field (θ=90°, sinθ=1). Direction by Fleming's left-hand rule. No force when parallel.",
+            "answer_outline": [
+                "Formula and factors",
+                "Maximum condition",
+                "Direction rule"
+            ],
+            "key_concepts": [
+                "force on conductor",
+                "Fleming left"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe domestic electric circuits and the role of fuse/MCB in them.",
+            "answer": "Live, neutral, earth wires. Appliances in parallel. Fuse/MCB in live wire melts/trips on overload/short-circuit to prevent fire. Earth wire provides safety path for leakage.",
+            "answer_outline": [
+                "Wiring setup",
+                "Safety devices role"
+            ],
+            "key_concepts": [
+                "domestic circuits",
+                "fuse/MCB"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the principle and working of an electric bell.",
+            "answer": "Uses electromagnet. Current through coil attracts armature, strikes gong, breaks circuit → de-energises, spring returns, repeats → continuous ringing.",
+            "answer_outline": [
+                "Electromagnet use",
+                "Make-and-break mechanism"
+            ],
+            "key_concepts": [
+                "electric bell"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is soft iron used as core in electromagnets and transformers?",
+            "answer": "High magnetic permeability concentrates field lines, increases strength. Soft iron loses magnetism quickly when current off (low retentivity).",
+            "answer_outline": [
+                "Permeability advantage",
+                "Low retentivity"
+            ],
+            "key_concepts": [
+                "soft iron core"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 21,
+            "question": "State the differences between electric motor and electric generator.",
+            "answer": "Motor: electrical to mechanical energy, uses current in magnetic field for motion. Generator: mechanical to electrical, uses motion in magnetic field for induced current.",
+            "answer_outline": [
+                "Energy conversion",
+                "Working principle difference"
+            ],
+            "key_concepts": [
+                "motor vs generator"
+            ],
+            "marks": 5,
+            "source_section": "Sections 12.4 & 12.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain overloading and short-circuiting in domestic circuits with effects.",
+            "answer": "Overloading: Too many appliances draw high current → heating. Short-circuiting: Live-neutral contact → very high current → fire risk. Both prevented by fuse/MCB.",
+            "answer_outline": [
+                "Definitions",
+                "Causes and effects",
+                "Prevention"
+            ],
+            "key_concepts": [
+                "overloading",
+                "short circuit"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Describe the pattern of magnetic field due to current in a straight conductor using experiment.",
+            "answer": "Using iron filings or compass: Circular concentric lines around wire. Direction by right-hand thumb rule. Closer near wire (stronger field).",
+            "answer_outline": [
+                "Experimental setup",
+                "Observation and pattern"
+            ],
+            "key_concepts": [
+                "straight conductor field"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of split ring commutator in DC motor.",
+            "answer": "Reverses current direction in coil every half rotation to keep torque in same direction → continuous rotation. Without it, coil oscillates.",
+            "answer_outline": [
+                "Function of reversal",
+                "Continuous rotation"
+            ],
+            "key_concepts": [
+                "commutator role"
+            ],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is induced current produced in a stationary coil when a magnet is moved near it? Explain Lenz's law.",
+            "answer": "Change in magnetic flux induces emf/current. Lenz's law: Induced current opposes the change in flux causing it (conservation of energy). Direction such that it opposes motion/change.",
+            "answer_outline": [
+                "Flux change",
+                "Lenz's law statement",
+                "Opposition principle"
+            ],
+            "key_concepts": [
+                "Lenz's law",
+                "induction"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        }
+    ]
+}

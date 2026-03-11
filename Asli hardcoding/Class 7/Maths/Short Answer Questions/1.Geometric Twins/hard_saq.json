@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Congruence of Triangles",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T01:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In an isosceles ΔABC with AB = AC, AD is an altitude to BC. Prove ΔABD ≅ ΔACD and state the rule used.",
+            "answer": "In ΔABD and ΔACD: 1. AB = AC (Given), 2. AD = AD (Common), 3. ∠ADB = ∠ADC = 90° (Altitude). By RHS rule, ΔABD ≅ ΔACD.",
+            "key_concepts": ["RHS criterion", "altitude"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 2,
+            "question": "If ΔPQR ≅ ΔXYZ and ΔXYZ ≅ ΔLMN, prove that PQ = LM.",
+            "answer": "By CPCT, ΔPQR ≅ ΔXYZ implies PQ = XY. Similarly, ΔXYZ ≅ ΔLMN implies XY = LM. Therefore, PQ = LM (Transitive Property).",
+            "key_concepts": ["Transitive property", "CPCT"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "In a quadrilateral ABCD, diagonals AC and BD bisect each other at O. Prove ΔAOB ≅ ΔCOD.",
+            "answer": "In ΔAOB and ΔCOD: 1. AO = CO, 2. BO = DO (Diagonals bisect), 3. ∠AOB = ∠COD (Vertically opposite angles). By SAS, ΔAOB ≅ ΔCOD.",
+            "key_concepts": ["SAS criterion", "bisectors"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Two triangles are congruent by ASA. If the included side is 7cm and angles are 50° and 60°, what is the third angle in the 'twin' triangle?",
+            "answer": "Sum of angles = 180°. Third angle = 180° - (50° + 60°) = 70°. Since they are congruent, the third angle in the other triangle is also 70°.",
+            "key_concepts": ["ASA criterion", "Angle sum property"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 5,
+            "question": "If ΔABC ≅ ΔPQR, is it necessary that the altitudes from A and P to their respective opposite sides are equal?",
+            "answer": "Yes. Since the triangles are identical in size and shape, all corresponding elements, including altitudes, medians, and angle bisectors, are equal (CPCT).",
+            "key_concepts": ["CPCT", "altitudes"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "In ΔABC, AB = AC and ∠B = 50°. In ΔDEF, DE = DF and ∠E = 50°. Are the triangles congruent?",
+            "answer": "Not necessarily. While they are both isosceles with one base angle equal, we do not have information about the side lengths being equal across both triangles.",
+            "key_concepts": ["SSS vs SAS", "isosceles properties"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Line segments AB and CD intersect at M. If M is the midpoint of both AB and CD, prove ΔAMC ≅ ΔBMD.",
+            "answer": "1. AM = BM, 2. CM = DM (M is midpoint), 3. ∠AMC = ∠BMD (Vertically opposite). By SAS rule, ΔAMC ≅ ΔBMD.",
+            "key_concepts": ["SAS criterion", "midpoint"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "In ΔABC, ∠A = 30°, ∠B = 90°. In ΔPQR, ∠P = 30°, ∠Q = 90°. What specific side equality is needed for RHS congruence?",
+            "answer": "The hypotenuses must be equal (AC = PR) and one other corresponding side must be equal (e.g., AB = PQ).",
+            "key_concepts": ["RHS criterion"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Show that the diagonals of a rectangle are equal using triangle congruence.",
+            "answer": "In ΔABC and ΔDCB: 1. AB = DC (Opposite sides), 2. BC = BC (Common), 3. ∠ABC = ∠DCB = 90°. By SAS, ΔABC ≅ ΔDCB, so AC = DB (CPCT).",
+            "key_concepts": ["SAS criterion", "Rectangle properties"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 10,
+            "question": "If ΔABC ≅ ΔPQR and the perimeter of ΔABC is 24cm, find the sum of sides PQ, QR, and RP.",
+            "answer": "Since the triangles are congruent, their perimeters are equal. PQ + QR + RP = 24cm.",
+            "key_concepts": ["Perimeter in congruence"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why AAS (Angle-Angle-Side) is a valid congruence criterion if ASA is valid.",
+            "answer": "If two angles are equal, the third must be equal (Angle Sum Property). Thus, AAS can always be converted to ASA using the side included between the angles.",
+            "key_concepts": ["AAS vs ASA"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "In ΔABC, AD is the median to side BC. Is ΔABD ≅ ΔACD always true?",
+            "answer": "No. It is only true if ΔABC is isosceles (AB = AC) or equilateral. Otherwise, AB and AC may differ in length.",
+            "key_concepts": ["Median", "Isosceles triangle"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Can two triangles be congruent if they have the same perimeter and two equal angles?",
+            "answer": "Yes. If two angles are equal, the third is also equal. Same perimeter ensures the corresponding sides are the same length (scaling is impossible).",
+            "key_concepts": ["Perimeter", "ASA"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "If the correspondence ABC ↔ PQR fails for SSS, can the same triangles be congruent under a different correspondence?",
+            "answer": "Yes, for example, ABC ↔ QRP might satisfy SSS if the triangles are rotated or flipped.",
+            "key_concepts": ["Correspondence", "SSS"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "In ΔABC, if AB = AC and ∠A = 100°, find the angles of a triangle ΔDEF congruent to ΔABC.",
+            "answer": "In ΔABC, ∠B = ∠C = (180-100)/2 = 40°. Therefore, ΔDEF has angles 100°, 40°, and 40°.",
+            "key_concepts": ["Isosceles triangle", "CPCT"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "In ΔPQR, PQ = PR. S is a point on QR such that PS ⊥ QR. Prove QS = SR.",
+            "answer": "ΔPQS ≅ ΔPRS by RHS rule (PQ=PR, PS common, ∠PSQ=∠PSR=90°). Thus QS = SR by CPCT.",
+            "key_concepts": ["RHS criterion", "CPCT"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Two equilateral triangles have the same area. Are they congruent?",
+            "answer": "Yes. Equilateral triangles with same area must have the same side length ($Area = \frac{\sqrt{3}}{4} a^2$), making them congruent by SSS.",
+            "key_concepts": ["Equilateral triangles", "SSS"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 18,
+            "question": "In ΔABC and ΔDEF, AB = DE, BC = EF and the median AM = median DN. Are the triangles congruent?",
+            "answer": "Yes. ΔABM ≅ ΔDEN by SSS (since BM = half BC = half EF = EN). Then ∠B = ∠E (CPCT). Now ΔABC ≅ ΔDEF by SAS.",
+            "key_concepts": ["SSS", "SAS", "Medians"],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "A circle is divided into two semi-circles by a diameter. Are the semi-circles congruent?",
+            "answer": "Yes, because they have the same radius and can be superimposed exactly upon each other.",
+            "key_concepts": ["Congruence of circles"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "In ΔABC, if ∠B = ∠C, show that the triangle is its own mirror image.",
+            "answer": "Under correspondence ABC ↔ ACB: AB=AC (sides opp to equal angles), AC=AB, BC=CB. ΔABC ≅ ΔACB by SSS/SAS.",
+            "key_concepts": ["Symmetry", "Isosceles triangle"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Can two right-angled triangles be congruent if only their hypotenuses are equal?",
+            "answer": "No. According to RHS, we need the hypotenuse AND one more side (or one more angle for ASA) to be equal.",
+            "key_concepts": ["RHS criterion"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "In a parallelogram ABCD, prove ΔABC ≅ ΔCDA.",
+            "answer": "1. AB = CD, 2. BC = DA (Opposite sides), 3. AC = AC (Common). By SSS, ΔABC ≅ ΔCDA.",
+            "key_concepts": ["SSS criterion", "Parallelogram"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 23,
+            "question": "If side AB of ΔABC is superimposed on side PQ of ΔPQR and they match, and ∠A matches ∠P, are they congruent?",
+            "answer": "Not yet. We need either side AC to match PR (SAS) or ∠B to match ∠Q (ASA).",
+            "key_concepts": ["SAS", "ASA"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "In ΔABC, AB = AC. If P is a point in the interior such that PB = PC, prove ΔABP ≅ ΔACP.",
+            "answer": "In ΔABP and ΔACP: 1. AB = AC (Given), 2. PB = PC (Given), 3. AP = AP (Common). By SSS rule, ΔABP ≅ ΔACP.",
+            "key_concepts": ["SSS criterion"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Is it possible for a triangle with sides 3cm, 4cm, 5cm to be congruent to a triangle with sides 4cm, 5cm, 3cm?",
+            "answer": "Yes. The sides are identical in length, so they are congruent by the SSS criterion despite the order.",
+            "key_concepts": ["SSS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        }
+    ]
+}

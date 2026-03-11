@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T11:20:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is gravitation?",
+                "correct_answer": "The force of attraction between any two objects in the universe",
+                "explanation": "Gravitation is a universal force that attracts objects toward each other depending on their masses.",
+                "source_section": "Section 9.1"
+            },
+            {
+                "question": "Who proposed the universal law of gravitation?",
+                "correct_answer": "Isaac Newton",
+                "explanation": "Newton explained that the same force causing objects to fall on Earth also keeps planets in orbit.",
+                "source_section": "Section 9.1"
+            },
+            {
+                "question": "State the universal law of gravitation formula.",
+                "correct_answer": "F = G(Mm)/d²",
+                "explanation": "The gravitational force between two objects depends on the product of their masses and the square of the distance between them.",
+                "source_section": "Section 9.1.1"
+            },
+            {
+                "question": "What is free fall?",
+                "correct_answer": "The motion of an object falling under the influence of gravity alone",
+                "explanation": "When only gravitational force acts on an object, the motion is called free fall.",
+                "source_section": "Section 9.2"
+            },
+            {
+                "question": "What is acceleration due to gravity?",
+                "correct_answer": "The acceleration gained by an object due to the gravitational force of the Earth",
+                "explanation": "This acceleration is represented by g and is approximately 9.8 m/s² near the Earth's surface.",
+                "source_section": "Section 9.2"
+            },
+            {
+                "question": "What is the SI unit of gravitational force?",
+                "correct_answer": "Newton (N)",
+                "explanation": "Force, including gravitational force, is measured in newtons according to the SI system.",
+                "source_section": "Section 9.1.1"
+            },
+            {
+                "question": "What is mass?",
+                "correct_answer": "The amount of matter present in an object",
+                "explanation": "Mass is a measure of inertia and remains constant regardless of location.",
+                "source_section": "Section 9.3"
+            },
+            {
+                "question": "What is weight?",
+                "correct_answer": "The force with which the Earth attracts an object",
+                "explanation": "Weight is calculated using the formula W = m × g.",
+                "source_section": "Section 9.4"
+            },
+            {
+                "question": "Why is the weight of an object on the Moon less than on Earth?",
+                "correct_answer": "Because the Moon has weaker gravity than the Earth",
+                "explanation": "The Moon's gravitational pull is about one-sixth that of Earth.",
+                "source_section": "Section 9.4.1"
+            },
+            {
+                "question": "What is pressure?",
+                "correct_answer": "Force acting per unit area",
+                "explanation": "Pressure increases when the same force acts on a smaller area.",
+                "source_section": "Section 9.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Universal Law of Gravitation",
+                "content": "Every object in the universe attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+                "source_section": "Section 9.1.1"
+            },
+            {
+                "title": "Acceleration Due to Gravity",
+                "content": "Acceleration due to gravity is represented by g and its value near the Earth's surface is approximately 9.8 m/s².",
+                "source_section": "Section 9.2"
+            },
+            {
+                "title": "Mass vs Weight",
+                "content": "Mass is the amount of matter in an object and remains constant, while weight is the force due to gravity and varies depending on location.",
+                "source_section": "Section 9.4"
+            },
+            {
+                "title": "Pressure Concept",
+                "content": "Pressure is defined as thrust per unit area and its SI unit is Pascal (Pa).",
+                "source_section": "Section 9.5"
+            },
+            {
+                "title": "Archimedes Principle",
+                "content": "When an object is immersed in a fluid, it experiences an upward force equal to the weight of the fluid displaced.",
+                "source_section": "Section 9.6"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The value of acceleration due to gravity near the Earth's surface is approximately 9.8 m/s².",
+                "source_section": "Section 9.2"
+            },
+            {
+                "fact": "The weight of an object on the Moon is about one-sixth of its weight on Earth.",
+                "source_section": "Section 9.4.1"
+            },
+            {
+                "fact": "Pressure is measured in Pascal (Pa), which is equal to one newton per square meter.",
+                "source_section": "Section 9.5"
+            },
+            {
+                "fact": "Archimedes' principle helps explain why ships float on water.",
+                "source_section": "Section 9.6"
+            }
+        ]
+    }
+}

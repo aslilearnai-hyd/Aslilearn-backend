@@ -1,0 +1,152 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "A Triumph of Surgery",
+    "author": "James Herriot",
+    "difficulty": "Hard",
+    "source_pdf": "jefp101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Analysis of Mrs Pumphrey",
+            "objective": "Critically analyse Mrs Pumphrey’s parenting style",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse her behaviour",
+                "Explain how excess love can be harmful"
+            ],
+            "learning_outcome": "Develops critical thinking",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Irony and Humour Study",
+            "objective": "Identify humour and irony in the prose",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify humorous incidents",
+                "Explain how irony is used"
+            ],
+            "learning_outcome": "Understands literary techniques",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Vet vs Owner Responsibility",
+            "objective": "Compare responsibilities of pet owner and vet",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List duties of a pet owner",
+                "Compare with vet’s responsibilities"
+            ],
+            "learning_outcome": "Understands social responsibility",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Alternative Ending",
+            "objective": "Develop creative thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine Tricki was not hospitalised",
+                "Write an alternative ending"
+            ],
+            "learning_outcome": "Enhances creativity",
+            "evaluation": "Originality and relevance (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Narrator’s Ethical Decision",
+            "objective": "Analyse narrator’s decision-making",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify ethical choices made",
+                "Explain why they were correct"
+            ],
+            "learning_outcome": "Understands ethical reasoning",
+            "evaluation": "Justification quality (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Theme of Excess",
+            "objective": "Analyse the theme of excess and moderation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify examples of excess",
+                "Explain the lesson learnt"
+            ],
+            "learning_outcome": "Understands abstract themes",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Real-Life Parallel Essay",
+            "objective": "Relate story to modern life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify a similar real-life situation",
+                "Write a short essay connecting both"
+            ],
+            "learning_outcome": "Applies literature to life",
+            "evaluation": "Relevance and clarity (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Symbolism Study",
+            "objective": "Identify symbolic elements",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify symbols in the story",
+                "Explain their meanings"
+            ],
+            "learning_outcome": "Recognises symbolism",
+            "evaluation": "Correct interpretation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Title Re-evaluation",
+            "objective": "Re-evaluate the title’s meaning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse the title deeply",
+                "Explain its significance beyond surgery"
+            ],
+            "learning_outcome": "Advanced interpretation skill",
+            "evaluation": "Insightful explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Message to Pet Owners",
+            "objective": "Create awareness through writing",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draft a message for pet owners",
+                "Include lessons from the story"
+            ],
+            "learning_outcome": "Applies moral learning",
+            "evaluation": "Impact and clarity (10 marks)"
+        }
+    ]
+}

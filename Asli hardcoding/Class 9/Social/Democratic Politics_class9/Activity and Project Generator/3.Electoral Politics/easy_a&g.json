@@ -1,0 +1,173 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Electoral Politics",
+    "difficulty": "Easy",
+    "source_pdf": "dem9_3.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Mock Election in Classroom",
+            "objective": "Understand the process of elections and voting",
+            "materials": [
+                "Ballot papers",
+                "Ballot box",
+                "Pen",
+                "Candidate list"
+            ],
+            "steps": [
+                "Select 3–4 students as candidates",
+                "Prepare ballot papers with candidate names",
+                "Students cast their votes secretly",
+                "Count the votes and declare the winner"
+            ],
+            "learning_outcome": "Students understand how voting and counting take place in elections",
+            "evaluation": "Participation and correct understanding of election process (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Election Campaign Poster",
+            "objective": "Learn how political parties communicate with voters",
+            "materials": [
+                "Chart paper",
+                "Sketch pens",
+                "Images or stickers"
+            ],
+            "steps": [
+                "Create a political party name",
+                "Design a poster with a slogan and symbol",
+                "Present the campaign poster to the class"
+            ],
+            "learning_outcome": "Students understand the role of election campaigns",
+            "evaluation": "Creativity and clarity of message (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Identify Election Symbols",
+            "objective": "Understand the importance of election symbols",
+            "materials": [
+                "Images of election symbols",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect pictures of different party symbols",
+                "Write the party name beside each symbol",
+                "Discuss why symbols help voters"
+            ],
+            "learning_outcome": "Students learn how symbols help voters identify parties",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Create a Voters List",
+            "objective": "Understand the concept of electoral roll",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "List names of all students in the class",
+                "Assign them voter ID numbers",
+                "Prepare a simple voters list"
+            ],
+            "learning_outcome": "Students understand how voters lists are prepared",
+            "evaluation": "Accuracy and completeness of list (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Debate on Importance of Elections",
+            "objective": "Understand why elections are important in democracy",
+            "materials": [
+                "Notebook",
+                "Reference material"
+            ],
+            "steps": [
+                "Divide students into two groups",
+                "Discuss why elections are necessary",
+                "Present arguments during a class debate"
+            ],
+            "learning_outcome": "Students understand the role of elections in democracy",
+            "evaluation": "Quality of arguments and participation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Election Process Flowchart",
+            "objective": "Learn the stages of the election process",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "List the stages of elections such as nomination, campaign, polling, and counting",
+                "Draw a flowchart showing these steps",
+                "Explain each stage briefly"
+            ],
+            "learning_outcome": "Students understand the full election procedure",
+            "evaluation": "Correct sequence and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Role of Election Commission Chart",
+            "objective": "Understand the functions of the Election Commission",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write the functions of the Election Commission",
+                "Illustrate them with small examples",
+                "Display the chart in class"
+            ],
+            "learning_outcome": "Students recognize the importance of an independent Election Commission",
+            "evaluation": "Clarity and completeness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Interview a Voter",
+            "objective": "Understand voter participation",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Interview a family member who has voted",
+                "Ask about their voting experience",
+                "Record their answers in a notebook"
+            ],
+            "learning_outcome": "Students understand how citizens participate in elections",
+            "evaluation": "Accuracy of recorded responses (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Election Slogan Writing",
+            "objective": "Understand how slogans influence voters",
+            "materials": [
+                "Paper",
+                "Pens"
+            ],
+            "steps": [
+                "Think of an issue important to people",
+                "Write a short election slogan",
+                "Share the slogan with the class"
+            ],
+            "learning_outcome": "Students learn how slogans are used in campaigns",
+            "evaluation": "Creativity and relevance (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Identify Fair and Unfair Election Practices",
+            "objective": "Understand ethical election behavior",
+            "materials": [
+                "Worksheet",
+                "Pen"
+            ],
+            "steps": [
+                "List examples such as bribing voters or fair campaigning",
+                "Classify them as fair or unfair practices",
+                "Discuss why fairness is important"
+            ],
+            "learning_outcome": "Students understand the importance of free and fair elections",
+            "evaluation": "Correct classification and explanation (10 marks)"
+        }
+    ]
+}

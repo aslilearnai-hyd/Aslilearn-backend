@@ -1,0 +1,709 @@
+{
+  "subject": "Hindi",
+  "book": "Malhar",
+  "content": "Essay Writing",
+  "class": "7",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "माँ, कहू कहानी",
+      "source": "Malhar – Chapter 1",
+      "title": "माँ का प्रेम",
+      "question": "अपने जीवन में माँ के प्रेम और योगदान पर निबंध लिखिए।"
+    },
+    {
+      "id": 2,
+      "chapter": "माँ, कहू कहानी",
+      "source": "Malhar – Chapter 1",
+      "title": "परिवार का महत्व",
+      "question": "परिवार और रिश्तों के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 3,
+      "chapter": "तीन बुद्धिमान",
+      "source": "Malhar – Chapter 2",
+      "title": "बुद्धिमानी का महत्व",
+      "question": "तीन बुद्धिमानों की कहानी से मिली सीख पर निबंध लिखिए।"
+    },
+    {
+      "id": 4,
+      "chapter": "तीन बुद्धिमान",
+      "source": "Malhar – Chapter 2",
+      "title": "सच्चाई और धर्म",
+      "question": "सच्चाई और धर्म के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 5,
+      "chapter": "फूल और काँटा",
+      "source": "Malhar – Chapter 3",
+      "title": "जीवन की सीख",
+      "question": "फूल और काँटा कविता से मिली शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 6,
+      "chapter": "फूल और काँटा",
+      "source": "Malhar – Chapter 3",
+      "title": "धैर्य और साहस",
+      "question": "फूल और काँटा देखकर जीवन में धैर्य और साहस पर निबंध लिखिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "पानी है पानी",
+      "source": "Malhar – Chapter 4",
+      "title": "पानी का महत्व",
+      "question": "पानी और प्राकृतिक संसाधनों के संरक्षण पर निबंध लिखिए।"
+    },
+    {
+      "id": 8,
+      "chapter": "पानी है पानी",
+      "source": "Malhar – Chapter 4",
+      "title": "संसाधनों की रक्षा",
+      "question": "प्राकृतिक संसाधनों की रक्षा क्यों आवश्यक है? निबंध लिखिए।"
+    },
+    {
+      "id": 9,
+      "chapter": "नहीं होना बीमार",
+      "source": "Malhar – Chapter 5",
+      "title": "स्वास्थ्य का महत्व",
+      "question": "स्वस्थ रहने के लिए अपनाई जाने वाली आदतों पर निबंध लिखिए।"
+    },
+    {
+      "id": 10,
+      "chapter": "नहीं होना बीमार",
+      "source": "Malhar – Chapter 5",
+      "title": "स्वस्थ जीवनशैली",
+      "question": "स्वस्थ जीवनशैली अपनाने के उपायों पर निबंध लिखिए।"
+    },
+    {
+      "id": 11,
+      "chapter": "गिरिधर कविराय की कुंडलियाँ",
+      "source": "Malhar – Chapter 6",
+      "title": "सद्गुण और नैतिकता",
+      "question": "कुंडलियाँ कविता से मिली नैतिक शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 12,
+      "chapter": "गिरिधर कविराय की कुंडलियाँ",
+      "source": "Malhar – Chapter 6",
+      "title": "जीवन में नैतिकता",
+      "question": "कविता से मिली नैतिक शिक्षा का जीवन में महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 13,
+      "chapter": "वर्षा-बहार",
+      "source": "Malhar – Chapter 7",
+      "title": "प्राकृतिक सुंदरता",
+      "question": "वर्षा और प्रकृति की सुंदरता का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "वर्षा-बहार",
+      "source": "Malhar – Chapter 7",
+      "title": "प्रकृति से जुड़ाव",
+      "question": "प्रकृति के महत्व और उसके प्रति प्रेम पर निबंध लिखिए।"
+    },
+    {
+      "id": 15,
+      "chapter": "बिजू महाराज से साक्षात्कार",
+      "source": "Malhar – Chapter 8",
+      "title": "ज्ञान और प्रेरणा",
+      "question": "बिजू महाराज से साक्षात्कार से मिली प्रेरणा पर निबंध लिखिए।"
+    },
+    {
+      "id": 16,
+      "chapter": "बिजू महाराज से साक्षात्कार",
+      "source": "Malhar – Chapter 8",
+      "title": "अनुभव का महत्व",
+      "question": "साक्षात्कार के अनुभव और शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 17,
+      "chapter": "चिड़िया",
+      "source": "Malhar – Chapter 9",
+      "title": "स्वतंत्रता का महत्व",
+      "question": "पक्षियों की स्वतंत्रता देखकर स्वतंत्रता का महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 18,
+      "chapter": "चिड़िया",
+      "source": "Malhar – Chapter 9",
+      "title": "प्रकृति प्रेम",
+      "question": "पक्षियों और प्रकृति से जुड़ाव पर निबंध लिखिए।"
+    },
+    {
+      "id": 19,
+      "chapter": "मीरा के पद",
+      "source": "Malhar – Chapter 10",
+      "title": "भक्ति भावना",
+      "question": "मीरा के पदों से भक्ति और श्रद्धा का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 20,
+      "chapter": "मीरा के पद",
+      "source": "Malhar – Chapter 10",
+      "title": "संगीत और भक्ति",
+      "question": "मीरा के पदों में संगीत और भक्ति का महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 21,
+      "chapter": "स्वामिभक्त सुमुख",
+      "source": "Malhar – Chapter 11",
+      "title": "भक्ति और धर्म",
+      "question": "स्वामिभक्त सुमुख कहानी से भक्ति और धर्म पर निबंध लिखिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "स्वामिभक्त सुमुख",
+      "source": "Malhar – Chapter 11",
+      "title": "सच्चाई और नैतिकता",
+      "question": "कहानी से मिली नैतिक शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 23,
+      "chapter": "विजयी विश्व तिरंगा प्यारा",
+      "source": "Malhar – Chapter 12",
+      "title": "राष्ट्रभक्ति",
+      "question": "तिरंगा और देशभक्ति के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "विजयी विश्व तिरंगा प्यारा",
+      "source": "Malhar – Chapter 12",
+      "title": "गर्व और सम्मान",
+      "question": "देशभक्ति देखकर महसूस होने वाले गर्व और सम्मान पर निबंध लिखिए।"
+    },
+    {
+      "id": 25,
+      "chapter": "शब्दकोश",
+      "source": "Malhar – Chapter 13",
+      "title": "शब्दों का महत्व",
+      "question": "शब्दकोश से सीखने वाले नए शब्दों और उनके महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 26,
+      "chapter": "शब्दकोश",
+      "source": "Malhar – Chapter 13",
+      "title": "भाषा सुधार",
+      "question": "भाषा और शब्दों के सही प्रयोग पर निबंध लिखिए।"
+    },
+    {
+      "id": 27,
+      "chapter": "ब्रेल भारतीय",
+      "source": "Malhar – Chapter 14",
+      "title": "समान अवसर",
+      "question": "ब्रेल भारतीय और दृष्टिहीन व्यक्तियों के संघर्ष पर निबंध लिखिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "ब्रेल भारतीय",
+      "source": "Malhar – Chapter 14",
+      "title": "प्रेरणा और संघर्ष",
+      "question": "दृष्टिहीन व्यक्तियों से मिलने वाली प्रेरणा पर निबंध लिखिए।"
+    },
+    {
+      "id": 29,
+      "chapter": "माँ, कहू कहानी",
+      "source": "Malhar – Chapter 1",
+      "title": "सहानुभूति और प्रेम",
+      "question": "कहानी से मिली सहानुभूति और प्रेम पर निबंध लिखिए।"
+    },
+    {
+      "id": 30,
+      "chapter": "तीन बुद्धिमान",
+      "source": "Malhar – Chapter 2",
+      "title": "निर्णय और बुद्धिमानी",
+      "question": "कहानी से निर्णय लेने की कला पर निबंध लिखिए।"
+    },
+    {
+      "id": 31,
+      "chapter": "फूल और काँटा",
+      "source": "Malhar – Chapter 3",
+      "title": "जीवन की चुनौतियाँ",
+      "question": "फूल और काँटा देखकर जीवन की चुनौतियों पर निबंध लिखिए।"
+    },
+    {
+      "id": 32,
+      "chapter": "पानी है पानी",
+      "source": "Malhar – Chapter 4",
+      "title": "स्वच्छता और स्वास्थ्य",
+      "question": "पानी की सफाई और स्वास्थ्य पर निबंध लिखिए।"
+    },
+    {
+      "id": 33,
+      "chapter": "नहीं होना बीमार",
+      "source": "Malhar – Chapter 5",
+      "title": "स्वास्थ्य और सावधानी",
+      "question": "बीमारी से बचने के उपायों पर निबंध लिखिए।"
+    },
+    {
+      "id": 34,
+      "chapter": "गिरिधर कविराय की कुंडलियाँ",
+      "source": "Malhar – Chapter 6",
+      "title": "सदाचार",
+      "question": "कविता से मिली सदाचार और नैतिक शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 35,
+      "chapter": "वर्षा-बहार",
+      "source": "Malhar – Chapter 7",
+      "title": "प्रकृति का आनंद",
+      "question": "वर्षा और प्रकृति देखकर आनंद और अनुभव पर निबंध लिखिए।"
+    },
+    {
+      "id": 36,
+      "chapter": "बिजू महाराज से साक्षात्कार",
+      "source": "Malhar – Chapter 8",
+      "title": "ज्ञान की प्राप्ति",
+      "question": "साक्षात्कार से मिली शिक्षा और ज्ञान पर निबंध लिखिए।"
+    },
+    {
+      "id": 37,
+      "chapter": "चिड़िया",
+      "source": "Malhar – Chapter 9",
+      "title": "स्वतंत्रता का महत्व",
+      "question": "पक्षियों की स्वतंत्रता देखकर स्वतंत्रता के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 38,
+      "chapter": "मीरा के पद",
+      "source": "Malhar – Chapter 10",
+      "title": "भक्ति का महत्व",
+      "question": "मीरा के पदों से भक्ति और श्रद्धा के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 39,
+      "chapter": "स्वामिभक्त सुमुख",
+      "source": "Malhar – Chapter 11",
+      "title": "भक्ति और सेवा",
+      "question": "कहानी से भक्ति और सेवा के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 40,
+      "chapter": "विजयी विश्व तिरंगा प्यारा",
+      "source": "Malhar – Chapter 12",
+      "title": "देशभक्ति का संदेश",
+      "question": "कविता से देशभक्ति का संदेश पर निबंध लिखिए।"
+    },
+    {
+      "id": 41,
+      "chapter": "शब्दकोश",
+      "source": "Malhar – Chapter 13",
+      "title": "शब्दों का प्रयोग",
+      "question": "सीखे गए नए शब्दों के प्रयोग पर निबंध लिखिए।"
+    },
+    {
+      "id": 42,
+      "chapter": "ब्रेल भारतीय",
+      "source": "Malhar – Chapter 14",
+      "title": "सहायता और प्रेरणा",
+      "question": "दृष्टिहीन व्यक्तियों को सहायता देने और प्रेरित करने के अनुभव पर निबंध लिखिए।"
+    },
+    {
+      "id": 43,
+      "chapter": "माँ, कहू कहानी",
+      "source": "Malhar – Chapter 1",
+      "title": "सच्चाई और प्रेम",
+      "question": "कहानी से मिली सच्चाई और परिवार के प्रति प्रेम पर निबंध लिखिए।"
+    },
+    {
+      "id": 44,
+      "chapter": "तीन बुद्धिमान",
+      "source": "Malhar – Chapter 2",
+      "title": "सिखने की कला",
+      "question": "तीन बुद्धिमानों से सीखने की कला पर निबंध लिखिए।"
+    },
+    {
+      "id": 45,
+      "chapter": "फूल और काँटा",
+      "source": "Malhar – Chapter 3",
+      "title": "जीवन की शिक्षा",
+      "question": "फूल और काँटा देखकर जीवन की शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 46,
+      "chapter": "पानी है पानी",
+      "source": "Malhar – Chapter 4",
+      "title": "प्रकृति संरक्षण",
+      "question": "पानी और प्राकृतिक संसाधनों के संरक्षण पर निबंध लिखिए।"
+    },
+    {
+      "id": 47,
+      "chapter": "नहीं होना बीमार",
+      "source": "Malhar – Chapter 5",
+      "title": "स्वस्थ दिनचर्या",
+      "question": "स्वस्थ जीवन के लिए अपनाई गई दिनचर्या पर निबंध लिखिए।"
+    },
+    {
+      "id": 48,
+      "chapter": "गिरिधर कविराय की कुंडलियाँ",
+      "source": "Malhar – Chapter 6",
+      "title": "सदाचार और नैतिकता",
+      "question": "कविता से मिली नैतिक शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 49,
+      "chapter": "वर्षा-बहार",
+      "source": "Malhar – Chapter 7",
+      "title": "प्रकृति का महत्व",
+      "question": "वर्षा और प्रकृति के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 50,
+      "chapter": "बिजू महाराज से साक्षात्कार",
+      "source": "Malhar – Chapter 8",
+      "title": "ज्ञान और प्रेरणा",
+      "question": "साक्षात्कार से मिली प्रेरणा पर निबंध लिखिए।"
+    },
+    {
+      "id": 51,
+      "chapter": "चिड़िया",
+      "source": "Malhar – Chapter 9",
+      "title": "प्रकृति की रक्षा",
+      "question": "पक्षियों और प्रकृति की रक्षा का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 52,
+      "chapter": "मीरा के पद",
+      "source": "Malhar – Chapter 10",
+      "title": "सादगी और भक्ति",
+      "question": "मीरा के पदों से सादगी और भक्ति का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 53,
+      "chapter": "स्वामिभक्त सुमुख",
+      "source": "Malhar – Chapter 11",
+      "title": "नैतिक शिक्षा",
+      "question": "कहानी से मिली नैतिक शिक्षा पर निबंध लिखिए।"
+    },
+    {
+      "id": 54,
+      "chapter": "विजयी विश्व तिरंगा प्यारा",
+      "source": "Malhar – Chapter 12",
+      "title": "देशभक्ति और सम्मान",
+      "question": "देशभक्ति और राष्ट्रीय सम्मान पर निबंध लिखिए।"
+    },
+    {
+      "id": 55,
+      "chapter": "शब्दकोश",
+      "source": "Malhar – Chapter 13",
+      "title": "भाषा का महत्व",
+      "question": "भाषा और शब्दों के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 56,
+      "chapter": "ब्रेल भारतीय",
+      "source": "Malhar – Chapter 14",
+      "title": "समान अवसर और प्रेरणा",
+      "question": "दृष्टिहीन व्यक्तियों से मिली प्रेरणा और समान अवसर पर निबंध लिखिए।"
+    },
+    {
+      "id": 57,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा प्रिय पाठ",
+      "question": "मल्हार पुस्तक का आपका प्रिय पाठ कौन सा है और क्यों? निबंध लिखिए।"
+    },
+    {
+      "id": 58,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा प्रिय लेखक",
+      "question": "अपने प्रिय लेखक पर निबंध लिखिए।"
+    },
+    {
+      "id": 59,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा प्रिय स्थान",
+      "question": "अपने प्रिय स्थान का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 60,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "प्रकृति की सुंदरता",
+      "question": "प्रकृति की सुंदरता का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 61,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा सपना",
+      "question": "अपने जीवन के सपने और लक्ष्यों पर निबंध लिखिए।"
+    },
+    {
+      "id": 62,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Malhar",
+      "title": "निर्णय लेने की क्षमता",
+      "question": "सही निर्णय लेने की क्षमता पर निबंध लिखिए।"
+    },
+    {
+      "id": 63,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Malhar",
+      "title": "गलतियों से सीखना",
+      "question": "गलतियों से सीखने का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 64,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Malhar",
+      "title": "आत्मविश्वास",
+      "question": "आत्मविश्वास का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 65,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Malhar",
+      "title": "धैर्य",
+      "question": "धैर्य का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 66,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Malhar",
+      "title": "सकारात्मक सोच",
+      "question": "सकारात्मक सोच का जीवन में महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 67,
+      "chapter": "Comparative",
+      "source": "Multiple Chapters – Malhar",
+      "title": "प्रकृति और मानव",
+      "question": "प्रकृति और मानव के संबंध की तुलना करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 68,
+      "chapter": "Comparative",
+      "source": "Multiple Chapters – Malhar",
+      "title": "मानवता और स्वार्थ",
+      "question": "मानवता और स्वार्थ की तुलना करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 69,
+      "chapter": "Comparative",
+      "source": "Multiple Chapters – Malhar",
+      "title": "शिक्षा और अज्ञान",
+      "question": "शिक्षा और अज्ञान की तुलना करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 70,
+      "chapter": "Comparative",
+      "source": "Multiple Chapters – Malhar",
+      "title": "सत्य और असत्य",
+      "question": "सत्य और असत्य की तुलना करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 71,
+      "chapter": "Comparative",
+      "source": "Multiple Chapters – Malhar",
+      "title": "मेहनत और आलस्य",
+      "question": "मेहनत और आलस्य की तुलना करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 72,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मानव स्वभाव",
+      "question": "मानव स्वभाव के विभिन्न पहलुओं पर निबंध लिखिए।"
+    },
+    {
+      "id": 73,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "नैतिक जिम्मेदारी",
+      "question": "नैतिक जिम्मेदारी का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 74,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "सामाजिक मूल्य",
+      "question": "सामाजिक मूल्यों का समाज में महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 75,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "समाज और व्यक्ति",
+      "question": "समाज और व्यक्ति के संबंध पर निबंध लिखिए।"
+    },
+    {
+      "id": 76,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "नैतिक निर्णय",
+      "question": "नैतिक निर्णय लेने की क्षमता पर निबंध लिखिए।"
+    },
+    {
+      "id": 77,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "साहित्य से सीख",
+      "question": "साहित्य से मिलने वाली जीवन की सीख पर निबंध लिखिए।"
+    },
+    {
+      "id": 78,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "युवाओं के मूल्य",
+      "question": "युवाओं के लिए नैतिक मूल्यों का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 79,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "नैतिक मार्गदर्शन",
+      "question": "जीवन में नैतिक मार्गदर्शन का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 80,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "दैनिक जीवन में नैतिकता",
+      "question": "दैनिक जीवन में नैतिकता के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 81,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "धन से अधिक मूल्य",
+      "question": "मूल्य धन से अधिक महत्वपूर्ण हैं – इस विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 82,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन की सीख",
+      "question": "मल्हार पुस्तक से मिलने वाली जीवन की सीख पर निबंध लिखिए।"
+    },
+    {
+      "id": 83,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "व्यक्तिगत सुधार",
+      "question": "व्यक्तिगत सुधार के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 84,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन में मूल्य",
+      "question": "जीवन में मूल्यों को अपनाने के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 85,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "अच्छा इंसान बनना",
+      "question": "एक अच्छा इंसान बनने के लिए क्या आवश्यक है? निबंध लिखिए।"
+    },
+    {
+      "id": 86,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "अंतिम संदेश",
+      "question": "मल्हार पुस्तक के मुख्य संदेश पर निबंध लिखिए।"
+    },
+    {
+      "id": 87,
+      "chapter": "Extended Practice",
+      "source": "All Chapters – Malhar",
+      "title": "शिक्षा और चरित्र",
+      "question": "चरित्र निर्माण में शिक्षा की भूमिका पर निबंध लिखिए।"
+    },
+    {
+      "id": 88,
+      "chapter": "Extended Practice",
+      "source": "All Chapters – Malhar",
+      "title": "ज्ञान की शक्ति",
+      "question": "ज्ञान की शक्ति विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 89,
+      "chapter": "Extended Practice",
+      "source": "All Chapters – Malhar",
+      "title": "मानव मूल्य",
+      "question": "मानव मूल्यों का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 90,
+      "chapter": "Extended Practice",
+      "source": "All Chapters – Malhar",
+      "title": "समाज के प्रति जिम्मेदारी",
+      "question": "समाज के प्रति व्यक्तिगत जिम्मेदारी पर निबंध लिखिए।"
+    },
+    {
+      "id": 91,
+      "chapter": "Extended Practice",
+      "source": "All Chapters – Malhar",
+      "title": "नैतिक जीवन",
+      "question": "नैतिक जीवन जीने के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 92,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मानव कमजोरियाँ",
+      "question": "मानव कमजोरियों का विश्लेषण करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 93,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मन की शक्ति",
+      "question": "मानव मन की शक्ति पर निबंध लिखिए।"
+    },
+    {
+      "id": 94,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "सच्ची बुद्धिमत्ता",
+      "question": "सच्ची बुद्धिमत्ता किसे कहते हैं? इस विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 95,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "आत्म सुधार",
+      "question": "आत्म सुधार के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 96,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन के निर्णय",
+      "question": "जीवन में सही निर्णय लेने के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 97,
+      "chapter": "Final Practice",
+      "source": "All Chapters – Malhar",
+      "title": "साहित्य से सीखना",
+      "question": "साहित्य से सीखने के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 98,
+      "chapter": "Final Practice",
+      "source": "All Chapters – Malhar",
+      "title": "युवाओं के लिए शिक्षा",
+      "question": "युवाओं के लिए शिक्षा का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 99,
+      "chapter": "Final Practice",
+      "source": "All Chapters – Malhar",
+      "title": "कहानियों से नैतिक विकास",
+      "question": "कहानियों से नैतिक विकास पर निबंध लिखिए।"
+    },
+    {
+      "id": 100,
+      "chapter": "Final Practice",
+      "source": "All Chapters – Malhar",
+      "title": "चरित्र निर्माण",
+      "question": "चरित्र निर्माण का महत्व विषय पर निबंध लिखिए।"
+    }
+  ]
+}

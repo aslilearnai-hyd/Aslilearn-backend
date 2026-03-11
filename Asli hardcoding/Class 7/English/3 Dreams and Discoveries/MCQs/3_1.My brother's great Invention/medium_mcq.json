@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "My Brother's Great Invention",
+  "generated_at": "2026-03-10T00:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is the narrator of the story 'My Brother's Great Invention'?",
+      "options": {
+        "A": "Anand",
+        "B": "Anita",
+        "C": "The Father",
+        "D": "The Mother"
+      },
+      "correct_answer": "B",
+      "explanation": "The story is narrated by Anita, the fourteen-year-old sister of the young inventor, Anand.",
+      "difficulty": "medium",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What specifically triggers Anand's burglar alarm to go off?",
+      "options": {
+        "A": "Loud banging on the door",
+        "B": "The door being opened softly",
+        "C": "Someone breaking a window",
+        "D": "A secret password"
+      },
+      "correct_answer": "B",
+      "explanation": "Anand designed the alarm to catch a thief who would naturally try to enter quietly; unfortunately, his father also opened the door softly.",
+      "difficulty": "medium",
+      "source_section": "The Burglar Alarm"
+    },
+    {
+      "question_number": 3,
+      "question": "Which word best describes the family's general attitude toward Anand's 'inventing binges'?",
+      "options": {
+        "A": "Enthusiastic support",
+        "B": "Extreme anger",
+        "C": "Wary skepticism",
+        "D": "Complete indifference"
+      },
+      "correct_answer": "C",
+      "explanation": "The family is often 'wary' or 'skeptical' because his inventions usually result in mess, noise, or accidents like the water bag incident.",
+      "difficulty": "medium",
+      "source_section": "Character Traits"
+    },
+    {
+      "question_number": 4,
+      "question": "What movie inspired Anand to build a time machine?",
+      "options": {
+        "A": "Star Wars",
+        "B": "Jurassic Park",
+        "C": "Back to the Future",
+        "D": "The Time Machine"
+      },
+      "correct_answer": "C",
+      "explanation": "After watching 'Back to the Future,' Anand became obsessed with the idea of building his own time-traveling device.",
+      "difficulty": "medium",
+      "source_section": "The Time Machine"
+    },
+    {
+      "question_number": 5,
+      "question": "The story uses sound words like 'clanging' and 'humming.' This literary device is called:",
+      "options": {
+        "A": "Alliteration",
+        "B": "Metaphor",
+        "C": "Onomatopoeia",
+        "D": "Simile"
+      },
+      "correct_answer": "C",
+      "explanation": "Onomatopoeia refers to words that phonetically imitate the sound they describe.",
+      "difficulty": "medium",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 6,
+      "question": "How does Anand show 'presence of mind' during the break-in by Boppa?",
+      "options": {
+        "A": "He calls the police immediately",
+        "B": "He hides under the bed",
+        "C": "He misleads Boppa into his room where the 'time machine' is",
+        "D": "He fights Boppa with a stick"
+      },
+      "correct_answer": "C",
+      "explanation": "By directing the intruder to his own room, he bought time and used his environment to confuse the thief.",
+      "difficulty": "medium",
+      "source_section": "Plot Climax"
+    },
+    {
+      "question_number": 7,
+      "question": "What evidence is left behind in Anand's room after Boppa disappears?",
+      "options": {
+        "A": "A bag of stolen money",
+        "B": "A green scarf",
+        "C": "A pair of shoes",
+        "D": "Nothing at all"
+      },
+      "correct_answer": "B",
+      "explanation": "A green scarf was the only thing remaining near the humming time machine after Boppa vanished.",
+      "difficulty": "medium",
+      "source_section": "Plot Conclusion"
+    },
+    {
+      "question_number": 8,
+      "question": "What does it mean when Anand is described as 'tinkering'?",
+      "options": {
+        "A": "Repairing professionally",
+        "B": "Playing or experimenting with gadgets",
+        "C": "Buying new tools",
+        "D": "Reading about science"
+      },
+      "correct_answer": "B",
+      "explanation": "Tinkering implies casual or experimental work with tools and gadgets without necessarily being a professional.",
+      "difficulty": "medium",
+      "source_section": "Vocabulary"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does Papa lock up his toolbox after the burglar alarm incident?",
+      "options": {
+        "A": "Because the tools were stolen",
+        "B": "To prevent Anand from creating more chaotic inventions",
+        "C": "Because the tools were broken",
+        "D": "To keep them safe from the rain"
+      },
+      "correct_answer": "B",
+      "explanation": "Papa was worried about the chaos Anand’s inventions caused, such as getting soaked by the water bag.",
+      "difficulty": "medium",
+      "source_section": "Conflict"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the 'binomial expression' used in the text to describe the state of the house before Anand starts hammering?",
+      "options": {
+        "A": "Odds and ends",
+        "B": "Peace and quiet",
+        "C": "Far and wide",
+        "D": "Pros and cons"
+      },
+      "correct_answer": "B",
+      "explanation": "Anita notes that once Anand starts an invention, there is no more 'peace and quiet' in the house.",
+      "difficulty": "medium",
+      "source_section": "Grammar/Vocabulary"
+    },
+    {
+      "question_number": 11,
+      "question": "Which character is described as being 'crestfallen' after a failed attempt?",
+      "options": {
+        "A": "Anita",
+        "B": "Anand",
+        "C": "Ma",
+        "D": "Boppa"
+      },
+      "correct_answer": "B",
+      "explanation": "Anand often feels crestfallen (disappointed) when his inventions are criticized or fail to work properly.",
+      "difficulty": "medium",
+      "source_section": "Character Analysis"
+    },
+    {
+      "question_number": 12,
+      "question": "In the phrase 'frightened me half to death,' what literary technique is being used?",
+      "options": {
+        "A": "Personification",
+        "B": "Idiom",
+        "C": "Alliteration",
+        "D": "Rhyme"
+      },
+      "correct_answer": "B",
+      "explanation": "This is a common English idiom used to express extreme fear; it isn't literal.",
+      "difficulty": "medium",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 13,
+      "question": "Why did the adults (like Mr. Sharma) not believe the time machine worked?",
+      "options": {
+        "A": "They saw Boppa run out the back door",
+        "B": "They think time travel is scientifically impossible",
+        "C": "They know Anand's inventions usually fail",
+        "D": "Both B and C"
+      },
+      "correct_answer": "D",
+      "explanation": "The adults are skeptical because of the impossibility of the claim and Anand's poor track record as a 'scientist.'",
+      "difficulty": "medium",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 14,
+      "question": "What was the 'alarm' supposed to do besides drop a water bag?",
+      "options": {
+        "A": "Call the police",
+        "B": "Ring a bell",
+        "C": "Lock the door",
+        "D": "Take a photo"
+      },
+      "correct_answer": "B",
+      "explanation": "The contraption was designed to ring a bell and drop a water bag simultaneously.",
+      "difficulty": "medium",
+      "source_section": "The Machine"
+    },
+    {
+      "question_number": 15,
+      "question": "Anand uses a 'blueprint' for his work. What does this tell us about him?",
+      "options": {
+        "A": "He is a professional architect",
+        "B": "He takes his inventions seriously and tries to be organized",
+        "C": "He likes the color blue",
+        "D": "He is trying to hide his plans"
+      },
+      "correct_answer": "B",
+      "explanation": "Using a blueprint shows that Anand plans his work carefully, even if the execution is messy.",
+      "difficulty": "medium",
+      "source_section": "Character Traits"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the 'primary' conflict in the first half of the story?",
+      "options": {
+        "A": "Anand vs. a real thief",
+        "B": "Anand vs. his father's temper",
+        "C": "Anita vs. her schoolwork",
+        "D": "The family vs. the neighbors"
+      },
+      "correct_answer": "B",
+      "explanation": "The initial conflict is internal to the family, specifically between Anand’s curiosity and Papa’s desire for order.",
+      "difficulty": "medium",
+      "source_section": "Conflict"
+    },
+    {
+      "question_number": 17,
+      "question": "What does Anita do while Anand is 'inventing'?",
+      "options": {
+        "A": "She helps him build everything",
+        "B": "She reads her novel but keeps a skeptical eye on him",
+        "C": "She records him for a video",
+        "D": "She tells the neighbors about his plans"
+      },
+      "correct_answer": "B",
+      "explanation": "Anita is the observer who would rather be reading but gets pulled into Anand's world.",
+      "difficulty": "medium",
+      "source_section": "Character Roles"
+    },
+    {
+      "question_number": 18,
+      "question": "The 'muffled thumps' and 'eerie whine' from the room create a mood of:",
+      "options": {
+        "A": "Celebration",
+        "B": "Suspense",
+        "C": "Boredom",
+        "D": "Happiness"
+      },
+      "correct_answer": "B",
+      "explanation": "These sensory details build tension and mystery about what is happening in Anand's room.",
+      "difficulty": "medium",
+      "source_section": "Tone/Mood"
+    },
+    {
+      "question_number": 19,
+      "question": "After the time machine incident, what happens to the machine?",
+      "options": {
+        "A": "It is sold to a museum",
+        "B": "It is dismantled for safety",
+        "C": "It is moved to the living room",
+        "D": "It stops humming forever"
+      },
+      "correct_answer": "B",
+      "explanation": "Papa dismantled it, likely to prevent any further danger or strange disappearances.",
+      "difficulty": "medium",
+      "source_section": "Plot Conclusion"
+    },
+    {
+      "question_number": 20,
+      "question": "What is Anand's NEXT big project at the end of the story?",
+      "options": {
+        "A": "A robot chef",
+        "B": "A rocket to the moon",
+        "C": "A telephone to contact aliens",
+        "D": "A flying bicycle"
+      },
+      "correct_answer": "C",
+      "explanation": "Despite everything, Anand's spirit is unbroken, and he immediately starts planning a device to talk to aliens.",
+      "difficulty": "medium",
+      "source_section": "Plot Conclusion"
+    },
+    {
+      "question_number": 21,
+      "question": "The title 'My Brother's Great Invention' uses the word 'Great' in a way that is slightly:",
+      "options": {
+        "A": "Ironic",
+        "B": "Scientific",
+        "C": "Fearful",
+        "D": "Mean"
+      },
+      "correct_answer": "A",
+      "explanation": "It is ironic because while the inventions are 'great' in terms of imagination and the trouble they cause, they aren't 'great' in terms of traditional success.",
+      "difficulty": "medium",
+      "source_section": "Analysis"
+    },
+    {
+      "question_number": 22,
+      "question": "How does Ma's reaction to the time machine differ from Papa's?",
+      "options": {
+        "A": "She is more angry than Papa",
+        "B": "She is kinder and persuades Papa to look at it",
+        "C": "She doesn't care at all",
+        "D": "She thinks it's a real time machine"
+      },
+      "correct_answer": "B",
+      "explanation": "Ma is the mediator who supports Anand's creativity even when Papa is frustrated.",
+      "difficulty": "medium",
+      "source_section": "Family Dynamics"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of these is NOT a material Anand used in his inventions?",
+      "options": {
+        "A": "Dynamos",
+        "B": "Planks of wood",
+        "C": "Solar panels",
+        "D": "Wires and bulbs"
+      },
+      "correct_answer": "C",
+      "explanation": "He uses household junk and basic electrical parts, but solar panels are never mentioned.",
+      "difficulty": "medium",
+      "source_section": "Details"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the 'moral' or 'theme' concerning failure in this story?",
+      "options": {
+        "A": "Failure means you should stop trying",
+        "B": "Creativity is more important than immediate success",
+        "C": "Parents are always right",
+        "D": "Inventions are dangerous"
+      },
+      "correct_answer": "B",
+      "explanation": "Anand's persistence despite failures celebrates the spirit of innovation and imagination.",
+      "difficulty": "medium",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 25,
+      "question": "The setting of the neighborhood is important because:",
+      "options": {
+        "A": "There was a festival going on",
+        "B": "There had been a rush of thefts, providing the need for an invention",
+        "C": "It was a very poor neighborhood",
+        "D": "The neighbors were also inventors"
+      },
+      "correct_answer": "B",
+      "explanation": "The recent thefts in the colony gave Anand the motivation to create his burglar alarm.",
+      "difficulty": "medium",
+      "source_section": "Setting"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Sectors of the Indian Economy",
+  "difficulty": "Easy",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "Identifying Economic Sectors Around Us",
+      "objective": "To identify primary, secondary, and tertiary sector activities in daily life.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List 10 occupations found in your locality.",
+        "Classify each into primary, secondary, or tertiary sector.",
+        "Share and discuss answers in class."
+      ],
+      "learning_outcome": "Students understand the classification of economic activities into three sectors.",
+      "evaluation": "Check correct classification and participation in discussion."
+    },
+    {
+      "title": "Sector Sorting Game",
+      "objective": "To differentiate between the three sectors in a fun way.",
+      "materials": "Slips of paper, box",
+      "steps": [
+        "Write different occupations on paper slips.",
+        "Pick one slip at a time and identify the sector.",
+        "Explain the reason for classification."
+      ],
+      "learning_outcome": "Students clearly understand differences between primary, secondary, and tertiary sectors.",
+      "evaluation": "Assess correctness of answers and explanation."
+    },
+    {
+      "title": "Pie Chart of Workforce Distribution",
+      "objective": "To represent sector-wise employment visually.",
+      "materials": "Graph paper, pencil, ruler",
+      "steps": [
+        "Use textbook data for workforce distribution.",
+        "Draw a pie chart showing percentage in each sector.",
+        "Label all sectors clearly."
+      ],
+      "learning_outcome": "Students learn to interpret employment distribution among sectors.",
+      "evaluation": "Check accuracy of pie chart and labeling."
+    },
+    {
+      "title": "Role Play of Economic Sectors",
+      "objective": "To understand how sectors are interdependent.",
+      "materials": "Simple props (optional)",
+      "steps": [
+        "Assign roles such as farmer, factory worker, shopkeeper.",
+        "Each student explains their role in the economy.",
+        "Discuss how each sector depends on others."
+      ],
+      "learning_outcome": "Students understand interdependence of sectors.",
+      "evaluation": "Evaluate clarity of explanation and participation."
+    },
+    {
+      "title": "Public vs Private Sector Table",
+      "objective": "To differentiate between public and private sectors.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List five examples of public sector industries.",
+        "List five examples of private sector industries.",
+        "Write two differences between them."
+      ],
+      "learning_outcome": "Students understand ownership differences in economic sectors.",
+      "evaluation": "Check correctness of examples and differences."
+    },
+    {
+      "title": "Service Sector Observation Activity",
+      "objective": "To observe service sector activities in daily life.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Observe five service providers in your area (bank, hospital, school).",
+        "Note the services provided.",
+        "Explain why they belong to the tertiary sector."
+      ],
+      "learning_outcome": "Students identify features of the tertiary sector.",
+      "evaluation": "Assess accuracy of identification and explanation."
+    },
+    {
+      "title": "Primary Sector Poster",
+      "objective": "To understand the importance of the primary sector.",
+      "materials": "Chart paper, colors",
+      "steps": [
+        "Draw activities like farming, fishing, mining.",
+        "Write two lines on why the primary sector is important.",
+        "Display poster in class."
+      ],
+      "learning_outcome": "Students recognize the importance of natural resource-based activities.",
+      "evaluation": "Evaluate relevance of content and creativity."
+    },
+    {
+      "title": "Income Source Survey",
+      "objective": "To identify main income sources in families.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Ask five classmates about their parents' occupations.",
+        "Classify them into sectors.",
+        "Count which sector has more representation."
+      ],
+      "learning_outcome": "Students understand sector-wise employment trends.",
+      "evaluation": "Check classification accuracy and simple analysis."
+    },
+    {
+      "title": "GDP Contribution Chart",
+      "objective": "To understand sector-wise contribution to GDP.",
+      "materials": "Textbook data, graph paper",
+      "steps": [
+        "Collect GDP percentage data from textbook.",
+        "Draw a bar graph showing contribution of each sector.",
+        "Write two observations."
+      ],
+      "learning_outcome": "Students understand contribution of sectors to national income.",
+      "evaluation": "Assess graph accuracy and observation quality."
+    },
+    {
+      "title": "Organized vs Unorganized Sector Activity",
+      "objective": "To differentiate between organized and unorganized sectors.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List five organized sector jobs and five unorganized sector jobs.",
+        "Write two differences between them.",
+        "Discuss benefits of organized sector employment."
+      ],
+      "learning_outcome": "Students understand working conditions and job security differences.",
+      "evaluation": "Check correctness of examples and clarity of differences."
+    }
+  ]
+}

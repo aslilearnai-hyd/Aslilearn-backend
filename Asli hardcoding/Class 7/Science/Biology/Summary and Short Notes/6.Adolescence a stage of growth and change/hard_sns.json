@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Adolescence: Stage of Growth and Change",
+    "difficulty": "Hard",
+    "source_pdf": "jesc104.pdf",
+    "short_notes": {
+        "key_points": [
+            "The reproductive phase of life is marked by the production of gametes (sperm and ova) and is significantly longer in males than in females.",
+            "Sex determination in humans is controlled by sex chromosomes (X and Y); the father's gamete determines the sex of the child.",
+            "Menstruation occurs when an egg is not fertilized, leading to the shedding of the uterine lining; its first occurrence is Menarche, and its permanent stop is Menopause.",
+            "Hormones play a critical role in the life cycle of other animals, such as thyroxine controlling metamorphosis in frogs.",
+            "The Pituitary gland secretes growth hormone and stimulating hormones that trigger the testes and ovaries to release sex hormones."
+        ],
+        "examples": [
+            "Sex Chromosomes: XX (Female offspring) and XY (Male offspring).",
+            "Metamorphosis: Tadpoles require Iodine in water to produce Thyroxine to become adult frogs.",
+            "Endocrine Glands: Pancreas (Insulin for blood sugar), Adrenals (Adrenaline for stress), Thyroid (Thyroxine for metabolism).",
+            "Reproductive Health: Requirement of Iron-rich food (Leafy vegetables, Jaggery) to replenish blood lost during menstruation."
+        ],
+        "formulas": [
+            "Sex Determination: $50\\% \\ Chance \\ (X_{ovum} + X_{sperm} \\rightarrow XX)$ and $50\\% \\ Chance \\ (X_{ovum} + Y_{sperm} \\rightarrow XY)$",
+            "Hormonal Cascade: Pituitary \\rightarrow FSH/LH \\rightarrow Ovaries/Testes \\rightarrow Estrogen/Testosterone"
+        ],
+        "exam_tips": [
+            "Correct the misconception: The mother is NOT responsible for the sex of the baby; it depends entirely on the sperm (X or Y).",
+            "Remember that Iodine deficiency in water prevents tadpoles from becoming frogs even if they are healthy.",
+            "Understand that 'Menopause' typically occurs between 45 to 50 years of age.",
+            "Be precise with the 'Master Gland' concept: The Pituitary doesn't just make you grow; it 'orders' other glands to work."
+        ]
+    }
+}

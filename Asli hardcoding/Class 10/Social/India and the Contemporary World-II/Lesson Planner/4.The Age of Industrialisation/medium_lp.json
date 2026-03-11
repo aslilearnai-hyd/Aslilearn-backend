@@ -1,0 +1,179 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science",
+  "book": "India and Contemporary World II",
+  "chapter_number": 4,
+  "chapter_name": "The Age of Industrialisation",
+  "lesson_level": "Medium",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand causes and origins of the Industrial Revolution in Britain",
+    "Analyze key technological innovations and their impact on production",
+    "Examine changes in society, urbanization, and labor conditions",
+    "Explore transportation, trade, and global connections of industrialisation",
+    "Evaluate environmental and social consequences of industrial growth"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Causes and Beginnings of Industrialisation",
+      "topics_covered": [
+        "Factors leading to industrialisation in Britain",
+        "Agricultural revolution and population growth",
+        "Access to raw materials and colonies"
+      ],
+      "teaching_strategy": [
+        "Explain causes using cause-effect charts",
+        "Use maps to show Britain’s resources and colonies"
+      ],
+      "student_activities": [
+        "Identify causes of industrialisation on charts",
+        "Group discussion on why Britain industrialized first"
+      ],
+      "assessment": [
+        "Oral questions on key causes and factors",
+        "Short written answer: name two causes of industrialisation"
+      ]
+    },
+    {
+      "period": 2,
+      "title": "Technological Innovations and Mechanisation",
+      "topics_covered": [
+        "Major inventions: spinning jenny, power loom, steam engine",
+        "Mechanization in textiles, iron, and mining",
+        "Impact on production and labor"
+      ],
+      "teaching_strategy": [
+        "Show diagrams and short videos of inventions",
+        "Explain technological changes and productivity increase"
+      ],
+      "student_activities": [
+        "Match inventions with their inventors and industries",
+        "Discuss how machines changed work and productivity"
+      ],
+      "assessment": [
+        "Oral Q&A on inventions and their effects",
+        "Ask students to explain one example of mechanisation"
+      ]
+    },
+    {
+      "period": 3,
+      "title": "Factories and Working Life",
+      "topics_covered": [
+        "Factory system and its characteristics",
+        "Working conditions, wages, and child labor",
+        "Shift from home-based production to factories"
+      ],
+      "teaching_strategy": [
+        "Show images of factories and worker life",
+        "Explain daily life and challenges of industrial workers"
+      ],
+      "student_activities": [
+        "Describe differences between factory and cottage industries",
+        "Discuss impact of industrial work on families"
+      ],
+      "assessment": [
+        "Oral questions on factory system and working conditions",
+        "Short written exercise on worker challenges"
+      ]
+    },
+    {
+      "period": 4,
+      "title": "Transport, Communication, and Trade",
+      "topics_covered": [
+        "Railways, canals, and steamships",
+        "Impact on domestic and global trade",
+        "Expansion of markets and movement of goods"
+      ],
+      "teaching_strategy": [
+        "Use maps to show transport networks",
+        "Explain how improved transport connected regions and countries"
+      ],
+      "student_activities": [
+        "Locate industrial centers and trade routes on map",
+        "Discuss how transport influenced industrial and global trade"
+      ],
+      "assessment": [
+        "Oral Q&A on transportation and trade impact",
+        "Short answer: name one innovation and its effect on trade"
+      ]
+    },
+    {
+      "period": 5,
+      "title": "Urbanisation and Social Changes",
+      "topics_covered": [
+        "Growth of industrial cities",
+        "Emergence of working and middle class",
+        "Changes in family life and social relations"
+      ],
+      "teaching_strategy": [
+        "Use charts and images of urban growth",
+        "Explain social changes using examples"
+      ],
+      "student_activities": [
+        "Identify major industrial cities on map",
+        "Discuss social changes and problems caused by urbanisation"
+      ],
+      "assessment": [
+        "Oral questions on social effects of industrialisation",
+        "Short written task on urban life and society"
+      ]
+    },
+    {
+      "period": 6,
+      "title": "Environmental and Economic Effects",
+      "topics_covered": [
+        "Industrial pollution and deforestation",
+        "Global trade, markets, and industrial capitalism",
+        "Inequalities and working class struggles"
+      ],
+      "teaching_strategy": [
+        "Explain economic and environmental effects using visuals",
+        "Use simple case studies of industrial regions"
+      ],
+      "student_activities": [
+        "Discuss positive and negative impacts of industrialisation",
+        "Identify environmental and social challenges"
+      ],
+      "assessment": [
+        "Oral Q&A on trade, economy, and environment",
+        "Short written answer on one effect of industrialisation"
+      ]
+    },
+    {
+      "period": 7,
+      "title": "Chapter Revision and Consolidation",
+      "topics_covered": [
+        "Summary of causes, inventions, factories, transport, urbanisation, and social changes",
+        "Review key terms, maps, and timelines"
+      ],
+      "teaching_strategy": [
+        "Interactive revision using flashcards, maps, and group quizzes",
+        "Class discussion to summarize and clarify concepts"
+      ],
+      "student_activities": [
+        "Group quiz on inventions, transport, and industrial impacts",
+        "Fill timeline and map exercises for revision"
+      ],
+      "assessment": [
+        "Short oral quiz covering major topics",
+        "Class discussion on lessons learned and key takeaways"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Images of inventions, factories, and industrial cities",
+    "Maps showing industrial regions, trade routes, and transport networks",
+    "Timeline charts of Industrial Revolution",
+    "Flashcards with inventions, inventors, and impacts"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Quick quizzes",
+    "Class participation",
+    "Worksheet activities",
+    "Group discussion"
+  ],
+  "teacher_tip": "Use visuals, examples, and simple explanations. Encourage students to relate inventions and transport to global trade. Include maps, timelines, and group activities to reinforce understanding."
+}

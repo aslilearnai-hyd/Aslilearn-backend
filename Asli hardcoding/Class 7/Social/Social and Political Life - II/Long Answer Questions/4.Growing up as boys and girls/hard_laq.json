@@ -1,0 +1,458 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Growing up as Boys and Girls",
+    "generated_at": "2026-03-08T16:47:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Critically analyze the sociological significance of the Samoan islands study in the context of gender roles.",
+            "answer": "The study of Samoan society in the 1920s is significant because it challenges the 'biological determinism' of gender roles. It proves that the stress and behavioral restrictions we associate with adolescence and gender are socially constructed rather than natural. In Samoa, the lack of rigid school structures and the early integration of children into community labor meant that boys and girls shared many domestic responsibilities. This serves as a counter-narrative to the idea that women are 'naturally' domestic and men are 'naturally' outdoor workers.",
+            "answer_outline": [
+                "Challenge to biological determinism",
+                "Social construction of gender",
+                "Integration of children into labor",
+                "Contrast with Western/Modern Indian models"
+            ],
+            "key_concepts": [
+                "biological determinism",
+                "social construction",
+                "cross-cultural analysis"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the 'spatial arrangement' of school buildings in 1960s Madhya Pradesh reflect deeper patriarchal values?",
+            "answer": "The architectural design of the schools—where the girls' school had a central, enclosed courtyard while the boys' school was open to the street—reflects the 'public-private divide' of patriarchy. The courtyard symbolized seclusion and the 'protection' of female virtue, implying that the public space (the street) was a site of danger for girls but a playground for boys. This spatial conditioning taught girls from a young age that their place is 'inside' and that their movement in public must be purposeful and restricted.",
+            "answer_outline": [
+                "Seclusion vs. Openness",
+                "Public-private divide",
+                "Spatial conditioning of behavior",
+                "Architecture as a tool of social control"
+            ],
+            "key_concepts": [
+                "patriarchy",
+                "spatial arrangement",
+                "public-private divide"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Examine the economic invisibility of women's labor and its impact on the 'Gross Domestic Product' (GDP) perception.",
+            "answer": "Women's domestic labor is economically invisible because it lacks a 'price tag.' Since GDP traditionally measures the market value of goods and services, the massive amount of work performed by women at home—cooking, cleaning, caregiving—is excluded from national income accounts. This leads to a skewed perception of productivity where a woman is considered 'not working' unless she earns a wage, despite her labor being the essential foundation that allows male members to participate in the formal economy.",
+            "answer_outline": [
+                "Lack of market value/wages",
+                "Exclusion from GDP",
+                "Skewed productivity perception",
+                "Domestic labor as the foundation of the economy"
+            ],
+            "key_concepts": [
+                "economic invisibility",
+                "GDP",
+                "unpaid labor"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the 'Melani' case study to discuss the intersection of gender, class, and the devaluation of labor.",
+            "answer": "The story of Melani, a domestic worker, highlights an intersectional struggle. Her labor is devalued not just because it is 'women's work,' but also because of her lower-class status. The disrespect she faces—being denied shoes in winter or being given stale rotis—shows that when domestic work is commodified (paid for), it still doesn't gain dignity. This is because society views the tasks themselves (cleaning, washing) as 'low status,' reinforcing a hierarchy where the employer's comfort is built on the systematic dehumanization of the worker.",
+            "answer_outline": [
+                "Intersection of gender and class",
+                "Lack of dignity in commodified domestic labor",
+                "Systematic dehumanization",
+                "Social hierarchy of tasks"
+            ],
+            "key_concepts": [
+                "intersectionality",
+                "class struggle",
+                "devaluation of labor"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Evaluate the 'Double Burden' as a structural barrier to women's political and economic empowerment.",
+            "answer": "The 'Double Burden' is a structural barrier because it creates a 'time poverty' for women. If a woman spends 30-40 hours a week on unpaid domestic work in addition to a full-time job, she has no time for skill-building, networking, or political participation. This exhaustion limits her ability to compete for promotions or leadership roles. Therefore, gender equality cannot be achieved simply by giving women jobs; it requires a radical redistribution of domestic responsibilities to free up women's time.",
+            "answer_outline": [
+                "Time poverty",
+                "Barriers to leadership and networking",
+                "Limits on political participation",
+                "Need for redistribution of domestic labor"
+            ],
+            "key_concepts": [
+                "time poverty",
+                "structural barrier",
+                "empowerment"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss the 'Naturalization' of domestic skills and how it serves as a patriarchal tool.",
+            "answer": "Patriarchy 'naturalizes' domestic skills by claiming that women are born with an instinct for caregiving and housework. By framing these as 'biological traits' rather than 'learned skills,' society justifies not paying for them and not appreciating the effort involved. It makes the exploitation of women's time look like the fulfillment of their nature. This prevents men from sharing the load, as they are taught that they lack the 'natural' ability to perform these tasks.",
+            "answer_outline": [
+                "Biology vs. Learned skills",
+                "Justification of unpaid labor",
+                "Maintenance of the status quo",
+                "Socialization of men away from domesticity"
+            ],
+            "key_concepts": [
+                "naturalization",
+                "biological essentialism",
+                "patriarchal tools"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How does the data from Haryana and Tamil Nadu challenge the myth of the 'Leisurely Housewife'?",
+            "answer": "The data from Haryana and Tamil Nadu directly debunks the myth that housewives have a relaxed life. The statistics show that women's total working hours (paid + unpaid) are consistently higher than men's. While a man's workday usually has a definitive end, a woman's domestic shift is continuous. This quantitative evidence proves that women are the most overworked section of society, suffering from a severe lack of leisure and rest compared to their male counterparts.",
+            "answer_outline": [
+                "Quantitative proof of overwork",
+                "Continuous vs. Finite workdays",
+                "Disparity in leisure time",
+                "Empirical challenge to stereotypes"
+            ],
+            "key_concepts": [
+                "time-use survey",
+                "quantitative evidence",
+                "leisure disparity"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Critically assess the role of the State in transforming 'private' domestic issues into 'public' policy concerns.",
+            "answer": "The chapter argues that the State must bridge the gap between Constitutional ideals and social reality. By establishing Anganwadis and passing crèche laws, the State acknowledges that childcare is a public responsibility, not just a private female one. This transformation is crucial because it moves gender equality from being a 'family favor' to a 'legal right.' However, the effectiveness of these policies depends on their implementation and the State's willingness to challenge deep-seated cultural norms.",
+            "answer_outline": [
+                "Private vs. Public responsibility",
+                "Anganwadis and Crèche laws",
+                "Constitutional ideals vs. Social reality",
+                "State as a catalyst for change"
+            ],
+            "key_concepts": [
+                "public policy",
+                "state intervention",
+                "social transformation"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Analyze how 'fear' is used as a mechanism of social control over girls' education and mobility.",
+            "answer": "Fear of teasing and harassment, as mentioned in the Madhya Pradesh example, acts as a 'social fence' that restricts girls' mobility. This fear forces girls to move in groups and follow specific paths, effectively limiting their access to the world outside their homes. When the 'street' is framed as a place of danger, it discourages girls from exploring, taking risks, or staying late for extra-curricular activities, which ultimately hampers their confidence and professional growth.",
+            "answer_outline": [
+                "Fear as a social fence",
+                "Restriction of mobility",
+                "Impact on confidence and growth",
+                "The 'street' as a hostile environment"
+            ],
+            "key_concepts": [
+                "social control",
+                "mobility",
+                "gendered fear"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What are the long-term psychological impacts of 'Gendered Toy Distribution' on vocational choices?",
+            "answer": "Gendered toys (cars for boys, dolls for girls) create early 'cognitive maps' for children. Boys are encouraged toward spatial, mechanical, and problem-solving skills, while girls are steered toward emotional, nurturing, and domestic skills. Over time, these become 'internalized preferences.' When it comes time to choose a career, a boy may feel 'naturally' inclined toward engineering and a girl toward nursing or teaching, not realizing these were socially conditioned through play from age three.",
+            "answer_outline": [
+                "Cognitive mapping in early childhood",
+                "Internalization of preferences",
+                "Skill-set differentiation",
+                "Vocational stereotyping"
+            ],
+            "key_concepts": [
+                "vocational choices",
+                "cognitive maps",
+                "socialization"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the 'Invisible' physical strain of housework—why is it often classified as 'unskilled' labor?",
+            "answer": "Housework is classified as 'unskilled' because it is learned through observation rather than formal training. However, the physical strain—hauling water, carrying firewood, constant bending—is equivalent to manual labor in sectors like construction or agriculture. Society ignores this strain because it occurs in a 'loving' domestic context. By labeling it 'unskilled,' the economic system justifies paying nothing for it (at home) or very little for it (as domestic workers).",
+            "answer_outline": [
+                "Learned through observation vs. Formal training",
+                "Physical strain vs. Social perception",
+                "Domestic context as a mask for labor",
+                "Economic justification for low wages"
+            ],
+            "key_concepts": [
+                "unskilled labor",
+                "physical strain",
+                "social perception"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "How does the 'Jaspreet Strike' illustrate the concept of 'Social Reproduction'?",
+            "answer": "The strike shows that housework is actually 'Social Reproduction'—the work required to maintain and 'reproduce' the workforce. When Jaspreet stops working, the husband cannot get to work on time, the children cannot go to school, and the home ceases to be a place of rest. This proves that the formal economy (the husband's job) cannot function without the unpaid 'reproductive' labor of the woman. It highlights the absolute dependency of the public sphere on the private sphere.",
+            "answer_outline": [
+                "Definition of Social Reproduction",
+                "Dependency of the formal economy",
+                "Maintenance of the workforce",
+                "The chaos of the strike as evidence"
+            ],
+            "key_concepts": [
+                "social reproduction",
+                "economic dependency",
+                "workforce maintenance"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Examine the link between 'Child-care centers' and the 'Right to Education' for girls.",
+            "answer": "The absence of affordable childcare is a primary reason for the high dropout rate among girls in rural India. Since older girls are expected to perform the 'mother-substitute' role for younger siblings, they are kept away from school. Government-mandated crèches and Anganwadis act as a 'liberation mechanism.' By socializing the cost of childcare, the State enables girls to claim their Right to Education, proving that gender equality in education is impossible without addressing domestic labor.",
+            "answer_outline": [
+                "Mother-substitute role of girls",
+                "Childcare as a barrier to education",
+                "Anganwadis as a liberation mechanism",
+                "Socializing the cost of care"
+            ],
+            "key_concepts": [
+                "Right to Education",
+                "mother-substitute",
+                "socializing care"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is 'Valuing Care' a radical political act in a capitalist society?",
+            "answer": "In a capitalist society, value is usually equated with profit and price. 'Care'—which is based on empathy, time, and human connection—often produces no immediate profit. Valuing care means shifting the focus from 'wealth' to 'well-being.' It requires the government to spend tax money on non-profit services like crèches. It is radical because it challenges the idea that the only 'valuable' person is the one who produces goods for the market.",
+            "answer_outline": [
+                "Profit-driven vs. Care-driven value",
+                "Wealth vs. Well-being",
+                "Non-profit government services",
+                "Challenging market logic"
+            ],
+            "key_concepts": [
+                "capitalism",
+                "well-being",
+                "market logic"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2 & 4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Analyze the 'Teasing and Harassment' of girls as a form of 'Gendered Violence' that limits citizenship.",
+            "answer": "Teasing is often dismissed as 'childish behavior,' but the chapter frames it as a serious barrier to mobility. It is a form of gendered violence because it uses the threat of harm to control where girls go and what they do. This limits their 'citizenship'—their right to use public resources, parks, and streets freely. When one half of the population is afraid to walk alone, they are not fully free citizens of a democracy.",
+            "answer_outline": [
+                "Dismissal of teasing as harmless",
+                "Control through the threat of harm",
+                "Limitation of citizenship rights",
+                "Impact on democratic participation"
+            ],
+            "key_concepts": [
+                "gendered violence",
+                "citizenship",
+                "harassment"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How does the 'Double Burden' lead to the 'Health Crisis' for women?",
+            "answer": "The double burden leads to chronic exhaustion and neglect of self-care. Because women are the last to eat (as shown in some rural contexts) and the first to wake, they suffer from higher rates of anemia and stress-related illnesses. The 'time poverty' also means they delay visiting doctors for their own health because they are busy caring for others. The devaluation of their work leads to the devaluation of their physical bodies.",
+            "answer_outline": [
+                "Chronic exhaustion",
+                "Nutritional neglect",
+                "Delay in medical treatment",
+                "Devaluation of the female body"
+            ],
+            "key_concepts": [
+                "health crisis",
+                "time poverty",
+                "self-care"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Critique the 'Natural Instinct' theory of childcare using the Samoan counter-example.",
+            "answer": "The 'Natural Instinct' theory suggests that only women possess the biological drive to care for children. The Samoan example shatters this by showing that 9-year-old boys and teenage girls alike were capable of providing effective childcare. This indicates that childcare is a 'culturally assigned responsibility.' If boys are taught to care, they can; if girls are told they must, they do. The 'instinct' is actually a result of intense social training.",
+            "answer_outline": [
+                "Challenge to biological drive",
+                "Culturally assigned responsibility",
+                "Social training vs. Instinct",
+                "Role of Samoan boys in care"
+            ],
+            "key_concepts": [
+                "natural instinct",
+                "cultural assignment",
+                "Samoa"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Examine the role of 'Domestic Workers' in the liberation of middle-class women—is it true equality?",
+            "answer": "Middle-class women often achieve professional success by hiring domestic workers (like Melani) to handle their 'Double Burden.' While this allows the employer to work outside, it is not true gender equality because the domestic work is still being done by a woman, often at very low pay and without dignity. It simply shifts the burden from a higher-class woman to a lower-class woman, leaving the patriarchal structure of the 'home' unchanged.",
+            "answer_outline": [
+                "Class-based liberation",
+                "Shifting the burden vs. Eliminating it",
+                "Lack of dignity for the worker",
+                "Persistence of patriarchal structures"
+            ],
+            "key_concepts": [
+                "class-based liberation",
+                "commodification",
+                "inequality"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How do 'Gender Stereotypes' in childhood limit the future 'Economic Innovation' of a country?",
+            "answer": "By segregating children's play, a country loses the potential talents of half its population. If girls are discouraged from technical toys, the country produces fewer female engineers and scientists. If boys are discouraged from care-based play, the country lacks men in crucial 'soft skill' and care sectors. This rigid labor market is less innovative and flexible. True economic growth requires breaking these stereotypes to allow the best talent to enter every field.",
+            "answer_outline": [
+                "Loss of human potential",
+                "Segregated labor markets",
+                "Lack of flexibility in the workforce",
+                "Innovation through diversity"
+            ],
+            "key_concepts": [
+                "economic innovation",
+                "labor market",
+                "stereotypes"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Analyze the statement: 'The home is a political space.'",
+            "answer": "The statement means that the power dynamics we see in the world (who has money, who takes decisions, who does the hard work) are also present inside the home. The fact that women do more work for less power is a political arrangement. When the government passes laws about crèches or domestic work, it is admitting that the 'private' home is actually a space where justice and equality must be enforced by the state.",
+            "answer_outline": [
+                "Power dynamics in the family",
+                "Domestic labor as political labor",
+                "State intervention in the private sphere",
+                "Redefining 'private' as 'political'"
+            ],
+            "key_concepts": [
+                "political space",
+                "power dynamics",
+                "state intervention"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Discuss how 'Low Wages' for domestic workers are a reflection of society's view on 'Women's Work'.",
+            "answer": "Wages are often a reflection of social value. Since society views housework as something 'every woman can do' and something that 'should be done for love,' it is not seen as a professional skill. Therefore, when a domestic worker is hired, the employer pays very little, believing the work doesn't require 'intelligence.' The low wage is a direct result of the cultural belief that women's labor is naturally cheap or free.",
+            "answer_outline": [
+                "Wages as a reflection of value",
+                "Devaluation of 'love-based' labor",
+                "Lack of professional recognition",
+                "Naturalization of cheap labor"
+            ],
+            "key_concepts": [
+                "wages",
+                "social value",
+                "women's work"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Examine the 'Cognitive Dissonance' in a family that loves a housewife but devalues her work.",
+            "answer": "Families often claim to love and respect the mother/housewife while simultaneously saying she 'does nothing' because she doesn't earn. This cognitive dissonance exists because we separate 'emotional value' from 'economic value.' We love the person but ignore the labor. The Jaspreet story shows that only when the labor is withdrawn do families realize that the 'love' they receive is actually a result of constant, grueling work.",
+            "answer_outline": [
+                "Emotional vs. Economic value",
+                "Ignoring labor while praising the person",
+                "Impact of the 'strike' on perception",
+                "The invisibility of routine"
+            ],
+            "key_concepts": [
+                "cognitive dissonance",
+                "emotional value",
+                "labor"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Analyze the role of 'Time' as a resource that is unequally distributed between genders.",
+            "answer": "Time is the most basic human resource, and the chapter shows it is stolen from women. Through the 'Double Burden,' women's time is consumed by service to others. When a man has 'leisure' and a woman has 'chores' after work, it is a form of 'time theft.' This inequality in time prevents women from resting, thinking, or participating in the public world, making time a key site of gender struggle.",
+            "answer_outline": [
+                "Time as a resource",
+                "Concept of 'Time Theft'",
+                "Barriers to public participation",
+                "Leisure as a gendered privilege"
+            ],
+            "key_concepts": [
+                "time resource",
+                "time theft",
+                "leisure privilege"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "How does 'Gender Socialization' perpetuate the 'Status Quo' of economic inequality?",
+            "answer": "Socialization ensures that children grow up accepting inequality as 'the way things are.' When a boy sees his mother doing all the chores and his father relaxing, he learns that this is the reward for being male. When a girl sees the same, she learns that service is her destiny. By the time they reach adulthood, they repeat these patterns in their own homes, ensuring that the economic invisibility of women's work continues for another generation.",
+            "answer_outline": [
+                "Accepting inequality as normalcy",
+                "Repetition of parental patterns",
+                "Socialization as a cycle",
+                "Maintenance of the economic status quo"
+            ],
+            "key_concepts": [
+                "socialization",
+                "status quo",
+                "generational cycle"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Critically evaluate the 'Crèche Law'—is it sufficient to solve the problem of women's double burden?",
+            "answer": "The Crèche Law is a significant step but insufficient on its own. While it provides physical childcare, it doesn't change the cultural expectation that domestic work (cooking, cleaning) is still the woman's job. Without a change in the 'mindset' of men to share household chores, women will still carry a heavier burden at home. Laws can provide infrastructure, but only social movements can change the 'unwritten rules' of the household.",
+            "answer_outline": [
+                "Infrastructure vs. Mindset",
+                "Persistence of the 'unwritten rules'",
+                "Need for men's participation",
+                "Limits of legislative change"
+            ],
+            "key_concepts": [
+                "Crèche Law",
+                "mindset",
+                "social movements"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.4"
+        }
+    ]
+}

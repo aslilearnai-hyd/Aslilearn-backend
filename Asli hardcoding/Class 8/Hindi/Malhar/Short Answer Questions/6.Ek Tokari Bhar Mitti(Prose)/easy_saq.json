@@ -1,0 +1,209 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Ek Tokari Bhar Mitti",
+  "difficulty": "easy",
+  "generated_at": "2026-03-08T12:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "‘एक टोकरी भर मिट्टी’ कहानी के लेखक कौन हैं?",
+      "answer": "‘एक टोकरी भर मिट्टी’ कहानी के लेखक माधवराव सप्रे हैं।",
+      "key_concepts": ["लेखक"],
+      "marks": 1,
+      "source_section": "कहानी का परिचय"
+    },
+    {
+      "question_number": 2,
+      "question": "कहानी में मुख्य पात्र कौन है?",
+      "answer": "कहानी में मुख्य पात्र एक गरीब विधवा स्त्री है।",
+      "key_concepts": ["मुख्य पात्र"],
+      "marks": 2,
+      "source_section": "कहानी का परिचय"
+    },
+    {
+      "question_number": 3,
+      "question": "विधवा स्त्री कहाँ रहती थी?",
+      "answer": "विधवा स्त्री एक छोटी झोपड़ी में रहती थी।",
+      "key_concepts": ["विधवा"],
+      "marks": 2,
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 4,
+      "question": "जमींदार विधवा की झोपड़ी क्यों लेना चाहता था?",
+      "answer": "क्योंकि वह उस जगह पर अपना मकान बनाना चाहता था।",
+      "key_concepts": ["जमींदार"],
+      "marks": 2,
+      "source_section": "कहानी का घटनाक्रम"
+    },
+    {
+      "question_number": 5,
+      "question": "विधवा ने जमींदार से क्या माँगा?",
+      "answer": "विधवा ने जमींदार से एक टोकरी भर मिट्टी माँगी।",
+      "key_concepts": ["टोकरी भर मिट्टी"],
+      "marks": 2,
+      "source_section": "कहानी का घटनाक्रम"
+    },
+    {
+      "question_number": 6,
+      "question": "जमींदार ने विधवा की झोपड़ी के साथ क्या किया?",
+      "answer": "जमींदार ने विधवा की झोपड़ी को अपने कब्जे में ले लिया।",
+      "key_concepts": ["जमींदार"],
+      "marks": 2,
+      "source_section": "कहानी का घटनाक्रम"
+    },
+    {
+      "question_number": 7,
+      "question": "विधवा ने जमींदार को क्या समझाया?",
+      "answer": "विधवा ने जमींदार को उसकी गलती का एहसास कराया।",
+      "key_concepts": ["समझाना"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 8,
+      "question": "जमींदार को अपनी गलती का एहसास कब हुआ?",
+      "answer": "जब विधवा ने उससे एक टोकरी मिट्टी उठाने को कहा।",
+      "key_concepts": ["गलती का एहसास"],
+      "marks": 2,
+      "source_section": "कहानी का मोड़"
+    },
+    {
+      "question_number": 9,
+      "question": "जमींदार मिट्टी की टोकरी क्यों नहीं उठा पाया?",
+      "answer": "क्योंकि उसे समझ आया कि किसी का घर छीनना गलत है।",
+      "key_concepts": ["अनुभूति"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 10,
+      "question": "जमींदार ने अंत में क्या किया?",
+      "answer": "जमींदार ने विधवा को उसकी झोपड़ी वापस दे दी।",
+      "key_concepts": ["पश्चाताप"],
+      "marks": 2,
+      "source_section": "कहानी का अंत"
+    },
+    {
+      "question_number": 11,
+      "question": "कहानी हमें किस प्रकार का संदेश देती है?",
+      "answer": "कहानी हमें दया और न्याय का संदेश देती है।",
+      "key_concepts": ["संदेश"],
+      "marks": 2,
+      "source_section": "कहानी का निष्कर्ष"
+    },
+    {
+      "question_number": 12,
+      "question": "विधवा स्त्री की स्थिति कैसी थी?",
+      "answer": "वह बहुत गरीब और असहाय थी।",
+      "key_concepts": ["गरीबी"],
+      "marks": 2,
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 13,
+      "question": "जमींदार का स्वभाव कैसा था?",
+      "answer": "जमींदार शुरू में घमंडी और कठोर स्वभाव का था।",
+      "key_concepts": ["स्वभाव"],
+      "marks": 2,
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 14,
+      "question": "विधवा ने जमींदार से मिट्टी क्यों माँगी?",
+      "answer": "ताकि उसे अपनी गलती का एहसास हो सके।",
+      "key_concepts": ["बुद्धिमानी"],
+      "marks": 2,
+      "source_section": "कहानी का मोड़"
+    },
+    {
+      "question_number": 15,
+      "question": "जमींदार को अपनी गलती का एहसास कैसे हुआ?",
+      "answer": "विधवा की बातों से उसे अपनी गलती का एहसास हुआ।",
+      "key_concepts": ["पश्चाताप"],
+      "marks": 2,
+      "source_section": "कहानी का मोड़"
+    },
+    {
+      "question_number": 16,
+      "question": "विधवा की बुद्धिमानी कैसे दिखाई देती है?",
+      "answer": "उसने एक टोकरी मिट्टी के माध्यम से जमींदार को समझाया।",
+      "key_concepts": ["बुद्धिमानी"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 17,
+      "question": "कहानी में किस सामाजिक समस्या को दिखाया गया है?",
+      "answer": "कहानी में गरीबों के शोषण की समस्या को दिखाया गया है।",
+      "key_concepts": ["सामाजिक समस्या"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 18,
+      "question": "कहानी का मुख्य विचार क्या है?",
+      "answer": "दूसरों के अधिकारों का सम्मान करना चाहिए।",
+      "key_concepts": ["मुख्य विचार"],
+      "marks": 2,
+      "source_section": "कहानी का निष्कर्ष"
+    },
+    {
+      "question_number": 19,
+      "question": "जमींदार का व्यवहार बाद में कैसा हो गया?",
+      "answer": "बाद में जमींदार का व्यवहार दयालु और समझदार हो गया।",
+      "key_concepts": ["परिवर्तन"],
+      "marks": 2,
+      "source_section": "कहानी का अंत"
+    },
+    {
+      "question_number": 20,
+      "question": "कहानी में विधवा की कौन-सी विशेषता दिखाई देती है?",
+      "answer": "उसकी समझदारी और धैर्य दिखाई देता है।",
+      "key_concepts": ["धैर्य"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 21,
+      "question": "कहानी का अंत कैसा है?",
+      "answer": "कहानी का अंत सकारात्मक और शिक्षाप्रद है।",
+      "key_concepts": ["अंत"],
+      "marks": 2,
+      "source_section": "कहानी का अंत"
+    },
+    {
+      "question_number": 22,
+      "question": "कहानी का मुख्य पात्र किस वर्ग से संबंधित है?",
+      "answer": "मुख्य पात्र गरीब वर्ग से संबंधित है।",
+      "key_concepts": ["गरीब वर्ग"],
+      "marks": 2,
+      "source_section": "कहानी का परिचय"
+    },
+    {
+      "question_number": 23,
+      "question": "कहानी में जमींदार किस बात का प्रतीक है?",
+      "answer": "जमींदार शक्ति और अहंकार का प्रतीक है।",
+      "key_concepts": ["प्रतीक"],
+      "marks": 2,
+      "source_section": "कहानी का भाव"
+    },
+    {
+      "question_number": 24,
+      "question": "विधवा की झोपड़ी का क्या महत्व था?",
+      "answer": "वह उसका एकमात्र आश्रय और घर था।",
+      "key_concepts": ["आश्रय"],
+      "marks": 2,
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 25,
+      "question": "‘एक टोकरी भर मिट्टी’ कहानी हमें क्या शिक्षा देती है?",
+      "answer": "यह कहानी हमें दूसरों के अधिकारों का सम्मान करने और न्यायपूर्ण व्यवहार करने की शिक्षा देती है।",
+      "key_concepts": ["शिक्षा"],
+      "marks": 2,
+      "source_section": "कहानी का निष्कर्ष"
+    }
+  ]
+}

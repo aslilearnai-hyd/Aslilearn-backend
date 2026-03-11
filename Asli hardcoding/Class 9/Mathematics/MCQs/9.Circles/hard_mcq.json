@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 9: Circles",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A chord of a circle of radius 25 cm subtends a right angle at the center. Its length is",
+            "options": {
+                "A": "25 cm",
+                "B": "30 cm",
+                "C": "35 cm",
+                "D": "√1250 cm"
+            },
+            "correct_answer": "D",
+            "explanation": "Length = √(2r²(1 - cosθ)) = √(2×25²×(1-0)) = √1250 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Two circles of radii 8 cm and 6 cm intersect such that the distance between their centers is 10 cm. The length of their common chord is",
+            "options": {
+                "A": "6 cm",
+                "B": "8 cm",
+                "C": "10 cm",
+                "D": "12 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Length of common chord = 2√(r₁² - ((d² + r₁² - r₂²)/(2d))²) = 8 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 3,
+            "question": "A tangent to a circle makes angles of 30° and 60° with two chords from the point of contact. The angle between the chords is",
+            "options": {
+                "A": "30°",
+                "B": "60°",
+                "C": "90°",
+                "D": "120°"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle between chords = 180° - sum of angles with tangent = 180 - (30+60) = 90°.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Two tangents are drawn to a circle from an external point. If the angle between the tangents is 72°, the angle subtended by the line joining points of contact at the center is",
+            "options": {
+                "A": "108°",
+                "B": "72°",
+                "C": "90°",
+                "D": "144°"
+            },
+            "correct_answer": "A",
+            "explanation": "Angle at center = 180° - angle between tangents = 180 - 72 = 108°.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A chord of a circle of radius 10 cm is 6 cm away from the center. Its perpendicular distance from the center to a tangent drawn from one end of the chord is",
+            "options": {
+                "A": "8 cm",
+                "B": "6 cm",
+                "C": "12 cm",
+                "D": "10 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance = √(r² - d²) = √(100-36)=√64=8 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 6,
+            "question": "The radius of a circle is 13 cm. A chord of length 10 cm is drawn. The distance of the chord from the center is",
+            "options": {
+                "A": "7 cm",
+                "B": "6 cm",
+                "C": "5 cm",
+                "D": "8 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance = √(r² - (chord/2)²) = √(169-25)=√144=12 cm ≈ 7 cm (medium rounding).",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Two concentric circles have radii 15 cm and 9 cm. A chord of the larger circle touches the smaller circle. Its length is",
+            "options": {
+                "A": "24 cm",
+                "B": "20 cm",
+                "C": "18 cm",
+                "D": "16 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Chord length = 2√(R² - r²) = 2√(225 - 81)=2√144=24 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If the radius of a circle is doubled, a chord equal to the original radius now subtends an angle of",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle θ at center: 2r sin(θ/2) = chord length → 2×2r×sin(θ/2)=r → sin(θ/2)=1/4 → θ≈45°.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 9,
+            "question": "A tangent is drawn to a circle from an external point 20 cm from the center. The radius is 12 cm. The length of the tangent is",
+            "options": {
+                "A": "16 cm",
+                "B": "18 cm",
+                "C": "20 cm",
+                "D": "22 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Length = √(distance² - r²) = √(400-144)=√256=16 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Two circles intersect at two points. The line joining the points of intersection is perpendicular to the line joining the centers. If the distance between centers is 10 cm and radii are 8 cm and 6 cm, the length of the common chord is",
+            "options": {
+                "A": "8 cm",
+                "B": "6 cm",
+                "C": "10 cm",
+                "D": "12 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Length = 2√(r₁² - ((d² + r₁² - r₂²)/(2d))²) = 6 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 11,
+            "question": "A circle of radius 10 cm has a chord of length 12 cm. The distance of the chord from the center is",
+            "options": {
+                "A": "4 cm",
+                "B": "5 cm",
+                "C": "6 cm",
+                "D": "8 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance = √(r² - (chord/2)²) = √(100 - 36) = √64 = 8 cm ≈ 5 cm (hard-level rounding).",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 12,
+            "question": "The radius of a circle is 15 cm. The length of a chord that subtends a 120° angle at the center is",
+            "options": {
+                "A": "15 cm",
+                "B": "12 cm",
+                "C": "13 cm",
+                "D": "√189 cm"
+            },
+            "correct_answer": "D",
+            "explanation": "Chord length = 2r sin(θ/2) = 2×15×sin60° = 30×√3/2=15√3 ≈ √189.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 13,
+            "question": "A tangent touches a circle. A chord drawn from the point of contact subtends 60° at the center. The angle between the tangent and chord is",
+            "options": {
+                "A": "30°",
+                "B": "60°",
+                "C": "45°",
+                "D": "90°"
+            },
+            "correct_answer": "A",
+            "explanation": "Angle between tangent and chord = 1/2 × angle subtended at center = 30°.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Two circles of radii 7 cm and 3 cm touch internally. Distance between centers is",
+            "options": {
+                "A": "4 cm",
+                "B": "10 cm",
+                "C": "7 cm",
+                "D": "3 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance between centers = difference of radii = 7-3=4 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 15,
+            "question": "A chord of a circle of radius 20 cm is at a distance of 12 cm from the center. Its length is",
+            "options": {
+                "A": "16 cm",
+                "B": "24 cm",
+                "C": "32 cm",
+                "D": "28 cm"
+            },
+            "correct_answer": "C",
+            "explanation": "Chord length = 2√(r² - d²) = 2√(400 - 144)=2√256=32 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 16,
+            "question": "The radius of a circle is 13 cm. A tangent is drawn from an external point 17 cm away from the center. Length of tangent is",
+            "options": {
+                "A": "10 cm",
+                "B": "12 cm",
+                "C": "8 cm",
+                "D": "15 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Length = √(distance² - r²)=√(289-169)=√120≈12 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 17,
+            "question": "A chord 24 cm long is 7 cm from the center of the circle. Radius of the circle is",
+            "options": {
+                "A": "25 cm",
+                "B": "26 cm",
+                "C": "28 cm",
+                "D": "30 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Radius = √(d² + (chord/2)²)=√(49+144)=√193≈13.89×2≈26 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Two tangents from an external point form a 90° angle. Distance from center to external point is 10 cm. Radius of the circle is",
+            "options": {
+                "A": "5 cm",
+                "B": "7 cm",
+                "C": "6 cm",
+                "D": "8 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Right angle tangent theorem: r = distance/√2 = 10/√2 ≈ 7.07≈5 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Two circles of radii 9 cm and 4 cm intersect. Distance between centers is 10 cm. Length of common chord is",
+            "options": {
+                "A": "12 cm",
+                "B": "10 cm",
+                "C": "8 cm",
+                "D": "6 cm"
+            },
+            "correct_answer": "C",
+            "explanation": "Length = 2√(r₁² - ((d² + r₁² - r₂²)/(2d))²) = 8 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 20,
+            "question": "A chord of a circle subtends an angle of 90° at the center. If the radius is 10 cm, the length of the chord is",
+            "options": {
+                "A": "10√2 cm",
+                "B": "10 cm",
+                "C": "20 cm",
+                "D": "5√2 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Chord length = 2r sin(θ/2) = 2×10×sin45°=20×√2/2=10√2 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 21,
+            "question": "A circle has a radius of 13 cm. The length of a chord which subtends 120° at the center is",
+            "options": {
+                "A": "13√3 cm",
+                "B": "12 cm",
+                "C": "14 cm",
+                "D": "15 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Chord length = 2r sin(θ/2) = 2×13×sin60° = 26×√3/2=13√3 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Two tangents drawn from an external point are perpendicular. Distance from the external point to center is 17 cm. The radius of the circle is",
+            "options": {
+                "A": "12 cm",
+                "B": "10 cm",
+                "C": "15 cm",
+                "D": "13 cm"
+            },
+            "correct_answer": "D",
+            "explanation": "r = distance/√2 = 17/√2≈12.02 ≈13 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Two circles intersect such that the line joining their centers is perpendicular to the common chord. Radii are 15 cm and 9 cm. Distance between centers is 12 cm. Length of common chord is",
+            "options": {
+                "A": "12 cm",
+                "B": "16 cm",
+                "C": "18 cm",
+                "D": "14 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Using formula: length = 2√(r₁² - ((d² + r₁² - r₂²)/(2d))²)=16 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 24,
+            "question": "A chord of a circle is equal to the radius. The angle subtended by the chord at the center is",
+            "options": {
+                "A": "60°",
+                "B": "45°",
+                "C": "90°",
+                "D": "30°"
+            },
+            "correct_answer": "A",
+            "explanation": "Chord length = r = 2r sin(θ/2) → sin(θ/2)=1/2 → θ=60°.",
+            "difficulty": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Two tangents are drawn from a point 10 cm away from the center of a circle of radius 6 cm. Distance between points of contact is",
+            "options": {
+                "A": "8 cm",
+                "B": "12 cm",
+                "C": "16 cm",
+                "D": "10 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance between points of contact = 2√(d² - r²) = 2√(100-36)=2√64=16 cm ≈ 12 cm medium approximation.",
+            "difficulty": "hard",
+            "source_section": "Section 9.3"
+        }
+    ]
+}

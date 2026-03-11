@@ -1,0 +1,154 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "Nature of Matter: Elements, Compounds, and Mixtures",
+  "difficulty": "Hard",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Designing a Method to Separate a Mixture",
+      "objective": "To apply knowledge of separation techniques",
+      "materials": [
+        "Sand",
+        "Salt",
+        "Water",
+        "Filter paper",
+        "Evaporating dish"
+      ],
+      "steps": [
+        "Mix sand and salt in water",
+        "Filter the mixture to remove sand",
+        "Evaporate the filtered solution",
+        "Collect the salt crystals"
+      ],
+      "learning_outcome": "Students apply filtration and evaporation methods",
+      "evaluation": "Correct procedure and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Investigating Chemical Change in Compound Formation",
+      "objective": "To observe chemical change during compound formation",
+      "materials": ["Iron filings", "Sulfur powder", "China dish", "Burner"],
+      "steps": [
+        "Mix iron and sulfur",
+        "Heat the mixture in a china dish",
+        "Allow it to cool",
+        "Observe the new compound formed"
+      ],
+      "learning_outcome": "Students learn that compounds have new properties",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Analyzing Gas Formation in Chemical Reactions",
+      "objective": "To identify gases formed during reactions",
+      "materials": ["Iron filings", "Dilute hydrochloric acid", "Test tube"],
+      "steps": [
+        "Add iron filings to a test tube",
+        "Add dilute hydrochloric acid",
+        "Observe gas bubbles",
+        "Test the gas using a burning splinter"
+      ],
+      "learning_outcome": "Students identify hydrogen gas and its properties",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Investigating Electrolysis of Water",
+      "objective": "To determine the composition of water",
+      "materials": ["Beaker", "Water", "Dilute acid", "Battery", "Test tubes"],
+      "steps": [
+        "Set up electrolysis apparatus",
+        "Pass electric current through water",
+        "Collect gases in test tubes",
+        "Test hydrogen and oxygen"
+      ],
+      "learning_outcome": "Students confirm that water is composed of hydrogen and oxygen",
+      "evaluation": "Correct interpretation of results (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Classifying Substances from a Given List",
+      "objective": "To classify substances as elements, compounds, or mixtures",
+      "materials": ["List of substances", "Notebook"],
+      "steps": [
+        "Analyze the list of substances",
+        "Research their composition",
+        "Classify them",
+        "Explain the reasoning"
+      ],
+      "learning_outcome": "Students apply conceptual understanding of classification",
+      "evaluation": "Correct classification and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Comparative Study of Alloys",
+      "objective": "To analyze properties of alloys compared to pure metals",
+      "materials": ["Steel object", "Iron object", "Notebook"],
+      "steps": [
+        "Observe the properties of iron and steel",
+        "Compare strength and corrosion resistance",
+        "Research alloy composition",
+        "Prepare a comparison report"
+      ],
+      "learning_outcome": "Students understand advantages of alloys",
+      "evaluation": "Detailed comparison report (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Analyzing the Role of Compounds in Daily Life",
+      "objective": "To study applications of chemical compounds",
+      "materials": ["Examples of compounds", "Reference material"],
+      "steps": [
+        "Choose two common compounds",
+        "Research their chemical composition",
+        "Identify uses",
+        "Prepare a presentation"
+      ],
+      "learning_outcome": "Students connect chemistry concepts with real life",
+      "evaluation": "Presentation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Investigating Mineral Composition",
+      "objective": "To explore minerals as natural compounds",
+      "materials": ["Mineral samples", "Magnifying glass"],
+      "steps": [
+        "Observe mineral samples",
+        "Research their chemical composition",
+        "Identify elements present",
+        "Present findings"
+      ],
+      "learning_outcome": "Students understand the role of minerals in materials",
+      "evaluation": "Research report (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Exploring Chemical Properties of Compounds",
+      "objective": "To observe chemical reactions of compounds",
+      "materials": ["Common salt", "Water", "Evaporating dish"],
+      "steps": [
+        "Dissolve salt in water",
+        "Evaporate the solution",
+        "Observe salt crystals",
+        "Explain physical and chemical changes"
+      ],
+      "learning_outcome": "Students analyze chemical and physical processes",
+      "evaluation": "Explanation and observation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Designing a Model of Elements, Compounds, and Mixtures",
+      "objective": "To visually represent matter classification",
+      "materials": ["Colored balls", "Sticks", "Chart paper"],
+      "steps": [
+        "Create models representing atoms",
+        "Combine atoms to form molecules",
+        "Show mixture models with different particles",
+        "Present the model"
+      ],
+      "learning_outcome": "Students visually understand differences between elements, compounds, and mixtures",
+      "evaluation": "Model accuracy and explanation (10 marks)"
+    }
+  ]
+}

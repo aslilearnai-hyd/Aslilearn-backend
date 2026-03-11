@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Life Processes",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-10T23:46:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are life processes?",
+            "answer": "The basic functions performed by living organisms to maintain their life on earth are called life processes.",
+            "key_concepts": ["definition", "maintenance"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the basic life processes common to all living organisms.",
+            "answer": "Nutrition, respiration, transport, and excretion.",
+            "key_concepts": ["life processes"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the mode of nutrition in green plants?",
+            "answer": "Autotrophic nutrition.",
+            "key_concepts": ["autotrophic nutrition"],
+            "marks": 1,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Define photosynthesis.",
+            "answer": "The process by which green plants make their own food using carbon dioxide and water in the presence of sunlight and chlorophyll.",
+            "key_concepts": ["photosynthesis"],
+            "marks": 1,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the chemical equation for photosynthesis?",
+            "answer": "$6CO_2 + 12H_2O \\xrightarrow[Sunlight]{Chlorophyll} C_6H_{12}O_6 + 6O_2 + 6H_2O$.",
+            "key_concepts": ["photosynthesis equation"],
+            "marks": 1,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Where does the exchange of gases take place in leaves?",
+            "answer": "Through tiny pores called stomata.",
+            "key_concepts": ["stomata", "gas exchange"],
+            "marks": 1,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the function of guard cells?",
+            "answer": "Guard cells regulate the opening and closing of the stomatal pore.",
+            "key_concepts": ["guard cells"],
+            "marks": 1,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is heterotrophic nutrition?",
+            "answer": "A mode of nutrition where organisms depend on other organisms for food.",
+            "key_concepts": ["heterotrophic nutrition"],
+            "marks": 1,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "How does Amoeba take in food?",
+            "answer": "Amoeba takes in food using temporary finger-like extensions of the cell surface called pseudopodia.",
+            "key_concepts": ["Amoeba", "pseudopodia"],
+            "marks": 1,
+            "source_section": "Section 6.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Name the enzyme present in human saliva.",
+            "answer": "Salivary amylase.",
+            "key_concepts": ["salivary amylase"],
+            "marks": 1,
+            "source_section": "Section 6.2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the role of Hydrochloric acid in the stomach?",
+            "answer": "It creates an acidic medium which facilitates the action of the enzyme pepsin.",
+            "key_concepts": ["HCl", "stomach"],
+            "marks": 1,
+            "source_section": "Section 6.2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What are villi?",
+            "answer": "Finger-like projections in the inner lining of the small intestine that increase the surface area for absorption.",
+            "key_concepts": ["villi", "absorption"],
+            "marks": 1,
+            "source_section": "Section 6.2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is respiration?",
+            "answer": "The process of releasing energy from food (glucose) is called respiration.",
+            "key_concepts": ["respiration"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Distinguish between aerobic and anaerobic respiration.",
+            "answer": "Aerobic respiration takes place in the presence of oxygen, whereas anaerobic respiration takes place in the absence of oxygen.",
+            "key_concepts": ["aerobic", "anaerobic"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the first step in the breakdown of glucose?",
+            "answer": "Glucose (6-carbon molecule) is broken down into pyruvate (3-carbon molecule) in the cytoplasm.",
+            "key_concepts": ["glycolysis", "pyruvate"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Where does aerobic respiration take place in the cell?",
+            "answer": "Mitochondria.",
+            "key_concepts": ["mitochondria"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is ATP?",
+            "answer": "Adenosine Triphosphate (ATP) is the energy currency for most cellular processes.",
+            "key_concepts": ["ATP"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Name the respiratory pigment in human beings.",
+            "answer": "Hemoglobin.",
+            "key_concepts": ["hemoglobin"],
+            "marks": 1,
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What are the components of the transport system in human beings?",
+            "answer": "The heart, blood, and blood vessels.",
+            "key_concepts": ["circulatory system"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the human heart divided into four chambers?",
+            "answer": "To prevent the mixing of oxygenated and deoxygenated blood.",
+            "key_concepts": ["heart chambers"],
+            "marks": 1,
+            "source_section": "Section 6.4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the function of xylem in plants?",
+            "answer": "Xylem transports water and minerals from the roots to the rest of the plant.",
+            "key_concepts": ["xylem"],
+            "marks": 1,
+            "source_section": "Section 6.4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the function of phloem in plants?",
+            "answer": "Phloem transports products of photosynthesis (food) from leaves to other parts of the plant.",
+            "key_concepts": ["phloem"],
+            "marks": 1,
+            "source_section": "Section 6.4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is transpiration?",
+            "answer": "The loss of water in the form of vapor from the aerial parts of the plant.",
+            "key_concepts": ["transpiration"],
+            "marks": 1,
+            "source_section": "Section 6.4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is excretion?",
+            "answer": "The biological process involved in the removal of harmful metabolic wastes from the body.",
+            "key_concepts": ["excretion"],
+            "marks": 1,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the structural and functional unit of the kidney?",
+            "answer": "Nephron.",
+            "key_concepts": ["nephron"],
+            "marks": 1,
+            "source_section": "Section 6.5.1"
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "The Case of the Fifth Word",
+  "difficulty": "Hard",
+  "source_pdf": "Poorvi Unit 3",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Advanced Anagram Investigation",
+      "objective": "Develop critical thinking and word-analysis skills through complex anagram puzzles",
+      "materials": ["Textbook crossword puzzle", "Notebook", "Pen"],
+      "steps": [
+        "Analyse the crossword clues provided as anagrams",
+        "Break the letters into smaller combinations to find possible words",
+        "Identify the correct words related to the story context",
+        "Complete the crossword and explain your reasoning for each answer"
+      ],
+      "learning_outcome": "Students improve vocabulary, reasoning, and analytical thinking",
+      "evaluation": "Accuracy of answers and explanation of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Contextual Meaning Analysis of 'Case'",
+      "objective": "Evaluate how contextual clues change the meaning of a word",
+      "materials": ["Textbook table exercise", "Notebook"],
+      "steps": [
+        "Read the sentences containing the word 'case'",
+        "Determine the meaning based on context",
+        "Write a short explanation for each chosen meaning",
+        "Create one additional sentence using 'case' with a different meaning"
+      ],
+      "learning_outcome": "Students develop deeper understanding of contextual vocabulary",
+      "evaluation": "Accuracy of meaning and quality of explanations (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Character Evaluation of Encyclopedia Brown",
+      "objective": "Critically analyse the intelligence and behaviour of the main character",
+      "materials": ["Textbook story", "Notebook", "Pen"],
+      "steps": [
+        "Identify key actions taken by Encyclopedia Brown in the story",
+        "Analyse how his thinking helped solve the mystery",
+        "Compare his reasoning with how a police detective might solve a case",
+        "Write a short character evaluation paragraph"
+      ],
+      "learning_outcome": "Students develop analytical reading and character evaluation skills",
+      "evaluation": "Depth of analysis and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Fact vs Opinion Justification",
+      "objective": "Strengthen critical thinking by analysing facts and opinions",
+      "materials": ["Textbook statements", "Notebook"],
+      "steps": [
+        "Identify which statements are facts and which are opinions",
+        "Provide evidence from the text to support your choice",
+        "Discuss how opinions can influence interpretation of events",
+        "Present your findings in a short written explanation"
+      ],
+      "learning_outcome": "Students improve reasoning and evidence-based thinking",
+      "evaluation": "Correct classification and textual justification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Cryptic Code Decoding",
+      "objective": "Interpret coded clues and identify hidden meanings",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Study the coded message 'Nom Utes Sweden Hurts'",
+        "Identify the pattern connecting these words to days of the week",
+        "Determine the missing fifth word",
+        "Explain how this clue revealed the hiding place of the jewellery"
+      ],
+      "learning_outcome": "Students strengthen logical reasoning and problem-solving skills",
+      "evaluation": "Accuracy of decoding and explanation of logic (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Phrasal Verb Application and Creation",
+      "objective": "Analyse and apply phrasal verbs in different contexts",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Match phrasal verbs from the story with their meanings",
+        "Use each phrasal verb in a new sentence related to detective stories",
+        "Identify how phrasal verbs change meaning depending on context",
+        "Share your sentences with the class"
+      ],
+      "learning_outcome": "Students enhance vocabulary and contextual language usage",
+      "evaluation": "Correct usage and creativity in sentence formation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Homophone and Word Pair Analysis",
+      "objective": "Understand the difference between confusing word pairs",
+      "materials": ["Textbook word pairs", "Notebook"],
+      "steps": [
+        "Identify the correct word to complete each sentence",
+        "Explain the meaning of both words in each pair",
+        "Create one original sentence using each word",
+        "Discuss how incorrect word usage can change meaning"
+      ],
+      "learning_outcome": "Students improve vocabulary precision and language awareness",
+      "evaluation": "Correct answers and explanation of differences (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Logical Puzzle Interpretation",
+      "objective": "Develop analytical thinking through visual puzzle interpretation",
+      "materials": ["Puzzle illustrations from textbook", "Notebook"],
+      "steps": [
+        "Observe the puzzle diagrams carefully",
+        "Interpret the hidden meaning behind each puzzle",
+        "Write the correct phrase represented by each puzzle",
+        "Explain the reasoning behind your answer"
+      ],
+      "learning_outcome": "Students enhance observation, reasoning, and interpretation skills",
+      "evaluation": "Correct answers with logical explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Complex Reported Speech Conversion",
+      "objective": "Apply advanced grammar rules for reported speech",
+      "materials": ["Textbook examples", "Notebook"],
+      "steps": [
+        "Read the given direct speech sentences",
+        "Identify reporting verbs and question types",
+        "Convert them into indirect speech with correct tense and pronoun changes",
+        "Rewrite the sentences in a narrative paragraph"
+      ],
+      "learning_outcome": "Students strengthen grammar and sentence transformation skills",
+      "evaluation": "Accuracy of grammar and sentence structure (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Mystery Story Critical Discussion",
+      "objective": "Encourage critical thinking about mystery stories",
+      "materials": ["Discussion topic", "Notebook"],
+      "steps": [
+        "Form discussion groups",
+        "Analyse what elements make a mystery story effective",
+        "Discuss the role of clues, logic, and suspense in the story",
+        "Present conclusions and compare with other mystery stories"
+      ],
+      "learning_outcome": "Students develop analytical discussion and reasoning skills",
+      "evaluation": "Quality of ideas, reasoning, and participation (10 marks)"
+    }
+  ]
+}

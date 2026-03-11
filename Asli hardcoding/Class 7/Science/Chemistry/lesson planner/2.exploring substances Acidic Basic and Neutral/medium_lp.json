@@ -1,0 +1,182 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Exploring Substances: Acidic, Basic and Neutral",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Classify substances based on chemical properties using multiple indicators",
+        "Explain the scientific reason behind color changes in indicators",
+        "Understand the chemical nature of acids (H+ ions) and bases (OH- ions) conceptually",
+        "Differentiate between strong and weak acids/bases with examples",
+        "Analyze the neutralization reaction and its products (Salt and Water)",
+        "Investigate the role of neutralization in biological and environmental contexts",
+        "Perform controlled experiments and document scientific observations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Chemical Nature of Acids and Bases",
+            "topics_covered": [
+                "Detailed classification of organic vs. mineral acids",
+                "Properties of bases (bitter taste, soapy touch, caustic nature)",
+                "Concept of 'dilute' vs. 'concentrated' solutions"
+            ],
+            "teaching_strategy": [
+                "Comparative lecture",
+                "Display of safe-to-handle chemical labels",
+                "Categorization chart on board"
+            ],
+            "student_activities": [
+                "Differentiate between Citric, Tartaric, and Hydrochloric acid sources",
+                "Group discussion on why we don't 'taste' chemicals in a lab"
+            ],
+            "assessment": [
+                "Oral quiz on acid sources",
+                "Classification worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Natural and Synthetic Indicators",
+            "topics_covered": [
+                "Mechanism of indicators",
+                "Litmus, Turmeric, and China Rose",
+                "Introduction to Phenolphthalein (Synthetic indicator)"
+            ],
+            "teaching_strategy": [
+                "Experimental demonstration with Phenolphthalein",
+                "Variable testing (using different concentrations)"
+            ],
+            "student_activities": [
+                "Create a master table for 4 different indicators",
+                "Predict color changes before testing"
+            ],
+            "assessment": [
+                "Lab report evaluation",
+                "Predict-Observe-Explain (POE) sheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Universal Indicator and pH Scale",
+            "topics_covered": [
+                "Limitations of natural indicators",
+                "The pH scale (0-14) and strength of substances",
+                "Reading pH paper color charts"
+            ],
+            "teaching_strategy": [
+                "Visual presentation of the pH spectrum",
+                "Comparison of weak vinegar vs. strong battery acid (theoretical)"
+            ],
+            "student_activities": [
+                "Test 5 household items with pH paper",
+                "Rank items from most acidic to most basic"
+            ],
+            "assessment": [
+                "Accuracy of pH ranking",
+                "Short quiz on pH values (e.g., pH 7 is neutral)"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Chemistry of Neutralization",
+            "topics_covered": [
+                "Exothermic nature of neutralization",
+                "Chemical equation: $Acid + Base \rightarrow Salt + Water + Heat$",
+                "Naming common salts (NaCl, $MgSO_4$)"
+            ],
+            "teaching_strategy": [
+                "Guided titration-style demonstration",
+                "Molecular breakdown on the board"
+            ],
+            "student_activities": [
+                "Feel the test tube warmth during neutralization",
+                "Write balanced word equations for specific acid-base pairs"
+            ],
+            "assessment": [
+                "Formula writing practice",
+                "Understanding check: 'What happens to the ions?'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Neutralization in Digestion and Biology",
+            "topics_covered": [
+                "Role of HCl in the stomach",
+                "Milk of Magnesia and Antacids mechanism",
+                "Biological importance of maintaining pH"
+            ],
+            "teaching_strategy": [
+                "Anatomy diagrams showing acid production",
+                "Problem-solving scenarios (Heartburn treatment)"
+            ],
+            "student_activities": [
+                "Analyze active ingredients in common antacid labels",
+                "Case study: Why do we take baking soda for an ant sting?"
+            ],
+            "assessment": [
+                "Application-based short answer questions",
+                "Peer-to-peer explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Environmental and Industrial Applications",
+            "topics_covered": [
+                "Soil pH and plant growth",
+                "Treating industrial waste (Acidic effluents)",
+                "Prevention of Acid Rain damage"
+            ],
+            "teaching_strategy": [
+                "Environmental impact video/slides",
+                "Discussion on sustainable chemistry"
+            ],
+            "student_activities": [
+                "Design a treatment plan for a hypothetical 'Acidic Lake'",
+                "Research how farmers use Quicklime ($CaO$)"
+            ],
+            "assessment": [
+                "Problem-solving worksheet",
+                "Group discussion rubric"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Advanced Revision and Evaluation",
+            "topics_covered": [
+                "Comprehensive review of the pH scale",
+                "Critical thinking: 'Salt doesn't always mean Table Salt'",
+                "Safety and Lab Ethics recap"
+            ],
+            "teaching_strategy": [
+                "Competitive Jeopardy-style quiz",
+                "Review of common misconceptions"
+            ],
+            "student_activities": [
+                "Solve a 'Mystery Liquid' logic puzzle",
+                "Formal summative assessment"
+            ],
+            "assessment": [
+                "Unit Test (20-25 marks)",
+                "Analysis of experimental data questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Full chemistry lab kit (Indicators, test tubes, holders)",
+        "pH Paper and color charts",
+        "Phenolphthalein solution",
+        "Samples: Dilute HCl, NaOH, Lemon juice, Window cleaner, Antacid tablets",
+        "Digital pH meter (optional/for demonstration)"
+    ],
+    "evaluation_methods": [
+        "Scientific Lab Reports",
+        "Data Interpretation Questions",
+        "Case Study Analysis",
+        "Unit Test with Critical Thinking MCQs",
+        "Diagrammatic explanations of neutralization"
+    ],
+    "teacher_tip": "At this level, students often confuse 'Salt' with 'Table Salt'. Emphasize that in chemistry, a 'Salt' is a broad category of compounds formed by neutralization. Also, ensure they understand that neutralization is always exothermic (releases heat)."
+}

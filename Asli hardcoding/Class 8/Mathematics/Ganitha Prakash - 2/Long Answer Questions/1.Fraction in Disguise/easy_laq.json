@@ -1,0 +1,312 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: Fractions in Disguise (Percentages)",
+    "generated_at": "2026-03-04T18:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define percentage and explain why it is called 'per hundred'.",
+            "answer": "Percentage means per hundred. It represents a fraction with denominator 100. For example, 25% means 25 out of 100.",
+            "answer_outline": [
+                "Definition of percentage",
+                "Meaning of per hundred",
+                "Example"
+            ],
+            "key_concepts": ["percentage"],
+            "marks": 5,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how fractions can be converted into percentages.",
+            "answer": "To convert a fraction into percentage, multiply the fraction by 100. Example: 3/4 × 100 = 75%.",
+            "answer_outline": [
+                "Rule",
+                "Example"
+            ],
+            "key_concepts": ["fraction to percentage"],
+            "marks": 5,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how percentages can be written as fractions.",
+            "answer": "A percentage can be written as a fraction with denominator 100. Example: 24% = 24/100 = 6/25.",
+            "answer_outline": [
+                "Write over 100",
+                "Simplify"
+            ],
+            "key_concepts": ["percentage to fraction"],
+            "marks": 5,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how to find the percentage of a quantity.",
+            "answer": "To find y% of a number, multiply the number by y/100. Example: 25% of 120 = 25/100 × 120 = 30.",
+            "answer_outline": [
+                "Formula",
+                "Example"
+            ],
+            "key_concepts": ["percentage of quantity"],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the relationship between fractions, decimals, and percentages.",
+            "answer": "Fractions, decimals, and percentages represent the same value in different forms. Example: 1/2 = 0.5 = 50%.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["fractions", "decimals", "percentages"],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why percentages are useful for comparing quantities.",
+            "answer": "Percentages standardize quantities to a base of 100, making comparisons easier even when totals are different.",
+            "answer_outline": [
+                "Standardization",
+                "Example comparison"
+            ],
+            "key_concepts": ["comparison using percentages"],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain percentage increase with an example.",
+            "answer": "Percentage increase measures how much a value has increased compared to the original value. Example: Price increased from ₹30 to ₹42. Increase = ₹12. Percentage increase = (12/30) × 100 = 40%.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "Example"
+            ],
+            "key_concepts": ["percentage increase"],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain percentage decrease with an example.",
+            "answer": "Percentage decrease measures how much a value has decreased compared to the original value.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "Example"
+            ],
+            "key_concepts": ["percentage decrease"],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the concept of profit.",
+            "answer": "Profit occurs when the selling price of an item is greater than its cost price.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["profit"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the concept of loss.",
+            "answer": "Loss occurs when the selling price of an item is less than its cost price.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["loss"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how profit percentage is calculated.",
+            "answer": "Profit percentage = (Profit / Cost Price) × 100.",
+            "answer_outline": [
+                "Formula",
+                "Explanation"
+            ],
+            "key_concepts": ["profit percentage"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how loss percentage is calculated.",
+            "answer": "Loss percentage = (Loss / Cost Price) × 100.",
+            "answer_outline": [
+                "Formula",
+                "Explanation"
+            ],
+            "key_concepts": ["loss percentage"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the meaning of discount in shopping.",
+            "answer": "Discount is the reduction in the marked price of an item offered to customers.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["discount"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the concept of marked price and selling price.",
+            "answer": "Marked price is the price listed on an item, while selling price is the actual price paid after discount.",
+            "answer_outline": [
+                "Definition of marked price",
+                "Definition of selling price"
+            ],
+            "key_concepts": ["marked price", "selling price"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the meaning of tax with an example.",
+            "answer": "Tax is a percentage amount added to the price of goods or services and paid to the government.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["tax"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the concept of interest in banking.",
+            "answer": "Interest is the extra money paid by banks when money is deposited or charged when money is borrowed.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["interest"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the meaning of principal and rate of interest.",
+            "answer": "Principal is the original amount deposited or borrowed. Rate of interest is the percentage charged or paid each year.",
+            "answer_outline": [
+                "Definition of principal",
+                "Definition of rate"
+            ],
+            "key_concepts": ["principal", "rate of interest"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain simple interest with an example.",
+            "answer": "Simple interest is calculated only on the original principal amount.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": ["simple interest"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the concept of compounding.",
+            "answer": "Compounding occurs when interest earned is added to the principal so that future interest is calculated on the increased amount.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": ["compounding"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why percentages greater than 100 can exist.",
+            "answer": "Percentages greater than 100 indicate that a value has exceeded the original quantity.",
+            "answer_outline": [
+                "Explanation",
+                "Example"
+            ],
+            "key_concepts": ["percent >100"],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how ratios can be converted into percentages.",
+            "answer": "Convert the ratio into a fraction and multiply by 100 to get the percentage.",
+            "answer_outline": [
+                "Convert ratio to fraction",
+                "Multiply by 100"
+            ],
+            "key_concepts": ["ratio to percentage"],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how bar models help in understanding percentages.",
+            "answer": "Bar models visually represent proportions and help students understand percentage relationships easily.",
+            "answer_outline": [
+                "Visual representation",
+                "Application"
+            ],
+            "key_concepts": ["bar models"],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why estimation is important in percentage calculations.",
+            "answer": "Estimation helps verify answers quickly and improves number sense.",
+            "answer_outline": [
+                "Importance",
+                "Benefits"
+            ],
+            "key_concepts": ["estimation"],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how percentages are used in real life.",
+            "answer": "Percentages are used in exams, shopping discounts, taxes, population growth, and financial calculations.",
+            "answer_outline": [
+                "Examples",
+                "Applications"
+            ],
+            "key_concepts": ["real-life percentages"],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the overall classification of percentage applications in mathematics.",
+            "answer": "Percentages are used in comparisons, growth and decrease calculations, profit and loss analysis, and financial computations such as interest.",
+            "answer_outline": [
+                "Comparison",
+                "Change",
+                "Financial applications"
+            ],
+            "key_concepts": ["percentage applications"],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

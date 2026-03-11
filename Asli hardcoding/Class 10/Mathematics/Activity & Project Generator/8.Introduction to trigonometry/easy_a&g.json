@@ -1,0 +1,145 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty": "Easy",
+    "source_pdf": "jemh108.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Right Triangle Sketch",
+            "objective": "Identify sides of right triangle",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw right triangle",
+                "Label sides"
+            ],
+            "learning_outcome": "Side identification",
+            "evaluation": "Correct labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Trig Ratios Chart",
+            "objective": "List trigonometric ratios",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Write six ratios",
+                "Display chart"
+            ],
+            "learning_outcome": "Ratio awareness",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Opposite–Adjacent Game",
+            "objective": "Understand opposite and adjacent sides",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose angle",
+                "Identify sides"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Angle Change Activity",
+            "objective": "Observe change in sides",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Draw triangles",
+                "Change angle"
+            ],
+            "learning_outcome": "Angle–side relation",
+            "evaluation": "Observation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Trig Vocabulary",
+            "objective": "Learn trigonometric terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write meanings"
+            ],
+            "learning_outcome": "Terminology",
+            "evaluation": "Correct definitions (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Ratio Matching",
+            "objective": "Match ratios to names",
+            "materials": [
+                "Worksheet"
+            ],
+            "steps": [
+                "Match correctly"
+            ],
+            "learning_outcome": "Recall skill",
+            "evaluation": "Correct matching (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Real-Life Triangle",
+            "objective": "Find right triangles in life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List examples"
+            ],
+            "learning_outcome": "Application",
+            "evaluation": "Examples (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Trig Symbols",
+            "objective": "Learn symbols sin, cos, tan",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write symbols",
+                "Explain"
+            ],
+            "learning_outcome": "Symbol familiarity",
+            "evaluation": "Correct use (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Angle Identification",
+            "objective": "Identify acute angles",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Mark angles"
+            ],
+            "learning_outcome": "Angle recognition",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Mini Quiz",
+            "objective": "Recall basics",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Answer questions"
+            ],
+            "learning_outcome": "Retention",
+            "evaluation": "Score (10 marks)"
+        }
+    ]
+}

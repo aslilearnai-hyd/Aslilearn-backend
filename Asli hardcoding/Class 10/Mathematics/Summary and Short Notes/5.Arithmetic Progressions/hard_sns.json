@@ -1,0 +1,31 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Arithmetic Progressions",
+    "difficulty": "Hard",
+    "source_pdf": "jemh105.pdf",
+    "short_notes": {
+        "key_points": [
+            "nth term formula is used to find any term or its position in an AP",
+            "Common difference decides the nature of AP",
+            "APs model situations involving constant increase or decrease",
+            "Graph of an AP forms a straight line",
+            "Complex word problems require identifying a, d and n correctly"
+        ],
+        "examples": [
+            "Finding position of a term using nth term formula",
+            "Salary increasing by fixed amount follows AP",
+            "Negative common difference gives decreasing AP"
+        ],
+        "formulas": [
+            "nth term → aₙ = a + (n − 1)d",
+            "Common difference → d = a₂ − a₁"
+        ],
+        "exam_tips": [
+            "Always identify first term and common difference carefully",
+            "Position-based AP questions are common in exams",
+            "Translate word problems into AP format before solving",
+            "Check sign of d to avoid conceptual errors"
+        ]
+    }
+}

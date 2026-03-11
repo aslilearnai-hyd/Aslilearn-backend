@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Tales by Dots and Lines",
+  "generated_at": "2026-03-11T18:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain what a dot pattern is with an example.",
+      "answer": "A dot pattern is a pattern formed by arranging dots in a specific shape. For example, triangular numbers like 1, 3, 6, and 10 can be arranged in triangular dot patterns.",
+      "key_points": ["definition", "example"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe triangular numbers using dot patterns.",
+      "answer": "Triangular numbers are numbers that can be arranged in the shape of a triangle using dots. Examples include 1, 3, 6, 10, and 15.",
+      "key_points": ["triangular numbers", "dot representation"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 3,
+      "question": "What are square numbers? Explain using dots.",
+      "answer": "Square numbers are numbers that can be arranged in the shape of a square using dots, such as 1, 4, 9, and 16.",
+      "key_points": ["square numbers", "visual representation"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 4,
+      "question": "How can patterns help in predicting the next term in a sequence?",
+      "answer": "By observing the rule or regular change in a pattern, we can determine the next term in the sequence.",
+      "key_points": ["pattern rule", "prediction"],
+      "source_section": "Pattern Rule"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain what a growing pattern is with an example.",
+      "answer": "A growing pattern is a pattern that increases in size or number according to a rule. For example, 2, 4, 6, 8 is a growing number pattern.",
+      "key_points": ["growing pattern", "example"],
+      "source_section": "Patterns"
+    },
+    {
+      "question_number": 6,
+      "question": "Find the next two triangular numbers after 10.",
+      "answer": "The next triangular numbers after 10 are 15 and 21.",
+      "key_points": ["triangular numbers", "sequence"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 7,
+      "question": "Write the first five square numbers.",
+      "answer": "The first five square numbers are 1, 4, 9, 16, and 25.",
+      "key_points": ["square numbers"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how patterns can be represented using diagrams.",
+      "answer": "Patterns can be shown using diagrams by arranging dots or lines in shapes that follow a specific rule or order.",
+      "key_points": ["diagram representation"],
+      "source_section": "Patterns"
+    },
+    {
+      "question_number": 9,
+      "question": "What is meant by the rule of a pattern?",
+      "answer": "The rule of a pattern is the mathematical relationship that explains how the pattern grows or changes.",
+      "key_points": ["pattern rule"],
+      "source_section": "Pattern Rule"
+    },
+    {
+      "question_number": 10,
+      "question": "Give two examples of number patterns.",
+      "answer": "Examples include 2, 4, 6, 8 and 1, 3, 5, 7.",
+      "key_points": ["examples"],
+      "source_section": "Patterns"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the importance of patterns in mathematics.",
+      "answer": "Patterns help in understanding relationships between numbers and help predict future terms.",
+      "key_points": ["importance"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 12,
+      "question": "How are triangular numbers formed?",
+      "answer": "Triangular numbers are formed by adding natural numbers consecutively such as 1, 1+2=3, 1+2+3=6.",
+      "key_points": ["formation"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the difference between triangular and square numbers?",
+      "answer": "Triangular numbers form triangle-shaped patterns while square numbers form square-shaped patterns.",
+      "key_points": ["comparison"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the next two numbers in the pattern 1, 4, 9, 16.",
+      "answer": "The next numbers are 25 and 36.",
+      "key_points": ["square pattern"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how dots help visualize number patterns.",
+      "answer": "Dots make number patterns easier to understand by showing the arrangement of numbers visually.",
+      "key_points": ["visual learning"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 16,
+      "question": "What does the nth term represent in a pattern?",
+      "answer": "The nth term represents the general term used to find any term in a sequence.",
+      "key_points": ["nth term"],
+      "source_section": "Pattern Rule"
+    },
+    {
+      "question_number": 17,
+      "question": "Give an example of a pattern formed using lines.",
+      "answer": "A pattern where each figure increases by adding one more line segment.",
+      "key_points": ["line pattern"],
+      "source_section": "Lines"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are dot patterns useful for students?",
+      "answer": "They help students understand number relationships visually and logically.",
+      "key_points": ["learning benefit"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 19,
+      "question": "What mathematical concept is often used to describe patterns?",
+      "answer": "Algebra is used to describe and generalize patterns.",
+      "key_points": ["algebra"],
+      "source_section": "Pattern Rule"
+    },
+    {
+      "question_number": 20,
+      "question": "How can patterns improve problem-solving skills?",
+      "answer": "Patterns help identify rules and relationships, making it easier to solve mathematical problems.",
+      "key_points": ["problem solving"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the triangular number after 10?",
+      "answer": "15.",
+      "key_points": ["example"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 22,
+      "question": "Which numbers form square patterns?",
+      "answer": "Square numbers.",
+      "key_points": ["definition"],
+      "source_section": "Dot Patterns"
+    },
+    {
+      "question_number": 23,
+      "question": "What mathematical idea is used to describe patterns?",
+      "answer": "Algebra.",
+      "key_points": ["concept"],
+      "source_section": "Pattern Rule"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are patterns important in mathematics?",
+      "answer": "They help understand relationships and predict results.",
+      "key_points": ["importance"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 25,
+      "question": "Patterns with dots and lines show what type of thinking?",
+      "answer": "Mathematical reasoning.",
+      "key_points": ["reasoning"],
+      "source_section": "Conclusion"
+    }
+  ]
+}

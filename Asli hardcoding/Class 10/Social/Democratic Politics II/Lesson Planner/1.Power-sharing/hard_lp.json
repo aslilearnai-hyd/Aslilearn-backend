@@ -1,0 +1,177 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter_name": "Power-sharing",
+  "lesson_level": "Hard",
+  "total_periods": 8,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically evaluate the concept of power-sharing in democratic systems",
+    "Analyse the political and social consequences of majoritarianism",
+    "Compare institutional responses to ethnic diversity in Belgium and Sri Lanka",
+    "Examine prudential and moral arguments supporting power-sharing",
+    "Analyse different institutional forms of power-sharing in modern democracies",
+    "Evaluate the role of power-sharing in maintaining political stability"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Conceptual Foundations of Power-sharing",
+      "topics_covered": [
+        "Definition and theoretical background of power-sharing",
+        "Concentration of power vs distributed power",
+        "Power-sharing as a democratic principle"
+      ],
+      "teaching_strategy": [
+        "Interactive lecture with conceptual discussion",
+        "Socratic questioning approach"
+      ],
+      "student_activities": [
+        "Students analyse scenarios where power concentration leads to problems",
+        "Group discussion on democratic decision-making"
+      ],
+      "assessment": ["Concept explanation", "Critical questioning"]
+    },
+    {
+      "period": 2,
+      "title": "Ethnic Diversity and Political Tensions in Belgium",
+      "topics_covered": [
+        "Demographic composition of Belgium",
+        "Economic and linguistic differences",
+        "Origins of political tensions"
+      ],
+      "teaching_strategy": [
+        "Map-based explanation",
+        "Historical context discussion"
+      ],
+      "student_activities": [
+        "Interpret demographic data from maps",
+        "Discuss causes of linguistic conflicts"
+      ],
+      "assessment": ["Short analytical responses", "Notebook evaluation"]
+    },
+    {
+      "period": 3,
+      "title": "Belgium’s Institutional Power-sharing Model",
+      "topics_covered": [
+        "Equal representation in central government",
+        "State governments and community governments",
+        "Constitutional reforms between 1970 and 1993"
+      ],
+      "teaching_strategy": [
+        "Diagrammatic explanation of governance structure",
+        "Case study analysis"
+      ],
+      "student_activities": [
+        "Create a structural diagram of Belgium’s political system",
+        "Analyse how the system prevents conflict"
+      ],
+      "assessment": ["Worksheet analysis", "Concept presentation"]
+    },
+    {
+      "period": 4,
+      "title": "Majoritarianism and Conflict in Sri Lanka",
+      "topics_covered": [
+        "Ethnic composition of Sri Lanka",
+        "Sinhala-only language policy",
+        "Discrimination against Tamil communities",
+        "Emergence of civil war"
+      ],
+      "teaching_strategy": [
+        "Historical narrative explanation",
+        "Comparative analysis with Belgium"
+      ],
+      "student_activities": [
+        "Prepare a comparison chart of Belgium and Sri Lanka",
+        "Discuss the political consequences of majoritarianism"
+      ],
+      "assessment": ["Short analytical writing", "Group discussion evaluation"]
+    },
+    {
+      "period": 5,
+      "title": "Reasons for Power-sharing",
+      "topics_covered": [
+        "Prudential reasons",
+        "Moral reasons",
+        "Power-sharing as the essence of democracy"
+      ],
+      "teaching_strategy": [
+        "Conceptual explanation with real-world examples",
+        "Debate-based learning"
+      ],
+      "student_activities": [
+        "Students debate whether majority rule alone is sufficient in democracy",
+        "Write a short argument supporting power-sharing"
+      ],
+      "assessment": ["Argument quality", "Participation in debate"]
+    },
+    {
+      "period": 6,
+      "title": "Forms of Power-sharing",
+      "topics_covered": [
+        "Horizontal distribution of power",
+        "Vertical distribution of power",
+        "Power-sharing among social groups",
+        "Power-sharing among political parties"
+      ],
+      "teaching_strategy": [
+        "Concept mapping",
+        "Examples from global and Indian political systems"
+      ],
+      "student_activities": [
+        "Prepare a concept map explaining four forms of power-sharing",
+        "Identify examples from India"
+      ],
+      "assessment": ["Concept map evaluation", "Short written explanations"]
+    },
+    {
+      "period": 7,
+      "title": "Case Studies of Power-sharing",
+      "topics_covered": [
+        "Coalition governments",
+        "Federal systems",
+        "Community representation"
+      ],
+      "teaching_strategy": ["Case-study method", "Student presentations"],
+      "student_activities": [
+        "Research examples of coalition governments",
+        "Present findings to the class"
+      ],
+      "assessment": ["Presentation evaluation", "Peer feedback"]
+    },
+    {
+      "period": 8,
+      "title": "Application, Reflection, and Chapter Revision",
+      "topics_covered": [
+        "Application of power-sharing concepts",
+        "Critical evaluation of different models",
+        "Chapter summary and revision"
+      ],
+      "teaching_strategy": ["Reflective discussion", "Teacher-guided revision"],
+      "student_activities": [
+        "Analyse a recent political situation involving power-sharing",
+        "Solve textbook exercises"
+      ],
+      "assessment": [
+        "Short written test (15 marks)",
+        "Concept clarification session"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Democratic Politics Textbook",
+    "World maps showing ethnic distribution",
+    "Charts explaining power-sharing structures",
+    "Projector for presentations"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Worksheet analysis",
+    "Debates and presentations",
+    "Short written tests"
+  ],
+  "teacher_tip": "Encourage students to critically analyse how different political systems manage diversity, and use real-world examples of coalition governments and federal structures to deepen understanding."
+}

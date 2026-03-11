@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Keeping Time with the Skies",
+  "generated_at": "2026-03-06T03:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why does the Earth’s rotation help us measure time?",
+      "answer": "Because one complete rotation of the Earth forms a day.",
+      "key_points": ["earth rotation"],
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 2,
+      "question": "What would happen if the Earth stopped rotating?",
+      "answer": "There would be no regular cycle of day and night.",
+      "key_points": ["earth rotation"],
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 3,
+      "question": "Why do different constellations appear in different seasons?",
+      "answer": "Because the Earth revolves around the Sun and our view of the sky changes.",
+      "key_points": ["constellations"],
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 4,
+      "question": "How does the movement of the Moon help measure time?",
+      "answer": "The cycle of Moon phases helps measure months.",
+      "key_points": ["moon phases"],
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 5,
+      "question": "Why were sundials useful only during the daytime?",
+      "answer": "Because they depend on sunlight to form shadows.",
+      "key_points": ["sundial"],
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 6,
+      "question": "Why does the length of shadows change during the day?",
+      "answer": "Because the Sun’s position appears to change as Earth rotates.",
+      "key_points": ["shadow"],
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 7,
+      "question": "How did ancient people estimate months before modern calendars?",
+      "answer": "They observed the repeating phases of the Moon.",
+      "key_points": ["lunar cycle"],
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 8,
+      "question": "Why does the North Star appear almost fixed in the sky?",
+      "answer": "Because it lies nearly along the Earth’s axis of rotation.",
+      "key_points": ["north star"],
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 9,
+      "question": "Why do stars appear to move across the sky during the night?",
+      "answer": "Due to the rotation of the Earth.",
+      "key_points": ["star movement"],
+      "source_section": "Star Movement"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is the Moon not visible during some nights?",
+      "answer": "Because of the changing phases of the Moon.",
+      "key_points": ["moon phases"],
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 11,
+      "question": "Why did ancient travelers rely on constellations?",
+      "answer": "To determine direction while traveling at night.",
+      "key_points": ["navigation"],
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 12,
+      "question": "Why do seasons repeat every year?",
+      "answer": "Because the Earth completes one revolution around the Sun each year.",
+      "key_points": ["earth revolution"],
+      "source_section": "Earth’s Revolution"
+    },
+    {
+      "question_number": 13,
+      "question": "Why were lunar calendars important in ancient civilizations?",
+      "answer": "They helped people track months based on Moon phases.",
+      "key_points": ["lunar calendar"],
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 14,
+      "question": "How does Earth’s revolution influence our calendar system?",
+      "answer": "It determines the length of a year.",
+      "key_points": ["earth revolution"],
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 15,
+      "question": "Why does the Sun appear to move from east to west?",
+      "answer": "Because the Earth rotates from west to east.",
+      "key_points": ["earth rotation"],
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 16,
+      "question": "Why do astronomers group stars into constellations?",
+      "answer": "To make it easier to identify stars in the sky.",
+      "key_points": ["constellations"],
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 17,
+      "question": "Why does the Moon shine even though it has no light of its own?",
+      "answer": "Because it reflects sunlight.",
+      "key_points": ["moon"],
+      "source_section": "Moon"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do astronomers observe the sky regularly?",
+      "answer": "To study repeating patterns in celestial movements.",
+      "key_points": ["astronomy"],
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 19,
+      "question": "Why are celestial patterns useful for measuring time?",
+      "answer": "Because they occur regularly and predictably.",
+      "key_points": ["time measurement"],
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 20,
+      "question": "Why were constellations important for ancient farmers?",
+      "answer": "They helped predict seasons for planting crops.",
+      "key_points": ["seasons"],
+      "source_section": "Early Astronomy"
+    },
+    {
+      "question_number": 21,
+      "question": "Why do star positions change slowly over months?",
+      "answer": "Because the Earth moves around the Sun.",
+      "key_points": ["earth revolution"],
+      "source_section": "Star Observation"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does a lunar month differ from the number of days in a calendar month?",
+      "answer": "Because the Moon’s phase cycle is about 29.5 days.",
+      "key_points": ["lunar cycle"],
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 23,
+      "question": "Why do astronomers use celestial movements to define time units?",
+      "answer": "Because celestial movements are regular and predictable.",
+      "key_points": ["astronomy"],
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are sundials not accurate during cloudy days?",
+      "answer": "Because sunlight is required to create shadows.",
+      "key_points": ["sundial"],
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 25,
+      "question": "Why do early calendars combine solar and lunar observations?",
+      "answer": "To accurately track both months and seasons.",
+      "key_points": ["calendar"],
+      "source_section": "Calendars"
+    }
+  ]
+}

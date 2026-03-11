@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-05T22:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following situations shows that force can change the direction of motion?",
+      "options": {
+        "A": "Kicking a football",
+        "B": "A moving bicycle turning at a corner",
+        "C": "Stretching a rubber band",
+        "D": "Lifting a book"
+      },
+      "correct_answer": "B",
+      "explanation": "When a bicycle turns at a corner, force changes its direction of motion.",
+      "difficulty": "medium",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is an example of a contact force?",
+      "options": {
+        "A": "Gravitational force",
+        "B": "Magnetic force",
+        "C": "Frictional force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction acts only when surfaces are in contact.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is a non-contact force?",
+      "options": {
+        "A": "Muscular force",
+        "B": "Frictional force",
+        "C": "Magnetic force",
+        "D": "Push"
+      },
+      "correct_answer": "C",
+      "explanation": "Magnetic force acts without physical contact.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What happens when equal forces act on an object in opposite directions?",
+      "options": {
+        "A": "The object moves faster",
+        "B": "The object slows down",
+        "C": "The object remains at rest or continues moving uniformly",
+        "D": "The object disappears"
+      },
+      "correct_answer": "C",
+      "explanation": "Equal and opposite forces balance each other, resulting in no change in motion.",
+      "difficulty": "medium",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is friction useful while walking?",
+      "options": {
+        "A": "It slows us down",
+        "B": "It allows our feet to grip the ground",
+        "C": "It makes the floor slippery",
+        "D": "It increases speed"
+      },
+      "correct_answer": "B",
+      "explanation": "Friction between our shoes and the ground prevents slipping.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which example demonstrates gravitational force?",
+      "options": {
+        "A": "A magnet attracting nails",
+        "B": "A ball falling from a height",
+        "C": "Rubbing hands together",
+        "D": "Pushing a cart"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity pulls objects toward the Earth.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which factor mainly affects the amount of friction between two surfaces?",
+      "options": {
+        "A": "Color of the surfaces",
+        "B": "Roughness of the surfaces",
+        "C": "Temperature of the air",
+        "D": "Shape of the room"
+      },
+      "correct_answer": "B",
+      "explanation": "Rougher surfaces create more friction.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following forces helps a magnet pick up iron pins?",
+      "options": {
+        "A": "Gravitational force",
+        "B": "Magnetic force",
+        "C": "Frictional force",
+        "D": "Muscular force"
+      },
+      "correct_answer": "B",
+      "explanation": "Magnets exert magnetic force on magnetic materials.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which example shows that force can change the shape of an object?",
+      "options": {
+        "A": "Stretching a rubber band",
+        "B": "Rolling a ball",
+        "C": "Dropping a stone",
+        "D": "Throwing a ball"
+      },
+      "correct_answer": "A",
+      "explanation": "Stretching changes the shape of the rubber band.",
+      "difficulty": "medium",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which force acts between charged objects?",
+      "options": {
+        "A": "Electrostatic force",
+        "B": "Gravitational force",
+        "C": "Frictional force",
+        "D": "Muscular force"
+      },
+      "correct_answer": "A",
+      "explanation": "Electrostatic force acts between electrically charged objects.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Why do vehicles slow down when brakes are applied?",
+      "options": {
+        "A": "Because of gravity",
+        "B": "Because friction increases",
+        "C": "Because magnetic force acts",
+        "D": "Because air disappears"
+      },
+      "correct_answer": "B",
+      "explanation": "Brakes increase friction between the brake pads and wheels.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which type of force acts when we push a shopping cart?",
+      "options": {
+        "A": "Muscular force",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "A",
+      "explanation": "Muscles apply force to push the cart.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens to friction when surfaces become smoother?",
+      "options": {
+        "A": "It increases",
+        "B": "It decreases",
+        "C": "It stays the same",
+        "D": "It disappears completely"
+      },
+      "correct_answer": "B",
+      "explanation": "Smooth surfaces produce less friction.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is a contact force?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Friction",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction requires surfaces to be in contact.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Why do astronauts feel weightless in space?",
+      "options": {
+        "A": "Because gravity does not exist",
+        "B": "Because friction is absent",
+        "C": "Because they are in continuous free fall",
+        "D": "Because magnetic force acts"
+      },
+      "correct_answer": "C",
+      "explanation": "Astronauts appear weightless because they are in continuous free fall around the Earth.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which force helps keep planets in orbit around the Sun?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Friction",
+        "C": "Gravitational force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Gravity keeps planets moving in orbit.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which activity increases friction?",
+      "options": {
+        "A": "Applying oil on surfaces",
+        "B": "Making surfaces rough",
+        "C": "Using wheels",
+        "D": "Polishing surfaces"
+      },
+      "correct_answer": "B",
+      "explanation": "Rough surfaces increase friction.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which force is responsible for objects falling to the ground?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Electrostatic force",
+        "C": "Gravitational force",
+        "D": "Friction"
+      },
+      "correct_answer": "C",
+      "explanation": "Gravity pulls objects toward the Earth.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which example shows electrostatic force?",
+      "options": {
+        "A": "A balloon sticking to a wall after rubbing",
+        "B": "A stone falling",
+        "C": "A car stopping",
+        "D": "A person pushing a box"
+      },
+      "correct_answer": "A",
+      "explanation": "Static electricity causes the balloon to stick to the wall.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which force acts between the tires of a car and the road?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Frictional force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction between tires and the road helps vehicles move safely.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which factor reduces friction between surfaces?",
+      "options": {
+        "A": "Adding oil",
+        "B": "Increasing roughness",
+        "C": "Increasing weight",
+        "D": "Increasing pressure"
+      },
+      "correct_answer": "A",
+      "explanation": "Lubricants such as oil reduce friction.",
+      "difficulty": "medium",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Which force allows magnets to attract or repel each other?",
+      "options": {
+        "A": "Electrostatic force",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Friction"
+      },
+      "correct_answer": "B",
+      "explanation": "Magnets interact through magnetic force.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which example shows that force can stop a moving object?",
+      "options": {
+        "A": "Applying brakes to a bicycle",
+        "B": "Throwing a ball",
+        "C": "Pushing a cart",
+        "D": "Stretching a spring"
+      },
+      "correct_answer": "A",
+      "explanation": "Braking applies force that stops motion.",
+      "difficulty": "medium",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which force acts between Earth and the Moon?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Frictional force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity acts between all objects with mass.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which example best shows balanced forces?",
+      "options": {
+        "A": "A book resting on a table",
+        "B": "A ball falling",
+        "C": "A car accelerating",
+        "D": "A stone thrown upward"
+      },
+      "correct_answer": "A",
+      "explanation": "Balanced forces act equally in opposite directions, keeping the object at rest.",
+      "difficulty": "medium",
+      "source_section": "Section 5.1"
+    }
+  ]
+}

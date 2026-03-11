@@ -1,0 +1,208 @@
+{
+    "content_type": "Medium Questions",
+    "chapter": "Chapter: HOW DO ORGANISMS REPRODUCE?",
+    "generated_at": "2026-03-10T23:53:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How does binary fission in Amoeba differ from binary fission in Leishmania?",
+            "answer": "In Amoeba, fission can take place in any plane. However, Leishmania has a whip-like structure (flagellum) at one end, so binary fission occurs in a definite orientation (longitudinal) in relation to this structure.",
+            "key_concepts": ["binary fission", "cell division"],
+            "marks": 3,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the advantages of vegetative propagation?",
+            "answer": "1. Plants can bear flowers and fruits earlier than those produced from seeds. 2. It allows the propagation of plants like banana and rose that have lost the capacity to produce seeds. 3. All plants are genetically similar to the parent plant.",
+            "key_concepts": ["vegetative propagation", "asexual reproduction"],
+            "marks": 3,
+            "source_section": "Section 7.2.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is DNA copying an essential part of the process of reproduction?",
+            "answer": "DNA contains the blueprints for body design. Copying ensures that the offspring inherits the parent's characteristics. However, no biochemical reaction is absolutely reliable, so copying leads to subtle variations which are the basis for evolution.",
+            "key_concepts": ["DNA copying", "variation"],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between self-pollination and cross-pollination.",
+            "answer": "Self-pollination is the transfer of pollen from the anther to the stigma of the same flower or another flower of the same plant. Cross-pollination is the transfer of pollen from one flower to the stigma of a different plant of the same species.",
+            "key_concepts": ["pollination"],
+            "marks": 3,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the role of the prostate gland and seminal vesicles in the male reproductive system.",
+            "answer": "They add their secretions to the vas deferens, making the transport of sperm easier by providing a fluid medium. These secretions also provide nutrition to the sperm.",
+            "key_concepts": ["accessory glands", "sperm nutrition"],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What happens if the egg is not fertilized in a human female?",
+            "answer": "The egg lives for about one day. If not fertilized, the thickened uterine lining (which was prepared to receive a zygote) is no longer needed. The lining slowly breaks and comes out through the vagina as blood and mucous (menstruation).",
+            "key_concepts": ["menstruation"],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "How does the embryo get nourishment inside the mother's body?",
+            "answer": "The embryo gets nutrition from the mother's blood through a special tissue called the placenta. It contains villi on the embryo's side to provide a large surface area for glucose and oxygen to pass from mother to embryo.",
+            "key_concepts": ["placenta", "nutrition"],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are budding, fragmentation, and regeneration all considered asexual methods?",
+            "answer": "Because in all these processes, only a single parent is involved to produce new offspring without the fusion of gametes or the formation of seeds.",
+            "key_concepts": ["asexual reproduction"],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Compare the function of the testis in males with that of the ovary in females.",
+            "answer": "The testis produces male gametes (sperm) and the hormone testosterone. The ovary produces female gametes (eggs/ova) and the hormones oestrogen and progesterone.",
+            "key_concepts": ["gonads", "gametogenesis"],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is Tissue Culture? Mention one of its uses.",
+            "answer": "It is the technique of growing new plants from a small piece of plant tissue or cells in an artificial nutrient medium. It is used to grow many plants from one parent in disease-free conditions (ornamental plants).",
+            "key_concepts": ["tissue culture", "biotechnology"],
+            "marks": 3,
+            "source_section": "Section 7.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Identify the parts of a seed and state their functions.",
+            "answer": "1. Plumule (future shoot). 2. Radicle (future root). 3. Cotyledon (stores food for the embryo).",
+            "key_concepts": ["seed structure", "germination"],
+            "marks": 3,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is sexual reproduction considered 'better' than asexual reproduction for a species' survival?",
+            "answer": "Sexual reproduction involves the combination of DNA from two different individuals, leading to a greater diversity of variations. These variations help the species adapt to changing environments and ensure long-term survival.",
+            "key_concepts": ["sexual reproduction", "variation"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What are the common changes that occur in both boys and girls during puberty?",
+            "answer": "Common changes include the growth of thick hair in new parts of the body (armpits, genital area), skin becoming oily and development of pimples, and a general increase in awareness of the body.",
+            "key_concepts": ["puberty", "secondary sexual characteristics"],
+            "marks": 3,
+            "source_section": "Section 7.3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe the structure of a pollen tube and its significance.",
+            "answer": "After pollen lands on the stigma, it grows a long tube through the style to reach the ovary. Its significance is to carry the male germ cells to the female germ cell (ovule) for fertilization.",
+            "key_concepts": ["pollen tube", "fertilization"],
+            "marks": 3,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "How do chemical methods of contraception work?",
+            "answer": "Oral pills contain hormones that change the hormonal balance of the body so that eggs are not released (ovulation is prevented). Thus, fertilization cannot occur.",
+            "key_concepts": ["contraception", "hormonal pills"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is it called 'double fertilization' in flowering plants? (Note: conceptual extension of NCERT).",
+            "answer": "Two male gametes are released; one fuses with the egg to form a zygote, and the other fuses with polar nuclei to form endosperm. This ensures both the embryo and its food source are developed.",
+            "key_concepts": ["fertilization", "flowering plants"],
+            "marks": 3,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Mention the mechanical barriers used in contraception and how they prevent pregnancy.",
+            "answer": "Condoms (on the penis) or diaphragms (in the vagina) act as mechanical barriers that prevent the sperm from reaching the egg physically.",
+            "key_concepts": ["mechanical barriers", "contraception"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the difference between Regeneration and Fragmentation?",
+            "answer": "Fragmentation occurs in simple organisms where the body naturally breaks into pieces (Spirogyra). Regeneration is more complex, where an organism is accidentally cut and then re-grows parts from specialized cells (Planaria).",
+            "key_concepts": ["asexual reproduction"],
+            "marks": 3,
+            "source_section": "Section 7.2.2 & 7.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "How do surgical methods (vasectomy and tubectomy) act as a permanent solution for family planning?",
+            "answer": "In vasectomy, the vas deferens is blocked, preventing sperm transfer. In tubectomy, fallopian tubes are blocked, preventing the egg from reaching the uterus. Both prevent fertilization permanently.",
+            "key_concepts": ["surgical methods", "contraception"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the function of the thick, waxy coating on the spores of Rhizopus?",
+            "answer": "The thick walls protect the spores from unfavorable conditions like heat, lack of water, or extreme cold until they come into contact with another moist surface and begin to grow.",
+            "key_concepts": ["spore formation"],
+            "marks": 3,
+            "source_section": "Section 7.2.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the concept of 'Variation' with respect to the survival of bacteria in heat.",
+            "answer": "If a population of bacteria living in temperate waters faces a sudden rise in temperature due to global warming, most will die. But a few variants resistant to heat would survive and grow, preventing the species from extinction.",
+            "key_concepts": ["variation", "natural selection"],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Distinguish between a 'Unisexual' and a 'Bisexual' flower.",
+            "answer": "A unisexual flower contains either stamens or carpels (e.g., Papaya, Watermelon). A bisexual flower contains both stamens and carpels (e.g., Hibiscus, Mustard).",
+            "key_concepts": ["flower types"],
+            "marks": 3,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What are the social and economic reasons for adopting contraceptive methods?",
+            "answer": "To control population growth, improve the health and standard of living of the family, and ensure the mother's health is not compromised by frequent pregnancies.",
+            "key_concepts": ["reproductive health"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Describe the process of 'Budding' in Yeast.",
+            "answer": "A small outgrowth called a 'bud' appears on the body of the parent yeast cell. The nucleus divides and one copy moves into the bud. The bud eventually detaches and matures into a new yeast cell.",
+            "key_concepts": ["budding", "yeast"],
+            "marks": 3,
+            "source_section": "Section 7.2.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is the number of chromosomes kept constant in sexually reproducing organisms?",
+            "answer": "Through a special type of cell division (meiosis) that halves the number of chromosomes in gametes. When the male and female gametes fuse during fertilization, the original chromosome number is restored in the zygote.",
+            "key_concepts": ["meiosis", "chromosome number"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

@@ -1,0 +1,354 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Geometric Twins (Congruence of Triangles)",
+    "generated_at": "2026-03-05T02:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Two objects are said to be congruent if they have the same:",
+            "options": {
+                "A": "Color",
+                "B": "Shape and Size",
+                "C": "Weight",
+                "D": "Name"
+            },
+            "correct_answer": "B",
+            "explanation": "Congruence means identical in all aspects, specifically shape and size.",
+            "difficulty": "easy",
+            "source_section": "Introduction to Congruence"
+        },
+        {
+            "question_number": 2,
+            "question": "Which symbol is used to represent congruence?",
+            "options": {
+                "A": "=",
+                "B": "≈",
+                "C": "≅",
+                "D": "≡"
+            },
+            "correct_answer": "C",
+            "explanation": "The symbol ≅ is the standard mathematical notation for congruence.",
+            "difficulty": "easy",
+            "source_section": "Introduction to Congruence"
+        },
+        {
+            "question_number": 3,
+            "question": "Two line segments are congruent if they have the same:",
+            "options": {
+                "A": "Thickness",
+                "B": "Endpoint names",
+                "C": "Length",
+                "D": "Direction"
+            },
+            "correct_answer": "C",
+            "explanation": "Line segments are congruent if their lengths are equal.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Line Segments"
+        },
+        {
+            "question_number": 4,
+            "question": "Two angles are congruent if they have the same:",
+            "options": {
+                "A": "Vertex name",
+                "B": "Arm length",
+                "C": "Measure (degrees)",
+                "D": "Orientation"
+            },
+            "correct_answer": "C",
+            "explanation": "Angles are congruent if their degree measures are equal.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Angles"
+        },
+        {
+            "question_number": 5,
+            "question": "If △ABC ≅ △PQR, then side AB corresponds to which side?",
+            "options": {
+                "A": "PQ",
+                "B": "QR",
+                "C": "PR",
+                "D": "BC"
+            },
+            "correct_answer": "A",
+            "explanation": "In congruent notation, the order of letters indicates corresponding parts; AB corresponds to PQ.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Triangles"
+        },
+        {
+            "question_number": 6,
+            "question": "The abbreviation SSS stands for:",
+            "options": {
+                "A": "Side-Side-Side",
+                "B": "Square-Square-Square",
+                "C": "Shape-Size-Symmetry",
+                "D": "Side-Slope-Side"
+            },
+            "correct_answer": "A",
+            "explanation": "SSS is the Side-Side-Side congruence criterion.",
+            "difficulty": "easy",
+            "source_section": "Congruence Criteria"
+        },
+        {
+            "question_number": 7,
+            "question": "The abbreviation SAS stands for:",
+            "options": {
+                "A": "Side-Angle-Size",
+                "B": "Side-Angle-Side",
+                "C": "Shape-Angle-Side",
+                "D": "Slope-Angle-Slope"
+            },
+            "correct_answer": "B",
+            "explanation": "SAS is the Side-Angle-Side congruence criterion.",
+            "difficulty": "easy",
+            "source_section": "Congruence Criteria"
+        },
+        {
+            "question_number": 8,
+            "question": "In SAS congruence, the angle must be:",
+            "options": {
+                "A": "Any angle",
+                "B": "The largest angle",
+                "C": "The included angle between the two sides",
+                "D": "The smallest angle"
+            },
+            "correct_answer": "C",
+            "explanation": "SAS requires the angle to be the one formed by the two known sides.",
+            "difficulty": "easy",
+            "source_section": "SAS Criterion"
+        },
+        {
+            "question_number": 9,
+            "question": "The abbreviation ASA stands for:",
+            "options": {
+                "A": "Angle-Side-Angle",
+                "B": "Angle-Shape-Angle",
+                "C": "Angle-Slope-Angle",
+                "D": "Area-Side-Area"
+            },
+            "correct_answer": "A",
+            "explanation": "ASA is the Angle-Side-Angle congruence criterion.",
+            "difficulty": "easy",
+            "source_section": "Congruence Criteria"
+        },
+        {
+            "question_number": 10,
+            "question": "The RHS congruence criterion applies to which type of triangles?",
+            "options": {
+                "A": "Equilateral triangles",
+                "B": "Isosceles triangles",
+                "C": "Right-angled triangles",
+                "D": "Obtuse-angled triangles"
+            },
+            "correct_answer": "C",
+            "explanation": "RHS stands for Right angle-Hypotenuse-Side.",
+            "difficulty": "easy",
+            "source_section": "RHS Criterion"
+        },
+        {
+            "question_number": 11,
+            "question": "In RHS congruence, 'H' stands for:",
+            "options": {
+                "A": "Height",
+                "B": "Horizontal",
+                "C": "Hypotenuse",
+                "D": "Half"
+            },
+            "correct_answer": "C",
+            "explanation": "The hypotenuse is the longest side of a right-angled triangle.",
+            "difficulty": "easy",
+            "source_section": "RHS Criterion"
+        },
+        {
+            "question_number": 12,
+            "question": "If two squares have the same side length, they are:",
+            "options": {
+                "A": "Only similar",
+                "B": "Congruent",
+                "C": "Unequal",
+                "D": "Different shapes"
+            },
+            "correct_answer": "B",
+            "explanation": "Since all angles in a square are 90°, equal sides ensure identical shape and size.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Shapes"
+        },
+        {
+            "question_number": 13,
+            "question": "Two circles are congruent if they have the same:",
+            "options": {
+                "A": "Center point",
+                "B": "Radius",
+                "C": "Color",
+                "D": "Circumference only"
+            },
+            "correct_answer": "B",
+            "explanation": "Equal radii ensure that two circles are identical in size.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Circles"
+        },
+        {
+            "question_number": 14,
+            "question": "If △XYZ ≅ △LMN, which angle corresponds to ∠Y?",
+            "options": {
+                "A": "∠L",
+                "B": "∠M",
+                "C": "∠N",
+                "D": "∠X"
+            },
+            "correct_answer": "B",
+            "explanation": "Y is the second letter, so it corresponds to M, the second letter in LMN.",
+            "difficulty": "easy",
+            "source_section": "Congruence Notation"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following is NOT a congruence criterion for triangles?",
+            "options": {
+                "A": "SSS",
+                "B": "SAS",
+                "C": "AAA",
+                "D": "ASA"
+            },
+            "correct_answer": "C",
+            "explanation": "AAA (Angle-Angle-Angle) proves similarity, not necessarily congruence.",
+            "difficulty": "easy",
+            "source_section": "Congruence Criteria"
+        },
+        {
+            "question_number": 16,
+            "question": "If all three sides of one triangle are equal to the corresponding three sides of another, the triangles are congruent by:",
+            "options": {
+                "A": "SAS",
+                "B": "SSS",
+                "C": "ASA",
+                "D": "RHS"
+            },
+            "correct_answer": "B",
+            "explanation": "The Side-Side-Side criterion uses the lengths of all three sides.",
+            "difficulty": "easy",
+            "source_section": "SSS Criterion"
+        },
+        {
+            "question_number": 17,
+            "question": "CPCT stands for:",
+            "options": {
+                "A": "Common Parts of Congruent Triangles",
+                "B": "Corresponding Parts of Congruent Triangles",
+                "C": "Calculated Parts of Congruent Triangles",
+                "D": "Congruent Parts of Common Triangles"
+            },
+            "correct_answer": "B",
+            "explanation": "CPCT means if triangles are congruent, their corresponding parts are equal.",
+            "difficulty": "easy",
+            "source_section": "CPCT"
+        },
+        {
+            "question_number": 18,
+            "question": "Two rectangles are congruent if they have the same:",
+            "options": {
+                "A": "Perimeter",
+                "B": "Area",
+                "C": "Length and Breadth",
+                "D": "Diagonal length only"
+            },
+            "correct_answer": "C",
+            "explanation": "Identical dimensions (length and breadth) make rectangles congruent.",
+            "difficulty": "easy",
+            "source_section": "Congruence of Shapes"
+        },
+        {
+            "question_number": 19,
+            "question": "If the hypotenuse and one side of a right triangle are equal to the hypotenuse and one side of another right triangle, they are congruent by:",
+            "options": {
+                "A": "SSS",
+                "B": "ASA",
+                "C": "SAS",
+                "D": "RHS"
+            },
+            "correct_answer": "D",
+            "explanation": "This is the definition of the Right-angle Hypotenuse Side criterion.",
+            "difficulty": "easy",
+            "source_section": "RHS Criterion"
+        },
+        {
+            "question_number": 20,
+            "question": "True or False: Congruent figures are always similar.",
+            "options": {
+                "A": "True",
+                "B": "False"
+            },
+            "correct_answer": "A",
+            "explanation": "Congruent figures have the same shape, which is the requirement for similarity.",
+            "difficulty": "easy",
+            "source_section": "General Concepts"
+        },
+        {
+            "question_number": 21,
+            "question": "True or False: Similar figures are always congruent.",
+            "options": {
+                "A": "True",
+                "B": "False"
+            },
+            "correct_answer": "B",
+            "explanation": "Similar figures have the same shape but can have different sizes.",
+            "difficulty": "easy",
+            "source_section": "General Concepts"
+        },
+        {
+            "question_number": 22,
+            "question": "If ∠A = ∠P, ∠B = ∠Q and side AB = PQ, the triangles are congruent by:",
+            "options": {
+                "A": "SSS",
+                "B": "SAS",
+                "C": "ASA",
+                "D": "RHS"
+            },
+            "correct_answer": "C",
+            "explanation": "Two angles and the included side make them congruent by ASA.",
+            "difficulty": "easy",
+            "source_section": "ASA Criterion"
+        },
+        {
+            "question_number": 23,
+            "question": "The word 'Congruent' is derived from a Latin word meaning:",
+            "options": {
+                "A": "To measure",
+                "B": "To agree",
+                "C": "To draw",
+                "D": "To see"
+            },
+            "correct_answer": "B",
+            "explanation": "Congruere means 'to agree' or 'to coincide'.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 24,
+            "question": "In a triangle, the side opposite the right angle is called:",
+            "options": {
+                "A": "Base",
+                "B": "Perpendicular",
+                "C": "Hypotenuse",
+                "D": "Median"
+            },
+            "correct_answer": "C",
+            "explanation": "The hypotenuse is the longest side and is always opposite the 90° angle.",
+            "difficulty": "easy",
+            "source_section": "RHS Criterion"
+        },
+        {
+            "question_number": 25,
+            "question": "If △ABC ≅ △FED, then ∠C corresponds to:",
+            "options": {
+                "A": "∠F",
+                "B": "∠E",
+                "C": "∠D",
+                "D": "∠A"
+            },
+            "correct_answer": "C",
+            "explanation": "C is the third letter in ABC, so it corresponds to D, the third letter in FED.",
+            "difficulty": "easy",
+            "source_section": "Congruence Notation"
+        }
+    ]
+}

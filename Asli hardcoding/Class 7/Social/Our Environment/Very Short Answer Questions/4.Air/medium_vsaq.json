@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: AIR",
+    "generated_at": "2026-03-07T18:24:10",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How do plants absorb nitrogen since they cannot take it directly from the air?",
+            "answer": "Bacteria that live in the soil and roots of some plants take nitrogen from the air and change its form so that plants can use it.",
+            "key_concepts": ["nitrogen fixation"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the concept of 'Global Warming' as mentioned in the text.",
+            "answer": "When the level of $CO_2$ increases due to factory smoke or car fumes, the heat retained increases the temperature of the earth.",
+            "key_concepts": ["global warming"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does the amount of insolation decrease from the equator towards the poles?",
+            "answer": "Because the sun's rays fall vertically at the equator and hit the poles at a slant, spreading over a larger area with less intensity.",
+            "key_concepts": ["insolation distribution"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the relationship between air temperature and air pressure.",
+            "answer": "In areas where temperature is high, air gets heated and rises, creating a low-pressure area; cool air is heavy and sinks, creating high pressure.",
+            "key_concepts": ["pressure-temperature link"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the function of the Ionosphere in the Thermosphere?",
+            "answer": "It helps in radio transmission as radio waves transmitted from the earth are reflected back to the earth by this layer.",
+            "key_concepts": ["radio transmission"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Distinguish between 'Permanent winds' and 'Seasonal winds'.",
+            "answer": "Permanent winds blow constantly throughout the year (e.g. Trade winds), while Seasonal winds change direction in different seasons (e.g. Monsoons).",
+            "key_concepts": ["wind types"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is the Troposphere considered the most vital layer of the atmosphere?",
+            "answer": "It is the layer where the air we breathe exists and where all weather phenomena like rain, fog, and hailstorms take place.",
+            "key_concepts": ["atmospheric layers"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how clouds are formed.",
+            "answer": "When water vapor rises, it starts cooling; it condenses to form droplets of water, and masses of such water droplets form clouds.",
+            "key_concepts": ["condensation"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the significance of the Ozone layer found in the Stratosphere?",
+            "answer": "It protects all living beings from the harmful effects of the ultraviolet rays coming from the sun.",
+            "key_concepts": ["protection"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why do we feel uncomfortable on a humid day?",
+            "answer": "On a humid day, the air is full of water vapor, so sweat from our body does not evaporate easily, making us feel sticky.",
+            "key_concepts": ["humidity"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Define 'Loo' and its classification as a wind.",
+            "answer": "Loo is a hot and dry local wind of the northern plains of India that blows during a particular period of the day.",
+            "key_concepts": ["local winds"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to the air pressure as we go up in the layers of the atmosphere?",
+            "answer": "The air pressure decreases rapidly as we go up; it is highest at sea level and lowest at higher altitudes.",
+            "key_concepts": ["vertical pressure"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "How is 'Cyclonic Rainfall' different from other types?",
+            "answer": "It occurs when a warm air mass and a cold air mass meet, causing the warm air to rise over the cold air and cool down.",
+            "key_concepts": ["rainfall types"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do cities have higher temperatures than villages?",
+            "answer": "Concrete and metals in buildings and the asphalts of roads get heated up during the day and trap heat, increasing the temperature.",
+            "key_concepts": ["urban heat"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the importance of the Mesosphere in space exploration?",
+            "answer": "It protects the earth from meteorites as they burn up in this layer upon entering from space.",
+            "key_concepts": ["protection"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why plants and animals would not survive without the atmosphere.",
+            "answer": "The atmosphere provides the air for breathing, protection from solar radiation, and maintains a livable temperature.",
+            "key_concepts": ["survival"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What does a 'Wind Vane' show?",
+            "answer": "It is an instrument used to show the direction of the wind.",
+            "key_concepts": ["meteorological instruments"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the Stratosphere considered the ideal layer for flying aeroplanes?",
+            "answer": "It is almost free from clouds and associated weather phenomena, providing a stable environment for flight.",
+            "key_concepts": ["aviation"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the role of 'Carbon dioxide' in maintaining the Earth's temperature.",
+            "answer": "It acts as a greenhouse gas by trapping the heat radiated from the earth, preventing the planet from becoming too cold.",
+            "key_concepts": ["greenhouse effect"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is 'Orographic Rainfall'?",
+            "answer": "It occurs when moist air is forced to rise over a mountain range, cooling down and causing precipitation.",
+            "key_concepts": ["relief rainfall"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do astronauts have to wear special protective space suits filled with air?",
+            "answer": "Because there is no air pressure on the moon, and without suits, the counter-pressure of their bodies would cause blood vessels to burst.",
+            "key_concepts": ["air pressure"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Describe the composition of the 'Exosphere'.",
+            "answer": "It is the uppermost layer with very thin air; light gases like helium and hydrogen float into space from here.",
+            "key_concepts": ["layers"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does the 'Rain Gauge' help meteorologists?",
+            "answer": "It is an instrument specifically used to measure the amount of rainfall over a period of time.",
+            "key_concepts": ["measurement"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What creates a 'Low Pressure' area?",
+            "answer": "When air is heated, it expands, becomes lighter, and rises, which reduces the weight of air over that area.",
+            "key_concepts": ["cyclonic conditions"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do we see a white trail behind jet planes flying in the sky?",
+            "answer": "The moisture from the engines condenses; we see the trail because there is no air movement to disturb the condensed moisture.",
+            "key_concepts": ["condensation"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        }
+    ]
+}

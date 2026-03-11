@@ -1,0 +1,264 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: Forest and Wildlife Resources",
+  "generated_at": "2026-03-11T13:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define biodiversity and explain its importance for human life.",
+      "answer": "Biodiversity refers to the variety of plants, animals, and microorganisms found in a region. It is important because it maintains ecological balance and provides resources such as food, medicine, and oxygen.",
+      "answer_outline": [
+        "Definition of biodiversity",
+        "Examples of biodiversity",
+        "Importance for humans"
+      ],
+      "key_concepts": ["biodiversity"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the relationship between humans and biodiversity.",
+      "answer": "Humans depend on biodiversity for resources like food, air, water, and medicine. Plants, animals, and microorganisms maintain the quality of air, water, and soil essential for survival.",
+      "answer_outline": [
+        "Human dependence on nature",
+        "Role of ecosystems",
+        "Examples"
+      ],
+      "key_concepts": ["human dependence on biodiversity"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the importance of forests in maintaining ecological balance.",
+      "answer": "Forests maintain ecological balance by supporting wildlife habitats, regulating climate, conserving soil and water, and producing oxygen.",
+      "answer_outline": ["Role of forests", "Ecological balance", "Examples"],
+      "key_concepts": ["forests", "ecosystem"],
+      "marks": 5,
+      "source_section": "Flora and Fauna in India"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain why conservation of forests and wildlife is necessary.",
+      "answer": "Conservation is necessary to protect biodiversity, maintain ecological balance, preserve genetic diversity, and ensure sustainable resources for future generations.",
+      "answer_outline": [
+        "Meaning of conservation",
+        "Reasons for conservation",
+        "Benefits"
+      ],
+      "key_concepts": ["conservation"],
+      "marks": 5,
+      "source_section": "Conservation of Forest and Wildlife in India"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the Wildlife Protection Act of 1972 and its significance.",
+      "answer": "The Wildlife Protection Act of 1972 was introduced to protect endangered species and regulate hunting and wildlife trade. It also helped establish national parks and wildlife sanctuaries.",
+      "answer_outline": [
+        "Year of implementation",
+        "Objectives of the act",
+        "Impact on wildlife protection"
+      ],
+      "key_concepts": ["Wildlife Protection Act"],
+      "marks": 5,
+      "source_section": "Wildlife Protection Measures"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the objectives of Project Tiger.",
+      "answer": "Project Tiger was launched in 1973 to protect the declining population of tigers and preserve their habitats through the creation of tiger reserves.",
+      "answer_outline": [
+        "Reason for launch",
+        "Objectives",
+        "Conservation methods"
+      ],
+      "key_concepts": ["Project Tiger"],
+      "marks": 5,
+      "source_section": "Project Tiger"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the major threats to tiger populations.",
+      "answer": "The major threats include poaching, loss of habitat, illegal wildlife trade, and depletion of prey species.",
+      "answer_outline": ["Poaching", "Habitat loss", "Illegal trade"],
+      "key_concepts": ["tiger conservation"],
+      "marks": 4,
+      "source_section": "Project Tiger"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how national parks and wildlife sanctuaries help protect biodiversity.",
+      "answer": "National parks and wildlife sanctuaries provide protected habitats where animals and plants can survive without human interference.",
+      "answer_outline": ["Definition", "Protection role", "Examples"],
+      "key_concepts": ["protected areas"],
+      "marks": 4,
+      "source_section": "Wildlife Protection Measures"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the classification of forests in India.",
+      "answer": "Forests in India are classified as reserved forests, protected forests, and unclassed forests based on ownership and management.",
+      "answer_outline": [
+        "Reserved forests",
+        "Protected forests",
+        "Unclassed forests"
+      ],
+      "key_concepts": ["forest classification"],
+      "marks": 5,
+      "source_section": "Types and Distribution of Forest and Wildlife Resources"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe reserved forests and explain their importance.",
+      "answer": "Reserved forests are areas that are strictly protected by the government and are considered most valuable for conservation of forest resources.",
+      "answer_outline": ["Definition", "Government control", "Importance"],
+      "key_concepts": ["reserved forests"],
+      "marks": 4,
+      "source_section": "Types and Distribution of Forest and Wildlife Resources"
+    },
+    {
+      "question_number": 11,
+      "question": "Describe protected forests and their purpose.",
+      "answer": "Protected forests are forest lands safeguarded by the government to prevent further depletion of forest resources.",
+      "answer_outline": ["Definition", "Protection purpose"],
+      "key_concepts": ["protected forests"],
+      "marks": 4,
+      "source_section": "Types and Distribution of Forest and Wildlife Resources"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain what unclassed forests are.",
+      "answer": "Unclassed forests include forests and wastelands belonging to government, private individuals, or communities.",
+      "answer_outline": ["Definition", "Ownership"],
+      "key_concepts": ["unclassed forests"],
+      "marks": 4,
+      "source_section": "Types and Distribution of Forest and Wildlife Resources"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how community participation helps in forest conservation.",
+      "answer": "Local communities protect forests because their livelihoods depend on them. Community involvement ensures better management and protection of resources.",
+      "answer_outline": ["Role of local communities", "Benefits"],
+      "key_concepts": ["community conservation"],
+      "marks": 5,
+      "source_section": "Community and Conservation"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the significance of the Chipko Movement.",
+      "answer": "The Chipko Movement was a non-violent protest where villagers hugged trees to prevent them from being cut down, highlighting the importance of forests.",
+      "answer_outline": ["Origin", "Method", "Impact"],
+      "key_concepts": ["Chipko Movement"],
+      "marks": 5,
+      "source_section": "Community and Conservation"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the concept of Joint Forest Management (JFM).",
+      "answer": "Joint Forest Management involves cooperation between local communities and government agencies to protect and manage forests sustainably.",
+      "answer_outline": ["Definition", "Community involvement", "Benefits"],
+      "key_concepts": ["JFM"],
+      "marks": 5,
+      "source_section": "Community and Conservation"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the concept of sacred groves.",
+      "answer": "Sacred groves are forest patches protected by communities due to religious or cultural beliefs.",
+      "answer_outline": ["Definition", "Examples", "Importance"],
+      "key_concepts": ["sacred groves"],
+      "marks": 4,
+      "source_section": "Sacred Groves"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how traditional beliefs help conserve biodiversity.",
+      "answer": "Traditional beliefs often protect certain plants, animals, or forest areas by considering them sacred, preventing exploitation.",
+      "answer_outline": ["Cultural beliefs", "Examples", "Impact"],
+      "key_concepts": ["traditional conservation"],
+      "marks": 4,
+      "source_section": "Sacred Groves"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of involving local communities in conservation.",
+      "answer": "Local communities have traditional knowledge and direct dependence on forests, making them effective partners in conservation.",
+      "answer_outline": ["Local knowledge", "Sustainable practices"],
+      "key_concepts": ["community participation"],
+      "marks": 4,
+      "source_section": "Community and Conservation"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how biodiversity contributes to agricultural development.",
+      "answer": "Genetic diversity in plants helps improve crop varieties and increases agricultural productivity.",
+      "answer_outline": ["Genetic diversity", "Agricultural benefits"],
+      "key_concepts": ["genetic diversity"],
+      "marks": 4,
+      "source_section": "Conservation of Forest and Wildlife in India"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the role of forests in maintaining soil and water resources.",
+      "answer": "Forests prevent soil erosion, regulate water cycles, and maintain soil fertility.",
+      "answer_outline": ["Soil conservation", "Water regulation"],
+      "key_concepts": ["soil conservation"],
+      "marks": 4,
+      "source_section": "Flora and Fauna in India"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the relationship between biodiversity conservation and sustainable development.",
+      "answer": "Conservation ensures resources are used responsibly so that future generations can also benefit from them.",
+      "answer_outline": [
+        "Sustainable resource use",
+        "Long-term environmental balance"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 5,
+      "source_section": "Community and Conservation"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the role of national parks in protecting endangered species.",
+      "answer": "National parks provide protected environments where endangered species can survive and reproduce safely.",
+      "answer_outline": ["Protection of habitats", "Examples"],
+      "key_concepts": ["national parks"],
+      "marks": 4,
+      "source_section": "Wildlife Protection Measures"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how deforestation affects biodiversity.",
+      "answer": "Deforestation destroys habitats, leading to decline or extinction of many species.",
+      "answer_outline": ["Habitat destruction", "Species loss"],
+      "key_concepts": ["deforestation"],
+      "marks": 4,
+      "source_section": "Conservation of Forest and Wildlife in India"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain why India is considered rich in biodiversity.",
+      "answer": "India has diverse ecosystems, climates, and habitats that support a wide variety of plants and animals.",
+      "answer_outline": ["Geographical diversity", "Examples"],
+      "key_concepts": ["India biodiversity"],
+      "marks": 5,
+      "source_section": "Flora and Fauna in India"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall importance of forest and wildlife conservation.",
+      "answer": "Forest and wildlife conservation protects biodiversity, maintains ecological balance, and ensures sustainable resources for future generations.",
+      "answer_outline": [
+        "Ecological importance",
+        "Economic importance",
+        "Sustainability"
+      ],
+      "key_concepts": ["conservation"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

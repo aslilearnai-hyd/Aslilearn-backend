@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Exploring Forces",
+  "difficulty": "Medium",
+  "source_pdf": "hecu105.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Measuring Force with a Spring Balance",
+      "objective": "Learn how to measure force using a spring balance",
+      "materials": [
+        "Spring balance",
+        "Small objects (eraser, pencil box, stone)",
+        "Notebook"
+      ],
+      "steps": [
+        "Suspend different objects using a spring balance",
+        "Record the force shown on the scale",
+        "Compare the forces for different objects"
+      ],
+      "learning_outcome": "Understands measurement of force",
+      "evaluation": "Accuracy of recorded measurements (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Friction Comparison Investigation",
+      "objective": "Investigate how friction depends on surfaces",
+      "materials": [
+        "Toy car",
+        "Glass surface",
+        "Wood surface",
+        "Sandpaper",
+        "Notebook"
+      ],
+      "steps": [
+        "Roll the toy car on each surface",
+        "Measure the distance travelled",
+        "Compare which surface produces more friction"
+      ],
+      "learning_outcome": "Understands the effect of surface roughness on friction",
+      "evaluation": "Correct data comparison (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Contact vs Non-Contact Force Study",
+      "objective": "Distinguish between contact and non-contact forces",
+      "materials": ["Magnet", "Paper clips", "Notebook"],
+      "steps": [
+        "Use a magnet to attract paper clips without touching them",
+        "Push a book across a table",
+        "Classify the forces observed"
+      ],
+      "learning_outcome": "Differentiates types of forces",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Investigating Air Resistance",
+      "objective": "Understand the effect of air resistance",
+      "materials": ["Two sheets of paper", "Notebook"],
+      "steps": [
+        "Drop a flat sheet of paper and a crumpled sheet together",
+        "Observe which reaches the ground first",
+        "Explain the role of air resistance"
+      ],
+      "learning_outcome": "Understands air resistance as a type of friction",
+      "evaluation": "Scientific explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Balanced and Unbalanced Forces Experiment",
+      "objective": "Understand balanced and unbalanced forces",
+      "materials": ["Rope", "Two students", "Notebook"],
+      "steps": [
+        "Two students pull a rope with equal force",
+        "Observe that the rope does not move",
+        "Then one student pulls harder and observe movement"
+      ],
+      "learning_outcome": "Understands balanced and unbalanced forces",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Gravity and Mass Investigation",
+      "objective": "Explore how gravity affects objects of different mass",
+      "materials": ["Two balls of different mass", "Stopwatch", "Notebook"],
+      "steps": [
+        "Drop both balls from the same height",
+        "Observe which reaches the ground first",
+        "Record and explain the result"
+      ],
+      "learning_outcome": "Understands gravitational force",
+      "evaluation": "Observation and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Buoyancy Experiment",
+      "objective": "Investigate floating and sinking",
+      "materials": ["Water container", "Plastic bottle", "Stone", "Wood piece"],
+      "steps": [
+        "Place each object in water",
+        "Observe which objects float and which sink",
+        "Explain the role of buoyant force"
+      ],
+      "learning_outcome": "Understands buoyant force and density concept",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Magnetic Force Distance Study",
+      "objective": "Study how magnetic force changes with distance",
+      "materials": ["Magnet", "Paper clips", "Ruler"],
+      "steps": [
+        "Place paper clips at different distances from the magnet",
+        "Observe at what distance attraction occurs",
+        "Record the results"
+      ],
+      "learning_outcome": "Understands how magnetic force varies with distance",
+      "evaluation": "Accurate observations (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Design a Friction Reduction Model",
+      "objective": "Explore ways to reduce friction in machines",
+      "materials": ["Toy wheels", "Board", "Oil or lubricant"],
+      "steps": [
+        "Move the wheel on a board without lubricant",
+        "Apply lubricant and repeat",
+        "Compare the movement"
+      ],
+      "learning_outcome": "Understands methods of reducing friction",
+      "evaluation": "Correct comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Force in Real-Life Machines Study",
+      "objective": "Investigate how forces are used in simple machines",
+      "materials": ["Notebook", "Reference material"],
+      "steps": [
+        "Identify three machines such as bicycle, pulley, or lever",
+        "Explain how force is applied in each",
+        "Describe how it makes work easier"
+      ],
+      "learning_outcome": "Connects force concepts to real machines",
+      "evaluation": "Quality of explanation (10 marks)"
+    }
+  ]
+}

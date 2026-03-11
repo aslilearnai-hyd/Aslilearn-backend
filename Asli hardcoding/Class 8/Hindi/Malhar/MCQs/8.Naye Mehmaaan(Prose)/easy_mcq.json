@@ -1,0 +1,362 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Naye Mehmaan",
+  "generated_at": "2026-03-08T05:20:00",
+  "difficulty": "easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "‘नए मेहमान’ पाठ में मुख्य रूप से किसका वर्णन किया गया है?",
+      "options": {
+        "A": "पक्षियों का",
+        "B": "नए आए मेहमानों का",
+        "C": "खेल का",
+        "D": "यात्रा का"
+      },
+      "correct_answer": "B",
+      "explanation": "पाठ में घर में आए नए मेहमानों का वर्णन किया गया है।",
+      "difficulty": "easy",
+      "source_section": "पाठ का परिचय"
+    },
+    {
+      "question_number": 2,
+      "question": "‘नए मेहमान’ पाठ किस प्रकार की रचना है?",
+      "options": {
+        "A": "कहानी",
+        "B": "कविता",
+        "C": "नाटक",
+        "D": "पत्र"
+      },
+      "correct_answer": "A",
+      "explanation": "यह एक कहानी के रूप में लिखी गई रचना है।",
+      "difficulty": "easy",
+      "source_section": "पाठ का प्रकार"
+    },
+    {
+      "question_number": 3,
+      "question": "नए मेहमान घर में आने पर बच्चों की प्रतिक्रिया कैसी थी?",
+      "options": {
+        "A": "खुशी",
+        "B": "डर",
+        "C": "क्रोध",
+        "D": "उदासी"
+      },
+      "correct_answer": "A",
+      "explanation": "बच्चे नए मेहमानों के आने से खुश होते हैं।",
+      "difficulty": "easy",
+      "source_section": "कहानी का प्रसंग"
+    },
+    {
+      "question_number": 4,
+      "question": "‘मेहमान’ शब्द का क्या अर्थ है?",
+      "options": {
+        "A": "अजनबी",
+        "B": "घर आने वाला अतिथि",
+        "C": "मित्र",
+        "D": "शिक्षक"
+      },
+      "correct_answer": "B",
+      "explanation": "मेहमान का अर्थ होता है अतिथि या घर आने वाला व्यक्ति।",
+      "difficulty": "easy",
+      "source_section": "शब्दार्थ"
+    },
+    {
+      "question_number": 5,
+      "question": "नए मेहमानों के आने से घर में कैसा वातावरण बन गया?",
+      "options": {
+        "A": "खुशहाल",
+        "B": "शांत",
+        "C": "उदास",
+        "D": "डरावना"
+      },
+      "correct_answer": "A",
+      "explanation": "नए मेहमानों के आने से घर में खुशी का माहौल बन गया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 6,
+      "question": "कहानी में मेहमानों के साथ कैसा व्यवहार करना चाहिए?",
+      "options": {
+        "A": "सम्मानपूर्वक",
+        "B": "क्रोध से",
+        "C": "उदासी से",
+        "D": "डर से"
+      },
+      "correct_answer": "A",
+      "explanation": "मेहमानों के साथ सम्मानपूर्वक व्यवहार करना चाहिए।",
+      "difficulty": "easy",
+      "source_section": "कहानी की शिक्षा"
+    },
+    {
+      "question_number": 7,
+      "question": "‘नए मेहमान’ पाठ हमें किस मूल्य की शिक्षा देता है?",
+      "options": {
+        "A": "अतिथि सत्कार",
+        "B": "क्रोध",
+        "C": "डर",
+        "D": "अहंकार"
+      },
+      "correct_answer": "A",
+      "explanation": "यह पाठ अतिथि सत्कार का महत्व बताता है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का संदेश"
+    },
+    {
+      "question_number": 8,
+      "question": "मेहमानों के आने से बच्चों को क्या अनुभव हुआ?",
+      "options": {
+        "A": "खुशी",
+        "B": "भय",
+        "C": "क्रोध",
+        "D": "उदासी"
+      },
+      "correct_answer": "A",
+      "explanation": "बच्चों को नए मेहमानों के आने से खुशी हुई।",
+      "difficulty": "easy",
+      "source_section": "कहानी का प्रसंग"
+    },
+    {
+      "question_number": 9,
+      "question": "कहानी में परिवार के सदस्यों ने मेहमानों के साथ कैसा व्यवहार किया?",
+      "options": {
+        "A": "सम्मानजनक",
+        "B": "रूखा",
+        "C": "क्रोधित",
+        "D": "डरपोक"
+      },
+      "correct_answer": "A",
+      "explanation": "परिवार ने मेहमानों का सम्मानपूर्वक स्वागत किया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 10,
+      "question": "कहानी में किस भावना को दर्शाया गया है?",
+      "options": {
+        "A": "अतिथि प्रेम",
+        "B": "घृणा",
+        "C": "क्रोध",
+        "D": "भय"
+      },
+      "correct_answer": "A",
+      "explanation": "कहानी में अतिथि प्रेम की भावना दिखाई गई है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का संदेश"
+    },
+
+    {
+      "question_number": 11,
+      "question": "‘नए मेहमान’ पाठ का मुख्य विषय क्या है?",
+      "options": {
+        "A": "अतिथि सत्कार",
+        "B": "खेल",
+        "C": "युद्ध",
+        "D": "व्यापार"
+      },
+      "correct_answer": "A",
+      "explanation": "पाठ में अतिथि सत्कार का महत्व बताया गया है।",
+      "difficulty": "easy",
+      "source_section": "मुख्य विचार"
+    },
+    {
+      "question_number": 12,
+      "question": "मेहमानों के आने से घर में क्या परिवर्तन हुआ?",
+      "options": {
+        "A": "खुशी",
+        "B": "भय",
+        "C": "झगड़ा",
+        "D": "उदासी"
+      },
+      "correct_answer": "A",
+      "explanation": "मेहमानों के आने से घर का वातावरण खुशहाल हो गया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का प्रसंग"
+    },
+    {
+      "question_number": 13,
+      "question": "कहानी हमें क्या सिखाती है?",
+      "options": {
+        "A": "अतिथियों का सम्मान करना",
+        "B": "अतिथियों से दूर रहना",
+        "C": "अतिथियों से झगड़ा करना",
+        "D": "अतिथियों को नजरअंदाज करना"
+      },
+      "correct_answer": "A",
+      "explanation": "कहानी अतिथि सत्कार की शिक्षा देती है।",
+      "difficulty": "easy",
+      "source_section": "कहानी की शिक्षा"
+    },
+    {
+      "question_number": 14,
+      "question": "नए मेहमानों के प्रति बच्चों का व्यवहार कैसा था?",
+      "options": {
+        "A": "मित्रतापूर्ण",
+        "B": "क्रोधित",
+        "C": "डरपोक",
+        "D": "रूखा"
+      },
+      "correct_answer": "A",
+      "explanation": "बच्चे मेहमानों के साथ मित्रतापूर्ण व्यवहार करते हैं।",
+      "difficulty": "easy",
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 15,
+      "question": "‘मेहमान’ का समानार्थी शब्द क्या है?",
+      "options": {
+        "A": "अतिथि",
+        "B": "शत्रु",
+        "C": "विद्यार्थी",
+        "D": "मित्र"
+      },
+      "correct_answer": "A",
+      "explanation": "मेहमान का समानार्थी शब्द अतिथि है।",
+      "difficulty": "easy",
+      "source_section": "शब्दार्थ"
+    },
+
+    {
+      "question_number": 16,
+      "question": "कहानी में किस भावना को प्रमुखता दी गई है?",
+      "options": {
+        "A": "अतिथि प्रेम",
+        "B": "क्रोध",
+        "C": "भय",
+        "D": "घृणा"
+      },
+      "correct_answer": "A",
+      "explanation": "कहानी में अतिथि प्रेम की भावना दिखाई गई है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का संदेश"
+    },
+    {
+      "question_number": 17,
+      "question": "मेहमानों का स्वागत किस भावना से किया गया?",
+      "options": {
+        "A": "प्रेम",
+        "B": "क्रोध",
+        "C": "डर",
+        "D": "घृणा"
+      },
+      "correct_answer": "A",
+      "explanation": "परिवार ने मेहमानों का स्वागत प्रेम से किया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 18,
+      "question": "कहानी में किस मूल्य की शिक्षा दी गई है?",
+      "options": {
+        "A": "अतिथि सत्कार",
+        "B": "क्रोध",
+        "C": "डर",
+        "D": "अहंकार"
+      },
+      "correct_answer": "A",
+      "explanation": "पाठ हमें अतिथि सत्कार की शिक्षा देता है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का संदेश"
+    },
+    {
+      "question_number": 19,
+      "question": "नए मेहमानों के आने से घर का वातावरण कैसा हो गया?",
+      "options": {
+        "A": "खुशहाल",
+        "B": "उदास",
+        "C": "डरावना",
+        "D": "शांत"
+      },
+      "correct_answer": "A",
+      "explanation": "मेहमानों के आने से घर में खुशी का वातावरण बन गया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का प्रसंग"
+    },
+    {
+      "question_number": 20,
+      "question": "कहानी हमें किस प्रकार का व्यवहार अपनाने की सलाह देती है?",
+      "options": {
+        "A": "सम्मानजनक व्यवहार",
+        "B": "रूखा व्यवहार",
+        "C": "क्रोधित व्यवहार",
+        "D": "डरपोक व्यवहार"
+      },
+      "correct_answer": "A",
+      "explanation": "कहानी अतिथियों के साथ सम्मानजनक व्यवहार की प्रेरणा देती है।",
+      "difficulty": "easy",
+      "source_section": "कहानी की शिक्षा"
+    },
+
+    {
+      "question_number": 21,
+      "question": "‘नए मेहमान’ पाठ का संदेश क्या है?",
+      "options": {
+        "A": "अतिथि का सम्मान करना",
+        "B": "अतिथि से दूर रहना",
+        "C": "अतिथि से झगड़ा करना",
+        "D": "अतिथि को अनदेखा करना"
+      },
+      "correct_answer": "A",
+      "explanation": "पाठ का मुख्य संदेश अतिथि का सम्मान करना है।",
+      "difficulty": "easy",
+      "source_section": "मुख्य विचार"
+    },
+    {
+      "question_number": 22,
+      "question": "मेहमानों के आने से बच्चों को क्या मिला?",
+      "options": {
+        "A": "खुशी",
+        "B": "डर",
+        "C": "क्रोध",
+        "D": "उदासी"
+      },
+      "correct_answer": "A",
+      "explanation": "बच्चों को मेहमानों के आने से खुशी मिली।",
+      "difficulty": "easy",
+      "source_section": "कहानी का प्रसंग"
+    },
+    {
+      "question_number": 23,
+      "question": "कहानी में परिवार ने मेहमानों के प्रति क्या दिखाया?",
+      "options": {
+        "A": "सम्मान",
+        "B": "क्रोध",
+        "C": "भय",
+        "D": "घृणा"
+      },
+      "correct_answer": "A",
+      "explanation": "परिवार ने मेहमानों के प्रति सम्मान दिखाया।",
+      "difficulty": "easy",
+      "source_section": "कहानी का वर्णन"
+    },
+    {
+      "question_number": 24,
+      "question": "‘नए मेहमान’ पाठ में किस भावना को महत्व दिया गया है?",
+      "options": {
+        "A": "प्रेम और सम्मान",
+        "B": "क्रोध",
+        "C": "भय",
+        "D": "अहंकार"
+      },
+      "correct_answer": "A",
+      "explanation": "पाठ में प्रेम और सम्मान की भावना को महत्व दिया गया है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का संदेश"
+    },
+    {
+      "question_number": 25,
+      "question": "‘नए मेहमान’ पाठ हमें क्या सीख देता है?",
+      "options": {
+        "A": "अतिथि देवो भवः",
+        "B": "अतिथि से दूर रहना",
+        "C": "अतिथि से झगड़ा करना",
+        "D": "अतिथि को अनदेखा करना"
+      },
+      "correct_answer": "A",
+      "explanation": "यह पाठ ‘अतिथि देवो भवः’ की भावना को सिखाता है।",
+      "difficulty": "easy",
+      "source_section": "कहानी का निष्कर्ष"
+    }
+  ]
+}

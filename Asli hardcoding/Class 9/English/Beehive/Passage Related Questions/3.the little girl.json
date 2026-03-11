@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 3: The Little Girl",
+    "title": "Extended Reading Passages with Questions – The Little Girl",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "The story introduces a little girl who is curious, imaginative, and full of life. She notices small details in her surroundings and often asks questions about them.",
+            "questions": [
+                "Who is the main character?",
+                "What are the characteristics of the little girl?",
+                "What does she notice in her surroundings?",
+                "How is her curiosity shown?",
+                "Is the little girl imaginative?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "She lives in a household where adults are busy with work and daily routines. Sometimes she feels ignored but continues exploring and imagining.",
+            "questions": [
+                "What is the atmosphere at home?",
+                "Why does she feel ignored?",
+                "How do adults behave around her?",
+                "Does she stop exploring?",
+                "How does she spend her time?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "The little girl is observant and notices people’s expressions, the changing seasons, and small happenings in her neighborhood. She connects with her environment deeply.",
+            "questions": [
+                "What does she observe?",
+                "How does she notice people?",
+                "What changes in nature does she see?",
+                "Does she care about her surroundings?",
+                "How connected is she with her environment?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Her imagination allows her to create stories, dream about adventures, and make ordinary things seem extraordinary. She often talks about her thoughts and ideas with others.",
+            "questions": [
+                "How does she use her imagination?",
+                "What kind of stories does she create?",
+                "Does she dream about adventures?",
+                "How does she view ordinary things?",
+                "Does she share her ideas with others?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "The little girl sometimes faces challenges in understanding adult behavior and rules. However, she learns slowly and adapts to situations with patience and curiosity.",
+            "questions": [
+                "What challenges does she face?",
+                "How does she react to adult rules?",
+                "Does she understand everything immediately?",
+                "How does she adapt?",
+                "What traits help her deal with challenges?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "Her interactions with family members and neighbors reflect kindness, empathy, and honesty. She asks questions politely and responds thoughtfully.",
+            "questions": [
+                "How does she interact with others?",
+                "What qualities are shown in her interactions?",
+                "Does she show empathy?",
+                "Is she honest?",
+                "How does she ask questions?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "The story emphasizes the innocence and purity of the little girl. Her thoughts are simple yet insightful, and she sees the world in a unique way.",
+            "questions": [
+                "What qualities of the little girl are emphasized?",
+                "Are her thoughts complex or simple?",
+                "Does she have unique perspectives?",
+                "How is her innocence shown?",
+                "How is her purity reflected?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Through the little girl, the story highlights the beauty of childhood curiosity and the learning that comes from observation and experience.",
+            "questions": [
+                "What does the story highlight about childhood?",
+                "How does curiosity play a role?",
+                "How does the little girl learn?",
+                "What is the importance of observation?",
+                "Does experience help her grow?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "The narrative is filled with descriptions of her small adventures, imaginative play, and thoughtful reflections. This helps readers understand the little girl’s personality and perspective.",
+            "questions": [
+                "What does the narrative describe?",
+                "What kind of play does she engage in?",
+                "How does the story reveal her thoughts?",
+                "What is learned about her personality?",
+                "Does the story show her perspective clearly?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Overall, 'The Little Girl' teaches readers to appreciate curiosity, imagination, kindness, and the simple joys of childhood. It encourages observing the world carefully and learning from it.",
+            "questions": [
+                "What is the overall lesson of the story?",
+                "Which qualities are emphasized?",
+                "How does the story encourage observation?",
+                "What does the story say about imagination?",
+                "Why are simple joys important?"
+            ]
+        }
+    ]
+}

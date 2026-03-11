@@ -1,0 +1,178 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Triangles",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the properties of triangles",
+        "Classify triangles by sides and angles",
+        "Learn triangle inequality theorem",
+        "Understand congruence of triangles",
+        "Apply Pythagoras theorem in right-angled triangles",
+        "Calculate perimeter and area of triangles"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Triangles",
+            "topics_covered": [
+                "Definition of a triangle",
+                "Parts of a triangle: sides, vertices, angles",
+                "Real-life examples"
+            ],
+            "teaching_strategy": [
+                "Discussion with real-life examples",
+                "Drawing triangles on board"
+            ],
+            "student_activities": [
+                "Draw different triangles in notebook",
+                "Label sides, vertices, and angles"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Check drawings and labels"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Types of Triangles",
+            "topics_covered": [
+                "Classification by sides: equilateral, isosceles, scalene",
+                "Classification by angles: acute, right, obtuse"
+            ],
+            "teaching_strategy": [
+                "Board demonstration",
+                "Student participation in identifying types"
+            ],
+            "student_activities": [
+                "Draw examples of each type",
+                "Classify given triangles"
+            ],
+            "assessment": [
+                "Notebook check",
+                "MCQs on triangle types"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Triangle Inequality Theorem",
+            "topics_covered": [
+                "Statement of theorem",
+                "Explanation with examples",
+                "Application in verifying triangle sides"
+            ],
+            "teaching_strategy": [
+                "Step-by-step demonstration",
+                "Use of models if available"
+            ],
+            "student_activities": [
+                "Check if sets of given sides can form a triangle",
+                "Practice problems on board"
+            ],
+            "assessment": [
+                "Short written exercises",
+                "Peer verification of answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Congruence of Triangles",
+            "topics_covered": [
+                "Definition of congruence",
+                "Criteria: SSS, SAS, ASA, RHS",
+                "Application in problem solving"
+            ],
+            "teaching_strategy": [
+                "Step-by-step proof of criteria",
+                "Use of diagrams"
+            ],
+            "student_activities": [
+                "Identify congruent triangles in figures",
+                "Solve simple congruence problems"
+            ],
+            "assessment": [
+                "MCQs",
+                "Notebook exercises"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Pythagoras Theorem",
+            "topics_covered": [
+                "Statement of theorem",
+                "Right-angled triangle application",
+                "Finding missing side lengths"
+            ],
+            "teaching_strategy": [
+                "Board proof demonstration",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Calculate hypotenuse or base using theorem",
+                "Draw right-angled triangles for practice"
+            ],
+            "assessment": [
+                "Short exercises",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Perimeter and Area of Triangles",
+            "topics_covered": [
+                "Perimeter: sum of sides",
+                "Area: using base × height / 2",
+                "Introduction to Heron’s formula"
+            ],
+            "teaching_strategy": [
+                "Demonstration with examples",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Calculate perimeter and area of given triangles",
+                "Practice Heron’s formula examples"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Class exercises"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Chapter Wrap-up",
+            "topics_covered": [
+                "Summary of triangle properties",
+                "Types, congruence, Pythagoras, perimeter, area",
+                "Common mistakes and tips"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Problem-solving on board"
+            ],
+            "student_activities": [
+                "Group quiz on chapter",
+                "Solve revision worksheets"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Mathematics Textbook",
+        "Rulers, Protractors"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Short answer tests",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Focus on triangle inequality and congruence criteria, as they form the foundation for problem solving in higher classes."
+}

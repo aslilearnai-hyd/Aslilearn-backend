@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 4: Structure of the Atom",
+    "generated_at": "2026-03-06T19:02:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who discovered the electron?",
+            "answer": "J.J. Thomson discovered the electron through his cathode ray tube experiments.",
+            "key_points": ["J.J. Thomson", "electron"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which subatomic particle was discovered by E. Goldstein?",
+            "answer": "E. Goldstein discovered the presence of new radiations in a gas discharge, which led to the discovery of protons.",
+            "key_points": ["E. Goldstein", "protons", "canal rays"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are canal rays?",
+            "answer": "Canal rays are positively charged radiations which led to the discovery of another subatomic particle, the proton.",
+            "key_points": ["positively charged", "radiations", "protons"],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Who discovered the nucleus of an atom?",
+            "answer": "Ernest Rutherford discovered the nucleus of an atom through his alpha-particle scattering experiment.",
+            "key_points": ["Rutherford", "nucleus"],
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Name the three subatomic particles of an atom.",
+            "answer": "The three subatomic particles are protons, neutrons, and electrons.",
+            "key_points": ["protons", "neutrons", "electrons"],
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Who discovered the neutron?",
+            "answer": "James Chadwick discovered the neutron in 1932.",
+            "key_points": ["James Chadwick", "neutron"],
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the charge of a neutron?",
+            "answer": "A neutron has no charge; it is electrically neutral.",
+            "key_points": ["neutral", "no charge"],
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Where are protons and neutrons located in an atom?",
+            "answer": "Protons and neutrons are located in the nucleus at the center of the atom.",
+            "key_points": ["nucleus", "center"],
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the maximum number of electrons that can be accommodated in the K shell?",
+            "answer": "The K shell can accommodate a maximum of 2 electrons.",
+            "key_points": ["K shell", "2 electrons"],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the maximum number of electrons in the L shell?",
+            "answer": "The L shell can accommodate a maximum of 8 electrons.",
+            "key_points": ["L shell", "8 electrons"],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "State the formula to find the maximum number of electrons in a shell.",
+            "answer": "The maximum number of electrons is given by the formula $2n^2$, where $n$ is the orbit number.",
+            "key_points": ["2n^2", "orbit number"],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What are valence electrons?",
+            "answer": "The electrons present in the outermost shell of an atom are known as valence electrons.",
+            "key_points": ["outermost shell", "valence electrons"],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Define 'Atomic Number'.",
+            "answer": "Atomic number is the total number of protons present in the nucleus of an atom.",
+            "key_points": ["protons", "identity of element"],
+            "source_section": "Section 4.5.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Define 'Mass Number'.",
+            "answer": "Mass number is the sum of the total number of protons and neutrons present in the nucleus of an atom.",
+            "key_points": ["protons + neutrons", "nucleons"],
+            "source_section": "Section 4.5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What are isotopes?",
+            "answer": "Isotopes are atoms of the same element having the same atomic number but different mass numbers.",
+            "key_points": ["same atomic number", "different mass number"],
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 16,
+            "question": "What are isobars?",
+            "answer": "Isobars are atoms of different elements with different atomic numbers, which have the same mass number.",
+            "key_points": ["same mass number", "different atomic number"],
+            "source_section": "Section 4.6.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which isotope is used in the treatment of goitre?",
+            "answer": "An isotope of iodine is used in the treatment of goitre.",
+            "key_points": ["iodine", "goitre"],
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Which isotope is used in the treatment of cancer?",
+            "answer": "An isotope of cobalt is used in the treatment of cancer.",
+            "key_points": ["cobalt", "cancer"],
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Which model of an atom is similar to a Christmas pudding?",
+            "answer": "Thomson's model of an atom is similar to a Christmas pudding or a watermelon.",
+            "key_points": ["Thomson's model", "Christmas pudding"],
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What are discrete orbits?",
+            "answer": "According to Neils Bohr, discrete orbits are certain special orbits inside the atom where electrons do not radiate energy.",
+            "key_points": ["Neils Bohr", "no energy radiation"],
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the valency of Helium?",
+            "answer": "The valency of Helium is zero because it has a completely filled outermost shell.",
+            "key_points": ["zero", "completely filled"],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "How many neutrons are present in a Hydrogen atom?",
+            "answer": "A normal Hydrogen atom (Protium) has zero neutrons.",
+            "key_points": ["zero", "hydrogen"],
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Name the shells in an atom as proposed by Bohr.",
+            "answer": "The shells are represented by the letters K, L, M, N... or the numbers n = 1, 2, 3, 4...",
+            "key_points": ["K, L, M, N", "energy levels"],
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the octet rule?",
+            "answer": "The octet rule states that atoms are most stable when their outermost shell is completely filled with eight electrons.",
+            "key_points": ["eight electrons", "stability"],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the charge of an alpha particle?",
+            "answer": "An alpha particle has a +2 charge (it is a doubly charged helium ion).",
+            "key_points": ["+2 charge", "helium ion"],
+            "source_section": "Section 4.2.2"
+        }
+    ]
+}

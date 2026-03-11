@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Political Science)",
+  "chapter": "Political Parties",
+  "difficulty": "Hard",
+  "source_pdf": "jess404 (1).pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Case Study of Political Party Functions",
+      "objective": "Analyse how political parties perform democratic functions in real life",
+      "materials": ["Notebook", "Newspaper", "Internet"],
+      "steps": [
+        "Select a recent political event reported in the news",
+        "Identify which political party is involved",
+        "Explain which functions of political parties are visible in the event"
+      ],
+      "learning_outcome": "Students connect textbook theory with real political events",
+      "evaluation": "Depth of analysis and relevance of example (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Study of Party Systems",
+      "objective": "Evaluate the effectiveness of different party systems",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research one country with a two-party system and one with a multiparty system",
+        "Compare political stability and representation in both systems",
+        "Write a conclusion about which system works better and why"
+      ],
+      "learning_outcome": "Students critically evaluate political systems globally",
+      "evaluation": "Logical comparison and justification (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Ideology Analysis of Political Parties",
+      "objective": "Understand ideological differences among major parties",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Select two national political parties in India",
+        "Study their ideology, goals and major policies",
+        "Compare their approaches to national development"
+      ],
+      "learning_outcome": "Students analyse ideological differences in politics",
+      "evaluation": "Quality of comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Role of Opposition Study",
+      "objective": "Evaluate how opposition parties strengthen democracy",
+      "materials": ["Notebook", "News sources"],
+      "steps": [
+        "Find an example where opposition parties criticised government policies",
+        "Explain the issue and the opposition’s arguments",
+        "Evaluate whether the criticism improved democratic accountability"
+      ],
+      "learning_outcome": "Students understand the democratic importance of opposition",
+      "evaluation": "Critical evaluation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Political Party Reform Proposal",
+      "objective": "Design reforms to improve the functioning of political parties",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the main challenges faced by political parties",
+        "Analyse why these problems exist",
+        "Propose at least three reforms and explain their benefits"
+      ],
+      "learning_outcome": "Students develop policy-oriented thinking",
+      "evaluation": "Practicality and clarity of proposed reforms (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Election Campaign Strategy Analysis",
+      "objective": "Understand campaign strategies used by political parties",
+      "materials": ["Notebook", "Internet", "News reports"],
+      "steps": [
+        "Observe recent election campaigns of a political party",
+        "Identify methods used to attract voters",
+        "Evaluate which strategies are most effective"
+      ],
+      "learning_outcome": "Students analyse modern political communication",
+      "evaluation": "Analytical observation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Regional Party Influence Study",
+      "objective": "Examine how state parties influence national politics",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Select a regional party in India",
+        "Study its role in coalition governments",
+        "Explain how regional interests influence national decision-making"
+      ],
+      "learning_outcome": "Students understand the role of regional diversity in politics",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Public Opinion Survey on Political Parties",
+      "objective": "Study citizens’ attitudes toward political parties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Survey at least 10 people about their trust in political parties",
+        "Record reasons for their opinions",
+        "Analyse the results and identify common trends"
+      ],
+      "learning_outcome": "Students learn research and data analysis skills",
+      "evaluation": "Accuracy of survey and interpretation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Political Party Manifesto Study",
+      "objective": "Analyse promises made by political parties during elections",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Collect the election manifesto of a political party",
+        "List major promises made to voters",
+        "Evaluate which promises address major social issues"
+      ],
+      "learning_outcome": "Students understand policy commitments in elections",
+      "evaluation": "Critical evaluation of manifesto (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Design Your Own Political Party",
+      "objective": "Understand democratic party organisation",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Create a fictional political party",
+        "Write its ideology, symbol and key policies",
+        "Explain how your party will avoid the challenges faced by real parties"
+      ],
+      "learning_outcome": "Students apply democratic principles creatively",
+      "evaluation": "Creativity and logical structure (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Making of a Scientist",
+    "title": "Lesson Planner – The Making of a Scientist",
+    "author": "Robert W. Peterson",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse character development",
+        "Understand scientific thinking",
+        "Learn from failure and perseverance",
+        "Improve analytical reading skills",
+        "Apply lesson ideas to life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author and Context",
+            "topics_covered": [
+                "Author background",
+                "Scientific theme"
+            ],
+            "teaching_strategy": [
+                "Lecture",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Note taking"
+            ],
+            "assessment": [
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Curiosity and Childhood",
+            "topics_covered": [
+                "Early interests",
+                "Butterflies"
+            ],
+            "teaching_strategy": [
+                "Reading",
+                "Explanation"
+            ],
+            "student_activities": [
+                "Short answers"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mother’s Role",
+            "topics_covered": [
+                "Support system",
+                "Learning environment"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Paragraph writing"
+            ],
+            "assessment": [
+                "Written task"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Science Fair Experience",
+            "topics_covered": [
+                "Failure",
+                "Learning outcome"
+            ],
+            "teaching_strategy": [
+                "Cause–effect"
+            ],
+            "student_activities": [
+                "Group discussion"
+            ],
+            "assessment": [
+                "Participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Experiments and Discoveries",
+            "topics_covered": [
+                "Hormone discovery",
+                "Research"
+            ],
+            "teaching_strategy": [
+                "Explanation"
+            ],
+            "student_activities": [
+                "Flow chart"
+            ],
+            "assessment": [
+                "Written work"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme and Scientific Temper",
+            "topics_covered": [
+                "Scientific attitude",
+                "Perseverance"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Short notes"
+            ],
+            "assessment": [
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Complete lesson"
+            ],
+            "teaching_strategy": [
+                "Recap"
+            ],
+            "student_activities": [
+                "Test"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Board"
+    ],
+    "evaluation_methods": [
+        "Written tests",
+        "Oral questioning"
+    ],
+    "teacher_tip": "Highlight how failure can become a turning point."
+}

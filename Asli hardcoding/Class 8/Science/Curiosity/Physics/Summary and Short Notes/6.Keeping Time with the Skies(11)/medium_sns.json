@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter: Keeping Time with the Skies",
+  "difficulty": "Medium",
+  "source_pdf": "hecu111.pdf",
+  "short_notes": {
+    "key_points": [
+      "Time measurement in early civilizations was based on observations of the Sun, Moon, and stars",
+      "The rotation of the Earth causes day and night and forms the basis of a 24-hour day",
+      "The revolution of the Earth around the Sun determines the length of a year",
+      "The phases of the Moon repeat in a regular cycle of about 29.5 days, forming the basis of lunar months",
+      "Celestial observations helped ancient people develop calendars and track seasons"
+    ],
+    "examples": [
+      "Using the position of the Sun to estimate the time of day",
+      "A sundial using the shadow of a stick to measure time",
+      "Tracking the phases of the Moon to determine months",
+      "Using constellations to identify seasons and directions"
+    ],
+    "formulas": [
+      "1 day ≈ Time taken by Earth to complete one rotation (24 hours)",
+      "1 year ≈ Time taken by Earth to complete one revolution around the Sun (365 days)",
+      "Lunar month ≈ Time between two full moons (about 29.5 days)"
+    ],
+    "exam_tips": [
+      "Remember the difference between Earth’s rotation and revolution",
+      "Understand how the Sun, Moon, and stars helped measure time",
+      "Use examples like sundials and lunar calendars in explanations",
+      "Relate astronomical movements to days, months, and years"
+    ]
+  }
+}

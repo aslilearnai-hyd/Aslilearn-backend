@@ -1,0 +1,34 @@
+{
+  "class": "Class 10",
+  "subject": "History",
+  "chapter": "The Print Culture and the Modern World",
+  "difficulty": "Hard",
+  "source_pdf": "jess305.pdf",
+  "short_notes": {
+    "key_points": [
+      "Early Development of Print in East Asia: Print technology originated in China, Japan, and Korea through woodblock printing. This technique allowed the mass production of religious texts, administrative documents, and literary works, contributing to the spread of knowledge and urban reading culture.",
+      "Gutenberg’s Printing Innovation: Johannes Gutenberg developed the movable metal type printing press around 1440 in Germany. This innovation revolutionized the production of books by making printing faster, cheaper, and more efficient compared to manual copying.",
+      "Print and the Protestant Reformation: The printing press played a crucial role in spreading the ideas of Martin Luther and other reformers. Printed pamphlets, translated Bibles, and religious debates challenged the authority of the Catholic Church and encouraged religious reforms.",
+      "Rise of a Reading Public: The expansion of printed materials led to the growth of a reading public in Europe. Booksellers, libraries, and schools promoted literacy, while different genres such as novels, almanacs, and newspapers became popular.",
+      "Print Culture in Colonial India: The introduction of printing in India by missionaries and colonial authorities led to the growth of newspapers, journals, and books in local languages. Indian reformers and nationalists used print media to spread ideas about education, social reform, and nationalism.",
+      "Censorship and Control of Print: As print became a powerful medium for spreading ideas, governments introduced laws and regulations to control publications. Colonial authorities imposed restrictions on newspapers and pamphlets to prevent the spread of nationalist and revolutionary ideas."
+    ],
+    "examples": [
+      "The Diamond Sutra (868 CE) from China is one of the earliest printed books using woodblock printing.",
+      "The Gutenberg Bible (1450s) demonstrated the effectiveness of movable type printing.",
+      "Martin Luther’s Ninety-Five Theses were reproduced as pamphlets and circulated widely across Europe.",
+      "The Vernacular Press Act of 1878 in India attempted to control the freedom of Indian-language newspapers."
+    ],
+    "formulas": [
+      "Printing Revolution = Movable Type Technology + Rapid Book Production + Wider Distribution of Knowledge",
+      "Spread of Reform Movements = Printed Pamphlets + Vernacular Language Texts + Public Debate",
+      "Colonial Print Politics = Expansion of Newspapers - Government Censorship"
+    ],
+    "exam_tips": [
+      "Explain the historical transition from woodblock printing in East Asia to movable type printing in Europe.",
+      "Discuss how the printing press influenced religious reforms such as the Protestant Reformation.",
+      "Include examples from both Europe and India to show the global impact of print culture.",
+      "Mention censorship laws and how print media challenged colonial and religious authority."
+    ]
+  }
+}

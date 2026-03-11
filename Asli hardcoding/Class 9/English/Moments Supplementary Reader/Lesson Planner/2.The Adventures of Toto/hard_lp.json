@@ -1,0 +1,194 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Adventures of Toto",
+    "title": "Lesson Planner – The Adventures of Toto",
+    "author": "Ruskin Bond",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse the structure of the story",
+        "Evaluate the characters and their behaviour",
+        "Identify humour and narrative techniques",
+        "Understand cause–effect relationships in the story",
+        "Interpret the theme and moral of the lesson",
+        "Develop critical thinking and writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author Study and Story Context",
+            "topics_covered": [
+                "Biography of Ruskin Bond",
+                "Nature of humorous storytelling",
+                "Introduction to the story"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Note key facts about the author",
+                "Discuss humorous stories they know"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student responses"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Analysis – Toto",
+            "topics_covered": [
+                "Appearance and personality of Toto",
+                "Symbol of curiosity and mischief"
+            ],
+            "teaching_strategy": [
+                "Character analysis discussion",
+                "Close reading"
+            ],
+            "student_activities": [
+                "Write a short character sketch of Toto",
+                "List his key traits"
+            ],
+            "assessment": [
+                "Notebook review",
+                "Short written answer"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Grandfather’s Character",
+            "topics_covered": [
+                "Grandfather’s love for animals",
+                "Role in the story"
+            ],
+            "teaching_strategy": [
+                "Guided discussion",
+                "Character comparison"
+            ],
+            "student_activities": [
+                "Discuss why Grandfather likes animals",
+                "Write 4–5 points about his character"
+            ],
+            "assessment": [
+                "Oral responses",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Humour in the Story",
+            "topics_covered": [
+                "Closet destruction",
+                "Ticket collector episode"
+            ],
+            "teaching_strategy": [
+                "Text analysis",
+                "Humour identification"
+            ],
+            "student_activities": [
+                "Identify humorous events",
+                "Explain why they are funny"
+            ],
+            "assessment": [
+                "Short written response",
+                "Discussion participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Animal Behaviour and Instinct",
+            "topics_covered": [
+                "Toto’s curiosity",
+                "Relationship with Nana"
+            ],
+            "teaching_strategy": [
+                "Concept discussion",
+                "Real-life examples"
+            ],
+            "student_activities": [
+                "Compare Toto’s behaviour with other pets",
+                "Group discussion"
+            ],
+            "assessment": [
+                "Group activity evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Dangerous Incidents",
+            "topics_covered": [
+                "Bath scene",
+                "Kettle incident"
+            ],
+            "teaching_strategy": [
+                "Sequential explanation",
+                "Cause–effect analysis"
+            ],
+            "student_activities": [
+                "Explain events step by step",
+                "Identify causes and results"
+            ],
+            "assessment": [
+                "Written exercise",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme and Message",
+            "topics_covered": [
+                "Human–animal relationship",
+                "Humour and moral lessons"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Critical thinking questions"
+            ],
+            "student_activities": [
+                "Write the theme in own words",
+                "Discuss the moral message"
+            ],
+            "assessment": [
+                "Paragraph writing",
+                "Teacher feedback"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Summary of the story",
+                "Vocabulary review",
+                "Overall evaluation"
+            ],
+            "teaching_strategy": [
+                "Revision discussion",
+                "Short assessment"
+            ],
+            "student_activities": [
+                "Write a full summary",
+                "Answer short questions"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Vocabulary flashcards"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Written assignments",
+        "Notebook checking",
+        "Short classroom tests"
+    ],
+    "teacher_tip": "Encourage students to analyse humour and character behaviour rather than just memorising events."
+}

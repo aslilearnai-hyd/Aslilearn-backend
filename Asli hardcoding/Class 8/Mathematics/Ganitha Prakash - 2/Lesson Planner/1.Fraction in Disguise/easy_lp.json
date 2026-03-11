@@ -1,0 +1,181 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "Fractions in Disguise (Percentages)",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of percentages as fractions with denominator 100",
+        "Convert fractions into percentages and percentages into fractions",
+        "Calculate percentage of a given quantity",
+        "Use percentages to compare proportions",
+        "Understand percentage increase and decrease",
+        "Solve simple profit, loss, and discount problems",
+        "Understand basic concepts of interest and compounding"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Percentages",
+            "topics_covered": [
+                "Meaning of percentage",
+                "Percentage as per hundred",
+                "Relation between fractions and percentages"
+            ],
+            "teaching_strategy": [
+                "Real-life examples like exam marks and discounts",
+                "Board demonstration with simple fractions",
+                "Interactive questioning"
+            ],
+            "student_activities": [
+                "Convert fractions like 1/2, 3/4, and 2/5 into percentages",
+                "Identify percentages used in daily life"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick board exercises"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Converting Fractions and Percentages",
+            "topics_covered": [
+                "Converting fractions into percentages",
+                "Converting percentages into fractions",
+                "Equivalent forms"
+            ],
+            "teaching_strategy": [
+                "Step-by-step examples on board",
+                "Demonstration using bar models"
+            ],
+            "student_activities": [
+                "Convert 3/5, 7/14, and 9/20 into percentages",
+                "Express 24% and 45% as fractions"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short practice questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Percentage of a Quantity",
+            "topics_covered": [
+                "Finding percentage of numbers",
+                "Use of fraction and decimal multiplication",
+                "Mental percentage calculations"
+            ],
+            "teaching_strategy": [
+                "Problem solving on board",
+                "Use of proportional reasoning"
+            ],
+            "student_activities": [
+                "Find 25% of 120",
+                "Calculate 10%, 20%, and 50% of given numbers"
+            ],
+            "assessment": [
+                "Worksheet problems",
+                "Class discussion of solutions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Comparing Quantities Using Percentages",
+            "topics_covered": [
+                "Comparing test scores using percentages",
+                "Using percentages to compare proportions"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "Convert two test scores into percentages",
+                "Identify which score is higher"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Peer checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Percentage Increase and Decrease",
+            "topics_covered": [
+                "Concept of percentage increase",
+                "Concept of percentage decrease",
+                "Real-life examples like price change"
+            ],
+            "teaching_strategy": [
+                "Numerical examples",
+                "Step-by-step board explanation"
+            ],
+            "student_activities": [
+                "Calculate percentage increase from ₹30 to ₹42",
+                "Calculate percentage decrease in given examples"
+            ],
+            "assessment": [
+                "Practice problems",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Profit, Loss, and Discount",
+            "topics_covered": [
+                "Cost price",
+                "Selling price",
+                "Profit and loss percentage",
+                "Discount"
+            ],
+            "teaching_strategy": [
+                "Role-play of shopkeeper and customer",
+                "Worked examples on board"
+            ],
+            "student_activities": [
+                "Calculate profit percentage when CP and SP are given",
+                "Find discount on marked price"
+            ],
+            "assessment": [
+                "MCQs",
+                "Short problem-solving exercises"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Interest and Chapter Revision",
+            "topics_covered": [
+                "Concept of interest",
+                "Simple understanding of compounding",
+                "Overall revision of percentages"
+            ],
+            "teaching_strategy": [
+                "Flowchart summary",
+                "Mixed question solving"
+            ],
+            "student_activities": [
+                "Calculate interest on a fixed deposit example",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Mathematics Textbook",
+        "Percentage charts"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Short written tests",
+        "Group discussion"
+    ],
+    "teacher_tip": "Use real-life examples like discounts, exam marks, and shopping bills to make the concept of percentages easier for students to understand."
+}

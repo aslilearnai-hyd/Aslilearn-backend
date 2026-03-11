@@ -1,0 +1,209 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Law and Social Justice",
+  "generated_at": "2026-03-07T19:20:00",
+  "difficulty": "easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is law?",
+      "answer": "Law is a system of rules created by the government to regulate behaviour in society.",
+      "key_concepts": ["law"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What does social justice mean?",
+      "answer": "Social justice means fairness and equal treatment for all people in society.",
+      "key_concepts": ["social justice"],
+      "marks": 2,
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 3,
+      "question": "Why are laws important in society?",
+      "answer": "Laws maintain order, protect rights and ensure justice.",
+      "key_concepts": ["importance of laws"],
+      "marks": 2,
+      "source_section": "Importance of Law"
+    },
+    {
+      "question_number": 4,
+      "question": "What are labour laws?",
+      "answer": "Labour laws are rules that protect the rights and safety of workers.",
+      "key_concepts": ["labour laws"],
+      "marks": 2,
+      "source_section": "Labour Laws"
+    },
+    {
+      "question_number": 5,
+      "question": "What is minimum wage?",
+      "answer": "Minimum wage is the lowest legal salary that workers must be paid.",
+      "key_concepts": ["minimum wage"],
+      "marks": 2,
+      "source_section": "Minimum Wages"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are safety laws important for workers?",
+      "answer": "Safety laws protect workers from accidents and dangerous working conditions.",
+      "key_concepts": ["worker safety"],
+      "marks": 2,
+      "source_section": "Worker Safety"
+    },
+    {
+      "question_number": 7,
+      "question": "What is child labour?",
+      "answer": "Child labour is the employment of children in work that is harmful or illegal.",
+      "key_concepts": ["child labour"],
+      "marks": 2,
+      "source_section": "Child Labour"
+    },
+    {
+      "question_number": 8,
+      "question": "Why are laws against child labour necessary?",
+      "answer": "They protect children from exploitation and ensure they receive education.",
+      "key_concepts": ["child protection"],
+      "marks": 2,
+      "source_section": "Child Labour Laws"
+    },
+    {
+      "question_number": 9,
+      "question": "Who makes laws in India?",
+      "answer": "The Parliament makes laws in India.",
+      "key_concepts": ["Parliament"],
+      "marks": 1,
+      "source_section": "Law Making"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the role of government in social justice?",
+      "answer": "The government creates laws and policies to ensure fairness and protect citizens.",
+      "key_concepts": ["government role"],
+      "marks": 2,
+      "source_section": "Government Responsibility"
+    },
+    {
+      "question_number": 11,
+      "question": "What is exploitation?",
+      "answer": "Exploitation means unfair treatment or taking advantage of workers.",
+      "key_concepts": ["exploitation"],
+      "marks": 2,
+      "source_section": "Worker Rights"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the purpose of labour unions?",
+      "answer": "Labour unions represent workers and fight for better wages and conditions.",
+      "key_concepts": ["labour unions"],
+      "marks": 2,
+      "source_section": "Worker Organisations"
+    },
+    {
+      "question_number": 13,
+      "question": "How do laws help protect workers?",
+      "answer": "Laws ensure safe working conditions, fair wages and protection from exploitation.",
+      "key_concepts": ["worker protection"],
+      "marks": 2,
+      "source_section": "Labour Protection"
+    },
+    {
+      "question_number": 14,
+      "question": "What is equality before law?",
+      "answer": "It means everyone is treated equally under the law.",
+      "key_concepts": ["equality"],
+      "marks": 2,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are factory laws important?",
+      "answer": "Factory laws ensure safe and fair working conditions for workers.",
+      "key_concepts": ["factory laws"],
+      "marks": 2,
+      "source_section": "Factory Act"
+    },
+    {
+      "question_number": 16,
+      "question": "What does social responsibility mean for companies?",
+      "answer": "Companies must follow laws and ensure safe and fair treatment of workers.",
+      "key_concepts": ["corporate responsibility"],
+      "marks": 2,
+      "source_section": "Corporate Responsibility"
+    },
+    {
+      "question_number": 17,
+      "question": "How do labour laws promote social justice?",
+      "answer": "They protect workers and ensure fair treatment and wages.",
+      "key_concepts": ["social justice"],
+      "marks": 2,
+      "source_section": "Labour Laws"
+    },
+    {
+      "question_number": 18,
+      "question": "What role do citizens play in social justice?",
+      "answer": "Citizens should respect laws and support fairness in society.",
+      "key_concepts": ["citizenship"],
+      "marks": 2,
+      "source_section": "Citizen Responsibility"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the role of courts in enforcing laws?",
+      "answer": "Courts ensure that laws are followed and resolve disputes.",
+      "key_concepts": ["courts"],
+      "marks": 2,
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 20,
+      "question": "What is worker safety?",
+      "answer": "Worker safety refers to protecting workers from accidents and harmful conditions.",
+      "key_concepts": ["worker safety"],
+      "marks": 2,
+      "source_section": "Safety Laws"
+    },
+    {
+      "question_number": 21,
+      "question": "Why must companies follow labour laws?",
+      "answer": "To ensure fair treatment and safety of workers.",
+      "key_concepts": ["labour laws"],
+      "marks": 2,
+      "source_section": "Corporate Responsibility"
+    },
+    {
+      "question_number": 22,
+      "question": "How do laws help reduce inequality?",
+      "answer": "Laws ensure equal rights and opportunities for all citizens.",
+      "key_concepts": ["equality"],
+      "marks": 2,
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the purpose of social justice laws?",
+      "answer": "They protect vulnerable groups and ensure fairness in society.",
+      "key_concepts": ["social justice"],
+      "marks": 2,
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 24,
+      "question": "What is fair wage?",
+      "answer": "Fair wage means paying workers properly for their work.",
+      "key_concepts": ["fair wage"],
+      "marks": 2,
+      "source_section": "Worker Rights"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main goal of law and social justice?",
+      "answer": "The goal is to ensure fairness, equality and protection of rights in society.",
+      "key_concepts": ["justice"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    }
+  ]
+}

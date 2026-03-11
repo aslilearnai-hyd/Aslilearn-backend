@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: The Story of Village Palampur",
+  "generated_at": "2026-03-07T00:15:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Critically analyze why Human Capital is considered the 'superior' factor of production compared to Land and Physical Capital.",
+      "answer": "Human capital consists of the knowledge, skills, and enterprise required to coordinate and activate passive resources like land and machinery. While land and capital are finite and cannot become productive on their own, human capital is the 'active' agent that innovates, manages risks, and improves efficiency, thereby increasing the total productivity of all other factors.",
+      "answer_outline": ["Passive vs. Active resources", "Role of 'enterprise' and 'know-how'", "Coordination of Land, Labour, and Capital"],
+      "key_concepts": ["human capital", "productivity", "resource coordination"],
+      "marks": 5,
+      "source_section": "1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The Green Revolution is often described as a 'double-edged sword.' Evaluate this statement with reference to Palampur.",
+      "answer": "It is a double-edged sword because while it led to a massive increase in food grain yields (wheat production rose from 1300 kg to 3200 kg per hectare), it also caused severe environmental degradation. The over-use of chemical fertilizers led to loss of soil fertility, and continuous tubewell irrigation depleted the groundwater table, threatening long-term agricultural sustainability.",
+      "answer_outline": ["Productivity gains (HYV seeds)", "Environmental costs (soil/water)", "Sustainability trade-off"],
+      "key_concepts": ["green revolution", "sustainability", "HYV seeds"],
+      "marks": 5,
+      "source_section": "1.3 & 1.4"
+    },
+    {
+      "question_number": 3,
+      "question": "Examine the relationship between land fragmentation and the economic viability of small-scale farming.",
+      "answer": "In Palampur, 240 families cultivate plots smaller than 2 hectares (like the case of Gobind’s sons). Fragmentation prevents the use of modern machinery and efficient irrigation. This leads to low 'Marketable Surplus,' keeping small farmers in a subsistence cycle where they cannot generate enough capital to reinvest, unlike large farmers with consolidated holdings.",
+      "answer_outline": ["Fragmentation of plots", "Barriers to mechanization", "Subsistence vs. Surplus"],
+      "key_concepts": ["fragmentation", "small farmers", "marketable surplus"],
+      "marks": 5,
+      "source_section": "1.5"
+    },
+    {
+      "question_number": 4,
+      "question": "Deconstruct the 'vicious cycle' of debt that small farmers face compared to the 'virtuous cycle' of large farmers.",
+      "answer": "Small farmers (e.g., Savita) lack savings and must borrow capital at high interest rates (24% from Tejpal Singh). Low yields mean they struggle to repay, leading to debt traps. Conversely, large farmers have large marketable surpluses, allowing them to save and earn interest by lending or buying machinery, which further increases their future profits.",
+      "answer_outline": ["Interest rate arbitrage", "Capital formation patterns", "Debt traps vs. Reinvestment"],
+      "key_concepts": ["vicious cycle", "credit market", "capital formation"],
+      "marks": 5,
+      "source_section": "1.7 & 1.8"
+    },
+    {
+      "question_number": 5,
+      "question": "Analyze the impact of the unequal land distribution in Palampur on the bargaining power of agricultural laborers.",
+      "answer": "Land ownership is concentrated in 60 families, while 150 are landless. This massive supply of landless labor creates intense competition for limited seasonal work. This oversupply suppresses wages (₹160/day vs. ₹300/day minimum wage), as laborers like Dala and Ramkali have no alternative assets and thus zero bargaining power against large landowners.",
+      "answer_outline": ["Landless labor supply", "Wage suppression", "Bargaining power mechanics"],
+      "key_concepts": ["land distribution", "bargaining power", "wages"],
+      "marks": 5,
+      "source_section": "1.5 & 1.6"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the role of infrastructure (electricity and roads) as a multiplier for both farm and non-farm growth.",
+      "answer": "Electricity enabled tubewells, which made multiple cropping possible, directly increasing farm output. Simultaneously, better road connectivity to Raiganj and Shahpur allowed for dairy growth (chilling centers) and transport services. Infrastructure reduces the 'cost of doing business' and connects the village to wider urban markets.",
+      "answer_outline": ["Electricity and irrigation", "Roads and market access", "Multiplier effect on GDP"],
+      "key_concepts": ["infrastructure", "multiplier effect", "market access"],
+      "marks": 5,
+      "source_section": "1.1 & 1.9"
+    },
+    {
+      "question_number": 7,
+      "question": "Differentiate between 'Multiple Cropping' and 'Modern Farming' in terms of resource intensity and ecological footprint.",
+      "answer": "Multiple cropping increases land productivity by growing crops in different seasons (Kharif, Rabi) using irrigation. Modern farming increases yield per crop through a 'technological package' (HYV, chemicals). While multiple cropping uses land more intensively, modern farming is more resource-intensive (water/chemicals) and has a higher negative ecological footprint.",
+      "answer_outline": ["Seasonal use vs. Input intensity", "Biological vs. Chemical focus", "Ecological comparison"],
+      "key_concepts": ["multiple cropping", "modern farming", "resource intensity"],
+      "marks": 5,
+      "source_section": "1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "How does 'Fixed Capital' differ from 'Working Capital' in terms of risk and liquidity for a village entrepreneur?",
+      "answer": "Fixed Capital (machines/tools) represents a long-term sunk cost with low liquidity but higher long-term utility. Working Capital (cash/raw materials) provides immediate liquidity but carries high risk as it is consumed in the production cycle. For a small manufacturer like Mishrilal, managing working capital (cash for sugarcane) is often more difficult than owning the crusher (fixed capital).",
+      "answer_outline": ["Liquidity vs. Sunk costs", "Duration of utility", "Management challenges"],
+      "key_concepts": ["fixed capital", "working capital", "liquidity"],
+      "marks": 4,
+      "source_section": "1.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the 'Marketable Surplus' as a driver of rural inequality.",
+      "answer": "Marketable surplus is only generated by large/medium farmers. This surplus is sold for profit, which is then converted into capital (tractors, more land, or lending money). Small farmers consume all they produce, meaning they have no surplus to convert into capital. Thus, the marketable surplus ensures that the wealthy become wealthier while the poor remain stagnant.",
+      "answer_outline": ["Definition of surplus", "Capital accumulation", "Inequality widening"],
+      "key_concepts": ["marketable surplus", "inequality", "capital accumulation"],
+      "marks": 5,
+      "source_section": "1.8"
+    },
+    {
+      "question_number": 10,
+      "question": "Evaluate the role of 'Multiple Cropping' as a solution to the fixed nature of land.",
+      "answer": "Since land is a fixed resource and cannot be expanded, multiple cropping (growing three crops like jowar, bajra, and potato) is the most effective way to increase production. It maximizes the utility of the same land area throughout the year, provided there is a reliable irrigation system and adequate nutrients available.",
+      "answer_outline": ["Land as a constraint", "Seasonal utility maximization", "Prerequisites: Irrigation"],
+      "key_concepts": ["multiple cropping", "fixed land", "productivity"],
+      "marks": 4,
+      "source_section": "1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Why does modern farming create a dependency on the industrial sector?",
+      "answer": "Traditional farming relied on on-farm inputs (cow dung, saved seeds). Modern farming requires industrial outputs: HYV seeds (lab-grown), chemical fertilizers (factory-made), and machinery (tractors/pumps). This shifts the farmer from a self-sufficient producer to a consumer in an industrial supply chain, making agriculture sensitive to industrial prices.",
+      "answer_outline": ["Traditional on-farm inputs", "Industrial 'package' inputs", "Sectoral interdependence"],
+      "key_concepts": ["industrial sector", "modern farming", "interdependence"],
+      "marks": 5,
+      "source_section": "1.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Analyze the socio-economic barriers that prevent small farmers from switching to non-farm activities.",
+      "answer": "Non-farm activities require 'initial capital' and 'market knowledge.' Small farmers are often in debt and have no savings to invest in a shop or transport vehicle. Additionally, they may lack the 'Human Capital' (education/skills) needed for services like Kareem’s computer center, trapping them in low-yield agriculture.",
+      "answer_outline": ["Lack of startup capital", "Risk aversion", "Education/Skill gap"],
+      "key_concepts": ["non-farm activities", "barriers to entry", "human capital"],
+      "marks": 5,
+      "source_section": "1.9"
+    },
+    {
+      "question_number": 13,
+      "question": "How does the 'Tragedy of the Commons' apply to groundwater depletion in Palampur?",
+      "answer": "Groundwater is a shared resource. When every large farmer installs a high-power electric tubewell to maximize their personal yield, the collective water table drops. No single farmer has an incentive to stop, but the cumulative effect is the destruction of the water source for the entire village, making farming unsustainable in the long run.",
+      "answer_outline": ["Shared resource usage", "Individual vs. Collective incentive", "Long-term depletion"],
+      "key_concepts": ["groundwater", "sustainability", "collective resource"],
+      "marks": 5,
+      "source_section": "1.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Assess the impact of mechanization (tractors/harvesters) on the livelihoods of landless laborers.",
+      "answer": "Mechanization increases efficiency for the landowner but displaces human labor. Tasks that took weeks of manual labor now take hours. This reduces the number of 'work days' available for laborers like Ramkali, further suppressing their annual income and increasing rural unemployment and migration to cities.",
+      "answer_outline": ["Efficiency vs. Displacement", "Reduced work days", "Livelihood insecurity"],
+      "key_concepts": ["mechanization", "labour displacement", "rural unemployment"],
+      "marks": 4,
+      "source_section": "1.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Why is the 'Minimum Wage' law ineffective in the rural informal sector?",
+      "answer": "Minimum wage laws (₹300/day) are difficult to enforce because the labor market is informal. High competition for work means laborers are desperate and will secretly agree to work for less (₹160). There is no union or monitoring agency in a village like Palampur to prevent this exploitation.",
+      "answer_outline": ["Informal nature of work", "Desperation and competition", "Lack of enforcement"],
+      "key_concepts": ["minimum wage", "informal sector", "exploitation"],
+      "marks": 4,
+      "source_section": "1.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Examine the role of 'Small-scale Manufacturing' as a bridge between the farm and non-farm sectors.",
+      "answer": "Small-scale manufacturing, like Mishrilal’s jaggery production, uses a farm product (sugarcane) as raw material. It adds value to the agricultural output through processing. This creates local employment and increases the farmer's income by providing a direct market for their crops within the village.",
+      "answer_outline": ["Value addition", "Agro-processing", "Local employment"],
+      "key_concepts": ["manufacturing", "value addition", "agro-processing"],
+      "marks": 4,
+      "source_section": "1.9"
+    },
+    {
+      "question_number": 17,
+      "question": "Analyze the 'Risk Profile' of modern farming for a small farmer with 2 hectares of land.",
+      "answer": "For a small farmer, the risk is extremely high. Modern farming requires high cash investment in HYV seeds and chemicals. If the crop fails due to pests or bad weather, the farmer loses their entire working capital and is left with a massive debt, which they have no assets to repay.",
+      "answer_outline": ["High input costs", "Crop failure risk", "Insolvency and debt"],
+      "key_concepts": ["risk", "small farmer", "modern farming"],
+      "marks": 5,
+      "source_section": "1.7"
+    },
+    {
+      "question_number": 18,
+      "question": "How did the change in the irrigation system change the cropping pattern of Palampur?",
+      "answer": "With Persian wheels, irrigation was slow and limited. Electric tubewells allowed for deep-water extraction and rapid irrigation. This enabled farmers to grow 'Jowar and Bajra' in Kharif, 'Potato' as a third crop, and 'Wheat' in Rabi, ensuring the land is productive in all seasons.",
+      "answer_outline": ["Persian wheels vs. Tubewells", "Three-crop system", "Water availability"],
+      "key_concepts": ["irrigation", "cropping pattern", "productivity"],
+      "marks": 5,
+      "source_section": "1.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Critically evaluate the importance of 'Market access' in the growth of the dairy sector in Palampur.",
+      "answer": "Production is useless without a market. The road to Raiganj and the chilling centers set up by traders in Shahpur provided a reliable place for farmers to sell their surplus milk. This converted dairy from a subsistence activity (for family use) into a commercial non-farm income source.",
+      "answer_outline": ["Raiganj connectivity", "Chilling centers", "Commercialization"],
+      "key_concepts": ["market access", "dairy", "commercialization"],
+      "marks": 4,
+      "source_section": "1.9"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the economic significance of 'Sugar cane' production in Palampur's economy?",
+      "answer": "Sugarcane is a cash crop harvested once a year. It represents 'diversification' and provides the raw material for the local manufacturing sector (jaggery). It is sold in Shahpur, bringing in external cash flow to the village economy.",
+      "answer_outline": ["Cash crop", "Raw material for manufacturing", "Trade with Shahpur"],
+      "key_concepts": ["sugarcane", "cash crop", "jaggery"],
+      "marks": 4,
+      "source_section": "1.3 & 1.9"
+    },
+    {
+      "question_number": 21,
+      "question": "Analyze the distribution of 'Financial Capital' in Palampur and its impact on social mobility.",
+      "answer": "Financial capital is concentrated in the hands of 60 medium/large farmers who have bank savings. Small farmers and laborers are 'capital-starved.' This prevents social mobility because the poor cannot afford the education (human capital) or machinery (physical capital) needed to escape low-wage labor.",
+      "answer_outline": ["Capital concentration", "Lack of credit for poor", "Stagnant social mobility"],
+      "key_concepts": ["financial capital", "social mobility", "inequality"],
+      "marks": 5,
+      "source_section": "1.7"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the role of 'Labour' as a variable factor vs 'Land' as a fixed factor in Palampur's production function.",
+      "answer": "In the short run, land is fixed (200 hectares). To increase output, farmers must vary the other factors—adding more labor or capital. However, adding too much labor to the same land leads to 'disguised unemployment' where productivity per person drops because the land cannot support so many workers.",
+      "answer_outline": ["Fixed land constraint", "Variable labor input", "Disguised unemployment"],
+      "key_concepts": ["fixed factor", "variable factor", "productivity"],
+      "marks": 5,
+      "source_section": "1.2 & 1.5"
+    },
+    {
+      "question_number": 23,
+      "question": "How does 'Electricity' act as a catalyst for the tertiary (service) sector in Palampur?",
+      "answer": "Beyond irrigation, electricity allowed for the establishment of services like Kareem’s computer center. It enables the use of technology for education and communication, which are essential for a modern economy to diversify away from pure agriculture.",
+      "answer_outline": ["Beyond irrigation", "Technology and education", "Service sector growth"],
+      "key_concepts": ["electricity", "service sector", "technology"],
+      "marks": 4,
+      "source_section": "1.9"
+    },
+    {
+      "question_number": 24,
+      "question": "Examine the 'Seasonal' nature of agricultural labor and its impact on rural poverty.",
+      "answer": "Agricultural work is only available during sowing and harvesting. For 4-6 months a year, landless laborers are unemployed. Without savings, they must borrow for consumption during these lean months, leading to a permanent cycle of poverty and high-interest debt.",
+      "answer_outline": ["Sowing/Harvesting peaks", "Lean season unemployment", "Consumption borrowing"],
+      "key_concepts": ["seasonal labor", "rural poverty", "consumption debt"],
+      "marks": 5,
+      "source_section": "1.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Summarize the 'Integrated Village Economy' of Palampur—how farm and non-farm sectors interact.",
+      "answer": "The sectors are interdependent: the farm sector provides raw materials (milk, sugarcane) and income to buy goods. The non-farm sector provides services (transport, shopkeeping) and processing (jaggery). Infrastructure (roads/electricity) ties them together, creating a circulatory economy where surplus from one can theoretically fund growth in the other.",
+      "answer_outline": ["Interdependence", "Resource flow", "Infrastructure as the link"],
+      "key_concepts": ["village economy", "sectoral interaction", "interdependence"],
+      "marks": 5,
+      "source_section": "Whole Chapter"
+    }
+  ]
+}

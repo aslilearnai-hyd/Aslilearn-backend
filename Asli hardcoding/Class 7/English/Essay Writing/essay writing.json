@@ -1,0 +1,709 @@
+{
+  "subject": "English",
+  "book": "Poorvi",
+  "content": "Essay Writing",
+  "class": "7",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Learning from Nature",
+      "question": "Write an essay on what nature teaches us in daily life."
+    },
+    {
+      "id": 2,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Importance of Teamwork",
+      "question": "Write an essay on why teamwork is essential."
+    },
+    {
+      "id": 3,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Respect for Nature",
+      "question": "Write an essay on how respecting nature benefits humans."
+    },
+    {
+      "id": 4,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Unit 1",
+      "title": "Learning from Mistakes",
+      "question": "Write an essay on learning from mistakes in life."
+    },
+    {
+      "id": 5,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Perseverance",
+      "question": "Write an essay on the importance of trying again after failure."
+    },
+    {
+      "id": 6,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Never Give Up",
+      "question": "Write an essay on never giving up and achieving success."
+    },
+    {
+      "id": 7,
+      "chapter": "Try Again",
+      "source": "Poorvi – Unit 1",
+      "title": "Patience and Success",
+      "question": "Write an essay on how patience leads to success."
+    },
+    {
+      "id": 8,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Value of Senses",
+      "question": "Write an essay on the importance of our senses."
+    },
+    {
+      "id": 9,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Appreciating Life",
+      "question": "Write an essay on appreciating what we have in life."
+    },
+    {
+      "id": 10,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Unit 1",
+      "title": "Gratitude",
+      "question": "Write an essay on being grateful for everyday blessings."
+    },
+    {
+      "id": 11,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Love for Animals",
+      "question": "Write an essay on why we should care for animals."
+    },
+    {
+      "id": 12,
+      "chapter": "Animals, Birds, and Dr. Dolittle",
+      "source": "Poorvi – Unit 2",
+      "title": "Communication Skills",
+      "question": "Write an essay on learning to communicate effectively."
+    },
+    {
+      "id": 13,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Humor in Life",
+      "question": "Write an essay on the role of humor in daily life."
+    },
+    {
+      "id": 14,
+      "chapter": "A Funny Man",
+      "source": "Poorvi – Unit 2",
+      "title": "Wit and Intelligence",
+      "question": "Write an essay on how wit can help solve problems."
+    },
+    {
+      "id": 15,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Importance of Words",
+      "question": "Write an essay on how saying the right thing can prevent misunderstandings."
+    },
+    {
+      "id": 16,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Unit 2",
+      "title": "Wise Communication",
+      "question": "Write an essay on using wise words in difficult situations."
+    },
+    {
+      "id": 17,
+      "chapter": "My Brother's Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Creativity",
+      "question": "Write an essay on the importance of creativity in life."
+    },
+    {
+      "id": 18,
+      "chapter": "My Brother's Great Invention",
+      "source": "Poorvi – Unit 3",
+      "title": "Innovations in Daily Life",
+      "question": "Write an essay on how inventions make life easier."
+    },
+    {
+      "id": 19,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Childhood Memories",
+      "question": "Write an essay on learning lessons from childhood experiences."
+    },
+    {
+      "id": 20,
+      "chapter": "Paper Boats",
+      "source": "Poorvi – Unit 3",
+      "title": "Teamwork and Fun",
+      "question": "Write an essay on teamwork and having fun together."
+    },
+    {
+      "id": 21,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Travel and Learning",
+      "question": "Write an essay on how travel teaches new things."
+    },
+    {
+      "id": 22,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Unit 3",
+      "title": "Understanding Cultures",
+      "question": "Write an essay on learning about different cultures."
+    },
+    {
+      "id": 23,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Adventure and Courage",
+      "question": "Write an essay on how adventures teach courage."
+    },
+    {
+      "id": 24,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Unit 4",
+      "title": "Overcoming Fear",
+      "question": "Write an essay on overcoming fear through challenges."
+    },
+    {
+      "id": 25,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Benefits of Travel",
+      "question": "Write an essay on the benefits of traveling."
+    },
+    {
+      "id": 26,
+      "chapter": "Travel",
+      "source": "Poorvi – Unit 4",
+      "title": "Learning New Things",
+      "question": "Write an essay on learning new skills through travel."
+    },
+    {
+      "id": 27,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Persistence",
+      "question": "Write an essay on the role of persistence in achieving goals."
+    },
+    {
+      "id": 28,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Unit 4",
+      "title": "Teamwork in Adventure",
+      "question": "Write an essay on teamwork during adventurous tasks."
+    },
+    {
+      "id": 29,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Bravery",
+      "question": "Write an essay on the bravery of soldiers."
+    },
+    {
+      "id": 30,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Patriotism",
+      "question": "Write an essay on the importance of patriotism."
+    },
+    {
+      "id": 31,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Sacrifice for Nation",
+      "question": "Write an essay on soldiers’ sacrifices for the country."
+    },
+    {
+      "id": 32,
+      "chapter": "My Dear Soldiers",
+      "source": "Poorvi – Unit 5",
+      "title": "Respect for Armed Forces",
+      "question": "Write an essay on why we should respect our soldiers."
+    },
+    {
+      "id": 33,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Leadership",
+      "question": "Write an essay on Rani Abbakka’s leadership qualities."
+    },
+    {
+      "id": 34,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Courage and Determination",
+      "question": "Write an essay on her courage and determination."
+    },
+    {
+      "id": 35,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Unit 5",
+      "title": "Inspiration",
+      "question": "Write an essay on how Rani Abbakka inspires young people."
+    },
+    {
+      "id": 36,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Value of Education",
+      "question": "Write an essay on the importance of education."
+    },
+    {
+      "id": 37,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Knowledge is Power",
+      "question": "Write an essay on how knowledge empowers us."
+    },
+    {
+      "id": 38,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Human Values",
+      "question": "Write an essay on the importance of human values."
+    },
+    {
+      "id": 39,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Honesty",
+      "question": "Write an essay on honesty as a way of life."
+    },
+    {
+      "id": 40,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Kindness",
+      "question": "Write an essay on being kind to everyone."
+    },
+    {
+      "id": 41,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Self Discipline",
+      "question": "Write an essay on self-discipline and its importance."
+    },
+    {
+      "id": 42,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Hard Work",
+      "question": "Write an essay on the role of hard work in success."
+    },
+    {
+      "id": 43,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Decision Making",
+      "question": "Write an essay on making good decisions in life."
+    },
+    {
+      "id": 44,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Learning from Mistakes",
+      "question": "Write an essay on learning valuable lessons from mistakes."
+    },
+    {
+      "id": 45,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Time Management",
+      "question": "Write an essay on the importance of managing time wisely."
+    },
+    {
+      "id": 46,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Positive Thinking",
+      "question": "Write an essay on the power of positive thinking."
+    },
+    {
+      "id": 47,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Goal Setting",
+      "question": "Write an essay on setting and achieving goals."
+    },
+    {
+      "id": 48,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Responsibility",
+      "question": "Write an essay on taking responsibility for one’s actions."
+    },
+    {
+      "id": 49,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Confidence",
+      "question": "Write an essay on building self-confidence."
+    },
+    {
+      "id": 50,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Self Respect",
+      "question": "Write an essay on the importance of self-respect."
+    },
+    {
+      "id": 51,
+      "chapter": "Final Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Youth and Values",
+      "question": "Write an essay on values that young people should follow."
+    },
+    {
+      "id": 52,
+      "chapter": "Final Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Ethics in Life",
+      "question": "Write an essay on the importance of ethics in daily life."
+    },
+    {
+      "id": 53,
+      "chapter": "Final Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Moral Development",
+      "question": "Write an essay on how to develop moral character."
+    },
+    {
+      "id": 54,
+      "chapter": "Final Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Character Building",
+      "question": "Write an essay on building a strong character."
+    },
+    {
+      "id": 55,
+      "chapter": "Final Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Ethical Living",
+      "question": "Write an essay on living ethically in society."
+    },
+    {
+      "id": 56,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "True Success",
+      "question": "Write an essay on what true success means in life."
+    },
+    {
+      "id": 57,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Values Over Wealth",
+      "question": "Write an essay on why values are more important than wealth."
+    },
+    {
+      "id": 58,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Becoming Better",
+      "question": "Write an essay on improving oneself every day."
+    },
+    {
+      "id": 59,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Lessons from Stories",
+      "question": "Write an essay on lessons learned from stories."
+    },
+    {
+      "id": 60,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Importance of Values",
+      "question": "Write an essay on the importance of values in life."
+    },
+    {
+      "id": 61,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Learning Through Experience",
+      "question": "Write an essay on learning from real-life experiences."
+    },
+    {
+      "id": 62,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Role of Curiosity",
+      "question": "Write an essay on how curiosity helps in learning."
+    },
+    {
+      "id": 63,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Human Responsibility",
+      "question": "Write an essay on our responsibility towards society."
+    },
+    {
+      "id": 64,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Learning Every Day",
+      "question": "Write an essay on the importance of lifelong learning."
+    },
+    {
+      "id": 65,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Power of Curiosity",
+      "question": "Write an essay on curiosity as a driving force for progress."
+    },
+    {
+      "id": 66,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Human Weakness",
+      "question": "Write an essay on common human weaknesses and how to overcome them."
+    },
+    {
+      "id": 67,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Strength of Mind",
+      "question": "Write an essay on the power and strength of the human mind."
+    },
+    {
+      "id": 68,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "True Intelligence",
+      "question": "Write an essay on what true intelligence is and how to develop it."
+    },
+    {
+      "id": 69,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Life Choices",
+      "question": "Write an essay on making the right choices in life."
+    },
+    {
+      "id": 70,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Self Improvement",
+      "question": "Write an essay on ways to improve oneself continuously."
+    },
+    {
+      "id": 71,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Learning Through Literature",
+      "question": "Write an essay on lessons learned through literature."
+    },
+    {
+      "id": 72,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Lessons for Youth",
+      "question": "Write an essay on valuable lessons for young people."
+    },
+    {
+      "id": 73,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Moral Development",
+      "question": "Write an essay on developing morals through stories and experiences."
+    },
+    {
+      "id": 74,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Ethics and Character",
+      "question": "Write an essay on the connection between ethics and character building."
+    },
+    {
+      "id": 75,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Values in Modern Life",
+      "question": "Write an essay on maintaining values in modern society."
+    },
+    {
+      "id": 76,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Changed Perspective",
+      "question": "Write an essay on how reading stories can change one’s perspective."
+    },
+    {
+      "id": 77,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Personal Growth",
+      "question": "Write an essay on personal growth through learning from experiences."
+    },
+    {
+      "id": 78,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Applying Lessons",
+      "question": "Write an essay on applying life lessons in daily activities."
+    },
+    {
+      "id": 79,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Becoming Responsible",
+      "question": "Write an essay on becoming a responsible citizen."
+    },
+    {
+      "id": 80,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Final Thoughts",
+      "question": "Write an essay summarizing the key messages of the book."
+    },
+    {
+      "id": 81,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Honesty in Daily Life",
+      "question": "Write an essay on practicing honesty in everyday actions."
+    },
+    {
+      "id": 82,
+      "chapter": "General Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Kindness and Compassion",
+      "question": "Write an essay on showing kindness and compassion to others."
+    },
+    {
+      "id": 83,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Handling Failure",
+      "question": "Write an essay on learning and growing from failures."
+    },
+    {
+      "id": 84,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Self Confidence",
+      "question": "Write an essay on developing self-confidence in challenging situations."
+    },
+    {
+      "id": 85,
+      "chapter": "Life Skills",
+      "source": "All Units – Poorvi",
+      "title": "Responsibility Towards Society",
+      "question": "Write an essay on contributing positively to society."
+    },
+    {
+      "id": 86,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Mindfulness",
+      "question": "Write an essay on being mindful and living in the present."
+    },
+    {
+      "id": 87,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Wisdom and Knowledge",
+      "question": "Write an essay on the importance of wisdom along with knowledge."
+    },
+    {
+      "id": 88,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Ethical Decision Making",
+      "question": "Write an essay on making ethical decisions in life."
+    },
+    {
+      "id": 89,
+      "chapter": "Final Practice",
+      "source": "All Units – Poorvi",
+      "title": "Values in Action",
+      "question": "Write an essay on applying values in real-life situations."
+    },
+    {
+      "id": 90,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Learning Through Challenges",
+      "question": "Write an essay on what challenges teach us in life."
+    },
+    {
+      "id": 91,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Importance of Perseverance",
+      "question": "Write an essay on persevering to achieve long-term goals."
+    },
+    {
+      "id": 92,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Building Good Habits",
+      "question": "Write an essay on the importance of building good habits."
+    },
+    {
+      "id": 93,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Learning From Others",
+      "question": "Write an essay on learning lessons from other people’s experiences."
+    },
+    {
+      "id": 94,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Importance of Discipline",
+      "question": "Write an essay on the role of discipline in success."
+    },
+    {
+      "id": 95,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Value of Friendship",
+      "question": "Write an essay on the importance of friendship in life."
+    },
+    {
+      "id": 96,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Helping Others",
+      "question": "Write an essay on the benefits of helping others."
+    },
+    {
+      "id": 97,
+      "chapter": "Extended Practice",
+      "source": "All Units – Poorvi",
+      "title": "Learning From Nature",
+      "question": "Write an essay on lessons learned from nature."
+    },
+    {
+      "id": 98,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Thinking Critically",
+      "question": "Write an essay on the importance of critical thinking."
+    },
+    {
+      "id": 99,
+      "chapter": "Advanced Reflection",
+      "source": "All Units – Poorvi",
+      "title": "Self Improvement Daily",
+      "question": "Write an essay on improving oneself every day."
+    },
+    {
+      "id": 100,
+      "chapter": "Conclusion",
+      "source": "All Units – Poorvi",
+      "title": "Summary of Life Lessons",
+      "question": "Write an essay summarizing key life lessons from the book."
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Proportional Reasoning - 1",
+  "difficulty": "Hard",
+  "source_pdf": "ch-7_PROPORTINAL_REASONING-1.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Cross Multiplication Investigation",
+      "objective": "Verify proportions using cross multiplication",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write pairs of ratios such as 3:4 and 9:12",
+        "Use cross multiplication to check if they are proportional",
+        "Explain why the ratios are proportional or not"
+      ],
+      "learning_outcome": "Applies cross multiplication to test proportions",
+      "evaluation": "Correct verification (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Scale Drawing Project",
+      "objective": "Understand proportional scaling",
+      "materials": ["Graph paper", "Pencil", "Ruler"],
+      "steps": [
+        "Draw a rectangle of size 4 cm by 3 cm",
+        "Draw another rectangle with twice the dimensions",
+        "Compare the ratios of the sides"
+      ],
+      "learning_outcome": "Understands scaling and similarity",
+      "evaluation": "Accuracy of drawings (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Equivalent Ratio Exploration",
+      "objective": "Generate and analyse equivalent ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose a ratio like 5:7",
+        "Generate five equivalent ratios",
+        "Explain how they are related"
+      ],
+      "learning_outcome": "Recognises equivalent ratios",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Recipe Scaling Challenge",
+      "objective": "Apply proportional reasoning in cooking",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write ingredients for a recipe serving 4 people",
+        "Scale the recipe for 10 people",
+        "Explain the ratio used"
+      ],
+      "learning_outcome": "Applies ratios to real-life situations",
+      "evaluation": "Correct scaling (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Distance–Time Ratio Activity",
+      "objective": "Understand proportional relationships in motion",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Assume a car travels 60 km in 1 hour",
+        "Find the distance for 2, 3 and 4 hours",
+        "Explain how the quantities are proportional"
+      ],
+      "learning_outcome": "Recognises proportional relationships",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Missing Term in Proportion",
+      "objective": "Solve proportion problems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write proportions like 7:9 :: x:27",
+        "Find the value of x using cross multiplication",
+        "Verify the result"
+      ],
+      "learning_outcome": "Develops problem-solving using proportions",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Graph of Proportional Values",
+      "objective": "Represent proportional relationships graphically",
+      "materials": ["Graph paper", "Pencil"],
+      "steps": [
+        "Write proportional pairs such as (2,4), (4,8), (6,12)",
+        "Plot them on graph paper",
+        "Observe the pattern formed"
+      ],
+      "learning_outcome": "Understands graphical representation of proportions",
+      "evaluation": "Correct plotting (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Real-Life Ratio Investigation",
+      "objective": "Analyse ratios in daily life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Collect data such as number of boys and girls in class",
+        "Write the ratio",
+        "Compare ratios with another class"
+      ],
+      "learning_outcome": "Applies ratios to real-life data",
+      "evaluation": "Correct ratio representation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Proportional Rectangle Investigation",
+      "objective": "Explore similarity in rectangles",
+      "materials": ["Graph paper", "Ruler"],
+      "steps": [
+        "Draw rectangles with ratios 3:2 such as 6×4 and 9×6",
+        "Measure the sides",
+        "Explain why they are proportional"
+      ],
+      "learning_outcome": "Understands proportional dimensions",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Ratio Research Poster",
+      "objective": "Explore applications of proportional reasoning",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Research examples of ratios in real life",
+        "Create a poster showing at least three examples",
+        "Explain the ratios involved"
+      ],
+      "learning_outcome": "Understands real-world applications of ratios",
+      "evaluation": "Clarity and accuracy (10 marks)"
+    }
+  ]
+}

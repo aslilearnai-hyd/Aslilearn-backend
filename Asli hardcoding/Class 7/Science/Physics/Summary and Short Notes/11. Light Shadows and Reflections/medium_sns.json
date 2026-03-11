@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Light: Shadows and Reflections",
+    "difficulty": "Medium",
+    "source_pdf": "jess711.pdf",
+    "short_notes": {
+        "key_points": [
+            "Light travels in straight lines, which allows shadows to form",
+            "Shadows depend on the position of the light source, object and screen",
+            "Opaque objects create clear shadows, while translucent objects form faint shadows",
+            "Reflection of light occurs when light strikes a surface and bounces back",
+            "Mirrors are smooth surfaces that reflect light clearly"
+        ],
+        "examples": [
+            "A shadow becomes longer in the evening due to the position of the Sun",
+            "Frosted glass is a translucent material that allows partial light",
+            "A plane mirror forms a clear reflection of objects",
+            "Hand shadow puppets formed on a wall using a torch"
+        ],
+        "formulas": [
+            "Law of Reflection → Angle of incidence = Angle of reflection",
+            "Shadow formation → Light source + Object + Screen"
+        ],
+        "exam_tips": [
+            "Remember the law of reflection",
+            "Understand factors affecting the size of shadows",
+            "Draw diagrams showing reflection in a plane mirror",
+            "Differentiate between transparent, translucent and opaque objects"
+        ]
+    }
+}

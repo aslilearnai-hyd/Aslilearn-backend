@@ -1,0 +1,180 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Quadrilaterals",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class9_math_ch8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Constructing Parallelogram",
+            "objective": "Learn to construct a parallelogram using ruler and compass",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Take two adjacent sides and the included angle",
+                "Construct parallelogram using compass and ruler",
+                "Label vertices and sides"
+            ],
+            "learning_outcome": "Understands construction of parallelogram",
+            "evaluation": "Accurate construction and labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Constructing Rhombus",
+            "objective": "Construct rhombus using diagonals",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw one diagonal",
+                "Use compass to draw arcs to locate vertices",
+                "Complete rhombus and label vertices"
+            ],
+            "learning_outcome": "Understands rhombus construction using diagonals",
+            "evaluation": "Correct construction and labeling (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Angle Sum Verification",
+            "objective": "Verify sum of angles in quadrilaterals equals 360°",
+            "materials": [
+                "Notebook",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw any quadrilateral",
+                "Measure all four angles using protractor",
+                "Add angles and verify sum is 360°"
+            ],
+            "learning_outcome": "Understands angle sum property of quadrilaterals",
+            "evaluation": "Accurate measurement and verification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Perimeter of Quadrilaterals",
+            "objective": "Calculate perimeter using measured sides",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a quadrilateral",
+                "Measure all sides",
+                "Add side lengths to calculate perimeter"
+            ],
+            "learning_outcome": "Applies perimeter formula practically",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Area Using Formula",
+            "objective": "Calculate area of rectangle, square, parallelogram",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Graph paper",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw shapes on graph paper",
+                "Measure base and height",
+                "Use area formulas to calculate area"
+            ],
+            "learning_outcome": "Applies area formulas correctly",
+            "evaluation": "Accurate area calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Diagonals and Their Properties",
+            "objective": "Explore properties of diagonals in quadrilaterals",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw different quadrilaterals",
+                "Draw diagonals",
+                "Observe intersection, lengths, and angles formed"
+            ],
+            "learning_outcome": "Understands diagonal properties",
+            "evaluation": "Correct drawing and observation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Identifying Special Quadrilaterals",
+            "objective": "Differentiate square, rectangle, rhombus, parallelogram using properties",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw quadrilaterals",
+                "Measure sides and angles",
+                "Classify as square, rectangle, rhombus, or parallelogram"
+            ],
+            "learning_outcome": "Recognises special quadrilaterals based on properties",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Quadrilateral in Daily Life",
+            "objective": "Observe and record quadrilateral shapes around you",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Look for quadrilateral objects around home or school",
+                "Draw at least three examples",
+                "Label vertices and sides"
+            ],
+            "learning_outcome": "Connects geometry concepts to real-life objects",
+            "evaluation": "Relevant examples and drawings (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Comparing Diagonal Lengths",
+            "objective": "Measure and compare diagonals in quadrilaterals",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw parallelogram, rectangle, and rhombus",
+                "Measure both diagonals in each shape",
+                "Observe relationships between diagonals"
+            ],
+            "learning_outcome": "Understands special relationships in quadrilaterals",
+            "evaluation": "Accurate measurement and observation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Naming Quadrilaterals",
+            "objective": "Learn correct notation and labeling",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a quadrilateral",
+                "Label vertices as A, B, C, D",
+                "Write name as ABCD"
+            ],
+            "learning_outcome": "Correctly names quadrilaterals",
+            "evaluation": "Accurate notation (10 marks)"
+        }
+    ]
+}

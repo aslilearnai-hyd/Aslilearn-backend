@@ -1,0 +1,42 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Hard",
+    "source_pdf": "m9_2.pdf",
+    "short_notes": {
+        "key_points": [
+            "A polynomial is an algebraic expression containing variables with non-negative integer exponents",
+            "The degree of a polynomial is the greatest exponent of the variable",
+            "Polynomials can be classified as constant, linear, quadratic, cubic or higher degree",
+            "Zeroes of a polynomial are the values of the variable that make the polynomial equal to zero",
+            "Factor theorem helps determine factors of polynomials",
+            "Factorisation simplifies polynomial expressions into products of simpler expressions",
+            "Algebraic identities allow expansion and simplification of expressions",
+            "Polynomial concepts are useful in solving equations and mathematical modeling"
+        ],
+        "examples": [
+            "Polynomial example: 4x³ + 3x² + 2x + 1",
+            "Quadratic factorisation: x² − 7x + 10 = (x − 5)(x − 2)",
+            "Difference of squares: x² − 25 = (x − 5)(x + 5)",
+            "Sum of cubes: x³ + 8 = (x + 2)(x² − 2x + 4)",
+            "Difference of cubes: x³ − 27 = (x − 3)(x² + 3x + 9)",
+            "Polynomial evaluation: p(x)=2x²+3x+1 → p(2)=15"
+        ],
+        "formulas": [
+            "(a + b)² = a² + 2ab + b²",
+            "(a − b)² = a² − 2ab + b²",
+            "a² − b² = (a + b)(a − b)",
+            "(a + b)³ = a³ + 3a²b + 3ab² + b³",
+            "x³ − y³ = (x − y)(x² + xy + y²)",
+            "x³ + y³ = (x + y)(x² − xy + y²)"
+        ],
+        "exam_tips": [
+            "Check the structure of the polynomial before attempting factorisation",
+            "Use algebraic identities to expand or simplify expressions quickly",
+            "Practice solving problems involving polynomial evaluation",
+            "Understand the relationship between zeroes and factors of polynomials",
+            "Always verify your factorisation by multiplying the factors"
+        ]
+    }
+}

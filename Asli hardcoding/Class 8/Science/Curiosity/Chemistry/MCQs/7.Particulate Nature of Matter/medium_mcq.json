@@ -1,0 +1,361 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 7: Particulate Nature of Matter",
+  "difficulty": "medium",
+  "generated_at": "2026-03-05T15:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which observation supports the idea that matter is made of tiny particles?",
+      "options": {
+        "A": "Water boiling",
+        "B": "Sugar dissolving in water",
+        "C": "Stone sinking in water",
+        "D": "Ice melting"
+      },
+      "correct_answer": "B",
+      "explanation": "Sugar dissolves because its tiny particles mix with water particles.",
+      "difficulty": "medium",
+      "source_section": "Activity 7.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which experiment shows that particles of matter have spaces between them?",
+      "options": {
+        "A": "Grinding chalk",
+        "B": "Dissolving sugar in water",
+        "C": "Heating water",
+        "D": "Breaking glass"
+      },
+      "correct_answer": "B",
+      "explanation": "Sugar particles occupy spaces between water particles when dissolved.",
+      "difficulty": "medium",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which state of matter has particles that vibrate around fixed positions?",
+      "options": {
+        "A": "Solid",
+        "B": "Liquid",
+        "C": "Gas",
+        "D": "Plasma"
+      },
+      "correct_answer": "A",
+      "explanation": "Particles in solids vibrate but remain fixed in position.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do liquids take the shape of their container?",
+      "options": {
+        "A": "Particles are tightly packed",
+        "B": "Particles move around each other",
+        "C": "Particles are fixed",
+        "D": "Particles disappear"
+      },
+      "correct_answer": "B",
+      "explanation": "Liquid particles can move around each other, allowing liquids to take the shape of their container.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which property of gases allows them to fill an entire container?",
+      "options": {
+        "A": "Strong attraction",
+        "B": "Free particle movement",
+        "C": "Fixed particle positions",
+        "D": "High density"
+      },
+      "correct_answer": "B",
+      "explanation": "Gas particles move freely and occupy all available space.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the main reason gases are highly compressible?",
+      "options": {
+        "A": "Particles are large",
+        "B": "Particles have strong attraction",
+        "C": "Particles have large spaces between them",
+        "D": "Particles are fixed"
+      },
+      "correct_answer": "C",
+      "explanation": "Gases contain large empty spaces between particles.",
+      "difficulty": "medium",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which activity demonstrates that gas particles move freely?",
+      "options": {
+        "A": "Sugar dissolving",
+        "B": "Perfume smell spreading",
+        "C": "Water freezing",
+        "D": "Ice melting"
+      },
+      "correct_answer": "B",
+      "explanation": "Perfume smell spreads because gas particles move freely through air.",
+      "difficulty": "medium",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which state of matter shows the fastest diffusion?",
+      "options": {
+        "A": "Solid",
+        "B": "Liquid",
+        "C": "Gas",
+        "D": "All equal"
+      },
+      "correct_answer": "C",
+      "explanation": "Gas particles move faster and are farther apart, so diffusion occurs faster.",
+      "difficulty": "medium",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens to particle movement when temperature increases?",
+      "options": {
+        "A": "Movement decreases",
+        "B": "Movement stops",
+        "C": "Movement increases",
+        "D": "Movement remains constant"
+      },
+      "correct_answer": "C",
+      "explanation": "Higher temperature increases the kinetic energy of particles.",
+      "difficulty": "medium",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Which experiment demonstrates the compressibility of gases?",
+      "options": {
+        "A": "Potassium permanganate diffusion",
+        "B": "Syringe compression experiment",
+        "C": "Sugar dissolving experiment",
+        "D": "Melting ice experiment"
+      },
+      "correct_answer": "B",
+      "explanation": "Air in a syringe can be compressed when the plunger is pushed.",
+      "difficulty": "medium",
+      "source_section": "Activity 7.6"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which property explains why solids maintain a fixed shape?",
+      "options": {
+        "A": "Particles move freely",
+        "B": "Particles are loosely packed",
+        "C": "Strong forces between particles",
+        "D": "Particles are invisible"
+      },
+      "correct_answer": "C",
+      "explanation": "Strong attraction keeps particles fixed in solids.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What type of change occurs when ice melts into water?",
+      "options": {
+        "A": "Chemical change",
+        "B": "Physical change",
+        "C": "Biological change",
+        "D": "Nuclear change"
+      },
+      "correct_answer": "B",
+      "explanation": "Melting is a physical change where the substance remains the same.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which process converts liquid water into water vapor below boiling point?",
+      "options": {
+        "A": "Condensation",
+        "B": "Evaporation",
+        "C": "Freezing",
+        "D": "Melting"
+      },
+      "correct_answer": "B",
+      "explanation": "Evaporation occurs at the surface of a liquid below boiling temperature.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Why does diffusion occur faster in hot water than in cold water?",
+      "options": {
+        "A": "Hot water has fewer particles",
+        "B": "Particles move faster at higher temperatures",
+        "C": "Cold water has no particles",
+        "D": "Hot water has stronger attraction"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher temperature increases particle motion and diffusion rate.",
+      "difficulty": "medium",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Which state of matter has the weakest interparticle forces?",
+      "options": {
+        "A": "Solid",
+        "B": "Liquid",
+        "C": "Gas",
+        "D": "Crystal"
+      },
+      "correct_answer": "C",
+      "explanation": "Gas particles have very weak attractive forces.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which example best represents diffusion in liquids?",
+      "options": {
+        "A": "Smoke spreading in air",
+        "B": "Perfume smell spreading",
+        "C": "Potassium permanganate spreading in water",
+        "D": "Ice melting"
+      },
+      "correct_answer": "C",
+      "explanation": "Potassium permanganate color spreads in water due to diffusion.",
+      "difficulty": "medium",
+      "source_section": "Activity 7.8"
+    },
+    {
+      "question_number": 17,
+      "question": "Which state of matter has moderate interparticle attraction?",
+      "options": {
+        "A": "Solid",
+        "B": "Liquid",
+        "C": "Gas",
+        "D": "Plasma"
+      },
+      "correct_answer": "B",
+      "explanation": "Liquids have weaker attraction than solids but stronger than gases.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the boiling point of water under normal conditions?",
+      "options": {
+        "A": "50°C",
+        "B": "80°C",
+        "C": "100°C",
+        "D": "120°C"
+      },
+      "correct_answer": "C",
+      "explanation": "Water boils at 100°C under normal atmospheric pressure.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which property explains why liquids flow easily?",
+      "options": {
+        "A": "Particles are fixed",
+        "B": "Particles move freely within limited space",
+        "C": "Particles are very heavy",
+        "D": "Particles disappear"
+      },
+      "correct_answer": "B",
+      "explanation": "Liquid particles move around each other, allowing flow.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which example demonstrates gas diffusion?",
+      "options": {
+        "A": "Sugar dissolving",
+        "B": "Ink spreading in water",
+        "C": "Smell of food spreading",
+        "D": "Ice freezing"
+      },
+      "correct_answer": "C",
+      "explanation": "Smell spreads due to diffusion of gas particles.",
+      "difficulty": "medium",
+      "source_section": "Section 7.4"
+    },
+
+    {
+      "question_number": 21,
+      "question": "What happens to particle spacing when matter changes from solid to gas?",
+      "options": {
+        "A": "Spacing decreases",
+        "B": "Spacing increases",
+        "C": "Spacing remains same",
+        "D": "Particles disappear"
+      },
+      "correct_answer": "B",
+      "explanation": "Particles move farther apart when matter changes to gas.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which process changes gas into liquid?",
+      "options": {
+        "A": "Evaporation",
+        "B": "Melting",
+        "C": "Condensation",
+        "D": "Freezing"
+      },
+      "correct_answer": "C",
+      "explanation": "Condensation is the process of gas turning into liquid.",
+      "difficulty": "medium",
+      "source_section": "States of Matter"
+    },
+    {
+      "question_number": 23,
+      "question": "Which statement correctly describes particles of liquids?",
+      "options": {
+        "A": "Particles are fixed",
+        "B": "Particles are far apart and move freely",
+        "C": "Particles are close but can move around each other",
+        "D": "Particles are absent"
+      },
+      "correct_answer": "C",
+      "explanation": "Liquid particles remain close but can move around each other.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which concept explains why solids do not flow?",
+      "options": {
+        "A": "Weak attraction",
+        "B": "Particles fixed in position",
+        "C": "Particles moving rapidly",
+        "D": "Particles far apart"
+      },
+      "correct_answer": "B",
+      "explanation": "Particles in solids are fixed due to strong attraction.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Which property best distinguishes gases from solids?",
+      "options": {
+        "A": "Gases have fixed shape",
+        "B": "Gases have strong attraction",
+        "C": "Gas particles move freely and are far apart",
+        "D": "Gas particles vibrate in fixed positions"
+      },
+      "correct_answer": "C",
+      "explanation": "Gas particles are far apart and move freely unlike solids.",
+      "difficulty": "medium",
+      "source_section": "Section 7.2.3"
+    }
+  ]
+}

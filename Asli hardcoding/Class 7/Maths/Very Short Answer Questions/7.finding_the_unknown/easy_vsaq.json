@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: FINDING THE UNKNOWN (INTRODUCTION TO ALGEBRA)",
+    "generated_at": "2026-03-06T00:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a 'Variable' in algebra?",
+            "answer": "A variable is a symbol (usually a letter like $x$ or $y$) that represents an unknown number.",
+            "key_concepts": ["variable"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a 'Constant'?",
+            "answer": "A constant is a value that does not change, such as $5$, $-10$, or $1/2$.",
+            "key_concepts": ["constant"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Write the expression for: '5 more than a number $x$'.",
+            "answer": "$x + 5$",
+            "key_concepts": ["algebraic expressions"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the expression for: '7 subtracted from $y$'.",
+            "answer": "$y - 7$",
+            "key_concepts": ["algebraic expressions"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is an 'Algebraic Equation'?",
+            "answer": "A mathematical statement that shows two expressions are equal using an '=' sign.",
+            "key_concepts": ["equation definition"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Solve for $x$: $x + 4 = 10$.",
+            "answer": "$x = 6$",
+            "key_concepts": ["solving equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Solve for $y$: $y - 3 = 12$.",
+            "answer": "$y = 15$",
+            "key_concepts": ["solving equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "If $2x = 8$, what is the value of $x$?",
+            "answer": "$x = 4$",
+            "key_concepts": ["multiplication in equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Express in algebra: 'Twice a number $z$'.",
+            "answer": "$2z$",
+            "key_concepts": ["algebraic notation"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the value of $x + 5$ when $x = 3$?",
+            "answer": "$8$",
+            "key_concepts": ["substitution"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Identify the variable in the equation $3a + 7 = 10$.",
+            "answer": "$a$",
+            "key_concepts": ["identifying variables"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Translate into an equation: 'The sum of $x$ and 10 is 25'.",
+            "answer": "$x + 10 = 25$",
+            "key_concepts": ["translating statements"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Solve: $m / 5 = 4$.",
+            "answer": "$m = 20$",
+            "key_concepts": ["division in equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Is $x = 2$ a solution for $5x = 10$?",
+            "answer": "Yes, because $5(2) = 10$.",
+            "key_concepts": ["verifying solutions"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Write the expression: 'Product of $p$ and $q$'.",
+            "answer": "$pq$ or $p \\times q$",
+            "key_concepts": ["algebraic product"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the 'LHS' of an equation?",
+            "answer": "The expression on the Left Hand Side of the equal sign.",
+            "key_concepts": ["equation parts"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the 'RHS' of the equation $x + 2 = 9$?",
+            "answer": "$9$",
+            "key_concepts": ["equation parts"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Change the statement into an expression: '10 decreased by $n$'.",
+            "answer": "$10 - n$",
+            "key_concepts": ["algebraic subtraction"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Solve: $7 + z = 7$.",
+            "answer": "$z = 0$",
+            "key_concepts": ["solving equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "If a notebook costs $x$ rupees, what is the cost of 5 notebooks?",
+            "answer": "$5x$ rupees.",
+            "key_concepts": ["real-world algebra"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What do we call the numerical factor in a term like $4x$?",
+            "answer": "The Coefficient.",
+            "key_concepts": ["coefficient"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Write the expression: 'Half of a number $k$'.",
+            "answer": "$k/2$ or $1/2k$",
+            "key_concepts": ["algebraic notation"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Solve: $10 - x = 4$.",
+            "answer": "$x = 6$",
+            "key_concepts": ["solving equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "State whether $x + 5$ is an expression or an equation.",
+            "answer": "It is an Expression.",
+            "key_concepts": ["expression vs equation"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Write in words: $3y - 2$.",
+            "answer": "2 subtracted from 3 times $y$.",
+            "key_concepts": ["interpreting algebra"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        }
+    ]
+}

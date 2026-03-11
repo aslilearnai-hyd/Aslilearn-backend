@@ -1,0 +1,372 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Finding Common Ground (Data Handling)",
+    "generated_at": "2026-03-05T01:12:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is 'Data' in the context of mathematics? Explain with an example.",
+            "answer": "Data is a collection of numbers gathered to give some information. For example, the marks obtained by 10 students in a math test is data that helps us understand the performance of the class.",
+            "answer_outline": [
+                "Definition of data",
+                "Purpose of gathering data",
+                "Simple classroom example"
+            ],
+            "key_concepts": [
+                "data collection"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the importance of organizing data before analyzing it.",
+            "answer": "Raw data is often unorganized and hard to understand. Organizing data (using tables or tally marks) makes it easy to read, interpret, and find specific information quickly.",
+            "answer_outline": [
+                "Problem with raw data",
+                "Benefits of organization",
+                "Tools like tables"
+            ],
+            "key_concepts": [
+                "organization of data"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Define 'Arithmetic Mean' and provide the formula to calculate it.",
+            "answer": "The Arithmetic Mean (or simply Mean) is the average of a set of numbers. It is calculated using the formula: Mean = (Sum of all observations) / (Number of observations).",
+            "answer_outline": [
+                "Definition of mean",
+                "Formula",
+                "Explanation of terms in the formula"
+            ],
+            "key_concepts": [
+                "arithmetic mean",
+                "average"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the mean of the first five whole numbers.",
+            "answer": "The first five whole numbers are 0, 1, 2, 3, and 4. Sum = 0 + 1 + 2 + 3 + 4 = 10. Number of observations = 5. Mean = 10 / 5 = 2.",
+            "answer_outline": [
+                "List first five whole numbers",
+                "Calculate sum",
+                "Apply mean formula"
+            ],
+            "key_concepts": [
+                "mean",
+                "whole numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the 'Range' of a data set? How is it calculated?",
+            "answer": "The Range is the difference between the highest and the lowest observation in a data set. Range = Highest Value - Lowest Value.",
+            "answer_outline": [
+                "Definition of range",
+                "Calculation method"
+            ],
+            "key_concepts": [
+                "range"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the range of the ages of a group of students: 12, 15, 11, 14, 13, 16.",
+            "answer": "Highest age = 16. Lowest age = 11. Range = 16 - 11 = 5 years.",
+            "answer_outline": [
+                "Identify highest and lowest values",
+                "Subtract to find range"
+            ],
+            "key_concepts": [
+                "range"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Define the 'Mode' of a set of data.",
+            "answer": "The mode of a set of observations is the observation that occurs most frequently. A data set can have more than one mode if multiple values have the same highest frequency.",
+            "answer_outline": [
+                "Definition of mode",
+                "Concept of frequency"
+            ],
+            "key_concepts": [
+                "mode",
+                "frequency"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the mode of the following numbers: 2, 6, 5, 3, 0, 3, 4, 3, 2, 4, 3.",
+            "answer": "Arranging the data: 0, 2, 2, 3, 3, 3, 3, 4, 4, 5, 6. The number 3 occurs the most (4 times). Therefore, Mode = 3.",
+            "answer_outline": [
+                "Arrange or count frequencies",
+                "Identify highest frequency",
+                "State the mode"
+            ],
+            "key_concepts": [
+                "mode"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the 'Median' of a data set?",
+            "answer": "The median refers to the value which lies in the middle of the data (when arranged in ascending or descending order) with half of the observations above it and half below it.",
+            "answer_outline": [
+                "Definition of median",
+                "Requirement for ordering"
+            ],
+            "key_concepts": [
+                "median"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Steps to find the median of a data set with an odd number of observations.",
+            "answer": "1. Arrange the data in ascending or descending order. 2. Find the middle term. For $n$ observations, the median is the $((n+1)/2)$th term.",
+            "answer_outline": [
+                "Sorting step",
+                "Finding middle position",
+                "Formula for odd count"
+            ],
+            "key_concepts": [
+                "median",
+                "odd observations"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the median of the data: 24, 36, 46, 17, 18, 25, 35.",
+            "answer": "Arranging in ascending order: 17, 18, 24, 25, 35, 36, 46. There are 7 observations. The middle (4th) term is 25. So, Median = 25.",
+            "answer_outline": [
+                "Sort data",
+                "Identify total count",
+                "Locate middle value"
+            ],
+            "key_concepts": [
+                "median calculation"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a 'Bar Graph'? Why is it used?",
+            "answer": "A bar graph is a visual representation of data using bars of uniform width. It is used to compare different categories of data easily and quickly.",
+            "answer_outline": [
+                "Definition of bar graph",
+                "Purpose (comparison)"
+            ],
+            "key_concepts": [
+                "bar graph",
+                "visual representation"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of 'Scale' in a bar graph.",
+            "answer": "A scale is the ratio that relates the actual data values to the length of the bars on the graph. For example, 1 unit length = 10 students.",
+            "answer_outline": [
+                "Definition of scale",
+                "Example of scale choice"
+            ],
+            "key_concepts": [
+                "scale",
+                "unit length"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.6.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a 'Double Bar Graph' and when is it useful?",
+            "answer": "A double bar graph displays two sets of data side-by-side. It is useful for comparing two different groups over the same categories, such as marks of a class in two different terms.",
+            "answer_outline": [
+                "Definition",
+                "Specific use case (comparison between two sets)"
+            ],
+            "key_concepts": [
+                "double bar graph"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Can a set of data have the same value for Mean, Median, and Mode? Give a simple example.",
+            "answer": "Yes. Consider the data: 2, 2, 2. Mean = (2+2+2)/3 = 2. Median = 2. Mode = 2.",
+            "answer_outline": [
+                "Answer (Yes)",
+                "Numerical proof with simple data"
+            ],
+            "key_concepts": [
+                "central tendency"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is meant by the 'Frequency' of an observation?",
+            "answer": "Frequency is the number of times a particular observation occurs in a given data set.",
+            "answer_outline": [
+                "Definition",
+                "Relation to tally marks"
+            ],
+            "key_concepts": [
+                "frequency"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "A cricketer scores 58, 76, 40, 35, 46, 45, 0, 100 runs in eight innings. Find the mean score.",
+            "answer": "Sum of runs = 58+76+40+35+46+45+0+100 = 400. Number of innings = 8. Mean = 400 / 8 = 50.",
+            "answer_outline": [
+                "Add all scores",
+                "Divide by total innings"
+            ],
+            "key_concepts": [
+                "mean calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Differentiate between Mean and Mode.",
+            "answer": "Mean is the average found by dividing the sum of values by their count. Mode is simply the value that appears most often. The mean considers all values, while the mode only considers frequency.",
+            "answer_outline": [
+                "Definition difference",
+                "Calculation difference"
+            ],
+            "key_concepts": [
+                "mean vs mode"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Is the mean always one of the numbers in the data set? Explain.",
+            "answer": "No, the mean does not have to be one of the numbers in the data set. For example, the mean of 2 and 3 is 2.5, which is not in the set.",
+            "answer_outline": [
+                "Answer (No)",
+                "Counter-example"
+            ],
+            "key_concepts": [
+                "mean properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Is the mode always one of the numbers in the data set?",
+            "answer": "Yes, the mode is always one of the observations in the data set because it is defined as the most frequent observation among those present.",
+            "answer_outline": [
+                "Answer (Yes)",
+                "Explanation based on definition"
+            ],
+            "key_concepts": [
+                "mode properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Is the median always one of the numbers in the data set?",
+            "answer": "If the number of observations is odd, the median is always one of the numbers. If the count is even, the median is the average of the two middle numbers, which may not be in the set.",
+            "answer_outline": [
+                "Case for odd count",
+                "Case for even count"
+            ],
+            "key_concepts": [
+                "median properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "How do tally marks help in organizing data?",
+            "answer": "Tally marks allow us to count occurrences of each data point one by one. Every fifth mark is a diagonal line across the previous four, making it easy to group by fives and sum up frequencies.",
+            "answer_outline": [
+                "Definition of tallying",
+                "Grouping by fives"
+            ],
+            "key_concepts": [
+                "tally marks"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is it important to choose a proper scale for a bar graph?",
+            "answer": "A proper scale ensures the graph is neither too large nor too small for the paper and that the differences between the data values are clearly visible and accurate.",
+            "answer_outline": [
+                "Clarity and visibility",
+                "Proportionality"
+            ],
+            "key_concepts": [
+                "scale selection"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "The rainfall (in mm) in a city on 7 days of a certain week was recorded. How would you find the average rainfall?",
+            "answer": "To find the average (mean) rainfall, add the rainfall values for all 7 days and divide the total by 7.",
+            "answer_outline": [
+                "Process description",
+                "Formula application"
+            ],
+            "key_concepts": [
+                "average",
+                "data application"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What does a 'Representive Value' mean in data handling?",
+            "answer": "A representative value is a single number that describes or summarizes an entire collection of data. Mean, median, and mode are all types of representative values.",
+            "answer_outline": [
+                "Definition",
+                "Examples (Mean, Median, Mode)"
+            ],
+            "key_concepts": [
+                "representative values"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        }
+    ]
+}

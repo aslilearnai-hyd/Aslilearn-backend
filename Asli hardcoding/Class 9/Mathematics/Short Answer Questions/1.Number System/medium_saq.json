@@ -1,0 +1,284 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-06T00:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between natural numbers and whole numbers.",
+            "answer": "Natural numbers start from 1 while whole numbers include 0 along with all natural numbers.",
+            "key_concepts": [
+                "natural numbers",
+                "whole numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Write the set notation for integers.",
+            "answer": "Z = {...,-2,-1,0,1,2,...}.",
+            "key_concepts": [
+                "integers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Convert 0.25 into a fraction.",
+            "answer": "0.25 = 25/100 = 1/4.",
+            "key_concepts": [
+                "decimal to fraction"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Convert 0.75 into a fraction.",
+            "answer": "0.75 = 75/100 = 3/4.",
+            "key_concepts": [
+                "decimal conversion"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the square root of 49.",
+            "answer": "√49 = 7.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why √2 is irrational.",
+            "answer": "√2 cannot be expressed as a fraction p/q and its decimal expansion is non-terminating and non-repeating.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Write two rational numbers between 1 and 2.",
+            "answer": "Examples: 3/2 and 5/4.",
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the value of √81.",
+            "answer": "√81 = 9.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain terminating decimals with an example.",
+            "answer": "A terminating decimal ends after finite digits. Example: 0.25.",
+            "key_concepts": [
+                "terminating decimals"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain recurring decimals with an example.",
+            "answer": "Recurring decimals repeat digits infinitely. Example: 0.333...",
+            "key_concepts": [
+                "recurring decimals"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Find √64.",
+            "answer": "√64 = 8.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Write two irrational numbers.",
+            "answer": "Examples: √3 and √5.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Express 0.5 as a fraction.",
+            "answer": "0.5 = 1/2.",
+            "key_concepts": [
+                "decimal conversion"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find √100.",
+            "answer": "√100 = 10.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "State one property of real numbers.",
+            "answer": "Real numbers include both rational and irrational numbers.",
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Write two rational numbers between 2 and 3.",
+            "answer": "Examples: 5/2 and 7/3.",
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why π is irrational.",
+            "answer": "π has a non-terminating non-repeating decimal expansion.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Write √121.",
+            "answer": "√121 = 11.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write two examples of terminating decimals.",
+            "answer": "Examples: 0.5 and 0.75.",
+            "key_concepts": [
+                "terminating decimals"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Write two examples of repeating decimals.",
+            "answer": "Examples: 0.333… and 0.666…",
+            "key_concepts": [
+                "recurring decimals"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Find √144.",
+            "answer": "√144 = 12.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Convert 0.2 into a fraction.",
+            "answer": "0.2 = 1/5.",
+            "key_concepts": [
+                "decimal conversion"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Write two irrational numbers between 2 and 3.",
+            "answer": "Examples: √5 and √7.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain real numbers with examples.",
+            "answer": "Real numbers include rational numbers like 1/2 and irrational numbers like √2.",
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Write √225.",
+            "answer": "√225 = 15.",
+            "key_concepts": [
+                "square root"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

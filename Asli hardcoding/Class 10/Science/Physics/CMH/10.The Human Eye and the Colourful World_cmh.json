@@ -1,0 +1,127 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 10: The Human Eye and the Colourful World",
+    "generated_at": "2026-03-11T03:10:00",
+    "concepts": [
+        {
+            "concept_name": "Structure of the Human Eye",
+            "difficulty": "easy",
+            "lesson": "The human eye is a natural optical instrument that allows us to see objects. Important parts include the cornea, iris, pupil, eye lens, retina and optic nerve. Light entering the eye is focused by the lens onto the retina.",
+            "real_example": "When light from a book enters the eye, the eye lens focuses it on the retina so we can read clearly.",
+            "key_points": [
+                "Eye acts like a camera",
+                "Retina forms the image",
+                "Optic nerve sends signals to the brain"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "concept_name": "Accommodation of the Eye",
+            "difficulty": "medium",
+            "lesson": "Accommodation is the ability of the eye lens to change its focal length to focus objects at different distances. The ciliary muscles adjust the curvature of the lens to maintain a clear image on the retina.",
+            "real_example": "When we shift our view from a distant mountain to a nearby book, the eye lens adjusts automatically.",
+            "key_points": [
+                "Eye lens changes shape",
+                "Ciliary muscles control focusing",
+                "Allows clear vision at different distances"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "concept_name": "Defects of Vision",
+            "difficulty": "medium",
+            "lesson": "Vision defects occur when the eye cannot properly focus light on the retina. The most common defects are myopia (short-sightedness), hypermetropia (long-sightedness) and presbyopia.",
+            "real_example": "A student who cannot see the blackboard clearly from the back of the classroom may have myopia.",
+            "key_points": [
+                "Image not formed correctly on retina",
+                "Myopia affects distant vision",
+                "Hypermetropia affects near vision"
+            ],
+            "source_section": "Section 10.2"
+        },
+        {
+            "concept_name": "Correction of Vision Defects",
+            "difficulty": "medium",
+            "lesson": "Vision defects are corrected using suitable lenses. Concave lenses correct myopia, convex lenses correct hypermetropia, and bifocal lenses help people with presbyopia.",
+            "real_example": "A person with myopia wears concave spectacles to see distant objects clearly.",
+            "key_points": [
+                "Concave lens for myopia",
+                "Convex lens for hypermetropia",
+                "Bifocal lenses for presbyopia"
+            ],
+            "source_section": "Section 10.2"
+        },
+        {
+            "concept_name": "Dispersion of Light",
+            "difficulty": "medium",
+            "lesson": "Dispersion is the splitting of white light into its component colours when it passes through a prism. Each colour bends differently because different wavelengths travel at different speeds in glass.",
+            "real_example": "A rainbow forms when sunlight is dispersed into different colours by water droplets in the atmosphere.",
+            "key_points": [
+                "White light splits into colours",
+                "Different wavelengths bend differently",
+                "Forms a spectrum of colours"
+            ],
+            "source_section": "Section 10.3"
+        },
+        {
+            "concept_name": "Atmospheric Refraction",
+            "difficulty": "hard",
+            "lesson": "Atmospheric refraction occurs because the atmosphere consists of layers of air with varying densities. Light bends as it passes through these layers, causing several optical effects.",
+            "real_example": "The Sun appears slightly above the horizon even before it actually rises due to atmospheric refraction.",
+            "key_points": [
+                "Refraction occurs in atmospheric layers",
+                "Air density changes with height",
+                "Affects apparent position of objects"
+            ],
+            "source_section": "Section 10.3"
+        },
+        {
+            "concept_name": "Twinkling of Stars",
+            "difficulty": "hard",
+            "lesson": "Stars appear to twinkle because their light continuously refracts through different layers of the atmosphere. Since stars are distant point sources, even small atmospheric changes cause noticeable brightness variations.",
+            "real_example": "Stars appear to flicker in the night sky, especially when observed near the horizon.",
+            "key_points": [
+                "Caused by atmospheric refraction",
+                "Stars are point sources",
+                "Brightness changes continuously"
+            ],
+            "source_section": "Section 10.3"
+        },
+        {
+            "concept_name": "Scattering of Light",
+            "difficulty": "medium",
+            "lesson": "Scattering of light occurs when light interacts with small particles in the atmosphere. Shorter wavelengths scatter more strongly than longer wavelengths.",
+            "real_example": "The sky appears blue because blue light is scattered more than other colours by atmospheric particles.",
+            "key_points": [
+                "Light deviates due to particles",
+                "Short wavelengths scatter more",
+                "Responsible for many sky colours"
+            ],
+            "source_section": "Section 10.4"
+        },
+        {
+            "concept_name": "Colour of the Sky and Sun",
+            "difficulty": "medium",
+            "lesson": "The sky appears blue because blue light is scattered more in the atmosphere. During sunrise and sunset, sunlight travels a longer path through the atmosphere, scattering shorter wavelengths and leaving red light to reach the observer.",
+            "real_example": "The Sun appears reddish-orange during sunrise and sunset.",
+            "key_points": [
+                "Blue sky due to scattering",
+                "Red sunset due to longer atmospheric path",
+                "Short wavelengths scatter more"
+            ],
+            "source_section": "Section 10.4"
+        },
+        {
+            "concept_name": "Tyndall Effect",
+            "difficulty": "hard",
+            "lesson": "The Tyndall effect is the scattering of light by small particles in a colloidal solution. It makes the path of light visible in a medium containing suspended particles.",
+            "real_example": "The path of sunlight entering a dusty room becomes visible due to scattering by dust particles.",
+            "key_points": [
+                "Scattering by colloidal particles",
+                "Makes light path visible",
+                "Occurs in fog, smoke and dusty air"
+            ],
+            "source_section": "Section 10.4"
+        }
+    ]
+}

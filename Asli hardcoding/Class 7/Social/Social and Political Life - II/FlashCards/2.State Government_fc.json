@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: Role of the Government in Health",
+    "generated_at": "2026-03-08T01:42:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "How is 'Health' defined in a broader sense?",
+                "correct_answer": "Our ability to remain free of illness and injuries, as well as mental well-being",
+                "explanation": "Health is not just about disease; it also depends on clean drinking water, adequate food, and a pollution-free environment.",
+                "source_section": "What is Health?"
+            },
+            {
+                "question": "What is the difference between Public and Private health services?",
+                "correct_answer": "Public services are run by the government; Private services are owned by individuals or companies",
+                "explanation": "Public health centers are linked so they cover both rural and urban areas, while private services are concentrated in cities and are for-profit.",
+                "source_section": "Public and Private Health Care Services"
+            },
+            {
+                "question": "Why is the public health system called 'public'?",
+                "correct_answer": "Because it is meant for all citizens and is funded by the taxes we pay",
+                "explanation": "The government uses tax money to provide services like hospitals, police, and schools for the benefit of all citizens.",
+                "source_section": "Public Health Services"
+            },
+            {
+                "question": "What was the landmark 'Hakim Sheikh' case about?",
+                "correct_answer": "A man who was denied treatment by several government hospitals after an accident",
+                "explanation": "The Supreme Court later ruled that the right to life includes the right to health and ordered the state to compensate him.",
+                "source_section": "The Story of Hakim Sheikh"
+            },
+            {
+                "question": "What are the health centers at the village level called?",
+                "correct_answer": "Primary Health Centres (PHC)",
+                "explanation": "These centers usually have a nurse and a village health worker who work under the supervision of doctors.",
+                "source_section": "Public Health Services"
+            },
+            {
+                "question": "What is the 'Costa Rican Approach' to health?",
+                "correct_answer": "Providing basic health services and amenities instead of spending on the military",
+                "explanation": "Costa Rica is considered one of the healthiest countries in Central America because it prioritizes education, health, and clean water.",
+                "source_section": "The Costa Rican Approach"
+            },
+            {
+                "question": "What major step did the Kerala government take in 1996 regarding health?",
+                "correct_answer": "40% of the state budget was given to Panchayats",
+                "explanation": "This allowed villages to plan and provide for water, food, women's development, and education effectively.",
+                "source_section": "The Kerala Experience"
+            },
+            {
+                "question": "What is the main challenge of private health services in India?",
+                "correct_answer": "They are expensive and often suggest unnecessary medicines or injections",
+                "explanation": "Since they are profit-driven, they may encourage practices that cost more for the patient.",
+                "source_section": "Health Care and Equality"
+            },
+            {
+                "question": "What are 'Communicable Diseases'?",
+                "correct_answer": "Diseases that spread from one person to another through water, food, air, or insects",
+                "explanation": "Examples include diarrhea, worms, hepatitis, and tuberculosis.",
+                "source_section": "What is Health?"
+            },
+            {
+                "question": "According to the Constitution, what is a primary duty of the government?",
+                "correct_answer": "To ensure the welfare of the people and provide health care facilities to all",
+                "explanation": "The government must safeguard the 'Right to Life' for every person.",
+                "source_section": "Public Health Services"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Medical Tourists",
+                "content": "Foreigners who come to India specifically for medical treatment at hospitals that offer world-class facilities at lower costs.",
+                "source_section": "Glossary"
+            },
+            {
+                "title": "OPD",
+                "content": "Stands for 'Out Patient Department'. This is where people are first brought in and treated without being admitted to a special ward.",
+                "source_section": "Glossary"
+            },
+            {
+                "title": "Generic Names",
+                "content": "Chemical names of drugs that help in identifying the ingredients; they are usually much cheaper than branded medicines.",
+                "source_section": "Health Care and Equality"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "India is the third largest producer of medicines in the world and is also a large exporter of medicines.",
+                "source_section": "What is Health?"
+            },
+            {
+                "fact": "About five lakh people die from tuberculosis in India every year; this number has remained unchanged since Independence.",
+                "source_section": "What is Health?"
+            },
+            {
+                "fact": "In India, only 20% of the population can afford all the medicines that they require during an illness.",
+                "source_section": "Health Care and Equality"
+            }
+        ]
+    }
+}

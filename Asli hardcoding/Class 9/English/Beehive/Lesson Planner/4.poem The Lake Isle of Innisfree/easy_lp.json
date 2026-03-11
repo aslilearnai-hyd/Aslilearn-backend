@@ -1,0 +1,114 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Lake Isle of Innisfree",
+    "lesson_level": "Easy",
+    "total_periods": 4,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the main idea and theme of the poem",
+        "Recognize imagery related to nature and peace",
+        "Summarize each stanza in simple words",
+        "Develop basic comprehension and vocabulary",
+        "Relate the poem to personal experiences of nature and solitude"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Poem",
+            "topics_covered": [
+                "About the poet (W.B. Yeats)",
+                "Theme: peace, nature, and solitude",
+                "First reading of the poem"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud",
+                "Discussion about why people seek peace in nature"
+            ],
+            "student_activities": [
+                "Listen attentively",
+                "Share experiences of peaceful places"
+            ],
+            "assessment": [
+                "Oral questions on theme",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Understanding the Stanzas",
+            "topics_covered": [
+                "Literal meaning of each stanza",
+                "Imagery of lake, cabin, bee-loud glade",
+                "Mood evoked: calm and reflective"
+            ],
+            "teaching_strategy": [
+                "Explain stanza meanings in simple language",
+                "Highlight key words and images"
+            ],
+            "student_activities": [
+                "Underline descriptive words",
+                "Write meanings of stanzas in notebook"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning on stanza meanings"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Feelings and Personal Connection",
+            "topics_covered": [
+                "Feelings evoked by solitude and nature",
+                "Connection to personal experiences of quiet places",
+                "Imagery of morning, evening, and night"
+            ],
+            "teaching_strategy": [
+                "Discussion on how nature affects mood",
+                "Ask students to share their thoughts on solitude"
+            ],
+            "student_activities": [
+                "Write short sentences on personal reflections",
+                "Identify examples of imagery in poem"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Revision and Recap",
+            "topics_covered": [
+                "Summary of poem",
+                "Theme, imagery, and mood",
+                "Simple poetic devices used (repetition, alliteration)"
+            ],
+            "teaching_strategy": [
+                "Recap key points",
+                "Ask students to summarize poem in their own words"
+            ],
+            "student_activities": [
+                "Write short summary of poem",
+                "Identify simple poetic devices"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Participation in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing imagery and simple poetic devices"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Focus on helping students visualize the serene natural setting and relate the poet’s desire for peace to their own experiences."
+}

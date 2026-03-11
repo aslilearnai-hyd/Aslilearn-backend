@@ -1,0 +1,283 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 3: Electoral Politics",
+    "generated_at": "2026-03-07T21:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how elections help in forming the government.",
+            "answer": "Elections allow citizens to choose representatives who form the government and make decisions on behalf of the people.",
+            "key_concepts": [
+                "government formation"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe two criticisms of political competition.",
+            "answer": "Political competition can create division and encourage use of unfair practices during elections.",
+            "key_concepts": [
+                "political competition"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the principle of one person one vote one value.",
+            "answer": "It means every citizen’s vote has equal value in elections.",
+            "key_concepts": [
+                "equal vote"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how constituencies ensure representation.",
+            "answer": "Constituencies divide the country into areas so each area elects one representative.",
+            "key_concepts": [
+                "constituencies"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the purpose of reservation of constituencies.",
+            "answer": "Reservation ensures representation of weaker sections like SCs and STs in legislatures.",
+            "key_concepts": [
+                "reservation"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the voters list important in elections?",
+            "answer": "It ensures that only eligible citizens vote and prevents electoral fraud.",
+            "key_concepts": [
+                "voters list"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the process of nomination of candidates.",
+            "answer": "Candidates submit nomination forms and security deposits to officially contest elections.",
+            "key_concepts": [
+                "nomination"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why do candidates disclose criminal cases and assets?",
+            "answer": "To provide transparency so voters can make informed decisions.",
+            "key_concepts": [
+                "transparency"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of the Election Commission in India.",
+            "answer": "The Election Commission conducts elections, enforces rules and ensures free and fair elections.",
+            "key_concepts": [
+                "Election Commission"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the Election Commission powerful in India?",
+            "answer": "Because it has constitutional authority and independence from the government.",
+            "key_concepts": [
+                "independent EC"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain two challenges to free and fair elections.",
+            "answer": "Money power and criminal influence are major challenges.",
+            "key_concepts": [
+                "challenges"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is electoral malpractice? Give examples.",
+            "answer": "Electoral malpractice includes bribing voters or threatening them during elections.",
+            "key_concepts": [
+                "malpractice"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the role of voters in a democracy.",
+            "answer": "Voters choose representatives and influence government policies through elections.",
+            "key_concepts": [
+                "voters role"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are election results accepted by losing parties?",
+            "answer": "Because elections are generally free and fair in India.",
+            "key_concepts": [
+                "acceptance of results"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how elections ensure accountability.",
+            "answer": "Leaders must perform well or risk losing the next election.",
+            "key_concepts": [
+                "accountability"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is voter turnout important?",
+            "answer": "It reflects the level of participation of citizens in democracy.",
+            "key_concepts": [
+                "voter turnout"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the role of election campaigns.",
+            "answer": "Election campaigns help voters understand candidates' policies and make informed choices.",
+            "key_concepts": [
+                "campaign"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why are EVMs used in elections?",
+            "answer": "EVMs make voting faster and reduce counting errors.",
+            "key_concepts": [
+                "EVM"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the role of political parties in elections?",
+            "answer": "Political parties nominate candidates and present policies to voters.",
+            "key_concepts": [
+                "political parties"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how elections reflect people's will.",
+            "answer": "Election results show the preferences of voters in choosing leaders.",
+            "key_concepts": [
+                "people's will"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What reforms can improve elections?",
+            "answer": "Reducing money power and ensuring transparency can improve elections.",
+            "key_concepts": [
+                "reforms"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of election observers.",
+            "answer": "They monitor elections to ensure fairness.",
+            "key_concepts": [
+                "observers"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are elections held at regular intervals?",
+            "answer": "Regular elections allow people to replace leaders if necessary.",
+            "key_concepts": [
+                "regular elections"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the concept of electoral reform.",
+            "answer": "Electoral reform refers to changes made to improve the fairness and efficiency of elections.",
+            "key_concepts": [
+                "electoral reform"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is transparency important in elections?",
+            "answer": "Transparency ensures trust and fairness in democratic processes.",
+            "key_concepts": [
+                "transparency"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        }
+    ]
+}

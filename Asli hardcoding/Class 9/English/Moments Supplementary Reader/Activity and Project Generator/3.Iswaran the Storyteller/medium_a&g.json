@@ -1,0 +1,157 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Iswaran the Storyteller",
+    "author": "R.K. Laxman",
+    "difficulty": "Medium",
+    "source_pdf": "eng9_3.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Character Analysis of Mahendra",
+            "objective": "Understand Mahendra’s personality",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "Identify Mahendra’s qualities and behaviour",
+                "Write 5–6 sentences describing his character"
+            ],
+            "learning_outcome": "Understands character traits in detail",
+            "evaluation": "Relevant points and clarity (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Storytelling Skills of Iswaran",
+            "objective": "Identify qualities of a good storyteller",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the parts where Iswaran tells stories",
+                "List three techniques he uses to make stories interesting",
+                "Explain them briefly"
+            ],
+            "learning_outcome": "Recognizes narrative techniques",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Elephant Incident Summary",
+            "objective": "Understand the elephant story told by Iswaran",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the elephant episode carefully",
+                "Write a short summary in 5–6 sentences"
+            ],
+            "learning_outcome": "Improves summarizing ability",
+            "evaluation": "Accuracy and clarity of summary (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Suspense in the Story",
+            "objective": "Understand how suspense is created",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify scenes that create suspense",
+                "Explain how the writer builds suspense in 4–5 sentences"
+            ],
+            "learning_outcome": "Understands literary techniques",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Iswaran’s Influence on Mahendra",
+            "objective": "Understand how stories affect Mahendra",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the ghost story told by Iswaran",
+                "Explain how it affects Mahendra’s thoughts and behaviour"
+            ],
+            "learning_outcome": "Understands character influence",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Importance of Setting",
+            "objective": "Understand the setting of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Describe the place where Mahendra and Iswaran stay",
+                "Write 4–5 sentences explaining its importance"
+            ],
+            "learning_outcome": "Understands role of setting",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence Chart",
+            "objective": "Understand story structure",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List five important events in the lesson",
+                "Arrange them in chronological order"
+            ],
+            "learning_outcome": "Understands narrative flow",
+            "evaluation": "Correct order of events (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary Activity",
+            "objective": "Improve vocabulary",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Choose five difficult words from the lesson",
+                "Write their meanings",
+                "Use them in sentences"
+            ],
+            "learning_outcome": "Develops vocabulary skills",
+            "evaluation": "Correct meaning and usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Theme Identification",
+            "objective": "Identify the theme of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the main idea of the story",
+                "Write 4–5 sentences explaining the theme"
+            ],
+            "learning_outcome": "Understands central theme",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Ending Analysis",
+            "objective": "Understand the significance of the ending",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the final part of the story",
+                "Explain why Mahendra decides to leave the place"
+            ],
+            "learning_outcome": "Understands story conclusion",
+            "evaluation": "Clear reasoning (10 marks)"
+        }
+    ]
+}

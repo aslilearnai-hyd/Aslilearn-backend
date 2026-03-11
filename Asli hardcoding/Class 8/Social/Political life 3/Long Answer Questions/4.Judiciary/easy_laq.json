@@ -1,0 +1,244 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Judiciary",
+  "generated_at": "2026-03-06T22:15:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the judiciary?",
+      "answer": "The judiciary is the branch of government that interprets laws and provides justice.",
+      "answer_outline": ["Definition of judiciary", "Role in justice"],
+      "key_concepts": ["judiciary"],
+      "marks": 3,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Why is the judiciary important in a democracy?",
+      "answer": "The judiciary is important because it ensures justice and protects the rights of citizens.",
+      "answer_outline": ["Protection of rights", "Ensuring justice"],
+      "key_concepts": ["democracy", "judiciary"],
+      "marks": 3,
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the highest court in India?",
+      "answer": "The Supreme Court is the highest court in India.",
+      "answer_outline": ["Supreme Court", "Highest authority"],
+      "key_concepts": ["supreme court"],
+      "marks": 2,
+      "source_section": "Structure of Courts"
+    },
+    {
+      "question_number": 4,
+      "question": "Name the three levels of courts in India.",
+      "answer": "The three levels of courts are the Supreme Court, High Courts and District Courts.",
+      "answer_outline": ["Supreme Court", "High Courts", "District Courts"],
+      "key_concepts": ["court system"],
+      "marks": 3,
+      "source_section": "Structure of Courts"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the role of the Supreme Court?",
+      "answer": "The Supreme Court interprets the Constitution and acts as the final court of appeal.",
+      "answer_outline": ["Interpretation of Constitution", "Final appeal"],
+      "key_concepts": ["supreme court"],
+      "marks": 3,
+      "source_section": "Supreme Court"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the function of High Courts?",
+      "answer": "High Courts supervise the courts in their states and hear important cases.",
+      "answer_outline": ["State-level courts", "Supervision of lower courts"],
+      "key_concepts": ["high court"],
+      "marks": 3,
+      "source_section": "High Courts"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the role of District Courts?",
+      "answer": "District Courts handle cases at the district level and hear civil and criminal cases.",
+      "answer_outline": ["District-level justice", "Civil and criminal cases"],
+      "key_concepts": ["district court"],
+      "marks": 3,
+      "source_section": "District Courts"
+    },
+    {
+      "question_number": 8,
+      "question": "What does independence of the judiciary mean?",
+      "answer": "It means courts can make decisions without interference from the government.",
+      "answer_outline": ["No political influence", "Fair judgments"],
+      "key_concepts": ["judicial independence"],
+      "marks": 3,
+      "source_section": "Independence of Judiciary"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is independence of the judiciary important?",
+      "answer": "It ensures that judges make fair decisions and protect citizens' rights.",
+      "answer_outline": ["Fair decisions", "Protection of rights"],
+      "key_concepts": ["judicial independence"],
+      "marks": 3,
+      "source_section": "Independence of Judiciary"
+    },
+    {
+      "question_number": 10,
+      "question": "What is Public Interest Litigation (PIL)?",
+      "answer": "PIL is a case filed in court for the benefit of the public.",
+      "answer_outline": ["Public interest", "Legal action"],
+      "key_concepts": ["PIL"],
+      "marks": 3,
+      "source_section": "Public Interest Litigation"
+    },
+
+    {
+      "question_number": 11,
+      "question": "How does PIL help people?",
+      "answer": "It allows citizens to approach courts to protect public rights and interests.",
+      "answer_outline": ["Access to justice", "Protection of rights"],
+      "key_concepts": ["PIL"],
+      "marks": 3,
+      "source_section": "Public Interest Litigation"
+    },
+    {
+      "question_number": 12,
+      "question": "What is an appeal in the judicial system?",
+      "answer": "An appeal is a request made to a higher court to review the decision of a lower court.",
+      "answer_outline": ["Higher court review", "Judgment reconsideration"],
+      "key_concepts": ["appeal"],
+      "marks": 3,
+      "source_section": "Court System"
+    },
+    {
+      "question_number": 13,
+      "question": "What are civil cases?",
+      "answer": "Civil cases involve disputes between individuals or organizations.",
+      "answer_outline": ["Personal disputes", "Property issues"],
+      "key_concepts": ["civil cases"],
+      "marks": 2,
+      "source_section": "Types of Cases"
+    },
+    {
+      "question_number": 14,
+      "question": "What are criminal cases?",
+      "answer": "Criminal cases involve offenses against the law such as theft or violence.",
+      "answer_outline": ["Crimes", "Punishment"],
+      "key_concepts": ["criminal cases"],
+      "marks": 2,
+      "source_section": "Types of Cases"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the role of judges in the court?",
+      "answer": "Judges listen to arguments, examine evidence and give judgments based on law.",
+      "answer_outline": ["Listening to cases", "Giving judgments"],
+      "key_concepts": ["judges"],
+      "marks": 3,
+      "source_section": "Court Procedures"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Why are courts necessary in society?",
+      "answer": "Courts help resolve disputes and ensure justice for everyone.",
+      "answer_outline": ["Resolve disputes", "Ensure justice"],
+      "key_concepts": ["courts"],
+      "marks": 3,
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 17,
+      "question": "How do courts protect Fundamental Rights?",
+      "answer": "Courts allow citizens to approach them if their rights are violated.",
+      "answer_outline": ["Protection of rights", "Legal remedy"],
+      "key_concepts": ["fundamental rights"],
+      "marks": 3,
+      "source_section": "Protection of Rights"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the importance of evidence in court cases?",
+      "answer": "Evidence helps judges understand facts and make fair decisions.",
+      "answer_outline": ["Proof of facts", "Fair decisions"],
+      "key_concepts": ["evidence"],
+      "marks": 3,
+      "source_section": "Court Procedures"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the importance of equality before law?",
+      "answer": "It means all citizens are treated equally in courts.",
+      "answer_outline": ["Equal justice", "No discrimination"],
+      "key_concepts": ["equality"],
+      "marks": 3,
+      "source_section": "Rule of Law"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is justice important in society?",
+      "answer": "Justice ensures fairness and protects people from injustice.",
+      "answer_outline": ["Fairness", "Protection of people"],
+      "key_concepts": ["justice"],
+      "marks": 3,
+      "source_section": "Role of Judiciary"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain how courts maintain law and order.",
+      "answer": "Courts punish offenders and resolve disputes according to law.",
+      "answer_outline": ["Punishment of crimes", "Legal decisions"],
+      "key_concepts": ["law"],
+      "marks": 3,
+      "source_section": "Court System"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the judiciary support democracy?",
+      "answer": "The judiciary ensures that laws are followed and citizens' rights are protected.",
+      "answer_outline": ["Protection of rights", "Legal accountability"],
+      "key_concepts": ["democracy"],
+      "marks": 3,
+      "source_section": "Judiciary and Democracy"
+    },
+    {
+      "question_number": 23,
+      "question": "Why should citizens respect court decisions?",
+      "answer": "Court decisions help maintain order and ensure justice.",
+      "answer_outline": ["Rule of law", "Fair justice"],
+      "key_concepts": ["court decisions"],
+      "marks": 3,
+      "source_section": "Judicial Authority"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of the judicial system in India.",
+      "answer": "The judicial system ensures justice, protects rights and resolves disputes.",
+      "answer_outline": [
+        "Justice",
+        "Protection of rights",
+        "Dispute resolution"
+      ],
+      "key_concepts": ["judicial system"],
+      "marks": 4,
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how the judiciary protects citizens.",
+      "answer": "The judiciary interprets laws, protects Fundamental Rights and ensures justice for all citizens.",
+      "answer_outline": [
+        "Interpretation of laws",
+        "Protection of rights",
+        "Justice"
+      ],
+      "key_concepts": ["judiciary"],
+      "marks": 5,
+      "source_section": "Role of Judiciary"
+    }
+  ]
+}

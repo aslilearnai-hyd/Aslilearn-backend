@@ -1,0 +1,71 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Finding the Unknown (Simple Equations)",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify an equation as a statement of equality",
+        "Distinguish between constants and variables",
+        "Translate simple word phrases into algebraic expressions",
+        "Check if a given value is a solution to an equation",
+        "Understand the Left Hand Side (LHS) and Right Hand Side (RHS)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Equations",
+            "topics_covered": [
+                "Definition of an equation",
+                "Variables as 'placeholders' for unknowns",
+                "The equality sign as a balance"
+            ],
+            "teaching_strategy": [
+                "The 'Mystery Box' activity",
+                "Visualizing equality using a physical balance scale",
+                ""
+            ],
+            "student_activities": [
+                "Identify variables in $x + 5 = 12$ and $3y = 15$",
+                "Write 'True' or 'False' for statements like $5 + 3 = 8$ and $x + 2 = 5$ (if $x=3$)"
+            ],
+            "assessment": [
+                "Oral quiz on LHS vs RHS",
+                "Worksheet identifying equations vs expressions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Forming Equations",
+            "topics_covered": [
+                "Translating 'Sum', 'Difference', 'Product', and 'Quotient'",
+                "Writing equations from daily life scenarios"
+            ],
+            "teaching_strategy": [
+                "Keyword mapping (e.g., 'is' means '=')",
+                "Guided translation examples"
+            ],
+            "student_activities": [
+                "Translate: 'A number $x$ increased by 7 is 12'",
+                "Form an equation for: 'The age of Rahul is 5 years more than his sister'"
+            ],
+            "assessment": [
+                "Translation match-up game",
+                "Notebook review of formed equations"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Flashcards with keywords",
+        "Balance scale model",
+        "Whiteboard and markers",
+        "NCERT Textbook"
+    ],
+    "evaluation_methods": [
+        "Identification tests",
+        "Sentence-to-Math translation accuracy",
+        "Classroom discussion"
+    ],
+    "teacher_tip": "Stress that an equation is like a balanced scale; if the two sides aren't equal, it's not an equation!"
+}

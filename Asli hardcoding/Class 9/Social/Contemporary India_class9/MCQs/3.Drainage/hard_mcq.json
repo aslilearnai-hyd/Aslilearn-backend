@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Drainage",
+    "generated_at": "2026-03-08T11:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which statement best explains the term 'water divide'?",
+            "options": {
+                "A": "A river valley between mountains",
+                "B": "An upland separating two drainage basins",
+                "C": "A delta formed by sediment deposition",
+                "D": "A lake formed by glacial activity"
+            },
+            "correct_answer": "B",
+            "explanation": "A water divide is a highland or upland that separates two drainage basins.",
+            "difficulty": "hard",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following best describes the drainage pattern of Himalayan rivers?",
+            "options": {
+                "A": "Short and seasonal",
+                "B": "Long and perennial",
+                "C": "Short and straight",
+                "D": "Seasonal and shallow"
+            },
+            "correct_answer": "B",
+            "explanation": "Himalayan rivers are long and perennial because they originate from glaciers.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The Indus river system drains mainly into:",
+            "options": {
+                "A": "Bay of Bengal",
+                "B": "Arabian Sea",
+                "C": "Indian Ocean",
+                "D": "Persian Gulf"
+            },
+            "correct_answer": "B",
+            "explanation": "The Indus river flows into the Arabian Sea.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which tributary of the Ganga originates from the Yamunotri Glacier?",
+            "options": {
+                "A": "Yamuna",
+                "B": "Ghaghara",
+                "C": "Kosi",
+                "D": "Gandak"
+            },
+            "correct_answer": "A",
+            "explanation": "The Yamuna originates from the Yamunotri glacier and joins the Ganga.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which factor mainly causes braided channels in the Brahmaputra river?",
+            "options": {
+                "A": "Low rainfall",
+                "B": "Heavy sediment load",
+                "C": "High altitude glaciers",
+                "D": "River dams"
+            },
+            "correct_answer": "B",
+            "explanation": "The Brahmaputra carries a large amount of sediments, leading to braided channels.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following rivers originates in the Amarkantak hills?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Narmada",
+                "D": "Kaveri"
+            },
+            "correct_answer": "C",
+            "explanation": "The Narmada river originates in the Amarkantak hills.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which peninsular river flows through a rift valley?",
+            "options": {
+                "A": "Krishna",
+                "B": "Godavari",
+                "C": "Narmada",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "C",
+            "explanation": "The Narmada flows through a rift valley formed by tectonic activity.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following rivers flows westwards into the Arabian Sea?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Narmada",
+                "D": "Kaveri"
+            },
+            "correct_answer": "C",
+            "explanation": "Narmada and Tapi are the major west-flowing rivers of Peninsular India.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which geomorphological feature forms due to river deposition near the mouth?",
+            "options": {
+                "A": "Plateau",
+                "B": "Delta",
+                "C": "Water divide",
+                "D": "Glacier"
+            },
+            "correct_answer": "B",
+            "explanation": "Deltas form due to the deposition of sediments at the river mouth.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of the following rivers forms the Sundarban delta with the Ganga?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Brahmaputra",
+                "D": "Indus"
+            },
+            "correct_answer": "C",
+            "explanation": "The Ganga and Brahmaputra together form the Sundarban delta.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which lake is formed by glacial activity in the Himalayan region?",
+            "options": {
+                "A": "Chilika Lake",
+                "B": "Sambhar Lake",
+                "C": "Wular Lake",
+                "D": "Pulicat Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Wular Lake in Jammu and Kashmir is formed by tectonic activity and glacial processes.",
+            "difficulty": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which lake is known as India's largest lagoon?",
+            "options": {
+                "A": "Pulicat Lake",
+                "B": "Chilika Lake",
+                "C": "Dal Lake",
+                "D": "Loktak Lake"
+            },
+            "correct_answer": "B",
+            "explanation": "Chilika Lake is the largest lagoon in India.",
+            "difficulty": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which factor contributes most to river pollution in India?",
+            "options": {
+                "A": "Snowfall",
+                "B": "Industrial discharge",
+                "C": "Forest growth",
+                "D": "Natural springs"
+            },
+            "correct_answer": "B",
+            "explanation": "Industrial discharge and sewage are major causes of river pollution.",
+            "difficulty": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Which river forms the Dhuadhar Falls?",
+            "options": {
+                "A": "Narmada",
+                "B": "Godavari",
+                "C": "Krishna",
+                "D": "Kaveri"
+            },
+            "correct_answer": "A",
+            "explanation": "Dhuadhar Falls are located on the Narmada river near Jabalpur.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following lakes is an artificial reservoir?",
+            "options": {
+                "A": "Wular Lake",
+                "B": "Dal Lake",
+                "C": "Govind Sagar Lake",
+                "D": "Sambhar Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Govind Sagar Lake is a reservoir created by the Bhakra dam.",
+            "difficulty": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Which river is known for forming Majuli island?",
+            "options": {
+                "A": "Indus",
+                "B": "Brahmaputra",
+                "C": "Ganga",
+                "D": "Krishna"
+            },
+            "correct_answer": "B",
+            "explanation": "Majuli island in Assam is formed by the Brahmaputra river.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which river originates near Mahabaleshwar in the Western Ghats?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Kaveri",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "B",
+            "explanation": "The Krishna river originates near Mahabaleshwar.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which process is mainly responsible for forming oxbow lakes?",
+            "options": {
+                "A": "Glacial erosion",
+                "B": "River meandering and cut-off",
+                "C": "Volcanic eruption",
+                "D": "Wind erosion"
+            },
+            "correct_answer": "B",
+            "explanation": "Oxbow lakes form when a river meander loop is cut off.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which river basin is the largest in Peninsular India?",
+            "options": {
+                "A": "Krishna basin",
+                "B": "Godavari basin",
+                "C": "Kaveri basin",
+                "D": "Mahanadi basin"
+            },
+            "correct_answer": "B",
+            "explanation": "The Godavari basin is the largest in Peninsular India.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which factor makes Himalayan rivers highly erosive?",
+            "options": {
+                "A": "Low rainfall",
+                "B": "Steep slopes and high velocity",
+                "C": "Desert climate",
+                "D": "Low sediment load"
+            },
+            "correct_answer": "B",
+            "explanation": "Steep slopes and high velocity increase erosion in Himalayan rivers.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which river flows through both Karnataka and Tamil Nadu?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Kaveri",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "C",
+            "explanation": "The Kaveri river flows through Karnataka and Tamil Nadu.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which economic activity depends most on river water?",
+            "options": {
+                "A": "Tourism",
+                "B": "Agriculture",
+                "C": "Mining",
+                "D": "Manufacturing"
+            },
+            "correct_answer": "B",
+            "explanation": "Agriculture depends heavily on river water for irrigation.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Which initiative was launched to reduce pollution in the Ganga river?",
+            "options": {
+                "A": "Green India Plan",
+                "B": "River Clean Project",
+                "C": "Ganga Action Plan",
+                "D": "Water Safety Programme"
+            },
+            "correct_answer": "C",
+            "explanation": "The Ganga Action Plan was launched to clean the Ganga river.",
+            "difficulty": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Which environmental issue threatens river ecosystems in India?",
+            "options": {
+                "A": "Afforestation",
+                "B": "River pollution",
+                "C": "Rainfall increase",
+                "D": "Hydropower generation"
+            },
+            "correct_answer": "B",
+            "explanation": "Pollution from industries and sewage harms river ecosystems.",
+            "difficulty": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is river conservation important for sustainable development?",
+            "options": {
+                "A": "To stop river flow",
+                "B": "To reduce rainfall",
+                "C": "To protect freshwater resources and ecosystems",
+                "D": "To increase industrial waste"
+            },
+            "correct_answer": "C",
+            "explanation": "River conservation protects water resources and maintains ecological balance.",
+            "difficulty": "hard",
+            "source_section": "Section 3.6"
+        }
+    ]
+}

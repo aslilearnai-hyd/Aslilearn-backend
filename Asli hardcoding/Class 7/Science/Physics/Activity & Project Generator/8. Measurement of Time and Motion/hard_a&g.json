@@ -1,0 +1,208 @@
+{
+    "class": "Class 7",
+    "subject": "Science (CBSE)",
+    "chapter": "Measurement of Time and Motion",
+    "difficulty": "Hard",
+    "source_pdf": "cbse_class7_science_ch8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Graphical Analysis of Motion",
+            "objective": "Plot and interpret distance-time and speed-time graphs",
+            "materials": [
+                "Measuring tape",
+                "Stopwatch",
+                "Notebook",
+                "Pen",
+                "Toy car"
+            ],
+            "steps": [
+                "Measure distance and time at small intervals for moving object",
+                "Record data accurately",
+                "Plot distance vs time and speed vs time graphs",
+                "Analyze graphs to determine uniformity and changes in speed"
+            ],
+            "learning_outcome": "Understands graphical representation and analysis of motion",
+            "evaluation": "Correct plotting and interpretation of graphs (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Effect of Inclination on Motion",
+            "objective": "Study how slope angle affects speed of an object",
+            "materials": [
+                "Adjustable ramp",
+                "Toy car",
+                "Stopwatch",
+                "Measuring tape",
+                "Protractor",
+                "Notebook"
+            ],
+            "steps": [
+                "Set ramp at different angles",
+                "Measure distance along ramp",
+                "Time the object moving down ramp for each angle",
+                "Calculate speed and compare results"
+            ],
+            "learning_outcome": "Analyzes the relationship between slope and speed",
+            "evaluation": "Accurate measurement, calculation, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Comparing Motion on Different Surfaces with Inclines",
+            "objective": "Investigate effect of friction and slope on motion",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Stopwatch",
+                "Different surface materials (wood, tile, carpet)",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Set ramp on different surface materials",
+                "Time object moving down each surface",
+                "Calculate speed and compare across surfaces",
+                "Analyze how friction affects motion"
+            ],
+            "learning_outcome": "Understands combined effect of slope and friction on speed",
+            "evaluation": "Correct measurement and analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Investigating Period of Pendulum with Multiple Lengths",
+            "objective": "Study how pendulum length affects time period precisely",
+            "materials": [
+                "Pendulum setup",
+                "Stopwatch",
+                "Meter scale",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Set pendulum with different lengths",
+                "Measure time for 20 complete swings for each length",
+                "Calculate average time period",
+                "Analyze relationship between length and time period"
+            ],
+            "learning_outcome": "Quantitative understanding of pendulum motion",
+            "evaluation": "Accurate measurements, calculations, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Instantaneous Speed Using Short Intervals",
+            "objective": "Calculate instantaneous speed over very small distances",
+            "materials": [
+                "Toy car",
+                "Measuring tape",
+                "Stopwatch",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Mark very short distances along the track",
+                "Record time taken for each short segment",
+                "Calculate speed for each interval",
+                "Compare instantaneous speed with average speed"
+            ],
+            "learning_outcome": "Understands concept and calculation of instantaneous speed",
+            "evaluation": "Accurate calculation and comparison (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Reaction Time Analysis for Multiple People",
+            "objective": "Compare reaction times across multiple individuals",
+            "materials": [
+                "Ruler",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Perform ruler drop test for at least 5 individuals",
+                "Record distances for each trial",
+                "Calculate reaction time for each person",
+                "Analyze variations and calculate average reaction time"
+            ],
+            "learning_outcome": "Analyzes human reaction time variability statistically",
+            "evaluation": "Correct calculation and analysis (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Motion with Varying Mass",
+            "objective": "Study how mass affects speed on a slope",
+            "materials": [
+                "Toy car with adjustable weights",
+                "Ramp",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Place different weights on toy car",
+                "Measure time to travel down slope for each weight",
+                "Calculate speed and compare results",
+                "Analyze how mass influences motion"
+            ],
+            "learning_outcome": "Understands effect of mass on motion quantitatively",
+            "evaluation": "Accurate measurement, calculation, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Comparing Average Speeds of Multiple Objects",
+            "objective": "Analyze relative motion using multiple objects",
+            "materials": [
+                "Toy cars or balls",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Time different objects moving same distance",
+                "Calculate average speed for each object",
+                "Compare results and explain differences",
+                "Discuss reasons for variations in speed"
+            ],
+            "learning_outcome": "Understands relative speed and factors affecting motion",
+            "evaluation": "Accurate calculation, comparison, and explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Graphical Comparison of Speeds",
+            "objective": "Use graphs to analyze multiple motion trials",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Data from multiple trials"
+            ],
+            "steps": [
+                "Record speed data for multiple trials of an object",
+                "Plot speed-time graphs for each trial",
+                "Compare graphs to analyze motion consistency",
+                "Identify patterns or anomalies"
+            ],
+            "learning_outcome": "Develops analytical skills using graphical data",
+            "evaluation": "Correct graphing, interpretation, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Design a Complex Motion Experiment",
+            "objective": "Apply concepts creatively in a multi-variable motion study",
+            "materials": [
+                "Ramp",
+                "Toy cars or balls",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Design experiment involving at least two variables (mass, slope, surface type)",
+                "Predict results based on theory",
+                "Conduct experiment and record measurements",
+                "Analyze results and compare with predictions"
+            ],
+            "learning_outcome": "Encourages creativity, multi-variable analysis, and scientific reasoning",
+            "evaluation": "Accuracy, creativity, and analysis (10 marks)"
+        }
+    ]
+}

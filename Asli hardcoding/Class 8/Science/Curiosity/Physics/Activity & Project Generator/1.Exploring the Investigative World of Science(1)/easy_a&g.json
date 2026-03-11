@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Exploring the Investigative World of Science",
+  "difficulty": "Easy",
+  "source_pdf": "hecu101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Curiosity Question Wall",
+      "objective": "Encourage students to ask scientific questions",
+      "materials": ["Chart paper", "Sticky notes", "Markers"],
+      "steps": [
+        "Write a science question you are curious about",
+        "Stick it on the class chart",
+        "Discuss possible answers with classmates"
+      ],
+      "learning_outcome": "Develops curiosity and questioning ability",
+      "evaluation": "Participation and relevance of question (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Kitchen Science Observation",
+      "objective": "Observe scientific phenomena in daily life",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Observe something interesting in the kitchen (e.g., boiling water)",
+        "Write what you see happening",
+        "Write one scientific question about it"
+      ],
+      "learning_outcome": "Connects science with everyday life",
+      "evaluation": "Observation clarity (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Simple Experiment Design",
+      "objective": "Understand how experiments are planned",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Choose a simple question like 'Does warm water dissolve sugar faster?'",
+        "Write the steps to test it",
+        "Record your expected result"
+      ],
+      "learning_outcome": "Introduces scientific investigation",
+      "evaluation": "Logical experiment steps (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Observation vs Inference",
+      "objective": "Differentiate observation and inference",
+      "materials": ["Notebook"],
+      "steps": [
+        "Look at a simple picture or object",
+        "Write what you observe",
+        "Write what you think it means"
+      ],
+      "learning_outcome": "Improves scientific thinking",
+      "evaluation": "Correct identification of observations (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Daily Science Diary",
+      "objective": "Record scientific observations daily",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Observe one science-related event each day",
+        "Write what happened",
+        "Write why you think it happened"
+      ],
+      "learning_outcome": "Builds observation habit",
+      "evaluation": "Consistency of entries (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Scientific Tools Around Us",
+      "objective": "Identify common tools used in science",
+      "materials": ["Notebook"],
+      "steps": [
+        "List tools used in science experiments",
+        "Write where they are used",
+        "Explain their purpose"
+      ],
+      "learning_outcome": "Recognises scientific equipment",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Puri Puff Investigation",
+      "objective": "Understand how scientists investigate everyday phenomena",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Observe how a puri or chapati puffs while cooking",
+        "Write possible reasons",
+        "Suggest one way to test your idea"
+      ],
+      "learning_outcome": "Applies scientific thinking to daily life",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Question–Hypothesis Match",
+      "objective": "Understand hypothesis formation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write three science questions",
+        "Write a possible answer (hypothesis) for each",
+        "Explain how you could test it"
+      ],
+      "learning_outcome": "Learns hypothesis concept",
+      "evaluation": "Logical hypotheses (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Observe and Record",
+      "objective": "Practice recording observations accurately",
+      "materials": ["Notebook", "Stopwatch or clock"],
+      "steps": [
+        "Observe a melting ice cube",
+        "Record time taken to melt",
+        "Write changes you notice"
+      ],
+      "learning_outcome": "Improves observation and recording skills",
+      "evaluation": "Accuracy of notes (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Young Scientist Poster",
+      "objective": "Understand the role of curiosity in science",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Draw a poster showing how scientists investigate",
+        "Include steps like observation, question, experiment",
+        "Present the poster in class"
+      ],
+      "learning_outcome": "Understands scientific method",
+      "evaluation": "Creativity and explanation (10 marks)"
+    }
+  ]
+}

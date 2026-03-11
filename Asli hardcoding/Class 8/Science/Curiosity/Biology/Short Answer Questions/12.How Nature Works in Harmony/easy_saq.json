@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T21:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a habitat?",
+      "answer": "A habitat is the natural place where an organism lives.",
+      "key_concepts": ["habitat"],
+      "marks": 2,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are biotic components?",
+      "answer": "Biotic components are the living organisms in an ecosystem.",
+      "key_concepts": ["biotic components"],
+      "marks": 2,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are abiotic components?",
+      "answer": "Abiotic components are the non-living parts of an ecosystem such as air, water, and soil.",
+      "key_concepts": ["abiotic components"],
+      "marks": 2,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Define population.",
+      "answer": "Population is a group of organisms of the same species living in a particular area.",
+      "key_concepts": ["population"],
+      "marks": 2,
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a community?",
+      "answer": "A community is a group of different populations living together in a habitat.",
+      "key_concepts": ["community"],
+      "marks": 2,
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is an ecosystem?",
+      "answer": "An ecosystem is a system formed by interactions between living organisms and their environment.",
+      "key_concepts": ["ecosystem"],
+      "marks": 2,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Who are producers?",
+      "answer": "Producers are organisms such as plants that make their own food using sunlight.",
+      "key_concepts": ["producers"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 8,
+      "question": "What are consumers?",
+      "answer": "Consumers are organisms that depend on other organisms for food.",
+      "key_concepts": ["consumers"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "What are decomposers?",
+      "answer": "Decomposers are organisms that break down dead plants and animals into simpler substances.",
+      "key_concepts": ["decomposers"],
+      "marks": 2,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a food chain?",
+      "answer": "A food chain shows the feeding relationship between organisms.",
+      "key_concepts": ["food chain"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is a food web?",
+      "answer": "A food web is a network of interconnected food chains.",
+      "key_concepts": ["food web"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is a trophic level?",
+      "answer": "A trophic level represents the position of an organism in a food chain.",
+      "key_concepts": ["trophic level"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is decomposition?",
+      "answer": "Decomposition is the process of breaking down dead organic matter into simpler substances.",
+      "key_concepts": ["decomposition"],
+      "marks": 2,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 14,
+      "question": "What is mutualism?",
+      "answer": "Mutualism is a relationship in which both organisms benefit.",
+      "key_concepts": ["mutualism"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 15,
+      "question": "What is commensalism?",
+      "answer": "Commensalism is a relationship where one organism benefits and the other is unaffected.",
+      "key_concepts": ["commensalism"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 16,
+      "question": "What is parasitism?",
+      "answer": "Parasitism is a relationship where one organism benefits and the other is harmed.",
+      "key_concepts": ["parasitism"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 17,
+      "question": "What is biodiversity?",
+      "answer": "Biodiversity is the variety of living organisms in an ecosystem.",
+      "key_concepts": ["biodiversity"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 18,
+      "question": "What is competition in ecosystems?",
+      "answer": "Competition occurs when organisms fight for the same limited resources.",
+      "key_concepts": ["competition"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 19,
+      "question": "What is meant by ecosystem balance?",
+      "answer": "Ecosystem balance refers to stable interactions among organisms and their environment.",
+      "key_concepts": ["ecosystem balance"],
+      "marks": 2,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 20,
+      "question": "What is deforestation?",
+      "answer": "Deforestation is the large-scale cutting down of forests.",
+      "key_concepts": ["deforestation"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 21,
+      "question": "What are protected areas?",
+      "answer": "Protected areas are regions set aside to conserve wildlife and habitats.",
+      "key_concepts": ["protected areas"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are mangrove forests important?",
+      "answer": "Mangrove forests protect coastal areas from storms and erosion.",
+      "key_concepts": ["mangroves"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is biodiversity important?",
+      "answer": "Biodiversity helps maintain ecosystem stability and resilience.",
+      "key_concepts": ["biodiversity importance"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is ecosystem conservation necessary?",
+      "answer": "Ecosystem conservation protects biodiversity and natural resources for future generations.",
+      "key_concepts": ["ecosystem conservation"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are ecosystems important for humans?",
+      "answer": "Ecosystems provide essential resources such as food, water, oxygen, and climate regulation.",
+      "key_concepts": ["ecosystem importance"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    }
+  ]
+}

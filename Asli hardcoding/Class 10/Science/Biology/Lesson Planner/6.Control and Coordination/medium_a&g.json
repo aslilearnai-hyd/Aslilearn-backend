@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Control and Coordination",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the mechanism of nerve impulse transmission across a synapse",
+        "Differentiate between voluntary, involuntary, and reflex actions",
+        "Describe the localized functions of the Forebrain, Midbrain, and Hindbrain",
+        "Analyze the role of plant hormones (Auxins, Gibberellins, Cytokinins, and Abscisic acid) in growth and inhibition",
+        "Explain the feedback mechanism of hormonal secretion in humans",
+        "Correlate the chemical and nervous coordination systems in animals"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Nerve Impulse and Synaptic Transmission",
+            "topics_covered": [
+                "Acquisition and travel of information in a neuron",
+                "Chemical signaling at the Synapse",
+                "Neuromuscular Junction (NMJ) functionality"
+            ],
+            "teaching_strategy": [
+                "Step-by-step animation/drawing of chemical release at the synapse",
+                "Discussion: Why do impulses travel in only one direction?",
+                "Flowchart: Dendrite → Cell Body → Axon → Nerve Ending → Synapse"
+            ],
+            "student_activities": [
+                "Draw the detailed structure of a synapse with neurotransmitter vesicles",
+                "Write a 'biography' of a signal traveling from a finger touch to the spinal cord"
+            ],
+            "assessment": [
+                "Labeling activity: Parts of a neuron and NMJ",
+                "Short answer: Significance of the synaptic gap"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reflex Arc and Action Classification",
+            "topics_covered": [
+                "The anatomy of a Reflex Arc",
+                "Sensory, Relay, and Motor neurons",
+                "Comparison: Voluntary vs. Involuntary vs. Reflex actions"
+            ],
+            "teaching_strategy": [
+                "Tracing the reflex pathway on a human body chart",
+                "Brainstorming: Why did reflex arcs evolve before complex thinking?",
+                "Sorting exercise: Categorizing heartbeat, walking, and hand-withdrawal"
+            ],
+            "student_activities": [
+                "Draw a flowchart of the reflex arc specifically for a 'hot object' stimulus",
+                "Debate: Is 'blinking' a voluntary or involuntary action?"
+            ],
+            "assessment": [
+                "Diagrammatic test on the Reflex Arc",
+                "Classification worksheet: Voluntary vs Involuntary"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Human Brain: Functional Mapping",
+            "topics_covered": [
+                "Forebrain: Cerebrum (Sensory and Motor areas)",
+                "Midbrain: Vital reflexes",
+                "Hindbrain: Cerebellum, Pons, and Medulla"
+            ],
+            "teaching_strategy": [
+                "Color-coding a brain map by function (e.g., Speech, Hearing, Balance)",
+                "Discussion: The role of the Medulla in controlling blood pressure and salivation",
+                "Demonstration: Attempting to write while dizzy to show Cerebellum importance"
+            ],
+            "student_activities": [
+                "Create a table mapping brain parts to specific daily activities",
+                "Label the protective layers (Meninges and Cranium) of the brain"
+            ],
+            "assessment": [
+                "Identify the 'Odd One Out' based on brain part functions",
+                "Short quiz: Functions of the Hindbrain"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Movement in Plants: Nastic and Tropic",
+            "topics_covered": [
+                "Growth-independent vs. Growth-dependent movements",
+                "Turgor pressure changes in Mimosa pudica",
+                "Types of Tropisms: Photo, Geo, Hydro, and Chemo"
+            ],
+            "teaching_strategy": [
+                "Time-lapse video analysis of plant growth",
+                "Explaining the mechanism of tendril movement (Thigmotropism)",
+                "Comparative chart: Nastic vs. Tropic movements"
+            ],
+            "student_activities": [
+                "Draw a diagram showing positive vs negative phototropism/geotropism",
+                "Observe a demonstration of roots growing toward a water source"
+            ],
+            "assessment": [
+                "Matching: Stimulus to Tropic Response",
+                "Differentiating between 'Movement due to growth' and 'Immediate response'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Plant Hormones (Phytohormones)",
+            "topics_covered": [
+                "Growth promoters: Auxins, Gibberellins, Cytokinins",
+                "Growth inhibitors: Abscisic Acid (ABA)",
+                "Mechanism of Auxin in phototropism (shady side elongation)"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic explanation of cell elongation by Auxins",
+                "Discussion: Why do leaves fall in autumn? (Role of ABA)",
+                "Real-world application: Use of hormones in agriculture/fruit ripening"
+            ],
+            "student_activities": [
+                "Draw a leaf-drop or wilting plant and label the hormone responsible",
+                "Summary table: Hormone Name → Primary Function"
+            ],
+            "assessment": [
+                "Assertion-Reasoning on Auxin concentration and light",
+                "Hormone function identification test"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Hormones in Animals & Feedback Mechanism",
+            "topics_covered": [
+                "Endocrine system vs. Nervous system",
+                "Key hormones: Thyroxine, Growth Hormone, Testosterone/Oestrogen",
+                "The Feedback Mechanism (Insulin/Glucagon model)"
+            ],
+            "teaching_strategy": [
+                "Feedback loop diagram on the board (Blood sugar regulation)",
+                "Discussion: Why is iodine necessary for the thyroid?",
+                "Explaining the Adrenaline 'Flight or Fight' physiological changes"
+            ],
+            "student_activities": [
+                "Draw a feedback loop for insulin secretion after eating a meal",
+                "List the physiological changes caused by Adrenaline in the heart and lungs"
+            ],
+            "assessment": [
+                "Flowchart completion: The Feedback Loop",
+                "Table test: Gland, Hormone, and Deficiency disease"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Consolidation and NCERT Exemplar Review",
+            "topics_covered": [
+                "Comprehensive review of nervous vs. chemical coordination",
+                "Solving Case-based study questions",
+                "Assertion and Reason practice"
+            ],
+            "teaching_strategy": [
+                "Mind-mapping the entire chapter on the board",
+                "Rapid-fire board-style MCQ round",
+                "Clarifying doubts on the difference between Pons and Medulla"
+            ],
+            "student_activities": [
+                "Complete a comprehensive 20-mark mock test",
+                "Draft a summary comparing Plant vs. Animal coordination"
+            ],
+            "assessment": [
+                "Final Unit Test evaluation",
+                "Review of common diagrammatic errors in neurons/brain"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Brain 3D Model and Sectional View charts",
+        "Neuron and Synapse posters",
+        "Potted plant for phototropism demo",
+        "Endocrine System diagram",
+        "Microscope and slides of nerve tissue (if available)"
+    ],
+    "evaluation_methods": [
+        "Diagrammatic labeling and explanation",
+        "Flowchart construction (Feedback loops/Reflex arc)",
+        "Case-study based questions",
+        "MCQs and Assertion-Reasoning",
+        "Formative assessments during lectures"
+    ],
+    "teacher_tip": "Students often struggle with the 'Feedback Mechanism'. Use a thermostat/AC analogy to explain how the body maintains a set point for sugar or hormones—it makes the 'biological loop' much more intuitive."
+}

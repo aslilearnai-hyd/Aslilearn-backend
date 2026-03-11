@@ -1,0 +1,147 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "A Concrete Example",
+  "difficulty": "Medium",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Garden Feature Discussion",
+      "objective": "Understand different garden features and their purposes",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Look at the list of garden items given in the textbook",
+        "Discuss in groups the type of garden you would like to have",
+        "List features such as ponds, flower beds, and hedges",
+        "Explain the reasons for choosing those features"
+      ],
+      "learning_outcome": "Students learn to explain ideas about garden design and nature",
+      "evaluation": "Quality of ideas and participation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Meaning of the Title",
+      "objective": "Analyse the literal and symbolic meaning of the poem's title",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the title 'A Concrete Example'",
+        "Discuss the literal meaning of 'concrete'",
+        "Discuss the symbolic meaning in the context of the poem",
+        "Write a short explanation in your notebook"
+      ],
+      "learning_outcome": "Students understand how titles reflect deeper meaning in literature",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Poem Structure Analysis",
+      "objective": "Understand the structure and rhyme scheme of the poem",
+      "materials": ["Textbook poem", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Identify the rhyme scheme in each stanza",
+        "Write the rhyme pattern in your notebook",
+        "Discuss how rhyme creates rhythm in poetry"
+      ],
+      "learning_outcome": "Students understand basic poetic structure",
+      "evaluation": "Correct identification of rhyme scheme (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Character Study: Mrs. Jones",
+      "objective": "Analyse the personality of Mrs. Jones based on the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem and identify descriptions of Mrs. Jones",
+        "Write the qualities that describe her personality",
+        "Support your answers with lines from the poem",
+        "Share your observations with classmates"
+      ],
+      "learning_outcome": "Students learn to infer character traits from literary descriptions",
+      "evaluation": "Use of textual evidence (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Imagery Identification",
+      "objective": "Recognise imagery used in poetry",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Identify lines that create a visual image of the garden",
+        "Write these lines in your notebook",
+        "Explain what picture comes to your mind while reading them"
+      ],
+      "learning_outcome": "Students understand how imagery helps visualise scenes in poetry",
+      "evaluation": "Accuracy of examples and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Irony in the Poem",
+      "objective": "Understand the use of irony in literature",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem again carefully",
+        "Identify the situation where the speaker stands on the flower",
+        "Explain why this situation is ironic",
+        "Discuss how it adds humour to the poem"
+      ],
+      "learning_outcome": "Students understand situational irony in literature",
+      "evaluation": "Correct explanation of irony (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Vocabulary Expansion",
+      "objective": "Improve vocabulary and word understanding",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Find words such as 'peculiar', 'delicate', and 'lovely'",
+        "Use a dictionary to find meanings",
+        "Write synonyms and create sentences using those words"
+      ],
+      "learning_outcome": "Students develop vocabulary and contextual understanding",
+      "evaluation": "Correct usage in sentences (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Word Formation Activity",
+      "objective": "Understand how words change by replacing letters",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Look at the example word 'nice'",
+        "Replace the first letter to create new words",
+        "Match the new words with the given hints",
+        "Write the correct words in your notebook"
+      ],
+      "learning_outcome": "Students understand word formation patterns",
+      "evaluation": "Correct word creation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Listening Activity on Rock Garden",
+      "objective": "Improve listening and comprehension skills",
+      "materials": ["Teacher narration or audio", "Notebook"],
+      "steps": [
+        "Listen carefully to the presentation about the Rock Garden of Chandigarh",
+        "Write answers to the questions based on what you hear",
+        "Discuss the answers with classmates"
+      ],
+      "learning_outcome": "Students improve listening comprehension",
+      "evaluation": "Accuracy of answers (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Formal and Informal Apology Practice",
+      "objective": "Develop polite communication skills",
+      "materials": ["Notebook", "Dialogue prompts"],
+      "steps": [
+        "Read the apology situations given in the textbook",
+        "Practice apologising in both informal and formal situations",
+        "Work with a partner to create short dialogues",
+        "Present your dialogue to the class"
+      ],
+      "learning_outcome": "Students learn appropriate language for different situations",
+      "evaluation": "Clarity and correctness of communication (10 marks)"
+    }
+  ]
+}

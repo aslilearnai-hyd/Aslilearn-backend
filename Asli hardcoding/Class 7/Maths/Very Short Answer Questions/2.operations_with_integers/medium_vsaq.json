@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: OPERATIONS WITH INTEGERS",
+    "generated_at": "2026-03-05T03:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Simplify: (-20) + (-15) - (-30)",
+            "answer": "-5",
+            "key_concepts": ["addition and subtraction of integers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the product using properties: 26 × (-48) + (-48) × (-36)",
+            "answer": "(-48) × [26 + (-36)] = (-48) × (-10) = 480",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 3,
+            "question": "The temperature at noon was 10°C above zero. It decreased at 2°C per hour until midnight. What was the temperature at 9 PM?",
+            "answer": "10 - (9 × 2) = 10 - 18 = -8°C",
+            "key_concepts": ["word problems on integers"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the value of: [(-36) ÷ 12] ÷ 3",
+            "answer": "(-3) ÷ 3 = -1",
+            "key_concepts": ["division of integers"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Solve: (-5) × (-2) × (-1) × (-10)",
+            "answer": "100",
+            "key_concepts": ["multiplication of multiple negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Verify: a - (-b) = a + b for a = 21, b = 18",
+            "answer": "LHS: 21 - (-18) = 21 + 18 = 39; RHS: 21 + 18 = 39. Hence verified.",
+            "key_concepts": ["verification of properties"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Write a pair of integers whose sum is -7.",
+            "answer": "Example: -10 and 3 (or any pair satisfying x + y = -7)",
+            "key_concepts": ["integer pairs"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Evaluate: (-31) ÷ [(-30) + (-1)]",
+            "answer": "(-31) ÷ (-31) = 1",
+            "key_concepts": ["division and brackets"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "An elevator descends into a mine shaft at 6 m/min. If it starts from 10m above ground, how long will it take to reach -350m?",
+            "answer": "Total distance = 10 - (-350) = 360m; Time = 360 / 6 = 60 minutes",
+            "key_concepts": ["real-world applications"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Simplify: 15 - [(-2) × (-5)]",
+            "answer": "15 - 10 = 5",
+            "key_concepts": ["BODMAS with integers"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Is subtraction of integers commutative? Give an example.",
+            "answer": "No. 5 - 3 = 2, but 3 - 5 = -2.",
+            "key_concepts": ["commutative property"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the value of x: (-13) + x = 0",
+            "answer": "x = 13",
+            "key_concepts": ["additive inverse"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Evaluate: (-1) × (-2) × (-3) × 4",
+            "answer": "-24",
+            "key_concepts": ["multiplication rules"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find: (-49) ÷ 49",
+            "answer": "-1",
+            "key_concepts": ["division"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the sign of the product if we multiply 9 negative integers and 3 positive integers?",
+            "answer": "Negative (odd number of negative integers results in a negative product)",
+            "key_concepts": ["sign rules for multiplication"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the product: (-12) × (-11) × (10)",
+            "answer": "1320",
+            "key_concepts": ["multiplication"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Compute: (-8) + (-2) - (-10)",
+            "answer": "-10 + 10 = 0",
+            "key_concepts": ["addition/subtraction"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Verify a × (b + c) = a × b + a × c for a = (-2), b = 3, c = 5",
+            "answer": "LHS: -2 × 8 = -16; RHS: -6 + (-10) = -16. Verified.",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Which integer is its own additive inverse?",
+            "answer": "0",
+            "key_concepts": ["additive identity"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the quotient of: (-36) ÷ (-4)",
+            "answer": "9",
+            "key_concepts": ["division of negative numbers"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Represent 'a profit of ₹500 followed by a loss of ₹700' as an integer operation.",
+            "answer": "+500 + (-700) = -200",
+            "key_concepts": ["integer representation"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the multiplicative identity for integers?",
+            "answer": "1",
+            "key_concepts": ["multiplicative identity"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Evaluate: [(-6) + 5] ÷ [(-2) + 1]",
+            "answer": "(-1) ÷ (-1) = 1",
+            "key_concepts": ["simplification"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Find: 10 × [6 + (-2)]",
+            "answer": "10 × 4 = 40",
+            "key_concepts": ["distributive law"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Find an integer 'a' such that a ÷ (-1) = 28",
+            "answer": "a = -28",
+            "key_concepts": ["division properties"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        }
+    ]
+}

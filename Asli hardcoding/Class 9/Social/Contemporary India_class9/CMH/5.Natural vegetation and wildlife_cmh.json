@@ -1,0 +1,163 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 5: Natural Vegetation and Wildlife",
+    "generated_at": "2026-03-07T19:30:00",
+    "concepts": [
+        {
+            "concept_name": "Natural Vegetation",
+            "difficulty": "easy",
+            "lesson": "Natural vegetation refers to plant communities that grow naturally without human aid and remain undisturbed for a long time. These plants develop according to the climate and soil of a region.",
+            "real_example": "Dense forests of the Western Ghats grow naturally due to heavy rainfall.",
+            "key_points": [
+                "Plants grow naturally without human help",
+                "Also called virgin vegetation",
+                "Depends on climate and soil",
+                "Includes trees, shrubs and grasses"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "concept_name": "Flora and Fauna",
+            "difficulty": "easy",
+            "lesson": "Flora refers to the plant life of a region, while fauna refers to the animal life found in a particular area.",
+            "real_example": "Teak trees are part of India's flora, while tigers are part of its fauna.",
+            "key_points": [
+                "Flora means plant species",
+                "Fauna means animal species",
+                "Both together represent biodiversity",
+                "Important for ecological balance"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "concept_name": "Tropical Evergreen Forests",
+            "difficulty": "medium",
+            "lesson": "Tropical evergreen forests are dense forests found in regions receiving more than 200 cm of rainfall. Trees remain green throughout the year because they do not shed leaves at the same time.",
+            "real_example": "These forests are found in the Western Ghats and Andaman and Nicobar Islands.",
+            "key_points": [
+                "Found in heavy rainfall areas",
+                "Trees remain green all year",
+                "Dense and multi-layered vegetation",
+                "Important trees include ebony, mahogany and rosewood"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Tropical Deciduous Forests",
+            "difficulty": "medium",
+            "lesson": "Tropical deciduous forests are the most widespread forests in India. Trees shed their leaves during the dry season to conserve water.",
+            "real_example": "Teak and sal trees are common in deciduous forests of central India.",
+            "key_points": [
+                "Also called monsoon forests",
+                "Found in areas with moderate rainfall",
+                "Trees shed leaves in dry season",
+                "Common trees include teak, sal and sandalwood"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Thorn Forests and Scrubs",
+            "difficulty": "medium",
+            "lesson": "Thorn forests develop in regions receiving less than 70 cm of rainfall. Plants here have long roots and small leaves to reduce water loss.",
+            "real_example": "Thorn forests are common in Rajasthan and parts of Gujarat.",
+            "key_points": [
+                "Found in semi-arid regions",
+                "Rainfall less than 70 cm",
+                "Plants have deep roots",
+                "Includes acacia, cactus and thorny shrubs"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Montane Forests",
+            "difficulty": "medium",
+            "lesson": "Montane forests are found in mountainous regions where vegetation changes with altitude due to variation in temperature and rainfall.",
+            "real_example": "Pine and deodar forests are found in the Himalayan region.",
+            "key_points": [
+                "Found in mountain areas",
+                "Vegetation varies with altitude",
+                "Includes pine, deodar and cedar",
+                "Higher regions have alpine vegetation"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Mangrove Forests",
+            "difficulty": "medium",
+            "lesson": "Mangrove forests are tidal forests found along coastal areas where rivers meet the sea. The plants grow in salty water and have roots that remain submerged.",
+            "real_example": "The Sundarbans delta has extensive mangrove forests.",
+            "key_points": [
+                "Found in coastal tidal areas",
+                "Grow in muddy and saline water",
+                "Roots remain submerged",
+                "Home to Royal Bengal Tiger"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Wildlife in India",
+            "difficulty": "easy",
+            "lesson": "India has a rich variety of wildlife including mammals, birds, reptiles and fish. The diversity of vegetation supports a large number of animal species.",
+            "real_example": "Elephants live in forests of Assam, Karnataka and Kerala.",
+            "key_points": [
+                "India has about 90,000 animal species",
+                "Includes mammals, birds and reptiles",
+                "Wildlife depends on natural habitats",
+                "Important for ecological balance"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "concept_name": "Threats to Biodiversity",
+            "difficulty": "hard",
+            "lesson": "Biodiversity is threatened due to human activities such as deforestation, pollution, hunting and introduction of alien species. These actions disturb ecological balance.",
+            "real_example": "Excessive hunting and forest clearing have endangered many animal species.",
+            "key_points": [
+                "Deforestation destroys habitats",
+                "Hunting threatens wildlife",
+                "Pollution harms ecosystems",
+                "Alien species disturb natural balance"
+            ],
+            "source_section": "Section 5.4"
+        },
+        {
+            "concept_name": "Conservation of Flora and Fauna",
+            "difficulty": "medium",
+            "lesson": "Conservation refers to protecting plants and animals to maintain ecological balance. The government has introduced various measures such as biosphere reserves, national parks and wildlife sanctuaries.",
+            "real_example": "Project Tiger was launched to protect the tiger population in India.",
+            "key_points": [
+                "Protection of biodiversity",
+                "Creation of biosphere reserves",
+                "Establishment of national parks and sanctuaries",
+                "Government conservation programs"
+            ],
+            "source_section": "Section 5.4"
+        },
+        {
+            "concept_name": "Biosphere Reserves",
+            "difficulty": "medium",
+            "lesson": "Biosphere reserves are protected areas created to conserve biodiversity and maintain natural ecosystems. They help protect both flora and fauna.",
+            "real_example": "The Nilgiri Biosphere Reserve protects many plant and animal species.",
+            "key_points": [
+                "Protected ecological areas",
+                "Conserve biodiversity",
+                "Support research and conservation",
+                "Include forests, wildlife and ecosystems"
+            ],
+            "source_section": "Section 5.4"
+        },
+        {
+            "concept_name": "Migratory Birds",
+            "difficulty": "easy",
+            "lesson": "Migratory birds travel from one region to another during different seasons in search of food and suitable climate.",
+            "real_example": "Siberian cranes visit wetlands in India during winter.",
+            "key_points": [
+                "Birds travel seasonally",
+                "Move in search of food and climate",
+                "Many visit India in winter",
+                "Important for ecological diversity"
+            ],
+            "source_section": "Section 5.4"
+        }
+    ]
+}

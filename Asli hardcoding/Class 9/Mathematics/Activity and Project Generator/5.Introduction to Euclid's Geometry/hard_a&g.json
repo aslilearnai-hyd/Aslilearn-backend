@@ -1,0 +1,166 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Euclid’s Geometry",
+    "difficulty": "Hard",
+    "source_pdf": "m9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Axiom Proof Exploration",
+            "objective": "Apply axioms to prove simple statements",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write three Euclid axioms",
+                "Create a geometric example",
+                "Explain how the axiom applies"
+            ],
+            "learning_outcome": "Applies axioms in reasoning",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Line Intersection Proof",
+            "objective": "Prove that two lines cannot intersect at more than one point",
+            "materials": [
+                "Notebook",
+                "Scale"
+            ],
+            "steps": [
+                "Draw two lines intersecting at point P",
+                "Assume they intersect at another point",
+                "Explain contradiction"
+            ],
+            "learning_outcome": "Understands proof reasoning",
+            "evaluation": "Correct logical proof (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Segment Addition Model",
+            "objective": "Verify AB + BC = AC",
+            "materials": [
+                "Scale",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw points A, B, C on a line",
+                "Measure AB and BC",
+                "Compare with AC"
+            ],
+            "learning_outcome": "Understands segment addition",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Midpoint Investigation",
+            "objective": "Explore midpoint properties",
+            "materials": [
+                "Scale",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw line segment AB",
+                "Locate midpoint C",
+                "Measure AC and BC"
+            ],
+            "learning_outcome": "Understands midpoint property",
+            "evaluation": "Measurement accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Parallel Lines Observation",
+            "objective": "Observe properties of parallel lines",
+            "materials": [
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two parallel lines",
+                "Extend them",
+                "Explain why they never intersect"
+            ],
+            "learning_outcome": "Understands parallel lines",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Circle Intersection Project",
+            "objective": "Investigate intersection of circles",
+            "materials": [
+                "Compass",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two circles with equal radius",
+                "Mark intersection points",
+                "Explain observations"
+            ],
+            "learning_outcome": "Understands circle intersections",
+            "evaluation": "Observation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Geometry Vocabulary Booklet",
+            "objective": "Create a glossary of geometry terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List key terms from the chapter",
+                "Write definitions",
+                "Draw diagrams"
+            ],
+            "learning_outcome": "Improves geometry vocabulary",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Euclid’s Postulates Chart",
+            "objective": "Visualise Euclid’s five postulates",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write all five postulates",
+                "Draw diagrams for each",
+                "Explain briefly"
+            ],
+            "learning_outcome": "Understands geometric assumptions",
+            "evaluation": "Accuracy of diagrams (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Geometry in Architecture",
+            "objective": "Identify geometry in buildings",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe buildings around you",
+                "Identify lines, angles and circles",
+                "Draw and label them"
+            ],
+            "learning_outcome": "Connects geometry with architecture",
+            "evaluation": "Relevant examples (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Mini Geometry Investigation",
+            "objective": "Explore a simple geometric rule",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose a geometry statement",
+                "Test it with diagrams",
+                "Write conclusion"
+            ],
+            "learning_outcome": "Develops reasoning skills",
+            "evaluation": "Logical conclusion (10 marks)"
+        }
+    ]
+}

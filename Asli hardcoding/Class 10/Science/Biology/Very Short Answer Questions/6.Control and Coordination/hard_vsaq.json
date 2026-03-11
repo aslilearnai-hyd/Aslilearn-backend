@@ -1,0 +1,208 @@
+{
+    "content_type": "Hard Questions (HOTS)",
+    "chapter": "Chapter: CONTROL AND COORDINATION",
+    "generated_at": "2026-03-10T23:53:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How does the 'chemical synapse' ensure that nerve impulses travel only in one direction?",
+            "answer": "Neurotransmitters are stored in vesicles only at the axonal ends. When an impulse arrives, they are released and diffuse across the gap to bind with receptors present only on the post-synaptic dendrite. Since dendrites cannot release these chemicals, the impulse cannot travel backward.",
+            "key_concepts": ["unidirectional flow", "neurotransmitters"],
+            "marks": 5,
+            "source_section": "Section 6.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the mechanism of 'Phototropism' in terms of Auxin concentration. Why do roots show negative phototropism?",
+            "answer": "Light falling on one side of the shoot causes auxin to diffuse toward the shady side. Higher auxin concentration in shoots stimulates rapid cell elongation, causing the shoot to bend toward light. In roots, high auxin concentration actually inhibits growth, causing the side away from light to grow slower, leading to bending away from light.",
+            "key_concepts": ["auxin gradient", "differential growth"],
+            "marks": 5,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Compare the 'movement in a sensitive plant' (Mimosa pudica) with 'movement in our legs' in terms of the underlying mechanisms.",
+            "answer": "Movement in Mimosa is 'nastic' and caused by rapid change in turgor pressure (water movement) in specialized cells (pulvini). Movement in legs is 'voluntary' and caused by nervous impulses triggering the rearrangement of specialized contractile proteins in muscle cells.",
+            "key_concepts": ["turgor pressure", "contractile proteins"],
+            "marks": 5,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the 'Feedback Mechanism' of hormone regulation? Explain using the example of Insulin and Glucagon.",
+            "answer": "It is a regulatory loop where the output of a process (blood sugar level) controls the activity of the source (pancreas). High glucose triggers insulin release to lower sugar; once sugar is low, insulin production drops and glucagon may be released to mobilize stored glucose, maintaining a steady state.",
+            "key_concepts": ["homeostasis", "feedback loop"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Discuss the limitations of 'Electric Impulses' as a means of communication and how 'Chemical Communication' overcomes these.",
+            "answer": "Electric impulses reach only cells physically connected by nerves and require 'reset' time between pulses. Chemical signals (hormones) can diffuse to every cell in the body, provide persistent effects, and coordinate large-scale changes like growth that don't require millisecond speed.",
+            "key_concepts": ["electrical vs chemical signaling"],
+            "marks": 5,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the 'Adrenaline' hormone prepare the body for 'Fight or Flight' at a multi-organ level?",
+            "answer": "It increases heart rate (more $O_2$ to muscles), constricts blood vessels to the skin/digestive system (diverting blood to skeletal muscles), increases breathing rate, and stimulates the liver to release glucose into the blood for immediate energy.",
+            "key_concepts": ["sympathetic response", "adrenal glands"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is the 'Spinal Cord' the primary center for reflex actions rather than the 'Brain'? Does the brain play any role in reflex actions?",
+            "answer": "Reflexes require immediate response for safety; the spinal cord provides a shorter pathway (reflex arc) for faster processing. The brain is informed after the action has occurred (via sensory pathways) so it can record the event and coordinate subsequent conscious actions.",
+            "key_concepts": ["reflex arc", "processing speed"],
+            "marks": 5,
+            "source_section": "Section 6.1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Analyse why 'Iodine' is specifically required for the Thyroid gland. What are the systemic consequences of Hypothyroidism?",
+            "answer": "Iodine is a core component of the Thyroxine molecule. Without it, the gland cannot produce enough hormone, leading to Goitre (compensatory swelling) and a slowed basal metabolic rate, resulting in fatigue, weight gain, and stunted growth (cretinism) in children.",
+            "key_concepts": ["thyroxine synthesis", "metabolism"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain 'Chemotropism' with the specific example of the 'Pollen Tube' growth. How is this different from 'Nastic' movements?",
+            "answer": "Chemotropism is a directional growth movement toward a chemical stimulus (the ovule). Unlike nastic movements (e.g., Mimosa), which are non-directional and independent of the stimulus location, chemotropism is growth-dependent and follows a specific path.",
+            "key_concepts": ["directional growth", "chemical stimulus"],
+            "marks": 5,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What role does the 'Hypothalamus' play in linking the Nervous system and the Endocrine system?",
+            "answer": "The hypothalamus receives sensory information from the brain and responds by secreting 'releasing hormones' that control the Pituitary gland. It acts as the bridge that translates neural signals into hormonal commands.",
+            "key_concepts": ["neuro-endocrine link", "pituitary control"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the three-dimensional protection of the Human Brain.",
+            "answer": "1. Physical: The hard Cranium (Skull). 2. Fluid: Cerebrospinal fluid (CSF) in the subarachnoid space acting as a shock absorber. 3. Membrane: Three layers of Meninges that enclose the brain and provide a blood-brain barrier.",
+            "key_concepts": ["cranium", "CSF", "meninges"],
+            "marks": 5,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are 'Gibberellins' and 'Auxins' often used in agriculture? Contrast their functions with 'Abscisic Acid'.",
+            "answer": "Auxins and Gibberellins promote cell elongation and stem growth, increasing crop yield. Abscisic Acid is an inhibitor that induces dormancy and leaf fall, acting as an antagonist to ensure plant survival during stress.",
+            "key_concepts": ["growth promoters vs inhibitors"],
+            "marks": 5,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How does the 'Cerebellum' achieve precision in complex movements like threading a needle?",
+            "answer": "The Cerebellum receives motor instructions from the cerebrum and sensory feedback from muscles/joints. It 'fine-tunes' the intensity and timing of muscle contractions to ensure smooth, coordinated, and precise voluntary movements.",
+            "key_concepts": ["motor coordination", "precision"],
+            "marks": 5,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the 'Pituitary Gland's' role in growth, and what happens in cases of 'Hyperpituitarism' vs 'Hypopituitarism'?",
+            "answer": "It secretes Growth Hormone (GH). Hyperpituitarism (excess GH) in childhood leads to Gigantism; Hypopituitarism (deficiency) leads to Dwarfism. It also regulates other glands like the thyroid and adrenal glands.",
+            "key_concepts": ["growth hormone", "pituitary disorders"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the significance of the 'Blood-Brain Barrier' in terms of Control and Coordination.",
+            "answer": "It is a highly selective permeable barrier that prevents toxins and fluctuations in blood chemistry from reaching the brain, ensuring a stable environment for delicate neural signaling to occur without interference.",
+            "key_concepts": ["neural stability", "homeostasis"],
+            "marks": 5,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Evaluate the statement: 'Plants do not have a nervous system, but they still communicate.' Support with two examples.",
+            "answer": "Statement is true. Examples: 1. Use of electrochemical signals in Mimosa leaves to trigger turgor changes. 2. Use of plant hormones (Auxins) to coordinate directional growth toward light (Phototropism).",
+            "key_concepts": ["plant communication", "phytohormones"],
+            "marks": 5,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 17,
+            "question": "How does 'Geotropism' work in a fallen plant to ensure its survival?",
+            "answer": "The plant re-orients itself: Roots show positive geotropism (grow downward to find water/anchor) and shoots show negative geotropism (grow upward to find light), both driven by differential auxin distribution in response to gravity.",
+            "key_concepts": ["gravity response", "differential growth"],
+            "marks": 5,
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Compare the 'Mode of Action' of a fast-acting hormone like Adrenaline with a slow-acting hormone like Growth Hormone.",
+            "answer": "Adrenaline acts almost instantly to modify existing enzyme/cellular activity for emergency. Growth Hormone acts slowly over years by stimulating cell division and protein synthesis for long-term physical change.",
+            "key_concepts": ["temporal regulation", "hormone action"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is 'Diabetic Retinopathy' and how does it relate to the failure of the endocrine feedback mechanism?",
+            "answer": "It is damage to the retina due to chronic high blood sugar. It stems from the failure of the Pancreas/Insulin feedback loop, leading to uncontrolled glucose levels that eventually damage small blood vessels in the eyes.",
+            "key_concepts": ["diabetes complications", "feedback failure"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe the functional anatomy of the 'Midbrain'.",
+            "answer": "The midbrain serves as a relay center for visual and auditory impulses. It also coordinates 'reflex' movements of the head, neck, and trunk in response to visual or auditory stimuli (e.g., turning toward a loud noise).",
+            "key_concepts": ["midbrain", "sensory relay"],
+            "marks": 5,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "How does 'Ethylene' (not explicitly in NCERT but related to growth) or 'Cytokinins' help in delaying leaf senescence?",
+            "answer": "Cytokinins promote nutrient mobilization and delay aging (senescence) in leaves. This ensures that the plant remains photosynthetic for a longer duration, supporting better fruit development.",
+            "key_concepts": ["senescence", "cytokinins"],
+            "marks": 5,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the pathway of an impulse during a 'Withdrawal Reflex' when touching a hot object.",
+            "answer": "Heat (Stimulus) $\rightarrow$ Skin receptors $\rightarrow$ Sensory Neuron $\rightarrow$ Spinal Cord (interneuron) $\rightarrow$ Motor Neuron $\rightarrow$ Bicep muscle (Effector) $\rightarrow$ Hand withdrawal. Simultaneously, a signal goes to the brain to register pain.",
+            "key_concepts": ["reflex arc", "withdrawal reflex"],
+            "marks": 5,
+            "source_section": "Section 6.1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are some hormones called 'Steroid hormones' and others 'Peptide hormones'? Give examples from the chapter.",
+            "answer": "Classification is based on chemical structure. Testosterone/Oestrogen are steroids (lipid-based); Insulin/Growth Hormone are peptides (protein-based). Their structure determines how they enter/interact with target cells.",
+            "key_concepts": ["hormone chemistry"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss the 'Involuntary' regulation of blood pressure by the Medulla.",
+            "answer": "The Medulla receives input from baroreceptors (pressure sensors) in the arteries. It then sends autonomic signals to the heart and blood vessels to adjust heart rate and vessel diameter, maintaining constant pressure without conscious effort.",
+            "key_concepts": ["medulla", "autonomic control"],
+            "marks": 5,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the 'Antagonistic' relationship between Auxin and Cytokinin in Apical Dominance.",
+            "answer": "Auxin produced in the apical bud inhibits the growth of lateral buds (Apical Dominance). Cytokinins, often produced in roots, promote lateral bud growth. The balance between these two determines the branching pattern of the plant.",
+            "key_concepts": ["apical dominance", "hormonal balance"],
+            "marks": 5,
+            "source_section": "Section 6.2.2"
+        }
+    ]
+}

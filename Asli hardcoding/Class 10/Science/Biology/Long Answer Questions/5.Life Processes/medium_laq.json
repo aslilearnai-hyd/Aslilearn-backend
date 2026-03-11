@@ -1,0 +1,196 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Life Processes",
+    "generated_at": "2026-03-10T23:51:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the three main steps of the 'Dark Reaction' (Light-independent phase) of photosynthesis.",
+            "answer": "The three main steps involve: 1. Absorption of light energy by chlorophyll. 2. Conversion of light energy to chemical energy and splitting of water molecules into hydrogen and oxygen. 3. Reduction of carbon dioxide to carbohydrates (glucose) using the chemical energy stored during the light-dependent phase.",
+            "answer_outline": [
+                "Chlorophyll's role in light absorption",
+                "Photolysis of water",
+                "Conversion of solar to chemical energy",
+                "CO2 reduction to glucose"
+            ],
+            "key_concepts": [
+                "photolysis",
+                "reduction",
+                "carbohydrates",
+                "chlorophyll"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the breakdown of glucose occur in various pathways in living organisms? Provide the flowchart pathways.",
+            "answer": "Glucose (6-carbon) is first broken into Pyruvate (3-carbon) in the cytoplasm. Then: 1. In presence of Oxygen (Mitochondria): gives $CO_2 + H_2O + Energy$. 2. In lack of Oxygen (Muscle cells): gives Lactic acid + Energy. 3. In absence of Oxygen (Yeast): gives Ethanol + $CO_2$ + Energy.",
+            "answer_outline": [
+                "Glycolysis in cytoplasm",
+                "Aerobic breakdown in mitochondria",
+                "Anaerobic breakdown in yeast (Fermentation)",
+                "Lactic acid formation in muscles"
+            ],
+            "key_concepts": [
+                "pyruvate",
+                "mitochondria",
+                "lactic acid",
+                "fermentation"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the importance of 'Villi' in the small intestine.",
+            "answer": "Villi are finger-like projections on the inner lining of the small intestine. They increase the surface area for the absorption of digested food. They are richly supplied with blood vessels which take the absorbed food to each and every cell of the body.",
+            "answer_outline": [
+                "Structure and location of Villi",
+                "Surface area enhancement",
+                "Connection to circulatory system",
+                "Role in absorption"
+            ],
+            "key_concepts": [
+                "villi",
+                "surface area",
+                "absorption",
+                "blood vessels"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is 'Double Circulation'? Why is it necessary in mammals and birds?",
+            "answer": "In double circulation, blood passes through the heart twice during one complete cycle (Pulmonary and Systemic). It is necessary for mammals and birds because they have high energy needs to maintain constant body temperature, requiring an efficient supply of oxygen and complete separation of oxygenated and deoxygenated blood.",
+            "answer_outline": [
+                "Definition of Pulmonary and Systemic circuits",
+                "Separation of oxygenated/deoxygenated blood",
+                "Energy requirements of warm-blooded animals",
+                "Temperature regulation"
+            ],
+            "key_concepts": [
+                "double circulation",
+                "warm-blooded",
+                "oxygenation",
+                "pulmonary"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the mechanism of breathing in human beings (Inhalation and Exhalation).",
+            "answer": "During inhalation, the diaphragm flattens and ribs are lifted, increasing the chest cavity volume; air is sucked into the lungs. During exhalation, the diaphragm and ribs return to their original positions, decreasing cavity volume and forcing air out of the lungs.",
+            "answer_outline": [
+                "Action of diaphragm and rib muscles",
+                "Volume and pressure changes in thoracic cavity",
+                "Air movement into/out of Alveoli"
+            ],
+            "key_concepts": [
+                "diaphragm",
+                "thoracic cavity",
+                "alveoli",
+                "inhalation"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.3.1"
+        },
+        {
+            "question_number": 6,
+            "question": "How are water and minerals transported in plants? Explain the role of Xylem.",
+            "answer": "Water and minerals are transported via Xylem tissue. Root hairs absorb water through osmosis. A continuous column of water is maintained through vessels and tracheids, driven by two forces: Root pressure (at night) and Transpiration pull (during the day).",
+            "answer_outline": [
+                "Xylem vessels and tracheids",
+                "Osmotic pressure in roots",
+                "Transpiration pull mechanism",
+                "Unidirectional flow"
+            ],
+            "key_concepts": [
+                "xylem",
+                "transpiration pull",
+                "tracheids",
+                "root pressure"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is 'Translocation'? How does it differ from transpiration?",
+            "answer": "Translocation is the transport of soluble products of photosynthesis (sucrose, amino acids) through the Phloem. Unlike transpiration (a physical process), translocation is an active process that uses energy from ATP to move materials from 'source' (leaves) to 'sink' (roots/fruits).",
+            "answer_outline": [
+                "Definition of translocation",
+                "Phloem (Sieve tubes and companion cells)",
+                "ATP usage",
+                "Bidirectional vs Unidirectional flow"
+            ],
+            "key_concepts": [
+                "phloem",
+                "translocation",
+                "sucrose",
+                "ATP"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the structure and function of a 'Nephron'.",
+            "answer": "A nephron is the filtration unit of the kidney. It consists of a Bowman's capsule (containing glomerulus) and a long renal tube. Function: It filters blood to remove nitrogenous waste, and selectively reabsorbs useful substances like glucose, amino acids, and water back into the blood.",
+            "answer_outline": [
+                "Bowman's capsule and Glomerulus",
+                "Filtration process",
+                "Selective reabsorption",
+                "Urine formation"
+            ],
+            "key_concepts": [
+                "nephron",
+                "glomerulus",
+                "filtration",
+                "reabsorption"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.5.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of 'Hydrochloric Acid' and 'Mucus' in the stomach.",
+            "answer": "Hydrochloric acid (HCl) creates an acidic medium which facilitates the action of the enzyme pepsin and kills bacteria in food. Mucus protects the inner lining of the stomach from the corrosive action of the acid under normal conditions.",
+            "answer_outline": [
+                "Activation of pepsin",
+                "Killing of pathogens",
+                "Protective function of mucus",
+                "Prevention of stomach ulcers"
+            ],
+            "key_concepts": [
+                "HCl",
+                "pepsin",
+                "mucus",
+                "acidic medium"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the rate of breathing in aquatic organisms much faster than in terrestrial organisms?",
+            "answer": "Aquatic organisms use oxygen dissolved in water. Since the amount of dissolved oxygen is fairly low compared to the amount of oxygen in the air, aquatic organisms have to breathe much faster to meet their oxygen requirements for energy production.",
+            "answer_outline": [
+                "Oxygen source (water vs air)",
+                "Comparison of oxygen concentration",
+                "Metabolic demand",
+                "Efficiency of gills vs lungs"
+            ],
+            "key_concepts": [
+                "dissolved oxygen",
+                "aquatic organisms",
+                "breathing rate"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        }
+    ]
+}

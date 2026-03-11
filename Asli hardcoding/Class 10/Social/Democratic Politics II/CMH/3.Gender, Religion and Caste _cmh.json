@@ -1,0 +1,103 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter: Gender, Religion and Caste",
+  "generated_at": "2026-03-11T16:50:00",
+  "concepts": [
+    {
+      "concept_name": "Gender Division",
+      "difficulty": "easy",
+      "lesson": "Gender division refers to the unequal roles and responsibilities assigned to men and women by society. These roles are not based purely on biological differences but are largely shaped by social expectations and cultural traditions. In many societies, women are expected to perform household tasks while men work outside the home. This division often limits opportunities for women in education, employment, and politics.",
+      "real_example": "Women in many households handle cooking, cleaning, and childcare while men go out for paid work.",
+      "key_points": [
+        "Based on social expectations rather than biology",
+        "Creates unequal roles in society",
+        "Often limits women’s participation in public life"
+      ],
+      "source_section": "Gender and Politics"
+    },
+    {
+      "concept_name": "Sexual Division of Labour",
+      "difficulty": "easy",
+      "lesson": "Sexual division of labour refers to the system where different types of work are assigned to men and women. Typically, women are responsible for household work such as cooking, cleaning, and caring for children, while men perform work outside the home that generates income. Even when women participate in paid work, their household labour is often undervalued and not recognized economically.",
+      "real_example": "In many families, women manage household chores while men work in offices or businesses.",
+      "key_points": [
+        "Different types of work assigned to men and women",
+        "Household work often done by women",
+        "Women's work is often unpaid and undervalued"
+      ],
+      "source_section": "Public/Private Division"
+    },
+    {
+      "concept_name": "Feminist Movement",
+      "difficulty": "medium",
+      "lesson": "Feminist movements are social and political movements that aim to achieve equality between men and women. These movements advocate equal opportunities in education, employment, and political participation. Feminists also work to eliminate discrimination and violence against women. Over time, feminist movements have helped improve women’s rights and representation in various fields.",
+      "real_example": "Movements demanding equal voting rights and equal wages for women.",
+      "key_points": [
+        "Promotes gender equality",
+        "Advocates equal rights and opportunities",
+        "Challenges discrimination and patriarchy"
+      ],
+      "source_section": "Political Expression of Gender Division"
+    },
+    {
+      "concept_name": "Patriarchy",
+      "difficulty": "medium",
+      "lesson": "Patriarchy refers to a social system in which men hold primary power and dominate roles in political leadership, moral authority, social privilege, and control of property. In patriarchal societies, women often face discrimination and have fewer opportunities compared to men. Patriarchy influences family structures, workplace practices, and political representation.",
+      "real_example": "In many societies, major family decisions are traditionally taken by male members.",
+      "key_points": [
+        "System where men dominate social and political power",
+        "Women face discrimination and inequality",
+        "Influences social institutions and decision-making"
+      ],
+      "source_section": "Gender and Politics"
+    },
+    {
+      "concept_name": "Communalism",
+      "difficulty": "medium",
+      "lesson": "Communalism is a political ideology that promotes the idea that people belonging to the same religion share common interests and should act together politically. It often leads to conflicts between different religious communities when one group tries to dominate others. Communal politics can create divisions in society and threaten democratic values.",
+      "real_example": "Political campaigns appealing to voters based on religious identity.",
+      "key_points": [
+        "Based on religious identity",
+        "Promotes division between communities",
+        "Can lead to social conflict and violence"
+      ],
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "concept_name": "Secularism",
+      "difficulty": "medium",
+      "lesson": "Secularism refers to the principle that the state does not promote or favor any particular religion. In a secular state, all religions are treated equally and citizens have the freedom to practice or not practice any religion. The Indian Constitution supports secularism by guaranteeing religious freedom and preventing discrimination on the basis of religion.",
+      "real_example": "The Indian government does not declare any official state religion.",
+      "key_points": [
+        "State treats all religions equally",
+        "Ensures freedom of religion",
+        "Protects religious minorities"
+      ],
+      "source_section": "Secular State"
+    },
+    {
+      "concept_name": "Caste System",
+      "difficulty": "medium",
+      "lesson": "The caste system is a traditional form of social division in India where people are grouped based on hereditary occupations and social status. Members of a caste usually marry within their caste and follow specific social practices. Historically, the system created inequalities and discrimination, especially against lower castes and those considered 'untouchable'.",
+      "real_example": "Certain occupations historically being reserved for specific caste groups.",
+      "key_points": [
+        "Based on hereditary social groups",
+        "Associated with traditional occupations",
+        "Led to social inequality and discrimination"
+      ],
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "concept_name": "Caste in Politics",
+      "difficulty": "hard",
+      "lesson": "Caste continues to influence political processes in India. Political parties often consider caste composition when selecting candidates and forming alliances. While caste-based mobilization can help disadvantaged groups gain political representation, excessive focus on caste identity can also lead to divisions and distract attention from important issues like development and governance.",
+      "real_example": "Political parties choosing candidates based on dominant caste groups in a constituency.",
+      "key_points": [
+        "Caste influences election strategies",
+        "Can empower disadvantaged groups",
+        "May also create political divisions"
+      ],
+      "source_section": "Caste and Politics"
+    }
+  ]
+}

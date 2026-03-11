@@ -1,0 +1,184 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Structure of the Atom",
+    "difficulty": "Easy",
+    "source_pdf": "iesc104.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Static Electricity Discovery",
+            "objective": "To understand that atoms contain charged particles.",
+            "materials": [
+                "Comb",
+                "Dry hair",
+                "Small pieces of paper",
+                "Glass rod",
+                "Silk cloth",
+                "Inflated balloon"
+            ],
+            "steps": [
+                "Comb your dry hair and bring the comb near small pieces of paper.",
+                "Rub a glass rod with silk cloth and bring it near an inflated balloon.",
+                "Observe if the objects attract each other and discuss where the charge comes from."
+            ],
+            "learning_outcome": "Concludes that atoms are divisible and consist of charged particles.",
+            "evaluation": "Explain why the comb attracts paper after rubbing it on hair (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Thomson’s Watermelon Model",
+            "objective": "To visualize J.J. Thomson’s model of an atom.",
+            "materials": [
+                "A slice of watermelon (or drawing materials)",
+                "Red clay",
+                "Small black beads or seeds"
+            ],
+            "steps": [
+                "Compare an atom to a watermelon where the red part is the positive charge.",
+                "Place 'seeds' (beads) to represent electrons studded in the positive sphere.",
+                "Discuss why the atom is neutral as a whole."
+            ],
+            "learning_outcome": "Understands that in Thomson's model, electrons are embedded in a positively charged sphere.",
+            "evaluation": "State the two main postulates of Thomson’s model (10 marks)."
+        },
+        
+
+[Image of Thomson's model of an atom]
+
+        {
+            "sl_no": 3,
+            "title": "Rutherford’s Scattering Analogy",
+            "objective": "To understand why most alpha particles passed through the gold foil.",
+            "materials": [
+                "Stones",
+                "A solid wall",
+                "A barbed-wire fence"
+            ],
+            "steps": [
+                "Throw stones at a solid wall and listen for the sound.",
+                "Throw stones at a barbed-wire fence and observe how many pass through.",
+                "Relate the gaps in the fence to the empty space inside an atom."
+            ],
+            "learning_outcome": "Concludes that most of the space inside an atom is empty.",
+            "evaluation": "Why did Rutherford select a gold foil for his experiment? (10 marks)."
+        },
+        
+
+[Image of Rutherford's alpha-particle scattering experiment]
+
+        {
+            "sl_no": 4,
+            "title": "Bohr’s Energy Levels Sketch",
+            "objective": "To draw and label the discrete orbits of an atom.",
+            "materials": [
+                "Compass",
+                "Pencil",
+                "Paper"
+            ],
+            "steps": [
+                "Draw a small center for the nucleus.",
+                "Draw four concentric circles around it.",
+                "Label the shells as K, L, M, and N or n=1, 2, 3, and 4."
+            ],
+            "learning_outcome": "Recognizes that electrons revolve in specific shells without radiating energy.",
+            "evaluation": "Draw a sketch of Bohr’s model with three shells (10 marks)."
+        },
+        
+        {
+            "sl_no": 5,
+            "title": "Sub-atomic Particle Comparison",
+            "objective": "To identify and compare electrons, protons, and neutrons.",
+            "materials": [
+                "Flashcards",
+                "Marker"
+            ],
+            "steps": [
+                "Create cards for Electron (e), Proton (p), and Neutron (n).",
+                "Mark their charges: -1, +1, and 0.",
+                "Compare their masses: Proton and Neutron are 1 unit each, while Electron is negligible."
+            ],
+            "learning_outcome": "Identifies the three fundamental particles that make up an atom.",
+            "evaluation": "Which sub-atomic particle was discovered by J. Chadwick? (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "The 2n² Rule Practice",
+            "objective": "To calculate the maximum number of electrons in a shell.",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Use the formula 2n² where 'n' is the shell number.",
+                "Calculate for K-shell (n=1), L-shell (n=2), and M-shell (n=3).",
+                "Verify the results: 2, 8, and 18."
+            ],
+            "learning_outcome": "Mastery of the rules for electron distribution in different orbits.",
+            "evaluation": "What is the maximum number of electrons that can be in the outermost orbit? (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Electronic Configuration Modeling",
+            "objective": "To display the atomic structure of first eighteen elements.",
+            "materials": [
+                "Chart paper",
+                "Colored bindis or stickers"
+            ],
+            "steps": [
+                "Choose an element like Sodium (Z=11) or Carbon (Z=6).",
+                "Draw the nucleus and shells.",
+                "Place 'electrons' (stickers) in shells starting from the inner K-shell."
+            ],
+            "learning_outcome": "Visualizes how electrons are distributed in shells like 2, 8, 1 for Sodium.",
+            "evaluation": "Write the distribution of electrons in a Lithium atom (10 marks)."
+        },
+        
+        {
+            "sl_no": 8,
+            "title": "Valency Calculator",
+            "objective": "To determine the combining capacity of elements.",
+            "materials": [
+                "Periodic table or textbook chart"
+            ],
+            "steps": [
+                "Identify the number of valence electrons (outermost shell).",
+                "If valence electrons are ≤ 4, valency = valence electrons (e.g., Magnesium = 2).",
+                "If valence electrons are > 4, subtract from 8 (e.g., Fluorine: 8 - 7 = 1)."
+            ],
+            "learning_outcome": "Understands how atoms react to achieve a full octet in the outermost shell.",
+            "evaluation": "What is the valency of Chlorine? (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Atomic vs. Mass Number",
+            "objective": "To differentiate between 'Z' and 'A'.",
+            "materials": [
+                "Flashcards",
+                "Element symbols"
+            ],
+            "steps": [
+                "Define Atomic Number (Z) as the number of protons.",
+                "Define Mass Number (A) as the sum of protons and neutrons.",
+                "Practice the notation ZAX using Nitrogen (714N)."
+            ],
+            "learning_outcome": "Understands that mass of an atom resides in the nucleus.",
+            "evaluation": "If an atom has 8 protons and 8 neutrons, find its Mass Number (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Isotope Matching",
+            "objective": "To learn about atoms of the same element with different masses.",
+            "materials": [
+                "Diagrams of Protium, Deuterium, and Tritium"
+            ],
+            "steps": [
+                "Compare the three isotopes of Hydrogen.",
+                "Observe that they all have 1 proton but different numbers of neutrons.",
+                "Discuss uses of isotopes, like Cobalt-60 for cancer treatment."
+            ],
+            "learning_outcome": "Recognizes that isotopes have the same atomic number but different mass numbers.",
+            "evaluation": "Name the three isotopes of Hydrogen (10 marks)."
+        }
+    ]
+}

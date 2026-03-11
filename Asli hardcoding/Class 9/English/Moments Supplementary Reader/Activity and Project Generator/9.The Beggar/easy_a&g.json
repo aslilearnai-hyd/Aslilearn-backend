@@ -1,0 +1,158 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Beggar",
+    "author": "Anton Chekhov",
+    "difficulty": "Easy",
+    "source_pdf": "eng9_9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Main Characters Identification",
+            "objective": "Identify the important characters in the lesson",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "Identify the main characters in the story",
+                "Write one line about each character"
+            ],
+            "learning_outcome": "Recognises characters and their roles",
+            "evaluation": "Correct identification of characters (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Lushkoff",
+            "objective": "Understand the character of Lushkoff",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find the description of Lushkoff in the lesson",
+                "Write 4–5 sentences describing his life and behaviour"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Relevant points included (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Role of Sergei",
+            "objective": "Understand Sergei’s role in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the conversation between Sergei and Lushkoff",
+                "Write three points showing how Sergei helps him"
+            ],
+            "learning_outcome": "Identifies important actions of Sergei",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Importance of Olga",
+            "objective": "Understand Olga’s role in changing Lushkoff",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part where Olga helps Lushkoff",
+                "Write 3–4 sentences explaining her kindness"
+            ],
+            "learning_outcome": "Understands the role of compassion",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Reason for Lushkoff’s Lies",
+            "objective": "Understand why Lushkoff lies to people",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find the section where Lushkoff explains his lies",
+                "Write the reasons in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands cause of behaviour",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four major events in the story",
+                "Arrange them in correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct sequence (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Message of the Story",
+            "objective": "Identify the moral message of the lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the lesson learned from the story",
+                "Write the moral in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary from the Lesson",
+            "objective": "Improve vocabulary skills",
+            "materials": [
+                "Textbook",
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five new words from the lesson",
+                "Write their meanings",
+                "Use each word in a sentence"
+            ],
+            "learning_outcome": "Develops vocabulary",
+            "evaluation": "Correct meanings and sentences (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Lushkoff’s Transformation",
+            "objective": "Understand the change in Lushkoff’s life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the last part of the lesson",
+                "Write how Lushkoff’s life changed after meeting Sergei and Olga"
+            ],
+            "learning_outcome": "Understands character development",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Real-Life Connection",
+            "objective": "Relate the story to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about helping poor or needy people",
+                "Write 3–4 sentences about how we can help them"
+            ],
+            "learning_outcome": "Connects lesson to real-life values",
+            "evaluation": "Meaningful ideas (10 marks)"
+        }
+    ]
+}

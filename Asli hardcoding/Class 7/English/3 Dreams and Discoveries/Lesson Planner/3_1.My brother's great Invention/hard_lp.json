@@ -1,0 +1,147 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "My Brother's Great Invention",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically analyze the narrative voice and the use of 'reliable vs. unreliable' narration",
+    "Deconstruct the structural elements of a humorous short story: Inciting incident, Rising action (the build), and the Anti-climax",
+    "Identify and evaluate sophisticated literary devices: Satire, Juxtaposition, and Extended Metaphors",
+    "Examine the sociological theme of the 'Non-Conformist' within the family unit",
+    "Master advanced vocabulary related to engineering, futility, and obsession",
+    "Synthesize the text's message into a persuasive argument regarding the 'Ethics of Innovation'"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Narrative Voice and Perspective",
+      "topics_covered": [
+        "The 'Observer' Narrator: Distance and Objectivity",
+        "Satirical tone and its effect on reader perception",
+        "Vocabulary: 'Obsessive', 'Grandiose', 'Ineptitude', 'Paradoxical'"
+      ],
+      "teaching_strategy": [
+        "Seminar-style discussion: 'Does the narrator admire or pity his brother?'",
+        "Close reading of the introduction: Analyzing how the author establishes the brother as an 'Outlier'",
+        "Explaining the literary concept of the 'Mad Scientist' archetype"
+      ],
+      "student_activities": [
+        "Annotate the first two pages for evidence of the narrator's bias",
+        "Write a 150-word analysis of how the setting (the messy room) reflects the brother's internal state"
+      ],
+      "assessment": ["Critical annotations", "Analytical paragraph"]
+    },
+    {
+      "period": 2,
+      "title": "The Anatomy of a 'Great' Failure",
+      "topics_covered": [
+        "The 'Invention' as a metaphor for human ambition",
+        "Juxtaposition: High-tech terminology vs. Low-tech junk",
+        "Rhetorical device: Accumulation (the listing of useless parts)"
+      ],
+      "teaching_strategy": [
+        "Analyzing the 'Catalog of Junk': How the author uses specific details to build irony",
+        "Identifying the 'Extended Metaphor' of the machine as a living, breathing entity",
+        "Exploring the theme of 'Futility'—effort without outcome"
+      ],
+      "student_activities": [
+        "Identify 5 instances of technical jargon used for non-technical objects",
+        "Group work: Categorize the 'parts' of the invention by their absurdity"
+      ],
+      "assessment": ["Jargon identification worksheet", "Group synthesis task"]
+    },
+    {
+      "period": 3,
+      "title": "Structure: The Orchestrated Anti-Climax",
+      "topics_covered": [
+        "Building suspense through descriptive pacing",
+        "The Anti-climax: Why the 'failure' is the true climax of the story",
+        "Vocabulary: 'Crescendo', 'Abrupt', 'Anti-climax', 'Deflated'"
+      ],
+      "teaching_strategy": [
+        "Mapping the story's energy graph: From high expectation to total collapse",
+        "Lecture on 'Bathos': The sudden shift from the sublime to the ridiculous",
+        "Analyzing the sensory language during the machine's malfunction"
+      ],
+      "student_activities": [
+        "Draw a 'Tension Graph' of the chapter, marking specific quotes at each peak/valley",
+        "Write a 200-word critique on why a 'working' invention would have made a worse story"
+      ],
+      "assessment": ["Tension Graph accuracy", "Structural critique"]
+    },
+    {
+      "period": 4,
+      "title": "Social Dynamics and Domestic Satire",
+      "topics_covered": [
+        "The family as a microcosm of society",
+        "Parental 'Enabling' vs. 'Encouragement'",
+        "Subtext: What remains unsaid in the family interactions"
+      ],
+      "teaching_strategy": [
+        "Debate: Is the brother a genius who is misunderstood, or a dreamer who is accommodated?",
+        "Analyzing the dialogue for 'understated humor'",
+        "Exploring the 'Stoicism' of the parents in the face of chaos"
+      ],
+      "student_activities": [
+        "Rewrite a scene from the brother's perspective to show his internal 'logic'",
+        "Identify 'Irony of Situation' in the parents' reaction"
+      ],
+      "assessment": ["Perspective-shift writing", "Irony identification quiz"]
+    },
+    {
+      "period": 5,
+      "title": "The Ethics of Innovation",
+      "topics_covered": [
+        "Innovation for the sake of innovation vs. Problem-solving",
+        "The environmental/domestic cost of the 'Great Invention'",
+        "Vocabulary: 'Superfluous', 'Redundant', 'Prototypical', 'Obsolescence'"
+      ],
+      "teaching_strategy": [
+        "Connecting the story to real-world 'useless' inventions (e.g., the Juicero)",
+        "Discussion on 'The Wright Brothers vs. The Wrong Brother'",
+        "Workshop on persuasive argument: 'When should an inventor stop?'"
+      ],
+      "student_activities": [
+        "Draft a persuasive 'Grant Proposal' for the brother's *next* invention, attempting to justify the previous failure",
+        "Vocabulary workshop: Using the new words in a formal context"
+      ],
+      "assessment": ["Grant Proposal (Tone and Persuasion)", "Vocabulary usage"]
+    },
+    {
+      "period": 6,
+      "title": "Linguistic Mastery and Final Review",
+      "topics_covered": [
+        "Complex sentence structures in narrative prose",
+        "Synthesis of humor and philosophy",
+        "Final Unit Assessment"
+      ],
+      "teaching_strategy": [
+        "Interactive Review: 'The Inventor's Trivia'—testing inference and detail",
+        "Final Mastery Quiz (Comprehensive)",
+        "Closing: Final thoughts on the beauty of 'Great' failures"
+      ],
+      "student_activities": [
+        "Participate in the high-level trivia challenge",
+        "Complete the 'Hard-Level' Unit Exam"
+      ],
+      "assessment": ["Final Unit Exam", "Comprehensive participation"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Examples of Patent Applications for humorous context",
+    "Articles on 'The Psychology of the Hobbyist'",
+    "Rubric for Persuasive/Satirical writing",
+    "Audio clips of complex machinery for sensory writing"
+  ],
+  "evaluation_methods": [
+    "Analytical essay on 'Narrative Irony'",
+    "Persuasive Grant Proposal (Formal tone)",
+    "Vocabulary and Satire identification quiz",
+    "Structural mapping (Tension Graph)",
+    "Final comprehensive unit exam"
+  ],
+  "teacher_tip": "Push the students to find the *pathos* (sadness) within the humor. At this level, they should be able to see that the brother's failure is both funny and a bit tragic. This 'dual-tonality' is what makes for great literature."
+}

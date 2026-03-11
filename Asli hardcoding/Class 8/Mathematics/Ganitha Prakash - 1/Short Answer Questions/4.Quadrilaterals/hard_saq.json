@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 4: Quadrilaterals",
+  "generated_at": "2026-03-05T01:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a quadrilateral?",
+      "answer": "A quadrilateral is a polygon that has four sides, four vertices and four angles.",
+      "key_concepts": ["quadrilaterals"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "How many sides does a quadrilateral have?",
+      "answer": "A quadrilateral has four sides.",
+      "key_concepts": ["quadrilaterals"],
+      "marks": 1,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "How many vertices does a quadrilateral have?",
+      "answer": "A quadrilateral has four vertices.",
+      "key_concepts": ["vertices"],
+      "marks": 1,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the sum of the interior angles of a quadrilateral?",
+      "answer": "The sum of the interior angles of a quadrilateral is 360°.",
+      "key_concepts": ["angle sum property"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "How many diagonals does a quadrilateral have?",
+      "answer": "A quadrilateral has two diagonals.",
+      "key_concepts": ["diagonals"],
+      "marks": 1,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Define a parallelogram.",
+      "answer": "A parallelogram is a quadrilateral in which opposite sides are parallel.",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is a rectangle?",
+      "answer": "A rectangle is a quadrilateral with four right angles.",
+      "key_concepts": ["rectangle"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a square?",
+      "answer": "A square is a quadrilateral with all sides equal and all angles equal to 90°.",
+      "key_concepts": ["square"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a rhombus?",
+      "answer": "A rhombus is a quadrilateral in which all sides are equal.",
+      "key_concepts": ["rhombus"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a trapezium?",
+      "answer": "A trapezium is a quadrilateral with one pair of parallel sides.",
+      "key_concepts": ["trapezium"],
+      "marks": 2,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 11,
+      "question": "In a parallelogram, how are opposite sides?",
+      "answer": "Opposite sides of a parallelogram are equal and parallel.",
+      "key_concepts": ["parallelogram properties"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "In a parallelogram, how are opposite angles?",
+      "answer": "Opposite angles of a parallelogram are equal.",
+      "key_concepts": ["parallelogram angles"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens to the diagonals of a parallelogram?",
+      "answer": "The diagonals of a parallelogram bisect each other.",
+      "key_concepts": ["diagonals"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the measure of each angle in a rectangle?",
+      "answer": "Each angle of a rectangle measures 90°.",
+      "key_concepts": ["rectangle angles"],
+      "marks": 1,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the special property of the sides of a rhombus?",
+      "answer": "All sides of a rhombus are equal.",
+      "key_concepts": ["rhombus"],
+      "marks": 1,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 16,
+      "question": "How many pairs of parallel sides does a parallelogram have?",
+      "answer": "A parallelogram has two pairs of parallel sides.",
+      "key_concepts": ["parallel sides"],
+      "marks": 1,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 17,
+      "question": "What is a diagonal?",
+      "answer": "A diagonal is a line segment joining two opposite vertices of a polygon.",
+      "key_concepts": ["diagonals"],
+      "marks": 2,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 18,
+      "question": "How many right angles are present in a square?",
+      "answer": "A square has four right angles.",
+      "key_concepts": ["square"],
+      "marks": 1,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Name a quadrilateral with all sides equal.",
+      "answer": "A rhombus or square.",
+      "key_concepts": ["rhombus", "square"],
+      "marks": 1,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Name a quadrilateral with four right angles.",
+      "answer": "A rectangle or square.",
+      "key_concepts": ["rectangle", "square"],
+      "marks": 1,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the sum of opposite angles in a parallelogram?",
+      "answer": "Opposite angles are equal in a parallelogram.",
+      "key_concepts": ["parallelogram angles"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What happens to adjacent angles in a parallelogram?",
+      "answer": "Adjacent angles in a parallelogram are supplementary.",
+      "key_concepts": ["parallelogram angles"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Name a quadrilateral with only one pair of parallel sides.",
+      "answer": "Trapezium.",
+      "key_concepts": ["trapezium"],
+      "marks": 1,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which quadrilateral has equal diagonals?",
+      "answer": "Rectangle and square have equal diagonals.",
+      "key_concepts": ["diagonals"],
+      "marks": 2,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which quadrilateral has diagonals that bisect each other?",
+      "answer": "Parallelogram.",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 4.2"
+    }
+  ]
+}

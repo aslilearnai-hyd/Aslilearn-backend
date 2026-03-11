@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Answer Questions",
+  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "generated_at": "2026-03-11T02:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is the image formed by a plane mirror always virtual?",
+      "answer": "Because reflected rays diverge and only appear to meet behind the mirror.",
+      "marks": 2,
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Why are convex mirrors used as rear-view mirrors in vehicles?",
+      "answer": "They provide a wider field of view and form erect, diminished images.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Why can a concave mirror form both real and virtual images?",
+      "answer": "Because the image nature depends on the position of the object relative to the focus.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What happens to the image when the object is placed at the focus of a concave mirror?",
+      "answer": "The reflected rays become parallel and the image forms at infinity.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why does a concave mirror produce a highly magnified image when the object is near the focus?",
+      "answer": "Because reflected rays diverge after reflection and appear to meet far from the mirror.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the relationship between focal length and radius of curvature of a spherical mirror?",
+      "answer": "Focal length is half the radius of curvature (f = R/2).",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does light bend when it passes from one medium to another?",
+      "answer": "Because its speed changes in different media.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 8,
+      "question": "What happens to the speed of light when it enters a denser medium?",
+      "answer": "The speed of light decreases.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does light bend towards the normal in a denser medium?",
+      "answer": "Because the speed of light decreases in the denser medium.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What happens when a ray of light passes along the normal during refraction?",
+      "answer": "It passes straight without bending.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What does a refractive index greater than 1 indicate?",
+      "answer": "Light travels slower in that medium than in vacuum.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Why does a coin appear raised when viewed through water?",
+      "answer": "Due to refraction of light at the water–air interface.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the sign convention used in mirror formula calculations?",
+      "answer": "Distances are measured from the pole; right side positive and left side negative.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are concave mirrors used in shaving mirrors?",
+      "answer": "They form an enlarged upright image when the object is between pole and focus.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Why do stars appear to twinkle?",
+      "answer": "Due to refraction of light in different layers of Earth's atmosphere.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What is magnification if the image height equals the object height?",
+      "answer": "Magnification is 1.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 17,
+      "question": "What type of image is formed when magnification is negative?",
+      "answer": "A real and inverted image.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What type of image is formed when magnification is positive?",
+      "answer": "A virtual and erect image.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does a pencil partially immersed in water appear bent?",
+      "answer": "Due to refraction of light at the boundary between water and air.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 20,
+      "question": "What happens to the refracted ray when the angle of incidence increases?",
+      "answer": "The angle of refraction also increases.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Why does the bottom of a swimming pool appear shallower than it actually is?",
+      "answer": "Because light rays bend away from the normal when moving from water to air.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 22,
+      "question": "What happens to the focal length of a mirror if its radius of curvature increases?",
+      "answer": "The focal length also increases.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is the refractive index of glass greater than that of air?",
+      "answer": "Because light travels slower in glass than in air.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 24,
+      "question": "What does the ratio sin i / sin r represent in refraction?",
+      "answer": "The refractive index of the medium.",
+      "marks": 2,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Why does a convex mirror always produce diminished images?",
+      "answer": "Because reflected rays diverge and appear to come from a point behind the mirror.",
+      "marks": 2,
+      "source_section": "Section 9.2"
+    }
+  ]
+}

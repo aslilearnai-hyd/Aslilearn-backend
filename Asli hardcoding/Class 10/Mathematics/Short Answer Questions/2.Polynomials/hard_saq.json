@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-01T19:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why a polynomial of degree 3 cannot have more than three zeroes.",
+            "answer": "Because the maximum number of zeroes of a polynomial is equal to its degree.",
+            "key_concepts": [
+                "degree-zero theorem"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is x² + 1 = 0 said to have no real zeroes?",
+            "answer": "Because x² is always non-negative and cannot be equal to −1 for any real x.",
+            "key_concepts": [
+                "no real zeroes"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why the degree of the zero polynomial is not defined.",
+            "answer": "Because it has no non-zero term to determine the highest power of the variable.",
+            "key_concepts": [
+                "zero polynomial"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How does the graph of a polynomial help in finding its zeroes?",
+            "answer": "The x-coordinates where the graph intersects the x-axis give the zeroes of the polynomial.",
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why a constant polynomial generally has no zeroes.",
+            "answer": "Because its graph is a horizontal line that does not intersect the x-axis.",
+            "key_concepts": [
+                "constant polynomial"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Justify that a linear polynomial has at most one zero.",
+            "answer": "Because its graph is a straight line that can intersect the x-axis at only one point.",
+            "key_concepts": [
+                "linear polynomial"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does p(0) give the constant term of a polynomial?",
+            "answer": "Because all terms containing x become zero when x = 0.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the relationship between the number of zeroes and the degree of a polynomial.",
+            "answer": "The maximum number of zeroes a polynomial can have is equal to its degree.",
+            "key_concepts": [
+                "degree-zero relation"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is x⁻² + 3 not a polynomial?",
+            "answer": "Because the power of x is negative, which is not allowed in a polynomial.",
+            "key_concepts": [
+                "polynomial condition"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the graph of a quadratic polynomial is a parabola.",
+            "answer": "Because the highest power of the variable is 2, which gives a parabolic curve.",
+            "key_concepts": [
+                "quadratic graph"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why can a polynomial have fewer zeroes than its degree?",
+            "answer": "Because some zeroes may be repeated or not real.",
+            "key_concepts": [
+                "nature of zeroes"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the x-intercepts of a polynomial graph represent its zeroes.",
+            "answer": "At x-intercepts, the value of y is zero, which means the polynomial becomes zero.",
+            "key_concepts": [
+                "x-intercept"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why does a polynomial with even degree open upwards or downwards?",
+            "answer": "Because the leading coefficient determines the direction of the graph.",
+            "key_concepts": [
+                "graph behavior"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why the polynomial x³ always passes through the origin.",
+            "answer": "Because p(0) = 0, so the graph passes through the origin.",
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is the standard form of a polynomial useful?",
+            "answer": "Because it helps in identifying degree, coefficients and type of polynomial easily.",
+            "key_concepts": [
+                "standard form"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why graphical method gives only approximate zeroes.",
+            "answer": "Because the accuracy depends on the scale and precision of the graph.",
+            "key_concepts": [
+                "graphical limitations"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is a polynomial considered a continuous function?",
+            "answer": "Because its graph has no breaks or gaps.",
+            "key_concepts": [
+                "continuity"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why x² − 4 has two zeroes.",
+            "answer": "Because its graph cuts the x-axis at two points.",
+            "key_concepts": [
+                "graph interpretation"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does the polynomial x² never have more than two zeroes?",
+            "answer": "Because its degree is two.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why polynomials are useful in real-life problems.",
+            "answer": "Because they model smooth and predictable relationships between quantities.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why does changing the coefficient of the highest power affect the graph shape?",
+            "answer": "Because it controls the steepness and direction of the graph.",
+            "key_concepts": [
+                "leading coefficient"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why x = −2 is a zero of x² − 4.",
+            "answer": "Substituting x = −2 gives 0, so it is a zero.",
+            "key_concepts": [
+                "verification"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are fractional powers not allowed in polynomials?",
+            "answer": "Because polynomial exponents must be non-negative integers.",
+            "key_concepts": [
+                "definition"
+            ],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why the polynomial x² + x + 1 has no real zeroes.",
+            "answer": "Because its graph does not intersect the x-axis.",
+            "key_concepts": [
+                "no real zeroes"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is the concept of degree important in polynomials?",
+            "answer": "Because it determines the number of zeroes and the shape of the graph.",
+            "key_concepts": [
+                "importance of degree"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        }
+    ]
+}

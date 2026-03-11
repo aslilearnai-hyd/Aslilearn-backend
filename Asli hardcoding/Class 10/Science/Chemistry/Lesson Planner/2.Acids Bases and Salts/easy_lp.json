@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Acids, Bases and Salts",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify acids and bases using natural and synthetic indicators",
+        "Understand the basic chemical properties of acids and bases",
+        "Recognize the importance of pH in everyday life",
+        "Understand the neutralization reaction and salt formation",
+        "Identify common chemicals prepared from Sodium Chloride",
+        "Explain the importance of Water of Crystallization"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Indicators of Acids and Bases",
+            "topics_covered": [
+                "Definition of Acids and Bases (Taste and Touch)",
+                "Natural indicators: Litmus, Turmeric, Red Cabbage",
+                "Synthetic indicators: Methyl Orange, Phenolphthalein"
+            ],
+            "teaching_strategy": [
+                "Hands-on demonstration with Lemon juice, Soap, and Litmus paper",
+                "Magic color-change experiment using Turmeric",
+                "Visual chart of indicator color changes"
+            ],
+            "student_activities": [
+                "Test various household liquids (vinegar, soda, soap) with Litmus",
+                "Create a table of color changes observed"
+            ],
+            "assessment": [
+                "Oral questioning on indicator colors",
+                "Matching activity: Substance to Acid/Base category"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Chemical Properties: Metals and Carbonates",
+            "topics_covered": [
+                "Reaction of Acids with Metals ($H_{2}$ gas test)",
+                "Reaction of Acids with Metal Carbonates ($CO_{2}$ gas test)",
+                "The 'Pop' test and Lime Water test"
+            ],
+            "teaching_strategy": [
+                "Lab demonstration: Zinc granules in dilute $H_{2}SO_{4}$",
+                "Passing $CO_{2}$ through Lime water to show milkiness",
+                "Simple word equations"
+            ],
+            "student_activities": [
+                "Draw the experimental setup for gas evolution",
+                "Record the observation for the 'Pop' sound"
+            ],
+            "assessment": [
+                "Short answer: Which gas is evolved when acid reacts with metal?",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Neutralization and pH Scale",
+            "topics_covered": [
+                "The reaction between Acid and Base",
+                "Concept of Salt and Water formation",
+                "The pH scale (0-14) and Universal Indicator"
+            ],
+            "teaching_strategy": [
+                "Analogy: Balancing a see-saw",
+                "Demonstration of mixing $HCl$ and $NaOH$ with Phenolphthalein",
+                "Color-coded pH strip chart"
+            ],
+            "student_activities": [
+                "Use pH paper to test the acidity of coffee, milk, and water",
+                "Color the pH scale in their notebooks"
+            ],
+            "assessment": [
+                "True/False on pH values (e.g., pH 2 is a strong acid)",
+                "Exit slip: What are the products of neutralization?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "pH in Everyday Life",
+            "topics_covered": [
+                "pH in our digestive system (Acidity and Antacids)",
+                "Tooth decay and pH change",
+                "pH sensitivity of plants and animals (Soil pH)"
+            ],
+            "teaching_strategy": [
+                "Storytelling: Why do we take 'Milk of Magnesia'?",
+                "Discussion on how toothpaste prevents cavities",
+                "Visual aids showing yellowing plants in acidic soil"
+            ],
+            "student_activities": [
+                "Group talk: Home remedies for bee stings",
+                "List 3 ways pH affects our daily routine"
+            ],
+            "assessment": [
+                "Individual worksheet on application-based questions",
+                "Oral round: Why do we brush our teeth?"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Salts from Sodium Chloride",
+            "topics_covered": [
+                "Common Salt ($NaCl$) as a raw material",
+                "Sodium Hydroxide (Chlor-alkali process - basic)",
+                "Bleaching Powder and Baking Soda"
+            ],
+            "teaching_strategy": [
+                "Displaying samples of salt and baking soda",
+                "Simplified flowchart of the Chlor-alkali process",
+                "Uses of Baking Soda in the kitchen (fluffy cakes)"
+            ],
+            "student_activities": [
+                "Write the common names of $NaHCO_{3}$ and $CaOCl_{2}$",
+                "List two uses for Bleaching Powder"
+            ],
+            "assessment": [
+                "Quick-fire oral identification",
+                "Fill in the blanks: Chemical names and formulas"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Washing Soda and Plaster of Paris",
+            "topics_covered": [
+                "Washing Soda ($Na_{2}CO_{3} \\cdot 10H_{2}O$)",
+                "Plaster of Paris ($CaSO_{4} \\cdot \\frac{1}{2}H_{2}O$)",
+                "Water of Crystallization"
+            ],
+            "teaching_strategy": [
+                "Showing a plaster cast or gypsum sample",
+                "Heating Copper Sulphate crystals to show color loss",
+                "Explaining why POP must be stored in moisture-proof containers"
+            ],
+            "student_activities": [
+                "Observe the change in blue Copper Sulphate upon heating",
+                "Identify uses of POP in construction and medicine"
+            ],
+            "assessment": [
+                "Notebook review",
+                "Quiz on 'Water of Crystallization' examples"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Summary of Indicators, pH, and Salts",
+                "Formula recap",
+                "Doubt clarification"
+            ],
+            "teaching_strategy": [
+                "Quiz-based game",
+                "Mind-map construction on the board",
+                "Rapid-fire formula round"
+            ],
+            "student_activities": [
+                "Participate in a team-based quiz",
+                "Complete a summary table for all salts covered"
+            ],
+            "assessment": [
+                "Short test (15 marks)",
+                "MCQs on indicators and salt formulas"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Litmus paper, pH strips, Phenolphthalein",
+        "Samples: Lemon, Vinegar, Baking Soda, Salt, POP",
+        "NCERT Science Textbook",
+        "Glassware: Test tubes and Beakers",
+        "Color-coded pH chart"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Practical observation logs",
+        "Worksheet on chemical formulas",
+        "MCQs",
+        "Class participation in demonstrations"
+    ],
+    "teacher_tip": "Keep the focus on household examples. Using kitchen items like vinegar and baking soda makes the 'scary' chemistry feel familiar and accessible for Class 10 students starting the chapter."
+}

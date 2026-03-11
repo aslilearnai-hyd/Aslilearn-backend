@@ -1,0 +1,383 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Linear Equations in Two Variables",
+    "generated_at": "2026-03-06T02:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the general form of a linear equation in two variables and identify coefficients in 3x + 4y − 5 = 0.",
+            "answer": "The general form is ax + by + c = 0 where a and b are not both zero. Here a=3, b=4 and c=-5.",
+            "answer_outline": [
+                "General form",
+                "Identify coefficients",
+                "Constant term"
+            ],
+            "key_concepts": [
+                "linear equation",
+                "coefficients"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Verify whether (3,2) is a solution of 2x + 3y = 12.",
+            "answer": "2(3)+3(2)=6+6=12 so (3,2) satisfies the equation.",
+            "answer_outline": [
+                "Substitute values",
+                "Evaluate",
+                "Compare sides"
+            ],
+            "key_concepts": [
+                "verification"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Find three solutions of x + y = 10.",
+            "answer": "(2,8), (4,6), (5,5).",
+            "answer_outline": [
+                "Choose x",
+                "Calculate y",
+                "List pairs"
+            ],
+            "key_concepts": [
+                "solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Find y if x = 4 in 3x + y = 16.",
+            "answer": "3(4)+y=16 → y=4.",
+            "answer_outline": [
+                "Substitute x",
+                "Solve equation"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find x if y = 5 in x + 2y = 13.",
+            "answer": "x+10=13 → x=3.",
+            "answer_outline": [
+                "Substitute y",
+                "Solve equation"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Find two solutions of 2x + y = 8.",
+            "answer": "(3,2) and (4,0).",
+            "answer_outline": [
+                "Choose x values",
+                "Find y"
+            ],
+            "key_concepts": [
+                "solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why a linear equation has infinitely many solutions.",
+            "answer": "Many ordered pairs satisfy the equation because different values of x produce corresponding values of y.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "infinite solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Write x + y = 7 in standard form.",
+            "answer": "x + y − 7 = 0.",
+            "answer_outline": [
+                "Move constant",
+                "Standard form"
+            ],
+            "key_concepts": [
+                "standard form"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Find y if x = 3 in x + 2y = 11.",
+            "answer": "3+2y=11 → y=4.",
+            "answer_outline": [
+                "Substitute x",
+                "Solve"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why x² + y = 7 is not linear.",
+            "answer": "The variable x has degree 2. Linear equations require degree 1.",
+            "answer_outline": [
+                "Definition",
+                "Degree rule"
+            ],
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Find y if x = 6 in x + y = 15.",
+            "answer": "y=9.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Find x if y = 7 in x + y = 16.",
+            "answer": "x=9.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Find two solutions of x + y = 12.",
+            "answer": "(5,7) and (6,6).",
+            "answer_outline": [
+                "Choose values",
+                "Calculate"
+            ],
+            "key_concepts": [
+                "solution pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Identify coefficients in 5x + 2y − 9 = 0.",
+            "answer": "Coefficient of x = 5, coefficient of y = 2.",
+            "answer_outline": [
+                "Identify coefficients"
+            ],
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Find y if x = 2 in 4x + y = 10.",
+            "answer": "y=2.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how ordered pairs represent solutions.",
+            "answer": "Each ordered pair gives values of x and y that satisfy the equation.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "ordered pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Find x if y = 4 in 2x + y = 12.",
+            "answer": "x=4.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Write two solutions of x + y = 15.",
+            "answer": "(7,8) and (9,6).",
+            "answer_outline": [
+                "Choose values",
+                "Find pairs"
+            ],
+            "key_concepts": [
+                "solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Find y if x = 8 in x + y = 18.",
+            "answer": "y=10.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the meaning of constant term in ax + by + c = 0.",
+            "answer": "The constant term c is a number without variables.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "constant"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Find x if y = 3 in 3x + y = 15.",
+            "answer": "x=4.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Write two solutions of x + y = 18.",
+            "answer": "(9,9) and (10,8).",
+            "answer_outline": [
+                "Choose values"
+            ],
+            "key_concepts": [
+                "solution pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find y if x = 3 in 2x + y = 13.",
+            "answer": "y=7.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Find x if y = 6 in x + y = 17.",
+            "answer": "x=11.",
+            "answer_outline": [
+                "Substitute",
+                "Solve"
+            ],
+            "key_concepts": [
+                "solve equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Write two solutions of x + y = 20.",
+            "answer": "(11,9) and (12,8).",
+            "answer_outline": [
+                "Choose values"
+            ],
+            "key_concepts": [
+                "solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        }
+    ]
+}

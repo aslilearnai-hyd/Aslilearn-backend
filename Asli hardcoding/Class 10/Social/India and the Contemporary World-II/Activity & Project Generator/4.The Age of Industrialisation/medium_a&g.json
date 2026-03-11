@@ -1,0 +1,168 @@
+{
+    "class": "Class 10",
+    "subject": "History",
+    "chapter": "The Age of Industrialisation",
+    "difficulty": "Medium",
+    "source_pdf": "jess304.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Mapping the Global Textile Flow",
+            "objective": "Visualize the trade link between Manchester and Indian industrial hubs",
+            "materials": [
+                "Outline map of the World",
+                "Color pencils",
+                "Reference textbook"
+            ],
+            "steps": [
+                "Locate Manchester and Liverpool in Britain",
+                "Identify and mark Mumbai, Ahmedabad, and Kanpur on the India map",
+                "Draw arrows to show the export of raw cotton from India and the import of finished cloth from Britain"
+            ],
+            "learning_outcome": "Understands the geographic and economic interdependence in a colonial economy",
+            "evaluation": "Geographic accuracy and clarity of trade flow (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Gomastha Conflict Storyboard",
+            "objective": "Analyze the impact of the Company's direct control over weavers",
+            "materials": [
+                "Drawing sheet",
+                "Pens/Markers"
+            ],
+            "steps": [
+                "Create a 4-panel storyboard: 1. Appointment of Gomastha, 2. Giving advances to weavers, 3. Inspection of quality, 4. Clash between Gomastha and weavers",
+                "Write captions explaining why weavers lost their bargaining power"
+            ],
+            "learning_outcome": "Analyzes the shift from independent weavers to supervised laborers",
+            "evaluation": "Historical narrative accuracy and thematic depth (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Industrial Advertisements: A Cultural Audit",
+            "objective": "Examine how manufacturers used religious icons to sell goods",
+            "materials": [
+                "A4 Sheet",
+                "Prints of old Manchester labels",
+                "Colours"
+            ],
+            "steps": [
+                "Find or draw labels that used images of Indian Gods (e.g., Krishna or Lakshmi)",
+                "Explain how these images were intended to make foreign products feel familiar",
+                "Design your own label for a product using a 'nationalist' symbol to attract buyers"
+            ],
+            "learning_outcome": "Understanding marketing strategies and cultural imperialism",
+            "evaluation": "Critical thinking and creative application (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Jobber's Role-Play",
+            "objective": "Explore the recruitment process in early Indian factories",
+            "materials": [
+                "Props for a village-to-city setting",
+                "Simple script"
+            ],
+            "steps": [
+                "Assign roles: An old, trusted worker (The Jobber), a hopeful migrant, and a Mill owner",
+                "Act out the Jobber bringing a worker from his village and providing him life-essentials for a price",
+                "Discuss the Jobber’s power over the lives of factory workers"
+            ],
+            "learning_outcome": "Insights into the informal authority structures in industrial India",
+            "evaluation": "Clarity of the Jobber's role and socio-economic context (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Steam Engine vs. Hand Labour Matrix",
+            "objective": "Understand why machines were adopted slowly in some industries",
+            "materials": [
+                "Venn Diagram sheet"
+            ],
+            "steps": [
+                "List industries that preferred machines (standardized products) in one circle",
+                "List industries that preferred hand labor (intricate designs, seasonal work) in the other",
+                "Identify common factors like the cost of repair and labor abundance in the intersection"
+            ],
+            "learning_outcome": "Grasps the economic logic behind technological transition",
+            "evaluation": "Logical classification and depth of reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Proto-Industrialisation Fact-File",
+            "objective": "Identify the system of production before the factory era",
+            "materials": [
+                "Notebook",
+                "Markers"
+            ],
+            "steps": [
+                "Research the role of the Merchant in the countryside",
+                "Map the journey of wool: Stapler -> Spinner -> Weaver -> Fuller -> Dyer",
+                "Define why this period is called 'Proto' industrialization"
+            ],
+            "learning_outcome": "Differentiates between home-based production and factory production",
+            "evaluation": "Correctness of the production sequence (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The First World War Economic Audit",
+            "objective": "Analyze how war provided a boom for Indian industries",
+            "materials": [
+                "Flowchart paper"
+            ],
+            "steps": [
+                "Create a flow: British mills busy with war needs -> Imports to India decline -> Indian mills supply war needs (bags, uniforms) -> Boom in Indian industrial growth",
+                "Explain why Manchester could never recapture its market after the war"
+            ],
+            "learning_outcome": "Connects global geopolitical events to domestic industrial shifts",
+            "evaluation": "Causal analysis and factual accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Fly Shuttle Experiment",
+            "objective": "Assess how technology helped small-scale weavers survive",
+            "materials": [
+                "Cardboard",
+                "String",
+                "Diagram of a loom"
+            ],
+            "steps": [
+                "Research how the fly-shuttle increased the speed of weaving",
+                "Draw a diagram showing the difference between a traditional loom and a fly-shuttle loom",
+                "Explain how this helped handloom weavers compete with mill-made cloth"
+            ],
+            "learning_outcome": "Understanding technological adaptations in small-scale industries",
+            "evaluation": "Accuracy of technical explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Urbanisation and its Discontents",
+            "objective": "Examine the living conditions of the industrial poor",
+            "materials": [
+                "Notebook",
+                "Reference materials on Chawls/Tenements"
+            ],
+            "steps": [
+                "Compare the housing of a worker in London with a mill worker in Mumbai (Chawls)",
+                "Write a report on the 'unplanned' nature of early industrial cities",
+                "Identify two health or social problems caused by overcrowding"
+            ],
+            "learning_outcome": "Recognizes the social cost of rapid industrial growth",
+            "evaluation": "Detail of sociological research and report quality (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Market for Goods Project",
+            "objective": "Analyze the rise of consumer culture through advertisements",
+            "materials": [
+                "Chart paper",
+                "Old advertisements prints"
+            ],
+            "steps": [
+                "Examine how calendars were used as a marketing tool in houses of both rich and poor",
+                "Explain the psychological impact of seeing 'Made in Manchester' alongside images of royalty",
+                "Draft a short pitch for a 'Swadeshi' product to compete with foreign goods"
+            ],
+            "learning_outcome": "Synthesis of marketing, nationalism, and consumer behavior",
+            "evaluation": "Analytical depth and presentation (10 marks)"
+        }
+    ]
+}

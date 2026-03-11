@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 8: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-05T19:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is matter?",
+      "answer": "Matter is anything that has mass and occupies space.",
+      "key_concepts": ["matter"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What is a mixture?",
+      "answer": "A mixture is a combination of two or more substances that are not chemically combined.",
+      "key_concepts": ["mixture"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the components of a mixture?",
+      "answer": "The individual substances present in a mixture are called its components.",
+      "key_concepts": ["components of mixture"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a uniform mixture?",
+      "answer": "A uniform mixture is a mixture in which the components are evenly distributed.",
+      "key_concepts": ["uniform mixture"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Give one example of a non-uniform mixture.",
+      "answer": "Sand mixed with water is an example of a non-uniform mixture.",
+      "key_concepts": ["non-uniform mixture"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is air considered a mixture?",
+      "answer": "Air is a mixture because it contains different gases like nitrogen, oxygen, and carbon dioxide.",
+      "key_concepts": ["air mixture"],
+      "marks": 2,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What happens when carbon dioxide reacts with limewater?",
+      "answer": "Limewater turns milky due to the formation of calcium carbonate.",
+      "key_concepts": ["limewater test"],
+      "marks": 2,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a pure substance?",
+      "answer": "A pure substance is made up of only one type of particle.",
+      "key_concepts": ["pure substance"],
+      "marks": 2,
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What is an element?",
+      "answer": "An element is a pure substance made of only one type of atom.",
+      "key_concepts": ["element"],
+      "marks": 2,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What is an atom?",
+      "answer": "An atom is the smallest particle of an element that retains its properties.",
+      "key_concepts": ["atom"],
+      "marks": 2,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is a molecule?",
+      "answer": "A molecule is formed when two or more atoms combine together.",
+      "key_concepts": ["molecule"],
+      "marks": 2,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is electrolysis?",
+      "answer": "Electrolysis is the process of using electricity to break down a compound into simpler substances.",
+      "key_concepts": ["electrolysis"],
+      "marks": 2,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which gases are produced during electrolysis of water?",
+      "answer": "Hydrogen and oxygen gases are produced.",
+      "key_concepts": ["electrolysis of water"],
+      "marks": 2,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 14,
+      "question": "What is a compound?",
+      "answer": "A compound is a substance formed when two or more elements combine chemically.",
+      "key_concepts": ["compound"],
+      "marks": 2,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Give one example of a compound.",
+      "answer": "Water is an example of a compound.",
+      "key_concepts": ["compound example"],
+      "marks": 2,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are the properties of compounds different from their elements?",
+      "answer": "Because elements chemically combine to form new substances with different properties.",
+      "key_concepts": ["compound properties"],
+      "marks": 2,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 17,
+      "question": "What happens when iron and sulfur are heated together?",
+      "answer": "They react chemically to form iron sulfide.",
+      "key_concepts": ["iron sulfide"],
+      "marks": 2,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 18,
+      "question": "What is an alloy?",
+      "answer": "An alloy is a mixture of two or more metals.",
+      "key_concepts": ["alloy"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Give one example of an alloy.",
+      "answer": "Bronze is an alloy made of copper and tin.",
+      "key_concepts": ["alloy example"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 20,
+      "question": "What are minerals?",
+      "answer": "Minerals are naturally occurring solid substances found in the Earth.",
+      "key_concepts": ["minerals"],
+      "marks": 2,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Give one example of a mineral.",
+      "answer": "Quartz is an example of a mineral.",
+      "key_concepts": ["mineral example"],
+      "marks": 2,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are minerals important?",
+      "answer": "Minerals are used to make many useful materials like metals, cement, and glass.",
+      "key_concepts": ["importance of minerals"],
+      "marks": 2,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 23,
+      "question": "How can mixtures be separated?",
+      "answer": "Mixtures can be separated using physical methods such as filtration, evaporation, or magnetic separation.",
+      "key_concepts": ["separation of mixtures"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Give one example of separation of a mixture.",
+      "answer": "Iron filings can be separated from sand using a magnet.",
+      "key_concepts": ["magnetic separation"],
+      "marks": 2,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the study of matter important?",
+      "answer": "The study of matter helps scientists understand materials and develop useful products.",
+      "key_concepts": ["importance of matter"],
+      "marks": 2,
+      "source_section": "Summary"
+    }
+  ]
+}

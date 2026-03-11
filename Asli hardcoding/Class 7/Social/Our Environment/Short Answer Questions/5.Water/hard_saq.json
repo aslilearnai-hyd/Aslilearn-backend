@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 5: WATER: OUR LIFELINE",
+    "generated_at": "2026-03-07T22:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the global distribution of freshwater on Earth.",
+            "answer": "About 2.5% of Earth's water is freshwater, most of which is trapped in glaciers and ice caps. Rivers, lakes, and groundwater form a small fraction available for human use.",
+            "key_concepts": ["freshwater distribution", "glaciers", "rivers"],
+            "marks": 5,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the water cycle regulate climate?",
+            "answer": "The water cycle transfers heat through evaporation, condensation, and precipitation, influencing temperature, humidity, and weather patterns.",
+            "key_concepts": ["water cycle", "climate regulation"],
+            "marks": 5,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the process of groundwater formation and storage.",
+            "answer": "Rainwater infiltrates the soil and moves through porous rocks to form aquifers, where it is stored and slowly moves through underground channels.",
+            "key_concepts": ["groundwater", "aquifers", "infiltration"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What are the consequences of excessive groundwater extraction?",
+            "answer": "Over-extraction leads to lowering of water tables, drying of wells, reduced river flow, and land subsidence, affecting agriculture and ecosystems.",
+            "key_concepts": ["groundwater depletion", "land subsidence"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the role of glaciers in India’s major river systems.",
+            "answer": "Glaciers in the Himalayas feed rivers like the Ganga, Brahmaputra, and Indus, ensuring continuous water supply during dry seasons for agriculture, drinking, and hydropower.",
+            "key_concepts": ["glaciers", "river supply"],
+            "marks": 5,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 6,
+            "question": "How does urbanization affect the water cycle?",
+            "answer": "Urbanization increases surface runoff, reduces infiltration, lowers groundwater recharge, and can exacerbate flooding and pollution.",
+            "key_concepts": ["urbanization", "water cycle impact"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Discuss the advantages and limitations of rainwater harvesting.",
+            "answer": "Advantages: replenishes groundwater, reduces urban flooding, and provides local water supply. Limitations: requires storage infrastructure, maintenance, and sufficient rainfall.",
+            "key_concepts": ["rainwater harvesting", "advantages", "limitations"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is watershed management and why is it important?",
+            "answer": "Watershed management involves conserving water, soil, and vegetation in a drainage area to ensure sustainable water supply, prevent floods, and maintain ecosystems.",
+            "key_concepts": ["watershed management", "conservation"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how dams can have both positive and negative impacts.",
+            "answer": "Positives: store water for irrigation, drinking, and hydropower; control floods. Negatives: submerge land, displace communities, alter ecosystems, and affect downstream water availability.",
+            "key_concepts": ["dams", "positive and negative impacts"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe the effects of climate change on water resources in India.",
+            "answer": "Climate change alters rainfall patterns, accelerates glacier melting, increases frequency of floods and droughts, and impacts water availability for agriculture and human use.",
+            "key_concepts": ["climate change", "water resources"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "How do wetlands contribute to groundwater recharge?",
+            "answer": "Wetlands absorb excess rainwater, slow down runoff, and allow water to percolate into underground aquifers.",
+            "key_concepts": ["wetlands", "groundwater recharge"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss the causes and consequences of water pollution.",
+            "answer": "Causes: industrial waste, sewage, agricultural runoff, plastic pollution. Consequences: health hazards, ecosystem degradation, scarcity of potable water, and loss of biodiversity.",
+            "key_concepts": ["water pollution", "causes", "consequences"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the difference between renewable and non-renewable water resources.",
+            "answer": "Renewable resources like rivers and rainfall are naturally replenished, while non-renewable sources like deep aquifers and fossil water are limited and take thousands of years to refill.",
+            "key_concepts": ["renewable water", "non-renewable water"],
+            "marks": 5,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 14,
+            "question": "How does industrial activity influence freshwater ecosystems?",
+            "answer": "Industries consume water, release chemical pollutants, and raise temperatures in water bodies, disrupting aquatic life and reducing water quality.",
+            "key_concepts": ["industry", "freshwater ecosystems"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What are the main methods to conserve water in agriculture?",
+            "answer": "Methods include drip and sprinkler irrigation, rainwater harvesting, mulching, and crop rotation to reduce water consumption.",
+            "key_concepts": ["agriculture", "water conservation techniques"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of glaciers and snowmelt for northern Indian rivers.",
+            "answer": "Glaciers and snowmelt provide continuous flow to rivers like the Ganga and Indus during dry months, supporting irrigation and drinking water supply.",
+            "key_concepts": ["glaciers", "river flow", "snowmelt"],
+            "marks": 5,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 17,
+            "question": "How does deforestation in catchment areas affect water availability?",
+            "answer": "It reduces soil infiltration, increases runoff and soil erosion, lowers groundwater recharge, and can lead to irregular river flow.",
+            "key_concepts": ["deforestation", "catchment areas", "water impact"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the impact of population growth on water demand.",
+            "answer": "Population growth increases domestic, industrial, and agricultural water demand, leading to depletion of freshwater resources and increased competition.",
+            "key_concepts": ["population growth", "water demand"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is integrated water resource management (IWRM)?",
+            "answer": "IWRM is a coordinated approach to manage water, land, and related resources to maximize economic and social welfare while preserving ecosystems.",
+            "key_concepts": ["IWRM", "water management"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 20,
+            "question": "How do dams and reservoirs affect river ecosystems?",
+            "answer": "They alter natural flow, affect fish migration, change sediment deposition, and can submerge habitats, impacting biodiversity.",
+            "key_concepts": ["dams", "ecosystem impact"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the role of community participation in sustainable water management.",
+            "answer": "Community participation ensures local maintenance of water projects, awareness of conservation practices, and efficient use of resources.",
+            "key_concepts": ["community role", "sustainable management"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "How do floods affect human settlements and agriculture?",
+            "answer": "Floods can destroy crops, homes, infrastructure, contaminate water supplies, and disrupt lives and economies.",
+            "key_concepts": ["floods", "human impact", "agriculture"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the significance of wetlands in controlling floods.",
+            "answer": "Wetlands absorb excess water, slow runoff, and reduce the intensity of floods downstream.",
+            "key_concepts": ["wetlands", "flood control"],
+            "marks": 5,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What strategies can be used to ensure equitable water distribution?",
+            "answer": "Strategies include water pricing, community-based management, efficient irrigation, and regulation of industrial and urban use.",
+            "key_concepts": ["equitable water distribution", "management strategies"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is studying water resources critical for sustainable development?",
+            "answer": "Understanding water resources helps in conservation, planning for agriculture, industry, drinking needs, and maintaining ecosystems for future generations.",
+            "key_concepts": ["water resources", "sustainable development"],
+            "marks": 5,
+            "source_section": "Section 5.3"
+        }
+    ]
+}

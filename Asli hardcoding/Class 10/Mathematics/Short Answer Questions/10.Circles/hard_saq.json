@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Circles",
+    "generated_at": "2026-03-01T21:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State and explain Theorem 10.1.",
+            "answer": "The tangent at any point of a circle is perpendicular to the radius through the point of contact.",
+            "key_concepts": [
+                "Theorem 10.1"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "State and explain Theorem 10.2.",
+            "answer": "The lengths of tangents drawn from an external point to a circle are equal.",
+            "key_concepts": [
+                "Theorem 10.2"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the proof of equality of tangents using RHS congruence.",
+            "answer": "Right triangles formed satisfy RHS conditions leading to equality.",
+            "key_concepts": [
+                "RHS proof"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is perpendicular distance the shortest?",
+            "answer": "Any other distance is longer than the perpendicular.",
+            "key_concepts": [
+                "shortest distance"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why centre lies on angle bisector of tangents.",
+            "answer": "Because OP bisects the angle between two equal tangents.",
+            "key_concepts": [
+                "angle bisector"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that tangents drawn at the ends of a diameter are parallel.",
+            "answer": "Both tangents are perpendicular to the same diameter.",
+            "key_concepts": [
+                "parallel tangents"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why tangent never becomes a secant.",
+            "answer": "Because it touches the circle at only one point.",
+            "key_concepts": [
+                "tangent"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is tangent contact always unique?",
+            "answer": "Only one perpendicular can be drawn at a point.",
+            "key_concepts": [
+                "uniqueness"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the relationship between tangent and normal.",
+            "answer": "Normal is the radius perpendicular to the tangent.",
+            "key_concepts": [
+                "normal"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why does tangent geometry rely on right triangles?",
+            "answer": "Because radius and tangent form right angles.",
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why two tangents are symmetric.",
+            "answer": "They are equal in length from the external point.",
+            "key_concepts": [
+                "symmetry"
+            ],
+            "marks": 3,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is tangent important in circle constructions?",
+            "answer": "Because of fixed perpendicular relationships.",
+            "key_concepts": [
+                "construction"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why tangent cannot pass through centre.",
+            "answer": "The centre lies inside the circle.",
+            "key_concepts": [
+                "centre"
+            ],
+            "marks": 3,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain tangent properties using wheel example.",
+            "answer": "Wheel touches ground at exactly one point.",
+            "key_concepts": [
+                "real-life application"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are radii equal in all tangent proofs?",
+            "answer": "All radii of the same circle are equal.",
+            "key_concepts": [
+                "radii"
+            ],
+            "marks": 2,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the geometric rigidity of tangents.",
+            "answer": "Due to fixed perpendicular constraints.",
+            "key_concepts": [
+                "rigidity"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is tangent theorem fundamental in circles?",
+            "answer": "It defines radius-tangent relationship.",
+            "key_concepts": [
+                "fundamental theorem"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why tangent length is measurable.",
+            "answer": "It is a finite line segment.",
+            "key_concepts": [
+                "tangent length"
+            ],
+            "marks": 2,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is centre equidistant from points of contact?",
+            "answer": "Because distances are radii.",
+            "key_concepts": [
+                "equidistant"
+            ],
+            "marks": 2,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why tangent never intersects interior.",
+            "answer": "It touches only the boundary.",
+            "key_concepts": [
+                "boundary"
+            ],
+            "marks": 2,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why perpendicularity is crucial in tangents.",
+            "answer": "It establishes right-angle geometry.",
+            "key_concepts": [
+                "perpendicularity"
+            ],
+            "marks": 3,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of centre in tangent theorems.",
+            "answer": "Centre forms equal radii and right angles.",
+            "key_concepts": [
+                "centre"
+            ],
+            "marks": 3,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why does tangent theory use congruence?",
+            "answer": "To prove equality of lengths.",
+            "key_concepts": [
+                "congruence"
+            ],
+            "marks": 3,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why tangent problems are solvable.",
+            "answer": "Because of fixed geometric relations.",
+            "key_concepts": [
+                "problem solving"
+            ],
+            "marks": 2,
+            "source_section": "10.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of tangents in circle geometry.",
+            "answer": "They define contact and boundary behavior.",
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 3,
+            "source_section": "10.4"
+        }
+    ]
+}

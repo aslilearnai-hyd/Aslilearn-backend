@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-06T00:48:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why a current-carrying conductor produces a magnetic field around it.",
+      "answer": "Moving electric charges create a magnetic field around the conductor. When current flows through a wire, the moving charges generate a magnetic field around it.",
+      "key_concepts": ["magnetic effect of current"],
+      "marks": 3,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 2,
+      "question": "Why does the filament of an electric bulb glow when current passes through it?",
+      "answer": "The filament offers resistance to the flow of current and gets heated to a very high temperature due to the heating effect of current, producing light.",
+      "key_concepts": ["heating effect"],
+      "marks": 3,
+      "source_section": "Electric Bulb"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain why a fuse wire has a lower melting point than the connecting wires.",
+      "answer": "A fuse wire is made of a material with a low melting point so that it melts quickly when excessive current flows, breaking the circuit and protecting appliances.",
+      "key_concepts": ["fuse"],
+      "marks": 3,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is soft iron preferred for making electromagnets instead of steel?",
+      "answer": "Soft iron becomes magnetized quickly when current flows and loses magnetism immediately when current stops, which is suitable for electromagnets.",
+      "key_concepts": ["electromagnet"],
+      "marks": 3,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain why an electromagnet is considered a temporary magnet.",
+      "answer": "An electromagnet shows magnetism only when electric current flows through the coil. When the current stops, it loses its magnetism.",
+      "key_concepts": ["electromagnet"],
+      "marks": 2,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are electric heaters designed with coils of high resistance material?",
+      "answer": "High resistance materials produce more heat when current passes through them, making them suitable for heating appliances.",
+      "key_concepts": ["heating effect"],
+      "marks": 3,
+      "source_section": "Heating Devices"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how increasing the number of turns in a coil affects an electromagnet.",
+      "answer": "Increasing the number of turns increases the magnetic field strength, making the electromagnet stronger.",
+      "key_concepts": ["electromagnet strength"],
+      "marks": 3,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 8,
+      "question": "Why does a compass needle deflect near a current-carrying wire?",
+      "answer": "The current-carrying wire produces a magnetic field that interacts with the compass needle, causing it to deflect.",
+      "key_concepts": ["magnetic effect"],
+      "marks": 2,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why electric wires are made of copper but covered with plastic.",
+      "answer": "Copper allows electricity to flow easily because it is a good conductor, while plastic acts as an insulator to prevent electric shocks.",
+      "key_concepts": ["conductors", "insulators"],
+      "marks": 3,
+      "source_section": "Electric Wiring"
+    },
+    {
+      "question_number": 10,
+      "question": "Why can an electromagnet lift heavy iron objects but not wooden objects?",
+      "answer": "Electromagnets attract magnetic materials like iron, but non-magnetic materials such as wood are not attracted.",
+      "key_concepts": ["magnetic materials"],
+      "marks": 2,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why the heating effect of current can sometimes be dangerous.",
+      "answer": "Excessive heating can melt wires, damage appliances, and cause electrical fires.",
+      "key_concepts": ["heating effect"],
+      "marks": 3,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are electric irons designed with thermostats?",
+      "answer": "Thermostats regulate temperature and prevent overheating of the iron.",
+      "key_concepts": ["heating devices"],
+      "marks": 3,
+      "source_section": "Heating Appliances"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how electric current can be used to produce magnetism.",
+      "answer": "When electric current flows through a coil of wire, it produces a magnetic field around the coil, creating an electromagnet.",
+      "key_concepts": ["electromagnet"],
+      "marks": 3,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are safety devices necessary in electrical circuits?",
+      "answer": "Safety devices such as fuses prevent damage to appliances and reduce the risk of electric shocks or fires.",
+      "key_concepts": ["electric safety"],
+      "marks": 3,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why thick wires are used in high-current electrical appliances.",
+      "answer": "Thicker wires can carry larger currents safely without overheating.",
+      "key_concepts": ["electric current"],
+      "marks": 3,
+      "source_section": "Electric Wiring"
+    },
+    {
+      "question_number": 16,
+      "question": "Why does an electric crane use an electromagnet instead of a permanent magnet?",
+      "answer": "Electromagnets can be switched on and off easily, allowing objects to be picked up and released.",
+      "key_concepts": ["electromagnet applications"],
+      "marks": 3,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how increasing electric current affects the heating effect.",
+      "answer": "When electric current increases, the amount of heat produced in the conductor also increases.",
+      "key_concepts": ["heating effect"],
+      "marks": 3,
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are electric appliances connected in parallel circuits at home?",
+      "answer": "Parallel circuits allow each appliance to receive the same voltage and operate independently.",
+      "key_concepts": ["electric circuits"],
+      "marks": 3,
+      "source_section": "Household Circuits"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why a damaged electric wire can cause a short circuit.",
+      "answer": "If the insulating layer breaks, wires may touch each other, allowing a large current to flow suddenly, causing a short circuit.",
+      "key_concepts": ["short circuit"],
+      "marks": 3,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is the heating effect of electricity useful in cooking appliances?",
+      "answer": "Cooking appliances use heat produced by electric current to cook food efficiently.",
+      "key_concepts": ["heating effect"],
+      "marks": 2,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why increasing the current strengthens an electromagnet.",
+      "answer": "Higher current produces a stronger magnetic field around the coil, increasing the strength of the electromagnet.",
+      "key_concepts": ["electromagnet strength"],
+      "marks": 3,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 22,
+      "question": "Why should electrical appliances not be handled with wet hands?",
+      "answer": "Water conducts electricity and increases the risk of electric shock.",
+      "key_concepts": ["electric safety"],
+      "marks": 2,
+      "source_section": "Safety Precautions"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how electric bells use the magnetic effect of current.",
+      "answer": "When current flows through the coil, it becomes an electromagnet and attracts an iron armature, producing a ringing sound.",
+      "key_concepts": ["electric bell"],
+      "marks": 3,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are insulating materials necessary in electrical wiring?",
+      "answer": "Insulating materials prevent current leakage and protect people from electric shocks.",
+      "key_concepts": ["insulators"],
+      "marks": 2,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why excessive current can damage electrical appliances.",
+      "answer": "Excessive current produces too much heat in wires and components, which can melt parts or cause electrical fires.",
+      "key_concepts": ["heating effect"],
+      "marks": 3,
+      "source_section": "Electric Safety"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-05T23:10:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a polynomial?",
+            "answer": "A polynomial is an algebraic expression with variables raised to non-negative integer powers.",
+            "key_points": [
+                "polynomial definition"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a term in a polynomial?",
+            "answer": "A term is a part of a polynomial separated by addition or subtraction.",
+            "key_points": [
+                "terms"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the coefficient in a polynomial?",
+            "answer": "A coefficient is the numerical factor of a variable in a term.",
+            "key_points": [
+                "coefficient"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the degree of a polynomial?",
+            "answer": "The degree of a polynomial is the highest power of the variable in it.",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a constant polynomial?",
+            "answer": "A constant polynomial is a polynomial with only a constant term.",
+            "key_points": [
+                "constant polynomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a linear polynomial?",
+            "answer": "A linear polynomial is a polynomial of degree one.",
+            "key_points": [
+                "linear polynomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a quadratic polynomial?",
+            "answer": "A quadratic polynomial is a polynomial of degree two.",
+            "key_points": [
+                "quadratic polynomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a cubic polynomial?",
+            "answer": "A cubic polynomial is a polynomial of degree three.",
+            "key_points": [
+                "cubic polynomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the zero of a polynomial?",
+            "answer": "A zero of a polynomial is a value of the variable that makes the polynomial equal to zero.",
+            "key_points": [
+                "zero of polynomial"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "How many zeroes does a linear polynomial have?",
+            "answer": "A linear polynomial has exactly one zero.",
+            "key_points": [
+                "linear zero"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What does the Factor Theorem state?",
+            "answer": "If p(a)=0, then (x−a) is a factor of p(x).",
+            "key_points": [
+                "factor theorem"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is factorisation of polynomials?",
+            "answer": "Factorisation is expressing a polynomial as a product of simpler polynomials.",
+            "key_points": [
+                "factorisation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is an algebraic identity?",
+            "answer": "An algebraic identity is an equation that is true for all values of variables.",
+            "key_points": [
+                "identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Write the identity for (x+y)².",
+            "answer": "(x+y)² = x² + 2xy + y².",
+            "key_points": [
+                "square identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Write the identity for (x−y)².",
+            "answer": "(x−y)² = x² − 2xy + y².",
+            "key_points": [
+                "square identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Write the identity for x² − y².",
+            "answer": "x² − y² = (x + y)(x − y).",
+            "key_points": [
+                "difference of squares"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a monomial?",
+            "answer": "A monomial is a polynomial with only one term.",
+            "key_points": [
+                "monomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a binomial?",
+            "answer": "A binomial is a polynomial with two terms.",
+            "key_points": [
+                "binomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is a trinomial?",
+            "answer": "A trinomial is a polynomial with three terms.",
+            "key_points": [
+                "trinomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the degree of a non-zero constant polynomial?",
+            "answer": "The degree of a non-zero constant polynomial is zero.",
+            "key_points": [
+                "constant degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the value of p(0) called?",
+            "answer": "It is the constant term of the polynomial.",
+            "key_points": [
+                "constant term"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "How many zeroes can a quadratic polynomial have?",
+            "answer": "A quadratic polynomial can have at most two zeroes.",
+            "key_points": [
+                "quadratic zero"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Write the identity for (x+y+z)².",
+            "answer": "(x+y+z)² = x² + y² + z² + 2xy + 2yz + 2zx.",
+            "key_points": [
+                "three variable identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the coefficient of x in the term 7x?",
+            "answer": "The coefficient is 7.",
+            "key_points": [
+                "coefficient"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the constant term in the polynomial x² + 3x + 5?",
+            "answer": "The constant term is 5.",
+            "key_points": [
+                "constant term"
+            ],
+            "source_section": "Section 2.2"
+        }
+    ]
+}

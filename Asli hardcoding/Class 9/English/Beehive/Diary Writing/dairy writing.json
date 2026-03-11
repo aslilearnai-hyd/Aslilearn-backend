@@ -1,0 +1,219 @@
+{
+    "subject": "English",
+    "book": "Beehive",
+    "Content": "Diary Entry",
+    "class": "9",
+    "total_questions": 100,
+    "questions": [
+        {"id":1,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Margie’s Excitement","question":"Write a diary entry as Margie describing your excitement after discovering the old book about schools."},
+        {"id":2,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Mechanical Teacher","question":"Write a diary entry explaining your feelings about learning from a mechanical teacher."},
+        {"id":3,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Imagination","question":"Write a diary entry imagining how you would have enjoyed studying in the past with a real teacher and classmates."},
+        {"id":4,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Comparison","question":"Write a diary entry comparing your learning experience with Margie and how it differs from children of the past."},
+        {"id":5,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Tommy’s Discovery","question":"Write a diary entry as Tommy describing your feelings on finding the old book about schools."},
+        {"id":6,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"School Life Then","question":"Write a diary entry imagining yourself attending a school from the past."},
+        {"id":7,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Daily Routine","question":"Write a diary entry describing a day in Margie’s school routine in the past."},
+        {"id":8,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Old Classrooms","question":"Write a diary entry describing how old classrooms differed from modern ones."},
+        {"id":9,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Teachers of Past","question":"Write a diary entry imagining your interactions with teachers from the past."},
+        {"id":10,"chapter":"The Fun They Had","source":"Beehive – Chapter 1","title":"Group Learning","question":"Write a diary entry reflecting on how group learning could have been more fun than learning alone."},
+        {"id":11,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Evelyn Glennie’s Inspiration","question":"Write a diary entry as Evelyn Glennie describing how music influenced your life despite being deaf."},
+        {"id":12,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Feeling Vibrations","question":"Write a diary entry explaining how you sensed music through vibrations in your body."},
+        {"id":13,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Bismillah Khan’s Dedication","question":"Write a diary entry as Bismillah Khan describing your practice at Vishwanath Temple."},
+        {"id":14,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Performing for India","question":"Write a diary entry as Bismillah Khan describing your feelings performing at the Red Fort on Independence Day."},
+        {"id":15,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Passion for Music","question":"Write a diary entry reflecting on how music can inspire people and overcome obstacles."},
+        {"id":16,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Early Struggles","question":"Write a diary entry describing the difficulties you faced learning music initially."},
+        {"id":17,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Mentorship","question":"Write a diary entry on how a mentor helped shape your musical career."},
+        {"id":18,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Practice Routine","question":"Write a diary entry describing your daily practice and dedication to music."},
+        {"id":19,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Inspiring Others","question":"Write a diary entry reflecting on how your story can inspire other people with disabilities."},
+        {"id":20,"chapter":"The Sound of Music","source":"Beehive – Chapter 2","title":"Love for Music","question":"Write a diary entry expressing your feelings about music and its importance in life."},
+        {"id":21,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Encounter with Old Lady","question":"Write a diary entry as the little girl describing your first encounter with the old lady."},
+        {"id":22,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Learning Life Lessons","question":"Write a diary entry explaining what the little girl learnt from the old lady."},
+        {"id":23,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Innocence and Curiosity","question":"Write a diary entry as the little girl describing your curiosity about the world around you."},
+        {"id":24,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Exploring Emotions","question":"Write a diary entry reflecting the emotions of fear, excitement, and wonder experienced by the little girl."},
+        {"id":25,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Appreciation of Kindness","question":"Write a diary entry appreciating the kindness shown by the old lady."},
+        {"id":26,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Curiosity About Life","question":"Write a diary entry reflecting your questions about life as a little girl."},
+        {"id":27,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"First Adventure","question":"Write a diary entry about your first adventure outside your home."},
+        {"id":28,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Fear of Unknown","question":"Write a diary entry describing your fear when encountering something unfamiliar."},
+        {"id":29,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Trust in People","question":"Write a diary entry reflecting on how you learnt to trust kind people."},
+        {"id":30,"chapter":"The Little Girl","source":"Beehive – Chapter 3","title":"Observing Nature","question":"Write a diary entry describing what you observed in nature during your walk."},
+        {"id":31,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Shakuntala’s Genius","question":"Write a diary entry as Shakuntala Devi describing your early interest in mathematics."},
+        {"id":32,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Love for Numbers","question":"Write a diary entry explaining how numbers fascinated you from childhood."},
+        {"id":33,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Mathematical Feats","question":"Write a diary entry describing a memorable event where you amazed others with your calculations."},
+        {"id":34,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Inspiration for Students","question":"Write a diary entry as Shakuntala Devi inspiring children to pursue their talent and passion."},
+        {"id":35,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Overcoming Challenges","question":"Write a diary entry describing how determination helped you succeed in mathematics."},
+        {"id":36,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Early Recognition","question":"Write a diary entry recalling the first time your talent was recognized by teachers or family."},
+        {"id":37,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Famous Calculations","question":"Write a diary entry describing a calculation that made you famous."},
+        {"id":38,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Encouragement","question":"Write a diary entry on how encouragement from family helped your growth."},
+        {"id":39,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Mathematics as a Passion","question":"Write a diary entry explaining why mathematics became your passion."},
+        {"id":40,"chapter":"A Truly Beautiful Mind","source":"Beehive – Chapter 4","title":"Advice for Students","question":"Write a diary entry giving advice to students to follow their talent."},
+        {"id":41,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Vikram’s Fear","question":"Write a diary entry as Vikram describing your fear when you saw the snake in the mirror."},
+        {"id":42,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Thoughts on Courage","question":"Write a diary entry reflecting on how you gathered courage to face the situation."},
+        {"id":43,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Lesson Learnt","question":"Write a diary entry describing the lesson you learnt about fear and imagination."},
+        {"id":44,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Family Advice","question":"Write a diary entry describing the advice given by elders about handling fear."},
+        {"id":45,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Reflection","question":"Write a diary entry reflecting on how imagination can create false fears."},
+        {"id":46,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Confronting Fears","question":"Write a diary entry describing your feelings after confronting the snake."},
+        {"id":47,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Overcoming Panic","question":"Write a diary entry explaining how you controlled panic during the incident."},
+        {"id":48,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Self-Reflection","question":"Write a diary entry reflecting on how fear changes perception."},
+        {"id":49,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Lesson on Observation","question":"Write a diary entry explaining how careful observation could have prevented fear."},
+        {"id":50,"chapter":"The Snake and the Mirror","source":"Beehive – Chapter 5","title":"Learning Calmness","question":"Write a diary entry describing how remaining calm helps in difficult situations."},
+        {"id":51,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Early Memories","question":"Write a diary entry recalling your happiest childhood memory."},
+        {"id":52,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"School Days","question":"Write a diary entry describing your first day at school."},
+        {"id":53,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Playtime Adventures","question":"Write a diary entry describing a fun moment with friends during childhood."},
+        {"id":54,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Family Influence","question":"Write a diary entry on how your family influenced your early learning."},
+        {"id":55,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Dreams and Aspirations","question":"Write a diary entry expressing your childhood dreams for the future."},
+        {"id":56,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Festivals","question":"Write a diary entry recalling your favourite childhood festival."},
+        {"id":57,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Lessons from Elders","question":"Write a diary entry reflecting on lessons learnt from grandparents or elders."},
+        {"id":58,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Learning to Read","question":"Write a diary entry describing your excitement when learning to read."},
+        {"id":59,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Childhood Friends","question":"Write a diary entry recalling moments with your childhood friends."},
+        {"id":60,"chapter":"My Childhood","source":"Beehive – Chapter 6","title":"Favourite Game","question":"Write a diary entry about your favourite childhood game and why you loved it."},
+        {"id":61,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Usha’s Inspiration","question":"Write a diary entry as Usha describing how you felt when you first won a quiz competition."},
+        {"id":62,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Hard Work Pays","question":"Write a diary entry reflecting on the importance of hard work and preparation."},
+        {"id":63,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Facing Challenges","question":"Write a diary entry describing the challenges you faced during the quiz competition."},
+        {"id":64,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Team Spirit","question":"Write a diary entry about the role of teamwork in achieving success."},
+        {"id":65,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Learning from Failure","question":"Write a diary entry explaining how you handled mistakes and improved in competitions."},
+        {"id":66,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Overcoming Nervousness","question":"Write a diary entry describing how you managed nervousness during the quiz."},
+        {"id":67,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Preparation Tips","question":"Write a diary entry giving tips on how to prepare well for competitions."},
+        {"id":68,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Celebrating Success","question":"Write a diary entry describing your feelings after winning a quiz."},
+        {"id":69,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Motivating Others","question":"Write a diary entry motivating friends to participate and excel in competitions."},
+        {"id":70,"chapter":"Reach for the Top","source":"Beehive – Chapter 7","title":"Self-Reflection","question":"Write a diary entry reflecting on what you learnt from participating in quizzes."},{
+    "id": 71,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "First Impressions",
+    "question": "Write a diary entry describing your first impressions on arriving in Kathmandu."
+},
+{
+    "id": 72,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Exploring the City",
+    "question": "Write a diary entry describing your exploration of Kathmandu and the places you visited."
+},
+{
+    "id": 73,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Meeting Locals",
+    "question": "Write a diary entry describing your interactions with local people in Kathmandu."
+},
+{
+    "id": 74,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Cultural Experience",
+    "question": "Write a diary entry describing your experience of Kathmandu’s culture, traditions, and festivals."
+},
+{
+    "id": 75,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Learning From the Trip",
+    "question": "Write a diary entry reflecting on what you learnt from your visit to Kathmandu."
+},
+{
+    "id": 76,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Scenic Beauty",
+    "question": "Write a diary entry describing the natural beauty and scenic views you witnessed in Kathmandu."
+},
+{
+    "id": 77,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Memorable Moment",
+    "question": "Write a diary entry describing a memorable event that happened during your stay in Kathmandu."
+},
+{
+    "id": 78,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Trying Local Food",
+    "question": "Write a diary entry describing your experience of tasting local food in Kathmandu."
+},
+{
+    "id": 79,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Return Journey",
+    "question": "Write a diary entry describing your journey back home and your feelings leaving Kathmandu."
+},
+{
+    "id": 80,
+    "chapter": "Kathmandu",
+    "source": "Beehive – Chapter 8",
+    "title": "Overall Experience",
+    "question": "Write a diary entry summarising your overall experience and highlights of your trip to Kathmandu."
+},
+{
+    "id": 81,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Stepping into Another’s Shoes",
+    "question": "Write a diary entry describing your feelings on imagining yourself in another person’s life."
+},
+{
+    "id": 82,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Understanding Emotions",
+    "question": "Write a diary entry explaining what you learnt about the emotions and challenges of the other person."
+},
+{
+    "id": 83,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Making Decisions",
+    "question": "Write a diary entry describing how you would make decisions if you were in someone else’s position."
+},
+{
+    "id": 84,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Handling Conflicts",
+    "question": "Write a diary entry explaining how you would handle conflicts or problems if you were the other person."
+},
+{
+    "id": 85,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Empathy and Understanding",
+    "question": "Write a diary entry reflecting on how imagining yourself as another person increases empathy and understanding."
+},
+{
+    "id": 86,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Challenges Faced",
+    "question": "Write a diary entry describing the difficulties and challenges you might face in the other person’s life."
+},
+{
+    "id": 87,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "New Perspective",
+    "question": "Write a diary entry reflecting on how seeing life from another person’s perspective changes your own viewpoint."
+},
+{
+    "id": 88,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Learning Lessons",
+    "question": "Write a diary entry describing the lessons you learnt by imagining yourself as another person."
+},
+{
+    "id": 89,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Decision Making Skills",
+    "question": "Write a diary entry explaining how this exercise improves your decision-making skills."
+},
+{
+    "id": 90,
+    "chapter": "If I Were You",
+    "source": "Beehive – Chapter 9",
+    "title": "Reflection on Empathy",
+    "question": "Write a diary entry reflecting on how this exercise will help you be more empathetic in real life."
+}
+        
+    ]
+}

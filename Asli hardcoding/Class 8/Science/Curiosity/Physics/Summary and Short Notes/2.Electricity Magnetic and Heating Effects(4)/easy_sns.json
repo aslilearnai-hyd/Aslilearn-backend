@@ -1,0 +1,34 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Electricity – Magnetic and Heating Effects",
+  "difficulty": "Easy",
+  "source_pdf": "hecu104.pdf",
+  "short_notes": {
+    "key_points": [
+      "Electric current is the flow of electric charges through a conductor",
+      "An electric circuit is a closed path through which electric current flows",
+      "Materials that allow current to pass easily are called conductors",
+      "Materials that do not allow current to pass easily are called insulators",
+      "Electric current can produce heat and magnetic effects",
+      "Electromagnets are magnets produced by passing electric current through a coil of wire"
+    ],
+    "examples": [
+      "Copper wire is a good conductor of electricity",
+      "Rubber and plastic are good insulators",
+      "An electric iron works using the heating effect of current",
+      "An electric bell uses an electromagnet"
+    ],
+    "formulas": [
+      "Electric circuit = source (cell/battery) + wires + device + switch",
+      "Heating effect: electric current flowing through a conductor produces heat",
+      "Electromagnet: coil of wire + electric current → temporary magnet"
+    ],
+    "exam_tips": [
+      "Remember the difference between conductors and insulators",
+      "Understand how a fuse protects electrical appliances",
+      "Know examples of devices using heating and magnetic effects",
+      "Practice drawing simple electric circuit diagrams"
+    ]
+  }
+}

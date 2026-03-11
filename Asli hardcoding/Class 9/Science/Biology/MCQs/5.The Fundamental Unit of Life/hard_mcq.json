@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: The Fundamental Unit of Life",
+    "generated_at": "2026-03-06T00:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following organelles are semi-autonomous?",
+            "options": {
+                "A": "Golgi apparatus and lysosomes",
+                "B": "Mitochondria and plastids",
+                "C": "Ribosomes and vacuoles",
+                "D": "ER and Golgi body"
+            },
+            "correct_answer": "B",
+            "explanation": "Mitochondria and plastids contain their own DNA and ribosomes.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Which cell structure forms channels for transport of materials within the cell?",
+            "options": {
+                "A": "Endoplasmic reticulum",
+                "B": "Nucleus",
+                "C": "Lysosome",
+                "D": "Vacuole"
+            },
+            "correct_answer": "A",
+            "explanation": "Endoplasmic reticulum forms a network for intracellular transport.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Plasmolysis occurs when:",
+            "options": {
+                "A": "Cell gains water",
+                "B": "Cell loses water in hypertonic solution",
+                "C": "Cell gains energy",
+                "D": "Cell divides"
+            },
+            "correct_answer": "B",
+            "explanation": "In hypertonic solutions water leaves the cell causing plasmolysis.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which structure contains chromatin material?",
+            "options": {
+                "A": "Nucleus",
+                "B": "Golgi body",
+                "C": "Vacuole",
+                "D": "Mitochondria"
+            },
+            "correct_answer": "A",
+            "explanation": "Chromatin material is present in the nucleus.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Which organelle forms lysosomes?",
+            "options": {
+                "A": "Golgi apparatus",
+                "B": "Mitochondria",
+                "C": "Nucleus",
+                "D": "Vacuole"
+            },
+            "correct_answer": "A",
+            "explanation": "Golgi apparatus helps in formation of lysosomes.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Which structure is responsible for synthesis of proteins attached to ER?",
+            "options": {
+                "A": "Ribosomes",
+                "B": "Mitochondria",
+                "C": "Golgi apparatus",
+                "D": "Lysosomes"
+            },
+            "correct_answer": "A",
+            "explanation": "Ribosomes attached to rough ER synthesize proteins.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Which cell organelle detoxifies drugs in liver cells?",
+            "options": {
+                "A": "Smooth ER",
+                "B": "Rough ER",
+                "C": "Golgi body",
+                "D": "Vacuole"
+            },
+            "correct_answer": "A",
+            "explanation": "Smooth ER helps detoxify harmful chemicals.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following structures is absent in prokaryotic cells?",
+            "options": {
+                "A": "Plasma membrane",
+                "B": "Nucleus",
+                "C": "Cytoplasm",
+                "D": "Cell wall"
+            },
+            "correct_answer": "B",
+            "explanation": "Prokaryotic cells do not have a well-defined nucleus.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which molecule carries genetic information in cells?",
+            "options": {
+                "A": "RNA",
+                "B": "Protein",
+                "C": "DNA",
+                "D": "Lipid"
+            },
+            "correct_answer": "C",
+            "explanation": "DNA carries genetic information in cells.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which organelle contains chlorophyll?",
+            "options": {
+                "A": "Mitochondria",
+                "B": "Chloroplast",
+                "C": "Golgi apparatus",
+                "D": "Lysosome"
+            },
+            "correct_answer": "B",
+            "explanation": "Chloroplast contains chlorophyll pigment.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Which scientist proposed the cell theory along with Schwann?",
+            "options": {
+                "A": "Hooke",
+                "B": "Schleiden",
+                "C": "Virchow",
+                "D": "Brown"
+            },
+            "correct_answer": "B",
+            "explanation": "Schleiden and Schwann proposed the cell theory.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Which process results in four daughter cells?",
+            "options": {
+                "A": "Mitosis",
+                "B": "Meiosis",
+                "C": "Diffusion",
+                "D": "Osmosis"
+            },
+            "correct_answer": "B",
+            "explanation": "Meiosis produces four daughter cells.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which organelle is known as the 'suicide bag' of the cell?",
+            "options": {
+                "A": "Mitochondria",
+                "B": "Lysosome",
+                "C": "Golgi apparatus",
+                "D": "Ribosome"
+            },
+            "correct_answer": "B",
+            "explanation": "Lysosomes contain digestive enzymes that can destroy the cell.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Which organelle provides turgidity to plant cells?",
+            "options": {
+                "A": "Nucleus",
+                "B": "Vacuole",
+                "C": "Ribosome",
+                "D": "Golgi body"
+            },
+            "correct_answer": "B",
+            "explanation": "The large central vacuole maintains turgidity.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which structure separates cell contents from external environment?",
+            "options": {
+                "A": "Nucleus",
+                "B": "Plasma membrane",
+                "C": "Golgi body",
+                "D": "Chromosome"
+            },
+            "correct_answer": "B",
+            "explanation": "The plasma membrane forms the outer boundary.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which cell component stores amino acids, sugars and wastes?",
+            "options": {
+                "A": "Vacuole",
+                "B": "Golgi apparatus",
+                "C": "Mitochondria",
+                "D": "Ribosome"
+            },
+            "correct_answer": "A",
+            "explanation": "Vacuoles store various substances.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Which organelle synthesizes lipids?",
+            "options": {
+                "A": "Smooth ER",
+                "B": "Rough ER",
+                "C": "Ribosome",
+                "D": "Golgi body"
+            },
+            "correct_answer": "A",
+            "explanation": "Smooth ER synthesizes lipids.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Which structure allows communication between nucleus and cytoplasm?",
+            "options": {
+                "A": "Nuclear pores",
+                "B": "Chromosomes",
+                "C": "Cell wall",
+                "D": "Vacuole"
+            },
+            "correct_answer": "A",
+            "explanation": "Nuclear pores regulate exchange of materials.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which process involves engulfing food particles?",
+            "options": {
+                "A": "Endocytosis",
+                "B": "Diffusion",
+                "C": "Respiration",
+                "D": "Excretion"
+            },
+            "correct_answer": "A",
+            "explanation": "Cells engulf food particles through endocytosis.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which structure helps maintain cell shape in plants?",
+            "options": {
+                "A": "Cell wall",
+                "B": "Nucleus",
+                "C": "Mitochondria",
+                "D": "Golgi apparatus"
+            },
+            "correct_answer": "A",
+            "explanation": "Cell wall provides mechanical strength.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which scientist suggested that all cells arise from pre-existing cells?",
+            "options": {
+                "A": "Hooke",
+                "B": "Virchow",
+                "C": "Schwann",
+                "D": "Brown"
+            },
+            "correct_answer": "B",
+            "explanation": "Virchow expanded the cell theory.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Which organelle produces ATP energy?",
+            "options": {
+                "A": "Mitochondria",
+                "B": "Golgi body",
+                "C": "Ribosome",
+                "D": "Lysosome"
+            },
+            "correct_answer": "A",
+            "explanation": "Mitochondria produce ATP during respiration.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Which structure stores food materials like starch in plants?",
+            "options": {
+                "A": "Leucoplast",
+                "B": "Mitochondria",
+                "C": "Golgi body",
+                "D": "Nucleus"
+            },
+            "correct_answer": "A",
+            "explanation": "Leucoplast stores starch and other nutrients.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Which cell organelle contains digestive enzymes?",
+            "options": {
+                "A": "Lysosome",
+                "B": "Ribosome",
+                "C": "Vacuole",
+                "D": "Golgi body"
+            },
+            "correct_answer": "A",
+            "explanation": "Lysosomes contain enzymes for digestion.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Which structure controls the activities of the cell?",
+            "options": {
+                "A": "Nucleus",
+                "B": "Mitochondria",
+                "C": "Golgi body",
+                "D": "Lysosome"
+            },
+            "correct_answer": "A",
+            "explanation": "The nucleus acts as the control center of the cell.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2.3"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Water Resources",
+  "generated_at": "2026-03-11T15:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which factor mainly causes water scarcity in cities?",
+      "options": {
+        "A": "Low rainfall only",
+        "B": "Large population and high demand",
+        "C": "Presence of rivers",
+        "D": "Less agriculture"
+      },
+      "correct_answer": "B",
+      "explanation": "Growing population and increased demand for water lead to scarcity in cities.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following activities leads to depletion of groundwater?",
+      "options": {
+        "A": "Rainwater harvesting",
+        "B": "Using tube wells excessively",
+        "C": "Afforestation",
+        "D": "Water conservation"
+      },
+      "correct_answer": "B",
+      "explanation": "Excessive use of tube wells extracts groundwater faster than it can be replenished.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 3,
+      "question": "Multipurpose river projects are mainly designed to:",
+      "options": {
+        "A": "Generate electricity only",
+        "B": "Store drinking water only",
+        "C": "Serve several purposes like irrigation, electricity and flood control",
+        "D": "Control pollution"
+      },
+      "correct_answer": "C",
+      "explanation": "Multipurpose river projects serve several functions such as irrigation, hydroelectric power generation, and flood control.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is NOT a purpose of dams?",
+      "options": {
+        "A": "Irrigation",
+        "B": "Electricity generation",
+        "C": "Flood control",
+        "D": "Air pollution control"
+      },
+      "correct_answer": "D",
+      "explanation": "Dams help in irrigation, electricity generation, and flood control but not air pollution control.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is a major disadvantage of large dams?",
+      "options": {
+        "A": "They generate electricity",
+        "B": "They provide irrigation",
+        "C": "They may displace local communities",
+        "D": "They store water"
+      },
+      "correct_answer": "C",
+      "explanation": "Large dams often displace people living in the surrounding areas.",
+      "difficulty": "medium",
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 6,
+      "question": "Which traditional water harvesting system is found in the Western Himalayas?",
+      "options": {
+        "A": "Johads",
+        "B": "Tankas",
+        "C": "Kuls or guls",
+        "D": "Canals"
+      },
+      "correct_answer": "C",
+      "explanation": "Kuls or guls are diversion channels used in the Western Himalayas for irrigation.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 7,
+      "question": "Which structure collects rainwater from rooftops and stores it underground?",
+      "options": {
+        "A": "Canal",
+        "B": "Tanka",
+        "C": "Reservoir",
+        "D": "Pipeline"
+      },
+      "correct_answer": "B",
+      "explanation": "Tankas are underground tanks used to store rainwater collected from rooftops.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 8,
+      "question": "Which river project is associated with the Mahanadi river basin?",
+      "options": {
+        "A": "Bhakra Nangal",
+        "B": "Hirakud",
+        "C": "Tehri",
+        "D": "Sardar Sarovar"
+      },
+      "correct_answer": "B",
+      "explanation": "Hirakud dam is built on the Mahanadi river.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is rainwater harvesting considered an important practice?",
+      "options": {
+        "A": "It increases water wastage",
+        "B": "It reduces groundwater recharge",
+        "C": "It stores water and replenishes groundwater",
+        "D": "It stops rainfall"
+      },
+      "correct_answer": "C",
+      "explanation": "Rainwater harvesting stores rainwater and helps recharge groundwater.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following is a reason for the decline of traditional water harvesting systems?",
+      "options": {
+        "A": "Availability of modern water supply systems",
+        "B": "Lack of rainfall",
+        "C": "Population decrease",
+        "D": "Increase in forests"
+      },
+      "correct_answer": "A",
+      "explanation": "Modern water supply systems have reduced the use of traditional water harvesting methods.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 11,
+      "question": "Which activity is responsible for water pollution?",
+      "options": {
+        "A": "Discharge of industrial waste",
+        "B": "Rainwater harvesting",
+        "C": "Groundwater recharge",
+        "D": "Afforestation"
+      },
+      "correct_answer": "A",
+      "explanation": "Industrial waste discharged into rivers pollutes water resources.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 12,
+      "question": "Which crop pattern change is often caused by irrigation?",
+      "options": {
+        "A": "Shift to water-intensive crops",
+        "B": "Decrease in crop production",
+        "C": "Shift to forest crops",
+        "D": "No change"
+      },
+      "correct_answer": "A",
+      "explanation": "Irrigation often encourages farmers to grow water-intensive crops.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 13,
+      "question": "Which organization program focuses on improving rural water supply in India?",
+      "options": {
+        "A": "Green India Mission",
+        "B": "Jal Jeevan Mission",
+        "C": "Make in India",
+        "D": "Digital India"
+      },
+      "correct_answer": "B",
+      "explanation": "Jal Jeevan Mission aims to provide piped water supply to rural households.",
+      "difficulty": "medium",
+      "source_section": "Water Management"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following states first made rooftop rainwater harvesting compulsory?",
+      "options": {
+        "A": "Tamil Nadu",
+        "B": "Kerala",
+        "C": "Punjab",
+        "D": "Haryana"
+      },
+      "correct_answer": "A",
+      "explanation": "Tamil Nadu was the first state to make rainwater harvesting mandatory.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor increases demand for water in agriculture?",
+      "options": {
+        "A": "Urbanization",
+        "B": "Population growth",
+        "C": "Decrease in rainfall",
+        "D": "Increase in forests"
+      },
+      "correct_answer": "B",
+      "explanation": "Population growth increases demand for food and irrigation water.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 16,
+      "question": "Which irrigation method is most efficient in water use?",
+      "options": {
+        "A": "Flood irrigation",
+        "B": "Bamboo drip irrigation",
+        "C": "Canal irrigation",
+        "D": "Tank irrigation"
+      },
+      "correct_answer": "B",
+      "explanation": "Bamboo drip irrigation supplies water drop by drop, minimizing wastage.",
+      "difficulty": "medium",
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 17,
+      "question": "Which type of dam is made using compacted earth?",
+      "options": {
+        "A": "Timber dam",
+        "B": "Embankment dam",
+        "C": "Concrete dam",
+        "D": "Steel dam"
+      },
+      "correct_answer": "B",
+      "explanation": "Embankment dams are constructed using compacted earth or rock.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 18,
+      "question": "Which region in India traditionally uses johads for water storage?",
+      "options": {
+        "A": "Rajasthan",
+        "B": "Punjab",
+        "C": "Assam",
+        "D": "Kerala"
+      },
+      "correct_answer": "A",
+      "explanation": "Johads are traditional rainwater harvesting structures in Rajasthan.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor reduces the efficiency of dams over time?",
+      "options": {
+        "A": "Rainfall",
+        "B": "Sedimentation",
+        "C": "Evaporation",
+        "D": "Sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Sedimentation accumulates in reservoirs and reduces their capacity.",
+      "difficulty": "medium",
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 20,
+      "question": "Which practice helps recharge groundwater in cities?",
+      "options": {
+        "A": "Rainwater harvesting",
+        "B": "Industrial discharge",
+        "C": "Overuse of tube wells",
+        "D": "Building dams"
+      },
+      "correct_answer": "A",
+      "explanation": "Rainwater harvesting helps replenish underground water sources.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 21,
+      "question": "Which factor can make water unsuitable for human use?",
+      "options": {
+        "A": "Pollution",
+        "B": "Rainfall",
+        "C": "Irrigation",
+        "D": "Conservation"
+      },
+      "correct_answer": "A",
+      "explanation": "Pollution contaminates water and makes it unsafe for use.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 22,
+      "question": "Which river basin project integrates flood control with irrigation?",
+      "options": {
+        "A": "Hirakud Project",
+        "B": "Tehri Project",
+        "C": "Bhakra Project",
+        "D": "Sardar Sarovar"
+      },
+      "correct_answer": "A",
+      "explanation": "The Hirakud project integrates water conservation with flood control.",
+      "difficulty": "medium",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 23,
+      "question": "Which sector is most responsible for groundwater extraction in India?",
+      "options": {
+        "A": "Agriculture",
+        "B": "Tourism",
+        "C": "Transport",
+        "D": "Education"
+      },
+      "correct_answer": "A",
+      "explanation": "Agriculture extracts the largest amount of groundwater for irrigation.",
+      "difficulty": "medium",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 24,
+      "question": "Which action helps maintain ecological balance in water resources?",
+      "options": {
+        "A": "Water conservation",
+        "B": "Industrial waste disposal",
+        "C": "Over-extraction of water",
+        "D": "Deforestation"
+      },
+      "correct_answer": "A",
+      "explanation": "Water conservation helps protect ecosystems and maintain balance.",
+      "difficulty": "medium",
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 25,
+      "question": "Which activity is an example of sustainable water management?",
+      "options": {
+        "A": "Rainwater harvesting",
+        "B": "Water wastage",
+        "C": "Industrial pollution",
+        "D": "Over-irrigation"
+      },
+      "correct_answer": "A",
+      "explanation": "Rainwater harvesting conserves water and improves groundwater levels.",
+      "difficulty": "medium",
+      "source_section": "Rainwater Harvesting"
+    }
+  ]
+}

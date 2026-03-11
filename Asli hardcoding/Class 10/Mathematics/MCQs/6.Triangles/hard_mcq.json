@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Triangles",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T06:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If the angles of a triangle are in the ratio 2 : 3 : 4, the largest angle is?",
+            "options": {
+                "A": "40°",
+                "B": "60°",
+                "C": "80°",
+                "D": "90°"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum = 180°, one part = 20°, largest = 4×20 = 80°.",
+            "difficulty": "hard",
+            "source_section": "Angle Sum Property"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following sets of sides can form a triangle?",
+            "options": {
+                "A": "2 cm, 3 cm, 6 cm",
+                "B": "4 cm, 5 cm, 9 cm",
+                "C": "5 cm, 6 cm, 10 cm",
+                "D": "3 cm, 4 cm, 8 cm"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of any two sides must be greater than the third.",
+            "difficulty": "hard",
+            "source_section": "Triangle Inequality"
+        },
+        {
+            "question_number": 3,
+            "question": "In a triangle, the side opposite the smallest angle is?",
+            "options": {
+                "A": "The longest side",
+                "B": "Equal to other sides",
+                "C": "The shortest side",
+                "D": "Cannot be determined"
+            },
+            "correct_answer": "C",
+            "explanation": "Smaller angle has shorter opposite side.",
+            "difficulty": "hard",
+            "source_section": "Side–Angle Relationship"
+        },
+        {
+            "question_number": 4,
+            "question": "If one angle of a triangle is obtuse, the triangle must be?",
+            "options": {
+                "A": "Right-angled",
+                "B": "Equilateral",
+                "C": "Obtuse-angled",
+                "D": "Acute-angled"
+            },
+            "correct_answer": "C",
+            "explanation": "An obtuse angle defines an obtuse-angled triangle.",
+            "difficulty": "hard",
+            "source_section": "Classification by Angles"
+        },
+        {
+            "question_number": 5,
+            "question": "Which triangle has exactly two equal sides and two equal angles?",
+            "options": {
+                "A": "Scalene",
+                "B": "Isosceles",
+                "C": "Equilateral",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "Isosceles triangle has two equal sides and angles.",
+            "difficulty": "hard",
+            "source_section": "Isosceles Triangle"
+        },
+        {
+            "question_number": 6,
+            "question": "The sum of the lengths of any two sides of a triangle is always?",
+            "options": {
+                "A": "Equal to the third side",
+                "B": "Less than the third side",
+                "C": "Greater than the third side",
+                "D": "Twice the third side"
+            },
+            "correct_answer": "C",
+            "explanation": "Triangle inequality theorem.",
+            "difficulty": "hard",
+            "source_section": "Triangle Inequality"
+        },
+        {
+            "question_number": 7,
+            "question": "How many medians does a triangle have?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "Each vertex has one median.",
+            "difficulty": "hard",
+            "source_section": "Medians"
+        },
+        {
+            "question_number": 8,
+            "question": "The point where the medians of a triangle intersect is called?",
+            "options": {
+                "A": "Incentre",
+                "B": "Circumcentre",
+                "C": "Orthocentre",
+                "D": "Centroid"
+            },
+            "correct_answer": "D",
+            "explanation": "Medians intersect at the centroid.",
+            "difficulty": "hard",
+            "source_section": "Centroid"
+        },
+        {
+            "question_number": 9,
+            "question": "Which triangle has all sides unequal?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Equilateral",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "Scalene triangle has no equal sides.",
+            "difficulty": "hard",
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 10,
+            "question": "If two angles of a triangle are 35° and 65°, the third angle is?",
+            "options": {
+                "A": "70°",
+                "B": "80°",
+                "C": "90°",
+                "D": "100°"
+            },
+            "correct_answer": "B",
+            "explanation": "180° − (35° + 65°) = 80°.",
+            "difficulty": "hard",
+            "source_section": "Angle Sum"
+        },
+        {
+            "question_number": 11,
+            "question": "Which triangle can never be right-angled?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Equilateral",
+                "C": "Scalene",
+                "D": "Obtuse"
+            },
+            "correct_answer": "B",
+            "explanation": "All angles in equilateral triangle are 60°.",
+            "difficulty": "hard",
+            "source_section": "Special Triangles"
+        },
+        {
+            "question_number": 12,
+            "question": "The longest side of a right-angled triangle is called?",
+            "options": {
+                "A": "Base",
+                "B": "Height",
+                "C": "Median",
+                "D": "Hypotenuse"
+            },
+            "correct_answer": "D",
+            "explanation": "Hypotenuse lies opposite the right angle.",
+            "difficulty": "hard",
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following triangles has all angles less than 90°?",
+            "options": {
+                "A": "Right",
+                "B": "Obtuse",
+                "C": "Acute",
+                "D": "Isosceles"
+            },
+            "correct_answer": "C",
+            "explanation": "Acute triangle has all angles acute.",
+            "difficulty": "hard",
+            "source_section": "Classification"
+        },
+        {
+            "question_number": 14,
+            "question": "A triangle cannot have?",
+            "options": {
+                "A": "Two acute angles",
+                "B": "One obtuse angle",
+                "C": "One right angle",
+                "D": "Two right angles"
+            },
+            "correct_answer": "D",
+            "explanation": "Two right angles exceed 180°.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 15,
+            "question": "Which statement is always true?",
+            "options": {
+                "A": "All isosceles triangles are equilateral",
+                "B": "All equilateral triangles are isosceles",
+                "C": "All scalene triangles are right-angled",
+                "D": "All right triangles are isosceles"
+            },
+            "correct_answer": "B",
+            "explanation": "Equilateral triangle has at least two equal sides.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 16,
+            "question": "If the sides of a triangle are 7 cm, 8 cm and 9 cm, the triangle is?",
+            "options": {
+                "A": "Equilateral",
+                "B": "Isosceles",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "All sides are unequal.",
+            "difficulty": "hard",
+            "source_section": "Side Classification"
+        },
+        {
+            "question_number": 17,
+            "question": "Which triangle has exactly one angle greater than 90°?",
+            "options": {
+                "A": "Acute",
+                "B": "Right",
+                "C": "Obtuse",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Obtuse triangle has one obtuse angle.",
+            "difficulty": "hard",
+            "source_section": "Angle Classification"
+        },
+        {
+            "question_number": 18,
+            "question": "The perpendicular drawn from a vertex to the opposite side is called?",
+            "options": {
+                "A": "Median",
+                "B": "Altitude",
+                "C": "Bisector",
+                "D": "Hypotenuse"
+            },
+            "correct_answer": "B",
+            "explanation": "Altitude is perpendicular from vertex.",
+            "difficulty": "hard",
+            "source_section": "Altitudes"
+        },
+        {
+            "question_number": 19,
+            "question": "Which triangle has all sides equal and all angles equal?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Scalene",
+                "C": "Equilateral",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "Definition of equilateral triangle.",
+            "difficulty": "hard",
+            "source_section": "Equilateral Triangle"
+        },
+        {
+            "question_number": 20,
+            "question": "Which property is used to find the third angle of a triangle?",
+            "options": {
+                "A": "Pythagoras theorem",
+                "B": "Triangle inequality",
+                "C": "Angle sum property",
+                "D": "Side–angle relation"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of angles of triangle is 180°.",
+            "difficulty": "hard",
+            "source_section": "Angle Sum Property"
+        },
+        {
+            "question_number": 21,
+            "question": "Which triangle has no equal sides and one right angle?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Equilateral",
+                "C": "Right isosceles",
+                "D": "Scalene right"
+            },
+            "correct_answer": "D",
+            "explanation": "Scalene right triangle.",
+            "difficulty": "hard",
+            "source_section": "Mixed Classification"
+        },
+        {
+            "question_number": 22,
+            "question": "If all sides of a triangle are equal, each angle measures?",
+            "options": {
+                "A": "45°",
+                "B": "60°",
+                "C": "90°",
+                "D": "120°"
+            },
+            "correct_answer": "B",
+            "explanation": "Each angle = 60° in equilateral triangle.",
+            "difficulty": "hard",
+            "source_section": "Equilateral Triangle"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following can be the angles of a triangle?",
+            "options": {
+                "A": "30°, 60°, 90°",
+                "B": "45°, 45°, 100°",
+                "C": "90°, 60°, 40°",
+                "D": "60°, 60°, 70°"
+            },
+            "correct_answer": "A",
+            "explanation": "Sum must be exactly 180°.",
+            "difficulty": "hard",
+            "source_section": "Angle Validity"
+        },
+        {
+            "question_number": 24,
+            "question": "Which triangle always has its centroid inside the triangle?",
+            "options": {
+                "A": "Right triangle",
+                "B": "Obtuse triangle",
+                "C": "Acute triangle",
+                "D": "All triangles"
+            },
+            "correct_answer": "D",
+            "explanation": "Centroid always lies inside any triangle.",
+            "difficulty": "hard",
+            "source_section": "Centroid"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement about medians is correct?",
+            "options": {
+                "A": "They intersect at right angles",
+                "B": "They bisect angles",
+                "C": "They intersect at the centroid",
+                "D": "They are equal in length"
+            },
+            "correct_answer": "C",
+            "explanation": "Medians intersect at the centroid.",
+            "difficulty": "hard",
+            "source_section": "Medians"
+        }
+    ]
+}

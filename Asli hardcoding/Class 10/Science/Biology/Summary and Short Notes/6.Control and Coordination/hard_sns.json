@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Control and Coordination",
+    "difficulty": "Hard",
+    "source_pdf": "jesc106.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Endocrine system provides chemical coordination through hormones, which are secreted by ductless glands directly into the bloodstream to reach specific target organs.",
+            "Information flow in the nervous system is unidirectional; at the synapse, electrical impulses trigger the release of neurotransmitters that diffuse across the gap.",
+            "The Hypothalamus plays a dual role as both a part of the brain and an endocrine regulator, controlling the release of hormones from the Pituitary gland.",
+            "Feedback mechanisms strictly regulate the timing and amount of hormone release to maintain homeostasis (e.g., blood sugar regulation).",
+            "Nervous coordination is localized and rapid but cannot reach every cell, whereas hormonal coordination is slower but reaches every cell of the body."
+        ],
+        "examples": [
+            "Adrenaline (Emergency Hormone): Increases heart rate, diverts blood to skeletal muscles, and increases breathing rate during 'fight or flight' scenarios.",
+            "Thyroxine: Secreted by the thyroid gland; regulates carbohydrate, protein, and fat metabolism for optimum growth (requires Iodine).",
+            "Insulin: Secreted by the Pancreas; lowers blood glucose levels by promoting glucose uptake by cells.",
+            "Growth Hormone: Secreted by the Pituitary; its deficiency causes Dwarfism, while excess causes Gigantism.",
+            "Sex Hormones: Testosterone (Testes) and Oestrogen (Ovaries) responsible for puberty changes and reproductive regulation."
+        ],
+        "formulas": [
+            "Sugar Feedback Loop: $\text{High Blood Sugar} \rightarrow \text{Pancreas (Beta Cells)} \rightarrow \text{Insulin Release} \rightarrow \text{Sugar Level Falls} \rightarrow \text{Insulin Reduced}$",
+            "Iodine Deficiency: $\text{Lack of Iodine} \rightarrow \text{Low Thyroxine} \rightarrow \text{Swollen Thyroid Gland (Goitre)}$",
+            "Synaptic Transmission: $\text{Axon Terminal} \rightarrow \text{Vesicle Burst} \rightarrow \text{Neurotransmitter} \rightarrow \text{Dendrite Receptor}$"
+        ],
+        "exam_tips": [
+            "Remember that the Pancreas is a dual gland (Heterocrine), performing both exocrine (digestion) and endocrine (insulin/glucagon) functions.",
+            "Identify the 'Pituitary' as the Master Gland because it regulates the secretions of many other endocrine glands.",
+            "Note that the Hypothalamus is the link between the Nervous System and the Endocrine System.",
+            "In 'Identify the Disorder' questions, look for symptoms like 'bulging neck' (Goitre), 'sugar in urine' (Diabetes), or 'short stature' (Dwarfism)."
+        ]
+    }
+}

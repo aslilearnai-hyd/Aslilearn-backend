@@ -1,0 +1,182 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Lines and Angles",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand different types of angles",
+        "Apply complementary and supplementary angle relationships",
+        "Understand linear pair and vertically opposite angles",
+        "Understand properties of parallel lines and transversals",
+        "Apply angle properties in problem solving",
+        "Prove angle relationships using theorems",
+        "Develop reasoning skills in geometry",
+        "Solve complex angle problems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Angles and Measurement",
+            "topics_covered": [
+                "Definition of angles",
+                "Angle measurement",
+                "Examples"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Diagram drawing"
+            ],
+            "student_activities": [
+                "Draw angles using protractor"
+            ],
+            "assessment": [
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Classification of Angles",
+            "topics_covered": [
+                "Acute",
+                "Right",
+                "Obtuse",
+                "Straight",
+                "Reflex angles"
+            ],
+            "teaching_strategy": [
+                "Diagram demonstration"
+            ],
+            "student_activities": [
+                "Classify given angles"
+            ],
+            "assessment": [
+                "Worksheet activity"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complementary and Supplementary Angles",
+            "topics_covered": [
+                "Definitions",
+                "Examples",
+                "Numerical problems"
+            ],
+            "teaching_strategy": [
+                "Example solving"
+            ],
+            "student_activities": [
+                "Solve complementary problems"
+            ],
+            "assessment": [
+                "Short written test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Linear Pair and Adjacent Angles",
+            "topics_covered": [
+                "Adjacent angles",
+                "Linear pair",
+                "Linear pair axiom"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation"
+            ],
+            "student_activities": [
+                "Identify linear pairs"
+            ],
+            "assessment": [
+                "Quick questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Vertically Opposite Angles Proof",
+            "topics_covered": [
+                "Intersecting lines",
+                "Vertically opposite angles",
+                "Proof of theorem"
+            ],
+            "teaching_strategy": [
+                "Proof explanation"
+            ],
+            "student_activities": [
+                "Write proof steps"
+            ],
+            "assessment": [
+                "Proof based questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Parallel Lines and Transversal",
+            "topics_covered": [
+                "Parallel lines",
+                "Transversal",
+                "Corresponding angles"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation"
+            ],
+            "student_activities": [
+                "Identify corresponding angles"
+            ],
+            "assessment": [
+                "Problem solving"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Alternate Interior and Interior Angles",
+            "topics_covered": [
+                "Alternate interior angles",
+                "Interior angles on same side"
+            ],
+            "teaching_strategy": [
+                "Concept discussion"
+            ],
+            "student_activities": [
+                "Solve angle relation problems"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Application Problems and Chapter Test",
+            "topics_covered": [
+                "Mixed angle problems",
+                "Revision of theorems",
+                "Chapter test"
+            ],
+            "teaching_strategy": [
+                "Problem solving",
+                "Revision discussion"
+            ],
+            "student_activities": [
+                "Solve complex angle questions"
+            ],
+            "assessment": [
+                "Chapter test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Markers or chalk",
+        "Mathematics textbook",
+        "Geometry instruments",
+        "Angle diagrams"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Written exercises",
+        "Worksheets",
+        "Chapter test"
+    ],
+    "teacher_tip": "Encourage students to explain angle relationships verbally while solving problems to strengthen logical reasoning."
+}

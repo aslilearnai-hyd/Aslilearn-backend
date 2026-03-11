@@ -1,0 +1,26 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty": "Hard",
+    "source_pdf": "jemh108.pdf",
+    "short_notes": {
+        "key_points": [
+            "Trigonometric identities are used to simplify expressions",
+            "HOTS questions involve multi-step ratio usage",
+            "Standard values must be memorized accurately"
+        ],
+        "examples": [
+            "Identity verification problems",
+            "Complex value-based questions"
+        ],
+        "formulas": [
+            "sin²θ + cos²θ = 1",
+            "1 + tan²θ = sec²θ"
+        ],
+        "exam_tips": [
+            "Substitute standard values carefully",
+            "Follow step-by-step simplification"
+        ]
+    }
+}

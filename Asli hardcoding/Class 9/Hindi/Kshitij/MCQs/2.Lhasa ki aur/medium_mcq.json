@@ -1,0 +1,359 @@
+{
+    "content_type": "बहुविकल्पीय प्रश्न",
+    "chapter": "IHKS102 – ल्हासा की ओर",
+    "title": "ल्हासा की ओर – मध्यम स्तर MCQs",
+    "generated_at": "2026-03-10T05:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "राहुल सांकृत्यायन को किस उपाधि से जाना जाता था?",
+            "options": {
+                "A": "महाकवि",
+                "B": "महापंडित",
+                "C": "महर्षि",
+                "D": "महानायक"
+            },
+            "correct_answer": "B",
+            "explanation": "राहुल सांकृत्यायन को उनके विशाल ज्ञान के कारण ‘महापंडित’ कहा जाता था।",
+            "difficulty": "medium",
+            "source_section": "लेखक परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "लेखक ने तिब्बत जाने के लिए भिक्षुक का वेश क्यों धारण किया?",
+            "options": {
+                "A": "धार्मिक कारणों से",
+                "B": "अनुमति के अभाव में यात्रा करने के लिए",
+                "C": "व्यापार करने के लिए",
+                "D": "अध्ययन करने के लिए"
+            },
+            "correct_answer": "B",
+            "explanation": "भारतीयों को तिब्बत जाने की अनुमति नहीं थी, इसलिए लेखक ने भिक्षुक का वेश धारण किया।",
+            "difficulty": "medium",
+            "source_section": "यात्रा प्रसंग"
+        },
+        {
+            "question_number": 3,
+            "question": "नेपाल से तिब्बत का मार्ग किस कारण कठिन था?",
+            "options": {
+                "A": "जंगलों के कारण",
+                "B": "ऊँचे पहाड़ों और दुर्गम रास्तों के कारण",
+                "C": "नदियों के कारण",
+                "D": "रेगिस्तान के कारण"
+            },
+            "correct_answer": "B",
+            "explanation": "नेपाल से तिब्बत का मार्ग ऊँचे पहाड़ों और दुर्गम रास्तों के कारण कठिन था।",
+            "difficulty": "medium",
+            "source_section": "मार्ग वर्णन"
+        },
+        {
+            "question_number": 4,
+            "question": "सुमति किस देश का भिक्षु था?",
+            "options": {
+                "A": "भारत",
+                "B": "नेपाल",
+                "C": "मंगोलिया",
+                "D": "चीन"
+            },
+            "correct_answer": "C",
+            "explanation": "सुमति एक मंगोल भिक्षु था।",
+            "difficulty": "medium",
+            "source_section": "यात्रा प्रसंग"
+        },
+        {
+            "question_number": 5,
+            "question": "तिब्बत के लोगों का प्रमुख गुण क्या था?",
+            "options": {
+                "A": "कठोरता",
+                "B": "अतिथि सत्कार",
+                "C": "आलस्य",
+                "D": "क्रोध"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बती लोग अतिथि सत्कार करने वाले थे।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 6,
+            "question": "तिब्बत की भूमि व्यवस्था कैसी थी?",
+            "options": {
+                "A": "राजा के अधीन",
+                "B": "किसानों के अधीन",
+                "C": "जमींदारों के अधीन",
+                "D": "सरकार के अधीन"
+            },
+            "correct_answer": "C",
+            "explanation": "तिब्बत की भूमि जमींदारों के अधीन थी।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 7,
+            "question": "जमींदार खेती कैसे करवाते थे?",
+            "options": {
+                "A": "मजदूरी देकर",
+                "B": "बेगार मजदूरों से",
+                "C": "मशीनों से",
+                "D": "स्वयं"
+            },
+            "correct_answer": "B",
+            "explanation": "जमींदार बेगार मजदूरों से खेती करवाते थे।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 8,
+            "question": "‘कंजुर’ किससे संबंधित है?",
+            "options": {
+                "A": "कृषि",
+                "B": "धर्म",
+                "C": "व्यापार",
+                "D": "राजनीति"
+            },
+            "correct_answer": "B",
+            "explanation": "कंजुर बुद्ध के उपदेशों का धार्मिक ग्रंथ है।",
+            "difficulty": "medium",
+            "source_section": "मंदिर वर्णन"
+        },
+        {
+            "question_number": 9,
+            "question": "मंदिर में रखी पोथियों की संख्या कितनी थी?",
+            "options": {
+                "A": "90",
+                "B": "103",
+                "C": "120",
+                "D": "150"
+            },
+            "correct_answer": "B",
+            "explanation": "मंदिर में कंजुर की 103 पोथियाँ थीं।",
+            "difficulty": "medium",
+            "source_section": "मंदिर वर्णन"
+        },
+        {
+            "question_number": 10,
+            "question": "तिब्बत में चाय में क्या मिलाया जाता था?",
+            "options": {
+                "A": "नींबू",
+                "B": "मक्खन और नमक",
+                "C": "चीनी और दूध",
+                "D": "मसाले"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बत में चाय में मक्खन और नमक मिलाया जाता था।",
+            "difficulty": "medium",
+            "source_section": "गाँव वर्णन"
+        },
+        {
+            "question_number": 11,
+            "question": "तिब्बत की धूप कैसी थी?",
+            "options": {
+                "A": "हल्की",
+                "B": "तेज",
+                "C": "कम",
+                "D": "ठंडी"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बत की धूप बहुत तेज होती है।",
+            "difficulty": "medium",
+            "source_section": "प्रकृति वर्णन"
+        },
+        {
+            "question_number": 12,
+            "question": "लेखक किसमें मग्न हो गया था?",
+            "options": {
+                "A": "खाने में",
+                "B": "सोने में",
+                "C": "पुस्तकों के अध्ययन में",
+                "D": "बातचीत में"
+            },
+            "correct_answer": "C",
+            "explanation": "लेखक पुस्तकों के अध्ययन में मग्न हो गया था।",
+            "difficulty": "medium",
+            "source_section": "प्रश्न अभ्यास"
+        },
+        {
+            "question_number": 13,
+            "question": "तिब्बत की राजधानी क्या है?",
+            "options": {
+                "A": "ल्हासा",
+                "B": "काठमांडू",
+                "C": "बीजिंग",
+                "D": "शिगात्से"
+            },
+            "correct_answer": "A",
+            "explanation": "ल्हासा तिब्बत की राजधानी है।",
+            "difficulty": "medium",
+            "source_section": "शीर्षक"
+        },
+        {
+            "question_number": 14,
+            "question": "‘ल्हासा की ओर’ किस प्रकार का साहित्य है?",
+            "options": {
+                "A": "कहानी",
+                "B": "कविता",
+                "C": "यात्रा-वृत्तांत",
+                "D": "नाटक"
+            },
+            "correct_answer": "C",
+            "explanation": "यह यात्रा-वृत्तांत विधा का पाठ है।",
+            "difficulty": "medium",
+            "source_section": "पाठ परिचय"
+        },
+        {
+            "question_number": 15,
+            "question": "तिब्बती समाज में जाति-पाँति का क्या स्थान था?",
+            "options": {
+                "A": "बहुत महत्वपूर्ण",
+                "B": "कम महत्वपूर्ण",
+                "C": "कोई महत्व नहीं",
+                "D": "केवल कुछ स्थानों पर"
+            },
+            "correct_answer": "C",
+            "explanation": "तिब्बती समाज में जाति-पाँति का भेदभाव नहीं था।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 16,
+            "question": "तिब्बत की प्राकृतिक स्थिति कैसी थी?",
+            "options": {
+                "A": "समतल",
+                "B": "पर्वतीय",
+                "C": "रेगिस्तानी",
+                "D": "नदीय"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बत ऊँचे पहाड़ों से घिरा हुआ क्षेत्र है।",
+            "difficulty": "medium",
+            "source_section": "प्रकृति वर्णन"
+        },
+        {
+            "question_number": 17,
+            "question": "तिब्बती लोग यात्रियों को क्या सुविधा देते थे?",
+            "options": {
+                "A": "भोजन और रहने की",
+                "B": "केवल भोजन",
+                "C": "केवल मार्गदर्शन",
+                "D": "कोई सुविधा नहीं"
+            },
+            "correct_answer": "A",
+            "explanation": "तिब्बती लोग यात्रियों को भोजन और रहने की सुविधा देते थे।",
+            "difficulty": "medium",
+            "source_section": "गाँव वर्णन"
+        },
+        {
+            "question_number": 18,
+            "question": "लेखक ने यात्रा से क्या प्राप्त किया?",
+            "options": {
+                "A": "धन",
+                "B": "पद",
+                "C": "ज्ञान और अनुभव",
+                "D": "प्रसिद्धि"
+            },
+            "correct_answer": "C",
+            "explanation": "यात्रा से लेखक को ज्ञान और अनुभव प्राप्त हुआ।",
+            "difficulty": "medium",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 19,
+            "question": "तिब्बती समाज का मुख्य गुण क्या था?",
+            "options": {
+                "A": "सरलता",
+                "B": "क्रोध",
+                "C": "स्वार्थ",
+                "D": "ईर्ष्या"
+            },
+            "correct_answer": "A",
+            "explanation": "तिब्बती समाज सरलता के लिए प्रसिद्ध था।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 20,
+            "question": "तिब्बत के लोग किस प्रकार का जीवन जीते थे?",
+            "options": {
+                "A": "ऐश्वर्यपूर्ण",
+                "B": "सरल",
+                "C": "आधुनिक",
+                "D": "व्यापारिक"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बती लोग सरल जीवन जीते थे।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 21,
+            "question": "लेखक का यात्रा का मुख्य उद्देश्य क्या था?",
+            "options": {
+                "A": "व्यापार",
+                "B": "ज्ञान प्राप्त करना",
+                "C": "राजनीति",
+                "D": "मनोरंजन"
+            },
+            "correct_answer": "B",
+            "explanation": "लेखक का उद्देश्य ज्ञान और अनुभव प्राप्त करना था।",
+            "difficulty": "medium",
+            "source_section": "यात्रा उद्देश्य"
+        },
+        {
+            "question_number": 22,
+            "question": "तिब्बती समाज की कौन-सी विशेषता उल्लेखनीय है?",
+            "options": {
+                "A": "जाति भेद",
+                "B": "समानता",
+                "C": "असमानता",
+                "D": "कठोरता"
+            },
+            "correct_answer": "B",
+            "explanation": "तिब्बती समाज में सामाजिक समानता थी।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 23,
+            "question": "लेखक के अनुसार यात्रा का क्या महत्व है?",
+            "options": {
+                "A": "मनोरंजन",
+                "B": "ज्ञान प्राप्ति",
+                "C": "धन कमाना",
+                "D": "व्यापार"
+            },
+            "correct_answer": "B",
+            "explanation": "यात्रा से ज्ञान और अनुभव बढ़ता है।",
+            "difficulty": "medium",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 24,
+            "question": "तिब्बत में खेती किससे कराई जाती थी?",
+            "options": {
+                "A": "मजदूरी देकर",
+                "B": "बेगार से",
+                "C": "मशीनों से",
+                "D": "पशुओं से"
+            },
+            "correct_answer": "B",
+            "explanation": "जमींदार बेगार मजदूरों से खेती करवाते थे।",
+            "difficulty": "medium",
+            "source_section": "समाज वर्णन"
+        },
+        {
+            "question_number": 25,
+            "question": "‘ल्हासा की ओर’ पाठ का मुख्य संदेश क्या है?",
+            "options": {
+                "A": "धन कमाना",
+                "B": "यात्रा से ज्ञान प्राप्त होता है",
+                "C": "व्यापार करना",
+                "D": "राजनीति करना"
+            },
+            "correct_answer": "B",
+            "explanation": "पाठ का मुख्य संदेश है कि यात्रा से ज्ञान और अनुभव बढ़ता है।",
+            "difficulty": "medium",
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

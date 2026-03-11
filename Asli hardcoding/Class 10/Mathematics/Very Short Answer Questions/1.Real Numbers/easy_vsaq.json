@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 1: Real Numbers",
+    "generated_at": "2026-02-27T16:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a rational number?",
+            "answer": "A rational number is a number that can be written in the form p/q where p and q are integers and q ≠ 0.",
+            "key_points": [
+                "rational numbers",
+                "fraction form"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is an irrational number?",
+            "answer": "An irrational number is a number that cannot be written in the form p/q.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Give one example of an irrational number.",
+            "answer": "√2 is an irrational number.",
+            "key_points": [
+                "irrational example"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What does HCF stand for?",
+            "answer": "HCF stands for Highest Common Factor.",
+            "key_points": [
+                "HCF"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What does LCM stand for?",
+            "answer": "LCM stands for Least Common Multiple.",
+            "key_points": [
+                "LCM"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "State Euclid’s Division Algorithm.",
+            "answer": "For any positive integers a and b, a = bq + r, where 0 ≤ r < b.",
+            "key_points": [
+                "Euclid’s algorithm"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a prime number?",
+            "answer": "A prime number is a number having exactly two factors, 1 and itself.",
+            "key_points": [
+                "prime numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Is 1 a prime number?",
+            "answer": "No, 1 is not a prime number.",
+            "key_points": [
+                "prime definition"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "How many factors does a prime number have?",
+            "answer": "A prime number has exactly two factors.",
+            "key_points": [
+                "factors"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the remainder when a number is exactly divisible?",
+            "answer": "The remainder is zero.",
+            "key_points": [
+                "division"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What type of number is √3?",
+            "answer": "√3 is an irrational number.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the decimal expansion of an irrational number?",
+            "answer": "It is non-terminating and non-repeating.",
+            "key_points": [
+                "decimal expansion"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the HCF of two coprime numbers?",
+            "answer": "The HCF of two coprime numbers is 1.",
+            "key_points": [
+                "coprime numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What are real numbers?",
+            "answer": "Real numbers include both rational and irrational numbers.",
+            "key_points": [
+                "real numbers"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is prime factorisation?",
+            "answer": "Prime factorisation is writing a number as a product of prime numbers.",
+            "key_points": [
+                "prime factorisation"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the theorem related to prime factorisation.",
+            "answer": "Fundamental Theorem of Arithmetic.",
+            "key_points": [
+                "FTA"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the smallest prime number?",
+            "answer": "The smallest prime number is 2.",
+            "key_points": [
+                "prime numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Is √5 rational or irrational?",
+            "answer": "√5 is irrational.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What does r represent in a = bq + r?",
+            "answer": "r represents the remainder.",
+            "key_points": [
+                "division algorithm"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Can irrational numbers be written as fractions?",
+            "answer": "No, irrational numbers cannot be written as fractions.",
+            "key_points": [
+                "irrational definition"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What type of number is 0?",
+            "answer": "0 is a rational number.",
+            "key_points": [
+                "zero"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the value of HCF × LCM equal to for two numbers?",
+            "answer": "It is equal to the product of the two numbers.",
+            "key_points": [
+                "HCF and LCM"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a composite number?",
+            "answer": "A composite number has more than two factors.",
+            "key_points": [
+                "composite numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What method is used to prove √2 is irrational?",
+            "answer": "Proof by contradiction.",
+            "key_points": [
+                "proof method"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Is π a rational number?",
+            "answer": "No, π is an irrational number.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.3"
+        }
+    ]
+}

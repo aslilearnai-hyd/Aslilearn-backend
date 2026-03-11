@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Pair of Linear Equations in Two Variables",
+    "difficulty": "Easy",
+    "source_pdf": "jemh103.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Variable Identification",
+            "objective": "Identify variables in statements",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read statement",
+                "Underline variables"
+            ],
+            "learning_outcome": "Understands variables",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Equation Formation",
+            "objective": "Form simple linear equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read problem",
+                "Form equation"
+            ],
+            "learning_outcome": "Forms equations",
+            "evaluation": "Correct equation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Solution Guessing",
+            "objective": "Find solution by trial",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Substitute values",
+                "Check equality"
+            ],
+            "learning_outcome": "Understands solution",
+            "evaluation": "Correct solution (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Equation Pair Writing",
+            "objective": "Write pair of equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify conditions",
+                "Write equations"
+            ],
+            "learning_outcome": "Forms equation pairs",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Consistency Check",
+            "objective": "Understand consistent equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe equations",
+                "Predict result"
+            ],
+            "learning_outcome": "Understands consistency",
+            "evaluation": "Correct reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Graph Observation",
+            "objective": "Observe intersection idea",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw rough graph",
+                "Observe crossing"
+            ],
+            "learning_outcome": "Graph sense",
+            "evaluation": "Correct observation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Real-Life Equation",
+            "objective": "Identify equations from daily life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write situation",
+                "Convert to equation"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Coefficient Listing",
+            "objective": "List coefficients in equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify terms",
+                "Write coefficients"
+            ],
+            "learning_outcome": "Coefficient understanding",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Equation Comparison",
+            "objective": "Compare two equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe structure",
+                "Note differences"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Simple Word Problems",
+            "objective": "Solve easy word problems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read problem",
+                "Solve equations"
+            ],
+            "learning_outcome": "Problem-solving",
+            "evaluation": "Correct answer (10 marks)"
+        }
+    ]
+}

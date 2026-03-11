@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Circles",
+    "difficulty": "Easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a circle?",
+            "answer": "A circle is the collection of all points in a plane at a constant distance from a fixed point.",
+            "key_points": [
+                "circle definition"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the fixed point of a circle called?",
+            "answer": "The fixed point is called the centre.",
+            "key_points": [
+                "centre"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the constant distance in a circle called?",
+            "answer": "The constant distance is called the radius.",
+            "key_points": [
+                "radius"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a tangent to a circle?",
+            "answer": "A tangent is a line that touches the circle at exactly one point.",
+            "key_points": [
+                "tangent"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the point where tangent touches the circle called?",
+            "answer": "Point of contact.",
+            "key_points": [
+                "point of contact"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How many points does a tangent intersect a circle?",
+            "answer": "One point.",
+            "key_points": [
+                "tangent intersection"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a secant?",
+            "answer": "A secant is a line that intersects a circle at two points.",
+            "key_points": [
+                "secant"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a chord?",
+            "answer": "A chord is a line segment joining two points on a circle.",
+            "key_points": [
+                "chord"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the longest chord of a circle?",
+            "answer": "Diameter.",
+            "key_points": [
+                "diameter"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the diameter equal to?",
+            "answer": "Twice the radius.",
+            "key_points": [
+                "diameter"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 11,
+            "question": "How many tangents can be drawn at a point on a circle?",
+            "answer": "One.",
+            "key_points": [
+                "number of tangents"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Is a tangent perpendicular to the radius at point of contact?",
+            "answer": "Yes.",
+            "key_points": [
+                "tangent property"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How many tangents can be drawn from a point inside a circle?",
+            "answer": "Zero.",
+            "key_points": [
+                "internal point"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How many tangents can be drawn from a point on the circle?",
+            "answer": "One.",
+            "key_points": [
+                "on circle"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 15,
+            "question": "How many tangents can be drawn from a point outside the circle?",
+            "answer": "Two.",
+            "key_points": [
+                "external point"
+            ],
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Is a tangent a special case of a secant?",
+            "answer": "Yes.",
+            "key_points": [
+                "tangent secant"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the angle between radius and tangent at contact point?",
+            "answer": "90°.",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the normal to a circle?",
+            "answer": "The radius through the point of contact.",
+            "key_points": [
+                "normal"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Can a tangent cut a circle?",
+            "answer": "No.",
+            "key_points": [
+                "tangent property"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Is every diameter a chord?",
+            "answer": "Yes.",
+            "key_points": [
+                "diameter"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Is every chord a diameter?",
+            "answer": "No.",
+            "key_points": [
+                "chord"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the distance from centre to any point on circle?",
+            "answer": "Radius.",
+            "key_points": [
+                "radius"
+            ],
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Does a tangent pass inside the circle?",
+            "answer": "No.",
+            "key_points": [
+                "tangent"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Can two tangents be parallel to a circle?",
+            "answer": "Yes, at most two.",
+            "key_points": [
+                "parallel tangents"
+            ],
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What theorem states tangent is perpendicular to radius?",
+            "answer": "Theorem 10.1.",
+            "key_points": [
+                "theorem"
+            ],
+            "source_section": "10.2"
+        }
+    ]
+}

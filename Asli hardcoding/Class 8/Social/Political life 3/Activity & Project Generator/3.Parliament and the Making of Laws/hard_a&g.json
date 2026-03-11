@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Civics",
+  "chapter": "Parliament and the Making of Laws",
+  "difficulty": "Hard",
+  "source_pdf": "Class-8-Political_life_III.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Detailed Law-Making Process Analysis",
+      "objective": "Understand and analyse the stages involved in the law-making process",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the section explaining how laws are made in Parliament",
+        "Write the steps involved from introducing a bill to passing the law",
+        "Explain why discussion and voting are important in this process"
+      ],
+      "learning_outcome": "Analyses the stages of the law-making process",
+      "evaluation": "Accuracy and depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Case Study: Public Issue to Law",
+      "objective": "Understand how public issues influence the creation of laws",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose a public issue such as pollution, safety or education",
+        "Explain how people can raise the issue",
+        "Describe how Parliament might make a law to address it"
+      ],
+      "learning_outcome": "Applies knowledge of parliamentary processes to real-life situations",
+      "evaluation": "Logical reasoning and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Debate on the Role of Parliament",
+      "objective": "Develop critical thinking about the role of Parliament in democracy",
+      "materials": ["Notebook"],
+      "steps": [
+        "Organise a class debate on the topic 'Parliament represents the voice of the people'",
+        "Prepare arguments supporting or opposing the statement",
+        "Write a summary of the main points discussed"
+      ],
+      "learning_outcome": "Evaluates the importance of parliamentary representation",
+      "evaluation": "Quality of arguments and summary (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Comparing Parliament with Local Government",
+      "objective": "Understand different levels of governance",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the functions of Parliament",
+        "List the functions of local government bodies such as municipalities or panchayats",
+        "Compare how their roles are similar and different"
+      ],
+      "learning_outcome": "Understands the structure of governance in India",
+      "evaluation": "Quality of comparison (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Critical Thinking: Why Laws Change",
+      "objective": "Understand that laws change according to society's needs",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write two examples where a law may need to change over time",
+        "Explain why the change is necessary",
+        "Describe the role of Parliament in making such changes"
+      ],
+      "learning_outcome": "Recognises the evolving nature of laws",
+      "evaluation": "Clarity of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Question Hour Investigation",
+      "objective": "Analyse the role of Question Hour in ensuring government accountability",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read about Question Hour in Parliament",
+        "Explain how MPs use Question Hour to question the government",
+        "Write why this process is important in democracy"
+      ],
+      "learning_outcome": "Evaluates the accountability mechanisms in Parliament",
+      "evaluation": "Depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Mock Parliamentary Session",
+      "objective": "Experience the process of parliamentary decision-making",
+      "materials": ["Notebook"],
+      "steps": [
+        "Assign roles such as Speaker, MPs, and ministers",
+        "Introduce a topic such as environmental protection",
+        "Conduct a discussion and vote to pass or reject the proposed rule"
+      ],
+      "learning_outcome": "Understands parliamentary debate and voting procedures",
+      "evaluation": "Participation and understanding of roles (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Research on an Important Law",
+      "objective": "Understand the impact of laws passed by Parliament",
+      "materials": ["Textbook", "Notebook", "Reference material"],
+      "steps": [
+        "Choose a law passed by Parliament such as Right to Education",
+        "Write what the law states",
+        "Explain how the law benefits people"
+      ],
+      "learning_outcome": "Understands the social impact of legislation",
+      "evaluation": "Accuracy of research (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Analysis of Parliamentary Representation",
+      "objective": "Understand how Parliament represents diverse groups",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write about how MPs represent different regions of India",
+        "Explain why representation is important in democracy",
+        "Give examples of issues MPs may raise for their constituencies"
+      ],
+      "learning_outcome": "Analyses the concept of representation",
+      "evaluation": "Clarity and depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Essay on the Role of Parliament in Democracy",
+      "objective": "Summarise the importance of Parliament in governance",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write an essay explaining the role of Parliament in a democratic country",
+        "Include points about representation, law-making and accountability",
+        "Conclude with why Parliament is essential for democracy"
+      ],
+      "learning_outcome": "Synthesises knowledge about Parliament",
+      "evaluation": "Clarity, structure and completeness (10 marks)"
+    }
+  ]
+}

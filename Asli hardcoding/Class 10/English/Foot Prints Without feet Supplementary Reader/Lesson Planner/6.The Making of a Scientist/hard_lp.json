@@ -1,0 +1,157 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Making of a Scientist",
+    "title": "Lesson Planner – The Making of a Scientist",
+    "author": "Robert W. Peterson",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Critically analyse the lesson",
+        "Understand scientific temper deeply",
+        "Evaluate role of environment",
+        "Apply concepts to modern context"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Context and Theme",
+            "topics_covered": [
+                "Scientific inquiry"
+            ],
+            "teaching_strategy": [
+                "Lecture"
+            ],
+            "student_activities": [
+                "Discussion"
+            ],
+            "assessment": [
+                "Oral"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Curiosity as Foundation",
+            "topics_covered": [
+                "Inquiry"
+            ],
+            "teaching_strategy": [
+                "Analysis"
+            ],
+            "student_activities": [
+                "Notes"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Parental and Environmental Support",
+            "topics_covered": [
+                "Family",
+                "Teachers"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Essay"
+            ],
+            "assessment": [
+                "Evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Failure and Growth",
+            "topics_covered": [
+                "Science fair"
+            ],
+            "teaching_strategy": [
+                "Critical analysis"
+            ],
+            "student_activities": [
+                "Case study"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Advanced Experiments",
+            "topics_covered": [
+                "Hormone discovery"
+            ],
+            "teaching_strategy": [
+                "Explanation"
+            ],
+            "student_activities": [
+                "Diagram"
+            ],
+            "assessment": [
+                "Notebook"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Scientific Temper",
+            "topics_covered": [
+                "Evidence-based thinking"
+            ],
+            "teaching_strategy": [
+                "Debate"
+            ],
+            "student_activities": [
+                "Discussion"
+            ],
+            "assessment": [
+                "Participation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Message and Relevance Today",
+            "topics_covered": [
+                "Modern relevance"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Paragraph"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Evaluation",
+            "topics_covered": [
+                "Entire lesson"
+            ],
+            "teaching_strategy": [
+                "Recap"
+            ],
+            "student_activities": [
+                "Test"
+            ],
+            "assessment": [
+                "Assessment"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Board",
+        "Reference material"
+    ],
+    "evaluation_methods": [
+        "Analytical writing",
+        "Critical answers"
+    ],
+    "teacher_tip": "Encourage students to think like researchers, not just readers."
+}

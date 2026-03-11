@@ -1,0 +1,163 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter_name": "Resources and Development",
+  "lesson_level": "Medium",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Explain the concept and characteristics of resources",
+    "Analyze different classifications of resources with examples",
+    "Understand the concept of sustainable development and its importance",
+    "Examine the process and importance of resource planning in India",
+    "Interpret land use patterns and factors affecting land utilization",
+    "Investigate causes of land degradation and methods of conservation",
+    "Compare different soil types and explain soil conservation methods"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Concept of Resources",
+      "topics_covered": [
+        "Definition of resources",
+        "Human role in resource development",
+        "Relationship between nature, technology and institutions"
+      ],
+      "teaching_strategy": [
+        "Concept explanation using diagrams",
+        "Discussion on resources used in daily life",
+        "Questioning to connect human activities with resource use"
+      ],
+      "student_activities": [
+        "Identify ten resources used at home or school",
+        "Classify them as natural or human-made resources"
+      ],
+      "assessment": ["Oral questioning", "Notebook activity"]
+    },
+    {
+      "period": 2,
+      "title": "Classification of Resources",
+      "topics_covered": [
+        "Biotic and abiotic resources",
+        "Renewable and non-renewable resources",
+        "Ownership of resources",
+        "Status of development of resources"
+      ],
+      "teaching_strategy": [
+        "Tabular comparison of resource types",
+        "Examples from local environment",
+        "Interactive board work"
+      ],
+      "student_activities": [
+        "Prepare a classification table of resources",
+        "Give examples of each type"
+      ],
+      "assessment": ["Short written questions", "Peer checking"]
+    },
+    {
+      "period": 3,
+      "title": "Sustainable Development",
+      "topics_covered": [
+        "Meaning of sustainable development",
+        "Environmental issues due to resource exploitation",
+        "Importance of conservation"
+      ],
+      "teaching_strategy": [
+        "Case discussion about environmental problems",
+        "Explanation of sustainable development concept"
+      ],
+      "student_activities": [
+        "Discuss ways to reduce resource wastage",
+        "Write examples of sustainable practices"
+      ],
+      "assessment": ["Group discussion evaluation", "Short written reflection"]
+    },
+    {
+      "period": 4,
+      "title": "Resource Planning in India",
+      "topics_covered": [
+        "Need for resource planning",
+        "Steps involved in resource planning",
+        "Regional disparities in resource distribution"
+      ],
+      "teaching_strategy": [
+        "Use of maps and regional examples",
+        "Flowchart explanation of planning steps"
+      ],
+      "student_activities": [
+        "Identify resource-rich and resource-poor states",
+        "Explain why planning is necessary"
+      ],
+      "assessment": ["Short written exercise", "Map-based questioning"]
+    },
+    {
+      "period": 5,
+      "title": "Land as a Resource and Land Use Pattern",
+      "topics_covered": [
+        "Importance of land resources",
+        "Land use categories",
+        "Factors influencing land use"
+      ],
+      "teaching_strategy": [
+        "Interpretation of land use charts",
+        "Discussion on agricultural and urban land use"
+      ],
+      "student_activities": [
+        "Observe land use types in the locality",
+        "Prepare a simple land use list"
+      ],
+      "assessment": ["Notebook work", "Teacher observation"]
+    },
+    {
+      "period": 6,
+      "title": "Land Degradation and Conservation",
+      "topics_covered": [
+        "Major causes of land degradation",
+        "Environmental impacts",
+        "Conservation methods"
+      ],
+      "teaching_strategy": [
+        "Explanation using case examples",
+        "Diagram-based explanation"
+      ],
+      "student_activities": [
+        "List causes of land degradation in India",
+        "Suggest practical conservation methods"
+      ],
+      "assessment": ["Short written answers", "Class discussion"]
+    },
+    {
+      "period": 7,
+      "title": "Soils of India and Soil Conservation",
+      "topics_covered": [
+        "Major soil types in India",
+        "Soil erosion types",
+        "Soil conservation techniques"
+      ],
+      "teaching_strategy": [
+        "Map work showing soil distribution",
+        "Explanation using soil profile diagrams"
+      ],
+      "student_activities": [
+        "Label soil types on India map",
+        "Draw and label a soil profile"
+      ],
+      "assessment": ["Short test (10 marks)", "Revision discussion"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Geography Textbook",
+    "India outline maps",
+    "Charts of soil types and land use"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Map-based activities",
+    "Short written tests",
+    "Group discussions"
+  ],
+  "teacher_tip": "Encourage students to relate environmental issues in their locality to concepts like resource conservation and sustainable development."
+}

@@ -1,0 +1,259 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 10: Heron’s Formula",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T01:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A triangle has sides 7 cm, 24 cm, 25 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+24+25)/2 = 28, Area = √[28(28-7)(28-24)(28-25)] = √[28×21×4×3] = √7056 ≈ 84 cm²",
+            "key_points": [
+                "right-angled triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the area of a triangle with sides 8 cm, 15 cm, 17 cm.",
+            "answer": "s = (8+15+17)/2 = 20, Area = √[20(20-8)(20-15)(20-17)] = √[20×12×5×3] = √3600 = 60 cm²",
+            "key_points": [
+                "right-angled triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 3,
+            "question": "A triangle has sides 9 cm, 10 cm, 11 cm. Find its area.",
+            "answer": "s = (9+10+11)/2 = 15, Area = √[15(15-9)(15-10)(15-11)] = √[15×6×5×4] = √1800 ≈ 42.43 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 4,
+            "question": "An isosceles triangle has sides 10 cm, 10 cm, 12 cm. Find its area.",
+            "answer": "s = (10+10+12)/2 = 16, Area = √[16(16-10)(16-10)(16-12)] = √[16×6×6×4] = √2304 = 48 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "area calculation"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 5,
+            "question": "A triangle has sides 13 cm, 14 cm, 15 cm. Find its area.",
+            "answer": "s = (13+14+15)/2 = 21, Area = √[21(21-13)(21-14)(21-15)] = √[21×8×7×6] = √7056 ≈ 84 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 6,
+            "question": "A triangle has sides 6 cm, 7 cm, 8 cm. Find its area.",
+            "answer": "s = (6+7+8)/2 = 10.5, Area = √[10.5(10.5-6)(10.5-7)(10.5-8)] = √[10.5×4.5×3.5×2.5] ≈ √413.44 ≈ 20.33 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the area of a triangle with sides 5 cm, 12 cm, 13 cm.",
+            "answer": "s = (5+12+13)/2 = 15, Area = √[15(15-5)(15-12)(15-13)] = √[15×10×3×2] = √900 = 30 cm²",
+            "key_points": [
+                "right-angled triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 8,
+            "question": "An isosceles triangle has sides 5 cm, 5 cm, 6 cm. Find its area.",
+            "answer": "s = (5+5+6)/2 = 8, Area = √[8(8-5)(8-5)(8-6)] = √[8×3×3×2] = √144 = 12 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "area calculation"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 9,
+            "question": "A triangle has sides 7 cm, 10 cm, 12 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+10+12)/2 = 14.5, Area = √[14.5(14.5-7)(14.5-10)(14.5-12)] = √[14.5×7.5×4.5×2.5] ≈ √1223.44 ≈ 35 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the area of a triangle with sides 8 cm, 8 cm, 6 cm.",
+            "answer": "s = (8+8+6)/2 = 11, Area = √[11(11-8)(11-8)(11-6)] = √[11×3×3×5] = √495 ≈ 22.25 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "area calculation"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 11,
+            "question": "A triangle has sides 9 cm, 9 cm, 14 cm. Find its area using Heron’s formula.",
+            "answer": "s = (9+9+14)/2 = 16, Area = √[16(16-9)(16-9)(16-14)] = √[16×7×7×2] = √1568 ≈ 39.6 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the area of a triangle with sides 11 cm, 13 cm, 14 cm.",
+            "answer": "s = (11+13+14)/2 = 19, Area = √[19(19-11)(19-13)(19-14)] = √[19×8×6×5] = √4560 ≈ 67.5 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 13,
+            "question": "A triangle has sides 12 cm, 13 cm, 15 cm. Find its area using Heron’s formula.",
+            "answer": "s = (12+13+15)/2 = 20, Area = √[20(20-12)(20-13)(20-15)] = √[20×8×7×5] = √5600 ≈ 74.83 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 14,
+            "question": "A triangle has sides 6 cm, 8 cm, 10 cm. Find its area.",
+            "answer": "s = (6+8+10)/2 = 12, Area = √[12(12-6)(12-8)(12-10)] = √[12×6×4×2] = √576 = 24 cm²",
+            "key_points": [
+                "right-angled triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 15,
+            "question": "A triangle has sides 7 cm, 15 cm, 20 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+15+20)/2 = 21, Area = √[21(21-7)(21-15)(21-20)] = √[21×14×6×1] = √1764 = 42 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 16,
+            "question": "An isosceles triangle has sides 9 cm, 9 cm, 10 cm. Find its area.",
+            "answer": "s = (9+9+10)/2 = 14, Area = √[14(14-9)(14-9)(14-10)] = √[14×5×5×4] = √1400 ≈ 37.42 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the area of a triangle with sides 5 cm, 5 cm, 8 cm.",
+            "answer": "s = (5+5+8)/2 = 9, Area = √[9(9-5)(9-5)(9-8)] = √[9×4×4×1] = √144 = 12 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 18,
+            "question": "A triangle has sides 7 cm, 9 cm, 12 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+9+12)/2 = 14, Area = √[14(14-7)(14-9)(14-12)] = √[14×7×5×2] = √980 ≈ 31.3 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 19,
+            "question": "A triangle has sides 10 cm, 10 cm, 12 cm. Find its area.",
+            "answer": "s = (10+10+12)/2 = 16, Area = √[16(16-10)(16-10)(16-12)] = √[16×6×6×4] = √2304 = 48 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 20,
+            "question": "A triangle has sides 13 cm, 14 cm, 15 cm. Find its area using Heron’s formula.",
+            "answer": "s = (13+14+15)/2 = 21, Area = √[21(21-13)(21-14)(21-15)] = √[21×8×7×6] = √7056 ≈ 84 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 21,
+            "question": "A triangle has sides 6 cm, 9 cm, 12 cm. Find its area using Heron’s formula.",
+            "answer": "s = (6+9+12)/2 = 13.5, Area = √[13.5(13.5-6)(13.5-9)(13.5-12)] = √[13.5×7.5×4.5×1.5] ≈ √683.44 ≈ 26.14 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "A triangle has sides 5 cm, 6 cm, 7 cm. Find its area.",
+            "answer": "s = (5+6+7)/2 = 9, Area = √[9(9-5)(9-6)(9-7)] = √[9×4×3×2] = √216 ≈ 14.7 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 23,
+            "question": "An isosceles triangle has sides 7 cm, 7 cm, 10 cm. Find its area.",
+            "answer": "s = (7+7+10)/2 = 12, Area = √[12(12-7)(12-7)(12-10)] = √[12×5×5×2] = √600 ≈ 24.5 cm²",
+            "key_points": [
+                "isosceles triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 24,
+            "question": "A triangle has sides 8 cm, 10 cm, 12 cm. Find its area using Heron’s formula.",
+            "answer": "s = (8+10+12)/2 = 15, Area = √[15(15-8)(15-10)(15-12)] = √[15×7×5×3] = √1575 ≈ 39.68 cm²",
+            "key_points": [
+                "scalene triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "A triangle has sides 9 cm, 12 cm, 15 cm. Find its area.",
+            "answer": "s = (9+12+15)/2 = 18, Area = √[18(18-9)(18-12)(18-15)] = √[18×9×6×3] = √2916 = 54 cm²",
+            "key_points": [
+                "right-angled triangle",
+                "Heron's formula"
+            ],
+            "source_section": "Section 10.1"
+        }
+    ]
+}

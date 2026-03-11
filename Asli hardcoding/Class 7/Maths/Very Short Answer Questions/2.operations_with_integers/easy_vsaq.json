@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: OPERATIONS WITH INTEGERS",
+    "generated_at": "2026-03-05T03:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the sum of -5 and +8?",
+            "answer": "3",
+            "key_concepts": ["addition of integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the value of: (-10) + (-4)",
+            "answer": "-14",
+            "key_concepts": ["addition of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Subtract 7 from -3.",
+            "answer": "-10",
+            "key_concepts": ["subtraction of integers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the additive inverse of -15?",
+            "answer": "15",
+            "key_concepts": ["additive inverse"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the product: (-6) × 5",
+            "answer": "-30",
+            "key_concepts": ["multiplication of integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the result of (-4) × (-3)?",
+            "answer": "12",
+            "key_concepts": ["multiplication of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Divide -20 by 4.",
+            "answer": "-5",
+            "key_concepts": ["division of integers"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the value of: 0 ÷ (-9)",
+            "answer": "0",
+            "key_concepts": ["division involving zero"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the absolute value of -25?",
+            "answer": "25",
+            "key_concepts": ["absolute value"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Solve: 12 - (-5)",
+            "answer": "17",
+            "key_concepts": ["subtraction of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which is greater: -12 or -2?",
+            "answer": "-2",
+            "key_concepts": ["comparison of integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Calculate: (-2) × (-2) × (-2)",
+            "answer": "-8",
+            "key_concepts": ["repeated multiplication"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the sum of an integer and its additive inverse.",
+            "answer": "0",
+            "key_concepts": ["additive identity"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Divide -50 by -5.",
+            "answer": "10",
+            "key_concepts": ["division of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Solve: (-100) + 100",
+            "answer": "0",
+            "key_concepts": ["addition of integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the product of any integer and zero.",
+            "answer": "0",
+            "key_concepts": ["zero property of multiplication"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the predecessor of -1?",
+            "answer": "-2",
+            "key_concepts": ["predecessor"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the successor of -10?",
+            "answer": "-9",
+            "key_concepts": ["successor"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Simplify: 5 + (-5)",
+            "answer": "0",
+            "key_concepts": ["addition"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Evaluate: (-1) raised to the power 4.",
+            "answer": "1",
+            "key_concepts": ["powers of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Evaluate: (-1) raised to the power 5.",
+            "answer": "-1",
+            "key_concepts": ["powers of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Is the sum of two negative integers positive or negative?",
+            "answer": "Negative",
+            "key_concepts": ["properties of addition"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the missing number: (-8) + ___ = 0",
+            "answer": "8",
+            "key_concepts": ["additive inverse"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What integer multiplied by -1 gives 7?",
+            "answer": "-7",
+            "key_concepts": ["multiplication properties"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Solve: (-15) ÷ (-1)",
+            "answer": "15",
+            "key_concepts": ["division by -1"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        }
+    ]
+}

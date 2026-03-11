@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Connecting the Dots (Solid Shapes)",
+    "generated_at": "2026-03-06T00:07:30",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A polyhedron has 6 faces and 8 vertices. How many edges does it have?",
+            "options": {
+                "A": "10",
+                "B": "12",
+                "C": "14",
+                "D": "16"
+            },
+            "correct_answer": "B",
+            "explanation": "Using Euler's formula $F + V - E = 2$: $6 + 8 - E = 2 \\Rightarrow 14 - E = 2 \\Rightarrow E = 12$.",
+            "difficulty": "medium",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the shape of the horizontal cross-section of a vertical square pyramid?",
+            "options": {
+                "A": "Triangle",
+                "B": "Rectangle",
+                "C": "Square",
+                "D": "Trapezium"
+            },
+            "correct_answer": "C",
+            "explanation": "A horizontal slice parallel to the base of a square pyramid results in a smaller square.",
+            "difficulty": "medium",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 3,
+            "question": "How many vertices does a pentagonal prism have?",
+            "options": {
+                "A": "5",
+                "B": "7",
+                "C": "10",
+                "D": "15"
+            },
+            "correct_answer": "C",
+            "explanation": "A prism with an $n$-sided base has $2n$ vertices. For a pentagon, $n=5$, so $2 \\times 5 = 10$.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 4,
+            "question": "A net consists of one square and four identical isosceles triangles. Which solid does it form?",
+            "options": {
+                "A": "Square Prism",
+                "B": "Square Pyramid",
+                "C": "Triangular Prism",
+                "D": "Tetrahedron"
+            },
+            "correct_answer": "B",
+            "explanation": "The square is the base and the four triangles form the lateral sides of a square pyramid.",
+            "difficulty": "medium",
+            "source_section": "Nets"
+        },
+        {
+            "question_number": 5,
+            "question": "If you look at a cylinder from the top, you see a circle. What do you see if you look at it from the side?",
+            "options": {
+                "A": "Circle",
+                "B": "Rectangle",
+                "C": "Square",
+                "D": "Triangle"
+            },
+            "correct_answer": "B",
+            "explanation": "A cylinder viewed from the side (elevation) appears as a rectangle.",
+            "difficulty": "medium",
+            "source_section": "Views of Solids"
+        },
+        {
+            "question_number": 6,
+            "question": "The total number of edges in a hexagonal pyramid is:",
+            "options": {
+                "A": "6",
+                "B": "12",
+                "C": "18",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "A pyramid with an $n$-sided base has $2n$ edges. For a hexagon, $n=6$, so $2 \\times 6 = 12$.",
+            "difficulty": "medium",
+            "source_section": "Pyramids"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of these cannot be the number of faces, vertices, and edges of a polyhedron?",
+            "options": {
+                "A": "F=4, V=4, E=6",
+                "B": "F=6, V=8, E=12",
+                "C": "F=5, V=6, E=8",
+                "D": "F=7, V=10, E=15"
+            },
+            "correct_answer": "C",
+            "explanation": "Using Euler's formula $F + V - E = 2$: $5 + 6 - 8 = 3$. Since this doesn't equal 2, such a solid cannot exist.",
+            "difficulty": "medium",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 8,
+            "question": "A net with two circles and one rectangle forms a:",
+            "options": {
+                "A": "Cone",
+                "B": "Cylinder",
+                "C": "Sphere",
+                "D": "Prism"
+            },
+            "correct_answer": "B",
+            "explanation": "The two circles are the top and bottom bases, and the rectangle wraps around to form the curved surface.",
+            "difficulty": "medium",
+            "source_section": "Nets"
+        },
+        {
+            "question_number": 9,
+            "question": "How many triangular faces does a triangular prism have?",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "A",
+            "explanation": "A triangular prism has 2 identical triangular bases and 3 rectangular sides.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the cross-section of a dice cut vertically through the middle?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Circle",
+                "D": "Triangle"
+            },
+            "correct_answer": "A",
+            "explanation": "A dice is a cube. Slicing a cube vertically or horizontally through its middle results in a square.",
+            "difficulty": "medium",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 11,
+            "question": "If you cut a sphere in half, the flat face of the resulting hemisphere is a:",
+            "options": {
+                "A": "Sphere",
+                "B": "Semicircle",
+                "C": "Circle",
+                "D": "Oval"
+            },
+            "correct_answer": "C",
+            "explanation": "The cut through a sphere always creates a circular cross-section.",
+            "difficulty": "medium",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 12,
+            "question": "A prism has 7 faces. What is the shape of its base?",
+            "options": {
+                "A": "Triangle",
+                "B": "Square",
+                "C": "Pentagon",
+                "D": "Hexagon"
+            },
+            "correct_answer": "C",
+            "explanation": "Faces of a prism = $n + 2$. If $n + 2 = 7$, then $n = 5$ (Pentagon).",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 13,
+            "question": "Which solid has 1 vertex, 1 circular face, and 1 curved surface?",
+            "options": {
+                "A": "Cylinder",
+                "B": "Sphere",
+                "C": "Cone",
+                "D": "Hemisphere"
+            },
+            "correct_answer": "C",
+            "explanation": "This describes a cone (circular base, apex vertex).",
+            "difficulty": "medium",
+            "source_section": "Solid Identification"
+        },
+        {
+            "question_number": 14,
+            "question": "A polyhedron with 8 edges and 5 faces must have how many vertices?",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "Euler's formula: $5 + V - 8 = 2 \\Rightarrow V - 3 = 2 \\Rightarrow V = 5$.",
+            "difficulty": "medium",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 15,
+            "question": "A net with 4 triangles only (no square) forms a:",
+            "options": {
+                "A": "Square Pyramid",
+                "B": "Triangular Prism",
+                "C": "Triangular Pyramid",
+                "D": "Cube"
+            },
+            "correct_answer": "C",
+            "explanation": "A triangular pyramid (tetrahedron) is made up of 4 triangular faces.",
+            "difficulty": "medium",
+            "source_section": "Nets"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following is NOT a polyhedron?",
+            "options": {
+                "A": "Cube",
+                "B": "Cylinder",
+                "C": "Octahedron",
+                "D": "Pyramid"
+            },
+            "correct_answer": "B",
+            "explanation": "A polyhedron must have flat polygonal faces. A cylinder has a curved surface.",
+            "difficulty": "medium",
+            "source_section": "Polyhedrons"
+        },
+        {
+            "question_number": 17,
+            "question": "The total number of edges in a triangular prism is:",
+            "options": {
+                "A": "3",
+                "B": "6",
+                "C": "9",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "Prism edges = $3n$. For a triangle, $n=3$, so $3 \\times 3 = 9$.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 18,
+            "question": "If you look at an ice cream cone from the top (circular side), you see a circle. What do you see from the front?",
+            "options": {
+                "A": "Circle",
+                "B": "Rectangle",
+                "C": "Triangle",
+                "D": "Semicircle"
+            },
+            "correct_answer": "C",
+            "explanation": "From the front/side, a cone appears as a triangle.",
+            "difficulty": "medium",
+            "source_section": "Views of Solids"
+        },
+        {
+            "question_number": 19,
+            "question": "How many vertices does a hexagonal prism have?",
+            "options": {
+                "A": "6",
+                "B": "12",
+                "C": "18",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "Prism vertices = $2n$. For a hexagon, $n=6$, so $2 \\times 6 = 12$.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 20,
+            "question": "A cube and a square pyramid are joined together at their identical square bases. How many faces does the new solid have?",
+            "options": {
+                "A": "11",
+                "B": "9",
+                "C": "10",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "Cube has 6 faces, pyramid has 5. One face of each is lost (the shared base), so $(6-1) + (5-1) = 5 + 4 = 9$.",
+            "difficulty": "medium",
+            "source_section": "Combined Solids"
+        },
+        {
+            "question_number": 21,
+            "question": "A pyramid with a 10-sided base has how many faces?",
+            "options": {
+                "A": "10",
+                "B": "11",
+                "C": "12",
+                "D": "20"
+            },
+            "correct_answer": "B",
+            "explanation": "Pyramid faces = $n + 1$. If $n = 10$, faces = 11.",
+            "difficulty": "medium",
+            "source_section": "Pyramids"
+        },
+        {
+            "question_number": 22,
+            "question": "What happens to the number of vertices in a prism if the number of sides of its base is doubled?",
+            "options": {
+                "A": "Increases by 2",
+                "B": "Doubles",
+                "C": "Remains the same",
+                "D": "Triples"
+            },
+            "correct_answer": "B",
+            "explanation": "Vertices = $2n$. If $n$ becomes $2n$, vertices become $2(2n) = 4n$, which is double $2n$.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 23,
+            "question": "Which solid has 5 vertices, 5 faces, and 8 edges?",
+            "options": {
+                "A": "Triangular Prism",
+                "B": "Square Pyramid",
+                "C": "Pentagonal Pyramid",
+                "D": "Tetrahedron"
+            },
+            "correct_answer": "B",
+            "explanation": "Square pyramid: $V=4+1=5$, $F=4+1=5$, $E=2 \\times 4 = 8$.",
+            "difficulty": "medium",
+            "source_section": "Solid Identification"
+        },
+        {
+            "question_number": 24,
+            "question": "A vertical cut is made through a cone through its apex. The resulting cross-section is a:",
+            "options": {
+                "A": "Triangle",
+                "B": "Circle",
+                "C": "Rectangle",
+                "D": "Semicircle"
+            },
+            "correct_answer": "A",
+            "explanation": "Slicing a cone vertically through the tip reveals a triangular profile.",
+            "difficulty": "medium",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 25,
+            "question": "How many rectangular faces does a hexagonal prism have?",
+            "options": {
+                "A": "2",
+                "B": "6",
+                "C": "8",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "A prism with an $n$-sided base has $n$ rectangular lateral faces.",
+            "difficulty": "medium",
+            "source_section": "Prisms"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Statistics",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the meaning of statistics",
+        "Identify different types of data",
+        "Learn measures of central tendency",
+        "Calculate mean, median, and mode for simple data",
+        "Represent data using basic graphs",
+        "Interpret data from tables and graphs"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Statistics",
+            "topics_covered": [
+                "Meaning of statistics",
+                "Uses of statistics",
+                "Examples from daily life"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Real-life examples",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Discuss examples of data around them",
+                "List situations where data is used"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick recap"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Collection and Types of Data",
+            "topics_covered": [
+                "Primary data",
+                "Secondary data",
+                "Discrete and continuous data"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Comparison method"
+            ],
+            "student_activities": [
+                "Classify given data",
+                "Collect simple data from classmates"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Arithmetic Mean",
+            "topics_covered": [
+                "Meaning of mean",
+                "Formula for mean",
+                "Simple numerical problems"
+            ],
+            "teaching_strategy": [
+                "Step-by-step numerical explanation",
+                "Board demonstration"
+            ],
+            "student_activities": [
+                "Calculate mean of small data sets",
+                "Verify answers in pairs"
+            ],
+            "assessment": [
+                "Numerical problems",
+                "Notebook review"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Median",
+            "topics_covered": [
+                "Meaning of median",
+                "Arranging data",
+                "Finding median for odd and even data"
+            ],
+            "teaching_strategy": [
+                "Activity-based explanation",
+                "Use of number line"
+            ],
+            "student_activities": [
+                "Arrange data in order",
+                "Find median of given data"
+            ],
+            "assessment": [
+                "Worksheet problems",
+                "Short quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Mode and Graphical Representation",
+            "topics_covered": [
+                "Meaning of mode",
+                "Bar graphs",
+                "Introduction to histograms"
+            ],
+            "teaching_strategy": [
+                "Visual explanation",
+                "Graph drawing demonstration"
+            ],
+            "student_activities": [
+                "Identify mode from data",
+                "Draw simple bar graphs"
+            ],
+            "assessment": [
+                "Graph-based questions",
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "Mean, median, and mode",
+                "Data interpretation",
+                "Overall chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session",
+                "Revision discussion"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Graph paper",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Numerical problems",
+        "Graph-based questions"
+    ],
+    "teacher_tip": "Ensure students arrange data correctly before finding mean, median, or mode, as most mistakes occur at this step."
+}

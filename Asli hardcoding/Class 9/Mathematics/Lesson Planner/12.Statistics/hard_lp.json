@@ -1,0 +1,155 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Statistics",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Construct and interpret complex frequency distributions",
+        "Draw histograms, cumulative frequency graphs (less than/greater than type), and frequency polygons",
+        "Compute mean, median, and mode using different methods for grouped and ungrouped data",
+        "Apply statistical measures to solve real-life problems",
+        "Analyze data patterns and draw conclusions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Data Grouping",
+            "topics_covered": [
+                "Unequal class intervals",
+                "Handling open-ended data",
+                "Constructing complex frequency tables"
+            ],
+            "teaching_strategy": [
+                "Explain interval selection techniques",
+                "Demonstrate handling of open-ended classes"
+            ],
+            "student_activities": [
+                "Group raw data into appropriate classes",
+                "Construct frequency tables with unequal intervals"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short problem-solving exercises"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Histograms and Frequency Polygons",
+            "topics_covered": [
+                "Constructing histograms for unequal class widths",
+                "Drawing frequency polygons",
+                "Interpreting data patterns"
+            ],
+            "teaching_strategy": [
+                "Board demonstration with stepwise plotting",
+                "Discuss common mistakes in scaling"
+            ],
+            "student_activities": [
+                "Draw histograms and frequency polygons from complex tables",
+                "Interpret peak, spread, and trends"
+            ],
+            "assessment": [
+                "Accuracy of plots",
+                "Peer verification of graphs"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Cumulative Frequency Graphs – Ogive",
+            "topics_covered": [
+                "Less than and greater than cumulative frequency",
+                "Reading median, quartiles, and percentiles from ogives"
+            ],
+            "teaching_strategy": [
+                "Explain plotting of both types of cumulative graphs",
+                "Use real-life examples (marks, income data)"
+            ],
+            "student_activities": [
+                "Plot less than and greater than ogives",
+                "Find median and quartiles from graphs"
+            ],
+            "assessment": [
+                "Graph accuracy",
+                "Short numerical verification"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Mean of Grouped Data – Assumed and Step Deviation Method",
+            "topics_covered": [
+                "Review direct method",
+                "Introduce assumed mean method",
+                "Step deviation method for large numbers"
+            ],
+            "teaching_strategy": [
+                "Demonstrate stepwise calculations",
+                "Solve examples on board with large data sets"
+            ],
+            "student_activities": [
+                "Compute mean using all three methods",
+                "Compare results and advantages"
+            ],
+            "assessment": [
+                "Numerical exercises",
+                "Peer comparison of methods"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Median and Mode – Advanced Problems",
+            "topics_covered": [
+                "Median for grouped data",
+                "Mode using formula for grouped data",
+                "Handling continuous and discrete data"
+            ],
+            "teaching_strategy": [
+                "Work on stepwise formula application",
+                "Solve real-life statistical problems"
+            ],
+            "student_activities": [
+                "Find median and mode from complex frequency tables",
+                "Analyze data patterns and write conclusions"
+            ],
+            "assessment": [
+                "Short numerical tests",
+                "Class discussion of results"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision & Application-based Problems",
+            "topics_covered": [
+                "Mixed exercises covering all concepts",
+                "Interpretation of graphs and data",
+                "Application to population, economics, and exam scores"
+            ],
+            "teaching_strategy": [
+                "Group problem-solving",
+                "Discussion on data-driven decision making"
+            ],
+            "student_activities": [
+                "Solve mixed questions from past papers",
+                "Draw conclusions and discuss anomalies in data"
+            ],
+            "assessment": [
+                "Class quiz",
+                "Notebook checking"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Graph paper, rulers, markers",
+        "Blackboard/whiteboard",
+        "NCERT Mathematics textbook",
+        "Sample surveys and real-life datasets"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs and problem-solving exercises",
+        "Peer discussion and group activities"
+    ],
+    "teacher_tip": "Emphasize the difference between less than and greater than ogives and encourage students to choose the correct method for mean, median, and mode based on data complexity."
+}

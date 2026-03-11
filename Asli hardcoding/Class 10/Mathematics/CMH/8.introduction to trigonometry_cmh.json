@@ -1,0 +1,67 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter: Introduction to Trigonometry",
+    "generated_at": "2026-02-28T09:40:00",
+    "concepts": [
+        {
+            "concept_name": "Trigonometric Ratios",
+            "difficulty": "easy",
+            "lesson": "Trigonometric ratios are ratios of the sides of a right-angled triangle with respect to one of its acute angles. These ratios relate the angles of a triangle to the lengths of its sides, making it possible to calculate unknown distances and angles. Trigonometric ratios are defined only for right-angled triangles and form the foundation of trigonometry. They are widely used in geometry, physics, engineering, and real-life measurements.",
+            "real_example": "Finding the height of a tree using its shadow length.",
+            "key_points": [
+                "Defined only for right-angled triangles",
+                "Based on acute angles",
+                "Relate sides and angles"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "concept_name": "Six Trigonometric Ratios",
+            "difficulty": "easy",
+            "lesson": "There are six basic trigonometric ratios: sine, cosine, tangent, cosecant, secant, and cotangent. Each ratio is defined as a comparison between specific sides of a right-angled triangle with respect to an acute angle. These ratios allow different relationships between sides and angles to be expressed and are essential tools for solving trigonometric problems.",
+            "real_example": "Using sine and cosine to locate directions in navigation.",
+            "key_points": [
+                "sin θ = Perpendicular / Hypotenuse",
+                "cos θ = Base / Hypotenuse",
+                "tan θ = Perpendicular / Base"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "concept_name": "Reciprocal Trigonometric Ratios",
+            "difficulty": "medium",
+            "lesson": "Cosecant, secant, and cotangent are called reciprocal trigonometric ratios because they are reciprocals of sine, cosine, and tangent respectively. Understanding these reciprocal relationships reduces the number of formulas that need to be memorized and simplifies calculations. Reciprocal ratios are especially useful when a trigonometric ratio is given and its inverse form is required.",
+            "real_example": "Finding cosec θ once sin θ is known.",
+            "key_points": [
+                "cosec θ = 1 / sin θ",
+                "sec θ = 1 / cos θ",
+                "cot θ = 1 / tan θ"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "concept_name": "Trigonometric Ratios of Standard Angles",
+            "difficulty": "medium",
+            "lesson": "The trigonometric ratios of standard angles such as 0°, 30°, 45°, 60°, and 90° have fixed values. These values are derived using special right-angled triangles and are frequently used in solving numerical problems. Memorising or understanding these values allows quick and accurate calculations in trigonometry and related applications.",
+            "real_example": "Calculating slope using tan 45°.",
+            "key_points": [
+                "Standard angles have fixed values",
+                "Frequently used in problems",
+                "Values can be memorized using tables"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "concept_name": "Trigonometric Identities",
+            "difficulty": "hard",
+            "lesson": "Trigonometric identities are equations involving trigonometric ratios that are true for all permissible values of the angle. These identities are used to simplify expressions, verify equations, and solve trigonometric problems. The most fundamental identities connect sine, cosine, tangent, secant, cosecant, and cotangent, and mastering them is essential for higher-level trigonometry.",
+            "real_example": "Using sin²θ + cos²θ = 1 to find missing values.",
+            "key_points": [
+                "sin²θ + cos²θ = 1",
+                "sec²θ − tan²θ = 1",
+                "cosec²θ − cot²θ = 1"
+            ],
+            "source_section": "Section 8.4"
+        }
+    ]
+}

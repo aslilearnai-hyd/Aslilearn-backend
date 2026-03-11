@@ -1,0 +1,313 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Proportional Reasoning – 2",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-04T18:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Verify whether the ratios 6:3 and 4:2 are proportional.",
+      "answer": "Using cross multiplication: 6 × 2 = 12 and 3 × 4 = 12. Since both are equal, the ratios are proportional.",
+      "answer_outline": [
+        "Write the ratios",
+        "Apply cross multiplication",
+        "Compare results"
+      ],
+      "key_concepts": ["proportion", "cross multiplication"],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the method used to check whether two ratios are proportional.",
+      "answer": "Two ratios a:b and c:d are proportional if a × d = b × c. This is called cross multiplication.",
+      "answer_outline": [
+        "State rule",
+        "Explain with example"
+      ],
+      "key_concepts": ["proportion"],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "On a map the scale is 1:6000000. What real distance does 1 cm represent?",
+      "answer": "1 cm on the map represents 6,000,000 cm in reality, which equals 60 km.",
+      "answer_outline": [
+        "Write scale",
+        "Convert cm to km"
+      ],
+      "key_concepts": ["map scale", "representative fraction"],
+      "marks": 5,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how ratios can have more than two terms with an example.",
+      "answer": "Ratios can compare multiple quantities. Example: 8:4:2:1 representing ingredients in a spice mixture.",
+      "answer_outline": [
+        "Definition",
+        "Example"
+      ],
+      "key_concepts": ["multi-term ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Reduce the ratio 12:8:4 to its simplest form.",
+      "answer": "Divide each term by 4. Simplified ratio = 3:2:1.",
+      "answer_outline": [
+        "Find HCF",
+        "Divide each term"
+      ],
+      "key_concepts": ["ratio simplification"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Divide 60 in the ratio 2:3.",
+      "answer": "Total ratio = 5. Each part = 60/5 = 12. Shares = 24 and 36.",
+      "answer_outline": [
+        "Add ratio terms",
+        "Divide quantity",
+        "Calculate shares"
+      ],
+      "key_concepts": ["ratio division"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Divide 90 in the ratio 3:2:1.",
+      "answer": "Sum = 6. Each part = 90/6 = 15. Shares = 45, 30, and 15.",
+      "answer_outline": [
+        "Add ratio terms",
+        "Divide total",
+        "Multiply ratios"
+      ],
+      "key_concepts": ["ratio division"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Find the angles of a triangle whose angles are in the ratio 2:3:4.",
+      "answer": "Sum of ratios = 9. Angles = 40°, 60°, and 80°.",
+      "answer_outline": [
+        "Sum ratios",
+        "Divide 180°",
+        "Multiply ratios"
+      ],
+      "key_concepts": ["angle ratios"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain what a pie chart represents.",
+      "answer": "A pie chart represents proportions of a whole using sectors of a circle.",
+      "answer_outline": [
+        "Definition",
+        "Purpose"
+      ],
+      "key_concepts": ["pie chart"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "How are angles calculated in a pie chart?",
+      "answer": "Angle = (value / total) × 360°.",
+      "answer_outline": [
+        "Write formula",
+        "Explain usage"
+      ],
+      "key_concepts": ["pie chart angles"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 11,
+      "question": "A class has 40 students. If 12 scored A grade, find the angle for the sector.",
+      "answer": "Angle = (12/40) × 360 = 108°.",
+      "answer_outline": [
+        "Find fraction",
+        "Multiply by 360°"
+      ],
+      "key_concepts": ["pie chart"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain direct proportion with an example.",
+      "answer": "Two quantities are directly proportional if their ratio remains constant.",
+      "answer_outline": [
+        "Definition",
+        "Example"
+      ],
+      "key_concepts": ["direct proportion"],
+      "marks": 4,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain inverse proportion with an example.",
+      "answer": "Two quantities are inversely proportional if their product remains constant.",
+      "answer_outline": [
+        "Definition",
+        "Example"
+      ],
+      "key_concepts": ["inverse proportion"],
+      "marks": 4,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the relationship between speed and time.",
+      "answer": "Speed and time are inversely proportional for a fixed distance.",
+      "answer_outline": [
+        "Fixed distance concept",
+        "Inverse relation"
+      ],
+      "key_concepts": ["speed-time relation"],
+      "marks": 4,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 15,
+      "question": "If 5 workers move 4500 bricks in one day, how many workers are needed for 9000 bricks?",
+      "answer": "Workers = (9000 × 5)/4500 = 10.",
+      "answer_outline": [
+        "Use proportion",
+        "Solve equation"
+      ],
+      "key_concepts": ["direct proportion"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why proportional reasoning is useful in daily life.",
+      "answer": "It helps solve problems related to cooking, travel, construction, and scaling.",
+      "answer_outline": [
+        "Real-life uses",
+        "Examples"
+      ],
+      "key_concepts": ["proportional reasoning"],
+      "marks": 4,
+      "source_section": "Chapter overview"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how recipes use ratios.",
+      "answer": "Recipes maintain the same taste by keeping ingredient ratios constant.",
+      "answer_outline": [
+        "Concept",
+        "Example"
+      ],
+      "key_concepts": ["mixture ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of map scales.",
+      "answer": "Map scales allow large distances to be represented on small maps accurately.",
+      "answer_outline": [
+        "Purpose",
+        "Example"
+      ],
+      "key_concepts": ["map scale"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain equivalent ratios.",
+      "answer": "Equivalent ratios are ratios that represent the same relationship between quantities.",
+      "answer_outline": [
+        "Definition",
+        "Example"
+      ],
+      "key_concepts": ["equivalent ratios"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how ratios help maintain mixture consistency.",
+      "answer": "Ratios ensure ingredients are combined in correct proportions.",
+      "answer_outline": [
+        "Definition",
+        "Application"
+      ],
+      "key_concepts": ["mixture ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain scaling in ratios.",
+      "answer": "Scaling means multiplying or dividing all terms by the same factor.",
+      "answer_outline": [
+        "Definition",
+        "Example"
+      ],
+      "key_concepts": ["ratio scaling"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the difference between ratio and proportion.",
+      "answer": "A ratio compares quantities, while a proportion states that two ratios are equal.",
+      "answer_outline": [
+        "Definition ratio",
+        "Definition proportion"
+      ],
+      "key_concepts": ["ratio", "proportion"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how pie charts help in data interpretation.",
+      "answer": "Pie charts visually represent proportions making comparisons easier.",
+      "answer_outline": [
+        "Visual representation",
+        "Interpretation"
+      ],
+      "key_concepts": ["data representation"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how proportions are used in construction mixtures.",
+      "answer": "Materials like cement, sand, and gravel are mixed in fixed ratios to maintain strength.",
+      "answer_outline": [
+        "Construction mixtures",
+        "Importance"
+      ],
+      "key_concepts": ["engineering ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why inverse proportion is important in work problems.",
+      "answer": "Increasing workers reduces the time required because work rate increases.",
+      "answer_outline": [
+        "Inverse relation",
+        "Example"
+      ],
+      "key_concepts": ["work-time relation"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    }
+  ]
+}

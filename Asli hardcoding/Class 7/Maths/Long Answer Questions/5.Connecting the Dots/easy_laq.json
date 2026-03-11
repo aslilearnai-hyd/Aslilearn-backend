@@ -1,0 +1,389 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Connecting the Dots (Understanding Elementary Shapes)",
+    "generated_at": "2026-03-05T01:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are the three common methods used to compare the lengths of two line segments? Which one is the most accurate?",
+            "answer": "The three methods are: (1) Comparison by observation (looking), (2) Comparison by tracing, and (3) Comparison using a ruler and a divider. The most accurate method is using a ruler and a divider because it eliminates errors like parallax or paper movement.",
+            "answer_outline": [
+                "List the three methods",
+                "Explain the ruler/divider advantage",
+                "Identify the most accurate choice"
+            ],
+            "key_concepts": [
+                "measurement",
+                "accuracy",
+                "divider"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain 'Parallax Error' when measuring a line segment with a ruler.",
+            "answer": "Parallax error occurs when the eye is not positioned vertically above the mark being read. If you look at the ruler from an angle, the object's endpoint will appear to align with a different mark, leading to an incorrect measurement.",
+            "answer_outline": [
+                "Define the error",
+                "Explain the cause (eye position)",
+                "State the result (incorrect reading)"
+            ],
+            "key_concepts": [
+                "parallax error",
+                "ruler measurement"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a 'Right Angle'? Give an example of where you can find one in a typical classroom.",
+            "answer": "A right angle is an angle that measures exactly 90 degrees. It looks like the corner of the letter 'L'. In a classroom, you can find right angles at the corners of a blackboard, a window, or a textbook.",
+            "answer_outline": [
+                "Define 90 degrees",
+                "Describe the visual shape",
+                "Provide real-world examples"
+            ],
+            "key_concepts": [
+                "right angle",
+                "90 degrees"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Define a 'Straight Angle' and explain its relationship to a right angle.",
+            "answer": "A straight angle is an angle that measures exactly 180 degrees. It forms a straight line. It is equivalent to two right angles joined together ($90 + 90 = 180$).",
+            "answer_outline": [
+                "Define 180 degrees",
+                "Describe its appearance (line)",
+                "Relate to right angles"
+            ],
+            "key_concepts": [
+                "straight angle",
+                "angle relationships"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a 'Complete Angle'? How many right angles make one complete angle?",
+            "answer": "A complete angle (or full turn) measures exactly 360 degrees. It occurs when a ray makes one full revolution. It consists of four right angles ($4 \\times 90 = 360$).",
+            "answer_outline": [
+                "Define 360 degrees",
+                "Explain the revolution concept",
+                "State the number of right angles"
+            ],
+            "key_concepts": [
+                "complete angle",
+                "revolution"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Classify the following angles as Acute, Obtuse, or Reflex: (a) 45°, (b) 120°, (c) 210°.",
+            "answer": "(a) 45° is Acute (less than 90°). (b) 120° is Obtuse (between 90° and 180°). (c) 210° is Reflex (greater than 180°).",
+            "answer_outline": [
+                "Apply definitions of angle types based on degree ranges"
+            ],
+            "key_concepts": [
+                "acute",
+                "obtuse",
+                "reflex"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a 'Protractor'? How do we use it to measure an angle?",
+            "answer": "A protractor is a semi-circular tool marked from 0 to 180 degrees. To measure an angle, place the center of the protractor on the vertex and align the zero line with one arm; read the value where the second arm crosses the scale.",
+            "answer_outline": [
+                "Tool definition",
+                "Step-by-step usage guide"
+            ],
+            "key_concepts": [
+                "protractor",
+                "angle measurement"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Define 'Perpendicular Lines'. Give an example from a letter of the alphabet.",
+            "answer": "Perpendicular lines are two lines that intersect at a right angle (90°). The letter 'T' and the letter 'L' are excellent examples where line segments are perpendicular.",
+            "answer_outline": [
+                "Define 90 degree intersection",
+                "Provide alphabet examples"
+            ],
+            "key_concepts": [
+                "perpendicular",
+                "intersection"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.5"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a 'Perpendicular Bisector'?",
+            "answer": "A perpendicular bisector is a line that passes through the midpoint of a line segment and is perpendicular to it. It divides the segment into two equal halves at a 90-degree angle.",
+            "answer_outline": [
+                "Define the two requirements (midpoint and 90 degrees)",
+                "Explain the effect on the segment"
+            ],
+            "key_concepts": [
+                "perpendicular bisector",
+                "midpoint"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Classify triangles based on their 'Sides'. Define each type.",
+            "answer": "1. Equilateral: All three sides are equal. 2. Isosceles: At least two sides are equal. 3. Scalene: All three sides have different lengths.",
+            "answer_outline": [
+                "List three types",
+                "Define each by side lengths"
+            ],
+            "key_concepts": [
+                "equilateral",
+                "isosceles",
+                "scalene"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Classify triangles based on their 'Angles'. Define each type.",
+            "answer": "1. Acute-angled: All angles are less than 90°. 2. Right-angled: One angle is exactly 90°. 3. Obtuse-angled: One angle is greater than 90°.",
+            "answer_outline": [
+                "List three types",
+                "Define each by internal angle measures"
+            ],
+            "key_concepts": [
+                "acute triangle",
+                "right triangle",
+                "obtuse triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a 'Quadrilateral'? Name four common types.",
+            "answer": "A quadrilateral is a four-sided polygon. Common types include Square, Rectangle, Parallelogram, and Rhombus.",
+            "answer_outline": [
+                "General definition",
+                "List 4 specific shapes"
+            ],
+            "key_concepts": [
+                "quadrilateral"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 13,
+            "question": "What are the specific properties of a 'Square' that make it different from a general 'Rectangle'?",
+            "answer": "While both have four right angles, a square must have all four sides equal in length. In a rectangle, only the opposite sides need to be equal.",
+            "answer_outline": [
+                "Mention shared property (90° angles)",
+                "Mention difference (all sides equal vs only opposite)"
+            ],
+            "key_concepts": [
+                "square",
+                "rectangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 14,
+            "question": "Define a 'Parallelogram'. What is special about its opposite sides?",
+            "answer": "A parallelogram is a quadrilateral where both pairs of opposite sides are parallel and equal in length.",
+            "answer_outline": [
+                "Define by parallel sides",
+                "Note equality of opposite sides"
+            ],
+            "key_concepts": [
+                "parallelogram",
+                "parallel"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a 'Rhombus'? How is it related to a Parallelogram?",
+            "answer": "A rhombus is a parallelogram that has all four sides of equal length. Every rhombus is a parallelogram, but not every parallelogram is a rhombus.",
+            "answer_outline": [
+                "Define by side equality",
+                "Explain the subset relationship"
+            ],
+            "key_concepts": [
+                "rhombus",
+                "parallelogram"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 16,
+            "question": "Define a 'Trapezium'.",
+            "answer": "A trapezium is a quadrilateral that has at least one pair of parallel sides.",
+            "answer_outline": [
+                "Define by single pair of parallel sides"
+            ],
+            "key_concepts": [
+                "trapezium"
+            ],
+            "marks": 2,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a 'Regular Polygon'?",
+            "answer": "A polygon is called regular if all its sides are equal in length and all its angles are equal in measure (equilateral and equiangular).",
+            "answer_outline": [
+                "State side requirement",
+                "State angle requirement"
+            ],
+            "key_concepts": [
+                "regular polygon"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.8"
+        },
+        {
+            "question_number": 18,
+            "question": "Name the polygons with the following number of sides: (a) 5 sides, (b) 6 sides, (c) 8 sides.",
+            "answer": "(a) Pentagon, (b) Hexagon, (c) Octagon.",
+            "answer_outline": [
+                "Provide names for 5, 6, and 8-sided figures"
+            ],
+            "key_concepts": [
+                "pentagon",
+                "hexagon",
+                "octagon"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.8"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the difference between a 2D shape and a 3D shape?",
+            "answer": "2D shapes have only two dimensions (length and width) and are flat. 3D shapes have three dimensions (length, width, and height/depth) and occupy space.",
+            "answer_outline": [
+                "Dimensions (2 vs 3)",
+                "Flatness vs volume"
+            ],
+            "key_concepts": [
+                "2D vs 3D",
+                "dimensions"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 20,
+            "question": "Define the following parts of a 3D solid: (a) Face, (b) Edge, (c) Vertex.",
+            "answer": "(a) Face: The flat surface of a solid. (b) Edge: The line segment where two faces meet. (c) Vertex: The point where three or more edges meet.",
+            "answer_outline": [
+                "Define surface",
+                "Define intersection of surfaces",
+                "Define intersection of edges"
+            ],
+            "key_concepts": [
+                "face",
+                "edge",
+                "vertex"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe a 'Cube'. How many faces, edges, and vertices does it have?",
+            "answer": "A cube is a 3D solid where all six faces are equal squares. It has 6 faces, 12 edges, and 8 vertices.",
+            "answer_outline": [
+                "Describe face shape",
+                "Provide count of F, E, V"
+            ],
+            "key_concepts": [
+                "cube",
+                "3D solids"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a 'Triangular Pyramid'? How many faces does it have?",
+            "answer": "A triangular pyramid (or tetrahedron) is a solid with a triangular base and three triangular faces meeting at a single vertex at the top. It has a total of 4 faces.",
+            "answer_outline": [
+                "Describe base and sides",
+                "State total faces"
+            ],
+            "key_concepts": [
+                "pyramid",
+                "tetrahedron"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the difference between a 'Prism' and a 'Pyramid'.",
+            "answer": "A prism has two identical parallel bases connected by rectangular faces. A pyramid has only one base, and all other triangular faces meet at a single point (vertex).",
+            "answer_outline": [
+                "Contrast bases (2 vs 1)",
+                "Describe side faces (rectangles vs triangles)"
+            ],
+            "key_concepts": [
+                "prism",
+                "pyramid"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 24,
+            "question": "Which 3D shape looks like: (a) A ball? (b) An unsharpened pencil? (c) An ice cream cone?",
+            "answer": "(a) Sphere, (b) Cylinder (assuming it's round), (c) Cone.",
+            "answer_outline": [
+                "Identify real-world object shapes"
+            ],
+            "key_concepts": [
+                "sphere",
+                "cylinder",
+                "cone"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 25,
+            "question": "What instrument is used to compare the lengths of two segments when a ruler alone might be difficult to position accurately?",
+            "answer": "A 'Divider' is used. Its two sharp ends can be placed precisely on the endpoints of a segment, and then transferred to a ruler for reading.",
+            "answer_outline": [
+                "Name the tool",
+                "Explain the two-step process (measure then transfer)"
+            ],
+            "key_concepts": [
+                "divider",
+                "precision"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.1"
+        }
+    ]
+}

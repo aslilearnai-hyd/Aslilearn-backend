@@ -1,0 +1,201 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Pair of Linear Equations in Two Variables",
+    "lesson_level": "Hard",
+    "total_periods": 9,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse systems of linear equations deeply using algebraic conditions",
+        "Interpret consistency using coefficient ratios and graphs",
+        "Solve complex word problems and reasoning-based questions",
+        "Connect graphical and algebraic interpretations",
+        "Develop logical reasoning for exam-oriented problems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Revision and Concept Analysis",
+            "topics_covered": [
+                "Nature of solutions",
+                "Graphical interpretation"
+            ],
+            "teaching_strategy": [
+                "Conceptual questioning",
+                "Case-based discussion"
+            ],
+            "student_activities": [
+                "Predict type of solution",
+                "Justify answers"
+            ],
+            "assessment": [
+                "Oral reasoning questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Deep Study of Consistency Conditions",
+            "topics_covered": [
+                "a₁/a₂, b₁/b₂, c₁/c₂ conditions",
+                "Geometric meaning"
+            ],
+            "teaching_strategy": [
+                "Algebra–geometry linkage",
+                "Worked reasoning examples"
+            ],
+            "student_activities": [
+                "Analyse coefficient ratios",
+                "Classify systems"
+            ],
+            "assessment": [
+                "Short analytical questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complex Algebraic Solutions",
+            "topics_covered": [
+                "Choosing suitable algebraic method",
+                "Multi-step solving"
+            ],
+            "teaching_strategy": [
+                "Problem-based learning",
+                "Guided solution strategy"
+            ],
+            "student_activities": [
+                "Solve challenging equation pairs",
+                "Explain solution path"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Graphical vs Algebraic Reasoning",
+            "topics_covered": [
+                "Accuracy of solutions",
+                "Limitations of graphical method"
+            ],
+            "teaching_strategy": [
+                "Comparative discussion",
+                "Error analysis"
+            ],
+            "student_activities": [
+                "Compare solutions",
+                "Discuss discrepancies"
+            ],
+            "assessment": [
+                "Reasoning-based worksheet"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Higher-Order Word Problems",
+            "topics_covered": [
+                "Complex real-life problems",
+                "Interpretation of solutions"
+            ],
+            "teaching_strategy": [
+                "Problem decomposition",
+                "Think–solve–explain approach"
+            ],
+            "student_activities": [
+                "Frame equations independently",
+                "Present logical solutions"
+            ],
+            "assessment": [
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Special Cases and Exceptions",
+            "topics_covered": [
+                "No solution cases",
+                "Infinite solution cases"
+            ],
+            "teaching_strategy": [
+                "Exception-based teaching",
+                "Counterexample discussion"
+            ],
+            "student_activities": [
+                "Identify special cases",
+                "Explain reasoning"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Integrated Practice Session",
+            "topics_covered": [
+                "Mixed HOTS problems",
+                "Board-exam oriented questions"
+            ],
+            "teaching_strategy": [
+                "Worksheet-based practice",
+                "Teacher feedback"
+            ],
+            "student_activities": [
+                "Solve integrated worksheet",
+                "Peer review"
+            ],
+            "assessment": [
+                "Worksheet evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Mock Test and Analysis",
+            "topics_covered": [
+                "Full chapter test",
+                "Common errors"
+            ],
+            "teaching_strategy": [
+                "Mock assessment",
+                "Error analysis discussion"
+            ],
+            "student_activities": [
+                "Attempt test",
+                "Analyse mistakes"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 9,
+            "title": "Final Revision and Concept Consolidation",
+            "topics_covered": [
+                "All concepts",
+                "Exam strategy"
+            ],
+            "teaching_strategy": [
+                "Rapid recap",
+                "Strategy discussion"
+            ],
+            "student_activities": [
+                "Ask doubts",
+                "Participate in recap quiz"
+            ],
+            "assessment": [
+                "Oral assessment"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "Worksheets",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Reasoning-based questions",
+        "Written tests",
+        "Worksheet analysis",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Train students to identify the nature of solutions quickly using coefficient ratios—this is crucial for HOTS and board exams."
+}

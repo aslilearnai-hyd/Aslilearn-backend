@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Control and Coordination",
+    "difficulty": "Easy",
+    "source_pdf": "jesc106.pdf",
+    "short_notes": {
+        "key_points": [
+            "Control and coordination in animals are provided by the nervous and muscular tissues.",
+            "The nervous system is made up of an organized network of nerve cells or neurons, which are specialized for conducting information via electrical impulses.",
+            "Receptors are specialized tips of some nerve cells that detect information from our environment (e.g., gustatory receptors for taste).",
+            "A reflex action is a sudden, involuntary response to a stimulus (like pulling your hand away from a hot object).",
+            "The brain and spinal cord constitute the Central Nervous System (CNS), which receives and integrates information from all parts of the body."
+        ],
+        "examples": [
+            "Sensory Receptors: Photoreceptors in eyes for light, Phonoreceptors in ears for sound, and Olfactory receptors for smell.",
+            "Reflex Arc: The pathway through which a reflex impulse travels—from the receptor to the spinal cord and back to the effector muscle.",
+            "Voluntary Action: Actions controlled by the brain that require thinking, such as writing or walking in a straight line.",
+            "Involuntary Action: Actions not under our conscious control, such as heartbeat, digestion, and pupil size change.",
+            "Plant Movement: The drooping of leaves in a 'touch-me-not' plant (Mimosa pudica) in response to touch."
+        ],
+        "formulas": [
+            "Nerve Impulse Pathway: $\text{Dendrite} \rightarrow \text{Cell Body} \rightarrow \text{Axon} \rightarrow \text{Nerve Ending}$",
+            "Reflex Arc Sequence: $\text{Stimulus} \rightarrow \text{Receptor} \rightarrow \text{Sensory Neuron} \rightarrow \text{Spinal Cord} \rightarrow \text{Motor Neuron} \rightarrow \text{Effector}$",
+            "Synapse Function: $\text{Electrical Signal} \rightarrow \text{Chemical Signal (Neurotransmitter)} \rightarrow \text{Electrical Signal}$"
+        ],
+        "exam_tips": [
+            "Remember that the synapse is the small gap between two neurons where information is transmitted chemically.",
+            "Identify the 'Spinal Cord' as the primary center for reflex actions to save time for the brain.",
+            "Note that the Cerebellum (part of the hindbrain) is responsible for precision of voluntary actions and maintaining body posture/balance.",
+            "Understand that while the brain is the main coordinating center, the spinal cord handles quick responses to prevent injury."
+        ]
+    }
+}

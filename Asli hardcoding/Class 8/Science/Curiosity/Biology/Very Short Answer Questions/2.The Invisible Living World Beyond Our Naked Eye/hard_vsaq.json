@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "generated_at": "2026-03-05T16:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why was the invention of the microscope important for biology?",
+      "answer": "It allowed scientists to observe cells and microorganisms.",
+      "key_points": ["microscope"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What discovery did Robert Hooke make using cork?",
+      "answer": "He discovered cells.",
+      "key_points": ["cell discovery"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why are cells considered the structural unit of life?",
+      "answer": "All organisms are made up of cells.",
+      "key_points": ["cells"],
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 4,
+      "question": "What property of the cell membrane controls material movement?",
+      "answer": "Selective permeability.",
+      "key_points": ["cell membrane"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which cell component contains genetic material?",
+      "answer": "Nucleus.",
+      "key_points": ["nucleus"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What type of organism performs all life functions within one cell?",
+      "answer": "Unicellular organism.",
+      "key_points": ["unicellular"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which microorganism is responsible for fermentation in bread making?",
+      "answer": "Yeast.",
+      "key_points": ["yeast"],
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 8,
+      "question": "What chemical change occurs when milk turns into curd?",
+      "answer": "Lactose converts into lactic acid.",
+      "key_points": ["curd formation"],
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Why are decomposer microorganisms essential in ecosystems?",
+      "answer": "They recycle nutrients from dead organisms.",
+      "key_points": ["decomposition"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Which bacteria improve soil fertility through nitrogen fixation?",
+      "answer": "Rhizobium.",
+      "key_points": ["rhizobium"],
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Where do Rhizobium bacteria live?",
+      "answer": "Root nodules of leguminous plants.",
+      "key_points": ["rhizobium"],
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are microalgae important for oxygen production?",
+      "answer": "They perform photosynthesis.",
+      "key_points": ["microalgae"],
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "What ecological role do microorganisms play in nutrient cycles?",
+      "answer": "They decompose organic matter and recycle nutrients.",
+      "key_points": ["ecosystem"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 14,
+      "question": "What structure provides rigidity to plant cells?",
+      "answer": "Cell wall.",
+      "key_points": ["cell wall"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the functional unit of life?",
+      "answer": "Cell.",
+      "key_points": ["cell"],
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "What group of microorganisms includes yeast?",
+      "answer": "Fungi.",
+      "key_points": ["fungi"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which microorganism is commonly found in pond water?",
+      "answer": "Amoeba.",
+      "key_points": ["amoeba"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 18,
+      "question": "What biological process converts sugars into alcohol or acids?",
+      "answer": "Fermentation.",
+      "key_points": ["fermentation"],
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Why is compost beneficial for soil?",
+      "answer": "It enriches soil with nutrients.",
+      "key_points": ["compost"],
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which process converts atmospheric nitrogen into plant nutrients?",
+      "answer": "Nitrogen fixation.",
+      "key_points": ["nitrogen fixation"],
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are microorganisms vital for agriculture?",
+      "answer": "They improve soil fertility and nutrient availability.",
+      "key_points": ["agriculture"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which part of the cell contains organelles responsible for metabolism?",
+      "answer": "Cytoplasm.",
+      "key_points": ["cytoplasm"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What is microbiology?",
+      "answer": "The study of microorganisms.",
+      "key_points": ["microbiology"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are microorganisms important for ecosystem balance?",
+      "answer": "They recycle nutrients and support food chains.",
+      "key_points": ["ecosystem"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main reason microorganisms are called the invisible living world?",
+      "answer": "They are living organisms that are too small to be seen without magnification.",
+      "key_points": ["microorganisms"],
+      "source_section": "Introduction"
+    }
+  ]
+}

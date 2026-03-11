@@ -1,0 +1,180 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter_name": "The Story of Village Palampur",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the basic concepts of production and its requirements",
+        "Learn about the farming and non-farming activities in a village",
+        "Understand the impact of the Green Revolution and modern farming methods",
+        "Analyze the distribution of land and labor in rural areas",
+        "Differentiate between fixed capital and working capital",
+        "Identify the role of human capital in production"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Palampur & Factors of Production",
+            "topics_covered": [
+                "Overview of the village Palampur",
+                "Four factors of production: Land, Labour, Physical Capital, and Human Capital",
+                "Fixed vs. Working Capital"
+            ],
+            "teaching_strategy": [
+                "Narrative storytelling to describe the village",
+                "Table-based classification of production factors"
+            ],
+            "student_activities": [
+                "Identify production factors in a local shop or farm",
+                "Classify items as Fixed or Working Capital"
+            ],
+            "assessment": [
+                "Oral quiz on the four requirements of production",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Farming in Palampur: Land and Irrigation",
+            "topics_covered": [
+                "Land as a fixed resource",
+                "Ways to increase production: Multiple cropping",
+                "Development of irrigation and electricity"
+            ],
+            "teaching_strategy": [
+                "Comparative discussion on traditional vs. modern irrigation",
+                "Using diagrams to explain seasonal crop cycles"
+            ],
+            "student_activities": [
+                "Draw a seasonal crop calendar (Kharif and Rabi)",
+                "Discuss the impact of electricity on village life"
+            ],
+            "assessment": [
+                "Short written explanation of multiple cropping",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Modern Farming & the Green Revolution",
+            "topics_covered": [
+                "Introduction of HYV seeds",
+                "Green Revolution in India",
+                "Benefits of modern farming methods"
+            ],
+            "teaching_strategy": [
+                "Presentation of data comparing traditional and HYV yields",
+                "Video clip or photos of the Green Revolution in Punjab/Haryana"
+            ],
+            "student_activities": [
+                "List modern inputs required for farming (fertilizers, pesticides, etc.)",
+                "Calculate yield differences from textbook examples"
+            ],
+            "assessment": [
+                "MCQ on the Green Revolution",
+                "Peer discussion on yield increase"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Sustainability and Land Distribution",
+            "topics_covered": [
+                "Environmental impact of chemical fertilizers",
+                "Depletion of groundwater",
+                "Unequal distribution of land among families"
+            ],
+            "teaching_strategy": [
+                "Case study discussion on soil health",
+                "Using a pie chart to show land distribution"
+            ],
+            "student_activities": [
+                "Analyze a pie chart showing land ownership in Palampur",
+                "Debate: Can modern farming be sustainable?"
+            ],
+            "assessment": [
+                "Paragraph writing on soil fertility depletion",
+                "Notebook observations"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Labour and Capital in Farming",
+            "topics_covered": [
+                "Who provides the labor? (Small vs. Medium/Large farmers)",
+                "Capital requirements and sources of credit",
+                "The debt trap for small farmers"
+            ],
+            "teaching_strategy": [
+                "Role-play between a small farmer and a moneylender",
+                "Flowchart of capital flow for large farmers"
+            ],
+            "student_activities": [
+                "Interview/Role-play exercise",
+                "List sources of loans for different types of farmers"
+            ],
+            "assessment": [
+                "Comparison table of small vs. large farmers' capital",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Non-Farm Activities in Palampur",
+            "topics_covered": [
+                "Dairy farming",
+                "Small-scale manufacturing (Jaggery making)",
+                "Shopkeeping and Transport"
+            ],
+            "teaching_strategy": [
+                "Discussion on diversification of the rural economy",
+                "Brainstorming other potential village businesses"
+            ],
+            "student_activities": [
+                "Identify non-farm activities in their own locality",
+                "Write a short note on Kareem’s computer center example"
+            ],
+            "assessment": [
+                "Short answer test on non-farm activities",
+                "Group discussion"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Summary, Revision, and Evaluation",
+            "topics_covered": [
+                "Review of production factors and farming methods",
+                "Summary of social and economic life in Palampur",
+                "Key terminology review"
+            ],
+            "teaching_strategy": [
+                "Mind mapping on the blackboard",
+                "Doubt clearing session"
+            ],
+            "student_activities": [
+                "Complete a summary mind map in notebooks",
+                "Group quiz on chapter highlights"
+            ],
+            "assessment": [
+                "Comprehensive chapter test (20 marks)",
+                "Final feedback and wrap-up"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard/Whiteboard",
+        "NCERT Economics Textbook",
+        "Pie charts showing land distribution",
+        "Images of HYV seeds and modern farm machinery",
+        "Flowcharts for factors of production"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and Class Discussions",
+        "Notebook checking and Diagram Accuracy",
+        "Short tests and MCQs",
+        "Case study analysis",
+        "Peer assessment during group activities"
+    ],
+    "teacher_tip": "Connect the fictional village of Palampur to the students' nearest local village or market to make the economic concepts of 'capital' and 'labor' more relatable."
+}

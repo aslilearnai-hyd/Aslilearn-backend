@@ -1,0 +1,167 @@
+{
+"class": "Class 8",
+"subject": "Mathematics",
+"chapter_name": "Tales by Dots and Lines",
+"lesson_level": "Hard",
+"total_periods": 7,
+"period_duration_minutes": "40-45",
+"overall_learning_objectives": [
+"Investigate advanced properties of mean and median",
+"Solve problems involving missing values in datasets",
+"Analyse complex datasets using statistical reasoning",
+"Interpret multi-variable graphs",
+"Use spreadsheets to perform data analysis",
+"Apply statistics to real-life situations"
+],
+"lesson_plan": [
+{
+"period": 1,
+"title": "Advanced Mean Concepts",
+"topics_covered": [
+"Mean as fair share concept",
+"Effect of multiplying and adding constants",
+"Algebraic explanation of mean changes"
+],
+"teaching_strategy": [
+"Algebra-based explanation",
+"Guided problem solving"
+],
+"student_activities": [
+"Multiply dataset values and observe mean",
+"Compare results with original mean"
+],
+"assessment": [
+"Numerical problem solving"
+]
+},
+{
+"period": 2,
+"title": "Missing Value Problems",
+"topics_covered": [
+"Finding unknown values using mean formula",
+"Application in real-life data"
+],
+"teaching_strategy": [
+"Step-by-step equation solving",
+"Real-life examples"
+],
+"student_activities": [
+"Solve datasets with missing values",
+"Form algebraic equations"
+],
+"assessment": [
+"Written exercise"
+]
+},
+{
+"period": 3,
+"title": "Median Reasoning Problems",
+"topics_covered": [
+"Predicting median after adding values",
+"Median invariance cases"
+],
+"teaching_strategy": [
+"Logical reasoning discussion",
+"Group problem solving"
+],
+"student_activities": [
+"Add numbers without changing median",
+"Remove values and test effects"
+],
+"assessment": [
+"Conceptual questions"
+]
+},
+{
+"period": 4,
+"title": "Statistical Investigation",
+"topics_covered": [
+"Analysing real datasets",
+"Comparing mean and median"
+],
+"teaching_strategy": [
+"Project-based learning"
+],
+"student_activities": [
+"Collect real-world data",
+"Calculate mean and median",
+"Compare results"
+],
+"assessment": [
+"Project report"
+]
+},
+{
+"period": 5,
+"title": "Spreadsheet Data Analysis",
+"topics_covered": [
+"Spreadsheet functions",
+"Analysing marks dataset"
+],
+"teaching_strategy": [
+"Computer-based instruction"
+],
+"student_activities": [
+"Calculate totals and averages",
+"Compare subject performance"
+],
+"assessment": [
+"Spreadsheet evaluation"
+]
+},
+{
+"period": 6,
+"title": "Interpreting Complex Graphs",
+"topics_covered": [
+"Line graphs with multiple datasets",
+"Trend analysis"
+],
+"teaching_strategy": [
+"Graph interpretation exercises"
+],
+"student_activities": [
+"Analyse temperature or rainfall graph",
+"Identify patterns and anomalies"
+],
+"assessment": [
+"Graph interpretation worksheet"
+]
+},
+{
+"period": 7,
+"title": "Integrated Data Analysis Project",
+"topics_covered": [
+"Combining statistical methods",
+"Real-world data interpretation"
+],
+"teaching_strategy": [
+"Project presentation",
+"Peer discussion"
+],
+"student_activities": [
+"Create dataset",
+"Draw graphs",
+"Explain statistical findings"
+],
+"assessment": [
+"Project presentation",
+"Final test"
+]
+}
+],
+"teaching_aids": [
+"Blackboard",
+"Graph paper",
+"Computer with spreadsheet software",
+"Projector",
+"NCERT textbook"
+],
+"evaluation_methods": [
+"Project evaluation",
+"Graph analysis tasks",
+"Problem-solving exercises",
+"Peer discussions",
+"Short tests"
+],
+"teacher_tip": "Challenge students with real-life data analysis so they move beyond calculation and develop deeper statistical reasoning."
+}

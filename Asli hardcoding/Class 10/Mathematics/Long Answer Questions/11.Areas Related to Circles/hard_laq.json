@@ -1,0 +1,353 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 11: Areas Related to Circles",
+    "difficulty": "Hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the area of a segment of a circle of radius 14 cm and angle 90°.",
+            "answer": "Area of sector = (90/360) × π × 14² = 49π cm². Area of triangle = (1/2) × 14 × 14 = 98 cm². Area of segment = 49π − 98 cm².",
+            "answer_outline": [
+                "Sector area",
+                "Triangle area",
+                "Segment area"
+            ],
+            "key_concepts": [
+                "segment"
+            ],
+            "marks": 6,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the area of a major sector if the minor sector angle is 60° and radius is r.",
+            "answer": "Major sector angle = 360° − 60° = 300°. Area = (300/360) × πr² = (5/6)πr².",
+            "answer_outline": [
+                "Angle calculation",
+                "Sector formula"
+            ],
+            "key_concepts": [
+                "major sector"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain with steps how trigonometry is used in finding the area of a segment.",
+            "answer": "Trigonometry helps find the height of the triangle formed inside the sector using sine or cosine ratios, which is required to calculate the triangle’s area.",
+            "answer_outline": [
+                "Triangle formation",
+                "Trigonometric ratios",
+                "Area"
+            ],
+            "key_concepts": [
+                "trigonometry"
+            ],
+            "marks": 6,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the area of a sector of radius 21 cm and angle 120°.",
+            "answer": "Area = (120/360) × π × 21² = (441π)/3 cm².",
+            "answer_outline": [
+                "Sector formula",
+                "Substitution"
+            ],
+            "key_concepts": [
+                "sector"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the area of a circle whose circumference is 44 cm.",
+            "answer": "2πr = 44 ⇒ r = 7 cm. Area = π × 7² = 49π cm².",
+            "answer_outline": [
+                "Circumference",
+                "Area"
+            ],
+            "key_concepts": [
+                "circle"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the area of a sector is proportional to its angle.",
+            "answer": "Since the area of the full circle corresponds to 360°, the area of a sector depends directly on the central angle.",
+            "answer_outline": [
+                "Proportionality",
+                "Angle"
+            ],
+            "key_concepts": [
+                "sector area"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the arc length of a sector of radius 28 cm and angle 45°.",
+            "answer": "Arc length = (45/360) × 2π × 28 = 7π cm.",
+            "answer_outline": [
+                "Arc length formula",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "arc length"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why the area of a segment can never exceed the area of the circle.",
+            "answer": "A segment is only a part of the circle and hence its area is always less than the total area of the circle.",
+            "answer_outline": [
+                "Segment",
+                "Circle"
+            ],
+            "key_concepts": [
+                "segment"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the area of a quadrant if radius is r.",
+            "answer": "Area of quadrant = (1/4) × πr².",
+            "answer_outline": [
+                "Quadrant formula"
+            ],
+            "key_concepts": [
+                "quadrant"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the angle at the centre is used in all sector formulas.",
+            "answer": "The central angle determines the fraction of the circle taken by the sector.",
+            "answer_outline": [
+                "Central angle",
+                "Reason"
+            ],
+            "key_concepts": [
+                "central angle"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the area of a semicircle of radius 14 cm.",
+            "answer": "Area = (1/2) × π × 14² = 98π cm².",
+            "answer_outline": [
+                "Semicircle formula"
+            ],
+            "key_concepts": [
+                "semicircle"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the arc length increases when radius increases.",
+            "answer": "Arc length is directly proportional to the radius, so increasing radius increases arc length.",
+            "answer_outline": [
+                "Proportionality"
+            ],
+            "key_concepts": [
+                "arc length"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the area of a sector when θ = 180°.",
+            "answer": "Area = (180/360) × πr² = (1/2)πr².",
+            "answer_outline": [
+                "Semicircle"
+            ],
+            "key_concepts": [
+                "sector"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why the area of a circle with radius zero is zero.",
+            "answer": "With zero radius, there is no enclosed region, hence area is zero.",
+            "answer_outline": [
+                "Zero radius"
+            ],
+            "key_concepts": [
+                "circle"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of mensuration in daily life using circles.",
+            "answer": "Mensuration helps calculate areas and lengths in objects like wheels, clocks, and fields.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": [
+                "mensuration"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the area of a circle if r = 21 cm.",
+            "answer": "Area = π × 21² = 441π cm².",
+            "answer_outline": [
+                "Substitution"
+            ],
+            "key_concepts": [
+                "circle"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why the triangle formed in a segment helps find its area.",
+            "answer": "The triangle area is subtracted from the sector area to obtain the segment area.",
+            "answer_outline": [
+                "Triangle",
+                "Segment"
+            ],
+            "key_concepts": [
+                "segment"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the arc length of a full circle of radius r.",
+            "answer": "Arc length = 2πr.",
+            "answer_outline": [
+                "Full circle"
+            ],
+            "key_concepts": [
+                "circumference"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why the sum of angles around a point is 360°.",
+            "answer": "A complete rotation around a point forms a full circle measuring 360°.",
+            "answer_outline": [
+                "Rotation"
+            ],
+            "key_concepts": [
+                "angles"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the area of a major sector if the minor sector angle is θ.",
+            "answer": "Major sector angle = 360° − θ. Area = ((360 − θ)/360) × πr².",
+            "answer_outline": [
+                "Angle",
+                "Formula"
+            ],
+            "key_concepts": [
+                "major sector"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why sector area becomes zero when θ = 0°.",
+            "answer": "When θ = 0°, no region is enclosed, so the area is zero.",
+            "answer_outline": [
+                "Zero angle"
+            ],
+            "key_concepts": [
+                "sector"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the area of a quadrant when diameter is 14 cm.",
+            "answer": "Radius = 7 cm. Area = (1/4) × π × 7² = (49π)/4 cm².",
+            "answer_outline": [
+                "Radius",
+                "Quadrant area"
+            ],
+            "key_concepts": [
+                "quadrant"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why the value of π is the same for all circles.",
+            "answer": "π is the ratio of circumference to diameter and remains constant for all circles.",
+            "answer_outline": [
+                "Ratio",
+                "Constancy"
+            ],
+            "key_concepts": [
+                "pi"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the difference between arc length and circumference.",
+            "answer": "Circumference is the total boundary of a circle, while arc length is a part of it.",
+            "answer_outline": [
+                "Definition",
+                "Difference"
+            ],
+            "key_concepts": [
+                "arc",
+                "circumference"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarise all important formulas of areas related to circles.",
+            "answer": "Important formulas include: area of circle = πr², circumference = 2πr, area of sector = (θ/360)πr², arc length = (θ/360)2πr, area of segment = sector area − triangle area.",
+            "answer_outline": [
+                "Circle",
+                "Sector",
+                "Segment"
+            ],
+            "key_concepts": [
+                "formulas"
+            ],
+            "marks": 6,
+            "source_section": "Section 11.1"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 1: Matter in Our Surroundings",
+    "generated_at": "2026-03-06T19:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of 'Absolute Zero' in terms of the kinetic theory of matter.",
+            "answer": "Absolute zero (0 K) is the theoretical temperature at which all molecular motion ceases. According to kinetic theory, temperature is a measure of average kinetic energy; at 0 K, kinetic energy is zero, and particles become perfectly stationary.",
+            "key_concepts": ["absolute zero", "kinetic theory", "molecular motion"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why does water exhibit anomalous expansion between 0°C and 4°C, and how does this affect its density?",
+            "answer": "Between 0°C and 4°C, water contracts instead of expanding due to the breaking of its hexagonal cage-like crystal structure. Consequently, its density is maximum at 4°C.",
+            "key_concepts": ["anomalous expansion", "density of water", "hydrogen bonding"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Differentiate between 'Latent Heat of Fusion' and 'Latent Heat of Vaporization' in terms of energy requirements.",
+            "answer": "Latent heat of vaporization is significantly higher than latent heat of fusion because it requires complete overcoming of intermolecular forces to turn liquid into gas, whereas fusion only requires weakening them.",
+            "key_concepts": ["latent heat", "intermolecular forces"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How does 'Atmospheric Pressure' influence the boiling point of a liquid at high altitudes?",
+            "answer": "At high altitudes, atmospheric pressure is lower. Since boiling occurs when vapour pressure equals atmospheric pressure, liquids reach this equilibrium at lower temperatures, leading to lower boiling points.",
+            "key_concepts": ["atmospheric pressure", "boiling point", "altitude"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the 'Critical Temperature' of a gas?",
+            "answer": "It is the temperature above which a gas cannot be liquefied, regardless of the amount of pressure applied.",
+            "key_concepts": ["critical temperature", "liquefaction"],
+            "marks": 2,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the Kelvin scale is considered an absolute scale compared to the Celsius scale.",
+            "answer": "The Kelvin scale starts at absolute zero (the lowest possible temperature), meaning it has no negative values and is directly proportional to the kinetic energy of particles.",
+            "key_concepts": ["Kelvin scale", "absolute scale", "thermodynamics"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Analyze why 'Evaporative Cooling' is less effective in coastal areas than in desert areas.",
+            "answer": "Coastal areas have high humidity. High moisture content in the air reduces the rate of evaporation, thereby decreasing the effectiveness of the cooling process.",
+            "key_concepts": ["evaporation", "humidity", "cooling"],
+            "marks": 2,
+            "source_section": "Section 1.5.1"
+        },
+        {
+            "question_number": 8,
+            "question": "How do 'Volatile Liquids' like ether or acetone demonstrate the relationship between intermolecular forces and boiling points?",
+            "answer": "Volatile liquids have very weak intermolecular forces, allowing particles to escape into the vapour phase easily at low temperatures, resulting in very low boiling points.",
+            "key_concepts": ["volatility", "intermolecular forces", "boiling point"],
+            "marks": 2,
+            "source_section": "Section 1.5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of the plateau (horizontal line) in a heating curve of a substance.",
+            "answer": "The plateau represents a phase change (melting or boiling) where the temperature remains constant as the energy is used as latent heat to break intermolecular bonds.",
+            "key_concepts": ["heating curve", "latent heat", "phase change"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What role does 'Vapour Pressure' play in the process of evaporation?",
+            "answer": "Evaporation occurs when particles at the surface gain enough energy to exert a vapour pressure that allows them to escape the surface tension of the liquid.",
+            "key_concepts": ["vapour pressure", "surface tension", "evaporation"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are the physical states of matter considered 'interconvertible'?",
+            "answer": "States are interconvertible because they depend on the distance between particles and their kinetic energy, both of which can be altered by changing temperature and pressure.",
+            "key_concepts": ["interconvertibility", "kinetic energy", "pressure"],
+            "marks": 2,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the state of matter known as 'Plasma' and where it is found naturally.",
+            "answer": "Plasma is an ionized gas consisting of super-energetic and super-excited particles. It is found naturally in stars, where high temperatures cause the matter to glow.",
+            "key_concepts": ["plasma", "ionization", "stars"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the 'Bose-Einstein Condensate' (BEC) and how is it formed?",
+            "answer": "BEC is a fifth state of matter formed by cooling a gas of extremely low density to temperatures near absolute zero, causing atoms to collapse into a single quantum state.",
+            "key_concepts": ["BEC", "absolute zero", "quantum state"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does a pressure cooker cook food faster than an open vessel?",
+            "answer": "The pressure cooker increases the internal pressure, which raises the boiling point of water. This allows the food to cook at a higher temperature than 100°C.",
+            "key_concepts": ["pressure", "boiling point", "thermal energy"],
+            "marks": 2,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How does the 'Surface Tension' of a liquid affect its rate of evaporation?",
+            "answer": "High surface tension indicates strong intermolecular forces at the surface, which makes it harder for particles to escape, thereby decreasing the rate of evaporation.",
+            "key_concepts": ["surface tension", "evaporation"],
+            "marks": 2,
+            "source_section": "Section 1.5.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why ice floats on water based on its molecular structure.",
+            "answer": "As water freezes, molecules form a cage-like hexagonal structure with empty spaces. This increases the volume and decreases the density, making ice lighter than liquid water.",
+            "key_concepts": ["density", "molecular structure", "buoyancy"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the relationship between 'Thermal Expansion' and the state of matter?",
+            "answer": "Thermal expansion is highest in gases and lowest in solids because gas particles have weak attraction and can increase their distance significantly upon heating.",
+            "key_concepts": ["thermal expansion", "particle attraction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Analyze why 'Dry Ice' (Solid $CO_2$) is a better refrigerant than ordinary ice.",
+            "answer": "Dry ice sublimes directly into gas without leaving any liquid residue and provides a much colder environment (-78.5°C) than melting water ice.",
+            "key_concepts": ["dry ice", "sublimation", "refrigeration"],
+            "marks": 2,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is the smell of perfume detected faster than the smell of an agarbatti in an adjacent room?",
+            "answer": "Perfume contains volatile alcohol-based particles that diffuse faster at room temperature compared to the heavier smoke particles of an agarbatti.",
+            "key_concepts": ["diffusion", "volatility", "particle mass"],
+            "marks": 2,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of 'Energy of Activation' in the context of phase changes.",
+            "answer": "Energy of activation (provided by heat) is the threshold energy required for particles to overcome their mutual attraction and change their physical state.",
+            "key_concepts": ["activation energy", "phase change", "attraction forces"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "How does the 'Mean Free Path' of a particle change as a substance moves from liquid to gas?",
+            "answer": "The mean free path (distance between collisions) increases significantly as a substance turns to gas because the particles are much further apart and move randomly.",
+            "key_concepts": ["mean free path", "gas state", "collisions"],
+            "marks": 2,
+            "source_section": "Section 1.3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is it impossible to liquefy an ideal gas by pressure alone?",
+            "answer": "Ideal gases are theoretical constructs with zero intermolecular attraction; therefore, no amount of pressure can force them to 'stick' together into a liquid state.",
+            "key_concepts": ["ideal gas", "liquefaction", "attraction"],
+            "marks": 2,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Describe the change in the 'Entropy' (disorder) of a system when water evaporates.",
+            "answer": "When water evaporates, entropy increases because the particles move from a more ordered liquid state to a highly disordered, random gaseous state.",
+            "key_concepts": ["entropy", "evaporation", "randomness"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does a wet handkerchief dry faster if it is spread out rather than folded?",
+            "answer": "Spreading increases the surface area exposed to the air, allowing more surface particles to gain energy and escape via evaporation simultaneously.",
+            "key_concepts": ["surface area", "evaporation"],
+            "marks": 2,
+            "source_section": "Section 1.5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What happens to the 'Average Kinetic Energy' of a liquid's particles as it reaches its boiling point?",
+            "answer": "At the boiling point, the average kinetic energy reaches a maximum threshold where it is sufficient to overcome the atmospheric pressure and intermolecular forces entirely.",
+            "key_concepts": ["kinetic energy", "boiling point", "equilibrium"],
+            "marks": 2,
+            "source_section": "Section 1.4.1"
+        }
+    ]
+}

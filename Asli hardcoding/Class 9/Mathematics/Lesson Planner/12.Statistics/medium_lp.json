@@ -1,0 +1,158 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Statistics",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Interpret and represent data using frequency distributions",
+        "Construct grouped frequency tables",
+        "Draw histograms, bar graphs, and cumulative frequency graphs",
+        "Calculate mean, median, and mode for grouped and ungrouped data",
+        "Apply statistical concepts to real-life problems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Data Collection and Grouping",
+            "topics_covered": [
+                "Recap of data types",
+                "Organizing data into groups/classes",
+                "Constructing grouped frequency tables"
+            ],
+            "teaching_strategy": [
+                "Board demonstration with real data",
+                "Stepwise grouping method"
+            ],
+            "student_activities": [
+                "Collect survey data (e.g., height, marks)",
+                "Group data into classes and construct frequency tables"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Short oral questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Histograms and Bar Graphs",
+            "topics_covered": [
+                "Difference between histogram and bar graph",
+                "Drawing histograms using frequency tables",
+                "Understanding class intervals and scales"
+            ],
+            "teaching_strategy": [
+                "Demonstration of graph plotting on board",
+                "Use of real-life data examples"
+            ],
+            "student_activities": [
+                "Draw histograms and bar graphs using collected data",
+                "Label axes correctly"
+            ],
+            "assessment": [
+                "Graph accuracy",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Cumulative Frequency Graphs (Ogive)",
+            "topics_covered": [
+                "Definition and importance of cumulative frequency",
+                "Drawing ogives",
+                "Interpreting median from ogive"
+            ],
+            "teaching_strategy": [
+                "Board demonstration",
+                "Explain stepwise plotting method"
+            ],
+            "student_activities": [
+                "Construct cumulative frequency tables",
+                "Plot ogives for the collected data"
+            ],
+            "assessment": [
+                "Accuracy of graphs",
+                "Peer verification"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Mean of Grouped Data",
+            "topics_covered": [
+                "Formula for mean of grouped data",
+                "Class mark and frequency method",
+                "Application to practical problems"
+            ],
+            "teaching_strategy": [
+                "Stepwise calculation on board",
+                "Worked examples from textbook"
+            ],
+            "student_activities": [
+                "Calculate mean from given frequency tables",
+                "Verify results with peers"
+            ],
+            "assessment": [
+                "Written exercises",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Median and Mode of Grouped Data",
+            "topics_covered": [
+                "Median formula for grouped data",
+                "Mode formula for grouped data",
+                "Practical examples"
+            ],
+            "teaching_strategy": [
+                "Board demonstration using sample tables",
+                "Stepwise problem-solving"
+            ],
+            "student_activities": [
+                "Find median and mode of given frequency distributions",
+                "Compare results with mean"
+            ],
+            "assessment": [
+                "Short numerical problems",
+                "Peer discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision & Real-Life Applications",
+            "topics_covered": [
+                "Revision of graphs and calculations",
+                "Solving mixed examples",
+                "Applications of statistics in daily life"
+            ],
+            "teaching_strategy": [
+                "Group problem-solving",
+                "Discussion of practical applications (e.g., population data, exam marks)"
+            ],
+            "student_activities": [
+                "Group activity: interpret real-life data using graphs and mean/median/mode",
+                "Participate in class quiz"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class quiz scoring"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Graph paper",
+        "Ruler, pencil, markers",
+        "Charts and models",
+        "Blackboard/Whiteboard",
+        "NCERT Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Short answer exercises",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Encourage students to relate statistical concepts to real-life examples to strengthen understanding. Highlight differences between ungrouped and grouped data in practice exercises."
+}

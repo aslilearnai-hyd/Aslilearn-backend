@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 5: Outcomes of Democracy",
+  "generated_at": "2026-03-11T14:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What does democracy mainly promote among citizens?",
+      "options": {
+        "A": "Inequality",
+        "B": "Dictatorship",
+        "C": "Equality",
+        "D": "Monarchy"
+      },
+      "correct_answer": "C",
+      "explanation": "Democracy promotes equality by giving equal political rights to citizens.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 2,
+      "question": "What is meant by democratic outcomes?",
+      "options": {
+        "A": "Results of democratic governance",
+        "B": "Election campaigns",
+        "C": "Political speeches",
+        "D": "Government holidays"
+      },
+      "correct_answer": "A",
+      "explanation": "Democratic outcomes refer to the results or effects produced by democracy.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 3,
+      "question": "Which feature allows citizens to choose their leaders?",
+      "options": {
+        "A": "Monarchy",
+        "B": "Elections",
+        "C": "Military rule",
+        "D": "Dictatorship"
+      },
+      "correct_answer": "B",
+      "explanation": "In a democracy, citizens choose their representatives through elections.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 4,
+      "question": "What does accountability mean in democracy?",
+      "options": {
+        "A": "Government is answerable to citizens",
+        "B": "Citizens obey government blindly",
+        "C": "Leaders rule without elections",
+        "D": "Government controls citizens"
+      },
+      "correct_answer": "A",
+      "explanation": "Accountability means government must explain its actions to citizens.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 5,
+      "question": "Which right allows citizens to vote in elections?",
+      "options": {
+        "A": "Political right",
+        "B": "Economic right",
+        "C": "Social right",
+        "D": "Religious right"
+      },
+      "correct_answer": "A",
+      "explanation": "Voting is a political right given to citizens in a democracy.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 6,
+      "question": "What does legitimacy mean in a democratic government?",
+      "options": {
+        "A": "Government chosen by people",
+        "B": "Government chosen by army",
+        "C": "Government chosen by kings",
+        "D": "Government chosen by judges"
+      },
+      "correct_answer": "A",
+      "explanation": "Democratic governments gain legitimacy through elections.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 7,
+      "question": "Which factor influences economic growth besides democracy?",
+      "options": {
+        "A": "Natural resources",
+        "B": "Weather only",
+        "C": "Population only",
+        "D": "Traditions only"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic growth depends on factors like resources, policies, and global conditions.",
+      "difficulty": "easy",
+      "source_section": "Economic Growth and Development"
+    },
+    {
+      "question_number": 8,
+      "question": "Economic inequality means:",
+      "options": {
+        "A": "Equal wealth distribution",
+        "B": "Unequal distribution of income",
+        "C": "Equal salaries for all",
+        "D": "No income differences"
+      },
+      "correct_answer": "B",
+      "explanation": "Economic inequality refers to uneven distribution of wealth.",
+      "difficulty": "easy",
+      "source_section": "Reduction of Inequality and Poverty"
+    },
+    {
+      "question_number": 9,
+      "question": "Which system allows peaceful resolution of conflicts?",
+      "options": {
+        "A": "Democracy",
+        "B": "Dictatorship",
+        "C": "Monarchy",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Democracy resolves conflicts through dialogue and participation.",
+      "difficulty": "easy",
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 10,
+      "question": "Majority rule in democracy means:",
+      "options": {
+        "A": "Minority decides",
+        "B": "Majority opinion decides",
+        "C": "Only leaders decide",
+        "D": "Army decides"
+      },
+      "correct_answer": "B",
+      "explanation": "In democracy, decisions are based on the majority's preference.",
+      "difficulty": "easy",
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 11,
+      "question": "What should majority rule respect in democracy?",
+      "options": {
+        "A": "Minority rights",
+        "B": "Only leaders",
+        "C": "Only wealthy people",
+        "D": "Only majority community"
+      },
+      "correct_answer": "A",
+      "explanation": "Democracy protects minority rights along with majority rule.",
+      "difficulty": "easy",
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 12,
+      "question": "Which value is promoted by democracy among citizens?",
+      "options": {
+        "A": "Discrimination",
+        "B": "Dignity",
+        "C": "Oppression",
+        "D": "Fear"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy promotes dignity and respect for individuals.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 13,
+      "question": "Freedom in democracy allows citizens to:",
+      "options": {
+        "A": "Express opinions",
+        "B": "Break laws",
+        "C": "Ignore rules",
+        "D": "Control government"
+      },
+      "correct_answer": "A",
+      "explanation": "Freedom allows citizens to express views and participate in politics.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 14,
+      "question": "Which group can demand equality in democracy?",
+      "options": {
+        "A": "Only rich people",
+        "B": "Only leaders",
+        "C": "Disadvantaged groups",
+        "D": "Only officials"
+      },
+      "correct_answer": "C",
+      "explanation": "Democracy empowers marginalized groups to demand equality.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 15,
+      "question": "Which institution allows citizens to vote?",
+      "options": {
+        "A": "Elections",
+        "B": "Courts",
+        "C": "Police",
+        "D": "Army"
+      },
+      "correct_answer": "A",
+      "explanation": "Elections provide citizens the opportunity to vote.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 16,
+      "question": "Democratic decision-making usually involves:",
+      "options": {
+        "A": "Debate and discussion",
+        "B": "Secret decisions",
+        "C": "Military orders",
+        "D": "Royal commands"
+      },
+      "correct_answer": "A",
+      "explanation": "Debate and consultation improve democratic decisions.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 17,
+      "question": "What does public participation strengthen?",
+      "options": {
+        "A": "Dictatorship",
+        "B": "Democracy",
+        "C": "Military rule",
+        "D": "Monarchy"
+      },
+      "correct_answer": "B",
+      "explanation": "Citizen participation strengthens democratic governance.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 18,
+      "question": "What does democracy transform people into?",
+      "options": {
+        "A": "Subjects",
+        "B": "Citizens",
+        "C": "Rulers",
+        "D": "Workers"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy empowers individuals as active citizens.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 19,
+      "question": "Which process allows governments to be replaced peacefully?",
+      "options": {
+        "A": "Revolution",
+        "B": "Election",
+        "C": "War",
+        "D": "Military takeover"
+      },
+      "correct_answer": "B",
+      "explanation": "Elections allow peaceful change of governments.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 20,
+      "question": "Which concept refers to respect for individuals in democracy?",
+      "options": {
+        "A": "Authority",
+        "B": "Dignity",
+        "C": "Control",
+        "D": "Power"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy promotes dignity of citizens.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 21,
+      "question": "What helps resolve conflicts in democratic societies?",
+      "options": {
+        "A": "Violence",
+        "B": "Dialogue and participation",
+        "C": "Military force",
+        "D": "Royal orders"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy encourages peaceful dialogue to resolve conflicts.",
+      "difficulty": "easy",
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 22,
+      "question": "Which feature allows citizens to question government actions?",
+      "options": {
+        "A": "Accountability",
+        "B": "Monarchy",
+        "C": "Dictatorship",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Accountability allows citizens to question leaders.",
+      "difficulty": "easy",
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 23,
+      "question": "Which system gives citizens equal voting rights?",
+      "options": {
+        "A": "Democracy",
+        "B": "Dictatorship",
+        "C": "Military rule",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Democracy ensures equal voting rights for citizens.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 24,
+      "question": "What encourages improvement in democratic governance?",
+      "options": {
+        "A": "Public criticism",
+        "B": "Silence",
+        "C": "Fear",
+        "D": "Control"
+      },
+      "correct_answer": "A",
+      "explanation": "Public criticism helps improve democratic institutions.",
+      "difficulty": "easy",
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement about democracy is correct?",
+      "options": {
+        "A": "Citizens have no role",
+        "B": "Leaders rule forever",
+        "C": "Citizens participate in governance",
+        "D": "Only wealthy people vote"
+      },
+      "correct_answer": "C",
+      "explanation": "Democracy allows citizens to participate in governance.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    }
+  ]
+}

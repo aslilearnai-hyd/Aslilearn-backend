@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "A Story of Numbers",
+  "difficulty": "Hard",
+  "source_pdf": "ch-3_A_STORY_OF_NUMBERS.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Roman Numeral Arithmetic",
+      "objective": "Perform calculations using Roman numerals",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write Roman numerals for numbers from 1 to 50",
+        "Add and subtract two Roman numerals without converting to Hindu numerals",
+        "Verify the answers by converting to the Hindu-Arabic system"
+      ],
+      "learning_outcome": "Understands arithmetic operations in Roman numerals",
+      "evaluation": "Correct calculations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Create a Base-5 Number System",
+      "objective": "Understand number systems with different bases",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 20 in the decimal system",
+        "Convert them into base-5 representation",
+        "Explain how the place values change in base-5"
+      ],
+      "learning_outcome": "Understands concept of number bases",
+      "evaluation": "Accuracy of conversions (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Ancient Number System Comparison",
+      "objective": "Compare different historical number systems",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose three number systems such as tally marks, Roman numerals and Hindu-Arabic numerals",
+        "Represent numbers 1–15 in each system",
+        "Compare their advantages and disadvantages"
+      ],
+      "learning_outcome": "Analyses efficiency of different number systems",
+      "evaluation": "Correct comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Roman Numeral Puzzle",
+      "objective": "Solve puzzles using Roman numerals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create five puzzles using Roman numerals",
+        "Exchange puzzles with classmates",
+        "Solve the puzzles and explain the reasoning"
+      ],
+      "learning_outcome": "Improves logical thinking with Roman numerals",
+      "evaluation": "Correct puzzle solutions (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Base System Investigation",
+      "objective": "Investigate how different bases represent numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose a number such as 25",
+        "Represent it in base-5 and base-2",
+        "Explain the difference in representation"
+      ],
+      "learning_outcome": "Understands representation of numbers in different bases",
+      "evaluation": "Correct conversion and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Number System Timeline Research",
+      "objective": "Explore the development of number systems",
+      "materials": ["Chart paper", "Markers", "Textbook or internet"],
+      "steps": [
+        "Research early systems like tally marks, Egyptian numbers and Roman numerals",
+        "Create a timeline showing their development",
+        "Highlight the emergence of the Hindu–Arabic number system"
+      ],
+      "learning_outcome": "Understands historical development of numbers",
+      "evaluation": "Accuracy and presentation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Design Your Own Number System",
+      "objective": "Create a custom number system",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Create symbols for numbers 1–10",
+        "Define rules to represent larger numbers",
+        "Demonstrate addition using your system"
+      ],
+      "learning_outcome": "Understands structure of number systems",
+      "evaluation": "Creativity and logical explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Large Roman Numeral Conversion",
+      "objective": "Convert large numbers into Roman numerals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers such as 356, 789 and 1450",
+        "Convert them into Roman numerals",
+        "Explain the grouping process used"
+      ],
+      "learning_outcome": "Understands advanced Roman numeral representation",
+      "evaluation": "Accuracy of conversion (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Counting System Investigation",
+      "objective": "Investigate different cultural counting systems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Research how different cultures counted using body parts or groups",
+        "Write examples of systems based on 2, 5 or 20",
+        "Explain their advantages and limitations"
+      ],
+      "learning_outcome": "Analyses cultural number systems",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Decimal vs Other Bases Project",
+      "objective": "Compare decimal system with other base systems",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose base-10 and another base such as base-5",
+        "Write numbers from 1–20 in both systems",
+        "Explain how place values differ"
+      ],
+      "learning_outcome": "Understands place value across number systems",
+      "evaluation": "Correct comparison and explanation (10 marks)"
+    }
+  ]
+}

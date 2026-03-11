@@ -1,0 +1,385 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "generated_at": "2026-03-06T02:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that vertically opposite angles are equal when two lines intersect.",
+            "answer": "When two lines intersect, adjacent angles form linear pairs summing to 180°. Using this relation, vertically opposite angles can be shown equal.",
+            "answer_outline": [
+                "Intersecting lines",
+                "Linear pair relation",
+                "Proof conclusion"
+            ],
+            "key_concepts": [
+                "vertical angles theorem"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the proof of the linear pair axiom.",
+            "answer": "When a ray stands on a straight line, it divides the straight angle into two adjacent angles whose sum equals 180°.",
+            "answer_outline": [
+                "Straight angle concept",
+                "Ray on line",
+                "Angle sum"
+            ],
+            "key_concepts": [
+                "linear pair axiom"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how corresponding angles prove that two lines are parallel.",
+            "answer": "If corresponding angles formed by a transversal are equal, then the lines are parallel.",
+            "answer_outline": [
+                "Corresponding angle definition",
+                "Converse theorem"
+            ],
+            "key_concepts": [
+                "corresponding angles"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the converse of alternate interior angles theorem.",
+            "answer": "If alternate interior angles are equal, the lines cut by the transversal are parallel.",
+            "answer_outline": [
+                "Alternate interior angles",
+                "Parallel line conclusion"
+            ],
+            "key_concepts": [
+                "alternate interior angles"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain interior angles on the same side of a transversal and prove they are supplementary.",
+            "answer": "Interior angles on the same side sum to 180° when lines are parallel.",
+            "answer_outline": [
+                "Interior angles definition",
+                "Supplementary property"
+            ],
+            "key_concepts": [
+                "interior angles"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how angles around a point form a complete angle.",
+            "answer": "All angles around a point sum to 360° which forms a complete angle.",
+            "answer_outline": [
+                "Definition",
+                "360° property"
+            ],
+            "key_concepts": [
+                "angles around point"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the relationship between adjacent angles and linear pairs.",
+            "answer": "Linear pairs are special adjacent angles forming a straight line.",
+            "answer_outline": [
+                "Adjacent angles",
+                "Linear pair"
+            ],
+            "key_concepts": [
+                "adjacent angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the significance of transversals in geometry.",
+            "answer": "Transversals help identify angle relationships and prove parallel lines.",
+            "answer_outline": [
+                "Definition",
+                "Angle relations"
+            ],
+            "key_concepts": [
+                "transversal"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how angle relationships help determine parallel lines.",
+            "answer": "Equal corresponding or alternate interior angles indicate parallel lines.",
+            "answer_outline": [
+                "Angle relations",
+                "Parallel conclusion"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the concept of reflex angles and their role in geometry.",
+            "answer": "Reflex angles are angles greater than 180° used to represent larger rotations.",
+            "answer_outline": [
+                "Definition",
+                "Applications"
+            ],
+            "key_concepts": [
+                "reflex angle"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of a straight angle and its geometric importance.",
+            "answer": "A straight angle measures 180° and represents a straight line.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "straight angle"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the role of angles in geometric constructions.",
+            "answer": "Angles are used to construct triangles, polygons, and geometric figures.",
+            "answer_outline": [
+                "Definition",
+                "Construction examples"
+            ],
+            "key_concepts": [
+                "geometry"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the importance of angle relationships in solving geometry problems.",
+            "answer": "Angle relationships simplify calculations and help prove geometric properties.",
+            "answer_outline": [
+                "Angle relationships",
+                "Problem solving"
+            ],
+            "key_concepts": [
+                "geometry reasoning"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how complementary and supplementary angles are used in geometry.",
+            "answer": "They help identify right and straight angle relationships.",
+            "answer_outline": [
+                "Complementary angles",
+                "Supplementary angles"
+            ],
+            "key_concepts": [
+                "angle relationships"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the properties of intersecting lines.",
+            "answer": "Intersecting lines form vertically opposite angles and linear pairs.",
+            "answer_outline": [
+                "Intersecting lines",
+                "Angle properties"
+            ],
+            "key_concepts": [
+                "intersecting lines"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how parallel lines maintain constant distance.",
+            "answer": "Parallel lines never intersect and remain equally spaced.",
+            "answer_outline": [
+                "Definition",
+                "Property"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain angle measurement using protractors.",
+            "answer": "Angles are measured in degrees using a protractor aligned with the vertex and arms.",
+            "answer_outline": [
+                "Instrument",
+                "Procedure"
+            ],
+            "key_concepts": [
+                "angle measurement"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the role of angles in polygon properties.",
+            "answer": "Angles determine polygon shapes and interior angle sums.",
+            "answer_outline": [
+                "Polygons",
+                "Angle sums"
+            ],
+            "key_concepts": [
+                "polygons"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how angles help determine geometric symmetry.",
+            "answer": "Equal angles indicate symmetrical structures.",
+            "answer_outline": [
+                "Symmetry",
+                "Angle equality"
+            ],
+            "key_concepts": [
+                "symmetry"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the concept of angle bisectors.",
+            "answer": "An angle bisector divides an angle into two equal parts.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "angle bisector"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the difference between adjacent and vertically opposite angles.",
+            "answer": "Adjacent angles share a side while vertically opposite angles lie opposite each other.",
+            "answer_outline": [
+                "Adjacent angles",
+                "Vertically opposite angles"
+            ],
+            "key_concepts": [
+                "angle types"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the difference between acute and obtuse angles.",
+            "answer": "Acute angles are less than 90° while obtuse angles lie between 90° and 180°.",
+            "answer_outline": [
+                "Acute angles",
+                "Obtuse angles"
+            ],
+            "key_concepts": [
+                "angle classification"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the relationship between right angles and perpendicular lines.",
+            "answer": "Perpendicular lines intersect forming four right angles.",
+            "answer_outline": [
+                "Right angle",
+                "Perpendicular lines"
+            ],
+            "key_concepts": [
+                "perpendicular lines"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the geometric importance of 360° angle measurement.",
+            "answer": "360° represents a complete rotation around a point.",
+            "answer_outline": [
+                "Complete angle",
+                "Rotation concept"
+            ],
+            "key_concepts": [
+                "360 degrees"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of angle relationships in architecture and engineering.",
+            "answer": "Angles help design stable structures and accurate measurements in engineering and construction.",
+            "answer_outline": [
+                "Engineering uses",
+                "Architectural uses"
+            ],
+            "key_concepts": [
+                "applications of angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        }
+    ]
+}

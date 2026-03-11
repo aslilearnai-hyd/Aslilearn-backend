@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 12: Statistics",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The mean of the numbers 2, 4, 6, 8, 10 is",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (2+4+6+8+10)/5 = 30/5 = 6",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The median of the numbers 3, 7, 5, 9, 11 is",
+            "options": {
+                "A": "7",
+                "B": "6",
+                "C": "5",
+                "D": "9"
+            },
+            "correct_answer": "A",
+            "explanation": "Arrange: 3,5,7,9,11 → median is middle value = 7",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The mode of 2, 4, 4, 5, 6, 6, 6, 7 is",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is the most frequent value = 6",
+            "difficulty": "easy",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 4,
+            "question": "If the mean of 5 numbers is 12, then the sum of numbers is",
+            "options": {
+                "A": "60",
+                "B": "55",
+                "C": "50",
+                "D": "65"
+            },
+            "correct_answer": "A",
+            "explanation": "Sum = Mean × Number of terms = 12 × 5 = 60",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 5,
+            "question": "For the numbers 4, 8, 12, 16, 20, the mean is",
+            "options": {
+                "A": "12",
+                "B": "14",
+                "C": "10",
+                "D": "16"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean = (4+8+12+16+20)/5 = 60/5 = 12",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 6,
+            "question": "The median of 6, 8, 3, 9, 12, 5 is",
+            "options": {
+                "A": "6",
+                "B": "7",
+                "C": "8",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "Arrange: 3,5,6,8,9,12 → median = (6+8)/2 = 7",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 7,
+            "question": "The mode of 1, 2, 2, 3, 4, 4, 4, 5 is",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is the most frequent value = 4",
+            "difficulty": "easy",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 8,
+            "question": "If all observations in a data set are equal, mean, median and mode are",
+            "options": {
+                "A": "Equal",
+                "B": "Different",
+                "C": "Cannot determine",
+                "D": "Only mean and median equal"
+            },
+            "correct_answer": "A",
+            "explanation": "All values same → mean = median = mode = value",
+            "difficulty": "easy",
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "The sum of deviations of all observations from their mean is",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Cannot say"
+            },
+            "correct_answer": "C",
+            "explanation": "∑(x - mean) = 0",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 10,
+            "question": "If a data set has values 2, 4, 6, 8, 10, the range is",
+            "options": {
+                "A": "8",
+                "B": "10",
+                "C": "12",
+                "D": "6"
+            },
+            "correct_answer": "A",
+            "explanation": "Range = Max - Min = 10 - 2 = 8",
+            "difficulty": "easy",
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 11,
+            "question": "The mean of first 10 natural numbers is",
+            "options": {
+                "A": "5",
+                "B": "5.5",
+                "C": "6",
+                "D": "4.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (1+2+...+10)/10 = 55/10 = 5.5",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Median of 3, 5, 7, 9, 11, 13, 15 is",
+            "options": {
+                "A": "8",
+                "B": "9",
+                "C": "10",
+                "D": "11"
+            },
+            "correct_answer": "B",
+            "explanation": "Median = middle value = 9",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Mode of 5, 7, 5, 8, 5, 9 is",
+            "options": {
+                "A": "7",
+                "B": "5",
+                "C": "8",
+                "D": "9"
+            },
+            "correct_answer": "B",
+            "explanation": "5 appears most frequently → mode = 5",
+            "difficulty": "easy",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 14,
+            "question": "The mean of 10, 15, 20, 25, 30 is",
+            "options": {
+                "A": "18",
+                "B": "20",
+                "C": "22",
+                "D": "25"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (10+15+20+25+30)/5 = 100/5 = 20",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Range of 4, 8, 12, 16, 20 is",
+            "options": {
+                "A": "10",
+                "B": "12",
+                "C": "16",
+                "D": "20"
+            },
+            "correct_answer": "B",
+            "explanation": "Range = Max - Min = 20 - 8 = 12",
+            "difficulty": "easy",
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 16,
+            "question": "The sum of first n natural numbers is given by",
+            "options": {
+                "A": "n(n+1)/2",
+                "B": "n²",
+                "C": "n(n-1)/2",
+                "D": "n(n+1)/3"
+            },
+            "correct_answer": "A",
+            "explanation": "Sum = n(n+1)/2",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 17,
+            "question": "If mean = 20 and number of observations = 5, sum of all observations is",
+            "options": {
+                "A": "80",
+                "B": "100",
+                "C": "90",
+                "D": "120"
+            },
+            "correct_answer": "B",
+            "explanation": "Sum = Mean × n = 20 × 5 = 100",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Median of 2, 4, 6, 8 is",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "Even number of terms → Median = (4+6)/2 = 5",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Mode of 1, 2, 2, 3, 4, 4, 4, 5, 5 is",
+            "options": {
+                "A": "2",
+                "B": "4",
+                "C": "5",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Mode = most frequent = 4",
+            "difficulty": "easy",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "For numbers 7, 9, 12, 15, 20, mean is",
+            "options": {
+                "A": "12",
+                "B": "13",
+                "C": "14",
+                "D": "15"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (7+9+12+15+20)/5=63/5=12.6≈13",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Median of 1, 3, 5, 7, 9, 11 is",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "Even number of terms, median=(5+7)/2=6",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 22,
+            "question": "If all numbers in a data set are same, mode is",
+            "options": {
+                "A": "Equal to number",
+                "B": "0",
+                "C": "Cannot say",
+                "D": "Mean"
+            },
+            "correct_answer": "A",
+            "explanation": "Mode = number itself",
+            "difficulty": "easy",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Range of numbers 5, 10, 15, 20, 25 is",
+            "options": {
+                "A": "15",
+                "B": "20",
+                "C": "10",
+                "D": "25"
+            },
+            "correct_answer": "B",
+            "explanation": "Range = Max-Min = 25-5=20",
+            "difficulty": "easy",
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Mean of 1, 2, 3, 4, 5, 6 is",
+            "options": {
+                "A": "3",
+                "B": "3.5",
+                "C": "4",
+                "D": "4.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (1+2+3+4+5+6)/6=21/6=3.5",
+            "difficulty": "easy",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 25,
+            "question": "If numbers are 2, 4, 6, 8, 10, the median is",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "Even number of terms → median=(4+6)/2=5",
+            "difficulty": "easy",
+            "source_section": "Section 12.2"
+        }
+    ]
+}

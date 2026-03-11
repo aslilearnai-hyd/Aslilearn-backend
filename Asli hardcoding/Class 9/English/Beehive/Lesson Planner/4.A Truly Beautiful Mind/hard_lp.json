@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A Truly Beautiful Mind",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze Albert Einstein’s life, thought processes, and personality in depth",
+        "Evaluate the challenges he faced and the strategies he used to overcome them",
+        "Identify and discuss literary devices such as narrative technique, imagery, and characterization",
+        "Draw inferences about creativity, intelligence, and perseverance",
+        "Connect lessons from Einstein’s life to social, educational, and personal contexts",
+        "Develop advanced critical thinking, comprehension, and analytical writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Contextual Analysis",
+            "topics_covered": [
+                "Author: Sudha Murthy and her narrative style",
+                "Historical, social, and educational context of Einstein’s life",
+                "Significance of curiosity and innovation in science"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion with guided questioning",
+                "Board diagram showing early life, schooling, and context"
+            ],
+            "student_activities": [
+                "Predict key challenges and achievements based on introduction",
+                "Discuss the role of curiosity and creativity in personal growth"
+            ],
+            "assessment": [
+                "Class participation",
+                "Oral reasoning questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Close Reading – Early Life and Character Analysis",
+            "topics_covered": [
+                "Einstein’s childhood, schooling, and personality traits",
+                "Psychological and emotional factors affecting learning",
+                "Early signs of curiosity and independent thinking"
+            ],
+            "teaching_strategy": [
+                "Close reading of selected passages",
+                "Guided analysis of text to identify traits and motivations"
+            ],
+            "student_activities": [
+                "Extract textual evidence supporting traits like curiosity and patience",
+                "Explain how challenges shaped character and thinking"
+            ],
+            "assessment": [
+                "Notebook evaluation",
+                "Short written reflections"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Critical Reading – Achievements and Problem-Solving",
+            "topics_covered": [
+                "Einstein’s scientific achievements and contributions",
+                "Innovative problem-solving methods",
+                "Strategies to overcome societal and academic obstacles"
+            ],
+            "teaching_strategy": [
+                "Discussion of cause-and-effect between challenges and achievements",
+                "Board illustration of timeline of achievements"
+            ],
+            "student_activities": [
+                "List achievements with contextual explanation",
+                "Analyze how challenges contributed to personal growth"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Themes, Literary Devices, and Analytical Thinking",
+            "topics_covered": [
+                "Themes: Curiosity, perseverance, creativity, and intelligence",
+                "Literary devices: imagery, narrative style, and characterization",
+                "Critical thinking on moral and educational lessons from the text"
+            ],
+            "teaching_strategy": [
+                "Teacher-led textual analysis with examples",
+                "Group discussion and brainstorming on themes and lessons"
+            ],
+            "student_activities": [
+                "Identify literary devices and their effect on reader understanding",
+                "Discuss how the author highlights intelligence and curiosity"
+            ],
+            "assessment": [
+                "Notebook annotations",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Critical Summary and Inference",
+            "topics_covered": [
+                "Sequencing events and achievements",
+                "Writing a detailed summary with inferred insights",
+                "Connecting Einstein’s qualities to personal, educational, and social life"
+            ],
+            "teaching_strategy": [
+                "Timeline chart for events and achievements",
+                "Guided discussion on inference-making and critical summary"
+            ],
+            "student_activities": [
+                "Create a detailed timeline of Einstein’s life and work",
+                "Write an 8–10 sentence summary with critical analysis and inference"
+            ],
+            "assessment": [
+                "Timeline accuracy",
+                "Quality and depth of summary and inferences"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary, Reflection, and Application",
+            "topics_covered": [
+                "Advanced vocabulary and context-based usage",
+                "Reflective writing on lessons learned from Einstein’s life",
+                "Application of story insights in personal and academic goals"
+            ],
+            "teaching_strategy": [
+                "Board explanation of advanced vocabulary with examples",
+                "Reflective prompts and discussion for deeper connection"
+            ],
+            "student_activities": [
+                "List new words with meanings and use in sentences",
+                "Write a reflective paragraph analyzing personal growth inspired by Einstein",
+                "Group discussion on how to cultivate curiosity, creativity, and perseverance"
+            ],
+            "assessment": [
+                "Written reflection evaluation",
+                "Vocabulary usage assessment",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard or Whiteboard",
+        "Markers or Chalk",
+        "Printed chapter excerpts",
+        "Timeline and analytical charts"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Class participation",
+        "Oral questioning",
+        "Short written exercises",
+        "Critical summary and reflection evaluation"
+    ],
+    "teacher_tip": "Encourage students to critically analyze Einstein’s thought process, evaluate his problem-solving methods, and connect the story’s lessons to personal, educational, and social contexts."
+}

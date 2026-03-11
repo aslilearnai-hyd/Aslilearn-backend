@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Quadrilaterals",
+  "generated_at": "2026-03-05T00:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How many sides does a quadrilateral have?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "correct_answer": "B",
+      "explanation": "A quadrilateral is a polygon with four sides.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the sum of the interior angles of a quadrilateral?",
+      "options": {
+        "A": "180°",
+        "B": "270°",
+        "C": "360°",
+        "D": "540°"
+      },
+      "correct_answer": "C",
+      "explanation": "The sum of interior angles of a quadrilateral is 360°.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is a quadrilateral?",
+      "options": {
+        "A": "Triangle",
+        "B": "Pentagon",
+        "C": "Rectangle",
+        "D": "Hexagon"
+      },
+      "correct_answer": "C",
+      "explanation": "A rectangle has four sides.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "How many diagonals does a quadrilateral have?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "B",
+      "explanation": "A quadrilateral has two diagonals.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which quadrilateral has opposite sides equal and parallel?",
+      "options": {
+        "A": "Trapezium",
+        "B": "Kite",
+        "C": "Parallelogram",
+        "D": "Triangle"
+      },
+      "correct_answer": "C",
+      "explanation": "In a parallelogram, opposite sides are equal and parallel.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which quadrilateral has all sides equal?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Rhombus",
+        "C": "Trapezium",
+        "D": "Parallelogram"
+      },
+      "correct_answer": "B",
+      "explanation": "All sides of a rhombus are equal.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which quadrilateral has all angles equal to 90°?",
+      "options": {
+        "A": "Square",
+        "B": "Rectangle",
+        "C": "Both A and B",
+        "D": "Rhombus"
+      },
+      "correct_answer": "C",
+      "explanation": "Both squares and rectangles have four right angles.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which quadrilateral has exactly one pair of parallel sides?",
+      "options": {
+        "A": "Trapezium",
+        "B": "Square",
+        "C": "Rhombus",
+        "D": "Rectangle"
+      },
+      "correct_answer": "A",
+      "explanation": "A trapezium has one pair of parallel sides.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 9,
+      "question": "In a parallelogram, opposite angles are:",
+      "options": {
+        "A": "Equal",
+        "B": "Unequal",
+        "C": "Right angles",
+        "D": "Acute"
+      },
+      "correct_answer": "A",
+      "explanation": "Opposite angles of a parallelogram are equal.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "In a parallelogram, opposite sides are:",
+      "options": {
+        "A": "Equal",
+        "B": "Unequal",
+        "C": "Perpendicular",
+        "D": "None"
+      },
+      "correct_answer": "A",
+      "explanation": "Opposite sides of a parallelogram are equal.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Which quadrilateral has diagonals that bisect each other?",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Triangle",
+        "C": "Pentagon",
+        "D": "Circle"
+      },
+      "correct_answer": "A",
+      "explanation": "In a parallelogram, diagonals bisect each other.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which quadrilateral has diagonals that are equal?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Rhombus",
+        "C": "Kite",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rectangle are equal.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which quadrilateral has diagonals perpendicular to each other?",
+      "options": {
+        "A": "Rhombus",
+        "B": "Rectangle",
+        "C": "Parallelogram",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rhombus are perpendicular.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 14,
+      "question": "A square is a special type of:",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Triangle",
+        "C": "Pentagon",
+        "D": "Hexagon"
+      },
+      "correct_answer": "A",
+      "explanation": "A square satisfies properties of a parallelogram.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Which quadrilateral has opposite sides parallel?",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Trapezium",
+        "C": "Kite",
+        "D": "Triangle"
+      },
+      "correct_answer": "A",
+      "explanation": "Opposite sides are parallel in a parallelogram.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which quadrilateral has all sides equal and all angles 90°?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Square",
+        "C": "Rhombus",
+        "D": "Trapezium"
+      },
+      "correct_answer": "B",
+      "explanation": "A square has equal sides and right angles.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which quadrilateral has diagonals that bisect at right angles?",
+      "options": {
+        "A": "Rhombus",
+        "B": "Rectangle",
+        "C": "Trapezium",
+        "D": "Parallelogram"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rhombus bisect each other at right angles.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which quadrilateral has only one pair of parallel sides?",
+      "options": {
+        "A": "Trapezium",
+        "B": "Square",
+        "C": "Rhombus",
+        "D": "Rectangle"
+      },
+      "correct_answer": "A",
+      "explanation": "Trapezium has one pair of parallel sides.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 19,
+      "question": "A rectangle is a type of:",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Triangle",
+        "C": "Pentagon",
+        "D": "Circle"
+      },
+      "correct_answer": "A",
+      "explanation": "A rectangle has opposite sides parallel like a parallelogram.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which quadrilateral has diagonals that are equal and bisect each other?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Rhombus",
+        "C": "Kite",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rectangle are equal and bisect each other.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which quadrilateral has two pairs of adjacent equal sides?",
+      "options": {
+        "A": "Kite",
+        "B": "Rectangle",
+        "C": "Square",
+        "D": "Parallelogram"
+      },
+      "correct_answer": "A",
+      "explanation": "A kite has two pairs of adjacent equal sides.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 22,
+      "question": "The diagonals of a square are:",
+      "options": {
+        "A": "Equal",
+        "B": "Perpendicular",
+        "C": "Bisect each other",
+        "D": "All of these"
+      },
+      "correct_answer": "D",
+      "explanation": "All these properties hold for a square.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 23,
+      "question": "How many vertices does a quadrilateral have?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "correct_answer": "B",
+      "explanation": "A quadrilateral has four vertices.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which quadrilateral always has right angles?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Rhombus",
+        "C": "Kite",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "A rectangle has four right angles.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which quadrilateral has opposite sides parallel and equal?",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Kite",
+        "C": "Trapezium",
+        "D": "Triangle"
+      },
+      "correct_answer": "A",
+      "explanation": "This is a defining property of parallelogram.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2"
+    }
+  ]
+}

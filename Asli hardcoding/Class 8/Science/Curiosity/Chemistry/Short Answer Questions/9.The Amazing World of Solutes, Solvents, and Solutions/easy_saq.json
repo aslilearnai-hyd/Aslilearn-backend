@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solutes, Solvents, and Solutions",
+  "difficulty": "Easy",
+  "source_pdf": "hecu109.pdf",
+  "short_notes": {
+    "key_points": [
+      "A mixture is formed when two or more substances combine without chemical change",
+      "A solution is a uniform mixture formed when a solute dissolves in a solvent",
+      "Solubility is the maximum amount of solute that can dissolve in a solvent at a given temperature",
+      "Temperature affects solubility of solids and gases in liquids",
+      "Density determines whether objects float or sink in liquids"
+    ],
+    "examples": [
+      "Salt dissolved in water forms a salt solution",
+      "Air is a solution of gases where nitrogen acts as the solvent",
+      "Oil floats on water because its density is lower",
+      "Ice floats on water due to its lower density",
+      "Fish depend on dissolved oxygen in water for respiration"
+    ],
+    "formulas_or_processes": [
+      "Density formula: Density = Mass ÷ Volume",
+      "Volume measurement using displacement method: Volume of object = Final water level − Initial water level",
+      "Solubility process: Solute particles mix uniformly with solvent particles",
+      "Gas solubility principle: Gas solubility decreases when temperature increases"
+    ],
+    "exam_tips": [
+      "Remember definitions of solute, solvent, and solution",
+      "Understand the difference between saturated and unsaturated solutions",
+      "Practice density calculations using mass and volume",
+      "Understand why objects float or sink based on density",
+      "Revise experiments such as measuring volume using the displacement method"
+    ]
+  }
+}

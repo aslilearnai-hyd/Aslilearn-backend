@@ -1,0 +1,170 @@
+{
+    "class": "Class 7",
+    "subject": "Science (CBSE)",
+    "chapter": "Earth, Moon, and the Sun",
+    "difficulty": "Easy",
+    "source_pdf": "cbse_class7_science_ch12.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Observing Day and Night",
+            "objective": "Understand rotation of Earth causing day and night",
+            "materials": [
+                "Globe",
+                "Torch (as Sun)"
+            ],
+            "steps": [
+                "Darken room and place globe on table",
+                "Shine torch on one side of globe to represent the Sun",
+                "Rotate globe slowly and observe day and night cycle"
+            ],
+            "learning_outcome": "Learns that Earth’s rotation causes day and night",
+            "evaluation": "Correct demonstration of day-night cycle (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Modeling Phases of the Moon",
+            "objective": "Understand changing appearance of the Moon",
+            "materials": [
+                "Ball (Moon)",
+                "Torch (Sun)",
+                "Globe (Earth)"
+            ],
+            "steps": [
+                "Place globe in center, hold Moon ball near it",
+                "Shine torch on Moon from different angles",
+                "Observe illuminated portion to simulate moon phases"
+            ],
+            "learning_outcome": "Understands waxing, waning, full and new Moon",
+            "evaluation": "Correct demonstration of Moon phases (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Exploring Solar Eclipse Using Models",
+            "objective": "Understand alignment during a solar eclipse",
+            "materials": [
+                "Globe (Earth)",
+                "Small ball (Moon)",
+                "Torch (Sun)"
+            ],
+            "steps": [
+                "Darken room and place globe",
+                "Hold Moon between torch and globe",
+                "Observe shadow cast on Earth to simulate solar eclipse"
+            ],
+            "learning_outcome": "Learns position of Sun, Moon, and Earth during solar eclipse",
+            "evaluation": "Correct model representation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Exploring Lunar Eclipse Using Models",
+            "objective": "Understand alignment during a lunar eclipse",
+            "materials": [
+                "Globe (Earth)",
+                "Small ball (Moon)",
+                "Torch (Sun)"
+            ],
+            "steps": [
+                "Place Moon on opposite side of Earth from Sun",
+                "Observe Earth's shadow falling on Moon",
+                "Explain lunar eclipse formation"
+            ],
+            "learning_outcome": "Learns that lunar eclipse occurs when Earth blocks sunlight from reaching Moon",
+            "evaluation": "Correct representation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Observing Shadows at Different Times",
+            "objective": "Understand Sun’s apparent movement across sky",
+            "materials": [
+                "Stick or pole",
+                "Outdoor sunlight",
+                "Measuring tape"
+            ],
+            "steps": [
+                "Place stick vertically on ground",
+                "Mark tip of shadow in morning, noon, evening",
+                "Observe change in length and direction of shadow"
+            ],
+            "learning_outcome": "Connects Sun’s position with shadow length and direction",
+            "evaluation": "Accurate observations recorded (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Observing Phases Using Images",
+            "objective": "Learn Moon phases through pictures",
+            "materials": [
+                "Printed images of Moon phases"
+            ],
+            "steps": [
+                "Identify new, crescent, quarter, gibbous, and full Moon",
+                "Sequence them correctly",
+                "Explain why Moon appears differently"
+            ],
+            "learning_outcome": "Understands visual changes of Moon across month",
+            "evaluation": "Correct sequencing and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Rotation vs Revolution of Earth",
+            "objective": "Differentiate rotation and revolution",
+            "materials": [
+                "Globe",
+                "Markers"
+            ],
+            "steps": [
+                "Rotate globe on its axis (rotation)",
+                "Move globe around torch (Sun) to simulate revolution",
+                "Observe day-night vs year cycle"
+            ],
+            "learning_outcome": "Understands rotation causes day-night; revolution causes year and seasons",
+            "evaluation": "Correct demonstration and explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Observing Moon Rise and Set",
+            "objective": "Relate Moon movement to Earth rotation",
+            "materials": [
+                "Notebook for observations"
+            ],
+            "steps": [
+                "Record time of Moon rise and set for several days",
+                "Note pattern in Moon movement",
+                "Explain observations"
+            ],
+            "learning_outcome": "Learns Moon’s apparent movement in sky",
+            "evaluation": "Accurate observation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Exploring Sun’s Position in Sky",
+            "objective": "Understand Sun’s apparent path",
+            "materials": [
+                "Outdoor area",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe Sun’s position in morning, noon, evening",
+                "Record height and direction in sky",
+                "Discuss implications on shadow and temperature"
+            ],
+            "learning_outcome": "Understands Sun’s apparent movement across sky",
+            "evaluation": "Correct observations and explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quiz on Earth, Moon, and Sun",
+            "objective": "Reinforce chapter concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Prepare five questions on Moon phases and eclipses",
+                "Prepare five questions on Earth’s rotation and revolution",
+                "Exchange with a friend and solve"
+            ],
+            "learning_outcome": "Strengthens understanding of celestial motions",
+            "evaluation": "Quality of questions and answers (10 marks)"
+        }
+    ]
+}

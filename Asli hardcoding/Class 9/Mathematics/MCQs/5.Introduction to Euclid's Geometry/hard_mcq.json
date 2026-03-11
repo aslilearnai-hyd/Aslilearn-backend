@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Introduction to Euclid’s Geometry",
+    "generated_at": "2026-03-05T22:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If A, B and C are collinear points with B between A and C, then:",
+            "options": {
+                "A": "AB = AC",
+                "B": "AB + BC = AC",
+                "C": "AB = BC",
+                "D": "AC + BC = AB"
+            },
+            "correct_answer": "B",
+            "explanation": "According to Euclid’s reasoning, AB + BC = AC.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2 Example"
+        },
+        {
+            "question_number": 2,
+            "question": "Which Euclid axiom is used in proving AB + BC = AC?",
+            "options": {
+                "A": "Things equal to same thing are equal",
+                "B": "Whole is greater than part",
+                "C": "Things which coincide are equal",
+                "D": "Halves are equal"
+            },
+            "correct_answer": "C",
+            "explanation": "The proof uses the axiom 'things which coincide are equal'.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2 Example"
+        },
+        {
+            "question_number": 3,
+            "question": "Why are point, line and plane considered undefined terms?",
+            "options": {
+                "A": "They are difficult to draw",
+                "B": "They require other terms for definition",
+                "C": "They are not useful",
+                "D": "They have many dimensions"
+            },
+            "correct_answer": "B",
+            "explanation": "Defining them leads to an endless chain of definitions.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which Euclid postulate is most complex?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "5"
+            },
+            "correct_answer": "D",
+            "explanation": "Postulate 5 is the most complex.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which theorem states that two distinct lines cannot intersect at more than one point?",
+            "options": {
+                "A": "Euclid theorem",
+                "B": "Parallel theorem",
+                "C": "Line intersection theorem",
+                "D": "Basic geometry theorem"
+            },
+            "correct_answer": "A",
+            "explanation": "Euclid proved that two lines cannot share more than one point.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which reasoning method assumes opposite statement and finds contradiction?",
+            "options": {
+                "A": "Induction",
+                "B": "Deduction",
+                "C": "Contradiction",
+                "D": "Experimentation"
+            },
+            "correct_answer": "C",
+            "explanation": "Proof by contradiction assumes opposite statement.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "If two circles with centres A and B intersect, the triangle formed is:",
+            "options": {
+                "A": "Right",
+                "B": "Scalene",
+                "C": "Equilateral",
+                "D": "Obtuse"
+            },
+            "correct_answer": "C",
+            "explanation": "This construction forms an equilateral triangle.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2 Example"
+        },
+        {
+            "question_number": 8,
+            "question": "Which Euclid axiom justifies equality transitivity?",
+            "options": {
+                "A": "Things equal to same thing are equal",
+                "B": "Whole is greater than part",
+                "C": "Halves are equal",
+                "D": "Doubles are equal"
+            },
+            "correct_answer": "A",
+            "explanation": "This axiom states equality relation.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which statement describes deductive reasoning?",
+            "options": {
+                "A": "Observing patterns",
+                "B": "Testing experiments",
+                "C": "Logical conclusions from axioms",
+                "D": "Estimating results"
+            },
+            "correct_answer": "C",
+            "explanation": "Deductive reasoning derives conclusions logically.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 10,
+            "question": "If a quantity B is part of A, then:",
+            "options": {
+                "A": "A = B",
+                "B": "A > B",
+                "C": "B > A",
+                "D": "A = 2B"
+            },
+            "correct_answer": "B",
+            "explanation": "Whole is greater than part.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following represents Euclid’s approach?",
+            "options": {
+                "A": "Trial and error",
+                "B": "Logical deduction",
+                "C": "Random guessing",
+                "D": "Measurement only"
+            },
+            "correct_answer": "B",
+            "explanation": "Euclid used deductive reasoning.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A line lies evenly with points on itself. This definition refers to:",
+            "options": {
+                "A": "Surface",
+                "B": "Straight line",
+                "C": "Plane",
+                "D": "Segment"
+            },
+            "correct_answer": "B",
+            "explanation": "This is Euclid's definition of straight line.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which is not a Euclid axiom?",
+            "options": {
+                "A": "Things equal to same thing are equal",
+                "B": "Whole greater than part",
+                "C": "Parallel lines never meet",
+                "D": "Equals added to equals are equal"
+            },
+            "correct_answer": "C",
+            "explanation": "Parallel lines statement is not among Euclid's axioms.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "The boundaries of a solid are:",
+            "options": {
+                "A": "Points",
+                "B": "Lines",
+                "C": "Surfaces",
+                "D": "Angles"
+            },
+            "correct_answer": "C",
+            "explanation": "Surfaces form boundaries of solids.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which geometric concept loses one dimension from surface?",
+            "options": {
+                "A": "Solid",
+                "B": "Line",
+                "C": "Point",
+                "D": "Plane"
+            },
+            "correct_answer": "B",
+            "explanation": "Line has one dimension less than surface.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which figure has zero dimension?",
+            "options": {
+                "A": "Point",
+                "B": "Line",
+                "C": "Plane",
+                "D": "Surface"
+            },
+            "correct_answer": "A",
+            "explanation": "Point has no dimension.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The concept of geometry originally developed from:",
+            "options": {
+                "A": "Astronomy",
+                "B": "Land measurement",
+                "C": "Navigation",
+                "D": "Architecture"
+            },
+            "correct_answer": "B",
+            "explanation": "Geometry originated from measuring land.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which property ensures uniqueness of line through two points?",
+            "options": {
+                "A": "Postulate 2",
+                "B": "Axiom 5.1",
+                "C": "Postulate 4",
+                "D": "Theorem 5.1"
+            },
+            "correct_answer": "B",
+            "explanation": "Axiom states only one line passes through two points.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "The process of deriving new results from known facts is:",
+            "options": {
+                "A": "Measurement",
+                "B": "Deductive reasoning",
+                "C": "Estimation",
+                "D": "Approximation"
+            },
+            "correct_answer": "B",
+            "explanation": "Deductive reasoning derives results logically.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which theorem depends on contradiction argument?",
+            "options": {
+                "A": "Parallel theorem",
+                "B": "Two lines intersection theorem",
+                "C": "Triangle theorem",
+                "D": "Circle theorem"
+            },
+            "correct_answer": "B",
+            "explanation": "It assumes two intersections and derives contradiction.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which dimension disappears when moving from line to point?",
+            "options": {
+                "A": "Length",
+                "B": "Breadth",
+                "C": "Height",
+                "D": "Area"
+            },
+            "correct_answer": "A",
+            "explanation": "Point has no length.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which object separates one part of space from another?",
+            "options": {
+                "A": "Line",
+                "B": "Point",
+                "C": "Surface",
+                "D": "Angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Surfaces separate parts of space.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which statement describes Euclid's geometric model?",
+            "options": {
+                "A": "Experimental science",
+                "B": "Abstract model of space",
+                "C": "Statistical model",
+                "D": "Numerical model"
+            },
+            "correct_answer": "B",
+            "explanation": "Euclid treated geometry as abstract model of world.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which concept forms the basis for Euclid’s geometry system?",
+            "options": {
+                "A": "Measurements",
+                "B": "Definitions axioms and postulates",
+                "C": "Statistics",
+                "D": "Calculations"
+            },
+            "correct_answer": "B",
+            "explanation": "Geometry is built from definitions axioms and postulates.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement describes Euclid’s logical structure?",
+            "options": {
+                "A": "Random rules",
+                "B": "Chain of propositions",
+                "C": "Trial methods",
+                "D": "Measurement rules"
+            },
+            "correct_answer": "B",
+            "explanation": "Euclid derived 465 propositions in logical chain.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        }
+    ]
+}

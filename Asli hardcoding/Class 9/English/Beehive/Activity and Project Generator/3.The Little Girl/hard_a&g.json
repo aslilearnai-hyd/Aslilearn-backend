@@ -1,0 +1,139 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "The Little Girl",
+  "difficulty": "Hard",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Analysis Essay",
+      "objective": "Develop the ability to critically analyze the story",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Analyze the story’s central conflict between Kezia and her father",
+        "Discuss how the author portrays authority and childhood emotions",
+        "Write a 150–200 word essay evaluating the narrative techniques used"
+      ],
+      "learning_outcome": "Enhances critical thinking, analytical writing, and literary interpretation",
+      "evaluation": "Depth of analysis, clarity, and use of textual evidence (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Character Study",
+      "objective": "Compare Kezia with a character from another story",
+      "materials": ["Notebook", "Textbook", "Reference stories"],
+      "steps": [
+        "Identify another young girl from a different story or chapter",
+        "Compare her experiences, behavior, and relationship with authority",
+        "Present your comparison in a structured table or essay"
+      ],
+      "learning_outcome": "Develops comparative thinking and understanding of character traits",
+      "evaluation": "Accuracy, depth of comparison, and examples (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Perspective Writing",
+      "objective": "Explore alternative perspectives in the story",
+      "materials": ["Notebook"],
+      "steps": [
+        "Rewrite a scene from the father’s point of view",
+        "Include his thoughts and feelings during the pin-cushion incident or nightmare",
+        "Write at least 10 sentences reflecting his perspective"
+      ],
+      "learning_outcome": "Encourages empathy, analytical skills, and creative writing",
+      "evaluation": "Consistency with character traits and depth of insight (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Symbolism and Theme Analysis",
+      "objective": "Identify symbols and underlying themes",
+      "materials": ["Notebook"],
+      "steps": [
+        "Identify symbols such as the pin-cushion, the father’s gestures, or the nightmare",
+        "Explain what each symbol represents in 2–3 sentences",
+        "Connect symbols to the story’s larger themes"
+      ],
+      "learning_outcome": "Enhances literary interpretation and thematic understanding",
+      "evaluation": "Accuracy, depth of explanation, and textual support (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Advanced Vocabulary and Contextual Usage",
+      "objective": "Expand vocabulary with contextual understanding",
+      "materials": ["Notebook", "Dictionary"],
+      "steps": [
+        "Select 10 challenging words from the chapter",
+        "Write dictionary meanings, synonyms, antonyms, and contextual usage in the story",
+        "Construct original sentences showing nuanced meaning"
+      ],
+      "learning_outcome": "Improves advanced vocabulary and language precision",
+      "evaluation": "Correct usage, creativity, and understanding of nuance (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Literary Device Exploration",
+      "objective": "Identify and analyze literary devices used by the author",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Find examples of metaphor, simile, imagery, and dialogue",
+        "Explain their effect on the story’s mood and characterization",
+        "Present examples in a tabular form with 2–3 sentences each"
+      ],
+      "learning_outcome": "Strengthens understanding of literary techniques and their impact",
+      "evaluation": "Accuracy, depth, and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Predictive Writing",
+      "objective": "Develop imaginative and predictive skills",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine what Kezia’s relationship with her father will be like 5 years later",
+        "Write a 10–12 sentence narrative predicting future interactions and growth",
+        "Justify your predictions using clues from the story"
+      ],
+      "learning_outcome": "Enhances imagination, inference, and reasoning",
+      "evaluation": "Creativity, plausibility, and textual support (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Interpersonal Analysis Debate",
+      "objective": "Critically examine Kezia’s and her father’s behavior through discussion",
+      "materials": ["Notebook", "Classroom group"],
+      "steps": [
+        "Form groups and debate whether the father’s strictness was justified",
+        "Use examples from the text to support arguments",
+        "Write a reflective paragraph summarizing your personal stance after the debate"
+      ],
+      "learning_outcome": "Enhances critical thinking, discussion, and reasoning skills",
+      "evaluation": "Quality of arguments and reflection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Symbolic Scene Illustration",
+      "objective": "Express understanding of key scenes creatively",
+      "materials": ["Drawing sheet", "Pencil", "Colors"],
+      "steps": [
+        "Select a scene with symbolic significance (e.g., the nightmare or the pin-cushion incident)",
+        "Draw it creatively, highlighting symbolic elements",
+        "Write a 3–4 sentence explanation of symbolism depicted"
+      ],
+      "learning_outcome": "Combines creativity with literary interpretation",
+      "evaluation": "Creativity, clarity, and symbolism understanding (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Intertextual Connection Writing",
+      "objective": "Relate the story to real-life experiences or other literature",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Identify a real-life situation or another story where parent–child relationships are explored",
+        "Write a 120–150 word piece connecting it to Kezia’s experience",
+        "Highlight similarities and differences"
+      ],
+      "learning_outcome": "Develops analytical thinking, connection-making, and writing skills",
+      "evaluation": "Depth of insight, relevance, and clarity (10 marks)"
+    }
+  ]
+}

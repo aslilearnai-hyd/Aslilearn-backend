@@ -1,0 +1,397 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Linear Equations in Two Variables",
+    "generated_at": "2026-03-06T01:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a linear equation in two variables and give two examples.",
+            "answer": "A linear equation in two variables is an equation of the form ax + by + c = 0 where a, b and c are constants and a and b are not both zero. Examples include x + y = 5 and 2x + 3y = 7.",
+            "answer_outline": [
+                "Definition of linear equation",
+                "General form ax + by + c = 0",
+                "Examples"
+            ],
+            "key_concepts": [
+                "linear equations"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the concept of a solution of a linear equation in two variables with an example.",
+            "answer": "A solution of a linear equation in two variables is a pair of values of x and y that satisfies the equation. For example, in the equation x + y = 5, the pair (2,3) is a solution because 2 + 3 = 5.",
+            "answer_outline": [
+                "Definition of solution",
+                "Substitution of values",
+                "Example"
+            ],
+            "key_concepts": [
+                "solution of equation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how ordered pairs represent solutions of linear equations.",
+            "answer": "Solutions of linear equations are written as ordered pairs (x, y). Each ordered pair represents values of x and y that satisfy the equation. When substituted into the equation, both sides become equal.",
+            "answer_outline": [
+                "Ordered pair notation",
+                "Substitution",
+                "Verification"
+            ],
+            "key_concepts": [
+                "ordered pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why a linear equation in two variables has infinitely many solutions.",
+            "answer": "A linear equation in two variables has infinitely many solutions because many different pairs of x and y values can satisfy the equation. Each pair forms a point on the straight-line graph.",
+            "answer_outline": [
+                "Nature of solutions",
+                "Multiple ordered pairs",
+                "Graph interpretation"
+            ],
+            "key_concepts": [
+                "infinite solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how to check whether a given ordered pair is a solution of a linear equation.",
+            "answer": "To check whether a pair (x,y) is a solution, substitute the values of x and y into the equation. If the left side equals the right side, the pair is a solution.",
+            "answer_outline": [
+                "Substitution method",
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "solution verification"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the meaning of coefficients in a linear equation.",
+            "answer": "In a linear equation ax + by + c = 0, the numbers a and b are called coefficients of x and y. They indicate how the variables are multiplied in the equation.",
+            "answer_outline": [
+                "General form",
+                "Coefficient of x",
+                "Coefficient of y"
+            ],
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the meaning of constant term in a linear equation.",
+            "answer": "In the equation ax + by + c = 0, the term c is called the constant term because it does not contain any variable.",
+            "answer_outline": [
+                "Definition",
+                "Identification",
+                "Example"
+            ],
+            "key_concepts": [
+                "constant term"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how substitution helps to find solutions of linear equations.",
+            "answer": "Substitution involves replacing the variables with specific values and checking whether the equation becomes true.",
+            "answer_outline": [
+                "Substitution method",
+                "Evaluation",
+                "Example"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how the equation x + y = 5 can have many solutions.",
+            "answer": "Different pairs like (1,4), (2,3), (3,2) and (4,1) satisfy x + y = 5. Therefore it has many solutions.",
+            "answer_outline": [
+                "Equation",
+                "Different ordered pairs",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "multiple solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how to convert an equation into standard form.",
+            "answer": "To convert an equation into standard form, move all terms to one side so that the equation becomes ax + by + c = 0.",
+            "answer_outline": [
+                "Identify terms",
+                "Rearrange equation",
+                "Standard form"
+            ],
+            "key_concepts": [
+                "standard form"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the graph of a linear equation in two variables.",
+            "answer": "The graph of a linear equation in two variables is a straight line. Every point on the line represents a solution of the equation.",
+            "answer_outline": [
+                "Straight line graph",
+                "Points as solutions"
+            ],
+            "key_concepts": [
+                "graph of equation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Chapter Summary"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how to find solutions of x + y = 6.",
+            "answer": "Choose values of x and find corresponding y values so that x + y = 6. Example: (2,4), (3,3), (4,2).",
+            "answer_outline": [
+                "Choose x value",
+                "Calculate y",
+                "Form ordered pairs"
+            ],
+            "key_concepts": [
+                "solution pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the role of variables in linear equations.",
+            "answer": "Variables represent unknown quantities that can take different values in the equation.",
+            "answer_outline": [
+                "Meaning of variable",
+                "Examples"
+            ],
+            "key_concepts": [
+                "variables"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how to verify if (4,1) is a solution of 3x + y = 13.",
+            "answer": "Substitute x=4 and y=1. 3(4)+1=13 so the pair is a solution.",
+            "answer_outline": [
+                "Substitute values",
+                "Evaluate equation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "solution verification"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of linear equations in mathematics.",
+            "answer": "Linear equations help represent relationships between two quantities and are widely used in algebra, geometry and real-life problems.",
+            "answer_outline": [
+                "Mathematical relationships",
+                "Applications"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Chapter Summary"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how x = 2 can be written as a linear equation in two variables.",
+            "answer": "x = 2 can be written as x + 0y = 2.",
+            "answer_outline": [
+                "Introduce second variable",
+                "Rewrite equation"
+            ],
+            "key_concepts": [
+                "two variable form"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how y = 3 can be written as a linear equation in two variables.",
+            "answer": "y = 3 can be written as 0x + y = 3.",
+            "answer_outline": [
+                "Add second variable",
+                "Rewrite equation"
+            ],
+            "key_concepts": [
+                "two variable form"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how solutions of linear equations can be listed.",
+            "answer": "Choose different values of x and calculate corresponding y values to form ordered pairs.",
+            "answer_outline": [
+                "Select values",
+                "Calculate pairs"
+            ],
+            "key_concepts": [
+                "solution listing"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the concept of straight line graphs in linear equations.",
+            "answer": "Linear equations form straight line graphs because the variables change at a constant rate.",
+            "answer_outline": [
+                "Linear relationship",
+                "Straight line"
+            ],
+            "key_concepts": [
+                "straight line graph"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Chapter Summary"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how the equation x + y = 8 represents many ordered pairs.",
+            "answer": "Pairs such as (2,6), (3,5), (4,4) all satisfy the equation.",
+            "answer_outline": [
+                "Equation",
+                "Examples",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "multiple solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how to identify coefficients in 5x + 3y − 4 = 0.",
+            "answer": "Coefficient of x is 5, coefficient of y is 3, and constant term is −4.",
+            "answer_outline": [
+                "Identify coefficients",
+                "Identify constant"
+            ],
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why x² + y = 5 is not a linear equation.",
+            "answer": "Because the variable x has power 2. Linear equations must have variables of degree 1.",
+            "answer_outline": [
+                "Definition of linear equation",
+                "Degree condition"
+            ],
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the equation x + y = 10 can have infinite solutions.",
+            "answer": "Many ordered pairs like (1,9), (2,8), (3,7) satisfy the equation.",
+            "answer_outline": [
+                "Equation",
+                "Examples",
+                "Infinite solutions"
+            ],
+            "key_concepts": [
+                "infinite solutions"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how substitution helps verify solutions.",
+            "answer": "Substitution replaces variables with given values and checks whether both sides become equal.",
+            "answer_outline": [
+                "Substitute values",
+                "Evaluate equation"
+            ],
+            "key_concepts": [
+                "substitution"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how linear equations represent relationships between two quantities.",
+            "answer": "Linear equations show how one variable changes when the other changes and represent this relationship using algebraic expressions.",
+            "answer_outline": [
+                "Relationship between variables",
+                "Equation representation"
+            ],
+            "key_concepts": [
+                "relationships"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Chapter Summary"
+        }
+    ]
+}

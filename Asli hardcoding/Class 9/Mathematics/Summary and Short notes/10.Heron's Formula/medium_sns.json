@@ -1,0 +1,34 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Heron's Formula",
+    "difficulty": "Medium",
+    "short_notes": {
+        "key_points": [
+            "Heron's formula finds the area of any triangle given its three sides.",
+            "Semi-perimeter s = (a+b+c)/2; Area = √[s(s-a)(s-b)(s-c)].",
+            "Can be applied to isosceles, scalene, and right-angled triangles.",
+            "Also used to calculate inradius r = Area/s and circumradius R = (a×b×c)/(4×Area).",
+            "Useful for triangles with decimal sides or when altitudes are not known."
+        ],
+        "formulas": [
+            "Semi-perimeter: s = (a+b+c)/2",
+            "Area: √[s(s-a)(s-b)(s-c)]",
+            "Inradius: r = Area/s",
+            "Circumradius: R = (a×b×c)/(4×Area)",
+            "Altitude from side a: h = 2×Area/a"
+        ],
+        "examples": [
+            "Triangle sides 13 cm, 14 cm, 15 cm → s = 21; Area = √[21×8×7×6] = √7056 = 84 cm²; r = 84/21 = 4 cm",
+            "Isosceles triangle sides 9, 9, 12 → s = 15; Area = √[15×6×6×3] ≈ 40.25 cm²; Altitude from base 12 → h = 2×40.25/12 ≈ 6.71 cm",
+            "Triangle with decimal sides 6.5, 7.2, 8.1 → s = 10.9; Area = √[10.9×4.4×3.7×2.8] ≈ 22.3 cm²"
+        ],
+        "exam_tips": [
+            "Check for isosceles or right-angled triangles to simplify calculations.",
+            "For decimals, carefully calculate (s-a)(s-b)(s-c) before taking the square root.",
+            "Use formula for altitude: h = 2×Area/base if needed.",
+            "Always compute semi-perimeter s first; it is critical for Heron's formula.",
+            "Double-check units for area, inradius, and circumradius."
+        ]
+    }
+}

@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 9: Circles",
+    "generated_at": "2026-03-06T12:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that the angle in a semicircle is a right angle.",
+            "answer": "Using the properties of a triangle formed by the diameter as hypotenuse, the angle opposite the diameter is 90°.",
+            "answer_outline": ["Draw circle with diameter AB", "Select point C on circle", "Form triangle ABC", "Use triangle properties", "Conclude angle at C = 90°"],
+            "key_concepts": ["angle in semicircle", "right angle"],
+            "marks": 4,
+            "source_section": "9.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that angles subtended by the same chord at the circumference are equal.",
+            "answer": "Using isosceles triangles formed by radii to chord endpoints, it can be shown that angles at the circumference are equal.",
+            "answer_outline": ["Draw chord AB", "Select points C and D on same side", "Form triangles OAC, OBD", "Use isosceles triangle angles", "Conclude equality of angles"],
+            "key_concepts": ["chord", "angles at circumference", "equality"],
+            "marks": 4,
+            "source_section": "9.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that equal chords of a circle subtend equal angles at the center.",
+            "answer": "Draw triangles formed by radii to endpoints of chords and use congruence to show central angles are equal.",
+            "answer_outline": ["Draw equal chords AB and CD", "Join center O to endpoints", "Form triangles OAB and OCD", "Prove congruence", "Conclude equal central angles"],
+            "key_concepts": ["equal chords", "central angles", "congruence"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that the perpendicular from the center to a chord bisects the chord.",
+            "answer": "Triangles formed by radii and chord segments are congruent, so the perpendicular divides the chord equally.",
+            "answer_outline": ["Draw chord AB", "Draw perpendicular OM from center O", "Form triangles OMA and OMB", "Prove congruence", "Conclude chord bisected"],
+            "key_concepts": ["chord", "perpendicular from center", "bisector"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that the line joining the midpoints of two parallel chords passes through the center of the circle.",
+            "answer": "Midpoints lie on a line perpendicular to chords and intersect at the center.",
+            "answer_outline": ["Draw parallel chords AB and CD", "Mark midpoints M and N", "Draw line MN", "Show perpendicular to chords passes through center O"],
+            "key_concepts": ["parallel chords", "midpoints", "center"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that the sum of the opposite angles of a cyclic quadrilateral is 180°.",
+            "answer": "Use inscribed angle theorem to show sum of opposite angles equals 180°.",
+            "answer_outline": ["Draw cyclic quadrilateral ABCD", "Identify opposite angles A and C", "Use inscribed angle property", "Conclude sum = 180°"],
+            "key_concepts": ["cyclic quadrilateral", "opposite angles", "angle sum"],
+            "marks": 4,
+            "source_section": "9.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that a quadrilateral is cyclic if a pair of its opposite angles sum to 180°.",
+            "answer": "Using the converse of the inscribed angle theorem, quadrilateral is cyclic.",
+            "answer_outline": ["Draw quadrilateral ABCD", "Check opposite angles sum = 180°", "Apply converse theorem", "Conclude cyclic quadrilateral"],
+            "key_concepts": ["cyclic quadrilateral", "angle sum condition"],
+            "marks": 4,
+            "source_section": "9.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that the tangents drawn from an external point to a circle are equal in length.",
+            "answer": "Triangles formed by radii and tangents are congruent, proving equal lengths.",
+            "answer_outline": ["Draw tangents PA and PB from external point P", "Join OA and OB", "Form triangles OAP and OBP", "Prove congruence", "Conclude PA = PB"],
+            "key_concepts": ["tangent", "external point", "length equality"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that the angle between tangent and chord equals the angle in the alternate segment.",
+            "answer": "By constructing radius and triangle, angle equality is established.",
+            "answer_outline": ["Draw chord AB and tangent at A", "Draw radius OA", "Identify angle between tangent and chord", "Use triangle properties", "Conclude equal to angle in alternate segment"],
+            "key_concepts": ["tangent-chord angle", "alternate segment"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that the radius drawn to the point of contact of a tangent is perpendicular to the tangent.",
+            "answer": "Using property of shortest distance from center to line, radius meets tangent at 90°.",
+            "answer_outline": ["Draw radius to point of contact", "Assume not perpendicular", "Contradiction with shortest distance", "Conclude perpendicularity"],
+            "key_concepts": ["radius", "tangent", "perpendicular"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove that the sum of angles subtended by two chords intersecting inside a circle is 180°.",
+            "answer": "Use properties of cyclic quadrilateral formed by intersection and chord endpoints.",
+            "answer_outline": ["Draw intersecting chords AB and CD at P", "Identify angles at intersection", "Use cyclic quadrilateral property", "Sum = 180°"],
+            "key_concepts": ["intersecting chords", "angle sum"],
+            "marks": 4,
+            "source_section": "9.6"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that the product of segments of two intersecting chords is equal.",
+            "answer": "Using similarity of triangles formed by intersecting chords.",
+            "answer_outline": ["Draw intersecting chords AB and CD at P", "Identify segments PA, PB, PC, PD", "Form triangles", "Show similarity", "Conclude PA×PB = PC×PD"],
+            "key_concepts": ["intersecting chords", "segment product"],
+            "marks": 4,
+            "source_section": "9.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that tangents at ends of a diameter are parallel.",
+            "answer": "Tangents at diameter endpoints form right angles with radii, hence are parallel.",
+            "answer_outline": ["Draw diameter AB", "Draw tangents at A and B", "Use perpendicular radius property", "Conclude tangents parallel"],
+            "key_concepts": ["tangent", "diameter", "parallel lines"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that angles in the same segment of a circle are equal.",
+            "answer": "Use isosceles triangles with radii and chord endpoints to establish equality of angles.",
+            "answer_outline": ["Draw chord AB", "Identify points C and D on same segment", "Form triangles with center", "Use isosceles triangle property", "Conclude equality of angles"],
+            "key_concepts": ["angles in same segment", "isosceles triangle"],
+            "marks": 4,
+            "source_section": "9.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the perpendicular bisector of a chord passes through the center.",
+            "answer": "Triangles formed by radii and chord segments are congruent, so perpendicular bisector passes through center.",
+            "answer_outline": ["Draw chord AB", "Draw midpoint M", "Draw perpendicular bisector", "Use triangle congruence", "Conclude passes through center"],
+            "key_concepts": ["chord", "perpendicular bisector", "center"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that a line joining midpoints of two equal chords passes through the center.",
+            "answer": "Use symmetry and perpendicular bisector property to show line passes through center.",
+            "answer_outline": ["Draw equal chords AB and CD", "Identify midpoints M and N", "Draw line MN", "Use perpendicular bisector and symmetry", "Show passes through center"],
+            "key_concepts": ["equal chords", "midpoints", "center"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that equal chords are equidistant from the center.",
+            "answer": "Using perpendiculars from center to chords and congruent triangles, distances are equal.",
+            "answer_outline": ["Draw equal chords AB and CD", "Draw perpendiculars OM and ON", "Form triangles OMA and ONC", "Prove congruence", "Conclude equal distances"],
+            "key_concepts": ["equal chords", "distance from center", "congruence"],
+            "marks": 4,
+            "source_section": "9.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that the external angle formed by two tangents equals the angle subtended by the line joining points of contact at the center.",
+            "answer": "Construct triangle with center and points of contact to show angle relation.",
+            "answer_outline": ["Draw tangents and points of contact", "Join center to points", "Form triangle", "Show external angle equals central subtended angle"],
+            "key_concepts": ["tangent", "external angle", "central angle"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that the line joining centers of two touching circles passes through the point of contact.",
+            "answer": "By definition of touching circles, distance between centers equals sum/difference of radii, passing through contact point.",
+            "answer_outline": ["Draw touching circles", "Identify centers and point of contact", "Use radius property", "Conclude line passes through contact point"],
+            "key_concepts": ["touching circles", "point of contact", "line joining centers"],
+            "marks": 4,
+            "source_section": "9.7"
+        },
+        {
+            "question_number": 20,
+            "question": "Prove that if two tangents intersect at an external point, the lengths from the point to points of contact are equal.",
+            "answer": "Triangles formed by tangents and radii are congruent, proving equal lengths.",
+            "answer_outline": ["Draw tangents from external point", "Join centers to contact points", "Form triangles", "Prove congruence", "Conclude equal lengths"],
+            "key_concepts": ["tangents", "external point", "equal lengths"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that the angle subtended by a chord at the center is greater than the angle subtended on the remaining part of the circle.",
+            "answer": "Using triangle with radius and chord, central angle > inscribed angle.",
+            "answer_outline": ["Draw chord AB", "Form triangle OAB", "Use isosceles triangle angles", "Conclude central angle > inscribed angle"],
+            "key_concepts": ["chord", "central angle", "inscribed angle"],
+            "marks": 4,
+            "source_section": "9.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Prove that the tangents at the ends of a diameter are parallel.",
+            "answer": "Tangents at diameter endpoints are perpendicular to radii, so parallel to each other.",
+            "answer_outline": ["Draw diameter AB", "Draw tangents at A and B", "Use perpendicular property", "Conclude tangents parallel"],
+            "key_concepts": ["tangents", "diameter", "parallel"],
+            "marks": 4,
+            "source_section": "9.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that the product of the lengths of segments of two intersecting chords is equal.",
+            "answer": "Use similarity of triangles formed by intersecting chords to show equality of products.",
+            "answer_outline": ["Draw intersecting chords", "Identify segments", "Form triangles", "Use similarity", "Prove equality of products"],
+            "key_concepts": ["intersecting chords", "segment product"],
+            "marks": 4,
+            "source_section": "9.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that angles in the same segment of a circle are equal.",
+            "answer": "Use inscribed angle theorem and properties of isosceles triangles to show equality.",
+            "answer_outline": ["Draw segment", "Identify angles in same segment", "Apply inscribed angle theorem", "Conclude equality"],
+            "key_concepts": ["angles in same segment", "inscribed angle"],
+            "marks": 4,
+            "source_section": "9.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that the radius drawn to the point of contact of a tangent is perpendicular to the tangent.",
+            "answer": "Using shortest distance from center to tangent, radius meets tangent at 90°.",
+            "answer_outline": ["Draw radius to point of contact", "Assume not perpendicular", "Use shortest distance property", "Conclude perpendicularity"],
+            "key_concepts": ["radius", "tangent", "perpendicularity"],
+            "marks": 4,
+            "source_section": "9.5"
+        }
+    ]
+}

@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 9: Some Applications of Trigonometry",
+    "generated_at": "2026-03-01T21:16:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is tan ratio mostly used in height and distance problems?",
+            "answer": "Because it directly relates height and horizontal distance.",
+            "key_points": [
+                "tan usage"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What happens to the angle of elevation when distance increases?",
+            "answer": "The angle of elevation decreases.",
+            "key_points": [
+                "inverse relation"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why are right triangles formed in trigonometry problems?",
+            "answer": "Because vertical and horizontal lines are perpendicular.",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which angle is equal in elevation and depression cases?",
+            "answer": "They are equal as alternate interior angles.",
+            "key_points": [
+                "alternate angles"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What trigonometric ratio is used if height and hypotenuse are known?",
+            "answer": "Sine ratio.",
+            "key_points": [
+                "sin usage"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 6,
+            "question": "Which ratio is used if base and hypotenuse are known?",
+            "answer": "Cosine ratio.",
+            "key_points": [
+                "cos usage"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is observer height sometimes added in problems?",
+            "answer": "Because angles are measured from eye level.",
+            "key_points": [
+                "eye level"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the unit of height in trigonometric problems?",
+            "answer": "Metres.",
+            "key_points": [
+                "units"
+            ],
+            "source_section": "Examples"
+        },
+        {
+            "question_number": 9,
+            "question": "Which angle is formed with horizontal in trigonometry?",
+            "answer": "Angle of elevation or depression.",
+            "key_points": [
+                "horizontal"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is sin 90° maximum?",
+            "answer": "Because the opposite side equals the hypotenuse.",
+            "key_points": [
+                "sin max"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the value of tan 90°?",
+            "answer": "tan 90° is not defined.",
+            "key_points": [
+                "undefined"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 12,
+            "question": "Which ratio is undefined at 90°?",
+            "answer": "Tangent ratio.",
+            "key_points": [
+                "tan undefined"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the relation between sin and cosec?",
+            "answer": "They are reciprocals of each other.",
+            "key_points": [
+                "reciprocal"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 14,
+            "question": "What is cot 30°?",
+            "answer": "cot 30° = √3.",
+            "key_points": [
+                "cot 30"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 15,
+            "question": "Which ratio helps find distance between two objects?",
+            "answer": "Tangent ratio.",
+            "key_points": [
+                "distance"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is ladder problem a right triangle?",
+            "answer": "Because the wall and ground are perpendicular.",
+            "key_points": [
+                "ladder problem"
+            ],
+            "source_section": "Examples"
+        },
+        {
+            "question_number": 17,
+            "question": "Which angle increases when observer moves closer?",
+            "answer": "Angle of elevation.",
+            "key_points": [
+                "observer movement"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which trigonometric ratio uses all three sides?",
+            "answer": "None, each ratio uses two sides.",
+            "key_points": [
+                "ratios"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 19,
+            "question": "Which ratio is reciprocal of sine?",
+            "answer": "Cosecant.",
+            "key_points": [
+                "cosec"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 20,
+            "question": "Which ratio is reciprocal of cosine?",
+            "answer": "Secant.",
+            "key_points": [
+                "sec"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 21,
+            "question": "Which ratio is reciprocal of cot?",
+            "answer": "Tangent.",
+            "key_points": [
+                "tan cot"
+            ],
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 22,
+            "question": "What is cos 90°?",
+            "answer": "cos 90° = 0.",
+            "key_points": [
+                "cos 90"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 23,
+            "question": "What is sin 0°?",
+            "answer": "sin 0° = 0.",
+            "key_points": [
+                "sin 0"
+            ],
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 24,
+            "question": "Which angle is measured from horizontal?",
+            "answer": "Angle of elevation or depression.",
+            "key_points": [
+                "horizontal"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the purpose of trigonometry in daily life?",
+            "answer": "To calculate heights and distances indirectly.",
+            "key_points": [
+                "applications"
+            ],
+            "source_section": "Summary"
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "class": "Class 10",
+    "subject": "History",
+    "chapter": "The Rise of Nationalism in Europe",
+    "difficulty": "Easy",
+    "source_pdf": "jess301.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "European Leaders Collage",
+            "objective": "Identify key leaders of European nationalism",
+            "materials": [
+                "Chart paper",
+                "Images of leaders",
+                "Glue",
+                "Markers"
+            ],
+            "steps": [
+                "Collect pictures of Mazzini, Garibaldi, Cavour, and Bismarck",
+                "Paste them on chart paper",
+                "Label each with their main contribution"
+            ],
+            "learning_outcome": "Recognizes major unification leaders",
+            "evaluation": "Correct labeling and presentation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Timeline of Italian Unification",
+            "objective": "Understand chronological sequence of events",
+            "materials": [
+                "Chart paper",
+                "Scale",
+                "Markers"
+            ],
+            "steps": [
+                "Research key dates from 1848 to 1861",
+                "Draw a horizontal line representing the years",
+                "Mark events like the Proclamation of Kingdom of Italy"
+            ],
+            "learning_outcome": "Builds chronological awareness",
+            "evaluation": "Accuracy of dates and events (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "German Unification Map",
+            "objective": "Visualize geographic changes in Germany",
+            "materials": [
+                "Blank map of Europe/Germany",
+                "Coloured pencils"
+            ],
+            "steps": [
+                "Locate Prussia and other German states",
+                "Shade regions unified under Bismarck by 1871",
+                "Create a legend for the colours used"
+            ],
+            "learning_outcome": "Geographic understanding of unification",
+            "evaluation": "Map accuracy and neatness (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Revolutionary Idea Chart",
+            "objective": "Recall core values of the French Revolution",
+            "materials": [
+                "Paper",
+                "Colours"
+            ],
+            "steps": [
+                "Write the words Liberty, Equality, and Fraternity",
+                "Draw symbols representing these ideas (e.g., Broken Chains)",
+                "Explain how they helped start nationalism"
+            ],
+            "learning_outcome": "Connects values to political change",
+            "evaluation": "Concept clarity and creativity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Leader Role Match",
+            "objective": "Associate leaders with their specific roles",
+            "materials": [
+                "Flashcards",
+                "Notebook"
+            ],
+            "steps": [
+                "Write leader names on one set of cards",
+                "Write their titles (e.g., 'The Sword', 'The Brain') on another",
+                "Match the pairs correctly"
+            ],
+            "learning_outcome": "Memory reinforcement of roles",
+            "evaluation": "Accuracy of matches (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Red Shirts Symbol Art",
+            "objective": "Understand the role of volunteers in Italy",
+            "materials": [
+                "Drawing sheet",
+                "Red crayons/paints"
+            ],
+            "steps": [
+                "Draw a 'Red Shirt' uniform",
+                "List Garibaldi's 'Expedition of the Thousand'",
+                "Describe why the Red Shirts were important"
+            ],
+            "learning_outcome": "Visualizes the role of Garibaldi",
+            "evaluation": "Content accuracy and art (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Revolution Word Search",
+            "objective": "Reinforce vocabulary of the 1848 revolutions",
+            "materials": [
+                "Squared paper",
+                "Pen"
+            ],
+            "steps": [
+                "Create a 10x10 grid with hidden words like 'Liberal', 'Nation', 'Republic'",
+                "Give the grid to a partner to solve",
+                "Define each word found"
+            ],
+            "learning_outcome": "Vocabulary building",
+            "evaluation": "Completion and definitions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "National Symbols ID",
+            "objective": "Recognize allegories used in nationalism",
+            "materials": [
+                "Printouts of Marianne and Germania"
+            ],
+            "steps": [
+                "Observe images of Marianne (France) and Germania (Germany)",
+                "List the symbols they carry (e.g., Olive branch, Sword)",
+                "Write what each symbol represents"
+            ],
+            "learning_outcome": "Understanding symbolism and allegories",
+            "evaluation": "Correct identification of symbols (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Women in Nationalism Script",
+            "objective": "Recognize the contribution of women",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Research women's participation in the Frankfurt Parliament",
+                "Write a short dialogue between two women activists of 1848",
+                "Highlight their demands for political rights"
+            ],
+            "learning_outcome": "Awareness of gender roles in history",
+            "evaluation": "Historical relevance of script (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Bismarck's Policy Card",
+            "objective": "Understand the 'Blood and Iron' policy",
+            "materials": [
+                "Cardstock",
+                "Sketch pens"
+            ],
+            "steps": [
+                "Write 'Blood and Iron' in bold letters",
+                "List the three wars fought by Prussia over seven years",
+                "Mention who became the German Emperor in 1871"
+            ],
+            "learning_outcome": "Clarity on German unification process",
+            "evaluation": "Accuracy of historical facts (10 marks)"
+        }
+    ]
+}

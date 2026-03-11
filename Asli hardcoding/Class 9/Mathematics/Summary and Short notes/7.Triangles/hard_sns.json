@@ -1,0 +1,48 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Hard",
+    "short_notes": {
+        "key_points": [
+            "A triangle has three sides, three angles, and important centers: centroid, incenter, circumcenter, orthocenter",
+            "Sum of interior angles = 180°; sum of exterior angles = 360°",
+            "Cevians: line segments joining a vertex to the opposite side (median, altitude, angle bisector, perpendicular bisector)",
+            "Median: joins vertex to midpoint of opposite side; centroid divides median in 2:1 ratio",
+            "Altitude: perpendicular from vertex to opposite side; orthocenter = intersection of altitudes",
+            "Angle bisector: divides opposite side in the ratio of adjacent sides; incenter = intersection of bisectors",
+            "Perpendicular bisector: intersects opposite side at 90°; circumcenter = intersection point, equidistant from vertices",
+            "Important theorems: Pythagoras theorem, Triangle inequality theorem, Basic proportionality theorem (Thales’ theorem)",
+            "Similarity and congruence criteria: SSS, SAS, ASA, AAS, RHS, AA for similarity",
+            "Heron’s formula: Area = √[s(s-a)(s-b)(s-c)], s = (a+b+c)/2",
+            "Special triangles: equilateral, isosceles, right-angled, scalene, with properties of sides, angles, medians, and altitudes"
+        ],
+        "examples": [
+            "Centroid: For ΔABC with medians AD, BE, CF, intersection G divides each median in 2:1",
+            "Incenter: intersection of angle bisectors of ΔABC; equidistant from all sides",
+            "Circumcenter: intersection of perpendicular bisectors; radius = distance to any vertex",
+            "Right triangle 3-4-5: hypotenuse = 5, area = 1/2 × 3 × 4 = 6",
+            "Median formula: m_a = 1/2 √(2b² + 2c² − a²), e.g., for sides a=5, b=6, c=7, m_a = √(2*36+2*49−25)/2 ≈ 5.36"
+        ],
+        "formulas": [
+            "Area = 1/2 × base × height",
+            "Heron’s formula: Area = √[s(s-a)(s-b)(s-c)]",
+            "Pythagoras theorem: hypotenuse² = base² + height²",
+            "Median: m_a = 1/2 √(2b² + 2c² − a²)",
+            "Altitude: h = 2 × Area / base",
+            "Centroid divides median: AG:GD = 2:1",
+            "Angle bisector theorem: BD/DC = AB/AC",
+            "Circumradius (R) = (abc)/(4 × Area)",
+            "Inradius (r) = Area / s"
+        ],
+        "exam_tips": [
+            "Always label vertices, sides, angles, and important points in diagrams",
+            "Use median, altitude, and bisector formulas for advanced problems",
+            "Check triangle inequality before solving",
+            "For Heron’s formula, calculate semi-perimeter first",
+            "Apply similarity and congruence theorems carefully",
+            "Remember centroid, circumcenter, and incenter properties for coordinate or length problems",
+            "Use Pythagoras theorem for right triangles or to find missing sides"
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Linear Equations in Two Variables",
+    "difficulty": "Easy",
+    "source_pdf": "m9_4.pdf",
+    "short_notes": {
+        "key_points": [
+            "A linear equation in two variables is an equation that contains two variables with degree 1",
+            "The general form of a linear equation in two variables is ax + by + c = 0",
+            "Here a and b are coefficients of x and y and c is the constant term",
+            "A solution of a linear equation in two variables is an ordered pair (x, y) that satisfies the equation",
+            "Linear equations in two variables have infinitely many solutions",
+            "Each solution corresponds to a point on the graph of the equation",
+            "The graph of a linear equation in two variables is always a straight line"
+        ],
+        "examples": [
+            "Linear equation: x + y = 5",
+            "Linear equation: 2x + 3y = 7",
+            "Solution of x + y = 5 → (2,3)",
+            "Solution of 2x + y = 6 → (2,2)",
+            "Ordered pair example: (4,1)",
+            "Equation in standard form: x + y − 5 = 0"
+        ],
+        "formulas": [
+            "General form of linear equation → ax + by + c = 0",
+            "Example equation → x + y = 5",
+            "Solution check → substitute x and y values into equation",
+            "Graph rule → two points determine a straight line"
+        ],
+        "exam_tips": [
+            "Always check if the variables have degree 1 to confirm the equation is linear",
+            "Substitute the values of x and y to verify if an ordered pair is a solution",
+            "Remember that a linear equation has infinitely many solutions",
+            "Plot at least two solution points to draw the graph of a linear equation"
+        ]
+    }
+}

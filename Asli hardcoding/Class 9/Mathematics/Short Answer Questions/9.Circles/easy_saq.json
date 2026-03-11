@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 9: Circles",
+    "generated_at": "2026-03-06T06:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a circle.",
+            "answer": "A circle is the set of all points in a plane that are at a fixed distance (radius) from a fixed point (center).",
+            "key_concepts": ["circle", "center", "radius"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the radius of a circle?",
+            "answer": "The radius of a circle is the distance from its center to any point on the circle.",
+            "key_concepts": ["radius"],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the diameter of a circle?",
+            "answer": "The diameter of a circle is twice the radius, i.e., the distance across the circle through its center.",
+            "key_concepts": ["diameter", "radius"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Define a chord of a circle.",
+            "answer": "A chord is a line segment whose endpoints lie on the circle.",
+            "key_concepts": ["chord"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Define a secant of a circle.",
+            "answer": "A secant is a line that intersects the circle at two points.",
+            "key_concepts": ["secant"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Define a tangent to a circle.",
+            "answer": "A tangent to a circle is a line that touches the circle at exactly one point.",
+            "key_concepts": ["tangent"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "State the radius-tangent perpendicularity property.",
+            "answer": "The radius of a circle drawn to the point of tangency is perpendicular to the tangent.",
+            "key_concepts": ["radius", "tangent", "perpendicularity"],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the distance from the center to a chord called?",
+            "answer": "The perpendicular distance from the center of the circle to the chord.",
+            "key_concepts": ["center", "chord", "perpendicular distance"],
+            "marks": 1,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Define an arc of a circle.",
+            "answer": "An arc is a part of the circumference of a circle.",
+            "key_concepts": ["arc", "circumference"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Define a sector of a circle.",
+            "answer": "A sector is the region enclosed by two radii and the arc between them.",
+            "key_concepts": ["sector", "radii", "arc"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Define a segment of a circle.",
+            "answer": "A segment is the region enclosed by a chord and the corresponding arc.",
+            "key_concepts": ["segment", "chord", "arc"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a concentric circle?",
+            "answer": "Concentric circles are circles having the same center but different radii.",
+            "key_concepts": ["concentric circles", "center", "radius"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 13,
+            "question": "State the circle angle at the center property.",
+            "answer": "The angle subtended by an arc at the center is twice the angle subtended at any point on the remaining part of the circle.",
+            "key_concepts": ["angle at center", "angle property", "circle"],
+            "marks": 3,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 14,
+            "question": "State the angle in a semicircle property.",
+            "answer": "The angle subtended by a semicircle at any point on the circle is a right angle.",
+            "key_concepts": ["angle in semicircle", "right angle"],
+            "marks": 3,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 15,
+            "question": "State the opposite angles of a cyclic quadrilateral property.",
+            "answer": "The sum of opposite angles of a cyclic quadrilateral is 180°.",
+            "key_concepts": ["cyclic quadrilateral", "opposite angles"],
+            "marks": 3,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Define a minor arc and major arc.",
+            "answer": "A minor arc is smaller than a semicircle, and a major arc is larger than a semicircle.",
+            "key_concepts": ["minor arc", "major arc", "arc"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 17,
+            "question": "State the tangent-secant property.",
+            "answer": "The square of the length of the tangent drawn from an external point equals the product of the lengths of the secant segment and its external part.",
+            "key_concepts": ["tangent", "secant", "external point"],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Define an exterior point of a circle.",
+            "answer": "A point lying outside the circle is called an exterior point.",
+            "key_concepts": ["exterior point", "circle"],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Define an interior point of a circle.",
+            "answer": "A point lying inside the circle is called an interior point.",
+            "key_concepts": ["interior point", "circle"],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 20,
+            "question": "State the property of equal chords in a circle.",
+            "answer": "Equal chords of a circle are equidistant from the center.",
+            "key_concepts": ["equal chords", "distance from center"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 21,
+            "question": "State the property of a perpendicular from center to a chord.",
+            "answer": "The perpendicular from the center to a chord bisects the chord.",
+            "key_concepts": ["perpendicular", "chord", "bisect"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 22,
+            "question": "State the property of circles with equal chords.",
+            "answer": "Chords of equal length in the same circle subtend equal angles at the center.",
+            "key_concepts": ["chords", "equal angles", "center"],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 23,
+            "question": "State the property of tangents from an external point.",
+            "answer": "Tangents drawn from an external point to a circle are equal in length.",
+            "key_concepts": ["tangent", "external point", "length"],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Define a segment of a circle formed by a chord and an arc.",
+            "answer": "The region between a chord and its corresponding arc is called a segment of a circle.",
+            "key_concepts": ["segment", "chord", "arc"],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "State the cyclic quadrilateral property related to angles subtended by the same chord.",
+            "answer": "Angles subtended by the same chord on the same side of the chord are equal.",
+            "key_concepts": ["cyclic quadrilateral", "angles", "chord"],
+            "marks": 2,
+            "source_section": "Section 9.5"
+        }
+    ]
+}

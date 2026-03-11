@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-04T20:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The diagonal of a square produces a square with how many times the area of the original square?",
+            "options": {
+                "A": "Same area",
+                "B": "Double the area",
+                "C": "Triple the area",
+                "D": "Half the area"
+            },
+            "correct_answer": "B",
+            "explanation": "A square constructed on the diagonal has double the area of the original square.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "In a right triangle, the side opposite the right angle is called:",
+            "options": {
+                "A": "Base",
+                "B": "Height",
+                "C": "Hypotenuse",
+                "D": "Median"
+            },
+            "correct_answer": "C",
+            "explanation": "The hypotenuse is the side opposite the right angle.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "If the sides of a right triangle are 3 and 4, the hypotenuse is:",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_answer": "A",
+            "explanation": "3² + 4² = 9 + 16 = 25, so hypotenuse = 5.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Which equation represents the Baudhāyana-Pythagoras theorem?",
+            "options": {
+                "A": "a + b = c",
+                "B": "a² + b² = c²",
+                "C": "a² − b² = c²",
+                "D": "ab = c²"
+            },
+            "correct_answer": "B",
+            "explanation": "The theorem states a² + b² = c².",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is a Pythagorean triple?",
+            "options": {
+                "A": "(2,3,4)",
+                "B": "(3,4,5)",
+                "C": "(5,6,7)",
+                "D": "(2,5,6)"
+            },
+            "correct_answer": "B",
+            "explanation": "3² + 4² = 5².",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Which number is approximately equal to √2?",
+            "options": {
+                "A": "1.414",
+                "B": "2.414",
+                "C": "3.414",
+                "D": "4.414"
+            },
+            "correct_answer": "A",
+            "explanation": "√2 ≈ 1.414.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "If the sides of a right triangle are 5 and 12, the hypotenuse is:",
+            "options": {
+                "A": "13",
+                "B": "14",
+                "C": "15",
+                "D": "16"
+            },
+            "correct_answer": "A",
+            "explanation": "5² + 12² = 169 → √169 = 13.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "A Pythagorean triple consists of:",
+            "options": {
+                "A": "Three integers",
+                "B": "Two integers",
+                "C": "Four integers",
+                "D": "Two fractions"
+            },
+            "correct_answer": "A",
+            "explanation": "Pythagorean triples are sets of three integers satisfying a² + b² = c².",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following triples satisfies a² + b² = c²?",
+            "options": {
+                "A": "(6,8,10)",
+                "B": "(2,3,5)",
+                "C": "(4,5,7)",
+                "D": "(3,5,6)"
+            },
+            "correct_answer": "A",
+            "explanation": "6² + 8² = 36 + 64 = 100 = 10².",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 10,
+            "question": "The diagonal of a square with side 1 unit is:",
+            "options": {
+                "A": "1",
+                "B": "√2",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Using Pythagoras theorem, diagonal = √2.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following is the smallest Pythagorean triple?",
+            "options": {
+                "A": "(3,4,5)",
+                "B": "(5,12,13)",
+                "C": "(8,15,17)",
+                "D": "(7,24,25)"
+            },
+            "correct_answer": "A",
+            "explanation": "(3,4,5) is the smallest triple.",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is irrational?",
+            "options": {
+                "A": "1.5",
+                "B": "3/4",
+                "C": "√2",
+                "D": "2"
+            },
+            "correct_answer": "C",
+            "explanation": "√2 is irrational.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "The sides of an isosceles right triangle are:",
+            "options": {
+                "A": "All equal",
+                "B": "Two equal sides",
+                "C": "All different",
+                "D": "No equal sides"
+            },
+            "correct_answer": "B",
+            "explanation": "Two sides are equal.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following numbers lies between 1.41 and 1.42?",
+            "options": {
+                "A": "√2",
+                "B": "√3",
+                "C": "√5",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "√2 ≈ 1.414.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "If a = 6 in an isosceles right triangle, c equals:",
+            "options": {
+                "A": "6√2",
+                "B": "12",
+                "C": "8",
+                "D": "10"
+            },
+            "correct_answer": "A",
+            "explanation": "c = a√2 = 6√2.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following is NOT a Pythagorean triple?",
+            "options": {
+                "A": "(3,4,5)",
+                "B": "(5,12,13)",
+                "C": "(6,8,10)",
+                "D": "(2,3,4)"
+            },
+            "correct_answer": "D",
+            "explanation": "2² + 3² ≠ 4².",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 17,
+            "question": "If a = 8 and b = 15, the value of c is:",
+            "options": {
+                "A": "16",
+                "B": "17",
+                "C": "18",
+                "D": "19"
+            },
+            "correct_answer": "B",
+            "explanation": "8² + 15² = 289 → √289 = 17.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 18,
+            "question": "The theorem a² + b² = c² applies to:",
+            "options": {
+                "A": "All triangles",
+                "B": "Right triangles",
+                "C": "Equilateral triangles",
+                "D": "Isosceles triangles"
+            },
+            "correct_answer": "B",
+            "explanation": "It applies only to right triangles.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which mathematician proved Fermat’s Last Theorem?",
+            "options": {
+                "A": "Euclid",
+                "B": "Andrew Wiles",
+                "C": "Newton",
+                "D": "Euler"
+            },
+            "correct_answer": "B",
+            "explanation": "Andrew Wiles proved Fermat’s Last Theorem in 1994.",
+            "difficulty": "easy",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following is a primitive Pythagorean triple?",
+            "options": {
+                "A": "(3,4,5)",
+                "B": "(6,8,10)",
+                "C": "(9,12,15)",
+                "D": "(12,16,20)"
+            },
+            "correct_answer": "A",
+            "explanation": "(3,4,5) has no common factor.",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Which theorem relates the sides of a right triangle?",
+            "options": {
+                "A": "Euclid theorem",
+                "B": "Baudhāyana-Pythagoras theorem",
+                "C": "Fermat theorem",
+                "D": "Newton theorem"
+            },
+            "correct_answer": "B",
+            "explanation": "It relates sides of right triangles.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following squares equals 25?",
+            "options": {
+                "A": "3²",
+                "B": "4²",
+                "C": "5²",
+                "D": "6²"
+            },
+            "correct_answer": "C",
+            "explanation": "5² = 25.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "The diagonal of a rectangle can be found using:",
+            "options": {
+                "A": "Addition",
+                "B": "Multiplication",
+                "C": "Pythagoras theorem",
+                "D": "Division"
+            },
+            "correct_answer": "C",
+            "explanation": "Diagonal forms a right triangle.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following is an application of Pythagoras theorem?",
+            "options": {
+                "A": "Finding rectangle diagonal",
+                "B": "Finding prime numbers",
+                "C": "Sorting numbers",
+                "D": "Multiplying fractions"
+            },
+            "correct_answer": "A",
+            "explanation": "Used to calculate diagonals and distances.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 25,
+            "question": "Which triangle always satisfies a² + b² = c²?",
+            "options": {
+                "A": "Equilateral triangle",
+                "B": "Right triangle",
+                "C": "Acute triangle",
+                "D": "Obtuse triangle"
+            },
+            "correct_answer": "B",
+            "explanation": "The theorem holds only for right triangles.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        }
+    ]
+}

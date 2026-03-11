@@ -1,0 +1,118 @@
+{
+    "chapter": "JEF P103 – The Midnight Visitor",
+    "title": "Reading Passages with Questions",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully and answer the questions. Answers must be found only within the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Ausable was a secret agent who lived in Paris. He was very fat and moved slowly, unlike the spies shown in films. Fowler, a writer, felt disappointed when he first met Ausable because he expected excitement and danger.",
+            "questions": [
+                "Who was Ausable?",
+                "Where did Ausable live?",
+                "How did Ausable look?",
+                "What was Fowler’s profession?",
+                "Why was Fowler disappointed?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Fowler had imagined secret agents as slim, smart, and adventurous. Ausable, however, spoke calmly and showed no excitement. Fowler felt that meeting Ausable would not give him any thrilling experience.",
+            "questions": [
+                "How did Fowler imagine secret agents?",
+                "How did Ausable behave while speaking?",
+                "Did Ausable show excitement?",
+                "What kind of experience did Fowler expect?",
+                "Why did Fowler feel let down?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Suddenly, a man named Max entered Ausable’s room with a gun in his hand. He was another secret agent and looked threatening. His sudden entry created fear and tension in the room.",
+            "questions": [
+                "Who entered Ausable’s room?",
+                "What was Max holding?",
+                "What was Max’s profession?",
+                "How did Max appear?",
+                "What feeling did his entry create?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Max had come to steal an important report from Ausable. The report was about new missiles. Max believed that threatening Ausable with a gun would help him get the report easily.",
+            "questions": [
+                "Why did Max come to Ausable’s room?",
+                "What was Max trying to steal?",
+                "What was the report about?",
+                "How did Max plan to get the report?",
+                "What weapon did Max use to threaten Ausable?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "Ausable remained calm even when Max pointed a gun at him. He told Max that the room had a balcony through which enemies often entered. His calm tone made the story sound believable.",
+            "questions": [
+                "How did Ausable react to the threat?",
+                "What did Ausable say about the room?",
+                "Through what way did Ausable claim enemies entered?",
+                "How was Ausable’s tone?",
+                "Why did the story sound believable?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "In reality, there was no balcony outside the room. Ausable had invented the story to confuse Max. Max believed the story and became nervous.",
+            "questions": [
+                "Was there really a balcony?",
+                "Who invented the balcony story?",
+                "Why was the story invented?",
+                "Did Max believe the story?",
+                "How did Max feel after hearing it?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "A knock was heard at the door, and Max became frightened. Ausable said it must be the police. Hearing this, Max panicked and looked for a way to escape.",
+            "questions": [
+                "What sound was heard?",
+                "How did Max react to the knock?",
+                "Who did Ausable say was at the door?",
+                "What emotion did Max feel?",
+                "What did Max try to do next?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Believing the balcony existed, Max rushed to escape through it. He opened the window and jumped out. Since there was no balcony, Max fell to his death.",
+            "questions": [
+                "What did Max believe existed?",
+                "Why did Max rush to escape?",
+                "Through where did Max try to escape?",
+                "What happened when Max jumped?",
+                "Why did Max fall?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "The knock on the door was actually made by a waiter named Henry. He had come to deliver drinks ordered earlier. His arrival unknowingly caused Max’s downfall.",
+            "questions": [
+                "Who knocked on the door?",
+                "What was the waiter’s name?",
+                "Why had the waiter come?",
+                "What was he carrying?",
+                "How did his arrival affect Max?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Fowler was thrilled by the incident. He finally experienced real danger and excitement. He understood that intelligence and presence of mind were more important than physical strength.",
+            "questions": [
+                "How did Fowler feel after the incident?",
+                "What did Fowler experience?",
+                "What did Fowler finally understand?",
+                "What quality proved more important than strength?",
+                "What lesson did Fowler learn?"
+            ]
+        }
+    ]
+}

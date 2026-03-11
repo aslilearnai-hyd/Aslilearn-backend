@@ -1,0 +1,348 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Coordinate Geometry",
+    "generated_at": "2026-03-01T20:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that three points are collinear if AB + BC = AC.",
+            "answer": "Using distance formula, if the sum of two distances equals the third, the points lie on the same straight line.",
+            "answer_outline": [
+                "Distance calculation",
+                "Condition",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "collinearity"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that the diagonals of a parallelogram bisect each other using coordinates.",
+            "answer": "By showing that midpoints of both diagonals are equal using midpoint formula.",
+            "answer_outline": [
+                "Midpoint calculation",
+                "Equality",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "parallelogram"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Verify that the given four points form a square using distance formula.",
+            "answer": "By showing all sides are equal and diagonals are equal.",
+            "answer_outline": [
+                "Side lengths",
+                "Diagonal lengths"
+            ],
+            "key_concepts": [
+                "square"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that the midpoint of the hypotenuse of a right triangle is equidistant from all vertices.",
+            "answer": "Using distance formula, distances from midpoint to all vertices are equal.",
+            "answer_outline": [
+                "Midpoint",
+                "Distance comparison"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the ratio in which a point divides a line segment using section formula.",
+            "answer": "By equating coordinates using section formula and solving the ratio.",
+            "answer_outline": [
+                "Section formula",
+                "Ratio calculation"
+            ],
+            "key_concepts": [
+                "ratio"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that the locus of points equidistant from two fixed points is a straight line.",
+            "answer": "The locus is the perpendicular bisector obtained using distance equality.",
+            "answer_outline": [
+                "Distance equality",
+                "Perpendicular bisector"
+            ],
+            "key_concepts": [
+                "locus"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Show that a triangle is right-angled using coordinates.",
+            "answer": "By verifying Pythagoras theorem using distance formula.",
+            "answer_outline": [
+                "Distance",
+                "Verification"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that the area of a triangle formed by collinear points is zero.",
+            "answer": "Since points lie on the same line, no enclosed area is formed.",
+            "answer_outline": [
+                "Collinearity",
+                "Area"
+            ],
+            "key_concepts": [
+                "area"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how coordinates help in proving properties of a rhombus.",
+            "answer": "Using equal side lengths verified by distance formula.",
+            "answer_outline": [
+                "Distance",
+                "Property"
+            ],
+            "key_concepts": [
+                "rhombus"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that the diagonals of a square are equal using coordinates.",
+            "answer": "By calculating diagonal lengths using distance formula.",
+            "answer_outline": [
+                "Diagonal calculation"
+            ],
+            "key_concepts": [
+                "square"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Derive section formula using coordinate axes.",
+            "answer": "By drawing perpendiculars and using similar triangles.",
+            "answer_outline": [
+                "Construction",
+                "Similarity"
+            ],
+            "key_concepts": [
+                "section formula"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why midpoint of diagonals determines centre of parallelogram.",
+            "answer": "Because diagonals bisect each other at the centre.",
+            "answer_outline": [
+                "Midpoint",
+                "Centre"
+            ],
+            "key_concepts": [
+                "parallelogram"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that a triangle with equal sides is equilateral using coordinates.",
+            "answer": "By showing all three side lengths are equal using distance formula.",
+            "answer_outline": [
+                "Side comparison"
+            ],
+            "key_concepts": [
+                "equilateral triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how coordinate geometry simplifies geometric proofs.",
+            "answer": "It converts geometric relations into algebraic expressions.",
+            "answer_outline": [
+                "Simplification"
+            ],
+            "key_concepts": [
+                "proofs"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that distance between two coincident points is zero.",
+            "answer": "Using distance formula, subtraction yields zero.",
+            "answer_outline": [
+                "Formula application"
+            ],
+            "key_concepts": [
+                "distance"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how to find coordinates of a point dividing a line externally.",
+            "answer": "External division is studied in higher classes using modified section formula.",
+            "answer_outline": [
+                "Concept"
+            ],
+            "key_concepts": [
+                "external division"
+            ],
+            "marks": 3,
+            "source_section": "Note to the Reader"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that the midpoint of a line segment is equidistant from its endpoints.",
+            "answer": "Using distance formula, distances from midpoint to endpoints are equal.",
+            "answer_outline": [
+                "Distance comparison"
+            ],
+            "key_concepts": [
+                "midpoint"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how distance formula is used in navigation.",
+            "answer": "It helps calculate shortest paths between locations represented as coordinates.",
+            "answer_outline": [
+                "Application"
+            ],
+            "key_concepts": [
+                "navigation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that the distance between (a, b) and (−a, −b) is 2√(a² + b²).",
+            "answer": "By substituting coordinates in distance formula and simplifying.",
+            "answer_outline": [
+                "Substitution",
+                "Simplification"
+            ],
+            "key_concepts": [
+                "distance"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how section formula helps in dividing land plots.",
+            "answer": "It helps locate dividing points in fixed ratios.",
+            "answer_outline": [
+                "Practical use"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that the locus of a point equidistant from origin is a circle.",
+            "answer": "All points satisfying √(x² + y²) = r form a circle.",
+            "answer_outline": [
+                "Equation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "circle"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how coordinate geometry is useful in engineering.",
+            "answer": "It aids in design, measurement and positioning.",
+            "answer_outline": [
+                "Engineering applications"
+            ],
+            "key_concepts": [
+                "engineering"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that the diagonals of a rectangle are equal using coordinates.",
+            "answer": "By calculating diagonal lengths using distance formula.",
+            "answer_outline": [
+                "Diagonal comparison"
+            ],
+            "key_concepts": [
+                "rectangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why coordinate geometry is called analytical geometry.",
+            "answer": "Because it analyses geometry using algebra.",
+            "answer_outline": [
+                "Reason"
+            ],
+            "key_concepts": [
+                "analytical geometry"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarise the importance of coordinate geometry in mathematics.",
+            "answer": "It connects algebra and geometry, simplifying problem solving.",
+            "answer_outline": [
+                "Summary"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 5,
+            "source_section": "Chapter Summary"
+        }
+    ]
+}

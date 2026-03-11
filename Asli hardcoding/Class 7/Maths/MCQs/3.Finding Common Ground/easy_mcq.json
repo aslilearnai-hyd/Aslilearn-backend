@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Finding Common Ground (Symmetry)",
+    "generated_at": "2026-03-05T02:13:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A figure has _______ symmetry if it can be folded so that the two halves match exactly.",
+            "options": {
+                "A": "Rotational",
+                "B": "Line",
+                "C": "Point",
+                "D": "No"
+            },
+            "correct_answer": "B",
+            "explanation": "Line symmetry (or reflection symmetry) is when one half of a figure is a mirror image of the other.",
+            "difficulty": "easy",
+            "source_section": "Line Symmetry"
+        },
+        {
+            "question_number": 2,
+            "question": "How many lines of symmetry does a regular square have?",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "Infinite"
+            },
+            "correct_answer": "C",
+            "explanation": "A square has 4 lines of symmetry: two passing through the midpoints of opposite sides and two through the diagonals.",
+            "difficulty": "easy",
+            "source_section": "Symmetry in Regular Polygons"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following English letters has only horizontal line symmetry?",
+            "options": {
+                "A": "M",
+                "B": "H",
+                "C": "E",
+                "D": "A"
+            },
+            "correct_answer": "C",
+            "explanation": "The letter 'E' can be divided into matching top and bottom halves by a horizontal line.",
+            "difficulty": "easy",
+            "source_section": "Alphabet Symmetry"
+        },
+        {
+            "question_number": 4,
+            "question": "The order of rotational symmetry for a circle is:",
+            "options": {
+                "A": "1",
+                "B": "4",
+                "C": "360",
+                "D": "Infinite"
+            },
+            "correct_answer": "D",
+            "explanation": "A circle looks the same after rotation by any angle around its center.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 5,
+            "question": "An equilateral triangle has how many lines of symmetry?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "0"
+            },
+            "correct_answer": "C",
+            "explanation": "In an equilateral triangle, each altitude acts as a line of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Symmetry in Triangles"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of these shapes has rotational symmetry of order 2?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Equilateral Triangle",
+                "D": "Regular Pentagon"
+            },
+            "correct_answer": "B",
+            "explanation": "A rectangle looks the same at 180° and 360° rotations.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 7,
+            "question": "A Scalene triangle has ______ lines of symmetry.",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "A",
+            "explanation": "A scalene triangle has no equal sides or angles, hence no line of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Symmetry in Triangles"
+        },
+        {
+            "question_number": 8,
+            "question": "The angle of rotation for a figure with rotational symmetry of order 4 is:",
+            "options": {
+                "A": "45°",
+                "B": "90°",
+                "C": "180°",
+                "D": "360°"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle of rotation = 360° / Order = 360 / 4 = 90°.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following digits has rotational symmetry?",
+            "options": {
+                "A": "1",
+                "B": "4",
+                "C": "8",
+                "D": "7"
+            },
+            "correct_answer": "C",
+            "explanation": "The digit '8' (when written symmetrically) looks the same after a 180° rotation.",
+            "difficulty": "easy",
+            "source_section": "Numerical Symmetry"
+        },
+        {
+            "question_number": 10,
+            "question": "How many lines of symmetry does a regular hexagon have?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "D",
+            "explanation": "A regular polygon with 'n' sides has 'n' lines of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 11,
+            "question": "Which letter has both horizontal and vertical lines of symmetry?",
+            "options": {
+                "A": "X",
+                "B": "Y",
+                "C": "Z",
+                "D": "T"
+            },
+            "correct_answer": "A",
+            "explanation": "The letter 'X' can be folded both vertically and horizontally to match perfectly.",
+            "difficulty": "easy",
+            "source_section": "Alphabet Symmetry"
+        },
+        {
+            "question_number": 12,
+            "question": "If a shape looks exactly the same after a 180° turn, its order of rotational symmetry is at least:",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Looking same at 180° and 360° makes the order 2.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 13,
+            "question": "A semi-circle has how many lines of symmetry?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "A semi-circle has only one line of symmetry passing through the center of the diameter.",
+            "difficulty": "easy",
+            "source_section": "Line Symmetry"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following shapes has no line of symmetry?",
+            "options": {
+                "A": "Isosceles triangle",
+                "B": "Rhombus",
+                "C": "Parallelogram",
+                "D": "Kite"
+            },
+            "correct_answer": "C",
+            "explanation": "A general parallelogram has rotational symmetry but no lines of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Symmetry in Quadrilaterals"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the order of rotational symmetry for a regular pentagon?",
+            "options": {
+                "A": "1",
+                "B": "5",
+                "C": "10",
+                "D": "0"
+            },
+            "correct_answer": "B",
+            "explanation": "A regular polygon of 'n' sides has rotational symmetry of order 'n'.",
+            "difficulty": "easy",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 16,
+            "question": "The line of symmetry is also known as a ______ line.",
+            "options": {
+                "A": "Mirror",
+                "B": "Shadow",
+                "C": "Rotating",
+                "D": "Straight"
+            },
+            "correct_answer": "A",
+            "explanation": "Because it acts like a mirror reflecting one half onto the other.",
+            "difficulty": "easy",
+            "source_section": "Reflection Symmetry"
+        },
+        {
+            "question_number": 17,
+            "question": "Which letter has rotational symmetry but no line symmetry?",
+            "options": {
+                "A": "H",
+                "B": "O",
+                "C": "S",
+                "D": "A"
+            },
+            "correct_answer": "C",
+            "explanation": "The letter 'S' can be rotated 180° to look the same, but cannot be folded to match.",
+            "difficulty": "easy",
+            "source_section": "Alphabet Symmetry"
+        },
+        {
+            "question_number": 18,
+            "question": "A line of symmetry of a circle always passes through its:",
+            "options": {
+                "A": "Boundary",
+                "B": "Center",
+                "C": "Radius",
+                "D": "Tangent"
+            },
+            "correct_answer": "B",
+            "explanation": "Any diameter of a circle is its line of symmetry, and all diameters pass through the center.",
+            "difficulty": "easy",
+            "source_section": "Circle Properties"
+        },
+        {
+            "question_number": 19,
+            "question": "How many lines of symmetry does a regular octagon have?",
+            "options": {
+                "A": "4",
+                "B": "6",
+                "C": "8",
+                "D": "16"
+            },
+            "correct_answer": "C",
+            "explanation": "Octagon has 8 sides, so a regular octagon has 8 lines of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 20,
+            "question": "Every object has at least rotational symmetry of order:",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "360"
+            },
+            "correct_answer": "B",
+            "explanation": "Order 1 means it looks the same only after a full 360° turn.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 21,
+            "question": "An isosceles triangle has ______ line(s) of symmetry.",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "0"
+            },
+            "correct_answer": "A",
+            "explanation": "The line of symmetry connects the vertex between equal sides to the midpoint of the base.",
+            "difficulty": "easy",
+            "source_section": "Triangles"
+        },
+        {
+            "question_number": 22,
+            "question": "The angle of rotation for a regular hexagon is:",
+            "options": {
+                "A": "30°",
+                "B": "60°",
+                "C": "90°",
+                "D": "120°"
+            },
+            "correct_answer": "B",
+            "explanation": "360° / 6 sides = 60°.",
+            "difficulty": "easy",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of these figures has exactly 2 lines of symmetry?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Circle",
+                "D": "Equilateral Triangle"
+            },
+            "correct_answer": "B",
+            "explanation": "A rectangle has two lines of symmetry connecting the midpoints of opposite sides.",
+            "difficulty": "easy",
+            "source_section": "Quadrilaterals"
+        },
+        {
+            "question_number": 24,
+            "question": "A rhombus has lines of symmetry along its:",
+            "options": {
+                "A": "Sides",
+                "B": "Medians",
+                "C": "Diagonals",
+                "D": "Altitudes"
+            },
+            "correct_answer": "C",
+            "explanation": "The two diagonals of a rhombus are its lines of symmetry.",
+            "difficulty": "easy",
+            "source_section": "Symmetry in Quadrilaterals"
+        },
+        {
+            "question_number": 25,
+            "question": "If we rotate a shape by 120° and it looks the same, its order of rotational symmetry is:",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "360° / 120° = 3.",
+            "difficulty": "easy",
+            "source_section": "Rotational Symmetry"
+        }
+    ]
+}

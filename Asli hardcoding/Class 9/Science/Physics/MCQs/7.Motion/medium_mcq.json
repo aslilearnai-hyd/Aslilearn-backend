@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T14:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A body travels 20 m in 4 s. Its speed is:",
+            "options": {
+                "A": "2 m/s",
+                "B": "4 m/s",
+                "C": "5 m/s",
+                "D": "10 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed = distance/time = 20/4 = 5 m/s.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Convert 36 km/h into m/s.",
+            "options": {
+                "A": "5 m/s",
+                "B": "10 m/s",
+                "C": "15 m/s",
+                "D": "20 m/s"
+            },
+            "correct_answer": "B",
+            "explanation": "36 ÷ 3.6 = 10 m/s.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A body moving with constant velocity has:",
+            "options": {
+                "A": "Zero acceleration",
+                "B": "Increasing acceleration",
+                "C": "Decreasing acceleration",
+                "D": "Infinite acceleration"
+            },
+            "correct_answer": "A",
+            "explanation": "Acceleration occurs only when velocity changes.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A car starts from rest. Its initial velocity is:",
+            "options": {
+                "A": "1 m/s",
+                "B": "10 m/s",
+                "C": "0 m/s",
+                "D": "5 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "Starting from rest means initial velocity is zero.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Which graph represents uniform motion?",
+            "options": {
+                "A": "Curved distance-time graph",
+                "B": "Straight line distance-time graph",
+                "C": "Zigzag graph",
+                "D": "Circular graph"
+            },
+            "correct_answer": "B",
+            "explanation": "Uniform motion produces a straight-line distance-time graph.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Slope of velocity-time graph gives:",
+            "options": {
+                "A": "Speed",
+                "B": "Distance",
+                "C": "Acceleration",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Slope = change in velocity / time = acceleration.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Area under velocity-time graph gives:",
+            "options": {
+                "A": "Distance",
+                "B": "Displacement",
+                "C": "Acceleration",
+                "D": "Speed"
+            },
+            "correct_answer": "B",
+            "explanation": "Area under the graph equals displacement.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If velocity decreases with time, acceleration is:",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Constant"
+            },
+            "correct_answer": "B",
+            "explanation": "Decrease in velocity means negative acceleration.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "A body completes one circular round. Displacement is:",
+            "options": {
+                "A": "Equal to distance",
+                "B": "Greater than distance",
+                "C": "Zero",
+                "D": "Half of distance"
+            },
+            "correct_answer": "C",
+            "explanation": "Initial and final positions coincide.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Which quantity depends on direction?",
+            "options": {
+                "A": "Speed",
+                "B": "Distance",
+                "C": "Velocity",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Velocity includes direction.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "A car travels with uniform speed. Its acceleration is:",
+            "options": {
+                "A": "Zero",
+                "B": "Constant",
+                "C": "Increasing",
+                "D": "Decreasing"
+            },
+            "correct_answer": "A",
+            "explanation": "Uniform speed means no change in velocity.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "The SI unit of displacement is:",
+            "options": {
+                "A": "m/s",
+                "B": "m",
+                "C": "m/s²",
+                "D": "km/h"
+            },
+            "correct_answer": "B",
+            "explanation": "Displacement is measured in metres.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Uniform circular motion has:",
+            "options": {
+                "A": "Zero acceleration",
+                "B": "Constant acceleration",
+                "C": "Acceleration toward center",
+                "D": "No velocity"
+            },
+            "correct_answer": "C",
+            "explanation": "Circular motion has centripetal acceleration.",
+            "difficulty": "medium",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Which equation represents uniformly accelerated motion?",
+            "options": {
+                "A": "v = u + at",
+                "B": "s = ut + ½at²",
+                "C": "v² − u² = 2as",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "All three equations describe uniformly accelerated motion.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "The slope of distance-time graph represents:",
+            "options": {
+                "A": "Acceleration",
+                "B": "Velocity",
+                "C": "Speed",
+                "D": "Displacement"
+            },
+            "correct_answer": "C",
+            "explanation": "Slope of distance-time graph gives speed.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "If acceleration is zero, velocity is:",
+            "options": {
+                "A": "Constant",
+                "B": "Zero",
+                "C": "Infinite",
+                "D": "Changing"
+            },
+            "correct_answer": "A",
+            "explanation": "Zero acceleration means constant velocity.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which type of motion has constant speed but changing direction?",
+            "options": {
+                "A": "Linear motion",
+                "B": "Circular motion",
+                "C": "Uniform motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "B",
+            "explanation": "Circular motion changes direction continuously.",
+            "difficulty": "medium",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Velocity-time graph for uniform velocity is:",
+            "options": {
+                "A": "Straight horizontal line",
+                "B": "Straight vertical line",
+                "C": "Curved line",
+                "D": "Zigzag line"
+            },
+            "correct_answer": "A",
+            "explanation": "Uniform velocity produces horizontal line.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which instrument measures speed?",
+            "options": {
+                "A": "Odometer",
+                "B": "Speedometer",
+                "C": "Thermometer",
+                "D": "Barometer"
+            },
+            "correct_answer": "B",
+            "explanation": "Speedometer measures vehicle speed.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which quantity is vector?",
+            "options": {
+                "A": "Distance",
+                "B": "Speed",
+                "C": "Velocity",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Velocity has magnitude and direction.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which motion has constant acceleration?",
+            "options": {
+                "A": "Uniformly accelerated motion",
+                "B": "Uniform motion",
+                "C": "Circular motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Uniform acceleration means constant acceleration.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Displacement can be:",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Displacement depends on direction.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 23,
+            "question": "A freely falling object has:",
+            "options": {
+                "A": "Uniform acceleration",
+                "B": "Zero acceleration",
+                "C": "Negative acceleration",
+                "D": "Infinite acceleration"
+            },
+            "correct_answer": "A",
+            "explanation": "Gravity provides constant acceleration.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Velocity is:",
+            "options": {
+                "A": "Distance per time",
+                "B": "Displacement per time",
+                "C": "Acceleration per time",
+                "D": "Distance per speed"
+            },
+            "correct_answer": "B",
+            "explanation": "Velocity = displacement/time.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Acceleration occurs when:",
+            "options": {
+                "A": "Speed changes",
+                "B": "Direction changes",
+                "C": "Both A and B",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "Acceleration occurs when velocity changes.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        }
+    ]
+}

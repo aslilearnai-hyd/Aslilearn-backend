@@ -1,0 +1,398 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Working of Institutions",
+    "generated_at": "2026-03-07T22:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the importance of political institutions in a democratic system.",
+            "answer": "Political institutions ensure decisions are made through rules and procedures and involve multiple authorities in governance.",
+            "answer_outline": [
+                "Meaning of institutions",
+                "Role in democracy",
+                "Prevention of misuse of power"
+            ],
+            "key_concepts": [
+                "political institutions"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how major policy decisions are taken in India with reference to the Mandal Commission case.",
+            "answer": "The Cabinet approved the Mandal Commission recommendation, Parliament debated it and the government issued an official order to implement reservation.",
+            "answer_outline": [
+                "Cabinet decision",
+                "Parliament debate",
+                "Implementation by government"
+            ],
+            "key_concepts": [
+                "policy decision",
+                "Mandal Commission"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the functions of Parliament in maintaining democratic governance.",
+            "answer": "Parliament performs law making, financial control and represents public concerns through debates.",
+            "answer_outline": [
+                "Law making",
+                "Financial control",
+                "Debates and discussions"
+            ],
+            "key_concepts": [
+                "Parliament functions"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the Lok Sabha is considered more powerful than the Rajya Sabha.",
+            "answer": "Lok Sabha controls the Council of Ministers and has greater authority over financial matters and money bills.",
+            "answer_outline": [
+                "Control over government",
+                "Financial powers",
+                "Direct election"
+            ],
+            "key_concepts": [
+                "Lok Sabha power"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how Parliament exercises control over the executive.",
+            "answer": "Parliament controls the executive through question hour, debates, financial control and no-confidence motions.",
+            "answer_outline": [
+                "Question hour",
+                "Debates",
+                "No confidence motion"
+            ],
+            "key_concepts": [
+                "executive control"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss the significance of the bicameral legislature in India.",
+            "answer": "The bicameral system ensures balanced representation of people and states and improves legislative scrutiny.",
+            "answer_outline": [
+                "Lok Sabha representation",
+                "Rajya Sabha representation",
+                "Better law making"
+            ],
+            "key_concepts": [
+                "bicameral legislature"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the structure and powers of the Indian Parliament.",
+            "answer": "The Parliament consists of the President, Lok Sabha and Rajya Sabha and is responsible for law making and financial control.",
+            "answer_outline": [
+                "President",
+                "Lok Sabha",
+                "Rajya Sabha"
+            ],
+            "key_concepts": [
+                "Parliament structure"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the difference between political executive and permanent executive.",
+            "answer": "Political executives are elected leaders responsible for policy decisions while permanent executives are civil servants responsible for administration.",
+            "answer_outline": [
+                "Political executive",
+                "Permanent executive",
+                "Roles and responsibilities"
+            ],
+            "key_concepts": [
+                "executive"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the powers and responsibilities of the Prime Minister.",
+            "answer": "The Prime Minister leads the Cabinet, coordinates ministries and plays a key role in policy making.",
+            "answer_outline": [
+                "Cabinet leadership",
+                "Policy coordination",
+                "Government leadership"
+            ],
+            "key_concepts": [
+                "Prime Minister"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Discuss the role of the Council of Ministers in governance.",
+            "answer": "The Council of Ministers assists the Prime Minister in decision making and administration.",
+            "answer_outline": [
+                "Policy decisions",
+                "Administrative support"
+            ],
+            "key_concepts": [
+                "Council of Ministers"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the constitutional position of the President of India.",
+            "answer": "The President is the head of the state and acts according to the advice of the Council of Ministers.",
+            "answer_outline": [
+                "Head of state",
+                "Constitutional role",
+                "Advice of ministers"
+            ],
+            "key_concepts": [
+                "President"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how the President of India is elected.",
+            "answer": "The President is elected by an electoral college consisting of elected MPs and MLAs.",
+            "answer_outline": [
+                "Electoral college",
+                "MPs and MLAs"
+            ],
+            "key_concepts": [
+                "President election"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Discuss the role of civil servants in public administration.",
+            "answer": "Civil servants assist ministers in implementing policies and managing administration efficiently.",
+            "answer_outline": [
+                "Administrative support",
+                "Policy implementation"
+            ],
+            "key_concepts": [
+                "civil servants"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the concept of judiciary in India.",
+            "answer": "The judiciary is the system of courts responsible for interpreting laws and ensuring justice.",
+            "answer_outline": [
+                "Definition",
+                "Role in justice"
+            ],
+            "key_concepts": [
+                "judiciary"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the structure of the Indian judiciary.",
+            "answer": "The Indian judiciary consists of the Supreme Court, High Courts and lower courts.",
+            "answer_outline": [
+                "Supreme Court",
+                "High Courts",
+                "Lower courts"
+            ],
+            "key_concepts": [
+                "court structure"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of judicial independence.",
+            "answer": "Judicial independence ensures fair judgments without political influence.",
+            "answer_outline": [
+                "Fair justice",
+                "Protection of rights"
+            ],
+            "key_concepts": [
+                "judicial independence"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain judicial review and its significance.",
+            "answer": "Judicial review allows courts to examine laws and declare them unconstitutional if they violate the Constitution.",
+            "answer_outline": [
+                "Meaning",
+                "Role of courts",
+                "Protection of Constitution"
+            ],
+            "key_concepts": [
+                "judicial review"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain Public Interest Litigation and its importance.",
+            "answer": "Public Interest Litigation allows citizens to approach courts for matters affecting public interest.",
+            "answer_outline": [
+                "Meaning",
+                "Protection of public interest"
+            ],
+            "key_concepts": [
+                "PIL"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how courts settle disputes in a democratic society.",
+            "answer": "Courts interpret laws and provide judgments to resolve disputes between individuals, organizations and government.",
+            "answer_outline": [
+                "Interpretation of laws",
+                "Dispute resolution"
+            ],
+            "key_concepts": [
+                "courts"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of the Supreme Court in India.",
+            "answer": "The Supreme Court is the highest court and protects the Constitution and citizens' rights.",
+            "answer_outline": [
+                "Highest court",
+                "Guardian of Constitution"
+            ],
+            "key_concepts": [
+                "Supreme Court"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how institutions prevent misuse of power.",
+            "answer": "Institutions distribute power among different authorities and ensure decisions follow procedures.",
+            "answer_outline": [
+                "Power distribution",
+                "Checks and balances"
+            ],
+            "key_concepts": [
+                "institutions"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the concept of checks and balances among institutions.",
+            "answer": "Checks and balances ensure that no single institution becomes too powerful in governance.",
+            "answer_outline": [
+                "Power control",
+                "Institutional balance"
+            ],
+            "key_concepts": [
+                "checks and balances"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of debates and discussions in Parliament.",
+            "answer": "Debates help representatives discuss policies and hold the government accountable.",
+            "answer_outline": [
+                "Policy discussion",
+                "Government accountability"
+            ],
+            "key_concepts": [
+                "parliament debates"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why rules and procedures are important in decision making.",
+            "answer": "Rules ensure transparency, fairness and accountability in governance.",
+            "answer_outline": [
+                "Transparency",
+                "Accountability"
+            ],
+            "key_concepts": [
+                "rules"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how institutions strengthen democracy.",
+            "answer": "Institutions ensure fair decision making, distribute power and maintain accountability in governance.",
+            "answer_outline": [
+                "Power distribution",
+                "Accountability",
+                "Democratic functioning"
+            ],
+            "key_concepts": [
+                "institutions",
+                "democracy"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Overview"
+        }
+    ]
+}

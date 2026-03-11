@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Motion",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand different types of motion",
+        "Differentiate distance and displacement",
+        "Understand speed, velocity and acceleration",
+        "Interpret graphical representation of motion",
+        "Apply equations of motion",
+        "Solve numerical problems related to motion",
+        "Relate motion concepts to real-life applications"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Motion",
+            "topics_covered": [
+                "Definition of motion",
+                "Examples of motion in everyday life",
+                "Types of motion"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Real-life examples",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Identify examples of motion",
+                "Class discussion"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Concept check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Distance and Displacement",
+            "topics_covered": [
+                "Distance definition",
+                "Displacement definition",
+                "Differences between distance and displacement"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Concept comparison"
+            ],
+            "student_activities": [
+                "Draw diagrams",
+                "Solve simple problems"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Speed",
+            "topics_covered": [
+                "Speed definition",
+                "Average speed",
+                "Uniform and non-uniform motion"
+            ],
+            "teaching_strategy": [
+                "Numerical demonstrations",
+                "Examples from transportation"
+            ],
+            "student_activities": [
+                "Calculate average speed",
+                "Discuss daily-life examples"
+            ],
+            "assessment": [
+                "Problem solving",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Velocity and Acceleration",
+            "topics_covered": [
+                "Velocity definition",
+                "Acceleration concept",
+                "Examples of acceleration"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Diagram illustration"
+            ],
+            "student_activities": [
+                "Solve numerical examples",
+                "Explain real-life examples"
+            ],
+            "assessment": [
+                "Numerical questions",
+                "Notebook review"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Distance-Time Graph",
+            "topics_covered": [
+                "Graphical representation of motion",
+                "Distance-time graph interpretation"
+            ],
+            "teaching_strategy": [
+                "Graph plotting demonstration",
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Draw graphs",
+                "Interpret graph results"
+            ],
+            "assessment": [
+                "Graph evaluation",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Velocity-Time Graph",
+            "topics_covered": [
+                "Velocity-time graph",
+                "Uniform acceleration representation"
+            ],
+            "teaching_strategy": [
+                "Graph explanation",
+                "Examples from physics problems"
+            ],
+            "student_activities": [
+                "Plot graphs",
+                "Interpret slopes"
+            ],
+            "assessment": [
+                "Graph interpretation questions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Equations of Motion and Revision",
+            "topics_covered": [
+                "Three equations of motion",
+                "Numerical applications",
+                "Chapter summary"
+            ],
+            "teaching_strategy": [
+                "Worked examples",
+                "Revision discussion"
+            ],
+            "student_activities": [
+                "Solve numerical problems",
+                "Participate in revision discussion"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Science textbook",
+        "Motion charts",
+        "Graph paper"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Problem solving",
+        "Graph drawing",
+        "Short quizzes",
+        "Notebook checking"
+    ],
+    "teacher_tip": "Encourage students to solve numerical problems and interpret motion graphs to strengthen their conceptual understanding."
+}

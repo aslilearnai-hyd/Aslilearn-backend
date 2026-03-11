@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Electricity: Circuits and their Components",
+    "generated_at": "2026-03-05T21:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define electric current.",
+            "answer": "Electric current is the rate of flow of electric charge through a conductor.",
+            "key_concepts": ["electric current", "charge flow"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "State the SI unit of electric current.",
+            "answer": "The SI unit of electric current is ampere (A).",
+            "key_concepts": ["ampere", "SI unit"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What happens to current when resistance increases?",
+            "answer": "When resistance increases, the current in the circuit decreases.",
+            "key_concepts": ["resistance", "current relationship"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Why must an ammeter be connected in series?",
+            "answer": "An ammeter is connected in series so that the entire current passes through it for accurate measurement.",
+            "key_concepts": ["ammeter", "series connection"],
+            "marks": 1,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is a voltmeter connected in parallel?",
+            "answer": "A voltmeter is connected in parallel to measure the potential difference across a component.",
+            "key_concepts": ["voltmeter", "parallel connection"],
+            "marks": 1,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Name the law that relates voltage, current, and resistance.",
+            "answer": "Ohm’s Law relates voltage, current, and resistance.",
+            "key_concepts": ["Ohm's law"],
+            "marks": 1,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 7,
+            "question": "What does the formula V = IR represent?",
+            "answer": "It represents Ohm’s Law showing the relationship between voltage, current, and resistance.",
+            "key_concepts": ["Ohm's law", "V=IR"],
+            "marks": 1,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 8,
+            "question": "Why do conductors allow current to flow easily?",
+            "answer": "Conductors have free electrons that move easily and carry electric charge.",
+            "key_concepts": ["free electrons", "conductors"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do insulators not conduct electricity easily?",
+            "answer": "Insulators do not have free electrons to carry electric charge.",
+            "key_concepts": ["insulators", "electron movement"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the main function of a fuse in a circuit?",
+            "answer": "A fuse protects the circuit by melting and breaking the circuit during excessive current.",
+            "key_concepts": ["fuse", "circuit protection"],
+            "marks": 1,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 11,
+            "question": "Why does a filament glow in an electric bulb?",
+            "answer": "The filament glows due to the heating effect of electric current.",
+            "key_concepts": ["filament", "heating effect"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which metal is commonly used in electrical wiring?",
+            "answer": "Copper is commonly used in electrical wiring.",
+            "key_concepts": ["copper", "electrical wiring"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the function of insulation around wires?",
+            "answer": "Insulation prevents electric shocks and leakage of current.",
+            "key_concepts": ["insulation", "safety"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when a circuit becomes open?",
+            "answer": "When a circuit becomes open, current stops flowing.",
+            "key_concepts": ["open circuit"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the purpose of circuit diagrams?",
+            "answer": "Circuit diagrams represent electrical circuits using standard symbols.",
+            "key_concepts": ["circuit diagrams", "symbols"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are thick wires used in high-current circuits?",
+            "answer": "Thick wires have lower resistance and can carry larger currents safely.",
+            "key_concepts": ["wire thickness", "resistance"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What causes a short circuit?",
+            "answer": "A short circuit occurs when current flows through a path with very low resistance.",
+            "key_concepts": ["short circuit"],
+            "marks": 1,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 18,
+            "question": "What safety device automatically switches off a circuit during overload?",
+            "answer": "A circuit breaker automatically switches off the circuit during overload.",
+            "key_concepts": ["circuit breaker", "safety device"],
+            "marks": 1,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the direction of electron flow in a circuit?",
+            "answer": "Electrons flow from the negative terminal to the positive terminal of a cell.",
+            "key_concepts": ["electron flow"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why should electrical appliances not be used with wet hands?",
+            "answer": "Water conducts electricity and increases the risk of electric shock.",
+            "key_concepts": ["electric shock", "safety"],
+            "marks": 1,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 21,
+            "question": "What type of circuit is commonly used in household wiring?",
+            "answer": "Parallel circuits are used in household wiring.",
+            "key_concepts": ["parallel circuit", "household wiring"],
+            "marks": 1,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 22,
+            "question": "What does resistance depend on?",
+            "answer": "Resistance depends on the length, thickness, and material of the conductor.",
+            "key_concepts": ["resistance factors"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are electrical devices connected in parallel at home?",
+            "answer": "They are connected in parallel so each device receives the same voltage and works independently.",
+            "key_concepts": ["parallel connection"],
+            "marks": 1,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the purpose of earthing?",
+            "answer": "Earthing provides a safe path for excess current to flow into the ground.",
+            "key_concepts": ["earthing", "safety"],
+            "marks": 1,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 25,
+            "question": "What happens when the resistance of a circuit becomes very high?",
+            "answer": "When resistance becomes very high, the current flowing in the circuit becomes very small.",
+            "key_concepts": ["resistance", "current relationship"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

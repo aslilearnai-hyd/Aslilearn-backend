@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Derive the work-energy theorem for a body under variable force along a straight path.",
+      "answer": "For variable force F(x) along x, infinitesimal work dW = F(x) dx. Total work W = ∫ F(x) dx. Using Newton's second law F = m dv/dt and dx = v dt → W = ∫ m v dv = 1/2 m v² – 1/2 m u² = ΔKE.",
+      "answer_outline": ["Define infinitesimal work", "Apply F = m dv/dt", "Integrate to get W = ΔKE"],
+      "key_concepts": ["work-energy theorem", "variable force", "integration", "kinetic energy"],
+      "marks": 6,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 2,
+      "question": "A 2 kg block is pulled with force F = 10 + 5x N along x in meters from x=0 to x=2 m. Find the work done.",
+      "answer": "Work W = ∫0² F dx = ∫0² (10 + 5x) dx = [10x + (5/2)x²]0² = 20 + 10 = 30 J",
+      "answer_outline": ["Set up integral of F dx", "Integrate from 0 to 2", "Compute W = 30 J"],
+      "key_concepts": ["variable force", "integration", "work calculation"],
+      "marks": 6,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Derive expression for potential energy stored in a spring when stretched or compressed from equilibrium.",
+      "answer": "Force F = kx. Infinitesimal work dW = F dx = kx dx. Total work W = ∫0^x kx dx = 1/2 k x² = PE stored.",
+      "answer_outline": ["Write Hooke's law F = kx", "Integrate F dx", "Derive PE = 1/2 k x²"],
+      "key_concepts": ["elastic potential energy", "spring", "integration"],
+      "marks": 5,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A body of mass 3 kg slides down a 10 m frictionless incline making 30° with horizontal. Find speed at bottom using energy method.",
+      "answer": "Vertical height h = 10 sin30° = 5 m. Using mgh = 1/2 mv² → 3×9.8×5 = 1/2×3×v² → v² = 98 → v ≈ 9.9 m/s",
+      "answer_outline": ["Compute vertical height", "Apply PE = KE", "Solve for v"],
+      "key_concepts": ["energy conservation", "inclined plane", "kinetic energy"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Derive the expression for power in terms of force and velocity.",
+      "answer": "P = dW/dt = d(F × d)/dt = F × (dd/dt) = F × v (if F along velocity direction).",
+      "answer_outline": ["Start with P = dW/dt", "Substitute W = Fd", "Differentiate to get P = Fv"],
+      "key_concepts": ["power", "force", "velocity", "derivation"],
+      "marks": 5,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 6,
+      "question": "A mass m is thrown vertically with speed u. Derive expressions for maximum height and potential energy at top.",
+      "answer": "At top, velocity v = 0, KE = 0, PE = mgh. Using KE_initial = PE_top → 1/2 mu² = mgh → h = u²/(2g), PE = mgh = 1/2 mu².",
+      "answer_outline": ["Use energy conservation", "Set KE_top = 0", "Solve for h and PE"],
+      "key_concepts": ["kinetic energy", "potential energy", "maximum height"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain energy transformations in a roller coaster, including effects of friction and air resistance.",
+      "answer": "At top: PE max, KE low. Descending: PE → KE. Friction and air resistance convert some mechanical energy into heat, reducing total mechanical energy.",
+      "answer_outline": ["Describe PE to KE conversion", "Include non-conservative losses", "Effect on total energy"],
+      "key_concepts": ["energy transformation", "non-conservative forces", "mechanical energy"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 8,
+      "question": "A machine lifts 500 kg to 10 m in 5 s. Calculate power output and efficiency if input energy is 60 kJ.",
+      "answer": "Work output W = mgh = 500×9.8×10 = 49,000 J. Power P = W/t = 49,000/5 = 9800 W. Efficiency = (49,000/60,000)×100 ≈ 81.67%",
+      "answer_outline": ["Compute work done", "Compute power", "Compute efficiency"],
+      "key_concepts": ["power", "efficiency", "work calculation"],
+      "marks": 5,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Derive the relation between velocity and height for a body sliding on a frictionless curve using energy conservation.",
+      "answer": "PE_top + KE_top = PE_bottom + KE_bottom → mgh + 1/2 mv_top² = 1/2 mv_bottom² → v_bottom = √(v_top² + 2gh).",
+      "answer_outline": ["Write energy conservation equation", "Substitute KE and PE", "Solve for v_bottom"],
+      "key_concepts": ["energy conservation", "velocity", "height relation"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain with example how non-conservative forces affect total mechanical energy and work done.",
+      "answer": "Friction/air resistance converts mechanical energy into heat, reducing KE + PE. Example: Sliding block slows down due to friction; extra work is needed to maintain motion.",
+      "answer_outline": ["Define non-conservative forces", "Explain energy dissipation", "Give example"],
+      "key_concepts": ["non-conservative forces", "mechanical energy", "energy loss"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 11,
+      "question": "A 1 kg mass is attached to spring k = 100 N/m. Find speed when passing equilibrium if stretched by 0.2 m.",
+      "answer": "PE_spring = 1/2 k x² = 1/2×100×0.2² = 2 J. At equilibrium, KE = PE = 2 J → 1/2 m v² = 2 → v = 2 m/s",
+      "answer_outline": ["Compute spring PE", "Set KE = PE at equilibrium", "Solve for speed v"],
+      "key_concepts": ["spring", "elastic PE", "kinetic energy", "speed calculation"],
+      "marks": 5,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 12,
+      "question": "A block moves under force F = 5x² N along x. Find work done from x=0 to x=2 m.",
+      "answer": "W = ∫0² 5x² dx = [5 x³/3]0² = 40/3 ≈ 13.33 J",
+      "answer_outline": ["Set up integral", "Integrate", "Compute numerical value"],
+      "key_concepts": ["variable force", "integration", "work calculation"],
+      "marks": 6,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how kinetic friction affects work done by a body moving on a horizontal surface.",
+      "answer": "Friction opposes motion, doing negative work, reducing KE. Extra work must be done by applied force to maintain constant speed.",
+      "answer_outline": ["Define kinetic friction", "Explain negative work", "Example with applied force"],
+      "key_concepts": ["kinetic friction", "negative work", "energy loss"],
+      "marks": 4,
+      "source_section": "10.1–10.3"
+    },
+    {
+      "question_number": 14,
+      "question": "A projectile of mass m is fired vertically. Derive time to reach maximum height using energy considerations.",
+      "answer": "At max height, KE=0 → 1/2 m v² = mgh → h = v²/(2g). Time t = h/v_avg. For constant acceleration: t = v/g",
+      "answer_outline": ["Use KE = PE at max height", "Compute h", "Use v_avg to find t or v/g"],
+      "key_concepts": ["projectile", "energy conservation", "time to max height"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Derive the expression for the efficiency of a machine in terms of energy lost due to friction.",
+      "answer": "Efficiency = (Useful work output / Total input energy) ×100 = [(Input energy – energy lost)/Input energy] ×100",
+      "answer_outline": ["Define efficiency", "Subtract energy lost", "Express in %"],
+      "key_concepts": ["efficiency", "friction loss", "work input/output"],
+      "marks": 5,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 16,
+      "question": "A block slides down two frictionless inclines from same height but different slopes. Compare final speeds.",
+      "answer": "Final speed depends only on vertical height due to energy conservation: v = √(2gh). Slope does not affect final speed.",
+      "answer_outline": ["Use energy conservation", "KE_bottom = PE_top", "Show speed independent of slope"],
+      "key_concepts": ["energy conservation", "incline slope", "kinetic energy"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how work done by non-conservative forces can be recovered by adding external energy.",
+      "answer": "Friction reduces mechanical energy; to maintain motion, external work (engine/motor) must supply lost energy to restore KE and PE.",
+      "answer_outline": ["State effect of non-conservative forces", "Explain external energy addition", "Provide example"],
+      "key_concepts": ["non-conservative forces", "external work", "energy restoration"],
+      "marks": 5,
+      "source_section": "10.3–10.4"
+    },
+    {
+      "question_number": 18,
+      "question": "A block attached to a spring oscillates with amplitude 0.1 m. Calculate maximum KE and PE if mass = 0.5 kg, k = 50 N/m.",
+      "answer": "PE_max = 1/2 k x² = 1/2 ×50×0.1² = 0.25 J. KE_max = PE_max = 0.25 J",
+      "answer_outline": ["Compute PE_max", "Use KE_max = PE_max", "Provide numerical answer"],
+      "key_concepts": ["spring", "oscillation", "kinetic & potential energy"],
+      "marks": 5,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Derive relation between velocity and height for pendulum using energy conservation.",
+      "answer": "At angle θ, height h = L(1 – cosθ). KE = total mechanical energy – PE = m g L (1 – cosθ) = 1/2 m v² → v = √[2 g L (1 – cosθ)]",
+      "answer_outline": ["Compute height at angle θ", "Apply KE = E_total – PE", "Solve for v"],
+      "key_concepts": ["pendulum", "energy conservation", "velocity"],
+      "marks": 6,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 20,
+      "question": "A block moves under combined forces: F1 = 10 N constant, F2 = 5x N along x. Find total work done from x=0 to x=3 m.",
+      "answer": "W1 = F1 × d = 10×3=30 J; W2 = ∫0³ 5x dx = 22.5 J. Total W = 30 + 22.5 = 52.5 J",
+      "answer_outline": ["Compute work for constant force", "Integrate variable force", "Sum both works"],
+      "key_concepts": ["combined forces", "work calculation", "integration"],
+      "marks": 6,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain energy losses in machines due to friction, air resistance, and deformation.",
+      "answer": "Friction converts mechanical energy to heat; air resistance dissipates energy; deformation absorbs energy, reducing useful work output.",
+      "answer_outline": ["List types of losses", "Explain each effect", "Impact on efficiency"],
+      "key_concepts": ["energy loss", "friction", "air resistance", "deformation"],
+      "marks": 5,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Derive formula for KE of a body moving along a curve under gravity using energy principles.",
+      "answer": "Total energy E = KE + PE = constant. KE = E_total – m g h → v = √(2/m × (E_total – m g h))",
+      "answer_outline": ["Write total mechanical energy", "Express KE in terms of PE", "Solve for v"],
+      "key_concepts": ["kinetic energy", "gravity", "energy conservation"],
+      "marks": 6,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 23,
+      "question": "A particle moves under a variable force F(x) = 6x – x². Find work done from x=0 to x=3 m.",
+      "answer": "W = ∫0³ (6x – x²) dx = [3x² – x³/3]0³ = 27 – 9 = 18 J",
+      "answer_outline": ["Set up integral", "Integrate", "Compute numerical value W=18 J"],
+      "key_concepts": ["variable force", "integration", "work done"],
+      "marks": 6,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 24,
+      "question": "A body of mass m slides down a rough incline. Derive expression for work done against friction.",
+      "answer": "Friction f = μ m g cosθ, displacement along incline s. Work done W_friction = f × s = μ m g cosθ × s",
+      "answer_outline": ["Identify friction force", "Compute displacement along incline", "Multiply to get work"],
+      "key_concepts": ["friction", "incline", "work done"],
+      "marks": 5,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 25,
+      "question": "A body is acted upon by a force F = (3 + 2x) N along x. Find work done from x=0 to x=4 m.",
+      "answer": "W = ∫0⁴ (3 + 2x) dx = [3x + x²]0⁴ = 12 + 16 = 28 J",
+      "answer_outline": ["Set up integral", "Integrate", "Compute W = 28 J"],
+      "key_concepts": ["variable force", "integration", "work calculation"],
+      "marks": 6,
+      "source_section": "10.1"
+    }
+  ]
+}

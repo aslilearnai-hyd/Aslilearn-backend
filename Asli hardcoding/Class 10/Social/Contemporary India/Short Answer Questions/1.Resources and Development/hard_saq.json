@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 1: Resources and Development",
+  "generated_at": "2026-03-11T17:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why resources are not free gifts of nature.",
+      "answer": "Resources become useful only when humans apply technology, knowledge, and skills to make them usable.",
+      "key_concepts": ["resource function"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the difference between stock and reserves?",
+      "answer": "Stock refers to resources available but not currently usable due to lack of technology, while reserves are resources that can be used with current technology but are saved for future use.",
+      "key_concepts": ["stock", "reserves"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why did the Club of Rome call for resource conservation in 1968?",
+      "answer": "They were concerned that increasing consumption of resources could lead to depletion and environmental problems.",
+      "key_concepts": ["Club of Rome"],
+      "marks": 2,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What was the significance of the Brundtland Commission report?",
+      "answer": "It introduced the concept of sustainable development and emphasized balancing economic growth with environmental protection.",
+      "key_concepts": ["Brundtland Commission"],
+      "marks": 2,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is balanced regional development important in resource planning?",
+      "answer": "It ensures that all regions develop equally and resources are used efficiently.",
+      "key_concepts": ["balanced development"],
+      "marks": 2,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Why may resource-rich regions remain economically backward?",
+      "answer": "They may lack infrastructure, technology, and proper resource planning.",
+      "key_concepts": ["regional disparities"],
+      "marks": 2,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is land considered a limited resource?",
+      "answer": "Land is limited in supply and cannot be expanded to meet increasing human demands.",
+      "key_concepts": ["land resource"],
+      "marks": 2,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain why human factors influence land use patterns.",
+      "answer": "Population density, technology, and economic activities determine how land is used.",
+      "key_concepts": ["land use factors"],
+      "marks": 2,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 9,
+      "question": "How does deforestation lead to land degradation?",
+      "answer": "Removal of vegetation exposes soil to erosion and reduces soil fertility.",
+      "key_concepts": ["deforestation impact"],
+      "marks": 2,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Why does over-irrigation lead to soil salinity?",
+      "answer": "Excess water raises the water table and leaves salt deposits in the soil after evaporation.",
+      "key_concepts": ["soil salinity"],
+      "marks": 2,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Why does soil formation take a long time?",
+      "answer": "Soil forms slowly through the weathering of rocks and accumulation of organic matter over thousands of years.",
+      "key_concepts": ["soil formation"],
+      "marks": 2,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Why is topsoil considered the most fertile layer?",
+      "answer": "Topsoil contains humus and nutrients necessary for plant growth.",
+      "key_concepts": ["topsoil"],
+      "marks": 2,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are alluvial soils considered highly fertile?",
+      "answer": "They contain rich minerals and nutrients deposited by rivers.",
+      "key_concepts": ["alluvial soil"],
+      "marks": 2,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 14,
+      "question": "Why does black soil retain moisture for long periods?",
+      "answer": "Black soil has a clayey texture which helps it retain water.",
+      "key_concepts": ["black soil properties"],
+      "marks": 2,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are laterite soils less fertile?",
+      "answer": "Heavy rainfall causes leaching of nutrients from the soil.",
+      "key_concepts": ["laterite soil"],
+      "marks": 2,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are arid soils generally infertile?",
+      "answer": "They have low organic content and high salt concentration due to low rainfall.",
+      "key_concepts": ["arid soil"],
+      "marks": 2,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is soil erosion harmful for agriculture?",
+      "answer": "It removes the fertile topsoil which is necessary for crop growth.",
+      "key_concepts": ["soil erosion"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 18,
+      "question": "Why does sheet erosion occur in flat lands?",
+      "answer": "Water spreads evenly over the surface and removes a thin layer of soil.",
+      "key_concepts": ["sheet erosion"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does gully erosion create ravines?",
+      "answer": "Continuous water flow cuts deep channels in the soil forming ravines.",
+      "key_concepts": ["gully erosion"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is terrace farming practiced in hilly areas?",
+      "answer": "It reduces soil erosion and makes slopes suitable for farming.",
+      "key_concepts": ["terrace farming"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is contour ploughing effective in reducing soil erosion?",
+      "answer": "It slows down the flow of water along slopes and prevents soil loss.",
+      "key_concepts": ["contour ploughing"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are shelter belts important in desert regions?",
+      "answer": "They reduce wind speed and protect soil from wind erosion.",
+      "key_concepts": ["shelter belts"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is strip cropping effective in preventing soil erosion?",
+      "answer": "It reduces wind speed by dividing fields into strips with crops and grass.",
+      "key_concepts": ["strip cropping"],
+      "marks": 2,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is conservation of resources necessary for sustainable development?",
+      "answer": "It ensures that resources remain available for future generations.",
+      "key_concepts": ["resource conservation"],
+      "marks": 2,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is proper resource management essential for economic growth?",
+      "answer": "Efficient resource management promotes balanced development and prevents resource depletion.",
+      "key_concepts": ["resource management"],
+      "marks": 2,
+      "source_section": "Section 1.3"
+    }
+  ]
+}

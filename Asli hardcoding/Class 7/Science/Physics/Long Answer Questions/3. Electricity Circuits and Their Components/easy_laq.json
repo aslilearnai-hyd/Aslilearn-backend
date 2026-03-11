@@ -1,0 +1,403 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Electricity: Circuits and Their Components",
+    "generated_at": "2026-03-05T17:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define electric current and give examples from daily life.",
+            "answer": "Electric current is the flow of electric charge through a conductor, usually measured in amperes. Examples include current flowing through a bulb, fan, or mobile charger.",
+            "answer_outline": [
+                "Definition of electric current",
+                "Examples from daily life"
+            ],
+            "key_concepts": [
+                "electric current"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the difference between conductors and insulators with examples.",
+            "answer": "Conductors are materials that allow electric current to flow easily, e.g., copper, aluminum. Insulators resist the flow of current, e.g., rubber, plastic.",
+            "answer_outline": [
+                "Definition of conductors",
+                "Definition of insulators",
+                "Examples"
+            ],
+            "key_concepts": [
+                "conductors",
+                "insulators"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Draw a simple electric circuit with a battery, bulb, and key and label the components.",
+            "answer": "A simple circuit consists of a battery connected to a bulb through a key (switch) using connecting wires. Labels: Battery (source), Bulb (load), Key (switch), Wires (conductors).",
+            "answer_outline": [
+                "Circuit diagram",
+                "Label components"
+            ],
+            "key_concepts": [
+                "electric circuit",
+                "components"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the role of a switch in an electric circuit.",
+            "answer": "A switch (or key) controls the flow of current in a circuit. When the switch is closed, current flows, and the bulb glows; when open, the circuit is broken and current stops.",
+            "answer_outline": [
+                "Definition of switch",
+                "Function in circuit",
+                "Examples"
+            ],
+            "key_concepts": [
+                "switch",
+                "electric circuit"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Define potential difference and its unit.",
+            "answer": "Potential difference (voltage) is the work done to move a unit charge between two points in a circuit. It is measured in volts (V).",
+            "answer_outline": [
+                "Definition",
+                "Unit of measurement"
+            ],
+            "key_concepts": [
+                "potential difference",
+                "voltage"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain what happens when more bulbs are added in series in a circuit.",
+            "answer": "In a series circuit, adding more bulbs increases the total resistance, causing the current to decrease. Consequently, each bulb glows dimmer.",
+            "answer_outline": [
+                "Series circuit explanation",
+                "Effect on current",
+                "Effect on brightness"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain what happens when more bulbs are added in parallel in a circuit.",
+            "answer": "In a parallel circuit, each bulb receives the same potential difference. Adding more bulbs does not affect the brightness of existing bulbs, as current splits among the paths.",
+            "answer_outline": [
+                "Parallel circuit explanation",
+                "Effect on brightness",
+                "Effect on current distribution"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "current distribution",
+                "brightness"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the difference between series and parallel circuits with examples.",
+            "answer": "In a series circuit, components are connected one after another; if one fails, the circuit breaks, e.g., old Christmas lights. In a parallel circuit, components are connected in separate paths; if one fails, others work, e.g., household wiring.",
+            "answer_outline": [
+                "Definition of series circuit",
+                "Definition of parallel circuit",
+                "Examples"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "parallel circuit"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Define resistance and its unit.",
+            "answer": "Resistance is the property of a material that opposes the flow of electric current. It is measured in ohms (Ω).",
+            "answer_outline": [
+                "Definition of resistance",
+                "Unit of measurement"
+            ],
+            "key_concepts": [
+                "resistance",
+                "ohm"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the effect of using a conductor and an insulator in a circuit.",
+            "answer": "A conductor allows current to flow, completing the circuit, e.g., copper wire. An insulator prevents current flow, breaking the circuit, e.g., rubber cover on wires.",
+            "answer_outline": [
+                "Role of conductor",
+                "Role of insulator",
+                "Effect on circuit"
+            ],
+            "key_concepts": [
+                "conductor",
+                "insulator",
+                "electric circuit"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why household appliances are connected in parallel circuits.",
+            "answer": "Household appliances are connected in parallel so that each receives full voltage and can operate independently. If one appliance fails, others continue to work.",
+            "answer_outline": [
+                "Reason for parallel connection",
+                "Advantage of independent operation"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "household wiring"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Draw and explain a simple circuit with a battery, bulb, and resistor in series.",
+            "answer": "Circuit: Battery connected to bulb and resistor in series through wires. Explanation: Current flows through the resistor first, then the bulb. The resistor reduces the current, controlling the brightness of the bulb.",
+            "answer_outline": [
+                "Circuit diagram",
+                "Series connection explanation"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "resistor",
+                "current control"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of short circuit and its dangers.",
+            "answer": "A short circuit occurs when current bypasses the normal path due to a low-resistance path, causing excessive current. It can damage appliances, wires, and may cause fire.",
+            "answer_outline": [
+                "Definition of short circuit",
+                "Cause",
+                "Dangers"
+            ],
+            "key_concepts": [
+                "short circuit",
+                "electric safety"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of fuses in an electric circuit.",
+            "answer": "A fuse is a safety device that melts when current exceeds a safe limit, preventing damage to appliances and fire hazards.",
+            "answer_outline": [
+                "Definition of fuse",
+                "Function in circuit",
+                "Importance for safety"
+            ],
+            "key_concepts": [
+                "fuse",
+                "electric safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Define the term 'electric circuit'.",
+            "answer": "An electric circuit is a closed path through which electric current flows. It consists of a source, load, switch, and connecting wires.",
+            "answer_outline": [
+                "Definition",
+                "Components"
+            ],
+            "key_concepts": [
+                "electric circuit"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why metals are good conductors of electricity.",
+            "answer": "Metals have free electrons that move easily under an electric field, allowing current to flow efficiently, making them good conductors.",
+            "answer_outline": [
+                "Reason for conductivity",
+                "Role of free electrons"
+            ],
+            "key_concepts": [
+                "conductors",
+                "metal conductivity"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain what is meant by open and closed circuits.",
+            "answer": "A closed circuit has a complete path allowing current to flow. An open circuit has a break, preventing current flow.",
+            "answer_outline": [
+                "Definition of closed circuit",
+                "Definition of open circuit",
+                "Examples"
+            ],
+            "key_concepts": [
+                "open circuit",
+                "closed circuit"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the importance of proper insulation in electrical wiring.",
+            "answer": "Insulation prevents current leakage, protects against electric shocks, and avoids short circuits, ensuring safe operation of electrical devices.",
+            "answer_outline": [
+                "Definition of insulation",
+                "Purpose",
+                "Safety importance"
+            ],
+            "key_concepts": [
+                "insulation",
+                "electric safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why current decreases when more resistors are added in series.",
+            "answer": "Adding resistors in series increases total resistance. According to Ohm's law (I = V/R), current decreases when resistance increases for a given voltage.",
+            "answer_outline": [
+                "Series resistance explanation",
+                "Effect on current",
+                "Reference to Ohm's law"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why current does not change when resistors are added in parallel.",
+            "answer": "In a parallel circuit, total resistance decreases when more resistors are added, but the voltage across each branch remains the same, so current through each branch depends only on its resistance.",
+            "answer_outline": [
+                "Parallel resistance explanation",
+                "Effect on current"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the working of an electric bell with a diagram.",
+            "answer": "An electric bell has a battery, electromagnet, hammer, and gong. Current energizes the electromagnet, attracting the hammer to strike the gong. When the hammer moves, the circuit breaks, de-energizing the electromagnet, releasing the hammer and repeating the cycle.",
+            "answer_outline": [
+                "Circuit components",
+                "Working principle",
+                "Diagram explanation"
+            ],
+            "key_concepts": [
+                "electric bell",
+                "electromagnet"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the difference between AC and DC currents with examples.",
+            "answer": "AC (Alternating Current) changes direction periodically, e.g., electricity from mains. DC (Direct Current) flows in one direction, e.g., battery current.",
+            "answer_outline": [
+                "Definition of AC",
+                "Definition of DC",
+                "Examples"
+            ],
+            "key_concepts": [
+                "AC current",
+                "DC current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the concept of a fuse rating and its importance.",
+            "answer": "Fuse rating indicates the maximum current the fuse can safely carry. Choosing the correct rating prevents damage to appliances and hazards due to excess current.",
+            "answer_outline": [
+                "Definition of fuse rating",
+                "Importance",
+                "Safety"
+            ],
+            "key_concepts": [
+                "fuse",
+                "electric safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why electric shocks are dangerous.",
+            "answer": "Electric shocks can disrupt the heart rhythm, damage nerves, or cause burns. The danger depends on current, voltage, and duration of contact.",
+            "answer_outline": [
+                "Reasons for danger",
+                "Effect on human body",
+                "Preventive measures"
+            ],
+            "key_concepts": [
+                "electric shock",
+                "safety"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how proper understanding of circuits and components helps in daily life.",
+            "answer": "Knowledge of circuits helps in safe usage of electrical appliances, preventing hazards, repairing devices, and efficient energy usage in households and industries.",
+            "answer_outline": [
+                "Practical applications",
+                "Safety",
+                "Efficiency"
+            ],
+            "key_concepts": [
+                "electric circuits",
+                "daily life applications"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        }
+    ]
+}

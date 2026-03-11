@@ -1,0 +1,182 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Poem 4: The Lake Isle of Innisfree",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who wrote 'The Lake Isle of Innisfree'?",
+            "answer": "The poet is W. B. Yeats.",
+            "key_points": ["W. B. Yeats"],
+            "source_section": "Title/Beginning"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the main theme of the poem?",
+            "answer": "The theme is peace, solitude, and harmony with nature.",
+            "key_points": ["peace", "solitude", "nature"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 3,
+            "question": "Where is Innisfree located according to the poem?",
+            "answer": "It is a small island in Lough Gill, Ireland.",
+            "key_points": ["Innisfree", "Lough Gill", "Ireland"],
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 4,
+            "question": "What does the poet want to build on the island?",
+            "answer": "He wants to build a small cabin made of clay and wattles.",
+            "key_points": ["cabin", "clay", "wattles"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 5,
+            "question": "Why does the poet want to go to Innisfree?",
+            "answer": "He wants peace, solitude, and to live close to nature.",
+            "key_points": ["peace", "solitude", "nature"],
+            "source_section": "Beginning-Middle"
+        },
+        {
+            "question_number": 6,
+            "question": "What natural sounds does the poet mention?",
+            "answer": "The bee-loud glade, the lake water lapping, and the evening sounds.",
+            "key_points": ["bee-loud glade", "lake water lapping", "evening sounds"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 7,
+            "question": "How does the poet describe his feelings in the city?",
+            "answer": "He feels restless and longs for the calm of Innisfree.",
+            "key_points": ["restless", "longing", "calm"],
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 8,
+            "question": "What mood is created by the poem?",
+            "answer": "A peaceful, calm, and reflective mood.",
+            "key_points": ["peaceful", "calm", "reflective"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 9,
+            "question": "Which imagery is prominent in the poem?",
+            "answer": "Visual and auditory imagery of nature like the lake, the cabin, and sounds of water and bees.",
+            "key_points": ["visual imagery", "auditory imagery", "nature"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 10,
+            "question": "What does 'bee-loud glade' signify?",
+            "answer": "It signifies the abundance and liveliness of nature.",
+            "key_points": ["bee-loud glade", "nature", "liveliness"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 11,
+            "question": "How does the poet plan to sustain himself on the island?",
+            "answer": "By growing beans and living simply in the cabin.",
+            "key_points": ["grow beans", "simple living", "cabin"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does the poet describe the lake water lapping?",
+            "answer": "To create a soothing and peaceful auditory image.",
+            "key_points": ["lake water lapping", "soothing", "peaceful"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 13,
+            "question": "What does the poet mean by 'I hear it in the deep heart’s core'?",
+            "answer": "He feels a deep inner longing for peace and nature.",
+            "key_points": ["deep longing", "inner peace", "nature"],
+            "source_section": "End"
+        },
+        {
+            "question_number": 14,
+            "question": "What does the poet’s cabin represent?",
+            "answer": "A place of solitude, self-sufficiency, and connection with nature.",
+            "key_points": ["cabin", "solitude", "nature"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 15,
+            "question": "How does the poet contrast city life and Innisfree?",
+            "answer": "City life is restless and noisy, while Innisfree offers calm and peace.",
+            "key_points": ["city life", "restless", "Innisfree", "peace"],
+            "source_section": "Beginning-Middle"
+        },
+        {
+            "question_number": 16,
+            "question": "What role does solitude play in the poem?",
+            "answer": "Solitude helps the poet reflect, rejuvenate, and connect with nature.",
+            "key_points": ["solitude", "reflection", "connection with nature"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the poet describe evening at Innisfree?",
+            "answer": "Evening is calm, peaceful, and enhanced by natural sounds.",
+            "key_points": ["evening", "peaceful", "nature sounds"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 18,
+            "question": "Why does the poet repeatedly think of Innisfree?",
+            "answer": "He longs for escape from the city and desires peace.",
+            "key_points": ["longing", "escape", "peace"],
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 19,
+            "question": "What feeling does the poem evoke in the reader?",
+            "answer": "A sense of calm, longing, and appreciation of nature.",
+            "key_points": ["calm", "longing", "nature"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 20,
+            "question": "Which line shows the poet’s connection to nature?",
+            "answer": "'And I shall have some peace there, for peace comes dropping slow.'",
+            "key_points": ["peace", "connection with nature"],
+            "source_section": "End"
+        },
+        {
+            "question_number": 21,
+            "question": "Why does the poet mention beans?",
+            "answer": "To show his simple, self-sufficient lifestyle on the island.",
+            "key_points": ["beans", "self-sufficient", "simple lifestyle"],
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 22,
+            "question": "What does the poet imply about human desire for nature?",
+            "answer": "Humans long for peace, simplicity, and harmony with the natural world.",
+            "key_points": ["human desire", "peace", "nature"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 23,
+            "question": "How is repetition used in the poem?",
+            "answer": "Repetition emphasizes longing and reinforces the poet’s focus on Innisfree.",
+            "key_points": ["repetition", "longing", "focus on Innisfree"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 24,
+            "question": "What does the poet’s dream of Innisfree reveal about him?",
+            "answer": "It reveals his yearning for simplicity, calm, and solitude.",
+            "key_points": ["yearning", "simplicity", "solitude"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the poet’s experience of Innisfree in one line.",
+            "answer": "The poet envisions Innisfree as a peaceful, solitary retreat in harmony with nature.",
+            "key_points": ["peaceful", "solitary", "nature"],
+            "source_section": "Overall theme"
+        }
+    ]
+}

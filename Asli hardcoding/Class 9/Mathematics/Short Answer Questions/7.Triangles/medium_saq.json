@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 7: Triangles",
+    "generated_at": "2026-03-06T04:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that the sum of angles of a triangle is 180°.",
+            "answer": "Draw a line parallel to one side through the opposite vertex; alternate interior angles and linear pair show sum of interior angles = 180°.",
+            "key_concepts": ["angle sum property", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove the Pythagoras theorem using triangle similarity.",
+            "answer": "Consider right-angled triangle, draw altitude from right angle to hypotenuse; use similarity of triangles to show hypotenuse² = sum of squares of other two sides.",
+            "key_concepts": ["Pythagoras theorem", "similar triangles"],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that the exterior angle of a triangle equals the sum of two opposite interior angles.",
+            "answer": "Extend one side; using linear pair and angle sum property, exterior angle = sum of opposite interior angles.",
+            "key_concepts": ["exterior angle property", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that the line joining the midpoints of two sides of a triangle is parallel to the third side and half of it.",
+            "answer": "Use triangle properties and coordinate method or vector method to show midpoint line is parallel and half the third side.",
+            "key_concepts": ["mid-point theorem", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that the medians of a triangle intersect at a point (centroid).",
+            "answer": "Draw medians, use coordinate method to show intersection point divides each median in 2:1 ratio.",
+            "key_concepts": ["centroid", "medians", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that the angle bisectors of a triangle intersect at a point (incentre).",
+            "answer": "Use angle bisector properties and perpendicular distances from sides to show concurrent point is equidistant from all sides.",
+            "key_concepts": ["incentre", "angle bisectors", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that the perpendicular bisectors of a triangle intersect at a point (circumcentre).",
+            "answer": "Use perpendicular bisector properties to show concurrency at a point equidistant from all vertices.",
+            "key_concepts": ["circumcentre", "triangle", "perpendicular bisector"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that the altitudes of a triangle intersect at a point (orthocentre).",
+            "answer": "Draw altitudes; use similar triangles or coordinate geometry to show altitudes are concurrent at a point.",
+            "key_concepts": ["orthocentre", "altitudes", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that in similar triangles, corresponding sides are proportional.",
+            "answer": "Use AA criterion for similarity; compare ratios of corresponding sides using similarity of triangles.",
+            "key_concepts": ["similar triangles", "side proportionality"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that in similar triangles, corresponding angles are equal.",
+            "answer": "By AA criterion or SAS similarity, show corresponding angles of similar triangles are equal.",
+            "key_concepts": ["similar triangles", "angles"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Use the Pythagoras theorem to find the length of the hypotenuse given two sides.",
+            "answer": "Apply hypotenuse² = sum of squares of other two sides and solve for hypotenuse.",
+            "key_concepts": ["Pythagoras theorem", "hypotenuse calculation"],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Use the Pythagoras theorem to find a missing side of a right-angled triangle.",
+            "answer": "Subtract square of known side from hypotenuse² or use other side² = hypotenuse² - known side².",
+            "key_concepts": ["Pythagoras theorem", "side calculation"],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that the medians of a triangle divide it into six smaller triangles of equal area.",
+            "answer": "Show that medians intersect at centroid, each median divides triangle into equal areas; total 6 triangles of equal area.",
+            "key_concepts": ["medians", "centroid", "area"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that in a right-angled triangle, the median to the hypotenuse equals half of the hypotenuse.",
+            "answer": "Draw median; use coordinate geometry or properties of right triangle to show median = hypotenuse/2.",
+            "key_concepts": ["right-angled triangle", "median"],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the sum of lengths of any two sides of a triangle is greater than the third side.",
+            "answer": "Use triangle inequality property to show sum of any two sides > third side.",
+            "key_concepts": ["triangle inequality", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that the sum of lengths of any two sides of a triangle is greater than twice the length of the median to the third side.",
+            "answer": "Use median formula and triangle inequality to establish the result.",
+            "key_concepts": ["median", "triangle inequality"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that the line joining the centroid and a vertex divides the median in a 2:1 ratio.",
+            "answer": "Use centroid definition; divide median into two parts, larger segment towards vertex = 2/3 of median.",
+            "key_concepts": ["centroid", "median ratio", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that the angle bisector divides the opposite side in the ratio of adjacent sides.",
+            "answer": "Use triangle properties to show angle bisector divides opposite side in proportion of other two sides.",
+            "key_concepts": ["angle bisector", "ratio", "triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that the centroid, circumcentre, incentre, and orthocentre coincide in an equilateral triangle.",
+            "answer": "Use symmetry and triangle properties to show all four centers coincide.",
+            "key_concepts": ["triangle centers", "equilateral triangle"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Use similarity of triangles to find the height of a building using its shadow.",
+            "answer": "Form right-angled triangles of building and stick, set up proportion of corresponding sides, solve for height.",
+            "key_concepts": ["similar triangles", "practical application"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Use similarity of triangles to find the distance between two points using shadows.",
+            "answer": "Form similar triangles, equate corresponding sides, solve for distance.",
+            "key_concepts": ["similar triangles", "distance calculation"],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Use the mid-point theorem to prove that a quadrilateral formed by joining midpoints of triangle sides is a parallelogram.",
+            "answer": "Join midpoints; apply midpoint theorem to show opposite sides parallel; hence, quadrilateral is parallelogram.",
+            "key_concepts": ["mid-point theorem", "triangle", "parallelogram"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Use Pythagoras theorem to check whether a triangle is right-angled.",
+            "answer": "Check if square of longest side = sum of squares of other two sides.",
+            "key_concepts": ["Pythagoras theorem", "right-angled triangle"],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that in a triangle, sides opposite equal angles are equal.",
+            "answer": "Use congruence criteria (ASA or AAS) to show sides opposite equal angles are equal.",
+            "key_concepts": ["triangle", "equal angles", "sides"],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that the area of a triangle = 1/2 × base × height.",
+            "answer": "Consider triangle with base and height; area formula follows from rectangle area by halving.",
+            "key_concepts": ["triangle area", "formula"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

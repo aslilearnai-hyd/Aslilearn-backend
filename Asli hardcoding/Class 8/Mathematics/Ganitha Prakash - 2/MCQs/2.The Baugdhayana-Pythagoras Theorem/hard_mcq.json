@@ -1,0 +1,361 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+  "generated_at": "2026-03-04T21:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If the sides of a right triangle are 9 and 40, what is the hypotenuse?",
+      "options": {
+        "A": "39",
+        "B": "40",
+        "C": "41",
+        "D": "42"
+      },
+      "correct_answer": "C",
+      "explanation": "9² + 40² = 81 + 1600 = 1681 = 41².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 2,
+      "question": "If the hypotenuse of a right triangle is 13 and one side is 5, the other side is:",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "9"
+      },
+      "correct_answer": "C",
+      "explanation": "5² + 12² = 169 = 13².",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is a primitive Pythagorean triple?",
+      "options": {
+        "A": "(6,8,10)",
+        "B": "(9,12,15)",
+        "C": "(5,12,13)",
+        "D": "(12,16,20)"
+      },
+      "correct_answer": "C",
+      "explanation": "(5,12,13) has no common factor greater than 1.",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 4,
+      "question": "If the equal sides of an isosceles right triangle are 7 units, the hypotenuse is:",
+      "options": {
+        "A": "7√2",
+        "B": "14",
+        "C": "10",
+        "D": "7"
+      },
+      "correct_answer": "A",
+      "explanation": "c = a√2 → 7√2.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following triples satisfies a² + b² = c²?",
+      "options": {
+        "A": "(8,15,17)",
+        "B": "(6,7,9)",
+        "C": "(4,7,8)",
+        "D": "(5,7,10)"
+      },
+      "correct_answer": "A",
+      "explanation": "8² + 15² = 64 + 225 = 289 = 17².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 6,
+      "question": "The diagonal of a square of side 10 units is:",
+      "options": {
+        "A": "10√2",
+        "B": "20",
+        "C": "10",
+        "D": "5√2"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonal = a√2.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 7,
+      "question": "If a = 8 and b = 15 in a right triangle, what is c?",
+      "options": {
+        "A": "16",
+        "B": "17",
+        "C": "18",
+        "D": "19"
+      },
+      "correct_answer": "B",
+      "explanation": "8² + 15² = 64 + 225 = 289 = 17².",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 8,
+      "question": "The diagonal of a rectangle with sides 9 and 12 is:",
+      "options": {
+        "A": "14",
+        "B": "15",
+        "C": "16",
+        "D": "13"
+      },
+      "correct_answer": "B",
+      "explanation": "9² + 12² = 81 + 144 = 225 → √225 = 15.",
+      "difficulty": "hard",
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 9,
+      "question": "If the diagonal of a square is √50, the side of the square is:",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "√25",
+        "D": "4"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonal² = 2a² → 50 = 2a² → a² = 25 → a = 5.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Which number completes the triple (12,35,?)?",
+      "options": {
+        "A": "36",
+        "B": "37",
+        "C": "38",
+        "D": "39"
+      },
+      "correct_answer": "B",
+      "explanation": "12² + 35² = 144 + 1225 = 1369 = 37².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which triple is NOT a Pythagorean triple?",
+      "options": {
+        "A": "(7,24,25)",
+        "B": "(8,15,17)",
+        "C": "(9,10,15)",
+        "D": "(5,12,13)"
+      },
+      "correct_answer": "C",
+      "explanation": "9² + 10² ≠ 15².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 12,
+      "question": "If c² = 2a², the triangle is:",
+      "options": {
+        "A": "Equilateral",
+        "B": "Isosceles right triangle",
+        "C": "Scalene triangle",
+        "D": "Obtuse triangle"
+      },
+      "correct_answer": "B",
+      "explanation": "This relation occurs when both legs are equal.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which value of c satisfies a² + b² = c² for a=5 and b=12?",
+      "options": {
+        "A": "12",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correct_answer": "B",
+      "explanation": "5² + 12² = 169 → c = 13.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following triples has all numbers less than 20?",
+      "options": {
+        "A": "(8,15,17)",
+        "B": "(12,35,37)",
+        "C": "(15,36,39)",
+        "D": "(7,24,25)"
+      },
+      "correct_answer": "A",
+      "explanation": "All numbers are less than 20.",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 15,
+      "question": "The approximate value of √2 correct to three decimal places is:",
+      "options": {
+        "A": "1.414",
+        "B": "1.4142",
+        "C": "1.415",
+        "D": "1.420"
+      },
+      "correct_answer": "A",
+      "explanation": "√2 ≈ 1.414.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+
+    {
+      "question_number": 16,
+      "question": "If a right triangle has sides 20 and 21, the hypotenuse is:",
+      "options": {
+        "A": "29",
+        "B": "28",
+        "C": "27",
+        "D": "30"
+      },
+      "correct_answer": "A",
+      "explanation": "20² + 21² = 841 = 29².",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following numbers is irrational?",
+      "options": {
+        "A": "√2",
+        "B": "4",
+        "C": "3/5",
+        "D": "2"
+      },
+      "correct_answer": "A",
+      "explanation": "√2 cannot be written as p/q.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which triple forms a right triangle?",
+      "options": {
+        "A": "(9,12,15)",
+        "B": "(4,6,8)",
+        "C": "(5,7,9)",
+        "D": "(6,9,10)"
+      },
+      "correct_answer": "A",
+      "explanation": "9² + 12² = 15².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 19,
+      "question": "The diagonal of a square of side 6 is:",
+      "options": {
+        "A": "6√2",
+        "B": "12",
+        "C": "36",
+        "D": "3√2"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonal = a√2.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 20,
+      "question": "If the hypotenuse is 25 and one side is 7, the other side is:",
+      "options": {
+        "A": "24",
+        "B": "23",
+        "C": "22",
+        "D": "21"
+      },
+      "correct_answer": "A",
+      "explanation": "7² + 24² = 625 = 25².",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which of the following satisfies the theorem a²+b²=c²?",
+      "options": {
+        "A": "(8,15,17)",
+        "B": "(5,6,7)",
+        "C": "(4,5,7)",
+        "D": "(3,6,7)"
+      },
+      "correct_answer": "A",
+      "explanation": "8²+15²=17².",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 22,
+      "question": "The square of 17 equals:",
+      "options": {
+        "A": "256",
+        "B": "289",
+        "C": "324",
+        "D": "361"
+      },
+      "correct_answer": "B",
+      "explanation": "17² = 289.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following is a non-primitive triple?",
+      "options": {
+        "A": "(3,4,5)",
+        "B": "(5,12,13)",
+        "C": "(6,8,10)",
+        "D": "(8,15,17)"
+      },
+      "correct_answer": "C",
+      "explanation": "All numbers divisible by 2.",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 24,
+      "question": "If a² + b² = c² and a = 9, b = 12, then c equals:",
+      "options": {
+        "A": "14",
+        "B": "15",
+        "C": "16",
+        "D": "17"
+      },
+      "correct_answer": "B",
+      "explanation": "9² + 12² = 225 → √225 = 15.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Which theorem relates the sides of a right triangle?",
+      "options": {
+        "A": "Euclid theorem",
+        "B": "Baudhāyana-Pythagoras theorem",
+        "C": "Fermat theorem",
+        "D": "Newton theorem"
+      },
+      "correct_answer": "B",
+      "explanation": "It describes the relation between the three sides of a right triangle.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    }
+  ]
+}

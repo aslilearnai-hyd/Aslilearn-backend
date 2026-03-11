@@ -1,0 +1,184 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Life Processes in Animals",
+    "difficulty": "Easy",
+    "source_pdf": "life_processes_animals_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Heartbeat and Pulse Observation",
+            "objective": "Observe and count the pulse rate",
+            "materials": [
+                "Stopwatch",
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Place your index and middle fingers on the inner side of your left wrist",
+                "Feel the throbbing (pulse) movements",
+                "Count the number of pulse beats in one minute while resting",
+                "Run for 2 minutes and count the pulse rate again"
+            ],
+            "learning_outcome": "Understands the relationship between physical activity and heart rate",
+            "evaluation": "Correct counting and comparison of resting vs. active pulse (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Stethoscope Model",
+            "objective": "Build a simple device to hear the heartbeat",
+            "materials": [
+                "Small funnel",
+                "Rubber tube",
+                "Rubber sheet or balloon",
+                "Rubber band"
+            ],
+            "steps": [
+                "Fix the funnel on one end of the rubber tube",
+                "Stretch a rubber sheet over the mouth of the funnel and fix it with a rubber band",
+                "Put the open end of the tube in your ear and the funnel on your chest",
+                "Listen to the 'lub-dub' sound of your heart"
+            ],
+            "learning_outcome": "Learns how sound can be amplified to listen to internal organs",
+            "evaluation": "Successful construction and hearing of heartbeat (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Breathing Rate Experiment",
+            "objective": "Calculate the average breathing rate of a person",
+            "materials": [
+                "Stopwatch",
+                "Notebook"
+            ],
+            "steps": [
+                "Sit comfortably and breathe normally",
+                "Count one breath as one 'inhalation + exhalation'",
+                "Count how many breaths you take in one minute",
+                "Compare your result with a family member"
+            ],
+            "learning_outcome": "Defines breathing rate and observes individual variation",
+            "evaluation": "Accurate recording of breaths per minute (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Exhaled Air and Lime Water",
+            "objective": "Prove that we exhale carbon dioxide",
+            "materials": [
+                "Freshly prepared lime water",
+                "Test tube",
+                "Plastic straw"
+            ],
+            "steps": [
+                "Pour some lime water into the test tube",
+                "Gently blow air into the lime water using the straw",
+                "Observe the change in the color of the lime water",
+                "Note if it turns milky"
+            ],
+            "learning_outcome": "Confirms the presence of carbon dioxide in exhaled air",
+            "evaluation": "Correct observation of the lime water turning milky (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Model of the Human Lungs",
+            "objective": "Understand the mechanism of breathing",
+            "materials": [
+                "Plastic bottle",
+                "Y-shaped tube",
+                "Two balloons",
+                "Rubber sheet"
+            ],
+            "steps": [
+                "Cut the bottom of the bottle and fix the Y-tube through the cap",
+                "Tie balloons to the ends of the Y-tube (acting as lungs)",
+                "Tie a rubber sheet at the bottom (acting as diaphragm)",
+                "Pull the rubber sheet down and observe the balloons inflate"
+            ],
+            "learning_outcome": "Visualizes how the diaphragm helps in lung expansion",
+            "evaluation": "Working model showing inflation and deflation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Human Excretory System Diagram",
+            "objective": "Identify the organs of the urinary system",
+            "materials": [
+                "Drawing sheet",
+                "Colored pencils"
+            ],
+            "steps": [
+                "Draw the two kidney-shaped organs",
+                "Draw the ureters, urinary bladder, and urethra",
+                "Label each part clearly",
+                "Color the kidneys dark red"
+            ],
+            "learning_outcome": "Identifies the pathway of urine removal from the body",
+            "evaluation": "Correct labeling and neatness of the diagram (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Blood Components Chart",
+            "objective": "Learn about the different parts of blood",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Divide the chart into four sections: RBC, WBC, Platelets, and Plasma",
+                "Write one function for each (e.g., RBC carries oxygen)",
+                "Explain why blood is red in color"
+            ],
+            "learning_outcome": "Knows the functions of various blood cells and plasma",
+            "evaluation": "Correct description of all four components (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Chest Expansion Measurement",
+            "objective": "Measure the change in chest size during breathing",
+            "materials": [
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Measure the chest size after deep inhalation",
+                "Measure the chest size after complete exhalation",
+                "Calculate the difference",
+                "Discuss why the size increases"
+            ],
+            "learning_outcome": "Observes the physical change in the thoracic cavity during respiration",
+            "evaluation": "Correct measurement and calculation of the difference (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Path of Food",
+            "objective": "Trace the journey of food in the digestive system",
+            "materials": [
+                "Notebook",
+                "Crayons"
+            ],
+            "steps": [
+                "List the organs from mouth to anus in order",
+                "Write what happens to food in the stomach briefly",
+                "Mention where the final digestion takes place"
+            ],
+            "learning_outcome": "Understands the sequence of the human digestive tract",
+            "evaluation": "Logical flow and correct order of organs (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Sweat and Cooling",
+            "objective": "Understand the role of sweat in temperature regulation",
+            "materials": [
+                "Water",
+                "Cotton ball",
+                "A fan"
+            ],
+            "steps": [
+                "Apply some water to the back of your hand using the cotton ball",
+                "Stand under a fan or wave your hand",
+                "Notice the cooling sensation",
+                "Relate this to how sweating helps our body"
+            ],
+            "learning_outcome": "Explains evaporation as a cooling process for the body",
+            "evaluation": "Personal observation and explanation of the cooling effect (10 marks)"
+        }
+    ]
+}

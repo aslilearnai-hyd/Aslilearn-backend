@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Poverty as a Challenge",
+  "generated_at": "2026-03-07T00:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How do social scientists look at poverty beyond the traditional income-based definitions?",
+      "answer": "Social scientists now look at poverty through a variety of indicators like illiteracy, lack of general resistance due to malnutrition, lack of access to healthcare, lack of job opportunities, and lack of access to safe drinking water and sanitation. They also analyze poverty through concepts like 'Social Exclusion' and 'Vulnerability'.",
+      "answer_outline": ["Move beyond income/consumption", "Social indicators (illiteracy, malnutrition)", "Concepts of exclusion and vulnerability"],
+      "key_concepts": ["social scientists", "multidimensional poverty", "social indicators"],
+      "marks": 5,
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze the concept of 'Social Exclusion' as both a cause and consequence of poverty.",
+      "answer": "As a cause, social exclusion prevents certain groups (like Dalits) from accessing facilities and opportunities that help in income generation. As a consequence, because people are poor, they are forced to live in poor surroundings, further isolating them from the social mainstream and better-off sections of society.",
+      "answer_outline": ["Exclusion as a barrier to opportunity", "Isolation as a result of poverty", "Impact on social equality"],
+      "key_concepts": ["social exclusion", "cause and consequence", "inequality"],
+      "marks": 5,
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why does the Poverty Line vary with time and place?",
+      "answer": "A poverty line is based on the 'minimum' level of subsistence, which changes as per the standard of living and social norms of a country. What is considered a luxury in one country (e.g., owning a car in India) may be a basic necessity in another (e.g., in the USA). Therefore, the poverty line is relative to the development level of the specific society.",
+      "answer_outline": ["Changing subsistence levels", "Relative to social norms", "Development level impact"],
+      "key_concepts": ["poverty line", "standard of living", "relative poverty"],
+      "marks": 4,
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Critically evaluate the calorie-based methodology for estimating the poverty line in India.",
+      "answer": "While the calorie norm (2400/2100) accounts for physical energy needs, it is criticized for being a 'subsistence' measure rather than a 'living' measure. It doesn't adequately account for the rising costs of education, health, and housing, which are essential for long-term escape from poverty.",
+      "answer_outline": ["Rationale for calorie norms", "Difference in rural/urban needs", "Limitations as a 'minimum' measure"],
+      "key_concepts": ["calorie requirement", "poverty estimation", "subsistence"],
+      "marks": 5,
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how 'Vulnerability' is determined for different individuals and groups.",
+      "answer": "Vulnerability is determined by the options available to different communities for finding an alternative living in terms of assets, education, health, and job opportunities. It also considers the ability of a group to handle risks like natural disasters (tsunamis, earthquakes) or economic slumps.",
+      "answer_outline": ["Alternative living options", "Access to assets and health", "Risk-handling capacity"],
+      "key_concepts": ["vulnerability", "risk assessment", "marginalized groups"],
+      "marks": 4,
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Discuss the 'Intersectionality' of social and economic vulnerability in India.",
+      "answer": "Vulnerability is highest where social and economic factors overlap. For example, a person who is from a Scheduled Caste (social factor) and is also a landless agricultural laborer (economic factor) faces a double disadvantage, making it nearly impossible to escape the poverty trap without state help.",
+      "answer_outline": ["Overlapping social/economic factors", "Double disadvantage (SC + Landless)", "Difficulty in escaping poverty traps"],
+      "key_concepts": ["intersectionality", "vulnerability", "SC/ST"],
+      "marks": 5,
+      "source_section": "3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are women and the elderly often called the 'Poorest of the Poor'?",
+      "answer": "In poor households, resources are scarce and often distributed unequally. Cultural norms and gender bias result in women, elderly members, and female infants receiving the least share of food, medical care, and education, making their experience of poverty more severe than the men in the same family.",
+      "answer_outline": ["Scarce resource distribution", "Intra-household inequality", "Gender and age bias"],
+      "key_concepts": ["poorest of the poor", "intra-household inequality", "gender bias"],
+      "marks": 4,
+      "source_section": "3.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Compare the poverty reduction strategies of Kerala, Punjab, and West Bengal.",
+      "answer": "Punjab and Haryana reduced poverty through high agricultural growth rates (Green Revolution). Kerala focused on Human Resource Development (education/health). West Bengal implemented land reform measures to distribute land more equitably among the poor.",
+      "answer_outline": ["Punjab: Agricultural growth", "Kerala: Human capital", "West Bengal: Land reforms"],
+      "key_concepts": ["poverty reduction", "land reform", "human capital"],
+      "marks": 5,
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Analyze the impact of the 'Colonial Legacy' on the current state of poverty in India.",
+      "answer": "The British administration's policies ruined traditional handicrafts and discouraged local industrial development (like textiles). This created a massive backlog of unemployment and a low level of economic development that lasted well into the post-independence era, forming a historical root for modern poverty.",
+      "answer_outline": ["Destruction of handicrafts", "Discouraged industrialization", "Low historical growth rate"],
+      "key_concepts": ["colonialism", "de-industrialization", "economic history"],
+      "marks": 5,
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "How does the 'Vicious Cycle' of poverty link low productivity with low income?",
+      "answer": "Low income leads to poor nutrition and lack of education. This results in poor health and low skills, which translates into low productivity at work. Low productivity ensures that wages remain low, thereby completing the cycle and keeping the individual in poverty.",
+      "answer_outline": ["Low income -> Low investment", "Low health/skill -> Low productivity", "Feedback loop to low income"],
+      "key_concepts": ["vicious cycle", "productivity", "human capital"],
+      "marks": 5,
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Describe the two-pronged strategy of the government to combat poverty.",
+      "answer": "The strategy includes: (1) Promotion of economic growth, which is expected to create jobs and provide resources for human development; and (2) Targeted anti-poverty programs like MGNREGA and PMGY to provide immediate relief to those who cannot benefit from growth alone.",
+      "answer_outline": ["Plank 1: Economic growth", "Plank 2: Targeted programs", "Complementary nature of both"],
+      "key_concepts": ["anti-poverty strategy", "economic growth", "targeted programs"],
+      "marks": 5,
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Evaluate the role of MGNREGA 2005 in providing social security to rural households.",
+      "answer": "MGNREGA provides a legal guarantee of 100 days of work, ensuring a minimum income. It also focuses on sustainable development through works like water conservation and afforestation. The reservation for women (1/3) and unemployment allowance further strengthen the social safety net.",
+      "answer_outline": ["Legal guarantee of work", "Sustainability focus", "Women empowerment and allowance"],
+      "key_concepts": ["MGNREGA", "social security", "rural employment"],
+      "marks": 5,
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is 'Proper Implementation' a major hurdle for anti-poverty schemes in India?",
+      "answer": "Implementation is hampered by administrative leakages, corruption, and poor targeting (where benefits go to those who aren't poor). Overlapping schemes also cause confusion and dilute the impact of the total funds spent.",
+      "answer_outline": ["Leakages and corruption", "Exclusion/Inclusion errors", "Overlapping of schemes"],
+      "key_concepts": ["implementation", "targeting", "leakages"],
+      "marks": 4,
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Discuss the 'Global Trend' of poverty in China versus Sub-Saharan Africa.",
+      "answer": "China saw a dramatic decline in poverty due to rapid economic growth and massive investment in human resources. In contrast, Sub-Saharan Africa has seen poverty rates remain high or decline very slowly due to political instability and low growth rates.",
+      "answer_outline": ["China's success factors", "Stagnation in Africa", "World Bank data comparison"],
+      "key_concepts": ["global poverty", "China", "Sub-Saharan Africa"],
+      "marks": 5,
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "How does 'Land Reform' help in reducing rural poverty? Give a state-specific example.",
+      "answer": "Land reform involves redistributing land from large owners to landless laborers. This gives the poor a productive asset to generate income. West Bengal is a successful example where land reforms significantly reduced rural poverty levels.",
+      "answer_outline": ["Redistribution of assets", "Income generation for landless", "West Bengal example"],
+      "key_concepts": ["land reform", "asset redistribution", "West Bengal"],
+      "marks": 4,
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the significance of the Pradhan Mantri Gramodaya Yojana (PMGY)?",
+      "answer": "PMGY focuses on improving the quality of life by providing central assistance for five basic needs: health, primary education, shelter, drinking water, and electrification. It targets the 'roots' of multidimensional poverty.",
+      "answer_outline": ["Targeting five basic needs", "Improving quality of life", "Central assistance to states"],
+      "key_concepts": ["PMGY", "basic needs", "multidimensional poverty"],
+      "marks": 4,
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Analyze the impact of 'Population Pressure' on the poverty cycle in India.",
+      "answer": "High population growth reduces the per capita availability of resources like land and jobs. It forces poor families to spend more on consumption, leaving no savings for education or health, which keeps the next generation in the same low-income bracket.",
+      "answer_outline": ["Per capita resource reduction", "Consumption vs. Saving", "Intergenerational poverty"],
+      "key_concepts": ["population growth", "per capita income", "poverty cycle"],
+      "marks": 4,
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is 'Income Poverty' considered a limited definition of the problem?",
+      "answer": "Income poverty only looks at the ability to buy basic goods. It ignores social dignity, freedom from discrimination, access to education, and political voice. 'Human Poverty' is a broader term that encompasses these qualitative aspects of life.",
+      "answer_outline": ["Income as a survival metric", "Ignoring qualitative aspects", "Concept of Human Poverty"],
+      "key_concepts": ["income poverty", "human poverty", "dignity"],
+      "marks": 4,
+      "source_section": "3.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Discuss the 'States that are Still Lagging' in poverty reduction and the possible reasons.",
+      "answer": "Bihar and Odisha remain at the bottom. Reasons include low industrialization, frequent natural disasters (for Odisha), poor infrastructure, and a lack of effective land reforms or human resource investment compared to southern states.",
+      "answer_outline": ["Identify Bihar/Odisha", "Lack of industrialization/infrastructure", "State-specific hurdles"],
+      "key_concepts": ["inter-state disparities", "Bihar", "Odisha"],
+      "marks": 5,
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 20,
+      "question": "How did the 'Green Revolution' help in poverty reduction, and what were its limitations?",
+      "answer": "The Green Revolution increased food grain production and farm incomes in Punjab/Haryana. However, its impact was regional (limited to North/West India) and it benefited large farmers more than small, landless ones, initially widening the income gap.",
+      "answer_outline": ["Production and income surge", "Regional limitations", "Inequality among farmers"],
+      "key_concepts": ["green revolution", "agricultural growth", "inequality"],
+      "marks": 5,
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the role of Self-Help Groups (SHGs) in the Swarnajayanti Gram Swarozgar Yojana (SGSY)?",
+      "answer": "SGSY encourages the poor to form SHGs to pool savings and take bank loans. This collective strength helps them start small businesses, avoiding the high interest rates of moneylenders and fostering financial independence.",
+      "answer_outline": ["Pooling savings", "Access to bank credit", "Avoiding moneylenders"],
+      "key_concepts": ["SHG", "SGSY", "microfinance"],
+      "marks": 4,
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the 'Relative' nature of the poverty line with an example from a developed country.",
+      "answer": "In the USA, a person not owning a car may be considered poor because a car is necessary for basic social and economic participation. In India, owning a car is still considered a luxury, showing that the poverty line moves upward as a country develops.",
+      "answer_outline": ["Relative to development", "USA vs. India example", "Changing social necessities"],
+      "key_concepts": ["relative poverty", "standard of living", "development"],
+      "marks": 4,
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "How does 'Illiteracy' act as both a cause and a dimension of poverty?",
+      "answer": "As a dimension, it is a visible sign of deprivation. As a cause, it prevents a person from getting a high-paying job, limits their awareness of government schemes, and reduces their productivity, keeping their income low.",
+      "answer_outline": ["Illiteracy as deprivation", "Barrier to high wages", "Information gap"],
+      "key_concepts": ["illiteracy", "cause and dimension", "human capital"],
+      "marks": 4,
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the significance of the World Bank's 'Purchasing Power Parity' (PPP) in comparing poverty?",
+      "answer": "PPP accounts for the fact that \$1 can buy more goods in India than in the USA. Using PPP allows for a fair comparison of 'real' living standards across different countries by looking at what the money actually buys locally.",
+      "answer_outline": ["Price level differences", "Real living standards", "Global comparison fairness"],
+      "key_concepts": ["PPP", "World Bank", "global comparison"],
+      "marks": 5,
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Analyze 'Helplessness' as a psychological dimension of poverty.",
+      "answer": "Helplessness is the state of having no voice or power to change one's circumstances. Poor people are often treated badly in hospitals, schools, and by the police. This lack of agency prevents them from demanding their rights and escaping systemic exploitation.",
+      "answer_outline": ["Lack of voice/agency", "Treatment in public institutions", "Systemic exploitation"],
+      "key_concepts": ["helplessness", "agency", "social justice"],
+      "marks": 5,
+      "source_section": "3.1"
+    }
+  ]
+}

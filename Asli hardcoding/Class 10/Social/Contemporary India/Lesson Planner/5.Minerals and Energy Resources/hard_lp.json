@@ -1,0 +1,165 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter_name": "Minerals and Energy Resources",
+  "lesson_level": "Hard",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse the formation and occurrence of minerals in different geological structures",
+    "Evaluate the role of mineral resources in industrial and economic development",
+    "Interpret maps showing distribution of minerals and energy resources in India",
+    "Compare conventional and non-conventional sources of energy",
+    "Assess the environmental impacts of mining activities",
+    "Investigate renewable energy potential in India",
+    "Develop critical thinking about sustainable resource management"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Minerals and Their Role in Development",
+      "topics_covered": [
+        "Scientific definition of minerals",
+        "Minerals as the foundation of industrial development",
+        "Importance of minerals in modern society"
+      ],
+      "teaching_strategy": [
+        "Concept explanation with case studies",
+        "Discussion on mineral-based industries"
+      ],
+      "student_activities": [
+        "Analyse everyday objects and identify the minerals used in them",
+        "Explain how minerals influence industrial growth"
+      ],
+      "assessment": ["Concept-based questioning", "Short analytical responses"]
+    },
+    {
+      "period": 2,
+      "title": "Geological Formation and Occurrence of Minerals",
+      "topics_covered": [
+        "Minerals in igneous and metamorphic rocks",
+        "Minerals in sedimentary rocks",
+        "Placer deposits and ocean minerals"
+      ],
+      "teaching_strategy": [
+        "Diagram-based teaching",
+        "Geological process explanation"
+      ],
+      "student_activities": [
+        "Draw diagrams showing different mineral formations",
+        "Explain how geological conditions influence mineral deposits"
+      ],
+      "assessment": ["Diagram analysis", "Written explanation questions"]
+    },
+    {
+      "period": 3,
+      "title": "Classification of Minerals",
+      "topics_covered": [
+        "Ferrous minerals",
+        "Non-ferrous minerals",
+        "Non-metallic minerals"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis discussion",
+        "Use of charts and data"
+      ],
+      "student_activities": [
+        "Create a comparative chart of mineral types",
+        "Analyse industrial uses and economic importance"
+      ],
+      "assessment": ["Chart evaluation", "Analytical short answers"]
+    },
+    {
+      "period": 4,
+      "title": "Distribution of Minerals in India",
+      "topics_covered": [
+        "Major iron ore belts",
+        "Copper and bauxite producing regions",
+        "Mineral-rich regions such as the Chota Nagpur plateau"
+      ],
+      "teaching_strategy": [
+        "Map-based learning",
+        "Guided analysis of mineral distribution maps"
+      ],
+      "student_activities": [
+        "Mark mineral belts on an outline map of India",
+        "Explain reasons for uneven mineral distribution"
+      ],
+      "assessment": ["Map work evaluation", "Geographical reasoning questions"]
+    },
+    {
+      "period": 5,
+      "title": "Energy Resources and Industrial Development",
+      "topics_covered": [
+        "Coal and types of coal",
+        "Petroleum and natural gas",
+        "Hydroelectric and thermal power generation"
+      ],
+      "teaching_strategy": [
+        "Data interpretation and charts",
+        "Discussion on energy use in industries"
+      ],
+      "student_activities": [
+        "Analyse why industries are located near coalfields",
+        "Interpret maps showing energy resource distribution"
+      ],
+      "assessment": ["Worksheet analysis", "Conceptual questions"]
+    },
+    {
+      "period": 6,
+      "title": "Renewable Energy and Sustainable Development",
+      "topics_covered": [
+        "Solar and wind energy",
+        "Biogas, tidal and geothermal energy",
+        "Renewable energy potential in India"
+      ],
+      "teaching_strategy": [
+        "Case study discussion",
+        "Video or image-based explanation"
+      ],
+      "student_activities": [
+        "Research renewable energy projects in India",
+        "Present advantages and limitations of renewable energy"
+      ],
+      "assessment": [
+        "Group presentation evaluation",
+        "Research summary submission"
+      ]
+    },
+    {
+      "period": 7,
+      "title": "Conservation and Environmental Challenges",
+      "topics_covered": [
+        "Environmental impacts of mining",
+        "Need for conservation of minerals",
+        "Energy conservation practices",
+        "Chapter revision"
+      ],
+      "teaching_strategy": [
+        "Debate on mining vs environmental protection",
+        "Revision discussion"
+      ],
+      "student_activities": [
+        "Write a short essay on sustainable resource use",
+        "Participate in a classroom debate on resource conservation"
+      ],
+      "assessment": ["Short test (10 marks)", "Participation in discussion"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "NCERT Geography Textbook",
+    "Map of India",
+    "Mineral distribution maps",
+    "Charts and diagrams",
+    "Projector or multimedia presentation"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Map interpretation tasks",
+    "Research presentations",
+    "Debate participation",
+    "Short written tests"
+  ],
+  "teacher_tip": "Encourage students to critically analyse how mineral and energy resources influence economic development and environmental sustainability."
+}

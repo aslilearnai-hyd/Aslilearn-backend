@@ -1,0 +1,337 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Public Facilities",
+  "generated_at": "2026-03-07T23:10:00",
+  "difficulty": "hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the main idea behind public facilities in a democratic society?",
+      "options": {
+        "A": "Providing essential services to all citizens",
+        "B": "Increasing private profits",
+        "C": "Promoting luxury lifestyles",
+        "D": "Encouraging private ownership"
+      },
+      "correct_answer": "A",
+      "explanation": "Public facilities are meant to provide essential services for everyone.",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which public facility discussed in the chapter is considered essential for survival?",
+      "options": {
+        "A": "Clean drinking water",
+        "B": "Shopping malls",
+        "C": "Luxury hotels",
+        "D": "Private clubs"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is necessary for drinking, cooking and sanitation.",
+      "source_section": "Water Supply"
+    },
+    {
+      "question_number": 3,
+      "question": "Which organisation usually manages water supply in cities?",
+      "options": {
+        "A": "Municipal Corporation",
+        "B": "Private companies only",
+        "C": "Schools",
+        "D": "Hospitals"
+      },
+      "correct_answer": "A",
+      "explanation": "Municipal corporations manage water supply in urban areas.",
+      "source_section": "Water Supply"
+    },
+    {
+      "question_number": 4,
+      "question": "Which factor is most important for ensuring fair access to public facilities?",
+      "options": {
+        "A": "Equality",
+        "B": "Profit",
+        "C": "Luxury",
+        "D": "Competition"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality ensures that public facilities are accessible to everyone.",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 5,
+      "question": "Why does the government provide public facilities?",
+      "options": {
+        "A": "To ensure basic needs of citizens are met",
+        "B": "To increase private company profits",
+        "C": "To encourage luxury lifestyles",
+        "D": "To reduce public services"
+      },
+      "correct_answer": "A",
+      "explanation": "Governments provide essential services for public welfare.",
+      "source_section": "Role of Government"
+    },
+    {
+      "question_number": 6,
+      "question": "Which challenge often arises in the provision of public facilities?",
+      "options": {
+        "A": "Unequal distribution of services",
+        "B": "Too many resources",
+        "C": "Too many hospitals",
+        "D": "Excess water supply"
+      },
+      "correct_answer": "A",
+      "explanation": "Public facilities are sometimes unevenly distributed.",
+      "source_section": "Inequality"
+    },
+    {
+      "question_number": 7,
+      "question": "Which factor can limit people's access to public facilities?",
+      "options": {
+        "A": "Economic inequality",
+        "B": "Equal opportunities",
+        "C": "Better infrastructure",
+        "D": "Public awareness"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic inequality can prevent people from accessing services.",
+      "source_section": "Inequality"
+    },
+    {
+      "question_number": 8,
+      "question": "Which type of service provides medical treatment to citizens?",
+      "options": {
+        "A": "Public healthcare services",
+        "B": "Private clubs",
+        "C": "Shopping centres",
+        "D": "Hotels"
+      },
+      "correct_answer": "A",
+      "explanation": "Public hospitals and clinics provide healthcare services.",
+      "source_section": "Healthcare"
+    },
+    {
+      "question_number": 9,
+      "question": "Which facility helps maintain hygiene and prevent diseases?",
+      "options": {
+        "A": "Sanitation services",
+        "B": "Hotels",
+        "C": "Restaurants",
+        "D": "Shopping malls"
+      },
+      "correct_answer": "A",
+      "explanation": "Sanitation services ensure cleanliness and prevent disease spread.",
+      "source_section": "Sanitation"
+    },
+    {
+      "question_number": 10,
+      "question": "Which public facility helps people travel efficiently at low cost?",
+      "options": {
+        "A": "Public transport",
+        "B": "Private jets",
+        "C": "Luxury cars",
+        "D": "Private yachts"
+      },
+      "correct_answer": "A",
+      "explanation": "Public transport provides affordable mobility.",
+      "source_section": "Transport"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which concept refers to fair distribution of public services?",
+      "options": {
+        "A": "Equity",
+        "B": "Luxury",
+        "C": "Profit",
+        "D": "Competition"
+      },
+      "correct_answer": "A",
+      "explanation": "Equity ensures that services are distributed fairly.",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 12,
+      "question": "Which public service is responsible for maintaining law and order?",
+      "options": {
+        "A": "Police services",
+        "B": "Hotels",
+        "C": "Restaurants",
+        "D": "Shopping centres"
+      },
+      "correct_answer": "A",
+      "explanation": "Police services maintain safety and security.",
+      "source_section": "Public Services"
+    },
+    {
+      "question_number": 13,
+      "question": "Which facility ensures electricity for homes and industries?",
+      "options": {
+        "A": "Power supply services",
+        "B": "Shopping malls",
+        "C": "Private clubs",
+        "D": "Hotels"
+      },
+      "correct_answer": "A",
+      "explanation": "Electricity supply is a major public utility.",
+      "source_section": "Electricity"
+    },
+    {
+      "question_number": 14,
+      "question": "Which communication facility is discussed as a public service?",
+      "options": {
+        "A": "Postal services",
+        "B": "Luxury hotels",
+        "C": "Private clubs",
+        "D": "Shopping malls"
+      },
+      "correct_answer": "A",
+      "explanation": "Postal services help in communication and parcel delivery.",
+      "source_section": "Communication"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor helps governments improve public facilities?",
+      "options": {
+        "A": "Effective planning and policies",
+        "B": "Ignoring communities",
+        "C": "Reducing budgets",
+        "D": "Limiting services"
+      },
+      "correct_answer": "A",
+      "explanation": "Government planning improves service delivery.",
+      "source_section": "Government Role"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which sector provides education as a public facility?",
+      "options": {
+        "A": "Government schools",
+        "B": "Hotels",
+        "C": "Shopping centres",
+        "D": "Private clubs"
+      },
+      "correct_answer": "A",
+      "explanation": "Government schools provide education to the public.",
+      "source_section": "Education"
+    },
+    {
+      "question_number": 17,
+      "question": "Which resource is essential for sanitation and health?",
+      "options": {
+        "A": "Water",
+        "B": "Coal",
+        "C": "Gold",
+        "D": "Iron"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is necessary for sanitation and hygiene.",
+      "source_section": "Water Supply"
+    },
+    {
+      "question_number": 18,
+      "question": "Which issue arises when public facilities are unevenly distributed?",
+      "options": {
+        "A": "Social inequality",
+        "B": "Economic growth",
+        "C": "Industrial development",
+        "D": "Urban expansion"
+      },
+      "correct_answer": "A",
+      "explanation": "Unequal access leads to social inequality.",
+      "source_section": "Inequality"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor improves public health in society?",
+      "options": {
+        "A": "Clean drinking water",
+        "B": "Luxury services",
+        "C": "Private cars",
+        "D": "Shopping centres"
+      },
+      "correct_answer": "A",
+      "explanation": "Clean water helps prevent diseases.",
+      "source_section": "Water Supply"
+    },
+    {
+      "question_number": 20,
+      "question": "Which public facility supports communication between people?",
+      "options": {
+        "A": "Postal services",
+        "B": "Hotels",
+        "C": "Restaurants",
+        "D": "Private clubs"
+      },
+      "correct_answer": "A",
+      "explanation": "Postal services allow people to send messages and parcels.",
+      "source_section": "Communication"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which factor helps maintain cleanliness in cities?",
+      "options": {
+        "A": "Sanitation services",
+        "B": "Luxury hotels",
+        "C": "Shopping malls",
+        "D": "Private clubs"
+      },
+      "correct_answer": "A",
+      "explanation": "Sanitation services maintain hygiene.",
+      "source_section": "Sanitation"
+    },
+    {
+      "question_number": 22,
+      "question": "Which service helps people travel long distances cheaply?",
+      "options": {
+        "A": "Public transport",
+        "B": "Private helicopters",
+        "C": "Luxury cars",
+        "D": "Private yachts"
+      },
+      "correct_answer": "A",
+      "explanation": "Public transport provides affordable travel.",
+      "source_section": "Transport"
+    },
+    {
+      "question_number": 23,
+      "question": "Which facility is essential for improving literacy?",
+      "options": {
+        "A": "Government schools",
+        "B": "Hotels",
+        "C": "Shopping centres",
+        "D": "Private clubs"
+      },
+      "correct_answer": "A",
+      "explanation": "Schools provide education and improve literacy.",
+      "source_section": "Education"
+    },
+    {
+      "question_number": 24,
+      "question": "Which concept ensures that public services are accessible to everyone?",
+      "options": {
+        "A": "Equality",
+        "B": "Luxury",
+        "C": "Profit",
+        "D": "Competition"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality ensures fair access to public services.",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are public facilities important in a democratic country?",
+      "options": {
+        "A": "They ensure welfare and equality for citizens",
+        "B": "They increase private profits",
+        "C": "They reduce employment",
+        "D": "They promote luxury living"
+      },
+      "correct_answer": "A",
+      "explanation": "Public facilities support citizen welfare and equality.",
+      "source_section": "Conclusion"
+    }
+  ]
+}

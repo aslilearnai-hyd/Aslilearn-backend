@@ -1,0 +1,234 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 3: Rain on the Roof",
+    "difficulty": "hard",
+    "generated_at": "2026-03-08T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze how the poet uses auditory imagery to evoke emotions.",
+            "answer": "The poet uses sounds like 'patter,' 'tinkle,' and 'echo' to create auditory images, linking the rain to reflective moods and evoking nostalgia.",
+            "answer_outline": ["Auditory imagery", "Emotional effect", "Examples"],
+            "key_concepts": ["auditory imagery", "emotion", "nostalgia"],
+            "marks": 5,
+            "source_section": "Stanzas 1–2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the interplay between nature and memory in the poem.",
+            "answer": "The rain triggers memories of past experiences, showing how natural elements can evoke reflections and connect present sensations with past emotions.",
+            "answer_outline": ["Nature", "Memory", "Interconnection"],
+            "key_concepts": ["rain", "memory", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the role of setting in establishing the mood of the poem.",
+            "answer": "The cozy cottage-chamber, soft bed, and rainy night establish a calm, reflective, and introspective mood, emphasizing meditation and personal memory.",
+            "answer_outline": ["Setting", "Mood", "Examples"],
+            "key_concepts": ["setting", "mood", "reflection"],
+            "marks": 5,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the poet’s use of personification.",
+            "answer": "The rain is personified as 'weeping in rainy tears,' giving it human qualities and connecting the external environment to inner emotions of melancholy and nostalgia.",
+            "answer_outline": ["Personification", "Effect", "Examples"],
+            "key_concepts": ["personification", "rain", "emotion"],
+            "marks": 5,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 5,
+            "question": "Examine how repetition enhances the poem’s rhythm and theme.",
+            "answer": "Repetition of phrases like 'patter of the rain' emphasizes rhythmic continuity, reinforces meditation, and connects multiple reflections and memories.",
+            "answer_outline": ["Repetition", "Rhythm", "Theme"],
+            "key_concepts": ["repetition", "rhythm", "reflection"],
+            "marks": 5,
+            "source_section": "Stanzas 1–3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the significance of the mother’s memory in relation to the rain.",
+            "answer": "Memories of the mother’s care are evoked by the sound of rain, linking maternal love with comfort, nostalgia, and introspection.",
+            "answer_outline": ["Memory", "Mother", "Connection with rain"],
+            "key_concepts": ["mother", "memory", "nostalgia"],
+            "marks": 5,
+            "source_section": "Stanza 3"
+        },
+        {
+            "question_number": 7,
+            "question": "Discuss how the poem illustrates the connection between sensory experience and thought.",
+            "answer": "The auditory sensation of rain triggers reflections, dreams, and recollections, showing how sensory experiences influence imagination and cognitive processes.",
+            "answer_outline": ["Sensory experience", "Thought", "Examples"],
+            "key_concepts": ["sensory imagery", "reflection", "imagination"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 8,
+            "question": "Analyze the theme of nostalgia in the poem with textual evidence.",
+            "answer": "The poet recalls childhood memories, maternal care, and past experiences as rain evokes reflections, showing how nature stimulates longing for the past.",
+            "answer_outline": ["Nostalgia", "Evidence", "Effect"],
+            "key_concepts": ["nostalgia", "memory", "rain"],
+            "marks": 5,
+            "source_section": "Stanzas 2–3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how the poem explores the interplay of imagination and reality.",
+            "answer": "While the rain is a real sensory experience, it triggers imagination, daydreams, and mental images of past events, blending reality with reflection.",
+            "answer_outline": ["Imagination", "Reality", "Examples"],
+            "key_concepts": ["imagination", "reflection", "rain"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 10,
+            "question": "Evaluate the poet’s use of rhythm to enhance the meditative quality of the poem.",
+            "answer": "The natural cadence of words mimics raindrops, creating a musical, flowing rhythm that enhances meditation, calmness, and reflective mood.",
+            "answer_outline": ["Rhythm", "Effect", "Technique"],
+            "key_concepts": ["rhythm", "meditation", "sound"],
+            "marks": 5,
+            "source_section": "Stanzas 1–3"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss how human emotions are mirrored in nature in the poem.",
+            "answer": "Melancholy and reflection are mirrored by rainy darkness and pattering sounds, showing the close relationship between human feelings and natural phenomena.",
+            "answer_outline": ["Emotion", "Nature", "Examples"],
+            "key_concepts": ["emotion", "nature", "rain"],
+            "marks": 5,
+            "source_section": "Stanza 1–2"
+        },
+        {
+            "question_number": 12,
+            "question": "Examine how the poem uses visual imagery to complement auditory imagery.",
+            "answer": "Descriptions like 'humid shadows hover' and 'soft rain overhead' create visual images that enhance the auditory experience of pattering rain, enriching reflection and mood.",
+            "answer_outline": ["Visual imagery", "Auditory imagery", "Effect"],
+            "key_concepts": ["visual imagery", "auditory imagery", "mood"],
+            "marks": 5,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 13,
+            "question": "Analyze how the poem portrays the passage of time through rain.",
+            "answer": "The rain evokes memories spanning past experiences, suggesting a reflective awareness of time and continuity between past and present.",
+            "answer_outline": ["Time", "Reflection", "Examples"],
+            "key_concepts": ["time", "memory", "reflection"],
+            "marks": 5,
+            "source_section": "Stanza 2–3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how the poem combines sensory, emotional, and intellectual responses.",
+            "answer": "Rain appeals to senses (sound), evokes emotions (nostalgia, calm), and stimulates intellect (reflection and memories), creating a holistic meditative experience.",
+            "answer_outline": ["Sensory", "Emotional", "Intellectual"],
+            "key_concepts": ["senses", "emotion", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 15,
+            "question": "Discuss the philosophical undertones in 'Rain on the Roof'.",
+            "answer": "The poem reflects on memory, impermanence, and human connection with nature, suggesting philosophical meditation on life, memory, and introspection.",
+            "answer_outline": ["Philosophy", "Examples", "Effect"],
+            "key_concepts": ["philosophy", "reflection", "nature"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 16,
+            "question": "Evaluate the effectiveness of the poem as a meditation on nature and memory.",
+            "answer": "By linking sound, setting, and memory, the poem effectively evokes reflective and nostalgic moods, demonstrating the power of nature to influence thought and emotion.",
+            "answer_outline": ["Effectiveness", "Nature", "Memory"],
+            "key_concepts": ["meditation", "nature", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how the poem blends domestic and natural imagery.",
+            "answer": "The cozy cottage setting and maternal memories are combined with rain and night sky, blending human domestic life with external nature to deepen reflection.",
+            "answer_outline": ["Domestic imagery", "Nature imagery", "Effect"],
+            "key_concepts": ["cottage", "nature", "reflection"],
+            "marks": 5,
+            "source_section": "Stanzas 1–3"
+        },
+        {
+            "question_number": 18,
+            "question": "Analyze the role of solitude in the poem.",
+            "answer": "Solitude allows the poet to reflect deeply, connect with memories, and immerse in meditation, showing how quiet moments amplify emotional and intellectual experiences.",
+            "answer_outline": ["Solitude", "Reflection", "Effect"],
+            "key_concepts": ["solitude", "reflection", "memory"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the symbolic significance of rain in the poem.",
+            "answer": "Rain symbolizes calm, reflection, the passage of time, and connection between past and present, evoking both sensory and emotional responses.",
+            "answer_outline": ["Symbolism", "Examples", "Effect"],
+            "key_concepts": ["rain", "symbolism", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss how personal experience is universalized in the poem.",
+            "answer": "Although reflecting the poet’s personal memories, the emotions and reflections triggered by rain are relatable to all, making the poem universally accessible.",
+            "answer_outline": ["Personal experience", "Universalization", "Effect"],
+            "key_concepts": ["personal", "universal", "emotion"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 21,
+            "question": "Examine the interplay of sound, memory, and emotion in the poem.",
+            "answer": "Sound of rain triggers memory and evokes emotion; this interplay drives the meditative and nostalgic quality of the poem.",
+            "answer_outline": ["Sound", "Memory", "Emotion"],
+            "key_concepts": ["sound", "memory", "emotion"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the poet evoke a sense of timelessness?",
+            "answer": "Through the continuity of rain, memories, and reflections, the poem conveys a timeless connection between past and present.",
+            "answer_outline": ["Timelessness", "Techniques", "Effect"],
+            "key_concepts": ["timelessness", "memory", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 23,
+            "question": "Analyze the poet’s technique of linking external and internal landscapes.",
+            "answer": "The rain and night outside are linked with internal memories and thoughts, merging external and internal landscapes for reflective depth.",
+            "answer_outline": ["External landscape", "Internal landscape", "Link"],
+            "key_concepts": ["nature", "mind", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how the poem could be considered a meditation on human experience.",
+            "answer": "By reflecting on memories, maternal love, and nature, the poem meditates on human emotions, connections, and the passage of time.",
+            "answer_outline": ["Meditation", "Human experience", "Examples"],
+            "key_concepts": ["meditation", "human experience", "reflection"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the central philosophical and emotional concerns of the poem.",
+            "answer": "The poem contemplates memory, nostalgia, reflection, human connection, and the influence of nature on thought and emotion, conveying both philosophical and emotional depth.",
+            "answer_outline": ["Summary", "Philosophy", "Emotion"],
+            "key_concepts": ["memory", "reflection", "nostalgia", "nature"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        }
+    ]
+}

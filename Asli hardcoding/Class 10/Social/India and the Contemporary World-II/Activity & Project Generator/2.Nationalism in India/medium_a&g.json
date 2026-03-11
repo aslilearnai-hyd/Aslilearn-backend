@@ -1,0 +1,165 @@
+{
+    "class": "Class 10",
+    "subject": "History",
+    "chapter": "Nationalism in India",
+    "difficulty": "Medium",
+    "source_pdf": "jess302.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Mapping the INC Sessions",
+            "objective": "Understand the geographical spread and strategic shifts of the Congress",
+            "materials": [
+                "Outline map of India",
+                "Color pens",
+                "Reference notes"
+            ],
+            "steps": [
+                "Locate the three critical Congress sessions: Calcutta (Sept 1920), Nagpur (Dec 1920), and Madras (1927)",
+                "Identify and mark the 'Purna Swaraj' resolution site (Lahore 1929)",
+                "Write a brief note next to each location explaining what was decided there"
+            ],
+            "learning_outcome": "Spatial understanding of political decision-making and planning",
+            "evaluation": "Accuracy of locations and historical significance (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Non-Cooperation vs. Civil Disobedience: A Comparison",
+            "objective": "Distinguish between the methods and scales of the two major movements",
+            "materials": [
+                "Venn Diagram template",
+                "Textbook"
+            ],
+            "steps": [
+                "List methods unique to Non-Cooperation in one circle (e.g., surrendering titles)",
+                "List methods unique to Civil Disobedience in the other (e.g., breaking laws)",
+                "Fill the intersection with shared Gandhian principles like Ahimsa and Satyagraha"
+            ],
+            "learning_outcome": "Conceptual clarity on the evolution of protest strategies",
+            "evaluation": "Logical classification and depth of points (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The 'Simon Go Back' Campaign Storyboard",
+            "objective": "Analyze the reasons for the 1928 boycott",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Draw a 3-part storyboard: 1. The arrival of the Commission, 2. The protest with black flags, 3. The reason for boycott (absence of Indians)",
+                "Include a caption explaining why the 'All-White' commission was seen as an insult to India"
+            ],
+            "learning_outcome": "Understands constitutional crises and mass mobilization",
+            "evaluation": "Clarity of historical narrative and accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Bharat Mata: Symbolism Audit",
+            "objective": "Deconstruct how allegories create a sense of collective belonging",
+            "materials": [
+                "Printout of Abanindranath Tagore’s Bharat Mata",
+                "A4 Sheet"
+            ],
+            "steps": [
+                "Observe the attributes: the beads, the book, the cloth, and the sheaves of grain",
+                "Explain how these symbols aimed to portray India as a provider of 'spiritual' and 'material' wealth",
+                "Research how this image differs from the later 'militant' versions of Bharat Mata"
+            ],
+            "learning_outcome": "Analysis of the role of icons in building national identity",
+            "evaluation": "Depth of symbolic interpretation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Awadh Peasant Movement Fact-File",
+            "objective": "Examine the rural dimensions of nationalism",
+            "materials": [
+                "Notebook",
+                "Pens"
+            ],
+            "steps": [
+                "Identify the leader (Baba Ramchandra) and the grievances (Begar/High Rents)",
+                "Explain the formation of the Oudh Kisan Sabha",
+                "Discuss why the Congress leaders were unhappy when peasants turned to violence"
+            ],
+            "learning_outcome": "Recognizes that different groups had different interpretations of 'Swaraj'",
+            "evaluation": "Detail of socio-economic factors (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The Dandi March: Strategic Route Map",
+            "objective": "Analyze the logistics and outreach of the Salt Satyagraha",
+            "materials": [
+                "Map of Gujarat",
+                "Markers"
+            ],
+            "steps": [
+                "Trace the 240-mile route from Sabarmati to Dandi",
+                "Highlight key stops where Gandhi spoke to people",
+                "List why salt was chosen as a unifying symbol for both rich and poor"
+            ],
+            "learning_outcome": "Grasps the concept of salt as a powerful political tool",
+            "evaluation": "Mapping accuracy and strategic analysis (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Rowlatt Act & Jallianwala Bagh: Cause-Effect Chain",
+            "objective": "Trace the escalation of tension in 1919",
+            "materials": [
+                "Flowchart paper"
+            ],
+            "steps": [
+                "Create a chain: Passage of Rowlatt Act -> Peaceful Hartals -> Martial Law -> Jallianwala Bagh Incident -> Non-Cooperation",
+                "Write a brief 'Why' for each arrow in the chain"
+            ],
+            "learning_outcome": "Understanding historical causality and turning points",
+            "evaluation": "Logical flow and factual accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Folklore and Identity: A Collection Project",
+            "objective": "Evaluate the role of history and fiction in nationalism",
+            "materials": [
+                "Reference texts/Internet"
+            ],
+            "steps": [
+                "Find a folk tale or ballad from your own region used to instill pride during the colonial era",
+                "Write a summary of the story and its moral lesson",
+                "Explain how 're-discovering' history helped counter British narratives"
+            ],
+            "learning_outcome": "Appreciation of cultural resistance",
+            "evaluation": "Authenticity and relevance of the folklore (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Women in the Civil Disobedience Movement",
+            "objective": "Recognize the participation of women in urban and rural areas",
+            "materials": [
+                "A4 Sheet",
+                "Pens"
+            ],
+            "steps": [
+                "Research the role of Sarojini Naidu or women in general during the salt picketing",
+                "Contrast the participation of high-caste urban women with rich peasant rural women",
+                "Explain how their involvement changed their perception of service to the nation"
+            ],
+            "learning_outcome": "Understanding gendered participation in nationalism",
+            "evaluation": "Analysis of social roles (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The 'Poona Pact' Simulation",
+            "objective": "Examine the internal challenges to a unified national identity",
+            "materials": [
+                "Script notes"
+            ],
+            "steps": [
+                "Identify the two viewpoints regarding reserved seats for Dalits",
+                "Outline the compromise reached between Gandhiji and Dr. B.R. Ambedkar",
+                "Summarize how the Pact balanced unity and specific group rights"
+            ],
+            "learning_outcome": "Insights into the social complexities of the movement",
+            "evaluation": "Balanced representation of both viewpoints (10 marks)"
+        }
+    ]
+}

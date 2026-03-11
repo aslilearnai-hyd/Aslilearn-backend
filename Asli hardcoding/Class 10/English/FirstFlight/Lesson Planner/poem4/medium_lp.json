@@ -1,0 +1,141 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "Poem 4 – Amanda",
+    "lesson_level": "Medium",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the conflict between Amanda and her parent",
+        "Interpret the themes of freedom, control, and adolescence",
+        "Examine the use of imagery, symbolism, and repetition",
+        "Differentiate between tone in reality and imagination",
+        "Develop analytical and reflective writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Contextual Understanding",
+            "topics_covered": [
+                "Author: Robin Klein",
+                "Background of adolescent psychology",
+                "Introduction to themes of freedom and parental control"
+            ],
+            "teaching_strategy": [
+                "Brief introduction to the poet and her focus on teenage issues",
+                "Initiate discussion on generation gap",
+                "Encourage students to reflect on balanced parenting"
+            ],
+            "student_activities": [
+                "Predict themes based on title",
+                "Group discussion on freedom vs discipline"
+            ],
+            "assessment": [
+                "Oral Q&A on poet and expected themes",
+                "Observation of participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Reading and Speaker Analysis",
+            "topics_covered": [
+                "Close reading of the poem",
+                "Identification of parent’s voice vs Amanda’s imagination",
+                "Understanding tone and mood"
+            ],
+            "teaching_strategy": [
+                "Read with voice modulation",
+                "Highlight bracketed imaginary stanzas",
+                "Discuss tone differences"
+            ],
+            "student_activities": [
+                "Create two columns: Reality vs Imagination",
+                "Identify tone in each section",
+                "Write short paragraph comparing moods"
+            ],
+            "assessment": [
+                "Check comparison charts",
+                "Evaluate written paragraph"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Themes and Symbolism",
+            "topics_covered": [
+                "Theme of freedom and restriction",
+                "Symbolism of mermaid, orphan, and Rapunzel",
+                "Irony in imagined roles"
+            ],
+            "teaching_strategy": [
+                "Explain symbolic meanings of each role",
+                "Discuss how fantasy reflects emotional needs",
+                "Guide students in textual evidence identification"
+            ],
+            "student_activities": [
+                "Write symbolic meaning of each imagined role",
+                "Support answers with lines from the poem"
+            ],
+            "assessment": [
+                "Review written interpretations",
+                "Oral questioning on symbolism"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Literary Devices and Structural Analysis",
+            "topics_covered": [
+                "Repetition and its effect",
+                "Imagery and contrast",
+                "Structure of alternating stanzas"
+            ],
+            "teaching_strategy": [
+                "Highlight repetition of 'Amanda'",
+                "Explain how parentheses create contrast",
+                "Analyze impact of structure on theme"
+            ],
+            "student_activities": [
+                "Identify examples of repetition and imagery",
+                "Explain their effect in short notes"
+            ],
+            "assessment": [
+                "Check identification accuracy",
+                "Short written explanation of structural effect"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Critical Reflection and Creative Response",
+            "topics_covered": [
+                "Message of the poem",
+                "Modern relevance of parent-child conflict",
+                "Personal reflection"
+            ],
+            "teaching_strategy": [
+                "Summarize major themes",
+                "Discuss relevance in today’s context",
+                "Encourage structured analytical writing"
+            ],
+            "student_activities": [
+                "Write a diary entry from Amanda’s perspective (120 words)",
+                "Compose a short analytical paragraph on the poem’s message"
+            ],
+            "assessment": [
+                "Evaluate diary entry for emotional depth",
+                "Assess analytical paragraph for clarity and textual support"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Text of the poem (printed/projected)",
+        "Theme and symbolism chart",
+        "Whiteboard comparison table (Reality vs Imagination)",
+        "Flashcards of literary devices"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Short analytical writing tasks",
+        "Symbolism interpretation exercise",
+        "Class participation and discussion"
+    ],
+    "teacher_tip": "Encourage students to think beyond surface meaning. Guide them to understand psychological conflict and symbolic depth while maintaining a supportive classroom environment."
+}

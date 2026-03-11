@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 8: Quadrilaterals",
+    "generated_at": "2026-03-05T19:35:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a quadrilateral?",
+                "correct_answer": "A polygon with four sides and four angles",
+                "explanation": "It is a closed figure with four straight edges and vertices.",
+                "source_section": "Section 8.1"
+            },
+            {
+                "question": "Name the types of quadrilaterals based on sides.",
+                "correct_answer": "Square, rectangle, rhombus, parallelogram, trapezium, kite",
+                "explanation": "Quadrilaterals are classified based on sides and angles.",
+                "source_section": "Section 8.2"
+            },
+            {
+                "question": "What is a parallelogram?",
+                "correct_answer": "A quadrilateral with opposite sides parallel and equal",
+                "explanation": "Opposite sides and opposite angles are equal in a parallelogram.",
+                "source_section": "Section 8.2"
+            },
+            {
+                "question": "State the properties of a rectangle.",
+                "correct_answer": "All angles are 90°, opposite sides equal and parallel",
+                "explanation": "A rectangle is a special parallelogram with right angles.",
+                "source_section": "Section 8.3"
+            },
+            {
+                "question": "State the properties of a square.",
+                "correct_answer": "All sides equal, all angles 90°, opposite sides parallel",
+                "explanation": "A square is a rectangle with equal sides or a rhombus with right angles.",
+                "source_section": "Section 8.3"
+            },
+            {
+                "question": "What is a rhombus?",
+                "correct_answer": "A quadrilateral with all sides equal and opposite sides parallel",
+                "explanation": "A rhombus may have non-right angles; diagonals bisect each other at right angles.",
+                "source_section": "Section 8.3"
+            },
+            {
+                "question": "What is a trapezium?",
+                "correct_answer": "A quadrilateral with at least one pair of opposite sides parallel",
+                "explanation": "Also called trapezoid in some countries.",
+                "source_section": "Section 8.4"
+            },
+            {
+                "question": "What is a kite?",
+                "correct_answer": "A quadrilateral with two pairs of adjacent sides equal",
+                "explanation": "One diagonal is the axis of symmetry and diagonals intersect at right angles.",
+                "source_section": "Section 8.4"
+            },
+            {
+                "question": "State the relation between diagonals and sides in a rectangle.",
+                "correct_answer": "Diagonals are equal and bisect each other",
+                "explanation": "This property helps in solving problems related to diagonals.",
+                "source_section": "Section 8.5"
+            },
+            {
+                "question": "State the relation between diagonals and sides in a rhombus.",
+                "correct_answer": "Diagonals bisect each other at right angles",
+                "explanation": "Diagonals are not necessarily equal, but they bisect angles and each other perpendicularly.",
+                "source_section": "Section 8.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Quadrilateral Basics",
+                "content": "A quadrilateral has four sides and four angles; sum of angles = 360°.",
+                "source_section": "Section 8.1"
+            },
+            {
+                "title": "Types of Quadrilaterals",
+                "content": "Square, rectangle, rhombus, parallelogram, trapezium, kite – classified by sides and angles.",
+                "source_section": "Section 8.2"
+            },
+            {
+                "title": "Properties of Parallelogram",
+                "content": "Opposite sides and opposite angles are equal; diagonals bisect each other.",
+                "source_section": "Section 8.2"
+            },
+            {
+                "title": "Rectangle and Square",
+                "content": "Rectangle: all angles 90°, diagonals equal. Square: all sides equal, all angles 90°, diagonals equal and perpendicular.",
+                "source_section": "Section 8.3"
+            },
+            {
+                "title": "Diagonals of Rhombus",
+                "content": "Diagonals bisect each other at right angles; diagonals bisect opposite angles.",
+                "source_section": "Section 8.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Sum of interior angles of any quadrilateral = 360°.",
+                "source_section": "Section 8.1"
+            },
+            {
+                "fact": "Diagonals of a rectangle are equal and bisect each other.",
+                "source_section": "Section 8.5"
+            },
+            {
+                "fact": "Diagonals of a rhombus are perpendicular bisectors of each other.",
+                "source_section": "Section 8.5"
+            },
+            {
+                "fact": "Square is both a rectangle and a rhombus.",
+                "source_section": "Section 8.3"
+            },
+            {
+                "fact": "Trapezium has only one pair of opposite sides parallel.",
+                "source_section": "Section 8.4"
+            }
+        ]
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Metals and Non-Metals (Mixed Difficulty)",
+    "generated_at": "2026-03-11T00:48:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "Which metal is the best conductor of electricity and which is the poorest?",
+                "difficulty": "Easy",
+                "correct_answer": "Best: Silver; Poorest: Lead (or Mercury)",
+                "explanation": "Silver has the lowest electrical resistance. Lead and Mercury are notably poor conductors compared to other metals.",
+                "source_section": "Physical Properties of Metals"
+            },
+            {
+                "question": "What are 'Amphoteric Oxides'? Give two examples.",
+                "difficulty": "Medium",
+                "correct_answer": "Metal oxides that react with both acids and bases to produce salt and water",
+                "explanation": "Example: Aluminum oxide ($Al_2O_3$) and Zinc oxide ($ZnO$). They show both acidic and basic behavior.",
+                "source_section": "Chemical Properties of Metals"
+            },
+            {
+                "question": "Why is Sodium kept immersed in kerosene oil?",
+                "difficulty": "Easy",
+                "correct_answer": "To prevent it from reacting vigorously with moisture and oxygen in the air",
+                "explanation": "Sodium is highly reactive and catches fire if left in the open. Kerosene provides a protective barrier.",
+                "source_section": "Reaction of Metals with Air"
+            },
+            {
+                "question": "What is 'Aqua Regia' and what is its unique property?",
+                "difficulty": "Hard",
+                "correct_answer": "A freshly prepared mixture of conc. HCl and conc. HNO₃ in a 3:1 ratio",
+                "explanation": "It is a highly corrosive, fuming liquid that can dissolve noble metals like Gold and Platinum.",
+                "source_section": "Reaction of Metals with Acids"
+            },
+            {
+                "question": "Define 'Anodising'.",
+                "difficulty": "Medium",
+                "correct_answer": "The process of forming a thick oxide layer of Aluminum",
+                "explanation": "This aluminum oxide coat makes it resistant to further corrosion and can be dyed in attractive colors.",
+                "source_section": "Chemical Properties"
+            },
+            {
+                "question": "Explain 'Roasting' vs. 'Calcination'.",
+                "difficulty": "Hard",
+                "correct_answer": "Roasting is for Sulphide ores (excess air); Calcination is for Carbonate ores (limited air)",
+                "explanation": "Both processes convert ores into metal oxides. Roasting: $2ZnS + 3O_2 \rightarrow 2ZnO + 2SO_2$. Calcination: $ZnCO_3 \rightarrow ZnO + CO_2$.",
+                "source_section": "Extraction of Metals"
+            },
+            {
+                "question": "What is an 'Ionic Bond' and why do ionic compounds have high melting points?",
+                "difficulty": "Medium",
+                "correct_answer": "Bond formed by electron transfer; High melting points due to strong electrostatic forces",
+                "explanation": "A large amount of energy is required to break the strong inter-ionic attraction between the oppositely charged ions.",
+                "source_section": "Properties of Ionic Compounds"
+            },
+            {
+                "question": "What happens at the Anode and Cathode during the electrolytic refining of Copper?",
+                "difficulty": "Hard",
+                "correct_answer": "Anode: Impure Copper; Cathode: Pure Copper strip",
+                "explanation": "On passing current, pure copper from the anode dissolves and deposits on the cathode. Impurities settle as 'anode mud'.",
+                "source_section": "Refining of Metals"
+            },
+            {
+                "question": "What is 'Galvanisation'?",
+                "difficulty": "Easy",
+                "correct_answer": "Protecting steel/iron by coating them with a thin layer of Zinc",
+                "explanation": "Zinc acts as a sacrificial layer; even if the coating is scratched, the iron remains protected from rusting.",
+                "source_section": "Prevention of Corrosion"
+            },
+            {
+                "question": "Identify an alloy made of: (a) Cu and Zn, (b) Cu and Sn.",
+                "difficulty": "Medium",
+                "correct_answer": "(a) Brass, (b) Bronze",
+                "explanation": "Alloys are homogeneous mixtures used to improve the properties of pure metals, like increasing hardness.",
+                "source_section": "Alloys"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Ductility",
+                "content": "The ability of metals to be drawn into thin wires. Gold is the most ductile metal.",
+                "source_section": "Physical Properties"
+            },
+            {
+                "title": "Reactivity Series",
+                "content": "A list of metals arranged in decreasing order of their reactivity. K > Na > Ca > Mg > Al...",
+                "source_section": "Chemical Properties"
+            },
+            {
+                "title": "Gangue",
+                "content": "The earthy impurities like sand and soil present in an ore.",
+                "source_section": "Extraction of Metals"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Mercury is the only metal that is liquid at room temperature.",
+                "source_section": "Physical Properties"
+            },
+            {
+                "fact": "Non-metals like Graphite can conduct electricity because of free electrons.",
+                "source_section": "Physical Properties"
+            },
+            {
+                "fact": "The Iron Pillar near the Qutub Minar in Delhi hasn't rusted in 1600 years.",
+                "source_section": "Corrosion"
+            }
+        ]
+    }
+}

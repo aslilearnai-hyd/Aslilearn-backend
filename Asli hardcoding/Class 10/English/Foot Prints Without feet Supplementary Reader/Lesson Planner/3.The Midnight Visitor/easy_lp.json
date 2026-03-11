@@ -1,0 +1,156 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Midnight Visitor",
+    "title": "Lesson Planner – The Midnight Visitor (Easy)",
+    "author": "Robert Arthur",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify main characters",
+        "Understand the basic theme",
+        "Develop reading and listening skills",
+        "Learn new vocabulary",
+        "Relate the lesson to simple real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Author and Story",
+            "topics_covered": [
+                "Introduction to Robert Arthur",
+                "Background of the prose",
+                "Brief outline of the story"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Listening to introduction",
+                "Sharing expectations about spy stories"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Characters Introduction",
+            "topics_covered": [
+                "Character of Ausable",
+                "Character of Fowler",
+                "Introduction of Max"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character discussion"
+            ],
+            "student_activities": [
+                "List main characters",
+                "Write one sentence about each"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Setting and Conflict",
+            "topics_covered": [
+                "Hotel room setting",
+                "Entry of Max",
+                "Introduction of conflict"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Guided reading"
+            ],
+            "student_activities": [
+                "Describe the setting",
+                "Identify the conflict"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Ausable’s Cleverness",
+            "topics_covered": [
+                "Balcony story",
+                "Police trick",
+                "Use of presence of mind"
+            ],
+            "teaching_strategy": [
+                "Story explanation",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Explain the trick in own words",
+                "Class discussion"
+            ],
+            "assessment": [
+                "Oral explanation",
+                "Written response"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Message",
+            "topics_covered": [
+                "Theme of intelligence over force",
+                "Moral of the story",
+                "Message to readers"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Examples from daily life"
+            ],
+            "student_activities": [
+                "Write the moral",
+                "Relate to a real-life example"
+            ],
+            "assessment": [
+                "Paragraph writing",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary and Revision",
+            "topics_covered": [
+                "New words from the lesson",
+                "Summary of the story",
+                "Overall revision"
+            ],
+            "teaching_strategy": [
+                "Vocabulary explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings of words",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard / Whiteboard",
+        "Chalk / Markers"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Highlight that intelligence and calm thinking can solve problems better than physical force."
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Heredity",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What does heredity refer to?",
+            "options": {
+                "A": "Transfer of energy",
+                "B": "Passing of traits from parents to offspring",
+                "C": "Growth of plants",
+                "D": "Movement of animals"
+            },
+            "correct_answer": "B",
+            "explanation": "Heredity is the process by which traits are passed from parents to their offspring.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who is known as the father of genetics?",
+            "options": {
+                "A": "Charles Darwin",
+                "B": "Gregor Mendel",
+                "C": "Louis Pasteur",
+                "D": "Isaac Newton"
+            },
+            "correct_answer": "B",
+            "explanation": "Gregor Mendel discovered the basic principles of heredity through his pea plant experiments.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which plant did Mendel use for his experiments?",
+            "options": {
+                "A": "Rose",
+                "B": "Pea plant",
+                "C": "Sunflower",
+                "D": "Rice"
+            },
+            "correct_answer": "B",
+            "explanation": "Mendel used pea plants because they had clear contrasting traits.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What are genes?",
+            "options": {
+                "A": "Units of heredity",
+                "B": "Parts of leaves",
+                "C": "Types of cells",
+                "D": "Energy sources"
+            },
+            "correct_answer": "A",
+            "explanation": "Genes are the basic units of heredity that control traits.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Where are genes located?",
+            "options": {
+                "A": "Cytoplasm",
+                "B": "Chromosomes",
+                "C": "Cell wall",
+                "D": "Mitochondria"
+            },
+            "correct_answer": "B",
+            "explanation": "Genes are located on chromosomes inside the nucleus.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a trait?",
+            "options": {
+                "A": "A type of cell",
+                "B": "A characteristic feature",
+                "C": "A chemical reaction",
+                "D": "A plant disease"
+            },
+            "correct_answer": "B",
+            "explanation": "Traits are observable characteristics like height or eye color.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is an inherited trait?",
+            "options": {
+                "A": "Language spoken",
+                "B": "Eye color",
+                "C": "Favorite food",
+                "D": "Clothing style"
+            },
+            "correct_answer": "B",
+            "explanation": "Eye color is inherited from parents through genes.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is variation?",
+            "options": {
+                "A": "Similarities among organisms",
+                "B": "Differences among individuals",
+                "C": "Growth of plants",
+                "D": "Movement of animals"
+            },
+            "correct_answer": "B",
+            "explanation": "Variation refers to differences in traits among individuals of the same species.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which generation is produced by crossing two parents?",
+            "options": {
+                "A": "P generation",
+                "B": "F1 generation",
+                "C": "F2 generation",
+                "D": "Hybrid generation"
+            },
+            "correct_answer": "B",
+            "explanation": "The first generation offspring produced by crossing parents is called the F1 generation.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a dominant trait?",
+            "options": {
+                "A": "Trait that always disappears",
+                "B": "Trait that masks another trait",
+                "C": "Trait that is always weak",
+                "D": "Trait that never appears"
+            },
+            "correct_answer": "B",
+            "explanation": "A dominant trait masks the effect of a recessive trait.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a recessive trait?",
+            "options": {
+                "A": "Trait hidden in presence of dominant trait",
+                "B": "Trait always visible",
+                "C": "Trait found only in animals",
+                "D": "Trait that cannot be inherited"
+            },
+            "correct_answer": "A",
+            "explanation": "A recessive trait is expressed only when two copies are present.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which structure carries genetic information?",
+            "options": {
+                "A": "DNA",
+                "B": "Protein",
+                "C": "Carbohydrate",
+                "D": "Lipid"
+            },
+            "correct_answer": "A",
+            "explanation": "DNA contains the genetic information that determines traits.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the full form of DNA?",
+            "options": {
+                "A": "Deoxyribonucleic Acid",
+                "B": "Double Nucleus Acid",
+                "C": "Dynamic Nucleic Acid",
+                "D": "Dual Nitrogen Acid"
+            },
+            "correct_answer": "A",
+            "explanation": "DNA stands for Deoxyribonucleic Acid.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How many parents contribute genes to an offspring?",
+            "options": {
+                "A": "One",
+                "B": "Two",
+                "C": "Three",
+                "D": "Four"
+            },
+            "correct_answer": "B",
+            "explanation": "Offspring inherit genes from both parents.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Which process produces variation in organisms?",
+            "options": {
+                "A": "Reproduction",
+                "B": "Digestion",
+                "C": "Respiration",
+                "D": "Photosynthesis"
+            },
+            "correct_answer": "A",
+            "explanation": "Reproduction leads to variations among offspring.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which generation shows traits of both parents?",
+            "options": {
+                "A": "P generation",
+                "B": "F1 generation",
+                "C": "F2 generation",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "The F1 generation inherits traits from both parents.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which structure contains chromosomes?",
+            "options": {
+                "A": "Nucleus",
+                "B": "Cell membrane",
+                "C": "Cytoplasm",
+                "D": "Vacuole"
+            },
+            "correct_answer": "A",
+            "explanation": "Chromosomes are located inside the nucleus of a cell.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What determines the traits of an organism?",
+            "options": {
+                "A": "Genes",
+                "B": "Water",
+                "C": "Food",
+                "D": "Air"
+            },
+            "correct_answer": "A",
+            "explanation": "Genes determine the inherited traits of organisms.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of these is an example of variation in humans?",
+            "options": {
+                "A": "Different eye colors",
+                "B": "Same blood type",
+                "C": "Same height",
+                "D": "Same hair style"
+            },
+            "correct_answer": "A",
+            "explanation": "Different eye colors show variation among individuals.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which type of reproduction leads to more variation?",
+            "options": {
+                "A": "Asexual reproduction",
+                "B": "Sexual reproduction",
+                "C": "Vegetative propagation",
+                "D": "Budding"
+            },
+            "correct_answer": "B",
+            "explanation": "Sexual reproduction produces greater variation because genes from two parents combine.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which term describes the appearance of a trait?",
+            "options": {
+                "A": "Genotype",
+                "B": "Phenotype",
+                "C": "Chromosome",
+                "D": "Mutation"
+            },
+            "correct_answer": "B",
+            "explanation": "Phenotype refers to the observable characteristics of an organism.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which term describes the genetic makeup of an organism?",
+            "options": {
+                "A": "Phenotype",
+                "B": "Genotype",
+                "C": "Variation",
+                "D": "Trait"
+            },
+            "correct_answer": "B",
+            "explanation": "Genotype refers to the genetic constitution of an organism.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which law did Mendel propose about inheritance?",
+            "options": {
+                "A": "Law of dominance",
+                "B": "Law of gravity",
+                "C": "Law of inertia",
+                "D": "Law of motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Mendel proposed the law of dominance to explain inheritance patterns.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which molecule forms genes?",
+            "options": {
+                "A": "DNA",
+                "B": "Protein",
+                "C": "Carbohydrate",
+                "D": "Fat"
+            },
+            "correct_answer": "A",
+            "explanation": "Genes are segments of DNA that carry hereditary information.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is variation important in organisms?",
+            "options": {
+                "A": "It helps species survive in changing environments",
+                "B": "It prevents reproduction",
+                "C": "It stops evolution",
+                "D": "It reduces population"
+            },
+            "correct_answer": "A",
+            "explanation": "Variation helps organisms adapt and survive in changing environments.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        }
+    ]
+}

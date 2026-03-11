@@ -1,0 +1,448 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T19:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyse how the Law of Conservation of Mass is maintained in the combustion of a candle. Does the decrease in mass of the candle contradict the law?",
+            "answer": "The decrease in mass of a burning candle does not contradict the Law of Conservation of Mass. In an open system, the wax (hydrocarbons) reacts with atmospheric oxygen to produce carbon dioxide and water vapour, which escape into the air. If the reaction is carried out in a closed system and the mass of the oxygen consumed and the gases produced are measured, the total mass of the reactants will exactly equal the total mass of the products.",
+            "answer_outline": [
+                "Open vs. closed system distinction",
+                "Identification of gaseous reactants (Oxygen)",
+                "Identification of gaseous products (CO2, H2O)",
+                "Conclusion on mass equality"
+            ],
+            "key_concepts": [
+                "conservation of mass",
+                "open system",
+                "combustion"
+            ],
+            "marks": 5,
+            "source_section": "3.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Calculate the number of aluminum ions present in 0.051 g of aluminum oxide ($Al_2O_3$). (Atomic mass of Al = 27 u, O = 16 u)",
+            "answer": "1. Molar mass of $Al_2O_3 = (2 \\times 27) + (3 \\times 16) = 54 + 48 = 102$ g. 2. Moles of $Al_2O_3 = 0.051 / 102 = 0.0005$ moles. 3. Number of formula units = $0.0005 \\times 6.022 \\times 10^{23} = 3.011 \\times 10^{20}$. 4. Since each unit has 2 $Al^{3+}$ ions, total ions = $2 \\times 3.011 \\times 10^{20} = 6.022 \\times 10^{20}$ ions.",
+            "answer_outline": [
+                "Molar mass of compound",
+                "Moles from mass",
+                "Avogadro's number application",
+                "Ion stoichiometry (2:1)"
+            ],
+            "key_concepts": [
+                "ion calculation",
+                "molar mass",
+                "stoichiometry"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the concept of 'Gram Molecular Mass' and calculate the mass of 0.5 moles of Glucose ($C_6H_{12}O_6$).",
+            "answer": "Gram molecular mass is the molecular mass of a substance expressed in grams; it represents the mass of one mole ($6.022 \\times 10^{23}$ molecules) of that substance. Molecular mass of Glucose = $(6 \\times 12) + (12 \\times 1) + (6 \\times 16) = 72 + 12 + 96 = 180$ u. Therefore, Gram molecular mass = 180 g. Mass of 0.5 moles = $0.5 \\times 180 = 90$ g.",
+            "answer_outline": [
+                "Definition of Gram Molecular Mass",
+                "Calculation of relative molecular mass",
+                "Mole-to-mass conversion"
+            ],
+            "key_concepts": [
+                "gram molecular mass",
+                "glucose",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is Dalton's postulate about the indivisibility of atoms no longer considered completely accurate?",
+            "answer": "Dalton postulated that atoms are indivisible particles. However, modern science (discovery of subatomic particles) has shown that atoms are composed of even smaller particles: protons, neutrons, and electrons. Furthermore, nuclear reactions (fission and fusion) demonstrate that atoms can be split or combined, though they remain the smallest units that retain the chemical properties of an element in a standard chemical reaction.",
+            "answer_outline": [
+                "Dalton's original postulate",
+                "Evidence from subatomic particles",
+                "Nuclear vs. chemical reaction distinction"
+            ],
+            "key_concepts": [
+                "indivisibility",
+                "subatomic particles",
+                "atomic theory limitations"
+            ],
+            "marks": 5,
+            "source_section": "3.1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Determine the chemical formula and the percentage composition of Nitrogen in Ammonium Nitrate ($NH_4NO_3$). (N=14, H=1, O=16)",
+            "answer": "Formula is $NH_4NO_3$. Molar mass = $(14 \\times 2) + (1 \\times 4) + (16 \\times 3) = 28 + 4 + 48 = 80$ g. Mass of Nitrogen in 1 mole = 28 g. Percentage of Nitrogen = $(28 / 80) \\times 100 = 35\\%$.",
+            "answer_outline": [
+                "Formula verification",
+                "Molar mass calculation",
+                "Mass of specific element",
+                "Percentage formula"
+            ],
+            "key_concepts": [
+                "percentage composition",
+                "ammonium nitrate",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how the Law of Definite Proportions applies to the synthesis of Carbon Dioxide from different sources.",
+            "answer": "Whether $CO_2$ is produced by burning coal, decomposing calcium carbonate, or through respiration, it always contains carbon and oxygen in a fixed mass ratio of 3:8 (12g of C to 32g of O). This consistency proves that a chemical compound always contains its constituent elements in a fixed proportion by mass, regardless of the method of preparation or the source.",
+            "answer_outline": [
+                "Law of Definite Proportions statement",
+                "Comparison of CO2 sources",
+                "Calculation of mass ratio (12:32)",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "definite proportions",
+                "carbon dioxide",
+                "mass ratio"
+            ],
+            "marks": 5,
+            "source_section": "3.1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the mass of (a) 1 molecule of Water and (b) 1 mole of Water? (H=1, O=16)",
+            "answer": "(a) Mass of 1 molecule of Water = 18 u (microscopic scale). To convert to grams: $18 / (6.022 \\times 10^{23}) \\approx 2.99 \\times 10^{-23}$ g. (b) Mass of 1 mole of Water = 18 g (macroscopic scale). This highlights the bridge the mole concept provides between individual particles and measurable quantities.",
+            "answer_outline": [
+                "Microscopic mass (u)",
+                "Macroscopic mass (g)",
+                "Conversion using Avogadro's number",
+                "Conceptual distinction"
+            ],
+            "key_concepts": [
+                "molecule vs mole",
+                "atomic mass unit",
+                "Avogadro's number"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss why 'Valency' is considered a fundamental property for predicting the stoichiometry of a compound.",
+            "answer": "Valency represents the 'combining capacity' or the number of bonds an atom can form. It is determined by the electronic configuration. In an ionic compound, total positive charge must equal total negative charge. By using the valency (the charge an atom typically acquires), we can use the criss-cross method to ensure the resulting formula is electrically neutral, thus predicting the exact ratio of atoms (stoichiometry).",
+            "answer_outline": [
+                "Definition of valency",
+                "Relation to electrical neutrality",
+                "Criss-cross method as a tool",
+                "Impact on stoichiometry"
+            ],
+            "key_concepts": [
+                "valency",
+                "stoichiometry",
+                "electrical neutrality"
+            ],
+            "marks": 5,
+            "source_section": "3.4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Calculate the mass of $3.011 \\times 10^{23}$ molecules of $N_2$ gas.",
+            "answer": "1. Find moles: $3.011 \\times 10^{23} / 6.022 \\times 10^{23} = 0.5$ moles. 2. Molar mass of $N_2 = 28$ g. 3. Mass = $\\text{moles} \\times \\text{molar mass} = 0.5 \\times 28 = 14$ g.",
+            "answer_outline": [
+                "Particles to moles conversion",
+                "Molar mass of Nitrogen gas",
+                "Moles to mass calculation"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "nitrogen gas",
+                "Avogadro's number"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Identify the cation and anion in $Ca_3(PO_4)_2$ and explain the significance of the brackets.",
+            "answer": "Cation: $Ca^{2+}$ (Calcium ion); Anion: $PO_4^{3-}$ (Phosphate ion). The brackets around $PO_4$ indicate that the phosphate group is a polyatomic ion that acts as a single unit. The subscript '2' outside the bracket indicates that there are two such phosphate units for every three calcium ions to balance the total charge ($+6$ from Ca and $-6$ from Phosphate).",
+            "answer_outline": [
+                "Ion identification",
+                "Definition of polyatomic ion",
+                "Explanation of brackets and subscripts",
+                "Charge balancing logic"
+            ],
+            "key_concepts": [
+                "polyatomic ion",
+                "calcium phosphate",
+                "chemical formula"
+            ],
+            "marks": 5,
+            "source_section": "3.3.3 & 3.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Evaluate the statement: 'One mole of all substances contains the same number of atoms.'",
+            "answer": "The statement is false. One mole of all substances contains the same number of *particles* ($6.022 \\times 10^{23}$). If the substance is monoatomic (like He), it contains that many atoms. However, if the substance is a molecule (like $H_2O$), one mole contains $6.022 \\times 10^{23}$ *molecules*, which equals $3 \\times 6.022 \\times 10^{23}$ *atoms*. Atom count depends on the atomicity of the molecule.",
+            "answer_outline": [
+                "Distinction between particles and atoms",
+                "Role of atomicity",
+                "Examples (He vs H2O)",
+                "Corrected statement"
+            ],
+            "key_concepts": [
+                "mole",
+                "atomicity",
+                "particle vs atom"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Why do some elements like Copper and Mercury show variable valency?",
+            "answer": "Variable valency occurs because some atoms can lose electrons not only from their outermost shell but also from the shell beneath it (penultimate shell) under different conditions. For example, Copper can show a valency of 1 (Cuprous, $Cu^+$) or 2 (Cupric, $Cu^{2+}$). This allows them to form different compounds with the same non-metal, such as $Cu_2O$ and $CuO$.",
+            "answer_outline": [
+                "Definition of variable valency",
+                "Outer vs. penultimate shell electrons",
+                "Examples (Copper/Iron)",
+                "Effect on compound formation"
+            ],
+            "key_concepts": [
+                "variable valency",
+                "copper",
+                "electronic configuration"
+            ],
+            "marks": 5,
+            "source_section": "3.4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of 'Molar Volume' (for gases) and its relation to the mole concept.",
+            "answer": "Though not explicitly detailed in Chapter 3 of NCERT, molar volume is the volume occupied by one mole of a gas at STP (Standard Temperature and Pressure), which is 22.4 L. It relates the mole concept to volume, allowing chemists to calculate the number of gas particles ($6.022 \\times 10^{23}$) simply by measuring the volume of the gas, providing a third link alongside mass and particle count.",
+            "answer_outline": [
+                "Definition of Molar Volume",
+                "STP conditions",
+                "Link to Avogadro's number",
+                "Importance in stoichiometry"
+            ],
+            "key_concepts": [
+                "molar volume",
+                "STP",
+                "gas moles"
+            ],
+            "marks": 5,
+            "source_section": "Advanced/Mole Concept"
+        },
+        {
+            "question_number": 14,
+            "question": "Calculate the mass of Phosphorus present in 100 g of $P_4O_{10}$. (P=31, O=16)",
+            "answer": "1. Molar mass = $(4 \\times 31) + (10 \\times 16) = 124 + 160 = 284$ g. 2. Mass of Phosphorus in 284 g = 124 g. 3. Mass in 100 g = $(124 / 284) \\times 100 \\approx 43.66$ g.",
+            "answer_outline": [
+                "Molar mass of compound",
+                "Mass ratio of Phosphorus",
+                "Proportional calculation"
+            ],
+            "key_concepts": [
+                "mass calculation",
+                "phosphorus oxide",
+                "stoichiometry"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe the experiment involving Barium Chloride and Sodium Sulphate to verify the Law of Conservation of Mass.",
+            "answer": "Solutions of Barium Chloride and Sodium Sulphate are taken in a flask and a small ignition tube respectively. The flask is weighed. Then, the ignition tube is tilted to mix the solutions, forming a white precipitate of Barium Sulphate. The flask is weighed again. The total mass remains identical, proving that mass is conserved during a chemical change.",
+            "answer_outline": [
+                "Reactants used",
+                "Experimental procedure",
+                "Observation (Precipitate formation)",
+                "Weight comparison conclusion"
+            ],
+            "key_concepts": [
+                "conservation of mass",
+                "experimental verification",
+                "precipitation"
+            ],
+            "marks": 5,
+            "source_section": "3.1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Define 'Relative Molecular Mass' and explain its importance in calculating molar mass.",
+            "answer": "Relative molecular mass is the sum of the relative atomic masses of all atoms in a molecule. It is a dimensionless ratio. Its numerical value is used to define 'Molar Mass' by simply changing the unit from 'u' to 'g'. This allows us to use the atomic-scale data from the periodic table to weigh out macroscopic quantities of a substance in a laboratory.",
+            "answer_outline": [
+                "Definition",
+                "Calculation method",
+                "Relation between 'u' and 'g'",
+                "Laboratory significance"
+            ],
+            "key_concepts": [
+                "molecular mass",
+                "molar mass",
+                "carbon-12"
+            ],
+            "marks": 5,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Determine the formula unit mass of Sodium Carbonate Decahydrate ($Na_2CO_3 \\cdot 10H_2O$). (Na=23, C=12, O=16, H=1)",
+            "answer": "$Na_2CO_3 = (23 \\times 2) + 12 + (16 \\times 3) = 106$ u. $10H_2O = 10 \\times [ (1 \\times 2) + 16 ] = 180$ u. Total Formula Unit Mass = $106 + 180 = 286$ u.",
+            "answer_outline": [
+                "Mass of Sodium Carbonate",
+                "Mass of water of crystallization",
+                "Total summation"
+            ],
+            "key_concepts": [
+                "formula unit mass",
+                "hydrates",
+                "sodium carbonate"
+            ],
+            "marks": 5,
+            "source_section": "3.5.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the difference between 'Diatomic' and 'Binary' compounds with examples.",
+            "answer": "Diatomic refers to molecules composed of exactly two atoms ($e.g., O_2, HCl$). Binary refers to compounds composed of exactly two different *elements* ($e.g., H_2O, NH_3, NaCl$). $HCl$ is both binary and diatomic, while $H_2O$ is binary but triatomic.",
+            "answer_outline": [
+                "Definition of Diatomic",
+                "Definition of Binary",
+                "Comparison with examples",
+                "Clarification of atom count vs element count"
+            ],
+            "key_concepts": [
+                "diatomic",
+                "binary compounds",
+                "atomicity"
+            ],
+            "marks": 4,
+            "source_section": "3.3.1 & 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Calculate the ratio of the number of atoms in 4 g of Hydrogen gas and 4 g of Helium gas. (H=1, He=4)",
+            "answer": "1. Moles of $H_2 = 4 / 2 = 2$ moles. Atoms = $2 \\times 2 \\times N_A = 4N_A$. 2. Moles of $He = 4 / 4 = 1$ mole. Atoms = $1 \\times N_A = N_A$. Ratio of atoms = 4:1.",
+            "answer_outline": [
+                "Moles of Hydrogen (diatomic)",
+                "Moles of Helium (monoatomic)",
+                "Calculation of total atoms",
+                "Final ratio"
+            ],
+            "key_concepts": [
+                "atom count",
+                "atomicity",
+                "mole ratio"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the mass percentage of Water of Crystallisation in $CuSO_4 \\cdot 5H_2O$? (Cu=63.5, S=32, O=16, H=1)",
+            "answer": "1. Molar mass of $CuSO_4 \\cdot 5H_2O = 63.5 + 32 + (16 \\times 4) + (5 \\times 18) = 159.5 + 90 = 249.5$ g. 2. Mass of water = 90 g. 3. Percentage = $(90 / 249.5) \\times 100 \\approx 36.07\\%$.",
+            "answer_outline": [
+                "Molar mass calculation",
+                "Mass of water component",
+                "Percentage calculation"
+            ],
+            "key_concepts": [
+                "water of crystallization",
+                "copper sulphate",
+                "percentage composition"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Discuss the 'Mole' as a bridge between the macroscopic and microscopic worlds.",
+            "answer": "At the microscopic level, we deal with individual atoms (u). At the macroscopic level, we deal with grams (g). The mole concept defines a specific quantity of particles ($6.022 \\times 10^{23}$) such that the numerical value of the atomic mass in 'u' is identical to the mass of one mole in 'g'. This allows scientists to perform precise chemical reactions by counting atoms through simple mass measurements.",
+            "answer_outline": [
+                "Microscopic scale (Atoms/u)",
+                "Macroscopic scale (Grams/g)",
+                "Avogadro's number as the scale factor",
+                "Practical laboratory application"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "Avogadro constant",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "How many moles of Sodium atoms are present in 1 mole of $Na_2SO_4$?",
+            "answer": "One formula unit of $Na_2SO_4$ contains 2 Sodium atoms. Therefore, one mole of $Na_2SO_4$ contains 2 moles of Sodium atoms.",
+            "answer_outline": [
+                "Formula analysis",
+                "Atom-to-mole stoichiometry",
+                "Final count"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "stoichiometry",
+                "sodium sulphate"
+            ],
+            "marks": 3,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Compare 'Atom' and 'Ion' in terms of electrical neutrality and electronic stability.",
+            "answer": "An atom is electrically neutral (protons = electrons) but often unstable because its valence shell is incomplete. An ion is electrically charged (protons $\\neq$ electrons) but is often more stable because it has achieved an octet or duplet configuration through the loss or gain of electrons.",
+            "answer_outline": [
+                "Neutrality comparison",
+                "Stability (Octet rule)",
+                "Formation process",
+                "Examples"
+            ],
+            "key_concepts": [
+                "atom",
+                "ion",
+                "stability"
+            ],
+            "marks": 5,
+            "source_section": "3.3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the molar mass of $C_{12}H_{22}O_{11}$ (Sucrose).",
+            "answer": "$(12 \\times 12) + (22 \\times 1) + (11 \\times 16) = 144 + 22 + 176 = 342$ g/mol.",
+            "answer_outline": [
+                "Identify atomic masses",
+                "Summation"
+            ],
+            "key_concepts": [
+                "molar mass",
+                "sucrose"
+            ],
+            "marks": 3,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize Dalton's Atomic Theory in five points.",
+            "answer": "1. Matter is made of tiny atoms. 2. Atoms are indivisible and indestructible. 3. Atoms of the same element are identical. 4. Atoms of different elements are different. 5. Atoms combine in whole-number ratios to form compounds.",
+            "answer_outline": [
+                "Composition",
+                "Indivisibility",
+                "Identity",
+                "Difference",
+                "Combination"
+            ],
+            "key_concepts": [
+                "Dalton's theory",
+                "atomic postulates"
+            ],
+            "marks": 5,
+            "source_section": "3.1.3"
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Fractions in Disguise (Percentages)",
+  "difficulty": "Medium",
+  "source_pdf": "hegp201.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Percentage Estimation Game",
+      "objective": "Estimate percentage equivalents of fractions",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write fractions such as 3/7, 5/8, 7/9, 11/12",
+        "Estimate their percentage values",
+        "Calculate exact percentages using multiplication by 100",
+        "Compare estimated and actual answers"
+      ],
+      "learning_outcome": "Improves estimation and calculation skills",
+      "evaluation": "Accuracy of estimation and calculation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Real-Life Percentage Survey",
+      "objective": "Collect and analyze percentage data",
+      "materials": ["Notebook", "Survey sheet"],
+      "steps": [
+        "Survey 20 students about their favourite sport",
+        "Count responses for each sport",
+        "Convert counts into percentages",
+        "Display results in a table"
+      ],
+      "learning_outcome": "Applies percentages to real-life data",
+      "evaluation": "Correct percentage calculations (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Percentage of Quantity Challenge",
+      "objective": "Calculate percentages of large numbers",
+      "materials": ["Notebook", "Calculator (optional)"],
+      "steps": [
+        "Choose numbers such as 450, 620, 980",
+        "Calculate 12%, 18%, and 35% of each number",
+        "Explain calculation steps"
+      ],
+      "learning_outcome": "Develops calculation accuracy with percentages",
+      "evaluation": "Correct results (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Percentage Comparison Activity",
+      "objective": "Compare quantities using percentages",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write two test scores with different totals",
+        "Convert both into percentages",
+        "Determine which performance is better"
+      ],
+      "learning_outcome": "Understands fair comparison using percentages",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Profit Calculation Task",
+      "objective": "Calculate profit and profit percentage",
+      "materials": ["Notebook"],
+      "steps": [
+        "Assume cost price of items such as ₹250, ₹480",
+        "Choose selling price higher than cost price",
+        "Calculate profit amount",
+        "Find profit percentage"
+      ],
+      "learning_outcome": "Understands profit percentage calculations",
+      "evaluation": "Correct formula usage (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Discount Shopping Simulation",
+      "objective": "Apply percentage discounts",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose five product prices",
+        "Apply 15%, 20%, and 35% discounts",
+        "Calculate final selling prices"
+      ],
+      "learning_outcome": "Understands discount calculations",
+      "evaluation": "Correct discounted prices (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Percentage Increase Investigation",
+      "objective": "Understand percentage increase",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take an initial value",
+        "Increase it by 10%, 25%, and 50%",
+        "Calculate the new values"
+      ],
+      "learning_outcome": "Develops understanding of growth percentages",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Ratio to Percentage Conversion",
+      "objective": "Convert ratios into percentages",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take ratios like 3:5, 4:7, 6:11",
+        "Convert them into fractions",
+        "Then convert fractions into percentages"
+      ],
+      "learning_outcome": "Connects ratios, fractions, and percentages",
+      "evaluation": "Correct conversions (10 marks)"
+    }
+  ]
+}

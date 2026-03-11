@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Food Security in India",
+  "generated_at": "2026-03-07T00:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are the three essential dimensions of food security?",
+      "options": {
+        "A": "Availability, Accessibility, and Affordability",
+        "B": "Agriculture, Animal Husbandry, and Aqua-culture",
+        "C": "Aspirations, Assets, and Accounts",
+        "D": "Availability, Accountability, and Adaptability"
+      },
+      "correct_answer": "A",
+      "explanation": "Food security means availability of food for all, accessibility within reach, and affordability to buy safe and nutritious food.",
+      "difficulty": "easy",
+      "source_section": "4.1 What is Food Security?"
+    },
+    {
+      "question_number": 2,
+      "question": "When is a person considered food secure?",
+      "options": {
+        "A": "When they have a large bank balance",
+        "B": "When enough food is available for all, and all have the capacity to buy food of acceptable quality",
+        "C": "When they live near a farm",
+        "D": "When they eat only expensive food"
+      },
+      "correct_answer": "B",
+      "explanation": "Food security is ensured only if there is enough food, it's accessible, and there are no barriers to obtaining it.",
+      "difficulty": "easy",
+      "source_section": "4.1 What is Food Security?"
+    },
+    {
+      "question_number": 3,
+      "question": "The most devastating famine that occurred in India in 1943 was:",
+      "options": {
+        "A": "Famine of Odisha",
+        "B": "Famine of Bengal",
+        "C": "Famine of Bihar",
+        "D": "Famine of Rajasthan"
+      },
+      "correct_answer": "B",
+      "explanation": "The Famine of Bengal in 1943 killed 30 lakh people and remains the most devastating famine in Indian history.",
+      "difficulty": "easy",
+      "source_section": "4.1 What is Food Security?"
+    },
+    {
+      "question_number": 4,
+      "question": "Which group of people is most prone to food insecurity in rural areas?",
+      "options": {
+        "A": "Large landowners",
+        "B": "Traditional artisans and landless laborers",
+        "C": "Government employees",
+        "D": "Bankers"
+      },
+      "correct_answer": "B",
+      "explanation": "Landless people, traditional artisans, and petty self-employed workers are the most vulnerable in rural sectors.",
+      "difficulty": "easy",
+      "source_section": "4.2 Who are Food Insecure?"
+    },
+    {
+      "question_number": 5,
+      "question": "Chronic hunger is a consequence of:",
+      "options": {
+        "A": "Fast-moving lifestyle",
+        "B": "Diets persistently inadequate in terms of quantity and/or quality",
+        "C": "Seasonal agricultural cycles",
+        "D": "Occasional fasting"
+      },
+      "correct_answer": "B",
+      "explanation": "Chronic hunger occurs when people cannot afford or access a nutritionally balanced diet consistently.",
+      "difficulty": "easy",
+      "source_section": "4.2.1 Hunger"
+    },
+    {
+      "question_number": 6,
+      "question": "Seasonal hunger is mostly found in:",
+      "options": {
+        "A": "Software industries",
+        "B": "Rural areas due to the seasonal nature of agriculture",
+        "C": "Large cities only",
+        "D": "Developed countries"
+      },
+      "correct_answer": "B",
+      "explanation": "It is related to cycles of food growing and harvesting where work is not available throughout the year.",
+      "difficulty": "easy",
+      "source_section": "4.2.1 Hunger"
+    },
+    {
+      "question_number": 7,
+      "question": "The 'Green Revolution' in India was primarily associated with the production of:",
+      "options": {
+        "A": "Sugar and Milk",
+        "B": "Wheat and Rice",
+        "C": "Cotton and Jute",
+        "D": "Coffee and Tea"
+      },
+      "correct_answer": "B",
+      "explanation": "The Green Revolution introduced HYV seeds which massively increased wheat and rice yields.",
+      "difficulty": "easy",
+      "source_section": "4.2.2 India’s Path to Self-sufficiency"
+    },
+    {
+      "question_number": 8,
+      "question": "Which organization procures foodgrains like wheat and rice for the government?",
+      "options": {
+        "A": "RBI",
+        "B": "FCI (Food Corporation of India)",
+        "C": "NSSO",
+        "D": "WFP"
+      },
+      "correct_answer": "B",
+      "explanation": "The FCI is responsible for purchasing, storing, and distributing foodgrains in India.",
+      "difficulty": "easy",
+      "source_section": "4.3 What is Buffer Stock?"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the price pre-announced by the government to support farmers called?",
+      "options": {
+        "A": "Issue Price",
+        "B": "Market Price",
+        "C": "Minimum Support Price (MSP)",
+        "D": "Maximum Retail Price"
+      },
+      "correct_answer": "C",
+      "explanation": "MSP is announced before the sowing season to provide incentives and security to farmers.",
+      "difficulty": "easy",
+      "source_section": "4.3 What is Buffer Stock?"
+    },
+    {
+      "question_number": 10,
+      "question": "The price at which grains are distributed through ration shops to the poor is:",
+      "options": {
+        "A": "MSP",
+        "B": "Issue Price",
+        "C": "Export Price",
+        "D": "Market Price"
+      },
+      "correct_answer": "B",
+      "explanation": "The Issue Price is lower than the market price to make food affordable for the poorer sections.",
+      "difficulty": "easy",
+      "source_section": "4.3 What is Buffer Stock?"
+    },
+    {
+      "question_number": 11,
+      "question": "Ration shops are also known as:",
+      "options": {
+        "A": "Supermarkets",
+        "B": "Fair Price Shops",
+        "C": "Malls",
+        "D": "Wholesale Mandis"
+      },
+      "correct_answer": "B",
+      "explanation": "They are called Fair Price Shops because they sell essential goods at subsidized, government-regulated rates.",
+      "difficulty": "easy",
+      "source_section": "4.4 What is Public Distribution System?"
+    },
+    {
+      "question_number": 12,
+      "question": "Which ration card is issued to the 'poorest of the poor'?",
+      "options": {
+        "A": "APL Cards",
+        "B": "BPL Cards",
+        "C": "Antyodaya Cards",
+        "D": "Yellow Cards"
+      },
+      "correct_answer": "C",
+      "explanation": "Antyodaya Anna Yojana (AAY) specifically targets the bottom-most stratum of the poor.",
+      "difficulty": "easy",
+      "source_section": "4.4 What is Public Distribution System?"
+    },
+    {
+      "question_number": 13,
+      "question": "The National Food Security Act was passed in the year:",
+      "options": {
+        "A": "2005",
+        "B": "2013",
+        "C": "2010",
+        "D": "2015"
+      },
+      "correct_answer": "B",
+      "explanation": "The NFSA 2013 provides a legal right to subsidized foodgrains for a large portion of India's population.",
+      "difficulty": "easy",
+      "source_section": "4.4 What is Public Distribution System?"
+    },
+    {
+      "question_number": 14,
+      "question": "FCI distributes foodgrains through a network of:",
+      "options": {
+        "A": "Private Grocery Stores",
+        "B": "Ration Shops/Fair Price Shops",
+        "C": "Online Portals",
+        "D": "Street Vendors"
+      },
+      "correct_answer": "B",
+      "explanation": "There are about 5.5 lakh ration shops all over the country forming the PDS network.",
+      "difficulty": "easy",
+      "source_section": "4.4 What is Public Distribution System?"
+    },
+    {
+      "question_number": 15,
+      "question": "In which state are 94% of fair price shops run by cooperatives?",
+      "options": {
+        "A": "Tamil Nadu",
+        "B": "Punjab",
+        "C": "Bihar",
+        "D": "Gujarat"
+      },
+      "correct_answer": "A",
+      "explanation": "Tamil Nadu is a leading example where cooperatives effectively manage the Public Distribution System.",
+      "difficulty": "easy",
+      "source_section": "4.5 Role of Cooperatives"
+    },
+    {
+      "question_number": 16,
+      "question": "Mother Dairy provides milk and vegetables at controlled rates in:",
+      "options": {
+        "A": "Mumbai",
+        "B": "Delhi",
+        "C": "Kolkata",
+        "D": "Chennai"
+      },
+      "correct_answer": "B",
+      "explanation": "Mother Dairy is making strides in providing essential products at government-decided rates in Delhi.",
+      "difficulty": "easy",
+      "source_section": "4.5 Role of Cooperatives"
+    },
+    {
+      "question_number": 17,
+      "question": "The 'White Revolution' in India is related to the production of:",
+      "options": {
+        "A": "Wheat",
+        "B": "Milk",
+        "C": "Eggs",
+        "D": "Sugar"
+      },
+      "correct_answer": "B",
+      "explanation": "Amul is the success story behind the White Revolution, which made India the largest milk producer.",
+      "difficulty": "easy",
+      "source_section": "4.5 Role of Cooperatives"
+    },
+    {
+      "question_number": 18,
+      "question": "Academy of Development Science (ADS) has facilitated setting up of _________ in Maharashtra.",
+      "options": {
+        "A": "Banks",
+        "B": "Grain Banks",
+        "C": "Dams",
+        "D": "Schools"
+      },
+      "correct_answer": "B",
+      "explanation": "ADS facilitated a network of NGOs to set up grain banks for tribal communities in Maharashtra.",
+      "difficulty": "easy",
+      "source_section": "4.5 Role of Cooperatives"
+    },
+    {
+      "question_number": 19,
+      "question": "Under the AAY scheme, 35 kg of foodgrains are provided at what price for wheat?",
+      "options": {
+        "A": "₹5 per kg",
+        "B": "₹2 per kg",
+        "C": "₹10 per kg",
+        "D": "₹1 per kg"
+      },
+      "correct_answer": "B",
+      "explanation": "Antyodaya Anna Yojana provides wheat at ₹2 per kg and rice at ₹3 per kg.",
+      "difficulty": "easy",
+      "source_section": "4.4.1 Current Status of PDS"
+    },
+    {
+      "question_number": 20,
+      "question": "Which age group is specifically targeted under the ICDS scheme for primary health and nutrition?",
+      "options": {
+        "A": "Adults",
+        "B": "Children under 6 years and mothers",
+        "C": "Elderly above 60",
+        "D": "Teenagers"
+      },
+      "correct_answer": "B",
+      "explanation": "Integrated Child Development Services (ICDS) focuses on the nutritional needs of infants and pregnant/nursing mothers.",
+      "difficulty": "easy",
+      "source_section": "4.4 What is Public Distribution System?"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the result of a natural calamity like drought on food security?",
+      "options": {
+        "A": "Production increases",
+        "B": "Prices fall",
+        "C": "Decline in production leads to shortage and price rise",
+        "D": "No change"
+      },
+      "correct_answer": "C",
+      "explanation": "Shortage of food in an area during a calamity makes food unaffordable for many.",
+      "difficulty": "easy",
+      "source_section": "4.1 What is Food Security?"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the buffer stock norm?",
+      "options": {
+        "A": "The minimum quantity of grain the government must maintain",
+        "B": "The total production of a year",
+        "C": "The amount of grain exported",
+        "D": "The amount of seeds saved"
+      },
+      "correct_answer": "A",
+      "explanation": "The government maintains a specific norm of foodgrain stocks to handle emergencies and distribution.",
+      "difficulty": "easy",
+      "source_section": "4.3 What is Buffer Stock?"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of these is a mal-practice by PDS dealers?",
+      "options": {
+        "A": "Selling at market price",
+        "B": "Diverting grains to open market and selling poor quality grain",
+        "C": "Opening the shop daily",
+        "D": "Giving free food"
+      },
+      "correct_answer": "B",
+      "explanation": "Diversion of grains to the open market for profit is a major challenge in the PDS system.",
+      "difficulty": "easy",
+      "source_section": "4.4.1 Current Status of PDS"
+    },
+    {
+      "question_number": 24,
+      "question": "Which state became a model for the Green Revolution due to its wheat production?",
+      "options": {
+        "A": "Kerala",
+        "B": "Punjab",
+        "C": "Bihar",
+        "D": "Odisha"
+      },
+      "correct_answer": "B",
+      "explanation": "Punjab and Haryana were the biggest beneficiaries and success stories of the Green Revolution.",
+      "difficulty": "easy",
+      "source_section": "4.2.2 India’s Path to Self-sufficiency"
+    },
+    {
+      "question_number": 25,
+      "question": "Food security means availability, accessibility, and _________.",
+      "options": {
+        "A": "Affordability",
+        "B": "Accountability",
+        "C": "Adjustment",
+        "D": "Accuracy"
+      },
+      "correct_answer": "A",
+      "explanation": "Affordability is the third pillar, ensuring individuals have the money to buy food.",
+      "difficulty": "easy",
+      "source_section": "4.1 What is Food Security?"
+    }
+  ]
+}

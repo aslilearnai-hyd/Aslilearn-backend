@@ -1,0 +1,167 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solutes, Solvents, and Solutions",
+  "difficulty": "Easy",
+  "source_pdf": "The Amazing World of Solutes Solvents and Solutions.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Dissolving Salt in Water Investigation",
+      "objective": "Understand the concept of solute, solvent, and solution",
+      "materials": ["Glass tumbler", "Water", "Salt", "Spoon"],
+      "steps": [
+        "Fill a clean glass tumbler halfway with water",
+        "Add one spoon of salt and stir until it dissolves",
+        "Keep adding salt gradually while stirring",
+        "Observe the stage when salt stops dissolving"
+      ],
+      "learning_outcome": "Students understand how a solute dissolves in a solvent to form a solution",
+      "evaluation": "Observation table and explanation of dissolving process (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Identifying Saturated and Unsaturated Solutions",
+      "objective": "Understand the difference between saturated and unsaturated solutions",
+      "materials": ["Water", "Salt", "Glass", "Spoon"],
+      "steps": [
+        "Prepare a salt solution in water",
+        "Continue adding salt while stirring",
+        "Observe when undissolved salt settles at the bottom",
+        "Identify whether the solution is saturated or unsaturated"
+      ],
+      "learning_outcome": "Students understand the concept of saturation in solutions",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Effect of Temperature on Solubility",
+      "objective": "Study how temperature affects the solubility of solids",
+      "materials": [
+        "Beaker",
+        "Water",
+        "Baking soda",
+        "Thermometer",
+        "Spirit lamp or heater",
+        "Glass rod"
+      ],
+      "steps": [
+        "Take water in a beaker and measure its temperature",
+        "Add baking soda and stir until dissolved",
+        "Heat the solution and continue stirring",
+        "Observe how more baking soda dissolves at higher temperature"
+      ],
+      "learning_outcome": "Students learn that solubility of most solids increases with temperature",
+      "evaluation": "Observation notes and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Measuring Mass Using Digital Balance",
+      "objective": "Learn how to measure mass using a digital weighing balance",
+      "materials": [
+        "Digital weighing balance",
+        "Watch glass or butter paper",
+        "Small stone or solid object"
+      ],
+      "steps": [
+        "Switch on the digital weighing balance",
+        "Ensure the reading is zero",
+        "Place a watch glass on the balance and tare it",
+        "Place a stone on the watch glass",
+        "Note the mass displayed"
+      ],
+      "learning_outcome": "Students learn how mass of objects is measured accurately",
+      "evaluation": "Recording correct mass readings (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Observing Measuring Cylinder Divisions",
+      "objective": "Understand how to read the smallest measurement in a measuring cylinder",
+      "materials": ["Measuring cylinder", "Water"],
+      "steps": [
+        "Observe the maximum volume marked on the cylinder",
+        "Note the difference between two large marks",
+        "Count the number of small divisions",
+        "Calculate the smallest measurable volume"
+      ],
+      "learning_outcome": "Students learn how to measure liquid volume accurately",
+      "evaluation": "Correct calculation of smallest division (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Measuring 50 mL of Water",
+      "objective": "Practice accurate measurement of liquid volume",
+      "materials": ["Measuring cylinder", "Water", "Dropper"],
+      "steps": [
+        "Place a measuring cylinder on a flat surface",
+        "Pour water slowly into the cylinder",
+        "Adjust the level to 50 mL using a dropper",
+        "Read the measurement at the bottom of the meniscus"
+      ],
+      "learning_outcome": "Students learn correct techniques for reading liquid levels",
+      "evaluation": "Accuracy in measuring liquid volume (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Calculating Volume of Regular Objects",
+      "objective": "Calculate volume of regular solids",
+      "materials": ["Notebook or cuboid object", "Scale"],
+      "steps": [
+        "Measure length, width, and height of the object",
+        "Use the formula Volume = l × w × h",
+        "Calculate the volume",
+        "Record results in notebook"
+      ],
+      "learning_outcome": "Students learn how to calculate volume of regular solids",
+      "evaluation": "Correct calculation of volume (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Measuring Volume of Irregular Objects",
+      "objective": "Determine the volume of irregular solids using displacement method",
+      "materials": ["Measuring cylinder", "Water", "Stone", "Thread"],
+      "steps": [
+        "Fill measuring cylinder with water and note initial volume",
+        "Tie a stone with thread",
+        "Lower the stone into the cylinder",
+        "Note the final water level",
+        "Calculate volume by subtracting initial volume from final volume"
+      ],
+      "learning_outcome": "Students understand water displacement method",
+      "evaluation": "Correct calculation of volume (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Calculating Density of a Solid",
+      "objective": "Learn to calculate density using mass and volume",
+      "materials": [
+        "Digital weighing balance",
+        "Measuring cylinder",
+        "Water",
+        "Solid object"
+      ],
+      "steps": [
+        "Measure mass of the object using weighing balance",
+        "Measure volume using displacement method",
+        "Use formula Density = Mass / Volume",
+        "Calculate the density"
+      ],
+      "learning_outcome": "Students understand density and its calculation",
+      "evaluation": "Correct density calculation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Floating Egg Experiment",
+      "objective": "Understand density and buoyancy in liquids",
+      "materials": ["Glass tumbler", "Water", "Raw egg", "Salt"],
+      "steps": [
+        "Fill a glass with water",
+        "Place a raw egg in the water and observe",
+        "Add salt gradually and stir",
+        "Observe the egg rising and floating"
+      ],
+      "learning_outcome": "Students understand how density of liquid affects floating objects",
+      "evaluation": "Explanation of egg floating due to increased density (10 marks)"
+    }
+  ]
+}

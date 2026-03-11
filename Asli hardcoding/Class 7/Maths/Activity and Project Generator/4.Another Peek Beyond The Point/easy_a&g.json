@@ -1,0 +1,168 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT - Ganita Prakash)",
+    "chapter": "Another Peek Beyond the Point (Decimals - Multiplication and Division)",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class7_maths_another_peek_beyond_the_point.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The 10-Times Jump",
+            "objective": "Understand multiplication by 10, 100, and 1000",
+            "materials": [
+                "Number cards",
+                "A small pebble (as a decimal point)"
+            ],
+            "steps": [
+                "Place a number card like '45.6' on the table with a pebble as the decimal",
+                "Multiply by 10 by jumping the pebble one place to the right ($456$)",
+                "Multiply by 100 by jumping two places, adding a zero if needed ($4560$)",
+                "Record the 'new' numbers in your notebook"
+            ],
+            "learning_outcome": "Visualizes decimal point shifts during multiplication by powers of 10",
+            "evaluation": "Correct placement of the decimal point (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Grocery Bill Multiplier",
+            "objective": "Practice basic multiplication of decimals by whole numbers",
+            "materials": [
+                "Empty snack packets with price tags",
+                "Notebook"
+            ],
+            "steps": [
+                "Pick a packet with a price like ₹9.50",
+                "Calculate the cost of 5 such packets using addition ($9.5 + 9.5...$)",
+                "Calculate the same using multiplication ($9.5 \times 5$)",
+                "Check if both answers match"
+            ],
+            "learning_outcome": "Connects repeated addition to decimal multiplication",
+            "evaluation": "Accuracy of the multiplication result (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Left-Shift Division",
+            "objective": "Understand division by 10, 100, and 1000",
+            "materials": [
+                "Chalk",
+                "Blackboard or floor"
+            ],
+            "steps": [
+                "Write a large number like '123.0'",
+                "Divide by 10 by moving the decimal one step to the left ($12.3$)",
+                "Divide by 100 by moving it two steps ($1.23$)",
+                "Create a 'pattern rule' for division based on the number of zeros"
+            ],
+            "learning_outcome": "Masters the rule for dividing decimals by 10, 100, and 1000",
+            "evaluation": "Correct direction of decimal movement (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Money Matters: Sharing is Caring",
+            "objective": "Divide decimals representing money by whole numbers",
+            "materials": [
+                "Play money or paper slips"
+            ],
+            "steps": [
+                "Imagine you have ₹75.50 to share equally among 5 friends",
+                "Divide 7550 paise by 5 first",
+                "Convert the result back to rupees and paise using a decimal point",
+                "Verify by multiplying the answer by 5"
+            ],
+            "learning_outcome": "Applies decimal division to real-life sharing scenarios",
+            "evaluation": "Correct division and decimal placement (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Decimals to Fractions Bridge",
+            "objective": "Multiply decimals by converting them to fractions",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Take the problem $0.2 \times 0.3$",
+                "Write them as fractions: $\\frac{2}{10} \times \\frac{3}{10}$",
+                "Multiply the numerators ($6$) and denominators ($100$)",
+                "Convert the final fraction $\\frac{6}{100}$ back to decimal ($0.06$)"
+            ],
+            "learning_outcome": "Understand the logic behind the number of decimal places in a product",
+            "evaluation": "Success in fraction-to-decimal conversion (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Lengthy Estimates",
+            "objective": "Practice multiplication with metric units",
+            "materials": [
+                "Ruler"
+            ],
+            "steps": [
+                "Measure the width of one finger in cm (e.g., 1.2 cm)",
+                "Multiply this by 10 to estimate the width of your palm",
+                "Measure your palm to see how close your 'decimal estimate' was"
+            ],
+            "learning_outcome": "Uses decimal multiplication for physical estimations",
+            "evaluation": "Reasonable estimation and correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Zero Placeholder Game",
+            "objective": "Handle leading zeros in division",
+            "materials": [
+                "Flashcards"
+            ],
+            "steps": [
+                "Solve $0.5 \div 10$ and $0.5 \div 100$",
+                "Observe how many zeros are added after the decimal point",
+                "Create a rule: 'When I move left and run out of digits, I add a ___'"
+            ],
+            "learning_outcome": "Correctly uses zeros as placeholders in small decimals",
+            "evaluation": "Correct answers for $0.05$ and $0.005$ (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Area of a Mini-Garden",
+            "objective": "Apply multiplication to find the area of a rectangle",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Draw a rectangle with length 4.5 cm and width 2 cm",
+                "Multiply length $\times$ width to find the area",
+                "Count the squares on the graph paper to verify your decimal answer"
+            ],
+            "learning_outcome": "Connects decimal multiplication to geometric area",
+            "evaluation": "Correct area calculation with units ($cm^2$) (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Signpost Sorting",
+            "objective": "Compare products of decimals",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Calculate $0.1 \times 10$ and $0.1 \times 0.1$",
+                "Compare: which result is greater than the original $0.1$ and which is smaller?",
+                "Discuss why multiplying by a decimal less than 1 makes the number smaller"
+            ],
+            "learning_outcome": "Develops a sense of scale for decimal products",
+            "evaluation": "Correct comparison and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Decimal Dietitian",
+            "objective": "Calculate total nutrients from decimal values",
+            "materials": [
+                "Nutrition labels from food packets"
+            ],
+            "steps": [
+                "Find 'Protein per 1g' (e.g., 0.12g)",
+                "Calculate the total protein in a 10g serving ($0.12 \times 10$)",
+                "Represent the answer in a small chart"
+            ],
+            "learning_outcome": "Uses decimals to interpret real-world health data",
+            "evaluation": "Accurate calculation based on label data (10 marks)"
+        }
+    ]
+}

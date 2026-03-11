@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Land, Soil, Water, Natural Vegetation and Wildlife Resources",
+  "generated_at": "2026-03-06T15:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is land considered a limited resource?",
+      "answer": "Land is limited because its total area cannot easily be increased, while human demand for land continues to grow.",
+      "key_concepts": ["land resource"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What factors influence the use of land in different regions?",
+      "answer": "Land use depends on physical factors like climate, soil, and topography, and human factors like population and technology.",
+      "key_concepts": ["land use factors"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "How does deforestation affect land resources?",
+      "answer": "Deforestation removes vegetation cover, leading to soil erosion and land degradation.",
+      "key_concepts": ["deforestation"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is soil considered an important natural resource?",
+      "answer": "Soil supports plant growth and provides nutrients required for agriculture.",
+      "key_concepts": ["soil importance"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "How does weathering contribute to soil formation?",
+      "answer": "Weathering breaks rocks into smaller particles that combine with organic matter to form soil.",
+      "key_concepts": ["soil formation"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is loamy soil suitable for farming?",
+      "answer": "Loamy soil contains a balanced mixture of sand, clay, and organic matter, which helps retain moisture and nutrients.",
+      "key_concepts": ["loamy soil"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "What are two major causes of soil erosion?",
+      "answer": "Heavy rainfall and deforestation are two major causes of soil erosion.",
+      "key_concepts": ["soil erosion causes"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 8,
+      "question": "How does terrace farming help conserve soil?",
+      "answer": "Terrace farming slows down water flow on slopes and prevents soil from being washed away.",
+      "key_concepts": ["terrace farming"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is freshwater considered a scarce resource?",
+      "answer": "Most of the Earth's water is salty ocean water, and only a small portion is usable freshwater.",
+      "key_concepts": ["freshwater"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "What causes water scarcity in many regions?",
+      "answer": "Population growth, overuse of water, and pollution cause water scarcity.",
+      "key_concepts": ["water scarcity"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "How does rainwater harvesting help conserve water?",
+      "answer": "It collects rainwater and stores it for later use or recharges groundwater.",
+      "key_concepts": ["rainwater harvesting"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "What factors determine the type of natural vegetation in an area?",
+      "answer": "Climate, rainfall, temperature, and soil type determine natural vegetation.",
+      "key_concepts": ["vegetation factors"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 13,
+      "question": "Why do deserts have very little vegetation?",
+      "answer": "Deserts receive very low rainfall, which limits plant growth.",
+      "key_concepts": ["desert vegetation"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 14,
+      "question": "How do forests help maintain ecological balance?",
+      "answer": "Forests regulate climate, protect soil, and provide habitats for wildlife.",
+      "key_concepts": ["forest importance"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 15,
+      "question": "What is biodiversity?",
+      "answer": "Biodiversity refers to the variety of plants and animals living in an ecosystem.",
+      "key_concepts": ["biodiversity"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is wildlife conservation necessary?",
+      "answer": "Wildlife conservation helps maintain ecological balance and protect endangered species.",
+      "key_concepts": ["wildlife conservation"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 17,
+      "question": "How does habitat destruction affect wildlife?",
+      "answer": "Habitat destruction reduces food and shelter for animals, leading to population decline.",
+      "key_concepts": ["habitat loss"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are wildlife sanctuaries established?",
+      "answer": "Wildlife sanctuaries protect animals and preserve biodiversity.",
+      "key_concepts": ["wildlife sanctuaries"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "What is sustainable development?",
+      "answer": "Sustainable development means using natural resources responsibly so they remain available for future generations.",
+      "key_concepts": ["sustainable development"],
+      "marks": 2,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is conservation of natural resources important?",
+      "answer": "It helps maintain ecological balance and ensures resources for future generations.",
+      "key_concepts": ["resource conservation"],
+      "marks": 2,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 21,
+      "question": "How does afforestation help improve the environment?",
+      "answer": "Afforestation increases vegetation cover, reduces soil erosion, and improves air quality.",
+      "key_concepts": ["afforestation"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 22,
+      "question": "How are soil and vegetation interconnected?",
+      "answer": "Soil supports plant growth, while vegetation protects soil from erosion.",
+      "key_concepts": ["soil vegetation relation"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 23,
+      "question": "Why should water resources be managed carefully?",
+      "answer": "Proper management prevents water shortages and ensures sustainable use.",
+      "key_concepts": ["water management"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 24,
+      "question": "How does climate influence vegetation distribution?",
+      "answer": "Climate determines rainfall and temperature, which affect the types of plants that grow in a region.",
+      "key_concepts": ["vegetation distribution"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 25,
+      "question": "How are land, soil, water, vegetation, and wildlife interconnected?",
+      "answer": "These resources support each other in ecosystems and help maintain ecological balance.",
+      "key_concepts": ["ecosystem balance"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

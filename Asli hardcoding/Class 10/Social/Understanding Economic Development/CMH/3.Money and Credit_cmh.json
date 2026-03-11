@@ -1,0 +1,80 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Class 10 Economics - Chapter 3: Money and Credit",
+  "generated_at": "2026-02-27T19:40:00",
+  "concepts": [
+    {
+      "concept_name": "Barter System and Need for Money",
+      "difficulty": "medium",
+      "lesson": "The barter system involved exchange of goods without using money. It faced the problem of double coincidence of wants, meaning both parties must want each other's goods. Money was introduced to overcome this limitation and make transactions easier.",
+      "real_example": "A farmer wanting clothes must find a tailor who wants wheat in barter system.",
+      "key_points": [
+        "Barter system required double coincidence of wants",
+        "Money removes exchange difficulties",
+        "Money simplifies transactions"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Functions of Money",
+      "difficulty": "medium",
+      "lesson": "Money performs several important functions: it acts as a medium of exchange, a unit of account, and a store of value. These functions make trade and economic activities more efficient.",
+      "real_example": "Money is used to buy goods (exchange), measure prices (unit), and save for future (store of value).",
+      "key_points": [
+        "Medium of exchange",
+        "Unit of account",
+        "Store of value",
+        "Facilitates smooth trade"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Modern Forms of Money and Demand Deposits",
+      "difficulty": "medium",
+      "lesson": "Modern forms of money include currency notes, coins, and demand deposits. Demand deposits are bank deposits that can be withdrawn anytime and can be used for payments through cheques.",
+      "real_example": "When you pay school fees through cheque, you are using demand deposits.",
+      "key_points": [
+        "Currency and coins are legal tender",
+        "Demand deposits are part of money supply",
+        "Cheques are used for transactions"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Credit and Terms of Credit",
+      "difficulty": "medium",
+      "lesson": "Credit refers to an agreement where a lender provides money to a borrower with the promise of repayment in future. Terms of credit include interest rate, collateral, documentation, and repayment period.",
+      "real_example": "A farmer takes a loan from a bank with land as collateral.",
+      "key_points": [
+        "Credit involves borrowing and repayment",
+        "Interest is the cost of borrowing",
+        "Collateral provides security to lender"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Formal and Informal Sources of Credit",
+      "difficulty": "medium",
+      "lesson": "Formal sources of credit include banks and cooperatives that are regulated by the RBI. Informal sources include moneylenders and traders who often charge high interest rates and are not regulated.",
+      "real_example": "Loan from a nationalised bank (formal) vs loan from a local moneylender (informal).",
+      "key_points": [
+        "Formal credit is regulated and safer",
+        "Informal credit often charges high interest",
+        "RBI supervises formal banking system"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "concept_name": "Debt Trap and Role of RBI",
+      "difficulty": "medium",
+      "lesson": "A debt trap occurs when borrowers take new loans to repay old ones due to high interest rates. The Reserve Bank of India (RBI) regulates banks to ensure fair practices and financial stability.",
+      "real_example": "A farmer borrowing repeatedly from a moneylender at high interest falls into debt trap.",
+      "key_points": [
+        "Debt trap results from high interest burden",
+        "RBI regulates and supervises banks",
+        "Formal credit reduces risk of exploitation"
+      ],
+      "source_section": "Section 6"
+    }
+  ]
+}

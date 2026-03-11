@@ -1,0 +1,136 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "How, When and Where",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse how historians construct knowledge about the past",
+    "Evaluate the role and limitations of dates in historical study",
+    "Critically examine the concept of periodisation",
+    "Assess James Mill’s interpretation of Indian history",
+    "Interpret different types of historical sources",
+    "Understand how colonial administration produced historical records"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Nature and Scope of History",
+      "topics_covered": [
+        "Meaning and scope of history",
+        "Historical change and continuity",
+        "Importance of historical thinking"
+      ],
+      "teaching_strategy": [
+        "Inquiry-based learning",
+        "Interactive lecture",
+        "Concept mapping"
+      ],
+      "student_activities": [
+        "Identify examples of historical change in society",
+        "Discuss how past events shape present-day institutions"
+      ],
+      "assessment": ["Oral questioning", "Student explanation of concepts"]
+    },
+    {
+      "period": 2,
+      "title": "Role and Limitations of Dates",
+      "topics_covered": [
+        "Importance of dates in organising historical events",
+        "Chronology in historical writing",
+        "Limitations of focusing only on dates"
+      ],
+      "teaching_strategy": ["Timeline analysis", "Guided questioning"],
+      "student_activities": [
+        "Construct a timeline of selected historical events",
+        "Analyse why some events become historically significant"
+      ],
+      "assessment": ["Short written reflection", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Concept of Periodisation",
+      "topics_covered": [
+        "Meaning of periodisation",
+        "Different ways historians divide history",
+        "Limitations of historical divisions"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis",
+        "Discussion-based learning"
+      ],
+      "student_activities": [
+        "Compare different periodisations used by historians",
+        "Debate the usefulness of dividing history into periods"
+      ],
+      "assessment": ["Class discussion evaluation", "Teacher observation"]
+    },
+    {
+      "period": 4,
+      "title": "James Mill’s Interpretation of Indian History",
+      "topics_covered": [
+        "James Mill’s three-period classification",
+        "Influence of colonial thinking on historical writing",
+        "Criticism of Mill’s interpretation"
+      ],
+      "teaching_strategy": ["Critical analysis", "Source-based discussion"],
+      "student_activities": [
+        "Analyse the strengths and weaknesses of Mill’s classification",
+        "Write a short paragraph explaining why historians criticize it"
+      ],
+      "assessment": ["Short analytical writing task", "Teacher feedback"]
+    },
+    {
+      "period": 5,
+      "title": "Historical Sources and Evidence",
+      "topics_covered": [
+        "Types of historical sources",
+        "Importance of evidence in historical interpretation",
+        "Limitations and bias in sources"
+      ],
+      "teaching_strategy": [
+        "Source interpretation activity",
+        "Visual analysis"
+      ],
+      "student_activities": [
+        "Examine examples of historical sources such as letters or reports",
+        "Explain what information historians can obtain from them"
+      ],
+      "assessment": ["Notebook activity review", "Oral explanation"]
+    },
+    {
+      "period": 6,
+      "title": "Colonial Records and Chapter Review",
+      "topics_covered": [
+        "British administrative records",
+        "Importance of archives in historical research",
+        "Chapter recap and concept integration"
+      ],
+      "teaching_strategy": ["Concept recap discussion", "Quiz-based revision"],
+      "student_activities": [
+        "Identify examples of administrative records",
+        "Participate in a critical thinking quiz about the chapter"
+      ],
+      "assessment": [
+        "Short test (10 marks)",
+        "Doubt clarification and feedback"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Timeline charts",
+    "Copies of historical documents or images"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Analytical written responses",
+    "Notebook checking",
+    "Group discussions",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to question historical interpretations and analyse sources critically so they develop deeper historical reasoning skills."
+}

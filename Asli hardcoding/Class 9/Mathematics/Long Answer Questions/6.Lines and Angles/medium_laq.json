@@ -1,0 +1,389 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "generated_at": "2026-03-06T02:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the classification of angles based on their measures with examples.",
+            "answer": "Angles can be classified as acute (<90°), right (=90°), obtuse (between 90° and 180°), straight (=180°), and reflex (between 180° and 360°).",
+            "answer_outline": [
+                "Definition of angle",
+                "Types of angles",
+                "Examples"
+            ],
+            "key_concepts": [
+                "types of angles"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain complementary angles with examples and applications.",
+            "answer": "Complementary angles are two angles whose sum is 90°. For example, 30° and 60° are complementary.",
+            "answer_outline": [
+                "Definition",
+                "Example",
+                "Application"
+            ],
+            "key_concepts": [
+                "complementary angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain supplementary angles with examples.",
+            "answer": "Supplementary angles are two angles whose sum is 180°. Example: 100° and 80°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "supplementary angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of adjacent angles with examples.",
+            "answer": "Adjacent angles share a common vertex and arm but do not overlap.",
+            "answer_outline": [
+                "Definition",
+                "Diagram explanation",
+                "Example"
+            ],
+            "key_concepts": [
+                "adjacent angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the linear pair axiom with a suitable example.",
+            "answer": "The linear pair axiom states that when a ray stands on a line, the sum of the adjacent angles formed is 180°.",
+            "answer_outline": [
+                "Statement of axiom",
+                "Example"
+            ],
+            "key_concepts": [
+                "linear pair axiom"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain vertically opposite angles with a diagram description.",
+            "answer": "When two lines intersect, opposite angles are equal and called vertically opposite angles.",
+            "answer_outline": [
+                "Intersecting lines",
+                "Definition",
+                "Property"
+            ],
+            "key_concepts": [
+                "vertical angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the theorem of vertically opposite angles.",
+            "answer": "When two lines intersect each other, vertically opposite angles are equal.",
+            "answer_outline": [
+                "Statement",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "vertical angles theorem"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain parallel lines with examples.",
+            "answer": "Parallel lines are lines that never intersect and remain at constant distance from each other.",
+            "answer_outline": [
+                "Definition",
+                "Properties",
+                "Example"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain transversal lines and their importance.",
+            "answer": "A transversal is a line that intersects two or more lines at distinct points and forms various angle pairs.",
+            "answer_outline": [
+                "Definition",
+                "Angle pairs"
+            ],
+            "key_concepts": [
+                "transversal"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain corresponding angles with an example.",
+            "answer": "Corresponding angles are angles that occupy the same relative position when a transversal cuts two lines.",
+            "answer_outline": [
+                "Definition",
+                "Position",
+                "Example"
+            ],
+            "key_concepts": [
+                "corresponding angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain alternate interior angles.",
+            "answer": "Alternate interior angles lie between two lines and on opposite sides of a transversal.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "alternate interior angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain interior angles on the same side of a transversal.",
+            "answer": "These angles lie inside the two lines and on the same side of the transversal and are supplementary.",
+            "answer_outline": [
+                "Definition",
+                "Property"
+            ],
+            "key_concepts": [
+                "interior angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the sum of angles around a point with example.",
+            "answer": "The sum of all angles around a point equals 360°.",
+            "answer_outline": [
+                "Statement",
+                "Example"
+            ],
+            "key_concepts": [
+                "angles around a point"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain reflex angles with examples.",
+            "answer": "Reflex angles measure more than 180° but less than 360°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "reflex angle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain straight angles with examples.",
+            "answer": "Straight angles measure exactly 180° and form a straight line.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "straight angle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain right angles with examples.",
+            "answer": "Right angles measure exactly 90°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "right angle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain acute angles with examples.",
+            "answer": "Acute angles measure less than 90°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "acute angle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain obtuse angles with examples.",
+            "answer": "Obtuse angles measure between 90° and 180°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "obtuse angle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the relationship between linear pair and supplementary angles.",
+            "answer": "Angles forming a linear pair always add up to 180°.",
+            "answer_outline": [
+                "Definition",
+                "Relation"
+            ],
+            "key_concepts": [
+                "linear pair"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why vertically opposite angles are equal.",
+            "answer": "Using linear pair relationships, vertically opposite angles can be proven equal.",
+            "answer_outline": [
+                "Linear pair",
+                "Proof concept"
+            ],
+            "key_concepts": [
+                "vertical angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain properties of parallel lines cut by a transversal.",
+            "answer": "Corresponding angles and alternate interior angles are equal.",
+            "answer_outline": [
+                "Corresponding angles",
+                "Alternate angles"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how angles are used in geometry.",
+            "answer": "Angles help measure turns, shapes, and relationships between lines.",
+            "answer_outline": [
+                "Definition",
+                "Applications"
+            ],
+            "key_concepts": [
+                "angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the role of angles in triangles and polygons.",
+            "answer": "Angles determine the shape and properties of triangles and polygons.",
+            "answer_outline": [
+                "Triangles",
+                "Polygons"
+            ],
+            "key_concepts": [
+                "angles in geometry"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain angle measurement using degrees.",
+            "answer": "Angles are measured in degrees using instruments like protractors.",
+            "answer_outline": [
+                "Degree measurement",
+                "Tools"
+            ],
+            "key_concepts": [
+                "angle measurement"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why angles are important in daily life.",
+            "answer": "Angles are used in construction, design, navigation and engineering.",
+            "answer_outline": [
+                "Definition",
+                "Applications"
+            ],
+            "key_concepts": [
+                "applications of angles"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        }
+    ]
+}

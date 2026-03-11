@@ -1,0 +1,139 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter": "Food Security in India",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class9_economics_ch04.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Three Dimensions of Food Security",
+            "objective": "Understand the basic components of being food secure",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Define 'Availability', 'Accessibility', and 'Affordability' in simple terms",
+                "Give an example of 'Accessibility' (e.g., Is there a shop nearby?)",
+                "Explain what happens to 'Affordability' when prices of grains rise suddenly"
+            ],
+            "learning_outcome": "Identifies the three essential requirements for food security",
+            "evaluation": "Correct definitions and relevant examples (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Impact of Natural Calamities",
+            "objective": "Learn how disasters like drought affect food supply",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Read the section on the '1943 Bengal Famine' in the textbook",
+                "List the steps of how a total lack of rain leads to starvation (Crop failure -> Shortage -> Price rise -> Famine)",
+                "Identify who are the most affected people during such a calamity"
+            ],
+            "learning_outcome": "Understands the link between environmental factors and food shortage",
+            "evaluation": "Clear flow of the 'starvation' process and identification of victims (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Chronic vs. Seasonal Hunger",
+            "objective": "Distinguish between the two types of hunger",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Describe 'Seasonal Hunger' using the example of a casual construction worker",
+                "Describe 'Chronic Hunger' as a result of consistently low income",
+                "Make a small table showing the differences between the two"
+            ],
+            "learning_outcome": "Differentiates between types of hunger based on duration and cause",
+            "evaluation": "Accurate comparison table (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Role of Buffer Stock",
+            "objective": "Understand how the government prepares for emergencies",
+            "materials": ["Notebook", "Drawing materials"],
+            "steps": [
+                "Define 'Buffer Stock' as used by the Food Corporation of India (FCI)",
+                "Draw a simple diagram of a granary/silo where grains are stored",
+                "Explain why storing extra grain is important for a country like India"
+            ],
+            "learning_outcome": "Learns about the government's strategy for food storage",
+            "evaluation": "Correct definition and logical reasoning for storage (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Minimum Support Price (MSP) Awareness",
+            "objective": "Understand how the government supports farmers",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Define MSP (Minimum Support Price) as the price announced before the sowing season",
+                "Explain how MSP encourages farmers to grow more wheat and rice",
+                "Note who buys the grain from farmers at this price (FCI)"
+            ],
+            "learning_outcome": "Recognizes MSP as an incentive for agricultural production",
+            "evaluation": "Accurate definition of MSP and its purpose (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Visiting a Ration Shop (PDS)",
+            "objective": "Observe the Public Distribution System in action",
+            "materials": ["Notebook", "Field visit (optional)"],
+            "steps": [
+                "Visit a local Fair Price Shop (Ration Shop)",
+                "List the items sold there (e.g., Rice, Wheat, Sugar, Kerosene)",
+                "Observe or find out the 'Issue Price' and compare it to the market price"
+            ],
+            "learning_outcome": "Connects theoretical knowledge of PDS to local reality",
+            "evaluation": "Detailed list of items and price comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Ration Cards and Categories",
+            "objective": "Identify different cards for different economic groups",
+            "materials": ["Notebook", "Markers"],
+            "steps": [
+                "Identify the three types of cards: Antyodaya (poorest), BPL (Below Poverty Line), and APL",
+                "Assign the correct card to a family based on their income level",
+                "Explain the 'Antyodaya Anna Yojana' scheme briefly"
+            ],
+            "learning_outcome": "Understands the targeting of food aid in India",
+            "evaluation": "Correct categorization of cards and schemes (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Government Food Schemes Checklist",
+            "objective": "Learn about other food-related welfare programs",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Explain the 'Integrated Child Development Services' (ICDS)",
+                "Describe the 'Mid-day Meal' scheme in schools",
+                "Write one way these schemes help improve the health of children"
+            ],
+            "learning_outcome": "Identifies diverse ways the government ensures nutrition",
+            "evaluation": "Correct explanation of ICDS and Mid-day Meals (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Role of Cooperatives",
+            "objective": "Understand non-government efforts in food security",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Identify a famous cooperative like 'Amul' (Gujarat) or 'Mother Dairy' (Delhi)",
+                "Describe how they provide milk and vegetables at controlled rates",
+                "Note the role of 'Grain Banks' started by NGOs in Maharashtra"
+            ],
+            "learning_outcome": "Recognizes the contribution of cooperatives to food security",
+            "evaluation": "Relevant examples and description of their impact (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Self-Sufficiency in Grains",
+            "objective": "Celebrate India's progress since the Green Revolution",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Recall the 'Green Revolution' and the introduction of HYV seeds",
+                "Explain how India avoided famines even during adverse weather after the 1970s",
+                "Define 'Self-sufficiency' in the context of food grains"
+            ],
+            "learning_outcome": "Appreciates the impact of agricultural modernization on food security",
+            "evaluation": "Logical explanation of India's self-sufficiency (10 marks)"
+        }
+    ]
+}

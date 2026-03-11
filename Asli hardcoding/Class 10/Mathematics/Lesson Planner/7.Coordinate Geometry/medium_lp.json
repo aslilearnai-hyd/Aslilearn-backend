@@ -1,0 +1,161 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Coordinate Geometry",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Plot points accurately in all four quadrants",
+        "Identify quadrants and axes using coordinates",
+        "Calculate distance of a point from axes",
+        "Apply coordinate concepts in numerical problems",
+        "Improve accuracy and reduce sign errors"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Cartesian Plane",
+            "topics_covered": [
+                "X-axis, Y-axis, origin",
+                "Scale and orientation"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Board demonstration"
+            ],
+            "student_activities": [
+                "Draw Cartesian plane",
+                "Label axes and origin"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Plotting Points in First and Second Quadrants",
+            "topics_covered": [
+                "Positive and negative x-values",
+                "Plotting accuracy"
+            ],
+            "teaching_strategy": [
+                "Guided plotting",
+                "Graph paper practice"
+            ],
+            "student_activities": [
+                "Plot given points",
+                "Verify peer work"
+            ],
+            "assessment": [
+                "Graph accuracy check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Plotting Points in Third and Fourth Quadrants",
+            "topics_covered": [
+                "Negative coordinates",
+                "Sign conventions"
+            ],
+            "teaching_strategy": [
+                "Step-by-step plotting",
+                "Error correction"
+            ],
+            "student_activities": [
+                "Plot mixed-sign points"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Identifying Quadrants",
+            "topics_covered": [
+                "Quadrant rules",
+                "Coordinate interpretation"
+            ],
+            "teaching_strategy": [
+                "Comparison-based explanation"
+            ],
+            "student_activities": [
+                "Identify quadrants of points"
+            ],
+            "assessment": [
+                "MCQs"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Points on X-axis and Y-axis",
+            "topics_covered": [
+                "Points with x = 0",
+                "Points with y = 0"
+            ],
+            "teaching_strategy": [
+                "Diagram-based explanation"
+            ],
+            "student_activities": [
+                "Plot axis points"
+            ],
+            "assessment": [
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Distance of a Point from X-axis",
+            "topics_covered": [
+                "Distance concept",
+                "Absolute value of y-coordinate"
+            ],
+            "teaching_strategy": [
+                "Numerical explanation"
+            ],
+            "student_activities": [
+                "Solve numerical problems"
+            ],
+            "assessment": [
+                "Numerical worksheet"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Distance of a Point from Y-axis",
+            "topics_covered": [
+                "Absolute value of x-coordinate",
+                "Mixed problems"
+            ],
+            "teaching_strategy": [
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Solve mixed distance problems"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "Complete chapter practice",
+                "Common errors"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teacher_tip": "Insist on neat graphs and correct scale usage to avoid plotting errors."
+}

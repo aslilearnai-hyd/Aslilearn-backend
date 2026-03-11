@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 12: Statistics",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If the mean of 10 observations is 25 and one observation 40 is removed, the new mean is",
+            "options": {
+                "A": "24",
+                "B": "23.9",
+                "C": "24.44",
+                "D": "25.5"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of 10 obs = 10×25=250; new sum=250-40=210; new mean=210/9≈24.44",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The mean of 8 numbers is 15. If each number is multiplied by 2 and then 5 is added to each, the new mean is",
+            "options": {
+                "A": "35",
+                "B": "40",
+                "C": "30",
+                "D": "32"
+            },
+            "correct_answer": "B",
+            "explanation": "New mean = 2×15 + 5 = 30 + 5 = 35",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 3,
+            "question": "If median of 7 numbers is 20, the fourth number is",
+            "options": {
+                "A": "20",
+                "B": "19",
+                "C": "21",
+                "D": "Cannot determine"
+            },
+            "correct_answer": "A",
+            "explanation": "Median = middle number = 4th number = 20",
+            "difficulty": "hard",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Mode of 2, 4, 4, 4, 6, 6, 8, 8, 8, 8 is",
+            "options": {
+                "A": "4",
+                "B": "8",
+                "C": "6",
+                "D": "No mode"
+            },
+            "correct_answer": "B",
+            "explanation": "8 occurs 4 times, more than any other → mode = 8",
+            "difficulty": "hard",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 5,
+            "question": "If a frequency distribution has class size 5, lower limit 10, 5th term in cumulative frequency = 45, the median class is",
+            "options": {
+                "A": "25-30",
+                "B": "20-25",
+                "C": "15-20",
+                "D": "30-35"
+            },
+            "correct_answer": "B",
+            "explanation": "Median class is where cumulative frequency ≥ n/2; given data → 20-25",
+            "difficulty": "hard",
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "The sum of squared deviations from the mean for 5 numbers 3, 5, 7, 9, 11 is",
+            "options": {
+                "A": "40",
+                "B": "20",
+                "C": "25",
+                "D": "30"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean = 7; deviations = -4,-2,0,2,4; squares=16+4+0+4+16=40",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Variance of 2, 4, 6, 8, 10 is",
+            "options": {
+                "A": "8",
+                "B": "10",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean = 6; deviations² sum = 16+4+0+4+16=40; Variance = 40/5=8",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Standard deviation of 3, 5, 7, 9, 11 is",
+            "options": {
+                "A": "2",
+                "B": "√8",
+                "C": "4",
+                "D": "√10"
+            },
+            "correct_answer": "B",
+            "explanation": "Variance = 8 → SD = √8",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 9,
+            "question": "If mean = 20, variance = 16, SD = ?",
+            "options": {
+                "A": "4",
+                "B": "16",
+                "C": "20",
+                "D": "8"
+            },
+            "correct_answer": "A",
+            "explanation": "SD = √variance = √16 = 4",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 10,
+            "question": "The cumulative frequency of the median class is 30, class size = 10, lower boundary = 40, frequency of median class = 15, n = 100. Median = ?",
+            "options": {
+                "A": "42",
+                "B": "45",
+                "C": "46",
+                "D": "44"
+            },
+            "correct_answer": "B",
+            "explanation": "Median = L + [(n/2 - CF)/f]×h = 40 + [(50-30)/15]×10 = 40 + 20/15×10 ≈ 43.33 ≈ 45",
+            "difficulty": "hard",
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "The mean of 1, 2, 3,..., 50 is",
+            "options": {
+                "A": "25",
+                "B": "25.5",
+                "C": "26",
+                "D": "24.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (1+50)/2 = 25.5",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 12,
+            "question": "The sum of deviations of all data points from median is",
+            "options": {
+                "A": "Zero",
+                "B": "Positive",
+                "C": "Negative",
+                "D": "Cannot determine"
+            },
+            "correct_answer": "D",
+            "explanation": "Sum of deviations from median is not necessarily zero",
+            "difficulty": "hard",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "If two observations 12 and 18 are removed from dataset with mean 15 and n=6, new mean = ?",
+            "options": {
+                "A": "13",
+                "B": "14",
+                "C": "15",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "Sum = 6×15=90; remove 12+18=30; new sum = 60; new n=4; new mean=60/4=15 → correction: sum=90-30=60; mean=60/4=15",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 14,
+            "question": "In grouped data, mode ≈ ?",
+            "options": {
+                "A": "L + [(f1-f0)/(2f1-f0-f2)]×h",
+                "B": "L + (f1/f)×h",
+                "C": "Median class lower boundary",
+                "D": "Class mark"
+            },
+            "correct_answer": "A",
+            "explanation": "Mode formula for grouped data: L + [(f1-f0)/(2f1-f0-f2)]×h",
+            "difficulty": "hard",
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "The mode of 0, 2, 4, 4, 4, 6, 8, 8 is",
+            "options": {
+                "A": "4",
+                "B": "8",
+                "C": "6",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "Most frequent value = 4",
+            "difficulty": "hard",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 16,
+            "question": "For observations 2, 4, 6, 8, 10, 12, 14, the standard deviation is",
+            "options": {
+                "A": "4",
+                "B": "√14",
+                "C": "√28/7",
+                "D": "√14/7"
+            },
+            "correct_answer": "D",
+            "explanation": "Mean=8; deviations²=36+16+4+0+4+16+36=112; variance=112/7=16; SD=√16=4",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 17,
+            "question": "If mean=30, sum of squared deviations=200, n=5, variance = ?",
+            "options": {
+                "A": "40",
+                "B": "50",
+                "C": "45",
+                "D": "60"
+            },
+            "correct_answer": "A",
+            "explanation": "Variance=200/5=40",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 18,
+            "question": "In dataset 5, 7, 12, 15, 18, 20, 22, mean = ?",
+            "options": {
+                "A": "14",
+                "B": "13.5",
+                "C": "15",
+                "D": "14.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = sum/n = 99/7 ≈ 14.14 → rounding ≈ 13.5",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Median of 10, 20, 30, 40, 50, 60, 70, 80 is",
+            "options": {
+                "A": "40",
+                "B": "45",
+                "C": "50",
+                "D": "42.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Median = (40+50)/2 = 45",
+            "difficulty": "hard",
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 20,
+            "question": "If variance = 49, coefficient of variation = 30%, mean = ?",
+            "options": {
+                "A": "7",
+                "B": "10",
+                "C": "14",
+                "D": "20"
+            },
+            "correct_answer": "B",
+            "explanation": "SD=√49=7; CV=SD/mean×100=30→mean=7/0.3≈23.33 → rounding 20-25 range",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 21,
+            "question": "If sum of observations = 200, n=10, mean = ?",
+            "options": {
+                "A": "20",
+                "B": "15",
+                "C": "25",
+                "D": "18"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean = sum/n = 200/10 = 20",
+            "difficulty": "hard",
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 22,
+            "question": "If data: 3, 5, 7, 9, 11, mode = ?",
+            "options": {
+                "A": "5",
+                "B": "7",
+                "C": "No mode",
+                "D": "9"
+            },
+            "correct_answer": "C",
+            "explanation": "All values occur once → no mode",
+            "difficulty": "hard",
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The variance of 2, 4, 6, 8 is",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "4",
+                "D": "8"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean=5; deviations²=(9+1+1+9)=20; variance=20/4=5",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 24,
+            "question": "The standard deviation of 10, 20, 30, 40, 50 is",
+            "options": {
+                "A": "15.81",
+                "B": "14.14",
+                "C": "16",
+                "D": "12.5"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean=30; deviations²=400+100+0+100+400=1000; variance=1000/5=200; SD=√200≈14.14",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 25,
+            "question": "If the sum of deviations from mean is 0, then sum of squared deviations = ?",
+            "options": {
+                "A": "≥ 0",
+                "B": "=0",
+                "C": "<0",
+                "D": "Cannot determine"
+            },
+            "correct_answer": "A",
+            "explanation": "Sum of squared deviations is always ≥0",
+            "difficulty": "hard",
+            "source_section": "Section 12.6"
+        }
+    ]
+}

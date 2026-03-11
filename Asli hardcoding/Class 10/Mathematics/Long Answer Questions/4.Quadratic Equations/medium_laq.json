@@ -1,0 +1,358 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-03-02T13:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how the discriminant helps in determining the nature of roots of a quadratic equation.",
+            "answer": "The discriminant is b² − 4ac. If it is positive, the roots are real and distinct; if zero, the roots are real and equal; if negative, the roots are not real.",
+            "answer_outline": [
+                "Discriminant",
+                "Cases"
+            ],
+            "key_concepts": [
+                "discriminant"
+            ],
+            "marks": 5,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the factorisation method of solving quadratic equations with its limitations.",
+            "answer": "In the factorisation method, the quadratic equation is expressed as a product of two linear factors. It is limited because not all quadratic equations can be easily factorised.",
+            "answer_outline": [
+                "Method",
+                "Limitation"
+            ],
+            "key_concepts": [
+                "factorisation"
+            ],
+            "marks": 5,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the completing the square method and when it is preferred.",
+            "answer": "Completing the square converts the quadratic equation into a perfect square. It is preferred when factorisation is difficult.",
+            "answer_outline": [
+                "Method",
+                "Preference"
+            ],
+            "key_concepts": [
+                "completing the square"
+            ],
+            "marks": 5,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the quadratic formula can solve all quadratic equations.",
+            "answer": "The quadratic formula is derived from completing the square and works for all values of a, b and c where a ≠ 0.",
+            "answer_outline": [
+                "Derivation",
+                "Universality"
+            ],
+            "key_concepts": [
+                "quadratic formula"
+            ],
+            "marks": 5,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the graphical method of solving quadratic equations.",
+            "answer": "In the graphical method, the roots are obtained as x-coordinates where the parabola intersects the x-axis.",
+            "answer_outline": [
+                "Graph",
+                "Roots"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the relationship between roots of a quadratic equation and its graph.",
+            "answer": "The roots correspond to the x-intercepts of the parabola representing the quadratic equation.",
+            "answer_outline": [
+                "Roots",
+                "Graph"
+            ],
+            "key_concepts": [
+                "x-intercepts"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why a quadratic equation can have at most two real roots.",
+            "answer": "Because its degree is two and the parabola can intersect the x-axis at most twice.",
+            "answer_outline": [
+                "Degree",
+                "Graph"
+            ],
+            "key_concepts": [
+                "roots"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how the value of coefficient a affects the shape of the parabola.",
+            "answer": "The value of a determines whether the parabola opens upward or downward and how wide or narrow it is.",
+            "answer_outline": [
+                "Coefficient a",
+                "Shape"
+            ],
+            "key_concepts": [
+                "parabola shape"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the meaning of real roots and imaginary roots.",
+            "answer": "Real roots are actual numerical solutions, while imaginary roots occur when the discriminant is negative.",
+            "answer_outline": [
+                "Real roots",
+                "Imaginary roots"
+            ],
+            "key_concepts": [
+                "nature of roots"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why quadratic equations are used in projectile motion problems.",
+            "answer": "Projectile motion follows a parabolic path, which is represented by quadratic equations.",
+            "answer_outline": [
+                "Projectile motion",
+                "Parabola"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how quadratic equations are used in finding maximum and minimum values.",
+            "answer": "The vertex of the parabola gives the maximum or minimum value depending on the direction of opening.",
+            "answer_outline": [
+                "Vertex",
+                "Optimization"
+            ],
+            "key_concepts": [
+                "maximum and minimum"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why completing the square helps in finding the vertex of a parabola.",
+            "answer": "Completing the square rewrites the equation in vertex form, making the vertex easy to identify.",
+            "answer_outline": [
+                "Vertex form",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "vertex"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why discriminant is important in real-life applications.",
+            "answer": "It helps determine whether real solutions exist for practical problems.",
+            "answer_outline": [
+                "Discriminant",
+                "Application"
+            ],
+            "key_concepts": [
+                "discriminant"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the advantages of quadratic formula over factorisation.",
+            "answer": "The quadratic formula works for all quadratic equations, unlike factorisation.",
+            "answer_outline": [
+                "Advantage",
+                "Comparison"
+            ],
+            "key_concepts": [
+                "quadratic formula"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why graphical method is not always preferred.",
+            "answer": "Because it gives approximate solutions and depends on accuracy of graph drawing.",
+            "answer_outline": [
+                "Limitation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the connection between quadratic equations and area problems.",
+            "answer": "Many area problems lead to equations involving squared terms, resulting in quadratic equations.",
+            "answer_outline": [
+                "Area",
+                "Equation"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why quadratic equations are polynomial equations.",
+            "answer": "Because they involve variables raised only to non-negative integer powers.",
+            "answer_outline": [
+                "Polynomial condition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "polynomial"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the significance of the vertex in real-life problems.",
+            "answer": "The vertex gives maximum height, minimum cost, or optimal value in real-life situations.",
+            "answer_outline": [
+                "Vertex",
+                "Significance"
+            ],
+            "key_concepts": [
+                "vertex"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why roots may not always be integers.",
+            "answer": "Because the discriminant may not be a perfect square.",
+            "answer_outline": [
+                "Discriminant",
+                "Roots"
+            ],
+            "key_concepts": [
+                "roots"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how quadratic equations are used in engineering.",
+            "answer": "They are used to model structures, trajectories, and optimisation problems.",
+            "answer_outline": [
+                "Engineering",
+                "Applications"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the relationship between coefficient b and axis of symmetry.",
+            "answer": "The axis of symmetry is given by x = −b / 2a.",
+            "answer_outline": [
+                "Axis of symmetry",
+                "Formula"
+            ],
+            "key_concepts": [
+                "axis of symmetry"
+            ],
+            "marks": 4,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why quadratic equations are important in physics.",
+            "answer": "They describe motion under gravity and other physical phenomena.",
+            "answer_outline": [
+                "Physics",
+                "Importance"
+            ],
+            "key_concepts": [
+                "physics applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the use of quadratic equations in economics.",
+            "answer": "They are used to find maximum profit and minimum cost.",
+            "answer_outline": [
+                "Economics",
+                "Application"
+            ],
+            "key_concepts": [
+                "economic applications"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why a quadratic equation may not have real roots.",
+            "answer": "Because the discriminant may be negative.",
+            "answer_outline": [
+                "Negative discriminant",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "nature of roots"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the educational importance of quadratic equations.",
+            "answer": "They build the foundation for higher mathematics and problem-solving skills.",
+            "answer_outline": [
+                "Education",
+                "Importance"
+            ],
+            "key_concepts": [
+                "educational importance"
+            ],
+            "marks": 4,
+            "source_section": "4.1"
+        }
+    ]
+}

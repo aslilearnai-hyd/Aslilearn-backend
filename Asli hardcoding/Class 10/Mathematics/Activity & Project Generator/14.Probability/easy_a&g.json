@@ -1,0 +1,141 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Probability",
+    "difficulty": "Easy",
+    "source_pdf": "jemh114.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Coin Toss Activity",
+            "objective": "Understand outcomes",
+            "materials": [
+                "Coin"
+            ],
+            "steps": [
+                "Toss coin",
+                "Record result"
+            ],
+            "learning_outcome": "Outcome awareness",
+            "evaluation": "Observation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Die Outcomes",
+            "objective": "List outcomes",
+            "materials": [
+                "Die"
+            ],
+            "steps": [
+                "Roll die",
+                "List numbers"
+            ],
+            "learning_outcome": "Sample space",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Certain vs Impossible",
+            "objective": "Classify events",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write examples"
+            ],
+            "learning_outcome": "Event classification",
+            "evaluation": "Correct examples (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Probability Terms",
+            "objective": "Learn terminology",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write meanings"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Probability",
+            "objective": "Identify daily examples",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List scenarios"
+            ],
+            "learning_outcome": "Application",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Favourable Outcomes",
+            "objective": "Understand favourable cases",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain with example"
+            ],
+            "learning_outcome": "Concept understanding",
+            "evaluation": "Explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Random Experiment",
+            "objective": "Understand randomness",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Describe experiment"
+            ],
+            "learning_outcome": "Randomness concept",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Probability Formula",
+            "objective": "Recall formula",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write formula"
+            ],
+            "learning_outcome": "Formula recall",
+            "evaluation": "Correct formula (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Simple Questions",
+            "objective": "Solve easy problems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve questions"
+            ],
+            "learning_outcome": "Problem solving",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quick Quiz",
+            "objective": "Test understanding",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Answer MCQs"
+            ],
+            "learning_outcome": "Retention",
+            "evaluation": "Score (10 marks)"
+        }
+    ]
+}

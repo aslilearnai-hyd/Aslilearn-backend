@@ -1,0 +1,390 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: What is Democracy? Why Democracy?",
+    "generated_at": "2026-03-07T21:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of democracy.",
+            "answer": "Democracy is a form of government in which rulers are elected by the people and decisions are taken according to the wishes of the citizens.",
+            "answer_outline": [
+                "Definition of democracy",
+                "Role of people",
+                "Importance of elections"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why democracy needs a clear definition.",
+            "answer": "A clear definition is required because many governments claim to be democratic even when they do not follow democratic principles.",
+            "answer_outline": [
+                "Need for definition",
+                "Misuse of the term democracy"
+            ],
+            "key_concepts": [
+                "definition"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the four key features of democracy.",
+            "answer": "The four key features are: rulers elected by the people, free and fair elections, political equality and rule of law with respect for citizens’ rights.",
+            "answer_outline": [
+                "Elected leaders",
+                "Free and fair elections",
+                "Political equality",
+                "Rule of law"
+            ],
+            "key_concepts": [
+                "features"
+            ],
+            "marks": 8,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the importance of elected leaders in democracy.",
+            "answer": "In democracy the final decision-making power rests with leaders chosen by the people through elections.",
+            "answer_outline": [
+                "Elected leaders",
+                "Decision making power"
+            ],
+            "key_concepts": [
+                "elected leaders"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the significance of free and fair elections.",
+            "answer": "Free and fair elections allow citizens to choose leaders and remove them if they fail to perform.",
+            "answer_outline": [
+                "Political competition",
+                "Right to change rulers"
+            ],
+            "key_concepts": [
+                "elections"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the principle 'one person, one vote, one value'.",
+            "answer": "This principle means each citizen’s vote carries equal value in democratic elections.",
+            "answer_outline": [
+                "Political equality",
+                "Equal value of vote"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the importance of rule of law in democracy.",
+            "answer": "Rule of law ensures the government operates according to the constitution and respects citizens’ rights.",
+            "answer_outline": [
+                "Law above government",
+                "Protection of rights"
+            ],
+            "key_concepts": [
+                "rule of law"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the Pakistan example used to discuss democracy.",
+            "answer": "Pakistan had elections but the military controlled major decisions, making it undemocratic.",
+            "answer_outline": [
+                "Military rule",
+                "Limited democratic power"
+            ],
+            "key_concepts": [
+                "Pakistan example"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the example of China regarding elections.",
+            "answer": "In China elections exist but candidates require approval from the Communist Party.",
+            "answer_outline": [
+                "Single party dominance",
+                "Limited choice"
+            ],
+            "key_concepts": [
+                "China"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the example of Mexico in relation to democracy.",
+            "answer": "Mexico had elections but one party dominated politics for decades using unfair practices.",
+            "answer_outline": [
+                "Dominant party rule",
+                "Unfair elections"
+            ],
+            "key_concepts": [
+                "Mexico"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the criticisms of democracy.",
+            "answer": "Critics say democracy leads to delays, corruption and frequent changes in leadership.",
+            "answer_outline": [
+                "Delays",
+                "Corruption",
+                "Leadership instability"
+            ],
+            "key_concepts": [
+                "criticism"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how democracy improves the quality of decision-making.",
+            "answer": "Democracy involves consultation and discussion which reduces mistakes in decisions.",
+            "answer_outline": [
+                "Discussion",
+                "Consultation",
+                "Better decisions"
+            ],
+            "key_concepts": [
+                "decision making"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how democracy resolves conflicts.",
+            "answer": "Democracy provides peaceful methods such as dialogue and negotiation for resolving conflicts.",
+            "answer_outline": [
+                "Peaceful conflict resolution",
+                "Dialogue"
+            ],
+            "key_concepts": [
+                "conflict resolution"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the dignity of citizens in democracy.",
+            "answer": "Democracy recognizes every citizen as equal and allows them to participate in decision making.",
+            "answer_outline": [
+                "Equality",
+                "Participation"
+            ],
+            "key_concepts": [
+                "citizen dignity"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain democracy as an accountable form of government.",
+            "answer": "In democracy leaders must respond to citizens’ needs and face elections regularly.",
+            "answer_outline": [
+                "Accountability",
+                "Elections"
+            ],
+            "key_concepts": [
+                "accountability"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how democracy allows correction of mistakes.",
+            "answer": "Citizens can remove rulers through elections and public debate.",
+            "answer_outline": [
+                "Public discussion",
+                "Changing leaders"
+            ],
+            "key_concepts": [
+                "correction"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain representative democracy.",
+            "answer": "Representative democracy is a system where people elect representatives to govern on their behalf.",
+            "answer_outline": [
+                "Election of representatives",
+                "Decision making by representatives"
+            ],
+            "key_concepts": [
+                "representative democracy"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why representative democracy is necessary.",
+            "answer": "Modern countries have large populations making direct participation impractical.",
+            "answer_outline": [
+                "Large population",
+                "Practical governance"
+            ],
+            "key_concepts": [
+                "representative system"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain democracy as a principle beyond government.",
+            "answer": "Democracy also applies to families, schools and organizations where decisions are made collectively.",
+            "answer_outline": [
+                "Participation",
+                "Consultation"
+            ],
+            "key_concepts": [
+                "democratic principle"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of citizens in democracy.",
+            "answer": "Citizens strengthen democracy through voting, participation and awareness.",
+            "answer_outline": [
+                "Voting",
+                "Participation"
+            ],
+            "key_concepts": [
+                "citizens role"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain democracy in a diverse society.",
+            "answer": "Democracy allows people from different backgrounds to coexist peacefully.",
+            "answer_outline": [
+                "Diversity",
+                "Peaceful coexistence"
+            ],
+            "key_concepts": [
+                "diversity"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the relationship between democracy and equality.",
+            "answer": "Democracy promotes equality by giving equal political rights to all citizens.",
+            "answer_outline": [
+                "Equal rights",
+                "Political equality"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain democracy as a method of decision making.",
+            "answer": "Democratic decisions involve consultation and participation of all affected people.",
+            "answer_outline": [
+                "Consultation",
+                "Participation"
+            ],
+            "key_concepts": [
+                "decision making"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why democracy is preferred over dictatorship.",
+            "answer": "Democracy ensures freedom, equality and participation unlike dictatorship.",
+            "answer_outline": [
+                "Freedom",
+                "Participation",
+                "Equality"
+            ],
+            "key_concepts": [
+                "dictatorship comparison"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of democratic values.",
+            "answer": "Democratic values such as equality, participation and freedom strengthen democratic societies.",
+            "answer_outline": [
+                "Equality",
+                "Participation",
+                "Freedom"
+            ],
+            "key_concepts": [
+                "democratic values"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 1.4"
+        }
+    ]
+}

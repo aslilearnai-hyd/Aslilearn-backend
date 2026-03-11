@@ -1,0 +1,33 @@
+{
+  "class": "Class 10",
+  "subject": "Science",
+  "chapter": "Magnetic Effects of Electric Current",
+  "difficulty": "Easy",
+  "source_pdf": "jesc112.pdf",
+  "short_notes": {
+    "key_points": [
+      "Electric current flowing through a conductor produces a magnetic field around it",
+      "The magnetic effect of electric current was discovered by Hans Christian Ørsted",
+      "Magnetic field lines show the direction and strength of a magnetic field",
+      "A solenoid is a long coil of wire that produces a magnetic field when current passes through it",
+      "An electromagnet is a temporary magnet made by passing current through a coil around an iron core"
+    ],
+    "examples": [
+      "Compass needle deflecting when placed near a current-carrying wire",
+      "Electric bell using an electromagnet",
+      "Crane magnets lifting iron scrap in factories",
+      "Electric motor used in fans and mixers"
+    ],
+    "formulas": [
+      "Magnetic field → Region around a magnet or current-carrying conductor where magnetic force can be felt",
+      "Right-hand thumb rule → Used to find the direction of magnetic field around a current-carrying conductor",
+      "AC frequency in India → 50 Hz"
+    ],
+    "exam_tips": [
+      "Remember the discovery of magnetic effect of electric current",
+      "Learn the definition of magnetic field and electromagnet",
+      "Understand the right-hand thumb rule",
+      "Know simple uses of electromagnets and electric motors"
+    ]
+  }
+}

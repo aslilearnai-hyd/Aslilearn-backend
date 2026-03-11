@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 4: Working of Institutions",
+    "generated_at": "2026-03-07T23:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which institution is responsible for making laws in India?",
+            "options": {
+                "A": "Judiciary",
+                "B": "Executive",
+                "C": "Parliament",
+                "D": "Election Commission"
+            },
+            "correct_answer": "C",
+            "explanation": "Parliament is the law-making body of the country.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which house of Parliament represents the states of India?",
+            "options": {
+                "A": "Lok Sabha",
+                "B": "Rajya Sabha",
+                "C": "Legislative Council",
+                "D": "Cabinet"
+            },
+            "correct_answer": "B",
+            "explanation": "Rajya Sabha represents the states of India.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Who appoints the Prime Minister of India?",
+            "options": {
+                "A": "Chief Justice",
+                "B": "President",
+                "C": "Speaker",
+                "D": "Election Commission"
+            },
+            "correct_answer": "B",
+            "explanation": "The President appoints the Prime Minister.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which institution implements laws and policies?",
+            "options": {
+                "A": "Executive",
+                "B": "Judiciary",
+                "C": "Parliament",
+                "D": "Supreme Court"
+            },
+            "correct_answer": "A",
+            "explanation": "The executive is responsible for implementing laws.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "The Prime Minister is the head of:",
+            "options": {
+                "A": "State",
+                "B": "Government",
+                "C": "Judiciary",
+                "D": "Supreme Court"
+            },
+            "correct_answer": "B",
+            "explanation": "The Prime Minister is the head of the government.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Who heads the Council of Ministers?",
+            "options": {
+                "A": "President",
+                "B": "Prime Minister",
+                "C": "Chief Justice",
+                "D": "Governor"
+            },
+            "correct_answer": "B",
+            "explanation": "The Prime Minister leads the Council of Ministers.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which house of Parliament has more power in financial matters?",
+            "options": {
+                "A": "Rajya Sabha",
+                "B": "Lok Sabha",
+                "C": "Supreme Court",
+                "D": "Cabinet"
+            },
+            "correct_answer": "B",
+            "explanation": "Lok Sabha has greater power in financial matters.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "The Rajya Sabha is called a:",
+            "options": {
+                "A": "Temporary house",
+                "B": "Permanent house",
+                "C": "Financial house",
+                "D": "Executive house"
+            },
+            "correct_answer": "B",
+            "explanation": "Rajya Sabha is never dissolved, so it is called a permanent house.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which body discusses and approves major policy decisions?",
+            "options": {
+                "A": "Cabinet",
+                "B": "Election Commission",
+                "C": "Supreme Court",
+                "D": "Planning Commission"
+            },
+            "correct_answer": "A",
+            "explanation": "The Cabinet takes important policy decisions.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Civil servants belong to:",
+            "options": {
+                "A": "Political executive",
+                "B": "Permanent executive",
+                "C": "Judiciary",
+                "D": "Legislature"
+            },
+            "correct_answer": "B",
+            "explanation": "Civil servants are part of the permanent executive.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which institution interprets laws?",
+            "options": {
+                "A": "Parliament",
+                "B": "Executive",
+                "C": "Judiciary",
+                "D": "Cabinet"
+            },
+            "correct_answer": "C",
+            "explanation": "Judiciary interprets laws and ensures justice.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 12,
+            "question": "The highest court in India is:",
+            "options": {
+                "A": "High Court",
+                "B": "District Court",
+                "C": "Supreme Court",
+                "D": "Session Court"
+            },
+            "correct_answer": "C",
+            "explanation": "The Supreme Court is the highest court in India.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Judicial review refers to:",
+            "options": {
+                "A": "Review of elections",
+                "B": "Review of laws by courts",
+                "C": "Review of ministers",
+                "D": "Review of budget"
+            },
+            "correct_answer": "B",
+            "explanation": "Judicial review allows courts to examine laws.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which institution controls government spending?",
+            "options": {
+                "A": "Judiciary",
+                "B": "Executive",
+                "C": "Parliament",
+                "D": "Election Commission"
+            },
+            "correct_answer": "C",
+            "explanation": "Parliament controls the public finances of the government.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Public Interest Litigation allows:",
+            "options": {
+                "A": "Citizens to approach courts for public interest",
+                "B": "Only judges to file cases",
+                "C": "Only ministers to file cases",
+                "D": "Only police to file cases"
+            },
+            "correct_answer": "A",
+            "explanation": "PIL allows citizens to approach courts to protect public interest.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "The Mandal Commission dealt with:",
+            "options": {
+                "A": "Election reforms",
+                "B": "Reservation for backward classes",
+                "C": "Judicial reforms",
+                "D": "Tax reforms"
+            },
+            "correct_answer": "B",
+            "explanation": "The Mandal Commission recommended reservation for backward classes.",
+            "difficulty": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which branch of government makes laws?",
+            "options": {
+                "A": "Executive",
+                "B": "Legislature",
+                "C": "Judiciary",
+                "D": "Civil service"
+            },
+            "correct_answer": "B",
+            "explanation": "The legislature makes laws.",
+            "difficulty": "medium",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 18,
+            "question": "Which branch of government executes laws?",
+            "options": {
+                "A": "Executive",
+                "B": "Legislature",
+                "C": "Judiciary",
+                "D": "Courts"
+            },
+            "correct_answer": "A",
+            "explanation": "The executive implements laws.",
+            "difficulty": "medium",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 19,
+            "question": "Which branch interprets laws?",
+            "options": {
+                "A": "Executive",
+                "B": "Legislature",
+                "C": "Judiciary",
+                "D": "Election Commission"
+            },
+            "correct_answer": "C",
+            "explanation": "Judiciary interprets laws.",
+            "difficulty": "medium",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 20,
+            "question": "The President acts according to the advice of:",
+            "options": {
+                "A": "Chief Justice",
+                "B": "Council of Ministers",
+                "C": "Election Commission",
+                "D": "Speaker"
+            },
+            "correct_answer": "B",
+            "explanation": "The President acts on the advice of the Council of Ministers.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Who chairs the meetings of the Cabinet?",
+            "options": {
+                "A": "President",
+                "B": "Prime Minister",
+                "C": "Speaker",
+                "D": "Chief Justice"
+            },
+            "correct_answer": "B",
+            "explanation": "The Prime Minister chairs Cabinet meetings.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "The judiciary ensures:",
+            "options": {
+                "A": "Law implementation",
+                "B": "Justice and interpretation of laws",
+                "C": "Budget preparation",
+                "D": "Election conduct"
+            },
+            "correct_answer": "B",
+            "explanation": "Judiciary interprets laws and ensures justice.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which system prevents concentration of power?",
+            "options": {
+                "A": "Checks and balances",
+                "B": "Monarchy",
+                "C": "Dictatorship",
+                "D": "Autocracy"
+            },
+            "correct_answer": "A",
+            "explanation": "Checks and balances distribute power among institutions.",
+            "difficulty": "medium",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 24,
+            "question": "Which institution discusses national issues?",
+            "options": {
+                "A": "Parliament",
+                "B": "Supreme Court",
+                "C": "Cabinet",
+                "D": "Police"
+            },
+            "correct_answer": "A",
+            "explanation": "Parliament discusses important national issues.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Political institutions help in:",
+            "options": {
+                "A": "Governance",
+                "B": "Sports",
+                "C": "Entertainment",
+                "D": "Transport"
+            },
+            "correct_answer": "A",
+            "explanation": "Political institutions help govern a country.",
+            "difficulty": "medium",
+            "source_section": "Overview"
+        }
+    ]
+}

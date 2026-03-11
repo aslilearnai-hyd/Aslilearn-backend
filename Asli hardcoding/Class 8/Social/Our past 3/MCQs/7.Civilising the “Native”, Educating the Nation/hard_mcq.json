@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Civilising the Native, Educating the Nation",
+  "generated_at": "2026-03-06T13:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which system of education existed widely in India before British rule?",
+      "options": {
+        "A": "Industrial schools",
+        "B": "Indigenous education system",
+        "C": "Modern universities",
+        "D": "Technical institutes"
+      },
+      "correct_answer": "B",
+      "explanation": "Before British rule, India had an indigenous education system consisting of pathshalas, gurukuls, and madrassas.",
+      "difficulty": "hard",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which statement best describes the Orientalist view on education?",
+      "options": {
+        "A": "Promote Western science through English",
+        "B": "Promote Indian languages and classical learning",
+        "C": "Promote only religious education",
+        "D": "Promote industrial education"
+      },
+      "correct_answer": "B",
+      "explanation": "Orientalists believed Indian languages and classical knowledge should be preserved.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "Which statement best represents the Anglicist viewpoint?",
+      "options": {
+        "A": "Education should be in Sanskrit and Persian",
+        "B": "Education should focus on agriculture",
+        "C": "English should be the medium of instruction",
+        "D": "Education should be limited to villages"
+      },
+      "correct_answer": "C",
+      "explanation": "Anglicists believed English education should spread Western knowledge.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What was the main objective behind Macaulay’s Minute?",
+      "options": {
+        "A": "Revive ancient education",
+        "B": "Promote Western education through English",
+        "C": "Expand agricultural schools",
+        "D": "Encourage village education"
+      },
+      "correct_answer": "B",
+      "explanation": "Macaulay believed Western knowledge taught through English would modernize India.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which policy decision resulted from Macaulay’s Minute?",
+      "options": {
+        "A": "Promotion of Sanskrit education",
+        "B": "Expansion of English education",
+        "C": "Closure of universities",
+        "D": "End of traditional schools"
+      },
+      "correct_answer": "B",
+      "explanation": "Macaulay’s recommendations led to the promotion of English education.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is Wood’s Despatch considered significant in Indian education history?",
+      "options": {
+        "A": "It ended traditional education",
+        "B": "It created the structure for modern education",
+        "C": "It banned English education",
+        "D": "It removed universities"
+      },
+      "correct_answer": "B",
+      "explanation": "Wood’s Despatch recommended universities, teacher training, and structured education.",
+      "difficulty": "hard",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "What major educational reform did Wood’s Despatch recommend?",
+      "options": {
+        "A": "Creation of universities",
+        "B": "Closing schools",
+        "C": "Ending English education",
+        "D": "Only religious education"
+      },
+      "correct_answer": "A",
+      "explanation": "Wood’s Despatch led to the establishment of universities in India.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 8,
+      "question": "Which universities were established as a result of Wood’s Despatch?",
+      "options": {
+        "A": "Delhi, Jaipur, and Agra",
+        "B": "Calcutta, Bombay, and Madras",
+        "C": "Lucknow, Pune, and Mysore",
+        "D": "Hyderabad, Patna, and Bhopal"
+      },
+      "correct_answer": "B",
+      "explanation": "The first universities were established in 1857 in Calcutta, Bombay, and Madras.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "What role did Raja Rammohan Roy play in education reform?",
+      "options": {
+        "A": "Opposed Western education",
+        "B": "Supported modern scientific education",
+        "C": "Promoted only religious education",
+        "D": "Closed traditional schools"
+      },
+      "correct_answer": "B",
+      "explanation": "Raja Rammohan Roy supported modern education and scientific learning.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "Which social group emerged as a result of English education?",
+      "options": {
+        "A": "Feudal class",
+        "B": "Educated middle class",
+        "C": "Warrior class",
+        "D": "Peasant class"
+      },
+      "correct_answer": "B",
+      "explanation": "English education created a new educated middle class.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 11,
+      "question": "Which idea was spread through Western education in India?",
+      "options": {
+        "A": "Democracy",
+        "B": "Feudal loyalty",
+        "C": "Isolation",
+        "D": "Royal authority"
+      },
+      "correct_answer": "A",
+      "explanation": "Western education introduced ideas such as democracy and equality.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 12,
+      "question": "How did Western education influence Indian society?",
+      "options": {
+        "A": "Reduced awareness",
+        "B": "Spread political and social awareness",
+        "C": "Stopped reforms",
+        "D": "Ended schooling"
+      },
+      "correct_answer": "B",
+      "explanation": "Western education spread ideas that encouraged social reform and political awareness.",
+      "difficulty": "hard",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 13,
+      "question": "Why did traditional education decline during British rule?",
+      "options": {
+        "A": "No students attended",
+        "B": "Government policies supported English schools",
+        "C": "Teachers left villages",
+        "D": "Villages disappeared"
+      },
+      "correct_answer": "B",
+      "explanation": "British policies promoted English education and reduced support for indigenous schools.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 14,
+      "question": "Which concept encouraged Indians to challenge colonial rule?",
+      "options": {
+        "A": "Equality and rights",
+        "B": "Feudal loyalty",
+        "C": "Isolation",
+        "D": "Royal privilege"
+      },
+      "correct_answer": "A",
+      "explanation": "Western education introduced ideas of equality and rights.",
+      "difficulty": "hard",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 15,
+      "question": "What was the main language used in higher education during British rule?",
+      "options": {
+        "A": "Hindi",
+        "B": "English",
+        "C": "Sanskrit",
+        "D": "Persian"
+      },
+      "correct_answer": "B",
+      "explanation": "English became the main language of higher education in colonial India.",
+      "difficulty": "easy",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 16,
+      "question": "What role did education play in social reform movements?",
+      "options": {
+        "A": "Spread awareness and new ideas",
+        "B": "Stopped reforms",
+        "C": "Reduced literacy",
+        "D": "Closed schools"
+      },
+      "correct_answer": "A",
+      "explanation": "Education helped reformers spread new ideas and challenge social problems.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 17,
+      "question": "Which reform recommended teacher training institutions?",
+      "options": {
+        "A": "Wood’s Despatch",
+        "B": "Macaulay’s Minute",
+        "C": "Hunter Commission",
+        "D": "University Act"
+      },
+      "correct_answer": "A",
+      "explanation": "Wood’s Despatch recommended teacher training institutions.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 18,
+      "question": "Which movement gained strength because of modern education?",
+      "options": {
+        "A": "Freedom movement",
+        "B": "Trade movement",
+        "C": "Agricultural movement",
+        "D": "Industrial revolution"
+      },
+      "correct_answer": "A",
+      "explanation": "Educated Indians became leaders of the freedom movement.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "Which statement best describes colonial education?",
+      "options": {
+        "A": "It promoted traditional knowledge only",
+        "B": "It introduced modern institutions and subjects",
+        "C": "It ended all education",
+        "D": "It promoted only religious learning"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonial education introduced universities and modern subjects.",
+      "difficulty": "hard",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 20,
+      "question": "Why did the British introduce English education?",
+      "options": {
+        "A": "To create administrators for colonial rule",
+        "B": "To improve agriculture",
+        "C": "To promote crafts",
+        "D": "To close traditional schools"
+      },
+      "correct_answer": "A",
+      "explanation": "English education helped create a group of Indians who could assist in administration.",
+      "difficulty": "hard",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which long-term impact did colonial education have on India?",
+      "options": {
+        "A": "Modern universities and examination systems",
+        "B": "End of literacy",
+        "C": "Closure of schools",
+        "D": "Loss of science education"
+      },
+      "correct_answer": "A",
+      "explanation": "Colonial education introduced institutions that still influence the Indian education system.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 22,
+      "question": "Which city hosted one of the first modern universities in India?",
+      "options": {
+        "A": "Calcutta",
+        "B": "Indore",
+        "C": "Nagpur",
+        "D": "Patiala"
+      },
+      "correct_answer": "A",
+      "explanation": "The University of Calcutta was established in 1857.",
+      "difficulty": "easy",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 23,
+      "question": "Which idea inspired Indians to demand independence?",
+      "options": {
+        "A": "Democracy and rights",
+        "B": "Royal authority",
+        "C": "Feudalism",
+        "D": "Isolation"
+      },
+      "correct_answer": "A",
+      "explanation": "Western education spread democratic ideas that inspired the independence movement.",
+      "difficulty": "hard",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor helped create political awareness among Indians?",
+      "options": {
+        "A": "Modern education",
+        "B": "Agricultural reforms",
+        "C": "Trade policies",
+        "D": "Industrialization"
+      },
+      "correct_answer": "A",
+      "explanation": "Modern education exposed Indians to political concepts.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best summarizes the impact of colonial education?",
+      "options": {
+        "A": "It ended Indian education traditions",
+        "B": "It introduced modern institutions and political awareness",
+        "C": "It reduced literacy in India",
+        "D": "It eliminated universities"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonial education introduced modern institutions while spreading political awareness.",
+      "difficulty": "hard",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

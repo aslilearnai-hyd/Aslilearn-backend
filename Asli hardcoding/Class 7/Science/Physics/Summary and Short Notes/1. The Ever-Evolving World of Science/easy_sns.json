@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "The Ever-Evolving World of Science",
+    "difficulty": "Easy",
+    "source_pdf": "jess701.pdf",
+    "short_notes": {
+        "key_points": [
+            "Science helps us understand the natural world around us",
+            "Scientific knowledge keeps improving with new discoveries and inventions",
+            "Scientists observe, ask questions and perform experiments to learn new things",
+            "Science plays an important role in improving our daily lives",
+            "Technology is the practical application of scientific knowledge"
+        ],
+        "examples": [
+            "The invention of electricity changed how people live and work",
+            "Mobile phones and computers are examples of technology based on science",
+            "Vaccines developed by scientists help prevent diseases",
+            "Satellites help in communication and weather forecasting"
+        ],
+        "formulas": [
+            "Science → Study of the natural world through observation and experiments",
+            "Technology → Application of scientific knowledge to solve practical problems"
+        ],
+        "exam_tips": [
+            "Understand the relationship between science and technology",
+            "Remember that scientific knowledge changes with new discoveries",
+            "Learn examples of how science improves everyday life",
+            "Focus on understanding concepts rather than memorizing definitions"
+        ]
+    }
+}

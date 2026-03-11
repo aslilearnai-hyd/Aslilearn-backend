@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-02-27T20:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If the graph of a polynomial cuts the x-axis at exactly three points, the degree of the polynomial is at least:",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "Maximum number of zeroes equals the degree.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "If p(x) = ax³ + bx² + cx + d and p(1) = 0, then which of the following is true?",
+            "options": {
+                "A": "a + b + c = 0",
+                "B": "a + b + c + d = 0",
+                "C": "a − b + c − d = 0",
+                "D": "b + c + d = 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Substitute x = 1.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which polynomial has both positive and negative zeroes?",
+            "options": {
+                "A": "x² − 4",
+                "B": "x² + 4",
+                "C": "x²",
+                "D": "x² + 1"
+            },
+            "correct_answer": "A",
+            "explanation": "Zeroes are ±2.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "A cubic polynomial can have at most how many turning points?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "0"
+            },
+            "correct_answer": "B",
+            "explanation": "Turning points = degree − 1.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "If a polynomial has degree n, then maximum number of real zeroes is",
+            "options": {
+                "A": "n − 1",
+                "B": "n",
+                "C": "n + 1",
+                "D": "2n"
+            },
+            "correct_answer": "B",
+            "explanation": "Maximum equals degree.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "If p(x) has a factor (x − 3), then p(3) equals",
+            "options": {
+                "A": "1",
+                "B": "3",
+                "C": "0",
+                "D": "−3"
+            },
+            "correct_answer": "C",
+            "explanation": "Factor theorem.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which polynomial represents a curve touching x-axis at exactly one point?",
+            "options": {
+                "A": "x",
+                "B": "x²",
+                "C": "x² − 1",
+                "D": "x³"
+            },
+            "correct_answer": "B",
+            "explanation": "Repeated root at x = 0.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If the remainder on dividing p(x) by (x − 1) is 5, then p(1) is",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "5",
+                "D": "−5"
+            },
+            "correct_answer": "C",
+            "explanation": "Remainder theorem.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which polynomial has no real zeroes?",
+            "options": {
+                "A": "x² − 9",
+                "B": "x² + 4",
+                "C": "x − 1",
+                "D": "x"
+            },
+            "correct_answer": "B",
+            "explanation": "x² + 4 > 0 always.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "If degree of polynomial is even, the graph may intersect x-axis",
+            "options": {
+                "A": "Odd number of times",
+                "B": "Even number of times",
+                "C": "Exactly once",
+                "D": "Never"
+            },
+            "correct_answer": "B",
+            "explanation": "Even degree gives even or zero real zeroes.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Zeroes of polynomial x² − 7x + 10 are",
+            "options": {
+                "A": "2, 5",
+                "B": "−2, −5",
+                "C": "1, 10",
+                "D": "3, 4"
+            },
+            "correct_answer": "A",
+            "explanation": "(x−2)(x−5)=0.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which statement is always true?",
+            "options": {
+                "A": "Zero polynomial has degree 0",
+                "B": "Degree of constant polynomial is undefined",
+                "C": "Zero polynomial has undefined degree",
+                "D": "Constant polynomial has no degree"
+            },
+            "correct_answer": "C",
+            "explanation": "Degree of zero polynomial is undefined.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "If p(0) = 0, then x is a factor of p(x). True or False?",
+            "options": {
+                "A": "True",
+                "B": "False",
+                "C": "Sometimes",
+                "D": "Never"
+            },
+            "correct_answer": "A",
+            "explanation": "Factor theorem.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which polynomial has exactly one real zero?",
+            "options": {
+                "A": "x² − 1",
+                "B": "x²",
+                "C": "x² + 1",
+                "D": "x³ − 1"
+            },
+            "correct_answer": "B",
+            "explanation": "Repeated root at x = 0.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "The number of zeroes of a polynomial equals the number of times its graph cuts the",
+            "options": {
+                "A": "y-axis",
+                "B": "origin",
+                "C": "x-axis",
+                "D": "any axis"
+            },
+            "correct_answer": "C",
+            "explanation": "Zeroes are x-intercepts.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "If degree of polynomial is n, number of turning points is at most",
+            "options": {
+                "A": "n",
+                "B": "n + 1",
+                "C": "n − 1",
+                "D": "2n"
+            },
+            "correct_answer": "C",
+            "explanation": "Turning points = n − 1.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which polynomial represents a horizontal line?",
+            "options": {
+                "A": "x",
+                "B": "x²",
+                "C": "5",
+                "D": "2x"
+            },
+            "correct_answer": "C",
+            "explanation": "Constant polynomial.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "If p(a) = 0 and p(b) = 0, then which is a factor of p(x)?",
+            "options": {
+                "A": "(x − a)",
+                "B": "(x − b)",
+                "C": "(x − a)(x − b)",
+                "D": "x"
+            },
+            "correct_answer": "C",
+            "explanation": "Both zeroes give factors.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which polynomial has symmetric graph about y-axis?",
+            "options": {
+                "A": "x³",
+                "B": "x²",
+                "C": "x",
+                "D": "x³ + x"
+            },
+            "correct_answer": "B",
+            "explanation": "Even polynomial.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "If p(−x) = p(x), p(x) is called",
+            "options": {
+                "A": "Odd",
+                "B": "Even",
+                "C": "Linear",
+                "D": "Constant"
+            },
+            "correct_answer": "B",
+            "explanation": "Definition of even polynomial.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which polynomial has only imaginary zeroes?",
+            "options": {
+                "A": "x² + 4",
+                "B": "x² − 4",
+                "C": "x²",
+                "D": "x"
+            },
+            "correct_answer": "A",
+            "explanation": "x² + 4 = 0 has no real roots.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "If the graph of p(x) just touches x-axis, then the zero is",
+            "options": {
+                "A": "Simple",
+                "B": "Distinct",
+                "C": "Repeated",
+                "D": "Imaginary"
+            },
+            "correct_answer": "C",
+            "explanation": "Touching means repeated root.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which polynomial has sum of zeroes equal to zero?",
+            "options": {
+                "A": "x² + 1",
+                "B": "x² − 4",
+                "C": "x² + x",
+                "D": "x² − x"
+            },
+            "correct_answer": "B",
+            "explanation": "Roots are ±2.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "If p(x) has degree 5, maximum number of real zeroes is",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "C",
+            "explanation": "Maximum equals degree.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which polynomial has at least one real zero?",
+            "options": {
+                "A": "x² + 1",
+                "B": "x⁴ + 1",
+                "C": "x³ − 2",
+                "D": "x² + 4"
+            },
+            "correct_answer": "C",
+            "explanation": "Odd degree polynomial has at least one real zero.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

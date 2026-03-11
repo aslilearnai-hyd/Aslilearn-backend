@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Control and Coordination",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the basic structure and function of a neuron",
+        "Understand the concept of reflex action and the reflex arc",
+        "Recognize the main parts of the human brain and their simple functions",
+        "Identify the major types of plant movements (tropisms)",
+        "Identify the main endocrine glands and the hormones they produce",
+        "Understand the importance of coordination in living organisms"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "The Nervous System and Neurons",
+            "topics_covered": [
+                "Role of the Nervous System",
+                "Structure of a Neuron (Dendrite, Cell body, Axon)",
+                "Neuromuscular junction"
+            ],
+            "teaching_strategy": [
+                "Analogy: Telephone wires to explain electrical impulses",
+                "Drawing a large labeled diagram of a neuron on the board",
+                "Story: How information travels from a touch to the brain"
+            ],
+            "student_activities": [
+                "Draw and color a neuron in the notebook",
+                "Label the parts where a signal is received and where it leaves"
+            ],
+            "assessment": [
+                "Oral quiz: What is the long part of a neuron called?",
+                "Identifying the gap between two neurons (Synapse)"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reflex Actions",
+            "topics_covered": [
+                "Definition of Reflex Action",
+                "The Reflex Arc pathway",
+                "Importance of quick responses"
+            ],
+            "teaching_strategy": [
+                "Demonstration: The 'Knee-jerk' reflex or blinking when an object comes close",
+                "Flowchart: Stimulus → Receptor → Spinal Cord → Effector → Response",
+                "Discussion: Why doesn't the brain handle reflex actions immediately?"
+            ],
+            "student_activities": [
+                "Role-play the path of a reflex arc (students as sensory and motor nerves)",
+                "List 3 examples of reflex actions from daily life"
+            ],
+            "assessment": [
+                "Diagram check: Reflex Arc",
+                "Matching: Stimulus to its specific Receptor"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Human Brain",
+            "topics_covered": [
+                "Forebrain (Cerebrum)",
+                "Midbrain and Hindbrain (Cerebellum, Medulla, Pons)",
+                "Protection of the Brain (Cranium and Fluid)"
+            ],
+            "teaching_strategy": [
+                "Showing a 3D model or image of the brain",
+                "Function-to-Action mapping (e.g., Cerebellum = Balance)",
+                "Discussion: How do we walk in a straight line?"
+            ],
+            "student_activities": [
+                "Color different parts of a pre-printed brain diagram",
+                "Try a balance test (standing on one leg) to understand the Cerebellum"
+            ],
+            "assessment": [
+                "Short answer: Which part of the brain controls heartbeat?",
+                "Naming the 'Thinking part' of the brain"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Coordination in Plants - Part 1",
+            "topics_covered": [
+                "Immediate response to stimulus (Nastic movements)",
+                "Sensitive plant (Mimosa pudica)",
+                "Electrical-chemical means of communication in plants"
+            ],
+            "teaching_strategy": [
+                "Video clip: The 'Touch-me-not' plant folding its leaves",
+                "Comparison: Human movement vs. Plant movement",
+                "Explaining how water movement causes leaf folding"
+            ],
+            "student_activities": [
+                "Observe a real Mimosa plant (if available) and record time taken to reopen",
+                "Write a short paragraph on how plants 'feel' touch"
+            ],
+            "assessment": [
+                "Oral questioning on plant movements",
+                "Defining 'Nastic' movement in simple terms"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Coordination in Plants - Tropisms",
+            "topics_covered": [
+                "Phototropism (Light) and Geotropism (Gravity)",
+                "Chemotropism (Chemicals) and Hydrotropism (Water)",
+                "Role of Auxin hormone (Easy intro)"
+            ],
+            "teaching_strategy": [
+                "Showing a plant growing toward a window",
+                "Drawing diagrams of roots growing down and shoots growing up",
+                "Mnemonic: **Photo** for Light, **Geo** for Earth"
+            ],
+            "student_activities": [
+                "Draw a diagram showing a plant bending toward light",
+                "Match the 'Stimulus' to the 'Tropism' name"
+            ],
+            "assessment": [
+                "Worksheet on Tropisms",
+                "Quick-fire round: Which part shows positive geotropism?"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Hormones in Animals",
+            "topics_covered": [
+                "Endocrine glands: Pituitary, Thyroid, Adrenal, Pancreas",
+                "Functions of Insulin, Adrenaline, and Thyroxine",
+                "Feedback mechanism (Simple: Sugar level)"
+            ],
+            "teaching_strategy": [
+                "Story: The 'Fight or Flight' response (Adrenaline)",
+                "Table construction: Gland → Hormone → Function",
+                "Discussing the importance of Iodine and the Thyroid"
+            ],
+            "student_activities": [
+                "Create a 'Hormone ID Card' for Adrenaline and Insulin",
+                "Discuss: What happens when we are scared?"
+            ],
+            "assessment": [
+                "Matching activity: Gland to Hormone",
+                "Identifying the hormone used for sugar control"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Summary Assessment",
+            "topics_covered": [
+                "Chapter recap: Brain, Plants, and Hormones",
+                "Key terminology review",
+                "Practice for board-style easy questions"
+            ],
+            "teaching_strategy": [
+                "Interactive mind-map on the board",
+                "Solving NCERT 'In-text' and 'Exercise' questions",
+                "Clarifying final doubts"
+            ],
+            "student_activities": [
+                "Solve a 15-mark MCQ and short answer test",
+                "Complete a summary chart of the whole chapter"
+            ],
+            "assessment": [
+                "Summative Class Test (15 Marks)",
+                "Grading of the summary charts"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Brain 3D Model or Chart",
+        "Neuron structure diagram",
+        "Sensitive plant (Mimosa pudica) or videos",
+        "Endocrine system chart",
+        "Flashcards for Hormones and Glands"
+    ],
+    "evaluation_methods": [
+        "Diagram labeling (Brain and Neuron)",
+        "Matching worksheets",
+        "Oral quiz rounds",
+        "Short descriptive tests",
+        "Class participation"
+    ],
+    "teacher_tip": "For the brain section, use mnemonics like 'Cere-balance' for Cerebellum. At this level, don't worry about complex anatomical terms; focus on the 'location and job' of each part."
+}

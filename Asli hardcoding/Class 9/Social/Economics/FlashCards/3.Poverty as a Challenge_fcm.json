@@ -1,0 +1,104 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 3: Poverty as a Challenge",
+  "generated_at": "2026-03-07T17:10:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "How do social scientists define poverty beyond income and consumption?",
+        "correct_answer": "Through indicators like illiteracy, lack of healthcare, lack of job opportunities, and lack of safe drinking water/sanitation[cite: 1163, 1165].",
+        "explanation": "Modern analysis uses the Multidimensional Poverty Index (MPI) which includes health, education, and standard of living indicators[cite: 1166, 1167, 1168].",
+        "source_section": "Poverty as seen by social scientists"
+      },
+      {
+        "question": "What is 'Social Exclusion' in the context of poverty?",
+        "correct_answer": "A process where individuals or groups are excluded from facilities, benefits, and opportunities that others enjoy[cite: 1173].",
+        "explanation": "It involves the poor having to live only in poor surroundings with other poor people, excluded from social equality[cite: 1171].",
+        "source_section": "Social Exclusion"
+      },
+      {
+        "question": "How is the 'Poverty Line' estimated in India?",
+        "correct_answer": "Based on a minimum level of food requirement, clothing, footwear, fuel, light, educational, and medical requirements[cite: 1194].",
+        "explanation": "The food requirement is based on desired calorie intake: 2400 calories per person/day in rural areas and 2100 in urban areas[cite: 1196, 1199].",
+        "source_section": "Poverty Line"
+      },
+      {
+        "question": "Which social groups are most vulnerable to poverty in India?",
+        "correct_answer": "Scheduled Castes and Scheduled Tribes[cite: 1309].",
+        "explanation": "Among economic groups, rural agricultural labour households and urban casual labour households are the most vulnerable[cite: 1310].",
+        "source_section": "Vulnerable Groups"
+      },
+      {
+        "question": "What are the two typical cases/dimensions of poverty described in the text?",
+        "correct_answer": "Urban poverty (exemplified by Ram Saran) and Rural poverty (exemplified by Lakha Singh)[cite: 1107, 1133].",
+        "explanation": "Urban poverty often involves daily-wage labour in cities, while rural poverty involves landless labourers doing odd jobs for big farmers[cite: 1108, 1134, 1135].",
+        "source_section": "Two Typical Cases of Poverty"
+      },
+      {
+        "question": "What is 'Vulnerability' to poverty?",
+        "correct_answer": "The greater probability of certain communities or individuals becoming or remaining poor in the future[cite: 1177].",
+        "explanation": "It is determined by options for alternative living and the ability to handle risks like natural disasters or job loss[cite: 1178, 1181].",
+        "source_section": "Vulnerability"
+      },
+      {
+        "question": "What were the historical causes of poverty in India?",
+        "correct_answer": "Low economic development under British colonial administration and the ruin of traditional handicrafts[cite: 1466, 1467].",
+        "explanation": "This was followed by high population growth and limited impact of the Green Revolution to only certain parts of India[cite: 1469, 1471].",
+        "source_section": "Causes of Poverty"
+      },
+      {
+        "question": "What are the two pillars of the current anti-poverty strategy?",
+        "correct_answer": "Promotion of economic growth and targeted anti-poverty programmes[cite: 1496].",
+        "explanation": "Economic growth provides resources for human development, while targeted schemes address specific poverty issues[cite: 1503, 1504, 1509].",
+        "source_section": "Anti-Poverty Measures"
+      },
+      {
+        "question": "State the main objective of MGNREGA, 2005.",
+        "correct_answer": "To provide 100 days of wage employment to every household to ensure livelihood security in rural areas[cite: 1511].",
+        "explanation": "One-third of the proposed jobs are reserved for women[cite: 1513].",
+        "source_section": "Anti-Poverty Measures"
+      },
+      {
+        "question": "What does the term 'Human Poverty' advocate?",
+        "correct_answer": "Broadening the concept of poverty beyond just food to include education, shelter, healthcare, and freedom from discrimination[cite: 1544, 1545, 1546].",
+        "explanation": "Income-based definitions capture only a limited part of what poverty truly means to people[cite: 1542].",
+        "source_section": "The Challenges Ahead"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Calorie Requirements",
+        "content": "Rural areas require higher calories (2400) than urban areas (2100) due to more physical work[cite: 1199, 1200].",
+        "source_section": "Poverty Line"
+      },
+      {
+        "title": "Inter-State Disparities",
+        "content": "Poverty success rates vary; states like Punjab and Haryana reduced poverty through agricultural growth, Kerala through human resource development, and West Bengal through land reforms[cite: 1300, 1302, 1305].",
+        "source_section": "Inter-State Disparities"
+      },
+      {
+        "title": "Global Poverty Standard",
+        "content": "The World Bank uses a uniform standard of $2.15 (PPP) per person per day to compare poverty across countries[cite: 1324].",
+        "source_section": "Global Poverty Scenario"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The ratio of multidimensional poverty in India fell from 25% in 2015-16 to 15% in 2019-21[cite: 1103].",
+        "source_section": "Introduction"
+      },
+      {
+        "fact": "13.5 crore people escaped multidimensional poverty between 2015 and 2021[cite: 1218].",
+        "source_section": "Poverty Estimates"
+      },
+      {
+        "fact": "Bihar remains the poorest state with a Head Count Ratio (HCR) of 34%, while Kerala has the lowest at 1%[cite: 1255, 1294].",
+        "source_section": "Inter-State Disparities"
+      },
+      {
+        "fact": "The United Nations' Sustainable Development Goal 1 aims to end poverty in all its forms everywhere by 2030[cite: 1421, 1428].",
+        "source_section": "Poverty and Sustainable Development Goals"
+      }
+    ]
+  }
+}

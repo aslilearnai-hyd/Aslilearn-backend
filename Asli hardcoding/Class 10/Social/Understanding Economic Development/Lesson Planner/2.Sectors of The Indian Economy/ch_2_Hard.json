@@ -1,0 +1,162 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Economics)",
+  "chapter_name": "Sectors of the Indian Economy",
+  "lesson_level": "Hard",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically analyse interdependence among sectors of the economy",
+    "Interpret GDP and employment data trends",
+    "Evaluate problems like disguised and underemployment",
+    "Compare organised and unorganised sectors analytically",
+    "Examine role of public and private sectors in development",
+    "Develop data interpretation and case-based reasoning skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Deep Analysis of Economic Sectors",
+      "topics_covered": [
+        "Classification of sectors",
+        "Interdependence of sectors",
+        "Production chain analysis"
+      ],
+      "teaching_strategy": [
+        "Case study: From raw cotton to export garment",
+        "Flowchart-based analytical discussion"
+      ],
+      "student_activities": [
+        "Prepare detailed production chain diagram",
+        "Identify how each sector supports the other"
+      ],
+      "assessment": ["Case-based short answers", "Diagram evaluation rubric"]
+    },
+    {
+      "period": 2,
+      "title": "GDP Contribution vs Employment",
+      "topics_covered": [
+        "Sector-wise GDP contribution",
+        "Sector-wise employment data",
+        "Mismatch between employment and output"
+      ],
+      "teaching_strategy": [
+        "Graph interpretation activity",
+        "Comparative data analysis"
+      ],
+      "student_activities": [
+        "Interpret GDP and employment graphs",
+        "Explain why primary sector employs more but contributes less"
+      ],
+      "assessment": ["Data-based questions", "Short analytical responses"]
+    },
+    {
+      "period": 3,
+      "title": "Disguised and Underemployment – Critical View",
+      "topics_covered": [
+        "Meaning of disguised unemployment",
+        "Underemployment in services",
+        "Impact on productivity"
+      ],
+      "teaching_strategy": [
+        "Village farming case study",
+        "Problem-solving discussion"
+      ],
+      "student_activities": [
+        "Analyse case and suggest employment solutions",
+        "Write short explanation on productivity loss"
+      ],
+      "assessment": ["Application-based questions", "Peer evaluation"]
+    },
+    {
+      "period": 4,
+      "title": "Organised vs Unorganised Sector – Analytical Comparison",
+      "topics_covered": [
+        "Legal protections",
+        "Wages and job security",
+        "Social security benefits"
+      ],
+      "teaching_strategy": [
+        "Comparison table analysis",
+        "Case study (factory worker vs street vendor)"
+      ],
+      "student_activities": [
+        "Prepare analytical comparison chart",
+        "Debate: Which sector needs more government support?"
+      ],
+      "assessment": [
+        "Structured answer writing",
+        "Group performance evaluation"
+      ]
+    },
+    {
+      "period": 5,
+      "title": "Public and Private Sectors – Role in Development",
+      "topics_covered": [
+        "Role of government enterprises",
+        "Profit motive vs welfare motive",
+        "Privatisation issues"
+      ],
+      "teaching_strategy": [
+        "Discussion: Indian Railways vs Private Airlines",
+        "Pros and cons listing"
+      ],
+      "student_activities": [
+        "Analyse benefits of public sector in rural areas",
+        "Write short analytical paragraph"
+      ],
+      "assessment": ["Short essay question", "Oral presentation"]
+    },
+    {
+      "period": 6,
+      "title": "Sector Growth and Sustainable Development",
+      "topics_covered": [
+        "Rapid growth of service sector",
+        "Sustainable industrial development",
+        "Balancing employment and growth"
+      ],
+      "teaching_strategy": [
+        "Cause–effect diagram",
+        "Case-based environmental discussion"
+      ],
+      "student_activities": [
+        "Suggest policies to improve employment in secondary sector",
+        "Group discussion on sustainable industrialisation"
+      ],
+      "assessment": ["Policy-based short answers", "Concept map submission"]
+    },
+    {
+      "period": 7,
+      "title": "Integrated Case-Based Assessment and Revision",
+      "topics_covered": [
+        "Data interpretation",
+        "Comparative reasoning",
+        "Sector-based policy evaluation"
+      ],
+      "teaching_strategy": ["Case-based worksheet", "Graph and table analysis"],
+      "student_activities": [
+        "Solve integrated data-based questions",
+        "Write short answer: 'Why is service sector growth not enough for employment?'"
+      ],
+      "assessment": [
+        "Short test (20 marks – analytical & data-based)",
+        "Detailed feedback and discussion"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "NCERT Economics Textbook",
+    "Sector-wise GDP and employment graphs",
+    "Case study handouts",
+    "Comparison charts"
+  ],
+  "evaluation_methods": [
+    "Data interpretation worksheets",
+    "Case-based analytical questions",
+    "Structured answer writing",
+    "Group debates",
+    "Short analytical tests"
+  ],
+  "teacher_tip": "Focus on connecting data with concepts. Encourage students to justify answers using economic reasoning rather than memorised definitions."
+}

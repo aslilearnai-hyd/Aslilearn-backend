@@ -1,0 +1,419 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: How the State Government Works",
+    "generated_at": "2026-03-08T01:56:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the full form of MLA?",
+            "answer": "The full form of MLA is Member of the Legislative Assembly.",
+            "answer_outline": [
+                "Full form",
+                "Legislative Assembly"
+            ],
+            "key_concepts": [
+                "MLA",
+                "abbreviation"
+            ],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How are MLAs elected?",
+            "answer": "MLAs are elected by the people. They represent a specific area called a constituency and become members of the legislative assembly.",
+            "answer_outline": [
+                "Elected by people",
+                "Represent constituency",
+                "Member of assembly"
+            ],
+            "key_concepts": [
+                "election",
+                "representation",
+                "voters"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a 'Constituency'?",
+            "answer": "A constituency is a particular area from which all the voters living there choose one representative.",
+            "answer_outline": [
+                "Particular area",
+                "Voters choose one representative"
+            ],
+            "key_concepts": [
+                "constituency",
+                "area",
+                "representative"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a 'Majority' in a state election?",
+            "answer": "A political party whose MLAs have won more than half the number of constituencies in a state is said to be in a majority.",
+            "answer_outline": [
+                "More than half seats",
+                "Winning party",
+                "Majority status"
+            ],
+            "key_concepts": [
+                "majority",
+                "winning",
+                "half-way mark"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Who is the 'Ruling Party'?",
+            "answer": "The political party that has the majority (more than half the seats) and forms the government is called the ruling party.",
+            "answer_outline": [
+                "Majority party",
+                "Forms government"
+            ],
+            "key_concepts": [
+                "ruling party",
+                "government formation"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Who is the 'Opposition'?",
+            "answer": "All the elected representatives (MLAs) who are not members of the ruling party and belong to other parties are called the opposition.",
+            "answer_outline": [
+                "Non-ruling members",
+                "Other political parties"
+            ],
+            "key_concepts": [
+                "opposition",
+                "non-ruling"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Who appoints the Chief Minister and other ministers?",
+            "answer": "The Governor of the state appoints the Chief Minister and other ministers.",
+            "answer_outline": [
+                "Governor",
+                "Appointment process"
+            ],
+            "key_concepts": [
+                "Governor",
+                "Chief Minister",
+                "appointment"
+            ],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the Legislative Assembly?",
+            "answer": "The Legislative Assembly is a place where all the MLAs, whether from the ruling party or from the opposition, meet to discuss various things.",
+            "answer_outline": [
+                "Meeting place for MLAs",
+                "Discussion of state issues",
+                "Both ruling and opposition present"
+            ],
+            "key_concepts": [
+                "Legislative Assembly",
+                "discussion",
+                "MLAs"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Who is the Head of the State?",
+            "answer": "The Governor is the Head of the State. He/she is appointed by the Central Government.",
+            "answer_outline": [
+                "Governor",
+                "Appointed by Central Government"
+            ],
+            "key_concepts": [
+                "Head of State",
+                "Governor"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a 'Cabinet'?",
+            "answer": "A Cabinet is a group of ministers headed by the Chief Minister who take major decisions for the state government.",
+            "answer_outline": [
+                "Group of ministers",
+                "Headed by Chief Minister",
+                "Decision making"
+            ],
+            "key_concepts": [
+                "Cabinet",
+                "ministers",
+                "decisions"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Mention one way people express their opinions about the government.",
+            "answer": "People express their opinions through press conferences, public meetings, and by writing in newspapers.",
+            "answer_outline": [
+                "Press conferences",
+                "Public meetings",
+                "Newspapers"
+            ],
+            "key_concepts": [
+                "opinion",
+                "media",
+                "protest"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a Press Conference?",
+            "answer": "A press conference is a gathering of journalists from the media who are invited to hear about and ask questions on a particular issue.",
+            "answer_outline": [
+                "Journalists gather",
+                "Asking questions",
+                "Information sharing"
+            ],
+            "key_concepts": [
+                "press conference",
+                "journalists",
+                "media"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "How does an MLA become a Minister?",
+            "answer": "After the elections, the MLAs of the ruling party elect their leader who becomes the Chief Minister. The Chief Minister then selects other people as ministers.",
+            "answer_outline": [
+                "Ruling party elects leader",
+                "CM is appointed",
+                "CM selects ministers"
+            ],
+            "key_concepts": [
+                "Minister",
+                "selection",
+                "Chief Minister"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What are the two roles of some MLAs?",
+            "answer": "Some MLAs have dual responsibilities: one as an MLA (representing their constituency) and the other as a Minister (heading a government department).",
+            "answer_outline": [
+                "Role as MLA",
+                "Role as Minister"
+            ],
+            "key_concepts": [
+                "dual role",
+                "MLA",
+                "Minister"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is Patalpuram mentioned in the chapter?",
+            "answer": "Patalpuram is mentioned to show the problems of water shortage and the spread of diarrhoea, which the people were protesting against.",
+            "answer_outline": [
+                "Example of state problems",
+                "Water shortage",
+                "Disease spread"
+            ],
+            "key_concepts": [
+                "Patalpuram",
+                "water crisis",
+                "diarrhoea"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Can MLAs ask questions to the ministers?",
+            "answer": "Yes, in the Legislative Assembly, MLAs can ask questions, debate issues, and suggest what should be done by the government.",
+            "answer_outline": [
+                "Asking questions",
+                "Debating issues",
+                "Suggestions"
+            ],
+            "key_concepts": [
+                "debate",
+                "questions",
+                "Assembly"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Who has the main authority to run the government departments?",
+            "answer": "The Chief Minister and the ministers have the authority to run various government departments like Health, Education, and Agriculture.",
+            "answer_outline": [
+                "Chief Minister",
+                "Ministers",
+                "Government departments"
+            ],
+            "key_concepts": [
+                "authority",
+                "departments",
+                "Ministers"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the role of the Public Works Department (PWD)?",
+            "answer": "The Public Works Department is responsible for building and maintaining public infrastructure like roads and buildings.",
+            "answer_outline": [
+                "Infrastructure",
+                "Roads/Buildings"
+            ],
+            "key_concepts": [
+                "PWD",
+                "roads",
+                "government department"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What happens in a debate in the Legislative Assembly?",
+            "answer": "During a debate, MLAs express their opinions, ask questions related to the problems in their area, and give suggestions to the government.",
+            "answer_outline": [
+                "Express opinions",
+                "Ask questions",
+                "Give suggestions"
+            ],
+            "key_concepts": [
+                "debate",
+                "opinion",
+                "assembly"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Who answers the questions asked in the Legislative Assembly?",
+            "answer": "The concerned Minister of the department has to answer the questions and assure the Assembly that steps are being taken.",
+            "answer_outline": [
+                "Concerned Minister",
+                "Provide answers",
+                "Give assurance"
+            ],
+            "key_concepts": [
+                "Minister",
+                "answers",
+                "accountability"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "How does the government make new laws for the state?",
+            "answer": "New laws on certain issues like health and sanitation are made by the government in the Legislative Assembly.",
+            "answer_outline": [
+                "In Legislative Assembly",
+                "Discussing issues",
+                "Passing laws"
+            ],
+            "key_concepts": [
+                "laws",
+                "state",
+                "Legislative Assembly"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the difference between the 'Government' and 'Legislative Assembly'?",
+            "answer": "The Legislative Assembly is where all MLAs meet to debate, while the 'Government' refers to the executive part—the ministers and the departments they head.",
+            "answer_outline": [
+                "Assembly (All MLAs/Debate)",
+                "Government (Ministers/Departments)"
+            ],
+            "key_concepts": [
+                "difference",
+                "Executive",
+                "Legislative"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Who ensures that the state government follows the rules of the Constitution?",
+            "answer": "The Governor ensures that the state government works within the rules and regulations of the Constitution of India.",
+            "answer_outline": [
+                "Governor",
+                "Rule of law",
+                "Constitution"
+            ],
+            "key_concepts": [
+                "Governor",
+                "rules",
+                "Constitution"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is a 'Coalition Government'?",
+            "answer": "When no single party gets a majority, two or more parties come together to form the government. This is called a coalition government.",
+            "answer_outline": [
+                "No single party majority",
+                "Parties join together"
+            ],
+            "key_concepts": [
+                "coalition",
+                "majority",
+                "parties"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do people organize rallies?",
+            "answer": "People organize rallies to protest against government decisions and to demand action on problems like water shortage or high prices.",
+            "answer_outline": [
+                "Protest",
+                "Demand action",
+                "Example: Water shortage"
+            ],
+            "key_concepts": [
+                "rallies",
+                "protest",
+                "demands"
+            ],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        }
+    ]
+}

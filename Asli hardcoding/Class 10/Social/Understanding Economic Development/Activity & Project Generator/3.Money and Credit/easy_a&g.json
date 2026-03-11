@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Easy",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "Barter vs Money Role Play",
+      "objective": "To understand the problems of barter system and importance of money.",
+      "materials": "Paper slips, simple classroom objects",
+      "steps": [
+        "Divide students into small groups and assign items (rice, books, vegetables).",
+        "Ask them to exchange items without using money.",
+        "Discuss difficulties faced and how money solves them."
+      ],
+      "learning_outcome": "Students understand limitations of barter system and need for money.",
+      "evaluation": "Check participation and ability to explain barter problems."
+    },
+    {
+      "title": "Functions of Money Chart",
+      "objective": "To identify and understand the functions of money.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "List four functions of money (medium of exchange, measure of value, store of value, standard of deferred payment).",
+        "Draw a simple chart explaining each with examples.",
+        "Present the chart to the class."
+      ],
+      "learning_outcome": "Students understand basic functions of money with examples.",
+      "evaluation": "Assess correctness of functions and clarity of examples."
+    },
+    {
+      "title": "Types of Loans Table",
+      "objective": "To differentiate between formal and informal sources of credit.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List examples of formal sources (banks, cooperatives).",
+        "List examples of informal sources (moneylenders, friends).",
+        "Write two differences between them."
+      ],
+      "learning_outcome": "Students understand differences between formal and informal credit sources.",
+      "evaluation": "Check accuracy of examples and differences."
+    },
+    {
+      "title": "Simple Interest Calculation Activity",
+      "objective": "To calculate simple interest on loans.",
+      "materials": "Calculator, notebook",
+      "steps": [
+        "Provide a sample loan amount, rate of interest, and time period.",
+        "Calculate simple interest using the formula.",
+        "Discuss how interest increases total repayment."
+      ],
+      "learning_outcome": "Students learn basic interest calculation and repayment concept.",
+      "evaluation": "Check accuracy of calculation."
+    },
+    {
+      "title": "Bank Visit Observation (Virtual or Real)",
+      "objective": "To observe services provided by banks.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List services offered by a bank (deposit, loan, ATM).",
+        "Explain how banks help in money transactions.",
+        "Share findings in class."
+      ],
+      "learning_outcome": "Students understand the role of banks in the economy.",
+      "evaluation": "Assess completeness of service list and explanation."
+    },
+    {
+      "title": "Credit Case Study Discussion",
+      "objective": "To understand how credit helps in business.",
+      "materials": "Textbook case study, notebook",
+      "steps": [
+        "Read a case study about a farmer or small business taking a loan.",
+        "Identify purpose of loan and repayment plan.",
+        "Discuss benefits and risks."
+      ],
+      "learning_outcome": "Students understand advantages and risks of credit.",
+      "evaluation": "Check understanding through discussion responses."
+    },
+    {
+      "title": "Savings Habit Poster",
+      "objective": "To promote importance of saving money.",
+      "materials": "Chart paper, colors",
+      "steps": [
+        "Create a poster encouraging savings.",
+        "Include at least three benefits of saving.",
+        "Display in classroom."
+      ],
+      "learning_outcome": "Students understand importance of saving for future needs.",
+      "evaluation": "Evaluate relevance of points and creativity."
+    },
+    {
+      "title": "ATM and Digital Payment List",
+      "objective": "To identify modern forms of money transactions.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List different digital payment methods (UPI, debit card, net banking).",
+        "Explain how each works in simple words.",
+        "Discuss advantages."
+      ],
+      "learning_outcome": "Students understand modern forms of money transactions.",
+      "evaluation": "Check clarity and correctness of explanations."
+    },
+    {
+      "title": "Loan Repayment Comparison",
+      "objective": "To compare two different loan options.",
+      "materials": "Calculator, notebook",
+      "steps": [
+        "Provide two loan offers with different interest rates.",
+        "Calculate total repayment for both.",
+        "Identify which is better and why."
+      ],
+      "learning_outcome": "Students learn to compare loan options wisely.",
+      "evaluation": "Check calculation accuracy and reasoning."
+    },
+    {
+      "title": "Money Timeline Activity",
+      "objective": "To understand evolution of money.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "Draw a timeline showing barter system, coins, paper money, digital money.",
+        "Write one feature for each stage.",
+        "Present timeline in class."
+      ],
+      "learning_outcome": "Students understand how money evolved over time.",
+      "evaluation": "Assess correctness of stages and explanation."
+    }
+  ]
+}

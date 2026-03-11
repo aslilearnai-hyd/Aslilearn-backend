@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: State government (Social and Political Life-II)",
+  "generated_at": "2026-03-08T01:40:15",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "In a democracy, what do people expect from the government?",
+      "options": {
+        "A": "To provide entertainment",
+        "B": "To work for their welfare",
+        "C": "To collect only taxes",
+        "D": "To build only statues"
+      },
+      "correct_answer": "B",
+      "explanation": "In a democracy, people expect the government to work for their welfare through education, health, and employment.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is included in the concept of 'Health'?",
+      "options": {
+        "A": "Only being free of illness",
+        "B": "Our ability to remain free of illness and injuries",
+        "C": "Only eating expensive food",
+        "D": "Only going to the gym"
+      },
+      "correct_answer": "B",
+      "explanation": "Health means our ability to remain free of illness and injuries, but it also includes mental health and well-being.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "To prevent and treat illnesses, we need health facilities such as:",
+      "options": {
+        "A": "Cinemas",
+        "B": "Health centres and hospitals",
+        "C": "Shopping malls",
+        "D": "Playgrounds"
+      },
+      "correct_answer": "B",
+      "explanation": "Basic health facilities like hospitals, health centres, and ambulance services are required for proper treatment.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "India has the largest number of ______ colleges in the world.",
+      "options": {
+        "A": "Engineering",
+        "B": "Medical",
+        "C": "Arts",
+        "D": "Law"
+      },
+      "correct_answer": "B",
+      "explanation": "India is among the largest producers of doctors and has a very high number of medical colleges.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Most doctors in India prefer to settle in:",
+      "options": {
+        "A": "Villages",
+        "B": "Urban areas (cities)",
+        "C": "Forests",
+        "D": "Other countries only"
+      },
+      "correct_answer": "B",
+      "explanation": "Most doctors settle in urban areas, which makes it difficult for people in rural areas to get medical help.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the full form of PHC?",
+      "options": {
+        "A": "Private Health Centre",
+        "B": "Primary Health Centre",
+        "C": "Public Health Council",
+        "D": "Primary Health Clinic"
+      },
+      "correct_answer": "B",
+      "explanation": "PHC stands for Primary Health Centre, which provides health services in rural areas.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Public health services are run by the:",
+      "options": {
+        "A": "Private companies",
+        "B": "Government",
+        "C": "Individual doctors",
+        "D": "NGOs only"
+      },
+      "correct_answer": "B",
+      "explanation": "The public health service is a chain of health centres and hospitals run by the government.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Where do we find the 'Village Health Guides' in the government health system?",
+      "options": {
+        "A": "In big city hospitals",
+        "B": "At the village level",
+        "C": "In private clinics",
+        "D": "In the Parliament"
+      },
+      "correct_answer": "B",
+      "explanation": "At the village level, there are usually health centres with a nurse and a village health worker.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Private health facilities are owned by:",
+      "options": {
+        "A": "The Government",
+        "B": "Individuals or companies",
+        "C": "The Village Panchayat",
+        "D": "Every citizen together"
+      },
+      "correct_answer": "B",
+      "explanation": "Private health facilities are not owned or controlled by the government; they are private businesses.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 10,
+      "question": "In private hospitals, patients have to pay:",
+      "options": {
+        "A": "Nothing",
+        "B": "A lot of money for every service",
+        "C": "Only for food",
+        "D": "Whatever they want"
+      },
+      "correct_answer": "B",
+      "explanation": "Unlike public hospitals, private facilities require a lot of money for tests and medicines.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "According to our Constitution, it is the primary duty of the government to ensure the ______ of the people.",
+      "options": {
+        "A": "Entertainment",
+        "B": "Welfare",
+        "C": "Wealth",
+        "D": "Travel"
+      },
+      "correct_answer": "B",
+      "explanation": "The Constitution states that the government must ensure the welfare of the people and provide health care.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Hakim Sheikh was a member of which organization?",
+      "options": {
+        "A": "Indian Medical Association",
+        "B": "Paschim Banga Khet Majoor Samity (PBKMS)",
+        "C": "Red Cross",
+        "D": "WHO"
+      },
+      "correct_answer": "B",
+      "explanation": "Hakim Sheikh was a member of PBKMS, an organization of agricultural labourers in West Bengal.",
+      "difficulty": "easy",
+      "source_section": "Story: Hakim Sheikh"
+    },
+    {
+      "question_number": 13,
+      "question": "Why did Hakim Sheikh file a case in court?",
+      "options": {
+        "A": "To get a new job",
+        "B": "Because government hospitals refused to admit him in an emergency",
+        "C": "To buy a new house",
+        "D": "Against the private hospital"
+      },
+      "correct_answer": "B",
+      "explanation": "Hakim Sheikh filed a case because multiple government hospitals refused to admit him despite his critical condition.",
+      "difficulty": "easy",
+      "source_section": "Story: Hakim Sheikh"
+    },
+    {
+      "question_number": 14,
+      "question": "Communicable diseases are those that spread from:",
+      "options": {
+        "A": "One person to another",
+        "B": "Sunlight to person",
+        "C": "Only through soil",
+        "D": "Reading books"
+      },
+      "correct_answer": "A",
+      "explanation": "Diseases like water-borne illnesses or coughs that spread from one person to another are called communicable diseases.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is a water-borne disease?",
+      "options": {
+        "A": "Fracture",
+        "B": "Diarrhoea",
+        "C": "Headache",
+        "D": "Blindness"
+      },
+      "correct_answer": "B",
+      "explanation": "Diarrhoea, worms, and hepatitis are mentioned as diseases spread through contaminated water.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 16,
+      "question": "The money used to run public health services comes from:",
+      "options": {
+        "A": "Donations",
+        "B": "Taxes paid by citizens",
+        "C": "Loans from other countries",
+        "D": "The doctors' own pockets"
+      },
+      "correct_answer": "B",
+      "explanation": "Public services are funded by the taxes that we pay to the government.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 17,
+      "question": "An important aspect of public health is to prevent the spread of diseases like:",
+      "options": {
+        "A": "TB, Malaria, Jaundice",
+        "B": "Laziness",
+        "C": "Old age",
+        "D": "Hunger"
+      },
+      "correct_answer": "A",
+      "explanation": "Public health services work to prevent the spread of diseases such as TB, malaria, jaundice, cholera, etc.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Aman and Ranjan went to two different types of hospitals. Aman went to a ______ hospital.",
+      "options": {
+        "A": "Private",
+        "B": "Government",
+        "C": "School",
+        "D": "Mobile"
+      },
+      "correct_answer": "B",
+      "explanation": "In the story, Aman went to a government hospital where he had to wait in long queues.",
+      "difficulty": "easy",
+      "source_section": "Story: The Cost of a Cure"
+    },
+    {
+      "question_number": 19,
+      "question": "Ranjan’s hospital was very clean and looked like a five-star hotel because it was a:",
+      "options": {
+        "A": "Government hospital",
+        "B": "Private hospital",
+        "C": "Primary health centre",
+        "D": "Charity clinic"
+      },
+      "correct_answer": "B",
+      "explanation": "Private hospitals often have better infrastructure and cleanliness but charge high fees.",
+      "difficulty": "easy",
+      "source_section": "Story: The Cost of a Cure"
+    },
+    {
+      "question_number": 20,
+      "question": "The 'Right to Life' is a part of which Article of the Indian Constitution?",
+      "options": {
+        "A": "Article 15",
+        "B": "Article 21",
+        "C": "Article 1",
+        "D": "Article 10"
+      },
+      "correct_answer": "B",
+      "explanation": "The Supreme Court stated that Article 21, which provides the Right to Life, includes the Right to Health.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which South American country is considered to be one of the healthiest?",
+      "options": {
+        "A": "Brazil",
+        "B": "Costa Rica",
+        "C": "Argentina",
+        "D": "Chile"
+      },
+      "correct_answer": "B",
+      "explanation": "Costa Rica decided not to have an army and spend that money on health and education.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 22,
+      "question": "In 1996, which Indian state gave 40% of its budget to Panchayats for health and water?",
+      "options": {
+        "A": "Tamil Nadu",
+        "B": "Kerala",
+        "C": "Bihar",
+        "D": "Assam"
+      },
+      "correct_answer": "B",
+      "explanation": "Kerala made major changes in 1996 by empowering Panchayats to plan for their local health and water needs.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "RMP stands for:",
+      "options": {
+        "A": "Registered Medical Practitioners",
+        "B": "Rural Medical People",
+        "C": "Real Medical Practice",
+        "D": "Regular Medical Post"
+      },
+      "correct_answer": "A",
+      "explanation": "In rural areas, one finds Registered Medical Practitioners (RMPs) who provide healthcare.",
+      "difficulty": "easy",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Medical tourists are people who come to India for:",
+      "options": {
+        "A": "Sightseeing",
+        "B": "Medical treatment in world-class hospitals",
+        "C": "Buying clothes",
+        "D": "Learning languages"
+      },
+      "correct_answer": "B",
+      "explanation": "Medical tourists come to India for treatments that cost much less than in their own countries.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main problem with private health services in India?",
+      "options": {
+        "A": "They are too far",
+        "B": "They are very expensive and many people cannot afford them",
+        "C": "There are no doctors",
+        "D": "They are only for animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Private services are concentrated in cities and are very costly, making them inaccessible to the poor.",
+      "difficulty": "easy",
+      "source_section": "Section 2.3"
+    }
+  ]
+}

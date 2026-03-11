@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-05T21:40:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What are natural numbers?",
+                "correct_answer": "Counting numbers starting from 1",
+                "explanation": "Natural numbers are used for counting objects and start from 1.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What is the difference between natural numbers and whole numbers?",
+                "correct_answer": "Whole numbers include zero but natural numbers do not",
+                "explanation": "Whole numbers are {0,1,2,3,...} while natural numbers start from 1.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What are integers?",
+                "correct_answer": "Numbers that include negative numbers, zero, and positive numbers",
+                "explanation": "Integers are represented as {...,-2,-1,0,1,2,...}.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What is a rational number?",
+                "correct_answer": "A number that can be written in the form p/q where q ≠ 0",
+                "explanation": "Both numerator and denominator must be integers and denominator cannot be zero.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What type of decimal expansion do rational numbers have?",
+                "correct_answer": "Terminating or non-terminating repeating decimals",
+                "explanation": "When fractions are converted into decimals they either terminate or repeat.",
+                "source_section": "Section 1.3"
+            },
+            {
+                "question": "What is an irrational number?",
+                "correct_answer": "A number that cannot be written in the form p/q",
+                "explanation": "Its decimal expansion is non-terminating and non-repeating.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "Give examples of irrational numbers.",
+                "correct_answer": "√2, √3 and π",
+                "explanation": "These numbers cannot be expressed as fractions.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "What are real numbers?",
+                "correct_answer": "All rational and irrational numbers together",
+                "explanation": "Every point on the number line represents a real number.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "What happens when a rational number is added to an irrational number?",
+                "correct_answer": "The result is irrational",
+                "explanation": "The irrational part cannot be cancelled by a rational number.",
+                "source_section": "Section 1.4"
+            },
+            {
+                "question": "What type of decimal expansion do irrational numbers have?",
+                "correct_answer": "Non-terminating and non-repeating decimals",
+                "explanation": "The digits continue infinitely without repeating.",
+                "source_section": "Section 1.3"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Natural Numbers",
+                "content": "Natural numbers are counting numbers starting from 1 and continuing infinitely.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "title": "Rational Numbers",
+                "content": "Rational numbers can be expressed as p/q where p and q are integers and q ≠ 0.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "title": "Irrational Numbers",
+                "content": "Irrational numbers have non-terminating and non-repeating decimal expansions.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "title": "Real Numbers",
+                "content": "Real numbers include both rational and irrational numbers and are represented on the number line.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "title": "Decimal Expansions",
+                "content": "Rational numbers have terminating or recurring decimals, while irrational numbers have non-repeating decimals.",
+                "source_section": "Section 1.3"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Natural numbers start from 1 while whole numbers start from 0.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "fact": "Every integer is also a rational number because it can be written as p/1.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "fact": "Between any two rational numbers there are infinitely many rational numbers.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "fact": "Every point on the number line represents a real number.",
+                "source_section": "Section 1.2"
+            }
+        ]
+    }
+}

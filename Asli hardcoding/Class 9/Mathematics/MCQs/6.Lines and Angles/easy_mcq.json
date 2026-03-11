@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 6: Lines and Angles",
+    "generated_at": "2026-03-05T22:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "An angle measuring 45° is called:",
+            "options": {
+                "A": "Right angle",
+                "B": "Acute angle",
+                "C": "Obtuse angle",
+                "D": "Straight angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Angles less than 90° are acute angles.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the measure of a right angle?",
+            "options": {
+                "A": "45°",
+                "B": "90°",
+                "C": "120°",
+                "D": "180°"
+            },
+            "correct_answer": "B",
+            "explanation": "A right angle measures exactly 90°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the sum of angles in a linear pair?",
+            "options": {
+                "A": "90°",
+                "B": "120°",
+                "C": "180°",
+                "D": "360°"
+            },
+            "correct_answer": "C",
+            "explanation": "Angles in a linear pair add up to 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 4,
+            "question": "If two angles sum to 90°, they are:",
+            "options": {
+                "A": "Adjacent",
+                "B": "Complementary",
+                "C": "Supplementary",
+                "D": "Vertical"
+            },
+            "correct_answer": "B",
+            "explanation": "Complementary angles add up to 90°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "If two angles sum to 180°, they are:",
+            "options": {
+                "A": "Complementary",
+                "B": "Vertical",
+                "C": "Supplementary",
+                "D": "Reflex"
+            },
+            "correct_answer": "C",
+            "explanation": "Supplementary angles add up to 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Angles opposite each other when two lines intersect are called:",
+            "options": {
+                "A": "Adjacent angles",
+                "B": "Vertically opposite angles",
+                "C": "Complementary angles",
+                "D": "Linear angles"
+            },
+            "correct_answer": "B",
+            "explanation": "Vertically opposite angles are equal.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Vertically opposite angles are:",
+            "options": {
+                "A": "Equal",
+                "B": "Complementary",
+                "C": "Supplementary",
+                "D": "Unequal"
+            },
+            "correct_answer": "A",
+            "explanation": "Vertically opposite angles are always equal.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the sum of angles around a point?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "360°"
+            },
+            "correct_answer": "D",
+            "explanation": "Angles around a point add up to 360°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Two angles sharing a common vertex and arm are:",
+            "options": {
+                "A": "Adjacent angles",
+                "B": "Vertical angles",
+                "C": "Straight angles",
+                "D": "Reflex angles"
+            },
+            "correct_answer": "A",
+            "explanation": "Adjacent angles share a vertex and arm.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "An angle measuring 180° is called:",
+            "options": {
+                "A": "Straight angle",
+                "B": "Reflex angle",
+                "C": "Obtuse angle",
+                "D": "Acute angle"
+            },
+            "correct_answer": "A",
+            "explanation": "A straight angle measures 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "An angle greater than 90° but less than 180° is:",
+            "options": {
+                "A": "Acute",
+                "B": "Right",
+                "C": "Obtuse",
+                "D": "Straight"
+            },
+            "correct_answer": "C",
+            "explanation": "Obtuse angles lie between 90° and 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Parallel lines:",
+            "options": {
+                "A": "Meet at one point",
+                "B": "Never intersect",
+                "C": "Form right angles",
+                "D": "Form triangles"
+            },
+            "correct_answer": "B",
+            "explanation": "Parallel lines never meet even if extended.",
+            "difficulty": "easy",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 13,
+            "question": "The distance between two parallel lines is:",
+            "options": {
+                "A": "Increasing",
+                "B": "Decreasing",
+                "C": "Constant",
+                "D": "Random"
+            },
+            "correct_answer": "C",
+            "explanation": "Parallel lines maintain a constant distance.",
+            "difficulty": "easy",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 14,
+            "question": "A line that cuts two or more lines is called:",
+            "options": {
+                "A": "Parallel line",
+                "B": "Transversal",
+                "C": "Ray",
+                "D": "Segment"
+            },
+            "correct_answer": "B",
+            "explanation": "A transversal intersects two or more lines.",
+            "difficulty": "easy",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Angles in a linear pair are:",
+            "options": {
+                "A": "Equal",
+                "B": "Complementary",
+                "C": "Supplementary",
+                "D": "Reflex"
+            },
+            "correct_answer": "C",
+            "explanation": "Linear pair angles sum to 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Angles formed by intersecting lines are:",
+            "options": {
+                "A": "Four",
+                "B": "Two",
+                "C": "Three",
+                "D": "Six"
+            },
+            "correct_answer": "A",
+            "explanation": "Two intersecting lines form four angles.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "If one angle of a linear pair is 110°, the other is:",
+            "options": {
+                "A": "60°",
+                "B": "70°",
+                "C": "80°",
+                "D": "90°"
+            },
+            "correct_answer": "B",
+            "explanation": "110° + 70° = 180°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "An angle greater than 180° but less than 360° is:",
+            "options": {
+                "A": "Straight angle",
+                "B": "Reflex angle",
+                "C": "Obtuse angle",
+                "D": "Right angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Reflex angles lie between 180° and 360°.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Angles formed when a transversal cuts parallel lines include:",
+            "options": {
+                "A": "Corresponding angles",
+                "B": "Alternate angles",
+                "C": "Interior angles",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "All these angle pairs are formed.",
+            "difficulty": "easy",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Two angles with a common vertex are:",
+            "options": {
+                "A": "Adjacent angles",
+                "B": "Straight angles",
+                "C": "Reflex angles",
+                "D": "Parallel angles"
+            },
+            "correct_answer": "A",
+            "explanation": "Adjacent angles share a common vertex.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Lines that intersect form:",
+            "options": {
+                "A": "One angle",
+                "B": "Two angles",
+                "C": "Four angles",
+                "D": "Five angles"
+            },
+            "correct_answer": "C",
+            "explanation": "Two intersecting lines form four angles.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Angles that share a vertex and side but do not overlap are:",
+            "options": {
+                "A": "Complementary",
+                "B": "Adjacent",
+                "C": "Vertical",
+                "D": "Straight"
+            },
+            "correct_answer": "B",
+            "explanation": "Adjacent angles share a side and vertex.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Two lines that never meet are:",
+            "options": {
+                "A": "Intersecting lines",
+                "B": "Parallel lines",
+                "C": "Perpendicular lines",
+                "D": "Curved lines"
+            },
+            "correct_answer": "B",
+            "explanation": "Parallel lines never intersect.",
+            "difficulty": "easy",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 24,
+            "question": "The vertex of an angle is:",
+            "options": {
+                "A": "The curved part",
+                "B": "The meeting point of two rays",
+                "C": "The length of angle",
+                "D": "The middle of a line"
+            },
+            "correct_answer": "B",
+            "explanation": "The vertex is the common endpoint of rays.",
+            "difficulty": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Angles around a point form:",
+            "options": {
+                "A": "Half circle",
+                "B": "Straight line",
+                "C": "Full circle",
+                "D": "Triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Angles around a point equal 360°, a full circle.",
+            "difficulty": "easy",
+            "source_section": "Section 6.4"
+        }
+    ]
+}

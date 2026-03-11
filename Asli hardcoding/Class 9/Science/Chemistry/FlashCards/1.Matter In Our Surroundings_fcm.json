@@ -1,0 +1,109 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 1: Matter in Our Surroundings",
+    "generated_at": "2026-03-06T19:30:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is matter?",
+                "correct_answer": "Anything that occupies space and has mass",
+                "explanation": "Everything in the universe is made up of material which scientists have named matter.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What are the three physical states of matter?",
+                "correct_answer": "Solid, Liquid, and Gas",
+                "explanation": "Matter exists in these three states due to variation in the characteristics of its particles.",
+                "source_section": "Section 1.3"
+            },
+            {
+                "question": "What is diffusion?",
+                "correct_answer": "The intermixing of particles of two different types of matter on their own",
+                "explanation": "Particles of matter have space between them and they get into the spaces of others.",
+                "source_section": "Section 1.2.1"
+            },
+            {
+                "question": "How does temperature affect kinetic energy?",
+                "correct_answer": "As temperature rises, kinetic energy of particles increases",
+                "explanation": "With an increase in temperature, particles move faster.",
+                "source_section": "Section 1.2.2"
+            },
+            {
+                "question": "What is the melting point?",
+                "correct_answer": "The minimum temperature at which a solid melts to become a liquid at atmospheric pressure",
+                "explanation": "It is an indication of the strength of the force of attraction between particles.",
+                "source_section": "Section 1.4.1"
+            },
+            {
+                "question": "What is latent heat of fusion?",
+                "correct_answer": "The amount of heat energy required to change 1 kg of a solid into liquid at atmospheric pressure at its melting point",
+                "explanation": "The word latent means hidden; this heat is used to overcome forces of attraction.",
+                "source_section": "Section 1.4.1"
+            },
+            {
+                "question": "What is sublimation?",
+                "correct_answer": "A change of state directly from solid to gas without changing into liquid state",
+                "explanation": "Common examples include camphor or ammonium chloride.",
+                "source_section": "Section 1.4.1"
+            },
+            {
+                "question": "What is evaporation?",
+                "correct_answer": "The phenomenon of change of a liquid into vapours at any temperature below its boiling point",
+                "explanation": "It is a surface phenomenon where particles gain enough energy to break away.",
+                "source_section": "Section 1.5"
+            },
+            {
+                "question": "Why does evaporation cause cooling?",
+                "correct_answer": "Particles absorb energy from the surroundings to regain the energy lost during evaporation",
+                "explanation": "The absorption of energy from the surroundings makes the surroundings cold.",
+                "source_section": "Section 1.5.2"
+            },
+            {
+                "question": "What is dry ice?",
+                "correct_answer": "Solid Carbon Dioxide (CO2)",
+                "explanation": "It is stored under high pressure and becomes a gas directly when pressure is reduced to 1 atmosphere.",
+                "source_section": "Section 1.4.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Particle Nature",
+                "content": "Matter is made of tiny particles; they have spaces between them and attract each other.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "title": "State Characteristics",
+                "content": "Solids have definite shape/volume. Liquids have fixed volume but no fixed shape. Gases have neither.",
+                "source_section": "Section 1.3"
+            },
+            {
+                "title": "Effect of Pressure",
+                "content": "Applying pressure and reducing temperature can liquefy gases by bringing particles closer.",
+                "source_section": "Section 1.4.2"
+            },
+            {
+                "title": "Factors affecting Evaporation",
+                "content": "Evaporation increases with surface area, temperature, and wind speed; it decreases with humidity.",
+                "source_section": "Section 1.5.1"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The SI unit of mass is kilogram (kg).",
+                "source_section": "Section 1.1"
+            },
+            {
+                "fact": "The SI unit of volume is cubic metre (m³).",
+                "source_section": "Section 1.1"
+            },
+            {
+                "fact": "Potassium permanganate crystals can color a large volume of water due to millions of tiny particles.",
+                "source_section": "Section 1.1.2"
+            },
+            {
+                "fact": "Gases like LPG and Oxygen in hospitals are supplied in compressed form due to high compressibility.",
+                "source_section": "Section 1.3.3"
+            }
+        ]
+    }
+}

@@ -1,0 +1,159 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A Truly Beautiful Mind",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the life and achievements of Albert Einstein",
+        "Identify the qualities that made him a remarkable thinker",
+        "Recognize the challenges he faced and how he overcame them",
+        "Develop basic comprehension and summarization skills",
+        "Learn and use new vocabulary from the chapter"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Author: Sudha Murthy",
+                "Introduction to Albert Einstein",
+                "Setting and background of the chapter"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion about famous scientists",
+                "Board explanation of Einstein’s early life"
+            ],
+            "student_activities": [
+                "Share prior knowledge about Albert Einstein",
+                "Discuss what makes someone a great thinker"
+            ],
+            "assessment": [
+                "Class participation",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reading – Early Life",
+            "topics_covered": [
+                "Einstein’s childhood and schooling",
+                "Early signs of curiosity and intelligence",
+                "Challenges in learning"
+            ],
+            "teaching_strategy": [
+                "Read aloud by students",
+                "Explain difficult words and expressions"
+            ],
+            "student_activities": [
+                "Underline key sentences",
+                "Write 2–3 sentences about Einstein’s childhood"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Reading – Achievements and Struggles",
+            "topics_covered": [
+                "Major scientific contributions",
+                "Obstacles faced and perseverance",
+                "Importance of curiosity and questioning"
+            ],
+            "teaching_strategy": [
+                "Guided reading",
+                "Discussion on how challenges shaped Einstein’s life"
+            ],
+            "student_activities": [
+                "List Einstein’s achievements",
+                "Explain how he overcame obstacles"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Character Traits and Lessons",
+            "topics_covered": [
+                "Qualities that made Einstein remarkable: curiosity, persistence, creativity",
+                "Values of hard work and patience",
+                "Life lessons for readers"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion with examples from text",
+                "Board mind map of character traits"
+            ],
+            "student_activities": [
+                "Write 3–4 traits with examples",
+                "Discuss in groups how these traits can be applied in daily life"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Summary",
+            "topics_covered": [
+                "Main theme: Value of a curious and persevering mind",
+                "Writing a short summary of the chapter",
+                "Connecting lessons from Einstein’s life to students’ own experiences"
+            ],
+            "teaching_strategy": [
+                "Flowchart of key events and achievements",
+                "Guided discussion for summary writing"
+            ],
+            "student_activities": [
+                "Create a simple timeline of Einstein’s life",
+                "Write an 8–10 sentence summary"
+            ],
+            "assessment": [
+                "Timeline accuracy",
+                "Quality of summary"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary and Reflection",
+            "topics_covered": [
+                "Key vocabulary and phrases from the chapter",
+                "Reflective thinking on curiosity, hard work, and intelligence",
+                "Applying story insights to personal goals"
+            ],
+            "teaching_strategy": [
+                "Board explanation of vocabulary and examples",
+                "Reflection prompts for students"
+            ],
+            "student_activities": [
+                "List new words with meanings and use in sentences",
+                "Write a reflection on how they can develop a truly beautiful mind"
+            ],
+            "assessment": [
+                "Written reflection evaluation",
+                "Vocabulary quiz",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard or Whiteboard",
+        "Markers or Chalk",
+        "Printed chapter excerpts",
+        "Timeline charts"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Class participation",
+        "Oral questioning",
+        "Short written exercises",
+        "Summary and reflection evaluation"
+    ],
+    "teacher_tip": "Encourage students to relate Einstein’s curiosity and perseverance to their own studies and personal growth."
+}

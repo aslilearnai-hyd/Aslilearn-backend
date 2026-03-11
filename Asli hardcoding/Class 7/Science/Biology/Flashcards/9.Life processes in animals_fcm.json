@@ -1,0 +1,110 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Life Processes in Animals (Nutrition and Respiration)",
+    "generated_at": "2026-03-07T01:22:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is the function of the 'villi' in the small intestine?",
+                "difficulty": "Easy",
+                "correct_answer": "To increase surface area for absorption of digested food",
+                "explanation": "These finger-like projections have a network of blood vessels that transport nutrients to the rest of the body.",
+                "source_section": "Digestion in Humans"
+            },
+            {
+                "question": "Why do we get muscle cramps during heavy exercise?",
+                "difficulty": "Medium",
+                "correct_answer": "Due to the accumulation of lactic acid during anaerobic respiration",
+                "explanation": "When oxygen supply is insufficient, muscle cells break down glucose partially, producing lactic acid which cause cramps.",
+                "source_section": "Respiration in Organisms"
+            },
+            {
+                "question": "How do fish utilize oxygen dissolved in water?",
+                "difficulty": "Easy",
+                "correct_answer": "Through gills that are richly supplied with blood vessels",
+                "explanation": "Gills help in the exchange of gases between the water and the fish's circulatory system.",
+                "source_section": "Breathing Under Water"
+            },
+            {
+                "question": "What are the end products of aerobic respiration?",
+                "difficulty": "Medium",
+                "correct_answer": "Carbon dioxide, water, and energy",
+                "explanation": "This occurs in the presence of oxygen where glucose is completely broken down.",
+                "source_section": "Respiration in Organisms"
+            },
+            {
+                "question": "What is 'cud' and how is it digested in ruminants?",
+                "difficulty": "Hard",
+                "correct_answer": "Partially digested food that is brought back to the mouth to be chewed again",
+                "explanation": "Ruminants like cows have a specialized stomach (rumen) where bacteria help break down complex cellulose.",
+                "source_section": "Digestion in Grass-Eating Animals"
+            },
+            {
+                "question": "Which organ produces bile juice, and what is its specific role?",
+                "difficulty": "Medium",
+                "correct_answer": "The Liver; it helps in the digestion of fats",
+                "explanation": "Bile is stored in the gall bladder and is essential for the emulsification of fats in the small intestine.",
+                "source_section": "Digestion in Humans"
+            },
+            {
+                "question": "How does Amoeba capture and digest its food?",
+                "difficulty": "Medium",
+                "correct_answer": "Using pseudopodia to engulf food into a food vacuole",
+                "explanation": "Digestive juices are secreted into the food vacuole to break down the food particle.",
+                "source_section": "Feeding and Digestion in Amoeba"
+            },
+            {
+                "question": "Describe the mechanism of 'Exhalation' in humans.",
+                "difficulty": "Hard",
+                "correct_answer": "Ribs move downwards and inwards, and the diaphragm moves up to its original position",
+                "explanation": "This reduces the space in the chest cavity, increasing air pressure and forcing air out of the lungs.",
+                "source_section": "How do we Breathe?"
+            },
+            {
+                "question": "What is the difference between Ingestion and Egestion?",
+                "difficulty": "Easy",
+                "correct_answer": "Ingestion is taking food in; Egestion is removing undigested waste",
+                "explanation": "Ingestion happens through the mouth, while egestion occurs through the anus.",
+                "source_section": "Nutrition in Animals"
+            },
+            {
+                "question": "What happens to glucose in the absence of oxygen in yeast?",
+                "difficulty": "Hard",
+                "correct_answer": "It breaks down into Alcohol, Carbon dioxide, and Energy",
+                "explanation": "This process is known as fermentation and is used in the production of wine and beer.",
+                "source_section": "Respiration in Organisms"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Alimentary Canal",
+                "content": "The path food takes through the body: Buccal cavity → Oesophagus → Stomach → Small Intestine → Large Intestine → Anus.",
+                "source_section": "Digestion in Humans"
+            },
+            {
+                "title": "Cellular Respiration",
+                "content": "The process of breaking down food in the cell with the release of energy.",
+                "source_section": "Respiration"
+            },
+            {
+                "title": "Bicarbonate/Limewater Test",
+                "content": "Exhaled air turns limewater milky, confirming the presence of Carbon Dioxide.",
+                "source_section": "Respiration"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The Small Intestine is approximately 7.5 meters long, even though it is called 'small'.",
+                "source_section": "Digestion"
+            },
+            {
+                "fact": "Insects like cockroaches breathe through spiracles and a network of tracheae.",
+                "source_section": "Respiration"
+            },
+            {
+                "fact": "The stomach secretes Hydrochloric Acid (HCl) to kill germs and help enzymes work.",
+                "source_section": "Digestion"
+            }
+        ]
+    }
+}

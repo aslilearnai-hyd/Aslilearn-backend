@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 1: Fractions in Disguise (Percentages)",
+  "generated_at": "2026-03-05T11:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A number increases from 240 to 300. Find the percentage increase.",
+      "answer": "Increase = 60 → (60/240) × 100 = 25%.",
+      "key_concepts": ["percentage increase"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 2,
+      "question": "A number decreases from 500 to 425. Find the percentage decrease.",
+      "answer": "Decrease = 75 → (75/500) × 100 = 15%.",
+      "key_concepts": ["percentage decrease"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 3,
+      "question": "An article costing ₹800 is sold for ₹920. Find the profit percentage.",
+      "answer": "Profit = 120 → (120/800) × 100 = 15%.",
+      "key_concepts": ["profit percentage"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 4,
+      "question": "An article costing ₹1000 is sold for ₹850. Find the loss percentage.",
+      "answer": "Loss = 150 → (150/1000) × 100 = 15%.",
+      "key_concepts": ["loss percentage"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 5,
+      "question": "A shirt marked ₹1200 is sold with a 20% discount. Find the selling price.",
+      "answer": "Discount = 240 → Selling price = ₹960.",
+      "key_concepts": ["discount", "selling price"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Find 18% of 1250.",
+      "answer": "18/100 × 1250 = 225.",
+      "key_concepts": ["percentage of quantity"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Convert 11/16 into percentage.",
+      "answer": "11/16 × 100 = 68.75%.",
+      "key_concepts": ["fraction to percentage"],
+      "marks": 3,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Find 32% of 1250.",
+      "answer": "400.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Convert 2.75 into percentage.",
+      "answer": "2.75 × 100 = 275%.",
+      "key_concepts": ["decimal conversion"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 10,
+      "question": "A population increases from 8000 to 9200. Find the percentage increase.",
+      "answer": "Increase = 1200 → (1200/8000) × 100 = 15%.",
+      "key_concepts": ["percentage growth"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Find 22% of 1250.",
+      "answer": "275.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Convert 7/16 into percentage.",
+      "answer": "43.75%.",
+      "key_concepts": ["fraction conversion"],
+      "marks": 3,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Find 48% of 750.",
+      "answer": "360.",
+      "key_concepts": ["percentage calculation"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Find 12.5% of 640.",
+      "answer": "80.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Convert 13/20 into percentage.",
+      "answer": "65%.",
+      "key_concepts": ["fraction conversion"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Find 72% of 450.",
+      "answer": "324.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 17,
+      "question": "A price rises from ₹400 to ₹460. Find the percentage increase.",
+      "answer": "Increase = 60 → (60/400) × 100 = 15%.",
+      "key_concepts": ["percentage increase"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Convert 0.375 into percentage.",
+      "answer": "37.5%.",
+      "key_concepts": ["decimal to percentage"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Find 62.5% of 160.",
+      "answer": "100.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Convert 19/25 into percentage.",
+      "answer": "76%.",
+      "key_concepts": ["fraction to percentage"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Find 84% of 250.",
+      "answer": "210.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Convert 1.875 into percentage.",
+      "answer": "187.5%.",
+      "key_concepts": ["decimal conversion"],
+      "marks": 2,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Find 36% of 1250.",
+      "answer": "450.",
+      "key_concepts": ["percentage"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Find the percentage decrease if a number changes from 720 to 648.",
+      "answer": "Decrease = 72 → (72/720) × 100 = 10%.",
+      "key_concepts": ["percentage decrease"],
+      "marks": 3,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Convert 23/40 into percentage.",
+      "answer": "57.5%.",
+      "key_concepts": ["fraction conversion"],
+      "marks": 3,
+      "source_section": "Section 1.1"
+    }
+  ]
+}

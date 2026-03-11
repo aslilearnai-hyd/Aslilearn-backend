@@ -1,0 +1,43 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Euclid’s Geometry",
+    "difficulty": "Easy",
+    "source_pdf": "m9_5.pdf",
+    "short_notes": {
+        "key_points": [
+            "Geometry is the branch of mathematics that studies shapes, sizes and properties of space",
+            "The word geometry comes from Greek words 'geo' meaning earth and 'metrein' meaning measurement",
+            "Ancient civilizations used geometry for measuring land and constructing buildings",
+            "Euclid was a Greek mathematician known as the father of geometry",
+            "Euclid wrote a famous book called Elements which contains 13 books of geometry",
+            "Undefined terms in geometry include point, line and plane",
+            "Axioms are statements accepted as true without proof and used in mathematics",
+            "Postulates are assumptions accepted without proof and specific to geometry",
+            "Euclid proposed five postulates in geometry",
+            "Deductive reasoning is the process of deriving logical conclusions from known facts"
+        ],
+        "examples": [
+            "Point example: A dot marked on paper representing a location",
+            "Line example: A straight path extending infinitely in both directions",
+            "Plane example: A flat surface such as a tabletop",
+            "Axiom example: Things equal to the same thing are equal to one another",
+            "Postulate example: A straight line may be drawn joining any two points",
+            "Postulate example: A circle can be drawn with any centre and radius"
+        ],
+        "formulas": [
+            "Dimension of point → 0",
+            "Dimension of line → 1",
+            "Dimension of surface → 2",
+            "Dimension of solid → 3",
+            "Two distinct points determine exactly one straight line"
+        ],
+        "exam_tips": [
+            "Remember that point, line and plane are undefined terms in geometry",
+            "Axioms are universal truths while postulates apply specifically to geometry",
+            "Euclid’s Elements is one of the most important books in mathematics",
+            "Use diagrams to understand geometric concepts clearly",
+            "Revise Euclid’s postulates carefully for exam questions"
+        ]
+    }
+}

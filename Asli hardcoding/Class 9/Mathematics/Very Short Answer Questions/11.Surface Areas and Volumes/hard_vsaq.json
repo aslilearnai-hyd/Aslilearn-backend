@@ -1,0 +1,184 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T02:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A cube has surface area 600 cm². Find its volume.",
+            "answer": "SA = 6a² → a² = 600/6 = 100 → a = 10 cm; Volume = a³ = 10³ = 1000 cm³",
+            "key_points": ["cube", "surface area to volume", "formula"],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "A sphere has surface area 154 cm². Find its radius and volume.",
+            "answer": "SA = 4πr² → r² = 154/(4π) ≈ 12.25 → r ≈ 3.5 cm; Volume = (4/3)πr³ ≈ (4/3)π×42.875 ≈ 179.6 cm³",
+            "key_points": ["sphere", "surface area to volume", "formula"],
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The height of a cylinder is 10 cm and its curved surface area is 220 cm². Find its radius.",
+            "answer": "CSA = 2πrh → r = CSA/(2πh) = 220/(2π×10) = 220/62.832 ≈ 3.5 cm",
+            "key_points": ["cylinder", "CSA to radius", "formula"],
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A cone has slant height 13 cm and radius 5 cm. Find its curved surface area and total surface area.",
+            "answer": "CSA = πrl = π×5×13 = 65π ≈ 204.2 cm², TSA = πr(l+r) = π×5(13+5) = 90π ≈ 282.7 cm²",
+            "key_points": ["cone", "CSA", "TSA", "formula"],
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 5,
+            "question": "A cylinder and a cone have the same base radius 7 cm and same height 24 cm. Find the ratio of their volumes.",
+            "answer": "Volume of cylinder = πr²h = π×49×24 = 1176π, Volume of cone = (1/3)πr²h = 392π; Ratio = 1176π:392π = 3:1",
+            "key_points": ["cylinder vs cone", "volume ratio", "formula"],
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 6,
+            "question": "A sphere has radius 14 cm. A hemisphere is cut out of it. Find the remaining surface area.",
+            "answer": "Surface area of sphere = 4πr² = 4π×14² = 784π; Hemisphere removed exposes flat circle area = πr² = 196π; Remaining TSA = 784π - 196π + 196π = 784π ≈ 2462.4 cm²",
+            "key_points": ["sphere", "hemisphere removed", "surface area calculation"],
+            "source_section": "Section 11.2, 11.5"
+        },
+        {
+            "question_number": 7,
+            "question": "A metallic sheet is used to make 10 identical spheres of radius 3 cm each. Find the total surface area of the sheet required.",
+            "answer": "Surface area of one sphere = 4πr² = 4π×9 = 36π; Total for 10 spheres = 10×36π = 360π ≈ 1130.97 cm²",
+            "key_points": ["sphere", "surface area", "multiple objects"],
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 8,
+            "question": "A cylindrical container has radius 14 cm and height 30 cm. Find its total surface area and volume.",
+            "answer": "CSA = 2πrh = 2π×14×30 = 840π, TSA = 2πr(h+r) = 2π×14×44 = 1232π, Volume = πr²h = π×196×30 = 5880π; CSA≈2637.1 cm², TSA≈3870.4 cm², Volume≈18458.5 cm³",
+            "key_points": ["cylinder", "TSA", "CSA", "volume calculation"],
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 9,
+            "question": "A cone has base radius 7 cm and volume 154 cm³. Find its height.",
+            "answer": "V = (1/3)πr²h → h = 3V/(πr²) = 3×154/(π×49) = 462/153.94 ≈ 3 cm",
+            "key_points": ["cone", "volume to height calculation", "formula"],
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 10,
+            "question": "A sphere is melted and recast into smaller spheres each of radius 2 cm. If the original sphere had radius 14 cm, find the number of smaller spheres.",
+            "answer": "Volume of original = 4/3π×14³ = 11494.7 cm³, Volume of smaller = 4/3π×2³ = 33.51 cm³, Number = 11494.7/33.51 ≈ 343 spheres",
+            "key_points": ["sphere", "volume division", "recasting"],
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 11,
+            "question": "A cube of side 12 cm is melted and recast into cuboids of dimensions 4 cm × 3 cm × 2 cm. Find the number of cuboids.",
+            "answer": "Volume of cube = 12³ = 1728 cm³, Volume of cuboid = 4×3×2 = 24 cm³, Number = 1728/24 = 72 cuboids",
+            "key_points": ["cube", "cuboid", "volume division"],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A cone and a cylinder have same base radius and height. Compare their surface areas.",
+            "answer": "CSA cone = πrl < CSA cylinder = 2πrh, TSA cone = πr(l+r), TSA cylinder = 2πr(h+r); Generally, CSA cone < CSA cylinder, TSA depends on slant height",
+            "key_points": ["cone vs cylinder", "surface area comparison"],
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the volume of a frustum of a cone with radii 7 cm, 3 cm and height 8 cm.",
+            "answer": "V = (1/3)πh(R² + Rr + r²) = (1/3)π×8(49 + 21 + 9) = (8/3)π×79 = 210.67π ≈ 661.9 cm³",
+            "key_points": ["frustum", "volume formula"],
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 14,
+            "question": "A solid cylinder of radius 7 cm and height 15 cm is melted to make cones of radius 7 cm and height 5 cm. Find number of cones.",
+            "answer": "Volume cylinder = πr²h = π×49×15 = 735π, Volume one cone = (1/3)πr²h = (1/3)π×49×5 = 81.667π, Number = 735/81.667 ≈ 9 cones",
+            "key_points": ["cylinder to cone", "volume division"],
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 15,
+            "question": "A sphere of radius 6 cm is cut into two equal hemispheres. Find the total surface area of both hemispheres.",
+            "answer": "CSA hemisphere = 2πr², TSA hemisphere = 3πr²; Total SA = 2×3π6² = 216π ≈ 678.6 cm²",
+            "key_points": ["sphere", "hemispheres", "surface area calculation"],
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 16,
+            "question": "A solid hemisphere of radius 14 cm is melted to make smaller spheres each of radius 7 cm. Find the number of spheres.",
+            "answer": "Volume hemisphere = (2/3)π14³ = 1146.67π, Volume smaller sphere = (4/3)π7³ = 1436.0π, Number = 11466/1436 ≈ 2 spheres",
+            "key_points": ["hemisphere", "sphere", "volume division"],
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 17,
+            "question": "A metallic sphere of radius 21 cm is melted to form cylindrical rods of radius 3 cm and height 7 cm. Find the number of rods.",
+            "answer": "Volume sphere = (4/3)π×9261 = 12348π, Volume rod = π×9×7 = 63π, Number = 12348/63 ≈ 196 rods",
+            "key_points": ["sphere to cylinder", "volume division"],
+            "source_section": "Section 11.2, 11.3"
+        },
+        {
+            "question_number": 18,
+            "question": "A cone has base radius 14 cm and volume 3080 cm³. Find its height.",
+            "answer": "V = (1/3)πr²h → h = 3V/(πr²) = 9240/(π×196) ≈ 15 cm",
+            "key_points": ["cone", "volume to height"],
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 19,
+            "question": "A sphere and a cube have the same volume. Find the ratio of their surface areas.",
+            "answer": "Let volume = V; Sphere radius r = (3V/4π)^(1/3), Surface area = 4πr²; Cube side a = V^(1/3), Surface area = 6a²; Ratio SA_sphere : SA_cube < 1, sphere has smaller surface area",
+            "key_points": ["sphere vs cube", "volume equality", "surface area ratio"],
+            "source_section": "Section 11.1, 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A cylinder of height 15 cm and radius 7 cm is melted to make cones of height 10 cm and same base radius. Find number of cones.",
+            "answer": "Volume cylinder = πr²h = π×49×15 = 735π, Volume cone = (1/3)πr²h = (1/3)π×49×10 = 163.33π, Number = 735/163.33 ≈ 4 cones",
+            "key_points": ["cylinder to cone", "volume division"],
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "A solid hemisphere of radius 21 cm is melted to form small spheres each of radius 7 cm. Find the number of spheres.",
+            "answer": "Volume hemisphere = (2/3)π21³ = 6174π, Volume smaller sphere = (4/3)π7³ = 1436π, Number = 6174/1436 ≈ 4 spheres",
+            "key_points": ["hemisphere to sphere", "volume division"],
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 22,
+            "question": "A cube has side 12 cm. A smaller cube of side 6 cm is cut from it. Find the remaining surface area.",
+            "answer": "Original SA = 6×12²=864 cm²; Small cube cut exposes 3 faces = 6×6=216 cm²; Remaining SA = 864-36 (overlap) + 216 = 1044 cm²",
+            "key_points": ["cube", "cutting smaller cube", "surface area calculation"],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "A cylinder has diameter 14 cm and height 20 cm. Find its volume and total surface area.",
+            "answer": "r=7 cm; Volume = πr²h = π×49×20=980π≈3078 cm³; TSA = 2πr(h+r) = 2π×7(20+7)=2π×7×27=378π≈1188 cm²",
+            "key_points": ["cylinder", "volume", "TSA"],
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 24,
+            "question": "A cone has base radius 10 cm and height 24 cm. Find its slant height, CSA and TSA.",
+            "answer": "l = √(r²+h²)=√(100+576)=√676=26 cm; CSA = πrl= π×10×26=260π≈816.8 cm²; TSA= πr(l+r)=π×10(26+10)=360π≈1130.97 cm²",
+            "key_points": ["cone", "slant height", "CSA", "TSA"],
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 25,
+            "question": "A sphere of radius 21 cm is melted to form cylinders of radius 7 cm and height 9 cm. Find the number of cylinders.",
+            "answer": "Volume sphere = 4/3π21³ = 12348π, Volume cylinder = π7²×9 = 441π, Number = 12348/441 ≈ 28 cylinders",
+            "key_points": ["sphere to cylinder", "volume division", "formula"],
+            "source_section": "Section 11.2, 11.3"
+        }
+    ]
+}

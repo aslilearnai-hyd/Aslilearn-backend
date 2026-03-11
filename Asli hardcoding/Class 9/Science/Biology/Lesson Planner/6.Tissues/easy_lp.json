@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Tissues",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of tissues in plants and animals",
+        "Identify types of plant tissues",
+        "Understand simple and complex permanent tissues",
+        "Learn about different animal tissues",
+        "Understand structure and functions of muscular and nervous tissues",
+        "Recognize the importance of tissues in living organisms"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Tissues",
+            "topics_covered": [
+                "Definition of tissue",
+                "Importance of tissues in multicellular organisms",
+                "Differences between plant and animal tissues"
+            ],
+            "teaching_strategy": [
+                "Question–answer discussion",
+                "Concept explanation using examples",
+                "Blackboard diagrams"
+            ],
+            "student_activities": [
+                "Define tissue in own words",
+                "Give examples of tissues in plants and animals"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Meristematic Tissue",
+            "topics_covered": [
+                "Definition of meristematic tissue",
+                "Characteristics of meristematic cells",
+                "Types: apical, lateral and intercalary meristem"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Example-based teaching"
+            ],
+            "student_activities": [
+                "Draw a diagram showing meristematic tissue locations",
+                "List characteristics of meristematic cells"
+            ],
+            "assessment": [
+                "Diagram checking",
+                "Short questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Permanent Tissues",
+            "topics_covered": [
+                "Definition of permanent tissue",
+                "Simple permanent tissues",
+                "Parenchyma, collenchyma and sclerenchyma"
+            ],
+            "teaching_strategy": [
+                "Comparison charts",
+                "Illustration using diagrams"
+            ],
+            "student_activities": [
+                "Prepare a comparison table of simple tissues",
+                "Identify functions of each tissue"
+            ],
+            "assessment": [
+                "Notebook activity check",
+                "True or False questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Complex Permanent Tissues",
+            "topics_covered": [
+                "Complex tissues in plants",
+                "Xylem and phloem",
+                "Functions of vascular tissues"
+            ],
+            "teaching_strategy": [
+                "Flow diagram explanation",
+                "Example discussion"
+            ],
+            "student_activities": [
+                "Draw and label xylem and phloem",
+                "Explain their functions"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Diagram evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Animal Tissues",
+            "topics_covered": [
+                "Types of animal tissues",
+                "Epithelial tissue",
+                "Connective tissue"
+            ],
+            "teaching_strategy": [
+                "Illustration with diagrams",
+                "Examples from human body"
+            ],
+            "student_activities": [
+                "List examples of connective tissues",
+                "Write functions of epithelial tissue"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Muscular and Nervous Tissues & Revision",
+            "topics_covered": [
+                "Types of muscular tissues",
+                "Structure of neuron",
+                "Functions of nervous tissue",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Revision discussion"
+            ],
+            "student_activities": [
+                "Draw and label a neuron",
+                "Compare types of muscles"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Science textbook",
+        "Charts showing plant and animal tissues",
+        "Microscope images or diagrams"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Diagram drawing",
+        "Class discussion"
+    ],
+    "teacher_tip": "Use clear diagrams of plant and animal tissues to help students visually understand the differences and functions of each tissue type."
+}

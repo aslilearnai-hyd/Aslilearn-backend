@@ -1,0 +1,35 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "Quadrilaterals",
+  "difficulty": "Easy",
+  "source_pdf": "ch-4_QUADRILATERALS.pdf",
+  "short_notes": {
+    "key_points": [
+      "A quadrilateral is a polygon with four sides, four vertices and four angles",
+      "The sum of interior angles of a quadrilateral is 360°",
+      "A parallelogram is a quadrilateral with opposite sides parallel",
+      "Opposite sides of a parallelogram are equal",
+      "Opposite angles of a parallelogram are equal",
+      "The diagonals of a parallelogram bisect each other"
+    ],
+    "examples": [
+      "Rectangle: A quadrilateral with four right angles",
+      "Square: A quadrilateral with all sides equal and all angles 90°",
+      "Rhombus: A quadrilateral with all sides equal",
+      "Trapezium: A quadrilateral with one pair of parallel sides"
+    ],
+    "formulas": [
+      "Sum of interior angles of quadrilateral = 360°",
+      "Adjacent angles in a parallelogram = 180°",
+      "Opposite sides of a parallelogram are equal",
+      "Diagonals of a parallelogram bisect each other"
+    ],
+    "exam_tips": [
+      "Always remember the angle sum property of quadrilaterals",
+      "Use parallelogram properties to solve geometry problems",
+      "Draw a neat diagram before solving problems",
+      "Identify the type of quadrilateral before applying properties"
+    ]
+  }
+}

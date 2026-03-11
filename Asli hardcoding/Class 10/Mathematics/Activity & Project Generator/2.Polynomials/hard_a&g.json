@@ -1,0 +1,150 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Hard",
+    "source_pdf": "jemh102.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Polynomial Models in Architecture",
+            "objective": "Study the use of polynomials in building designs",
+            "materials": [
+                "Project file",
+                "Internet"
+            ],
+            "steps": [
+                "Research curved structures",
+                "Identify polynomial expressions"
+            ],
+            "learning_outcome": "Applies polynomials to real structures",
+            "evaluation": "Application accuracy (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Graphical Analysis of Polynomial Roots",
+            "objective": "Analyse zeroes using graphs",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot polynomial graphs",
+                "Identify zeroes visually"
+            ],
+            "learning_outcome": "Graph–zero relationship",
+            "evaluation": "Correct analysis (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Polynomial Growth Study",
+            "objective": "Study growth patterns using polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Collect data",
+                "Fit polynomial model"
+            ],
+            "learning_outcome": "Mathematical modelling",
+            "evaluation": "Model relevance (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Division Algorithm Application",
+            "objective": "Apply polynomial division in problem solving",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Choose polynomials",
+                "Apply division algorithm"
+            ],
+            "learning_outcome": "Algorithm mastery",
+            "evaluation": "Correct procedure (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Polynomial vs Linear Comparison",
+            "objective": "Compare linear and higher degree behaviour",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Plot graphs",
+                "Compare growth"
+            ],
+            "learning_outcome": "Conceptual comparison",
+            "evaluation": "Explanation depth (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-Life Polynomial Case Study",
+            "objective": "Analyse a real-life polynomial situation",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Identify situation",
+                "Form polynomial"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Case accuracy (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Zero Behaviour Investigation",
+            "objective": "Investigate number of zeroes",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot multiple polynomials",
+                "Compare zeroes"
+            ],
+            "learning_outcome": "Graph interpretation",
+            "evaluation": "Observation clarity (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Polynomial in Economics",
+            "objective": "Study polynomial use in profit models",
+            "materials": [
+                "Internet"
+            ],
+            "steps": [
+                "Research examples",
+                "Summarise findings"
+            ],
+            "learning_outcome": "Interdisciplinary link",
+            "evaluation": "Research quality (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Historical Study of Polynomials",
+            "objective": "Explore historical development of polynomials",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Research mathematicians",
+                "Prepare report"
+            ],
+            "learning_outcome": "Historical awareness",
+            "evaluation": "Content depth (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Polynomial Design Project",
+            "objective": "Create a design using polynomial curves",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Design curve",
+                "Explain polynomial used"
+            ],
+            "learning_outcome": "Creativity and math integration",
+            "evaluation": "Design and explanation (20 marks)"
+        }
+    ]
+}

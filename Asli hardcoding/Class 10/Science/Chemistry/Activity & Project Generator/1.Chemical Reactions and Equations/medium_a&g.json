@@ -1,0 +1,199 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Chemical Reactions and Equations",
+    "difficulty": "Medium",
+    "source_pdf": "chemical_reactions_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Thermal Decomposition of Ferrous Sulphate",
+            "objective": "Observe the breakdown of a single reactant into multiple products using heat",
+            "materials": [
+                "Ferrous sulphate crystals (green)",
+                "Dry boiling tube",
+                "Burner",
+                "Test tube holder"
+            ],
+            "steps": [
+                "Note the initial green color of the ferrous sulphate crystals",
+                "Heat the crystals in a dry boiling tube over a flame",
+                "Observe the change in color of the residue",
+                "Carefully smell the gas evolved by wafting it toward your nose"
+            ],
+            "learning_outcome": "Identifies the characteristic smell of burning sulphur and the color change from green to reddish-brown ($Fe_2O_3$)",
+            "evaluation": "Correct chemical equation and identification of the three products formed (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Electrolysis of Water",
+            "objective": "Demonstrate decomposition of water using electrical energy",
+            "materials": [
+                "Plastic mug with two holes",
+                "Rubber stoppers",
+                "Carbon electrodes",
+                "6V Battery",
+                "Dilute sulphuric acid",
+                "Two test tubes"
+            ],
+            "steps": [
+                "Set up the electrodes in the mug and fill with water until electrodes are immersed",
+                "Add a few drops of acid to make water conducting",
+                "Invert two test tubes filled with water over the electrodes",
+                "Connect to the battery and compare the volume of gas collected in both tubes"
+            ],
+            "learning_outcome": "Understands that the volume of Hydrogen gas is double the volume of Oxygen gas ($H_2O \\rightarrow H_2 + O_2$)",
+            "evaluation": "Explanation of the 2:1 ratio of gases based on the molecular formula of water (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Silver Chloride Photo-Decomposition",
+            "objective": "Observe how light energy can cause a chemical reaction",
+            "materials": [
+                "Silver chloride powder",
+                "Watch glass",
+                "Sunlight"
+            ],
+            "steps": [
+                "Place about 2g of white silver chloride in a watch glass",
+                "Place the watch glass in sunlight for some time",
+                "Observe the color change from white to grey",
+                "Analyze why the change occurred"
+            ],
+            "learning_outcome": "Recognizes photolytic decomposition and its application in black and white photography",
+            "evaluation": "Accurate description of the decomposition of $AgCl$ into Silver metal and Chlorine gas (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Investigating Exothermic & Endothermic Reactions",
+            "objective": "Measure temperature changes to classify energy flow",
+            "materials": [
+                "Barium hydroxide",
+                "Ammonium chloride",
+                "Beaker",
+                "Glass rod",
+                "Thermometer"
+            ],
+            "steps": [
+                "Mix barium hydroxide and ammonium chloride in a beaker",
+                "Stir the mixture with a glass rod",
+                "Touch the bottom of the beaker and record the temperature",
+                "Compare this with the reaction between water and quicklime"
+            ],
+            "learning_outcome": "Differentiates between reactions that absorb energy (endothermic) and those that release it",
+            "evaluation": "Data table showing temperature drop/rise for both reactions (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Displacement Competition: Metal Strips",
+            "objective": "Compare the reactivity of different metals",
+            "materials": [
+                "Zinc, Iron, and Copper strips",
+                "Copper sulphate and Zinc sulphate solutions",
+                "Test tubes"
+            ],
+            "steps": [
+                "Place an iron nail in copper sulphate and a copper wire in ferrous sulphate",
+                "Place a zinc strip in copper sulphate",
+                "Observe which reactions show a color change or coating",
+                "Rank the metals (Zn, Fe, Cu) in order of reactivity"
+            ],
+            "learning_outcome": "Constructs a mini-reactivity series based on experimental evidence",
+            "evaluation": "Correct reasoning for why some reactions did not occur (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Redox Reaction: Heating Copper",
+            "objective": "Observe oxidation and reduction processes",
+            "materials": [
+                "China dish",
+                "Copper powder",
+                "Wire gauze",
+                "Burner",
+                "Hydrogen gas source (optional)"
+            ],
+            "steps": [
+                "Heat copper powder in a china dish until it turns black",
+                "Identify the black substance formed (Copper Oxide)",
+                "Pass Hydrogen gas over the heated black material",
+                "Observe if the original brown color returns"
+            ],
+            "learning_outcome": "Understands how oxygen gain (oxidation) and oxygen loss (reduction) occur",
+            "evaluation": "Identifying the oxidizing and reducing agents in the reaction (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Precipitation Hunt",
+            "objective": "Identify insoluble salts formed in double displacement",
+            "materials": [
+                "Sodium sulphate solution",
+                "Barium chloride solution",
+                "Test tubes"
+            ],
+            "steps": [
+                "Mix 3ml of sodium sulphate solution with 3ml of barium chloride solution",
+                "Observe the formation of a white insoluble substance",
+                "Write the ionic equation for the reaction",
+                "Filter the mixture to isolate the precipitate"
+            ],
+            "learning_outcome": "Defines a precipitation reaction and identifies the insoluble product",
+            "evaluation": "Correct identification of Barium Sulphate as the precipitate (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Science of Rust Prevention",
+            "objective": "Test the effectiveness of different anti-corrosion methods",
+            "materials": [
+                "4 Iron nails",
+                "Oil",
+                "Paint",
+                "Salt water",
+                "Tap water",
+                "4 test tubes"
+            ],
+            "steps": [
+                "Subject four nails to different conditions: (1) Dry air, (2) Salt water, (3) Oiled in water, (4) Painted in water",
+                "Observe over 3-5 days",
+                "Record the degree of rusting in each tube"
+            ],
+            "learning_outcome": "Evaluates how barrier protection prevents the oxidation of iron",
+            "evaluation": "Comparative report on the most and least effective prevention methods (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Equation Balancing: Conservation of Mass",
+            "objective": "Mathematically prove the law of conservation of mass",
+            "materials": [
+                "Periodic table",
+                "Calculator",
+                "Notebook"
+            ],
+            "steps": [
+                "Take the balanced equation: $CH_4 + 2O_2 \\rightarrow CO_2 + 2H_2O$",
+                "Calculate the total molecular mass of the reactants",
+                "Calculate the total molecular mass of the products",
+                "Compare the two values"
+            ],
+            "learning_outcome": "Verifies that total mass remains constant in a chemical reaction",
+            "evaluation": "Accuracy of mass calculations for both sides of the equation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Antioxidants vs. Rancidity",
+            "objective": "Observe the effect of air on fats and oils",
+            "materials": [
+                "Potato chips (fresh)",
+                "Two airtight jars",
+                "Oil"
+            ],
+            "steps": [
+                "Leave one set of chips in an open jar and another in a sealed jar with an oxygen absorber (or nitrogen flushed if possible)",
+                "Wait for 48 hours",
+                "Observe the change in smell and taste (rancidity)",
+                "Research common food antioxidants like BHA or BHT"
+            ],
+            "learning_outcome": "Understands how oxidation affects food quality and the role of antioxidants",
+            "evaluation": "Quality of the observation log and research on food preservatives (10 marks)"
+        }
+    ]
+}

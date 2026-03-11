@@ -1,0 +1,143 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Easy",
+    "source_pdf": "jemh106.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Triangle Types Chart",
+            "objective": "Identify types of triangles",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Draw triangles",
+                "Label types"
+            ],
+            "learning_outcome": "Triangle classification",
+            "evaluation": "Correctness (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Similar Shapes Hunt",
+            "objective": "Find similar objects",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List real-life similar shapes"
+            ],
+            "learning_outcome": "Similarity awareness",
+            "evaluation": "Examples (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Angle Match",
+            "objective": "Match equal angles",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw triangles",
+                "Mark equal angles"
+            ],
+            "learning_outcome": "Angle concept",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Scale Drawing",
+            "objective": "Draw similar triangles",
+            "materials": [
+                "Ruler"
+            ],
+            "steps": [
+                "Draw triangle",
+                "Scale it"
+            ],
+            "learning_outcome": "Scale factor idea",
+            "evaluation": "Proportion (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Congruent vs Similar",
+            "objective": "Differentiate concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct points (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Triangle Vocabulary",
+            "objective": "Learn terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Define key terms"
+            ],
+            "learning_outcome": "Terminology",
+            "evaluation": "Definitions (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Proportion Check",
+            "objective": "Check side ratios",
+            "materials": [
+                "Calculator"
+            ],
+            "steps": [
+                "Compare sides"
+            ],
+            "learning_outcome": "Ratio skill",
+            "evaluation": "Correct ratios (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Picture Similarity",
+            "objective": "Identify similarity in pictures",
+            "materials": [
+                "Magazine"
+            ],
+            "steps": [
+                "Paste similar images"
+            ],
+            "learning_outcome": "Visual learning",
+            "evaluation": "Justification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Triangle Quiz",
+            "objective": "Test basics",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Answer MCQs"
+            ],
+            "learning_outcome": "Recall",
+            "evaluation": "Score (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Mini Model",
+            "objective": "Create triangle model",
+            "materials": [
+                "Sticks",
+                "Glue"
+            ],
+            "steps": [
+                "Build triangles"
+            ],
+            "learning_outcome": "Hands-on learning",
+            "evaluation": "Model accuracy (10 marks)"
+        }
+    ]
+}

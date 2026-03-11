@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Iswaran the Storyteller",
+    "title": "Lesson Planner – Iswaran the Storyteller",
+    "author": "R.K. Laxman",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the plot of the story",
+        "Identify the main characters and their roles",
+        "Understand the importance of storytelling",
+        "Develop vocabulary from the lesson",
+        "Improve reading and comprehension skills",
+        "Relate the story to imagination and fear in real life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Story",
+            "topics_covered": [
+                "Introduction to R.K. Laxman",
+                "Background of the story",
+                "Overview of the lesson"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Story narration",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Discuss what storytelling means"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Characters and Setting",
+            "topics_covered": [
+                "Introduction to Mahendra",
+                "Character of Iswaran",
+                "Mahendra’s job and workplace setting"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character explanation"
+            ],
+            "student_activities": [
+                "List main characters",
+                "Write one sentence about Mahendra and Iswaran"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Iswaran’s Storytelling",
+            "topics_covered": [
+                "Iswaran’s storytelling ability",
+                "Description of everyday incidents",
+                "Influence of Tamil thrillers on his stories"
+            ],
+            "teaching_strategy": [
+                "Reading and explanation",
+                "Story analysis"
+            ],
+            "student_activities": [
+                "Identify how Iswaran creates suspense",
+                "Discuss examples from the story"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Elephant Story",
+            "topics_covered": [
+                "The incident of the mad elephant",
+                "Iswaran’s dramatic narration",
+                "Use of imagination in storytelling"
+            ],
+            "teaching_strategy": [
+                "Narration with explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Write a short summary of the elephant story",
+                "Discuss whether the story seems believable"
+            ],
+            "assessment": [
+                "Written exercise",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Ghost Story and Suspense",
+            "topics_covered": [
+                "Iswaran’s ghost story",
+                "Mahendra’s reaction",
+                "Suspense and fear in the story"
+            ],
+            "teaching_strategy": [
+                "Explanation of suspense",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Discuss how the ghost story affects Mahendra",
+                "Share opinions about ghosts and imagination"
+            ],
+            "assessment": [
+                "Oral responses",
+                "Short paragraph writing"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme, Vocabulary, and Revision",
+            "topics_covered": [
+                "Theme of imagination and fear",
+                "Important vocabulary words",
+                "Summary and revision of the lesson"
+            ],
+            "teaching_strategy": [
+                "Vocabulary explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings of new words",
+                "Write a short summary of the lesson"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Vocabulary flashcards"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to observe how storytelling techniques like suspense and exaggeration make narratives interesting and memorable."
+}

@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Finding the Common Ground (Symmetry)",
+    "difficulty": "Medium",
+    "source_pdf": "jemh112.pdf",
+    "short_notes": {
+        "key_points": [
+            "Rotational symmetry occurs when a figure fits onto itself during a rotation",
+            "The center of rotation is the fixed point around which the object turns",
+            "Order of rotational symmetry is the number of times it looks the same in $360^{\\circ}$",
+            "Angle of rotation is the minimum angle required to reach a symmetric position"
+        ],
+        "examples": [
+            "Order 2: Rectangle, Parallelogram, Letter 'S'",
+            "Order 3: Equilateral triangle, Ceiling fan with 3 blades ",
+            "Order 4: Square, Four-blade fan",
+            "Angle of $180^{\\circ}$: Half-turn symmetry"
+        ],
+        "formulas": [
+            "Angle of rotation $\\rightarrow \\frac{360^{\\circ}}{\\text{Order of Symmetry}}$",
+            "Order of symmetry for regular polygon $\\rightarrow n$ (number of sides)"
+        ],
+        "exam_tips": [
+            "Every object has rotational symmetry of order 1 ($360^{\\circ}$), so we only count if order $> 1$",
+            "To find the center of rotation, imagine pinning the shape at a point and spinning it",
+            "A parallelogram has rotational symmetry but NO line symmetry",
+            "Clockwise and anti-clockwise rotations result in the same order"
+        ]
+    }
+}

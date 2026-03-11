@@ -1,0 +1,34 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Easy",
+    "short_notes": {
+        "key_points": [
+            "A triangle is a polygon with three sides and three angles",
+            "Sum of interior angles of a triangle is 180°",
+            "Types of triangles based on sides: equilateral, isosceles, scalene",
+            "Types of triangles based on angles: acute, right, obtuse",
+            "Pythagoras theorem applies to right-angled triangles",
+            "Triangles are congruent if they satisfy SSS, SAS, ASA, RHS conditions"
+        ],
+        "examples": [
+            "Equilateral triangle: all sides equal, all angles 60°",
+            "Isosceles triangle: two sides equal, two angles equal",
+            "Scalene triangle: all sides and angles unequal",
+            "Right triangle with sides 3,4,5 satisfies Pythagoras theorem"
+        ],
+        "formulas": [
+            "Area = 1/2 × base × height",
+            "Area using Heron's formula = √[s(s-a)(s-b)(s-c)], s=(a+b+c)/2",
+            "Pythagoras theorem: (hypotenuse)² = (base)² + (height)²"
+        ],
+        "exam_tips": [
+            "Check for congruence conditions before proving triangles are equal",
+            "Use Pythagoras theorem for right triangles only",
+            "Always label sides and angles clearly in diagrams",
+            "Sum of angles in triangle is always 180°, useful for finding unknown angles",
+            "For Heron’s formula, remember semi-perimeter s = (a+b+c)/2"
+        ]
+    }
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: CONNECTING THE DOTS (BASICS OF GEOMETRY)",
+    "generated_at": "2026-03-06T00:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a 'Point' in geometry?",
+            "answer": "A point is a location in space that has no size (no length, width, or height).",
+            "key_concepts": ["point"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define a 'Line Segment'.",
+            "answer": "A line segment is a part of a line that has two fixed endpoints.",
+            "key_concepts": ["line segment"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How many lines can pass through a single point?",
+            "answer": "An infinite number of lines.",
+            "key_concepts": ["points and lines"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How many lines can pass through two distinct points?",
+            "answer": "Exactly one line.",
+            "key_concepts": ["points and lines"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a 'Ray'?",
+            "answer": "A ray is a part of a line that has one endpoint and extends infinitely in the other direction.",
+            "key_concepts": ["ray"],
+            "marks": 1,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are 'Intersecting Lines'?",
+            "answer": "Two lines that meet at exactly one point are called intersecting lines.",
+            "key_concepts": ["intersecting lines"],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Define 'Parallel Lines'.",
+            "answer": "Lines in a plane that never meet, no matter how far they are extended, are called parallel lines.",
+            "key_concepts": ["parallel lines"],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is an 'Angle'?",
+            "answer": "An angle is formed by two rays starting from a common initial point.",
+            "key_concepts": ["angle definition"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the common endpoint of an angle called?",
+            "answer": "The Vertex.",
+            "key_concepts": ["parts of an angle"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is an 'Acute Angle'?",
+            "answer": "An angle whose measure is less than 90°.",
+            "key_concepts": ["types of angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is an 'Obtuse Angle'?",
+            "answer": "An angle whose measure is greater than 90° but less than 180°.",
+            "key_concepts": ["types of angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Define a 'Right Angle'.",
+            "answer": "An angle whose measure is exactly 90°.",
+            "key_concepts": ["types of angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What are 'Collinear Points'?",
+            "answer": "Three or more points that lie on the same straight line.",
+            "key_concepts": ["collinear points"],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a 'Triangle'?",
+            "answer": "A closed figure made up of three line segments.",
+            "key_concepts": ["triangle definition"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "How many vertices does a triangle have?",
+            "answer": "Three vertices.",
+            "key_concepts": ["parts of a triangle"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is an 'Equilateral Triangle'?",
+            "answer": "A triangle in which all three sides are of equal length.",
+            "key_concepts": ["classification of triangles"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "What is an 'Isosceles Triangle'?",
+            "answer": "A triangle that has at least two equal sides.",
+            "key_concepts": ["classification of triangles"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a 'Scalene Triangle'?",
+            "answer": "A triangle in which all three sides have different lengths.",
+            "key_concepts": ["classification of triangles"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the sum of the angles in a triangle?",
+            "answer": "180°",
+            "key_concepts": ["angle sum property"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a 'Straight Angle'?",
+            "answer": "An angle whose measure is exactly 180°.",
+            "key_concepts": ["types of angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Define 'Concurrent Lines'.",
+            "answer": "Three or more lines that pass through the same point.",
+            "key_concepts": ["lines"],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the instrument used to measure an angle?",
+            "answer": "A Protractor.",
+            "key_concepts": ["measuring angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a 'Closed Curve'?",
+            "answer": "A curve that starts and ends at the same point.",
+            "key_concepts": ["curves"],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is a 'Polygon'?",
+            "answer": "A simple closed curve made up of only line segments.",
+            "key_concepts": ["polygons"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is a 'Reflex Angle'?",
+            "answer": "An angle which is greater than 180° and less than 360°.",
+            "key_concepts": ["types of angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        }
+    ]
+}

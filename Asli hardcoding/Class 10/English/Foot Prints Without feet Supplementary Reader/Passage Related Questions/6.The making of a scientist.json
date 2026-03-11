@@ -1,0 +1,119 @@
+{
+    "course_code": "JEF P106",
+    "chapter": "The Making of a Scientist",
+    "content_type": "Passage Based Questions",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully and answer the questions. Answers must be based only on the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Richard Ebright showed an interest in science from a very young age. As a child, he was curious about the natural world and spent much of his time observing insects. His early fascination with butterflies later developed into a serious scientific pursuit.",
+            "questions": [
+                "Who is mentioned in the passage?",
+                "What interested Richard Ebright during childhood?",
+                "Which natural activity did he spend time on?",
+                "Which insect is specifically mentioned?",
+                "How did his childhood interest develop later?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Richard Ebright’s mother played a crucial role in his development. She encouraged his curiosity and provided him with books and tools to explore science. Her constant support helped him grow intellectually.",
+            "questions": [
+                "Who supported Richard Ebright’s learning?",
+                "What role did his mother play?",
+                "What did she provide to encourage his learning?",
+                "How did her support help him?",
+                "Which quality of Ebright is highlighted here?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "One book that deeply influenced Ebright was ‘The Travels of Monarch X’. This book introduced him to real scientific research and inspired him to study butterfly migration seriously.",
+            "questions": [
+                "Which book is mentioned in the passage?",
+                "How did the book influence Ebright?",
+                "What scientific topic did it introduce?",
+                "What did the book inspire him to study?",
+                "What type of research is referred to?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Ebright participated in a science fair but did not win. His project was only a display and lacked experimentation. This failure made him realise the true nature of scientific work.",
+            "questions": [
+                "What event did Ebright participate in?",
+                "Did he win the event?",
+                "What was lacking in his project?",
+                "What did this failure teach him?",
+                "How is scientific work described here?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "After his failure, Ebright changed his approach to science. He began performing real experiments instead of preparing simple models. This shift marked an important turning point in his learning.",
+            "questions": [
+                "What happened after Ebright’s failure?",
+                "What change did he make in his approach?",
+                "What did he stop doing?",
+                "What did he begin doing instead?",
+                "Why is this change important?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "Ebright conducted experiments on monarch butterflies. He focused on their growth and development and made important observations that contributed to scientific knowledge.",
+            "questions": [
+                "Which insect did Ebright experiment on?",
+                "What was the focus of his experiments?",
+                "What did he study about the insect?",
+                "What did his observations contribute to?",
+                "What type of work is described here?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "Through careful observation, Ebright discovered that the gold spots on monarch pupae produce hormones. These hormones are necessary for the butterfly’s growth.",
+            "questions": [
+                "What discovery is mentioned in the passage?",
+                "Where are the gold spots found?",
+                "What do the gold spots produce?",
+                "Why are these hormones important?",
+                "Which stage of the butterfly is discussed?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Dr Frederick A. Urquhart guided Ebright by suggesting meaningful experiments. His guidance helped Ebright develop scientific thinking and discipline.",
+            "questions": [
+                "Who guided Richard Ebright?",
+                "What kind of help did he provide?",
+                "How did the guidance help Ebright?",
+                "Which skills did Ebright develop?",
+                "What role does guidance play here?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "The lesson shows that curiosity, perseverance, and hard work are essential qualities of a scientist. Ebright’s journey proves that success is achieved through continuous effort.",
+            "questions": [
+                "Which qualities are mentioned in the passage?",
+                "Who demonstrates these qualities?",
+                "What does Ebright’s journey prove?",
+                "How is success described here?",
+                "What is necessary to achieve success?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "‘The Making of a Scientist’ highlights inquiry-based learning. It shows that learning through experimentation is more effective than memorisation.",
+            "questions": [
+                "What type of learning is highlighted?",
+                "What method of learning is preferred?",
+                "What is considered less effective?",
+                "What does the lesson emphasise?",
+                "How is learning best achieved according to the passage?"
+            ]
+        }
+    ]
+}

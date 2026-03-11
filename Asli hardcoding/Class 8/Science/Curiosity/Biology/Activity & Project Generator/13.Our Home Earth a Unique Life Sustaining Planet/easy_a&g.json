@@ -1,0 +1,150 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "Our Home: Earth, a Unique Life Sustaining Planet",
+  "difficulty": "Easy",
+  "source_pdf": "Chapter 13 - Our Home Earth A Unique Life Sustaining Planet.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Features that Make Earth Special",
+      "objective": "Identify important features that make Earth suitable for life",
+      "materials": ["Notebook", "Pen", "Science textbook"],
+      "steps": [
+        "List features of Earth such as atmosphere, water, gravity, and sunlight",
+        "Discuss these features in groups",
+        "Explain how each feature supports life"
+      ],
+      "learning_outcome": "Students understand the factors that make Earth habitable",
+      "evaluation": "Correct listing and explanation of features (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Solar System Comparison Activity",
+      "objective": "Compare planets based on temperature, size, and atmosphere",
+      "materials": ["Chart paper", "Markers", "Textbook or internet resources"],
+      "steps": [
+        "Collect information about the eight planets",
+        "Record average temperature, size, and atmosphere",
+        "Prepare a comparison table",
+        "Present the findings in class"
+      ],
+      "learning_outcome": "Students understand why Earth is unique among planets",
+      "evaluation": "Accuracy of information and presentation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Habitable Zone Demonstration",
+      "objective": "Understand the concept of the habitable zone",
+      "materials": [
+        "Lamp (representing the Sun)",
+        "Three balls (representing planets)",
+        "Measuring tape"
+      ],
+      "steps": [
+        "Place the lamp at the center",
+        "Place one ball very close, one at medium distance, and one far away",
+        "Discuss temperature differences",
+        "Identify the 'Goldilocks zone'"
+      ],
+      "learning_outcome": "Students understand why Earth’s distance from the Sun is important",
+      "evaluation": "Explanation of the habitable zone (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Atmosphere Importance Experiment",
+      "objective": "Understand how the atmosphere protects Earth",
+      "materials": ["Glass jar", "Thermometer", "Plastic wrap"],
+      "steps": [
+        "Place the thermometer inside the jar",
+        "Cover the jar with plastic wrap",
+        "Place it in sunlight",
+        "Observe temperature changes"
+      ],
+      "learning_outcome": "Students learn about the greenhouse effect",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Magnetic Field Demonstration",
+      "objective": "Understand the role of Earth’s magnetic field",
+      "materials": ["Bar magnet", "Iron filings", "Paper"],
+      "steps": [
+        "Place the magnet under a sheet of paper",
+        "Sprinkle iron filings on top",
+        "Observe the pattern formed",
+        "Discuss how Earth's magnetic field protects the planet"
+      ],
+      "learning_outcome": "Students learn how magnetic fields work",
+      "evaluation": "Correct observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Water Cycle Model",
+      "objective": "Understand the role of water in sustaining life",
+      "materials": ["Plastic container", "Water", "Plastic sheet", "Sunlight"],
+      "steps": [
+        "Pour water into the container",
+        "Cover with plastic sheet",
+        "Place in sunlight",
+        "Observe condensation forming on the plastic"
+      ],
+      "learning_outcome": "Students understand evaporation and condensation",
+      "evaluation": "Observation notes (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Plant and Soil Relationship Activity",
+      "objective": "Understand how soil supports plant growth",
+      "materials": ["Soil", "Two pots", "Seeds", "Water"],
+      "steps": [
+        "Plant seeds in two pots",
+        "Add fertilizer to one pot only",
+        "Water both pots regularly",
+        "Observe growth differences"
+      ],
+      "learning_outcome": "Students understand the importance of nutrients in soil",
+      "evaluation": "Growth observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Food Chain Chart",
+      "objective": "Understand interaction between living organisms",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Draw a food chain with plants, herbivores, and carnivores",
+        "Explain energy transfer",
+        "Discuss the importance of balance in ecosystems"
+      ],
+      "learning_outcome": "Students understand ecological balance",
+      "evaluation": "Correct diagram and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Climate Change Awareness Activity",
+      "objective": "Understand causes and effects of climate change",
+      "materials": ["Chart paper", "Markers", "Reference materials"],
+      "steps": [
+        "List causes of climate change",
+        "Write its effects on Earth",
+        "Suggest solutions",
+        "Present the chart in class"
+      ],
+      "learning_outcome": "Students understand environmental issues",
+      "evaluation": "Quality of research and presentation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Earth Protection Pledge",
+      "objective": "Encourage environmental responsibility",
+      "materials": ["Paper", "Pen"],
+      "steps": [
+        "Write a pledge to protect Earth",
+        "Include actions like saving water and reducing pollution",
+        "Share the pledge with classmates"
+      ],
+      "learning_outcome": "Students develop environmental awareness",
+      "evaluation": "Participation and pledge content (10 marks)"
+    }
+  ]
+}

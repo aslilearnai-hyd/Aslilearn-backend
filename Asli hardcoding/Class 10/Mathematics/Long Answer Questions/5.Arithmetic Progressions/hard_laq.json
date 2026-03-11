@@ -1,0 +1,358 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 5: Arithmetic Progressions",
+    "generated_at": "2026-03-02T14:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Justify that arithmetic progressions represent linear growth.",
+            "answer": "Arithmetic progressions have a constant difference between terms, which corresponds to linear growth.",
+            "answer_outline": [
+                "Justification",
+                "Linear growth"
+            ],
+            "key_concepts": [
+                "linear growth"
+            ],
+            "marks": 5,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why arithmetic progressions cannot model exponential growth.",
+            "answer": "Exponential growth involves multiplication, while APs involve addition.",
+            "answer_outline": [
+                "Comparison",
+                "Reason"
+            ],
+            "key_concepts": [
+                "AP limitation"
+            ],
+            "marks": 5,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why nth term formula is essential in arithmetic progressions.",
+            "answer": "It allows direct computation of any term without listing previous terms.",
+            "answer_outline": [
+                "Importance",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "nth term"
+            ],
+            "marks": 5,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why arithmetic progressions are used in modelling uniform motion.",
+            "answer": "Uniform motion involves equal changes over equal intervals, matching AP structure.",
+            "answer_outline": [
+                "Uniform motion",
+                "Reason"
+            ],
+            "key_concepts": [
+                "motion"
+            ],
+            "marks": 5,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why arithmetic progressions are preferred in simple forecasting.",
+            "answer": "They provide straightforward predictions based on constant change.",
+            "answer_outline": [
+                "Forecasting",
+                "Reason"
+            ],
+            "key_concepts": [
+                "forecasting"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why arithmetic progressions are fundamental to series concepts.",
+            "answer": "They form the basis for arithmetic series and summation formulas.",
+            "answer_outline": [
+                "Series",
+                "Foundation"
+            ],
+            "key_concepts": [
+                "series"
+            ],
+            "marks": 5,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why common difference determines the entire arithmetic progression.",
+            "answer": "Once the first term and common difference are fixed, all terms are determined.",
+            "answer_outline": [
+                "Common difference",
+                "Determinism"
+            ],
+            "key_concepts": [
+                "common difference"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why arithmetic progressions are suitable for salary increment models.",
+            "answer": "Salary increments often increase by a fixed amount each year.",
+            "answer_outline": [
+                "Salary model",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "salary increments"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why negative arithmetic progressions represent depreciation.",
+            "answer": "Negative common difference models uniform decrease in value.",
+            "answer_outline": [
+                "Depreciation",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "depreciation"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why arithmetic progressions are used in cost estimation.",
+            "answer": "Costs increasing uniformly over time can be modelled using APs.",
+            "answer_outline": [
+                "Cost estimation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "cost estimation"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why arithmetic progressions help develop algebraic thinking.",
+            "answer": "They involve formulas, variables and pattern generalisation.",
+            "answer_outline": [
+                "Algebraic thinking",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "algebraic thinking"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why arithmetic progressions are ideal for modelling linear trends.",
+            "answer": "Linear trends involve constant change, matching AP structure.",
+            "answer_outline": [
+                "Linear trends",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "linear trends"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why arithmetic progressions are insufficient for compound interest.",
+            "answer": "Compound interest grows multiplicatively, not additively.",
+            "answer_outline": [
+                "Compound interest",
+                "Limitation"
+            ],
+            "key_concepts": [
+                "compound interest"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why arithmetic progressions are foundational in sequences and series.",
+            "answer": "They introduce systematic growth patterns essential for advanced series.",
+            "answer_outline": [
+                "Foundation",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "sequences and series"
+            ],
+            "marks": 4,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the role of arithmetic progressions in mathematical modelling.",
+            "answer": "They model situations involving uniform increase or decrease.",
+            "answer_outline": [
+                "Modelling",
+                "Role"
+            ],
+            "key_concepts": [
+                "modelling"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why arithmetic progressions are widely used in education.",
+            "answer": "They are simple yet powerful tools for understanding sequences.",
+            "answer_outline": [
+                "Education",
+                "Importance"
+            ],
+            "key_concepts": [
+                "education"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why arithmetic progressions improve logical reasoning skills.",
+            "answer": "They require identifying patterns and applying formulas logically.",
+            "answer_outline": [
+                "Logical reasoning",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "reasoning skills"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why arithmetic progressions remain relevant in modern mathematics.",
+            "answer": "They are used in modelling, forecasting and mathematical analysis.",
+            "answer_outline": [
+                "Relevance",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "relevance"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why arithmetic progressions are used in economics.",
+            "answer": "They model uniform growth or decline in economic quantities.",
+            "answer_outline": [
+                "Economics",
+                "Application"
+            ],
+            "key_concepts": [
+                "economics"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why arithmetic progressions are useful in planning schedules.",
+            "answer": "Uniform increments in time or effort form arithmetic progressions.",
+            "answer_outline": [
+                "Scheduling",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "scheduling"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the limitations of arithmetic progressions in real-life modelling.",
+            "answer": "They cannot accurately represent non-linear or exponential changes.",
+            "answer_outline": [
+                "Limitations",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "limitations"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why arithmetic progressions are preferred in simple trend analysis.",
+            "answer": "Because they are easy to interpret and apply.",
+            "answer_outline": [
+                "Trend analysis",
+                "Reason"
+            ],
+            "key_concepts": [
+                "trend analysis"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why arithmetic progressions help in systematic problem solving.",
+            "answer": "They provide structured formulas and clear patterns.",
+            "answer_outline": [
+                "Problem solving",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "systematic solving"
+            ],
+            "marks": 4,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why arithmetic progressions are essential before learning series.",
+            "answer": "Understanding APs is necessary before studying arithmetic series.",
+            "answer_outline": [
+                "Learning order",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "learning sequence"
+            ],
+            "marks": 4,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the overall importance of arithmetic progressions in mathematics.",
+            "answer": "Arithmetic progressions play a crucial role in sequences, series, modelling and real-life applications.",
+            "answer_outline": [
+                "Overall importance",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 5,
+            "source_section": "5.1"
+        }
+    ]
+}

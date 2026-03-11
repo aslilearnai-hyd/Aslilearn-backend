@@ -1,0 +1,174 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Linear Equations in Two Variables",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand linear equations in two variables",
+        "Identify coefficients and constants",
+        "Verify solutions using substitution",
+        "Find multiple solutions of equations",
+        "Understand graphical representation",
+        "Plot linear equations on graph",
+        "Interpret graphs of linear equations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Linear Equations",
+            "topics_covered": [
+                "Variables and algebraic expressions",
+                "Linear equations in one variable",
+                "Introduction to two-variable equations"
+            ],
+            "teaching_strategy": [
+                "Revision questioning",
+                "Concept explanation with examples"
+            ],
+            "student_activities": [
+                "Write examples of equations with two variables",
+                "Identify variables and constants"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "General Form of Linear Equations",
+            "topics_covered": [
+                "Standard form ax + by + c = 0",
+                "Coefficients of x and y",
+                "Constant term"
+            ],
+            "teaching_strategy": [
+                "Board explanation",
+                "Example solving"
+            ],
+            "student_activities": [
+                "Identify coefficients in given equations",
+                "Convert equations to standard form"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short written questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Solutions of Linear Equations",
+            "topics_covered": [
+                "Meaning of solution",
+                "Ordered pairs",
+                "Verification using substitution"
+            ],
+            "teaching_strategy": [
+                "Worked examples",
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Verify ordered pairs",
+                "Find solutions of equations"
+            ],
+            "assessment": [
+                "Class questioning",
+                "Board exercises"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Infinite Solutions",
+            "topics_covered": [
+                "Concept of infinitely many solutions",
+                "Creating solution tables"
+            ],
+            "teaching_strategy": [
+                "Table demonstration",
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Create solution tables",
+                "Find multiple solutions"
+            ],
+            "assessment": [
+                "Peer checking",
+                "Short written test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Graphing Linear Equations",
+            "topics_covered": [
+                "Plotting ordered pairs",
+                "Drawing straight line graphs"
+            ],
+            "teaching_strategy": [
+                "Graph demonstration",
+                "Visual explanation"
+            ],
+            "student_activities": [
+                "Plot points on graph paper",
+                "Draw line for equation"
+            ],
+            "assessment": [
+                "Graph activity evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Interpreting Graphs",
+            "topics_covered": [
+                "Relationship between equation and graph",
+                "Points representing solutions"
+            ],
+            "teaching_strategy": [
+                "Graph interpretation discussion",
+                "Example solving"
+            ],
+            "student_activities": [
+                "Identify solution points from graphs",
+                "Discuss graph patterns"
+            ],
+            "assessment": [
+                "Short problem solving"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "Revision of key concepts",
+                "Practice problems",
+                "Graph interpretation"
+            ],
+            "teaching_strategy": [
+                "Problem solving session",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Solve mixed exercises",
+                "Group discussion"
+            ],
+            "assessment": [
+                "Short class test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Markers or chalk",
+        "Graph paper",
+        "Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Graph activities",
+        "Short quizzes"
+    ],
+    "teacher_tip": "Encourage students to explore multiple ordered pairs to clearly see how linear equations form straight lines."
+}

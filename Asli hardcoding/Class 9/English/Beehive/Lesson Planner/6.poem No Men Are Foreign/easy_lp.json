@@ -1,0 +1,111 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "No Men Are Foreign",
+    "lesson_level": "Easy",
+    "total_periods": 4,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the main idea and theme of the poem",
+        "Identify the poet’s message about humanity and unity",
+        "Recognize basic poetic features such as rhyme and repetition",
+        "Develop reading comprehension and vocabulary skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Poem Reading",
+            "topics_covered": [
+                "Background of the poet and poem",
+                "Theme: Unity among human beings",
+                "Poet’s message of equality and peace"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud slowly",
+                "Explain the context and meaning of difficult words"
+            ],
+            "student_activities": [
+                "Listen carefully to the reading",
+                "Underline new words and meanings in notebook"
+            ],
+            "assessment": [
+                "Oral questioning on new words",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Understanding the Theme",
+            "topics_covered": [
+                "Meaning of 'No Men Are Foreign'",
+                "Human feelings, similarities, and shared experiences",
+                "War, peace, and brotherhood"
+            ],
+            "teaching_strategy": [
+                "Discuss the central idea in simple language",
+                "Give real-life examples of human unity"
+            ],
+            "student_activities": [
+                "Write the main theme in own words",
+                "Share examples of unity and friendship"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Oral participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Rhyme and Repetition",
+            "topics_covered": [
+                "Recognize rhyme in the poem",
+                "Understand repetition and its effect",
+                "Simple poetic devices"
+            ],
+            "teaching_strategy": [
+                "Point out rhyming words in each stanza",
+                "Explain how repetition emphasizes ideas"
+            ],
+            "student_activities": [
+                "Identify rhymes in each stanza",
+                "Copy repeated lines and explain meaning"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Moral of the Poem",
+            "topics_covered": [
+                "Lesson of universal brotherhood and peace",
+                "Relevance to everyday life"
+            ],
+            "teaching_strategy": [
+                "Teacher explains moral in simple terms",
+                "Students give examples from daily life"
+            ],
+            "student_activities": [
+                "Write one sentence about moral learned",
+                "Share personal example of helping or respecting others"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Flashcards for new words and meanings"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Focus on making students understand the poet’s message of equality and shared humanity in simple words, and relate it to their own experiences."
+}

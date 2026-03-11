@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 2: Wind",
+    "generated_at": "2026-03-08T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how the poet personifies the wind in the poem.",
+            "answer": "The poet gives the wind human-like qualities, addressing it directly and describing it as clever and powerful.",
+            "answer_outline": ["Personification", "Examples"],
+            "key_concepts": ["personification", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 2,
+            "question": "What message does the poet convey about strength and weakness?",
+            "answer": "The poet suggests that the wind destroys the weak, but it helps the strong to flourish, emphasizing resilience.",
+            "answer_outline": ["Theme", "Examples"],
+            "key_concepts": ["strength", "weakness", "resilience"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 3,
+            "question": "How does the poet describe the effect of the wind on human life?",
+            "answer": "The poet describes weak bodies, hearts, and lives being crushed, showing the destructive power of the wind.",
+            "answer_outline": ["Effect on humans", "Examples"],
+            "key_concepts": ["wind", "humans", "impact"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the metaphor 'The wind blows out weak fires. He makes strong fires roar.'",
+            "answer": "The wind represents challenges; it extinguishes weak efforts but strengthens and encourages strong ones.",
+            "answer_outline": ["Metaphor", "Explanation"],
+            "key_concepts": ["metaphor", "strength", "challenge"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 5,
+            "question": "Identify and explain the use of repetition in the poem.",
+            "answer": "Repetition of words like 'crumbling' emphasizes the destruction caused by the wind and reinforces its power.",
+            "answer_outline": ["Repetition", "Effect"],
+            "key_concepts": ["repetition", "emphasis", "wind"],
+            "marks": 4,
+            "source_section": "Middle stanzas"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the significance of building strong homes in the poem?",
+            "answer": "Building strong homes symbolizes preparation, resilience, and strengthening oneself against challenges.",
+            "answer_outline": ["Symbolism", "Meaning"],
+            "key_concepts": ["strength", "resilience", "symbolism"],
+            "marks": 4,
+            "source_section": "Middle stanza"
+        },
+        {
+            "question_number": 7,
+            "question": "Discuss the role of nature as depicted in the poem.",
+            "answer": "Nature, represented by the wind, is a powerful force that challenges life but also supports strength and growth.",
+            "answer_outline": ["Nature", "Role", "Examples"],
+            "key_concepts": ["nature", "wind", "force"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 8,
+            "question": "How does the poet create imagery of destruction?",
+            "answer": "Through vivid words like 'crumbling houses,' 'torn pages,' and 'crumbling hearts,' the poet paints a picture of devastation.",
+            "answer_outline": ["Imagery", "Examples"],
+            "key_concepts": ["imagery", "destruction", "wind"],
+            "marks": 4,
+            "source_section": "Middle stanzas"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the theme of cooperation with natural forces in the poem.",
+            "answer": "The poem suggests that if we strengthen ourselves, we can work with natural forces instead of being harmed by them.",
+            "answer_outline": ["Theme", "Examples"],
+            "key_concepts": ["cooperation", "strength", "wind"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 10,
+            "question": "How is contrast used in the poem?",
+            "answer": "The poet contrasts weak and strong, destruction and growth, showing the dual impact of the wind.",
+            "answer_outline": ["Contrast", "Examples"],
+            "key_concepts": ["contrast", "weak vs strong", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 11,
+            "question": "What literary devices does the poet use to describe the wind?",
+            "answer": "The poet uses personification, metaphor, repetition, imagery, and contrast to portray the wind’s power.",
+            "answer_outline": ["Literary devices", "Examples"],
+            "key_concepts": ["personification", "imagery", "metaphor"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is the wind considered both destructive and helpful?",
+            "answer": "It destroys the weak but strengthens the strong, symbolizing challenges that test resilience.",
+            "answer_outline": ["Dual nature", "Explanation"],
+            "key_concepts": ["wind", "strength", "challenge"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 13,
+            "question": "How does the poet inspire readers through the poem?",
+            "answer": "By showing that strength and preparation can turn challenges into opportunities, inspiring resilience.",
+            "answer_outline": ["Inspiration", "Examples"],
+            "key_concepts": ["resilience", "preparation", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the use of the word 'winnows' in the poem.",
+            "answer": "The wind 'winnows' weak things, separating them from the strong, showing its selective power.",
+            "answer_outline": ["Word meaning", "Effect"],
+            "key_concepts": ["winnows", "wind", "strength"],
+            "marks": 4,
+            "source_section": "Middle stanza"
+        },
+        {
+            "question_number": 15,
+            "question": "What does the poem teach about human preparation?",
+            "answer": "It teaches that mental, physical, and emotional strength protects against challenges.",
+            "answer_outline": ["Lesson", "Examples"],
+            "key_concepts": ["preparation", "strength", "resilience"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss the significance of torn books and scattered papers.",
+            "answer": "They symbolize disruption caused by uncontrollable forces in life and the fragility of weakness.",
+            "answer_outline": ["Symbolism", "Examples"],
+            "key_concepts": ["symbolism", "disruption", "wind"],
+            "marks": 4,
+            "source_section": "Early stanza"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the poem reflect the interaction between humans and nature?",
+            "answer": "It shows that humans must adapt and strengthen themselves to coexist with powerful natural forces.",
+            "answer_outline": ["Interaction", "Examples"],
+            "key_concepts": ["humans", "nature", "strength"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the emotional impact of the poem on the reader.",
+            "answer": "The poem creates awe, respect, and inspiration, showing the power of nature and human resilience.",
+            "answer_outline": ["Emotional impact", "Examples"],
+            "key_concepts": ["emotion", "wind", "resilience"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 19,
+            "question": "What lesson does the poem convey about facing challenges?",
+            "answer": "Challenges may destroy the weak but can empower those who are strong and prepared.",
+            "answer_outline": ["Lesson", "Examples"],
+            "key_concepts": ["challenge", "strength", "resilience"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 20,
+            "question": "How does the poem emphasize the inevitability of natural forces?",
+            "answer": "By showing that the wind acts regardless of human desires, the poet highlights its unstoppable nature.",
+            "answer_outline": ["Inevitability", "Examples"],
+            "key_concepts": ["nature", "inevitability", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the advice the poet gives to live in harmony with nature.",
+            "answer": "The poet advises building strength and resilience so that one can work with natural forces rather than being harmed by them.",
+            "answer_outline": ["Advice", "Examples"],
+            "key_concepts": ["advice", "strength", "nature"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the poem use contrast between fragility and strength?",
+            "answer": "Weak things crumble under the wind, but strong structures and hearts flourish, emphasizing preparation and resilience.",
+            "answer_outline": ["Contrast", "Examples"],
+            "key_concepts": ["fragility", "strength", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 23,
+            "question": "What role do the verbs in the poem play in conveying meaning?",
+            "answer": "Active verbs like 'throws', 'crushes', 'winnows', 'roar' create motion, intensity, and vivid imagery of the wind.",
+            "answer_outline": ["Verbs", "Effect"],
+            "key_concepts": ["verbs", "imagery", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 24,
+            "question": "How does the poet depict the wind as both a challenge and an ally?",
+            "answer": "The wind challenges the weak but assists the strong, showing dual aspects of nature that test and reward.",
+            "answer_outline": ["Dual role", "Examples"],
+            "key_concepts": ["wind", "challenge", "ally"],
+            "marks": 4,
+            "source_section": "Last stanza"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the poem in your own words.",
+            "answer": "The poem portrays the wind as a powerful force that destroys the weak and strengthens the strong, teaching resilience, preparation, and harmony with nature.",
+            "answer_outline": ["Summary", "Key points"],
+            "key_concepts": ["summary", "wind", "strength", "resilience"],
+            "marks": 5,
+            "source_section": "Whole Poem"
+        }
+    ]
+}

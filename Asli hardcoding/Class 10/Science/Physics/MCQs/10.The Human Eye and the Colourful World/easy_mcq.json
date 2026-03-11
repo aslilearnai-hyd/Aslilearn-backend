@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 10: The Human Eye and the Colourful World",
+  "generated_at": "2026-03-11T04:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which part of the eye controls the amount of light entering the eye?",
+      "options": {
+        "A": "Cornea",
+        "B": "Iris",
+        "C": "Retina",
+        "D": "Optic nerve"
+      },
+      "correct_answer": "B",
+      "explanation": "The iris adjusts the size of the pupil to control the amount of light entering the eye.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Where is the image formed in the human eye?",
+      "options": {
+        "A": "Cornea",
+        "B": "Lens",
+        "C": "Retina",
+        "D": "Iris"
+      },
+      "correct_answer": "C",
+      "explanation": "The eye lens focuses light on the retina where the image is formed.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the least distance of distinct vision for a normal human eye?",
+      "options": {
+        "A": "20 cm",
+        "B": "25 cm",
+        "C": "30 cm",
+        "D": "35 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "The least distance of distinct vision for a normal eye is about 25 cm.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the persistence of vision?",
+      "options": {
+        "A": "Eye's ability to see distant objects",
+        "B": "Retention of image on retina for a short time",
+        "C": "Ability to see colors",
+        "D": "Ability to focus light"
+      },
+      "correct_answer": "B",
+      "explanation": "The eye retains the image for about 1/16 second after the object is removed.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which phenomenon causes the blue color of the sky?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Scattering of light",
+        "D": "Dispersion"
+      },
+      "correct_answer": "C",
+      "explanation": "Blue light is scattered more than other colors due to its shorter wavelength.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Why does the sun appear red at sunrise and sunset?",
+      "options": {
+        "A": "Reflection of light",
+        "B": "Dispersion of light",
+        "C": "Longer path of light in atmosphere",
+        "D": "Refraction in water"
+      },
+      "correct_answer": "C",
+      "explanation": "Shorter wavelengths are scattered away, leaving red light to reach our eyes.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What type of lens is present in the human eye?",
+      "options": {
+        "A": "Concave lens",
+        "B": "Convex lens",
+        "C": "Plane lens",
+        "D": "Cylindrical lens"
+      },
+      "correct_answer": "B",
+      "explanation": "The eye lens is a convex lens that converges light rays onto the retina.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which cells in the retina are responsible for color vision?",
+      "options": {
+        "A": "Rod cells",
+        "B": "Cone cells",
+        "C": "Nerve cells",
+        "D": "Muscle cells"
+      },
+      "correct_answer": "B",
+      "explanation": "Cone cells detect colors and work best in bright light.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which phenomenon makes the path of light visible in dusty air?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Tyndall effect",
+        "D": "Dispersion"
+      },
+      "correct_answer": "C",
+      "explanation": "The Tyndall effect occurs when light is scattered by small particles.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which part of the eye forms a transparent protective layer?",
+      "options": {
+        "A": "Cornea",
+        "B": "Retina",
+        "C": "Iris",
+        "D": "Optic nerve"
+      },
+      "correct_answer": "A",
+      "explanation": "The cornea protects the eye and helps in focusing light.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which structure connects the eye to the brain?",
+      "options": {
+        "A": "Retina",
+        "B": "Cornea",
+        "C": "Optic nerve",
+        "D": "Iris"
+      },
+      "correct_answer": "C",
+      "explanation": "The optic nerve carries visual information from the retina to the brain.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What causes scattering of light in the atmosphere?",
+      "options": {
+        "A": "Dust and air molecules",
+        "B": "Clouds only",
+        "C": "Water only",
+        "D": "Sunlight alone"
+      },
+      "correct_answer": "A",
+      "explanation": "Small particles and molecules in the atmosphere scatter light.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which color has the shortest wavelength in visible light?",
+      "options": {
+        "A": "Red",
+        "B": "Green",
+        "C": "Blue",
+        "D": "Yellow"
+      },
+      "correct_answer": "C",
+      "explanation": "Blue light has a shorter wavelength and is scattered more strongly.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which color has the longest wavelength in visible light?",
+      "options": {
+        "A": "Blue",
+        "B": "Green",
+        "C": "Yellow",
+        "D": "Red"
+      },
+      "correct_answer": "D",
+      "explanation": "Red light has the longest wavelength among visible colors.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which muscle controls the shape of the eye lens?",
+      "options": {
+        "A": "Ciliary muscles",
+        "B": "Optic muscles",
+        "C": "Retinal muscles",
+        "D": "Iris muscles"
+      },
+      "correct_answer": "A",
+      "explanation": "Ciliary muscles change the curvature of the lens to focus images.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 16,
+      "question": "What happens when light enters the eye?",
+      "options": {
+        "A": "It is absorbed immediately",
+        "B": "It forms an image on the retina",
+        "C": "It stops in the iris",
+        "D": "It reflects out"
+      },
+      "correct_answer": "B",
+      "explanation": "The eye lens focuses incoming light onto the retina to form an image.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which device works on the principle of persistence of vision?",
+      "options": {
+        "A": "Microscope",
+        "B": "Movie projector",
+        "C": "Thermometer",
+        "D": "Barometer"
+      },
+      "correct_answer": "B",
+      "explanation": "Movies appear continuous because the eye retains images briefly.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Why does the sky appear blue instead of violet?",
+      "options": {
+        "A": "Violet light is absorbed by the atmosphere",
+        "B": "Our eyes are more sensitive to blue",
+        "C": "Blue light travels faster",
+        "D": "Blue light reflects from clouds"
+      },
+      "correct_answer": "B",
+      "explanation": "Although violet light scatters more, our eyes are more sensitive to blue.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the function of the pupil?",
+      "options": {
+        "A": "To form images",
+        "B": "To allow light to enter the eye",
+        "C": "To send signals to brain",
+        "D": "To produce tears"
+      },
+      "correct_answer": "B",
+      "explanation": "The pupil is the opening that allows light to enter the eye.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which condition causes difficulty in seeing distant objects?",
+      "options": {
+        "A": "Hypermetropia",
+        "B": "Myopia",
+        "C": "Astigmatism",
+        "D": "Cataract"
+      },
+      "correct_answer": "B",
+      "explanation": "Myopia (short-sightedness) causes distant objects to appear blurred.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which condition causes difficulty in seeing nearby objects?",
+      "options": {
+        "A": "Myopia",
+        "B": "Hypermetropia",
+        "C": "Color blindness",
+        "D": "Night blindness"
+      },
+      "correct_answer": "B",
+      "explanation": "Hypermetropia (long-sightedness) makes it difficult to see nearby objects clearly.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which lens is used to correct myopia?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Cylindrical lens",
+        "D": "Bifocal lens"
+      },
+      "correct_answer": "B",
+      "explanation": "A concave lens diverges light rays to help focus images on the retina.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which lens is used to correct hypermetropia?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane lens",
+        "D": "Cylindrical lens"
+      },
+      "correct_answer": "A",
+      "explanation": "A convex lens converges light rays to focus images on the retina.",
+      "difficulty": "easy",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which atmospheric phenomenon is responsible for the Tyndall effect?",
+      "options": {
+        "A": "Scattering of light",
+        "B": "Reflection",
+        "C": "Refraction",
+        "D": "Dispersion"
+      },
+      "correct_answer": "A",
+      "explanation": "The Tyndall effect occurs due to scattering of light by small particles.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 25,
+      "question": "What mainly causes the scattering of light in the sky?",
+      "options": {
+        "A": "Large rocks",
+        "B": "Air molecules and tiny particles",
+        "C": "Buildings",
+        "D": "Mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "Air molecules and small particles scatter sunlight in the atmosphere.",
+      "difficulty": "easy",
+      "source_section": "Section 10.2"
+    }
+  ]
+}

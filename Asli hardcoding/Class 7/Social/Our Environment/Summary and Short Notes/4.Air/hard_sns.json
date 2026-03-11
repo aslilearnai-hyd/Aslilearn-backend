@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Air",
+    "difficulty": "Hard",
+    "source_pdf": "jegy104.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Atmosphere's thermal structure is defined by lapse rates; in the Troposphere, temperature decreases with altitude, while in the Stratosphere, it increases due to UV absorption by Ozone.",
+            "Insolation (Incoming Solar Radiation) is the solar energy intercepted by the earth; it decreases from the equator towards the poles, influencing global temperature belts.",
+            "Air pressure is highest at sea level and decreases with height; horizontally, the movement of air is governed by the pressure gradient and the Coriolis effect (implied in wind patterns).",
+            "The Thermosphere contains the Ionosphere (80-400 km), where electrically charged particles reflect low-frequency radio waves back to Earth.",
+            "Cyclonic circulation involves a low-pressure center surrounded by high-pressure winds; moisture condensation in this system releases latent heat, fueling the storm's intensity."
+        ],
+        "examples": [
+            "Tropical Cyclones: The Odisha cyclone (October 1999) caused by high-velocity winds, tidal surges, and heavy rain, demonstrating atmospheric instability.",
+            "Global Wind Belts: The constant blowing of Trade Winds towards the Equator due to the subtropical high-pressure belt and equatorial low-pressure belt (Doldrums).",
+            "Orographic Rainfall: Clouds being forced to rise over a mountain range (e.g., Western Ghats), cooling and precipitating on the windward side.",
+            "Exosphere Composition: The uppermost layer where the air is extremely thin and light gases like Helium ($He$) and Hydrogen ($H_2$) float into space."
+        ],
+        "formulas": [
+            "Atmospheric Heating: $CO_2 + \\text{Terrestrial Radiation} \\rightarrow \\text{Greenhouse Effect} (Global \\ Warming)$",
+            "Relative Humidity: $\\text{Actual Water Vapor Content} / \\text{Max Capacity at that Temp} \\times 100\\%$",
+            "Wind Velocity: $V \\propto \\Delta P$ (Velocity is proportional to the pressure difference)"
+        ],
+        "exam_tips": [
+            "Analyze why the temperature in the Thermosphere rises so rapidly—it is due to the direct absorption of high-energy solar radiation.",
+            "Distinguish between 'Weather' (atmospheric state over short intervals) and 'Climate' (the statistical average over 30+ years).",
+            "Understand the concept of 'Condensation Nuclei': Water vapor needs dust or smoke particles to condense into droplets and form clouds.",
+            "Observe the relationship: Hot air is light and creates low pressure, while cold air is dense and creates high pressure."
+        ]
+    }
+}

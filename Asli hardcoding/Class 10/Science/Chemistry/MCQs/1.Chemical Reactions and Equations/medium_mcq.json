@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Chemical Reactions and Equations",
+  "generated_at": "2026-03-10T23:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is a balanced chemical equation for the reaction of iron with steam?",
+      "options": {
+        "A": "$Fe + H_2O \\rightarrow FeO + H_2$",
+        "B": "$3Fe + 4H_2O \\rightarrow Fe_3O_4 + 4H_2$",
+        "C": "$2Fe + 3H_2O \\rightarrow Fe_2O_3 + 3H_2$",
+        "D": "$Fe + 2H_2O \\rightarrow FeO_2 + 2H_2$"
+      },
+      "correct_answer": "B",
+      "explanation": "Iron reacts with steam to form magnetic iron oxide ($Fe_3O_4$) and hydrogen gas. Option B is correctly balanced with equal atoms on both sides.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "In the reaction: $MnO_2 + 4HCl \\rightarrow MnCl_2 + 2H_2O + Cl_2$, the oxidizing agent is:",
+      "options": {
+        "A": "$HCl$",
+        "B": "$MnO_2$",
+        "C": "$MnCl_2$",
+        "D": "$Cl_2$"
+      },
+      "correct_answer": "B",
+      "explanation": "$MnO_2$ is the oxidizing agent because it gives up oxygen (is reduced) and causes the oxidation of $HCl$ to $Cl_2$.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 3,
+      "question": "When lead nitrate powder is heated in a boiling tube, we observe:",
+      "options": {
+        "A": "The emission of oxygen gas only",
+        "B": "A brown residue of lead oxide",
+        "C": "Brown fumes of Nitrogen dioxide and a yellow residue",
+        "D": "A white precipitate of lead chloride"
+      },
+      "correct_answer": "C",
+      "explanation": "Thermal decomposition of lead nitrate produces yellow Lead Oxide, brown Nitrogen Dioxide fumes, and Oxygen gas.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following are exothermic processes?\n(i) Reaction of water with quick lime\n(ii) Dilution of an acid\n(iii) Evaporation of water\n(iv) Sublimation of camphor (crystals)",
+      "options": {
+        "A": "(i) and (ii)",
+        "B": "(ii) and (iii)",
+        "C": "(i) and (iv)",
+        "D": "(iii) and (iv)"
+      },
+      "correct_answer": "A",
+      "explanation": "The reaction of lime with water and the dilution of acid release significant heat, while evaporation and sublimation are endothermic.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Barium chloride on reacting with ammonium sulphate forms barium sulphate and ammonium chloride. Which of the following correctly represents the type of reaction involved?\n(i) Displacement reaction\n(ii) Precipitation reaction\n(iii) Combination reaction\n(iv) Double displacement reaction",
+      "options": {
+        "A": "(i) only",
+        "B": "(ii) only",
+        "C": "(iv) only",
+        "D": "(ii) and (iv)"
+      },
+      "correct_answer": "D",
+      "explanation": "This is a double displacement reaction where ions exchange, and it is also a precipitation reaction because white $BaSO_4$ is formed.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Electrolysis of water is a decomposition reaction. The mole ratio of hydrogen and oxygen gases liberated during electrolysis of water is:",
+      "options": {
+        "A": "1:1",
+        "B": "2:1",
+        "C": "4:1",
+        "D": "1:2"
+      },
+      "correct_answer": "B",
+      "explanation": "Water ($H_2O$) contains two parts hydrogen for every one part oxygen by volume, hence the 2:1 ratio.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is used in black and white photography?",
+      "options": {
+        "A": "Silver Bromide",
+        "B": "Calcium Carbonate",
+        "C": "Silver Nitrate",
+        "D": "Potassium Chloride"
+      },
+      "correct_answer": "A",
+      "explanation": "Silver bromide ($AgBr$) decomposes in the presence of light, a property utilized in black and white photography.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "The condition produced by aerial oxidation of fats and oils in foods marked by unpleasant smell and taste is called:",
+      "options": {
+        "A": "Antioxidation",
+        "B": "Reduction",
+        "C": "Rancidity",
+        "D": "Corrosion"
+      },
+      "correct_answer": "C",
+      "explanation": "Oxidation of fats leads to rancidity, which ruins the sensory profile of the food.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens when dilute hydrochloric acid is added to iron filings?",
+      "options": {
+        "A": "Hydrogen gas and iron chloride are produced",
+        "B": "Chlorine gas and iron hydroxide are produced",
+        "C": "No reaction takes place",
+        "D": "Iron salt and water are produced"
+      },
+      "correct_answer": "A",
+      "explanation": "Iron is more reactive than hydrogen, so it displaces hydrogen from $HCl$ to form $FeCl_2$ and $H_2$ gas.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "A substance 'X' is used in white washing. It is obtained by heating limestone in the absence of air. Identify 'X':",
+      "options": {
+        "A": "$CaO$",
+        "B": "$Ca(OH)_2$",
+        "C": "$CaCO_3$",
+        "D": "$CaSO_4$"
+      },
+      "correct_answer": "A",
+      "explanation": "Heating limestone ($CaCO_3$) produces Calcium Oxide ($CaO$), which is 'X' (Quick Lime).",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following gas(es) can be used for storage of fresh sample of an oil for a long time?",
+      "options": {
+        "A": "Carbon dioxide or oxygen",
+        "B": "Nitrogen or oxygen",
+        "C": "Carbon dioxide or helium",
+        "D": "Helium or nitrogen"
+      },
+      "correct_answer": "D",
+      "explanation": "Inert gases like Helium or Nitrogen prevent the oxidation of oils, keeping them fresh.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3.2"
+    },
+    {
+      "question_number": 12,
+      "question": "The following reaction is used for the preparation of oxygen gas in the laboratory:\n$2KClO_3(s) \\xrightarrow[Catalyst]{Heat} 2KCl(s) + 3O_2(g)$\nWhich of the following statements is correct about the reaction?",
+      "options": {
+        "A": "It is a decomposition reaction and endothermic in nature",
+        "B": "It is a combination reaction",
+        "C": "It is a decomposition reaction accompanied by release of heat",
+        "D": "It is a photochemical decomposition"
+      },
+      "correct_answer": "A",
+      "explanation": "The reactant breaks down into two products (decomposition) and requires heat to proceed (endothermic).",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Chemically, rust is:",
+      "options": {
+        "A": "Hydrated ferrous oxide",
+        "B": "Only ferric oxide",
+        "C": "Hydrated ferric oxide",
+        "D": "None of these"
+      },
+      "correct_answer": "C",
+      "explanation": "Rust is chemically known as hydrated ferric oxide ($Fe_2O_3 \\cdot xH_2O$).",
+      "difficulty": "medium",
+      "source_section": "Section 1.3.1"
+    },
+    {
+      "question_number": 14,
+      "question": "In a double displacement reaction such as the reaction between sodium sulphate solution and barium chloride solution:",
+      "options": {
+        "A": "Exchange of atoms takes place",
+        "B": "Exchange of ions takes place",
+        "C": "A precipitate is not produced",
+        "D": "An insoluble salt is not produced"
+      },
+      "correct_answer": "B",
+      "explanation": "Double displacement reactions involve the mutual exchange of ions between two compounds.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 15,
+      "question": "The brown gas evolved on heating ferrous sulphate crystals is due to:",
+      "options": {
+        "A": "$SO_2$",
+        "B": "$SO_3$",
+        "C": "$NO_2$",
+        "D": "$SO_2$ and $SO_3$"
+      },
+      "correct_answer": "D",
+      "explanation": "Ferrous sulphate crystals decompose into ferric oxide, $SO_2$, and $SO_3$. Note: Unlike lead nitrate, this produces pungent smelling sulfur gases.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "When $SO_2$ gas is passed through acidified $K_2Cr_2O_7$ solution, the color of the solution changes from:",
+      "options": {
+        "A": "Orange to green",
+        "B": "Green to orange",
+        "C": "Colorless to pink",
+        "D": "Pink to colorless"
+      },
+      "correct_answer": "A",
+      "explanation": "This is a redox reaction where the orange dichromate ion is reduced to green chromium ion.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is not a physical change?",
+      "options": {
+        "A": "Boiling of water to give water vapour",
+        "B": "Melting of ice to give water",
+        "C": "Dissolution of salt in water",
+        "D": "Combustion of Liquefied Petroleum Gas (LPG)"
+      },
+      "correct_answer": "D",
+      "explanation": "Combustion of LPG is a chemical change because it produces new substances ($CO_2$ and $H_2O$) and heat.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 18,
+      "question": "A balanced chemical equation is in accordance with:",
+      "options": {
+        "A": "Avogadro's Law",
+        "B": "Law of multiple proportion",
+        "C": "Law of conservation of mass",
+        "D": "Law of gaseous volumes"
+      },
+      "correct_answer": "C",
+      "explanation": "Total mass of reactants must equal the total mass of products, requiring a balanced number of atoms.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 19,
+      "question": "The oxidation of food in our body is known as:",
+      "options": {
+        "A": "Digestion",
+        "B": "Respiration",
+        "C": "Excretion",
+        "D": "Photosynthesis"
+      },
+      "correct_answer": "B",
+      "explanation": "Respiration is the biochemical process where glucose is oxidized to provide energy.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a redox reaction?",
+      "options": {
+        "A": "$CaCO_3 \\rightarrow CaO + CO_2$",
+        "B": "$H_2 + Cl_2 \\rightarrow 2HCl$",
+        "C": "$NaOH + HCl \\rightarrow NaCl + H_2O$",
+        "D": "$BaCl_2 + H_2SO_4 \\rightarrow BaSO_4 + 2HCl$"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydrogen is oxidized (gain of $Cl$) and Chlorine is reduced (gain of $H$).",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the physical state of $Fe$ and $H_2O$ in the following reaction?\n$3Fe + 4H_2O \\rightarrow Fe_3O_4 + 4H_2$",
+      "options": {
+        "A": "$Fe(s), H_2O(l)$",
+        "B": "$Fe(g), H_2O(l)$",
+        "C": "$Fe(g), H_2O(g)$",
+        "D": "$Fe(s), H_2O(g)$"
+      },
+      "correct_answer": "D",
+      "explanation": "Iron is solid and it reacts with steam (gaseous water) to form the oxide.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "The reaction between lead and copper chloride solution is a:",
+      "options": {
+        "A": "Combination reaction",
+        "B": "Double displacement reaction",
+        "C": "Displacement reaction",
+        "D": "Decomposition reaction"
+      },
+      "correct_answer": "C",
+      "explanation": "Lead ($Pb$) is more reactive than copper ($Cu$), so it displaces copper from its salt solution.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following statements about the given reaction are correct?\n$3Fe(s) + 4H_2O(g) \\rightarrow Fe_3O_4(s) + 4H_2(g)$\n(i) Iron metal is being oxidized\n(ii) Water is being reduced\n(iii) Water is acting as reducing agent\n(iv) Water is acting as oxidizing agent",
+      "options": {
+        "A": "(i), (ii) and (iii)",
+        "B": "(iii) and (iv)",
+        "C": "(i), (ii) and (iv)",
+        "D": "(ii) and (iv)"
+      },
+      "correct_answer": "C",
+      "explanation": "Iron gains oxygen (oxidized). Water loses oxygen (reduced) and therefore acts as the oxidizing agent.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is it recommended to store silver chloride in dark colored bottles?",
+      "options": {
+        "A": "To prevent it from reacting with air",
+        "B": "To avoid its decomposition by sunlight",
+        "C": "To keep it at a low temperature",
+        "D": "To prevent its sublimation"
+      },
+      "correct_answer": "B",
+      "explanation": "Silver chloride undergoes photolytic decomposition when exposed to light, so dark bottles block light.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Fatty foods are often packed with antioxidants to:",
+      "options": {
+        "A": "Enhance their flavor",
+        "B": "Prevent oxidation and rancidity",
+        "C": "Increase their caloric value",
+        "D": "Prevent them from getting moist"
+      },
+      "correct_answer": "B",
+      "explanation": "Antioxidants are substances that prevent the oxidation of fats and oils.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3.2"
+    }
+  ]
+}

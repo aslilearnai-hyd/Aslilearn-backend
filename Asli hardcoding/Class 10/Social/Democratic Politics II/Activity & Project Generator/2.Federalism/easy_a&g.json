@@ -1,0 +1,139 @@
+{
+  "class": "Class 9",
+  "subject": "Political Science",
+  "chapter": "Federalism",
+  "difficulty": "Easy",
+  "source_pdf": "jess402.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Understanding Federalism",
+      "objective": "Understand the meaning of federalism",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write the definition of federalism",
+        "Identify two levels of government in India",
+        "Explain why power is divided between these levels"
+      ],
+      "learning_outcome": "Understands the concept of power sharing in federalism",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Levels of Government Chart",
+      "objective": "Identify different tiers of government in India",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Draw a chart showing three levels of government",
+        "Label them as Union, State and Local government",
+        "Write one responsibility for each level"
+      ],
+      "learning_outcome": "Recognises the structure of Indian federalism",
+      "evaluation": "Accuracy and presentation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Union, State and Concurrent Lists",
+      "objective": "Understand distribution of legislative powers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create three columns named Union List, State List and Concurrent List",
+        "Write at least three subjects under each list",
+        "Explain which government can make laws on each list"
+      ],
+      "learning_outcome": "Understands distribution of powers in the Constitution",
+      "evaluation": "Correct classification of subjects (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Map Activity on Federal Countries",
+      "objective": "Identify federal countries of the world",
+      "materials": ["World map", "Colours"],
+      "steps": [
+        "Locate India on the world map",
+        "Mark two other federal countries such as USA and Australia",
+        "Label them clearly"
+      ],
+      "learning_outcome": "Identifies examples of federal systems globally",
+      "evaluation": "Correct map labeling (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Unitary vs Federal Government",
+      "objective": "Compare two forms of government",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the definition of unitary government",
+        "Write the definition of federal government",
+        "List two differences between them"
+      ],
+      "learning_outcome": "Understands differences between federal and unitary systems",
+      "evaluation": "Correct comparison (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Language Diversity Activity",
+      "objective": "Explore linguistic diversity in India",
+      "materials": ["Notebook"],
+      "steps": [
+        "List five languages spoken in India",
+        "Identify the language spoken in your state",
+        "Explain why India does not have a single national language"
+      ],
+      "learning_outcome": "Understands India's linguistic diversity",
+      "evaluation": "Relevant explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Local Government Investigation",
+      "objective": "Learn about local self-government",
+      "materials": ["Notebook"],
+      "steps": [
+        "Find the name of your village panchayat or municipal ward",
+        "Identify the local leader (Sarpanch or Councillor)",
+        "Write two functions of the local government"
+      ],
+      "learning_outcome": "Recognises the role of local government",
+      "evaluation": "Correct information collected (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Decentralisation Poster",
+      "objective": "Understand decentralisation of power",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Write the meaning of decentralisation",
+        "Draw a diagram showing power moving from central to local levels",
+        "Add examples of local decision-making"
+      ],
+      "learning_outcome": "Understands the importance of decentralisation",
+      "evaluation": "Creativity and accuracy (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Linguistic States Research",
+      "objective": "Understand the formation of linguistic states",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Identify one state created based on language",
+        "Find the main language spoken there",
+        "Write why linguistic states were formed in India"
+      ],
+      "learning_outcome": "Understands the concept of linguistic reorganisation",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Panchayati Raj Structure",
+      "objective": "Learn the structure of rural local government",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the three levels of Panchayati Raj",
+        "Explain the role of Gram Panchayat",
+        "Explain the role of Zilla Parishad"
+      ],
+      "learning_outcome": "Understands rural local governance",
+      "evaluation": "Accuracy of explanation (10 marks)"
+    }
+  ]
+}

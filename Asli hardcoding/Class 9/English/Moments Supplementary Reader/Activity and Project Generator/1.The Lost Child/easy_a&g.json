@@ -1,0 +1,159 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Lost Child",
+    "author": "Mulk Raj Anand",
+    "difficulty": "Easy",
+    "source_pdf": "eng9_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Main Characters List",
+            "objective": "Identify the main characters in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "List the characters mentioned in the story",
+                "Write one sentence about each character"
+            ],
+            "learning_outcome": "Identifies characters and their roles",
+            "evaluation": "Correct listing and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Things Seen on the Way to the Fair",
+            "objective": "Understand the child’s experiences on the way to the fair",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the beginning of the lesson",
+                "List the things the child notices on the way to the fair",
+                "Write 3–4 sentences describing them"
+            ],
+            "learning_outcome": "Understands descriptive details in the story",
+            "evaluation": "Correct points listed (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Favourite Items at the Fair",
+            "objective": "Identify the things the child wanted in the fair",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the fair scene in the lesson",
+                "Write the items the child wished to buy",
+                "Explain why he wanted them"
+            ],
+            "learning_outcome": "Recognises key events in the story",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Child’s Feelings",
+            "objective": "Understand the emotions of the lost child",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part where the child realizes he is lost",
+                "Write 4–5 sentences describing his feelings"
+            ],
+            "learning_outcome": "Understands emotions expressed in the story",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Description of the Fair",
+            "objective": "Understand the setting of the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify how the fair is described in the story",
+                "Write 4–5 lines describing the fair"
+            ],
+            "learning_outcome": "Understands the setting of the story",
+            "evaluation": "Clarity and accuracy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Kind Man in the Story",
+            "objective": "Understand the role of the man who helps the child",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part where a man lifts the child",
+                "Write 3–4 sentences about how he helps the child"
+            ],
+            "learning_outcome": "Recognises helpful characters",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the order of events in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four important events in the story",
+                "Write them in the correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct sequence (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary from the Lesson",
+            "objective": "Improve vocabulary using the story",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five new words from the lesson",
+                "Write their meanings",
+                "Use them in sentences"
+            ],
+            "learning_outcome": "Improves vocabulary skills",
+            "evaluation": "Correct meanings and sentences (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Moral of the Story",
+            "objective": "Understand the message of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the lesson learned from the story",
+                "Write the moral in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Importance of Parents",
+            "objective": "Understand the importance of parents in a child’s life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about why the child wanted only his parents",
+                "Write 4–5 sentences about the importance of parents"
+            ],
+            "learning_outcome": "Recognises family values",
+            "evaluation": "Relevant explanation (10 marks)"
+        }
+    ]
+}

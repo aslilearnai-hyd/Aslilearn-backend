@@ -1,0 +1,727 @@
+{
+  "subject": "English",
+  "book": "Poorvi",
+  "Content": "Diary Entry",
+  "class": "8",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "The Wit That Won Hearts",
+      "source": "Poorvi – Chapter 1",
+      "title": "Tenali’s Clever Idea",
+      "question": "Write a diary entry as Tenali Rama describing how you planned to resolve the conflict between the king and queen."
+    },
+    {
+      "id": 2,
+      "chapter": "The Wit That Won Hearts",
+      "source": "Poorvi – Chapter 1",
+      "title": "The Queen’s Feelings",
+      "question": "Write a diary entry as the queen expressing your feelings when the king became angry with you."
+    },
+    {
+      "id": 3,
+      "chapter": "The Wit That Won Hearts",
+      "source": "Poorvi – Chapter 1",
+      "title": "The King’s Realisation",
+      "question": "Write a diary entry as the king after realizing Tenali Rama’s cleverness."
+    },
+    {
+      "id": 4,
+      "chapter": "The Wit That Won Hearts",
+      "source": "Poorvi – Chapter 1",
+      "title": "Court Scene",
+      "question": "Write a diary entry as a courtier describing the moment Tenali solved the problem."
+    },
+    {
+      "id": 5,
+      "chapter": "The Wit That Won Hearts",
+      "source": "Poorvi – Chapter 1",
+      "title": "Lesson of Wit",
+      "question": "Write a diary entry reflecting how wit can solve difficult situations."
+    },
+
+    {
+      "id": 6,
+      "chapter": "The Case of the Fifth Word",
+      "source": "Poorvi – Chapter 2",
+      "title": "The Puzzle Begins",
+      "question": "Write a diary entry describing the mysterious puzzle you encountered."
+    },
+    {
+      "id": 7,
+      "chapter": "The Case of the Fifth Word",
+      "source": "Poorvi – Chapter 2",
+      "title": "Searching for Clues",
+      "question": "Write a diary entry describing how you searched for clues to solve the puzzle."
+    },
+    {
+      "id": 8,
+      "chapter": "The Case of the Fifth Word",
+      "source": "Poorvi – Chapter 2",
+      "title": "A Surprising Discovery",
+      "question": "Write a diary entry describing the moment you discovered the hidden clue."
+    },
+    {
+      "id": 9,
+      "chapter": "The Case of the Fifth Word",
+      "source": "Poorvi – Chapter 2",
+      "title": "Logical Thinking",
+      "question": "Write a diary entry explaining how logical thinking helped solve the puzzle."
+    },
+    {
+      "id": 10,
+      "chapter": "The Case of the Fifth Word",
+      "source": "Poorvi – Chapter 2",
+      "title": "Mystery Solved",
+      "question": "Write a diary entry describing the excitement of solving the mystery."
+    },
+
+    {
+      "id": 11,
+      "chapter": "Science and Curiosity",
+      "source": "Poorvi – Chapter 3",
+      "title": "Curious Mind",
+      "question": "Write a diary entry explaining why curiosity is important in science."
+    },
+    {
+      "id": 12,
+      "chapter": "Science and Curiosity",
+      "source": "Poorvi – Chapter 3",
+      "title": "A Small Experiment",
+      "question": "Write a diary entry about performing a simple science experiment."
+    },
+    {
+      "id": 13,
+      "chapter": "Science and Curiosity",
+      "source": "Poorvi – Chapter 3",
+      "title": "Joy of Discovery",
+      "question": "Write a diary entry describing the joy of discovering something new."
+    },
+    {
+      "id": 14,
+      "chapter": "Science and Curiosity",
+      "source": "Poorvi – Chapter 3",
+      "title": "Questions Lead to Learning",
+      "question": "Write a diary entry describing how asking questions helps learning."
+    },
+    {
+      "id": 15,
+      "chapter": "Science and Curiosity",
+      "source": "Poorvi – Chapter 3",
+      "title": "Future Scientist",
+      "question": "Write a diary entry imagining your dream of becoming a scientist."
+    },
+
+    {
+      "id": 16,
+      "chapter": "Feathered Friend",
+      "source": "Poorvi – Chapter 4",
+      "title": "Watching Birds",
+      "question": "Write a diary entry describing your experience observing birds in nature."
+    },
+    {
+      "id": 17,
+      "chapter": "Feathered Friend",
+      "source": "Poorvi – Chapter 4",
+      "title": "A Beautiful Bird",
+      "question": "Write a diary entry about seeing a beautiful bird for the first time."
+    },
+    {
+      "id": 18,
+      "chapter": "Feathered Friend",
+      "source": "Poorvi – Chapter 4",
+      "title": "Bird Lover",
+      "question": "Write a diary entry about how birds make nature more beautiful."
+    },
+    {
+      "id": 19,
+      "chapter": "Feathered Friend",
+      "source": "Poorvi – Chapter 4",
+      "title": "Protecting Birds",
+      "question": "Write a diary entry about protecting birds and wildlife."
+    },
+    {
+      "id": 20,
+      "chapter": "Feathered Friend",
+      "source": "Poorvi – Chapter 4",
+      "title": "Nature’s Beauty",
+      "question": "Write a diary entry about the beauty of nature."
+    },
+
+    {
+      "id": 21,
+      "chapter": "The Secret",
+      "source": "Poorvi – Chapter 5",
+      "title": "A Hidden Truth",
+      "question": "Write a diary entry about discovering an unexpected secret."
+    },
+    {
+      "id": 22,
+      "chapter": "The Secret",
+      "source": "Poorvi – Chapter 5",
+      "title": "Keeping a Secret",
+      "question": "Write a diary entry about the difficulty of keeping a secret."
+    },
+    {
+      "id": 23,
+      "chapter": "The Secret",
+      "source": "Poorvi – Chapter 5",
+      "title": "Trust and Friendship",
+      "question": "Write a diary entry about how trust is important between friends."
+    },
+    {
+      "id": 24,
+      "chapter": "The Secret",
+      "source": "Poorvi – Chapter 5",
+      "title": "Truth Revealed",
+      "question": "Write a diary entry describing your reaction after learning the truth."
+    },
+    {
+      "id": 25,
+      "chapter": "The Secret",
+      "source": "Poorvi – Chapter 5",
+      "title": "Lesson from Secrets",
+      "question": "Write a diary entry about what secrets teach us about honesty."
+    },
+
+    {
+      "id": 26,
+      "chapter": "The Magnifying Glass",
+      "source": "Poorvi – Chapter 6",
+      "title": "Tiny Discoveries",
+      "question": "Write a diary entry about observing tiny objects using a magnifying glass."
+    },
+    {
+      "id": 27,
+      "chapter": "The Magnifying Glass",
+      "source": "Poorvi – Chapter 6",
+      "title": "New Perspective",
+      "question": "Write a diary entry describing how observation reveals hidden details."
+    },
+    {
+      "id": 28,
+      "chapter": "The Magnifying Glass",
+      "source": "Poorvi – Chapter 6",
+      "title": "Learning through Observation",
+      "question": "Write a diary entry explaining how observation leads to learning."
+    },
+    {
+      "id": 29,
+      "chapter": "The Magnifying Glass",
+      "source": "Poorvi – Chapter 6",
+      "title": "Scientific Curiosity",
+      "question": "Write a diary entry about exploring the world with curiosity."
+    },
+    {
+      "id": 30,
+      "chapter": "The Magnifying Glass",
+      "source": "Poorvi – Chapter 6",
+      "title": "Small Things Matter",
+      "question": "Write a diary entry about how small details are important."
+    },
+
+    {
+      "id": 31,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Power of Curiosity",
+      "question": "Write a diary entry reflecting how curiosity helps people learn."
+    },
+    {
+      "id": 32,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Observation Skills",
+      "question": "Write a diary entry about how observation helps understanding."
+    },
+    {
+      "id": 33,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Lessons from Stories",
+      "question": "Write a diary entry about lessons learned from these chapters."
+    },
+    {
+      "id": 34,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Intelligence",
+      "question": "Write a diary entry explaining why intelligence is powerful."
+    },
+    {
+      "id": 35,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Curiosity in Life",
+      "question": "Write a diary entry about curiosity in everyday life."
+    },
+
+    {
+      "id": 36,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "My Favourite Lesson",
+      "question": "Write a diary entry about your favourite chapter."
+    },
+    {
+      "id": 37,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "What I Learned",
+      "question": "Write a diary entry describing what you learned from this book."
+    },
+    {
+      "id": 38,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Favourite Character",
+      "question": "Write a diary entry about your favourite character."
+    },
+    {
+      "id": 39,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Reading Experience",
+      "question": "Write a diary entry describing your reading experience."
+    },
+    {
+      "id": 40,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Applying Lessons",
+      "question": "Write a diary entry on applying lessons in real life."
+    },
+
+    {
+      "id": 41,
+      "chapter": "Imaginative",
+      "source": "Inspired by The Wit That Won Hearts",
+      "title": "If I Were Tenali",
+      "question": "Write a diary entry imagining yourself as Tenali Rama solving a difficult problem."
+    },
+    {
+      "id": 42,
+      "chapter": "Imaginative",
+      "source": "Inspired by Science and Curiosity",
+      "title": "If I Were a Scientist",
+      "question": "Write a diary entry imagining you discovered something new."
+    },
+    {
+      "id": 43,
+      "chapter": "Imaginative",
+      "source": "Inspired by Feathered Friend",
+      "title": "If I Were a Bird",
+      "question": "Write a diary entry imagining life as a bird."
+    },
+    {
+      "id": 44,
+      "chapter": "Imaginative",
+      "source": "Inspired by The Secret",
+      "title": "A Hidden Truth",
+      "question": "Write a diary entry about discovering an important truth."
+    },
+    {
+      "id": 45,
+      "chapter": "Imaginative",
+      "source": "Inspired by The Magnifying Glass",
+      "title": "Tiny World",
+      "question": "Write a diary entry about a tiny world you discovered."
+    },
+
+    {
+      "id": 46,
+      "chapter": "Practice",
+      "source": "All Chapters – Poorvi",
+      "title": "Facing Challenges",
+      "question": "Write a diary entry about overcoming a challenge."
+    },
+    {
+      "id": 47,
+      "chapter": "Practice",
+      "source": "All Chapters – Poorvi",
+      "title": "Value of Knowledge",
+      "question": "Write a diary entry about why knowledge is important."
+    },
+    {
+      "id": 48,
+      "chapter": "Practice",
+      "source": "All Chapters – Poorvi",
+      "title": "Hard Work",
+      "question": "Write a diary entry about how hard work leads to success."
+    },
+    {
+      "id": 49,
+      "chapter": "Practice",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning Every Day",
+      "question": "Write a diary entry about learning something new every day."
+    },
+    {
+      "id": 50,
+      "chapter": "Practice",
+      "source": "All Chapters – Poorvi",
+      "title": "Curiosity and Growth",
+      "question": "Write a diary entry about curiosity helping growth."
+    },
+
+    {
+      "id": 51,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Power of Thinking",
+      "question": "Write a diary entry about the power of thinking logically."
+    },
+    {
+      "id": 52,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Nature",
+      "question": "Write a diary entry reflecting on the beauty of nature."
+    },
+    {
+      "id": 53,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Curiosity",
+      "question": "Write a diary entry about curiosity shaping knowledge."
+    },
+    {
+      "id": 54,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Creative Thinking",
+      "question": "Write a diary entry about creative thinking."
+    },
+    {
+      "id": 55,
+      "chapter": "Advanced Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Observation Power",
+      "question": "Write a diary entry about the power of observation."
+    },
+
+    {
+      "id": 56,
+      "chapter": "Creative",
+      "source": "All Chapters – Poorvi",
+      "title": "A New Discovery",
+      "question": "Write a diary entry about discovering something new."
+    },
+    {
+      "id": 57,
+      "chapter": "Creative",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning Adventure",
+      "question": "Write a diary entry about learning as an adventure."
+    },
+    {
+      "id": 58,
+      "chapter": "Creative",
+      "source": "All Chapters – Poorvi",
+      "title": "Curious Child",
+      "question": "Write a diary entry about being a curious learner."
+    },
+    {
+      "id": 59,
+      "chapter": "Creative",
+      "source": "All Chapters – Poorvi",
+      "title": "Nature Explorer",
+      "question": "Write a diary entry about exploring nature."
+    },
+    {
+      "id": 60,
+      "chapter": "Creative",
+      "source": "All Chapters – Poorvi",
+      "title": "Future Dreams",
+      "question": "Write a diary entry about your dreams for the future."
+    },
+
+    {
+      "id": 61,
+      "chapter": "Life Lessons",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Wisdom",
+      "question": "Write a diary entry about wisdom being more powerful than strength."
+    },
+    {
+      "id": 62,
+      "chapter": "Life Lessons",
+      "source": "All Chapters – Poorvi",
+      "title": "Kindness",
+      "question": "Write a diary entry about kindness in daily life."
+    },
+    {
+      "id": 63,
+      "chapter": "Life Lessons",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning from Nature",
+      "question": "Write a diary entry about lessons learned from nature."
+    },
+    {
+      "id": 64,
+      "chapter": "Life Lessons",
+      "source": "All Chapters – Poorvi",
+      "title": "Power of Knowledge",
+      "question": "Write a diary entry about the power of knowledge."
+    },
+    {
+      "id": 65,
+      "chapter": "Life Lessons",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Thinking",
+      "question": "Write a diary entry about thinking before acting."
+    },
+
+    {
+      "id": 66,
+      "chapter": "Creative Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "My Inspiration",
+      "question": "Write a diary entry about someone who inspires you."
+    },
+    {
+      "id": 67,
+      "chapter": "Creative Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning from Stories",
+      "question": "Write a diary entry about learning from stories."
+    },
+    {
+      "id": 68,
+      "chapter": "Creative Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Thinking Differently",
+      "question": "Write a diary entry about thinking differently."
+    },
+    {
+      "id": 69,
+      "chapter": "Creative Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Knowledge and Curiosity",
+      "question": "Write a diary entry about knowledge and curiosity."
+    },
+    {
+      "id": 70,
+      "chapter": "Creative Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Life Learning",
+      "question": "Write a diary entry about learning throughout life."
+    },
+
+    {
+      "id": 71,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Preparing for Exams",
+      "question": "Write a diary entry about preparing for English exams."
+    },
+    {
+      "id": 72,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Study Time",
+      "question": "Write a diary entry about your study routine."
+    },
+    {
+      "id": 73,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Favourite Teacher",
+      "question": "Write a diary entry about your favourite teacher."
+    },
+    {
+      "id": 74,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "School Memories",
+      "question": "Write a diary entry about a memorable school day."
+    },
+    {
+      "id": 75,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning English",
+      "question": "Write a diary entry about improving your English skills."
+    },
+
+    {
+      "id": 76,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Mistakes and Learning",
+      "question": "Write a diary entry about learning from mistakes."
+    },
+    {
+      "id": 77,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Success and Effort",
+      "question": "Write a diary entry about success and effort."
+    },
+    {
+      "id": 78,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Power of Reading",
+      "question": "Write a diary entry about the power of reading books."
+    },
+    {
+      "id": 79,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Creative Learning",
+      "question": "Write a diary entry about creative learning."
+    },
+    {
+      "id": 80,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Education",
+      "question": "Write a diary entry about the importance of education."
+    },
+
+    {
+      "id": 81,
+      "chapter": "Advanced",
+      "source": "All Chapters – Poorvi",
+      "title": "Strength of Mind",
+      "question": "Write a diary entry about mental strength."
+    },
+    {
+      "id": 82,
+      "chapter": "Advanced",
+      "source": "All Chapters – Poorvi",
+      "title": "True Success",
+      "question": "Write a diary entry defining true success."
+    },
+    {
+      "id": 83,
+      "chapter": "Advanced",
+      "source": "All Chapters – Poorvi",
+      "title": "Self Improvement",
+      "question": "Write a diary entry about improving yourself."
+    },
+    {
+      "id": 84,
+      "chapter": "Advanced",
+      "source": "All Chapters – Poorvi",
+      "title": "Life Choices",
+      "question": "Write a diary entry about making wise life choices."
+    },
+    {
+      "id": 85,
+      "chapter": "Advanced",
+      "source": "All Chapters – Poorvi",
+      "title": "Knowledge and Power",
+      "question": "Write a diary entry about knowledge as power."
+    },
+
+    {
+      "id": 86,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Lessons for Life",
+      "question": "Write a diary entry about life lessons from the book."
+    },
+    {
+      "id": 87,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Moral Values",
+      "question": "Write a diary entry about moral values learned."
+    },
+    {
+      "id": 88,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning through Stories",
+      "question": "Write a diary entry about learning through stories."
+    },
+    {
+      "id": 89,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Growth Through Learning",
+      "question": "Write a diary entry about personal growth."
+    },
+    {
+      "id": 90,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Applying Knowledge",
+      "question": "Write a diary entry about applying knowledge in life."
+    },
+
+    {
+      "id": 91,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Changed Thinking",
+      "question": "Write a diary entry about how these stories changed your thinking."
+    },
+    {
+      "id": 92,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Becoming Better",
+      "question": "Write a diary entry about becoming a better person."
+    },
+    {
+      "id": 93,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning Journey",
+      "question": "Write a diary entry about your learning journey."
+    },
+    {
+      "id": 94,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Future Goals",
+      "question": "Write a diary entry about your future goals."
+    },
+    {
+      "id": 95,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Education and Life",
+      "question": "Write a diary entry about education shaping life."
+    },
+    {
+      "id": 96,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Reading",
+      "question": "Write a diary entry about why reading is important."
+    },
+    {
+      "id": 97,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Power of Curiosity",
+      "question": "Write a diary entry about curiosity guiding learning."
+    },
+    {
+      "id": 98,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "My Learning",
+      "question": "Write a diary entry summarising what you learned."
+    },
+    {
+      "id": 99,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Better Future",
+      "question": "Write a diary entry about building a better future."
+    },
+    {
+      "id": 100,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Final Thoughts",
+      "question": "Write a diary entry summarising what the book taught you."
+    }
+  ]
+}

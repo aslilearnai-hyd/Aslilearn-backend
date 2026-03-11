@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 3: Exploring Forces",
+  "generated_at": "2026-03-05T14:20:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a force?",
+        "correct_answer": "A push or pull acting on an object",
+        "explanation": "Force occurs when two objects interact with each other and can change the motion or shape of an object.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "question": "What is the SI unit of force?",
+        "correct_answer": "Newton (N)",
+        "explanation": "Force is measured in newtons and named after the scientist Isaac Newton.",
+        "source_section": "Section 5.3"
+      },
+      {
+        "question": "What are the effects of force?",
+        "correct_answer": "It can change speed, direction, shape, or start/stop motion of an object",
+        "explanation": "For example, kicking a football changes its speed and direction.",
+        "source_section": "Section 5.2"
+      },
+      {
+        "question": "What are contact forces?",
+        "correct_answer": "Forces that act only when objects touch each other",
+        "explanation": "Examples include muscular force and friction.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "question": "What are non-contact forces?",
+        "correct_answer": "Forces that act without physical contact",
+        "explanation": "Examples include magnetic force, gravitational force, and electrostatic force.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "question": "What is friction?",
+        "correct_answer": "A force that opposes the motion of an object",
+        "explanation": "Friction acts between surfaces in contact and slows down moving objects.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "question": "What is gravitational force?",
+        "correct_answer": "The force with which the Earth attracts objects towards itself",
+        "explanation": "This force causes objects to fall to the ground.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "question": "What is weight?",
+        "correct_answer": "The force with which Earth pulls an object",
+        "explanation": "Weight is a force and is measured in newtons.",
+        "source_section": "Section 5.5"
+      },
+      {
+        "question": "What is buoyant force?",
+        "correct_answer": "An upward force exerted by a liquid on an object placed in it",
+        "explanation": "This force helps some objects float in water.",
+        "source_section": "Section 5.6"
+      },
+      {
+        "question": "Why do some objects float while others sink?",
+        "correct_answer": "It depends on the balance between gravitational force and buoyant force",
+        "explanation": "If buoyant force equals or exceeds weight, the object floats; otherwise it sinks.",
+        "source_section": "Section 5.6"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Force",
+        "content": "A force is a push or pull acting on an object due to interaction with another object.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "title": "Effects of Force",
+        "content": "Force can change the speed, direction, shape, or motion of an object.",
+        "source_section": "Section 5.2"
+      },
+      {
+        "title": "Contact Forces",
+        "content": "Contact forces require physical contact between objects, such as muscular force and friction.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "title": "Non-contact Forces",
+        "content": "Non-contact forces act from a distance, such as gravitational, magnetic, and electrostatic forces.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "title": "Buoyancy",
+        "content": "Buoyancy is the upward force exerted by a fluid that allows objects to float.",
+        "source_section": "Section 5.6"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Friction always acts opposite to the direction of motion.",
+        "source_section": "Section 5.4"
+      },
+      {
+        "fact": "The weight of an object can change depending on the gravitational force.",
+        "source_section": "Section 5.5"
+      },
+      {
+        "fact": "Mass of an object remains constant everywhere, but weight can change.",
+        "source_section": "Section 5.5"
+      },
+      {
+        "fact": "Gravitational force is always attractive.",
+        "source_section": "Section 5.4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-05T18:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following statements best describes the difference between a scientific theory and a scientific law?",
+            "options": {
+                "A": "A theory explains why phenomena occur; a law describes what happens",
+                "B": "A law is a guess; a theory is proven",
+                "C": "A law changes often; a theory is fixed",
+                "D": "The theory is always simpler than a law"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific laws describe observed phenomena, whereas theories explain why these phenomena occur.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following illustrates a controlled variable in a plant growth experiment?",
+            "options": {
+                "A": "Keeping soil type the same for all plants",
+                "B": "Changing the amount of sunlight each day",
+                "C": "Measuring plant height daily",
+                "D": "Observing plant color"
+            },
+            "correct_answer": "A",
+            "explanation": "Controlled variables are kept constant to ensure the effect of the independent variable is measured accurately.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is an example of falsifiability in science?",
+            "options": {
+                "A": "A hypothesis that can be tested and proven false if incorrect",
+                "B": "A statement that depends on beliefs",
+                "C": "A conclusion that cannot be observed",
+                "D": "An opinion about what is right or wrong"
+            },
+            "correct_answer": "A",
+            "explanation": "Falsifiability means that a scientific hypothesis can be tested and potentially disproven.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following scenarios best illustrates empirical evidence?",
+            "options": {
+                "A": "Recording temperature readings over a month to study climate patterns",
+                "B": "Believing a story about weather from ancestors",
+                "C": "Assuming rainfall patterns without measurements",
+                "D": "Guessing outcomes based on intuition"
+            },
+            "correct_answer": "A",
+            "explanation": "Empirical evidence is obtained through observations and measurements.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following illustrates inductive reasoning in science?",
+            "options": {
+                "A": "Observing that the sun rises daily and concluding the sun always rises in the east",
+                "B": "Applying Newton’s laws to calculate force",
+                "C": "Testing a specific hypothesis in a controlled experiment",
+                "D": "Reciting a scientific fact from a textbook"
+            },
+            "correct_answer": "A",
+            "explanation": "Inductive reasoning involves drawing general conclusions based on repeated observations.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which example demonstrates the tentative nature of scientific knowledge?",
+            "options": {
+                "A": "Modification of the atomic model over time based on new evidence",
+                "B": "Belief that the Earth is flat",
+                "C": "Memorizing a scientific fact without testing",
+                "D": "Repeating myths as truths"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific knowledge changes as new evidence emerges, such as updates to the atomic model.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is an example of deductive reasoning in science?",
+            "options": {
+                "A": "If all mammals have lungs and whales are mammals, then whales have lungs",
+                "B": "Observing many leaves falling and concluding autumn is coming",
+                "C": "Predicting a result randomly",
+                "D": "Guessing an outcome based on belief"
+            },
+            "correct_answer": "A",
+            "explanation": "Deductive reasoning applies general principles to reach a specific conclusion.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which statement correctly describes peer review in science?",
+            "options": {
+                "A": "Evaluation of scientific work by experts before publication",
+                "B": "Public opinion about a scientific claim",
+                "C": "Memorizing experiments from textbooks",
+                "D": "Following traditions or myths"
+            },
+            "correct_answer": "A",
+            "explanation": "Peer review ensures the quality, reliability, and accuracy of scientific research.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following best illustrates correlation without causation?",
+            "options": {
+                "A": "Ice cream sales rise as temperature rises, but one does not cause the other",
+                "B": "Heating water causes it to boil",
+                "C": "Dropping an object causes it to fall",
+                "D": "Sunlight helps plants grow"
+            },
+            "correct_answer": "A",
+            "explanation": "Correlation means two variables change together, but it does not prove one causes the other.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of these is an example of a reproducible experiment?",
+            "options": {
+                "A": "Multiple scientists obtain similar results under the same conditions",
+                "B": "A single experiment conducted once with unique materials",
+                "C": "Recording observations without controls",
+                "D": "Writing conclusions based on opinions"
+            },
+            "correct_answer": "A",
+            "explanation": "Reproducibility ensures that experiments can be repeated with the same results.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which scientist’s work demonstrated the importance of careful observation in scientific discovery?",
+            "options": {
+                "A": "Galileo Galilei",
+                "B": "Isaac Newton",
+                "C": "Albert Einstein",
+                "D": "Charles Darwin"
+            },
+            "correct_answer": "A",
+            "explanation": "Galileo emphasized observation and experimentation in modern science.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is a critical feature of a hypothesis?",
+            "options": {
+                "A": "It must be testable and falsifiable",
+                "B": "It is based on belief alone",
+                "C": "It is always true",
+                "D": "It cannot be tested"
+            },
+            "correct_answer": "A",
+            "explanation": "Hypotheses must be testable and potentially falsifiable to be scientific.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following statements is true about the relationship between science and technology?",
+            "options": {
+                "A": "Science provides knowledge; technology applies it to solve practical problems",
+                "B": "Technology creates knowledge; science applies it",
+                "C": "Science and technology are completely independent",
+                "D": "Science and technology are based on myths"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific knowledge forms the basis for technological applications.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following best describes a scientific model?",
+            "options": {
+                "A": "A representation that helps explain complex phenomena",
+                "B": "A myth used to describe nature",
+                "C": "An untested hypothesis",
+                "D": "A belief system"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific models simplify and represent complex processes to aid understanding and prediction.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Which example demonstrates the predictive power of science?",
+            "options": {
+                "A": "Using Newton’s laws to predict the motion of planets",
+                "B": "Guessing the motion of planets randomly",
+                "C": "Following myths about stars",
+                "D": "Predicting outcomes without evidence"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific theories allow accurate predictions based on evidence and observation.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following best illustrates an experiment with both independent and dependent variables?",
+            "options": {
+                "A": "Measuring plant height (dependent) with varying amounts of sunlight (independent)",
+                "B": "Observing clouds without intervention",
+                "C": "Recording rainfall only",
+                "D": "Not controlling any variables"
+            },
+            "correct_answer": "A",
+            "explanation": "The independent variable is manipulated to observe its effect on the dependent variable.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following exemplifies reproducibility and reliability in science?",
+            "options": {
+                "A": "Different researchers repeating an experiment obtain the same results",
+                "B": "Conducting an experiment once and publishing results",
+                "C": "Observing outcomes without documenting procedures",
+                "D": "Relying on unverified personal observations"
+            },
+            "correct_answer": "A",
+            "explanation": "Reproducibility ensures the validity and reliability of scientific findings.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following scenarios illustrates cause-and-effect in an experiment?",
+            "options": {
+                "A": "Adding fertilizer causes increased plant growth under controlled conditions",
+                "B": "Plants grow faster because they are green",
+                "C": "It rains because I water the plants",
+                "D": "The sun rises because flowers bloom"
+            },
+            "correct_answer": "A",
+            "explanation": "A controlled experiment demonstrates that changing one variable causes an effect.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following best exemplifies a scientific investigation leading to technological advancement?",
+            "options": {
+                "A": "Research on electricity leading to the development of electric lights",
+                "B": "Reading myths about lightning",
+                "C": "Guessing the outcome of experiments",
+                "D": "Believing in superstition to explain phenomena"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific investigation can lead to practical applications, such as electric lights from studies on electricity.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following statements best demonstrates the evolving nature of science?",
+            "options": {
+                "A": "Old atomic models were replaced as new evidence emerged",
+                "B": "All scientific facts remain constant forever",
+                "C": "Scientific beliefs never change",
+                "D": "Observations without evidence are permanent truths"
+            },
+            "correct_answer": "A",
+            "explanation": "Science evolves over time; models and theories are updated based on new evidence.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following best represents empirical research?",
+            "options": {
+                "A": "Collecting and analyzing data from observations and experiments",
+                "B": "Relying on intuition",
+                "C": "Believing traditional knowledge without testing",
+                "D": "Assuming outcomes without experimentation"
+            },
+            "correct_answer": "A",
+            "explanation": "Empirical research uses observations and experiments to gather evidence.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which example demonstrates the use of models in scientific research?",
+            "options": {
+                "A": "Using a scale model to study the solar system",
+                "B": "Believing the Earth is flat",
+                "C": "Observing phenomena without representation",
+                "D": "Reading myths about planets"
+            },
+            "correct_answer": "A",
+            "explanation": "Models help scientists visualize and predict complex systems.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following is an example of the predictive capability of a scientific theory?",
+            "options": {
+                "A": "Using Newton’s laws to calculate projectile motion",
+                "B": "Believing folklore about falling stars",
+                "C": "Assuming planets move randomly",
+                "D": "Reading myths about eclipses"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific theories can make testable predictions about natural phenomena.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which scenario shows the difference between correlation and causation?",
+            "options": {
+                "A": "Ice cream sales rise in summer, but this does not cause sunburn",
+                "B": "Heating water causes it to boil",
+                "C": "Dropping a ball causes it to fall",
+                "D": "Sunlight allows plants to perform photosynthesis"
+            },
+            "correct_answer": "A",
+            "explanation": "Correlation does not necessarily imply one event causes the other.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following best demonstrates reproducibility in scientific research?",
+            "options": {
+                "A": "Other scientists repeating an experiment and obtaining the same results",
+                "B": "Doing an experiment once without documentation",
+                "C": "Making assumptions without testing",
+                "D": "Believing a claim without evidence"
+            },
+            "correct_answer": "A",
+            "explanation": "Reproducibility confirms the reliability of scientific results.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        }
+    ]
+}

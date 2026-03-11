@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Finding Common Ground",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-06T01:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What does LCM stand for?",
+            "answer": "Least Common Multiple.",
+            "key_concepts": ["LCM definition"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What does HCF stand for?",
+            "answer": "Highest Common Factor.",
+            "key_concepts": ["HCF definition"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the first three common multiples of 2 and 3.",
+            "answer": "6, 12, and 18.",
+            "key_concepts": ["common multiples"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "List all the factors of 12.",
+            "answer": "1, 2, 3, 4, 6, and 12.",
+            "key_concepts": ["factors"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the HCF of 8 and 12?",
+            "answer": "4.",
+            "key_concepts": ["HCF calculation"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the LCM of 4 and 6?",
+            "answer": "12.",
+            "key_concepts": ["LCM calculation"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "True or False: The HCF of two prime numbers is always 1.",
+            "answer": "True.",
+            "key_concepts": ["prime numbers", "HCF"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the common factors of 9 and 15.",
+            "answer": "1 and 3.",
+            "key_concepts": ["common factors"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Is 24 a common multiple of 6 and 8?",
+            "answer": "Yes, because 6 × 4 = 24 and 8 × 3 = 24.",
+            "key_concepts": ["common multiples"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the smallest number that is a multiple of both 5 and 10?",
+            "answer": "10.",
+            "key_concepts": ["LCM"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What are 'co-prime' numbers?",
+            "answer": "Two numbers that have only 1 as their common factor.",
+            "key_concepts": ["co-prime numbers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the HCF of 10, 20, and 30.",
+            "answer": "10.",
+            "key_concepts": ["HCF of three numbers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the LCM of 3 and 7.",
+            "answer": "21.",
+            "key_concepts": ["LCM of prime numbers"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Every number is a multiple of __________.",
+            "answer": "1 and itself.",
+            "key_concepts": ["multiples"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Can the LCM of two numbers be smaller than the numbers themselves?",
+            "answer": "No, it is always equal to or greater than the larger of the two numbers.",
+            "key_concepts": ["LCM properties"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the HCF of 14 and 21.",
+            "answer": "7.",
+            "key_concepts": ["HCF calculation"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the LCM of 2, 4, and 8?",
+            "answer": "8.",
+            "key_concepts": ["LCM of multiple numbers"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "List the first five multiples of 7.",
+            "answer": "7, 14, 21, 28, 35.",
+            "key_concepts": ["multiples"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the HCF of 15 and 25?",
+            "answer": "5.",
+            "key_concepts": ["HCF calculation"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "If one number is a factor of another, what is their HCF?",
+            "answer": "The smaller number is the HCF.",
+            "key_concepts": ["HCF properties"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the LCM of 6 and 9.",
+            "answer": "18.",
+            "key_concepts": ["LCM calculation"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the only even prime number?",
+            "answer": "2.",
+            "key_concepts": ["prime numbers"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Are 8 and 9 co-prime numbers?",
+            "answer": "Yes, because their only common factor is 1.",
+            "key_concepts": ["co-prime numbers"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the HCF of two consecutive numbers (e.g., 4 and 5)?",
+            "answer": "1.",
+            "key_concepts": ["HCF properties"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the LCM of 5 and 11?",
+            "answer": "55.",
+            "key_concepts": ["LCM calculation"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        }
+    ]
+}

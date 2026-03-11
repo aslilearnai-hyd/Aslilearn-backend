@@ -1,0 +1,77 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Poems – Dust of Snow & Fire and Ice",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the poet of 'Dust of Snow' and 'Fire and Ice'?",
+            "answer": "The poems were written by the renowned American poet Robert Frost.",
+            "key_points": ["Robert Frost"],
+            "source_section": "Author Attribution"
+        },
+        {
+            "question_number": 2,
+            "question": "Which bird is mentioned in the poem 'Dust of Snow'?",
+            "answer": "A crow is the bird mentioned in the poem.",
+            "key_points": ["crow"],
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 3,
+            "question": "From which tree does the snow fall in 'Dust of Snow'?",
+            "answer": "The snow falls from a hemlock tree, which is a poisonous coniferous tree.",
+            "key_points": ["hemlock tree"],
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 4,
+            "question": "How does the falling snow affect the poet's mood in 'Dust of Snow'?",
+            "answer": "The falling snow changes his mood from sad to happy and saves the rest of his day from being wasted.",
+            "key_points": ["changes mood", "saves the day"],
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 5,
+            "question": "According to the poem 'Fire and Ice', what are the two things that could end the world?",
+            "answer": "The world could end either through fire or through ice.",
+            "key_points": ["fire", "ice"],
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 6,
+            "question": "What does 'fire' symbolize in the poem 'Fire and Ice'?",
+            "answer": "Fire symbolizes human desire, greed, and lust.",
+            "key_points": ["desire", "greed"],
+            "source_section": "Symbolism"
+        },
+        {
+            "question_number": 7,
+            "question": "What does 'ice' symbolize in the poem 'Fire and Ice'?",
+            "answer": "Ice symbolizes hatred, coldness, and indifference among humans.",
+            "key_points": ["hatred", "indifference"],
+            "source_section": "Symbolism"
+        },
+        {
+            "question_number": 8,
+            "question": "Which two powerful human emotions are discussed in 'Fire and Ice'?",
+            "answer": "The two emotions discussed are desire (fire) and hate (ice).",
+            "key_points": ["desire", "hate"],
+            "source_section": "Thematic Depth"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the central theme of the poem 'Dust of Snow'?",
+            "answer": "The central theme is that even small, simple moments in nature can have a large positive impact on a person's mind.",
+            "key_points": ["nature's impact", "positive change"],
+            "source_section": "Thematic Summary"
+        },
+        {
+            "question_number": 10,
+            "question": "What lesson does 'Fire and Ice' convey about destructive human behavior?",
+            "answer": "It teaches that unchecked emotions like greed and hatred have the power to destroy the entire world.",
+            "key_points": ["destructive emotions", "end of humanity"],
+            "source_section": "Conclusion"
+        }
+    ]
+}

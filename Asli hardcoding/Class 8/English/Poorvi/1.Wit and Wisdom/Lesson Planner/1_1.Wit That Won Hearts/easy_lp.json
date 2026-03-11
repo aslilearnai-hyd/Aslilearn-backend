@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter_name": "The Wit That Won Hearts",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the story of Tenali Rama and King Krishnadeva Raya",
+    "Learn the importance of wit and humour in solving problems",
+    "Identify the main characters and events in the story",
+    "Understand how misunderstandings can lead to conflicts",
+    "Recognize how clever thinking can resolve disagreements",
+    "Develop reading comprehension and vocabulary skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Wit and Humour",
+      "topics_covered": [
+        "Meaning of wit and humour",
+        "Qualities of a witty person",
+        "Importance of humour in daily life"
+      ],
+      "teaching_strategy": [
+        "Class discussion about humour",
+        "Brainstorming qualities of witty people",
+        "Reading riddles from the textbook"
+      ],
+      "student_activities": [
+        "Select qualities of a witty person from the given list",
+        "Solve riddles in pairs"
+      ],
+      "assessment": ["Oral questioning", "Pair discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Background of the Story",
+      "topics_covered": [
+        "The Vijayanagara Empire",
+        "King Krishnadeva Raya",
+        "Tenali Rama as a witty advisor"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Teacher narration of historical background"
+      ],
+      "student_activities": [
+        "Read the introduction of the story",
+        "Identify important characters"
+      ],
+      "assessment": ["Short oral questions", "Character identification"]
+    },
+    {
+      "period": 3,
+      "title": "Understanding the Conflict",
+      "topics_covered": [
+        "The king’s poem",
+        "The queen’s yawning",
+        "Misunderstanding between the king and queen"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the story",
+        "Discussion on misunderstandings"
+      ],
+      "student_activities": [
+        "Explain why the king became angry",
+        "Discuss how misunderstandings can occur in daily life"
+      ],
+      "assessment": ["Comprehension questions", "Group discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Tenali Rama’s Clever Strategy",
+      "topics_covered": [
+        "Tenali Rama’s idea of special paddy seeds",
+        "How he used wit to explain the situation",
+        "Indirect problem solving"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation of the court scene",
+        "Dialogue reading"
+      ],
+      "student_activities": [
+        "Role-play the court scene",
+        "Explain Tenali Rama’s strategy"
+      ],
+      "assessment": ["Role play performance", "Short written answers"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Moral",
+      "topics_covered": [
+        "The king’s realization",
+        "Apology to the queen",
+        "Lesson of the story"
+      ],
+      "teaching_strategy": [
+        "Discussion of the story ending",
+        "Teacher explanation of the moral"
+      ],
+      "student_activities": [
+        "Write the moral of the story",
+        "Share personal examples of solving problems wisely"
+      ],
+      "assessment": ["Short paragraph writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Revision Activities",
+      "topics_covered": [
+        "Vocabulary from the story",
+        "Compound words",
+        "Conditional sentences"
+      ],
+      "teaching_strategy": ["Grammar exercises from textbook", "Revision quiz"],
+      "student_activities": [
+        "Form compound words from the given list",
+        "Complete conditional sentences"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Story character chart",
+    "Printed riddles from the chapter"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Role play activities",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to act out the court scene between Tenali Rama and the king. This helps students better understand how wit and humour can resolve misunderstandings."
+}

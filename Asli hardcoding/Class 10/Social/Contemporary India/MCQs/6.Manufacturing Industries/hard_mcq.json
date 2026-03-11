@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 6: Manufacturing Industries",
+  "generated_at": "2026-03-11T13:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why are manufacturing industries considered important for economic development?",
+      "options": {
+        "A": "They reduce agricultural production",
+        "B": "They create employment and increase trade",
+        "C": "They reduce industrial growth",
+        "D": "They eliminate the need for agriculture"
+      },
+      "correct_answer": "B",
+      "explanation": "Manufacturing industries create jobs, expand trade and increase national income.",
+      "difficulty": "hard",
+      "source_section": "Importance of Manufacturing"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following best explains why industrial development reduces regional disparities?",
+      "options": {
+        "A": "Industries only develop in urban areas",
+        "B": "Industries provide employment in backward areas",
+        "C": "Industries reduce exports",
+        "D": "Industries eliminate agriculture"
+      },
+      "correct_answer": "B",
+      "explanation": "Establishing industries in backward regions generates employment and development.",
+      "difficulty": "hard",
+      "source_section": "Importance of Manufacturing"
+    },
+    {
+      "question_number": 3,
+      "question": "Which classification of industries depends on the type of raw materials used?",
+      "options": {
+        "A": "Ownership-based classification",
+        "B": "Raw material-based classification",
+        "C": "Capital investment classification",
+        "D": "Weight-based classification"
+      },
+      "correct_answer": "B",
+      "explanation": "Industries can be classified as agro-based or mineral-based depending on raw materials.",
+      "difficulty": "hard",
+      "source_section": "Classification of Industries"
+    },
+    {
+      "question_number": 4,
+      "question": "Which factor contributed most to the concentration of jute industries along the Hugli River?",
+      "options": {
+        "A": "Cold climate",
+        "B": "Availability of raw jute and transport facilities",
+        "C": "Tourism development",
+        "D": "Mining activities"
+      },
+      "correct_answer": "B",
+      "explanation": "Jute industries developed along the Hugli River due to raw materials, labour and transport.",
+      "difficulty": "hard",
+      "source_section": "Jute Industry"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following factors is NOT responsible for the location of cotton textile industries?",
+      "options": {
+        "A": "Availability of raw cotton",
+        "B": "Transport facilities",
+        "C": "Moist climate",
+        "D": "Tourism demand"
+      },
+      "correct_answer": "D",
+      "explanation": "Tourism is not related to the location of cotton textile industries.",
+      "difficulty": "hard",
+      "source_section": "Cotton Textiles"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is the iron and steel industry called the backbone of industrial development?",
+      "options": {
+        "A": "It produces agricultural products",
+        "B": "Other industries depend on steel for machinery",
+        "C": "It reduces exports",
+        "D": "It requires less capital"
+      },
+      "correct_answer": "B",
+      "explanation": "Many industries depend on steel for tools, machinery and construction.",
+      "difficulty": "hard",
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the approximate ratio of raw materials used in steel production?",
+      "options": {
+        "A": "1 : 2 : 3",
+        "B": "2 : 1 : 3",
+        "C": "4 : 2 : 1",
+        "D": "5 : 3 : 2"
+      },
+      "correct_answer": "C",
+      "explanation": "Iron ore, coking coal and limestone are required roughly in the ratio of 4 : 2 : 1.",
+      "difficulty": "hard",
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 8,
+      "question": "Which region in India is known for its concentration of iron and steel industries due to raw material availability?",
+      "options": {
+        "A": "Western Ghats",
+        "B": "Chhotanagpur Plateau",
+        "C": "Aravalli Range",
+        "D": "Indo-Gangetic Plain"
+      },
+      "correct_answer": "B",
+      "explanation": "The Chhotanagpur Plateau has abundant iron ore, coal and limestone.",
+      "difficulty": "hard",
+      "source_section": "Iron and Steel Industry"
+    },
+    {
+      "question_number": 9,
+      "question": "Which property of aluminium makes it suitable for aircraft manufacturing?",
+      "options": {
+        "A": "Heaviness",
+        "B": "Corrosion resistance and light weight",
+        "C": "Low conductivity",
+        "D": "Brittleness"
+      },
+      "correct_answer": "B",
+      "explanation": "Aluminium is light and resistant to corrosion, making it ideal for aircraft.",
+      "difficulty": "hard",
+      "source_section": "Aluminium Smelting"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are aluminium smelting plants usually located near sources of electricity?",
+      "options": {
+        "A": "Electricity improves mining",
+        "B": "Aluminium production requires high electricity consumption",
+        "C": "Electricity reduces pollution",
+        "D": "Electricity replaces raw materials"
+      },
+      "correct_answer": "B",
+      "explanation": "Aluminium smelting requires large amounts of electrical energy.",
+      "difficulty": "hard",
+      "source_section": "Aluminium Smelting"
+    },
+    {
+      "question_number": 11,
+      "question": "Which chemical product is mainly used in the manufacture of fertilizers?",
+      "options": {
+        "A": "Sulphuric acid",
+        "B": "Nitrogen gas",
+        "C": "Copper sulphate",
+        "D": "Aluminium oxide"
+      },
+      "correct_answer": "A",
+      "explanation": "Sulphuric acid is widely used in fertilizer production.",
+      "difficulty": "hard",
+      "source_section": "Chemical Industry"
+    },
+    {
+      "question_number": 12,
+      "question": "Which factor explains why potash fertilizers are imported in India?",
+      "options": {
+        "A": "High production cost",
+        "B": "Lack of commercially usable potash reserves",
+        "C": "Lack of labour",
+        "D": "Lack of technology"
+      },
+      "correct_answer": "B",
+      "explanation": "India does not have significant reserves of potash.",
+      "difficulty": "hard",
+      "source_section": "Fertilizer Industry"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following industries expanded rapidly after the Green Revolution?",
+      "options": {
+        "A": "Steel industry",
+        "B": "Fertilizer industry",
+        "C": "Automobile industry",
+        "D": "Textile industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Fertilizer demand increased significantly after the Green Revolution.",
+      "difficulty": "hard",
+      "source_section": "Fertilizer Industry"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are cement factories located near limestone deposits?",
+      "options": {
+        "A": "To reduce labour cost",
+        "B": "Because limestone is the main raw material",
+        "C": "To improve tourism",
+        "D": "Because cement needs sea water"
+      },
+      "correct_answer": "B",
+      "explanation": "Limestone is the primary raw material for cement production.",
+      "difficulty": "hard",
+      "source_section": "Cement Industry"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor stimulated the growth of the automobile industry after economic liberalisation?",
+      "options": {
+        "A": "Decline in population",
+        "B": "Introduction of modern vehicle models",
+        "C": "Reduction in transportation",
+        "D": "Decrease in trade"
+      },
+      "correct_answer": "B",
+      "explanation": "New models and increased demand boosted the automobile industry.",
+      "difficulty": "hard",
+      "source_section": "Automobile Industry"
+    },
+    {
+      "question_number": 16,
+      "question": "Which factor has contributed most to the growth of IT industries in India?",
+      "options": {
+        "A": "Agriculture growth",
+        "B": "Hardware and software development",
+        "C": "Mining resources",
+        "D": "Tourism development"
+      },
+      "correct_answer": "B",
+      "explanation": "Growth of hardware and software industries has driven IT development.",
+      "difficulty": "hard",
+      "source_section": "IT Industry"
+    },
+    {
+      "question_number": 17,
+      "question": "Which pollutant released by industries is mainly responsible for air pollution?",
+      "options": {
+        "A": "Sulphur dioxide",
+        "B": "Nitrogen gas",
+        "C": "Oxygen",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "A",
+      "explanation": "Sulphur dioxide is a major air pollutant released by industries.",
+      "difficulty": "hard",
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 18,
+      "question": "Which industries are major contributors to water pollution?",
+      "options": {
+        "A": "Textile and chemical industries",
+        "B": "Tourism industries",
+        "C": "IT industries",
+        "D": "Transport industries"
+      },
+      "correct_answer": "A",
+      "explanation": "Textile and chemical industries release dyes and chemicals into water bodies.",
+      "difficulty": "hard",
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 19,
+      "question": "Which environmental problem occurs when heated water from factories enters rivers?",
+      "options": {
+        "A": "Noise pollution",
+        "B": "Thermal pollution",
+        "C": "Land pollution",
+        "D": "Air pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Discharging hot water causes thermal pollution affecting aquatic life.",
+      "difficulty": "hard",
+      "source_section": "Industrial Pollution"
+    },
+    {
+      "question_number": 20,
+      "question": "Which measure can reduce industrial air pollution?",
+      "options": {
+        "A": "Using electrostatic precipitators",
+        "B": "Burning more coal",
+        "C": "Dumping wastes into rivers",
+        "D": "Increasing factory emissions"
+      },
+      "correct_answer": "A",
+      "explanation": "Electrostatic precipitators help remove particulate matter from emissions.",
+      "difficulty": "hard",
+      "source_section": "Pollution Control"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is recycling wastewater important in industries?",
+      "options": {
+        "A": "It increases pollution",
+        "B": "It reduces freshwater pollution",
+        "C": "It increases industrial waste",
+        "D": "It increases energy consumption"
+      },
+      "correct_answer": "B",
+      "explanation": "Recycling wastewater reduces freshwater contamination.",
+      "difficulty": "hard",
+      "source_section": "Pollution Control"
+    },
+    {
+      "question_number": 22,
+      "question": "Which method reduces noise pollution in industries?",
+      "options": {
+        "A": "Using silencers in machines",
+        "B": "Increasing machine speed",
+        "C": "Burning coal",
+        "D": "Dumping waste"
+      },
+      "correct_answer": "A",
+      "explanation": "Silencers reduce noise generated by machines and generators.",
+      "difficulty": "hard",
+      "source_section": "Pollution Control"
+    },
+    {
+      "question_number": 23,
+      "question": "Which organisation has implemented environmental management systems for power plants in India?",
+      "options": {
+        "A": "NTPC",
+        "B": "ONGC",
+        "C": "DRDO",
+        "D": "ISRO"
+      },
+      "correct_answer": "A",
+      "explanation": "NTPC has ISO certification for environmental management.",
+      "difficulty": "hard",
+      "source_section": "Environmental Management"
+    },
+    {
+      "question_number": 24,
+      "question": "Which concept integrates economic development with environmental protection?",
+      "options": {
+        "A": "Industrialisation",
+        "B": "Urbanisation",
+        "C": "Sustainable development",
+        "D": "Globalisation"
+      },
+      "correct_answer": "C",
+      "explanation": "Sustainable development balances economic growth and environmental protection.",
+      "difficulty": "hard",
+      "source_section": "Environmental Protection"
+    },
+    {
+      "question_number": 25,
+      "question": "Which step helps industries achieve sustainable development?",
+      "options": {
+        "A": "Increasing pollution",
+        "B": "Maximising waste generation",
+        "C": "Using energy-efficient machinery",
+        "D": "Ignoring environmental norms"
+      },
+      "correct_answer": "C",
+      "explanation": "Energy-efficient technology helps reduce pollution and resource consumption.",
+      "difficulty": "hard",
+      "source_section": "Environmental Protection"
+    }
+  ]
+}

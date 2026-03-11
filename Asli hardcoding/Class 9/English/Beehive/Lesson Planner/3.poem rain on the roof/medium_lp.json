@@ -1,0 +1,135 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Rain on the Roof",
+    "lesson_level": "Medium",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze imagery, sound, and mood in the poem",
+        "Understand the poet’s use of figurative language",
+        "Interpret feelings and nostalgia evoked by rain",
+        "Develop analytical and reflective writing skills",
+        "Connect the poem’s theme to personal experiences and memories"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "About Henry Wadsworth Longfellow",
+                "Historical context and literary style",
+                "Theme: reflection and comfort through nature"
+            ],
+            "teaching_strategy": [
+                "Teacher presents poet’s background",
+                "Discussion on why poets write about nature and everyday life"
+            ],
+            "student_activities": [
+                "Take notes on poet and context",
+                "Share experiences of listening to rain"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Stanza Analysis – Imagery and Sound",
+            "topics_covered": [
+                "Imagery of rain on roof, shingles, and surroundings",
+                "Auditory imagery and rhythm of pattering rain",
+                "Mood evoked: calm, reflective, nostalgic"
+            ],
+            "teaching_strategy": [
+                "Read stanza aloud and discuss imagery",
+                "Highlight words contributing to sound and mood"
+            ],
+            "student_activities": [
+                "Underline descriptive and sound words",
+                "Explain in own words how the imagery makes them feel"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral answers on stanza meaning and mood"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Figurative Language and Poetic Devices",
+            "topics_covered": [
+                "Personification, alliteration, and repetition",
+                "How figurative language enhances emotion",
+                "Identification of devices in stanzas"
+            ],
+            "teaching_strategy": [
+                "Highlight devices in each stanza",
+                "Explain how devices contribute to theme and mood"
+            ],
+            "student_activities": [
+                "Identify poetic devices in poem",
+                "Write one sentence explaining effect of each device"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Reflection and Connection",
+            "topics_covered": [
+                "Nostalgia evoked by rain and memories of loved ones",
+                "Connection between rain, imagination, and inner thoughts",
+                "Application of poem’s theme to personal experiences"
+            ],
+            "teaching_strategy": [
+                "Discussion and guided reflection",
+                "Ask students to share memories triggered by rain"
+            ],
+            "student_activities": [
+                "Write a short paragraph connecting poem to personal memory",
+                "Discuss with a partner the mood and reflection in poem"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Revision and Analytical Summary",
+            "topics_covered": [
+                "Recap of stanzas, imagery, sound, and mood",
+                "Summary of poem in own words",
+                "Discussion of theme and poetic devices"
+            ],
+            "teaching_strategy": [
+                "Ask students to summarize poem aloud",
+                "Highlight key poetic techniques and theme"
+            ],
+            "student_activities": [
+                "Write a short analytical summary of poem",
+                "Identify imagery, mood, and figurative devices used"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Participation in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing imagery, sound, and figurative devices"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short analytical writing",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Encourage students to reflect on how rain evokes memories and emotions, and to link imagery and sound to mood and theme."
+}

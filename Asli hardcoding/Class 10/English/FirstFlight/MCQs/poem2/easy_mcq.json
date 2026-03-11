@@ -1,0 +1,148 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Poems – A Tiger in the Zoo, The Tiger, The Panther",
+  "generated_at": "2026-03-09T14:05:00",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following physical attributes describe the tiger in 'A Tiger in the Zoo'?",
+      "options": {
+        "A": "Vivid stripes on his body",
+        "B": "Pads of velvet quiet",
+        "C": "A mane of golden hair",
+        "D": "White fangs and claws"
+      },
+      "correct_answers": ["A", "B", "D"],
+      "explanation": "Leslie Norris describes the tiger's vivid stripes, his quiet velvet-like paws, and his baring of white fangs.",
+      "difficulty": "easy",
+      "source_section": "Imagery"
+    },
+    {
+      "question_number": 2,
+      "question": "In Peter Niblett's 'The Tiger', what specific wild-life dangers does the tiger reflect upon?",
+      "options": {
+        "A": "The threat of hunters",
+        "B": "Eating poisoned food",
+        "C": "The risk of drowning",
+        "D": "The lack of sunlight"
+      },
+      "correct_answers": ["A", "B", "C"],
+      "explanation": "Niblett's poem highlights that while the wild offers freedom, it also contains life-threatening risks like hunters and environmental hazards.",
+      "difficulty": "easy",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 3,
+      "question": "According to Rilke's 'The Panther', what are the psychological consequences of being behind bars?",
+      "options": {
+        "A": "A weary gaze that can hold nothing more",
+        "B": "The feeling that there are a thousand bars and no world",
+        "C": "Increased aggression toward visitors",
+        "D": "A numbing or 'arresting' of the will"
+      },
+      "correct_answers": ["A", "B", "D"],
+      "explanation": "Rilke emphasizes the mental exhaustion and the loss of the panther's 'mighty will' as it paces in a cramped circle.",
+      "difficulty": "easy",
+      "source_section": "Psychological Impact"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of these are portrayed as the tiger's natural, instinctive behaviors in the jungle?",
+      "options": {
+        "A": "Lurking in the shadows",
+        "B": "Sliding through long grass",
+        "C": "Ignoring the visitors",
+        "D": "Snarling around houses at the jungle's edge"
+      },
+      "correct_answers": ["A", "B", "D"],
+      "explanation": "Ignoring visitors is a behavior learned in captivity; lurking, sliding through grass, and snarling are his natural instincts.",
+      "difficulty": "easy",
+      "source_section": "Natural Behavior"
+    },
+    {
+      "question_number": 5,
+      "question": "What emotions characterize the tiger's state in 'A Tiger in the Zoo'?",
+      "options": {
+        "A": "Quiet rage",
+        "B": "Joyful anticipation",
+        "C": "Helplessness",
+        "D": "Indifference"
+      },
+      "correct_answers": ["A", "C", "D"],
+      "explanation": "The tiger feels a 'quiet rage' and helplessness due to the cage, eventually showing indifference by ignoring visitors.",
+      "difficulty": "easy",
+      "source_section": "Tone"
+    },
+    {
+      "question_number": 6,
+      "question": "In Leslie Norris's poem, how is the contrast between the 'cell' and the 'wild' established?",
+      "options": {
+        "A": "Concrete cell vs. Long grass",
+        "B": "Quiet velvet pads vs. Snarling at the jungle's edge",
+        "C": "Locked strength vs. Terrorising the village",
+        "D": "Patrolling cars vs. The brilliant stars"
+      },
+      "correct_answers": ["A", "C", "D"],
+      "explanation": "The poet uses the confined physical space of the cell to contrast with the vast, interactive spaces of the jungle and village.",
+      "difficulty": "easy",
+      "source_section": "Poetic Contrast"
+    },
+    {
+      "question_number": 7,
+      "question": "In 'The Tiger' by Peter Niblett, what does the captive tiger desire most?",
+      "options": {
+        "A": "To be back in the wild despite the dangers",
+        "B": "To have better food provided by the zoo",
+        "C": "To be free from the constant stare of visitors",
+        "D": "To live a life without 'bars'"
+      },
+      "correct_answers": ["A", "C", "D"],
+      "explanation": "The poem highlights the frustration of being on display and the deep longing for the original state of freedom.",
+      "difficulty": "easy",
+      "source_section": "Characters"
+    },
+    {
+      "question_number": 8,
+      "question": "What common themes are shared across all three poems regarding animals?",
+      "options": {
+        "A": "The tragedy of lost freedom",
+        "B": "The majesty of wild creatures",
+        "C": "The cruelty of human observation",
+        "D": "The benefits of conservation in zoos"
+      },
+      "correct_answers": ["A", "B", "C"],
+      "explanation": "All three poems critique captivity and celebrate the inherent dignity of the animals while showing how observation by humans can be a form of cruelty.",
+      "difficulty": "easy",
+      "source_section": "Comparative Theme"
+    },
+    {
+      "question_number": 9,
+      "question": "Which auditory (sound) images are used to convey the tiger's frustration or setting?",
+      "options": {
+        "A": "The snarling at the jungle's edge",
+        "B": "The voice of the patrolling cars",
+        "C": "The silence of the velvet pads",
+        "D": "The singing of the birds"
+      },
+      "correct_answers": ["A", "B", "C"],
+      "explanation": "The poems use snarling, the sound of cars, and the heavy silence of the cage to build the atmosphere.",
+      "difficulty": "easy",
+      "source_section": "Imagery"
+    },
+    {
+      "question_number": 10,
+      "question": "What does the 'eye' or 'stare' signify in 'A Tiger in the Zoo' and 'The Panther'?",
+      "options": {
+        "A": "The tiger's brilliant eyes looking at the stars",
+        "B": "The panther's inward image that dies in the heart",
+        "C": "The tiger's ability to see through walls",
+        "D": "The fading of vision due to the bars"
+      },
+      "correct_answers": ["A", "B", "D"],
+      "explanation": "In both poems, vision is a key theme—ranging from the tiger's last hope (stars) to the panther's exhausted perception.",
+      "difficulty": "easy",
+      "source_section": "Symbolism"
+    }
+  ]
+}

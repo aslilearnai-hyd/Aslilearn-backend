@@ -1,0 +1,142 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Areas Related to Circles",
+    "difficulty": "Easy",
+    "source_pdf": "jemh111.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Sector Diagram",
+            "objective": "Draw sector of a circle",
+            "materials": [
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw circle",
+                "Shade sector"
+            ],
+            "learning_outcome": "Sector understanding",
+            "evaluation": "Correct diagram (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Segment Identification",
+            "objective": "Identify segment",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw chord",
+                "Shade segment"
+            ],
+            "learning_outcome": "Segment concept",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Minor vs Major",
+            "objective": "Differentiate minor and major",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct points (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Angle Observation",
+            "objective": "Observe central angle",
+            "materials": [
+                "Protractor"
+            ],
+            "steps": [
+                "Measure angle"
+            ],
+            "learning_outcome": "Angle awareness",
+            "evaluation": "Correct measurement (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Formula List",
+            "objective": "List area formulas",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write formulas"
+            ],
+            "learning_outcome": "Formula recall",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-Life Sector",
+            "objective": "Find sectors in life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List examples"
+            ],
+            "learning_outcome": "Application",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Arc Length Sketch",
+            "objective": "Draw arc",
+            "materials": [
+                "Compass"
+            ],
+            "steps": [
+                "Draw arc"
+            ],
+            "learning_outcome": "Arc understanding",
+            "evaluation": "Neatness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Circle Art",
+            "objective": "Create art using sectors",
+            "materials": [
+                "Colours"
+            ],
+            "steps": [
+                "Design pattern"
+            ],
+            "learning_outcome": "Creativity",
+            "evaluation": "Presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Vocabulary Drill",
+            "objective": "Learn terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write meanings"
+            ],
+            "learning_outcome": "Terminology",
+            "evaluation": "Correctness (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quick Test",
+            "objective": "Test understanding",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Answer short Qs"
+            ],
+            "learning_outcome": "Retention",
+            "evaluation": "Score (10 marks)"
+        }
+    ]
+}

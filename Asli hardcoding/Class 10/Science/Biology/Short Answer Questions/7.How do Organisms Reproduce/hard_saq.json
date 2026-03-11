@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: How do Organisms Reproduce?",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-10T23:53:15",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How does the process of DNA copying lead to both stability and variation in a population?",
+            "answer": "DNA copying is highly accurate, ensuring the preservation of the body design (stability). However, no biochemical process is absolutely reliable; subtle inaccuracies during copying create variations, which are essential for a species' survival in a changing environment.",
+            "key_concepts": ["DNA replication", "evolutionary variation", "stability"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between binary fission in Amoeba and Leishmania, emphasizing the structural constraints.",
+            "answer": "Amoeba has no fixed body shape, so division can occur in any plane. Leishmania has a whip-like flagellum at one end, which forces binary fission to occur in a specific longitudinal orientation relative to the flagellum.",
+            "key_concepts": ["binary fission", "structural orientation"],
+            "marks": 2,
+            "source_section": "Section 8.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is regeneration not considered a true method of reproduction for most complex organisms?",
+            "answer": "Regeneration is essentially a repair mechanism used to regrow lost parts. Organisms do not usually depend on being cut into pieces to reproduce; reproduction is a programmed event, whereas regeneration often follows an accidental injury.",
+            "key_concepts": ["regeneration vs reproduction", "repair mechanism"],
+            "marks": 2,
+            "source_section": "Section 8.2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the significance of the reduction division (meiosis) in the life cycle of sexually reproducing organisms.",
+            "answer": "If germ-cells had the same number of chromosomes as somatic cells, the number would double every generation. Meiosis halves the chromosome number in gametes so that upon fertilization, the original chromosome number of the species is restored.",
+            "key_concepts": ["meiosis", "chromosome stability", "ploidy"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Contrast the functionality and survival strategies of spores in Rhizopus with vegetative buds in Bryophyllum.",
+            "answer": "Spores are microscopic, unicellular units protected by thick walls for dispersal in air and survival in harsh conditions. Vegetative buds in Bryophyllum are multicellular structures on leaf margins that fall off to grow into new plants in moist soil nearby.",
+            "key_concepts": ["spore formation", "vegetative propagation", "survival"],
+            "marks": 3,
+            "source_section": "Section 8.2.5 & 8.2.6"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the 'Pollen Tube' ensure successful fertilization in a flower?",
+            "answer": "The pollen tube grows through the style in response to chemical signals (chemotropism) to reach the ovary. It carries two male germ-cells to the ovule, allowing them to bypass the protective tissues of the carpel and reach the egg.",
+            "key_concepts": ["chemotropism", "pollen tube", "fertilization"],
+            "marks": 2,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What are the physiological implications of the placenta beyond providing nutrition?",
+            "answer": "Besides providing glucose and oxygen, the placenta serves as a pathway for the removal of waste products like urea and carbon dioxide produced by the developing embryo into the mother's blood.",
+            "key_concepts": ["placenta", "excretion", "osmotic exchange"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the 'Triple Fusion' and 'Double Fertilization' process in flowering plants.",
+            "answer": "One male gamete fuses with the egg (syngamy) to form a zygote. The second male gamete fuses with two polar nuclei (triple fusion) to form the endosperm. Together, these two events are called double fertilization.",
+            "key_concepts": ["double fertilization", "triple fusion", "endosperm"],
+            "marks": 3,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is the mortality rate higher for organisms utilizing external fertilization compared to those using internal fertilization?",
+            "answer": "In external fertilization, eggs and sperms are released into the open environment where they are vulnerable to predators and environmental fluctuations. Internal fertilization protects the gametes and zygote inside the mother's body.",
+            "key_concepts": ["internal vs external fertilization", "survival rate"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe the hormonal and physical changes in the uterus if fertilization does not take place.",
+            "answer": "The corpus luteum degenerates, leading to a drop in progesterone levels. This causes the thick, blood-rich inner lining (endometrium) to shed, resulting in menstruation consisting of blood and mucus.",
+            "key_concepts": ["menstrual cycle", "endometrium", "progesterone"],
+            "marks": 3,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is the use of hormonal pills for contraception considered more invasive than barrier methods?",
+            "answer": "Hormonal pills change the internal chemical balance of the body to prevent egg release (ovulation), which can have systemic side effects. Barriers like condoms only physically block sperm and do not interfere with the body's chemistry.",
+            "key_concepts": ["contraception", "hormonal side effects"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "How does 'tissue culture' bypass the limitations of seasonal seed production?",
+            "answer": "Tissue culture uses vegetative cells (explants) grown in a controlled artificial medium with specific hormones. This allows year-round production of clones in a sterile environment regardless of the plant's natural flowering season.",
+            "key_concepts": ["tissue culture", "cloning", "explants"],
+            "marks": 2,
+            "source_section": "Section 8.2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Analyze the role of the scrotum in male fertility.",
+            "answer": "The scrotum acts as a thermoregulator. By keeping the testes outside the pelvic cavity, it maintains a temperature $2-3^{\\circ}C$ below core body temperature, which is essential for viable sperm production (spermatogenesis).",
+            "key_concepts": ["scrotum", "thermoregulation", "spermatogenesis"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the evolutionary advantage of sexual reproduction over asexual reproduction despite being energy-intensive?",
+            "answer": "Sexual reproduction creates diverse combinations of genes. This genetic diversity ensures that at least some individuals might survive sudden environmental shifts or disease outbreaks, aiding long-term species evolution.",
+            "key_concepts": ["genetic diversity", "evolution", "natural selection"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the structural transformation of a flower after fertilization.",
+            "answer": "The petals, sepals, and stamens usually wither and fall off. The zygote divides to become the embryo inside the ovule, which develops into a seed. The ovary grows rapidly and ripens into a fruit.",
+            "key_concepts": ["post-fertilization changes", "seed", "fruit"],
+            "marks": 3,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How do STDs like HIV-AIDS specifically impact the reproductive health and social well-being of a community?",
+            "answer": "They cause chronic illness, can be transmitted to the foetus during pregnancy/birth, and lead to infertility. Socially, they require long-term medical management and can lead to stigma and economic burden.",
+            "key_concepts": ["reproductive health", "STDs", "maternal transmission"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What determines if a seed will germinate or remain dormant?",
+            "answer": "Germination depends on the availability of appropriate external conditions like water, oxygen, and suitable temperature, along with the internal maturity of the embryo within the seed.",
+            "key_concepts": ["germination", "dormancy"],
+            "marks": 2,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the fallopian tube (oviduct) the most common site for fertilization in humans?",
+            "answer": "The oviduct provides the necessary environment for the sperm to undergo final maturation and is positioned to receive the egg released by the ovary, facilitating the encounter between gametes.",
+            "key_concepts": ["oviduct", "fertilization site"],
+            "marks": 1,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Discuss the implications of a blocked vas deferens versus a blocked fallopian tube.",
+            "answer": "Both cause infertility by preventing gamete transport. However, a blocked vas deferens (vasectomy) is an easier surgical intervention to manage/reverse than the more invasive tubectomy or blockage in fallopian tubes.",
+            "key_concepts": ["surgical blocking", "infertility"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "How does the 'menstrual cycle' serve as a biological indicator of reproductive health?",
+            "answer": "A regular cycle indicates the proper functioning of the hypothalamus-pituitary-ovarian axis and the health of the uterine lining. Irregularities can signal hormonal imbalances or underlying health issues.",
+            "key_concepts": ["menstruation", "hormonal axis"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the DNA copying mechanism considered a 'chemical' and 'biological' process simultaneously?",
+            "answer": "It is chemical because it involves biochemical reactions like polymerization of nucleotides. It is biological because it serves as the foundation for the inheritance of life and the continuity of species.",
+            "key_concepts": ["DNA copying", "biochemistry"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of 'villi' on the embryo side of the placenta.",
+            "answer": "The villi increase the total surface area for the exchange of materials between the mother's blood and the embryo, maximizing the rate of diffusion for nutrients and waste.",
+            "key_concepts": ["villi", "surface area", "diffusion"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Contrast the genetic outcomes of self-pollination and cross-pollination.",
+            "answer": "Self-pollination leads to increased homozygosity and limited genetic variation. Cross-pollination introduces new genetic combinations from different parent plants, increasing heterozygosity and vigor.",
+            "key_concepts": ["pollination", "genetics", "vigor"],
+            "marks": 2,
+            "source_section": "Section 8.3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the risk associated with surgical methods of contraception if not performed correctly?",
+            "answer": "Risks include post-operative infections, internal bleeding, and in some cases, failure of the procedure (re-canalization), which can lead to unintended pregnancies or complications.",
+            "key_concepts": ["contraception", "surgical risks"],
+            "marks": 2,
+            "source_section": "Section 8.3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "How does the 'Germ-cell' differ from a 'Somatic cell' in terms of DNA content and function?",
+            "answer": "Germ-cells (gametes) are haploid (half DNA) and function solely for reproduction. Somatic cells are diploid (full DNA) and make up the structural and functional parts of the body.",
+            "key_concepts": ["germ-cells", "somatic cells", "ploidy"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        }
+    ]
+}

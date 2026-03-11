@@ -1,0 +1,308 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3 – The Making of a Global World",
+  "difficulty": "Hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Assertion (A): The discovery of sea routes shifted the center of global trade towards Europe. Reason (R): European traders bypassed traditional Arab intermediaries.",
+      "options": {
+        "A": "Both A and R are true and R is the correct explanation of A",
+        "B": "Both A and R are true but R is not the correct explanation of A",
+        "C": "A is true but R is false",
+        "D": "A is false but R is true"
+      },
+      "correct_answer": "A",
+      "explanation": "Direct sea routes allowed Europeans to dominate trade without middlemen."
+    },
+    {
+      "question_number": 2,
+      "question": "How did colonialism structurally integrate colonies into the global capitalist system?",
+      "options": {
+        "A": "By promoting self-reliance",
+        "B": "By forcing specialization in raw material production",
+        "C": "By eliminating trade",
+        "D": "By discouraging exports"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonies were made suppliers of raw materials and markets for finished goods."
+    },
+    {
+      "question_number": 3,
+      "question": "The fall in agricultural prices during the Great Depression primarily affected colonies because:",
+      "options": {
+        "A": "They were industrial exporters",
+        "B": "They depended heavily on primary product exports",
+        "C": "They had strong banking systems",
+        "D": "They were self-sufficient"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonial economies depended on exporting agricultural goods."
+    },
+    {
+      "question_number": 4,
+      "question": "Assertion (A): Indentured labour replaced slavery in many colonies. Reason (R): Slavery was abolished due to humanitarian movements.",
+      "options": {
+        "A": "Both A and R are true and R is correct explanation",
+        "B": "Both A and R are true but R is not correct explanation",
+        "C": "A is true but R is false",
+        "D": "A is false but R is true"
+      },
+      "correct_answer": "A",
+      "explanation": "After abolition of slavery, indentured labour was introduced."
+    },
+    {
+      "question_number": 5,
+      "question": "Which factor explains the rapid expansion of global trade in the late 19th century?",
+      "options": {
+        "A": "Decline of technology",
+        "B": "Improved transport and communication",
+        "C": "Reduction in migration",
+        "D": "Isolation policies"
+      },
+      "correct_answer": "B",
+      "explanation": "Railways, steamships, and telegraphs accelerated trade."
+    },
+    {
+      "question_number": 6,
+      "question": "Why did Britain promote opium trade with China despite its social consequences?",
+      "options": {
+        "A": "To improve Chinese agriculture",
+        "B": "To balance trade deficit with China",
+        "C": "To spread religion",
+        "D": "To reduce imports"
+      },
+      "correct_answer": "B",
+      "explanation": "Britain used opium exports to correct trade imbalance due to tea imports."
+    },
+    {
+      "question_number": 7,
+      "question": "The migration of indentured labourers demonstrates which aspect of globalization?",
+      "options": {
+        "A": "Political isolation",
+        "B": "Integration of labour markets",
+        "C": "Cultural stagnation",
+        "D": "Decline in plantation economy"
+      },
+      "correct_answer": "B",
+      "explanation": "Labour mobility connected distant economies."
+    },
+    {
+      "question_number": 8,
+      "question": "Assertion (A): The Bretton Woods institutions aimed to prevent economic crises. Reason (R): The Great Depression revealed weaknesses in unregulated capitalism.",
+      "options": {
+        "A": "Both A and R are true and R is correct explanation",
+        "B": "Both A and R are true but R is not correct explanation",
+        "C": "A is true but R is false",
+        "D": "A is false but R is true"
+      },
+      "correct_answer": "A",
+      "explanation": "Post-WWII institutions were formed to stabilize global economy."
+    },
+    {
+      "question_number": 9,
+      "question": "How did railways in colonies indirectly support British industries?",
+      "options": {
+        "A": "By encouraging local industries",
+        "B": "By transporting raw materials to ports for export",
+        "C": "By promoting local markets",
+        "D": "By reducing imports"
+      },
+      "correct_answer": "B",
+      "explanation": "Railways enabled efficient extraction and export of raw materials."
+    },
+    {
+      "question_number": 10,
+      "question": "Which long-term consequence did the First World War have on global economic leadership?",
+      "options": {
+        "A": "Rise of USA as creditor nation",
+        "B": "Strengthening of Germany",
+        "C": "Decline of Japan",
+        "D": "Collapse of US economy"
+      },
+      "correct_answer": "A",
+      "explanation": "USA emerged as major lender and industrial power."
+    },
+    {
+      "question_number": 11,
+      "question": "Economic nationalism during the 1930s involved:",
+      "options": {
+        "A": "Free trade agreements",
+        "B": "High tariffs and import restrictions",
+        "C": "Removal of quotas",
+        "D": "Expansion of globalization"
+      },
+      "correct_answer": "B",
+      "explanation": "Countries restricted imports to protect domestic industries."
+    },
+    {
+      "question_number": 12,
+      "question": "Assertion (A): Globalization slowed during the interwar period. Reason (R): Nations adopted protectionist policies.",
+      "options": {
+        "A": "Both A and R true and R correct explanation",
+        "B": "Both true but R not correct explanation",
+        "C": "A true, R false",
+        "D": "A false, R true"
+      },
+      "correct_answer": "A",
+      "explanation": "Protectionism reduced global trade flows."
+    },
+    {
+      "question_number": 13,
+      "question": "Why were colonial economies more vulnerable during global crises?",
+      "options": {
+        "A": "Diversified industries",
+        "B": "Dependence on few export commodities",
+        "C": "Strong banking systems",
+        "D": "High industrial output"
+      },
+      "correct_answer": "B",
+      "explanation": "Overdependence made them unstable during price fluctuations."
+    },
+    {
+      "question_number": 14,
+      "question": "The term 'Corn Laws' is associated with:",
+      "options": {
+        "A": "Free trade policies",
+        "B": "Protection of British agriculture",
+        "C": "Industrial reforms",
+        "D": "Colonial taxation"
+      },
+      "correct_answer": "B",
+      "explanation": "Corn Laws imposed tariffs on imported grain."
+    },
+    {
+      "question_number": 15,
+      "question": "How did steam navigation change global economic geography?",
+      "options": {
+        "A": "Increased isolation",
+        "B": "Reduced transport costs and expanded markets",
+        "C": "Stopped migration",
+        "D": "Limited colonial control"
+      },
+      "correct_answer": "B",
+      "explanation": "Steamships reduced time and cost, boosting trade."
+    },
+    {
+      "question_number": 16,
+      "question": "Which global event triggered worldwide banking failures in the 1930s?",
+      "options": {
+        "A": "Stock Market Crash of 1929",
+        "B": "WWI",
+        "C": "Industrial Revolution",
+        "D": "American Civil War"
+      },
+      "correct_answer": "A",
+      "explanation": "Wall Street crash initiated global financial collapse."
+    },
+    {
+      "question_number": 17,
+      "question": "The plantation economy primarily depended on:",
+      "options": {
+        "A": "Skilled industrial workers",
+        "B": "Indentured and slave labour",
+        "C": "Robotics",
+        "D": "Local artisans"
+      },
+      "correct_answer": "B",
+      "explanation": "Plantations relied heavily on cheap labour."
+    },
+    {
+      "question_number": 18,
+      "question": "Which concept best explains colonial trade pattern?",
+      "options": {
+        "A": "Comparative advantage",
+        "B": "Unequal exchange",
+        "C": "Free market equilibrium",
+        "D": "Self-sufficiency"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonies exported cheap raw materials and imported costly finished goods."
+    },
+    {
+      "question_number": 19,
+      "question": "The Bretton Woods Conference (1944) aimed to:",
+      "options": {
+        "A": "Promote colonization",
+        "B": "Create stable international monetary system",
+        "C": "End globalization",
+        "D": "Start Cold War"
+      },
+      "correct_answer": "B",
+      "explanation": "It established IMF and World Bank."
+    },
+    {
+      "question_number": 20,
+      "question": "Which structural weakness intensified the Great Depression?",
+      "options": {
+        "A": "Overproduction and unequal income distribution",
+        "B": "Shortage of goods",
+        "C": "Decline in transport",
+        "D": "Strong banking system"
+      },
+      "correct_answer": "A",
+      "explanation": "Excess production and low purchasing power worsened crisis."
+    },
+    {
+      "question_number": 21,
+      "question": "Globalization after 1945 differed because:",
+      "options": {
+        "A": "Colonies gained independence",
+        "B": "Financial institutions regulated trade",
+        "C": "US dominated economy",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "All factors shaped post-war globalization."
+    },
+    {
+      "question_number": 22,
+      "question": "Why did protective tariffs worsen global depression?",
+      "options": {
+        "A": "Reduced international trade volume",
+        "B": "Increased exports",
+        "C": "Raised wages",
+        "D": "Encouraged cooperation"
+      },
+      "correct_answer": "A",
+      "explanation": "Trade restrictions shrank global demand."
+    },
+    {
+      "question_number": 23,
+      "question": "Assertion (A): Colonial railways were designed primarily for economic extraction. Reason (R): They connected ports to resource-rich interiors.",
+      "options": {
+        "A": "Both true and R correct explanation",
+        "B": "Both true but R not correct explanation",
+        "C": "A true R false",
+        "D": "A false R true"
+      },
+      "correct_answer": "A",
+      "explanation": "Railways supported export of raw materials."
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor contributed to mass unemployment during the Great Depression?",
+      "options": {
+        "A": "Industrial expansion",
+        "B": "Collapse in demand and production",
+        "C": "Increased wages",
+        "D": "Rise in exports"
+      },
+      "correct_answer": "B",
+      "explanation": "Falling demand led to factory closures and unemployment."
+    },
+    {
+      "question_number": 25,
+      "question": "The long-term impact of global economic integration before 1914 was:",
+      "options": {
+        "A": "Uniform development",
+        "B": "Growing inequality between nations",
+        "C": "End of migration",
+        "D": "Decline in trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial nations gained more benefits than colonies."
+    }
+  ]
+}

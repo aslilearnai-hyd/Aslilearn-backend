@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 3: A Story of Numbers",
+  "generated_at": "2026-03-05T05:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are natural numbers?",
+      "answer": "Natural numbers are counting numbers starting from 1.",
+      "key_points": ["natural numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Give one example of a natural number.",
+      "answer": "5.",
+      "key_points": ["natural numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are whole numbers?",
+      "answer": "Whole numbers include natural numbers and zero.",
+      "key_points": ["whole numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Is 0 a whole number?",
+      "answer": "Yes.",
+      "key_points": ["whole numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What are integers?",
+      "answer": "Integers are positive numbers, negative numbers and zero.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Give one example of a negative integer.",
+      "answer": "-4.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is a rational number?",
+      "answer": "A number that can be written in the form p/q where q ≠ 0.",
+      "key_points": ["rational numbers"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Give an example of a rational number.",
+      "answer": "3/5.",
+      "key_points": ["rational numbers"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a number line?",
+      "answer": "A straight line used to represent numbers.",
+      "key_points": ["number line"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which number lies between 4 and 6?",
+      "answer": "5.",
+      "key_points": ["number order"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the successor of 7?",
+      "answer": "8.",
+      "key_points": ["successor"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the predecessor of 9?",
+      "answer": "8.",
+      "key_points": ["predecessor"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Is -3 an integer?",
+      "answer": "Yes.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which is greater: -2 or 3?",
+      "answer": "3.",
+      "key_points": ["comparison"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Write the smallest natural number.",
+      "answer": "1.",
+      "key_points": ["natural numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Write the smallest whole number.",
+      "answer": "0.",
+      "key_points": ["whole numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Give one example of an integer.",
+      "answer": "6.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Is 7 a rational number?",
+      "answer": "Yes.",
+      "key_points": ["rational numbers"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Write a rational number between 1 and 2.",
+      "answer": "3/2.",
+      "key_points": ["rational numbers"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 20,
+      "question": "What is |−5|?",
+      "answer": "5.",
+      "key_points": ["absolute value"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Is -1 a whole number?",
+      "answer": "No.",
+      "key_points": ["whole numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Is 0 an integer?",
+      "answer": "Yes.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Write two natural numbers.",
+      "answer": "2 and 3.",
+      "key_points": ["natural numbers"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Write two integers.",
+      "answer": "-2 and 4.",
+      "key_points": ["integers"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Can every integer be written as a rational number?",
+      "answer": "Yes.",
+      "key_points": ["rational numbers"],
+      "source_section": "Section 3.3"
+    }
+  ]
+}

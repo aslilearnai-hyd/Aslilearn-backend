@@ -1,0 +1,273 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 9: The Amazing World of Solutes, Solvents, and Solutions",
+  "generated_at": "2026-03-05T14:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how a solution differs from a non-uniform mixture with suitable examples.",
+      "answer": "A solution is a uniform mixture in which the solute dissolves evenly in the solvent and cannot be seen separately. A non-uniform mixture has components that remain unevenly distributed and visible.",
+      "answer_outline": [
+        "Definition of solution",
+        "Definition of non-uniform mixture",
+        "Examples such as salt water and sand in water"
+      ],
+      "key_concepts": ["solutions", "mixtures"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the process of forming a solution using salt and water. What observations confirm that a solution is formed?",
+      "answer": "When salt is added to water and stirred, the salt particles dissolve and spread evenly throughout the water, forming a uniform mixture.",
+      "answer_outline": [
+        "Mixing salt and water",
+        "Stirring process",
+        "Uniform distribution"
+      ],
+      "key_concepts": ["solution formation"],
+      "marks": 5,
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain why nitrogen is considered the solvent in air.",
+      "answer": "Nitrogen is present in the largest proportion in air, so it is considered the solvent while other gases like oxygen and carbon dioxide are solutes.",
+      "answer_outline": [
+        "Composition of air",
+        "Largest component acting as solvent"
+      ],
+      "key_concepts": ["gaseous solutions"],
+      "marks": 4,
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how the experiment with salt and water demonstrates the concept of saturation.",
+      "answer": "When salt is gradually added to water and stirred, it dissolves until a point is reached where no more salt dissolves and the extra salt settles at the bottom, showing saturation.",
+      "answer_outline": [
+        "Gradual addition of salt",
+        "Observation of undissolved salt",
+        "Conclusion about saturation"
+      ],
+      "key_concepts": ["saturated solution"],
+      "marks": 5,
+      "source_section": "Activity 9.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how concentration of a solution can change depending on the amount of solute.",
+      "answer": "If more solute is added to a fixed amount of solvent, the concentration increases. If less solute is present, the solution is dilute.",
+      "answer_outline": [
+        "Concentrated solution",
+        "Dilute solution",
+        "Role of solute amount"
+      ],
+      "key_concepts": ["solution concentration"],
+      "marks": 5,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how temperature affects the solubility of solids using an experimental example.",
+      "answer": "Heating increases solubility because higher temperature allows more solute particles to dissolve. The baking soda experiment demonstrates this effect.",
+      "answer_outline": [
+        "Temperature increase",
+        "Greater dissolving capacity",
+        "Experimental example"
+      ],
+      "key_concepts": ["temperature effect"],
+      "marks": 5,
+      "source_section": "Activity 9.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain why gas solubility decreases with increasing temperature.",
+      "answer": "When temperature rises, gas molecules gain energy and escape from the liquid more easily, reducing gas solubility.",
+      "answer_outline": ["Heating effect", "Escape of gas molecules"],
+      "key_concepts": ["gas solubility"],
+      "marks": 4,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how dissolved oxygen supports aquatic life.",
+      "answer": "Aquatic organisms depend on dissolved oxygen in water for respiration. Without sufficient oxygen, aquatic life cannot survive.",
+      "answer_outline": [
+        "Respiration of aquatic organisms",
+        "Role of dissolved oxygen"
+      ],
+      "key_concepts": ["aquatic ecosystems"],
+      "marks": 4,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why sand sinks while sawdust floats in water.",
+      "answer": "Sand is denser than water and sinks, while sawdust is less dense than water and floats.",
+      "answer_outline": ["Density comparison", "Floating vs sinking"],
+      "key_concepts": ["density"],
+      "marks": 4,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of density and how it is calculated.",
+      "answer": "Density is the mass per unit volume of a substance. It is calculated using the formula Density = Mass ÷ Volume.",
+      "answer_outline": ["Definition", "Formula", "Units"],
+      "key_concepts": ["density"],
+      "marks": 5,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the steps involved in measuring the mass of an object using a digital balance.",
+      "answer": "First reset the balance to zero, place the object on the pan, and record the displayed mass.",
+      "answer_outline": [
+        "Resetting balance",
+        "Placing object",
+        "Recording mass"
+      ],
+      "key_concepts": ["mass measurement"],
+      "marks": 4,
+      "source_section": "Activity 9.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the correct method for reading a measuring cylinder.",
+      "answer": "The liquid level should be read at the bottom of the meniscus with the eye level aligned with the marking.",
+      "answer_outline": ["Meniscus reading", "Eye-level observation"],
+      "key_concepts": ["volume measurement"],
+      "marks": 4,
+      "source_section": "Activity 9.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how the displacement method helps determine the volume of irregular objects.",
+      "answer": "The object is submerged in water, causing the water level to rise. The difference between initial and final water levels equals the object’s volume.",
+      "answer_outline": [
+        "Initial water level",
+        "Final water level",
+        "Volume calculation"
+      ],
+      "key_concepts": ["displacement method"],
+      "marks": 5,
+      "source_section": "Activity 9.7"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the importance of density in determining whether objects float or sink.",
+      "answer": "If an object's density is less than the liquid's density it floats, otherwise it sinks.",
+      "answer_outline": ["Density comparison", "Floating principle"],
+      "key_concepts": ["density"],
+      "marks": 4,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why heating decreases the density of most substances.",
+      "answer": "Heating causes particles to move apart, increasing volume and decreasing density.",
+      "answer_outline": ["Particle movement", "Increase in volume"],
+      "key_concepts": ["temperature", "density"],
+      "marks": 4,
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why hot air balloons rise in the air.",
+      "answer": "Hot air balloons rise because heated air inside the balloon becomes less dense than the surrounding air.",
+      "answer_outline": ["Heating air", "Lower density"],
+      "key_concepts": ["density"],
+      "marks": 4,
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why pressure affects the density of gases more than solids or liquids.",
+      "answer": "Gas particles are far apart and easily compressed, so pressure significantly affects their density.",
+      "answer_outline": ["Particle spacing", "Compression effect"],
+      "key_concepts": ["pressure"],
+      "marks": 4,
+      "source_section": "Section 9.5.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why ice floats on water despite being made of the same substance.",
+      "answer": "Ice floats because it occupies more volume and has lower density than liquid water.",
+      "answer_outline": ["Expansion during freezing", "Lower density"],
+      "key_concepts": ["density"],
+      "marks": 4,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how density helps identify unknown substances.",
+      "answer": "Each substance has a unique density, so comparing measured density with known values helps identify materials.",
+      "answer_outline": [
+        "Measurement of density",
+        "Comparison with standard values"
+      ],
+      "key_concepts": ["density identification"],
+      "marks": 4,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the relationship between density and temperature with an example.",
+      "answer": "When temperature increases, volume increases and density decreases. Hot air rising is an example.",
+      "answer_outline": ["Heating effect", "Volume increase"],
+      "key_concepts": ["density"],
+      "marks": 4,
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why oil floats on water and does not mix with it.",
+      "answer": "Oil floats because it is less dense than water and does not mix due to differences in molecular properties.",
+      "answer_outline": ["Density difference", "Immiscibility"],
+      "key_concepts": ["density", "immiscibility"],
+      "marks": 4,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how density measurements are useful in scientific investigations.",
+      "answer": "Density measurements help determine material properties and identify substances in experiments.",
+      "answer_outline": ["Scientific measurement", "Material identification"],
+      "key_concepts": ["density measurement"],
+      "marks": 4,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how density principles are applied in ship building.",
+      "answer": "Ships are designed so their overall density is less than water, allowing them to float even though they are made of heavy materials.",
+      "answer_outline": ["Density design principle", "Floating structure"],
+      "key_concepts": ["density application"],
+      "marks": 5,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of understanding solutions in everyday life.",
+      "answer": "Solutions are used in cooking, medicine, chemical processes, and environmental systems.",
+      "answer_outline": ["Examples from daily life", "Scientific applications"],
+      "key_concepts": ["solutions"],
+      "marks": 4,
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall significance of studying solubility and density in science.",
+      "answer": "Solubility and density explain many natural and practical phenomena such as dissolving substances, floating objects, and environmental processes.",
+      "answer_outline": [
+        "Scientific understanding",
+        "Applications in daily life"
+      ],
+      "key_concepts": ["solubility", "density"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

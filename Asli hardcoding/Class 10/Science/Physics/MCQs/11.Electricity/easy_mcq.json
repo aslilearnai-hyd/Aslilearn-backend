@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 11: Electricity",
+    "generated_at": "2026-03-11T03:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is the SI unit of current?",
+            "options": {
+                "A": "Volt",
+                "B": "Ohm",
+                "C": "Ampere",
+                "D": "Watt"
+            },
+            "correct_answer": "C",
+            "explanation": "Current is measured in amperes (A).",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the function of a resistor in a circuit?",
+            "options": {
+                "A": "To store charge",
+                "B": "To oppose current flow",
+                "C": "To increase current",
+                "D": "To supply voltage"
+            },
+            "correct_answer": "B",
+            "explanation": "Resistors resist the flow of electric current.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is a good conductor of electricity?",
+            "options": {
+                "A": "Rubber",
+                "B": "Glass",
+                "C": "Copper",
+                "D": "Plastic"
+            },
+            "correct_answer": "C",
+            "explanation": "Copper has free electrons that allow easy flow of current.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which law is used to relate current, voltage, and resistance in a conductor?",
+            "options": {
+                "A": "Faraday's Law",
+                "B": "Ohm's Law",
+                "C": "Kirchhoff's Law",
+                "D": "Coulomb's Law"
+            },
+            "correct_answer": "B",
+            "explanation": "Ohm's law: I = V/R.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Two resistors 5 Ω and 10 Ω are connected in series. What is the total resistance?",
+            "options": {
+                "A": "3.3 Ω",
+                "B": "15 Ω",
+                "C": "5 Ω",
+                "D": "10 Ω"
+            },
+            "correct_answer": "B",
+            "explanation": "In series, resistances add: R_total = 5 + 10 = 15 Ω.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Two resistors 4 Ω and 12 Ω are connected in parallel. What is the equivalent resistance?",
+            "options": {
+                "A": "3 Ω",
+                "B": "16 Ω",
+                "C": "8 Ω",
+                "D": "6 Ω"
+            },
+            "correct_answer": "A",
+            "explanation": "1/Req = 1/4 + 1/12 = 1/3 → Req = 3 Ω.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which instrument is used to measure voltage in a circuit?",
+            "options": {
+                "A": "Ammeter",
+                "B": "Voltmeter",
+                "C": "Ohmmeter",
+                "D": "Galvanometer"
+            },
+            "correct_answer": "B",
+            "explanation": "Voltmeters measure potential difference (voltage) across two points.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "A 60 W, 120 V bulb draws what current when operating normally?",
+            "options": {
+                "A": "0.5 A",
+                "B": "2 A",
+                "C": "1 A",
+                "D": "0.2 A"
+            },
+            "correct_answer": "A",
+            "explanation": "I = P/V = 60/120 = 0.5 A.",
+            "difficulty": "easy",
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 9,
+            "question": "In a series circuit, what happens if one component fails?",
+            "options": {
+                "A": "Current increases",
+                "B": "Circuit is broken and current stops",
+                "C": "Other components work normally",
+                "D": "Voltage doubles"
+            },
+            "correct_answer": "B",
+            "explanation": "Series circuit is a single path; if one breaks, current stops.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "In a parallel circuit, what happens if one bulb fails?",
+            "options": {
+                "A": "All bulbs go off",
+                "B": "Other bulbs remain unaffected",
+                "C": "Voltage drops to zero",
+                "D": "Current stops"
+            },
+            "correct_answer": "B",
+            "explanation": "Each branch in a parallel circuit is independent.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following increases the resistance of a wire?",
+            "options": {
+                "A": "Increasing length",
+                "B": "Increasing cross-sectional area",
+                "C": "Using copper instead of iron",
+                "D": "Cooling the wire"
+            },
+            "correct_answer": "A",
+            "explanation": "Longer wire → higher resistance.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which material is used to make the filament of a bulb?",
+            "options": {
+                "A": "Copper",
+                "B": "Tungsten",
+                "C": "Aluminum",
+                "D": "Iron"
+            },
+            "correct_answer": "B",
+            "explanation": "Tungsten has high melting point and good conductivity.",
+            "difficulty": "easy",
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the power consumed in a 12 Ω resistor with 2 A current?",
+            "options": {
+                "A": "24 W",
+                "B": "48 W",
+                "C": "12 W",
+                "D": "36 W"
+            },
+            "correct_answer": "B",
+            "explanation": "P = I²R = 2² × 12 = 48 W.",
+            "difficulty": "easy",
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following is NOT a conductor?",
+            "options": {
+                "A": "Aluminum",
+                "B": "Iron",
+                "C": "Plastic",
+                "D": "Copper"
+            },
+            "correct_answer": "C",
+            "explanation": "Plastic is an insulator, does not allow current to pass easily.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which quantity is defined as the potential difference between two points?",
+            "options": {
+                "A": "Current",
+                "B": "Resistance",
+                "C": "Voltage",
+                "D": "Power"
+            },
+            "correct_answer": "C",
+            "explanation": "Voltage is the potential difference between two points.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "If voltage across a resistor doubles, what happens to the current?",
+            "options": {
+                "A": "Halves",
+                "B": "Doubles",
+                "C": "Remains same",
+                "D": "Becomes zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Ohm’s law: I = V/R, so doubling V doubles I.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which device is used to break an electric circuit?",
+            "options": {
+                "A": "Bulb",
+                "B": "Switch",
+                "C": "Resistor",
+                "D": "Ammeter"
+            },
+            "correct_answer": "B",
+            "explanation": "A switch opens/closes a circuit, controlling current flow.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "How does current vary in a series circuit?",
+            "options": {
+                "A": "Same in all components",
+                "B": "Varies inversely with resistance",
+                "C": "Varies with voltage across each component",
+                "D": "Cannot be determined"
+            },
+            "correct_answer": "A",
+            "explanation": "Series current is same through all components.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What happens to resistance if the cross-sectional area of a wire is doubled?",
+            "options": {
+                "A": "Resistance doubles",
+                "B": "Resistance halves",
+                "C": "Resistance remains same",
+                "D": "Resistance quadruples"
+            },
+            "correct_answer": "B",
+            "explanation": "R = ρL/A → doubling area halves resistance.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following increases the brightness of a bulb in a series circuit?",
+            "options": {
+                "A": "Decrease total resistance",
+                "B": "Increase resistance of bulb",
+                "C": "Decrease voltage",
+                "D": "Open switch"
+            },
+            "correct_answer": "A",
+            "explanation": "Reducing total resistance increases current, increasing brightness.",
+            "difficulty": "easy",
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What type of circuit is commonly used in households?",
+            "options": {
+                "A": "Series",
+                "B": "Parallel",
+                "C": "Open",
+                "D": "Short"
+            },
+            "correct_answer": "B",
+            "explanation": "Parallel circuits allow independent operation of devices.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following is an effect of electric current?",
+            "options": {
+                "A": "Heating",
+                "B": "Magnetic",
+                "C": "Chemical",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Current can produce heat, magnetic fields, and chemical changes.",
+            "difficulty": "easy",
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 23,
+            "question": "A 10 Ω resistor is connected to a 5 V battery. Current through it is:",
+            "options": {
+                "A": "0.5 A",
+                "B": "2 A",
+                "C": "5 A",
+                "D": "10 A"
+            },
+            "correct_answer": "A",
+            "explanation": "I = V/R = 5/10 = 0.5 A.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following is an insulator used in electrical wiring?",
+            "options": {
+                "A": "Rubber",
+                "B": "Copper",
+                "C": "Aluminum",
+                "D": "Iron"
+            },
+            "correct_answer": "A",
+            "explanation": "Rubber prevents current flow and insulates wires.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the total resistance of two 8 Ω resistors in parallel?",
+            "options": {
+                "A": "4 Ω",
+                "B": "16 Ω",
+                "C": "8 Ω",
+                "D": "2 Ω"
+            },
+            "correct_answer": "A",
+            "explanation": "1/Req = 1/8 + 1/8 = 1/4 → Req = 4 Ω.",
+            "difficulty": "easy",
+            "source_section": "Section 11.3"
+        }
+    ]
+}

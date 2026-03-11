@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "The Baudhāyana-Pythagoras Theorem",
+  "difficulty": "Hard",
+  "source_pdf": "hegp202.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Triple Area Square Construction",
+      "objective": "Construct a square with three times the area of a given square",
+      "materials": ["Chart paper", "Scale", "Pencil"],
+      "steps": [
+        "Draw a square of side 4 cm",
+        "Use geometric constructions to combine squares",
+        "Create a square with triple area",
+        "Verify using area calculations"
+      ],
+      "learning_outcome": "Applies geometric reasoning to construct larger areas",
+      "evaluation": "Correct construction and proof (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Five Times Area Square",
+      "objective": "Construct a square five times the area of a given square",
+      "materials": ["Notebook", "Scale"],
+      "steps": [
+        "Draw a square of side 3 cm",
+        "Use Pythagoras constructions",
+        "Create square with area five times larger",
+        "Verify using calculations"
+      ],
+      "learning_outcome": "Advanced geometric construction skills",
+      "evaluation": "Correct geometric reasoning (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Advanced Hypotenuse Estimation",
+      "objective": "Find decimal approximation of √50",
+      "materials": ["Calculator", "Notebook"],
+      "steps": [
+        "Find squares of numbers between 7 and 8",
+        "Locate closest values",
+        "Refine bounds",
+        "Write approximate value"
+      ],
+      "learning_outcome": "Develops estimation and numerical reasoning",
+      "evaluation": "Correct approximation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Grid Square Area Challenge",
+      "objective": "Create squares of different integer areas on a grid",
+      "materials": ["Graph paper"],
+      "steps": [
+        "Draw a dot grid",
+        "Construct squares using grid points",
+        "Calculate their areas",
+        "List possible integer areas"
+      ],
+      "learning_outcome": "Develops spatial reasoning and geometric creativity",
+      "evaluation": "Number of valid constructions (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Generate New Primitive Triples",
+      "objective": "Create new primitive triples using number patterns",
+      "materials": ["Notebook"],
+      "steps": [
+        "Start with equation a² + b² = c²",
+        "Try different integer values",
+        "Identify primitive triples",
+        "Explain pattern discovered"
+      ],
+      "learning_outcome": "Develops number pattern reasoning",
+      "evaluation": "Correct triples discovered (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Rhombus Side Finder",
+      "objective": "Find side length using diagonals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Given diagonals 24 and 70",
+        "Draw rhombus diagonals intersecting at right angles",
+        "Apply theorem to half diagonals",
+        "Find side length"
+      ],
+      "learning_outcome": "Applies theorem in complex figures",
+      "evaluation": "Correct derivation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Integer Rectangle Challenge",
+      "objective": "Find rectangles with integer diagonals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose different integer side lengths",
+        "Calculate diagonals",
+        "Check if diagonal is integer",
+        "List valid rectangles"
+      ],
+      "learning_outcome": "Understands application of triples in rectangles",
+      "evaluation": "Correct examples listed (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Equilateral Triangle Area Investigation",
+      "objective": "Find area of equilateral triangle using theorem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Draw equilateral triangle with side 6 cm",
+        "Drop altitude",
+        "Use theorem to find height",
+        "Calculate area"
+      ],
+      "learning_outcome": "Applies theorem beyond right triangles",
+      "evaluation": "Correct area calculation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Scaled Triple Pattern Study",
+      "objective": "Investigate infinite triples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take primitive triple (5,12,13)",
+        "Multiply by integers",
+        "Check theorem",
+        "Explain pattern"
+      ],
+      "learning_outcome": "Understands infinite solutions of triples",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Mathematical Proof Activity",
+      "objective": "Prove a² + b² = c² using square areas",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Draw squares on all sides of a right triangle",
+        "Calculate areas",
+        "Show sum of two smaller squares equals largest",
+        "Write formal explanation"
+      ],
+      "learning_outcome": "Develops proof-writing skills",
+      "evaluation": "Logical explanation (10 marks)"
+    }
+  ]
+}

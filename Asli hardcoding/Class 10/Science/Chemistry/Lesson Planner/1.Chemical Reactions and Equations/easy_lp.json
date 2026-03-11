@@ -1,0 +1,182 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Chemical Reactions and Equations",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify chemical changes in daily life",
+        "Write and balance simple chemical equations",
+        "Distinguish between reactants and products",
+        "Understand and identify basic types of chemical reactions",
+        "Observe the effects of oxidation in everyday life (corrosion and rancidity)",
+        "Recognize the characteristics of chemical reactions like gas evolution or color change"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Chemical Reactions",
+            "topics_covered": [
+                "Physical vs. Chemical changes",
+                "Observations that determine a chemical reaction",
+                "Reactants and Products"
+            ],
+            "teaching_strategy": [
+                "Real-life examples (rusting, curdling of milk)",
+                "Demonstration of Magnesium ribbon burning",
+                "Interactive Q&A"
+            ],
+            "student_activities": [
+                "List five chemical changes seen at home",
+                "Observe and record changes during the Magnesium ribbon experiment"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Classifying a list of changes as Physical or Chemical"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Chemical Equations",
+            "topics_covered": [
+                "Writing word equations",
+                "Representing reactions using symbols and formulae",
+                "Skeletal chemical equations"
+            ],
+            "teaching_strategy": [
+                "Step-by-step board demonstration",
+                "Relating symbols to elements from the Periodic Table"
+            ],
+            "student_activities": [
+                "Convert word equations into symbol equations",
+                "Practice writing formulae for common compounds"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short identification quiz on symbols"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Balancing Chemical Equations",
+            "topics_covered": [
+                "Law of Conservation of Mass",
+                "Hit and trial method for balancing",
+                "Making equations more informative (states of matter)"
+            ],
+            "teaching_strategy": [
+                "Analogy of a weighing scale",
+                "Guided practice on the blackboard"
+            ],
+            "student_activities": [
+                "Balance five simple skeletal equations",
+                "Identify the physical states (s, l, g, aq) in given reactions"
+            ],
+            "assessment": [
+                "Peer correction of balancing exercises",
+                "Quick-fire balancing round"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Combination and Decomposition Reactions",
+            "topics_covered": [
+                "Definition and examples of Combination reactions",
+                "Thermal, Electrolytic, and Photolytic Decomposition",
+                "Exothermic and Endothermic concepts"
+            ],
+            "teaching_strategy": [
+                "Visual aids/Videos of decomposition of Lead Nitrate",
+                "Simplified flowcharts"
+            ],
+            "student_activities": [
+                "Draw a diagram for the electrolysis of water",
+                "Classify reactions as 'joining' (combination) or 'breaking' (decomposition)"
+            ],
+            "assessment": [
+                "True/False worksheet",
+                "Exit slip: Name one decomposition reaction used in daily life"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Displacement and Double Displacement",
+            "topics_covered": [
+                "Displacement reactions (Iron nail in Copper Sulphate)",
+                "Introduction to Reactivity Series (basic)",
+                "Precipitation reactions"
+            ],
+            "teaching_strategy": [
+                "Live experiment/Demonstration of color change in solution",
+                "Comparison table"
+            ],
+            "student_activities": [
+                "Observe and note the change in color of Iron nails",
+                "Predict if a reaction will occur based on a simple reactivity chart"
+            ],
+            "assessment": [
+                "Worksheet on predicting products",
+                "Matching reactions to their types"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Oxidation, Reduction, and Corrosion",
+            "topics_covered": [
+                "Definition of Oxidation and Reduction (Oxygen gain/loss)",
+                "Redox reactions",
+                "Corrosion and Rancidity prevention"
+            ],
+            "teaching_strategy": [
+                "Samples of rusted iron and spoiled food packets (chips)",
+                "Discussion on how to prevent food spoilage"
+            ],
+            "student_activities": [
+                "Identify which substance is oxidized in a simple equation",
+                "List methods to prevent rusting"
+            ],
+            "assessment": [
+                "Short written identification",
+                "Poster/Slogan on 'Preventing Food Waste and Rancidity'"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Summary of all reaction types",
+                "Formulae and Balancing recap",
+                "Important board-style questions"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision (Gamification)",
+                "Solving previous year 'easy' category questions",
+                "Doubt clearing session"
+            ],
+            "student_activities": [
+                "Participate in a group quiz",
+                "Complete a comprehensive chapter mind-map"
+            ],
+            "assessment": [
+                "Chapter test (20 marks)",
+                "MCQs and balancing-based short answers"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard/Whiteboard",
+        "Science Lab Kit (Magnesium ribbon, Copper Sulphate, Iron nails)",
+        "NCERT Class 10 Textbook",
+        "Digital slides/Charts on reaction types",
+        "Samples of rusted objects and nitrogen-flushed food packets"
+    ],
+    "evaluation_methods": [
+        "Interactive Oral quizzes",
+        "Practical observation notes",
+        "Worksheets on Balancing",
+        "MCQs for conceptual clarity",
+        "Formal Class Test"
+    ],
+    "teacher_tip": "Focus heavily on the visual changes (color change, gas bubbles) to help students 'see' the chemistry before they try to 'write' the chemistry. Keep balancing practice limited to small coefficients initially to build confidence."
+}

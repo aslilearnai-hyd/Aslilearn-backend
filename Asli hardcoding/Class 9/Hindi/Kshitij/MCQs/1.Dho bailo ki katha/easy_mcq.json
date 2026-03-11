@@ -1,0 +1,359 @@
+{
+    "content_type": "बहुविकल्पीय प्रश्न",
+    "chapter": "IHKS101 – दो बैलों की कथा",
+    "title": "दो बैलों की कथा – सरल स्तर MCQs",
+    "generated_at": "2026-03-11T03:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "‘दो बैलों की कथा’ के लेखक कौन हैं?",
+            "options": {
+                "A": "मुंशी प्रेमचंद",
+                "B": "महादेवी वर्मा",
+                "C": "जयशंकर प्रसाद",
+                "D": "सुमित्रानंदन पंत"
+            },
+            "correct_answer": "A",
+            "explanation": "‘दो बैलों की कथा’ के लेखक मुंशी प्रेमचंद हैं।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "कहानी के मुख्य पात्र कौन हैं?",
+            "options": {
+                "A": "राम और श्याम",
+                "B": "हीरा और मोती",
+                "C": "मोहन और सोहन",
+                "D": "राजू और काजू"
+            },
+            "correct_answer": "B",
+            "explanation": "कहानी के मुख्य पात्र हीरा और मोती नामक दो बैल हैं।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 3,
+            "question": "हीरा और मोती क्या थे?",
+            "options": {
+                "A": "घोड़े",
+                "B": "गधे",
+                "C": "बैल",
+                "D": "ऊँट"
+            },
+            "correct_answer": "C",
+            "explanation": "हीरा और मोती दो बैल थे।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 4,
+            "question": "हीरा और मोती के मालिक का नाम क्या था?",
+            "options": {
+                "A": "राम",
+                "B": "श्याम",
+                "C": "झूरी",
+                "D": "गया"
+            },
+            "correct_answer": "C",
+            "explanation": "हीरा और मोती के मालिक का नाम झूरी था।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 5,
+            "question": "झूरी क्या करता था?",
+            "options": {
+                "A": "व्यापारी",
+                "B": "किसान",
+                "C": "अध्यापक",
+                "D": "डॉक्टर"
+            },
+            "correct_answer": "B",
+            "explanation": "झूरी एक किसान था।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 6,
+            "question": "झूरी बैलों के साथ कैसा व्यवहार करता था?",
+            "options": {
+                "A": "कठोर",
+                "B": "क्रूर",
+                "C": "स्नेहपूर्ण",
+                "D": "उदासीन"
+            },
+            "correct_answer": "C",
+            "explanation": "झूरी अपने बैलों से बहुत प्रेम करता था।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 7,
+            "question": "झूरी ने बैलों को कहाँ भेजा?",
+            "options": {
+                "A": "अपने मित्र के घर",
+                "B": "अपने भाई के घर",
+                "C": "अपने साले गया के घर",
+                "D": "बाजार"
+            },
+            "correct_answer": "C",
+            "explanation": "झूरी ने बैलों को अपने साले गया के घर भेजा।",
+            "difficulty": "easy",
+            "source_section": "गया प्रसंग"
+        },
+        {
+            "question_number": 8,
+            "question": "गया का स्वभाव कैसा था?",
+            "options": {
+                "A": "दयालु",
+                "B": "कठोर",
+                "C": "हँसमुख",
+                "D": "मित्रवत"
+            },
+            "correct_answer": "B",
+            "explanation": "गया बैलों के साथ कठोर व्यवहार करता था।",
+            "difficulty": "easy",
+            "source_section": "गया प्रसंग"
+        },
+        {
+            "question_number": 9,
+            "question": "हीरा और मोती गया के घर से क्यों भागे?",
+            "options": {
+                "A": "भोजन अच्छा नहीं था",
+                "B": "कठोर व्यवहार के कारण",
+                "C": "वे रास्ता भूल गए",
+                "D": "वे खेलना चाहते थे"
+            },
+            "correct_answer": "B",
+            "explanation": "गया के कठोर व्यवहार से दुखी होकर वे भाग गए।",
+            "difficulty": "easy",
+            "source_section": "भागने का प्रसंग"
+        },
+        {
+            "question_number": 10,
+            "question": "रास्ते में बैलों का सामना किससे हुआ?",
+            "options": {
+                "A": "कुत्ते से",
+                "B": "घोड़े से",
+                "C": "साँड़ से",
+                "D": "ऊँट से"
+            },
+            "correct_answer": "C",
+            "explanation": "रास्ते में उनका सामना एक क्रोधित साँड़ से हुआ।",
+            "difficulty": "easy",
+            "source_section": "साँड़ प्रसंग"
+        },
+        {
+            "question_number": 11,
+            "question": "बैलों को कहाँ बंद किया गया था?",
+            "options": {
+                "A": "खलिहान में",
+                "B": "कांजीहाउस में",
+                "C": "खेत में",
+                "D": "घर में"
+            },
+            "correct_answer": "B",
+            "explanation": "बैलों को कांजीहाउस में बंद किया गया था।",
+            "difficulty": "easy",
+            "source_section": "कांजीहाउस"
+        },
+        {
+            "question_number": 12,
+            "question": "कांजीहाउस में जानवरों की स्थिति कैसी थी?",
+            "options": {
+                "A": "खुश",
+                "B": "स्वस्थ",
+                "C": "भूखे और दुखी",
+                "D": "मजबूत"
+            },
+            "correct_answer": "C",
+            "explanation": "कांजीहाउस में जानवर भूखे और दुखी थे।",
+            "difficulty": "easy",
+            "source_section": "कांजीहाउस"
+        },
+        {
+            "question_number": 13,
+            "question": "हीरा ने कांजीहाउस में क्या किया?",
+            "options": {
+                "A": "सो गया",
+                "B": "दीवार तोड़ने का प्रयास किया",
+                "C": "भाग गया",
+                "D": "खाना खाया"
+            },
+            "correct_answer": "B",
+            "explanation": "हीरा ने दीवार तोड़ने का प्रयास किया।",
+            "difficulty": "easy",
+            "source_section": "कांजीहाउस"
+        },
+        {
+            "question_number": 14,
+            "question": "मोती ने गधों के साथ क्या किया?",
+            "options": {
+                "A": "उन्हें बाहर निकाला",
+                "B": "उन्हें मारा",
+                "C": "उन्हें बाँधा",
+                "D": "उन्हें छोड़ दिया"
+            },
+            "correct_answer": "A",
+            "explanation": "मोती ने गधों को सींग मारकर बाहर निकाल दिया।",
+            "difficulty": "easy",
+            "source_section": "कांजीहाउस"
+        },
+        {
+            "question_number": 15,
+            "question": "बैलों को बाद में किसे बेच दिया गया?",
+            "options": {
+                "A": "किसान को",
+                "B": "कसाई को",
+                "C": "व्यापारी को",
+                "D": "मित्र को"
+            },
+            "correct_answer": "B",
+            "explanation": "बाद में बैलों को एक कसाई को बेच दिया गया।",
+            "difficulty": "easy",
+            "source_section": "अंत"
+        },
+        {
+            "question_number": 16,
+            "question": "बैलों को अपने घर का रास्ता कैसे याद आया?",
+            "options": {
+                "A": "किसी ने बताया",
+                "B": "वे अनुमान से गए",
+                "C": "परिचित रास्तों को पहचानकर",
+                "D": "किसान ने लाया"
+            },
+            "correct_answer": "C",
+            "explanation": "उन्होंने परिचित रास्तों को पहचानकर घर का मार्ग ढूँढ लिया।",
+            "difficulty": "easy",
+            "source_section": "अंत"
+        },
+        {
+            "question_number": 17,
+            "question": "झूरी बैलों को देखकर कैसा हुआ?",
+            "options": {
+                "A": "दुखी",
+                "B": "क्रोधित",
+                "C": "प्रसन्न",
+                "D": "चिंतित"
+            },
+            "correct_answer": "C",
+            "explanation": "झूरी अपने बैलों को देखकर बहुत खुश हुआ।",
+            "difficulty": "easy",
+            "source_section": "अंत"
+        },
+        {
+            "question_number": 18,
+            "question": "झूरी ने बैलों के साथ क्या किया?",
+            "options": {
+                "A": "उन्हें डाँटा",
+                "B": "उन्हें गले लगाया",
+                "C": "उन्हें बेचा",
+                "D": "उन्हें छोड़ा"
+            },
+            "correct_answer": "B",
+            "explanation": "झूरी ने बैलों को प्यार से गले लगाया।",
+            "difficulty": "easy",
+            "source_section": "अंत"
+        },
+        {
+            "question_number": 19,
+            "question": "हीरा किस गुण का प्रतीक है?",
+            "options": {
+                "A": "क्रोध",
+                "B": "धैर्य",
+                "C": "आलस्य",
+                "D": "भय"
+            },
+            "correct_answer": "B",
+            "explanation": "हीरा धैर्य और समझदारी का प्रतीक है।",
+            "difficulty": "easy",
+            "source_section": "चरित्र"
+        },
+        {
+            "question_number": 20,
+            "question": "मोती किस गुण का प्रतीक है?",
+            "options": {
+                "A": "साहस",
+                "B": "डर",
+                "C": "आलस्य",
+                "D": "चिंता"
+            },
+            "correct_answer": "A",
+            "explanation": "मोती साहस और उत्साह का प्रतीक है।",
+            "difficulty": "easy",
+            "source_section": "चरित्र"
+        },
+        {
+            "question_number": 21,
+            "question": "कहानी में कौन-सा मूल्य प्रमुख है?",
+            "options": {
+                "A": "मित्रता",
+                "B": "क्रोध",
+                "C": "ईर्ष्या",
+                "D": "स्वार्थ"
+            },
+            "correct_answer": "A",
+            "explanation": "कहानी में मित्रता का महत्व बताया गया है।",
+            "difficulty": "easy",
+            "source_section": "विषय"
+        },
+        {
+            "question_number": 22,
+            "question": "कहानी में किस जीवन का चित्रण है?",
+            "options": {
+                "A": "शहरी जीवन",
+                "B": "ग्रामीण जीवन",
+                "C": "विदेशी जीवन",
+                "D": "औद्योगिक जीवन"
+            },
+            "correct_answer": "B",
+            "explanation": "कहानी में ग्रामीण जीवन का चित्रण है।",
+            "difficulty": "easy",
+            "source_section": "संदर्भ"
+        },
+        {
+            "question_number": 23,
+            "question": "कहानी का मुख्य विषय क्या है?",
+            "options": {
+                "A": "मित्रता और साहस",
+                "B": "क्रोध",
+                "C": "युद्ध",
+                "D": "धन"
+            },
+            "correct_answer": "A",
+            "explanation": "कहानी का मुख्य विषय मित्रता और साहस है।",
+            "difficulty": "easy",
+            "source_section": "विषय"
+        },
+        {
+            "question_number": 24,
+            "question": "कहानी में कौन-सा साहित्यिक उपकरण प्रयुक्त हुआ है?",
+            "options": {
+                "A": "उपमा",
+                "B": "मानवीकरण",
+                "C": "अलंकार",
+                "D": "अनुप्रास"
+            },
+            "correct_answer": "B",
+            "explanation": "कहानी में बैलों को मानवीय गुणों के साथ प्रस्तुत किया गया है।",
+            "difficulty": "easy",
+            "source_section": "पूरी कहानी"
+        },
+        {
+            "question_number": 25,
+            "question": "इस कहानी से क्या शिक्षा मिलती है?",
+            "options": {
+                "A": "मित्रता और साहस का महत्व",
+                "B": "क्रोध करना चाहिए",
+                "C": "धन सबसे महत्वपूर्ण है",
+                "D": "लड़ाई करनी चाहिए"
+            },
+            "correct_answer": "A",
+            "explanation": "कहानी हमें मित्रता, साहस और दया का महत्व सिखाती है।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

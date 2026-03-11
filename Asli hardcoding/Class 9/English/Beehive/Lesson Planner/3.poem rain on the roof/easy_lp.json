@@ -1,0 +1,114 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Rain on the Roof",
+    "lesson_level": "Easy",
+    "total_periods": 4,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the main idea and theme of the poem",
+        "Recognize imagery and simple poetic devices",
+        "Summarize each stanza in own words",
+        "Develop basic comprehension and vocabulary",
+        "Relate the poem to personal experiences of rain and comfort"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Poem",
+            "topics_covered": [
+                "About the poet (Henry Wadsworth Longfellow)",
+                "Theme: cozy feeling and reflection during rain",
+                "Initial reading of the poem"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud",
+                "Discussion about rainy weather and emotions it evokes"
+            ],
+            "student_activities": [
+                "Listen attentively to the poem",
+                "Share own experiences of listening to rain"
+            ],
+            "assessment": [
+                "Oral questions on theme",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Stanza-wise Understanding",
+            "topics_covered": [
+                "Meaning of each stanza",
+                "Imagery of rain and sounds on roof and shingles",
+                "Feelings and mood evoked by the poem"
+            ],
+            "teaching_strategy": [
+                "Explain each stanza in simple language",
+                "Highlight key words and imagery"
+            ],
+            "student_activities": [
+                "Underline descriptive words in poem",
+                "Write simple meaning of each stanza in notebook"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning about stanza meanings"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Understanding Feelings and Imagination",
+            "topics_covered": [
+                "Feelings of nostalgia and comfort",
+                "Recollection of loved ones and memories",
+                "Connection between sounds of rain and imagination"
+            ],
+            "teaching_strategy": [
+                "Discussion on how rain evokes memories",
+                "Ask students to share their reflections"
+            ],
+            "student_activities": [
+                "Write a few sentences about a memory triggered by rain",
+                "Identify examples of imagery in poem"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Revision and Recap",
+            "topics_covered": [
+                "Summary of poem",
+                "Theme and feelings conveyed",
+                "Poetic devices: imagery, sound, rhythm"
+            ],
+            "teaching_strategy": [
+                "Recap key points of poem",
+                "Ask students to summarize poem in their own words"
+            ],
+            "student_activities": [
+                "Write short summary of poem",
+                "Identify examples of imagery and sounds"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Participation in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing imagery and sound devices"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Focus on helping students feel the poem’s atmosphere and relate it to personal experiences with rain."
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet",
+  "generated_at": "2026-03-05T21:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is liquid water important for life on Earth?",
+      "options": {
+        "A": "It reflects sunlight",
+        "B": "It helps regulate climate and supports biological processes",
+        "C": "It increases gravity",
+        "D": "It creates mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "Water supports metabolic processes and regulates Earth’s temperature.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which factor mainly keeps Earth’s temperature suitable for life?",
+      "options": {
+        "A": "Distance from the Sun",
+        "B": "Presence of mountains",
+        "C": "Large oceans",
+        "D": "Rotation speed"
+      },
+      "correct_answer": "A",
+      "explanation": "Earth lies in the habitable zone where temperatures allow liquid water.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which gas in the atmosphere is most important for respiration in animals?",
+      "options": {
+        "A": "Nitrogen",
+        "B": "Carbon dioxide",
+        "C": "Oxygen",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Animals require oxygen for respiration to release energy.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Why does Earth have an atmosphere while smaller planets may not?",
+      "options": {
+        "A": "Earth is colder",
+        "B": "Earth’s gravity is strong enough to hold gases",
+        "C": "Earth rotates faster",
+        "D": "Earth has more mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "Earth’s gravity prevents atmospheric gases from escaping into space.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which process maintains the balance between oxygen and carbon dioxide in the atmosphere?",
+      "options": {
+        "A": "Respiration only",
+        "B": "Photosynthesis and respiration",
+        "C": "Evaporation",
+        "D": "Condensation"
+      },
+      "correct_answer": "B",
+      "explanation": "Plants release oxygen during photosynthesis while organisms release carbon dioxide during respiration.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which Earth system includes living organisms interacting with their environment?",
+      "options": {
+        "A": "Atmosphere",
+        "B": "Hydrosphere",
+        "C": "Geosphere",
+        "D": "Biosphere"
+      },
+      "correct_answer": "D",
+      "explanation": "The biosphere includes all living organisms and their interactions with Earth systems.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Which process transfers pollen from the anther to the stigma?",
+      "options": {
+        "A": "Fertilisation",
+        "B": "Pollination",
+        "C": "Photosynthesis",
+        "D": "Respiration"
+      },
+      "correct_answer": "B",
+      "explanation": "Pollination is the transfer of pollen grains to the stigma.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which structure protects Earth from solar wind?",
+      "options": {
+        "A": "Ozone layer",
+        "B": "Magnetic field",
+        "C": "Cloud layer",
+        "D": "Ocean currents"
+      },
+      "correct_answer": "B",
+      "explanation": "Earth’s magnetic field deflects charged particles from the Sun.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Which environmental change is directly linked to increased greenhouse gases?",
+      "options": {
+        "A": "Earthquakes",
+        "B": "Global warming",
+        "C": "Volcano eruptions",
+        "D": "Ocean tides"
+      },
+      "correct_answer": "B",
+      "explanation": "Greenhouse gases trap heat and increase Earth’s average temperature.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 10,
+      "question": "Which type of reproduction produces genetically identical offspring?",
+      "options": {
+        "A": "Sexual reproduction",
+        "B": "Asexual reproduction",
+        "C": "Cross pollination",
+        "D": "Fertilisation"
+      },
+      "correct_answer": "B",
+      "explanation": "Asexual reproduction produces offspring identical to the parent.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following is an example of vegetative propagation?",
+      "options": {
+        "A": "Seed germination",
+        "B": "Growth from potato tubers",
+        "C": "Pollination",
+        "D": "Fertilisation"
+      },
+      "correct_answer": "B",
+      "explanation": "Potato tubers grow into new plants through vegetative propagation.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the main function of roots in plants?",
+      "options": {
+        "A": "Producing flowers",
+        "B": "Absorbing water and minerals",
+        "C": "Producing oxygen",
+        "D": "Storing sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Roots absorb water and nutrients from the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which factor can disturb the balance of ecosystems?",
+      "options": {
+        "A": "Natural rainfall",
+        "B": "Deforestation",
+        "C": "Pollination",
+        "D": "Photosynthesis"
+      },
+      "correct_answer": "B",
+      "explanation": "Deforestation destroys habitats and disrupts ecosystems.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Which Earth system controls weather and climate?",
+      "options": {
+        "A": "Geosphere",
+        "B": "Atmosphere",
+        "C": "Hydrosphere",
+        "D": "Biosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The atmosphere regulates weather and climate.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which activity helps reduce pollution?",
+      "options": {
+        "A": "Burning coal",
+        "B": "Using renewable energy",
+        "C": "Cutting forests",
+        "D": "Using more plastic"
+      },
+      "correct_answer": "B",
+      "explanation": "Renewable energy sources reduce pollution and greenhouse gas emissions.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Which environmental issue leads to melting glaciers and rising sea levels?",
+      "options": {
+        "A": "Global warming",
+        "B": "Earthquakes",
+        "C": "Volcanoes",
+        "D": "Cyclones"
+      },
+      "correct_answer": "A",
+      "explanation": "Global warming increases temperature causing ice to melt.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Which process returns nutrients back to the soil?",
+      "options": {
+        "A": "Respiration",
+        "B": "Decomposition",
+        "C": "Photosynthesis",
+        "D": "Transpiration"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposers break down dead organisms and recycle nutrients.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which environmental crisis involves pollution, climate change, and biodiversity loss?",
+      "options": {
+        "A": "Triple planetary crisis",
+        "B": "Energy crisis",
+        "C": "Water crisis",
+        "D": "Economic crisis"
+      },
+      "correct_answer": "A",
+      "explanation": "These three major environmental problems together form the triple planetary crisis.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor helps maintain ecological balance?",
+      "options": {
+        "A": "Balanced food chains",
+        "B": "Deforestation",
+        "C": "Pollution",
+        "D": "Overpopulation"
+      },
+      "correct_answer": "A",
+      "explanation": "Balanced food chains ensure proper energy flow in ecosystems.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 20,
+      "question": "Which layer of Earth generates its magnetic field?",
+      "options": {
+        "A": "Crust",
+        "B": "Mantle",
+        "C": "Outer core",
+        "D": "Lithosphere"
+      },
+      "correct_answer": "C",
+      "explanation": "Movement of molten iron in the outer core produces Earth's magnetic field.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which factor mainly determines whether a planet can retain an atmosphere?",
+      "options": {
+        "A": "Planet size and gravity",
+        "B": "Number of moons",
+        "C": "Color of surface",
+        "D": "Rotation speed"
+      },
+      "correct_answer": "A",
+      "explanation": "A planet must have sufficient gravity to hold atmospheric gases.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which process converts sunlight into chemical energy in plants?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Fermentation",
+        "D": "Digestion"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis stores solar energy as chemical energy in food.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which natural resource is essential for agriculture and food production?",
+      "options": {
+        "A": "Soil",
+        "B": "Wind",
+        "C": "Rocks",
+        "D": "Clouds"
+      },
+      "correct_answer": "A",
+      "explanation": "Soil contains nutrients required for plant growth.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which environmental action helps protect biodiversity?",
+      "options": {
+        "A": "Cutting forests",
+        "B": "Wildlife conservation",
+        "C": "Increasing pollution",
+        "D": "Overhunting animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Conservation protects species and ecosystems.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Which system interaction helps maintain life on Earth?",
+      "options": {
+        "A": "Atmosphere and hydrosphere interaction",
+        "B": "Mountains and rivers only",
+        "C": "Sun and moon only",
+        "D": "Clouds and wind only"
+      },
+      "correct_answer": "A",
+      "explanation": "Interactions between Earth systems maintain ecological balance.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    }
+  ]
+}

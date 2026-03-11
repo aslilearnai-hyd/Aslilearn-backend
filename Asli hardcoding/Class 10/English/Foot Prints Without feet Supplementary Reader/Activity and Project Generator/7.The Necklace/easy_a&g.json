@@ -1,0 +1,155 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "The Necklace",
+    "author": "Guy de Maupassant",
+    "difficulty": "Easy",
+    "source_pdf": "jefp107.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "List of Main Characters",
+            "objective": "Identify the main characters in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the story carefully",
+                "List the main characters mentioned",
+                "Write one line about each character"
+            ],
+            "learning_outcome": "Identifies main characters and their roles",
+            "evaluation": "Correct listing with brief description (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Mme Loisel",
+            "objective": "Understand the character of Mme Loisel",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the passages related to Mme Loisel",
+                "Write 4–5 sentences describing her nature and desires"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Relevant character points included (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Role of Mr Loisel",
+            "objective": "Understand the role of Mr Loisel in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify how Mr Loisel supports his wife",
+                "Write three points describing his character"
+            ],
+            "learning_outcome": "Understands supporting character roles",
+            "evaluation": "Correct points identified (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Reason for Mme Loisel’s Unhappiness",
+            "objective": "Understand the cause of Mme Loisel’s dissatisfaction",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Recall the opening part of the story",
+                "Write 3–4 sentences explaining why she is unhappy"
+            ],
+            "learning_outcome": "Understands cause and effect in the story",
+            "evaluation": "Clear explanation given (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Invitation Scene",
+            "objective": "Understand the importance of the invitation",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the scene where the invitation arrives",
+                "Write why the invitation is important to Mme Loisel"
+            ],
+            "learning_outcome": "Understands key turning point in the story",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Borrowed Necklace",
+            "objective": "Understand the importance of the necklace",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Recall how Mme Loisel gets the necklace",
+                "Write 3–4 sentences about its role in the story"
+            ],
+            "learning_outcome": "Understands plot development",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four major events in the story",
+                "Arrange them in correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct sequencing (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary Builder",
+            "objective": "Improve vocabulary from the lesson",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Pick five new words from the story",
+                "Write their meanings and use each in a sentence"
+            ],
+            "learning_outcome": "Builds vocabulary skills",
+            "evaluation": "Correct meanings and usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Moral of the Story",
+            "objective": "Understand the moral message of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the ending of the story",
+                "Write the moral in your own words"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear moral explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Real-Life Connection",
+            "objective": "Relate the story to real-life situations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about desire, honesty, or contentment in real life",
+                "Write 3–4 sentences connecting it to the story"
+            ],
+            "learning_outcome": "Applies lesson to real-life situations",
+            "evaluation": "Meaningful connection explained (10 marks)"
+        }
+    ]
+}

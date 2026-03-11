@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T15:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A car travels 180 m in 12 s. What is its speed?",
+            "options": {
+                "A": "10 m/s",
+                "B": "12 m/s",
+                "C": "15 m/s",
+                "D": "18 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed = distance/time = 180/12 = 15 m/s.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Convert 90 km/h into m/s.",
+            "options": {
+                "A": "20 m/s",
+                "B": "22.5 m/s",
+                "C": "25 m/s",
+                "D": "30 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "90 ÷ 3.6 = 25 m/s.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A train accelerates from 10 m/s to 30 m/s in 5 s. What is its acceleration?",
+            "options": {
+                "A": "2 m/s²",
+                "B": "3 m/s²",
+                "C": "4 m/s²",
+                "D": "5 m/s²"
+            },
+            "correct_answer": "C",
+            "explanation": "a = (v − u)/t = (30 − 10)/5 = 4 m/s².",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A car moving at 20 m/s stops in 4 s. What is its acceleration?",
+            "options": {
+                "A": "-2 m/s²",
+                "B": "-4 m/s²",
+                "C": "-5 m/s²",
+                "D": "-8 m/s²"
+            },
+            "correct_answer": "C",
+            "explanation": "a = (0 − 20)/4 = −5 m/s².",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A body starts from rest and moves with acceleration 2 m/s² for 5 s. Its final velocity is:",
+            "options": {
+                "A": "5 m/s",
+                "B": "8 m/s",
+                "C": "10 m/s",
+                "D": "12 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "v = u + at = 0 + (2×5) = 10 m/s.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Using v² − u² = 2as, if u = 0, a = 2 m/s², s = 25 m, then v is:",
+            "options": {
+                "A": "5 m/s",
+                "B": "8 m/s",
+                "C": "10 m/s",
+                "D": "12 m/s"
+            },
+            "correct_answer": "C",
+            "explanation": "v² = 2×2×25 = 100 → v = 10 m/s.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "A body moves with constant speed in a circle. Its acceleration is:",
+            "options": {
+                "A": "Zero",
+                "B": "Toward center",
+                "C": "Away from center",
+                "D": "Parallel to motion"
+            },
+            "correct_answer": "B",
+            "explanation": "Circular motion has centripetal acceleration toward the center.",
+            "difficulty": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Which graph represents constant acceleration?",
+            "options": {
+                "A": "Straight line velocity-time graph",
+                "B": "Horizontal velocity-time graph",
+                "C": "Curved velocity-time graph",
+                "D": "Vertical velocity-time graph"
+            },
+            "correct_answer": "A",
+            "explanation": "Constant acceleration produces straight-line v–t graph.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "If the slope of velocity-time graph is zero, acceleration is:",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Infinite"
+            },
+            "correct_answer": "C",
+            "explanation": "Zero slope means zero acceleration.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "If a body travels 10 m east and then 10 m west, displacement is:",
+            "options": {
+                "A": "20 m",
+                "B": "10 m",
+                "C": "5 m",
+                "D": "0 m"
+            },
+            "correct_answer": "D",
+            "explanation": "Initial and final positions coincide.",
+            "difficulty": "hard",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Average velocity equals:",
+            "options": {
+                "A": "Total distance / time",
+                "B": "Total displacement / time",
+                "C": "Acceleration × time",
+                "D": "Velocity × time"
+            },
+            "correct_answer": "B",
+            "explanation": "Average velocity = displacement/time.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A body moves 50 m north and 50 m south. Distance is:",
+            "options": {
+                "A": "0 m",
+                "B": "50 m",
+                "C": "100 m",
+                "D": "150 m"
+            },
+            "correct_answer": "C",
+            "explanation": "Distance = total path = 100 m.",
+            "difficulty": "hard",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Acceleration can be produced by:",
+            "options": {
+                "A": "Changing speed",
+                "B": "Changing direction",
+                "C": "Both",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "Acceleration occurs if magnitude or direction of velocity changes.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "The SI unit of velocity is:",
+            "options": {
+                "A": "m",
+                "B": "m/s",
+                "C": "m/s²",
+                "D": "km/h"
+            },
+            "correct_answer": "B",
+            "explanation": "Velocity is measured in metre per second.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Velocity-time graph area gives:",
+            "options": {
+                "A": "Speed",
+                "B": "Acceleration",
+                "C": "Displacement",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Area under v–t graph equals displacement.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which motion always has acceleration even with constant speed?",
+            "options": {
+                "A": "Uniform motion",
+                "B": "Circular motion",
+                "C": "Rectilinear motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "B",
+            "explanation": "Direction changes continuously.",
+            "difficulty": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Acceleration due to gravity on Earth is approximately:",
+            "options": {
+                "A": "8.9 m/s²",
+                "B": "9.8 m/s²",
+                "C": "10.5 m/s²",
+                "D": "12 m/s²"
+            },
+            "correct_answer": "B",
+            "explanation": "Standard gravitational acceleration ≈ 9.8 m/s².",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Distance-time graph slope equals:",
+            "options": {
+                "A": "Speed",
+                "B": "Velocity",
+                "C": "Acceleration",
+                "D": "Displacement"
+            },
+            "correct_answer": "A",
+            "explanation": "Slope = speed.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Uniform acceleration means:",
+            "options": {
+                "A": "Velocity changes equally in equal intervals",
+                "B": "Velocity remains constant",
+                "C": "Velocity becomes zero",
+                "D": "Acceleration becomes zero"
+            },
+            "correct_answer": "A",
+            "explanation": "Uniform acceleration changes velocity equally over time.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which quantity is scalar?",
+            "options": {
+                "A": "Velocity",
+                "B": "Acceleration",
+                "C": "Speed",
+                "D": "Displacement"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed has magnitude only.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which device measures distance travelled by vehicles?",
+            "options": {
+                "A": "Speedometer",
+                "B": "Odometer",
+                "C": "Thermometer",
+                "D": "Barometer"
+            },
+            "correct_answer": "B",
+            "explanation": "Odometer measures distance travelled.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "If acceleration is positive, velocity:",
+            "options": {
+                "A": "Decreases",
+                "B": "Increases",
+                "C": "Becomes zero",
+                "D": "Remains constant"
+            },
+            "correct_answer": "B",
+            "explanation": "Positive acceleration increases velocity.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Uniform motion means:",
+            "options": {
+                "A": "Constant acceleration",
+                "B": "Constant speed",
+                "C": "Changing velocity",
+                "D": "Changing distance"
+            },
+            "correct_answer": "B",
+            "explanation": "Uniform motion has constant speed.",
+            "difficulty": "hard",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which equation is used when time is not known?",
+            "options": {
+                "A": "v = u + at",
+                "B": "s = ut + ½at²",
+                "C": "v² − u² = 2as",
+                "D": "s = vt"
+            },
+            "correct_answer": "C",
+            "explanation": "Third equation does not include time.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Velocity is defined as:",
+            "options": {
+                "A": "Distance/time",
+                "B": "Displacement/time",
+                "C": "Acceleration/time",
+                "D": "Distance × time"
+            },
+            "correct_answer": "B",
+            "explanation": "Velocity = displacement/time.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2.1"
+        }
+    ]
+}

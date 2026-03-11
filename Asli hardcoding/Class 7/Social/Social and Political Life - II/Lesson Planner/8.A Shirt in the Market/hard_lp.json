@@ -1,0 +1,158 @@
+{
+    "class": "Class 7",
+    "subject": "Social and Political Life– II",
+    "chapter_name": "A Shirt in the Market",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the complete supply chain of a shirt with real data",
+        "Understand profit distribution and inequalities in markets",
+        "Explore ethical trade, worker challenges, and sustainability",
+        "Develop research, critical thinking, and presentation skills",
+        "Relate market systems to global and local economic realities"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Detailed Shirt Production Analysis",
+            "topics_covered": [
+                "Stages: cotton farming, ginning, spinning, weaving, tailoring, retail",
+                "Costs, time, and labor involved at each stage",
+                "Environmental and social impacts"
+            ],
+            "teaching_strategy": [
+                "Flowcharts and diagrams with real data",
+                "Class discussion on challenges and impacts"
+            ],
+            "student_activities": [
+                "Create a detailed flowchart of production",
+                "Include costs, labor, and time at each stage",
+                "Highlight social and environmental impacts"
+            ],
+            "assessment": [
+                "Completeness and accuracy of flowchart",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Profit & Loss Calculations",
+            "topics_covered": [
+                "Estimating costs and profits at each stage",
+                "Analyzing inequalities among workers, traders, and retailers"
+            ],
+            "teaching_strategy": [
+                "Class discussion on cost and profit distribution",
+                "Use of sample numerical data for calculations"
+            ],
+            "student_activities": [
+                "Calculate profits for each participant",
+                "Identify stages with the largest and smallest profits",
+                "Discuss fairness in profit distribution"
+            ],
+            "assessment": [
+                "Accuracy of calculations",
+                "Insightfulness of fairness discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Field Study: Local Market Investigation",
+            "topics_covered": [
+                "Local shops, markets, and sourcing of shirts",
+                "Comparison of textbook and real-life data"
+            ],
+            "teaching_strategy": [
+                "Guided fieldwork with observation and interviews",
+                "Class discussion of findings"
+            ],
+            "student_activities": [
+                "Visit shops or markets",
+                "Interview sellers about costs, prices, and sourcing",
+                "Prepare a report comparing observations with chapter content"
+            ],
+            "assessment": [
+                "Depth and accuracy of observations",
+                "Quality of report and presentation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Design an Ethical Brand",
+            "topics_covered": [
+                "Fair wages, safe working conditions, and sustainability",
+                "Creating a business model considering ethical practices"
+            ],
+            "teaching_strategy": [
+                "Class discussion on ethical trade practices",
+                "Guided creative work for brand design"
+            ],
+            "student_activities": [
+                "Create a brand ensuring fair wages and safety",
+                "Design logo, supply chain, and marketing plan",
+                "Present brand concept to class"
+            ],
+            "assessment": [
+                "Creativity, feasibility, and ethical considerations",
+                "Presentation skills"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Debate: Who Gains Most?",
+            "topics_covered": [
+                "Economic inequalities in the shirt market",
+                "Arguments supported by research and calculations"
+            ],
+            "teaching_strategy": [
+                "Structured debate with role assignment",
+                "Use of real or assumed data to support arguments"
+            ],
+            "student_activities": [
+                "Divide into groups: farmers, workers, traders, retailers",
+                "Prepare arguments using data",
+                "Conduct a class debate and discuss fairness"
+            ],
+            "assessment": [
+                "Quality and use of data in arguments",
+                "Teamwork and reasoning skills"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Global and Sustainability Analysis",
+            "topics_covered": [
+                "Comparison of local and global markets",
+                "Environmental and social sustainability in clothing production"
+            ],
+            "teaching_strategy": [
+                "Research-based discussion with charts and reports",
+                "Guided reflection on global market and sustainability issues"
+            ],
+            "student_activities": [
+                "Compare local vs global shirt production and trade",
+                "Identify environmental issues and propose sustainable practices",
+                "Present findings with charts or diagrams"
+            ],
+            "assessment": [
+                "Depth of research",
+                "Clarity of analysis and presentation",
+                "Relevance of sustainable solutions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Charts and diagrams of shirt supply chain",
+        "Flowcharts and calculation worksheets",
+        "Access to internet or reference books for research",
+        "Role cards, props, and visual aids for debates"
+    ],
+    "evaluation_methods": [
+        "Observation during discussions and activities",
+        "Accuracy of calculations and reports",
+        "Participation in debates and presentations",
+        "Notebook checking and flowchart evaluation"
+    ],
+    "teacher_tip": "Encourage independent research, real-world observation, and critical thinking. Use debates, field visits, and creative brand projects to engage students with ethics, economics, and sustainability."
+}

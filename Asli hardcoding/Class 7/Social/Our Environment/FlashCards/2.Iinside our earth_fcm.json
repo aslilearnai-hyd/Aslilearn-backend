@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: Inside Our Earth",
+    "generated_at": "2026-03-07T18:15:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What are the three concentric layers of the Earth?",
+                "correct_answer": "Crust, Mantle, and Core",
+                "explanation": "The Earth is made of several layers, with the crust being the outermost and the core being the innermost.",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "question": "Which is the thinnest layer of the Earth?",
+                "correct_answer": "The Crust",
+                "explanation": "It is only about 35 km thick on the continental masses and only 5 km on the ocean floors.",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "question": "What are the main mineral constituents of the continental mass?",
+                "correct_answer": "Silica and Alumina (Sial)",
+                "explanation": "The name 'Sial' comes from 'Si' for silica and 'Al' for alumina.",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "question": "What is the oceanic crust mainly composed of?",
+                "correct_answer": "Silica and Magnesium (Sima)",
+                "explanation": "It is called 'Sima' using 'Si' for silica and 'Ma' for magnesium.",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "question": "What is the innermost layer of the Earth called and what is it made of?",
+                "correct_answer": "The Core; made of Nickel and Iron (Nife)",
+                "explanation": "The central core has a very high temperature and pressure; 'Nife' stands for Nickel (Ni) and Ferrous/Iron (Fe).",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "question": "How are Igneous rocks formed?",
+                "correct_answer": "By the cooling and solidification of molten magma",
+                "explanation": "They are also called primary rocks. Examples include Granite and Basalt.",
+                "source_section": "Rocks and Minerals"
+            },
+            {
+                "question": "What is the difference between Extrusive and Intrusive igneous rocks?",
+                "correct_answer": "Extrusive cool on the surface; Intrusive cool deep inside the earth",
+                "explanation": "Extrusive rocks like basalt have a fine-grained structure, while intrusive rocks like granite have large grains.",
+                "source_section": "Rocks and Minerals"
+            },
+            {
+                "question": "How are Sedimentary rocks formed?",
+                "correct_answer": "From sediments being compressed and hardened into layers",
+                "explanation": "Rocks break down into small fragments (sediments) which are transported by wind/water and deposited.",
+                "source_section": "Rocks and Minerals"
+            },
+            {
+                "question": "What is the Rock Cycle?",
+                "correct_answer": "The process of transformation of rocks from one type to another",
+                "explanation": "Igneous rocks turn into sedimentary, which can turn into metamorphic under heat and pressure, which can then melt back into magma.",
+                "source_section": "Rocks and Minerals"
+            },
+            {
+                "question": "What are fossils?",
+                "correct_answer": "The remains of dead plants and animals trapped in layers of rocks",
+                "explanation": "Fossils are primarily found in sedimentary rocks.",
+                "source_section": "Rocks and Minerals"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Mantle Depth",
+                "content": "The mantle extends up to a depth of 2900 km below the crust.",
+                "source_section": "Interior of the Earth"
+            },
+            {
+                "title": "Metamorphic Change",
+                "content": "Under great heat and pressure, igneous and sedimentary rocks change into metamorphic rocks, like clay changing into slate.",
+                "source_section": "Rocks and Minerals"
+            },
+            {
+                "title": "Core Radius",
+                "content": "The innermost layer, the core, has a radius of about 3500 km.",
+                "source_section": "Interior of the Earth"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The deepest mine in the world is in South Africa, and it is about 4 km deep.",
+                "source_section": "Did you know?"
+            },
+            {
+                "fact": "The crust forms only 1% of the volume of the earth, 15% consists of the mantle and 84% makes the core.",
+                "source_section": "Did you know?"
+            },
+            {
+                "fact": "The Deccan plateau is made up of basalt rocks.",
+                "source_section": "Rocks and Minerals"
+            }
+        ]
+    }
+}

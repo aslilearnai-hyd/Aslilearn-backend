@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Hard",
+    "source_pdf": "m9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Polynomial Investigation Project",
+            "objective": "Explore properties of polynomials",
+            "materials": [
+                "Notebook",
+                "Chart paper"
+            ],
+            "steps": [
+                "Collect different polynomial examples",
+                "Analyse their degrees and terms",
+                "Summarise observations in a chart"
+            ],
+            "learning_outcome": "Deep understanding of polynomial structure",
+            "evaluation": "Analysis quality (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Zero Discovery Activity",
+            "objective": "Find zeroes of polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take different polynomials",
+                "Substitute multiple values",
+                "Identify where polynomial becomes zero"
+            ],
+            "learning_outcome": "Improves analytical thinking",
+            "evaluation": "Correct zero identification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Factor Theorem Demonstration",
+            "objective": "Demonstrate Factor Theorem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Select a cubic polynomial",
+                "Check possible factors",
+                "Verify using substitution"
+            ],
+            "learning_outcome": "Applies theorem effectively",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Cubic Polynomial Factorisation",
+            "objective": "Factorise cubic polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write cubic expressions",
+                "Find one factor",
+                "Factorise remaining quadratic"
+            ],
+            "learning_outcome": "Advanced factorisation skills",
+            "evaluation": "Correct factorisation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Identity Expansion Challenge",
+            "objective": "Expand complex algebraic expressions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write expressions with three variables",
+                "Use suitable identities",
+                "Expand completely"
+            ],
+            "learning_outcome": "Mastery of identities",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Polynomial Comparison Study",
+            "objective": "Compare different polynomial forms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write several polynomials",
+                "Compare degree and number of terms",
+                "Discuss differences"
+            ],
+            "learning_outcome": "Analytical reasoning",
+            "evaluation": "Quality of explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Identity Proof Task",
+            "objective": "Prove algebraic identities",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose an identity",
+                "Expand LHS",
+                "Show that it equals RHS"
+            ],
+            "learning_outcome": "Logical mathematical reasoning",
+            "evaluation": "Proof correctness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Polynomial Model Chart",
+            "objective": "Create a visual model of polynomial types",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Draw sections for each polynomial type",
+                "Add examples and explanations",
+                "Present to class"
+            ],
+            "learning_outcome": "Visual understanding",
+            "evaluation": "Presentation clarity (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Polynomial Problem Bank",
+            "objective": "Create challenging polynomial problems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five complex polynomial questions",
+                "Include factorisation and zero finding",
+                "Provide solutions"
+            ],
+            "learning_outcome": "Develops higher-order thinking",
+            "evaluation": "Problem quality (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Polynomial Identity Application",
+            "objective": "Use identities to simplify calculations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose large numbers",
+                "Convert them into algebraic form",
+                "Use identities to calculate quickly"
+            ],
+            "learning_outcome": "Efficient computation skills",
+            "evaluation": "Correct simplification (10 marks)"
+        }
+    ]
+}

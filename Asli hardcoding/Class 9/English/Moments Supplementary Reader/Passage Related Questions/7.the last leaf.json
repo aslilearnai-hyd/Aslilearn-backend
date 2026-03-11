@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG9_7",
+    "chapter": "The Last Leaf",
+    "title": "Extended Reading Passages with Questions – The Last Leaf",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Sue and Johnsy were two young artists who lived together in a small flat in an old building. They had come to the city with dreams of becoming successful painters. Their friendship was strong, and they shared both their struggles and hopes while working on their art.",
+            "questions": [
+                "Who were Sue and Johnsy?",
+                "Where did they live?",
+                "What was their profession?",
+                "Why had they come to the city?",
+                "What kind of relationship did they share?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "During the cold season, Johnsy fell seriously ill with pneumonia. She became very weak and spent most of her time lying in bed. Her illness not only affected her body but also her mind, and she slowly began to lose the desire to live.",
+            "questions": [
+                "What illness did Johnsy suffer from?",
+                "When did she fall ill?",
+                "How did the illness affect her physically?",
+                "How did the illness affect her mentally?",
+                "Where did Johnsy spend most of her time?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "From her bed, Johnsy could see an old ivy creeper growing on the wall outside the window. As autumn winds blew, the leaves began falling one by one. Watching them fall, Johnsy developed a strange belief that her life would end when the last leaf dropped.",
+            "questions": [
+                "What could Johnsy see from her bed?",
+                "Where was the ivy creeper growing?",
+                "What was happening to the leaves?",
+                "What strange belief did Johnsy develop?",
+                "Why did she connect her life with the leaves?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Sue was deeply worried about Johnsy’s condition. She tried her best to keep her cheerful by talking to her and continuing her painting work in the room. However, Johnsy remained quiet and kept counting the falling leaves outside the window.",
+            "questions": [
+                "Who was worried about Johnsy?",
+                "What did Sue do to cheer her up?",
+                "Where did Sue continue her painting?",
+                "What was Johnsy doing most of the time?",
+                "Why was Sue concerned about her friend?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "The doctor visited Johnsy and later spoke privately to Sue. He explained that Johnsy’s recovery depended largely on her will to live. If she lost hope completely, medicines alone would not be enough to cure her illness.",
+            "questions": [
+                "Who visited Johnsy during her illness?",
+                "Whom did the doctor speak to privately?",
+                "What did the doctor say about Johnsy’s recovery?",
+                "Why were medicines alone not enough?",
+                "What was necessary for Johnsy to recover?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "Behrman was an old painter who lived on the ground floor of the same building. Although he had always dreamed of painting a masterpiece, he had never achieved it. Despite his rough manner, he cared deeply for Sue and Johnsy.",
+            "questions": [
+                "Who was Behrman?",
+                "Where did he live?",
+                "What was Behrman’s dream?",
+                "Had he achieved his dream?",
+                "How did he feel about Sue and Johnsy?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "One stormy night, strong winds and heavy rain hit the city. Sue feared that the last leaf on the ivy creeper would fall by morning. However, when Johnsy looked out the window the next day, she was surprised to see that the leaf was still there.",
+            "questions": [
+                "What was the weather like that night?",
+                "What did Sue fear would happen?",
+                "What did Johnsy see the next morning?",
+                "Why was Johnsy surprised?",
+                "What effect did the leaf have on her thoughts?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Seeing the leaf still clinging to the wall changed Johnsy’s attitude. She began to feel ashamed of her earlier thoughts and realized that it was wrong to wish for death. Slowly, she regained the will to live and began recovering from her illness.",
+            "questions": [
+                "What changed Johnsy’s attitude?",
+                "How did she feel about her earlier thoughts?",
+                "What realization did Johnsy have?",
+                "What happened to her will to live?",
+                "What effect did this change have on her health?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "Soon afterward, Sue shared the truth with Johnsy. The leaf she had seen was not real but a painting made by Behrman during the stormy night. While painting the leaf on the wall, he had caught pneumonia and died a few days later.",
+            "questions": [
+                "What truth did Sue reveal?",
+                "Who painted the leaf?",
+                "When was the leaf painted?",
+                "What happened to Behrman afterward?",
+                "Why did he fall ill?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Behrman’s final painting became his long-dreamed masterpiece. Although he lost his life, his act of sacrifice saved Johnsy and restored her hope. The story highlights the power of hope, friendship, and selfless love.",
+            "questions": [
+                "What did Behrman’s painting become?",
+                "What did his sacrifice achieve?",
+                "Whose life was saved?",
+                "What themes does the story highlight?",
+                "Why is Behrman remembered as a hero?"
+            ]
+        }
+    ]
+}

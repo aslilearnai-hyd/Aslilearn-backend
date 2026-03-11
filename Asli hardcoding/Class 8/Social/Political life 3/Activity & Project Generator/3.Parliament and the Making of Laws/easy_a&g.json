@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter": "Ruling the Countryside",
+  "difficulty": "Easy",
+  "source_pdf": "class8_history_english.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Land Revenue Concept",
+      "objective": "Understand the meaning of land revenue",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write the meaning of land revenue",
+        "Write who collected it during British rule",
+        "Explain why it was important for the British government"
+      ],
+      "learning_outcome": "Understands the concept of land revenue",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Permanent Settlement Chart",
+      "objective": "Learn about the Permanent Settlement system",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write the year Permanent Settlement was introduced",
+        "Write the name of the Governor-General who introduced it",
+        "Write two features of this system"
+      ],
+      "learning_outcome": "Recognises the main features of Permanent Settlement",
+      "evaluation": "Accuracy of information (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Zamindar Role Activity",
+      "objective": "Understand the role of zamindars",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write who the zamindars were",
+        "Explain their duty in collecting revenue",
+        "Write one problem faced by peasants under this system"
+      ],
+      "learning_outcome": "Learns about the role of zamindars",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Peasant Life Description",
+      "objective": "Understand the life of peasants under British rule",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write three problems faced by peasants",
+        "Explain why they sometimes could not pay revenue",
+        "Write one effect of heavy taxes"
+      ],
+      "learning_outcome": "Understands the condition of peasants",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Indigo Farming Observation",
+      "objective": "Learn about indigo cultivation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write what indigo was used for",
+        "Explain how peasants were forced to grow indigo",
+        "Write one problem faced by indigo farmers"
+      ],
+      "learning_outcome": "Understands indigo cultivation",
+      "evaluation": "Correct information (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Picture Observation Activity",
+      "objective": "Interpret historical pictures",
+      "materials": ["Notebook"],
+      "steps": [
+        "Look at a picture related to indigo farming in the chapter",
+        "Write what you see in the picture",
+        "Explain what it tells about the life of peasants"
+      ],
+      "learning_outcome": "Develops observation skills",
+      "evaluation": "Observation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Timeline of Events",
+      "objective": "Understand historical sequence",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the year Permanent Settlement was introduced",
+        "Write the year Indigo Revolt happened",
+        "Arrange them in chronological order"
+      ],
+      "learning_outcome": "Understands chronological order",
+      "evaluation": "Correct timeline (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Short Note Writing",
+      "objective": "Summarise historical concepts",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short note on indigo cultivation",
+        "Include where it was grown",
+        "Explain why peasants protested"
+      ],
+      "learning_outcome": "Improves summarising skills",
+      "evaluation": "Completeness of note (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Match the Following",
+      "objective": "Identify key historical terms",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write terms like zamindar, ryot, indigo",
+        "Write their meanings",
+        "Match the correct terms with definitions"
+      ],
+      "learning_outcome": "Improves vocabulary in history",
+      "evaluation": "Correct matching (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Class Discussion on Indigo Revolt",
+      "objective": "Understand the reasons for the Indigo Revolt",
+      "materials": ["Notebook"],
+      "steps": [
+        "Discuss why peasants protested against indigo planters",
+        "Write two reasons for the revolt",
+        "Write one outcome of the protest"
+      ],
+      "learning_outcome": "Understands peasant resistance",
+      "evaluation": "Participation and explanation (10 marks)"
+    }
+  ]
+}

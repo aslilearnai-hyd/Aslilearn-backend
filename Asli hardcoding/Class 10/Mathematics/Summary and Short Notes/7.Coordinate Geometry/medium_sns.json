@@ -1,0 +1,29 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Medium",
+    "source_pdf": "jemh107.pdf",
+    "short_notes": {
+        "key_points": [
+            "Coordinates help in locating a point precisely on a plane",
+            "Signs of x and y coordinates determine the quadrant of a point",
+            "Points lying on axes have one coordinate equal to zero",
+            "Distance of a point from axes is measured using absolute values"
+        ],
+        "examples": [
+            "Point (−3, 4) lies in the second quadrant",
+            "Point (5, 0) lies on the X-axis",
+            "Distance of (2, −6) from X-axis is 6 units"
+        ],
+        "formulas": [
+            "Distance from X-axis = |y|",
+            "Distance from Y-axis = |x|"
+        ],
+        "exam_tips": [
+            "Check signs carefully before identifying quadrant",
+            "Use equal scale on both axes while plotting",
+            "Points on axes do not belong to any quadrant"
+        ]
+    }
+}

@@ -1,0 +1,153 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "The Wit That Won Hearts",
+  "difficulty": "Hard",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Analysis of Wit in Leadership",
+      "objective": "Evaluate the role of wit and intelligence in leadership and governance",
+      "materials": [
+        "Textbook",
+        "Notebook",
+        "Reference materials on historical rulers"
+      ],
+      "steps": [
+        "Read the story carefully and identify how Tenali Rama uses wit to influence the king",
+        "Discuss in groups how humour and intelligence can help leaders make better decisions",
+        "Compare Tenali Rama with another historical or fictional advisor known for wisdom",
+        "Prepare a short presentation explaining your findings"
+      ],
+      "learning_outcome": "Students develop critical thinking about leadership qualities and the role of intelligence in governance",
+      "evaluation": "Depth of analysis and quality of presentation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Interpretation of Riddles and Symbolism",
+      "objective": "Analyse the deeper meaning and symbolism in riddles",
+      "materials": ["Textbook riddles", "Notebook", "Dictionary"],
+      "steps": [
+        "Read the riddles given in the chapter",
+        "Identify the literal and symbolic meanings of each riddle",
+        "Explain why riddles require wit and creativity to solve",
+        "Create one original riddle and share it with the class"
+      ],
+      "learning_outcome": "Students develop interpretation skills and creative thinking",
+      "evaluation": "Quality of explanation and originality of riddle (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Debate: Humour vs Authority",
+      "objective": "Examine the balance between humour and respect in authority relationships",
+      "materials": ["Textbook", "Debate guidelines", "Notebook"],
+      "steps": [
+        "Divide the class into two groups",
+        "One group argues that humour should always be allowed in royal courts or leadership settings",
+        "The other group argues that humour can sometimes undermine authority",
+        "Conduct a structured debate and conclude with a class discussion"
+      ],
+      "learning_outcome": "Students develop debating skills and understand different perspectives",
+      "evaluation": "Clarity of arguments and use of examples (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Strategic Thinking Case Study",
+      "objective": "Analyse Tenali Rama’s strategy and apply it to modern problem-solving",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Study the court scene where Tenali Rama presents the paddy seeds",
+        "Identify the logical steps in his strategy",
+        "Explain how indirect communication helped the king realise his mistake",
+        "Apply the same strategy to solve a modern hypothetical problem"
+      ],
+      "learning_outcome": "Students learn strategic thinking and indirect persuasion techniques",
+      "evaluation": "Logical explanation and application of strategy (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Courtroom Simulation",
+      "objective": "Encourage creative interpretation of the story through performance",
+      "materials": ["Story script", "Simple props"],
+      "steps": [
+        "Recreate the royal court setting in the classroom",
+        "Students play roles such as king, queen, Tenali Rama, ministers, and courtiers",
+        "Extend the story by imagining another conflict in the court",
+        "Use wit and humour to resolve the imagined conflict"
+      ],
+      "learning_outcome": "Students improve creativity, improvisation, and collaborative skills",
+      "evaluation": "Creativity, teamwork, and clarity of performance (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Language and Expression Analysis",
+      "objective": "Examine how descriptive expressions shape the tone of the story",
+      "materials": ["Textbook", "Notebook", "Dictionary"],
+      "steps": [
+        "Identify expressive phrases such as 'stormed off' and 'hush fell over'",
+        "Analyse how these expressions influence the emotional tone of the narrative",
+        "Rewrite a selected paragraph using alternative expressions",
+        "Compare the tone before and after rewriting"
+      ],
+      "learning_outcome": "Students understand the importance of word choice in storytelling",
+      "evaluation": "Quality of analysis and rewriting (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Narrative Structure Examination",
+      "objective": "Analyse the structure of the story including conflict, climax, and resolution",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify the introduction, rising conflict, climax, and resolution in the story",
+        "Explain how the misunderstanding creates tension",
+        "Describe how Tenali Rama resolves the conflict",
+        "Create a diagram showing the story’s narrative structure"
+      ],
+      "learning_outcome": "Students understand narrative techniques used in storytelling",
+      "evaluation": "Accuracy of structure analysis (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Advanced Grammar Application",
+      "objective": "Apply conditional sentence structures in complex situations",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Study the conditional sentence examples in the chapter",
+        "Write five complex conditional sentences related to the story",
+        "Rewrite them by changing the tense or condition",
+        "Explain how the meaning changes"
+      ],
+      "learning_outcome": "Students master advanced sentence structures",
+      "evaluation": "Correct grammar usage and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Comparative Literature Activity",
+      "objective": "Compare Tenali Rama with other witty characters in literature",
+      "materials": ["Textbook", "Library books or online resources"],
+      "steps": [
+        "Research another witty character such as Birbal or Nasreddin Hodja",
+        "Compare their problem-solving methods with Tenali Rama",
+        "Identify similarities and differences",
+        "Write a short comparative report"
+      ],
+      "learning_outcome": "Students develop comparative analysis skills",
+      "evaluation": "Quality of comparison and supporting examples (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Reflective Essay on Wisdom and Humour",
+      "objective": "Encourage reflective thinking about the role of wit in society",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Reflect on situations where humour helped resolve conflicts",
+        "Relate those experiences to the story of Tenali Rama",
+        "Write an essay discussing how wit can promote understanding and harmony",
+        "Conclude with lessons learned from the story"
+      ],
+      "learning_outcome": "Students develop reflective writing and critical thinking skills",
+      "evaluation": "Clarity of ideas, structure, and originality (10 marks)"
+    }
+  ]
+}

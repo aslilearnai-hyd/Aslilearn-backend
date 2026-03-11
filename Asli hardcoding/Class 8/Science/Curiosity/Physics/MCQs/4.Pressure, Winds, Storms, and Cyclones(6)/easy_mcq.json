@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Pressure, Winds, Storms and Cyclones",
+  "generated_at": "2026-03-05T22:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is pressure?",
+      "options": {
+        "A": "Force acting on a unit area",
+        "B": "Energy stored in objects",
+        "C": "Speed of moving objects",
+        "D": "Temperature of air"
+      },
+      "correct_answer": "A",
+      "explanation": "Pressure is defined as force acting on a unit area of surface.",
+      "difficulty": "easy",
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the formula for pressure?",
+      "options": {
+        "A": "Force × Area",
+        "B": "Force ÷ Area",
+        "C": "Area ÷ Force",
+        "D": "Force + Area"
+      },
+      "correct_answer": "B",
+      "explanation": "Pressure is calculated using the formula Pressure = Force ÷ Area.",
+      "difficulty": "easy",
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following increases pressure?",
+      "options": {
+        "A": "Increasing area",
+        "B": "Decreasing force",
+        "C": "Decreasing area",
+        "D": "Reducing weight"
+      },
+      "correct_answer": "C",
+      "explanation": "Pressure increases when the same force acts on a smaller area.",
+      "difficulty": "easy",
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do sharp knives cut easily?",
+      "options": {
+        "A": "They are heavy",
+        "B": "They have a small surface area",
+        "C": "They are colorful",
+        "D": "They are longer"
+      },
+      "correct_answer": "B",
+      "explanation": "Sharp knives have a small surface area which produces greater pressure.",
+      "difficulty": "easy",
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do camels have broad feet?",
+      "options": {
+        "A": "To walk faster",
+        "B": "To increase pressure on sand",
+        "C": "To reduce pressure on sand",
+        "D": "To jump higher"
+      },
+      "correct_answer": "C",
+      "explanation": "Broad feet increase area and reduce pressure on sand.",
+      "difficulty": "easy",
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 6,
+      "question": "What is atmospheric pressure?",
+      "options": {
+        "A": "Pressure exerted by water",
+        "B": "Pressure exerted by air",
+        "C": "Pressure exerted by rocks",
+        "D": "Pressure exerted by soil"
+      },
+      "correct_answer": "B",
+      "explanation": "Atmospheric pressure is the pressure exerted by air surrounding Earth.",
+      "difficulty": "easy",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 7,
+      "question": "Air exerts pressure in which direction?",
+      "options": {
+        "A": "Downward only",
+        "B": "Upward only",
+        "C": "Sideways only",
+        "D": "All directions"
+      },
+      "correct_answer": "D",
+      "explanation": "Air pressure acts in all directions.",
+      "difficulty": "easy",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 8,
+      "question": "Pressure in liquids increases with:",
+      "options": {
+        "A": "Height",
+        "B": "Depth",
+        "C": "Temperature",
+        "D": "Color"
+      },
+      "correct_answer": "B",
+      "explanation": "Liquid pressure increases as depth increases.",
+      "difficulty": "easy",
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 9,
+      "question": "Liquids exert pressure in:",
+      "options": {
+        "A": "Downward direction only",
+        "B": "Upward direction only",
+        "C": "All directions",
+        "D": "Sideways only"
+      },
+      "correct_answer": "C",
+      "explanation": "Liquids exert pressure in all directions.",
+      "difficulty": "easy",
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are dams built thicker at the bottom?",
+      "options": {
+        "A": "To look stronger",
+        "B": "Because water pressure increases with depth",
+        "C": "To hold more water",
+        "D": "To reduce water flow"
+      },
+      "correct_answer": "B",
+      "explanation": "Water pressure is greater at greater depths.",
+      "difficulty": "easy",
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 11,
+      "question": "What causes wind?",
+      "options": {
+        "A": "Movement of water",
+        "B": "Movement of air from high pressure to low pressure",
+        "C": "Movement of clouds",
+        "D": "Movement of sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Wind forms due to pressure differences in the atmosphere.",
+      "difficulty": "easy",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 12,
+      "question": "What is sea breeze?",
+      "options": {
+        "A": "Wind from land to sea",
+        "B": "Wind from sea to land during day",
+        "C": "Wind from mountains",
+        "D": "Wind from deserts"
+      },
+      "correct_answer": "B",
+      "explanation": "Sea breeze occurs during the day when cool air from the sea moves toward land.",
+      "difficulty": "easy",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 13,
+      "question": "What is land breeze?",
+      "options": {
+        "A": "Wind from sea to land",
+        "B": "Wind from land to sea at night",
+        "C": "Wind from mountains",
+        "D": "Wind during storms"
+      },
+      "correct_answer": "B",
+      "explanation": "Land breeze occurs at night when air moves from land to sea.",
+      "difficulty": "easy",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 14,
+      "question": "A cyclone forms mainly over:",
+      "options": {
+        "A": "Mountains",
+        "B": "Deserts",
+        "C": "Warm ocean waters",
+        "D": "Forests"
+      },
+      "correct_answer": "C",
+      "explanation": "Cyclones form over warm ocean waters.",
+      "difficulty": "easy",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is a strong rotating storm?",
+      "options": {
+        "A": "Wind",
+        "B": "Cyclone",
+        "C": "Cloud",
+        "D": "Rain"
+      },
+      "correct_answer": "B",
+      "explanation": "Cyclones are large rotating storms with strong winds.",
+      "difficulty": "easy",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 16,
+      "question": "Which instrument measures atmospheric pressure?",
+      "options": {
+        "A": "Thermometer",
+        "B": "Barometer",
+        "C": "Speedometer",
+        "D": "Compass"
+      },
+      "correct_answer": "B",
+      "explanation": "A barometer measures atmospheric pressure.",
+      "difficulty": "easy",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 17,
+      "question": "Storms usually occur due to:",
+      "options": {
+        "A": "Calm air",
+        "B": "Pressure differences in the atmosphere",
+        "C": "Still water",
+        "D": "Cold rocks"
+      },
+      "correct_answer": "B",
+      "explanation": "Storms occur due to large differences in atmospheric pressure.",
+      "difficulty": "easy",
+      "source_section": "Storms"
+    },
+    {
+      "question_number": 18,
+      "question": "Which natural disaster includes strong winds and heavy rain?",
+      "options": {
+        "A": "Earthquake",
+        "B": "Cyclone",
+        "C": "Volcano",
+        "D": "Avalanche"
+      },
+      "correct_answer": "B",
+      "explanation": "Cyclones bring strong winds and heavy rain.",
+      "difficulty": "easy",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 19,
+      "question": "What should people do during a cyclone?",
+      "options": {
+        "A": "Go outside",
+        "B": "Stay indoors and follow warnings",
+        "C": "Swim in sea",
+        "D": "Climb trees"
+      },
+      "correct_answer": "B",
+      "explanation": "Staying indoors and following safety instructions helps reduce risk.",
+      "difficulty": "easy",
+      "source_section": "Cyclone Safety"
+    },
+    {
+      "question_number": 20,
+      "question": "Which gas mainly makes up Earth's atmosphere?",
+      "options": {
+        "A": "Nitrogen",
+        "B": "Helium",
+        "C": "Hydrogen",
+        "D": "Neon"
+      },
+      "correct_answer": "A",
+      "explanation": "Nitrogen is the main component of Earth's atmosphere.",
+      "difficulty": "easy",
+      "source_section": "Atmosphere"
+    },
+    {
+      "question_number": 21,
+      "question": "Which factor affects atmospheric pressure?",
+      "options": {
+        "A": "Altitude",
+        "B": "Color of sky",
+        "C": "Size of clouds",
+        "D": "Brightness of stars"
+      },
+      "correct_answer": "A",
+      "explanation": "Atmospheric pressure decreases with increasing altitude.",
+      "difficulty": "easy",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 22,
+      "question": "Winds move from:",
+      "options": {
+        "A": "Low pressure to high pressure",
+        "B": "High pressure to low pressure",
+        "C": "Mountains to rivers",
+        "D": "Land to clouds"
+      },
+      "correct_answer": "B",
+      "explanation": "Air moves from high pressure areas to low pressure areas.",
+      "difficulty": "easy",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 23,
+      "question": "Which phenomenon can cause flooding and strong winds?",
+      "options": {
+        "A": "Cyclone",
+        "B": "Rainbow",
+        "C": "Sunrise",
+        "D": "Fog"
+      },
+      "correct_answer": "A",
+      "explanation": "Cyclones cause strong winds and flooding.",
+      "difficulty": "easy",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 24,
+      "question": "Which natural process helps form wind?",
+      "options": {
+        "A": "Pressure difference",
+        "B": "Gravity change",
+        "C": "Color of clouds",
+        "D": "Moonlight"
+      },
+      "correct_answer": "A",
+      "explanation": "Pressure differences cause movement of air which forms wind.",
+      "difficulty": "easy",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is studying winds and storms important?",
+      "options": {
+        "A": "For predicting weather and disasters",
+        "B": "For building houses",
+        "C": "For making clothes",
+        "D": "For growing plants"
+      },
+      "correct_answer": "A",
+      "explanation": "Studying winds and storms helps predict weather and protect people from disasters.",
+      "difficulty": "easy",
+      "source_section": "Cyclones"
+    }
+  ]
+}

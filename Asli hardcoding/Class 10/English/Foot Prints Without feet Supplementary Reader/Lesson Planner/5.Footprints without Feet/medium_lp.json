@@ -1,0 +1,157 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "Footprints Without Feet",
+    "title": "Lesson Planner – Footprints Without Feet (Medium)",
+    "author": "H.G. Wells",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse characters in detail",
+        "Understand ethical issues in science",
+        "Explain cause–effect relationships",
+        "Improve interpretative skills",
+        "Develop analytical thinking",
+        "Strengthen vocabulary and comprehension"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author, Genre, and Background",
+            "topics_covered": [
+                "H.G. Wells and science fiction",
+                "Background of the prose"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Note key facts",
+                "Discuss science fiction ideas"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Analysis of Griffin",
+            "topics_covered": [
+                "Personality traits",
+                "Scientific brilliance and flaws"
+            ],
+            "teaching_strategy": [
+                "Text-based analysis",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Quote-based answers"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Scientific Discovery and Consequences",
+            "topics_covered": [
+                "Process of invisibility",
+                "Immediate consequences"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Cause–effect chart"
+            ],
+            "student_activities": [
+                "Prepare cause–effect table"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Events at the Inn",
+            "topics_covered": [
+                "Strange incidents",
+                "Public reaction"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Discussion"
+            ],
+            "student_activities": [
+                "List strange events",
+                "Group discussion"
+            ],
+            "assessment": [
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Themes and Ethical Issues",
+            "topics_covered": [
+                "Science vs ethics",
+                "Responsibility of scientists"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion"
+            ],
+            "student_activities": [
+                "Write short analytical answers"
+            ],
+            "assessment": [
+                "Paragraph writing"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Title and Message",
+            "topics_covered": [
+                "Justification of title",
+                "Central message"
+            ],
+            "teaching_strategy": [
+                "Question–answer",
+                "Peer learning"
+            ],
+            "student_activities": [
+                "Explain title",
+                "Write message"
+            ],
+            "assessment": [
+                "Written responses"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Vocabulary, Revision, and Assessment",
+            "topics_covered": [
+                "Vocabulary",
+                "Overall revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Summary writing"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard"
+    ],
+    "evaluation_methods": [
+        "Written assignments",
+        "Oral questioning"
+    ],
+    "teacher_tip": "Encourage students to connect scientific power with moral responsibility."
+}

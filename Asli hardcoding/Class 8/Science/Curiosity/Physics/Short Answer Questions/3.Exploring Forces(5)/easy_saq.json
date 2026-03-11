@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-06T00:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a force?",
+      "answer": "A force is a push or pull that can change the state of motion or shape of an object.",
+      "key_concepts": ["force"],
+      "marks": 2,
+      "source_section": "Introduction to Forces"
+    },
+    {
+      "question_number": 2,
+      "question": "Give two examples of force in daily life.",
+      "answer": "Pushing a door and pulling a rope are examples of force.",
+      "key_concepts": ["push", "pull"],
+      "marks": 2,
+      "source_section": "Examples of Force"
+    },
+    {
+      "question_number": 3,
+      "question": "What can a force do to an object?",
+      "answer": "A force can move an object, stop it, change its direction, or change its shape.",
+      "key_concepts": ["effects of force"],
+      "marks": 2,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 4,
+      "question": "What is muscular force?",
+      "answer": "Muscular force is the force applied by the muscles of humans or animals.",
+      "key_concepts": ["muscular force"],
+      "marks": 2,
+      "source_section": "Types of Force"
+    },
+    {
+      "question_number": 5,
+      "question": "What is gravitational force?",
+      "answer": "Gravitational force is the force by which the Earth attracts objects towards itself.",
+      "key_concepts": ["gravity"],
+      "marks": 2,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 6,
+      "question": "What is friction?",
+      "answer": "Friction is the force that opposes the motion of objects moving over a surface.",
+      "key_concepts": ["friction"],
+      "marks": 2,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does a rolling ball stop after some time?",
+      "answer": "A rolling ball stops due to friction between the ball and the ground.",
+      "key_concepts": ["friction"],
+      "marks": 2,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a contact force?",
+      "answer": "A contact force is a force that acts only when objects are in physical contact.",
+      "key_concepts": ["contact force"],
+      "marks": 2,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 9,
+      "question": "Give one example of a contact force.",
+      "answer": "Friction is an example of a contact force.",
+      "key_concepts": ["contact force"],
+      "marks": 2,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a non-contact force?",
+      "answer": "A non-contact force acts on objects without physical contact.",
+      "key_concepts": ["non-contact force"],
+      "marks": 2,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 11,
+      "question": "Give one example of a non-contact force.",
+      "answer": "Gravitational force is a non-contact force.",
+      "key_concepts": ["non-contact force"],
+      "marks": 2,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 12,
+      "question": "What happens when we push a stationary object?",
+      "answer": "The object may start moving when a force is applied.",
+      "key_concepts": ["motion"],
+      "marks": 2,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens when we apply force to a moving object?",
+      "answer": "The force may change the speed or direction of the object.",
+      "key_concepts": ["change in motion"],
+      "marks": 2,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 14,
+      "question": "What is magnetic force?",
+      "answer": "Magnetic force is the force by which magnets attract or repel objects.",
+      "key_concepts": ["magnetic force"],
+      "marks": 2,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 15,
+      "question": "Give one example of magnetic force.",
+      "answer": "A magnet attracting iron nails is an example of magnetic force.",
+      "key_concepts": ["magnetism"],
+      "marks": 2,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 16,
+      "question": "What is electrostatic force?",
+      "answer": "Electrostatic force is the force between electrically charged objects.",
+      "key_concepts": ["electrostatic force"],
+      "marks": 2,
+      "source_section": "Electrostatic Force"
+    },
+    {
+      "question_number": 17,
+      "question": "Give one example of electrostatic force.",
+      "answer": "A rubbed comb attracting small pieces of paper is an example of electrostatic force.",
+      "key_concepts": ["static electricity"],
+      "marks": 2,
+      "source_section": "Electrostatic Force"
+    },
+    {
+      "question_number": 18,
+      "question": "What is meant by balanced forces?",
+      "answer": "Balanced forces are equal forces acting in opposite directions on an object.",
+      "key_concepts": ["balanced forces"],
+      "marks": 2,
+      "source_section": "Balanced Forces"
+    },
+    {
+      "question_number": 19,
+      "question": "What is meant by unbalanced forces?",
+      "answer": "Unbalanced forces occur when the forces acting on an object are not equal.",
+      "key_concepts": ["unbalanced forces"],
+      "marks": 2,
+      "source_section": "Unbalanced Forces"
+    },
+    {
+      "question_number": 20,
+      "question": "What happens when forces acting on an object are balanced?",
+      "answer": "The object remains at rest or continues moving at constant speed.",
+      "key_concepts": ["balanced forces"],
+      "marks": 2,
+      "source_section": "Balanced Forces"
+    },
+    {
+      "question_number": 21,
+      "question": "What happens when forces acting on an object are unbalanced?",
+      "answer": "The motion of the object changes.",
+      "key_concepts": ["unbalanced forces"],
+      "marks": 2,
+      "source_section": "Unbalanced Forces"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are brakes used in vehicles?",
+      "answer": "Brakes use friction to slow down or stop vehicles.",
+      "key_concepts": ["friction"],
+      "marks": 2,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 23,
+      "question": "Why do objects fall to the ground?",
+      "answer": "Objects fall due to the gravitational force of the Earth.",
+      "key_concepts": ["gravity"],
+      "marks": 2,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 24,
+      "question": "Can force change the shape of an object?",
+      "answer": "Yes, applying force can change the shape of objects like clay or rubber bands.",
+      "key_concepts": ["change in shape"],
+      "marks": 2,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is friction useful in daily life?",
+      "answer": "Friction helps us walk, hold objects, and control the motion of vehicles.",
+      "key_concepts": ["uses of friction"],
+      "marks": 2,
+      "source_section": "Friction"
+    }
+  ]
+}

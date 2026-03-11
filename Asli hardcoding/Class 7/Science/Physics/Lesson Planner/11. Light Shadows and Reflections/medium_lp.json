@@ -1,0 +1,165 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Light: Shadows and Reflections",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the properties of light and shadow formation",
+        "Measure and analyze shadow lengths",
+        "Apply the law of reflection using experiments",
+        "Distinguish between real and virtual images quantitatively",
+        "Understand applications of concave and convex mirrors",
+        "Develop analytical and observational skills through practical activities"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Properties of Light and Shadow Formation",
+            "topics_covered": [
+                "Nature of light",
+                "Transparent, translucent, and opaque objects",
+                "Factors affecting shadow size (distance, light angle)"
+            ],
+            "teaching_strategy": [
+                "Demonstration with torches",
+                "Guided questioning to predict shadow changes",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Measure shadow lengths using different objects",
+                "Predict how shadow length changes with object distance",
+                "Record observations in a table"
+            ],
+            "assessment": [
+                "Observation table evaluation",
+                "Oral questioning on concepts"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Law of Reflection – Hands-on",
+            "topics_covered": [
+                "Angle of incidence and reflection",
+                "Verification using plane mirrors"
+            ],
+            "teaching_strategy": [
+                "Demonstration using ray box and plane mirror",
+                "Stepwise guidance for tracing rays"
+            ],
+            "student_activities": [
+                "Trace incident and reflected rays on paper",
+                "Measure angles using protractor",
+                "Verify that angle of incidence = angle of reflection"
+            ],
+            "assessment": [
+                "Accuracy of angle measurements",
+                "Notebook record checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Concave and Convex Mirrors – Image Analysis",
+            "topics_covered": [
+                "Real and virtual images",
+                "Image characteristics: size, orientation, distance",
+                "Daily life applications (makeup mirrors, rear-view mirrors)"
+            ],
+            "teaching_strategy": [
+                "Hands-on demonstration with mirrors",
+                "Class discussion to analyze observations"
+            ],
+            "student_activities": [
+                "Place objects at different distances from mirrors",
+                "Measure image distance using scale",
+                "Draw diagrams showing image characteristics"
+            ],
+            "assessment": [
+                "Practical observation record",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Practical Measurement – Shadows",
+            "topics_covered": [
+                "Using torch to measure shadow length",
+                "Calculating height of objects using shadow and angle of light"
+            ],
+            "teaching_strategy": [
+                "Demonstration with simple formulas",
+                "Guided group activity"
+            ],
+            "student_activities": [
+                "Measure shadow lengths for different object heights",
+                "Apply basic ratio method to calculate object heights",
+                "Record results in a table"
+            ],
+            "assessment": [
+                "Accuracy of calculations",
+                "Observation notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Reflection Experiment – Quantitative Study",
+            "topics_covered": [
+                "Incident and reflected rays measurement",
+                "Calculating angles with protractor",
+                "Comparison of real vs virtual images"
+            ],
+            "teaching_strategy": [
+                "Hands-on guided activity",
+                "Teacher demonstration of measurement techniques"
+            ],
+            "student_activities": [
+                "Trace rays on paper and measure angles",
+                "Record angle of incidence and reflection",
+                "Compare observations with theoretical law of reflection"
+            ],
+            "assessment": [
+                "Practical performance",
+                "Lab record review"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Analysis and Quiz",
+            "topics_covered": [
+                "Shadow formation and measurement",
+                "Law of reflection",
+                "Concave and convex mirrors"
+            ],
+            "teaching_strategy": [
+                "Quiz with conceptual and numerical questions",
+                "Group discussion on observations and diagrams"
+            ],
+            "student_activities": [
+                "Participate in quiz",
+                "Analyze previous practical observations",
+                "Answer problem-solving questions orally"
+            ],
+            "assessment": [
+                "Quiz scores",
+                "Class participation",
+                "Oral problem-solving evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Torch or ray box",
+        "Plane, concave, and convex mirrors",
+        "Opaque, translucent, and transparent objects",
+        "Protractors and rulers",
+        "Blackboard/Whiteboard",
+        "Markers or Chalk"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Practical demonstration with measurements",
+        "Notebook checking",
+        "Short quiz with calculations"
+    ],
+    "teacher_tip": "Encourage students to measure angles and shadow lengths accurately; guide them to relate observations to theoretical laws without introducing complex mirror formulas."
+}

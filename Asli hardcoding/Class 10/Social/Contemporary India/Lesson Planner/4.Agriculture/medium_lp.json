@@ -1,0 +1,158 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Geography)",
+  "chapter_name": "Agriculture",
+  "lesson_level": "Medium",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze the role of agriculture in India's economy",
+    "Differentiate between various farming systems in India",
+    "Explain cropping seasons and their climatic requirements",
+    "Examine the distribution of major crops across India",
+    "Understand the relationship between agriculture and industries",
+    "Evaluate plantation agriculture and its economic importance",
+    "Study technological and institutional reforms in agriculture"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Importance of Agriculture in India",
+      "topics_covered": [
+        "Agriculture as a primary economic activity",
+        "Agriculture and employment",
+        "Agriculture as a source of industrial raw materials"
+      ],
+      "teaching_strategy": [
+        "Discussion on India's dependence on agriculture",
+        "Use statistical examples and real-life examples",
+        "Concept explanation with questioning"
+      ],
+      "student_activities": [
+        "List industries that depend on agricultural raw materials",
+        "Discuss how agriculture affects the national economy"
+      ],
+      "assessment": ["Oral questions", "Short written reflection"]
+    },
+    {
+      "period": 2,
+      "title": "Types of Farming in India",
+      "topics_covered": [
+        "Primitive subsistence farming",
+        "Intensive subsistence farming",
+        "Commercial farming",
+        "Shifting cultivation"
+      ],
+      "teaching_strategy": [
+        "Comparative chart explanation",
+        "Discussion of regional farming practices"
+      ],
+      "student_activities": [
+        "Prepare a comparison table of farming types",
+        "Identify regions where each farming system is practiced"
+      ],
+      "assessment": ["Notebook evaluation", "Concept questions"]
+    },
+    {
+      "period": 3,
+      "title": "Cropping Seasons and Climate",
+      "topics_covered": [
+        "Rabi season",
+        "Kharif season",
+        "Zaid season",
+        "Climatic requirements for crops"
+      ],
+      "teaching_strategy": [
+        "Use crop-season charts",
+        "Explain relationship between climate and agriculture"
+      ],
+      "student_activities": [
+        "Categorize crops into Rabi, Kharif, and Zaid",
+        "Explain why certain crops grow in specific seasons"
+      ],
+      "assessment": ["Short worksheet", "Class discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Major Food Crops of India",
+      "topics_covered": ["Rice", "Wheat", "Millets", "Maize", "Pulses"],
+      "teaching_strategy": [
+        "Map-based teaching",
+        "Explanation of soil and climate requirements"
+      ],
+      "student_activities": [
+        "Locate major crop producing regions on a map",
+        "Explain the geographical conditions for rice and wheat cultivation"
+      ],
+      "assessment": ["Map activity", "Short quiz"]
+    },
+    {
+      "period": 5,
+      "title": "Cash Crops and Plantation Agriculture",
+      "topics_covered": [
+        "Sugarcane",
+        "Oil seeds",
+        "Tea",
+        "Coffee",
+        "Horticulture crops"
+      ],
+      "teaching_strategy": [
+        "Discussion of export crops",
+        "Use examples of plantation industries"
+      ],
+      "student_activities": [
+        "Research a plantation crop and present its importance",
+        "Discuss the role of cash crops in economic development"
+      ],
+      "assessment": ["Group presentation", "Teacher evaluation"]
+    },
+    {
+      "period": 6,
+      "title": "Fibre Crops and Agricultural Industries",
+      "topics_covered": ["Cotton", "Jute", "Rubber", "Sericulture"],
+      "teaching_strategy": [
+        "Use visual images of fibre crops",
+        "Explain connection between crops and textile industries"
+      ],
+      "student_activities": [
+        "Match fibre crops with industries",
+        "Create a diagram showing agricultural supply chains"
+      ],
+      "assessment": ["Short written exercise", "Concept questions"]
+    },
+    {
+      "period": 7,
+      "title": "Technological and Institutional Reforms",
+      "topics_covered": [
+        "Land reforms",
+        "Green Revolution",
+        "Crop insurance and government schemes",
+        "Modern agricultural technology"
+      ],
+      "teaching_strategy": [
+        "Flowchart explanation of reforms",
+        "Discussion on agricultural challenges"
+      ],
+      "student_activities": [
+        "Write advantages and limitations of the Green Revolution",
+        "Participate in revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Class discussion"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "NCERT Geography Textbook",
+    "Atlas or map of India",
+    "Crop charts",
+    "Projector for visual presentation"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Map work evaluation",
+    "Group presentations",
+    "Short written tests"
+  ],
+  "teacher_tip": "Encourage students to analyze how climate, soil, and irrigation influence agricultural patterns rather than only memorizing crop names and regions."
+}

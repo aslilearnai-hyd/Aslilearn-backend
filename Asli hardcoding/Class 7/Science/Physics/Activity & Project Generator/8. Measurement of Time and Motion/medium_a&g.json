@@ -1,0 +1,202 @@
+{
+    "class": "Class 7",
+    "subject": "Science (CBSE)",
+    "chapter": "Measurement of Time and Motion",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_science_ch8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Average Speed Calculation",
+            "objective": "Understand and calculate average speed over multiple trials",
+            "materials": [
+                "Measuring tape",
+                "Stopwatch",
+                "Notebook",
+                "Pen",
+                "Toy car or bicycle"
+            ],
+            "steps": [
+                "Measure a fixed distance",
+                "Time multiple trials of the moving object",
+                "Record all times in notebook",
+                "Calculate average speed using total distance/total time"
+            ],
+            "learning_outcome": "Applies average speed formula and analyzes repeated measurements",
+            "evaluation": "Correct calculation and recording (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Comparing Uniform and Non-uniform Motion",
+            "objective": "Analyze motion type by measuring distance and time intervals",
+            "materials": [
+                "Toy car",
+                "Measuring tape",
+                "Stopwatch",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Mark equal segments on a track",
+                "Time the object crossing each segment",
+                "Calculate speed for each segment",
+                "Determine whether motion is uniform or non-uniform"
+            ],
+            "learning_outcome": "Differentiates between uniform and non-uniform motion quantitatively",
+            "evaluation": "Accurate calculation and observation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Plotting Distance-Time Graph",
+            "objective": "Visualize motion and interpret speed from slope",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Data from toy car or walking experiment"
+            ],
+            "steps": [
+                "Record distance and time data from experiment",
+                "Plot distance on Y-axis and time on X-axis",
+                "Analyze slope to determine speed",
+                "Identify uniform or non-uniform motion from graph"
+            ],
+            "learning_outcome": "Understands graphical representation of motion",
+            "evaluation": "Correct graph and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Pendulum Time Period Analysis",
+            "objective": "Study factors affecting time period of a pendulum",
+            "materials": [
+                "String",
+                "Small weight",
+                "Stopwatch",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Set up a simple pendulum",
+                "Measure time for 10 swings",
+                "Change length of pendulum and repeat",
+                "Analyze how length affects time period"
+            ],
+            "learning_outcome": "Relates pendulum length to time period quantitatively",
+            "evaluation": "Accurate measurement and analysis (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Reaction Time Experiment – Multiple Trials",
+            "objective": "Measure human reaction time and analyze variations",
+            "materials": [
+                "Ruler",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Hold ruler between thumb and finger",
+                "Partner releases ruler randomly several times",
+                "Record distances for each trial",
+                "Calculate reaction time for each and average"
+            ],
+            "learning_outcome": "Understands human reaction time and variability",
+            "evaluation": "Correct calculation and analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Comparing Motion on Different Surfaces",
+            "objective": "Observe effect of surface type on speed",
+            "materials": [
+                "Toy car",
+                "Measuring tape",
+                "Stopwatch",
+                "Different surface materials (wood, tile, carpet)"
+            ],
+            "steps": [
+                "Set equal track length on different surfaces",
+                "Time toy car moving on each surface",
+                "Calculate speed and compare"
+            ],
+            "learning_outcome": "Relates friction to motion and speed",
+            "evaluation": "Accurate measurement and comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Time Measurement Using Different Devices",
+            "objective": "Compare accuracy of digital stopwatch, analog stopwatch, and mobile timer",
+            "materials": [
+                "Digital stopwatch",
+                "Analog stopwatch",
+                "Mobile timer",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Measure same activity using all three devices",
+                "Record times",
+                "Compare precision and discuss differences"
+            ],
+            "learning_outcome": "Understands precision and reliability of different time-measuring devices",
+            "evaluation": "Correct recording and analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Calculating Instantaneous Speed",
+            "objective": "Estimate instantaneous speed using short intervals",
+            "materials": [
+                "Measuring tape",
+                "Stopwatch",
+                "Toy car",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Mark small intervals along track",
+                "Record time taken for each interval",
+                "Calculate speed for each interval",
+                "Compare with average speed"
+            ],
+            "learning_outcome": "Understands concept of instantaneous speed",
+            "evaluation": "Accurate calculation and analysis (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Effect of Mass on Speed",
+            "objective": "Study how object’s mass affects motion down a slope",
+            "materials": [
+                "Ramp",
+                "Toy car with adjustable weight",
+                "Stopwatch",
+                "Measuring tape",
+                "Notebook"
+            ],
+            "steps": [
+                "Set up ramp and measure slope length",
+                "Change weight of toy car",
+                "Record time to reach bottom for each weight",
+                "Calculate speed and analyze effect of mass"
+            ],
+            "learning_outcome": "Analyzes effect of mass on speed quantitatively",
+            "evaluation": "Accurate measurement, calculation, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Design Your Own Motion Experiment",
+            "objective": "Apply concepts creatively in a self-designed motion study",
+            "materials": [
+                "Stopwatch",
+                "Measuring tape",
+                "Objects of choice (toy car, ball, bicycle)",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Design an experiment involving motion and time measurement",
+                "Predict expected results",
+                "Perform experiment and record observations",
+                "Compare results with predictions"
+            ],
+            "learning_outcome": "Encourages creativity, planning, and analytical skills in motion study",
+            "evaluation": "Accuracy, creativity, and analysis (10 marks)"
+        }
+    ]
+}

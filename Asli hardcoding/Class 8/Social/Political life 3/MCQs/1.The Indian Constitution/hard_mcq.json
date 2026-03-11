@@ -1,0 +1,361 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: The Indian Constitution",
+  "generated_at": "2026-03-07T20:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the main purpose of a constitution in a democratic country?",
+      "options": {
+        "A": "To limit the powers of government",
+        "B": "To control citizens completely",
+        "C": "To promote monarchy",
+        "D": "To replace elections"
+      },
+      "correct_answer": "A",
+      "explanation": "A constitution sets rules and limits the power of government to protect citizens' rights.",
+      "difficulty": "hard",
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 2,
+      "question": "Which principle ensures that government decisions follow established laws?",
+      "options": {
+        "A": "Rule of Law",
+        "B": "Colonialism",
+        "C": "Dictatorship",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Rule of Law ensures that everyone including the government must follow the law.",
+      "difficulty": "hard",
+      "source_section": "Rule of Law"
+    },
+    {
+      "question_number": 3,
+      "question": "Which feature of the Constitution divides power among the legislature, executive and judiciary?",
+      "options": {
+        "A": "Separation of Powers",
+        "B": "Federalism",
+        "C": "Secularism",
+        "D": "Democracy"
+      },
+      "correct_answer": "A",
+      "explanation": "Separation of powers prevents concentration of power in one branch.",
+      "difficulty": "hard",
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 4,
+      "question": "Which constitutional principle allows both the central and state governments to have independent powers?",
+      "options": {
+        "A": "Federalism",
+        "B": "Monarchy",
+        "C": "Dictatorship",
+        "D": "Colonialism"
+      },
+      "correct_answer": "A",
+      "explanation": "Federalism divides powers between central and state governments.",
+      "difficulty": "hard",
+      "source_section": "Federalism"
+    },
+    {
+      "question_number": 5,
+      "question": "Which institution acts as the guardian of the Constitution?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Executive",
+        "C": "Legislature",
+        "D": "Media"
+      },
+      "correct_answer": "A",
+      "explanation": "The judiciary protects the Constitution and ensures laws follow it.",
+      "difficulty": "hard",
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 6,
+      "question": "Which body debates, discusses and passes laws in India?",
+      "options": {
+        "A": "Parliament",
+        "B": "Supreme Court",
+        "C": "Election Commission",
+        "D": "Police Department"
+      },
+      "correct_answer": "A",
+      "explanation": "Parliament is the law-making body of the country.",
+      "difficulty": "hard",
+      "source_section": "Parliamentary System"
+    },
+    {
+      "question_number": 7,
+      "question": "Which system ensures that the executive is responsible to the legislature?",
+      "options": {
+        "A": "Parliamentary system",
+        "B": "Presidential system",
+        "C": "Monarchy",
+        "D": "Colonial rule"
+      },
+      "correct_answer": "A",
+      "explanation": "In the parliamentary system the executive is accountable to Parliament.",
+      "difficulty": "hard",
+      "source_section": "Parliamentary System"
+    },
+    {
+      "question_number": 8,
+      "question": "Which value in the Constitution ensures fairness and equal treatment in society?",
+      "options": {
+        "A": "Equality",
+        "B": "Colonialism",
+        "C": "Monarchy",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality ensures that all citizens are treated equally under the law.",
+      "difficulty": "hard",
+      "source_section": "Key Values"
+    },
+    {
+      "question_number": 9,
+      "question": "Which constitutional feature ensures respect for all religions?",
+      "options": {
+        "A": "Secularism",
+        "B": "Federalism",
+        "C": "Colonialism",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Secularism ensures that the state treats all religions equally.",
+      "difficulty": "hard",
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 10,
+      "question": "Which fundamental right protects citizens from discrimination?",
+      "options": {
+        "A": "Right to Equality",
+        "B": "Right to Property",
+        "C": "Right to Work",
+        "D": "Right to Trade"
+      },
+      "correct_answer": "A",
+      "explanation": "The Right to Equality protects citizens from discrimination.",
+      "difficulty": "hard",
+      "source_section": "Fundamental Rights"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which institution interprets the Constitution and resolves disputes related to it?",
+      "options": {
+        "A": "Supreme Court",
+        "B": "Lok Sabha",
+        "C": "Prime Minister",
+        "D": "Election Commission"
+      },
+      "correct_answer": "A",
+      "explanation": "The Supreme Court interprets the Constitution.",
+      "difficulty": "hard",
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 12,
+      "question": "What ensures that government power is not concentrated in one institution?",
+      "options": {
+        "A": "Separation of powers",
+        "B": "Colonial administration",
+        "C": "Military rule",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Separation of powers distributes authority among branches.",
+      "difficulty": "hard",
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 13,
+      "question": "Which principle of the Constitution protects freedom of religion?",
+      "options": {
+        "A": "Secularism",
+        "B": "Colonialism",
+        "C": "Dictatorship",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Secularism allows citizens to practice any religion freely.",
+      "difficulty": "hard",
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 14,
+      "question": "Which part of the Constitution states its main goals and values?",
+      "options": {
+        "A": "Preamble",
+        "B": "Schedule",
+        "C": "Article 1",
+        "D": "Amendment"
+      },
+      "correct_answer": "A",
+      "explanation": "The Preamble describes the objectives of the Constitution.",
+      "difficulty": "hard",
+      "source_section": "Preamble"
+    },
+    {
+      "question_number": 15,
+      "question": "Which democratic principle allows citizens to choose their representatives?",
+      "options": {
+        "A": "Elections",
+        "B": "Colonial rule",
+        "C": "Military control",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Citizens elect representatives through elections.",
+      "difficulty": "hard",
+      "source_section": "Democracy"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which institution forms the executive branch of the government?",
+      "options": {
+        "A": "Prime Minister and Council of Ministers",
+        "B": "Supreme Court",
+        "C": "Lok Sabha only",
+        "D": "Election Commission"
+      },
+      "correct_answer": "A",
+      "explanation": "The Prime Minister and Council of Ministers form the executive.",
+      "difficulty": "hard",
+      "source_section": "Executive"
+    },
+    {
+      "question_number": 17,
+      "question": "Which principle ensures participation of citizens in governance?",
+      "options": {
+        "A": "Democracy",
+        "B": "Colonialism",
+        "C": "Monarchy",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Democracy allows citizens to participate in government decisions.",
+      "difficulty": "hard",
+      "source_section": "Democracy"
+    },
+    {
+      "question_number": 18,
+      "question": "Which constitutional value promotes unity among diverse communities?",
+      "options": {
+        "A": "Fraternity",
+        "B": "Colonialism",
+        "C": "Dictatorship",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Fraternity promotes unity and brotherhood among citizens.",
+      "difficulty": "hard",
+      "source_section": "Preamble"
+    },
+    {
+      "question_number": 19,
+      "question": "Which constitutional principle protects citizens’ freedoms and rights?",
+      "options": {
+        "A": "Fundamental Rights",
+        "B": "Schedules",
+        "C": "Colonial laws",
+        "D": "Administrative rules"
+      },
+      "correct_answer": "A",
+      "explanation": "Fundamental Rights protect basic freedoms.",
+      "difficulty": "hard",
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 20,
+      "question": "Which institution checks whether laws follow the Constitution?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Executive",
+        "C": "Legislature",
+        "D": "Media"
+      },
+      "correct_answer": "A",
+      "explanation": "The judiciary reviews laws to ensure they follow the Constitution.",
+      "difficulty": "hard",
+      "source_section": "Judicial Review"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which feature of the Constitution protects cultural and religious diversity?",
+      "options": {
+        "A": "Secularism",
+        "B": "Colonialism",
+        "C": "Monarchy",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Secularism ensures respect for all religions and cultures.",
+      "difficulty": "hard",
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 22,
+      "question": "Which institution represents the people directly in Parliament?",
+      "options": {
+        "A": "Lok Sabha",
+        "B": "Rajya Sabha",
+        "C": "Supreme Court",
+        "D": "Election Commission"
+      },
+      "correct_answer": "A",
+      "explanation": "Lok Sabha members are directly elected by citizens.",
+      "difficulty": "hard",
+      "source_section": "Parliament"
+    },
+    {
+      "question_number": 23,
+      "question": "Which constitutional principle ensures justice in political, social and economic spheres?",
+      "options": {
+        "A": "Justice",
+        "B": "Colonialism",
+        "C": "Military rule",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Justice is a key value stated in the Preamble.",
+      "difficulty": "hard",
+      "source_section": "Preamble"
+    },
+    {
+      "question_number": 24,
+      "question": "Which feature ensures balance among the three branches of government?",
+      "options": {
+        "A": "Checks and balances",
+        "B": "Colonial rule",
+        "C": "Military rule",
+        "D": "Monarchy"
+      },
+      "correct_answer": "A",
+      "explanation": "Checks and balances maintain balance among government branches.",
+      "difficulty": "hard",
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 25,
+      "question": "Which principle ensures citizens live together with mutual respect and unity?",
+      "options": {
+        "A": "Fraternity",
+        "B": "Colonialism",
+        "C": "Dictatorship",
+        "D": "Military rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Fraternity promotes unity and brotherhood among citizens.",
+      "difficulty": "hard",
+      "source_section": "Preamble"
+    }
+  ]
+}

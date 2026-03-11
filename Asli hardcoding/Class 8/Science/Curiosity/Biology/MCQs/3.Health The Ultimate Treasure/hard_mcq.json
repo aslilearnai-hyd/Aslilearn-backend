@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-11T14:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which situation best represents the WHO definition of health?",
+      "options": {
+        "A": "A person without fever",
+        "B": "A person who exercises daily",
+        "C": "A person physically fit but socially isolated",
+        "D": "A person physically healthy, mentally stable, and socially active"
+      },
+      "correct_answer": "D",
+      "explanation": "WHO defines health as complete physical, mental, and social well-being.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which example best shows the relationship between environment and health?",
+      "options": {
+        "A": "Eating vegetables daily",
+        "B": "Living in a polluted area leading to respiratory illness",
+        "C": "Reading books regularly",
+        "D": "Sleeping early every day"
+      },
+      "correct_answer": "B",
+      "explanation": "Environmental pollution can directly affect human health.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following combinations correctly matches disease and type of pathogen?",
+      "options": {
+        "A": "Malaria – Virus",
+        "B": "Tuberculosis – Bacteria",
+        "C": "Dengue – Protozoa",
+        "D": "Cholera – Virus"
+      },
+      "correct_answer": "B",
+      "explanation": "Tuberculosis is caused by the bacterium Mycobacterium tuberculosis.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 4,
+      "question": "Which statement correctly distinguishes symptoms from signs?",
+      "options": {
+        "A": "Symptoms are measurable and signs are felt",
+        "B": "Symptoms are experienced by patients while signs are observable by doctors",
+        "C": "Symptoms and signs are identical",
+        "D": "Symptoms are laboratory results"
+      },
+      "correct_answer": "B",
+      "explanation": "Symptoms are felt by the patient; signs are measurable or observable indicators.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Which factor mainly contributes to the spread of communicable diseases in communities?",
+      "options": {
+        "A": "Vaccination programs",
+        "B": "Clean drinking water",
+        "C": "Poor sanitation and overcrowding",
+        "D": "Balanced diet"
+      },
+      "correct_answer": "C",
+      "explanation": "Poor sanitation and overcrowding facilitate disease transmission.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Which pair correctly represents vector and disease?",
+      "options": {
+        "A": "Housefly – Malaria",
+        "B": "Mosquito – Dengue",
+        "C": "Dog – Cholera",
+        "D": "Rat – Tuberculosis"
+      },
+      "correct_answer": "B",
+      "explanation": "Dengue virus is transmitted by Aedes mosquitoes.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which scenario best explains non-communicable diseases?",
+      "options": {
+        "A": "Diseases spread through air droplets",
+        "B": "Diseases transmitted by vectors",
+        "C": "Diseases caused by genetic or lifestyle factors",
+        "D": "Diseases caused by bacteria"
+      },
+      "correct_answer": "C",
+      "explanation": "Non-communicable diseases often arise from genetics or lifestyle habits.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following actions most effectively prevents vector-borne diseases?",
+      "options": {
+        "A": "Taking antibiotics regularly",
+        "B": "Drinking boiled water only",
+        "C": "Eliminating stagnant water sources",
+        "D": "Eating nutritious food"
+      },
+      "correct_answer": "C",
+      "explanation": "Mosquitoes breed in stagnant water; removing it prevents vector reproduction.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which situation demonstrates antibiotic resistance?",
+      "options": {
+        "A": "A virus surviving antibiotics",
+        "B": "Bacteria surviving after incomplete antibiotic treatment",
+        "C": "Antibiotics curing bacterial infections",
+        "D": "Vaccines preventing infections"
+      },
+      "correct_answer": "B",
+      "explanation": "Incomplete antibiotic use allows bacteria to survive and develop resistance.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which condition increases the risk of lifestyle diseases?",
+      "options": {
+        "A": "Regular exercise",
+        "B": "Balanced diet",
+        "C": "Sedentary lifestyle and unhealthy eating habits",
+        "D": "Adequate sleep"
+      },
+      "correct_answer": "C",
+      "explanation": "Poor diet and lack of physical activity contribute to lifestyle diseases.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Which statement correctly explains immunity?",
+      "options": {
+        "A": "The body’s ability to digest food",
+        "B": "The body’s defense system against pathogens",
+        "C": "The ability to produce antibiotics",
+        "D": "The ability to maintain body temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "Immunity protects the body from harmful microorganisms.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Which example shows active immunity?",
+      "options": {
+        "A": "Receiving antibodies from mother",
+        "B": "Receiving antiserum",
+        "C": "Vaccination triggering immune response",
+        "D": "Taking antibiotics"
+      },
+      "correct_answer": "C",
+      "explanation": "Vaccines stimulate the immune system to produce its own antibodies.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Which scientist is associated with the discovery of antibiotics?",
+      "options": {
+        "A": "Louis Pasteur",
+        "B": "Alexander Fleming",
+        "C": "Edward Jenner",
+        "D": "Gregor Mendel"
+      },
+      "correct_answer": "B",
+      "explanation": "Alexander Fleming discovered penicillin.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which example best illustrates social well-being as part of health?",
+      "options": {
+        "A": "Eating healthy food",
+        "B": "Maintaining good relationships with others",
+        "C": "Sleeping regularly",
+        "D": "Taking vitamins"
+      },
+      "correct_answer": "B",
+      "explanation": "Social well-being refers to healthy relationships and social interactions.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which disease is caused by protozoa and transmitted by a vector?",
+      "options": {
+        "A": "Malaria",
+        "B": "Dengue",
+        "C": "Cholera",
+        "D": "Influenza"
+      },
+      "correct_answer": "A",
+      "explanation": "Malaria is caused by Plasmodium protozoa and spread by mosquitoes.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which action contributes most to public health improvement?",
+      "options": {
+        "A": "Personal medication",
+        "B": "Community vaccination programs",
+        "C": "Individual exercise routines",
+        "D": "Eating nutritious meals"
+      },
+      "correct_answer": "B",
+      "explanation": "Vaccination programs protect entire populations.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which factor primarily determines the spread of water-borne diseases?",
+      "options": {
+        "A": "Air pollution",
+        "B": "Contaminated drinking water",
+        "C": "Genetic inheritance",
+        "D": "Exercise habits"
+      },
+      "correct_answer": "B",
+      "explanation": "Contaminated water spreads diseases like cholera and typhoid.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which statement correctly describes herd immunity?",
+      "options": {
+        "A": "Only vaccinated individuals are protected",
+        "B": "Vaccination protects individuals and reduces disease spread in the community",
+        "C": "Antibiotics replace vaccines",
+        "D": "Only children receive immunity"
+      },
+      "correct_answer": "B",
+      "explanation": "Herd immunity protects communities when many individuals are vaccinated.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor mainly influences mental health?",
+      "options": {
+        "A": "Genetic and environmental stress",
+        "B": "Balanced diet only",
+        "C": "Exercise alone",
+        "D": "Vaccination"
+      },
+      "correct_answer": "A",
+      "explanation": "Mental health is influenced by genetics, environment, and stress.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which practice most effectively strengthens immunity naturally?",
+      "options": {
+        "A": "Balanced diet, exercise, and proper sleep",
+        "B": "Frequent antibiotic use",
+        "C": "Skipping meals",
+        "D": "Avoiding sunlight"
+      },
+      "correct_answer": "A",
+      "explanation": "Healthy lifestyle habits improve immune function.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which statement best describes communicable diseases?",
+      "options": {
+        "A": "They cannot spread between individuals",
+        "B": "They spread through pathogens from one host to another",
+        "C": "They are only genetic",
+        "D": "They only occur in animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Communicable diseases spread via pathogens.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor increases vulnerability to infectious diseases?",
+      "options": {
+        "A": "Strong immune system",
+        "B": "Poor nutrition",
+        "C": "Vaccination",
+        "D": "Good hygiene"
+      },
+      "correct_answer": "B",
+      "explanation": "Malnutrition weakens the immune system.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which combination correctly matches disease and transmission route?",
+      "options": {
+        "A": "Dengue – Contaminated water",
+        "B": "Cholera – Air droplets",
+        "C": "Malaria – Mosquito bite",
+        "D": "Diabetes – Virus"
+      },
+      "correct_answer": "C",
+      "explanation": "Malaria spreads through mosquito bites.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which global organization monitors disease outbreaks and public health policies?",
+      "options": {
+        "A": "UNICEF",
+        "B": "WHO",
+        "C": "UNESCO",
+        "D": "FAO"
+      },
+      "correct_answer": "B",
+      "explanation": "WHO coordinates global health policies and disease monitoring.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Which strategy is most effective in preventing the spread of infectious diseases in a population?",
+      "options": {
+        "A": "Increasing antibiotic use",
+        "B": "Vaccination and sanitation improvements",
+        "C": "Avoiding exercise",
+        "D": "Consuming vitamins only"
+      },
+      "correct_answer": "B",
+      "explanation": "Vaccination and sanitation are key public health measures.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    }
+  ]
+}

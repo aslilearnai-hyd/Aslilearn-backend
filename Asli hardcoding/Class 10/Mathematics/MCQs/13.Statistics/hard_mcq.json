@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Statistics",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T08:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is NOT a measure of central tendency?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "D",
+            "explanation": "Range is a measure of dispersion.",
+            "difficulty": "hard",
+            "source_section": "Central Tendency"
+        },
+        {
+            "question_number": 2,
+            "question": "The arithmetic mean of the first 10 natural numbers is?",
+            "options": {
+                "A": "4.5",
+                "B": "5",
+                "C": "5.5",
+                "D": "6"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum = 55, mean = 55/10 = 5.5.",
+            "difficulty": "hard",
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 3,
+            "question": "Which measure of central tendency is least affected by extreme values?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "B",
+            "explanation": "Median is least affected by extreme values.",
+            "difficulty": "hard",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 4,
+            "question": "If all observations in a data set are equal, then mean, median and mode are?",
+            "options": {
+                "A": "All different",
+                "B": "All zero",
+                "C": "All equal",
+                "D": "Undefined"
+            },
+            "correct_answer": "C",
+            "explanation": "All measures coincide when all values are equal.",
+            "difficulty": "hard",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 5,
+            "question": "Which type of graph is most suitable for showing cumulative frequency?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "D",
+            "explanation": "Ogive represents cumulative frequency.",
+            "difficulty": "hard",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 6,
+            "question": "The mode of the data 2, 3, 4, 5, 6 is?",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "No mode"
+            },
+            "correct_answer": "D",
+            "explanation": "No value repeats, so no mode.",
+            "difficulty": "hard",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 7,
+            "question": "The median of the data 4, 7, 10, 12, 15, 18 is?",
+            "options": {
+                "A": "9",
+                "B": "10",
+                "C": "11",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "Median = (10 + 12)/2 = 11.",
+            "difficulty": "hard",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following data can take fractional values?",
+            "options": {
+                "A": "Number of students",
+                "B": "Roll numbers",
+                "C": "Heights",
+                "D": "Pages in a book"
+            },
+            "correct_answer": "C",
+            "explanation": "Heights are continuous data.",
+            "difficulty": "hard",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 9,
+            "question": "Which graph uses adjacent rectangles to represent frequency?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "B",
+            "explanation": "Histogram uses adjacent rectangles.",
+            "difficulty": "hard",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 10,
+            "question": "The sum of deviations of observations from their mean is always?",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Maximum"
+            },
+            "correct_answer": "C",
+            "explanation": "A property of arithmetic mean.",
+            "difficulty": "hard",
+            "source_section": "Mean Properties"
+        },
+        {
+            "question_number": 11,
+            "question": "Which measure of central tendency may not exist in some data sets?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode may not exist if no value repeats.",
+            "difficulty": "hard",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following represents primary data?",
+            "options": {
+                "A": "Census report",
+                "B": "Weather report",
+                "C": "Marks collected by teacher",
+                "D": "Newspaper article"
+            },
+            "correct_answer": "C",
+            "explanation": "Primary data is collected first-hand.",
+            "difficulty": "hard",
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 13,
+            "question": "Which measure divides the data into two equal parts?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "B",
+            "explanation": "Median divides data into two equal halves.",
+            "difficulty": "hard",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 14,
+            "question": "Which chart is best suited to show percentage distribution?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "C",
+            "explanation": "Pie chart represents percentage distribution.",
+            "difficulty": "hard",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 15,
+            "question": "The difference between the maximum and minimum values is called?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "D",
+            "explanation": "Range = maximum − minimum.",
+            "difficulty": "hard",
+            "source_section": "Range"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following statements is correct?",
+            "options": {
+                "A": "Mean is always an observation",
+                "B": "Median is always an observation",
+                "C": "Mode is always unique",
+                "D": "Mean can be fractional"
+            },
+            "correct_answer": "D",
+            "explanation": "Mean can be fractional.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 17,
+            "question": "Which type of data is represented by number of absentees in a class?",
+            "options": {
+                "A": "Continuous",
+                "B": "Discrete",
+                "C": "Grouped",
+                "D": "Secondary"
+            },
+            "correct_answer": "B",
+            "explanation": "Number of absentees is discrete data.",
+            "difficulty": "hard",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 18,
+            "question": "Which measure gives the most frequent value?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode represents most frequent value.",
+            "difficulty": "hard",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 19,
+            "question": "Which graph is always increasing?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Ogive",
+                "D": "Pie chart"
+            },
+            "correct_answer": "C",
+            "explanation": "Ogive is cumulative and always increasing.",
+            "difficulty": "hard",
+            "source_section": "Ogive"
+        },
+        {
+            "question_number": 20,
+            "question": "Which step comes first in a statistical investigation?",
+            "options": {
+                "A": "Analysis",
+                "B": "Interpretation",
+                "C": "Collection of data",
+                "D": "Presentation"
+            },
+            "correct_answer": "C",
+            "explanation": "Data collection is the first step.",
+            "difficulty": "hard",
+            "source_section": "Process"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following is secondary data?",
+            "options": {
+                "A": "Survey conducted by student",
+                "B": "Census report",
+                "C": "Class test marks",
+                "D": "Height measured by teacher"
+            },
+            "correct_answer": "B",
+            "explanation": "Census report is secondary data.",
+            "difficulty": "hard",
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 22,
+            "question": "Which measure is most suitable for qualitative data?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is suitable for qualitative data.",
+            "difficulty": "hard",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following can be negative?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean can be negative if data contains negative values.",
+            "difficulty": "hard",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following is a correct statement?",
+            "options": {
+                "A": "All bar graphs are histograms",
+                "B": "All histograms are bar graphs",
+                "C": "Histograms have gaps between bars",
+                "D": "Bar graphs may have gaps"
+            },
+            "correct_answer": "D",
+            "explanation": "Bar graphs may have gaps; histograms do not.",
+            "difficulty": "hard",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 25,
+            "question": "Statistics is mainly used to?",
+            "options": {
+                "A": "Solve equations",
+                "B": "Collect and interpret data",
+                "C": "Draw figures",
+                "D": "Measure angles"
+            },
+            "correct_answer": "B",
+            "explanation": "Statistics deals with data handling.",
+            "difficulty": "hard",
+            "source_section": "Summary"
+        }
+    ]
+}

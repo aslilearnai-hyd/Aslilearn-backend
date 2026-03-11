@@ -1,0 +1,46 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Lines and Angles",
+    "difficulty": "Easy",
+    "source_pdf": "m9_6.pdf",
+    "short_notes": {
+        "key_points": [
+            "An angle is formed when two rays meet at a common point called the vertex",
+            "The two rays forming the angle are called arms",
+            "Angles are measured in degrees",
+            "Types of angles include acute, right, obtuse, straight and reflex angles",
+            "Complementary angles are two angles whose sum is 90°",
+            "Supplementary angles are two angles whose sum is 180°",
+            "Adjacent angles share a common vertex and common arm",
+            "A linear pair is a pair of adjacent angles whose sum is 180°",
+            "When two lines intersect, vertically opposite angles are equal",
+            "Parallel lines never meet and remain at a constant distance"
+        ],
+        "examples": [
+            "Acute angle example: 45°",
+            "Right angle example: 90°",
+            "Obtuse angle example: 120°",
+            "Straight angle example: 180°",
+            "Reflex angle example: 210°",
+            "Complementary angles example: 30° and 60°",
+            "Supplementary angles example: 100° and 80°",
+            "Vertically opposite angles example: opposite angles formed by intersecting lines",
+            "Corresponding angles example: equal angles when transversal cuts parallel lines"
+        ],
+        "formulas": [
+            "Sum of complementary angles → 90°",
+            "Sum of supplementary angles → 180°",
+            "Linear pair sum → 180°",
+            "Angles around a point → 360°",
+            "Vertically opposite angles → equal"
+        ],
+        "exam_tips": [
+            "Remember that angles forming a linear pair always add up to 180°",
+            "Vertically opposite angles are always equal",
+            "Angles around a point always sum to 360°",
+            "If corresponding or alternate interior angles are equal, the lines are parallel",
+            "Use clear diagrams while solving angle problems"
+        ]
+    }
+}

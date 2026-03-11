@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Introduction to Trigonometry",
+    "generated_at": "2026-02-27T22:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Trigonometry is the study of relationships between?",
+            "options": {
+                "A": "Angles only",
+                "B": "Sides only",
+                "C": "Sides and angles of a triangle",
+                "D": "Circles"
+            },
+            "correct_answer": "C",
+            "explanation": "Trigonometry deals with sides and angles of triangles.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Trigonometric ratios are defined for which type of triangle?",
+            "options": {
+                "A": "Scalene",
+                "B": "Isosceles",
+                "C": "Equilateral",
+                "D": "Right-angled"
+            },
+            "correct_answer": "D",
+            "explanation": "Trigonometric ratios are defined for right-angled triangles.",
+            "difficulty": "easy",
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 3,
+            "question": "In a right triangle, the side opposite the right angle is called?",
+            "options": {
+                "A": "Base",
+                "B": "Height",
+                "C": "Hypotenuse",
+                "D": "Adjacent"
+            },
+            "correct_answer": "C",
+            "explanation": "The hypotenuse is opposite the right angle.",
+            "difficulty": "easy",
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is defined as opposite side divided by hypotenuse?",
+            "options": {
+                "A": "cos θ",
+                "B": "tan θ",
+                "C": "sin θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "sin θ = Opposite / Hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 5,
+            "question": "cos θ is defined as?",
+            "options": {
+                "A": "Opposite/Hypotenuse",
+                "B": "Adjacent/Hypotenuse",
+                "C": "Opposite/Adjacent",
+                "D": "Hypotenuse/Adjacent"
+            },
+            "correct_answer": "B",
+            "explanation": "cos θ = Adjacent / Hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 6,
+            "question": "tan θ is equal to?",
+            "options": {
+                "A": "Opposite/Hypotenuse",
+                "B": "Adjacent/Hypotenuse",
+                "C": "Opposite/Adjacent",
+                "D": "Hypotenuse/Opposite"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ = Opposite / Adjacent.",
+            "difficulty": "easy",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is the reciprocal of sin θ?",
+            "options": {
+                "A": "cos θ",
+                "B": "sec θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cosec θ is the reciprocal of sin θ.",
+            "difficulty": "easy",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 8,
+            "question": "sec θ is the reciprocal of?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "B",
+            "explanation": "sec θ = 1 / cos θ.",
+            "difficulty": "easy",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 9,
+            "question": "cot θ is defined as?",
+            "options": {
+                "A": "Opposite/Adjacent",
+                "B": "Adjacent/Opposite",
+                "C": "Hypotenuse/Opposite",
+                "D": "Hypotenuse/Adjacent"
+            },
+            "correct_answer": "B",
+            "explanation": "cot θ = Adjacent / Opposite.",
+            "difficulty": "easy",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 10,
+            "question": "How many basic trigonometric ratios are there?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "D",
+            "explanation": "There are six trigonometric ratios.",
+            "difficulty": "easy",
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 11,
+            "question": "Which ratio is equal to sin θ / cos θ?",
+            "options": {
+                "A": "cot θ",
+                "B": "sec θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ = sin θ / cos θ.",
+            "difficulty": "easy",
+            "source_section": "Identities"
+        },
+        {
+            "question_number": 12,
+            "question": "Which angle is usually denoted by θ in trigonometry?",
+            "options": {
+                "A": "Right angle",
+                "B": "Acute angle",
+                "C": "Obtuse angle",
+                "D": "Straight angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Trigonometric ratios are defined for acute angles.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 13,
+            "question": "sin 90° is equal to?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "1/2",
+                "D": "√3/2"
+            },
+            "correct_answer": "B",
+            "explanation": "sin 90° = 1.",
+            "difficulty": "easy",
+            "source_section": "Values"
+        },
+        {
+            "question_number": 14,
+            "question": "cos 0° is equal to?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "1/2",
+                "D": "√3/2"
+            },
+            "correct_answer": "B",
+            "explanation": "cos 0° = 1.",
+            "difficulty": "easy",
+            "source_section": "Values"
+        },
+        {
+            "question_number": 15,
+            "question": "tan 45° is equal to?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "√3",
+                "D": "1/√3"
+            },
+            "correct_answer": "B",
+            "explanation": "tan 45° = 1.",
+            "difficulty": "easy",
+            "source_section": "Values"
+        },
+        {
+            "question_number": 16,
+            "question": "Which trigonometric ratio has the value 1 at 45°?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan 45° = 1.",
+            "difficulty": "easy",
+            "source_section": "Values"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following ratios is always greater than 1?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "sec θ = 1/cos θ, and cos θ < 1.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 18,
+            "question": "Which ratio is undefined at 90°?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan 90° is undefined.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 19,
+            "question": "Which trigonometric ratio is always less than or equal to 1?",
+            "options": {
+                "A": "sec θ",
+                "B": "cosec θ",
+                "C": "sin θ",
+                "D": "tan θ"
+            },
+            "correct_answer": "C",
+            "explanation": "sin θ ≤ 1.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following is a correct identity?",
+            "options": {
+                "A": "sin θ = cos θ",
+                "B": "tan θ = sin θ / cos θ",
+                "C": "sec θ = cos θ",
+                "D": "cot θ = tan θ"
+            },
+            "correct_answer": "B",
+            "explanation": "tan θ = sin θ / cos θ.",
+            "difficulty": "easy",
+            "source_section": "Identities"
+        },
+        {
+            "question_number": 21,
+            "question": "The side adjacent to angle θ is?",
+            "options": {
+                "A": "Opposite side",
+                "B": "Hypotenuse",
+                "C": "Side next to θ except hypotenuse",
+                "D": "Height"
+            },
+            "correct_answer": "C",
+            "explanation": "Adjacent side touches θ but is not hypotenuse.",
+            "difficulty": "easy",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 22,
+            "question": "Which ratio is equal to 1 / tan θ?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "sec θ",
+                "D": "cot θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cot θ = 1 / tan θ.",
+            "difficulty": "easy",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 23,
+            "question": "Which trigonometric ratio is undefined at 0°?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cosec 0° is undefined.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 24,
+            "question": "Which ratio is equal to Hypotenuse/Adjacent?",
+            "options": {
+                "A": "sec θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cot θ"
+            },
+            "correct_answer": "A",
+            "explanation": "sec θ = Hypotenuse / Adjacent.",
+            "difficulty": "easy",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "sin θ > 1",
+                "B": "cos θ < 0 for acute angles",
+                "C": "Trigonometric ratios are defined only for right triangles",
+                "D": "tan θ is always less than 1"
+            },
+            "correct_answer": "C",
+            "explanation": "Trigonometric ratios are defined for right-angled triangles.",
+            "difficulty": "easy",
+            "source_section": "Summary"
+        }
+    ]
+}

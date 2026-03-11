@@ -1,0 +1,178 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "From the Diary of Anne Frank",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand Anne Frank’s life and experiences in the Secret Annex in detail",
+        "Analyze her character, emotions, and growth during hiding",
+        "Identify relationships between family members and helpers",
+        "Interpret themes such as hope, resilience, human values, and courage",
+        "Develop inferential and analytical thinking from textual evidence",
+        "Relate lessons of empathy, tolerance, and human dignity to real life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Historical Context",
+            "topics_covered": [
+                "Life of Anne Frank and her family",
+                "Nazi occupation and World War II background",
+                "Concept and importance of a diary"
+            ],
+            "teaching_strategy": [
+                "Storytelling to introduce Anne Frank and her context",
+                "Use maps and images of Amsterdam and WWII events"
+            ],
+            "student_activities": [
+                "Locate Amsterdam on the map and discuss historical context",
+                "Discuss why Anne’s diary became important"
+            ],
+            "assessment": [
+                "Oral Q&A on context and diary concept",
+                "Short written note on importance of recording experiences"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Life in Hiding",
+            "topics_covered": [
+                "Description of the Secret Annex and living conditions",
+                "Daily routines, rules, and challenges",
+                "Interactions with family and helpers"
+            ],
+            "teaching_strategy": [
+                "Show diagrams or pictures of the Annex",
+                "Explain routines and challenges using examples from text"
+            ],
+            "student_activities": [
+                "Draw a simple plan of the Annex",
+                "List daily activities and challenges of living in hiding"
+            ],
+            "assessment": [
+                "Oral Q&A on life in the Annex",
+                "Short written task: summarize daily routines and challenges"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Anne’s Character and Emotions",
+            "topics_covered": [
+                "Anne’s feelings, hopes, fears, and dreams",
+                "Growth of her personality during hiding",
+                "Examples of courage, patience, and resilience"
+            ],
+            "teaching_strategy": [
+                "Read selected diary entries aloud",
+                "Highlight character traits and emotional growth"
+            ],
+            "student_activities": [
+                "Identify emotions expressed in diary excerpts",
+                "Discuss examples of courage and resilience"
+            ],
+            "assessment": [
+                "Oral Q&A on character and emotions",
+                "Short written note analyzing a diary excerpt"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Relationships and Social Lessons",
+            "topics_covered": [
+                "Relationships between Anne, family, and helpers",
+                "Conflicts and resolutions in the Annex",
+                "Human values: empathy, cooperation, and kindness"
+            ],
+            "teaching_strategy": [
+                "Discussion of interpersonal relationships in hiding",
+                "Use examples from text to illustrate moral lessons"
+            ],
+            "student_activities": [
+                "Create a chart of key relationships and qualities of each person",
+                "Discuss how people supported each other in hiding"
+            ],
+            "assessment": [
+                "Oral Q&A on relationships and cooperation",
+                "Short written task: describe one important lesson on human values"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Themes and Moral Lessons",
+            "topics_covered": [
+                "Themes: hope, courage, human dignity, resilience",
+                "Moral lessons: empathy, tolerance, perseverance",
+                "Relevance of these themes today"
+            ],
+            "teaching_strategy": [
+                "Group discussion of key themes",
+                "Use textual evidence to explain moral lessons"
+            ],
+            "student_activities": [
+                "Identify examples from the text for each theme",
+                "Discuss how students can apply these lessons in real life"
+            ],
+            "assessment": [
+                "Oral discussion on themes and moral lessons",
+                "Short written task relating themes to modern life"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Historical Significance and Reflection",
+            "topics_covered": [
+                "Impact of Anne’s diary on the world",
+                "Lessons about human rights, tolerance, and empathy",
+                "Remembering the Holocaust and victims"
+            ],
+            "teaching_strategy": [
+                "Explain historical significance with visuals and timelines",
+                "Encourage reflective discussion on lessons learned"
+            ],
+            "student_activities": [
+                "Discuss the importance of remembering history",
+                "Write a paragraph on how Anne’s diary inspires empathy and courage"
+            ],
+            "assessment": [
+                "Oral Q&A on historical significance",
+                "Short written reflection connecting lessons to values"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Critical Thinking",
+            "topics_covered": [
+                "Summary of Anne Frank’s life, experiences, and character",
+                "Reinforcement of themes and moral lessons",
+                "Practice inferential and analytical thinking based on text"
+            ],
+            "teaching_strategy": [
+                "Use timelines, charts, and character maps for review",
+                "Conduct Q&A, group discussion, and reflection exercises"
+            ],
+            "student_activities": [
+                "Prepare a mind map summarizing the chapter",
+                "Answer inferential questions on emotions, decisions, and lessons"
+            ],
+            "assessment": [
+                "Oral quiz on major events, characters, and themes",
+                "Short written answers on analytical and reflective questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map of Amsterdam and Netherlands",
+        "Images of Anne Frank, Secret Annex, and helpers",
+        "Timeline chart of events in hiding",
+        "Character maps and flashcards of key people and lessons"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and discussion",
+        "Written exercises and reflections",
+        "Class participation and group discussion",
+        "Quizzes on events, character traits, and themes"
+    ],
+    "teacher_tip": "Encourage students to critically analyze Anne Frank’s emotions, character, and relationships. Focus on empathy, courage, and resilience. Use diary excerpts and timelines to make discussions engaging and relatable."
+}

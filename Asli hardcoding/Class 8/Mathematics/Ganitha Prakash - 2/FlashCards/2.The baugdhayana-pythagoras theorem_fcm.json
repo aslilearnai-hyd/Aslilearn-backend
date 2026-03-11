@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-05T17:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What does the Baudhāyana-Pythagoras theorem state?",
+                "correct_answer": "In a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides",
+                "explanation": "This relationship is written as a² + b² = c².",
+                "source_section": "Section 2.4"
+            },
+            {
+                "question": "What is the hypotenuse of a right triangle?",
+                "correct_answer": "The side opposite the right angle",
+                "explanation": "It is the longest side of the triangle.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "question": "What type of triangle satisfies the Pythagoras theorem?",
+                "correct_answer": "Right-angled triangle",
+                "explanation": "The theorem applies only when one angle is 90°.",
+                "source_section": "Section 2.4"
+            },
+            {
+                "question": "What is the formula for the diagonal of a square?",
+                "correct_answer": "Diagonal = a√2",
+                "explanation": "It is derived using the Pythagoras theorem.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "question": "What is a Pythagorean triple?",
+                "correct_answer": "Three integers that satisfy a² + b² = c²",
+                "explanation": "They represent the sides of a right triangle.",
+                "source_section": "Section 2.5"
+            },
+            {
+                "question": "Give an example of a Pythagorean triple.",
+                "correct_answer": "(3, 4, 5)",
+                "explanation": "3² + 4² = 9 + 16 = 25.",
+                "source_section": "Section 2.5"
+            },
+            {
+                "question": "What is a primitive Pythagorean triple?",
+                "correct_answer": "A triple with no common factor other than 1",
+                "explanation": "Example: (3, 4, 5).",
+                "source_section": "Section 2.5"
+            },
+            {
+                "question": "What is a scaled Pythagorean triple?",
+                "correct_answer": "A triple obtained by multiplying a primitive triple by the same integer",
+                "explanation": "Example: (6, 8, 10) from (3, 4, 5).",
+                "source_section": "Section 2.5"
+            },
+            {
+                "question": "How can you check if a triangle is right-angled?",
+                "correct_answer": "Check if the square of the longest side equals the sum of the squares of the other two sides",
+                "explanation": "This verifies the Pythagoras relation.",
+                "source_section": "Section 2.4"
+            },
+            {
+                "question": "What is the diagonal of a unit square?",
+                "correct_answer": "√2",
+                "explanation": "It comes from applying the Pythagoras theorem to a square with side 1.",
+                "source_section": "Section 2.3"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Baudhāyana-Pythagoras Theorem",
+                "content": "It relates the three sides of a right triangle using the equation a² + b² = c².",
+                "source_section": "Section 2.4"
+            },
+            {
+                "title": "Right Triangle",
+                "content": "A triangle with one angle equal to 90°.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "title": "Pythagorean Triples",
+                "content": "Integer sets such as (3,4,5) that satisfy the Pythagoras relation.",
+                "source_section": "Section 2.5"
+            },
+            {
+                "title": "Diagonal of Square",
+                "content": "The diagonal of a square with side a equals a√2.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "title": "Applications",
+                "content": "The theorem helps calculate distances, diagonals, and heights in geometry and real-life problems.",
+                "source_section": "Section 2.7"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The Baudhāyana-Pythagoras theorem was known in ancient Indian mathematics before Pythagoras.",
+                "source_section": "Section 2.4"
+            },
+            {
+                "fact": "The smallest Pythagorean triple is (3, 4, 5).",
+                "source_section": "Section 2.5"
+            },
+            {
+                "fact": "The diagonal of a square always forms two right triangles.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "fact": "The Pythagoras theorem is widely used in geometry, construction, and navigation.",
+                "source_section": "Section 2.7"
+            }
+        ]
+    }
+}

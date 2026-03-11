@@ -1,0 +1,359 @@
+{
+    "content_type": "बहुविकल्पीय प्रश्न",
+    "chapter": "IHKS107 – कबीर (साखियाँ और पद)",
+    "title": "कबीर – साखियाँ और पद – कठिन स्तर MCQs",
+    "generated_at": "2026-03-11T04:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "कबीर की भक्ति का मुख्य आधार क्या था?",
+            "options": {
+                "A": "मूर्ति पूजा",
+                "B": "निर्गुण ईश्वर",
+                "C": "धार्मिक कर्मकांड",
+                "D": "यज्ञ"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर निर्गुण भक्ति के समर्थक थे।",
+            "difficulty": "hard",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "कबीर के अनुसार सच्ची भक्ति किससे प्राप्त होती है?",
+            "options": {
+                "A": "बाहरी पूजा से",
+                "B": "मन की पवित्रता से",
+                "C": "धन से",
+                "D": "राजनीति से"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर ने आंतरिक भक्ति को महत्व दिया।",
+            "difficulty": "hard",
+            "source_section": "पद"
+        },
+        {
+            "question_number": 3,
+            "question": "कबीर के काव्य में ज्ञान का क्या महत्व है?",
+            "options": {
+                "A": "अज्ञान को बढ़ाना",
+                "B": "अज्ञान को समाप्त करना",
+                "C": "धन कमाना",
+                "D": "युद्ध करना"
+            },
+            "correct_answer": "B",
+            "explanation": "ज्ञान अज्ञान और भ्रम को समाप्त करता है।",
+            "difficulty": "hard",
+            "source_section": "दूसरा पद"
+        },
+        {
+            "question_number": 4,
+            "question": "कबीर ने किस प्रकार के समाज की कल्पना की थी?",
+            "options": {
+                "A": "धनवान समाज",
+                "B": "भेदभाव रहित समाज",
+                "C": "राजनीतिक समाज",
+                "D": "युद्धप्रिय समाज"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर समानता और मानवता पर आधारित समाज चाहते थे।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 5,
+            "question": "कबीर के काव्य में मानवता का क्या स्थान है?",
+            "options": {
+                "A": "कम",
+                "B": "मध्यम",
+                "C": "सर्वोच्च",
+                "D": "नगण्य"
+            },
+            "correct_answer": "C",
+            "explanation": "कबीर ने मानवता को सर्वोच्च स्थान दिया।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 6,
+            "question": "कबीर के अनुसार सच्चा संत कैसा होता है?",
+            "options": {
+                "A": "धनवान",
+                "B": "निष्पक्ष और ईश्वरभक्त",
+                "C": "राजनीतिज्ञ",
+                "D": "युद्धप्रिय"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर के अनुसार संत निष्पक्ष और भक्त होता है।",
+            "difficulty": "hard",
+            "source_section": "साखियाँ"
+        },
+        {
+            "question_number": 7,
+            "question": "कबीर के अनुसार अज्ञान किससे दूर होता है?",
+            "options": {
+                "A": "ज्ञान से",
+                "B": "धन से",
+                "C": "युद्ध से",
+                "D": "राजनीति से"
+            },
+            "correct_answer": "A",
+            "explanation": "ज्ञान अज्ञान को समाप्त करता है।",
+            "difficulty": "hard",
+            "source_section": "दूसरा पद"
+        },
+        {
+            "question_number": 8,
+            "question": "कबीर के अनुसार ईश्वर कहाँ निवास करता है?",
+            "options": {
+                "A": "मंदिर में",
+                "B": "मस्जिद में",
+                "C": "मनुष्य के भीतर",
+                "D": "पर्वत पर"
+            },
+            "correct_answer": "C",
+            "explanation": "कबीर के अनुसार ईश्वर मनुष्य के भीतर है।",
+            "difficulty": "hard",
+            "source_section": "पद"
+        },
+        {
+            "question_number": 9,
+            "question": "कबीर ने किसका सबसे अधिक विरोध किया?",
+            "options": {
+                "A": "ज्ञान",
+                "B": "अंधविश्वास",
+                "C": "प्रेम",
+                "D": "मानवता"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर ने अंधविश्वास और आडंबरों का विरोध किया।",
+            "difficulty": "hard",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 10,
+            "question": "कबीर की शिक्षाओं का मुख्य उद्देश्य क्या था?",
+            "options": {
+                "A": "राजनीति",
+                "B": "समाज सुधार",
+                "C": "युद्ध",
+                "D": "धन संचय"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर का उद्देश्य समाज सुधार था।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 11,
+            "question": "कबीर के अनुसार सच्चे प्रेम का परिणाम क्या है?",
+            "options": {
+                "A": "वैर",
+                "B": "अहंकार",
+                "C": "आध्यात्मिक आनंद",
+                "D": "क्रोध"
+            },
+            "correct_answer": "C",
+            "explanation": "सच्चा प्रेम आध्यात्मिक आनंद देता है।",
+            "difficulty": "hard",
+            "source_section": "साखियाँ"
+        },
+        {
+            "question_number": 12,
+            "question": "कबीर की साखियाँ किस प्रकार की शिक्षा देती हैं?",
+            "options": {
+                "A": "राजनीतिक",
+                "B": "नैतिक और आध्यात्मिक",
+                "C": "आर्थिक",
+                "D": "वैज्ञानिक"
+            },
+            "correct_answer": "B",
+            "explanation": "साखियाँ नैतिक और आध्यात्मिक शिक्षा देती हैं।",
+            "difficulty": "hard",
+            "source_section": "साखियाँ"
+        },
+        {
+            "question_number": 13,
+            "question": "कबीर के अनुसार सच्चा धर्म क्या है?",
+            "options": {
+                "A": "मानवता",
+                "B": "धन",
+                "C": "युद्ध",
+                "D": "राजनीति"
+            },
+            "correct_answer": "A",
+            "explanation": "कबीर के अनुसार सच्चा धर्म मानवता है।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 14,
+            "question": "कबीर की भाषा शैली कैसी है?",
+            "options": {
+                "A": "कठिन",
+                "B": "संस्कृत प्रधान",
+                "C": "सरल और लोकभाषा आधारित",
+                "D": "विदेशी"
+            },
+            "correct_answer": "C",
+            "explanation": "कबीर ने लोकभाषा का प्रयोग किया।",
+            "difficulty": "hard",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 15,
+            "question": "कबीर की रचनाओं का मुख्य उद्देश्य क्या था?",
+            "options": {
+                "A": "धन कमाना",
+                "B": "समाज को सही मार्ग दिखाना",
+                "C": "युद्ध करना",
+                "D": "राजनीति करना"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर की रचनाएँ समाज को सही मार्ग दिखाती हैं।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 16,
+            "question": "कबीर के अनुसार ईश्वर की प्राप्ति किससे होती है?",
+            "options": {
+                "A": "सच्ची भक्ति से",
+                "B": "धन से",
+                "C": "युद्ध से",
+                "D": "राजनीति से"
+            },
+            "correct_answer": "A",
+            "explanation": "ईश्वर की प्राप्ति सच्ची भक्ति से होती है।",
+            "difficulty": "hard",
+            "source_section": "पद"
+        },
+        {
+            "question_number": 17,
+            "question": "कबीर के काव्य में कौन-सा भाव प्रमुख है?",
+            "options": {
+                "A": "अहंकार",
+                "B": "मानवता",
+                "C": "क्रोध",
+                "D": "युद्ध"
+            },
+            "correct_answer": "B",
+            "explanation": "मानवता और समानता प्रमुख भाव हैं।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 18,
+            "question": "कबीर ने किसका विरोध किया?",
+            "options": {
+                "A": "भक्ति",
+                "B": "ज्ञान",
+                "C": "धार्मिक आडंबर",
+                "D": "मानवता"
+            },
+            "correct_answer": "C",
+            "explanation": "कबीर ने धार्मिक आडंबरों का विरोध किया।",
+            "difficulty": "hard",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 19,
+            "question": "कबीर के अनुसार सच्ची भक्ति का आधार क्या है?",
+            "options": {
+                "A": "धन",
+                "B": "मन की पवित्रता",
+                "C": "युद्ध",
+                "D": "राजनीति"
+            },
+            "correct_answer": "B",
+            "explanation": "मन की पवित्रता सच्ची भक्ति का आधार है।",
+            "difficulty": "hard",
+            "source_section": "पद"
+        },
+        {
+            "question_number": 20,
+            "question": "कबीर के अनुसार मनुष्य को किस मार्ग पर चलना चाहिए?",
+            "options": {
+                "A": "क्रोध",
+                "B": "सत्य और ज्ञान",
+                "C": "धन",
+                "D": "युद्ध"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर ने सत्य और ज्ञान का मार्ग बताया।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 21,
+            "question": "कबीर की साखियाँ किस प्रकार की शिक्षा देती हैं?",
+            "options": {
+                "A": "सामाजिक",
+                "B": "नैतिक",
+                "C": "आध्यात्मिक",
+                "D": "उपरोक्त सभी"
+            },
+            "correct_answer": "D",
+            "explanation": "साखियाँ सामाजिक, नैतिक और आध्यात्मिक शिक्षा देती हैं।",
+            "difficulty": "hard",
+            "source_section": "साखियाँ"
+        },
+        {
+            "question_number": 22,
+            "question": "कबीर ने किस प्रकार के समाज का समर्थन किया?",
+            "options": {
+                "A": "भेदभाव रहित समाज",
+                "B": "युद्धप्रिय समाज",
+                "C": "धनवान समाज",
+                "D": "राजनीतिक समाज"
+            },
+            "correct_answer": "A",
+            "explanation": "कबीर समानता पर आधारित समाज चाहते थे।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 23,
+            "question": "कबीर के अनुसार ज्ञान क्या करता है?",
+            "options": {
+                "A": "अज्ञान को बढ़ाता है",
+                "B": "अज्ञान को दूर करता है",
+                "C": "क्रोध बढ़ाता है",
+                "D": "धन बढ़ाता है"
+            },
+            "correct_answer": "B",
+            "explanation": "ज्ञान अज्ञान को समाप्त करता है।",
+            "difficulty": "hard",
+            "source_section": "दूसरा पद"
+        },
+        {
+            "question_number": 24,
+            "question": "कबीर के काव्य का मुख्य संदेश क्या है?",
+            "options": {
+                "A": "धन",
+                "B": "युद्ध",
+                "C": "प्रेम और समानता",
+                "D": "राजनीति"
+            },
+            "correct_answer": "C",
+            "explanation": "कबीर ने प्रेम और समानता का संदेश दिया।",
+            "difficulty": "hard",
+            "source_section": "संदेश"
+        },
+        {
+            "question_number": 25,
+            "question": "कबीर के काव्य से हमें क्या शिक्षा मिलती है?",
+            "options": {
+                "A": "क्रोध करना",
+                "B": "प्रेम और मानवता अपनाना",
+                "C": "युद्ध करना",
+                "D": "धन कमाना"
+            },
+            "correct_answer": "B",
+            "explanation": "कबीर के काव्य से प्रेम, सत्य और मानवता की शिक्षा मिलती है।",
+            "difficulty": "hard",
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

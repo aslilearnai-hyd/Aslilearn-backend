@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "generated_at": "2026-03-11T05:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is reflection of light?",
+      "options": {
+        "A": "Bending of light",
+        "B": "Splitting of light",
+        "C": "Bouncing back of light",
+        "D": "Absorption of light"
+      },
+      "correct_answer": "C",
+      "explanation": "Reflection is the bouncing back of light from a surface into the same medium.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The angle between the incident ray and the normal is called:",
+      "options": {
+        "A": "Angle of reflection",
+        "B": "Angle of incidence",
+        "C": "Angle of refraction",
+        "D": "Angle of deviation"
+      },
+      "correct_answer": "B",
+      "explanation": "The angle of incidence is the angle between the incident ray and the normal.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 3,
+      "question": "According to the laws of reflection, the angle of incidence is:",
+      "options": {
+        "A": "Greater than angle of reflection",
+        "B": "Smaller than angle of reflection",
+        "C": "Equal to angle of reflection",
+        "D": "Twice the angle of reflection"
+      },
+      "correct_answer": "C",
+      "explanation": "The first law of reflection states that angle of incidence equals angle of reflection.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which type of mirror has a flat reflecting surface?",
+      "options": {
+        "A": "Concave mirror",
+        "B": "Convex mirror",
+        "C": "Plane mirror",
+        "D": "Spherical mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "A plane mirror has a flat surface and produces a virtual image.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 5,
+      "question": "The image formed by a plane mirror is:",
+      "options": {
+        "A": "Real and inverted",
+        "B": "Virtual and erect",
+        "C": "Real and erect",
+        "D": "Virtual and inverted"
+      },
+      "correct_answer": "B",
+      "explanation": "Plane mirrors produce virtual and erect images of the same size.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is refraction of light?",
+      "options": {
+        "A": "Bouncing of light",
+        "B": "Absorption of light",
+        "C": "Bending of light when passing between media",
+        "D": "Splitting of light"
+      },
+      "correct_answer": "C",
+      "explanation": "Refraction occurs when light changes direction due to change in speed in different media.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Refraction occurs because:",
+      "options": {
+        "A": "Light disappears",
+        "B": "Speed of light changes in different media",
+        "C": "Light stops completely",
+        "D": "Light becomes heavier"
+      },
+      "correct_answer": "B",
+      "explanation": "The change in speed of light in different media causes refraction.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 8,
+      "question": "The refractive index of a medium indicates:",
+      "options": {
+        "A": "Brightness of light",
+        "B": "Speed of light in that medium",
+        "C": "Temperature of medium",
+        "D": "Color of light"
+      },
+      "correct_answer": "B",
+      "explanation": "Refractive index relates to how much the speed of light decreases in a medium.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 9,
+      "question": "When light travels from a rarer medium to a denser medium, it bends:",
+      "options": {
+        "A": "Away from the normal",
+        "B": "Towards the normal",
+        "C": "Parallel to surface",
+        "D": "Backward"
+      },
+      "correct_answer": "B",
+      "explanation": "Light bends toward the normal when entering a denser medium.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 10,
+      "question": "When light travels from a denser medium to a rarer medium, it bends:",
+      "options": {
+        "A": "Towards the normal",
+        "B": "Away from the normal",
+        "C": "Straight",
+        "D": "Stops completely"
+      },
+      "correct_answer": "B",
+      "explanation": "Light bends away from the normal when moving to a rarer medium.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which device is used to study refraction in laboratories?",
+      "options": {
+        "A": "Glass slab",
+        "B": "Thermometer",
+        "C": "Voltmeter",
+        "D": "Barometer"
+      },
+      "correct_answer": "A",
+      "explanation": "A glass slab is commonly used to demonstrate refraction of light.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following represents a normal line in reflection diagrams?",
+      "options": {
+        "A": "Parallel to mirror",
+        "B": "Perpendicular to mirror",
+        "C": "Along mirror",
+        "D": "Diagonal to mirror"
+      },
+      "correct_answer": "B",
+      "explanation": "The normal is an imaginary line perpendicular to the reflecting surface.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following is NOT a law of reflection?",
+      "options": {
+        "A": "Angle of incidence equals angle of reflection",
+        "B": "Incident ray and reflected ray lie in the same plane",
+        "C": "Light bends in water",
+        "D": "Normal lies in the same plane"
+      },
+      "correct_answer": "C",
+      "explanation": "Bending of light refers to refraction, not reflection.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which type of image cannot be obtained on a screen?",
+      "options": {
+        "A": "Real image",
+        "B": "Virtual image",
+        "C": "Inverted image",
+        "D": "Magnified image"
+      },
+      "correct_answer": "B",
+      "explanation": "Virtual images cannot be projected onto a screen.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 15,
+      "question": "The bending of light in water makes objects appear:",
+      "options": {
+        "A": "Farther",
+        "B": "Nearer",
+        "C": "Invisible",
+        "D": "Darker"
+      },
+      "correct_answer": "B",
+      "explanation": "Due to refraction, objects under water appear closer to the surface.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 16,
+      "question": "The speed of light is maximum in:",
+      "options": {
+        "A": "Water",
+        "B": "Glass",
+        "C": "Vacuum",
+        "D": "Diamond"
+      },
+      "correct_answer": "C",
+      "explanation": "Light travels fastest in vacuum compared to other media.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which phenomenon explains why a straw appears bent in water?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Dispersion",
+        "D": "Diffraction"
+      },
+      "correct_answer": "B",
+      "explanation": "The bending of light at the water-air boundary causes this effect.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following mediums is optically denser?",
+      "options": {
+        "A": "Air",
+        "B": "Water",
+        "C": "Glass",
+        "D": "Vacuum"
+      },
+      "correct_answer": "C",
+      "explanation": "Glass has a higher refractive index than air or water.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following best explains lateral inversion?",
+      "options": {
+        "A": "Left and right sides appear reversed",
+        "B": "Image appears upside down",
+        "C": "Image becomes bigger",
+        "D": "Image disappears"
+      },
+      "correct_answer": "A",
+      "explanation": "Plane mirrors reverse the left and right sides of the image.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which property of light explains mirror reflection?",
+      "options": {
+        "A": "Straight line travel",
+        "B": "Bending of light",
+        "C": "Splitting of light",
+        "D": "Absorption"
+      },
+      "correct_answer": "A",
+      "explanation": "Light travels in straight lines, enabling predictable reflection patterns.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which instrument uses reflection of light?",
+      "options": {
+        "A": "Periscope",
+        "B": "Thermometer",
+        "C": "Barometer",
+        "D": "Ammeter"
+      },
+      "correct_answer": "A",
+      "explanation": "Periscopes use mirrors to reflect light and view objects from hidden positions.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which surface produces regular reflection?",
+      "options": {
+        "A": "Rough surface",
+        "B": "Smooth surface",
+        "C": "Dusty surface",
+        "D": "Cloth surface"
+      },
+      "correct_answer": "B",
+      "explanation": "Smooth surfaces like mirrors produce regular reflection.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which phenomenon allows lenses to form images?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Diffusion",
+        "D": "Radiation"
+      },
+      "correct_answer": "B",
+      "explanation": "Lenses work by bending light through refraction.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which device commonly uses refraction?",
+      "options": {
+        "A": "Mirror",
+        "B": "Lens",
+        "C": "Magnet",
+        "D": "Battery"
+      },
+      "correct_answer": "B",
+      "explanation": "Lenses use refraction to focus or spread light rays.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following describes light behavior correctly?",
+      "options": {
+        "A": "Light travels in curved paths always",
+        "B": "Light travels in straight lines in a uniform medium",
+        "C": "Light cannot change direction",
+        "D": "Light has no speed"
+      },
+      "correct_answer": "B",
+      "explanation": "In a uniform medium, light travels in straight lines.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    }
+  ]
+}

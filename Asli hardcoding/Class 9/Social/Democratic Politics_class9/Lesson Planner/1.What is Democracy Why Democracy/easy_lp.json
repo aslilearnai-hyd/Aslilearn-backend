@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Political Science",
+    "chapter_name": "What is Democracy? Why Democracy?",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the meaning of democracy",
+        "Identify the key features of democracy",
+        "Understand the importance of free and fair elections",
+        "Explain the principle of political equality",
+        "Discuss arguments for and against democracy",
+        "Understand the broader meaning of democracy"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Democracy",
+            "topics_covered": [
+                "Meaning of democracy",
+                "Origin of the word democracy",
+                "Basic definition of democracy"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Real-life examples",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Discuss examples of democratic countries",
+                "Write the definition of democracy"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick concept check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Why Define Democracy?",
+            "topics_covered": [
+                "Need for defining democracy",
+                "Examples of democratic and non-democratic governments",
+                "Basic characteristics of democracy"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Group discussion",
+                "Example-based teaching"
+            ],
+            "student_activities": [
+                "List features of democratic governments",
+                "Compare democratic and non-democratic systems"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Features of Democracy",
+            "topics_covered": [
+                "Major decisions by elected leaders",
+                "Free and fair electoral competition",
+                "Importance of elections"
+            ],
+            "teaching_strategy": [
+                "Diagram or flowchart explanation",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Write the features of democracy",
+                "Discuss importance of elections"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Political Equality",
+            "topics_covered": [
+                "Universal adult franchise",
+                "One person, one vote, one value",
+                "Importance of equal voting rights"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation",
+                "Discussion with students"
+            ],
+            "student_activities": [
+                "Discuss why voting equality is important",
+                "Write examples of voting rights"
+            ],
+            "assessment": [
+                "Concept-based questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Arguments for and Against Democracy",
+            "topics_covered": [
+                "Criticisms of democracy",
+                "Advantages of democracy",
+                "Democracy and decision making"
+            ],
+            "teaching_strategy": [
+                "Debate activity",
+                "Discussion and explanation"
+            ],
+            "student_activities": [
+                "Participate in classroom debate",
+                "Write advantages of democracy"
+            ],
+            "assessment": [
+                "Short written responses",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Broader Meaning of Democracy and Revision",
+            "topics_covered": [
+                "Democracy beyond government",
+                "Democracy in everyday life",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Summary discussion",
+                "Concept recap"
+            ],
+            "student_activities": [
+                "Discuss examples of democracy in school or family",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Political Science textbook",
+        "Charts showing democratic features",
+        "Examples of election processes"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Class discussion",
+        "Participation in activities"
+    ],
+    "teacher_tip": "Use real-life examples such as elections and classroom decision-making to help students easily understand democratic principles."
+}

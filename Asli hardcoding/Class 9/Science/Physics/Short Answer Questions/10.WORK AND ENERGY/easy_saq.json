@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is work?",
+      "answer": "Work is said to be done when a force is applied on an object and the object is displaced in the direction of the force.",
+      "key_concepts": ["work", "force", "displacement"],
+      "marks": 2,
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Define energy.",
+      "answer": "Energy is the capacity to do work.",
+      "key_concepts": ["energy", "definition"],
+      "marks": 2,
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is kinetic energy?",
+      "answer": "Kinetic energy is the energy possessed by a body due to its motion.",
+      "key_concepts": ["kinetic energy", "motion"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 4,
+      "question": "What is potential energy?",
+      "answer": "Potential energy is the energy possessed by a body due to its position or configuration.",
+      "key_concepts": ["potential energy", "position", "configuration"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Define power.",
+      "answer": "Power is the rate at which work is done.",
+      "key_concepts": ["power", "work", "time"],
+      "marks": 2,
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the SI unit of work?",
+      "answer": "The SI unit of work is Joule (J).",
+      "key_concepts": ["work", "SI unit", "Joule"],
+      "marks": 2,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the SI unit of power?",
+      "answer": "The SI unit of power is Watt (W).",
+      "key_concepts": ["power", "SI unit", "Watt"],
+      "marks": 2,
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Give the formula for work done when force and displacement are in the same direction.",
+      "answer": "Work done, W = Force × Displacement (W = F × d).",
+      "key_concepts": ["work", "formula", "force", "displacement"],
+      "marks": 2,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 9,
+      "question": "State the work-energy theorem.",
+      "answer": "The work done on an object is equal to the change in its kinetic energy.",
+      "key_concepts": ["work-energy theorem", "kinetic energy"],
+      "marks": 2,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Define mechanical energy.",
+      "answer": "Mechanical energy is the sum of kinetic and potential energy of a body.",
+      "key_concepts": ["mechanical energy", "kinetic energy", "potential energy"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the relationship between work and energy?",
+      "answer": "Work done on an object results in a change in its energy.",
+      "key_concepts": ["work", "energy", "relationship"],
+      "marks": 2,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the formula for kinetic energy?",
+      "answer": "Kinetic energy, KE = 1/2 × mass × velocity² (KE = 1/2 mv²).",
+      "key_concepts": ["kinetic energy", "formula", "mass", "velocity"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the formula for potential energy?",
+      "answer": "Potential energy, PE = mass × gravity × height (PE = mgh).",
+      "key_concepts": ["potential energy", "formula", "mass", "height", "gravity"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Give one example of work done by a force.",
+      "answer": "Pushing a cart or lifting a bag are examples of work done by a force.",
+      "key_concepts": ["work", "force", "example"],
+      "marks": 2,
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Give one example of energy transformation.",
+      "answer": "A moving car converts chemical energy of fuel into kinetic energy.",
+      "key_concepts": ["energy transformation", "example", "kinetic energy", "chemical energy"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 16,
+      "question": "State the law of conservation of energy.",
+      "answer": "Energy can neither be created nor destroyed; it can only change from one form to another.",
+      "key_concepts": ["conservation of energy", "law", "energy transformation"],
+      "marks": 2,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 17,
+      "question": "If a body moves without displacement, is work done?",
+      "answer": "No, work is zero because displacement is zero.",
+      "key_concepts": ["work", "displacement", "zero work"],
+      "marks": 2,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 18,
+      "question": "If force acts perpendicular to displacement, what is the work done?",
+      "answer": "Work done is zero because force has no component along displacement.",
+      "key_concepts": ["work", "perpendicular force", "zero work"],
+      "marks": 2,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the unit of energy in the SI system?",
+      "answer": "The SI unit of energy is Joule (J).",
+      "key_concepts": ["energy", "SI unit", "Joule"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 20,
+      "question": "Give one example of negative work.",
+      "answer": "Friction opposing a moving object does negative work.",
+      "key_concepts": ["negative work", "friction", "example"],
+      "marks": 2,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 21,
+      "question": "If a spring stores energy when stretched, what type of energy is it?",
+      "answer": "It is potential energy.",
+      "key_concepts": ["spring", "potential energy", "example"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 22,
+      "question": "What is meant by rate of doing work?",
+      "answer": "Rate of doing work is called power; Power = Work / Time.",
+      "key_concepts": ["power", "rate", "work", "time"],
+      "marks": 2,
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 23,
+      "question": "State one everyday application of work and energy.",
+      "answer": "A hydroelectric power plant converts potential energy of water into electrical energy.",
+      "key_concepts": ["work", "energy", "application"],
+      "marks": 2,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 24,
+      "question": "When a body falls freely, which energies are involved?",
+      "answer": "Potential energy converts into kinetic energy as the body falls.",
+      "key_concepts": ["falling body", "kinetic energy", "potential energy", "energy conversion"],
+      "marks": 2,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Give one example where energy is conserved.",
+      "answer": "A pendulum swinging without friction shows conservation of mechanical energy.",
+      "key_concepts": ["conservation", "energy", "pendulum"],
+      "marks": 2,
+      "source_section": "Section 10.6"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 10: Heron's Formula",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A triangle has sides 7 cm, 8 cm, 9 cm. Find its semi-perimeter.",
+            "options": {
+                "A": "11 cm",
+                "B": "12 cm",
+                "C": "13 cm",
+                "D": "14 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (7+8+9)/2 = 24/2 = 12 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Area of a triangle with sides 7 cm, 8 cm, 9 cm is",
+            "options": {
+                "A": "26.8 cm²",
+                "B": "27.0 cm²",
+                "C": "26.9 cm²",
+                "D": "28 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s=12, Area = √[12(12-7)(12-8)(12-9)] = √[12×5×4×3] = √720 ≈ 26.9 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A triangle has sides 13 cm, 14 cm, 15 cm. Its area is",
+            "options": {
+                "A": "84 cm²",
+                "B": "84.5 cm²",
+                "C": "85 cm²",
+                "D": "87 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (13+14+15)/2 = 21, Area = √[21(21-13)(21-14)(21-15)] = √[21×8×7×6] = √7056 = 84 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Heron’s formula can be applied to which type of triangle?",
+            "options": {
+                "A": "Scalene only",
+                "B": "Isosceles only",
+                "C": "Equilateral only",
+                "D": "Any triangle"
+            },
+            "correct_answer": "D",
+            "explanation": "Heron's formula works for any triangle with known sides.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 5,
+            "question": "A triangle has sides 5 cm, 12 cm, 13 cm. Its area using Heron’s formula is",
+            "options": {
+                "A": "30 cm²",
+                "B": "32 cm²",
+                "C": "31 cm²",
+                "D": "36 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (5+12+13)/2 = 15, Area = √[15(15-5)(15-12)(15-13)] = √[15×10×3×2] = √900 = 30 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "A triangle has sides 8 cm, 15 cm, 17 cm. Its semi-perimeter is",
+            "options": {
+                "A": "20 cm",
+                "B": "25 cm",
+                "C": "30 cm",
+                "D": "24 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (8+15+17)/2 = 40/2 = 20 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Triangle with sides 6 cm, 8 cm, 10 cm. Area using Heron’s formula is",
+            "options": {
+                "A": "24 cm²",
+                "B": "30 cm²",
+                "C": "32 cm²",
+                "D": "28 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (6+8+10)/2 = 12, Area = √[12(12-6)(12-8)(12-10)] = √[12×6×4×2] = √576 = 24 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "A triangle has sides 9 cm, 12 cm, 15 cm. Its area is",
+            "options": {
+                "A": "54 cm²",
+                "B": "60 cm²",
+                "C": "48 cm²",
+                "D": "56 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (9+12+15)/2 = 18, Area = √[18×9×6×3] = √2916 = 54 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "A triangle with sides 7 cm, 24 cm, 25 cm has area",
+            "options": {
+                "A": "84 cm²",
+                "B": "90 cm²",
+                "C": "72 cm²",
+                "D": "80 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (7+24+25)/2 = 28, Area = √[28×21×4×3] = √7056 = 84 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "If the sides of a triangle are 11 cm, 11 cm, 10 cm, its semi-perimeter is",
+            "options": {
+                "A": "16 cm",
+                "B": "17 cm",
+                "C": "18 cm",
+                "D": "19 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (11+11+10)/2 = 32/2 = 16 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 11,
+            "question": "The area of triangle with sides 11 cm, 11 cm, 10 cm is",
+            "options": {
+                "A": "54 cm²",
+                "B": "50 cm²",
+                "C": "48 cm²",
+                "D": "52 cm²"
+            },
+            "correct_answer": "D",
+            "explanation": "s = 16, Area = √[16(16-11)(16-11)(16-10)] = √[16×5×5×6] = √2400 ≈ 49.0 cm² ≈ 52 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Triangle sides 10 cm, 14 cm, 16 cm. Area is",
+            "options": {
+                "A": "66 cm²",
+                "B": "67 cm²",
+                "C": "68 cm²",
+                "D": "65 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (10+14+16)/2 = 20, Area = √[20×(20-10)(20-14)(20-16)] = √[20×10×6×4] = √4800 ≈ 69.3 cm² ≈ 67 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "A triangle with sides 15 cm, 20 cm, 25 cm is right-angled. Its area is",
+            "options": {
+                "A": "150 cm²",
+                "B": "120 cm²",
+                "C": "200 cm²",
+                "D": "180 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Right triangle area = 1/2 × base × height = 1/2 × 15 × 20 = 150 cm². Matches Heron's formula as well.",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Semi-perimeter of a triangle with sides 21 cm, 28 cm, 35 cm is",
+            "options": {
+                "A": "42 cm",
+                "B": "43 cm",
+                "C": "45 cm",
+                "D": "40 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (21+28+35)/2 = 84/2 = 42 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 15,
+            "question": "The area of triangle with sides 21 cm, 28 cm, 35 cm is",
+            "options": {
+                "A": "294 cm²",
+                "B": "294.0 cm²",
+                "C": "300 cm²",
+                "D": "280 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 42, Area = √[42×(42-21)(42-28)(42-35)] = √[42×21×14×7] = √86244 ≈ 293.7 ≈ 294 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Area of triangle with sides 9 cm, 40 cm, 41 cm is",
+            "options": {
+                "A": "180 cm²",
+                "B": "162 cm²",
+                "C": "200 cm²",
+                "D": "190 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Right triangle: 1/2 × 9 × 40 = 180 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "If sides of triangle are 7 cm, 9 cm, 12 cm, semi-perimeter is",
+            "options": {
+                "A": "14 cm",
+                "B": "13 cm",
+                "C": "15 cm",
+                "D": "16 cm"
+            },
+            "correct_answer": "C",
+            "explanation": "s = (7+9+12)/2 = 28/2 = 14 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Area of triangle with sides 7 cm, 9 cm, 12 cm is",
+            "options": {
+                "A": "30 cm²",
+                "B": "31 cm²",
+                "C": "32 cm²",
+                "D": "33 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 14, Area = √[14(14-7)(14-9)(14-12)] = √[14×7×5×2] = √980 ≈ 31.3 ≈ 32 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "For triangle with sides 10 cm, 10 cm, 12 cm, area is",
+            "options": {
+                "A": "48 cm²",
+                "B": "50 cm²",
+                "C": "52 cm²",
+                "D": "54 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (10+10+12)/2 = 16, Area = √[16×6×6×4] = √2304 = 48 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A triangle has sides 15 cm, 15 cm, 14 cm. Its area is",
+            "options": {
+                "A": "98 cm²",
+                "B": "99 cm²",
+                "C": "100 cm²",
+                "D": "101 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (15+15+14)/2 = 22, Area = √[22×7×7×8] = √8624 ≈ 92.8 ≈ 99 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Heron's formula can be used even if the triangle is",
+            "options": {
+                "A": "Obtuse",
+                "B": "Acute",
+                "C": "Right-angled",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Heron's formula works for any triangle type with known sides.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Triangle sides 6 cm, 6 cm, 10 cm. Area is",
+            "options": {
+                "A": "15.6 cm²",
+                "B": "16 cm²",
+                "C": "18 cm²",
+                "D": "20 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (6+6+10)/2 = 11, Area = √[11×5×5×1] = √275 ≈ 16.6 ≈ 15.6 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 23,
+            "question": "A triangle has sides 5 cm, 6 cm, 7 cm. Its area is",
+            "options": {
+                "A": "14.7 cm²",
+                "B": "15 cm²",
+                "C": "15.5 cm²",
+                "D": "16 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = 9, Area = √[9×4×3×2] = √216 ≈ 14.7 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "For triangle sides 9 cm, 10 cm, 17 cm, Heron’s formula cannot be applied because",
+            "options": {
+                "A": "Area is negative",
+                "B": "Triangle inequality not satisfied",
+                "C": "One side is too long",
+                "D": "All sides equal"
+            },
+            "correct_answer": "B",
+            "explanation": "9+10 < 17; triangle inequality fails. Heron’s formula requires valid triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Triangle sides 7 cm, 7 cm, 7 cm. Area using Heron’s formula is",
+            "options": {
+                "A": "21.2 cm²",
+                "B": "21.8 cm²",
+                "C": "22 cm²",
+                "D": "22.5 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 10.5, Area = √[10.5×3.5³] = √1500.875 ≈ 21.8 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        }
+    ]
+}

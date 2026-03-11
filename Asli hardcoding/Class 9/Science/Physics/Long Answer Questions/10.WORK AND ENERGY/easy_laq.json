@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define work in physics and give its SI unit.",
+      "answer": "Work is said to be done when a force is applied on a body and the body is displaced in the direction of the force. SI unit of work is joule (J).",
+      "answer_outline": ["Definition of work", "Condition: force and displacement", "SI unit: joule"],
+      "key_concepts": ["work", "force", "displacement", "SI unit"],
+      "marks": 4,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Derive the expression for work done when a constant force is applied along the direction of displacement.",
+      "answer": "Work done W = F × d × cosθ, where F is force, d is displacement, θ is angle between force and displacement. When force is along displacement, θ=0°, cos0°=1 → W=F×d.",
+      "answer_outline": ["Introduce general formula", "Explain angle between force and displacement", "Special case: θ=0"],
+      "key_concepts": ["work formula", "force", "displacement", "angle"],
+      "marks": 5,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Differentiate between positive, negative and zero work with examples.",
+      "answer": "Positive work: force and displacement in same direction (pushing a cart forward). Negative work: force opposite to displacement (friction slowing a moving object). Zero work: displacement perpendicular to force (carrying a bag horizontally).",
+      "answer_outline": ["Positive work definition and example", "Negative work definition and example", "Zero work definition and example"],
+      "key_concepts": ["positive work", "negative work", "zero work", "examples"],
+      "marks": 4,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Define kinetic energy and derive its expression.",
+      "answer": "Kinetic energy (KE) is the energy possessed by a body due to its motion. KE = 1/2 mv², where m is mass and v is velocity. Derived using work-energy theorem: W = ΔKE = 1/2 mv² - 0.",
+      "answer_outline": ["Definition of KE", "Work-energy relation", "Expression: 1/2 mv²"],
+      "key_concepts": ["kinetic energy", "work-energy theorem", "expression"],
+      "marks": 5,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Define potential energy and give its formula.",
+      "answer": "Potential energy (PE) is the energy possessed by a body due to its position or configuration. For a body of mass m at height h, PE = mgh.",
+      "answer_outline": ["Definition of PE", "Formula: PE = mgh", "Explain variables"],
+      "key_concepts": ["potential energy", "formula", "position energy"],
+      "marks": 4,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 6,
+      "question": "State and explain the law of conservation of energy.",
+      "answer": "Energy can neither be created nor destroyed, only transformed from one form to another. Total energy of an isolated system remains constant.",
+      "answer_outline": ["State the law", "Explain transformation of energy", "Conservation in isolated system"],
+      "key_concepts": ["conservation of energy", "transformation", "total energy"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 7,
+      "question": "A body of mass 2 kg is moving with a velocity of 3 m/s. Calculate its kinetic energy.",
+      "answer": "KE = 1/2 mv² = 1/2 × 2 × 3² = 1 × 9 = 9 J",
+      "answer_outline": ["Write KE formula", "Substitute values", "Compute KE = 9 J"],
+      "key_concepts": ["kinetic energy", "calculation", "formula application"],
+      "marks": 4,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 8,
+      "question": "A body of mass 5 kg is lifted to a height of 10 m. Find its potential energy.",
+      "answer": "PE = mgh = 5 × 10 × 9.8 = 490 J",
+      "answer_outline": ["Write PE formula", "Substitute values", "Compute PE = 490 J"],
+      "key_concepts": ["potential energy", "calculation", "formula application"],
+      "marks": 4,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the difference between conservative and non-conservative forces with examples.",
+      "answer": "Conservative forces: work done independent of path, depends only on initial and final position (e.g., gravity, spring). Non-conservative forces: work depends on path, energy dissipated as heat (e.g., friction, air resistance).",
+      "answer_outline": ["Define conservative forces and example", "Define non-conservative forces and example", "Difference"],
+      "key_concepts": ["conservative", "non-conservative", "examples"],
+      "marks": 4,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 10,
+      "question": "A block slides down a frictionless incline of height 5 m. Find its speed at the bottom.",
+      "answer": "Using energy conservation: PE_top = KE_bottom → mgh = 1/2 mv² → v = √(2gh) = √(2×9.8×5) ≈ 9.9 m/s",
+      "answer_outline": ["Use conservation of energy", "PE = KE", "Compute speed v ≈ 9.9 m/s"],
+      "key_concepts": ["energy conservation", "speed calculation", "frictionless incline"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Define power and write its relation with work and time.",
+      "answer": "Power is the rate at which work is done. P = W / t, where W is work done and t is time.",
+      "answer_outline": ["Definition of power", "Formula: P = W/t", "Explain variables"],
+      "key_concepts": ["power", "work", "time", "formula"],
+      "marks": 4,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 12,
+      "question": "A person does 200 J of work in 20 s. Calculate his power.",
+      "answer": "P = W/t = 200 / 20 = 10 W",
+      "answer_outline": ["Write formula", "Substitute values", "Compute P = 10 W"],
+      "key_concepts": ["power", "calculation", "formula"],
+      "marks": 4,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the difference between work, energy and power.",
+      "answer": "Work: transfer of energy via force. Energy: capacity to do work. Power: rate of doing work.",
+      "answer_outline": ["Define work", "Define energy", "Define power", "Highlight differences"],
+      "key_concepts": ["work", "energy", "power", "differences"],
+      "marks": 4,
+      "source_section": "10.1–10.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how a pendulum demonstrates the conversion between kinetic and potential energy.",
+      "answer": "At highest point: max PE, KE=0. At lowest point: max KE, PE=0. Energy continuously converts between KE and PE during swinging.",
+      "answer_outline": ["Highest point: PE max", "Lowest point: KE max", "Energy conversion during motion"],
+      "key_concepts": ["pendulum", "kinetic energy", "potential energy", "energy conversion"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 15,
+      "question": "State and explain the work-energy theorem.",
+      "answer": "Work done on a body is equal to the change in its kinetic energy: W = ΔKE = KE_final – KE_initial.",
+      "answer_outline": ["State theorem", "Explain with formula", "Example optional"],
+      "key_concepts": ["work-energy theorem", "kinetic energy", "work done"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 16,
+      "question": "A force of 10 N moves a body 5 m along the direction of force. Calculate work done.",
+      "answer": "W = F × d = 10 × 5 = 50 J",
+      "answer_outline": ["Write formula", "Substitute values", "Compute work = 50 J"],
+      "key_concepts": ["work", "force", "displacement", "calculation"],
+      "marks": 4,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain potential energy stored in a stretched spring and give formula.",
+      "answer": "Elastic potential energy: energy stored when spring is stretched/compressed. PE = 1/2 k x², k = spring constant, x = displacement from mean position.",
+      "answer_outline": ["Definition", "Formula: PE = 1/2 k x²", "Explain variables"],
+      "key_concepts": ["elastic potential energy", "spring", "formula"],
+      "marks": 4,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how work can be zero even if a force is applied on a body.",
+      "answer": "If displacement is zero or perpendicular to force, work done W = F × d × cosθ = 0.",
+      "answer_outline": ["Condition: no displacement or θ=90°", "Formula application", "Example"],
+      "key_concepts": ["work", "zero work", "conditions"],
+      "marks": 4,
+      "source_section": "10.1"
+    },
+    {
+      "question_number": 19,
+      "question": "A body of mass 3 kg is moving with speed 4 m/s. Calculate its kinetic energy and work required to stop it.",
+      "answer": "KE = 1/2 mv² = 1/2 × 3 × 16 = 24 J. Work required to stop = 24 J.",
+      "answer_outline": ["Compute KE", "Apply W = ΔKE to stop body", "Work = 24 J"],
+      "key_concepts": ["kinetic energy", "work to stop", "calculation"],
+      "marks": 5,
+      "source_section": "10.2–10.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain different forms of energy with examples.",
+      "answer": "Mechanical energy (kinetic, potential), thermal energy (heat), chemical energy (battery, fuel), electrical energy, nuclear energy. Each can convert to others.",
+      "answer_outline": ["List energy types", "Explain each with examples", "Conversion possibility"],
+      "key_concepts": ["forms of energy", "examples", "conversion"],
+      "marks": 5,
+      "source_section": "10.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how efficiency of a machine is calculated.",
+      "answer": "Efficiency = (Useful work output / Total work input) × 100%",
+      "answer_outline": ["Definition of efficiency", "Formula", "Interpretation in %"],
+      "key_concepts": ["efficiency", "work input/output", "formula"],
+      "marks": 4,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 22,
+      "question": "A machine does 500 J of work using 600 J of energy input. Find its efficiency.",
+      "answer": "Efficiency = (500/600)×100% ≈ 83.33%",
+      "answer_outline": ["Write formula", "Substitute values", "Compute efficiency"],
+      "key_concepts": ["efficiency calculation", "work input/output"],
+      "marks": 4,
+      "source_section": "10.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how energy is conserved in a roller coaster ride.",
+      "answer": "At top: max PE, low KE; at bottom: max KE, low PE. Total mechanical energy remains constant (ignoring friction).",
+      "answer_outline": ["Top: PE max", "Bottom: KE max", "Total energy conserved"],
+      "key_concepts": ["roller coaster", "energy conversion", "conservation"],
+      "marks": 5,
+      "source_section": "10.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Derive the relation between work done and change in potential energy when lifting a body vertically.",
+      "answer": "Work done W = F × h = m × g × h = ΔPE",
+      "answer_outline": ["Force along vertical = mg", "Displacement = h", "W = ΔPE = mgh"],
+      "key_concepts": ["work", "potential energy", "vertical lifting"],
+      "marks": 4,
+      "source_section": "10.1–10.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how renewable and non-renewable energy sources affect work and energy usage in daily life.",
+      "answer": "Renewable sources (solar, wind) provide energy without depletion; non-renewable (coal, petrol) deplete resources. Efficient use affects work done in machines and energy availability.",
+      "answer_outline": ["Define renewable/non-renewable", "Impact on energy usage", "Examples of work performed"],
+      "key_concepts": ["renewable energy", "non-renewable energy", "daily work usage"],
+      "marks": 5,
+      "source_section": "10.5"
+    }
+  ]
+}

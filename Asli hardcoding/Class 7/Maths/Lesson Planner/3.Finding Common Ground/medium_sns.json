@@ -1,0 +1,71 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Finding the Common Ground (Symmetry)",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of Rotational Symmetry",
+        "Identify the Center of Rotation and Angle of Rotation",
+        "Calculate the Order of Rotational Symmetry",
+        "Compare Line Symmetry vs. Rotational Symmetry in polygons",
+        "Recognize symmetry in 2D representations of 3D objects"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Rotational Symmetry",
+            "topics_covered": [
+                "Turning a shape around a fixed point",
+                "What makes a shape look the same after a partial turn?",
+                "Real-life examples: Ceiling fans, wheels, windmills"
+            ],
+            "teaching_strategy": [
+                "Tracing paper rotation demo",
+                "Clock-face analogy for angles"
+            ],
+            "student_activities": [
+                "Trace a square and rotate it 90 degrees to check for fit",
+                "Identify the 'Center of Rotation' for various school logos"
+            ],
+            "assessment": [
+                "Identification of 'Yes/No' for rotational symmetry in shapes",
+                "Exit slip: 'What is the angle of rotation for a half-turn?'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Order of Rotational Symmetry",
+            "topics_covered": [
+                "Counting the number of 'fits' in one full 360-degree turn",
+                "Relationship between side count and order in regular polygons",
+                "Formula: Angle = 360 / Order"
+            ],
+            "teaching_strategy": [
+                "Comparative chart (Square vs. Rectangle vs. Triangle)",
+                "Visualizing the 'Fit' "
+            ],
+            "student_activities": [
+                "Calculate the order for a regular pentagon and hexagon",
+                "Create a table: Shape | Lines of Symmetry | Order of Rotation"
+            ],
+            "assessment": [
+                "Numerical calculation quiz",
+                "Board activity matching shapes to their 'Order'"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Tracing paper",
+        "Cardboard cut-outs of polygons",
+        "Pin and board for rotation",
+        "Protractors"
+    ],
+    "evaluation_methods": [
+        "Order of symmetry table completion",
+        "Practical rotation demonstration",
+        "Short answer tests"
+    ],
+    "teacher_tip": "If a shape only looks like itself after a full 360-degree turn, we say it has 'Order 1'—which basically means it has no special rotational symmetry."
+}

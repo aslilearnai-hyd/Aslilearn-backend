@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: People as Resource",
+    "generated_at": "2026-03-07T00:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How does investment in human capital yield a return similar to investment in physical capital?",
+            "options": {
+                "A": "By increasing the total population",
+                "B": "Through higher income and higher productivity",
+                "C": "By reducing the need for machines",
+                "D": "By increasing consumption of goods"
+            },
+            "correct_answer": "B",
+            "explanation": "Investment in education and health increases the efficiency and productivity of the workforce, leading to higher earnings.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "In the context of Japan's development, which statement is true?",
+            "options": {
+                "A": "Japan has vast natural resources",
+                "B": "Japan imported resources but invested in its people",
+                "C": "Japan's development is solely based on physical capital",
+                "D": "Japan is a primary sector-dominated economy"
+            },
+            "correct_answer": "B",
+            "explanation": "Japan compensated for its lack of natural resources by investing in human resources (education and health).",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "A 'Vicious Cycle' of human development is most likely to be created by:",
+            "options": {
+                "A": "Educated parents investing in their children",
+                "B": "Illiterate and disadvantaged parents who lack resources",
+                "C": "The government providing free education",
+                "D": "Universal health care access"
+            },
+            "correct_answer": "B",
+            "explanation": "Disadvantaged parents may fail to provide adequate education or health to their children, trapping them in poverty.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following is a 'market activity'?",
+            "options": {
+                "A": "A mother cooking food for her family",
+                "B": "A farmer growing wheat for self-consumption",
+                "C": "A teacher teaching in a school for a salary",
+                "D": "Cleaning one's own house"
+            },
+            "correct_answer": "C",
+            "explanation": "Market activities involve remuneration and are performed for pay or profit.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is much of women's household work excluded from the National Income?",
+            "options": {
+                "A": "Because women are not productive",
+                "B": "Because it is considered a non-market activity without a salary",
+                "C": "Because women prefer not to be paid",
+                "D": "Because the work is too difficult to measure"
+            },
+            "correct_answer": "B",
+            "explanation": "Since household work is for self-consumption and doesn't involve market exchange/remuneration, it isn't counted in GDP.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Determinants of earnings for any individual in the labor market are primarily:",
+            "options": {
+                "A": "Physical height and weight",
+                "B": "Education and skill",
+                "C": "Caste and religion",
+                "D": "Family background only"
+            },
+            "correct_answer": "B",
+            "explanation": "Education and skill level are the major factors that allow an individual to earn higher wages in a competitive market.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which indicator is used to measure the growth of a country's education reach?",
+            "options": {
+                "A": "Infant Mortality Rate (IMR)",
+                "B": "Gross Enrolment Ratio (GER)",
+                "C": "Birth Rate",
+                "D": "Death Rate"
+            },
+            "correct_answer": "B",
+            "explanation": "GER measures the enrollment in schools at various levels (primary, secondary, etc.) relative to the age-appropriate population.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "The 'Navodaya Vidyalayas' were established to provide education to:",
+            "options": {
+                "A": "Urban rich children",
+                "B": "Talented children in rural areas",
+                "C": "Children of government employees only",
+                "D": "Drop-out students"
+            },
+            "correct_answer": "B",
+            "explanation": "Navodaya Vidyalayas are residential schools aimed at providing high-quality education to talented rural students.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Vocational education is designed to:",
+            "options": {
+                "A": "Teach traditional songs",
+                "B": "Equip students with job-related skills",
+                "C": "Provide basic literacy",
+                "D": "Focus only on theoretical science"
+            },
+            "correct_answer": "B",
+            "explanation": "Vocational streams provide specific skills that allow individuals to find employment quickly in specialized fields.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Life expectancy at birth in India has increased over time primarily due to:",
+            "options": {
+                "A": "Increase in birth rate",
+                "B": "Improved healthcare, nutrition, and sanitation",
+                "C": "Decrease in employment",
+                "D": "Rising literacy only"
+            },
+            "correct_answer": "B",
+            "explanation": "Better medical intervention and nutritional security have led to longer average lifespans.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "If eight people are working on a plot of land that actually requires only five, the extra three are:",
+            "options": {
+                "A": "Seasonally unemployed",
+                "B": "Disguisedly unemployed",
+                "C": "Educated unemployed",
+                "D": "Productively employed"
+            },
+            "correct_answer": "B",
+            "explanation": "Disguised unemployment is when the marginal productivity of additional workers is zero.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "A person who is not able to find a job during sowing or harvesting seasons suffers from:",
+            "options": {
+                "A": "Chronic unemployment",
+                "B": "Seasonal unemployment",
+                "C": "Frictional unemployment",
+                "D": "Structural unemployment"
+            },
+            "correct_answer": "B",
+            "explanation": "Seasonal unemployment is prevalent when jobs are tied to specific times of the year, like agriculture.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the primary consequence of unemployment on a nation's resources?",
+            "options": {
+                "A": "Resource preservation",
+                "B": "Wastage of manpower resources",
+                "C": "Increase in National Income",
+                "D": "Decrease in dependency"
+            },
+            "correct_answer": "B",
+            "explanation": "Unemployment turns an economic asset into a liability, wasting the potential productive power of the youth.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Unemployment increases the 'dependency ratio' which means:",
+            "options": {
+                "A": "Workers depend on machines more",
+                "B": "The burden on the working population increases",
+                "C": "Children depend on schools",
+                "D": "States depend on the center"
+            },
+            "correct_answer": "B",
+            "explanation": "The working members must support a larger number of non-working members, reducing the overall quality of life.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "In urban areas, 'educated unemployment' is often caused by a mismatch between:",
+            "options": {
+                "A": "Height and weight of candidates",
+                "B": "General degrees and technical skills required",
+                "C": "Number of girls and boys",
+                "D": "Caste and salary"
+            },
+            "correct_answer": "B",
+            "explanation": "Many graduates lack the specific technical skills demanded by the modern job market.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens to the total production of a farm if 'disguisedly unemployed' workers are removed?",
+            "options": {
+                "A": "Total production will decrease",
+                "B": "Total production will remain the same",
+                "C": "Total production will increase",
+                "D": "The farm will close down"
+            },
+            "correct_answer": "B",
+            "explanation": "Since their contribution is effectively zero, removing them does not impact the output.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Investment in human capital is most similar to investment in:",
+            "options": {
+                "A": "Land",
+                "B": "Physical Capital (Machines)",
+                "C": "Traditional culture",
+                "D": "Gold"
+            },
+            "correct_answer": "B",
+            "explanation": "Both education and machines are expected to increase future production capacity.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "The 'Sakal' case study highlights that vocational training leads to:",
+            "options": {
+                "A": "Job dissatisfaction",
+                "B": "Increased skill and employability",
+                "C": "No change in income",
+                "D": "Liability for the company"
+            },
+            "correct_answer": "B",
+            "explanation": "His computer course added value to his productivity, leading to a promotion.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Decreasing IMR (Infant Mortality Rate) is an indicator of:",
+            "options": {
+                "A": "Overpopulation",
+                "B": "Improved child-care and health facilities",
+                "C": "Falling literacy",
+                "D": "Increasing poverty"
+            },
+            "correct_answer": "B",
+            "explanation": "Lower child mortality is a direct result of better medical care and awareness among parents.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the Tertiary sector growing faster in modern times?",
+            "options": {
+                "A": "Because people are buying more grain",
+                "B": "Due to increased demand for services like trade, transport, and IT",
+                "C": "Because manufacturing is disappearing",
+                "D": "Because agriculture is no longer necessary"
+            },
+            "correct_answer": "B",
+            "explanation": "As an economy develops, services become more dominant in GDP contribution.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Non-market activities are performed for:",
+            "options": {
+                "A": "Profit",
+                "B": "Self-consumption",
+                "C": "Investment",
+                "D": "Export"
+            },
+            "correct_answer": "B",
+            "explanation": "These activities include processing of primary products for one's own use.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "The paradox of India's manpower situation is that it has:",
+            "options": {
+                "A": "Shortage of general people",
+                "B": "Surplus of general graduates but shortage of technical skills",
+                "C": "Surplus of doctors but no engineers",
+                "D": "Shortage of children in schools"
+            },
+            "correct_answer": "B",
+            "explanation": "This leads to educated unemployment while industries still struggle to find skilled staff.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which state has seen a massive decline in poverty by investing in its human resource development (especially health and education)?",
+            "options": {
+                "A": "Bihar",
+                "B": "Kerala",
+                "C": "Punjab",
+                "D": "Rajasthan"
+            },
+            "correct_answer": "B",
+            "explanation": "Kerala is a prime example of human-capital-led growth in the Indian context.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "A healthy person is an 'asset' because he/she can:",
+            "options": {
+                "A": "Work for longer hours and fight illness",
+                "B": "Spend more money on medicine",
+                "C": "Stay at home more often",
+                "D": "Ignore potential skills"
+            },
+            "correct_answer": "A",
+            "explanation": "Health enables a person to maximize their skills and potential.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "The 'Virtuous Cycle' is most easily broken by:",
+            "options": {
+                "A": "Lack of educational opportunities",
+                "B": "Investment in health",
+                "C": "Technological advancements",
+                "D": "Rising literacy rates"
+            },
+            "correct_answer": "A",
+            "explanation": "If a child is denied education or health, the cycle of development can turn into a vicious cycle of poverty.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        }
+    ]
+}

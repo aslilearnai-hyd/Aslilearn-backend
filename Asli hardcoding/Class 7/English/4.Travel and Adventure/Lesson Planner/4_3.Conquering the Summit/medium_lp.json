@@ -1,0 +1,140 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Conquering the Summit",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze the story in detail",
+    "Understand characters’ motivations and actions",
+    "Learn problem-solving, teamwork, and planning in climbing",
+    "Develop descriptive and narrative writing skills",
+    "Enhance vocabulary and sentence construction",
+    "Interpret lessons and themes from the story"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction and Prediction",
+      "topics_covered": [
+        "Adventure and exploration",
+        "Climbers and setting",
+        "Predicting challenges and outcomes"
+      ],
+      "teaching_strategy": [
+        "Class discussion on adventure experiences",
+        "Prediction activity based on story title and illustrations"
+      ],
+      "student_activities": [
+        "Predict possible obstacles during the climb",
+        "Discuss expected teamwork strategies"
+      ],
+      "assessment": ["Oral discussion", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "Character Analysis",
+      "topics_covered": [
+        "Traits of climbers",
+        "Roles and responsibilities",
+        "Decision-making under pressure"
+      ],
+      "teaching_strategy": [
+        "Guided reading with teacher prompts",
+        "Discussion on traits and actions"
+      ],
+      "student_activities": [
+        "List character traits with examples",
+        "Explain how traits affected climbing outcomes"
+      ],
+      "assessment": ["Written character analysis", "Oral discussion"]
+    },
+    {
+      "period": 3,
+      "title": "Journey Mapping",
+      "topics_covered": [
+        "Sequence of climbing events",
+        "Obstacles and problem-solving",
+        "Cause-effect analysis"
+      ],
+      "teaching_strategy": [
+        "Draw a map of the journey",
+        "Class discussion on problem-solving strategies"
+      ],
+      "student_activities": [
+        "Create a diagram of the climb with key events",
+        "Explain obstacles and solutions"
+      ],
+      "assessment": ["Diagram accuracy", "Oral explanations"]
+    },
+    {
+      "period": 4,
+      "title": "Teamwork and Problem Solving",
+      "topics_covered": [
+        "Handling critical situations",
+        "Teamwork, courage, and planning",
+        "Decision-making examples"
+      ],
+      "teaching_strategy": [
+        "Scenario role-play",
+        "Class discussion on problem-solving"
+      ],
+      "student_activities": [
+        "Role-play a problem-solving scene from the story",
+        "Discuss alternative solutions"
+      ],
+      "assessment": ["Role-play performance", "Short written answers"]
+    },
+    {
+      "period": 5,
+      "title": "Climax and Moral Analysis",
+      "topics_covered": [
+        "Reaching the summit",
+        "Lessons learned from the climb",
+        "Themes of perseverance and planning"
+      ],
+      "teaching_strategy": [
+        "Guided reading of ending",
+        "Class discussion on lessons and themes"
+      ],
+      "student_activities": [
+        "Write a paragraph on the story’s moral",
+        "Share personal experiences of teamwork or perseverance"
+      ],
+      "assessment": ["Paragraph writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Grammar Practice",
+      "topics_covered": [
+        "Advanced vocabulary",
+        "Compound words and conditional sentences",
+        "Sentence construction"
+      ],
+      "teaching_strategy": [
+        "Grammar exercises and revision quiz"
+      ],
+      "student_activities": [
+        "Form compound words and use them in sentences",
+        "Complete conditional sentences based on the story context"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Whiteboard/Blackboard",
+    "Markers/Chalk",
+    "Diagram/chart of mountain climb",
+    "Printed vocabulary and exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Role-play",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to analyze the story deeply, focusing on teamwork, problem-solving, and perseverance."
+}

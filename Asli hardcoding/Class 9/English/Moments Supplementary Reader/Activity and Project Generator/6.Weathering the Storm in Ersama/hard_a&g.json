@@ -1,0 +1,156 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Weathering the Storm in Ersama",
+    "author": "Harsh Mander",
+    "difficulty": "Hard",
+    "source_pdf": "eng9_6.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Disaster Impact Report",
+            "objective": "Analyse the social impact of the cyclone",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Study the effects of the cyclone described in the lesson",
+                "Write a short report explaining the destruction caused",
+                "Include examples from the text"
+            ],
+            "learning_outcome": "Analyzes disaster impact on society",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Leadership Case Study",
+            "objective": "Analyse Prashant as a leader",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify actions taken by Prashant",
+                "Explain how these actions show leadership",
+                "Write a short analysis"
+            ],
+            "learning_outcome": "Understands leadership qualities",
+            "evaluation": "Analytical explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Survival Strategies",
+            "objective": "Evaluate survival methods used by villagers",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify survival strategies used in the shelter",
+                "Explain how these strategies helped people survive"
+            ],
+            "learning_outcome": "Evaluates survival strategies",
+            "evaluation": "Critical explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Community Rehabilitation Plan",
+            "objective": "Design a plan for rebuilding the village",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine you are part of the rescue team",
+                "Create a plan with five steps to rebuild the village"
+            ],
+            "learning_outcome": "Develops planning and analytical skills",
+            "evaluation": "Logical planning (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Role of Youth in Disasters",
+            "objective": "Analyse the contribution of young people",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a paragraph explaining how youth can help during disasters",
+                "Give examples from the story"
+            ],
+            "learning_outcome": "Understands social responsibility",
+            "evaluation": "Relevant analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Emotional Impact Study",
+            "objective": "Understand the emotional effects of disasters",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify emotional struggles faced by villagers",
+                "Explain how they coped with grief"
+            ],
+            "learning_outcome": "Understands psychological impact",
+            "evaluation": "Insightful explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Title Justification",
+            "objective": "Interpret the significance of the title",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the meaning of the title",
+                "Write a paragraph explaining why it is suitable"
+            ],
+            "learning_outcome": "Understands thematic significance",
+            "evaluation": "Logical justification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Disaster Management Discussion",
+            "objective": "Promote awareness about disaster response",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five measures that can reduce disaster damage",
+                "Explain how each measure helps"
+            ],
+            "learning_outcome": "Develops awareness about disaster management",
+            "evaluation": "Practical suggestions (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Alternative Ending",
+            "objective": "Encourage creative thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine a different ending for the story",
+                "Write a short paragraph describing it"
+            ],
+            "learning_outcome": "Develops creative writing skills",
+            "evaluation": "Creativity and clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Theme Analysis",
+            "objective": "Identify the central theme of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the main themes in the story",
+                "Explain how the story highlights these themes"
+            ],
+            "learning_outcome": "Understands deeper meaning of the text",
+            "evaluation": "Depth of interpretation (10 marks)"
+        }
+    ]
+}

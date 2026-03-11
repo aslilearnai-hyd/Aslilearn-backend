@@ -1,0 +1,196 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Iswaran the Storyteller",
+    "title": "Lesson Planner – Iswaran the Storyteller",
+    "author": "R.K. Laxman",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse narrative techniques and storytelling style",
+        "Understand character psychology",
+        "Examine themes such as fear, imagination, and suggestion",
+        "Develop critical thinking about fiction and reality",
+        "Improve analytical reading and writing skills",
+        "Interpret literary devices used in the story"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author Study and Literary Context",
+            "topics_covered": [
+                "Life of R.K. Laxman",
+                "Literary style and humour",
+                "Introduction to the story"
+            ],
+            "teaching_strategy": [
+                "Lecture",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Discuss the role of storytelling in society",
+                "Share favourite stories"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Setting and Character Introduction",
+            "topics_covered": [
+                "Mahendra’s profession",
+                "Remote workplace setting",
+                "Introduction to Iswaran"
+            ],
+            "teaching_strategy": [
+                "Text reading",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Identify character roles",
+                "Write character descriptions"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Narrative Technique",
+            "topics_covered": [
+                "Storytelling techniques",
+                "Suspense and exaggeration",
+                "Influence of thriller literature"
+            ],
+            "teaching_strategy": [
+                "Literary analysis",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Identify narrative techniques",
+                "Give examples from the text"
+            ],
+            "assessment": [
+                "Short analytical responses"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Elephant Story Analysis",
+            "topics_covered": [
+                "Description of the mad elephant incident",
+                "Iswaran’s dramatic narration",
+                "Reality vs exaggeration"
+            ],
+            "teaching_strategy": [
+                "Close reading",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Analyse the credibility of the story",
+                "Write a short analytical paragraph"
+            ],
+            "assessment": [
+                "Paragraph evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Ghost Story and Suspense",
+            "topics_covered": [
+                "Description of the ghost",
+                "Use of suspense and fear",
+                "Mahendra’s reaction"
+            ],
+            "teaching_strategy": [
+                "Literary discussion",
+                "Question–answer"
+            ],
+            "student_activities": [
+                "Identify suspense techniques",
+                "Discuss emotional responses"
+            ],
+            "assessment": [
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Psychological Influence",
+            "topics_covered": [
+                "Power of suggestion",
+                "Fear created by imagination",
+                "Mahendra’s psychological change"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Analytical discussion"
+            ],
+            "student_activities": [
+                "Write explanation of psychological suggestion",
+                "Discuss fear of the unknown"
+            ],
+            "assessment": [
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Themes and Literary Devices",
+            "topics_covered": [
+                "Theme of imagination vs reality",
+                "Symbolism of darkness and fear",
+                "Author’s message"
+            ],
+            "teaching_strategy": [
+                "Theme analysis",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Identify themes",
+                "Write thematic interpretation"
+            ],
+            "assessment": [
+                "Paragraph writing"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Final Assessment",
+            "topics_covered": [
+                "Vocabulary review",
+                "Lesson summary",
+                "Overall revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Assessment test"
+            ],
+            "student_activities": [
+                "Write a summary of the story",
+                "Answer comprehension questions"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Presentation slides"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Written exercises",
+        "Class participation",
+        "Short tests"
+    ],
+    "teacher_tip": "Encourage students to critically analyse how imagination and suggestion can influence human perception."
+}

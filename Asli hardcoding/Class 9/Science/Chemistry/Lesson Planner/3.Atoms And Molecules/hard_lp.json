@@ -1,0 +1,171 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Structure of the Atom",
+    "difficulty": "Hard",
+    "source_pdf": "iesc104.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Analysis of Rutherford’s Scattering Statistics",
+            "objective": "To correlate experimental observations with the mathematical probability of alpha-particle deflection to infer nuclear volume.",
+            "materials": [
+                "Detailed diagram of Alpha-particle scattering experiment",
+                "Graph paper",
+                "Calculator"
+            ],
+            "steps": [
+                "Analyze the specific observation that only 1 out of 12,000 particles rebounded at 180 degrees.",
+                "Calculate the approximate volume of the nucleus relative to the atom based on these statistical results.",
+                "Construct a diagram showing the concentrated positive charge and the vast empty space as proposed by Rutherford's nuclear model."
+            ],
+            "learning_outcome": "Synthesizes how rare experimental observations lead to the discovery of the atomic nucleus and the rejection of the Thomson model.",
+            "evaluation": "Explain why the rebound of alpha particles was described as 'firing a 15-inch shell at a piece of tissue paper and it comes back and hits you' (10 marks)."
+        },
+        
+
+[Image of scattering of alpha-particles by a gold foil]
+
+        {
+            "sl_no": 2,
+            "title": "Stability Paradox: Maxwell’s Theory vs. Rutherford",
+            "objective": "To investigate the theoretical failure of the nuclear model regarding classical electromagnetic radiation.",
+            "materials": [
+                "Research notes on Maxwell’s electromagnetic theory",
+                "Diagram of a spiraling electron path"
+            ],
+            "steps": [
+                "Examine the classical theory that any accelerated charged particle must radiate energy.",
+                "Model the spiral path an electron would theoretically take if it lost energy while revolving around the nucleus.",
+                "Discuss how Bohr’s concept of 'discrete orbits' resolved the paradox of atomic collapse by quantizing energy levels."
+            ],
+            "learning_outcome": "Evaluates the necessity of non-radiating discrete orbits in maintaining atomic stability.",
+            "evaluation": "Provide a technical argument for why Rutherford’s atom should be unstable according to classical physics (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Bohr-Bury Configuration and the Step-wise Rule",
+            "objective": "To derive the electronic distribution of elements based on energetic stability and the $2n^2$ rule.",
+            "materials": [
+                "Table of electronic configurations of first eighteen elements",
+                "Compass and Ruler"
+            ],
+            "steps": [
+                "Apply the $2n^2$ rule for the first four shells (K, L, M, N).",
+                "Analyze the 'Octet Rule' constraint which limits the outermost shell to 8 electrons regardless of shell capacity.",
+                "Derive the step-wise filling order for Potassium (Z=19) and Calcium (Z=20) where the N-shell begins before the M-shell is full to maintain stability."
+            ],
+            "learning_outcome": "Mastery of advanced electronic configuration and the governing principles of shell capacity.",
+            "evaluation": "Determine the electronic configuration of an element with atomic number 18 and explain its inert nature (10 marks)."
+        },
+        
+        {
+            "sl_no": 4,
+            "title": "Valency Trends and Chemical Reactivity",
+            "objective": "To correlate the number of valence electrons with the periodic nature of element reactivity.",
+            "materials": [
+                "Schematic structures of the first 18 elements"
+            ],
+            "steps": [
+                "Compare the valence shells of Helium, Neon, and Argon to understand octet stability.",
+                "Identify why elements with 1 or 7 valence electrons are highly reactive compared to those with full shells.",
+                "Calculate the valency of Phosphorus and Sulphur, explaining why they exhibit multiple combining capacities (e.g., 3 and 5 for Phosphorus)."
+            ],
+            "learning_outcome": "Understands that chemical activity is a drive toward a stable octet configuration through sharing or transfer.",
+            "evaluation": "Differentiate between 'valence electrons' and 'valency' using Magnesium and Nitrogen as examples (10 marks)."
+        },
+        
+        {
+            "sl_no": 5,
+            "title": "Isotopic Abundance and Average Atomic Mass",
+            "objective": "To calculate the fractional atomic mass of elements based on the natural distribution of isotopes.",
+            "materials": [
+                "Abundance data for Chlorine and Carbon isotopes",
+                "Scientific Calculator"
+            ],
+            "steps": [
+                "Use the provided data: Cl-35 (75%) and Cl-37 (25%).",
+                "Formulate the weighted average equation: $[(35 \times 75/100) + (37 \times 25/100)]$.",
+                "Research why the mass of a single atom of Chlorine is never 35.5 u, despite the average mass being recorded as such."
+            ],
+            "learning_outcome": "Mathematical proficiency in calculating isotopic distributions and understanding the origin of fractional mass units.",
+            "evaluation": "Calculate the average atomic mass of an element X existing as 90% of isotope 16 and 10% of isotope 18 (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "Chadwick’s Discovery and Nucleon Balance",
+            "objective": "To examine the contribution of the neutron to atomic mass and nuclear stability.",
+            "materials": [
+                "Periodic table data",
+                "Atomic data for Hydrogen isotopes"
+            ],
+            "steps": [
+                "Discuss the 1932 discovery of the neutron and its localization in the nucleus.",
+                "Calculate the number of neutrons in the three isotopes of Hydrogen (Protium, Deuterium, Tritium).",
+                "Analyze why the mass of an atom is concentrated solely in the nucleus by comparing proton and electron masses."
+            ],
+            "learning_outcome": "Understands the definition of mass number (A) as the total count of nucleons (protons + neutrons).",
+            "evaluation": "An atom has mass number 4 and 2 protons. Determine the number of neutrons and name the element (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Isotopes vs. Isobars: Structural Comparison",
+            "objective": "To contrast nuclear variants based on atomic identity versus mass similarity.",
+            "materials": [
+                "Data for Calcium (Z=20, A=40) and Argon (Z=18, A=40)"
+            ],
+            "steps": [
+                "Compare the number of protons and neutrons in the Calcium and Argon nuclei.",
+                "Define Isobars as atoms of different elements sharing the same mass number.",
+                "Contrast these with isotopes of Carbon regarding their chemical reactivity and electronic configuration."
+            ],
+            "learning_outcome": "Distinguishes between elements that share mass versus elements that share identity.",
+            "evaluation": "Compare isotopes and isobars based on their chemical properties and sub-atomic particle counts (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Industrial and Medical Radiochemistry",
+            "objective": "To evaluate the specific physical properties of isotopes used in modern technology.",
+            "materials": [
+                "Case studies on Uranium-235, Cobalt-60, and Iodine isotopes"
+            ],
+            "steps": [
+                "Investigate how the Uranium-235 isotope serves as fuel in nuclear reactors.",
+                "Research the role of the Cobalt isotope in radiotherapy and the Iodine isotope in the treatment of goitre.",
+                "Identify why isotopes of an element have identical chemical properties despite having different physical properties."
+            ],
+            "learning_outcome": "Appreciates the practical application of isotopes in science, energy, and medicine.",
+            "evaluation": "Explain why the chemical properties of isotopes remain identical despite different mass numbers (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Nuclear Notation and Ionic Equilibrium",
+            "objective": "To master standard notation ${}_{Z}^{A}X$ for neutral atoms and charged ions.",
+            "materials": [
+                "Symbols of elements and common valency table"
+            ],
+            "steps": [
+                "Practice writing notation for the Oxide ion ($O^{2-}$) and Sodium ion ($Na^{+}$).",
+                "Analyze the change in electron count versus the stability of the nucleus during ion formation.",
+                "Verify that the mass number remains immutable during chemical ionization processes."
+            ],
+            "learning_outcome": "Understands that chemical reactions involve valence electrons, while the nucleus remains unchanged.",
+            "evaluation": "If an ion $X^{2-}$ has 10 electrons and 8 neutrons, calculate the atomic number and mass number of X (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Evolution of Atomic Models: Comparative Project",
+            "objective": "To construct a historical timeline and comparative analysis of atomic models.",
+            "materials": [
+                "Summaries of Thomson, Rutherford, and Bohr models"
+            ],
+            "steps": [
+                "Compare the location and predicted behavior of electrons in the three major models.",
+                "Analyze the timeline of the discovery of the three sub-atomic particles.",
+                "Summarize how each successive model addressed the specific limitations of its predecessor."
+            ],
+            "learning_outcome": "Provides a comprehensive overview of the historical and scientific development of atomic structure.",
+            "evaluation": "Compare all the proposed models of an atom given in this chapter in a tabular form (10 marks)."
+        }
+    ]
+}

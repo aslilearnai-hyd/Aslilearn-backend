@@ -1,0 +1,143 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "My Dear Soldiers",
+  "difficulty": "Medium",
+  "source_pdf": "cbse_class7_english.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Identifying Soldier’s Qualities",
+      "objective": "Recognize traits that make soldiers brave and responsible",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the chapter carefully",
+        "List the qualities of soldiers mentioned in the text",
+        "Discuss why each quality is important",
+        "Write your list with explanations in the notebook"
+      ],
+      "learning_outcome": "Students understand personality traits of soldiers",
+      "evaluation": "Accuracy and clarity of explanations (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Understanding the Letter",
+      "objective": "Comprehend emotions and messages in the letter",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the letter carefully",
+        "Underline expressions of care, courage, and hope",
+        "Summarize the main message in your own words",
+        "Discuss the emotional tone with classmates"
+      ],
+      "learning_outcome": "Students improve comprehension and empathy",
+      "evaluation": "Quality of summary and participation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Cause and Effect Analysis",
+      "objective": "Analyze the impact of soldiers’ actions",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Identify key actions of soldiers in the chapter",
+        "Write cause-and-effect statements for each action",
+        "Discuss how these actions affect society and families"
+      ],
+      "learning_outcome": "Students develop analytical and critical thinking skills",
+      "evaluation": "Completeness and reasoning of statements (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Character Sketch Writing",
+      "objective": "Analyze characters and their traits",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Choose one soldier or character from the chapter",
+        "Write a character sketch including personality, actions, and impact",
+        "Provide examples from the text to support your sketch"
+      ],
+      "learning_outcome": "Students improve analytical and descriptive writing",
+      "evaluation": "Clarity, detail, and textual support (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Role Play Activity",
+      "objective": "Express understanding through dramatization",
+      "materials": ["Textbook script", "Costumes (optional)"],
+      "steps": [
+        "Form groups and select a scene from the chapter",
+        "Prepare dialogues and actions highlighting soldiers’ emotions and courage",
+        "Perform the scene for the class",
+        "Explain why the scene is important"
+      ],
+      "learning_outcome": "Students develop expression, teamwork, and empathy",
+      "evaluation": "Performance, clarity, and engagement (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Creative Paragraph Writing",
+      "objective": "Imagine and write about soldiers’ lives",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a paragraph describing a day in the life of a soldier",
+        "Include challenges, courage, and dedication",
+        "Share paragraphs with classmates"
+      ],
+      "learning_outcome": "Students enhance imagination and writing skills",
+      "evaluation": "Content, creativity, and clarity (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Literary Device Identification",
+      "objective": "Recognize expressive language in the text",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Identify literary devices such as similes, metaphors, or personification",
+        "Write examples from the chapter",
+        "Explain how each device adds meaning or emotion"
+      ],
+      "learning_outcome": "Students develop literary analysis skills",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Sound Words / Onomatopoeia Exercise",
+      "objective": "Use sound words to enhance descriptive writing",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Find sound words in the chapter (e.g., boom, whistle, clang)",
+        "Write a short paragraph using at least 5 sound words",
+        "Share and discuss paragraphs in class"
+      ],
+      "learning_outcome": "Students improve descriptive writing and vocabulary",
+      "evaluation": "Creativity and correct usage of sound words (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Conditional Sentences Practice",
+      "objective": "Apply grammar to realistic situations of soldiers",
+      "materials": ["Textbook examples", "Notebook"],
+      "steps": [
+        "Write 5 conditional sentences based on soldiers’ actions",
+        "Include Type 1 (real) and Type 2 (imaginary) conditionals",
+        "Discuss possible outcomes with classmates"
+      ],
+      "learning_outcome": "Students strengthen grammar and contextual application",
+      "evaluation": "Correct sentence formation and relevance (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Narrative Essay: A Soldier I Admire",
+      "objective": "Develop narrative and reflective writing skills",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a narrative essay about a soldier (real or imagined)",
+        "Include introduction, body, and conclusion with descriptive and reflective elements",
+        "Highlight bravery, dedication, and personal learning",
+        "Share essays with teacher or classmates"
+      ],
+      "learning_outcome": "Students enhance narrative writing, creativity, and reflection",
+      "evaluation": "Structure, content, grammar, and reflection (10 marks)"
+    }
+  ]
+}

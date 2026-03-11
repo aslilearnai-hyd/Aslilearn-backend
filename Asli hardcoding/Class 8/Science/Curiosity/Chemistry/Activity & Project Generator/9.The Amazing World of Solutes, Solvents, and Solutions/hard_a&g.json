@@ -1,0 +1,155 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solutes, Solvents, and Solutions",
+  "difficulty": "Hard",
+  "source_pdf": "The Amazing World of Solutes Solvents and Solutions.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Determining Solubility Limit",
+      "objective": "Calculate maximum solubility of salt in water",
+      "materials": ["Water", "Salt", "Beaker", "Balance", "Spoon"],
+      "steps": [
+        "Measure 100 mL water",
+        "Add salt gradually while stirring",
+        "Continue until no more dissolves",
+        "Measure total salt added"
+      ],
+      "learning_outcome": "Students understand quantitative solubility",
+      "evaluation": "Data recording and calculation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Temperature vs Solubility Graph",
+      "objective": "Plot a graph showing effect of temperature on solubility",
+      "materials": [
+        "Water",
+        "Baking soda",
+        "Thermometer",
+        "Beaker",
+        "Graph paper"
+      ],
+      "steps": [
+        "Measure solubility at 20°C",
+        "Repeat at 40°C and 60°C",
+        "Record observations",
+        "Plot graph of temperature vs solubility"
+      ],
+      "learning_outcome": "Students interpret graphical representation of solubility",
+      "evaluation": "Graph accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Density Measurement Challenge",
+      "objective": "Determine density of unknown solid",
+      "materials": ["Unknown object", "Balance", "Measuring cylinder", "Water"],
+      "steps": [
+        "Measure mass of the object",
+        "Find volume using displacement",
+        "Calculate density",
+        "Identify possible material"
+      ],
+      "learning_outcome": "Students apply density formula in real investigation",
+      "evaluation": "Correct density calculation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Layered Liquid Density Tower",
+      "objective": "Create a density tower with different liquids",
+      "materials": ["Honey", "Water", "Oil", "Glass container"],
+      "steps": [
+        "Pour honey first",
+        "Add water slowly",
+        "Add oil carefully",
+        "Observe layering"
+      ],
+      "learning_outcome": "Students visualize density differences between liquids",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Egg Density Experiment Extension",
+      "objective": "Measure density change in salt water",
+      "materials": ["Egg", "Water", "Salt", "Glass"],
+      "steps": [
+        "Place egg in water",
+        "Gradually add salt",
+        "Observe egg rising",
+        "Estimate salt concentration when egg floats"
+      ],
+      "learning_outcome": "Students relate density change to floating behavior",
+      "evaluation": "Observation explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Density Comparison of Metals",
+      "objective": "Compare densities of aluminum, iron, and copper samples",
+      "materials": ["Metal samples", "Balance", "Water", "Measuring cylinder"],
+      "steps": [
+        "Measure mass of each sample",
+        "Determine volume using displacement",
+        "Calculate density",
+        "Compare with standard values"
+      ],
+      "learning_outcome": "Students understand density as a material property",
+      "evaluation": "Calculation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Investigating Floating Fruits",
+      "objective": "Study how peel affects density",
+      "materials": ["Orange", "Water", "Knife"],
+      "steps": [
+        "Place unpeeled orange in water",
+        "Observe floating behavior",
+        "Peel the orange and place again",
+        "Record observations"
+      ],
+      "learning_outcome": "Students learn how air spaces affect density",
+      "evaluation": "Explanation of results (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Calculating Density of Irregular Rock",
+      "objective": "Find density using displacement method",
+      "materials": ["Rock sample", "Balance", "Measuring cylinder", "Water"],
+      "steps": [
+        "Measure rock mass",
+        "Record initial water level",
+        "Submerge rock",
+        "Calculate displaced volume"
+      ],
+      "learning_outcome": "Students apply displacement method",
+      "evaluation": "Correct density calculation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Comparing Gas Solubility in Hot and Cold Water",
+      "objective": "Investigate gas solubility",
+      "materials": ["Two bottles", "Hot water", "Cold water", "Soda drink"],
+      "steps": [
+        "Open soda bottle in cold water",
+        "Open soda bottle in hot water",
+        "Observe bubble formation",
+        "Compare gas release"
+      ],
+      "learning_outcome": "Students learn gases dissolve less in warm liquids",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Design Your Own Floating Object",
+      "objective": "Apply density concept in engineering design",
+      "materials": ["Aluminum foil", "Coins", "Water container"],
+      "steps": [
+        "Design a small foil boat",
+        "Place it on water",
+        "Add coins gradually",
+        "Record maximum load before sinking"
+      ],
+      "learning_outcome": "Students apply density and buoyancy concepts",
+      "evaluation": "Design performance and explanation (10 marks)"
+    }
+  ]
+}

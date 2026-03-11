@@ -1,0 +1,153 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "A Concrete Example",
+  "difficulty": "Easy",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Identify Garden Objects",
+      "objective": "Recognise common objects found in a garden",
+      "materials": ["Textbook pictures", "Notebook", "Pen"],
+      "steps": [
+        "Look at the pictures given in the textbook",
+        "Identify the garden items such as hose, sapling, hedge, and flower pot",
+        "Write the correct names below each picture",
+        "Discuss your answers with classmates"
+      ],
+      "learning_outcome": "Students learn vocabulary related to gardens and plants",
+      "evaluation": "Correct identification of garden objects (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Design Your Dream Garden",
+      "objective": "Encourage creativity and imagination",
+      "materials": ["Drawing paper", "Colour pencils", "Notebook"],
+      "steps": [
+        "Think about the kind of garden you would like to have",
+        "Draw your dream garden on paper",
+        "Include features such as flowers, trees, and pathways",
+        "Explain why you chose those features"
+      ],
+      "learning_outcome": "Students develop creativity and appreciation for nature",
+      "evaluation": "Creativity and explanation of ideas (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Understanding the Meaning of 'Concrete'",
+      "objective": "Understand multiple meanings of the word 'concrete'",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the title of the poem carefully",
+        "Discuss what the word 'concrete' means",
+        "List different meanings of the word",
+        "Share your ideas with classmates"
+      ],
+      "learning_outcome": "Students understand how words can have more than one meaning",
+      "evaluation": "Participation and correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Poem Reading Activity",
+      "objective": "Improve reading and pronunciation skills",
+      "materials": ["Textbook poem", "Notebook"],
+      "steps": [
+        "Read the poem aloud in class",
+        "Pay attention to rhythm and rhyme",
+        "Take turns reading each stanza",
+        "Discuss the main idea of the poem"
+      ],
+      "learning_outcome": "Students improve reading fluency and understanding of poetry",
+      "evaluation": "Clarity of reading and participation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Summary of the Poem",
+      "objective": "Understand the main idea of the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem again carefully",
+        "Fill in the blanks in the summary exercise",
+        "Use exact words from the poem",
+        "Check answers with your teacher"
+      ],
+      "learning_outcome": "Students understand the key ideas of the poem",
+      "evaluation": "Correct completion of summary (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Tone Identification Activity",
+      "objective": "Identify the tone and mood of the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Discuss the feelings expressed in the poem",
+        "Choose the correct tone such as humorous or light-hearted",
+        "Explain your choice"
+      ],
+      "learning_outcome": "Students understand tone and mood in poetry",
+      "evaluation": "Correct identification with explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Find Alliteration",
+      "objective": "Recognise alliteration in poetry",
+      "materials": ["Textbook poem", "Notebook"],
+      "steps": [
+        "Read the poem slowly",
+        "Find words that repeat the same starting sound",
+        "Write those examples in your notebook",
+        "Share your answers in class"
+      ],
+      "learning_outcome": "Students learn about poetic devices",
+      "evaluation": "Correct identification of alliteration (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Word Meaning Activity",
+      "objective": "Improve vocabulary understanding",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Identify words such as 'peculiar', 'delicate', and 'lovely'",
+        "Choose correct synonyms from the options",
+        "Write the meanings in your notebook"
+      ],
+      "learning_outcome": "Students improve vocabulary and word usage",
+      "evaluation": "Correct selection of synonyms (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Apology Role Play",
+      "objective": "Practice polite communication",
+      "materials": ["Notebook", "Prepared dialogue examples"],
+      "steps": [
+        "Read the situations given in the textbook",
+        "Work with a partner",
+        "One student apologises and the other responds",
+        "Practice both informal and formal apologies"
+      ],
+      "learning_outcome": "Students learn polite language and communication skills",
+      "evaluation": "Clarity and correctness of dialogue (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Herbarium Art Project",
+      "objective": "Develop interest in plants and creativity",
+      "materials": [
+        "Fallen leaves or flowers",
+        "Newspaper",
+        "Books",
+        "Card paper"
+      ],
+      "steps": [
+        "Collect fallen leaves and flowers",
+        "Place them between newspaper sheets",
+        "Keep heavy books on top for a week",
+        "Use the dried plants to create a greeting card or artwork"
+      ],
+      "learning_outcome": "Students learn about plant preservation and creative art",
+      "evaluation": "Creativity and neatness of artwork (10 marks)"
+    }
+  ]
+}

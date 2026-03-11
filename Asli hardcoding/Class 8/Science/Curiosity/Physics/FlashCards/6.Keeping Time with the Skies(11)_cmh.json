@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 6: Keeping Time with the Skies",
+  "generated_at": "2026-03-05T16:05:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "Why do we experience day and night on Earth?",
+        "correct_answer": "Because the Earth rotates on its axis",
+        "explanation": "As the Earth rotates, different parts of the planet face the Sun and then move away from it, causing day and night.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the time taken by the Earth to complete one rotation?",
+        "correct_answer": "24 hours",
+        "explanation": "The Earth completes one full rotation around its axis in about 24 hours, creating the day-night cycle.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What causes the phases of the Moon?",
+        "correct_answer": "The changing positions of the Earth, Moon, and Sun",
+        "explanation": "As the Moon revolves around Earth, the portion illuminated by the Sun changes, producing different phases.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the time taken by the Moon to complete one cycle of phases?",
+        "correct_answer": "About 29.5 days",
+        "explanation": "The Moon takes approximately 29.5 days to go from one new moon to the next.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is a constellation?",
+        "correct_answer": "A group of stars forming a recognizable pattern in the sky",
+        "explanation": "Examples include Orion and Ursa Major which appear as patterns in the night sky.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is a sundial?",
+        "correct_answer": "A device that tells time using the shadow of the Sun",
+        "explanation": "The position of the Sun changes during the day, causing the shadow to move and indicate time.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "Why were early calendars based on the Moon?",
+        "correct_answer": "Because lunar phases are regular and easy to observe",
+        "explanation": "Ancient civilizations used the Moon’s phases to track time and create calendars.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is a solar eclipse?",
+        "correct_answer": "When the Moon comes between the Sun and Earth",
+        "explanation": "The Moon blocks sunlight from reaching parts of the Earth during a solar eclipse.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "What is a lunar eclipse?",
+        "correct_answer": "When the Earth comes between the Sun and the Moon",
+        "explanation": "The Earth's shadow falls on the Moon during a lunar eclipse.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "How did ancient people keep track of time before clocks?",
+        "correct_answer": "By observing the Sun, Moon, and stars",
+        "explanation": "They used natural patterns in the sky to estimate time and create calendars.",
+        "source_section": "Section 1 & 4"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Earth’s Rotation",
+        "content": "The Earth rotates on its axis once every 24 hours, causing day and night.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Phases of the Moon",
+        "content": "Different portions of the Moon appear illuminated as it revolves around Earth.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Constellations",
+        "content": "Constellations are patterns of stars used to identify positions in the night sky.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Sundials",
+        "content": "Sundials measure time using the position of the Sun and the shadow cast by a stick or pointer.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Eclipses",
+        "content": "Eclipses occur when the Sun, Earth, and Moon align in a straight line.",
+        "source_section": "Section 6"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The Earth rotates from west to east.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "The Moon does not produce its own light; it reflects sunlight.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "A lunar month lasts about 29.5 days.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Ancient civilizations used the Sun, Moon, and stars to measure time.",
+        "source_section": "Section 4"
+      }
+    ]
+  }
+}

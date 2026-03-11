@@ -1,0 +1,44 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Motion",
+    "difficulty": "Easy",
+    "source_pdf": "s9_7.pdf",
+    "short_notes": {
+        "key_points": [
+            "Motion is the change in position of an object with respect to time",
+            "Distance is the total path length travelled by an object",
+            "Displacement is the shortest distance between the initial and final position",
+            "Uniform motion occurs when equal distances are covered in equal intervals of time",
+            "Non-uniform motion occurs when unequal distances are covered in equal intervals of time",
+            "Speed is the distance travelled per unit time",
+            "Velocity is the speed of an object in a given direction",
+            "Acceleration is the rate of change of velocity with time",
+            "Distance–time graph represents the change of distance with time",
+            "Velocity–time graph represents the change of velocity with time"
+        ],
+        "examples": [
+            "Uniform motion example: A car moving at constant speed on a straight road",
+            "Non-uniform motion example: A bus moving in city traffic",
+            "Circular motion example: Motion of Earth around the Sun",
+            "Instrument to measure speed: Speedometer",
+            "Instrument to measure distance travelled: Odometer",
+            "Free fall example: A stone falling from a height"
+        ],
+        "formulas": [
+            "Speed = Distance / Time",
+            "Velocity = Displacement / Time",
+            "Acceleration = (Final velocity − Initial velocity) / Time",
+            "First equation of motion → v = u + at",
+            "Second equation of motion → s = ut + ½at²",
+            "Third equation of motion → v² − u² = 2as"
+        ],
+        "exam_tips": [
+            "Remember that distance is a scalar quantity while displacement is a vector quantity",
+            "Velocity differs from speed because it includes direction",
+            "Slope of distance-time graph represents speed",
+            "Slope of velocity-time graph represents acceleration",
+            "Area under velocity-time graph represents displacement"
+        ]
+    }
+}

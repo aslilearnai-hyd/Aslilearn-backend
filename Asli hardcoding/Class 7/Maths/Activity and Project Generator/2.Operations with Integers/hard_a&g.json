@@ -1,0 +1,164 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Operations with Integers",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class7_maths_ch1_integers.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Nested Bracket Complexity",
+            "objective": "Master the hierarchy of operations with multiple grouping symbols",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Solve the expression: $-25 + [ 14 - \{ 18 - (15 - \overline{4 - 1}) \} ]$",
+                "Show the step-by-step simplification starting from the vinculum (bar bracket)",
+                "Create a similar problem for a peer that results in a specific target integer like -1"
+            ],
+            "learning_outcome": "Accurately applies BODMAS rules to multi-layered integer expressions",
+            "evaluation": "Logical flow and correct final result (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Distributive Property Proof",
+            "objective": "Verify the distributive property over subtraction with negative coefficients",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Let $a = -5, b = -8,$ and $c = 3$",
+                "Calculate $a \times (b - c)$ and $(a \times b) - (a \times c)$ independently",
+                "Compare the results and explain the behavior of signs when multiplying two negatives versus a negative and a positive"
+            ],
+            "learning_outcome": "Proves the distributive property holds for all integers",
+            "evaluation": "Correct sign management in calculations (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Competitive Exam Simulation",
+            "objective": "Apply integer operations to marking schemes with negative marking",
+            "materials": [
+                "Notebook",
+                "Graph paper"
+            ],
+            "steps": [
+                "Design a quiz: +5 marks for correct, -2 for incorrect, and -1 for unattempted",
+                "Calculate total scores for 3 students with different performance profiles",
+                "Determine the minimum number of correct answers needed to stay above zero if 5 questions are wrong"
+            ],
+            "learning_outcome": "Solves real-world weighted average problems using integers",
+            "evaluation": "Accuracy of the multi-step scoring logic (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Pattern of Powers",
+            "objective": "Investigate the behavior of negative integers with exponents",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Calculate $(-1)^n$ for $n=1, 2, 3, 4, 5, 6$",
+                "Generalize a rule for when the result is positive and when it is negative",
+                "Predict the value of $(-1)^{2026}$ and $(-1)^{999}$ based on your rule"
+            ],
+            "learning_outcome": "Discovers the relationship between parity (even/odd) and integer signs",
+            "evaluation": "Clarity of the generalized rule (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Integer Coordinate Geometry",
+            "objective": "Calculate distance and midpoint between negative coordinates",
+            "materials": [
+                "Graph paper",
+                "Ruler"
+            ],
+            "steps": [
+                "Plot point A at $(-4, 3)$ and point B at $(2, -5)$",
+                "Calculate the vertical and horizontal distance between the points using subtraction",
+                "Find the integer coordinates of the point exactly halfway between them"
+            ],
+            "learning_outcome": "Applies integer subtraction to find distances on a Cartesian plane",
+            "evaluation": "Precision of plotting and distance calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The 'Find the Integers' Puzzle",
+            "objective": "Solve systems of logic based on integer properties",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find two integers whose product is $-24$ and whose difference is $11$",
+                "Find three consecutive integers whose sum is $-15$",
+                "Write out the algebraic reasoning used to find the numbers"
+            ],
+            "learning_outcome": "Develops algebraic thinking through integer constraints",
+            "evaluation": "Correct identification of integer pairs/triplets (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Division Algorithm Verification",
+            "objective": "Understand the relationship between Dividend, Divisor, Quotient, and Remainder",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Divide $-57$ by $4$ and identify the quotient and remainder",
+                "Verify the result using the formula: $Dividend = (Divisor \times Quotient) + Remainder$",
+                "Discuss if the remainder can ever be negative in standard mathematics"
+            ],
+            "learning_outcome": "Deepens understanding of the division algorithm with negative values",
+            "evaluation": "Correct verification of the formula (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Closure Property Critique",
+            "objective": "Test closure property across all four operations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Provide examples to show integers are closed under addition, subtraction, and multiplication",
+                "Find a counter-example to prove integers are NOT closed under division",
+                "Explain why the set of integers is insufficient for division (leading to rational numbers)"
+            ],
+            "learning_outcome": "Critically evaluates the set of integers as a mathematical system",
+            "evaluation": "Quality of the counter-example provided (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Atmospheric Pressure Project",
+            "objective": "Model change in pressure using integer rates",
+            "materials": [
+                "Graph paper",
+                "Reference data"
+            ],
+            "steps": [
+                "Assume pressure drops by $10$ units for every $1000m$ rise",
+                "Calculate the total pressure change for a flight climbing from $-200m$ (below sea level) to $11,000m$",
+                "Represent the final pressure as an expression relative to sea level"
+            ],
+            "learning_outcome": "Models complex linear change using integer multiplication and addition",
+            "evaluation": "Accuracy of the rate-based calculation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Cryptic Integer Code",
+            "objective": "Use operations to decrypt a message",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Assign A=1, B=2... Z=26. Create a message where each letter is hidden by an expression",
+                "Example: To get 'C' (3), the code could be $(-15 \div -5)$",
+                "Create a 5-letter word code using at least one multiplication and one division per letter",
+                "Challenge a friend to decode it"
+            ],
+            "learning_outcome": "Reinforces computational fluency with integers through gamification",
+            "evaluation": "Complexity and correctness of the encoded expressions (10 marks)"
+        }
+    ]
+}

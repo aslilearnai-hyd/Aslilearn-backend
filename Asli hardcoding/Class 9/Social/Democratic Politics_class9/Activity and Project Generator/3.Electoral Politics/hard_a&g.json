@@ -1,0 +1,167 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Electoral Politics",
+    "difficulty": "Hard",
+    "source_pdf": "dem9_3.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Research on Election Commission Powers",
+            "objective": "Analyze the authority of the Election Commission",
+            "materials": [
+                "Internet resources",
+                "Notebook"
+            ],
+            "steps": [
+                "Research powers of Election Commission of India",
+                "List five major powers",
+                "Present examples"
+            ],
+            "learning_outcome": "Students understand how the EC ensures fair elections",
+            "evaluation": "Depth of research (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Case Study on Electoral Malpractices",
+            "objective": "Understand challenges in elections",
+            "materials": [
+                "Newspaper reports",
+                "Notebook"
+            ],
+            "steps": [
+                "Find a report on election malpractice",
+                "Summarize the case",
+                "Suggest solutions"
+            ],
+            "learning_outcome": "Students critically evaluate election challenges",
+            "evaluation": "Quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Comparative Election Study",
+            "objective": "Compare election systems",
+            "materials": [
+                "Internet resources",
+                "Notebook"
+            ],
+            "steps": [
+                "Study elections in India and another country",
+                "Compare rules and participation",
+                "Write similarities and differences"
+            ],
+            "learning_outcome": "Students understand global election systems",
+            "evaluation": "Quality of comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Electoral Reform Proposal",
+            "objective": "Develop ideas to improve elections",
+            "materials": [
+                "Paper",
+                "Pen"
+            ],
+            "steps": [
+                "Identify problems in elections",
+                "Propose three reforms",
+                "Explain benefits"
+            ],
+            "learning_outcome": "Students develop critical thinking about reforms",
+            "evaluation": "Creativity and feasibility (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Voter Turnout Data Analysis",
+            "objective": "Analyze voter participation trends",
+            "materials": [
+                "Election data",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect turnout data from two elections",
+                "Compare percentages",
+                "Write conclusions"
+            ],
+            "learning_outcome": "Students analyze trends in voter participation",
+            "evaluation": "Accuracy of analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Debate on Money Power in Elections",
+            "objective": "Examine financial influence in elections",
+            "materials": [
+                "Reference material"
+            ],
+            "steps": [
+                "Divide class into debate groups",
+                "Discuss influence of money in elections",
+                "Present arguments"
+            ],
+            "learning_outcome": "Students critically analyze financial power in politics",
+            "evaluation": "Strength of arguments (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Election Awareness Campaign",
+            "objective": "Promote voter participation",
+            "materials": [
+                "Posters",
+                "Markers"
+            ],
+            "steps": [
+                "Design voter awareness posters",
+                "Display them in school",
+                "Explain importance of voting"
+            ],
+            "learning_outcome": "Students promote democratic participation",
+            "evaluation": "Impact of campaign (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Manifesto Policy Analysis",
+            "objective": "Evaluate political promises",
+            "materials": [
+                "Party manifestos",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect two party manifestos",
+                "Identify major promises",
+                "Analyze feasibility"
+            ],
+            "learning_outcome": "Students critically evaluate political policies",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Coalition Government Simulation",
+            "objective": "Understand coalition politics",
+            "materials": [
+                "Role cards"
+            ],
+            "steps": [
+                "Divide class into parties",
+                "Assign seats based on results",
+                "Form a coalition government"
+            ],
+            "learning_outcome": "Students understand coalition formation",
+            "evaluation": "Participation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Analytical Essay on Elections",
+            "objective": "Develop critical thinking about democracy",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Write an essay on importance of elections",
+                "Include advantages and challenges",
+                "Present essay in class"
+            ],
+            "learning_outcome": "Students analyze the role of elections in democracy",
+            "evaluation": "Clarity and reasoning (10 marks)"
+        }
+    ]
+}

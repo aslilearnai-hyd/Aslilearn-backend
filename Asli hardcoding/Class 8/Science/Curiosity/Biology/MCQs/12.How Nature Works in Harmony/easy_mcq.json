@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T20:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a habitat?",
+      "options": {
+        "A": "A place where only plants live",
+        "B": "A natural home where organisms live",
+        "C": "A place where animals hunt",
+        "D": "A place where only water is present"
+      },
+      "correct_answer": "B",
+      "explanation": "A habitat is the natural place where organisms live and obtain food, water, and shelter.",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is an abiotic component?",
+      "options": {
+        "A": "Plants",
+        "B": "Animals",
+        "C": "Soil",
+        "D": "Bacteria"
+      },
+      "correct_answer": "C",
+      "explanation": "Abiotic components are non-living elements such as soil, water, air, and sunlight.",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is an example of a population?",
+      "options": {
+        "A": "All animals in a forest",
+        "B": "All plants in a garden",
+        "C": "All tigers living in a forest",
+        "D": "All organisms in a pond"
+      },
+      "correct_answer": "C",
+      "explanation": "Population refers to organisms of the same species living in the same area.",
+      "difficulty": "easy",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A group of different populations living together is called:",
+      "options": {
+        "A": "Habitat",
+        "B": "Community",
+        "C": "Ecosystem",
+        "D": "Population"
+      },
+      "correct_answer": "B",
+      "explanation": "A community consists of different populations interacting in the same habitat.",
+      "difficulty": "easy",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which organisms produce their own food?",
+      "options": {
+        "A": "Consumers",
+        "B": "Producers",
+        "C": "Decomposers",
+        "D": "Predators"
+      },
+      "correct_answer": "B",
+      "explanation": "Producers such as plants make their own food using photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following best represents a food chain?",
+      "options": {
+        "A": "Plant → Deer → Tiger",
+        "B": "Tiger → Deer → Plant",
+        "C": "Deer → Plant → Tiger",
+        "D": "Plant → Tiger → Deer"
+      },
+      "correct_answer": "A",
+      "explanation": "Energy flows from plants to herbivores and then to carnivores.",
+      "difficulty": "easy",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 7,
+      "question": "Which organisms break down dead plants and animals?",
+      "options": {
+        "A": "Consumers",
+        "B": "Predators",
+        "C": "Decomposers",
+        "D": "Producers"
+      },
+      "correct_answer": "C",
+      "explanation": "Decomposers such as bacteria and fungi recycle nutrients into the soil.",
+      "difficulty": "easy",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following forms the base of most food chains?",
+      "options": {
+        "A": "Carnivores",
+        "B": "Herbivores",
+        "C": "Producers",
+        "D": "Decomposers"
+      },
+      "correct_answer": "C",
+      "explanation": "Producers convert sunlight into food and support all other organisms.",
+      "difficulty": "medium",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "Which term describes interconnected food chains?",
+      "options": {
+        "A": "Food pyramid",
+        "B": "Food web",
+        "C": "Trophic level",
+        "D": "Food cycle"
+      },
+      "correct_answer": "B",
+      "explanation": "A food web shows multiple feeding relationships.",
+      "difficulty": "medium",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Which interaction benefits both organisms?",
+      "options": {
+        "A": "Parasitism",
+        "B": "Competition",
+        "C": "Mutualism",
+        "D": "Predation"
+      },
+      "correct_answer": "C",
+      "explanation": "Mutualism is a relationship where both organisms benefit.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 11,
+      "question": "Which interaction benefits one organism while harming the other?",
+      "options": {
+        "A": "Mutualism",
+        "B": "Parasitism",
+        "C": "Commensalism",
+        "D": "Competition"
+      },
+      "correct_answer": "B",
+      "explanation": "In parasitism, one organism benefits and the other is harmed.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 12,
+      "question": "Which interaction benefits one organism while the other remains unaffected?",
+      "options": {
+        "A": "Parasitism",
+        "B": "Mutualism",
+        "C": "Commensalism",
+        "D": "Predation"
+      },
+      "correct_answer": "C",
+      "explanation": "Commensalism benefits one organism while the other is neither harmed nor helped.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 13,
+      "question": "Energy in an ecosystem originally comes from:",
+      "options": {
+        "A": "Wind",
+        "B": "Sun",
+        "C": "Water",
+        "D": "Soil"
+      },
+      "correct_answer": "B",
+      "explanation": "Most ecosystems receive energy from sunlight through photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 14,
+      "question": "What would happen if decomposers disappeared?",
+      "options": {
+        "A": "Plants would grow faster",
+        "B": "Dead organisms would accumulate",
+        "C": "Animals would increase rapidly",
+        "D": "Sunlight would decrease"
+      },
+      "correct_answer": "B",
+      "explanation": "Without decomposers, nutrients would not return to the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following can disturb ecosystem balance?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Rainfall",
+        "C": "Deforestation",
+        "D": "Pollination"
+      },
+      "correct_answer": "C",
+      "explanation": "Deforestation destroys habitats and disrupts ecological balance.",
+      "difficulty": "medium",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 16,
+      "question": "Which ecosystem is primarily aquatic?",
+      "options": {
+        "A": "Forest",
+        "B": "Pond",
+        "C": "Grassland",
+        "D": "Desert"
+      },
+      "correct_answer": "B",
+      "explanation": "A pond ecosystem consists mainly of aquatic organisms.",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which organism is most likely to be a primary consumer?",
+      "options": {
+        "A": "Lion",
+        "B": "Rabbit",
+        "C": "Tiger",
+        "D": "Eagle"
+      },
+      "correct_answer": "B",
+      "explanation": "Primary consumers are herbivores that eat plants.",
+      "difficulty": "medium",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following best describes biodiversity?",
+      "options": {
+        "A": "Variety of living organisms",
+        "B": "Only plant species",
+        "C": "Only animal species",
+        "D": "Only microorganisms"
+      },
+      "correct_answer": "A",
+      "explanation": "Biodiversity refers to the variety of life forms in an ecosystem.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 19,
+      "question": "Which human activity can damage ecosystems?",
+      "options": {
+        "A": "Tree planting",
+        "B": "Organic farming",
+        "C": "Deforestation",
+        "D": "Wildlife protection"
+      },
+      "correct_answer": "C",
+      "explanation": "Deforestation leads to habitat destruction and biodiversity loss.",
+      "difficulty": "medium",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "Which organisms are most responsible for nutrient recycling?",
+      "options": {
+        "A": "Herbivores",
+        "B": "Carnivores",
+        "C": "Decomposers",
+        "D": "Producers"
+      },
+      "correct_answer": "C",
+      "explanation": "Decomposers break down organic matter and recycle nutrients.",
+      "difficulty": "medium",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which ecosystem helps protect coastal regions from storms?",
+      "options": {
+        "A": "Grasslands",
+        "B": "Mangroves",
+        "C": "Deserts",
+        "D": "Mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "Mangrove forests protect coastal areas from erosion and storms.",
+      "difficulty": "medium",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "Which process helps plants make their own food?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Digestion",
+        "D": "Decomposition"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis uses sunlight to produce food.",
+      "difficulty": "easy",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following is an example of mutualism?",
+      "options": {
+        "A": "Tick on dog",
+        "B": "Birds eating insects from buffalo",
+        "C": "Lion hunting deer",
+        "D": "Fungus decomposing leaves"
+      },
+      "correct_answer": "B",
+      "explanation": "Both the bird and buffalo benefit from this relationship.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor can increase competition among organisms?",
+      "options": {
+        "A": "Abundant resources",
+        "B": "Limited food supply",
+        "C": "High rainfall",
+        "D": "Large habitat area"
+      },
+      "correct_answer": "B",
+      "explanation": "Limited resources increase competition among organisms.",
+      "difficulty": "medium",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is ecosystem conservation important?",
+      "options": {
+        "A": "To increase pollution",
+        "B": "To protect biodiversity and resources",
+        "C": "To reduce plant growth",
+        "D": "To eliminate animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Conservation helps maintain ecological balance and resources for future generations.",
+      "difficulty": "medium",
+      "source_section": "Section 12.9"
+    }
+  ]
+}

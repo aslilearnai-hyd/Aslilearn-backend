@@ -1,0 +1,33 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Exploring Some Geometric Themes",
+    "difficulty": "Medium",
+    "source_pdf": "hegp204.pdf",
+    "short_notes": {
+        "key_points": [
+            "Fractals are shapes generated through recursive processes that produce self-similar patterns",
+            "Sierpinski Triangle is created by repeatedly removing the central triangle from subdivided triangles",
+            "Sierpinski Carpet is formed by dividing a square into nine smaller squares and removing the central square repeatedly",
+            "The Koch Snowflake begins with an equilateral triangle and adds smaller triangular bumps on each side",
+            "Projections help represent three-dimensional objects accurately on two-dimensional surfaces"
+        ],
+        "examples": [
+            "Step 1 of Sierpinski Triangle leaves 3 smaller triangles",
+            "Step 2 of Sierpinski Carpet results in 64 smaller squares",
+            "The Koch Snowflake increases the number of sides with each iteration",
+            "Projection example: A cube's shadow on a flat surface"
+        ],
+        "formulas": [
+            "Number of triangles after n steps in Sierpinski Triangle → 3^n",
+            "Number of squares after n steps in Sierpinski Carpet → 8^n",
+            "Number of sides in Koch Snowflake after n steps → 3 × 4^n"
+        ],
+        "exam_tips": [
+            "Understand recursive patterns in fractals",
+            "Practice drawing Sierpinski figures step by step",
+            "Remember that projections remove depth information",
+            "Study the relation between faces, edges and vertices in polyhedra"
+        ]
+    }
+}

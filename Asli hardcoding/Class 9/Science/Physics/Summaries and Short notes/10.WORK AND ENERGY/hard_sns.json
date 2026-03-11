@@ -1,0 +1,45 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Work and Energy",
+    "difficulty": "Hard",
+    "short_notes": {
+        "key_points": [
+            "Work done depends on both magnitude and direction of force; W = F × d × cosθ, where θ is angle between force and displacement.",
+            "Positive work increases kinetic energy; negative work decreases it; zero work when displacement ⟂ force.",
+            "Kinetic energy: KE = 1/2 mv²; consider vector nature of velocity in 2D/3D motion.",
+            "Potential energy: PE = mgh; for non-uniform gravitational field, integrate force over displacement.",
+            "Elastic potential energy in springs: PE_spring = 1/2 k x²; energy stored depends on displacement squared.",
+            "Work-energy theorem: Work done by all forces = change in kinetic energy; includes non-conservative forces.",
+            "Law of conservation of energy: total mechanical energy (KE + PE) conserved in absence of non-conservative forces; energy transforms among forms.",
+            "Power: P = dW/dt for variable force; average power = total work/time.",
+            "Efficiency = (useful work output / total energy input) × 100%; consider energy lost to friction, air resistance, and heat.",
+            "Mechanical advantage, real work, and energy losses are important in practical machines."
+        ],
+        "formulas": [
+            "Work: W = F × d × cosθ",
+            "Kinetic energy: KE = 1/2 mv²",
+            "Potential energy: PE = mgh",
+            "Elastic potential energy: PE_spring = 1/2 k x²",
+            "Work-energy theorem: W_total = ΔKE = KE_final − KE_initial",
+            "Conservation of energy: KE_initial + PE_initial + W_nc = KE_final + PE_final",
+            "Power (instantaneous): P = dW/dt",
+            "Efficiency (%) = (Useful work output / Total energy input) × 100%"
+        ],
+        "examples": [
+            "A 2 kg body accelerated from 3 m/s to 6 m/s: ΔKE = 1/2 × 2 × (6² − 3²) = 27 J → Work done by net force = 27 J",
+            "Block slides down frictional incline: PE_top = mgh, KE_bottom = PE − Work_done_by_friction",
+            "Spring with k = 200 N/m stretched 0.3 m: PE_spring = 1/2 × 200 × 0.3² = 9 J",
+            "Machine uses 800 J input, loses 150 J to friction: Efficiency = (650/800) × 100 ≈ 81.25%",
+            "Inclined plane problem: Use energy conservation, account for height, friction, and acceleration along slope"
+        ],
+        "exam_tips": [
+            "Always consider angle between force and displacement when calculating work.",
+            "For non-uniform forces, integrate F·dx along path to find work done.",
+            "Check for energy losses due to friction and air resistance in applied problems.",
+            "Use conservation of energy for problems involving inclined planes, pulleys, and roller coasters.",
+            "In spring and elastic problems, always square displacement in PE_spring formula.",
+            "Draw energy bar diagrams or energy flow charts for complex multi-step problems."
+        ]
+    }
+}

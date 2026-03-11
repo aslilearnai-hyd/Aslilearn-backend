@@ -1,0 +1,178 @@
+{
+    "class": "Class 7",
+    "subject": "Civics (Social and Political Life - II)",
+    "chapter": "State Government ",
+    "difficulty": "Medium",
+    "source_pdf": "social_and_political_life_2_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Constituency Election Analysis",
+            "objective": "Understand the process of winning a seat and forming a majority",
+            "materials": [
+                "Hypothetical election result table",
+                "Calculator",
+                "Graph paper"
+            ],
+            "steps": [
+                "Using a list of 70 seats, distribute them among four different parties",
+                "Identify the 'Magic Number' (half the total seats + 1) required to form a government",
+                "Determine if the leading party can form the government alone or needs a 'Coalition'",
+                "Label the parties as 'Ruling Party' and 'Opposition' based on the numbers"
+            ],
+            "learning_outcome": "Analyzes how numerical strength determines who holds power in the Legislative Assembly",
+            "evaluation": "Accuracy in calculating the majority and identifying the ruling/opposition parties (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Legislative Assembly Debate Script",
+            "objective": "Simulate the process of questioning and accountability",
+            "materials": [
+                "Role cards (MLA of Ruling Party, MLA of Opposition, Minister of Health)",
+                "Pens"
+            ],
+            "steps": [
+                "Draft a 2-minute speech for an Opposition MLA criticizing the lack of sanitation in their district",
+                "Draft a 2-minute response for the Health Minister defending the government's actions",
+                "Include a section where the 'Speaker' intervenes to maintain order",
+                "Discuss why the Minister is personally responsible for the department's failures"
+            ],
+            "learning_outcome": "Demonstrates the importance of debate and ministerial responsibility in a democracy",
+            "evaluation": "Quality of arguments and understanding of the accountability mechanism (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Governor’s Appointment Investigation",
+            "objective": "Understand the link between State and Central governments",
+            "materials": [
+                "Reference books",
+                "Notebook"
+            ],
+            "steps": [
+                "Research how a Governor is appointed (not elected) by the Central Government",
+                "List two specific duties the Governor performs (e.g., inviting the CM to form government, signing bills)",
+                "Discuss why the Governor is called the 'Head of the State' while the CM is 'Head of the Government'",
+                "Find the name of the current Governor of your state and their background"
+            ],
+            "learning_outcome": "Distinguishes between the constitutional head and the executive head of a state",
+            "evaluation": "Clarity in explaining the Governor's role and appointment process (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Press Conference vs. Assembly Debate",
+            "objective": "Compare different ways the government answers for its actions",
+            "materials": [
+                "Venn Diagram template",
+                "Textbook examples"
+            ],
+            "steps": [
+                "Identify who asks questions in a Press Conference (Journalists) vs. the Assembly (MLAs)",
+                "Compare the goals: Informing the general public vs. passing laws/budgets",
+                "Analyze why a government must do both to be considered transparent",
+                "Create a Venn Diagram showing the similarities and differences"
+            ],
+            "learning_outcome": "Evaluates the roles of the legislature and the media in a functioning democracy",
+            "evaluation": "Depth of comparison in the Venn Diagram (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Government Departments Flowchart",
+            "objective": "Trace the hierarchy of executive power",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Place 'Chief Minister' at the top of the chart",
+                "Branch out into different 'Cabinet Ministers' (Education, Health, Agriculture)",
+                "Below each Minister, show the 'Secretaries' (IAS officers) and departments",
+                "Explain the path of an order from the CM’s office down to a local district"
+            ],
+            "learning_outcome": "Visualizes the administrative structure of the State Executive",
+            "evaluation": "Logical flow and correct naming of hierarchy levels (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Coalition Government Simulation",
+            "objective": "Explore the challenges of multi-party governance",
+            "materials": [
+                "Colored tokens representing different parties"
+            ],
+            "steps": [
+                "Scenario: No single party has reached the 50% mark for majority",
+                "Negotiate between Party A (40% seats) and Party C (12% seats) to reach a majority",
+                "List two challenges a CM might face when running a coalition (e.g., disagreement on policies)",
+                "Write a brief 'Common Minimum Program' that both parties agree on"
+            ],
+            "learning_outcome": "Understand how power-sharing works when there is no clear majority",
+            "evaluation": "Realism of the negotiation points and the shared program (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Wall Newspaper: The Patalpuram Inquiry",
+            "objective": "Analyze how information is presented to the public",
+            "materials": [
+                "Scissors",
+                "Old newspapers",
+                "Glue"
+            ],
+            "steps": [
+                "Focus on the Patalpuram story in the book",
+                "Collect news snippets about health or water issues in your own area",
+                "Summarize what the 'People' said, what the 'Opposition' said, and what the 'Government' did",
+                "Present it as a 'Wall Newspaper' similar to the one shown in the NCERT text"
+            ],
+            "learning_outcome": "Synthesizes different perspectives on a single public issue",
+            "evaluation": "Accuracy in representing multiple viewpoints (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Speaker’s Rulebook",
+            "objective": "Understand the importance of neutrality in the Assembly",
+            "materials": [
+                "A4 paper",
+                "Sketch pens"
+            ],
+            "steps": [
+                "Research how the 'Speaker' of the Legislative Assembly is chosen",
+                "List three powers the Speaker has during a session",
+                "Explain why the Speaker usually does not vote unless there is a tie",
+                "Design a 'Code of Conduct' poster for MLAs during a session"
+            ],
+            "learning_outcome": "Identifies the role of the Speaker in ensuring democratic procedure",
+            "evaluation": "Understanding of the Speaker's neutral and authoritative role (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Local Issue Action Plan",
+            "objective": "Apply the steps of state governance to a real problem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Pick a local issue (e.g., broken roads or lack of streetlights)",
+                "Identify which State Government department is responsible for it",
+                "Write a letter to your local MLA describing the problem",
+                "Draft a short 'Press Release' the department might issue once the work is done"
+            ],
+            "learning_outcome": "Relates textbook concepts of governance to active citizenship",
+            "evaluation": "Correct identification of the responsible department and formal tone of the letter (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Defining 'The Government' - A Concept Map",
+            "objective": "Clarify that 'Government' includes both Ministers and Departments",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Create a concept map with 'The Government' in the center",
+                "Connect it to 'Legislative Assembly' (MLAs who deliberate)",
+                "Connect it to 'Executive' (Ministers and officials who implement)",
+                "Briefly explain how the Executive is chosen from the Legislature"
+            ],
+            "learning_outcome": "Clarifies the dual meaning of 'Government' as used in common language and political science",
+            "evaluation": "Clarity of the concept map and correctness of the relationships (10 marks)"
+        }
+    ]
+}

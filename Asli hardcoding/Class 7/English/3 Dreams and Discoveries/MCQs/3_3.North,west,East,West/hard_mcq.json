@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "North, South, East, West",
+  "generated_at": "2026-03-09T23:46:50",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What literary 'motif' is established by Shaana's recurrent mention of her parents' reactions compared to her own?",
+      "options": {
+        "A": "Parental neglect",
+        "B": "The contrast between adult caution and childhood wonder",
+        "C": "The breakdown of family communication",
+        "D": "The superiority of scientific observation"
+      },
+      "correct_answer": "B",
+      "explanation": "Shaana frequently contrasts her excitement (rafting, treehouses) with her parents' skepticism or fear, highlighting a theme of youthful adventure.",
+      "difficulty": "hard",
+      "source_section": "Character Analysis"
+    },
+    {
+      "question_number": 2,
+      "question": "The transition from 'white and blue' ice in Kashmir to the 'white' salt of Kutch is an example of what literary device?",
+      "options": {
+        "A": "Onomatopoeia",
+        "B": "Visual Juxtaposition",
+        "C": "Hyperbole",
+        "D": "Personification"
+      },
+      "correct_answer": "B",
+      "explanation": "The author uses the color white to link two vastly different environments—a freezing glacier and a scorching desert—creating a strong visual comparison.",
+      "difficulty": "hard",
+      "source_section": "Imagery"
+    },
+    {
+      "question_number": 3,
+      "question": "In the Arunachal Pradesh postcard, the forest is described as 'thick and dark' even during the day. This implies which ecological characteristic?",
+      "options": {
+        "A": "The forest is dying",
+        "B": "A high canopy density that blocks sunlight",
+        "C": "A solar eclipse was occurring",
+        "D": "The presence of tall mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "In dense tropical/sub-tropical forests, the canopy is often so thick that very little light reaches the forest floor.",
+      "difficulty": "hard",
+      "source_section": "Environmental Context"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is the mention of the 'Thajiwas Glacier' having less snow significant to the story's underlying message?",
+      "options": {
+        "A": "It shows that Shaana is bad at measuring snow",
+        "B": "It introduces a subtle subtext regarding climate change",
+        "C": "It suggests the family arrived during the wrong season",
+        "D": "It implies that the glacier is a man-made structure"
+      },
+      "correct_answer": "B",
+      "explanation": "The observation by the parents about the receding snow line is a direct reference to global warming's impact on the Himalayas.",
+      "difficulty": "hard",
+      "source_section": "Themes"
+    },
+    {
+      "question_number": 5,
+      "question": "What does the phrase 'sea beach without the sea' suggest about Shaana's cognitive processing of new environments?",
+      "options": {
+        "A": "She is confused by the desert",
+        "B": "She uses familiar concepts (her home in Rameswaram) to categorize unfamiliar landscapes",
+        "C": "She doesn't know the difference between sand and salt",
+        "D": "She believes the ocean has dried up in Gujarat"
+      },
+      "correct_answer": "B",
+      "explanation": "As an islander, the beach is her primary reference point; she uses that familiarity to describe the vast salt flats of Kutch.",
+      "difficulty": "hard",
+      "source_section": "Narrative Perspective"
+    },
+    {
+      "question_number": 6,
+      "question": "Which aspect of the Sundarbans trip highlights the 'interdependence of species'?",
+      "options": {
+        "A": "The fact that humans live in treehouses",
+        "B": "The Mangroves providing a habitat for crocodiles and snakes in a saline environment",
+        "C": "The tigers eating the fish",
+        "D": "The trains running through the forest"
+      },
+      "correct_answer": "B",
+      "explanation": "The ecosystem of the Sundarbans shows how specific flora (Mangroves) supports a unique range of fauna in a challenging environment.",
+      "difficulty": "hard",
+      "source_section": "Ecological Context"
+    },
+    {
+      "question_number": 7,
+      "question": "Shaana's '88% score' on her mother's test serves as a 'plot device' to show:",
+      "options": {
+        "A": "That her mother is a strict teacher",
+        "B": "That travel is a form of informal education",
+        "C": "That Shaana is failing school",
+        "D": "That the trip is too stressful"
+      },
+      "correct_answer": "B",
+      "explanation": "The test proves that Shaana isn't just seeing places; she is actively learning and retaining information about India's geography.",
+      "difficulty": "hard",
+      "source_section": "Thematic Analysis"
+    },
+    {
+      "question_number": 8,
+      "question": "The description of the Narmada River as having 'wild' water contrasts with what previous setting in the book?",
+      "options": {
+        "A": "The Thajiwas Glacier",
+        "B": "The calm running stream in 'Paper Boats'",
+        "C": "The salt flats of Kutch",
+        "D": "The thick forests of the East"
+      },
+      "correct_answer": "B",
+      "explanation": "In many primary curricula, this chapter is contrasted with Tagore's 'Paper Boats' to show the difference between gentle, poetic water and powerful, real-world rivers.",
+      "difficulty": "hard",
+      "source_section": "Comparative Literature"
+    },
+    {
+      "question_number": 9,
+      "question": "The use of 'Postcards' as a medium for the story creates a sense of _____ for the reader.",
+      "options": {
+        "A": "Third-person objectivity",
+        "B": "Epistolary intimacy (personal and direct communication)",
+        "C": "Scientific distance",
+        "D": "Historical formality"
+      },
+      "correct_answer": "B",
+      "explanation": "An 'epistolary' style (using letters/postcards) makes the reader feel like a direct recipient of Shaana's secrets and thoughts.",
+      "difficulty": "hard",
+      "source_section": "Literary Style"
+    },
+    {
+      "question_number": 10,
+      "question": "What does Shaana's experience in Goa's 'plateaus and tunnels' symbolize regarding her character arc?",
+      "options": {
+        "A": "Her descent into fear",
+        "B": "Overcoming internal phobias through external exploration",
+        "C": "Her love for engineering",
+        "D": "Her desire to hide from her parents"
+      },
+      "correct_answer": "B",
+      "explanation": "By turning something she once feared (dark tunnels) into a game, Shaana demonstrates increased psychological maturity.",
+      "difficulty": "hard",
+      "source_section": "Character Development"
+    },
+    {
+      "question_number": 11,
+      "question": "When Shaana returns to Tamil Nadu and finds the water 'rougher' and 'browner,' what is the author implying?",
+      "options": {
+        "A": "The water is polluted in Chennai",
+        "B": "The ocean has different characteristics based on location and depth",
+        "C": "Shaana has forgotten what her home looks like",
+        "D": "It is raining in the South"
+      },
+      "correct_answer": "B",
+      "explanation": "This highlights geographical variety; even within the 'South,' the Bay of Bengal and the Indian Ocean can look and behave very differently.",
+      "difficulty": "hard",
+      "source_section": "Geographical Analysis"
+    },
+    {
+      "question_number": 12,
+      "question": "In the context of the story, what does the Pamban Bridge symbolize at the end of the narrative?",
+      "options": {
+        "A": "The danger of the sea",
+        "B": "A physical and emotional 'link' back to her roots and identity",
+        "C": "The end of the Indian railway system",
+        "D": "The technology used to catch fish"
+      },
+      "correct_answer": "B",
+      "explanation": "The bridge is a powerful metaphor for connection—connecting the traveler back to their home and connecting the island to the mainland.",
+      "difficulty": "hard",
+      "source_section": "Symbolism"
+    },
+    {
+      "question_number": 13,
+      "question": "The 'night growling' bear incident in Himachal Pradesh is an example of what literary technique?",
+      "options": {
+        "A": "Gothic horror",
+        "B": "Comic Relief",
+        "C": "Foreshadowing of a real attack",
+        "D": "Symbolism of nature's power"
+      },
+      "correct_answer": "B",
+      "explanation": "By turning a scary sound into a joke about the father's snoring, the author relieves the tension of the cold, dark setting.",
+      "difficulty": "hard",
+      "source_section": "Narrative Technique"
+    },
+    {
+      "question_number": 14,
+      "question": "Why is the 2.5-day train journey from Arunachal to Gujarat significant to the 'scale' of the story?",
+      "options": {
+        "A": "It shows that Indian trains are very slow",
+        "B": "It emphasizes the vastness and geographical breadth of India",
+        "C": "It shows that the family was lost",
+        "D": "It highlights the discomfort of travel"
+      },
+      "correct_answer": "B",
+      "explanation": "The duration of the trip quantifies the distance between the cardinal directions (East to West).",
+      "difficulty": "hard",
+      "source_section": "Analysis"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the 'irony' in Shaana's Olaikaadu beach experience?",
+      "options": {
+        "A": "She went to a beach but hated the water",
+        "B": "She wanted to dive deep (scuba) but ended up floating on the surface",
+        "C": "Her parents were the ones who were afraid to swim",
+        "D": "There were no fish in the water"
+      },
+      "correct_answer": "B",
+      "explanation": "The irony lies in her intent to explore the depths (scuba) being thwarted by something as simple as 'clothing size,' forcing her to explore from above.",
+      "difficulty": "hard",
+      "source_section": "Situational Irony"
+    },
+    {
+      "question_number": 16,
+      "question": "How does Shaana’s use of 'we' and 'our' in her postcards evolve?",
+      "options": {
+        "A": "She uses it less as she becomes more independent",
+        "B": "It reinforces the idea of the family as a cohesive unit of explorers",
+        "C": "She only uses it when she is in trouble",
+        "D": "It shows she is talking to herself"
+      },
+      "correct_answer": "B",
+      "explanation": "The journey is a collective experience, reinforcing the theme of family bonding through shared adventure.",
+      "difficulty": "hard",
+      "source_section": "Grammar/Voice"
+    },
+    {
+      "question_number": 17,
+      "question": "Which word best describes Shaana's vocabulary growth throughout her postcards?",
+      "options": {
+        "A": "Static",
+        "B": "Increasingly technical and descriptive (glacier, mangrove, plateau)",
+        "C": "Simplistic and repetitive",
+        "D": "Nonsensical"
+      },
+      "correct_answer": "B",
+      "explanation": "As she travels, she adopts the specific language of the geography she encounters.",
+      "difficulty": "hard",
+      "source_section": "Linguistic Analysis"
+    },
+    {
+      "question_number": 18,
+      "question": "The 'dark forest' in the East can be seen as a 'foil' to which other setting?",
+      "options": {
+        "A": "The bright, open salt desert of the West",
+        "B": "The snowy North",
+        "C": "The island in the South",
+        "D": "The tunnels in Goa"
+      },
+      "correct_answer": "A",
+      "explanation": "The dense, light-blocking forest of Arunachal (East) is the opposite of the expansive, sun-blinded Rann of Kutch (West).",
+      "difficulty": "hard",
+      "source_section": "Thematic Contrasts"
+    },
+    {
+      "question_number": 19,
+      "question": "Shaana’s mother’s insistence on testing her during the holiday reveals what cultural value?",
+      "options": {
+        "A": "A lack of trust in Shaana",
+        "B": "The high value placed on education and 'constant learning' in Indian households",
+        "C": "A desire to end the holiday early",
+        "D": "A obsession with grades"
+      },
+      "correct_answer": "B",
+      "explanation": "The 'surprise test' is a relatable trope showing that for many families, travel is primarily a learning opportunity.",
+      "difficulty": "hard",
+      "source_section": "Cultural Context"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the significance of 'Rameswaram' being an island in the context of the directions N, S, E, W?",
+      "options": {
+        "A": "It means the family is used to being surrounded by water",
+        "B": "It makes the cardinal directions more meaningful as they must cross water to go in any direction",
+        "C": "It makes the story feel like a fantasy",
+        "D": "It explains why they don't have a car"
+      },
+      "correct_answer": "B",
+      "explanation": "Being on the southern tip, almost every journey starts by heading North into the 'rest' of the world.",
+      "difficulty": "hard",
+      "source_section": "Geographical Context"
+    },
+    {
+      "question_number": 21,
+      "question": "The 'red panda' represents which narrative element in the Arunachal Pradesh section?",
+      "options": {
+        "A": "A real animal they played with",
+        "B": "A symbol of the elusive and rare beauty of the region",
+        "C": "A dangerous predator",
+        "D": "A myth that isn't real"
+      },
+      "correct_answer": "B",
+      "explanation": "She doesn't necessarily see it, but the *hope* of seeing it adds to the region's mystery and allure.",
+      "difficulty": "hard",
+      "source_section": "Wildlife Symbolism"
+    },
+    {
+      "question_number": 22,
+      "question": "The description of the Narmada as 'wild' water versus the 'saline' water of the Sundarbans highlights what?",
+      "options": {
+        "A": "The chemical difference between fresh water and seawater systems",
+        "B": "That Shaana is afraid of all water",
+        "C": "That the Sundarbans are more dangerous",
+        "D": "The difficulty of fishing"
+      },
+      "correct_answer": "A",
+      "explanation": "This contrasts the kinetic energy of a river with the specialized biological environment of a delta/wetland.",
+      "difficulty": "hard",
+      "source_section": "Scientific Subtext"
+    },
+    {
+      "question_number": 23,
+      "question": "Shaana's return home is not a 'failure' of her travels, but a 'Circular Narrative.' Why?",
+      "options": {
+        "A": "Because she came back to where she started",
+        "B": "Because she is now the same person as before",
+        "C": "Because the story ends exactly as it began",
+        "D": "Because the journey was a waste of time"
+      },
+      "correct_answer": "A",
+      "explanation": "A circular narrative brings the character back to the start, but they are changed by the journey they took.",
+      "difficulty": "hard",
+      "source_section": "Structure"
+    },
+    {
+      "question_number": 24,
+      "question": "In the phrase 'the wind was howling through the pines,' what type of imagery is used?",
+      "options": {
+        "A": "Gustatory",
+        "B": "Auditory and Personification",
+        "C": "Tactile",
+        "D": "Visual only"
+      },
+      "correct_answer": "B",
+      "explanation": "Howling is a sound (auditory) and gives the wind a human/animal quality (personification).",
+      "difficulty": "hard",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 25,
+      "question": "Ultimately, the postcards serve as a _____ between Shaana and her school community.",
+      "options": {
+        "A": "Barrier",
+        "B": "Bridge of shared knowledge",
+        "C": "List of demands",
+        "D": "Secret code"
+      },
+      "correct_answer": "B",
+      "explanation": "By sending postcards, she invites her friends into her experience, fulfilling the social aspect of travel.",
+      "difficulty": "hard",
+      "source_section": "Social Context"
+    }
+  ]
+}

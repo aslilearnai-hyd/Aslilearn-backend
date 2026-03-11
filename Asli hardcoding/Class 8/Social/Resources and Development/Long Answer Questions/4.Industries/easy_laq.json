@@ -1,0 +1,265 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Industries",
+  "generated_at": "2026-03-06T12:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning of industry.",
+      "answer": "Industry refers to an economic activity that involves the production of goods, extraction of resources, or the provision of services. Industries convert raw materials into finished products that people use in their daily lives.",
+      "answer_outline": [
+        "Definition of industry",
+        "Production of goods",
+        "Conversion of raw materials"
+      ],
+      "key_concepts": ["industry"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the importance of industries in economic development.",
+      "answer": "Industries contribute to economic development by producing goods, creating employment opportunities, and supporting trade and infrastructure development.",
+      "answer_outline": [
+        "Production of goods",
+        "Employment generation",
+        "Economic growth"
+      ],
+      "key_concepts": ["economic development"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the three main types of industries.",
+      "answer": "Industries are classified into primary, secondary, and tertiary sectors. Primary industries extract natural resources, secondary industries manufacture goods, and tertiary industries provide services.",
+      "answer_outline": [
+        "Primary industries",
+        "Secondary industries",
+        "Tertiary industries"
+      ],
+      "key_concepts": ["types of industries"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of raw materials in industries.",
+      "answer": "Raw materials are natural resources or basic materials used in the production of goods. These may come from agriculture, forests, animals, or minerals.",
+      "answer_outline": [
+        "Definition of raw materials",
+        "Sources of raw materials",
+        "Examples"
+      ],
+      "key_concepts": ["raw materials"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the industrial system.",
+      "answer": "An industrial system includes inputs, processes, and outputs. Inputs include raw materials, labor, and capital. Processes involve manufacturing activities, and outputs are finished goods.",
+      "answer_outline": ["Inputs", "Processes", "Outputs"],
+      "key_concepts": ["industrial system"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the factors affecting the location of industries.",
+      "answer": "Industries are located based on factors such as availability of raw materials, power supply, labor, transport, markets, and government policies.",
+      "answer_outline": [
+        "Raw materials",
+        "Power and transport",
+        "Labor and markets"
+      ],
+      "key_concepts": ["industrial location"],
+      "marks": 5,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how availability of raw materials affects industrial location.",
+      "answer": "Industries are often located near sources of raw materials to reduce transportation costs and ensure a continuous supply for production.",
+      "answer_outline": [
+        "Importance of raw materials",
+        "Cost reduction",
+        "Examples"
+      ],
+      "key_concepts": ["raw materials"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the role of transport and markets in industrial development.",
+      "answer": "Transport facilities help industries obtain raw materials and distribute finished products. Markets are important because industries need places to sell their goods.",
+      "answer_outline": [
+        "Transport importance",
+        "Market demand",
+        "Industrial growth"
+      ],
+      "key_concepts": ["transport", "market"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the classification of industries based on size.",
+      "answer": "Industries are classified as small-scale or large-scale depending on the amount of investment, labor, and machinery used in production.",
+      "answer_outline": ["Small-scale industries", "Large-scale industries"],
+      "key_concepts": ["size classification"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the classification of industries based on ownership.",
+      "answer": "Industries can be privately owned, government owned (public sector), or jointly owned by both government and private companies.",
+      "answer_outline": ["Private sector", "Public sector", "Joint sector"],
+      "key_concepts": ["ownership"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the concept of industrial regions.",
+      "answer": "Industrial regions are areas where many industries are concentrated due to availability of resources, labor, transport facilities, and markets.",
+      "answer_outline": ["Industrial clusters", "Reasons for concentration"],
+      "key_concepts": ["industrial regions"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why industries are often located near sources of power.",
+      "answer": "Industries require large amounts of energy to operate machinery and equipment. Being close to power sources helps ensure continuous production.",
+      "answer_outline": ["Need for energy", "Importance of power supply"],
+      "key_concepts": ["power"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the role of labor in industrial development.",
+      "answer": "Labor provides the workforce required to operate machines and carry out industrial processes. Skilled labor improves productivity and efficiency.",
+      "answer_outline": ["Importance of workers", "Skilled labor"],
+      "key_concepts": ["labor"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the environmental problems caused by industries.",
+      "answer": "Industrial activities can cause air, water, and land pollution due to smoke, chemicals, and waste produced during manufacturing processes.",
+      "answer_outline": ["Air pollution", "Water pollution", "Land pollution"],
+      "key_concepts": ["industrial pollution"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the causes of air pollution from industries.",
+      "answer": "Factories release smoke, gases, and harmful particles into the air during production, which leads to air pollution.",
+      "answer_outline": ["Factory emissions", "Environmental impact"],
+      "key_concepts": ["air pollution"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how industrial waste causes water pollution.",
+      "answer": "Chemical waste and untreated water from factories are often released into rivers and lakes, polluting water sources.",
+      "answer_outline": ["Industrial waste", "Water contamination"],
+      "key_concepts": ["water pollution"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the concept of sustainable industrial development.",
+      "answer": "Sustainable industrial development focuses on producing goods while reducing environmental damage through efficient resource use and pollution control.",
+      "answer_outline": ["Environmental protection", "Efficient resource use"],
+      "key_concepts": ["sustainability"],
+      "marks": 5,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of recycling in industries.",
+      "answer": "Recycling helps reduce waste, conserve natural resources, and decrease pollution caused by industrial activities.",
+      "answer_outline": ["Waste reduction", "Resource conservation"],
+      "key_concepts": ["recycling"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how industries contribute to employment generation.",
+      "answer": "Industries create jobs for workers in factories, offices, transportation, and services related to production and distribution.",
+      "answer_outline": ["Job creation", "Economic benefits"],
+      "key_concepts": ["employment"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the relationship between industries and trade.",
+      "answer": "Industries produce goods that are sold in markets locally and internationally, which promotes trade and economic development.",
+      "answer_outline": ["Production of goods", "Trade development"],
+      "key_concepts": ["trade"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the role of technology in modern industries.",
+      "answer": "Modern industries use advanced machinery, automation, and digital technology to improve efficiency and increase production.",
+      "answer_outline": ["Advanced machinery", "Automation"],
+      "key_concepts": ["technology"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the importance of infrastructure for industries.",
+      "answer": "Infrastructure such as roads, ports, electricity, and communication systems helps industries operate efficiently and transport goods easily.",
+      "answer_outline": ["Transport facilities", "Power and communication"],
+      "key_concepts": ["infrastructure"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how industries affect regional development.",
+      "answer": "Industries promote regional development by creating jobs, improving infrastructure, and encouraging economic activities in the surrounding areas.",
+      "answer_outline": ["Economic growth", "Infrastructure development"],
+      "key_concepts": ["regional development"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the role of government in industrial development.",
+      "answer": "Governments support industrial growth through policies, infrastructure development, financial support, and environmental regulations.",
+      "answer_outline": ["Industrial policies", "Government support"],
+      "key_concepts": ["government policy"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall importance of industries in modern society.",
+      "answer": "Industries play a crucial role in producing goods, creating employment, promoting trade, and improving the standard of living of people.",
+      "answer_outline": [
+        "Production of goods",
+        "Employment generation",
+        "Economic development"
+      ],
+      "key_concepts": ["industrial importance"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

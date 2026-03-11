@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 14: Constructions and Tilings",
+    "generated_at": "2026-03-05T01:25:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What geometric property is used to construct a line parallel to another?",
+                "correct_answer": "The property of equal alternate interior angles",
+                "explanation": "If a transversal intersects two lines such that alternate interior angles are equal, the lines are parallel.",
+                "source_section": "Section 14.1"
+            },
+            {
+                "question": "Which tools are primarily used for geometric constructions?",
+                "correct_answer": "A ruler (straightedge) and a compass",
+                "explanation": "A ruler is used for straight lines and a compass for circles and marking equal distances.",
+                "source_section": "Section 14.1"
+            },
+            {
+                "question": "What information is needed to construct a triangle using the SSS criterion?",
+                "correct_answer": "The lengths of all three sides",
+                "explanation": "Side-Side-Side construction requires knowing the length of every edge of the triangle.",
+                "source_section": "Section 14.2"
+            },
+            {
+                "question": "In SAS construction, where must the given angle be located?",
+                "correct_answer": "Between the two given sides",
+                "explanation": "SAS stands for Side-Angle-Side; the angle must be 'included' by the sides.",
+                "source_section": "Section 14.2"
+            },
+            {
+                "question": "What does the RHS criterion stand for in triangle construction?",
+                "correct_answer": "Right angle-Hypotenuse-Side",
+                "explanation": "This is used specifically for right-angled triangles.",
+                "source_section": "Section 14.3"
+            },
+            {
+                "question": "What is a 'tiling' or 'tessellation'?",
+                "correct_answer": "A pattern made of identical shapes that fits together without gaps or overlaps",
+                "explanation": "Tiles must cover the entire plane surface perfectly.",
+                "source_section": "Section 14.4"
+            },
+            {
+                "question": "Why can regular pentagons not tile a floor by themselves?",
+                "correct_answer": "Their interior angles do not sum to 360 degrees at a vertex",
+                "explanation": "For shapes to tile, the angles meeting at a point must total exactly 360 degrees.",
+                "source_section": "Section 14.4"
+            },
+            {
+                "question": "Which three regular polygons can create a regular tiling?",
+                "correct_answer": "Equilateral triangles, squares, and regular hexagons",
+                "explanation": "These are the only regular polygons whose interior angles are factors of 360.",
+                "source_section": "Section 14.4"
+            },
+            {
+                "question": "What is the first step in constructing a triangle with ASA given?",
+                "correct_answer": "Draw the given side length as the base",
+                "explanation": "The two angles are then constructed at either end of this base line.",
+                "source_section": "Section 14.3"
+            },
+            {
+                "question": "Where is tiling commonly seen in the real world?",
+                "correct_answer": "Floor patterns, honeycombs, and brick walls",
+                "explanation": "These are practical applications of fitting geometric shapes together.",
+                "source_section": "Applications Section"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Alternate Angle Method",
+                "content": "To draw a parallel line, make an angle at a point on the line and copy it to the point outside the line.",
+                "source_section": "Section 14.1"
+            },
+            {
+                "title": "Triangle Inequality Rule",
+                "content": "A triangle can only be constructed if the sum of any two sides is greater than the third side.",
+                "source_section": "Section 14.2"
+            },
+            {
+                "title": "Protractor vs. Compass",
+                "content": "While a protractor measures angles, a compass is preferred for 'pure' geometric constructions of standard angles.",
+                "source_section": "General Geometry"
+            },
+            {
+                "title": "Vertex Angle Sum",
+                "content": "In any tiling, the sum of angles where the corners of tiles meet must be $360^{\circ}$.",
+                "source_section": "Section 14.4"
+            },
+            {
+                "title": "Base Line Strategy",
+                "content": "Always start a construction by drawing the longest given side or the side associated with given angles.",
+                "source_section": "Section 14.2-14.3"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "A regular hexagon can tile a plane because its interior angle ($120^{\circ}$) goes into $360^{\circ}$ exactly three times.",
+                "source_section": "Section 14.4"
+            },
+            {
+                "fact": "Only one unique triangle can be drawn if SSS, SAS, ASA, or RHS criteria are met.",
+                "source_section": "Section 14.2"
+            },
+            {
+                "fact": "M.C. Escher is a famous artist known for creating complex and artistic tilings (tessellations).",
+                "source_section": "Applications Section"
+            },
+            {
+                "fact": "The 'Hypotenuse' is the longest side and is always opposite the right angle.",
+                "source_section": "Section 14.3"
+            }
+        ]
+    }
+}

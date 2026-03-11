@@ -1,0 +1,396 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Integers (Operations)",
+    "generated_at": "2026-03-05T01:08:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A certain freezing process requires that room temperature be lowered from 40°C at the rate of 5°C every hour. What will be the room temperature 10 hours after the process begins?",
+            "answer": "Initial temperature = 40°C. Rate of change = -5°C per hour. Time = 10 hours. Total change = 10 × (-5) = -50°C. Final temperature = 40 + (-50) = -10°C.",
+            "answer_outline": [
+                "Identify initial temperature",
+                "Calculate total change in temperature",
+                "Calculate final temperature"
+            ],
+            "key_concepts": [
+                "integer application",
+                "subtraction"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Use the Distributive Property to solve: (-49) × 18. Show all steps.",
+            "answer": "(-49) × 18 = (-50 + 1) × 18. By Distributive Property: (-50 × 18) + (1 × 18) = -900 + 18 = -882.",
+            "answer_outline": [
+                "Break down -49 into (-50 + 1)",
+                "Apply a × (b + c) = ab + ac",
+                "Calculate and sum the products"
+            ],
+            "key_concepts": [
+                "distributive property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate the following using suitable properties: 625 × (-35) + (-625) × 65.",
+            "answer": "625 × (-35) + 625 × (-65) = 625 × [(-35) + (-65)] = 625 × (-100) = -62,500.",
+            "answer_outline": [
+                "Factor out common integer (625)",
+                "Sum the remaining integers",
+                "Multiply for final result"
+            ],
+            "key_concepts": [
+                "distributive property",
+                "efficient calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 4,
+            "question": "In a class test containing 15 questions, 4 marks are given for every correct answer and (-2) marks are given for every incorrect answer. Gurpreet attempts all questions but only 9 of her answers are correct. What is her total score?",
+            "answer": "Marks for correct answers = 9 × 4 = 36. Number of incorrect answers = 15 - 9 = 6. Marks for incorrect answers = 6 × (-2) = -12. Total score = 36 + (-12) = 24 marks.",
+            "answer_outline": [
+                "Calculate positive marks",
+                "Calculate negative marks",
+                "Calculate total"
+            ],
+            "key_concepts": [
+                "word problem",
+                "multiplication of integers"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Verify the property a × (b + c) = (a × b) + (a × c) for a = -10, b = 5, c = -3.",
+            "answer": "LHS: -10 × (5 + (-3)) = -10 × 2 = -20. RHS: (-10 × 5) + (-10 × -3) = -50 + 30 = -20. Since LHS = RHS, the property is verified.",
+            "answer_outline": [
+                "Solve LHS",
+                "Solve RHS",
+                "Compare results"
+            ],
+            "key_concepts": [
+                "verification",
+                "distributive property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 6,
+            "question": "An elevator descends into a mine shaft at the rate of 6 m/min. If the descent starts from 10 m above the ground level, how long will it take to reach -350 m?",
+            "answer": "Starting position = 10 m. Target position = -350 m. Total distance to descend = 10 - (-350) = 360 m. Rate = 6 m/min. Time = Distance / Rate = 360 / 6 = 60 minutes or 1 hour.",
+            "answer_outline": [
+                "Find total vertical distance",
+                "Use rate to find time",
+                "Convert units if necessary"
+            ],
+            "key_concepts": [
+                "division",
+                "distance and displacement"
+            ],
+            "marks": 6,
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 7,
+            "question": "Evaluate [(-36) ÷ 12] ÷ 3 and compare it with (-36) ÷ [12 ÷ 3]. What do you conclude?",
+            "answer": "[(-36) ÷ 12] ÷ 3 = (-3) ÷ 3 = -1. (-36) ÷ [12 ÷ 3] = (-36) ÷ 4 = -9. Since -1 ≠ -9, division is not associative for integers.",
+            "answer_outline": [
+                "Perform grouped operations",
+                "Compare final values",
+                "State property conclusion"
+            ],
+            "key_concepts": [
+                "associative property",
+                "division"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.8.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the product of (-18) × (-5) × (-4) and explain the sign of the result.",
+            "answer": "(-18) × (-5) × (-4) = 90 × (-4) = -360. The sign is negative because there are an odd number (three) of negative integers in the product.",
+            "answer_outline": [
+                "Step-by-step multiplication",
+                "Rule for sign of product"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "odd number of negatives"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Suppose we represent the distance above the ground by a positive integer and that below the ground by a negative integer. If an object is at +25m and moves -40m, where is it now?",
+            "answer": "Initial position = +25. Change = -40. Final position = 25 + (-40) = -15m. The object is 15 meters below the ground.",
+            "answer_outline": [
+                "Represent positions as integers",
+                "Perform addition",
+                "Interpret result"
+            ],
+            "key_concepts": [
+                "number line",
+                "displacement"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Simplify: 100 + [(-20) × {5 - (13 - 3)}].",
+            "answer": "100 + [(-20) × {5 - 10}] = 100 + [(-20) × (-5)] = 100 + 100 = 200.",
+            "answer_outline": [
+                "Solve inner brackets first",
+                "Perform multiplication within brackets",
+                "Final addition"
+            ],
+            "key_concepts": [
+                "BODMAS",
+                "order of operations"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Can the sum of two negative integers ever be positive? Explain your answer with an example.",
+            "answer": "No. When we add two negative integers, we are moving further to the left on the number line. The sum is always a negative integer. Example: (-5) + (-2) = -7.",
+            "answer_outline": [
+                "Statement (No)",
+                "Logical explanation (number line)",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "addition",
+                "negative integers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Identify the property used: 25 × (-4) = (-4) × 25.",
+            "answer": "This is the Commutative Property of multiplication, which states that changing the order of factors does not change the product. a × b = b × a.",
+            "answer_outline": [
+                "Name the property",
+                "State the property definition"
+            ],
+            "key_concepts": [
+                "commutative property"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "A shopkeeper earns a profit of ₹1 by selling one pen and incurs a loss of 40 paise per pencil by selling pencils of the old stock. In a particular month she incurs a loss of ₹5. In this period, she sold 45 pens. How many pencils did she sell?",
+            "answer": "Profit from pens = 45 × 1 = ₹45. Total loss = -₹5. Profit/Loss from pencils = Total - Profit from pens = -5 - 45 = -₹50. Loss per pencil = 40 paise = ₹0.40. Number of pencils = 50 / 0.40 = 125 pencils.",
+            "answer_outline": [
+                "Calculate profit from pens",
+                "Identify required loss from pencils",
+                "Divide total pencil loss by unit loss"
+            ],
+            "key_concepts": [
+                "word problem",
+                "profit and loss"
+            ],
+            "marks": 6,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Is (a - b) - c = a - (b - c) for integers? Prove using a=8, b=4, c=2.",
+            "answer": "LHS: (8 - 4) - 2 = 4 - 2 = 2. RHS: 8 - (4 - 2) = 8 - 2 = 6. Since 2 ≠ 6, the property does not hold. Subtraction is not associative.",
+            "answer_outline": [
+                "Calculate LHS",
+                "Calculate RHS",
+                "Compare and conclude"
+            ],
+            "key_concepts": [
+                "associative property",
+                "subtraction"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Find an integer 'x' such that (-3) × x = 27.",
+            "answer": "x = 27 / (-3). Since the dividend is positive and divisor is negative, the quotient is negative. x = -9.",
+            "answer_outline": [
+                "Rearrange the equation",
+                "Apply division rule for signs"
+            ],
+            "key_concepts": [
+                "division",
+                "unknown value"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 16,
+            "question": "Evaluate: (-31) ÷ [(-30) + (-1)].",
+            "answer": "(-31) ÷ [(-30) + (-1)] = (-31) ÷ (-31) = 1. Division of two negative integers results in a positive quotient.",
+            "answer_outline": [
+                "Solve bracket first",
+                "Perform division"
+            ],
+            "key_concepts": [
+                "division",
+                "signs"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain with an example why zero is called the 'Additive Identity' but not the 'Multiplicative Identity'.",
+            "answer": "Zero is the additive identity because a + 0 = a (identity is preserved). For multiplication, a × 0 = 0 (identity is destroyed). 1 is the multiplicative identity because a × 1 = a.",
+            "answer_outline": [
+                "Definition of identity",
+                "Addition vs Multiplication with 0",
+                "Role of 1"
+            ],
+            "key_concepts": [
+                "identity property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Solve 725 × (-35) + (-725) × 65 using the distributive property.",
+            "answer": "725 × [(-35) + (-65)] = 725 × [-100] = -72,500.",
+            "answer_outline": [
+                "Factor out common number",
+                "Simplify sum",
+                "Final product"
+            ],
+            "key_concepts": [
+                "distributive property"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 19,
+            "question": "If we divide a negative integer by a positive integer, what will be the sign of the quotient? Prove with an example.",
+            "answer": "The quotient will be a negative integer. Example: (-10) ÷ 2 = -5. This follows the rule that unlike signs result in a negative quotient.",
+            "answer_outline": [
+                "State the rule",
+                "Provide example"
+            ],
+            "key_concepts": [
+                "division",
+                "signs"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 20,
+            "question": "A diver descends at 3 meters per second. Represent his depth after 20 seconds using an integer.",
+            "answer": "Rate = -3 m/s (descending). Time = 20 s. Position = -3 × 20 = -60. The depth is -60 meters.",
+            "answer_outline": [
+                "Assign negative sign to descent",
+                "Multiply by time",
+                "Interpret result"
+            ],
+            "key_concepts": [
+                "integers",
+                "real-world application"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Verify (-21) × [(-4) + (-6)] = [(-21) × (-4)] + [(-21) × (-6)].",
+            "answer": "LHS: (-21) × [-10] = 210. RHS: [84] + [126] = 210. LHS = RHS. Verified.",
+            "answer_outline": [
+                "Evaluate LHS",
+                "Evaluate RHS",
+                "Compare"
+            ],
+            "key_concepts": [
+                "distributive property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is (a ÷ b) not always an integer? Give an example.",
+            "answer": "Integers are not closed under division. If the dividend is not a multiple of the divisor, the result is a fraction. Example: (-5) ÷ 2 = -2.5, which is not an integer.",
+            "answer_outline": [
+                "State closure property for division",
+                "Give non-integer example"
+            ],
+            "key_concepts": [
+                "closure property",
+                "division"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.8.1"
+        },
+        {
+            "question_number": 23,
+            "question": "In a quiz, team A scored -40, 10, 0 and team B scored 10, 0, -40 in three successive rounds. Which team scored more? What property is shown here?",
+            "answer": "Team A: -40 + 10 + 0 = -30. Team B: 10 + 0 + (-40) = -30. Both teams scored the same. This illustrates the Commutative Property of addition.",
+            "answer_outline": [
+                "Sum scores for each team",
+                "Compare results",
+                "Name the property"
+            ],
+            "key_concepts": [
+                "commutative property",
+                "addition"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the product: (-1) × (-2) × (-3) × (-4) × (-5).",
+            "answer": "(-1 × -2) = 2. (2 × -3) = -6. (-6 × -4) = 24. (24 × -5) = -120. Since there are 5 (odd) negative factors, the result is negative.",
+            "answer_outline": [
+                "Perform multiplication",
+                "Apply sign rule for odd count"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "odd count of negatives"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the significance of the number '0' in the set of integers.",
+            "answer": "Zero acts as the origin on the number line, separating positive and negative integers. It is the additive identity and the result of adding any integer to its additive inverse.",
+            "answer_outline": [
+                "Role on number line",
+                "Identity property",
+                "Inverse property result"
+            ],
+            "key_concepts": [
+                "zero",
+                "integers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

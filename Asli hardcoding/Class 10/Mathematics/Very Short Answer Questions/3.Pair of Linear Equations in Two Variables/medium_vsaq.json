@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-03-01T16:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What does a solution of a pair of linear equations represent graphically?",
+            "answer": "The point of intersection of the two lines.",
+            "key_points": [
+                "graphical solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "When does a pair of linear equations have a unique solution?",
+            "answer": "When the two lines intersect at one point.",
+            "key_points": [
+                "unique solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is meant by a consistent pair of linear equations?",
+            "answer": "A pair of equations having at least one solution.",
+            "key_points": [
+                "consistent system"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is meant by an inconsistent pair of linear equations?",
+            "answer": "A pair of equations having no solution.",
+            "key_points": [
+                "inconsistent system"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What kind of lines represent infinitely many solutions?",
+            "answer": "Coincident lines.",
+            "key_points": [
+                "infinite solutions"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What does a₁/a₂ ≠ b₁/b₂ indicate about two lines?",
+            "answer": "The two lines intersect.",
+            "key_points": [
+                "ratio condition"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What does a₁/a₂ = b₁/b₂ ≠ c₁/c₂ indicate?",
+            "answer": "The two lines are parallel.",
+            "key_points": [
+                "parallel lines"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What does a₁/a₂ = b₁/b₂ = c₁/c₂ indicate?",
+            "answer": "The two lines are coincident.",
+            "key_points": [
+                "coincident lines"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which method gives approximate solutions?",
+            "answer": "Graphical method.",
+            "key_points": [
+                "graphical method"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which methods give exact solutions?",
+            "answer": "Algebraic methods.",
+            "key_points": [
+                "algebraic methods"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which method eliminates one variable by addition or subtraction?",
+            "answer": "Elimination method.",
+            "key_points": [
+                "elimination"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which method replaces one variable with another expression?",
+            "answer": "Substitution method.",
+            "key_points": [
+                "substitution"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What form is required for cross-multiplication method?",
+            "answer": "Standard form ax + by + c = 0.",
+            "key_points": [
+                "standard form"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What does the ordered pair (x, y) represent?",
+            "answer": "The solution of the pair of equations.",
+            "key_points": [
+                "ordered pair"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "How many solutions can a pair of linear equations have at most?",
+            "answer": "Infinitely many solutions.",
+            "key_points": [
+                "number of solutions"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens if two equations represent the same line?",
+            "answer": "They have infinitely many solutions.",
+            "key_points": [
+                "dependent system"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the graphical meaning of parallel lines?",
+            "answer": "They never intersect.",
+            "key_points": [
+                "parallel"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the graphical meaning of intersecting lines?",
+            "answer": "They meet at one point.",
+            "key_points": [
+                "intersection"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of system has exactly one solution?",
+            "answer": "Independent system.",
+            "key_points": [
+                "independent system"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the main advantage of algebraic methods?",
+            "answer": "They give exact solutions.",
+            "key_points": [
+                "accuracy"
+            ],
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the degree of each equation in a pair of linear equations?",
+            "answer": "One.",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the graphical method mainly used for?",
+            "answer": "To find the number of solutions.",
+            "key_points": [
+                "graphical use"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What condition ensures no solution for a pair of equations?",
+            "answer": "Parallel lines.",
+            "key_points": [
+                "no solution"
+            ],
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What does a common solution satisfy?",
+            "answer": "Both equations simultaneously.",
+            "key_points": [
+                "common solution"
+            ],
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What type of problems are often solved using linear equations?",
+            "answer": "Real-life problems involving two unknowns.",
+            "key_points": [
+                "applications"
+            ],
+            "source_section": "3.4"
+        }
+    ]
+}

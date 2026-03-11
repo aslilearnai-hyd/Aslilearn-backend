@@ -1,0 +1,208 @@
+{
+    "content_type": "Long Answer Questions",
+    "chapter": "Chapter 6: Social and Political Life – II: Understanding Media",
+    "generated_at": "2026-03-07T17:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define media and explain its different types.",
+            "answer": "Media refers to channels of communication that deliver information to the public. It includes print media (newspapers, magazines), broadcast media (radio, TV), and digital media (social media, websites, apps).",
+            "key_concepts": ["media", "print media", "broadcast media", "digital media"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the role of media in a democracy.",
+            "answer": "Media informs citizens about government policies, elections, and social issues. It acts as a watchdog, holds leaders accountable, and helps people make informed decisions, which strengthens democracy.",
+            "key_concepts": ["media role", "democracy", "accountability"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss how newspapers report news and the structure of a news article.",
+            "answer": "A news article usually starts with a headline, followed by the lead paragraph giving key facts, and then detailed information in the body. Newspapers report news objectively and include local, national, and international events.",
+            "key_concepts": ["newspaper", "news structure", "reporting"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the difference between facts and opinions in news.",
+            "answer": "Facts are statements that can be verified, such as dates, events, or numbers. Opinions are personal views or interpretations. Good media distinguishes facts from opinions to provide accurate information.",
+            "key_concepts": ["facts", "opinions", "news analysis"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the importance of verification in media.",
+            "answer": "Verification ensures that news is accurate and reliable. Journalists check facts, cross-verify sources, and confirm details before publishing, which prevents the spread of misinformation.",
+            "key_concepts": ["verification", "accuracy", "reliable news"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is fake news, and how can it be identified?",
+            "answer": "Fake news is false or misleading information presented as news. It can be identified by checking the source, verifying facts, comparing multiple reports, and looking for sensational language or images.",
+            "key_concepts": ["fake news", "verification", "critical thinking"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of social media in spreading information.",
+            "answer": "Social media allows fast sharing of news and opinions. It can inform people, mobilize communities, and influence public opinion, but it can also spread misinformation quickly if not verified.",
+            "key_concepts": ["social media", "information dissemination", "influence"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss how media can influence public opinion.",
+            "answer": "Media shapes public opinion by highlighting certain events, using persuasive language, and choosing which issues to cover. Repeated exposure to news, advertisements, and editorials can affect beliefs and decisions.",
+            "key_concepts": ["media influence", "public opinion", "persuasion"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the concept of media ethics.",
+            "answer": "Media ethics refers to principles guiding responsible reporting. It includes honesty, fairness, accuracy, avoiding sensationalism, respecting privacy, and reporting without bias.",
+            "key_concepts": ["media ethics", "responsible journalism"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe how journalists check the reliability of sources.",
+            "answer": "Journalists verify information by cross-checking with multiple credible sources, consulting experts, observing events personally, and confirming documents or evidence before reporting.",
+            "key_concepts": ["source verification", "journalistic methods"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the difference between print, broadcast, and digital media.",
+            "answer": "Print media includes newspapers and magazines. Broadcast media includes TV and radio, which reach audiences via airwaves. Digital media includes websites, apps, and social media platforms that provide interactive and fast news delivery.",
+            "key_concepts": ["media types", "communication channels"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss the importance of media literacy.",
+            "answer": "Media literacy is the ability to critically evaluate news, understand bias, and verify information. It helps people make informed decisions and prevents them from being misled by fake news or propaganda.",
+            "key_concepts": ["media literacy", "critical thinking", "informed citizenship"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how advertisements use media to influence people.",
+            "answer": "Advertisements use visual appeal, slogans, repetition, and emotional messages to influence behavior and preferences. Media platforms help ads reach large audiences quickly.",
+            "key_concepts": ["advertisements", "media influence", "persuasion"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe the steps to verify a social media post.",
+            "answer": "To verify a post: check the source, cross-reference with credible news sites, examine the date and context, look for original images or videos, and consult fact-checking websites.",
+            "key_concepts": ["verification", "fact-checking", "social media"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the role of editors in ensuring responsible reporting.",
+            "answer": "Editors review articles for accuracy, clarity, and fairness. They ensure facts are verified, avoid biased or sensational language, and maintain journalistic ethics.",
+            "key_concepts": ["editors", "journalistic responsibility"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss how media campaigns can create social awareness.",
+            "answer": "Media campaigns inform the public about social issues, promote health and education, and encourage responsible behavior. They use print, broadcast, and digital platforms to reach wide audiences.",
+            "key_concepts": ["media campaigns", "social awareness", "public engagement"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how fake news can affect society.",
+            "answer": "Fake news can create panic, spread misinformation, influence elections, damage reputations, and mislead communities. It undermines trust in media and can have social and political consequences.",
+            "key_concepts": ["fake news impact", "society"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the role of citizen journalism.",
+            "answer": "Citizen journalism involves ordinary people reporting news using phones, blogs, or social media. It helps bring attention to local issues, but requires careful verification for accuracy.",
+            "key_concepts": ["citizen journalism", "reporting", "media participation"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the concept of media framing and its effect.",
+            "answer": "Media framing is the way news is presented, highlighting certain aspects and downplaying others. It affects how people perceive events and can influence opinions and decisions.",
+            "key_concepts": ["media framing", "perception", "bias"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss the challenges faced by journalists in reporting accurately.",
+            "answer": "Journalists face challenges like time pressure, biased sources, threats to safety, censorship, and misinformation. They must maintain ethics, verify facts, and report responsibly despite difficulties.",
+            "key_concepts": ["journalistic challenges", "accuracy", "ethics"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how media educates people about rights and responsibilities.",
+            "answer": "Media informs citizens about laws, voting rights, public policies, and social responsibilities. It spreads awareness about rights and encourages participation in civic life.",
+            "key_concepts": ["media education", "rights", "civic responsibility"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Describe how online platforms can be both beneficial and risky for news.",
+            "answer": "Online platforms provide fast access to news and allow public engagement, but they also spread fake news, rumors, and unverified content quickly, which can mislead people.",
+            "key_concepts": ["online platforms", "benefits and risks", "information spread"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of multiple sources in news verification.",
+            "answer": "Using multiple sources ensures that information is accurate and reliable. Cross-verifying facts reduces bias and prevents misinformation from being accepted as true.",
+            "key_concepts": ["multiple sources", "verification", "accuracy"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss how media can promote social responsibility and ethics.",
+            "answer": "Media can promote responsible behavior by reporting issues like environmental protection, public health, and social justice. Ethical reporting encourages citizens to act responsibly and maintain social harmony.",
+            "key_concepts": ["media responsibility", "ethics", "social awareness"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is it important to study media and its impact in society?",
+            "answer": "Studying media helps us understand how information is shared, how opinions are formed, and how society is influenced. It also teaches critical thinking, responsible consumption, and awareness of misinformation.",
+            "key_concepts": ["media impact", "critical thinking", "society"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        }
+    ]
+}

@@ -1,0 +1,197 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "generated_at": "2026-03-10T23:58:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a covalent bond? Why are carbon compounds generally poor conductors of electricity?",
+            "answer": "A covalent bond is formed by the sharing of electron pairs between two atoms. Carbon compounds are poor conductors because they are formed by sharing electrons and do not have free ions or electrons to carry an electric charge.",
+            "answer_outline": [
+                "Definition of covalent bond",
+                "Explanation of electron sharing",
+                "Absence of free ions/charged particles",
+                "Conclusion on conductivity"
+            ],
+            "key_concepts": [
+                "covalent bond",
+                "electron sharing",
+                "insulators",
+                "ions"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define the term 'Catenation'. Why does carbon show this property to a maximum extent?",
+            "answer": "Catenation is the unique ability of an element to form bonds with other atoms of the same element, giving rise to large molecules. Carbon shows this because the C-C bond is very strong and stable, allowing it to form long chains and rings.",
+            "answer_outline": [
+                "Definition of catenation",
+                "Strength of Carbon-Carbon bond",
+                "Stability of long chains",
+                "Versatile nature of carbon"
+            ],
+            "key_concepts": [
+                "catenation",
+                "versatility",
+                "stable bonds",
+                "long chains"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are hydrocarbons? Distinguish between saturated and unsaturated hydrocarbons.",
+            "answer": "Compounds made up of only carbon and hydrogen are called hydrocarbons. Saturated hydrocarbons (Alkanes) have only single bonds between carbon atoms. Unsaturated hydrocarbons (Alkenes and Alkynes) contain one or more double or triple bonds between carbon atoms.",
+            "answer_outline": [
+                "Definition of hydrocarbons",
+                "Characteristics of saturated (single bonds)",
+                "Characteristics of unsaturated (multiple bonds)",
+                "Examples (Alkanes vs Alkenes/Alkynes)"
+            ],
+            "key_concepts": [
+                "hydrocarbons",
+                "saturated",
+                "unsaturated",
+                "alkanes"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a 'Homologous Series'? State any two characteristics.",
+            "answer": "A homologous series is a series of compounds in which the same functional group substitutes for hydrogen in a carbon chain. Characteristics: 1. Successive members differ by a -CH2 unit. 2. Members show similar chemical properties.",
+            "answer_outline": [
+                "Definition of homologous series",
+                "Difference in molecular formula (-CH2)",
+                "Difference in molecular mass (14u)",
+                "Similarity in chemical properties"
+            ],
+            "key_concepts": [
+                "homologous series",
+                "functional group",
+                "CH2 unit",
+                "chemical properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a functional group? Name the functional groups present in Alcohol and Carboxylic acid.",
+            "answer": "An atom or a group of atoms that decides the chemical properties of an organic compound is called a functional group. For Alcohol, the functional group is -OH (hydroxyl). For Carboxylic acid, it is -COOH (carboxyl).",
+            "answer_outline": [
+                "Definition of functional group",
+                "Identification of -OH group",
+                "Identification of -COOH group"
+            ],
+            "key_concepts": [
+                "functional group",
+                "alcohol",
+                "carboxylic acid",
+                "heteroatoms"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What are structural isomers? Draw the possible structures of butane.",
+            "answer": "Compounds with the same molecular formula but different structural arrangements (formulae) are called structural isomers. Butane (C4H10) has two: 1. n-butane (straight chain) 2. Iso-butane (branched chain).",
+            "answer_outline": [
+                "Definition of isomers",
+                "Molecular formula of butane",
+                "Straight chain structure",
+                "Branched chain structure"
+            ],
+            "key_concepts": [
+                "isomers",
+                "butane",
+                "molecular formula",
+                "branching"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why carbon is tetravalent.",
+            "answer": "Carbon has an atomic number of 6, with an electronic configuration of 2, 4. It has four valence electrons. To achieve a stable noble gas configuration, it must share these four electrons with other atoms, hence it is called tetravalent.",
+            "answer_outline": [
+                "Atomic number and configuration",
+                "Number of valence electrons",
+                "Need for sharing four electrons",
+                "Definition of tetravalency"
+            ],
+            "key_concepts": [
+                "tetravalency",
+                "valence electrons",
+                "noble gas configuration",
+                "bonding"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What happens when methane is burnt in the presence of oxygen? Write the balanced equation.",
+            "answer": "Methane burns in oxygen to produce carbon dioxide, water vapor, heat, and light. This is a combustion reaction. Equation: CH4 + 2O2 → CO2 + 2H2O + Heat and Light.",
+            "answer_outline": [
+                "Description of combustion",
+                "Identification of products (CO2 and H2O)",
+                "Balanced chemical equation",
+                "Release of energy"
+            ],
+            "key_concepts": [
+                "combustion",
+                "methane",
+                "oxidation",
+                "exothermic"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Define 'Esterification'. What is the general use of esters?",
+            "answer": "Esterification is the reaction between a carboxylic acid and an alcohol in the presence of an acid catalyst to form an ester and water. Esters are sweet-smelling substances used in making perfumes and flavoring agents.",
+            "answer_outline": [
+                "Definition of reaction",
+                "Reactants (Acid + Alcohol)",
+                "Products (Ester + Water)",
+                "Uses of esters"
+            ],
+            "key_concepts": [
+                "esterification",
+                "ethanoic acid",
+                "ethanol",
+                "perfumes"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'Saponification'? Why is it called so?",
+            "answer": "Saponification is the reaction where an ester reacts with an alkali (like NaOH) to form back the alcohol and the sodium salt of carboxylic acid. It is called saponification because this reaction is used in the preparation of soaps.",
+            "answer_outline": [
+                "Reaction of ester with base",
+                "Products of the reaction",
+                "Link to soap making",
+                "Chemical significance"
+            ],
+            "key_concepts": [
+                "saponification",
+                "soap",
+                "sodium hydroxide",
+                "ester"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        }
+    ]
+}

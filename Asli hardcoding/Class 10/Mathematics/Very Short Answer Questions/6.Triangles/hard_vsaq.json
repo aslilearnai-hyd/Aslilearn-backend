@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Triangles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh106.pdf",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If two angles of a triangle are 50° and 60°, find the third angle.",
+            "answer": "70°",
+            "key_points": [
+                "angle sum"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 2,
+            "question": "If one angle of an equilateral triangle is x°, find x.",
+            "answer": "60°",
+            "key_points": [
+                "equilateral"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 3,
+            "question": "If the base angles of an isosceles triangle are 40° each, find the vertex angle.",
+            "answer": "100°",
+            "key_points": [
+                "isosceles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 4,
+            "question": "If one angle of a right triangle is 30°, find the other acute angle.",
+            "answer": "60°",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 5,
+            "question": "If one angle of a triangle is obtuse, what can be said about the other two angles?",
+            "answer": "They are acute",
+            "key_points": [
+                "angles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 6,
+            "question": "Can a triangle have angles 90°, 45°, and 45°?",
+            "answer": "Yes",
+            "key_points": [
+                "angle sum"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 7,
+            "question": "If the angles of a triangle are in the ratio 2:3:4, what is the smallest angle?",
+            "answer": "40°",
+            "key_points": [
+                "ratio"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 8,
+            "question": "If the angles of a triangle are in the ratio 1:1:1, what type of triangle is it?",
+            "answer": "Equilateral triangle",
+            "key_points": [
+                "classification"
+            ],
+            "source_section": "Types"
+        },
+        {
+            "question_number": 9,
+            "question": "Where do the medians of a triangle intersect?",
+            "answer": "At the centroid",
+            "key_points": [
+                "centroid"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 10,
+            "question": "Where do the perpendicular bisectors of a triangle intersect?",
+            "answer": "At the circumcentre",
+            "key_points": [
+                "circumcentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 11,
+            "question": "Where do the angle bisectors of a triangle intersect?",
+            "answer": "At the incentre",
+            "key_points": [
+                "incentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 12,
+            "question": "Where do the altitudes of a triangle intersect?",
+            "answer": "At the orthocentre",
+            "key_points": [
+                "orthocentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 13,
+            "question": "Is the centroid always inside the triangle?",
+            "answer": "Yes",
+            "key_points": [
+                "centroid"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 14,
+            "question": "Is the orthocentre always inside the triangle?",
+            "answer": "No",
+            "key_points": [
+                "orthocentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 15,
+            "question": "Is the incentre always inside the triangle?",
+            "answer": "Yes",
+            "key_points": [
+                "incentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 16,
+            "question": "Is the circumcentre always inside the triangle?",
+            "answer": "No",
+            "key_points": [
+                "circumcentre"
+            ],
+            "source_section": "Lines"
+        },
+        {
+            "question_number": 17,
+            "question": "If a triangle has all sides equal, what can be said about its angles?",
+            "answer": "All angles are equal",
+            "key_points": [
+                "equilateral"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 18,
+            "question": "If a triangle has two equal sides, what can be said about the opposite angles?",
+            "answer": "They are equal",
+            "key_points": [
+                "isosceles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 19,
+            "question": "If one side of a triangle is longest, what can be said about the opposite angle?",
+            "answer": "It is the largest angle",
+            "key_points": [
+                "sides and angles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 20,
+            "question": "If one angle of a triangle is smallest, what can be said about the opposite side?",
+            "answer": "It is the shortest side",
+            "key_points": [
+                "sides and angles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 21,
+            "question": "Can a triangle be formed with sides 2 cm, 3 cm, and 6 cm?",
+            "answer": "No",
+            "key_points": [
+                "triangle inequality"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 22,
+            "question": "What condition must be satisfied to form a triangle?",
+            "answer": "Sum of any two sides must be greater than the third side",
+            "key_points": [
+                "triangle inequality"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the name of a triangle with sides in the ratio 1:1:√2?",
+            "answer": "Isosceles right triangle",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Types"
+        },
+        {
+            "question_number": 24,
+            "question": "If all angles of a triangle are less than 90°, what type of triangle is it?",
+            "answer": "Acute-angled triangle",
+            "key_points": [
+                "acute"
+            ],
+            "source_section": "Types"
+        },
+        {
+            "question_number": 25,
+            "question": "If a triangle has one angle greater than 90°, what type of triangle is it?",
+            "answer": "Obtuse-angled triangle",
+            "key_points": [
+                "obtuse"
+            ],
+            "source_section": "Types"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Arithmetic Progressions",
+    "difficulty": "Easy",
+    "source_pdf": "jemh105.pdf",
+    "short_notes": {
+        "key_points": [
+            "An arithmetic progression (AP) is a sequence of numbers with a constant difference",
+            "The constant difference between consecutive terms is called the common difference",
+            "An AP can be finite or infinite",
+            "An AP can be increasing, decreasing, or constant",
+            "Arithmetic progressions are used to study number patterns"
+        ],
+        "examples": [
+            "2, 5, 8, 11, …",
+            "10, 7, 4, 1, …",
+            "5, 5, 5, 5, …"
+        ],
+        "formulas": [
+            "First term → a",
+            "Common difference → d = a₂ − a₁",
+            "nth term → aₙ = a + (n − 1)d"
+        ],
+        "exam_tips": [
+            "Check if differences are equal to confirm an AP",
+            "Positive d gives increasing AP",
+            "Negative d gives decreasing AP",
+            "If d = 0, AP is constant"
+        ]
+    }
+}

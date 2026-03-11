@@ -1,0 +1,27 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Areas Related to Circles",
+    "difficulty": "Easy",
+    "source_pdf": "jemh111.pdf",
+    "short_notes": {
+        "key_points": [
+            "Area of a circle depends on its radius",
+            "Sector is a part of a circle enclosed by two radii and an arc",
+            "Semicircle is half of a circle"
+        ],
+        "examples": [
+            "Sector of 90°",
+            "Semicircle area problems"
+        ],
+        "formulas": [
+            "Area of circle = πr²",
+            "Area of sector = (θ/360) × πr²"
+        ],
+        "exam_tips": [
+            "Convert angles correctly",
+            "Use π value consistently",
+            "Write units properly"
+        ]
+    }
+}

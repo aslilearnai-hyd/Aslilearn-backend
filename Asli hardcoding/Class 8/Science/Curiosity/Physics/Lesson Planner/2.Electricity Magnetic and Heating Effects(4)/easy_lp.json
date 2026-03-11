@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter_name": "Electricity: Magnetic and Heating Effects",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the concept of electric current",
+    "Identify parts of an electric circuit",
+    "Learn the heating effect of electric current",
+    "Understand the magnetic effect of electric current",
+    "Know the working of an electromagnet",
+    "Recognize applications of electromagnets"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Electricity",
+      "topics_covered": [
+        "Meaning of electricity",
+        "Electric current",
+        "Sources of electricity"
+      ],
+      "teaching_strategy": [
+        "Question-answer method",
+        "Daily life examples",
+        "Board explanation"
+      ],
+      "student_activities": [
+        "List electrical devices used at home",
+        "Discuss how electricity helps in daily life"
+      ],
+      "assessment": ["Oral questioning", "Quick MCQ activity"]
+    },
+    {
+      "period": 2,
+      "title": "Electric Circuit",
+      "topics_covered": [
+        "Definition of electric circuit",
+        "Components of a circuit",
+        "Open and closed circuits"
+      ],
+      "teaching_strategy": [
+        "Diagram explanation",
+        "Simple circuit demonstration"
+      ],
+      "student_activities": [
+        "Draw a simple circuit diagram",
+        "Identify circuit components"
+      ],
+      "assessment": ["Notebook checking", "Short written questions"]
+    },
+    {
+      "period": 3,
+      "title": "Heating Effect of Electric Current",
+      "topics_covered": [
+        "Heating effect of current",
+        "Examples of heating appliances",
+        "Uses in daily life"
+      ],
+      "teaching_strategy": [
+        "Demonstration of heating effect",
+        "Real-life examples"
+      ],
+      "student_activities": [
+        "List appliances using heating effect",
+        "Explain their uses"
+      ],
+      "assessment": ["Class discussion", "Short answer questions"]
+    },
+    {
+      "period": 4,
+      "title": "Electric Fuse and Safety",
+      "topics_covered": [
+        "Meaning of electric fuse",
+        "Purpose of fuse",
+        "Importance of electrical safety"
+      ],
+      "teaching_strategy": [
+        "Explanation using diagrams",
+        "Discussion of safety rules"
+      ],
+      "student_activities": [
+        "List electrical safety precautions",
+        "Identify fuse in household circuit diagram"
+      ],
+      "assessment": ["Oral questions", "Worksheet activity"]
+    },
+    {
+      "period": 5,
+      "title": "Magnetic Effect of Electric Current",
+      "topics_covered": [
+        "Magnetic effect of current",
+        "Current carrying wire and magnetic field"
+      ],
+      "teaching_strategy": ["Compass demonstration", "Concept explanation"],
+      "student_activities": [
+        "Observe compass deflection near wire",
+        "Record observations"
+      ],
+      "assessment": ["Observation-based questions"]
+    },
+    {
+      "period": 6,
+      "title": "Electromagnets and Chapter Revision",
+      "topics_covered": [
+        "Electromagnet",
+        "Uses of electromagnets",
+        "Revision of chapter concepts"
+      ],
+      "teaching_strategy": [
+        "Demonstration using nail and wire",
+        "Recap using questions"
+      ],
+      "student_activities": [
+        "Make a simple electromagnet",
+        "Participate in revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Battery",
+    "Bulb and wires",
+    "Compass needle",
+    "Iron nail and copper wire"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Observation activities",
+    "Class participation"
+  ],
+  "teacher_tip": "Use demonstrations such as a simple circuit and electromagnet experiment to make the concepts more engaging and easier to understand."
+}

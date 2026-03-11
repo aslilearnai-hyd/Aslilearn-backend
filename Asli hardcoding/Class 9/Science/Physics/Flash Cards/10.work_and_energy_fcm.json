@@ -1,0 +1,106 @@
+{
+  "content_type": "Concept Mastery Helper & Flashcard Maker",
+  "section": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T21:45:00",
+  "concepts": [
+    {
+      "concept_name": "Definition of Work",
+      "difficulty": "easy",
+      "lesson": "Work is said to be done when a force is applied on an object and the object is displaced in the direction of the force. If there is no displacement, no work is done.",
+      "real_example": "Pushing a box across the floor: the force you apply moves the box, so work is done.",
+      "key_points": [
+        "Work requires a force and displacement.",
+        "Displacement must be in the direction of force.",
+        "No displacement means no work."
+      ],
+      "source_section": "10.1 Work"
+    },
+    {
+      "concept_name": "Work Formula",
+      "difficulty": "medium",
+      "lesson": "The work done by a constant force is calculated as W = F × d × cosθ, where W is work, F is the magnitude of force, d is displacement, and θ is the angle between force and displacement.",
+      "real_example": "Pushing a lawn mower with a 50 N force over 10 m at an angle of 60°: Work = 50 × 10 × cos60° = 250 J.",
+      "key_points": [
+        "Unit of work is joule (J).",
+        "Work depends on the component of force in direction of displacement.",
+        "If θ = 90°, work done is zero."
+      ],
+      "source_section": "10.2 Calculation of Work"
+    },
+    {
+      "concept_name": "Power",
+      "difficulty": "medium",
+      "lesson": "Power is the rate at which work is done. It is given by P = W / t, where W is work done and t is time taken.",
+      "real_example": "If 200 J of work is done in 4 seconds, the power is P = 200 / 4 = 50 W.",
+      "key_points": [
+        "Unit of power is watt (W).",
+        "1 W = 1 J/s.",
+        "Higher power means work is done faster."
+      ],
+      "source_section": "10.3 Power"
+    },
+    {
+      "concept_name": "Kinetic and Potential Energy",
+      "difficulty": "easy",
+      "lesson": "Kinetic energy (KE) is the energy possessed by a body due to its motion: KE = 1/2 mv². Potential energy (PE) is the energy possessed by a body due to its position or configuration: PE = mgh.",
+      "real_example": "A moving car has kinetic energy. A stretched spring has potential energy.",
+      "key_points": [
+        "KE depends on mass and speed.",
+        "PE depends on mass, gravity, and height.",
+        "Both are measured in joules (J)."
+      ],
+      "source_section": "10.4 Kinetic and Potential Energy"
+    },
+    {
+      "concept_name": "Work-Energy Theorem",
+      "difficulty": "hard",
+      "lesson": "The work done on an object is equal to the change in its kinetic energy: W = ΔKE = KE(final) - KE(initial). This theorem connects work and motion quantitatively.",
+      "real_example": "If a 2 kg object accelerates from 3 m/s to 5 m/s, ΔKE = 0.5 × 2 × (25 - 9) = 16 J, so work done = 16 J.",
+      "key_points": [
+        "Work can change the kinetic energy of an object.",
+        "Applies to moving bodies under net force.",
+        "Unit is joule (J)."
+      ],
+      "source_section": "10.5 Work-Energy Theorem"
+    },
+    {
+      "concept_name": "Conservation of Energy",
+      "difficulty": "hard",
+      "lesson": "Energy cannot be created or destroyed, only transformed from one form to another. The total mechanical energy (sum of KE and PE) of an isolated system remains constant.",
+      "real_example": "A pendulum converts PE at highest point to KE at lowest point. Total energy remains constant (ignoring friction).",
+      "key_points": [
+        "Total energy = KE + PE.",
+        "Energy transformations occur in isolated systems.",
+        "Mechanical energy is conserved if no external work is done."
+      ],
+      "source_section": "10.6 Conservation of Energy"
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "What are the conditions for work to be done?",
+      "answer": "A force must be applied and the object must be displaced in the direction of the force.",
+      "explanation": "Without displacement or if the force is perpendicular to motion, no work is done."
+    },
+    {
+      "question": "What is the formula for work when force is applied at an angle?",
+      "answer": "W = F × d × cosθ",
+      "explanation": "The angle θ is measured between force and displacement; cosθ accounts for the component of force along displacement."
+    },
+    {
+      "question": "What is the unit of power?",
+      "answer": "Watt (W)",
+      "explanation": "1 Watt = 1 Joule of work done per second."
+    },
+    {
+      "question": "What is the kinetic energy of a 3 kg object moving at 4 m/s?",
+      "answer": "KE = 1/2 × 3 × 4² = 24 J",
+      "explanation": "KE = 1/2 mv²; substitute m = 3 kg and v = 4 m/s."
+    },
+    {
+      "question": "State the law of conservation of energy.",
+      "answer": "Energy cannot be created or destroyed, only transformed from one form to another.",
+      "explanation": "In a closed system, total mechanical energy remains constant, though it can change between KE and PE."
+    }
+  ]
+}

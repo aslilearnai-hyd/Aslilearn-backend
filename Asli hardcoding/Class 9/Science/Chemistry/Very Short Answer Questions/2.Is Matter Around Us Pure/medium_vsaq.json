@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 2: Is Matter Around Us Pure",
+    "generated_at": "2026-03-06T19:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How is a 'sol' different from a 'gel'?",
+            "answer": "A sol is a colloid where a solid is dispersed in a liquid (e.g., milk of magnesia), whereas a gel is a liquid dispersed in a solid (e.g., jelly, cheese).",
+            "key_points": ["sol", "gel", "dispersed phase", "dispersion medium"],
+            "source_section": "Section 2.2.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is a mixture of water and alcohol separated by distillation rather than using a separating funnel?",
+            "answer": "Water and alcohol are miscible liquids; a separating funnel can only separate immiscible liquids that form distinct layers.",
+            "key_points": ["miscible", "distillation", "separating funnel"],
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the specific condition required to use 'Fractional Distillation' over simple distillation?",
+            "answer": "Fractional distillation is used when the difference in boiling points of the miscible liquids is less than 25 K.",
+            "key_points": ["fractional distillation", "boiling point difference", "25 K"],
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 4,
+            "question": "Which physical property of constituents is utilized in the process of centrifugation?",
+            "answer": "It utilizes the difference in density; denser particles are forced to the bottom and lighter particles stay at the top when spun rapidly.",
+            "key_points": ["density", "centrifugation", "spinning"],
+            "source_section": "Section 2.3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is 'Crystallization' considered a better technique than 'Evaporation' for obtaining pure solids?",
+            "answer": "Crystallization prevents the decomposition or charring of solids that occurs during heating to dryness and removes impurities that may remain in solution.",
+            "key_points": ["purification", "decomposition", "impurities"],
+            "source_section": "Section 2.3.8"
+        },
+        {
+            "question_number": 6,
+            "question": "Define 'Aerosol' and provide two distinct examples.",
+            "answer": "An aerosol is a colloid where a liquid or solid is dispersed in a gas. Examples include fog (liquid in gas) and smoke (solid in gas).",
+            "key_points": ["aerosol", "fog", "smoke"],
+            "source_section": "Table 2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What happens to the solubility of a gas in a liquid with an increase in temperature?",
+            "answer": "The solubility of a gas in a liquid generally decreases with an increase in temperature.",
+            "key_points": ["solubility", "gas", "temperature"],
+            "source_section": "Conceptual/HOTS"
+        },
+        {
+            "question_number": 8,
+            "question": "How can you differentiate between a true solution and a colloid using only a flashlight?",
+            "answer": "By passing a beam of light through them; the colloid will show the Tyndall effect (visible light path), whereas the true solution will not.",
+            "key_points": ["Tyndall effect", "true solution", "colloid"],
+            "source_section": "Section 2.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Classify the following as chemical or physical changes: (a) Burning of a candle, (b) Melting of ice.",
+            "answer": "(a) Burning is both physical (melting wax) and chemical (burning wick/wax); (b) Melting is a physical change.",
+            "key_points": ["burning", "melting", "chemical change", "physical change"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the concentration of a solution containing 40g of salt in 320g of water in terms of mass-by-mass percentage?",
+            "answer": "Mass % = (40 / (40+320)) * 100 = (40 / 360) * 100 = 11.1%.",
+            "key_points": ["mass percentage", "concentration calculation"],
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is 'Tincture of Iodine' considered a solution?",
+            "answer": "It is a homogeneous mixture where iodine (solute) is completely dissolved in alcohol (solvent).",
+            "key_points": ["iodine", "alcohol", "homogeneous"],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "State one property of a suspension that makes it unstable.",
+            "answer": "Solute particles in a suspension settle down when the mixture is left undisturbed for some time.",
+            "key_points": ["unstable", "settling", "suspension"],
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which gas is obtained first during the fractional distillation of air and why?",
+            "answer": "Nitrogen is obtained first because it has the lowest boiling point (-196°C) among the major components of air.",
+            "key_points": ["nitrogen", "boiling point", "fractional distillation"],
+            "source_section": "Section 2.3.7"
+        },
+        {
+            "question_number": 14,
+            "question": "Define 'Metalloids' and give two examples.",
+            "answer": "Metalloids are elements that have intermediate properties between those of metals and non-metals. Examples: Boron, Silicon.",
+            "key_points": ["metalloids", "boron", "silicon"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "How do we separate a mixture of Ammonium Chloride and Common Salt?",
+            "answer": "By sublimation, as ammonium chloride changes directly from solid to gas upon heating, leaving the salt behind.",
+            "key_points": ["sublimation", "ammonium chloride", "salt"],
+            "source_section": "Section 2.3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is 'Emulsion'? Provide one daily life example.",
+            "answer": "An emulsion is a colloid where a liquid is dispersed in another liquid. Example: Milk or face cream.",
+            "key_points": ["emulsion", "liquid in liquid", "milk"],
+            "source_section": "Table 2.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Differentiate between a 'Compound' and a 'Mixture' based on composition.",
+            "answer": "A compound has a fixed composition by mass, whereas a mixture can have a variable composition.",
+            "key_points": ["fixed composition", "variable composition"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Is blood a homogeneous or heterogeneous mixture? Explain.",
+            "answer": "Blood is a heterogeneous mixture (colloid) because its components (cells, plasma) are not uniformly mixed at a microscopic level.",
+            "key_points": ["blood", "heterogeneous", "colloid"],
+            "source_section": "Section 2.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are alloys considered mixtures despite having a uniform composition?",
+            "answer": "They show the properties of their constituents and can have variable compositions, even though they cannot be separated by physical methods.",
+            "key_points": ["alloys", "variable composition", "constituents"],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the disperse phase and dispersion medium in 'Cheese'?",
+            "answer": "Disperse phase: Liquid; Dispersion medium: Solid.",
+            "key_points": ["gel", "cheese", "solid", "liquid"],
+            "source_section": "Table 2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how chromatography is used in forensic science.",
+            "answer": "It is used to separate and identify drugs, poisons, or pigments from blood or urine samples.",
+            "key_points": ["separation", "solubility", "forensics"],
+            "source_section": "Section 2.3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Which chemical properties of metals make them different from non-metals?",
+            "answer": "Metals are usually malleable, ductile, and good conductors of heat and electricity, while non-metals generally lack these properties.",
+            "key_points": ["malleability", "conductivity", "ductility"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What happens when a saturated solution is cooled?",
+            "answer": "Upon cooling, some of the dissolved solute will precipitate out as crystals because solubility decreases with a drop in temperature.",
+            "key_points": ["cooling", "precipitation", "solubility"],
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Name a non-metal that is liquid at room temperature.",
+            "answer": "Bromine.",
+            "key_points": ["liquid non-metal", "bromine"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do the constituents of a compound lose their original properties?",
+            "answer": "Because they are chemically combined to form a new substance with entirely different chemical and physical properties.",
+            "key_points": ["chemical combination", "new substance", "properties"],
+            "source_section": "Section 2.5"
+        }
+    ]
+}

@@ -1,0 +1,194 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Metals and Non-Metals",
+    "generated_at": "2026-03-10T23:55:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A metal 'M' is found in nature as its sulfide ore 'MS'. It is used in galvanization. Identify 'M' and explain the steps to extract it from its ore with chemical equations.",
+            "answer": "Metal 'M' is Zinc (Zn). Steps: 1. Roasting: $2ZnS + 3O_2 \rightarrow 2ZnO + 2SO_2$. 2. Reduction: $ZnO + C \rightarrow Zn + CO$. Zinc oxide is reduced using carbon (coke) because zinc is moderately reactive and cannot be reduced by heating alone.",
+            "answer_outline": [
+                "Identification of Zinc based on galvanization",
+                "Conversion of sulfide ore to oxide (Roasting)",
+                "Reduction of metal oxide using Carbon",
+                "Explanation of why Carbon is used"
+            ],
+            "key_concepts": [
+                "zinc",
+                "roasting",
+                "reduction",
+                "galvanization"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the 'Thermit Process'. Why is it used for joining railway tracks instead of normal welding? Write the chemical equation.",
+            "answer": "The Thermit process involves the reaction of iron(III) oxide with aluminium powder. It is highly exothermic, and the heat evolved is so great that the iron produced is in a molten state. This molten iron flows into the cracks of railway tracks to join them. Equation: $Fe_2O_3(s) + 2Al(s) \rightarrow 2Fe(l) + Al_2O_3(s) + Heat$.",
+            "answer_outline": [
+                "Definition of Thermit reaction",
+                "Explanation of exothermic nature",
+                "Role of molten iron in joining tracks",
+                "Balanced chemical equation"
+            ],
+            "key_concepts": [
+                "thermit process",
+                "exothermic",
+                "displacement",
+                "molten iron"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Give reasons for the following: (i) Aluminium is a highly reactive metal, yet it is used to make utensils for cooking. (ii) Gold and Silver are used to make jewelry. (iii) Carbon cannot be used to reduce the oxides of Sodium or Magnesium.",
+            "answer": "(i) Aluminium reacts with oxygen to form a very stable, protective layer of $Al_2O_3$ that prevents further corrosion. (ii) Gold and Silver are least reactive (noble metals), lustrous, and do not tarnish easily. (iii) Sodium and Magnesium have a higher affinity for oxygen than carbon; they are highly reactive and extracted via electrolytic reduction.",
+            "answer_outline": [
+                "Protective oxide layer on Al",
+                "Reactivity and lustre of noble metals",
+                "Affinity for oxygen vs Carbon reduction"
+            ],
+            "key_concepts": [
+                "corrosion resistance",
+                "noble metals",
+                "chemical affinity",
+                "reduction"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.2 & 3.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the process of electrolytic reduction of molten Sodium Chloride. Why can't sodium be obtained by electrolysis of its aqueous solution?",
+            "answer": "During electrolysis of molten NaCl, Sodium is deposited at the cathode ($Na^+ + e^- \rightarrow Na$) and Chlorine is evolved at the anode ($2Cl^- \rightarrow Cl_2 + 2e^-$). Sodium cannot be obtained from an aqueous solution because it is more reactive than hydrogen; hydrogen gas would be liberated at the cathode instead of sodium.",
+            "answer_outline": [
+                "Setup for molten NaCl electrolysis",
+                "Cathode and Anode reactions",
+                "Comparison of reactivity (Na vs H)",
+                "Explanation of why aqueous solution fails"
+            ],
+            "key_concepts": [
+                "electrolytic reduction",
+                "molten salt",
+                "reactivity series",
+                "hydrogen evolution"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "What is 'Anode Mud'? Explain its formation during the electrolytic refining of copper.",
+            "answer": "In electrolytic refining, the impure copper anode contains soluble and insoluble impurities. As the anode dissolves, soluble impurities go into the electrolyte, while insoluble impurities (like gold, silver, and platinum) settle down below the anode at the bottom of the tank. This collection is called anode mud.",
+            "answer_outline": [
+                "Definition of anode mud",
+                "Context of electrolytic refining",
+                "Nature of impurities (soluble vs insoluble)",
+                "Economic significance (presence of noble metals)"
+            ],
+            "key_concepts": [
+                "anode mud",
+                "electrolytic refining",
+                "impurities",
+                "noble metals"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.4.6"
+        },
+        {
+            "question_number": 6,
+            "question": "A non-metal 'X' exists in different forms 'Y' and 'Z'. 'Y' is the hardest natural substance known, while 'Z' is a good conductor of electricity. Identify X, Y, and Z. What are these forms called?",
+            "answer": "'X' is Carbon. 'Y' is Diamond (hardest substance). 'Z' is Graphite (conductor). These different forms of the same element are called 'Allotropes'.",
+            "answer_outline": [
+                "Identify non-metal X",
+                "Identify allotrope Y (Diamond)",
+                "Identify allotrope Z (Graphite)",
+                "Define the term 'Allotropy'"
+            ],
+            "key_concepts": [
+                "carbon",
+                "diamond",
+                "graphite",
+                "allotropes"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the formation of Sodium Oxide ($Na_2O$) using electron dot structures. What are the ions present in this compound?",
+            "answer": "Sodium ($2, 8, 1$) loses one electron to form $Na^+$. Oxygen ($2, 6$) needs two electrons to complete its octet. Therefore, two Sodium atoms transfer one electron each to one Oxygen atom. The ions present are two Sodium cations ($Na^+$) and one Oxide anion ($O^{2-}$).",
+            "answer_outline": [
+                "Electronic configuration of Na and O",
+                "Electron transfer process",
+                "Dot structure representation",
+                "Identification of ions"
+            ],
+            "key_concepts": [
+                "electron dot structure",
+                "ionic bond",
+                "valence",
+                "octet rule"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is the reaction of Iron(III) oxide with Aluminium called a displacement reaction as well as a redox reaction?",
+            "answer": "It is a displacement reaction because Aluminium, being more reactive, displaces Iron from its oxide. It is a redox reaction because Aluminium is oxidized (gains oxygen to become $Al_2O_3$) and Iron(III) oxide is reduced (loses oxygen to become $Fe$).",
+            "answer_outline": [
+                "Reason for displacement classification",
+                "Reason for redox classification",
+                "Identification of oxidized/reduced species"
+            ],
+            "key_concepts": [
+                "displacement",
+                "redox",
+                "oxidation",
+                "reduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How does the method of extraction of a metal depend on its position in the reactivity series? Summarize for high, medium, and low reactivity metals.",
+            "answer": "1. High reactivity (Na, Ca, Mg, Al): Extracted by electrolysis of their molten chlorides/oxides. 2. Medium reactivity (Zn, Fe, Pb): Found as sulfides/carbonates; converted to oxides and reduced using Carbon. 3. Low reactivity (Cu, Ag, Hg): Found as sulfides; converted to oxides and reduced by heating alone.",
+            "answer_outline": [
+                "Electrolysis for highly reactive metals",
+                "Carbon reduction for moderately reactive metals",
+                "Heating alone for lowly reactive metals"
+            ],
+            "key_concepts": [
+                "reactivity series",
+                "electrolysis",
+                "reduction",
+                "metallurgy"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'Corrosion' of silver and copper? Write the names and colors of the compounds formed on their surfaces when exposed to air.",
+            "answer": "Silver corrosion: Silver reacts with $H_2S$ in the air to form Silver Sulphide ($Ag_2S$), which is black. Copper corrosion: Copper reacts with moist $CO_2$ to form basic Copper Carbonate ($CuCO_3 \cdot Cu(OH)_2$), which is green.",
+            "answer_outline": [
+                "Silver: Reactant, Compound, and Color",
+                "Copper: Reactant, Compound, and Color",
+                "Conditions required (moist air/pollutants)"
+            ],
+            "key_concepts": [
+                "tarnishing",
+                "silver sulphide",
+                "basic copper carbonate",
+                "corrosion"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

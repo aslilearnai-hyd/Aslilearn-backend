@@ -1,0 +1,243 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-05T19:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define force and explain its role in changing the motion of objects.",
+      "answer": "Force is a push or pull acting on an object. It can change the state of motion of an object by starting, stopping, speeding up or changing its direction.",
+      "answer_outline": ["Definition of force", "Effect on motion"],
+      "key_concepts": ["force", "motion"],
+      "marks": 4,
+      "source_section": "Introduction to Forces"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the different effects of force with suitable examples.",
+      "answer": "Force can start motion, stop motion, change the speed of motion, change direction of motion or change the shape of an object.",
+      "answer_outline": [
+        "Start motion",
+        "Stop motion",
+        "Change speed",
+        "Change direction",
+        "Change shape"
+      ],
+      "key_concepts": ["effects of force"],
+      "marks": 5,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 3,
+      "question": "Differentiate between contact forces and non-contact forces with examples.",
+      "answer": "Contact forces require physical contact between objects, such as friction and muscular force. Non-contact forces act without physical contact, such as gravitational and magnetic forces.",
+      "answer_outline": [
+        "Definition of contact forces",
+        "Definition of non-contact forces",
+        "Examples"
+      ],
+      "key_concepts": ["contact forces", "non-contact forces"],
+      "marks": 5,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain muscular force and give examples from daily life.",
+      "answer": "Muscular force is the force exerted by muscles of humans or animals. Examples include lifting objects, pulling a cart and kicking a football.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["muscular force"],
+      "marks": 4,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain friction and describe how it affects motion.",
+      "answer": "Friction is a force that opposes the motion of objects when they move over a surface. It slows down moving objects and can eventually stop them.",
+      "answer_outline": ["Definition", "Opposes motion", "Effect on movement"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe two advantages and two disadvantages of friction.",
+      "answer": "Friction helps us walk and allows vehicles to stop using brakes. However, it also causes wear and tear of machine parts and wastes energy as heat.",
+      "answer_outline": ["Advantages", "Disadvantages"],
+      "key_concepts": ["friction"],
+      "marks": 5,
+      "source_section": "Uses of Friction"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain gravitational force and its importance.",
+      "answer": "Gravitational force is the force by which the Earth attracts objects towards its center. It keeps objects on the ground and causes things to fall.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["gravity"],
+      "marks": 4,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain why objects fall towards the Earth when dropped.",
+      "answer": "Objects fall towards the Earth because the Earth's gravitational force pulls them downward.",
+      "answer_outline": ["Gravitational attraction"],
+      "key_concepts": ["gravity"],
+      "marks": 4,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain magnetic force and give examples.",
+      "answer": "Magnetic force is the force exerted by magnets that attract or repel magnetic materials such as iron. Magnets are used in devices like compasses.",
+      "answer_outline": ["Magnetic attraction", "Example"],
+      "key_concepts": ["magnetic force"],
+      "marks": 4,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe how friction depends on the nature of surfaces.",
+      "answer": "Friction is greater on rough surfaces because they have more irregularities that oppose motion. Smooth surfaces produce less friction.",
+      "answer_outline": ["Rough surfaces", "Smooth surfaces"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how force can change the direction of motion with an example.",
+      "answer": "Force applied to a moving object can change its direction. For example, hitting a moving ball with a bat changes its direction.",
+      "answer_outline": ["Force applied", "Direction change"],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why friction is necessary for vehicles to move.",
+      "answer": "Friction between the tyres and the road allows vehicles to move forward without slipping.",
+      "answer_outline": ["Tyre-road friction"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Uses of Friction"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why lubricants are used in machines.",
+      "answer": "Lubricants reduce friction between moving parts of machines and help them operate smoothly.",
+      "answer_outline": ["Reduce friction", "Smooth motion"],
+      "key_concepts": ["friction reduction"],
+      "marks": 4,
+      "source_section": "Reducing Friction"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how friction produces heat.",
+      "answer": "When two surfaces rub against each other, friction converts some mechanical energy into heat energy.",
+      "answer_outline": ["Rubbing surfaces", "Heat production"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why shoes have rough soles.",
+      "answer": "Shoes have rough soles to increase friction with the ground and prevent slipping.",
+      "answer_outline": ["Increase friction"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Uses of Friction"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how magnetic force can act without contact.",
+      "answer": "Magnetic force can attract or repel objects without touching them because magnetic fields act through space.",
+      "answer_outline": ["Magnetic field", "Force without contact"],
+      "key_concepts": ["magnetic force"],
+      "marks": 4,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why astronauts appear weightless in space.",
+      "answer": "Astronauts appear weightless because they are in continuous free fall around the Earth while orbiting.",
+      "answer_outline": ["Free fall", "Orbit"],
+      "key_concepts": ["gravity"],
+      "marks": 5,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how force can change the speed of an object.",
+      "answer": "Applying force in the direction of motion can increase speed, while force applied opposite to motion can reduce speed.",
+      "answer_outline": ["Increase speed", "Decrease speed"],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of studying forces in science.",
+      "answer": "Studying forces helps us understand motion, design machines and explain many natural phenomena.",
+      "answer_outline": ["Understanding motion", "Applications"],
+      "key_concepts": ["force"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how force acts in sports activities.",
+      "answer": "Forces act when players kick, throw, hit or catch balls during sports activities.",
+      "answer_outline": ["Examples in sports"],
+      "key_concepts": ["force"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why heavy objects require more force to move.",
+      "answer": "Heavy objects have greater mass and require more force to overcome friction and start moving.",
+      "answer_outline": ["Mass", "Force needed"],
+      "key_concepts": ["force", "motion"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why magnets attract iron objects but not wooden objects.",
+      "answer": "Magnets attract iron because iron is a magnetic material, while wood does not respond to magnetic fields.",
+      "answer_outline": ["Magnetic materials"],
+      "key_concepts": ["magnetism"],
+      "marks": 4,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why friction is greater on rough surfaces.",
+      "answer": "Rough surfaces have more irregularities that interlock with each other, increasing friction.",
+      "answer_outline": ["Surface irregularities"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how gravity helps keep planets in orbit.",
+      "answer": "Gravity provides the force that keeps planets moving in curved paths around the Sun.",
+      "answer_outline": ["Gravitational attraction", "Orbital motion"],
+      "key_concepts": ["gravity"],
+      "marks": 5,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how forces are important in everyday life.",
+      "answer": "Forces help us move objects, operate machines and perform daily activities such as walking, lifting and pushing.",
+      "answer_outline": ["Daily activities", "Applications"],
+      "key_concepts": ["force"],
+      "marks": 4,
+      "source_section": "Applications"
+    }
+  ]
+}

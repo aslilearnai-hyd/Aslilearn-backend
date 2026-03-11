@@ -1,0 +1,164 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Electricity",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class10_science_ch11.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Resistance of Materials Comparison",
+            "objective": "Compare resistance in different materials",
+            "materials": [
+                "Wires of copper, nichrome, constantan (if available)",
+                "Battery, ammeter, voltmeter"
+            ],
+            "steps": [
+                "Measure V and I for same length/thickness wires",
+                "Calculate R = V/I for each",
+                "Tabulate and discuss which has highest/lowest resistance"
+            ],
+            "learning_outcome": "Understands resistivity concept",
+            "evaluation": "Data accuracy and comparison (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Series and Parallel Resistance Circuit",
+            "objective": "Verify combination rules",
+            "materials": [
+                "Resistors, battery, ammeter/voltmeter"
+            ],
+            "steps": [
+                "Connect 2-3 resistors in series and parallel",
+                "Measure total R",
+                "Compare with formula (Rs = R1+R2, 1/Rp = 1/R1 + 1/R2)",
+                "Draw circuit diagrams"
+            ],
+            "learning_outcome": "Applies resistance combination formulas",
+            "evaluation": "Measurements and calculations (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Electric Power Calculation Project",
+            "objective": "Calculate power and energy",
+            "materials": [
+                "Notebook",
+                "Reference appliances"
+            ],
+            "steps": [
+                "Select 5 appliances with power ratings",
+                "Assume usage hours per day",
+                "Calculate daily kWh and monthly bill (assume rate)",
+                "Suggest ways to save energy"
+            ],
+            "learning_outcome": "Masters P=VI, energy units",
+            "evaluation": "Calculations and suggestions (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "V-I Graph for Resistor",
+            "objective": "Verify Ohm's law graphically",
+            "materials": [
+                "Resistor, variable battery/rheostat, ammeter, voltmeter",
+                "Graph paper"
+            ],
+            "steps": [
+                "Vary voltage, record I",
+                "Plot V vs I graph",
+                "Find slope = R, discuss straight line"
+            ],
+            "learning_outcome": "Understands linear relation in Ohm's law",
+            "evaluation": "Graph accuracy and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Heating Effect Demonstration with Bulb",
+            "objective": "Observe Joule's heating",
+            "materials": [
+                "Low resistance bulb/wire, battery"
+            ],
+            "steps": [
+                "Pass current through thin wire or bulb",
+                "Observe heating/glow",
+                "Explain H = I²Rt with example"
+            ],
+            "learning_outcome": "Connects current to heat production",
+            "evaluation": "Observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Domestic Wiring Model",
+            "objective": "Understand house wiring basics",
+            "materials": [
+                "Chart paper, colors"
+            ],
+            "steps": [
+                "Draw a simple house wiring diagram (live, neutral, earth)",
+                "Label fuse, MCB, earthing",
+                "Explain role of each"
+            ],
+            "learning_outcome": "Learns safe domestic electricity setup",
+            "evaluation": "Diagram clarity and labels (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Ohm's Law Numerical Problems Set",
+            "objective": "Solve application problems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve 5-7 problems on V=IR, resistance calculation",
+                "Include unit conversions",
+                "Present solutions step-by-step"
+            ],
+            "learning_outcome": "Builds problem-solving skills",
+            "evaluation": "Correctness and steps (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Role Play: How Current Flows",
+            "objective": "Explain electron flow",
+            "materials": [
+                "Props (students as electrons)"
+            ],
+            "steps": [
+                "Act out conventional vs electron current",
+                "Show potential difference driving flow",
+                "Discuss in circuit"
+            ],
+            "learning_outcome": "Clarifies direction of current",
+            "evaluation": "Accuracy and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Class Quiz on Electricity Numericals",
+            "objective": "Test concepts with problems",
+            "materials": [
+                "Question cards"
+            ],
+            "steps": [
+                "Prepare 15 questions (MCQ + numerical)",
+                "Conduct group quiz",
+                "Discuss answers"
+            ],
+            "learning_outcome": "Reinforces chapter interactively",
+            "evaluation": "Question quality and scores (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Energy Saving Campaign Idea",
+            "objective": "Apply knowledge to conservation",
+            "materials": [
+                "Notebook, colors"
+            ],
+            "steps": [
+                "Propose school/home energy saving plan",
+                "Calculate savings with examples",
+                "Make poster or short presentation"
+            ],
+            "learning_outcome": "Encourages practical application",
+            "evaluation": "Originality and calculations (10 marks)"
+        }
+    ]
+}

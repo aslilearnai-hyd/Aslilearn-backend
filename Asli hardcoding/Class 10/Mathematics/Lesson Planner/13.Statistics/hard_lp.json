@@ -1,0 +1,157 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Statistics",
+    "lesson_level": "Hard",
+    "total_periods": 9,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve complex statistical problems confidently",
+        "Interpret and analyse data critically",
+        "Handle HOTS, case-study, and exam-level questions",
+        "Prepare for board-level statistics questions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Mean Problems",
+            "topics_covered": [
+                "Multi-step mean calculations"
+            ],
+            "teaching_strategy": [
+                "Problem breakdown"
+            ],
+            "student_activities": [
+                "Solve advanced numericals"
+            ],
+            "assessment": [
+                "HOTS worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Complex Median Problems",
+            "topics_covered": [
+                "Cumulative frequency interpretation"
+            ],
+            "teaching_strategy": [
+                "Tabular analysis"
+            ],
+            "student_activities": [
+                "Solve advanced median problems"
+            ],
+            "assessment": [
+                "Worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complex Mode Problems",
+            "topics_covered": [
+                "Tricky modal class cases"
+            ],
+            "teaching_strategy": [
+                "Concept reinforcement"
+            ],
+            "student_activities": [
+                "Solve HOTS mode problems"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Case Study Problems",
+            "topics_covered": [
+                "Real-life data interpretation"
+            ],
+            "teaching_strategy": [
+                "Case-based discussion"
+            ],
+            "student_activities": [
+                "Analyse data sets"
+            ],
+            "assessment": [
+                "Case-study evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Graph Interpretation",
+            "topics_covered": [
+                "Histogram and frequency polygon analysis"
+            ],
+            "teaching_strategy": [
+                "Graph interpretation exercises"
+            ],
+            "student_activities": [
+                "Interpret given graphs"
+            ],
+            "assessment": [
+                "Graph-based test"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Assertion–Reason & MCQs",
+            "topics_covered": [
+                "Exam-oriented HOTS questions"
+            ],
+            "teaching_strategy": [
+                "Exam pattern practice"
+            ],
+            "student_activities": [
+                "Solve MCQs"
+            ],
+            "assessment": [
+                "MCQ test"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Previous Year Question Practice",
+            "topics_covered": [
+                "Board-level problems"
+            ],
+            "teaching_strategy": [
+                "Answer writing guidance"
+            ],
+            "student_activities": [
+                "Write full solutions"
+            ],
+            "assessment": [
+                "Answer evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Mock Test",
+            "topics_covered": [
+                "Complete chapter assessment"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 9,
+            "title": "Analysis and Remedial Teaching",
+            "topics_covered": [
+                "Error analysis",
+                "Doubt clearing"
+            ],
+            "teaching_strategy": [
+                "Feedback-based teaching"
+            ],
+            "student_activities": [
+                "Correct mistakes",
+                "Re-attempt problems"
+            ],
+            "assessment": [
+                "Improvement task"
+            ]
+        }
+    ],
+    "teacher_tip": "Encourage neat tabular work and stepwise calculation, as clarity plays a major role in scoring statistics problems."
+}

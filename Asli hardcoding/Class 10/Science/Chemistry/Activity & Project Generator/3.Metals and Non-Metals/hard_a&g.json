@@ -1,0 +1,197 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Metals and Non-metals",
+    "difficulty": "Hard",
+    "source_pdf": "metals_non_metals_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Reactivity Analysis",
+            "objective": "Determine the relative order of reactivity using displacement and thermal data",
+            "materials": [
+                "Magnesium, Zinc, Iron, and Copper strips",
+                "Nitrates of each metal ($Mg(NO_3)_2$, $Zn(NO_3)_2$, etc.)",
+                "Thermometer",
+                "Insulated beakers"
+            ],
+            "steps": [
+                "Measure the initial temperature of 25ml of $CuSO_4$ solution",
+                "Add a fixed mass of Zinc granules and record the maximum temperature reached ($\Delta T$)",
+                "Repeat with Magnesium and Iron",
+                "Correlate the magnitude of temperature rise with the position of the metal in the reactivity series"
+            ],
+            "learning_outcome": "Relates the enthalpy of displacement reactions to the chemical reactivity of metals",
+            "evaluation": "Data table showing $\Delta T$ values and the resulting reactivity order (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Thermodynamics of Roasting vs. Calcination",
+            "objective": "Compare the extraction methods for Carbonate and Sulphide ores",
+            "materials": [
+                "Zinc Carbonate (Calamine)",
+                "Zinc Sulphide (Zinc Blende)",
+                "Hard glass test tubes",
+                "Burner",
+                "Lime water"
+            ],
+            "steps": [
+                "Heat Zinc Carbonate in a closed tube (limited air) and pass gas through lime water",
+                "Heat Zinc Sulphide in an open tube (excess air) and observe the pungent smell of $SO_2$",
+                "Note the color change of the residue (ZnO) when hot and cold",
+                "Calculate the theoretical mass loss for each process using stoichiometry"
+            ],
+            "learning_outcome": "Distinguishes between calcination and roasting based on the type of ore and atmospheric conditions",
+            "evaluation": "Balanced chemical equations and identification of the gases evolved in each process (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Self-Reduction Research: The Copper Extraction",
+            "objective": "Investigate the auto-reduction of Copper Sulphide",
+            "materials": [
+                "Digital resources/Textbook",
+                "Notebook",
+                "Flowchart tools"
+            ],
+            "steps": [
+                "Research the reaction between Copper(I) oxide and Copper(I) sulphide",
+                "Explain how no external reducing agent like Carbon is required for this specific metal",
+                "Draw a detailed flowchart of the extraction of copper from its sulphide ore (Copper Pyrites)",
+                "Calculate the percentage of Copper in $Cu_2S$"
+            ],
+            "learning_outcome": "Analyzes the unique 'Self-Reduction' mechanism used for less reactive metal ores",
+            "evaluation": "Clarity of the flowchart and accuracy of the self-reduction chemical equation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Electrolytic Extraction of Aluminum (Hall-Héroult)",
+            "objective": "Understand the role of Cryolite in the electrolysis of Alumina",
+            "materials": [
+                "Diagram of electrolytic cell",
+                "Molar mass data",
+                "Notebook"
+            ],
+            "steps": [
+                "Study the Hall-Héroult process and why $Al_2O_3$ cannot be reduced by Carbon",
+                "Research why Cryolite ($Na_3AlF_6$) is added to the molten Alumina",
+                "Explain why the Carbon anodes must be periodically replaced",
+                "Calculate the mass of Aluminum produced by the transfer of 3 moles of electrons"
+            ],
+            "learning_outcome": "Evaluates the energy-intensive nature of extracting highly reactive metals",
+            "evaluation": "Explanation of the 'Anode Effect' and the function of Cryolite in lowering the melting point (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Crystal Structure of Ionic Compounds",
+            "objective": "Analyze the lattice energy and brittle nature of ionic solids",
+            "materials": [
+                "Styrofoam balls (two sizes)",
+                "Toothpicks",
+                "Hammer"
+            ],
+            "steps": [
+                "Build a 3D cubic model of $NaCl$ representing $Na^+$ and $Cl^-$ ions",
+                "Simulate a 'shear force' by shifting one layer of the model",
+                "Observe how like-charges align and cause repulsion (brittleness)",
+                "Research the concept of Lattice Enthalpy and its effect on melting points"
+            ],
+            "learning_outcome": "Explains the physical properties of ionic compounds through their microscopic lattice arrangement",
+            "evaluation": "Demonstration of the repulsion effect in the model and definition of lattice energy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Alloy Design and Properties",
+            "objective": "Investigate the change in properties of pure metals when alloyed",
+            "materials": [
+                "Samples of Pure Copper, Pure Zinc, and Brass",
+                "Ammeter and voltmeter circuit",
+                "Weights for hardness testing"
+            ],
+            "steps": [
+                "Measure the electrical conductivity of pure Copper vs. Brass",
+                "Test the hardness of each sample using a scratch test or indentation",
+                "Research the composition of Solder and why its melting point is lower than its constituents",
+                "Explain why 22-carat gold is preferred over 24-carat gold for jewelry"
+            ],
+            "learning_outcome": "Concludes how alloying modifies conductivity, hardness, and melting points",
+            "evaluation": "Comparative table of properties between pure metals and their alloys (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Anodizing Aluminum: The Protective Layer",
+            "objective": "Mathematically model the growth of the oxide layer",
+            "materials": [
+                "Aluminum strips",
+                "Dilute $H_2SO_4$",
+                "Lead cathode",
+                "12V DC Source",
+                "Dye (optional)"
+            ],
+            "steps": [
+                "Perform electrolysis with the Aluminum strip as the Anode",
+                "Explain the reaction: $2Al + 3O^{2-} \rightarrow Al_2O_3 + 6e^-$",
+                "Research how this layer can be dyed to produce colored aluminum products",
+                "Calculate the theoretical increase in mass of the anode due to the oxide layer"
+            ],
+            "learning_outcome": "Understands the industrial application of electrolysis to enhance corrosion resistance",
+            "evaluation": "Technical description of the anodizing process and its advantages (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Thermite Welding: Stoichiometry and Safety",
+            "objective": "Calculate the mass of reactants needed for a specific yield of molten Iron",
+            "materials": [
+                "Chemical equation: $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$",
+                "Calculator",
+                "Periodic Table"
+            ],
+            "steps": [
+                "Calculate the mass of Aluminum required to react completely with 1kg of Ferric Oxide",
+                "Determine the total heat energy released if the $\Delta H$ is $-851 \text{ kJ/mol}$",
+                "Explain the state of matter of the products during the reaction",
+                "Identify the reducing agent and the oxidizing agent in this reaction"
+            ],
+            "learning_outcome": "Applies stoichiometric and thermochemical principles to a real-world engineering reaction",
+            "evaluation": "Accuracy of the mass-mass calculations and heat energy determination (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Corrosion in Multi-Metal Systems",
+            "objective": "Observe 'Galvanic Corrosion' when two different metals are in contact",
+            "materials": [
+                "Iron nails",
+                "Copper wire",
+                "Magnesium ribbon",
+                "Agar-agar gel with phenolphthalein",
+                "Petri dishes"
+            ],
+            "steps": [
+                "Dish A: Iron nail alone. Dish B: Iron nail wrapped in Copper. Dish C: Iron nail wrapped in Magnesium",
+                "Observe the rate of blue color formation (indicating $Fe^{2+}$ ions/rusting)",
+                "Analyze why Magnesium protects the iron while Copper accelerates its rusting",
+                "Define 'Sacrificial Anode'"
+            ],
+            "learning_outcome": "Analyzes the electrochemical series to predict which metal will corrode in a bimetallic couple",
+            "evaluation": "Detailed comparison of the three dishes and the concept of sacrificial protection (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Purity of Gold: Density Method",
+            "objective": "Use Archimedes' principle to detect impurities in metals",
+            "materials": [
+                "Gold-plated jewelry or Brass sample",
+                "Electronic balance",
+                "Graduated cylinder",
+                "Water"
+            ],
+            "steps": [
+                "Measure the mass of the sample in air ($m$)",
+                "Measure the volume of the sample by water displacement ($V$)",
+                "Calculate the density ($\rho = m/V$)",
+                "Compare the result with the density of pure Gold ($19.3 \text{ g/cm}^3$) and explain the discrepancy"
+            ],
+            "learning_outcome": "Applies physical constants to verify the purity and authenticity of metallic samples",
+            "evaluation": "Precision of density calculation and reasoning for impurity detection (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 11: Light: Shadows and Reflections",
+    "generated_at": "2026-03-06T11:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between umbra and penumbra in shadow formation.",
+            "answer": "The umbra is the darkest part of a shadow where light is completely blocked, while the penumbra is a lighter part where light is partially blocked.",
+            "key_concepts": ["umbra", "penumbra", "shadow"],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe how the shape of an object affects the shape of its shadow.",
+            "answer": "The shadow closely resembles the shape of the object for opaque objects, while concave or irregular objects may produce distorted shadows due to bending or partial blockage of light.",
+            "key_concepts": ["shadow shape", "object shape", "light blockage"],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why shadows appear longer in the morning and evening.",
+            "answer": "The Sun is low in the sky during morning and evening, causing light rays to hit objects at a shallow angle, which produces longer shadows.",
+            "key_concepts": ["shadow length", "Sun angle", "time of day"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why images in a concave mirror can be inverted or upright.",
+            "answer": "When the object is beyond the focal point, a concave mirror forms a real, inverted image; when within the focal point, it forms a virtual, upright magnified image.",
+            "key_concepts": ["concave mirror", "real image", "virtual image", "focal point"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe how refraction differs from reflection and why it is not involved in plane mirrors.",
+            "answer": "Refraction is the bending of light as it passes from one medium to another, whereas reflection is the bouncing back of light from a surface. Plane mirrors reflect light without changing its medium, so refraction does not occur.",
+            "key_concepts": ["reflection", "refraction", "plane mirror"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why multiple shadows can have varying sharpness.",
+            "answer": "Shadows from different light sources may overlap; light from distant or diffuse sources creates fainter or blurred shadows, while close or point sources produce sharp shadows.",
+            "key_concepts": ["shadow sharpness", "light sources", "diffuse and point light"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain how convex mirrors affect the perception of distance and size.",
+            "answer": "Convex mirrors diverge light rays, causing images to appear smaller and farther away than they actually are, which helps in a wider field of view.",
+            "key_concepts": ["convex mirror", "image size", "distance perception"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe how a concave mirror can focus sunlight to ignite paper.",
+            "answer": "Concave mirrors converge parallel light rays to a focal point, concentrating energy enough to heat and ignite paper placed at the focus.",
+            "key_concepts": ["concave mirror", "focal point", "concentrated light"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why the image distance equals the object distance in a plane mirror.",
+            "answer": "The virtual image appears behind the mirror at the same distance as the object because the reflected rays appear to diverge symmetrically from a point behind the mirror.",
+            "key_concepts": ["plane mirror", "image distance", "reflection symmetry"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe how the focal length of a concave mirror affects image size.",
+            "answer": "A shorter focal length causes light rays to converge more sharply, producing larger magnified images; a longer focal length produces smaller images at greater distances.",
+            "key_concepts": ["concave mirror", "focal length", "image size"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why shadows are sharpest when using a point source of light.",
+            "answer": "A point source emits light from a single position, producing minimal overlapping rays and a sharply defined shadow edge.",
+            "key_concepts": ["point source", "sharp shadows", "light rays"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the difference between regular and diffused reflection in terms of light ray behavior.",
+            "answer": "Regular reflection occurs on smooth surfaces with parallel reflected rays forming clear images, while diffused reflection occurs on rough surfaces where rays scatter in multiple directions, preventing clear images.",
+            "key_concepts": ["regular reflection", "diffused reflection", "light rays"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why images in a plane mirror appear reversed left to right but not top to bottom.",
+            "answer": "The mirror reverses the direction perpendicular to its surface, causing lateral inversion (left-right reversal), while the vertical direction remains unchanged.",
+            "key_concepts": ["plane mirror", "lateral inversion", "image orientation"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe how the angle of incidence relates to the angle of reflection.",
+            "answer": "According to the law of reflection, the angle of incidence equals the angle of reflection, measured relative to the normal at the point of contact.",
+            "key_concepts": ["angle of incidence", "angle of reflection", "law of reflection"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how the image of an object appears when viewed through a convex mirror from different distances.",
+            "answer": "The image remains virtual, upright, and diminished regardless of distance, but the field of view increases as distance increases.",
+            "key_concepts": ["convex mirror", "virtual image", "distance effect"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why a concave mirror can form real and inverted images on a screen.",
+            "answer": "When the object is beyond the focal point, the reflected rays converge to form a real image in front of the mirror that can be captured on a screen and appears inverted.",
+            "key_concepts": ["concave mirror", "real image", "screen projection"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe how shadows help in determining the time using a sundial.",
+            "answer": "The shadow of the gnomon moves with the Sun’s apparent motion, pointing to different hour marks on the sundial to indicate time.",
+            "key_concepts": ["sundial", "shadow movement", "time measurement"],
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how a periscope can be used to see objects over obstacles.",
+            "answer": "Two plane mirrors reflect light from the object down the periscope tube into the viewer’s eyes, allowing observation without a direct line of sight.",
+            "key_concepts": ["periscope", "mirror reflection", "obstacle viewing"],
+            "marks": 3,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the difference in shadow sharpness between point sources and extended light sources.",
+            "answer": "Point sources produce sharp shadows due to single-direction rays, while extended sources produce blurred or fuzzy shadows because light comes from multiple points.",
+            "key_concepts": ["shadow sharpness", "point source", "extended source"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe why images formed by concave mirrors appear magnified when the object is close to the mirror.",
+            "answer": "When the object is within the focal length, the reflected rays diverge and appear to come from a larger virtual image behind the mirror.",
+            "key_concepts": ["concave mirror", "magnified virtual image", "focal length"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why convex mirrors are safer for rear-view mirrors than plane mirrors.",
+            "answer": "Convex mirrors give a wider field of view and reduced image size, helping drivers see more area and anticipate vehicles behind.",
+            "key_concepts": ["convex mirror", "rear-view mirror", "wider view"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why diffused reflection is necessary for reading text on a paper.",
+            "answer": "Diffused reflection scatters light uniformly from the paper surface, allowing the eyes to receive light from all directions to read clearly.",
+            "key_concepts": ["diffused reflection", "paper reading", "light scattering"],
+            "marks": 3,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Describe how the distance of the light source affects the size of the shadow.",
+            "answer": "A closer light source creates larger shadows, while a farther source creates smaller shadows due to divergence of light rays.",
+            "key_concepts": ["shadow size", "light source distance", "light divergence"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why lateral inversion does not occur in concave mirrors.",
+            "answer": "Concave mirrors converge or diverge rays in the plane of reflection without reversing left and right; only virtual plane mirrors show lateral inversion.",
+            "key_concepts": ["concave mirror", "lateral inversion", "reflection"],
+            "marks": 3,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 25,
+            "question": "Describe how light reflection principles are applied in periscopes, telescopes, and vehicle mirrors.",
+            "answer": "Periscopes use plane mirrors to reflect light into the viewer’s eye, telescopes use mirrors or lenses to focus and magnify distant images, and vehicle mirrors use convex mirrors for a wide field of view, all based on reflection principles.",
+            "key_concepts": ["reflection", "periscope", "telescope", "vehicle mirror"],
+            "marks": 3,
+            "source_section": "Section 11.6, 11.7, 11.8"
+        }
+    ]
+}

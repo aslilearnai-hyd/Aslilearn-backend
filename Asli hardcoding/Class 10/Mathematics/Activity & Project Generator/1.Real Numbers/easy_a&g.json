@@ -1,0 +1,155 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Real Numbers",
+    "difficulty": "Easy",
+    "source_pdf": "jemh101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Prime Number Hunt",
+            "objective": "Identify prime numbers up to 50",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write numbers from 1 to 50",
+                "Circle all prime numbers",
+                "Write why each circled number is prime"
+            ],
+            "learning_outcome": "Understands prime numbers",
+            "evaluation": "Accuracy of identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Factor Tree Drawing",
+            "objective": "Learn prime factorisation",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Choose five numbers",
+                "Draw factor trees",
+                "Write prime factors"
+            ],
+            "learning_outcome": "Builds factorisation skill",
+            "evaluation": "Correct factor trees (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Even–Odd Sort",
+            "objective": "Classify numbers as even or odd",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "List 20 numbers",
+                "Separate them into even and odd"
+            ],
+            "learning_outcome": "Number classification",
+            "evaluation": "Correct sorting (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Composite Number Chart",
+            "objective": "Identify composite numbers",
+            "materials": [
+                "Chart paper",
+                "Colours"
+            ],
+            "steps": [
+                "Write numbers from 1 to 30",
+                "Colour the composite numbers"
+            ],
+            "learning_outcome": "Distinguishes prime and composite numbers",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Prime Factor Match",
+            "objective": "Match numbers with their prime factors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write numbers on the left",
+                "Write prime factors on the right",
+                "Match them correctly"
+            ],
+            "learning_outcome": "Understands factors",
+            "evaluation": "Correct matching (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Smallest Prime Finder",
+            "objective": "Understand the smallest prime number",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List first ten natural numbers",
+                "Identify the smallest prime number"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Explanation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "HCF by Listing",
+            "objective": "Find HCF using factors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write factors of two numbers",
+                "Identify the highest common factor"
+            ],
+            "learning_outcome": "HCF basics",
+            "evaluation": "Correct HCF (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "LCM by Multiples",
+            "objective": "Find LCM using multiples",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List multiples of two numbers",
+                "Find the first common multiple"
+            ],
+            "learning_outcome": "LCM understanding",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Rational or Irrational",
+            "objective": "Identify rational and irrational numbers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List given numbers",
+                "Classify them as rational or irrational"
+            ],
+            "learning_outcome": "Recognises number types",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Terminating Decimal Finder",
+            "objective": "Identify terminating decimals",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write fractions",
+                "Convert them into decimals"
+            ],
+            "learning_outcome": "Understands decimal representation",
+            "evaluation": "Correct answers (10 marks)"
+        }
+    ]
+}

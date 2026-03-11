@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "ENG9_4 – In the Kingdom of Fools",
+    "title": "In the Kingdom of Fools – Easy MCQs",
+    "generated_at": "2026-03-09T00:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of 'In the Kingdom of Fools'?",
+            "options": {
+                "A": "A.K. Ramanujan",
+                "B": "Ruskin Bond",
+                "C": "R.K. Narayan",
+                "D": "Premchand"
+            },
+            "correct_answer": "A",
+            "explanation": "The story is a Kannada folktale retold by A.K. Ramanujan.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Who ruled the Kingdom of Fools?",
+            "options": {
+                "A": "A queen and minister",
+                "B": "A king and minister",
+                "C": "A prince",
+                "D": "A council"
+            },
+            "correct_answer": "B",
+            "explanation": "The kingdom was ruled by a foolish king and his minister.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 3,
+            "question": "What strange order did the king give?",
+            "options": {
+                "A": "People must sleep at night",
+                "B": "People must work at night and sleep during the day",
+                "C": "People must not work",
+                "D": "People must stay indoors"
+            },
+            "correct_answer": "B",
+            "explanation": "The king reversed the normal day–night routine.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 4,
+            "question": "Who arrived in the kingdom one day?",
+            "options": {
+                "A": "A merchant and a soldier",
+                "B": "A king and a queen",
+                "C": "A guru and his disciple",
+                "D": "Two merchants"
+            },
+            "correct_answer": "C",
+            "explanation": "A guru and his disciple arrived in the kingdom.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 5,
+            "question": "What surprised the guru and disciple in the market?",
+            "options": {
+                "A": "Everything was expensive",
+                "B": "Everything was free",
+                "C": "Everything cost the same price",
+                "D": "Nothing was available"
+            },
+            "correct_answer": "C",
+            "explanation": "All goods cost one duddu regardless of their value.",
+            "difficulty": "easy",
+            "source_section": "Market scene"
+        },
+        {
+            "question_number": 6,
+            "question": "Why did the guru want to leave the kingdom?",
+            "options": {
+                "A": "It was dangerous",
+                "B": "It was boring",
+                "C": "It was expensive",
+                "D": "It was crowded"
+            },
+            "correct_answer": "A",
+            "explanation": "He realised that it was ruled by fools.",
+            "difficulty": "easy",
+            "source_section": "Guru’s warning"
+        },
+        {
+            "question_number": 7,
+            "question": "Why did the disciple stay in the kingdom?",
+            "options": {
+                "A": "He liked the king",
+                "B": "Food was cheap",
+                "C": "He found work",
+                "D": "He was afraid"
+            },
+            "correct_answer": "B",
+            "explanation": "He stayed because food was cheap and abundant.",
+            "difficulty": "easy",
+            "source_section": "Disciple staying"
+        },
+        {
+            "question_number": 8,
+            "question": "What happened to the thief in the merchant’s house?",
+            "options": {
+                "A": "He escaped",
+                "B": "He was caught",
+                "C": "The wall collapsed and killed him",
+                "D": "He ran away"
+            },
+            "correct_answer": "C",
+            "explanation": "A weak wall collapsed and killed the thief.",
+            "difficulty": "easy",
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 9,
+            "question": "Who complained to the king about the thief’s death?",
+            "options": {
+                "A": "The merchant",
+                "B": "The thief’s brother",
+                "C": "The bricklayer",
+                "D": "The dancer"
+            },
+            "correct_answer": "B",
+            "explanation": "The thief’s brother demanded justice.",
+            "difficulty": "easy",
+            "source_section": "Court scene"
+        },
+        {
+            "question_number": 10,
+            "question": "Who built the weak wall?",
+            "options": {
+                "A": "A carpenter",
+                "B": "A bricklayer",
+                "C": "A mason",
+                "D": "A labourer"
+            },
+            "correct_answer": "B",
+            "explanation": "The bricklayer had built the wall.",
+            "difficulty": "easy",
+            "source_section": "Court scene"
+        },
+        {
+            "question_number": 11,
+            "question": "Who distracted the bricklayer?",
+            "options": {
+                "A": "A dancer",
+                "B": "A merchant",
+                "C": "A soldier",
+                "D": "A king"
+            },
+            "correct_answer": "A",
+            "explanation": "The dancing girl distracted him with her anklets.",
+            "difficulty": "easy",
+            "source_section": "Court investigation"
+        },
+        {
+            "question_number": 12,
+            "question": "Who was blamed after the dancer?",
+            "options": {
+                "A": "The goldsmith",
+                "B": "The minister",
+                "C": "The merchant",
+                "D": "The disciple"
+            },
+            "correct_answer": "A",
+            "explanation": "The dancer blamed the goldsmith.",
+            "difficulty": "easy",
+            "source_section": "Court investigation"
+        },
+        {
+            "question_number": 13,
+            "question": "Why was the merchant not executed?",
+            "options": {
+                "A": "He escaped",
+                "B": "He was too thin",
+                "C": "He was innocent",
+                "D": "He was rich"
+            },
+            "correct_answer": "B",
+            "explanation": "The merchant was too thin to fit the stake.",
+            "difficulty": "easy",
+            "source_section": "Execution scene"
+        },
+        {
+            "question_number": 14,
+            "question": "Who was chosen for execution instead?",
+            "options": {
+                "A": "The guru",
+                "B": "The disciple",
+                "C": "The goldsmith",
+                "D": "The minister"
+            },
+            "correct_answer": "B",
+            "explanation": "The disciple was fat enough for the stake.",
+            "difficulty": "easy",
+            "source_section": "Execution scene"
+        },
+        {
+            "question_number": 15,
+            "question": "Who came to save the disciple?",
+            "options": {
+                "A": "The king",
+                "B": "The guru",
+                "C": "The merchant",
+                "D": "The dancer"
+            },
+            "correct_answer": "B",
+            "explanation": "The guru returned to save his disciple.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 16,
+            "question": "What trick did the guru play on the king?",
+            "options": {
+                "A": "He told a lie about treasure",
+                "B": "He said dying first would make someone king in the next life",
+                "C": "He ran away",
+                "D": "He threatened the king"
+            },
+            "correct_answer": "B",
+            "explanation": "The guru used this trick to confuse the king.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 17,
+            "question": "Why did the king want to die first?",
+            "options": {
+                "A": "He was tired",
+                "B": "He wanted to become king again in the next life",
+                "C": "He was sick",
+                "D": "He was afraid"
+            },
+            "correct_answer": "B",
+            "explanation": "He believed the guru’s trick.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 18,
+            "question": "What happened to the king and minister?",
+            "options": {
+                "A": "They escaped",
+                "B": "They were executed",
+                "C": "They ran away",
+                "D": "They resigned"
+            },
+            "correct_answer": "B",
+            "explanation": "They secretly replaced the guru and disciple and were executed.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 19,
+            "question": "Who became the new king?",
+            "options": {
+                "A": "The disciple",
+                "B": "The merchant",
+                "C": "The guru",
+                "D": "The minister"
+            },
+            "correct_answer": "C",
+            "explanation": "The guru was chosen as the new king.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 20,
+            "question": "Who became the new minister?",
+            "options": {
+                "A": "The disciple",
+                "B": "The merchant",
+                "C": "The dancer",
+                "D": "The bricklayer"
+            },
+            "correct_answer": "A",
+            "explanation": "The disciple became the minister.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 21,
+            "question": "What reform did the guru introduce?",
+            "options": {
+                "A": "More taxes",
+                "B": "Normal day–night cycle",
+                "C": "More markets",
+                "D": "More soldiers"
+            },
+            "correct_answer": "B",
+            "explanation": "He restored the natural order of day and night.",
+            "difficulty": "easy",
+            "source_section": "Conclusion"
+        },
+        {
+            "question_number": 22,
+            "question": "What type of story is 'In the Kingdom of Fools'?",
+            "options": {
+                "A": "Historical story",
+                "B": "Folktale",
+                "C": "Adventure",
+                "D": "Science fiction"
+            },
+            "correct_answer": "B",
+            "explanation": "It is a traditional folktale.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 23,
+            "question": "What theme does the story highlight?",
+            "options": {
+                "A": "Courage",
+                "B": "Wisdom vs foolishness",
+                "C": "War",
+                "D": "Friendship"
+            },
+            "correct_answer": "B",
+            "explanation": "The story contrasts wisdom with foolish leadership.",
+            "difficulty": "easy",
+            "source_section": "Theme"
+        },
+        {
+            "question_number": 24,
+            "question": "Which character represents wisdom?",
+            "options": {
+                "A": "The king",
+                "B": "The minister",
+                "C": "The guru",
+                "D": "The merchant"
+            },
+            "correct_answer": "C",
+            "explanation": "The guru is the wise character in the story.",
+            "difficulty": "easy",
+            "source_section": "Characterisation"
+        },
+        {
+            "question_number": 25,
+            "question": "What lesson does the story teach?",
+            "options": {
+                "A": "Greed is good",
+                "B": "Wisdom is important",
+                "C": "Money is power",
+                "D": "Food is happiness"
+            },
+            "correct_answer": "B",
+            "explanation": "The story emphasises the importance of wisdom.",
+            "difficulty": "easy",
+            "source_section": "Theme"
+        }
+    ]
+}

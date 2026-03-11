@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Surdas ke Pad",
+  "generated_at": "2026-03-10T02:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "‘सूरदास के पद’ के रचयिता कौन हैं?",
+      "options": {
+        "A": "कबीर",
+        "B": "सूरदास",
+        "C": "तुलसीदास",
+        "D": "रहीम"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास भक्तिकाल के प्रसिद्ध कवि हैं जिन्होंने कृष्ण भक्ति पर अनेक पद लिखे।",
+      "difficulty": "medium",
+      "source_section": "कवि परिचय"
+    },
+    {
+      "question_number": 2,
+      "question": "सूरदास किस काल के प्रमुख कवि थे?",
+      "options": {
+        "A": "रीतिकाल",
+        "B": "भक्तिकाल",
+        "C": "आधुनिक काल",
+        "D": "आदिकाल"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास भक्तिकाल के प्रमुख कवि माने जाते हैं।",
+      "difficulty": "medium",
+      "source_section": "कवि परिचय"
+    },
+    {
+      "question_number": 3,
+      "question": "सूरदास के पदों की भाषा कौन-सी है?",
+      "options": {
+        "A": "अवधी",
+        "B": "ब्रज भाषा",
+        "C": "संस्कृत",
+        "D": "उर्दू"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास ने अपनी रचनाएँ ब्रज भाषा में लिखीं।",
+      "difficulty": "medium",
+      "source_section": "भाषा"
+    },
+    {
+      "question_number": 4,
+      "question": "सूरदास की रचनाओं का मुख्य विषय क्या है?",
+      "options": {
+        "A": "राजनीति",
+        "B": "कृष्ण भक्ति",
+        "C": "युद्ध",
+        "D": "व्यापार"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास ने भगवान कृष्ण की भक्ति और उनकी लीलाओं का वर्णन किया है।",
+      "difficulty": "medium",
+      "source_section": "मुख्य विषय"
+    },
+    {
+      "question_number": 5,
+      "question": "सूरदास की प्रसिद्ध रचना कौन-सी है?",
+      "options": {
+        "A": "सूरसागर",
+        "B": "रामचरितमानस",
+        "C": "साकेत",
+        "D": "गीतांजलि"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास की सबसे प्रसिद्ध कृति ‘सूरसागर’ है।",
+      "difficulty": "medium",
+      "source_section": "कवि परिचय"
+    },
+    {
+      "question_number": 6,
+      "question": "सूरदास ने कृष्ण के किस रूप का सुंदर वर्णन किया है?",
+      "options": {
+        "A": "राजा रूप",
+        "B": "बाल रूप",
+        "C": "योद्धा रूप",
+        "D": "संत रूप"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास ने कृष्ण की बाल लीलाओं का अत्यंत सुंदर वर्णन किया है।",
+      "difficulty": "medium",
+      "source_section": "कृष्ण वर्णन"
+    },
+    {
+      "question_number": 7,
+      "question": "सूरदास के पदों में किस रस की प्रमुखता है?",
+      "options": {
+        "A": "वीर रस",
+        "B": "वात्सल्य रस",
+        "C": "रौद्र रस",
+        "D": "भयानक रस"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास के पदों में वात्सल्य रस प्रमुख है।",
+      "difficulty": "medium",
+      "source_section": "रस"
+    },
+    {
+      "question_number": 8,
+      "question": "सूरदास किस भगवान के भक्त थे?",
+      "options": {
+        "A": "राम",
+        "B": "कृष्ण",
+        "C": "शिव",
+        "D": "गणेश"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास भगवान कृष्ण के महान भक्त थे।",
+      "difficulty": "medium",
+      "source_section": "कवि परिचय"
+    },
+    {
+      "question_number": 9,
+      "question": "सूरदास के पदों में मातृ प्रेम किसके माध्यम से दिखाया गया है?",
+      "options": {
+        "A": "देवकी",
+        "B": "यशोदा",
+        "C": "राधा",
+        "D": "द्रौपदी"
+      },
+      "correct_answer": "B",
+      "explanation": "यशोदा और कृष्ण के माध्यम से मातृ प्रेम का वर्णन किया गया है।",
+      "difficulty": "medium",
+      "source_section": "प्रसंग"
+    },
+    {
+      "question_number": 10,
+      "question": "सूरदास के पदों में किस स्थान की संस्कृति का वर्णन मिलता है?",
+      "options": {
+        "A": "ब्रजभूमि",
+        "B": "अयोध्या",
+        "C": "काशी",
+        "D": "दिल्ली"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास की कविताओं में ब्रज संस्कृति का चित्रण मिलता है।",
+      "difficulty": "medium",
+      "source_section": "सांस्कृतिक संदर्भ"
+    },
+    {
+      "question_number": 11,
+      "question": "सूरदास के पदों में कृष्ण और यशोदा के संबंध में कौन-सा भाव है?",
+      "options": {
+        "A": "वात्सल्य",
+        "B": "वीरता",
+        "C": "भय",
+        "D": "घृणा"
+      },
+      "correct_answer": "A",
+      "explanation": "कृष्ण और यशोदा के बीच वात्सल्य भाव दिखाई देता है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 12,
+      "question": "सूरदास की कविता की भाषा कैसी है?",
+      "options": {
+        "A": "बहुत कठिन",
+        "B": "सरल और भावपूर्ण",
+        "C": "अस्पष्ट",
+        "D": "जटिल"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास की भाषा सरल और भावपूर्ण है।",
+      "difficulty": "medium",
+      "source_section": "काव्य शैली"
+    },
+    {
+      "question_number": 13,
+      "question": "सूरदास के पदों में कौन-सी भावना प्रमुख है?",
+      "options": {
+        "A": "क्रोध",
+        "B": "भक्ति",
+        "C": "डर",
+        "D": "घृणा"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास के पदों में भगवान के प्रति भक्ति की भावना है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 14,
+      "question": "सूरदास की कविता का मुख्य उद्देश्य क्या है?",
+      "options": {
+        "A": "राजनीति समझाना",
+        "B": "कृष्ण भक्ति का वर्णन करना",
+        "C": "युद्ध का वर्णन करना",
+        "D": "व्यापार का वर्णन करना"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास ने कृष्ण की लीलाओं और भक्ति का वर्णन किया है।",
+      "difficulty": "medium",
+      "source_section": "मुख्य विचार"
+    },
+    {
+      "question_number": 15,
+      "question": "सूरदास के पदों में कृष्ण की कौन-सी लीलाएँ वर्णित हैं?",
+      "options": {
+        "A": "राजकीय लीलाएँ",
+        "B": "बाल लीलाएँ",
+        "C": "युद्ध लीलाएँ",
+        "D": "राजनीतिक घटनाएँ"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास ने कृष्ण की बाल लीलाओं का वर्णन किया है।",
+      "difficulty": "medium",
+      "source_section": "कृष्ण वर्णन"
+    },
+    {
+      "question_number": 16,
+      "question": "सूरदास के पदों में भक्त और भगवान के बीच किस प्रकार का संबंध दिखाया गया है?",
+      "options": {
+        "A": "भय का संबंध",
+        "B": "प्रेम का संबंध",
+        "C": "शत्रुता",
+        "D": "प्रतिस्पर्धा"
+      },
+      "correct_answer": "B",
+      "explanation": "भक्त और भगवान के बीच प्रेम का संबंध दर्शाया गया है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 17,
+      "question": "सूरदास की कविता में कौन-सा सांस्कृतिक क्षेत्र दिखाई देता है?",
+      "options": {
+        "A": "ब्रज संस्कृति",
+        "B": "राजस्थानी संस्कृति",
+        "C": "दक्षिण भारतीय संस्कृति",
+        "D": "पंजाबी संस्कृति"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास की कविताओं में ब्रज संस्कृति का चित्रण मिलता है।",
+      "difficulty": "medium",
+      "source_section": "संस्कृति"
+    },
+    {
+      "question_number": 18,
+      "question": "सूरदास के पदों में किसका प्रेमपूर्ण वर्णन मिलता है?",
+      "options": {
+        "A": "कृष्ण और यशोदा",
+        "B": "राम और सीता",
+        "C": "शिव और पार्वती",
+        "D": "राजा और प्रजा"
+      },
+      "correct_answer": "A",
+      "explanation": "कृष्ण और यशोदा के प्रेम का सुंदर वर्णन किया गया है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 19,
+      "question": "सूरदास के पदों में किस प्रकार का वातावरण मिलता है?",
+      "options": {
+        "A": "युद्ध का वातावरण",
+        "B": "भक्ति और प्रेम का वातावरण",
+        "C": "राजनीतिक वातावरण",
+        "D": "व्यापार का वातावरण"
+      },
+      "correct_answer": "B",
+      "explanation": "सूरदास की कविता में भक्ति और प्रेम का वातावरण है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 20,
+      "question": "सूरदास के पदों का मुख्य संदेश क्या है?",
+      "options": {
+        "A": "भक्ति और प्रेम",
+        "B": "युद्ध",
+        "C": "व्यापार",
+        "D": "राजनीति"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास की कविता भगवान के प्रति प्रेम और भक्ति का संदेश देती है।",
+      "difficulty": "medium",
+      "source_section": "संदेश"
+    },
+    {
+      "question_number": 21,
+      "question": "सूरदास के पदों में किसका वर्णन मिलता है?",
+      "options": {
+        "A": "कृष्ण की बाल लीलाएँ",
+        "B": "राजनीतिक घटनाएँ",
+        "C": "युद्ध",
+        "D": "व्यापार"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास ने कृष्ण की बाल लीलाओं का वर्णन किया है।",
+      "difficulty": "medium",
+      "source_section": "कृष्ण वर्णन"
+    },
+    {
+      "question_number": 22,
+      "question": "सूरदास की कविताओं में कौन-सा भाव प्रमुख रूप से दिखाई देता है?",
+      "options": {
+        "A": "वात्सल्य",
+        "B": "क्रोध",
+        "C": "घृणा",
+        "D": "भय"
+      },
+      "correct_answer": "A",
+      "explanation": "कविता में वात्सल्य भाव प्रमुख है।",
+      "difficulty": "medium",
+      "source_section": "भाव"
+    },
+    {
+      "question_number": 23,
+      "question": "सूरदास के पद किस प्रकार की भक्ति को व्यक्त करते हैं?",
+      "options": {
+        "A": "कृष्ण भक्ति",
+        "B": "राम भक्ति",
+        "C": "शिव भक्ति",
+        "D": "देवी भक्ति"
+      },
+      "correct_answer": "A",
+      "explanation": "सूरदास कृष्ण भक्ति के कवि हैं।",
+      "difficulty": "medium",
+      "source_section": "भक्ति"
+    },
+    {
+      "question_number": 24,
+      "question": "सूरदास की रचनाओं में किसका सुंदर वर्णन मिलता है?",
+      "options": {
+        "A": "कृष्ण की बाल लीलाएँ",
+        "B": "राजनीति",
+        "C": "युद्ध",
+        "D": "व्यापार"
+      },
+      "correct_answer": "A",
+      "explanation": "कृष्ण की बाल लीलाओं का अत्यंत सुंदर वर्णन किया गया है।",
+      "difficulty": "medium",
+      "source_section": "कृष्ण वर्णन"
+    },
+    {
+      "question_number": 25,
+      "question": "‘सूरदास के पद’ हमें किस भावना की प्रेरणा देते हैं?",
+      "options": {
+        "A": "भक्ति और प्रेम",
+        "B": "क्रोध",
+        "C": "डर",
+        "D": "घृणा"
+      },
+      "correct_answer": "A",
+      "explanation": "ये पद भगवान के प्रति प्रेम और भक्ति की प्रेरणा देते हैं।",
+      "difficulty": "medium",
+      "source_section": "संदेश"
+    }
+  ]
+}

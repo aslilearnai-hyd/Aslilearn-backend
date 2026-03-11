@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Carbon and its Compounds",
+    "difficulty": "Medium",
+    "source_pdf": "jesc104.pdf",
+    "short_notes": {
+        "key_points": [
+            "Functional groups are atoms or groups of atoms that join a carbon chain and determine the chemical properties of the compound.",
+            "A Homologous Series is a group of organic compounds having the same general formula and functional group, where successive members differ by a $-CH_2$ unit.",
+            "Isomers are compounds that have the same molecular formula but different structural arrangements (e.g., Butane and Iso-butane).",
+            "IUPAC nomenclature is the systematic method used for naming organic chemical compounds.",
+            "The physical properties of a homologous series change regularly (e.g., boiling point increases) as the molecular mass increases."
+        ],
+        "examples": [
+            "Functional Groups: Alcohol ($-OH$), Aldehyde ($-CHO$), Ketone ($>C=O$), and Carboxylic Acid ($-COOH$).",
+            "Isomers of Pentane: $n$-pentane, Isopentane, and Neopentane (all $C_5H_{12}$).",
+            "Homologous Difference: The molecular mass difference between any two adjacent members of a series is 14 u.",
+            "Structural formula: Propanone ($CH_3-CO-CH_3$), the simplest ketone.",
+            "Cyclic Hydrocarbons: Benzene ($C_6H_6$) and Cyclohexane ($C_6H_{12}$)."
+        ],
+        "formulas": [
+            "Alcohol suffix: $-ol$ (Example: Methanol, $CH_3OH$)",
+            "Carboxylic Acid suffix: $-oic\ acid$ (Example: Ethanoic acid, $CH_3COOH$)",
+            "Molecular mass of $-CH_2$ unit: $(1 \times 12) + (2 \times 1) = 14\ u$"
+        ],
+        "exam_tips": [
+            "When naming, always identify the longest carbon chain first to determine the root word (Meth-, Eth-, Prop-, etc.).",
+            "Remember that Ketones can never be at the end of a carbon chain; they must be between two carbon atoms.",
+            "Note that the chemical properties of members in a homologous series remain similar because they share the same functional group.",
+            "In isomers, as branching increases, the surface area decreases, usually leading to a lower boiling point."
+        ]
+    }
+}

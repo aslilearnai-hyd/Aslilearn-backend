@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 3: Proportional Reasoning – 2",
+  "generated_at": "2026-03-11T10:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Simplify the ratio 48 : 72.",
+      "answer": "2 : 3",
+      "key_concepts": ["ratio"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Check whether the ratios 6 : 9 and 10 : 15 are proportional.",
+      "answer": "Yes, because 6 × 15 = 9 × 10 = 90.",
+      "key_concepts": ["proportion"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the value of x if 7 : 14 = x : 28.",
+      "answer": "x = 14",
+      "key_concepts": ["cross multiplication"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "A map scale is 1 : 1000000. What actual distance does 3 cm represent?",
+      "answer": "30 km",
+      "key_concepts": ["map scale"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What does a scale of 1 : 250000 mean in terms of real distance?",
+      "answer": "1 cm on the map represents 2.5 km in reality.",
+      "key_concepts": ["representative fraction"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Write the ratio of 2 hours to 45 minutes in simplest form.",
+      "answer": "8 : 3",
+      "key_concepts": ["multi-term ratios"],
+      "marks": 1,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Give an example of a four-term ratio representing quantities in proportion.",
+      "answer": "4 : 8 : 16 : 32",
+      "key_concepts": ["multi-term ratios"],
+      "marks": 1,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Simplify the ratio 0.6 : 1.2.",
+      "answer": "1 : 2",
+      "key_concepts": ["simplifying ratios"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 9,
+      "question": "If two angles of a triangle are 55° and 65°, find the third angle.",
+      "answer": "60°",
+      "key_concepts": ["triangle angles"],
+      "marks": 1,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Divide 150 in the ratio 2 : 3.",
+      "answer": "60 and 90",
+      "key_concepts": ["division of quantities"],
+      "marks": 2,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 11,
+      "question": "In a pie chart, what angle represents 25% of the data?",
+      "answer": "90°",
+      "key_concepts": ["pie chart"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "If a category represents half of the data in a pie chart, what is its sector angle?",
+      "answer": "180°",
+      "key_concepts": ["pie chart"],
+      "marks": 1,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Calculate the sector angle for a value of 30 when the total value is 120.",
+      "answer": "90°",
+      "key_concepts": ["pie chart calculation"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 14,
+      "question": "If y is directly proportional to x and y = 12 when x = 4, find y when x = 10.",
+      "answer": "30",
+      "key_concepts": ["direct proportion"],
+      "marks": 2,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 15,
+      "question": "If 5 workers take 12 days to finish a job, how many days will 10 workers take?",
+      "answer": "6 days",
+      "key_concepts": ["inverse proportion"],
+      "marks": 2,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Give one real-life situation where distance and time are directly proportional.",
+      "answer": "Distance travelled increases with time when speed is constant.",
+      "key_concepts": ["direct proportion"],
+      "marks": 1,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Give one real-life situation where speed and time are inversely proportional.",
+      "answer": "For a fixed distance, increasing speed reduces travel time.",
+      "key_concepts": ["inverse proportion"],
+      "marks": 1,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 18,
+      "question": "If speed doubles for a fixed distance, what happens to time?",
+      "answer": "Time becomes half.",
+      "key_concepts": ["speed-time relation"],
+      "marks": 1,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain proportional reasoning with an example.",
+      "answer": "Proportional reasoning involves comparing quantities using ratios, such as ingredients in a recipe.",
+      "key_concepts": ["proportional reasoning"],
+      "marks": 2,
+      "source_section": "Chapter Overview"
+    },
+    {
+      "question_number": 20,
+      "question": "Mention two real-life applications of ratios.",
+      "answer": "Cooking recipes and map scales.",
+      "key_concepts": ["applications of ratios"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What advantage do pie charts provide when representing data?",
+      "answer": "They show the proportion of each category visually in a circle.",
+      "key_concepts": ["data representation"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 22,
+      "question": "If 8 workers complete a job in 9 days, how long will 12 workers take?",
+      "answer": "6 days",
+      "key_concepts": ["inverse proportion"],
+      "marks": 2,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 23,
+      "question": "In a pie chart, what does a larger sector represent?",
+      "answer": "A larger proportion of the total data.",
+      "key_concepts": ["pie chart sector"],
+      "marks": 1,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Describe the relationship between speed and time for a fixed distance.",
+      "answer": "Speed and time are inversely proportional.",
+      "key_concepts": ["speed-time relation"],
+      "marks": 2,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 25,
+      "question": "How can map scales help travellers in real life?",
+      "answer": "They help estimate the real distance between locations using the map measurement.",
+      "key_concepts": ["map scale"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    }
+  ]
+}

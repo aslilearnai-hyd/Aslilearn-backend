@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 7: Reach for the Top",
+    "title": "Extended Reading Passages with Questions – Reach for the Top",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "The chapter introduces a school quiz competition where students from different schools participate. The focus is on teamwork, knowledge, and courage of the participants.",
+            "questions": [
+                "What is the main event in the chapter?",
+                "Who participates in the event?",
+                "What qualities are highlighted?",
+                "Does the competition involve individuals or teams?",
+                "What is the focus of the quiz?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "The main team from St. Mark’s School is introduced, including their captain and team members. The students are determined to perform well and face challenges with confidence.",
+            "questions": [
+                "Which school’s team is highlighted?",
+                "Who leads the team?",
+                "What is the attitude of the team members?",
+                "Are the students confident or fearful?",
+                "What is their main goal?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "The quiz begins with questions on various topics like science, history, and current affairs. The students answer quickly, demonstrating knowledge and teamwork.",
+            "questions": [
+                "What subjects are included in the quiz?",
+                "Do the students answer slowly or quickly?",
+                "What skills are demonstrated?",
+                "Does the team work together?",
+                "Are the questions easy or challenging?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "The competition gets intense as rival teams try to answer correctly and earn points. The pressure tests the participants’ knowledge and composure.",
+            "questions": [
+                "What happens as the competition continues?",
+                "Who tries to answer questions?",
+                "What is being tested besides knowledge?",
+                "Do the students remain calm under pressure?",
+                "What makes the competition intense?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "During the quiz, one of the team members struggles to answer a difficult question but receives support from teammates. This shows the importance of cooperation and encouragement.",
+            "questions": [
+                "What challenge does a team member face?",
+                "How do teammates help?",
+                "What lesson is shown about cooperation?",
+                "Does support make a difference?",
+                "Is encouragement important in a team?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "The audience watches the competition with excitement and cheers for the teams. Their reactions motivate the students to perform better.",
+            "questions": [
+                "Who watches the quiz?",
+                "How does the audience react?",
+                "Does cheering influence the participants?",
+                "Are spectators passive or active?",
+                "What effect does motivation have on performance?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "The captain of St. Mark’s team remains calm and strategic, helping the team focus on correct answers. Leadership plays a key role in guiding the team.",
+            "questions": [
+                "How does the captain behave during the quiz?",
+                "What qualities of leadership are shown?",
+                "How does the captain help the team?",
+                "Does strategy matter in the quiz?",
+                "Is calmness important under pressure?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "The final round is challenging, and both teams answer swiftly. The quiz demonstrates knowledge, teamwork, and sportsmanship among participants.",
+            "questions": [
+                "What happens in the final round?",
+                "Do teams answer quickly or slowly?",
+                "What qualities are highlighted?",
+                "Is sportsmanship important?",
+                "Does the round test skill or luck?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "In the end, St. Mark’s team wins the quiz. The students celebrate their victory, proud of their hard work, knowledge, and cooperation.",
+            "questions": [
+                "Which team wins the quiz?",
+                "How do the students feel?",
+                "What reasons are given for their success?",
+                "Is victory individual or collective?",
+                "Do they celebrate teamwork or individual skill?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "The chapter teaches that determination, cooperation, knowledge, and good leadership are keys to success. It encourages students to aim high and support each other.",
+            "questions": [
+                "What are the main lessons of the chapter?",
+                "Which qualities lead to success?",
+                "Does leadership play a role?",
+                "How does cooperation affect outcomes?",
+                "What advice is given to students?"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Pressure, Winds, Storms and Cyclones",
+  "generated_at": "2026-03-06T02:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How does pressure change when the area of contact decreases?",
+      "answer": "Pressure increases when the area of contact decreases.",
+      "key_points": ["pressure"],
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 2,
+      "question": "Why do high-heeled shoes exert more pressure on the ground?",
+      "answer": "Because the area of contact is very small.",
+      "key_points": ["pressure application"],
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 3,
+      "question": "Why do mountaineers carry oxygen cylinders at high altitudes?",
+      "answer": "Because air pressure and oxygen levels are lower at high altitudes.",
+      "key_points": ["atmospheric pressure"],
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 4,
+      "question": "How does heating of air lead to wind formation?",
+      "answer": "Warm air rises and creates a low-pressure area, causing cooler air to move in as wind.",
+      "key_points": ["wind formation"],
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 5,
+      "question": "What happens to air when it gets heated?",
+      "answer": "Heated air expands and becomes lighter, causing it to rise.",
+      "key_points": ["air movement"],
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 6,
+      "question": "Why does cool air move toward areas where warm air has risen?",
+      "answer": "To fill the low-pressure region created by the rising warm air.",
+      "key_points": ["pressure difference"],
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are strong winds associated with storms?",
+      "answer": "Large pressure differences cause air to move rapidly, producing strong winds.",
+      "key_points": ["storms"],
+      "source_section": "Storms"
+    },
+    {
+      "question_number": 8,
+      "question": "What role does warm ocean water play in cyclone formation?",
+      "answer": "It provides heat energy and moisture needed for cyclone formation.",
+      "key_points": ["cyclone formation"],
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 9,
+      "question": "Why do cyclones weaken after reaching land?",
+      "answer": "Because they lose the supply of warm ocean water energy.",
+      "key_points": ["cyclone"],
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are coastal areas more affected by cyclones?",
+      "answer": "Cyclones form over oceans and move toward nearby coastal regions.",
+      "key_points": ["cyclone impact"],
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 11,
+      "question": "How does atmospheric pressure change with altitude?",
+      "answer": "Atmospheric pressure decreases as altitude increases.",
+      "key_points": ["atmospheric pressure"],
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are barometers useful in weather forecasting?",
+      "answer": "They help detect changes in atmospheric pressure.",
+      "key_points": ["barometer"],
+      "source_section": "Weather Prediction"
+    },
+    {
+      "question_number": 13,
+      "question": "What indicates the approach of a storm in weather observations?",
+      "answer": "A sudden drop in atmospheric pressure.",
+      "key_points": ["storm prediction"],
+      "source_section": "Weather Prediction"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do vehicles used in sandy areas have wide tyres?",
+      "answer": "Wide tyres increase area and reduce pressure on the ground.",
+      "key_points": ["pressure example"],
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 15,
+      "question": "Why does a nail have a pointed tip?",
+      "answer": "To produce greater pressure and penetrate materials easily.",
+      "key_points": ["pressure example"],
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 16,
+      "question": "What causes large-scale air movement in the atmosphere?",
+      "answer": "Differences in atmospheric pressure.",
+      "key_points": ["wind"],
+      "source_section": "Wind"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the main feature of the eye of a cyclone?",
+      "answer": "It is the calm center with relatively low wind speed.",
+      "key_points": ["cyclone structure"],
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do meteorologists track pressure changes over oceans?",
+      "answer": "To predict the formation of storms and cyclones.",
+      "key_points": ["weather prediction"],
+      "source_section": "Weather Prediction"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does air move faster when pressure difference is large?",
+      "answer": "Greater pressure difference produces stronger winds.",
+      "key_points": ["wind"],
+      "source_section": "Wind"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is understanding pressure important in weather science?",
+      "answer": "Pressure differences help explain wind, storms, and cyclones.",
+      "key_points": ["pressure"],
+      "source_section": "Weather and Pressure"
+    },
+    {
+      "question_number": 21,
+      "question": "What happens to the surrounding air when warm air rises rapidly?",
+      "answer": "Cooler air rushes in to replace it.",
+      "key_points": ["wind formation"],
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 22,
+      "question": "Why do storms often bring heavy rainfall?",
+      "answer": "Because rising moist air condenses to form clouds and rain.",
+      "key_points": ["storms"],
+      "source_section": "Storm Formation"
+    },
+    {
+      "question_number": 23,
+      "question": "How do pressure differences affect weather patterns?",
+      "answer": "They control air movement and influence wind and storm formation.",
+      "key_points": ["weather patterns"],
+      "source_section": "Weather and Pressure"
+    },
+    {
+      "question_number": 24,
+      "question": "Why do airplanes cabins need pressurization?",
+      "answer": "Because atmospheric pressure is very low at high altitudes.",
+      "key_points": ["atmospheric pressure"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are early warnings important before cyclones?",
+      "answer": "They help people take safety measures and reduce damage.",
+      "key_points": ["cyclone safety"],
+      "source_section": "Cyclones"
+    }
+  ]
+}

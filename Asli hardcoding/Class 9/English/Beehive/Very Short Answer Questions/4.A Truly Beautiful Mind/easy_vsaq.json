@@ -1,0 +1,182 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 4: A Truly Beautiful Mind",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the main subject of the chapter?",
+            "answer": "The main subject is Srinivasa Ramanujan.",
+            "key_points": ["Srinivasa Ramanujan", "mathematician"],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Where was Ramanujan born?",
+            "answer": "He was born in Erode, Tamil Nadu.",
+            "key_points": ["birthplace", "Erode", "Tamil Nadu"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 3,
+            "question": "What kind of family did Ramanujan belong to?",
+            "answer": "He belonged to a poor but learned family.",
+            "key_points": ["family background", "poverty", "education"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 4,
+            "question": "What was Ramanujan’s interest from a young age?",
+            "answer": "He was interested in mathematics from a very young age.",
+            "key_points": ["interest", "mathematics", "childhood"],
+            "source_section": "Childhood"
+        },
+        {
+            "question_number": 5,
+            "question": "Which college did Ramanujan attend?",
+            "answer": "He attended Government Arts College in Kumbakonam.",
+            "key_points": ["college", "Kumbakonam", "education"],
+            "source_section": "Education"
+        },
+        {
+            "question_number": 6,
+            "question": "Why did Ramanujan leave college?",
+            "answer": "He left because he failed in subjects other than mathematics.",
+            "key_points": ["college", "failure", "focus on mathematics"],
+            "source_section": "Education"
+        },
+        {
+            "question_number": 7,
+            "question": "Who encouraged Ramanujan to contact mathematicians in England?",
+            "answer": "He was encouraged by Professor Hardy.",
+            "key_points": ["Hardy", "mentorship", "England"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 8,
+            "question": "What was Ramanujan’s major contribution to mathematics?",
+            "answer": "He made extraordinary contributions to number theory and infinite series.",
+            "key_points": ["contributions", "number theory", "infinite series"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 9,
+            "question": "Where did Ramanujan go to work with Hardy?",
+            "answer": "He went to Cambridge University in England.",
+            "key_points": ["Cambridge", "England", "collaboration"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 10,
+            "question": "What health issues did Ramanujan face in England?",
+            "answer": "He suffered from poor health due to the cold climate and dietary differences.",
+            "key_points": ["health issues", "England", "climate"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 11,
+            "question": "When did Ramanujan return to India?",
+            "answer": "He returned to India in 1919.",
+            "key_points": ["return", "India", "1919"],
+            "source_section": "Later life"
+        },
+        {
+            "question_number": 12,
+            "question": "When did Ramanujan pass away?",
+            "answer": "He passed away in 1920.",
+            "key_points": ["death", "1920"],
+            "source_section": "Later life"
+        },
+        {
+            "question_number": 13,
+            "question": "What qualities made Ramanujan a brilliant mathematician?",
+            "answer": "His intuition, creativity, and deep understanding of numbers.",
+            "key_points": ["qualities", "intuition", "creativity"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the significance of Ramanujan’s notebooks?",
+            "answer": "They contained many original results that influenced modern mathematics.",
+            "key_points": ["notebooks", "original results", "influence"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 15,
+            "question": "Which mathematician recognized Ramanujan’s talent?",
+            "answer": "G.H. Hardy recognized his talent.",
+            "key_points": ["G.H. Hardy", "recognition"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 16,
+            "question": "What was Ramanujan’s approach to mathematics?",
+            "answer": "He relied on intuition and insight rather than formal proofs.",
+            "key_points": ["approach", "intuition", "insight"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 17,
+            "question": "How did Ramanujan impact mathematics after his death?",
+            "answer": "His theorems and results continue to inspire mathematicians worldwide.",
+            "key_points": ["impact", "legacy", "mathematics"],
+            "source_section": "Legacy"
+        },
+        {
+            "question_number": 18,
+            "question": "Which area of mathematics fascinated Ramanujan most?",
+            "answer": "He was fascinated by number theory.",
+            "key_points": ["number theory", "interest"],
+            "source_section": "Childhood"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is Ramanujan called a 'beautiful mind'?",
+            "answer": "Because of his extraordinary ability to discover complex mathematical results intuitively.",
+            "key_points": ["beautiful mind", "intuitive genius"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 20,
+            "question": "What difficulties did Ramanujan face in pursuing higher education?",
+            "answer": "He struggled with subjects other than mathematics, limiting formal education opportunities.",
+            "key_points": ["education challenges", "focus on mathematics"],
+            "source_section": "Education"
+        },
+        {
+            "question_number": 21,
+            "question": "How did Ramanujan’s family support him?",
+            "answer": "They encouraged his interest in mathematics despite financial constraints.",
+            "key_points": ["family support", "encouragement"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 22,
+            "question": "What is one lesson from Ramanujan’s life?",
+            "answer": "Passion and dedication can overcome hardships and lead to great achievements.",
+            "key_points": ["lesson", "dedication", "passion"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 23,
+            "question": "Which cultural and academic environment did Ramanujan thrive in?",
+            "answer": "He thrived in a collaborative environment at Cambridge with Hardy’s guidance.",
+            "key_points": ["Cambridge", "Hardy", "academic environment"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 24,
+            "question": "How did Hardy and Ramanujan collaborate?",
+            "answer": "Hardy provided formal rigor while Ramanujan contributed intuition and original ideas.",
+            "key_points": ["collaboration", "Hardy", "intuition"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 25,
+            "question": "What message does the chapter convey about talent and perseverance?",
+            "answer": "Genuine talent combined with perseverance can lead to extraordinary achievements.",
+            "key_points": ["talent", "perseverance", "achievement"],
+            "source_section": "Theme"
+        }
+    ]
+}

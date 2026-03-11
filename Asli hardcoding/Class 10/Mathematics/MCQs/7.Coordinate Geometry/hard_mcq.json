@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Coordinate Geometry",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T06:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If a point is equidistant from both X-axis and Y-axis, which of the following can be its coordinates?",
+            "options": {
+                "A": "(3, 5)",
+                "B": "(–4, 4)",
+                "C": "(6, 2)",
+                "D": "(0, 5)"
+            },
+            "correct_answer": "B",
+            "explanation": "For equidistance, |x| = |y|.",
+            "difficulty": "hard",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following points lies in the third quadrant and is 5 units away from the X-axis?",
+            "options": {
+                "A": "(–3, –5)",
+                "B": "(5, –3)",
+                "C": "(–5, 3)",
+                "D": "(3, 5)"
+            },
+            "correct_answer": "A",
+            "explanation": "Third quadrant → both coordinates negative and |y| = 5.",
+            "difficulty": "hard",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 3,
+            "question": "If the ordinate of a point is three times its abscissa and the point lies in the second quadrant, which is a possible point?",
+            "options": {
+                "A": "(2, 6)",
+                "B": "(–2, 6)",
+                "C": "(–6, 2)",
+                "D": "(6, –2)"
+            },
+            "correct_answer": "B",
+            "explanation": "Second quadrant → x negative, y positive; y = 3x → (–2, 6).",
+            "difficulty": "hard",
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 4,
+            "question": "The distance of the point (–7, –9) from the Y-axis is?",
+            "options": {
+                "A": "7",
+                "B": "9",
+                "C": "16",
+                "D": "√130"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance from Y-axis = |x| = 7.",
+            "difficulty": "hard",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following points is farthest from the X-axis?",
+            "options": {
+                "A": "(2, –6)",
+                "B": "(–4, 5)",
+                "C": "(7, –3)",
+                "D": "(–1, 4)"
+            },
+            "correct_answer": "A",
+            "explanation": "Greatest |y| value is 6.",
+            "difficulty": "hard",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 6,
+            "question": "If a point lies on the line y = 0, it must lie on the?",
+            "options": {
+                "A": "Y-axis",
+                "B": "X-axis",
+                "C": "Origin",
+                "D": "Second quadrant"
+            },
+            "correct_answer": "B",
+            "explanation": "y = 0 represents the X-axis.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following statements is always true?",
+            "options": {
+                "A": "Points on axes lie in quadrants",
+                "B": "Origin lies in all quadrants",
+                "C": "Points on axes do not lie in any quadrant",
+                "D": "All points have non-zero coordinates"
+            },
+            "correct_answer": "C",
+            "explanation": "Axes are not part of any quadrant.",
+            "difficulty": "hard",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 8,
+            "question": "If the abscissa of a point is zero and the ordinate is negative, the point lies on?",
+            "options": {
+                "A": "Negative X-axis",
+                "B": "Positive Y-axis",
+                "C": "Negative Y-axis",
+                "D": "Fourth quadrant"
+            },
+            "correct_answer": "C",
+            "explanation": "x = 0, y < 0 → negative Y-axis.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 9,
+            "question": "Which point satisfies |x| < |y| and lies in the fourth quadrant?",
+            "options": {
+                "A": "(3, –5)",
+                "B": "(–3, –5)",
+                "C": "(–5, 3)",
+                "D": "(5, –3)"
+            },
+            "correct_answer": "A",
+            "explanation": "Fourth quadrant → x positive, y negative and |3| < |5|.",
+            "difficulty": "hard",
+            "source_section": "Inequalities"
+        },
+        {
+            "question_number": 10,
+            "question": "The coordinates of a point whose distances from both axes are equal to 4 units can be?",
+            "options": {
+                "A": "(4, 4)",
+                "B": "(–4, –4)",
+                "C": "(4, –4)",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "|x| = |y| = 4 satisfies all options.",
+            "difficulty": "hard",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 11,
+            "question": "If a point P lies in the second quadrant, which of the following must be true?",
+            "options": {
+                "A": "x > 0, y > 0",
+                "B": "x < 0, y > 0",
+                "C": "x < 0, y < 0",
+                "D": "x > 0, y < 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Second quadrant → x negative, y positive.",
+            "difficulty": "hard",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 12,
+            "question": "Which point lies exactly midway between the axes?",
+            "options": {
+                "A": "(0, 0)",
+                "B": "(3, 3)",
+                "C": "(–2, –2)",
+                "D": "(4, –4)"
+            },
+            "correct_answer": "A",
+            "explanation": "Origin is equidistant (0 units) from both axes.",
+            "difficulty": "hard",
+            "source_section": "Origin"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following points lies on neither axis nor any quadrant?",
+            "options": {
+                "A": "(0, 5)",
+                "B": "(–3, 4)",
+                "C": "(4, –2)",
+                "D": "(–5, –6)"
+            },
+            "correct_answer": "A",
+            "explanation": "Points on axes do not belong to any quadrant.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 14,
+            "question": "The ordinate of a point is zero. What can be said about the point?",
+            "options": {
+                "A": "It lies on Y-axis",
+                "B": "It lies on X-axis",
+                "C": "It lies in a quadrant",
+                "D": "It is the origin"
+            },
+            "correct_answer": "B",
+            "explanation": "Ordinate = y = 0 → X-axis.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 15,
+            "question": "If x < 0 and y < 0, then the point lies in?",
+            "options": {
+                "A": "First quadrant",
+                "B": "Second quadrant",
+                "C": "Third quadrant",
+                "D": "Fourth quadrant"
+            },
+            "correct_answer": "C",
+            "explanation": "Both coordinates negative → third quadrant.",
+            "difficulty": "hard",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following points is nearest to the origin?",
+            "options": {
+                "A": "(–1, 2)",
+                "B": "(3, 4)",
+                "C": "(–2, –2)",
+                "D": "(5, 1)"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance from origin depends on √(x² + y²).",
+            "difficulty": "hard",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 17,
+            "question": "A point whose abscissa is negative and ordinate is zero lies on?",
+            "options": {
+                "A": "Positive X-axis",
+                "B": "Negative X-axis",
+                "C": "Positive Y-axis",
+                "D": "Negative Y-axis"
+            },
+            "correct_answer": "B",
+            "explanation": "x < 0, y = 0 → negative X-axis.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 18,
+            "question": "Which condition ensures that a point lies on Y-axis?",
+            "options": {
+                "A": "y = 0",
+                "B": "x = 0",
+                "C": "x = y",
+                "D": "x > y"
+            },
+            "correct_answer": "B",
+            "explanation": "Points on Y-axis have x = 0.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following points lies in the first quadrant and is 4 units away from Y-axis?",
+            "options": {
+                "A": "(4, 1)",
+                "B": "(–4, 3)",
+                "C": "(1, –4)",
+                "D": "(–1, 4)"
+            },
+            "correct_answer": "A",
+            "explanation": "First quadrant → x > 0, y > 0 and |x| = 4.",
+            "difficulty": "hard",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 20,
+            "question": "If |x| = 3 and |y| = 5, how many possible points can be formed?",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "8"
+            },
+            "correct_answer": "D",
+            "explanation": "Each coordinate can be positive or negative → 2 × 2 × 2 = 8 combinations.",
+            "difficulty": "hard",
+            "source_section": "Concept Application"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following is NOT possible for a point in the second quadrant?",
+            "options": {
+                "A": "x < 0",
+                "B": "y > 0",
+                "C": "x = 0",
+                "D": "y ≠ 0"
+            },
+            "correct_answer": "C",
+            "explanation": "x = 0 lies on Y-axis, not in any quadrant.",
+            "difficulty": "hard",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 22,
+            "question": "If a point lies equally distant from both axes but not on them, how many quadrants can it lie in?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "D",
+            "explanation": "|x| = |y| allows points in all four quadrants.",
+            "difficulty": "hard",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following points has its ordinate numerically greater than its abscissa?",
+            "options": {
+                "A": "(2, 1)",
+                "B": "(–3, –5)",
+                "C": "(4, –3)",
+                "D": "(5, 2)"
+            },
+            "correct_answer": "B",
+            "explanation": "|y| > |x| → 5 > 3.",
+            "difficulty": "hard",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 24,
+            "question": "If a point lies on the negative Y-axis, which of the following is true?",
+            "options": {
+                "A": "x > 0, y < 0",
+                "B": "x = 0, y < 0",
+                "C": "x < 0, y = 0",
+                "D": "x < 0, y < 0"
+            },
+            "correct_answer": "B",
+            "explanation": "Negative Y-axis → x = 0 and y < 0.",
+            "difficulty": "hard",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement about the origin is correct?",
+            "options": {
+                "A": "It lies in all quadrants",
+                "B": "It lies in exactly one quadrant",
+                "C": "It lies on both axes",
+                "D": "It lies only on X-axis"
+            },
+            "correct_answer": "C",
+            "explanation": "Origin lies on both X-axis and Y-axis.",
+            "difficulty": "hard",
+            "source_section": "Origin"
+        }
+    ]
+}

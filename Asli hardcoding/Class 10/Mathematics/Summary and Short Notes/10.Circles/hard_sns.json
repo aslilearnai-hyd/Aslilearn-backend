@@ -1,0 +1,25 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh110.pdf",
+    "short_notes": {
+        "key_points": [
+            "Proof-based questions are common",
+            "Multiple tangent properties may be used together",
+            "Logical justification is required"
+        ],
+        "examples": [
+            "Proof of tangent properties",
+            "Complex diagram-based problems"
+        ],
+        "formulas": [
+            "Tangent properties"
+        ],
+        "exam_tips": [
+            "Write proofs stepwise",
+            "Label diagrams clearly"
+        ]
+    }
+}

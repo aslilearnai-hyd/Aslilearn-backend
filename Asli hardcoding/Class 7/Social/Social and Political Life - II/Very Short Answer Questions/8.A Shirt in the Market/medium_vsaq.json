@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 8: A SHIRT IN THE MARKET",
+    "generated_at": "2026-03-07T20:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the role of farmers in shirt production.",
+            "answer": "Farmers grow cotton, which is the raw material for shirts. Their work is the first step in the production chain.",
+            "key_concepts": ["farmers", "raw material"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the function of middlemen in the cotton trade?",
+            "answer": "Middlemen buy cotton from farmers and sell it to traders or factories, connecting producers to markets.",
+            "key_concepts": ["middlemen", "trade"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the spinning and weaving process.",
+            "answer": "Spinning converts cotton into yarn, and weaving converts yarn into fabric ready for tailoring.",
+            "key_concepts": ["spinning", "weaving"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Why do small producers form cooperatives?",
+            "answer": "Cooperatives help small producers get fair prices, reduce dependence on middlemen, and share resources.",
+            "key_concepts": ["cooperatives", "fair prices"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how tailors contribute to shirt production.",
+            "answer": "Tailors cut and stitch fabric into shirts, giving the final shape and design for sale.",
+            "key_concepts": ["tailoring", "production chain"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the importance of retailers in the market?",
+            "answer": "Retailers sell shirts to consumers, add profit margins, and make shirts accessible in local markets.",
+            "key_concepts": ["retailers", "distribution"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How do dyes affect shirt production?",
+            "answer": "Dyes color the fabric and make shirts attractive, but synthetic dyes can pollute water.",
+            "key_concepts": ["dyeing", "environment"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Name one environmental challenge in shirt production.",
+            "answer": "Water pollution from chemical dyes used in coloring fabrics.",
+            "key_concepts": ["environmental impact"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 9,
+            "question": "How can consumers support ethical production?",
+            "answer": "By buying eco-friendly, sustainably produced, or fairly traded shirts.",
+            "key_concepts": ["ethical consumption"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why direct selling helps small producers.",
+            "answer": "Direct selling allows producers to earn better income by avoiding middlemen and selling at fair prices.",
+            "key_concepts": ["direct selling", "income"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the significance of water in the shirt-making process?",
+            "answer": "Water is needed for cotton cultivation, dyeing fabrics, and cleaning materials.",
+            "key_concepts": ["water usage", "production"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the journey of a shirt from cotton to market.",
+            "answer": "Cotton is grown by farmers, sold to middlemen or cooperatives, spun into yarn, woven into fabric, stitched by tailors, dyed, and sold by retailers.",
+            "key_concepts": ["production chain", "supply chain"],
+            "marks": 3,
+            "source_section": "Section 8.1-8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How do cooperatives improve producer income?",
+            "answer": "They reduce dependence on middlemen, help get fair prices, and allow shared access to resources and markets.",
+            "key_concepts": ["cooperatives", "income improvement"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is it important to understand the production process of shirts?",
+            "answer": "It helps consumers appreciate the work involved, ethical issues, and environmental impact of clothing.",
+            "key_concepts": ["production awareness"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 15,
+            "question": "How can small producers avoid exploitation by middlemen?",
+            "answer": "By forming cooperatives, selling directly, or connecting with fair trade networks.",
+            "key_concepts": ["producer protection", "middlemen"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the role of technology in production.",
+            "answer": "Technology speeds up spinning, weaving, and cutting, improving efficiency and output.",
+            "key_concepts": ["technology", "production"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the benefit of sustainable shirt production?",
+            "answer": "It reduces environmental damage, protects water resources, and supports ethical labor practices.",
+            "key_concepts": ["sustainability", "ethical production"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Give one reason why middlemen are still needed.",
+            "answer": "They connect farmers to distant markets and provide immediate cash to producers.",
+            "key_concepts": ["middlemen", "market link"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How does trade affect producer and consumer prices?",
+            "answer": "Trade adds costs and profit margins, affecting the final price paid by consumers.",
+            "key_concepts": ["pricing", "trade"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Name two ways consumers can make clothing choices more ethical.",
+            "answer": "Buying eco-friendly products and supporting fair trade.",
+            "key_concepts": ["ethical consumption"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do small producers need access to markets?",
+            "answer": "Access to markets allows them to sell their products at fair prices and increase income.",
+            "key_concepts": ["market access", "producers"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of tailors in the local economy.",
+            "answer": "Tailors provide jobs, produce clothing for sale, and support local trade and consumption.",
+            "key_concepts": ["tailoring", "local economy"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 23,
+            "question": "How can ethical production benefit communities?",
+            "answer": "It provides fair wages, safe working conditions, and promotes sustainable use of resources.",
+            "key_concepts": ["ethical production", "community benefit"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is cotton considered an important cash crop?",
+            "answer": "Because it is the main raw material for the textile industry and supports farmer income.",
+            "key_concepts": ["cash crop", "cotton"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize one lesson learned from Chapter 8.",
+            "answer": "Shirt production involves multiple stages, cooperation of various people, and attention to fair and sustainable practices.",
+            "key_concepts": ["production process", "ethics"],
+            "marks": 3,
+            "source_section": "Section 8.1-8.5"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+  "class": "Class 10",
+  "subject": "Science",
+  "chapter": "Light – Reflection and Refraction",
+  "difficulty": "Medium",
+  "source_pdf": "jesc109.pdf",
+  "short_notes": {
+    "key_points": [
+      "Reflection of light follows two laws: the angle of incidence equals the angle of reflection and the incident ray, reflected ray and normal lie in the same plane",
+      "Spherical mirrors are formed from a part of a hollow sphere and are classified as concave or convex mirrors",
+      "Important terms related to spherical mirrors include pole, principal axis, centre of curvature, principal focus and focal length",
+      "Refraction occurs when light passes from one transparent medium to another due to change in its speed",
+      "The refractive index of a medium determines how much the light bends when entering that medium"
+    ],
+    "examples": [
+      "Concave mirrors used in solar furnaces to concentrate sunlight",
+      "Convex mirrors used in security mirrors in shops",
+      "A coin appearing raised when seen through water due to refraction",
+      "Stars appearing to twinkle due to atmospheric refraction"
+    ],
+    "formulas": [
+      "Mirror formula → 1/f = 1/v + 1/u",
+      "Magnification → m = hᵢ / hₒ = -v / u",
+      "Refractive index → n = c / v",
+      "Snell's law → n = sin i / sin r"
+    ],
+    "exam_tips": [
+      "Practice ray diagrams for all positions of object in concave mirrors",
+      "Understand sign convention used in mirror formula",
+      "Solve numerical problems using mirror formula and magnification",
+      "Learn the relationship between refractive index and speed of light"
+    ]
+  }
+}

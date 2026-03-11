@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Acids, Bases and Salts",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the chemical properties of acids and bases with balanced equations",
+        "Understand the concept of H+ and OH- ion concentration in solutions",
+        "Correlate the strength of acids and bases with the pH scale",
+        "Analyze the importance of pH in biological and environmental systems",
+        "Understand the manufacturing process and chemical reactions of industrially important salts",
+        "Investigate the nature of 'Water of Crystallization' through experimentation"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Chemical Reactions of Acids and Bases",
+            "topics_covered": [
+                "Reaction with metals and formation of Hydrogen gas",
+                "Reaction with Metal Carbonates and Hydrogen Carbonates",
+                "Neutralization reaction (Acid + Base)"
+            ],
+            "teaching_strategy": [
+                "Demonstration of the 'Pop' test with Zinc and $HCl$",
+                "Step-by-step derivation of balanced chemical equations",
+                "Comparison of reactions with Metallic vs. Non-metallic oxides"
+            ],
+            "student_activities": [
+                "Write balanced equations for the reaction of $HCl$ and $CH_{3}COOH$ with Magnesium",
+                "Observation table for $CO_{2}$ evolution with Lime Water"
+            ],
+            "assessment": [
+                "Equation writing worksheet",
+                "Oral quiz on products formed during neutralization"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Commonality in Acids and Bases",
+            "topics_covered": [
+                "Conductivity of acid/base solutions",
+                "Role of water in dissociation (H+ and OH- ions)",
+                "Difference between Strong and Weak acids/bases"
+            ],
+            "teaching_strategy": [
+                "Circuit diagram demonstration showing bulb glowing in $HCl$ vs. Glucose",
+                "Explaining why dry $HCl$ gas does not change litmus color",
+                "Dilution process and its exothermic nature"
+            ],
+            "student_activities": [
+                "Draw the experimental setup for testing conductivity",
+                "Group discussion: Why are alcohols not classified as acids?"
+            ],
+            "assessment": [
+                "Conceptual short-answer test",
+                "Notebook review of the dilution safety warning"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Strength of Acids and Bases (pH)",
+            "topics_covered": [
+                "Universal Indicator and the pH scale",
+                "Logarithmic nature of pH (basic introduction)",
+                "Strong vs. Concentrated acids"
+            ],
+            "teaching_strategy": [
+                "Color-matching activity with Universal Indicator",
+                "Using pH paper on different concentrations of $HCl$ and Sodium Hydroxide",
+                "Comparative chart of $H^{+}$ ion concentration"
+            ],
+            "student_activities": [
+                "Test the pH of common substances (Saliva, Lemon juice, Coffee)",
+                "Plot a bar graph of pH values for 5 different solutions"
+            ],
+            "assessment": [
+                "MCQs on pH values and ion concentration",
+                "Exit slip: Describe the difference between a weak acid and a dilute acid"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Importance of pH in Daily Life",
+            "topics_covered": [
+                "pH of the digestive system and Antacids",
+                "Tooth decay and the role of Calcium Hydroxyapatite",
+                "Self-defense by animals (Honeybees, Nettle stings)"
+            ],
+            "teaching_strategy": [
+                "Case studies on acid rain and aquatic life",
+                "Discussion on why Methanoic acid causes pain in stings",
+                "Analyzing the buffering action of soil"
+            ],
+            "student_activities": [
+                "Research activity: Finding the pH range of a healthy garden soil",
+                "Create a 'Daily pH' fact sheet"
+            ],
+            "assessment": [
+                "Application-based worksheet",
+                "Peer-to-peer questioning round"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Family of Salts - Part 1",
+            "topics_covered": [
+                "pH of salts (Acidic, Basic, and Neutral salts)",
+                "Chlor-alkali process ($NaOH$, $Cl_{2}$, $H_{2}$)",
+                "Bleaching Powder ($CaOCl_{2}$) synthesis and uses"
+            ],
+            "teaching_strategy": [
+                "Flowchart for the electrolysis of Brine",
+                "Using litmus to test salts like $NH_{4}Cl$ and $CH_{3}COONa$",
+                "Displaying industrial uses of Chlorine and Hydrogen"
+            ],
+            "student_activities": [
+                "Label the Chlor-alkali cell diagram",
+                "Predict the nature of salts based on parent acid and base"
+            ],
+            "assessment": [
+                "Short test on salt classification",
+                "Matching activity: Product to Industrial use"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "The Family of Salts - Part 2",
+            "topics_covered": [
+                "Baking Soda ($NaHCO_{3}$) and Washing Soda ($Na_{2}CO_{3} \cdot 10H_{2}O$)",
+                "Plaster of Paris and Gypsum",
+                "The concept of Water of Crystallization"
+            ],
+            "teaching_strategy": [
+                "Chemical equations for heating Baking Soda",
+                "Demonstrating the reversible dehydration of Copper Sulphate",
+                "Explaining the fractional water molecule in POP"
+            ],
+            "student_activities": [
+                "Observe the change in blue $CuSO_{4}$ crystals upon heating",
+                "Write the equation for the setting of Plaster of Paris"
+            ],
+            "assessment": [
+                "Formula identification quiz",
+                "Worksheet on uses of Sodium compounds"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Comprehensive Assessment",
+            "topics_covered": [
+                "Chapter recap",
+                "Board-style Assertion-Reason questions",
+                "Formula and equation review"
+            ],
+            "teaching_strategy": [
+                "Mind-map construction (Acids $\rightarrow$ Bases $\rightarrow$ Salts)",
+                "Solving NCERT exercise 'Back Questions'",
+                "Clarifying doubts on $H_{3}O^{+}$ formation"
+            ],
+            "student_activities": [
+                "Solve a 20-mark mock test",
+                "Participate in a group 'Reaction Balancing' relay"
+            ],
+            "assessment": [
+                "Formal Chapter Test (20 marks)",
+                "Review of common conceptual errors"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Universal Indicator, pH strips, conductivity kit",
+        "NCERT Science Textbook & Lab Manual",
+        "Samples: Copper Sulphate, Gypsum, Baking Soda, Bleaching Powder",
+        "Chemicals: $HCl$, $H_{2}SO_{4}$, $NaOH$, $Ca(OH)_{2}$",
+        "Whiteboard/Digital Board for reaction mechanisms"
+    ],
+    "evaluation_methods": [
+        "Balanced equation worksheets",
+        "Identification of 'X' and 'Y' in chemical reactions",
+        "Practical file review",
+        "Assertion & Reason MCQs",
+        "Summative Chapter Test"
+    ],
+    "teacher_tip": "Students often struggle to understand why $H^{+}$ is written as $H_{3}O^{+}$ (Hydronium). Use a visual analogy of a 'homeless' Hydrogen ion finding a 'home' with a Water molecule to make it more memorable."
+}

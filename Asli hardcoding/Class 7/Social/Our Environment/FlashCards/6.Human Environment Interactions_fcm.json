@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 6: Human Environment Interactions",
+    "generated_at": "2026-03-07T15:30:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "How do humans adapt to their environment?",
+                "correct_answer": "By adjusting homes, clothing, and daily activities according to climate, terrain, and resources",
+                "explanation": "Adaptation helps humans survive and use available resources efficiently.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "How does environment influence housing and clothing?",
+                "correct_answer": "People build houses and wear clothes suited to climate and available materials",
+                "explanation": "Cold regions require insulated homes and woollen clothes; warm regions have light homes and cotton clothes.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "question": "How does agriculture depend on the environment?",
+                "correct_answer": "Crop choice, farming methods, and irrigation depend on climate, soil, and water availability",
+                "explanation": "Wet regions grow rice, dry regions grow millet; terrace farming is used in hilly areas.",
+                "source_section": "Section 6.3"
+            },
+            {
+                "question": "How does geography affect trade and transportation?",
+                "correct_answer": "Rivers, mountains, and deserts determine trade routes and transport methods",
+                "explanation": "Merchants in mountains use mules; rivers serve as natural trade routes.",
+                "source_section": "Section 6.4"
+            },
+            {
+                "question": "How do natural disasters affect communities?",
+                "correct_answer": "Floods, droughts, cyclones, and earthquakes influence settlements and survival strategies",
+                "explanation": "Communities build elevated houses or irrigation systems to cope with disasters.",
+                "source_section": "Section 6.5"
+            },
+            {
+                "question": "What are some solutions to environmental challenges?",
+                "correct_answer": "Irrigation, terrace farming, reforestation, and disaster management",
+                "explanation": "These solutions help sustain communities despite water scarcity, soil erosion, and climate extremes.",
+                "source_section": "Section 6.6"
+            },
+            {
+                "question": "What do regional case studies show?",
+                "correct_answer": "Different regions show unique human adaptations based on environment, culture, and technology",
+                "explanation": "Desert farmers use rainwater harvesting; northeastern hills practice jhum cultivation.",
+                "source_section": "Section 6.7"
+            },
+            {
+                "question": "What is sustainable living in relation to environment?",
+                "correct_answer": "Using resources wisely to maintain harmony with nature and ensure future survival",
+                "explanation": "Traditional water tanks in South India collect rainwater for long-term use.",
+                "source_section": "Section 6.8"
+            },
+            {
+                "question": "How does geography shape human life?",
+                "correct_answer": "It influences settlement patterns, food habits, and occupations",
+                "explanation": "Civilizations developed along rivers for fertile land and water resources.",
+                "source_section": "Section 6.9"
+            },
+            {
+                "question": "How do humans modify the environment?",
+                "correct_answer": "Through irrigation, dams, urbanization, and deforestation to meet their needs",
+                "explanation": "The Bhakra Nangal dam altered local geography to provide water and electricity.",
+                "source_section": "Section 6.10"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Adaptation",
+                "content": "Humans change lifestyle, housing, and clothing to suit environment.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "title": "Housing & Clothing",
+                "content": "Homes and clothes are designed for climate and local materials.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "title": "Agriculture",
+                "content": "Crop selection and farming methods depend on environment.",
+                "source_section": "Section 6.3"
+            },
+            {
+                "title": "Trade & Transport",
+                "content": "Geography affects how goods are moved and trade routes formed.",
+                "source_section": "Section 6.4"
+            },
+            {
+                "title": "Disasters & Solutions",
+                "content": "Communities adopt strategies like raised houses and irrigation to cope with natural disasters.",
+                "source_section": "Section 6.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Terrace farming prevents soil erosion in hilly areas.",
+                "source_section": "Section 6.6"
+            },
+            {
+                "fact": "Rainwater harvesting helps communities in water-scarce regions.",
+                "source_section": "Section 6.7"
+            },
+            {
+                "fact": "Rivers, mountains, and deserts shape trade and settlement patterns.",
+                "source_section": "Section 6.4"
+            },
+            {
+                "fact": "Humans both adapt to and modify the environment to meet their needs.",
+                "source_section": "Section 6.10"
+            },
+            {
+                "fact": "Sustainable practices ensure resources last for future generations.",
+                "source_section": "Section 6.8"
+            }
+        ]
+    }
+}

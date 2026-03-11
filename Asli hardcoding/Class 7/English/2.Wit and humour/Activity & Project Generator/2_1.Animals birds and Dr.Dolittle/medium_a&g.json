@@ -1,0 +1,140 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "Animals, Birds and Dr. Dolittle",
+  "difficulty": "Medium",
+  "source_pdf": "honeycomb_unit2.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Study: The Eccentric Doctor",
+      "objective": "Analyze the personality traits that lead to the Doctor's career change",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Identify the reasons why human patients stopped visiting Dr. Dolittle.",
+        "List three eccentric habits of the Doctor mentioned in the text.",
+        "Write a 60-word paragraph explaining how his 'weakness' for animals became his greatest professional strength."
+      ],
+      "learning_outcome": "Students analyze character motivation and situational irony",
+      "evaluation": "Insightful character analysis and use of textual details (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Polynesia’s Linguistic Lesson",
+      "objective": "Understand the logic behind 'animal language' as described in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Explain Polynesia’s distinction between 'people-talk' and 'animal-talk'.",
+        "Describe the specific example Polynesia uses to show how dogs 'speak' with their noses.",
+        "Write a short dialogue where the Doctor realizes for the first time that animals have a complex language."
+      ],
+      "learning_outcome": "Students grasp the imaginative logic and descriptive detail of the text",
+      "evaluation": "Accuracy in explaining the story's concepts and creative dialogue (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "The Humour of Contrast",
+      "objective": "Identify how the author uses contrast to create wit",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Compare the Doctor’s tidy house at the start of the story with its state after the animals moved in.",
+        "Find a humorous reaction from a townsperson (like the Cat's-meat-Man) regarding the Doctor's lifestyle.",
+        "Write 3 sentences on how the author makes the Doctor’s poverty seem funny rather than sad."
+      ],
+      "learning_outcome": "Students recognize the literary techniques of contrast and light-hearted tone",
+      "evaluation": "Ability to identify and explain humorous elements (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Vocabulary: Specialized Terms",
+      "objective": "Learn and use medical and animal-related terminology",
+      "materials": ["Dictionary", "Notebook"],
+      "steps": [
+        "Find the words 'Physician', 'Peculiar', 'Dreadful', and 'Linguist' in the text.",
+        "Use a dictionary to find one synonym for each that fits the context of the story.",
+        "Write a short 'Patient Record' for an animal using at least two of these words."
+      ],
+      "learning_outcome": "Students master vocabulary and understand its application in different contexts",
+      "evaluation": "Correct synonym selection and contextual usage (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "The 'Cat's-meat-Man' Advice",
+      "objective": "Analyze the influence of secondary characters on the plot",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify the advice given by the Cat's-meat-Man to Dr. Dolittle.",
+        "Explain why this character was the perfect person to suggest the Doctor become an animal specialist.",
+        "Summarize the conversation in 4 bullet points."
+      ],
+      "learning_outcome": "Students understand how minor characters drive the plot forward",
+      "evaluation": "Logical summary and understanding of character roles (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Grammar: Direct and Indirect Speech",
+      "objective": "Convert the witty dialogues into reported speech",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Find a specific dialogue between Polynesia and Dr. Dolittle (e.g., about the ABCs of animal talk).",
+        "Convert 4 lines of this conversation into indirect speech.",
+        "Highlight the changes made to the verbs and pronouns."
+      ],
+      "learning_outcome": "Students apply rules of narration to literary dialogues",
+      "evaluation": "Grammatical accuracy in conversion (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Creative Writing: An Animal's Complaint",
+      "objective": "Use humor to describe a situation from an animal's perspective",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are Jip the dog or Dab-Dab the duck.",
+        "Write a 4-line 'complaint' to the Doctor about a human habit you find strange (using the logic of animal language).",
+        "Ensure the tone is witty and reflects the animal’s personality as shown in the book."
+      ],
+      "learning_outcome": "Students practice writing with a specific voice and tone",
+      "evaluation": "Creativity, wit, and consistency with character traits (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "The 'Wit and Humour' Check",
+      "objective": "Connect the chapter to the unit's theme",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select one scene you found particularly 'witty'.",
+        "Does the humor come from what the characters *say* or what they *do*?",
+        "Explain your choice in 3-4 sentences."
+      ],
+      "learning_outcome": "Students categorize types of humor in literature",
+      "evaluation": "Clear reasoning and thematic connection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Debate: Humans vs. Animals",
+      "objective": "Discuss the merits of the Doctor's choice",
+      "materials": ["Notebook"],
+      "steps": [
+        "Prepare two points for a classroom debate: 'Is it better to be a famous people doctor or a poor animal doctor?'",
+        "Use facts from the story to support your side.",
+        "Write down one 'rebuttal' you expect from the opposing side."
+      ],
+      "learning_outcome": "Students practice argumentative speaking and logical evidence gathering",
+      "evaluation": "Quality of arguments and preparation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Illustrating the 'Language' Gap",
+      "objective": "Visually represent the concept of miscommunication",
+      "materials": ["A4 Paper", "Colors"],
+      "steps": [
+        "Draw a two-panel comic.",
+        "Panel 1: A human saying something to a dog that the dog doesn't understand.",
+        "Panel 2: Dr. Dolittle 'translating' the dog's tail-wag or nose-twitch into English.",
+        "Add humorous speech bubbles."
+      ],
+      "learning_outcome": "Students synthesize visual and verbal storytelling",
+      "evaluation": "Creativity and relevance to the story's theme (10 marks)"
+    }
+  ]
+}

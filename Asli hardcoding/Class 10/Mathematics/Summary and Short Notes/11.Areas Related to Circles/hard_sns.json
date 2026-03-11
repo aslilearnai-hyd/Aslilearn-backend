@@ -1,0 +1,24 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Areas Related to Circles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh111.pdf",
+    "short_notes": {
+        "key_points": [
+            "Composite figures require multi-step calculation",
+            "Segment area problems need careful diagram analysis",
+            "Logical subtraction of areas is important"
+        ],
+        "examples": [
+            "Complex shaded region problems"
+        ],
+        "formulas": [
+            "Segment area = sector − triangle"
+        ],
+        "exam_tips": [
+            "Sketch figure before calculation",
+            "Avoid rounding errors early"
+        ]
+    }
+}

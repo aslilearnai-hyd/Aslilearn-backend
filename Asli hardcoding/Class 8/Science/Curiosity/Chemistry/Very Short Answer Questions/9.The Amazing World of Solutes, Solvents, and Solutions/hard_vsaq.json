@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: The Amazing World of Solutes, Solvents, and Solutions",
+  "generated_at": "2026-03-05T19:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is salt water considered a homogeneous mixture?",
+      "answer": "Because salt particles are evenly distributed throughout the water.",
+      "key_points": ["homogeneous mixture"],
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Why is nitrogen considered the solvent in air?",
+      "answer": "Because it is present in the largest proportion.",
+      "key_points": ["gaseous solution"],
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why does stirring help a solute dissolve faster?",
+      "answer": "It increases contact between solute and solvent particles.",
+      "key_points": ["dissolution"],
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Why does heating water increase solubility of many solids?",
+      "answer": "Higher temperature increases particle motion allowing more solute to dissolve.",
+      "key_points": ["temperature effect"],
+      "source_section": "Section 9.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Why does gas solubility decrease at higher temperatures?",
+      "answer": "Gas particles escape more easily when temperature increases.",
+      "key_points": ["gas solubility"],
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do fish struggle in warm polluted water?",
+      "answer": "Warm water holds less dissolved oxygen.",
+      "key_points": ["dissolved oxygen"],
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does oil float on water but not mix with it?",
+      "answer": "Oil has lower density and is immiscible with water.",
+      "key_points": ["density", "immiscible liquids"],
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do objects with higher density than water sink?",
+      "answer": "Their mass per unit volume is greater than water.",
+      "key_points": ["density"],
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Why can large ships float even though steel sinks in water?",
+      "answer": "Ships have hollow structures that reduce overall density.",
+      "key_points": ["density application"],
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is density called a characteristic property?",
+      "answer": "Because each substance has a specific density value.",
+      "key_points": ["density property"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 11,
+      "question": "How can density help identify unknown materials?",
+      "answer": "By comparing measured density with known values.",
+      "key_points": ["density identification"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Why does heating usually decrease density of substances?",
+      "answer": "Particles move apart increasing volume.",
+      "key_points": ["density change"],
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Why does hot air rise in the atmosphere?",
+      "answer": "Because hot air is less dense than cold air.",
+      "key_points": ["density"],
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are gases more compressible than solids?",
+      "answer": "Gas particles are far apart with large empty spaces.",
+      "key_points": ["gas properties"],
+      "source_section": "Section 9.5.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Why must measurements be taken at eye level in a measuring cylinder?",
+      "answer": "To avoid parallax error.",
+      "key_points": ["measurement accuracy"],
+      "source_section": "Activity 9.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are measuring cylinders tall and narrow?",
+      "answer": "To improve accuracy of volume measurements.",
+      "key_points": ["measurement instrument"],
+      "source_section": "Activity 9.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is the displacement method useful for irregular objects?",
+      "answer": "Because their volume cannot be measured using geometric formulas.",
+      "key_points": ["displacement method"],
+      "source_section": "Activity 9.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Why does ice float though it is made of water?",
+      "answer": "Ice has lower density due to expansion during freezing.",
+      "key_points": ["density"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does increasing pressure increase density of gases?",
+      "answer": "Pressure pushes gas particles closer together.",
+      "key_points": ["pressure effect"],
+      "source_section": "Section 9.5.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is dissolved oxygen important in aquatic ecosystems?",
+      "answer": "It supports respiration of aquatic organisms.",
+      "key_points": ["ecosystem"],
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is density important in science experiments?",
+      "answer": "It helps determine physical properties of substances.",
+      "key_points": ["density measurement"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does adding salt to water increase its density?",
+      "answer": "Because dissolved salt increases mass without much change in volume.",
+      "key_points": ["density change"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Why do hot air balloons rise in air?",
+      "answer": "Because heated air inside the balloon is less dense.",
+      "key_points": ["density application"],
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Why do scientists measure both mass and volume when studying substances?",
+      "answer": "To calculate density.",
+      "key_points": ["density formula"],
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are solutions important in medicine preparation?",
+      "answer": "Because medicines must dissolve uniformly for proper dosage.",
+      "key_points": ["solution applications"],
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

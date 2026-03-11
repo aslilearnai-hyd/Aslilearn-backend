@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 7: Triangles",
+    "generated_at": "2026-03-06T04:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that the medians of a triangle intersect at a point dividing each median in 2:1 ratio.",
+            "answer": "Let the vertices be A(x1,y1), B(x2,y2), C(x3,y3). Find midpoints of sides and equations of medians. Solve to show intersection point divides each median in 2:1 ratio.",
+            "key_concepts": ["centroid", "medians", "coordinate geometry"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that the sum of the squares of the sides of a triangle equals the sum of the squares of the medians multiplied by 4/3.",
+            "answer": "Let a, b, c be sides; m_a, m_b, m_c be medians. Use median formulas: m_a² = (2b² + 2c² - a²)/4, etc., sum them to show a²+b²+c² = 4/3(m_a² + m_b² + m_c²).",
+            "key_concepts": ["medians", "triangle geometry"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove the Pythagoras theorem using area method.",
+            "answer": "Construct squares on sides of right triangle. Use rearrangement of triangles to show area of square on hypotenuse = sum of areas of squares on other sides.",
+            "key_concepts": ["Pythagoras theorem", "area method"],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that in any triangle, the sum of squares of two sides minus twice the product of their sides times cosine of included angle equals square of third side (Cosine rule).",
+            "answer": "Use coordinate geometry: Place one vertex at origin, use distance formula to derive c² = a² + b² - 2ab cos C.",
+            "key_concepts": ["cosine rule", "triangle"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove the sine rule in a triangle.",
+            "answer": "Draw triangle ABC with circumcircle. Use law of sines: a/sin A = b/sin B = c/sin C = 2R, where R is circumradius.",
+            "key_concepts": ["sine rule", "triangle"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that the centroid divides each median in 2:1 ratio using vector method.",
+            "answer": "Let G be centroid, use vectors: G = (A+B+C)/3. Show AG:GM = 2:1 for median from vertex A to BC.",
+            "key_concepts": ["centroid", "vector method", "median"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that the centroid, circumcentre, incentre, and orthocentre coincide in an equilateral triangle.",
+            "answer": "Use symmetry: All medians, altitudes, angle bisectors, and perpendicular bisectors coincide, so all centers are same point.",
+            "key_concepts": ["triangle centers", "equilateral triangle"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that the ratio of areas of two similar triangles equals the square of the ratio of their corresponding sides.",
+            "answer": "Let triangles ABC ~ DEF. Area(ABC)/Area(DEF) = (AB/DE)² using base-height ratios and similarity.",
+            "key_concepts": ["similar triangles", "area ratio"],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove the relation between inradius, semiperimeter, and area of a triangle: Area = r × s.",
+            "answer": "Let inradius be r, semiperimeter s. Draw incircle; sum areas of triangles formed with incenter = r × s.",
+            "key_concepts": ["inradius", "triangle area", "semiperimeter"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that in a right-angled triangle, the median to the hypotenuse equals half of the hypotenuse using coordinate geometry.",
+            "answer": "Place right triangle at origin, calculate midpoint of hypotenuse, distance from vertex to midpoint = hypotenuse/2.",
+            "key_concepts": ["right triangle", "median", "coordinate geometry"],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove that the incentre of a triangle is equidistant from all sides.",
+            "answer": "Draw perpendiculars from incentre to sides. Use properties of angle bisectors to show all perpendiculars equal.",
+            "key_concepts": ["incentre", "perpendicular distance", "triangle"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that the orthocentre lies inside, outside, or on the triangle depending on triangle type.",
+            "answer": "Use altitudes and triangle types (acute: inside, right: on hypotenuse vertex, obtuse: outside).",
+            "key_concepts": ["orthocentre", "triangle type"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Use vector method to prove that centroid divides median in 2:1 ratio.",
+            "answer": "Let median be m = (B+C)/2 - A; centroid G = (A+B+C)/3. Show AG = 2/3 m, GM = 1/3 m.",
+            "key_concepts": ["centroid", "median", "vector method"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that in a triangle, the sum of squares of sides equals 2(sum of squares of medians).",
+            "answer": "Use median formulas and algebraic simplification: a² + b² + c² = 4/3(m_a² + m_b² + m_c²).",
+            "key_concepts": ["medians", "triangle"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the centroid, circumcentre, and orthocentre are collinear (Euler line).",
+            "answer": "Use coordinate geometry: Show centroid G, circumcentre O, and orthocentre H lie on line GH = 2*GO.",
+            "key_concepts": ["Euler line", "triangle centers"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove the cosine formula using coordinate method.",
+            "answer": "Place triangle on coordinate axes; compute distances using coordinates; derive c² = a² + b² - 2ab cos C.",
+            "key_concepts": ["cosine rule", "coordinate geometry"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Use similarity to find unknown sides in a triangle given one side ratio.",
+            "answer": "Apply AA or SAS criterion; set up proportion of corresponding sides; solve for unknown.",
+            "key_concepts": ["similar triangles", "proportion"],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that the centroid divides the medians in ratio 2:1 using area method.",
+            "answer": "Draw medians; divide triangle into six small triangles of equal area; show centroid divides medians in 2:1.",
+            "key_concepts": ["centroid", "median", "area method"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that the triangle formed by joining midpoints of sides is similar to original triangle.",
+            "answer": "Use mid-point theorem: midline parallel to base, ratio 1:2; triangle formed has sides proportional to original.",
+            "key_concepts": ["midpoint triangle", "similarity"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Prove that the circumcircle of a triangle passes through all three vertices.",
+            "answer": "Construct perpendicular bisectors of sides; intersection is circumcentre; all vertices equidistant from circumcentre.",
+            "key_concepts": ["circumcircle", "triangle", "circumcentre"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that in an isosceles triangle, the median, altitude, and angle bisector from the vertex coincide.",
+            "answer": "Use symmetry: Draw from vertex; show all three lines coincide along axis of symmetry.",
+            "key_concepts": ["isosceles triangle", "median", "altitude", "angle bisector"],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Prove that the area of a triangle = 1/2 × base × height using coordinate geometry.",
+            "answer": "Place triangle on coordinate axes; use vertices coordinates; apply area formula = 1/2 |x1(y2-y3)+x2(y3-y1)+x3(y1-y2)| = 1/2 × base × height.",
+            "key_concepts": ["triangle area", "coordinate geometry"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that the orthocentre lies inside an acute triangle, at the right angle vertex in a right triangle, and outside an obtuse triangle.",
+            "answer": "Use altitudes: Extend altitudes if needed; observe concurrency point location for different triangle types.",
+            "key_concepts": ["orthocentre", "triangle types"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that in any triangle, the sum of the medians is less than the perimeter but greater than half of it.",
+            "answer": "Use triangle inequalities and median properties to show 1/2 perimeter < sum of medians < perimeter.",
+            "key_concepts": ["medians", "triangle inequality"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that the radius of the circumcircle R = abc / 4Δ where Δ is the area of triangle.",
+            "answer": "Use sine formula: a/sin A = 2R, area Δ = 1/2 bc sin A; solve to get R = abc / 4Δ.",
+            "key_concepts": ["circumradius", "triangle area", "sine rule"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        }
+    ]
+}

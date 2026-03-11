@@ -1,0 +1,160 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Surface Areas and Volumes",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concepts of surface area and volume",
+        "Differentiate between curved surface area and total surface area",
+        "Learn basic solids such as cube, cuboid, cylinder, cone, and sphere",
+        "Understand formulas for surface area and volume of basic solids",
+        "Apply formulas to simple numerical problems",
+        "Relate surface area and volume to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Surface Areas and Volumes",
+            "topics_covered": [
+                "Meaning of surface area",
+                "Meaning of volume",
+                "Units of measurement"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Real-life examples (containers, boxes)",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Identify objects with volume and surface area",
+                "Class discussion on capacity"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick recap questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Cube and Cuboid",
+            "topics_covered": [
+                "Definition of cube and cuboid",
+                "Faces, edges, and vertices",
+                "Surface area and volume formulas"
+            ],
+            "teaching_strategy": [
+                "Use of box models",
+                "Diagram-based explanation"
+            ],
+            "student_activities": [
+                "Draw cube and cuboid",
+                "List number of faces, edges, and vertices"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Diagram checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Cylinder",
+            "topics_covered": [
+                "Meaning of cylinder",
+                "Curved surface area",
+                "Total surface area and volume"
+            ],
+            "teaching_strategy": [
+                "Use of tin/can model",
+                "Step-by-step formula explanation"
+            ],
+            "student_activities": [
+                "Identify parts of a cylinder",
+                "Solve simple numerical problems"
+            ],
+            "assessment": [
+                "MCQs",
+                "Classwork review"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Cone",
+            "topics_covered": [
+                "Meaning of cone",
+                "Slant height",
+                "Surface area and volume formulas"
+            ],
+            "teaching_strategy": [
+                "Paper cone demonstration",
+                "Visual explanation"
+            ],
+            "student_activities": [
+                "Draw a cone and label parts",
+                "Write formulas in notebook"
+            ],
+            "assessment": [
+                "Formula test",
+                "Short quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Sphere",
+            "topics_covered": [
+                "Meaning of sphere",
+                "Surface area of sphere",
+                "Volume of sphere"
+            ],
+            "teaching_strategy": [
+                "Use of ball model",
+                "Formula-based explanation"
+            ],
+            "student_activities": [
+                "Identify spherical objects",
+                "Solve simple numerical problems"
+            ],
+            "assessment": [
+                "Worksheet problems",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "All solids covered",
+                "Surface area and volume formulas",
+                "Overall chapter revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Problem-solving session"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Geometry box",
+        "NCERT Mathematics Textbook",
+        "Solid models (cube, cylinder, cone, sphere)"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Numerical problems",
+        "Short written tests"
+    ],
+    "teacher_tip": "Spend more time on formula understanding and unit conversion, as students often confuse surface area formulas and volume formulas."
+}

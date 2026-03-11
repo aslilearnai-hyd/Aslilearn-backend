@@ -1,0 +1,32 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Easy",
+    "source_pdf": "jemh107.pdf",
+    "short_notes": {
+        "key_points": [
+            "Coordinate geometry deals with the study of points on a plane using coordinates",
+            "The Cartesian plane is formed by two perpendicular number lines called X-axis and Y-axis",
+            "The point where X-axis and Y-axis intersect is called the origin",
+            "Coordinates of a point are written as an ordered pair (x, y)",
+            "The plane is divided into four regions called quadrants"
+        ],
+        "examples": [
+            "Origin: (0, 0)",
+            "Point on X-axis: (3, 0)",
+            "Point on Y-axis: (0, −4)",
+            "Point in first quadrant: (2, 3)"
+        ],
+        "formulas": [
+            "Distance of a point (x, y) from X-axis = |y|",
+            "Distance of a point (x, y) from Y-axis = |x|"
+        ],
+        "exam_tips": [
+            "Always mention the ordered pair in correct order (x, y)",
+            "Check the signs of x and y to identify the correct quadrant",
+            "Use a proper scale while plotting points",
+            "Points on axes do not belong to any quadrant"
+        ]
+    }
+}

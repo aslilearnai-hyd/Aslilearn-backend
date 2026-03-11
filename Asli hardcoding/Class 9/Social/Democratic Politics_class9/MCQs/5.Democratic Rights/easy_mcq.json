@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Democratic Rights",
+    "generated_at": "2026-03-07T22:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Rights are:",
+            "options": {
+                "A": "Orders of government",
+                "B": "Reasonable claims of individuals",
+                "C": "Private laws",
+                "D": "Temporary rules"
+            },
+            "correct_answer": "B",
+            "explanation": "Rights are reasonable claims of individuals recognized by society and protected by law.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which document guarantees Fundamental Rights in India?",
+            "options": {
+                "A": "Parliament Act",
+                "B": "Constitution of India",
+                "C": "Supreme Court order",
+                "D": "Election law"
+            },
+            "correct_answer": "B",
+            "explanation": "Fundamental Rights are guaranteed by the Constitution of India.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "How many Fundamental Rights are in the Indian Constitution?",
+            "options": {
+                "A": "Four",
+                "B": "Five",
+                "C": "Six",
+                "D": "Seven"
+            },
+            "correct_answer": "C",
+            "explanation": "The Constitution provides six Fundamental Rights.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Equality before law is part of:",
+            "options": {
+                "A": "Right to Equality",
+                "B": "Right to Freedom",
+                "C": "Right to Religion",
+                "D": "Right to Education"
+            },
+            "correct_answer": "A",
+            "explanation": "The Right to Equality ensures equality before law.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Untouchability is abolished under:",
+            "options": {
+                "A": "Right to Freedom",
+                "B": "Right to Equality",
+                "C": "Right to Religion",
+                "D": "Right to Education"
+            },
+            "correct_answer": "B",
+            "explanation": "Untouchability is abolished under the Right to Equality.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Freedom of speech is part of:",
+            "options": {
+                "A": "Right to Equality",
+                "B": "Right to Freedom",
+                "C": "Right against Exploitation",
+                "D": "Right to Religion"
+            },
+            "correct_answer": "B",
+            "explanation": "Freedom of speech is included in the Right to Freedom.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Child labour is prohibited under:",
+            "options": {
+                "A": "Right against Exploitation",
+                "B": "Right to Freedom",
+                "C": "Right to Religion",
+                "D": "Right to Equality"
+            },
+            "correct_answer": "A",
+            "explanation": "Child labour is banned under the Right against Exploitation.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "India is called a secular country because:",
+            "options": {
+                "A": "It follows one religion",
+                "B": "It treats all religions equally",
+                "C": "It bans religion",
+                "D": "It promotes only one religion"
+            },
+            "correct_answer": "B",
+            "explanation": "India treats all religions equally.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which right protects minority culture?",
+            "options": {
+                "A": "Right to Freedom",
+                "B": "Cultural and Educational Rights",
+                "C": "Right to Equality",
+                "D": "Right to Freedom of Religion"
+            },
+            "correct_answer": "B",
+            "explanation": "Cultural and Educational Rights protect minority culture.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "The Right to Constitutional Remedies allows citizens to:",
+            "options": {
+                "A": "Vote in elections",
+                "B": "Approach courts",
+                "C": "Start businesses",
+                "D": "Practice religion"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens can approach courts when their rights are violated.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Who called the Right to Constitutional Remedies the heart and soul of the Constitution?",
+            "options": {
+                "A": "Mahatma Gandhi",
+                "B": "Jawaharlal Nehru",
+                "C": "B. R. Ambedkar",
+                "D": "Sardar Patel"
+            },
+            "correct_answer": "C",
+            "explanation": "Dr. B. R. Ambedkar called it the heart and soul of the Constitution.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which court protects Fundamental Rights?",
+            "options": {
+                "A": "District Court",
+                "B": "Supreme Court",
+                "C": "Village Court",
+                "D": "Local Court"
+            },
+            "correct_answer": "B",
+            "explanation": "The Supreme Court protects Fundamental Rights.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Public Interest Litigation means:",
+            "options": {
+                "A": "Private court case",
+                "B": "Case filed for public interest",
+                "C": "Political case",
+                "D": "Business case"
+            },
+            "correct_answer": "B",
+            "explanation": "PIL allows cases in matters affecting public interest.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 14,
+            "question": "NHRC stands for:",
+            "options": {
+                "A": "National Human Rights Commission",
+                "B": "National Human Resource Council",
+                "C": "National Health Rights Council",
+                "D": "National Human Reform Committee"
+            },
+            "correct_answer": "A",
+            "explanation": "NHRC stands for National Human Rights Commission.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Human trafficking refers to:",
+            "options": {
+                "A": "Buying and selling goods",
+                "B": "Buying and selling people",
+                "C": "Selling houses",
+                "D": "Trade between countries"
+            },
+            "correct_answer": "B",
+            "explanation": "Human trafficking means buying and selling of people.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "RTI stands for:",
+            "options": {
+                "A": "Right to Information",
+                "B": "Right to Income",
+                "C": "Right to Industry",
+                "D": "Right to Insurance"
+            },
+            "correct_answer": "A",
+            "explanation": "RTI allows citizens to obtain information from government offices.",
+            "difficulty": "easy",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Right to Education ensures:",
+            "options": {
+                "A": "Free education up to 14 years",
+                "B": "Free education for adults",
+                "C": "Private education",
+                "D": "Online education"
+            },
+            "correct_answer": "A",
+            "explanation": "The Right to Education ensures free education for children up to 14 years.",
+            "difficulty": "easy",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Rights protect:",
+            "options": {
+                "A": "Only leaders",
+                "B": "Only government",
+                "C": "Citizens",
+                "D": "Only courts"
+            },
+            "correct_answer": "C",
+            "explanation": "Rights protect citizens from injustice.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Freedom of movement means:",
+            "options": {
+                "A": "Travel abroad",
+                "B": "Move freely within the country",
+                "C": "Leave school",
+                "D": "Change job"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens can move freely within the country.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which right allows citizens to practice religion?",
+            "options": {
+                "A": "Right to Religion",
+                "B": "Right to Freedom of Religion",
+                "C": "Right to Equality",
+                "D": "Right to Freedom"
+            },
+            "correct_answer": "B",
+            "explanation": "This right allows citizens to practice and propagate religion.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Rights ensure:",
+            "options": {
+                "A": "Equality",
+                "B": "Freedom",
+                "C": "Justice",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Rights ensure equality, freedom and justice.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "The Right to Life protects:",
+            "options": {
+                "A": "Life and liberty",
+                "B": "Only property",
+                "C": "Only education",
+                "D": "Only voting"
+            },
+            "correct_answer": "A",
+            "explanation": "Right to Life ensures protection of life and liberty.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Rights expand because:",
+            "options": {
+                "A": "Society changes",
+                "B": "Technology changes",
+                "C": "People demand new rights",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Rights evolve as society and needs change.",
+            "difficulty": "easy",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Courts protect:",
+            "options": {
+                "A": "Only politicians",
+                "B": "Fundamental Rights",
+                "C": "Businesses",
+                "D": "Private companies"
+            },
+            "correct_answer": "B",
+            "explanation": "Courts enforce Fundamental Rights.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Democratic rights strengthen:",
+            "options": {
+                "A": "Democracy",
+                "B": "Dictatorship",
+                "C": "Monarchy",
+                "D": "Colonial rule"
+            },
+            "correct_answer": "A",
+            "explanation": "Rights strengthen democracy by protecting citizens.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        }
+    ]
+}

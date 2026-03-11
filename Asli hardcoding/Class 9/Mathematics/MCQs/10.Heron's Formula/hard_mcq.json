@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 10: Heron's Formula",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A triangle has sides 13.5 cm, 14.2 cm, 15.3 cm. Its semi-perimeter is",
+            "options": {
+                "A": "21.5 cm",
+                "B": "21.6 cm",
+                "C": "21.7 cm",
+                "D": "21.8 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (13.5 + 14.2 + 15.3)/2 = 43/2 = 21.6 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Area of a triangle with sides 13.5 cm, 14.2 cm, 15.3 cm is approximately",
+            "options": {
+                "A": "93.2 cm²",
+                "B": "94.5 cm²",
+                "C": "95.0 cm²",
+                "D": "96.1 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 21.6, Area = √[21.6(21.6-13.5)(21.6-14.2)(21.6-15.3)] ≈ 94.5 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A triangle has sides 7/2 cm, 9/2 cm, 5 cm. Its semi-perimeter is",
+            "options": {
+                "A": "6.5 cm",
+                "B": "7 cm",
+                "C": "7.5 cm",
+                "D": "8 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "s = (3.5 + 4.5 + 5)/2 = 13/2 = 6.5 cm.",
+            "difficulty": "hard",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Area of a triangle with sides 7/2 cm, 9/2 cm, 5 cm is",
+            "options": {
+                "A": "6.5 cm²",
+                "B": "7 cm²",
+                "C": "7.65 cm²",
+                "D": "8 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 6.5, Area = √[6.5(6.5-3.5)(6.5-4.5)(6.5-5)] ≈ 7.65 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Triangle sides are 25.5 cm, 30.3 cm, 40.2 cm. Its area is approximately",
+            "options": {
+                "A": "364 cm²",
+                "B": "370 cm²",
+                "C": "372 cm²",
+                "D": "375 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 48, Area = √[48(48-25.5)(48-30.3)(48-40.2)] ≈ 372 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "A triangle has sides 100.5 m, 120.25 m, 130.75 m. Its semi-perimeter is",
+            "options": {
+                "A": "175 m",
+                "B": "175.75 m",
+                "C": "176 m",
+                "D": "177 m"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (100.5 + 120.25 + 130.75)/2 = 351.5/2 = 175.75 m.",
+            "difficulty": "hard",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Area of triangle with sides 100.5 m, 120.25 m, 130.75 m is approximately",
+            "options": {
+                "A": "6012 m²",
+                "B": "6020 m²",
+                "C": "6030 m²",
+                "D": "6040 m²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 175.75, Area ≈ √[175.75×(175.75-100.5)×(175.75-120.25)×(175.75-130.75)] ≈ 6020 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "For a triangle with sides 5 cm, 5 cm, 8 cm, its area is",
+            "options": {
+                "A": "12 cm²",
+                "B": "13 cm²",
+                "C": "14 cm²",
+                "D": "15 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "s = 9, Area = √[9×(9-5)×(9-5)×(9-8)] = √144 = 12 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Triangle sides 3√2, 4√2, 5√2. Area is approximately",
+            "options": {
+                "A": "12 cm²",
+                "B": "15 cm²",
+                "C": "14 cm²",
+                "D": "16 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = (3√2 + 4√2 + 5√2)/2 = 6√2, Area = √[6√2×3√2×2√2×1√2] ≈ 15 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Triangle sides 0.5 m, 0.75 m, 0.6 m. Its area is",
+            "options": {
+                "A": "0.15 m²",
+                "B": "0.16 m²",
+                "C": "0.17 m²",
+                "D": "0.18 m²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 0.925, Area = √[0.925×(0.925-0.5)×(0.925-0.75)×(0.925-0.6)] ≈ 0.162 m² ≈ 0.16 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Triangle with sides 11.3 cm, 12.4 cm, 13.2 cm has area approximately",
+            "options": {
+                "A": "66 cm²",
+                "B": "67 cm²",
+                "C": "68 cm²",
+                "D": "69 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 18.45, Area ≈ √[18.45×7.15×6.05×5.25] ≈ 68 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Triangle sides 20.5 m, 21.5 m, 22.5 m. Area is approximately",
+            "options": {
+                "A": "210 m²",
+                "B": "215 m²",
+                "C": "220 m²",
+                "D": "225 m²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 32.25, Area ≈ √[32.25×11.75×10.75×9.75] ≈ 215 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Triangle sides 1.2 m, 1.5 m, 1.8 m. Area is",
+            "options": {
+                "A": "0.9 m²",
+                "B": "0.92 m²",
+                "C": "0.95 m²",
+                "D": "0.97 m²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 2.25, Area ≈ √[2.25×1.05×0.75×0.45] ≈ 0.92 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Triangle sides 0.75 cm, 1 cm, 1.25 cm. Area is",
+            "options": {
+                "A": "0.36 cm²",
+                "B": "0.37 cm²",
+                "C": "0.38 cm²",
+                "D": "0.39 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 1.5, Area = √[1.5×0.75×0.5×0.25] ≈ 0.38 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Triangle sides 2.5 m, 3.5 m, 4.5 m. Area is",
+            "options": {
+                "A": "3.9 m²",
+                "B": "4.0 m²",
+                "C": "4.1 m²",
+                "D": "4.2 m²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 5.25, Area ≈ √[5.25×2.75×1.75×0.75] ≈ 4.1 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Triangle sides 8.2 cm, 9.5 cm, 10.3 cm. Area is approximately",
+            "options": {
+                "A": "38 cm²",
+                "B": "39 cm²",
+                "C": "40 cm²",
+                "D": "41 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 14, Area ≈ √[14×5.8×4.5×3.7] ≈ 40 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Triangle sides 4.5 cm, 5.5 cm, 6.5 cm. Area is",
+            "options": {
+                "A": "11 cm²",
+                "B": "12 cm²",
+                "C": "13 cm²",
+                "D": "14 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 8.25, Area ≈ √[8.25×3.75×2.75×1.75] ≈ 13 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Triangle sides 12.5 cm, 15.2 cm, 17.3 cm. Area is approximately",
+            "options": {
+                "A": "90 cm²",
+                "B": "92 cm²",
+                "C": "94 cm²",
+                "D": "96 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 22.5, Area ≈ √[22.5×10×7.3×5.2] ≈ 94 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Triangle sides 3.5 m, 4.5 m, 5.5 m. Area is",
+            "options": {
+                "A": "7.5 m²",
+                "B": "7.8 m²",
+                "C": "8 m²",
+                "D": "8.2 m²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 6.75, Area ≈ √[6.75×3.25×2.25×1.25] ≈ 7.8 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A triangle has sides 14.5 cm, 15.7 cm, 16.8 cm. Area is",
+            "options": {
+                "A": "107 cm²",
+                "B": "108 cm²",
+                "C": "109 cm²",
+                "D": "110 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 23.5, Area ≈ √[23.5×9×7.8×6.7] ≈ 109 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Triangle sides 6.25 m, 7.5 m, 8.75 m. Area is",
+            "options": {
+                "A": "21 m²",
+                "B": "22 m²",
+                "C": "23 m²",
+                "D": "24 m²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 11.25, Area ≈ √[11.25×5×3.75×2.5] ≈ 23 m².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Triangle sides 11.1 cm, 12.2 cm, 13.3 cm. Area is approximately",
+            "options": {
+                "A": "65 cm²",
+                "B": "66 cm²",
+                "C": "67 cm²",
+                "D": "68 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 18.3, Area ≈ √[18.3×7.2×6.1×5] ≈ 67 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Triangle sides 2.3 cm, 3.4 cm, 4.1 cm. Area is",
+            "options": {
+                "A": "3.7 cm²",
+                "B": "3.8 cm²",
+                "C": "3.9 cm²",
+                "D": "4 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 4.9, Area ≈ √[4.9×2.6×1.5×0.8] ≈ 3.8 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Triangle sides 9.6 cm, 12.8 cm, 15.2 cm. Area is",
+            "options": {
+                "A": "60 cm²",
+                "B": "61 cm²",
+                "C": "62 cm²",
+                "D": "63 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "s = 18.8, Area ≈ √[18.8×9.2×6×3.6] ≈ 62 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Triangle sides 7.2 cm, 9.5 cm, 11.3 cm. Area is",
+            "options": {
+                "A": "33 cm²",
+                "B": "34 cm²",
+                "C": "35 cm²",
+                "D": "36 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "s = 14, Area ≈ √[14×6.8×4.5×2.7] ≈ 34 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 10.2"
+        }
+    ]
+}

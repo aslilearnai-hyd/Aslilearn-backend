@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "difficulty": "medium",
+    "generated_at": "2026-03-05T23:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the supplementary angle of 125°.",
+            "answer": "55°",
+            "key_points": [
+                "supplementary angles"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the complementary angle of 35°.",
+            "answer": "55°",
+            "key_points": [
+                "complementary angles"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "If one angle of a linear pair is 110°, find the other.",
+            "answer": "70°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 4,
+            "question": "If vertically opposite angles are formed and one angle is 80°, what is the opposite angle?",
+            "answer": "80°",
+            "key_points": [
+                "vertically opposite angles"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the angle that forms a linear pair with 95°.",
+            "answer": "85°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "If two angles are complementary and one is 48°, find the other.",
+            "answer": "42°",
+            "key_points": [
+                "complementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "If two angles are supplementary and one is 150°, find the other.",
+            "answer": "30°",
+            "key_points": [
+                "supplementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If one angle is 45° and its adjacent angle forms a straight line, find the second angle.",
+            "answer": "135°",
+            "key_points": [
+                "straight line angles"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Angles around a point measure 90°, 120°, and 100°. Find the fourth angle.",
+            "answer": "50°",
+            "key_points": [
+                "angles around a point"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "If two lines intersect and one angle is 60°, what is its vertically opposite angle?",
+            "answer": "60°",
+            "key_points": [
+                "vertically opposite"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What happens to corresponding angles when a transversal cuts two parallel lines?",
+            "answer": "They are equal.",
+            "key_points": [
+                "corresponding angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 12,
+            "question": "If alternate interior angles are equal, what conclusion can be drawn?",
+            "answer": "The lines are parallel.",
+            "key_points": [
+                "alternate interior"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the sum of angles forming a straight line?",
+            "answer": "180°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the sum of all angles around a point?",
+            "answer": "360°",
+            "key_points": [
+                "360 degrees"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "If one angle of a linear pair is 75°, find the other.",
+            "answer": "105°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "If complementary angles are equal, what is the measure of each angle?",
+            "answer": "45°",
+            "key_points": [
+                "complementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "If supplementary angles are equal, what is the measure of each?",
+            "answer": "90°",
+            "key_points": [
+                "supplementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of angle is 160°?",
+            "answer": "Obtuse angle",
+            "key_points": [
+                "obtuse"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of angle is 25°?",
+            "answer": "Acute angle",
+            "key_points": [
+                "acute"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the measure of a straight angle?",
+            "answer": "180°",
+            "key_points": [
+                "straight angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the relation of interior angles on the same side of a transversal?",
+            "answer": "They are supplementary.",
+            "key_points": [
+                "interior angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the measure of a right angle?",
+            "answer": "90°",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What type of angle is 210°?",
+            "answer": "Reflex angle",
+            "key_points": [
+                "reflex"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "State the linear pair axiom.",
+            "answer": "If a ray stands on a line, the sum of the two adjacent angles formed is 180°.",
+            "key_points": [
+                "linear pair axiom"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "State the theorem for vertically opposite angles.",
+            "answer": "Vertically opposite angles are equal.",
+            "key_points": [
+                "vertical angles theorem"
+            ],
+            "source_section": "Section 6.4"
+        }
+    ]
+}

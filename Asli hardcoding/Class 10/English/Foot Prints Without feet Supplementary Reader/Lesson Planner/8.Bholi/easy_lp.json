@@ -1,0 +1,139 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "Bholi",
+    "title": "Lesson Planner – Bholi",
+    "author": "K.A. Abbas",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the story of Bholi",
+        "Identify main characters",
+        "Understand the role of education",
+        "Learn basic vocabulary",
+        "Develop reading skills",
+        "Understand the moral of the story"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Author and Story",
+            "topics_covered": [
+                "Introduction to K.A. Abbas",
+                "Background of the story",
+                "Overview of Bholi"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Listen to introduction",
+                "Share first impressions"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Bholi’s Childhood",
+            "topics_covered": [
+                "Bholi’s family background",
+                "Her physical and speech difficulties"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Discussion"
+            ],
+            "student_activities": [
+                "List difficulties faced by Bholi"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Bholi at School",
+            "topics_covered": [
+                "First day at school",
+                "Role of the teacher"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Guided reading"
+            ],
+            "student_activities": [
+                "Describe teacher’s behaviour"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Marriage Proposal Episode",
+            "topics_covered": [
+                "Parents’ decision",
+                "Dowry demand"
+            ],
+            "teaching_strategy": [
+                "Cause–effect explanation"
+            ],
+            "student_activities": [
+                "Identify problems in the proposal"
+            ],
+            "assessment": [
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Climax and Moral",
+            "topics_covered": [
+                "Bholi’s refusal",
+                "Moral of the story"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion"
+            ],
+            "student_activities": [
+                "Write the moral"
+            ],
+            "assessment": [
+                "Written response"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary and Revision",
+            "topics_covered": [
+                "New words",
+                "Summary"
+            ],
+            "teaching_strategy": [
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings",
+                "Write short summary"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard",
+        "Flashcards"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Written test"
+    ],
+    "teacher_tip": "Encourage students to empathise with Bholi and understand the value of education."
+}

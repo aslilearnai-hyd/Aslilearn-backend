@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Glimpses of India",
+  "difficulty": "Hard",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Cultural Analysis Essay",
+      "objective": "Analyze India’s diverse cultural, social, and historical aspects as described in the chapter.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Identify 3 major aspects of Indian culture, history, or geography mentioned",
+        "Explain how the author presents these aspects to the reader",
+        "Write a structured essay analyzing the significance and impact of these aspects"
+      ],
+      "learning_outcome": "Students will develop analytical writing skills and deeper understanding of cultural context.",
+      "evaluation": "Depth of analysis, textual support, and clarity of writing"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Regional Study",
+      "objective": "Compare different regions or cities described in the chapter.",
+      "materials": ["Notebook", "Chart paper", "Markers"],
+      "steps": [
+        "Select two regions or cities mentioned in the chapter",
+        "Compare aspects like history, architecture, festivals, and lifestyle",
+        "Present findings in a table or chart highlighting similarities and differences"
+      ],
+      "learning_outcome": "Students will develop comparative and analytical thinking skills.",
+      "evaluation": "Accuracy, clarity, and completeness of comparison"
+    },
+    {
+      "sl_no": 3,
+      "title": "Historical Context Research",
+      "objective": "Connect descriptions in the chapter to historical events or figures.",
+      "materials": ["Notebook", "Internet/books for research"],
+      "steps": [
+        "Identify any historical references or monuments mentioned",
+        "Research their historical significance",
+        "Write a report linking the author’s descriptions to historical facts"
+      ],
+      "learning_outcome": "Students will integrate literary understanding with historical knowledge.",
+      "evaluation": "Accuracy, depth of research, and clear connection to the text"
+    },
+    {
+      "sl_no": 4,
+      "title": "Symbolism and Imagery Study",
+      "objective": "Analyze literary devices used to depict India.",
+      "materials": ["Notebook", "Chart paper", "Markers"],
+      "steps": [
+        "Identify examples of imagery, symbolism, and descriptive language",
+        "Explain how these devices enhance the reader’s understanding of India",
+        "Create a visual chart mapping devices to their effects in the text"
+      ],
+      "learning_outcome": "Students will strengthen literary analysis and interpretive skills.",
+      "evaluation": "Identification accuracy, explanation clarity, and creativity in representation"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Travelogue Project",
+      "objective": "Present India’s glimpses creatively as a travelogue.",
+      "materials": ["Notebook", "Computer or presentation materials", "Optional images"],
+      "steps": [
+        "Imagine visiting one location described in the chapter",
+        "Write a detailed travelogue entry including observations, emotions, and local details",
+        "Include photographs or drawings to enhance presentation"
+      ],
+      "learning_outcome": "Students will practice descriptive writing and creative presentation skills.",
+      "evaluation": "Creativity, accuracy, and clarity of narrative"
+    },
+    {
+      "sl_no": 6,
+      "title": "Comparative Cultural Essay",
+      "objective": "Compare India’s culture with another country’s culture.",
+      "materials": ["Notebook", "Textbook", "Reference books"],
+      "steps": [
+        "Choose one cultural aspect of India from the chapter (festivals, architecture, customs)",
+        "Select a similar aspect from another country",
+        "Write an essay highlighting similarities, differences, and cultural insights"
+      ],
+      "learning_outcome": "Students will develop global awareness and comparative analysis skills.",
+      "evaluation": "Depth of comparison, textual evidence, and clarity"
+    },
+    {
+      "sl_no": 7,
+      "title": "Role Play – Cultural Interaction",
+      "objective": "Explore Indian cultural diversity through enactment.",
+      "materials": ["Simple props, Notebook"],
+      "steps": [
+        "Choose a scene or cultural practice described in the chapter",
+        "Act out the interaction as tourists or locals",
+        "Reflect on how the activity illustrates Indian culture and diversity"
+      ],
+      "learning_outcome": "Students will develop empathy, presentation skills, and cultural understanding.",
+      "evaluation": "Expression, participation, and understanding of context"
+    },
+    {
+      "sl_no": 8,
+      "title": "Photography or Illustration Assignment",
+      "objective": "Visually represent India’s heritage and landscapes.",
+      "materials": ["Camera or drawing materials", "Notebook"],
+      "steps": [
+        "Select a historical site, festival, or scenic description from the chapter",
+        "Take photographs or create detailed illustrations",
+        "Write a short descriptive caption connecting it to the text"
+      ],
+      "learning_outcome": "Students will develop observation skills, creativity, and textual connection.",
+      "evaluation": "Accuracy, creativity, and relevance of visuals"
+    },
+    {
+      "sl_no": 9,
+      "title": "Ethical and Social Reflection",
+      "objective": "Analyze social issues or historical events highlighted in the chapter.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify any social or ethical issue mentioned (e.g., caste, colonial impact)",
+        "Discuss its implications then and now",
+        "Write a reflective essay linking the chapter to modern societal context"
+      ],
+      "learning_outcome": "Students will develop critical thinking and social awareness.",
+      "evaluation": "Depth of reflection, textual support, and clarity"
+    },
+    {
+      "sl_no": 10,
+      "title": "Multimedia Presentation – A Glimpse of India",
+      "objective": "Create an engaging multimedia presentation capturing India’s essence.",
+      "materials": ["Computer", "Presentation software", "Images or videos"],
+      "steps": [
+        "Select key locations, cultural aspects, or historical insights from the chapter",
+        "Create a 5–7 slide multimedia presentation including images, text, and maps",
+        "Present the project in class"
+      ],
+      "learning_outcome": "Students will practice technology-based presentation and creative interpretation.",
+      "evaluation": "Creativity, accuracy, clarity, and presentation skills"
+    }
+  ]
+}

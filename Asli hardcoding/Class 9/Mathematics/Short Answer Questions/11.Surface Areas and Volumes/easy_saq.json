@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-06T08:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the surface area of a cube with side a?",
+            "answer": "Surface area = 6a².",
+            "key_concepts": ["cube", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the volume of a cube with side a?",
+            "answer": "Volume = a³.",
+            "key_concepts": ["cube", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the surface area of a cuboid with length l, breadth b, height h?",
+            "answer": "Surface area = 2(lb + bh + hl).",
+            "key_concepts": ["cuboid", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the volume of a cuboid with length l, breadth b, height h?",
+            "answer": "Volume = l × b × h.",
+            "key_concepts": ["cuboid", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the surface area of a sphere with radius r?",
+            "answer": "Surface area = 4πr².",
+            "key_concepts": ["sphere", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the volume of a sphere with radius r?",
+            "answer": "Volume = (4/3)πr³.",
+            "key_concepts": ["sphere", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the surface area of a hemisphere with radius r?",
+            "answer": "Surface area = 3πr².",
+            "key_concepts": ["hemisphere", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the volume of a hemisphere with radius r?",
+            "answer": "Volume = (2/3)πr³.",
+            "key_concepts": ["hemisphere", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the surface area of a cylinder with radius r and height h?",
+            "answer": "Surface area = 2πr(h + r).",
+            "key_concepts": ["cylinder", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the volume of a cylinder with radius r and height h?",
+            "answer": "Volume = πr²h.",
+            "key_concepts": ["cylinder", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the surface area of a cone with radius r and slant height l?",
+            "answer": "Surface area = πr(l + r).",
+            "key_concepts": ["cone", "surface area"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the volume of a cone with radius r and height h?",
+            "answer": "Volume = (1/3)πr²h.",
+            "key_concepts": ["cone", "volume"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 13,
+            "question": "State the relation between slant height, height and radius of a cone.",
+            "answer": "l² = r² + h².",
+            "key_concepts": ["cone", "slant height", "height", "radius"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the lateral surface area of a cylinder with radius r and height h?",
+            "answer": "Lateral surface area = 2πrh.",
+            "key_concepts": ["cylinder", "lateral surface area"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the lateral surface area of a cone with radius r and slant height l?",
+            "answer": "Lateral surface area = πrl.",
+            "key_concepts": ["cone", "lateral surface area"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the lateral surface area of a sphere?",
+            "answer": "A sphere has no lateral surface; total surface area = 4πr².",
+            "key_concepts": ["sphere", "lateral surface area"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the curved surface area of a hemisphere?",
+            "answer": "Curved surface area = 2πr².",
+            "key_concepts": ["hemisphere", "curved surface area"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the surface area of a cube with side 5 cm.",
+            "answer": "Surface area = 6 × 5² = 150 cm².",
+            "key_concepts": ["cube", "surface area", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the volume of a cuboid with length 4 cm, breadth 3 cm and height 2 cm.",
+            "answer": "Volume = 4 × 3 × 2 = 24 cm³.",
+            "key_concepts": ["cuboid", "volume", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the surface area of a cylinder with radius 7 cm and height 10 cm.",
+            "answer": "Surface area = 2πr(h + r) = 2 × π × 7 × (10 + 7) = 238π ≈ 747.7 cm².",
+            "key_concepts": ["cylinder", "surface area", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the volume of a cylinder with radius 5 cm and height 12 cm.",
+            "answer": "Volume = πr²h = π × 25 × 12 = 300π ≈ 942 cm³.",
+            "key_concepts": ["cylinder", "volume", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the surface area of a cone with radius 3 cm and slant height 5 cm.",
+            "answer": "Surface area = πr(l + r) = π × 3 × (5 + 3) = 24π ≈ 75.36 cm².",
+            "key_concepts": ["cone", "surface area", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the volume of a cone with radius 4 cm and height 9 cm.",
+            "answer": "Volume = (1/3)πr²h = (1/3) × π × 16 × 9 = 48π ≈ 150.8 cm³.",
+            "key_concepts": ["cone", "volume", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the surface area of a sphere with radius 7 cm.",
+            "answer": "Surface area = 4πr² = 4 × π × 49 = 196π ≈ 615.75 cm².",
+            "key_concepts": ["sphere", "surface area", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Find the volume of a hemisphere with radius 5 cm.",
+            "answer": "Volume = (2/3)πr³ = (2/3) × π × 125 = 83.33π ≈ 261.8 cm³.",
+            "key_concepts": ["hemisphere", "volume", "numerical"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        }
+    ]
+}

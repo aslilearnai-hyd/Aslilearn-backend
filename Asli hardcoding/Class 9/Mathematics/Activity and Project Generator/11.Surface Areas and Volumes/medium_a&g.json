@@ -1,0 +1,193 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Surface Areas and Volumes",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class9_math_ch11.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Surface Area of Combined Solids",
+            "objective": "Calculate surface area of two or more solids joined together",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take a cylinder mounted on a cube",
+                "Calculate individual surface areas",
+                "Subtract the area of the overlapping part",
+                "Sum the remaining surface areas for total surface area"
+            ],
+            "learning_outcome": "Applies surface area concept to combined solids",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Volume of Composite Solids",
+            "objective": "Find volume of solids formed by combining two or more solids",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take a cuboid with a hemisphere on top",
+                "Calculate cuboid volume",
+                "Calculate hemisphere volume",
+                "Add both volumes to get total"
+            ],
+            "learning_outcome": "Calculates volume of composite shapes",
+            "evaluation": "Accurate addition and calculation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Real-life Application: Water Tank",
+            "objective": "Calculate surface area and volume of a cylindrical water tank",
+            "materials": [
+                "Notebook",
+                "Measuring tape",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Measure radius and height of tank",
+                "Calculate curved surface area and total surface area",
+                "Calculate volume to find water capacity"
+            ],
+            "learning_outcome": "Applies formulas to real-world object",
+            "evaluation": "Correct measurement and calculation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Conversion of Units",
+            "objective": "Solve surface area and volume problems with mixed units",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator",
+                "Ruler"
+            ],
+            "steps": [
+                "Take cylinder with radius in cm, height in m",
+                "Convert both to same unit",
+                "Calculate surface area and volume"
+            ],
+            "learning_outcome": "Handles unit conversions in formulas",
+            "evaluation": "Correct conversion and calculation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Volume of Hollow Solids",
+            "objective": "Calculate volume of hollow cylinders and cones",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take hollow cylinder with outer radius 7 cm, inner radius 5 cm, height 10 cm",
+                "Use formula V = πh(R² - r²) to calculate volume",
+                "Record calculation"
+            ],
+            "learning_outcome": "Understands hollow solid volume calculation",
+            "evaluation": "Accurate calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Finding Cost of Material",
+            "objective": "Calculate cost of paint required for covering a solid",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take a cube with side 5 m",
+                "Calculate total surface area",
+                "If paint costs 50 per m², calculate total cost"
+            ],
+            "learning_outcome": "Connects surface area to real-life cost estimation",
+            "evaluation": "Correct calculation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Packing Problems",
+            "objective": "Calculate number of smaller solids that can fit in a larger solid",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take large cube of side 10 m",
+                "Take small cubes of side 2 m",
+                "Calculate volume of both",
+                "Determine how many small cubes can fit"
+            ],
+            "learning_outcome": "Applies volume to packing scenarios",
+            "evaluation": "Accurate calculation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Surface Area of Frustum of Cone",
+            "objective": "Calculate lateral and total surface area of a frustum",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take frustum with radii 5 cm and 3 cm, height 7 cm",
+                "Calculate slant height l = √(h² + (R-r)²)",
+                "Calculate lateral surface area = πl(R+r)",
+                "Add areas of two circular ends for total surface area"
+            ],
+            "learning_outcome": "Applies formula to truncated cone",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Volume of Cone and Sphere Combination",
+            "objective": "Find total volume when a cone is placed on a hemisphere",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator",
+                "Ruler"
+            ],
+            "steps": [
+                "Take cone radius 7 cm, height 10 cm and hemisphere radius 7 cm",
+                "Calculate cone volume = 1/3 πr²h",
+                "Calculate hemisphere volume = 2/3 πr³",
+                "Sum both volumes for total"
+            ],
+            "learning_outcome": "Combines volumes of different solids",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Practical Problem: Water in Tank with Cover",
+            "objective": "Calculate water volume and surface area for covering tank",
+            "materials": [
+                "Notebook",
+                "Measuring tape",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take cylindrical water tank with radius 3 m, height 5 m",
+                "Calculate curved surface area and total surface area",
+                "Calculate volume of water it can hold",
+                "Determine paint needed for tank cover"
+            ],
+            "learning_outcome": "Applies SA and volume formulas in real-life context",
+            "evaluation": "Correct calculation and reasoning (10 marks)"
+        }
+    ]
+}

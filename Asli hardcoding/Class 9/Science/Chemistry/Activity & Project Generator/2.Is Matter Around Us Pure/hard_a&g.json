@@ -1,0 +1,184 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Is Matter Around Us Pure?",
+    "difficulty": "Hard",
+    "source_pdf": "iesc102.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Stoichiometric Analysis of Compounds vs. Mixtures",
+            "objective": "To quantitatively differentiate between a physical mixture and a chemically bonded compound[cite: 1232].",
+            "materials": [
+                "5 g Iron filings",
+                "3 g Sulphur powder",
+                "China dish",
+                "Burner",
+                "Magnet",
+                "Carbon disulphide"
+            ],
+            "steps": [
+                "Prepare two sets of iron and sulphur in a 5:3 ratio[cite: 1195].",
+                "Mix Set A thoroughly and test its magnetic properties and solubility in carbon disulphide[cite: 1184, 1202].",
+                "Heat Set B strongly until red hot, let it cool, and repeat the same tests[cite: 1199, 1202].",
+                "Observe the gas evolved when dilute sulphuric acid is added to both sets[cite: 1206]."
+            ],
+            "learning_outcome": "Concludes that a compound has a fixed composition and totally different properties from its constituents[cite: 1225, 1228].",
+            "evaluation": "Compare the properties of the gas obtained from Set A (Hydrogen) and Set B (Hydrogen Sulphide) [cite: 1208, 1209] (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Solubility Dynamics and Temperature Coefficients",
+            "objective": "To calculate the mass of solute required for saturation at specific temperatures[cite: 1042, 1300].",
+            "materials": [
+                "Potassium nitrate",
+                "Distilled water",
+                "Thermometer",
+                "Electronic balance",
+                "Burner"
+            ],
+            "steps": [
+                "Dissolve potassium nitrate in 100 g of water at 293 K and record the mass needed for saturation[cite: 1301].",
+                "Heat the solution to 313 K and determine the additional mass required to maintain saturation[cite: 1304].",
+                "Cool a saturated solution from 353 K to room temperature and observe the crystallization process[cite: 1305, 1306]."
+            ],
+            "learning_outcome": "Understands that different substances have different solubilities which increase with temperature[cite: 1047, 1312].",
+            "evaluation": "Calculate the mass of potassium nitrate needed for a saturated solution in 50 g of water at 313 K [cite: 1304] (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Tyndall Effect Quantification in Polydisperse Systems",
+            "objective": "To analyze the relationship between particle size and light scattering (Tyndall Effect)[cite: 1087, 1116].",
+            "materials": [
+                "Copper sulphate solution",
+                "Milk/Water mixture",
+                "Chalk suspension",
+                "Laser pointer or Torch"
+            ],
+            "steps": [
+                "Pass a fine beam of light through a true solution, a colloid, and a suspension[cite: 977, 1086].",
+                "Record the visibility of the light path in each medium[cite: 1026, 1105, 1106].",
+                "Observe the path visibility in a suspension before and after the particles settle down[cite: 1080]."
+            ],
+            "learning_outcome": "Identifies that colloids and suspensions scatter light due to particle sizes larger than 1 nm[cite: 1024, 1114].",
+            "evaluation": "Explain why the Tyndall effect is observed when sunlight passes through a dense forest canopy [cite: 1110, 1111] (10 marks)."
+        },
+        {
+            "sl_no": 4,
+            "title": "Concentration Expression through Multi-Method Analysis",
+            "objective": "To determine solution concentration using mass-by-mass and mass-by-volume metrics[cite: 1049].",
+            "materials": [
+                "Sodium chloride",
+                "Volumetric flask",
+                "Water",
+                "Balance"
+            ],
+            "steps": [
+                "Dissolve 36 g of sodium chloride in 100 g of water at 293 K to reach the saturation point[cite: 1127].",
+                "Apply the mass-by-mass percentage formula: $(\text{Mass of solute} / \text{Mass of solution}) \times 100$[cite: 1050, 1073].",
+                "Prepare a solution and express its concentration in mass-by-volume percentage[cite: 1058, 1060]."
+            ],
+            "learning_outcome": "Mastery of quantitative methods for expressing the relative proportions of solute and solvent[cite: 1031, 1048].",
+            "evaluation": "Calculate the concentration of a saturated salt solution prepared at 293 K [cite: 1127] (10 marks)."
+        },
+        {
+            "sl_no": 5,
+            "title": "Mechanical Separation of Colloidal Systems",
+            "objective": "To explore separation techniques for stable heterogeneous mixtures[cite: 1117, 1119].",
+            "materials": [
+                "Creamy milk",
+                "Centrifugation machine or hand-spinner",
+                "Filter paper"
+            ],
+            "steps": [
+                "Attempt to separate milk particles using the standard filtration method[cite: 1118].",
+                "Subject the same sample to centrifugation[cite: 1119].",
+                "Compare the results and analyze why filtration fails for colloidal particles[cite: 1118]."
+            ],
+            "learning_outcome": "Concludes that specialized techniques like centrifugation are required for particles that pass through filter paper[cite: 1119].",
+            "evaluation": "Explain the principle of centrifugation used to separate butter from curd [cite: 1285] (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "Phase Identification in Complex Colloids",
+            "objective": "To identify the dispersed phase and dispersing medium in various physical states[cite: 1120, 1122].",
+            "materials": [
+                "Shaving cream, Fog, Sponge, Coloured gemstone",
+                "Table 2.1"
+            ],
+            "steps": [
+                "Examine samples of different types of colloids (Aerosol, Foam, Emulsion, Sol, Gel)[cite: 1129].",
+                "Identify the dispersed phase (solute-like component) and dispersing medium for each[cite: 1121].",
+                "Determine the resulting colloid type based on the combination of states[cite: 1122, 1123]."
+            ],
+            "learning_outcome": "Categorizes matter based on the physical state of its constituent phases[cite: 1123].",
+            "evaluation": "Tabulate the dispersed phase and dispersing medium for 'Milk of Magnesia' and 'Cheese' [cite: 1129] (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Thermodynamics of Chemical Reactions",
+            "objective": "To differentiate chemical changes from physical interconversion of states[cite: 1137, 1141].",
+            "materials": [
+                "Water",
+                "Cooking oil",
+                "Magnesium ribbon",
+                "Burner"
+            ],
+            "steps": [
+                "Compare the inflammability of water and oil to identify their chemical characteristics[cite: 1139, 1140].",
+                "Perform the electrolysis of water to break it down into hydrogen and oxygen gases[cite: 1149].",
+                "Burn a magnesium ribbon and analyze the resulting substance[cite: 1143, 1144]."
+            ],
+            "learning_outcome": "Learns that chemical reactions result in new substances with different chemical properties[cite: 1143].",
+            "evaluation": "Is 'rusting of an almirah' a physical or chemical change? Justify based on composition [cite: 1148] (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Metallurgical Property Profiling",
+            "objective": "To investigate the physical properties that define metals, non-metals, and metalloids[cite: 1158, 1173].",
+            "materials": [
+                "Copper, Iron, Sodium (Teacher only), Iodine, Silicon, Germanium"
+            ],
+            "steps": [
+                "Assess samples for metallic lustre, sonority, and malleability[cite: 1160, 1163, 1164].",
+                "Test electrical conductivity using a simple circuit[cite: 1161, 1167].",
+                "Identify elements with intermediate properties known as metalloids[cite: 1173, 1174]."
+            ],
+            "learning_outcome": "Differentiates elements based on their ability to conduct, their physical strength, and appearance[cite: 1159, 1166].",
+            "evaluation": "Identify the only metal that remains liquid at room temperature [cite: 1165] (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Purification Verification of Colourless Liquids",
+            "objective": "To establish experimental criteria for confirming the purity of a substance[cite: 941, 1325].",
+            "materials": [
+                "Distilled water",
+                "Tap water",
+                "Thermometer",
+                "Burner"
+            ],
+            "steps": [
+                "Measure the boiling point of the given colourless liquid[cite: 1136].",
+                "Compare it to the standard boiling point of pure water (373 K)[cite: 708, 1136].",
+                "Perform evaporation to check for any solid residue[cite: 945, 1279]."
+            ],
+            "learning_outcome": "Understands that pure substances have fixed physical constants like boiling points[cite: 1136, 1225].",
+            "evaluation": "Explain how you would confirm that a colourless liquid is pure water [cite: 1325] (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Multi-Step Separation of Complex Mixtures",
+            "objective": "To design a logical sequence of separation techniques for multi-component systems[cite: 1263, 1276].",
+            "materials": [
+                "Mixture of Sand, Iron pins, Ammonium chloride, and Common salt"
+            ],
+            "steps": [
+                "Use a magnet to remove iron pins[cite: 1289].",
+                "Apply sublimation to separate ammonium chloride[cite: 1280].",
+                "Dissolve the residue in water, filter the sand, and evaporate the water to obtain salt[cite: 1279, 1287]."
+            ],
+            "learning_outcome": "Mastery of physical separation processes based on the unique properties of mixture components[cite: 1230, 1263].",
+            "evaluation": "Which technique would you apply to separate oil from water? [cite: 1286] (10 marks)."
+        }
+    ]
+}

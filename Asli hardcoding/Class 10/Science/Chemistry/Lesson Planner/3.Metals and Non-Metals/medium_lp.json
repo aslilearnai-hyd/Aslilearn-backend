@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Metals and Non-Metals",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain chemical properties of metals with balanced chemical equations",
+        "Understand the reactivity series and its application in displacement reactions",
+        "Describe the formation and properties of ionic compounds",
+        "Understand the basic principles of metallurgy (extraction of metals)",
+        "Explain the process of electrolytic refining",
+        "Analyze the causes and prevention of corrosion through various methods"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Chemical Properties: Reaction with Air and Water",
+            "topics_covered": [
+                "Reaction of metals with Oxygen (Amphoteric oxides)",
+                "Reaction of metals with Water (Cold, Hot, and Steam)",
+                "Solubility of metal oxides (Alkalis)"
+            ],
+            "teaching_strategy": [
+                "Demonstration of $Al_{2}O_{3}$ reacting with both acid and base",
+                "Flowchart showing metal reactivity with different forms of water",
+                "Writing balanced equations for $Na, Ca, Mg, Fe$ with water"
+            ],
+            "student_activities": [
+                "Classify a list of oxides as Basic or Amphoteric",
+                "Predict the products when steam is passed over red-hot iron"
+            ],
+            "assessment": [
+                "Equation writing practice",
+                "Oral quiz on amphoteric oxides"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reactions with Acids and Reactivity Series",
+            "topics_covered": [
+                "Reaction with dilute acids ($HCl, H_{2}SO_{4}$)",
+                "The exception of Nitric Acid ($HNO_{3}$)",
+                "Displacement reactions and the Reactivity Series"
+            ],
+            "teaching_strategy": [
+                "Explaining why $HNO_{3}$ is a strong oxidizing agent",
+                "Lab demonstration: Zinc reacting with $CuSO_{4}$",
+                "Deriving the reactivity order from experimental data"
+            ],
+            "student_activities": [
+                "Determine if a reaction will occur based on the Reactivity Series",
+                "Write observations for 'Aqua Regia' properties"
+            ],
+            "assessment": [
+                "Worksheet on predicting displacement outcomes",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Formation of Ionic Compounds",
+            "topics_covered": [
+                "Reaction between metals and non-metals",
+                "Electronic configuration and Octet rule",
+                "Electron-dot structures ($NaCl, MgCl_{2}$)"
+            ],
+            "teaching_strategy": [
+                "Step-by-step drawing of electron transfer on the board",
+                "Analogy: Giver (Metal) and Taker (Non-metal)",
+                "Visualizing the formation of ions"
+            ],
+            "student_activities": [
+                "Draw electron-dot structures for $Na_{2}O$ and $MgO$",
+                "Identify the cation and anion in given compounds"
+            ],
+            "assessment": [
+                "Peer-evaluation of electron-dot diagrams",
+                "Quick-fire round on valency"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Properties of Ionic Compounds",
+            "topics_covered": [
+                "Physical nature, Melting and Boiling points",
+                "Solubility and Conduction of electricity",
+                "Reasoning behind high inter-ionic attraction"
+            ],
+            "teaching_strategy": [
+                "Comparing melting points of salt vs. wax",
+                "Conductivity test in solid state vs. aqueous solution",
+                "Logical reasoning session: 'Why do ionic compounds have high MP/BP?'"
+            ],
+            "student_activities": [
+                "Summarize the 4 main properties of ionic compounds in a table",
+                "Conduct a simple solubility test with salt and kerosene"
+            ],
+            "assessment": [
+                "Reasoning-based short answer test",
+                "Exit slip question on conductivity"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Occurrence and Extraction of Metals",
+            "topics_covered": [
+                "Minerals vs. Ores",
+                "Enrichment of ores (Gangue removal)",
+                "Extraction of metals low and middle in reactivity (Roasting and Calcination)"
+            ],
+            "teaching_strategy": [
+                "Flowchart of metallurgical steps",
+                "Visual comparison: Roasting (Sulphide ores) vs. Calcination (Carbonate ores)",
+                "Video on the Thermite process for railway tracks"
+            ],
+            "student_activities": [
+                "Differentiate between Roasting and Calcination in a T-chart",
+                "Write the chemical equation for the Thermite reaction"
+            ],
+            "assessment": [
+                "Matching activity: Ore type to extraction method",
+                "Fill in the blanks: Definitions of Gangue, Ore, and Mineral"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Refining and Corrosion Prevention",
+            "topics_covered": [
+                "Electrolytic refining of Copper",
+                "Refining of metals high in reactivity",
+                "Anodizing and Galvanization"
+            ],
+            "teaching_strategy": [
+                "Labeled diagram of electrolytic refining (Anode, Cathode, Electrolyte)",
+                "Explanation of 'Anode Mud'",
+                "Samples showing different prevention coatings"
+            ],
+            "student_activities": [
+                "Draw the electrolytic refining setup for Copper",
+                "List 3 alloys and their constituent metals"
+            ],
+            "assessment": [
+                "Diagram-based labeling test",
+                "Short answer: How does galvanization protect iron?"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Full chapter summary",
+                "Important chemical equations",
+                "Board-style MCQs"
+            ],
+            "teaching_strategy": [
+                "Concept mapping on the board",
+                "Solving sample board questions (Medium difficulty)",
+                "Doubt clarification"
+            ],
+            "student_activities": [
+                "Participate in a 'Reaction Challenge' quiz",
+                "Complete a comprehensive chapter worksheet"
+            ],
+            "assessment": [
+                "Formal Chapter Test (20 marks)",
+                "Evaluation of logical flow in descriptive answers"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Reactivity Series Chart",
+        "Samples: Zinc, Copper, Magnesium, Sulphur",
+        "Electrolytic refining model/diagram",
+        "NCERT Science Textbook",
+        "Videos on Thermite reaction and extraction"
+    ],
+    "evaluation_methods": [
+        "Balanced equation worksheets",
+        "Reasoning-based questions",
+        "Diagram accuracy checks",
+        "MCQs",
+        "Summative Assessment"
+    ],
+    "teacher_tip": "At this level, emphasize the difference between 'Roasting' and 'Calcination' using the mnemonic: **C**alcination is for **C**arbonates (heating in limited air), while Roasting is for Sulphides (heating in excess air)."
+}

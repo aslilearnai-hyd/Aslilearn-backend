@@ -1,0 +1,181 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "How do Organisms Reproduce",
+    "difficulty": "Medium",
+    "source_pdf": "how_do_organisms_reproduce_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparing Fission: Amoeba vs. Leishmania",
+            "objective": "Understand the role of cell organization in binary fission",
+            "materials": [
+                "Microscope",
+                "Permanent slides of Amoeba and Leishmania",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe binary fission in Amoeba and note if it occurs in any plane.",
+                "Observe Leishmania (the Kala-azar parasite) and its whip-like flagellum.",
+                "Identify why Leishmania divides in a definite orientation (longitudinal).",
+                "Sketch the difference in the division planes of both organisms."
+            ],
+            "learning_outcome": "Recognizes that the structural complexity of an organism dictates the orientation of cell division.",
+            "evaluation": "Explanation of why Leishmania requires a fixed plane of division compared to Amoeba (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Fragmentation in Spirogyra",
+            "objective": "Observe reproduction in simple multicellular organisms",
+            "materials": [
+                "Pond water sample (green slimy threads)",
+                "Slide and cover slip",
+                "Microscope"
+            ],
+            "steps": [
+                "Collect green filaments from a pond and place a strand on a slide.",
+                "Observe the spiral chloroplasts to confirm it is Spirogyra.",
+                "Look for points where the filament has broken into smaller pieces (fragments).",
+                "Explain how each fragment grows into a new individual by simple cell division."
+            ],
+            "learning_outcome": "Distinguishes between fragmentation in simple organisms and complex regeneration.",
+            "evaluation": "Accurate drawing of a Spirogyra filament and the process of fragment growth (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Tissue Culture Research Project",
+            "objective": "Understand the application of vegetative propagation in a lab",
+            "materials": [
+                "Reference books/Internet",
+                "Flowchart paper"
+            ],
+            "steps": [
+                "Research the process of removing tissue from the growing tip of a plant.",
+                "Explain the role of 'Callus' formation in a nutrient medium containing hormones.",
+                "Detail how plantlets are transferred to soil.",
+                "List two advantages of tissue culture (e.g., disease-free plants, ornamental growth)."
+            ],
+            "learning_outcome": "Explains the modern biotechnological method of producing clones from a single parent plant.",
+            "evaluation": "Flowchart depicting the stages of tissue culture from explant to plantlet (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Artificial Propagation: Grafting and Layering",
+            "objective": "Explore human-aided methods of plant reproduction",
+            "materials": [
+                "Rose plant (for grafting)",
+                "Jasmine plant (for layering)",
+                "Knife and tape"
+            ],
+            "steps": [
+                "Research the 'Stock' and 'Scion' used in grafting roses.",
+                "Simulate or perform layering by bending a jasmine branch into the soil while still attached to the parent.",
+                "Explain why these methods are used for plants that have lost the capacity to produce seeds (e.g., banana, orange).",
+                "Compare the genetics of the offspring with the parent."
+            ],
+            "learning_outcome": "Identifies the economic and agricultural importance of artificial vegetative propagation.",
+            "evaluation": "Comparison of offspring traits in artificial propagation vs. sexual reproduction (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The DNA Copying Process",
+            "objective": "Analyze the importance of variation in reproduction",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Read about the biochemical process of DNA replication before cell division.",
+                "Explain why no biochemical reaction is 100% reliable.",
+                "Describe how slight 'inaccuracies' in DNA copying lead to variations.",
+                "Discuss a scenario where variation helps a population of bacteria survive a heatwave."
+            ],
+            "learning_outcome": "Relates DNA copying to the inheritance of body design and the survival of species through variation.",
+            "evaluation": "Paragraph explaining why variation is useful for the species but not necessarily for the individual (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Pollination Mechanisms",
+            "objective": "Differentiate between self and cross-pollination",
+            "materials": [
+                "Samples of different flowers",
+                "Hand lens"
+            ],
+            "steps": [
+                "Examine flowers for features that attract insects (color, nectar) or catch wind (feathery stigma).",
+                "Observe the transfer of pollen from the anther to the stigma of the same flower (self-pollination).",
+                "Research how agents like bees, wind, and water facilitate cross-pollination.",
+                "Identify the role of the pollen tube in reaching the ovule."
+            ],
+            "learning_outcome": "Visualizes the physical transfer of male gametes to female gametes in flowering plants.",
+            "evaluation": "Table listing three agents of pollination and the specific floral adaptations for each (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Post-Fertilization Changes in Plants",
+            "objective": "Trace the transformation of a flower into a fruit",
+            "materials": [
+                "Pea pod or Tomato",
+                "Notebook"
+            ],
+            "steps": [
+                "Examine a pea pod and identify what part of the flower it was (ovary).",
+                "Identify the seeds inside and what they were (ovules).",
+                "Observe the dried sepals or style still attached to the fruit.",
+                "Write the sequence: Zygote $\rightarrow$ Embryo $\rightarrow$ Seed."
+            ],
+            "learning_outcome": "Understands the developmental stages of a plant following successful fertilization.",
+            "evaluation": "Correct identification of the floral origin of the fruit wall and the seed (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Role of Placenta",
+            "objective": "Investigate the nutrition and waste exchange in the womb",
+            "materials": [
+                "Diagram of a developing fetus",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the placenta as a disc embedded in the uterine wall.",
+                "Locate the villi on the embryo's side and blood spaces on the mother's side.",
+                "List three substances that move from the mother to the embryo (e.g., glucose, oxygen).",
+                "Name the substance that moves from the embryo to the mother (waste/CO2)."
+            ],
+            "learning_outcome": "Describes the specialized tissue that facilitates physiological exchange between mother and fetus.",
+            "evaluation": "Technical description of the surface area adaptation of the placenta (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Menstrual Cycle Basics",
+            "objective": "Understand the monthly preparation of the female body for pregnancy",
+            "materials": [
+                "Cycle chart",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify why the uterus thickens its lining every month.",
+                "Explain what happens if the egg is not fertilized (breakdown of lining).",
+                "Note the typical duration of the menstrual cycle (28 days) and the flow (2-8 days).",
+                "Discuss the importance of hygiene during this period."
+            ],
+            "learning_outcome": "Recognizes menstruation as a natural biological process related to reproductive readiness.",
+            "evaluation": "Explanation of the hormonal 'trigger' for the shedding of the uterine lining (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Reproductive Health and Contraception",
+            "objective": "Analyze methods to prevent pregnancy and STDs",
+            "materials": [
+                "Research data on barrier, chemical, and surgical methods"
+            ],
+            "steps": [
+                "Categorize methods into: Barrier (Condoms), Chemical (Oral pills), and IUCDs (Copper-T).",
+                "Identify which methods also protect against STIs like HIV-AIDS.",
+                "Research permanent surgical methods: Vasectomy (males) and Tubectomy (females).",
+                "Discuss the social impact of the female-to-male sex ratio."
+            ],
+            "learning_outcome": "Evaluates different birth control strategies based on their effectiveness and health benefits.",
+            "evaluation": "Classification of at least four contraceptive methods and their mode of action (10 marks)"
+        }
+    ]
+}

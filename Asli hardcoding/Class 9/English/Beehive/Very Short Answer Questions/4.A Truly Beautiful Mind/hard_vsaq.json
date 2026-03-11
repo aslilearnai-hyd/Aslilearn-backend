@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 4: A Truly Beautiful Mind",
+    "difficulty": "Hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the significance of Ramanujan's intuitive methods in mathematics.",
+            "answer": "Ramanujan's intuitive methods allowed him to discover complex results without formal proofs, demonstrating the power of insight in mathematical innovation.",
+            "key_points": ["intuition", "innovation", "complex results"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 2,
+            "question": "How did Ramanujan’s personal hardships influence his work?",
+            "answer": "His perseverance despite poverty, health issues, and lack of formal training shows dedication, resilience, and focus in achieving mathematical excellence.",
+            "key_points": ["hardships", "perseverance", "resilience"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the role of G.H. Hardy in formalizing Ramanujan’s discoveries.",
+            "answer": "Hardy helped validate Ramanujan’s results, provided rigorous proofs, and facilitated collaboration that integrated Ramanujan’s intuition with formal mathematics.",
+            "key_points": ["Hardy", "formalization", "collaboration"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 4,
+            "question": "What challenges did Ramanujan face in publishing his early work?",
+            "answer": "His unconventional approaches were doubted, and he struggled to gain acceptance in academic journals without recognized proofs.",
+            "key_points": ["publication", "academic doubt", "recognition"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 5,
+            "question": "Analyze the impact of Ramanujan’s cultural background on his mathematical thinking.",
+            "answer": "The Indian tradition of mental calculation and intuitive problem-solving shaped his unconventional, creative methods.",
+            "key_points": ["culture", "intuition", "mental calculation"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 6,
+            "question": "How did Ramanujan’s health affect his productivity?",
+            "answer": "His poor health limited his ability to work continuously, yet he maximized periods of good health to produce groundbreaking results.",
+            "key_points": ["health", "productivity", "focus"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 7,
+            "question": "Evaluate the significance of Ramanujan’s notebooks.",
+            "answer": "The notebooks contained thousands of original results and formulas, providing a foundation for later mathematical research.",
+            "key_points": ["notebooks", "original results", "research impact"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 8,
+            "question": "In what ways did Ramanujan’s approach differ from conventional mathematicians?",
+            "answer": "He relied on intuition and pattern recognition rather than formal proofs and stepwise derivations.",
+            "key_points": ["approach", "intuition", "pattern recognition"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 9,
+            "question": "How did Ramanujan influence modern number theory?",
+            "answer": "His work on infinite series, partitions, and modular forms inspired future mathematicians and opened new research directions.",
+            "key_points": ["number theory", "influence", "infinite series"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how collaboration between Ramanujan and Hardy enhanced mathematical research.",
+            "answer": "The collaboration merged Ramanujan’s intuition with Hardy’s formal rigor, producing validated results and expanding mathematical knowledge.",
+            "key_points": ["collaboration", "intuition", "formal rigor"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 11,
+            "question": "What was the impact of the socio-economic conditions on Ramanujan’s education?",
+            "answer": "Financial constraints limited access to formal education, but he pursued mathematics independently, highlighting his dedication.",
+            "key_points": ["socio-economic conditions", "independent learning", "dedication"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe Ramanujan’s approach to problem-solving.",
+            "answer": "He often solved problems mentally using deep intuition, focusing on patterns and relationships rather than conventional procedures.",
+            "key_points": ["problem-solving", "intuition", "patterns"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 13,
+            "question": "Why are Ramanujan’s formulas considered exceptional?",
+            "answer": "They reveal profound mathematical truths often with minimal derivation, showing extraordinary insight and originality.",
+            "key_points": ["formulas", "insight", "originality"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 14,
+            "question": "How did Ramanujan balance intuition and formal mathematics?",
+            "answer": "He developed results intuitively, which were later formalized through collaboration with mathematicians like Hardy.",
+            "key_points": ["intuition", "formalization", "balance"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 15,
+            "question": "What lessons can students learn from Ramanujan’s perseverance?",
+            "answer": "Dedication, focus, and belief in one’s talent can overcome obstacles and lead to remarkable achievements.",
+            "key_points": ["perseverance", "dedication", "achievement"],
+            "source_section": "Theme"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the influence of Ramanujan’s work on infinite series.",
+            "answer": "His formulas and insights contributed to modern analysis and inspired further research in series convergence and applications.",
+            "key_points": ["infinite series", "analysis", "influence"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 17,
+            "question": "How did Ramanujan’s early exposure to mathematics shape his later work?",
+            "answer": "Early engagement with numbers fostered intuition and creativity, forming the foundation for his later discoveries.",
+            "key_points": ["early exposure", "intuition", "creativity"],
+            "source_section": "Early life"
+        },
+        {
+            "question_number": 18,
+            "question": "Discuss the significance of pattern recognition in Ramanujan’s methods.",
+            "answer": "Recognizing patterns allowed him to generate new formulas and relationships without conventional proofs.",
+            "key_points": ["pattern recognition", "formulas", "method"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is Ramanujan considered a bridge between Indian and British mathematics?",
+            "answer": "He combined Indian intuitive methods with British formal rigor, enriching both traditions.",
+            "key_points": ["bridge", "intuition", "formal rigor"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 20,
+            "question": "How did international recognition affect Ramanujan’s career?",
+            "answer": "It allowed him to collaborate with leading mathematicians, gain credibility, and ensure his work was preserved and studied.",
+            "key_points": ["recognition", "collaboration", "credibility"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 21,
+            "question": "What role did creativity play in Ramanujan’s discoveries?",
+            "answer": "Creativity enabled him to approach problems differently and uncover results that were not apparent through conventional methods.",
+            "key_points": ["creativity", "problem-solving", "originality"],
+            "source_section": "Method"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain Ramanujan’s contribution to partition theory.",
+            "answer": "He developed formulas for counting partitions of numbers, advancing combinatorics and number theory.",
+            "key_points": ["partition theory", "combinatorics", "number theory"],
+            "source_section": "Achievements"
+        },
+        {
+            "question_number": 23,
+            "question": "What obstacles did Ramanujan face in academic acceptance?",
+            "answer": "His unconventional approach and lack of formal proofs initially led to skepticism among mathematicians.",
+            "key_points": ["academic obstacles", "skepticism", "formal proofs"],
+            "source_section": "Career"
+        },
+        {
+            "question_number": 24,
+            "question": "How did Ramanujan inspire future generations?",
+            "answer": "His story of genius, perseverance, and creative insight motivates students and mathematicians worldwide.",
+            "key_points": ["inspiration", "genius", "perseverance"],
+            "source_section": "Theme"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the key qualities that made Ramanujan an exceptional mathematician.",
+            "answer": "Intuition, creativity, dedication, perseverance, and the ability to combine insight with formal mathematics.",
+            "key_points": ["qualities", "exceptional", "mathematician"],
+            "source_section": "Overall theme"
+        }
+    ]
+}

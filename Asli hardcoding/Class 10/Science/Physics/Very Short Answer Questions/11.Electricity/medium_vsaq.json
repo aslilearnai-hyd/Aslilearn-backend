@@ -1,0 +1,183 @@
+{
+    "content_type": "Questions",
+    "chapter": "Chapter 11: Electricity",
+    "generated_at": "2026-03-11T03:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define electric current and state its SI unit.",
+            "answer": "Electric current is the rate of flow of electric charge through a conductor. Its SI unit is ampere (A).",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain electric potential difference.",
+            "answer": "Electric potential difference is the work done to move a unit charge from one point to another in an electric circuit. It is measured in volts (V).",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "State Ohm’s law.",
+            "answer": "Ohm’s law states that the current flowing through a conductor is directly proportional to the potential difference across its ends, provided temperature remains constant (V = IR).",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Define resistance and state its SI unit.",
+            "answer": "Resistance is the opposition offered by a conductor to the flow of electric current. Its SI unit is ohm (Ω).",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the relation between resistance, resistivity, length, and area of a conductor.",
+            "answer": "The relation is R = ρL/A, where R is resistance, ρ is resistivity, L is length, and A is cross-sectional area.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is resistivity?",
+            "answer": "Resistivity is the property of a material that indicates how strongly it resists the flow of electric current.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the effect of length of a conductor on resistance.",
+            "answer": "Resistance increases with increase in length of the conductor because electrons face more opposition while moving.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the effect of cross-sectional area on resistance.",
+            "answer": "Resistance decreases when the cross-sectional area increases because more electrons can flow through the conductor easily.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the combination of resistors in series.",
+            "answer": "In series combination, resistors are connected end-to-end and the same current flows through each resistor. Total resistance is the sum of individual resistances.",
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the combination of resistors in parallel.",
+            "answer": "In parallel combination, resistors are connected across the same potential difference and current divides among them.",
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 11,
+            "question": "State one advantage of parallel combination in household circuits.",
+            "answer": "Each appliance receives the same voltage and can operate independently.",
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Define electric power.",
+            "answer": "Electric power is the rate at which electrical energy is consumed or converted in a circuit.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Write the formula for electric power.",
+            "answer": "Electric power is given by P = VI.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Write two alternative formulas for electric power using Ohm’s law.",
+            "answer": "Electric power can also be written as P = I²R and P = V²/R.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the commercial unit of electrical energy?",
+            "answer": "The commercial unit of electrical energy is kilowatt-hour (kWh).",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Define heating effect of electric current.",
+            "answer": "The heating effect of electric current is the conversion of electrical energy into heat energy when current flows through a conductor.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 17,
+            "question": "State Joule’s law of heating.",
+            "answer": "Joule’s law states that heat produced in a conductor is proportional to the square of current, resistance, and time (H = I²Rt).",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is tungsten used in electric bulb filaments?",
+            "answer": "Tungsten has a very high melting point and can withstand high temperatures without melting.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are copper and aluminium used for electrical wires?",
+            "answer": "They are good conductors of electricity with low resistivity.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a fuse?",
+            "answer": "A fuse is a safety device that protects an electrical circuit by melting when excessive current flows.",
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Name the device used to measure electric current.",
+            "answer": "Ammeter.",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Name the device used to measure potential difference.",
+            "answer": "Voltmeter.",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Why should an ammeter be connected in series in a circuit?",
+            "answer": "An ammeter must be connected in series so that the same current flowing in the circuit passes through it.",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why should a voltmeter be connected in parallel?",
+            "answer": "A voltmeter is connected in parallel to measure potential difference across a component.",
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What happens to current if resistance increases while voltage remains constant?",
+            "answer": "According to Ohm’s law, if resistance increases, the current decreases.",
+            "marks": 3,
+            "source_section": "Section 11.2"
+        }
+    ]
+}

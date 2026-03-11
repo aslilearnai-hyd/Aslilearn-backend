@@ -1,0 +1,160 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Introduction to Trigonometry",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify sides of a right-angled triangle correctly",
+        "Apply basic trigonometric ratios in numerical problems",
+        "Use reciprocal trigonometric ratios accurately",
+        "Memorize and apply standard trigonometric values",
+        "Solve medium-level trigonometry problems confidently"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Right-Angled Triangle",
+            "topics_covered": [
+                "Right-angled triangle",
+                "Hypotenuse, base, perpendicular",
+                "Angle of reference"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Diagram-based explanation"
+            ],
+            "student_activities": [
+                "Draw and label right-angled triangles",
+                "Identify sides with respect to angle"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Diagram checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Basic Trigonometric Ratios",
+            "topics_covered": [
+                "sin θ, cos θ, tan θ",
+                "Ratio definitions"
+            ],
+            "teaching_strategy": [
+                "Step-by-step explanation",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Write ratio formulas",
+                "Solve simple numericals"
+            ],
+            "assessment": [
+                "Short written exercise"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Application of sin, cos, and tan",
+            "topics_covered": [
+                "Finding unknown sides",
+                "Choosing correct ratio"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Solve numerical problems"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Reciprocal Trigonometric Ratios",
+            "topics_covered": [
+                "cosec θ, sec θ, cot θ",
+                "Relationship with basic ratios"
+            ],
+            "teaching_strategy": [
+                "Comparison-based explanation"
+            ],
+            "student_activities": [
+                "Convert basic ratios to reciprocal ratios"
+            ],
+            "assessment": [
+                "Formula test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Trigonometric Ratios of Standard Angles",
+            "topics_covered": [
+                "Values at 0°, 30°, 45°, 60°, 90°"
+            ],
+            "teaching_strategy": [
+                "Tabular method",
+                "Mnemonic techniques"
+            ],
+            "student_activities": [
+                "Complete trigonometric table",
+                "Answer value-based questions"
+            ],
+            "assessment": [
+                "Value-based quiz"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Numerical Problems Using Standard Values",
+            "topics_covered": [
+                "Direct application problems"
+            ],
+            "teaching_strategy": [
+                "Practice session"
+            ],
+            "student_activities": [
+                "Solve medium-level numericals"
+            ],
+            "assessment": [
+                "Worksheet evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Mixed Practice and Error Analysis",
+            "topics_covered": [
+                "Common mistakes",
+                "Accuracy improvement"
+            ],
+            "teaching_strategy": [
+                "Error discussion"
+            ],
+            "student_activities": [
+                "Correct incorrect solutions"
+            ],
+            "assessment": [
+                "Peer assessment"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Test",
+            "topics_covered": [
+                "Complete chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teacher_tip": "Stress correct identification of base and perpendicular with respect to the angle, as this is the most common source of errors."
+}

@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-03-01T17:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a quadratic equation?",
+            "answer": "An equation of degree two is called a quadratic equation.",
+            "key_points": [
+                "definition"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the standard form of a quadratic equation?",
+            "answer": "The standard form is ax² + bx + c = 0.",
+            "key_points": [
+                "standard form"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the degree of a quadratic equation?",
+            "answer": "The degree is two.",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the graph of a quadratic equation called?",
+            "answer": "The graph is called a parabola.",
+            "key_points": [
+                "parabola"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "How many roots can a quadratic equation have at most?",
+            "answer": "At most two roots.",
+            "key_points": [
+                "roots"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are the roots of a quadratic equation also called?",
+            "answer": "They are also called zeroes.",
+            "key_points": [
+                "zeroes"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the coefficient of x² called?",
+            "answer": "It is called the leading coefficient.",
+            "key_points": [
+                "coefficient"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the constant term in ax² + bx + c?",
+            "answer": "The constant term is c.",
+            "key_points": [
+                "constant term"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What does p(0) represent in a quadratic polynomial?",
+            "answer": "It represents the constant term.",
+            "key_points": [
+                "p(0)"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the shape of the graph of y = x²?",
+            "answer": "It is a U-shaped curve.",
+            "key_points": [
+                "graph shape"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What happens to the parabola if a > 0?",
+            "answer": "The parabola opens upward.",
+            "key_points": [
+                "opening"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to the parabola if a < 0?",
+            "answer": "The parabola opens downward.",
+            "key_points": [
+                "opening"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the quadratic formula used for?",
+            "answer": "It is used to find the roots of a quadratic equation.",
+            "key_points": [
+                "quadratic formula"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the discriminant of a quadratic equation?",
+            "answer": "It is the expression b² − 4ac.",
+            "key_points": [
+                "discriminant"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What does the discriminant help to determine?",
+            "answer": "It helps to determine the nature of roots.",
+            "key_points": [
+                "nature of roots"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the value of the discriminant when roots are equal?",
+            "answer": "The discriminant is zero.",
+            "key_points": [
+                "equal roots"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "What type of roots exist when the discriminant is positive?",
+            "answer": "Real and distinct roots.",
+            "key_points": [
+                "real roots"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of roots exist when the discriminant is negative?",
+            "answer": "No real roots.",
+            "key_points": [
+                "imaginary roots"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which method splits the middle term?",
+            "answer": "Factorisation method.",
+            "key_points": [
+                "factorisation"
+            ],
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which method always works for solving quadratic equations?",
+            "answer": "Quadratic formula method.",
+            "key_points": [
+                "universal method"
+            ],
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the axis of symmetry of a parabola?",
+            "answer": "It is a line that divides the parabola into two equal halves.",
+            "key_points": [
+                "axis of symmetry"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What does the x-intercept of a parabola represent?",
+            "answer": "It represents the roots of the equation.",
+            "key_points": [
+                "x-intercept"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the vertex of a parabola?",
+            "answer": "It is the turning point of the parabola.",
+            "key_points": [
+                "vertex"
+            ],
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of equation is x² = 9?",
+            "answer": "It is a quadratic equation.",
+            "key_points": [
+                "identification"
+            ],
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Quadratic equations are used in which type of problems?",
+            "answer": "They are used in area and motion problems.",
+            "key_points": [
+                "applications"
+            ],
+            "source_section": "4.1"
+        }
+    ]
+}

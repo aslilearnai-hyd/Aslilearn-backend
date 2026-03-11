@@ -1,0 +1,55 @@
+{
+  "chapter_title": "Life Processes in Plants",
+  "grade_level": 7,
+  "curriculum": "NCERT",
+  "difficulty": "Easy",
+  "assessment_data": {
+    "section_a_conceptual_analysis": [
+      {
+        "question_id": "Q1",
+        "question_type": "Basic Recall",
+        "question_text": "What are the tiny pores present on the surface of leaves called, and what is their primary function?",
+        "key_concepts": ["Stomata", "Gas Exchange", "Guard Cells"],
+        "answer_key": "These pores are called stomata. They are used for the exchange of gases (Oxygen and Carbon Dioxide) and for the process of transpiration."
+      },
+      {
+        "question_id": "Q2",
+        "question_type": "Assertion-Reason",
+        "assertion": "Plants are called autotrophs.",
+        "reason": "Plants can prepare their own food using sunlight, water, and carbon dioxide.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer_key": "Both A and R are true and R is the correct explanation of A"
+      }
+    ],
+    "section_b_system_mechanics": [
+      {
+        "question_id": "Q3",
+        "subject": "Transportation System",
+        "task": "Differentiate between the roles of Xylem and Phloem in a plant.",
+        "complexity_note": "Focus on direction and material transported.",
+        "answer_key": "Xylem transports water and minerals upwards from the roots to the leaves. Phloem transports the food prepared in the leaves to all other parts of the plant."
+      }
+    ],
+    "section_c_data_interpretation": [
+      {
+        "question_id": "Q4",
+        "scenario": "A green plant is kept in a dark room for 72 hours and then its leaf is tested with iodine solution.",
+        "question_text": "What will be the observation, and which substance is missing from the leaf?",
+        "formula": "$$6CO_2 + 6H_2O \\xrightarrow{\\text{Sunlight/Chlorophyll}} C_6H_{12}O_6 + 6O_2$$",
+        "answer_key": "The leaf will not turn blue-black because starch is missing. Photosynthesis could not occur in the dark."
+      }
+    ]
+  },
+  "vocabulary_challenge": [
+    "Chlorophyll",
+    "Autotroph",
+    "Transpiration",
+    "Insectivorous",
+    "Saprophyte"
+  ]
+}

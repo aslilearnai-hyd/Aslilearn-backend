@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 6: Triangles",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-01T19:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is meant by a triangle?",
+            "answer": "A triangle is a closed plane figure formed by joining three non-collinear points.",
+            "key_concepts": [
+                "triangle"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are similar figures?",
+            "answer": "Similar figures are figures that have the same shape but not necessarily the same size.",
+            "key_concepts": [
+                "similar figures"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Define similar triangles.",
+            "answer": "Two triangles are said to be similar if their corresponding angles are equal and corresponding sides are proportional.",
+            "key_concepts": [
+                "similar triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What does the symbol '~' denote?",
+            "answer": "The symbol '~' denotes 'is similar to'.",
+            "key_concepts": [
+                "similarity symbol"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Are all congruent figures similar?",
+            "answer": "Yes, all congruent figures are similar.",
+            "key_concepts": [
+                "congruent figures"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Are all similar figures congruent?",
+            "answer": "No, similar figures need not be congruent.",
+            "key_concepts": [
+                "similar figures"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is an equiangular triangle?",
+            "answer": "A triangle in which all angles are equal is called an equiangular triangle.",
+            "key_concepts": [
+                "equiangular triangle"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 8,
+            "question": "State the Basic Proportionality Theorem.",
+            "answer": "A line drawn parallel to one side of a triangle divides the other two sides in the same ratio.",
+            "key_concepts": [
+                "BPT"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Who gave the Basic Proportionality Theorem?",
+            "answer": "The Basic Proportionality Theorem was given by Thales.",
+            "key_concepts": [
+                "Thales"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is meant by scale factor?",
+            "answer": "Scale factor is the ratio of corresponding sides of two similar figures.",
+            "key_concepts": [
+                "scale factor"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "State the AAA similarity criterion.",
+            "answer": "If all corresponding angles of two triangles are equal, then the triangles are similar.",
+            "key_concepts": [
+                "AAA similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 12,
+            "question": "State the AA similarity criterion.",
+            "answer": "If two angles of one triangle are equal to two angles of another triangle, then the triangles are similar.",
+            "key_concepts": [
+                "AA similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 13,
+            "question": "State the SSS similarity criterion.",
+            "answer": "If the corresponding sides of two triangles are proportional, then the triangles are similar.",
+            "key_concepts": [
+                "SSS similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "State the SAS similarity criterion.",
+            "answer": "If one angle of a triangle is equal to one angle of another triangle and the including sides are proportional, then the triangles are similar.",
+            "key_concepts": [
+                "SAS similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What are corresponding sides?",
+            "answer": "Corresponding sides are sides that occupy the same relative position in similar figures.",
+            "key_concepts": [
+                "corresponding sides"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What are corresponding angles?",
+            "answer": "Corresponding angles are angles that are in the same relative position in similar figures.",
+            "key_concepts": [
+                "corresponding angles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Are all circles similar?",
+            "answer": "Yes, all circles are similar.",
+            "key_concepts": [
+                "circles"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Can a square and a rectangle be similar?",
+            "answer": "No, because their corresponding sides are not in the same ratio.",
+            "key_concepts": [
+                "non-similar figures"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is indirect measurement?",
+            "answer": "Indirect measurement is finding heights or distances using similarity instead of direct measurement.",
+            "key_concepts": [
+                "indirect measurement"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What happens to angles in similar triangles?",
+            "answer": "Corresponding angles in similar triangles are equal.",
+            "key_concepts": [
+                "angles in similar triangles"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What happens to sides in similar triangles?",
+            "answer": "Corresponding sides are in the same ratio.",
+            "key_concepts": [
+                "sides in similar triangles"
+            ],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a median of a triangle?",
+            "answer": "A median is a line segment joining a vertex to the midpoint of the opposite side.",
+            "key_concepts": [
+                "median"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is correct correspondence important in similarity?",
+            "answer": "Correct correspondence ensures correct comparison of angles and sides.",
+            "key_concepts": [
+                "correspondence"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is meant by equiangular triangles?",
+            "answer": "Triangles having equal corresponding angles are called equiangular triangles.",
+            "key_concepts": [
+                "equiangular triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Give one application of similar triangles.",
+            "answer": "Similar triangles are used to find heights of buildings or distances of far objects.",
+            "key_concepts": [
+                "applications of similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        }
+    ]
+}

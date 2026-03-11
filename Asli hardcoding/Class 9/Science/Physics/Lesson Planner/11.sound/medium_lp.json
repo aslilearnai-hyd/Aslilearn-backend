@@ -1,0 +1,181 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Sound",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand properties of sound with measurements",
+        "Measure speed of sound in air using echo",
+        "Distinguish pitch and loudness quantitatively",
+        "Observe reflection and multiple echoes",
+        "Understand resonance and natural frequency",
+        "Solve simple numerical problems on sound"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Sound and Vibrations",
+            "topics_covered": [
+                "Sound produced by vibrating objects",
+                "Vibration frequency and its effect on pitch",
+                "Examples in daily life"
+            ],
+            "teaching_strategy": [
+                "Demonstration with tuning forks",
+                "Discussion of real-life examples"
+            ],
+            "student_activities": [
+                "Observe vibrations of tuning forks",
+                "Note frequency and corresponding pitch"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Notebook observations"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Measuring Speed of Sound",
+            "topics_covered": [
+                "Echo method to measure speed of sound",
+                "Distance and time measurement",
+                "Calculation: v = 2 × distance / time"
+            ],
+            "teaching_strategy": [
+                "Demonstration using a wall or cliff",
+                "Step-by-step calculation on board"
+            ],
+            "student_activities": [
+                "Measure distance from wall",
+                "Use stopwatch to time echo",
+                "Calculate speed of sound"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Pitch and Loudness",
+            "topics_covered": [
+                "Relation between frequency and pitch",
+                "Relation between amplitude and loudness",
+                "Measuring pitch using tuning forks"
+            ],
+            "teaching_strategy": [
+                "Demonstration with tuning forks and apps",
+                "Class discussion with examples"
+            ],
+            "student_activities": [
+                "Measure pitch of different sound sources",
+                "Compare loudness of sounds using amplitude observation"
+            ],
+            "assessment": [
+                "Notebook exercises",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Reflection of Sound and Echo",
+            "topics_covered": [
+                "Reflection of sound",
+                "Conditions for hearing echo",
+                "Multiple echoes"
+            ],
+            "teaching_strategy": [
+                "Demonstration shouting towards walls or large open space",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Observe echo",
+                "Measure time intervals",
+                "Record multiple echoes"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Resonance and Natural Frequency",
+            "topics_covered": [
+                "Concept of resonance",
+                "Natural frequency of objects",
+                "Examples: tuning fork, pendulum, tube"
+            ],
+            "teaching_strategy": [
+                "Demonstration using resonance tube and tuning forks",
+                "Discussion of examples"
+            ],
+            "student_activities": [
+                "Observe resonance in tube or spring",
+                "Identify natural frequency of objects"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook observation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Sound in Different Media",
+            "topics_covered": [
+                "Speed of sound in air, water, solids",
+                "Observation of sound transmission",
+                "Practical applications"
+            ],
+            "teaching_strategy": [
+                "Demonstration with table, water, and air",
+                "Board discussion"
+            ],
+            "student_activities": [
+                "Compare speed of sound in different media",
+                "Record observations"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Class discussion feedback"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Problem Solving",
+            "topics_covered": [
+                "Recap of sound properties, pitch, loudness, echo, resonance",
+                "Numerical problems on speed of sound and pitch",
+                "Common mistakes and tips"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Problem-solving on board"
+            ],
+            "student_activities": [
+                "Group quiz",
+                "Solve revision worksheets"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Science Textbook",
+        "Tuning forks, resonance tube, stopwatch, measuring tape, water"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class exercises",
+        "MCQs",
+        "Short answer tests"
+    ],
+    "teacher_tip": "Use simple experiments like echo measurement and resonance tube to make abstract sound concepts more concrete for students."
+}

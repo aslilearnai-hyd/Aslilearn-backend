@@ -1,0 +1,246 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Outcomes of Democracy",
+  "generated_at": "2026-03-11T13:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are democratic outcomes?",
+      "answer": "Democratic outcomes refer to the results produced by democratic governance, such as equality among citizens, better decision-making, and peaceful conflict resolution.",
+      "answer_outline": [
+        "Definition of democratic outcomes",
+        "Examples of democratic achievements"
+      ],
+      "key_concepts": ["democratic outcomes"],
+      "marks": 4,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 2,
+      "question": "Why is democracy considered a better form of government?",
+      "answer": "Democracy is considered better because it promotes equality, allows citizens to participate in decision-making, and provides mechanisms to correct mistakes.",
+      "answer_outline": [
+        "Equality among citizens",
+        "Participation in governance",
+        "Correction of mistakes"
+      ],
+      "key_concepts": ["democracy", "citizen participation"],
+      "marks": 4,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the meaning of accountable government.",
+      "answer": "An accountable government is one that is responsible to citizens for its decisions and actions.",
+      "answer_outline": ["Definition of accountability", "Role of citizens"],
+      "key_concepts": ["accountability"],
+      "marks": 4,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 4,
+      "question": "How do elections help maintain accountability in democracy?",
+      "answer": "Elections allow citizens to choose their representatives and replace leaders who do not perform well.",
+      "answer_outline": ["Citizen voting", "Changing government"],
+      "key_concepts": ["elections", "accountability"],
+      "marks": 4,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 5,
+      "question": "What is transparency in democratic governance?",
+      "answer": "Transparency means that government decisions and procedures are open to the public and citizens can access information about them.",
+      "answer_outline": ["Openness in government", "Access to information"],
+      "key_concepts": ["transparency"],
+      "marks": 4,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is democratic government considered legitimate?",
+      "answer": "Democratic governments are considered legitimate because they are elected by the people through free and fair elections.",
+      "answer_outline": ["Public participation", "Free and fair elections"],
+      "key_concepts": ["legitimacy"],
+      "marks": 4,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the relationship between democracy and economic development.",
+      "answer": "Democracy may contribute to development by encouraging participation and stability, but economic growth also depends on other factors such as resources and policies.",
+      "answer_outline": [
+        "Role of democracy",
+        "Other factors affecting development"
+      ],
+      "key_concepts": ["economic development"],
+      "marks": 4,
+      "source_section": "Economic Growth and Development"
+    },
+    {
+      "question_number": 8,
+      "question": "Why does democracy not always lead to economic growth?",
+      "answer": "Economic growth depends on many factors such as economic policies, global conditions, and resources, not only on the political system.",
+      "answer_outline": [
+        "Multiple factors of growth",
+        "Limits of political systems"
+      ],
+      "key_concepts": ["economic growth"],
+      "marks": 4,
+      "source_section": "Economic Growth and Development"
+    },
+    {
+      "question_number": 9,
+      "question": "What is economic inequality?",
+      "answer": "Economic inequality refers to unequal distribution of income and wealth among citizens.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["economic inequality"],
+      "marks": 4,
+      "source_section": "Reduction of Inequality and Poverty"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is reducing inequality important in democracy?",
+      "answer": "Reducing inequality ensures that all citizens have fair opportunities and better living conditions.",
+      "answer_outline": ["Equal opportunities", "Better living standards"],
+      "key_concepts": ["inequality", "democracy"],
+      "marks": 4,
+      "source_section": "Reduction of Inequality and Poverty"
+    },
+    {
+      "question_number": 11,
+      "question": "How does democracy help manage social diversity?",
+      "answer": "Democracy allows different social groups to participate in decision-making and resolve conflicts peacefully.",
+      "answer_outline": ["Participation", "Conflict resolution"],
+      "key_concepts": ["social diversity"],
+      "marks": 4,
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 12,
+      "question": "What is majority rule in democracy?",
+      "answer": "Majority rule means decisions are made based on the preference of the majority while protecting minority rights.",
+      "answer_outline": ["Definition", "Protection of minorities"],
+      "key_concepts": ["majority rule"],
+      "marks": 4,
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 13,
+      "question": "Why should majority rule not ignore minority rights?",
+      "answer": "Ignoring minority rights can lead to discrimination and conflict, which goes against democratic principles.",
+      "answer_outline": ["Protection of minorities", "Democratic fairness"],
+      "key_concepts": ["minority rights"],
+      "marks": 4,
+      "source_section": "Accommodation of Social Diversity"
+    },
+    {
+      "question_number": 14,
+      "question": "How does democracy promote dignity among citizens?",
+      "answer": "Democracy promotes dignity by recognizing equal rights and respecting individuals regardless of their background.",
+      "answer_outline": ["Equal rights", "Respect for individuals"],
+      "key_concepts": ["dignity"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the importance of freedom in democracy.",
+      "answer": "Freedom allows citizens to express opinions, participate in governance, and live without discrimination.",
+      "answer_outline": ["Freedom of expression", "Participation in politics"],
+      "key_concepts": ["freedom"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 16,
+      "question": "How does democracy empower disadvantaged groups?",
+      "answer": "Democracy allows disadvantaged groups to demand equality and participate in political processes.",
+      "answer_outline": ["Political participation", "Equal opportunities"],
+      "key_concepts": ["social justice"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 17,
+      "question": "Why can democratic decision-making sometimes be slow?",
+      "answer": "Democratic decision-making involves discussions, debates, and procedures, which may take time.",
+      "answer_outline": ["Debate", "Procedures"],
+      "key_concepts": ["decision-making"],
+      "marks": 3,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the role of public debate in democracy.",
+      "answer": "Public debate allows citizens to express opinions and influence government policies.",
+      "answer_outline": ["Citizen participation", "Policy influence"],
+      "key_concepts": ["public debate"],
+      "marks": 3,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 19,
+      "question": "What role do elections play in democracy?",
+      "answer": "Elections allow citizens to choose leaders and ensure that governments remain accountable.",
+      "answer_outline": ["Selection of leaders", "Accountability"],
+      "key_concepts": ["elections"],
+      "marks": 3,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 20,
+      "question": "How can citizens participate in democratic governance?",
+      "answer": "Citizens participate by voting, expressing opinions, joining political activities, and engaging in public discussions.",
+      "answer_outline": ["Voting", "Public participation"],
+      "key_concepts": ["citizen participation"],
+      "marks": 3,
+      "source_section": "Accountable, Responsive and Legitimate Government"
+    },
+    {
+      "question_number": 21,
+      "question": "Why do people support democracy even with its limitations?",
+      "answer": "People support democracy because it allows participation, protects rights, and gives citizens a voice in governance.",
+      "answer_outline": ["Participation", "Protection of rights"],
+      "key_concepts": ["support for democracy"],
+      "marks": 4,
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 22,
+      "question": "How does democracy transform subjects into citizens?",
+      "answer": "Democracy gives people political rights and participation, making them active citizens instead of passive subjects.",
+      "answer_outline": ["Citizen rights", "Political participation"],
+      "key_concepts": ["citizenship"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 23,
+      "question": "What challenges do democracies face today?",
+      "answer": "Challenges include corruption, inequality, slow decision-making, and managing diverse social demands.",
+      "answer_outline": ["Corruption", "Economic inequality"],
+      "key_concepts": ["democratic challenges"],
+      "marks": 4,
+      "source_section": "Various sections"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is democracy considered a continuously improving system?",
+      "answer": "Democracy improves as citizens demand reforms and governments adapt to new expectations.",
+      "answer_outline": ["Citizen demands", "Institutional reforms"],
+      "key_concepts": ["democratic reform"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of citizen awareness in democracy.",
+      "answer": "Citizen awareness helps people question authorities, demand accountability, and strengthen democratic institutions.",
+      "answer_outline": ["Awareness", "Accountability"],
+      "key_concepts": ["citizen awareness"],
+      "marks": 4,
+      "source_section": "Dignity and Freedom of the Citizens"
+    }
+  ]
+}

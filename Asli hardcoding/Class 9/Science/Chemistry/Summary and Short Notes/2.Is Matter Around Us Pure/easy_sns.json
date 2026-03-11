@@ -1,0 +1,37 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 2: Is Matter Around Us Pure",
+  "difficulty": "Easy",
+  "short_notes": {
+    "key_points": [
+      "A pure substance has a fixed composition and definite properties",
+      "Mixtures contain two or more substances physically combined",
+      "Mixtures can be homogeneous (uniform composition) or heterogeneous (non-uniform composition)",
+      "Solutions are homogeneous mixtures of solute and solvent",
+      "Alloys are homogeneous mixtures of metals or metals with non-metals",
+      "Suspensions are heterogeneous mixtures where particles settle on standing",
+      "Colloids have particles intermediate in size between solution and suspension",
+      "Tyndall effect is scattering of light by colloidal particles"
+    ],
+    "examples": [
+      "Salt and sugar are pure substances",
+      "Air and saltwater are homogeneous mixtures (solutions)",
+      "Oil and water form heterogeneous mixtures",
+      "Milk is a colloid showing Tyndall effect",
+      "Iron in molten state mixed with carbon forms an alloy"
+    ],
+    "formulas": [
+      "Solubility = Mass of solute / Volume of solvent × 100",
+      "Saturated solution: no more solute can dissolve at a given temperature",
+      "Density of solution = Mass / Volume"
+    ],
+    "exam_tips": [
+      "Identify whether a substance is pure or a mixture in examples",
+      "Explain types of mixtures with examples",
+      "Remember key terms: solute, solvent, colloid, suspension, alloy",
+      "Use Tyndall effect to distinguish between colloid and solution",
+      "For numerical problems, check if solution is saturated and calculate solubility"
+    ]
+  }
+}

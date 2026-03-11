@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 11: Light: Shadows and Reflections",
+    "generated_at": "2026-03-06T12:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why a real image formed by a concave mirror can be captured on a screen.",
+            "answer": "A real image is formed where reflected rays actually converge, so light from the image falls on the screen, producing a visible image.",
+            "key_concepts": ["real image", "concave mirror", "screen projection"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 2,
+            "question": "Why do shadows have sharp edges when formed by a point light source?",
+            "answer": "Because all light rays come from a single point, the shadow is sharply defined with no overlap of rays.",
+            "key_concepts": ["point light source", "sharp shadows"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe why a convex mirror image is always diminished and virtual.",
+            "answer": "Convex mirrors diverge rays, so the reflected rays never meet; the brain extends them backward to form a smaller virtual image.",
+            "key_concepts": ["convex mirror", "diminished image", "virtual image"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the role of the gnomon in a sundial.",
+            "answer": "The gnomon casts a shadow on the dial, which moves as the Sun changes position, indicating the time.",
+            "key_concepts": ["sundial", "gnomon", "shadow movement"],
+            "marks": 2,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is the penumbra formed around the umbra?",
+            "answer": "Because some light from the extended light source reaches the edges of the object, partially illuminating the surrounding area.",
+            "key_concepts": ["umbra", "penumbra", "extended light source"],
+            "marks": 2,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is lateral inversion observed in images of plane mirrors?",
+            "answer": "Plane mirrors reverse the left and right sides of the image while keeping the front and back orientation unchanged.",
+            "key_concepts": ["plane mirror", "lateral inversion"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why a concave mirror forms a virtual image when the object is within the focal length.",
+            "answer": "The reflected rays diverge, and the brain traces them backward, forming a magnified virtual image behind the mirror.",
+            "key_concepts": ["concave mirror", "virtual image", "focal length"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 8,
+            "question": "How does diffused reflection make objects visible from different angles?",
+            "answer": "Diffused reflection scatters light in many directions, so eyes at different positions receive light, allowing visibility from multiple angles.",
+            "key_concepts": ["diffused reflection", "visibility", "scattering"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does the length of a shadow change throughout the day?",
+            "answer": "Because the Sun’s position changes, altering the angle of incident light and thus the shadow length.",
+            "key_concepts": ["shadow length", "Sun position", "time of day"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why images formed by convex mirrors cannot be projected on a screen.",
+            "answer": "Because the reflected rays diverge and never actually meet, forming a virtual image that exists only in perception.",
+            "key_concepts": ["convex mirror", "virtual image", "screen projection"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are shadows fuzzy when formed by an extended light source?",
+            "answer": "Different points of the extended source produce overlapping light rays, causing a gradual transition between light and dark regions.",
+            "key_concepts": ["extended source", "fuzzy shadows"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is diffused reflection important for reading books?",
+            "answer": "It scatters light uniformly from the paper so the letters can be seen clearly without glare.",
+            "key_concepts": ["diffused reflection", "reading", "glare reduction"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the effect of moving an object closer to a light source on shadow size.",
+            "answer": "The shadow becomes larger because the light rays diverge more as they pass the closer object.",
+            "key_concepts": ["shadow size", "object distance", "light divergence"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does a concave mirror produce an inverted real image for distant objects?",
+            "answer": "When the object is beyond the focal point, reflected rays converge in front of the mirror, forming a real inverted image.",
+            "key_concepts": ["concave mirror", "real image", "inverted image"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 15,
+            "question": "How do periscopes use plane mirrors to let a person see over obstacles?",
+            "answer": "By reflecting light from one mirror at the top to another at the bottom, directing the image to the viewer’s eye.",
+            "key_concepts": ["periscope", "plane mirrors", "light reflection"],
+            "marks": 2,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does a convex mirror reduce the size of the image?",
+            "answer": "Because it diverges reflected rays, making the brain perceive a smaller image.",
+            "key_concepts": ["convex mirror", "image size", "divergence"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are shadows longest in the morning and evening?",
+            "answer": "Because the Sun is low on the horizon, producing shallow angles of incidence for light.",
+            "key_concepts": ["shadow length", "Sun angle", "morning and evening"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why lateral inversion occurs in plane mirrors but not in concave mirrors.",
+            "answer": "Plane mirrors reverse left and right; concave mirrors form real or virtual images without lateral inversion depending on object distance.",
+            "key_concepts": ["lateral inversion", "plane mirror", "concave mirror"],
+            "marks": 2,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 19,
+            "question": "What happens to shadow size when the object moves away from the light source?",
+            "answer": "The shadow becomes smaller because the rays converge more around the distant object.",
+            "key_concepts": ["shadow size", "object distance", "light rays"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why does a concave mirror produce a magnified image when the object is very close?",
+            "answer": "Because the object is within the focal length, causing reflected rays to diverge and appear larger.",
+            "key_concepts": ["concave mirror", "magnified image", "focal length"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do convex mirrors provide a wider field of view?",
+            "answer": "Because they diverge rays, allowing the reflected image to cover a larger area.",
+            "key_concepts": ["convex mirror", "field of view", "diverging rays"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the Sun’s position affect the direction of shadows?",
+            "answer": "Shadows change direction as the Sun moves across the sky, altering the angle of incident light.",
+            "key_concepts": ["shadow direction", "Sun movement"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is a real image inverted while a virtual image is upright?",
+            "answer": "A real image is formed by converging rays in front of a mirror, flipping it; a virtual image is formed by diverging rays, appearing upright.",
+            "key_concepts": ["real image", "virtual image", "image orientation"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why convex mirrors are used in traffic safety mirrors.",
+            "answer": "They provide a diminished, upright image with a wide field of view, helping drivers see a larger area.",
+            "key_concepts": ["convex mirror", "traffic safety", "field of view"],
+            "marks": 2,
+            "source_section": "Section 11.8"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do some light sources produce fuzzy shadows while others produce sharp shadows?",
+            "answer": "Point sources produce sharp shadows, while extended sources produce fuzzy shadows due to overlapping light rays.",
+            "key_concepts": ["point source", "extended source", "shadow clarity"],
+            "marks": 2,
+            "source_section": "Section 11.3"
+        }
+    ]
+}

@@ -1,0 +1,291 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T13:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the Moon does not fall onto the Earth despite gravitational attraction.",
+            "answer": "The Moon is attracted by Earth's gravity but its tangential velocity keeps it in continuous free fall around Earth, resulting in orbital motion.",
+            "key_concepts": [
+                "orbital motion",
+                "gravity"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Derive the formula for gravitational force between two bodies.",
+            "answer": "The gravitational force between two masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them. Therefore F = G(Mm)/d².",
+            "key_concepts": [
+                "gravitational law",
+                "inverse square law"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How does gravitational force change if both masses are doubled?",
+            "answer": "If both masses are doubled, the gravitational force becomes four times the original force.",
+            "key_concepts": [
+                "direct proportionality"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the value of acceleration due to gravity changes with altitude.",
+            "answer": "As altitude increases, the distance from the center of the Earth increases, reducing gravitational force and therefore decreasing the value of g.",
+            "key_concepts": [
+                "gravity variation",
+                "altitude"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why objects fall with the same acceleration regardless of mass.",
+            "answer": "According to the equation g = GM/R², acceleration due to gravity depends only on Earth's mass and radius, not on the mass of the falling object.",
+            "key_concepts": [
+                "independent of mass"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the difference between mass and weight with examples.",
+            "answer": "Mass is the amount of matter in an object and remains constant everywhere, whereas weight is the gravitational force acting on the object and varies with location.",
+            "key_concepts": [
+                "mass",
+                "weight"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Why do astronauts experience weightlessness in space?",
+            "answer": "Astronauts experience weightlessness because they are in a state of continuous free fall while orbiting the Earth.",
+            "key_concepts": [
+                "free fall",
+                "weightlessness"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Calculate the weight of a 10 kg object on Earth.",
+            "answer": "Weight = m × g = 10 × 9.8 = 98 N.",
+            "key_concepts": [
+                "W=mg"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how pressure depends on force and area.",
+            "answer": "Pressure is directly proportional to force and inversely proportional to area according to the formula P = F/A.",
+            "key_concepts": [
+                "pressure relation"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Why do snow shoes have large surface areas?",
+            "answer": "Snow shoes increase the surface area of contact and reduce pressure, preventing sinking in snow.",
+            "key_concepts": [
+                "pressure reduction"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of buoyant force with an example.",
+            "answer": "Buoyant force is the upward force exerted by a fluid on an immersed object. For example, a wooden block floats on water due to buoyant force.",
+            "key_concepts": [
+                "buoyant force"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does a steel ship float in water?",
+            "answer": "A steel ship floats because it displaces enough water to create buoyant force equal to its weight.",
+            "key_concepts": [
+                "water displacement"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain Archimedes' principle.",
+            "answer": "Archimedes' principle states that an object immersed in a fluid experiences an upward force equal to the weight of the fluid displaced.",
+            "key_concepts": [
+                "Archimedes principle"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why an iron nail sinks but a ship floats.",
+            "answer": "An iron nail sinks because its density is greater than water, while ships float because they displace enough water to generate sufficient buoyant force.",
+            "key_concepts": [
+                "density",
+                "buoyancy"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Define apparent weight and explain why it decreases in water.",
+            "answer": "Apparent weight is the reduced weight of an object in a fluid due to the upward buoyant force acting on it.",
+            "key_concepts": [
+                "apparent weight"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how submarines float and sink in water.",
+            "answer": "Submarines adjust their ballast tanks to change density and control buoyancy, allowing them to float or sink.",
+            "key_concepts": [
+                "density control"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is the value of g slightly higher at the poles than at the equator?",
+            "answer": "Because the Earth is flattened at the poles, reducing the distance from the center of the Earth and increasing gravitational force.",
+            "key_concepts": [
+                "Earth shape"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why pressure in liquids increases with depth.",
+            "answer": "Pressure increases with depth because the weight of the fluid above increases as depth increases.",
+            "key_concepts": [
+                "fluid pressure"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do dams have thicker walls at the bottom?",
+            "answer": "Because water pressure increases with depth, requiring stronger walls at the bottom.",
+            "key_concepts": [
+                "pressure with depth"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of density in floating and sinking.",
+            "answer": "Objects float if their density is less than the fluid and sink if their density is greater than the fluid.",
+            "key_concepts": [
+                "density relation"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are hydrometers used in industries?",
+            "answer": "Hydrometers measure the density or relative density of liquids.",
+            "key_concepts": [
+                "hydrometer"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is Archimedes' principle important in ship design?",
+            "answer": "It helps determine the buoyant force needed for ships to float safely.",
+            "key_concepts": [
+                "ship design"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why a balloon filled with helium rises in air.",
+            "answer": "Helium is less dense than air, so the buoyant force of air is greater than the balloon's weight.",
+            "key_concepts": [
+                "density",
+                "buoyancy"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of gravitational force in the universe.",
+            "answer": "Gravitational force keeps planets in orbit, controls tides, and holds the atmosphere around Earth.",
+            "key_concepts": [
+                "planetary motion"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does the value of weight change but mass remains constant?",
+            "answer": "Weight depends on gravitational force which varies with location, whereas mass is the amount of matter and remains constant.",
+            "key_concepts": [
+                "mass constant",
+                "weight variable"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.4"
+        }
+    ]
+}

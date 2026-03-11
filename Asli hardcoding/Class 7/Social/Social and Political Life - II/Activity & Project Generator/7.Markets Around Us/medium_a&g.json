@@ -1,0 +1,179 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - History)",
+    "chapter": "Markets Around Us",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_history_ch7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Market Structure Analysis",
+            "objective": "Study the types of markets and their organization",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet or reference books"
+            ],
+            "steps": [
+                "Identify different types of markets in your town (retail, wholesale, weekly haat)",
+                "Describe how each market is organized",
+                "List advantages and disadvantages of each type"
+            ],
+            "learning_outcome": "Students understand different market structures",
+            "evaluation": "Analysis depth and clarity (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Price Fluctuation Study",
+            "objective": "Investigate factors affecting market prices",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Market or online price data"
+            ],
+            "steps": [
+                "Select 3-5 commonly sold items",
+                "Record their prices for a week or two",
+                "Identify factors causing changes in price (demand, supply, season)"
+            ],
+            "learning_outcome": "Students understand price dynamics in markets",
+            "evaluation": "Observation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Consumer Awareness Survey",
+            "objective": "Understand consumer behavior and rights",
+            "materials": [
+                "Questionnaire",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Prepare 5 questions on shopping habits and satisfaction",
+                "Interview 10-15 people in your locality",
+                "Analyze responses and identify common trends"
+            ],
+            "learning_outcome": "Students develop awareness about consumers and their choices",
+            "evaluation": "Survey completeness and analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Market Advertisement Study",
+            "objective": "Analyze marketing techniques in local markets",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Newspaper or online ads"
+            ],
+            "steps": [
+                "Collect advertisements from local shops or online",
+                "Observe how products are promoted",
+                "Identify target audience and marketing strategies"
+            ],
+            "learning_outcome": "Students understand market promotion and advertisement methods",
+            "evaluation": "Observation accuracy and insights (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Comparison of Local vs Supermarket Markets",
+            "objective": "Evaluate differences in traditional and modern markets",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Visits to markets or online information"
+            ],
+            "steps": [
+                "Visit a local market and a supermarket",
+                "Compare in terms of goods, prices, crowd, and services",
+                "Summarize your observations in a table"
+            ],
+            "learning_outcome": "Students understand modern vs traditional market features",
+            "evaluation": "Comparison detail and analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Supply Chain Investigation",
+            "objective": "Trace the journey of a product from producer to consumer",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Reference books or internet"
+            ],
+            "steps": [
+                "Select one product (e.g., fruits, grains, or clothes)",
+                "Research its journey from production to sale",
+                "Draw a flowchart showing the supply chain"
+            ],
+            "learning_outcome": "Students understand how goods reach markets",
+            "evaluation": "Completeness of flowchart and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Impact of Seasonal Changes on Markets",
+            "objective": "Analyze how seasons affect availability and prices",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Market data"
+            ],
+            "steps": [
+                "Select 3 seasonal products (fruits, vegetables, or clothes)",
+                "Record availability and prices in different seasons",
+                "Explain the changes using supply and demand principles"
+            ],
+            "learning_outcome": "Students understand seasonal effects on markets",
+            "evaluation": "Data recording and explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Interview with a Shopkeeper",
+            "objective": "Gain insight into seller perspectives",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Questionnaire"
+            ],
+            "steps": [
+                "Prepare 5-6 questions about business challenges and customer behavior",
+                "Interview a shopkeeper in your locality",
+                "Summarize key points and learnings"
+            ],
+            "learning_outcome": "Students learn market operations from a seller's perspective",
+            "evaluation": "Interview insights and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Digital vs Physical Market Study",
+            "objective": "Compare e-commerce and traditional markets",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet access"
+            ],
+            "steps": [
+                "Choose 2 items and check prices online and offline",
+                "Compare convenience, prices, and services",
+                "Write a short analysis of pros and cons"
+            ],
+            "learning_outcome": "Students understand the impact of digital markets",
+            "evaluation": "Comparison depth and clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Market Report Presentation",
+            "objective": "Develop reporting and presentation skills",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Charts or digital slides"
+            ],
+            "steps": [
+                "Summarize your observations from activities 1–9",
+                "Prepare a short presentation highlighting key findings",
+                "Present it in class to peers"
+            ],
+            "learning_outcome": "Students develop analytical and communication skills",
+            "evaluation": "Presentation clarity and content quality (10 marks)"
+        }
+    ]
+}

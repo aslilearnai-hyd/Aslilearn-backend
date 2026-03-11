@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 7: MARKETS AROUND US",
+    
+    "generated_at": "2026-03-07T18:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze how supply and demand affect market equilibrium and pricing.",
+            "answer": "Supply and demand together determine market equilibrium. When demand exceeds supply, prices rise; when supply exceeds demand, prices fall. This interaction ensures resources are allocated efficiently and prices reflect scarcity and consumer preferences.",
+            "key_concepts": ["supply", "demand", "market equilibrium", "price mechanism"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Evaluate the impact of modern transportation on rural and urban markets.",
+            "answer": "Modern transportation improves connectivity, reduces cost and time of moving goods, allows rural producers to access urban markets, and increases the availability of goods in remote areas, enhancing trade and economic growth.",
+            "key_concepts": ["transportation", "market access", "trade efficiency"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the role of intermediaries in market efficiency and potential drawbacks.",
+            "answer": "Intermediaries like wholesalers and retailers help distribute goods efficiently and reduce producers’ burden. However, they can increase final prices, exploit small producers, or reduce transparency if unchecked.",
+            "key_concepts": ["intermediaries", "market efficiency", "drawbacks"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Examine how online markets have changed traditional buying and selling patterns.",
+            "answer": "Online markets allow consumers to compare products, buy from distant sellers, and access wider variety. Producers can reach more customers without physical stores. However, they may reduce personal interaction, affect local shops, and increase competition.",
+            "key_concepts": ["online markets", "digital trade", "consumer behavior"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Analyze how seasonal festivals influence production and pricing strategies in markets.",
+            "answer": "During festivals, demand for specific goods rises. Producers may increase production in advance, while sellers adjust prices based on high demand. Seasonal variations influence inventory management and supply strategies.",
+            "key_concepts": ["seasonal demand", "pricing strategies", "market planning"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Evaluate the advantages and disadvantages of barter systems compared to monetary trade.",
+            "answer": "Barter allows direct exchange without money but requires a double coincidence of wants and is inefficient for complex trade. Monetary trade standardizes value, facilitates saving, and simplifies transactions, but may require banking and currency systems.",
+            "key_concepts": ["barter system", "monetary trade", "trade efficiency"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Discuss the role of government regulation in ensuring fair market practices.",
+            "answer": "Governments regulate markets to prevent unfair trade, control monopolies, monitor quality and prices, protect consumers, and promote competition. Effective regulation ensures trust and stability but excessive control may hinder market flexibility.",
+            "key_concepts": ["market regulation", "consumer protection", "competition"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how competition among sellers affects consumer choices and market quality.",
+            "answer": "Competition forces sellers to offer better quality and reasonable prices, incentivizes innovation, and increases choices for consumers. It can also lead to price wars and short-term losses for sellers but benefits buyers overall.",
+            "key_concepts": ["competition", "consumer choice", "market quality"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Analyze how markets connect rural producers to global consumers.",
+            "answer": "Markets, through transportation, trade networks, and digital platforms, allow rural producers to sell goods beyond local areas, reaching urban and even international buyers, increasing income and economic integration.",
+            "key_concepts": ["market connectivity", "global trade", "rural economy"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Examine how technology has influenced price transparency and consumer behavior.",
+            "answer": "Technology allows consumers to compare prices online, read reviews, and track deals, improving price transparency. This empowers buyers to make informed decisions and forces sellers to maintain competitive prices and quality.",
+            "key_concepts": ["technology", "price transparency", "consumer behavior"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Evaluate the importance of trade routes in shaping the economic landscape of rural markets.",
+            "answer": "Trade routes enable the movement of goods, reduce transportation costs, allow access to larger markets, and integrate rural economies with urban centers, stimulating growth and development.",
+            "key_concepts": ["trade routes", "rural economy", "market integration"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss how markets influence social and cultural interactions in a community.",
+            "answer": "Markets serve as social spaces where people exchange ideas, celebrate festivals, and interact across social groups. They influence cultural practices, social bonding, and collective identity along with economic activity.",
+            "key_concepts": ["market society", "cultural interaction", "social cohesion"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Analyze the challenges and opportunities posed by e-commerce for small producers.",
+            "answer": "E-commerce gives small producers access to wider markets and higher profits, but requires digital literacy, internet access, logistics, and marketing skills. Competition from large sellers is also a challenge.",
+            "key_concepts": ["e-commerce", "small producers", "market opportunities"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Examine how pricing strategies are affected by scarcity and abundance of goods.",
+            "answer": "Scarce goods have higher prices due to limited supply, while abundant goods may be sold at lower prices. Sellers adjust strategies based on seasonal production, storage costs, and consumer demand to maximize profit.",
+            "key_concepts": ["scarcity", "abundance", "pricing strategy"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Discuss how market demand can influence production decisions by producers.",
+            "answer": "Producers adjust quantity, type, and quality of goods based on market demand to ensure sales and profitability. High demand may encourage increased production or diversification of goods.",
+            "key_concepts": ["market demand", "production decisions", "economic planning"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Analyze how market failures can occur and the role of government in correcting them.",
+            "answer": "Market failures occur when goods are over- or under-produced, monopolies exploit prices, or externalities like pollution are ignored. Governments intervene through regulations, subsidies, and policies to correct inefficiencies.",
+            "key_concepts": ["market failure", "government intervention", "regulation"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Evaluate how credit facilities affect producers and consumers in markets.",
+            "answer": "Credit allows producers to invest in production and expansion and consumers to buy goods on deferred payment. While it boosts trade, excessive debt or interest rates can create financial risks.",
+            "key_concepts": ["credit facilities", "market impact", "financial risk"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Examine how competition among urban markets affects rural producers.",
+            "answer": "Urban competition drives demand for quality and variety, pushing rural producers to improve standards. It can increase their income but may also require investment and adaptation to new consumer preferences.",
+            "key_concepts": ["competition", "rural producers", "market adaptation"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Discuss how seasonal scarcity can impact market pricing and consumer behavior.",
+            "answer": "Seasonal scarcity increases prices due to limited supply, which may reduce consumption or shift demand to alternatives. Producers may time production to take advantage of high-demand periods.",
+            "key_concepts": ["seasonal scarcity", "pricing", "consumer behavior"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Analyze the role of inventory management in ensuring market stability.",
+            "answer": "Proper inventory management prevents overstocking or shortage, ensures smooth supply, stabilizes prices, and helps producers meet demand efficiently, contributing to market stability.",
+            "key_concepts": ["inventory management", "market stability", "supply control"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Evaluate how globalization has influenced local markets and consumer choices.",
+            "answer": "Globalization introduces new products, competition, and pricing trends to local markets. Consumers gain variety and access to international goods, while local producers must adapt to compete.",
+            "key_concepts": ["globalization", "local markets", "consumer choices"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Discuss the interplay between market demand, price, and quality of goods.",
+            "answer": "High demand may allow sellers to charge higher prices, but consumers also consider quality. Producers adjust quality to attract buyers, balancing demand, price, and reputation.",
+            "key_concepts": ["demand", "price", "quality control"],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Examine the advantages and limitations of online payment systems in markets.",
+            "answer": "Online payments are fast, convenient, and safe, facilitating digital trade. However, they require technology access, may have transaction fees, and carry cybersecurity risks.",
+            "key_concepts": ["online payment", "digital trade", "limitations"],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Analyze the economic and social importance of markets in rural development.",
+            "answer": "Markets provide rural producers with income, create jobs, promote trade, and serve as centers of social interaction, education, and cultural exchange, boosting rural development.",
+            "key_concepts": ["rural markets", "economic development", "social impact"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Evaluate how technological advancements in logistics influence market efficiency and consumer satisfaction.",
+            "answer": "Technological advancements like real-time tracking, automated warehouses, and faster transport reduce delays, cut costs, ensure timely delivery, and enhance consumer satisfaction and market efficiency.",
+            "key_concepts": ["logistics technology", "market efficiency", "consumer satisfaction"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

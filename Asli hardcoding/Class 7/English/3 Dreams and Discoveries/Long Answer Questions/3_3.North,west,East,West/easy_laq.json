@@ -1,0 +1,308 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: North, South, East, West",
+  "generated_at": "2026-03-09T23:15:30",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are the four main directions called?",
+      "answer": "The four main directions are North, South, East, and West. These are known as the 'cardinal directions.'",
+      "answer_outline": [
+        "List the four directions",
+        "Mention the term 'cardinal directions'"
+      ],
+      "key_concepts": ["cardinal directions", "basics"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "How can you find the East direction in the morning?",
+      "answer": "You can find East by looking at where the sun rises. The sun always rises in the East every morning.",
+      "answer_outline": [
+        "Sunrise as a marker",
+        "Linking sunrise to East"
+      ],
+      "key_concepts": ["sunrise", "East"],
+      "marks": 3,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 3,
+      "question": "If you are facing the rising sun, which direction is behind you?",
+      "answer": "If you are facing the rising sun (East), the direction behind you is West.",
+      "answer_outline": [
+        "Facing East",
+        "Opposite direction is West"
+      ],
+      "key_concepts": ["opposites", "West"],
+      "marks": 3,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 4,
+      "question": "Where does the sun set in the evening?",
+      "answer": "The sun sets in the West every evening.",
+      "answer_outline": [
+        "Sunset as a marker",
+        "Linking sunset to West"
+      ],
+      "key_concepts": ["sunset", "West"],
+      "marks": 2,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 5,
+      "question": "When facing East, which direction is to your left hand?",
+      "answer": "When you face East, North is towards your left hand.",
+      "answer_outline": [
+        "Facing East",
+        "Left hand points North"
+      ],
+      "key_concepts": ["relative direction", "North"],
+      "marks": 3,
+      "source_section": "Finding Directions"
+    },
+    {
+      "question_number": 6,
+      "question": "When facing East, which direction is to your right hand?",
+      "answer": "When you face East, South is towards your right hand.",
+      "answer_outline": [
+        "Facing East",
+        "Right hand points South"
+      ],
+      "key_concepts": ["relative direction", "South"],
+      "marks": 3,
+      "source_section": "Finding Directions"
+    },
+    {
+      "question_number": 7,
+      "question": "What is a compass used for?",
+      "answer": "A compass is a tool used to find directions. It has a needle that always points toward the North.",
+      "answer_outline": [
+        "Tool for navigation",
+        "Magnetic needle pointing North"
+      ],
+      "key_concepts": ["compass", "tools"],
+      "marks": 4,
+      "source_section": "Navigation Tools"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the needle of a compass made of?",
+      "answer": "The needle of a compass is a small magnet.",
+      "answer_outline": [
+        "Magnetic material",
+        "Functions as a pointer"
+      ],
+      "key_concepts": ["magnetism", "compass needle"],
+      "marks": 2,
+      "source_section": "Navigation Tools"
+    },
+    {
+      "question_number": 9,
+      "question": "Why are directions important for travelers?",
+      "answer": "Directions help travelers find their way so they do not get lost and can reach their destination safely.",
+      "answer_outline": [
+        "Avoiding getting lost",
+        "Reaching a destination"
+      ],
+      "key_concepts": ["safety", "travel"],
+      "marks": 4,
+      "source_section": "Importance of Directions"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a map?",
+      "answer": "A map is a drawing of a place, like a town or a country, that shows where different things are located using directions.",
+      "answer_outline": [
+        "Drawing of a place",
+        "Shows locations",
+        "Uses directions"
+      ],
+      "key_concepts": ["map", "geography"],
+      "marks": 4,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 11,
+      "question": "Which direction is usually at the top of a map?",
+      "answer": "North is usually shown at the top of a map.",
+      "answer_outline": [
+        "Map convention",
+        "Top equals North"
+      ],
+      "key_concepts": ["map reading", "North"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 12,
+      "question": "Which direction is at the bottom of a map?",
+      "answer": "South is usually shown at the bottom of a map.",
+      "answer_outline": [
+        "Map convention",
+        "Bottom equals South"
+      ],
+      "key_concepts": ["map reading", "South"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 13,
+      "question": "If North is at the top, which side is East on a map?",
+      "answer": "East is usually on the right side of a map.",
+      "answer_outline": [
+        "Right side positioning",
+        "Relative to North"
+      ],
+      "key_concepts": ["map reading", "East"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 14,
+      "question": "If North is at the top, which side is West on a map?",
+      "answer": "West is usually on the left side of a map.",
+      "answer_outline": [
+        "Left side positioning",
+        "Relative to North"
+      ],
+      "key_concepts": ["map reading", "West"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 15,
+      "question": "What star helps people find North at night?",
+      "answer": "The Pole Star (or North Star) helps people find the North direction at night.",
+      "answer_outline": [
+        "Identifying the Pole Star",
+        "Nighttime navigation"
+      ],
+      "key_concepts": ["Pole Star", "night navigation"],
+      "marks": 3,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 16,
+      "question": "Is the North Pole a hot or cold place?",
+      "answer": "The North Pole is a very cold place covered in ice and snow.",
+      "answer_outline": [
+        "Climate description",
+        "Ice and snow"
+      ],
+      "key_concepts": ["North Pole", "climate"],
+      "marks": 2,
+      "source_section": "Geography"
+    },
+    {
+      "question_number": 17,
+      "question": "Name the direction that is opposite to North.",
+      "answer": "The direction opposite to North is South.",
+      "answer_outline": [
+        "Pairing opposites",
+        "North-South axis"
+      ],
+      "key_concepts": ["opposites", "South"],
+      "marks": 2,
+      "source_section": "Finding Directions"
+    },
+    {
+      "question_number": 18,
+      "question": "Name the direction that is opposite to East.",
+      "answer": "The direction opposite to East is West.",
+      "answer_outline": [
+        "Pairing opposites",
+        "East-West axis"
+      ],
+      "key_concepts": ["opposites", "West"],
+      "marks": 2,
+      "source_section": "Finding Directions"
+    },
+    {
+      "question_number": 19,
+      "question": "Do birds use directions to fly to warm places?",
+      "answer": "Yes, birds use natural directions to migrate to warmer places during winter.",
+      "answer_outline": [
+        "Animal migration",
+        "Natural instinct for direction"
+      ],
+      "key_concepts": ["nature", "migration"],
+      "marks": 3,
+      "source_section": "Importance of Directions"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the full form of 'N, S, E, W'?",
+      "answer": "They stand for North, South, East, and West.",
+      "answer_outline": [
+        "Full names for abbreviations"
+      ],
+      "key_concepts": ["abbreviations", "basics"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 21,
+      "question": "If you walk toward the sunset, which way are you going?",
+      "answer": "If you walk toward the sunset, you are walking toward the West.",
+      "answer_outline": [
+        "Sunset as a guide",
+        "Westward movement"
+      ],
+      "key_concepts": ["sunset", "West"],
+      "marks": 3,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does a compass needle move?",
+      "answer": "A compass needle moves because it is attracted to the Earth's magnetic North Pole.",
+      "answer_outline": [
+        "Magnetic attraction",
+        "Earth's magnetic field"
+      ],
+      "key_concepts": ["magnetism", "Earth"],
+      "marks": 4,
+      "source_section": "Navigation Tools"
+    },
+    {
+      "question_number": 23,
+      "question": "Can we see the sun at night to find East?",
+      "answer": "No, we cannot see the sun at night. We use the stars or a compass instead.",
+      "answer_outline": [
+        "Sun's absence at night",
+        "Alternative methods (stars/compass)"
+      ],
+      "key_concepts": ["night", "limitations"],
+      "marks": 3,
+      "source_section": "Natural Markers"
+    },
+    {
+      "question_number": 24,
+      "question": "How many main directions are there?",
+      "answer": "There are four main directions.",
+      "answer_outline": [
+        "Count of cardinal directions"
+      ],
+      "key_concepts": ["basics", "counting"],
+      "marks": 1,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 25,
+      "question": "Summarize how directions help us in daily life.",
+      "answer": "Directions help us read maps, find new places, tell others where we live, and understand where the sun and stars are in the sky.",
+      "answer_outline": [
+        "Map reading",
+        "Location sharing",
+        "Understanding the environment"
+      ],
+      "key_concepts": ["summary", "daily life"],
+      "marks": 5,
+      "source_section": "Overall Story"
+    }
+  ]
+}

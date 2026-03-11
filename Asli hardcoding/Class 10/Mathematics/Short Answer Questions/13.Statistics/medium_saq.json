@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "JEMH113",
+    "generated_at": "2026-03-02T00:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define class mark and write its formula.",
+            "answer": "Class mark is the mid-point of a class interval. Class mark = (Upper limit + Lower limit) / 2.",
+            "key_concepts": [
+                "class mark"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 2,
+            "question": "State the formula for mean of grouped data.",
+            "answer": "Mean of grouped data is calculated using Mean = Σfx / Σf.",
+            "key_concepts": [
+                "mean formula"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 3,
+            "question": "What is cumulative frequency?",
+            "answer": "Cumulative frequency is the running total of frequencies up to a particular class.",
+            "key_concepts": [
+                "cumulative frequency"
+            ],
+            "marks": 2,
+            "source_section": "Cumulative Frequency"
+        },
+        {
+            "question_number": 4,
+            "question": "Distinguish between grouped and ungrouped data.",
+            "answer": "Grouped data is arranged in class intervals whereas ungrouped data is not arranged into classes.",
+            "key_concepts": [
+                "grouped data",
+                "ungrouped data"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 5,
+            "question": "What is modal class?",
+            "answer": "The class interval having the highest frequency is called the modal class.",
+            "key_concepts": [
+                "modal class"
+            ],
+            "marks": 2,
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 6,
+            "question": "What is median class?",
+            "answer": "The class interval that contains the median value is called the median class.",
+            "key_concepts": [
+                "median class"
+            ],
+            "marks": 2,
+            "source_section": "Median"
+        },
+        {
+            "question_number": 7,
+            "question": "Define frequency polygon.",
+            "answer": "A frequency polygon is a graph obtained by joining the midpoints of class intervals.",
+            "key_concepts": [
+                "frequency polygon"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a histogram?",
+            "answer": "A histogram is a graphical representation of continuous data using rectangles.",
+            "key_concepts": [
+                "histogram"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 9,
+            "question": "Define assumed mean.",
+            "answer": "Assumed mean is a value taken to simplify the calculation of mean.",
+            "key_concepts": [
+                "assumed mean"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 10,
+            "question": "What is step deviation method?",
+            "answer": "Step deviation method is a simplified method of finding mean using class width.",
+            "key_concepts": [
+                "step deviation"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 11,
+            "question": "Define range.",
+            "answer": "Range is the difference between the highest and lowest values in a data set.",
+            "key_concepts": [
+                "range"
+            ],
+            "marks": 2,
+            "source_section": "Measures"
+        },
+        {
+            "question_number": 12,
+            "question": "What is inclusive series?",
+            "answer": "In inclusive series, the upper class limit is included in the class.",
+            "key_concepts": [
+                "inclusive series"
+            ],
+            "marks": 2,
+            "source_section": "Classification"
+        },
+        {
+            "question_number": 13,
+            "question": "What is exclusive series?",
+            "answer": "In exclusive series, the upper class limit is excluded from the class.",
+            "key_concepts": [
+                "exclusive series"
+            ],
+            "marks": 2,
+            "source_section": "Classification"
+        },
+        {
+            "question_number": 14,
+            "question": "What is primary data?",
+            "answer": "Primary data is data collected directly by the investigator.",
+            "key_concepts": [
+                "primary data"
+            ],
+            "marks": 2,
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 15,
+            "question": "What is secondary data?",
+            "answer": "Secondary data is data collected from published or existing sources.",
+            "key_concepts": [
+                "secondary data"
+            ],
+            "marks": 2,
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 16,
+            "question": "What is frequency density?",
+            "answer": "Frequency density is frequency divided by class width.",
+            "key_concepts": [
+                "frequency density"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 17,
+            "question": "What is tabular presentation?",
+            "answer": "Tabular presentation is the systematic arrangement of data in rows and columns.",
+            "key_concepts": [
+                "tabular presentation"
+            ],
+            "marks": 2,
+            "source_section": "Presentation"
+        },
+        {
+            "question_number": 18,
+            "question": "What is data classification?",
+            "answer": "Data classification is the grouping of data into categories.",
+            "key_concepts": [
+                "classification"
+            ],
+            "marks": 2,
+            "source_section": "Presentation"
+        },
+        {
+            "question_number": 19,
+            "question": "What is statistical average?",
+            "answer": "A statistical average is a single value that represents a set of data.",
+            "key_concepts": [
+                "average"
+            ],
+            "marks": 2,
+            "source_section": "Measures"
+        },
+        {
+            "question_number": 20,
+            "question": "Define ogive.",
+            "answer": "Ogive is a graph representing cumulative frequency.",
+            "key_concepts": [
+                "ogive"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 21,
+            "question": "What is less-than cumulative frequency?",
+            "answer": "It shows frequencies less than a particular value.",
+            "key_concepts": [
+                "less than CF"
+            ],
+            "marks": 2,
+            "source_section": "Cumulative Frequency"
+        },
+        {
+            "question_number": 22,
+            "question": "What is more-than cumulative frequency?",
+            "answer": "It shows frequencies more than a particular value.",
+            "key_concepts": [
+                "more than CF"
+            ],
+            "marks": 2,
+            "source_section": "Cumulative Frequency"
+        },
+        {
+            "question_number": 23,
+            "question": "What is observation in statistics?",
+            "answer": "Each individual value in a data set is called an observation.",
+            "key_concepts": [
+                "observation"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 24,
+            "question": "What is frequency distribution table?",
+            "answer": "It is a table showing data values and their corresponding frequencies.",
+            "key_concepts": [
+                "frequency table"
+            ],
+            "marks": 2,
+            "source_section": "Presentation"
+        },
+        {
+            "question_number": 25,
+            "question": "What is data interpretation?",
+            "answer": "Data interpretation is the process of drawing conclusions from data.",
+            "key_concepts": [
+                "interpretation"
+            ],
+            "marks": 2,
+            "source_section": "Analysis"
+        }
+    ]
+}

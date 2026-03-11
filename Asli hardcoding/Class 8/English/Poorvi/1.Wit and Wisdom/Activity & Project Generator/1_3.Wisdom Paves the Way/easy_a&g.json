@@ -1,0 +1,141 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Wisdom Paves the Way",
+  "difficulty": "Easy",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Story Reading Activity",
+      "objective": "Improve reading and understanding of the story",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the story 'Wisdom Paves the Way' aloud in class",
+        "Take turns reading paragraphs",
+        "Underline difficult words",
+        "Discuss the meaning of the new words with your teacher"
+      ],
+      "learning_outcome": "Students improve reading fluency and vocabulary",
+      "evaluation": "Participation in reading and correct pronunciation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Vocabulary Builder",
+      "objective": "Learn meanings of new words from the story",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Identify unfamiliar words in the story",
+        "Use a dictionary to find their meanings",
+        "Write the words and meanings in your notebook",
+        "Create sentences using those words"
+      ],
+      "learning_outcome": "Students improve vocabulary and sentence formation",
+      "evaluation": "Correct meanings and sentences (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Understanding the Characters",
+      "objective": "Identify the main characters and their roles in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "List the main characters from the story",
+        "Write one or two qualities for each character",
+        "Discuss how wisdom helped the characters solve problems"
+      ],
+      "learning_outcome": "Students understand character traits and moral lessons",
+      "evaluation": "Correct identification of characters and traits (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Story Sequence Activity",
+      "objective": "Understand the sequence of events in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the story carefully",
+        "Write the important events in the correct order",
+        "Discuss the sequence with your classmates"
+      ],
+      "learning_outcome": "Students understand how events are organised in a story",
+      "evaluation": "Correct sequence of events (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Moral of the Story Discussion",
+      "objective": "Identify the message or moral of the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss the main message of the story",
+        "Explain how wisdom helped solve the problem",
+        "Write the moral of the story in your notebook"
+      ],
+      "learning_outcome": "Students understand the lesson conveyed by the story",
+      "evaluation": "Clear explanation of the moral (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Question and Answer Practice",
+      "objective": "Improve comprehension skills",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Answer the comprehension questions given in the textbook",
+        "Write complete sentences",
+        "Check your answers with the teacher"
+      ],
+      "learning_outcome": "Students improve reading comprehension",
+      "evaluation": "Accuracy and clarity of answers (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Role Play Activity",
+      "objective": "Develop speaking and expression skills",
+      "materials": ["Textbook", "Simple props (optional)"],
+      "steps": [
+        "Form small groups",
+        "Choose characters from the story",
+        "Act out a short scene from the story",
+        "Present it to the class"
+      ],
+      "learning_outcome": "Students improve communication and teamwork skills",
+      "evaluation": "Expression, teamwork, and clarity (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Draw the Story Scene",
+      "objective": "Encourage creativity and understanding of the story",
+      "materials": ["Drawing sheet", "Colour pencils"],
+      "steps": [
+        "Choose your favourite scene from the story",
+        "Draw the scene on paper",
+        "Write a short description of the scene"
+      ],
+      "learning_outcome": "Students express their understanding through art",
+      "evaluation": "Creativity and description (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Sentence Writing Activity",
+      "objective": "Improve sentence construction",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose five words from the story",
+        "Write meaningful sentences using those words",
+        "Read the sentences aloud in class"
+      ],
+      "learning_outcome": "Students improve grammar and sentence formation",
+      "evaluation": "Correct sentence formation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Personal Reflection",
+      "objective": "Connect the story with real-life situations",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about a situation where wisdom helped solve a problem",
+        "Write a short paragraph describing that situation",
+        "Share your paragraph with the class"
+      ],
+      "learning_outcome": "Students reflect on the importance of wisdom in daily life",
+      "evaluation": "Clarity and relevance of reflection (10 marks)"
+    }
+  ]
+}

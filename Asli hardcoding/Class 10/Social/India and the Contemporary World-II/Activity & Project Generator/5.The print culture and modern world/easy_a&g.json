@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "History",
+  "chapter": "Print Culture and the Modern World",
+  "difficulty": "Easy",
+  "source_pdf": "jess305.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "The First Printed Books Collage",
+      "objective": "Identify the earliest forms of printed materials",
+      "materials": ["Chart paper", "Glue", "Images of Diamond Sutra and Gutenberg Bible"],
+      "steps": [
+        "Collect pictures of ancient woodblock prints and the first printed Bible",
+        "Paste them on a chart",
+        "Label the country of origin (China/Germany) for each"
+      ],
+      "learning_outcome": "Recognizes the transition from woodblock to mechanical printing",
+      "evaluation": "Correct identification of early prints (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Print Revolution Word Search",
+      "objective": "Reinforce basic vocabulary related to printing",
+      "materials": ["Grid paper", "Pen"],
+      "steps": [
+        "Find words like: Gutenberg, Vellum, Calligraphy, Ballad, and Chapbook",
+        "Write a one-line definition for any three found words"
+      ],
+      "learning_outcome": "Familiarity with historical print terminology",
+      "evaluation": "Completion and accuracy of definitions (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "The Penny Chapbook Designer",
+      "objective": "Understand how books became affordable for the poor",
+      "materials": ["A4 sheet", "Crayons", "Scissors"],
+      "steps": [
+        "Fold an A4 sheet into a small 8-page booklet",
+        "Design a cover for a 'Penny Chapbook' (pocket-sized book)",
+        "Write a short folk tale or moral story inside"
+      ],
+      "learning_outcome": "Grasps the concept of 'cheap print' for mass literacy",
+      "evaluation": "Creativity and relevance to the era (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Mapping the Spread of Print",
+      "objective": "Trace the geographic journey of printing technology",
+      "materials": ["World Map", "Markers"],
+      "steps": [
+        "Mark the starting point in East Asia (China/Japan)",
+        "Trace the route to Europe via the Silk Route (Marco Polo)",
+        "Mark the location of the first printing press in India (Goa)"
+      ],
+      "learning_outcome": "Spatial understanding of how technology traveled globally",
+      "evaluation": "Accuracy of routes and dates (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Manuscript vs. Printed Book: A Dialogue",
+      "objective": "Analyze the advantages and disadvantages of early printing",
+      "materials": ["Notebook", "Pencils"],
+      "steps": [
+        "Write a short dialogue between a 15th-century Scribe and a Printer",
+        "Discuss cost, speed, and the 'beauty' of calligraphy vs. identical printed copies",
+        "Highlight why some elites initially preferred manuscripts over printed books"
+      ],
+      "learning_outcome": "Understands the resistance and shift to mechanical print",
+      "evaluation": "Logical arguments and historical context (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Women’s Voices in Indian Print",
+      "objective": "Examine the role of print in women's empowerment",
+      "materials": ["Notebook", "Reference to 'Amar Jiban'"],
+      "steps": [
+        "Research Rashsundari Devi and how she learned to read in secret",
+        "Write a summary of why books like 'Kailashbashini Debi's' were important in the 19th century",
+        "Discuss how print gave women a platform to share their lives"
+      ],
+      "learning_outcome": "Analyzes the link between literacy and social change",
+      "evaluation": "Depth of research and clarity (10 marks)"
+    },
+  {
+      "sl_no": 7,
+      "title": "The Protestant Reformation Audit",
+      "objective": "Evaluate the link between print and religious upheaval",
+      "materials": ["Flowchart paper", "95 Theses excerpts"],
+      "steps": [
+        "Create a flowchart: Martin Luther’s writings -> Rapid printing -> Public debate -> The Protestant Reformation",
+        "Analyze Luther’s quote: 'Printing is the ultimate gift of God and the greatest one'",
+        "Explain the purpose of the Church's 'Index of Prohibited Books'"
+      ],
+      "learning_outcome": "Critical understanding of print as a tool for religious dissent",
+      "evaluation": "Analytical depth and causal links (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Print and the French Revolution: A Critique",
+      "objective": "Assess how print culture prepared the ground for revolution",
+      "materials": ["Historical prints/caricatures", "Analytical Journal"],
+      "steps": [
+        "Research the three arguments linking print to the 1789 Revolution",
+        "Examine an 18th-century French caricature mocking the royalty",
+        "Write an essay debating if print 'caused' or 'reflected' public anger"
+      ],
+      "learning_outcome": "Ability to handle complex historiographical debates",
+      "evaluation": "Strength of argumentative reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Vernacular Press Act: A Mock News Debate",
+      "objective": "Understand censorship in colonial India",
+      "materials": ["Prop black flags", "Mock script"],
+      "steps": [
+        "Draft a news report covering the passing of the Vernacular Press Act (1878)",
+        "Include an interview with a British official and an Indian editor",
+        "Explain the 'model' of the Irish Press Laws used in India"
+      ],
+      "learning_outcome": "Grasps the conflict between colonial authority and the free press",
+      "evaluation": "Historical authenticity and presentation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "The Gutenberg Legacy Simulation",
+      "objective": "Calculate the impact of 'Movable Type' on knowledge production",
+      "materials": ["Stopwatch", "Alphabet stamps", "Ink"],
+      "steps": [
+        "Task 1: Manually copy a 100-word text by hand. Record the time.",
+        "Task 2: Use stamps to 'print' the same text. Record the time.",
+        "Analyze how 'mass production' changed the price of books and created a 'Reading Public'"
+      ],
+      "learning_outcome": "Quantitative understanding of printing press efficiency",
+      "evaluation": "Data-driven conclusion and reflection (10 marks)"
+    }
+
+  ]
+}

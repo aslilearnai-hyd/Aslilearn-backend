@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 1: India – Size and Location",
+    "generated_at": "2026-03-07T20:10:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "In which hemisphere is India located?",
+                "correct_answer": "India lies entirely in the Northern Hemisphere.",
+                "explanation": "The mainland of India extends between latitudes 8°4'N and 37°6'N, which are all north of the Equator.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What is the latitudinal extent of India?",
+                "correct_answer": "8°4'N to 37°6'N",
+                "explanation": "These latitudes mark the southernmost and northernmost points of the Indian mainland.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What is the longitudinal extent of India?",
+                "correct_answer": "68°7'E to 97°25'E",
+                "explanation": "These longitudes mark the westernmost and easternmost boundaries of India.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "Which important latitude divides India into two parts?",
+                "correct_answer": "The Tropic of Cancer (23°30'N)",
+                "explanation": "The Tropic of Cancer divides India into tropical and subtropical regions.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "question": "What is the total geographical area of India?",
+                "correct_answer": "About 3.28 million square kilometres",
+                "explanation": "India's large area makes it the seventh largest country in the world.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "Which longitude is used as the Standard Meridian of India?",
+                "correct_answer": "82°30'E",
+                "explanation": "This longitude passing near Mirzapur in Uttar Pradesh is used to calculate Indian Standard Time.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "Which seas surround India on the west and east?",
+                "correct_answer": "Arabian Sea in the west and Bay of Bengal in the east",
+                "explanation": "These two seas form the coastal boundaries of the Indian peninsula.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "question": "Why is India's location important for trade?",
+                "correct_answer": "Because it lies centrally between East and West Asia along major trade routes.",
+                "explanation": "India's location helped ancient trade and cultural exchanges with many civilizations.",
+                "source_section": "Section 1.3"
+            },
+            {
+                "question": "Name the island groups of India.",
+                "correct_answer": "Lakshadweep Islands and Andaman & Nicobar Islands",
+                "explanation": "Lakshadweep lies in the Arabian Sea while Andaman & Nicobar lie in the Bay of Bengal.",
+                "source_section": "Section 1.4"
+            },
+            {
+                "question": "Which island countries are India's southern neighbours?",
+                "correct_answer": "Sri Lanka and Maldives",
+                "explanation": "Sri Lanka is separated by the Palk Strait and Maldives lies southwest of Lakshadweep.",
+                "source_section": "Section 1.4"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Location of India",
+                "content": "India lies in the Northern Hemisphere and is located in South Asia. Its mainland extends between 8°4'N and 37°6'N latitudes and 68°7'E and 97°25'E longitudes.",
+                "source_section": "Section 1.1"
+            },
+            {
+                "title": "Size of India",
+                "content": "India covers an area of about 3.28 million square kilometres and is the seventh largest country in the world.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "title": "Indian Standard Time",
+                "content": "The longitude 82°30'E is used as the Standard Meridian of India to maintain uniform time across the country.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "title": "India's Central Location",
+                "content": "India's central location in Asia helped establish trade and cultural links with Europe, Africa and East Asia.",
+                "source_section": "Section 1.3"
+            },
+            {
+                "title": "Neighbouring Countries",
+                "content": "India shares land boundaries with Pakistan, Afghanistan, China, Nepal, Bhutan, Bangladesh and Myanmar.",
+                "source_section": "Section 1.4"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "India accounts for about 2.4% of the total geographical area of the world.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "fact": "India has a land boundary of about 15,200 km.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "fact": "The total coastline of India including islands is about 7,516.6 km.",
+                "source_section": "Section 1.2"
+            },
+            {
+                "fact": "The Indian Ocean is named after India due to its prominent position.",
+                "source_section": "Section 1.3"
+            }
+        ]
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "content_type": "Reading Comprehension Passages",
+    "chapter": "JEF P102 – The Thief’s Story",
+    "author": "Ruskin Bond",
+    "title": "Reading Passages with Questions – The Thief’s Story (Expanded)",
+    "instructions": "Read each passage carefully and answer the questions. Answers should be based only on the given paragraph.",
+    "total_passages": 10,
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Hari Singh was a fifteen-year-old boy who earned his living by stealing. He was an experienced thief for his age and knew how to escape trouble. To avoid being caught by the police or recognised by former employers, he frequently changed his name. He believed that winning people’s trust was the most important skill a thief could have.",
+            "questions": [
+                "How old was Hari Singh?",
+                "What was Hari Singh’s means of livelihood?",
+                "Why did Hari Singh frequently change his name?",
+                "Whom did Hari Singh try to avoid by changing his name?",
+                "What skill did Hari Singh believe was most important for a thief?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Hari Singh met Anil at a wrestling match where he was watching the crowd carefully. Anil was around twenty-five years old and made his living as a writer. Hari Singh used his usual method of flattery to gain Anil’s attention. Within a short time, he succeeded in gaining Anil’s trust.",
+            "questions": [
+                "Where did Hari Singh meet Anil?",
+                "How old was Anil?",
+                "What was Anil’s profession?",
+                "What technique did Hari Singh use to attract Anil?",
+                "What was the result of Hari Singh’s behaviour?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Anil allowed Hari Singh to stay with him and offered him work as a cook. Although Hari Singh did not know how to cook properly and often made mistakes, Anil never scolded him. He believed in trusting people and preferred to live a simple and carefree life.",
+            "questions": [
+                "What work did Anil give Hari Singh?",
+                "How well could Hari Singh cook?",
+                "How did Anil react to Hari Singh’s mistakes?",
+                "What belief of Anil is shown in this paragraph?",
+                "How is Anil’s lifestyle described?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Every day, Anil gave Hari Singh money to buy groceries from the market. Hari Singh took advantage of this trust and often cheated Anil, saving a rupee a day for himself. Anil seemed to be aware of this habit, yet he chose not to interfere or question him.",
+            "questions": [
+                "Why did Anil give money to Hari Singh?",
+                "What dishonest action did Hari Singh perform?",
+                "How much money did Hari Singh save daily?",
+                "Did Anil appear unaware of Hari Singh’s actions?",
+                "What does Anil’s response suggest about his character?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "One night, Hari Singh decided that it was time to steal from Anil. He quietly entered the room and found six hundred rupees hidden under the mattress. Although the theft was successful, Hari Singh did not feel happy. Instead, he felt nervous and uneasy because of Anil’s trust.",
+            "questions": [
+                "What decision did Hari Singh make one night?",
+                "Where did Hari Singh find the money?",
+                "How much money was stolen?",
+                "How did Hari Singh feel after the theft?",
+                "What caused Hari Singh’s uneasiness?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "After stealing the money, Hari Singh went to the railway station to catch the Lucknow Express. As he stood on the platform, he felt restless and confused. Thoughts of Anil’s trust, the chance to receive education, and a respectable life troubled his mind.",
+            "questions": [
+                "Where did Hari Singh go after the theft?",
+                "Which train did he plan to catch?",
+                "How did Hari Singh feel at the station?",
+                "What thoughts disturbed Hari Singh’s mind?",
+                "Why was Hari Singh unable to leave immediately?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "In the end, Hari Singh decided not to run away with the stolen money. He returned quietly to Anil’s house in the dark and placed the money back under the mattress. Heavy rain was falling as he made his way back.",
+            "questions": [
+                "What final decision did Hari Singh take?",
+                "Where did Hari Singh return?",
+                "What did he do with the stolen money?",
+                "How did Hari Singh return to the house?",
+                "What was the weather like during his return?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "The next morning, Anil gave Hari Singh a fifty-rupee note as payment. The note was wet, clearly showing that it had been exposed to rain. This made it clear that Anil knew about the theft, yet he did not say a single word about it.",
+            "questions": [
+                "What did Anil give Hari Singh the next morning?",
+                "What was unusual about the note?",
+                "What did the wet note indicate?",
+                "Did Anil mention the theft?",
+                "What does Anil’s silence suggest?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "Anil promised to teach Hari Singh how to read and write properly. Hari Singh realised that education could give him respect and help him live an honest life. For the first time, he began to think seriously about his future.",
+            "questions": [
+                "What did Anil promise to teach Hari Singh?",
+                "What realisation did Hari Singh have about education?",
+                "How did Hari Singh connect education with respect?",
+                "What kind of life did Hari Singh begin to value?",
+                "Why was this moment important for Hari Singh?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "At the end of the story, Hari Singh smiled quietly to himself. He felt relieved and hopeful about what lay ahead. The trust shown by Anil and his kindness had completely changed Hari Singh’s way of thinking.",
+            "questions": [
+                "What expression did Hari Singh have at the end?",
+                "How did Hari Singh feel about the future?",
+                "What emotions are reflected in Hari Singh’s smile?",
+                "Which qualities of Anil changed Hari Singh?",
+                "Why can the ending be considered hopeful?"
+            ]
+        }
+    ]
+}

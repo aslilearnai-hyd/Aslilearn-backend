@@ -1,0 +1,369 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: Real Numbers",
+    "generated_at": "2026-02-27T18:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define rational and irrational numbers with suitable examples.",
+            "answer": "A rational number is a number that can be written in the form p/q, where p and q are integers and q ≠ 0. Examples include 1/2, 3/4 and 5. An irrational number cannot be written in the form p/q and has a non-terminating, non-repeating decimal expansion. Examples include √2, √3 and π.",
+            "answer_outline": [
+                "Definition of rational numbers",
+                "Examples",
+                "Definition of irrational numbers",
+                "Examples"
+            ],
+            "key_concepts": [
+                "rational numbers",
+                "irrational numbers"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.1, 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain Euclid’s Division Algorithm.",
+            "answer": "Euclid’s Division Algorithm states that for any two positive integers a and b, there exist whole numbers q and r such that a = bq + r, where 0 ≤ r < b. This algorithm is mainly used to find the HCF of two numbers.",
+            "answer_outline": [
+                "Statement of algorithm",
+                "Explanation",
+                "Application"
+            ],
+            "key_concepts": [
+                "Euclid’s Division Algorithm"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is prime factorisation? Explain with an example.",
+            "answer": "Prime factorisation is the process of expressing a number as a product of its prime factors. For example, 60 = 2² × 3 × 5. Each composite number has a unique prime factorisation.",
+            "answer_outline": [
+                "Definition",
+                "Example",
+                "Uniqueness"
+            ],
+            "key_concepts": [
+                "prime factorisation"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "State and explain the Fundamental Theorem of Arithmetic.",
+            "answer": "The Fundamental Theorem of Arithmetic states that every composite number can be expressed as a product of prime numbers and this factorisation is unique, except for the order of the primes.",
+            "answer_outline": [
+                "Statement",
+                "Explanation",
+                "Importance"
+            ],
+            "key_concepts": [
+                "FTA"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of HCF and LCM.",
+            "answer": "HCF is the greatest number that divides two or more numbers exactly. LCM is the smallest number that is exactly divisible by two or more numbers. They can be found using prime factorisation.",
+            "answer_outline": [
+                "Definition of HCF",
+                "Definition of LCM",
+                "Method"
+            ],
+            "key_concepts": [
+                "HCF",
+                "LCM"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the HCF and LCM of 12 and 18.",
+            "answer": "12 = 2² × 3 and 18 = 2 × 3². HCF = 2 × 3 = 6 and LCM = 2² × 3² = 36.",
+            "answer_outline": [
+                "Prime factorisation",
+                "HCF calculation",
+                "LCM calculation"
+            ],
+            "key_concepts": [
+                "HCF",
+                "LCM"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain what real numbers are.",
+            "answer": "Real numbers include all rational and irrational numbers. They represent all the points on the number line.",
+            "answer_outline": [
+                "Definition",
+                "Classification"
+            ],
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain what is meant by terminating and non-terminating decimals.",
+            "answer": "A terminating decimal ends after a finite number of decimal places. A non-terminating decimal continues indefinitely and may be repeating or non-repeating.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the meaning of coprime numbers.",
+            "answer": "Two numbers are said to be coprime if their HCF is 1. Example: 8 and 15.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "coprime numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain proof by contradiction.",
+            "answer": "Proof by contradiction is a method where we assume the opposite of what we want to prove and show that this assumption leads to a contradiction.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "proof by contradiction"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why √4 is rational.",
+            "answer": "√4 = 2, which is an integer. Hence √4 is rational.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why √2 is irrational.",
+            "answer": "√2 cannot be expressed in the form p/q and has a non-terminating, non-repeating decimal expansion, hence it is irrational.",
+            "answer_outline": [
+                "Definition",
+                "Reason"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why 1 is neither prime nor composite.",
+            "answer": "The number 1 has only one factor. Prime numbers have exactly two factors, while composite numbers have more than two.",
+            "answer_outline": [
+                "Factors of 1",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of prime numbers.",
+            "answer": "Prime numbers are the building blocks of all natural numbers through prime factorisation.",
+            "answer_outline": [
+                "Definition",
+                "Importance"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the relation between HCF and LCM.",
+            "answer": "For two numbers a and b, HCF(a, b) × LCM(a, b) = a × b.",
+            "answer_outline": [
+                "Statement",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "HCF",
+                "LCM"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why π is irrational.",
+            "answer": "π has a non-terminating, non-repeating decimal expansion and cannot be written as p/q.",
+            "answer_outline": [
+                "Decimal nature",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why √9 is rational.",
+            "answer": "√9 = 3, which is an integer and hence rational.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why 0 is a rational number.",
+            "answer": "0 can be written as 0/1, where both numerator and denominator are integers.",
+            "answer_outline": [
+                "Fraction form",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why every composite number has more than two factors.",
+            "answer": "Composite numbers can be written as products of smaller numbers, giving more than two factors.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "composite numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why Euclid’s Division Algorithm is useful.",
+            "answer": "It helps in finding the HCF of two positive integers efficiently.",
+            "answer_outline": [
+                "Purpose",
+                "Application"
+            ],
+            "key_concepts": [
+                "Euclid’s algorithm"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why √5 is irrational.",
+            "answer": "√5 cannot be expressed as p/q and its decimal expansion is non-terminating and non-repeating.",
+            "answer_outline": [
+                "Definition",
+                "Reason"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the term terminating decimal with example.",
+            "answer": "A terminating decimal ends after finite places. Example: 0.25.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "terminating decimals"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why 2 is the only even prime number.",
+            "answer": "All other even numbers are divisible by 2 and hence composite.",
+            "answer_outline": [
+                "Even numbers",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why √1 is rational.",
+            "answer": "√1 = 1, which is an integer.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the classification of real numbers.",
+            "answer": "Real numbers are classified into rational and irrational numbers.",
+            "answer_outline": [
+                "Classification",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 9: Circles",
+    "generated_at": "2026-03-06T06:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that equal chords of a circle subtend equal angles at the center.",
+            "answer": "Let AB and CD be equal chords of a circle with center O. Join OA, OB, OC, OD. Using triangle congruence (SAS), ∆OAB ≅ ∆OCD, hence ∠AOB = ∠COD.",
+            "key_concepts": ["chords", "angle at center", "triangle congruence"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that the perpendicular from the center to a chord bisects the chord.",
+            "answer": "Let AB be a chord and O the center. Draw perpendicular OM to AB. Triangles ∆OMA ≅ ∆OMB (RHS), so AM = MB; hence chord is bisected.",
+            "key_concepts": ["chord", "perpendicular", "bisect"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that chords equidistant from the center are equal.",
+            "answer": "Let AB and CD be chords at equal distance from center O. Draw perpendiculars OM and ON to AB and CD. Using RHS congruence of triangles, AB = CD.",
+            "key_concepts": ["chords", "equidistant", "congruence"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that the line joining the center to the midpoint of a chord is perpendicular to the chord.",
+            "answer": "Let AB be a chord and M its midpoint. Join OM. Using congruent triangles ∆OMA ≅ ∆OMB, ∠OMB = 90°; hence OM ⟂ AB.",
+            "key_concepts": ["chord", "midpoint", "perpendicular"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that the angle subtended by a chord at the center is double the angle subtended on the circle.",
+            "answer": "Let chord AB subtend ∠AOB at center and ∠ACB on circle. Using isosceles triangles and angle sum properties, ∠AOB = 2∠ACB.",
+            "key_concepts": ["chord", "angles", "center", "circle"],
+            "marks": 5,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that the angle in a semicircle is a right angle.",
+            "answer": "Let diameter AB subtend angle ∠ACB. Triangles ∆ABC is right-angled at C by Pythagoras theorem or using circle theorem.",
+            "key_concepts": ["semicircle", "right angle", "triangle"],
+            "marks": 4,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that opposite angles of a cyclic quadrilateral sum to 180°.",
+            "answer": "Let ABCD be cyclic quadrilateral. Using angle subtended by same chord, ∠A + ∠C = 180°, ∠B + ∠D = 180°.",
+            "key_concepts": ["cyclic quadrilateral", "angles", "chord"],
+            "marks": 5,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that tangents drawn from an external point are equal.",
+            "answer": "Let P be an external point and PA, PB tangents. Join OP. Triangles ∆OPA ≅ ∆OPB (RHS), hence PA = PB.",
+            "key_concepts": ["tangent", "external point", "congruence"],
+            "marks": 4,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that a radius drawn to the tangent at the point of contact is perpendicular to the tangent.",
+            "answer": "Let tangent touch at A and radius OA. Assume not perpendicular, lead to contradiction using triangle properties. Hence OA ⟂ tangent.",
+            "key_concepts": ["radius", "tangent", "perpendicularity"],
+            "marks": 4,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that angles in the same segment of a circle are equal.",
+            "answer": "Let chord AB subtend ∠ACD and ∠AED in the same segment. Using properties of isosceles triangles and circle, ∠ACD = ∠AED.",
+            "key_concepts": ["angles", "same segment", "chord"],
+            "marks": 4,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove that the perpendicular bisector of a chord passes through the center.",
+            "answer": "Let AB be a chord and M its midpoint. Draw perpendicular from M. By congruence of triangles, line passes through O, the center.",
+            "key_concepts": ["chord", "perpendicular bisector", "center"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that a quadrilateral is cyclic if a pair of opposite angles sum to 180°.",
+            "answer": "Let ∠A + ∠C = 180°. Draw circle through three vertices; the fourth vertex lies on circle, making quadrilateral cyclic.",
+            "key_concepts": ["cyclic quadrilateral", "angles", "circle"],
+            "marks": 4,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that tangents drawn at ends of a diameter are parallel.",
+            "answer": "Tangents at ends of diameter are perpendicular to radius; both perpendicular to same line, hence tangents are parallel.",
+            "key_concepts": ["tangent", "diameter", "parallel"],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that the angle between a tangent and a chord equals the angle in the alternate segment.",
+            "answer": "Using tangent-radius perpendicularity and triangle angle properties, angle between tangent and chord = angle in alternate segment.",
+            "key_concepts": ["tangent", "chord", "alternate segment"],
+            "marks": 5,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the sum of opposite angles of a cyclic quadrilateral is 180° using exterior angle theorem.",
+            "answer": "Extend side, apply exterior angle theorem to show ∠A + ∠C = 180°, ∠B + ∠D = 180°.",
+            "key_concepts": ["cyclic quadrilateral", "opposite angles", "exterior angle theorem"],
+            "marks": 5,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that the product of lengths of two segments of a secant equals the square of the tangent from the same external point.",
+            "answer": "Using triangle similarity between tangents and secant segments, PT² = PA·PB where P is external point, T tangent, AB secant.",
+            "key_concepts": ["tangent", "secant", "external point", "length"],
+            "marks": 5,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that two tangents drawn from an external point form equal angles with the line joining the point to the center.",
+            "answer": "Triangles formed by tangents and radii are congruent (RHS), hence angles with line to center equal.",
+            "key_concepts": ["tangent", "external point", "angles", "congruence"],
+            "marks": 4,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that the radius divides a chord into two equal parts if it passes through the midpoint.",
+            "answer": "Draw radius to midpoint, form two triangles, use congruence to show chord is bisected.",
+            "key_concepts": ["radius", "chord", "bisect", "triangle congruence"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that the perpendicular from center to chord bisects the chord using coordinates.",
+            "answer": "Place center at origin, chord along x-axis, calculate midpoint, slope of perpendicular line, show it passes through midpoint.",
+            "key_concepts": ["coordinate method", "chord", "perpendicular", "bisect"],
+            "marks": 5,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Prove that equal chords are equidistant from the center using coordinates.",
+            "answer": "Place chords along parallel lines, calculate distances from origin, show distances equal for equal chords.",
+            "key_concepts": ["coordinate method", "chords", "distance from center"],
+            "marks": 5,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that angles subtended by same chord on same side are equal using isosceles triangles.",
+            "answer": "Triangles formed by chord and points on circle are isosceles. Using base angles equality, angles subtended are equal.",
+            "key_concepts": ["chord", "angles", "isosceles triangles"],
+            "marks": 4,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Prove that a tangent and radius at point of contact are perpendicular using Pythagoras theorem.",
+            "answer": "Construct triangle with radius, tangent, and line from center to external point. Apply Pythagoras theorem to show perpendicularity.",
+            "key_concepts": ["tangent", "radius", "perpendicularity", "Pythagoras theorem"],
+            "marks": 4,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that a cyclic quadrilateral is inscribed in a circle.",
+            "answer": "Construct circle through three vertices, show fourth vertex lies on circle, using opposite angles sum to 180°.",
+            "key_concepts": ["cyclic quadrilateral", "inscribed circle"],
+            "marks": 4,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that in a circle, chords equally distant from the center subtend equal angles at the center.",
+            "answer": "Draw perpendiculars from center to chords, use congruence of triangles formed, show angles at center equal.",
+            "key_concepts": ["chords", "distance from center", "angle at center"],
+            "marks": 4,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that the sum of opposite angles of a cyclic quadrilateral using circle properties.",
+            "answer": "Using angles subtended by same chord on circle, apply angle properties to show opposite angles sum to 180°.",
+            "key_concepts": ["cyclic quadrilateral", "opposite angles", "circle properties"],
+            "marks": 5,
+            "source_section": "Section 9.5"
+        }
+    ]
+}

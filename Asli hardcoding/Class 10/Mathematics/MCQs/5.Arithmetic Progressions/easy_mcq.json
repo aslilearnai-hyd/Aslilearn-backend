@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Arithmetic Progressions",
+    "generated_at": "2026-02-27T19:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "An arithmetic progression is a sequence with",
+            "options": {
+                "A": "Multiplication",
+                "B": "Division",
+                "C": "Constant difference",
+                "D": "Constant ratio"
+            },
+            "correct_answer": "C",
+            "explanation": "AP has common difference.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "First term of AP 2, 4, 6, 8 is",
+            "options": {
+                "A": "2",
+                "B": "4",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_answer": "A",
+            "explanation": "First term is 2.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Common difference of 3, 7, 11 is",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "Difference is 4.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which is an AP?",
+            "options": {
+                "A": "2,4,8",
+                "B": "1,3,5",
+                "C": "1,2,4",
+                "D": "2,6,12"
+            },
+            "correct_answer": "B",
+            "explanation": "Constant difference 2.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Common difference can be",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "All"
+            },
+            "correct_answer": "D",
+            "explanation": "d can be any real number.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "AP: 5,5,5,5 has common difference",
+            "options": {
+                "A": "5",
+                "B": "0",
+                "C": "1",
+                "D": "−5"
+            },
+            "correct_answer": "B",
+            "explanation": "Difference is zero.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which is NOT an AP?",
+            "options": {
+                "A": "2,4,6",
+                "B": "5,10,15",
+                "C": "1,4,9",
+                "D": "7,7,7"
+            },
+            "correct_answer": "C",
+            "explanation": "Differences are not constant.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "General form of AP is",
+            "options": {
+                "A": "a, ad, ad²",
+                "B": "a, a+d, a+2d",
+                "C": "a, ar, ar²",
+                "D": "a², b²"
+            },
+            "correct_answer": "B",
+            "explanation": "General form is a, a+d, a+2d.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Second term of AP is",
+            "options": {
+                "A": "a",
+                "B": "d",
+                "C": "a+d",
+                "D": "a−d"
+            },
+            "correct_answer": "C",
+            "explanation": "Second term is a+d.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "AP with d < 0 is",
+            "options": {
+                "A": "Increasing",
+                "B": "Constant",
+                "C": "Decreasing",
+                "D": "Random"
+            },
+            "correct_answer": "C",
+            "explanation": "Negative difference decreases.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "AP with d = 0 is",
+            "options": {
+                "A": "Increasing",
+                "B": "Decreasing",
+                "C": "Constant",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "All terms equal.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which AP is increasing?",
+            "options": {
+                "A": "d < 0",
+                "B": "d = 0",
+                "C": "d > 0",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "Positive d increases.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "AP is finite if",
+            "options": {
+                "A": "Ends",
+                "B": "Infinite",
+                "C": "Random",
+                "D": "None"
+            },
+            "correct_answer": "A",
+            "explanation": "Finite AP has last term.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which is a real-life AP example?",
+            "options": {
+                "A": "Salary increment",
+                "B": "Population growth",
+                "C": "Compound interest",
+                "D": "Random walk"
+            },
+            "correct_answer": "A",
+            "explanation": "Salary increases by fixed amount.",
+            "difficulty": "easy",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 15,
+            "question": "AP: 10, 7, 4 is",
+            "options": {
+                "A": "Increasing",
+                "B": "Decreasing",
+                "C": "Constant",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Common difference is −3.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Common difference of 1, 1, 1 is",
+            "options": {
+                "A": "1",
+                "B": "0",
+                "C": "−1",
+                "D": "2"
+            },
+            "correct_answer": "B",
+            "explanation": "No change.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "AP has how many terms?",
+            "options": {
+                "A": "Fixed",
+                "B": "Two",
+                "C": "One",
+                "D": "Infinite or finite"
+            },
+            "correct_answer": "D",
+            "explanation": "AP can be finite or infinite.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which formula gives nth term?",
+            "options": {
+                "A": "a+nd",
+                "B": "a+(n−1)d",
+                "C": "nd",
+                "D": "an"
+            },
+            "correct_answer": "B",
+            "explanation": "nth term formula.",
+            "difficulty": "easy",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "AP is a sequence of",
+            "options": {
+                "A": "Letters",
+                "B": "Numbers",
+                "C": "Symbols",
+                "D": "Graphs"
+            },
+            "correct_answer": "B",
+            "explanation": "AP is numerical sequence.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "AP with a = 0, d = 5 starts with",
+            "options": {
+                "A": "0",
+                "B": "5",
+                "C": "10",
+                "D": "1"
+            },
+            "correct_answer": "A",
+            "explanation": "First term is a.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Difference between consecutive terms is called",
+            "options": {
+                "A": "Ratio",
+                "B": "Term",
+                "C": "Common difference",
+                "D": "Sum"
+            },
+            "correct_answer": "C",
+            "explanation": "Fixed difference.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "AP: −2, −4, −6 is",
+            "options": {
+                "A": "Increasing",
+                "B": "Decreasing",
+                "C": "Constant",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Difference is −2.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which AP has d = 3?",
+            "options": {
+                "A": "2,5,8",
+                "B": "1,4,10",
+                "C": "3,6,12",
+                "D": "5,10,20"
+            },
+            "correct_answer": "A",
+            "explanation": "Difference is 3.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "AP is related to",
+            "options": {
+                "A": "Patterns",
+                "B": "Graphs",
+                "C": "Statistics",
+                "D": "Geometry"
+            },
+            "correct_answer": "A",
+            "explanation": "AP shows patterns.",
+            "difficulty": "easy",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Which has common difference zero?",
+            "options": {
+                "A": "1,2,3",
+                "B": "5,5,5",
+                "C": "2,4,6",
+                "D": "3,6,9"
+            },
+            "correct_answer": "B",
+            "explanation": "All terms equal.",
+            "difficulty": "easy",
+            "source_section": "Section 5.2"
+        }
+    ]
+}

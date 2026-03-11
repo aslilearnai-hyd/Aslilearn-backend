@@ -1,0 +1,43 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Hard",
+    "source_pdf": "m9_3.pdf",
+    "short_notes": {
+        "key_points": [
+            "Coordinate geometry provides a numerical method to represent geometric figures",
+            "The Cartesian coordinate system was introduced by René Descartes",
+            "The coordinate plane is formed by two perpendicular number lines intersecting at the origin",
+            "Coordinates of a point describe its position relative to both axes",
+            "The first coordinate represents horizontal displacement while the second represents vertical displacement",
+            "Points with both positive coordinates lie in the first quadrant",
+            "Points with negative x and positive y lie in the second quadrant",
+            "Points with both coordinates negative lie in the third quadrant",
+            "Points with positive x and negative y lie in the fourth quadrant",
+            "Understanding coordinate positions helps interpret graphs and geometric relationships"
+        ],
+        "examples": [
+            "The point (2,5) lies in the first quadrant",
+            "The point (-4,7) lies in the second quadrant",
+            "The point (-6,-3) lies in the third quadrant",
+            "The point (8,-2) lies in the fourth quadrant",
+            "The point (0,-5) lies on the negative y-axis",
+            "The point (-7,0) lies on the negative x-axis"
+        ],
+        "formulas": [
+            "General coordinate representation → (x,y)",
+            "Distance from y-axis → |x|",
+            "Distance from x-axis → |y|",
+            "Origin coordinates → (0,0)",
+            "Quadrant sign rule → (+,+), (-,+), (-,-), (+,-)"
+        ],
+        "exam_tips": [
+            "Visualize the coordinate plane before determining the quadrant",
+            "Carefully identify sign combinations of coordinates",
+            "Points on axes should be recognized quickly to avoid quadrant errors",
+            "Use clear graph plotting for better understanding of coordinate positions",
+            "Remember that the origin divides the axes into positive and negative directions"
+        ]
+    }
+}

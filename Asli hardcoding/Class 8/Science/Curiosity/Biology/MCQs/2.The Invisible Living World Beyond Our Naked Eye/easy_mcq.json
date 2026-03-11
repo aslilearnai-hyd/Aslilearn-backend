@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "generated_at": "2026-03-05T14:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why can't many microorganisms be seen with the naked eye?",
+      "options": {
+        "A": "They are invisible",
+        "B": "They are too small",
+        "C": "They live in water",
+        "D": "They move too fast"
+      },
+      "correct_answer": "B",
+      "explanation": "Microorganisms are extremely small and require microscopes to be seen.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which instrument is used to observe cells and microorganisms?",
+      "options": {
+        "A": "Telescope",
+        "B": "Microscope",
+        "C": "Thermometer",
+        "D": "Barometer"
+      },
+      "correct_answer": "B",
+      "explanation": "Microscopes magnify very small objects like cells and microorganisms.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Who discovered cells by observing cork under a microscope?",
+      "options": {
+        "A": "Louis Pasteur",
+        "B": "Robert Hooke",
+        "C": "Antonie van Leeuwenhoek",
+        "D": "Gregor Mendel"
+      },
+      "correct_answer": "B",
+      "explanation": "Robert Hooke observed cork and named the small compartments cells.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Who is known as the Father of Microbiology?",
+      "options": {
+        "A": "Robert Hooke",
+        "B": "Charles Darwin",
+        "C": "Antonie van Leeuwenhoek",
+        "D": "Louis Pasteur"
+      },
+      "correct_answer": "C",
+      "explanation": "Leeuwenhoek first observed microorganisms using improved microscopes.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which part of the cell controls its activities?",
+      "options": {
+        "A": "Cell membrane",
+        "B": "Cytoplasm",
+        "C": "Nucleus",
+        "D": "Cell wall"
+      },
+      "correct_answer": "C",
+      "explanation": "The nucleus acts as the control center of the cell.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which structure surrounds and protects the cell?",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Cell membrane",
+        "C": "Nucleus",
+        "D": "Chloroplast"
+      },
+      "correct_answer": "B",
+      "explanation": "The cell membrane encloses the cell and regulates movement of substances.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which cell structure is present in plant cells but not in animal cells?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Cell membrane",
+        "C": "Cell wall",
+        "D": "Cytoplasm"
+      },
+      "correct_answer": "C",
+      "explanation": "Plant cells have a cell wall which provides support and protection.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which microorganisms are responsible for curd formation?",
+      "options": {
+        "A": "Yeast",
+        "B": "Lactobacillus",
+        "C": "Amoeba",
+        "D": "Algae"
+      },
+      "correct_answer": "B",
+      "explanation": "Lactobacillus bacteria convert milk into curd.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which microorganism is commonly used in bread making?",
+      "options": {
+        "A": "Yeast",
+        "B": "Bacteria",
+        "C": "Virus",
+        "D": "Protozoa"
+      },
+      "correct_answer": "A",
+      "explanation": "Yeast ferments sugar and releases carbon dioxide which makes bread rise.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which process helps microorganisms break down dead plants and animals?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Fermentation",
+        "C": "Decomposition",
+        "D": "Respiration"
+      },
+      "correct_answer": "C",
+      "explanation": "Microorganisms decompose organic matter into simpler substances.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which bacteria live in root nodules of leguminous plants?",
+      "options": {
+        "A": "Lactobacillus",
+        "B": "Rhizobium",
+        "C": "E. coli",
+        "D": "Salmonella"
+      },
+      "correct_answer": "B",
+      "explanation": "Rhizobium bacteria fix nitrogen in the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which microorganisms produce oxygen through photosynthesis?",
+      "options": {
+        "A": "Fungi",
+        "B": "Microalgae",
+        "C": "Bacteria",
+        "D": "Protozoa"
+      },
+      "correct_answer": "B",
+      "explanation": "Microalgae perform photosynthesis and release oxygen.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which group of microorganisms includes Amoeba?",
+      "options": {
+        "A": "Bacteria",
+        "B": "Fungi",
+        "C": "Protozoa",
+        "D": "Algae"
+      },
+      "correct_answer": "C",
+      "explanation": "Amoeba is a protozoan microorganism.",
+      "difficulty": "easy",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which level of organization comes after tissues?",
+      "options": {
+        "A": "Cells",
+        "B": "Organs",
+        "C": "Organisms",
+        "D": "Systems"
+      },
+      "correct_answer": "B",
+      "explanation": "Tissues combine to form organs.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is a unicellular organism?",
+      "options": {
+        "A": "Human",
+        "B": "Amoeba",
+        "C": "Plant",
+        "D": "Fish"
+      },
+      "correct_answer": "B",
+      "explanation": "Amoeba consists of a single cell.",
+      "difficulty": "easy",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Which part of the cell contains genetic material?",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Cell membrane",
+        "C": "Nucleus",
+        "D": "Cell wall"
+      },
+      "correct_answer": "C",
+      "explanation": "The nucleus contains genetic material that controls cell functions.",
+      "difficulty": "easy",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which microorganisms help convert organic waste into manure?",
+      "options": {
+        "A": "Protozoa",
+        "B": "Microorganisms involved in decomposition",
+        "C": "Viruses",
+        "D": "Fish"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposer microorganisms break down organic waste into compost.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 18,
+      "question": "What gas is produced during yeast fermentation?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Carbon dioxide produced by yeast makes dough rise.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which scientific tool is most important for studying cells?",
+      "options": {
+        "A": "Microscope",
+        "B": "Thermometer",
+        "C": "Balance",
+        "D": "Clock"
+      },
+      "correct_answer": "A",
+      "explanation": "Cells are observed using microscopes.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following organisms performs photosynthesis and lives in water?",
+      "options": {
+        "A": "Bacteria",
+        "B": "Microalgae",
+        "C": "Protozoa",
+        "D": "Fungi"
+      },
+      "correct_answer": "B",
+      "explanation": "Microalgae perform photosynthesis in aquatic environments.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the basic unit of life?",
+      "options": {
+        "A": "Tissue",
+        "B": "Cell",
+        "C": "Organ",
+        "D": "System"
+      },
+      "correct_answer": "B",
+      "explanation": "Cells are the fundamental units of all living organisms.",
+      "difficulty": "easy",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Which microorganisms can cause diseases?",
+      "options": {
+        "A": "Beneficial microbes",
+        "B": "Harmful microbes",
+        "C": "Plants",
+        "D": "Animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Some microorganisms cause diseases in humans, animals, and plants.",
+      "difficulty": "easy",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Which microorganism is commonly found in pond water?",
+      "options": {
+        "A": "Amoeba",
+        "B": "Tiger",
+        "C": "Cow",
+        "D": "Bird"
+      },
+      "correct_answer": "A",
+      "explanation": "Amoeba is a common protozoan found in pond water.",
+      "difficulty": "easy",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which process helps recycle nutrients in ecosystems?",
+      "options": {
+        "A": "Fermentation",
+        "B": "Decomposition",
+        "C": "Respiration",
+        "D": "Digestion"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposition by microorganisms returns nutrients to the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are microorganisms important for the environment?",
+      "options": {
+        "A": "They produce electricity",
+        "B": "They recycle nutrients and support ecosystems",
+        "C": "They stop plant growth",
+        "D": "They reduce oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Microorganisms help maintain ecological balance by recycling nutrients.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    }
+  ]
+}

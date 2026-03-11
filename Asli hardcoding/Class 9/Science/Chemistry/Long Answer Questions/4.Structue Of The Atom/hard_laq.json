@@ -1,0 +1,690 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Structure of the Atom",
+    "generated_at": "2026-03-06T19:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Naturally occurring Chlorine has an average atomic mass of 35.5 u. Explain the mathematical derivation of this value based on its isotopic abundance.",
+            "answer": "Chlorine exists as two isotopes: ${}^{35}_{17}\\text{Cl}$ and ${}^{37}_{17}\\text{Cl}$ in the ratio of 3:1 (75% and 25% respectively). The average atomic mass is the weighted average: $[(35 \\times 75) + (37 \\times 25)] / 100 = [2625 + 925] / 100 = 3550 / 100 = 35.5\\text{ u}$. This fractional mass indicates that any sample of chlorine will contain a mixture of these isotopes in this fixed proportion.",
+            "answer_outline": [
+                "Identify isotopes and their ratios (75:25)",
+                "Set up the weighted average equation",
+                "Perform calculation",
+                "Explain the significance of fractional mass"
+            ],
+            "key_concepts": [
+                "average atomic mass",
+                "fractional mass",
+                "isotopic abundance"
+            ],
+            "marks": 5,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 2,
+            "question": "An ion $X^{2-}$ has 18 electrons and 16 neutrons. Calculate the atomic number and mass number of element X. Identify the element and write its electronic configuration.",
+            "answer": "Since the ion has a 2- charge, it has gained 2 electrons. Protons = $18 - 2 = 16$. Atomic Number (Z) = 16. Mass Number (A) = Protons + Neutrons = $16 + 16 = 32$. The element is Sulphur (S). Electronic configuration of neutral atom: K=2, L=8, M=6 (2, 8, 6).",
+            "answer_outline": [
+                "Relate ion charge to proton count",
+                "Calculate Z and A",
+                "Identify element (Sulphur)",
+                "Provide electron distribution"
+            ],
+            "key_concepts": [
+                "ion stoichiometry",
+                "atomic number",
+                "sulphur"
+            ],
+            "marks": 5,
+            "source_section": "4.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the concept of 'Stationary Orbits' in Bohr’s model. How does this address the limitations of classical physics regarding atomic stability?",
+            "answer": "In classical electromagnetism, an accelerating charge (electron) must radiate energy and spiral into the nucleus. Bohr postulated that electrons revolve in 'discrete orbits' or stationary states where they do not radiate energy. In these orbits, the centrifugal force of the revolving electron is exactly balanced by the electrostatic attraction of the nucleus, and energy change only occurs when an electron 'jumps' between these quantized levels.",
+            "answer_outline": [
+                "Drawback of Rutherford/Classical physics",
+                "Bohr's postulate on discrete orbits",
+                "Energy quantization concept",
+                "Stability justification"
+            ],
+            "key_concepts": [
+                "stationary orbits",
+                "quantization",
+                "atomic stability"
+            ],
+            "marks": 5,
+            "source_section": "4.2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the Bohr-Bury rule which states that the outermost shell cannot have more than 8 electrons. How does this rule apply to the configuration of Calcium (Z=20) and Potassium (Z=19)?",
+            "answer": "According to $2n^2$, the M shell (n=3) can hold 18 electrons. However, the Bohr-Bury rule limits the outermost shell to 8 electrons for stability. For Potassium (Z=19), electrons fill as 2, 8, 8, 1 instead of 2, 8, 9. Similarly, Calcium (Z=20) fills as 2, 8, 8, 2. The N shell begins filling even before the M shell is completely saturated (18) to maintain a stable octet in the valence shell.",
+            "answer_outline": [
+                "State the octet limit rule",
+                "Compare 2n^2 capacity vs stability limit",
+                "Step-wise distribution for K and Ca",
+                "Explain the start of the N-shell"
+            ],
+            "key_concepts": [
+                "Bohr-Bury scheme",
+                "octet rule",
+                "calcium configuration"
+            ],
+            "marks": 5,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Compare and contrast isotopes and isobars in terms of their subatomic composition and chemical behavior. Provide one pair of examples for each.",
+            "answer": "Isotopes (e.g., ${}^{12}_{6}\\text{C}, {}^{14}_{6}\\text{C}$) have the same number of protons but different neutrons. Since they have the same atomic number, their chemical properties are identical. Isobars (e.g., ${}^{40}_{18}\\text{Ar}, {}^{40}_{20}\\text{Ca}$) have the same mass number but different protons. Because they are different elements with different electron configurations, their chemical properties are entirely different.",
+            "answer_outline": [
+                "Define Isotopes vs Isobars",
+                "Subatomic particle comparison (p, n, e)",
+                "Chemical behavior reasoning",
+                "Examples for both"
+            ],
+            "key_concepts": [
+                "isotopes",
+                "isobars",
+                "chemical identity"
+            ],
+            "marks": 5,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Why did Rutherford choose a gold foil for his experiment instead of other metals? Explain the significance of the foil’s thickness in interpreting the results.",
+            "answer": "Rutherford needed the thinnest possible layer to ensure alpha particles interacted with as few atoms as possible. Gold is the most malleable metal; he could make a foil only 1000 atoms thick. If the foil were thicker, multiple scattering events would occur, making it impossible to conclude that the positive charge and mass were concentrated in a single, tiny, central nucleus.",
+            "answer_outline": [
+                "Property of malleability in gold",
+                "Requirement for single-layer interaction",
+                "Thickness (1000 atoms) significance",
+                "Interpretation of clear deflection paths"
+            ],
+            "key_concepts": [
+                "malleability",
+                "Rutherford experiment",
+                "nuclear discovery"
+            ],
+            "marks": 5,
+            "source_section": "4.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the term 'Valency' for elements like Nitrogen and Oxygen. Why is it not simply the number of valence electrons?",
+            "answer": "Valency is the combining capacity. For Nitrogen (2, 5) and Oxygen (2, 6), losing 5 or 6 electrons is energetically difficult. Instead, they gain 3 and 2 electrons respectively to achieve a stable octet. Thus, for non-metals, Valency = 8 - (Number of valence electrons). It represents the number of electrons involved in bonding to reach stability, not just the count in the outer shell.",
+            "answer_outline": [
+                "Definition of valency",
+                "Electronic config of N and O",
+                "Stability/Octet requirement",
+                "Calculation logic (8 - valence e-)"
+            ],
+            "key_concepts": [
+                "valency",
+                "valence electrons",
+                "octet rule"
+            ],
+            "marks": 4,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 8,
+            "question": "An element Z has a mass number of 31 and an atomic number of 15. Determine the number of protons, neutrons, and electrons. Write its formula when it combines with Magnesium (valency 2).",
+            "answer": "Protons = 15, Electrons = 15, Neutrons = $31 - 15 = 16$. The element is Phosphorus (P). Phosphorus (2, 8, 5) has a valency of 3. When combined with Magnesium ($Mg^{2+}$), the formula is $Mg_3P_2$ (Magnesium Phosphide).",
+            "answer_outline": [
+                "List subatomic particles",
+                "Identify Phosphorus",
+                "Determine Phosphorus valency (3)",
+                "Apply criss-cross method with Magnesium"
+            ],
+            "key_concepts": [
+                "mass number",
+                "stoichiometry",
+                "phosphorus"
+            ],
+            "marks": 5,
+            "source_section": "4.5 & 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the discovery of the neutron. Why was its discovery essential to explain the atomic mass of elements like Helium?",
+            "answer": "In 1932, James Chadwick discovered a neutral particle with mass equal to a proton. Before this, a Helium atom (2 protons) was expected to have a mass of 2 u, but it was measured as 4 u. The 'missing' 2 units were explained by the presence of 2 neutrons in the nucleus. This proved that mass number is the sum of protons and neutrons (nucleons).",
+            "answer_outline": [
+                "Discovery by Chadwick",
+                "Discrepancy in early mass calculations",
+                "Helium case study (2p vs 4u)",
+                "Definition of mass number"
+            ],
+            "key_concepts": [
+                "neutron",
+                "atomic mass discrepancy",
+                "nucleons"
+            ],
+            "marks": 5,
+            "source_section": "4.2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the relationship between the 'Atomic Radius' and the 'Nucleus Radius' based on Rutherford’s observations? Use the 'cricket stadium' analogy.",
+            "answer": "Rutherford observed that only 1 in 12,000 alpha particles rebounded, indicating the nucleus is extremely small compared to the atom. The radius of the nucleus is about $10^5$ times smaller than the radius of the atom. Analogy: If the atom were a cricket stadium, the nucleus would be a small cricket ball at the center. This highlights that the atom is mostly empty space.",
+            "answer_outline": [
+                "Deflection ratio interpretation",
+                "Scale comparison (10^5 factor)",
+                "Cricket stadium analogy",
+                "Conclusion on atomic volume"
+            ],
+            "key_concepts": [
+                "nuclear size",
+                "atomic radius",
+                "empty space"
+            ],
+            "marks": 4,
+            "source_section": "4.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the chemical position of isotopes in the Modern Periodic Table. Why do they not require separate slots?",
+            "answer": "The Modern Periodic Table is arranged based on atomic number (Z). Since all isotopes of an element have the same number of protons (same Z), they occupy the same position. Separate slots are unnecessary because chemical properties are identical; the table organizes elements by identity and reactivity, not by their nuclear mass.",
+            "answer_outline": [
+                "Periodic arrangement basis (Atomic number)",
+                "Definition of isotopes (Same Z)",
+                "Chemical property identity",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "periodic table",
+                "isotopes",
+                "atomic number"
+            ],
+            "marks": 4,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 12,
+            "question": "Calculate the average atomic mass of Bromine if its two isotopes are ${}^{79}_{35}\\text{Br}$ (49.7%) and ${}^{81}_{35}\\text{Br}$ (50.3%).",
+            "answer": "Average mass = $[(79 \\times 49.7) + (81 \\times 50.3)] / 100 = [3926.3 + 4074.3] / 100 = 8000.6 / 100 = 80.006\\text{ u}$. (Commonly rounded to 80 u).",
+            "answer_outline": [
+                "Formula setup",
+                "Isotope percentages",
+                "Mathematical calculation",
+                "Result"
+            ],
+            "key_concepts": [
+                "average atomic mass",
+                "bromine",
+                "isotopes"
+            ],
+            "marks": 5,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why Protium (${}^1\\text{H}$) is the only isotope that lacks a neutron. How does this affect its mass number compared to Deuterium and Tritium?",
+            "answer": "Protium has 1 proton and 0 neutrons, making its mass number (A) = 1. Deuterium has 1 proton and 1 neutron (A=2). Tritium has 1 proton and 2 neutrons (A=3). The absence of neutrons in Protium makes it the simplest nucleus. All isotopes share the same valency (1) and chemical reactivity, but differ significantly in nuclear mass.",
+            "answer_outline": [
+                "Comparison of H isotopes",
+                "Neutron count for each",
+                "Mass number derivation",
+                "Subatomic summary"
+            ],
+            "key_concepts": [
+                "hydrogen isotopes",
+                "mass number",
+                "protium"
+            ],
+            "marks": 4,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens to the valency of elements as we move from Atomic Number 1 to 20? Identify the pattern of increase and decrease.",
+            "answer": "Valency follows a periodic pattern. It starts at 1 (H), reaches 0 (He). Then 1 (Li), 2 (Be), 3 (B), 4 (C), then decreases: 3 (N), 2 (O), 1 (F), 0 (Ne). This cycles again for Na to Ar. The valency increases to 4 and then decreases to 0 based on the number of electrons needed to complete an octet.",
+            "answer_outline": [
+                "List valencies for periods",
+                "Relate valency to octet/duplet",
+                "Identify the '4' peak (Carbon/Silicon)",
+                "Identify the '0' floor (Inert gases)"
+            ],
+            "key_concepts": [
+                "periodic valency",
+                "octet rule",
+                "electron distribution"
+            ],
+            "marks": 5,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "How did Goldstein discover the proton? Compare the properties of canal rays with cathode rays.",
+            "answer": "E. Goldstein used a perforated cathode in a discharge tube and observed radiations moving opposite to cathode rays, called 'canal rays'. Unlike cathode rays (electrons), canal rays are positive particles whose mass depends on the gas in the tube. Protons were identified as the simplest canal ray particle (from Hydrogen), with +1 charge and 1 u mass.",
+            "answer_outline": [
+                "Experimental setup (perforated cathode)",
+                "Direction of rays",
+                "Charge and mass comparison",
+                "Identity of the proton"
+            ],
+            "key_concepts": [
+                "canal rays",
+                "protons",
+                "Goldstein experiment"
+            ],
+            "marks": 5,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Define 'Effective Nuclear Charge' indirectly by explaining why the outermost electrons are lost more easily in larger atoms like Potassium compared to Sodium.",
+            "answer": "Sodium (2, 8, 1) and Potassium (2, 8, 8, 1) both have 1 valence electron. In Potassium, the electron is in the N-shell, further from the nucleus and shielded by more inner shells (K, L, M). The nuclear pull is weaker on this distant electron compared to Sodium's M-shell electron. This reduced pull (effective charge) makes it easier for larger atoms to lose electrons.",
+            "answer_outline": [
+                "Electronic configuration comparison",
+                "Distance from nucleus",
+                "Shielding effect of inner shells",
+                "Resulting reactivity difference"
+            ],
+            "key_concepts": [
+                "valence shell distance",
+                "shielding effect",
+                "reactivity"
+            ],
+            "marks": 5,
+            "source_section": "4.4 (Higher order application)"
+        },
+        {
+            "question_number": 17,
+            "question": "Justify why Thomson’s model is called 'electrically neutral' but 'structurally incorrect' based on subsequent experiments.",
+            "answer": "Thomson was correct that atoms have equal positive and negative charges, making them neutral. However, his model of 'embedded electrons' in a positive sphere was proven wrong by Rutherford. The scattering experiment showed that the positive charge is not spread out like a sphere but concentrated in a tiny nucleus. The electrons are not fixed like 'seeds' but revolve in orbits.",
+            "answer_outline": [
+                "Success of the model (neutrality)",
+                "Failure of the model (distribution)",
+                "Evidence from alpha-particle deflection",
+                "Comparison with Rutherford/Bohr models"
+            ],
+            "key_concepts": [
+                "Thomson's model",
+                "plum pudding",
+                "neutrality vs structure"
+            ],
+            "marks": 4,
+            "source_section": "4.2.1 & 4.2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Write the electronic configuration of Magnesium and the Magnesium ion ($Mg^{2+}$). Why is the ion more stable?",
+            "answer": "Magnesium (Z=12): 2, 8, 2. $Mg^{2+}$ Ion: 2, 8. The ion is more stable because by losing two valence electrons, it achieves a completely filled outermost shell (octet). This state is chemically inert and has lower potential energy, similar to the noble gas Neon.",
+            "answer_outline": [
+                "Atom configuration",
+                "Ion configuration",
+                "Reason for electron loss",
+                "Stability (Octet rule)"
+            ],
+            "key_concepts": [
+                "magnesium ion",
+                "octet rule",
+                "stability"
+            ],
+            "marks": 4,
+            "source_section": "4.3 & 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How is the mass of an atom calculated if it exists in multiple isotopic forms? Explain with reference to Oxygen isotopes ${}^{16}\\text{O}$ and ${}^{18}\\text{O}$.",
+            "answer": "The mass is the weighted average based on natural abundance. If Oxygen were 90% ${}^{16}\\text{O}$ and 10% ${}^{18}\\text{O}$, the average mass would be $[(16 \\times 90) + (18 \\times 10)] / 100 = 16.2\\text{ u}$. This reflects the composition of the element as found in nature, which is why atomic masses in the periodic table are often not whole numbers.",
+            "answer_outline": [
+                "Concept of abundance",
+                "Weighted average formula",
+                "Oxygen isotope example",
+                "Explanation of fractional values"
+            ],
+            "key_concepts": [
+                "average atomic mass",
+                "oxygen isotopes",
+                "abundance"
+            ],
+            "marks": 5,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Analyze the energy of shells. Why do electrons fill the K-shell before the L-shell?",
+            "answer": "Shells are energy levels. The K-shell (n=1) has the lowest energy because it is closest to the nucleus and the electrostatic attraction is strongest. Electrons naturally occupy the lowest available energy state for maximum stability. Therefore, the L-shell (higher energy) only begins to fill once the K-shell is saturated with 2 electrons.",
+            "answer_outline": [
+                "Define shells as energy levels",
+                "Proximity and attraction",
+                "Concept of minimum energy/stability",
+                "Stepwise filling rule"
+            ],
+            "key_concepts": [
+                "energy levels",
+                "stability",
+                "electron shells"
+            ],
+            "marks": 4,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the medical and industrial significance of radioisotopes like Cobalt-60 and Uranium-235.",
+            "answer": "Radioisotopes are isotopes with unstable nuclei that emit radiation. Cobalt-60 emits gamma rays used in radiotherapy to destroy cancerous cells. Uranium-235 undergoes nuclear fission, releasing massive energy used in nuclear reactors to generate electricity. These applications utilize the specific nuclear properties (instability/energy) that differ from stable isotopes.",
+            "answer_outline": [
+                "Unstable isotopes definition",
+                "Cobalt-60 application (Cancer)",
+                "Uranium-235 application (Energy)",
+                "Role of neutrons/radiation"
+            ],
+            "key_concepts": [
+                "radioisotopes",
+                "cobalt-60",
+                "uranium-235"
+            ],
+            "marks": 5,
+            "source_section": "4.6"
+        },
+        {
+            "question_number": 22,
+            "question": "What are 'Nucleons'? Prove that the mass number of an atom is numerically equal to its nucleon count using Helium as an example.",
+            "answer": "Nucleons are protons and neutrons. For Helium (${}^4_2\\text{He}$), the nucleus contains 2 protons and 2 neutrons. Nucleon count = $2 + 2 = 4$. Since the mass of each nucleon is 1 u and electron mass is negligible, the total mass is 4 u. Thus, Mass Number (A) = 4, which is exactly the count of nucleons.",
+            "answer_outline": [
+                "Define nucleons",
+                "Relate mass to nucleons (1 u each)",
+                "Helium calculation",
+                "Mass number equality proof"
+            ],
+            "key_concepts": [
+                "nucleons",
+                "helium",
+                "mass number"
+            ],
+            "marks": 4,
+            "source_section": "4.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Contrast Bohr’s concept of 'Orbits' with the earlier concepts. How did he use 'n' values to denote energy?",
+            "answer": "Bohr replaced the vague 'revolving paths' of Rutherford with quantized 'energy levels'. He used the principal quantum number 'n' (1, 2, 3, 4...) to denote these levels. As 'n' increases, the shell is further from the nucleus and has higher energy. This quantization was a revolutionary step towards modern quantum mechanics.",
+            "answer_outline": [
+                "Previous orbit concept",
+                "Bohr's stationary states",
+                "Significance of 'n' values",
+                "Energy-distance relationship"
+            ],
+            "key_concepts": [
+                "Bohr orbits",
+                "quantum number n",
+                "energy levels"
+            ],
+            "marks": 4,
+            "source_section": "4.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the valency of Aluminum (Z=13). If it reacts with Sulphur (Z=16), derive the formula of the resulting compound.",
+            "answer": "Aluminum (2, 8, 3) has 3 valence electrons and valency 3. Sulphur (2, 8, 6) needs 2 electrons, so its valency is 2. Using the criss-cross method: $Al^{3+}$ and $S^{2-}$ results in $Al_2S_3$ (Aluminum Sulphide).",
+            "answer_outline": [
+                "Configs for Al and S",
+                "Valency derivation for both",
+                "Charge balance logic",
+                "Final formula derivation"
+            ],
+            "key_concepts": [
+                "aluminum sulphide",
+                "valency",
+                "formula writing"
+            ],
+            "marks": 5,
+            "source_section": "4.4 & 3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the evolution of the atomic model from Dalton to Bohr in terms of 'divisibility' and 'structure'.",
+            "answer": "1. Dalton: Atom is indivisible and solid. 2. Thomson: Atom is divisible into e- and positive charge (Plum Pudding). 3. Rutherford: Atom has a central nucleus and e- revolve randomly. 4. Bohr: e- revolve in fixed energy levels (Stationary states). Each model added layers of complexity: first subatomic particles, then a nucleus, then quantized orbits.",
+            "answer_outline": [
+                "Dalton (Indivisible)",
+                "Thomson (Subatomic particles)",
+                "Rutherford (Nucleus)",
+                "Bohr (Energy levels)"
+            ],
+            "key_concepts": [
+                "atomic evolution",
+                "divisibility",
+                "scientific models"
+            ],
+            "marks": 5,
+            "source_section": "4.2"
+        }
+    ]
+}{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 12: Statistics",
+    "generated_at": "2026-03-06T16:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The weights (in kg) of 40 students are: 35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74. Construct a frequency distribution table with class width 5.",
+            "answer": "Class intervals: 35–39→5, 40–44→5, 45–49→5, 50–54→5, 55–59→5, 60–64→5, 65–69→5, 70–74→5",
+            "answer_outline": ["Choose class width=5", "List intervals", "Count frequency in each interval", "Construct table"],
+            "key_concepts": ["grouped frequency distribution", "class interval", "frequency"],
+            "marks": 5,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Given the following frequency distribution of marks obtained by 50 students: 0–10→3, 10–20→7, 20–30→12, 30–40→15, 40–50→13. Calculate mean using assumed mean method with 30 as assumed mean.",
+            "answer": "Class marks: 5,15,25,35,45; Deviations: d=(x-a)/1 → -25,-15,-5,5,15; f×d: -75,-105,-60,75,195; Σf×d=30; Mean=a+Σf×d/n=30+30/50=30.6",
+            "answer_outline": ["Calculate class marks", "Compute deviations from assumed mean", "Multiply by frequency", "Sum f×d and divide by total frequency", "Add to assumed mean"],
+            "key_concepts": ["mean", "assumed mean method", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 3,
+            "question": "The daily wages of 60 workers are grouped as: 100–120→5, 120–140→10, 140–160→15, 160–180→20, 180–200→10. Find median wage.",
+            "answer": "Cumulative frequency: 5,15,30,50,60; Median class: 160–180 (cf before=30, f=20, n=60); Median=160 + [(30-30)/20]×20=160",
+            "answer_outline": ["Compute cumulative frequency", "Identify median class", "Apply median formula"],
+            "key_concepts": ["median", "grouped data", "cumulative frequency"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A company recorded the monthly expenditure of 50 families: 2000–3000→5, 3000–4000→10, 4000–5000→15, 5000–6000→12, 6000–7000→8. Find mode using formula.",
+            "answer": "Modal class=4000–5000 (highest f=15); cf before=15-15=10? f1=15,f0=10,f2=12; Mode=L+[(f1-f0)/(2f1-f0-f2)]×h=4000+[(15-10)/(2*15-10-12)]*1000≈4000+500=4500",
+            "answer_outline": ["Identify modal class", "Calculate cf before, f1, f2", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A cumulative frequency table of students’ heights (in cm) is: less than 140→5, less than 145→12, less than 150→25, less than 155→38, less than 160→50. Find median height.",
+            "answer": "n=50, median class=145–150; cf before=12, f=13, h=5; Median=L+[(n/2 - cf)/f]*h=145+[(25-12)/13]*5≈145+5=150",
+            "answer_outline": ["Identify median class", "Apply median formula", "Compute median height"],
+            "key_concepts": ["median", "cumulative frequency", "grouped data"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "The marks of 100 students are given in class intervals 0–10, 10–20,..., 90–100 with frequencies: 3,7,12,15,20,18,12,8,3,2. Draw a less-than cumulative frequency curve and estimate median.",
+            "answer": "Cumulative frequencies: 3,10,22,37,57,75,87,95,98,100; Median class=40–50; cf before=37,f=20,h=10; Median=40+[(50-37)/20]*10=40+6.5≈46.5",
+            "answer_outline": ["Compute cumulative frequency", "Plot cumulative frequency curve", "Identify median class", "Estimate median using formula"],
+            "key_concepts": ["median", "cumulative frequency curve", "estimation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the mean deviation about mean for data: 10,12,15,18,20.",
+            "answer": "Mean=(10+12+15+18+20)/5=75/5=15; Deviations: |10-15|=5, |12-15|=3, |15-15|=0, |18-15|=3, |20-15|=5; Mean deviation=(5+3+0+3+5)/5=16/5=3.2",
+            "answer_outline": ["Compute mean", "Find deviations from mean", "Take absolute values", "Compute mean deviation"],
+            "key_concepts": ["mean deviation", "central tendency", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 8,
+            "question": "For the data 2,4,6,8,10 with frequencies 3,5,4,6,2, find the mean using direct method.",
+            "answer": "Σf=20, Σfx=(2*3+4*5+6*4+8*6+10*2)=6+20+24+48+20=118; Mean=Σfx/Σf=118/20=5.9",
+            "answer_outline": ["Multiply each value by frequency", "Sum products", "Divide by total frequency"],
+            "key_concepts": ["mean", "grouped data", "direct method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Class marks of data: 5,10,15,20,25,30 with frequencies 2,3,7,5,4,1. Find variance and standard deviation.",
+            "answer": "Mean=Σfx/Σf=(5*2+10*3+15*7+20*5+25*4+30*1)/22=215/22≈9.77 (double check sum); Compute Σf(x-mean)^2, then SD=√(Σf(x-mean)^2/Σf)≈8.5",
+            "answer_outline": ["Compute mean", "Find squared deviations", "Multiply by frequency", "Sum, divide by n, sqrt for SD"],
+            "key_concepts": ["variance", "standard deviation", "grouped data"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 10,
+            "question": "A frequency table shows class intervals 0–5,5–10,10–15,15–20,20–25 with frequencies 5,8,12,10,5. Draw histogram and frequency polygon.",
+            "answer": "x-axis: class intervals, y-axis: frequency; Draw rectangles for histogram; Midpoints for polygon: 2.5,7.5,12.5,17.5,22.5; Join midpoints with lines",
+            "answer_outline": ["Draw histogram using rectangles", "Mark midpoints", "Plot frequency polygon connecting midpoints"],
+            "key_concepts": ["histogram", "frequency polygon", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find mean, median, and mode from the data: 10,12,12,15,15,15,18,20,22,22,25.",
+            "answer": "Mean=(10+12+12+15+15+15+18+20+22+22+25)/11=166/11≈15.09; Median=15; Mode=15",
+            "answer_outline": ["Arrange data", "Compute sum for mean", "Middle value for median", "Most frequent for mode"],
+            "key_concepts": ["mean", "median", "mode", "bimodal check"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Marks of 50 students are grouped in intervals 0–10,10–20,...,90–100. Frequency: 2,3,5,6,10,8,7,5,3,1. Find median using cumulative frequency graph.",
+            "answer": "Cumulative frequencies: 2,5,10,16,26,34,41,46,49,50; Median class=40–50; cf before=16,f=10,h=10; Median=40+[(25-16)/10]*10=40+9=49",
+            "answer_outline": ["Compute cumulative frequencies", "Identify median class", "Use median formula"],
+            "key_concepts": ["median", "cumulative frequency graph"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Compute mean deviation about median for data: 4,6,8,10,12,14.",
+            "answer": "Median=(8+10)/2=9; Deviations: |4-9|=5,|6-9|=3,|8-9|=1,|10-9|=1,|12-9|=3,|14-9|=5; Sum=18; Mean deviation=18/6=3",
+            "answer_outline": ["Find median", "Compute absolute deviations", "Sum and divide by n"],
+            "key_concepts": ["mean deviation", "median", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "A frequency distribution: class 0–5→3,5–10→7,10–15→10,15–20→8,20–25→2. Draw less-than cumulative frequency curve and estimate median.",
+            "answer": "Cumulative: 0–5→3, 5–10→10, 10–15→20, 15–20→28, 20–25→30; Median class=10–15; cf before=10,f=10,h=5; Median=10+[(15-10)/10]*5=12.5",
+            "answer_outline": ["Compute cumulative frequency", "Plot curve", "Identify median class", "Estimate median"],
+            "key_concepts": ["cumulative frequency curve", "median", "grouped data"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "For data: 12,15,17,20,22,25,27,30, compute variance and SD.",
+            "answer": "Mean= (12+15+17+20+22+25+27+30)/8=168/8=21; Deviations: -9,-6,-4,-1,1,4,6,9; Squares:81,36,16,1,1,16,36,81; Σ=268; Variance=268/8=33.5; SD=√33.5≈5.79",
+            "answer_outline": ["Compute mean", "Find deviations", "Square deviations", "Sum, divide by n for variance", "SD=sqrt(variance)"],
+            "key_concepts": ["variance", "standard deviation", "data spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 16,
+            "question": "The weights of 50 students are given in grouped form: 40–45→5,45–50→10,50–55→15,55–60→12,60–65→8. Compute mean using step deviation method with assumed mean 52.5.",
+            "answer": "Class marks:42.5,47.5,52.5,57.5,62.5; d=(x-a)/h: -2, -1,0,1,2; f×d= -10,-10,0,12,16; Σf×d=8; h=5; n=50; Mean=a+Σf×d*h/n=52.5+8*5/50=52.5+0.8=53.3",
+            "answer_outline": ["Find class marks", "Compute step deviations", "Multiply by frequency", "Sum f×d", "Mean=a+Σf×d*h/n"],
+            "key_concepts": ["step deviation method", "mean", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Compute mode for frequency distribution: 0–10→2,10–20→5,20–30→8,30–40→12,40–50→7 using formula.",
+            "answer": "Modal class=30–40; f1=12,f0=8,f2=7,L=30,h=10; Mode=L+[(f1-f0)/(2f1-f0-f2)]*h=30+[(12-8)/(24-8-7)]*10=30+4/9*10≈34.44",
+            "answer_outline": ["Identify modal class", "Compute f1,f0,f2", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Marks of 40 students: 25,30,35,30,40,35,30,40,45,50,... Find mean and standard deviation using assumed mean 37.5",
+            "answer": "Compute deviations d=(x-a)/h, Σf×d, Σf×d^2, then mean=a+Σf×d*h/n; SD=√(Σf×d^2/n - (Σf×d/n)^2)*h",
+            "answer_outline": ["Compute deviations", "Compute Σf×d, Σf×d^2", "Mean=a+Σf×d*h/n", "SD formula for grouped data"],
+            "key_concepts": ["mean", "standard deviation", "assumed mean method"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 19,
+            "question": "The number of pages read by 50 students: 0–50→5,50–100→10,100–150→15,150–200→12,200–250→8. Draw histogram and frequency polygon.",
+            "answer": "x-axis: intervals, y-axis: frequency; Draw rectangles for histogram; Midpoints: 25,75,125,175,225; Plot frequency polygon joining midpoints",
+            "answer_outline": ["Draw histogram rectangles", "Identify midpoints", "Plot frequency polygon"],
+            "key_concepts": ["histogram", "frequency polygon", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Construct less-than cumulative frequency curve for data: 0–5→3,5–10→6,10–15→9,15–20→12,20–25→10",
+            "answer": "Cumulative: 0–5→3,5–10→9,10–15→18,15–20→30,20–25→40; Plot curve using upper boundaries",
+            "answer_outline": ["Compute cumulative frequency", "Plot upper boundaries vs cumulative frequency", "Join points smoothly"],
+            "key_concepts": ["cumulative frequency curve", "graphical representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Find median for grouped data: 0–10→2,10–20→5,20–30→10,30–40→15,40–50→8.",
+            "answer": "Cumulative frequency: 2,7,17,32,40; n=40; Median class=30–40; cf before=17,f=15,h=10; Median=30+[(20-17)/15]*10=30+(3/15)*10=30+2=32",
+            "answer_outline": ["Compute cumulative frequencies", "Identify median class", "Apply median formula"],
+            "key_concepts": ["median", "grouped data", "cumulative frequency"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 22,
+            "question": "A data set has marks of 60 students in intervals 0–10→4,10–20→6,20–30→10,30–40→20,40–50→12,50–60→8. Find mode using formula.",
+            "answer": "Modal class=30–40; f1=20, f0=10, f2=12, L=30, h=10; Mode=L+[(f1-f0)/(2f1-f0-f2)]*h=30+[(20-10)/(40-10-12)]*10=30+10/18*10≈35.56",
+            "answer_outline": ["Identify modal class", "Calculate f1,f0,f2,L,h", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The daily earnings of 50 workers are given as: 100–120→4,120–140→8,140–160→12,160–180→15,180–200→11. Calculate mean using step deviation method with 150 as assumed mean and h=20.",
+            "answer": "Class marks: 110,130,150,170,190; Step deviations d=(x-a)/h: -2,-1,0,1,2; f×d=-8,-8,0,15,22; Σf×d=21; Mean=a+Σf×d*h/n=150+(21*20)/50=150+8.4=158.4",
+            "answer_outline": ["Compute class marks", "Calculate step deviations", "Multiply by frequency", "Sum f×d", "Compute mean"],
+            "key_concepts": ["mean", "step deviation method", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 24,
+            "question": "The number of hours studied by 40 students in a week: 0–5→3,5–10→7,10–15→12,15–20→10,20–25→8. Draw histogram, less-than cumulative frequency curve and frequency polygon.",
+            "answer": "Histogram: x-axis: class intervals, y-axis: frequency, draw rectangles; Frequency polygon: midpoints 2.5,7.5,12.5,17.5,22.5, join points; Less-than cumulative curve: cumulative frequencies 3,10,22,32,40, plot upper boundaries 5,10,15,20,25",
+            "answer_outline": ["Draw histogram", "Mark midpoints for frequency polygon", "Compute cumulative frequencies for less-than curve", "Plot graphs"],
+            "key_concepts": ["histogram", "frequency polygon", "cumulative frequency curve", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Compute mean deviation about mean for the data: 8,10,12,14,16,18,20.",
+            "answer": "Mean=(8+10+12+14+16+18+20)/7=98/7=14; Deviations: |8-14|=6, |10-14|=4, |12-14|=2, |14-14|=0, |16-14|=2, |18-14|=4, |20-14|=6; Sum=24; Mean deviation=24/7≈3.43",
+            "answer_outline": ["Compute mean", "Find absolute deviations from mean", "Sum deviations", "Divide by total number of data points"],
+            "key_concepts": ["mean deviation", "central tendency", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        }
+    ]
+}

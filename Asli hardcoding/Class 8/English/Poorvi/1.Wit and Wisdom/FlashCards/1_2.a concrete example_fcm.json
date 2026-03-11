@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: A Concrete Example",
+  "generated_at": "2026-03-07T14:25:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "Who is the main character mentioned in the poem?",
+        "correct_answer": "Mrs. Jones",
+        "explanation": "Mrs. Jones is the speaker’s next-door neighbour who owns a garden full of stones.",
+        "source_section": "Poem Introduction"
+      },
+      {
+        "question": "What is unusual about Mrs. Jones’s garden?",
+        "correct_answer": "It is filled mostly with stones instead of plants",
+        "explanation": "The poem humorously describes her garden as being full of stones and rock features.",
+        "source_section": "Poem Description"
+      },
+      {
+        "question": "What garden features are mentioned in the poem?",
+        "correct_answer": "A crazy path, a lily pond, a rockery, and a sundial",
+        "explanation": "These elements help create a vivid image of Mrs. Jones’s unusual garden.",
+        "source_section": "Poem Description"
+      },
+      {
+        "question": "What does Mrs. Jones plant between the stones?",
+        "correct_answer": "Tiny and delicate plants",
+        "explanation": "The poet humorously suggests that the plants are so small that they might have been planted with a pin.",
+        "source_section": "Poem Description"
+      },
+      {
+        "question": "Why does the poet say the plants might be planted with a pin?",
+        "correct_answer": "Because they are extremely small and delicate",
+        "explanation": "This exaggeration creates humour and highlights the tiny size of the plants.",
+        "source_section": "Poetic Expression"
+      },
+      {
+        "question": "What happens when the speaker asks about the beautiful flower?",
+        "correct_answer": "Mrs. Jones tells him that he is standing on it",
+        "explanation": "This surprising moment creates humour and irony in the poem.",
+        "source_section": "Climax"
+      },
+      {
+        "question": "What literary device is used when the speaker stands on the flower?",
+        "correct_answer": "Situational irony",
+        "explanation": "The speaker searches for the flower while unknowingly standing on it, which is unexpected and humorous.",
+        "source_section": "Literary Device"
+      },
+      {
+        "question": "What is the tone of the poem?",
+        "correct_answer": "Humorous and light-hearted",
+        "explanation": "The poem gently makes fun of Mrs. Jones’s unusual gardening style.",
+        "source_section": "Tone and Mood"
+      },
+      {
+        "question": "What poetic device repeats similar beginning sounds in words?",
+        "correct_answer": "Alliteration",
+        "explanation": "Alliteration creates rhythm and musical quality in poetry.",
+        "source_section": "Poetic Devices"
+      },
+      {
+        "question": "What message does the poem convey?",
+        "correct_answer": "People have different ideas of beauty and should respect individual tastes",
+        "explanation": "Mrs. Jones loves her unusual garden even though others may find it strange.",
+        "source_section": "Theme"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Mrs. Jones",
+        "content": "Mrs. Jones is the speaker’s neighbour who proudly maintains a garden filled with stones and tiny plants.",
+        "source_section": "Poem Introduction"
+      },
+      {
+        "title": "Imagery in the Poem",
+        "content": "The poet uses descriptions such as a crazy path, lily pond, rockery, and sundial to create a visual picture of the garden.",
+        "source_section": "Poem Description"
+      },
+      {
+        "title": "Humour in the Poem",
+        "content": "The poem uses humour to describe Mrs. Jones’s unusual gardening style and the tiny plants in her garden.",
+        "source_section": "Tone and Mood"
+      },
+      {
+        "title": "Situational Irony",
+        "content": "The speaker searches for the flower but later discovers that he has been standing on it all along.",
+        "source_section": "Literary Device"
+      },
+      {
+        "title": "Theme",
+        "content": "The poem shows that people have different perspectives about beauty and nature.",
+        "source_section": "Theme"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The poem humorously describes a garden that contains more stones than plants.",
+        "source_section": "Poem Description"
+      },
+      {
+        "fact": "Mrs. Jones values tiny plants that others might overlook.",
+        "source_section": "Poem Description"
+      },
+      {
+        "fact": "The final line of the poem creates a humorous twist when the speaker discovers he is standing on the flower.",
+        "source_section": "Climax"
+      },
+      {
+        "fact": "The poem highlights how different people perceive beauty differently.",
+        "source_section": "Theme"
+      }
+    ]
+  }
+}

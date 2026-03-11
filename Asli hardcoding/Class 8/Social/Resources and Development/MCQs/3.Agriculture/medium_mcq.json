@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Agriculture",
+  "generated_at": "2026-03-06T14:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Agriculture is best described as which type of activity?",
+      "options": {
+        "A": "Primary economic activity",
+        "B": "Secondary economic activity",
+        "C": "Service activity",
+        "D": "Industrial activity"
+      },
+      "correct_answer": "A",
+      "explanation": "Agriculture is a primary activity because it involves direct use of natural resources.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which factor mainly determines agricultural productivity in a region?",
+      "options": {
+        "A": "Climate",
+        "B": "Population",
+        "C": "Transportation",
+        "D": "Tourism"
+      },
+      "correct_answer": "A",
+      "explanation": "Climate conditions such as rainfall and temperature strongly influence agriculture.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "Subsistence farming is mostly practiced in:",
+      "options": {
+        "A": "Developed countries",
+        "B": "Industrial cities",
+        "C": "Rural areas of developing countries",
+        "D": "Urban regions"
+      },
+      "correct_answer": "C",
+      "explanation": "Subsistence farming is common in rural regions of developing countries where farmers grow crops mainly for family consumption.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which human factor has increased agricultural productivity the most in recent times?",
+      "options": {
+        "A": "Religion",
+        "B": "Technology",
+        "C": "Language",
+        "D": "Traditions"
+      },
+      "correct_answer": "B",
+      "explanation": "Technological advancements such as tractors and irrigation systems have increased productivity.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which crop season is associated with winter in India?",
+      "options": {
+        "A": "Kharif",
+        "B": "Rabi",
+        "C": "Zaid",
+        "D": "Harvest"
+      },
+      "correct_answer": "B",
+      "explanation": "Rabi crops are grown during the winter season.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "Which crop requires heavy rainfall and warm climate?",
+      "options": {
+        "A": "Rice",
+        "B": "Wheat",
+        "C": "Barley",
+        "D": "Mustard"
+      },
+      "correct_answer": "A",
+      "explanation": "Rice grows well in regions with high rainfall and warm temperatures.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is considered a cash crop?",
+      "options": {
+        "A": "Rice",
+        "B": "Wheat",
+        "C": "Cotton",
+        "D": "Maize"
+      },
+      "correct_answer": "C",
+      "explanation": "Cotton is grown mainly for commercial purposes and used in industries.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "Plantation agriculture usually grows:",
+      "options": {
+        "A": "Several crops on small farms",
+        "B": "A single crop on large estates",
+        "C": "Only vegetables",
+        "D": "Only food grains"
+      },
+      "correct_answer": "B",
+      "explanation": "Plantation agriculture focuses on large-scale production of a single crop.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "Which region is famous for tea plantations in India?",
+      "options": {
+        "A": "Punjab",
+        "B": "Assam",
+        "C": "Rajasthan",
+        "D": "Gujarat"
+      },
+      "correct_answer": "B",
+      "explanation": "Assam is one of the major tea-producing regions in India.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "Which machine is commonly used for harvesting crops?",
+      "options": {
+        "A": "Tractor",
+        "B": "Harvester",
+        "C": "Plough",
+        "D": "Sickle"
+      },
+      "correct_answer": "B",
+      "explanation": "Harvesters are machines designed to cut and collect crops efficiently.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 11,
+      "question": "Which irrigation method uses pipes to deliver water directly to plant roots?",
+      "options": {
+        "A": "Canal irrigation",
+        "B": "Drip irrigation",
+        "C": "Flood irrigation",
+        "D": "Tank irrigation"
+      },
+      "correct_answer": "B",
+      "explanation": "Drip irrigation delivers water directly to the roots of plants, reducing water wastage.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is a benefit of crop rotation?",
+      "options": {
+        "A": "Improves soil fertility",
+        "B": "Reduces rainfall",
+        "C": "Increases pollution",
+        "D": "Destroys soil nutrients"
+      },
+      "correct_answer": "A",
+      "explanation": "Crop rotation helps maintain soil nutrients and reduce pest problems.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 13,
+      "question": "Which farming practice avoids chemical fertilizers and pesticides?",
+      "options": {
+        "A": "Organic farming",
+        "B": "Commercial farming",
+        "C": "Intensive farming",
+        "D": "Extensive farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Organic farming uses natural fertilizers and eco-friendly methods.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 14,
+      "question": "Which industry depends heavily on sugarcane?",
+      "options": {
+        "A": "Textile industry",
+        "B": "Sugar industry",
+        "C": "Steel industry",
+        "D": "Automobile industry"
+      },
+      "correct_answer": "B",
+      "explanation": "Sugarcane is the main raw material used in the sugar industry.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which challenge is affecting agriculture globally?",
+      "options": {
+        "A": "Climate change",
+        "B": "Language differences",
+        "C": "Urban celebrations",
+        "D": "Tourism growth"
+      },
+      "correct_answer": "A",
+      "explanation": "Climate change affects rainfall patterns and crop yields.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 16,
+      "question": "Which crop is mainly grown in plantation farming in southern India?",
+      "options": {
+        "A": "Coffee",
+        "B": "Wheat",
+        "C": "Rice",
+        "D": "Barley"
+      },
+      "correct_answer": "A",
+      "explanation": "Coffee plantations are common in the southern hills of India.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "Which natural resource is most essential for agriculture?",
+      "options": {
+        "A": "Soil",
+        "B": "Iron",
+        "C": "Coal",
+        "D": "Petroleum"
+      },
+      "correct_answer": "A",
+      "explanation": "Soil provides nutrients and support for plant growth.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which farming method focuses on protecting the environment?",
+      "options": {
+        "A": "Sustainable agriculture",
+        "B": "Commercial agriculture",
+        "C": "Intensive farming",
+        "D": "Plantation farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Sustainable agriculture aims to protect natural resources while maintaining productivity.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor helps farmers grow crops even in dry regions?",
+      "options": {
+        "A": "Irrigation",
+        "B": "Deforestation",
+        "C": "Urbanization",
+        "D": "Industrialization"
+      },
+      "correct_answer": "A",
+      "explanation": "Irrigation provides water to crops in areas with low rainfall.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 20,
+      "question": "Which practice helps prevent soil erosion?",
+      "options": {
+        "A": "Crop rotation",
+        "B": "Overgrazing",
+        "C": "Deforestation",
+        "D": "Mining"
+      },
+      "correct_answer": "A",
+      "explanation": "Crop rotation helps protect soil health and reduce erosion.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 21,
+      "question": "Which crop is commonly grown in the Rabi season in India?",
+      "options": {
+        "A": "Wheat",
+        "B": "Rice",
+        "C": "Cotton",
+        "D": "Tea"
+      },
+      "correct_answer": "A",
+      "explanation": "Wheat is the major Rabi crop grown during winter.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 22,
+      "question": "Which farming system uses large amounts of labor and technology on small land areas?",
+      "options": {
+        "A": "Intensive farming",
+        "B": "Extensive farming",
+        "C": "Nomadic herding",
+        "D": "Plantation farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Intensive farming uses high inputs of labor and technology on small land areas.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which crop is grown mainly in plantation agriculture for beverages?",
+      "options": {
+        "A": "Tea",
+        "B": "Maize",
+        "C": "Barley",
+        "D": "Millets"
+      },
+      "correct_answer": "A",
+      "explanation": "Tea is a plantation crop used for making beverages.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 24,
+      "question": "Which activity connects agriculture with industries?",
+      "options": {
+        "A": "Supplying raw materials",
+        "B": "Providing tourism",
+        "C": "Building roads",
+        "D": "Teaching education"
+      },
+      "correct_answer": "A",
+      "explanation": "Agriculture supplies raw materials such as cotton and sugarcane to industries.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 25,
+      "question": "Which agricultural practice aims to maintain productivity for future generations?",
+      "options": {
+        "A": "Sustainable farming",
+        "B": "Industrial farming",
+        "C": "Urban farming",
+        "D": "Nomadic farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Sustainable farming ensures that agricultural productivity is maintained while protecting natural resources.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    }
+  ]
+}

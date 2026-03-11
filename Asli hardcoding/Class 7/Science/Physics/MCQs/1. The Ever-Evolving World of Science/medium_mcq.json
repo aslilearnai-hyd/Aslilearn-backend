@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-05T17:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following best explains the scientific method?",
+            "options": {
+                "A": "Collecting evidence and proving a belief",
+                "B": "Making predictions without experiments",
+                "C": "Observing, hypothesizing, experimenting, and concluding",
+                "D": "Using imagination alone"
+            },
+            "correct_answer": "C",
+            "explanation": "The scientific method involves observation, forming a hypothesis, experimentation, and conclusion.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is an example of a scientific law?",
+            "options": {
+                "A": "Law of Gravity",
+                "B": "Theory of Evolution",
+                "C": "Hypothesis on plant growth",
+                "D": "Belief in astrology"
+            },
+            "correct_answer": "A",
+            "explanation": "A scientific law describes a pattern observed in nature, like the Law of Gravity.",
+            "difficulty": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why are scientific theories sometimes modified?",
+            "options": {
+                "A": "Because scientists make mistakes",
+                "B": "Because new evidence or experiments may provide better explanations",
+                "C": "Because beliefs change",
+                "D": "Because they are guesses"
+            },
+            "correct_answer": "B",
+            "explanation": "Scientific theories evolve as new evidence or better explanations emerge.",
+            "difficulty": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following is an example of observational science?",
+            "options": {
+                "A": "Studying the stars and planets in astronomy",
+                "B": "Designing a chemical experiment",
+                "C": "Developing a medicine in a lab",
+                "D": "Writing a biology textbook"
+            },
+            "correct_answer": "A",
+            "explanation": "Observational science relies on observing natural phenomena, like in astronomy.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which is a correct distinction between science and technology?",
+            "options": {
+                "A": "Science solves practical problems, technology creates knowledge",
+                "B": "Science seeks knowledge, technology applies it",
+                "C": "Science relies on beliefs, technology on myths",
+                "D": "Science is imaginative, technology is factual"
+            },
+            "correct_answer": "B",
+            "explanation": "Science seeks knowledge, while technology applies scientific knowledge for practical purposes.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following statements is true about hypotheses?",
+            "options": {
+                "A": "They are proven facts",
+                "B": "They are tentative explanations that can be tested",
+                "C": "They cannot be disproved",
+                "D": "They are based on opinions"
+            },
+            "correct_answer": "B",
+            "explanation": "A hypothesis is a tentative explanation that can be tested through experiments.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which branch of science studies matter and its properties?",
+            "options": {
+                "A": "Physics",
+                "B": "Chemistry",
+                "C": "Biology",
+                "D": "Geology"
+            },
+            "correct_answer": "B",
+            "explanation": "Chemistry deals with the study of matter, its properties, and reactions.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which example best illustrates applied science?",
+            "options": {
+                "A": "Classifying animals based on characteristics",
+                "B": "Designing a water purifier",
+                "C": "Observing star movements",
+                "D": "Studying plant cell structures"
+            },
+            "correct_answer": "B",
+            "explanation": "Applied science uses knowledge to create practical solutions, like a water purifier.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following is NOT a step in the scientific method?",
+            "options": {
+                "A": "Observation",
+                "B": "Hypothesis",
+                "C": "Experimentation",
+                "D": "Guesswork without evidence"
+            },
+            "correct_answer": "D",
+            "explanation": "Guesswork without evidence is not part of the scientific method.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What role does experimentation play in science?",
+            "options": {
+                "A": "It tests hypotheses under controlled conditions",
+                "B": "It helps memorize facts",
+                "C": "It confirms beliefs without evidence",
+                "D": "It creates myths"
+            },
+            "correct_answer": "A",
+            "explanation": "Experiments allow scientists to test hypotheses under controlled, repeatable conditions.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which scientist is known for contributions to electromagnetism?",
+            "options": {
+                "A": "Michael Faraday",
+                "B": "Isaac Newton",
+                "C": "Galileo Galilei",
+                "D": "Charles Darwin"
+            },
+            "correct_answer": "A",
+            "explanation": "Michael Faraday made key contributions to electromagnetism.",
+            "difficulty": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following illustrates cause-and-effect reasoning in science?",
+            "options": {
+                "A": "Plant growth increases when exposed to sunlight",
+                "B": "The sky is blue because it looks nice",
+                "C": "Dogs bark because they are cute",
+                "D": "Rocks are heavy because they exist"
+            },
+            "correct_answer": "A",
+            "explanation": "Cause-and-effect reasoning links sunlight exposure to increased plant growth.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of these is an example of a controlled experiment?",
+            "options": {
+                "A": "Testing plant growth with one group getting sunlight and another in shade",
+                "B": "Observing stars at night",
+                "C": "Recording rainfall over a year",
+                "D": "Measuring temperature daily"
+            },
+            "correct_answer": "A",
+            "explanation": "A controlled experiment changes only one variable to study its effect.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is replication important in scientific experiments?",
+            "options": {
+                "A": "To confirm results are reliable and not by chance",
+                "B": "To make experiments longer",
+                "C": "To impress others",
+                "D": "To follow tradition"
+            },
+            "correct_answer": "A",
+            "explanation": "Replication ensures results are reproducible and reliable.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following represents scientific reasoning?",
+            "options": {
+                "A": "Predicting weather based on cloud patterns",
+                "B": "Believing a myth about rain",
+                "C": "Assuming things without proof",
+                "D": "Following superstitions"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific reasoning involves using evidence to make predictions.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which branch of science deals with Earth and its processes?",
+            "options": {
+                "A": "Geology",
+                "B": "Chemistry",
+                "C": "Biology",
+                "D": "Physics"
+            },
+            "correct_answer": "A",
+            "explanation": "Geology studies the Earth, its structure, and processes.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of these statements illustrates a scientific prediction?",
+            "options": {
+                "A": "It will rain tomorrow based on clouds",
+                "B": "Rain brings bad luck",
+                "C": "I feel it might rain",
+                "D": "Rain is good for flowers"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific predictions are based on observations and evidence.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is an example of data collection?",
+            "options": {
+                "A": "Recording daily temperature for a month",
+                "B": "Guessing tomorrow's temperature",
+                "C": "Saying it will be hot because it is summer",
+                "D": "Believing in weather myths"
+            },
+            "correct_answer": "A",
+            "explanation": "Collecting observations systematically forms scientific data.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following demonstrates the evolving nature of science?",
+            "options": {
+                "A": "New evidence changes previous theories",
+                "B": "Facts never change",
+                "C": "Science depends on beliefs",
+                "D": "Once written, a theory is permanent"
+            },
+            "correct_answer": "A",
+            "explanation": "Science evolves as new evidence improves or changes our understanding.",
+            "difficulty": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of these shows an application of scientific knowledge?",
+            "options": {
+                "A": "Developing vaccines from lab research",
+                "B": "Believing in myths",
+                "C": "Reading folklore",
+                "D": "Guessing cures"
+            },
+            "correct_answer": "A",
+            "explanation": "Applied science uses knowledge to solve real-world problems.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is evidence important in science?",
+            "options": {
+                "A": "It supports conclusions and ensures reliability",
+                "B": "It makes experiments longer",
+                "C": "It impresses others",
+                "D": "It entertains"
+            },
+            "correct_answer": "A",
+            "explanation": "Evidence supports scientific conclusions and helps verify results.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following represents a testable question?",
+            "options": {
+                "A": "Does sunlight affect plant growth?",
+                "B": "Is blue a better color?",
+                "C": "Do unicorns exist?",
+                "D": "Which color is luckiest?"
+            },
+            "correct_answer": "A",
+            "explanation": "Testable questions can be investigated with experiments and observations.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which example shows correlation but not necessarily causation?",
+            "options": {
+                "A": "Ice cream sales increase when temperature rises",
+                "B": "Heating water makes it boil",
+                "C": "Dropping an object causes it to fall",
+                "D": "Sunlight makes plants grow"
+            },
+            "correct_answer": "A",
+            "explanation": "Correlation does not always mean one causes the other.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following is an example of experimental evidence?",
+            "options": {
+                "A": "Observing that seeds grow faster with water",
+                "B": "Believing plants grow better when sung on the full moon",
+                "C": "Saying plants grow better because they look nice",
+                "D": "Guessing plant growth without observation"
+            },
+            "correct_answer": "A",
+            "explanation": "Experimental evidence is obtained through controlled experiments.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of these illustrates a scientific investigation?",
+            "options": {
+                "A": "Testing the effect of fertilizer on plant growth",
+                "B": "Believing a story about magic plants",
+                "C": "Assuming plants grow better without testing",
+                "D": "Reading myths about plants"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific investigations involve systematic testing and observation.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        }
+    ]
+}

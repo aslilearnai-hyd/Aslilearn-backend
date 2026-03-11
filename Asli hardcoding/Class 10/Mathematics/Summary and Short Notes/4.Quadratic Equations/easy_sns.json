@@ -1,0 +1,32 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Quadratic Equations",
+    "difficulty": "Easy",
+    "source_pdf": "jemh104.pdf",
+    "short_notes": {
+        "key_points": [
+            "A quadratic equation is an equation of degree 2",
+            "Standard form of a quadratic equation is ax² + bx + c = 0, where a ≠ 0",
+            "A quadratic equation can have at most two roots",
+            "Quadratic equations can be solved by factorisation or quadratic formula",
+            "The graph of a quadratic equation is a parabola"
+        ],
+        "examples": [
+            "x² − 5x + 6 = 0",
+            "x² = 9",
+            "x² + 1 = 0"
+        ],
+        "formulas": [
+            "Standard form → ax² + bx + c = 0",
+            "Discriminant → D = b² − 4ac",
+            "Quadratic formula → x = (−b ± √D) / 2a"
+        ],
+        "exam_tips": [
+            "If D > 0, roots are real and distinct",
+            "If D = 0, roots are real and equal",
+            "If D < 0, roots are not real",
+            "Roots of quadratic equation are x-intercepts of the graph"
+        ]
+    }
+}

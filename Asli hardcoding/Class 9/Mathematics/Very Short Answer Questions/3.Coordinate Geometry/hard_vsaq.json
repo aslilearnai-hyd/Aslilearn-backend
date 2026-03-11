@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-05T23:25:00",
+    "difficulty": "hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the quadrant of the point (-5,7).",
+            "answer": "The point lies in the second quadrant.",
+            "key_points": [
+                "quadrant"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the quadrant of the point (6,-3).",
+            "answer": "The point lies in the fourth quadrant.",
+            "key_points": [
+                "quadrant"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the quadrant of the point (-4,-6).",
+            "answer": "The point lies in the third quadrant.",
+            "key_points": [
+                "quadrant"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which quadrant contains the point (7,9)?",
+            "answer": "The first quadrant contains the point (7,9).",
+            "key_points": [
+                "quadrant"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the coordinates of a point 4 units right of origin.",
+            "answer": "(4,0)",
+            "key_points": [
+                "positive x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Write the coordinates of a point 3 units above origin.",
+            "answer": "(0,3)",
+            "key_points": [
+                "positive y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Write the coordinates of a point 5 units left of origin.",
+            "answer": "(-5,0)",
+            "key_points": [
+                "negative x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Write the coordinates of a point 6 units below origin.",
+            "answer": "(0,-6)",
+            "key_points": [
+                "negative y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the abscissa of (-8,5).",
+            "answer": "-8",
+            "key_points": [
+                "abscissa"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the ordinate of (-8,5).",
+            "answer": "5",
+            "key_points": [
+                "ordinate"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which quadrant has both coordinates negative?",
+            "answer": "The third quadrant.",
+            "key_points": [
+                "quadrant III"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which quadrant has x positive and y negative?",
+            "answer": "The fourth quadrant.",
+            "key_points": [
+                "quadrant IV"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which quadrant has x negative and y positive?",
+            "answer": "The second quadrant.",
+            "key_points": [
+                "quadrant II"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which quadrant has both coordinates positive?",
+            "answer": "The first quadrant.",
+            "key_points": [
+                "quadrant I"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which point lies on the positive x-axis?",
+            "answer": "(5,0)",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which point lies on the positive y-axis?",
+            "answer": "(0,7)",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which point lies on the negative x-axis?",
+            "answer": "(-6,0)",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which point lies on the negative y-axis?",
+            "answer": "(0,-4)",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the ordinate of the point (4,-8).",
+            "answer": "-8",
+            "key_points": [
+                "ordinate"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the abscissa of the point (4,-8).",
+            "answer": "4",
+            "key_points": [
+                "abscissa"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which point lies exactly at the origin?",
+            "answer": "(0,0)",
+            "key_points": [
+                "origin"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which coordinate represents the intersection of axes?",
+            "answer": "(0,0)",
+            "key_points": [
+                "origin"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Write coordinates of a point 2 units right and 3 units above origin.",
+            "answer": "(2,3)",
+            "key_points": [
+                "coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Write coordinates of a point 4 units left and 5 units above origin.",
+            "answer": "(-4,5)",
+            "key_points": [
+                "coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Write coordinates of a point 3 units right and 6 units below origin.",
+            "answer": "(3,-6)",
+            "key_points": [
+                "coordinates"
+            ],
+            "source_section": "Section 3.2"
+        }
+    ]
+}

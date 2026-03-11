@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-05T21:55:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a Cartesian plane?",
+                "correct_answer": "A plane formed by two perpendicular number lines used to locate points",
+                "explanation": "It consists of the x-axis and y-axis which intersect at the origin.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What are the coordinate axes?",
+                "correct_answer": "The x-axis and y-axis",
+                "explanation": "These two perpendicular lines form the coordinate plane.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is the origin in coordinate geometry?",
+                "correct_answer": "The point where the x-axis and y-axis intersect",
+                "explanation": "The coordinates of the origin are (0,0).",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What are the coordinates of the origin?",
+                "correct_answer": "(0,0)",
+                "explanation": "The origin has zero distance from both axes.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is meant by the coordinates of a point?",
+                "correct_answer": "An ordered pair (x, y) representing the position of a point",
+                "explanation": "The x-coordinate shows distance from the y-axis and the y-coordinate shows distance from the x-axis.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is the x-coordinate also called?",
+                "correct_answer": "Abscissa",
+                "explanation": "It represents the horizontal distance from the y-axis.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is the y-coordinate also called?",
+                "correct_answer": "Ordinate",
+                "explanation": "It represents the vertical distance from the x-axis.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "How many quadrants are formed by the coordinate axes?",
+                "correct_answer": "Four quadrants",
+                "explanation": "The axes divide the plane into four equal regions.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What are the signs of coordinates in the first quadrant?",
+                "correct_answer": "(+, +)",
+                "explanation": "Both x and y coordinates are positive in the first quadrant.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What are the coordinates of a point on the x-axis?",
+                "correct_answer": "(x, 0)",
+                "explanation": "Points on the x-axis have zero distance from the x-axis in the vertical direction.",
+                "source_section": "Section 3.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Cartesian Plane",
+                "content": "The Cartesian plane is formed by two perpendicular lines called the x-axis and y-axis used to represent coordinates.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Origin",
+                "content": "The origin is the intersection of the x-axis and y-axis and its coordinates are (0,0).",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Coordinates of a Point",
+                "content": "A point is represented by an ordered pair (x, y) where x is the abscissa and y is the ordinate.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Quadrants",
+                "content": "The coordinate axes divide the plane into four quadrants numbered I, II, III and IV in anticlockwise order.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Points on Axes",
+                "content": "Points on the x-axis have coordinates (x,0) and points on the y-axis have coordinates (0,y).",
+                "source_section": "Section 3.2"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The origin has coordinates (0,0).",
+                "source_section": "Section 3.2"
+            },
+            {
+                "fact": "The x-axis is horizontal and the y-axis is vertical.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "fact": "The coordinate axes divide the plane into four quadrants.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "fact": "In the first quadrant both coordinates are positive.",
+                "source_section": "Section 3.2"
+            }
+        ]
+    }
+}

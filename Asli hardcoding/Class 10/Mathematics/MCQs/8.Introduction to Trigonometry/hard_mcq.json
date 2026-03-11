@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T06:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If sin θ = 3/5 and θ is acute, then cos θ is?",
+            "options": {
+                "A": "4/5",
+                "B": "5/4",
+                "C": "3/4",
+                "D": "5/3"
+            },
+            "correct_answer": "A",
+            "explanation": "Using Pythagoras theorem: cos θ = 4/5.",
+            "difficulty": "hard",
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is equal to tan θ?",
+            "options": {
+                "A": "sin θ / cos θ",
+                "B": "cos θ / sin θ",
+                "C": "1 / sin θ",
+                "D": "1 / cos θ"
+            },
+            "correct_answer": "A",
+            "explanation": "tan θ = sin θ / cos θ.",
+            "difficulty": "hard",
+            "source_section": "Identities"
+        },
+        {
+            "question_number": 3,
+            "question": "If cos θ = 12/13, then sin θ is?",
+            "options": {
+                "A": "5/13",
+                "B": "12/5",
+                "C": "13/12",
+                "D": "√13/12"
+            },
+            "correct_answer": "A",
+            "explanation": "Using Pythagoras theorem: sin θ = 5/13.",
+            "difficulty": "hard",
+            "source_section": "Ratio Relationships"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is undefined at 90°?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan 90° is undefined.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 5,
+            "question": "The value of sin 60° is?",
+            "options": {
+                "A": "1/2",
+                "B": "1/√2",
+                "C": "√3/2",
+                "D": "√2/3"
+            },
+            "correct_answer": "C",
+            "explanation": "sin 60° = √3/2.",
+            "difficulty": "hard",
+            "source_section": "Standard Values"
+        },
+        {
+            "question_number": 6,
+            "question": "If tan θ = 1, then θ equals?",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "B",
+            "explanation": "tan 45° = 1.",
+            "difficulty": "hard",
+            "source_section": "Standard Angles"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is the reciprocal of sin θ?",
+            "options": {
+                "A": "sec θ",
+                "B": "tan θ",
+                "C": "cos θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cosec θ = 1/sin θ.",
+            "difficulty": "hard",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 8,
+            "question": "If sin θ = cos θ, then θ equals?",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "B",
+            "explanation": "sin 45° = cos 45°.",
+            "difficulty": "hard",
+            "source_section": "Identities"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following ratios is always greater than or equal to 1?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "sec θ ≥ 1 for acute angles.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 10,
+            "question": "The value of cos 30° is?",
+            "options": {
+                "A": "1/2",
+                "B": "√3/2",
+                "C": "1/√2",
+                "D": "√2/3"
+            },
+            "correct_answer": "B",
+            "explanation": "cos 30° = √3/2.",
+            "difficulty": "hard",
+            "source_section": "Standard Values"
+        },
+        {
+            "question_number": 11,
+            "question": "Which trigonometric ratio represents Hypotenuse / Adjacent?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "sec θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "sec θ = Hypotenuse / Adjacent.",
+            "difficulty": "hard",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is undefined at 0°?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cosec 0° is undefined.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 13,
+            "question": "Which identity is always true?",
+            "options": {
+                "A": "sin²θ + cos²θ = 1",
+                "B": "sin θ + cos θ = 1",
+                "C": "tan θ = sin θ + cos θ",
+                "D": "sec θ = sin θ / cos θ"
+            },
+            "correct_answer": "A",
+            "explanation": "This is the fundamental trigonometric identity.",
+            "difficulty": "hard",
+            "source_section": "Identities"
+        },
+        {
+            "question_number": 14,
+            "question": "If cos θ = 0, then θ equals?",
+            "options": {
+                "A": "0°",
+                "B": "30°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "D",
+            "explanation": "cos 90° = 0.",
+            "difficulty": "hard",
+            "source_section": "Standard Angles"
+        },
+        {
+            "question_number": 15,
+            "question": "Which trigonometric ratio equals Adjacent / Opposite?",
+            "options": {
+                "A": "tan θ",
+                "B": "sin θ",
+                "C": "cot θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "cot θ = Adjacent / Opposite.",
+            "difficulty": "hard",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 16,
+            "question": "If sin θ = 1, then θ equals?",
+            "options": {
+                "A": "0°",
+                "B": "30°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "D",
+            "explanation": "sin 90° = 1.",
+            "difficulty": "hard",
+            "source_section": "Standard Angles"
+        },
+        {
+            "question_number": 17,
+            "question": "Which ratio is equal to 1 / tan θ?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "sec θ",
+                "D": "cot θ"
+            },
+            "correct_answer": "D",
+            "explanation": "cot θ = 1 / tan θ.",
+            "difficulty": "hard",
+            "source_section": "Reciprocal Ratios"
+        },
+        {
+            "question_number": 18,
+            "question": "If tan θ = √3, then θ equals?",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "C",
+            "explanation": "tan 60° = √3.",
+            "difficulty": "hard",
+            "source_section": "Standard Angles"
+        },
+        {
+            "question_number": 19,
+            "question": "Which trigonometric ratio is always less than or equal to 1?",
+            "options": {
+                "A": "sin θ",
+                "B": "tan θ",
+                "C": "sec θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "A",
+            "explanation": "sin θ ≤ 1.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following uses hypotenuse in the numerator?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "sec θ = Hypotenuse / Adjacent.",
+            "difficulty": "hard",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 21,
+            "question": "If θ is acute, which of the following is always positive?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "All trigonometric ratios are positive for acute angles.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 22,
+            "question": "Which trigonometric ratio relates height and base?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ = height / base.",
+            "difficulty": "hard",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 23,
+            "question": "Which statement is incorrect?",
+            "options": {
+                "A": "sin 30° = 1/2",
+                "B": "cos 60° = 1/2",
+                "C": "tan 45° = 1",
+                "D": "sin 90° = 0"
+            },
+            "correct_answer": "D",
+            "explanation": "sin 90° = 1, not 0.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 24,
+            "question": "Which ratio becomes undefined when cos θ = 0?",
+            "options": {
+                "A": "sin θ",
+                "B": "tan θ",
+                "C": "cosec θ",
+                "D": "sin²θ"
+            },
+            "correct_answer": "B",
+            "explanation": "tan θ = sin θ / cos θ → undefined.",
+            "difficulty": "hard",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 25,
+            "question": "Which identity helps in finding missing trigonometric ratios?",
+            "options": {
+                "A": "sin²θ + cos²θ = 1",
+                "B": "tan θ = sin θ",
+                "C": "sec θ = cosec θ",
+                "D": "sin θ = cos θ"
+            },
+            "correct_answer": "A",
+            "explanation": "Fundamental identity helps derive ratios.",
+            "difficulty": "hard",
+            "source_section": "Identities"
+        }
+    ]
+}

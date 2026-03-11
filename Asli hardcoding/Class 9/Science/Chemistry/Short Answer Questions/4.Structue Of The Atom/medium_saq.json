@@ -1,0 +1,157 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Structure of the Atom",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The atomic number of an element is equal to the number of:",
+      "options": ["Protons", "Neutrons", "Protons + Neutrons", "Electrons + Neutrons"],
+      "answer": "Protons"
+    },
+    {
+      "question_number": 2,
+      "question": "Mass number of an atom is equal to:",
+      "options": ["Protons + Electrons", "Protons + Neutrons", "Electrons + Neutrons", "Only neutrons"],
+      "answer": "Protons + Neutrons"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following particles has no charge?",
+      "options": ["Electron", "Proton", "Neutron", "Nucleus"],
+      "answer": "Neutron"
+    },
+    {
+      "question_number": 4,
+      "question": "The maximum number of electrons in the M shell is:",
+      "options": ["8", "18", "32", "2"],
+      "answer": "18"
+    },
+    {
+      "question_number": 5,
+      "question": "An atom of oxygen has atomic number 8 and mass number 16. The number of neutrons is:",
+      "options": ["8", "16", "24", "4"],
+      "answer": "8"
+    },
+    {
+      "question_number": 6,
+      "question": "Which scientist proposed the Bohr model of the atom?",
+      "options": ["Dalton", "Rutherford", "Niels Bohr", "Chadwick"],
+      "answer": "Niels Bohr"
+    },
+    {
+      "question_number": 7,
+      "question": "The number of electrons in a neutral sodium atom (Atomic number 11) is:",
+      "options": ["10", "11", "12", "13"],
+      "answer": "11"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following represents an isotope?",
+      "options": ["Same atomic number but different mass number", "Same mass number but different atomic number", "Same number of neutrons", "Same number of electrons"],
+      "answer": "Same atomic number but different mass number"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is an isobar pair?",
+      "options": ["14C and 14N", "1H and 2H", "35Cl and 37Cl", "12C and 13C"],
+      "answer": "14C and 14N"
+    },
+    {
+      "question_number": 10,
+      "question": "The electronic configuration of carbon (Atomic number 6) is:",
+      "options": ["2,4", "2,6", "4,2", "6"],
+      "answer": "2,4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which subatomic particle determines the identity of an element?",
+      "options": ["Electron", "Proton", "Neutron", "Nucleus"],
+      "answer": "Proton"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following statements about electrons is correct?",
+      "options": ["They are positively charged", "They are located in the nucleus", "They revolve around the nucleus", "They have the largest mass"],
+      "answer": "They revolve around the nucleus"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following atoms has 2 electrons in the outermost shell?",
+      "options": ["Helium", "Lithium", "Beryllium", "Carbon"],
+      "answer": "Beryllium"
+    },
+    {
+      "question_number": 14,
+      "question": "The electronic configuration of sodium (11) is:",
+      "options": ["2,8,1", "2,8,2", "2,7,2", "2,6,3"],
+      "answer": "2,8,1"
+    },
+    {
+      "question_number": 15,
+      "question": "The valency of sodium is:",
+      "options": ["1", "2", "3", "0"],
+      "answer": "1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following has the same number of electrons as a sodium ion (Na⁺)?",
+      "options": ["Neon", "Argon", "Helium", "Oxygen"],
+      "answer": "Neon"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following particles contributes most to the mass of an atom?",
+      "options": ["Electron", "Proton", "Neutron", "Proton and Neutron"],
+      "answer": "Proton and Neutron"
+    },
+    {
+      "question_number": 18,
+      "question": "The atomic number of magnesium is 12. Its electronic configuration is:",
+      "options": ["2,8,2", "2,6,4", "2,8,1", "2,7,3"],
+      "answer": "2,8,2"
+    },
+    {
+      "question_number": 19,
+      "question": "The number of shells in an atom depends on:",
+      "options": ["Atomic number", "Period number", "Mass number", "Valency"],
+      "answer": "Period number"
+    },
+    {
+      "question_number": 20,
+      "question": "Which particle was discovered through the gold foil experiment?",
+      "options": ["Electron", "Proton", "Nucleus", "Neutron"],
+      "answer": "Nucleus"
+    },
+    {
+      "question_number": 21,
+      "question": "The outermost shell of an atom is called:",
+      "options": ["Valence shell", "K shell", "Nucleus", "Core shell"],
+      "answer": "Valence shell"
+    },
+    {
+      "question_number": 22,
+      "question": "An ion formed by gain of electrons is called:",
+      "options": ["Cation", "Anion", "Isotope", "Isobar"],
+      "answer": "Anion"
+    },
+    {
+      "question_number": 23,
+      "question": "An ion formed by loss of electrons is called:",
+      "options": ["Cation", "Anion", "Isotope", "Isobar"],
+      "answer": "Cation"
+    },
+    {
+      "question_number": 24,
+      "question": "The electronic configuration of neon (10) is:",
+      "options": ["2,8", "2,7,1", "2,6,2", "2,5,3"],
+      "answer": "2,8"
+    },
+    {
+      "question_number": 25,
+      "question": "Which rule determines the maximum number of electrons in a shell?",
+      "options": ["2n² rule", "Octet rule", "Duplet rule", "Aufbau rule"],
+      "answer": "2n² rule"
+    }
+  ]
+}

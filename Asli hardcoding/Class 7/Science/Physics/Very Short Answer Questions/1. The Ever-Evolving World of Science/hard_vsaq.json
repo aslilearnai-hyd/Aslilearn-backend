@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-06T14:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why scientific knowledge is never absolute.",
+            "answer": "Scientific knowledge is based on evidence that can be updated with new discoveries, making it provisional rather than absolute.",
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How does falsifiability strengthen scientific ideas?",
+            "answer": "Falsifiability ensures that a hypothesis can be tested and potentially proven wrong, making science self-correcting.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is reproducibility important in experiments?",
+            "answer": "Reproducibility allows independent verification of results, increasing confidence in scientific findings.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How do models improve predictions in complex systems?",
+            "answer": "Models represent complex systems mathematically or visually, allowing scientists to simulate and predict behaviors.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is peer critique essential beyond peer review?",
+            "answer": "Peer critique identifies potential flaws or biases, improving the quality and reliability of scientific conclusions.",
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How does critical thinking prevent pseudoscience?",
+            "answer": "Critical thinking evaluates evidence logically, preventing acceptance of claims without empirical support.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of assumptions in forming scientific hypotheses.",
+            "answer": "Assumptions provide starting points for hypotheses, guiding experiments while being subject to verification.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is creativity necessary in experimental design?",
+            "answer": "Creativity allows designing novel methods or setups to test hypotheses effectively and explore new questions.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How does collaboration enhance scientific reliability?",
+            "answer": "Collaboration allows multiple perspectives and cross-checking of methods and data, reducing errors.",
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why scientific theories can evolve over time.",
+            "answer": "New evidence and experiments may refine or replace theories to better explain natural phenomena.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "How do statistical methods strengthen conclusions?",
+            "answer": "Statistics quantify uncertainty and validate patterns, supporting objective interpretation of data.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why must scientific observations be objective?",
+            "answer": "Objectivity prevents personal bias from influencing interpretations, ensuring reliable data.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How can technology lead to paradigm shifts?",
+            "answer": "Advanced tools reveal phenomena previously unobservable, prompting revisions of existing scientific understanding.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the significance of historical scientific debates.",
+            "answer": "Debates highlight alternative explanations, stimulate critical analysis, and refine scientific knowledge.",
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is precision insufficient without accuracy?",
+            "answer": "Measurements can be consistent (precise) but far from the true value (inaccurate), yielding misleading results.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "How does peer review mitigate research bias?",
+            "answer": "External reviewers evaluate methods and interpretations critically, reducing personal or institutional bias.",
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is acknowledging errors important in publications?",
+            "answer": "Acknowledging errors maintains integrity, allowing corrections and fostering trust in scientific literature.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "How does cumulative knowledge advance science?",
+            "answer": "Each discovery builds on previous findings, creating a progressively deeper understanding of natural phenomena.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why should assumptions be constantly re-evaluated?",
+            "answer": "Changing evidence may invalidate assumptions, requiring updates to maintain accurate conclusions.",
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of science in addressing global challenges.",
+            "answer": "Science provides evidence-based solutions for issues like climate change, pandemics, and energy sustainability.",
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is methodical investigation crucial in complex studies?",
+            "answer": "Structured steps ensure reliability, reproducibility, and clarity in results of complex experiments.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "How do predictions guide experimental research?",
+            "answer": "Predictions suggest expected outcomes, helping scientists design experiments to test hypotheses.",
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does dissemination of results accelerate progress?",
+            "answer": "Sharing findings allows scientists to build upon each other's work, avoiding duplication and fostering innovation.",
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is evidence-based reasoning superior to intuition in science?",
+            "answer": "It relies on measurable, testable data rather than subjective feelings or assumptions.",
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why scientific conclusions must remain tentative.",
+            "answer": "Future evidence can modify or contradict current understanding, requiring conclusions to be open to revision.",
+            "marks": 3,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

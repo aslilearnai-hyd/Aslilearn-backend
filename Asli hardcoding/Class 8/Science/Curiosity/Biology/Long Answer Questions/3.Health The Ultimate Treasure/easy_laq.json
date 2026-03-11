@@ -1,0 +1,267 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-05T12:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define health according to the World Health Organization.",
+      "answer": "Health is defined as a state of complete physical, mental, and social well-being and not merely the absence of disease.",
+      "answer_outline": [
+        "Definition of health",
+        "Three components: physical, mental, social"
+      ],
+      "key_concepts": ["health"],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the three dimensions of health with examples.",
+      "answer": "Health includes physical well-being, mental stability, and social relationships. A healthy person maintains a strong body, positive mindset, and good interactions with others.",
+      "answer_outline": ["Physical health", "Mental health", "Social health"],
+      "key_concepts": ["dimensions of health"],
+      "marks": 5,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how lifestyle affects health.",
+      "answer": "Lifestyle factors such as diet, exercise, sleep, and stress management influence overall health. Unhealthy habits like junk food and lack of exercise may cause diseases.",
+      "answer_outline": [
+        "Definition of lifestyle",
+        "Healthy habits",
+        "Effects of unhealthy habits"
+      ],
+      "key_concepts": ["healthy lifestyle"],
+      "marks": 5,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the importance of maintaining a balanced diet.",
+      "answer": "A balanced diet provides essential nutrients required for growth, energy, and immunity. It helps maintain overall health and prevents diseases.",
+      "answer_outline": [
+        "Meaning of balanced diet",
+        "Importance of nutrients",
+        "Health benefits"
+      ],
+      "key_concepts": ["balanced diet"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how environmental cleanliness contributes to good health.",
+      "answer": "Clean surroundings reduce the spread of disease-causing organisms. Proper sanitation, clean water, and pollution control help maintain good health.",
+      "answer_outline": [
+        "Environmental hygiene",
+        "Prevention of disease spread",
+        "Examples"
+      ],
+      "key_concepts": ["environment and health"],
+      "marks": 5,
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the difference between symptoms and signs of a disease.",
+      "answer": "Symptoms are feelings experienced by the patient such as pain or fatigue, while signs are measurable or observable indications such as fever or swelling.",
+      "answer_outline": [
+        "Definition of symptoms",
+        "Definition of signs",
+        "Examples"
+      ],
+      "key_concepts": ["symptoms", "signs"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Define disease and explain its causes.",
+      "answer": "A disease is a condition that disrupts the normal functioning of the body or mind. It may be caused by pathogens, poor nutrition, or unhealthy lifestyle.",
+      "answer_outline": ["Definition of disease", "Major causes"],
+      "key_concepts": ["disease"],
+      "marks": 4,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain communicable diseases with examples.",
+      "answer": "Communicable diseases are caused by pathogens and spread from one person to another through air, water, food, or vectors.",
+      "answer_outline": ["Definition", "Examples", "Transmission"],
+      "key_concepts": ["communicable diseases"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain non-communicable diseases with examples.",
+      "answer": "Non-communicable diseases are not caused by pathogens and do not spread between people. They are often related to lifestyle or environmental factors.",
+      "answer_outline": ["Definition", "Examples such as diabetes and cancer"],
+      "key_concepts": ["non communicable diseases"],
+      "marks": 5,
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe different modes of transmission of communicable diseases.",
+      "answer": "Diseases can spread through air droplets, contaminated food or water, direct contact, or vectors such as mosquitoes.",
+      "answer_outline": [
+        "Air transmission",
+        "Food and water transmission",
+        "Vector transmission"
+      ],
+      "key_concepts": ["disease transmission"],
+      "marks": 5,
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how mosquito-borne diseases spread and how they can be prevented.",
+      "answer": "Mosquitoes act as vectors carrying pathogens. Preventive measures include using mosquito nets, repellents, and eliminating stagnant water.",
+      "answer_outline": [
+        "Role of vectors",
+        "Examples of diseases",
+        "Prevention methods"
+      ],
+      "key_concepts": ["mosquito-borne diseases"],
+      "marks": 5,
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain deficiency diseases with examples.",
+      "answer": "Deficiency diseases occur due to lack of essential nutrients in the diet. Examples include scurvy and anaemia.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["deficiency diseases"],
+      "marks": 4,
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the concept of immunity.",
+      "answer": "Immunity is the natural ability of the body to fight against pathogens and protect against diseases.",
+      "answer_outline": ["Definition", "Role of immune system"],
+      "key_concepts": ["immunity"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how vaccines help prevent diseases.",
+      "answer": "Vaccines introduce weakened or harmless parts of pathogens into the body to train the immune system to recognize and fight them.",
+      "answer_outline": [
+        "Definition of vaccine",
+        "Immune system training",
+        "Examples"
+      ],
+      "key_concepts": ["vaccination"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Describe Edward Jenner’s contribution to vaccination.",
+      "answer": "Edward Jenner discovered the smallpox vaccine after observing that people infected with cowpox were immune to smallpox.",
+      "answer_outline": ["Observation", "Experiment", "Discovery of vaccine"],
+      "key_concepts": ["smallpox vaccine"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why vaccines are important for public health.",
+      "answer": "Vaccines prevent the spread of infectious diseases and protect both individuals and communities.",
+      "answer_outline": ["Disease prevention", "Community protection"],
+      "key_concepts": ["public health"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the concept of antibiotics.",
+      "answer": "Antibiotics are medicines used to treat bacterial infections by killing bacteria or stopping their growth.",
+      "answer_outline": ["Definition", "Use in treatment"],
+      "key_concepts": ["antibiotics"],
+      "marks": 4,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why antibiotics are not effective against viral infections.",
+      "answer": "Antibiotics target bacterial cells and therefore cannot destroy viruses, which have different structures.",
+      "answer_outline": [
+        "Difference between bacteria and viruses",
+        "Limitations of antibiotics"
+      ],
+      "key_concepts": ["viral infections"],
+      "marks": 4,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the problem of antibiotic resistance.",
+      "answer": "Antibiotic resistance occurs when bacteria evolve to survive antibiotic treatment, making infections harder to treat.",
+      "answer_outline": ["Definition", "Causes", "Consequences"],
+      "key_concepts": ["antibiotic resistance"],
+      "marks": 5,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how misuse of antibiotics contributes to antibiotic resistance.",
+      "answer": "Misuse such as taking antibiotics without prescription or incomplete treatment allows bacteria to survive and develop resistance.",
+      "answer_outline": ["Improper use", "Resistance development"],
+      "key_concepts": ["antibiotic misuse"],
+      "marks": 5,
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how sanitation campaigns help prevent diseases.",
+      "answer": "Improved sanitation reduces contamination and the spread of pathogens, decreasing disease incidence.",
+      "answer_outline": ["Sanitation importance", "Example campaign"],
+      "key_concepts": ["sanitation"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the relationship between health and happiness.",
+      "answer": "Good health improves mood and productivity, while happiness contributes to better mental and physical health.",
+      "answer_outline": ["Emotional well-being", "Impact on health"],
+      "key_concepts": ["health and happiness"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how social relationships affect health.",
+      "answer": "Strong relationships provide emotional support and reduce stress, improving overall well-being.",
+      "answer_outline": ["Social interaction", "Health benefits"],
+      "key_concepts": ["social health"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of hygiene in preventing diseases.",
+      "answer": "Practicing hygiene such as washing hands and maintaining cleanliness prevents pathogen transmission.",
+      "answer_outline": ["Personal hygiene", "Disease prevention"],
+      "key_concepts": ["hygiene"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall strategies for preventing diseases.",
+      "answer": "Disease prevention strategies include vaccination, hygiene practices, healthy lifestyle, sanitation, and responsible antibiotic use.",
+      "answer_outline": ["Vaccination", "Hygiene", "Healthy lifestyle"],
+      "key_concepts": ["disease prevention"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    }
+  ]
+}

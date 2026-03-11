@@ -1,0 +1,31 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Pair of Linear Equations in Two Variables",
+    "difficulty": "Hard",
+    "source_pdf": "jemh103.pdf",
+    "short_notes": {
+        "key_points": [
+            "Nature of solutions depends on ratios a₁/a₂, b₁/b₂ and c₁/c₂",
+            "Intersecting lines give a unique solution",
+            "Parallel lines indicate no solution",
+            "Coincident lines indicate infinitely many solutions",
+            "Algebraic methods provide exact solutions compared to graphical method"
+        ],
+        "examples": [
+            "a₁/a₂ ≠ b₁/b₂ → unique solution",
+            "a₁/a₂ = b₁/b₂ ≠ c₁/c₂ → no solution",
+            "a₁/a₂ = b₁/b₂ = c₁/c₂ → infinite solutions"
+        ],
+        "formulas": [
+            "Standard form → ax + by + c = 0",
+            "Consistency conditions based on coefficient ratios"
+        ],
+        "exam_tips": [
+            "Check consistency conditions before solving fully",
+            "Graphical solutions are approximate; algebraic are exact",
+            "Cross-multiplication is useful for quick solving",
+            "Many HOTS questions test reasoning using coefficient ratios"
+        ]
+    }
+}

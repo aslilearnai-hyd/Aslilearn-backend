@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Chemical Reactions and Equations",
+  "generated_at": "2026-03-10T23:31:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A chemical reaction in which a single substance breaks down into two or more simpler substances is called a:",
+      "options": {
+        "A": "Combination reaction",
+        "B": "Decomposition reaction",
+        "C": "Displacement reaction",
+        "D": "Double displacement reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "In a decomposition reaction, a single reactant breaks down to give simpler products.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the observation when magnesium ribbon is burnt in air?",
+      "options": {
+        "A": "It burns with a dull yellow flame",
+        "B": "It burns with a dazzling white flame",
+        "C": "It produces a popping sound",
+        "D": "No change occurs"
+      },
+      "correct_answer": "B",
+      "explanation": "Magnesium ribbon burns with a dazzling white flame and changes into a white powder called magnesium oxide.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "The representation of a chemical reaction using symbols and formulae of the substances is called a:",
+      "options": {
+        "A": "Chemical formula",
+        "B": "Chemical equation",
+        "C": "Chemical symbol",
+        "D": "Word equation"
+      },
+      "correct_answer": "B",
+      "explanation": "A chemical equation represents a chemical reaction using formulae of reactants and products.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "To satisfy the Law of Conservation of Mass, a chemical equation must be:",
+      "options": {
+        "A": "Condensed",
+        "B": "Balanced",
+        "C": "Unbalanced",
+        "D": "Hydrated"
+      },
+      "correct_answer": "B",
+      "explanation": "Mass can neither be created nor destroyed in a chemical reaction, so the number of atoms of each element must remain the same on both sides.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "When carbon dioxide is passed through lime water, it turns:",
+      "options": {
+        "A": "Blue",
+        "B": "Black",
+        "C": "Milky",
+        "D": "Pink"
+      },
+      "correct_answer": "C",
+      "explanation": "Carbon dioxide reacts with lime water (calcium hydroxide) to form an insoluble precipitate of calcium carbonate, making it milky.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Reactions in which energy is absorbed are known as:",
+      "options": {
+        "A": "Exothermic reactions",
+        "B": "Endothermic reactions",
+        "C": "Redox reactions",
+        "D": "Combination reactions"
+      },
+      "correct_answer": "B",
+      "explanation": "Endothermic reactions are those in which energy (heat, light, or electricity) is absorbed.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "The reaction of Calcium Oxide (Quick Lime) with water to form Calcium Hydroxide is an example of a:",
+      "options": {
+        "A": "Combination reaction",
+        "B": "Decomposition reaction",
+        "C": "Displacement reaction",
+        "D": "Double displacement reaction"
+      },
+      "correct_answer": "A",
+      "explanation": "Two reactants (CaO and water) combine to form a single product (Slaked Lime).",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which gas is evolved when zinc granules react with dilute sulphuric acid?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Hydrogen",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals react with dilute acids to produce hydrogen gas.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 9,
+      "question": "The brown gas evolved during the thermal decomposition of lead nitrate is:",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen dioxide",
+        "C": "Nitrous oxide",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": "The decomposition of lead nitrate produces brown fumes of nitrogen dioxide ($NO_2$).",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 10,
+      "question": "A reaction in which a more reactive element takes the place of a less reactive element in a compound is called:",
+      "options": {
+        "A": "Combination reaction",
+        "B": "Displacement reaction",
+        "C": "Decomposition reaction",
+        "D": "Redox reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "In displacement reactions, a more reactive metal displaces a less reactive metal from its salt solution.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 11,
+      "question": "When iron nails are dipped in copper sulphate solution, the blue color of the solution fades to:",
+      "options": {
+        "A": "Red",
+        "B": "Light green",
+        "C": "Yellow",
+        "D": "Colorless"
+      },
+      "correct_answer": "B",
+      "explanation": "Iron displaces copper to form ferrous sulphate, which is light green in color.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the color of the precipitate formed when Lead Nitrate reacts with Potassium Iodide?",
+      "options": {
+        "A": "White",
+        "B": "Yellow",
+        "C": "Blue",
+        "D": "Red"
+      },
+      "correct_answer": "B",
+      "explanation": "A yellow precipitate of lead iodide is formed during this double displacement reaction.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 13,
+      "question": "The process of respiration is considered as an:",
+      "options": {
+        "A": "Endothermic reaction",
+        "B": "Exothermic reaction",
+        "C": "Decomposition reaction",
+        "D": "Reduction reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Respiration releases energy as glucose reacts with oxygen in our cells.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Reactions in which there is an exchange of ions between the reactants are called:",
+      "options": {
+        "A": "Displacement reactions",
+        "B": "Double displacement reactions",
+        "C": "Combination reactions",
+        "D": "Redox reactions"
+      },
+      "correct_answer": "B",
+      "explanation": "In double displacement, the positive and negative ions of two ionic compounds exchange places to form two new compounds.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Addition of oxygen to a substance is called:",
+      "options": {
+        "A": "Reduction",
+        "B": "Oxidation",
+        "C": "Corrosion",
+        "D": "Hydrogenation"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxidation is defined as the gain of oxygen or loss of hydrogen.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Removal of oxygen from a substance is called:",
+      "options": {
+        "A": "Oxidation",
+        "B": "Reduction",
+        "C": "Rancidity",
+        "D": "Precipitation"
+      },
+      "correct_answer": "B",
+      "explanation": "Reduction is the loss of oxygen or the gain of hydrogen.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 17,
+      "question": "A reaction in which both oxidation and reduction occur simultaneously is a:",
+      "options": {
+        "A": "Decomposition reaction",
+        "B": "Redox reaction",
+        "C": "Neutralization reaction",
+        "D": "Precipitation reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Redox stands for reduction-oxidation reactions.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Fatty foods become rancid due to the process of:",
+      "options": {
+        "A": "Reduction",
+        "B": "Oxidation",
+        "C": "Corrosion",
+        "D": "Hydrogenation"
+      },
+      "correct_answer": "B",
+      "explanation": "Rancidity occurs when fats and oils are oxidized, resulting in a change in smell and taste.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3.2"
+    },
+    {
+      "question_number": 19,
+      "question": "To prevent rancidity, potato chip bags are usually flushed with:",
+      "options": {
+        "A": "Oxygen",
+        "B": "Hydrogen",
+        "C": "Nitrogen",
+        "D": "Chlorine"
+      },
+      "correct_answer": "C",
+      "explanation": "Nitrogen is an inert gas that prevents the oxidation of fats and oils in chips.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3.2"
+    },
+    {
+      "question_number": 20,
+      "question": "The black coating on silver and green coating on copper are examples of:",
+      "options": {
+        "A": "Rancidity",
+        "B": "Corrosion",
+        "C": "Reduction",
+        "D": "Decomposition"
+      },
+      "correct_answer": "B",
+      "explanation": "Corrosion is the slow degradation of metals due to attack by moisture and acids in the air.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Electrolysis of water is a type of:",
+      "options": {
+        "A": "Thermal decomposition",
+        "B": "Electrolytic decomposition",
+        "C": "Photolytic decomposition",
+        "D": "Combination reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is broken down into hydrogen and oxygen gases by passing an electric current.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 22,
+      "question": "In the reaction $CuO + H_2 \\rightarrow Cu + H_2O$, which substance is reduced?",
+      "options": {
+        "A": "$CuO$",
+        "B": "$H_2$",
+        "C": "$Cu$",
+        "D": "$H_2O$"
+      },
+      "correct_answer": "A",
+      "explanation": "Copper oxide ($CuO$) loses oxygen to become copper ($Cu$), so it is reduced.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following is a physical change?",
+      "options": {
+        "A": "Burning of wood",
+        "B": "Digestion of food",
+        "C": "Melting of ice",
+        "D": "Rusting of iron"
+      },
+      "correct_answer": "C",
+      "explanation": "Melting of ice is a change of state and does not form a new chemical substance.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Silver chloride turns grey in sunlight because of its decomposition into silver and:",
+      "options": {
+        "A": "Oxygen",
+        "B": "Chlorine",
+        "C": "Hydrogen",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": "This is photolytic decomposition where silver chloride breaks into silver metal and chlorine gas.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "The insoluble substance formed during a chemical reaction is called a:",
+      "options": {
+        "A": "Solution",
+        "B": "Solvent",
+        "C": "Precipitate",
+        "D": "Solute"
+      },
+      "correct_answer": "C",
+      "explanation": "A precipitate is a solid that settles out of a liquid mixture during a chemical reaction.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2.4"
+    }
+  ]
+}

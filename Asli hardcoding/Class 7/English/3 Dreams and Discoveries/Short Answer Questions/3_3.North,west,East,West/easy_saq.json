@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "North, South, East, West",
+  "generated_at": "2026-03-10T00:54:55",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are the four main directions called?",
+      "answer": "They are called cardinal directions: North, South, East, and West.",
+      "key_concepts": ["cardinal directions"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "In which direction does the Sun rise every morning?",
+      "answer": "The Sun rises in the East.",
+      "key_concepts": ["East", "Sunrise"],
+      "marks": 2,
+      "source_section": "Sun and Directions"
+    },
+    {
+      "question_number": 3,
+      "question": "In which direction does the Sun set every evening?",
+      "answer": "The Sun sets in the West.",
+      "key_concepts": ["West", "Sunset"],
+      "marks": 2,
+      "source_section": "Sun and Directions"
+    },
+    {
+      "question_number": 4,
+      "question": "If you stand facing the rising Sun, which direction is behind you?",
+      "answer": "The West is behind you.",
+      "key_concepts": ["West", "Relative Position"],
+      "marks": 2,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 5,
+      "question": "If you face the East, which direction is to your left?",
+      "answer": "The North is to your left.",
+      "key_concepts": ["North", "Orientation"],
+      "marks": 2,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 6,
+      "question": "If you face the East, which direction is to your right?",
+      "answer": "The South is to your right.",
+      "key_concepts": ["South", "Orientation"],
+      "marks": 2,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 7,
+      "question": "What is a compass used for?",
+      "answer": "A compass is an instrument used to find directions.",
+      "key_concepts": ["compass", "tools"],
+      "marks": 2,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the name of the magnetic needle in a compass?",
+      "answer": "It is simply called the compass needle.",
+      "key_concepts": ["magnetic needle"],
+      "marks": 2,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 9,
+      "question": "Which direction does the colored end of a compass needle always point to?",
+      "answer": "It always points to the North.",
+      "key_concepts": ["North", "Magnetic Pole"],
+      "marks": 2,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a map?",
+      "answer": "A map is a drawing of a place or the earth on a flat surface.",
+      "key_concepts": ["map", "definition"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 11,
+      "question": "On a standard map, which direction is usually at the top?",
+      "answer": "The North is usually at the top of a map.",
+      "key_concepts": ["North", "Map Reading"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 12,
+      "question": "Which direction is usually at the bottom of a map?",
+      "answer": "The South is usually at the bottom of a map.",
+      "key_concepts": ["South", "Map Reading"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 13,
+      "question": "On a map, which side represents the East?",
+      "answer": "The right side represents the East.",
+      "key_concepts": ["East", "Right side"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 14,
+      "question": "On a map, which side represents the West?",
+      "answer": "The left side represents the West.",
+      "key_concepts": ["West", "Left side"],
+      "marks": 2,
+      "source_section": "Maps"
+    },
+    {
+      "question_number": 15,
+      "question": "Why do travelers use a compass?",
+      "answer": "To make sure they are moving in the right direction and don't get lost.",
+      "key_concepts": ["navigation", "safety"],
+      "marks": 2,
+      "source_section": "Usage"
+    },
+    {
+      "question_number": 16,
+      "question": "Can we find directions at night using the stars?",
+      "answer": "Yes, people use the Pole Star to find the North direction.",
+      "key_concepts": ["Pole Star", "North"],
+      "marks": 2,
+      "source_section": "Night Navigation"
+    },
+    {
+      "question_number": 17,
+      "question": "Which direction is exactly opposite to North?",
+      "answer": "South is exactly opposite to North.",
+      "key_concepts": ["Opposites", "South"],
+      "marks": 2,
+      "source_section": "General"
+    },
+    {
+      "question_number": 18,
+      "question": "Which direction is exactly opposite to East?",
+      "answer": "West is exactly opposite to East.",
+      "key_concepts": ["Opposites", "West"],
+      "marks": 2,
+      "source_section": "General"
+    },
+    {
+      "question_number": 19,
+      "question": "What are the directions between the main ones called (like North-East)?",
+      "answer": "They are called intermediate directions or sub-directions.",
+      "key_concepts": ["intermediate directions"],
+      "marks": 2,
+      "source_section": "Advanced Directions"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the direction between North and East?",
+      "answer": "The direction is North-East.",
+      "key_concepts": ["North-East"],
+      "marks": 2,
+      "source_section": "Advanced Directions"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the direction between South and West?",
+      "answer": "The direction is South-West.",
+      "key_concepts": ["South-West"],
+      "marks": 2,
+      "source_section": "Advanced Directions"
+    },
+    {
+      "question_number": 22,
+      "question": "How many main (cardinal) directions are there?",
+      "answer": "There are four main directions.",
+      "key_concepts": ["four"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 23,
+      "question": "Does the sun always rise in the same direction?",
+      "answer": "Yes, it always rises in the East.",
+      "key_concepts": ["consistency", "East"],
+      "marks": 2,
+      "source_section": "Sun and Directions"
+    },
+    {
+      "question_number": 24,
+      "question": "What do sailors use to find their way in the middle of the sea?",
+      "answer": "They use a compass and modern tools like GPS.",
+      "key_concepts": ["sailors", "tools"],
+      "marks": 2,
+      "source_section": "Usage"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is it helpful to know directions in a new city?",
+      "answer": "It helps us find places like schools, hospitals, or parks easily.",
+      "key_concepts": ["utility", "navigation"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    }
+  ]
+}

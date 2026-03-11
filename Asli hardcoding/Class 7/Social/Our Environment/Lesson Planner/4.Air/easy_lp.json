@@ -1,0 +1,189 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter_name": "Air",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the gases that make up our atmosphere",
+        "Understand the importance of the atmosphere for life on Earth",
+        "Identify the five layers of the atmosphere",
+        "Distinguish between weather and climate in simple terms",
+        "Learn about temperature, air pressure, and wind",
+        "Understand the basic forms of rainfall",
+        "Recognize the impact of global warming and the importance of oxygen"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Composition of the Atmosphere",
+            "topics_covered": [
+                "Nitrogen and Oxygen: The main gases",
+                "Carbon dioxide, Argon, and others",
+                "Importance of $CO_2$ for the Green House effect",
+                "How plants produce oxygen"
+            ],
+            "teaching_strategy": [
+                "Pie chart demonstration of gas percentages",
+                "Discussion: 'What happens if we cut trees?'",
+                "Simple explanation of Global Warming"
+            ],
+            "student_activities": [
+                "Draw a colorful pie chart showing the composition of air",
+                "List 3 ways trees help us breathe"
+            ],
+            "assessment": [
+                "Oral quiz: Which gas is most plentiful in the air?",
+                "Identify the gas used by plants to make food"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Structure of the Atmosphere - Part 1",
+            "topics_covered": [
+                "Troposphere: The layer we breathe in",
+                "Stratosphere: The layer for airplanes and Ozone",
+                "Importance of the Ozone layer"
+            ],
+            "teaching_strategy": [
+                "Layer-by-layer drawing on the board",
+                "Analogy: Atmosphere as a 'blanket'",
+                "Visual aids showing clouds in the Troposphere"
+            ],
+            "student_activities": [
+                "Sketch the first two layers of the atmosphere",
+                "Identify which layer protects us from harmful sun rays"
+            ],
+            "assessment": [
+                "Matching: Layer vs. Feature",
+                "Short answer: Why is the Stratosphere good for flying planes?"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Structure of the Atmosphere - Part 2",
+            "topics_covered": [
+                "Mesosphere: Where meteors burn up",
+                "Thermosphere: Ionosphere and Radio transmission",
+                "Exosphere: The outermost thin layer"
+            ],
+            "teaching_strategy": [
+                "Storytelling: 'The journey of a shooting star'",
+                "Discussion on how we hear the radio/mobile signals",
+                "Completed 5-layer diagram"
+            ],
+            "student_activities": [
+                "Complete the full diagram of the 5 layers",
+                "Label the layer where space shuttles orbit"
+            ],
+            "assessment": [
+                "Naming the 5 layers in order from bottom to top",
+                "True/False quiz on atmospheric layers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Weather and Climate",
+            "topics_covered": [
+                "Weather: Day-to-day changes",
+                "Climate: Long-term average",
+                "Temperature and Insolation"
+            ],
+            "teaching_strategy": [
+                "Comparing today's weather with the city's general climate",
+                "Introduction to the Thermometer",
+                "Explaining why it is hotter at the equator"
+            ],
+            "student_activities": [
+                "Record the weather for the day (Sunny/Cloudy/Rainy)",
+                "Draw a thermometer and mark the boiling point of water"
+            ],
+            "assessment": [
+                "Differentiate between Weather and Climate",
+                "Oral quiz on 'Insolation'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Air Pressure and Wind",
+            "topics_covered": [
+                "Definition of Air Pressure",
+                "How air moves: High pressure to Low pressure",
+                "Types of Winds: Permanent, Seasonal, and Local"
+            ],
+            "teaching_strategy": [
+                "Balloon experiment to show air has weight",
+                "Discussion on 'Loo' (Local wind)",
+                "Drawing a simple wind vane"
+            ],
+            "student_activities": [
+                "Identify 'Loo' as a local wind of India",
+                "Match wind types to examples (e.g., Monsoon - Seasonal)"
+            ],
+            "assessment": [
+                "Defining 'Wind'",
+                "Short answer: How does air pressure change with height?"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Moisture and Rainfall",
+            "topics_covered": [
+                "Evaporation and Condensation",
+                "Three types of rainfall: Convectional, Orographic, and Cyclonic",
+                "Importance of rain for farmers"
+            ],
+            "teaching_strategy": [
+                "Diagrams of the 3 types of rainfall",
+                "Using a glass of ice-water to show condensation",
+                "Discussion on the water cycle"
+            ],
+            "student_activities": [
+                "Draw the three types of rainfall",
+                "Write 2 lines on why rain is important for plants"
+            ],
+            "assessment": [
+                "Identifying a rainfall type from a drawing",
+                "Naming the instrument used to measure rainfall"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Summary",
+            "topics_covered": [
+                "Recap of Layers and Composition",
+                "Recap of Weather elements",
+                "Final vocabulary check"
+            ],
+            "teaching_strategy": [
+                "Fun game: 'Weather Reporter' role-play",
+                "Reviewing NCERT back-exercises",
+                "Solving a simple crossword puzzle"
+            ],
+            "student_activities": [
+                "Participate in the 'Air' quiz",
+                "Complete the summary table in the notebook"
+            ],
+            "assessment": [
+                "Short Unit Test (15 marks)",
+                "Review of the final 5-layer diagram"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT Geography Textbook: Our Environment",
+        "Thermometer and Barometer (if available)",
+        "Charts showing layers of the atmosphere",
+        "Pictures of different wind vanes and rain gauges",
+        "Pie chart of air composition"
+    ],
+    "evaluation_methods": [
+        "Diagram labeling (Atmospheric Layers and Rainfall)",
+        "Matching columns (Gases and Layers)",
+        "MCQs on weather instruments",
+        "Oral participation",
+        "Short-answer definitions"
+    ],
+    "teacher_tip": "To explain air pressure easily, tell students that air is like a pile of blankets—the one at the bottom (us) feels the most weight/pressure, and as you go up, the weight decreases!"
+}

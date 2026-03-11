@@ -1,0 +1,109 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "North, South, East, West (The Four Directions)",
+  "lesson_level": "Easy",
+  "total_periods": 4,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Identify and name the four cardinal directions: North, South, East, and West",
+    "Understand the relationship between the Sun's position and the directions",
+    "Learn the spelling and usage of direction-based vocabulary",
+    "Practice using directions to give and follow simple instructions",
+    "Develop basic map-reading skills using a compass rose",
+    "Recognize how directions help us describe the world around us"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Where Does the Sun Rise?",
+      "topics_covered": [
+        "The Sun as our natural guide",
+        "East (Sunrise) and West (Sunset)",
+        "Basic orientation using our bodies"
+      ],
+      "teaching_strategy": [
+        "Interactive demonstration: Using a lamp (Sun) to show where the day begins",
+        "The 'Hand Pointing' rule: Facing East to find other directions",
+        "Simple mnemonic: 'Eat Sweet Wheat' (East, South, West... almost!)"
+      ],
+      "student_activities": [
+        "Stand and point: Point your right hand to the 'Sunrise' and identify the directions",
+        "Draw a simple sun rising over a hill and label it 'East'"
+      ],
+      "assessment": ["Observation of physical orientation", "Drawing labels"]
+    },
+    {
+      "period": 2,
+      "title": "The Compass Friends",
+      "topics_covered": [
+        "Introduction to the Compass Rose",
+        "North and South: The Top and Bottom of the world",
+        "Vocabulary: 'Opposite', 'Towards', 'Cardinal'"
+      ],
+      "teaching_strategy": [
+        "Introduce 'Never Eat Soggy Waffles' (North, East, South, West) as a memory tool",
+        "Display a large classroom compass on the floor",
+        "Explain that North and South are opposites, just like East and West"
+      ],
+      "student_activities": [
+        "Color a Compass Rose worksheet",
+        "Game: 'Simon Says move North/South/East/West' in the classroom"
+      ],
+      "assessment": ["Compass Rose coloring", "Game participation"]
+    },
+    {
+      "period": 3,
+      "title": "Mapping the Room",
+      "topics_covered": [
+        "Using directions to describe locations",
+        "Simple prepositions with directions (e.g., 'To the North of...')",
+        "Reading a basic school map"
+      ],
+      "teaching_strategy": [
+        "Guided walk: Identifying what is on the North wall of the classroom vs. the South wall",
+        "Teacher-led description: 'The chalkboard is to the North, the window is to the West'",
+        "Vocabulary focus: 'Location', 'Direction', 'Left/Right vs. East/West'"
+      ],
+      "student_activities": [
+        "Fill-in-the-blanks: 'My desk is to the ______ of the door'",
+        "Small group: Hide a 'treasure' and give 2-step direction clues to find it"
+      ],
+      "assessment": ["Worksheet completion", "Treasure hunt success"]
+    },
+    {
+      "period": 4,
+      "title": "Traveling Through the Story",
+      "topics_covered": [
+        "Reading a short story/poem about a traveler",
+        "Recalling direction-based plot points",
+        "Review and Quiz"
+      ],
+      "teaching_strategy": [
+        "Read-aloud: A story of a bird flying South for winter",
+        "Discussion: 'Why do animals need to know their directions?'",
+        "Final review of the 'Never Eat Soggy Waffles' mnemonic"
+      ],
+      "student_activities": [
+        "Circle the correct direction in 5 simple sentences",
+        "Recite the names of the four directions in a circle"
+      ],
+      "assessment": ["Final short quiz", "Oral recitation"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Large Compass Rose poster",
+    "Magnetic compass (real-world connection)",
+    "Lamp or Flashlight (to represent the Sun)",
+    "Direction labels for classroom walls (N, S, E, W)"
+  ],
+  "evaluation_methods": [
+    "Correct labeling of a Compass Rose",
+    "Ability to point to directions on command",
+    "Vocabulary matching (Sunrise = East, etc.)",
+    "Participation in the classroom 'Treasure Hunt'",
+    "Final 5-question quiz"
+  ],
+  "teacher_tip": "Keep it physical! For Class 7 students at an 'Easy' level, directions can feel abstract. Relate everything back to their own bodies. Put 'N, S, E, W' signs on your classroom walls early in the week and keep them up!"
+}

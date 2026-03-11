@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter": "Ruling the Countryside",
+  "difficulty": "Medium",
+  "source_pdf": "class8_history_english.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Permanent Settlement Analysis",
+      "objective": "Understand how the Permanent Settlement system worked",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write the main aim of the Permanent Settlement",
+        "Explain the role of zamindars in this system",
+        "Write one advantage and one disadvantage of the system"
+      ],
+      "learning_outcome": "Understands the working of Permanent Settlement",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Revenue Systems Comparison",
+      "objective": "Compare different land revenue systems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write two features of the Permanent Settlement",
+        "Write two features of the Ryotwari system",
+        "Write one difference between the two systems"
+      ],
+      "learning_outcome": "Develops comparison skills in history",
+      "evaluation": "Correct comparison (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Peasant Condition Study",
+      "objective": "Understand the condition of peasants under British rule",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write three problems faced by peasants under the revenue system",
+        "Explain why peasants often borrowed money from moneylenders",
+        "Write how this affected their lives"
+      ],
+      "learning_outcome": "Understands social impact of revenue systems",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Indigo Cultivation Investigation",
+      "objective": "Learn how indigo farming was organised",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write how indigo planters forced peasants to grow indigo",
+        "Explain the system of advance loans",
+        "Write one problem peasants faced due to indigo cultivation"
+      ],
+      "learning_outcome": "Understands the indigo cultivation system",
+      "evaluation": "Accuracy of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Indigo Revolt Study",
+      "objective": "Understand the causes of the Indigo Revolt",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write two reasons for the Indigo Revolt",
+        "Explain how peasants protested against the planters",
+        "Write one result of the revolt"
+      ],
+      "learning_outcome": "Understands peasant resistance movements",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Historical Source Interpretation",
+      "objective": "Analyse historical documents",
+      "materials": ["Notebook"],
+      "steps": [
+        "Read a source or statement from the chapter",
+        "Write what the source tells about indigo farmers",
+        "Explain why such sources are important for historians"
+      ],
+      "learning_outcome": "Learns to interpret historical sources",
+      "evaluation": "Depth of interpretation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Revenue Collection Role Play",
+      "objective": "Understand relationships between peasants, zamindars and British officials",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide students into groups representing peasants, zamindars and officials",
+        "Act out how revenue was collected",
+        "Discuss the difficulties faced by each group"
+      ],
+      "learning_outcome": "Develops understanding through role play",
+      "evaluation": "Participation and understanding (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Picture Analysis of Indigo Farming",
+      "objective": "Interpret historical illustrations",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe an illustration related to indigo farming",
+        "Write what activities are shown",
+        "Explain what it tells about working conditions"
+      ],
+      "learning_outcome": "Develops visual interpretation skills",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Cause and Effect Chart",
+      "objective": "Understand cause and effect in historical events",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write causes of indigo cultivation in India",
+        "Write effects on peasants and agriculture",
+        "Connect them using arrows"
+      ],
+      "learning_outcome": "Understands cause–effect relationships in history",
+      "evaluation": "Logical connections (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Mini Research on Indigo Dye",
+      "objective": "Learn about the importance of indigo dye in trade",
+      "materials": ["Notebook", "Library or internet"],
+      "steps": [
+        "Find out why indigo dye was important in Europe",
+        "Write how it was produced in India",
+        "Explain why synthetic dyes later affected indigo production"
+      ],
+      "learning_outcome": "Understands global trade connections",
+      "evaluation": "Completeness of research (10 marks)"
+    }
+  ]
+}

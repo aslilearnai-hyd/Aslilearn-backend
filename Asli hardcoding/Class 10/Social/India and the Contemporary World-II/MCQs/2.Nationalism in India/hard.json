@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3",
+  "generated_at": "2026-02-27T19:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Statement 1: Mangal Pandey attacked British officers in 1857.\nStatement 2: The cartridges were rumored to contain cow and pig fat.\nWhich statement explains the cause-effect relationship?",
+      "options": {
+        "A": "Statement 1 is true, Statement 2 is false",
+        "B": "Statement 2 is true, Statement 1 is the effect of Statement 2",
+        "C": "Both statements are true, but unrelated",
+        "D": "Statement 1 is false, Statement 2 is true"
+      },
+      "correct_answer": "B",
+      "explanation": "The attack by Mangal Pandey was a direct result of the introduction of greased cartridges that offended religious sentiments.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following was NOT a factor in widespread participation in the 1857 revolt?",
+      "options": {
+        "A": "Military grievances of sepoys",
+        "B": "Economic exploitation of peasants",
+        "C": "British encouragement of local rulers",
+        "D": "Cultural and religious interference"
+      },
+      "correct_answer": "C",
+      "explanation": "British policies encouraged loyalty among rulers; their opposition to rebel rulers contributed to the revolt, not support.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 3,
+      "question": "Who among the following combined guerrilla tactics with conventional warfare during the revolt?",
+      "options": {
+        "A": "Tatya Tope",
+        "B": "Rani Laxmibai",
+        "C": "Mangal Pandey",
+        "D": "Nana Sahib"
+      },
+      "correct_answer": "A",
+      "explanation": "Tatya Tope used mobile guerrilla tactics alongside larger battles to resist British forces.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 4,
+      "question": "Which combination of events reflects the sequential impact of British policies before 1857?",
+      "options": {
+        "A": "Doctrine of Lapse → Annexation of Awadh → Revolt by peasants and soldiers",
+        "B": "Railway expansion → Revolt → Doctrine of Lapse",
+        "C": "Greased cartridges → British Crown rule → Doctrine of Lapse",
+        "D": "Sepoy training → Revolt → Mughal restoration"
+      },
+      "correct_answer": "A",
+      "explanation": "The Doctrine of Lapse led to annexation of states like Awadh, which in turn caused resentment among soldiers and peasants, triggering revolt.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of these was a symbolic reason for choosing Bahadur Shah Zafar as leader?",
+      "options": {
+        "A": "He controlled the largest army",
+        "B": "He provided legitimacy due to Mughal lineage",
+        "C": "He was wealthy",
+        "D": "He negotiated treaties with British"
+      },
+      "correct_answer": "B",
+      "explanation": "Rebels sought legitimacy by making the last Mughal emperor their symbolic leader.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 6,
+      "question": "Identify the correct cause-effect pair:",
+      "options": {
+        "A": "High taxes → Support for British",
+        "B": "Greased cartridges → Outbreak of revolt among sepoys",
+        "C": "Doctrine of Lapse → Improved peasant welfare",
+        "D": "British treaties → Uprising in Awadh"
+      },
+      "correct_answer": "B",
+      "explanation": "The introduction of cartridges rumored to contain cow/pig fat directly triggered sepoy rebellion.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of these leaders combined local loyalty with military strategy?",
+      "options": {
+        "A": "Rani Laxmibai",
+        "B": "Mangal Pandey",
+        "C": "Bahadur Shah Zafar",
+        "D": "Lord Canning"
+      },
+      "correct_answer": "A",
+      "explanation": "Rani Laxmibai used local support and her forces to conduct organized resistance against British troops.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 8,
+      "question": "Statement 1: The revolt spread from Meerut to Delhi and Awadh.\nStatement 2: British mismanagement and local grievances enabled rapid spread.\nWhich statement is correct?",
+      "options": {
+        "A": "Statement 1 is false, Statement 2 is true",
+        "B": "Both statements are true, Statement 2 explains Statement 1",
+        "C": "Both statements true, unrelated",
+        "D": "Statement 1 true, Statement 2 false"
+      },
+      "correct_answer": "B",
+      "explanation": "Local grievances and British mismanagement allowed the revolt to quickly spread from Meerut to other regions.",
+      "difficulty": "hard",
+      "source_section": "Extent of the Revolt"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of these pairs correctly matches the leader with their center of revolt?",
+      "options": {
+        "A": "Begum Hazrat Mahal – Awadh",
+        "B": "Tatya Tope – Jhansi",
+        "C": "Mangal Pandey – Kanpur",
+        "D": "Nana Sahib – Delhi"
+      },
+      "correct_answer": "A",
+      "explanation": "Begum Hazrat Mahal led the revolt in Awadh, Tatya Tope in Kanpur, Mangal Pandey in Meerut, Nana Sahib in Kanpur.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following best explains why Bengal remained mostly peaceful during 1857?",
+      "options": {
+        "A": "Strong British presence and economic contentment",
+        "B": "Active leadership by Rani Laxmibai",
+        "C": "Large-scale peasant rebellion",
+        "D": "Annexation of Awadh"
+      },
+      "correct_answer": "A",
+      "explanation": "Bengal’s elite and sepoys were less discontented and British presence was strong, keeping it mostly peaceful.",
+      "difficulty": "hard",
+      "source_section": "Extent of the Revolt"
+    },
+    {
+      "question_number": 11,
+      "question": "Why was the revolt considered both a military and social uprising?",
+      "options": {
+        "A": "Only sepoys fought",
+        "B": "Involved soldiers, peasants, and rulers against British policies",
+        "C": "British encouraged peasant revolts",
+        "D": "Mughal emperor controlled army only"
+      },
+      "correct_answer": "B",
+      "explanation": "The revolt had both military and social dimensions due to participation from multiple social groups.",
+      "difficulty": "hard",
+      "source_section": "Extent of the Revolt"
+    },
+    {
+      "question_number": 12,
+      "question": "Which British strategy after 1857 reduced chances of another revolt?",
+      "options": {
+        "A": "Dividing army composition and allying with princely states",
+        "B": "Increasing annexations under Doctrine of Lapse",
+        "C": "Encouraging sepoy-led administration",
+        "D": "Disbanding Indian regiments entirely"
+      },
+      "correct_answer": "A",
+      "explanation": "British improved army composition and secured treaties with rulers to prevent future uprisings.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    },
+    {
+      "question_number": 13,
+      "question": "Which combination shows economic and cultural causes of revolt?",
+      "options": {
+        "A": "High revenue + interference in religious practices",
+        "B": "Railway expansion + English education",
+        "C": "Industrialisation in Britain only",
+        "D": "Mughal support + foreign trade"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic exploitation and cultural/religious interference fueled widespread resentment.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 14,
+      "question": "Which statement about the aftermath of 1857 is correct?",
+      "options": {
+        "A": "East India Company continued to rule India",
+        "B": "Direct British Crown control was established",
+        "C": "Immediate independence was granted",
+        "D": "Mughal empire was restored"
+      },
+      "correct_answer": "B",
+      "explanation": "After 1857, the British Crown took over India, ending East India Company administration.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following leaders is correctly matched with their revolt strategy?",
+      "options": {
+        "A": "Tatya Tope – Guerrilla tactics",
+        "B": "Mangal Pandey – Diplomacy",
+        "C": "Bahadur Shah Zafar – Guerrilla warfare",
+        "D": "Nana Sahib – Peaceful negotiation"
+      },
+      "correct_answer": "A",
+      "explanation": "Tatya Tope employed guerrilla tactics, while others had different roles.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 16,
+      "question": "Which combination of policies angered Indian rulers and sepoys simultaneously?",
+      "options": {
+        "A": "Doctrine of Lapse + Greased cartridges",
+        "B": "Railway expansion + Telegraph introduction",
+        "C": "English education + Legal reforms",
+        "D": "Trade policies + Port construction"
+      },
+      "correct_answer": "A",
+      "explanation": "Doctrine of Lapse angered rulers, while greased cartridges offended sepoys.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of these best explains why the revolt failed militarily?",
+      "options": {
+        "A": "Lack of coordination and modern weaponry among rebels",
+        "B": "British were untrained",
+        "C": "Sepoys did not revolt",
+        "D": "Peasants were loyal to British"
+      },
+      "correct_answer": "A",
+      "explanation": "Poor coordination, lack of resources, and British military strength led to rebel defeat.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    },
+    {
+      "question_number": 18,
+      "question": "Statement 1: The revolt led to administrative changes.\nStatement 2: British Crown took direct control of India.\nChoose the correct relationship.",
+      "options": {
+        "A": "Statement 1 is true, Statement 2 is false",
+        "B": "Statement 2 is true, Statement 1 is the result of Statement 2",
+        "C": "Both true, unrelated",
+        "D": "Statement 1 false, Statement 2 true"
+      },
+      "correct_answer": "B",
+      "explanation": "Administrative changes occurred because the British Crown assumed direct control after the revolt.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factors contributed to the revolt spreading across regions?",
+      "options": {
+        "A": "Local grievances + British mismanagement + symbol of Mughal emperor",
+        "B": "Railways + ports only",
+        "C": "British treaties with princes only",
+        "D": "Trade expansion only"
+      },
+      "correct_answer": "A",
+      "explanation": "Combination of grievances, mismanagement, and symbolic leadership helped spread the revolt.",
+      "difficulty": "hard",
+      "source_section": "Extent of the Revolt"
+    },
+    {
+      "question_number": 20,
+      "question": "Which statement best explains the role of culture in the revolt?",
+      "options": {
+        "A": "Violation of religious norms offended sepoys",
+        "B": "British promoted Indian traditions",
+        "C": "Sepoys fully accepted British customs",
+        "D": "Cultural issues were irrelevant"
+      },
+      "correct_answer": "A",
+      "explanation": "Interference with cultural and religious practices was a major cause of sepoy resentment.",
+      "difficulty": "hard",
+      "source_section": "Causes of 1857 Revolt"
+    },
+    {
+      "question_number": 21,
+      "question": "Which leader is known for both conventional battles and defensive retreats?",
+      "options": {
+        "A": "Tatya Tope",
+        "B": "Mangal Pandey",
+        "C": "Bahadur Shah Zafar",
+        "D": "Nana Sahib"
+      },
+      "correct_answer": "A",
+      "explanation": "Tatya Tope combined strategic retreats with battles to resist the British effectively.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 22,
+      "question": "Which region’s revolt showed the largest combination of sepoy and peasant participation?",
+      "options": {
+        "A": "Awadh",
+        "B": "Bengal",
+        "C": "Madras",
+        "D": "Punjab"
+      },
+      "correct_answer": "A",
+      "explanation": "Awadh saw widespread participation from soldiers and peasants alike.",
+      "difficulty": "hard",
+      "source_section": "Extent of the Revolt"
+    },
+    {
+      "question_number": 23,
+      "question": "Which post-revolt policy helped the British prevent future revolts?",
+      "options": {
+        "A": "Army reforms + alliances with princes",
+        "B": "Repeal of Doctrine of Lapse only",
+        "C": "Immediate independence granted",
+        "D": "Large-scale disarmament only"
+      },
+      "correct_answer": "A",
+      "explanation": "Reforms and alliances ensured better control over Indian rulers and sepoys.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    },
+    {
+      "question_number": 24,
+      "question": "Which combination shows why Rani Laxmibai is considered iconic?",
+      "options": {
+        "A": "Bravery + military leadership + inspiration for other regions",
+        "B": "Peace treaties + British support",
+        "C": "Wealth + loyalty to British",
+        "D": "Trade + alliances with Europeans"
+      },
+      "correct_answer": "A",
+      "explanation": "She led military campaigns and inspired resistance across India.",
+      "difficulty": "hard",
+      "source_section": "Key Leaders of the Revolt"
+    },
+    {
+      "question_number": 25,
+      "question": "Which combination correctly lists the outcomes of the revolt?",
+      "options": {
+        "A": "British Crown rule, exile of Mughal emperor, administrative reforms",
+        "B": "Immediate independence, Mughal restoration",
+        "C": "Expansion of Company rule, increase in sepoy power",
+        "D": "Peace treaties with French"
+      },
+      "correct_answer": "A",
+      "explanation": "The revolt resulted in direct British control, exile of Bahadur Shah Zafar, and administrative changes.",
+      "difficulty": "hard",
+      "source_section": "Aftermath"
+    }
+  ]
+}

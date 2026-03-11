@@ -1,0 +1,150 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Fear No More",
+    "author": "William Shakespeare",
+    "difficulty": "Hard",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Theme Analysis",
+            "objective": "Analyse the theme of the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Write a paragraph explaining the central theme"
+            ],
+            "learning_outcome": "Develops thematic interpretation",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Life and Death Philosophy",
+            "objective": "Understand philosophical ideas in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify ideas about life and death",
+                "Explain them in your own words"
+            ],
+            "learning_outcome": "Understands philosophical meaning",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Symbolism of Dust",
+            "objective": "Interpret symbolic meaning",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find lines mentioning dust",
+                "Explain their symbolic meaning"
+            ],
+            "learning_outcome": "Understands symbolism",
+            "evaluation": "Correct interpretation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Imagery Analysis",
+            "objective": "Analyse imagery in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify natural elements used in imagery",
+                "Explain their effect"
+            ],
+            "learning_outcome": "Recognises imagery",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Poetic Devices",
+            "objective": "Identify literary techniques",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find two poetic devices",
+                "Explain how they contribute to the poem"
+            ],
+            "learning_outcome": "Recognises literary devices",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Structure Analysis",
+            "objective": "Analyse structure of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe stanza pattern",
+                "Explain how structure supports meaning"
+            ],
+            "learning_outcome": "Recognises poetic structure",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Message Interpretation",
+            "objective": "Interpret the poet’s message",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the message about human life",
+                "Write a paragraph supporting your answer"
+            ],
+            "learning_outcome": "Understands moral message",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Critical Appreciation",
+            "objective": "Develop appreciation of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write why the poem is powerful",
+                "Explain its emotional effect"
+            ],
+            "learning_outcome": "Develops appreciation skills",
+            "evaluation": "Thoughtful explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Universal Message",
+            "objective": "Understand universal meaning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how the poem relates to all people",
+                "Write a short paragraph"
+            ],
+            "learning_outcome": "Recognises universal themes",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Personal Reflection",
+            "objective": "Encourage personal thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write your personal opinion about the poem",
+                "Explain the lesson it teaches"
+            ],
+            "learning_outcome": "Encourages reflective thinking",
+            "evaluation": "Meaningful response (10 marks)"
+        }
+    ]
+}

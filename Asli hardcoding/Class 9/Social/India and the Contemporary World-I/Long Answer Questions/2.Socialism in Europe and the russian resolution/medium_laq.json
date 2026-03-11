@@ -1,0 +1,433 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: Socialism in Europe and the Russian Revolution",
+  "generated_at": "2026-03-07T03:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Compare and contrast the political goals of Liberals and Radicals in 19th-century Europe.",
+      "answer": "Both groups sought social transformation but differed on the extent of democracy. Liberals wanted a representative parliament and religious tolerance but opposed universal adult franchise, fearing the uneducated poor. Radicals, however, supported a government based on the majority, championed women’s suffrage (suffragette movement), and were more critical of the concentration of private property in a few hands.",
+      "answer_outline": [
+        "Common ground: representative government and religious tolerance",
+        "Difference: Liberals opposed universal suffrage; Radicals supported it",
+        "Difference: Radicals supported women's rights and challenged wealth concentration"
+      ],
+      "key_concepts": [
+        "Universal Adult Franchise",
+        "Suffragette Movement",
+        "Representative Government"
+      ],
+      "marks": 5,
+      "source_section": "1.1 Liberals, Radicals and Conservatives"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze how industrialization acted as a catalyst for the spread of socialist ideas.",
+      "answer": "Industrialization created a new class of urban workers facing long hours, low wages, and poor housing. Because the means of production (factories) were owned by private individuals (capitalists) who prioritized profit over worker welfare, thinkers like Marx argued that only social control of property could resolve these inequalities. This gave rise to socialist parties and labor unions.",
+      "answer_outline": [
+        "Describe industrial hardships (hours, wages, housing)",
+        "Link private ownership to the exploitation of labor",
+        "Explain the socialist solution of collective ownership"
+      ],
+      "key_concepts": [
+        "Capitalism",
+        "Proletariat",
+        "Social Control"
+      ],
+      "marks": 5,
+      "source_section": "1.2 Industrial Society and Social Change"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain Karl Marx’s theory of 'Surplus Value' and its role in his call for revolution.",
+      "answer": "Marx argued that the value of goods is produced by the workers' labor, but the profit (surplus value) is kept by the capitalist. Since capitalists reinvest this profit to further exploit workers, Marx concluded that workers must forcibly overthrow the capitalist state to establish a 'Communist' society where property is owned by the community.",
+      "answer_outline": [
+        "Define profit as the result of worker labor",
+        "Describe the cycle of reinvestment and exploitation",
+        "State the necessity of overthrowing private property"
+      ],
+      "key_concepts": [
+        "Surplus Value",
+        "Class Struggle",
+        "Communist Society"
+      ],
+      "marks": 5,
+      "source_section": "1.3 The Coming of Socialism to Europe"
+    },
+    {
+      "question_number": 4,
+      "question": "Discuss the significance of the 'Mir' (Peasant Commune) in Russian agrarian society.",
+      "answer": "The 'Mir' was a traditional village commune where land was owned collectively and redistributed periodically based on the needs of individual families. This unique Russian tradition made many socialists believe that Russian peasants were 'natural socialists' and that Russia could bypass a capitalist stage of development.",
+      "answer_outline": [
+        "Describe collective land ownership and redistribution",
+        "Explain the socialist view of peasants as 'natural' revolutionaries",
+        "Mention the contrast with Western European individualistic farming"
+      ],
+      "key_concepts": [
+        "Mir",
+        "Agrarian Socialism",
+        "Commune"
+      ],
+      "marks": 4,
+      "source_section": "2.2 Economy and Society"
+    },
+    {
+      "question_number": 5,
+      "question": "How did the Russo-Japanese War (1904) contribute to the 1905 Revolution?",
+      "answer": "The humiliating defeat of the massive Russian Empire by a small Asian power (Japan) exposed the incompetence of the Tsarist government. It led to high prices, food shortages, and increased taxes, fueling the discontent that eventually exploded during the 'Bloody Sunday' march in 1905.",
+      "answer_outline": [
+        "Identify the war and its outcome",
+        "Explain how it damaged the Tsar's prestige",
+        "Link economic hardship to the subsequent strikes and protests"
+      ],
+      "key_concepts": [
+        "Russo-Japanese War",
+        "Tsarist Incompetence",
+        "Economic Distress"
+      ],
+      "marks": 4,
+      "source_section": "2.4 A Turbulent Time: The 1905 Revolution"
+    },
+    {
+      "question_number": 6,
+      "question": "Evaluate the role of Father Gapon in the 1905 Revolution.",
+      "answer": "Father Gapon was a priest who organized the workers of St. Petersburg. He led the peaceful procession of 110,000 workers to the Winter Palace in 1905 to present a petition for better working conditions, higher wages, and a consultative parliament. The brutal suppression of this march (Bloody Sunday) triggered the revolution.",
+      "answer_outline": [
+        "Identify him as a worker leader",
+        "Detail the demands of the petition",
+        "Describe the outcome (Bloody Sunday)"
+      ],
+      "key_concepts": [
+        "Father Gapon",
+        "Petition",
+        "Winter Palace"
+      ],
+      "marks": 4,
+      "source_section": "2.4 A Turbulent Time: The 1905 Revolution"
+    },
+    {
+      "question_number": 7,
+      "question": "Why did the 'Duma' fail to provide a true constitutional government in Russia?",
+      "answer": "The Duma failed because the Tsar never intended to share power. He dismissed the first and second Dumas quickly when they challenged his authority. He then changed the voting laws to ensure the third Duma was filled with conservative 'yes-men' who would not oppose his absolute rule.",
+      "answer_outline": [
+        "Tsar's refusal to share authority",
+        "Dismissal of early consultative bodies",
+        "Manipulation of voting laws to favor conservatives"
+      ],
+      "key_concepts": [
+        "Duma",
+        "Autocracy",
+        "Conservative Politics"
+      ],
+      "marks": 5,
+      "source_section": "2.4 A Turbulent Time: The 1905 Revolution"
+    },
+    {
+      "question_number": 8,
+      "question": "Examine the impact of the First World War on the 'Eastern Front' compared to the 'Western Front'.",
+      "answer": "Unlike the Western Front where soldiers fought from trenches, the Eastern Front was highly mobile with massive movements of troops. Russia suffered staggering casualties (7 million by 1917). The retreat involved 'scorched earth' tactics—destroying crops and buildings—which created 3 million refugees and totally demoralized the army.",
+      "answer_outline": [
+        "Contrast trench warfare (West) with mobility (East)",
+        "Highlight high casualty rates",
+        "Explain scorched earth policy and the refugee crisis"
+      ],
+      "key_concepts": [
+        "Eastern Front",
+        "Scorched Earth Policy",
+        "Casualties"
+      ],
+      "marks": 5,
+      "source_section": "2.5 The First World War and the Russian Empire"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the 'Dual Power' structure that emerged in Russia after the February Revolution.",
+      "answer": "After the Tsar’s abdication, power was split between the 'Provisional Government' (composed of army officers, landowners, and industrialists) and the 'Petrograd Soviet' (representing workers and soldiers). This 'Dual Power' created a vacuum because the Soviet held the actual loyalty of the masses while the Provisional Government held official office.",
+      "answer_outline": [
+        "Identify the two power centers",
+        "Describe the social groups supporting each",
+        "Explain the resulting political instability"
+      ],
+      "key_concepts": [
+        "Dual Power",
+        "Provisional Government",
+        "Petrograd Soviet"
+      ],
+      "marks": 5,
+      "source_section": "3.2 After February"
+    },
+    {
+      "question_number": 10,
+      "question": "Analyze the strategic importance of Lenin’s 'April Theses' in the Bolshevik rise to power.",
+      "answer": "The April Theses provided a clear, radical alternative to the moderate Provisional Government. By demanding an end to the war, land for peasants, and bank nationalization, Lenin tapped into the three greatest frustrations of the Russian people, allowing the Bolsheviks to gain a majority in the Soviets.",
+      "answer_outline": [
+        "State the three core demands (Peace, Land, Bread)",
+        "Explain how they addressed popular grievances",
+        "Highlight the shift in Bolshevik popularity"
+      ],
+      "key_concepts": [
+        "April Theses",
+        "Peace, Land, and Bread",
+        "Bolshevik Popularity"
+      ],
+      "marks": 5,
+      "source_section": "3.2 After February"
+    },
+    {
+      "question_number": 11,
+      "question": "Describe the formation and role of the Military Revolutionary Committee (MRC).",
+      "answer": "The MRC was a tactical body formed by the Petrograd Soviet in October 1917, led by Leon Trotsky. Its purpose was to organize the armed insurrection against the Provisional Government. It successfully seized key points like the telegraph office and the Winter Palace, ensuring the Bolshevik takeover.",
+      "answer_outline": [
+        "Role of Leon Trotsky",
+        "Purpose: Armed insurrection",
+        "Success in seizing strategic Petrograd locations"
+      ],
+      "key_concepts": [
+        "Leon Trotsky",
+        "Insurrection",
+        "MRC"
+      ],
+      "marks": 4,
+      "source_section": "4. The Revolution of October 1917"
+    },
+    {
+      "question_number": 12,
+      "question": "How did the Bolsheviks handle the issue of 'Nationalities' within the former Russian Empire?",
+      "answer": "The Bolsheviks initially promised self-determination. However, during the Civil War, they often forcibly converted regions to the Bolshevik cause. Eventually, most non-Russian nationalities were given 'political autonomy' within the Soviet Union (USSR) created in 1922, though the central government in Moscow remained dominant.",
+      "answer_outline": [
+        "Promise of self-determination",
+        "Formation of the USSR (1922)",
+        "Granting of 'autonomy' while maintaining central control"
+      ],
+      "key_concepts": [
+        "USSR",
+        "Nationalities",
+        "Autonomy"
+      ],
+      "marks": 5,
+      "source_section": "5.1 The Civil War"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why the 'Whites' and 'Greens' failed to defeat the 'Reds' in the Civil War.",
+      "answer": "The 'Whites' (pro-Tsarists) were disorganized and lacked a unified vision. More importantly, their harsh treatment of peasants—who had just seized land—turned the rural population against them. The Bolshevik 'Reds' were more disciplined and were seen by many as the only force that would protect the peasants' newly acquired land.",
+      "answer_outline": [
+        "Identify the Whites and Greens",
+        "Explain the lack of unity among anti-Bolsheviks",
+        "Discuss peasant support for Bolsheviks regarding land"
+      ],
+      "key_concepts": [
+        "Civil War",
+        "Red vs White",
+        "Peasant Allegiance"
+      ],
+      "marks": 5,
+      "source_section": "5.1 The Civil War"
+    },
+    {
+      "question_number": 14,
+      "question": "Discuss the impact of 'Centralized Planning' on industrial production in the early USSR.",
+      "answer": "Centralized planning through Five-Year Plans led to rapid industrialization. New factory cities emerged (like Magnitogorsk), and oil, coal, and steel production doubled or tripled within five years. However, this was achieved through grueling work conditions, poor housing, and the suppression of labor rights.",
+      "answer_outline": [
+        "Growth in heavy industries (Oil, Steel)",
+        "Emergence of new industrial cities",
+        "Human cost: poor conditions and lack of rights"
+      ],
+      "key_concepts": [
+        "Centralized Planning",
+        "Industrial Growth",
+        "Magnitogorsk"
+      ],
+      "marks": 5,
+      "source_section": "5.2 Making a Socialist Society"
+    },
+    {
+      "question_number": 15,
+      "question": "Examine the causes of the 1927–1928 Grain Crisis in the Soviet Union.",
+      "answer": "The crisis was caused by a combination of low prices fixed by the government—which led peasants to refuse to sell—and a bad harvest. Stalin also believed that 'Kulaks' (wealthy peasants) were intentionally hoarding grain to drive up prices, which led him to introduce forced grain collection and collectivization.",
+      "answer_outline": [
+        "Government price-fixing",
+        "Peasant refusal to sell grain",
+        "Stalin's suspicion of 'hoarding' by Kulaks"
+      ],
+      "key_concepts": [
+        "Grain Crisis",
+        "Price-fixing",
+        "Kulaks"
+      ],
+      "marks": 5,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 16,
+      "question": "Evaluate the economic and social objectives of Stalin’s 'Collectivization' program.",
+      "answer": "Economically, the goal was to consolidate small, inefficient peasant plots into large 'modern' industrial-style farms (Kolkhoz) to increase grain production. Socially, it aimed to eliminate the 'Kulak' class and extend state control over the rural population, ensuring a steady food supply for the growing cities.",
+      "answer_outline": [
+        "Consolidation of small plots",
+        "Industrialization of agriculture",
+        "Elimination of the Kulak class and state control"
+      ],
+      "key_concepts": [
+        "Collectivization",
+        "Kolkhoz",
+        "State Control"
+      ],
+      "marks": 5,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 17,
+      "question": "What was the 'Kolkhoz' system and how did it function?",
+      "answer": "The Kolkhoz was a collective farm where land and tools were pooled. Peasants were forced to work under a manager appointed by the state. After the government took its required share of grain, the remaining produce or profit was divided among the members based on their work.",
+      "answer_outline": [
+        "Pooling of land and tools",
+        "Role of state managers",
+        "Distribution of remaining profit"
+      ],
+      "key_concepts": [
+        "Kolkhoz",
+        "Collective Farm",
+        "Redistribution"
+      ],
+      "marks": 4,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 18,
+      "question": "Describe the forms of peasant resistance against Collectivization.",
+      "answer": "Peasants resisted by slaughtering their own livestock to prevent them from being taken by the Kolkhoz, leading to a one-third drop in cattle numbers. They also burned crops and refused to work. In response, the state deported, jailed, or executed millions of 'rebels' as part of the Dekulakization process.",
+      "answer_outline": [
+        "Slaughter of livestock",
+        "Refusal to work and crop destruction",
+        "State's violent response (deportation/execution)"
+      ],
+      "key_concepts": [
+        "Resistance",
+        "Livestock depletion",
+        "Dekulakization"
+      ],
+      "marks": 5,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 19,
+      "question": "Analyze the impact of the 1930–1933 Soviet Famine.",
+      "answer": "The famine was one of the most devastating in history, killing 4 million people. It was largely man-made, caused by the chaos of forced collectivization, the seizure of seed grain by the state, and the lack of incentives for peasants to grow food under the new system.",
+      "answer_outline": [
+        "Death toll (4 million)",
+        "Man-made causes: forced grain seizures",
+        "Failure of the new collective system to ensure production"
+      ],
+      "key_concepts": [
+        "Famine",
+        "Human catastrophe",
+        "Collectivization failure"
+      ],
+      "marks": 5,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 20,
+      "question": "How did the Russian Revolution influence the Indian National Movement?",
+      "answer": "The revolution inspired Indian leaders like Jawaharlal Nehru and Rabindranath Tagore, who visited the USSR and were impressed by its focus on education and poverty reduction. It also led to the formation of the Communist Party of India in 1920, and the idea of 'economic rights' began to influence the struggle against British rule.",
+      "answer_outline": [
+        "Inspiration for leaders like Nehru and Tagore",
+        "Formation of the Communist Party of India",
+        "Emphasis on economic planning and peasant rights"
+      ],
+      "key_concepts": [
+        "Indian National Movement",
+        "Nehru",
+        "Socialist Influence"
+      ],
+      "marks": 4,
+      "source_section": "6. The Global Influence"
+    },
+    {
+      "question_number": 21,
+      "question": "Examine the role of the 'Comintern' in spreading socialist ideals.",
+      "answer": "The Comintern (Communist International) was an organization founded by the Bolsheviks to unite communist parties globally. It provided training to foreign socialists and helped coordinate revolutionary activities, ensuring that the Russian model of socialism became the blueprint for movements in Asia and Europe.",
+      "answer_outline": [
+        "Definition of Comintern",
+        "Training and coordination of global communist parties",
+        "Promotion of the 'Russian model' of socialism"
+      ],
+      "key_concepts": [
+        "Comintern",
+        "Global Revolution",
+        "Bolshevik Leadership"
+      ],
+      "marks": 4,
+      "source_section": "6. The Global Influence"
+    },
+    {
+      "question_number": 22,
+      "question": "What were the 'Stalinist Purges' (Great Terror) of the late 1930s?",
+      "answer": "The Purges were a series of political campaigns where Stalin eliminated anyone suspected of 'conspiring' against the state. This included Bolshevik leaders, military officers, and ordinary citizens. Over 2 million people were imprisoned or executed, often based on false confessions extracted under torture.",
+      "answer_outline": [
+        "Elimination of political rivals",
+        "Atmosphere of fear and false confessions",
+        "Scale of imprisonment and execution"
+      ],
+      "key_concepts": [
+        "Great Terror",
+        "Purges",
+        "Political Repression"
+      ],
+      "marks": 5,
+      "source_section": "5.3 Stalinism and Collectivisation"
+    },
+    {
+      "question_number": 23,
+      "question": "Discuss the legacy of the Soviet Union by the mid-20th century.",
+      "answer": "By the 1950s, the USSR was a global superpower with advanced industries and a massive military. It had eradicated illiteracy and provided basic security for its people. However, this success was overshadowed by the total loss of democracy, the suppression of individual freedoms, and the extreme violence used to maintain the regime.",
+      "answer_outline": [
+        "Global superpower status",
+        "Social gains: education and industry",
+        "Critique: lack of democracy and human rights"
+      ],
+      "key_concepts": [
+        "Superpower",
+        "Democracy vs Security",
+        "Historical Legacy"
+      ],
+      "marks": 5,
+      "source_section": "6. The Global Influence"
+    },
+    {
+      "question_number": 24,
+      "question": "Analyze the position of women in the Russian Revolution.",
+      "answer": "Women were pioneers in the 1917 revolution, starting the February strikes. Under the Bolsheviks, they gained equal rights, the right to work, and access to education. Factories established crèches for their children. However, they were still underrepresented in high-level political decision-making.",
+      "answer_outline": [
+        "Role in February strikes",
+        "Legal equality and access to work/education",
+        "Introduction of social services like crèches"
+      ],
+      "key_concepts": [
+        "Women's Rights",
+        "Equality",
+        "February Strike"
+      ],
+      "marks": 4,
+      "source_section": "3.1 The February Revolution"
+    },
+    {
+      "question_number": 25,
+      "question": "How did the First World War lead to the 'desacralization' of the Tsar?",
+      "answer": "The Tsar’s decision to personally take command of the army made him responsible for every defeat. Meanwhile, his wife, Tsarina Alexandra, and her advisor Rasputin made unpopular decisions in Petrograd. This combination of military failure and a scandalous court destroyed the holy image (sacrality) of the Tsar among the Russian people.",
+      "answer_outline": [
+        "Tsar's personal command of the army",
+        "Influence of Rasputin and the Tsarina",
+        "Loss of public trust and holy image"
+      ],
+      "key_concepts": [
+        "Rasputin",
+        "Military Failure",
+        "Public Perception"
+      ],
+      "marks": 5,
+      "source_section": "2.5 The First World War"
+    }
+  ]
+}

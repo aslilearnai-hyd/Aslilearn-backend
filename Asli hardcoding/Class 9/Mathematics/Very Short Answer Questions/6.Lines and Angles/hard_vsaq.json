@@ -1,0 +1,237 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "difficulty": "hard",
+    "generated_at": "2026-03-05T23:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If two adjacent angles forming a linear pair are x and 2x, find x.",
+            "answer": "60°",
+            "key_points": [
+                "linear pair",
+                "180°"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 2,
+            "question": "If vertically opposite angles are (3x + 10)° and (5x − 30)°, find x.",
+            "answer": "20",
+            "key_points": [
+                "vertical angles equation"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 3,
+            "question": "If angles around a point are 2x, 3x and 4x, find x.",
+            "answer": "40°",
+            "key_points": [
+                "angles around point",
+                "360°"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 4,
+            "question": "If two supplementary angles are (x + 20)° and (2x − 10)°, find x.",
+            "answer": "70",
+            "key_points": [
+                "supplementary equation"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "If two angles of a linear pair are (2x + 20)° and (4x − 10)°, find x.",
+            "answer": "25",
+            "key_points": [
+                "linear pair equation"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "If vertically opposite angles are 5x and (3x + 40), find x.",
+            "answer": "20",
+            "key_points": [
+                "vertical angle equation"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "If one angle of a linear pair is 135°, find the other angle.",
+            "answer": "45°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "If two angles forming a straight line are equal, find each angle.",
+            "answer": "90°",
+            "key_points": [
+                "straight angle",
+                "supplementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Angles around a point are 80°, 120°, and 100°. Find the fourth angle.",
+            "answer": "60°",
+            "key_points": [
+                "angles around point"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "If two angles are complementary and equal, find each angle.",
+            "answer": "45°",
+            "key_points": [
+                "complementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "If two angles are supplementary and equal, find each angle.",
+            "answer": "90°",
+            "key_points": [
+                "supplementary"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "If alternate interior angles are equal, what can you conclude?",
+            "answer": "The lines are parallel.",
+            "key_points": [
+                "alternate interior angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 13,
+            "question": "If corresponding angles are equal, what does it imply?",
+            "answer": "The lines are parallel.",
+            "key_points": [
+                "corresponding angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 14,
+            "question": "If interior angles on the same side of a transversal sum to 180°, what can be concluded?",
+            "answer": "The lines are parallel.",
+            "key_points": [
+                "interior angles"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 15,
+            "question": "State the theorem related to vertically opposite angles.",
+            "answer": "When two lines intersect, vertically opposite angles are equal.",
+            "key_points": [
+                "vertical angles theorem"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the sum of all angles around a point?",
+            "answer": "360°",
+            "key_points": [
+                "angles around point"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the sum of angles forming a linear pair?",
+            "answer": "180°",
+            "key_points": [
+                "linear pair"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of angle is 200°?",
+            "answer": "Reflex angle",
+            "key_points": [
+                "reflex"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of angle is 150°?",
+            "answer": "Obtuse angle",
+            "key_points": [
+                "obtuse"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What type of angle is 30°?",
+            "answer": "Acute angle",
+            "key_points": [
+                "acute"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "State the theorem about lines parallel to the same line.",
+            "answer": "Lines parallel to the same line are parallel to each other.",
+            "key_points": [
+                "parallel lines theorem"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the measure of a straight angle?",
+            "answer": "180°",
+            "key_points": [
+                "straight angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the measure of a right angle?",
+            "answer": "90°",
+            "key_points": [
+                "right angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens to vertically opposite angles when two lines intersect?",
+            "answer": "They are equal.",
+            "key_points": [
+                "vertical angles"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the sum of interior angles on the same side of a transversal in parallel lines?",
+            "answer": "180°",
+            "key_points": [
+                "transversal angles"
+            ],
+            "source_section": "Section 6.5"
+        }
+    ]
+}

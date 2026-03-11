@@ -1,0 +1,166 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Invisible Living World: Beyond Our Naked Eye",
+  "difficulty": "Medium",
+  "source_pdf": "The Invisible Living World Beyond Our Naked Eye.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Lens and Magnification Investigation",
+      "objective": "Investigate how curved glass acts as a magnifying lens",
+      "materials": [
+        "Round-bottom glass flask",
+        "Water",
+        "Book with printed text",
+        "Magnifying glass"
+      ],
+      "steps": [
+        "Fill a round-bottom flask with water",
+        "Place it on an open book and observe the letters",
+        "Compare the image with a magnifying glass",
+        "Record differences in magnification"
+      ],
+      "learning_outcome": "Students understand how lenses help observe tiny objects",
+      "evaluation": "Comparison explanation and observation notes (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Study of Plant and Animal Cells",
+      "objective": "Compare plant and animal cells based on microscopic observation",
+      "materials": [
+        "Onion peel",
+        "Toothpick",
+        "Glass slides",
+        "Safranin stain",
+        "Methylene blue",
+        "Microscope"
+      ],
+      "steps": [
+        "Prepare onion peel slide and observe plant cells",
+        "Prepare cheek cell slide and observe animal cells",
+        "Draw both cells",
+        "List similarities and differences"
+      ],
+      "learning_outcome": "Students differentiate plant and animal cell structures",
+      "evaluation": "Correct comparison table and diagrams (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Cell Structure Model Making",
+      "objective": "Visualize parts of a cell using a physical model",
+      "materials": ["Chart paper or clay", "Colored paper", "Markers"],
+      "steps": [
+        "Design a model of plant or animal cell",
+        "Label nucleus, cytoplasm, and cell membrane",
+        "Add plant-specific structures like cell wall and chloroplast",
+        "Explain the function of each part"
+      ],
+      "learning_outcome": "Students develop conceptual understanding of cell components",
+      "evaluation": "Accuracy and labeling of model (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Microorganism Observation Project",
+      "objective": "Observe microorganisms in natural water sources",
+      "materials": [
+        "Pond or stagnant water",
+        "Dropper",
+        "Microscope",
+        "Notebook"
+      ],
+      "steps": [
+        "Collect water sample from a pond",
+        "Prepare a slide and observe under microscope",
+        "Identify organisms like Amoeba or algae",
+        "Draw the observed microorganisms"
+      ],
+      "learning_outcome": "Students understand diversity of microscopic organisms",
+      "evaluation": "Accurate sketches and identification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Soil Microorganism Investigation",
+      "objective": "Explore microbial life present in soil",
+      "materials": ["Soil sample", "Water", "Beaker", "Microscope slide"],
+      "steps": [
+        "Mix soil with water to form soil suspension",
+        "Allow mixture to settle",
+        "Place a drop of top liquid on slide",
+        "Observe under microscope"
+      ],
+      "learning_outcome": "Students recognize that soil contains microscopic organisms",
+      "evaluation": "Observation record and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Decomposition and Compost Formation",
+      "objective": "Investigate the role of microbes in decomposing organic waste",
+      "materials": ["Container", "Soil", "Vegetable peels", "Leaves"],
+      "steps": [
+        "Place soil in a container",
+        "Add vegetable peels and dry leaves",
+        "Cover with soil",
+        "Observe changes after 2–3 weeks"
+      ],
+      "learning_outcome": "Students understand microbial decomposition and nutrient recycling",
+      "evaluation": "Explanation of decomposition process (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Fermentation in Dough",
+      "objective": "Study gas production during fermentation by yeast",
+      "materials": ["Flour", "Sugar", "Yeast", "Warm water", "Two bowls"],
+      "steps": [
+        "Prepare dough in two bowls",
+        "Add yeast to one bowl only",
+        "Leave both bowls in a warm place",
+        "Compare dough volume after a few hours"
+      ],
+      "learning_outcome": "Students understand fermentation and carbon dioxide formation",
+      "evaluation": "Explanation of dough rising (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Curd Formation Investigation",
+      "objective": "Investigate bacterial fermentation in milk",
+      "materials": ["Milk", "Curd starter", "Two bowls"],
+      "steps": [
+        "Add curd to warm milk in one bowl",
+        "Add curd to cold milk in another bowl",
+        "Observe changes after several hours",
+        "Compare results"
+      ],
+      "learning_outcome": "Students understand the role of Lactobacillus bacteria",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Environmental Conditions for Microbial Growth",
+      "objective": "Study how temperature affects microbial growth",
+      "materials": ["Two bread slices", "Plate", "Refrigerator"],
+      "steps": [
+        "Place one bread slice at room temperature",
+        "Place another in the refrigerator",
+        "Observe after three days",
+        "Compare fungal growth"
+      ],
+      "learning_outcome": "Students understand environmental conditions required for microbes",
+      "evaluation": "Comparison explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Nitrogen Fixation Case Study",
+      "objective": "Understand the role of Rhizobium bacteria in soil fertility",
+      "materials": ["Legume plant sample", "Magnifying glass", "Notebook"],
+      "steps": [
+        "Observe root nodules of legume plants",
+        "Research the role of Rhizobium bacteria",
+        "Explain how nitrogen fixation improves soil fertility",
+        "Prepare a short report"
+      ],
+      "learning_outcome": "Students understand biological nitrogen fixation",
+      "evaluation": "Quality of explanation and report (10 marks)"
+    }
+  ]
+}

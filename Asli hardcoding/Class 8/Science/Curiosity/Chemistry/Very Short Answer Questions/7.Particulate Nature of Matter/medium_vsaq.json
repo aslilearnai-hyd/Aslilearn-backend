@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Particulate Nature of Matter",
+  "generated_at": "2026-03-05T18:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What does the particulate nature of matter state?",
+      "answer": "It states that matter is composed of extremely small particles.",
+      "key_points": ["particulate nature"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What happens when sugar dissolves in water?",
+      "answer": "Sugar particles spread uniformly among water particles.",
+      "key_points": ["dissolution"],
+      "source_section": "Activity 7.2"
+    },
+    {
+      "question_number": 3,
+      "question": "What does the dissolution of sugar in water indicate?",
+      "answer": "It indicates that particles of matter have spaces between them.",
+      "key_points": ["interparticle spaces"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is meant by interparticle attraction?",
+      "answer": "It is the force that holds particles of matter together.",
+      "key_points": ["interparticle attraction"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which state of matter has closely packed particles?",
+      "answer": "Solids.",
+      "key_points": ["solid particles"],
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do liquids flow easily?",
+      "answer": "Because their particles can slide past one another.",
+      "key_points": ["liquid motion"],
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are gases easily compressible?",
+      "answer": "Because there are large spaces between gas particles.",
+      "key_points": ["compressibility"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 8,
+      "question": "What property allows gases to fill the entire container?",
+      "answer": "Free movement of gas particles.",
+      "key_points": ["gas expansion"],
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is diffusion?",
+      "answer": "The movement of particles from higher concentration to lower concentration.",
+      "key_points": ["diffusion"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Why does diffusion occur faster in gases?",
+      "answer": "Because gas particles move faster and are farther apart.",
+      "key_points": ["diffusion rate"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 11,
+      "question": "What happens to particle motion when temperature increases?",
+      "answer": "Particles gain energy and move faster.",
+      "key_points": ["temperature effect"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 12,
+      "question": "What process changes solid into liquid?",
+      "answer": "Melting.",
+      "key_points": ["melting"],
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens to interparticle attraction during melting?",
+      "answer": "It becomes weaker.",
+      "key_points": ["state change"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is boiling point?",
+      "answer": "The temperature at which a liquid changes into gas.",
+      "key_points": ["boiling point"],
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Why does evaporation occur from the surface of liquids?",
+      "answer": "Because surface particles gain enough energy to escape as vapor.",
+      "key_points": ["evaporation"],
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Name one factor that increases evaporation.",
+      "answer": "High temperature.",
+      "key_points": ["evaporation factors"],
+      "source_section": "Evaporation Concept"
+    },
+    {
+      "question_number": 17,
+      "question": "What are fluids?",
+      "answer": "Substances that can flow such as liquids and gases.",
+      "key_points": ["fluids"],
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Which state of matter has the fastest particle movement?",
+      "answer": "Gases.",
+      "key_points": ["particle motion"],
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Why do solids generally have high density?",
+      "answer": "Because particles are tightly packed.",
+      "key_points": ["solid density"],
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Why does perfume smell spread in a room?",
+      "answer": "Due to diffusion of gas particles.",
+      "key_points": ["diffusion example"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 21,
+      "question": "What does the potassium permanganate experiment demonstrate?",
+      "answer": "Continuous movement of particles in liquids.",
+      "key_points": ["diffusion experiment"],
+      "source_section": "Activity 7.8"
+    },
+    {
+      "question_number": 22,
+      "question": "What happens to particle spacing when matter changes from liquid to gas?",
+      "answer": "Particle spacing increases greatly.",
+      "key_points": ["particle spacing"],
+      "source_section": "States of Matter"
+    },
+    {
+      "question_number": 23,
+      "question": "Which state of matter shows least compressibility?",
+      "answer": "Solids.",
+      "key_points": ["compressibility"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 24,
+      "question": "What happens to particle energy when heat is supplied?",
+      "answer": "Particle kinetic energy increases.",
+      "key_points": ["particle energy"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 25,
+      "question": "What does particle theory explain?",
+      "answer": "It explains the properties and behavior of matter based on particle arrangement and motion.",
+      "key_points": ["particle theory"],
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

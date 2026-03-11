@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Drainage",
+    "generated_at": "2026-03-08T10:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The area drained by a river and its tributaries is called:",
+            "options": {
+                "A": "River valley",
+                "B": "Drainage basin",
+                "C": "Water divide",
+                "D": "Delta"
+            },
+            "correct_answer": "B",
+            "explanation": "A drainage basin refers to the entire region drained by a river and its tributaries.",
+            "difficulty": "medium",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which river system forms the world's largest delta?",
+            "options": {
+                "A": "Indus",
+                "B": "Ganga-Brahmaputra",
+                "C": "Godavari",
+                "D": "Krishna"
+            },
+            "correct_answer": "B",
+            "explanation": "The Ganga and Brahmaputra rivers together form the Sundarban delta, the largest in the world.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The Indus river flows through which region of India?",
+            "options": {
+                "A": "Punjab plains",
+                "B": "Ladakh",
+                "C": "Western Ghats",
+                "D": "Ganga plains"
+            },
+            "correct_answer": "B",
+            "explanation": "The Indus flows through Ladakh in India before entering Pakistan.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which tributary joins the Ganga at Prayagraj?",
+            "options": {
+                "A": "Kosi",
+                "B": "Yamuna",
+                "C": "Gandak",
+                "D": "Ghaghara"
+            },
+            "correct_answer": "B",
+            "explanation": "The Yamuna joins the Ganga at Prayagraj.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which river forms Majuli, one of the largest river islands in the world?",
+            "options": {
+                "A": "Indus",
+                "B": "Ganga",
+                "C": "Brahmaputra",
+                "D": "Godavari"
+            },
+            "correct_answer": "C",
+            "explanation": "Majuli island is formed in the Brahmaputra river in Assam.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which feature is commonly found in the middle course of a river?",
+            "options": {
+                "A": "Glacier",
+                "B": "Delta",
+                "C": "Meander",
+                "D": "Water divide"
+            },
+            "correct_answer": "C",
+            "explanation": "Meanders develop in the middle and lower course of a river where the slope becomes gentle.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following rivers forms the Dhuadhar Falls?",
+            "options": {
+                "A": "Krishna",
+                "B": "Narmada",
+                "C": "Godavari",
+                "D": "Kaveri"
+            },
+            "correct_answer": "B",
+            "explanation": "The Narmada river forms the Dhuadhar Falls near Jabalpur.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which peninsular river originates near Mahabaleshwar?",
+            "options": {
+                "A": "Krishna",
+                "B": "Godavari",
+                "C": "Narmada",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "A",
+            "explanation": "The Krishna river originates near Mahabaleshwar in Maharashtra.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which river basin is the largest in Peninsular India?",
+            "options": {
+                "A": "Krishna",
+                "B": "Godavari",
+                "C": "Kaveri",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "B",
+            "explanation": "The Godavari basin is the largest river basin in Peninsular India.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which river flows through a rift valley?",
+            "options": {
+                "A": "Ganga",
+                "B": "Brahmaputra",
+                "C": "Narmada",
+                "D": "Krishna"
+            },
+            "correct_answer": "C",
+            "explanation": "The Narmada river flows through a rift valley.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following lakes is a lagoon?",
+            "options": {
+                "A": "Wular Lake",
+                "B": "Dal Lake",
+                "C": "Chilika Lake",
+                "D": "Loktak Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Chilika Lake in Odisha is a lagoon separated from the sea by sand bars.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which lake is located in Jammu and Kashmir?",
+            "options": {
+                "A": "Pulicat Lake",
+                "B": "Dal Lake",
+                "C": "Sambhar Lake",
+                "D": "Chilika Lake"
+            },
+            "correct_answer": "B",
+            "explanation": "Dal Lake is a famous lake located in Srinagar, Jammu and Kashmir.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following is a saltwater lake?",
+            "options": {
+                "A": "Dal Lake",
+                "B": "Wular Lake",
+                "C": "Sambhar Lake",
+                "D": "Loktak Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Sambhar Lake in Rajasthan is the largest saltwater lake in India.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which activity depends heavily on river water?",
+            "options": {
+                "A": "Mining",
+                "B": "Irrigation",
+                "C": "Fishing",
+                "D": "Manufacturing"
+            },
+            "correct_answer": "B",
+            "explanation": "Agriculture depends on irrigation which requires river water.",
+            "difficulty": "medium",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which factor mainly causes floods in the Brahmaputra valley?",
+            "options": {
+                "A": "Low rainfall",
+                "B": "Heavy rainfall and silt deposition",
+                "C": "Volcanic activity",
+                "D": "Low water levels"
+            },
+            "correct_answer": "B",
+            "explanation": "Heavy rainfall and large sediment loads cause frequent floods in the Brahmaputra valley.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following rivers flows eastwards into the Bay of Bengal?",
+            "options": {
+                "A": "Narmada",
+                "B": "Tapi",
+                "C": "Godavari",
+                "D": "Luni"
+            },
+            "correct_answer": "C",
+            "explanation": "Godavari flows eastwards and drains into the Bay of Bengal.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which river forms the Sundarban delta along with the Ganga?",
+            "options": {
+                "A": "Indus",
+                "B": "Brahmaputra",
+                "C": "Godavari",
+                "D": "Krishna"
+            },
+            "correct_answer": "B",
+            "explanation": "The Ganga and Brahmaputra together form the Sundarban delta.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following rivers is known for forming braided channels?",
+            "options": {
+                "A": "Indus",
+                "B": "Ganga",
+                "C": "Brahmaputra",
+                "D": "Krishna"
+            },
+            "correct_answer": "C",
+            "explanation": "The Brahmaputra forms braided channels due to heavy sediment deposition.",
+            "difficulty": "medium",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which river basin is famous for the Marble Rocks near Jabalpur?",
+            "options": {
+                "A": "Godavari",
+                "B": "Narmada",
+                "C": "Krishna",
+                "D": "Kaveri"
+            },
+            "correct_answer": "B",
+            "explanation": "The Marble Rocks are located along the Narmada river near Jabalpur.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following is an artificial lake?",
+            "options": {
+                "A": "Dal Lake",
+                "B": "Sambhar Lake",
+                "C": "Govind Sagar Lake",
+                "D": "Chilika Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Govind Sagar Lake is a reservoir formed by the Bhakra dam.",
+            "difficulty": "medium",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which sector benefits from hydroelectric power generated by rivers?",
+            "options": {
+                "A": "Agriculture",
+                "B": "Industry",
+                "C": "Electricity generation",
+                "D": "Transportation"
+            },
+            "correct_answer": "C",
+            "explanation": "Hydroelectric power from rivers is used to generate electricity.",
+            "difficulty": "medium",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following contributes most to river pollution?",
+            "options": {
+                "A": "Rainwater",
+                "B": "Industrial waste",
+                "C": "Wind",
+                "D": "Sunlight"
+            },
+            "correct_answer": "B",
+            "explanation": "Industrial waste is a major contributor to river pollution.",
+            "difficulty": "medium",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Which programme aims to clean the Ganga river?",
+            "options": {
+                "A": "National Water Plan",
+                "B": "River Protection Scheme",
+                "C": "Ganga Action Plan",
+                "D": "Hydro Plan"
+            },
+            "correct_answer": "C",
+            "explanation": "The Ganga Action Plan was launched to reduce pollution in the Ganga.",
+            "difficulty": "medium",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Which feature results from river deposition near its mouth?",
+            "options": {
+                "A": "Water divide",
+                "B": "Delta",
+                "C": "Glacier",
+                "D": "Plateau"
+            },
+            "correct_answer": "B",
+            "explanation": "A delta forms due to deposition of sediments near the river mouth.",
+            "difficulty": "medium",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is river conservation important?",
+            "options": {
+                "A": "To reduce rainfall",
+                "B": "To increase pollution",
+                "C": "To maintain water quality and ecosystems",
+                "D": "To stop rivers from flowing"
+            },
+            "correct_answer": "C",
+            "explanation": "River conservation helps maintain clean water and protect ecosystems.",
+            "difficulty": "medium",
+            "source_section": "Section 3.6"
+        }
+    ]
+}

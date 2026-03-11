@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "A Square and a Cube",
+  "difficulty": "Easy",
+  "source_pdf": "Ch-1_A_SQUARE_AND_A_CUBE.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Square Number Chart",
+      "objective": "Identify square numbers up to 20",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 20",
+        "Find the square of each number",
+        "Highlight all perfect squares"
+      ],
+      "learning_outcome": "Understands square numbers",
+      "evaluation": "Accuracy of squares (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Cube Number Table",
+      "objective": "Learn cube numbers",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 10",
+        "Find the cube of each number",
+        "Write the cube values in a table"
+      ],
+      "learning_outcome": "Understands cube numbers",
+      "evaluation": "Correct cube values (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Square Pattern Drawing",
+      "objective": "Visualize square numbers using dots",
+      "materials": ["Graph paper", "Pencil"],
+      "steps": [
+        "Draw dots in square patterns",
+        "Make patterns for 1², 2², 3² and 4²",
+        "Count the total dots in each pattern"
+      ],
+      "learning_outcome": "Visual understanding of square numbers",
+      "evaluation": "Correct patterns drawn (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Cube Model Activity",
+      "objective": "Understand cubes using models",
+      "materials": ["Small blocks or cubes", "Notebook"],
+      "steps": [
+        "Arrange cubes to form a 2×2×2 cube",
+        "Count the number of cubes used",
+        "Repeat for a 3×3×3 cube"
+      ],
+      "learning_outcome": "Visual understanding of cube numbers",
+      "evaluation": "Correct counting and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Square Root Finder",
+      "objective": "Find square roots of perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write five perfect square numbers",
+        "Find their square roots",
+        "Verify by multiplying the root by itself"
+      ],
+      "learning_outcome": "Understands square roots",
+      "evaluation": "Correct answers (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Cube Root Practice",
+      "objective": "Understand cube roots",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write cube numbers like 8, 27, 64 and 125",
+        "Find their cube roots",
+        "Verify by cubing the root"
+      ],
+      "learning_outcome": "Understands cube roots",
+      "evaluation": "Accuracy (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Square vs Cube Comparison",
+      "objective": "Differentiate between squares and cubes",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Create two columns named Squares and Cubes",
+        "Write examples of each",
+        "Add a short explanation of each concept"
+      ],
+      "learning_outcome": "Distinguishes square and cube numbers",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Real-Life Square Shapes",
+      "objective": "Identify square shapes in real life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe objects around you",
+        "List five square-shaped objects",
+        "Measure their sides if possible"
+      ],
+      "learning_outcome": "Connects square concept to real life",
+      "evaluation": "Relevant examples (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Perfect Square Identification",
+      "objective": "Recognise perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers from 1 to 100",
+        "Mark all perfect square numbers",
+        "Write the square root for each"
+      ],
+      "learning_outcome": "Improves number recognition",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Build a Cube Chart",
+      "objective": "Memorize cube numbers",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Create a chart of numbers from 1 to 10",
+        "Write their cubes",
+        "Decorate the chart for classroom display"
+      ],
+      "learning_outcome": "Remembers cube numbers",
+      "evaluation": "Accuracy and presentation (10 marks)"
+    }
+  ]
+}

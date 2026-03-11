@@ -1,0 +1,183 @@
+{
+    "content_type": "Medium Difficulty Long Answer Questions",
+    "chapter": "Chapter 11: Light – Shadows and Reflections",
+    "generated_at": "2026-03-06T14:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how shadows are formed and why they change in size and shape.",
+            "answer": "Shadows are formed when an opaque object blocks light from a source. They change in size and shape depending on the distance of the object from the light source and the screen, and the angle of the light.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between regular and diffused reflection with examples.",
+            "answer": "Regular reflection occurs on smooth surfaces, producing clear images (e.g., mirror). Diffused reflection occurs on rough surfaces, scattering light in all directions, forming no clear image (e.g., wall).",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the characteristics of images formed by plane mirrors.",
+            "answer": "Images in plane mirrors are virtual, upright, laterally inverted, and of the same size as the object. The distance of the image behind the mirror equals the object’s distance in front.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain lateral inversion in mirrors with an example.",
+            "answer": "Lateral inversion is the reversal of left and right in a mirror image. For example, the word 'STOP' appears reversed as 'POTS' in a plane mirror.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "How does a concave mirror form different types of images?",
+            "answer": "Concave mirrors converge light. If the object is beyond the focal point, a real, inverted image is formed. If the object is between the mirror and focal point, a virtual, upright, enlarged image forms.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe an activity to show that light travels in straight lines.",
+            "answer": "Shine light through a pinhole or align pins in a straight line and observe that light passes through only when aligned. Misalignment blocks the light, showing it travels in straight lines.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why shadows are darker at the center and lighter at the edges.",
+            "answer": "The center (umbra) is completely blocked from light, making it darkest. The edges (penumbra) receive partial light, making them lighter.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "How do translucent objects affect the shadows they form?",
+            "answer": "Translucent objects allow some light to pass through, forming faint or blurry shadows, unlike opaque objects which form dark, sharp shadows.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe how multiple light sources create multiple shadows.",
+            "answer": "Each light source produces its own shadow. Overlapping shadows from multiple sources create several dark and light areas depending on position and number of sources.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how a pinhole camera works.",
+            "answer": "A pinhole camera has a small hole. Light passes through and projects an inverted image on the opposite screen. It works due to the straight-line propagation of light.",
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the difference between real and virtual images.",
+            "answer": "Real images are formed when light rays actually meet and can be projected (e.g., projector screen). Virtual images appear behind a mirror or lens, cannot be projected, and are seen only when looking into the mirror or lens.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the effect of curved mirrors on image formation.",
+            "answer": "Concave mirrors can produce real or virtual images depending on the object’s distance from the mirror. Convex mirrors always produce virtual, smaller, upright images.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 13,
+            "question": "How can the length of a shadow be used to measure the height of an object?",
+            "answer": "By measuring the shadow and using trigonometry or similar triangles with the angle of light incidence, the height of the object can be calculated.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how periscopes use the laws of reflection.",
+            "answer": "Periscopes have two mirrors at 45°. Light reflects from the top mirror to the bottom mirror, reaching the observer’s eye. The law of reflection ensures correct angles for viewing.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Give examples of everyday applications of shadows and reflections.",
+            "answer": "Shadows are used in sundials, determining obstruction, and measuring heights. Reflections are used in mirrors, periscopes, telescopes, solar cookers, and decorative items.",
+            "marks": 4,
+            "source_section": "Section 11.1 and 11.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why images in a plane mirror appear at the same distance behind the mirror.",
+            "answer": "Because light rays reflect off the mirror obeying the law of reflection, making the image appear at the same distance behind the mirror as the object is in front.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe the role of focal length in image formation by mirrors.",
+            "answer": "Focal length determines where a concave mirror converges light to form a real image. Shorter focal length mirrors converge light more sharply, affecting image size and distance.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the effect of moving the object closer or farther from a concave mirror.",
+            "answer": "Moving the object closer than the focal point produces a virtual, enlarged image. Beyond the focal point, the image is real, inverted, and its size decreases as the object moves away.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How do shadows help in determining time using a sundial?",
+            "answer": "The shadow of the gnomon on a sundial moves as the sun’s position changes. Its position indicates the time of day.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why convex mirrors are used as rear-view mirrors.",
+            "answer": "Convex mirrors diverge light rays, forming virtual, smaller, upright images, allowing a wider field of view to see more area behind vehicles.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe how image size changes in a concave mirror when the object distance changes.",
+            "answer": "When the object is far from the mirror, the image is smaller and real. As the object approaches the focal point, the image becomes larger and may become virtual if inside the focal point.",
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why shadows are sharper with a point light source compared to a large light source.",
+            "answer": "A point light source produces a sharp umbra because light comes from a single direction. A larger source creates overlapping light rays, forming a penumbra and fuzzy shadow edges.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "How do multiple mirrors change the direction of light in devices like periscopes or kaleidoscopes?",
+            "answer": "Multiple mirrors reflect light at precise angles, guiding rays along desired paths to provide images from different perspectives or produce multiple reflections for patterns.",
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Describe how a concave lens affects light rays and image formation.",
+            "answer": "A concave lens diverges light rays, producing virtual, upright, and smaller images of objects, unlike concave mirrors which converge rays to form real images.",
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the difference between umbra and penumbra in simple terms.",
+            "answer": "Umbra is the fully dark central part of a shadow where light is completely blocked. Penumbra is the lighter outer part where some light reaches, causing a partial shadow.",
+            "marks": 4,
+            "source_section": "Section 11.1"
+        }
+    ]
+}

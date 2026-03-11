@@ -1,0 +1,180 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Electricity",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class10_science_ch12.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Graphical Determination of Resistance",
+            "objective": "Find unknown resistance using V-I graph with error analysis",
+            "materials": [
+                "Unknown resistor",
+                "Variable power supply",
+                "Precise ammeter/voltmeter",
+                "Graph paper"
+            ],
+            "steps": [
+                "Take 10+ readings",
+                "Plot V vs I, find best fit line",
+                "Calculate R from slope, estimate % error"
+            ],
+            "learning_outcome": "Applies graphical method with precision",
+            "evaluation": "Graph, R value, error discussion (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Temperature Dependence of Resistance",
+            "objective": "Study resistance change with temperature",
+            "materials": [
+                "Thermistor or bulb filament",
+                "Hot water bath",
+                "Thermometer",
+                "Circuit"
+            ],
+            "steps": [
+                "Measure R at different temperatures",
+                "Plot R vs T",
+                "Explain positive coefficient"
+            ],
+            "learning_outcome": "Understands temperature effect on metals",
+            "evaluation": "Graph and explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Complex Circuit Analysis",
+            "objective": "Solve Wheatstone bridge-like circuit",
+            "materials": [
+                "Four resistors (bridge setup)",
+                "Galvanometer (or bulb)",
+                "Battery"
+            ],
+            "steps": [
+                "Set up unbalanced bridge",
+                "Measure currents/voltages",
+                "Calculate using Kirchhoff's laws",
+                "Balance and verify"
+            ],
+            "learning_outcome": "Applies KCL/KVL",
+            "evaluation": "Calculations and verification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Heating Effect and Specific Heat",
+            "objective": "Find specific heat using electrical method",
+            "materials": [
+                "Immersion heater",
+                "Water in calorimeter",
+                "Thermometer",
+                "Ammeter, Voltmeter, Stopwatch"
+            ],
+            "steps": [
+                "Heat water for time t",
+                "Record ΔT, I, V",
+                "Calculate heat = VIt = m s ΔT",
+                "Find s (specific heat)"
+            ],
+            "learning_outcome": "Links Joule's law to calorimetry",
+            "evaluation": "Calculation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Maximum Power Transfer Theorem Demo",
+            "objective": "Show load resistance = source resistance for max power",
+            "materials": [
+                "Battery with internal r",
+                "Variable load resistor",
+                "Voltmeter across load"
+            ],
+            "steps": [
+                "Vary load R_L",
+                "Measure power P = V²/R_L",
+                "Find max P when R_L = r"
+            ],
+            "learning_outcome": "Understands power transfer optimization",
+            "evaluation": "Graph and conclusion (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Kirchhoff's Laws Application Project",
+            "objective": "Analyze multi-loop circuit",
+            "materials": [
+                "Complex circuit board or drawn setup",
+                "Meters"
+            ],
+            "steps": [
+                "Assign currents",
+                "Apply KCL/KVL equations",
+                "Solve for unknowns",
+                "Verify experimentally"
+            ],
+            "learning_outcome": "Solves advanced circuit problems",
+            "evaluation": "Equations and solutions (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Electricity Bill Optimization Model",
+            "objective": "Design energy-saving strategy",
+            "materials": [
+                "Home inventory",
+                "Calculator"
+            ],
+            "steps": [
+                "Calculate current bill",
+                "Suggest LED replacements, usage reduction",
+                "Calculate savings and payback period"
+            ],
+            "learning_outcome": "Applies concepts to conservation",
+            "evaluation": "Realistic calculations (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Superconductor Concept Model (Demo)",
+            "objective": "Explain zero resistance (conceptual)",
+            "materials": [
+                "Chart",
+                "Reference on Meissner effect"
+            ],
+            "steps": [
+                "Research and present superconductor properties",
+                "Draw magnetic levitation demo",
+                "Discuss future applications"
+            ],
+            "learning_outcome": "Extends resistance concept",
+            "evaluation": "Depth and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Error Analysis in Ohm's Law Experiment",
+            "objective": "Perform experiment with error propagation",
+            "materials": [
+                "Standard setup",
+                "Precise instruments"
+            ],
+            "steps": [
+                "Take readings with least count",
+                "Calculate % error in V, I, R",
+                "Discuss sources (contact resistance, heating)"
+            ],
+            "learning_outcome": "Understands experimental accuracy",
+            "evaluation": "Error analysis report (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Innovation: Smart Energy Meter Sketch",
+            "objective": "Design conceptual smart device",
+            "materials": [
+                "Notebook",
+                "Colors"
+            ],
+            "steps": [
+                "Sketch device monitoring power usage",
+                "Explain integration with chapter concepts",
+                "Propose IoT features for alerts"
+            ],
+            "learning_outcome": "Stimulates application thinking",
+            "evaluation": "Originality and explanation (10 marks)"
+        }
+    ]
+}

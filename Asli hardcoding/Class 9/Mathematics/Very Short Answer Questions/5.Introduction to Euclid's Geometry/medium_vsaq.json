@@ -1,0 +1,236 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 5: Introduction to Euclid’s Geometry",
+    "difficulty": "medium",
+    "generated_at": "2026-03-05T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which civilisation used geometry to redraw land boundaries after Nile floods?",
+            "answer": "The Egyptian civilisation used geometry to redraw land boundaries.",
+            "key_points": [
+                "Egyptians",
+                "Nile floods"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What was the ratio of bricks used in the Indus Valley civilisation?",
+            "answer": "The ratio was 4 : 2 : 1.",
+            "key_points": [
+                "brick ratio"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the Indian texts that contained geometric constructions.",
+            "answer": "The Sulbasutras contained geometric constructions.",
+            "key_points": [
+                "Sulbasutras"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Who was the famous pupil of Thales?",
+            "answer": "Pythagoras was the famous pupil of Thales.",
+            "key_points": [
+                "Pythagoras"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What type of reasoning did Greek mathematicians emphasise?",
+            "answer": "They emphasised deductive reasoning.",
+            "key_points": [
+                "deductive reasoning"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is meant by a plane surface?",
+            "answer": "A plane surface lies evenly with the straight lines on itself.",
+            "key_points": [
+                "plane surface"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What are the boundaries of surfaces called?",
+            "answer": "The boundaries of surfaces are called lines.",
+            "key_points": [
+                "lines"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the dimension of a surface?",
+            "answer": "A surface has two dimensions.",
+            "key_points": [
+                "length",
+                "breadth"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the dimension of a solid?",
+            "answer": "A solid has three dimensions.",
+            "key_points": [
+                "3 dimensions"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is meant by a terminated line?",
+            "answer": "A terminated line is a line segment.",
+            "key_points": [
+                "line segment"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What does Euclid’s second postulate allow?",
+            "answer": "It allows a line segment to be extended indefinitely.",
+            "key_points": [
+                "extend line"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What does Euclid’s third postulate state?",
+            "answer": "A circle can be drawn with any centre and radius.",
+            "key_points": [
+                "circle construction"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What does Euclid’s fourth postulate state?",
+            "answer": "All right angles are equal to one another.",
+            "key_points": [
+                "right angles"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What does the axiom 'things equal to the same thing are equal to one another' mean?",
+            "answer": "If two quantities are equal to the same quantity, they are equal to each other.",
+            "key_points": [
+                "transitive equality"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What does the axiom 'whole is greater than the part' state?",
+            "answer": "A whole quantity is always greater than any of its parts.",
+            "key_points": [
+                "whole greater"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "How many lines pass through two distinct points?",
+            "answer": "Only one unique line passes through two distinct points.",
+            "key_points": [
+                "unique line"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is deductive reasoning?",
+            "answer": "Deductive reasoning is deriving conclusions logically from known facts.",
+            "key_points": [
+                "logical reasoning"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What are propositions in geometry?",
+            "answer": "Propositions are statements that are proved.",
+            "key_points": [
+                "proved statements"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How many propositions did Euclid deduce in Elements?",
+            "answer": "Euclid deduced 465 propositions.",
+            "key_points": [
+                "465 propositions"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is meant by coincidence in Euclid’s axiom?",
+            "answer": "Coincidence means two objects exactly overlap each other.",
+            "key_points": [
+                "overlap"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the role of axioms in geometry?",
+            "answer": "Axioms serve as basic assumptions for deriving results.",
+            "key_points": [
+                "basic assumptions"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the role of definitions in geometry?",
+            "answer": "Definitions explain the meaning of geometric terms.",
+            "key_points": [
+                "define terms"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What ensures consistency in a system of axioms?",
+            "answer": "Consistency means no contradictions arise from axioms.",
+            "key_points": [
+                "no contradiction"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of object separates one part of space from another?",
+            "answer": "A surface separates one part of space from another.",
+            "key_points": [
+                "surface"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the boundary of a solid called?",
+            "answer": "The boundary of a solid is called a surface.",
+            "key_points": [
+                "surface"
+            ],
+            "source_section": "Section 5.2"
+        }
+    ]
+}

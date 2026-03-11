@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Answer Questions",
+  "chapter": "Chapter 13: Our Environment",
+  "generated_at": "2026-03-11T02:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the environment?",
+      "answer": "The surroundings in which living organisms live and interact.",
+      "marks": 2,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is an ecosystem?",
+      "answer": "A system formed by the interaction of living organisms with their environment.",
+      "marks": 2,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are biotic components?",
+      "answer": "The living components of an ecosystem.",
+      "marks": 2,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What are abiotic components?",
+      "answer": "The non-living components of an ecosystem such as air, water, and soil.",
+      "marks": 2,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What are producers?",
+      "answer": "Organisms that make their own food using sunlight through photosynthesis.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What are consumers?",
+      "answer": "Organisms that depend on other organisms for food.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What are decomposers?",
+      "answer": "Organisms that break down dead plants and animals into simpler substances.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a food chain?",
+      "answer": "A sequence of organisms in which each organism is eaten by the next.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a food web?",
+      "answer": "A network of interconnected food chains in an ecosystem.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a trophic level?",
+      "answer": "Each step or level in a food chain.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the first trophic level in a food chain?",
+      "answer": "Producers.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are decomposers important in an ecosystem?",
+      "answer": "They recycle nutrients back into the environment.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 13,
+      "question": "What is biological magnification?",
+      "answer": "The increase in concentration of harmful chemicals at higher trophic levels.",
+      "marks": 2,
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do harmful chemicals accumulate in food chains?",
+      "answer": "Because they are not easily broken down and remain in organisms.",
+      "marks": 2,
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 15,
+      "question": "What are biodegradable substances?",
+      "answer": "Substances that can be broken down by microorganisms.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 16,
+      "question": "What are non-biodegradable substances?",
+      "answer": "Substances that cannot be easily decomposed by microorganisms.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Give one example of a biodegradable substance.",
+      "answer": "Vegetable waste.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Give one example of a non-biodegradable substance.",
+      "answer": "Plastic.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Why should non-biodegradable wastes be managed carefully?",
+      "answer": "Because they persist in the environment and cause pollution.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 20,
+      "question": "What role do green plants play in an ecosystem?",
+      "answer": "They act as producers and form the base of the food chain.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are food chains usually short?",
+      "answer": "Because energy decreases at each trophic level.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What happens to energy as it moves through a food chain?",
+      "answer": "Energy decreases at each trophic level.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Why are microorganisms essential for the environment?",
+      "answer": "They help in decomposition and nutrient recycling.",
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 24,
+      "question": "How does human activity affect ecosystems?",
+      "answer": "By causing pollution, deforestation, and disruption of food chains.",
+      "marks": 2,
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is waste management important for environmental protection?",
+      "answer": "It reduces pollution and protects ecosystems.",
+      "marks": 2,
+      "source_section": "Section 13.4"
+    }
+  ]
+}

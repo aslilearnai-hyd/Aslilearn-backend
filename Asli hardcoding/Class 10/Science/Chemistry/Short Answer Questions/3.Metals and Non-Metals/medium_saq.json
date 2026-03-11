@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Metals and Non-metals",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-10T23:42:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why are sodium and potassium stored under kerosene oil?",
+            "answer": "Sodium and potassium are highly reactive metals. They react vigorously with the oxygen and moisture present in the air, which can lead to accidental fires. Storing them in kerosene cuts off their contact with air and moisture.",
+            "key_concepts": ["reactivity", "alkali metals"],
+            "marks": 2,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are amphoteric oxides? Give two examples.",
+            "answer": "Metal oxides which react with both acids as well as bases to produce salts and water are called amphoteric oxides. Examples: Aluminium oxide ($Al_2O_3$) and Zinc oxide ($ZnO$).",
+            "key_concepts": ["amphoteric oxides", "chemical properties"],
+            "marks": 2,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does calcium float when added to water?",
+            "answer": "Calcium reacts with water to form hydrogen gas. The bubbles of hydrogen gas formed stick to the surface of the metal, making it buoyant and causing it to float.",
+            "key_concepts": ["reaction with water", "buoyancy"],
+            "marks": 2,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the chemical equation for the reaction of iron with steam.",
+            "answer": "$3Fe(s) + 4H_2O(g) \\rightarrow Fe_3O_4(s) + 4H_2(g)$. Note that iron does not react with cold or hot water, only with steam.",
+            "key_concepts": ["iron", "steam reaction"],
+            "marks": 2,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is aqua regia? State its significance.",
+            "answer": "Aqua regia is a freshly prepared mixture of concentrated hydrochloric acid and concentrated nitric acid in the ratio 3:1. It is significant because it can dissolve noble metals like gold and platinum.",
+            "key_concepts": ["aqua regia", "noble metals"],
+            "marks": 2,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is no hydrogen gas evolved when a metal reacts with dilute nitric acid ($HNO_3$)?",
+            "answer": "$HNO_3$ is a strong oxidizing agent. It oxidizes the hydrogen produced to water and itself gets reduced to any of the nitrogen oxides ($N_2O$, $NO$, $NO_2$).",
+            "key_concepts": ["nitric acid", "oxidation"],
+            "marks": 2,
+            "source_section": "Section 3.2.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the term 'Reactivity Series' of metals.",
+            "answer": "The reactivity series is a list of metals arranged in the order of their decreasing activities. Metals at the top (like Potassium) are the most reactive, while those at the bottom (like Gold) are the least reactive.",
+            "key_concepts": ["reactivity series", "displacement"],
+            "marks": 2,
+            "source_section": "Section 3.2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Why do ionic compounds have high melting points?",
+            "answer": "Ionic compounds consist of oppositely charged ions held together by strong electrostatic forces of attraction. A large amount of energy is required to break these strong inter-ionic bonds.",
+            "key_concepts": ["ionic bonds", "lattice energy"],
+            "marks": 2,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "In what state do ionic compounds conduct electricity and why?",
+            "answer": "Ionic compounds conduct electricity in the molten state or aqueous solution. In these states, the electrostatic forces are overcome, and ions are free to move and carry charge.",
+            "key_concepts": ["electrical conductivity", "ionic state"],
+            "marks": 2,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Define 'Gangue' and 'Ore'.",
+            "answer": "Ore is a mineral from which a metal can be extracted profitably. Gangue refers to the unwanted earthy impurities (like sand and soil) present in the ore.",
+            "key_concepts": ["metallurgy", "impurities"],
+            "marks": 2,
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the difference between Roasting and Calcination?",
+            "answer": "Roasting is heating sulphide ores in excess air to convert them into oxides. Calcination is heating carbonate ores in limited air/absence of air to convert them into oxides.",
+            "key_concepts": ["roasting", "calcination"],
+            "marks": 2,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Write the reaction for the 'Thermite Process'.",
+            "answer": "$Fe_2O_3(s) + 2Al(s) \\rightarrow 2Fe(l) + Al_2O_3(s) + Heat$. This highly exothermic reaction produces molten iron used to join railway tracks.",
+            "key_concepts": ["thermite reaction", "reduction"],
+            "marks": 2,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "How is copper refined electrolytically?",
+            "answer": "A thin strip of pure copper is the cathode, and impure copper is the anode. On passing current, pure copper from the anode dissolves and deposits on the cathode.",
+            "key_concepts": ["electrolytic refining", "copper"],
+            "marks": 2,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 14,
+            "question": "What is 'Anode Mud'?",
+            "answer": "During electrolytic refining, the insoluble impurities from the impure anode settle down at the bottom of the anode. These are called anode mud.",
+            "key_concepts": ["refining", "impurities"],
+            "marks": 1,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 15,
+            "question": "What is galvanisation?",
+            "answer": "It is a method of protecting steel and iron from rusting by coating them with a thin layer of zinc. The zinc layer acts as a sacrificial barrier.",
+            "key_concepts": ["corrosion prevention", "zinc"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is an alloy? Give an example of a non-metal being part of an alloy.",
+            "answer": "An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal. Steel is an alloy where iron is mixed with a small amount of carbon (a non-metal).",
+            "key_concepts": ["alloys", "steel"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is 24 carat gold not suitable for making jewellery?",
+            "answer": "24 carat gold is very soft. To make it harder and suitable for jewellery, it is alloyed with silver or copper, typically becoming 22 carat gold.",
+            "key_concepts": ["gold", "alloys"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What is an amalgam?",
+            "answer": "An amalgam is an alloy in which one of the constituent metals is mercury.",
+            "key_concepts": ["mercury", "alloys"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Name two metals that melt when kept on your palm.",
+            "answer": "Gallium and Caesium. They have very low melting points, close to human body temperature.",
+            "key_concepts": ["physical properties", "melting point"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why does the color of copper sulphate solution change when an iron nail is dipped in it?",
+            "answer": "Iron is more reactive than copper. It displaces copper from copper sulphate solution to form iron sulphate, which is light green, causing the blue color to fade.",
+            "key_concepts": ["displacement reaction", "reactivity"],
+            "marks": 2,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Distinguish between a metal and non-metal on the basis of their oxides.",
+            "answer": "Most metals produce basic oxides when dissolved in water, whereas most non-metals produce acidic oxides.",
+            "key_concepts": ["metal oxides", "non-metal oxides"],
+            "marks": 2,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is 'Anodising'?",
+            "answer": "Anodising is the process of forming a thick oxide layer of aluminium. This oxide coat makes it resistant to further corrosion and can be dyed in attractive colors.",
+            "key_concepts": ["corrosion", "aluminium"],
+            "marks": 2,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is sodium kept immersed in kerosene oil?",
+            "answer": "Sodium is highly reactive; it reacts vigorously with air and water. Kerosene is inert and prevents sodium from reacting with atmospheric oxygen and moisture.",
+            "key_concepts": ["safety", "alkali metals"],
+            "marks": 1,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Which gas is produced when magnesium reacts with very dilute nitric acid?",
+            "answer": "Hydrogen gas ($H_2$) is produced. Magnesium and Manganese are the only two metals that react with very dilute $HNO_3$ to evolve $H_2$.",
+            "key_concepts": ["nitric acid", "magnesium"],
+            "marks": 1,
+            "source_section": "Section 3.2.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are copper vessels cleaned with lemon or tamarind juice?",
+            "answer": "Copper vessels develop a green layer of basic copper carbonate due to corrosion. The citric acid in lemon or tamarind neutralizes the basic layer and cleans the vessel.",
+            "key_concepts": ["corrosion", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

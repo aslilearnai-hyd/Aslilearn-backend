@@ -1,0 +1,161 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Earth, Moon, and the Sun",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the shape and movements of the Earth",
+        "Learn about rotation and revolution of Earth",
+        "Understand day, night, and seasons",
+        "Know the phases of the Moon and lunar month",
+        "Understand solar and lunar eclipses",
+        "Learn about tides and their causes"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Earth and Sun",
+            "topics_covered": [
+                "Shape of the Earth",
+                "Earth’s position in the solar system",
+                "Importance of Sun"
+            ],
+            "teaching_strategy": [
+                "Oral questioning",
+                "Discussion with charts/globe",
+                "Storytelling about Sun’s role in daily life"
+            ],
+            "student_activities": [
+                "Identify Earth and Sun in models",
+                "List Sun’s effects on Earth"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Rotation and Day-Night",
+            "topics_covered": [
+                "Rotation of Earth",
+                "Time for one rotation",
+                "Cause of day and night"
+            ],
+            "teaching_strategy": [
+                "Demonstration with globe and torch",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Observe day and night simulation",
+                "Draw diagrams showing rotation and lighted side"
+            ],
+            "assessment": [
+                "Diagram evaluation",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Revolution and Seasons",
+            "topics_covered": [
+                "Earth’s revolution around Sun",
+                "Time taken for revolution",
+                "Tilt of Earth’s axis and seasons",
+                "Equinox and solstice"
+            ],
+            "teaching_strategy": [
+                "Globe demonstration with tilted axis",
+                "Discussion of seasonal changes"
+            ],
+            "student_activities": [
+                "Observe seasonal model",
+                "Explain why seasons occur"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick written notes"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Phases of the Moon",
+            "topics_covered": [
+                "Moon as Earth’s satellite",
+                "Phases of the Moon",
+                "Lunar month and duration"
+            ],
+            "teaching_strategy": [
+                "Chart/diagram demonstration",
+                "Storytelling to explain phases"
+            ],
+            "student_activities": [
+                "Draw Moon phases diagram",
+                "List full Moon and new Moon days"
+            ],
+            "assessment": [
+                "Diagram check",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Eclipses and Tides",
+            "topics_covered": [
+                "Solar and lunar eclipses",
+                "Causes of eclipses",
+                "Tides and their cause",
+                "Spring and neap tides"
+            ],
+            "teaching_strategy": [
+                "Demonstration using globe, torch, and ball",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Simulate eclipses",
+                "Identify spring and neap tides"
+            ],
+            "assessment": [
+                "Practical observation",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Recap",
+            "topics_covered": [
+                "Earth’s rotation and revolution",
+                "Day, night, and seasons",
+                "Moon phases, eclipses, and tides"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision",
+                "Rapid-fire questions",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "Participate in quiz",
+                "Draw diagrams of day-night, Moon phases, and eclipses"
+            ],
+            "assessment": [
+                "Short written test",
+                "Class participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Globe and torch",
+        "Charts of Earth, Moon, Sun",
+        "Markers or Chalk",
+        "Models of eclipses and tides"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Practical demonstration",
+        "Diagram and notebook checking",
+        "Short quiz"
+    ],
+    "teacher_tip": "Use simple models and visual aids to explain rotation, revolution, and phases; avoid heavy calculations at this level."
+}

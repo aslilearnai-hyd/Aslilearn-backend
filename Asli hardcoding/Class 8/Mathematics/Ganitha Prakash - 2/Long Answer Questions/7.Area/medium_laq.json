@@ -1,0 +1,317 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Area",
+    "generated_at": "2026-03-04T19:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how the area of a rectangle can be determined using unit squares.",
+            "answer": "A rectangle can be divided into unit squares arranged in rows and columns. The number of squares equals length × width, giving the area.",
+            "answer_outline": [
+                "Unit squares arrangement",
+                "Rows and columns concept",
+                "Area formula"
+            ],
+            "key_concepts": ["rectangle area", "unit squares"],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "A rectangle has length 9 cm and width 5 cm. Explain how to calculate its area and show the steps.",
+            "answer": "Area = length × width = 9 × 5 = 45 cm².",
+            "answer_outline": [
+                "Write formula",
+                "Substitute values",
+                "Compute area"
+            ],
+            "key_concepts": ["area calculation"],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Two rectangles have dimensions 7×4 cm and 8×3 cm. Compare their areas and explain which is larger.",
+            "answer": "Area1 = 28 cm² and Area2 = 24 cm². The rectangle with sides 7 cm and 4 cm has greater area.",
+            "answer_outline": [
+                "Calculate both areas",
+                "Compare results"
+            ],
+            "key_concepts": ["rectangle comparison"],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how drawing a diagonal divides a rectangle into triangles and describe the relationship between their areas.",
+            "answer": "The diagonal divides the rectangle into two congruent triangles, each having half the area of the rectangle.",
+            "answer_outline": [
+                "Diagonal division",
+                "Congruent triangles",
+                "Area relationship"
+            ],
+            "key_concepts": ["triangle area"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "A triangle has base 10 cm and height 6 cm. Explain how to calculate its area.",
+            "answer": "Area = 1/2 × base × height = 1/2 × 10 × 6 = 30 cm².",
+            "answer_outline": [
+                "Write formula",
+                "Substitute base and height",
+                "Calculate"
+            ],
+            "key_concepts": ["triangle formula"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why triangles having the same base and height have equal areas.",
+            "answer": "Area depends only on base and height. If both are equal, the areas will also be equal.",
+            "answer_outline": [
+                "Formula explanation",
+                "Equality condition"
+            ],
+            "key_concepts": ["equal triangles"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "The area of a triangle is 40 cm² and its base is 8 cm. Explain how to find its height.",
+            "answer": "Area = 1/2 × base × height. So 40 = 1/2 × 8 × h → h = 10 cm.",
+            "answer_outline": [
+                "Write formula",
+                "Substitute values",
+                "Solve for height"
+            ],
+            "key_concepts": ["triangle height"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how the area of a parallelogram can be derived from a rectangle.",
+            "answer": "A triangular portion of the parallelogram can be cut and moved to the other side, forming a rectangle with the same base and height.",
+            "answer_outline": [
+                "Cut triangle",
+                "Rearrange shape",
+                "Area formula"
+            ],
+            "key_concepts": ["parallelogram derivation"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "A parallelogram has base 12 cm and height 7 cm. Explain how to find its area.",
+            "answer": "Area = base × height = 12 × 7 = 84 cm².",
+            "answer_outline": [
+                "Write formula",
+                "Substitute values",
+                "Calculate"
+            ],
+            "key_concepts": ["parallelogram area"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the importance of height in calculating the area of a parallelogram.",
+            "answer": "Height represents the perpendicular distance between the bases, which determines the area covered.",
+            "answer_outline": [
+                "Definition of height",
+                "Relation with area"
+            ],
+            "key_concepts": ["height"],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "A rhombus has diagonals 16 cm and 12 cm. Explain how to calculate its area.",
+            "answer": "Area = 1/2 × d1 × d2 = 1/2 × 16 × 12 = 96 cm².",
+            "answer_outline": [
+                "Write formula",
+                "Substitute diagonals",
+                "Compute"
+            ],
+            "key_concepts": ["rhombus"],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how the diagonals of a rhombus help derive its area formula.",
+            "answer": "The diagonals divide the rhombus into four triangles, which helps derive the formula using half the product of diagonals.",
+            "answer_outline": [
+                "Diagonal intersection",
+                "Triangles formed"
+            ],
+            "key_concepts": ["rhombus diagonals"],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how the area formula of a trapezium is derived.",
+            "answer": "The trapezium can be divided into rectangles and triangles or combined with another trapezium to form a parallelogram.",
+            "answer_outline": [
+                "Division method",
+                "Parallelogram method"
+            ],
+            "key_concepts": ["trapezium derivation"],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "A trapezium has parallel sides 10 cm and 14 cm and height 6 cm. Calculate its area.",
+            "answer": "Area = 1/2 × height × (sum of parallel sides) = 1/2 × 6 × (10+14) = 72 cm².",
+            "answer_outline": [
+                "Write formula",
+                "Substitute values",
+                "Calculate"
+            ],
+            "key_concepts": ["trapezium area"],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why two identical trapeziums can form a parallelogram.",
+            "answer": "When placed together appropriately, their parallel sides align to create a parallelogram shape.",
+            "answer_outline": [
+                "Placement method",
+                "Shape formation"
+            ],
+            "key_concepts": ["geometric transformation"],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how the area of a pentagon can be calculated using triangles.",
+            "answer": "A pentagon can be divided into several triangles, and the sum of their areas gives the total area.",
+            "answer_outline": [
+                "Divide into triangles",
+                "Add areas"
+            ],
+            "key_concepts": ["polygon area"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how a quadrilateral can be divided into two triangles to calculate its area.",
+            "answer": "Draw a diagonal across the quadrilateral to form two triangles and calculate their areas separately.",
+            "answer_outline": [
+                "Draw diagonal",
+                "Calculate triangle areas"
+            ],
+            "key_concepts": ["quadrilateral"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the importance of using diagrams while solving area problems.",
+            "answer": "Diagrams help identify shapes, base, and height clearly, making calculations easier.",
+            "answer_outline": [
+                "Visualization",
+                "Better understanding"
+            ],
+            "key_concepts": ["diagram analysis"],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how the area of a classroom floor can be calculated.",
+            "answer": "Measure the length and width of the classroom floor and multiply them to get the area.",
+            "answer_outline": [
+                "Measure dimensions",
+                "Apply formula"
+            ],
+            "key_concepts": ["real life area"],
+            "marks": 4,
+            "source_section": "Section 7.7"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the relationship between square units and area measurement.",
+            "answer": "Area is measured in square units because it represents a two-dimensional surface.",
+            "answer_outline": [
+                "Square units concept",
+                "Example"
+            ],
+            "key_concepts": ["square units"],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how the area of an irregular shape can be estimated.",
+            "answer": "Irregular shapes can be divided into known shapes such as rectangles and triangles and their areas added.",
+            "answer_outline": [
+                "Break into simple shapes",
+                "Calculate separately"
+            ],
+            "key_concepts": ["irregular shapes"],
+            "marks": 4,
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why area formulas are important in construction and engineering.",
+            "answer": "They help measure land, building floors, and construction materials accurately.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": ["applications of area"],
+            "marks": 4,
+            "source_section": "Section 7.7"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the midpoint of a triangle side affects the areas of resulting triangles.",
+            "answer": "Joining a vertex to the midpoint divides the triangle into two equal areas.",
+            "answer_outline": [
+                "Midpoint concept",
+                "Equal areas"
+            ],
+            "key_concepts": ["triangle midpoint"],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how geometric dissection helps understand area formulas.",
+            "answer": "Dissection rearranges shapes into known figures like rectangles to derive formulas.",
+            "answer_outline": [
+                "Dissection idea",
+                "Area preservation"
+            ],
+            "key_concepts": ["dissection"],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of understanding area in everyday life.",
+            "answer": "Area calculations are useful for measuring land, designing buildings, and estimating material requirements.",
+            "answer_outline": [
+                "Daily life uses",
+                "Examples"
+            ],
+            "key_concepts": ["practical geometry"],
+            "marks": 5,
+            "source_section": "Chapter Summary"
+        }
+    ]
+}

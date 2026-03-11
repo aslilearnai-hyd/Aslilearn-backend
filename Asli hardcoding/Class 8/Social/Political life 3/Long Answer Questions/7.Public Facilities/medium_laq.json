@@ -1,0 +1,247 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Public Facilities",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-07T18:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning of public facilities with examples.",
+      "answer": "Public facilities are services provided by the government for the benefit of all citizens, such as water supply, hospitals, schools and roads.",
+      "answer_outline": [
+        "Definition of public facilities",
+        "Examples such as water, hospitals and schools"
+      ],
+      "key_concepts": ["public facilities"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Why are public facilities important for society?",
+      "answer": "Public facilities are important because they provide essential services that improve people's health, education and living standards.",
+      "answer_outline": ["Essential services", "Improved quality of life"],
+      "key_concepts": ["importance"],
+      "marks": 4,
+      "source_section": "Importance"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the importance of clean drinking water as a public facility.",
+      "answer": "Clean drinking water is essential for health and survival. It helps prevent diseases and improves sanitation.",
+      "answer_outline": ["Health benefits", "Prevention of diseases"],
+      "key_concepts": ["water supply"],
+      "marks": 4,
+      "source_section": "Water as Public Facility"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the role of government in providing public facilities.",
+      "answer": "The government provides public facilities to ensure that essential services are available and accessible to all citizens.",
+      "answer_outline": ["Government responsibility", "Equal access"],
+      "key_concepts": ["government"],
+      "marks": 4,
+      "source_section": "Role of Government"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how taxes help provide public facilities.",
+      "answer": "Taxes collected from citizens are used by the government to build and maintain public facilities such as roads, hospitals and water systems.",
+      "answer_outline": ["Collection of taxes", "Funding public services"],
+      "key_concepts": ["tax"],
+      "marks": 4,
+      "source_section": "Funding"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how public facilities improve living standards.",
+      "answer": "Public facilities such as healthcare, education and sanitation improve people's health, knowledge and overall quality of life.",
+      "answer_outline": ["Health improvement", "Education access"],
+      "key_concepts": ["living standards"],
+      "marks": 4,
+      "source_section": "Importance"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain why public hospitals are important.",
+      "answer": "Public hospitals provide affordable medical care to all citizens, especially those who cannot afford private healthcare.",
+      "answer_outline": [
+        "Affordable healthcare",
+        "Access for poor communities"
+      ],
+      "key_concepts": ["healthcare"],
+      "marks": 4,
+      "source_section": "Public Services"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the importance of public education facilities.",
+      "answer": "Public schools provide education to children and help develop skills necessary for personal and national development.",
+      "answer_outline": ["Education for all", "Skill development"],
+      "key_concepts": ["education"],
+      "marks": 4,
+      "source_section": "Public Services"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the difference between public and private facilities.",
+      "answer": "Public facilities are provided by the government for everyone, while private facilities are run by private organizations and often require payment.",
+      "answer_outline": ["Public services", "Private services"],
+      "key_concepts": ["public facilities", "private services"],
+      "marks": 4,
+      "source_section": "Comparison"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why roads are important public facilities.",
+      "answer": "Roads help people travel, transport goods and connect different regions.",
+      "answer_outline": ["Transport", "Connectivity"],
+      "key_concepts": ["roads"],
+      "marks": 4,
+      "source_section": "Infrastructure"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Explain the importance of sanitation facilities.",
+      "answer": "Sanitation facilities maintain hygiene and prevent the spread of diseases.",
+      "answer_outline": ["Hygiene", "Disease prevention"],
+      "key_concepts": ["sanitation"],
+      "marks": 4,
+      "source_section": "Sanitation"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain how electricity supports development.",
+      "answer": "Electricity supports homes, industries, hospitals and schools, helping economic and social development.",
+      "answer_outline": ["Energy supply", "Economic development"],
+      "key_concepts": ["electricity"],
+      "marks": 4,
+      "source_section": "Infrastructure"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how lack of public facilities affects communities.",
+      "answer": "Lack of facilities such as water, healthcare and education leads to poor health and low living standards.",
+      "answer_outline": ["Poor living conditions", "Health problems"],
+      "key_concepts": ["public facilities"],
+      "marks": 4,
+      "source_section": "Challenges"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain why equal access to public facilities is important.",
+      "answer": "Equal access ensures fairness and helps improve living conditions for all citizens.",
+      "answer_outline": ["Fair distribution", "Social equality"],
+      "key_concepts": ["equality"],
+      "marks": 4,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how transportation facilities help economic growth.",
+      "answer": "Transportation facilities help move goods and people, supporting trade and economic activities.",
+      "answer_outline": ["Trade support", "Economic growth"],
+      "key_concepts": ["transport"],
+      "marks": 4,
+      "source_section": "Transport"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain the importance of government responsibility in public services.",
+      "answer": "Government responsibility ensures that essential services are available and accessible to all citizens.",
+      "answer_outline": ["Public welfare", "Service provision"],
+      "key_concepts": ["government"],
+      "marks": 4,
+      "source_section": "Role of Government"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how public facilities contribute to social welfare.",
+      "answer": "Public facilities provide essential services that improve the well-being and safety of citizens.",
+      "answer_outline": ["Improved health", "Better education"],
+      "key_concepts": ["social welfare"],
+      "marks": 4,
+      "source_section": "Importance"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how taxes help maintain public services.",
+      "answer": "Taxes provide funds that the government uses to maintain infrastructure and public services.",
+      "answer_outline": ["Tax collection", "Maintenance of facilities"],
+      "key_concepts": ["tax"],
+      "marks": 4,
+      "source_section": "Funding"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how public facilities support community development.",
+      "answer": "Facilities such as schools, hospitals and roads help communities grow and improve their living conditions.",
+      "answer_outline": ["Infrastructure development", "Community growth"],
+      "key_concepts": ["community"],
+      "marks": 4,
+      "source_section": "Development"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how responsible use of public facilities benefits society.",
+      "answer": "Responsible use helps maintain facilities for a longer time and ensures that everyone can benefit from them.",
+      "answer_outline": ["Responsible usage", "Protection of public property"],
+      "key_concepts": ["citizens"],
+      "marks": 4,
+      "source_section": "Citizen Role"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain the relationship between public facilities and development.",
+      "answer": "Public facilities support economic growth and improve social conditions in society.",
+      "answer_outline": ["Infrastructure support", "Improved living standards"],
+      "key_concepts": ["development"],
+      "marks": 4,
+      "source_section": "Development"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why public facilities are necessary for modern societies.",
+      "answer": "Modern societies depend on services such as water supply, transport and electricity for daily life and development.",
+      "answer_outline": ["Essential services", "Modern infrastructure"],
+      "key_concepts": ["public facilities"],
+      "marks": 4,
+      "source_section": "Importance"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how fair distribution of facilities promotes equality.",
+      "answer": "Fair distribution ensures that all citizens have access to essential services regardless of their economic status.",
+      "answer_outline": ["Equal access", "Improved opportunities"],
+      "key_concepts": ["equality"],
+      "marks": 4,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how public facilities help improve health and education.",
+      "answer": "Hospitals improve healthcare services while schools improve knowledge and skills among citizens.",
+      "answer_outline": ["Healthcare services", "Educational opportunities"],
+      "key_concepts": ["health", "education"],
+      "marks": 4,
+      "source_section": "Public Services"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why strong public facilities are necessary for national development.",
+      "answer": "Strong public facilities improve infrastructure, increase productivity and enhance the quality of life.",
+      "answer_outline": [
+        "Infrastructure development",
+        "Economic growth",
+        "Improved living standards"
+      ],
+      "key_concepts": ["national development"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

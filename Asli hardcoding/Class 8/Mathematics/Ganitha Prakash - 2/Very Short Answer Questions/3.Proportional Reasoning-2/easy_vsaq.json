@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Proportional Reasoning – 2",
+    "generated_at": "2026-03-05T13:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a ratio?",
+            "answer": "A ratio is a comparison of two quantities using division.",
+            "key_points": ["ratio"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a proportion?",
+            "answer": "A proportion is an equality of two ratios.",
+            "key_points": ["proportion"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How can we check whether two ratios are proportional?",
+            "answer": "By cross multiplication.",
+            "key_points": ["cross multiplication"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What does map scale represent?",
+            "answer": "It represents the relationship between map distance and actual distance.",
+            "key_points": ["map scale"],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What does a scale of 1 : 6000000 mean?",
+            "answer": "1 cm on the map represents 60 km in reality.",
+            "key_points": ["map scale"],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a multi-term ratio?",
+            "answer": "A ratio involving more than two quantities.",
+            "key_points": ["multi-term ratios"],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What does simplifying a ratio mean?",
+            "answer": "Reducing a ratio to its lowest form.",
+            "key_points": ["simplifying ratios"],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the sum of angles of a triangle?",
+            "answer": "180°.",
+            "key_points": ["triangle angles"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What does dividing a quantity in a ratio mean?",
+            "answer": "Splitting a quantity into parts according to a given ratio.",
+            "key_points": ["division of quantities"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a pie chart?",
+            "answer": "A circular diagram used to represent data using sectors.",
+            "key_points": ["pie chart"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the total angle in a pie chart?",
+            "answer": "360°.",
+            "key_points": ["pie chart"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "How is sector angle in a pie chart calculated?",
+            "answer": "Sector angle = (value / total value) × 360°.",
+            "key_points": ["pie chart calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is direct proportion?",
+            "answer": "A relationship where two quantities increase or decrease together.",
+            "key_points": ["direct proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 14,
+            "question": "What is inverse proportion?",
+            "answer": "A relationship where one quantity increases while the other decreases.",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Give one example of direct proportion.",
+            "answer": "Distance and time at constant speed.",
+            "key_points": ["direct proportion example"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Give one example of inverse proportion.",
+            "answer": "Number of workers and time taken to complete work.",
+            "key_points": ["inverse proportion example"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 17,
+            "question": "What happens to time if speed increases for a fixed distance?",
+            "answer": "Time decreases.",
+            "key_points": ["speed-time relation"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 18,
+            "question": "What does each sector in a pie chart represent?",
+            "answer": "A part of the total data.",
+            "key_points": ["pie chart sectors"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is proportional reasoning?",
+            "answer": "The ability to compare quantities using ratios and proportions.",
+            "key_points": ["proportional reasoning"],
+            "source_section": "Chapter Overview"
+        },
+        {
+            "question_number": 20,
+            "question": "Where are ratios used in real life?",
+            "answer": "In recipes, map scales, and mixtures.",
+            "key_points": ["applications of ratios"],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What fraction of a pie chart does 180° represent?",
+            "answer": "1/2.",
+            "key_points": ["pie chart fractions"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What fraction of a pie chart does 90° represent?",
+            "answer": "1/4.",
+            "key_points": ["pie chart fractions"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What happens to time when the number of workers increases?",
+            "answer": "Time decreases.",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the relation between speed and time?",
+            "answer": "They are inversely proportional for a fixed distance.",
+            "key_points": ["speed-time relation"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the main use of pie charts?",
+            "answer": "To visually represent proportional data.",
+            "key_points": ["data representation"],
+            "source_section": "Section 3.5"
+        }
+    ]
+}

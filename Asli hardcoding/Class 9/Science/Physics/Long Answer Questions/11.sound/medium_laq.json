@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 11: Sound",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define sound and explain how it is produced.",
+      "answer": "Sound is a form of energy that is produced due to vibration of an object. When an object vibrates, it causes the surrounding particles to vibrate, producing sound waves.",
+      "answer_outline": ["Definition of sound", "Vibration of object", "Transmission through medium"],
+      "key_concepts": ["sound", "vibration", "medium"],
+      "marks": 4,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the difference between longitudinal and transverse waves with examples.",
+      "answer": "Longitudinal waves: particles vibrate parallel to direction of wave propagation (e.g., sound). Transverse waves: particles vibrate perpendicular to wave propagation (e.g., light, water surface).",
+      "answer_outline": ["Define longitudinal wave", "Define transverse wave", "Give examples"],
+      "key_concepts": ["wave type", "longitudinal", "transverse", "examples"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the terms wavelength, frequency, and amplitude of a sound wave.",
+      "answer": "Wavelength: distance between two consecutive crests or compressions. Frequency: number of vibrations per second (Hz). Amplitude: maximum displacement of particles from mean position, related to loudness.",
+      "answer_outline": ["Define wavelength", "Define frequency", "Define amplitude", "Relation to sound properties"],
+      "key_concepts": ["wavelength", "frequency", "amplitude", "sound properties"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the speed of sound in air? How does temperature affect it?",
+      "answer": "Speed of sound in air at 0°C ≈ 331 m/s. Speed increases with temperature: v = 331 + 0.6T (T in °C).",
+      "answer_outline": ["State speed at 0°C", "Explain temperature effect", "Formula v = 331 + 0.6T"],
+      "key_concepts": ["speed of sound", "temperature dependence", "formula"],
+      "marks": 4,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain echo and its practical uses.",
+      "answer": "Echo is the reflection of sound from a surface. Used in sonar, bats' navigation, echo-sounding in submarines.",
+      "answer_outline": ["Definition of echo", "Cause of echo", "Practical applications"],
+      "key_concepts": ["echo", "reflection of sound", "applications"],
+      "marks": 4,
+      "source_section": "11.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the term ‘ultrasound’ and its applications.",
+      "answer": "Ultrasound are sound waves of frequency above 20 kHz, not audible to humans. Applications: medical imaging (sonography), cleaning objects, detecting flaws in materials.",
+      "answer_outline": ["Define ultrasound", "Frequency range", "Applications"],
+      "key_concepts": ["ultrasound", "high-frequency sound", "applications"],
+      "marks": 4,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the difference between noise and musical sound?",
+      "answer": "Noise: unpleasant, irregular vibrations, non-periodic, unpredictable (e.g., traffic sound). Musical sound: pleasant, periodic vibrations, definite pitch (e.g., flute, guitar).",
+      "answer_outline": ["Define noise", "Define musical sound", "Contrast properties", "Give examples"],
+      "key_concepts": ["noise", "musical sound", "frequency", "pitch"],
+      "marks": 4,
+      "source_section": "11.1–11.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the phenomenon of resonance with an example.",
+      "answer": "Resonance occurs when the frequency of an external force matches the natural frequency of an object, causing large amplitude vibrations. Example: tuning fork making another fork vibrate.",
+      "answer_outline": ["Define resonance", "Condition: matching frequency", "Example"],
+      "key_concepts": ["resonance", "natural frequency", "vibration"],
+      "marks": 4,
+      "source_section": "11.2–11.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how sound travels in solids, liquids, and gases.",
+      "answer": "Sound travels by vibrating particles. Speed is highest in solids, medium in liquids, and lowest in gases due to particle density and elasticity.",
+      "answer_outline": ["Mechanism: particle vibration", "Relative speeds in different states", "Reason for differences"],
+      "key_concepts": ["sound propagation", "solids, liquids, gases", "speed of sound"],
+      "marks": 4,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 10,
+      "question": "A tuning fork produces a sound of frequency 512 Hz. Calculate its time period.",
+      "answer": "Time period T = 1/f = 1/512 ≈ 0.00195 s",
+      "answer_outline": ["Use formula T = 1/f", "Substitute f = 512 Hz", "Compute T ≈ 0.00195 s"],
+      "key_concepts": ["frequency", "time period", "calculation"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain loudness and pitch of sound.",
+      "answer": "Loudness: perception of intensity of sound, depends on amplitude. Pitch: perception of frequency, high frequency → high pitch, low frequency → low pitch.",
+      "answer_outline": ["Define loudness", "Define pitch", "Relation with amplitude and frequency"],
+      "key_concepts": ["loudness", "pitch", "amplitude", "frequency"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why sound cannot travel in vacuum.",
+      "answer": "Sound requires a medium to vibrate. In vacuum, there are no particles, so sound cannot propagate.",
+      "answer_outline": ["Sound needs particles", "Vacuum has none", "Result: no propagation"],
+      "key_concepts": ["sound propagation", "vacuum", "medium required"],
+      "marks": 4,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the working of SONAR using sound waves.",
+      "answer": "SONAR emits ultrasound waves. Waves reflect from underwater objects. Time taken for echo determines distance. Used in submarines and detecting underwater objects.",
+      "answer_outline": ["Emission of waves", "Reflection and echo", "Distance calculation", "Applications"],
+      "key_concepts": ["SONAR", "ultrasound", "echo", "distance measurement"],
+      "marks": 5,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the difference between infrasound and ultrasound.",
+      "answer": "Infrasound: frequency below 20 Hz, used in earthquake detection, animal communication. Ultrasound: frequency above 20 kHz, used in medical imaging, cleaning.",
+      "answer_outline": ["Define infrasound", "Define ultrasound", "Examples and applications"],
+      "key_concepts": ["infrasound", "ultrasound", "frequency range", "applications"],
+      "marks": 4,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the principle of sound reflection and its applications.",
+      "answer": "Sound reflection occurs when sound waves hit a surface and bounce back. Applications: echo, sonar, architectural acoustics.",
+      "answer_outline": ["Principle of reflection", "Explain echo formation", "Practical uses"],
+      "key_concepts": ["sound reflection", "applications", "echo"],
+      "marks": 4,
+      "source_section": "11.4"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why sound travels faster in solids than in air.",
+      "answer": "Particles in solids are closer and more elastic than in air, allowing faster transfer of vibrations → higher speed of sound.",
+      "answer_outline": ["Particle density in solids", "Elasticity", "Effect on speed of sound"],
+      "key_concepts": ["speed of sound", "solids vs air", "particle vibration"],
+      "marks": 4,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain reverberation and how it can be reduced in halls.",
+      "answer": "Reverberation: prolongation of sound due to multiple reflections. Reduced by using sound-absorbing materials like curtains, carpets, acoustic panels.",
+      "answer_outline": ["Define reverberation", "Cause: multiple reflections", "Methods to reduce"],
+      "key_concepts": ["reverberation", "sound absorption", "halls"],
+      "marks": 4,
+      "source_section": "11.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how humans produce and perceive sound.",
+      "answer": "Produced by vocal cord vibrations, transmitted through air. Perceived by ear: sound waves vibrate eardrum → ossicles → cochlea → auditory nerve → brain interprets.",
+      "answer_outline": ["Production: vocal cords", "Transmission: air", "Reception: ear to brain"],
+      "key_concepts": ["sound production", "sound perception", "human ear"],
+      "marks": 5,
+      "source_section": "11.1–11.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how musical instruments produce sound of different pitch.",
+      "answer": "Pitch depends on frequency of vibration. Shorter strings or smaller air columns vibrate faster → higher pitch. Longer or thicker → lower pitch.",
+      "answer_outline": ["Vibration frequency determines pitch", "Examples with string/air column length", "High vs low pitch"],
+      "key_concepts": ["pitch", "vibration frequency", "musical instruments"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 20,
+      "question": "A sound wave has frequency 500 Hz. Find its time period.",
+      "answer": "T = 1/f = 1/500 = 0.002 s",
+      "answer_outline": ["Formula: T = 1/f", "Substitute value", "Compute T = 0.002 s"],
+      "key_concepts": ["frequency", "time period", "calculation"],
+      "marks": 3,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the difference between loudness and intensity of sound.",
+      "answer": "Loudness: human perception of sound strength. Intensity: energy transported per unit area per second, physical quantity. Loudness depends on intensity and sensitivity of ear.",
+      "answer_outline": ["Define loudness", "Define intensity", "Relation and difference"],
+      "key_concepts": ["loudness", "intensity", "sound properties"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why the frequency of sound determines its pitch.",
+      "answer": "Higher frequency → particles vibrate faster → higher pitch. Lower frequency → slower vibration → lower pitch.",
+      "answer_outline": ["Relation of frequency and particle vibration", "High vs low pitch"],
+      "key_concepts": ["pitch", "frequency", "vibration"],
+      "marks": 3,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why sound waves are longitudinal waves.",
+      "answer": "In sound waves, particles of the medium vibrate parallel to the direction of wave propagation, which is the definition of longitudinal waves.",
+      "answer_outline": ["Particle vibration parallel to propagation", "Definition of longitudinal wave", "Sound wave example"],
+      "key_concepts": ["sound wave", "longitudinal", "particle vibration"],
+      "marks": 4,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the working of a stethoscope.",
+      "answer": "Stethoscope channels sound from patient’s body through air-filled tubes to listener’s ear. Amplifies heart and lung sounds.",
+      "answer_outline": ["Transmission of sound through tubes", "Amplification", "Medical application"],
+      "key_concepts": ["stethoscope", "sound amplification", "medical device"],
+      "marks": 4,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the factors affecting speed of sound in a medium.",
+      "answer": "Depends on medium’s density and elasticity. Higher elasticity → higher speed. Higher density → lower speed. Temperature increase also increases speed in gases.",
+      "answer_outline": ["Medium properties: elasticity, density", "Effect of temperature", "Examples in solids, liquids, gases"],
+      "key_concepts": ["speed of sound", "density", "elasticity", "temperature"],
+      "marks": 5,
+      "source_section": "11.3"
+    }
+  ]
+}

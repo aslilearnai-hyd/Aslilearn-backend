@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 13: Our Environment",
+    "generated_at": "2026-03-11T04:05:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is an ecosystem?",
+                "correct_answer": "A system where living organisms interact with each other and with their physical environment.",
+                "explanation": "An ecosystem includes both living (biotic) and non-living (abiotic) components working together.",
+                "source_section": "Section 13.1"
+            },
+            {
+                "question": "What are biotic components?",
+                "correct_answer": "The living components of an ecosystem such as plants, animals and microorganisms.",
+                "explanation": "Biotic components interact with each other and depend on abiotic factors for survival.",
+                "source_section": "Section 13.1"
+            },
+            {
+                "question": "What are abiotic components?",
+                "correct_answer": "The non-living components of an ecosystem such as air, water, soil and sunlight.",
+                "explanation": "Abiotic factors influence the survival and growth of organisms.",
+                "source_section": "Section 13.1"
+            },
+            {
+                "question": "Who are producers in an ecosystem?",
+                "correct_answer": "Organisms that make their own food using sunlight through photosynthesis.",
+                "explanation": "Green plants and algae are producers and form the base of food chains.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What is a food chain?",
+                "correct_answer": "A sequence of organisms where each organism feeds on the one before it.",
+                "explanation": "It shows the transfer of energy from one organism to another.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What is a food web?",
+                "correct_answer": "A network of interconnected food chains.",
+                "explanation": "Food webs show complex feeding relationships in an ecosystem.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What are decomposers?",
+                "correct_answer": "Organisms that break down dead plants and animals into simpler substances.",
+                "explanation": "Bacteria and fungi recycle nutrients back into the ecosystem.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "question": "What is biological magnification?",
+                "correct_answer": "The increase in concentration of harmful chemicals as they move up the food chain.",
+                "explanation": "Top consumers accumulate the highest amount of toxic substances.",
+                "source_section": "Section 13.3"
+            },
+            {
+                "question": "What are biodegradable substances?",
+                "correct_answer": "Substances that can be decomposed by microorganisms.",
+                "explanation": "Examples include food waste, paper and plant materials.",
+                "source_section": "Section 13.4"
+            },
+            {
+                "question": "What are non-biodegradable substances?",
+                "correct_answer": "Substances that cannot be easily decomposed by microorganisms.",
+                "explanation": "Examples include plastics, metals and synthetic chemicals.",
+                "source_section": "Section 13.4"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Ecosystem",
+                "content": "A natural unit consisting of living organisms and their physical environment interacting together.",
+                "source_section": "Section 13.1"
+            },
+            {
+                "title": "Food Chain",
+                "content": "A sequence showing how energy is transferred from one organism to another.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "title": "Food Web",
+                "content": "A network of interconnected food chains within an ecosystem.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "title": "Biological Magnification",
+                "content": "Increase in concentration of toxic substances at higher trophic levels.",
+                "source_section": "Section 13.3"
+            },
+            {
+                "title": "Biodegradable vs Non-biodegradable",
+                "content": "Biodegradable materials decompose naturally while non-biodegradable materials persist in the environment.",
+                "source_section": "Section 13.4"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Green plants are producers because they prepare their own food through photosynthesis.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "fact": "Energy decreases as it moves from one trophic level to the next.",
+                "source_section": "Section 13.2"
+            },
+            {
+                "fact": "Biological magnification causes harmful chemicals to accumulate in top consumers.",
+                "source_section": "Section 13.3"
+            },
+            {
+                "fact": "Biodegradable waste can be broken down naturally by microorganisms.",
+                "source_section": "Section 13.4"
+            },
+            {
+                "fact": "Plastic is a common non-biodegradable substance that causes environmental pollution.",
+                "source_section": "Section 13.4"
+            }
+        ]
+    }
+}

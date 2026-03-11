@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 10: Heron's Formula",
+    "generated_at": "2026-03-06T13:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State Heron's formula for the area of a triangle.",
+            "answer": "Heron's formula: Area = √[s(s-a)(s-b)(s-c)], where s = (a+b+c)/2.",
+            "answer_outline": ["Write sides a, b, c", "Calculate semi-perimeter s = (a+b+c)/2", "Use formula √[s(s-a)(s-b)(s-c)] to find area"],
+            "key_concepts": ["triangle", "semi-perimeter", "area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the area of a triangle with sides 13 cm, 14 cm, and 15 cm.",
+            "answer": "Use Heron's formula with a=13, b=14, c=15; s = 21; Area = √[21×(21-13)×(21-14)×(21-15)] = 84 cm².",
+            "answer_outline": ["Find s = (13+14+15)/2 = 21", "Compute (s-a)(s-b)(s-c) = 8×7×6", "Area = √(21×8×7×6) = 84 cm²"],
+            "key_concepts": ["Heron's formula", "area", "triangle sides"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 3,
+            "question": "A triangle has sides 7 cm, 8 cm, 9 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+8+9)/2 = 12; Area = √[12×(12-7)(12-8)(12-9)] = √(12×5×4×3) = √720 ≈ 26.83 cm².",
+            "answer_outline": ["Calculate s = 12", "Compute (s-a)(s-b)(s-c) = 5×4×3", "Area = √(12×60) = √720 ≈ 26.83 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the area of a triangle with sides 5 cm, 12 cm, and 13 cm.",
+            "answer": "s = (5+12+13)/2 = 15; Area = √[15×(15-5)(15-12)(15-13)] = √(15×10×3×2) = √900 = 30 cm².",
+            "answer_outline": ["s = 15", "(s-a)(s-b)(s-c) = 10×3×2", "Area = √(15×60) = √900 = 30 cm²"],
+            "key_concepts": ["Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that Heron’s formula works for an equilateral triangle.",
+            "answer": "For a triangle with all sides a, s = 3a/2. Area = √[s(s-a)^3] = √[(3a/2)(a/2)^3] = (√3/4)a².",
+            "answer_outline": ["Let all sides = a", "s = 3a/2", "Area = √[s(s-a)^3] = √[(3a/2)(a/2)^3]", "Simplify to (√3/4)a²"],
+            "key_concepts": ["equilateral triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 6,
+            "question": "A triangle has sides 6 cm, 8 cm, 10 cm. Find its area using Heron’s formula.",
+            "answer": "s = (6+8+10)/2 = 12; Area = √[12×(12-6)(12-8)(12-10)] = √(12×6×4×2) = √576 = 24 cm².",
+            "answer_outline": ["s = 12", "Compute (s-a)(s-b)(s-c) = 6×4×2", "Area = √(12×48) = √576 = 24 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Show that a right-angled triangle satisfies Heron’s formula and gives correct area.",
+            "answer": "For right triangle with sides a, b, c (hypotenuse), s=(a+b+c)/2. Area = √[s(s-a)(s-b)(s-c)] = ½×a×b.",
+            "answer_outline": ["Take right triangle a,b,c", "s = (a+b+c)/2", "Apply Heron’s formula", "Simplify to ½×a×b"],
+            "key_concepts": ["right triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 8,
+            "question": "A triangle has sides 9 cm, 9 cm, and 12 cm. Find its area using Heron’s formula.",
+            "answer": "s = (9+9+12)/2 = 15; Area = √[15×(15-9)×(15-9)×(15-12)] = √(15×6×6×3) = √1620 ≈ 40.25 cm².",
+            "answer_outline": ["s = 15", "Compute (s-a)(s-b)(s-c) = 6×6×3", "Area = √(15×108) = √1620 ≈ 40.25 cm²"],
+            "key_concepts": ["Heron's formula", "isosceles triangle", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the area of a triangle with sides 8 cm, 15 cm, 17 cm.",
+            "answer": "s = (8+15+17)/2 = 20; Area = √[20×(20-8)(20-15)(20-17)] = √(20×12×5×3) = √3600 = 60 cm².",
+            "answer_outline": ["s = 20", "(s-a)(s-b)(s-c) = 12×5×3", "Area = √(20×180) = √3600 = 60 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Show that Heron’s formula works for an isosceles triangle.",
+            "answer": "For sides a, a, b, s = (2a+b)/2. Area = √[s(s-a)^2(s-b)] which simplifies to standard formula for isosceles triangle.",
+            "answer_outline": ["Take sides a, a, b", "s = (2a+b)/2", "Apply Heron’s formula", "Simplify to standard isosceles area formula"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 11,
+            "question": "A triangle has sides 7 cm, 24 cm, and 25 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+24+25)/2 = 28; Area = √[28×(28-7)(28-24)(28-25)] = √(28×21×4×3) = √7056 = 84 cm².",
+            "answer_outline": ["s = 28", "Compute (s-a)(s-b)(s-c) = 21×4×3", "Area = √(28×252) = √7056 = 84 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula", "right triangle"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the area of a triangle with sides 10 cm, 10 cm, 12 cm using Heron’s formula.",
+            "answer": "s = (10+10+12)/2 = 16; Area = √[16×(16-10)²×(16-12)] = √(16×6×6×4) = √2304 = 48 cm².",
+            "answer_outline": ["s = 16", "Compute (s-a)(s-b)(s-c) = 6×6×4", "Area = √(16×144) = √2304 = 48 cm²"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that Heron’s formula reduces to ½×base×height for a right triangle.",
+            "answer": "For right triangle with sides a, b, c (hypotenuse), s = (a+b+c)/2, Heron’s formula gives √[s(s-a)(s-b)(s-c)] = ½×a×b.",
+            "answer_outline": ["Take right triangle a,b,c", "s = (a+b+c)/2", "Apply Heron's formula", "Simplify to ½×a×b"],
+            "key_concepts": ["right triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 14,
+            "question": "A triangle has sides 5 cm, 5 cm, 6 cm. Find its area using Heron’s formula.",
+            "answer": "s = (5+5+6)/2 = 8; Area = √[8×(8-5)²×(8-6)] = √(8×3×3×2) = √144 = 12 cm².",
+            "answer_outline": ["s = 8", "(s-a)(s-b)(s-c) = 3×3×2", "Area = √(8×18) = √144 = 12 cm²"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the area of a triangle with sides 15 cm, 20 cm, 25 cm using Heron’s formula.",
+            "answer": "s = (15+20+25)/2 = 30; Area = √[30×(30-15)(30-20)(30-25)] = √(30×15×10×5) = √22500 = 150 cm².",
+            "answer_outline": ["s = 30", "(s-a)(s-b)(s-c) = 15×10×5", "Area = √(30×750) = √22500 = 150 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that Heron’s formula gives correct area for an equilateral triangle of side 6 cm.",
+            "answer": "s = 9; Area = √[9×(9-6)^3] = √(9×27) = √243 = 9√3 cm² ≈ 15.59 cm².",
+            "answer_outline": ["s = (6+6+6)/2 = 9", "Compute (s-a)^3 = 3³ = 27", "Area = √(9×27) = √243 ≈ 15.59 cm²"],
+            "key_concepts": ["equilateral triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 17,
+            "question": "A triangle has sides 9 cm, 12 cm, 15 cm. Find its area using Heron’s formula.",
+            "answer": "s = (9+12+15)/2 = 18; Area = √[18×(18-9)(18-12)(18-15)] = √(18×9×6×3) = √2916 = 54 cm².",
+            "answer_outline": ["s = 18", "(s-a)(s-b)(s-c) = 9×6×3", "Area = √(18×162) = √2916 = 54 cm²"],
+            "key_concepts": ["Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the area of an isosceles triangle with sides 10 cm, 10 cm, 12 cm.",
+            "answer": "s = (10+10+12)/2 = 16; Area = √[16×(16-10)²×(16-12)] = √(16×6×6×4) = √2304 = 48 cm².",
+            "answer_outline": ["s = 16", "(s-a)(s-b)(s-c) = 6×6×4", "Area = √(16×144) = √2304 = 48 cm²"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that for a triangle with sides in arithmetic progression, Heron’s formula gives correct area.",
+            "answer": "Let sides a, a+d, a+2d; s = (3a+3d)/2 = 3(a+d)/2; Area = √[s(s-a)(s-(a+d))(s-(a+2d))].",
+            "answer_outline": ["Let sides = a, a+d, a+2d", "Calculate s = (3a+3d)/2 = 3(a+d)/2", "Apply Heron's formula", "Simplify to get area"],
+            "key_concepts": ["arithmetic progression", "triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the area of a triangle with sides 6 cm, 8 cm, 10 cm using Heron’s formula.",
+            "answer": "s = (6+8+10)/2 = 12; Area = √[12×(12-6)(12-8)(12-10)] = √(12×6×4×2) = √576 = 24 cm².",
+            "answer_outline": ["s = 12", "(s-a)(s-b)(s-c) = 6×4×2", "Area = √(12×48) = √576 = 24 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula", "right triangle"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the area of a triangle with sides 11 cm, 13 cm, 15 cm using Heron’s formula.",
+            "answer": "s = (11+13+15)/2 = 19.5; Area = √[19.5×(19.5-11)(19.5-13)(19.5-15)] = √[19.5×8.5×6.5×4.5] ≈ 69.9 cm².",
+            "answer_outline": ["s = 19.5", "Compute (s-a)(s-b)(s-c) = 8.5×6.5×4.5", "Area = √(19.5×248.625) ≈ 69.9 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "A triangle has sides 12 cm, 16 cm, 20 cm. Find its area using Heron’s formula.",
+            "answer": "s = (12+16+20)/2 = 24; Area = √[24×(24-12)(24-16)(24-20)] = √(24×12×8×4) = √9216 = 96 cm².",
+            "answer_outline": ["s = 24", "(s-a)(s-b)(s-c) = 12×8×4", "Area = √(24×384) = √9216 = 96 cm²"],
+            "key_concepts": ["triangle area", "Heron's formula", "right triangle"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+                {
+            "question_number": 23,
+            "question": "Prove that Heron’s formula gives zero area when the three points are collinear.",
+            "answer": "If the points are collinear, one side equals the sum of the other two, say c = a + b. Then s = (a+b+c)/2 = a+b, and Area = √[s(s-a)(s-b)(s-c)] = √[(a+b)(b)(a)(0)] = 0.",
+            "answer_outline": ["Let sides a, b, c with c = a + b", "s = (a+b+c)/2 = a+b", "Apply Heron’s formula", "Area = √[s(s-a)(s-b)(s-c)] = 0"],
+            "key_concepts": ["collinear points", "triangle area", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the area of a triangle with sides 14 cm, 14 cm, 24 cm using Heron’s formula.",
+            "answer": "s = (14+14+24)/2 = 26; Area = √[26×(26-14)×(26-14)×(26-24)] = √(26×12×12×2) = √7488 ≈ 86.55 cm².",
+            "answer_outline": ["s = 26", "Compute (s-a)(s-b)(s-c) = 12×12×2", "Area = √(26×288) = √7488 ≈ 86.55 cm²"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "area"],
+            "marks": 5,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "A triangle has sides 9 cm, 10 cm, 17 cm. Can a triangle be formed? Justify using Heron’s formula.",
+            "answer": "s = (9+10+17)/2 = 18; Compute (s-a)(s-b)(s-c) = (18-9)(18-10)(18-17) = 9×8×1 = 72. Then Area = √[18×72] = √1296 = 36 cm². But check triangle inequality: 9+10 > 17? 19 > 17 ✅, 9+17 > 10 ✅, 10+17 > 9 ✅. Triangle is possible.",
+            "answer_outline": ["s = 18", "(s-a)(s-b)(s-c) = 9×8×1", "Area = √(18×72) = √1296 = 36 cm²", "Check triangle inequality: all satisfied, triangle possible"],
+            "key_concepts": ["triangle existence", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.1"
+        }
+    ]
+}

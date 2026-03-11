@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: Federalism",
+  "generated_at": "2026-03-11T14:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which feature distinguishes a federal government from a unitary government?",
+      "options": {
+        "A": "Presence of a constitution",
+        "B": "Division of powers between different levels of government",
+        "C": "Existence of elections",
+        "D": "Presence of courts"
+      },
+      "correct_answer": "B",
+      "explanation": "Federal governments divide powers between central and regional governments.",
+      "difficulty": "medium",
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 2,
+      "question": "Which institution resolves disputes between the Union and State governments in India?",
+      "options": {
+        "A": "Election Commission",
+        "B": "Supreme Court",
+        "C": "Parliament",
+        "D": "President"
+      },
+      "correct_answer": "B",
+      "explanation": "The Supreme Court acts as the final authority in constitutional disputes.",
+      "difficulty": "medium",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 3,
+      "question": "Which list includes subjects like education and forests?",
+      "options": {
+        "A": "Union List",
+        "B": "State List",
+        "C": "Concurrent List",
+        "D": "Local List"
+      },
+      "correct_answer": "C",
+      "explanation": "Education and forests are subjects included in the Concurrent List.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 4,
+      "question": "If there is a conflict between Union and State law on a Concurrent List subject, whose law prevails?",
+      "options": {
+        "A": "State Government",
+        "B": "Union Government",
+        "C": "Local Government",
+        "D": "Judiciary"
+      },
+      "correct_answer": "B",
+      "explanation": "In case of conflict, Union law prevails over State law.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is an example of a 'holding together' federation?",
+      "options": {
+        "A": "USA",
+        "B": "Switzerland",
+        "C": "India",
+        "D": "Australia"
+      },
+      "correct_answer": "C",
+      "explanation": "India is an example of a holding together federation.",
+      "difficulty": "medium",
+      "source_section": "Formation of Federations"
+    },
+    {
+      "question_number": 6,
+      "question": "Why were linguistic states created in India?",
+      "options": {
+        "A": "To increase military strength",
+        "B": "To reduce language-based conflicts and improve administration",
+        "C": "To increase trade",
+        "D": "To reduce population"
+      },
+      "correct_answer": "B",
+      "explanation": "Linguistic states improved administrative efficiency and reduced conflicts.",
+      "difficulty": "medium",
+      "source_section": "Linguistic States"
+    },
+    {
+      "question_number": 7,
+      "question": "Which level of government in India deals mainly with agriculture and police?",
+      "options": {
+        "A": "Union Government",
+        "B": "State Government",
+        "C": "Local Government",
+        "D": "International Government"
+      },
+      "correct_answer": "B",
+      "explanation": "Agriculture and police are part of the State List.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 8,
+      "question": "Which amendment gave constitutional status to Panchayati Raj institutions?",
+      "options": {
+        "A": "44th Amendment",
+        "B": "73rd Amendment",
+        "C": "52nd Amendment",
+        "D": "61st Amendment"
+      },
+      "correct_answer": "B",
+      "explanation": "The 73rd Amendment strengthened rural local governments.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 9,
+      "question": "Which body works at the block level in Panchayati Raj?",
+      "options": {
+        "A": "Gram Sabha",
+        "B": "Panchayat Samiti",
+        "C": "Municipality",
+        "D": "Zilla Parishad"
+      },
+      "correct_answer": "B",
+      "explanation": "Panchayat Samiti functions at the block level.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 10,
+      "question": "Which factor strengthened federalism in India after 1990?",
+      "options": {
+        "A": "Military rule",
+        "B": "Coalition governments",
+        "C": "End of elections",
+        "D": "Centralisation of power"
+      },
+      "correct_answer": "B",
+      "explanation": "Coalition governments increased the influence of regional parties.",
+      "difficulty": "medium",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 11,
+      "question": "Which government has the authority to make laws on defence?",
+      "options": {
+        "A": "State Government",
+        "B": "Union Government",
+        "C": "Municipality",
+        "D": "District Council"
+      },
+      "correct_answer": "B",
+      "explanation": "Defence is included in the Union List.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 12,
+      "question": "Which institution supervises the work of Gram Panchayat?",
+      "options": {
+        "A": "Gram Sabha",
+        "B": "Parliament",
+        "C": "Municipality",
+        "D": "Supreme Court"
+      },
+      "correct_answer": "A",
+      "explanation": "Gram Sabha consists of all adult villagers and supervises the Panchayat.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following best describes decentralisation?",
+      "options": {
+        "A": "Transfer of power to local governments",
+        "B": "Transfer of power to courts",
+        "C": "Transfer of power to army",
+        "D": "Transfer of power to media"
+      },
+      "correct_answer": "A",
+      "explanation": "Decentralisation shifts power to lower levels of government.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 14,
+      "question": "Which government manages foreign affairs in India?",
+      "options": {
+        "A": "Union Government",
+        "B": "State Government",
+        "C": "Local Government",
+        "D": "District Government"
+      },
+      "correct_answer": "A",
+      "explanation": "Foreign affairs are part of the Union List.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 15,
+      "question": "Which country is a classic example of a coming together federation?",
+      "options": {
+        "A": "India",
+        "B": "USA",
+        "C": "Belgium",
+        "D": "Spain"
+      },
+      "correct_answer": "B",
+      "explanation": "The USA is a coming together federation.",
+      "difficulty": "medium",
+      "source_section": "Formation of Federations"
+    },
+    {
+      "question_number": 16,
+      "question": "Which institution interprets the constitution in a federal system?",
+      "options": {
+        "A": "Parliament",
+        "B": "Judiciary",
+        "C": "Election Commission",
+        "D": "Police"
+      },
+      "correct_answer": "B",
+      "explanation": "The judiciary interprets constitutional provisions.",
+      "difficulty": "medium",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 17,
+      "question": "Which level of government deals mainly with sanitation in cities?",
+      "options": {
+        "A": "Union Government",
+        "B": "State Government",
+        "C": "Municipal Government",
+        "D": "International Government"
+      },
+      "correct_answer": "C",
+      "explanation": "Municipal governments manage urban services.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following strengthens federalism?",
+      "options": {
+        "A": "Division of powers",
+        "B": "Centralised rule",
+        "C": "Military government",
+        "D": "Single authority"
+      },
+      "correct_answer": "A",
+      "explanation": "Division of powers is a key feature of federalism.",
+      "difficulty": "medium",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 19,
+      "question": "Which level of Panchayati Raj works at the district level?",
+      "options": {
+        "A": "Gram Panchayat",
+        "B": "Panchayat Samiti",
+        "C": "Zilla Parishad",
+        "D": "Municipality"
+      },
+      "correct_answer": "C",
+      "explanation": "Zilla Parishad functions at the district level.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 20,
+      "question": "Which feature ensures independence of state governments in a federation?",
+      "options": {
+        "A": "Constitutional division of powers",
+        "B": "Military control",
+        "C": "Centralised rule",
+        "D": "Foreign policy"
+      },
+      "correct_answer": "A",
+      "explanation": "The constitution clearly divides powers between governments.",
+      "difficulty": "medium",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 21,
+      "question": "Which body governs towns and small cities?",
+      "options": {
+        "A": "Municipality",
+        "B": "Gram Sabha",
+        "C": "Parliament",
+        "D": "High Court"
+      },
+      "correct_answer": "A",
+      "explanation": "Municipalities govern towns and smaller cities.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the main goal of decentralisation?",
+      "options": {
+        "A": "Concentrate power",
+        "B": "Improve local governance",
+        "C": "Remove elections",
+        "D": "Increase military control"
+      },
+      "correct_answer": "B",
+      "explanation": "Decentralisation improves governance by bringing decisions closer to the people.",
+      "difficulty": "medium",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 23,
+      "question": "Which level of government manages irrigation in India?",
+      "options": {
+        "A": "Union Government",
+        "B": "State Government",
+        "C": "Local Government",
+        "D": "International Government"
+      },
+      "correct_answer": "B",
+      "explanation": "Irrigation is part of the State List.",
+      "difficulty": "medium",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor helped strengthen federalism in recent decades?",
+      "options": {
+        "A": "Regional parties gaining power",
+        "B": "Military rule",
+        "C": "End of elections",
+        "D": "Centralised control"
+      },
+      "correct_answer": "A",
+      "explanation": "Regional parties increased the importance of states in politics.",
+      "difficulty": "medium",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 25,
+      "question": "Federalism mainly helps manage ______ in a country.",
+      "options": {
+        "A": "Diversity",
+        "B": "Military strength",
+        "C": "Trade rules",
+        "D": "Population only"
+      },
+      "correct_answer": "A",
+      "explanation": "Federalism allows diverse regions to govern themselves within a unified country.",
+      "difficulty": "medium",
+      "source_section": "Federalism in India"
+    }
+  ]
+}

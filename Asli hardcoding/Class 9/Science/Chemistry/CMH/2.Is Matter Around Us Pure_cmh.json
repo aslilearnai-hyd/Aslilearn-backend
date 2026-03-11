@@ -1,0 +1,129 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 2: Is Matter Around Us Pure?",
+    "generated_at": "2026-03-06T18:45:00",
+    "concepts": [
+        {
+            "concept_name": "Scientific Definition of Purity",
+            "difficulty": "easy",
+            "lesson": "In science, a 'pure' substance means all constituent particles are the same in their chemical nature. Most everyday items we call pure, like milk or juice, are actually mixtures. A pure substance consists of a single type of particle (a single form of matter).",
+            "real_example": "Distilled water is a pure substance, whereas tap water is a mixture of water and dissolved minerals.",
+            "key_points": [
+                "Pure substances contain only one type of particle",
+                "Mixtures contain two or more pure components",
+                "Purity is defined by chemical nature, not just lack of adulteration"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "concept_name": "Homogeneous vs. Heterogeneous Mixtures",
+            "difficulty": "medium",
+            "lesson": "Mixtures are classified based on the nature of the components. Homogeneous mixtures have a uniform composition throughout (e.g., salt in water). Heterogeneous mixtures contain physically distinct parts and have non-uniform compositions (e.g., mixtures of salt and iron filings).",
+            "real_example": "Lemonade is homogeneous because it tastes the same throughout, while a mixture of sand and water is heterogeneous.",
+            "key_points": [
+                "Homogeneous = Uniform composition",
+                "Heterogeneous = Non-uniform composition",
+                "Components can be separated by physical methods"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "concept_name": "Solutions and Their Properties",
+            "difficulty": "easy",
+            "lesson": "A solution is a homogeneous mixture of two or more substances. It consists of a solvent (component in larger amount) and a solute (component in smaller amount). The particles are smaller than 1 nm, so they cannot be seen by the naked eye and do not scatter a beam of light.",
+            "real_example": "In an iodine tincture, iodine is the solute and alcohol is the solvent.",
+            "key_points": [
+                "Solutions are homogeneous",
+                "Particle size < 1 nm",
+                "They are stable (particles don't settle)"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "Concentration of a Solution",
+            "difficulty": "hard",
+            "lesson": "Concentration refers to the amount of solute present in a given amount of solution. Solutions can be dilute, concentrated, or saturated. A saturated solution is one in which no more solute can be dissolved at a specific temperature.",
+            "real_example": "If you keep adding salt to water at room temperature, eventually it stops dissolving; this is a saturated solution.",
+            "key_points": [
+                "Concentration = (Mass of solute / Mass of solution) × 100",
+                "Saturation depends on temperature",
+                "Solubility is the max solute a solvent can hold at a given T"
+            ],
+            "source_section": "Section 2.2.1"
+        },
+        {
+            "concept_name": "Suspensions",
+            "difficulty": "medium",
+            "lesson": "A suspension is a heterogeneous mixture in which the solute particles do not dissolve but remain suspended throughout the bulk of the medium. The particles are large enough to be seen by the naked eye and scatter light until they settle down.",
+            "real_example": "Chalk powder in water or muddy water.",
+            "key_points": [
+                "Heterogeneous mixture",
+                "Particles are visible to the eye",
+                "Unstable (particles settle over time)"
+            ],
+            "source_section": "Section 2.2.2"
+        },
+        {
+            "concept_name": "Colloidal Solutions",
+            "difficulty": "medium",
+            "lesson": "Colloids appear homogeneous but are actually heterogeneous. Their particle size is intermediate between solutions and suspensions. They are stable and show the Tyndall effect (scattering of light).",
+            "real_example": "Milk and fog are common examples of colloids.",
+            "key_points": [
+                "Intermediate particle size",
+                "Show Tyndall effect",
+                "Stable and cannot be filtered with ordinary paper"
+            ],
+            "source_section": "Section 2.2.3"
+        },
+        {
+            "concept_name": "The Tyndall Effect",
+            "difficulty": "medium",
+            "lesson": "The scattering of a beam of light by colloidal particles is called the Tyndall effect. It makes the path of light visible. This phenomenon is common in daily life when light passes through small holes or dense canopies.",
+            "real_example": "Sunlight passing through the canopy of a dense forest where mist acts as the colloid.",
+            "key_points": [
+                "Scattering of light by particles",
+                "Makes light path visible",
+                "Found in colloids and suspensions"
+            ],
+            "source_section": "Section 2.2.3"
+        },
+        
+        {
+            "concept_name": "Physical vs. Chemical Changes",
+            "difficulty": "medium",
+            "lesson": "Physical changes occur without a change in composition or chemical nature (like melting ice). Chemical changes result in the formation of new substances with different properties (like burning paper).",
+            "real_example": "Water boiling into steam is physical; an iron almirah rusting is chemical.",
+            "key_points": [
+                "Physical = No new substance formed",
+                "Chemical = Chemical reaction occurs",
+                "Chemical changes are usually permanent"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "concept_name": "Elements and Compounds",
+            "difficulty": "hard",
+            "lesson": "Matter can be classified as elements or compounds. An element is a basic form of matter that cannot be broken down into simpler substances. A compound is a substance composed of two or more elements chemically combined in a fixed proportion.",
+            "real_example": "Iron is an element; Iron Sulphide (formed by heating iron and sulphur) is a compound.",
+            "key_points": [
+                "Elements: Metals, Non-metals, Metalloids",
+                "Compounds have different properties than their elements",
+                "Compounds have fixed ratios by mass"
+            ],
+            "source_section": "Section 2.5"
+        },
+        
+        {
+            "concept_name": "Metals, Non-metals, and Metalloids",
+            "difficulty": "medium",
+            "lesson": "Elements are divided based on properties. Metals are generally lustrous, malleable, and good conductors. Non-metals are dull, brittle, and poor conductors. Metalloids show intermediate properties.",
+            "real_example": "Gold and Copper are metals; Iodine and Oxygen are non-metals; Silicon is a metalloid.",
+            "key_points": [
+                "Metals are malleable and ductile",
+                "Non-metals are non-lustrous and brittle",
+                "Metalloids share properties of both"
+            ],
+            "source_section": "Section 2.5.1"
+        }
+    ]
+}

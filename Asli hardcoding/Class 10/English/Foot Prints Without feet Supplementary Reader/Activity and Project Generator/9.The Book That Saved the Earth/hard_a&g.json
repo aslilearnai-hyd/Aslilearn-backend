@@ -1,0 +1,152 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "The Book That Saved the Earth",
+    "author": "Claire Boiko",
+    "difficulty": "Hard",
+    "source_pdf": "jefp109.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Satire in the Play",
+            "objective": "Analyse satire used by the author",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify one satirical element",
+                "Explain how it criticises ignorance"
+            ],
+            "learning_outcome": "Understands satire",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Think-Tank as a Symbol",
+            "objective": "Interpret symbolic meaning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain what Think-Tank symbolises",
+                "Support your answer with examples"
+            ],
+            "learning_outcome": "Interprets symbolism",
+            "evaluation": "Logical reasoning (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Irony in the Title",
+            "objective": "Understand irony",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain why the title is ironic",
+                "Write 4–5 sentences"
+            ],
+            "learning_outcome": "Understands literary irony",
+            "evaluation": "Correct interpretation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Critical Scene Analysis",
+            "objective": "Analyse a key scene",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Choose an important scene",
+                "Explain its importance to the plot"
+            ],
+            "learning_outcome": "Analyses dramatic structure",
+            "evaluation": "Depth and clarity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Knowledge vs Intelligence",
+            "objective": "Develop critical thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Differentiate between knowledge and intelligence",
+                "Relate your answer to the play"
+            ],
+            "learning_outcome": "Applies concepts critically",
+            "evaluation": "Relevance and depth (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Failure of the Martian Mission",
+            "objective": "Analyse plot outcome",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify reasons for mission failure",
+                "Explain each reason briefly"
+            ],
+            "learning_outcome": "Understands plot logic",
+            "evaluation": "Clear reasoning (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Books as Power",
+            "objective": "Interpret theme deeply",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how books act as power",
+                "Support with incidents from the play"
+            ],
+            "learning_outcome": "Deep thematic understanding",
+            "evaluation": "Textual support (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Alternate Ending",
+            "objective": "Enhance creative thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine Earth was invaded",
+                "Write a short alternate ending"
+            ],
+            "learning_outcome": "Develops creativity",
+            "evaluation": "Originality and relevance (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Relevance in Modern Times",
+            "objective": "Relate literature to present day",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Relate the play’s message to today’s world",
+                "Write 5–6 sentences"
+            ],
+            "learning_outcome": "Connects literature to society",
+            "evaluation": "Contemporary relevance (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Author’s View on Reading",
+            "objective": "Interpret author’s perspective",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse how the author views reading",
+                "Support with examples from the play"
+            ],
+            "learning_outcome": "Interprets authorial intent",
+            "evaluation": "Depth of interpretation (10 marks)"
+        }
+    ]
+}

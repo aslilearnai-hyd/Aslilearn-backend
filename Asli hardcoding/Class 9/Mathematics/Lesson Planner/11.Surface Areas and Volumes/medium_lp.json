@@ -1,0 +1,176 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Surface Areas & Volumes",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve more complex surface area and volume problems",
+        "Apply formulas to composite solids",
+        "Convert units between cm³, m³, etc.",
+        "Understand and calculate curved surface areas",
+        "Solve multi-step real-life word problems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision and Advanced Surface Area Concepts",
+            "topics_covered": [
+                "Review of cube, cuboid, and sphere surface area",
+                "Introduction to lateral/curved surface area",
+                "Surface area of hollow objects"
+            ],
+            "teaching_strategy": [
+                "Visual models for hollow and solid objects",
+                "Step-by-step derivation of formulas"
+            ],
+            "student_activities": [
+                "Calculate lateral surface area of a cylinder",
+                "Compare total and curved surface areas"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short written exercises"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Surface Area of Composite Solids",
+            "topics_covered": [
+                "Combination of two or more solids",
+                "Surface area of hemispheres, frustums, and combined shapes"
+            ],
+            "teaching_strategy": [
+                "Draw diagrams on board",
+                "Solve examples progressively from simple to complex"
+            ],
+            "student_activities": [
+                "Identify composite solids in class",
+                "Calculate surface areas of given examples"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Peer discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Advanced Volume Concepts",
+            "topics_covered": [
+                "Volume of cylinder, cone, and sphere revision",
+                "Volume of frustum of cone",
+                "Volume of combination of solids"
+            ],
+            "teaching_strategy": [
+                "Demonstration with water displacement",
+                "Worked examples on board"
+            ],
+            "student_activities": [
+                "Calculate volumes of given frustums",
+                "Solve combined solids examples"
+            ],
+            "assessment": [
+                "Written exercises",
+                "MCQs on volume concepts"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Unit Conversion in Surface Area and Volume",
+            "topics_covered": [
+                "Conversion between m², cm², mm²",
+                "Conversion between m³, cm³, liter, and ml"
+            ],
+            "teaching_strategy": [
+                "Demonstrate examples on board",
+                "Practice stepwise conversion method"
+            ],
+            "student_activities": [
+                "Convert volume units for given examples",
+                "Convert surface area units"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short class quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Word Problems – Surface Area & Volume",
+            "topics_covered": [
+                "Complex multi-step problems",
+                "Application to tanks, pipes, and containers"
+            ],
+            "teaching_strategy": [
+                "Problem-solving discussion",
+                "Stepwise solution approach"
+            ],
+            "student_activities": [
+                "Solve 2–3 word problems individually",
+                "Draw diagrams for visual understanding"
+            ],
+            "assessment": [
+                "Classwork checking",
+                "Peer verification"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Mixed Practice on Real-life Objects",
+            "topics_covered": [
+                "Surface area and volume of real objects",
+                "Comparative study between solids"
+            ],
+            "teaching_strategy": [
+                "Encourage students to find objects at home",
+                "Guide on measurement and calculation"
+            ],
+            "student_activities": [
+                "Measure dimensions of objects",
+                "Calculate surface area and volume"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral verification"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Revision and Group Quiz",
+            "topics_covered": [
+                "Revision of all formulas",
+                "Mixed surface area and volume problems",
+                "Group quiz"
+            ],
+            "teaching_strategy": [
+                "Group discussion and problem-solving",
+                "Quick oral quiz"
+            ],
+            "student_activities": [
+                "Participate in group quiz",
+                "Solve mixed numerical problems"
+            ],
+            "assessment": [
+                "Quiz scoring",
+                "Notebook verification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Cube, cuboid, cylinder, cone, sphere, and frustum models",
+        "Measuring tape and ruler",
+        "Graph paper",
+        "Blackboard/Whiteboard",
+        "Markers/Chalk",
+        "NCERT Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Short numerical tests",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Encourage students to visualize 3D shapes and guide them to carefully follow multi-step problem-solving methods for composite solids."
+}

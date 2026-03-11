@@ -1,0 +1,151 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Heron’s Formula",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand and apply semi-perimeter in Heron’s formula",
+        "Solve medium-level numerical problems",
+        "Calculate areas of scalene and right-angled triangles using Heron’s formula",
+        "Verify results using alternate methods"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Triangle Properties",
+            "topics_covered": [
+                "Types of triangles (scalene, isosceles, equilateral, right-angled)",
+                "Sides, angles, and perimeter",
+                "Concept of semi-perimeter"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Draw various triangles on board"
+            ],
+            "student_activities": [
+                "Classify given triangles",
+                "Label sides and calculate perimeter"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short class exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Heron’s Formula Introduction",
+            "topics_covered": [
+                "Statement of Heron’s formula",
+                "Stepwise explanation of s(s-a)(s-b)(s-c)"
+            ],
+            "teaching_strategy": [
+                "Demonstrate using example triangles",
+                "Step-by-step calculation"
+            ],
+            "student_activities": [
+                "Calculate area of triangles (4,5,6) and (7,8,9)",
+                "Write detailed steps"
+            ],
+            "assessment": [
+                "Check notebooks",
+                "Peer discussion for verification"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Application to Scalene Triangles",
+            "topics_covered": [
+                "Scalene triangles with sides not forming right angles",
+                "Calculation using Heron’s formula"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving",
+                "Encourage checking calculations"
+            ],
+            "student_activities": [
+                "Solve 3–4 medium-level problems",
+                "Compare with approximate area using base × height if possible"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class correction"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Mixed Triangle Problems",
+            "topics_covered": [
+                "Right-angled and obtuse triangles",
+                "Using Heron’s formula without height"
+            ],
+            "teaching_strategy": [
+                "Use diagrams to clarify concepts",
+                "Stepwise solution on board"
+            ],
+            "student_activities": [
+                "Solve area for right-angled and obtuse triangles",
+                "Verify with base × height for right-angled triangles"
+            ],
+            "assessment": [
+                "Short written exercises",
+                "Peer verification"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Word Problems Using Heron’s Formula",
+            "topics_covered": [
+                "Application in real-life problems",
+                "Triangle areas in land measurement or architecture"
+            ],
+            "teaching_strategy": [
+                "Explain problem statement breakdown",
+                "Highlight known and unknown quantities"
+            ],
+            "student_activities": [
+                "Solve 2–3 word problems using Heron’s formula",
+                "Identify triangle sides from context"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion on methods"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision and Quiz",
+            "topics_covered": [
+                "Review semi-perimeter and Heron’s formula",
+                "Mixed exercises including scalene, right-angled, and obtuse triangles"
+            ],
+            "teaching_strategy": [
+                "Quick quiz and group problem-solving",
+                "Discussion of common mistakes"
+            ],
+            "student_activities": [
+                "Participate in quiz",
+                "Solve mixed triangle exercises individually"
+            ],
+            "assessment": [
+                "Quiz scoring",
+                "Numerical accuracy checking"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ruler and protractor",
+        "Graph paper",
+        "Blackboard/Whiteboard",
+        "Chalk/Markers",
+        "NCERT Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Oral questioning",
+        "Short numerical tests",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Encourage students to label all sides and calculate semi-perimeter first; this avoids mistakes in the square root calculation."
+}

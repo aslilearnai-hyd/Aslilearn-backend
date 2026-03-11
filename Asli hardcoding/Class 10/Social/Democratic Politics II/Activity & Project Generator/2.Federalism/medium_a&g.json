@@ -1,0 +1,140 @@
+{
+  "class": "Class 9",
+  "subject": "Political Science",
+  "chapter": "Federalism",
+  "difficulty": "Medium",
+  "source_pdf": "jess402.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Federal vs Unitary Comparison Chart",
+      "objective": "Analyse differences between federal and unitary systems",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Create two columns titled Federal Government and Unitary Government",
+        "Write at least four characteristics of each system",
+        "Add examples of countries for each type"
+      ],
+      "learning_outcome": "Develops analytical understanding of different governance systems",
+      "evaluation": "Depth of comparison and accuracy (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Power Distribution Analysis",
+      "objective": "Understand how powers are distributed in India",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "List five subjects under Union List",
+        "List five subjects under State List",
+        "List five subjects under Concurrent List",
+        "Explain why such distribution is necessary"
+      ],
+      "learning_outcome": "Understands constitutional distribution of legislative powers",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Case Study on Linguistic States",
+      "objective": "Examine the impact of linguistic reorganisation",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Choose one state created due to linguistic reorganisation",
+        "Write about the language spoken in that state",
+        "Explain how linguistic states improved administration"
+      ],
+      "learning_outcome": "Understands the political importance of linguistic states",
+      "evaluation": "Quality of research and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Centre–State Relations Discussion",
+      "objective": "Understand the evolution of Centre-State relations",
+      "materials": ["Notebook"],
+      "steps": [
+        "Describe how Centre-State relations functioned before 1990",
+        "Explain the impact of coalition governments",
+        "Discuss how regional parties strengthened federalism"
+      ],
+      "learning_outcome": "Develops understanding of political changes affecting federalism",
+      "evaluation": "Clarity and depth of discussion (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Federal Countries Map Study",
+      "objective": "Identify countries with federal systems",
+      "materials": ["World map", "Colour pencils"],
+      "steps": [
+        "Mark India on the map",
+        "Identify and mark three other federal countries",
+        "Write one feature of federalism for each country"
+      ],
+      "learning_outcome": "Recognises global examples of federal systems",
+      "evaluation": "Accuracy and neatness (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Language Policy Debate",
+      "objective": "Evaluate India’s language policy",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write arguments supporting the use of Hindi as official language",
+        "Write arguments supporting the continued use of English",
+        "Give your conclusion on the importance of language flexibility"
+      ],
+      "learning_outcome": "Develops critical thinking about language policy",
+      "evaluation": "Balanced arguments and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Local Government Survey",
+      "objective": "Understand decentralisation in practice",
+      "materials": ["Notebook"],
+      "steps": [
+        "Identify your local governing body (panchayat or municipality)",
+        "List three functions performed by this body",
+        "Explain how local governments help people directly"
+      ],
+      "learning_outcome": "Recognises the importance of decentralisation",
+      "evaluation": "Correct and relevant information (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Structure of Panchayati Raj",
+      "objective": "Understand rural local government structure",
+      "materials": ["Chart paper"],
+      "steps": [
+        "Draw a diagram showing Gram Panchayat, Panchayat Samiti and Zilla Parishad",
+        "Write one responsibility of each level",
+        "Explain how these bodies interact"
+      ],
+      "learning_outcome": "Understands the multi-level structure of rural governance",
+      "evaluation": "Correct structure and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Scheduled Languages Research",
+      "objective": "Explore linguistic diversity in India",
+      "materials": ["Notebook"],
+      "steps": [
+        "List five scheduled languages in India",
+        "Identify the language spoken in your region",
+        "Explain how linguistic diversity affects governance"
+      ],
+      "learning_outcome": "Understands India's cultural and linguistic diversity",
+      "evaluation": "Accuracy and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Federalism Reflection Essay",
+      "objective": "Reflect on the importance of federalism in India",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short essay explaining federalism",
+        "Explain why federalism is important in a diverse country like India",
+        "Give examples from Indian politics"
+      ],
+      "learning_outcome": "Develops deeper understanding of federal principles",
+      "evaluation": "Logical argument and clarity (10 marks)"
+    }
+  ]
+}

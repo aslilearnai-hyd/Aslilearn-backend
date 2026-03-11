@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 8: Introduction to Trigonometry",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-01T22:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is trigonometry?",
+            "answer": "Trigonometry is the study of relationships between sides and angles of a triangle.",
+            "key_points": [
+                "definition"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which triangle is mainly used in trigonometry?",
+            "answer": "Right-angled triangle.",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the hypotenuse of a right triangle?",
+            "answer": "The side opposite to the right angle.",
+            "key_points": [
+                "hypotenuse"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Define sine of an angle.",
+            "answer": "Sine of an angle is the ratio of the opposite side to the hypotenuse.",
+            "key_points": [
+                "sin"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Define cosine of an angle.",
+            "answer": "Cosine of an angle is the ratio of the adjacent side to the hypotenuse.",
+            "key_points": [
+                "cos"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Define tangent of an angle.",
+            "answer": "Tangent of an angle is the ratio of the opposite side to the adjacent side.",
+            "key_points": [
+                "tan"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the reciprocal of sine?",
+            "answer": "Cosecant.",
+            "key_points": [
+                "cosec"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the reciprocal of cosine?",
+            "answer": "Secant.",
+            "key_points": [
+                "sec"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the reciprocal of tangent?",
+            "answer": "Cotangent.",
+            "key_points": [
+                "cot"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the value of sin 0°?",
+            "answer": "0",
+            "key_points": [
+                "sin 0"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the value of cos 0°?",
+            "answer": "1",
+            "key_points": [
+                "cos 0"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the value of sin 90°?",
+            "answer": "1",
+            "key_points": [
+                "sin 90"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the value of cos 90°?",
+            "answer": "0",
+            "key_points": [
+                "cos 90"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the value of tan 45°?",
+            "answer": "1",
+            "key_points": [
+                "tan 45"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the value of sin 30°?",
+            "answer": "1/2",
+            "key_points": [
+                "sin 30"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the value of cos 60°?",
+            "answer": "1/2",
+            "key_points": [
+                "cos 60"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which ratio is not defined at 90°?",
+            "answer": "Tan 90°.",
+            "key_points": [
+                "undefined"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which ratio is not defined at 0°?",
+            "answer": "Cot 0°.",
+            "key_points": [
+                "undefined"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which angle is denoted by θ?",
+            "answer": "An acute angle.",
+            "key_points": [
+                "theta"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is sin²A + cos²A equal to?",
+            "answer": "1",
+            "key_points": [
+                "identity"
+            ],
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which theorem is used to find unknown sides?",
+            "answer": "Pythagoras theorem.",
+            "key_points": [
+                "pythagoras"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Are trigonometric ratios dependent on triangle size?",
+            "answer": "No, they depend only on angles.",
+            "key_points": [
+                "ratios"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the value of sec 0°?",
+            "answer": "1",
+            "key_points": [
+                "sec 0"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the value of cosec 90°?",
+            "answer": "1",
+            "key_points": [
+                "cosec 90"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which triangle has all angles less than 90°?",
+            "answer": "Acute-angled triangle.",
+            "key_points": [
+                "acute triangle"
+            ],
+            "source_section": "Section 8.1"
+        }
+    ]
+}

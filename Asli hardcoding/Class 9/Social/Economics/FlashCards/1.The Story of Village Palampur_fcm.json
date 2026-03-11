@@ -1,0 +1,104 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: The Story of Village Palampur",
+  "generated_at": "2026-03-07T16:53:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the primary production activity in Palampur?",
+        "correct_answer": "Farming[cite: 205].",
+        "explanation": "Farming is the main activity, with 75 per cent of the working population dependent on it for their livelihood[cite: 205, 255].",
+        "source_section": "Overview / Farming in Palampur"
+      },
+      {
+        "question": "What are the four requirements for the production of goods and services?",
+        "correct_answer": "Land, labour, physical capital, and human capital[cite: 231, 232, 233, 236, 244].",
+        "explanation": "These four elements are collectively known as the factors of production[cite: 250].",
+        "source_section": "Organisation of Production"
+      },
+      {
+        "question": "Define 'Fixed Capital' with examples.",
+        "correct_answer": "Tools, machines, and buildings that can be used in production over many years[cite: 238].",
+        "explanation": "Examples range from simple tools like a farmer's plough to sophisticated machines like generators and computers[cite: 238].",
+        "source_section": "Organisation of Production"
+      },
+      {
+        "question": "What constitutes 'Working Capital'?",
+        "correct_answer": "Raw materials and money in hand[cite: 241].",
+        "explanation": "Unlike fixed capital, these items are used up during the production process[cite: 242].",
+        "source_section": "Organisation of Production"
+      },
+      {
+        "question": "What is 'Multiple Cropping'?",
+        "correct_answer": "Growing more than one crop on a piece of land during the year[cite: 284].",
+        "explanation": "It is the most common way to increase production on a given piece of land[cite: 285].",
+        "source_section": "Farming in Palampur"
+      },
+      {
+        "question": "How did the Green Revolution impact wheat yields in Palampur?",
+        "correct_answer": "Yields increased from 1300 kg to 3200 kg per hectare[cite: 343, 344].",
+        "explanation": "The use of High Yielding Varieties (HYV) seeds led to a large increase in wheat production[cite: 345].",
+        "source_section": "Farming in Palampur"
+      },
+      {
+        "question": "What are the environmental drawbacks of modern farming methods?",
+        "correct_answer": "Loss of soil fertility and depletion of the water-table[cite: 369, 370].",
+        "explanation": "Chemical fertilizers kill soil bacteria and pollute groundwater, while tubewell irrigation lowers the water table[cite: 370, 397, 398].",
+        "source_section": "Will the land sustain?"
+      },
+      {
+        "question": "How is land distributed among the families of Palampur?",
+        "correct_answer": "Unequally: 150 families are landless, 240 families have small plots, and 60 families have large/medium plots[cite: 407, 410, 421].",
+        "explanation": "Large farmers may have land extending over 10 hectares or more, while small plots are often less than 2 hectares[cite: 410, 422].",
+        "source_section": "How is land distributed between the farmers of Palampur?"
+      },
+      {
+        "question": "Why do small farmers face 'great distress' to arrange capital?",
+        "correct_answer": "They must borrow at high interest rates from moneylenders or large farmers[cite: 485, 487].",
+        "explanation": "Unlike large farmers who have their own savings, small farmers often lack surplus and face tough loan conditions[cite: 492, 496, 497].",
+        "source_section": "The capital needed in farming"
+      },
+      {
+        "question": "Give examples of non-farm activities in Palampur.",
+        "correct_answer": "Dairy, small-scale manufacturing, shopkeeping, and transport[cite: 547, 567, 585, 601].",
+        "explanation": "Only 25 per cent of the people working in Palampur are engaged in these non-agricultural activities[cite: 546].",
+        "source_section": "Non-Farm Activities in Palampur"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Factors of Production",
+        "content": "Production requires land, labour, physical capital (fixed and working), and human capital[cite: 231, 232, 233, 236, 244]. These are organized together to produce goods and services[cite: 250].",
+        "source_section": "Organisation of Production"
+      },
+      {
+        "title": "Modern Farming vs. Traditional",
+        "content": "Modern methods use HYV seeds, chemical fertilizers, and pesticides, which require more water and capital than traditional methods[cite: 304, 307, 310, 311, 312].",
+        "source_section": "Farming in Palampur"
+      },
+      {
+        "title": "Labour Dynamics",
+        "content": "Small farmers provide their own labour, while medium and large farmers hire farm labourers who are often paid less than the government-set minimum wage[cite: 444, 445, 472, 474].",
+        "source_section": "Who will provide the labour?"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Raiganj is a big village located 3 kms from Palampur[cite: 208].",
+        "source_section": "Introduction"
+      },
+      {
+        "fact": "The standard unit of measuring land is the hectare[cite: 262].",
+        "source_section": "Farming in Palampur"
+      },
+      {
+        "fact": "The minimum wage for a farm labourer set by the government was Rs 300 per day in March 2019[cite: 472].",
+        "source_section": "Who will provide the labour?"
+      },
+      {
+        "fact": "Only 24 out of every 100 workers in rural India are engaged in non-farm activities[cite: 636].",
+        "source_section": "Summary"
+      }
+    ]
+  }
+}

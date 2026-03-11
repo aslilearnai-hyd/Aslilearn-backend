@@ -1,0 +1,33 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Pair of Linear Equations in Two Variables",
+    "difficulty": "Medium",
+    "source_pdf": "jemh103.pdf",
+    "short_notes": {
+        "key_points": [
+            "A pair of linear equations can be solved graphically or algebraically",
+            "Graphical solution represents the point of intersection of two lines",
+            "Algebraic methods include substitution and elimination",
+            "A system is consistent if it has at least one solution",
+            "Nature of solutions depends on ratios of coefficients"
+        ],
+        "examples": [
+            "x + y = 5 and x − y = 1 intersect at one point",
+            "Parallel lines represent no solution",
+            "Coincident lines represent infinite solutions"
+        ],
+        "formulas": [
+            "Standard form → ax + by + c = 0",
+            "If a₁/a₂ ≠ b₁/b₂ → unique solution",
+            "If a₁/a₂ = b₁/b₂ ≠ c₁/c₂ → no solution",
+            "If a₁/a₂ = b₁/b₂ = c₁/c₂ → infinite solutions"
+        ],
+        "exam_tips": [
+            "Check coefficient ratios before solving fully",
+            "Graphical method is useful for visual understanding",
+            "Algebraic methods give exact solutions",
+            "Identify nature of solution before solving"
+        ]
+    }
+}

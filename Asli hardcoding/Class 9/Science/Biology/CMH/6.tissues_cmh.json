@@ -1,0 +1,137 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 6: Tissues",
+    "generated_at": "2026-03-05T22:15:00",
+    "concepts": [
+        {
+            "concept_name": "Tissue",
+            "difficulty": "easy",
+            "lesson": "A tissue is a group of cells that are similar in structure and work together to perform a specific function. In multicellular organisms, tissues help in efficient functioning because specialized cells perform specific tasks.",
+            "real_example": "Muscle tissue helps in movement of body parts.",
+            "key_points": [
+                "Group of similar cells",
+                "Perform a specific function",
+                "Found in multicellular organisms",
+                "Example: muscle, blood, xylem"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "concept_name": "Meristematic Tissue",
+            "difficulty": "easy",
+            "lesson": "Meristematic tissues are plant tissues that actively divide and help in the growth of plants. These tissues are found in growing regions like the tips of roots and stems.",
+            "real_example": "Apical meristem helps the root and stem grow longer.",
+            "key_points": [
+                "Cells divide continuously",
+                "Responsible for plant growth",
+                "Found in growing regions",
+                "Types include apical, lateral and intercalary"
+            ],
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "concept_name": "Permanent Tissue",
+            "difficulty": "easy",
+            "lesson": "Permanent tissues are formed when meristematic cells lose the ability to divide and take up specific roles. These tissues perform specialized functions in plants.",
+            "real_example": "Parenchyma tissue stores food in plants.",
+            "key_points": [
+                "Derived from meristematic tissues",
+                "Cells do not divide",
+                "Have specific functions",
+                "Includes simple and complex tissues"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "concept_name": "Simple Permanent Tissues",
+            "difficulty": "medium",
+            "lesson": "Simple permanent tissues consist of only one type of cell performing the same function. The main types are parenchyma, collenchyma, and sclerenchyma.",
+            "real_example": "Collenchyma provides flexibility to stems and leaves.",
+            "key_points": [
+                "Made of similar cells",
+                "Three types: parenchyma, collenchyma, sclerenchyma",
+                "Perform basic plant functions",
+                "Provide storage and support"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "concept_name": "Complex Permanent Tissues",
+            "difficulty": "medium",
+            "lesson": "Complex permanent tissues are made of more than one type of cell working together to perform a common function. Xylem and phloem are examples.",
+            "real_example": "Xylem transports water from roots to leaves.",
+            "key_points": [
+                "Made of different types of cells",
+                "Work together for transport",
+                "Types: xylem and phloem",
+                "Form vascular bundles"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "concept_name": "Epithelial Tissue",
+            "difficulty": "easy",
+            "lesson": "Epithelial tissue forms the protective covering of the body and lines internal organs and cavities. These cells are tightly packed and act as a barrier between the body and the environment.",
+            "real_example": "Skin is made of epithelial tissue.",
+            "key_points": [
+                "Forms body covering",
+                "Cells tightly packed",
+                "Protective function",
+                "Types include squamous, cuboidal, columnar"
+            ],
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "concept_name": "Connective Tissue",
+            "difficulty": "easy",
+            "lesson": "Connective tissue connects, supports, and protects different parts of the body. It has cells embedded in a matrix which may be fluid, solid or jelly-like.",
+            "real_example": "Bone supports the body and gives structure.",
+            "key_points": [
+                "Supports and connects body parts",
+                "Cells embedded in matrix",
+                "Examples: bone, blood, cartilage",
+                "Provides structural support"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "concept_name": "Muscular Tissue",
+            "difficulty": "medium",
+            "lesson": "Muscular tissue consists of muscle fibers that contract and relax to produce movement. It helps in movement of body parts and internal organs.",
+            "real_example": "Skeletal muscles help move arms and legs.",
+            "key_points": [
+                "Responsible for movement",
+                "Contains contractile proteins",
+                "Types: striated, smooth, cardiac",
+                "Present in different organs"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "concept_name": "Nervous Tissue",
+            "difficulty": "medium",
+            "lesson": "Nervous tissue is responsible for receiving stimuli and transmitting nerve impulses throughout the body. It is composed of specialized cells called neurons.",
+            "real_example": "The brain sends signals to muscles through neurons.",
+            "key_points": [
+                "Made of neurons",
+                "Transmits nerve impulses",
+                "Present in brain and spinal cord",
+                "Controls body activities"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "concept_name": "Neuron Structure",
+            "difficulty": "medium",
+            "lesson": "A neuron is the basic unit of nervous tissue. It consists of a cell body, dendrites and a long axon. These structures help in transmitting nerve impulses from one part of the body to another.",
+            "real_example": "Signals from the brain to the hand travel through neurons.",
+            "key_points": [
+                "Basic unit of nervous tissue",
+                "Parts: dendrites, cell body, axon",
+                "Transmits nerve impulses",
+                "Enables coordination in the body"
+            ],
+            "source_section": "Section 6.3.4"
+        }
+    ]
+}

@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 11: Sound",
+  "difficulty": "Hard",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Derive the formula for the speed of sound in air using wavelength and frequency.",
+      "answer": "Speed of sound v = frequency × wavelength; v = f × λ.",
+      "key_points": ["speed", "sound", "wavelength", "frequency"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why the speed of sound in gases increases with temperature.",
+      "answer": "Higher temperature increases particle vibration speed, which transmits sound faster, increasing its speed.",
+      "key_points": ["sound speed", "temperature", "gases"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Why does sound intensity decrease inversely with the square of distance?",
+      "answer": "Sound spreads spherically; intensity ∝ 1/(distance)² due to energy spreading over a larger area.",
+      "key_points": ["intensity", "distance", "inverse square law"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the formation of stationary waves in an air column.",
+      "answer": "Stationary waves form due to superposition of incident and reflected sound waves with nodes and antinodes at fixed points.",
+      "key_points": ["stationary waves", "air column", "nodes", "antinodes"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Derive the expression for the fundamental frequency of a stretched string.",
+      "answer": "Fundamental frequency f = (1/2L) √(T/μ), where L=length, T=tension, μ=mass/length.",
+      "key_points": ["fundamental frequency", "string", "tension", "mass per unit length"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why ultrasound is reflected at interfaces between two different media.",
+      "answer": "Change in acoustic impedance at the interface causes partial reflection and partial transmission of the wave.",
+      "key_points": ["ultrasound", "reflection", "acoustic impedance"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is the speed of sound maximum in solids?",
+      "answer": "Particles are closely packed; elastic modulus is high, density moderate, so sound travels fastest.",
+      "key_points": ["speed of sound", "solids", "particle density", "elasticity"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Derive the relation between frequency, wavelength, and speed for sound in different media.",
+      "answer": "v = f × λ; speed changes with medium, frequency remains constant, wavelength adjusts accordingly.",
+      "key_points": ["sound", "frequency", "wavelength", "speed", "medium"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does a sudden drop in air temperature reduce the speed of sound?",
+      "answer": "Lower temperature reduces particle kinetic energy, slowing vibration transmission and decreasing speed.",
+      "key_points": ["sound speed", "temperature", "air"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why echoes can be used to measure distances accurately.",
+      "answer": "Time between original sound and echo, multiplied by speed of sound, gives distance accurately.",
+      "key_points": ["echo", "distance measurement", "time delay", "speed of sound"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 11,
+      "question": "Why are ultrasound waves preferred over audible sound for medical imaging?",
+      "answer": "Ultrasound has high frequency → short wavelength → better resolution and no harm to tissues.",
+      "key_points": ["ultrasound", "medical imaging", "resolution", "frequency"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why infrasound can travel long distances in the atmosphere.",
+      "answer": "Low frequency → long wavelength → less absorption → travels long distances with minimal energy loss.",
+      "key_points": ["infrasound", "long distance", "absorption", "wavelength"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the effect of amplitude on the energy carried by a sound wave?",
+      "answer": "Energy ∝ square of amplitude; higher amplitude → more energy carried by sound wave.",
+      "key_points": ["sound wave", "amplitude", "energy"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain why sound is longitudinal in nature.",
+      "answer": "Particles vibrate parallel to wave direction, producing compressions and rarefactions; hence longitudinal.",
+      "key_points": ["sound wave", "longitudinal", "compression", "rarefaction"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Derive the formula for the speed of sound in air in terms of temperature.",
+      "answer": "v = 331 + 0.6T m/s, where T is in °C.",
+      "key_points": ["speed of sound", "air", "temperature"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Why does a musical instrument produce harmonics?",
+      "answer": "String or air column vibrates in fundamental and fractional lengths, producing harmonics at integer multiples of fundamental frequency.",
+      "key_points": ["harmonics", "string", "air column", "frequency"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Why does a sound wave bend when it passes from warm air to cold air?",
+      "answer": "Speed decreases in cold air; refraction bends wave toward colder medium.",
+      "key_points": ["sound wave", "refraction", "temperature gradient"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why bat echolocation fails in a vacuum.",
+      "answer": "No medium to transmit mechanical sound waves → echolocation cannot occur.",
+      "key_points": ["echolocation", "vacuum", "sound propagation"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does an echo take longer to return from a distant mountain than from a nearby wall?",
+      "answer": "Longer travel distance → longer time for sound to reflect back → delay increases.",
+      "key_points": ["echo", "distance", "time delay"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 20,
+      "question": "Why does the human ear detect frequency as pitch?",
+      "answer": "Cochlea responds differently to different frequencies, sending specific signals to the brain perceived as pitch.",
+      "key_points": ["human ear", "frequency", "pitch", "cochlea"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the effect of air density on the speed of sound.",
+      "answer": "Higher air density reduces particle vibration speed if pressure is constant, slightly reducing speed of sound.",
+      "key_points": ["air density", "speed of sound", "vibration transmission"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does sound refract upward at night near the ground?",
+      "answer": "Ground cools at night → air near surface is colder → speed lower → wave bends upward.",
+      "key_points": ["sound refraction", "temperature gradient", "night"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 23,
+      "question": "How can resonance of sound be dangerous in structures?",
+      "answer": "Matching frequency of sound to natural frequency of structure causes large amplitude vibrations → structural damage.",
+      "key_points": ["resonance", "structures", "vibration", "damage"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain why ultrasound gives better resolution in medical imaging than audible sound.",
+      "answer": "Higher frequency → shorter wavelength → smaller objects can be resolved, giving clearer images.",
+      "key_points": ["ultrasound", "resolution", "frequency", "wavelength"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Why does sound intensity decrease more in humid air than in dry air?",
+      "answer": "Water vapor reduces air density slightly → less energy loss by absorption, but attenuation depends on frequency; at some frequencies, humid air can reduce absorption.",
+      "key_points": ["sound intensity", "humidity", "attenuation"],
+      "source_section": "Section 11.4"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 6: Manufacturing Industries",
+  "generated_at": "2026-03-11T10:50:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is manufacturing?",
+        "correct_answer": "The production of goods in large quantities by processing raw materials into finished products",
+        "explanation": "Manufacturing converts raw materials like minerals or agricultural products into useful goods.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "Why are manufacturing industries important for a country?",
+        "correct_answer": "They promote economic growth, provide employment, and increase the value of raw materials",
+        "explanation": "Manufacturing industries strengthen the economy and support other sectors like agriculture.",
+        "source_section": "Importance of Manufacturing"
+      },
+      {
+        "question": "What are agro-based industries?",
+        "correct_answer": "Industries that use agricultural products as raw materials",
+        "explanation": "Examples include cotton textile, sugar, and jute industries.",
+        "source_section": "Classification of Industries"
+      },
+      {
+        "question": "What are mineral-based industries?",
+        "correct_answer": "Industries that use minerals and metals as raw materials",
+        "explanation": "Examples include iron and steel, aluminium, and cement industries.",
+        "source_section": "Classification of Industries"
+      },
+      {
+        "question": "Why is the iron and steel industry called a basic industry?",
+        "correct_answer": "Because it provides raw materials for many other industries",
+        "explanation": "Steel is used in construction, transport, machinery, and many other sectors.",
+        "source_section": "Iron and Steel Industry"
+      },
+      {
+        "question": "What are the main raw materials required for steel production?",
+        "correct_answer": "Iron ore, coking coal, and limestone",
+        "explanation": "These materials are essential for producing steel in blast furnaces.",
+        "source_section": "Iron and Steel Industry"
+      },
+      {
+        "question": "What is the raw material used for aluminium production?",
+        "correct_answer": "Bauxite",
+        "explanation": "Bauxite is processed and refined to produce aluminium metal.",
+        "source_section": "Aluminium Smelting"
+      },
+      {
+        "question": "Name one major center of the automobile industry in India.",
+        "correct_answer": "Chennai",
+        "explanation": "Other centres include Delhi, Pune, Bengaluru, and Mumbai.",
+        "source_section": "Automobile Industry"
+      },
+      {
+        "question": "What types of pollution are caused by industries?",
+        "correct_answer": "Air pollution, water pollution, land pollution, and noise pollution",
+        "explanation": "Industrial waste and emissions contaminate the environment.",
+        "source_section": "Industrial Pollution and Environmental Degradation"
+      },
+      {
+        "question": "What is one method to reduce industrial pollution?",
+        "correct_answer": "Treat industrial waste before releasing it into the environment",
+        "explanation": "Effluent treatment and recycling help reduce environmental damage.",
+        "source_section": "Control of Environmental Degradation"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Manufacturing",
+        "content": "Manufacturing is the process of converting raw materials into finished goods on a large scale.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Classification of Industries",
+        "content": "Industries can be classified based on raw materials, ownership, capital investment, and weight of products.",
+        "source_section": "Classification of Industries"
+      },
+      {
+        "title": "Cotton Textile Industry",
+        "content": "The cotton textile industry is important for employment and export earnings in India.",
+        "source_section": "Textile Industry"
+      },
+      {
+        "title": "Iron and Steel Industry",
+        "content": "Iron and steel industries supply raw materials to many other industries.",
+        "source_section": "Iron and Steel Industry"
+      },
+      {
+        "title": "Industrial Pollution",
+        "content": "Industries cause pollution through emissions, chemical waste, and noise, affecting the environment and health.",
+        "source_section": "Industrial Pollution and Environmental Degradation"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Manufacturing industries are considered the backbone of economic development.",
+        "source_section": "Importance of Manufacturing"
+      },
+      {
+        "fact": "India is one of the largest producers of cotton textiles in the world.",
+        "source_section": "Textile Industry"
+      },
+      {
+        "fact": "Steel production is often used as an indicator of a country’s economic development.",
+        "source_section": "Iron and Steel Industry"
+      },
+      {
+        "fact": "Aluminium is lightweight, corrosion resistant, and a good conductor of electricity.",
+        "source_section": "Aluminium Smelting"
+      }
+    ]
+  }
+}

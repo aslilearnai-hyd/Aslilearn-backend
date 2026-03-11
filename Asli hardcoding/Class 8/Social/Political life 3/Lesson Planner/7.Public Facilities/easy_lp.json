@@ -1,0 +1,132 @@
+{
+  "class": "Class 8",
+  "subject": "Civics",
+  "chapter_name": "Public Facilities",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand what public facilities are",
+    "Identify examples of public facilities",
+    "Learn why clean drinking water is an important public facility",
+    "Understand the role of government in providing public facilities",
+    "Recognize inequality in access to public facilities",
+    "Understand the role of citizens in maintaining public facilities"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Public Facilities",
+      "topics_covered": [
+        "Meaning of public facilities",
+        "Examples such as water supply, roads and hospitals",
+        "Importance of these services"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Class discussion",
+        "Examples from daily life"
+      ],
+      "student_activities": [
+        "Students list public facilities they use daily",
+        "Discuss why these facilities are important"
+      ],
+      "assessment": ["Oral questioning", "Student participation"]
+    },
+    {
+      "period": 2,
+      "title": "Examples of Public Facilities",
+      "topics_covered": [
+        "Water supply",
+        "Public transport",
+        "Government hospitals and schools"
+      ],
+      "teaching_strategy": ["Example-based explanation", "Visual discussion"],
+      "student_activities": [
+        "Write three examples of public facilities",
+        "Discuss how these facilities help people"
+      ],
+      "assessment": ["Notebook checking", "Teacher observation"]
+    },
+    {
+      "period": 3,
+      "title": "Importance of Clean Drinking Water",
+      "topics_covered": [
+        "Need for clean water",
+        "Health and sanitation",
+        "Water supply systems"
+      ],
+      "teaching_strategy": [
+        "Question–answer discussion",
+        "Example explanation"
+      ],
+      "student_activities": [
+        "Discuss problems caused by lack of clean water",
+        "Write two reasons why clean water is important"
+      ],
+      "assessment": ["Short written activity", "Teacher feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Role of Government",
+      "topics_covered": [
+        "Government responsibility",
+        "Providing essential services",
+        "Use of taxes for public facilities"
+      ],
+      "teaching_strategy": [
+        "Explanation with examples",
+        "Interactive questioning"
+      ],
+      "student_activities": [
+        "Discuss why the government must provide public facilities",
+        "List examples of services funded by taxes"
+      ],
+      "assessment": ["Class discussion", "Notebook checking"]
+    },
+    {
+      "period": 5,
+      "title": "Inequality in Public Facilities",
+      "topics_covered": [
+        "Unequal access to services",
+        "Problems in poor communities",
+        "Importance of equal distribution"
+      ],
+      "teaching_strategy": ["Example-based teaching", "Discussion method"],
+      "student_activities": [
+        "Discuss examples where facilities are not equally available",
+        "Suggest ways to improve access to services"
+      ],
+      "assessment": ["Short written response", "Teacher observation"]
+    },
+    {
+      "period": 6,
+      "title": "Role of Citizens and Chapter Revision",
+      "topics_covered": [
+        "Responsible use of public facilities",
+        "Importance of cooperation",
+        "Chapter recap"
+      ],
+      "teaching_strategy": ["Revision discussion", "Short quiz"],
+      "student_activities": [
+        "List ways citizens can protect public facilities",
+        "Participate in a revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Civics textbook",
+    "Pictures of public services"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Participation in activities"
+  ],
+  "teacher_tip": "Use local examples such as water supply, roads and public hospitals to help students connect the concept of public facilities with their daily lives."
+}

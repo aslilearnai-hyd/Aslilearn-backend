@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: LIFE PROCESSES IN ANIMALS",
+    "generated_at": "2026-03-06T23:59:45",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the biochemical necessity of Hydrochloric acid in the stomach beyond killing bacteria.",
+            "answer": "It provides an acidic medium ($pH \approx 2$) which is essential for the activation of the protein-digesting enzyme, pepsin.",
+            "key_concepts": ["enzyme activation"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the structure of an artery's wall relate to the 'jerky' flow of blood?",
+            "answer": "Arteries have thick, elastic walls that expand and contract to accommodate the high-pressure surges of blood pumped by the heart.",
+            "key_concepts": ["vessel elasticity"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the physiological significance of the 'Caecum' in ruminants like cows?",
+            "answer": "It is a large sac-like structure containing specialized bacteria that digest cellulose, which humans cannot digest.",
+            "key_concepts": ["cellulose digestion"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze why the rate of breathing in aquatic organisms is much faster than in terrestrial organisms.",
+            "answer": "The amount of dissolved oxygen in water is fairly low compared to the amount of oxygen in the air.",
+            "key_concepts": ["oxygen concentration"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is it dangerous to sleep in a closed room with a coal fire burning?",
+            "answer": "Incomplete combustion produces Carbon Monoxide, which binds more strongly to hemoglobin than oxygen, causing suffocation.",
+            "key_concepts": ["carbon monoxide poisoning"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What happens to the energy released during cellular respiration?",
+            "answer": "It is used to synthesize ATP molecules, which act as the energy currency for all cellular activities.",
+            "key_concepts": ["cellular respiration"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of 'Bile' in the emulsification of fats.",
+            "answer": "Bile breaks down large fat globules into smaller droplets, increasing the surface area for enzymes to act upon.",
+            "key_concepts": ["emulsification"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does the left ventricle have thicker walls compared to the right ventricle?",
+            "answer": "It needs to pump oxygenated blood to the entire body, which requires significantly higher pressure than pumping to the lungs.",
+            "key_concepts": ["cardiac anatomy"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the process of 'Dialysis' in the context of kidney failure.",
+            "answer": "It is an artificial method of removing nitrogenous waste products from the blood through a semi-permeable membrane.",
+            "key_concepts": ["artificial excretion"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the function of the 'epiglottis' during the process of ingestion?",
+            "answer": "It acts as a flap that closes the windpipe (trachea) during swallowing to prevent food from entering the lungs.",
+            "key_concepts": ["ingestion safety"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is the small intestine the site of 'complete digestion'?",
+            "answer": "It receives secretions from the liver (bile) and pancreas, along with its own intestinal juices to break down all food components.",
+            "key_concepts": ["final digestion"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Compare Aerobic and Anaerobic respiration in terms of end-products in yeast.",
+            "answer": "Aerobic produces $CO_2$ and $H_2O$; Anaerobic (fermentation) produces Ethanol and $CO_2$.",
+            "key_concepts": ["respiration types"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "How do the 'Valves' in the heart maintain unidirectional blood flow?",
+            "answer": "They open only one way and snap shut when pressure changes, preventing the backflow of blood between chambers.",
+            "key_concepts": ["heart valves"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the biological reason behind sweating during high-intensity activity?",
+            "answer": "Evaporation of sweat from the skin surface carries away body heat, helping in thermoregulation.",
+            "key_concepts": ["excretion and cooling"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is the double circulation system efficient for mammals?",
+            "answer": "It ensures that oxygenated and deoxygenated blood never mix, allowing for high energy production required for warm-blooded animals.",
+            "key_concepts": ["double circulation"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the significance of 'Alveoli' in the human respiratory system.",
+            "answer": "They provide a massive surface area with very thin walls and rich blood supply for efficient gas exchange.",
+            "key_concepts": ["gas exchange"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What would happen if the 'Platelets' were absent in the blood?",
+            "answer": "The blood would fail to clot at the site of an injury, leading to excessive blood loss and potentially death.",
+            "key_concepts": ["blood clotting"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "How does the 'Food Vacuole' in Amoeba function as a temporary stomach?",
+            "answer": "Digestive juices are secreted into it to break down the food particle, and nutrients are absorbed directly into the cytoplasm.",
+            "key_concepts": ["intracellular digestion"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is 'Hemoglobin' referred to as a respiratory pigment?",
+            "answer": "It has a high affinity for oxygen and binds with it to form oxyhemoglobin for transport in the blood.",
+            "key_concepts": ["hemoglobin"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the role of 'Pancreatic Amylase' in the digestive process?",
+            "answer": "It is an enzyme that specifically breaks down complex carbohydrates (starch) into simpler sugars (maltose).",
+            "key_concepts": ["carbohydrate digestion"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Define 'Transpiration' and its role in the transport of water in plants.",
+            "answer": "It is the loss of water vapor from leaves, which creates a suction pull (transpiration pull) to lift water from roots.",
+            "key_concepts": ["suction pull"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the human heart called 'Myogenic'?",
+            "answer": "The heartbeat originates within the heart muscle itself rather than requiring external nerve impulses.",
+            "key_concepts": ["heartbeat origin"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 23,
+            "question": "How do the kidneys maintain the 'water-salt' balance in the body?",
+            "answer": "By selectively reabsorbing water and salts into the blood while excreting the excess in urine.",
+            "key_concepts": ["osmoregulation"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are 'Capillaries' the only vessels where exchange of materials occurs?",
+            "answer": "Their walls are only one-cell thick, allowing nutrients, gases, and wastes to diffuse easily between blood and tissues.",
+            "key_concepts": ["capillary structure"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Analyze the impact of smoking on the 'Cilia' found in the respiratory tract.",
+            "answer": "Smoking paralyzes or destroys cilia, preventing them from clearing mucus and dust, leading to chronic cough and infections.",
+            "key_concepts": ["respiratory health"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

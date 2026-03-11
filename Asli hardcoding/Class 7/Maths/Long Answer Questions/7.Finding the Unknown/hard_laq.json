@@ -1,0 +1,389 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Finding the Unknown",
+    "generated_at": "2026-03-05T01:58:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A rectangular hall has a length that is 4 meters less than 3 times its breadth. If the breadth is 'b' meters, find the expression for the length. If the perimeter is 72 meters, find the actual dimensions of the hall.",
+            "answer": "Expression: Length $L = 3b - 4$. Perimeter formula: $2(L + b) = 72$. Substitute L: $2(3b - 4 + b) = 72 \\Rightarrow 2(4b - 4) = 72 \\Rightarrow 8b - 8 = 72$. Solve: $8b = 80$, so $b = 10$. Length $L = 3(10) - 4 = 26$. Dimensions: 26m and 10m.",
+            "answer_outline": [
+                "Write the expression for length in terms of $b$",
+                "Set up the perimeter equation",
+                "Solve for $b$ and then find $L$"
+            ],
+            "key_concepts": [
+                "modeling",
+                "multi-step equations"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the 'Distributive Property' of multiplication over addition using variables $a$, $b$, and $c$. Show how it simplifies $4(x + 3)$.",
+            "answer": "The property states $a(b + c) = ab + ac$. For $4(x + 3)$, you multiply 4 by each term inside: $4 \\times x + 4 \\times 3 = 4x + 12$.",
+            "answer_outline": [
+                "State the general formula",
+                "Apply to the specific expression",
+                "Explain the logic of 'distributing' the factor"
+            ],
+            "key_concepts": [
+                "distributive property",
+                "simplification"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Solve for $y$: $\\frac{y - 3}{5} = 2$. Justify each step.",
+            "answer": "Step 1: Multiply both sides by 5 (Inverse of division): $y - 3 = 10$. Step 2: Add 3 to both sides (Inverse of subtraction): $y = 13$.",
+            "answer_outline": [
+                "Identify the outer operation (division) and undo it",
+                "Identify the inner operation (subtraction) and undo it"
+            ],
+            "key_concepts": [
+                "inverse operations",
+                "fractional equations"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Consider the sequence of dots: 4, 7, 10, 13... Find a general rule (expression) for the number of dots in the $n$-th pattern.",
+            "answer": "The sequence starts at 4 and increases by 3 each time. The rule is $3n + 1$. (Check: $n=1 \\Rightarrow 3(1)+1=4$; $n=2 \\Rightarrow 3(2)+1=7$).",
+            "answer_outline": [
+                "Identify the common difference (3)",
+                "Find the adjustment constant",
+                "Verify the rule with $n=1, 2, 3$"
+            ],
+            "key_concepts": [
+                "arithmetic patterns",
+                "generalization"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 5,
+            "question": "If $2x + 5 = x + 12$, find $x$. Explain how you handle the variable appearing on both sides.",
+            "answer": "To solve, move all variables to one side. Subtract $x$ from both sides: $x + 5 = 12$. Now subtract 5 from both sides: $x = 7$.",
+            "answer_outline": [
+                "Apply the subtraction property of equality to remove one variable term",
+                "Isolate the remaining variable"
+            ],
+            "key_concepts": [
+                "variables on both sides",
+                "equality properties"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 6,
+            "question": "An expression $3x^2 + 4x - 5$ is given. Is this a 'Linear Expression'? Why or why not?",
+            "answer": "No, it is not linear. A linear expression must have a variable with a maximum power (exponent) of 1. Here, $x^2$ (power 2) makes it a quadratic expression.",
+            "answer_outline": [
+                "Define linear expression constraints",
+                "Identify the non-linear term ($x^2$)"
+            ],
+            "key_concepts": [
+                "linearity",
+                "exponents"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Find three consecutive integers whose sum is 45. (Hint: Let the integers be $x$, $x+1$, and $x+2$)",
+            "answer": "Equation: $x + (x + 1) + (x + 2) = 45$. Simplify: $3x + 3 = 45$. Solve: $3x = 42$, so $x = 14$. The integers are 14, 15, and 16.",
+            "answer_outline": [
+                "Define variables for consecutive terms",
+                "Set up the sum equation",
+                "Solve and list all three numbers"
+            ],
+            "key_concepts": [
+                "consecutive integers",
+                "modeling"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that if $a = b$, then $ac = bc$ for any value of $c$. What is this property called?",
+            "answer": "This is the 'Multiplication Property of Equality'. It states that multiplying both sides of an equation by the same number maintains the balance (equality).",
+            "answer_outline": [
+                "State the property name",
+                "Explain the maintenance of equality"
+            ],
+            "key_concepts": [
+                "properties of equality"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "A bag contains ₹1 and ₹2 coins. The number of ₹2 coins is 5 more than the ₹1 coins. If the total value is ₹70, find the number of ₹1 coins.",
+            "answer": "Let ₹1 coins be $x$. Then ₹2 coins are $x + 5$. Total value: $1(x) + 2(x + 5) = 70$. Simplify: $x + 2x + 10 = 70 \\Rightarrow 3x = 60 \\Rightarrow x = 20$. There are 20 ₹1 coins.",
+            "answer_outline": [
+                "Assign variable to one coin type",
+                "Express total value as a sum of (quantity $\\times$ value)",
+                "Solve the linear equation"
+            ],
+            "key_concepts": [
+                "coin problems",
+                "value equations"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the difference between $2n$ and $n^2$ using $n = 5$ as an example.",
+            "answer": "$2n$ means multiplication ($2 \\times 5 = 10$). $n^2$ means 'n squared' or $n \\times n$ ($5 \\times 5 = 25$). They represent fundamentally different growth patterns.",
+            "answer_outline": [
+                "Define the operations (multiplication vs exponentiation)",
+                "Perform calculation for both",
+                "Compare the results"
+            ],
+            "key_concepts": [
+                "notation",
+                "exponents"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Solve for $z$: $0.5z + 1.2 = 3.7$.",
+            "answer": "Subtract 1.2: $0.5z = 2.5$. Divide by 0.5: $z = 5$.",
+            "answer_outline": [
+                "Isolate variable term using decimal subtraction",
+                "Solve using decimal division"
+            ],
+            "key_concepts": [
+                "decimal equations"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Express the Commutative Property of Addition using variables $x$ and $y$. Why is this useful in algebra?",
+            "answer": "$x + y = y + x$. It is useful because it allows us to rearrange terms in complex expressions to combine like terms more easily.",
+            "answer_outline": [
+                "State the property formula",
+                "Explain the utility in simplification"
+            ],
+            "key_concepts": [
+                "commutative property",
+                "rearranging"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Can an equation have 'No Solution'? Give an example like $x + 1 = x + 2$.",
+            "answer": "Yes. In $x + 1 = x + 2$, if we subtract $x$ from both sides, we get $1 = 2$, which is impossible. Therefore, no value of $x$ can ever make this true.",
+            "answer_outline": [
+                "Confirm possibility",
+                "Show the contradiction through subtraction"
+            ],
+            "key_concepts": [
+                "no solution",
+                "contradiction"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "A mother is 3 times as old as her son. After 15 years, she will be twice as old as her son. Find their current ages.",
+            "answer": "Son = $s$, Mother = $3s$. In 15 years: $3s + 15 = 2(s + 15)$. Simplify: $3s + 15 = 2s + 30$. Solve: $s = 15$. Mother = $3(15) = 45$.",
+            "answer_outline": [
+                "Set up current ages",
+                "Set up future age relationship with parentheses",
+                "Solve for $s$"
+            ],
+            "key_concepts": [
+                "age problems",
+                "future values"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Evaluate $\\frac{a + b}{a - b}$ when $a = 10$ and $b = 5$.",
+            "answer": "$(10 + 5) / (10 - 5) = 15 / 5 = 3$.",
+            "answer_outline": [
+                "Substitute values into numerator and denominator",
+                "Perform individual operations",
+                "Divide"
+            ],
+            "key_concepts": [
+                "complex substitution"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Write the 'Cost Price' rule as an equation: Total Cost ($T$) is equal to Price per item ($P$) times Number of items ($N$) plus a shipping fee ($S$).",
+            "answer": "$T = PN + S$.",
+            "answer_outline": [
+                "Translate verbal description into algebraic notation"
+            ],
+            "key_concepts": [
+                "formula creation"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Solve for $x$: $4(x - 2) = 12$. (Two ways: Distribute first OR Divide first).",
+            "answer": "Method 1: $4x - 8 = 12 \\Rightarrow 4x = 20 \\Rightarrow x = 5$. Method 2: Divide by 4 first: $x - 2 = 3 \\Rightarrow x = 5$.",
+            "answer_outline": [
+                "Show distribution method",
+                "Show division-first method"
+            ],
+            "key_concepts": [
+                "solving strategies",
+                "distributive property"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is an 'Identity' in algebra? How is it different from a regular equation?",
+            "answer": "An identity is an equation that is true for *all* values of the variable (e.g., $2(x+1) = 2x+2$). A regular equation is only true for *specific* values (e.g., $x+1=5$).",
+            "answer_outline": [
+                "Define identity",
+                "Contrast with conditional equations"
+            ],
+            "key_concepts": [
+                "identities",
+                "equations"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "The sum of two numbers is 25. One number is 9 more than the other. Find the numbers using algebra.",
+            "answer": "Let numbers be $x$ and $x + 9$. Equation: $x + x + 9 = 25 \\Rightarrow 2x + 9 = 25 \\Rightarrow 2x = 16 \\Rightarrow x = 8$. Numbers are 8 and 17.",
+            "answer_outline": [
+                "Define variables",
+                "Set up sum equation",
+                "Find both values"
+            ],
+            "key_concepts": [
+                "number problems"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 20,
+            "question": "If $x = 2$, find the value of $x^3 - x^2 + x - 1$.",
+            "answer": "$2^3 - 2^2 + 2 - 1 = 8 - 4 + 2 - 1 = 5$.",
+            "answer_outline": [
+                "Substitute $x=2$ for all terms",
+                "Calculate powers carefully",
+                "Perform final addition/subtraction"
+            ],
+            "key_concepts": [
+                "evaluating polynomials"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Identify the error in this solution: $3x + 6 = 12 \\Rightarrow 3x = 18 \\Rightarrow x = 6$.",
+            "answer": "The error occurred in the first step. To move $+6$ to the other side, it should have been subtracted ($12 - 6 = 6$), not added. The correct $3x$ should be 6, and $x$ should be 2.",
+            "answer_outline": [
+                "Pinpoint the step with the mistake",
+                "Explain the inverse operation rule",
+                "Provide the correct solution"
+            ],
+            "key_concepts": [
+                "error analysis",
+                "inverse operations"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 22,
+            "question": "A car's speed is $s$ km/h. It travels for 3 hours, then increases speed by 20 km/h for the next 2 hours. Write an expression for the total distance.",
+            "answer": "Distance = $3s + 2(s + 20) = 3s + 2s + 40 = 5s + 40$.",
+            "answer_outline": [
+                "Express first leg distance",
+                "Express second leg distance",
+                "Sum and simplify"
+            ],
+            "key_concepts": [
+                "distance formula",
+                "simplification"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "If $n$ is an even number, how would you represent the next two consecutive even numbers algebraically?",
+            "answer": "Even numbers are separated by 2. If $n$ is even, the next two are $n + 2$ and $n + 4$.",
+            "answer_outline": [
+                "Recognize the gap between even numbers",
+                "Write expressions based on $n$"
+            ],
+            "key_concepts": [
+                "even numbers",
+                "sequences"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Solve for $w$: $7w - 3w + 2 = 10$.",
+            "answer": "Combine like terms: $4w + 2 = 10$. Subtract 2: $4w = 8$. Divide by 4: $w = 2$.",
+            "answer_outline": [
+                "Combine variables",
+                "Standard two-step equation solution"
+            ],
+            "key_concepts": [
+                "like terms",
+                "equations"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Can you use the variable 'x' to prove that the sum of any two odd numbers is even?",
+            "answer": "Let an odd number be $2n+1$ and another be $2m+1$. Sum: $(2n+1) + (2m+1) = 2n + 2m + 2 = 2(n + m + 1)$. Since the final expression is multiplied by 2, it must be even.",
+            "answer_outline": [
+                "Define odd numbers algebraically",
+                "Sum the expressions",
+                "Show the result is divisible by 2"
+            ],
+            "key_concepts": [
+                "algebraic proof",
+                "odd/even numbers"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

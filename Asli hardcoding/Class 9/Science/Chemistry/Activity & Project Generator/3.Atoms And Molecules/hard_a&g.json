@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Atoms and Molecules",
+    "difficulty": "Hard",
+    "source_pdf": "iesc103.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Validation of Chemical Laws",
+            "objective": "To verify the Law of Conservation of Mass through precise gravimetric analysis of a precipitation reaction.",
+            "materials": [
+                "Solutions of X and Y (e.g., Lead nitrate and Sodium chloride) [cite: 1448]",
+                "Conical flask",
+                "Small ignition tube",
+                "Thread and Cork [cite: 1451]",
+                "Analytical balance"
+            ],
+            "steps": [
+                "Prepare separate 5% solutions of lead nitrate and sodium chloride[cite: 1448].",
+                "Place solution Y in the flask and solution X in the ignition tube[cite: 1449].",
+                "Carefully suspend the tube in the flask and seal with a cork to ensure a closed system[cite: 1450, 1451].",
+                "Weigh the entire assembly accurately before the reaction[cite: 1460].",
+                "Tilt the flask to initiate the chemical reaction, then reweigh the assembly[cite: 1461, 1462].",
+                "Analyze the results to confirm that the sum of masses remains unchanged[cite: 1833]."
+            ],
+            "learning_outcome": "Empirically validates that mass is neither created nor destroyed in a chemical reaction[cite: 1466].",
+            "evaluation": "Explain the significance of using a closed flask in proving mass conservation (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Mathematical Derivation of Atomic Ratios",
+            "objective": "To bridge macroscopic mass ratios and microscopic atomic counts using the Law of Constant Proportions.",
+            "materials": [
+                "Reference data for Water and Ammonia [cite: 1469, 1471]",
+                "Table of atomic masses [cite: 1600]",
+                "Scientific calculator"
+            ],
+            "steps": [
+                "Obtain the mass ratio for water (H:O = 1:8) and ammonia (N:H = 14:3)[cite: 1469, 1471].",
+                "Divide the mass of each element by its respective atomic mass[cite: 1633, 1638].",
+                "Find the simplest whole-number ratio to determine the subscripts for the chemical formula[cite: 1635, 1654].",
+                "Discuss how the relative number and kinds of atoms are constant for these compounds[cite: 1498]."
+            ],
+            "learning_outcome": "Converts gravimetric data into the stoichiometry of a molecule[cite: 1654].",
+            "evaluation": "Derive the H:O atomic ratio for water given the mass ratio 1:8 and atomic masses H=1, O=16 (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Logarithmic Visualization of the Nanoscale",
+            "objective": "To conceptualize the dimensions of atoms and molecules through relative comparison.",
+            "materials": [
+                "Table of Relative Sizes [cite: 1519]",
+                "Chart paper",
+                "Graphing tools"
+            ],
+            "steps": [
+                "Construct a logarithmic scale to represent dimensions from $10^{-1}$ m to $10^{-10}$ m[cite: 1519].",
+                "Plot the relative sizes of an apple, an ant, a grain of sand, and a hydrogen atom[cite: 1519].",
+                "Discuss why individual atoms are invisible to the naked eye but can be imaged using modern techniques like AFM/STM[cite: 1523, 1605]."
+            ],
+            "learning_outcome": "Understands that atomic radius is measured in nanometers and recognizes the scale of sub-microscopic matter[cite: 1519].",
+            "evaluation": "Calculate the number of hydrogen atoms needed to span the diameter of a 1 mm grain of sand (10 marks)."
+        },
+        {
+            "sl_no": 4,
+            "title": "Evolution of Atomic Theory Postulates",
+            "objective": "To critically analyze Dalton’s atomic theory and its link to fundamental chemical laws.",
+            "materials": [
+                "List of Dalton's postulates [cite: 1488-1498]",
+                "Historical context of 18th-century chemistry [cite: 1434, 1475]"
+            ],
+            "steps": [
+                "Match postulate (ii) regarding indivisibility to the Law of Conservation of Mass[cite: 1494, 1510].",
+                "Correlate postulate (vi) regarding fixed atomic counts to the Law of Constant Proportions[cite: 1498, 1511].",
+                "Discuss the limitations of Dalton's theory in light of modern knowledge of sub-atomic particles[cite: 1499]."
+            ],
+            "learning_outcome": "Synthesizes the relationship between philosophical atomism and experimental chemical laws[cite: 1478, 1479].",
+            "evaluation": "Write an essay on how Dalton’s theory explained the law of definite proportions (10 marks)."
+        },
+        {
+            "sl_no": 5,
+            "title": "Stoichiometric Formula Construction",
+            "objective": "To derive complex chemical formulae by balancing the charges of monoatomic and polyatomic ions.",
+            "materials": [
+                "Table 3.6: Names and symbols of some ions [cite: 1679]",
+                "Markers and placards"
+            ],
+            "steps": [
+                "Identify valencies for multi-valent metals and polyatomic ions (e.g., $Fe^{3+}$, $SO_4^{2-}$)[cite: 1679, 1680].",
+                "Apply the criss-cross method, ensuring the overall structure is electrically neutral[cite: 1703, 1712].",
+                "Use brackets correctly for compounds containing multiple polyatomic ions (e.g., $(NH_4)_2SO_4$)[cite: 1688, 1762].",
+                "Simplify the subscripts to the lowest whole-number ratio for ionic compounds[cite: 1744]."
+            ],
+            "learning_outcome": "Mastery of the symbolic representation of chemical composition for binary and complex compounds[cite: 1667, 1691].",
+            "evaluation": "Determine the formula for Ammonium sulphate and Aluminium oxide using valency rules (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "Relative Mass and Formula Unit Analysis",
+            "objective": "To differentiate and calculate molecular mass and formula unit mass for covalent and ionic substances.",
+            "materials": [
+                "Atomic mass data [cite: 1600]",
+                "Molecular and ionic compound lists [cite: 1828, 1829]"
+            ],
+            "steps": [
+                "Calculate molecular mass for covalent species like $HNO_3$ by summing atomic masses[cite: 1789, 1811].",
+                "Calculate formula unit mass for ionic species like $CaCl_2$ and $ZnO$[cite: 1813, 1825].",
+                "Discuss the conceptual difference between a 'molecule' and a 'formula unit' based on constituent particles[cite: 1814, 1818]."
+            ],
+            "learning_outcome": "Understands that the total mass of a substance is the sum of the atomic masses of its atoms[cite: 1789, 1813].",
+            "evaluation": "Calculate the formula unit mass of $K_2CO_3$ and the molecular mass of $C_2H_6$ (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Atomicity and Bonding Patterns",
+            "objective": "To categorize elements based on their molecular structure and bond formation.",
+            "materials": [
+                "Table of Atomicity [cite: 1639]",
+                "Molecular model kits"
+            ],
+            "steps": [
+                "Classify elements as monoatomic ($He, Ar$), diatomic ($O_2, Cl_2$), tetra-atomic ($P_4$), or poly-atomic ($S_8$)[cite: 1639].",
+                "Analyze compounds composed of metals and non-metals containing charged species (ions)[cite: 1656].",
+                "Construct models of Ozone ($O_3$) and compare them to diatomic Oxygen[cite: 1621]."
+            ],
+            "learning_outcome": "Defines atomicity and understands the attractive forces holding atoms together[cite: 1610, 1622].",
+            "evaluation": "Explain why metals are generally considered to have indefinite atomicity compared to non-metals (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Reference Standard Exploration: Carbon-12",
+            "objective": "To investigate why Carbon-12 was chosen as the universal atomic mass standard.",
+            "materials": [
+                "History of the 1/16th Oxygen standard [cite: 1582, 1583]",
+                "1961 IUPAC recommendations [cite: 1587]"
+            ],
+            "steps": [
+                "Compare the previous oxygen-based standard with the current carbon-12 standard[cite: 1582, 1587].",
+                "Discuss why whole-number results for most elements made Carbon-12 more relevant[cite: 1586, 1587].",
+                "Define 'unified mass' (u) as $1/12^{th}$ the mass of a carbon-12 atom[cite: 1572, 1588]."
+            ],
+            "learning_outcome": "Grasps the concept of relative atomic mass and standard reference isotopes[cite: 1587, 1589].",
+            "evaluation": "Why was the $1/16^{th}$ mass of naturally occurring oxygen initially relevant as a mass unit? (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Ionic Balance and Neutrality Simulation",
+            "objective": "To demonstrate that the overall charge of an ionic compound must be zero.",
+            "materials": [
+                "Ionic charge placards [cite: 1679]",
+                "Multi-compartment trays (blister pack model) [cite: 1894]"
+            ],
+            "steps": [
+                "Simulate the formation of $Na_2SO_4$ by fitting two $Na^+$ ions into a $SO_4^{2-}$ unit[cite: 1901, 1902].",
+                "Identify the net charge on polyatomic ions like $PO_4^{3-}$ and $CO_3^{2-}$[cite: 1679].",
+                "Predict the formula for Sodium phosphate by balancing charges using the same model[cite: 1904, 1906]."
+            ],
+            "learning_outcome": "Applies the principle that positive and negative charges must balance to create a neutral structure[cite: 1712].",
+            "evaluation": "Derive the formula for Calcium hydroxide and explain the use of brackets in its notation (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Binary Compound Nomenclature",
+            "objective": "To master the IUPAC rules for naming and writing the formulas of binary compounds.",
+            "materials": [
+                "Lists of binary compounds (e.g., $CCl_4, H_2S$) [cite: 1698, 1730]",
+                "Metal vs non-metal position rules [cite: 1686, 1687]"
+            ],
+            "steps": [
+                "Review the rule that metals appear on the left and non-metals on the right in names and formulas[cite: 1686, 1687].",
+                "Practice writing names for formulas like $Al_2(SO_4)_3$ and $KNO_3$[cite: 1773, 1779].",
+                "Identify 'anions' and 'cations' within these binary structures[cite: 1658]."
+            ],
+            "learning_outcome": "Competency in the symbolic representation and nomenclature of simple chemical substances[cite: 1667, 1684].",
+            "evaluation": "Correctly name the following: $CaO$, $FeS$, and $H_2S$ (10 marks)."
+        }
+    ]
+}

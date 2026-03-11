@@ -1,0 +1,408 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 13: Our Environment",
+    "generated_at": "2026-03-11T00:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why an aquarium is considered an artificial ecosystem while a pond is a natural one. Discuss the limitations in energy flow and sustainability in artificial ecosystems.",
+            "answer": "An aquarium is artificial as humans control components (fish, plants, cleaning) with limited biodiversity and external energy input. A pond is natural with self-sustaining interactions. Artificial ecosystems lack full decomposer networks and energy recycling, leading to quick imbalance if not maintained.",
+            "answer_outline": [
+                "Human control vs natural balance",
+                "Limited biodiversity and recycling",
+                "Sustainability issues"
+            ],
+            "key_concepts": [
+                "artificial vs natural ecosystem",
+                "sustainability"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Using the 10% law, if producers capture 10,000 J of solar energy, calculate the energy available at the tertiary consumer level in a four-step food chain. Explain why top carnivores are most affected by energy loss.",
+            "answer": "T1 (producers): 10,000 J; T2: 1,000 J; T3: 100 J; T4 (tertiary): 10 J. Top carnivores receive minimal energy due to cumulative 90% losses as heat/respiration at each level, making populations small and vulnerable to disturbances.",
+            "answer_outline": [
+                "10% transfer calculation",
+                "Cumulative losses",
+                "Small populations at top"
+            ],
+            "key_concepts": [
+                "10% law",
+                "energy pyramid"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is the pyramid of energy always upright? Contrast it with inverted pyramids of numbers or biomass in specific ecosystems.",
+            "answer": "Energy pyramid is upright as only ~10% transfers upward; rest lost as heat. Number/biomass pyramids can invert (e.g., tree supports many insects → inverted numbers; parasite-heavy ecosystem → inverted biomass) due to size differences, but energy flow remains unidirectional downward.",
+            "answer_outline": [
+                "Energy loss reason for upright",
+                "Size-based inversion in others",
+                "Unidirectional flow"
+            ],
+            "key_concepts": [
+                "ecological pyramids",
+                "energy vs number/biomass"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain biomagnification with DDT example. Why do humans show highest DDT concentration despite low direct exposure?",
+            "answer": "DDT accumulates progressively (0.003 ppm in water → 0.04 in plankton → 2 in fish → 25 in birds → higher in humans via food chain). Non-biodegradable, fat-soluble nature causes magnification at higher trophic levels; humans at top consume contaminated fish/meat.",
+            "answer_outline": [
+                "Progressive accumulation",
+                "Fat-soluble, non-biodegradable",
+                "Top trophic level effect"
+            ],
+            "key_concepts": [
+                "biomagnification",
+                "DDT example"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 5,
+            "question": "How do CFCs cause ozone depletion? Describe the chain reaction involving chlorine radicals in the stratosphere.",
+            "answer": "CFCs release Cl radicals under UV; Cl + O₃ → ClO + O₂; ClO + O → Cl + O₂ (regenerates Cl). One Cl destroys thousands of O₃ molecules catalytically, thinning ozone layer and increasing UV-B reaching Earth.",
+            "answer_outline": [
+                "UV breaks CFCs → Cl radicals",
+                "Catalytic cycle",
+                "Thousands of O₃ destroyed"
+            ],
+            "key_concepts": [
+                "ozone depletion mechanism",
+                "CFC role"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is ozone layer depletion most severe over Antarctica? Explain seasonal and chemical factors.",
+            "answer": "Polar stratospheric clouds (PSCs) form in extreme cold, providing surfaces for Cl activation from reservoir compounds (HCl, ClONO₂). Spring sunlight triggers massive Cl release → rapid depletion (ozone hole). Unique Antarctic vortex traps cold air.",
+            "answer_outline": [
+                "PSCs and cold temperatures",
+                "Spring UV activation",
+                "Vortex containment"
+            ],
+            "key_concepts": [
+                "Antarctic ozone hole",
+                "seasonal factors"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Differentiate biodegradable and non-biodegradable wastes. Explain why improper disposal of non-biodegradable wastes leads to biomagnification and ecosystem imbalance.",
+            "answer": "Biodegradable: decomposed by microbes (e.g., food waste); non-biodegradable: persist (e.g., plastics, DDT). Non-biodegradables accumulate, enter food chains, magnify at higher levels → toxicity in top consumers, reduced biodiversity, disrupted energy flow.",
+            "answer_outline": [
+                "Decomposition difference",
+                "Persistence and entry to chains",
+                "Toxicity and imbalance"
+            ],
+            "key_concepts": [
+                "biodegradable vs non-biodegradable",
+                "ecosystem impact"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are food webs more stable than food chains? Illustrate with an example of how removal of one species affects stability.",
+            "answer": "Food webs have multiple interconnected paths; loss of one species allows alternatives, maintaining energy flow. In chains, removal (e.g., herbivores) collapses higher levels. Webs buffer disturbances better, supporting biodiversity.",
+            "answer_outline": [
+                "Multiple pathways",
+                "Alternative food sources",
+                "Buffering effect"
+            ],
+            "key_concepts": [
+                "food web stability",
+                "interconnectedness"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of decomposers in nutrient cycling. Why would absence of decomposers collapse an ecosystem?",
+            "answer": "Decomposers break dead matter into inorganic nutrients (N, P) recycled to soil for producers. Without them, nutrients lock in dead biomass → no replenishment → producers starve, energy flow stops, ecosystem collapses.",
+            "answer_outline": [
+                "Breakdown to inorganics",
+                "Nutrient recycling",
+                "Lock-up consequence"
+            ],
+            "key_concepts": [
+                "decomposers role",
+                "nutrient cycle"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 10,
+            "question": "How do human activities like deforestation and excessive pesticide use disrupt energy flow and lead to ecological imbalance?",
+            "answer": "Deforestation reduces producers → less energy capture, soil erosion, disrupted chains. Pesticides kill non-target species (e.g., pollinators, decomposers) → biomagnification, reduced biodiversity, unbalanced trophic levels and nutrient cycling.",
+            "answer_outline": [
+                "Reduced primary production",
+                "Non-target killing",
+                "Imbalance in levels"
+            ],
+            "key_concepts": [
+                "human impact",
+                "energy disruption"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is the Montreal Protocol considered successful? Discuss its impact on CFC usage and ozone recovery trends.",
+            "answer": "Montreal Protocol (1987) phased out CFCs globally. It reduced emissions → slowed depletion, partial recovery in ozone layer (Antarctic hole shrinking). Demonstrates international cooperation can reverse environmental damage.",
+            "answer_outline": [
+                "Global phase-out",
+                "Emission reduction",
+                "Recovery evidence"
+            ],
+            "key_concepts": [
+                "Montreal Protocol",
+                "ozone recovery"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why energy flow in an ecosystem is unidirectional while nutrient flow is cyclic.",
+            "answer": "Energy enters as sunlight, degrades as heat at each level (second law of thermodynamics) → no recycling. Nutrients cycle via decomposers, producers uptake → continuous reuse without net loss.",
+            "answer_outline": [
+                "Energy degradation to heat",
+                "Nutrient reuse via decomposition",
+                "Unidirectional vs cyclic"
+            ],
+            "key_concepts": [
+                "energy vs nutrient flow",
+                "thermodynamics"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 13,
+            "question": "In a food chain, if energy at producers is 10,000 kJ, predict energy at secondary consumers and explain the implication for number of trophic levels.",
+            "answer": "T2 (primary consumers): 1,000 kJ; T3 (secondary): 100 kJ. Limited transfer restricts chains to 4-5 levels max as higher levels get negligible energy, supporting fewer organisms.",
+            "answer_outline": [
+                "10% calculation",
+                "Negligible at higher levels",
+                "Limited trophic levels"
+            ],
+            "key_concepts": [
+                "energy limitation",
+                "trophic levels"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 14,
+            "question": "How does improper waste segregation contribute to environmental problems? Suggest scientific methods for managing biodegradable and non-biodegradable wastes.",
+            "answer": "Mixed waste hinders decomposition, increases landfill burden, releases toxins/methane. Biodegradable: composting/vermicomposting; non-biodegradable: recycling, incineration with emission control, reduce-reuse.",
+            "answer_outline": [
+                "Hindered decomposition",
+                "Composting for biodegradable",
+                "Recycle/incinerate non-biodegradable"
+            ],
+            "key_concepts": [
+                "waste management",
+                "segregation importance"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are top carnivores at greatest risk from persistent pollutants like heavy metals? Relate to food chain position and physiological factors.",
+            "answer": "Highest trophic level → maximum biomagnification. Long lifespan, fat storage → accumulate toxins. Consume large prey quantities → higher intake; sensitive to reproductive/immune effects.",
+            "answer_outline": [
+                "Maximum magnification",
+                "Fat solubility and lifespan",
+                "Reproductive vulnerability"
+            ],
+            "key_concepts": [
+                "top carnivore risk",
+                "persistent pollutants"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how excessive UV radiation due to ozone depletion affects phytoplankton and cascades to higher trophic levels.",
+            "answer": "UV damages phytoplankton DNA/photosynthesis → reduced primary production → less energy to herbivores/zooplankton → disrupted food webs, lower fish populations, ocean ecosystem imbalance.",
+            "answer_outline": [
+                "Phytoplankton damage",
+                "Reduced production",
+                "Cascade effect"
+            ],
+            "key_concepts": [
+                "UV impact",
+                "aquatic food chain"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why do pyramids of biomass sometimes invert in aquatic ecosystems? Give reasons and implications.",
+            "answer": "Phytoplankton (producers) have short lifespan/high turnover → low standing biomass vs longer-lived zooplankton (consumers). Implies rapid energy flow but fragile balance if producers depleted.",
+            "answer_outline": [
+                "High turnover of producers",
+                "Low standing biomass",
+                "Rapid but fragile flow"
+            ],
+            "key_concepts": [
+                "inverted biomass pyramid",
+                "aquatic example"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Discuss the environmental consequences of using disposable plastic items over reusable alternatives.",
+            "answer": "Plastics non-biodegradable → persist, enter chains, biomagnify → harm wildlife (ingestion/entanglement). Energy-intensive production, landfill overflow, microplastics pollution in oceans/soil.",
+            "answer_outline": [
+                "Persistence and biomagnification",
+                "Wildlife harm",
+                "Microplastics pollution"
+            ],
+            "key_concepts": [
+                "plastic pollution",
+                "disposable vs reusable"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 19,
+            "question": "How does overexploitation of a single species (e.g., overfishing) affect food web stability and biodiversity?",
+            "answer": "Removes key species → breaks links, alternative paths collapse → trophic cascade (e.g., algae bloom if herbivores reduced). Reduces biodiversity, disrupts nutrient cycling and energy transfer.",
+            "answer_outline": [
+                "Broken links and cascades",
+                "Reduced biodiversity",
+                "Nutrient/energy disruption"
+            ],
+            "key_concepts": [
+                "overexploitation",
+                "food web impact"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why the ozone layer is crucial for terrestrial life but less critical for marine life at depth.",
+            "answer": "Ozone absorbs harmful UV-B/C preventing DNA damage, skin cancer, reduced photosynthesis on land. In oceans, UV penetrates only surface; deeper water absorbs UV → phytoplankton affected but deep ecosystems protected.",
+            "answer_outline": [
+                "UV absorption role",
+                "Surface vs depth penetration",
+                "Differential impact"
+            ],
+            "key_concepts": [
+                "ozone importance",
+                "terrestrial vs marine"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is energy loss at each trophic level inevitable according to thermodynamics?",
+            "answer": "Second law: entropy increases; energy conversions inefficient → heat loss in respiration, movement, metabolism. No process 100% efficient → only fraction transfers as biomass.",
+            "answer_outline": [
+                "Entropy increase",
+                "Inefficient conversions",
+                "Heat loss"
+            ],
+            "key_concepts": [
+                "thermodynamics in ecology",
+                "energy loss"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 22,
+            "question": "How can individuals contribute to reducing ozone-depleting substances and non-biodegradable waste simultaneously?",
+            "answer": "Avoid aerosol CFCs (use alternatives), support recycling, reduce plastic use (carry bags), compost organic waste. Promote awareness, choose eco-friendly products to minimize both CFC and plastic pollution.",
+            "answer_outline": [
+                "Avoid CFCs/aerosols",
+                "Reduce/recycle plastics",
+                "Compost and awareness"
+            ],
+            "key_concepts": [
+                "individual actions",
+                "dual reduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4 & 13.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why decomposers are called ecosystem cleaners and nutrient recyclers.",
+            "answer": "Break complex organics into inorganics → prevent accumulation of waste, release N/P/C for producers. Maintain nutrient availability → sustain productivity and balance without external input.",
+            "answer_outline": [
+                "Waste breakdown",
+                "Nutrient release",
+                "Sustainability role"
+            ],
+            "key_concepts": [
+                "decomposers dual role",
+                "cleaning and recycling"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss the long-term ecological impact of introducing non-native species on native food chains.",
+            "answer": "Invasive species compete/predate natives → displace species, alter trophic levels (e.g., overgraze producers). Disrupt webs, reduce biodiversity, cause extinctions, imbalance energy/nutrient flow.",
+            "answer_outline": [
+                "Competition/predation",
+                "Displacement and extinction",
+                "Web imbalance"
+            ],
+            "key_concepts": [
+                "invasive species",
+                "food chain disruption"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Integrate concepts of energy flow, biomagnification, and waste disposal to explain why reducing consumption at source is most effective for environmental protection.",
+            "answer": "Reducing consumption lowers producer demand → less energy extraction, fewer pollutants entering chains (less biomagnification), minimal waste generation. Prevents upstream damage (resource depletion) and downstream effects (pollution, imbalance).",
+            "answer_outline": [
+                "Lower demand and extraction",
+                "Reduced pollution entry",
+                "Prevent upstream/downstream harm"
+            ],
+            "key_concepts": [
+                "integrated protection",
+                "source reduction"
+            ],
+            "marks": 3,
+            "source_section": "Sections 13.2, 13.3, 13.5"
+        }
+    ]
+}

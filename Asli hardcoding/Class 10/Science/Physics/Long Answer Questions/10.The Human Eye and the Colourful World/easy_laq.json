@@ -1,0 +1,421 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 10: The Human Eye and the Colourful World",
+    "generated_at": "2026-03-10T23:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the structure of the human eye with a labelled diagram. Mention the functions of major parts.",
+            "answer": "The human eye is a spherical structure with parts: cornea (transparent front, refracts light), iris (controls pupil size), pupil (allows light entry), crystalline lens (adjusts focus via accommodation), ciliary muscles (change lens shape), retina (light-sensitive screen with rods/cones), optic nerve (transmits signals to brain). Diagram: Label cornea, iris, pupil, lens, retina, vitreous humour, optic nerve. Functions help in image formation on retina.",
+            "answer_outline": [
+                "Labelled diagram description",
+                "Functions of cornea, iris, pupil, lens, ciliary muscles, retina, optic nerve"
+            ],
+            "key_concepts": [
+                "structure of eye",
+                "image formation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is power of accommodation of the eye? Explain how the eye sees nearby and distant objects clearly.",
+            "answer": "Power of accommodation is the ability of the eye lens to change its focal length by ciliary muscles contracting/relaxing to focus near/far objects on retina. For distant objects, lens flattens (ciliary relaxed, focal length increases). For nearby, lens becomes more curved (ciliary contracts, focal length decreases). Near point ~25 cm, far point infinity.",
+            "answer_outline": [
+                "Definition of power of accommodation",
+                "Role of ciliary muscles",
+                "Mechanism for near and far vision"
+            ],
+            "key_concepts": [
+                "accommodation",
+                "ciliary muscles",
+                "focal length adjustment"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain myopia (near-sightedness). State its causes, effects, and correction method with ray diagram.",
+            "answer": "Myopia: Person sees near objects clearly but distant blurred. Causes: Eyeball elongated or lens too curved, image forms before retina. Effects: Far point closer than infinity. Correction: Concave (diverging) lens to shift image back to retina. Ray diagram: Show parallel rays from distant object converging before retina; concave lens diverges to form on retina.",
+            "answer_outline": [
+                "Definition and symptoms",
+                "Causes",
+                "Ray diagram for uncorrected and corrected myopia",
+                "Lens type and power"
+            ],
+            "key_concepts": [
+                "myopia",
+                "concave lens correction",
+                "ray diagram"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe hypermetropia (far-sightedness). Give causes, effects, and correction with ray diagram.",
+            "answer": "Hypermetropia: Near objects blurred, distant clear. Causes: Eyeball short or lens less curved, image forms behind retina. Effects: Near point farther than 25 cm. Correction: Convex (converging) lens to converge rays earlier on retina. Ray diagram: Show rays from near object forming behind retina; convex lens converges to form on retina.",
+            "answer_outline": [
+                "Definition and symptoms",
+                "Causes",
+                "Ray diagram for uncorrected and corrected hypermetropia",
+                "Lens type"
+            ],
+            "key_concepts": [
+                "hypermetropia",
+                "convex lens correction",
+                "ray diagram"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is presbyopia? Explain its cause and correction. Mention the use of bifocal lenses.",
+            "answer": "Presbyopia: Age-related loss of accommodation (usually after 40 years), difficulty seeing near objects. Cause: Ciliary muscles weaken, lens loses elasticity. Correction: Bifocal lenses (upper concave for distant, lower convex for near) or progressive lenses. Helps in both near and far vision without changing spectacles.",
+            "answer_outline": [
+                "Definition and age factor",
+                "Cause (lens elasticity loss)",
+                "Bifocal lens working",
+                "Alternative corrections"
+            ],
+            "key_concepts": [
+                "presbyopia",
+                "bifocal lenses",
+                "ageing eye"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe the dispersion of white light by a glass prism with a labelled diagram. Why does it occur?",
+            "answer": "When white light passes through prism, it splits into VIBGYOR spectrum. Diagram: Incident ray, refraction at first face, dispersion inside prism, emergent spectrum. Occurs because different wavelengths (violet shortest, red longest) refract at different angles (violet deviates most). Refractive index varies with wavelength.",
+            "answer_outline": [
+                "Experiment setup and diagram",
+                "Order of colours (VIBGYOR)",
+                "Reason: wavelength dependence of refraction"
+            ],
+            "key_concepts": [
+                "dispersion",
+                "prism",
+                "spectrum"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the formation of a rainbow with a diagram. Mention the role of refraction, dispersion, and internal reflection.",
+            "answer": "Rainbow forms by refraction, dispersion, and internal reflection in raindrops. Sunlight enters drop, refracts and disperses into colours, reflects internally once, refracts out. Primary rainbow: 42° angle, red outside, violet inside. Secondary: double reflection, 51°, inverted colours. Diagram: Ray path in raindrop showing VIBGYOR separation.",
+            "answer_outline": [
+                "Conditions for rainbow",
+                "Ray diagram in raindrop",
+                "Primary and secondary rainbow differences"
+            ],
+            "key_concepts": [
+                "rainbow formation",
+                "refraction dispersion reflection"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does the sky appear blue? Explain with scattering of light and wavelength dependence.",
+            "answer": "Sky appears blue due to Rayleigh scattering: shorter wavelengths (blue/violet) scatter more than longer (red). Intensity ∝ 1/λ⁴, so blue scatters ~10 times more than red. Sunlight enters atmosphere, blue scatters in all directions, reaches our eyes from sky. Violet scatters more but less visible to eye.",
+            "answer_outline": [
+                "Rayleigh scattering law",
+                "Wavelength dependence (1/λ⁴)",
+                "Why blue dominates over violet"
+            ],
+            "key_concepts": [
+                "scattering",
+                "blue sky",
+                "Rayleigh law"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does the sun appear reddish at sunrise and sunset? Explain with atmospheric scattering.",
+            "answer": "At sunrise/sunset, sun light travels longer path through atmosphere. Shorter wavelengths (blue) scatter away, longer (red/orange) reach eye directly. Path length increases scattering of blue light, so red transmitted. Diagram: Long atmospheric path at horizon vs short at noon.",
+            "answer_outline": [
+                "Long path through atmosphere",
+                "Scattering of blue light",
+                "Transmission of red light"
+            ],
+            "key_concepts": [
+                "red sunrise sunset",
+                "atmospheric scattering"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain atmospheric refraction. How does it cause twinkling of stars and why planets do not twinkle?",
+            "answer": "Atmospheric refraction: Light bends due to varying density layers (hot to cold). Stars twinkle: point sources, light bends variably by wind/temperature changes causing intensity fluctuation. Planets: extended sources (disk), fluctuations average out, appear steady.",
+            "answer_outline": [
+                "Definition and cause",
+                "Twinkling mechanism for stars",
+                "Why planets do not twinkle (disk source)"
+            ],
+            "key_concepts": [
+                "atmospheric refraction",
+                "twinkling stars",
+                "planets steady"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Why do stars twinkle but planets do not? Explain with atmospheric refraction.",
+            "answer": "Stars are point sources; atmospheric refraction causes random bending of light rays due to density variations, leading to intensity changes (twinkling). Planets are closer and appear as disks; averaging of light from many points results in no noticeable twinkling.",
+            "answer_outline": [
+                "Point vs extended source",
+                "Refraction effects",
+                "Intensity fluctuation"
+            ],
+            "key_concepts": [
+                "twinkling",
+                "point source",
+                "disk source"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the Tyndall effect. Give examples from daily life and its relation to blue sky.",
+            "answer": "Tyndall effect: Scattering of light by colloidal particles making beam visible. Examples: Car headlight in fog, sunlight through canopy. Relation to blue sky: Similar scattering by air molecules (Rayleigh), blue scatters more, making path visible and sky blue.",
+            "answer_outline": [
+                "Definition",
+                "Examples",
+                "Link to atmospheric scattering"
+            ],
+            "key_concepts": [
+                "Tyndall effect",
+                "scattering",
+                "colloids"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe the defects of vision: myopia, hypermetropia, and presbyopia. How are they corrected?",
+            "answer": "Myopia: Distant blurred, corrected by concave lens. Hypermetropia: Near blurred, corrected by convex lens. Presbyopia: Age-related near vision loss, corrected by bifocal/reading glasses. All due to focal point mismatch with retina; lenses adjust image position.",
+            "answer_outline": [
+                "Each defect definition, cause, correction lens type",
+                "Ray diagrams brief"
+            ],
+            "key_concepts": [
+                "vision defects",
+                "lens corrections"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why advanced sunrise and delayed sunset occur due to atmospheric refraction.",
+            "answer": "Atmospheric refraction bends sun rays from below horizon, making sun appear above horizon earlier (advanced sunrise) and later (delayed sunset). Actual sun below horizon but refracted rays reach observer, extending day by ~2 minutes each.",
+            "answer_outline": [
+                "Refraction bending rays",
+                "Sun below horizon but visible",
+                "Time difference calculation approximate"
+            ],
+            "key_concepts": [
+                "atmospheric refraction",
+                "sunrise sunset"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Draw a ray diagram to show correction of myopia. Mention the nature of lens used and its power.",
+            "answer": "Diagram: Parallel rays from distant object converge before retina (myopic eye); concave lens diverges rays to form image on retina. Lens: Diverging (concave), negative power in dioptres (e.g., -2 D for far point 50 cm).",
+            "answer_outline": [
+                "Uncorrected ray diagram",
+                "Corrected with concave lens",
+                "Power formula mention"
+            ],
+            "key_concepts": [
+                "myopia correction",
+                "ray diagram",
+                "concave lens"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the scattering of light in Earth's atmosphere and its dependence on wavelength.",
+            "answer": "Scattering: Light deviates by atmospheric particles/molecules. Rayleigh scattering: Intensity ∝ 1/λ⁴ (shorter λ scatters more). Blue (shorter λ) scatters more → sky blue; red (longer λ) transmits → red sunset/sunrise.",
+            "answer_outline": [
+                "Rayleigh scattering formula",
+                "Wavelength effect",
+                "Applications to sky and sunset"
+            ],
+            "key_concepts": [
+                "scattering dependence",
+                "1/λ⁴ law"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe the prism experiment to show dispersion of white light. Draw the labelled diagram.",
+            "answer": "Setup: Narrow white light beam through prism; emergent light splits into VIBGYOR on screen. Diagram: Incident slit, prism, emergent spectrum with colours labelled. Dispersion occurs due to different refraction angles for wavelengths.",
+            "answer_outline": [
+                "Setup and procedure",
+                "Labelled diagram",
+                "Explanation of VIBGYOR order"
+            ],
+            "key_concepts": [
+                "prism dispersion",
+                "experiment"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain cataract and its correction. Also mention role of retina in vision.",
+            "answer": "Cataract: Clouding of lens (age/disease), reduces vision. Correction: Surgical replacement with artificial lens. Retina: Contains rods (dim light, black-white) and cones (colour, bright light); converts light to electrical signals via optic nerve.",
+            "answer_outline": [
+                "Cataract definition and cause",
+                "Surgical correction",
+                "Retina functions (rods/cones)"
+            ],
+            "key_concepts": [
+                "cataract",
+                "retina rods cones"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1, 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do we see a spectrum after dispersion but not after refraction through a glass slab?",
+            "answer": "In prism, two non-parallel surfaces cause net deviation and dispersion (different colours deviate differently). In slab, parallel surfaces cause lateral shift but no net deviation; colours recombine on exit, no visible spectrum.",
+            "answer_outline": [
+                "Prism vs slab geometry",
+                "Net deviation in prism",
+                "Recombination in slab"
+            ],
+            "key_concepts": [
+                "dispersion vs refraction",
+                "prism slab difference"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the danger of ozone depletion and its link to atmospheric phenomena in this chapter.",
+            "answer": "Ozone absorbs harmful UV rays. Depletion (by CFCs) increases UV reaching Earth, causing skin cancer, eye damage (cataracts). Link: UV scattering/absorption affects atmospheric optics indirectly; chapter focuses on visible light phenomena but UV relevant to eye health.",
+            "answer_outline": [
+                "Ozone role",
+                "Depletion causes/effects",
+                "Eye health link"
+            ],
+            "key_concepts": [
+                "ozone depletion",
+                "UV radiation",
+                "eye protection"
+            ],
+            "marks": 5,
+            "source_section": "Related environmental context"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe how the human eye forms an image. Include role of lens and retina.",
+            "answer": "Light refracts at cornea, passes pupil, lens focuses (accommodation) to form inverted real image on retina. Retina rods/cones detect, optic nerve sends to brain for upright interpretation. Persistence of vision ~1/16 s helps in motion perception.",
+            "answer_outline": [
+                "Light path and refraction",
+                "Image formation on retina",
+                "Brain interpretation"
+            ],
+            "key_concepts": [
+                "image formation",
+                "persistence of vision"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why danger signals are red. Relate to scattering phenomena.",
+            "answer": "Red scatters least (longest wavelength), travels farthest without loss in fog/rain (scattering ∝ 1/λ⁴). Blue/green scatter more, so red visible from distance. Used in traffic lights, danger signals for maximum visibility.",
+            "answer_outline": [
+                "Scattering dependence on wavelength",
+                "Red least scattered",
+                "Practical applications"
+            ],
+            "key_concepts": [
+                "scattering",
+                "danger signals red"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the minimum deviation in a prism? How is it related to refractive index?",
+            "answer": "Minimum deviation (δ_m): Smallest angle when i = e. Formula: μ = sin((A + δ_m)/2) / sin(A/2), where A is prism angle, μ refractive index. Used to calculate glass μ in experiments.",
+            "answer_outline": [
+                "Definition of minimum deviation",
+                "Ray path at minimum deviation",
+                "Relation to refractive index formula"
+            ],
+            "key_concepts": [
+                "minimum deviation",
+                "refractive index"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the colour vision in humans. Role of cones and why some people are colour blind.",
+            "answer": "Cones in retina: Three types sensitive to red, green, blue. Brain mixes signals for colour perception. Colour blindness: Genetic defect, missing/defective cones (e.g., red-green common). Rods for low light, no colour.",
+            "answer_outline": [
+                "Cones types and function",
+                "Colour mixing",
+                "Colour blindness cause"
+            ],
+            "key_concepts": [
+                "colour vision",
+                "cones",
+                "colour blindness"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Discuss applications of phenomena in this chapter in daily life and technology.",
+            "answer": "Rainbow: Dispersion in nature. Blue sky/red sunset: Scattering for weather prediction. Twinkling: Atmospheric study. Vision correction: Spectacles, contacts, LASIK. Prism: Spectrometers. Mirages: Refraction. Improves optics, environment understanding, eye care.",
+            "answer_outline": [
+                "Natural phenomena applications",
+                "Technology (lenses, spectrometers)",
+                "Eye care and environment"
+            ],
+            "key_concepts": [
+                "applications",
+                "real life optics"
+            ],
+            "marks": 5,
+            "source_section": "Full chapter"
+        }
+    ]
+}

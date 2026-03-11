@@ -1,0 +1,398 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 6: Population",
+    "generated_at": "2026-03-08T22:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the meaning of population.",
+            "answer": "Population refers to the total number of people living in a particular area. It is an important factor in social and economic development.",
+            "answer_outline": [
+                "Definition of population",
+                "People as resources",
+                "Importance in development"
+            ],
+            "key_concepts": [
+                "population"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the importance of population in a country.",
+            "answer": "Population is important because people develop resources, create technology and contribute to economic growth.",
+            "answer_outline": [
+                "Human resource",
+                "Development role",
+                "Use of resources"
+            ],
+            "key_concepts": [
+                "population importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the concept of census.",
+            "answer": "Census is the official enumeration of population conducted periodically to collect demographic data.",
+            "answer_outline": [
+                "Definition of census",
+                "Population counting",
+                "Use in planning"
+            ],
+            "key_concepts": [
+                "census"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain India's population size according to the 2011 Census.",
+            "answer": "According to the 2011 Census, India's population was about 1.21 billion which is over 17% of the world's population.",
+            "answer_outline": [
+                "2011 population",
+                "Share in world population",
+                "Large population"
+            ],
+            "key_concepts": [
+                "population size"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain population distribution in India.",
+            "answer": "Population distribution in India is uneven. Some regions like the Northern Plains are densely populated while mountainous areas are sparsely populated.",
+            "answer_outline": [
+                "Uneven distribution",
+                "Dense population regions",
+                "Sparse population regions"
+            ],
+            "key_concepts": [
+                "population distribution"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the concept of population density.",
+            "answer": "Population density refers to the number of persons living per square kilometre of land area.",
+            "answer_outline": [
+                "Definition",
+                "Calculation",
+                "Importance"
+            ],
+            "key_concepts": [
+                "population density"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why the Northern Plains have high population density.",
+            "answer": "The Northern Plains have fertile soil, flat land and good irrigation which support agriculture and settlements.",
+            "answer_outline": [
+                "Fertile soil",
+                "Agriculture",
+                "Settlement"
+            ],
+            "key_concepts": [
+                "fertile plains"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why mountainous regions have sparse population.",
+            "answer": "Mountainous regions have rugged terrain, harsh climate and poor accessibility which discourage settlement.",
+            "answer_outline": [
+                "Rugged terrain",
+                "Harsh climate",
+                "Poor accessibility"
+            ],
+            "key_concepts": [
+                "sparse population"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the concept of population growth.",
+            "answer": "Population growth refers to the increase in the number of people in a country over a period of time.",
+            "answer_outline": [
+                "Definition",
+                "Increase in population",
+                "Measurement"
+            ],
+            "key_concepts": [
+                "population growth"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the meaning of absolute increase in population.",
+            "answer": "Absolute increase refers to the difference between the population of two time periods.",
+            "answer_outline": [
+                "Population difference",
+                "Time period comparison"
+            ],
+            "key_concepts": [
+                "absolute increase"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain birth rate.",
+            "answer": "Birth rate is the number of live births per thousand persons in a year.",
+            "answer_outline": [
+                "Definition",
+                "Population indicator"
+            ],
+            "key_concepts": [
+                "birth rate"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain death rate.",
+            "answer": "Death rate is the number of deaths per thousand persons in a year.",
+            "answer_outline": [
+                "Definition",
+                "Population indicator"
+            ],
+            "key_concepts": [
+                "death rate"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the processes of population change.",
+            "answer": "Population change occurs due to three main processes: birth rate, death rate and migration.",
+            "answer_outline": [
+                "Birth rate",
+                "Death rate",
+                "Migration"
+            ],
+            "key_concepts": [
+                "population change"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain migration.",
+            "answer": "Migration refers to the movement of people from one place to another for better opportunities.",
+            "answer_outline": [
+                "Definition",
+                "Types of migration",
+                "Reasons"
+            ],
+            "key_concepts": [
+                "migration"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain internal migration.",
+            "answer": "Internal migration is the movement of people within a country from one region to another.",
+            "answer_outline": [
+                "Within country",
+                "Regional movement"
+            ],
+            "key_concepts": [
+                "internal migration"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain rural to urban migration.",
+            "answer": "Rural to urban migration occurs when people move from villages to cities in search of employment and better living conditions.",
+            "answer_outline": [
+                "Village to city movement",
+                "Employment opportunities",
+                "Better facilities"
+            ],
+            "key_concepts": [
+                "urban migration"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain push factors of migration.",
+            "answer": "Push factors are conditions such as poverty and unemployment that force people to leave rural areas.",
+            "answer_outline": [
+                "Poverty",
+                "Unemployment",
+                "Lack of facilities"
+            ],
+            "key_concepts": [
+                "push factors"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain pull factors of migration.",
+            "answer": "Pull factors are attractions such as employment opportunities, education and healthcare facilities in cities.",
+            "answer_outline": [
+                "Jobs",
+                "Education",
+                "Better facilities"
+            ],
+            "key_concepts": [
+                "pull factors"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain urban population.",
+            "answer": "Urban population refers to the people living in towns and cities.",
+            "answer_outline": [
+                "Urban areas",
+                "Cities and towns"
+            ],
+            "key_concepts": [
+                "urban population"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain million-plus cities.",
+            "answer": "Million-plus cities are cities with a population of more than one million people.",
+            "answer_outline": [
+                "Population above one million",
+                "Urban growth"
+            ],
+            "key_concepts": [
+                "million plus cities"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain adolescent population.",
+            "answer": "Adolescent population refers to people in the age group of 10–19 years.",
+            "answer_outline": [
+                "Age group 10–19",
+                "Large population group"
+            ],
+            "key_concepts": [
+                "adolescents"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of adolescent population.",
+            "answer": "Adolescents form the future workforce and play an important role in the country's development.",
+            "answer_outline": [
+                "Future workforce",
+                "Economic development"
+            ],
+            "key_concepts": [
+                "adolescent importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the health challenges faced by adolescents.",
+            "answer": "Many adolescents suffer from poor nutrition and anaemia due to inadequate diet.",
+            "answer_outline": [
+                "Poor nutrition",
+                "Anaemia"
+            ],
+            "key_concepts": [
+                "health issues"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain National Population Policy 2000.",
+            "answer": "National Population Policy 2000 aims to control population growth and improve family welfare through education and healthcare.",
+            "answer_outline": [
+                "Population control",
+                "Health",
+                "Education"
+            ],
+            "key_concepts": [
+                "NPP 2000"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why population planning is necessary.",
+            "answer": "Population planning helps balance population growth with available resources and ensures sustainable development.",
+            "answer_outline": [
+                "Resource balance",
+                "Sustainable development"
+            ],
+            "key_concepts": [
+                "population planning"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        }
+    ]
+}

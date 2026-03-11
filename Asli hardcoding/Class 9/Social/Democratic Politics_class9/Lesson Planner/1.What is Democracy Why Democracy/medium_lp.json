@@ -1,0 +1,172 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Political Science",
+    "chapter_name": "What is Democracy? Why Democracy?",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the meaning and definition of democracy",
+        "Understand the four features of democracy",
+        "Analyze examples of democratic and non-democratic governments",
+        "Explain the concept of political equality",
+        "Evaluate arguments for and against democracy",
+        "Understand the role of democracy in managing diversity",
+        "Apply democratic principles to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Democracy",
+            "topics_covered": [
+                "Meaning of democracy",
+                "Origin of the word democracy",
+                "Basic definition of democracy"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Example-based explanation",
+                "Board illustration"
+            ],
+            "student_activities": [
+                "Discuss examples of democratic countries",
+                "Write the definition of democracy"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Concept checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Why Define Democracy?",
+            "topics_covered": [
+                "Need for defining democracy",
+                "Different uses of the word democracy",
+                "Examples of democratic governments"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Explanation using examples"
+            ],
+            "student_activities": [
+                "List democratic features",
+                "Discuss everyday use of the word democracy"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Feature 1: Major Decisions by Elected Leaders",
+            "topics_covered": [
+                "Importance of elected leaders",
+                "Example of Pakistan under Musharraf"
+            ],
+            "teaching_strategy": [
+                "Case study explanation",
+                "Board discussion"
+            ],
+            "student_activities": [
+                "Analyze the Pakistan example",
+                "Write why it is not considered fully democratic"
+            ],
+            "assessment": [
+                "Short answer questions",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Feature 2: Free and Fair Elections",
+            "topics_covered": [
+                "Meaning of free and fair elections",
+                "Examples from China and Mexico"
+            ],
+            "teaching_strategy": [
+                "Comparison method",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Prepare a comparison between fair and unfair elections"
+            ],
+            "assessment": [
+                "Concept-based questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Feature 3: One Person One Vote One Value",
+            "topics_covered": [
+                "Political equality",
+                "Universal adult franchise"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Discuss importance of equal voting rights",
+                "Write examples of voting rights"
+            ],
+            "assessment": [
+                "Short written questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Feature 4: Rule of Law and Rights",
+            "topics_covered": [
+                "Respect for rights",
+                "Role of constitution",
+                "Importance of rule of law"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Examples from democratic systems"
+            ],
+            "student_activities": [
+                "List important democratic rights"
+            ],
+            "assessment": [
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Arguments for Democracy and Chapter Revision",
+            "topics_covered": [
+                "Arguments against democracy",
+                "Arguments for democracy",
+                "Revision of chapter concepts"
+            ],
+            "teaching_strategy": [
+                "Debate activity",
+                "Summary discussion"
+            ],
+            "student_activities": [
+                "Participate in debate",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Chalk or markers",
+        "Political science textbook",
+        "Charts showing democratic features"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Class participation"
+    ],
+    "teacher_tip": "Encourage students to connect democratic ideas with real-world events such as elections and government decisions."
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Proportional Reasoning – 2",
+  "difficulty": "Medium",
+  "source_pdf": "hegp203.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Equivalent Ratio Investigation",
+      "objective": "Explore equivalent ratios and proportionality",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write ratios such as 2:3, 4:6, 6:9",
+        "Verify proportionality using cross multiplication",
+        "Explain why they are equivalent"
+      ],
+      "learning_outcome": "Understands equivalent ratios",
+      "evaluation": "Correct verification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Classroom Map Project",
+      "objective": "Apply scale and ratio in real life",
+      "materials": ["Chart paper", "Ruler", "Pencil"],
+      "steps": [
+        "Measure classroom dimensions",
+        "Choose a scale such as 1:50",
+        "Draw a scaled classroom map"
+      ],
+      "learning_outcome": "Understands scale representation",
+      "evaluation": "Accuracy of map drawing (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Recipe Ratio Adjustment",
+      "objective": "Adjust quantities using ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take a recipe ratio such as 3:2:1",
+        "Assume one ingredient amount is doubled",
+        "Calculate the new quantities"
+      ],
+      "learning_outcome": "Applies ratio scaling",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Concrete Mixture Problem",
+      "objective": "Apply multi-term ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take cement:sand:gravel ratio as 1:1.5:3",
+        "Assume 6 bags of cement",
+        "Find sand and gravel quantities"
+      ],
+      "learning_outcome": "Applies ratios in real-life context",
+      "evaluation": "Correct proportional calculations (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Divide Money in Ratio",
+      "objective": "Divide a quantity using ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take ₹120",
+        "Divide it in the ratio 2:3:5",
+        "Verify the total"
+      ],
+      "learning_outcome": "Understands division in ratios",
+      "evaluation": "Correct answers (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Triangle Construction",
+      "objective": "Construct triangles using angle ratios",
+      "materials": ["Compass", "Protractor", "Notebook"],
+      "steps": [
+        "Use angle ratio 2:3:4",
+        "Find actual angles",
+        "Construct the triangle"
+      ],
+      "learning_outcome": "Applies ratios in geometry",
+      "evaluation": "Correct construction (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Pie Chart Data Collection",
+      "objective": "Represent data using pie charts",
+      "materials": ["Chart paper", "Compass", "Protractor"],
+      "steps": [
+        "Survey favourite sports of classmates",
+        "Convert data into angles",
+        "Draw a pie chart"
+      ],
+      "learning_outcome": "Understands graphical representation",
+      "evaluation": "Accuracy of chart (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Speed-Time Analysis",
+      "objective": "Study inverse proportionality",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write speeds such as 20, 40, 80 km/h",
+        "Calculate travel time for fixed distance",
+        "Analyse the pattern"
+      ],
+      "learning_outcome": "Identifies inverse relationships",
+      "evaluation": "Correct table and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Worker Productivity Table",
+      "objective": "Understand work-time inverse proportion",
+      "materials": ["Notebook"],
+      "steps": [
+        "Assume 8 workers finish work in 6 days",
+        "Calculate time if workers increase to 12",
+        "Explain the change"
+      ],
+      "learning_outcome": "Applies inverse proportion",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Coin Value Investigation",
+      "objective": "Use ratios with real currency",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take ratio of coins 4:3:2:1",
+        "Assume total 100 coins",
+        "Calculate value of each type"
+      ],
+      "learning_outcome": "Understands ratios in practical situations",
+      "evaluation": "Correct calculations (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 7: Triangles",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-05T23:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In ΔABC, if AB = AC and ∠A = 40°, find ∠B and ∠C.",
+            "answer": "∠B = 70°, ∠C = 70°.",
+            "key_points": [
+                "isosceles triangle",
+                "angle sum property"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 2,
+            "question": "If an exterior angle of a triangle is 130° and one interior opposite angle is 50°, find the other interior opposite angle.",
+            "answer": "80°",
+            "key_points": [
+                "exterior angle theorem"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "In ΔABC, if ∠A = 45°, ∠B = 55°, find ∠C.",
+            "answer": "80°",
+            "key_points": [
+                "angle sum property"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "If two sides and the included angle of two triangles are equal, which congruence rule proves them congruent?",
+            "answer": "SAS congruence rule.",
+            "key_points": [
+                "SAS"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "If three sides of one triangle are equal to three sides of another triangle, what can be concluded?",
+            "answer": "The triangles are congruent by SSS rule.",
+            "key_points": [
+                "SSS rule"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "In an isosceles triangle, if each base angle is 65°, find the vertex angle.",
+            "answer": "50°",
+            "key_points": [
+                "angle sum",
+                "isosceles property"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "If two angles of a triangle are 35° and 75°, find the third angle.",
+            "answer": "70°",
+            "key_points": [
+                "angle sum property"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 8,
+            "question": "In ΔABC, AB = AC and ∠B = 50°. Find ∠A.",
+            "answer": "80°",
+            "key_points": [
+                "isosceles triangle",
+                "angle sum"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "If ∠A = ∠B in a triangle, what can be said about the opposite sides?",
+            "answer": "The sides opposite those angles are equal.",
+            "key_points": [
+                "converse of isosceles theorem"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "In ΔABC, if AB = BC = CA, what type of triangle is formed?",
+            "answer": "Equilateral triangle.",
+            "key_points": [
+                "equal sides"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the measure of each angle in an equilateral triangle?",
+            "answer": "60°",
+            "key_points": [
+                "equilateral property"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "If the hypotenuse and one side of two right triangles are equal, what rule proves them congruent?",
+            "answer": "RHS congruence rule.",
+            "key_points": [
+                "RHS"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "In ΔABC, if ∠A = 90°, what is the side opposite ∠A called?",
+            "answer": "Hypotenuse.",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 14,
+            "question": "If two triangles are congruent, what happens to their corresponding angles?",
+            "answer": "Their corresponding angles are equal.",
+            "key_points": [
+                "CPCT"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 15,
+            "question": "If two triangles are congruent, what happens to their corresponding sides?",
+            "answer": "Their corresponding sides are equal.",
+            "key_points": [
+                "CPCT"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "In ΔABC, if ∠A = 50°, ∠B = 60°, find the exterior angle at C.",
+            "answer": "110°",
+            "key_points": [
+                "exterior angle"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "In an isosceles triangle, if the vertex angle is 100°, find each base angle.",
+            "answer": "40°",
+            "key_points": [
+                "angle sum",
+                "isosceles"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "If two triangles satisfy the ASA condition, what conclusion can be made?",
+            "answer": "The triangles are congruent.",
+            "key_points": [
+                "ASA rule"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 19,
+            "question": "If two triangles satisfy the AAS condition, what conclusion can be made?",
+            "answer": "The triangles are congruent.",
+            "key_points": [
+                "AAS rule"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "In ΔABC, if AB = AC and ∠A = 20°, find each base angle.",
+            "answer": "80°",
+            "key_points": [
+                "isosceles triangle",
+                "angle sum"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "If the three sides of two triangles are equal, what theorem proves them congruent?",
+            "answer": "SSS congruence theorem.",
+            "key_points": [
+                "SSS"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "If two sides and the included angle of two triangles are equal, what theorem proves them congruent?",
+            "answer": "SAS congruence theorem.",
+            "key_points": [
+                "SAS"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "If two angles and the included side of two triangles are equal, what theorem proves them congruent?",
+            "answer": "ASA congruence theorem.",
+            "key_points": [
+                "ASA"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "How many altitudes can be drawn in a triangle?",
+            "answer": "Three altitudes.",
+            "key_points": [
+                "altitudes"
+            ],
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "How many medians can be drawn in a triangle?",
+            "answer": "Three medians.",
+            "key_points": [
+                "medians"
+            ],
+            "source_section": "Section 7.4"
+        }
+    ]
+}

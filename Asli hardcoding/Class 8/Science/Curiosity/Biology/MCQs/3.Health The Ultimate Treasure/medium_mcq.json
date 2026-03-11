@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-05T14:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which statement best explains the meaning of health?",
+      "options": {
+        "A": "Having no diseases",
+        "B": "Being physically strong only",
+        "C": "A state of complete physical, mental, and social well-being",
+        "D": "Having good immunity only"
+      },
+      "correct_answer": "C",
+      "explanation": "Health includes physical, mental, and social well-being.",
+      "difficulty": "medium",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which situation shows poor social health?",
+      "options": {
+        "A": "Eating healthy food",
+        "B": "Having good relationships with friends",
+        "C": "Feeling isolated and avoiding interaction",
+        "D": "Exercising regularly"
+      },
+      "correct_answer": "C",
+      "explanation": "Lack of interaction and loneliness affect social health.",
+      "difficulty": "medium",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which habit can negatively affect both physical and mental health?",
+      "options": {
+        "A": "Playing outdoor games",
+        "B": "Balanced diet",
+        "C": "Excessive screen time",
+        "D": "Regular exercise"
+      },
+      "correct_answer": "C",
+      "explanation": "Excessive screen time can cause sleep problems, anxiety, and obesity.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following best describes a balanced lifestyle?",
+      "options": {
+        "A": "Eating only vegetables",
+        "B": "Eating healthy food, exercising, and sleeping well",
+        "C": "Studying all day without rest",
+        "D": "Avoiding outdoor activities"
+      },
+      "correct_answer": "B",
+      "explanation": "A balanced lifestyle includes proper diet, activity, and rest.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which environmental factor can increase respiratory diseases?",
+      "options": {
+        "A": "Clean air",
+        "B": "Air pollution",
+        "C": "Drinking water",
+        "D": "Balanced diet"
+      },
+      "correct_answer": "B",
+      "explanation": "Air pollution can cause breathing problems and respiratory diseases.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is an example of a symptom?",
+      "options": {
+        "A": "High blood pressure",
+        "B": "Fever",
+        "C": "Pain",
+        "D": "Skin rash"
+      },
+      "correct_answer": "C",
+      "explanation": "Pain is felt by the patient and is therefore a symptom.",
+      "difficulty": "medium",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which disease spreads mainly through contaminated food or water?",
+      "options": {
+        "A": "Malaria",
+        "B": "Cholera",
+        "C": "Asthma",
+        "D": "Diabetes"
+      },
+      "correct_answer": "B",
+      "explanation": "Cholera spreads through contaminated water or food.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which disease is transmitted through mosquito bites?",
+      "options": {
+        "A": "Dengue",
+        "B": "Typhoid",
+        "C": "Tuberculosis",
+        "D": "Hepatitis A"
+      },
+      "correct_answer": "A",
+      "explanation": "Dengue spreads through mosquito vectors.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is NOT caused by pathogens?",
+      "options": {
+        "A": "Cancer",
+        "B": "Measles",
+        "C": "Cholera",
+        "D": "Influenza"
+      },
+      "correct_answer": "A",
+      "explanation": "Cancer is a non-communicable disease.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which factor contributes to the rise of lifestyle diseases?",
+      "options": {
+        "A": "Balanced diet",
+        "B": "Regular exercise",
+        "C": "Sedentary lifestyle",
+        "D": "Good hygiene"
+      },
+      "correct_answer": "C",
+      "explanation": "Sedentary lifestyles increase risk of diseases such as diabetes.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the main role of the immune system?",
+      "options": {
+        "A": "Producing energy",
+        "B": "Digesting food",
+        "C": "Fighting pathogens",
+        "D": "Circulating blood"
+      },
+      "correct_answer": "C",
+      "explanation": "The immune system protects the body from infections.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following diseases can be prevented by vaccination?",
+      "options": {
+        "A": "Polio",
+        "B": "Obesity",
+        "C": "Diabetes",
+        "D": "Hypertension"
+      },
+      "correct_answer": "A",
+      "explanation": "Vaccines help prevent infectious diseases like polio.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are vaccines considered preventive rather than curative?",
+      "options": {
+        "A": "They cure infections quickly",
+        "B": "They prevent disease before infection occurs",
+        "C": "They treat symptoms",
+        "D": "They increase body temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "Vaccines train the immune system before infection occurs.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is an example of acquired immunity?",
+      "options": {
+        "A": "Vaccination",
+        "B": "Digestion",
+        "C": "Respiration",
+        "D": "Excretion"
+      },
+      "correct_answer": "A",
+      "explanation": "Vaccines provide acquired immunity.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Which antibiotic was discovered accidentally by Alexander Fleming?",
+      "options": {
+        "A": "Penicillin",
+        "B": "Insulin",
+        "C": "Aspirin",
+        "D": "Morphine"
+      },
+      "correct_answer": "A",
+      "explanation": "Penicillin was the first antibiotic discovered.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Antibiotics are effective mainly against:",
+      "options": {
+        "A": "Viruses",
+        "B": "Bacteria",
+        "C": "Fungi",
+        "D": "Protozoa"
+      },
+      "correct_answer": "B",
+      "explanation": "Antibiotics target bacterial cells.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which practice can lead to antibiotic resistance?",
+      "options": {
+        "A": "Completing prescribed medicine course",
+        "B": "Taking antibiotics unnecessarily",
+        "C": "Consulting a doctor",
+        "D": "Vaccination"
+      },
+      "correct_answer": "B",
+      "explanation": "Unnecessary use of antibiotics encourages resistant bacteria.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which condition is classified as a deficiency disease?",
+      "options": {
+        "A": "Scurvy",
+        "B": "Malaria",
+        "C": "Dengue",
+        "D": "Chickenpox"
+      },
+      "correct_answer": "A",
+      "explanation": "Scurvy occurs due to lack of vitamin C.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which action helps prevent communicable diseases?",
+      "options": {
+        "A": "Sharing towels",
+        "B": "Washing hands regularly",
+        "C": "Eating junk food",
+        "D": "Avoiding sleep"
+      },
+      "correct_answer": "B",
+      "explanation": "Handwashing removes pathogens and reduces infection risk.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which measure helps control mosquito-borne diseases?",
+      "options": {
+        "A": "Storing water openly",
+        "B": "Using mosquito nets",
+        "C": "Ignoring stagnant water",
+        "D": "Avoiding vaccination"
+      },
+      "correct_answer": "B",
+      "explanation": "Mosquito nets protect people from mosquito bites.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which organization defines health globally?",
+      "options": {
+        "A": "WHO",
+        "B": "UNESCO",
+        "C": "WTO",
+        "D": "NASA"
+      },
+      "correct_answer": "A",
+      "explanation": "WHO defines global health standards.",
+      "difficulty": "medium",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor helps strengthen the immune system?",
+      "options": {
+        "A": "Balanced diet",
+        "B": "Smoking",
+        "C": "Lack of sleep",
+        "D": "Pollution"
+      },
+      "correct_answer": "A",
+      "explanation": "Nutritious food supports immune health.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which disease spreads through air droplets?",
+      "options": {
+        "A": "Tuberculosis",
+        "B": "Malaria",
+        "C": "Cholera",
+        "D": "Ascariasis"
+      },
+      "correct_answer": "A",
+      "explanation": "Tuberculosis spreads through air when infected people cough or sneeze.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which activity improves both physical and mental health?",
+      "options": {
+        "A": "Yoga",
+        "B": "Smoking",
+        "C": "Skipping meals",
+        "D": "Excessive gaming"
+      },
+      "correct_answer": "A",
+      "explanation": "Yoga improves concentration, reduces stress, and supports health.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which action best helps prevent disease outbreaks in communities?",
+      "options": {
+        "A": "Ignoring sanitation",
+        "B": "Community hygiene campaigns",
+        "C": "Avoiding vaccination",
+        "D": "Sharing personal items"
+      },
+      "correct_answer": "B",
+      "explanation": "Community sanitation programs help reduce spread of diseases.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    }
+  ]
+}

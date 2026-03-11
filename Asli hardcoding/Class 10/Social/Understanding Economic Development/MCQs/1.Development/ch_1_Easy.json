@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Development",
+  "difficulty": "Easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What does development mainly refer to?",
+      "options": {
+        "A": "Increase in pollution",
+        "B": "Improvement in quality of life",
+        "C": "Increase in population",
+        "D": "Decrease in trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Development means improvement in people’s quality of life."
+    },
+    {
+      "question_number": 2,
+      "question": "Which is a basic goal of development?",
+      "options": {
+        "A": "Higher income",
+        "B": "More conflicts",
+        "C": "Less education",
+        "D": "Higher taxes"
+      },
+      "correct_answer": "A",
+      "explanation": "Higher income helps improve living standards."
+    },
+    {
+      "question_number": 3,
+      "question": "Per capita income is:",
+      "options": {
+        "A": "Income per state",
+        "B": "Total income of country",
+        "C": "Income per person",
+        "D": "Income per company"
+      },
+      "correct_answer": "C",
+      "explanation": "Per capita income means average income per person."
+    },
+    {
+      "question_number": 4,
+      "question": "Which organization publishes the Human Development Report?",
+      "options": {
+        "A": "IMF",
+        "B": "UNDP",
+        "C": "WTO",
+        "D": "WHO"
+      },
+      "correct_answer": "B",
+      "explanation": "UNDP publishes the Human Development Report."
+    },
+    {
+      "question_number": 5,
+      "question": "HDI stands for:",
+      "options": {
+        "A": "Human Development Index",
+        "B": "High Development Income",
+        "C": "Human Data Information",
+        "D": "Health Data Index"
+      },
+      "correct_answer": "A",
+      "explanation": "HDI means Human Development Index."
+    },
+    {
+      "question_number": 6,
+      "question": "Which is an example of a non-income factor of development?",
+      "options": {
+        "A": "Salary",
+        "B": "Profit",
+        "C": "Education",
+        "D": "Bonus"
+      },
+      "correct_answer": "C",
+      "explanation": "Education improves quality of life and is a non-income factor."
+    },
+    {
+      "question_number": 7,
+      "question": "Life expectancy shows:",
+      "options": {
+        "A": "Average years a person is expected to live",
+        "B": "Population size",
+        "C": "Income level",
+        "D": "Export level"
+      },
+      "correct_answer": "A",
+      "explanation": "Life expectancy indicates average lifespan."
+    },
+    {
+      "question_number": 8,
+      "question": "Which country is considered developed?",
+      "options": {
+        "A": "Country with low income",
+        "B": "Country with high HDI",
+        "C": "Country with high population",
+        "D": "Country with high rainfall"
+      },
+      "correct_answer": "B",
+      "explanation": "Countries with high HDI are considered developed."
+    },
+    {
+      "question_number": 9,
+      "question": "Development goals differ because:",
+      "options": {
+        "A": "People have different needs",
+        "B": "All people are same",
+        "C": "Everyone earns same income",
+        "D": "All countries are equal"
+      },
+      "correct_answer": "A",
+      "explanation": "Different people have different needs and priorities."
+    },
+    {
+      "question_number": 10,
+      "question": "Which is a public facility?",
+      "options": {
+        "A": "Private car",
+        "B": "Shopping mall",
+        "C": "Government hospital",
+        "D": "Luxury hotel"
+      },
+      "correct_answer": "C",
+      "explanation": "Government hospitals are public facilities."
+    },
+    {
+      "question_number": 11,
+      "question": "Sustainable development means:",
+      "options": {
+        "A": "Using resources carefully",
+        "B": "Overusing resources",
+        "C": "Cutting all forests",
+        "D": "Increasing pollution"
+      },
+      "correct_answer": "A",
+      "explanation": "Sustainable development protects resources for future generations."
+    },
+    {
+      "question_number": 12,
+      "question": "Which is a renewable resource?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Sunlight",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Sunlight is a renewable resource."
+    },
+    {
+      "question_number": 13,
+      "question": "Which factor improves health in a country?",
+      "options": {
+        "A": "More pollution",
+        "B": "Better hospitals",
+        "C": "Less education",
+        "D": "Unemployment"
+      },
+      "correct_answer": "B",
+      "explanation": "Better hospitals improve health standards."
+    },
+    {
+      "question_number": 14,
+      "question": "Infant mortality rate refers to:",
+      "options": {
+        "A": "Deaths of adults",
+        "B": "Deaths of infants below one year",
+        "C": "Population growth",
+        "D": "Literacy rate"
+      },
+      "correct_answer": "B",
+      "explanation": "Infant mortality rate means deaths of infants below one year."
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is a developed country?",
+      "options": {
+        "A": "USA",
+        "B": "Nepal",
+        "C": "Bangladesh",
+        "D": "Sri Lanka"
+      },
+      "correct_answer": "A",
+      "explanation": "USA is considered a developed country."
+    },
+    {
+      "question_number": 16,
+      "question": "Main aim of development is:",
+      "options": {
+        "A": "Only higher income",
+        "B": "Better life for people",
+        "C": "More exports",
+        "D": "Higher population"
+      },
+      "correct_answer": "B",
+      "explanation": "Development focuses on overall better living conditions."
+    },
+    {
+      "question_number": 17,
+      "question": "Which is an example of natural resource?",
+      "options": {
+        "A": "Factory",
+        "B": "River",
+        "C": "Road",
+        "D": "School"
+      },
+      "correct_answer": "B",
+      "explanation": "River is a natural resource."
+    },
+    {
+      "question_number": 18,
+      "question": "Which indicator shows education level?",
+      "options": {
+        "A": "Literacy rate",
+        "B": "GDP",
+        "C": "Exports",
+        "D": "Imports"
+      },
+      "correct_answer": "A",
+      "explanation": "Literacy rate measures education level."
+    },
+    {
+      "question_number": 19,
+      "question": "Which sector provides public facilities?",
+      "options": {
+        "A": "Private sector",
+        "B": "Public sector",
+        "C": "Foreign sector",
+        "D": "Informal sector"
+      },
+      "correct_answer": "B",
+      "explanation": "Public sector provides public facilities."
+    },
+    {
+      "question_number": 20,
+      "question": "Higher literacy rate means:",
+      "options": {
+        "A": "More educated people",
+        "B": "More factories",
+        "C": "More pollution",
+        "D": "More imports"
+      },
+      "correct_answer": "A",
+      "explanation": "Higher literacy rate indicates more educated population."
+    },
+    {
+      "question_number": 21,
+      "question": "Which resource is non-renewable?",
+      "options": {
+        "A": "Wind",
+        "B": "Solar energy",
+        "C": "Coal",
+        "D": "Water"
+      },
+      "correct_answer": "C",
+      "explanation": "Coal is a non-renewable resource."
+    },
+    {
+      "question_number": 22,
+      "question": "Development of a country depends on:",
+      "options": {
+        "A": "Only income",
+        "B": "Income, health, and education",
+        "C": "Only exports",
+        "D": "Only population"
+      },
+      "correct_answer": "B",
+      "explanation": "Development depends on income, health, and education."
+    },
+    {
+      "question_number": 23,
+      "question": "Which country has higher development?",
+      "options": {
+        "A": "Country with high HDI",
+        "B": "Country with low literacy",
+        "C": "Country with high IMR",
+        "D": "Country with no hospitals"
+      },
+      "correct_answer": "A",
+      "explanation": "High HDI indicates higher development."
+    },
+    {
+      "question_number": 24,
+      "question": "Clean drinking water is an example of:",
+      "options": {
+        "A": "Luxury good",
+        "B": "Public facility",
+        "C": "Private property",
+        "D": "Export item"
+      },
+      "correct_answer": "B",
+      "explanation": "Clean drinking water is a public facility."
+    },
+    {
+      "question_number": 25,
+      "question": "Which is the best measure of development?",
+      "options": {
+        "A": "Only per capita income",
+        "B": "Only GDP",
+        "C": "Combination of income, health and education",
+        "D": "Only exports"
+      },
+      "correct_answer": "C",
+      "explanation": "Development is best measured using multiple indicators like income, health, and education."
+    }
+  ]
+}

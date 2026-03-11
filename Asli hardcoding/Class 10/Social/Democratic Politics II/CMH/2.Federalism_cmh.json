@@ -1,0 +1,103 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: Federalism",
+  "generated_at": "2026-03-11T12:30:00",
+  "concepts": [
+    {
+      "concept_name": "Federalism",
+      "difficulty": "easy",
+      "lesson": "Federalism is a system of government in which powers are divided between a central authority and various constituent units such as states or provinces. Both levels of government govern the same citizens but have their own areas of jurisdiction. Federalism helps manage diversity in large countries while maintaining unity.",
+      "real_example": "In India, the Union Government handles defence and foreign affairs while State Governments manage subjects like police and agriculture.",
+      "key_points": [
+        "Power divided between central and state governments",
+        "Both levels have independent authority",
+        "Helps maintain unity while respecting diversity"
+      ],
+      "source_section": "What is Federalism?"
+    },
+    {
+      "concept_name": "Features of Federalism",
+      "difficulty": "easy",
+      "lesson": "A federal system has several key features. There are at least two levels of government, and each level has its own jurisdiction defined by the constitution. The constitution cannot be changed unilaterally by one level of government. Courts interpret the constitution and resolve disputes between levels of government.",
+      "real_example": "In India, the Supreme Court settles disputes between the Union and State governments.",
+      "key_points": [
+        "Two or more levels of government",
+        "Powers defined by the constitution",
+        "Independent judiciary resolves disputes"
+      ],
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "concept_name": "Types of Federations",
+      "difficulty": "medium",
+      "lesson": "Federations can be formed in two ways. In 'coming together' federations, independent states join together to form a larger nation, sharing power equally. In 'holding together' federations, a large country divides power between the central and state governments to manage diversity.",
+      "real_example": "USA and Switzerland are coming together federations, while India and Belgium are holding together federations.",
+      "key_points": [
+        "Coming together federation",
+        "Holding together federation",
+        "Balance of power differs between these systems"
+      ],
+      "source_section": "Formation of Federations"
+    },
+    {
+      "concept_name": "Distribution of Powers in India",
+      "difficulty": "medium",
+      "lesson": "The Indian Constitution distributes powers between the Union and State governments through three lists: the Union List, the State List, and the Concurrent List. The Union List includes subjects of national importance, the State List includes subjects of local importance, and the Concurrent List includes subjects on which both governments can make laws.",
+      "real_example": "Defence is in the Union List, police is in the State List, and education is in the Concurrent List.",
+      "key_points": [
+        "Union List – national subjects",
+        "State List – state level subjects",
+        "Concurrent List – shared subjects"
+      ],
+      "source_section": "What makes India a federal country?"
+    },
+    {
+      "concept_name": "Linguistic States",
+      "difficulty": "medium",
+      "lesson": "Linguistic states were created in India so that people speaking the same language could live within the same state. This reorganisation improved administration and reduced conflicts. It strengthened national unity rather than dividing the country.",
+      "real_example": "States like Andhra Pradesh and Gujarat were formed mainly based on language.",
+      "key_points": [
+        "States formed based on language",
+        "Improved administration",
+        "Strengthened unity in diversity"
+      ],
+      "source_section": "Linguistic States"
+    },
+    {
+      "concept_name": "Language Policy of India",
+      "difficulty": "medium",
+      "lesson": "India follows a flexible language policy. Hindi is the official language of the Union Government, but English continues to be used for official purposes. The Constitution recognizes 22 scheduled languages to respect linguistic diversity.",
+      "real_example": "Government exams can be written in several scheduled languages.",
+      "key_points": [
+        "Hindi is official language",
+        "English also used for official purposes",
+        "22 scheduled languages recognized"
+      ],
+      "source_section": "Language Policy"
+    },
+    {
+      "concept_name": "Centre-State Relations",
+      "difficulty": "hard",
+      "lesson": "Centre-State relations in India have evolved over time. Initially, the central government held greater control due to one-party dominance. After 1990, the rise of regional parties and coalition governments strengthened federalism by giving states more influence in national politics.",
+      "real_example": "Regional parties became important partners in coalition governments at the Centre.",
+      "key_points": [
+        "Earlier strong central dominance",
+        "Rise of regional parties",
+        "Coalition governments strengthened federalism"
+      ],
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "concept_name": "Decentralisation",
+      "difficulty": "hard",
+      "lesson": "Decentralisation refers to the transfer of power from central and state governments to local governments. In India, the 73rd and 74th Constitutional Amendments strengthened local governance by giving constitutional status to Panchayats and Municipalities.",
+      "real_example": "Gram Panchayats manage local issues like village development and sanitation.",
+      "key_points": [
+        "Power transferred to local governments",
+        "Panchayats in rural areas",
+        "Municipalities in urban areas"
+      ],
+      "source_section": "Decentralisation in India"
+    }
+  ]
+}

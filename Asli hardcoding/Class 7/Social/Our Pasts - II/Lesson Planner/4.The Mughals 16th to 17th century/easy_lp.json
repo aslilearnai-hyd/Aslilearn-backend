@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "The Mughals: 16th to 17th Century",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the major Mughal emperors from Babur to Aurangzeb",
+        "Understand the dual lineage of the Mughals (Genghis Khan and Timur)",
+        "Learn about the military campaigns that expanded the empire",
+        "Recognize the 'Mansabdari' and 'Zabt' systems of administration",
+        "Understand Akbar's policies of 'Sulh-i-kul' and religious tolerance",
+        "Identify the roles of important figures like Nur Jahan and Abul Fazl",
+        "Learn about the decline of the empire in the late 17th century"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Who were the Mughals?",
+            "topics_covered": [
+                "Mughal lineage: Mother's side (Genghis Khan) and Father's side (Timur)",
+                "Why they preferred to be called Timurids",
+                "Babur and the First Battle of Panipat (1526)"
+            ],
+            "teaching_strategy": [
+                "Family Tree visualization: Showing the two famous ancestors",
+                "Storytelling: Babur's journey from Farghana to Kabul to Delhi",
+                "Displaying a portrait of the 'Mughal Family' to show royal pride"
+            ],
+            "student_activities": [
+                "Draw a simple family tree showing the connection to Timur",
+                "Identify the year of the First Battle of Panipat"
+            ],
+            "assessment": [
+                "Oral quiz: Who was the first Mughal emperor?",
+                "Which ancestor did the Mughals prefer to be linked with?"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Mughal Military Campaigns",
+            "topics_covered": [
+                "Major campaigns of Humayun and Akbar",
+                "Successions: Jahangir, Shah Jahan, and Aurangzeb",
+                "Conflict with the Ahoms, Sikhs, and Marathas"
+            ],
+            "teaching_strategy": [
+                "Map work: Locating the expanding boundaries of the empire",
+                "Timeline creation: Listing emperors in chronological order",
+                "Briefly explaining the 'War of Succession' among Shah Jahan's sons"
+            ],
+            "student_activities": [
+                "List the 'Big Six' Mughal emperors in the correct order",
+                "Mark Panipat and Agra on a map of India"
+            ],
+            "assessment": [
+                "Match the emperor to his major opponent (e.g., Akbar vs. Maharana Pratap)",
+                "True/False: Aurangzeb had a very long reign"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mansabdars and Jagirdars",
+            "topics_covered": [
+                "Definition of 'Mansab' (Rank/Position)",
+                "Zat: Determining rank and salary",
+                "Jagirs: Land assignments for revenue collection"
+            ],
+            "teaching_strategy": [
+                "Analogy: Comparing a Mansabdar to a modern-day officer or manager",
+                "Simple Chart: Rank $\rightarrow$ Salary $\rightarrow$ Number of Horses",
+                "Explaining how Mansabdars lived away from their Jagirs"
+            ],
+            "student_activities": [
+                "Calculate: If a person has a higher 'Zat', will they have more or fewer soldiers?",
+                "Write the difference between a Mansabdar and a Jagir"
+            ],
+            "assessment": [
+                "What does 'Zat' indicate?",
+                "Short answer: How did Mansabdars get paid?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Zabt and Zamindars",
+            "topics_covered": [
+                "The role of the Zamindar (intermediaries)",
+                "Todar Mal’s revenue system (Zabt)",
+                "Revenue based on 10-year average crop yields"
+            ],
+            "teaching_strategy": [
+                "Role-play: Raja Todar Mal explaining the tax system to a farmer",
+                "Explaining 'Zabt' as a fair way of collecting taxes based on facts",
+                "Discussion: 'Why was revenue collected in cash?'"
+            ],
+            "student_activities": [
+                "List three crops that were taxed under the Zabt system",
+                "Discuss: 'How did Zamindars help the king?'"
+            ],
+            "assessment": [
+                "Who was Akbar’s revenue minister?",
+                "What is the meaning of the word 'Zamindar'?"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Akbar-nama and Ain-i-Akbari",
+            "topics_covered": [
+                "Abul Fazl and the three-volume history",
+                "Contents of Ain-i-Akbari (Administration, Army, Revenues)",
+                "Statistical details of the empire"
+            ],
+            "teaching_strategy": [
+                "Showing a picture of Abul Fazl presenting the book to Akbar",
+                "Explaining why written records are important for historians",
+                "Discussion on how the book describes the 'diversity' of India"
+            ],
+            "student_activities": [
+                "Find out what the third volume of the Akbar-nama is called",
+                "Write one thing you can find out from the Ain-i-Akbari"
+            ],
+            "assessment": [
+                "Who wrote the Akbar-nama?",
+                "True/False: The Ain-i-Akbari only talks about wars"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Akbar’s Policies: Sulh-i-kul",
+            "topics_covered": [
+                "Religious discussions at the Ibadat Khana",
+                "The idea of 'Universal Peace' (Sulh-i-kul)",
+                "Influence on Jahangir and Shah Jahan"
+            ],
+            "teaching_strategy": [
+                "Explaining 'Sulh-i-kul' as 'honesty, justice, and peace'",
+                "Discussion: 'Why did Akbar talk to people of different religions?'",
+                "Visuals of Fatehpur Sikri"
+            ],
+            "student_activities": [
+                "Create a poster with the words 'Universal Peace'",
+                "List three religions Akbar discussed in the Ibadat Khana"
+            ],
+            "assessment": [
+                "Short answer: What is 'Sulh-i-kul'?",
+                "Where did Akbar hold his religious meetings?"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "The Empire in the 17th Century",
+            "topics_covered": [
+                "Prosperity vs. Poverty: The gap between rich and poor",
+                "Decline of authority under the later Mughals",
+                "Emergence of new states like Hyderabad and Awadh"
+            ],
+            "teaching_strategy": [
+                "Comparison: The lifestyle of a noble vs. a peasant",
+                "Review of the whole chapter through a 'Fast Facts' quiz",
+                "NCERT back-exercise discussion"
+            ],
+            "student_activities": [
+                "Complete the Mughal Emperor timeline chart",
+                "Discuss: 'Why did the empire start becoming weak after Aurangzeb?'"
+            ],
+            "assessment": [
+                "Short Unit Test (15 marks)",
+                "Oral quiz: Who was the last powerful Mughal ruler?"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Portrait of the 6 major Mughal Emperors",
+        "Map of the Mughal Empire at its peak",
+        "Images of the Akbar-nama manuscripts",
+        "Flowchart of the Mansabdari system"
+    ],
+    "evaluation_methods": [
+        "Timeline construction",
+        "Matching terms (Zat, Jagir, Zabt, Sulh-i-kul)",
+        "Map marking of Mughal capitals",
+        "Short-answer definitions",
+        "Oral participation in the 'Sulh-i-kul' discussion"
+    ],
+    "teacher_tip": "Remind students that 'Mughal' comes from the word 'Mongol'. Even though they didn't like the name, it stuck! Use the comparison of 'Zat' to 'Level Up' in a video game to help them remember rank."
+}

@@ -1,0 +1,457 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Role of the Government in Health",
+    "generated_at": "2026-03-08T01:43:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the paradox of health services in India as described in the chapter.",
+            "answer": "India faces a health paradox: it has the largest number of medical colleges in the world and produces approximately 30,000 doctors annually, yet most doctors prefer to settle in urban areas. While India is a leading exporter of medicines and a destination for medical tourists, nearly five lakh people die from tuberculosis every year, and almost half of all children are undernourished. This shows that despite having the knowledge and resources, the government is unable to provide basic healthcare to all.",
+            "answer_outline": [
+                "Positive aspects (Doctors, medicines, medical tourism)",
+                "Negative realities (TB deaths, malnutrition, urban-rural gap)",
+                "Failure of distribution of resources"
+            ],
+            "key_concepts": [
+                "health paradox",
+                "urban-rural divide",
+                "medical tourism"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What lessons can be learned from Hakim Sheikh's case regarding the 'Right to Life'?",
+            "answer": "Hakim Sheikh's case highlights that the Constitution guarantees the 'Right to Life' to every person. The Court ruled that the government has a duty to provide necessary health services, including emergency treatment. Because government hospitals failed to admit him in a critical condition, the State government was ordered to compensate him for the money he spent on his private treatment. This establishes that the 'Right to Life' includes the right to timely medical care.",
+            "answer_outline": [
+                "Summary of the incident",
+                "Constitutional obligation (Right to Life)",
+                "Court's verdict on compensation",
+                "Accountability of public health services"
+            ],
+            "key_concepts": [
+                "Hakim Sheikh",
+                "Right to Life",
+                "Court ruling"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Compare the quality and cost of treatment between Aman and Ranjan in the story 'The Cost of a Cure'.",
+            "answer": "Ranjan went to a private hospital which was fast, clean, and offered world-class facilities, but he had to pay 3,500 rupees just for tests and medicines. Aman went to a government hospital where he had to wait in long queues for hours and the facilities were crowded, but his treatment cost only 150 rupees. This illustrates that while private care is faster and more comfortable, it is often unaffordable for the poor.",
+            "answer_outline": [
+                "Experience in Private vs. Public hospitals",
+                "Time factor (Waiting lines)",
+                "Financial impact (Costs)",
+                "Environment/Infrastructure differences"
+            ],
+            "key_concepts": [
+                "private vs public",
+                "healthcare cost",
+                "accessibility"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the hierarchical structure of the Public Health Service in India.",
+            "answer": "The public health service is a chain starting at the village level with Health Centres staffed by a nurse and a village health worker. These are supervised by doctors at the Primary Health Centre (PHC) which covers several villages. Above them is the District Hospital, which supervises all district centres. In large cities, there are specialized government hospitals and large general hospitals that provide advanced care.",
+            "answer_outline": [
+                "Village level (Health workers/Nurses)",
+                "PHC level (Doctors)",
+                "District level (District Hospital)",
+                "Urban level (Specialized hospitals)"
+            ],
+            "key_concepts": [
+                "PHC",
+                "District Hospital",
+                "healthcare hierarchy"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is it argued that 'Private health services' do not provide equality in healthcare?",
+            "answer": "Private health services are profit-driven and concentrated mainly in urban areas. The cost of these services is very high, making medicines and treatments expensive for the average citizen. Many people have to borrow money or sell their possessions to pay for private medical expenses. Since these facilities are not accessible to everyone due to their cost, they create a divide where only the wealthy can afford quality care.",
+            "answer_outline": [
+                "Profit motive",
+                "Urban concentration",
+                "High cost of medicines",
+                "Debt/Financial burden on the poor"
+            ],
+            "key_concepts": [
+                "private services",
+                "healthcare inequality",
+                "profit-driven"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How did the Kerala government improve healthcare in 1996?",
+            "answer": "In 1996, Kerala made a major change by allocating 40% of the entire state budget to Panchayats. This decentralization allowed local bodies to plan for their specific requirements, ensuring that money was spent on clean water, food, women’s development, and education. It led to better-functioning health centres and improved infrastructure for water supply and schools in rural areas.",
+            "answer_outline": [
+                "Budget allocation (40%)",
+                "Decentralization to Panchayats",
+                "Focus on preventive health (water/food)",
+                "Infrastructure improvements"
+            ],
+            "key_concepts": [
+                "Kerala model",
+                "decentralization",
+                "budgeting"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the 'Costa Rican approach' to health, and why is it unique?",
+            "answer": "The Costa Rican approach is unique because the country decided not to have an army. This allowed the government to spend the money that would have been used for military purposes on health, education, and other basic needs of the people. They believe that a country has to be healthy for its development. This provides a global example of prioritizing human welfare over military spending.",
+            "answer_outline": [
+                "Abolition of the army",
+                "Reallocation of funds to health/education",
+                "Philosophy of a 'Healthy Nation'",
+                "Resulting status as healthiest in Central America"
+            ],
+            "key_concepts": [
+                "Costa Rica",
+                "army spending",
+                "welfare priority"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss the challenges faced by women in accessing healthcare in India.",
+            "answer": "Women's health concerns are often considered less important than the health of men in the family. Many tribal areas have few health centres, and those that exist are not run properly. Additionally, poor women face a double burden: they are more likely to be undernourished and lack the financial resources to seek treatment. Social prejudices often lead to delays in women receiving medical attention.",
+            "answer_outline": [
+                "Gender bias in priorities",
+                "Lack of facilities in tribal/remote areas",
+                "Malnutrition among women",
+                "Social/Financial barriers"
+            ],
+            "key_concepts": [
+                "gender inequality",
+                "tribal healthcare",
+                "malnutrition"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does the government use 'Tax Money' for public health services?",
+            "answer": "The government uses tax money because these services are meant to be 'public'—available to all citizens. Taxation is a collective way to fund services that individuals cannot easily provide for themselves, like defense, police, and healthcare. It ensures that even those who cannot afford private treatment can access hospitals, labs, and medicines through a system they have indirectly funded.",
+            "answer_outline": [
+                "Purpose of taxes",
+                "Funding public goods",
+                "Ensuring universal access",
+                "Collective responsibility"
+            ],
+            "key_concepts": [
+                "taxation",
+                "public services",
+                "government funding"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Analyze the impact of 'Medical Tourism' on the Indian healthcare economy.",
+            "answer": "Medical tourism brings in significant foreign exchange as patients from many countries come to India for treatments like heart surgeries or transplants. They choose India because the costs are much lower than in developed countries, while the quality of private hospitals is world-class. However, this often shifts the focus of the best medical talent toward private hospitals serving foreigners rather than public hospitals serving local citizens.",
+            "answer_outline": [
+                "Definition of medical tourists",
+                "Economic benefits (Foreign exchange)",
+                "Quality of private care",
+                "Potential neglect of public health"
+            ],
+            "key_concepts": [
+                "medical tourism",
+                "economic impact",
+                "private care quality"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is 'clean drinking water' considered a health issue in the chapter?",
+            "answer": "Clean drinking water is a fundamental pillar of health because many diseases are water-borne. The chapter notes that 21% of all communicable diseases are water-borne, such as diarrhoea, worms, and hepatitis. Without access to safe water, medical treatment only cures the symptoms while the environment continues to cause the illness, making it a critical public health responsibility of the government.",
+            "answer_outline": [
+                "Prevention vs. Cure",
+                "Water-borne diseases statistics",
+                "Impact on public health",
+                "Government's role in sanitation"
+            ],
+            "key_concepts": [
+                "clean water",
+                "water-borne diseases",
+                "preventive health"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What are the common unethical practices often found in private health services?",
+            "answer": "In order to earn more profit, some private services encourage incorrect practices. For example, doctors may prescribe unnecessary medicines, injections, or saline bottles when a simple tablet or home remedy would suffice. Because these services are profit-oriented, the focus sometimes shifts from patient care to maximizing the 'cost of treatment.'",
+            "answer_outline": [
+                "Profit motive",
+                "Unnecessary prescriptions",
+                "Cost inflation",
+                "Ethical concerns"
+            ],
+            "key_concepts": [
+                "unethical practices",
+                "profit maximization",
+                "over-prescription"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of 'Communicable Diseases' with examples from the text.",
+            "answer": "Communicable diseases are illnesses that spread from one person to another through various means like water, food, or air. The chapter mentions that a large percentage of these are water-borne. Examples include diarrhoea, hepatitis, and cholera. Preventing these diseases requires better sanitation and public health awareness rather than just building more hospitals.",
+            "answer_outline": [
+                "Definition of communicable",
+                "Modes of transmission (Air/Water/Food)",
+                "Examples (Hepatitis, Diarrhoea)",
+                "Prevention strategies"
+            ],
+            "key_concepts": [
+                "communicable diseases",
+                "transmission",
+                "sanitation"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do many people find it difficult to afford medicines in India?",
+            "answer": "Even for those who are not very poor, medical expenses cause hardship. Statistics show that 40% of people who are admitted to a hospital for some illness or injury have to borrow money or sell some of their possessions to pay for the expenses. The high cost of private medical care and specialized medicines makes healthcare a major cause of debt for Indian families.",
+            "answer_outline": [
+                "Financial hardship for middle/low income",
+                "Statistical evidence (40% debt)",
+                "High cost of private treatment",
+                "Lack of insurance/financial safety"
+            ],
+            "key_concepts": [
+                "medicine affordability",
+                "medical debt",
+                "financial hardship"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe the role of the 'Public' sector in preventing the spread of diseases like Malaria.",
+            "answer": "The public health service has a major role in organizing campaigns to prevent the spread of diseases such as TB, malaria, jaundice, cholera, and chikungunya. This involves the participation of the people; for example, checking that water does not collect in coolers or rooftops to prevent mosquito breeding. The government must lead these efforts to protect the entire community.",
+            "answer_outline": [
+                "Disease prevention campaigns",
+                "Public participation",
+                "Community-wide protection",
+                "Examples (Malaria/Chikungunya)"
+            ],
+            "key_concepts": [
+                "prevention",
+                "malaria",
+                "community participation"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is a 'Primary Health Centre' (PHC)?",
+            "answer": "A Primary Health Centre is a government-run clinic that serves a group of villages in rural areas. It is the first point of contact between the village community and the medical officer. PHCs handle common ailments and maternal health, and they supervise the work of village-level health workers and nurses.",
+            "answer_outline": [
+                "Definition and location",
+                "Role as first point of contact",
+                "Supervisory duties",
+                "Rural focus"
+            ],
+            "key_concepts": [
+                "PHC",
+                "rural healthcare",
+                "medical officer"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "In what ways is the 'public' health system more than just hospitals?",
+            "answer": "The public health system includes more than just buildings; it is a system of 'public' commitment. It involves the use of tax money for the benefit of all, the legal obligation of the state to protect the 'Right to Life,' and the prevention of diseases through sanitation and vaccination. It is a social contract between the government and the citizens to maintain a healthy nation.",
+            "answer_outline": [
+                "Commitment to all citizens",
+                "Legal/Constitutional basis",
+                "Preventive measures (Sanitation/Vaccination)",
+                "Social contract"
+            ],
+            "key_concepts": [
+                "public system",
+                "social contract",
+                "prevention"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is 'Malnutrition' considered a failure of the health system?",
+            "answer": "Health is not just about doctors; it is about having enough to eat. If people do not get adequate food to eat (undernourished), they are more prone to illness. The fact that nearly half of India's children are undernourished indicates a failure in the 'wider' definition of health, which includes nutrition, food security, and basic living conditions.",
+            "answer_outline": [
+                "Relation between food and health",
+                "Malnutrition statistics in children",
+                "Wider definition of health",
+                "Failure of basic welfare"
+            ],
+            "key_concepts": [
+                "malnutrition",
+                "food security",
+                "health failure"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Contrast the location and accessibility of private vs. public health services.",
+            "answer": "Private health services are heavily concentrated in urban areas and large cities to maximize profit. In contrast, the public health service is designed to be a chain reaching into the most remote rural villages through PHCs and Sub-Centres. However, while public services are geographically more spread out, they often lack the staff or equipment that urban private centres possess.",
+            "answer_outline": [
+                "Urban concentration of private care",
+                "Rural reach of public care",
+                "Staffing and equipment gap",
+                "Geographic accessibility vs. Quality"
+            ],
+            "key_concepts": [
+                "urban-rural gap",
+                "geographic accessibility",
+                "concentration"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "How does 'Poverty' create a cycle of illness for families?",
+            "answer": "Poverty creates a vicious cycle: families are already undernourished, they lack clean water and sanitation, and live in cramped conditions. This makes them fall ill frequently. When they fall ill, the high cost of medical treatment (medicines/hospitalization) makes them even poorer, leading to more stress and malnutrition, which starts the cycle all over again.",
+            "answer_outline": [
+                "Vulnerability due to living conditions",
+                "Frequency of illness",
+                "Financial drain of treatment",
+                "Reinforcement of poverty"
+            ],
+            "key_concepts": [
+                "poverty cycle",
+                "vicious cycle",
+                "medical expenses"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the importance of 'Mobile Clinics' in remote areas?",
+            "answer": "In areas where there are no permanent buildings or hospitals, mobile clinics (vans with doctors and medicines) are essential. They bring healthcare directly to tribal or hilly regions where people cannot travel long distances. This is a key strategy for the government to fulfill its duty to provide health for 'all' citizens.",
+            "answer_outline": [
+                "Reaching remote populations",
+                "Direct delivery of care",
+                "Overcoming travel barriers",
+                "Universal access goal"
+            ],
+            "key_concepts": [
+                "mobile clinics",
+                "remote access",
+                "tribal health"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the 'Right to Health' under the Indian Constitution?",
+            "answer": "Although not explicitly named in the original text, the Supreme Court has interpreted the 'Right to Life' (Article 21) to include the 'Right to Health.' This means the state is obligated to provide emergency medical aid, maintain public health standards, and ensure that no person dies due to a lack of basic medical attention from the government.",
+            "answer_outline": [
+                "Link to Article 21",
+                "State obligation",
+                "Emergency medical aid",
+                "Legal accountability"
+            ],
+            "key_concepts": [
+                "Article 21",
+                "Right to Health",
+                "Supreme Court"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Analyze the statement: 'Health is both a personal and a social responsibility.'",
+            "answer": "Health is personal because it depends on one's habits and nutrition. However, it is social because an individual cannot control the quality of the air they breathe, the water supplied to them, or the spread of contagious diseases in the community. Therefore, while individuals must care for themselves, the government must provide the infrastructure (water/sanitation/hospitals) to protect the collective health of society.",
+            "answer_outline": [
+                "Personal habits/nutrition",
+                "Environmental factors (Air/Water)",
+                "Collective disease control",
+                "Role of government infrastructure"
+            ],
+            "key_concepts": [
+                "social responsibility",
+                "infrastructure",
+                "preventive health"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "How do private hospitals contribute to 'inequity' even when they provide good care?",
+            "answer": "Private hospitals contribute to inequity because their high-quality care is only available to those who can pay. This creates a society where health becomes a 'commodity' for sale rather than a 'right.' When the best doctors and machines are only in private centres, the public system is weakened, leaving the poor with lower-quality care and the wealthy with superior care.",
+            "answer_outline": [
+                "Healthcare as a commodity",
+                "Exclusion of the poor",
+                "Brain drain from public to private",
+                "Systemic inequality"
+            ],
+            "key_concepts": [
+                "inequity",
+                "commodity",
+                "healthcare rights"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the significance of 'Generic Medicines' mentioned in the chapter's context?",
+            "answer": "Generic medicines are much cheaper than 'branded' medicines but have the same chemical composition and effect. Promoting generic medicines is a way to make healthcare more affordable. The chapter highlights that expensive branded drugs are often prescribed in private hospitals, which adds to the financial burden of the patients, whereas generics can provide the same cure for a fraction of the price.",
+            "answer_outline": [
+                "Definition of generic",
+                "Cost comparison with branded",
+                "Impact on affordability",
+                "Ethical prescription practices"
+            ],
+            "key_concepts": [
+                "generic medicines",
+                "affordability",
+                "branded drugs"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        }
+    ]
+}

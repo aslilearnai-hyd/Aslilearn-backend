@@ -1,0 +1,158 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Probability",
+    "lesson_level": "Hard",
+    "total_periods": 9,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve complex probability problems confidently",
+        "Apply logical reasoning in probability situations",
+        "Handle HOTS, case-study, and exam-level questions",
+        "Develop exam-oriented problem-solving strategies"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Sample Space Construction",
+            "topics_covered": [
+                "Multi-step experiments"
+            ],
+            "teaching_strategy": [
+                "Tabular and tree diagram methods"
+            ],
+            "student_activities": [
+                "Construct complex sample spaces"
+            ],
+            "assessment": [
+                "HOTS worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Complex Event Problems",
+            "topics_covered": [
+                "Multiple condition events"
+            ],
+            "teaching_strategy": [
+                "Problem breakdown"
+            ],
+            "student_activities": [
+                "Solve HOTS problems"
+            ],
+            "assessment": [
+                "Worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complementary and Combined Events",
+            "topics_covered": [
+                "Advanced complementary event problems"
+            ],
+            "teaching_strategy": [
+                "Logical reasoning approach"
+            ],
+            "student_activities": [
+                "Solve advanced numericals"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Case Study Problems",
+            "topics_covered": [
+                "Real-life probability applications"
+            ],
+            "teaching_strategy": [
+                "Case-based discussion"
+            ],
+            "student_activities": [
+                "Analyse case problems"
+            ],
+            "assessment": [
+                "Case-study evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Assertion–Reason & MCQs",
+            "topics_covered": [
+                "Exam-oriented HOTS questions"
+            ],
+            "teaching_strategy": [
+                "Exam pattern practice"
+            ],
+            "student_activities": [
+                "Solve MCQs"
+            ],
+            "assessment": [
+                "MCQ test"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Previous Year Question Practice",
+            "topics_covered": [
+                "Board-level probability questions"
+            ],
+            "teaching_strategy": [
+                "Answer writing guidance"
+            ],
+            "student_activities": [
+                "Write complete solutions"
+            ],
+            "assessment": [
+                "Answer evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Mock Test",
+            "topics_covered": [
+                "Complete chapter assessment"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Test Analysis",
+            "topics_covered": [
+                "Error identification",
+                "Concept gaps"
+            ],
+            "teaching_strategy": [
+                "Feedback-based teaching"
+            ],
+            "student_activities": [
+                "Correct mistakes",
+                "Re-attempt problems"
+            ],
+            "assessment": [
+                "Improvement task"
+            ]
+        },
+        {
+            "period": 9,
+            "title": "Remedial & Enrichment Session",
+            "topics_covered": [
+                "Doubt clearing",
+                "Advanced challenge problems"
+            ],
+            "teaching_strategy": [
+                "Individual guidance"
+            ],
+            "student_activities": [
+                "Solve enrichment tasks"
+            ],
+            "assessment": [
+                "Observation-based assessment"
+            ]
+        }
+    ],
+    "teacher_tip": "Train students to use tree diagrams and logical grouping to simplify complex probability questions."
+}

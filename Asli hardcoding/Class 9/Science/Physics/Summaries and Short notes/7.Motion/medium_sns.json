@@ -1,0 +1,44 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Motion",
+    "difficulty": "Medium",
+    "source_pdf": "s9_7.pdf",
+    "short_notes": {
+        "key_points": [
+            "Motion is described relative to a reference point and depends on the observer",
+            "Distance is a scalar quantity while displacement is a vector quantity",
+            "Average speed is calculated using total distance divided by total time",
+            "Average velocity is calculated using total displacement divided by total time",
+            "Acceleration can occur due to change in speed or change in direction of motion",
+            "Uniform acceleration occurs when velocity changes by equal amounts in equal time intervals",
+            "Retardation or negative acceleration occurs when velocity decreases with time",
+            "The slope of a distance–time graph gives the speed of the object",
+            "The slope of a velocity–time graph gives acceleration",
+            "The area under a velocity–time graph represents displacement"
+        ],
+        "examples": [
+            "Example of uniform motion: Train moving at constant speed on a straight track",
+            "Example of non-uniform motion: A car moving in city traffic",
+            "Example of circular motion: A satellite orbiting Earth",
+            "Example of acceleration due to direction change: Motion of a stone tied to a string",
+            "Example of retardation: A car slowing down when brakes are applied",
+            "Example of graph interpretation: Straight line distance–time graph indicating constant speed"
+        ],
+        "formulas": [
+            "Average Speed = Total Distance / Total Time",
+            "Average Velocity = Total Displacement / Total Time",
+            "Acceleration = (v − u) / t",
+            "v = u + at",
+            "s = ut + ½at²",
+            "v² − u² = 2as"
+        ],
+        "exam_tips": [
+            "Always identify whether the question involves distance or displacement",
+            "Remember that velocity includes direction while speed does not",
+            "In circular motion the speed may remain constant but velocity changes",
+            "Check the slope carefully when interpreting motion graphs",
+            "Use the correct equation of motion depending on the known variables"
+        ]
+    }
+}

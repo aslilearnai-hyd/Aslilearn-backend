@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Medium",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "Barter System Problem Analysis",
+      "objective": "To analyze the limitations of the barter system and need for money.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List three situations where barter exchange may fail.",
+        "Explain how money solves each problem.",
+        "Write a short conclusion."
+      ],
+      "learning_outcome": "Students understand the necessity of money in modern economies.",
+      "evaluation": "Check clarity of problems identified and logical explanation."
+    },
+    {
+      "title": "Functions of Money in Real Life",
+      "objective": "To apply the four functions of money to daily situations.",
+      "materials": "Notebook, textbook",
+      "steps": [
+        "Identify real-life examples for each function of money.",
+        "Explain how each function works in that example.",
+        "Present findings briefly in class."
+      ],
+      "learning_outcome": "Students connect theoretical concepts with practical examples.",
+      "evaluation": "Assess relevance and clarity of examples."
+    },
+    {
+      "title": "Formal vs Informal Credit Comparison",
+      "objective": "To compare formal and informal sources of credit.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Prepare a comparison table showing interest rate, security, and reliability.",
+        "Analyze advantages and disadvantages of each source.",
+        "Suggest which is safer and why."
+      ],
+      "learning_outcome": "Students understand differences in credit sources and financial risks.",
+      "evaluation": "Check completeness of comparison and reasoning."
+    },
+    {
+      "title": "Simple Interest Calculation and Analysis",
+      "objective": "To calculate and interpret simple interest.",
+      "materials": "Calculator, notebook",
+      "steps": [
+        "Calculate simple interest for a given loan.",
+        "Find total repayment amount.",
+        "Explain how interest rate affects repayment."
+      ],
+      "learning_outcome": "Students understand impact of interest rates on borrowers.",
+      "evaluation": "Assess calculation accuracy and explanation."
+    },
+    {
+      "title": "Bank Services Study",
+      "objective": "To analyze services provided by commercial banks.",
+      "materials": "Internet/textbook, notebook",
+      "steps": [
+        "List major services offered by banks.",
+        "Categorize them into deposit and credit services.",
+        "Explain their importance in 4–5 lines."
+      ],
+      "learning_outcome": "Students understand banking functions in the economy.",
+      "evaluation": "Check correct categorization and explanation."
+    },
+    {
+      "title": "Credit Case Study Evaluation",
+      "objective": "To evaluate the benefits and risks of taking loans.",
+      "materials": "Textbook case study, notebook",
+      "steps": [
+        "Read a case study about a borrower.",
+        "Identify purpose and source of credit.",
+        "Analyze whether the loan improved their condition."
+      ],
+      "learning_outcome": "Students critically analyze the impact of credit.",
+      "evaluation": "Assess analytical reasoning and understanding."
+    },
+    {
+      "title": "Digital Payment Awareness Project",
+      "objective": "To explore modern digital payment methods.",
+      "materials": "Notebook, internet access",
+      "steps": [
+        "List different digital payment methods used in India.",
+        "Explain advantages and risks of each.",
+        "Prepare a short awareness note."
+      ],
+      "learning_outcome": "Students understand benefits and risks of digital transactions.",
+      "evaluation": "Evaluate clarity, relevance, and completeness."
+    },
+    {
+      "title": "Loan Comparison Activity",
+      "objective": "To compare two loan offers and choose the better option.",
+      "materials": "Calculator, notebook",
+      "steps": [
+        "Calculate total repayment for two loans with different interest rates.",
+        "Compare the results.",
+        "Justify which option is better."
+      ],
+      "learning_outcome": "Students learn decision-making in financial matters.",
+      "evaluation": "Check correct calculation and logical justification."
+    },
+    {
+      "title": "Savings and Investment Plan",
+      "objective": "To plan savings for a future goal.",
+      "materials": "Notebook, calculator",
+      "steps": [
+        "Select a future goal (e.g., buying a bicycle).",
+        "Calculate monthly savings required.",
+        "Explain benefits of regular saving."
+      ],
+      "learning_outcome": "Students understand importance of financial planning.",
+      "evaluation": "Assess accuracy of planning and clarity of explanation."
+    },
+    {
+      "title": "Money Evolution Timeline Analysis",
+      "objective": "To examine the evolution of money and its impact.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "Create a timeline from barter to digital payments.",
+        "Identify one advantage of each stage.",
+        "Explain how evolution improved transactions."
+      ],
+      "learning_outcome": "Students understand development of money systems over time.",
+      "evaluation": "Check correctness of timeline and explanation."
+    }
+  ]
+}

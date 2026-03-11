@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Electricity: Circuits and their Components",
+    "difficulty": "Hard",
+    "source_pdf": "jess703.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric circuits must form a continuous conducting path between the positive and negative terminals of a power source",
+            "Circuit diagrams represent electric circuits using standardized symbols",
+            "Different electrical components perform specific functions such as supplying energy, controlling current and converting energy into light or heat",
+            "Multiple components can be connected in series or parallel depending on the circuit design",
+            "Safety and proper insulation are important when working with electrical circuits"
+        ],
+        "examples": [
+            "Series circuit: Two bulbs connected in a single path share the same current",
+            "Parallel circuit: Bulbs connected in separate branches operate independently",
+            "Circuit diagram symbols: Cell (long and short lines), bulb (circle with filament), switch (break in line)",
+            "Conductivity test: A simple tester circuit used to check whether a material allows current to pass"
+        ],
+        "formulas": [
+            "Electric circuit → Continuous closed path for electric current",
+            "Series connection → Components connected one after another in a single path",
+            "Parallel connection → Components connected in separate branches across the same source"
+        ],
+        "exam_tips": [
+            "Memorize standard electrical symbols used in circuit diagrams",
+            "Understand the difference between series and parallel circuits",
+            "Practice drawing labelled circuit diagrams clearly",
+            "Carefully analyze why a device works or fails in a circuit problem"
+        ]
+    }
+}

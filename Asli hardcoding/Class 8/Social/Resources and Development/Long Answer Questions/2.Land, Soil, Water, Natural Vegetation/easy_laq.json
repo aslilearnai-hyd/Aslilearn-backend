@@ -1,0 +1,281 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Land, Soil, Water, Natural Vegetation and Wildlife Resources",
+  "generated_at": "2026-03-06T12:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the importance of land as a natural resource.",
+      "answer": "Land is an important natural resource used for agriculture, settlements, industries, transportation, and forests. It supports human life and economic activities. Since land is limited, it must be used carefully and conserved.",
+      "answer_outline": [
+        "Land as a natural resource",
+        "Uses of land",
+        "Importance of conservation"
+      ],
+      "key_concepts": ["land resource"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain different uses of land.",
+      "answer": "Land is used for various purposes such as agriculture, housing, industries, transportation networks, recreation, and forests. Land use depends on factors such as climate, soil, and population.",
+      "answer_outline": [
+        "Agriculture",
+        "Settlements and industries",
+        "Transport and recreation"
+      ],
+      "key_concepts": ["land use"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain factors affecting land use patterns.",
+      "answer": "Land use patterns are influenced by physical factors such as climate, soil, topography, and minerals, as well as human factors such as population, technology, and culture.",
+      "answer_outline": [
+        "Physical factors",
+        "Human factors",
+        "Impact on land use"
+      ],
+      "key_concepts": ["land use factors"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the causes of land degradation.",
+      "answer": "Land degradation occurs due to activities such as deforestation, overgrazing, mining, and improper farming practices. These activities reduce soil fertility and damage the environment.",
+      "answer_outline": [
+        "Deforestation",
+        "Overgrazing",
+        "Mining and farming practices"
+      ],
+      "key_concepts": ["land degradation"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain methods of land conservation.",
+      "answer": "Land conservation methods include afforestation, land reclamation, controlled grazing, and proper farming practices. These methods help protect land resources and maintain productivity.",
+      "answer_outline": [
+        "Afforestation",
+        "Land reclamation",
+        "Sustainable practices"
+      ],
+      "key_concepts": ["land conservation"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how soil is formed.",
+      "answer": "Soil is formed by the weathering of rocks over a long period. Natural processes such as wind, water, and temperature changes break rocks into smaller particles, which mix with organic matter to form soil.",
+      "answer_outline": [
+        "Weathering of rocks",
+        "Natural processes",
+        "Formation of soil"
+      ],
+      "key_concepts": ["soil formation"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the composition of soil.",
+      "answer": "Soil consists of minerals, organic matter, water, and air. These components help support plant growth and agricultural productivity.",
+      "answer_outline": ["Minerals", "Organic matter", "Water and air"],
+      "key_concepts": ["soil composition"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain different types of soil.",
+      "answer": "The main types of soil are sandy soil, clayey soil, and loamy soil. Sandy soil has large particles, clayey soil retains water, and loamy soil is ideal for agriculture because it has balanced properties.",
+      "answer_outline": ["Sandy soil", "Clayey soil", "Loamy soil"],
+      "key_concepts": ["soil types"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the meaning of soil erosion.",
+      "answer": "Soil erosion is the removal of the top fertile layer of soil by natural agents such as wind and water. It reduces soil fertility and agricultural productivity.",
+      "answer_outline": ["Definition of soil erosion", "Causes", "Effects"],
+      "key_concepts": ["soil erosion"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain methods of soil conservation.",
+      "answer": "Methods of soil conservation include terrace farming, contour ploughing, strip cropping, and planting trees. These methods help prevent soil erosion and protect soil fertility.",
+      "answer_outline": [
+        "Terrace farming",
+        "Contour ploughing",
+        "Afforestation"
+      ],
+      "key_concepts": ["soil conservation"],
+      "marks": 5,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the importance of water resources.",
+      "answer": "Water resources are essential for drinking, agriculture, industries, and domestic activities. They support life and economic development.",
+      "answer_outline": [
+        "Importance for life",
+        "Agriculture and industry",
+        "Daily use"
+      ],
+      "key_concepts": ["water resources"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain sources of freshwater.",
+      "answer": "Sources of freshwater include rivers, lakes, ponds, glaciers, and groundwater. These sources provide water for human use and agriculture.",
+      "answer_outline": ["Surface water", "Groundwater", "Importance"],
+      "key_concepts": ["freshwater sources"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the concept of water scarcity.",
+      "answer": "Water scarcity occurs when the demand for water exceeds the available supply. It may result from overuse, population growth, and climate changes.",
+      "answer_outline": ["Definition", "Causes", "Impact"],
+      "key_concepts": ["water scarcity"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain methods of water conservation.",
+      "answer": "Water conservation methods include rainwater harvesting, efficient irrigation, reducing water wastage, and protecting water bodies from pollution.",
+      "answer_outline": [
+        "Rainwater harvesting",
+        "Efficient irrigation",
+        "Preventing pollution"
+      ],
+      "key_concepts": ["water conservation"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the meaning of natural vegetation.",
+      "answer": "Natural vegetation refers to plants that grow naturally without human interference. It depends on climate, soil, and rainfall conditions.",
+      "answer_outline": ["Definition", "Factors influencing vegetation"],
+      "key_concepts": ["natural vegetation"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the types of natural vegetation.",
+      "answer": "Major types of natural vegetation include forests, grasslands, shrubs, and tundra vegetation. These types vary according to climate and rainfall.",
+      "answer_outline": ["Forests", "Grasslands", "Shrubs and tundra"],
+      "key_concepts": ["vegetation types"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the importance of forests.",
+      "answer": "Forests provide oxygen, maintain ecological balance, protect soil, and support wildlife habitats. They are essential for environmental sustainability.",
+      "answer_outline": [
+        "Environmental benefits",
+        "Wildlife habitat",
+        "Soil protection"
+      ],
+      "key_concepts": ["forests"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the meaning of wildlife.",
+      "answer": "Wildlife refers to animals, birds, insects, and organisms living in their natural habitats without human domestication.",
+      "answer_outline": ["Definition", "Examples", "Importance"],
+      "key_concepts": ["wildlife"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of wildlife conservation.",
+      "answer": "Wildlife conservation helps maintain ecological balance, protect endangered species, and preserve biodiversity for future generations.",
+      "answer_outline": [
+        "Biodiversity protection",
+        "Ecological balance",
+        "Future sustainability"
+      ],
+      "key_concepts": ["wildlife conservation"],
+      "marks": 5,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain threats to wildlife.",
+      "answer": "Wildlife is threatened by habitat destruction, hunting, pollution, and climate change. These factors reduce animal populations and biodiversity.",
+      "answer_outline": ["Habitat destruction", "Hunting", "Pollution"],
+      "key_concepts": ["wildlife threats"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the concept of biodiversity.",
+      "answer": "Biodiversity refers to the variety of plants, animals, and microorganisms living in an ecosystem. It is essential for ecological stability.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["biodiversity"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how human activities affect natural resources.",
+      "answer": "Human activities such as deforestation, mining, industrialization, and overuse of resources can damage land, soil, water, vegetation, and wildlife.",
+      "answer_outline": ["Examples of activities", "Environmental impact"],
+      "key_concepts": ["human impact"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of sustainable resource use.",
+      "answer": "Sustainable resource use means using resources carefully so that they remain available for future generations while protecting the environment.",
+      "answer_outline": ["Definition", "Importance", "Examples"],
+      "key_concepts": ["sustainability"],
+      "marks": 5,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the role of conservation in protecting natural resources.",
+      "answer": "Conservation helps maintain ecological balance, protect biodiversity, and ensure long-term availability of natural resources.",
+      "answer_outline": ["Environmental protection", "Sustainable development"],
+      "key_concepts": ["conservation"],
+      "marks": 4,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall importance of land, soil, water, vegetation, and wildlife resources.",
+      "answer": "These resources support life, agriculture, ecosystems, and economic activities. Proper conservation ensures environmental balance and sustainable development.",
+      "answer_outline": [
+        "Importance of each resource",
+        "Environmental balance",
+        "Need for conservation"
+      ],
+      "key_concepts": ["natural resources"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

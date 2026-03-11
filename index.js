@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
-import { dirname, join, extname } from 'path';
+import { dirname, join, extname, basename } from 'path';
 import fs from 'fs';
 import axios from 'axios';
 
@@ -224,6 +224,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Simple health check endpoint for Nginx and frontend connectivity tests
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'AsliLearn backend is healthy',
+    time: new Date().toISOString()
+  });
+});
+
 // Proxy endpoint for external content (flipbooks, PDFs, etc.)
 // Handle OPTIONS preflight
 app.options('/api/proxy/content', (req, res) => {
@@ -275,8 +284,18 @@ app.get('/api/proxy/content', async (req, res) => {
       maxRedirects: 10,
       timeout: 60000,
       responseType: isPDF ? 'arraybuffer' : 'text', // Use arraybuffer for PDFs
-      validateStatus: (status) => status < 500 // Accept 4xx but not 5xx
+      validateStatus: (status) => status < 600 // Accept all status codes, we'll handle errors
     });
+
+    // Check if request was successful
+    if (response.status >= 400) {
+      console.error(`Failed to fetch content: HTTP ${response.status}`);
+      return res.status(response.status).json({ 
+        error: 'Failed to fetch content',
+        message: `Source server returned ${response.status}`,
+        url: targetUrl
+      });
+    }
 
     // Get content type
     let contentType = response.headers['content-type'] || 'text/html';
@@ -286,7 +305,7 @@ app.get('/api/proxy/content', async (req, res) => {
       contentType = 'application/pdf';
     }
     
-    console.log('Content type:', contentType);
+    console.log('Content type:', contentType, 'Status:', response.status);
 
     // Set CORS and frame headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -298,7 +317,7 @@ app.get('/api/proxy/content', async (req, res) => {
     // Handle PDF files - serve directly as binary
     if (contentType.includes('application/pdf') || contentType.includes('pdf') || isPDF) {
       res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `inline; filename="${path.basename(urlObj.pathname)}"`);
+      res.setHeader('Content-Disposition', `inline; filename="${basename(urlObj.pathname)}"`);
       // Send PDF binary data (response.data is already arraybuffer for PDFs)
       res.send(Buffer.from(response.data));
       return;
@@ -371,6 +390,21 @@ app.get('/api/proxy/content', async (req, res) => {
   } catch (error) {
     console.error('Proxy error:', error.message);
     console.error('Error stack:', error.stack);
+    console.error('Error details:', {
+      url: req.query.url,
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      headers: error.response?.headers
+    });
+    
+    // If it's a 404 from the target server, return 404
+    if (error.response?.status === 404) {
+      return res.status(404).json({ 
+        error: 'Content not found',
+        message: 'The requested content was not found on the source server'
+      });
+    }
+    
     res.status(500).json({ 
       error: 'Failed to fetch content',
       message: error.message,
@@ -5007,21 +5041,36 @@ app.get('/api/super-admin/stats', async (req, res) => {
     const totalTeachers = await Teacher.countDocuments();
     const totalVideos = await Video.countDocuments();
     const totalAssessments = await Assessment.countDocuments();
-    
-    // Get real admin count from database
+
     const totalAdmins = await User.countDocuments({ role: 'admin' });
-    
+
     res.json({
-      totalUsers,
-      revenue: 0, // Revenue tracking to be implemented
-      courses: totalVideos,
-      teachers: totalTeachers,
-      admins: totalAdmins,
-      superAdmins: 1
+      success: true,
+      data: {
+        totalUsers,
+        revenue: 0, // Revenue tracking to be implemented
+        courses: totalVideos,
+        teachers: totalTeachers,
+        admins: totalAdmins,
+        superAdmins: 1
+      }
     });
   } catch (error) {
     console.error('Stats error:', error);
-    res.status(500).json({ success: false, message: 'Failed to fetch stats' });
+
+    // Fallback so the dashboard doesn't completely break if DB is down
+    res.status(200).json({
+      success: false,
+      message: 'Failed to fetch stats from database, using fallback zeros',
+      data: {
+        totalUsers: 0,
+        revenue: 0,
+        courses: 0,
+        teachers: 0,
+        admins: 0,
+        superAdmins: 1
+      }
+    });
   }
 });
 
@@ -5029,32 +5078,31 @@ app.get('/api/super-admin/stats', async (req, res) => {
 app.get('/api/super-admin/admins', async (req, res) => {
   try {
     const admins = await User.find({ role: 'admin' }).select('-password');
-    
-    // Get student and teacher counts for each admin
-    const adminsWithCounts = await Promise.all(admins.map(async (admin) => {
-      // Count students assigned to this admin
-      const studentCount = await User.countDocuments({ 
-        role: 'student',
-        assignedAdmin: admin._id
-      });
-      
-      // Count teachers assigned to this admin
-      const teacherCount = await Teacher.countDocuments({
-        adminId: admin._id
-      });
 
-      return {
-        id: admin._id,
-        _id: admin._id,
-        name: admin.fullName || admin.name,
-        email: admin.email,
-        schoolName: admin.schoolName || admin.name || '',
-        totalStudents: studentCount,
-        totalTeachers: teacherCount,
-        createdAt: admin.createdAt,
-        status: admin.isActive !== false ? 'active' : 'inactive'
-      };
-    }));
+    const adminsWithCounts = await Promise.all(
+      admins.map(async (admin) => {
+        const studentCount = await User.countDocuments({
+          role: 'student',
+          assignedAdmin: admin._id
+        });
+
+        const teacherCount = await Teacher.countDocuments({
+          adminId: admin._id
+        });
+
+        return {
+          id: admin._id,
+          _id: admin._id,
+          name: admin.fullName || admin.name,
+          email: admin.email,
+          schoolName: admin.schoolName || admin.name || '',
+          totalStudents: studentCount,
+          totalTeachers: teacherCount,
+          createdAt: admin.createdAt,
+          status: admin.isActive !== false ? 'active' : 'inactive'
+        };
+      })
+    );
 
     res.json({
       success: true,
@@ -5062,10 +5110,12 @@ app.get('/api/super-admin/admins', async (req, res) => {
     });
   } catch (error) {
     console.error('Error fetching admins:', error);
-    res.status(500).json({
+
+    // Fallback: return empty list instead of 500 so UI still loads
+    res.status(200).json({
       success: false,
-      message: 'Failed to fetch admins',
-      error: error.message
+      message: 'Failed to fetch admins from database, returning empty list',
+      data: []
     });
   }
 });

@@ -1,0 +1,42 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "The Fundamental Unit of Life",
+    "difficulty": "Easy",
+    "source_pdf": "s9_5.pdf",
+    "short_notes": {
+        "key_points": [
+            "The cell is the basic structural and functional unit of life",
+            "Cells were discovered by Robert Hooke in 1665 while observing cork under a microscope",
+            "Cell theory states that all living organisms are made of cells and cells arise from pre-existing cells",
+            "The plasma membrane surrounds the cell and controls the movement of substances in and out",
+            "The cell wall is present in plant cells and provides protection and support",
+            "The nucleus controls cell activities and contains genetic material",
+            "Cytoplasm is the jelly-like substance where most metabolic reactions occur",
+            "Mitochondria produce energy in the form of ATP and are called the powerhouse of the cell",
+            "Ribosomes are responsible for protein synthesis in the cell",
+            "Cell division helps in growth, repair and reproduction"
+        ],
+        "examples": [
+            "Unicellular organism: Amoeba",
+            "Multicellular organism: Human being",
+            "Powerhouse of cell: Mitochondria",
+            "Photosynthesis organelle: Chloroplast",
+            "Digestive organelle: Lysosome",
+            "Protein synthesis organelle: Ribosome"
+        ],
+        "formulas": [
+            "Diffusion → Movement of molecules from higher concentration to lower concentration",
+            "Osmosis → Movement of water through a selectively permeable membrane",
+            "Mitosis → One cell divides into two identical daughter cells",
+            "Meiosis → One cell divides into four daughter cells with half chromosome number"
+        ],
+        "exam_tips": [
+            "Remember that the nucleus controls the activities of the cell",
+            "Plant cells have cell wall and chloroplast but animal cells do not",
+            "Mitochondria are called the powerhouse of the cell because they produce energy",
+            "Lysosomes contain digestive enzymes and help break down wastes",
+            "Cell division is essential for growth and repair of tissues"
+        ]
+    }
+}

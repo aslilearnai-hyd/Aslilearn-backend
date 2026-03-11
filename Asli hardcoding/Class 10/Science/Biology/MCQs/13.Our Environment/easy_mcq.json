@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 13: Our Environment",
+  "generated_at": "2026-03-11T05:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is a biotic component of the environment?",
+      "options": {
+        "A": "Sunlight",
+        "B": "Water",
+        "C": "Plants",
+        "D": "Air"
+      },
+      "correct_answer": "C",
+      "explanation": "Plants are living components, making them biotic.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the main cause of soil erosion?",
+      "options": {
+        "A": "Deforestation",
+        "B": "Solar energy",
+        "C": "Earthquakes",
+        "D": "Wind only"
+      },
+      "correct_answer": "A",
+      "explanation": "Deforestation removes trees whose roots bind soil, leading to erosion by wind and water.",
+      "difficulty": "easy",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which gas is primarily responsible for global warming?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Carbon dioxide traps heat in the atmosphere, contributing to global warming.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is eutrophication?",
+      "options": {
+        "A": "Excess growth of algae due to nutrient pollution",
+        "B": "Air pollution due to smoke",
+        "C": "Soil degradation",
+        "D": "Acid rain formation"
+      },
+      "correct_answer": "A",
+      "explanation": "Excess nutrients in water bodies cause algal blooms, depleting oxygen and harming aquatic life.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which human activity leads to the formation of acid rain?",
+      "options": {
+        "A": "Burning fossil fuels releasing SO₂ and NO₂",
+        "B": "Deforestation",
+        "C": "Overfishing",
+        "D": "Solar power usage"
+      },
+      "correct_answer": "A",
+      "explanation": "Sulfur dioxide and nitrogen oxides combine with water in the atmosphere to form acidic precipitation.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is an example of an abiotic factor?",
+      "options": {
+        "A": "Fungi",
+        "B": "Bacteria",
+        "C": "Temperature",
+        "D": "Plants"
+      },
+      "correct_answer": "C",
+      "explanation": "Temperature is a non-living factor affecting ecosystems, hence abiotic.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is a renewable resource?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Sunlight",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Sunlight is naturally replenished and is considered renewable.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the main effect of deforestation on the water cycle?",
+      "options": {
+        "A": "Increased precipitation",
+        "B": "Reduced transpiration and local rainfall",
+        "C": "Increased groundwater recharge",
+        "D": "No effect"
+      },
+      "correct_answer": "B",
+      "explanation": "Fewer trees reduce transpiration, affecting cloud formation and rainfall patterns.",
+      "difficulty": "easy",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which pollutant is responsible for the depletion of the ozone layer?",
+      "options": {
+        "A": "CO₂",
+        "B": "CFCs",
+        "C": "Methane",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": "Chlorofluorocarbons (CFCs) release chlorine atoms that destroy ozone molecules.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Which human activity increases greenhouse effect?",
+      "options": {
+        "A": "Using solar panels",
+        "B": "Planting trees",
+        "C": "Burning fossil fuels",
+        "D": "Rainwater harvesting"
+      },
+      "correct_answer": "C",
+      "explanation": "Burning fossil fuels releases CO₂, increasing heat retention in the atmosphere.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which process converts nitrogen gas into usable forms for plants?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Nitrogen fixation",
+        "C": "Respiration",
+        "D": "Transpiration"
+      },
+      "correct_answer": "B",
+      "explanation": "Nitrogen-fixing bacteria convert atmospheric nitrogen into ammonia or nitrates for plant use.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the role of decomposers in the ecosystem?",
+      "options": {
+        "A": "Produce oxygen",
+        "B": "Break down dead matter and recycle nutrients",
+        "C": "Perform photosynthesis",
+        "D": "Consume living plants"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposers like fungi and bacteria break down organic matter, returning nutrients to soil.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which type of pollution is caused by excess nutrients in water bodies?",
+      "options": {
+        "A": "Air pollution",
+        "B": "Water pollution (eutrophication)",
+        "C": "Soil pollution",
+        "D": "Noise pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Nutrient overload promotes algal blooms, depleting oxygen and harming aquatic life.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is a major effect of ozone depletion?",
+      "options": {
+        "A": "Global warming",
+        "B": "Increased UV radiation reaching Earth",
+        "C": "Acid rain",
+        "D": "Deforestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Ozone layer protects against UV; its depletion allows more UV radiation to reach Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Which practice helps in conserving soil fertility?",
+      "options": {
+        "A": "Monocropping",
+        "B": "Crop rotation",
+        "C": "Deforestation",
+        "D": "Overgrazing"
+      },
+      "correct_answer": "B",
+      "explanation": "Rotating crops prevents nutrient depletion and maintains soil fertility.",
+      "difficulty": "easy",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which energy source is considered non-renewable?",
+      "options": {
+        "A": "Wind energy",
+        "B": "Hydropower",
+        "C": "Coal",
+        "D": "Solar energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Coal takes millions of years to form and cannot be replenished quickly.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which human activity contributes to water pollution?",
+      "options": {
+        "A": "Industrial effluent discharge",
+        "B": "Afforestation",
+        "C": "Rainwater harvesting",
+        "D": "Soil conservation"
+      },
+      "correct_answer": "A",
+      "explanation": "Industries release chemicals and waste into rivers, polluting water bodies.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Which is a biotic factor that affects ecosystems?",
+      "options": {
+        "A": "Sunlight",
+        "B": "Soil minerals",
+        "C": "Predators",
+        "D": "Water temperature"
+      },
+      "correct_answer": "C",
+      "explanation": "Predators are living components interacting with other species, influencing population and ecosystem dynamics.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Which type of energy is harnessed from wind?",
+      "options": {
+        "A": "Renewable energy",
+        "B": "Non-renewable energy",
+        "C": "Fossil fuel energy",
+        "D": "Nuclear energy"
+      },
+      "correct_answer": "A",
+      "explanation": "Wind energy is naturally replenished and sustainable, making it renewable.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 20,
+      "question": "Which human activity accelerates desertification?",
+      "options": {
+        "A": "Afforestation",
+        "B": "Overgrazing",
+        "C": "Rainwater harvesting",
+        "D": "Terrace farming"
+      },
+      "correct_answer": "B",
+      "explanation": "Excessive grazing removes vegetation cover, leading to soil degradation and desertification.",
+      "difficulty": "easy",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which of these contributes to air pollution in urban areas?",
+      "options": {
+        "A": "Vehicle emissions",
+        "B": "Planting trees",
+        "C": "Rainwater harvesting",
+        "D": "Organic farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Exhaust from vehicles releases particulate matter and gases that pollute air.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Which method helps reduce solid waste accumulation?",
+      "options": {
+        "A": "Recycling and composting",
+        "B": "Dumping in rivers",
+        "C": "Burning indiscriminately",
+        "D": "Littering"
+      },
+      "correct_answer": "A",
+      "explanation": "Recycling materials and composting biodegradable waste reduces landfill load and pollution.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the major effect of industrial pollution on aquatic life?",
+      "options": {
+        "A": "Enhanced photosynthesis",
+        "B": "Oxygen depletion and toxicity",
+        "C": "Increased fish population",
+        "D": "Improved water clarity"
+      },
+      "correct_answer": "B",
+      "explanation": "Chemical pollutants reduce oxygen and introduce toxins, harming aquatic organisms.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which practice helps in conserving biodiversity?",
+      "options": {
+        "A": "Deforestation",
+        "B": "Pollution control and habitat protection",
+        "C": "Overfishing",
+        "D": "Urban sprawl"
+      },
+      "correct_answer": "B",
+      "explanation": "Protecting habitats and reducing pollution conserves species diversity.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following is a greenhouse gas released from livestock?",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Methane",
+        "C": "Oxygen",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": "Methane is produced during digestion in ruminants and contributes to the greenhouse effect.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3"
+    }
+  ]
+}

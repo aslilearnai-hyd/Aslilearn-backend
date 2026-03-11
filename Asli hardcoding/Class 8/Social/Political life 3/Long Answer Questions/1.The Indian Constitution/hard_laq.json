@@ -1,0 +1,269 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: The Indian Constitution",
+  "generated_at": "2026-03-06T21:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning and importance of a Constitution.",
+      "answer": "A Constitution is a set of fundamental rules and principles that guide how a country is governed. It defines the structure of government, limits the powers of authorities and protects the rights of citizens.",
+      "answer_outline": [
+        "Definition of Constitution",
+        "Framework of government",
+        "Protection of citizens’ rights"
+      ],
+      "key_concepts": ["constitution", "governance"],
+      "marks": 4,
+      "source_section": "Why Does a Country Need a Constitution?"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why a democratic country needs a Constitution.",
+      "answer": "A democratic country needs a Constitution to ensure that government power is limited, citizens’ rights are protected and decisions are made according to established laws.",
+      "answer_outline": [
+        "Limits government power",
+        "Protects citizens' rights",
+        "Ensures rule of law"
+      ],
+      "key_concepts": ["democracy", "constitution"],
+      "marks": 4,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the process of making the Indian Constitution.",
+      "answer": "The Indian Constitution was drafted by the Constituent Assembly after independence. Representatives debated and discussed various issues before finalizing the Constitution, which came into effect on 26 January 1950.",
+      "answer_outline": [
+        "Constituent Assembly",
+        "Drafting Committee",
+        "Adoption in 1950"
+      ],
+      "key_concepts": ["constituent assembly"],
+      "marks": 4,
+      "source_section": "Making of the Constitution"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the role of the Constituent Assembly in drafting the Constitution.",
+      "answer": "The Constituent Assembly discussed and debated different ideas before drafting the Constitution. Members represented various regions and communities to ensure fairness and representation.",
+      "answer_outline": [
+        "Debates and discussions",
+        "Representation of people",
+        "Drafting the Constitution"
+      ],
+      "key_concepts": ["constituent assembly"],
+      "marks": 4,
+      "source_section": "Making of the Constitution"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of federalism in the Indian Constitution.",
+      "answer": "Federalism refers to the division of powers between the central government and state governments. This system helps manage a large and diverse country like India effectively.",
+      "answer_outline": [
+        "Division of powers",
+        "Central government",
+        "State governments"
+      ],
+      "key_concepts": ["federalism"],
+      "marks": 4,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the parliamentary form of government in India.",
+      "answer": "In a parliamentary system, the executive is responsible to the legislature. The Prime Minister and Council of Ministers are accountable to Parliament.",
+      "answer_outline": [
+        "Executive accountable to legislature",
+        "Role of Prime Minister",
+        "Parliament’s authority"
+      ],
+      "key_concepts": ["parliamentary system"],
+      "marks": 4,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the principle of separation of powers.",
+      "answer": "Separation of powers divides government authority among the legislature, executive and judiciary. Each branch has specific responsibilities to prevent misuse of power.",
+      "answer_outline": ["Legislature", "Executive", "Judiciary"],
+      "key_concepts": ["separation of powers"],
+      "marks": 4,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the importance of Fundamental Rights in the Constitution.",
+      "answer": "Fundamental Rights guarantee freedom, equality and justice for all citizens and protect them from discrimination and unfair treatment.",
+      "answer_outline": [
+        "Protection of freedoms",
+        "Equality before law",
+        "Protection against discrimination"
+      ],
+      "key_concepts": ["fundamental rights"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how Fundamental Rights protect citizens.",
+      "answer": "Fundamental Rights ensure freedom of speech, equality before law and protection from discrimination, allowing citizens to live with dignity.",
+      "answer_outline": ["Freedom", "Equality", "Protection"],
+      "key_concepts": ["fundamental rights"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of secularism in the Indian Constitution.",
+      "answer": "Secularism means the state does not favor any religion and treats all religions equally while guaranteeing freedom of religion.",
+      "answer_outline": ["Equal treatment of religions", "Freedom of religion"],
+      "key_concepts": ["secularism"],
+      "marks": 4,
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how secularism promotes unity in India.",
+      "answer": "Secularism allows people of different religions to live peacefully and ensures equality among religious communities.",
+      "answer_outline": ["Respect for religions", "Peaceful coexistence"],
+      "key_concepts": ["secularism"],
+      "marks": 4,
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the role of the judiciary in protecting the Constitution.",
+      "answer": "The judiciary interprets laws and ensures that government actions follow the Constitution.",
+      "answer_outline": ["Interpretation of laws", "Protection of rights"],
+      "key_concepts": ["judiciary"],
+      "marks": 4,
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the concept of rule of law.",
+      "answer": "Rule of law means that all people are equal before the law and laws apply equally to everyone.",
+      "answer_outline": ["Equality before law", "Fair justice"],
+      "key_concepts": ["rule of law"],
+      "marks": 3,
+      "source_section": "Constitutional Principles"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain why the Constitution limits the powers of government.",
+      "answer": "The Constitution limits government power to prevent misuse of authority and protect democracy.",
+      "answer_outline": ["Prevent misuse", "Protect democracy"],
+      "key_concepts": ["government power"],
+      "marks": 4,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the importance of equality in the Constitution.",
+      "answer": "Equality ensures that all citizens are treated fairly and discrimination is prevented.",
+      "answer_outline": ["Equal treatment", "No discrimination"],
+      "key_concepts": ["equality"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how democracy is supported by the Constitution.",
+      "answer": "The Constitution supports democracy by protecting rights, establishing elections and limiting government power.",
+      "answer_outline": ["Protection of rights", "Democratic governance"],
+      "key_concepts": ["democracy"],
+      "marks": 4,
+      "source_section": "Democratic Principles"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the importance of 26 January 1950 in Indian history.",
+      "answer": "On this day the Constitution came into effect and India became a republic.",
+      "answer_outline": ["Constitution implemented", "Republic Day"],
+      "key_concepts": ["republic day"],
+      "marks": 3,
+      "source_section": "Making of Constitution"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the role of citizens in a constitutional democracy.",
+      "answer": "Citizens participate in elections, follow laws and protect democratic values.",
+      "answer_outline": [
+        "Voting",
+        "Following laws",
+        "Participating in democracy"
+      ],
+      "key_concepts": ["citizenship"],
+      "marks": 3,
+      "source_section": "Democratic Participation"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how the Constitution protects minority rights.",
+      "answer": "The Constitution ensures equality and freedom of religion, protecting minority communities from discrimination.",
+      "answer_outline": ["Religious freedom", "Equality"],
+      "key_concepts": ["minority rights"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain why the Constitution is called the supreme law of India.",
+      "answer": "It is the highest law of the country and all other laws must follow it.",
+      "answer_outline": ["Supreme authority", "All laws must follow it"],
+      "key_concepts": ["constitution"],
+      "marks": 4,
+      "source_section": "Constitutional Supremacy"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the importance of constitutional values.",
+      "answer": "Constitutional values promote justice, equality, liberty and fraternity in society.",
+      "answer_outline": ["Justice", "Equality", "Liberty"],
+      "key_concepts": ["constitutional values"],
+      "marks": 4,
+      "source_section": "Constitutional Principles"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how the Constitution maintains unity in diversity.",
+      "answer": "It respects cultural differences while ensuring equal rights and opportunities for all citizens.",
+      "answer_outline": ["Respect for diversity", "Equality of citizens"],
+      "key_concepts": ["unity"],
+      "marks": 4,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the role of law in maintaining democracy.",
+      "answer": "Laws ensure fairness, equality and protection of citizens’ rights in a democratic society.",
+      "answer_outline": ["Fair governance", "Protection of rights"],
+      "key_concepts": ["law"],
+      "marks": 3,
+      "source_section": "Democratic Governance"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how the Constitution helps maintain social justice.",
+      "answer": "It provides equality, protection of rights and opportunities for all sections of society.",
+      "answer_outline": ["Equal rights", "Protection of disadvantaged groups"],
+      "key_concepts": ["social justice"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how the Constitution helps build a democratic society.",
+      "answer": "The Constitution provides rules for governance, protects rights and ensures equality and justice for all citizens.",
+      "answer_outline": [
+        "Rules of governance",
+        "Protection of rights",
+        "Democratic values"
+      ],
+      "key_concepts": ["democracy", "constitution"],
+      "marks": 5,
+      "source_section": "Importance of Constitution"
+    }
+  ]
+}

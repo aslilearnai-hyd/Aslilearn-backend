@@ -1,0 +1,255 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 5: The Fundamental Unit of Life",
+    "generated_at": "2026-03-06T01:10:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a cell?",
+            "answer": "A cell is the basic structural and functional unit of life.",
+            "key_points": [
+                "basic unit of life",
+                "cell"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who discovered the cell?",
+            "answer": "Robert Hooke discovered the cell in 1665.",
+            "key_points": [
+                "Robert Hooke",
+                "cell discovery"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the instrument used to observe cells.",
+            "answer": "Cells are observed using a microscope.",
+            "key_points": [
+                "microscope"
+            ],
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the plasma membrane?",
+            "answer": "The plasma membrane is the outer covering of the cell.",
+            "key_points": [
+                "plasma membrane",
+                "cell boundary"
+            ],
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is diffusion?",
+            "answer": "Diffusion is the movement of substances from higher concentration to lower concentration.",
+            "key_points": [
+                "diffusion",
+                "high to low concentration"
+            ],
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is osmosis?",
+            "answer": "Osmosis is the movement of water across a selectively permeable membrane.",
+            "key_points": [
+                "osmosis",
+                "water movement"
+            ],
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which structure is present only in plant cells?",
+            "answer": "The cell wall is present only in plant cells.",
+            "key_points": [
+                "cell wall",
+                "plant cells"
+            ],
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the function of the cell wall?",
+            "answer": "The cell wall provides support and protection to plant cells.",
+            "key_points": [
+                "support",
+                "protection"
+            ],
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the nucleus?",
+            "answer": "The nucleus is the control center of the cell.",
+            "key_points": [
+                "nucleus",
+                "control center"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is cytoplasm?",
+            "answer": "Cytoplasm is the jelly-like substance inside the cell.",
+            "key_points": [
+                "cytoplasm",
+                "cell fluid"
+            ],
+            "source_section": "Section 5.2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which organelle is called the powerhouse of the cell?",
+            "answer": "Mitochondria are called the powerhouse of the cell.",
+            "key_points": [
+                "mitochondria",
+                "energy production"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which organelle performs photosynthesis?",
+            "answer": "Chloroplast performs photosynthesis.",
+            "key_points": [
+                "chloroplast",
+                "photosynthesis"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the function of ribosomes?",
+            "answer": "Ribosomes help in protein synthesis.",
+            "key_points": [
+                "ribosomes",
+                "protein synthesis"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Which organelle packages and transports materials in the cell?",
+            "answer": "Golgi apparatus packages and transports materials.",
+            "key_points": [
+                "Golgi apparatus",
+                "transport"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which organelle contains digestive enzymes?",
+            "answer": "Lysosomes contain digestive enzymes.",
+            "key_points": [
+                "lysosomes",
+                "digestive enzymes"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which cells lack a nuclear membrane?",
+            "answer": "Prokaryotic cells lack a nuclear membrane.",
+            "key_points": [
+                "prokaryotic cells"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which cells have a well-defined nucleus?",
+            "answer": "Eukaryotic cells have a well-defined nucleus.",
+            "key_points": [
+                "eukaryotic cells"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What are chromosomes?",
+            "answer": "Chromosomes are structures that carry genetic information.",
+            "key_points": [
+                "chromosomes",
+                "genetic information"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is DNA?",
+            "answer": "DNA is the molecule that carries genetic information.",
+            "key_points": [
+                "DNA",
+                "genetic material"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a gene?",
+            "answer": "A gene is a functional unit of DNA responsible for traits.",
+            "key_points": [
+                "gene",
+                "DNA segment"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is cell division?",
+            "answer": "Cell division is the process by which a cell forms new cells.",
+            "key_points": [
+                "cell division"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is mitosis?",
+            "answer": "Mitosis is cell division that produces two identical daughter cells.",
+            "key_points": [
+                "mitosis",
+                "identical cells"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is meiosis?",
+            "answer": "Meiosis is cell division that produces four daughter cells with half chromosomes.",
+            "key_points": [
+                "meiosis",
+                "gametes"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which organelle stores substances in plant cells?",
+            "answer": "Vacuoles store substances in plant cells.",
+            "key_points": [
+                "vacuole",
+                "storage"
+            ],
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Give one example of a unicellular organism.",
+            "answer": "Amoeba is an example of a unicellular organism.",
+            "key_points": [
+                "amoeba",
+                "unicellular organism"
+            ],
+            "source_section": "Section 5.1"
+        }
+    ]
+}

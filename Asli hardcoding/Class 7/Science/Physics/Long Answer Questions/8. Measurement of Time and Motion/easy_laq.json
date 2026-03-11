@@ -1,0 +1,427 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Measurement of Time and Motion",
+    "generated_at": "2026-03-05T18:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define speed, velocity, and acceleration with formulas and examples.",
+            "answer": "Speed = distance/time; Velocity = displacement/time; Acceleration = change in velocity/time. Example: A car travels 100 km in 2 h → speed = 50 km/h; if displacement is 90 km → velocity = 45 km/h; if velocity changes from 0 to 20 m/s in 5 s → acceleration = 4 m/s².",
+            "answer_outline": [
+                "Definitions",
+                "Formulas",
+                "Examples"
+            ],
+            "key_concepts": [
+                "speed",
+                "velocity",
+                "acceleration"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "A train moves 120 km north in 2 hours and then 80 km east in 2 hours. Calculate average speed and velocity.",
+            "answer": "Total distance = 120+80=200 km; total time = 4 h; average speed = 200/4=50 km/h. Displacement = √(120²+80²)=√(14400+6400)=√20800 ≈144.22 km; average velocity = 144.22/4 ≈ 36.06 km/h.",
+            "answer_outline": [
+                "Total distance and time",
+                "Average speed calculation",
+                "Displacement and average velocity"
+            ],
+            "key_concepts": [
+                "average speed",
+                "average velocity",
+                "displacement"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Derive the equation of motion v = u + at and solve a numerical example.",
+            "answer": "v = final velocity, u = initial velocity, a = acceleration, t = time. Example: u=0, a=2 m/s², t=5 s → v=0+2×5=10 m/s.",
+            "answer_outline": [
+                "Derivation of formula",
+                "Example calculation"
+            ],
+            "key_concepts": [
+                "equations of motion",
+                "acceleration",
+                "velocity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A car accelerates from 10 m/s to 30 m/s in 5 s. Find acceleration and distance travelled using equations of motion.",
+            "answer": "Acceleration: a = (v-u)/t = (30-10)/5 = 4 m/s². Distance: s = ut + ½at² = 10×5 + 0.5×4×25 = 50+50=100 m.",
+            "answer_outline": [
+                "Acceleration calculation",
+                "Distance calculation using s = ut + ½at²"
+            ],
+            "key_concepts": [
+                "acceleration",
+                "equations of motion",
+                "distance"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain uniform and non-uniform motion with examples and graphs.",
+            "answer": "Uniform motion: constant speed (e.g., car moving at 60 km/h). Graph: straight line distance-time graph. Non-uniform motion: varying speed (e.g., accelerating car). Graph: curved distance-time graph.",
+            "answer_outline": [
+                "Definition of uniform motion",
+                "Definition of non-uniform motion",
+                "Graphical representation",
+                "Examples"
+            ],
+            "key_concepts": [
+                "uniform motion",
+                "non-uniform motion",
+                "distance-time graph"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 6,
+            "question": "A ball is dropped from a height of 20 m. Calculate the time to reach the ground assuming g=10 m/s².",
+            "answer": "Using s = ½gt², 20 = 0.5×10×t² → t²=4 → t=2 s.",
+            "answer_outline": [
+                "Equation for free fall",
+                "Substitute values",
+                "Solve for time"
+            ],
+            "key_concepts": [
+                "free fall",
+                "equations of motion",
+                "time calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Calculate the distance covered by a car accelerating uniformly from rest at 3 m/s² for 10 s.",
+            "answer": "s = ut + ½at² = 0 + 0.5×3×100 = 150 m.",
+            "answer_outline": [
+                "Use s = ut + ½at²",
+                "Substitute values",
+                "Find distance"
+            ],
+            "key_concepts": [
+                "uniform acceleration",
+                "distance",
+                "equations of motion"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "A body moves with uniform velocity of 5 m/s. Plot distance-time graph and calculate distance in 12 s.",
+            "answer": "Distance = speed × time = 5 ×12=60 m. Graph: straight line with slope = 5.",
+            "answer_outline": [
+                "Distance calculation",
+                "Graph plotting"
+            ],
+            "key_concepts": [
+                "uniform motion",
+                "distance-time graph",
+                "velocity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Derive s = ut + ½at² from v = u + at and v² = u² + 2as.",
+            "answer": "From v = u + at → t = (v-u)/a. Substitute in v² = u² + 2as → s = ut + ½at².",
+            "answer_outline": [
+                "Start with basic equations",
+                "Algebraic manipulation",
+                "Derive s = ut + ½at²"
+            ],
+            "key_concepts": [
+                "equations of motion",
+                "derivation",
+                "algebra"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "A car moves 30 km east in 30 min and then 40 km north in 40 min. Calculate average speed and velocity.",
+            "answer": "Total distance = 30+40=70 km, total time = 70 min = 1.1667 h, average speed = 70/1.1667 ≈ 60 km/h. Displacement = √(30²+40²)=50 km, average velocity=50/1.1667 ≈ 42.86 km/h.",
+            "answer_outline": [
+                "Total distance and time",
+                "Displacement calculation",
+                "Average speed and velocity"
+            ],
+            "key_concepts": [
+                "average speed",
+                "average velocity",
+                "displacement"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the difference between scalar and vector quantities with examples from motion.",
+            "answer": "Scalar: only magnitude (e.g., speed, distance, time). Vector: magnitude + direction (e.g., velocity, displacement, acceleration). Example: Speed = 50 km/h, Velocity = 50 km/h east.",
+            "answer_outline": [
+                "Define scalar",
+                "Define vector",
+                "Examples from motion"
+            ],
+            "key_concepts": [
+                "scalar quantity",
+                "vector quantity",
+                "motion"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A train accelerates from 20 m/s to 30 m/s in 50 s. Calculate acceleration and distance travelled.",
+            "answer": "a = (v-u)/t = (30-20)/50=0.2 m/s²; s=ut+½at²=20×50+0.5×0.2×2500=1000+250=1250 m.",
+            "answer_outline": [
+                "Acceleration calculation",
+                "Distance calculation"
+            ],
+            "key_concepts": [
+                "acceleration",
+                "equations of motion",
+                "distance"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how to measure time intervals using a stopwatch and a pendulum with example calculations.",
+            "answer": "Stopwatch: direct reading. Pendulum: T=2π√(l/g), e.g., l=1 m → T=2π√(1/9.8) ≈ 2.01 s per swing. Total time = n×T.",
+            "answer_outline": [
+                "Stopwatch measurement",
+                "Pendulum measurement",
+                "Example calculation"
+            ],
+            "key_concepts": [
+                "time measurement",
+                "pendulum",
+                "stopwatch"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 14,
+            "question": "A particle moves along x-axis with displacement x=5t²+2t. Find velocity and acceleration at t=3 s.",
+            "answer": "v=dx/dt=10t+2 → v=10×3+2=32 m/s; a=dv/dt=10 m/s².",
+            "answer_outline": [
+                "Velocity from derivative of displacement",
+                "Acceleration from derivative of velocity",
+                "Substitute time"
+            ],
+            "key_concepts": [
+                "motion along a line",
+                "velocity",
+                "acceleration"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain graphical representation of motion: distance-time and velocity-time graphs with examples.",
+            "answer": "Distance-time: slope = speed, straight line = uniform motion, curved = acceleration. Velocity-time: slope = acceleration, area = displacement.",
+            "answer_outline": [
+                "Distance-time graph",
+                "Velocity-time graph",
+                "Examples"
+            ],
+            "key_concepts": [
+                "graphs of motion",
+                "slope",
+                "displacement"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "A body starts from rest and accelerates at 2 m/s² for 8 s. Calculate final velocity and distance covered.",
+            "answer": "v = u+at =0+2×8=16 m/s; s=ut+½at²=0+0.5×2×64=64 m.",
+            "answer_outline": [
+                "Final velocity calculation",
+                "Distance calculation"
+            ],
+            "key_concepts": [
+                "equations of motion",
+                "acceleration",
+                "distance"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the difference between instantaneous speed and average speed with examples.",
+            "answer": "Instantaneous: speed at a particular instant (speedometer reading). Average: total distance/total time. Example: 100 km in 2 h → average speed = 50 km/h.",
+            "answer_outline": [
+                "Define instantaneous speed",
+                "Define average speed",
+                "Example"
+            ],
+            "key_concepts": [
+                "speed",
+                "motion",
+                "average vs instantaneous"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 18,
+            "question": "A cyclist covers 5 km north in 10 min and 3 km south in 5 min. Find average velocity and speed.",
+            "answer": "Total distance = 5+3=8 km; total time=15 min=0.25 h; average speed=8/0.25=32 km/h. Displacement=5-3=2 km north; average velocity=2/0.25=8 km/h north.",
+            "answer_outline": [
+                "Total distance and time",
+                "Displacement calculation",
+                "Average speed and velocity"
+            ],
+            "key_concepts": [
+                "displacement",
+                "average speed",
+                "average velocity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Calculate the distance travelled by a particle with velocity v = 4t m/s in 5 s.",
+            "answer": "s = ∫v dt = ∫0^5 4t dt = 2t²|0^5=2×25=50 m.",
+            "answer_outline": [
+                "Integration of velocity",
+                "Substitute limits",
+                "Calculate distance"
+            ],
+            "key_concepts": [
+                "motion along a line",
+                "integration",
+                "distance"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "A particle moves with acceleration a=3 m/s². If initial velocity u=2 m/s, calculate velocity after 6 s and displacement.",
+            "answer": "v = u+at =2+3×6=20 m/s; s = ut+½at²=2×6+0.5×3×36=12+54=66 m.",
+            "answer_outline": [
+                "Velocity calculation",
+                "Displacement calculation"
+            ],
+            "key_concepts": [
+                "velocity",
+                "acceleration",
+                "equations of motion"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain with examples how to measure time using atomic clock and digital stopwatch.",
+            "answer": "Atomic clock: vibration of atoms → precise time. Digital stopwatch: electronic counting → start/stop intervals. Example: stopwatch measures 12.5 s for reaction time.",
+            "answer_outline": [
+                "Atomic clock working",
+                "Stopwatch working",
+                "Examples"
+            ],
+            "key_concepts": [
+                "time measurement",
+                "atomic clock",
+                "stopwatch"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 22,
+            "question": "A ball is thrown vertically upward with 20 m/s. Calculate maximum height and time to reach maximum height. Take g=10 m/s².",
+            "answer": "v=0 at max height, v=u-at → 0=20-10 t → t=2 s. Max height: s=ut-½gt²=20×2-0.5×10×4=40-20=20 m.",
+            "answer_outline": [
+                "Time calculation",
+                "Maximum height calculation"
+            ],
+            "key_concepts": [
+                "free fall",
+                "vertical motion",
+                "equations of motion"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain motion with uniform acceleration using v²-u²=2as and solve a numerical example.",
+            "answer": "v²-u²=2as. Example: u=5 m/s, a=2 m/s², s=20 m → v²=25+2×2×20=25+80=105 → v≈10.25 m/s.",
+            "answer_outline": [
+                "Equation explanation",
+                "Substitute values",
+                "Solve for final velocity"
+            ],
+            "key_concepts": [
+                "uniform acceleration",
+                "equations of motion",
+                "numerical example"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "A particle starts from rest, accelerates at 3 m/s² for 5 s, then moves at constant speed. Calculate total distance travelled in 10 s.",
+            "answer": "During acceleration: s1=0.5×3×25=37.5 m; velocity at end of acceleration v=3×5=15 m/s; constant speed for 5 s: s2=15×5=75 m. Total distance s=s1+s2=37.5+75=112.5 m.",
+            "answer_outline": [
+                "Distance during acceleration",
+                "Distance during constant speed",
+                "Total distance"
+            ],
+            "key_concepts": [
+                "motion with acceleration",
+                "constant speed",
+                "distance calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain motion of freely falling body using equations of motion and calculate time and velocity for a body falling from 45 m. Take g=10 m/s².",
+            "answer": "s=½gt² → 45=5t² → t=3 s; v=u+gt=0+10×3=30 m/s.",
+            "answer_outline": [
+                "Equations of free fall",
+                "Time calculation",
+                "Velocity calculation"
+            ],
+            "key_concepts": [
+                "free fall",
+                "equations of motion",
+                "time and velocity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        }
+    ]
+}

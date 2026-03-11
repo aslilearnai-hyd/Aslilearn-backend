@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: AIR",
+    "generated_at": "2026-03-07T18:22:45",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the huge blanket of air that surrounds the earth called?",
+            "answer": "Atmosphere",
+            "key_concepts": ["definition of atmosphere"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which gas creates a greenhouse effect in the atmosphere?",
+            "answer": "Carbon dioxide",
+            "key_concepts": ["greenhouse effect"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which is the most plentiful gas in the air?",
+            "answer": "Nitrogen",
+            "key_concepts": ["composition of air"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What percentage of the air is made up of Oxygen?",
+            "answer": "21%",
+            "key_concepts": ["composition of air"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which gas do plants use to make their food?",
+            "answer": "Carbon dioxide",
+            "key_concepts": ["uses of gases"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Name the gas that protects us from the harmful rays of the sun.",
+            "answer": "Ozone",
+            "key_concepts": ["ozone layer"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How many layers is the atmosphere divided into?",
+            "answer": "Five layers",
+            "key_concepts": ["layers of atmosphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which is the most important layer of the atmosphere?",
+            "answer": "Troposphere",
+            "key_concepts": ["troposphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "In which layer do almost all weather phenomena like rainfall and fog occur?",
+            "answer": "Troposphere",
+            "key_concepts": ["weather phenomena"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which layer is ideal for flying aeroplanes?",
+            "answer": "Stratosphere",
+            "key_concepts": ["stratosphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "In which layer do meteorites burn up on entering from space?",
+            "answer": "Mesosphere",
+            "key_concepts": ["mesosphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which layer contains the Ionosphere?",
+            "answer": "Thermosphere",
+            "key_concepts": ["thermosphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the uppermost layer of the atmosphere called?",
+            "answer": "Exosphere",
+            "key_concepts": ["exosphere"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the hour-to-hour, day-to-day condition of the atmosphere called?",
+            "answer": "Weather",
+            "key_concepts": ["definition of weather"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the average weather condition of a place for a long period called?",
+            "answer": "Climate",
+            "key_concepts": ["definition of climate"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the incoming solar energy intercepted by the earth called?",
+            "answer": "Insolation",
+            "key_concepts": ["insolation"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which instrument is used to measure temperature?",
+            "answer": "Thermometer",
+            "key_concepts": ["instruments"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What instrument is used to measure air pressure?",
+            "answer": "Barometer",
+            "key_concepts": ["instruments"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the movement of air from high-pressure areas to low-pressure areas called?",
+            "answer": "Wind",
+            "key_concepts": ["definition of wind"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Name the wind that blows only during a particular period of the day or year in a small area.",
+            "answer": "Local wind (e.g., Loo)",
+            "key_concepts": ["local winds"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the moisture in the air at any time called?",
+            "answer": "Humidity",
+            "key_concepts": ["humidity"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What are the three types of rainfall?",
+            "answer": "Convectional, Orographic, and Cyclonic rainfall.",
+            "key_concepts": ["types of rainfall"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Where is the air pressure highest?",
+            "answer": "At sea level",
+            "key_concepts": ["air pressure"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which direction does wind blow?",
+            "answer": "From high pressure to low pressure.",
+            "key_concepts": ["wind movement"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "In which unit is temperature measured?",
+            "answer": "Degree Celsius",
+            "key_concepts": ["measurement"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        }
+    ]
+}

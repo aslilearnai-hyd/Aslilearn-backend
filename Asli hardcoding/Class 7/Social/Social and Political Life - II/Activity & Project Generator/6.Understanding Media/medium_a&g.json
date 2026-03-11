@@ -1,0 +1,179 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - History & Civics)",
+    "chapter": "Social and Political Life – II: Understanding Media",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_history_ch6.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparative Newspaper Study",
+            "objective": "Analyze how different newspapers report the same event",
+            "materials": [
+                "Two or more newspapers",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Select one major news story covered in multiple newspapers",
+                "Compare headlines, language, and focus of each article",
+                "Write a short analysis identifying differences and possible reasons"
+            ],
+            "learning_outcome": "Students understand media perspective and bias",
+            "evaluation": "Depth of analysis and accuracy (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Investigate Fake News",
+            "objective": "Develop skills to identify misinformation",
+            "materials": [
+                "Internet access",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Find one news story or social media post that seems suspicious",
+                "Verify facts using credible sources",
+                "Write a brief report on your verification process and conclusion"
+            ],
+            "learning_outcome": "Students learn critical thinking and fact-checking skills",
+            "evaluation": "Correctness and explanation of verification steps (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Media Representation Project",
+            "objective": "Understand how media represents social issues",
+            "materials": [
+                "Newspaper, magazine, or online articles",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Select one social issue (e.g., pollution, education, gender equality)",
+                "Collect three different articles covering the issue",
+                "Analyze how each article presents the problem and solution",
+                "Summarize your findings in a short report"
+            ],
+            "learning_outcome": "Students critically analyze media framing of social issues",
+            "evaluation": "Quality of analysis and report clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Create a Digital Media Presentation",
+            "objective": "Learn to present media content creatively",
+            "materials": [
+                "Computer or tablet",
+                "Presentation software (PowerPoint/Google Slides)",
+                "Internet access"
+            ],
+            "steps": [
+                "Choose a news topic or event",
+                "Collect relevant media content (images, videos, news excerpts)",
+                "Prepare a 5–7 slide presentation highlighting key facts and different perspectives"
+            ],
+            "learning_outcome": "Students enhance digital literacy and presentation skills",
+            "evaluation": "Content quality, clarity, and creativity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Role-play Debate: Media Ethics",
+            "objective": "Explore ethical issues in journalism",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Props for role-play (optional)"
+            ],
+            "steps": [
+                "Divide the class into journalists, editors, and audience",
+                "Present a scenario involving ethical dilemmas (e.g., sensationalism, privacy issues)",
+                "Debate possible solutions and responsibilities"
+            ],
+            "learning_outcome": "Students understand media ethics and decision-making",
+            "evaluation": "Participation, reasoning, and understanding of ethics (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Media Influence Study",
+            "objective": "Analyze how media shapes opinions",
+            "materials": [
+                "Newspaper, magazine, or social media posts",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Select one advertisement or news story aimed at influencing people",
+                "Identify techniques used to persuade or influence the audience",
+                "Write a short reflection on how it might affect public opinion"
+            ],
+            "learning_outcome": "Students develop critical awareness of media influence",
+            "evaluation": "Clarity of analysis and reflection (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Interview with a Media Professional",
+            "objective": "Understand media work and challenges",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Recording device (optional)"
+            ],
+            "steps": [
+                "Prepare 5–7 questions about reporting, editing, and ethics",
+                "Interview a local journalist, radio host, or social media influencer",
+                "Write a summary highlighting insights gained"
+            ],
+            "learning_outcome": "Students learn about media work firsthand",
+            "evaluation": "Quality of questions, interview summary, and insights (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Fact vs Opinion Chart",
+            "objective": "Distinguish between factual reporting and opinions in media",
+            "materials": [
+                "Newspaper or online article",
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Select an article with both facts and opinions",
+                "Create a chart dividing statements into ‘Fact’ and ‘Opinion’",
+                "Discuss why distinguishing is important"
+            ],
+            "learning_outcome": "Students improve media literacy and critical reading skills",
+            "evaluation": "Correct categorization and explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Media Vocabulary Research",
+            "objective": "Expand understanding of media terminology",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Reference books or internet"
+            ],
+            "steps": [
+                "Identify 15 new media-related terms (e.g., censorship, press release, editorial, propaganda)",
+                "Write definitions and examples for each",
+                "Share with classmates or create a glossary"
+            ],
+            "learning_outcome": "Students enhance media-related vocabulary and understanding",
+            "evaluation": "Correctness, clarity, and effort (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Create a Media Awareness Campaign",
+            "objective": "Promote responsible media consumption",
+            "materials": [
+                "Chart paper, poster sheets, or digital tools",
+                "Markers, colors, or design software"
+            ],
+            "steps": [
+                "Design a campaign to educate peers about verifying news and avoiding misinformation",
+                "Include slogans, visuals, and examples",
+                "Present the campaign to the class"
+            ],
+            "learning_outcome": "Students learn to communicate media awareness effectively",
+            "evaluation": "Creativity, clarity, and effectiveness of campaign (10 marks)"
+        }
+    ]
+}

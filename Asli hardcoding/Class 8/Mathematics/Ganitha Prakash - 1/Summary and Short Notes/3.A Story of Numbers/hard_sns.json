@@ -1,0 +1,34 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 3: A Story of Numbers",
+  "difficulty": "Hard",
+  "source_pdf": "ch-3_A_STORY_OF_NUMBERS.pdf",
+  "short_notes": {
+    "key_points": [
+      "The number system includes natural numbers, whole numbers, integers and rational numbers",
+      "Integers extend the number system to include negative numbers",
+      "Rational numbers can represent fractions, terminating decimals and repeating decimals",
+      "Numbers can be compared and represented using a number line",
+      "Operations such as addition and subtraction can be performed on integers and rational numbers"
+    ],
+    "examples": [
+      "Integer example: -8",
+      "Rational number example: -5/3",
+      "Terminating decimal example: 0.25",
+      "Repeating decimal example: 0.333..."
+    ],
+    "formulas": [
+      "Rational number form → p/q where p and q are integers and q ≠ 0",
+      "Successor → n + 1",
+      "Predecessor → n - 1",
+      "Absolute value → |a| gives the distance from zero"
+    ],
+    "exam_tips": [
+      "Use the number line to compare positive and negative integers",
+      "Remember that every integer can be written as a rational number",
+      "Check the denominator when writing rational numbers",
+      "Understand the difference between terminating and repeating decimals"
+    ]
+  }
+}

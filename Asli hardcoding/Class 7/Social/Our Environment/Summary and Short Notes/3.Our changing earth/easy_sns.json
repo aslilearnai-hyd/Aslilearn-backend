@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Our Changing Earth",
+    "difficulty": "Easy",
+    "source_pdf": "jegy103.pdf",
+    "short_notes": {
+        "key_points": [
+            "The lithosphere is broken into a number of plates known as Lithospheric plates.",
+            "These plates move very slowly—just a few millimeters each year—because of the movement of the molten magma inside the earth.",
+            "The forces that act in the interior of the earth are called Endogenic forces.",
+            "The forces that work on the surface of the earth are called Exogenic forces.",
+            "Sudden movements like earthquakes and volcanoes cause mass destruction over the surface of the earth."
+        ],
+        "examples": [
+            "Endogenic Forces: Earthquakes, Volcanoes, and Landslides.",
+            "Exogenic Forces: River, Wind, Sea waves, and Glaciers (Erosional and Depositional).",
+            "Volcano: An opening (vent) in the earth's crust through which molten material erupts suddenly.",
+            "Earthquake: Vibration of the earth's surface when lithospheric plates move."
+        ],
+        "formulas": [
+            "Earth Movements = Endogenic Forces (Internal) + Exogenic Forces (External)",
+            "Lithospheric Plate Movement = Effect of Molten Magma (Circular motion)"
+        ],
+        "exam_tips": [
+            "Remember that the point where the vibration starts inside the crust is called the Focus.",
+            "The place on the surface above the focus is called the Epicenter.",
+            "Understand that 'Endo' means inside and 'Exo' means outside.",
+            "Note that the Earth's plates move because the molten magma inside moves in a circular manner."
+        ]
+    }
+}

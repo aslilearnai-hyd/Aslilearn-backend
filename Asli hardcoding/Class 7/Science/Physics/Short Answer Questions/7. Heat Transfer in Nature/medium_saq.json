@@ -1,0 +1,405 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T19:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between conduction and convection with one example each.",
+            "answer": "Conduction is heat transfer through direct contact without movement of matter, such as a metal spoon heating in hot tea. Convection is heat transfer through movement of fluid particles, such as boiling water where hot water rises and cool water sinks.",
+            "answer_outline": [
+                "Definition of conduction",
+                "Example of conduction",
+                "Definition of convection",
+                "Example of convection"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "heat transfer methods"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are metals considered good conductors of heat?",
+            "answer": "Metals allow heat to pass through them easily because their particles transfer energy quickly. This property makes metals effective for cooking utensils and heat transfer applications.",
+            "answer_outline": [
+                "Definition of good conductors",
+                "Particle energy transfer",
+                "Practical example"
+            ],
+            "key_concepts": [
+                "conductors",
+                "metals",
+                "conduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe how convection currents are formed in liquids.",
+            "answer": "When a liquid is heated, the particles at the bottom gain energy and become less dense, causing them to rise. Cooler, denser liquid moves down to replace them, creating a circular movement called a convection current.",
+            "answer_outline": [
+                "Heating of liquid",
+                "Warm liquid rises",
+                "Cool liquid sinks",
+                "Formation of convection current"
+            ],
+            "key_concepts": [
+                "convection",
+                "density",
+                "liquids"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why radiation does not require a medium to transfer heat.",
+            "answer": "Radiation transfers heat through electromagnetic waves, which can travel through empty space. Therefore, radiation does not require particles or a medium for heat transfer.",
+            "answer_outline": [
+                "Radiation through waves",
+                "No medium required",
+                "Example from Sun"
+            ],
+            "key_concepts": [
+                "radiation",
+                "electromagnetic waves"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Why do we use wooden or plastic handles on cooking utensils?",
+            "answer": "Wood and plastic are poor conductors of heat. They reduce heat transfer from the hot utensil to our hands, preventing burns.",
+            "answer_outline": [
+                "Insulating property",
+                "Prevents heat transfer",
+                "Safety reason"
+            ],
+            "key_concepts": [
+                "insulators",
+                "conduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how sea breeze is formed during the daytime.",
+            "answer": "During the day, land heats faster than water. Warm air above the land rises, creating a low-pressure area. Cooler air from the sea moves toward the land to replace it, forming a sea breeze.",
+            "answer_outline": [
+                "Land heats faster",
+                "Warm air rises",
+                "Cool air moves from sea"
+            ],
+            "key_concepts": [
+                "sea breeze",
+                "convection",
+                "air movement"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the formation of land breeze at night.",
+            "answer": "At night, land cools faster than water. The air above the sea becomes warmer and rises, and cooler air from the land moves toward the sea, forming a land breeze.",
+            "answer_outline": [
+                "Land cools faster",
+                "Warm air rises over sea",
+                "Cool air flows from land"
+            ],
+            "key_concepts": [
+                "land breeze",
+                "convection",
+                "temperature difference"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does a black surface absorb more heat than a white surface?",
+            "answer": "Black surfaces absorb most of the radiation that falls on them, while white surfaces reflect a large portion of the radiation.",
+            "answer_outline": [
+                "Absorption by black surfaces",
+                "Reflection by white surfaces"
+            ],
+            "key_concepts": [
+                "radiation",
+                "absorption",
+                "reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is the Earth warmer during the day than at night?",
+            "answer": "During the day, the Earth receives heat from the Sun through radiation. At night, the Earth loses heat by radiating it back into space, causing temperatures to drop.",
+            "answer_outline": [
+                "Solar radiation during day",
+                "Heat loss at night"
+            ],
+            "key_concepts": [
+                "radiation",
+                "day-night temperature"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why water bodies help moderate the climate of nearby areas.",
+            "answer": "Water has a high specific heat capacity. It absorbs heat slowly during the day and releases it slowly at night, reducing temperature extremes.",
+            "answer_outline": [
+                "High specific heat",
+                "Slow heating",
+                "Slow cooling"
+            ],
+            "key_concepts": [
+                "specific heat",
+                "climate moderation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe a simple experiment to show heat conduction in metals.",
+            "answer": "Fix small pieces of wax at intervals on a metal rod and heat one end. The wax melts starting from the heated end, showing heat conduction through the rod.",
+            "answer_outline": [
+                "Metal rod setup",
+                "Heating one end",
+                "Observation of melting wax"
+            ],
+            "key_concepts": [
+                "conduction",
+                "experiment"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why thermos flasks reduce heat transfer.",
+            "answer": "Thermos flasks have double walls with a vacuum that reduces conduction and convection. Reflective surfaces inside reduce heat transfer by radiation.",
+            "answer_outline": [
+                "Vacuum reduces conduction",
+                "No convection in vacuum",
+                "Reflective surfaces reduce radiation"
+            ],
+            "key_concepts": [
+                "insulation",
+                "thermos flask"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Why are deserts extremely hot during the day?",
+            "answer": "Sand absorbs solar radiation quickly because it has low specific heat capacity, causing temperatures to rise rapidly during the day.",
+            "answer_outline": [
+                "Solar radiation",
+                "Low specific heat of sand"
+            ],
+            "key_concepts": [
+                "radiation",
+                "desert climate"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do deserts become very cold at night?",
+            "answer": "Sand loses heat quickly through radiation at night due to its low heat capacity and lack of moisture.",
+            "answer_outline": [
+                "Rapid heat loss",
+                "Radiation at night"
+            ],
+            "key_concepts": [
+                "radiation",
+                "desert cooling"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how convection currents in air produce winds.",
+            "answer": "When warm air rises and cooler air moves in to replace it, air begins to move horizontally. This movement of air is called wind.",
+            "answer_outline": [
+                "Warm air rises",
+                "Cool air moves in",
+                "Air movement forms wind"
+            ],
+            "key_concepts": [
+                "convection",
+                "wind formation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are roofs in hot regions often painted white?",
+            "answer": "White roofs reflect most of the solar radiation and reduce heat absorption, keeping houses cooler.",
+            "answer_outline": [
+                "Reflection of sunlight",
+                "Reduced heat gain"
+            ],
+            "key_concepts": [
+                "radiation",
+                "reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why woolen clothes keep us warm in winter.",
+            "answer": "Wool traps air between its fibers. Air is a poor conductor of heat, so it prevents heat loss from the body.",
+            "answer_outline": [
+                "Air trapped in fibers",
+                "Air acts as insulator"
+            ],
+            "key_concepts": [
+                "insulation",
+                "heat retention"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do cooking pots often have metal bases and plastic handles?",
+            "answer": "Metal bases conduct heat efficiently for cooking, while plastic handles act as insulators to protect hands from heat.",
+            "answer_outline": [
+                "Metal for conduction",
+                "Plastic for insulation"
+            ],
+            "key_concepts": [
+                "conductors",
+                "insulators"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how heat transfer occurs when water is boiled in a kettle.",
+            "answer": "Heat is transferred by conduction from the flame to the kettle, and convection currents circulate the hot water inside.",
+            "answer_outline": [
+                "Conduction in kettle",
+                "Convection in water"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are solar cookers painted black inside?",
+            "answer": "Black surfaces absorb more solar radiation, increasing the temperature inside the cooker and helping cook food faster.",
+            "answer_outline": [
+                "Black absorbs radiation",
+                "Increases heat inside cooker"
+            ],
+            "key_concepts": [
+                "radiation",
+                "solar cooking"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why mountains are cooler than plains.",
+            "answer": "At higher altitudes the air is thinner and holds less heat, causing temperatures to be lower compared to plains.",
+            "answer_outline": [
+                "Higher altitude",
+                "Lower heat retention"
+            ],
+            "key_concepts": [
+                "temperature variation",
+                "atmosphere"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "How do convection currents help in cloud formation?",
+            "answer": "Warm moist air rises due to convection, cools at higher altitudes, and condenses into water droplets to form clouds.",
+            "answer_outline": [
+                "Warm air rises",
+                "Cooling at higher altitude",
+                "Condensation forms clouds"
+            ],
+            "key_concepts": [
+                "convection",
+                "cloud formation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why insulated bottles keep drinks hot for a long time.",
+            "answer": "Insulated bottles reduce heat transfer through conduction, convection, and radiation, helping maintain the temperature of the drink.",
+            "answer_outline": [
+                "Reduced conduction",
+                "Reduced convection",
+                "Reduced radiation"
+            ],
+            "key_concepts": [
+                "insulation",
+                "thermos bottle"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is the equator warmer than the poles?",
+            "answer": "The equator receives direct sunlight, which delivers more solar energy compared to the poles where sunlight arrives at a slanted angle.",
+            "answer_outline": [
+                "Direct sunlight at equator",
+                "Slanted sunlight at poles"
+            ],
+            "key_concepts": [
+                "solar radiation",
+                "earth temperature"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how heat transfer affects weather patterns.",
+            "answer": "Uneven heating of the Earth's surface causes convection currents in the atmosphere, leading to wind, cloud formation, and weather changes.",
+            "answer_outline": [
+                "Uneven heating",
+                "Convection currents",
+                "Weather changes"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "weather"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        }
+    ]
+}

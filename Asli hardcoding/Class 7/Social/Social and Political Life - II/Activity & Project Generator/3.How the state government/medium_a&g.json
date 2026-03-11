@@ -1,0 +1,179 @@
+{
+    "class": "Class 7",
+    "subject": "Civics (Social and Political Life - II)",
+    "chapter": "How the State Government Works",
+    "difficulty": "Medium",
+    "source_pdf": "social_and_political_life_2_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Election Result Analysis",
+            "objective": "Understand how a majority is calculated to form a government",
+            "materials": [
+                "Hypothetical data of 5 different political parties",
+                "Graph paper"
+            ],
+            "steps": [
+                "Take a state with 68 constituencies (like Himachal Pradesh in the text)",
+                "Distribute the 68 seats among Party A, B, C, and Independents",
+                "Calculate the 'Majority Mark' (Half of 68 + 1)",
+                "Determine which party becomes the Ruling Party and which becomes the Opposition"
+            ],
+            "learning_outcome": "Analyzes the numerical requirement for forming a stable government",
+            "evaluation": "Accuracy in identifying majority and opposition roles based on numbers (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "MLA vs. Minister Comparison",
+            "objective": "Distinguish between legislative and executive roles",
+            "materials": [
+                "Venn Diagram template",
+                "Notebook"
+            ],
+            "steps": [
+                "List the duties of an MLA (representing a constituency, debating in the house)",
+                "List the duties of a Minister (heading a department, implementing laws)",
+                "Fill a Venn Diagram showing where these roles overlap",
+                "Explain the process of how an MLA becomes a Minister"
+            ],
+            "learning_outcome": "Clarifies the difference between the legislature and the executive branch",
+            "evaluation": "Depth of comparison in the Venn Diagram (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Legislative Assembly Debate Simulation",
+            "objective": "Understand the process of questioning and accountability",
+            "materials": [
+                "Role cards (Speaker, Opposition MLA, Health Minister)",
+                "Textbook transcript of the assembly debate"
+            ],
+            "steps": [
+                "Assign roles based on the Patalpuram incident discussed in the chapter",
+                "The Opposition MLA must ask a sharp question about a local problem (e.g., water shortage)",
+                "The Minister must respond with data on 'Government Action' (e.g., water tankers sent)",
+                "The Speaker must moderate the time for each speaker"
+            ],
+            "learning_outcome": "Demonstrates how the government is held accountable by elected representatives",
+            "evaluation": "Quality of the arguments and adherence to assembly decorum (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Governor’s Executive Role",
+            "objective": "Examine the appointment and status of the Governor",
+            "materials": [
+                "Internet or library resources",
+                "Chart paper"
+            ],
+            "steps": [
+                "Research why the Governor is appointed by the Central Government and not elected",
+                "List the major functions: Appointing the CM, signing bills, ensuring constitutional rule",
+                "Compare the Governor's role in the State to the President's role in the Union",
+                "Find the name and party background of the current Governor of your state"
+            ],
+            "learning_outcome": "Understands the constitutional hierarchy of the state government",
+            "evaluation": "Clarity in explaining the Governor's relationship with the CM and Center (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Press Conference Analysis",
+            "objective": "Evaluate how the government communicates with the public",
+            "materials": [
+                "A newspaper report on a recent government announcement",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify who held the press conference and what the main announcement was",
+                "List the questions asked by the journalists as mentioned in the report",
+                "Analyze why a press conference is held after an assembly session",
+                "Discuss if the government's response was satisfactory based on the news report"
+            ],
+            "learning_outcome": "Recognizes the role of the media as a bridge between government and citizens",
+            "evaluation": "Critical thinking in analyzing the transparency of government communication (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Government Departments Flowchart",
+            "objective": "Trace the path of decision-making in various departments",
+            "materials": [
+                "Markers",
+                "Chart paper"
+            ],
+            "steps": [
+                "Pick three departments (e.g., Public Works, Agriculture, Education)",
+                "Draw a hierarchy: CM $\rightarrow$ Cabinet Minister $\rightarrow$ Secretary $\rightarrow$ Local Officials",
+                "Write one specific responsibility for each department based on the chapter",
+                "Explain how these departments carry out the promises made in the Assembly"
+            ],
+            "learning_outcome": "Visualizes the administrative structure of the state executive",
+            "evaluation": "Correctness of the hierarchy and departmental functions (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Coalition Government Simulation",
+            "objective": "Understand what happens when no party gets a majority",
+            "materials": [
+                "Scenarios written on paper slips"
+            ],
+            "steps": [
+                "Create a scenario where three parties have 30%, 25%, and 15% of seats (Total 100)",
+                "Let students negotiate to form a 'Coalition Government'",
+                "List two problems a coalition government might face compared to a single-party majority",
+                "Define the term 'Coalition' in the context of state politics"
+            ],
+            "learning_outcome": "Explores the complexities of power-sharing and political alliances",
+            "evaluation": "Successful negotiation and reasoning for the alliance (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Constituency Problem Survey",
+            "objective": "Relate textbook concepts to real-life local governance",
+            "materials": [
+                "Survey sheet",
+                "Interview with an elder/parent"
+            ],
+            "steps": [
+                "Identify the name of your local MLA and their political party",
+                "List three major problems in your constituency (e.g., roads, sanitation, electricity)",
+                "Find out if the MLA has raised these issues in the Legislative Assembly",
+                "Draft a 50-word letter to the MLA requesting action on one specific problem"
+            ],
+            "learning_outcome": "Connects the student to their representative and local public issues",
+            "evaluation": "Identification of local issues and formal structure of the letter (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Speaker's Authority",
+            "objective": "Understand the role of the neutral head of the house",
+            "materials": [
+                "Paper",
+                "Pen"
+            ],
+            "steps": [
+                "Research how the Speaker of the Legislative Assembly is elected",
+                "List three powers the Speaker has during a heated debate",
+                "Explain why it is important for the Speaker to be impartial (neutral)",
+                "Identify who the current Speaker is in your state assembly"
+            ],
+            "learning_outcome": "Recognizes the importance of rules and neutrality in legislative proceedings",
+            "evaluation": "Clarity of the Speaker's powers and selection process (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Wall Newspaper: The Patalpuram Inquiry",
+            "objective": "Synthesize multiple viewpoints on a public issue",
+            "materials": [
+                "Cardboard",
+                "Colors",
+                "Glue"
+            ],
+            "steps": [
+                "Create a section for 'The People’s Voices' (Protests and Rallies)",
+                "Create a section for 'The Opposition’s Questions' (Criticism)",
+                "Create a section for 'The Government’s Response' (Decisions and Actions)",
+                "Design a headline that summarizes the entire health crisis of Patalpuram"
+            ],
+            "learning_outcome": "Develops a holistic understanding of how democracy processes a crisis",
+            "evaluation": "Inclusion of all three perspectives and creative presentation (10 marks)"
+        }
+    ]
+}

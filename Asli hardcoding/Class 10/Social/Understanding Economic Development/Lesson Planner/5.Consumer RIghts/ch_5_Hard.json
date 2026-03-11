@@ -1,0 +1,166 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Economics)",
+  "chapter_name": "Consumer Rights",
+  "lesson_level": "Hard",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically analyse different forms of consumer exploitation",
+    "Evaluate the effectiveness of the Consumer Protection Act",
+    "Interpret real-life case studies related to consumer disputes",
+    "Examine the structure and functioning of consumer courts",
+    "Assess the role of consumer awareness in market regulation",
+    "Develop analytical and case-based reasoning skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Consumer Exploitation – Analytical Perspective",
+      "topics_covered": [
+        "Types of consumer exploitation",
+        "Information asymmetry",
+        "Market failures affecting consumers"
+      ],
+      "teaching_strategy": [
+        "Case study discussion (defective product case)",
+        "Cause–effect diagram",
+        "Group brainstorming"
+      ],
+      "student_activities": [
+        "Analyse real-life consumer complaint case",
+        "Identify root causes of exploitation"
+      ],
+      "assessment": ["Case-based short answers", "Group presentation rubric"]
+    },
+    {
+      "period": 2,
+      "title": "Consumer Protection Act – Critical Understanding",
+      "topics_covered": [
+        "Objectives of Consumer Protection Act",
+        "Rights of consumers",
+        "Responsibilities of consumers"
+      ],
+      "teaching_strategy": [
+        "Structured discussion",
+        "Comparison of rights and responsibilities"
+      ],
+      "student_activities": [
+        "Match cases to specific consumer rights",
+        "Write analytical paragraph on importance of awareness"
+      ],
+      "assessment": ["Short analytical writing", "Oral questioning"]
+    },
+    {
+      "period": 3,
+      "title": "Unfair Trade Practices – Case Evaluation",
+      "topics_covered": [
+        "Misleading advertisements",
+        "Adulteration and underweight goods",
+        "Digital consumer issues"
+      ],
+      "teaching_strategy": [
+        "Advertisement analysis activity",
+        "Case comparison method"
+      ],
+      "student_activities": [
+        "Evaluate advertisement claims",
+        "Suggest legal remedies"
+      ],
+      "assessment": ["Application-based questions", "Peer feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Consumer Courts – Structure and Functioning",
+      "topics_covered": [
+        "District, State and National Commissions",
+        "Filing procedures",
+        "Appeal process"
+      ],
+      "teaching_strategy": [
+        "Flowchart-based explanation",
+        "Mock case hearing demonstration"
+      ],
+      "student_activities": [
+        "Prepare court hierarchy diagram",
+        "Participate in mock consumer court"
+      ],
+      "assessment": ["Diagram evaluation", "Role-play assessment"]
+    },
+    {
+      "period": 5,
+      "title": "Quality Certification and Regulatory Framework",
+      "topics_covered": [
+        "ISI, Agmark, Hallmark, FSSAI",
+        "Importance of standardisation",
+        "Consumer safety mechanisms"
+      ],
+      "teaching_strategy": [
+        "Product label analysis",
+        "Comparison chart activity"
+      ],
+      "student_activities": [
+        "Analyse product packaging",
+        "Prepare comparison table of quality marks"
+      ],
+      "assessment": ["Short analytical responses", "Notebook evaluation"]
+    },
+    {
+      "period": 6,
+      "title": "Consumer Awareness and Digital Era Challenges",
+      "topics_covered": [
+        "Online shopping issues",
+        "E-commerce regulations",
+        "Role of consumer organisations"
+      ],
+      "teaching_strategy": [
+        "Case-based discussion (online fraud example)",
+        "Problem-solving activity"
+      ],
+      "student_activities": [
+        "Suggest precautions for online purchases",
+        "Draft structured complaint for online fraud"
+      ],
+      "assessment": [
+        "Application-based worksheet",
+        "Complaint draft evaluation"
+      ]
+    },
+    {
+      "period": 7,
+      "title": "Integrated Case-Based Assessment and Revision",
+      "topics_covered": [
+        "Application of consumer rights",
+        "Court structure and procedures",
+        "Critical evaluation of consumer protection"
+      ],
+      "teaching_strategy": [
+        "Integrated case study worksheet",
+        "Structured answer writing practice"
+      ],
+      "student_activities": [
+        "Solve 5 case-based analytical questions",
+        "Write short essay: 'Is consumer awareness enough to prevent exploitation?'"
+      ],
+      "assessment": [
+        "Short test (20 marks – case-based & analytical)",
+        "Detailed feedback session"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "NCERT Economics Textbook",
+    "Consumer court flowcharts",
+    "Sample product labels",
+    "Case study handouts"
+  ],
+  "evaluation_methods": [
+    "Case-based analytical questions",
+    "Structured answer writing",
+    "Mock court role-play evaluation",
+    "Data and label analysis",
+    "Short analytical tests"
+  ],
+  "teacher_tip": "Encourage students to apply concepts to real-life consumer situations, especially digital transactions. Focus on analytical reasoning and case interpretation rather than rote memorisation."
+}

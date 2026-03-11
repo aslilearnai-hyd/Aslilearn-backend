@@ -1,0 +1,120 @@
+{
+  "subject": "English",
+  "course_code": "JEF P101",
+  "chapter": "North, South, East, West",
+  "title": "Extended Reading Passages with Questions – North, South, East, West",
+  "total_passages": 10,
+  "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+  "passages": [
+    {
+      "passage_number": 1,
+      "paragraph": "There are four main directions in the world. These are North, South, East, and West. They help people find their way when they are traveling to new places. These directions are called cardinal points.",
+      "questions": [
+        "How many main directions are there?",
+        "Name the four main directions.",
+        "How do directions help people?",
+        "When do people specifically use directions?",
+        "What are these directions called?"
+      ]
+    },
+    {
+      "passage_number": 2,
+      "paragraph": "The sun is the best way to find directions during the day. Every morning, the sun rises in the East. If you stand facing the morning sun, you are looking toward the East.",
+      "questions": [
+        "What is the best way to find directions during the day?",
+        "In which direction does the sun rise?",
+        "When does the sun rise in the East?",
+        "What should you do to look toward the East?",
+        "Does the sun help find directions at night?"
+      ]
+    },
+    {
+      "passage_number": 3,
+      "paragraph": "In the evening, the sun sets in the West. This is the opposite of East. If your back is to the morning sun, you are facing the West. Knowing where the sun sets helps hikers return home.",
+      "questions": [
+        "Where does the sun set?",
+        "When does the sun set in the West?",
+        "Which direction is the opposite of East?",
+        "How can you face West using the morning sun?",
+        "Who does knowing the sunset direction help?"
+      ]
+    },
+    {
+      "passage_number": 4,
+      "paragraph": "If you stand with your right hand toward the East and your left hand toward the West, you will be facing North. The North is at the top of most maps. It is usually a cold direction in many parts of the world.",
+      "questions": [
+        "Where should your right hand be to face North?",
+        "Where should your left hand be to face North?",
+        "Where is North located on most maps?",
+        "How is the temperature of the North described?",
+        "Which direction are you facing in this position?"
+      ]
+    },
+    {
+      "passage_number": 5,
+      "paragraph": "The direction opposite to North is South. If you are facing North, the South is directly behind you. Birds often fly toward the South when the weather becomes too cold in the winter.",
+      "questions": [
+        "Which direction is opposite to North?",
+        "If you face North, where is South?",
+        "What animals are mentioned in the paragraph?",
+        "Where do birds fly when it is cold?",
+        "During which season do birds fly South?"
+      ]
+    },
+    {
+      "passage_number": 6,
+      "paragraph": "A compass is a special tool used to find directions. It has a small needle that always points to the North. Sailors use a compass to navigate their ships across the deep blue ocean.",
+      "questions": [
+        "What is a compass?",
+        "What part of the compass moves?",
+        "Where does the needle always point?",
+        "Who uses a compass to navigate?",
+        "Where are the ships being navigated?"
+      ]
+    },
+    {
+      "passage_number": 7,
+      "paragraph": "Long ago, travelers used the stars to find their way at night. The North Star is a very bright star that stays in the same place. It helped people travel safely before maps were common.",
+      "questions": [
+        "When did travelers use the stars?",
+        "Which specific star is mentioned?",
+        "How is the North Star described?",
+        "Does the North Star move around a lot?",
+        "Why was the star helpful long ago?"
+      ]
+    },
+    {
+      "passage_number": 8,
+      "paragraph": "Maps are drawings of places that show where things are located. A map has a small symbol called a compass rose. It shows the letters N, S, E, and W to mark the directions.",
+      "questions": [
+        "What are maps?",
+        "What do maps show?",
+        "What is the name of the symbol on a map?",
+        "What four letters are on the symbol?",
+        "What do those letters mark?"
+      ]
+    },
+    {
+      "passage_number": 9,
+      "paragraph": "Learning directions is a very useful skill. It helps you understand where your school, your house, and the park are located. If you know your directions, you will never feel lost in your own town.",
+      "questions": [
+        "Is learning directions a useful skill?",
+        "Name three places mentioned that you can locate.",
+        "What does knowing directions help you avoid?",
+        "Where will you not feel lost?",
+        "Why should you learn directions?"
+      ]
+    },
+    {
+      "passage_number": 10,
+      "paragraph": "Whether you use the sun, a compass, or a map, directions keep us safe. They connect different parts of the world together. North, South, East, and West are the keys to every great adventure.",
+      "questions": [
+        "What three things can be used to find directions?",
+        "What do directions keep us?",
+        "What do directions connect together?",
+        "Which four directions are mentioned?",
+        "What are these directions 'keys' to?"
+      ]
+    }
+  ]
+}

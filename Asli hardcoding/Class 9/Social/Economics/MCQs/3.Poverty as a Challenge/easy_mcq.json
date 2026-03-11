@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Poverty as a Challenge",
+  "generated_at": "2026-03-07T00:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which organization is responsible for conducting periodic sample surveys to estimate the poverty line in India?",
+      "options": {
+        "A": "RBI",
+        "B": "NSSO",
+        "C": "NITI Aayog",
+        "D": "World Bank"
+      },
+      "correct_answer": "B",
+      "explanation": "The National Sample Survey Organisation (NSSO) conducts surveys typically every five years to provide data for poverty estimation.",
+      "difficulty": "easy",
+      "source_section": "3.2 Poverty Line"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the accepted average calorie requirement per person per day in rural areas in India?",
+      "options": {
+        "A": "2100 calories",
+        "B": "2400 calories",
+        "C": "2000 calories",
+        "D": "2500 calories"
+      },
+      "correct_answer": "B",
+      "explanation": "Rural areas have a higher requirement (2400 kcal) compared to urban areas (2100 kcal) due to more strenuous physical labor.",
+      "difficulty": "easy",
+      "source_section": "3.2 Poverty Line"
+    },
+    {
+      "question_number": 3,
+      "question": "Social exclusion considers poverty as a process where individuals are excluded from:",
+      "options": {
+        "A": "Voting in elections",
+        "B": "Facilities and opportunities enjoyed by others",
+        "C": "Moving to other countries",
+        "D": "Watching television"
+      },
+      "correct_answer": "B",
+      "explanation": "Social exclusion involves poor people being forced to live in poor surroundings, excluded from social equality.",
+      "difficulty": "easy",
+      "source_section": "3.1 Introduction"
+    },
+    {
+      "question_number": 4,
+      "question": "Which social group is most vulnerable to poverty in India?",
+      "options": {
+        "A": "General category",
+        "B": "Scheduled Tribes",
+        "C": "Urban office workers",
+        "D": "Large landowners"
+      },
+      "correct_answer": "B",
+      "explanation": "Statistically, Scheduled Tribes have the highest poverty ratio at 43% in India.",
+      "difficulty": "easy",
+      "source_section": "3.3 Vulnerable Groups"
+    },
+    {
+      "question_number": 5,
+      "question": "Who are considered the 'poorest of the poor' within a family?",
+      "options": {
+        "A": "The male head of the family",
+        "B": "Women, elderly, and female infants",
+        "C": "Young boys",
+        "D": "Working members"
+      },
+      "correct_answer": "B",
+      "explanation": "These groups are systematically denied equal access to resources available to the family.",
+      "difficulty": "easy",
+      "source_section": "3.3 Vulnerable Groups"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the international poverty line standard used by the World Bank?",
+      "options": {
+        "A": "$1 per day",
+        "B": "$1.90 per day",
+        "C": "$5 per day",
+        "D": "$10 per day"
+      },
+      "correct_answer": "B",
+      "explanation": "The World Bank uses $1.90 (2011 PPP) as a uniform standard for international comparison.",
+      "difficulty": "easy",
+      "source_section": "3.2 Poverty Line"
+    },
+    {
+      "question_number": 7,
+      "question": "Which state has the highest poverty ratio in India according to the textbook?",
+      "options": {
+        "A": "Punjab",
+        "B": "Bihar",
+        "C": "Kerala",
+        "D": "Gujarat"
+      },
+      "correct_answer": "B",
+      "explanation": "Bihar and Odisha continue to be the two poorest states with poverty ratios of 33.7% and 32.6% respectively.",
+      "difficulty": "easy",
+      "source_section": "3.4 Inter-State Disparities"
+    },
+    {
+      "question_number": 8,
+      "question": "Poverty has declined in Punjab and Haryana mainly due to:",
+      "options": {
+        "A": "Land reforms",
+        "B": "High agricultural growth rates",
+        "C": "Public distribution of food",
+        "D": "Focus on education"
+      },
+      "correct_answer": "B",
+      "explanation": "The Green Revolution and high agricultural productivity led to significant poverty reduction in these states.",
+      "difficulty": "easy",
+      "source_section": "3.4 Inter-State Disparities"
+    },
+    {
+      "question_number": 9,
+      "question": "In West Bengal, what helped in reducing poverty?",
+      "options": {
+        "A": "Land reform measures",
+        "B": "Information technology",
+        "C": "Dairy farming",
+        "D": "Foreign investment"
+      },
+      "correct_answer": "A",
+      "explanation": "Implementation of land reforms redistributed assets to the poor, helping reduce rural poverty.",
+      "difficulty": "easy",
+      "source_section": "3.4 Inter-State Disparities"
+    },
+    {
+      "question_number": 10,
+      "question": "The main cause of poverty in India linked to British rule was:",
+      "options": {
+        "A": "Introduction of railways",
+        "B": "Low economic growth and ruin of traditional handicrafts",
+        "C": "Establishment of schools",
+        "D": "Opening of ports"
+      },
+      "correct_answer": "B",
+      "explanation": "Colonial policies discouraged local industries and ruined handicrafts, leading to joblessness.",
+      "difficulty": "easy",
+      "source_section": "3.5 Causes of Poverty"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the full form of MGNREGA?",
+      "options": {
+        "A": "Maharashtra Government National Rural Employment Group Act",
+        "B": "Mahatma Gandhi National Rural Employment Guarantee Act",
+        "C": "Minimum Government National Rural Energy Guarantee Act",
+        "D": "Mahatma Gandhi National Road Employment Guarantee Act"
+      },
+      "correct_answer": "B",
+      "explanation": "It is a 2005 act providing a legal guarantee for 100 days of employment.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 12,
+      "question": "How many days of wage employment does MGNREGA guarantee?",
+      "options": {
+        "A": "50 days",
+        "B": "100 days",
+        "C": "150 days",
+        "D": "200 days"
+      },
+      "correct_answer": "B",
+      "explanation": "The act guarantees 100 days of wage employment per year to every rural household.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 13,
+      "question": "Which scheme was launched in 1993 to create self-employment opportunities for educated unemployed youth?",
+      "options": {
+        "A": "SGSY",
+        "B": "PMRY",
+        "C": "REGP",
+        "D": "AAY"
+      },
+      "correct_answer": "B",
+      "explanation": "Prime Minister Rozgar Yojana (PMRY) was started in 1993 for this purpose.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 14,
+      "question": "Under MGNREGA, what proportion of jobs are reserved for women?",
+      "options": {
+        "A": "One-fourth",
+        "B": "One-third",
+        "C": "Half",
+        "D": "None"
+      },
+      "correct_answer": "B",
+      "explanation": "One-third of the proposed jobs under MGNREGA are reserved for women.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 15,
+      "question": "The Swarnajayanti Gram Swarozgar Yojana (SGSY) was launched in:",
+      "options": {
+        "A": "1993",
+        "B": "1999",
+        "C": "2005",
+        "D": "2000"
+      },
+      "correct_answer": "B",
+      "explanation": "SGSY was launched in 1999 to help organize rural poor into self-help groups.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 16,
+      "question": "Vulnerability to poverty is a measure describing the probability of:",
+      "options": {
+        "A": "Getting a government job",
+        "B": "Becoming or remaining poor in the future",
+        "C": "Winning a lottery",
+        "D": "Moving to an urban area"
+      },
+      "correct_answer": "B",
+      "explanation": "Vulnerability describes the risk faced by certain communities of being hit harder by disasters or economic slumps.",
+      "difficulty": "easy",
+      "source_section": "3.1 Introduction"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of these is a non-economic indicator of poverty?",
+      "options": {
+        "A": "Income level",
+        "B": "Illiteracy",
+        "C": "Consumption expenditure",
+        "D": "Bank balance"
+      },
+      "correct_answer": "B",
+      "explanation": "Social scientists look at social indicators like illiteracy, lack of healthcare, etc., as well as income.",
+      "difficulty": "easy",
+      "source_section": "3.1 Introduction"
+    },
+    {
+      "question_number": 18,
+      "question": "Which state has focused on human resource development to reduce poverty?",
+      "options": {
+        "A": "Kerala",
+        "B": "West Bengal",
+        "C": "Tamil Nadu",
+        "D": "Andhra Pradesh"
+      },
+      "correct_answer": "A",
+      "explanation": "Kerala's heavy investment in education and healthcare has led to significant poverty reduction.",
+      "difficulty": "easy",
+      "source_section": "3.4 Inter-State Disparities"
+    },
+    {
+      "question_number": 19,
+      "question": "Rural Poor usually work as:",
+      "options": {
+        "A": "Software engineers",
+        "B": "Landless agricultural labourers",
+        "C": "Bank managers",
+        "D": "Factory owners"
+      },
+      "correct_answer": "B",
+      "explanation": "Agricultural labor is the primary economic activity for the rural poor in India.",
+      "difficulty": "easy",
+      "source_section": "3.3 Vulnerable Groups"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the result of the unequal distribution of land in rural India?",
+      "options": {
+        "A": "Wealth for all",
+        "B": "Persistent poverty",
+        "C": "Increased exports",
+        "D": "Modernization"
+      },
+      "correct_answer": "B",
+      "explanation": "Inequality in land and resource distribution is a major cause of rural poverty.",
+      "difficulty": "easy",
+      "source_section": "3.5 Causes of Poverty"
+    },
+    {
+      "question_number": 21,
+      "question": "Which scheme targets the 'poorest of the poor' for food security?",
+      "options": {
+        "A": "MGNREGA",
+        "B": "Antyodaya Anna Yojana (AAY)",
+        "C": "PMGY",
+        "D": "SGSY"
+      },
+      "correct_answer": "B",
+      "explanation": "AAY provides highly subsidized food grains to the poorest BPL families.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 22,
+      "question": "The Pradhan Mantri Gramodaya Yojana (PMGY) focuses on:",
+      "options": {
+        "A": "Building skyscrapers",
+        "B": "Basic services like health and education",
+        "C": "Space research",
+        "D": "Automobile production"
+      },
+      "correct_answer": "B",
+      "explanation": "PMGY (2000) provides assistance for primary health, education, shelter, water, and electrification.",
+      "difficulty": "easy",
+      "source_section": "3.6 Anti-Poverty Measures"
+    },
+    {
+      "question_number": 23,
+      "question": "Global poverty has fallen significantly in which country/region?",
+      "options": {
+        "A": "Sub-Saharan Africa",
+        "B": "China",
+        "C": "Latin America",
+        "D": "Antarctica"
+      },
+      "correct_answer": "B",
+      "explanation": "China saw a massive decline from 88% (1981) to 0.7% (2015) due to rapid economic growth.",
+      "difficulty": "easy",
+      "source_section": "3.2 Poverty Line"
+    },
+    {
+      "question_number": 24,
+      "question": "In the future, the definition of poverty may move from 'Minimum Subsistence' to:",
+      "options": {
+        "A": "Maximum Wealth",
+        "B": "Reasonable level of Living",
+        "C": "No definition",
+        "D": "Physical survival only"
+      },
+      "correct_answer": "B",
+      "explanation": "As the country develops, the focus shifts toward 'Human Poverty' and higher standards of living.",
+      "difficulty": "easy",
+      "source_section": "3.7 The Challenges Ahead"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the poverty line higher in urban areas despite lower calorie needs?",
+      "options": {
+        "A": "Urban people eat more",
+        "B": "Cost of living is higher in cities",
+        "C": "Urban people are wealthier",
+        "D": "Urban food is healthier"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher prices for essential goods and services in urban centers lead to a higher monetary poverty line.",
+      "difficulty": "easy",
+      "source_section": "3.2 Poverty Line"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T19:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how changes in rainfall and deforestation can lead elephants to enter human settlements.",
+      "answer": "Changes in rainfall and deforestation reduce forest vegetation and water sources, forcing elephants to move into farms and villages in search of food and water.",
+      "answer_outline": [
+        "Loss of forest habitat",
+        "Reduction of food sources",
+        "Movement into human areas"
+      ],
+      "key_concepts": ["habitat loss", "human-wildlife conflict"],
+      "marks": 5,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze how biotic and abiotic components interact to sustain life in an ecosystem.",
+      "answer": "Living organisms depend on abiotic factors such as sunlight, water, and soil for survival, while organisms influence environmental conditions through activities such as photosynthesis and decomposition.",
+      "answer_outline": [
+        "Definition of interaction",
+        "Examples of dependency",
+        "Importance for survival"
+      ],
+      "key_concepts": ["biotic-abiotic interaction"],
+      "marks": 5,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain why ecosystems are considered dynamic systems.",
+      "answer": "Ecosystems constantly change due to interactions among organisms and environmental factors, making them dynamic rather than static.",
+      "answer_outline": [
+        "Definition",
+        "Examples of change",
+        "Impact on organisms"
+      ],
+      "key_concepts": ["ecosystem dynamics"],
+      "marks": 5,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how population size can affect resource availability in a habitat.",
+      "answer": "Large populations increase competition for food, water, and space, which may reduce available resources.",
+      "answer_outline": [
+        "Population definition",
+        "Competition",
+        "Resource limitation"
+      ],
+      "key_concepts": ["population dynamics"],
+      "marks": 4,
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe how the removal of one species from a food web may affect the entire ecosystem.",
+      "answer": "Removing one species disrupts feeding relationships and can cause population imbalances among other species.",
+      "answer_outline": [
+        "Food web relationships",
+        "Population effects",
+        "Ecological imbalance"
+      ],
+      "key_concepts": ["food web"],
+      "marks": 5,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why producers form the base of every food chain.",
+      "answer": "Producers convert solar energy into food through photosynthesis, providing energy for all other organisms.",
+      "answer_outline": [
+        "Definition of producers",
+        "Energy source",
+        "Food chain structure"
+      ],
+      "key_concepts": ["producers"],
+      "marks": 4,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 7,
+      "question": "Analyze the importance of decomposers in maintaining ecological balance.",
+      "answer": "Decomposers recycle nutrients from dead organisms back into the soil, enabling plants to grow and maintain nutrient cycles.",
+      "answer_outline": [
+        "Definition",
+        "Nutrient recycling",
+        "Ecosystem sustainability"
+      ],
+      "key_concepts": ["decomposers"],
+      "marks": 5,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how a decrease in fish population in a pond could affect nearby plant growth.",
+      "answer": "Fish control insect populations; fewer fish may increase insects that harm plants, reducing plant growth.",
+      "answer_outline": [
+        "Food chain relationships",
+        "Insect population increase",
+        "Plant impact"
+      ],
+      "key_concepts": ["ecosystem interaction"],
+      "marks": 5,
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how competition among organisms contributes to ecosystem balance.",
+      "answer": "Competition prevents any one species from dominating resources, maintaining population balance.",
+      "answer_outline": [
+        "Definition of competition",
+        "Population control",
+        "Ecological balance"
+      ],
+      "key_concepts": ["competition"],
+      "marks": 4,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 10,
+      "question": "Compare mutualism, commensalism, and parasitism with examples.",
+      "answer": "Mutualism benefits both organisms, commensalism benefits one without affecting the other, and parasitism benefits one while harming the other.",
+      "answer_outline": [
+        "Definitions",
+        "Examples",
+        "Comparison"
+      ],
+      "key_concepts": ["symbiosis"],
+      "marks": 5,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how energy transfer occurs through trophic levels.",
+      "answer": "Energy flows from producers to herbivores and then to carnivores through feeding relationships.",
+      "answer_outline": [
+        "Energy source",
+        "Trophic levels",
+        "Energy transfer"
+      ],
+      "key_concepts": ["energy flow"],
+      "marks": 4,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the ecological importance of food webs compared to food chains.",
+      "answer": "Food webs provide multiple feeding relationships, making ecosystems more stable.",
+      "answer_outline": [
+        "Definition",
+        "Advantages",
+        "Example"
+      ],
+      "key_concepts": ["food web"],
+      "marks": 4,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Analyze the consequences of removing decomposers from an ecosystem.",
+      "answer": "Without decomposers, dead organisms would accumulate and nutrients would not return to the soil.",
+      "answer_outline": [
+        "Role of decomposers",
+        "Nutrient cycle disruption"
+      ],
+      "key_concepts": ["decomposers"],
+      "marks": 5,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the ecological role of migratory birds in maintaining ecosystem balance.",
+      "answer": "Migratory birds control insect populations and help in pollination and seed dispersal.",
+      "answer_outline": [
+        "Insect control",
+        "Pollination",
+        "Seed dispersal"
+      ],
+      "key_concepts": ["biodiversity"],
+      "marks": 4,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how pollution can disrupt aquatic ecosystems.",
+      "answer": "Pollution reduces oxygen levels in water and harms aquatic organisms.",
+      "answer_outline": [
+        "Pollution sources",
+        "Effects on organisms"
+      ],
+      "key_concepts": ["pollution"],
+      "marks": 5,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how the disappearance of frogs could affect agriculture.",
+      "answer": "Frogs eat insects; their disappearance increases pest populations that damage crops.",
+      "answer_outline": [
+        "Food chain",
+        "Pest increase",
+        "Agricultural impact"
+      ],
+      "key_concepts": ["ecosystem balance"],
+      "marks": 5,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why biodiversity is important for ecosystem stability.",
+      "answer": "Greater biodiversity increases resilience and stability of ecosystems.",
+      "answer_outline": [
+        "Definition",
+        "Benefits"
+      ],
+      "key_concepts": ["biodiversity"],
+      "marks": 4,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how forests help regulate climate and support ecosystems.",
+      "answer": "Forests absorb carbon dioxide, release oxygen, and support biodiversity.",
+      "answer_outline": [
+        "Climate regulation",
+        "Habitat support"
+      ],
+      "key_concepts": ["forests"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the ecological significance of mangrove forests in coastal regions.",
+      "answer": "Mangroves protect coastal areas from storms and support diverse ecosystems.",
+      "answer_outline": [
+        "Protection from waves",
+        "Biodiversity"
+      ],
+      "key_concepts": ["mangroves"],
+      "marks": 5,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how unsustainable farming practices can damage ecosystems.",
+      "answer": "Overuse of chemicals and monoculture farming reduce biodiversity and soil health.",
+      "answer_outline": [
+        "Chemical use",
+        "Soil degradation"
+      ],
+      "key_concepts": ["unsustainable farming"],
+      "marks": 5,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how organic farming supports ecological sustainability.",
+      "answer": "Organic farming uses natural fertilizers and reduces chemical pollution.",
+      "answer_outline": [
+        "Natural inputs",
+        "Environmental benefits"
+      ],
+      "key_concepts": ["organic farming"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why protected areas are important for biodiversity conservation.",
+      "answer": "Protected areas preserve habitats and species from human disturbances.",
+      "answer_outline": [
+        "Definition",
+        "Importance"
+      ],
+      "key_concepts": ["protected areas"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the concept of ecosystem services provided by nature.",
+      "answer": "Ecosystems provide services like clean air, water, food, and climate regulation.",
+      "answer_outline": [
+        "Definition",
+        "Examples"
+      ],
+      "key_concepts": ["ecosystem services"],
+      "marks": 5,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 24,
+      "question": "Analyze how human activities can disturb ecosystem balance.",
+      "answer": "Human activities such as pollution, deforestation, and overuse of resources disturb ecological interactions.",
+      "answer_outline": [
+        "Examples",
+        "Effects"
+      ],
+      "key_concepts": ["human impact"],
+      "marks": 5,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why protecting ecosystems is essential for future generations.",
+      "answer": "Healthy ecosystems provide resources and environmental stability necessary for sustainable living.",
+      "answer_outline": [
+        "Resource availability",
+        "Environmental sustainability"
+      ],
+      "key_concepts": ["conservation"],
+      "marks": 5,
+      "source_section": "Section 12.9"
+    }
+  ]
+}

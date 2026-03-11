@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Inside Our Earth",
+    "difficulty": "Medium",
+    "source_pdf": "jegy102.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Earth's crust is made up of various types of rocks, which are natural masses of mineral matter.",
+            "Rocks are classified into three major types based on their formation: Igneous, Sedimentary, and Metamorphic.",
+            "Igneous rocks (Primary rocks) form when molten magma cools and solidifies.",
+            "Sedimentary rocks are formed from the accumulation and compression of sediments (rock fragments) over long periods.",
+            "Metamorphic rocks are formed when igneous or sedimentary rocks change their form under great heat and pressure."
+        ],
+        "examples": [
+            "Extrusive Igneous: Basalt (Deccan plateau is made of basalt).",
+            "Intrusive Igneous: Granite (used for grinding stones for spices/grains).",
+            "Sedimentary: Sandstone (made from grains of sand; often contains fossils).",
+            "Metamorphic: Clay changing into slate, or limestone changing into marble."
+        ],
+        "formulas": [
+            "Igneous (Latin: Ignis) = Fire",
+            "Sedimentary (Latin: Sedimentum) = Settle down",
+            "Metamorphic (Greek: Metamorphose) = Change of form"
+        ],
+        "exam_tips": [
+            "Understand the difference: Extrusive rocks cool quickly on the surface (fine-grained), while Intrusive rocks cool slowly deep inside (large grains).",
+            "Remember that fossils are only found in Sedimentary rocks, not in Igneous or Metamorphic.",
+            "Note that the Red Fort is made of red sandstone, while the Taj Mahal is made of white marble.",
+            "Identify rocks not just as 'stones', but as a source of minerals used in industries and fuel."
+        ]
+    }
+}

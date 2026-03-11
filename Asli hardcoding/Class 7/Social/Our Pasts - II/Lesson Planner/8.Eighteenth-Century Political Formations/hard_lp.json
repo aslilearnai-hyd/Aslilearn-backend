@@ -1,0 +1,168 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Eighteenth-Century Political Formations",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the political landscape of 18th-century India",
+        "Analyze the decline of the Mughal empire and rise of regional powers",
+        "Examine the role of European trading companies in India",
+        "Evaluate causes and effects of major conflicts and alliances",
+        "Develop critical thinking about political strategies and outcomes",
+        "Interpret historical sources such as maps, documents, and treaties"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Decline of the Mughal Empire",
+            "topics_covered": [
+                "Reasons for decline",
+                "Key Mughal rulers in the 18th century",
+                "Emergence of regional powers"
+            ],
+            "teaching_strategy": [
+                "Lecture with timeline and maps",
+                "Class discussion on political changes",
+                "Use of primary sources excerpts"
+            ],
+            "student_activities": [
+                "Identify factors leading to Mughal decline",
+                "Locate regions controlled by Mughals and regional powers",
+                "Discuss how power shifted regionally"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Notebook timeline check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Rise of Regional States",
+            "topics_covered": [
+                "Marathas, Sikhs, Nizams, Rajputs",
+                "Administrative and military strategies",
+                "Political alliances and rivalries"
+            ],
+            "teaching_strategy": [
+                "Group discussion on regional powers",
+                "Use maps to trace territories",
+                "Case studies of conflicts and treaties"
+            ],
+            "student_activities": [
+                "Prepare a brief report on a regional state",
+                "Compare administration of two states",
+                "Discuss alliances and rivalries"
+            ],
+            "assessment": [
+                "Report evaluation",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "European Trading Companies in India",
+            "topics_covered": [
+                "British East India Company and French Company",
+                "Trading posts and territorial expansion",
+                "Impact on Indian politics"
+            ],
+            "teaching_strategy": [
+                "Lecture with maps and charts",
+                "Discussion on trade vs political power",
+                "Examine historical documents and treaties"
+            ],
+            "student_activities": [
+                "List key trading posts",
+                "Discuss company involvement in conflicts",
+                "Analyze a treaty document"
+            ],
+            "assessment": [
+                "Accuracy in identifying trading posts",
+                "Document analysis participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Major Battles and Alliances",
+            "topics_covered": [
+                "Battle of Plassey, Buxar",
+                "Alliances between regional powers and Europeans",
+                "Causes and outcomes of conflicts"
+            ],
+            "teaching_strategy": [
+                "Map-based exercises on battles",
+                "Class discussion on strategies and results",
+                "Source analysis of battle accounts"
+            ],
+            "student_activities": [
+                "Mark battle locations on a map",
+                "Explain causes and consequences",
+                "Analyze strategies used by leaders"
+            ],
+            "assessment": [
+                "Map marking accuracy",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Administration and Governance",
+            "topics_covered": [
+                "Revenue collection systems",
+                "Local governance in regional states",
+                "Comparison with Mughal administration"
+            ],
+            "teaching_strategy": [
+                "Discussion using charts of administrative systems",
+                "Compare and contrast exercises"
+            ],
+            "student_activities": [
+                "Prepare a table comparing administration",
+                "Discuss efficiency and challenges of governance"
+            ],
+            "assessment": [
+                "Accuracy in comparison",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Quiz, and Critical Thinking",
+            "topics_covered": [
+                "Recap of key events, rulers, and battles",
+                "Critical thinking on political strategies",
+                "Relevance of historical lessons today"
+            ],
+            "teaching_strategy": [
+                "Quiz with map-based and analytical questions",
+                "Class discussion linking history to present"
+            ],
+            "student_activities": [
+                "Take the quiz",
+                "Analyze cause-effect of historical events",
+                "Participate in discussion"
+            ],
+            "assessment": [
+                "Quiz results",
+                "Class participation",
+                "Notebook check"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Maps of 18th-century India",
+        "Timeline charts",
+        "Primary sources and treaties",
+        "Whiteboard/Blackboard with markers/chalk",
+        "Documents of battles and alliances"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Map exercises",
+        "Notebook checking",
+        "Quiz and critical thinking exercises"
+    ],
+    "teacher_tip": "Focus on connecting political events with their causes and effects. Encourage students to analyze alliances, battles, and administration critically."
+}

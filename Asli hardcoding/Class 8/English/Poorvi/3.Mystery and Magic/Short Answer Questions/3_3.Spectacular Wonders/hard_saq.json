@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Spectacular Wonders",
+  "generated_at": "2026-03-09T11:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is the Valley of Flowers considered an important ecological region?",
+      "answer": "Because it supports a wide variety of plant and animal species that maintain ecological balance.",
+      "key_concepts": ["ecology", "biodiversity"],
+      "marks": 2,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 2,
+      "question": "How does the Himalayan climate influence the biodiversity of the Valley of Flowers?",
+      "answer": "The cool climate, fertile soil, and seasonal monsoon rains support the growth of diverse alpine plants.",
+      "key_concepts": ["Himalayan climate"],
+      "marks": 2,
+      "source_section": "Geographical Understanding"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is the Valley of Flowers recognized internationally?",
+      "answer": "Because of its exceptional biodiversity and natural beauty recognized by UNESCO.",
+      "key_concepts": ["UNESCO"],
+      "marks": 2,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 4,
+      "question": "How do Living Root Bridges demonstrate sustainable engineering?",
+      "answer": "They use naturally growing tree roots instead of artificial materials to create durable bridges.",
+      "key_concepts": ["sustainable engineering"],
+      "marks": 2,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do Living Root Bridges become stronger with time?",
+      "answer": "Because the tree roots continue growing and intertwining, making the structure stronger.",
+      "key_concepts": ["root growth"],
+      "marks": 2,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 6,
+      "question": "What role does traditional knowledge play in creating Living Root Bridges?",
+      "answer": "It guides villagers in shaping and directing tree roots to form strong natural bridges.",
+      "key_concepts": ["traditional knowledge"],
+      "marks": 2,
+      "source_section": "Human–Nature Interaction"
+    },
+    {
+      "question_number": 7,
+      "question": "How do Living Root Bridges represent harmony between humans and nature?",
+      "answer": "People work with living trees instead of cutting them, creating useful structures while preserving nature.",
+      "key_concepts": ["harmony with nature"],
+      "marks": 2,
+      "source_section": "Human–Nature Interaction"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is biodiversity important for ecosystem stability?",
+      "answer": "Different species support each other and maintain balance in the ecosystem.",
+      "key_concepts": ["ecosystem balance"],
+      "marks": 2,
+      "source_section": "Environmental Importance"
+    },
+    {
+      "question_number": 9,
+      "question": "How can pollution affect natural wonders like the Valley of Flowers?",
+      "answer": "Pollution can damage plant life, harm wildlife, and disturb the ecosystem balance.",
+      "key_concepts": ["pollution"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is responsible tourism necessary in natural areas?",
+      "answer": "Because it helps protect ecosystems and prevents environmental damage.",
+      "key_concepts": ["responsible tourism"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 11,
+      "question": "How do natural landscapes contribute to the scenic beauty of the Valley of Flowers?",
+      "answer": "Mountains, streams, waterfalls, and colourful flowers create a visually stunning landscape.",
+      "key_concepts": ["scenic beauty"],
+      "marks": 2,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 12,
+      "question": "Why do scientists study regions like the Valley of Flowers?",
+      "answer": "To understand plant diversity, ecosystems, and environmental changes.",
+      "key_concepts": ["scientific study"],
+      "marks": 2,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 13,
+      "question": "How do local communities help protect natural ecosystems?",
+      "answer": "They follow traditional practices that conserve forests, wildlife, and natural resources.",
+      "key_concepts": ["community conservation"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 14,
+      "question": "What environmental problems can arise from deforestation?",
+      "answer": "Loss of biodiversity, soil erosion, and disruption of ecosystems.",
+      "key_concepts": ["deforestation"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are natural wonders valuable for future generations?",
+      "answer": "They preserve biodiversity, natural beauty, and ecological knowledge.",
+      "key_concepts": ["future generations"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 16,
+      "question": "How does the Valley of Flowers support wildlife?",
+      "answer": "It provides food, shelter, and habitat for many animals and insects.",
+      "key_concepts": ["wildlife habitat"],
+      "marks": 2,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 17,
+      "question": "Why are Living Root Bridges considered an example of eco-friendly infrastructure?",
+      "answer": "Because they are created from natural materials without harming the environment.",
+      "key_concepts": ["eco-friendly"],
+      "marks": 2,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 18,
+      "question": "How does environmental awareness help protect natural wonders?",
+      "answer": "It encourages people to conserve nature and avoid harmful activities.",
+      "key_concepts": ["environmental awareness"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 19,
+      "question": "Why do natural wonders inspire people to respect nature?",
+      "answer": "Their beauty and ecological importance remind people of nature’s value.",
+      "key_concepts": ["respect for nature"],
+      "marks": 2,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 20,
+      "question": "How does sustainable human activity help preserve ecosystems?",
+      "answer": "By using natural resources responsibly without damaging the environment.",
+      "key_concepts": ["sustainability"],
+      "marks": 2,
+      "source_section": "Human–Nature Interaction"
+    },
+    {
+      "question_number": 21,
+      "question": "What lesson do Living Root Bridges teach about human innovation?",
+      "answer": "Innovation can work with nature rather than against it.",
+      "key_concepts": ["innovation"],
+      "marks": 2,
+      "source_section": "Human–Nature Interaction"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the chapter highlight the connection between humans and nature?",
+      "answer": "It shows how people can protect and cooperate with nature.",
+      "key_concepts": ["human–nature relationship"],
+      "marks": 2,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 23,
+      "question": "Why should ecosystems be protected from human exploitation?",
+      "answer": "Because exploitation can destroy biodiversity and ecological balance.",
+      "key_concepts": ["ecosystem protection"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 24,
+      "question": "What role does conservation play in protecting natural wonders?",
+      "answer": "Conservation preserves biodiversity and maintains environmental stability.",
+      "key_concepts": ["conservation"],
+      "marks": 2,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the central message conveyed by the chapter 'Spectacular Wonders'?",
+      "answer": "Humans should respect and protect nature to preserve its beauty and ecosystems.",
+      "key_concepts": ["main message"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    }
+  ]
+}

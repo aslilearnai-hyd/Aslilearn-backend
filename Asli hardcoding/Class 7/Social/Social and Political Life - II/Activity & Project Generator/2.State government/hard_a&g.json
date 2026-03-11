@@ -1,0 +1,179 @@
+{
+    "class": "Class 7",
+    "subject": "Civics (Social and Political Life - II)",
+    "chapter": "State Government ",
+    "difficulty": "Hard",
+    "source_pdf": "social_and_political_life_2_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Constitutional Check and Balance Analysis",
+            "objective": "Evaluate the power dynamics between the Governor and the Chief Minister",
+            "materials": [
+                "Constitution of India (Articles 163-164)",
+                "Notebook"
+            ],
+            "steps": [
+                "Research the 'Discretionary Powers' of the Governor in the Indian Constitution",
+                "Analyze a scenario where the Governor might delay signing a bill passed by the Assembly",
+                "Discuss why the Governor is appointed by the Center while the CM is elected by the people",
+                "Argue the pros and cons of this 'dual-head' system for state stability"
+            ],
+            "learning_outcome": "Critically examines the federal structure and the balance of power between elected and appointed heads",
+            "evaluation": "Depth of constitutional reasoning and understanding of federalism (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Coalition Politics and Policy Stalemate",
+            "objective": "Analyze the complexities of governing without a single-party majority",
+            "materials": [
+                "Data on past coalition governments in India",
+                "Graph paper"
+            ],
+            "steps": [
+                "Examine a state election where no party reached the 50% + 1 threshold",
+                "Identify the 'Common Minimum Program' (CMP) used to bridge ideological gaps",
+                "Simulate a crisis where a smaller partner threatens to withdraw support over a policy",
+                "Explain how coalition politics affects the speed of law-making in the Assembly"
+            ],
+            "learning_outcome": "Evaluates the impact of multi-party systems on governance and legislative efficiency",
+            "evaluation": "Logical analysis of the stability and challenges of coalition governments (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Legislative vs. Executive Accountability Audit",
+            "objective": "Trace the path of accountability from a civil servant to the people",
+            "materials": [
+                "Flowchart template",
+                "Case study on a public health crisis"
+            ],
+            "steps": [
+                "Map the hierarchy: People $\rightarrow$ MLA $\rightarrow$ Minister $\rightarrow$ Secretary $\rightarrow$ District Collector",
+                "Analyze who is responsible if a government-run hospital runs out of medicines",
+                "Differentiate between 'Political Accountability' (Minister) and 'Administrative Accountability' (Secretary)",
+                "Explain the concept of 'Collective Responsibility' in the State Cabinet"
+            ],
+            "learning_outcome": "Distinguishes between the permanent executive (bureaucracy) and the political executive",
+            "evaluation": "Accuracy of the accountability chain and conceptual clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The 'Zero Hour' Simulation",
+            "objective": "Understand the urgency of raising public issues in the House",
+            "materials": [
+                "Classroom podium",
+                "Stopwatch",
+                "Current news reports"
+            ],
+            "steps": [
+                "Assign students roles: Speaker, Opposition MLAs, and Cabinet Ministers",
+                "Opposition must raise a 'Matter of Urgent Public Importance' without prior notice",
+                "The Minister must provide a spontaneous but factual defense of the department",
+                "The Speaker must decide whether to allow the discussion based on 'House Rules'"
+            ],
+            "learning_outcome": "Demonstrates the spontaneous and critical nature of legislative oversight",
+            "evaluation": "Ability to frame urgent questions and provide relevant ministerial responses (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Media as the 'Fourth Estate' Inquiry",
+            "objective": "Critically analyze media's role in influencing government policy",
+            "materials": [
+                "Newspaper editorials",
+                "Social media campaign examples"
+            ],
+            "steps": [
+                "Trace a news story about a local issue that forced the State Government to take action",
+                "Compare how different news channels report on the same Assembly debate",
+                "Identify 'bias' or 'sensationalism' that might shift public focus away from real issues",
+                "Write an essay on: 'Is the Press Conference a tool for transparency or image management?'"
+            ],
+            "learning_outcome": "Appraises the power of the media to hold the state government accountable",
+            "evaluation": "Critical analysis of media bias and its impact on public opinion (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Budgetary Allocation and Priority Mapping",
+            "objective": "Understand the fiscal responsibility of the state government",
+            "materials": [
+                "Simplified state budget summary (last 2 years)",
+                "Calculator"
+            ],
+            "steps": [
+                "Compare the percentage of funds allocated to 'Education' vs. 'Infrastructure'",
+                "Analyze why a government might prioritize one over the other during an election year",
+                "Draft a 'Shadow Budget' for your state, proposing changes to improve public welfare",
+                "Explain why the state must get permission from the Center to borrow large sums"
+            ],
+            "learning_outcome": "Synthesizes economic data to understand political priorities and constraints",
+            "evaluation": "Rationality of the shadow budget and use of fiscal data (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Delimitation and Constituency Design",
+            "objective": "Investigate how boundaries affect democratic representation",
+            "materials": [
+                "District map",
+                "Population data"
+            ],
+            "steps": [
+                "Explain the principle of 'Equal Representation' (one person, one vote, one value)",
+                "Research why constituencies are redrawn after a census (Delimitation)",
+                "Propose a boundary change for a local area to balance the number of voters",
+                "Discuss the challenges of representing rural vs. urban interests in a single assembly"
+            ],
+            "learning_outcome": "Analyzes the demographic and geographical basis of election management",
+            "evaluation": "Logical approach to delimitation and population-representation balance (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Bill to Law: The Legislative Gauntlet",
+            "objective": "Trace the rigorous process of passing a state law",
+            "materials": [
+                "Draft of a hypothetical bill (e.g., Plastic Ban Act)",
+                "Flowchart"
+            ],
+            "steps": [
+                "Simulate the 'Three Readings' of a bill in the Legislative Assembly",
+                "Include a 'Select Committee' stage where experts are consulted",
+                "Identify the point where the Governor can send the bill back for reconsideration",
+                "Explain the difference between a 'Money Bill' and an 'Ordinary Bill'"
+            ],
+            "learning_outcome": "Understands the legal scrutiny and procedures required to create a state law",
+            "evaluation": "Correct sequencing of the legislative process and committee role (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Inter-State Dispute Resolution Case Study",
+            "objective": "Examine how state governments interact with each other and the Center",
+            "materials": [
+                "Cauvery Water Dispute or similar river/border case study"
+            ],
+            "steps": [
+                "Identify the role of the State Governments involved and their arguments",
+                "Analyze why the Central Government or Supreme Court had to intervene",
+                "Discuss how 'State Pride' can sometimes conflict with 'National Interest'",
+                "Propose a diplomatic solution that respects the sovereignty of both states"
+            ],
+            "learning_outcome": "Evaluates the complexities of inter-state relations in a federal system",
+            "evaluation": "Depth of conflict analysis and fairness of the proposed solution (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Public Interest Litigation (PIL) Workshop",
+            "objective": "Explore how citizens can use the courts to move the government",
+            "materials": [
+                "Legal petition templates",
+                "Article 226 of the Constitution"
+            ],
+            "steps": [
+                "Identify a failure of the state government (e.g., pollution in a local river)",
+                "Draft a 'Writ Petition' to the High Court under Article 226",
+                "Argue how the state's inaction violates the citizens' Fundamental Rights",
+                "Explain the concept of 'Judicial Activism' when the government fails to work"
+            ],
+            "learning_outcome": "Empowers students to understand legal avenues for seeking governmental accountability",
+            "evaluation": "Clarity of the legal argument and identification of violated rights (10 marks)"
+        }
+    ]
+}

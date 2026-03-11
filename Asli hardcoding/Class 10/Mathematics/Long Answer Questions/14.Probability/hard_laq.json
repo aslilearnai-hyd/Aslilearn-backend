@@ -1,0 +1,363 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 14: Probability",
+    "level": "Hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the probability of getting exactly two heads when three coins are tossed.",
+            "answer": "The possible outcomes are HHH, HHT, HTH, THH, HTT, THT, TTH, TTT. Exactly two heads occur in HHT, HTH, and THH. Probability = 3/8.",
+            "answer_outline": [
+                "Sample space",
+                "Favourable outcomes",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "three coins"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the probability of getting at least one head when three coins are tossed.",
+            "answer": "Probability = 1 − P(no head) = 1 − 1/8 = 7/8.",
+            "answer_outline": [
+                "Complement",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "at least one head"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the probability of getting sum 7 when two dice are thrown.",
+            "answer": "Favourable outcomes are (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). Probability = 6/36 = 1/6.",
+            "answer_outline": [
+                "Favourable outcomes",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "sum 7"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the probability of drawing a card that is neither red nor a face card.",
+            "answer": "Black non-face cards = 26 − 6 = 20. Probability = 20/52 = 5/13.",
+            "answer_outline": [
+                "Black cards",
+                "Non-face cards",
+                "Probability"
+            ],
+            "key_concepts": [
+                "neither red nor face"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the probability of getting no six when a die is thrown twice.",
+            "answer": "Probability of not getting six in one throw is 5/6. Therefore, probability in two throws = (5/6) × (5/6) = 25/36.",
+            "answer_outline": [
+                "Single throw",
+                "Two throws"
+            ],
+            "key_concepts": [
+                "no six"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the probability of drawing a queen or a king from a deck of cards.",
+            "answer": "There are 4 queens and 4 kings. Total favourable cards = 8. Probability = 8/52 = 2/13.",
+            "answer_outline": [
+                "Queens",
+                "Kings",
+                "Probability"
+            ],
+            "key_concepts": [
+                "queen or king"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the probability of getting at most one head when two coins are tossed.",
+            "answer": "Favourable outcomes are TT, HT, TH. Probability = 3/4.",
+            "answer_outline": [
+                "Sample space",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "at most one head"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the probability of drawing a red non-face card from a deck of cards.",
+            "answer": "Red cards = 26, red face cards = 6, so red non-face cards = 20. Probability = 20/52 = 5/13.",
+            "answer_outline": [
+                "Red cards",
+                "Non-face cards",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "red non-face card"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the probability of getting a perfect square on a die.",
+            "answer": "Perfect squares on a die are 1 and 4. Probability = 2/6 = 1/3.",
+            "answer_outline": [
+                "Perfect squares",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "perfect square"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the probability of drawing a card that is not a king.",
+            "answer": "Non-king cards = 52 − 4 = 48. Probability = 48/52 = 12/13.",
+            "answer_outline": [
+                "Total cards",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "not a king"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the probability of getting sum greater than 9 when two dice are thrown.",
+            "answer": "Favourable outcomes are sums 10, 11, and 12 (6 outcomes). Probability = 6/36 = 1/6.",
+            "answer_outline": [
+                "Favourable outcomes",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "sum greater than 9"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the probability of drawing a heart given that the card drawn is red.",
+            "answer": "Red cards = 26, hearts = 13. Probability = 13/26 = 1/2.",
+            "answer_outline": [
+                "Conditional probability",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "conditional probability"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the probability of getting no tail when a coin is tossed three times.",
+            "answer": "Only outcome is HHH. Probability = 1/8.",
+            "answer_outline": [
+                "Sample space",
+                "Result"
+            ],
+            "key_concepts": [
+                "no tail"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the probability of drawing a face card or an ace from a deck.",
+            "answer": "Face cards = 12, aces = 4. Total favourable cards = 16. Probability = 16/52 = 4/13.",
+            "answer_outline": [
+                "Face cards",
+                "Aces",
+                "Probability"
+            ],
+            "key_concepts": [
+                "face or ace"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the probability of drawing a card that is neither an ace nor a king.",
+            "answer": "Aces and kings = 8 cards. Remaining cards = 44. Probability = 44/52 = 11/13.",
+            "answer_outline": [
+                "Excluded cards",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "neither ace nor king"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the probability of getting a number less than 3 on a die.",
+            "answer": "Numbers less than 3 are 1 and 2. Probability = 2/6 = 1/3.",
+            "answer_outline": [
+                "Favourable outcomes",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "less than 3"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the probability of drawing a multiple of 3 from numbers 1 to 12.",
+            "answer": "Multiples of 3 are 3, 6, 9, and 12. Probability = 4/12 = 1/3.",
+            "answer_outline": [
+                "Multiples of 3",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "multiple of 3"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the probability of getting exactly one tail when three coins are tossed.",
+            "answer": "Favourable outcomes are THH, HTH, and HHT. Probability = 3/8.",
+            "answer_outline": [
+                "Sample space",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "exactly one tail"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the probability of drawing a black face card from a deck.",
+            "answer": "Black face cards are J, Q, K of spades and clubs (6 cards). Probability = 6/52 = 3/26.",
+            "answer_outline": [
+                "Black face cards",
+                "Probability"
+            ],
+            "key_concepts": [
+                "black face card"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the probability of getting a number divisible by 5 on a die.",
+            "answer": "Only number divisible by 5 on a die is 5. Probability = 1/6.",
+            "answer_outline": [
+                "Divisible by 5",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "divisible by 5"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the probability of getting at least one six when a die is thrown twice.",
+            "answer": "Probability = 1 − probability of no six = 1 − (5/6 × 5/6) = 11/36.",
+            "answer_outline": [
+                "Complement method",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "at least one six"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the probability of drawing a card numbered greater than 10 from 1 to 13.",
+            "answer": "Numbers greater than 10 are 11, 12, and 13. Probability = 3/13.",
+            "answer_outline": [
+                "Favourable numbers",
+                "Probability"
+            ],
+            "key_concepts": [
+                "greater than 10"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the probability of getting sum less than 4 when two dice are thrown.",
+            "answer": "Favourable outcomes are (1,1), (1,2), and (2,1). Probability = 3/36 = 1/12.",
+            "answer_outline": [
+                "Favourable outcomes",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "sum less than 4"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the probability of drawing a red face card from a deck of cards.",
+            "answer": "Red face cards are J, Q, K of hearts and diamonds (6 cards). Probability = 6/52 = 3/26.",
+            "answer_outline": [
+                "Red face cards",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "red face card"
+            ],
+            "marks": 5,
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Find the probability of getting all heads when a coin is tossed three times.",
+            "answer": "Only outcome is HHH. Probability = 1/8.",
+            "answer_outline": [
+                "Sample space",
+                "Result"
+            ],
+            "key_concepts": [
+                "all heads"
+            ],
+            "marks": 4,
+            "source_section": "14.1"
+        }
+    ]
+}

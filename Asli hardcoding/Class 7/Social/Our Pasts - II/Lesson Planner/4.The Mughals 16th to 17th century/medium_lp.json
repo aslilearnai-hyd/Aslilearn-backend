@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "The Mughals: 16th to 17th Century",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the dual lineage of the Mughals and why they celebrated their Timurid ancestry",
+        "Evaluate the military strategies and expansionist policies of the major Mughal emperors",
+        "Understand the structural functioning of the Mansabdari and Jagirdari systems",
+        "Explain the 'Zabt' revenue system and the role of Raja Todar Mal",
+        "Critically examine Abul Fazl’s 'Akbarnama' and 'Ain-i-Akbari' as historical sources",
+        "Analyze Akbar’s transition towards 'Sulh-i-kul' and the concept of universal peace",
+        "Discuss the socio-economic disparities and the eventual decentralization of the empire in the 17th century"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Origins and the Foundation of Empire",
+            "topics_covered": [
+                "Ancestry: Genghis Khan vs. Timur",
+                "The shift from Farghana to the conquest of Delhi (1526)",
+                "Comparison of Mughal attitudes towards their Mongol and Timurid roots"
+            ],
+            "teaching_strategy": [
+                "Comparative analysis: Why the Mughals distanced themselves from the term 'Mongol'",
+                "Visualizing the 1526 conquest through military maps",
+                "Discussion on the 'Primogeniture' vs. 'Coparcenary' inheritance systems"
+            ],
+            "student_activities": [
+                "Create a chart comparing the two lines of Mughal descent",
+                "Write a short response on why Timur was a source of pride for the Mughals"
+            ],
+            "assessment": [
+                "Short answer: Name the two major ancestors of the Mughals",
+                "Identifying the first capital of the Mughals in India"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Imperial Expansion and Military Traditions",
+            "topics_covered": [
+                "Chronology of the 'Big Six' (Babur to Aurangzeb)",
+                "Major military campaigns: Chits, Ahoms, and the Deccan",
+                "Mughal relations with other Indian rulers (Sisodia Rajputs)"
+            ],
+            "teaching_strategy": [
+                "Timeline mapping: Key battles and territorial gains",
+                "Discussion: The policy of including defeated rulers into the empire rather than humiliating them",
+                "Case Study: The challenge of the Marathas and the Deccan campaigns"
+            ],
+            "student_activities": [
+                "Mark the territories added by Akbar and Aurangzeb on separate blank maps",
+                "List the major military challenges faced during Jahangir and Shah Jahan’s reigns"
+            ],
+            "assessment": [
+                "Matching: Emperors and their significant military achievements",
+                "Explaining why the Mughals were successful in expanding their territory"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Mansabdari and Jagirdari Systems",
+            "topics_covered": [
+                "Definition of Mansabdar, Zat, and Sawar",
+                "The relationship between rank (Zat) and military responsibility (Sawar)",
+                "The revenue collection mechanism through Jagirs"
+            ],
+            "teaching_strategy": [
+                "Flowchart: Hierarchy of a Mansabdar (Rank -> Salary -> Cavalry)",
+                "Distinguishing between 'Jagirdars' and 'Muqtis' (Sultanate vs. Mughal)",
+                "Analysis of the increasing pressure on Jagirs in the late 17th century"
+            ],
+            "student_activities": [
+                "Simulate a Mansabdar's record: Calculate 'Sawar' requirements based on 'Zat' rank",
+                "Draft a short diary entry of a Mansabdar stationed far from their Jagir"
+            ],
+            "assessment": [
+                "Definitions: What are 'Zat' and 'Sawar'?",
+                "Short response: How was a Mansabdar paid for his services?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Revenue and Administration: Zabt and Zamindars",
+            "topics_covered": [
+                "Raja Todar Mal’s 10-year survey (1570-1580)",
+                "The Zabt system: Land classification and tax calculation",
+                "The role of Zamindars as powerful local intermediaries"
+            ],
+            "teaching_strategy": [
+                "Data Analysis: How 10-year averages were used to fix revenue",
+                "Discussion: Why Zabt was not possible in provinces like Gujarat and Bengal",
+                "Analyzing the power dynamic between the Emperor and the local Zamindar"
+            ],
+            "student_activities": [
+                "Create a table showing the types of land and crops taxed under the Zabt system",
+                "Discuss: 'How did Zamindars link the village to the empire?'"
+            ],
+            "assessment": [
+                "Defining 'Zabt' and identifying its creator",
+                "Explaining why revenue was collected primarily in cash"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Official Chronicles: The Akbarnama",
+            "topics_covered": [
+                "Abul Fazl’s three-volume work",
+                "Structure of the 'Ain-i-Akbari'",
+                "The use of statistics and cultural details in Mughal records"
+            ],
+            "teaching_strategy": [
+                "Reading excerpts: How Abul Fazl describes Akbar’s administration",
+                "Critical Thinking: Understanding the purpose of 'Court Histories'",
+                "Discussion on the 'Diversity' recorded in the Ain-i-Akbari"
+            ],
+            "student_activities": [
+                "List the three volumes of the Akbarnama and their contents",
+                "Research one specific administrative detail found in the Ain-i-Akbari"
+            ],
+            "assessment": [
+                "Identifying the author of the Akbarnama",
+                "Explaining why the 'Ain-i-Akbari' is a valuable source for historians"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Religious Policy and Sulh-i-Kul",
+            "topics_covered": [
+                "The Ibadat Khana at Fatehpur Sikri",
+                "Akbar's interactions with Ulama, Brahmanas, Jesuits, and Zoroastrians",
+                "The evolution of 'Sulh-i-Kul' (Universal Peace)"
+            ],
+            "teaching_strategy": [
+                "Inquiry: Why did Akbar move away from orthodox religious views?",
+                "Definition: The three pillars of Sulh-i-kul (Honesty, Justice, Peace)",
+                "Discussing the influence of Sulh-i-kul on the Taj Mahal and Mughal art"
+            ],
+            "student_activities": [
+                "Design a conceptual poster illustrating the principles of Sulh-i-kul",
+                "Compare Akbar’s religious policy with that of Aurangzeb (briefly)"
+            ],
+            "assessment": [
+                "Short answer: What does 'Sulh-i-kul' mean?",
+                "True/False: Did Sulh-i-kul promote discrimination against certain religions?"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "The Empire in the 17th Century and Beyond",
+            "topics_covered": [
+                "The peak of prosperity and the reality of peasant poverty",
+                "Nur Jahan’s influence in the court of Jahangir",
+                "The fragmentation of the empire into regional states"
+            ],
+            "teaching_strategy": [
+                "Analyzing the 17th-century wealth gap: Statistics of the Mansabdars",
+                "Discussion: How governors of provinces became independent rulers",
+                "Chapter Recap: Reviewing key terms (Zat, Sawar, Zabt, Sulh-i-kul)"
+            ],
+            "student_activities": [
+                "Analyze a pie chart of Mughal expenditure: Nobles vs. Peasants",
+                "Complete a summary mind map of the entire Mughal chapter"
+            ],
+            "assessment": [
+                "Unit Test (25 marks)",
+                "Short response: Why did the Mughal authority decline after the 17th century?"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Mughal Dynasty Genealogical Chart",
+        "Map of India showing the expansion of the Mughal Empire",
+        "Images of Mughal paintings and Fatehpur Sikri architecture",
+        "Comparison table: Jagirdars vs. Zamindars"
+    ],
+    "evaluation_methods": [
+        "Comparative analysis of revenue systems",
+        "Map identification of major Mughal provinces (Subas)",
+        "Short-answer definitions and objective quizzes",
+        "Project on the 'Ain-i-Akbari' statistics",
+        "Unit test performance"
+    ],
+    "teacher_tip": "Use the 'Zat' and 'Sawar' figures to explain the budget of the empire. When students see that a small number of nobles controlled most of the wealth, the eventual peasant rebellions make much more historical sense."
+}

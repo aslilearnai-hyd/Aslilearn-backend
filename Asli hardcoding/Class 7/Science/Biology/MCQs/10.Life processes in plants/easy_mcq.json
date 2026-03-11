@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Life Processes in Plants",
+  "generated_at": "2026-03-07T00:01:15",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The process by which green plants prepare their own food is called:",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Digestion"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis is the process used by plants to convert light energy into chemical energy (food).",
+      "difficulty": "easy",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Green plants are called ______ because they prepare their own food.",
+      "options": {
+        "A": "Heterotrophs",
+        "B": "Saprophytes",
+        "C": "Autotrophs",
+        "D": "Parasites"
+      },
+      "correct_answer": "C",
+      "explanation": "Organisms that make food themselves from simple substances are called autotrophs.",
+      "difficulty": "easy",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "The tiny pores present on the surface of leaves for gas exchange are called:",
+      "options": {
+        "A": "Vessels",
+        "B": "Stomata",
+        "C": "Chlorophyll",
+        "D": "Sap"
+      },
+      "correct_answer": "B",
+      "explanation": "Stomata are small openings on leaves surrounded by guard cells that allow $CO_2$ to enter and $O_2$ to exit.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "The green pigment present in leaves which captures solar energy is:",
+      "options": {
+        "A": "Hemoglobin",
+        "B": "Anthocyanin",
+        "C": "Chlorophyll",
+        "D": "Carotene"
+      },
+      "correct_answer": "C",
+      "explanation": "Chlorophyll helps leaves capture the energy of sunlight to prepare food.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which gas is taken in by plants from the atmosphere during photosynthesis?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Plants take in carbon dioxide through stomata to produce glucose.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is produced as a byproduct during photosynthesis?",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Oxygen",
+        "C": "Nitrogen",
+        "D": "Methane"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxygen is released into the atmosphere as a result of the photosynthetic process.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Mushrooms and yeast obtain nutrition from dead and decaying matter. They are called:",
+      "options": {
+        "A": "Autotrophs",
+        "B": "Saprophytes",
+        "C": "Insectivores",
+        "D": "Symbionts"
+      },
+      "correct_answer": "B",
+      "explanation": "Organisms which take in nutrients from dead and decaying matter are called saprophytes.",
+      "difficulty": "easy",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Cuscuta (Amarbel) is an example of a:",
+      "options": {
+        "A": "Host",
+        "B": "Saprophyte",
+        "C": "Parasite",
+        "D": "Autotroph"
+      },
+      "correct_answer": "C",
+      "explanation": "Cuscuta does not have chlorophyll and takes ready-made food from the plant on which it climbs.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Pitcher plant is an example of an:",
+      "options": {
+        "A": "Autotroph",
+        "B": "Insectivorous plant",
+        "C": "Saprophyte",
+        "D": "Alga"
+      },
+      "correct_answer": "B",
+      "explanation": "Insectivorous plants like the Pitcher plant trap and digest insects to fulfill their nitrogen requirements.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 10,
+      "question": "The ultimate source of energy for all living organisms is:",
+      "options": {
+        "A": "Water",
+        "B": "The Sun",
+        "C": "Wind",
+        "D": "Food"
+      },
+      "correct_answer": "B",
+      "explanation": "Solar energy is captured by plants and converted into food, which supports all life on Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 11,
+      "question": "In the absence of photosynthesis, there would be no ______ on Earth.",
+      "options": {
+        "A": "Water",
+        "B": "Soil",
+        "C": "Food",
+        "D": "Rocks"
+      },
+      "correct_answer": "C",
+      "explanation": "Since all animals depend directly or indirectly on plants, life would be impossible without photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Starch is a type of:",
+      "options": {
+        "A": "Protein",
+        "B": "Carbohydrate",
+        "C": "Fat",
+        "D": "Vitamin"
+      },
+      "correct_answer": "B",
+      "explanation": "Plants store their food in the form of starch, which is a complex carbohydrate.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Lichen is a symbiotic relationship between:",
+      "options": {
+        "A": "Fungus and Bacteria",
+        "B": "Alga and Fungus",
+        "C": "Plant and Animal",
+        "D": "Virus and Bacteria"
+      },
+      "correct_answer": "B",
+      "explanation": "In lichens, the alga provides food while the fungus provides shelter, water, and minerals.",
+      "difficulty": "easy",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Rhizobium bacteria provide ______ to leguminous plants.",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Nitrogen",
+        "C": "Water",
+        "D": "Chlorophyll"
+      },
+      "correct_answer": "B",
+      "explanation": "Rhizobium can take atmospheric nitrogen and convert it into a soluble form for the plant.",
+      "difficulty": "easy",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Water and minerals are transported to the leaves by the:",
+      "options": {
+        "A": "Stomata",
+        "B": "Vessels",
+        "C": "Chlorophyll",
+        "D": "Guard cells"
+      },
+      "correct_answer": "B",
+      "explanation": "Plants have pipe-like vessels (Xylem) that run through the roots, stem, and leaves to transport water.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 16,
+      "question": "The food factories of the plants are the:",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "C",
+      "explanation": "Photosynthesis occurs primarily in the leaves, where chlorophyll is present.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 17,
+      "question": "During photosynthesis, solar energy is converted into ______ energy.",
+      "options": {
+        "A": "Mechanical",
+        "B": "Chemical",
+        "C": "Electrical",
+        "D": "Nuclear"
+      },
+      "correct_answer": "B",
+      "explanation": "Solar energy is stored as chemical energy in the form of food (carbohydrates).",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which part of the plant helps in absorbing water and minerals from the soil?",
+      "options": {
+        "A": "Leaves",
+        "B": "Flowers",
+        "C": "Roots",
+        "D": "Fruit"
+      },
+      "correct_answer": "C",
+      "explanation": "Roots have root hairs that absorb water and minerals from the soil particles.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Iodine test is used to detect the presence of ______ in leaves.",
+      "options": {
+        "A": "Proteins",
+        "B": "Fats",
+        "C": "Starch",
+        "D": "Vitamins"
+      },
+      "correct_answer": "C",
+      "explanation": "Iodine turns blue-black when it comes in contact with starch.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "The organism that provides shelter and minerals to an alga in a lichen is:",
+      "options": {
+        "A": "A bacterium",
+        "B": "A fungus",
+        "C": "A moss",
+        "D": "A parasite"
+      },
+      "correct_answer": "B",
+      "explanation": "The fungus provides the physical structure and raw materials while the alga provides food.",
+      "difficulty": "easy",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Plants like Sundew and Venus flytrap are:",
+      "options": {
+        "A": "Saprophytes",
+        "B": "Insectivorous",
+        "C": "Parasites",
+        "D": "Autotrophs"
+      },
+      "correct_answer": "B",
+      "explanation": "These plants capture insects to supplement their nutrient requirements.",
+      "difficulty": "easy",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Slimy, green patches in ponds or stagnant water bodies are usually:",
+      "options": {
+        "A": "Fungi",
+        "B": "Algae",
+        "C": "Bacteria",
+        "D": "Viruses"
+      },
+      "correct_answer": "B",
+      "explanation": "Algae are green organisms that grow in water and can prepare their own food.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Nitrogen is essential for plants to synthesize:",
+      "options": {
+        "A": "Carbohydrates",
+        "B": "Proteins",
+        "C": "Water",
+        "D": "Oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Proteins are nitrogenous substances, and plants need nitrogen to build them.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Rhizobium bacteria are usually found in the roots of:",
+      "options": {
+        "A": "Wheat",
+        "B": "Paddy",
+        "C": "Gram and Peas",
+        "D": "Corn"
+      },
+      "correct_answer": "C",
+      "explanation": "Rhizobium lives in the root nodules of leguminous plants like gram, peas, and beans.",
+      "difficulty": "easy",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of these is NOT required for photosynthesis?",
+      "options": {
+        "A": "Chlorophyll",
+        "B": "Oxygen",
+        "C": "Water",
+        "D": "Carbon dioxide"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxygen is a product of photosynthesis, not a requirement for the process to occur.",
+      "difficulty": "easy",
+      "source_section": "Section 1.2"
+    }
+  ]
+}

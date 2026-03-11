@@ -1,0 +1,139 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Development 1",
+  "difficulty": "Medium",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Comparing Development Goals",
+      "objective": "To understand that different people have different development goals.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List development goals of a farmer, student, and businessperson.",
+        "Compare the goals and find similarities and differences.",
+        "Write a short conclusion."
+      ],
+      "learning_outcome": "Students understand that development goals vary based on individual needs.",
+      "evaluation": "Check relevance of goals listed and clarity of comparison."
+    },
+    {
+      "sl_no": 2,
+      "title": "Income vs Quality of Life Chart",
+      "objective": "To analyze income and non-income factors of development.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "Draw two columns: Income Factors and Non-Income Factors.",
+        "Fill each column with examples from the textbook.",
+        "Explain which factors are more important and why."
+      ],
+      "learning_outcome": "Students understand that development includes both income and quality of life aspects.",
+      "evaluation": "Assess accuracy of examples and explanation."
+    },
+    {
+      "sl_no": 3,
+      "title": "Per Capita Income Calculation",
+      "objective": "To calculate and interpret per capita income.",
+      "materials": "Calculator, notebook",
+      "steps": [
+        "Given total income and population of two countries, calculate per capita income.",
+        "Compare the results.",
+        "State one limitation of per capita income."
+      ],
+      "learning_outcome": "Students learn calculation and limitations of per capita income.",
+      "evaluation": "Check calculation accuracy and reasoning."
+    },
+    {
+      "sl_no": 4,
+      "title": "Human Development Index Table",
+      "objective": "To understand components of HDI.",
+      "materials": "Textbook, notebook",
+      "steps": [
+        "List the three components of HDI.",
+        "Collect HDI data of India and one developed country.",
+        "Compare and write two observations."
+      ],
+      "learning_outcome": "Students understand how HDI measures development.",
+      "evaluation": "Evaluate correctness of data and observations."
+    },
+    {
+      "sl_no": 5,
+      "title": "Local Public Facilities Study",
+      "objective": "To examine availability of public facilities in the area.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Survey five households about water, schools, hospitals.",
+        "Record responses in a table.",
+        "Suggest two improvements."
+      ],
+      "learning_outcome": "Students understand the importance of public facilities in development.",
+      "evaluation": "Check completeness of survey and suggestions."
+    },
+    {
+      "sl_no": 6,
+      "title": "Sustainable Development Poster with Explanation",
+      "objective": "To connect development with environmental protection.",
+      "materials": "Chart paper, colors",
+      "steps": [
+        "Draw a poster on sustainable development.",
+        "Add two practical examples (e.g., rainwater harvesting).",
+        "Explain the importance in 4-5 lines."
+      ],
+      "learning_outcome": "Students understand the need for sustainable development.",
+      "evaluation": "Assess relevance of examples and clarity of explanation."
+    },
+    {
+      "sl_no": 7,
+      "title": "State Comparison Graph",
+      "objective": "To compare development indicators between two states.",
+      "materials": "Graph paper, ruler, pencil",
+      "steps": [
+        "Collect literacy rate and per capita income of two states.",
+        "Draw a simple bar graph.",
+        "Write two conclusions from the graph."
+      ],
+      "learning_outcome": "Students develop data interpretation skills.",
+      "evaluation": "Check accuracy of graph and conclusions."
+    },
+    {
+      "sl_no": 8,
+      "title": "Case Study on Gender and Development",
+      "objective": "To analyze the role of gender equality in development.",
+      "materials": "Newspaper or textbook reference, notebook",
+      "steps": [
+        "Identify one example of gender inequality.",
+        "Explain how it affects development.",
+        "Suggest two solutions."
+      ],
+      "learning_outcome": "Students understand the link between gender equality and development.",
+      "evaluation": "Evaluate depth of explanation and practicality of solutions."
+    },
+    {
+      "sl_no": 9,
+      "title": "Economic Growth vs Development Analysis",
+      "objective": "To differentiate between economic growth and overall development.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Define economic growth and development.",
+        "List two differences between them.",
+        "Give one real-life example."
+      ],
+      "learning_outcome": "Students understand the difference between growth and development.",
+      "evaluation": "Check correctness of definitions and example."
+    },
+    {
+      "sl_no": 10,
+      "title": "Future Development Plan for Community",
+      "objective": "To apply development concepts to real-life planning.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "Identify three development problems in your community.",
+        "Suggest practical solutions.",
+        "Present the plan in class."
+      ],
+      "learning_outcome": "Students apply development ideas to real-world situations.",
+      "evaluation": "Assess feasibility of solutions and clarity of presentation."
+    }
+  ]
+}

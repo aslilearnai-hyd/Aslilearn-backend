@@ -1,0 +1,183 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Quadratic Equations",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse quadratic equations using discriminant and graphs",
+        "Solve complex equations using quadratic formula",
+        "Interpret nature of roots logically",
+        "Solve higher-order application and reasoning problems",
+        "Develop exam-oriented problem-solving strategies"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Concept Review",
+            "topics_covered": [
+                "Standard form",
+                "Nature of roots overview"
+            ],
+            "teaching_strategy": [
+                "Conceptual questioning",
+                "Case analysis"
+            ],
+            "student_activities": [
+                "Predict nature of roots",
+                "Justify reasoning"
+            ],
+            "assessment": [
+                "Oral reasoning questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Deep Analysis Using Discriminant",
+            "topics_covered": [
+                "Discriminant-based reasoning",
+                "Comparing equations"
+            ],
+            "teaching_strategy": [
+                "Worked reasoning examples",
+                "Comparison-based teaching"
+            ],
+            "student_activities": [
+                "Analyse discriminant values",
+                "Classify equations"
+            ],
+            "assessment": [
+                "Short analytical questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Quadratic Formula – Complex Cases",
+            "topics_covered": [
+                "Irrational roots",
+                "Non-factorisable equations"
+            ],
+            "teaching_strategy": [
+                "Step-by-step algebraic solving",
+                "Error analysis"
+            ],
+            "student_activities": [
+                "Solve complex equations",
+                "Verify solutions"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Graph-Based Reasoning",
+            "topics_covered": [
+                "Effect of coefficient a on graph",
+                "Link between graph and roots"
+            ],
+            "teaching_strategy": [
+                "Graph comparison",
+                "Visual reasoning"
+            ],
+            "student_activities": [
+                "Interpret graphs",
+                "Draw conclusions"
+            ],
+            "assessment": [
+                "Graph-based reasoning questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Higher-Order Word Problems",
+            "topics_covered": [
+                "Context-based problems",
+                "Interpretation of roots"
+            ],
+            "teaching_strategy": [
+                "Problem decomposition",
+                "Think–solve–explain approach"
+            ],
+            "student_activities": [
+                "Frame and solve problems",
+                "Explain solutions logically"
+            ],
+            "assessment": [
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Special and Edge Cases",
+            "topics_covered": [
+                "Equal roots",
+                "No real roots",
+                "Graph touching x-axis"
+            ],
+            "teaching_strategy": [
+                "Exception-based discussion",
+                "Concept reinforcement"
+            ],
+            "student_activities": [
+                "Identify special cases",
+                "Explain using discriminant"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Integrated HOTS Practice",
+            "topics_covered": [
+                "Board-exam oriented questions",
+                "Mixed difficulty problems"
+            ],
+            "teaching_strategy": [
+                "Worksheet-based practice",
+                "Teacher feedback"
+            ],
+            "student_activities": [
+                "Solve HOTS worksheet",
+                "Peer review"
+            ],
+            "assessment": [
+                "Worksheet evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Final Revision and Mock Assessment",
+            "topics_covered": [
+                "Complete chapter revision",
+                "Exam strategy"
+            ],
+            "teaching_strategy": [
+                "Rapid recap",
+                "Mock test discussion"
+            ],
+            "student_activities": [
+                "Attempt mock test",
+                "Analyse mistakes"
+            ],
+            "assessment": [
+                "Chapter test (20 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "Worksheets",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Reasoning-based questions",
+        "Written tests",
+        "Worksheet analysis",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Train students to rely on the discriminant for quick decision-making in board-level and HOTS questions."
+}

@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Metals and Non-metals",
+    "difficulty": "Easy",
+    "source_pdf": "jesc103.pdf",
+    "short_notes": {
+        "key_points": [
+            "Metals are elements that are generally hard, lustrous, malleable, and ductile.",
+            "Non-metals are elements that can be solids, liquids (Bromine), or gases and are generally poor conductors of heat and electricity.",
+            "Malleability is the property by which metals can be beaten into thin sheets.",
+            "Ductility is the property by which metals can be drawn into thin wires.",
+            "Metals are sonorous, meaning they produce a ringing sound when struck by a hard object."
+        ],
+        "examples": [
+            "Lustrous Metals: Gold and Silver are highly reflective and used in jewelry.",
+            "Best Conductors: Silver and Copper are excellent conductors of electricity.",
+            "Exception (Hardness): Sodium and Potassium are soft metals that can be cut with a knife.",
+            "Exception (State): Mercury is the only metal found in a liquid state at room temperature.",
+            "Non-metal conductor: Graphite (an allotrope of Carbon) is a good conductor of electricity."
+        ],
+        "formulas": [
+            "Metal Oxide formation: $Metal + Oxygen \rightarrow Metal\ Oxide$ (e.g., $2Cu + O_2 \rightarrow 2CuO$)",
+            "Metal + Water: $Metal + Water \rightarrow Metal\ Oxide + Hydrogen$ (followed by $Metal\ Hydroxide$ if soluble)",
+            "Metal + Acid: $Metal + Dilute\ Acid \rightarrow Salt + Hydrogen\ gas$"
+        ],
+        "exam_tips": [
+            "Remember that Iodine is a non-metal but it is lustrous (shiny).",
+            "Note that Diamond is the hardest natural substance known, even though it is a non-metal (Carbon).",
+            "Identify Magnesium as the metal that burns with a dazzling white flame to form Magnesium Oxide.",
+            "Be aware that most non-metals produce acidic oxides when dissolved in water, while metals produce basic oxides."
+        ]
+    }
+}

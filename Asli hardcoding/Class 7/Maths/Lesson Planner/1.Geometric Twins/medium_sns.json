@@ -1,0 +1,72 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Geometric Twins (Congruence)",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of correspondence in triangles",
+        "Apply SSS Congruence Criterion",
+        "Apply SAS Congruence Criterion",
+        "Apply ASA Congruence Criterion",
+        "Write congruence statements in correct vertex order"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Correspondence in Triangles",
+            "topics_covered": [
+                "Matching vertices, sides, and angles",
+                "Writing triangle names correctly (ABC ↔ PQR)",
+                "Importance of order in naming"
+            ],
+            "teaching_strategy": [
+                "Color-coded vertex matching on board",
+                "Guided notation practice"
+            ],
+            "student_activities": [
+                "List all 6 pairs of corresponding parts for given congruent triangles",
+                "Correct incorrectly named congruence statements"
+            ],
+            "assessment": [
+                "Quick check on vertex matching",
+                "Peer-to-peer naming drill"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "SSS and SAS Criteria",
+            "topics_covered": [
+                "Side-Side-Side (SSS) rule",
+                "Side-Angle-Side (SAS) rule",
+                "Identifying the 'Included Angle'"
+            ],
+            "teaching_strategy": [
+                "Comparative drawing",
+                "Criteria checklist method"
+            ],
+            "student_activities": [
+                "",
+                "Identify which pair of triangles are congruent using SSS or SAS from a worksheet",
+                "Draw triangles based on SAS data to see if they are identical"
+            ],
+            "assessment": [
+                "Problem-solving worksheet",
+                "Exit slip: 'Why is the angle in SAS called included?'"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Place value charts (for similarity comparison)",
+        "Triangle cut-outs with marked sides/angles",
+        "GeoGebra or digital geometry tools",
+        "NCERT Textbook"
+    ],
+    "evaluation_methods": [
+        "Structured worksheets",
+        "Board demonstrations by students",
+        "Short answer tests"
+    ],
+    "teacher_tip": "Emphasize that for SAS, if the angle is not between the two sides, the triangles might not be twins!"
+}

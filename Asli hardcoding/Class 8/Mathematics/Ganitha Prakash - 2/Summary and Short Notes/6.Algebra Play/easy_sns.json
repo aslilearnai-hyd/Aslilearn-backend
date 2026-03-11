@@ -1,0 +1,35 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Algebra Play",
+    "difficulty": "Easy",
+    "source_pdf": "hegp206.pdf",
+    "short_notes": {
+        "key_points": [
+            "Algebra uses letters such as x and y to represent unknown numbers",
+            "Variables help express patterns and relationships",
+            "Number tricks can be explained using algebraic expressions",
+            "Number pyramids follow the rule that each number equals the sum of the two numbers below",
+            "Calendar grids reveal patterns because numbers increase by 1 horizontally and by 7 vertically"
+        ],
+        "examples": [
+            "Variable example: If a number is x, its double is 2x",
+            "Number trick example: Think of a number x, double it and subtract x",
+            "Number pyramid example: Bottom row 2, 3, 4 → top number becomes 12",
+            "Calendar grid example: Numbers a, a+1, a+7, a+8"
+        ],
+        "formulas": [
+            "Two-digit number → 10a + b",
+            "Reverse of a two-digit number → 10b + a",
+            "Sum of number and reverse → 11(a + b)",
+            "Difference of number and reverse → 9(b − a)",
+            "Sum of 2×2 calendar grid → 4a + 16"
+        ],
+        "exam_tips": [
+            "Represent unknown numbers using variables",
+            "Write algebraic steps clearly while solving puzzles",
+            "Look for patterns before forming equations",
+            "Check arithmetic carefully when forming algebraic expressions"
+        ]
+    }
+}

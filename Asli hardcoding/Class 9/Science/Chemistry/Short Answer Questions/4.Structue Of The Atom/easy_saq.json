@@ -1,0 +1,157 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Structure of the Atom",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who discovered the electron?",
+      "options": ["J.J. Thomson", "Ernest Rutherford", "Niels Bohr", "James Chadwick"],
+      "answer": "J.J. Thomson"
+    },
+    {
+      "question_number": 2,
+      "question": "Who discovered the proton?",
+      "options": ["J.J. Thomson", "Ernest Rutherford", "Niels Bohr", "Dalton"],
+      "answer": "Ernest Rutherford"
+    },
+    {
+      "question_number": 3,
+      "question": "Who discovered the neutron?",
+      "options": ["James Chadwick", "Rutherford", "Bohr", "Thomson"],
+      "answer": "James Chadwick"
+    },
+    {
+      "question_number": 4,
+      "question": "The charge of an electron is:",
+      "options": ["Positive", "Negative", "Neutral", "Both positive and negative"],
+      "answer": "Negative"
+    },
+    {
+      "question_number": 5,
+      "question": "The charge of a proton is:",
+      "options": ["Positive", "Negative", "Neutral", "Variable"],
+      "answer": "Positive"
+    },
+    {
+      "question_number": 6,
+      "question": "Neutrons have:",
+      "options": ["Positive charge", "Negative charge", "No charge", "Double charge"],
+      "answer": "No charge"
+    },
+    {
+      "question_number": 7,
+      "question": "The center of an atom is called:",
+      "options": ["Orbit", "Shell", "Nucleus", "Valence"],
+      "answer": "Nucleus"
+    },
+    {
+      "question_number": 8,
+      "question": "Most of the mass of an atom is present in:",
+      "options": ["Electron", "Nucleus", "Orbit", "Shell"],
+      "answer": "Nucleus"
+    },
+    {
+      "question_number": 9,
+      "question": "Electrons revolve around the nucleus in:",
+      "options": ["Shells", "Neutrons", "Protons", "Molecules"],
+      "answer": "Shells"
+    },
+    {
+      "question_number": 10,
+      "question": "The maximum number of electrons in K shell is:",
+      "options": ["2", "8", "18", "32"],
+      "answer": "2"
+    },
+    {
+      "question_number": 11,
+      "question": "The maximum number of electrons in L shell is:",
+      "options": ["2", "8", "18", "32"],
+      "answer": "8"
+    },
+    {
+      "question_number": 12,
+      "question": "Atomic number represents the number of:",
+      "options": ["Protons", "Neutrons", "Electrons", "Shells"],
+      "answer": "Protons"
+    },
+    {
+      "question_number": 13,
+      "question": "Mass number is equal to:",
+      "options": ["Protons + Electrons", "Protons + Neutrons", "Neutrons + Electrons", "Only neutrons"],
+      "answer": "Protons + Neutrons"
+    },
+    {
+      "question_number": 14,
+      "question": "Atoms with the same atomic number but different mass numbers are called:",
+      "options": ["Isobars", "Isotopes", "Ions", "Molecules"],
+      "answer": "Isotopes"
+    },
+    {
+      "question_number": 15,
+      "question": "Atoms with same mass number but different atomic numbers are called:",
+      "options": ["Isotopes", "Isobars", "Ions", "Radicals"],
+      "answer": "Isobars"
+    },
+    {
+      "question_number": 16,
+      "question": "The atomic number of carbon is:",
+      "options": ["6", "12", "14", "8"],
+      "answer": "6"
+    },
+    {
+      "question_number": 17,
+      "question": "An atom becomes positively charged when it:",
+      "options": ["Gains electrons", "Loses electrons", "Gains neutrons", "Loses protons"],
+      "answer": "Loses electrons"
+    },
+    {
+      "question_number": 18,
+      "question": "An atom becomes negatively charged when it:",
+      "options": ["Gains electrons", "Loses electrons", "Loses neutrons", "Gains protons"],
+      "answer": "Gains electrons"
+    },
+    {
+      "question_number": 19,
+      "question": "Charged atoms are called:",
+      "options": ["Isotopes", "Ions", "Molecules", "Compounds"],
+      "answer": "Ions"
+    },
+    {
+      "question_number": 20,
+      "question": "The first shell of an atom is called:",
+      "options": ["K shell", "L shell", "M shell", "N shell"],
+      "answer": "K shell"
+    },
+    {
+      "question_number": 21,
+      "question": "The second shell of an atom is called:",
+      "options": ["K shell", "L shell", "M shell", "N shell"],
+      "answer": "L shell"
+    },
+    {
+      "question_number": 22,
+      "question": "The scientist who proposed the planetary model of the atom was:",
+      "options": ["Rutherford", "Dalton", "Bohr", "Chadwick"],
+      "answer": "Rutherford"
+    },
+    {
+      "question_number": 23,
+      "question": "Bohr’s model explains:",
+      "options": ["Electron shells", "Proton movement", "Neutron discovery", "Atomic mass"],
+      "answer": "Electron shells"
+    },
+    {
+      "question_number": 24,
+      "question": "The number of electrons in a neutral atom equals the number of:",
+      "options": ["Protons", "Neutrons", "Shells", "Orbits"],
+      "answer": "Protons"
+    },
+    {
+      "question_number": 25,
+      "question": "Hydrogen has how many electrons?",
+      "options": ["1", "2", "3", "4"],
+      "answer": "1"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Area",
+  "generated_at": "2026-03-04T20:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A triangle has area 60 cm² and base 10 cm. What is its height?",
+      "options": {
+        "A": "12 cm",
+        "B": "10 cm",
+        "C": "6 cm",
+        "D": "8 cm"
+      },
+      "correct_answer": "A",
+      "explanation": "60 = ½ × 10 × h → h = 12 cm.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 2,
+      "question": "A parallelogram has area 96 cm² and base 12 cm. Its height is:",
+      "options": {
+        "A": "6 cm",
+        "B": "8 cm",
+        "C": "10 cm",
+        "D": "12 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "Height = area ÷ base = 96 ÷ 12 = 8 cm.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 3,
+      "question": "The diagonals of a rhombus are 24 cm and 10 cm. Find the area.",
+      "options": {
+        "A": "120 cm²",
+        "B": "240 cm²",
+        "C": "200 cm²",
+        "D": "100 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = ½ × 24 × 10 = 120 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 4,
+      "question": "A trapezium has parallel sides 16 cm and 10 cm with height 8 cm. What is the area?",
+      "options": {
+        "A": "96 cm²",
+        "B": "104 cm²",
+        "C": "120 cm²",
+        "D": "80 cm²"
+      },
+      "correct_answer": "B",
+      "explanation": "Area = ½ × 8 × (16 + 10) = 104 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 5,
+      "question": "A rectangle has area 144 cm² and width 12 cm. What is its length?",
+      "options": {
+        "A": "12 cm",
+        "B": "10 cm",
+        "C": "14 cm",
+        "D": "16 cm"
+      },
+      "correct_answer": "A",
+      "explanation": "Length = area ÷ width = 144 ÷ 12 = 12 cm.",
+      "difficulty": "hard",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 6,
+      "question": "If the diagonals of a rhombus are doubled, the area becomes:",
+      "options": {
+        "A": "Double",
+        "B": "Four times",
+        "C": "Same",
+        "D": "Half"
+      },
+      "correct_answer": "B",
+      "explanation": "Area ∝ d1 × d2. Doubling both diagonals makes area four times.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 7,
+      "question": "If the base of a triangle is doubled and height remains the same, the area becomes:",
+      "options": {
+        "A": "Double",
+        "B": "Half",
+        "C": "Four times",
+        "D": "Same"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = ½ × base × height. Doubling base doubles area.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Area of trapezium with parallel sides 20 cm and 14 cm and height 8 cm:",
+      "options": {
+        "A": "136 cm²",
+        "B": "120 cm²",
+        "C": "112 cm²",
+        "D": "96 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = ½ × 8 × (20+14) = 136 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 9,
+      "question": "A square has perimeter 32 cm. What is its area?",
+      "options": {
+        "A": "64 cm²",
+        "B": "36 cm²",
+        "C": "49 cm²",
+        "D": "81 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Side = 32 ÷ 4 = 8 → area = 8² = 64 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Area of triangle with base 18 cm and height 11 cm:",
+      "options": {
+        "A": "198 cm²",
+        "B": "99 cm²",
+        "C": "88 cm²",
+        "D": "120 cm²"
+      },
+      "correct_answer": "B",
+      "explanation": "Area = ½ × 18 × 11 = 99 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 11,
+      "question": "If the area of parallelogram is 84 cm² and height is 7 cm, base is:",
+      "options": {
+        "A": "10 cm",
+        "B": "12 cm",
+        "C": "14 cm",
+        "D": "16 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "Base = 84 ÷ 7 = 12 cm.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Area of rhombus with diagonals 30 cm and 12 cm:",
+      "options": {
+        "A": "180 cm²",
+        "B": "150 cm²",
+        "C": "210 cm²",
+        "D": "120 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 30 × 12 = 180 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Area of trapezium with parallel sides 15 cm and 9 cm and height 8 cm:",
+      "options": {
+        "A": "96 cm²",
+        "B": "120 cm²",
+        "C": "72 cm²",
+        "D": "84 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 8 × (15+9) = 96 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Area of rectangle with length 18 cm and width 7 cm:",
+      "options": {
+        "A": "126 cm²",
+        "B": "98 cm²",
+        "C": "110 cm²",
+        "D": "140 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = 18 × 7 = 126 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Area of triangle with base 22 cm and height 10 cm:",
+      "options": {
+        "A": "220 cm²",
+        "B": "110 cm²",
+        "C": "100 cm²",
+        "D": "120 cm²"
+      },
+      "correct_answer": "B",
+      "explanation": "½ × 22 × 10 = 110 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Area of parallelogram with base 14 cm and height 13 cm:",
+      "options": {
+        "A": "182 cm²",
+        "B": "168 cm²",
+        "C": "190 cm²",
+        "D": "200 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = 14 × 13 = 182 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Area of rhombus with diagonals 40 cm and 16 cm:",
+      "options": {
+        "A": "320 cm²",
+        "B": "280 cm²",
+        "C": "300 cm²",
+        "D": "360 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 40 × 16 = 320 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Area of trapezium with parallel sides 18 cm and 12 cm and height 10 cm:",
+      "options": {
+        "A": "150 cm²",
+        "B": "120 cm²",
+        "C": "140 cm²",
+        "D": "160 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 10 × (18+12) = 150 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Area of square with side 15 cm:",
+      "options": {
+        "A": "225 cm²",
+        "B": "200 cm²",
+        "C": "210 cm²",
+        "D": "240 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = side² = 15² = 225 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Area of triangle if base is 25 cm and height is 12 cm:",
+      "options": {
+        "A": "300 cm²",
+        "B": "150 cm²",
+        "C": "200 cm²",
+        "D": "180 cm²"
+      },
+      "correct_answer": "B",
+      "explanation": "½ × 25 × 12 = 150 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Area of parallelogram with base 20 cm and height 9 cm:",
+      "options": {
+        "A": "180 cm²",
+        "B": "160 cm²",
+        "C": "200 cm²",
+        "D": "190 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = 20 × 9 = 180 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Area of rhombus with diagonals 26 cm and 18 cm:",
+      "options": {
+        "A": "234 cm²",
+        "B": "200 cm²",
+        "C": "260 cm²",
+        "D": "300 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 26 × 18 = 234 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Area of trapezium with sides 24 cm and 10 cm and height 6 cm:",
+      "options": {
+        "A": "102 cm²",
+        "B": "90 cm²",
+        "C": "96 cm²",
+        "D": "120 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "½ × 6 × (24+10) = 102 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Area of rectangle with length 22 cm and width 8 cm:",
+      "options": {
+        "A": "176 cm²",
+        "B": "160 cm²",
+        "C": "180 cm²",
+        "D": "168 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "Area = 22 × 8 = 176 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Area of triangle with base 30 cm and height 14 cm:",
+      "options": {
+        "A": "420 cm²",
+        "B": "210 cm²",
+        "C": "180 cm²",
+        "D": "240 cm²"
+      },
+      "correct_answer": "B",
+      "explanation": "½ × 30 × 14 = 210 cm².",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    }
+  ]
+}

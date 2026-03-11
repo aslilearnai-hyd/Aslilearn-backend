@@ -1,0 +1,138 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Travel",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the story ‘Travel’ and its main events",
+    "Identify the narrator and other characters",
+    "Learn about different modes of travel",
+    "Recognize simple lessons about planning and exploration",
+    "Develop reading comprehension and vocabulary skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Travel",
+      "topics_covered": [
+        "What travel means",
+        "Different modes of travel",
+        "Introduction of the narrator"
+      ],
+      "teaching_strategy": [
+        "Class discussion on students’ travel experiences",
+        "Teacher explains modes of travel"
+      ],
+      "student_activities": [
+        "Share experiences of a short trip or travel",
+        "Predict what the story might involve"
+      ],
+      "assessment": ["Oral questioning", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "Reading the Beginning",
+      "topics_covered": [
+        "Introduction of the journey",
+        "The narrator’s plan for travel",
+        "Other characters in the story"
+      ],
+      "teaching_strategy": [
+        "Guided reading",
+        "Explain simple vocabulary"
+      ],
+      "student_activities": [
+        "Read the first few paragraphs",
+        "List the characters and describe them briefly"
+      ],
+      "assessment": ["Comprehension questions", "Character identification"]
+    },
+    {
+      "period": 3,
+      "title": "Journey Details",
+      "topics_covered": [
+        "Description of places visited",
+        "Experiences during travel",
+        "Challenges faced"
+      ],
+      "teaching_strategy": [
+        "Discussion about different travel experiences",
+        "Teacher asks students to visualize journey"
+      ],
+      "student_activities": [
+        "Draw a simple map of the journey",
+        "Write 3–4 sentences about the journey"
+      ],
+      "assessment": ["Map accuracy", "Written sentences"]
+    },
+    {
+      "period": 4,
+      "title": "Problem Solving and Teamwork",
+      "topics_covered": [
+        "Challenges during the travel",
+        "Teamwork or planning used to overcome problems"
+      ],
+      "teaching_strategy": [
+        "Guided discussion on problem-solving",
+        "Ask students to imagine solutions"
+      ],
+      "student_activities": [
+        "Role-play a travel problem scenario",
+        "Explain how the problem could be solved"
+      ],
+      "assessment": ["Role-play performance", "Short answers"]
+    },
+    {
+      "period": 5,
+      "title": "Lessons and Reflections",
+      "topics_covered": [
+        "What the narrator learned from the travel",
+        "Moral and takeaways of the story"
+      ],
+      "teaching_strategy": [
+        "Discussion about lessons learned",
+        "Teacher highlights key points"
+      ],
+      "student_activities": [
+        "Write the moral of the story",
+        "Share personal reflections on travel"
+      ],
+      "assessment": ["Short paragraph writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Revision",
+      "topics_covered": [
+        "New vocabulary",
+        "Compound words",
+        "Conditional sentences"
+      ],
+      "teaching_strategy": [
+        "Grammar exercises from textbook",
+        "Revision quiz"
+      ],
+      "student_activities": [
+        "Form compound words from the list",
+        "Complete conditional sentences related to travel"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Travel map chart",
+    "Printed vocabulary and exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Role play activities",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to share personal travel experiences and relate them to the story events."
+}

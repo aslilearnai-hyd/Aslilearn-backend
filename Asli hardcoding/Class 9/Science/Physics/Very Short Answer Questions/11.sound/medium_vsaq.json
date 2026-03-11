@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 11: Sound",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why sound travels faster in solids than in air.",
+      "answer": "Particles in solids are closer, so vibrations transmit faster, making sound travel faster in solids.",
+      "key_points": ["solids", "sound speed", "particle density"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Why does sound need a medium to propagate?",
+      "answer": "Sound is a mechanical wave; it requires particles of a medium to vibrate and transmit energy.",
+      "key_points": ["medium", "mechanical wave", "sound"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Define reflection of sound.",
+      "answer": "Reflection of sound is the bouncing back of sound waves from a surface without loss of energy.",
+      "key_points": ["reflection", "sound", "surface"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do we hear an echo clearly only if the reflecting surface is at least 17 m away?",
+      "answer": "Sound travels 343 m/s; for a delay of 0.1 s (minimum for human ear to distinguish), distance should be ≥ 17 m.",
+      "key_points": ["echo", "distance", "sound speed"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the relation between wavelength, frequency, and speed of sound?",
+      "answer": "Speed of sound (v) = Frequency (f) × Wavelength (λ).",
+      "key_points": ["sound", "speed", "frequency", "wavelength"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 6,
+      "question": "How does temperature affect the speed of sound in air?",
+      "answer": "Higher air temperature increases particle vibration speed, thus increasing the speed of sound.",
+      "key_points": ["temperature", "sound speed", "air"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does sound become fainter as we move away from the source?",
+      "answer": "Energy spreads over larger area; intensity decreases, so sound becomes fainter.",
+      "key_points": ["distance", "intensity", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the difference between audible sound, ultrasound, and infrasound?",
+      "answer": "Audible: 20 Hz–20,000 Hz, Ultrasound: >20,000 Hz, Infrasound: <20 Hz.",
+      "key_points": ["audible sound", "ultrasound", "infrasound", "frequency ranges"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why a musical instrument produces a sound of definite pitch.",
+      "answer": "Definite frequency of vibration of the instrument produces sound of definite pitch.",
+      "key_points": ["musical instrument", "frequency", "pitch"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Define intensity of sound.",
+      "answer": "Intensity is the sound energy transmitted per unit area per second perpendicular to the direction of propagation.",
+      "key_points": ["intensity", "sound", "energy per unit area"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 11,
+      "question": "How does amplitude of vibration affect loudness?",
+      "answer": "Greater amplitude → more energy → louder sound.",
+      "key_points": ["amplitude", "loudness", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are echoes not heard clearly in a small room?",
+      "answer": "Reflections reach the ear too quickly; the delay is less than 0.1 s, so echo is not distinguishable.",
+      "key_points": ["echo", "small room", "reflection delay"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain reverberation in auditoriums.",
+      "answer": "Multiple reflections of sound cause it to persist after source stops; design uses sound-absorbing materials to reduce it.",
+      "key_points": ["reverberation", "reflection", "auditorium"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do bats use ultrasound?",
+      "answer": "Bats use ultrasound for echolocation to navigate and locate prey in the dark.",
+      "key_points": ["bats", "ultrasound", "echolocation"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the function of the human ear in hearing sound?",
+      "answer": "The ear detects vibrations in the air, converts them into electrical signals, and sends them to the brain.",
+      "key_points": ["ear", "hearing", "vibration detection"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why sound cannot travel in vacuum.",
+      "answer": "Vacuum has no particles to transmit vibrations, so mechanical waves like sound cannot propagate.",
+      "key_points": ["vacuum", "sound", "no medium"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Why do metals sound louder than wood when struck?",
+      "answer": "Metals are denser and transmit vibrations faster with less energy loss, producing louder sound.",
+      "key_points": ["metal", "loudness", "vibration transmission"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the audible range of the human ear?",
+      "answer": "20 Hz to 20,000 Hz.",
+      "key_points": ["audible range", "human ear", "frequency"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Why does a guitar string produce different notes when plucked at different lengths?",
+      "answer": "Effective length changes frequency of vibration; shorter length → higher frequency → higher pitch.",
+      "key_points": ["guitar", "string length", "frequency", "pitch"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 20,
+      "question": "How do noise-cancelling headphones reduce unwanted sound?",
+      "answer": "They produce sound waves of same amplitude but opposite phase to cancel external noise.",
+      "key_points": ["noise-cancelling", "phase", "sound cancellation"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Define wavelength of sound wave.",
+      "answer": "Distance between two consecutive compressions or rarefactions in a sound wave.",
+      "key_points": ["wavelength", "sound wave", "compression", "rarefaction"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the relationship between pitch and frequency?",
+      "answer": "Higher frequency → higher pitch, Lower frequency → lower pitch.",
+      "key_points": ["pitch", "frequency", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Why do sound waves bend around obstacles?",
+      "answer": "Diffraction allows sound waves to bend around obstacles or pass through openings.",
+      "key_points": ["diffraction", "sound", "obstacles"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Give one application of ultrasound in industry.",
+      "answer": "Ultrasound is used to detect cracks in metals (non-destructive testing).",
+      "key_points": ["ultrasound", "industry", "non-destructive testing"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Why does the sound of a bell become fainter with distance?",
+      "answer": "Sound energy spreads over a larger area and some energy is absorbed by air, decreasing intensity.",
+      "key_points": ["bell", "sound intensity", "distance"],
+      "source_section": "Section 11.4"
+    }
+  ]
+}

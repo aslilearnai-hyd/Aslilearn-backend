@@ -1,0 +1,44 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Motion",
+    "difficulty": "Hard",
+    "source_pdf": "s9_7.pdf",
+    "short_notes": {
+        "key_points": [
+            "Motion is always relative and depends on the chosen frame of reference",
+            "Displacement can be positive, negative or zero depending on direction",
+            "Uniform circular motion involves constant speed but continuously changing velocity",
+            "Acceleration can occur even when speed remains constant if direction changes",
+            "Equations of motion apply only when acceleration is uniform",
+            "Distance–time graphs help determine speed through slope analysis",
+            "Velocity–time graphs help determine both acceleration and displacement",
+            "Free falling objects experience constant acceleration due to gravity",
+            "Vector quantities like velocity and acceleration require both magnitude and direction",
+            "Graphical analysis is a powerful method to study and interpret motion"
+        ],
+        "examples": [
+            "Example of zero displacement but non-zero distance: Completing one full round on a circular track",
+            "Example of uniform circular motion: Motion of Earth around the Sun",
+            "Example of acceleration due to direction change: Car turning around a curved road",
+            "Example of free fall motion: A stone dropped from a building",
+            "Example of constant acceleration: Object falling under gravity",
+            "Example of graph interpretation: Triangular area under velocity-time graph giving displacement"
+        ],
+        "formulas": [
+            "Speed = Distance / Time",
+            "Velocity = Displacement / Time",
+            "Acceleration = (v − u) / t",
+            "v = u + at",
+            "s = ut + ½at²",
+            "v² − u² = 2as"
+        ],
+        "exam_tips": [
+            "Identify the type of motion before selecting formulas",
+            "Remember that circular motion always involves acceleration",
+            "Use velocity-time graph area to calculate displacement",
+            "Check units carefully when converting km/h to m/s",
+            "Practice solving numerical problems using equations of motion"
+        ]
+    }
+}

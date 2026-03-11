@@ -1,0 +1,366 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Introduction to Trigonometry",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-01T22:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define trigonometry and explain its basic idea.",
+            "answer": "Trigonometry is a branch of mathematics that deals with the study of relationships between the sides and angles of a right-angled triangle. It helps in finding unknown sides or angles when some information is given.",
+            "answer_outline": [
+                "Definition of trigonometry",
+                "Right-angled triangle",
+                "Purpose of trigonometry"
+            ],
+            "key_concepts": [
+                "trigonometry"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain what is meant by a right-angled triangle.",
+            "answer": "A right-angled triangle is a triangle in which one of the angles is equal to 90°. The side opposite the right angle is called the hypotenuse.",
+            "answer_outline": [
+                "Definition",
+                "Right angle",
+                "Hypotenuse"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define hypotenuse, opposite side and adjacent side with respect to an angle.",
+            "answer": "In a right triangle, the hypotenuse is the side opposite the right angle. With respect to a given acute angle, the side opposite to it is called the opposite side and the side next to it (excluding hypotenuse) is called the adjacent side.",
+            "answer_outline": [
+                "Hypotenuse",
+                "Opposite side",
+                "Adjacent side"
+            ],
+            "key_concepts": [
+                "triangle sides"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Define sin A, cos A and tan A.",
+            "answer": "Sin A is the ratio of opposite side to hypotenuse, cos A is the ratio of adjacent side to hypotenuse and tan A is the ratio of opposite side to adjacent side.",
+            "answer_outline": [
+                "Definition of sin A",
+                "Definition of cos A",
+                "Definition of tan A"
+            ],
+            "key_concepts": [
+                "sin",
+                "cos",
+                "tan"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the six trigonometric ratios.",
+            "answer": "The six trigonometric ratios are sin A, cos A, tan A, cosec A, sec A and cot A. The last three are reciprocals of the first three.",
+            "answer_outline": [
+                "Three basic ratios",
+                "Three reciprocal ratios",
+                "Meaning of each"
+            ],
+            "key_concepts": [
+                "trigonometric ratios"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the value of sin 30° and explain.",
+            "answer": "The value of sin 30° is 1/2, obtained using a right-angled triangle.",
+            "answer_outline": [
+                "Standard angle",
+                "Triangle method"
+            ],
+            "key_concepts": [
+                "sin 30"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the value of cos 60° and explain.",
+            "answer": "The value of cos 60° is 1/2.",
+            "answer_outline": [
+                "Standard angle",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "cos 60"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the value of tan 45°.",
+            "answer": "The value of tan 45° is 1.",
+            "answer_outline": [
+                "Standard angle",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "tan 45"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why sin 0° = 0.",
+            "answer": "At 0°, the opposite side becomes zero, hence sin 0° = 0.",
+            "answer_outline": [
+                "Opposite side",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "sin 0"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why cos 90° = 0.",
+            "answer": "At 90°, the adjacent side becomes zero, hence cos 90° = 0.",
+            "answer_outline": [
+                "Adjacent side",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "cos 90"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "State and explain the identity sin²A + cos²A = 1.",
+            "answer": "This identity is derived using Pythagoras theorem in a right triangle.",
+            "answer_outline": [
+                "Statement",
+                "Pythagoras theorem"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why tan 90° is not defined.",
+            "answer": "At 90°, the adjacent side becomes zero, making the ratio undefined.",
+            "answer_outline": [
+                "Adjacent side zero",
+                "Undefined"
+            ],
+            "key_concepts": [
+                "tan 90"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why cot 0° is not defined.",
+            "answer": "At 0°, the opposite side becomes zero, hence cot 0° is undefined.",
+            "answer_outline": [
+                "Opposite side zero",
+                "Undefined"
+            ],
+            "key_concepts": [
+                "cot 0"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the concept of standard angles.",
+            "answer": "Standard angles are angles like 0°, 30°, 45°, 60° and 90° whose trigonometric values are fixed.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "standard angles"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why trigonometric ratios depend only on angles.",
+            "answer": "Trigonometric ratios are the same for all similar triangles and hence depend only on angles.",
+            "answer_outline": [
+                "Similar triangles",
+                "Constant ratios"
+            ],
+            "key_concepts": [
+                "similarity"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the reciprocal trigonometric ratios.",
+            "answer": "Cosec, sec and cot are reciprocals of sin, cos and tan respectively.",
+            "answer_outline": [
+                "Definition",
+                "Relations"
+            ],
+            "key_concepts": [
+                "reciprocal ratios"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the value of sec 0°.",
+            "answer": "sec 0° = 1.",
+            "answer_outline": [
+                "Cos 0°",
+                "Reciprocal"
+            ],
+            "key_concepts": [
+                "sec 0"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the value of cosec 90°.",
+            "answer": "cosec 90° = 1.",
+            "answer_outline": [
+                "Sin 90°",
+                "Reciprocal"
+            ],
+            "key_concepts": [
+                "cosec 90"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the use of trigonometry in daily life.",
+            "answer": "Trigonometry is used in height and distance problems, astronomy, navigation and engineering.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain Pythagoras theorem.",
+            "answer": "In a right triangle, the square of hypotenuse equals the sum of squares of the other two sides.",
+            "answer_outline": [
+                "Statement",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "pythagoras"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why tan A = sin A / cos A.",
+            "answer": "By definition, tan A = opposite/adjacent = (opposite/hypotenuse)/(adjacent/hypotenuse).",
+            "answer_outline": [
+                "Definition",
+                "Relation"
+            ],
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the meaning of an acute angle.",
+            "answer": "An acute angle is an angle less than 90°.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "acute angle"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why sin 90° = 1.",
+            "answer": "At 90°, the opposite side equals the hypotenuse.",
+            "answer_outline": [
+                "Opposite side",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "sin 90"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why cos 0° = 1.",
+            "answer": "At 0°, the adjacent side equals the hypotenuse.",
+            "answer_outline": [
+                "Adjacent side",
+                "Ratio"
+            ],
+            "key_concepts": [
+                "cos 0"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of trigonometric identities.",
+            "answer": "They help in simplifying expressions and solving trigonometric problems.",
+            "answer_outline": [
+                "Definition",
+                "Use"
+            ],
+            "key_concepts": [
+                "identities"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        }
+    ]
+}

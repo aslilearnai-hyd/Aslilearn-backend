@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "The Baudhāyana-Pythagoras Theorem",
+  "difficulty": "Hard",
+  "source_pdf": "hegp202.pdf",
+  "short_notes": {
+    "key_points": [
+      "The theorem helps determine unknown sides of right triangles",
+      "The diagonal of rectangles and squares can be derived using the theorem",
+      "Many geometric constructions rely on right triangle relationships",
+      "Pythagorean triples can be scaled to create larger right triangles",
+      "The theorem is widely used in geometry, engineering, and construction"
+    ],
+    "examples": [
+      "Ladder problem: ladder 13 m long placed 5 m from wall reaches height 12 m",
+      "Rectangle with sides 20 and 21 has diagonal 29",
+      "Right triangle verification: 20² + 48² = 52²",
+      "Square with area 200 → side √200 → diagonal 20"
+    ],
+    "formulas": [
+      "Hypotenuse calculation → c = √(a² + b²)",
+      "Missing side → a = √(c² − b²)",
+      "Diagonal of rectangle → √(l² + b²)"
+    ],
+    "exam_tips": [
+      "Use the theorem to verify if a triangle is right-angled",
+      "Apply algebra carefully when finding missing sides",
+      "Draw a diagram for real-life problems like ladders and heights",
+      "Simplify square roots whenever possible"
+    ]
+  }
+}

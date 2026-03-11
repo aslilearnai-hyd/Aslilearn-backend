@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Connecting the Dots",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T01:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The mean of 20 observations is 15. If one observation 20 is replaced by 40, find the new mean.",
+            "answer": "Original sum = 20 * 15 = 300. New sum = 300 - 20 + 40 = 320. New mean = 320 / 20 = 16.",
+            "key_concepts": ["mean substitution"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "A bag contains 5 red, 8 white, and 7 black balls. A ball is drawn at random. Find the probability that it is neither red nor white.",
+            "answer": "Neither red nor white means black. Total balls = 20. Probability = 7/20.",
+            "key_concepts": ["probability of 'neither/nor'"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 3,
+            "question": "The mean of 5 numbers is 27. If one number is excluded, their mean becomes 25. Find the excluded number.",
+            "answer": "Sum of 5 numbers = 135. Sum of 4 numbers = 100. Excluded number = 135 - 100 = 35.",
+            "key_concepts": ["excluded value mean"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the median of the data: 19, 25, 59, 48, 35, 31, 30, 32, 51. If 25 is replaced by 52, what will be the new median?",
+            "answer": "Original ordered: 19, 25, 30, 31, 32, 35, 48, 51, 59. Median = 32. New ordered: 19, 30, 31, 32, 35, 48, 51, 52, 59. New median = 35.",
+            "key_concepts": ["median sensitivity to values"],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 5,
+            "question": "The mean of 100 observations was found to be 40. Later on, it was discovered that three observations 43, 35, and 27 were wrongly recorded as 83, 45, and 32. Find the correct mean.",
+            "answer": "Sum = 4000. Correct sum = 4000 - (83+45+32) + (43+35+27) = 4000 - 160 + 105 = 3945. Correct mean = 39.45.",
+            "key_concepts": ["multiple data correction"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Can the mode and median of a data set be the same? Illustrate with an example.",
+            "answer": "Yes. Example: 2, 3, 3, 3, 4. Mode = 3, Median = 3.",
+            "key_concepts": ["relationship between measures"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 7,
+            "question": "A die is thrown 200 times and the outcomes are recorded. If the frequency of getting a '6' is 40, find the probability of not getting a '6'.",
+            "answer": "Frequency of not 6 = 200 - 40 = 160. Probability = 160/200 = 0.8.",
+            "key_concepts": ["complementary probability"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 8,
+            "question": "The ages of 10 teachers in a school are: 32, 41, 28, 54, 35, 26, 23, 33, 38, 40. Find the mean age and the range.",
+            "answer": "Sum = 350. Mean = 35. Range = 54 - 23 = 31.",
+            "key_concepts": ["range", "mean calculation"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the value of p if the mean of 6, 4, 7, p, and 10 is 8.",
+            "answer": "(27 + p)/5 = 8 -> 27 + p = 40 -> p = 13.",
+            "key_concepts": ["missing frequency arithmetic"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "The median of observations 11, 12, 14, x-2, x, 19, 22, 25 arranged in ascending order is 16. Find the value of x.",
+            "answer": "Median = ((x-2) + x)/2 = 16 -> 2x - 2 = 32 -> 2x = 34 -> x = 17.",
+            "key_concepts": ["median of even set", "algebra"],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the probability of a sure event and an impossible event?",
+            "answer": "Sure event = 1; Impossible event = 0.",
+            "key_concepts": ["probability limits"],
+            "marks": 2,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 12,
+            "question": "Two coins are tossed simultaneously. List all possible outcomes and find the probability of getting at least one head.",
+            "answer": "Outcomes: HH, HT, TH, TT. At least one head: HH, HT, TH. Probability = 3/4.",
+            "key_concepts": ["sample space", "compound probability"],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 13,
+            "question": "The heights of 5 players are 140cm, 142cm, 145cm, 148cm, and 150cm. If a new player of height 155cm joins, how much does the mean height increase?",
+            "answer": "Old mean = 725/5 = 145. New mean = 880/6 ≈ 146.67. Increase ≈ 1.67 cm.",
+            "key_concepts": ["mean change"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens to the range of a data set if each observation is increased by 10?",
+            "answer": "Range remains the same because (Max+10) - (Min+10) = Max - Min.",
+            "key_concepts": ["range properties"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "If the mode of 16, 15, 17, 16, 15, x, 19, 17, 14 is 15, what is the value of x?",
+            "answer": "For 15 to be the unique mode, x must be 15.",
+            "key_concepts": ["mode properties"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Calculate the mean of the first five prime numbers.",
+            "answer": "(2+3+5+7+11)/5 = 28/5 = 5.6.",
+            "key_concepts": ["prime numbers", "mean"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how a scale is chosen for a bar graph when data values are very large (e.g., 5000, 12000, 7500).",
+            "answer": "We choose a scale where 1 unit represents a large value (e.g., 1 unit = 1000) to keep the graph manageable.",
+            "key_concepts": ["graph scaling"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the average of all even numbers between 1 and 11.",
+            "answer": "(2+4+6+8+10)/5 = 30/5 = 6.",
+            "key_concepts": ["arithmetic mean"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "A box contains cards numbered 1 to 50. What is the probability of drawing a card that is a perfect square?",
+            "answer": "Squares: 1, 4, 9, 16, 25, 36, 49 (7 cards). Probability = 7/50.",
+            "key_concepts": ["probability and number theory"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 20,
+            "question": "If the mean of x, x+3, x+6, x+9, x+12 is 10, find the median.",
+            "answer": "Sum = 5x + 30. (5x+30)/5 = 10 -> x+6=10 -> x=4. Data: 4, 7, 10, 13, 16. Median = 10.",
+            "key_concepts": ["algebra", "median"],
+            "marks": 4,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why can the mean be misleading if there are extreme outliers in the data?",
+            "answer": "Outliers pull the mean toward them, making it unrepresentative of the 'typical' value.",
+            "key_concepts": ["limitations of mean"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the probability of getting exactly 2 heads when three coins are tossed.",
+            "answer": "Outcomes: HHH, HHT, HTH, THH, TTH, THT, HTT, TTT (8). Exactly 2 heads: HHT, HTH, THH (3). Probability = 3/8.",
+            "key_concepts": ["compound probability"],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 23,
+            "question": "In a set of 11 observations, if each value is doubled, what happens to the median?",
+            "answer": "The median is also doubled.",
+            "key_concepts": ["data transformation"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the mean of all factors of 20.",
+            "answer": "Factors: 1, 2, 4, 5, 10, 20. Sum = 42. Mean = 42/6 = 7.",
+            "key_concepts": ["factors", "mean"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "A card is drawn from a standard deck of 52. What is the probability that it is a 'King' or a 'Heart'?",
+            "answer": "Kings = 4. Hearts = 13. King of Hearts is counted twice. Total = 4 + 13 - 1 = 16. Probability = 16/52 = 4/13.",
+            "key_concepts": ["probability of 'OR' events"],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        }
+    ]
+}

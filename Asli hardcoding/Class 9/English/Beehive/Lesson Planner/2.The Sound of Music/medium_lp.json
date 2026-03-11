@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Sound of Music",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the characters’ emotions and growth in the story",
+        "Understand the influence of music on individuals and relationships",
+        "Identify key events and their sequence",
+        "Develop critical reading and inference skills",
+        "Enhance vocabulary and comprehension",
+        "Express personal opinions on teaching and learning"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Author: Mem Fox",
+                "Setting of the story",
+                "Introduction of main characters: Maria and the von Trapp children"
+            ],
+            "teaching_strategy": [
+                "Discussion on the importance of music in education and life",
+                "Board notes on story context and characters"
+            ],
+            "student_activities": [
+                "Predict the storyline",
+                "Share personal experiences with music or learning"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reading – Part 1",
+            "topics_covered": [
+                "Maria’s arrival at the von Trapp household",
+                "Children’s initial behavior and response to Maria",
+                "Introduction to the challenges she faces"
+            ],
+            "teaching_strategy": [
+                "Guided reading with explanation of difficult vocabulary",
+                "Discussion of character emotions"
+            ],
+            "student_activities": [
+                "Underline key phrases showing children’s behavior",
+                "Write 2–3 sentences describing Margie’s challenge"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Short oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Reading – Part 2",
+            "topics_covered": [
+                "Maria teaches music to children",
+                "Children’s learning process and growth",
+                "Captain von Trapp’s reaction to the children’s progress"
+            ],
+            "teaching_strategy": [
+                "Discussion on cause-effect relationships in the story",
+                "Board examples of character transformation"
+            ],
+            "student_activities": [
+                "List changes in children’s behavior",
+                "Explain how music impacts the family"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook activity evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Character Analysis",
+            "topics_covered": [
+                "Traits of Maria and the children",
+                "Captain von Trapp’s personality and transformation",
+                "Understanding motivation and responses"
+            ],
+            "teaching_strategy": [
+                "Mind-mapping on board",
+                "Group discussion of traits with examples from text"
+            ],
+            "student_activities": [
+                "Write character traits with textual evidence",
+                "Explain character development in 2–3 sentences"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme, Values, and Critical Thinking",
+            "topics_covered": [
+                "Main theme: Influence of music and guidance",
+                "Values of patience, encouragement, and learning",
+                "Critical thinking: Compare formal teaching and experiential learning"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion with examples",
+                "Question prompts to encourage opinions and analysis"
+            ],
+            "student_activities": [
+                "Write 3–4 sentences on the story’s theme",
+                "Discuss examples of guidance and learning in class"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Summary, Vocabulary, and Reflection",
+            "topics_covered": [
+                "Key vocabulary from the chapter",
+                "Writing a summary in 8–10 sentences",
+                "Reflect on lessons learned from the story"
+            ],
+            "teaching_strategy": [
+                "Flowchart of events on board",
+                "Board explanation of summary structure"
+            ],
+            "student_activities": [
+                "List new words with meanings",
+                "Write chapter summary",
+                "Reflect on personal lessons and application"
+            ],
+            "assessment": [
+                "Written summary evaluation",
+                "Vocabulary quiz",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Printed story excerpts"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Class participation",
+        "Oral questioning",
+        "Short written exercises",
+        "Summary writing"
+    ],
+    "teacher_tip": "Encourage students to analyze character emotions and growth, discuss the value of music, and express their opinions with textual evidence."
+}

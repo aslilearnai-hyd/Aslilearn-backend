@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: Is Matter Around Us Pure?",
+    "generated_at": "2026-03-06T19:40:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a pure substance in scientific terms?",
+                "correct_answer": "A substance where all constituent particles are the same in their chemical nature",
+                "explanation": "A pure substance consists of a single type of particle.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is a mixture?",
+                "correct_answer": "Matter constituted by more than one kind of pure form of matter",
+                "explanation": "Mixtures can be separated into their pure components by physical processes.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "Define a homogeneous mixture.",
+                "correct_answer": "A mixture that has a uniform composition throughout",
+                "explanation": "Examples include salt dissolved in water or sugar in water.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "Define a heterogeneous mixture.",
+                "correct_answer": "A mixture that contains physically distinct parts and non-uniform compositions",
+                "explanation": "Examples include mixtures of sodium chloride and iron filings, or oil and water.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What are the two components of a solution?",
+                "correct_answer": "Solvent and Solute",
+                "explanation": "The solvent is the component in larger amount; the solute is the component being dissolved.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is a saturated solution?",
+                "correct_answer": "A solution in which no more solute can be dissolved at a particular temperature",
+                "explanation": "At any particular temperature, a solution that has dissolved as much solute as it is capable of dissolving is said to be saturated.",
+                "source_section": "Section 2.2.1"
+            },
+            {
+                "question": "What is a suspension?",
+                "correct_answer": "A heterogeneous mixture in which the solute particles do not dissolve but remain suspended",
+                "explanation": "Particles of a suspension are visible to the naked eye and scatter light.",
+                "source_section": "Section 2.2.2"
+            },
+            {
+                "question": "What is a colloid?",
+                "correct_answer": "A mixture where particle size is intermediate between a true solution and a suspension",
+                "explanation": "Colloids appear homogeneous but are actually heterogeneous; they are stable and scatter light.",
+                "source_section": "Section 2.2.3"
+            },
+            {
+                "question": "What is the Tyndall effect?",
+                "correct_answer": "The scattering of a beam of light by colloidal particles",
+                "explanation": "This scattering makes the path of light visible.",
+                "source_section": "Section 2.2.3"
+            },
+            {
+                "question": "Differentiate between an element and a compound.",
+                "correct_answer": "An element is a basic form of matter that cannot be broken down; a compound is composed of two or more elements chemically combined",
+                "explanation": "Elements are the simplest form; compounds have fixed proportions and different properties from their constituents.",
+                "source_section": "Section 2.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Properties of Solutions",
+                "content": "Solutions are homogeneous, stable, have particles smaller than 1nm, and do not show Tyndall effect.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "title": "Colloid Classification",
+                "content": "Classified by the state of dispersing medium and dispersed phase (e.g., Aerosol, Foam, Emulsion).",
+                "source_section": "Section 2.2.3"
+            },
+            {
+                "title": "Physical vs Chemical Change",
+                "content": "Physical changes involve state changes without new substances; chemical changes result in new substances.",
+                "source_section": "Section 2.4"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Alloys are homogeneous mixtures of metals that cannot be separated by physical methods.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "Tincture of iodine is a solution of iodine (solute) in alcohol (solvent).",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "Mercury is the only metal that is liquid at room temperature.",
+                "source_section": "Section 2.5.1"
+            }
+        ]
+    }
+}

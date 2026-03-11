@@ -1,0 +1,358 @@
+{
+  "content_type": "Multiple Choice Questions",
+  "chapter": "Chapter 6: Understanding Media",
+  "generated_at": "2026-03-07T20:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why do media companies focus on increasing their audience size?",
+      "options": {
+        "A": "To reduce operational costs",
+        "B": "To attract more advertisements",
+        "C": "To decrease competition",
+        "D": "To avoid broadcasting news"
+      },
+      "correct_answer": "B",
+      "explanation": "Larger audiences attract more advertisers, which increases revenue.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which situation best demonstrates how media can influence public opinion?",
+      "options": {
+        "A": "A newspaper publishes weather reports",
+        "B": "A television channel highlights certain issues repeatedly",
+        "C": "A radio station plays music programs",
+        "D": "A magazine prints crossword puzzles"
+      },
+      "correct_answer": "B",
+      "explanation": "Repeated coverage of specific issues can shape how people think about them.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Why might some important social issues receive limited media coverage?",
+      "options": {
+        "A": "They are not related to business interests",
+        "B": "They are difficult to understand",
+        "C": "They occur in rural areas only",
+        "D": "They are illegal to report"
+      },
+      "correct_answer": "A",
+      "explanation": "Media sometimes prioritizes stories that attract audiences and advertisers.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following best explains the term 'independent media'?",
+      "options": {
+        "A": "Media owned by foreign countries",
+        "B": "Media free from government or corporate control",
+        "C": "Media used only for education",
+        "D": "Media that avoids news reporting"
+      },
+      "correct_answer": "B",
+      "explanation": "Independent media operates without interference from powerful groups.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 5,
+      "question": "How does advertising influence media content?",
+      "options": {
+        "A": "Media avoids advertisements completely",
+        "B": "Media focuses on stories that attract advertisers",
+        "C": "Advertisements replace all news",
+        "D": "Advertisements control government policies"
+      },
+      "correct_answer": "B",
+      "explanation": "Media organizations often prioritize content that attracts advertisers.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which factor makes media a powerful tool in democracy?",
+      "options": {
+        "A": "It controls elections",
+        "B": "It informs citizens and encourages debate",
+        "C": "It replaces government institutions",
+        "D": "It limits public discussions"
+      },
+      "correct_answer": "B",
+      "explanation": "Media helps citizens stay informed and participate in discussions.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which example best illustrates media bias?",
+      "options": {
+        "A": "Reporting both sides of a conflict",
+        "B": "Ignoring one viewpoint in a news report",
+        "C": "Providing factual weather reports",
+        "D": "Publishing sports results"
+      },
+      "correct_answer": "B",
+      "explanation": "Media bias occurs when one perspective is favored over others.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Why are media networks often owned by large corporations?",
+      "options": {
+        "A": "Running media organizations requires significant investment",
+        "B": "Governments prohibit small companies",
+        "C": "Schools operate media organizations",
+        "D": "Media requires agricultural land"
+      },
+      "correct_answer": "A",
+      "explanation": "Media operations involve expensive equipment, technology, and staff.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which scenario best shows responsible media reporting?",
+      "options": {
+        "A": "Spreading rumors quickly",
+        "B": "Verifying facts before publishing news",
+        "C": "Ignoring public issues",
+        "D": "Publishing advertisements only"
+      },
+      "correct_answer": "B",
+      "explanation": "Responsible media verifies facts to ensure accurate information.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Which role of media helps maintain transparency in governance?",
+      "options": {
+        "A": "Advertising products",
+        "B": "Investigating and reporting corruption",
+        "C": "Broadcasting entertainment shows",
+        "D": "Promoting sports events"
+      },
+      "correct_answer": "B",
+      "explanation": "Investigative journalism exposes wrongdoing and promotes accountability.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is diversity of media sources important in a democracy?",
+      "options": {
+        "A": "It increases profits",
+        "B": "It provides multiple viewpoints",
+        "C": "It reduces information flow",
+        "D": "It eliminates advertisements"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiple sources ensure balanced perspectives and informed citizens.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which situation shows the influence of TRP (Television Rating Points)?",
+      "options": {
+        "A": "A channel changes its programs to attract viewers",
+        "B": "A newspaper increases page size",
+        "C": "A radio station plays old songs",
+        "D": "A magazine publishes educational articles"
+      },
+      "correct_answer": "A",
+      "explanation": "Channels often adjust content to improve viewership ratings.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Why do some media outlets sensationalize news?",
+      "options": {
+        "A": "To improve education",
+        "B": "To attract more viewers and increase profits",
+        "C": "To simplify government policies",
+        "D": "To reduce audience interest"
+      },
+      "correct_answer": "B",
+      "explanation": "Sensational stories attract viewers and increase advertising revenue.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following demonstrates the watchdog role of media?",
+      "options": {
+        "A": "Investigating misuse of public funds",
+        "B": "Advertising products",
+        "C": "Publishing movie reviews",
+        "D": "Printing crossword puzzles"
+      },
+      "correct_answer": "A",
+      "explanation": "The watchdog role involves monitoring authorities and exposing corruption.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Which situation reflects media's responsibility toward society?",
+      "options": {
+        "A": "Publishing unverified rumors",
+        "B": "Providing accurate and balanced reporting",
+        "C": "Ignoring social issues",
+        "D": "Avoiding investigative journalism"
+      },
+      "correct_answer": "B",
+      "explanation": "Responsible media ensures information is accurate and balanced.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 16,
+      "question": "How does media contribute to public awareness?",
+      "options": {
+        "A": "By broadcasting only entertainment",
+        "B": "By reporting social, political, and economic issues",
+        "C": "By limiting access to information",
+        "D": "By avoiding global news"
+      },
+      "correct_answer": "B",
+      "explanation": "Media informs citizens about important events and issues.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which example shows the negative impact of media concentration?",
+      "options": {
+        "A": "Many companies owning media outlets",
+        "B": "Few corporations controlling most media platforms",
+        "C": "Independent newspapers reporting news",
+        "D": "Community radio stations operating locally"
+      },
+      "correct_answer": "B",
+      "explanation": "Media concentration can limit diversity of viewpoints.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is fact-checking important in journalism?",
+      "options": {
+        "A": "To increase advertisements",
+        "B": "To ensure accuracy and credibility",
+        "C": "To reduce the number of news stories",
+        "D": "To attract entertainment audiences"
+      },
+      "correct_answer": "B",
+      "explanation": "Fact-checking ensures information is reliable and trustworthy.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor can lead to biased reporting in media?",
+      "options": {
+        "A": "Independent journalism",
+        "B": "Corporate ownership influencing content",
+        "C": "Public interest reporting",
+        "D": "Fact-checking processes"
+      },
+      "correct_answer": "B",
+      "explanation": "Corporate interests may influence the way news is presented.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which role of media encourages public participation in democracy?",
+      "options": {
+        "A": "Entertainment broadcasting",
+        "B": "Providing platforms for debate and discussion",
+        "C": "Promoting advertisements",
+        "D": "Publishing celebrity gossip"
+      },
+      "correct_answer": "B",
+      "explanation": "Media discussions encourage citizens to engage with issues.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which situation best represents ethical journalism?",
+      "options": {
+        "A": "Publishing news without verification",
+        "B": "Presenting facts accurately and responsibly",
+        "C": "Ignoring minority viewpoints",
+        "D": "Reporting rumors"
+      },
+      "correct_answer": "B",
+      "explanation": "Ethical journalism prioritizes accuracy and fairness.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Why might media prioritize sensational stories?",
+      "options": {
+        "A": "They are easier to report",
+        "B": "They attract higher audience attention",
+        "C": "They improve government relations",
+        "D": "They reduce competition"
+      },
+      "correct_answer": "B",
+      "explanation": "Sensational stories often draw more viewers and readers.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor strengthens the credibility of media organizations?",
+      "options": {
+        "A": "Accurate reporting",
+        "B": "Frequent advertisements",
+        "C": "Celebrity endorsements",
+        "D": "Colorful layouts"
+      },
+      "correct_answer": "A",
+      "explanation": "Accuracy builds trust among audiences.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which action reflects the social responsibility of media?",
+      "options": {
+        "A": "Promoting misinformation",
+        "B": "Highlighting important social issues",
+        "C": "Avoiding public debates",
+        "D": "Ignoring community concerns"
+      },
+      "correct_answer": "B",
+      "explanation": "Media plays an important role in raising awareness about social issues.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is freedom of the press important in a democracy?",
+      "options": {
+        "A": "It allows media to operate without responsibility",
+        "B": "It ensures citizens receive diverse and independent information",
+        "C": "It removes government laws",
+        "D": "It eliminates advertisements"
+      },
+      "correct_answer": "B",
+      "explanation": "Freedom of the press ensures access to unbiased information and supports democracy.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    }
+  ]
+}

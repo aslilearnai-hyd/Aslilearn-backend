@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-06T09:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A cuboid has length 10 cm, breadth 8 cm, height 6 cm. Find its total surface area and volume.",
+            "answer": "TSA = 2(lb + bh + hl) = 2(80 + 48 + 60) = 376 cm²; Volume = l × b × h = 10 × 8 × 6 = 480 cm³.",
+            "key_concepts": ["cuboid", "TSA", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 2,
+            "question": "A cube has surface area 216 cm². Find its side and volume.",
+            "answer": "6a² = 216 ⇒ a² = 36 ⇒ a = 6 cm; Volume = a³ = 6³ = 216 cm³.",
+            "key_concepts": ["cube", "surface area", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The radius of a sphere is 7 cm. Find its surface area and volume.",
+            "answer": "Surface area = 4πr² = 4 × π × 49 = 196π ≈ 615.75 cm²; Volume = (4/3)πr³ = (4/3) × π × 343 = 457.33π ≈ 1436.8 cm³.",
+            "key_concepts": ["sphere", "surface area", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the total surface area and volume of a hemisphere with radius 10 cm.",
+            "answer": "CSA = 2πr² = 2 × π × 100 = 200π; TSA = 3πr² = 3 × π × 100 = 300π ≈ 942 cm²; Volume = (2/3)πr³ = (2/3) × π × 1000 ≈ 2094 cm³.",
+            "key_concepts": ["hemisphere", "surface area", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A cylinder has radius 5 cm and height 12 cm. Find its curved surface area, total surface area and volume.",
+            "answer": "CSA = 2πrh = 2 × π × 5 × 12 = 120π ≈ 376.99 cm²; TSA = 2πr(h + r) = 2 × π × 5 × 17 = 170π ≈ 534.07 cm²; Volume = πr²h = π × 25 × 12 = 300π ≈ 942 cm³.",
+            "key_concepts": ["cylinder", "CSA", "TSA", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 6,
+            "question": "A cone has radius 6 cm and height 8 cm. Find its slant height, curved surface area, total surface area and volume.",
+            "answer": "Slant height l = √(r² + h²) = √(36 + 64) = √100 = 10 cm; CSA = πrl = π × 6 × 10 = 60π ≈ 188.4 cm²; TSA = πr(l + r) = π × 6 × (10 + 6) = 96π ≈ 301.44 cm²; Volume = (1/3)πr²h = (1/3) × π × 36 × 8 = 96π ≈ 301.44 cm³.",
+            "key_concepts": ["cone", "slant height", "CSA", "TSA", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 7,
+            "question": "A solid sphere of radius 14 cm is melted to form smaller spheres each of radius 7 cm. Find the number of smaller spheres formed.",
+            "answer": "Volume of large sphere = (4/3)π × 14³ = 1144π; Volume of one small sphere = (4/3)π × 7³ = 143.67π; Number of spheres = 1144π / 143.67π ≈ 8.",
+            "key_concepts": ["sphere", "volume", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Water in a hemispherical bowl of radius 21 cm is poured into a cylindrical vessel of radius 14 cm. Find the height of water in the cylinder.",
+            "answer": "Volume of hemisphere = (2/3)πr³ = (2/3) × π × 9261 = 6174π; Volume of cylinder = πr²h ⇒ 6174π = π × 196 × h ⇒ h = 31.5 cm.",
+            "key_concepts": ["hemisphere", "cylinder", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 9,
+            "question": "The diameter of a sphere is 14 cm. Find the diameter of a cylinder with same volume and radius 7 cm. Find height of cylinder.",
+            "answer": "Volume of sphere = (4/3)πr³ = (4/3)π × 7³ = 1436.8 cm³; Cylinder volume = πr²h ⇒ 1436.8 = π × 49 × h ⇒ h ≈ 9.3 cm.",
+            "key_concepts": ["sphere", "cylinder", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 10,
+            "question": "A solid cone of height 24 cm and base radius 7 cm is melted to form smaller cones each of radius 7 cm and height 3 cm. Find the number of smaller cones formed.",
+            "answer": "Volume of large cone = (1/3)πr²h = (1/3)π × 49 × 24 = 392π; Volume of one small cone = (1/3)π × 49 × 3 = 49π; Number of cones = 392π / 49π = 8.",
+            "key_concepts": ["cone", "volume", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the curved surface area of a frustum of cone with radii 7 cm and 14 cm and slant height 10 cm.",
+            "answer": "CSA = π(l)(R + r) = π × 10 × (14 + 7) = 210π ≈ 659.73 cm².",
+            "key_concepts": ["frustum of cone", "CSA", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 12,
+            "question": "A sphere is cut into two hemispheres. Find the surface area of each hemisphere if radius = 10 cm.",
+            "answer": "CSA of hemisphere = 2πr² = 2 × π × 100 = 200π; TSA = 3πr² = 300π ≈ 942 cm².",
+            "key_concepts": ["sphere", "hemisphere", "surface area", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 13,
+            "question": "A solid sphere of radius 14 cm is melted to form small spheres each of radius 7 cm. Find the total surface area of all small spheres.",
+            "answer": "Number of spheres = 8; surface area of one small sphere = 4πr² = 4 × π × 49 = 196π; Total surface area = 8 × 196π = 1568π ≈ 4922 cm².",
+            "key_concepts": ["sphere", "surface area", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Water is poured from a cylindrical vessel of radius 7 cm and height 24 cm into hemispherical bowls of radius 7 cm. Find the number of bowls filled.",
+            "answer": "Volume of cylinder = πr²h = π × 49 × 24 = 1176π; Volume of one hemisphere = (2/3)πr³ = (2/3) × π × 343 ≈ 228.67π; Number of bowls = 1176 / 228.67 ≈ 5.",
+            "key_concepts": ["cylinder", "hemisphere", "volume", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 15,
+            "question": "The radius of a sphere increases by 10%. Find the percentage increase in its volume.",
+            "answer": "Volume ∝ r³ ⇒ increase = (1.1³ - 1) × 100% = 33.1%.",
+            "key_concepts": ["sphere", "volume", "percentage change"],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 16,
+            "question": "The height of a cone is doubled keeping the base radius same. Find the percentage increase in volume.",
+            "answer": "Volume ∝ h; new volume = 2 × old volume ⇒ increase = 100%.",
+            "key_concepts": ["cone", "volume", "percentage change"],
+            "marks": 3,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 17,
+            "question": "The radius of a cylinder is halved keeping height same. Find the percentage decrease in volume.",
+            "answer": "Volume ∝ r²; new volume = (1/4) × old volume ⇒ decrease = 75%.",
+            "key_concepts": ["cylinder", "volume", "percentage change"],
+            "marks": 3,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 18,
+            "question": "A sphere and a cylinder have same volume. The radius of sphere = 7 cm, radius of cylinder = 7 cm. Find height of cylinder.",
+            "answer": "V(sphere) = V(cylinder); (4/3)π × 343 = π × 49 × h ⇒ h = 28/3 ≈ 9.33 cm.",
+            "key_concepts": ["sphere", "cylinder", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 19,
+            "question": "A cone has base radius 3 cm and height 4 cm. A sphere of radius 3 cm is placed inside it. Find the volume of empty space in cone.",
+            "answer": "V(cone) = (1/3)π × 9 × 4 = 12π; V(sphere) = (4/3)π × 27 = 36π/3 = 12π; Empty space = 12π - 12π = 0. Sphere exactly fits.",
+            "key_concepts": ["cone", "sphere", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.5"
+        },
+        {
+            "question_number": 20,
+            "question": "A cylinder of radius 7 cm and height 14 cm is melted to form smaller spheres of radius 2 cm. Find number of spheres formed.",
+            "answer": "Volume of cylinder = π × 49 × 14 = 686π; Volume of small sphere = (4/3)π × 8 = (32/3)π; Number of spheres = 686π / (32/3)π = 686 × 3 / 32 ≈ 64.",
+            "key_concepts": ["cylinder", "sphere", "volume", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 21,
+            "question": "A frustum of cone has radii 7 cm and 14 cm, slant height 10 cm. Find its volume.",
+            "answer": "Volume = (1/3)πh(R² + Rr + r²); h = √(l² - (R - r)²) = √(100 - 49) = √51 ≈ 7.14 cm; Volume ≈ (1/3)π × 7.14 × (196 + 98 + 49) = (1/3)π × 7.14 × 343 ≈ 815.6 cm³.",
+            "key_concepts": ["frustum", "cone", "volume", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 22,
+            "question": "A spherical vessel of radius 21 cm is full of water. Find the total surface area and volume of water in liters.",
+            "answer": "Surface area = 4πr² = 4 × π × 441 = 1764π ≈ 5537 cm²; Volume = (4/3)πr³ = (4/3)π × 9261 ≈ 38838 cm³ ≈ 38.838 liters.",
+            "key_concepts": ["sphere", "surface area", "volume", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 23,
+            "question": "A cylinder of radius 10 cm and height 21 cm is melted into spheres of radius 7 cm. Find number of spheres.",
+            "answer": "Volume of cylinder = π × 100 × 21 = 2100π; Volume of one sphere = (4/3)π × 343 = 457.33π; Number of spheres ≈ 2100 / 457.33 ≈ 4.59 ⇒ 4 spheres fully.",
+            "key_concepts": ["cylinder", "sphere", "volume", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.3, 11.4"
+        },
+        {
+            "question_number": 24,
+            "question": "A cylindrical tank of radius 14 m and height 3 m is filled with water. Find the volume of water in liters and surface area of tank.",
+            "answer": "Volume = πr²h = π × 196 × 3 = 588π ≈ 1847 m³ ≈ 1.847 × 10⁶ liters; Surface area = 2πr(h + r) = 2 × π × 14 × 17 = 476π ≈ 1495 m².",
+            "key_concepts": ["cylinder", "volume", "surface area", "numerical", "conversion"],
+            "marks": 4,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 25,
+            "question": "The radius of a spherical balloon increases from 14 cm to 21 cm. Find the percentage increase in volume.",
+            "answer": "Initial volume = (4/3)π × 14³ = 1144π; Final volume = (4/3)π × 21³ = 3888π; % increase = (3888 - 1144)/1144 × 100 ≈ 240%.",
+            "key_concepts": ["sphere", "volume", "percentage increase", "numerical"],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        }
+    ]
+}

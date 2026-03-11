@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Agriculture",
+  "generated_at": "2026-03-11T14:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is agriculture?",
+      "options": {
+        "A": "Mining minerals",
+        "B": "Cultivating crops and raising animals",
+        "C": "Manufacturing goods",
+        "D": "Trading products"
+      },
+      "correct_answer": "B",
+      "explanation": "Agriculture involves growing crops and raising animals for food and raw materials.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which type of farming uses simple tools and family labour?",
+      "options": {
+        "A": "Commercial farming",
+        "B": "Plantation farming",
+        "C": "Primitive subsistence farming",
+        "D": "Mixed farming"
+      },
+      "correct_answer": "C",
+      "explanation": "Primitive subsistence farming uses traditional tools and family labour.",
+      "difficulty": "easy",
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 3,
+      "question": "What is another name for shifting cultivation in North-East India?",
+      "options": {
+        "A": "Jhum",
+        "B": "Terrace farming",
+        "C": "Mixed farming",
+        "D": "Dry farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Shifting cultivation in North-East India is known as Jhum or Jhumming.",
+      "difficulty": "easy",
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 4,
+      "question": "Which type of farming produces crops mainly for the market?",
+      "options": {
+        "A": "Commercial farming",
+        "B": "Subsistence farming",
+        "C": "Primitive farming",
+        "D": "Nomadic farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Commercial farming produces crops for sale in markets.",
+      "difficulty": "easy",
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 5,
+      "question": "How many main cropping seasons are there in India?",
+      "options": {
+        "A": "Two",
+        "B": "Three",
+        "C": "Four",
+        "D": "Five"
+      },
+      "correct_answer": "B",
+      "explanation": "India has three cropping seasons: Rabi, Kharif, and Zaid.",
+      "difficulty": "easy",
+      "source_section": "Cropping Pattern"
+    },
+    {
+      "question_number": 6,
+      "question": "Which crop is grown during the Rabi season?",
+      "options": {
+        "A": "Rice",
+        "B": "Cotton",
+        "C": "Wheat",
+        "D": "Jute"
+      },
+      "correct_answer": "C",
+      "explanation": "Wheat is an important Rabi crop grown in winter.",
+      "difficulty": "easy",
+      "source_section": "Cropping Pattern"
+    },
+    {
+      "question_number": 7,
+      "question": "Which crop is grown during the Kharif season?",
+      "options": {
+        "A": "Rice",
+        "B": "Wheat",
+        "C": "Barley",
+        "D": "Gram"
+      },
+      "correct_answer": "A",
+      "explanation": "Rice is mainly grown during the Kharif season with the monsoon.",
+      "difficulty": "easy",
+      "source_section": "Cropping Pattern"
+    },
+    {
+      "question_number": 8,
+      "question": "Which crop is considered the staple food for most Indians?",
+      "options": {
+        "A": "Maize",
+        "B": "Rice",
+        "C": "Barley",
+        "D": "Millets"
+      },
+      "correct_answer": "B",
+      "explanation": "Rice is the staple food for a majority of people in India.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 9,
+      "question": "Which crop is known as a coarse grain?",
+      "options": {
+        "A": "Millets",
+        "B": "Rice",
+        "C": "Wheat",
+        "D": "Sugarcane"
+      },
+      "correct_answer": "A",
+      "explanation": "Millets such as jowar, bajra, and ragi are coarse grains.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 10,
+      "question": "Which crop is the second most important cereal crop in India?",
+      "options": {
+        "A": "Rice",
+        "B": "Wheat",
+        "C": "Maize",
+        "D": "Barley"
+      },
+      "correct_answer": "B",
+      "explanation": "Wheat is the second most important cereal crop in India.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 11,
+      "question": "Which crop is a major source of protein in vegetarian diets?",
+      "options": {
+        "A": "Pulses",
+        "B": "Millets",
+        "C": "Rice",
+        "D": "Wheat"
+      },
+      "correct_answer": "A",
+      "explanation": "Pulses such as gram and lentils are rich in protein.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 12,
+      "question": "Which crop is used to produce sugar?",
+      "options": {
+        "A": "Cotton",
+        "B": "Sugarcane",
+        "C": "Jute",
+        "D": "Tea"
+      },
+      "correct_answer": "B",
+      "explanation": "Sugarcane is the main crop used for sugar production.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 13,
+      "question": "Which crop is used to make cooking oil?",
+      "options": {
+        "A": "Oilseeds",
+        "B": "Rice",
+        "C": "Tea",
+        "D": "Wheat"
+      },
+      "correct_answer": "A",
+      "explanation": "Oilseeds such as groundnut and mustard produce edible oils.",
+      "difficulty": "easy",
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 14,
+      "question": "Which beverage crop is widely grown in Assam?",
+      "options": {
+        "A": "Coffee",
+        "B": "Tea",
+        "C": "Cocoa",
+        "D": "Rubber"
+      },
+      "correct_answer": "B",
+      "explanation": "Tea plantations are common in Assam.",
+      "difficulty": "easy",
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 15,
+      "question": "Coffee cultivation in India mainly occurs in which region?",
+      "options": {
+        "A": "Northern plains",
+        "B": "Southern hills",
+        "C": "Western desert",
+        "D": "Eastern plains"
+      },
+      "correct_answer": "B",
+      "explanation": "Coffee is mainly grown in the hills of southern India.",
+      "difficulty": "easy",
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 16,
+      "question": "Which crop is used as a raw material in the textile industry?",
+      "options": {
+        "A": "Cotton",
+        "B": "Rice",
+        "C": "Tea",
+        "D": "Groundnut"
+      },
+      "correct_answer": "A",
+      "explanation": "Cotton is the main raw material for textile production.",
+      "difficulty": "easy",
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 17,
+      "question": "Which fibre crop is known as the 'golden fibre'?",
+      "options": {
+        "A": "Cotton",
+        "B": "Jute",
+        "C": "Silk",
+        "D": "Wool"
+      },
+      "correct_answer": "B",
+      "explanation": "Jute is called the golden fibre due to its colour and economic value.",
+      "difficulty": "easy",
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 18,
+      "question": "Which crop requires hot and humid climate with heavy rainfall?",
+      "options": {
+        "A": "Rubber",
+        "B": "Wheat",
+        "C": "Millets",
+        "D": "Barley"
+      },
+      "correct_answer": "A",
+      "explanation": "Rubber grows best in hot and humid climates with heavy rainfall.",
+      "difficulty": "easy",
+      "source_section": "Non-Food Crops"
+    },
+    {
+      "question_number": 19,
+      "question": "Which agricultural reform introduced high-yielding variety seeds?",
+      "options": {
+        "A": "Green Revolution",
+        "B": "White Revolution",
+        "C": "Industrial Revolution",
+        "D": "Blue Revolution"
+      },
+      "correct_answer": "A",
+      "explanation": "The Green Revolution introduced HYV seeds and modern farming technology.",
+      "difficulty": "easy",
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 20,
+      "question": "Which scheme provides credit to farmers for agricultural needs?",
+      "options": {
+        "A": "Kisan Credit Card",
+        "B": "Food Security Act",
+        "C": "Green India Mission",
+        "D": "Digital India"
+      },
+      "correct_answer": "A",
+      "explanation": "The Kisan Credit Card scheme helps farmers obtain credit easily.",
+      "difficulty": "easy",
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 21,
+      "question": "Which crop is mainly grown in black soil?",
+      "options": {
+        "A": "Cotton",
+        "B": "Rice",
+        "C": "Wheat",
+        "D": "Barley"
+      },
+      "correct_answer": "A",
+      "explanation": "Cotton grows well in black soil regions.",
+      "difficulty": "easy",
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 22,
+      "question": "Which crop is grown mainly for export in plantation agriculture?",
+      "options": {
+        "A": "Tea",
+        "B": "Rice",
+        "C": "Wheat",
+        "D": "Maize"
+      },
+      "correct_answer": "A",
+      "explanation": "Tea is an important plantation crop grown for export.",
+      "difficulty": "easy",
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor most affects agriculture in India?",
+      "options": {
+        "A": "Monsoon rainfall",
+        "B": "Snowfall",
+        "C": "Volcanoes",
+        "D": "Earthquakes"
+      },
+      "correct_answer": "A",
+      "explanation": "Agriculture in India largely depends on monsoon rainfall.",
+      "difficulty": "easy",
+      "source_section": "Agricultural Practices"
+    },
+    {
+      "question_number": 24,
+      "question": "Which activity involves growing fruits and vegetables?",
+      "options": {
+        "A": "Horticulture",
+        "B": "Sericulture",
+        "C": "Pisciculture",
+        "D": "Apiculture"
+      },
+      "correct_answer": "A",
+      "explanation": "Horticulture is the cultivation of fruits, vegetables, and flowers.",
+      "difficulty": "easy",
+      "source_section": "Horticulture Crops"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the rearing of silkworms for silk production called?",
+      "options": {
+        "A": "Sericulture",
+        "B": "Apiculture",
+        "C": "Pisciculture",
+        "D": "Viticulture"
+      },
+      "correct_answer": "A",
+      "explanation": "Sericulture is the practice of raising silkworms for silk production.",
+      "difficulty": "easy",
+      "source_section": "Fibre Crops"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why does carbon form compounds mainly by covalent bonding? Why can it not form $C^{4+}$ or $C^{4-}$ ions?",
+            "answer": "Carbon has 4 electrons in its valence shell. To form $C^{4-}$, it would be difficult for the nucleus with 6 protons to hold 10 electrons. To form $C^{4+}$, it would require a huge amount of energy to remove 4 electrons. Therefore, carbon overcomes this problem by sharing its valence electrons with other atoms, forming covalent bonds.",
+            "answer_outline": [
+                "Electronic configuration of Carbon (2,4)",
+                "Instability of C4- (proton-electron imbalance)",
+                "Energy barrier for C4+ (ionization energy)",
+                "Conclusion: Sharing electrons as the viable path"
+            ],
+            "key_concepts": [
+                "covalent bonding",
+                "tetravalency",
+                "ionic instability",
+                "electron sharing"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the nature of the 'Substitution Reaction' in saturated hydrocarbons with a suitable example and chemical equation.",
+            "answer": "Saturated hydrocarbons are fairly unreactive. However, in the presence of sunlight, chlorine can replace the hydrogen atoms one by one. This is called a substitution reaction. Example: $CH_4 + Cl_2 \xrightarrow{sunlight} CH_3Cl + HCl$.",
+            "answer_outline": [
+                "Definition of substitution",
+                "Role of sunlight (catalyst/energy source)",
+                "Replacement of Hydrogen by Chlorine",
+                "Chemical equation"
+            ],
+            "key_concepts": [
+                "substitution reaction",
+                "chlorination",
+                "saturated hydrocarbons",
+                "sunlight"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 3,
+            "question": "What is 'Hydrogenation'? State its industrial application and the catalyst used.",
+            "answer": "Hydrogenation is the addition of hydrogen to unsaturated hydrocarbons in the presence of catalysts like Palladium or Nickel to give saturated hydrocarbons. Industrial Application: Conversion of vegetable oils (unsaturated fats) into vegetable ghee (saturated fats).",
+            "answer_outline": [
+                "Addition of Hydrogen",
+                "Catalysts (Ni/Pd)",
+                "Conversion from unsaturated to saturated",
+                "Vegetable oil to ghee application"
+            ],
+            "key_concepts": [
+                "addition reaction",
+                "hydrogenation",
+                "nickel catalyst",
+                "vegetable oils"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How can you distinguish between an Alcohol and a Carboxylic acid using a chemical test?",
+            "answer": "We can use the Sodium Bicarbonate ($NaHCO_3$) test. Carboxylic acids react with sodium bicarbonate to produce brisk effervescence due to the evolution of $CO_2$ gas. Alcohols do not react with sodium bicarbonate and thus show no effervescence.",
+            "answer_outline": [
+                "Choice of reagent (Sodium Bicarbonate)",
+                "Observation for Carboxylic acid (Effervescence)",
+                "Observation for Alcohol (No reaction)",
+                "Identification of CO2 gas"
+            ],
+            "key_concepts": [
+                "sodium bicarbonate test",
+                "effervescence",
+                "carbon dioxide",
+                "functional group differentiation"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are 'Oxidising Agents'? Explain the role of alkaline $KMnO_4$ in the reaction with ethanol.",
+            "answer": "Oxidising agents are substances that are capable of adding oxygen to others. Alkaline Potassium Permanganate ($KMnO_4$) or acidified Potassium Dichromate ($K_2Cr_2O_7$) are strong oxidising agents that convert alcohols into carboxylic acids. Specifically, they oxidise ethanol to ethanoic acid.",
+            "answer_outline": [
+                "Definition of oxidising agent",
+                "Reaction of ethanol with alkaline KMnO4",
+                "Formation of Ethanoic acid",
+                "Chemical equation: $CH_3CH_2OH \xrightarrow{alk. KMnO_4 + heat} CH_3COOH$"
+            ],
+            "key_concepts": [
+                "oxidation",
+                "potassium permanganate",
+                "ethanol",
+                "ethanoic acid"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe the structure of a 'Micelle'. How does it help in the cleaning action of soap?",
+            "answer": "A soap molecule has a hydrophilic (water-loving) head and a hydrophobic (water-fearing) tail. In water, these molecules arrange themselves into a cluster called a micelle, where the tails point towards the center (trapping the oily dirt) and the heads face outwards. This traps the dirt in the center and allows it to be rinsed away.",
+            "answer_outline": [
+                "Dual nature of soap molecules",
+                "Formation of spherical clusters (micelles)",
+                "Interaction of hydrophobic tail with oil",
+                "Interaction of hydrophilic head with water"
+            ],
+            "key_concepts": [
+                "micelle",
+                "hydrophilic",
+                "hydrophobic",
+                "emulsion"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is the use of 'Detergents' preferred over 'Soaps' for washing clothes in hard water?",
+            "answer": "Hard water contains Calcium and Magnesium ions. Soaps react with these ions to form an insoluble, sticky precipitate called 'scum', which wastes soap and hinders cleaning. Detergents, however, do not form insoluble precipitates with these ions and remain effective even in hard water.",
+            "answer_outline": [
+                "Composition of hard water (Ca/Mg ions)",
+                "Soap reaction and scum formation",
+                "Detergent efficiency in hard water",
+                "Comparison of solubility"
+            ],
+            "key_concepts": [
+                "hard water",
+                "scum",
+                "detergents",
+                "calcium/magnesium salts"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the 'Dehydration' of ethanol. Write the chemical equation and name the dehydrating agent.",
+            "answer": "Heating ethanol at 443 K with excess concentrated sulphuric acid ($H_2SO_4$) results in the dehydration of ethanol to yield ethene. Concentrated sulphuric acid acts as the dehydrating agent because it removes water from the ethanol molecule. Equation: $CH_3CH_2OH \xrightarrow{conc. H_2SO_4, 443K} CH_2=CH_2 + H_2O$.",
+            "answer_outline": [
+                "Definition of dehydration",
+                "Role of conc. H2SO4",
+                "Temperature condition (443 K)",
+                "Product formation (Ethene)"
+            ],
+            "key_concepts": [
+                "dehydration",
+                "ethene",
+                "sulphuric acid",
+                "catalyst"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What are 'Heteroatoms'? Give examples of any two heteroatoms and the functional groups they form.",
+            "answer": "In a hydrocarbon chain, one or more hydrogens can be replaced by other elements such that the valency of carbon remains satisfied. These replacing elements are called heteroatoms. Examples: 1. Oxygen (found in Alcohols, Aldehydes). 2. Chlorine/Bromine (found in Haloalkanes).",
+            "answer_outline": [
+                "Definition of heteroatoms",
+                "Maintenance of carbon valency",
+                "Example 1: Oxygen (-OH, -CHO)",
+                "Example 2: Chlorine (-Cl)"
+            ],
+            "key_concepts": [
+                "heteroatoms",
+                "valency",
+                "functional groups",
+                "halogens"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Draw the electron dot structures for (a) Ethanoic Acid, and (b) $H_2S$.",
+            "answer": "(a) Ethanoic acid ($CH_3COOH$) has a central carbon bonded to three H atoms and another carbon; the second carbon has a double bond with one Oxygen and a single bond with an -OH group. (b) In $H_2S$, Sulfur is the central atom with two lone pairs, sharing one electron each with two Hydrogen atoms.",
+            "answer_outline": [
+                "Valence electrons of C, H, O, and S",
+                "Sharing of electron pairs",
+                "Representation of single and double bonds",
+                "Visual layout of molecules"
+            ],
+            "key_concepts": [
+                "electron dot structure",
+                "valence",
+                "Lewis structure",
+                "bonding"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1 & 4.2.1"
+        }
+    ]
+}

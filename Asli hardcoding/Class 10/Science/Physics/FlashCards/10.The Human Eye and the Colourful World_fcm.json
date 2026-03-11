@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 10: The Human Eye and the Colourful World",
+    "generated_at": "2026-03-11T03:45:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is the function of the human eye?",
+                "correct_answer": "It helps us see objects by detecting light and forming images on the retina.",
+                "explanation": "The human eye acts like a camera, focusing light onto the retina to produce images.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is the retina?",
+                "correct_answer": "The light-sensitive screen inside the eye where the image is formed.",
+                "explanation": "The retina contains photoreceptor cells that detect light and send signals to the brain.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is the function of the eye lens?",
+                "correct_answer": "It focuses light onto the retina to form a clear image.",
+                "explanation": "The eye lens can change its shape to adjust focus for near and distant objects.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is accommodation of the eye?",
+                "correct_answer": "The ability of the eye lens to change its focal length to focus on objects at different distances.",
+                "explanation": "Ciliary muscles adjust the shape of the lens to focus images clearly on the retina.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is the least distance of distinct vision for a normal human eye?",
+                "correct_answer": "About 25 cm.",
+                "explanation": "Objects closer than this distance appear blurred for a normal eye.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is persistence of vision?",
+                "correct_answer": "The ability of the eye to retain an image on the retina for about 1/16 of a second.",
+                "explanation": "This phenomenon allows us to perceive motion in movies and animations.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "question": "What is scattering of light?",
+                "correct_answer": "The phenomenon in which light is redirected in different directions when it passes through a medium.",
+                "explanation": "Scattering occurs due to interaction of light with particles in the atmosphere.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "question": "Why is the sky blue?",
+                "correct_answer": "Because shorter wavelengths of light (blue) are scattered more by the atmosphere.",
+                "explanation": "This phenomenon is known as Rayleigh scattering.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "question": "Why does the sun appear reddish during sunrise and sunset?",
+                "correct_answer": "Because most of the shorter wavelengths are scattered, leaving red light to reach our eyes.",
+                "explanation": "At sunrise and sunset sunlight travels a longer path through the atmosphere.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "question": "What is the Tyndall effect?",
+                "correct_answer": "The scattering of light by small particles in a medium.",
+                "explanation": "It makes the path of light visible in fog, smoke, or dusty air.",
+                "source_section": "Section 10.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Human Eye",
+                "content": "An optical instrument that helps us see objects by forming images on the retina.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "title": "Accommodation",
+                "content": "The process by which the eye lens changes shape to focus on near or distant objects.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "title": "Persistence of Vision",
+                "content": "Retention of an image on the retina for about 1/16 second after the object is removed.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "title": "Scattering of Light",
+                "content": "The phenomenon in which light is redirected when it interacts with particles in the atmosphere.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "title": "Tyndall Effect",
+                "content": "The scattering of light by small particles that makes the path of light visible.",
+                "source_section": "Section 10.2"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The least distance of distinct vision for a normal human eye is about 25 cm.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "fact": "The retina contains light-sensitive cells that send signals to the brain.",
+                "source_section": "Section 10.1"
+            },
+            {
+                "fact": "Blue light is scattered more than other colours because it has a shorter wavelength.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "fact": "The sky appears blue due to scattering of sunlight by the atmosphere.",
+                "source_section": "Section 10.2"
+            },
+            {
+                "fact": "The reddish colour of the sun at sunrise and sunset occurs due to longer atmospheric path length.",
+                "source_section": "Section 10.2"
+            }
+        ]
+    }
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Finding Common Ground (Symmetry)",
+    "generated_at": "2026-03-05T02:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following quadrilaterals has rotational symmetry of order 2 but no lines of symmetry?",
+            "options": {
+                "A": "Rhombus",
+                "B": "Rectangle",
+                "C": "Parallelogram",
+                "D": "Square"
+            },
+            "correct_answer": "C",
+            "explanation": "A general parallelogram can be rotated 180° to look the same, but it cannot be folded along any line to match its halves perfectly.",
+            "difficulty": "medium",
+            "source_section": "Rotational vs Line Symmetry"
+        },
+        {
+            "question_number": 2,
+            "question": "If a regular polygon has an angle of rotation of 72°, how many lines of symmetry does it have?",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "10"
+            },
+            "correct_answer": "B",
+            "explanation": "Order of rotation = 360° / 72° = 5. For a regular polygon, lines of symmetry = order of rotation.",
+            "difficulty": "medium",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 3,
+            "question": "Which English capital letter has exactly two lines of symmetry and rotational symmetry of order 2?",
+            "options": {
+                "A": "O",
+                "B": "X",
+                "C": "Z",
+                "D": "H"
+            },
+            "correct_answer": "D",
+            "explanation": "H has one vertical and one horizontal line of symmetry, and looks the same after a 180° rotation.",
+            "difficulty": "medium",
+            "source_section": "Alphabet Symmetry"
+        },
+        {
+            "question_number": 4,
+            "question": "The order of rotational symmetry of a kite is:",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "A kite only looks like itself after a full 360° rotation (Order 1).",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 5,
+            "question": "A figure has rotational symmetry of order 4. Which of the following cannot be its angle of rotation?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "120°"
+            },
+            "correct_answer": "D",
+            "explanation": "Angles of rotation must be multiples of (360/4) = 90°. 120° is not a multiple of 90°.",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 6,
+            "question": "Which triangle has both line symmetry and rotational symmetry of order greater than 1?",
+            "options": {
+                "A": "Isosceles triangle",
+                "B": "Scalene triangle",
+                "C": "Equilateral triangle",
+                "D": "Right-angled isosceles triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Equilateral triangles have 3 lines of symmetry and rotational symmetry of order 3.",
+            "difficulty": "medium",
+            "source_section": "Symmetry in Triangles"
+        },
+        {
+            "question_number": 7,
+            "question": "How many lines of symmetry does a regular polygon with an interior angle of 108° have?",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "An interior angle of 108° belongs to a regular pentagon, which has 5 lines of symmetry.",
+            "difficulty": "medium",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 8,
+            "question": "A rhombus is rotated about the intersection of its diagonals. At what minimum angle will it look the same as the original?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "60°",
+                "D": "120°"
+            },
+            "correct_answer": "B",
+            "explanation": "A rhombus has rotational symmetry of order 2, so its minimum angle is 360/2 = 180°.",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following has only one line of symmetry?",
+            "options": {
+                "A": "Rectangle",
+                "B": "Rhombus",
+                "C": "Isosceles Trapezium",
+                "D": "Square"
+            },
+            "correct_answer": "C",
+            "explanation": "An isosceles trapezium has only one line of symmetry connecting the midpoints of the parallel sides.",
+            "difficulty": "medium",
+            "source_section": "Quadrilaterals"
+        },
+        {
+            "question_number": 10,
+            "question": "If a shape has rotational symmetry of order 3, what is its angle of rotation?",
+            "options": {
+                "A": "60°",
+                "B": "90°",
+                "C": "120°",
+                "D": "180°"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle = 360° / 3 = 120°.",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following letters has no line of symmetry but has rotational symmetry of order 2?",
+            "options": {
+                "A": "S",
+                "B": "T",
+                "C": "U",
+                "D": "V"
+            },
+            "correct_answer": "A",
+            "explanation": "S cannot be folded to match, but looks the same when turned upside down (180°).",
+            "difficulty": "medium",
+            "source_section": "Alphabet Symmetry"
+        },
+        {
+            "question_number": 12,
+            "question": "A regular polygon has 12 lines of symmetry. What is its angle of rotation?",
+            "options": {
+                "A": "15°",
+                "B": "30°",
+                "C": "45°",
+                "D": "60°"
+            },
+            "correct_answer": "B",
+            "explanation": "Lines of symmetry (12) = Order. Angle = 360/12 = 30°.",
+            "difficulty": "medium",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 13,
+            "question": "For which of the following is the line of symmetry the perpendicular bisector of its sides?",
+            "options": {
+                "A": "Rhombus",
+                "B": "Kite",
+                "C": "Rectangle",
+                "D": "Isosceles Triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "In a rectangle, lines of symmetry pass through the midpoints of opposite sides, bisecting them perpendicularly.",
+            "difficulty": "medium",
+            "source_section": "Quadrilaterals"
+        },
+        {
+            "question_number": 14,
+            "question": "The center of rotation for an equilateral triangle is the intersection of its:",
+            "options": {
+                "A": "Altitudes",
+                "B": "Medians",
+                "C": "Angle bisectors",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "In an equilateral triangle, the orthocenter, centroid, and incenter are the same point, which acts as the center of rotation.",
+            "difficulty": "medium",
+            "source_section": "Triangle Properties"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of these figures has line symmetry but not rotational symmetry of order more than 1?",
+            "options": {
+                "A": "Circle",
+                "B": "Regular Hexagon",
+                "C": "Isosceles Triangle",
+                "D": "Square"
+            },
+            "correct_answer": "C",
+            "explanation": "Isosceles triangle has 1 line of symmetry but order 1 rotational symmetry.",
+            "difficulty": "medium",
+            "source_section": "Comparison of Symmetry"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the order of rotational symmetry of a regular nonagon?",
+            "options": {
+                "A": "7",
+                "B": "8",
+                "C": "9",
+                "D": "10"
+            },
+            "correct_answer": "C",
+            "explanation": "A nonagon has 9 sides, so its rotational order is 9.",
+            "difficulty": "medium",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 17,
+            "question": "How many lines of symmetry are there in a standard 'Star of David' (6-pointed star)?",
+            "options": {
+                "A": "3",
+                "B": "6",
+                "C": "12",
+                "D": "0"
+            },
+            "correct_answer": "B",
+            "explanation": "A 6-pointed star (hexagram) has 6 lines of symmetry.",
+            "difficulty": "medium",
+            "source_section": "Complex Shapes"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is true for a circle?",
+            "options": {
+                "A": "It has 360 lines of symmetry",
+                "B": "It has no rotational symmetry",
+                "C": "It has an infinite order of rotational symmetry",
+                "D": "It has only 2 lines of symmetry"
+            },
+            "correct_answer": "C",
+            "explanation": "A circle looks the same at every possible infinitesimal rotation.",
+            "difficulty": "medium",
+            "source_section": "Circles"
+        },
+        {
+            "question_number": 19,
+            "question": "If a figure is rotated by 45° and it looks the same, the order of rotational symmetry is:",
+            "options": {
+                "A": "4",
+                "B": "6",
+                "C": "8",
+                "D": "10"
+            },
+            "correct_answer": "C",
+            "explanation": "360 / 45 = 8.",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of these shapes has the highest number of lines of symmetry?",
+            "options": {
+                "A": "Square",
+                "B": "Regular Pentagon",
+                "C": "Regular Hexagon",
+                "D": "Equilateral Triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Hexagon (6) > Pentagon (5) > Square (4) > Triangle (3).",
+            "difficulty": "medium",
+            "source_section": "Regular Polygons"
+        },
+        {
+            "question_number": 21,
+            "question": "The angle of rotation of a figure is 18°. What is the order of rotational symmetry?",
+            "options": {
+                "A": "10",
+                "B": "18",
+                "C": "20",
+                "D": "36"
+            },
+            "correct_answer": "C",
+            "explanation": "360 / 18 = 20.",
+            "difficulty": "medium",
+            "source_section": "Rotational Symmetry"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following quadrilaterals has lines of symmetry that do not pass through the vertices?",
+            "options": {
+                "A": "Rhombus",
+                "B": "Square",
+                "C": "Rectangle",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "Rectangle lines pass through midpoints of sides. Square has lines through midpoints AND vertices.",
+            "difficulty": "medium",
+            "source_section": "Quadrilaterals"
+        },
+        {
+            "question_number": 23,
+            "question": "A figure looks the same after 90° rotation. Does it necessarily look the same after 180° rotation?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Only if it is a square",
+                "D": "Only if it has line symmetry"
+            },
+            "correct_answer": "A",
+            "explanation": "If it matches at 90°, it will also match at every multiple of 90° (180°, 270°, 360°).",
+            "difficulty": "medium",
+            "source_section": "Rotational Logic"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following digits has both line and rotational symmetry?",
+            "options": {
+                "A": "0",
+                "B": "8",
+                "C": "1",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Assuming standard symmetrical fonts, 0, 8, and 1 possess both types of symmetry.",
+            "difficulty": "medium",
+            "source_section": "Numerical Symmetry"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the order of rotational symmetry of a windmill with 4 blades?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "4",
+                "D": "8"
+            },
+            "correct_answer": "C",
+            "explanation": "A 4-bladed windmill matches its position every quarter turn (90°).",
+            "difficulty": "medium",
+            "source_section": "Real-world Symmetry"
+        }
+    ]
+}

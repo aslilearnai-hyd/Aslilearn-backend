@@ -1,0 +1,177 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - Geography)",
+    "chapter": "Human Environment Interactions",
+    "difficulty": "Easy",
+    "source_pdf": "cbse_class7_geography_ch6.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Land Use Map Activity",
+            "objective": "Identify different types of land use in your area",
+            "materials": [
+                "Map of your village/town/city",
+                "Color pencils",
+                "Notebook or textbook"
+            ],
+            "steps": [
+                "Take a blank map of your area",
+                "Mark areas used for agriculture, forests, settlements, and industries",
+                "Use different colors for each type of land use"
+            ],
+            "learning_outcome": "Students learn about how humans use land for various purposes",
+            "evaluation": "Correct marking and labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Natural Resource Collage",
+            "objective": "Recognize different natural resources and their uses",
+            "materials": [
+                "A3 sheet",
+                "Magazines, newspapers, or printed images",
+                "Glue, scissors, colors"
+            ],
+            "steps": [
+                "Collect pictures representing water, forests, minerals, and soil",
+                "Create a collage on the A3 sheet",
+                "Label each resource and mention one use"
+            ],
+            "learning_outcome": "Students understand the importance of natural resources",
+            "evaluation": "Creativity and correctness of information (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Daily Life and Environment Chart",
+            "objective": "Analyze how environment influences human activities",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw columns for food, clothing, housing, and occupation",
+                "Write examples of each based on your region",
+                "Indicate how environment affects these choices"
+            ],
+            "learning_outcome": "Students understand the link between environment and human life",
+            "evaluation": "Chart organization and completeness (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Water Conservation Poster",
+            "objective": "Explore ways to conserve water",
+            "materials": [
+                "A3 paper",
+                "Colors",
+                "Reference from textbooks or internet"
+            ],
+            "steps": [
+                "Research simple water conservation methods",
+                "Create a poster showing methods like rainwater harvesting, reusing water",
+                "Include a short description or slogan"
+            ],
+            "learning_outcome": "Students develop awareness of water conservation",
+            "evaluation": "Creativity and information accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Resource Usage Survey",
+            "objective": "Understand how people use local resources",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Questionnaire template"
+            ],
+            "steps": [
+                "Prepare 5–6 questions on use of water, electricity, forest produce, and transport",
+                "Interview family members or neighbors",
+                "Record and summarize the results"
+            ],
+            "learning_outcome": "Students understand human dependence on local resources",
+            "evaluation": "Survey completeness and clarity of summary (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Traditional vs Modern Housing Drawing",
+            "objective": "Compare housing styles influenced by environment",
+            "materials": [
+                "Drawing sheet",
+                "Pencils",
+                "Colors"
+            ],
+            "steps": [
+                "Draw one traditional house and one modern house from your region",
+                "Label features such as materials used and design",
+                "Write two lines explaining why environment influenced each style"
+            ],
+            "learning_outcome": "Students appreciate how environment shapes human settlements",
+            "evaluation": "Accuracy of drawing and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Field Visit Observation",
+            "objective": "Observe human-environment interaction in your locality",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Visit a nearby farm, forest, or water body",
+                "Observe how people use and manage natural resources",
+                "Write 5–6 observations in your notebook"
+            ],
+            "learning_outcome": "Students connect classroom concepts to real-life observations",
+            "evaluation": "Relevance and detail of observations (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Story Writing: Life Around Natural Resources",
+            "objective": "Understand human dependence on environment through creative writing",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Imagine a day in a village near a river or forest",
+                "Write a short story highlighting how people get food, water, and fuel",
+                "Include challenges and solutions related to resources"
+            ],
+            "learning_outcome": "Students understand resource dependence through imagination",
+            "evaluation": "Creativity and relevance to chapter concepts (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Environment Vocabulary Puzzle",
+            "objective": "Reinforce key terms from the chapter",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Textbook"
+            ],
+            "steps": [
+                "List 10 key terms such as agriculture, irrigation, deforestation, renewable",
+                "Create a crossword or word search puzzle",
+                "Exchange puzzles with classmates to solve"
+            ],
+            "learning_outcome": "Students strengthen vocabulary related to human-environment interactions",
+            "evaluation": "Puzzle correctness and effort (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Mini Quiz on Human-Environment Interactions",
+            "objective": "Test understanding of chapter concepts",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Question cards"
+            ],
+            "steps": [
+                "Prepare 10 simple questions from the chapter",
+                "Ask classmates to answer them",
+                "Keep score for correct answers"
+            ],
+            "learning_outcome": "Students reinforce knowledge through peer learning",
+            "evaluation": "Question quality and participation (10 marks)"
+        }
+    ]
+}

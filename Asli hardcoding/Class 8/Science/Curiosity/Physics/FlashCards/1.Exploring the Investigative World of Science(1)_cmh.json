@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: Exploring the Investigative World of Science",
+  "generated_at": "2026-03-05T15:05:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is scientific investigation?",
+        "correct_answer": "A systematic process of asking questions, observing, experimenting, and explaining results",
+        "explanation": "Scientists investigate phenomena by asking focused questions and performing experiments to find answers.",
+        "source_section": "Chapter Introduction"
+      },
+      {
+        "question": "Why is curiosity important in science?",
+        "correct_answer": "Curiosity helps scientists ask questions and explore the world",
+        "explanation": "Scientific discoveries begin with curiosity and questions about how things work.",
+        "source_section": "Chapter Introduction"
+      },
+      {
+        "question": "What is observation in science?",
+        "correct_answer": "Carefully noticing and recording details about events or objects",
+        "explanation": "Observation helps scientists gather information before forming explanations.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "question": "What is an experiment?",
+        "correct_answer": "A test carried out to answer a scientific question",
+        "explanation": "Experiments help scientists confirm whether their ideas or hypotheses are correct.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "question": "What is a scientific question?",
+        "correct_answer": "A question that can be tested through observation or experiments",
+        "explanation": "Scientific questions lead to investigation and discovery.",
+        "source_section": "Scientific Thinking"
+      },
+      {
+        "question": "What is a hypothesis?",
+        "correct_answer": "A possible explanation or prediction that can be tested",
+        "explanation": "Scientists propose hypotheses before conducting experiments.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "question": "Why is it important to change only one factor during an experiment?",
+        "correct_answer": "To understand the effect of that single factor clearly",
+        "explanation": "Changing many factors at once makes it difficult to identify the cause of results.",
+        "source_section": "Experimental Method"
+      },
+      {
+        "question": "Why do scientists record observations during experiments?",
+        "correct_answer": "To analyze results and draw conclusions",
+        "explanation": "Accurate records help scientists explain their findings.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "question": "How can everyday life help us learn science?",
+        "correct_answer": "Daily activities can be observed and investigated scientifically",
+        "explanation": "Examples like cooking or weather changes can inspire scientific questions.",
+        "source_section": "Everyday Science"
+      },
+      {
+        "question": "What is the role of experiments in science?",
+        "correct_answer": "Experiments help test ideas and confirm scientific explanations",
+        "explanation": "Through experiments, scientists collect evidence to support conclusions.",
+        "source_section": "Scientific Investigation Process"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Scientific Investigation",
+        "content": "Scientific investigation involves asking questions, observing, experimenting, and explaining results to understand natural phenomena.",
+        "source_section": "Chapter Introduction"
+      },
+      {
+        "title": "Observation",
+        "content": "Observation means carefully noticing details using senses or tools to gather information.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "title": "Hypothesis",
+        "content": "A hypothesis is a testable explanation or prediction based on observations.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "title": "Experiment",
+        "content": "Experiments are controlled tests designed to answer scientific questions.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "title": "Scientific Thinking",
+        "content": "Scientific thinking involves curiosity, questioning, careful observation, and logical reasoning.",
+        "source_section": "Scientific Thinking"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Science begins with curiosity and questions about the world.",
+        "source_section": "Chapter Introduction"
+      },
+      {
+        "fact": "Careful observation is the first step in scientific investigation.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "fact": "Experiments help scientists test their hypotheses.",
+        "source_section": "Scientific Investigation Process"
+      },
+      {
+        "fact": "Scientific discoveries often start from simple everyday observations.",
+        "source_section": "Everyday Science"
+      }
+    ]
+  }
+}

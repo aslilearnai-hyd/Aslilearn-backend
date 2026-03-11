@@ -1,0 +1,69 @@
+{
+  "class": "Class 10",
+  "subject": "Hindi",
+  "chapter_name": "Sangatkar (संगतकार)",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "कविता की साहित्यिक विशेषताएँ समझना",
+    "प्रतीकात्मकता पहचानना",
+    "सामाजिक संदेश समझना",
+    "भावार्थ और सार लिखना",
+    "निःस्वार्थ सेवा की अवधारणा समझना",
+    "आलोचनात्मक चर्चा करना"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "कवि और पृष्ठभूमि",
+      "topics_covered": ["कवि का साहित्यिक योगदान", "संगीत और समाज"],
+      "teaching_strategy": ["व्याख्यान", "प्रश्नोत्तर"],
+      "student_activities": ["साहित्यिक विशेषताएँ लिखना"],
+      "assessment": ["मौखिक परीक्षण"]
+    },
+    {
+      "period": 2,
+      "title": "विश्लेषणात्मक वाचन",
+      "topics_covered": ["प्रतीकात्मकता", "संवेदनशील भाषा"],
+      "teaching_strategy": ["विश्लेषण आधारित वाचन"],
+      "student_activities": ["प्रतीक पहचानना"],
+      "assessment": ["लिखित जाँच"]
+    },
+    {
+      "period": 3,
+      "title": "सामाजिक संदर्भ",
+      "topics_covered": ["गुमनाम सहयोगी", "निःस्वार्थ सेवा"],
+      "teaching_strategy": ["ब्लैकबोर्ड विश्लेषण"],
+      "student_activities": ["उदाहरण लिखना"],
+      "assessment": ["लिखित अभ्यास"]
+    },
+    {
+      "period": 4,
+      "title": "भावार्थ और सार लेखन",
+      "topics_covered": ["मुख्य संदेश", "150 शब्दों का सार"],
+      "teaching_strategy": ["उदाहरण आधारित लेखन"],
+      "student_activities": ["सार लिखना"],
+      "assessment": ["सार जाँच"]
+    },
+    {
+      "period": 5,
+      "title": "सामूहिकता और विनम्रता",
+      "topics_covered": ["अहंकार त्याग", "टीमवर्क का महत्व"],
+      "teaching_strategy": ["चर्चा विधि"],
+      "student_activities": ["अनुच्छेद लेखन"],
+      "assessment": ["लिखित मूल्यांकन"]
+    },
+    {
+      "period": 6,
+      "title": "पुनरावृत्ति और परीक्षण",
+      "topics_covered": ["प्रतीक, शैली पुनरावृत्ति"],
+      "teaching_strategy": ["प्रश्नोत्तरी"],
+      "student_activities": ["लघु एवं दीर्घ प्रश्न हल करना"],
+      "assessment": ["15 अंकों का परीक्षण"]
+    }
+  ],
+  "teaching_aids": ["पाठ्यपुस्तक (Kshitij-2)", "ब्लैकबोर्ड", "संदर्भ पुस्तक"],
+  "evaluation_methods": ["लिखित परीक्षण", "मौखिक प्रश्न", "सार लेखन"],
+  "teacher_tip": "छात्रों से स्वयं उदाहरण दिलवाकर निःस्वार्थ सहयोग समझाएँ।"
+}

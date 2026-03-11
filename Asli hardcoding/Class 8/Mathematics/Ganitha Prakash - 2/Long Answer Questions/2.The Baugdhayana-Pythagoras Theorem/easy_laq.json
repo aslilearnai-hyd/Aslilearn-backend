@@ -1,0 +1,234 @@
+{
+  "content_type": "Long Questions",
+  "difficulty": "Easy",
+  "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+  "generated_at": "2026-03-04T19:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is meant by doubling the area of a square?",
+      "answer": "Doubling the area of a square means creating another square whose area is twice the area of the original square.",
+      "answer_outline": ["Meaning of doubling", "Area comparison"],
+      "key_concepts": ["area of square"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "How does the diagonal of a square help in doubling its area?",
+      "answer": "The diagonal of a square becomes the side of a new square whose area is twice the area of the original square.",
+      "answer_outline": ["Draw diagonal", "Construct square on diagonal"],
+      "key_concepts": ["diagonal of square"],
+      "marks": 4,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a right-angled triangle?",
+      "answer": "A right-angled triangle is a triangle in which one angle is exactly 90 degrees.",
+      "answer_outline": ["Definition", "Right angle"],
+      "key_concepts": ["right triangle"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the hypotenuse of a triangle?",
+      "answer": "In a right-angled triangle, the side opposite the right angle is called the hypotenuse.",
+      "answer_outline": ["Right triangle", "Opposite side"],
+      "key_concepts": ["hypotenuse"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 5,
+      "question": "State the Baudhāyana-Pythagoras theorem.",
+      "answer": "In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.",
+      "answer_outline": ["Statement", "Equation a² + b² = c²"],
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 4,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 6,
+      "question": "What are the sides of a right triangle usually called in the Pythagoras theorem?",
+      "answer": "The two shorter sides are called the legs and the longest side is called the hypotenuse.",
+      "answer_outline": ["Legs", "Hypotenuse"],
+      "key_concepts": ["triangle sides"],
+      "marks": 3,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Give one example of a Pythagorean triple.",
+      "answer": "One example of a Pythagorean triple is (3, 4, 5) because 3² + 4² = 9 + 16 = 25 = 5².",
+      "answer_outline": ["Triple", "Verification"],
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 3,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a Pythagorean triple?",
+      "answer": "A Pythagorean triple is a set of three integers that satisfy the equation a² + b² = c².",
+      "answer_outline": ["Definition", "Equation"],
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 3,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 9,
+      "question": "What is meant by primitive Pythagorean triple?",
+      "answer": "A primitive Pythagorean triple is a triple of numbers that have no common factor other than 1.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["primitive triples"],
+      "marks": 3,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 10,
+      "question": "What is meant by scaled Pythagorean triples?",
+      "answer": "Scaled triples are obtained by multiplying each element of a primitive triple by the same integer.",
+      "answer_outline": ["Primitive triple", "Multiplication"],
+      "key_concepts": ["scaled triples"],
+      "marks": 3,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is √2 considered an irrational number?",
+      "answer": "√2 is irrational because it cannot be written as a fraction of two integers and its decimal expansion never ends or repeats.",
+      "answer_outline": ["Definition", "Decimal expansion"],
+      "key_concepts": ["irrational numbers"],
+      "marks": 4,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Between which numbers does √2 lie?",
+      "answer": "√2 lies between 1.414 and 1.415 approximately.",
+      "answer_outline": ["Approximation"],
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 13,
+      "question": "What does the equation a² + b² = c² represent?",
+      "answer": "It represents the relationship between the sides of a right-angled triangle according to the Pythagoras theorem.",
+      "answer_outline": ["Equation", "Triangle relation"],
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 3,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Name two famous mathematicians associated with the Pythagoras theorem.",
+      "answer": "Baudhāyana and Pythagoras are associated with this theorem.",
+      "answer_outline": ["Baudhāyana", "Pythagoras"],
+      "key_concepts": ["history of mathematics"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 15,
+      "question": "What does the diagonal of a square represent in relation to its sides?",
+      "answer": "The diagonal forms the hypotenuse of a right triangle formed by the two sides of the square.",
+      "answer_outline": ["Triangle inside square"],
+      "key_concepts": ["diagonal"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 16,
+      "question": "What is meant by the area of a square?",
+      "answer": "The area of a square is the space covered by it and is calculated as side × side.",
+      "answer_outline": ["Formula"],
+      "key_concepts": ["area"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is the hypotenuse the longest side of a right triangle?",
+      "answer": "The hypotenuse is opposite the right angle and is always longer than the other two sides.",
+      "answer_outline": ["Opposite side", "Longest side"],
+      "key_concepts": ["right triangle"],
+      "marks": 3,
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Give another example of a Pythagorean triple.",
+      "answer": "Another example is (5, 12, 13).",
+      "answer_outline": ["Example"],
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 19,
+      "question": "What is meant by square numbers?",
+      "answer": "Square numbers are numbers obtained by multiplying a number by itself.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["square numbers"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 20,
+      "question": "What is meant by the sum of squares of two numbers?",
+      "answer": "It means adding the squares of two numbers, such as a² + b².",
+      "answer_outline": ["Expression"],
+      "key_concepts": ["square relation"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 21,
+      "question": "How is the diagonal of a square related to √2?",
+      "answer": "If the side of the square is 1 unit, the diagonal equals √2 units.",
+      "answer_outline": ["Side = 1", "Diagonal √2"],
+      "key_concepts": ["square diagonal"],
+      "marks": 3,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the relation between the area of squares on the sides of a right triangle?",
+      "answer": "The area of the square on the hypotenuse equals the sum of the areas of the squares on the other two sides.",
+      "answer_outline": ["Area relation"],
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 4,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "What is Fermat’s Last Theorem in simple terms?",
+      "answer": "It states that there are no positive integers satisfying aⁿ + bⁿ = cⁿ for n greater than 2.",
+      "answer_outline": ["Statement"],
+      "key_concepts": ["Fermat theorem"],
+      "marks": 3,
+      "source_section": "Section 2.6"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is the Pythagoras theorem important in geometry?",
+      "answer": "It helps calculate unknown sides, distances and diagonals in geometric shapes.",
+      "answer_outline": ["Applications"],
+      "key_concepts": ["geometry applications"],
+      "marks": 3,
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 25,
+      "question": "What are real-life uses of the Pythagoras theorem?",
+      "answer": "It is used in construction, navigation, architecture and distance calculations.",
+      "answer_outline": ["Examples"],
+      "key_concepts": ["real-life applications"],
+      "marks": 3,
+      "source_section": "Section 2.7"
+    }
+  ]
+}

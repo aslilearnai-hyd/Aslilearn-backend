@@ -1,0 +1,286 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 5: The Fundamental Unit of Life",
+    "generated_at": "2026-03-06T02:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State the cell theory.",
+            "answer": "Cell theory states that all living organisms are made of cells, the cell is the basic unit of life, and new cells arise from pre-existing cells.",
+            "key_concepts": [
+                "cell theory"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between diffusion and osmosis.",
+            "answer": "Diffusion is movement of substances from higher to lower concentration, while osmosis is movement of water through a selectively permeable membrane.",
+            "key_concepts": [
+                "diffusion",
+                "osmosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the structure of the plasma membrane.",
+            "answer": "The plasma membrane is a thin, flexible layer that surrounds the cell and regulates movement of substances in and out.",
+            "key_concepts": [
+                "plasma membrane"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What happens to a plant cell in a hypertonic solution?",
+            "answer": "The cell loses water and the cytoplasm shrinks away from the cell wall, causing plasmolysis.",
+            "key_concepts": [
+                "plasmolysis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are the functions of the nucleus?",
+            "answer": "The nucleus controls cell activities and stores genetic material.",
+            "key_concepts": [
+                "nucleus"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the function of endoplasmic reticulum?",
+            "answer": "Endoplasmic reticulum helps in synthesis and transport of proteins and lipids.",
+            "key_concepts": [
+                "endoplasmic reticulum"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Differentiate between rough ER and smooth ER.",
+            "answer": "Rough ER has ribosomes and synthesizes proteins, while smooth ER lacks ribosomes and synthesizes lipids.",
+            "key_concepts": [
+                "rough ER",
+                "smooth ER"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the function of Golgi apparatus.",
+            "answer": "Golgi apparatus modifies, packages and transports proteins and lipids.",
+            "key_concepts": [
+                "Golgi apparatus"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Why are lysosomes called suicide bags?",
+            "answer": "Because they contain enzymes that can digest damaged cell parts and sometimes the entire cell.",
+            "key_concepts": [
+                "lysosomes"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 10,
+            "question": "What are plastids? Name two types.",
+            "answer": "Plastids are organelles found in plant cells. Types include chloroplasts and leucoplasts.",
+            "key_concepts": [
+                "plastids"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the role of mitochondria.",
+            "answer": "Mitochondria produce energy in the form of ATP through cellular respiration.",
+            "key_concepts": [
+                "mitochondria"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What are chromosomes made of?",
+            "answer": "Chromosomes are made of DNA and proteins.",
+            "key_concepts": [
+                "chromosomes"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the role of vacuoles in plant cells?",
+            "answer": "Vacuoles store water, food and waste materials and maintain cell turgidity.",
+            "key_concepts": [
+                "vacuole"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Differentiate between plant and animal cells.",
+            "answer": "Plant cells have cell wall and chloroplasts while animal cells lack them.",
+            "key_concepts": [
+                "plant cells",
+                "animal cells"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the process of endocytosis.",
+            "answer": "Endocytosis is the process by which a cell engulfs materials from its surroundings.",
+            "key_concepts": [
+                "endocytosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is exocytosis?",
+            "answer": "Exocytosis is the process by which cells release materials outside the cell.",
+            "key_concepts": [
+                "exocytosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the structure of chromosomes.",
+            "answer": "Chromosomes are thread-like structures made of DNA and proteins present in the nucleus.",
+            "key_concepts": [
+                "chromosomes"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is mitosis?",
+            "answer": "Mitosis is cell division producing two genetically identical daughter cells.",
+            "key_concepts": [
+                "mitosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is meiosis?",
+            "answer": "Meiosis is cell division producing four daughter cells with half the chromosome number.",
+            "key_concepts": [
+                "meiosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the importance of cell division?",
+            "answer": "Cell division is important for growth, repair and reproduction.",
+            "key_concepts": [
+                "cell division"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What are prokaryotic cells?",
+            "answer": "Prokaryotic cells are cells without a true nucleus and membrane-bound organelles.",
+            "key_concepts": [
+                "prokaryotic cells"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What are eukaryotic cells?",
+            "answer": "Eukaryotic cells have a true nucleus and membrane-bound organelles.",
+            "key_concepts": [
+                "eukaryotic cells"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain cytoplasmic streaming.",
+            "answer": "Cytoplasmic streaming is the movement of cytoplasm within the cell.",
+            "key_concepts": [
+                "cytoplasmic streaming"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is active transport?",
+            "answer": "Active transport is movement of substances across membranes using energy.",
+            "key_concepts": [
+                "active transport"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the significance of chlorophyll?",
+            "answer": "Chlorophyll absorbs light energy for photosynthesis.",
+            "key_concepts": [
+                "chlorophyll"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 5.2.5"
+        }
+    ]
+}

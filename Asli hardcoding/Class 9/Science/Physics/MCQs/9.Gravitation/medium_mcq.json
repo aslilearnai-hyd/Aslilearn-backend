@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T15:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The universal gravitational constant (G) has the unit:",
+            "options": {
+                "A": "N m² kg⁻²",
+                "B": "kg m² s⁻²",
+                "C": "N m⁻²",
+                "D": "kg m s⁻²"
+            },
+            "correct_answer": "A",
+            "explanation": "The SI unit of the gravitational constant is N m² kg⁻².",
+            "difficulty": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Gravitational force between two objects increases when:",
+            "options": {
+                "A": "Distance increases",
+                "B": "Mass increases",
+                "C": "Distance decreases only",
+                "D": "Both mass increases and distance decreases"
+            },
+            "correct_answer": "D",
+            "explanation": "Force increases with greater masses and smaller distance.",
+            "difficulty": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Acceleration due to gravity depends on:",
+            "options": {
+                "A": "Mass of object",
+                "B": "Mass and radius of Earth",
+                "C": "Volume of object",
+                "D": "Shape of object"
+            },
+            "correct_answer": "B",
+            "explanation": "g = GM/R² shows dependence on Earth's mass and radius.",
+            "difficulty": "medium",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "If the mass of an object is doubled, its weight will:",
+            "options": {
+                "A": "Remain same",
+                "B": "Double",
+                "C": "Half",
+                "D": "Become four times"
+            },
+            "correct_answer": "B",
+            "explanation": "Weight = m × g, so doubling mass doubles weight.",
+            "difficulty": "medium",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Which factor does NOT affect pressure?",
+            "options": {
+                "A": "Force",
+                "B": "Area",
+                "C": "Temperature",
+                "D": "Surface contact"
+            },
+            "correct_answer": "C",
+            "explanation": "Pressure depends only on force and area.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 6,
+            "question": "When area decreases, pressure will:",
+            "options": {
+                "A": "Decrease",
+                "B": "Increase",
+                "C": "Remain constant",
+                "D": "Become zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Pressure is inversely proportional to area.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Which condition is necessary for floating?",
+            "options": {
+                "A": "Weight greater than buoyant force",
+                "B": "Weight equal to buoyant force",
+                "C": "Density greater than fluid",
+                "D": "Mass zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Floating occurs when buoyant force equals weight.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which device measures density of liquids using buoyancy?",
+            "options": {
+                "A": "Hydrometer",
+                "B": "Barometer",
+                "C": "Thermometer",
+                "D": "Voltmeter"
+            },
+            "correct_answer": "A",
+            "explanation": "Hydrometers work based on Archimedes' principle.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Buoyant force depends mainly on:",
+            "options": {
+                "A": "Mass of object",
+                "B": "Density of fluid",
+                "C": "Color of object",
+                "D": "Temperature of object"
+            },
+            "correct_answer": "B",
+            "explanation": "Buoyant force depends on density of fluid and volume displaced.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 10,
+            "question": "An iron nail sinks in water because:",
+            "options": {
+                "A": "Its mass is high",
+                "B": "Its density is greater than water",
+                "C": "Its shape is small",
+                "D": "It has less weight"
+            },
+            "correct_answer": "B",
+            "explanation": "Objects sink if density is greater than fluid.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Apparent weight equals:",
+            "options": {
+                "A": "Actual weight + buoyant force",
+                "B": "Actual weight – buoyant force",
+                "C": "Buoyant force only",
+                "D": "Actual weight × buoyant force"
+            },
+            "correct_answer": "B",
+            "explanation": "Apparent weight is reduced due to buoyant force.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 12,
+            "question": "Which principle explains floating bodies?",
+            "options": {
+                "A": "Pascal's law",
+                "B": "Archimedes' principle",
+                "C": "Ohm's law",
+                "D": "Boyle's law"
+            },
+            "correct_answer": "B",
+            "explanation": "Archimedes' principle explains buoyancy.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 13,
+            "question": "The weight of object on Moon compared to Earth is:",
+            "options": {
+                "A": "1/3",
+                "B": "1/2",
+                "C": "1/6",
+                "D": "1/9"
+            },
+            "correct_answer": "C",
+            "explanation": "Gravity on Moon is one-sixth of Earth.",
+            "difficulty": "medium",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which force keeps satellites in orbit?",
+            "options": {
+                "A": "Electric force",
+                "B": "Gravitational force",
+                "C": "Magnetic force",
+                "D": "Nuclear force"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravity maintains satellite orbits.",
+            "difficulty": "medium",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Pressure inside liquids:",
+            "options": {
+                "A": "Decreases with depth",
+                "B": "Increases with depth",
+                "C": "Remains constant",
+                "D": "Becomes zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Pressure increases with depth in liquids.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which shape of foundation reduces pressure?",
+            "options": {
+                "A": "Narrow",
+                "B": "Wide",
+                "C": "Circular",
+                "D": "Triangular"
+            },
+            "correct_answer": "B",
+            "explanation": "Large area reduces pressure.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Which quantity remains constant everywhere?",
+            "options": {
+                "A": "Weight",
+                "B": "Mass",
+                "C": "Pressure",
+                "D": "Force"
+            },
+            "correct_answer": "B",
+            "explanation": "Mass does not change with location.",
+            "difficulty": "medium",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Gravity between objects depends on:",
+            "options": {
+                "A": "Temperature",
+                "B": "Mass and distance",
+                "C": "Color",
+                "D": "Speed"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravitational force depends on mass and distance.",
+            "difficulty": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Ships float mainly due to:",
+            "options": {
+                "A": "Weight",
+                "B": "Shape and displacement",
+                "C": "Material",
+                "D": "Temperature"
+            },
+            "correct_answer": "B",
+            "explanation": "Ship shape allows large displacement.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Ballast tanks help submarines:",
+            "options": {
+                "A": "Increase speed",
+                "B": "Control buoyancy",
+                "C": "Produce electricity",
+                "D": "Generate oxygen"
+            },
+            "correct_answer": "B",
+            "explanation": "Ballast tanks adjust density.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Gravity acts between:",
+            "options": {
+                "A": "Charged particles",
+                "B": "All masses",
+                "C": "Magnetic objects",
+                "D": "Liquids"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravity acts between all masses.",
+            "difficulty": "medium",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 22,
+            "question": "When buoyant force equals weight:",
+            "options": {
+                "A": "Object sinks",
+                "B": "Object floats",
+                "C": "Object explodes",
+                "D": "Object disappears"
+            },
+            "correct_answer": "B",
+            "explanation": "Equal forces cause floating.",
+            "difficulty": "medium",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The gravitational force between two objects is:",
+            "options": {
+                "A": "Always zero",
+                "B": "Always attractive",
+                "C": "Always repulsive",
+                "D": "Sometimes attractive"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravitational force is always attractive.",
+            "difficulty": "medium",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Value of g on Earth depends on:",
+            "options": {
+                "A": "Earth's mass",
+                "B": "Earth's radius",
+                "C": "Both A and B",
+                "D": "Object mass"
+            },
+            "correct_answer": "C",
+            "explanation": "g = GM/R².",
+            "difficulty": "medium",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which example demonstrates buoyancy?",
+            "options": {
+                "A": "Falling apple",
+                "B": "Floating ship",
+                "C": "Rolling ball",
+                "D": "Moving car"
+            },
+            "correct_answer": "B",
+            "explanation": "Floating ships demonstrate buoyancy.",
+            "difficulty": "medium",
+            "source_section": "Section 9.6"
+        }
+    ]
+}

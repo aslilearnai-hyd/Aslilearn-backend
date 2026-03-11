@@ -1,0 +1,152 @@
+{
+    "course_code": "JEFP106",
+    "title": "The Making of a Scientist",
+    "difficulty": "Hard",
+    "activity_type": "Activity & Project Generator",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Theme Evaluation",
+            "objective": "To critically evaluate the theme of scientific inquiry",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse the theme of science and curiosity",
+                "Support your evaluation with incidents from the lesson"
+            ],
+            "learning_outcome": "Critically evaluates themes",
+            "evaluation": "Depth and originality (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Failure as a Turning Point",
+            "objective": "To analyse failure as a motivator",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify Ebright’s failure at the science fair",
+                "Explain how it shaped his future success"
+            ],
+            "learning_outcome": "Analyses personal growth",
+            "evaluation": "Logical reasoning (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Scientific Temper Analysis",
+            "objective": "To analyse scientific temperament",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify traits of scientific temper in Ebright",
+                "Explain with textual evidence"
+            ],
+            "learning_outcome": "Understands scientific attitude",
+            "evaluation": "Use of evidence (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Role of Environment in Success",
+            "objective": "To evaluate environmental influence",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse the role of family and teachers",
+                "Explain how environment shaped Ebright"
+            ],
+            "learning_outcome": "Evaluates external influences",
+            "evaluation": "Depth of evaluation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Extended Character Analysis",
+            "objective": "To critically analyse the protagonist",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse Richard Ebright’s character traits",
+                "Support with multiple examples"
+            ],
+            "learning_outcome": "Performs deep character analysis",
+            "evaluation": "Critical insight (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Message Relevance Today",
+            "objective": "To evaluate contemporary relevance",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the message of the lesson",
+                "Explain its relevance to students today"
+            ],
+            "learning_outcome": "Connects text to present context",
+            "evaluation": "Relevance and clarity (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Science vs Memorisation",
+            "objective": "To distinguish real learning from rote learning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Compare Ebright’s learning style with rote learning",
+                "Write your analysis"
+            ],
+            "learning_outcome": "Differentiates learning approaches",
+            "evaluation": "Analytical comparison (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Interpretation of the Title",
+            "objective": "To critically justify the title",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse the title of the lesson",
+                "Justify it with strong arguments"
+            ],
+            "learning_outcome": "Critically interprets title",
+            "evaluation": "Strength of justification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Lessons for Young Learners",
+            "objective": "To derive lessons for students",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify lessons students can learn",
+                "Explain how they can be applied"
+            ],
+            "learning_outcome": "Derives practical lessons",
+            "evaluation": "Applicability and depth (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Project: Scientist Profile Study",
+            "objective": "To apply lesson ideas through research",
+            "materials": [
+                "Internet / Library",
+                "Notebook"
+            ],
+            "steps": [
+                "Select a scientist of your choice",
+                "Study their life and struggles",
+                "Compare with Richard Ebright’s journey"
+            ],
+            "learning_outcome": "Applies concepts through research",
+            "evaluation": "Comparison and presentation (10 marks)"
+        }
+    ]
+}

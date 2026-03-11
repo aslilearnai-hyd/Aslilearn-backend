@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "generated_at": "2026-03-05T14:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why are microscopes essential for studying microorganisms?",
+      "options": {
+        "A": "They measure temperature",
+        "B": "They magnify very small organisms",
+        "C": "They produce light",
+        "D": "They weigh objects"
+      },
+      "correct_answer": "B",
+      "explanation": "Microscopes magnify tiny organisms that cannot be seen with the naked eye.",
+      "difficulty": "medium",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Robert Hooke discovered cells by observing which material under a microscope?",
+      "options": {
+        "A": "Leaf",
+        "B": "Cork",
+        "C": "Water",
+        "D": "Blood"
+      },
+      "correct_answer": "B",
+      "explanation": "Hooke observed cork and discovered small compartments called cells.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which scientist first observed living microorganisms?",
+      "options": {
+        "A": "Robert Hooke",
+        "B": "Louis Pasteur",
+        "C": "Antonie van Leeuwenhoek",
+        "D": "Gregor Mendel"
+      },
+      "correct_answer": "C",
+      "explanation": "Leeuwenhoek observed microorganisms using improved microscopes.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which cell component regulates the movement of substances into and out of the cell?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Cell membrane",
+        "C": "Cytoplasm",
+        "D": "Chloroplast"
+      },
+      "correct_answer": "B",
+      "explanation": "The cell membrane controls entry and exit of substances.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which structure is responsible for controlling cell activities?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Cell wall",
+        "C": "Cytoplasm",
+        "D": "Membrane"
+      },
+      "correct_answer": "A",
+      "explanation": "The nucleus controls all activities of the cell.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which structure is found only in plant cells?",
+      "options": {
+        "A": "Cell membrane",
+        "B": "Nucleus",
+        "C": "Cell wall",
+        "D": "Cytoplasm"
+      },
+      "correct_answer": "C",
+      "explanation": "Plant cells have a cell wall that provides support.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the main role of cytoplasm in the cell?",
+      "options": {
+        "A": "Control cell activities",
+        "B": "Protect the cell",
+        "C": "Carry out metabolic processes",
+        "D": "Store food only"
+      },
+      "correct_answer": "C",
+      "explanation": "Cytoplasm is the site where most metabolic activities occur.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which microorganisms convert milk into curd?",
+      "options": {
+        "A": "Yeast",
+        "B": "Lactobacillus",
+        "C": "Protozoa",
+        "D": "Algae"
+      },
+      "correct_answer": "B",
+      "explanation": "Lactobacillus bacteria convert milk sugar into lactic acid.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which process is responsible for dough rising during bread making?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Respiration",
+        "C": "Fermentation",
+        "D": "Digestion"
+      },
+      "correct_answer": "C",
+      "explanation": "Yeast fermentation produces carbon dioxide which causes dough to rise.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which microorganisms fix nitrogen in the soil?",
+      "options": {
+        "A": "Rhizobium",
+        "B": "Yeast",
+        "C": "Amoeba",
+        "D": "Algae"
+      },
+      "correct_answer": "A",
+      "explanation": "Rhizobium bacteria fix atmospheric nitrogen in soil.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which microorganism belongs to the protozoa group?",
+      "options": {
+        "A": "Amoeba",
+        "B": "Yeast",
+        "C": "Rhizobium",
+        "D": "Algae"
+      },
+      "correct_answer": "A",
+      "explanation": "Amoeba is a protozoan microorganism.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which organisms produce oxygen in aquatic ecosystems?",
+      "options": {
+        "A": "Fungi",
+        "B": "Protozoa",
+        "C": "Microalgae",
+        "D": "Bacteria"
+      },
+      "correct_answer": "C",
+      "explanation": "Microalgae perform photosynthesis and produce oxygen.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which level of organization comes directly after cells?",
+      "options": {
+        "A": "Organs",
+        "B": "Tissues",
+        "C": "Organ systems",
+        "D": "Organisms"
+      },
+      "correct_answer": "B",
+      "explanation": "Cells combine to form tissues.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which microorganisms are mainly responsible for decomposition?",
+      "options": {
+        "A": "Decomposer microbes",
+        "B": "Viruses",
+        "C": "Animals",
+        "D": "Fish"
+      },
+      "correct_answer": "A",
+      "explanation": "Decomposer microbes break down organic matter.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which type of organism consists of only one cell?",
+      "options": {
+        "A": "Multicellular organism",
+        "B": "Unicellular organism",
+        "C": "Plant organism",
+        "D": "Animal organism"
+      },
+      "correct_answer": "B",
+      "explanation": "Unicellular organisms consist of a single cell.",
+      "difficulty": "medium",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Which part of the plant cell performs photosynthesis?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Cytoplasm",
+        "C": "Chloroplast",
+        "D": "Membrane"
+      },
+      "correct_answer": "C",
+      "explanation": "Chloroplasts contain chlorophyll and perform photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which process converts organic waste into compost?",
+      "options": {
+        "A": "Fermentation",
+        "B": "Decomposition",
+        "C": "Respiration",
+        "D": "Photosynthesis"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposition breaks down organic matter into compost.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which gas is produced during yeast fermentation?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Yeast releases carbon dioxide during fermentation.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which cell component contains genetic information?",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Nucleus",
+        "C": "Membrane",
+        "D": "Cell wall"
+      },
+      "correct_answer": "B",
+      "explanation": "The nucleus stores genetic material.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which microorganism is commonly found in pond water?",
+      "options": {
+        "A": "Amoeba",
+        "B": "Dog",
+        "C": "Cow",
+        "D": "Bird"
+      },
+      "correct_answer": "A",
+      "explanation": "Amoeba is commonly found in pond water.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the main function of Rhizobium bacteria?",
+      "options": {
+        "A": "Produce oxygen",
+        "B": "Fix nitrogen",
+        "C": "Make curd",
+        "D": "Cause disease"
+      },
+      "correct_answer": "B",
+      "explanation": "Rhizobium bacteria convert atmospheric nitrogen into usable forms for plants.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Which organisms are essential for recycling nutrients in ecosystems?",
+      "options": {
+        "A": "Decomposer microorganisms",
+        "B": "Birds",
+        "C": "Fish",
+        "D": "Humans"
+      },
+      "correct_answer": "A",
+      "explanation": "Decomposer microbes recycle nutrients by breaking down organic matter.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following is a beneficial use of microorganisms?",
+      "options": {
+        "A": "Causing diseases",
+        "B": "Spoiling food",
+        "C": "Making bread and curd",
+        "D": "Damaging crops"
+      },
+      "correct_answer": "C",
+      "explanation": "Microorganisms are used in food preparation such as bread and curd.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which structure gives rigidity to plant cells?",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Cell wall",
+        "C": "Membrane",
+        "D": "Nucleus"
+      },
+      "correct_answer": "B",
+      "explanation": "The cell wall provides rigidity and support to plant cells.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are microorganisms important in ecosystems?",
+      "options": {
+        "A": "They destroy nutrients",
+        "B": "They recycle nutrients and support life",
+        "C": "They reduce oxygen",
+        "D": "They stop plant growth"
+      },
+      "correct_answer": "B",
+      "explanation": "Microorganisms recycle nutrients and maintain ecological balance.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Long Answer Questions",
+    "chapter": "Chapter 12: Earth, Moon, and the Sun",
+    "generated_at": "2026-03-06T16:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why we experience day and night on Earth.",
+            "answer": "Day and night occur because the Earth rotates on its axis once every 24 hours. The side facing the Sun experiences day, while the opposite side experiences night.",
+            "key_concepts": ["Earth rotation", "day and night"],
+            "marks": 4,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe how the tilt of Earth's axis affects the seasons.",
+            "answer": "The Earth’s axis is tilted at 23.5°. As Earth revolves around the Sun, different hemispheres receive different amounts of sunlight, resulting in seasons like summer and winter.",
+            "key_concepts": ["axial tilt", "seasons"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "List and briefly explain the main phases of the Moon.",
+            "answer": "The main phases of the Moon are: New Moon (Moon between Earth and Sun), First Quarter (half illuminated), Full Moon (Earth between Sun and Moon), Last Quarter (other half illuminated).",
+            "key_concepts": ["Moon phases", "illumination"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the difference between solar and lunar eclipses.",
+            "answer": "A solar eclipse happens when the Moon blocks the Sun from Earth. A lunar eclipse happens when the Earth blocks sunlight from reaching the Moon.",
+            "key_concepts": ["solar eclipse", "lunar eclipse", "Earth-Moon-Sun alignment"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Why don’t eclipses happen every month?",
+            "answer": "The Moon’s orbit is tilted 5° to Earth’s orbit, so the Sun, Earth, and Moon don’t align perfectly every month. Eclipses occur only near the orbital nodes.",
+            "key_concepts": ["orbital tilt", "alignment", "nodes"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the Earth’s rotation make the Sun appear to move across the sky?",
+            "answer": "As Earth rotates from west to east, the Sun appears to rise in the east and set in the west. This apparent motion is caused by Earth’s rotation.",
+            "key_concepts": ["apparent motion", "Earth rotation"],
+            "marks": 4,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why the Moon always shows the same face to the Earth.",
+            "answer": "The Moon rotates on its axis in the same time it takes to orbit Earth, called synchronous rotation, so only one side faces Earth.",
+            "key_concepts": ["tidal locking", "synchronous rotation"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the difference between a sidereal day and a solar day?",
+            "answer": "A sidereal day is Earth’s rotation relative to stars (23h 56m), while a solar day is relative to the Sun (24h). The difference arises because Earth moves along its orbit.",
+            "key_concepts": ["sidereal day", "solar day"],
+            "marks": 4,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the roles of solstices and equinoxes in marking seasons.",
+            "answer": "Solstices occur when the Sun is farthest from the equator, giving longest or shortest days. Equinoxes occur when the Sun is over the equator, giving equal day and night.",
+            "key_concepts": ["solstice", "equinox", "seasons"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why lunar eclipses are visible to more people than solar eclipses.",
+            "answer": "During a lunar eclipse, Earth’s shadow covers the Moon and can be seen from the entire night side. Solar eclipses are visible only along the Moon’s shadow path, which is narrow.",
+            "key_concepts": ["visibility", "lunar eclipse", "solar eclipse"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe how the Moon’s gravity causes tides on Earth.",
+            "answer": "The Moon’s gravitational pull attracts ocean water, creating high tides on the side facing the Moon and opposite side, while low tides occur in between.",
+            "key_concepts": ["Moon gravity", "tides"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the Sun’s apparent size and the Moon’s apparent size are similar.",
+            "answer": "The Sun is much larger but also much farther from Earth. The ratio of size to distance makes their apparent sizes nearly equal, allowing total solar eclipses.",
+            "key_concepts": ["apparent size", "Sun", "Moon"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 13,
+            "question": "How does the Earth’s revolution affect the apparent position of the Sun throughout the year?",
+            "answer": "As Earth revolves, the Sun appears to move along the ecliptic relative to the stars, changing sunrise and sunset positions and creating seasonal variations.",
+            "key_concepts": ["Earth revolution", "apparent Sun position", "seasons"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the waxing and waning phases of the Moon.",
+            "answer": "Waxing occurs when the visible illuminated part increases from new Moon to full Moon. Waning occurs when the illuminated part decreases from full Moon to new Moon.",
+            "key_concepts": ["waxing", "waning", "Moon phases"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do the Moon and Sun appear to rise later each day?",
+            "answer": "The Moon rises about 50 minutes later each day because it moves eastward in its orbit. The Sun’s apparent shift over a year is slower, so day-to-day change is minimal.",
+            "key_concepts": ["Moon orbit", "daily delay", "Sun apparent motion"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Describe the relationship between the phases of the Moon and its position relative to Earth and Sun.",
+            "answer": "The Moon’s phase depends on how much of its illuminated side faces Earth. Positions like new Moon, first quarter, full Moon, and last quarter define the phases.",
+            "key_concepts": ["Moon phases", "Earth-Moon-Sun positions"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the role of lunar nodes in eclipses.",
+            "answer": "Lunar nodes are the points where the Moon’s orbit crosses Earth’s orbital plane. Eclipses can occur only when the Sun, Earth, and Moon align near these nodes.",
+            "key_concepts": ["lunar nodes", "alignment", "eclipse occurrence"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the difference between partial, total, and annular solar eclipses.",
+            "answer": "Total: Moon completely covers Sun. Partial: only part of Sun is covered. Annular: Moon is farther, so Sun forms a ring around it.",
+            "key_concepts": ["solar eclipse types", "Moon distance", "Sun coverage"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How do Earth’s rotation and revolution together influence seasons and day length?",
+            "answer": "Rotation causes day and night. Revolution with axial tilt changes sunlight intensity and day length throughout the year, creating seasons.",
+            "key_concepts": ["rotation", "revolution", "seasons", "day length"],
+            "marks": 4,
+            "source_section": "Section 12.1 and 12.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why eclipses were important for historical astronomical studies.",
+            "answer": "Observing eclipses allowed ancient astronomers to understand celestial motions, measure distances, and predict future eclipses, improving knowledge of Earth-Moon-Sun relationships.",
+            "key_concepts": ["historical eclipses", "astronomy", "celestial mechanics"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe how the apparent motion of the Sun, Moon, and stars is affected by Earth’s movements.",
+            "answer": "Earth’s rotation makes celestial objects appear to rise in the east and set in the west. Revolution changes their apparent position over the year.",
+            "key_concepts": ["apparent motion", "rotation", "revolution"],
+            "marks": 4,
+            "source_section": "Section 12.1 and 12.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why lunar eclipses appear red or copper-colored.",
+            "answer": "Earth’s atmosphere scatters blue light and refracts red light onto the Moon during a lunar eclipse, giving it a reddish color, known as a 'blood Moon.'",
+            "key_concepts": ["lunar eclipse", "atmospheric refraction", "red color"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 23,
+            "question": "How do solstices affect the duration of day and night?",
+            "answer": "During solstices, one hemisphere is tilted toward the Sun (longest day) and the other away (shortest day), marking maximum differences in day and night length.",
+            "key_concepts": ["solstices", "day length", "Earth tilt"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the effect of Earth’s tilt on the Tropic of Cancer and Tropic of Capricorn.",
+            "answer": "The tilt of 23.5° causes the Sun to be directly overhead at the Tropic of Cancer during summer solstice and at Tropic of Capricorn during winter solstice, defining the tropics.",
+            "key_concepts": ["Earth tilt", "Tropics", "solstice"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Describe how the phases of the Moon help in keeping lunar calendars.",
+            "answer": "Lunar calendars are based on the Moon’s phases from new to full and back. Each month begins with a new Moon, helping to track time according to the lunar cycle.",
+            "key_concepts": ["Moon phases", "lunar calendar", "timekeeping"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        }
+    ]
+}   

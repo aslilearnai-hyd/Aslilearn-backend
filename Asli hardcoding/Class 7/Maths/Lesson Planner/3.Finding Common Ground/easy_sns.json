@@ -1,0 +1,71 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Finding the Common Ground (Symmetry)",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify line symmetry in regular and irregular shapes",
+        "Understand the concept of the 'Axis of Symmetry'",
+        "Explore reflection symmetry in mirrors",
+        "Recognize symmetrical patterns in nature and architecture",
+        "Draw the other half of a symmetrical figure given the axis"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Line Symmetry",
+            "topics_covered": [
+                "Definition of symmetry and folding test",
+                "Identifying lines of symmetry in letters (A, B, M, etc.)",
+                "Vertical vs. Horizontal symmetry"
+            ],
+            "teaching_strategy": [
+                "Paper folding activity (Ink-blot chromatography)",
+                "Visual identification using alphabet charts"
+            ],
+            "student_activities": [
+                "Fold paper and cut out symmetrical shapes (hearts, butterflies)",
+                "Identify which capital letters have more than one line of symmetry"
+            ],
+            "assessment": [
+                "Oral quiz: 'How many lines of symmetry in a rectangle?'",
+                "Worksheet on completing the mirror image"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reflection and Symmetry",
+            "topics_covered": [
+                "The object and image relationship",
+                "Distance from the mirror line",
+                "Left-right reversal (Lateral inversion)"
+            ],
+            "teaching_strategy": [
+                "Mirror-grid activity",
+                "Board demonstration of distance matching"
+            ],
+            "student_activities": [
+                "Use a strip of mirror to find the axis of symmetry in pictures",
+                "Draw the reflection of simple shapes on a square grid"
+            ],
+            "assessment": [
+                "Peer-checking of grid drawings",
+                "Short test on 'Mirror Line' properties"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Hand mirrors",
+        "Alphabet charts",
+        "Grid paper",
+        "Symmetrical nature photos (leaves, shells)"
+    ],
+    "evaluation_methods": [
+        "Visual symmetry identification test",
+        "Drawing accuracy assessment",
+        "Notebook review"
+    ],
+    "teacher_tip": "Remind students that a 'line of symmetry' is like a crease—if you can't fold it perfectly over that line, it isn't one!"
+}

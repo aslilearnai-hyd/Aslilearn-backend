@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 6: We Distribute, Yet Things Multiply",
+  "generated_at": "2026-03-04T19:05:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the distributive property of multiplication over addition?",
+        "correct_answer": "a(b + c) = ab + ac",
+        "explanation": "Multiplication distributes over each term inside the bracket.",
+        "source_section": "Section 6.1"
+      },
+      {
+        "question": "What happens when a number multiplies a bracketed expression?",
+        "correct_answer": "It multiplies each term inside the bracket",
+        "explanation": "Example: 3(4 + 5) = 3×4 + 3×5.",
+        "source_section": "Section 6.1"
+      },
+      {
+        "question": "What is meant by expanding an expression?",
+        "correct_answer": "Removing brackets by applying the distributive property",
+        "explanation": "Example: 4(x + 3) = 4x + 12.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "What is factorisation?",
+        "correct_answer": "Writing an expression as a product of its factors",
+        "explanation": "Example: 6x + 12 = 6(x + 2).",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "What is a common factor in algebra?",
+        "correct_answer": "A factor shared by all terms of an expression",
+        "explanation": "Example: In 8x + 16, the common factor is 8.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "What is meant by simplifying an algebraic expression?",
+        "correct_answer": "Reducing an expression to its simplest form",
+        "explanation": "This involves expanding brackets and combining like terms.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "What are like terms?",
+        "correct_answer": "Terms that have the same variable with the same power",
+        "explanation": "Example: 3x and 5x are like terms.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "How do you combine like terms?",
+        "correct_answer": "Add or subtract their coefficients",
+        "explanation": "Example: 3x + 5x = 8x.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "What is the reverse of expansion using distributive property?",
+        "correct_answer": "Factorisation",
+        "explanation": "Example: 2x + 6 = 2(x + 3).",
+        "source_section": "Section 6.2"
+      },
+      {
+        "question": "Why is the distributive property important in algebra?",
+        "correct_answer": "It helps simplify and manipulate algebraic expressions",
+        "explanation": "It allows multiplication to be applied to each term inside brackets.",
+        "source_section": "Section 6.1"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Distributive Property",
+        "content": "Multiplication distributes over addition and subtraction: a(b + c) = ab + ac.",
+        "source_section": "Section 6.1"
+      },
+      {
+        "title": "Expansion",
+        "content": "Expansion means removing brackets using distributive property.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "title": "Factorisation",
+        "content": "Factorisation is expressing an algebraic expression as a product of factors.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "title": "Like Terms",
+        "content": "Like terms have the same variable and exponent and can be combined.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "title": "Simplification",
+        "content": "Simplification involves expanding brackets and combining like terms.",
+        "source_section": "Section 6.2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Distributive property works for both addition and subtraction.",
+        "source_section": "Section 6.1"
+      },
+      {
+        "fact": "Factorisation is the reverse process of expansion.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "fact": "Like terms can only be combined with other like terms.",
+        "source_section": "Section 6.2"
+      },
+      {
+        "fact": "Algebraic expressions can often be simplified using distributive property.",
+        "source_section": "Section 6.2"
+      }
+    ]
+  }
+}

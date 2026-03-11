@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Pressure, Winds, Storms and Cyclones",
+  "generated_at": "2026-03-05T19:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is pressure?",
+      "answer": "Pressure is the force acting on a unit area of a surface.",
+      "answer_outline": ["Definition of pressure"],
+      "key_concepts": ["pressure"],
+      "marks": 3,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 2,
+      "question": "Write the formula for pressure.",
+      "answer": "Pressure = Force ÷ Area.",
+      "answer_outline": ["Pressure formula"],
+      "key_concepts": ["pressure formula"],
+      "marks": 3,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how pressure depends on area.",
+      "answer": "Pressure increases when the area decreases and decreases when the area increases.",
+      "answer_outline": ["Area relationship", "Explanation"],
+      "key_concepts": ["pressure and area"],
+      "marks": 4,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do sharp knives cut easily?",
+      "answer": "Sharp knives have a smaller area, which produces greater pressure and makes cutting easier.",
+      "answer_outline": ["Small area", "High pressure"],
+      "key_concepts": ["pressure"],
+      "marks": 3,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do camels have broad feet?",
+      "answer": "Camels have broad feet to reduce pressure on sand so that they do not sink easily.",
+      "answer_outline": ["Large area", "Reduced pressure"],
+      "key_concepts": ["pressure"],
+      "marks": 3,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why school bags have broad straps.",
+      "answer": "Broad straps increase the area over which weight is distributed, reducing pressure on the shoulders.",
+      "answer_outline": ["Large area", "Reduced pressure"],
+      "key_concepts": ["pressure"],
+      "marks": 3,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 7,
+      "question": "What is liquid pressure?",
+      "answer": "Liquid pressure is the pressure exerted by a liquid on the walls and bottom of its container.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["liquid pressure"],
+      "marks": 3,
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how pressure changes with depth in liquids.",
+      "answer": "Pressure in liquids increases as the depth increases.",
+      "answer_outline": ["Depth relation"],
+      "key_concepts": ["liquid pressure"],
+      "marks": 4,
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 9,
+      "question": "Do liquids exert pressure only downward? Explain.",
+      "answer": "No, liquids exert pressure in all directions including sideways and upward.",
+      "answer_outline": ["All-direction pressure"],
+      "key_concepts": ["liquid pressure"],
+      "marks": 4,
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 10,
+      "question": "What is atmospheric pressure?",
+      "answer": "Atmospheric pressure is the pressure exerted by the air surrounding the Earth.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["atmospheric pressure"],
+      "marks": 3,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why we are not crushed by atmospheric pressure.",
+      "answer": "Our body contains fluids and air that exert pressure equal to atmospheric pressure, balancing it.",
+      "answer_outline": ["Balanced pressure"],
+      "key_concepts": ["atmospheric pressure"],
+      "marks": 4,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain with an example that air exerts pressure.",
+      "answer": "When air is blown into a balloon, the balloon expands showing that air exerts pressure.",
+      "answer_outline": ["Example", "Explanation"],
+      "key_concepts": ["air pressure"],
+      "marks": 4,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 13,
+      "question": "What causes winds?",
+      "answer": "Winds are caused by the movement of air from regions of high pressure to low pressure.",
+      "answer_outline": ["Pressure difference"],
+      "key_concepts": ["wind"],
+      "marks": 3,
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the formation of wind using pressure differences.",
+      "answer": "Air moves from areas of high pressure to areas of low pressure, creating wind.",
+      "answer_outline": ["Pressure difference", "Air movement"],
+      "key_concepts": ["wind formation"],
+      "marks": 4,
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 15,
+      "question": "What is sea breeze?",
+      "answer": "Sea breeze is the movement of cool air from the sea toward land during the day.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["sea breeze"],
+      "marks": 3,
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 16,
+      "question": "What is land breeze?",
+      "answer": "Land breeze is the movement of cool air from land toward the sea at night.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["land breeze"],
+      "marks": 3,
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain what storms are.",
+      "answer": "Storms are strong disturbances in the atmosphere with high winds, rain and sometimes lightning.",
+      "answer_outline": ["Definition", "Characteristics"],
+      "key_concepts": ["storms"],
+      "marks": 3,
+      "source_section": "Storms"
+    },
+    {
+      "question_number": 18,
+      "question": "What is a cyclone?",
+      "answer": "A cyclone is a large rotating storm system formed over oceans with strong winds and heavy rainfall.",
+      "answer_outline": ["Definition"],
+      "key_concepts": ["cyclone"],
+      "marks": 3,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why cyclones are dangerous.",
+      "answer": "Cyclones bring strong winds, heavy rain and flooding which can damage buildings and cause loss of life.",
+      "answer_outline": ["Strong winds", "Flooding"],
+      "key_concepts": ["cyclone"],
+      "marks": 4,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 20,
+      "question": "Write two safety measures during a cyclone.",
+      "answer": "People should stay indoors and follow instructions from authorities during a cyclone.",
+      "answer_outline": ["Stay indoors", "Follow safety instructions"],
+      "key_concepts": ["cyclone safety"],
+      "marks": 3,
+      "source_section": "Cyclone Safety"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why buildings can be damaged during storms.",
+      "answer": "Strong winds create pressure differences that can lift roofs and damage structures.",
+      "answer_outline": ["Wind pressure"],
+      "key_concepts": ["storm damage"],
+      "marks": 4,
+      "source_section": "Storm Effects"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how pressure plays a role in weather changes.",
+      "answer": "Differences in atmospheric pressure cause air movement, which leads to winds and weather changes.",
+      "answer_outline": ["Pressure differences", "Air movement"],
+      "key_concepts": ["weather"],
+      "marks": 4,
+      "source_section": "Weather"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of studying pressure in science.",
+      "answer": "Understanding pressure helps explain weather patterns, wind movement and many everyday phenomena.",
+      "answer_outline": ["Importance", "Applications"],
+      "key_concepts": ["pressure"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how pressure affects our daily life.",
+      "answer": "Pressure affects activities like cutting with knives, walking on sand and atmospheric conditions.",
+      "answer_outline": ["Examples"],
+      "key_concepts": ["pressure applications"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why understanding winds and cyclones is important.",
+      "answer": "Understanding winds and cyclones helps predict weather and protect people from natural disasters.",
+      "answer_outline": ["Weather prediction", "Safety"],
+      "key_concepts": ["winds", "cyclones"],
+      "marks": 4,
+      "source_section": "Cyclones"
+    }
+  ]
+}

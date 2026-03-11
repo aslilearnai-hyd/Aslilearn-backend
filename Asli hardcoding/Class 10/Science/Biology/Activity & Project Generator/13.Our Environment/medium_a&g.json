@@ -1,0 +1,178 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Our Environment",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class10_science_ch13.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Food Chain and Food Web Model/Chart",
+            "objective": "Understand energy flow and trophic levels",
+            "materials": [
+                "Chart paper",
+                "Colors, sketch pens",
+                "Reference from textbook"
+            ],
+            "steps": [
+                "Choose an ecosystem (e.g., pond, forest, grassland)",
+                "Draw producers, primary/secondary/tertiary consumers, decomposers",
+                "Show arrows for energy flow (10% rule)",
+                "Compare linear food chain vs complex food web"
+            ],
+            "learning_outcome": "Explains interdependence and energy transfer in ecosystems",
+            "evaluation": "Accuracy of trophic levels, arrows, and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Biodegradable vs Non-Biodegradable Waste Survey",
+            "objective": "Classify waste and understand decomposition",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Optional: camera for photos"
+            ],
+            "steps": [
+                "Collect 20 household/school waste items",
+                "Categorize as biodegradable/non-biodegradable",
+                "Note decomposition time estimates",
+                "Discuss impact on environment"
+            ],
+            "learning_outcome": "Recognizes waste types and need for segregation",
+            "evaluation": "Classification accuracy and discussion points (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Ozone Layer Depletion Poster",
+            "objective": "Illustrate causes, effects, and protection of ozone",
+            "materials": [
+                "A3 chart paper",
+                "Colors, markers"
+            ],
+            "steps": [
+                "Draw Earth's atmosphere layers with ozone shield",
+                "Show CFC release, ozone hole formation over Antarctica",
+                "List effects (UV radiation increase, skin cancer, crop damage)",
+                "Mention Montreal Protocol"
+            ],
+            "learning_outcome": "Understands ozone's role and human impact",
+            "evaluation": "Diagram clarity, facts accuracy, creativity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Ecosystem Components Observation",
+            "objective": "Identify biotic and abiotic factors",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Magnifying glass (optional)"
+            ],
+            "steps": [
+                "Observe a small local ecosystem (garden, park, pond)",
+                "List 10 biotic (plants, animals) and 10 abiotic (soil, water, light) factors",
+                "Note interactions (e.g., plants providing shade, insects pollinating)",
+                "Present findings"
+            ],
+            "learning_outcome": "Appreciates ecosystem balance",
+            "evaluation": "Completeness of lists and interactions noted (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Biological Magnification Demonstration/Model",
+            "objective": "Show accumulation of toxins in food chain",
+            "materials": [
+                "Chart paper or jars with colored beads/beans"
+            ],
+            "steps": [
+                "Model food chain: producers → herbivores → carnivores",
+                "Use beads to represent pesticide (increase at each level)",
+                "Show magnification in top consumers",
+                "Explain DDT example and human impact"
+            ],
+            "learning_outcome": "Understands biomagnification dangers",
+            "evaluation": "Model clarity and scientific explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Waste Management Plan for School/Home",
+            "objective": "Promote 5R principles (Reduce, Reuse, Recycle, Refuse, Recover)",
+            "materials": [
+                "Notebook, posters"
+            ],
+            "steps": [
+                "Survey waste generated in school/home for a week",
+                "Propose practical ways to reduce waste",
+                "Suggest recycling methods and composting",
+                "Make awareness poster"
+            ],
+            "learning_outcome": "Develops responsible waste handling habits",
+            "evaluation": "Practicality of plan and poster quality (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Energy Flow in Ecosystem Diagram",
+            "objective": "Illustrate 10% law of energy transfer",
+            "materials": [
+                "Graph paper or chart",
+                "Colors"
+            ],
+            "steps": [
+                "Draw pyramid of energy/numbers/biomass",
+                "Show energy loss as heat at each trophic level",
+                "Calculate example: 1000 J at producers → 100 J herbivores → 10 J carnivores",
+                "Explain why food chains are short"
+            ],
+            "learning_outcome": "Grasps inefficiency of energy transfer",
+            "evaluation": "Diagram accuracy and calculations (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Chapter Quiz on Environment Concepts",
+            "objective": "Reinforce key terms and issues",
+            "materials": [
+                "Notebook",
+                "Question cards"
+            ],
+            "steps": [
+                "Prepare 15-20 questions (MCQs, short answers) on ecosystem, ozone, waste, food chains",
+                "Conduct group quiz",
+                "Discuss answers with explanations"
+            ],
+            "learning_outcome": "Strengthens conceptual understanding",
+            "evaluation": "Question quality and participation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Composting Experiment",
+            "objective": "Observe biodegradation process",
+            "materials": [
+                "Organic waste (vegetable peels), soil, pot/container",
+                "Water"
+            ],
+            "steps": [
+                "Set up compost pile/layer in pot",
+                "Observe over 2-3 weeks (turn occasionally)",
+                "Record changes (temperature, smell, decomposition)",
+                "Compare with non-biodegradable item left aside"
+            ],
+            "learning_outcome": "Understands role of decomposers",
+            "evaluation": "Observation log and conclusions (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Innovative Idea: Eco-Friendly Solution",
+            "objective": "Apply knowledge to solve environmental problem",
+            "materials": [
+                "Notebook, colors"
+            ],
+            "steps": [
+                "Identify local issue (plastic waste, pollution)",
+                "Sketch innovative solution (e.g., reusable bag design, waste-to-energy idea)",
+                "Explain how it reduces impact on environment",
+                "Present to class"
+            ],
+            "learning_outcome": "Encourages creative environmental thinking",
+            "evaluation": "Originality, feasibility, and explanation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,401 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T13:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of motion.",
+            "answer": "Motion is the change in position of an object with respect to time and a reference point.",
+            "answer_outline": [
+                "Definition of motion",
+                "Reference point",
+                "Change in position with time"
+            ],
+            "key_concepts": [
+                "motion"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the difference between distance and displacement.",
+            "answer": "Distance is the total path travelled by an object, whereas displacement is the shortest distance between the initial and final positions.",
+            "answer_outline": [
+                "Definition of distance",
+                "Definition of displacement",
+                "Key differences"
+            ],
+            "key_concepts": [
+                "distance",
+                "displacement"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain uniform motion with examples.",
+            "answer": "Uniform motion occurs when an object travels equal distances in equal intervals of time.",
+            "answer_outline": [
+                "Definition",
+                "Characteristics",
+                "Example"
+            ],
+            "key_concepts": [
+                "uniform motion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain non-uniform motion with examples.",
+            "answer": "Non-uniform motion occurs when an object travels unequal distances in equal intervals of time.",
+            "answer_outline": [
+                "Definition",
+                "Characteristics",
+                "Example"
+            ],
+            "key_concepts": [
+                "non-uniform motion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of speed.",
+            "answer": "Speed is the distance travelled by an object per unit time.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "SI unit"
+            ],
+            "key_concepts": [
+                "speed"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain average speed.",
+            "answer": "Average speed is the total distance travelled divided by total time taken.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "Example"
+            ],
+            "key_concepts": [
+                "average speed"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain velocity and how it differs from speed.",
+            "answer": "Velocity is speed in a particular direction and is a vector quantity.",
+            "answer_outline": [
+                "Definition of velocity",
+                "Vector quantity",
+                "Difference from speed"
+            ],
+            "key_concepts": [
+                "velocity"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain acceleration.",
+            "answer": "Acceleration is the rate of change of velocity with time.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "SI unit"
+            ],
+            "key_concepts": [
+                "acceleration"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain uniform acceleration.",
+            "answer": "Uniform acceleration occurs when velocity changes equally in equal intervals of time.",
+            "answer_outline": [
+                "Definition",
+                "Characteristics",
+                "Example"
+            ],
+            "key_concepts": [
+                "uniform acceleration"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain retardation.",
+            "answer": "Retardation is negative acceleration which decreases velocity.",
+            "answer_outline": [
+                "Definition",
+                "Velocity decrease",
+                "Example"
+            ],
+            "key_concepts": [
+                "retardation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain distance-time graph.",
+            "answer": "Distance-time graph shows how distance varies with time.",
+            "answer_outline": [
+                "Graph axes",
+                "Uniform motion line",
+                "Interpretation"
+            ],
+            "key_concepts": [
+                "distance-time graph"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain velocity-time graph.",
+            "answer": "Velocity-time graph represents the change of velocity with time.",
+            "answer_outline": [
+                "Graph axes",
+                "Slope meaning",
+                "Area meaning"
+            ],
+            "key_concepts": [
+                "velocity-time graph"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the three equations of motion.",
+            "answer": "The equations of motion are v = u + at, s = ut + ½at² and v² − u² = 2as.",
+            "answer_outline": [
+                "First equation",
+                "Second equation",
+                "Third equation"
+            ],
+            "key_concepts": [
+                "equations of motion"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain uniform circular motion.",
+            "answer": "Uniform circular motion is motion along a circular path with constant speed.",
+            "answer_outline": [
+                "Definition",
+                "Constant speed",
+                "Direction change"
+            ],
+            "key_concepts": [
+                "circular motion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why circular motion involves acceleration.",
+            "answer": "In circular motion the direction of velocity continuously changes, causing acceleration.",
+            "answer_outline": [
+                "Velocity direction change",
+                "Acceleration concept"
+            ],
+            "key_concepts": [
+                "circular motion acceleration"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of graphs in studying motion.",
+            "answer": "Graphs help understand motion patterns and calculate speed, acceleration and displacement.",
+            "answer_outline": [
+                "Graph representation",
+                "Speed calculation",
+                "Acceleration calculation"
+            ],
+            "key_concepts": [
+                "motion graphs"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the SI units used in motion.",
+            "answer": "SI units include metre for distance, second for time, metre per second for speed and metre per second squared for acceleration.",
+            "answer_outline": [
+                "Distance unit",
+                "Time unit",
+                "Speed unit",
+                "Acceleration unit"
+            ],
+            "key_concepts": [
+                "SI units"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how motion depends on reference point.",
+            "answer": "Motion is relative because an object may appear moving relative to one point but stationary relative to another.",
+            "answer_outline": [
+                "Reference point concept",
+                "Example"
+            ],
+            "key_concepts": [
+                "relative motion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how speed is measured in vehicles.",
+            "answer": "Speed of vehicles is measured using a speedometer.",
+            "answer_outline": [
+                "Speedometer definition",
+                "Measurement of speed"
+            ],
+            "key_concepts": [
+                "speedometer"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how distance travelled by vehicles is measured.",
+            "answer": "Distance travelled by vehicles is measured using an odometer.",
+            "answer_outline": [
+                "Odometer definition",
+                "Distance measurement"
+            ],
+            "key_concepts": [
+                "odometer"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the relationship between speed, distance and time.",
+            "answer": "Speed equals distance divided by time.",
+            "answer_outline": [
+                "Formula",
+                "Variables meaning"
+            ],
+            "key_concepts": [
+                "speed formula"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why displacement may be zero while distance is not.",
+            "answer": "When an object returns to its starting point displacement becomes zero but distance travelled is not zero.",
+            "answer_outline": [
+                "Definition comparison",
+                "Example"
+            ],
+            "key_concepts": [
+                "distance vs displacement"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain average velocity.",
+            "answer": "Average velocity is total displacement divided by total time.",
+            "answer_outline": [
+                "Definition",
+                "Formula"
+            ],
+            "key_concepts": [
+                "average velocity"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the motion of Earth around the Sun.",
+            "answer": "Earth revolves around the Sun in a circular path showing uniform circular motion.",
+            "answer_outline": [
+                "Circular path",
+                "Constant speed"
+            ],
+            "key_concepts": [
+                "Earth motion"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of studying motion in physics.",
+            "answer": "Studying motion helps understand how objects move and helps in designing vehicles and machines.",
+            "answer_outline": [
+                "Understanding movement",
+                "Applications"
+            ],
+            "key_concepts": [
+                "motion importance"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1"
+        }
+    ]
+}

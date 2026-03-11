@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 6: Population",
+    "generated_at": "2026-03-07T21:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is population?",
+                "correct_answer": "The total number of people living in a particular area",
+                "explanation": "Population refers to the number of people living in a country or region and is an important factor in economic and social development.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "What was India's population according to the 2011 Census?",
+                "correct_answer": "About 1.21 billion people",
+                "explanation": "According to the Census of India 2011, the population of India was about 1,210.6 million.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "Which state has the largest population in India?",
+                "correct_answer": "Uttar Pradesh",
+                "explanation": "Uttar Pradesh is the most populous state in India according to Census 2011.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "What is population density?",
+                "correct_answer": "The number of persons living per square kilometre of land area",
+                "explanation": "Population density helps understand how crowded a region is by measuring people per unit area.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "What was India's population density in 2011?",
+                "correct_answer": "382 persons per square kilometre",
+                "explanation": "India’s population density increased to 382 persons per sq km according to Census 2011.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "question": "What is population growth?",
+                "correct_answer": "The change in the number of inhabitants of a country over a period of time",
+                "explanation": "Population growth refers to the increase in population measured in absolute numbers or percentage.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "question": "What is birth rate?",
+                "correct_answer": "The number of live births per thousand persons in a year",
+                "explanation": "Birth rate is an important factor influencing population growth.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "question": "What is death rate?",
+                "correct_answer": "The number of deaths per thousand persons in a year",
+                "explanation": "A decline in death rate can lead to an increase in population growth.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "question": "What is migration?",
+                "correct_answer": "The movement of people from one place to another",
+                "explanation": "Migration can occur within a country (internal) or between countries (international).",
+                "source_section": "Section 6.2"
+            },
+            {
+                "question": "What is the adolescent population age group?",
+                "correct_answer": "10 to 19 years",
+                "explanation": "Adolescents form an important part of the population and are crucial for the future workforce.",
+                "source_section": "Section 6.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Importance of Population",
+                "content": "Population is important because people develop resources, use them, and contribute to economic and social development.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "title": "Population Distribution",
+                "content": "Population distribution in India is uneven. Northern plains and coastal regions have higher population densities than mountainous or desert areas.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "title": "Factors Affecting Population Growth",
+                "content": "Population growth is mainly influenced by birth rate, death rate, and migration.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "title": "Migration and Urbanization",
+                "content": "Migration from rural areas to cities occurs due to employment opportunities, better education, and improved living conditions.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "title": "National Population Policy 2000",
+                "content": "The policy focuses on improving family welfare, reducing infant mortality, promoting education, and controlling population growth.",
+                "source_section": "Section 6.2"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "India accounts for more than 17 percent of the world’s population.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "fact": "India occupies only about 2.4 percent of the world's land area.",
+                "source_section": "Section 6.1"
+            },
+            {
+                "fact": "India became the most populous country in the world in 2023.",
+                "source_section": "Section 6.2"
+            },
+            {
+                "fact": "Adolescents make up about one-fifth of India's population.",
+                "source_section": "Section 6.2"
+            }
+        ]
+    }
+}

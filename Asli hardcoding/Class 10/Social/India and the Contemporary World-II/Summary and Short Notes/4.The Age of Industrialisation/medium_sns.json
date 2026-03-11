@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "History",
+    "chapter": "The Age of Industrialisation",
+    "difficulty": "Medium",
+    "source_pdf": "jess304.pdf",
+    "short_notes": {
+        "key_points": [
+            "Hand Labour vs. Steam Power: In Victorian Britain, industrialists preferred hand labor for seasonal industries (gas works, breweries) and for producing goods with intricate designs that machines could not replicate.",
+            "The Life of the Worker: Rapid industrialisation led to an oversupply of labor, meaning jobs depended on social networks. Many workers spent nights in 'Night Refuges' or 'Casual Wards' while seeking employment.",
+            "The Gomastha Conflict: Unlike traditional merchants, Gomasthas were outsiders with no social link to the village. They acted arrogantly, punished weavers for delays, and broke the traditional bond between the buyer and the producer.",
+            "British Industrialists in India: Early Indian entrepreneurs (like Dwarkanath Tagore and Jamsetjee Jeejeebhoy) made fortunes in the China trade (opium/tea) before establishing the first Indian cotton and jute mills.",
+            "Peculiarities of Industrial Growth: Initially, Indian mills produced coarse cotton yarn rather than fabric to avoid competition with Manchester. The yarn was exported to China or used by local handloom weavers.",
+            "The First World War Shift: The war transformed the Indian economy. British imports fell, and Indian factories were commissioned to produce jute bags, cloth for army uniforms, tents, and leather boots."
+        ],
+        "examples": [
+            "Early Entrepreneurs: Dwarkanath Tagore (Six joint-stock companies), Dinshaw Petit, and J.N. Tata.",
+            "Labour Supply: Use of the 'Jobber' (an old, trusted worker) to recruit new people from his own village to work in the city.",
+            "Technological Adaptation: The adoption of the 'Fly Shuttle' by Indian weavers, which increased productivity and helped them compete with mills.",
+            "Marketing Strategy: Calendars printed with images of gods and royalty used to make even the illiterate aware of brand names in their homes."
+        ],
+        "formulas": [
+            "Labour Demand = f(Seasonality of Industry + Availability of Cheap Labour)",
+            "Weaver Debt Bondage = Advance (Loan) + Commitment to Sell Only to Company - Bargaining Power",
+            "Industrial Growth in India (1914-1918) = War Production Requirements - British Import Competition"
+        ],
+        "exam_tips": [
+            "Explain why hand-labour stayed popular: machines were expensive, labor was cheap, and seasonal demand varied.",
+            "Focus on the shift in the 1920s: when Manchester failed to recapture its market, the Indian industrial class consolidated its position.",
+            "Understand the impact of the 'Spinning Jenny' specifically on women's employment and their subsequent resistance.",
+            "Contrast the 'Jobber' (social link/informal power) with the 'Gomastha' (formal link/Company authority)."
+        ]
+    }
+}

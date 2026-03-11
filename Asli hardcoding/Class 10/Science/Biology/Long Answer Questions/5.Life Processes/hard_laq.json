@@ -1,0 +1,198 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Life Processes",
+    "generated_at": "2026-03-10T23:48:15",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Compare the strategy of 'Selective Reabsorption' in the Nephron with 'Emulsification' in the small intestine. How do these processes optimize physiological efficiency?",
+            "answer": "Selective reabsorption in the nephron ensures that essential solutes like glucose, amino acids, and salts are recovered from the filtrate into the blood based on the body's needs. Emulsification by bile salts breaks large fat globules into smaller micelles, increasing the surface area for lipase action. Both processes optimize efficiency: one by conserving vital nutrients and the other by accelerating the rate of biochemical digestion.",
+            "answer_outline": [
+                "Mechanism of Selective Reabsorption in tubules",
+                "Mechanism of Emulsification by Bile",
+                "Comparison of 'recovery' vs 'preparation' for digestion",
+                "Impact on metabolic efficiency"
+            ],
+            "key_concepts": [
+                "selective reabsorption",
+                "emulsification",
+                "lipase",
+                "homeostasis"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.2.2 & 5.5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The separation of the right and left sides of the heart is a significant evolutionary advancement. Elaborate on how this supports the high metabolic demands of mammals and birds.",
+            "answer": "The complete separation prevents the mixing of oxygenated and deoxygenated blood. This ensures a highly efficient supply of oxygen to the body tissues. Mammals and birds use a large amount of energy to maintain a constant body temperature (homeostasis). Without this separation, oxygen delivery would be insufficient to power the cellular respiration needed for thermoregulation.",
+            "answer_outline": [
+                "Structure of the 4-chambered heart",
+                "Prevention of blood mixing",
+                "Efficiency of oxygen delivery to tissues",
+                "Link to thermoregulation and ATP production"
+            ],
+            "key_concepts": [
+                "double circulation",
+                "thermoregulation",
+                "oxygenation",
+                "metabolic rate"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Trace the pathway of a Glucose molecule from the small intestine to its final oxidation in a muscle cell during vigorous exercise. Explain the role of the circulatory system in this journey.",
+            "answer": "Glucose is absorbed by villi in the small intestine and enters the bloodstream. It is transported via the hepatic portal vein to the heart, then pumped to the lungs for oxygenation (though the glucose stays in the blood), and finally delivered to muscle cells via arteries. During vigorous exercise, if oxygen is low, the glucose undergoes anaerobic respiration to form Lactic Acid and energy.",
+            "answer_outline": [
+                "Absorption by Villi",
+                "Transport through the systemic circuit",
+                "Role of Arteries and Capillaries in delivery",
+                "Anaerobic pathway in muscle cells"
+            ],
+            "key_concepts": [
+                "absorption",
+                "systemic circulation",
+                "lactic acid",
+                "glycolysis"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.3 & 5.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the role of ATP as the 'energy currency' of the cell. How is the energy released from ATP utilized in the transport of materials in Phloem?",
+            "answer": "ATP is produced during respiration and stores energy in its phosphate bonds. In Phloem, translocation of sucrose is an active process. ATP is used to load sucrose into the sieve tubes. This creates high osmotic pressure, causing water to move in, which then pushes the sap to tissues with lower pressure (the 'sink').",
+            "answer_outline": [
+                "Definition of ATP in cellular metabolism",
+                "Active loading of sucrose into phloem",
+                "Creation of osmotic gradient",
+                "Mass flow hypothesis"
+            ],
+            "key_concepts": [
+                "ATP",
+                "translocation",
+                "osmotic pressure",
+                "active transport"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the significance of 'Residual Volume' of air in the lungs. Why is the respiratory pigment Hemoglobin essential for large organisms?",
+            "answer": "Residual volume ensures that there is always a minimum amount of air in the lungs so that oxygen absorption and carbon dioxide release continue even between breaths. In large organisms, diffusion alone is too slow to reach all tissues; Hemoglobin has a high affinity for oxygen and carries it efficiently to distant cells.",
+            "answer_outline": [
+                "Definition of residual volume",
+                "Function in continuous gas exchange",
+                "Limitations of diffusion in multicellularity",
+                "Oxygen-carrying capacity of Hemoglobin"
+            ],
+            "key_concepts": [
+                "residual volume",
+                "hemoglobin",
+                "diffusion",
+                "respiratory pigment"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.3.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the consequence of 'Lactic Acid' buildup in human muscles? How is this related to the 'Oxygen Debt' during heavy exercise?",
+            "answer": "During heavy exercise, oxygen supply is insufficient for aerobic respiration. Muscles switch to anaerobic respiration, producing lactic acid. This buildup causes muscle cramps and fatigue. The 'Oxygen Debt' is the extra oxygen the body needs after exercise to break down the accumulated lactic acid into carbon dioxide and water.",
+            "answer_outline": [
+                "Conditions for Lactic Acid formation",
+                "Physiological effect (cramps)",
+                "Definition of Oxygen Debt",
+                "Recovery process after exercise"
+            ],
+            "key_concepts": [
+                "lactic acid",
+                "anaerobic respiration",
+                "oxygen debt",
+                "muscle fatigue"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Discuss the process of 'Ultrafiltration' in the Glomerulus. What prevents the filtration of proteins and blood cells into the Bowman’s capsule?",
+            "answer": "Ultrafiltration occurs under high pressure in the glomerulus, forcing small molecules like water, glucose, and urea into the Bowman's capsule. Large molecules like proteins and blood cells are prevented from entering because the pores in the glomerular walls and the basement membrane are too small for them to pass through.",
+            "answer_outline": [
+                "Mechanism of pressure-driven filtration",
+                "Composition of the glomerular filtrate",
+                "Structural barriers (membrane selectivity)",
+                "Difference between blood and filtrate"
+            ],
+            "key_concepts": [
+                "ultrafiltration",
+                "glomerulus",
+                "selectivity",
+                "blood proteins"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.5.1"
+        },
+        {
+            "question_number": 8,
+            "question": "How do desert plants manage photosynthesis given that they must keep their stomata closed during the day to prevent water loss?",
+            "answer": "Desert plants take up carbon dioxide at night when stomata are open (Crassulacean Acid Metabolism). They store this $CO_2$ in the form of an intermediate acid. During the day, when stomata are closed to save water, the intermediate is broken down to release $CO_2$ for the light-dependent reactions to complete photosynthesis.",
+            "answer_outline": [
+                "Stomatal behavior in xerophytes",
+                "Night-time CO2 absorption",
+                "Intermediate acid formation",
+                "Day-time glucose synthesis"
+            ],
+            "key_concepts": [
+                "CAM plants",
+                "xerophytes",
+                "intermediate acid",
+                "water conservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Evaluate the statement: 'Excretion in plants is fundamentally different and simpler than in animals.' Provide three evidence points to support this.",
+            "answer": "1. Plants store wastes in cellular vacuoles or as resins/gums in old xylem. 2. They shed waste through falling leaves. 3. Gaseous waste ($O_2$ and $CO_2$) is eliminated through stomata. Unlike animals, plants lack a centralized excretory system and utilize dead tissues/shedding for waste management.",
+            "answer_outline": [
+                "Storage of waste in vacuoles/resins",
+                "Elimination via leaf senescence",
+                "Gaseous exchange as a form of excretion",
+                "Comparison with animal systems"
+            ],
+            "key_concepts": [
+                "plant excretion",
+                "vacuoles",
+                "resins and gums",
+                "senescence"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What would be the effect on a plant if its Phloem were removed in a ring-like manner (Girdling)? Why would the roots die first?",
+            "answer": "Removing the phloem (Girdling) stops the translocation of food from the leaves to the roots. Since the xylem is still intact, water moves up, but the roots receive no nutrients. The roots will eventually exhaust their stored energy and die, which subsequently stops water absorption, leading to the death of the entire plant.",
+            "answer_outline": [
+                "Effect on translocation",
+                "Intact nature of Xylem (water supply)",
+                "Nutrient starvation of roots",
+                "Sequence of plant failure"
+            ],
+            "key_concepts": [
+                "girdling",
+                "phloem",
+                "translocation",
+                "root death"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.4.2"
+        }
+    ]
+}

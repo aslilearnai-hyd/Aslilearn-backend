@@ -1,0 +1,167 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT - Ganita Prakash)",
+    "chapter": "Another Peek Beyond the Point (Decimals - Multiplication and Division)",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class7_maths_another_peek_beyond_the_point.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Equalizer (Decimal by Decimal)",
+            "objective": "Divide a decimal by another decimal by making the divisor a whole number",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Take a problem like $1.25 \div 0.5$",
+                "Multiply both numbers by 10 to clear the decimal from the divisor ($12.5 \div 5$)",
+                "Perform the division and record the quotient",
+                "Try another: $0.004 \div 0.02$ and explain which power of 10 you chose"
+            ],
+            "learning_outcome": "Masters the technique of shifting decimals to simplify division",
+            "evaluation": "Correct conversion and final quotient (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Area of a Postage Stamp",
+            "objective": "Calculate the area of a rectangle with two decimal sides",
+            "materials": [
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a rectangle with Length = 3.2 cm and Width = 2.4 cm",
+                "Calculate the area using the formula $L \times W$",
+                "Count the total decimal places in the factors and ensure the product matches",
+                "Repeat with a square of side 1.5 cm"
+            ],
+            "learning_outcome": "Correctly applies decimal multiplication to spatial measurements",
+            "evaluation": "Accuracy in calculating area with correct units ($cm^2$) (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Average Lap Time",
+            "objective": "Find the mean of decimal values",
+            "materials": [
+                "Stopwatch (or phone timer)",
+                "Notebook"
+            ],
+            "steps": [
+                "Record the time taken to write a sentence 4 times (e.g., 5.4s, 6.2s, 5.8s, 6.6s)",
+                "Add the total time using decimal addition",
+                "Divide the total by 4 to find the average time",
+                "Round the answer to one decimal place"
+            ],
+            "learning_outcome": "Integrates decimal addition and division to find representative values",
+            "evaluation": "Accuracy of the mean calculation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Currency Converter",
+            "objective": "Multiply decimals to convert currency",
+            "materials": [
+                "Current exchange rate (e.g., 1 USD = 83.15 INR)",
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine you have $10.50$",
+                "Multiply your dollars by the exchange rate to find the value in Rupees",
+                "Explain how you handled the two decimal places in the multiplier and the multiplicand"
+            ],
+            "learning_outcome": "Uses decimal multiplication for economic calculations",
+            "evaluation": "Correct use of the decimal point in the final product (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Science of Rainfall",
+            "objective": "Divide a total decimal by a whole number to find daily rates",
+            "materials": [
+                "Graph paper",
+                "Notebook"
+            ],
+            "steps": [
+                "If a city receives 15.75 cm of rain over 7 days, find the average daily rainfall",
+                "If the rainfall doubles next week, calculate the new total and new daily average",
+                "Represent the daily rainfall on a simple line graph"
+            ],
+            "learning_outcome": "Applies decimal division to environmental data",
+            "evaluation": "Correct daily average and graph representation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Fuel Efficiency Trip",
+            "objective": "Calculate distance using fuel consumption rates",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "A car travels 18.5 km using 1 liter of petrol",
+                "Calculate how far it can go with 3.5 liters",
+                "Calculate how many liters are needed for a 74 km journey using division"
+            ],
+            "learning_outcome": "Solves multi-step problems involving both multiplication and division of decimals",
+            "evaluation": "Logical flow and correct answers (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Decimal Pattern Detective",
+            "objective": "Predict outcomes of repeated decimal multiplication",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Multiply $0.1 \times 0.1$, then $0.1 \times 0.1 \times 0.1$, and then $0.1 \times 0.1 \times 0.1 \times 0.1$",
+                "Observe the number of zeros after the decimal point in each step",
+                "Write a rule to predict the product of $0.1$ multiplied by itself 6 times"
+            ],
+            "learning_outcome": "Recognizes exponential patterns in decimal placement",
+            "evaluation": "Accuracy of the pattern rule (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Recipe Resizer",
+            "objective": "Adjust ingredient quantities using decimal multipliers",
+            "materials": [
+                "A simple recipe card (e.g., 2.5 cups of flour for 1 cake)"
+            ],
+            "steps": [
+                "Calculate the ingredients needed for 1.5 cakes",
+                "Calculate the ingredients needed for 0.5 (half) a cake",
+                "Check your work by adding the 1.0 cake and 0.5 cake amounts"
+            ],
+            "learning_outcome": "Applies decimal multiplication to scaling quantities",
+            "evaluation": "Correct resizing of measurements (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Division by $0.1$ and $0.01$",
+            "objective": "Understand the inverse effect of dividing by small decimals",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve $5 \div 0.1$, $5 \div 0.01$, and $5 \div 0.001$",
+                "Compare these results with $5 \times 10$, $5 \times 100$, and $5 \times 1000$",
+                "Write a conclusion about what happens to a number when divided by a decimal less than 1"
+            ],
+            "learning_outcome": "Discovery of the relationship between decimal division and whole number multiplication",
+            "evaluation": "Clarity of the conclusion (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Decimal Price Tag Duel",
+            "objective": "Compare 'Price per Unit' using division",
+            "materials": [
+                "Two different sized juice boxes/bottles"
+            ],
+            "steps": [
+                "Bottle A: 1.5 Liters for ₹90.00; Bottle B: 0.5 Liters for ₹35.50",
+                "Divide price by volume for both to find the price per 1 Liter",
+                "Determine which bottle is the 'better buy' and by how much"
+            ],
+            "learning_outcome": "Uses decimal division for smart consumer decision-making",
+            "evaluation": "Correct 'price per liter' calculation (10 marks)"
+        }
+    ]
+}

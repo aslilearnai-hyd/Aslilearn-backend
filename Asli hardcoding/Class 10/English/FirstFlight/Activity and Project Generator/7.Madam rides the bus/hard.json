@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Madam Rides the Bus",
+  "difficulty": "Hard",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Psychological Study – Fear and Courage",
+      "objective": "Analyze Madam’s internal conflict and how fear transforms into courage.",
+      "materials": ["Notebook", "Pen", "Reference materials on psychology"],
+      "steps": [
+        "Identify moments of fear and hesitation in Madam’s journey",
+        "Research how humans overcome fear in challenging situations",
+        "Write an analytical report connecting Madam’s behavior with psychological concepts"
+      ],
+      "learning_outcome": "Students will connect literary character study with psychological theory.",
+      "evaluation": "Depth of analysis, clarity, and textual support"
+    },
+    {
+      "sl_no": 2,
+      "title": "Critical Character Essay",
+      "objective": "Examine Madam as a character through literary criticism lens.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Analyze Madam’s personality, motivations, and development",
+        "Compare her with a literary character showing similar traits",
+        "Write an essay evaluating her strengths and weaknesses"
+      ],
+      "learning_outcome": "Students will enhance critical thinking and literary analysis skills.",
+      "evaluation": "Analytical depth, comparison quality, and textual evidence"
+    },
+    {
+      "sl_no": 3,
+      "title": "Symbolism and Metaphor Analysis",
+      "objective": "Identify and interpret symbols and metaphors in the story.",
+      "materials": ["Notebook", "Pen", "Chart paper"],
+      "steps": [
+        "List symbols and metaphors used in the chapter (e.g., the bus, the journey)",
+        "Explain their significance and contribution to themes",
+        "Present findings in a visual chart with textual references"
+      ],
+      "learning_outcome": "Students will understand deeper literary techniques and thematic representation.",
+      "evaluation": "Accuracy of identification, clarity of explanation, and textual support"
+    },
+    {
+      "sl_no": 4,
+      "title": "Comparative Study – Real vs Literary Experience",
+      "objective": "Relate Madam’s adventure to real-life examples of overcoming fear.",
+      "materials": ["Notebook", "Pen", "Internet/books for research"],
+      "steps": [
+        "Research a real-life story of someone taking an independent step for the first time",
+        "Compare and contrast with Madam’s bus ride experience",
+        "Write a structured essay connecting literature with reality"
+      ],
+      "learning_outcome": "Students will strengthen comparative writing and analytical reasoning.",
+      "evaluation": "Relevance, depth of comparison, and structured argument"
+    },
+    {
+      "sl_no": 5,
+      "title": "Narrative Perspective Analysis",
+      "objective": "Examine how point of view shapes reader understanding.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify the narrative perspective in the story",
+        "Analyze how the author’s choice affects perception of Madam",
+        "Write a detailed report explaining narrative impact on theme and character"
+      ],
+      "learning_outcome": "Students will develop skills in narrative analysis and literary interpretation.",
+      "evaluation": "Clarity of explanation, textual references, and insightfulness"
+    },
+    {
+      "sl_no": 6,
+      "title": "Ethical and Social Reflection",
+      "objective": "Explore societal expectations and personal freedom through Madam’s actions.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify social norms challenged by Madam during her bus ride",
+        "Discuss the ethical and social implications of her actions",
+        "Write a reflective essay on the balance between freedom and responsibility"
+      ],
+      "learning_outcome": "Students will develop ethical reasoning and social awareness.",
+      "evaluation": "Depth of reflection, reasoning clarity, and connection to text"
+    },
+    {
+      "sl_no": 7,
+      "title": "Creative Modern Adaptation",
+      "objective": "Reimagine the story in a contemporary context.",
+      "materials": ["Notebook", "Pen", "Optional recording device"],
+      "steps": [
+        "Adapt Madam’s journey to a modern setting (e.g., public transport, social constraints)",
+        "Write dialogues, narration, and character interactions",
+        "Present the adaptation orally or in a written script"
+      ],
+      "learning_outcome": "Students will enhance creativity, adaptation skills, and thematic understanding.",
+      "evaluation": "Originality, relevance to core themes, and clarity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Interdisciplinary Project – Transportation and Society",
+      "objective": "Connect literature with societal changes and transport systems.",
+      "materials": ["Notebook", "Internet/books", "Chart paper"],
+      "steps": [
+        "Research the role of public transport in increasing independence, especially for women",
+        "Relate findings to Madam’s first bus ride",
+        "Present research findings in a chart or presentation"
+      ],
+      "learning_outcome": "Students will link literature with social studies and research skills.",
+      "evaluation": "Accuracy, clarity, and connection to story"
+    },
+    {
+      "sl_no": 9,
+      "title": "Advanced Vocabulary and Usage",
+      "objective": "Learn complex words from the chapter and use them analytically.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Select 10 advanced words from the story",
+        "Write meanings, synonyms, and contextual usage",
+        "Compose a critical paragraph about Madam’s journey using all words"
+      ],
+      "learning_outcome": "Students will strengthen vocabulary, writing, and analytical skills.",
+      "evaluation": "Correct usage, contextual accuracy, and writing quality"
+    },
+    {
+      "sl_no": 10,
+      "title": "Reflective Essay – Lessons on Independence",
+      "objective": "Analyze Madam’s story to derive lessons on independence and courage.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify lessons about personal growth and independence",
+        "Reflect on how these lessons apply in contemporary life",
+        "Write a detailed essay connecting literature with personal and societal values"
+      ],
+      "learning_outcome": "Students will internalize literary lessons and develop reflective writing skills.",
+      "evaluation": "Depth, clarity, and relevance to personal and societal context"
+    }
+  ]
+}

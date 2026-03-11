@@ -1,0 +1,160 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Coordinate Geometry",
+    "lesson_level": "Hard",
+    "total_periods": 9,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply coordinate geometry in HOTS problems",
+        "Interpret coordinates logically",
+        "Solve case-based and reasoning questions",
+        "Prepare for board-level exam questions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Plotting Practice",
+            "topics_covered": [
+                "Complex plotting sets",
+                "Accuracy improvement"
+            ],
+            "teaching_strategy": [
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Plot challenging point sets"
+            ],
+            "assessment": [
+                "Graph evaluation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Quadrant Reasoning Problems",
+            "topics_covered": [
+                "Logical quadrant identification",
+                "Sign-based reasoning"
+            ],
+            "teaching_strategy": [
+                "Think–pair–share"
+            ],
+            "student_activities": [
+                "Solve reasoning questions"
+            ],
+            "assessment": [
+                "HOTS worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Word Problems on Coordinates",
+            "topics_covered": [
+                "Real-life coordinate interpretation"
+            ],
+            "teaching_strategy": [
+                "Problem breakdown"
+            ],
+            "student_activities": [
+                "Solve word problems"
+            ],
+            "assessment": [
+                "Case-based evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Distance from Axes – Advanced Problems",
+            "topics_covered": [
+                "Multi-step distance problems"
+            ],
+            "teaching_strategy": [
+                "Numerical analysis"
+            ],
+            "student_activities": [
+                "Solve complex numericals"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Case Study Problems",
+            "topics_covered": [
+                "Graph-based case studies"
+            ],
+            "teaching_strategy": [
+                "Case discussion"
+            ],
+            "student_activities": [
+                "Interpret graphs"
+            ],
+            "assessment": [
+                "Case-study worksheet"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "HOTS MCQs",
+            "topics_covered": [
+                "Assertion–reason",
+                "Logical MCQs"
+            ],
+            "teaching_strategy": [
+                "Exam-oriented practice"
+            ],
+            "student_activities": [
+                "Solve HOTS MCQs"
+            ],
+            "assessment": [
+                "MCQ test"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Previous Exam Pattern Questions",
+            "topics_covered": [
+                "Board-level questions"
+            ],
+            "teaching_strategy": [
+                "Answer writing practice"
+            ],
+            "student_activities": [
+                "Write full solutions"
+            ],
+            "assessment": [
+                "Answer evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Mock Test",
+            "topics_covered": [
+                "Complete chapter assessment"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 9,
+            "title": "Analysis and Remedial Teaching",
+            "topics_covered": [
+                "Error analysis",
+                "Doubt clearing"
+            ],
+            "teaching_strategy": [
+                "Feedback-based teaching"
+            ],
+            "student_activities": [
+                "Correct mistakes",
+                "Re-attempt questions"
+            ],
+            "assessment": [
+                "Improvement task"
+            ]
+        }
+    ],
+    "teacher_tip": "Train students to draw a quick rough graph before solving reasoning or case-based questions."
+}

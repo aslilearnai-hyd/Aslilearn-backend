@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Changes around us : Physical and Chemical",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T18:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is the cutting of wood considered a physical change, but burning it is a chemical change?",
+            "answer": "Cutting wood only changes its size (physical property), whereas burning wood produces new substances like ash and carbon dioxide (chemical properties).",
+            "key_concepts": ["physical vs chemical change"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why rusting is faster in coastal areas than in deserts.",
+            "answer": "Coastal areas have high humidity (moisture content) in the air, which is a necessary condition for rusting, whereas desert air is dry.",
+            "key_concepts": ["rusting", "environmental factors"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "When magnesium ash is dissolved in water, a new substance is formed. Write its name and nature.",
+            "answer": "Magnesium hydroxide is formed. It is basic in nature.",
+            "key_concepts": ["chemical reaction", "magnesium oxide"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the change that occurs when an iron nail is kept in a copper sulphate solution for half an hour.",
+            "answer": "A chemical change occurs where iron displaces copper. The blue solution turns green due to the formation of iron sulphate, and a brown layer of copper is deposited on the nail.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What happens when carbon dioxide is passed through lime water? Write the word equation.",
+            "answer": "Lime water turns milky due to the formation of calcium carbonate. Carbon Dioxide + Lime Water -> Calcium Carbonate + Water.",
+            "key_concepts": ["test for CO2"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are iron pipes used in our homes for water supply galvanized?",
+            "answer": "They are galvanized to prevent them from coming into contact with oxygen and moisture, thus protecting them from rusting.",
+            "key_concepts": ["galvanization", "prevention of rusting"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain how the process of crystallization is useful.",
+            "answer": "Crystallization is used to obtain a pure solid substance from its impure solution, making it an effective purification method.",
+            "key_concepts": ["crystallization", "purification"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is the formation of curd from milk considered a chemical change?",
+            "answer": "Because a new substance (curd) with different properties is formed, and the process cannot be reversed back to milk.",
+            "key_concepts": ["chemical change", "reversibility"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "State three characteristics of a chemical change.",
+            "answer": "1. New substances are formed. 2. Generally irreversible. 3. Heat, light, or sound may be produced.",
+            "key_concepts": ["chemical change properties"],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the role of Chromium in making stainless steel?",
+            "answer": "Chromium helps iron resist rusting and corrosion, giving the steel its 'stainless' property.",
+            "key_concepts": ["alloys", "prevention of rusting"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Is the melting of wax a physical or chemical change? Explain.",
+            "answer": "It is a physical change because only the state changes from solid to liquid, and it can be frozen back into solid wax.",
+            "key_concepts": ["physical change"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the burning of a candle involves both physical and chemical changes.",
+            "answer": "Melting of wax is a physical change, while the burning of the wick and wax to produce CO2 and water vapor is a chemical change.",
+            "key_concepts": ["combined changes"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What do you observe when you add a teaspoon of vinegar to baking soda?",
+            "answer": "A hissing sound is heard and bubbles of carbon dioxide gas are seen rising.",
+            "key_concepts": ["chemical reaction"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is painting considered a method of preventing rusting?",
+            "answer": "A layer of paint prevents the iron surface from coming into direct contact with air (oxygen) and moisture.",
+            "key_concepts": ["prevention of rusting"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Mention two examples of changes where heat is evolved.",
+            "answer": "1. Burning of coal. 2. Reaction between vinegar and baking soda.",
+            "key_concepts": ["exothermic changes"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Define a displacement reaction based on the iron nail and copper sulphate experiment.",
+            "answer": "A reaction in which a more reactive metal (iron) displaces a less reactive metal (copper) from its solution.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does a slice of apple acquire a brown color if kept in the open for some time?",
+            "answer": "The oxygen in the air reacts with the enzymes in the apple, resulting in a chemical change called oxidation.",
+            "key_concepts": ["chemical change", "oxidation"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Can we say that all physical changes are reversible? Give an example.",
+            "answer": "No, not all. For example, the tearing of paper is a physical change (no new substance), but it cannot be reversed to get the original sheet back.",
+            "key_concepts": ["physical change", "reversibility"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Write the chemical equation for the formation of magnesium oxide.",
+            "answer": "2Mg + O2 -> 2MgO.",
+            "key_concepts": ["chemical equation"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "How is the milky appearance of lime water removed when excess CO2 is passed?",
+            "answer": "The milky appearance disappears due to the formation of soluble calcium bicarbonate.",
+            "key_concepts": ["chemical reaction"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Distinguish between physical and chemical changes on the basis of new substance formation.",
+            "answer": "In physical changes, no new substance is formed; in chemical changes, one or more new substances are always formed.",
+            "key_concepts": ["comparison"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the color change observed when magnesium ribbon burns?",
+            "answer": "The metallic grey ribbon turns into white powdery ash.",
+            "key_concepts": ["observation"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is salt added to ice to freeze ice cream?",
+            "answer": "Adding salt is a physical change that lowers the melting point of ice, allowing it to become colder than 0°C.",
+            "key_concepts": ["physical properties"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does an iron object gain weight after rusting?",
+            "answer": "Because the iron combines with oxygen and moisture from the air to form iron oxide, adding the mass of oxygen and water to the iron.",
+            "key_concepts": ["rusting", "mass change"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What are 'crystals' in the context of Chapter 2?",
+            "answer": "Crystals are the purest solid form of a substance with a definite geometrical shape.",
+            "key_concepts": ["crystallization"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        }
+    ]
+}

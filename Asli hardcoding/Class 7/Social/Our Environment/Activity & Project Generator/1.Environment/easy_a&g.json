@@ -1,0 +1,182 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Environment",
+    "difficulty": "Easy",
+    "source_pdf": "our_environment_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Natural vs. Human-made Sort",
+            "objective": "Distinguish between natural and human-made components of the environment",
+            "materials": [
+                "Old magazines",
+                "Chart paper",
+                "Glue",
+                "Scissors"
+            ],
+            "steps": [
+                "Cut out pictures of things found in your surroundings (trees, buildings, cars, rivers)",
+                "Divide a chart into two columns: 'Natural' and 'Human-made'",
+                "Paste the pictures in the correct columns",
+                "Identify which items belong to the Biotic and Abiotic categories"
+            ],
+            "learning_outcome": "Categorizes different components of the environment correctly",
+            "evaluation": "Accuracy in sorting the pictures into the two categories (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Biotic and Abiotic Scavenger Hunt",
+            "objective": "Identify living and non-living things in the immediate environment",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Go to a nearby park or your school garden",
+                "List 5 living things (Biotic) and 5 non-living things (Abiotic) you see",
+                "Observe how the living things depend on the non-living things (e.g., plants needing soil)",
+                "Share your findings with the class"
+            ],
+            "learning_outcome": "Understands the basic division of the natural environment",
+            "evaluation": "Completeness of the list and observation of dependencies (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Four Domains Model",
+            "objective": "Visualize the four domains of the Earth",
+            "materials": [
+                "Clay or Playdough (Blue, Green, Brown, and White)",
+                "Cardboard base"
+            ],
+            "steps": [
+                "Use brown clay to represent Lithosphere (Land)",
+                "Use blue clay for Hydrosphere (Water)",
+                "Use white/light blue for Atmosphere (Air)",
+                "Create a small green zone where all three meet to represent Biosphere (Life)",
+                "Label each domain clearly"
+            ],
+            "learning_outcome": "Identifies the four domains and understands that life exists where they interact",
+            "evaluation": "Correct representation and labeling of the four domains (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "My Local Ecosystem Diary",
+            "objective": "Observe the interaction between organisms and their surroundings",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Find a small ecosystem like a pond, a garden, or even a large tree",
+                "Observe the insects, birds, and plants living there",
+                "Draw a simple 'Who eats whom' sketch (Food chain)",
+                "Write how the animals use the air, water, and shade in that area"
+            ],
+            "learning_outcome": "Defines an ecosystem through real-world observation",
+            "evaluation": "Clarity of the food chain sketch and ecosystem description (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Human Environment Evolution Timeline",
+            "objective": "Learn how humans have changed their environment over time",
+            "materials": [
+                "Drawing sheet",
+                "Crayons"
+            ],
+            "steps": [
+                "Draw a picture of early humans living in caves and eating wild fruits",
+                "Draw a middle scene showing humans starting to grow crops and domesticate animals",
+                "Draw a final scene showing a modern city with cars and factories",
+                "Discuss how the 'Barter System' worked in the past vs. money today"
+            ],
+            "learning_outcome": "Traces the transition from adapting to nature to modifying nature",
+            "evaluation": "Creativity and logical progression of the timeline (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The 'Lithosphere' Treasure Map",
+            "objective": "Identify features of the hard top layer of the Earth",
+            "materials": [
+                "Paper",
+                "Brown color"
+            ],
+            "steps": [
+                "Draw a map of an imaginary island",
+                "Include landforms like mountains, plateaus, and plains",
+                "Identify where humans would build houses and where they would farm",
+                "Label these features as parts of the Lithosphere"
+            ],
+            "learning_outcome": "Recognizes the importance of the Lithosphere for human habitation",
+            "evaluation": "Inclusion of various landforms and correct labeling (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Atmosphere and Gravitational Pull",
+            "objective": "Understand why the atmosphere stays around the Earth",
+            "materials": [
+                "A ball",
+                "A small piece of light cloth"
+            ],
+            "steps": [
+                "Hold the ball (Earth) and wrap the cloth loosely around it (Atmosphere)",
+                "Try to pull the cloth away",
+                "Discuss how the Earth's gravity acts like a magnet to hold the air around it",
+                "List two things the atmosphere protects us from (e.g., UV rays, heat)"
+            ],
+            "learning_outcome": "Explains the role of the atmosphere and gravity in environment protection",
+            "evaluation": "Participation in discussion and listing protective functions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Water Sources Survey",
+            "objective": "Identify different parts of the Hydrosphere",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Interview elders at home or neighbors",
+                "Ask where the water in your taps comes from (River, Well, Lake, or Dam)",
+                "Make a list of all water bodies in or near your town",
+                "Classify them into freshwater or saltwater sources"
+            ],
+            "learning_outcome": "Understands the diversity of the Hydrosphere in a local context",
+            "evaluation": "Detailed list of local water sources and classification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Environment Slogan Writing",
+            "objective": "Promote a healthy balance in the environment",
+            "materials": [
+                "A4 sheet",
+                "Sketch pens"
+            ],
+            "steps": [
+                "Think of a problem in your local environment (like litter or smoke)",
+                "Write a catchy slogan to encourage people to protect nature",
+                "Decorate it with drawings of trees or animals",
+                "Display it on your classroom board"
+            ],
+            "learning_outcome": "Appreciates the need for a 'Perfect Balance' between nature and humans",
+            "evaluation": "Effectiveness of the slogan and creativity in design (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Environment Word Search",
+            "objective": "Reinforce key terms from the chapter",
+            "materials": [
+                "Graph paper",
+                "Pen"
+            ],
+            "steps": [
+                "Create a 10x10 grid",
+                "Hide 8 words: Biotic, Abiotic, Lithosphere, Atmosphere, Biosphere, Ecosystem, Hydrosphere, Nature",
+                "Ask a friend to find and circle the words",
+                "Briefly explain the meaning of each word as it is found"
+            ],
+            "learning_outcome": "Quick recall and definition of essential environmental terminology",
+            "evaluation": "Correct placement of words and their definitions (10 marks)"
+        }
+    ]
+}

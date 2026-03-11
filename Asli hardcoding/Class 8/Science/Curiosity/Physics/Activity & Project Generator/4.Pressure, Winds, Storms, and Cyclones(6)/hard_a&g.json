@@ -1,0 +1,167 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Pressure, Winds, Storms, and Cyclones",
+  "difficulty": "Hard",
+  "source_pdf": "hecu106.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Atmospheric Pressure Measurement Model",
+      "objective": "Understand and measure atmospheric pressure changes",
+      "materials": [
+        "Glass jar",
+        "Balloon",
+        "Rubber band",
+        "Straw",
+        "Chart paper",
+        "Tape"
+      ],
+      "steps": [
+        "Cut the balloon and stretch it over the mouth of the jar",
+        "Secure it tightly with a rubber band",
+        "Attach a straw on the stretched balloon surface",
+        "Place chart paper with scale markings behind the straw",
+        "Observe straw movement over several days"
+      ],
+      "learning_outcome": "Learns how atmospheric pressure changes can be detected using a barometer model",
+      "evaluation": "Accuracy of observations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Investigating Pressure and Surface Area",
+      "objective": "Quantitatively analyze the relationship between force, area, and pressure",
+      "materials": [
+        "Different weights",
+        "Wooden blocks with different base areas",
+        "Sand tray",
+        "Ruler"
+      ],
+      "steps": [
+        "Place blocks with different base areas on sand",
+        "Apply equal weights on each block",
+        "Measure the depth of indentation",
+        "Record and compare results"
+      ],
+      "learning_outcome": "Develops understanding of pressure calculation and experimental analysis",
+      "evaluation": "Data accuracy and conclusion (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Air Pressure and Wind Flow Investigation",
+      "objective": "Study how pressure differences cause air movement",
+      "materials": ["Two balloons", "Straw", "Rubber bands", "Stand"],
+      "steps": [
+        "Inflate one balloon and connect it to an uninflated balloon using a straw",
+        "Secure connections to avoid air leakage",
+        "Observe air movement between balloons",
+        "Record pressure difference explanation"
+      ],
+      "learning_outcome": "Understands how air moves from high pressure to low pressure areas",
+      "evaluation": "Scientific reasoning (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Cyclone Formation Demonstration Model",
+      "objective": "Understand how cyclones form due to pressure differences",
+      "materials": [
+        "Two plastic bottles",
+        "Water",
+        "Glitter or food coloring",
+        "Connector"
+      ],
+      "steps": [
+        "Fill one bottle with water",
+        "Attach the second bottle using a connector",
+        "Invert and swirl the bottle",
+        "Observe vortex formation representing cyclone motion"
+      ],
+      "learning_outcome": "Visualizes rotating air movement in cyclones",
+      "evaluation": "Explanation of cyclone mechanism (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "High-Speed Air and Pressure Experiment",
+      "objective": "Observe pressure reduction due to fast-moving air",
+      "materials": ["Two balloons", "String", "Stick"],
+      "steps": [
+        "Hang two balloons close to each other",
+        "Blow air between them",
+        "Observe the balloons moving closer",
+        "Explain pressure differences"
+      ],
+      "learning_outcome": "Understands Bernoulli-type pressure effects in airflow",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Storm Impact Data Analysis",
+      "objective": "Analyze real cyclone or storm data",
+      "materials": ["Internet or newspapers", "Notebook", "Chart paper"],
+      "steps": [
+        "Collect data on a recent cyclone",
+        "Note wind speed, rainfall, and affected areas",
+        "Prepare a chart showing the impact",
+        "Discuss preventive measures"
+      ],
+      "learning_outcome": "Connects physics concepts to real-world weather events",
+      "evaluation": "Quality of analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Pressure Distribution Investigation",
+      "objective": "Understand pressure variation in liquids",
+      "materials": ["Plastic bottle", "Water", "Pin", "Tape"],
+      "steps": [
+        "Make holes at different heights on the bottle",
+        "Fill it with water",
+        "Remove tape from holes",
+        "Observe the distance water travels"
+      ],
+      "learning_outcome": "Learns that pressure increases with depth",
+      "evaluation": "Observation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Wind Direction and Speed Recording",
+      "objective": "Study wind patterns over time",
+      "materials": ["Homemade wind vane", "Notebook", "Compass"],
+      "steps": [
+        "Install a wind vane outdoors",
+        "Observe wind direction daily",
+        "Record observations for a week",
+        "Analyze changes in wind pattern"
+      ],
+      "learning_outcome": "Develops skills in weather observation",
+      "evaluation": "Consistency and analysis (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Lightning Safety Awareness Project",
+      "objective": "Understand lightning hazards and safety measures",
+      "materials": ["Chart paper", "Markers", "Internet resources"],
+      "steps": [
+        "Research lightning formation",
+        "List dangers of lightning",
+        "Prepare safety guidelines",
+        "Present findings to the class"
+      ],
+      "learning_outcome": "Understands lightning formation and protection methods",
+      "evaluation": "Clarity and presentation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Cyclone Preparedness Planning",
+      "objective": "Develop disaster preparedness skills",
+      "materials": ["Notebook", "Maps", "Internet resources"],
+      "steps": [
+        "Identify cyclone-prone regions in India",
+        "List emergency preparations for families",
+        "Design a disaster response plan",
+        "Present the plan in class discussion"
+      ],
+      "learning_outcome": "Understands disaster management and cyclone preparedness",
+      "evaluation": "Practicality of plan (10 marks)"
+    }
+  ]
+}

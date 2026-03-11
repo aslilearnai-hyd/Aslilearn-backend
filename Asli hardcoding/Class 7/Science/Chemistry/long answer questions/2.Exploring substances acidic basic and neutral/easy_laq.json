@@ -1,0 +1,432 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Exploring Substances: Acidic, Basic, and Neutral",
+    "generated_at": "2026-03-06T18:38:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define acids and bases and list three characteristic properties of each.",
+            "answer": "Acids are substances that taste sour and turn blue litmus red. Bases are substances that taste bitter, feel soapy, and turn red litmus blue. Properties of Acids: 1. Sour taste, 2. Corrosive, 3. Soluble in water. Properties of Bases: 1. Bitter taste, 2. Soapy feel, 3. Turn phenolphthalein pink.",
+            "answer_outline": [
+                "Definition of acids and bases",
+                "Three properties of acids",
+                "Three properties of bases"
+            ],
+            "key_concepts": [
+                "acids",
+                "bases",
+                "properties"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the concept of indicators and classify them with examples.",
+            "answer": "Indicators are substances that change color in acidic or basic media. They are classified into: 1. Natural indicators (Litmus, Turmeric, China Rose) and 2. Synthetic indicators (Phenolphthalein, Methyl Orange).",
+            "answer_outline": [
+                "Definition of indicators",
+                "Natural vs Synthetic classification",
+                "Specific examples"
+            ],
+            "key_concepts": [
+                "indicators",
+                "natural",
+                "synthetic"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is Litmus? How is it obtained and used as an indicator?",
+            "answer": "Litmus is a natural dye extracted from Lichens. It is available as a solution or as paper strips (Red and Blue). In acidic solutions, blue litmus turns red; in basic solutions, red litmus turns blue.",
+            "answer_outline": [
+                "Source of litmus",
+                "Forms of litmus",
+                "Color changes in acid/base"
+            ],
+            "key_concepts": [
+                "litmus",
+                "lichens",
+                "color change"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the preparation and color change of China Rose indicator.",
+            "answer": "China Rose indicator is prepared by soaking light pink petals in warm water until the water becomes colored. In acidic solutions, it turns dark pink (magenta), and in basic solutions, it turns green.",
+            "answer_outline": [
+                "Preparation process",
+                "Acidic medium color",
+                "Basic medium color"
+            ],
+            "key_concepts": [
+                "China Rose",
+                "natural indicator",
+                "magenta",
+                "green"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain Neutralization reaction with a word equation and an example.",
+            "answer": "Neutralization is the reaction between an acid and a base to produce salt and water with the evolution of heat. Equation: Acid + Base → Salt + Water + Heat. Example: Hydrochloric acid + Sodium hydroxide → Sodium chloride + Water.",
+            "answer_outline": [
+                "Definition",
+                "Word equation",
+                "Chemical example"
+            ],
+            "key_concepts": [
+                "neutralization",
+                "salt",
+                "exothermic"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What are salts? Discuss their types based on their nature.",
+            "answer": "Salts are products of neutralization. They can be: 1. Acidic (formed from strong acid + weak base), 2. Basic (formed from weak acid + strong base), or 3. Neutral (formed from strong acid + strong base).",
+            "answer_outline": [
+                "Definition of salts",
+                "Classification (Acidic, Basic, Neutral)",
+                "Formation conditions"
+            ],
+            "key_concepts": [
+                "salt",
+                "neutral",
+                "acidic salt",
+                "basic salt"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "How is Turmeric used to test basic substances? Why doesn't it change in acids?",
+            "answer": "Turmeric paper stays yellow in acidic or neutral solutions but turns reddish-brown in basic solutions. It doesn't change in acids because its natural pigment is only reactive to hydroxide ions found in bases.",
+            "answer_outline": [
+                "Turmeric as an indicator",
+                "Color change in base",
+                "Behavior in acid"
+            ],
+            "key_concepts": [
+                "turmeric",
+                "reddish-brown",
+                "basic test"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss the treatment of Indigestion using the concept of neutralization.",
+            "answer": "Indigestion is caused by excess Hydrochloric acid in the stomach. To neutralize it, we take antacids like 'Milk of Magnesia' (Magnesium hydroxide), which is a base and provides relief.",
+            "answer_outline": [
+                "Cause of indigestion",
+                "Role of antacids",
+                "Chemical reaction"
+            ],
+            "key_concepts": [
+                "indigestion",
+                "antacids",
+                "magnesium hydroxide"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why baking soda is applied on an ant bite.",
+            "answer": "Ant stings contain formic acid which causes pain and swelling. Baking soda (Sodium hydrogen carbonate) is a base; when rubbed on the skin, it neutralizes the acid and reduces the pain.",
+            "answer_outline": [
+                "Acid in ant sting",
+                "Nature of baking soda",
+                "Neutralization process"
+            ],
+            "key_concepts": [
+                "ant bite",
+                "formic acid",
+                "baking soda"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the role of neutralization in soil treatment?",
+            "answer": "If soil is too acidic (due to chemical fertilizers), it is treated with bases like quicklime (calcium oxide). If it is too basic, organic matter is added, which releases acids to neutralize the soil.",
+            "answer_outline": [
+                "Effect of soil pH",
+                "Treating acidic soil",
+                "Treating basic soil"
+            ],
+            "key_concepts": [
+                "soil pH",
+                "quicklime",
+                "organic matter"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Why should factory waste be treated before being discharged into water?",
+            "answer": "Factory wastes are often acidic. If discharged directly, they kill fish and other aquatic organisms. Therefore, they are neutralized with basic substances to protect the aquatic ecosystem.",
+            "answer_outline": [
+                "Nature of factory waste",
+                "Danger to aquatic life",
+                "Neutralization treatment"
+            ],
+            "key_concepts": [
+                "factory waste",
+                "aquatic life",
+                "neutralization"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Differentiate between Organic and Mineral acids with two examples each.",
+            "answer": "Organic acids occur naturally in plants/animals (e.g., Lactic acid in curd, Citric acid in citrus fruits). Mineral acids are prepared from minerals (e.g., Sulfuric acid, Nitric acid) and are much stronger.",
+            "answer_outline": [
+                "Source of organic acids",
+                "Source of mineral acids",
+                "Examples"
+            ],
+            "key_concepts": [
+                "organic acids",
+                "mineral acids"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is acid rain and how does it affect historical monuments?",
+            "answer": "Acid rain forms when pollutants like SO2 and NO2 mix with rain to form acids. It reacts with the calcium carbonate (marble) of monuments like the Taj Mahal, leading to 'Marble Cancer' or corrosion.",
+            "answer_outline": [
+                "Formation of acid rain",
+                "Effect on marble",
+                "Example (Taj Mahal)"
+            ],
+            "key_concepts": [
+                "acid rain",
+                "marble cancer",
+                "calcium carbonate"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "List five naturally occurring acids and their sources.",
+            "answer": "1. Citric acid - Citrus fruits, 2. Acetic acid - Vinegar, 3. Lactic acid - Curd, 4. Oxalic acid - Spinach, 5. Tartaric acid - Tamarind.",
+            "answer_outline": [
+                "List of 5 acids",
+                "Respective food sources"
+            ],
+            "key_concepts": [
+                "natural acids",
+                "acetic acid",
+                "lactic acid"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe the behavior of Phenolphthalein in different media.",
+            "answer": "Phenolphthalein is a synthetic indicator. It remains colorless in acidic and neutral solutions but turns deep pink in basic solutions.",
+            "answer_outline": [
+                "Type of indicator",
+                "Color in acid",
+                "Color in base"
+            ],
+            "key_concepts": [
+                "phenolphthalein",
+                "colorless",
+                "pink"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is distilled water neutral? How can you test it?",
+            "answer": "Distilled water is neutral because it contains no dissolved salts or impurities that provide H+ or OH- ions. You can test it by using litmus paper; it will not change the color of either red or blue litmus.",
+            "answer_outline": [
+                "Reason for neutrality",
+                "Testing method",
+                "Litmus observation"
+            ],
+            "key_concepts": [
+                "distilled water",
+                "neutral",
+                "litmus test"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the difference between dilute and concentrated acids.",
+            "answer": "A concentrated acid contains a large amount of acid and very little water. A dilute acid contains more water than acid. Dilution is done by adding acid to water slowly with stirring.",
+            "answer_outline": [
+                "Concentrated acid definition",
+                "Dilute acid definition",
+                "Dilution process"
+            ],
+            "key_concepts": [
+                "dilute",
+                "concentrated",
+                "dilution"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What happens when an acid reacts with a metal? Give an example.",
+            "answer": "Acids react with metals to produce a salt and hydrogen gas. Example: Zinc + Hydrochloric acid → Zinc chloride + Hydrogen gas. The gas can be tested with a burning splinter (it burns with a pop sound).",
+            "answer_outline": [
+                "General reaction",
+                "Specific example",
+                "Hydrogen test"
+            ],
+            "key_concepts": [
+                "metal reaction",
+                "hydrogen gas",
+                "salt"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "List three common bases used in the laboratory and their uses.",
+            "answer": "1. Sodium hydroxide (Soap making), 2. Calcium hydroxide (White washing), 3. Ammonium hydroxide (Window cleaner).",
+            "answer_outline": [
+                "Names of three bases",
+                "Practical applications"
+            ],
+            "key_concepts": [
+                "sodium hydroxide",
+                "calcium hydroxide",
+                "bases"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the importance of the pH scale in brief?",
+            "answer": "The pH scale measures the strength of acids and bases from 0 to 14. 7 is neutral, less than 7 is acidic, and more than 7 is basic. It helps in medicine, agriculture, and industrial processes.",
+            "answer_outline": [
+                "Definition of pH scale",
+                "Range and values",
+                "Importance"
+            ],
+            "key_concepts": [
+                "pH scale",
+                "acidic",
+                "basic",
+                "neutral"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe an activity to show that soap solution is basic.",
+            "answer": "Take a small amount of soap solution. Dip a red litmus paper into it. The paper turns blue, indicating the solution is basic. Alternatively, add turmeric; it will turn reddish-brown.",
+            "answer_outline": [
+                "Materials required",
+                "Step-by-step procedure",
+                "Observation and result"
+            ],
+            "key_concepts": [
+                "soap solution",
+                "basic",
+                "red litmus to blue"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why we feel a burning sensation when we touch a concentrated acid.",
+            "answer": "Concentrated acids are highly corrosive and have a high affinity for water. They dehydrate the skin tissues and cause chemical burns by reacting with the moisture and proteins in the skin.",
+            "answer_outline": [
+                "Corrosive nature",
+                "Dehydration of tissues",
+                "Chemical reaction with skin"
+            ],
+            "key_concepts": [
+                "corrosive",
+                "chemical burn",
+                "skin tissue"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "How do you distinguish between a neutral substance and a base using only turmeric paper?",
+            "answer": "Touch the turmeric paper with the substance. if it turns reddish-brown, it is a base. If it remains yellow, it could be neutral (or acidic). A change to red is a definitive test for a base.",
+            "answer_outline": [
+                "Applying the test",
+                "Color observation",
+                "Inference"
+            ],
+            "key_concepts": [
+                "turmeric test",
+                "distinguishing substances"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is 'Milk of Magnesia'? Mention its chemical name and use.",
+            "answer": "Milk of Magnesia is a suspension of Magnesium Hydroxide in water. It is a mild base used as an antacid to neutralize excess stomach acid and relieve indigestion.",
+            "answer_outline": [
+                "Description",
+                "Chemical name",
+                "Specific use"
+            ],
+            "key_concepts": [
+                "magnesium hydroxide",
+                "antacid",
+                "indigestion"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are wooden or plastic spoons recommended for handling certain chemicals in the lab?",
+            "answer": "Many acids and some bases are corrosive and can react with metal spoons, leading to contamination or damage. Plastic and wood are generally non-reactive to these substances, making them safer.",
+            "answer_outline": [
+                "Reactivity of metals",
+                "Non-reactivity of wood/plastic",
+                "Safety and purity"
+            ],
+            "key_concepts": [
+                "reactivity",
+                "corrosion",
+                "safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        }
+    ]
+}

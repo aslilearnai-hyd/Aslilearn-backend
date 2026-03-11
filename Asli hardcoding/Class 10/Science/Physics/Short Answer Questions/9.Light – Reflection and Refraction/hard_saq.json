@@ -1,0 +1,248 @@
+{
+    "content_type": "Short Answer Questions (Hard Level)",
+    "chapter": "Chapter 9/10: Light – Reflection and Refraction",
+    "generated_at": "2026-03-11T01:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the relationship between focal length and radius of curvature for a spherical mirror.",
+            "answer": "Using geometry of a concave mirror, for a ray parallel to principal axis, the reflected ray passes through focus F. By triangle similarity and small aperture approximation, the distance from pole to focus f = R/2, where R is radius of curvature.",
+            "answer_outline": [
+                "Parallel ray geometry",
+                "Triangle similarity",
+                "f = R/2 derivation"
+            ],
+            "key_concepts": [
+                "radius of curvature",
+                "focal length derivation"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.2 / 10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "An object is placed at 30 cm in front of a concave mirror of focal length 20 cm. Find the position, nature and size of the image.",
+            "answer": "Using mirror formula: 1/v + 1/u = 1/f → 1/v = 1/(-20) - 1/(-30) = -1/60 → v = -60 cm. Real, inverted, magnified (m = -v/u = 2).",
+            "answer_outline": [
+                "Mirror formula application",
+                "Sign convention",
+                "Magnification calculation"
+            ],
+            "key_concepts": [
+                "mirror formula",
+                "image characteristics"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.2 / 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does a convex mirror never form a real image?",
+            "answer": "Convex mirror always diverges incident rays. The reflected rays appear to come from a point behind the mirror, so image is virtual irrespective of object position.",
+            "answer_outline": [
+                "Diverging nature",
+                "Ray diagram reasoning",
+                "Virtual image formation"
+            ],
+            "key_concepts": [
+                "convex mirror",
+                "divergence"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.2 / 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the refractive index of a medium is always greater than 1.",
+            "answer": "Speed of light in any medium is less than in vacuum (v < c). Since n = c/v, refractive index is always greater than 1 for all material media.",
+            "answer_outline": [
+                "v < c in medium",
+                "n = c/v > 1",
+                "Physical reason"
+            ],
+            "key_concepts": [
+                "refractive index",
+                "speed of light"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A light ray enters from medium A (n=1.5) to medium B (n=1.33) at 30°. Calculate the angle of refraction.",
+            "answer": "Using Snell's law: n₁ sin i = n₂ sin r → 1.5 × sin 30° = 1.33 × sin r → sin r = (1.5 × 0.5)/1.33 ≈ 0.564 → r ≈ 34.4°.",
+            "answer_outline": [
+                "Snell's law numerical",
+                "From denser to rarer",
+                "Angle calculation"
+            ],
+            "key_concepts": [
+                "Snell's law",
+                "numerical application"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why a swimming pool appears shallower than its actual depth.",
+            "answer": "Light rays from the bottom bend away from normal when emerging into air (rarer medium), so rays appear to come from a higher point → apparent depth = actual depth / refractive index.",
+            "answer_outline": [
+                "Refraction at water-air interface",
+                "Apparent depth formula",
+                "Rays appear raised"
+            ],
+            "key_concepts": [
+                "apparent depth",
+                "refraction"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Derive the formula for lateral displacement in a glass slab.",
+            "answer": "Lateral displacement d = t × sin(i - r) / cos r, where t = thickness, i = incidence angle, r = refraction angle (from Snell's law). Emergent ray parallel to incident ray but shifted sideways.",
+            "answer_outline": [
+                "Geometry of slab",
+                "d = t sin(i-r)/cos r",
+                "Parallel shift"
+            ],
+            "key_concepts": [
+                "lateral displacement",
+                "derivation"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 8,
+            "question": "A convex lens forms a real image three times the size of the object. If object is 24 cm from lens, find focal length.",
+            "answer": "m = -3 (real inverted), m = v/u → v = -3u = -72 cm (u = -24 cm). Lens formula: 1/f = 1/v - 1/u → 1/f = -1/72 + 1/24 = 1/36 → f = 36 cm.",
+            "answer_outline": [
+                "Magnification use",
+                "Lens formula application",
+                "Numerical solution"
+            ],
+            "key_concepts": [
+                "lens formula",
+                "magnification"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.5 / 10.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does total internal reflection not occur when light travels from rarer to denser medium?",
+            "answer": "When going from rarer to denser, light always bends towards normal and refracts out; critical angle condition (sin c = 1/n) only applies from denser to rarer medium.",
+            "answer_outline": [
+                "Direction of bending",
+                "Critical angle condition",
+                "No TIR possible"
+            ],
+            "key_concepts": [
+                "total internal reflection",
+                "medium comparison"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Calculate the critical angle for diamond (n = 2.42) in air.",
+            "answer": "Critical angle c = sin⁻¹(1/n) = sin⁻¹(1/2.42) ≈ sin⁻¹(0.413) ≈ 24.4°.",
+            "answer_outline": [
+                "Critical angle formula",
+                "n = 2.42",
+                "Numerical value"
+            ],
+            "key_concepts": [
+                "critical angle",
+                "diamond"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the formation of mirage in deserts using total internal reflection.",
+            "answer": "Hot air near sand is less dense → light from sky bends upwards due to gradual refraction, then TIR occurs at steeper angles, creating illusion of water (inverted sky image).",
+            "answer_outline": [
+                "Refractive index gradient",
+                "TIR in hot air layer",
+                "Mirage mechanism"
+            ],
+            "key_concepts": [
+                "mirage",
+                "total internal reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why do we observe advance sunrise and delayed sunset?",
+            "answer": "Atmospheric refraction bends sunlight towards Earth even when Sun is below horizon → apparent position higher, causing Sun to appear 2 minutes earlier at sunrise and later at sunset.",
+            "answer_outline": [
+                "Atmospheric refraction",
+                "Bending towards normal",
+                "Time difference"
+            ],
+            "key_concepts": [
+                "atmospheric refraction",
+                "sunrise sunset"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Two thin lenses of power +4 D and -2 D are kept in contact. Find the equivalent power and focal length.",
+            "answer": "P = P₁ + P₂ = 4 - 2 = +2 D. Equivalent focal length f = 1/P = 1/2 = 0.5 m = 50 cm.",
+            "answer_outline": [
+                "Power addition rule",
+                "f = 1/P",
+                "Combination"
+            ],
+            "key_concepts": [
+                "lens power combination",
+                "equivalent focal length"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.5 / 10.5"
+        },
+        {
+            "question_number": 14,
+            "question": "An object is placed 15 cm in front of a convex lens of focal length 10 cm. Find nature, position and magnification of image.",
+            "answer": "1/v - 1/u = 1/f → 1/v = 1/10 + 1/(-15) = 1/30 → v = +30 cm. Real, inverted, m = v/u = -2 (twice magnified).",
+            "answer_outline": [
+                "Lens formula",
+                "Beyond 2f position",
+                "Magnification"
+            ],
+            "key_concepts": [
+                "convex lens ray diagram",
+                "image nature"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.4 / 10.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why dispersion occurs during refraction but not during reflection.",
+            "answer": "Refraction depends on speed which varies with wavelength (different colours bend differently). Reflection depends only on angle and is independent of wavelength → no dispersion.",
+            "answer_outline": [
+                "Wavelength dependence",
+                "Refraction vs reflection",
+                "Prism dispersion"
+            ],
+            "key_concepts": [
+                "dispersion",
+                "wavelength"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3 / 10.3"
+        }
+    ]
+}

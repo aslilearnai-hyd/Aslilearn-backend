@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Life Processes in Animals",
+  "generated_at": "2026-03-06T23:59:45",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following describes the correct biochemical action of the intestinal juice (succus entericus)?",
+      "options": {
+        "A": "Starch to Maltose; Proteins to Peptides",
+        "B": "Carbohydrates to Glucose; Proteins to Amino acids; Fats to Fatty acids and Glycerol",
+        "C": "Proteins to Peptones; Fats to Diglycerides",
+        "D": "Complex Sugars to Starch; Amino acids to Proteins"
+      },
+      "correct_answer": "B",
+      "explanation": "Intestinal juice contains the final enzymes that complete the digestion of all nutrients into their simplest absorbable forms.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The acidic chyme entering the small intestine is neutralized by which combination of secretions?",
+      "options": {
+        "A": "Bile and Saliva",
+        "B": "Bile and Pancreatic juice",
+        "C": "Gastric juice and Mucus",
+        "D": "Intestinal juice and Hydrochloric acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Bile and the bicarbonate ions in pancreatic juice provide the alkaline medium necessary for intestinal enzymes to function.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 3,
+      "question": "In ruminants, the digestion of cellulose is a symbiotic process. Where exactly does this primary bacterial fermentation occur?",
+      "options": {
+        "A": "Oesophagus",
+        "B": "Rumen",
+        "C": "Small Intestine",
+        "D": "Abomasum"
+      },
+      "correct_answer": "B",
+      "explanation": "The rumen is a large sac where billions of bacteria and protozoa ferment cellulose into organic acids.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Which part of the human tooth is the hardest substance in the body and lacks living cells?",
+      "options": {
+        "A": "Dentine",
+        "B": "Pulp cavity",
+        "C": "Enamel",
+        "D": "Gum"
+      },
+      "correct_answer": "C",
+      "explanation": "Enamel is the highly mineralized outer layer of the tooth that protects it from wear and tear.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 5,
+      "question": "During assimilation, what is the fate of excess amino acids that are not immediately used for building proteins?",
+      "options": {
+        "A": "They are stored in the muscles as protein",
+        "B": "They are converted into glucose or urea in the liver",
+        "C": "They are excreted as solid waste",
+        "D": "They are turned into fats and stored in the skin"
+      },
+      "correct_answer": "B",
+      "explanation": "The body does not store excess amino acids; the liver breaks them down, often converting the nitrogenous part into urea.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "How does the structure of the small intestine specifically facilitate the 'Absorption' process?",
+      "options": {
+        "A": "By having a thick muscular wall for peristalsis",
+        "B": "By producing hydrochloric acid",
+        "C": "By having villi and microvilli to exponentially increase surface area",
+        "D": "By being very short to allow quick passage"
+      },
+      "correct_answer": "C",
+      "explanation": "The presence of villi increases the surface area for absorption by nearly 600 times.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "The 'true stomach' of a ruminant, where gastric juices (acid and enzymes) are actually secreted, is the:",
+      "options": {
+        "A": "Rumen",
+        "B": "Reticulum",
+        "C": "Omasum",
+        "D": "Abomasum"
+      },
+      "correct_answer": "D",
+      "explanation": "The abomasum is the fourth chamber of the ruminant stomach and functions similarly to the human stomach.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 8,
+      "question": "In Amoeba, the enzymes for digestion are secreted from the _____ into the _____.",
+      "options": {
+        "A": "Nucleus, Pseudopodia",
+        "B": "Cytoplasm, Food vacuole",
+        "C": "Food vacuole, Cytoplasm",
+        "D": "Contractile vacuole, Nucleus"
+      },
+      "correct_answer": "B",
+      "explanation": "Digestive enzymes from the surrounding cytoplasm enter the food vacuole to break down the trapped prey.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the physiological cause of the 'heartburn' or 'acidity' felt in the chest area?",
+      "options": {
+        "A": "The heart producing too much acid",
+        "B": "Backflow of stomach acid into the oesophagus",
+        "C": "Digestion of fats in the food pipe",
+        "D": "Lack of saliva in the mouth"
+      },
+      "correct_answer": "B",
+      "explanation": "Acidity occurs when the sphincter between the oesophagus and stomach fails to close properly, allowing acid to irritate the food pipe.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 10,
+      "question": "The liver performs many functions, but its primary contribution to digestion is 'Emulsification'. This means:",
+      "options": {
+        "A": "Turning fats into glucose",
+        "B": "Breaking large fat globules into tiny droplets to increase enzyme efficiency",
+        "C": "Converting proteins into fatty acids",
+        "D": "Absorbing water from the fats"
+      },
+      "correct_answer": "B",
+      "explanation": "Bile salts act like detergents to break down fat into smaller droplets (micelles).",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the function of the Caecum found in animals like horses and rabbits?",
+      "options": {
+        "A": "Storage of bile",
+        "B": "Digestion of cellulose by specific bacteria",
+        "C": "Absorption of proteins",
+        "D": "Mechanical grinding of food"
+      },
+      "correct_answer": "B",
+      "explanation": "In non-ruminant herbivores, the caecum is the primary site for bacterial fermentation of cellulose.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is an example of an endo-parasitic mode of nutrition in the context of life processes?",
+      "options": {
+        "A": "Tapeworms living in the human intestine",
+        "B": "Ticks on a dog's skin",
+        "C": "Cuscuta on a host plant",
+        "D": "Amoeba engulfing a bacterium"
+      },
+      "correct_answer": "A",
+      "explanation": "Endoparasites live inside the host's body and absorb pre-digested nutrients.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "The secretion of the gastric glands includes pepsinogen. How is this enzyme activated into 'Pepsin'?",
+      "options": {
+        "A": "By the action of Bile",
+        "B": "By the presence of Hydrochloric acid",
+        "C": "By mixing with saliva",
+        "D": "By the action of Pancreatic juice"
+      },
+      "correct_answer": "B",
+      "explanation": "HCl provides the low pH (acidic environment) required to convert inactive pepsinogen into active pepsin.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Dental caries (tooth decay) is primarily caused by the action of:",
+      "options": {
+        "A": "Bases produced by bacteria",
+        "B": "Acids produced by bacteria during the fermentation of sugars",
+        "C": "Eating too much salty food",
+        "D": "Frequent drinking of plain water"
+      },
+      "correct_answer": "B",
+      "explanation": "Bacteria break down leftover sugars to produce acids that dissolve the enamel and dentine.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which component of the pancreatic juice specifically digests proteins into peptides?",
+      "options": {
+        "A": "Amylase",
+        "B": "Lipase",
+        "C": "Trypsin",
+        "D": "Pepsin"
+      },
+      "correct_answer": "C",
+      "explanation": "Trypsin is the protein-digesting enzyme found in pancreatic juice, while pepsin is found in the stomach.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "During the absorption of fats, they are first converted into tiny droplets and then absorbed into _____, unlike other nutrients.",
+      "options": {
+        "A": "Blood capillaries",
+        "B": "Lacteals (Lymph vessels)",
+        "C": "The liver directly",
+        "D": "The large intestine"
+      },
+      "correct_answer": "B",
+      "explanation": "Fatty acids and glycerol are absorbed into the lacteals located inside the villi.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 17,
+      "question": "The involuntary wave-like muscle contractions that move food along the entire alimentary canal are known as:",
+      "options": {
+        "A": "Rumination",
+        "B": "Peristalsis",
+        "C": "Assimilation",
+        "D": "Mastication"
+      },
+      "correct_answer": "B",
+      "explanation": "Peristalsis occurs throughout the digestive tract to push food forward.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the biological significance of the 'Cud-chewing' behavior in ruminants?",
+      "options": {
+        "A": "To taste the food better",
+        "B": "To increase the surface area of the food for more efficient bacterial action",
+        "C": "To produce more acid in the mouth",
+        "D": "To avoid predators by eating quickly and chewing later"
+      },
+      "correct_answer": "B",
+      "explanation": "Breaking the grass into smaller particles (mastication) allows bacteria to access the cellulose fibers more effectively.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 19,
+      "question": "The gallbladder does not produce bile. What is its exact physiological role?",
+      "options": {
+        "A": "To produce digestive enzymes",
+        "B": "To concentrate and store bile until needed",
+        "C": "To filter toxins from the bile",
+        "D": "To absorb fats"
+      },
+      "correct_answer": "B",
+      "explanation": "The gallbladder stores bile produced by the liver and concentrates it by removing water.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a symptom of severe dehydration caused by diarrhoea?",
+      "options": {
+        "A": "Increased sweating",
+        "B": "Sunken eyes and dry mouth",
+        "C": "High blood pressure",
+        "D": "Excessive energy"
+      },
+      "correct_answer": "B",
+      "explanation": "Loss of water and electrolytes leads to dry skin, sunken eyes, and lethargy.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Amoeba uses 'Food Vacuoles' for digestion. This type of digestion is called:",
+      "options": {
+        "A": "Extracellular digestion",
+        "B": "Intracellular digestion",
+        "C": "Intercellular digestion",
+        "D": "Autotrophic nutrition"
+      },
+      "correct_answer": "B",
+      "explanation": "Since digestion takes place inside the cell membrane (within a vacuole), it is intracellular.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Why is the small intestine much longer in herbivores (like cows) than in carnivores (like lions)?",
+      "options": {
+        "A": "Because herbivores eat more food",
+        "B": "To provide more time and space for the difficult digestion of cellulose",
+        "C": "To store more water",
+        "D": "Because meat is harder to digest than grass"
+      },
+      "correct_answer": "B",
+      "explanation": "Cellulose is difficult to break down and requires a longer residence time and more surface area for bacterial action.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of these enzymes is active only in an alkaline environment?",
+      "options": {
+        "A": "Pepsin",
+        "B": "Salivary Amylase",
+        "C": "Pancreatic Lipase",
+        "D": "Gastric Lipase"
+      },
+      "correct_answer": "C",
+      "explanation": "Pancreatic and intestinal enzymes require the alkaline medium provided by bile and pancreatic juices.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "The process of 'Assimilation' of proteins results in the formation of:",
+      "options": {
+        "A": "New body tissues and enzymes",
+        "B": "Glucose for energy",
+        "C": "Fatty acid deposits",
+        "D": "Bile juice"
+      },
+      "correct_answer": "A",
+      "explanation": "Amino acids are used by cells to synthesize proteins like collagen, muscles, and antibodies.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "What happens if the large intestine fails to absorb water from the waste material?",
+      "options": {
+        "A": "Constipation",
+        "B": "Diarrhoea",
+        "C": "Vomiting",
+        "D": "Acidity"
+      },
+      "correct_answer": "B",
+      "explanation": "If water is not reabsorbed, the stools remain liquid, resulting in diarrhoea.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    }
+  ]
+}

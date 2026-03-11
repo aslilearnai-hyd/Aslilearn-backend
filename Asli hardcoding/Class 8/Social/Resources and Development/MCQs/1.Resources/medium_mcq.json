@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Resources",
+  "generated_at": "2026-03-06T14:35:00",
+  "difficulty": "medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a resource?",
+      "options": {
+        "A": "Anything available in nature",
+        "B": "Anything that satisfies human needs and has value",
+        "C": "Only manufactured goods",
+        "D": "Only agricultural products"
+      },
+      "correct_answer": "B",
+      "explanation": "Resources are things that satisfy human needs and have value.",
+      "difficulty": "easy",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which condition must be met for something to become a resource?",
+      "options": {
+        "A": "Technological accessibility",
+        "B": "Economic feasibility",
+        "C": "Cultural acceptability",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "A resource must be technologically accessible, economically feasible, and culturally acceptable.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is a natural resource?",
+      "options": {
+        "A": "Road",
+        "B": "Machine",
+        "C": "Water",
+        "D": "Building"
+      },
+      "correct_answer": "C",
+      "explanation": "Water is obtained directly from nature and is a natural resource.",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "Which type of resource refers to people's knowledge and skills?",
+      "options": {
+        "A": "Natural resources",
+        "B": "Human-made resources",
+        "C": "Human resources",
+        "D": "Renewable resources"
+      },
+      "correct_answer": "C",
+      "explanation": "Human resources refer to the skills, knowledge, and abilities of people.",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is an example of human-made resources?",
+      "options": {
+        "A": "Air",
+        "B": "Soil",
+        "C": "Bridge",
+        "D": "Forest"
+      },
+      "correct_answer": "C",
+      "explanation": "Bridges are constructed by humans using natural materials.",
+      "difficulty": "easy",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "Which resource can be replenished naturally in a short time?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Solar energy",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Solar energy is renewable because it is naturally replenished.",
+      "difficulty": "easy",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is a non-renewable resource?",
+      "options": {
+        "A": "Wind energy",
+        "B": "Coal",
+        "C": "Solar energy",
+        "D": "Water"
+      },
+      "correct_answer": "B",
+      "explanation": "Coal takes millions of years to form and cannot be replaced quickly.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which activity mainly depends on natural resources?",
+      "options": {
+        "A": "Banking",
+        "B": "Agriculture",
+        "C": "Software development",
+        "D": "Teaching"
+      },
+      "correct_answer": "B",
+      "explanation": "Agriculture depends on soil, water, and climate.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 9,
+      "question": "Which concept focuses on careful use of resources to prevent depletion?",
+      "options": {
+        "A": "Industrialization",
+        "B": "Urbanization",
+        "C": "Resource conservation",
+        "D": "Commercialization"
+      },
+      "correct_answer": "C",
+      "explanation": "Resource conservation ensures resources remain available for future generations.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the main aim of sustainable development?",
+      "options": {
+        "A": "Maximum industrial growth",
+        "B": "Meeting present needs without harming future generations",
+        "C": "Using only natural resources",
+        "D": "Promoting trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Sustainable development balances development with environmental protection.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 11,
+      "question": "Which factor causes uneven distribution of resources?",
+      "options": {
+        "A": "Climate",
+        "B": "Geological conditions",
+        "C": "Geography",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "Resource distribution depends on climate, geography, and geology.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 12,
+      "question": "Which resource is essential for drinking and agriculture?",
+      "options": {
+        "A": "Steel",
+        "B": "Water",
+        "C": "Plastic",
+        "D": "Coal"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is essential for life and agriculture.",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which natural resource provides raw materials for industries?",
+      "options": {
+        "A": "Minerals",
+        "B": "Air",
+        "C": "Sunlight",
+        "D": "Rain"
+      },
+      "correct_answer": "A",
+      "explanation": "Minerals are used as raw materials in manufacturing industries.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which human activity can cause resource depletion?",
+      "options": {
+        "A": "Recycling",
+        "B": "Overuse of resources",
+        "C": "Saving electricity",
+        "D": "Planting trees"
+      },
+      "correct_answer": "B",
+      "explanation": "Overuse of resources leads to resource depletion.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which renewable energy source uses moving air to produce electricity?",
+      "options": {
+        "A": "Coal energy",
+        "B": "Wind energy",
+        "C": "Petroleum energy",
+        "D": "Gas energy"
+      },
+      "correct_answer": "B",
+      "explanation": "Wind turbines convert wind energy into electricity.",
+      "difficulty": "easy",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 16,
+      "question": "Which resource helps maintain ecological balance?",
+      "options": {
+        "A": "Forests",
+        "B": "Plastic",
+        "C": "Steel",
+        "D": "Concrete"
+      },
+      "correct_answer": "A",
+      "explanation": "Forests support biodiversity and ecological balance.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which practice helps conserve resources?",
+      "options": {
+        "A": "Wasting electricity",
+        "B": "Burning fossil fuels",
+        "C": "Recycling materials",
+        "D": "Cutting forests"
+      },
+      "correct_answer": "C",
+      "explanation": "Recycling reduces the need for new resources.",
+      "difficulty": "easy",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 18,
+      "question": "Which factor increases demand for resources?",
+      "options": {
+        "A": "Population growth",
+        "B": "Conservation",
+        "C": "Recycling",
+        "D": "Education"
+      },
+      "correct_answer": "A",
+      "explanation": "Population growth increases demand for food, water, and energy.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 19,
+      "question": "Which resource is used to generate hydroelectric power?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Water",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Hydroelectric power is generated from flowing water.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which resource is most important for crop production?",
+      "options": {
+        "A": "Soil",
+        "B": "Plastic",
+        "C": "Steel",
+        "D": "Rubber"
+      },
+      "correct_answer": "A",
+      "explanation": "Soil provides nutrients needed for plant growth.",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which concept encourages balanced use of resources?",
+      "options": {
+        "A": "Industrialization",
+        "B": "Sustainable development",
+        "C": "Urbanization",
+        "D": "Commercialization"
+      },
+      "correct_answer": "B",
+      "explanation": "Sustainable development ensures resources are used responsibly.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 22,
+      "question": "Which action helps reduce environmental damage?",
+      "options": {
+        "A": "Cutting forests",
+        "B": "Saving water",
+        "C": "Burning coal",
+        "D": "Overusing resources"
+      },
+      "correct_answer": "B",
+      "explanation": "Saving water helps conserve natural resources.",
+      "difficulty": "easy",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 23,
+      "question": "Which sector relies heavily on minerals?",
+      "options": {
+        "A": "Manufacturing industries",
+        "B": "Education",
+        "C": "Healthcare",
+        "D": "Banking"
+      },
+      "correct_answer": "A",
+      "explanation": "Manufacturing industries use minerals as raw materials.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of the following helps protect biodiversity?",
+      "options": {
+        "A": "Deforestation",
+        "B": "Forest conservation",
+        "C": "Mining",
+        "D": "Urban expansion"
+      },
+      "correct_answer": "B",
+      "explanation": "Forest conservation helps protect biodiversity.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main goal of resource management?",
+      "options": {
+        "A": "Rapid exploitation of resources",
+        "B": "Short-term economic gain",
+        "C": "Sustainable and responsible use of resources",
+        "D": "Ignoring environmental impacts"
+      },
+      "correct_answer": "C",
+      "explanation": "Resource management focuses on sustainable use of resources.",
+      "difficulty": "medium",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

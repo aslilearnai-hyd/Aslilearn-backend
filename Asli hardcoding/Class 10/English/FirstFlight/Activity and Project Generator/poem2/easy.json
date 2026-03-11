@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Poems – A Tiger in the Zoo, The Tiger, The Panther",
+  "difficulty": "Easy",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Draw the Tiger",
+      "objective": "Visualize the tiger’s appearance and surroundings.",
+      "materials": ["Drawing sheet", "Crayons or colored pencils"],
+      "steps": [
+        "Read 'A Tiger in the Zoo'.",
+        "Draw the tiger in the zoo or jungle.",
+        "Label key features like stripes, paws, tail, and cage or trees."
+      ],
+      "learning_outcome": "Students will observe and represent the tiger visually.",
+      "evaluation": "Neatness, correct features, and labeling."
+    },
+    {
+      "sl_no": 2,
+      "title": "Highlight Key Words",
+      "objective": "Identify important descriptive words in the poems.",
+      "materials": ["Notebook", "Pen", "Highlighter"],
+      "steps": [
+        "Read all three poems carefully.",
+        "Highlight words describing the tiger’s emotions and actions.",
+        "Discuss meanings with classmates."
+      ],
+      "learning_outcome": "Students will understand key vocabulary and descriptive language.",
+      "evaluation": "Correct identification of important words."
+    },
+    {
+      "sl_no": 3,
+      "title": "Simple Emotion Chart",
+      "objective": "Recognize emotions expressed by the tiger or panther.",
+      "materials": ["Notebook", "Colored pens"],
+      "steps": [
+        "Write down emotions from each poem (e.g., fear, anger, longing).",
+        "Use a table with columns for each poem.",
+        "Share findings in class."
+      ],
+      "learning_outcome": "Students will identify feelings and relate to animal experiences.",
+      "evaluation": "Accuracy of emotion identification and clarity of chart."
+    },
+    {
+      "sl_no": 4,
+      "title": "Compare Tiger’s Actions",
+      "objective": "Observe differences in tiger behavior across poems.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Make a simple table with two columns: 'Tiger in Zoo' and 'The Panther'.",
+        "Write points about tiger’s actions and feelings.",
+        "Discuss similarities and differences in class."
+      ],
+      "learning_outcome": "Students will understand basic comparison and contrast.",
+      "evaluation": "Correct points and clear presentation."
+    },
+    {
+      "sl_no": 5,
+      "title": "Role Play – Tiger’s Day",
+      "objective": "Express the tiger’s emotions through acting.",
+      "materials": ["Simple props if needed"],
+      "steps": [
+        "Assign roles: Tiger, Zookeeper, Visitors.",
+        "Act out a scene showing the tiger in zoo or jungle.",
+        "Express emotions clearly through actions or dialogue."
+      ],
+      "learning_outcome": "Students will develop expression and empathy.",
+      "evaluation": "Participation and clarity of role expression."
+    },
+    {
+      "sl_no": 6,
+      "title": "Label the Tiger’s Features",
+      "objective": "Understand tiger’s physical traits.",
+      "materials": ["Picture of a tiger", "Notebook", "Pen"],
+      "steps": [
+        "Look at the picture carefully.",
+        "Label parts like eyes, stripes, paws, tail.",
+        "Write one line describing each feature."
+      ],
+      "learning_outcome": "Students will learn observation skills and physical traits of animals.",
+      "evaluation": "Accuracy of labeling and clarity of description."
+    },
+    {
+      "sl_no": 7,
+      "title": "Poem Recitation",
+      "objective": "Improve reading fluency and expression.",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Select a short stanza from any poem.",
+        "Recite aloud with clear pronunciation.",
+        "Explain the meaning in one or two sentences to the class."
+      ],
+      "learning_outcome": "Students will improve oral skills and comprehension.",
+      "evaluation": "Clarity, pronunciation, and understanding of stanza."
+    },
+    {
+      "sl_no": 8,
+      "title": "Draw Freedom vs Captivity",
+      "objective": "Visualize contrasts between wild and caged tigers.",
+      "materials": ["Drawing sheet", "Colors"],
+      "steps": [
+        "Draw the tiger in a cage and a tiger in the jungle.",
+        "Show differences in posture, expression, and surroundings.",
+        "Label key elements representing freedom and captivity."
+      ],
+      "learning_outcome": "Students will understand the concept of captivity vs freedom visually.",
+      "evaluation": "Creativity, clarity, and attention to detail."
+    },
+    {
+      "sl_no": 9,
+      "title": "Simple Discussion – Lessons from Poems",
+      "objective": "Understand basic themes of freedom, instinct, and human impact.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write one lesson you learned from each poem.",
+        "Discuss in pairs or groups.",
+        "Share examples of how humans affect animals in real life."
+      ],
+      "learning_outcome": "Students will connect poem themes to daily life and animal care.",
+      "evaluation": "Participation and relevance of discussion."
+    },
+    {
+      "sl_no": 10,
+      "title": "Matching Activity – Emotions and Actions",
+      "objective": "Associate tiger emotions with corresponding actions.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List emotions (anger, longing, fear) from poems.",
+        "Write the tiger’s action corresponding to each emotion.",
+        "Discuss answers in class."
+      ],
+      "learning_outcome": "Students will link textual descriptions to emotions and behavior.",
+      "evaluation": "Accuracy and clarity of matching."
+    }
+  ]
+}

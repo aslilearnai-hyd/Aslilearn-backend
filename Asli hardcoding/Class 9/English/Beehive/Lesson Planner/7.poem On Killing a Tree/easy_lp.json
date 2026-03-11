@@ -1,0 +1,112 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "On Killing a Tree",
+    "lesson_level": "Easy",
+    "total_periods": 4,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the main theme and message of the poem",
+        "Identify the poet’s depiction of nature and trees",
+        "Learn simple poetic features like rhyme and repetition",
+        "Develop reading comprehension and vocabulary skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Reading",
+            "topics_covered": [
+                "Background of the poet and poem",
+                "Theme: Strength and resilience of nature",
+                "Introduction to trees as a symbol"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud clearly",
+                "Explain difficult words and lines in simple terms"
+            ],
+            "student_activities": [
+                "Listen carefully to the reading",
+                "Underline unfamiliar words and write meanings in notebook"
+            ],
+            "assessment": [
+                "Oral questioning on vocabulary",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Understanding the Theme",
+            "topics_covered": [
+                "The difficulty of destroying a tree",
+                "Tree as a symbol of life and strength",
+                "Human interaction with nature"
+            ],
+            "teaching_strategy": [
+                "Explain stanza-wise meaning in simple language",
+                "Give examples from daily life and nature"
+            ],
+            "student_activities": [
+                "Write the main idea of each stanza in own words",
+                "Discuss examples of tree’s resilience"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Poetic Features",
+            "topics_covered": [
+                "Repetition for emphasis",
+                "Simple imagery describing tree and nature",
+                "Rhyme and rhythm in selected lines"
+            ],
+            "teaching_strategy": [
+                "Point out repeated words and images",
+                "Discuss their effect on reader’s understanding"
+            ],
+            "student_activities": [
+                "Identify repeated words and lines",
+                "Explain meaning of simple imagery in own words"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Moral and Reflection",
+            "topics_covered": [
+                "Respect for nature",
+                "Importance of trees and environment",
+                "Lesson on resilience and patience"
+            ],
+            "teaching_strategy": [
+                "Discuss moral in simple, relatable terms",
+                "Encourage students to share observations from nature"
+            ],
+            "student_activities": [
+                "Write one sentence about what they learned from the poem",
+                "Share examples of strong trees or plants they know"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Pictures of trees and forests"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Keep explanations simple and focus on helping students appreciate the resilience of nature and the moral lesson about protecting trees."
+}

@@ -1,0 +1,147 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Animals, Birds, and Dr. Dolittle",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze the character traits of Dr. Dolittle that make him a unique protagonist",
+    "Identify and interpret the specific ways animals communicate in the story",
+    "Understand the transition in Dr. Dolittle’s career and the social consequences thereof",
+    "Explore the theme of specialized knowledge and its benefits to society",
+    "Develop descriptive and narrative writing skills using animal-related vocabulary",
+    "Differentiate between literal and figurative language in the context of animal 'speech'"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Character Study of Dr. Dolittle",
+      "topics_covered": [
+        "Contrast between Dr. Dolittle and 'normal' doctors",
+        "The setting of Puddleby-on-the-Marsh",
+        "The impact of his pets on his social standing"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis: Human doctoring vs. Animal doctoring",
+        "Teacher-led reading of the introduction",
+        "Discussion on social eccentricity and its consequences"
+      ],
+      "student_activities": [
+        "Create a 'Character Map' for Dr. Dolittle (Traits, Challenges, Desires)",
+        "Identify 3 reasons why his human patients stopped visiting"
+      ],
+      "assessment": ["Character map review", "Class discussion"]
+    },
+    {
+      "period": 2,
+      "title": "The Science of Animal Communication",
+      "topics_covered": [
+        "Polynesia the Parrot’s wisdom",
+        "The concept of 'signs' and 'signals' in nature",
+        "Vocabulary: 'Distinct', 'Interpreter', 'Observant'"
+      ],
+      "teaching_strategy": [
+        "Demonstration of non-verbal communication (body language)",
+        "Reading the dialogue between Polynesia and the Doctor",
+        "Explaining the logic behind the parrot’s argument"
+      ],
+      "student_activities": [
+        "Group work: Invent 'animal signs' for common phrases like 'I'm thirsty' or 'Watch out!'",
+        "Annotate the text for examples of how the parrot explains 'Bird ABCs'"
+      ],
+      "assessment": ["Creative signaling activity", "Annotation check"]
+    },
+    {
+      "period": 3,
+      "title": "Career Pivot and Conflict",
+      "topics_covered": [
+        "The Cat's-Meat-Man’s influence",
+        "Financial struggles vs. Professional passion",
+        "The decision-making process"
+      ],
+      "teaching_strategy": [
+        "Discussion on the 'turning point' in a narrative",
+        "Analyzing the pros and cons of the Doctor’s career change",
+        "Vocabulary focus: 'Prosperity', 'Insignificant', 'Vocation'"
+      ],
+      "student_activities": [
+        "Write a short 'Pros and Cons' list for Dr. Dolittle’s new career",
+        "Debate: Was the Doctor being responsible or reckless?"
+      ],
+      "assessment": ["Debate participation", "List accuracy"]
+    },
+    {
+      "period": 4,
+      "title": "Narrative Perspective: The Animal View",
+      "topics_covered": [
+        "How the news of the Animal Doctor spreads",
+        "The reputation of Dr. Dolittle among birds and beasts",
+        "Imagery in the 'animal rush' to the surgery"
+      ],
+      "teaching_strategy": [
+        "Reading the section on the Doctor’s growing fame",
+        "Visualizing the 'animal waiting room' through text descriptions",
+        "Focusing on the use of vivid verbs and adjectives"
+      ],
+      "student_activities": [
+        "Write a short paragraph from Jip the dog’s perspective about the new patients",
+        "Draw the waiting room based strictly on the sensory details provided in the text"
+      ],
+      "assessment": ["Perspective writing task", "Artistic accuracy based on text"]
+    },
+    {
+      "period": 5,
+      "title": "Themes of Empathy and Expertise",
+      "topics_covered": [
+        "The moral responsibility of having a unique skill",
+        "Empathy as a tool for problem-solving",
+        "Synthesizing the story's message"
+      ],
+      "teaching_strategy": [
+        "Class discussion on why the animals trusted the Doctor more than others",
+        "Relating 'animal language' to modern-day environmental stewardship",
+        "Summarizing the 'Lesson of Polynesia'"
+      ],
+      "student_activities": [
+        "Create a 'Code of Conduct' for an animal doctor",
+        "Write the 'Moral of the Story' in their own words, backed by 2 examples"
+      ],
+      "assessment": ["Code of Conduct creativity", "Thematic summary"]
+    },
+    {
+      "period": 6,
+      "title": "Language Workshop and Quiz",
+      "topics_covered": [
+        "Animal idioms and expressions",
+        "Identifying Nouns and Adjectives in pet descriptions",
+        "Review of plot events"
+      ],
+      "teaching_strategy": [
+        "Grammar game: Identifying descriptive adjectives in the text",
+        "Introduction to animal-related idioms (e.g., 'To let the cat out of the bag')",
+        "Comprehensive chapter quiz"
+      ],
+      "student_activities": [
+        "Match animal idioms with their meanings",
+        "Complete the 'Language Mastery' worksheet"
+      ],
+      "assessment": ["Unit test", "Worksheet completion"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Graphic organizers (Venn diagrams/Character webs)",
+    "Video clip of a parrot imitating sounds (real-world connection)",
+    "Idiom matching cards",
+    "Character chart of Puddleby residents"
+  ],
+  "evaluation_methods": [
+    "Analytical character map",
+    "Perspective-based writing (The Dog's View)",
+    "Vocabulary and Idiom quiz",
+    "Participation in classroom debates",
+    "Comprehensive unit assessment"
+  ],
+  "teacher_tip": "Focus on the transition from 'hearing' to 'listening.' Use Polynesia as a model for a mentor. Encourage students to think about how specialized knowledge (like animal language) can change a person's role in society."
+}

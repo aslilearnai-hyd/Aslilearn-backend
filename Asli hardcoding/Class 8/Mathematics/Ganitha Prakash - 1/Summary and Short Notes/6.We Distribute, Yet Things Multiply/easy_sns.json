@@ -1,0 +1,40 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "We Distribute, Yet Things Multiply",
+  "difficulty": "Hard",
+  "source_pdf": "ch-6_WE_DISTRIBUTE,_YET_THINGS_MULTIPLY.pdf",
+  "short_notes": {
+    "key_points": [
+      "An algebraic expression is formed using variables, constants and mathematical operations",
+      "Terms in an algebraic expression are separated by addition or subtraction signs",
+      "Like terms have the same variables with the same powers",
+      "Unlike terms have different variables or different powers",
+      "The distributive property helps in expanding algebraic expressions",
+      "Multiplication of algebraic expressions follows distributive law",
+      "Simplification of expressions requires combining like terms",
+      "Algebraic identities help in simplifying multiplication of expressions"
+    ],
+    "examples": [
+      "Expression example: 3x + 5",
+      "Like terms example: 4x and 7x",
+      "Unlike terms example: 3x and 3y",
+      "Distributive property example: 2(x + 3) = 2x + 6",
+      "Multiplication example: x(x + 2) = x² + 2x"
+    ],
+    "formulas": [
+      "a(b + c) = ab + ac",
+      "a(b − c) = ab − ac",
+      "(a + b)(c + d) = ac + ad + bc + bd",
+      "x(x + a) = x² + ax",
+      "a(x + y + z) = ax + ay + az"
+    ],
+    "exam_tips": [
+      "Always apply distributive property carefully when expanding brackets",
+      "Combine only like terms while simplifying expressions",
+      "Check the sign of each term during multiplication",
+      "Write each step clearly to avoid algebra mistakes",
+      "Practice expansion and simplification problems regularly"
+    ]
+  }
+}

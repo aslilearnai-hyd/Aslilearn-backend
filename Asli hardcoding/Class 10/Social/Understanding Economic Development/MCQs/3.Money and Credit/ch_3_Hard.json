@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why does formal credit play an important role in economic development?",
+      "options": {
+        "A": "It increases barter system",
+        "B": "It provides regulated and affordable loans",
+        "C": "It avoids documentation",
+        "D": "It charges very high interest"
+      },
+      "correct_answer": "B",
+      "explanation": "Formal credit is regulated by RBI and offers loans at reasonable interest rates."
+    },
+    {
+      "question_number": 2,
+      "question": "Which situation best explains a debt trap?",
+      "options": {
+        "A": "Borrowing at low interest and repaying easily",
+        "B": "Borrowing repeatedly to repay old loans",
+        "C": "Saving regularly",
+        "D": "Investing in business"
+      },
+      "correct_answer": "B",
+      "explanation": "Debt trap occurs when a borrower keeps borrowing to repay previous loans."
+    },
+    {
+      "question_number": 3,
+      "question": "Why is collateral demanded by banks?",
+      "options": {
+        "A": "To reduce deposits",
+        "B": "To increase profits only",
+        "C": "To secure the loan against default",
+        "D": "To promote barter"
+      },
+      "correct_answer": "C",
+      "explanation": "Collateral ensures security in case the borrower fails to repay."
+    },
+    {
+      "question_number": 4,
+      "question": "Which policy can reduce dependence on informal credit?",
+      "options": {
+        "A": "Closing rural banks",
+        "B": "Expanding banking facilities in rural areas",
+        "C": "Encouraging moneylenders",
+        "D": "Reducing savings"
+      },
+      "correct_answer": "B",
+      "explanation": "Improved access to banks reduces reliance on informal lenders."
+    },
+    {
+      "question_number": 5,
+      "question": "Why is high interest rate harmful for small borrowers?",
+      "options": {
+        "A": "It increases savings",
+        "B": "It leads to overproduction",
+        "C": "It increases repayment burden",
+        "D": "It reduces trade"
+      },
+      "correct_answer": "C",
+      "explanation": "High interest increases repayment burden and may lead to debt."
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following best reflects productive credit?",
+      "options": {
+        "A": "Loan for wedding",
+        "B": "Loan for business expansion",
+        "C": "Loan for festival",
+        "D": "Loan for luxury goods"
+      },
+      "correct_answer": "B",
+      "explanation": "Productive credit generates income and improves repayment capacity."
+    },
+    {
+      "question_number": 7,
+      "question": "Why are demand deposits considered as money?",
+      "options": {
+        "A": "They are stored at home",
+        "B": "They can be withdrawn anytime and used for payments",
+        "C": "They are illegal",
+        "D": "They are foreign currency"
+      },
+      "correct_answer": "B",
+      "explanation": "Demand deposits can be withdrawn and used via cheques."
+    },
+    {
+      "question_number": 8,
+      "question": "Which institution supervises formal credit in India?",
+      "options": {
+        "A": "World Bank",
+        "B": "RBI",
+        "C": "IMF",
+        "D": "WTO"
+      },
+      "correct_answer": "B",
+      "explanation": "Reserve Bank of India regulates and supervises banks."
+    },
+    {
+      "question_number": 9,
+      "question": "How does credit help in economic growth?",
+      "options": {
+        "A": "By reducing production",
+        "B": "By supporting investment and business activities",
+        "C": "By increasing barter",
+        "D": "By limiting trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Credit supports business investment and increases production."
+    },
+    {
+      "question_number": 10,
+      "question": "Which example shows exploitation in informal credit?",
+      "options": {
+        "A": "Bank charging low interest",
+        "B": "Moneylender charging very high interest",
+        "C": "Government loan subsidy",
+        "D": "SHG loan"
+      },
+      "correct_answer": "B",
+      "explanation": "Moneylenders often charge excessive interest rates."
+    },
+    {
+      "question_number": 11,
+      "question": "Why is financial inclusion important?",
+      "options": {
+        "A": "To increase barter",
+        "B": "To provide banking access to all sections",
+        "C": "To close banks",
+        "D": "To reduce savings"
+      },
+      "correct_answer": "B",
+      "explanation": "Financial inclusion ensures access to banking services."
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is an example of unproductive credit?",
+      "options": {
+        "A": "Loan for seeds",
+        "B": "Loan for machinery",
+        "C": "Loan for medical emergency without income source",
+        "D": "Loan for shop expansion"
+      },
+      "correct_answer": "C",
+      "explanation": "Unproductive credit does not generate income."
+    },
+    {
+      "question_number": 13,
+      "question": "Why is modern money accepted as legal tender?",
+      "options": {
+        "A": "Because people trust RBI and government guarantee",
+        "B": "Because it is made of gold",
+        "C": "Because it is scarce",
+        "D": "Because it is foreign currency"
+      },
+      "correct_answer": "A",
+      "explanation": "People trust RBI-backed currency."
+    },
+    {
+      "question_number": 14,
+      "question": "What happens if banks do not regulate lending?",
+      "options": {
+        "A": "Balanced economy",
+        "B": "Unfair practices and exploitation",
+        "C": "Lower interest rates",
+        "D": "Better inclusion"
+      },
+      "correct_answer": "B",
+      "explanation": "Regulation prevents unfair lending practices."
+    },
+    {
+      "question_number": 15,
+      "question": "Which situation reflects secure credit?",
+      "options": {
+        "A": "Loan without collateral",
+        "B": "Loan with collateral and written agreement",
+        "C": "Verbal agreement only",
+        "D": "No documentation"
+      },
+      "correct_answer": "B",
+      "explanation": "Secured credit includes collateral and documentation."
+    },
+    {
+      "question_number": 16,
+      "question": "Why are Self Help Groups effective in rural credit?",
+      "options": {
+        "A": "They provide foreign loans",
+        "B": "They support members with small savings and loans",
+        "C": "They replace RBI",
+        "D": "They increase taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "SHGs pool savings and provide affordable loans."
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following reduces the risk of debt trap?",
+      "options": {
+        "A": "Borrowing from moneylenders",
+        "B": "Taking high-interest loans",
+        "C": "Borrowing from regulated banks",
+        "D": "Repeated borrowing"
+      },
+      "correct_answer": "C",
+      "explanation": "Formal banks charge regulated interest rates."
+    },
+    {
+      "question_number": 18,
+      "question": "Why is documentation necessary in formal loans?",
+      "options": {
+        "A": "To delay loan process",
+        "B": "To ensure legal accountability",
+        "C": "To increase interest",
+        "D": "To reduce deposits"
+      },
+      "correct_answer": "B",
+      "explanation": "Documentation ensures transparency and legal security."
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor increases access to formal credit?",
+      "options": {
+        "A": "High collateral requirements",
+        "B": "Opening rural bank branches",
+        "C": "Closing cooperative banks",
+        "D": "Encouraging barter"
+      },
+      "correct_answer": "B",
+      "explanation": "More branches improve credit accessibility."
+    },
+    {
+      "question_number": 20,
+      "question": "Why do poor households depend on informal sources?",
+      "options": {
+        "A": "Easy availability and no strict requirements",
+        "B": "Low interest rates",
+        "C": "RBI support",
+        "D": "High savings"
+      },
+      "correct_answer": "A",
+      "explanation": "Informal lenders provide quick loans without strict documentation."
+    },
+    {
+      "question_number": 21,
+      "question": "Which action strengthens banking system?",
+      "options": {
+        "A": "Reducing regulation",
+        "B": "Increasing transparency and supervision",
+        "C": "Encouraging informal lending",
+        "D": "Stopping digital payments"
+      },
+      "correct_answer": "B",
+      "explanation": "Supervision ensures fair practices."
+    },
+    {
+      "question_number": 22,
+      "question": "Which example shows measure of value function of money?",
+      "options": {
+        "A": "Comparing price of rice and wheat",
+        "B": "Saving cash",
+        "C": "Taking loan",
+        "D": "Paying interest"
+      },
+      "correct_answer": "A",
+      "explanation": "Money helps compare prices."
+    },
+    {
+      "question_number": 23,
+      "question": "Why is saving in banks beneficial?",
+      "options": {
+        "A": "It keeps money idle",
+        "B": "It provides security and interest",
+        "C": "It reduces trade",
+        "D": "It increases debt"
+      },
+      "correct_answer": "B",
+      "explanation": "Bank savings are safe and earn interest."
+    },
+    {
+      "question_number": 24,
+      "question": "Which credit system is most reliable for long-term growth?",
+      "options": {
+        "A": "Informal credit",
+        "B": "Formal regulated credit",
+        "C": "Barter",
+        "D": "Verbal agreements"
+      },
+      "correct_answer": "B",
+      "explanation": "Formal regulated credit ensures stability."
+    },
+    {
+      "question_number": 25,
+      "question": "Balanced credit system requires:",
+      "options": {
+        "A": "Only informal sector growth",
+        "B": "Equal access to affordable formal credit",
+        "C": "High interest rates",
+        "D": "Limited banking"
+      },
+      "correct_answer": "B",
+      "explanation": "Affordable formal credit ensures inclusive development."
+    }
+  ]
+}

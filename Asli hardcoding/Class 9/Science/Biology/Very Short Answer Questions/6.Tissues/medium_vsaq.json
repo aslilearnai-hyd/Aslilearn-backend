@@ -1,0 +1,237 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-06T00:10:00",
+    "difficulty": "medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why are tissues important in multicellular organisms?",
+            "answer": "Tissues allow division of labour so different cells perform specialized functions efficiently.",
+            "key_points": [
+                "division of labour",
+                "efficient functioning"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is differentiation in plant tissues?",
+            "answer": "Differentiation is the process by which cells change in structure and function to form permanent tissues.",
+            "key_points": [
+                "cell specialization"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the three types of meristematic tissues.",
+            "answer": "Apical, lateral and intercalary meristems.",
+            "key_points": [
+                "meristem types"
+            ],
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which meristem increases the girth of plant stems?",
+            "answer": "Lateral meristem increases the girth of stems.",
+            "key_points": [
+                "lateral meristem",
+                "girth growth"
+            ],
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What are simple permanent tissues?",
+            "answer": "Tissues made of only one type of cell performing similar functions.",
+            "key_points": [
+                "single cell type"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Name the three simple permanent tissues.",
+            "answer": "Parenchyma, collenchyma and sclerenchyma.",
+            "key_points": [
+                "simple tissues"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is chlorenchyma?",
+            "answer": "Parenchyma containing chlorophyll which performs photosynthesis.",
+            "key_points": [
+                "photosynthesis tissue"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is aerenchyma?",
+            "answer": "A type of parenchyma with large air spaces found in aquatic plants.",
+            "key_points": [
+                "air spaces"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What are complex permanent tissues?",
+            "answer": "Tissues made of more than one type of cell working together for a common function.",
+            "key_points": [
+                "multiple cell types"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Name the two complex permanent tissues in plants.",
+            "answer": "Xylem and phloem.",
+            "key_points": [
+                "vascular tissues"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the function of xylem?",
+            "answer": "Xylem transports water and minerals from roots to other plant parts.",
+            "key_points": [
+                "water transport"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the function of phloem?",
+            "answer": "Phloem transports food from leaves to other plant parts.",
+            "key_points": [
+                "food transport"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is epidermal tissue in plants?",
+            "answer": "It is the outer protective layer covering plant parts.",
+            "key_points": [
+                "plant protection"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is transpiration?",
+            "answer": "Transpiration is the loss of water vapour from plant leaves through stomata.",
+            "key_points": [
+                "water loss"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is connective tissue?",
+            "answer": "Connective tissue supports, connects and binds body parts.",
+            "key_points": [
+                "support",
+                "connection"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name two examples of connective tissue.",
+            "answer": "Bone and cartilage.",
+            "key_points": [
+                "connective examples"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is cartilage?",
+            "answer": "Cartilage is a flexible connective tissue present in joints, ear and nose.",
+            "key_points": [
+                "flexible tissue"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is areolar tissue?",
+            "answer": "Areolar tissue fills spaces between organs and supports them.",
+            "key_points": [
+                "support tissue"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is adipose tissue?",
+            "answer": "Adipose tissue stores fat and acts as an insulator.",
+            "key_points": [
+                "fat storage"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What are striated muscles?",
+            "answer": "Striated muscles are voluntary muscles attached to bones.",
+            "key_points": [
+                "skeletal muscle"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What are smooth muscles?",
+            "answer": "Smooth muscles are involuntary muscles found in internal organs.",
+            "key_points": [
+                "involuntary muscle"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What are cardiac muscles?",
+            "answer": "Cardiac muscles are involuntary muscles found in the heart.",
+            "key_points": [
+                "heart muscle"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a neuron?",
+            "answer": "A neuron is the structural and functional unit of nervous tissue.",
+            "key_points": [
+                "nerve cell"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is a nerve impulse?",
+            "answer": "A nerve impulse is the signal transmitted along nerve cells.",
+            "key_points": [
+                "nerve signal"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Name the three main parts of a neuron.",
+            "answer": "Cell body, dendrites and axon.",
+            "key_points": [
+                "neuron parts"
+            ],
+            "source_section": "Section 6.3.4"
+        }
+    ]
+}

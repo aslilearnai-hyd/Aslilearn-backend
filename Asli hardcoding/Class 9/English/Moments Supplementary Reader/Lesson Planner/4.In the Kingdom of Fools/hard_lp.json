@@ -1,0 +1,194 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "In the Kingdom of Fools",
+    "title": "Lesson Planner – In the Kingdom of Fools",
+    "author": "A.K. Ramanujan",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse the narrative structure of the story",
+        "Interpret satire and humour used in the folktale",
+        "Evaluate the theme of justice and leadership",
+        "Develop critical thinking and interpretation skills",
+        "Understand symbolism and moral lessons",
+        "Relate literary ideas to real-life governance and decision-making"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Folktales and Author",
+            "topics_covered": [
+                "About A.K. Ramanujan",
+                "Nature of folktales",
+                "Introduction to the story"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Discuss features of folktales",
+                "Share similar stories they know"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Setting and Social Background",
+            "topics_covered": [
+                "Description of the Kingdom of Fools",
+                "Strange law of reversing day and night",
+                "Effect on society"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Identify unusual rules",
+                "Discuss their consequences"
+            ],
+            "assessment": [
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Character Study",
+            "topics_covered": [
+                "King and minister",
+                "Guru",
+                "Disciple"
+            ],
+            "teaching_strategy": [
+                "Character analysis discussion"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Compare guru and disciple"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Market Scene Analysis",
+            "topics_covered": [
+                "Everything costing one duddu",
+                "Economic absurdity",
+                "Disciple’s greed"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Critical discussion"
+            ],
+            "student_activities": [
+                "Explain why the disciple stayed",
+                "Predict future problems"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Court Scene Analysis",
+            "topics_covered": [
+                "Death of the thief",
+                "Chain of blame",
+                "Foolish justice system"
+            ],
+            "teaching_strategy": [
+                "Sequential explanation",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "List all accused persons",
+                "Explain cause–effect chain"
+            ],
+            "assessment": [
+                "Group presentation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Climax and Guru’s Strategy",
+            "topics_covered": [
+                "Disciple selected for execution",
+                "Guru’s clever trick",
+                "Psychological manipulation"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Explain how the guru tricked the king",
+                "Discuss importance of intelligence"
+            ],
+            "assessment": [
+                "Short analytical paragraph"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme and Literary Devices",
+            "topics_covered": [
+                "Satire in the story",
+                "Theme of foolish leadership",
+                "Humour and irony"
+            ],
+            "teaching_strategy": [
+                "Analytical discussion",
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Identify examples of satire",
+                "Discuss moral message"
+            ],
+            "assessment": [
+                "Oral explanation",
+                "Written responses"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Summary, Reflection and Assessment",
+            "topics_covered": [
+                "Complete summary of the story",
+                "Relevance to modern society",
+                "Revision and evaluation"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Question–answer session"
+            ],
+            "student_activities": [
+                "Write story summary",
+                "Discuss lesson learned"
+            ],
+            "assessment": [
+                "Short written test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Presentation slides"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to critically analyse the story as satire and relate its message to modern leadership and decision-making."
+}

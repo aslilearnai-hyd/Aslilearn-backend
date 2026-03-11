@@ -1,0 +1,79 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Life Processes: Maintenance and Survival",
+    "generated_at": "2026-03-11T00:41:00",
+    "concepts": [
+        {
+            "concept_name": "Nutrition in Plants (Autotrophic)",
+            "difficulty": "easy",
+            "lesson": "Plants perform photosynthesis to convert $CO_2$ and water into glucose using sunlight trapped by chlorophyll. This process involves three steps: absorption of light, conversion of light energy to chemical energy (splitting water), and reduction of carbon dioxide to carbohydrates.",
+            "real_example": "A green leaf producing starch that can be tested with iodine (turning blue-black).",
+            "key_points": [
+                "Chlorophyll is essential for light absorption",
+                "Stomata regulate gas exchange and transpiration",
+                "Oxygen is a byproduct of water splitting"
+            ],
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "concept_name": "Human Digestive System (Holozoic)",
+            "difficulty": "medium",
+            "lesson": "Digestion is the breakdown of complex food into simpler absorbable forms. It starts in the mouth (salivary amylase), continues in the stomach (pepsin), and completes in the small intestine (trypsin, lipase). Villi in the small intestine increase surface area for absorption.",
+            "real_example": "Bile juice breaking down large fat globules into smaller ones (emulsification).",
+            "key_points": [
+                "Peristalsis moves food through the gut",
+                "HCl in the stomach creates an acidic medium for pepsin",
+                "Small intestine is the site of complete digestion"
+            ],
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "concept_name": "Respiration: Aerobic vs Anaerobic",
+            "difficulty": "hard",
+            "lesson": "Respiration is the process of releasing energy from food. Aerobic respiration (in mitochondria) uses $O_2$ to break glucose into $CO_2$, water, and a large amount of ATP. Anaerobic respiration (in yeast or muscles) occurs without $O_2$, producing ethanol or lactic acid with very little energy.",
+            "real_example": "Feeling muscle cramps during a fast run due to the accumulation of lactic acid.",
+            "key_points": [
+                "Glucose $\\rightarrow$ Pyruvate occurs in the cytoplasm",
+                "ATP is the energy currency of the cell",
+                "Terrestrial organisms use atmospheric oxygen, aquatic use dissolved oxygen"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "concept_name": "Transportation in Humans (The Heart)",
+            "difficulty": "hard",
+            "lesson": "Humans have a four-chambered heart to prevent mixing of oxygenated and deoxygenated blood. This is called double circulation. Blood travels through the lungs (pulmonary circuit) and the rest of the body (systemic circuit).",
+            "real_example": "The pulse you feel in your wrist is the pressure of blood being pumped by the heart.",
+            "key_points": [
+                "Arteries carry blood away from the heart (high pressure)",
+                "Veins have valves to prevent backflow",
+                "Capillaries are the site of nutrient/gas exchange"
+            ],
+            "source_section": "Section 5.4.1"
+        },
+        {
+            "concept_name": "Transportation in Plants (Xylem and Phloem)",
+            "difficulty": "medium",
+            "lesson": "Xylem transports water and minerals upwards from roots using transpiration pull (suction) and root pressure. Phloem transports food (sucrose) from leaves to all parts of the plant using energy (ATP) in a process called translocation.",
+            "real_example": "Water reaching the top of a 100-meter tall redwood tree primarily through transpiration pull.",
+            "key_points": [
+                "Xylem transport is mostly passive (physical forces)",
+                "Phloem transport is active (requires energy)",
+                "Transpiration also helps in temperature regulation"
+            ],
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "concept_name": "Excretion in Humans (The Nephron)",
+            "difficulty": "hard",
+            "lesson": "Excretion is the removal of nitrogenous wastes. In the kidney, the nephron is the functional unit. It filters blood in the glomerulus (ultrafiltration), and then useful substances like glucose and salts are selectively reabsorbed as the filtrate moves through the tubule.",
+            "real_example": "Urine becoming more concentrated (darker) on a hot day when the body needs to conserve water.",
+            "key_points": [
+                "Kidneys maintain water and ionic balance",
+                "Urea is produced in the liver and filtered in the kidneys",
+                "Artificial kidney (dialysis) works on the principle of diffusion"
+            ],
+            "source_section": "Section 5.5"
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Last Leaf",
+    "author": "O. Henry",
+    "difficulty": "Easy",
+    "source_pdf": "eng9_7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Main Characters",
+            "objective": "Identify the main characters in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "List the main characters in the story",
+                "Write one line about each character"
+            ],
+            "learning_outcome": "Understands the characters in the story",
+            "evaluation": "Correct identification of characters (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Johnsy’s Illness",
+            "objective": "Understand Johnsy’s condition",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraph about Johnsy’s illness",
+                "Write 3–4 sentences about her condition"
+            ],
+            "learning_outcome": "Understands the problem faced by Johnsy",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Role of Sue",
+            "objective": "Understand Sue’s care and friendship",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify how Sue helps Johnsy",
+                "Write three points showing Sue’s kindness"
+            ],
+            "learning_outcome": "Recognizes friendship and support",
+            "evaluation": "Correct points (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Ivy Creeper",
+            "objective": "Understand the importance of the ivy leaves",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part describing the ivy creeper",
+                "Write why the leaves are important to Johnsy"
+            ],
+            "learning_outcome": "Understands symbolism in the story",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Behrman’s Dream",
+            "objective": "Understand Behrman’s ambition",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find the part where Behrman talks about his dream",
+                "Write 3 sentences about his dream"
+            ],
+            "learning_outcome": "Understands the character’s goal",
+            "evaluation": "Correct description (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The Last Leaf",
+            "objective": "Understand the significance of the last leaf",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe how the last leaf affects Johnsy",
+                "Write 3–4 sentences explaining its importance"
+            ],
+            "learning_outcome": "Understands the message of hope",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four main events in the story",
+                "Write them in the correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct order of events (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary from the Lesson",
+            "objective": "Improve vocabulary",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five difficult words from the lesson",
+                "Write their meanings and use them in sentences"
+            ],
+            "learning_outcome": "Develops vocabulary skills",
+            "evaluation": "Correct meanings and sentences (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Moral of the Story",
+            "objective": "Understand the message of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the lesson learned from the story",
+                "Write the moral in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear moral explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Importance of Hope",
+            "objective": "Relate the story to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about how hope helps people in difficult times",
+                "Write 3–4 sentences connecting it with the story"
+            ],
+            "learning_outcome": "Relates literature to real-life situations",
+            "evaluation": "Meaningful explanation (10 marks)"
+        }
+    ]
+}

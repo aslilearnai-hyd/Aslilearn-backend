@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Poem 5: A Legend of the Northland",
+  "generated_at": "2026-03-08T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What philosophical theme is conveyed through the girl’s transformation?",
+      "options": {
+        "A": "Greed leads to downfall and moral reckoning",
+        "B": "Kindness has no reward",
+        "C": "Human desires are limitless and justified",
+        "D": "Material wealth ensures happiness"
+      },
+      "correct_answer": "A",
+      "explanation": "The girl’s transformation illustrates that selfishness inevitably results in consequences.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 2,
+      "question": "How does the poem employ allegory to communicate its moral?",
+      "options": {
+        "A": "The girl becomes a woodpecker representing the punishment for greed",
+        "B": "The beggar’s dialogue explains morality directly",
+        "C": "The poem uses historical events as examples",
+        "D": "It relies on descriptive scenery only"
+      },
+      "correct_answer": "A",
+      "explanation": "The transformation serves as an allegorical device to illustrate ethical consequences.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 3,
+      "question": "Which aspect of human nature is highlighted through the girl’s behavior?",
+      "options": {
+        "A": "Selfishness and lack of empathy",
+        "B": "Generosity and kindness",
+        "C": "Courage in adversity",
+        "D": "Wisdom and foresight"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem emphasizes the negative traits of greed and indifference toward others.",
+      "difficulty": "hard",
+      "source_section": "Stanza 1-2"
+    },
+    {
+      "question_number": 4,
+      "question": "What role does irony play in the poem?",
+      "options": {
+        "A": "The girl’s desire for food leads to her loss of human form",
+        "B": "The beggar gains wealth unexpectedly",
+        "C": "The town rewards selfishness",
+        "D": "The girl’s generosity is punished"
+      },
+      "correct_answer": "A",
+      "explanation": "Situational irony is present as the girl’s greed results in her being transformed, the opposite of her desires.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 5,
+      "question": "How is symbolism used in the poem?",
+      "options": {
+        "A": "The woodpecker symbolizes the lasting effect of selfishness",
+        "B": "The sun symbolizes wealth",
+        "C": "The beggar symbolizes magic",
+        "D": "The town symbolizes freedom"
+      },
+      "correct_answer": "A",
+      "explanation": "The girl’s transformation serves as a symbol of the consequences of greed.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the effect of the narrative perspective on moral interpretation?",
+      "options": {
+        "A": "A third-person narrator allows universal application of the moral",
+        "B": "First-person perspective limits understanding",
+        "C": "Dialogue-based narration hides moral lessons",
+        "D": "Poetic monologue creates ambiguity"
+      },
+      "correct_answer": "A",
+      "explanation": "Using a neutral narrator helps readers focus on the lesson rather than personal bias.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 7,
+      "question": "How does the poet emphasize cause-and-effect in the story?",
+      "options": {
+        "A": "Actions of the girl directly lead to her punishment",
+        "B": "Events occur randomly without explanation",
+        "C": "Consequences are hinted but never revealed",
+        "D": "Moral lessons are abstracted only"
+      },
+      "correct_answer": "A",
+      "explanation": "The story clearly links the girl’s greed to her transformation, emphasizing moral causality.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 8,
+      "question": "Which literary device is used in 'the girl was turned into a woodpecker' beyond allegory?",
+      "options": {
+        "A": "Symbolism and metamorphosis",
+        "B": "Simile",
+        "C": "Onomatopoeia",
+        "D": "Personification only"
+      },
+      "correct_answer": "A",
+      "explanation": "The metamorphosis is symbolic, representing punishment and moral teaching.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 9,
+      "question": "What lesson about empathy is embedded in the poem?",
+      "options": {
+        "A": "Ignoring the needy results in ethical and practical consequences",
+        "B": "Empathy is optional",
+        "C": "Empathy is irrelevant to morality",
+        "D": "Generosity has no lasting value"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem teaches that lack of empathy has repercussions, emphasizing moral responsibility.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 10,
+      "question": "How does the poem explore the concept of justice?",
+      "options": {
+        "A": "By showing that moral wrongdoing leads to punishment",
+        "B": "By showing that luck determines outcomes",
+        "C": "By rewarding greed secretly",
+        "D": "By leaving consequences uncertain"
+      },
+      "correct_answer": "A",
+      "explanation": "The girl’s transformation serves as a symbolic enforcement of moral justice.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which aspect of human behavior is critiqued most in the poem?",
+      "options": {
+        "A": "Self-centeredness and lack of generosity",
+        "B": "Courage and determination",
+        "C": "Love for nature",
+        "D": "Laziness and inaction"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem critiques selfishness and teaches the value of generosity.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 12,
+      "question": "Which narrative technique strengthens the moral lesson?",
+      "options": {
+        "A": "Use of a legend and mythical transformation",
+        "B": "Random descriptive passages",
+        "C": "Direct preaching",
+        "D": "Dialogue without consequence"
+      },
+      "correct_answer": "A",
+      "explanation": "The legendary and magical elements make the lesson more impactful and memorable.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 13,
+      "question": "How does the poet employ irony in the story?",
+      "options": {
+        "A": "The girl’s selfish desire for food leads to her loss of human form",
+        "B": "The beggar is secretly wealthy",
+        "C": "The town celebrates greed",
+        "D": "No punishment occurs for selfishness"
+      },
+      "correct_answer": "A",
+      "explanation": "The unexpected consequence of the girl’s action is an example of situational irony.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 14,
+      "question": "What does the poem suggest about ethical responsibility?",
+      "options": {
+        "A": "Every action has moral consequences",
+        "B": "Ethics are optional",
+        "C": "Only leaders need ethics",
+        "D": "Greed has no repercussions"
+      },
+      "correct_answer": "A",
+      "explanation": "The story reinforces that selfish behavior leads to consequences.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 15,
+      "question": "How does the transformation affect the reader’s understanding of the poem?",
+      "options": {
+        "A": "It dramatizes moral consequences and reinforces the theme",
+        "B": "It distracts from the main story",
+        "C": "It makes the story confusing",
+        "D": "It has no effect"
+      },
+      "correct_answer": "A",
+      "explanation": "The magical transformation emphasizes the moral lesson and engages readers’ reflection.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which type of justice is depicted in the poem?",
+      "options": {
+        "A": "Poetic justice",
+        "B": "Legal justice",
+        "C": "Random chance",
+        "D": "Political justice"
+      },
+      "correct_answer": "A",
+      "explanation": "The girl’s punishment directly matches her misdeed, exemplifying poetic justice.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 17,
+      "question": "How does the poem portray societal values?",
+      "options": {
+        "A": "By emphasizing kindness, generosity, and accountability",
+        "B": "By glorifying greed",
+        "C": "By encouraging selfish ambition",
+        "D": "By ignoring morality"
+      },
+      "correct_answer": "A",
+      "explanation": "The narrative promotes ethical values and discourages selfish behavior.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 18,
+      "question": "Which narrative element reinforces the didactic purpose?",
+      "options": {
+        "A": "Use of legend and moral consequences",
+        "B": "Detailed scenery descriptions",
+        "C": "Humorous dialogue",
+        "D": "Riddle-like language"
+      },
+      "correct_answer": "A",
+      "explanation": "The legend format with consequences effectively communicates moral teachings.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 19,
+      "question": "How is the beggar characterized to emphasize the girl’s behavior?",
+      "options": {
+        "A": "Needy and virtuous, highlighting her selfishness",
+        "B": "Cunning and deceptive",
+        "C": "Ignorant and careless",
+        "D": "Wealthy and generous"
+      },
+      "correct_answer": "A",
+      "explanation": "The contrast between the beggar’s virtue and the girl’s greed reinforces the lesson.",
+      "difficulty": "hard",
+      "source_section": "Stanza 1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which theme is central to understanding the poem at a deeper level?",
+      "options": {
+        "A": "Moral consequences of selfishness and greed",
+        "B": "Adventure and bravery",
+        "C": "Romantic love",
+        "D": "The beauty of nature"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem explores human ethics, highlighting the repercussions of unethical behavior.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 21,
+      "question": "Why can the poem be considered philosophical at a hard level?",
+      "options": {
+        "A": "It reflects on human nature, morality, and consequences beyond literal events",
+        "B": "It describes animals and trees",
+        "C": "It focuses on historical events",
+        "D": "It recounts a humorous story"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem prompts reflection on ethics, justice, and human behavior, giving it philosophical depth.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the story illustrate the principle of universal moral law?",
+      "options": {
+        "A": "Everyone faces consequences for ethical violations",
+        "B": "Only the protagonist suffers",
+        "C": "Consequences are arbitrary",
+        "D": "No moral order is implied"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem suggests that ethical principles apply universally, not selectively.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 23,
+      "question": "What literary technique is used to make the moral lesson vivid?",
+      "options": {
+        "A": "Transformation and allegory",
+        "B": "Complex similes",
+        "C": "Extended metaphor about nature",
+        "D": "Dialogue with no consequence"
+      },
+      "correct_answer": "A",
+      "explanation": "The girl’s transformation into a woodpecker allegorically visualizes moral punishment.",
+      "difficulty": "hard",
+      "source_section": "Stanza 3"
+    },
+    {
+      "question_number": 24,
+      "question": "How does the poem explore human limitations?",
+      "options": {
+        "A": "By showing that unethical desires lead to unavoidable consequences",
+        "B": "By focusing on physical strength",
+        "C": "By emphasizing wealth accumulation",
+        "D": "By ignoring morality"
+      },
+      "correct_answer": "A",
+      "explanation": "The narrative demonstrates that humans cannot escape ethical laws through selfishness.",
+      "difficulty": "hard",
+      "source_section": "General"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is 'A Legend of the Northland' suitable for advanced literary analysis?",
+      "options": {
+        "A": "Because it combines narrative, symbolism, moral philosophy, and allegory",
+        "B": "Because it contains only simple story elements",
+        "C": "Because it focuses exclusively on nature",
+        "D": "Because it is written in prose"
+      },
+      "correct_answer": "A",
+      "explanation": "The poem integrates complex literary devices and philosophical themes, making it suitable for in-depth analysis.",
+      "difficulty": "hard",
+      "source_section": "General"
+    }
+  ]
+}

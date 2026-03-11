@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 11: Sound",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is sound?",
+      "answer": "Sound is a form of energy that is produced by vibrating objects and propagated through a medium as longitudinal waves.",
+      "key_concepts": ["sound", "definition"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is vibration?",
+      "answer": "Vibration is a rapid to-and-fro motion of an object around its mean position.",
+      "key_concepts": ["vibration", "definition"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Name the type of wave in which sound travels.",
+      "answer": "Sound travels in longitudinal waves.",
+      "key_concepts": ["longitudinal wave", "sound propagation"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Can sound travel through a vacuum?",
+      "answer": "No, sound cannot travel through a vacuum because it needs a medium for propagation.",
+      "key_concepts": ["sound propagation", "vacuum"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Define frequency of sound.",
+      "answer": "Frequency is the number of vibrations of a sound source per second.",
+      "key_concepts": ["frequency", "definition"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Define amplitude of sound.",
+      "answer": "Amplitude is the maximum displacement of particles from their mean position during vibration.",
+      "key_concepts": ["amplitude", "definition"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is pitch of a sound?",
+      "answer": "Pitch is the property of sound that allows us to distinguish between high and low sounds. It depends on frequency.",
+      "key_concepts": ["pitch", "frequency"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 8,
+      "question": "What is loudness of sound?",
+      "answer": "Loudness is the measure of energy or intensity of sound that determines how loud or soft a sound is.",
+      "key_concepts": ["loudness", "intensity"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Define echo.",
+      "answer": "An echo is a reflected sound that is heard after a delay when sound waves bounce off a surface.",
+      "key_concepts": ["echo", "reflection of sound"],
+      "marks": 2,
+      "source_section": "11.4"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the speed of sound in air at room temperature?",
+      "answer": "The speed of sound in air at 20°C is approximately 343 m/s.",
+      "key_concepts": ["speed of sound", "air"],
+      "marks": 2,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What is ultrasound?",
+      "answer": "Ultrasound refers to sound waves with frequency above 20,000 Hz, which is beyond the audible range of humans.",
+      "key_concepts": ["ultrasound", "high frequency sound"],
+      "marks": 2,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is infrasound?",
+      "answer": "Infrasound refers to sound waves with frequency below 20 Hz, which is below the audible range of humans.",
+      "key_concepts": ["infrasound", "low frequency sound"],
+      "marks": 2,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the difference between loudness and intensity?",
+      "answer": "Loudness is a perceptual property of sound, whereas intensity is a physical quantity measuring energy per unit area.",
+      "key_concepts": ["loudness", "intensity", "difference"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is vibration frequency of human hearing range?",
+      "answer": "Humans can hear sounds with frequency ranging from 20 Hz to 20,000 Hz.",
+      "key_concepts": ["audible range", "frequency"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Define resonance.",
+      "answer": "Resonance is the phenomenon where an object vibrates with maximum amplitude when subjected to a periodic force matching its natural frequency.",
+      "key_concepts": ["resonance", "natural frequency"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Name one application of ultrasound in daily life.",
+      "answer": "Ultrasound is used in medical imaging (sonography) to view internal organs.",
+      "key_concepts": ["ultrasound", "medical application"],
+      "marks": 2,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the cause of echo?",
+      "answer": "Echo is caused due to reflection of sound waves from a hard surface.",
+      "key_concepts": ["echo", "reflection"],
+      "marks": 2,
+      "source_section": "11.4"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the unit of frequency?",
+      "answer": "The SI unit of frequency is Hertz (Hz).",
+      "key_concepts": ["frequency", "unit"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 19,
+      "question": "What type of wave is sound in water?",
+      "answer": "Sound in water also travels as a longitudinal wave.",
+      "key_concepts": ["longitudinal wave", "sound in water"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Give one example of a source of ultrasonic sound.",
+      "answer": "A dog whistle produces ultrasonic sound.",
+      "key_concepts": ["ultrasound", "source example"],
+      "marks": 2,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 21,
+      "question": "State one difference between audible and ultrasonic sound.",
+      "answer": "Audible sound is within 20 Hz – 20 kHz; ultrasonic sound is above 20 kHz and cannot be heard by humans.",
+      "key_concepts": ["audible", "ultrasound", "difference"],
+      "marks": 2,
+      "source_section": "11.5"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the role of air in propagation of sound?",
+      "answer": "Air acts as a medium that transmits vibrations from the source to the listener.",
+      "key_concepts": ["sound propagation", "medium"],
+      "marks": 2,
+      "source_section": "11.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the effect of temperature on speed of sound in air?",
+      "answer": "Speed of sound increases with temperature because air particles move faster at higher temperatures.",
+      "key_concepts": ["temperature effect", "speed of sound"],
+      "marks": 2,
+      "source_section": "11.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Define the term 'timbre'.",
+      "answer": "Timbre is the quality of sound that distinguishes two sounds of the same pitch and loudness.",
+      "key_concepts": ["timbre", "sound quality"],
+      "marks": 2,
+      "source_section": "11.2"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the minimum distance required to hear an echo clearly?",
+      "answer": "Minimum distance for clear echo = 17 m (for speed of sound ≈ 343 m/s) to distinguish original sound from reflected sound.",
+      "key_concepts": ["echo", "minimum distance"],
+      "marks": 2,
+      "source_section": "11.4"
+    }
+  ]
+}

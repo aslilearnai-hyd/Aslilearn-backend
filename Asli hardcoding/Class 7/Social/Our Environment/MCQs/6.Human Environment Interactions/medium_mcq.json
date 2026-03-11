@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 6: Human Environment Interactions",
+    "generated_at": "2026-03-07T19:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is terrace farming important in hilly areas?",
+            "options": {
+                "A": "It increases the slope of the land",
+                "B": "It prevents soil erosion and conserves water",
+                "C": "It reduces crop variety",
+                "D": "It helps in desertification"
+            },
+            "correct_answer": "B",
+            "explanation": "Terracing slows water runoff and prevents soil erosion while conserving water.",
+            "difficulty": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is a human adaptation to tropical rainforest regions?",
+            "options": {
+                "A": "Using heavy coats",
+                "B": "Building houses on stilts",
+                "C": "Terrace farming",
+                "D": "Snow shelters"
+            },
+            "correct_answer": "B",
+            "explanation": "Houses on stilts prevent flooding and protect from insects and moisture in rainforest regions.",
+            "difficulty": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Slash-and-burn agriculture is practiced mainly in:",
+            "options": {
+                "A": "Deserts",
+                "B": "Rainforests",
+                "C": "Mountain peaks",
+                "D": "Coastal areas"
+            },
+            "correct_answer": "B",
+            "explanation": "This method clears forest land for temporary cultivation in rainforest areas.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which human activity contributes most to desertification?",
+            "options": {
+                "A": "Irrigation",
+                "B": "Deforestation and overgrazing",
+                "C": "Terrace farming",
+                "D": "Rainwater harvesting"
+            },
+            "correct_answer": "B",
+            "explanation": "Deforestation and overuse of land degrade soil, leading to desertification.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following methods helps conserve water in arid regions?",
+            "options": {
+                "A": "Planting water-intensive crops",
+                "B": "Rainwater harvesting",
+                "C": "Cutting forests",
+                "D": "Overgrazing"
+            },
+            "correct_answer": "B",
+            "explanation": "Rainwater harvesting stores water for domestic and agricultural use in dry areas.",
+            "difficulty": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Human settlements in flood-prone areas often include:",
+            "options": {
+                "A": "Raised houses and levees",
+                "B": "Underground cities",
+                "C": "Floating crops only",
+                "D": "Desert crops"
+            },
+            "correct_answer": "A",
+            "explanation": "Raised houses and levees protect communities from frequent flooding.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is a negative effect of human activity on forests?",
+            "options": {
+                "A": "Soil conservation",
+                "B": "Habitat loss and biodiversity decline",
+                "C": "Increased rainfall",
+                "D": "Terrace farming"
+            },
+            "correct_answer": "B",
+            "explanation": "Logging, deforestation, and urbanization destroy habitats and reduce biodiversity.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Which adaptation helps humans survive in coastal cyclone-prone areas?",
+            "options": {
+                "A": "Planting cacti",
+                "B": "Building cyclone shelters and embankments",
+                "C": "Growing rice only",
+                "D": "Desertification methods"
+            },
+            "correct_answer": "B",
+            "explanation": "Cyclone shelters and embankments protect life and property from storms.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How does industrialization affect air quality?",
+            "options": {
+                "A": "Improves oxygen levels",
+                "B": "Increases air pollution",
+                "C": "Reduces dust",
+                "D": "Increases rainfall"
+            },
+            "correct_answer": "B",
+            "explanation": "Factories release pollutants like smoke and gases, reducing air quality.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Which energy source can reduce dependence on fossil fuels?",
+            "options": {
+                "A": "Coal",
+                "B": "Solar energy",
+                "C": "Petrol",
+                "D": "Natural gas"
+            },
+            "correct_answer": "B",
+            "explanation": "Solar energy is renewable and environmentally friendly.",
+            "difficulty": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Overpopulation can cause which of the following environmental problems?",
+            "options": {
+                "A": "Overuse of water and land resources",
+                "B": "Formation of glaciers",
+                "C": "Desert rains",
+                "D": "Terrace farming"
+            },
+            "correct_answer": "A",
+            "explanation": "High population increases demand for natural resources, leading to environmental stress.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is an example of human adaptation to desert regions?",
+            "options": {
+                "A": "Building mud houses and storing water",
+                "B": "Snow shelters",
+                "C": "Terrace farming",
+                "D": "Floating houses"
+            },
+            "correct_answer": "A",
+            "explanation": "Mud houses provide insulation and storing water helps survive arid conditions.",
+            "difficulty": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Which farming practice helps maintain soil fertility in tropical forests?",
+            "options": {
+                "A": "Slash-and-burn with fallow periods",
+                "B": "Overgrazing",
+                "C": "Continuous monoculture",
+                "D": "Desertification"
+            },
+            "correct_answer": "A",
+            "explanation": "Allowing land to lie fallow after slash-and-burn helps restore soil fertility.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "How can human activities increase the risk of floods?",
+            "options": {
+                "A": "By planting more trees",
+                "B": "By deforestation and building on floodplains",
+                "C": "By creating wetlands",
+                "D": "By terrace farming"
+            },
+            "correct_answer": "B",
+            "explanation": "Deforestation reduces water absorption and construction on floodplains blocks natural drainage.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following contributes to climate change?",
+            "options": {
+                "A": "Deforestation and burning fossil fuels",
+                "B": "Planting trees",
+                "C": "Building terraces",
+                "D": "Rainwater harvesting"
+            },
+            "correct_answer": "A",
+            "explanation": "Greenhouse gas emissions from deforestation and fossil fuels increase global temperatures.",
+            "difficulty": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Which adaptation is useful for people living in cold mountainous regions?",
+            "options": {
+                "A": "Wearing insulated clothing and building stone houses",
+                "B": "Building stilted houses",
+                "C": "Growing cacti",
+                "D": "Floating houses"
+            },
+            "correct_answer": "A",
+            "explanation": "Insulated clothing and stone houses protect against cold and snow.",
+            "difficulty": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following is a consequence of overgrazing?",
+            "options": {
+                "A": "Soil erosion and desertification",
+                "B": "Improved forest cover",
+                "C": "Increased rainfall",
+                "D": "Terrace farming"
+            },
+            "correct_answer": "A",
+            "explanation": "Overgrazing removes vegetation, exposing soil to erosion and degradation.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is sustainable resource management important?",
+            "options": {
+                "A": "To ensure availability for future generations",
+                "B": "To reduce rainfall",
+                "C": "To destroy biodiversity",
+                "D": "To create deserts"
+            },
+            "correct_answer": "A",
+            "explanation": "Sustainable use of resources maintains ecological balance and future supply.",
+            "difficulty": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which adaptation is used in floodplains to protect agriculture?",
+            "options": {
+                "A": "Raised platforms and embankments",
+                "B": "Planting desert crops",
+                "C": "Terrace farming on mountains",
+                "D": "Cutting all trees"
+            },
+            "correct_answer": "A",
+            "explanation": "Raised platforms and embankments prevent crop damage from floods.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which human activity leads to habitat fragmentation?",
+            "options": {
+                "A": "Urbanization and road construction",
+                "B": "Planting forests",
+                "C": "Rainwater harvesting",
+                "D": "Terrace farming"
+            },
+            "correct_answer": "A",
+            "explanation": "Building cities and roads divides natural habitats and affects wildlife.",
+            "difficulty": "medium",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Which adaptation is helpful in cyclone-prone coastal regions?",
+            "options": {
+                "A": "Building cyclone shelters and seawalls",
+                "B": "Terrace farming",
+                "C": "Growing desert crops",
+                "D": "Snow shelters"
+            },
+            "correct_answer": "A",
+            "explanation": "Shelters and seawalls protect lives and property from cyclones.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which method helps restore soil fertility after slash-and-burn cultivation?",
+            "options": {
+                "A": "Fallow periods",
+                "B": "Continuous monoculture",
+                "C": "Overgrazing",
+                "D": "Deforestation"
+            },
+            "correct_answer": "A",
+            "explanation": "Leaving land fallow allows soil nutrients to regenerate.",
+            "difficulty": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why do humans adopt irrigation in plains?",
+            "options": {
+                "A": "To supply water for crops during dry seasons",
+                "B": "To create deserts",
+                "C": "To block rivers",
+                "D": "To increase floods"
+            },
+            "correct_answer": "A",
+            "explanation": "Irrigation ensures crop growth when rainfall is insufficient.",
+            "difficulty": "medium",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which human activity increases greenhouse gas emissions?",
+            "options": {
+                "A": "Deforestation and burning fossil fuels",
+                "B": "Planting trees",
+                "C": "Rainwater harvesting",
+                "D": "Organic farming"
+            },
+            "correct_answer": "A",
+            "explanation": "Cutting forests and burning fossil fuels release carbon dioxide and other gases.",
+            "difficulty": "medium",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which adaptation helps communities in mountainous cold regions conserve heat?",
+            "options": {
+                "A": "Thick-walled houses and layered clothing",
+                "B": "Raised houses",
+                "C": "Floating shelters",
+                "D": "Planting cacti"
+            },
+            "correct_answer": "A",
+            "explanation": "Thick houses and clothing retain heat and protect from cold winds.",
+            "difficulty": "medium",
+            "source_section": "Section 6.1"
+        }
+    ]
+}

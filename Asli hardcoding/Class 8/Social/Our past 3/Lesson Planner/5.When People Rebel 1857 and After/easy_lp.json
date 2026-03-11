@@ -1,0 +1,130 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "When People Rebel: 1857 and After",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the meaning of the Revolt of 1857",
+    "Learn about the causes of the revolt",
+    "Identify important leaders of the revolt",
+    "Understand how the revolt spread to different places",
+    "Know how the British suppressed the revolt",
+    "Understand the changes introduced after the revolt"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to the Revolt of 1857",
+      "topics_covered": [
+        "Meaning of rebellion",
+        "Introduction to the Revolt of 1857",
+        "Importance of the event in Indian history"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Class discussion",
+        "Question–answer method"
+      ],
+      "student_activities": [
+        "Discuss what rebellion means",
+        "List reasons why people protest against rulers"
+      ],
+      "assessment": ["Oral questioning", "Student participation"]
+    },
+    {
+      "period": 2,
+      "title": "Causes of the Revolt",
+      "topics_covered": [
+        "Discontent among sepoys",
+        "Greased cartridge issue",
+        "Other reasons for anger against British rule"
+      ],
+      "teaching_strategy": [
+        "Example-based explanation",
+        "Interactive questioning"
+      ],
+      "student_activities": [
+        "Write two causes of the revolt",
+        "Discuss why the cartridge issue angered soldiers"
+      ],
+      "assessment": ["Short written activity", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Leaders of the Revolt",
+      "topics_covered": [
+        "Bahadur Shah Zafar",
+        "Rani Lakshmibai",
+        "Nana Sahib and Begum Hazrat Mahal"
+      ],
+      "teaching_strategy": ["Storytelling", "Picture-based explanation"],
+      "student_activities": [
+        "List important leaders of the revolt",
+        "Match leaders with the places they fought"
+      ],
+      "assessment": ["Class discussion", "Teacher observation"]
+    },
+    {
+      "period": 4,
+      "title": "Spread of the Revolt",
+      "topics_covered": [
+        "Beginning of the revolt in Meerut",
+        "Spread to Delhi, Kanpur, Lucknow and Jhansi",
+        "Participation of soldiers and rulers"
+      ],
+      "teaching_strategy": ["Map-based explanation", "Interactive discussion"],
+      "student_activities": [
+        "Mark important centres of the revolt on a map",
+        "Discuss why the revolt spread quickly"
+      ],
+      "assessment": ["Notebook activity", "Oral questions"]
+    },
+    {
+      "period": 5,
+      "title": "Suppression of the Revolt",
+      "topics_covered": [
+        "British military response",
+        "Defeat of rebel leaders",
+        "End of the revolt"
+      ],
+      "teaching_strategy": ["Concept explanation", "Example-based discussion"],
+      "student_activities": [
+        "Write how the British controlled the revolt",
+        "Discuss the difficulties faced by the rebels"
+      ],
+      "assessment": ["Short written response", "Teacher feedback"]
+    },
+    {
+      "period": 6,
+      "title": "Changes After the Revolt and Revision",
+      "topics_covered": [
+        "End of East India Company rule",
+        "Beginning of direct rule by the British Crown",
+        "Chapter recap"
+      ],
+      "teaching_strategy": ["Concept explanation", "Revision quiz"],
+      "student_activities": [
+        "Write one change introduced after the revolt",
+        "Participate in a short revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Map of India",
+    "Pictures of revolt leaders"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Participation in activities"
+  ],
+  "teacher_tip": "Use storytelling about important leaders like Rani Lakshmibai to make the lesson more engaging and memorable for students."
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T19:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A metal rod is heated at one end while the other end is held in hand. After some time, the hand feels hot. Which explanation best describes this process?",
+            "options": {
+                "A": "Heat moves through the rod by radiation",
+                "B": "Heat moves through particle vibration and collisions",
+                "C": "Heat moves through air circulation",
+                "D": "Heat moves through evaporation"
+            },
+            "correct_answer": "B",
+            "explanation": "In conduction, heat transfers through vibrations and collisions of particles within the solid metal rod.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following situations involves both convection and radiation?",
+            "options": {
+                "A": "Heating a metal spoon in hot water",
+                "B": "Boiling water in a pot over a flame",
+                "C": "Sunlight warming Earth through space",
+                "D": "Ice melting at room temperature"
+            },
+            "correct_answer": "B",
+            "explanation": "Radiation transfers heat from the flame to the pot, and convection currents form within the boiling water.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does sea breeze usually begin in the late morning or afternoon rather than early morning?",
+            "options": {
+                "A": "Sea becomes colder at night",
+                "B": "Land must heat sufficiently to create pressure differences",
+                "C": "Clouds block radiation early in the day",
+                "D": "Sea breeze requires rainfall"
+            },
+            "correct_answer": "B",
+            "explanation": "Sea breeze forms only after land heats significantly more than the sea, creating convection currents.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Why are metal cooking utensils often designed with plastic or wooden handles?",
+            "options": {
+                "A": "They reduce radiation",
+                "B": "They reduce convection",
+                "C": "They act as heat insulators",
+                "D": "They increase heat conduction"
+            },
+            "correct_answer": "C",
+            "explanation": "Plastic and wood are poor conductors of heat, preventing heat from reaching the hand.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which statement correctly compares conduction, convection, and radiation?",
+            "options": {
+                "A": "All require a material medium",
+                "B": "Only radiation can occur in vacuum",
+                "C": "Convection occurs in solids only",
+                "D": "Conduction occurs only in gases"
+            },
+            "correct_answer": "B",
+            "explanation": "Radiation does not require a medium, while conduction and convection need matter.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "A student places colored paper above a candle flame and observes it move upward. Which principle explains this observation?",
+            "options": {
+                "A": "Radiation reflection",
+                "B": "Conduction in air",
+                "C": "Rising hot air due to convection",
+                "D": "Magnetic attraction"
+            },
+            "correct_answer": "C",
+            "explanation": "Hot air rises due to lower density, creating convection currents.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why are desert regions extremely hot during the day but very cold at night?",
+            "options": {
+                "A": "Sand blocks conduction",
+                "B": "Sand absorbs radiation but loses heat quickly",
+                "C": "Air currents stop at night",
+                "D": "Water evaporates rapidly"
+            },
+            "correct_answer": "B",
+            "explanation": "Sand heats quickly by radiation and also loses heat rapidly due to poor heat retention.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which situation demonstrates the role of convection in natural heat transfer?",
+            "options": {
+                "A": "Metal rod getting hot in fire",
+                "B": "Warm ocean currents influencing climate",
+                "C": "Sun heating Earth",
+                "D": "Heating a glass rod"
+            },
+            "correct_answer": "B",
+            "explanation": "Ocean currents move warm and cold water, which is an example of convection.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which factor mainly determines how fast heat is conducted through a material?",
+            "options": {
+                "A": "Color of the material",
+                "B": "Density and thermal conductivity",
+                "C": "Shape of the material",
+                "D": "Size of the object"
+            },
+            "correct_answer": "B",
+            "explanation": "Thermal conductivity and particle arrangement affect the rate of heat conduction.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why does hot air balloon rise in the atmosphere?",
+            "options": {
+                "A": "Radiation from balloon surface",
+                "B": "Conduction in the air",
+                "C": "Hot air inside becomes less dense",
+                "D": "Earth’s gravity decreases"
+            },
+            "correct_answer": "C",
+            "explanation": "Heating the air reduces its density, causing the balloon to rise due to convection principles.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are shiny aluminum foils used in food packaging?",
+            "options": {
+                "A": "They increase conduction",
+                "B": "They reduce heat transfer by reflecting radiation",
+                "C": "They increase convection",
+                "D": "They generate heat"
+            },
+            "correct_answer": "B",
+            "explanation": "Shiny surfaces reflect radiation and reduce heat loss.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which phenomenon explains how coastal climates remain moderate?",
+            "options": {
+                "A": "Reflection of sunlight",
+                "B": "Conduction in sand",
+                "C": "Sea and land breeze convection cycles",
+                "D": "Magnetic forces"
+            },
+            "correct_answer": "C",
+            "explanation": "Daily convection cycles between land and sea help regulate temperatures.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 13,
+            "question": "If convection currents stopped in the atmosphere, which major effect would likely occur?",
+            "options": {
+                "A": "Sunlight would stop reaching Earth",
+                "B": "Weather patterns would be greatly affected",
+                "C": "Conduction in solids would stop",
+                "D": "Ocean water would disappear"
+            },
+            "correct_answer": "B",
+            "explanation": "Atmospheric convection drives wind patterns and weather systems.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does a black surface cool faster at night than a shiny surface?",
+            "options": {
+                "A": "Black surfaces reflect radiation",
+                "B": "Black surfaces emit more radiation",
+                "C": "Black surfaces conduct heat faster",
+                "D": "Black surfaces prevent convection"
+            },
+            "correct_answer": "B",
+            "explanation": "Black surfaces are good emitters of heat radiation.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Which process explains the circulation of water in oceans due to temperature differences?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Reflection"
+            },
+            "correct_answer": "B",
+            "explanation": "Temperature differences cause convection currents in ocean water.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does a thermos flask keep liquids hot for a long time?",
+            "options": {
+                "A": "It increases conduction",
+                "B": "It reduces conduction, convection, and radiation",
+                "C": "It produces heat",
+                "D": "It allows air circulation"
+            },
+            "correct_answer": "B",
+            "explanation": "Thermos flasks are designed to minimize all three modes of heat transfer.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which situation best demonstrates conduction and convection occurring together?",
+            "options": {
+                "A": "Sun warming Earth",
+                "B": "Heating water in a metal pot",
+                "C": "Standing near a fire",
+                "D": "Light reflecting from mirror"
+            },
+            "correct_answer": "B",
+            "explanation": "Heat conducts through the metal pot and convection currents form within the water.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which factor explains why water bodies influence nearby land temperatures?",
+            "options": {
+                "A": "Water heats and cools slowly",
+                "B": "Water reflects radiation strongly",
+                "C": "Water blocks convection",
+                "D": "Water prevents conduction"
+            },
+            "correct_answer": "A",
+            "explanation": "Water has a high heat capacity, causing slower heating and cooling.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do chimneys help remove smoke from houses?",
+            "options": {
+                "A": "Smoke reflects radiation",
+                "B": "Smoke moves downward",
+                "C": "Hot air rises due to convection",
+                "D": "Chimneys block conduction"
+            },
+            "correct_answer": "C",
+            "explanation": "Hot air and smoke rise upward due to convection currents.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which example illustrates radiation without direct contact?",
+            "options": {
+                "A": "Iron rod in fire",
+                "B": "Feeling warmth from sunlight",
+                "C": "Boiling water circulation",
+                "D": "Heating metal spoon"
+            },
+            "correct_answer": "B",
+            "explanation": "Heat from the Sun reaches Earth through radiation without contact.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why does land breeze occur at night?",
+            "options": {
+                "A": "Land becomes warmer than sea",
+                "B": "Land cools faster than sea",
+                "C": "Sea cools faster than land",
+                "D": "Sun radiation increases"
+            },
+            "correct_answer": "B",
+            "explanation": "At night, land cools faster, causing cooler air to move from land toward sea.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Which property mainly makes metals good conductors of heat?",
+            "options": {
+                "A": "Loose particles",
+                "B": "Free electrons transferring energy",
+                "C": "Low density",
+                "D": "Color of metal"
+            },
+            "correct_answer": "B",
+            "explanation": "Free electrons in metals transfer heat energy quickly.",
+            "difficulty": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "If Earth had no atmosphere, which heat transfer method from the Sun would still occur?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Evaporation"
+            },
+            "correct_answer": "C",
+            "explanation": "Radiation can travel through the vacuum of space.",
+            "difficulty": "hard",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Which condition would increase convection currents in a liquid?",
+            "options": {
+                "A": "Uniform temperature",
+                "B": "Large temperature difference",
+                "C": "Removing heat source",
+                "D": "Cooling entire liquid evenly"
+            },
+            "correct_answer": "B",
+            "explanation": "Greater temperature differences cause stronger convection currents.",
+            "difficulty": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do mountain slopes experience valley breeze during daytime?",
+            "options": {
+                "A": "Mountains block radiation",
+                "B": "Warm air rises along heated slopes",
+                "C": "Cold air sinks from peaks",
+                "D": "Ocean currents influence mountains"
+            },
+            "correct_answer": "B",
+            "explanation": "During the day, slopes heat up and warm air rises upward creating valley breeze.",
+            "difficulty": "hard",
+            "source_section": "Section 7.5"
+        }
+    ]
+}

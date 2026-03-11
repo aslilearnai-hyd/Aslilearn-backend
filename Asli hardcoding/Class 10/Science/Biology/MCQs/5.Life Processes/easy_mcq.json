@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Life Processes",
+  "generated_at": "2026-03-10T23:46:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is an autotroph?",
+      "options": {
+        "A": "Lion",
+        "B": "Green plants",
+        "C": "Mushroom",
+        "D": "Amoeba"
+      },
+      "correct_answer": "B",
+      "explanation": "Green plants are autotrophs as they synthesize their own food using photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The mode of nutrition in Amoeba is:",
+      "options": {
+        "A": "Saprophytic",
+        "B": "Parasitic",
+        "C": "Holozoic",
+        "D": "Autotrophic"
+      },
+      "correct_answer": "C",
+      "explanation": "Amoeba takes in solid food particles and digests them inside the body, which is holozoic nutrition.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Chlorophyll is primarily located in which cell organelle?",
+      "options": {
+        "A": "Mitochondria",
+        "B": "Vacuole",
+        "C": "Chloroplast",
+        "D": "Nucleus"
+      },
+      "correct_answer": "C",
+      "explanation": "Chloroplasts contain the green pigment chlorophyll, which is essential for photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "The tiny pores present on the surface of leaves for gas exchange are called:",
+      "options": {
+        "A": "Stomata",
+        "B": "Gills",
+        "C": "Trachea",
+        "D": "Alveoli"
+      },
+      "correct_answer": "A",
+      "explanation": "Stomata are small pores on leaf surfaces that facilitate the exchange of gases ($CO_2$ and $O_2$).",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which enzyme is present in human saliva?",
+      "options": {
+        "A": "Pepsin",
+        "B": "Trypsin",
+        "C": "Salivary amylase",
+        "D": "Lipase"
+      },
+      "correct_answer": "C",
+      "explanation": "Salivary amylase breaks down starch into simpler sugars like maltose in the mouth.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.4"
+    },
+    {
+      "question_number": 6,
+      "question": "The movement of food in the alimentary canal by rhythmic contraction of muscles is called:",
+      "options": {
+        "A": "Circulation",
+        "B": "Peristalsis",
+        "C": "Diffusion",
+        "D": "Excretion"
+      },
+      "correct_answer": "B",
+      "explanation": "Peristaltic movements push the food along the digestive tract.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Which acid is secreted by the stomach to help in digestion?",
+      "options": {
+        "A": "Sulphuric acid",
+        "B": "Nitric acid",
+        "C": "Hydrochloric acid",
+        "D": "Citric acid"
+      },
+      "correct_answer": "C",
+      "explanation": "The stomach secretes $HCl$ to create an acidic medium for the enzyme pepsin to work.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.4"
+    },
+    {
+      "question_number": 8,
+      "question": "The site of complete digestion of carbohydrates, proteins, and fats is:",
+      "options": {
+        "A": "Stomach",
+        "B": "Large intestine",
+        "C": "Small intestine",
+        "D": "Oesophagus"
+      },
+      "correct_answer": "C",
+      "explanation": "The small intestine receives secretions from the liver and pancreas to complete digestion.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Bile juice is produced by the:",
+      "options": {
+        "A": "Pancreas",
+        "B": "Stomach",
+        "C": "Liver",
+        "D": "Gall bladder"
+      },
+      "correct_answer": "C",
+      "explanation": "The liver produces bile, which is then stored in the gall bladder.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Aerobic respiration takes place in the presence of:",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Oxygen",
+        "C": "Nitrogen",
+        "D": "Water"
+      },
+      "correct_answer": "B",
+      "explanation": "Aerobic respiration requires oxygen to break down glucose into energy, $CO_2$, and water.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 11,
+      "question": "The breakdown of pyruvate to give carbon dioxide, water, and energy takes place in:",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Mitochondria",
+        "C": "Chloroplast",
+        "D": "Nucleus"
+      },
+      "correct_answer": "B",
+      "explanation": "While glycolysis occurs in the cytoplasm, the aerobic breakdown of pyruvate occurs in the mitochondria.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following organisms shows anaerobic respiration resulting in ethanol and $CO_2$?",
+      "options": {
+        "A": "Human muscle",
+        "B": "Yeast",
+        "C": "Fish",
+        "D": "Amoeba"
+      },
+      "correct_answer": "B",
+      "explanation": "Yeast undergoes fermentation (anaerobic respiration) to produce ethanol and carbon dioxide.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 13,
+      "question": "In humans, the exchange of gases takes place in the:",
+      "options": {
+        "A": "Bronchi",
+        "B": "Trachea",
+        "C": "Alveoli",
+        "D": "Nasal passage"
+      },
+      "correct_answer": "C",
+      "explanation": "Alveoli are balloon-like structures that provide a surface for the exchange of gases in the lungs.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3.1"
+    },
+    {
+      "question_number": 14,
+      "question": "The blood vessel that carries oxygenated blood from the lungs to the heart is:",
+      "options": {
+        "A": "Pulmonary artery",
+        "B": "Pulmonary vein",
+        "C": "Aorta",
+        "D": "Vena cava"
+      },
+      "correct_answer": "B",
+      "explanation": "Pulmonary vein is the only vein that carries oxygen-rich blood.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which component of blood is responsible for clotting at the site of injury?",
+      "options": {
+        "A": "RBCs",
+        "B": "WBCs",
+        "C": "Platelets",
+        "D": "Plasma"
+      },
+      "correct_answer": "C",
+      "explanation": "Platelets help in the coagulation (clotting) of blood to prevent excessive blood loss.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "The instrument used to measure blood pressure is:",
+      "options": {
+        "A": "Thermometer",
+        "B": "Stethoscope",
+        "C": "Sphygmomanometer",
+        "D": "Barometer"
+      },
+      "correct_answer": "C",
+      "explanation": "A sphygmomanometer is the medical device used to measure arterial blood pressure.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which chamber of the human heart has the thickest muscular walls?",
+      "options": {
+        "A": "Right Atrium",
+        "B": "Left Atrium",
+        "C": "Right Ventricle",
+        "D": "Left Ventricle"
+      },
+      "correct_answer": "D",
+      "explanation": "The left ventricle pumps blood to the entire body, so it requires thick walls to handle the high pressure.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Xylem in plants is responsible for the transport of:",
+      "options": {
+        "A": "Water and minerals",
+        "B": "Food (sucrose)",
+        "C": "Amino acids",
+        "D": "Oxygen"
+      },
+      "correct_answer": "A",
+      "explanation": "Xylem tissue conducts water and minerals from the roots to the rest of the plant.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "The loss of water in the form of vapor from the aerial parts of the plant is:",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Translocation",
+        "C": "Transpiration",
+        "D": "Respiration"
+      },
+      "correct_answer": "C",
+      "explanation": "Transpiration helps in the upward movement of water and minerals (transpirational pull).",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Phloem is responsible for the transport of:",
+      "options": {
+        "A": "Water",
+        "B": "Food",
+        "C": "Carbon dioxide",
+        "D": "Minerals"
+      },
+      "correct_answer": "B",
+      "explanation": "Phloem transports products of photosynthesis (sucrose) from leaves to other parts of the plant.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.2"
+    },
+    {
+      "question_number": 21,
+      "question": "The basic filtration unit in the human kidney is called:",
+      "options": {
+        "A": "Neuron",
+        "B": "Nephron",
+        "C": "Ureter",
+        "D": "Urethra"
+      },
+      "correct_answer": "B",
+      "explanation": "Nephrons are the functional units of the kidney that filter blood to form urine.",
+      "difficulty": "easy",
+      "source_section": "Section 5.5.1"
+    },
+    {
+      "question_number": 22,
+      "question": "The tube that carries urine from the kidney to the urinary bladder is:",
+      "options": {
+        "A": "Urethra",
+        "B": "Ureter",
+        "C": "Vena cava",
+        "D": "Aorta"
+      },
+      "correct_answer": "B",
+      "explanation": "Ureters are tubes that connect the kidneys to the urinary bladder.",
+      "difficulty": "easy",
+      "source_section": "Section 5.5.1"
+    },
+    {
+      "question_number": 23,
+      "question": "The process of artificial removal of nitrogenous wastes from the blood is called:",
+      "options": {
+        "A": "Transfusion",
+        "B": "Dialysis",
+        "C": "Filtration",
+        "D": "Osmosis"
+      },
+      "correct_answer": "B",
+      "explanation": "Hemodialysis or simply dialysis is used when kidneys fail to function properly.",
+      "difficulty": "easy",
+      "source_section": "Section 5.5.1"
+    },
+    {
+      "question_number": 24,
+      "question": "In autotrophic nutrition, the source of energy is:",
+      "options": {
+        "A": "Glucose",
+        "B": "Sunlight",
+        "C": "Starch",
+        "D": "ATP"
+      },
+      "correct_answer": "B",
+      "explanation": "Autotrophs use solar energy to convert $CO_2$ and $H_2O$ into chemical energy (carbohydrates).",
+      "difficulty": "easy",
+      "source_section": "Section 5.2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Normal systolic and diastolic blood pressure in humans is:",
+      "options": {
+        "A": "80/120 mm Hg",
+        "B": "120/80 mm Hg",
+        "C": "100/50 mm Hg",
+        "D": "150/100 mm Hg"
+      },
+      "correct_answer": "B",
+      "explanation": "The normal systolic pressure is about 120 mm Hg and diastolic is 80 mm Hg.",
+      "difficulty": "easy",
+      "source_section": "Section 5.4.1"
+    }
+  ]
+}

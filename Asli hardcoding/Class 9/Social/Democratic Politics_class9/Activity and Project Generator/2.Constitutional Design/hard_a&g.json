@@ -1,0 +1,169 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Constitutional Design",
+    "difficulty": "Hard",
+    "source_pdf": "dem9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Case Study on South African Constitution",
+            "objective": "Analyze how South Africa built a democratic constitution",
+            "materials": [
+                "Textbook",
+                "Research materials",
+                "Notebook"
+            ],
+            "steps": [
+                "Study the transition from apartheid to democracy",
+                "Explain how negotiations helped create the constitution",
+                "Write a detailed case study"
+            ],
+            "learning_outcome": "Students analyze democratic transitions and constitutional development",
+            "evaluation": "Depth of analysis and clarity (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Debate on Majority Rule and Minority Rights",
+            "objective": "Understand balance between majority rule and minority protection",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Divide students into two groups",
+                "One group argues for majority rule",
+                "The other explains protection of minority rights",
+                "Conduct a debate"
+            ],
+            "learning_outcome": "Students understand democratic balance between majority power and minority rights",
+            "evaluation": "Quality of arguments (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Research on Constituent Assembly Debates",
+            "objective": "Study the discussion process during constitution making",
+            "materials": [
+                "Reference materials",
+                "Notebook"
+            ],
+            "steps": [
+                "Find information about Constituent Assembly debates",
+                "Identify major issues discussed",
+                "Write a report summarizing these debates"
+            ],
+            "learning_outcome": "Students understand how democratic discussion shapes laws",
+            "evaluation": "Research quality (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Comparative Study of Constitutions",
+            "objective": "Compare three constitutions",
+            "materials": [
+                "Textbook",
+                "Internet resources",
+                "Notebook"
+            ],
+            "steps": [
+                "Study the constitutions of India, USA and South Africa",
+                "Compare their Preambles",
+                "Identify similarities and differences"
+            ],
+            "learning_outcome": "Students develop global understanding of constitutional systems",
+            "evaluation": "Accuracy and depth of comparison (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Analyze the Preamble",
+            "objective": "Interpret the philosophical meaning of the Preamble",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Write the Preamble in your notebook",
+                "Explain each term such as Sovereign, Socialist and Secular",
+                "Discuss how these values affect governance"
+            ],
+            "learning_outcome": "Students critically interpret constitutional values",
+            "evaluation": "Quality of interpretation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Role Play of Constituent Assembly",
+            "objective": "Understand democratic deliberation",
+            "materials": [
+                "Role cards",
+                "Notebook"
+            ],
+            "steps": [
+                "Assign roles of leaders like Ambedkar and Nehru",
+                "Discuss issues such as equality and rights",
+                "Conduct a simulated Constituent Assembly session"
+            ],
+            "learning_outcome": "Students understand democratic decision-making processes",
+            "evaluation": "Participation and understanding (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Research on Constitutional Amendments",
+            "objective": "Understand why constitutions change over time",
+            "materials": [
+                "Notebook",
+                "Reference sources"
+            ],
+            "steps": [
+                "Find examples of constitutional amendments",
+                "Explain why these amendments were needed",
+                "Write a report"
+            ],
+            "learning_outcome": "Students understand flexibility in constitutional systems",
+            "evaluation": "Correct examples and explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Essay on Democratic Values",
+            "objective": "Analyze values like justice and equality",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write an essay explaining justice, liberty and equality",
+                "Give examples from daily life",
+                "Present the essay in class"
+            ],
+            "learning_outcome": "Students connect constitutional values to real life",
+            "evaluation": "Depth of understanding (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Critical Discussion on Social Equality",
+            "objective": "Understand the challenges of equality in society",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Discuss social and economic inequalities",
+                "Explain how the constitution tries to reduce them",
+                "Write conclusions"
+            ],
+            "learning_outcome": "Students analyze social justice goals in the Constitution",
+            "evaluation": "Critical thinking and clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Design a Model Constitution",
+            "objective": "Apply knowledge of constitutional principles",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Create a simple constitution for an imaginary country",
+                "Include rights, powers of government and values",
+                "Present the model constitution"
+            ],
+            "learning_outcome": "Students apply constitutional principles creatively",
+            "evaluation": "Completeness and originality (10 marks)"
+        }
+    ]
+}

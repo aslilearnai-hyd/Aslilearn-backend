@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Resources",
+  "generated_at": "2026-03-06T15:00:00",
+  "difficulty": "hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which combination correctly represents the conditions required for something to become a resource?",
+      "options": {
+        "A": "Technological accessibility, economic feasibility, cultural acceptability",
+        "B": "Industrial use, urban demand, trade value",
+        "C": "Population growth, urbanization, globalization",
+        "D": "Agriculture, industry, and transport"
+      },
+      "correct_answer": "A",
+      "explanation": "A resource must be technologically accessible, economically feasible, and culturally acceptable.",
+      "difficulty": "hard",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which statement best explains the concept of human resources?",
+      "options": {
+        "A": "People who live in rural areas",
+        "B": "People’s knowledge, skills, and abilities used for development",
+        "C": "People working only in industries",
+        "D": "Population living in cities"
+      },
+      "correct_answer": "B",
+      "explanation": "Human resources refer to the knowledge, skills, and abilities of people that contribute to development.",
+      "difficulty": "hard",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following best explains why resources are unevenly distributed across the world?",
+      "options": {
+        "A": "Differences in climate, geography, and geological structures",
+        "B": "Government policies only",
+        "C": "Trade agreements between countries",
+        "D": "Cultural differences among people"
+      },
+      "correct_answer": "A",
+      "explanation": "Natural factors such as climate and geological conditions determine resource distribution.",
+      "difficulty": "hard",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is the best example of human-made resources created from natural resources?",
+      "options": {
+        "A": "Air",
+        "B": "Coal",
+        "C": "Roads and bridges",
+        "D": "Water"
+      },
+      "correct_answer": "C",
+      "explanation": "Roads and bridges are constructed by humans using natural resources.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "Which statement correctly explains renewable resources?",
+      "options": {
+        "A": "Resources that cannot be replaced",
+        "B": "Resources that take millions of years to form",
+        "C": "Resources that can regenerate naturally over time",
+        "D": "Resources used only in industries"
+      },
+      "correct_answer": "C",
+      "explanation": "Renewable resources can be replenished naturally.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Which resource is most closely associated with industrial production?",
+      "options": {
+        "A": "Minerals",
+        "B": "Wind",
+        "C": "Rain",
+        "D": "Sunlight"
+      },
+      "correct_answer": "A",
+      "explanation": "Minerals provide raw materials for industrial production.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following best describes sustainable development?",
+      "options": {
+        "A": "Rapid industrial expansion",
+        "B": "Meeting present needs without harming future generations",
+        "C": "Maximum use of natural resources",
+        "D": "Only economic growth"
+      },
+      "correct_answer": "B",
+      "explanation": "Sustainable development balances development with environmental protection.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor increases pressure on natural resources the most?",
+      "options": {
+        "A": "Population growth",
+        "B": "Education",
+        "C": "Technological advancement",
+        "D": "Urban planning"
+      },
+      "correct_answer": "A",
+      "explanation": "Population growth increases demand for resources such as food, water, and energy.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is the most appropriate method for conserving natural resources?",
+      "options": {
+        "A": "Overexploitation",
+        "B": "Recycling and sustainable use",
+        "C": "Industrial expansion",
+        "D": "Increased mining"
+      },
+      "correct_answer": "B",
+      "explanation": "Recycling and sustainable use help preserve resources.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 10,
+      "question": "Which sector depends heavily on natural resources like soil and water?",
+      "options": {
+        "A": "Banking",
+        "B": "Agriculture",
+        "C": "Education",
+        "D": "Tourism"
+      },
+      "correct_answer": "B",
+      "explanation": "Agriculture depends on natural resources such as soil and water.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following resources is considered both renewable and essential for life?",
+      "options": {
+        "A": "Water",
+        "B": "Coal",
+        "C": "Iron ore",
+        "D": "Petroleum"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is renewable and essential for human survival.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which energy resource produces electricity without releasing greenhouse gases?",
+      "options": {
+        "A": "Coal",
+        "B": "Solar energy",
+        "C": "Petroleum",
+        "D": "Natural gas"
+      },
+      "correct_answer": "B",
+      "explanation": "Solar energy is a clean and renewable source of power.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following best explains resource depletion?",
+      "options": {
+        "A": "Creation of new resources",
+        "B": "Reduction of resources due to excessive use",
+        "C": "Discovery of new minerals",
+        "D": "Growth of renewable energy"
+      },
+      "correct_answer": "B",
+      "explanation": "Resource depletion occurs when resources are used faster than they can be replaced.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "Which human activity contributes most to deforestation?",
+      "options": {
+        "A": "Reforestation",
+        "B": "Agricultural expansion",
+        "C": "Water conservation",
+        "D": "Solar energy use"
+      },
+      "correct_answer": "B",
+      "explanation": "Agricultural expansion often leads to cutting forests.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which resource plays the most important role in supporting biodiversity?",
+      "options": {
+        "A": "Minerals",
+        "B": "Forests",
+        "C": "Steel",
+        "D": "Concrete"
+      },
+      "correct_answer": "B",
+      "explanation": "Forests provide habitats for many plant and animal species.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which renewable energy source depends on the movement of air?",
+      "options": {
+        "A": "Hydroelectric power",
+        "B": "Solar energy",
+        "C": "Wind energy",
+        "D": "Geothermal energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Wind turbines convert wind energy into electricity.",
+      "difficulty": "easy",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which concept emphasizes balancing economic development with environmental protection?",
+      "options": {
+        "A": "Industrialization",
+        "B": "Urbanization",
+        "C": "Sustainable development",
+        "D": "Commercialization"
+      },
+      "correct_answer": "C",
+      "explanation": "Sustainable development focuses on long-term environmental balance.",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following best explains the importance of minerals?",
+      "options": {
+        "A": "They provide food for humans",
+        "B": "They supply raw materials for industries",
+        "C": "They regulate climate",
+        "D": "They support biodiversity"
+      },
+      "correct_answer": "B",
+      "explanation": "Minerals are used as raw materials in manufacturing industries.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 19,
+      "question": "Which action would most effectively reduce environmental damage?",
+      "options": {
+        "A": "Burning fossil fuels",
+        "B": "Using renewable energy",
+        "C": "Mining minerals excessively",
+        "D": "Deforestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Renewable energy sources reduce environmental pollution.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "Which natural resource is most important for generating hydroelectric power?",
+      "options": {
+        "A": "Wind",
+        "B": "Water",
+        "C": "Coal",
+        "D": "Petroleum"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydroelectric power plants use flowing water to generate electricity.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which factor contributes most to resource management?",
+      "options": {
+        "A": "Technological innovation",
+        "B": "Uncontrolled exploitation",
+        "C": "Ignoring conservation",
+        "D": "Increasing pollution"
+      },
+      "correct_answer": "A",
+      "explanation": "Technology helps manage resources efficiently.",
+      "difficulty": "hard",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which resource is essential for crop growth and agricultural productivity?",
+      "options": {
+        "A": "Soil",
+        "B": "Plastic",
+        "C": "Steel",
+        "D": "Rubber"
+      },
+      "correct_answer": "A",
+      "explanation": "Soil provides nutrients required for plant growth.",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which human practice helps reduce pressure on natural resources?",
+      "options": {
+        "A": "Overconsumption",
+        "B": "Recycling and reuse",
+        "C": "Excessive mining",
+        "D": "Urban expansion"
+      },
+      "correct_answer": "B",
+      "explanation": "Recycling reduces the need for extracting new resources.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor most directly links population growth with resource demand?",
+      "options": {
+        "A": "Higher consumption of food, water, and energy",
+        "B": "Reduced industrial production",
+        "C": "Decrease in agricultural activities",
+        "D": "Less environmental impact"
+      },
+      "correct_answer": "A",
+      "explanation": "Growing population increases demand for essential resources.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main objective of responsible resource management?",
+      "options": {
+        "A": "Maximizing resource exploitation",
+        "B": "Achieving short-term profits",
+        "C": "Ensuring sustainable use of resources",
+        "D": "Encouraging resource wastage"
+      },
+      "correct_answer": "C",
+      "explanation": "Responsible resource management ensures resources are used sustainably.",
+      "difficulty": "medium",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

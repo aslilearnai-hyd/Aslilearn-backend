@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "The Proposal",
+  "difficulty": "Medium",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Motivation Analysis",
+      "objective": "Understand why Lomov and Natalia behave the way they do.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify key moments showing Lomov’s nervousness or urgency",
+        "Identify key moments showing Natalia’s temper or pride",
+        "Explain reasons behind their behavior and how it affects the story"
+      ],
+      "learning_outcome": "Students will analyze character motivations and consequences of actions.",
+      "evaluation": "Clarity of explanation, textual support, and insightfulness"
+    },
+    {
+      "sl_no": 2,
+      "title": "Conflict and Resolution Chart",
+      "objective": "Examine the conflicts and their resolutions in the play.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "List 3 major conflicts in the play",
+        "Write how each conflict escalates and how it is resolved",
+        "Draw a cause-effect chart showing conflict dynamics"
+      ],
+      "learning_outcome": "Students will understand plot structure and conflict resolution.",
+      "evaluation": "Accuracy of events, clarity of chart, and depth of analysis"
+    },
+    {
+      "sl_no": 3,
+      "title": "Humor Analysis Essay",
+      "objective": "Analyze how humor is created in the play.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify 3 scenes that create humor",
+        "Explain what makes each scene funny (dialogue, misunderstanding, exaggeration)",
+        "Write a short essay connecting humor with character traits"
+      ],
+      "learning_outcome": "Students will understand literary devices like comic timing and irony.",
+      "evaluation": "Clarity, examples, and connection to text"
+    },
+    {
+      "sl_no": 4,
+      "title": "Role Play with Perspective Change",
+      "objective": "Enhance understanding by acting from another character’s viewpoint.",
+      "materials": ["Props, Notebook"],
+      "steps": [
+        "Choose a scene to act out",
+        "Perform it from the perspective of a servant or neighbor observing the couple",
+        "Discuss how this perspective changes understanding of events"
+      ],
+      "learning_outcome": "Students will develop empathy, interpretation skills, and expression.",
+      "evaluation": "Creativity, expression, and insightfulness"
+    },
+    {
+      "sl_no": 5,
+      "title": "Comparative Traits Table",
+      "objective": "Compare Lomov and Natalia’s character traits in detail.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "List 5 traits for each character",
+        "Provide textual evidence for each trait",
+        "Compare traits side by side and discuss similarities or differences"
+      ],
+      "learning_outcome": "Students will understand character depth and differences in behavior.",
+      "evaluation": "Accuracy, textual support, and clarity of comparison"
+    },
+    {
+      "sl_no": 6,
+      "title": "Scene Rewriting Exercise",
+      "objective": "Practice creative writing by modifying dialogue.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select a conflict scene",
+        "Rewrite dialogue to show different reactions or resolutions",
+        "Discuss how changes alter humor or story outcome"
+      ],
+      "learning_outcome": "Students will enhance creativity, writing, and understanding of character interaction.",
+      "evaluation": "Originality, consistency with character traits, and clarity"
+    },
+    {
+      "sl_no": 7,
+      "title": "Theme Identification Poster",
+      "objective": "Identify and present major themes such as pride, misunderstanding, and love.",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Identify 2–3 major themes in the play",
+        "Illustrate examples from the play supporting each theme",
+        "Present the poster to the class with explanation"
+      ],
+      "learning_outcome": "Students will connect textual evidence to theme analysis.",
+      "evaluation": "Relevance of examples, clarity of presentation, and creativity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Conflict Resolution Debate",
+      "objective": "Analyze alternative solutions for conflicts.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose one major conflict",
+        "Suggest an alternative way it could have been resolved",
+        "Debate pros and cons of original vs alternate resolution in class"
+      ],
+      "learning_outcome": "Students will develop reasoning, analytical, and communication skills.",
+      "evaluation": "Logical argument, clarity, and participation"
+    },
+    {
+      "sl_no": 9,
+      "title": "Emotional Mapping Chart",
+      "objective": "Track emotions of characters throughout the play.",
+      "materials": ["Notebook", "Colored pencils"],
+      "steps": [
+        "Identify key emotional moments for Lomov and Natalia",
+        "Use colors to mark different emotions in a chart",
+        "Explain how emotions affect dialogue and plot"
+      ],
+      "learning_outcome": "Students will analyze character psychology and plot development.",
+      "evaluation": "Accuracy of emotions, clarity, and textual connection"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Newspaper Article",
+      "objective": "Write a humorous newspaper report based on a scene.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Pick a humorous scene",
+        "Write a newspaper article reporting the events as news",
+        "Include headline, key details, and witty commentary"
+      ],
+      "learning_outcome": "Students will develop creative writing, humor, and reporting skills.",
+      "evaluation": "Creativity, clarity, and relevance to text"
+    }
+  ]
+}

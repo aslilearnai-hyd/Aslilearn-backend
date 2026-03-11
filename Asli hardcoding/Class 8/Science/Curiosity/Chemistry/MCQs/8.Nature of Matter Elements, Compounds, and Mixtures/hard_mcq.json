@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 8: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-06T10:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why cannot compounds be separated by physical methods?",
+      "options": {
+        "A": "They are always solids",
+        "B": "They are chemically combined",
+        "C": "They contain metals",
+        "D": "They have high density"
+      },
+      "correct_answer": "B",
+      "explanation": "Compounds are formed by chemical combination and require chemical reactions for separation.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which experiment proves that water is a compound?",
+      "options": {
+        "A": "Filtration",
+        "B": "Electrolysis",
+        "C": "Evaporation",
+        "D": "Magnetic separation"
+      },
+      "correct_answer": "B",
+      "explanation": "Electrolysis splits water into hydrogen and oxygen gases.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Why do compounds have properties different from their constituent elements?",
+      "options": {
+        "A": "Atoms rearrange to form new substances",
+        "B": "They are mixtures",
+        "C": "They contain more atoms",
+        "D": "They have different colors"
+      },
+      "correct_answer": "A",
+      "explanation": "Chemical reactions rearrange atoms creating new substances with new properties.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Why cannot iron be separated from iron sulfide using a magnet?",
+      "options": {
+        "A": "Iron loses its magnetic property in the compound",
+        "B": "Sulfur becomes magnetic",
+        "C": "Iron sulfide dissolves in water",
+        "D": "Magnetism increases"
+      },
+      "correct_answer": "A",
+      "explanation": "In the compound iron sulfide, iron no longer retains its magnetic properties.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following correctly describes alloys?",
+      "options": {
+        "A": "Chemical compounds",
+        "B": "Pure elements",
+        "C": "Mixtures of metals",
+        "D": "Liquid substances"
+      },
+      "correct_answer": "C",
+      "explanation": "Alloys are mixtures of two or more metals.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which statement correctly explains homogeneous mixtures?",
+      "options": {
+        "A": "Components are chemically combined",
+        "B": "Components are evenly distributed",
+        "C": "Components settle down",
+        "D": "Components react chemically"
+      },
+      "correct_answer": "B",
+      "explanation": "Homogeneous mixtures have uniform distribution of components.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is air considered a mixture rather than a compound?",
+      "options": {
+        "A": "Gases are chemically bonded",
+        "B": "Gases combine in fixed ratio",
+        "C": "Gases are physically mixed",
+        "D": "Gases cannot react"
+      },
+      "correct_answer": "C",
+      "explanation": "Air contains gases that are physically mixed and not chemically combined.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which property is most useful for separating salt from water?",
+      "options": {
+        "A": "Density",
+        "B": "Magnetism",
+        "C": "Boiling point",
+        "D": "Solubility"
+      },
+      "correct_answer": "C",
+      "explanation": "Water evaporates due to its lower boiling point leaving salt behind.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which process produces pure crystals from an impure solution?",
+      "options": {
+        "A": "Distillation",
+        "B": "Crystallization",
+        "C": "Filtration",
+        "D": "Magnetic separation"
+      },
+      "correct_answer": "B",
+      "explanation": "Crystallization produces pure crystals from solutions.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which element is most abundant in the Earth's atmosphere?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Nitrogen makes up about 78% of the atmosphere.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which gas burns with a pop sound during testing?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Hydrogen",
+        "D": "Carbon dioxide"
+      },
+      "correct_answer": "C",
+      "explanation": "Hydrogen burns with a characteristic pop sound.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which test confirms oxygen gas?",
+      "options": {
+        "A": "Pop test",
+        "B": "Glowing splint test",
+        "C": "Limewater test",
+        "D": "Magnet test"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxygen relights a glowing splint.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which compound is produced when carbon dioxide reacts with limewater?",
+      "options": {
+        "A": "Calcium oxide",
+        "B": "Calcium carbonate",
+        "C": "Calcium chloride",
+        "D": "Calcium sulfate"
+      },
+      "correct_answer": "B",
+      "explanation": "Calcium carbonate causes limewater to turn milky.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which property of metals makes them suitable for making wires?",
+      "options": {
+        "A": "Hardness",
+        "B": "Ductility",
+        "C": "Brittleness",
+        "D": "Density"
+      },
+      "correct_answer": "B",
+      "explanation": "Ductility allows metals to be drawn into wires.",
+      "difficulty": "hard",
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Which property allows metals to be hammered into sheets?",
+      "options": {
+        "A": "Malleability",
+        "B": "Ductility",
+        "C": "Solubility",
+        "D": "Density"
+      },
+      "correct_answer": "A",
+      "explanation": "Malleability allows metals to be hammered into thin sheets.",
+      "difficulty": "hard",
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 16,
+      "question": "Which mineral is commonly used to manufacture cement?",
+      "options": {
+        "A": "Quartz",
+        "B": "Calcite",
+        "C": "Mica",
+        "D": "Talc"
+      },
+      "correct_answer": "B",
+      "explanation": "Calcite is widely used in cement production.",
+      "difficulty": "hard",
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which mineral is used to produce talcum powder?",
+      "options": {
+        "A": "Mica",
+        "B": "Quartz",
+        "C": "Talc",
+        "D": "Calcite"
+      },
+      "correct_answer": "C",
+      "explanation": "Talc is used to produce talcum powder.",
+      "difficulty": "hard",
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Which type of matter includes substances like soil and wood?",
+      "options": {
+        "A": "Elements",
+        "B": "Compounds",
+        "C": "Mixtures",
+        "D": "Gases"
+      },
+      "correct_answer": "C",
+      "explanation": "Soil and wood contain multiple substances.",
+      "difficulty": "hard",
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Which statement about compounds is correct?",
+      "options": {
+        "A": "They have variable composition",
+        "B": "They can be separated physically",
+        "C": "They have fixed composition",
+        "D": "They are always gases"
+      },
+      "correct_answer": "C",
+      "explanation": "Compounds always form in fixed proportions.",
+      "difficulty": "hard",
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which mixture contains particles suspended in a liquid?",
+      "options": {
+        "A": "Air",
+        "B": "Milk",
+        "C": "Salt solution",
+        "D": "Sugar solution"
+      },
+      "correct_answer": "B",
+      "explanation": "Milk is a colloidal mixture.",
+      "difficulty": "hard",
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which metal is most commonly used in electrical wiring?",
+      "options": {
+        "A": "Iron",
+        "B": "Copper",
+        "C": "Aluminum",
+        "D": "Silver"
+      },
+      "correct_answer": "B",
+      "explanation": "Copper has excellent electrical conductivity.",
+      "difficulty": "hard",
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of the following is NOT matter?",
+      "options": {
+        "A": "Air",
+        "B": "Water",
+        "C": "Light",
+        "D": "Wood"
+      },
+      "correct_answer": "C",
+      "explanation": "Light is energy and does not have mass or occupy space.",
+      "difficulty": "hard",
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Which classification divides matter into elements, compounds, and mixtures?",
+      "options": {
+        "A": "Physical classification",
+        "B": "Chemical classification",
+        "C": "Biological classification",
+        "D": "Energy classification"
+      },
+      "correct_answer": "B",
+      "explanation": "Chemical classification divides matter based on composition.",
+      "difficulty": "hard",
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 24,
+      "question": "Which property helps identify minerals?",
+      "options": {
+        "A": "Color only",
+        "B": "Hardness",
+        "C": "Density only",
+        "D": "Magnetism only"
+      },
+      "correct_answer": "B",
+      "explanation": "Hardness is an important property used to identify minerals.",
+      "difficulty": "hard",
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best describes matter?",
+      "options": {
+        "A": "Anything that can be seen",
+        "B": "Anything that has mass and occupies space",
+        "C": "Anything that produces energy",
+        "D": "Anything that moves"
+      },
+      "correct_answer": "B",
+      "explanation": "Matter is defined as anything that has mass and occupies space.",
+      "difficulty": "hard",
+      "source_section": "Introduction"
+    }
+  ]
+}

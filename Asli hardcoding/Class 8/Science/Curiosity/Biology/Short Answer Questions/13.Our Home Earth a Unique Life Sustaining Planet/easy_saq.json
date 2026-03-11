@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet",
+  "generated_at": "2026-03-05T22:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is Earth called a life-supporting planet?",
+      "answer": "Earth supports life because it has water, suitable temperature, and a protective atmosphere.",
+      "key_concepts": ["life-supporting planet"],
+      "marks": 2,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the habitable zone?",
+      "answer": "The habitable zone is the region around a star where temperatures allow liquid water to exist.",
+      "key_concepts": ["habitable zone"],
+      "marks": 2,
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which planet is known as the Blue Planet?",
+      "answer": "Earth is known as the Blue Planet because of the large amount of water on its surface.",
+      "key_concepts": ["Earth"],
+      "marks": 2,
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the greenhouse effect?",
+      "answer": "The greenhouse effect is the trapping of heat in Earth's atmosphere by gases such as carbon dioxide.",
+      "key_concepts": ["greenhouse effect"],
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which gas plays an important role in the greenhouse effect?",
+      "answer": "Carbon dioxide.",
+      "key_concepts": ["carbon dioxide"],
+      "marks": 2,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the role of the ozone layer?",
+      "answer": "The ozone layer protects Earth by absorbing harmful ultraviolet rays from the Sun.",
+      "key_concepts": ["ozone layer"],
+      "marks": 2,
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is Earth's magnetic field?",
+      "answer": "Earth's magnetic field is a protective field that deflects harmful solar wind particles.",
+      "key_concepts": ["magnetic field"],
+      "marks": 2,
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Name the four major Earth systems.",
+      "answer": "Atmosphere, hydrosphere, geosphere, and biosphere.",
+      "key_concepts": ["Earth systems"],
+      "marks": 2,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the atmosphere?",
+      "answer": "The atmosphere is the layer of gases surrounding Earth.",
+      "key_concepts": ["atmosphere"],
+      "marks": 2,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the hydrosphere?",
+      "answer": "The hydrosphere includes all water bodies such as oceans, rivers, lakes, and groundwater.",
+      "key_concepts": ["hydrosphere"],
+      "marks": 2,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the geosphere?",
+      "answer": "The geosphere is the solid part of Earth including rocks, soil, and landforms.",
+      "key_concepts": ["geosphere"],
+      "marks": 2,
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the biosphere?",
+      "answer": "The biosphere includes all living organisms on Earth.",
+      "key_concepts": ["biosphere"],
+      "marks": 2,
+      "source_section": "Section 13.4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is sunlight important for life on Earth?",
+      "answer": "Sunlight provides energy for photosynthesis and supports life on Earth.",
+      "key_concepts": ["sunlight"],
+      "marks": 2,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "What is photosynthesis?",
+      "answer": "Photosynthesis is the process by which plants make food using sunlight, carbon dioxide, and water.",
+      "key_concepts": ["photosynthesis"],
+      "marks": 2,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Why is soil important for plants?",
+      "answer": "Soil provides nutrients and support necessary for plant growth.",
+      "key_concepts": ["soil"],
+      "marks": 2,
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "What is reproduction?",
+      "answer": "Reproduction is the process by which living organisms produce new individuals.",
+      "key_concepts": ["reproduction"],
+      "marks": 2,
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 17,
+      "question": "What is asexual reproduction?",
+      "answer": "Asexual reproduction is reproduction involving a single parent producing identical offspring.",
+      "key_concepts": ["asexual reproduction"],
+      "marks": 2,
+      "source_section": "Section 13.5.1"
+    },
+    {
+      "question_number": 18,
+      "question": "What is sexual reproduction?",
+      "answer": "Sexual reproduction involves the fusion of male and female gametes to produce offspring.",
+      "key_concepts": ["sexual reproduction"],
+      "marks": 2,
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 19,
+      "question": "What is a zygote?",
+      "answer": "A zygote is the cell formed when male and female gametes combine during fertilisation.",
+      "key_concepts": ["zygote"],
+      "marks": 2,
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 20,
+      "question": "What is biodiversity?",
+      "answer": "Biodiversity refers to the variety of living organisms on Earth.",
+      "key_concepts": ["biodiversity"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 21,
+      "question": "What is climate change?",
+      "answer": "Climate change refers to long-term changes in Earth's temperature and weather patterns.",
+      "key_concepts": ["climate change"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 22,
+      "question": "What is pollution?",
+      "answer": "Pollution is the contamination of air, water, or land by harmful substances.",
+      "key_concepts": ["pollution"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the triple planetary crisis?",
+      "answer": "The triple planetary crisis refers to climate change, biodiversity loss, and pollution.",
+      "key_concepts": ["triple planetary crisis"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is protecting ecosystems important?",
+      "answer": "Protecting ecosystems helps maintain ecological balance and biodiversity.",
+      "key_concepts": ["ecosystem protection"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Why should humans conserve natural resources?",
+      "answer": "Conserving natural resources ensures sustainability and supports life for future generations.",
+      "key_concepts": ["conservation"],
+      "marks": 2,
+      "source_section": "Section 13.6"
+    }
+  ]
+}

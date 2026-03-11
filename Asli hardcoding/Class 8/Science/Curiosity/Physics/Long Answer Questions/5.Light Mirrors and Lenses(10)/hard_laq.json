@@ -1,0 +1,242 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Light – Mirrors and Lenses",
+  "generated_at": "2026-03-05T20:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the laws of reflection and illustrate them with a ray diagram.",
+      "answer": "The laws of reflection state that the angle of incidence is equal to the angle of reflection and that the incident ray, reflected ray and the normal all lie in the same plane.",
+      "answer_outline": [
+        "Angle of incidence",
+        "Angle of reflection",
+        "Same plane"
+      ],
+      "key_concepts": ["laws of reflection"],
+      "marks": 5,
+      "source_section": "Reflection of Light"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain in detail the characteristics of images formed by a plane mirror.",
+      "answer": "Images formed by a plane mirror are virtual, upright, laterally inverted and equal in size to the object. The image is formed at the same distance behind the mirror as the object is in front.",
+      "answer_outline": [
+        "Virtual image",
+        "Upright image",
+        "Same size",
+        "Equal distance"
+      ],
+      "key_concepts": ["plane mirror"],
+      "marks": 5,
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the phenomenon of lateral inversion with suitable examples.",
+      "answer": "Lateral inversion is the sideways reversal of an image formed in a plane mirror. The left side of the object appears on the right side in the mirror image.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["lateral inversion"],
+      "marks": 4,
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 4,
+      "question": "Differentiate between concave mirrors and convex mirrors based on structure and image formation.",
+      "answer": "Concave mirrors curve inward and can produce real or virtual images depending on object position, while convex mirrors curve outward and always produce virtual and smaller images.",
+      "answer_outline": ["Mirror shape", "Image type"],
+      "key_concepts": ["concave mirror", "convex mirror"],
+      "marks": 5,
+      "source_section": "Types of Mirrors"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how concave mirrors are used in vehicle headlights and solar cookers.",
+      "answer": "Concave mirrors focus parallel light rays at a point. This property is used in headlights to produce strong beams and in solar cookers to concentrate sunlight.",
+      "answer_outline": ["Focusing light", "Applications"],
+      "key_concepts": ["concave mirror"],
+      "marks": 5,
+      "source_section": "Uses of Mirrors"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why convex mirrors are used as rear-view mirrors in vehicles.",
+      "answer": "Convex mirrors provide a wide field of view and form smaller upright images, allowing drivers to see a larger area behind the vehicle.",
+      "answer_outline": ["Wide field of view", "Upright images"],
+      "key_concepts": ["convex mirror"],
+      "marks": 4,
+      "source_section": "Uses of Mirrors"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the difference between reflection and refraction with examples.",
+      "answer": "Reflection is the bouncing back of light from a surface, while refraction is the bending of light when it passes from one medium to another.",
+      "answer_outline": ["Reflection definition", "Refraction definition"],
+      "key_concepts": ["reflection", "refraction"],
+      "marks": 5,
+      "source_section": "Reflection and Refraction"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the structure and function of a convex lens.",
+      "answer": "A convex lens is thicker in the middle and converges parallel light rays to a point called the focus.",
+      "answer_outline": ["Lens structure", "Converging rays"],
+      "key_concepts": ["convex lens"],
+      "marks": 4,
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how a concave lens forms images.",
+      "answer": "A concave lens spreads out light rays and forms virtual, upright and smaller images regardless of the position of the object.",
+      "answer_outline": ["Diverging rays", "Virtual image"],
+      "key_concepts": ["concave lens"],
+      "marks": 4,
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how magnifying glasses use convex lenses to enlarge objects.",
+      "answer": "A convex lens bends light rays to produce a larger virtual image when the object is placed close to the lens.",
+      "answer_outline": ["Convex lens", "Magnified image"],
+      "key_concepts": ["convex lens"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how cameras use lenses to produce clear images.",
+      "answer": "Cameras use convex lenses to focus light from objects onto a sensor or film, forming clear images.",
+      "answer_outline": ["Lens focusing", "Image formation"],
+      "key_concepts": ["lenses"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain how telescopes help us observe distant objects using lenses.",
+      "answer": "Telescopes use large convex lenses to collect and focus light from distant objects, producing magnified images.",
+      "answer_outline": ["Collect light", "Magnify image"],
+      "key_concepts": ["lenses"],
+      "marks": 5,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how microscopes use lenses to observe tiny objects.",
+      "answer": "Microscopes use combinations of convex lenses to magnify very small objects so they can be seen clearly.",
+      "answer_outline": ["Magnification", "Convex lenses"],
+      "key_concepts": ["lenses"],
+      "marks": 5,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how periscopes use mirrors to observe objects from hidden positions.",
+      "answer": "Periscopes use two plane mirrors placed at angles so light reflects from one mirror to the other and reaches the observer’s eye.",
+      "answer_outline": ["Two mirrors", "Multiple reflections"],
+      "key_concepts": ["plane mirrors"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how shadows are formed due to straight-line propagation of light.",
+      "answer": "Shadows form when an opaque object blocks light traveling in straight lines.",
+      "answer_outline": ["Straight-line propagation", "Blocking light"],
+      "key_concepts": ["shadows"],
+      "marks": 4,
+      "source_section": "Light and Shadows"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why light travels in straight lines in a uniform medium.",
+      "answer": "Light travels in straight lines because it propagates uniformly unless it interacts with another medium or obstacle.",
+      "answer_outline": ["Straight-line propagation"],
+      "key_concepts": ["light propagation"],
+      "marks": 4,
+      "source_section": "Introduction to Light"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how reflection of light enables us to see objects.",
+      "answer": "Light from a source reflects off objects and enters our eyes, allowing us to perceive their images.",
+      "answer_outline": ["Reflection", "Vision"],
+      "key_concepts": ["reflection"],
+      "marks": 4,
+      "source_section": "Reflection of Light"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how optical devices use both mirrors and lenses.",
+      "answer": "Optical devices combine mirrors for reflection and lenses for refraction to control and direct light.",
+      "answer_outline": ["Reflection", "Refraction"],
+      "key_concepts": ["optical devices"],
+      "marks": 5,
+      "source_section": "Optical Devices"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the role of mirrors and lenses in medical instruments.",
+      "answer": "Medical instruments such as endoscopes and microscopes use mirrors and lenses to magnify and observe internal body parts.",
+      "answer_outline": ["Medical applications"],
+      "key_concepts": ["optical devices"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how optical technology improves scientific research.",
+      "answer": "Optical instruments such as telescopes and microscopes help scientists observe objects that are extremely small or distant.",
+      "answer_outline": ["Scientific observation"],
+      "key_concepts": ["optics"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the importance of lenses in correcting vision defects.",
+      "answer": "Concave and convex lenses are used in spectacles to correct vision defects such as short-sightedness and long-sightedness.",
+      "answer_outline": ["Vision correction"],
+      "key_concepts": ["lenses"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how mirrors and lenses are used in everyday technology.",
+      "answer": "Mirrors and lenses are used in cameras, telescopes, microscopes, spectacles and solar devices.",
+      "answer_outline": ["Technological uses"],
+      "key_concepts": ["mirrors", "lenses"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of studying optics in science.",
+      "answer": "Studying optics helps us understand light behavior and develop technologies used in science, medicine and engineering.",
+      "answer_outline": ["Scientific importance"],
+      "key_concepts": ["optics"],
+      "marks": 4,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how mirrors and lenses help control and direct light in optical systems.",
+      "answer": "Mirrors reflect light while lenses refract light, allowing optical systems to guide light precisely for imaging and observation.",
+      "answer_outline": ["Reflection", "Refraction"],
+      "key_concepts": ["optics"],
+      "marks": 5,
+      "source_section": "Optical Systems"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how the study of light contributes to modern technology and scientific progress.",
+      "answer": "Understanding light allows the development of technologies such as lasers, fiber optics, cameras and telescopes.",
+      "answer_outline": ["Technological applications"],
+      "key_concepts": ["light", "optics"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

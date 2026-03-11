@@ -1,0 +1,709 @@
+{
+  "subject": "English",
+  "book": "Poorvi",
+  "Content": "Diary Entry",
+  "class": "7",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Chapter 1",
+      "title": "A Day by the River",
+      "question": "Write a diary entry describing your feelings when you first heard the river speak."
+    },
+    {
+      "id": 2,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Chapter 1",
+      "title": "Helping Nature",
+      "question": "Write a diary entry as a student explaining why protecting the river was important to you."
+    },
+    {
+      "id": 3,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Chapter 1",
+      "title": "Learning Together",
+      "question": "Write a diary entry about a conversation you had with your friend near the river."
+    },
+    {
+      "id": 4,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Chapter 1",
+      "title": "Nature’s Voice",
+      "question": "Write a diary entry describing how you felt when you learned what the river wanted."
+    },
+    {
+      "id": 5,
+      "chapter": "The Day the River Spoke",
+      "source": "Poorvi – Chapter 1",
+      "title": "A Promise to the River",
+      "question": "Write a diary entry about a promise you made to protect the river."
+    },
+    {
+      "id": 6,
+      "chapter": "Try Again (Poem)",
+      "source": "Poorvi – Chapter 2",
+      "title": "Learning to Persist",
+      "question": "Write a diary entry describing a time you tried again after failing at something."
+    },
+    {
+      "id": 7,
+      "chapter": "Try Again (Poem)",
+      "source": "Poorvi – Chapter 2",
+      "title": "My Determination",
+      "question": "Write a diary entry explaining what helped you keep going when things got tough."
+    },
+    {
+      "id": 8,
+      "chapter": "Try Again (Poem)",
+      "source": "Poorvi – Chapter 2",
+      "title": "Never Giving Up",
+      "question": "Write a diary entry about how you felt after finally succeeding at something difficult."
+    },
+    {
+      "id": 9,
+      "chapter": "Try Again (Poem)",
+      "source": "Poorvi – Chapter 2",
+      "title": "Encouragement",
+      "question": "Write a diary entry describing someone who encouraged you to try again."
+    },
+    {
+      "id": 10,
+      "chapter": "Try Again (Poem)",
+      "source": "Poorvi – Chapter 2",
+      "title": "Believing in Myself",
+      "question": "Write a diary entry explaining how believing in yourself made a difference."
+    },
+    {
+      "id": 11,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Chapter 3",
+      "title": "Seeing the World",
+      "question": "Write a diary entry imagining you could see the world for only three days."
+    },
+    {
+      "id": 12,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Chapter 3",
+      "title": "First Glimpse",
+      "question": "Write a diary entry describing what you would do on the first day if you had three days to see."
+    },
+    {
+      "id": 13,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Chapter 3",
+      "title": "Valuing Sight",
+      "question": "Write a diary entry explaining what sight means to you after reading the chapter."
+    },
+    {
+      "id": 14,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Chapter 3",
+      "title": "Precious Moments",
+      "question": "Write a diary entry about what you would do on the second day of your three days to see."
+    },
+    {
+      "id": 15,
+      "chapter": "Three Days to See",
+      "source": "Poorvi – Chapter 3",
+      "title": "Last Day Thoughts",
+      "question": "Write a diary entry describing what you would do on your last day to see the world."
+    },
+    {
+      "id": 16,
+      "chapter": "Animals, Birds and Dr. Dolittle",
+      "source": "Poorvi – Chapter 4",
+      "title": "Talking to Animals",
+      "question": "Write a diary entry as Dr. Dolittle describing a conversation you had with an animal."
+    },
+    {
+      "id": 17,
+      "chapter": "Animals, Birds and Dr. Dolittle",
+      "source": "Poorvi – Chapter 4",
+      "title": "My Wild Friends",
+      "question": "Write a diary entry about meeting a bird or animal you have never seen before."
+    },
+    {
+      "id": 18,
+      "chapter": "Animals, Birds and Dr. Dolittle",
+      "source": "Poorvi – Chapter 4",
+      "title": "Learning from Animals",
+      "question": "Write a diary entry explaining what animals can teach humans."
+    },
+    {
+      "id": 19,
+      "chapter": "Animals, Birds and Dr. Dolittle",
+      "source": "Poorvi – Chapter 4",
+      "title": "A Day in the Jungle",
+      "question": "Write a diary entry describing a day spent observing animals in the jungle."
+    },
+    {
+      "id": 20,
+      "chapter": "Animals, Birds and Dr. Dolittle",
+      "source": "Poorvi – Chapter 4",
+      "title": "Kindness to Creatures",
+      "question": "Write a diary entry explaining why being kind to animals is important."
+    },
+    {
+      "id": 21,
+      "chapter": "A Funny Man (Poem)",
+      "source": "Poorvi – Chapter 5",
+      "title": "My Funny Friend",
+      "question": "Write a diary entry describing someone who makes you laugh."
+    },
+    {
+      "id": 22,
+      "chapter": "A Funny Man (Poem)",
+      "source": "Poorvi – Chapter 5",
+      "title": "A Humorous Day",
+      "question": "Write a diary entry about a funny moment in your life."
+    },
+    {
+      "id": 23,
+      "chapter": "A Funny Man (Poem)",
+      "source": "Poorvi – Chapter 5",
+      "title": "Making Others Smile",
+      "question": "Write a diary entry about how you made someone smile."
+    },
+    {
+      "id": 24,
+      "chapter": "A Funny Man (Poem)",
+      "source": "Poorvi – Chapter 5",
+      "title": "Laughing Together",
+      "question": "Write a diary entry about a day full of laughter with friends."
+    },
+    {
+      "id": 25,
+      "chapter": "A Funny Man (Poem)",
+      "source": "Poorvi – Chapter 5",
+      "title": "Joy of Jokes",
+      "question": "Write a diary entry explaining why jokes and humour are important in life."
+    },
+    {
+      "id": 26,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Chapter 6",
+      "title": "Speaking Wisely",
+      "question": "Write a diary entry describing a situation where you had to choose your words carefully."
+    },
+    {
+      "id": 27,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Chapter 6",
+      "title": "Avoiding Misunderstanding",
+      "question": "Write a diary entry about a time your words helped solve a problem."
+    },
+    {
+      "id": 28,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Chapter 6",
+      "title": "Words Matter",
+      "question": "Write a diary entry explaining why it is important to say the right thing at the right time."
+    },
+    {
+      "id": 29,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Chapter 6",
+      "title": "Learning from Mistakes",
+      "question": "Write a diary entry about a time you said something wrong and what you learned."
+    },
+    {
+      "id": 30,
+      "chapter": "Say the Right Thing",
+      "source": "Poorvi – Chapter 6",
+      "title": "Speaking with Respect",
+      "question": "Write a diary entry about how respecting others' feelings influences your speech."
+    },
+    {
+      "id": 31,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Chapter 7",
+      "title": "Invention Day",
+      "question": "Write a diary entry describing your brother's invention and your excitement about it."
+    },
+    {
+      "id": 32,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Chapter 7",
+      "title": "Testing the Invention",
+      "question": "Write a diary entry about the first time you tried out the invention."
+    },
+    {
+      "id": 33,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Chapter 7",
+      "title": "Unexpected Results",
+      "question": "Write a diary entry about a surprising result from using the invention."
+    },
+    {
+      "id": 34,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Chapter 7",
+      "title": "Learning Together",
+      "question": "Write a diary entry about what you learned while observing your brother's invention."
+    },
+    {
+      "id": 35,
+      "chapter": "My Brother’s Great Invention",
+      "source": "Poorvi – Chapter 7",
+      "title": "Feeling Proud",
+      "question": "Write a diary entry describing your feelings of pride for your brother."
+    },
+    {
+      "id": 36,
+      "chapter": "Paper Boats (Poem)",
+      "source": "Poorvi – Chapter 8",
+      "title": "Making Paper Boats",
+      "question": "Write a diary entry about making paper boats and floating them on water."
+    },
+    {
+      "id": 37,
+      "chapter": "Paper Boats (Poem)",
+      "source": "Poorvi – Chapter 8",
+      "title": "Childhood Joy",
+      "question": "Write a diary entry describing the joy of playing with paper boats as a child."
+    },
+    {
+      "id": 38,
+      "chapter": "Paper Boats (Poem)",
+      "source": "Poorvi – Chapter 8",
+      "title": "A Rainy Day",
+      "question": "Write a diary entry about floating paper boats during a rainy day."
+    },
+    {
+      "id": 39,
+      "chapter": "Paper Boats (Poem)",
+      "source": "Poorvi – Chapter 8",
+      "title": "Sharing Fun",
+      "question": "Write a diary entry about making paper boats with friends."
+    },
+    {
+      "id": 40,
+      "chapter": "Paper Boats (Poem)",
+      "source": "Poorvi – Chapter 8",
+      "title": "Imagination at Play",
+      "question": "Write a diary entry describing how your imagination comes alive while making paper boats."
+    },
+    {
+      "id": 41,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Chapter 9",
+      "title": "Travelling the Country",
+      "question": "Write a diary entry describing your journey across different directions of the country."
+    },
+    {
+      "id": 42,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Chapter 9",
+      "title": "Experiencing Diversity",
+      "question": "Write a diary entry describing the different people and cultures you met."
+    },
+    {
+      "id": 43,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Chapter 9",
+      "title": "Learning Geography",
+      "question": "Write a diary entry about learning new things about places during your travels."
+    },
+    {
+      "id": 44,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Chapter 9",
+      "title": "Local Traditions",
+      "question": "Write a diary entry describing the traditions you observed in different parts of the country."
+    },
+    {
+      "id": 45,
+      "chapter": "North, South, East, West",
+      "source": "Poorvi – Chapter 9",
+      "title": "Memorable Trip",
+      "question": "Write a diary entry describing your most memorable moment from this journey."
+    },
+    {
+      "id": 46,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Chapter 10",
+      "title": "Exploring the Tunnel",
+      "question": "Write a diary entry about your experience exploring the tunnel."
+    },
+    {
+      "id": 47,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Chapter 10",
+      "title": "Fear and Courage",
+      "question": "Write a diary entry describing your feelings of fear and courage inside the tunnel."
+    },
+    {
+      "id": 48,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Chapter 10",
+      "title": "Unexpected Discovery",
+      "question": "Write a diary entry about something surprising you found inside the tunnel."
+    },
+    {
+      "id": 49,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Chapter 10",
+      "title": "Sharing the Adventure",
+      "question": "Write a diary entry about telling your friends about your adventure in the tunnel."
+    },
+    {
+      "id": 50,
+      "chapter": "The Tunnel",
+      "source": "Poorvi – Chapter 10",
+      "title": "Learning from Experience",
+      "question": "Write a diary entry explaining what you learned from exploring the tunnel."
+    },
+     {
+      "id": 51,
+      "chapter": "Travel (Poem)",
+      "source": "Poorvi – Chapter 11",
+      "title": "Journey Begins",
+      "question": "Write a diary entry describing your excitement at the start of a journey."
+    },
+    {
+      "id": 52,
+      "chapter": "Travel (Poem)",
+      "source": "Poorvi – Chapter 11",
+      "title": "Scenery Around Me",
+      "question": "Write a diary entry describing the sights and sounds during your travel."
+    },
+    {
+      "id": 53,
+      "chapter": "Travel (Poem)",
+      "source": "Poorvi – Chapter 11",
+      "title": "Learning from Travel",
+      "question": "Write a diary entry about something new you learned while travelling."
+    },
+    {
+      "id": 54,
+      "chapter": "Travel (Poem)",
+      "source": "Poorvi – Chapter 11",
+      "title": "Meeting People",
+      "question": "Write a diary entry about interesting people you met on your journey."
+    },
+    {
+      "id": 55,
+      "chapter": "Travel (Poem)",
+      "source": "Poorvi – Chapter 11",
+      "title": "Memorable Moments",
+      "question": "Write a diary entry about your most memorable experience during travel."
+    },
+    {
+      "id": 56,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Chapter 12",
+      "title": "Preparing for the Climb",
+      "question": "Write a diary entry describing how you prepared for climbing a mountain."
+    },
+    {
+      "id": 57,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Chapter 12",
+      "title": "Facing Challenges",
+      "question": "Write a diary entry describing the difficulties you faced while climbing."
+    },
+    {
+      "id": 58,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Chapter 12",
+      "title": "Reaching the Top",
+      "question": "Write a diary entry describing your feelings when you reached the summit."
+    },
+    {
+      "id": 59,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Chapter 12",
+      "title": "Nature’s Beauty",
+      "question": "Write a diary entry describing the view from the top of the mountain."
+    },
+    {
+      "id": 60,
+      "chapter": "Conquering the Summit",
+      "source": "Poorvi – Chapter 12",
+      "title": "Lesson Learned",
+      "question": "Write a diary entry about what the experience taught you about determination."
+    },
+    {
+      "id": 61,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Chapter 13",
+      "title": "Feeling Proud",
+      "question": "Write a diary entry expressing your feelings of pride for soldiers protecting the country."
+    },
+    {
+      "id": 62,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Chapter 13",
+      "title": "Soldiers’ Courage",
+      "question": "Write a diary entry describing what you admire about soldiers’ courage."
+    },
+    {
+      "id": 63,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Chapter 13",
+      "title": "Respecting Sacrifices",
+      "question": "Write a diary entry about understanding the sacrifices made by soldiers."
+    },
+    {
+      "id": 64,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Chapter 13",
+      "title": "Lessons from Soldiers",
+      "question": "Write a diary entry about the lessons you learned from soldiers’ bravery."
+    },
+    {
+      "id": 65,
+      "chapter": "A Homage to Our Brave Soldiers",
+      "source": "Poorvi – Chapter 13",
+      "title": "Patriotism",
+      "question": "Write a diary entry explaining how the soldiers inspired your sense of patriotism."
+    },
+    {
+      "id": 66,
+      "chapter": "My Dear Soldiers (Poem)",
+      "source": "Poorvi – Chapter 14",
+      "title": "Saluting Soldiers",
+      "question": "Write a diary entry expressing your respect and gratitude to soldiers."
+    },
+    {
+      "id": 67,
+      "chapter": "My Dear Soldiers (Poem)",
+      "source": "Poorvi – Chapter 14",
+      "title": "A Letter to Soldiers",
+      "question": "Write a diary entry imagining writing a letter to a brave soldier."
+    },
+    {
+      "id": 68,
+      "chapter": "My Dear Soldiers (Poem)",
+      "source": "Poorvi – Chapter 14",
+      "title": "Soldiers’ Stories",
+      "question": "Write a diary entry about a soldier’s story that inspired you."
+    },
+    {
+      "id": 69,
+      "chapter": "My Dear Soldiers (Poem)",
+      "source": "Poorvi – Chapter 14",
+      "title": "Patriotic Feelings",
+      "question": "Write a diary entry about the feelings of patriotism you experienced reading the poem."
+    },
+    {
+      "id": 70,
+      "chapter": "My Dear Soldiers (Poem)",
+      "source": "Poorvi – Chapter 14",
+      "title": "Honouring Courage",
+      "question": "Write a diary entry about how you honoured the courage of soldiers."
+    },
+    {
+      "id": 71,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Chapter 15",
+      "title": "Meeting Rani Abbakka",
+      "question": "Write a diary entry imagining meeting the brave queen Rani Abbakka."
+    },
+    {
+      "id": 72,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Chapter 15",
+      "title": "Planning Strategy",
+      "question": "Write a diary entry about how Rani Abbakka planned to defend her kingdom."
+    },
+    {
+      "id": 73,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Chapter 15",
+      "title": "Courage in Battle",
+      "question": "Write a diary entry describing Rani Abbakka’s courage in facing enemies."
+    },
+    {
+      "id": 74,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Chapter 15",
+      "title": "Inspiring Leader",
+      "question": "Write a diary entry about the qualities that make Rani Abbakka an inspiring leader."
+    },
+    {
+      "id": 75,
+      "chapter": "Rani Abbakka",
+      "source": "Poorvi – Chapter 15",
+      "title": "Lesson from History",
+      "question": "Write a diary entry about what you learned from Rani Abbakka’s life."
+    },
+    {
+      "id": 76,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning from Stories",
+      "question": "Write a diary entry about lessons you learned from reading these chapters."
+    },
+    {
+      "id": 77,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Courage",
+      "question": "Write a diary entry about how courage is important in life."
+    },
+    {
+      "id": 78,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Perseverance Matters",
+      "question": "Write a diary entry explaining why never giving up is important."
+    },
+    {
+      "id": 79,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Curiosity Helps",
+      "question": "Write a diary entry about how curiosity helps you learn."
+    },
+    {
+      "id": 80,
+      "chapter": "Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Respect for Others",
+      "question": "Write a diary entry about respecting others and learning from them."
+    },
+    {
+      "id": 81,
+      "chapter": "Creative Imagination",
+      "source": "All Chapters – Poorvi",
+      "title": "If I Were a Leader",
+      "question": "Write a diary entry imagining yourself as a brave leader like Rani Abbakka."
+    },
+    {
+      "id": 82,
+      "chapter": "Creative Imagination",
+      "source": "All Chapters – Poorvi",
+      "title": "If I Were an Explorer",
+      "question": "Write a diary entry imagining a journey to discover new lands."
+    },
+    {
+      "id": 83,
+      "chapter": "Creative Imagination",
+      "source": "All Chapters – Poorvi",
+      "title": "If I Could Fly",
+      "question": "Write a diary entry imagining you could fly and see the world from above."
+    },
+    {
+      "id": 84,
+      "chapter": "Creative Imagination",
+      "source": "All Chapters – Poorvi",
+      "title": "If I Could Talk to Animals",
+      "question": "Write a diary entry imagining talking to animals like Dr. Dolittle."
+    },
+    {
+      "id": 85,
+      "chapter": "Creative Imagination",
+      "source": "All Chapters – Poorvi",
+      "title": "If I Could Travel Back in Time",
+      "question": "Write a diary entry imagining a visit to meet historical figures."
+    },
+    {
+      "id": 86,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Daily Routine",
+      "question": "Write a diary entry about your daily routine as a student."
+    },
+    {
+      "id": 87,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Favourite Subject",
+      "question": "Write a diary entry about your favourite subject and why you like it."
+    },
+    {
+      "id": 88,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "School Memories",
+      "question": "Write a diary entry describing a memorable day at school."
+    },
+    {
+      "id": 89,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Learning English",
+      "question": "Write a diary entry about how learning English helps you."
+    },
+    {
+      "id": 90,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Poorvi",
+      "title": "Preparing for Exams",
+      "question": "Write a diary entry about your experience preparing for exams."
+    },
+    {
+      "id": 91,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Life Lessons",
+      "question": "Write a diary entry about the most important life lessons you learned from this book."
+    },
+    {
+      "id": 92,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Values Learned",
+      "question": "Write a diary entry describing the values you learned from the chapters."
+    },
+    {
+      "id": 93,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Courage and Wisdom",
+      "question": "Write a diary entry reflecting on courage and wisdom shown in the stories."
+    },
+    {
+      "id": 94,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Poorvi",
+      "title": "Application in Life",
+      "question": "Write a diary entry about how you will apply lessons from the book in daily life."
+    },
+    {
+      "id": 95,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Changed Perspective",
+      "question": "Write a diary entry about how reading the book changed your thinking."
+    },
+    {
+      "id": 96,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Becoming Better",
+      "question": "Write a diary entry about how you plan to become a better person."
+    },
+    {
+      "id": 97,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Future Goals",
+      "question": "Write a diary entry describing your goals for the future after reading the book."
+    },
+    {
+      "id": 98,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Importance of Learning",
+      "question": "Write a diary entry explaining why learning from books is important."
+    },
+    {
+      "id": 99,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Curiosity and Knowledge",
+      "question": "Write a diary entry about how curiosity leads to knowledge."
+    },
+    {
+      "id": 100,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Poorvi",
+      "title": "Final Thoughts",
+      "question": "Write a diary entry summarising what the book taught you and how it will guide your life."
+    }
+  ]
+}

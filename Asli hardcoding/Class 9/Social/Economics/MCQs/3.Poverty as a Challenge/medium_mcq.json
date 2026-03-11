@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Poverty as a Challenge",
+  "generated_at": "2026-03-07T00:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is an indicator of poverty as seen by social scientists?",
+      "options": {
+        "A": "Increase in birth rate",
+        "B": "Lack of general resistance due to malnutrition",
+        "C": "Growth in the tertiary sector",
+        "D": "High consumer spending"
+      },
+      "correct_answer": "B",
+      "explanation": "Social scientists look beyond income to indicators like illiteracy, malnutrition, and lack of access to healthcare and sanitation.",
+      "difficulty": "medium",
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Social exclusion can be both a ______ and a ______ of poverty.",
+      "options": {
+        "A": "Solution; Problem",
+        "B": "Cause; Consequence",
+        "C": "Market activity; Non-market activity",
+        "D": "Rural feature; Urban feature"
+      },
+      "correct_answer": "B",
+      "explanation": "Social exclusion causes poverty by denying opportunities, and it is a consequence because being poor forces individuals to live in isolated, poor surroundings.",
+      "difficulty": "medium",
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Vulnerability to poverty is determined by the options available to different communities for finding an:",
+      "options": {
+        "A": "Education center",
+        "B": "Alternative living",
+        "C": "International bank",
+        "D": "Urban park"
+      },
+      "correct_answer": "B",
+      "explanation": "Vulnerability describes the lack of assets, education, and health that would allow a person to handle risks like natural disasters.",
+      "difficulty": "medium",
+      "source_section": "3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is the poverty line higher in urban areas than in rural areas despite lower calorie needs?",
+      "options": {
+        "A": "Urban people eat more expensive food",
+        "B": "Due to high prices of many essential items in urban centers",
+        "C": "Urban people engage in more physical work",
+        "D": "Government wants to discourage urban migration"
+      },
+      "correct_answer": "B",
+      "explanation": "While rural areas need more calories, the monetary value of the poverty line is higher in cities because the cost of living (rent, transport, services) is greater.",
+      "difficulty": "medium",
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which organization conducts the sample surveys for poverty estimation every five years?",
+      "options": {
+        "A": "NSSO",
+        "B": "RBI",
+        "C": "CSO",
+        "D": "Ministry of Finance"
+      },
+      "correct_answer": "A",
+      "explanation": "The National Sample Survey Organisation (NSSO) is the nodal agency for conducting these periodic surveys.",
+      "difficulty": "medium",
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 6,
+      "question": "According to World Bank standards, a person is in absolute poverty if they live on less than:",
+      "options": {
+        "A": "$1.00 a day",
+        "B": "$1.90 a day (2011 PPP)",
+        "C": "$5.00 a day",
+        "D": "$10.00 a day"
+      },
+      "correct_answer": "B",
+      "explanation": "The World Bank uses $1.90 as the international poverty line for global comparison.",
+      "difficulty": "medium",
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which state shows a significant reduction in poverty through land reform measures?",
+      "options": {
+        "A": "Kerala",
+        "B": "West Bengal",
+        "C": "Punjab",
+        "D": "Tamil Nadu"
+      },
+      "correct_answer": "B",
+      "explanation": "West Bengal implemented land reforms to redistribute assets, which was the primary driver of poverty reduction there.",
+      "difficulty": "medium",
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Punjab and Haryana have reduced poverty primarily through:",
+      "options": {
+        "A": "Human resource development",
+        "B": "High agricultural growth rates",
+        "C": "Public distribution of food",
+        "D": "Information technology"
+      },
+      "correct_answer": "B",
+      "explanation": "These states leveraged the Green Revolution to increase agricultural output and income.",
+      "difficulty": "medium",
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Kerala’s model for poverty reduction is based on heavy investment in:",
+      "options": {
+        "A": "Heavy industries",
+        "B": "Human resource development",
+        "C": "Defense",
+        "D": "Infrastructure only"
+      },
+      "correct_answer": "B",
+      "explanation": "Kerala focused on education and health, creating a skilled population that could find better work.",
+      "difficulty": "medium",
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 10,
+      "question": "In Andhra Pradesh and Tamil Nadu, poverty was significantly reduced by:",
+      "options": {
+        "A": "Public distribution of food grains",
+        "B": "Land reforms",
+        "C": "Computer literacy",
+        "D": "Tourism"
+      },
+      "correct_answer": "A",
+      "explanation": "Efficient Public Distribution Systems (PDS) ensured food security for the poor in these southern states.",
+      "difficulty": "medium",
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 11,
+      "question": "The 'vicious cycle' of poverty describes how low income leads to:",
+      "options": {
+        "A": "Higher savings",
+        "B": "Low investment in health and education, leading to low productivity",
+        "C": "Rapid industrialization",
+        "D": "High exports"
+      },
+      "correct_answer": "B",
+      "explanation": "Poverty traps individuals because they lack the resources to improve their human capital, keeping them unproductive and poor.",
+      "difficulty": "medium",
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "British colonial policies ruined traditional handicrafts and discouraged development of industries like:",
+      "options": {
+        "A": "Software",
+        "B": "Textiles",
+        "C": "Automobiles",
+        "D": "Space research"
+      },
+      "correct_answer": "B",
+      "explanation": "The colonial administration's focus was on using India as a source of raw materials, which stifled industrial growth.",
+      "difficulty": "medium",
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the two-pronged strategy of the Indian government to combat poverty?",
+      "options": {
+        "A": "Inflation and Deflation",
+        "B": "Promotion of economic growth and targeted anti-poverty programs",
+        "C": "Import and Export",
+        "D": "Urbanization and Migration"
+      },
+      "correct_answer": "B",
+      "explanation": "The government focuses on growing the overall economy while providing specific schemes for the most vulnerable.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 14,
+      "question": "MGNREGA 2005 guarantees how many days of employment per year?",
+      "options": {
+        "A": "50",
+        "B": "100",
+        "C": "150",
+        "D": "200"
+      },
+      "correct_answer": "B",
+      "explanation": "The act provides a legal guarantee of 100 days of wage employment to every rural household.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Which scheme was launched to create self-employment opportunities for educated unemployed youth in rural areas?",
+      "options": {
+        "A": "Prime Minister Rozgar Yojana (PMRY)",
+        "B": "AAY",
+        "C": "SGSY",
+        "D": "PMGY"
+      },
+      "correct_answer": "A",
+      "explanation": "PMRY (1993) was specifically designed for educated youth to set up small businesses and industries.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Under MGNREGA, if an applicant is not provided employment within 15 days, they are entitled to:",
+      "options": {
+        "A": "A bank loan",
+        "B": "Daily unemployment allowance",
+        "C": "Free housing",
+        "D": "A pension"
+      },
+      "correct_answer": "B",
+      "explanation": "This provision ensures that the state is held accountable for providing the guaranteed work.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 17,
+      "question": "SGSY (1999) aims to assist poor families by organizing them into:",
+      "options": {
+        "A": "Political parties",
+        "B": "Self-help groups (SHGs)",
+        "C": "Trade unions",
+        "D": "Urban clubs"
+      },
+      "correct_answer": "B",
+      "explanation": "SHGs allow the poor to pool savings and access bank credit to start micro-enterprises.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 18,
+      "question": "The Pradhan Mantri Gramodaya Yojana (PMGY) focuses on providing additional central assistance for:",
+      "options": {
+        "A": "Luxury housing",
+        "B": "Basic services like health, education, and drinking water",
+        "C": "High-speed railways",
+        "D": "Space tourism"
+      },
+      "correct_answer": "B",
+      "explanation": "PMGY targets the fundamental needs of rural inhabitants to improve their standard of living.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 19,
+      "question": "Inter-state disparities in poverty are highest in which two states?",
+      "options": {
+        "A": "Punjab and Haryana",
+        "B": "Bihar and Odisha",
+        "C": "Kerala and Tamil Nadu",
+        "D": "Gujarat and Maharashtra"
+      },
+      "correct_answer": "B",
+      "explanation": "Bihar and Odisha consistently report the highest poverty ratios in national data.",
+      "difficulty": "medium",
+      "source_section": "3.4"
+    },
+    {
+      "question_number": 20,
+      "question": "Global poverty has declined dramatically in which country due to rapid economic growth?",
+      "options": {
+        "A": "Brazil",
+        "B": "China",
+        "C": "Russia",
+        "D": "Nigeria"
+      },
+      "correct_answer": "B",
+      "explanation": "China's poverty reduction is considered one of the most successful examples of growth-led poverty decline.",
+      "difficulty": "medium",
+      "source_section": "3.2"
+    },
+    {
+      "question_number": 21,
+      "question": "The concept of 'Human Poverty' includes lack of income plus lack of:",
+      "options": {
+        "A": "Entertainment",
+        "B": "Education, healthcare, and social dignity",
+        "C": "Private transport",
+        "D": "Imported goods"
+      },
+      "correct_answer": "B",
+      "explanation": "Human poverty is a broader definition that addresses the qualitative aspects of a person's life and rights.",
+      "difficulty": "medium",
+      "source_section": "3.7"
+    },
+    {
+      "question_number": 22,
+      "question": "The gap between 'Economic Growth' and 'Poverty Reduction' is often due to:",
+      "options": {
+        "A": "Too much farming",
+        "B": "Unequal distribution of the benefits of growth",
+        "C": "High literacy",
+        "D": "Low birth rates"
+            },
+      "correct_answer": "B",
+      "explanation": "Growth does not always 'trickle down' to the poorest if assets and opportunities are concentrated.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    },
+    {
+      "question_number": 23,
+      "question": "Which group is known as the 'poorest of the poor' because they are denied resources within a family?",
+      "options": {
+        "A": "Working men",
+        "B": "Women, elderly, and female infants",
+        "C": "Eldest sons",
+        "D": "Village heads"
+      },
+      "correct_answer": "B",
+      "explanation": "Intra-household inequality means women and the elderly often suffer more than the men in a poor family.",
+      "difficulty": "medium",
+      "source_section": "3.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Landlessness is a major cause of poverty in:",
+      "options": {
+        "A": "Urban areas",
+        "B": "Rural areas",
+        "C": "Metros",
+        "D": "Cities"
+      },
+      "correct_answer": "B",
+      "explanation": "In rural India, land is the primary asset; without it, families are forced into low-wage agricultural labor.",
+      "difficulty": "medium",
+      "source_section": "3.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Poverty alleviation programs often fail because of:",
+      "options": {
+        "A": "Lack of money",
+        "B": "Lack of proper implementation and right targeting",
+        "C": "High interest rates",
+        "D": "Too many factories"
+      },
+      "correct_answer": "B",
+      "explanation": "Despite good intentions, administrative leakages and poor selection of beneficiaries often dilute the impact of schemes.",
+      "difficulty": "medium",
+      "source_section": "3.6"
+    }
+  ]
+}

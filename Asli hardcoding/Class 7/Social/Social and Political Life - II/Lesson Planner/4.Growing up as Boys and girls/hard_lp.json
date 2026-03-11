@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Social and Political Life - II",
+    "chapter_name": "Growing Up as Boys and Girls",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze gender as a socio-cultural construct through comparative ethnographic studies (Samoa and Madhya Pradesh)",
+        "Evaluate the structural devaluation of 'reproductive labor' within the patriarchal economic framework",
+        "Critically examine the 'Double Burden' phenomenon and its impact on female workforce participation",
+        "Investigate the intersectionality of class and gender in the lives of domestic workers",
+        "Deconstruct the 'Hidden Curriculum' of gender socialization in childhood play and spatial mobility",
+        "Synthesize the relationship between Constitutional mandates of equality and State-led institutional interventions",
+        "Formulate arguments on the necessity of 'Care-giving' as a recognized economic activity"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Sociological Analysis: Samoa vs. Madhya Pradesh",
+            "topics_covered": [
+                "Ethnographic study of Samoan Islands (1920s): Freedom from formal gendered childhood",
+                "Spatial Politics in 1960s Madhya Pradesh: The street as a 'gendered' space",
+                "The shift from 'care-receiver' to 'care-giver' in indigenous societies"
+            ],
+            "teaching_strategy": [
+                "Comparative analysis of 'Socialization' models (Formal vs. Informal)",
+                "Discussion on 'Spatial Agency': How girls and boys perceive public vs. private domains",
+                "Anthropological inquiry: Why did Samoan children assume responsibility earlier?"
+            ],
+            "student_activities": [
+                "Draft a comparative report on 'Spatial Mobility' of girls in 1960s MP vs. modern urban India",
+                "Analyze the 'Group Movement' of girls as a defense mechanism against social gaze"
+            ],
+            "assessment": [
+                "HOTS: 'Is the street a neutral space?'",
+                "Critical analysis of the transition points in Samoan childhood"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Deconstructing Socialization: Toys and Agency",
+            "topics_covered": [
+                "Toys as ideological tools: Creating 'Different Futures'",
+                "The psychological impact of gender-coded communication",
+                "Subtle conditioning: Soft-spokenness vs. Assertiveness"
+            ],
+            "teaching_strategy": [
+                "Semiotic analysis of toy packaging and marketing",
+                "Discussion on how socialization limits vocational aspirations",
+                "Inquiry into 'Gender Roles' as a mechanism for social order"
+            ],
+            "student_activities": [
+                "Analyze three advertisements for children's products and identify the 'gendered script' being used",
+                "Debate: 'Can gender-neutral parenting exist in a gendered society?'"
+            ],
+            "assessment": [
+                "Reflection paper: 'Toys as a prelude to professional segregation'",
+                "Identifying 'Gender Markers' in everyday vocabulary"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Economics of Housework: Invisible & Unpaid",
+            "topics_covered": [
+                "The 'Invisible' nature of domestic labor",
+                "Structural Devaluation: Why 'Home-making' isn't counted in GDP",
+                "Case Study: The 'One-Day Strike' – disrupting the household equilibrium"
+            ],
+            "teaching_strategy": [
+                "Economic analysis: Calculating the 'Shadow Price' of daily domestic chores",
+                "Critiquing the 'Naturalness' of care-giving being a female-only domain",
+                "Analyzing the physical and mental toll of 'invisible' tasks"
+            ],
+            "student_activities": [
+                "Create a 'Labor Audit' of a household for one week, assigning hypothetical wages to each task",
+                "Analyze the comic strip: How does the father's perception of 'work' exclude domesticity?"
+            ],
+            "assessment": [
+                "Analytical response: 'Explain the systemic reasons for the devaluation of housework'",
+                "Definition and significance of 'Care-giving' as labor"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Informal Sector: Domestic Workers",
+            "topics_covered": [
+                "The life of Melani: A study in marginalization and class-gender intersection",
+                "The 'Dignity of Labor' deficit in domestic help",
+                "Lack of legal safeguards and the 'Employer-Employee' power dynamic"
+            ],
+            "teaching_strategy": [
+                "Sociological inquiry: Why is domestic work primarily done by women and the marginalized?",
+                "Discussion on 'Living Standards' vs. 'Service Provided' in the story of Melani",
+                "Exploring the 'Master-Servant' narrative vs. professional labor rights"
+            ],
+            "student_activities": [
+                "Conduct a mock interview with an imaginary domestic worker to identify 'Rights Violations'",
+                "Write a policy proposal for the 'Social Security of Domestic Workers'"
+            ],
+            "assessment": [
+                "Short essay: 'The intersection of poverty and gender in domestic labor'",
+                "Explaining why housework is 'physically demanding' using specific examples"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Double Burden and the State's Role",
+            "topics_covered": [
+                "The 'Double Burden': Theoretical framework and real-world data",
+                "Article 15: Constitutional mandate vs. Social reality",
+                "Inequality as a 'Systemic Issue' rather than an 'Individual Choice'"
+            ],
+            "teaching_strategy": [
+                "Analyzing 'Time-Use Survey' data to visualize the Double Burden",
+                "Discussion on why the State must intervene in the 'Private' sphere of the home",
+                "Mapping the transition from 'Constitutional Rights' to 'Legislative Action'"
+            ],
+            "student_activities": [
+                "Create an infographic explaining the 'Double Burden' and its impact on women's health",
+                "Research: Does the Constitution permit 'special provisions' for women? Identify the clause."
+            ],
+            "assessment": [
+                "Defining 'Double Burden' in a sociological context",
+                "Logic-based quiz on the role of the State in ensuring equality"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Institutional Interventions: Anganwadis and Crèches",
+            "topics_covered": [
+                "The Anganwadi system: Decentralized childcare and nutrition",
+                "The Maternity Benefit Act (Crèche provision): Economic and social impact",
+                "Enabling Girls' Education through sibling-care alternatives"
+            ],
+            "teaching_strategy": [
+                "Evaluating the 'Chain Reaction': Crèche $\rightarrow$ Mother's Employment $\rightarrow$ Daughter's Schooling",
+                "Critique of current childcare infrastructure in India",
+                "Discussion on 'Institutionalizing Care' to liberate female labor"
+            ],
+            "student_activities": [
+                "Analyze a case study: How an Anganwadi improved the female literacy rate in a specific village",
+                "Draft a letter to the Labor Ministry advocating for stricter Crèche law enforcement"
+            ],
+            "assessment": [
+                "Explaining the strategic importance of Crèches for girls' education",
+                "Critical evaluation of Anganwadi functions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Synthesis: Towards Gender Equity",
+            "topics_covered": [
+                "Synthesizing Samoa, MP, and contemporary legal frameworks",
+                "The concept of 'Equity' vs. 'Equality' in gender",
+                "Final mastery of NCERT HOTS questions"
+            ],
+            "teaching_strategy": [
+                "Advanced Concept Mapping: The cycle of Socialization and Devaluation",
+                "Seminar: 'The Future of Care-giving in a Digital Economy'",
+                "Review of Assertion-Reasoning patterns"
+            ],
+            "student_activities": [
+                "Construct an integrated mind map of the entire chapter",
+                "Participate in a 'Gender Mastery' debate"
+            ],
+            "assessment": [
+                "Hard-level Unit Test (30 Marks)",
+                "Evaluation of the integrated mind map for conceptual depth"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Social and Political Life - II Textbook",
+        "National Time-Use Survey (TUS) data charts",
+        "Documentary snippets on Domestic Workers' movements",
+        "Constitutional Law charts (Article 15 & 39)",
+        "Global comparison data on 'The Unpaid Work Gap'"
+    ],
+    "evaluation_methods": [
+        "HOTS-based Unit Test",
+        "Analytical report on 'Spatial Politics'",
+        "Economic 'Labor Audit' project",
+        "Policy proposal evaluation",
+        "Assertion-Reasoning logical deductions"
+    ],
+    "teacher_tip": "At the hard level, avoid treating this as a 'women's chapter'. Treat it as a 'structure of society' chapter. Focus on how the devaluation of domestic work isn't just a social habit, but an economic loophole that democracy must close."
+}

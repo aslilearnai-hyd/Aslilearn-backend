@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 1: Resources and Development",
+  "generated_at": "2026-03-11T16:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which combination correctly represents the factors required for something to become a resource?",
+      "options": {
+        "A": "Technology, culture and climate",
+        "B": "Technology, economic feasibility and cultural acceptability",
+        "C": "Population, land and minerals",
+        "D": "Agriculture, trade and transport"
+      },
+      "correct_answer": "B",
+      "explanation": "A resource must be technologically accessible, economically feasible, and culturally acceptable.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which classification of resources includes 'stock' and 'reserves'?",
+      "options": {
+        "A": "Based on origin",
+        "B": "Based on exhaustibility",
+        "C": "Based on ownership",
+        "D": "Based on status of development"
+      },
+      "correct_answer": "D",
+      "explanation": "Stock and reserves are classifications based on the status of development of resources.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which international event endorsed global forest principles and Agenda 21?",
+      "options": {
+        "A": "Kyoto Conference",
+        "B": "Rio Earth Summit",
+        "C": "Paris Climate Summit",
+        "D": "Montreal Protocol"
+      },
+      "correct_answer": "B",
+      "explanation": "The Rio Earth Summit in 1992 endorsed global forest principles and adopted Agenda 21.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which book by Schumacher highlighted the importance of resource conservation?",
+      "options": {
+        "A": "Silent Spring",
+        "B": "Small is Beautiful",
+        "C": "Our Common Future",
+        "D": "Limits to Growth"
+      },
+      "correct_answer": "B",
+      "explanation": "Schumacher emphasized resource conservation in the book 'Small is Beautiful'.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which step of resource planning involves surveying and mapping of resources?",
+      "options": {
+        "A": "Implementation stage",
+        "B": "Identification and inventory stage",
+        "C": "Institutional development stage",
+        "D": "Economic evaluation stage"
+      },
+      "correct_answer": "B",
+      "explanation": "Identification and inventory involve surveying and mapping resources.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which region is rich in solar and wind energy but lacks water resources?",
+      "options": {
+        "A": "Punjab",
+        "B": "Rajasthan",
+        "C": "Kerala",
+        "D": "Assam"
+      },
+      "correct_answer": "B",
+      "explanation": "Rajasthan has abundant solar and wind energy but faces water scarcity.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the approximate percentage of plain land area in India?",
+      "options": {
+        "A": "27%",
+        "B": "30%",
+        "C": "43%",
+        "D": "55%"
+      },
+      "correct_answer": "C",
+      "explanation": "About 43% of India's land area consists of plains.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following land categories includes roads, buildings, and factories?",
+      "options": {
+        "A": "Net sown area",
+        "B": "Land put to non-agricultural uses",
+        "C": "Fallow land",
+        "D": "Permanent pasture"
+      },
+      "correct_answer": "B",
+      "explanation": "Land used for settlements, industries, and infrastructure is categorized as non-agricultural use.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which human activity contributes significantly to land degradation in Jharkhand and Odisha?",
+      "options": {
+        "A": "Over irrigation",
+        "B": "Mining",
+        "C": "Afforestation",
+        "D": "Terrace farming"
+      },
+      "correct_answer": "B",
+      "explanation": "Mining activities cause deforestation and land degradation in these states.",
+      "difficulty": "hard",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Which process increases soil salinity due to excessive irrigation?",
+      "options": {
+        "A": "Leaching",
+        "B": "Waterlogging",
+        "C": "Evaporation",
+        "D": "Weathering"
+      },
+      "correct_answer": "B",
+      "explanation": "Over irrigation leads to waterlogging and salinity in soil.",
+      "difficulty": "hard",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Which factor plays a major role in soil formation over millions of years?",
+      "options": {
+        "A": "Urbanization",
+        "B": "Weathering of rocks",
+        "C": "Industrialization",
+        "D": "Mining"
+      },
+      "correct_answer": "B",
+      "explanation": "Soil forms mainly through the weathering of rocks over long periods.",
+      "difficulty": "hard",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Which layer of soil is directly responsible for plant growth?",
+      "options": {
+        "A": "Subsoil",
+        "B": "Bedrock",
+        "C": "Topsoil",
+        "D": "Substratum"
+      },
+      "correct_answer": "C",
+      "explanation": "Topsoil contains nutrients and organic matter necessary for plant growth.",
+      "difficulty": "hard",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Which soil type is divided into Bangar and Khadar based on age?",
+      "options": {
+        "A": "Black soil",
+        "B": "Alluvial soil",
+        "C": "Laterite soil",
+        "D": "Red soil"
+      },
+      "correct_answer": "B",
+      "explanation": "Alluvial soil is classified into Bangar (old) and Khadar (new).",
+      "difficulty": "hard",
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 14,
+      "question": "Which soil type develops cracks during hot weather and has high moisture retention?",
+      "options": {
+        "A": "Black soil",
+        "B": "Laterite soil",
+        "C": "Red soil",
+        "D": "Arid soil"
+      },
+      "correct_answer": "A",
+      "explanation": "Black soil expands and contracts, forming cracks in dry seasons.",
+      "difficulty": "hard",
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor causes red soil to appear yellow?",
+      "options": {
+        "A": "Presence of calcium",
+        "B": "Hydrated iron oxide",
+        "C": "High humus",
+        "D": "High salt content"
+      },
+      "correct_answer": "B",
+      "explanation": "Red soil appears yellow when iron occurs in hydrated form.",
+      "difficulty": "hard",
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 16,
+      "question": "Which soil type forms due to intense leaching in high rainfall areas?",
+      "options": {
+        "A": "Alluvial soil",
+        "B": "Laterite soil",
+        "C": "Arid soil",
+        "D": "Black soil"
+      },
+      "correct_answer": "B",
+      "explanation": "Laterite soil forms due to intense leaching in tropical climates.",
+      "difficulty": "hard",
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 17,
+      "question": "Which soil type is commonly found in the Deccan plateau?",
+      "options": {
+        "A": "Alluvial soil",
+        "B": "Black soil",
+        "C": "Arid soil",
+        "D": "Forest soil"
+      },
+      "correct_answer": "B",
+      "explanation": "Black soil is common in the Deccan plateau region.",
+      "difficulty": "hard",
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Which erosion type occurs when water flows as a sheet over land removing topsoil?",
+      "options": {
+        "A": "Gully erosion",
+        "B": "Sheet erosion",
+        "C": "Wind erosion",
+        "D": "River erosion"
+      },
+      "correct_answer": "B",
+      "explanation": "Sheet erosion removes topsoil as water flows evenly across land.",
+      "difficulty": "hard",
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 19,
+      "question": "Which landform is formed due to gully erosion in the Chambal basin?",
+      "options": {
+        "A": "Plateaus",
+        "B": "Ravines",
+        "C": "Dunes",
+        "D": "Delta"
+      },
+      "correct_answer": "B",
+      "explanation": "Deep gullies in the Chambal basin form ravines.",
+      "difficulty": "hard",
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 20,
+      "question": "Which farming practice follows the natural contour lines of hills?",
+      "options": {
+        "A": "Strip cropping",
+        "B": "Contour ploughing",
+        "C": "Mixed farming",
+        "D": "Shifting cultivation"
+      },
+      "correct_answer": "B",
+      "explanation": "Contour ploughing reduces water flow and soil erosion.",
+      "difficulty": "hard",
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 21,
+      "question": "Which conservation technique stabilizes sand dunes in desert regions?",
+      "options": {
+        "A": "Afforestation",
+        "B": "Planting thorny bushes",
+        "C": "Strip cropping",
+        "D": "Contour farming"
+      },
+      "correct_answer": "B",
+      "explanation": "Thorny bushes help stabilize sand dunes and reduce erosion.",
+      "difficulty": "hard",
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor mainly influences soil formation in mountainous areas?",
+      "options": {
+        "A": "Parent rock and climate",
+        "B": "Population density",
+        "C": "Industrialization",
+        "D": "Urban development"
+      },
+      "correct_answer": "A",
+      "explanation": "Parent rock and climate significantly influence soil formation.",
+      "difficulty": "hard",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 23,
+      "question": "Which resource type belongs to the ownership category?",
+      "options": {
+        "A": "Biotic resources",
+        "B": "National resources",
+        "C": "Renewable resources",
+        "D": "Potential resources"
+      },
+      "correct_answer": "B",
+      "explanation": "National resources are classified based on ownership.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which land category represents the physical area where crops are grown?",
+      "options": {
+        "A": "Gross cropped area",
+        "B": "Net sown area",
+        "C": "Fallow land",
+        "D": "Pasture land"
+      },
+      "correct_answer": "B",
+      "explanation": "Net sown area is the actual area where crops are grown.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Which technique divides fields with grass strips to reduce wind speed?",
+      "options": {
+        "A": "Contour farming",
+        "B": "Terrace farming",
+        "C": "Strip cropping",
+        "D": "Afforestation"
+      },
+      "correct_answer": "C",
+      "explanation": "Strip cropping breaks wind force and prevents soil erosion.",
+      "difficulty": "hard",
+      "source_section": "Section 1.8"
+    }
+  ]
+}

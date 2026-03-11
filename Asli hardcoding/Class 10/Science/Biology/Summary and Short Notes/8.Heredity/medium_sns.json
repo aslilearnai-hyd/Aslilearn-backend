@@ -1,0 +1,40 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Heredity",
+    "difficulty": "Medium",
+    "source_pdf": "science_textbook_class10_chapter8.pdf",
+    "short_notes": {
+        "key_points": [
+            "Heredity explains how traits are passed from parents to offspring through genes",
+            "Genes are located on chromosomes and control specific characteristics",
+            "Mendel conducted experiments on pea plants to understand inheritance patterns",
+            "Alleles are different forms of the same gene",
+            "Traits may be dominant or recessive depending on allele interaction",
+            "Genotype refers to genetic makeup while phenotype refers to observable traits",
+            "Variation among individuals arises due to genetic recombination during reproduction"
+        ],
+        "examples": [
+            "In pea plants, tallness (T) is dominant over dwarfness (t)",
+            "Cross between TT and tt produces Tt offspring which are tall",
+            "In F2 generation, plants show 3 tall : 1 dwarf ratio",
+            "AB blood group shows codominance where both alleles express equally",
+            "Pink flowers in snapdragon plants show incomplete dominance"
+        ],
+        "formulas": [
+            "Current = I = Q/t (used in genetics analogy for gene transfer rate)",
+            "Monohybrid phenotypic ratio → 3 : 1",
+            "Monohybrid genotypic ratio → 1 : 2 : 1",
+            "Dihybrid phenotypic ratio → 9 : 3 : 3 : 1",
+            "Genotype → Genetic constitution of an organism",
+            "Phenotype → Observable traits"
+        ],
+        "exam_tips": [
+            "Practice drawing Punnett squares for monohybrid and dihybrid crosses",
+            "Understand differences between genotype and phenotype clearly",
+            "Revise Mendel’s three laws carefully",
+            "Remember examples of incomplete dominance and codominance",
+            "Understand how variations help in evolution and survival"
+        ]
+    }
+}

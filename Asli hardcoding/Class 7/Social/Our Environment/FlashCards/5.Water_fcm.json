@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 5: Water: Our Lifeline",
+    "generated_at": "2026-03-07T11:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "Why is water important for life?",
+                "correct_answer": "It is essential for humans, animals, plants, and daily activities like drinking, cooking, and cleaning",
+                "explanation": "Without water, life cannot survive; it is required for all biological and household needs.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "question": "What are the main sources of water?",
+                "correct_answer": "Rivers, lakes, ponds, wells, rain, and groundwater",
+                "explanation": "Water can be surface water from rivers/lakes or stored underground as groundwater.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "How is water used in daily life?",
+                "correct_answer": "For drinking, cooking, bathing, cleaning, agriculture, and industries",
+                "explanation": "Water is necessary for domestic, agricultural, and industrial purposes.",
+                "source_section": "Section 5.3"
+            },
+            {
+                "question": "What is the water cycle?",
+                "correct_answer": "The continuous movement of water through evaporation, condensation, precipitation, and collection",
+                "explanation": "Water evaporates, forms clouds, falls as rain, and collects in rivers, lakes, or underground.",
+                "source_section": "Section 5.4"
+            },
+            {
+                "question": "What is groundwater?",
+                "correct_answer": "Water stored beneath the earth’s surface in aquifers, accessed through wells and borewells",
+                "explanation": "Groundwater supports irrigation and drinking supply, especially in dry regions.",
+                "source_section": "Section 5.5"
+            },
+            {
+                "question": "What causes water scarcity?",
+                "correct_answer": "Low rainfall, overuse, and pollution leading to demand exceeding supply",
+                "explanation": "When water is insufficient for humans, animals, and agriculture, scarcity occurs.",
+                "source_section": "Section 5.6"
+            },
+            {
+                "question": "What is water pollution?",
+                "correct_answer": "Contamination of water by harmful substances affecting humans, animals, and ecosystems",
+                "explanation": "Industrial, agricultural, and domestic waste can pollute rivers and lakes, making water unsafe.",
+                "source_section": "Section 5.7"
+            },
+            {
+                "question": "How do dams and reservoirs help communities?",
+                "correct_answer": "They store water for irrigation, drinking, hydroelectricity, and control floods",
+                "explanation": "Dams supply water but can also displace people and affect ecosystems.",
+                "source_section": "Section 5.8"
+            },
+            {
+                "question": "What is rainwater harvesting?",
+                "correct_answer": "Collecting and storing rainwater to recharge groundwater and reduce scarcity",
+                "explanation": "Rainwater harvesting helps conserve water for domestic and agricultural use.",
+                "source_section": "Section 5.9"
+            },
+            {
+                "question": "What is sustainable water management?",
+                "correct_answer": "Efficient and planned use of water, protecting resources from pollution and maintaining natural cycles",
+                "explanation": "Sustainable management ensures water availability for future generations and preserves ecosystems.",
+                "source_section": "Section 5.10"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Sources of Water",
+                "content": "Rivers, lakes, ponds, wells, rain, and groundwater provide water for life and daily activities.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Uses of Water",
+                "content": "Water is used in households, agriculture, industries, and electricity generation.",
+                "source_section": "Section 5.3"
+            },
+            {
+                "title": "Water Cycle",
+                "content": "Evaporation, condensation, precipitation, and collection keep water moving in nature.",
+                "source_section": "Section 5.4"
+            },
+            {
+                "title": "Groundwater",
+                "content": "Stored under the earth and accessed through wells; crucial during dry seasons.",
+                "source_section": "Section 5.5"
+            },
+            {
+                "title": "Water Scarcity",
+                "content": "Occurs when demand exceeds supply due to low rainfall, overuse, or pollution.",
+                "source_section": "Section 5.6"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Water is essential for all living beings and daily human activities.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "fact": "Dams store water but can impact local communities and ecosystems.",
+                "source_section": "Section 5.8"
+            },
+            {
+                "fact": "Rainwater harvesting helps recharge groundwater and prevents scarcity.",
+                "source_section": "Section 5.9"
+            },
+            {
+                "fact": "Groundwater supports irrigation and drinking supply, especially in dry areas.",
+                "source_section": "Section 5.5"
+            },
+            {
+                "fact": "Polluted water is unsafe for humans, animals, and plants, highlighting the need for conservation.",
+                "source_section": "Section 5.7"
+            }
+        ]
+    }
+}

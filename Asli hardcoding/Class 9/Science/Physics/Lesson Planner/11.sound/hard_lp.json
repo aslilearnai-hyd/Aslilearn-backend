@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Sound",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply sound concepts in advanced scenarios",
+        "Observe and analyze Doppler effect",
+        "Understand beat phenomenon and interference of sound",
+        "Perform measurements of speed of sound using resonance",
+        "Apply conservation of energy in vibrating systems",
+        "Solve complex numerical problems on sound frequency, wavelength, and speed"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Doppler Effect",
+            "topics_covered": [
+                "Definition and concept",
+                "Frequency change due to motion",
+                "Examples: moving vehicles, ambulance siren"
+            ],
+            "teaching_strategy": [
+                "Demonstration using moving sound source (bell or whistle)",
+                "Board explanation with diagrams"
+            ],
+            "student_activities": [
+                "Observe change in pitch as source moves",
+                "Record observations and explain frequency variation"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook verification"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Beats and Interference",
+            "topics_covered": [
+                "Formation of beats",
+                "Constructive and destructive interference",
+                "Applications in tuning instruments"
+            ],
+            "teaching_strategy": [
+                "Demonstration using two tuning forks of close frequencies",
+                "Board explanation of beat frequency"
+            ],
+            "student_activities": [
+                "Listen to beats",
+                "Calculate beat frequency and record"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook verification"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Resonance in Air Column",
+            "topics_covered": [
+                "Concept of resonance",
+                "Measuring speed of sound using resonance tube",
+                "Calculations for fundamental and overtone frequencies"
+            ],
+            "teaching_strategy": [
+                "Demonstration using resonance tube and tuning forks",
+                "Stepwise calculation on board"
+            ],
+            "student_activities": [
+                "Measure air column length for resonance",
+                "Calculate speed of sound using observed values"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Interference and Superposition of Sound",
+            "topics_covered": [
+                "Constructive and destructive interference",
+                "Interference pattern observations",
+                "Practical examples: multiple speakers, sound waves in halls"
+            ],
+            "teaching_strategy": [
+                "Demonstration with two speakers playing same frequency",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Observe regions of loud and soft sound",
+                "Record positions of maxima and minima"
+            ],
+            "assessment": [
+                "Notebook verification",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Multiple Echoes and Reflection",
+            "topics_covered": [
+                "Reflection of sound",
+                "Multiple echoes and their timing",
+                "Applications in sonar and architecture"
+            ],
+            "teaching_strategy": [
+                "Demonstration in open space with multiple walls",
+                "Discussion on real-life applications"
+            ],
+            "student_activities": [
+                "Measure time intervals of echoes",
+                "Analyze reflection paths"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook verification"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Frequency Analysis and Advanced Sound Measurements",
+            "topics_covered": [
+                "Measuring pitch and frequency of musical notes",
+                "Speed of sound variation with temperature",
+                "Effect of medium on sound speed"
+            ],
+            "teaching_strategy": [
+                "Demonstration using musical instruments or apps",
+                "Board calculation for speed of sound at different temperatures"
+            ],
+            "student_activities": [
+                "Measure frequency of notes",
+                "Compare speed of sound in air at different temperatures and in different media"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Class exercises"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Problem Solving",
+            "topics_covered": [
+                "Recap of Doppler effect, beats, resonance, interference, and sound speed calculations",
+                "Solving numerical problems",
+                "Common mistakes and tips"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Problem-solving on board"
+            ],
+            "student_activities": [
+                "Group quiz",
+                "Solve revision worksheets individually"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Science Textbook",
+        "Tuning forks, resonance tube, stopwatch, measuring tape, musical instruments"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class exercises",
+        "MCQs",
+        "Short answer tests"
+    ],
+    "teacher_tip": "Use demonstrations like moving sound sources, tuning forks, and resonance tube to explain Doppler effect, beats, and interference for conceptual clarity."
+}

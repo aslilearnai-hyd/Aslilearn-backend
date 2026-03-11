@@ -1,0 +1,238 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T11:40:00",
+    "difficulty": "medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Differentiate between distance and displacement.",
+            "answer": "Distance is the total path travelled, while displacement is the shortest distance between initial and final positions.",
+            "key_points": [
+                "total path",
+                "shortest distance"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Give one situation where displacement is zero but distance is not zero.",
+            "answer": "When a person walks in a circle and returns to the starting point.",
+            "key_points": [
+                "final equals initial"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define average speed.",
+            "answer": "Average speed is the total distance travelled divided by total time taken.",
+            "key_points": [
+                "total distance",
+                "total time"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is velocity considered a vector quantity?",
+            "answer": "Because velocity has both magnitude and direction.",
+            "key_points": [
+                "magnitude",
+                "direction"
+            ],
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What happens to velocity when the direction of motion changes?",
+            "answer": "Velocity changes because it depends on direction.",
+            "key_points": [
+                "direction affects velocity"
+            ],
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Define acceleration.",
+            "answer": "Acceleration is the rate of change of velocity with time.",
+            "key_points": [
+                "change in velocity"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What does negative acceleration indicate?",
+            "answer": "It indicates a decrease in velocity or retardation.",
+            "key_points": [
+                "decrease in velocity"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What type of motion occurs when velocity changes continuously?",
+            "answer": "Non-uniform motion.",
+            "key_points": [
+                "changing velocity"
+            ],
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the SI unit of velocity?",
+            "answer": "Metre per second (m/s).",
+            "key_points": [
+                "m/s"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What does the slope of a distance-time graph indicate?",
+            "answer": "It indicates the speed of the object.",
+            "key_points": [
+                "speed"
+            ],
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What does the slope of a velocity-time graph represent?",
+            "answer": "Acceleration.",
+            "key_points": [
+                "acceleration"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What does a horizontal line in a velocity-time graph represent?",
+            "answer": "Uniform velocity.",
+            "key_points": [
+                "constant velocity"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What does the area under a velocity-time graph represent?",
+            "answer": "Displacement.",
+            "key_points": [
+                "area gives displacement"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Write the formula for acceleration.",
+            "answer": "a = (v − u) / t",
+            "key_points": [
+                "acceleration formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What do the symbols u, v, a and t represent in motion equations?",
+            "answer": "u = initial velocity, v = final velocity, a = acceleration, t = time.",
+            "key_points": [
+                "motion variables"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the three equations of motion.",
+            "answer": "v = u + at, s = ut + ½at², v² − u² = 2as.",
+            "key_points": [
+                "three motion equations"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Under what condition are the equations of motion applicable?",
+            "answer": "When acceleration is uniform.",
+            "key_points": [
+                "uniform acceleration"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Give one example of uniformly accelerated motion.",
+            "answer": "A freely falling body.",
+            "key_points": [
+                "free fall"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the SI unit of acceleration?",
+            "answer": "Metre per second squared (m/s²).",
+            "key_points": [
+                "m/s²"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is circular motion considered accelerated motion?",
+            "answer": "Because the direction of velocity continuously changes.",
+            "key_points": [
+                "direction change"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Define uniform circular motion.",
+            "answer": "Motion along a circular path with constant speed.",
+            "key_points": [
+                "circular path",
+                "constant speed"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Give one example of uniform circular motion.",
+            "answer": "The motion of the Earth around the Sun.",
+            "key_points": [
+                "Earth motion"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 23,
+            "question": "What instrument measures the distance travelled by a vehicle?",
+            "answer": "Odometer.",
+            "key_points": [
+                "odometer"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What instrument measures the speed of a vehicle?",
+            "answer": "Speedometer.",
+            "key_points": [
+                "speedometer"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is meant by retardation?",
+            "answer": "Retardation is negative acceleration that decreases velocity.",
+            "key_points": [
+                "negative acceleration"
+            ],
+            "source_section": "Section 7.3"
+        }
+    ]
+}

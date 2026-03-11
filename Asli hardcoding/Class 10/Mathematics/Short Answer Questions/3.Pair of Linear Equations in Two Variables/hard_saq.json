@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-03-01T20:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why a pair of linear equations cannot have exactly two solutions.",
+            "answer": "Because two straight lines can intersect at only one point.",
+            "key_concepts": [
+                "number of solutions"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why a dependent system is always consistent.",
+            "answer": "Because it has infinitely many solutions.",
+            "key_concepts": [
+                "dependent system"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is graphical method not reliable for exact solutions?",
+            "answer": "Because solutions depend on scale and drawing accuracy.",
+            "key_concepts": [
+                "graphical limitations"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why algebraic methods are preferred over graphical method.",
+            "answer": "Because algebraic methods give exact solutions.",
+            "key_concepts": [
+                "algebraic methods"
+            ],
+            "marks": 3,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Why do proportional equations represent the same line?",
+            "answer": "Because one equation is a multiple of the other.",
+            "key_concepts": [
+                "dependent equations"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does same slope imply parallel lines?",
+            "answer": "Because both lines rise or fall at the same rate.",
+            "key_concepts": [
+                "slope"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does different slope ensure intersection?",
+            "answer": "Because lines with different slopes must cross.",
+            "key_concepts": [
+                "intersection"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is an inconsistent system not useful in real-life problems?",
+            "answer": "Because it gives no valid solution.",
+            "key_concepts": [
+                "inconsistent system"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why cross-multiplication fails for parallel lines.",
+            "answer": "Because the determinant becomes zero.",
+            "key_concepts": [
+                "cross-multiplication"
+            ],
+            "marks": 3,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why must equations be solved simultaneously?",
+            "answer": "Because the solution must satisfy both equations.",
+            "key_concepts": [
+                "simultaneous solution"
+            ],
+            "marks": 3,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why two equations are needed to find two unknowns.",
+            "answer": "Because one equation cannot determine both unknowns uniquely.",
+            "key_concepts": [
+                "unknowns"
+            ],
+            "marks": 3,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does the intersection point represent equality of equations?",
+            "answer": "Because both equations have the same values at that point.",
+            "key_concepts": [
+                "intersection"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why linear equations model uniform change.",
+            "answer": "Because the rate of change remains constant.",
+            "key_concepts": [
+                "linear modelling"
+            ],
+            "marks": 3,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is an independent system important in applications?",
+            "answer": "Because it gives a unique and definite solution.",
+            "key_concepts": [
+                "independent system"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why does elimination method require equal coefficients?",
+            "answer": "To remove one variable easily by addition or subtraction.",
+            "key_concepts": [
+                "elimination method"
+            ],
+            "marks": 3,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why substitution method is easy when coefficient is one.",
+            "answer": "Because the variable can be isolated easily.",
+            "key_concepts": [
+                "substitution method"
+            ],
+            "marks": 3,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does graphical intersection indicate solution?",
+            "answer": "Because both equations are satisfied at that point.",
+            "key_concepts": [
+                "graphical meaning"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why does a linear graph always form a straight line?",
+            "answer": "Because the highest power of the variable is one.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 3,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why linear equations are widely used in daily life.",
+            "answer": "Because many situations involve constant rates of change.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the concept of slope important in solving equations?",
+            "answer": "Because slope determines the direction and position of a line.",
+            "key_concepts": [
+                "slope"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do coincident lines represent dependent equations?",
+            "answer": "Because one equation depends on the other.",
+            "key_concepts": [
+                "dependent equations"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why parallel lines represent inconsistent equations.",
+            "answer": "Because they never intersect and have no common solution.",
+            "key_concepts": [
+                "inconsistent equations"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is cross-multiplication method considered fast?",
+            "answer": "Because it directly gives values without lengthy steps.",
+            "key_concepts": [
+                "cross-multiplication"
+            ],
+            "marks": 3,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is graphical method useful despite its limitations?",
+            "answer": "Because it helps visualize the nature of solutions.",
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 3,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of solving pair of linear equations.",
+            "answer": "Because they help solve real-life problems involving two unknowns.",
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 3,
+            "source_section": "3.4"
+        }
+    ]
+}

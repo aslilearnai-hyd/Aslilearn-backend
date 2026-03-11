@@ -1,0 +1,195 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Metals and Non-Metals",
+    "generated_at": "2026-03-10T23:51:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the reaction of different metals with water. Give examples of metals that react with cold water, hot water, and steam.",
+            "answer": "Metals react with water to produce metal oxides/hydroxides and hydrogen gas. 1. Sodium and Potassium react violently with cold water. 2. Magnesium reacts with hot water to form magnesium hydroxide. 3. Iron and Aluminium do not react with liquid water but react with steam to form metal oxides.",
+            "answer_outline": [
+                "General reaction products (Hydroxide/Oxide + H2)",
+                "Cold water reaction (Na, K)",
+                "Hot water reaction (Mg)",
+                "Steam reaction (Fe, Al)"
+            ],
+            "key_concepts": [
+                "reactivity with water",
+                "hydrogen gas",
+                "steam",
+                "metal hydroxides"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the 'Reactivity Series' of metals? How does it help in predicting displacement reactions?",
+            "answer": "The reactivity series is a list of metals arranged in the order of their decreasing activities. Metals at the top (like Potassium) are the most reactive, while those at the bottom (like Gold) are least reactive. A metal higher in the series can displace a metal lower in the series from its salt solution.",
+            "answer_outline": [
+                "Definition of reactivity series",
+                "Arrangement (Decreasing order)",
+                "Principle of displacement",
+                "Example of displacement"
+            ],
+            "key_concepts": [
+                "reactivity series",
+                "displacement reaction",
+                "activity",
+                "salt solution"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Why do ionic compounds have high melting and boiling points?",
+            "answer": "Ionic compounds are formed by the transfer of electrons, resulting in strong electrostatic forces of attraction between oppositely charged ions (positive and negative). A considerable amount of energy is required to break these strong inter-ionic bonds, leading to high melting and boiling points.",
+            "answer_outline": [
+                "Formation by electron transfer",
+                "Nature of forces (Electrostatic)",
+                "Energy requirement for bond breaking",
+                "Conclusion (High MP/BP)"
+            ],
+            "key_concepts": [
+                "electrostatic force",
+                "inter-ionic attraction",
+                "energy",
+                "ionic bond"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the formation of Magnesium Chloride ($MgCl_2$) by the transfer of electrons.",
+            "answer": "Magnesium (atomic number 12) has a configuration of 2, 8, 2. It loses 2 electrons to achieve stability, forming $Mg^{2+}$. Chlorine (atomic number 17) has a configuration of 2, 8, 7. Two chlorine atoms each gain one electron from magnesium to form $Cl^-$ ions. The attraction between $Mg^{2+}$ and two $Cl^-$ ions forms $MgCl_2$.",
+            "answer_outline": [
+                "Electronic configuration of Mg and Cl",
+                "Loss of electrons by Mg",
+                "Gain of electrons by two Cl atoms",
+                "Formation of ionic bond"
+            ],
+            "key_concepts": [
+                "electron transfer",
+                "magnesium chloride",
+                "valence electrons",
+                "cation and anion"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Define the terms: (i) Mineral, (ii) Ore, and (iii) Gangue.",
+            "answer": "(i) Mineral: Naturally occurring elements or compounds found in the earth's crust. (ii) Ore: Minerals from which metals can be extracted profitably and conveniently. (iii) Gangue: The earthy impurities like sand and soil present in an ore.",
+            "answer_outline": [
+                "Definition of Mineral",
+                "Definition of Ore",
+                "Definition of Gangue"
+            ],
+            "key_concepts": [
+                "metallurgy",
+                "extraction",
+                "impurities",
+                "earth's crust"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Differentiate between Roasting and Calcination with examples.",
+            "answer": "Roasting is heating sulfide ores strongly in the presence of excess air to convert them into oxides (e.g., $2ZnS + 3O_2 \rightarrow 2ZnO + 2SO_2$). Calcination is heating carbonate ores strongly in limited air or absence of air to convert them into oxides (e.g., $ZnCO_3 \rightarrow ZnO + CO_2$).",
+            "answer_outline": [
+                "Definition of Roasting (Sulfide ores/Excess air)",
+                "Definition of Calcination (Carbonate ores/Limited air)",
+                "Chemical equations for both"
+            ],
+            "key_concepts": [
+                "roasting",
+                "calcination",
+                "sulfide ore",
+                "carbonate ore"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is 'Thermit Reaction'? Mention its use in engineering.",
+            "answer": "The reaction of metal oxides with aluminium is highly exothermic. The displacement of iron oxide by aluminium ($Fe_2O_3 + 2Al \rightarrow 2Fe + Al_2O_3 + Heat$) produces molten iron. This 'Thermit reaction' is used to join cracked railway tracks or broken machine parts.",
+            "answer_outline": [
+                "Definition (Oxide + Aluminium)",
+                "Exothermic nature",
+                "Chemical equation",
+                "Application (Railway welding)"
+            ],
+            "key_concepts": [
+                "thermit reaction",
+                "molten iron",
+                "welding",
+                "aluminium reduction"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the process of electrolytic refining of Copper.",
+            "answer": "A thick block of impure copper is made the anode, and a thin strip of pure copper is made the cathode. The electrolyte is acidified copper sulphate. On passing current, pure copper from the anode dissolves into the electrolyte and deposits onto the cathode. Impurities settle as 'anode mud'.",
+            "answer_outline": [
+                "Anode and Cathode setup",
+                "Electrolyte used",
+                "Process of deposition",
+                "Anode mud"
+            ],
+            "key_concepts": [
+                "electrolytic refining",
+                "anode",
+                "cathode",
+                "anode mud"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4.6"
+        },
+        {
+            "question_number": 9,
+            "question": "What is 'Anodising'? How does it improve the properties of Aluminium?",
+            "answer": "Anodising is the process of forming a thick oxide layer on aluminium. By making aluminium the anode and electrolyzing dilute sulphuric acid, a protective layer of aluminium oxide is created. This layer can be dyed to give an attractive finish and makes the metal highly resistant to further corrosion.",
+            "answer_outline": [
+                "Definition of Anodising",
+                "Electrolytic process",
+                "Formation of oxide layer",
+                "Benefits (Corrosion resistance/Dyeing)"
+            ],
+            "key_concepts": [
+                "anodising",
+                "aluminium oxide",
+                "corrosion resistance",
+                "electrolysis"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "How does the property of an alloy differ from its constituent metals? Give an example with 'Solder'.",
+            "answer": "Alloys often have a lower melting point and lower electrical conductivity than pure metals. For example, Solder is an alloy of Lead (Pb) and Tin (Sn). It has a much lower melting point than either lead or tin, which makes it ideal for welding electrical wires together.",
+            "answer_outline": [
+                "Change in properties (MP/Conductivity)",
+                "Constituents of Solder",
+                "Application based on property"
+            ],
+            "key_concepts": [
+                "alloy",
+                "solder",
+                "melting point",
+                "lead and tin"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

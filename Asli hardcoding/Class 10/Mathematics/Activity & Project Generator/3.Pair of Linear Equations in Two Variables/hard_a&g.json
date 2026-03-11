@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Pair of Linear Equations in Two Variables",
+    "difficulty": "Hard",
+    "source_pdf": "jemh103.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Budget Planning Project",
+            "objective": "Use linear equations for budget analysis",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Prepare budget data",
+                "Form equations"
+            ],
+            "learning_outcome": "Financial modelling",
+            "evaluation": "Correct modelling (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Transport Cost Analysis",
+            "objective": "Analyse transport costs using equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Collect fare data",
+                "Form and solve equations"
+            ],
+            "learning_outcome": "Real-life application",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Graphical Case Study",
+            "objective": "Interpret graphical solutions",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot equations",
+                "Interpret intersection"
+            ],
+            "learning_outcome": "Graph interpretation",
+            "evaluation": "Correct interpretation (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Consistency Research",
+            "objective": "Study consistent and inconsistent systems",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect examples",
+                "Classify systems"
+            ],
+            "learning_outcome": "System analysis",
+            "evaluation": "Classification accuracy (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Business Profit Model",
+            "objective": "Model business profits using equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify variables",
+                "Form equations"
+            ],
+            "learning_outcome": "Economic application",
+            "evaluation": "Model correctness (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Equation Comparison Study",
+            "objective": "Compare multiple equation systems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve systems",
+                "Compare solutions"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Comparison clarity (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Daily Life System Analysis",
+            "objective": "Analyse real-life problems using systems",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Identify problem",
+                "Solve mathematically"
+            ],
+            "learning_outcome": "Problem-solving skill",
+            "evaluation": "Application depth (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Graph Slope Investigation",
+            "objective": "Investigate slopes of linear equations",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot lines",
+                "Compare slopes"
+            ],
+            "learning_outcome": "Slope understanding",
+            "evaluation": "Correct analysis (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "System Design Project",
+            "objective": "Design a system of equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Create scenario",
+                "Form equations"
+            ],
+            "learning_outcome": "Creative modelling",
+            "evaluation": "Design quality (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Case Study on Pricing",
+            "objective": "Study pricing using equations",
+            "materials": [
+                "Internet"
+            ],
+            "steps": [
+                "Research pricing models",
+                "Summarise findings"
+            ],
+            "learning_outcome": "Research skill",
+            "evaluation": "Depth of study (20 marks)"
+        }
+    ]
+}

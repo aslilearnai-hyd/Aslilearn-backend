@@ -1,0 +1,85 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Unit 1: My Brother's Great Invention",
+  "generated_at": "2026-03-09T21:35:00",
+  "concepts": [
+    {
+      "concept_name": "Creativity and Imagination",
+      "difficulty": "easy",
+      "lesson": "Invention begins with the ability to look at everyday objects and imagine them as something more. Creativity is the spark that leads to innovation.",
+      "real_example": "The brother looks at a collection of household scraps and sees the potential to build a complex machine.",
+      "key_points": [
+        "Thinking outside the box",
+        "Seeing potential in 'junk'",
+        "The importance of a playful mind",
+        "Imagination as a starting point for science"
+      ],
+      "source_section": "Introduction"
+    },
+    {
+      "concept_name": "Trial and Error",
+      "difficulty": "easy",
+      "lesson": "Rarely does an invention work perfectly the first time. The process of building involves making mistakes and fixing them.",
+      "real_example": "The machine failing to start or falling apart, requiring the brother to rethink the design.",
+      "key_points": [
+        "Persistence in the face of failure",
+        "Learning from what doesn't work",
+        "The repetitive nature of engineering",
+        "Patience during the building process"
+      ],
+      "source_section": "Plot Development"
+    },
+    {
+      "concept_name": "Sibling Dynamics and Support",
+      "difficulty": "medium",
+      "lesson": "The relationship between siblings often involves a mix of skepticism, curiosity, and eventually, pride in each other's achievements.",
+      "real_example": "The narrator watching the brother's messy process with doubt, only to be amazed by the final result.",
+      "key_points": [
+        "The role of the 'observer' in a story",
+        "Moving from doubt to admiration",
+        "Shared excitement over a common goal",
+        "Supporting family members' passions"
+      ],
+      "source_section": "Theme"
+    },
+    {
+      "concept_name": "Problem Solving",
+      "difficulty": "medium",
+      "lesson": "Every invention is designed to solve a specific problem. Identifying a need is the first step in the 'inventor's journey'.",
+      "real_example": "Building a device to save time or to perform a task that was previously difficult or boring.",
+      "key_points": [
+        "Identifying a 'gap' or a need",
+        "Applying logic to physical objects",
+        "Resourcefulness with limited materials",
+        "Efficiency as a goal of invention"
+      ],
+      "source_section": "Theme"
+    },
+    {
+      "concept_name": "The Impact of Technology",
+      "difficulty": "hard",
+      "lesson": "Even small inventions change the way we interact with our environment. They represent the human desire to master the world around us.",
+      "real_example": "How the brother's invention changes the atmosphere of the house and the way the family views him.",
+      "key_points": [
+        "Tools as extensions of human ability",
+        "The social impact of new ideas",
+        "The responsibility of the creator",
+        "Technological progress at a personal level"
+      ],
+      "source_section": "Climax"
+    },
+    {
+      "concept_name": "The Joy of Discovery",
+      "difficulty": "hard",
+      "lesson": "The ultimate reward for an inventor is not just the machine itself, but the feeling of accomplishment and the thrill of making something new.",
+      "real_example": "The moment the 'Great Invention' finally works and the sense of wonder it creates for the whole family.",
+      "key_points": [
+        "Intrinsic vs. extrinsic rewards",
+        "The 'Eureka' moment",
+        "Building confidence through creation",
+        "Inspiration for future projects"
+      ],
+      "source_section": "Conclusion"
+    }
+  ]
+}

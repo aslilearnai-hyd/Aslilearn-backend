@@ -1,0 +1,25 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Easy",
+    "source_pdf": "jemh110.pdf",
+    "short_notes": {
+        "key_points": [
+            "A circle is the set of all points equidistant from a fixed point called centre",
+            "A tangent touches the circle at exactly one point",
+            "Radius drawn to the point of contact is perpendicular to the tangent"
+        ],
+        "examples": [
+            "Coin, wheel, clock are circular objects"
+        ],
+        "formulas": [
+            "Radius ⟂ Tangent at point of contact"
+        ],
+        "exam_tips": [
+            "Draw neat diagrams",
+            "Mark right angles clearly",
+            "Mention theorem statements properly"
+        ]
+    }
+}

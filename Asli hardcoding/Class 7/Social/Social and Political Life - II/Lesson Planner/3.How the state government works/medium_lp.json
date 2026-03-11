@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Social and Political Life - II",
+    "chapter_name": "How the State Government Works",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the process of electing a Member of Legislative Assembly (MLA)",
+        "Understand the administrative division of a state into constituencies",
+        "Distinguish between the roles of the Ruling Party and the Opposition",
+        "Analyze the executive hierarchy consisting of the Governor, Chief Minister, and Council of Ministers",
+        "Describe the functioning of the Legislative Assembly as a platform for debate and accountability",
+        "Identify the various mechanisms through which the government communicates and acts (Departments, Press Conferences)",
+        "Differentiate between the legislative and executive roles of an MLA"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Representation: The MLA and the Constituency",
+            "topics_covered": [
+                "Definition of an MLA and the election process",
+                "Division of states into constituencies based on population",
+                "Case Study: The Patalpuram water crisis and public demand"
+            ],
+            "teaching_strategy": [
+                "Map-based analysis of state constituencies",
+                "Discussion: 'Why does an MLA represent a specific area and not the whole state?'",
+                "Explanation of Universal Adult Franchise in the context of state elections"
+            ],
+            "student_activities": [
+                "Identify your own constituency and the political party of your current MLA",
+                "Draw a flowchart showing: People $\rightarrow$ Election $\rightarrow$ MLA"
+            ],
+            "assessment": [
+                "Defining 'Constituency' and 'Representivity'",
+                "Short answer: 'How does someone become an MLA?'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Forming the Government: Majority and Opposition",
+            "topics_covered": [
+                "Concept of 'Majority' (Half-way mark + 1)",
+                "The Ruling Party vs. the Opposition",
+                "Coalition governments (Introductory concept)"
+            ],
+            "teaching_strategy": [
+                "Analyzing election results using a hypothetical table of seats",
+                "Debate: 'Is a strong Opposition necessary for a healthy democracy?'",
+                "Categorizing parties based on seat counts"
+            ],
+            "student_activities": [
+                "Exercise: Given a table of 200 seats, identify the ruling party and potential opposition",
+                "List the duties of an Opposition MLA"
+            ],
+            "assessment": [
+                "Defining 'Majority' and 'Opposition'",
+                "Quiz on political parties and symbols"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Executive Leadership: Governor and CM",
+            "topics_covered": [
+                "The Governor as the Head of the State",
+                "Appointment of the Chief Minister and Council of Ministers",
+                "Executive powers and collective responsibility"
+            ],
+            "teaching_strategy": [
+                "Comparison: Head of State (Governor) vs. Head of Government (Chief Minister)",
+                "Discussion on why the Governor is appointed by the Central Government",
+                "Visualizing the hierarchy: Governor $\rightarrow$ CM $\rightarrow$ Cabinet"
+            ],
+            "student_activities": [
+                "Research the names of the current Governor and CM of your state",
+                "Create a diagram showing the appointment process"
+            ],
+            "assessment": [
+                "Differentiating between the powers of the Governor and the CM",
+                "True/False on the role of the Governor"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Legislative Assembly in Session",
+            "topics_covered": [
+                "Functioning of the Vidhan Sabha",
+                "Procedures: Asking questions and debating issues",
+                "Accountability: How ministers respond to the house"
+            ],
+            "teaching_strategy": [
+                "Reading and analyzing the 'Legislative Assembly Debate' from the NCERT text",
+                "Role-play: Conducting a mock session on a school-related issue",
+                "Explaining the term 'Floor of the House'"
+            ],
+            "student_activities": [
+                "Script a dialogue between a Ruling Party MLA and an Opposition MLA regarding health issues",
+                "List three issues discussed in the textbook's assembly debate"
+            ],
+            "assessment": [
+                "Short response: 'Why is the Legislative Assembly called a place of debate?'",
+                "Identifying the 'double role' of an MLA (Legislative and Executive)"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Government Action: Beyond the Assembly",
+            "topics_covered": [
+                "Role of Government Departments (Public Works, Health, Education)",
+                "Press Conferences: Transparency and media interaction",
+                "Executive implementation of decisions"
+            ],
+            "teaching_strategy": [
+                "Analyzing a mock press conference video or transcript",
+                "Discussion: 'How do people know what the government is doing?'",
+                "Mapping a problem (e.g., garbage) to its specific department (Sanitation/Urban Dev)"
+            ],
+            "student_activities": [
+                "Pretend to be a CM and write a 5-point 'Action Plan' for a press release",
+                "Match 5 state problems to their respective government departments"
+            ],
+            "assessment": [
+                "Definition of 'Press Conference'",
+                "Explaining how departments are different from the Legislative Assembly"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Public Opinion and Law Making",
+            "topics_covered": [
+                "How the public influences government (Protests, Rallies, Editorials)",
+                "The process of passing laws for the state",
+                "Difference between MLA (State) and MP (National) - basic overview"
+            ],
+            "teaching_strategy": [
+                "Newspaper clipping analysis: Identifying public protests",
+                "Tracing the path: Problem $\rightarrow$ Assembly Debate $\rightarrow$ Law $\rightarrow$ Department Action",
+                "Inquiry: 'Who really has the power in a democracy?'"
+            ],
+            "student_activities": [
+                "Draft a 'Letter to the Editor' regarding a local grievance",
+                "List three ways citizens can express their dissatisfaction with the government"
+            ],
+            "assessment": [
+                "Matching: Stage of Law-making vs. Action",
+                "Short note on the power of the common people"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Synthesis: The Wallpaper Project",
+            "topics_covered": [
+                "Integration of concepts through creative expression",
+                "Review of key vocabulary: Constituency, Majority, Opposition, Cabinet",
+                "NCERT back-exercise resolution"
+            ],
+            "teaching_strategy": [
+                "Facilitating the NCERT 'Wallpaper Project' on a relevant social issue",
+                "Crossword puzzle using terminology from the chapter",
+                "Doubt-clearing and chapter summary"
+            ],
+            "student_activities": [
+                "Collaborate in groups to produce a research-based Wallpaper on 'Dengue Prevention' or 'Right to Education'",
+                "Complete the summary concept map in notebooks"
+            ],
+            "assessment": [
+                "Unit Test (25 marks)",
+                "Evaluation of the Wallpaper Project based on content and clarity"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT Textbook: Social and Political Life - II",
+        "Political map of the state with highlighted constituencies",
+        "Newspaper reports on State Assembly sessions",
+        "Video/Audio of a Press Conference",
+        "Organizational chart of the State Government"
+    ],
+    "evaluation_methods": [
+        "Analysis of mock election results",
+        "Diagrammatic representation of government hierarchy",
+        "Short-answer tests on roles and responsibilities",
+        "Peer evaluation of the Wallpaper Project",
+        "MCQs on legislative procedures"
+    ],
+    "teacher_tip": "Students often confuse the 'Government' with just the 'Ruling Party'. Emphasize that the Government includes all the ministers and departments, while the Legislative Assembly includes *all* elected MLAs, including the Opposition."
+}

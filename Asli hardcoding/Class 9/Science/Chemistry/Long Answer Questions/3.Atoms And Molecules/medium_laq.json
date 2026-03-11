@@ -1,0 +1,410 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T19:12:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How did Dalton's Atomic Theory explain the Law of Conservation of Mass and the Law of Definite Proportions?",
+            "answer": "Dalton's theory explained the Law of Conservation of Mass by stating that atoms are indivisible particles that cannot be created or destroyed in a chemical reaction. The Law of Definite Proportions was explained by the postulate that atoms of different elements combine in simple whole-number ratios to form compounds, and that the relative number and kinds of atoms are constant in a given compound.",
+            "answer_outline": [
+                "Postulate on indivisibility (Conservation of mass)",
+                "Postulate on fixed ratios (Definite proportions)",
+                "Postulate on constant atom types"
+            ],
+            "key_concepts": [
+                "Dalton's theory",
+                "chemical laws",
+                "postulates"
+            ],
+            "marks": 5,
+            "source_section": "3.1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Calculate the molecular mass of Nitric Acid ($HNO_3$) and Sodium Carbonate ($Na_2CO_3$). (H=1, N=14, O=16, Na=23, C=12)",
+            "answer": "1. For $HNO_3$: $(1 \times 1) + (1 \times 14) + (3 \times 16) = 1 + 14 + 48 = 63$ u. 2. For $Na_2CO_3$: $(2 \times 23) + (1 \times 12) + (3 \times 16) = 46 + 12 + 48 = 106$ u.",
+            "answer_outline": [
+                "Step-by-step addition of atomic masses",
+                "Calculation for Nitric Acid",
+                "Calculation for Sodium Carbonate"
+            ],
+            "key_concepts": [
+                "molecular mass",
+                "atomic mass sum"
+            ],
+            "marks": 5,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the concept of 'Relative Atomic Mass' using the analogy of a fruit seller.",
+            "answer": "The text uses the analogy of a fruit seller who has no standard weights. He takes a watermelon, calls it '12 units', and cuts it into 12 equal pieces. He then weighs other fruits against one piece of that watermelon. Similarly, scientists took 1/12th of the mass of a Carbon-12 atom as a standard 'atomic mass unit' (u) and defined the mass of all other atoms relative to it.",
+            "answer_outline": [
+                "The fruit seller/watermelon analogy",
+                "Standard unit definition (1/12th C-12)",
+                "Definition of relative mass"
+            ],
+            "key_concepts": [
+                "relative atomic mass",
+                "carbon-12",
+                "atomic mass unit"
+            ],
+            "marks": 5,
+            "source_section": "3.2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Define 'Polyatomic Ion' and write the formulas for Ammonium Sulphate and Magnesium Hydroxide.",
+            "answer": "A polyatomic ion is a group of atoms carrying a net charge. 1. Ammonium Sulphate: Ammonium ($NH_4^+$) and Sulphate ($SO_4^{2-}$). Crossing over gives $(NH_4)_2SO_4$. 2. Magnesium Hydroxide: Magnesium ($Mg^{2+}$) and Hydroxide ($OH^-$). Crossing over gives $Mg(OH)_2$.",
+            "answer_outline": [
+                "Definition of polyatomic ion",
+                "Step-wise formula for Ammonium Sulphate",
+                "Step-wise formula for Magnesium Hydroxide"
+            ],
+            "key_concepts": [
+                "polyatomic ion",
+                "chemical formula",
+                "criss-cross"
+            ],
+            "marks": 5,
+            "source_section": "3.3.3 & 3.4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Differentiate between 'Molecular Mass' and 'Formula Unit Mass'. Give an example where each is used.",
+            "answer": "Molecular mass is used for substances that exist as discrete molecules (covalent compounds like $H_2O$ or $CH_4$). Formula unit mass is used for ionic compounds which exist as a 3D network of ions rather than independent molecules (like $NaCl$ or $CaCl_2$). Both are calculated by summing atomic masses, but the terminology reflects the nature of the chemical bonds.",
+            "answer_outline": [
+                "Nature of substances (molecular vs ionic)",
+                "Definitions",
+                "Examples for each"
+            ],
+            "key_concepts": [
+                "molecular mass",
+                "formula unit mass",
+                "ionic compounds"
+            ],
+            "marks": 4,
+            "source_section": "3.5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is it necessary to use the term 'Relative' while discussing atomic mass?",
+            "answer": "Atoms are so small that their actual mass (in grams) is incredibly tiny and difficult to work with ($e.g.,$ $1.67 \times 10^{-24}$ g). To make calculations practical, we compare the mass of an atom to a standard reference (1/12th of Carbon-12). Thus, we aren't using the 'absolute' mass, but a mass 'relative' to a fixed standard.",
+            "answer_outline": [
+                "Insignificance of absolute mass in grams",
+                "Practicality of calculations",
+                "Standard reference (Carbon-12)"
+            ],
+            "key_concepts": [
+                "relative atomic mass",
+                "carbon-12"
+            ],
+            "marks": 4,
+            "source_section": "3.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the relationship between the mole, Avogadro's number, and molar mass?",
+            "answer": "One mole of any substance contains exactly $6.022 \times 10^{23}$ (Avogadro's number) particles. The mass of these particles (molar mass) is numerically equal to the substance's relative atomic or molecular mass but expressed in grams. The mole acts as the link between the number of particles (microscopic) and the mass of the substance (macroscopic).",
+            "answer_outline": [
+                "Definition of Mole",
+                "Value of Avogadro's number",
+                "Relation between 'u' and 'g'"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "Avogadro number",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Derive the chemical formula for (a) Sodium Oxide and (b) Aluminum Chloride.",
+            "answer": "(a) Sodium Oxide: Symbols Na and O; Valencies 1 and 2. Criss-crossing gives $Na_2O$. (b) Aluminum Chloride: Symbols Al and Cl; Valencies 3 and 1. Criss-crossing gives $AlCl_3$.",
+            "answer_outline": [
+                "Symbol identification",
+                "Valency assignment",
+                "Criss-cross application"
+            ],
+            "key_concepts": [
+                "formula writing",
+                "valency",
+                "criss-cross"
+            ],
+            "marks": 4,
+            "source_section": "3.4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Calculate the number of moles in: (i) 12g of Oxygen gas ($O_2$), (ii) 20g of Water ($H_2O$).",
+            "answer": "(i) Molar mass of $O_2 = 32$ g. Moles = $12 / 32 = 0.375$ moles. (ii) Molar mass of $H_2O = 18$ g. Moles = $20 / 18 \approx 1.11$ moles.",
+            "answer_outline": [
+                "Molar mass calculation",
+                "Application of formula: $\text{Mass} / \text{Molar Mass}$",
+                "Final results"
+            ],
+            "key_concepts": [
+                "mole calculation",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the mass of: (i) 1 mole of Nitrogen atoms, (ii) 4 moles of Aluminum atoms? (N=14, Al=27)",
+            "answer": "(i) Mass of 1 mole of Nitrogen atoms = Gram atomic mass = 14g. (ii) Mass of 4 moles of Aluminum = $4 \times 27 = 108$g.",
+            "answer_outline": [
+                "Molar mass of N",
+                "Molar mass of Al",
+                "Calculation for 4 moles"
+            ],
+            "key_concepts": [
+                "molar mass",
+                "mass calculation"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "How many atoms are present in 0.2 moles of Sodium? (Na=23)",
+            "answer": "Number of atoms = $\text{Moles} \times \text{Avogadro's Number} = 0.2 \times 6.022 \times 10^{23} = 1.2044 \times 10^{23}$ atoms.",
+            "answer_outline": [
+                "Formula relating moles and atoms",
+                "Substitution of values",
+                "Final result"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "Avogadro number"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain 'Atomicity' and provide the atomicity for Sulphur ($S_8$) and Helium (He).",
+            "answer": "Atomicity is the total number of atoms that constitute one molecule of an element. Helium is a noble gas and exists as single atoms, so its atomicity is 1 (Monoatomic). Sulphur exists as molecules of 8 atoms, so its atomicity is 8 (Polyatomic).",
+            "answer_outline": [
+                "Definition of atomicity",
+                "He (Monoatomic)",
+                "S8 (Polyatomic)"
+            ],
+            "key_concepts": [
+                "atomicity",
+                "monoatomic",
+                "polyatomic"
+            ],
+            "marks": 4,
+            "source_section": "3.3.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe the Law of Constant Proportions with reference to Ammonia ($NH_3$).",
+            "answer": "The Law states that in a compound, elements are always present in definite proportions by mass. In Ammonia ($NH_3$), Nitrogen and Hydrogen are always present in a mass ratio of 14:3. This means that whatever the source or method of preparation, 17g of Ammonia will always contain 14g of Nitrogen and 3g of Hydrogen.",
+            "answer_outline": [
+                "Law statement",
+                "Mass of N (14) and H (1x3=3)",
+                "Ratio (14:3) and its stability"
+            ],
+            "key_concepts": [
+                "constant proportions",
+                "ammonia",
+                "mass ratio"
+            ],
+            "marks": 5,
+            "source_section": "3.1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Calculate the number of particles in 46g of Sodium atoms. (Na=23)",
+            "answer": "Moles = $46 / 23 = 2$ moles. Number of particles = $\text{Moles} \times 6.022 \times 10^{23} = 2 \times 6.022 \times 10^{23} = 1.2044 \times 10^{24}$ atoms.",
+            "answer_outline": [
+                "Find moles from mass",
+                "Find particles from moles",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "mole calculation",
+                "Avogadro number"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 15,
+            "question": "What are 'Cations' and 'Anions'? Give one example of each with their charge.",
+            "answer": "Ions are charged particles. A 'Cation' is a positively charged ion, formed by losing electrons ($e.g., Na^+$). An 'Anion' is a negatively charged ion, formed by gaining electrons ($e.g., Cl^-$). In $NaCl$, Sodium is the cation and Chlorine is the anion.",
+            "answer_outline": [
+                "Definition of ion",
+                "Cation (positive charge)",
+                "Anion (negative charge)",
+                "Example"
+            ],
+            "key_concepts": [
+                "ion",
+                "cation",
+                "anion"
+            ],
+            "marks": 4,
+            "source_section": "3.3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why symbols for Sodium (Na) and Iron (Fe) do not match their English names.",
+            "answer": "Chemical symbols are sometimes derived from the Latin, Greek, or German names of elements. Sodium's symbol 'Na' comes from its Latin name 'Natrium'. Iron's symbol 'Fe' comes from its Latin name 'Ferrum'. This standardizes chemical notation globally across different languages.",
+            "answer_outline": [
+                "Derivation of symbols",
+                "Latin name for Sodium",
+                "Latin name for Iron"
+            ],
+            "key_concepts": [
+                "chemical symbols",
+                "naming origin"
+            ],
+            "marks": 4,
+            "source_section": "3.2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "State the rules followed for writing symbols of elements.",
+            "answer": "1. The symbol of an element is usually the first one or two letters of its name. 2. The first letter is always written in uppercase (Capital). 3. The second letter, if present, is always written in lowercase. ($e.g.,$ H for Hydrogen, He for Helium, Co for Cobalt).",
+            "answer_outline": [
+                "Letter count",
+                "Capitalization rules",
+                "Examples"
+            ],
+            "key_concepts": [
+                "chemical symbols",
+                "IUPAC rules"
+            ],
+            "marks": 4,
+            "source_section": "3.2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Write the chemical formulas for (i) Magnesium Chloride and (ii) Calcium Chloride.",
+            "answer": "(i) Magnesium Chloride: Mg (2+) and Cl (1-). Criss-crossing gives $MgCl_2$. (ii) Calcium Chloride: Ca (2+) and Cl (1-). Criss-crossing gives $CaCl_2$.",
+            "answer_outline": [
+                "Symbols and Valencies",
+                "Criss-cross results"
+            ],
+            "key_concepts": [
+                "formula writing",
+                "criss-cross"
+            ],
+            "marks": 4,
+            "source_section": "3.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the mass of 0.2 mole of oxygen atoms?",
+            "answer": "Gram atomic mass of Oxygen (O) = 16g. Mass of 0.2 mole = $0.2 \times 16 = 3.2$g.",
+            "answer_outline": [
+                "Identify molar mass of O",
+                "Calculation: $\text{moles} \times \text{molar mass}$"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "mass calculation"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why we call the mole the 'Chemist's Dozen'.",
+            "answer": "Just as a 'dozen' represents exactly 12 items regardless of what they are, a 'mole' represents exactly $6.022 \times 10^{23}$ particles. It allows chemists to 'count' atoms and molecules by weighing them, providing a bridge between the macroscopic mass and the microscopic number of particles.",
+            "answer_outline": [
+                "Analogy with dozen (12)",
+                "Fixed particle count",
+                "Role as a link/bridge"
+            ],
+            "key_concepts": [
+                "mole",
+                "Avogadro constant"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Calculate the formula unit mass of $ZnO$. (Zn=65, O=16)",
+            "answer": "Formula unit mass = Atomic mass of Zn + Atomic mass of O = $65 + 16 = 81$ u.",
+            "answer_outline": [
+                "Identification of elements",
+                "Sum of atomic masses"
+            ],
+            "key_concepts": [
+                "formula unit mass",
+                "atomic mass"
+            ],
+            "marks": 4,
+            "source_section": "3.5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the mass ratio of Calcium and Oxygen in Calcium Oxide ($CaO$)? (Ca=40, O=16)",
+            "answer": "Mass of Ca = 40; Mass of O = 16. Ratio = $40 : 16$. Dividing both by 8, we get $5 : 2$.",
+            "answer_outline": [
+                "Identify masses",
+                "Simplification of ratio"
+            ],
+            "key_concepts": [
+                "law of constant proportions",
+                "mass ratio"
+            ],
+            "marks": 4,
+            "source_section": "3.1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Differentiate between an atom and an ion.",
+            "answer": "An atom is electricaly neutral and has an equal number of protons and electrons. An ion is a charged particle formed when an atom gains or loses electrons. For example, Na is a neutral atom, while $Na^+$ is a cation.",
+            "answer_outline": [
+                "Neutrality vs Charge",
+                "Electron count difference",
+                "Example"
+            ],
+            "key_concepts": [
+                "atom",
+                "ion"
+            ],
+            "marks": 4,
+            "source_section": "3.3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the molecular mass of Ethyne ($C_2H_2$). (C=12, H=1)",
+            "answer": "Molecular mass = $(2 \times 12) + (2 \times 1) = 24 + 2 = 26$ u.",
+            "answer_outline": [
+                "Summing atomic masses"
+            ],
+            "key_concepts": [
+                "molecular mass",
+                "calculation"
+            ],
+            "marks": 4,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Write the symbols and valencies for the following: (a) Carbonate ion, (b) Aluminum ion.",
+            "answer": "(a) Carbonate ion: $CO_3$, valency 2. (b) Aluminum ion: Al, valency 3.",
+            "answer_outline": [
+                "Symbol and Charge identification"
+            ],
+            "key_concepts": [
+                "valency",
+                "ions"
+            ],
+            "marks": 4,
+            "source_section": "3.4.1"
+        }
+    ]
+}

@@ -1,0 +1,175 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "The Baudhāyana-Pythagoras Theorem",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Construct squares with double and half the area of a given square",
+        "Understand the relation between the diagonal of a square and its area",
+        "Estimate the value of √2 using bounds",
+        "Apply Baudhāyana-Pythagoras theorem in geometric constructions",
+        "Identify and classify primitive and non-primitive Pythagorean triples",
+        "Solve real-life problems using right triangles"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Exploring Area of Squares",
+            "topics_covered": [
+                "Review of square area",
+                "Constructing a square on the diagonal",
+                "Understanding double area concept"
+            ],
+            "teaching_strategy": [
+                "Guided board demonstration",
+                "Use of graph paper"
+            ],
+            "student_activities": [
+                "Draw square with side 5 cm",
+                "Construct square on diagonal",
+                "Compare areas using calculation"
+            ],
+            "assessment": [
+                "Diagram verification",
+                "Short conceptual questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Geometric Proof Using Paper Models",
+            "topics_covered": [
+                "Rearranging shapes to form larger squares",
+                "Geometric reasoning using triangles"
+            ],
+            "teaching_strategy": [
+                "Hands-on activity",
+                "Group exploration"
+            ],
+            "student_activities": [
+                "Cut two identical squares",
+                "Rearrange triangular pieces",
+                "Observe new square formation"
+            ],
+            "assessment": [
+                "Observation of group activity",
+                "Student explanation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Half Area Square Construction",
+            "topics_covered": [
+                "Midpoint construction",
+                "Inner tilted square",
+                "Area comparison"
+            ],
+            "teaching_strategy": [
+                "Paper folding demonstration",
+                "Interactive questioning"
+            ],
+            "student_activities": [
+                "Fold square paper through midpoints",
+                "Measure and compare areas"
+            ],
+            "assessment": [
+                "Notebook diagrams",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Understanding √2",
+            "topics_covered": [
+                "Isosceles right triangle",
+                "Relationship c² = 2a²",
+                "Estimating √2"
+            ],
+            "teaching_strategy": [
+                "Numerical exploration",
+                "Decimal approximation activity"
+            ],
+            "student_activities": [
+                "Calculate squares of decimals between 1.4 and 1.5",
+                "Estimate √2"
+            ],
+            "assessment": [
+                "Short worksheet"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Baudhāyana-Pythagoras Theorem",
+            "topics_covered": [
+                "Combining two different squares",
+                "Statement of theorem",
+                "Geometric explanation"
+            ],
+            "teaching_strategy": [
+                "Diagram-based teaching",
+                "Student reasoning questions"
+            ],
+            "student_activities": [
+                "Draw squares on sides of triangle",
+                "Verify relation a² + b² = c²"
+            ],
+            "assessment": [
+                "Numerical problems"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Pythagorean Triples",
+            "topics_covered": [
+                "Examples of triples",
+                "Primitive triples",
+                "Scaled triples"
+            ],
+            "teaching_strategy": [
+                "Pattern recognition activity",
+                "Table generation"
+            ],
+            "student_activities": [
+                "List triples up to 20",
+                "Generate scaled triples"
+            ],
+            "assessment": [
+                "Class quiz"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Applications and Problem Solving",
+            "topics_covered": [
+                "Lotus problem",
+                "Applications in rectangles and triangles",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving discussion",
+                "Group quiz"
+            ],
+            "student_activities": [
+                "Solve word problems",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short written test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Graph paper",
+        "Square paper",
+        "Blackboard or Whiteboard",
+        "NCERT Ganita Prakash textbook"
+    ],
+    "evaluation_methods": [
+        "Worksheet problems",
+        "Oral questioning",
+        "Class quizzes",
+        "Diagram checking"
+    ],
+    "teacher_tip": "Encourage students to reason visually using geometric diagrams before applying algebraic formulas."
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-06T10:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is science?",
+            "answer": "Science is the systematic study of the natural world based on observation, experimentation, and evidence.",
+            "key_concepts": ["science", "observation", "experimentation"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is observation important in science?",
+            "answer": "Observation helps scientists gather information about natural phenomena and is the first step in the scientific method.",
+            "key_concepts": ["observation", "scientific method"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a scientific hypothesis?",
+            "answer": "A scientific hypothesis is a possible explanation for an observation that can be tested through experiments.",
+            "key_concepts": ["hypothesis", "scientific investigation"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why are experiments conducted in science?",
+            "answer": "Experiments are conducted to test hypotheses and verify scientific ideas using controlled conditions and observations.",
+            "key_concepts": ["experiment", "testing hypothesis"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is technology in relation to science?",
+            "answer": "Technology is the practical application of scientific knowledge to solve problems and improve human life.",
+            "key_concepts": ["technology", "application of science"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how science improves daily life.",
+            "answer": "Science improves daily life by providing technologies such as electricity, medicines, transportation, and communication systems.",
+            "key_concepts": ["science applications", "daily life"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What role does experimentation play in scientific discovery?",
+            "answer": "Experimentation allows scientists to test ideas, confirm hypotheses, and discover new knowledge through controlled testing.",
+            "key_concepts": ["experimentation", "scientific discovery"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is meant by evidence in science?",
+            "answer": "Evidence in science refers to the data and observations collected during experiments that support or reject a hypothesis.",
+            "key_concepts": ["evidence", "data"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do scientific ideas change over time?",
+            "answer": "Scientific ideas change when new evidence or discoveries provide better explanations for natural phenomena.",
+            "key_concepts": ["scientific progress", "new discoveries"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the meaning of innovation in science.",
+            "answer": "Innovation in science refers to developing new ideas, technologies, or methods that improve existing solutions.",
+            "key_concepts": ["innovation", "scientific development"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the scientific method?",
+            "answer": "The scientific method is a step-by-step process that includes observation, hypothesis formation, experimentation, and conclusion.",
+            "key_concepts": ["scientific method"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is questioning important in science?",
+            "answer": "Questioning helps scientists explore new ideas and investigate unknown phenomena, leading to scientific discoveries.",
+            "key_concepts": ["questioning", "curiosity"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "How does science help solve global problems?",
+            "answer": "Science helps solve global problems such as climate change, disease control, and energy production through research and innovation.",
+            "key_concepts": ["global challenges", "scientific solutions"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the importance of recording observations in science?",
+            "answer": "Recording observations helps scientists analyze results accurately and allows others to verify and repeat experiments.",
+            "key_concepts": ["recording data", "scientific investigation"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how collaboration helps scientific progress.",
+            "answer": "Collaboration allows scientists to share ideas, data, and expertise, which helps accelerate discoveries and innovations.",
+            "key_concepts": ["collaboration", "scientific research"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is meant by scientific knowledge?",
+            "answer": "Scientific knowledge is the information and understanding gained through observation, experimentation, and research.",
+            "key_concepts": ["scientific knowledge"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is evidence important in scientific conclusions?",
+            "answer": "Evidence supports scientific conclusions and ensures that findings are based on facts rather than opinions.",
+            "key_concepts": ["evidence", "conclusion"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What role do tools play in scientific research?",
+            "answer": "Scientific tools help scientists measure, observe, and analyze phenomena accurately.",
+            "key_concepts": ["scientific tools", "measurement"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the connection between science and society.",
+            "answer": "Science influences society by improving health, technology, and living standards while society guides scientific research priorities.",
+            "key_concepts": ["science and society"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is creativity important in science?",
+            "answer": "Creativity helps scientists develop new ideas, design experiments, and find innovative solutions to problems.",
+            "key_concepts": ["creativity", "innovation"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "How do scientists test their ideas?",
+            "answer": "Scientists test their ideas by conducting experiments, collecting data, and analyzing results to verify hypotheses.",
+            "key_concepts": ["testing ideas", "experiments"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a conclusion in scientific investigation?",
+            "answer": "A conclusion summarizes the results of an experiment and determines whether the hypothesis is supported or rejected.",
+            "key_concepts": ["conclusion", "scientific method"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why must experiments be repeatable?",
+            "answer": "Experiments must be repeatable so that other scientists can verify results and confirm the reliability of findings.",
+            "key_concepts": ["repeatability", "scientific reliability"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is scientific progress?",
+            "answer": "Scientific progress refers to the continuous development of knowledge and technologies through research and discoveries.",
+            "key_concepts": ["scientific progress"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is science called an ever-evolving field?",
+            "answer": "Science is called ever-evolving because new discoveries and evidence constantly improve and update scientific knowledge.",
+            "key_concepts": ["evolving science", "scientific discoveries"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        }
+    ]
+}

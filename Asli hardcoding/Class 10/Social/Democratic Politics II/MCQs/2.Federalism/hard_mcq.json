@@ -1,0 +1,361 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: Federalism",
+  "generated_at": "2026-03-11T15:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which principle ensures that both Union and State governments derive their authority from the Constitution?",
+      "options": {
+        "A": "Judicial review",
+        "B": "Constitutional supremacy",
+        "C": "Coalition politics",
+        "D": "Local governance"
+      },
+      "correct_answer": "B",
+      "explanation": "In a federal system, the Constitution is the supreme authority defining the powers of different levels of government.",
+      "difficulty": "hard",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 2,
+      "question": "Which factor contributed most to strengthening federalism in India after the 1990s?",
+      "options": {
+        "A": "Military governance",
+        "B": "Single-party dominance",
+        "C": "Rise of regional parties",
+        "D": "Reduction of elections"
+      },
+      "correct_answer": "C",
+      "explanation": "Regional parties gained influence in coalition governments, strengthening the federal structure.",
+      "difficulty": "hard",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 3,
+      "question": "Which list includes subjects that require uniform national policy and administration?",
+      "options": {
+        "A": "Union List",
+        "B": "State List",
+        "C": "Concurrent List",
+        "D": "Local List"
+      },
+      "correct_answer": "A",
+      "explanation": "The Union List contains subjects of national importance such as defence and foreign affairs.",
+      "difficulty": "hard",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 4,
+      "question": "Why did the Indian Constitution describe India as a 'Union of States'?",
+      "options": {
+        "A": "States can freely leave the union",
+        "B": "The federation was created by the Constitution, not by agreement among states",
+        "C": "States are independent nations",
+        "D": "States have more power than the centre"
+      },
+      "correct_answer": "B",
+      "explanation": "The Constitution created the federation rather than it being formed by states joining voluntarily.",
+      "difficulty": "hard",
+      "source_section": "What makes India a federal country?"
+    },
+    {
+      "question_number": 5,
+      "question": "Which situation best illustrates the principle of cooperative federalism?",
+      "options": {
+        "A": "States ignoring central laws",
+        "B": "Union and State governments working together on Concurrent List subjects",
+        "C": "States acting independently of the constitution",
+        "D": "Central government controlling all policies"
+      },
+      "correct_answer": "B",
+      "explanation": "Cooperative federalism involves collaboration between different levels of government.",
+      "difficulty": "hard",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 6,
+      "question": "Which institution safeguards the federal balance by interpreting constitutional provisions?",
+      "options": {
+        "A": "Parliament",
+        "B": "Election Commission",
+        "C": "Judiciary",
+        "D": "Council of Ministers"
+      },
+      "correct_answer": "C",
+      "explanation": "The judiciary interprets the Constitution and resolves disputes between levels of government.",
+      "difficulty": "hard",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 7,
+      "question": "Which reform significantly strengthened grassroots democracy in India?",
+      "options": {
+        "A": "73rd and 74th Constitutional Amendments",
+        "B": "Emergency provisions",
+        "C": "Formation of coalition governments",
+        "D": "Expansion of the Union List"
+      },
+      "correct_answer": "A",
+      "explanation": "These amendments gave constitutional status to local governments.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor explains why linguistic states did not weaken national unity in India?",
+      "options": {
+        "A": "Centralised control",
+        "B": "Respect for regional identities within a united framework",
+        "C": "Absence of political parties",
+        "D": "Military administration"
+      },
+      "correct_answer": "B",
+      "explanation": "Recognizing linguistic identities strengthened unity while respecting diversity.",
+      "difficulty": "hard",
+      "source_section": "Linguistic States"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is an example of decentralisation in practice?",
+      "options": {
+        "A": "Parliament making all local decisions",
+        "B": "Village councils managing local development projects",
+        "C": "Courts writing laws",
+        "D": "Central government controlling agriculture"
+      },
+      "correct_answer": "B",
+      "explanation": "Local governments handle local development through decentralisation.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 10,
+      "question": "Which concept ensures that each level of government has its own revenue sources?",
+      "options": {
+        "A": "Judicial independence",
+        "B": "Financial autonomy",
+        "C": "Political centralisation",
+        "D": "Administrative dominance"
+      },
+      "correct_answer": "B",
+      "explanation": "Financial autonomy allows governments to function independently.",
+      "difficulty": "hard",
+      "source_section": "Key Features of Federalism"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which scenario best reflects federal power sharing?",
+      "options": {
+        "A": "Central government controlling all policy areas",
+        "B": "State governments making all national decisions",
+        "C": "Division of responsibilities between central and state governments",
+        "D": "Military administration of regions"
+      },
+      "correct_answer": "C",
+      "explanation": "Federal systems divide authority between different levels of government.",
+      "difficulty": "hard",
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 12,
+      "question": "Which political development strengthened state governments' influence in national politics?",
+      "options": {
+        "A": "Coalition governments",
+        "B": "Single-party dominance",
+        "C": "Suspension of elections",
+        "D": "Central rule"
+      },
+      "correct_answer": "A",
+      "explanation": "Coalition governments increased the importance of regional parties.",
+      "difficulty": "hard",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 13,
+      "question": "Which level of Panchayati Raj institution operates at the block level?",
+      "options": {
+        "A": "Gram Panchayat",
+        "B": "Panchayat Samiti",
+        "C": "Zilla Parishad",
+        "D": "Municipality"
+      },
+      "correct_answer": "B",
+      "explanation": "Panchayat Samiti functions at the block level.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 14,
+      "question": "Which condition is essential for maintaining federal balance in a country?",
+      "options": {
+        "A": "Single level of authority",
+        "B": "Clear division of powers in the constitution",
+        "C": "Absence of judiciary",
+        "D": "Military leadership"
+      },
+      "correct_answer": "B",
+      "explanation": "A clear constitutional division of powers ensures federal balance.",
+      "difficulty": "hard",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 15,
+      "question": "Which example best represents grassroots democracy?",
+      "options": {
+        "A": "Village residents participating in Gram Sabha meetings",
+        "B": "Parliament passing national laws",
+        "C": "Supreme Court issuing judgments",
+        "D": "Union government managing defence"
+      },
+      "correct_answer": "A",
+      "explanation": "Grassroots democracy involves citizens participating directly in local governance.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which political change increased the importance of state governments in India?",
+      "options": {
+        "A": "Decline of regional parties",
+        "B": "Coalition politics",
+        "C": "Abolition of elections",
+        "D": "Centralised administration"
+      },
+      "correct_answer": "B",
+      "explanation": "Coalition politics required cooperation with regional parties.",
+      "difficulty": "hard",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 17,
+      "question": "Which concept explains power being exercised at multiple levels of governance?",
+      "options": {
+        "A": "Federalism",
+        "B": "Monarchy",
+        "C": "Dictatorship",
+        "D": "Colonialism"
+      },
+      "correct_answer": "A",
+      "explanation": "Federalism divides power across multiple levels of government.",
+      "difficulty": "hard",
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 18,
+      "question": "Which principle helps manage regional diversity in a federal country?",
+      "options": {
+        "A": "Centralised control",
+        "B": "Regional autonomy",
+        "C": "Military rule",
+        "D": "Uniform governance"
+      },
+      "correct_answer": "B",
+      "explanation": "Regional autonomy allows different regions to manage local affairs.",
+      "difficulty": "hard",
+      "source_section": "Federalism in India"
+    },
+    {
+      "question_number": 19,
+      "question": "Which level of government is responsible for subjects like foreign affairs?",
+      "options": {
+        "A": "Union Government",
+        "B": "State Government",
+        "C": "Municipality",
+        "D": "Village Council"
+      },
+      "correct_answer": "A",
+      "explanation": "Foreign affairs fall under the Union List.",
+      "difficulty": "hard",
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 20,
+      "question": "Which factor is essential for effective decentralisation?",
+      "options": {
+        "A": "Strong local institutions",
+        "B": "Centralised decision making",
+        "C": "Absence of elections",
+        "D": "Military supervision"
+      },
+      "correct_answer": "A",
+      "explanation": "Decentralisation requires strong local institutions.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which institution ensures that the constitution remains the supreme law?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Police",
+        "C": "Municipality",
+        "D": "Village Council"
+      },
+      "correct_answer": "A",
+      "explanation": "Courts interpret and uphold the constitution.",
+      "difficulty": "hard",
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor explains why federalism is suitable for large countries?",
+      "options": {
+        "A": "Centralised authority",
+        "B": "Power sharing across regions",
+        "C": "Single government rule",
+        "D": "Military governance"
+      },
+      "correct_answer": "B",
+      "explanation": "Federalism distributes power among different regions.",
+      "difficulty": "hard",
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 23,
+      "question": "Which institution provides a platform for villagers to discuss local issues?",
+      "options": {
+        "A": "Gram Sabha",
+        "B": "Parliament",
+        "C": "Supreme Court",
+        "D": "Cabinet"
+      },
+      "correct_answer": "A",
+      "explanation": "Gram Sabha includes all adult villagers and discusses local matters.",
+      "difficulty": "hard",
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 24,
+      "question": "Which development strengthened cooperative federalism in India?",
+      "options": {
+        "A": "Centralised policies",
+        "B": "Participation of regional parties in national government",
+        "C": "Military administration",
+        "D": "Removal of states"
+      },
+      "correct_answer": "B",
+      "explanation": "Regional parties working with national parties strengthened cooperation.",
+      "difficulty": "hard",
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best describes the purpose of federalism?",
+      "options": {
+        "A": "Concentrate power at one level",
+        "B": "Divide power among different levels of government",
+        "C": "Eliminate state governments",
+        "D": "Create a single authority"
+      },
+      "correct_answer": "B",
+      "explanation": "Federalism distributes power across multiple levels of government.",
+      "difficulty": "hard",
+      "source_section": "What is Federalism?"
+    }
+  ]
+}

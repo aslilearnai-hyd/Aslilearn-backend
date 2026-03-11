@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Consumer Rights",
+  "difficulty": "Easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is a consumer?",
+      "options": {
+        "A": "Person who sells goods",
+        "B": "Person who buys goods or services",
+        "C": "Person who manufactures goods",
+        "D": "Person who exports goods"
+      },
+      "correct_answer": "B",
+      "explanation": "A consumer is a person who buys goods or services for personal use."
+    },
+    {
+      "question_number": 2,
+      "question": "The Consumer Protection Act was first passed in India in:",
+      "options": {
+        "A": "1986",
+        "B": "1991",
+        "C": "2000",
+        "D": "1975"
+      },
+      "correct_answer": "A",
+      "explanation": "The Consumer Protection Act was passed in 1986."
+    },
+    {
+      "question_number": 3,
+      "question": "Right to Safety protects consumers against:",
+      "options": {
+        "A": "High prices",
+        "B": "Dangerous goods",
+        "C": "Low profits",
+        "D": "Exports"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumers have the right to be protected from hazardous goods."
+    },
+    {
+      "question_number": 4,
+      "question": "Which mark ensures product quality in India?",
+      "options": {
+        "A": "ISI mark",
+        "B": "ATM",
+        "C": "GDP",
+        "D": "FDI"
+      },
+      "correct_answer": "A",
+      "explanation": "ISI mark certifies product quality."
+    },
+    {
+      "question_number": 5,
+      "question": "Right to Information means consumers can:",
+      "options": {
+        "A": "Hide product details",
+        "B": "Know about quality and price",
+        "C": "Increase taxes",
+        "D": "Avoid payment"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumers have the right to know product details."
+    },
+    {
+      "question_number": 6,
+      "question": "Which organization works for consumer awareness?",
+      "options": {
+        "A": "RBI",
+        "B": "Consumer Forum",
+        "C": "WTO",
+        "D": "IMF"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumer forums help resolve disputes."
+    },
+    {
+      "question_number": 7,
+      "question": "Agmark is related to:",
+      "options": {
+        "A": "Industrial goods",
+        "B": "Agricultural products",
+        "C": "Bank services",
+        "D": "Telecom services"
+      },
+      "correct_answer": "B",
+      "explanation": "Agmark certifies agricultural products."
+    },
+    {
+      "question_number": 8,
+      "question": "Which is a consumer right?",
+      "options": {
+        "A": "Right to exploit",
+        "B": "Right to choose",
+        "C": "Right to cheat",
+        "D": "Right to overcharge"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumers have the right to choose among products."
+    },
+    {
+      "question_number": 9,
+      "question": "MRP stands for:",
+      "options": {
+        "A": "Maximum Retail Price",
+        "B": "Minimum Retail Price",
+        "C": "Market Retail Product",
+        "D": "Monthly Retail Price"
+      },
+      "correct_answer": "A",
+      "explanation": "MRP means Maximum Retail Price."
+    },
+    {
+      "question_number": 10,
+      "question": "Right to Seek Redressal means:",
+      "options": {
+        "A": "Right to complain and get compensation",
+        "B": "Right to sell goods",
+        "C": "Right to export",
+        "D": "Right to produce"
+      },
+      "correct_answer": "A",
+      "explanation": "Consumers can file complaints for compensation."
+    },
+    {
+      "question_number": 11,
+      "question": "Which body deals with consumer complaints at district level?",
+      "options": {
+        "A": "District Forum",
+        "B": "Supreme Court",
+        "C": "RBI",
+        "D": "Parliament"
+      },
+      "correct_answer": "A",
+      "explanation": "District Forum handles local complaints."
+    },
+    {
+      "question_number": 12,
+      "question": "Which right protects against unfair trade practices?",
+      "options": {
+        "A": "Right to Safety",
+        "B": "Right to Choose",
+        "C": "Right to be Informed",
+        "D": "Right to Seek Redressal"
+      },
+      "correct_answer": "C",
+      "explanation": "Right to be informed protects against unfair practices."
+    },
+    {
+      "question_number": 13,
+      "question": "Which logo indicates food safety certification?",
+      "options": {
+        "A": "ISI",
+        "B": "Hallmark",
+        "C": "FSSAI",
+        "D": "Agmark"
+      },
+      "correct_answer": "C",
+      "explanation": "FSSAI ensures food safety standards."
+    },
+    {
+      "question_number": 14,
+      "question": "Consumer courts are set up to:",
+      "options": {
+        "A": "Promote exports",
+        "B": "Resolve consumer disputes",
+        "C": "Collect taxes",
+        "D": "Regulate banks"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumer courts resolve disputes between buyers and sellers."
+    },
+    {
+      "question_number": 15,
+      "question": "Right to Choose means:",
+      "options": {
+        "A": "Freedom to select products",
+        "B": "Freedom to cheat",
+        "C": "Freedom to overcharge",
+        "D": "Freedom to produce"
+      },
+      "correct_answer": "A",
+      "explanation": "Consumers can choose from available products."
+    },
+    {
+      "question_number": 16,
+      "question": "Hallmark is used for:",
+      "options": {
+        "A": "Gold jewellery",
+        "B": "Food grains",
+        "C": "Electronics",
+        "D": "Clothing"
+      },
+      "correct_answer": "A",
+      "explanation": "Hallmark certifies purity of gold."
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is unfair trade practice?",
+      "options": {
+        "A": "Correct labeling",
+        "B": "False advertisement",
+        "C": "Quality certification",
+        "D": "Providing bill"
+      },
+      "correct_answer": "B",
+      "explanation": "False advertisement misleads consumers."
+    },
+    {
+      "question_number": 18,
+      "question": "Right to Consumer Education means:",
+      "options": {
+        "A": "Right to free goods",
+        "B": "Right to know consumer rights",
+        "C": "Right to tax exemption",
+        "D": "Right to produce goods"
+      },
+      "correct_answer": "B",
+      "explanation": "Consumers should be aware of their rights."
+    },
+    {
+      "question_number": 19,
+      "question": "Which document is proof of purchase?",
+      "options": {
+        "A": "Receipt or bill",
+        "B": "Advertisement",
+        "C": "MRP tag only",
+        "D": "Logo"
+      },
+      "correct_answer": "A",
+      "explanation": "Bill is proof for complaint."
+    },
+    {
+      "question_number": 20,
+      "question": "Right to Safety mainly applies to:",
+      "options": {
+        "A": "Hazardous goods",
+        "B": "Cheap goods",
+        "C": "Exports",
+        "D": "Taxes"
+      },
+      "correct_answer": "A",
+      "explanation": "Consumers should be protected from harmful goods."
+    },
+    {
+      "question_number": 21,
+      "question": "Which of the following is a quality mark?",
+      "options": {
+        "A": "GDP",
+        "B": "ISI",
+        "C": "FDI",
+        "D": "ATM"
+      },
+      "correct_answer": "B",
+      "explanation": "ISI mark shows standard quality."
+    },
+    {
+      "question_number": 22,
+      "question": "Consumers should check expiry date for:",
+      "options": {
+        "A": "Food products",
+        "B": "Land",
+        "C": "Furniture",
+        "D": "Vehicles"
+      },
+      "correct_answer": "A",
+      "explanation": "Food items have expiry dates for safety."
+    },
+    {
+      "question_number": 23,
+      "question": "Which level of court handles highest consumer disputes?",
+      "options": {
+        "A": "District",
+        "B": "State",
+        "C": "National",
+        "D": "Village"
+      },
+      "correct_answer": "C",
+      "explanation": "National Consumer Commission is highest level."
+    },
+    {
+      "question_number": 24,
+      "question": "The main aim of Consumer Protection Act is:",
+      "options": {
+        "A": "Increase exports",
+        "B": "Protect consumers",
+        "C": "Promote trade barriers",
+        "D": "Reduce taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "The Act protects consumer rights."
+    },
+    {
+      "question_number": 25,
+      "question": "Which right ensures freedom from monopoly?",
+      "options": {
+        "A": "Right to Choose",
+        "B": "Right to Safety",
+        "C": "Right to Education",
+        "D": "Right to Redressal"
+      },
+      "correct_answer": "A",
+      "explanation": "Right to choose protects against monopoly practices."
+    }
+  ]
+}

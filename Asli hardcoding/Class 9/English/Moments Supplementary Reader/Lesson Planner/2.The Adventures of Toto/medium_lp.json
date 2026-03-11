@@ -1,0 +1,177 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Adventures of Toto",
+    "title": "Lesson Planner – The Adventures of Toto",
+    "author": "Ruskin Bond",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the plot and sequence of events",
+        "Analyse the characters of Toto and Grandfather",
+        "Recognise humour in the story",
+        "Understand animal behaviour and human interaction",
+        "Develop vocabulary and comprehension skills",
+        "Identify the theme and message of the lesson"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author Introduction and Story Background",
+            "topics_covered": [
+                "Introduction to Ruskin Bond",
+                "Background of the story",
+                "Overview of Grandfather’s private zoo"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Story narration",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Discuss experiences with animals or pets"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Participation check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Description of Toto",
+            "topics_covered": [
+                "Physical appearance of Toto",
+                "Toto’s intelligence and mischievous nature"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Descriptive explanation"
+            ],
+            "student_activities": [
+                "Write 4–5 lines describing Toto",
+                "List Toto’s characteristics"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Toto’s First Mischief",
+            "topics_covered": [
+                "Toto kept in the closet",
+                "Damage caused by Toto"
+            ],
+            "teaching_strategy": [
+                "Story explanation",
+                "Cause–effect discussion"
+            ],
+            "student_activities": [
+                "Identify the damage caused by Toto",
+                "Discuss why monkeys behave mischievously"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Train Journey Episode",
+            "topics_covered": [
+                "Journey to Saharanpur",
+                "Ticket collector incident",
+                "Humour in the scene"
+            ],
+            "teaching_strategy": [
+                "Narrative explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Explain why Toto was called a dog",
+                "Identify the humorous situation"
+            ],
+            "assessment": [
+                "Oral explanation",
+                "Written response"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Toto and Nana",
+            "topics_covered": [
+                "Toto’s life in the stable",
+                "Interaction between Toto and Nana"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Character discussion"
+            ],
+            "student_activities": [
+                "Describe the relationship between Toto and Nana",
+                "Discuss animal behaviour"
+            ],
+            "assessment": [
+                "Notebook exercise",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Bath and Kettle Incident",
+            "topics_covered": [
+                "Toto’s bathing habit",
+                "Dangerous kettle incident"
+            ],
+            "teaching_strategy": [
+                "Event explanation",
+                "Sequential storytelling"
+            ],
+            "student_activities": [
+                "Write steps of Toto’s bath",
+                "Explain why the kettle incident was risky"
+            ],
+            "assessment": [
+                "Written activity",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme, Moral and Revision",
+            "topics_covered": [
+                "Theme of humour and animal behaviour",
+                "Reasons why Toto was sold",
+                "Overall summary"
+            ],
+            "teaching_strategy": [
+                "Value discussion",
+                "Revision session"
+            ],
+            "student_activities": [
+                "Write the moral of the story",
+                "Prepare a short summary"
+            ],
+            "assessment": [
+                "Short written test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Animal pictures or flashcards"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to identify humour in everyday situations and relate Toto’s behaviour to real animal behaviour."
+}

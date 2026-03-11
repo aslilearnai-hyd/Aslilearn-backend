@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 7: Proportional Reasoning - 1",
+  "generated_at": "2026-03-05T01:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If 4:7 = x:21, find x.",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "14"
+      },
+      "correct_answer": "C",
+      "explanation": "4/7 = x/21 → x = 12.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following ratios is equivalent to 9:12?",
+      "options": {
+        "A": "3:4",
+        "B": "4:3",
+        "C": "5:6",
+        "D": "6:5"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide both terms by 3.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 3,
+      "question": "If 5 pens cost ₹35, what will 12 pens cost?",
+      "options": {
+        "A": "₹72",
+        "B": "₹80",
+        "C": "₹84",
+        "D": "₹90"
+      },
+      "correct_answer": "C",
+      "explanation": "1 pen = ₹7 → 12 pens = ₹84.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 4,
+      "question": "If 3:8 = x:24, find x.",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9"
+      },
+      "correct_answer": "D",
+      "explanation": "3/8 = x/24 → x = 9.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following pairs forms a proportion?",
+      "options": {
+        "A": "4:6 = 8:12",
+        "B": "5:7 = 7:5",
+        "C": "6:9 = 8:10",
+        "D": "3:4 = 5:6"
+      },
+      "correct_answer": "A",
+      "explanation": "Both ratios simplify to 2:3.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 6,
+      "question": "If 7 kg of rice costs ₹280, what will 9 kg cost?",
+      "options": {
+        "A": "₹320",
+        "B": "₹340",
+        "C": "₹360",
+        "D": "₹380"
+      },
+      "correct_answer": "C",
+      "explanation": "1 kg = ₹40 → 9 kg = ₹360.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 7,
+      "question": "If 6:11 = x:33, find x.",
+      "options": {
+        "A": "16",
+        "B": "17",
+        "C": "18",
+        "D": "19"
+      },
+      "correct_answer": "C",
+      "explanation": "6/11 = x/33 → x = 18.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which ratio is equivalent to 12:18?",
+      "options": {
+        "A": "3:2",
+        "B": "2:3",
+        "C": "4:5",
+        "D": "5:6"
+      },
+      "correct_answer": "B",
+      "explanation": "Divide both terms by 6.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 9,
+      "question": "If 15 books cost ₹450, what will 8 books cost?",
+      "options": {
+        "A": "₹200",
+        "B": "₹220",
+        "C": "₹240",
+        "D": "₹260"
+      },
+      "correct_answer": "C",
+      "explanation": "1 book = ₹30 → 8 books = ₹240.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 10,
+      "question": "If 8:15 = x:45, find x.",
+      "options": {
+        "A": "20",
+        "B": "22",
+        "C": "24",
+        "D": "25"
+      },
+      "correct_answer": "C",
+      "explanation": "8/15 = x/45 → x = 24.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following ratios equals 14:21?",
+      "options": {
+        "A": "2:3",
+        "B": "3:2",
+        "C": "4:5",
+        "D": "5:6"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide both terms by 7.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 12,
+      "question": "If 9 pencils cost ₹63, what will 15 pencils cost?",
+      "options": {
+        "A": "₹95",
+        "B": "₹100",
+        "C": "₹105",
+        "D": "₹110"
+      },
+      "correct_answer": "C",
+      "explanation": "1 pencil = ₹7 → 15 pencils = ₹105.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 13,
+      "question": "If 7:12 = x:36, find x.",
+      "options": {
+        "A": "18",
+        "B": "19",
+        "C": "20",
+        "D": "21"
+      },
+      "correct_answer": "D",
+      "explanation": "7/12 = x/36 → x = 21.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which ratio is equivalent to 16:24?",
+      "options": {
+        "A": "2:3",
+        "B": "3:2",
+        "C": "4:5",
+        "D": "5:4"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide both terms by 8.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 15,
+      "question": "If 8 workers finish work in 6 days, how many days will 4 workers take?",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "14",
+        "D": "16"
+      },
+      "correct_answer": "B",
+      "explanation": "Half the workers → double the time.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 16,
+      "question": "If 11:13 = x:26, find x.",
+      "options": {
+        "A": "20",
+        "B": "21",
+        "C": "22",
+        "D": "23"
+      },
+      "correct_answer": "C",
+      "explanation": "11/13 = x/26 → x = 22.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which ratio equals 18:27?",
+      "options": {
+        "A": "2:3",
+        "B": "3:2",
+        "C": "4:5",
+        "D": "5:4"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide by 9.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 18,
+      "question": "If 5 kg sugar costs ₹250, what will 8 kg cost?",
+      "options": {
+        "A": "₹350",
+        "B": "₹380",
+        "C": "₹400",
+        "D": "₹420"
+      },
+      "correct_answer": "C",
+      "explanation": "1 kg = ₹50 → 8 kg = ₹400.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 19,
+      "question": "If 9:14 = x:42, find x.",
+      "options": {
+        "A": "25",
+        "B": "26",
+        "C": "27",
+        "D": "28"
+      },
+      "correct_answer": "C",
+      "explanation": "9/14 = x/42 → x = 27.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which ratio is equivalent to 20:30?",
+      "options": {
+        "A": "2:3",
+        "B": "3:2",
+        "C": "4:5",
+        "D": "5:6"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide both numbers by 10.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 21,
+      "question": "If 6 litres of milk cost ₹300, what will 10 litres cost?",
+      "options": {
+        "A": "₹400",
+        "B": "₹450",
+        "C": "₹500",
+        "D": "₹550"
+      },
+      "correct_answer": "C",
+      "explanation": "1 litre = ₹50 → 10 litres = ₹500.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 22,
+      "question": "If 4:9 = x:27, find x.",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      },
+      "correct_answer": "C",
+      "explanation": "4/9 = x/27 → x = 12.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which ratio equals 15:20?",
+      "options": {
+        "A": "3:4",
+        "B": "4:3",
+        "C": "5:6",
+        "D": "6:5"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide by 5.",
+      "difficulty": "hard",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 24,
+      "question": "If 12 pens cost ₹144, what will 5 pens cost?",
+      "options": {
+        "A": "₹50",
+        "B": "₹55",
+        "C": "₹60",
+        "D": "₹65"
+      },
+      "correct_answer": "C",
+      "explanation": "1 pen = ₹12 → 5 pens = ₹60.",
+      "difficulty": "hard",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 25,
+      "question": "If 7:10 = x:50, find x.",
+      "options": {
+        "A": "30",
+        "B": "35",
+        "C": "40",
+        "D": "45"
+      },
+      "correct_answer": "B",
+      "explanation": "7/10 = x/50 → x = 35.",
+      "difficulty": "hard",
+      "source_section": "Section 7.3"
+    }
+  ]
+}

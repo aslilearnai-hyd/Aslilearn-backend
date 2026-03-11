@@ -1,0 +1,25 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Applications of Trigonometry",
+    "difficulty": "Medium",
+    "source_pdf": "jemh109.pdf",
+    "short_notes": {
+        "key_points": [
+            "Height and distance problems require correct diagrams",
+            "Angle of elevation and depression are measured from horizontal",
+            "tan θ is commonly used in applications"
+        ],
+        "examples": [
+            "Finding height of a tower",
+            "Finding distance using angle of elevation"
+        ],
+        "formulas": [
+            "tan θ = height / distance"
+        ],
+        "exam_tips": [
+            "Draw diagram before solving",
+            "Label angles and sides clearly"
+        ]
+    }
+}

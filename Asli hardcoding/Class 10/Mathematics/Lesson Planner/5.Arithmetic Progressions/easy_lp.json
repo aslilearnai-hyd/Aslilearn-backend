@@ -1,0 +1,147 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Arithmetic Progressions",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand arithmetic progressions",
+        "Identify common difference",
+        "Classify sequences as AP or not",
+        "Find nth term of an AP",
+        "Apply AP in simple real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Arithmetic Progressions",
+            "topics_covered": [
+                "Sequences",
+                "Definition of AP",
+                "Examples of AP"
+            ],
+            "teaching_strategy": [
+                "Pattern-based discussion",
+                "Simple number sequences"
+            ],
+            "student_activities": [
+                "Identify AP from given sequences",
+                "Find common difference"
+            ],
+            "assessment": [
+                "Oral questions",
+                "MCQs"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Common Difference",
+            "topics_covered": [
+                "Finding common difference",
+                "Positive, negative and zero difference"
+            ],
+            "teaching_strategy": [
+                "Step-by-step explanation",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Find d for given APs",
+                "Classify APs"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "nth Term of an AP",
+            "topics_covered": [
+                "Formula aₙ = a + (n−1)d",
+                "Substitution of values"
+            ],
+            "teaching_strategy": [
+                "Formula explanation",
+                "Example-based practice"
+            ],
+            "student_activities": [
+                "Find 10th term of an AP",
+                "Solve similar problems"
+            ],
+            "assessment": [
+                "Classwork"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Types of Arithmetic Progressions",
+            "topics_covered": [
+                "Increasing AP",
+                "Decreasing AP",
+                "Constant AP"
+            ],
+            "teaching_strategy": [
+                "Comparison table",
+                "Examples discussion"
+            ],
+            "student_activities": [
+                "Classify APs",
+                "Explain reasoning"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Applications of Arithmetic Progressions",
+            "topics_covered": [
+                "Daily life examples",
+                "Simple word problems"
+            ],
+            "teaching_strategy": [
+                "Real-life examples",
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Solve word problems",
+                "Group discussion"
+            ],
+            "assessment": [
+                "Worksheet"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision and Assessment",
+            "topics_covered": [
+                "Key concepts",
+                "Formulas",
+                "Applications"
+            ],
+            "teaching_strategy": [
+                "Quick recap",
+                "Mixed problems"
+            ],
+            "student_activities": [
+                "Revision quiz",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Short test (10 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "NCERT Mathematics Textbook",
+        "Number charts"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Short tests"
+    ],
+    "teacher_tip": "Use real-life examples like salary increment and savings to make AP more relatable."
+}

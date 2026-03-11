@@ -1,0 +1,35 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "The World of Metals and Non-metals",
+    "difficulty": "Medium",
+    "source_pdf": "jesc102.pdf",
+    "short_notes": {
+        "key_points": [
+            "Chemical reactivity varies significantly among metals; some react vigorously with water, others only with acids.",
+            "Metals above hydrogen in the reactivity series can displace hydrogen from dilute acids.",
+            "Metal oxides are basic because they form hydroxides in water, whereas non-metal oxides are acidic.",
+            "Displacement reactions occur when a more reactive metal pushes out a less reactive metal from its salt solution.",
+            "Corrosion is a slow process where metals are eaten away by the action of air, moisture, or chemicals."
+        ],
+        "examples": [
+            "Vigorous Reaction: Sodium (Na) reacting with water (stored in kerosene to prevent fire).",
+            "Displacement: Iron nail in Copper Sulphate solution (Blue solution turns Green).",
+            "Acidic Oxide: Sulphur Dioxide ($SO_2$) dissolved in water forms Sulphurous acid ($H_2SO_3$).",
+            "Non-reactive Metals: Gold (Au) and Platinum (Pt) do not react with water or dilute acids.",
+            "Galvanization: Coating iron with Zinc (Zn) to prevent rusting."
+        ],
+        "formulas": [
+            "Metal + Water → Metal Hydroxide + Hydrogen gas ($H_2$)",
+            "Metal + Dilute Acid → Metal Salt + Hydrogen gas ($H_2$)",
+            "Displacement: $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$ (Iron displaces Copper)",
+            "Non-metal Oxide: $SO_2 + H_2O \rightarrow H_2SO_3$"
+        ],
+        "exam_tips": [
+            "The 'Pop' sound test is the standard way to identify the presence of Hydrogen gas.",
+            "Copper does not react with dilute Hydrochloric acid ($HCl$) even on heating.",
+            "Remember the color change in displacement: Blue $CuSO_4$ becomes Green $FeSO_4$ when iron is added.",
+            "Phosphorus is a very reactive non-metal and is stored in water to prevent it from catching fire in air."
+        ]
+    }
+}

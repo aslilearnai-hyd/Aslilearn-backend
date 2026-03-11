@@ -1,0 +1,260 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 1: Real Numbers",
+    "generated_at": "2026-02-27T17:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why √2 is irrational using contradiction.",
+            "answer": "Assume √2 = p/q in lowest form. Squaring gives 2q² = p², implying p is even. Let p = 2k, then q is also even, contradicting p and q being coprime. Hence √2 is irrational.",
+            "key_concepts": [
+                "irrationality proof",
+                "contradiction"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why every composite number can be written as a product of primes.",
+            "answer": "By repeatedly factorising a composite number, we ultimately reach prime factors. This is guaranteed by the Fundamental Theorem of Arithmetic.",
+            "key_concepts": [
+                "FTA"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does HCF × LCM formula not hold for three numbers?",
+            "answer": "The relation HCF × LCM = product holds only for two numbers and fails when extended to three numbers.",
+            "key_concepts": [
+                "HCF",
+                "LCM"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that √3 is irrational.",
+            "answer": "Assume √3 = p/q. Squaring gives 3q² = p², implying p and q both divisible by 3, contradicting coprime condition. Hence √3 is irrational.",
+            "key_concepts": [
+                "irrationality proof"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why Euclid’s Division Algorithm is valid for all positive integers.",
+            "answer": "Because repeated division produces smaller non-negative remainders until zero is reached.",
+            "key_concepts": [
+                "division algorithm"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is √8 irrational?",
+            "answer": "√8 = 2√2 and since √2 is irrational, √8 is also irrational.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why terminating decimals depend on factors 2 and 5.",
+            "answer": "Because denominators with only 2 and 5 as prime factors produce powers of 10.",
+            "key_concepts": [
+                "terminating decimals"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the importance of uniqueness in prime factorisation.",
+            "answer": "It ensures that no number has more than one prime factor structure, avoiding contradictions.",
+            "key_concepts": [
+                "uniqueness"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is √49 rational but √50 irrational?",
+            "answer": "√49 = 7, an integer, while √50 is not a perfect square and is irrational.",
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the sum of a rational and irrational number is irrational.",
+            "answer": "If the sum were rational, it would contradict the definition of irrational numbers.",
+            "key_concepts": [
+                "number properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why does p | a² imply p | a?",
+            "answer": "Because prime factorisation of a² contains each prime factor of a twice.",
+            "key_concepts": [
+                "prime divisibility"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why Euclid’s algorithm always ends in finite steps.",
+            "answer": "The remainders form a decreasing sequence of positive integers.",
+            "key_concepts": [
+                "algorithm termination"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is 2 the only even prime number?",
+            "answer": "All other even numbers are divisible by 2 and hence composite.",
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why √5 is irrational.",
+            "answer": "Assuming √5 rational leads to both numerator and denominator divisible by 5, a contradiction.",
+            "key_concepts": [
+                "irrationality"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are coprime numbers important in irrationality proofs?",
+            "answer": "They help establish contradictions when common factors appear.",
+            "key_concepts": [
+                "coprime"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why √7 is irrational.",
+            "answer": "Assuming √7 rational leads to a contradiction using prime factorisation.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is prime factorisation called fundamental?",
+            "answer": "Because it forms the basis of many results in number theory.",
+            "key_concepts": [
+                "FTA"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why irrational numbers cannot be expressed as decimals that repeat.",
+            "answer": "Repeating decimals can always be written as fractions, which contradicts irrationality.",
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is √1 rational?",
+            "answer": "√1 = 1, which is an integer and hence rational.",
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why does HCF of two prime numbers equal 1?",
+            "answer": "Prime numbers have no common factors other than 1.",
+            "key_concepts": [
+                "HCF"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why √12 is irrational.",
+            "answer": "√12 = 2√3 and since √3 is irrational, √12 is also irrational.",
+            "key_concepts": [
+                "irrational roots"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why does contradiction invalidate an assumption?",
+            "answer": "Because a true assumption cannot lead to a false result.",
+            "key_concepts": [
+                "logical reasoning"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why Euclid’s algorithm helps find HCF.",
+            "answer": "Because the last non-zero remainder is the HCF.",
+            "key_concepts": [
+                "HCF"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are real numbers necessary?",
+            "answer": "They represent all possible points on the number line.",
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does irrational × rational remain irrational?",
+            "answer": "Because the irrationality cannot be eliminated by multiplication.",
+            "key_concepts": [
+                "number properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

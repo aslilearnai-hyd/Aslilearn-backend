@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "JEFP109 – The Book That Saved the Earth",
+    "title": "The Book That Saved the Earth – Easy MCQs",
+    "generated_at": "2026-03-02T22:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of the play 'The Book That Saved the Earth'?",
+            "options": {
+                "A": "James Herriot",
+                "B": "Claire Boiko",
+                "C": "Ruskin Bond",
+                "D": "Isaac Asimov"
+            },
+            "correct_answer": "B",
+            "explanation": "The play is written by Claire Boiko.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "In which century is the play set?",
+            "options": {
+                "A": "20th century",
+                "B": "21st century",
+                "C": "25th century",
+                "D": "30th century"
+            },
+            "correct_answer": "C",
+            "explanation": "The Historian narrates the story from the twenty-fifth century.",
+            "difficulty": "easy",
+            "source_section": "Opening scene"
+        },
+        {
+            "question_number": 3,
+            "question": "Who narrates the story in the beginning?",
+            "options": {
+                "A": "Think-Tank",
+                "B": "Noodle",
+                "C": "Historian",
+                "D": "Captain Omega"
+            },
+            "correct_answer": "C",
+            "explanation": "The Historian introduces the story.",
+            "difficulty": "easy",
+            "source_section": "Scene 1"
+        },
+        {
+            "question_number": 4,
+            "question": "What was the twentieth century called?",
+            "options": {
+                "A": "Era of Technology",
+                "B": "Era of Space",
+                "C": "Era of the Book",
+                "D": "Era of Machines"
+            },
+            "correct_answer": "C",
+            "explanation": "The twentieth century was known as the ‘Era of the Book’.",
+            "difficulty": "easy",
+            "source_section": "Historian’s speech"
+        },
+        {
+            "question_number": 5,
+            "question": "Who is the ruler of Mars?",
+            "options": {
+                "A": "Captain Omega",
+                "B": "Noodle",
+                "C": "Think-Tank",
+                "D": "Sergeant Oop"
+            },
+            "correct_answer": "C",
+            "explanation": "Think-Tank is the Great and Mighty ruler of Mars.",
+            "difficulty": "easy",
+            "source_section": "Mars Space Control"
+        },
+        {
+            "question_number": 6,
+            "question": "Who is Think-Tank’s apprentice?",
+            "options": {
+                "A": "Omega",
+                "B": "Iota",
+                "C": "Noodle",
+                "D": "Oop"
+            },
+            "correct_answer": "C",
+            "explanation": "Noodle serves as Think-Tank’s apprentice.",
+            "difficulty": "easy",
+            "source_section": "Mars scenes"
+        },
+        {
+            "question_number": 7,
+            "question": "Where do the Martians land on Earth?",
+            "options": {
+                "A": "A school",
+                "B": "A market",
+                "C": "A library",
+                "D": "A museum"
+            },
+            "correct_answer": "C",
+            "explanation": "They land inside a public library.",
+            "difficulty": "easy",
+            "source_section": "Earth scenes"
+        },
+        {
+            "question_number": 8,
+            "question": "What do the Martians think books are?",
+            "options": {
+                "A": "Weapons",
+                "B": "Sandwiches",
+                "C": "Machines",
+                "D": "Maps"
+            },
+            "correct_answer": "B",
+            "explanation": "They mistake books for sandwiches.",
+            "difficulty": "easy",
+            "source_section": "Library scene"
+        },
+        {
+            "question_number": 9,
+            "question": "Who is the leader of the Martian crew on Earth?",
+            "options": {
+                "A": "Lieutenant Iota",
+                "B": "Sergeant Oop",
+                "C": "Captain Omega",
+                "D": "Noodle"
+            },
+            "correct_answer": "C",
+            "explanation": "Captain Omega leads the Martian mission.",
+            "difficulty": "easy",
+            "source_section": "Earth mission"
+        },
+        {
+            "question_number": 10,
+            "question": "What book confuses the Martians the most?",
+            "options": {
+                "A": "Encyclopedia",
+                "B": "Science book",
+                "C": "Mother Goose",
+                "D": "Dictionary"
+            },
+            "correct_answer": "C",
+            "explanation": "Mother Goose nursery rhymes confuse the Martians.",
+            "difficulty": "easy",
+            "source_section": "Nursery rhyme scene"
+        },
+        {
+            "question_number": 11,
+            "question": "What do the Martians think the nursery rhymes describe?",
+            "options": {
+                "A": "Games",
+                "B": "Stories",
+                "C": "Advanced weapons",
+                "D": "Fairy tales"
+            },
+            "correct_answer": "C",
+            "explanation": "They believe the rhymes describe dangerous weapons.",
+            "difficulty": "easy",
+            "source_section": "Misinterpretation"
+        },
+        {
+            "question_number": 12,
+            "question": "Which animal did the Martians think could jump over the moon?",
+            "options": {
+                "A": "Dog",
+                "B": "Cat",
+                "C": "Cow",
+                "D": "Horse"
+            },
+            "correct_answer": "C",
+            "explanation": "They believe cows can jump over the moon.",
+            "difficulty": "easy",
+            "source_section": "Hey Diddle Diddle rhyme"
+        },
+        {
+            "question_number": 13,
+            "question": "Why does Think-Tank panic?",
+            "options": {
+                "A": "Earth attacks Mars",
+                "B": "He misreads Humpty Dumpty",
+                "C": "Noodle rebels",
+                "D": "The ship breaks down"
+            },
+            "correct_answer": "B",
+            "explanation": "Think-Tank thinks Humpty Dumpty is about him.",
+            "difficulty": "easy",
+            "source_section": "Humpty Dumpty scene"
+        },
+        {
+            "question_number": 14,
+            "question": "What decision does Think-Tank make after reading the rhymes?",
+            "options": {
+                "A": "Attack Earth",
+                "B": "Negotiate peace",
+                "C": "Cancel the invasion",
+                "D": "Destroy the books"
+            },
+            "correct_answer": "C",
+            "explanation": "He orders the invasion to be cancelled.",
+            "difficulty": "easy",
+            "source_section": "Decision scene"
+        },
+        {
+            "question_number": 15,
+            "question": "Where do the Martians decide to go?",
+            "options": {
+                "A": "Earth",
+                "B": "Marsopolis",
+                "C": "Alpha Centauri",
+                "D": "The Moon"
+            },
+            "correct_answer": "C",
+            "explanation": "They flee towards Alpha Centauri.",
+            "difficulty": "easy",
+            "source_section": "Ending scene"
+        },
+        {
+            "question_number": 16,
+            "question": "Who later becomes the leader of Mars?",
+            "options": {
+                "A": "Think-Tank",
+                "B": "Omega",
+                "C": "Noodle",
+                "D": "Iota"
+            },
+            "correct_answer": "C",
+            "explanation": "Noodle replaces Think-Tank as leader.",
+            "difficulty": "easy",
+            "source_section": "Conclusion"
+        },
+        {
+            "question_number": 17,
+            "question": "What do Earthlings teach Martians later?",
+            "options": {
+                "A": "How to fight",
+                "B": "How to read",
+                "C": "How to invade",
+                "D": "How to rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Earthlings teach Martians how to read.",
+            "difficulty": "easy",
+            "source_section": "Ending narration"
+        },
+        {
+            "question_number": 18,
+            "question": "Which book do Martians still fear?",
+            "options": {
+                "A": "Dictionary",
+                "B": "Science book",
+                "C": "Mother Goose",
+                "D": "Atlas"
+            },
+            "correct_answer": "C",
+            "explanation": "They remain afraid of Mother Goose.",
+            "difficulty": "easy",
+            "source_section": "Final lines"
+        },
+        {
+            "question_number": 19,
+            "question": "What genre is the play?",
+            "options": {
+                "A": "Tragedy",
+                "B": "Comedy",
+                "C": "Science fiction comedy",
+                "D": "Historical drama"
+            },
+            "correct_answer": "C",
+            "explanation": "The play mixes science fiction with humour.",
+            "difficulty": "easy",
+            "source_section": "Overall tone"
+        },
+        {
+            "question_number": 20,
+            "question": "What saves the Earth from invasion?",
+            "options": {
+                "A": "Weapons",
+                "B": "Army",
+                "C": "Books",
+                "D": "Technology"
+            },
+            "correct_answer": "C",
+            "explanation": "Books confuse the Martians and save Earth.",
+            "difficulty": "easy",
+            "source_section": "Central idea"
+        },
+        {
+            "question_number": 21,
+            "question": "What quality of Think-Tank causes failure?",
+            "options": {
+                "A": "Kindness",
+                "B": "Wisdom",
+                "C": "Arrogance",
+                "D": "Patience"
+            },
+            "correct_answer": "C",
+            "explanation": "His arrogance leads to wrong decisions.",
+            "difficulty": "easy",
+            "source_section": "Character analysis"
+        },
+        {
+            "question_number": 22,
+            "question": "What literary device creates humour?",
+            "options": {
+                "A": "Simile",
+                "B": "Irony",
+                "C": "Alliteration",
+                "D": "Personification"
+            },
+            "correct_answer": "B",
+            "explanation": "Irony creates humour in the play.",
+            "difficulty": "easy",
+            "source_section": "Literary device"
+        },
+        {
+            "question_number": 23,
+            "question": "What does the play highlight most?",
+            "options": {
+                "A": "Power of war",
+                "B": "Power of money",
+                "C": "Power of knowledge",
+                "D": "Power of fear"
+            },
+            "correct_answer": "C",
+            "explanation": "Knowledge and books are shown as powerful.",
+            "difficulty": "easy",
+            "source_section": "Theme"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the tone of the play?",
+            "options": {
+                "A": "Serious",
+                "B": "Sad",
+                "C": "Humorous",
+                "D": "Tragic"
+            },
+            "correct_answer": "C",
+            "explanation": "The play is light-hearted and humorous.",
+            "difficulty": "easy",
+            "source_section": "Overall tone"
+        },
+        {
+            "question_number": 25,
+            "question": "What message does the play convey?",
+            "options": {
+                "A": "Strength lies in weapons",
+                "B": "Knowledge is powerful",
+                "C": "Fear is necessary",
+                "D": "Aliens are dangerous"
+            },
+            "correct_answer": "B",
+            "explanation": "The play conveys that knowledge and books are powerful.",
+            "difficulty": "easy",
+            "source_section": "Moral"
+        }
+    ]
+}

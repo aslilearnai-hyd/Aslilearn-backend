@@ -1,0 +1,273 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 8: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-05T16:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain what matter is and give examples from daily life.",
+      "answer": "Matter is anything that has mass and occupies space. Examples include air, water, books, food, and trees. All these objects consist of tiny particles that make up matter.",
+      "answer_outline": [
+        "Definition of matter",
+        "Mass and space",
+        "Examples from everyday life"
+      ],
+      "key_concepts": ["matter"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain what a mixture is and give examples.",
+      "answer": "A mixture is formed when two or more substances are combined without chemical reaction. Each substance retains its properties. Examples include salt water, air, and salad.",
+      "answer_outline": [
+        "Definition of mixture",
+        "Properties retained",
+        "Examples"
+      ],
+      "key_concepts": ["mixture"],
+      "marks": 5,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the difference between uniform and non-uniform mixtures.",
+      "answer": "Uniform mixtures have components evenly distributed throughout the mixture and appear the same everywhere, such as sugar dissolved in water. Non-uniform mixtures have visible components that are not evenly distributed, such as sand mixed with water.",
+      "answer_outline": [
+        "Uniform mixtures",
+        "Non-uniform mixtures",
+        "Examples"
+      ],
+      "key_concepts": ["uniform mixture", "non-uniform mixture"],
+      "marks": 5,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain why air is considered a mixture.",
+      "answer": "Air is a mixture because it contains several gases such as nitrogen, oxygen, carbon dioxide, and water vapour. These gases are mixed together but do not chemically react with each other.",
+      "answer_outline": [
+        "Components of air",
+        "Mixture of gases",
+        "No chemical reaction"
+      ],
+      "key_concepts": ["air mixture"],
+      "marks": 5,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how lime water helps detect carbon dioxide in air.",
+      "answer": "When carbon dioxide reacts with lime water (calcium hydroxide), it forms calcium carbonate, which appears as a milky substance. This reaction confirms the presence of carbon dioxide.",
+      "answer_outline": [
+        "Lime water composition",
+        "Reaction with carbon dioxide",
+        "Milky appearance"
+      ],
+      "key_concepts": ["lime water test"],
+      "marks": 5,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain what pure substances are.",
+      "answer": "A pure substance is made of only one type of particle and cannot be separated into other substances by physical processes. Pure substances include elements and compounds.",
+      "answer_outline": ["Definition", "Single type of particle", "Examples"],
+      "key_concepts": ["pure substance"],
+      "marks": 4,
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the difference between the common meaning and scientific meaning of purity.",
+      "answer": "In everyday language, pure means free from adulteration. In science, a pure substance means a substance consisting of only one type of particle.",
+      "answer_outline": ["Common meaning", "Scientific meaning", "Examples"],
+      "key_concepts": ["purity"],
+      "marks": 4,
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain what elements are.",
+      "answer": "Elements are pure substances made of only one type of atom. They cannot be broken down into simpler substances by chemical reactions.",
+      "answer_outline": ["Definition", "Atoms", "Examples"],
+      "key_concepts": ["elements"],
+      "marks": 4,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of atoms and molecules of elements.",
+      "answer": "Atoms are the smallest particles of elements. Atoms of some elements combine to form molecules to achieve stability, such as oxygen molecules formed from two oxygen atoms.",
+      "answer_outline": [
+        "Definition of atoms",
+        "Formation of molecules",
+        "Examples"
+      ],
+      "key_concepts": ["atoms", "molecules"],
+      "marks": 5,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the classification of elements based on their properties.",
+      "answer": "Elements are broadly classified as metals and non-metals. Metals include iron and gold, while non-metals include oxygen and carbon. Some elements with intermediate properties are called metalloids.",
+      "answer_outline": ["Metals", "Non-metals", "Metalloids"],
+      "key_concepts": ["metals", "non-metals"],
+      "marks": 5,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how water can be decomposed into hydrogen and oxygen.",
+      "answer": "Water can be decomposed by passing electric current through it in a process called electrolysis. This breaks water into hydrogen and oxygen gases.",
+      "answer_outline": [
+        "Electrolysis",
+        "Hydrogen formation",
+        "Oxygen formation"
+      ],
+      "key_concepts": ["electrolysis"],
+      "marks": 5,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain what compounds are.",
+      "answer": "Compounds are substances formed when two or more elements chemically combine in fixed proportions. Their properties differ from those of their constituent elements.",
+      "answer_outline": [
+        "Chemical combination",
+        "Fixed ratio",
+        "Different properties"
+      ],
+      "key_concepts": ["compound"],
+      "marks": 5,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why elements in a compound cannot be separated by physical methods.",
+      "answer": "Elements in a compound are chemically bonded, so they cannot be separated by physical processes such as filtration or evaporation.",
+      "answer_outline": ["Chemical bonding", "Difference from mixtures"],
+      "key_concepts": ["chemical bonding"],
+      "marks": 4,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the composition of water as a compound.",
+      "answer": "Water is a compound made of hydrogen and oxygen combined chemically in a fixed ratio of 2:1.",
+      "answer_outline": ["Hydrogen atoms", "Oxygen atom", "Fixed ratio"],
+      "key_concepts": ["water compound"],
+      "marks": 4,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the decomposition of sugar on heating.",
+      "answer": "When sugar is heated, it decomposes into carbon and water. The water droplets appear inside the test tube and carbon remains as black residue.",
+      "answer_outline": [
+        "Heating sugar",
+        "Formation of carbon",
+        "Formation of water"
+      ],
+      "key_concepts": ["decomposition"],
+      "marks": 5,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how a mixture of iron and sulfur differs from iron sulfide.",
+      "answer": "In a mixture, iron and sulfur retain their properties and iron can be separated using a magnet. When heated, they form iron sulfide, a compound with new properties that cannot be separated physically.",
+      "answer_outline": [
+        "Mixture properties",
+        "Compound formation",
+        "Magnetic property"
+      ],
+      "key_concepts": ["iron sulfide"],
+      "marks": 5,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the magnet test used to distinguish mixtures and compounds.",
+      "answer": "In the mixture of iron and sulfur, a magnet attracts iron particles. However, in iron sulfide compound, the magnet has no effect because iron has chemically combined with sulfur.",
+      "answer_outline": ["Magnet attraction", "Mixture vs compound"],
+      "key_concepts": ["magnet test"],
+      "marks": 4,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the role of elements, compounds, and mixtures in daily life.",
+      "answer": "Elements, compounds, and mixtures form the materials we use daily. Air is a mixture, water is a compound, and metals like iron are elements used in construction and manufacturing.",
+      "answer_outline": ["Examples", "Daily life uses"],
+      "key_concepts": ["elements", "compounds", "mixtures"],
+      "marks": 5,
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of alloys.",
+      "answer": "Alloys are mixtures of metals that are stronger and more durable than pure metals. Examples include stainless steel, brass, and bronze.",
+      "answer_outline": ["Definition", "Examples", "Uses"],
+      "key_concepts": ["alloys"],
+      "marks": 4,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain what minerals are.",
+      "answer": "Minerals are naturally occurring solid substances found in rocks. Most minerals are compounds formed from different elements.",
+      "answer_outline": ["Definition", "Natural occurrence"],
+      "key_concepts": ["minerals"],
+      "marks": 4,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the role of minerals in everyday materials.",
+      "answer": "Minerals are used to produce materials such as cement, talcum powder, and metals used in construction and manufacturing.",
+      "answer_outline": ["Mineral sources", "Examples"],
+      "key_concepts": ["minerals"],
+      "marks": 4,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why understanding matter is important.",
+      "answer": "Understanding matter helps scientists develop new materials, medicines, and technologies that improve human life.",
+      "answer_outline": ["Scientific understanding", "Applications"],
+      "key_concepts": ["matter"],
+      "marks": 4,
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how knowledge of compounds helps scientists.",
+      "answer": "Scientists use knowledge of compounds to create medicines, fertilizers, and materials with useful properties.",
+      "answer_outline": ["Chemical knowledge", "Applications"],
+      "key_concepts": ["compounds"],
+      "marks": 4,
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how mixtures can be separated.",
+      "answer": "Mixtures can be separated using physical methods such as filtration, evaporation, and magnetic separation depending on the properties of components.",
+      "answer_outline": ["Filtration", "Evaporation", "Magnetic separation"],
+      "key_concepts": ["separation of mixtures"],
+      "marks": 5,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall difference between elements, compounds, and mixtures.",
+      "answer": "Elements are pure substances made of one type of atom. Compounds are formed when elements combine chemically in fixed ratios. Mixtures are physical combinations of substances where each retains its properties.",
+      "answer_outline": ["Elements", "Compounds", "Mixtures"],
+      "key_concepts": ["classification of matter"],
+      "marks": 5,
+      "source_section": "Summary"
+    }
+  ]
+}

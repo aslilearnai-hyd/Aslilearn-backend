@@ -1,0 +1,153 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Adventures of Toto",
+    "author": "Ruskin Bond",
+    "difficulty": "Hard",
+    "source_pdf": "eng9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Character Analysis of Grandfather",
+            "objective": "Analyse Grandfather’s personality",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the story carefully",
+                "Write 6–7 sentences describing Grandfather’s character"
+            ],
+            "learning_outcome": "Develops analytical thinking",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Humour in the Story",
+            "objective": "Identify humorous incidents",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find three humorous events in the story",
+                "Explain why they are funny"
+            ],
+            "learning_outcome": "Understands literary humour",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Toto as a Mischievous Animal",
+            "objective": "Evaluate Toto’s behaviour",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify three mischievous acts by Toto",
+                "Explain their effects on the family"
+            ],
+            "learning_outcome": "Evaluates character actions",
+            "evaluation": "Clear reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Author’s Narrative Style",
+            "objective": "Understand Ruskin Bond’s storytelling style",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe how the story is narrated",
+                "Write 5–6 sentences about the narrative style"
+            ],
+            "learning_outcome": "Recognizes narrative techniques",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Cause and Effect in the Story",
+            "objective": "Analyse cause–effect relationships",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify three incidents in the story",
+                "Write their causes and effects"
+            ],
+            "learning_outcome": "Develops logical reasoning",
+            "evaluation": "Correct cause–effect pairs (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Lesson from the Story",
+            "objective": "Identify the message of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the events involving Toto",
+                "Write 5–6 sentences explaining the lesson"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear interpretation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Compare Toto with Other Pets",
+            "objective": "Compare behaviour of different pets",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about common pets like dogs or cats",
+                "Compare their behaviour with Toto"
+            ],
+            "learning_outcome": "Develops comparative thinking",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Story Summary",
+            "objective": "Summarize the story effectively",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the entire story",
+                "Write a summary in about 8–10 sentences"
+            ],
+            "learning_outcome": "Improves summarizing skills",
+            "evaluation": "Accuracy and clarity (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Why Toto Could Not Be Kept",
+            "objective": "Analyse the ending of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the final part carefully",
+                "Explain in 6–7 sentences why Toto had to be sold"
+            ],
+            "learning_outcome": "Understands story conclusion",
+            "evaluation": "Logical reasoning (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Creative Thinking Activity",
+            "objective": "Encourage imagination",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine Toto stayed with the family",
+                "Write a short paragraph about another adventure of Toto"
+            ],
+            "learning_outcome": "Enhances creative writing",
+            "evaluation": "Creativity and clarity (10 marks)"
+        }
+    ]
+}

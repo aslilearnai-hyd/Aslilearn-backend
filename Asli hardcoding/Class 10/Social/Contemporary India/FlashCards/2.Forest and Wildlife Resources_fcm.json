@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 2: Forest and Wildlife Resources",
+  "generated_at": "2026-03-11T12:20:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is biodiversity?",
+        "correct_answer": "The variety of plants, animals, and microorganisms found in a particular region",
+        "explanation": "Biodiversity includes all living organisms that interact with each other in ecosystems.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "Why are forests important for ecosystems?",
+        "correct_answer": "Forests support biodiversity and maintain ecological balance",
+        "explanation": "They provide habitat for wildlife and help maintain air, water, and soil quality.",
+        "source_section": "Flora and Fauna in India"
+      },
+      {
+        "question": "What is conservation?",
+        "correct_answer": "The protection and careful management of natural resources",
+        "explanation": "Conservation ensures sustainable use of forests and wildlife resources.",
+        "source_section": "Conservation of Forest and Wildlife in India"
+      },
+      {
+        "question": "When was the Wildlife Protection Act implemented in India?",
+        "correct_answer": "1972",
+        "explanation": "The act was introduced to protect wildlife and their habitats by banning hunting and trade.",
+        "source_section": "Wildlife Protection Measures"
+      },
+      {
+        "question": "What was the main objective of Project Tiger?",
+        "correct_answer": "To protect and increase the declining population of tigers",
+        "explanation": "Project Tiger was launched to conserve tigers and their habitats.",
+        "source_section": "Project Tiger"
+      },
+      {
+        "question": "What are reserved forests?",
+        "correct_answer": "Forests that are highly protected and considered most valuable for conservation",
+        "explanation": "These forests are strictly regulated by the government.",
+        "source_section": "Types and Distribution of Forest and Wildlife Resources"
+      },
+      {
+        "question": "What are protected forests?",
+        "correct_answer": "Forests that are protected from further depletion",
+        "explanation": "These forests are safeguarded but may allow limited human activities.",
+        "source_section": "Types and Distribution of Forest and Wildlife Resources"
+      },
+      {
+        "question": "What are unclassed forests?",
+        "correct_answer": "Forests and wastelands belonging to government, private individuals, or communities",
+        "explanation": "These forests are not strictly categorized under reserved or protected forests.",
+        "source_section": "Types and Distribution of Forest and Wildlife Resources"
+      },
+      {
+        "question": "What was the Chipko Movement?",
+        "correct_answer": "A movement where villagers hugged trees to prevent them from being cut down",
+        "explanation": "It was a community-led effort to stop deforestation.",
+        "source_section": "Community and Conservation"
+      },
+      {
+        "question": "What are sacred groves?",
+        "correct_answer": "Forest patches protected by local communities due to religious or cultural beliefs",
+        "explanation": "Sacred groves help conserve rare plants and animals.",
+        "source_section": "Sacred Groves"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Biodiversity",
+        "content": "Biodiversity refers to the variety of life forms present in a particular habitat or ecosystem.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Forest Conservation",
+        "content": "Conservation helps maintain ecological balance and preserve natural resources for future generations.",
+        "source_section": "Conservation of Forest and Wildlife in India"
+      },
+      {
+        "title": "Wildlife Protection Act",
+        "content": "The Wildlife Protection Act of 1972 was introduced to protect endangered species and regulate hunting.",
+        "source_section": "Wildlife Protection Measures"
+      },
+      {
+        "title": "Forest Classification",
+        "content": "Forests in India are classified as reserved forests, protected forests, and unclassed forests.",
+        "source_section": "Types and Distribution of Forest and Wildlife Resources"
+      },
+      {
+        "title": "Community Conservation",
+        "content": "Local communities often play an important role in protecting forests and wildlife.",
+        "source_section": "Community and Conservation"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "India is one of the world's richest countries in terms of biodiversity.",
+        "source_section": "Flora and Fauna in India"
+      },
+      {
+        "fact": "Project Tiger was launched in 1973 to conserve tigers.",
+        "source_section": "Project Tiger"
+      },
+      {
+        "fact": "More than half of India's forest land is classified as reserved forests.",
+        "source_section": "Types and Distribution of Forest and Wildlife Resources"
+      },
+      {
+        "fact": "Sacred groves are protected by communities due to cultural and religious beliefs.",
+        "source_section": "Sacred Groves"
+      }
+    ]
+  }
+}

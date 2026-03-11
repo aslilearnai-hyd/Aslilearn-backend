@@ -1,0 +1,388 @@
+{
+"content_type": "Long Questions",
+"chapter": "Chapter 5: Tales by Dots and Lines",
+"generated_at": "2026-03-04T10:00:00",
+"total_questions": 25,
+"questions": [
+{
+"question_number": 1,
+"question": "Define mean and explain why it is called a measure of central tendency.",
+"answer": "The mean is the sum of all observations divided by the number of observations. It represents the central value of the dataset and hence is called a measure of central tendency.",
+"answer_outline": [
+"Definition of mean",
+"Formula of mean",
+"Explanation of central tendency"
+],
+"key_concepts": [
+"mean",
+"central tendency"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 2,
+"question": "Explain how the mean represents the balance point of data.",
+"answer": "The mean acts like a balancing point where the total distance of observations on one side of the mean equals the total distance on the other side.",
+"answer_outline": [
+"Concept of balance",
+"Distances from mean",
+"Interpretation"
+],
+"key_concepts": [
+"mean",
+"balance property"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 3,
+"question": "Explain what happens to the mean when a new value greater than the mean is added to a dataset.",
+"answer": "When a value greater than the mean is added, the mean increases because the balance of the dataset shifts toward the larger value.",
+"answer_outline": [
+"Initial mean",
+"Addition of new value",
+"Effect on mean"
+],
+"key_concepts": [
+"mean",
+"data modification"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 4,
+"question": "Explain the concept of median with an example.",
+"answer": "The median is the middle value of a dataset when the values are arranged in ascending order. For example, in the set {3, 5, 7, 9, 11}, the median is 7.",
+"answer_outline": [
+"Definition of median",
+"Sorting data",
+"Example"
+],
+"key_concepts": [
+"median"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 5,
+"question": "Explain how the median changes when a new value is added to the dataset.",
+"answer": "If a value greater than the median is added, the median may increase. If a value smaller than the median is added, the median may decrease depending on the dataset.",
+"answer_outline": [
+"Initial median",
+"Adding larger value",
+"Adding smaller value"
+],
+"key_concepts": [
+"median",
+"data changes"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 6,
+"question": "Explain the method of calculating mean using frequency tables.",
+"answer": "To calculate mean using frequency tables, multiply each value by its frequency, add the results, and divide by the total frequency.",
+"answer_outline": [
+"Frequency table",
+"Multiplication step",
+"Division by total frequency"
+],
+"key_concepts": [
+"mean",
+"frequency"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 7,
+"question": "Explain how the median can be determined from a frequency table.",
+"answer": "Arrange data in order, compute cumulative frequencies, and identify the middle position to determine the median value.",
+"answer_outline": [
+"Arrange data",
+"Find cumulative frequency",
+"Identify median position"
+],
+"key_concepts": [
+"median",
+"frequency tables"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 8,
+"question": "Explain the role of spreadsheets in data analysis.",
+"answer": "Spreadsheets allow users to organize data in rows and columns and perform calculations like sum and average using formulas.",
+"answer_outline": [
+"Spreadsheet structure",
+"Use of formulas",
+"Advantages"
+],
+"key_concepts": [
+"spreadsheets",
+"data analysis"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 9,
+"question": "Explain the structure of a spreadsheet.",
+"answer": "A spreadsheet is composed of rows and columns forming cells where data and formulas can be entered for calculations.",
+"answer_outline": [
+"Rows",
+"Columns",
+"Cells"
+],
+"key_concepts": [
+"spreadsheet"
+],
+"marks": 4,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 10,
+"question": "Explain what a line graph is and when it is used.",
+"answer": "A line graph represents data using points connected by line segments and is commonly used to show changes over time.",
+"answer_outline": [
+"Definition",
+"Structure",
+"Usage"
+],
+"key_concepts": [
+"line graphs"
+],
+"marks": 5,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 11,
+"question": "Explain how a line graph helps interpret temperature trends.",
+"answer": "A line graph allows us to observe patterns and variations in temperature over time by connecting plotted data points.",
+"answer_outline": [
+"Plotting points",
+"Connecting lines",
+"Trend analysis"
+],
+"key_concepts": [
+"line graphs",
+"data interpretation"
+],
+"marks": 5,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 12,
+"question": "Explain why line graphs are useful for showing changes over time.",
+"answer": "Line graphs show trends clearly by connecting data points, making it easier to track increases and decreases across time.",
+"answer_outline": [
+"Visual trends",
+"Time-based data"
+],
+"key_concepts": [
+"line graphs"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 13,
+"question": "Explain the concept of dot plots.",
+"answer": "A dot plot is a simple graphical display where dots represent data points on a number line.",
+"answer_outline": [
+"Definition",
+"Representation",
+"Use in data analysis"
+],
+"key_concepts": [
+"dot plots"
+],
+"marks": 4,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 14,
+"question": "Explain how dot plots help understand data distribution.",
+"answer": "Dot plots visually show clusters, gaps, and frequency of values in a dataset.",
+"answer_outline": [
+"Data clusters",
+"Frequency observation",
+"Distribution"
+],
+"key_concepts": [
+"dot plots",
+"data distribution"
+],
+"marks": 4,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 15,
+"question": "Explain how rainfall patterns can be represented using line graphs.",
+"answer": "Rainfall data across months can be plotted as points and connected to show seasonal patterns.",
+"answer_outline": [
+"Data plotting",
+"Connecting points",
+"Pattern interpretation"
+],
+"key_concepts": [
+"rainfall data",
+"line graphs"
+],
+"marks": 5,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 16,
+"question": "Explain the steps involved in interpreting a graph.",
+"answer": "First identify what information the graph shows, then observe patterns and trends, and finally draw conclusions from the data.",
+"answer_outline": [
+"Identify information",
+"Observe patterns",
+"Interpret data"
+],
+"key_concepts": [
+"graph interpretation"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 17,
+"question": "Explain how graphs help in decision making.",
+"answer": "Graphs simplify complex datasets and allow quick understanding of trends, helping people make informed decisions.",
+"answer_outline": [
+"Data visualization",
+"Trend identification",
+"Decision making"
+],
+"key_concepts": [
+"data visualization"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 18,
+"question": "Explain the importance of data visualization.",
+"answer": "Data visualization helps represent information clearly using graphs, charts, and diagrams.",
+"answer_outline": [
+"Clear representation",
+"Easy interpretation"
+],
+"key_concepts": [
+"data visualization"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 19,
+"question": "Explain how graphs can represent large datasets effectively.",
+"answer": "Graphs condense large amounts of data into visual patterns that are easier to interpret.",
+"answer_outline": [
+"Data summarization",
+"Visual patterns"
+],
+"key_concepts": [
+"graphs"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 20,
+"question": "Explain the difference between mean and median.",
+"answer": "Mean is the average of all values while median is the middle value of an ordered dataset.",
+"answer_outline": [
+"Definition of mean",
+"Definition of median",
+"Difference"
+],
+"key_concepts": [
+"mean",
+"median"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 21,
+"question": "Explain how statistical measures help in analysing real-life data.",
+"answer": "Statistical measures like mean and median summarize datasets and help understand patterns.",
+"answer_outline": [
+"Role of statistics",
+"Application in real life"
+],
+"key_concepts": [
+"statistics"
+],
+"marks": 4,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 22,
+"question": "Explain how trends can be identified using graphs.",
+"answer": "Trends are identified by observing whether graph lines move upward, downward, or remain stable.",
+"answer_outline": [
+"Upward trend",
+"Downward trend",
+"Stable pattern"
+],
+"key_concepts": [
+"graph trends"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+},
+{
+"question_number": 23,
+"question": "Explain how the mean changes if every value in the dataset increases by a constant number.",
+"answer": "If every value increases by a constant number, the mean also increases by the same number.",
+"answer_outline": [
+"Original dataset",
+"Adding constant",
+"Effect on mean"
+],
+"key_concepts": [
+"mean property"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 24,
+"question": "Explain how multiplying every value in a dataset affects the mean.",
+"answer": "If every value in a dataset is multiplied by a number, the mean is also multiplied by that number.",
+"answer_outline": [
+"Original mean",
+"Multiplication effect"
+],
+"key_concepts": [
+"mean transformation"
+],
+"marks": 5,
+"source_section": "Section 5.1"
+},
+{
+"question_number": 25,
+"question": "Explain how data stories help understand statistical information.",
+"answer": "Data stories use graphs and explanations to present data patterns in a meaningful and engaging way.",
+"answer_outline": [
+"Definition",
+"Importance"
+],
+"key_concepts": [
+"data storytelling"
+],
+"marks": 4,
+"source_section": "Section 5.2"
+}
+]
+}

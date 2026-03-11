@@ -1,0 +1,156 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Necklace",
+    "title": "Lesson Planner – The Necklace (Easy)",
+    "author": "Guy de Maupassant",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify main characters and their traits",
+        "Understand the central idea of the lesson",
+        "Learn basic vocabulary from the text",
+        "Improve reading and comprehension skills",
+        "Relate the story to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Prose",
+            "topics_covered": [
+                "Introduction to Guy de Maupassant",
+                "Background of the story",
+                "Overview of the plot"
+            ],
+            "teaching_strategy": [
+                "Teacher narration",
+                "Interactive explanation"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share first impressions of the story title"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Main Characters",
+            "topics_covered": [
+                "Character of Mme Loisel",
+                "Role of Mr Loisel",
+                "Introduction to Mme Forestier"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character discussion"
+            ],
+            "student_activities": [
+                "List main characters",
+                "Write one line about each character"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mme Loisel’s Dissatisfaction",
+            "topics_covered": [
+                "Reason for Mme Loisel’s unhappiness",
+                "Her desire for luxury"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Answer simple questions",
+                "Class discussion"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Oral responses"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Ball and the Necklace",
+            "topics_covered": [
+                "Invitation to the ball",
+                "Borrowing of the necklace",
+                "Importance of the event"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Sequential explanation"
+            ],
+            "student_activities": [
+                "Retell the event in sequence",
+                "Identify the turning point"
+            ],
+            "assessment": [
+                "Event sequencing",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Loss of the Necklace and Consequences",
+            "topics_covered": [
+                "Loss of the necklace",
+                "Replacement of the necklace",
+                "Hardships faced by the Loisels"
+            ],
+            "teaching_strategy": [
+                "Cause–effect explanation",
+                "Discussion method"
+            ],
+            "student_activities": [
+                "List consequences",
+                "Answer textbook questions"
+            ],
+            "assessment": [
+                "Written exercise",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Moral, Vocabulary, and Revision",
+            "topics_covered": [
+                "Moral of the story",
+                "New vocabulary",
+                "Lesson recap"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Recap session"
+            ],
+            "student_activities": [
+                "Write the moral",
+                "Learn meanings of new words"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Use simple real-life examples to explain the dangers of pride and dissatisfaction."
+}

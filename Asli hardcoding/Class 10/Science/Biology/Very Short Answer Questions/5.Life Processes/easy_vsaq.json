@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: LIFE PROCESSES",
+    "generated_at": "2026-03-10T23:48:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are life processes?",
+            "answer": "The basic functions performed by living organisms to maintain their life on earth are called life processes.",
+            "key_concepts": ["definition", "maintenance"],
+            "marks": 2,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the two main modes of nutrition.",
+            "answer": "Autotrophic nutrition and Heterotrophic nutrition.",
+            "key_concepts": ["modes of nutrition"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the process by which green plants prepare their own food?",
+            "answer": "Photosynthesis",
+            "key_concepts": ["autotrophic nutrition"],
+            "marks": 2,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the chemical equation for photosynthesis.",
+            "answer": "$6CO_2 + 12H_2O \xrightarrow[Chlorophyll]{Sunlight} C_6H_{12}O_6 + 6O_2 + 6H_2O$",
+            "key_concepts": ["photosynthesis equation"],
+            "marks": 2,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Where does photosynthesis occur in a plant cell?",
+            "answer": "Chloroplasts",
+            "key_concepts": ["organelles"],
+            "marks": 2,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are stomata?",
+            "answer": "Tiny pores present on the surface of the leaves used for gas exchange.",
+            "key_concepts": ["gas exchange", "stomata"],
+            "marks": 2,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which cells regulate the opening and closing of stomatal pores?",
+            "answer": "Guard cells",
+            "key_concepts": ["guard cells"],
+            "marks": 2,
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Give an example of a saprophyte.",
+            "answer": "Fungi (Mushroom/Bread mould)",
+            "key_concepts": ["heterotrophic nutrition"],
+            "marks": 2,
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Name the enzyme present in human saliva.",
+            "answer": "Salivary amylase",
+            "key_concepts": ["digestion", "enzymes"],
+            "marks": 2,
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the function of bile juice?",
+            "answer": "Emulsification of fats and making the acidic food from the stomach alkaline.",
+            "key_concepts": ["liver", "digestion"],
+            "marks": 2,
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Name the site of complete digestion in humans.",
+            "answer": "Small Intestine",
+            "key_concepts": ["digestive system"],
+            "marks": 2,
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What are villi?",
+            "answer": "Finger-like projections in the small intestine that increase the surface area for absorption.",
+            "key_concepts": ["absorption", "villi"],
+            "marks": 2,
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is ATP?",
+            "answer": "Adenosine Triphosphate, the energy currency of the cell.",
+            "key_concepts": ["cellular energy"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Where does the first step of glucose breakdown (glycolysis) occur?",
+            "answer": "Cytoplasm",
+            "key_concepts": ["respiration"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is anaerobic respiration?",
+            "answer": "The breakdown of glucose in the absence of oxygen.",
+            "key_concepts": ["respiration type"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why do we get muscle cramps after heavy exercise?",
+            "answer": "Due to the accumulation of lactic acid produced during anaerobic respiration in muscles.",
+            "key_concepts": ["lactic acid"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Name the respiratory pigment in human beings.",
+            "answer": "Haemoglobin",
+            "key_concepts": ["transport of gases"],
+            "marks": 2,
+            "source_section": "Section 5.3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the function of platelets?",
+            "answer": "To help in the clotting of blood at the site of injury.",
+            "key_concepts": ["blood components"],
+            "marks": 2,
+            "source_section": "Section 5.4.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which chamber of the human heart receives oxygenated blood from the lungs?",
+            "answer": "Left Atrium",
+            "key_concepts": ["heart anatomy"],
+            "marks": 2,
+            "source_section": "Section 5.4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What are xylem and phloem?",
+            "answer": "Xylem transports water and minerals; Phloem transports food (products of photosynthesis).",
+            "key_concepts": ["plant transport"],
+            "marks": 2,
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Define Transpiration.",
+            "answer": "The loss of water in the form of vapor from the aerial parts of the plant.",
+            "key_concepts": ["transpiration"],
+            "marks": 2,
+            "source_section": "Section 5.4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the basic functional unit of the human kidney?",
+            "answer": "Nephron",
+            "key_concepts": ["excretion", "kidney"],
+            "marks": 2,
+            "source_section": "Section 5.5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Where is urine stored in the human body before being passed out?",
+            "answer": "Urinary Bladder",
+            "key_concepts": ["excretory system"],
+            "marks": 2,
+            "source_section": "Section 5.5.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is hemodialysis?",
+            "answer": "An artificial process of filtering the blood to remove nitrogenous waste when kidneys fail.",
+            "key_concepts": ["dialysis"],
+            "marks": 2,
+            "source_section": "Section 5.5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "How do plants get rid of gaseous waste products?",
+            "answer": "Through stomata in leaves and lenticels in stems.",
+            "key_concepts": ["plant excretion"],
+            "marks": 2,
+            "source_section": "Section 5.5.2"
+        }
+    ]
+}

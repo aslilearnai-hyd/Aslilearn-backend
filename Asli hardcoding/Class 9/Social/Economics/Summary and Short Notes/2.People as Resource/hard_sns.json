@@ -1,0 +1,38 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter": "People as Resource",
+    "difficulty": "Hard",
+    "short_notes": {
+        "key_points": [
+            "Human Capital as a 'Force Multiplier': Unlike physical capital, human capital is self-augmenting. Investment in health and education increases 'Total Factor Productivity,' allowing a nation to overcome geographical and resource-based constraints.",
+            "Demographic Dividend: The economic growth potential resulting from shifts in a population’s age structure, specifically when the share of the working-age population (15–59) is larger than the non-working-age share.",
+            "Structural Paradox of Unemployment: India faces a 'Manpower Paradox'—a surplus of educated individuals in general streams alongside a critical shortage of specialized, technical manpower required for industrial growth.",
+            "Marginal Productivity in Agriculture: Disguised unemployment represents a state where the marginal physical product of labor is zero. This under-utilization of human resources hinders rural capital formation.",
+            "Economic Overload and Savings: High unemployment increases the 'Dependency Ratio,' diverting national income from productive investment into immediate consumption, thereby slowing down the GDP growth rate.",
+            "Gendered Labor Market Disparities: Earnings are determined by 'Human Capital Formation.' Historical neglect of female education and skill acquisition leads to a cluster of women in the low-wage, unorganized sector with zero job security.",
+            "The Japan Model: Proves that high-quality human resources can substitute for a lack of natural resources through high-tier value addition and technological innovation.",
+            "Multidimensional Quality of Population: Literacy and life expectancy are not just welfare goals but 'Input Indicators' that determine a nation's long-term competitive advantage in the global market."
+        ],
+        "formulas": [
+            "Human Capital Formation Return = (Increased National Income / Investment in Education and Health)",
+            "Dependency Ratio = [(Population aged 0-14 + Population aged 60+) / Population aged 15-59] × 100",
+            "Total Factor Productivity (TFP) = Output / (Weighted Average of Land, Labor, and Capital Inputs)",
+            "Infant Mortality Rate (IMR) = (Deaths of children <1 year / Total Live Births) × 1000"
+        ],
+        "examples": [
+            "Knowledge Economy: The Tertiary sector's growth in IT and Biotechnology where 'Cognitive Skill' is the primary raw material.",
+            "Disguised Unemployment: A 2-hectare plot being tilled by 8 family members where 3 are redundant; their removal leaves the total yield unchanged.",
+            "The Virtuous Cycle: Scandinavian models where high public expenditure on health and education leads to a highly skilled, high-income workforce.",
+            "Vicious Cycle: Inter-generational poverty traps where malnutrition in childhood leads to cognitive deficits and low-wage adult labor.",
+            "Vocationalization Success: The 'Dual System' of training where students split time between school and industry apprenticeships to eliminate skill mismatch."
+        ],
+        "exam_tips": [
+            "Analyze the Sakal and Vilas cases not just as stories, but as a contrast between 'Asset Creation' and 'Liability Maintenance'.",
+            "When discussing the Tertiary sector, emphasize that it provides 'high-tier support' that activates the Primary and Secondary sectors.",
+            "Differentiate between 'Manpower' (quantity) and 'Human Resource' (quality/skill).",
+            "For Disguised Unemployment, use the technical term 'Zero Marginal Productivity' to secure higher marks.",
+            "Connect 'Life Expectancy' directly to 'Workforce Durability'—a healthy population works longer and more effectively."
+        ]
+    }
+}

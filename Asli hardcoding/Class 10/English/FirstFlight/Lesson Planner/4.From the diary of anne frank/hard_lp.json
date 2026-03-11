@@ -1,0 +1,178 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "From the Diary of Anne Frank",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze Anne Frank’s character, thoughts, and emotional development",
+        "Interpret her diary within the historical context of WWII and the Holocaust",
+        "Examine relationships, conflicts, and social dynamics in the Secret Annex",
+        "Develop inferential and analytical skills from textual evidence",
+        "Understand themes of hope, courage, human values, and resilience in depth",
+        "Relate lessons from Anne’s experiences to contemporary issues of empathy and human rights"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Historical Context",
+            "topics_covered": [
+                "Anne Frank’s life and background",
+                "Nazi occupation of the Netherlands and the Holocaust",
+                "Purpose of the diary and its historical significance"
+            ],
+            "teaching_strategy": [
+                "Lecture with visuals and timeline of WWII and the Holocaust",
+                "Discussion on why documenting personal experiences is important"
+            ],
+            "student_activities": [
+                "Locate Amsterdam and Nazi-occupied territories on the map",
+                "Discuss societal impact of WWII and persecution of Jews"
+            ],
+            "assessment": [
+                "Oral Q&A on historical context",
+                "Short written note on the importance of Anne’s diary"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Study – Anne Frank",
+            "topics_covered": [
+                "Anne’s personality, emotions, and growth during hiding",
+                "Analysis of courage, resilience, and optimism",
+                "Moral and ethical perspectives in her diary entries"
+            ],
+            "teaching_strategy": [
+                "Character mapping using diary excerpts",
+                "Highlight traits with textual evidence and examples"
+            ],
+            "student_activities": [
+                "Create a detailed character map of Anne",
+                "Identify diary entries showing optimism, fear, or hope"
+            ],
+            "assessment": [
+                "Oral Q&A on Anne’s character",
+                "Short written task analyzing one character trait with evidence"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Life in the Secret Annex – Analysis",
+            "topics_covered": [
+                "Daily life, routines, and challenges of living in hiding",
+                "Relationships among family members and helpers",
+                "Conflicts, coping strategies, and group dynamics"
+            ],
+            "teaching_strategy": [
+                "Discussion of interpersonal relationships and challenges",
+                "Use excerpts to show conflicts and problem-solving in the Annex"
+            ],
+            "student_activities": [
+                "Prepare a chart of relationships, roles, and interactions",
+                "Discuss how Anne and others resolved conflicts"
+            ],
+            "assessment": [
+                "Oral Q&A on social dynamics",
+                "Short written note on coping strategies in hiding"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Themes and Literary Analysis",
+            "topics_covered": [
+                "Major themes: hope, courage, human values, perseverance",
+                "Literary style: first-person narration, diary format, emotional expression",
+                "Symbolism and underlying messages"
+            ],
+            "teaching_strategy": [
+                "Analyze text excerpts to identify themes and literary features",
+                "Discussion on how style conveys emotion and message"
+            ],
+            "student_activities": [
+                "Identify diary passages exemplifying each theme",
+                "Discuss how diary format impacts reader understanding"
+            ],
+            "assessment": [
+                "Oral Q&A on themes and literary features",
+                "Short written task analyzing a passage for theme and style"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Critical Thinking and Inferential Questions",
+            "topics_covered": [
+                "Analyzing Anne’s decisions and moral choices",
+                "Inferring emotions, motives, and values from diary entries",
+                "Evaluating lessons for modern society"
+            ],
+            "teaching_strategy": [
+                "Ask higher-order questions requiring reasoning and inference",
+                "Encourage discussion connecting text to contemporary issues"
+            ],
+            "student_activities": [
+                "Answer inferential questions in groups",
+                "Discuss moral dilemmas faced by Anne and her family"
+            ],
+            "assessment": [
+                "Oral discussion on inferences and ethical choices",
+                "Written answers to inferential and analytical questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Historical Significance and Reflection",
+            "topics_covered": [
+                "Impact of Anne Frank’s diary on the world",
+                "Lessons on human rights, tolerance, and empathy",
+                "Remembrance of the Holocaust and its victims"
+            ],
+            "teaching_strategy": [
+                "Use timelines, photographs, and excerpts for context",
+                "Facilitate reflective discussion on moral lessons"
+            ],
+            "student_activities": [
+                "Research the diary’s publication and global impact",
+                "Write a reflection on Anne’s influence on human values"
+            ],
+            "assessment": [
+                "Oral Q&A on historical impact",
+                "Short written reflection connecting past events to present lessons"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision, Synthesis, and Higher-Order Thinking",
+            "topics_covered": [
+                "Review of major events, characters, and themes",
+                "Critical analysis of diary entries and moral lessons",
+                "Synthesis of historical, literary, and ethical understanding"
+            ],
+            "teaching_strategy": [
+                "Use mind maps and timelines for revision",
+                "Conduct debates, Q&A, and group discussions on complex questions"
+            ],
+            "student_activities": [
+                "Create a comprehensive mind map of the chapter",
+                "Answer analytical and evaluative questions in groups"
+            ],
+            "assessment": [
+                "Oral quiz on events, characters, and themes",
+                "Written responses to higher-order analytical and reflective questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map of Amsterdam and Netherlands",
+        "Images of Anne Frank, the Secret Annex, and helpers",
+        "Timeline chart of events in hiding",
+        "Character maps, theme flashcards, and diary excerpts"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and discussion",
+        "Written analytical and inferential exercises",
+        "Class participation and group discussion",
+        "Quizzes on events, characters, and moral lessons"
+    ],
+    "teacher_tip": "Encourage students to critically examine Anne Frank’s character, moral choices, and emotional development. Focus on inferential and analytical skills, connecting historical context with literary analysis. Use textual evidence to support all answers and foster reflective discussion on human values."
+}

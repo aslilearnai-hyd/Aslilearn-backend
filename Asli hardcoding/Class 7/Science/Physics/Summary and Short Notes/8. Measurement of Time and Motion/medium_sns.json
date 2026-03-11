@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Measurement of Time and Motion",
+    "difficulty": "Medium",
+    "source_pdf": "jemh108.pdf",
+    "short_notes": {
+        "key_points": [
+            "Time measurement helps us understand and compare durations of events",
+            "Motion occurs when an object changes its position with respect to time",
+            "Distance measures the total path travelled by an object",
+            "Speed indicates how quickly an object covers distance in a given time",
+            "Uniform motion occurs when an object covers equal distances in equal intervals of time"
+        ],
+        "examples": [
+            "If a bicycle travels 20 km in 2 hours, its speed is 10 km/h",
+            "A train covering equal distances every hour shows uniform motion",
+            "If a bus travels 120 km in 3 hours, speed = 40 km/h",
+            "Walking from home to school is an example of motion"
+        ],
+        "formulas": [
+            "Speed = Distance ÷ Time",
+            "Distance = Speed × Time",
+            "Time = Distance ÷ Speed"
+        ],
+        "exam_tips": [
+            "Identify whether the problem asks for speed, distance or time",
+            "Convert units correctly when necessary",
+            "Use the correct formula before solving numerical problems",
+            "Understand the concept of uniform motion"
+        ]
+    }
+}

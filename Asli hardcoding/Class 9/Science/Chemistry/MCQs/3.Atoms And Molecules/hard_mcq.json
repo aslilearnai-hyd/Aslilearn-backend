@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T18:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following contains the same number of molecules as 16 g of Oxygen ($O_2$)?",
+            "options": {
+                "A": "16 g of $CO_2$",
+                "B": "28 g of $N_2$",
+                "C": "14 g of $N_2$",
+                "D": "1.0 g of $H_2$"
+            },
+            "correct_answer": "C",
+            "explanation": "Moles of $O_2 = 16/32 = 0.5$. Moles of $N_2 = 14/28 = 0.5$. Equal moles contain equal number of molecules.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Calculate the number of aluminum ions present in 0.051 g of aluminum oxide ($Al_2O_3$). (Atomic mass of Al = 27 u)",
+            "options": {
+                "A": "6.022 × 10^20",
+                "B": "6.022 × 10^23",
+                "C": "3.011 × 10^20",
+                "D": "1.204 × 10^20"
+            },
+            "correct_answer": "A",
+            "explanation": "Molar mass of $Al_2O_3 = 102$ g. Moles = $0.051/102 = 0.0005$. Number of $Al_2O_3$ units = $0.0005 \times 6.022 \times 10^{23}$. Since each unit has 2 $Al^{3+}$ ions: $2 \times 0.0005 \times 6.022 \times 10^{23} = 6.022 \times 10^{20}$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "The percentage of copper in a sample of $CuCl_2$ is 47.27%. What is the mass of copper in 20 g of this sample?",
+            "options": {
+                "A": "9.454 g",
+                "B": "4.727 g",
+                "C": "10.0 g",
+                "D": "8.55 g"
+            },
+            "correct_answer": "A",
+            "explanation": "$20 \times 0.4727 = 9.454$ g.",
+            "difficulty": "hard",
+            "source_section": "Stoichiometry"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the mass of 1 molecule of Water ($H_2O$) in grams?",
+            "options": {
+                "A": "18 g",
+                "B": "2.988 × 10^-23 g",
+                "C": "6.022 × 10^-23 g",
+                "D": "3.011 × 10^-23 g"
+            },
+            "correct_answer": "B",
+            "explanation": "Molar mass (18 g) / Avogadro's number ($6.022 \times 10^{23}$) = $2.988 \times 10^{-23}$ g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 5,
+            "question": "A compound with the formula $M_2O_3$ contains 30% oxygen by mass. What is the atomic mass of metal M?",
+            "options": {
+                "A": "27 u",
+                "B": "56 u",
+                "C": "48 u",
+                "D": "52 u"
+            },
+            "correct_answer": "B",
+            "explanation": "Mass of O = $3 \times 16 = 48$. If 48 is 30% of total mass, total mass = 160. Mass of $M_2 = 160 - 48 = 112$. M = $112 / 2 = 56$ (Iron).",
+            "difficulty": "hard",
+            "source_section": "HOTS"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following weighs the most?",
+            "options": {
+                "A": "2.0 moles of Nitrogen atoms",
+                "B": "2.0 moles of Water molecules",
+                "C": "0.5 moles of Glucose ($C_6H_{12}O_6$)",
+                "D": "10 moles of Hydrogen gas ($H_2$)"
+            },
+            "correct_answer": "C",
+            "explanation": "A: 28g; B: 36g; C: $0.5 \times 180 = 90$ g; D: 20g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 7,
+            "question": "The formula of a chloride of a metal M is $MCl_3$. The formula of its phosphate will be:",
+            "options": {
+                "A": "$MPO_4$",
+                "B": "$M_2PO_4$",
+                "C": "$M_3(PO_4)_2$",
+                "D": "$M(PO_4)_3$"
+            },
+            "correct_answer": "A",
+            "explanation": "From $MCl_3$, valency of M is 3. Phosphate ($PO_4$) has valency 3. 3:3 ratio gives $MPO_4$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the total number of atoms in 0.1 mole of $Na_2CO_3 \cdot 10H_2O$?",
+            "options": {
+                "A": "6.022 × 10^23",
+                "B": "2.16 × 10^24",
+                "C": "3.61 × 10^23",
+                "D": "1.86 × 10^24"
+            },
+            "correct_answer": "B",
+            "explanation": "Atoms in 1 unit: Na(2) + C(1) + O(3) + 10[H(2)+O(1)] = 6 + 30 = 36 atoms. $0.1 \times 36 \times 6.022 \times 10^{23} = 2.16 \times 10^{24}$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Calculate the mass of 3.011 × 10^23 atoms of Nitrogen.",
+            "options": {
+                "A": "14 g",
+                "B": "7 g",
+                "C": "28 g",
+                "D": "3.5 g"
+            },
+            "correct_answer": "B",
+            "explanation": "Number of moles = $(3.011 \times 10^{23}) / (6.022 \times 10^{23}) = 0.5$ mol. Mass = $0.5 \times 14 = 7$ g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "The atomic mass of an element is 32. What is the mass of one of its atoms in atomic mass units (u)?",
+            "options": {
+                "A": "32 g",
+                "B": "32 u",
+                "C": "32 / (6.022 × 10^23) g",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "Atomic mass is 32 u by definition, and its actual mass in grams is $32/N_A$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "An element Z forms an oxide $Z_2O_3$. What is the valency of Z?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "In $Z_2O_3$, the subscript of Oxygen (3) represents the valency of Z.",
+            "difficulty": "hard",
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "The ratio of Hydrogen and Oxygen in $H_2O$ by volume is 2:1. What is the ratio by mass?",
+            "options": {
+                "A": "1:8",
+                "B": "1:16",
+                "C": "2:1",
+                "D": "8:1"
+            },
+            "correct_answer": "A",
+            "explanation": "$(1 \times 2) : 16 = 2:16 = 1:8$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following contains the same number of atoms as 12 g of Magnesium? (Mg = 24, C = 12)",
+            "options": {
+                "A": "12 g of Carbon",
+                "B": "6 g of Carbon",
+                "C": "24 g of Carbon",
+                "D": "12 g of Oxygen"
+            },
+            "correct_answer": "B",
+            "explanation": "Moles of Mg = $12/24 = 0.5$. Moles of Carbon needed = 0.5. Mass of Carbon = $0.5 \times 12 = 6$ g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of these represents a 'Formula Unit'?",
+            "options": {
+                "A": "$O_2$",
+                "B": "$H_2O$",
+                "C": "NaCl",
+                "D": "He"
+            },
+            "correct_answer": "C",
+            "explanation": "Ionic compounds like $NaCl$ do not form discrete molecules, so we use 'formula unit'.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Calculate the mass of Oxygen in 90 g of water.",
+            "options": {
+                "A": "10 g",
+                "B": "80 g",
+                "C": "45 g",
+                "D": "16 g"
+            },
+            "correct_answer": "B",
+            "explanation": "Water is 8/9 Oxygen by mass. $(8/9) \times 90 = 80$ g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "A substance contains only one kind of atom. It is a/an:",
+            "options": {
+                "A": "Compound",
+                "B": "Element",
+                "C": "Mixture",
+                "D": "Molecule"
+            },
+            "correct_answer": "B",
+            "explanation": "By definition, an element consists of identical atoms.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "How many moles of Sulphur ($S_8$) are present in 128 g of Sulphur? (S = 32)",
+            "options": {
+                "A": "4",
+                "B": "0.5",
+                "C": "1",
+                "D": "0.25"
+            },
+            "correct_answer": "B",
+            "explanation": "Molar mass of $S_8 = 32 \times 8 = 256$ g/mol. Moles = $128 / 256 = 0.5$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Which Law states that 'A chemical compound always contains exactly the same proportion of elements by mass'?",
+            "options": {
+                "A": "Law of Conservation of Mass",
+                "B": "Law of Constant Proportions",
+                "C": "Dalton's Atomic Theory",
+                "D": "Avogadro's Law"
+            },
+            "correct_answer": "B",
+            "explanation": "Also known as the Law of Definite Proportions.",
+            "difficulty": "hard",
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the charge of an ion of Aluminum?",
+            "options": {
+                "A": "1+",
+                "B": "2+",
+                "C": "3+",
+                "D": "3-"
+            },
+            "correct_answer": "C",
+            "explanation": "Aluminum loses 3 electrons to become $Al^{3+}$.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "The molecular formula of Ethyne is $C_2H_2$. Calculate its molar mass.",
+            "options": {
+                "A": "24 g/mol",
+                "B": "26 g/mol",
+                "C": "13 g/mol",
+                "D": "28 g/mol"
+            },
+            "correct_answer": "B",
+            "explanation": "$(12 \times 2) + (1 \times 2) = 26$ g/mol.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5.1"
+        },
+        {
+            "question_number": 21,
+            "question": "If we take 10.0 g of Calcium Carbonate and heat it, 4.4 g of Carbon Dioxide is released. What is the mass of Calcium Oxide left behind?",
+            "options": {
+                "A": "10.0 g",
+                "B": "4.4 g",
+                "C": "5.6 g",
+                "D": "14.4 g"
+            },
+            "correct_answer": "C",
+            "explanation": "$10.0 - 4.4 = 5.6$ g (Law of Conservation of Mass).",
+            "difficulty": "hard",
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of these is a trivalent ion?",
+            "options": {
+                "A": "Sodium ion",
+                "B": "Ferric ion ($Fe^{3+}$)",
+                "C": "Sulphate ion",
+                "D": "Chloride ion"
+            },
+            "correct_answer": "B",
+            "explanation": "Trivalent means having a valency of 3.",
+            "difficulty": "hard",
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The symbol for Gold is:",
+            "options": {
+                "A": "Ag",
+                "B": "Au",
+                "C": "Gd",
+                "D": "Al"
+            },
+            "correct_answer": "B",
+            "explanation": "Derived from Latin 'Aurum'.",
+            "difficulty": "hard",
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the molecular mass of Glucose ($C_6H_{12}O_6$).",
+            "options": {
+                "A": "100 u",
+                "B": "180 u",
+                "C": "150 u",
+                "D": "200 u"
+            },
+            "correct_answer": "B",
+            "explanation": "$(6 \times 12) + (12 \times 1) + (6 \times 16) = 72 + 12 + 96 = 180$ u.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the mass of 10 moles of Sodium Sulphite ($Na_2SO_3$)? (Na = 23, S = 32, O = 16)",
+            "options": {
+                "A": "126 g",
+                "B": "1260 g",
+                "C": "1000 g",
+                "D": "230 g"
+            },
+            "correct_answer": "B",
+            "explanation": "Molar mass = $(23 \times 2) + 32 + (16 \times 3) = 46 + 32 + 48 = 126$ g/mol. Mass = $10 \times 126 = 1260$ g.",
+            "difficulty": "hard",
+            "source_section": "Section 3.5"
+        }
+    ]
+}

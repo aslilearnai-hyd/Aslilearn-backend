@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter": "Resources and Development",
+  "difficulty": "Medium",
+  "source_pdf": "jess101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Classification of Resources Table",
+      "objective": "Understand different bases of resource classification",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Create a table with four columns: Origin, Exhaustibility, Ownership, Status of Development",
+        "Write definitions for each category",
+        "Provide two examples for each classification"
+      ],
+      "learning_outcome": "Students understand systematic classification of resources",
+      "evaluation": "Correct definitions and examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Case Study of Resource Rich Regions",
+      "objective": "Analyze why some resource-rich regions remain economically backward",
+      "materials": ["Notebook", "Internet or textbook reference"],
+      "steps": [
+        "Select one resource-rich region of India such as Jharkhand or Chhattisgarh",
+        "Identify the major resources present",
+        "Explain reasons why the region may still face economic challenges"
+      ],
+      "learning_outcome": "Students develop analytical understanding of resource distribution and development",
+      "evaluation": "Quality of analysis (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Land Use Pattern Study",
+      "objective": "Understand different land use categories",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the five major land use categories",
+        "Explain each category with examples",
+        "Describe how population growth affects land use patterns"
+      ],
+      "learning_outcome": "Students understand the relationship between human activities and land utilization",
+      "evaluation": "Correct explanations (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Pie Chart of Land Use",
+      "objective": "Interpret land use data using graphical representation",
+      "materials": ["Graph paper", "Colour pencils"],
+      "steps": [
+        "Collect approximate land use percentage data of India",
+        "Draw a pie chart representing different land categories",
+        "Label and explain each segment"
+      ],
+      "learning_outcome": "Students develop skills in interpreting geographical data visually",
+      "evaluation": "Accuracy of chart (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Land Degradation Causes Report",
+      "objective": "Investigate causes of land degradation",
+      "materials": ["Notebook"],
+      "steps": [
+        "List at least five causes of land degradation",
+        "Explain how each cause affects soil quality",
+        "Suggest preventive measures"
+      ],
+      "learning_outcome": "Students understand environmental impacts of human activities",
+      "evaluation": "Depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Soil Profile Diagram",
+      "objective": "Understand layers of soil",
+      "materials": ["Chart paper", "Sketch pens"],
+      "steps": [
+        "Draw a labeled diagram of a soil profile",
+        "Label topsoil, subsoil, substratum, and bedrock",
+        "Explain the importance of each layer"
+      ],
+      "learning_outcome": "Students understand the structure of soil formation",
+      "evaluation": "Correct labeling and explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Soil Types Comparison",
+      "objective": "Compare major soil types of India",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose three soil types such as alluvial, black, and red soil",
+        "Compare their characteristics in a table",
+        "Mention crops grown in each soil type"
+      ],
+      "learning_outcome": "Students understand agricultural importance of different soils",
+      "evaluation": "Accuracy of comparison (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Soil Conservation Techniques Study",
+      "objective": "Explore different soil conservation methods",
+      "materials": ["Notebook"],
+      "steps": [
+        "List conservation methods such as terrace farming, contour ploughing, strip cropping, and shelter belts",
+        "Explain how each technique reduces soil erosion",
+        "Provide examples where these methods are used"
+      ],
+      "learning_outcome": "Students learn practical methods to protect soil resources",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Sustainable Development Discussion",
+      "objective": "Understand the concept of sustainable development",
+      "materials": ["Notebook"],
+      "steps": [
+        "Define sustainable development",
+        "Explain why resource conservation is important for future generations",
+        "Write three ways individuals can support sustainable development"
+      ],
+      "learning_outcome": "Students develop awareness about sustainable resource use",
+      "evaluation": "Concept clarity (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Resource Planning Process",
+      "objective": "Understand the steps involved in resource planning",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the three stages of resource planning",
+        "Explain each stage briefly",
+        "Give examples related to India"
+      ],
+      "learning_outcome": "Students understand how planning helps in efficient resource utilization",
+      "evaluation": "Correct explanation of steps (10 marks)"
+    }
+  ]
+}

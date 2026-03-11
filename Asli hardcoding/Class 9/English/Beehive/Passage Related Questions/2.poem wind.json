@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Poem 2: Wind",
+    "title": "Extended Reading Passages with Questions – Wind",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "The poet describes the wind as a powerful force that moves freely through nature. It can shake trees, bend branches, and travel across mountains and valleys, showing its strength and unpredictability.",
+            "questions": [
+                "How does the poet describe the wind?",
+                "What can the wind do to trees?",
+                "Where does the wind travel?",
+                "What qualities of the wind are emphasized?",
+                "What does the wind symbolize in the poem?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "The poet personifies the wind, giving it human-like qualities. It seems to have a will of its own and acts independently, as if it is aware of its surroundings and has intentions.",
+            "questions": [
+                "What literary device is used to describe the wind?",
+                "What human-like qualities are given to the wind?",
+                "Does the wind act freely or under control?",
+                "How does personification affect our understanding of the wind?",
+                "Why does the poet describe the wind this way?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "The poem shows how humans are affected by the wind. People cannot control it, and its sudden movements can create surprise, discomfort, or even danger.",
+            "questions": [
+                "How does the wind affect humans?",
+                "Can humans control the wind?",
+                "What feelings does the wind create?",
+                "Why is the wind unpredictable?",
+                "What lesson does the poet give about human limitations?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "The wind is described as both destructive and refreshing. While it can uproot trees or cause storms, it also brings coolness, freshness, and change to the environment.",
+            "questions": [
+                "What two qualities of the wind are described?",
+                "How can the wind be destructive?",
+                "How can the wind be refreshing?",
+                "What effect does it have on the environment?",
+                "Why does the poet use this contrast?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "Imagery of sound and movement is used to show the wind’s force. The poet mentions the roar, rush, and whistling of the wind to help readers feel its presence.",
+            "questions": [
+                "What types of imagery are used for the wind?",
+                "What sounds are mentioned?",
+                "How does the imagery help the reader?",
+                "What does the rush of the wind suggest?",
+                "Why is sensory description important in the poem?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "The wind moves freely and unpredictably, going wherever it pleases. This freedom emphasizes nature’s power and the inability of humans to impose rules on it.",
+            "questions": [
+                "How does the wind move?",
+                "What does its freedom symbolize?",
+                "Can humans control the wind?",
+                "What message does this convey about nature?",
+                "Why is unpredictability important in the poem?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "The poet uses contrast to show calm and violent moments. Sometimes the wind is gentle, whispering softly, and at other times, it is forceful, shaking everything in its path.",
+            "questions": [
+                "How is contrast used in describing the wind?",
+                "When is the wind gentle?",
+                "When is it violent?",
+                "What effect does this contrast create?",
+                "Why does the poet show both aspects of the wind?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "The poem reflects human awe of nature. Observing the wind’s power, humans are reminded of their vulnerability and the limits of control over natural forces.",
+            "questions": [
+                "What emotion does the wind inspire in humans?",
+                "What does it remind humans of?",
+                "How does the wind show human limitations?",
+                "Why is awe an important reaction?",
+                "What lesson can be drawn about respect for nature?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "The poet often repeats words and sounds to mimic the wind’s movement. This rhythm and alliteration give a sense of motion, helping the reader feel the wind’s energy.",
+            "questions": [
+                "What technique is used to mimic the wind?",
+                "How do rhythm and repetition help?",
+                "What effect does alliteration create?",
+                "How does this make the poem lively?",
+                "Why is sound important in describing the wind?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Ultimately, the poem emphasizes the power, unpredictability, and beauty of the wind. It encourages readers to reflect on nature and humanity’s relationship with the forces beyond control.",
+            "questions": [
+                "What key qualities of the wind are emphasized?",
+                "What should readers reflect on?",
+                "How does the poem portray humanity’s position?",
+                "Why is reflection on nature important?",
+                "What overall message does the poet convey?"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Linear Equations in Two Variables",
+    "difficulty": "Easy",
+    "source_pdf": "m9_4.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Equation Identification",
+            "objective": "Identify linear equations in two variables",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write 10 different equations",
+                "Identify which are in the form ax + by + c = 0",
+                "Circle the linear equations"
+            ],
+            "learning_outcome": "Recognises linear equations in two variables",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Form Conversion",
+            "objective": "Convert equations to ax + by + c = 0 form",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write 5 equations like x + 3y = 5",
+                "Convert them into ax + by + c = 0 form",
+                "Write values of a, b and c"
+            ],
+            "learning_outcome": "Understands standard form of equations",
+            "evaluation": "Correct conversion (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Variable Pair Finder",
+            "objective": "Find ordered pair solutions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation x + y = 6",
+                "Find at least 4 pairs of values for x and y",
+                "Write them as ordered pairs"
+            ],
+            "learning_outcome": "Understands solutions of equations",
+            "evaluation": "Correct solutions (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Zero Value Method",
+            "objective": "Find solutions using x = 0 or y = 0",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation 2x + y = 8",
+                "Put x = 0 and find y",
+                "Put y = 0 and find x"
+            ],
+            "learning_outcome": "Learns easy method for solutions",
+            "evaluation": "Correct values (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Equation Pair Table",
+            "objective": "Create solution table",
+            "materials": [
+                "Notebook",
+                "Scale"
+            ],
+            "steps": [
+                "Write equation x + 2y = 10",
+                "Choose values of x",
+                "Find corresponding y values",
+                "Make a table"
+            ],
+            "learning_outcome": "Understands multiple solutions",
+            "evaluation": "Correct table (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-Life Equation",
+            "objective": "Create equation from real-life situation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine two friends scoring runs in a match",
+                "Total runs = 50",
+                "Write equation x + y = 50"
+            ],
+            "learning_outcome": "Connects maths with daily life",
+            "evaluation": "Correct equation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Equation Matching",
+            "objective": "Match equations with solutions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write 5 equations",
+                "Write possible ordered pairs separately",
+                "Match the correct solution with each equation"
+            ],
+            "learning_outcome": "Identifies valid solutions",
+            "evaluation": "Correct matching (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Solution Checker",
+            "objective": "Check whether a pair satisfies equation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation 2x + 3y = 12",
+                "Test pairs like (3,2), (1,4), (0,4)",
+                "Check which satisfy the equation"
+            ],
+            "learning_outcome": "Verifies equation solutions",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Equation Creation",
+            "objective": "Create own linear equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Create 5 equations with x and y",
+                "Ensure they follow ax + by + c = 0",
+                "Write values of a, b and c"
+            ],
+            "learning_outcome": "Builds equation formation skill",
+            "evaluation": "Correct structure (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Infinite Solutions Activity",
+            "objective": "Understand infinite solutions concept",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation x + y = 10",
+                "Find at least 6 different solutions",
+                "Write them as ordered pairs"
+            ],
+            "learning_outcome": "Understands infinite solutions",
+            "evaluation": "Correct pairs (10 marks)"
+        }
+    ]
+}

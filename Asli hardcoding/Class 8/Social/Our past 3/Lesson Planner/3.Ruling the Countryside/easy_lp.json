@@ -1,0 +1,136 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "Ruling the Countryside",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the meaning of land revenue",
+    "Learn about the Permanent Settlement system",
+    "Understand the role of zamindars and peasants",
+    "Know about indigo cultivation in India",
+    "Understand the problems faced by peasants",
+    "Learn about the Indigo Revolt"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Land Revenue",
+      "topics_covered": [
+        "Meaning of land revenue",
+        "Importance of land revenue for the British government",
+        "Basic idea of British land policies"
+      ],
+      "teaching_strategy": [
+        "Class discussion",
+        "Explanation with simple examples",
+        "Question–answer method"
+      ],
+      "student_activities": [
+        "Discuss how farmers grow crops",
+        "List why governments collect taxes"
+      ],
+      "assessment": ["Oral questioning", "Student participation"]
+    },
+    {
+      "period": 2,
+      "title": "Permanent Settlement",
+      "topics_covered": [
+        "Introduction of Permanent Settlement",
+        "Role of Lord Cornwallis",
+        "Features of the Permanent Settlement"
+      ],
+      "teaching_strategy": [
+        "Explanation with diagram",
+        "Short storytelling about British policies"
+      ],
+      "student_activities": [
+        "Write key points of the Permanent Settlement",
+        "Discuss how zamindars collected revenue"
+      ],
+      "assessment": ["Short written activity", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Role of Zamindars and Peasants",
+      "topics_covered": [
+        "Who were zamindars",
+        "Responsibilities of zamindars",
+        "Life of peasants under the system"
+      ],
+      "teaching_strategy": [
+        "Interactive explanation",
+        "Example-based learning"
+      ],
+      "student_activities": [
+        "List duties of zamindars",
+        "Discuss problems faced by peasants"
+      ],
+      "assessment": ["Class discussion", "Teacher observation"]
+    },
+    {
+      "period": 4,
+      "title": "Indigo Cultivation",
+      "topics_covered": [
+        "Meaning of indigo",
+        "How indigo was grown",
+        "Role of indigo planters"
+      ],
+      "teaching_strategy": [
+        "Picture-based explanation",
+        "Question–answer session"
+      ],
+      "student_activities": [
+        "Write why indigo was important for trade",
+        "Discuss why farmers did not want to grow indigo"
+      ],
+      "assessment": ["Notebook checking", "Short oral questions"]
+    },
+    {
+      "period": 5,
+      "title": "Problems of Indigo Farmers",
+      "topics_covered": [
+        "Advance system",
+        "Loss faced by farmers",
+        "Oppression by planters"
+      ],
+      "teaching_strategy": ["Story-based explanation", "Group discussion"],
+      "student_activities": [
+        "Write two problems faced by indigo farmers",
+        "Discuss how farmers reacted to these problems"
+      ],
+      "assessment": ["Short written response", "Teacher feedback"]
+    },
+    {
+      "period": 6,
+      "title": "Indigo Revolt and Chapter Revision",
+      "topics_covered": [
+        "Meaning of Indigo Revolt",
+        "Reasons for the revolt",
+        "Chapter recap"
+      ],
+      "teaching_strategy": ["Concept explanation", "Revision quiz"],
+      "student_activities": [
+        "Write two causes of the Indigo Revolt",
+        "Participate in a short revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Pictures of indigo farming",
+    "Charts explaining revenue systems"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Participation in activities"
+  ],
+  "teacher_tip": "Use simple real-life examples of farming and taxes to help students easily understand the land revenue system."
+}

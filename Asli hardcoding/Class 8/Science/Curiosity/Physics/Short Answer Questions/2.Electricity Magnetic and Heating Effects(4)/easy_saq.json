@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-06T00:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is electric current?",
+      "answer": "Electric current is the flow of electric charges through a conductor.",
+      "key_concepts": ["electric current"],
+      "marks": 2,
+      "source_section": "Electric Current"
+    },
+    {
+      "question_number": 2,
+      "question": "What is an electric circuit?",
+      "answer": "An electric circuit is a closed path through which electric current flows.",
+      "key_concepts": ["electric circuit"],
+      "marks": 2,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 3,
+      "question": "Name a device used to produce electricity in a circuit.",
+      "answer": "A cell or battery is used to produce electricity in a circuit.",
+      "key_concepts": ["cell", "battery"],
+      "marks": 1,
+      "source_section": "Electric Sources"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a conductor?",
+      "answer": "A conductor is a material that allows electric current to pass through it easily.",
+      "key_concepts": ["conductors"],
+      "marks": 2,
+      "source_section": "Conductors and Insulators"
+    },
+    {
+      "question_number": 5,
+      "question": "Give one example of a conductor.",
+      "answer": "Copper is an example of a conductor.",
+      "key_concepts": ["conductors"],
+      "marks": 1,
+      "source_section": "Conductors"
+    },
+    {
+      "question_number": 6,
+      "question": "What is an insulator?",
+      "answer": "An insulator is a material that does not allow electric current to pass through it easily.",
+      "key_concepts": ["insulators"],
+      "marks": 2,
+      "source_section": "Conductors and Insulators"
+    },
+    {
+      "question_number": 7,
+      "question": "Give one example of an insulator.",
+      "answer": "Rubber is an example of an insulator.",
+      "key_concepts": ["insulators"],
+      "marks": 1,
+      "source_section": "Insulators"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the function of a switch in a circuit?",
+      "answer": "A switch is used to open or close an electric circuit.",
+      "key_concepts": ["switch"],
+      "marks": 2,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens when a circuit is open?",
+      "answer": "When a circuit is open, electric current cannot flow.",
+      "key_concepts": ["open circuit"],
+      "marks": 2,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 10,
+      "question": "What happens when a circuit is closed?",
+      "answer": "When a circuit is closed, electric current flows through it.",
+      "key_concepts": ["closed circuit"],
+      "marks": 2,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the heating effect of electric current?",
+      "answer": "The heating effect of electric current is the production of heat when electric current flows through a conductor.",
+      "key_concepts": ["heating effect"],
+      "marks": 2,
+      "source_section": "Heating Effect of Current"
+    },
+    {
+      "question_number": 12,
+      "question": "Name one device that works using the heating effect of current.",
+      "answer": "An electric iron works using the heating effect of current.",
+      "key_concepts": ["heating effect"],
+      "marks": 1,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a fuse?",
+      "answer": "A fuse is a safety device that melts and breaks the circuit when excessive current flows.",
+      "key_concepts": ["fuse"],
+      "marks": 2,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 14,
+      "question": "Why is a fuse used in electric circuits?",
+      "answer": "A fuse protects electrical appliances from damage due to excessive current.",
+      "key_concepts": ["electric safety"],
+      "marks": 2,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 15,
+      "question": "What is an electromagnet?",
+      "answer": "An electromagnet is a magnet produced by passing electric current through a coil of wire.",
+      "key_concepts": ["electromagnet"],
+      "marks": 2,
+      "source_section": "Magnetic Effect of Current"
+    },
+    {
+      "question_number": 16,
+      "question": "Name one material used as the core of an electromagnet.",
+      "answer": "Soft iron is used as the core of an electromagnet.",
+      "key_concepts": ["electromagnet"],
+      "marks": 1,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 17,
+      "question": "What happens to a compass near a current-carrying wire?",
+      "answer": "The compass needle deflects due to the magnetic effect of electric current.",
+      "key_concepts": ["magnetic effect"],
+      "marks": 2,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 18,
+      "question": "Name one device that uses an electromagnet.",
+      "answer": "An electric bell uses an electromagnet.",
+      "key_concepts": ["electromagnet"],
+      "marks": 1,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the function of connecting wires in a circuit?",
+      "answer": "Connecting wires provide a path for electric current to flow.",
+      "key_concepts": ["electric circuit"],
+      "marks": 2,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are wires usually covered with plastic or rubber?",
+      "answer": "Plastic or rubber acts as insulation and prevents electric shocks.",
+      "key_concepts": ["insulation"],
+      "marks": 2,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 21,
+      "question": "What happens when too much current flows through a wire?",
+      "answer": "The wire may heat up and melt due to the heating effect.",
+      "key_concepts": ["heating effect"],
+      "marks": 2,
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 22,
+      "question": "What is a battery?",
+      "answer": "A battery is a combination of two or more electric cells connected together.",
+      "key_concepts": ["battery"],
+      "marks": 2,
+      "source_section": "Electric Sources"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the role of an electric bulb in a circuit?",
+      "answer": "An electric bulb produces light when electric current flows through it.",
+      "key_concepts": ["electric bulb"],
+      "marks": 2,
+      "source_section": "Electric Devices"
+    },
+    {
+      "question_number": 24,
+      "question": "Name one appliance that uses electricity to produce heat.",
+      "answer": "An electric heater uses electricity to produce heat.",
+      "key_concepts": ["heating effect"],
+      "marks": 1,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is electricity important in daily life?",
+      "answer": "Electricity is important because it powers many devices and appliances used in daily life.",
+      "key_concepts": ["uses of electricity"],
+      "marks": 2,
+      "source_section": "Uses of Electricity"
+    }
+  ]
+}

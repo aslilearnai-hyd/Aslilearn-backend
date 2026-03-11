@@ -1,0 +1,38 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "How Nature Works in Harmony",
+  "difficulty": "Easy",
+  "source_pdf": "12.How Nature Works in Harmony.pdf",
+  "short_notes": {
+    "key_points": [
+      "A habitat is the natural place where organisms live",
+      "Ecosystems consist of biotic (living) and abiotic (non-living) components",
+      "Producers make their own food through photosynthesis",
+      "Consumers depend on other organisms for food",
+      "Decomposers break down dead organisms and recycle nutrients",
+      "Food chains show the transfer of energy between organisms",
+      "Food webs are interconnected food chains",
+      "Ecological balance is maintained through interactions among organisms"
+    ],
+    "examples": [
+      "Forest habitat: trees, animals, insects, soil and sunlight",
+      "Pond ecosystem: fish, frogs, algae, water and nutrients",
+      "Food chain example: Grass → Deer → Tiger",
+      "Decomposers example: fungi breaking down dead leaves",
+      "Mutualism example: bees pollinating flowers"
+    ],
+    "formulas_or_relationships": [
+      "Food Chain: Producer → Primary Consumer → Secondary Consumer → Tertiary Consumer",
+      "Energy Flow: Sun → Plants → Herbivores → Carnivores",
+      "Nutrient Cycle: Dead organisms → Decomposers → Soil nutrients → Plants"
+    ],
+    "exam_tips": [
+      "Remember that producers form the base of every food chain",
+      "Distinguish clearly between biotic and abiotic components",
+      "Use diagrams when explaining food chains and ecosystems",
+      "Give examples of ecological relationships such as mutualism, commensalism, and parasitism",
+      "Explain the role of decomposers in recycling nutrients"
+    ]
+  }
+}

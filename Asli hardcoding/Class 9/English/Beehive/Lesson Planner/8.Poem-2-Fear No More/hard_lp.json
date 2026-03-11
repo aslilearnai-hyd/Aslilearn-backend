@@ -1,0 +1,167 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Fear No More",
+    "title": "Lesson Planner – Fear No More",
+    "author": "William Shakespeare",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Interpret the philosophical message of the poem",
+        "Analyse imagery and symbolism",
+        "Understand Shakespeare’s poetic style",
+        "Recognise the theme of mortality",
+        "Develop critical appreciation of poetry"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Shakespeare",
+            "topics_covered": [
+                "Life of Shakespeare",
+                "Overview of poem"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Discuss famous Shakespeare works"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "First Reading of Poem",
+            "topics_covered": [
+                "Poem recitation",
+                "Basic meaning"
+            ],
+            "teaching_strategy": [
+                "Recitation",
+                "Explanation"
+            ],
+            "student_activities": [
+                "Read poem aloud"
+            ],
+            "assessment": [
+                "Oral responses"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "First Stanza Interpretation",
+            "topics_covered": [
+                "Freedom from hardships",
+                "Nature imagery"
+            ],
+            "teaching_strategy": [
+                "Guided explanation"
+            ],
+            "student_activities": [
+                "Identify imagery"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Second Stanza Interpretation",
+            "topics_covered": [
+                "Equality in death",
+                "Symbolism of dust"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Explain 'come to dust'"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Third Stanza Analysis",
+            "topics_covered": [
+                "Freedom from criticism",
+                "Peace after death"
+            ],
+            "teaching_strategy": [
+                "Analytical discussion"
+            ],
+            "student_activities": [
+                "List fears mentioned"
+            ],
+            "assessment": [
+                "Written responses"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Imagery and Literary Devices",
+            "topics_covered": [
+                "Imagery",
+                "Symbolism"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Identify literary devices"
+            ],
+            "assessment": [
+                "Notebook work"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme and Philosophy",
+            "topics_covered": [
+                "Mortality",
+                "Universal message"
+            ],
+            "teaching_strategy": [
+                "Interpretative discussion"
+            ],
+            "student_activities": [
+                "Explain theme"
+            ],
+            "assessment": [
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Summary",
+                "Important questions"
+            ],
+            "teaching_strategy": [
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write summary"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English textbook",
+        "Blackboard",
+        "Poetry audio"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Help students understand the philosophical ideas of the poem by relating them to universal human experiences."
+}

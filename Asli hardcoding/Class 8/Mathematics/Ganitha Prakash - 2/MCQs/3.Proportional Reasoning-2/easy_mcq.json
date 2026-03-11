@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Proportional Reasoning – 2",
+  "generated_at": "2026-03-04T19:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which pair of ratios are proportional?",
+      "options": {
+        "A": "6:3 and 4:2",
+        "B": "5:2 and 4:3",
+        "C": "7:3 and 5:2",
+        "D": "8:3 and 6:4"
+      },
+      "correct_answer": "A",
+      "explanation": "6×2 = 12 and 3×4 = 12, so the ratios are proportional.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Two ratios a:b and c:d are proportional if:",
+      "options": {
+        "A": "a+b = c+d",
+        "B": "a×d = b×c",
+        "C": "a×b = c×d",
+        "D": "a/b = d/c"
+      },
+      "correct_answer": "B",
+      "explanation": "Cross multiplication condition for proportion is a×d = b×c.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "A map scale of 1 : 60,00,000 means:",
+      "options": {
+        "A": "1 cm represents 60 km",
+        "B": "1 km represents 60 cm",
+        "C": "1 cm represents 600 km",
+        "D": "1 m represents 60 km"
+      },
+      "correct_answer": "A",
+      "explanation": "1 cm on map = 60,00,000 cm = 60 km.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is a ratio with four terms?",
+      "options": {
+        "A": "2:3",
+        "B": "4:5:6",
+        "C": "8:4:2:1",
+        "D": "3:7"
+      },
+      "correct_answer": "C",
+      "explanation": "8:4:2:1 contains four terms.",
+      "difficulty": "easy",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "If 5 parts equal 10 litres, then 1 part equals:",
+      "options": {
+        "A": "1 litre",
+        "B": "2 litres",
+        "C": "5 litres",
+        "D": "10 litres"
+      },
+      "correct_answer": "B",
+      "explanation": "10 ÷ 5 = 2 litres.",
+      "difficulty": "easy",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the sum of the angles in a triangle?",
+      "options": {
+        "A": "90°",
+        "B": "180°",
+        "C": "270°",
+        "D": "360°"
+      },
+      "correct_answer": "B",
+      "explanation": "The sum of the interior angles of a triangle is 180°.",
+      "difficulty": "easy",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 7,
+      "question": "If 180° is divided in the ratio 1:3:5, the smallest angle is:",
+      "options": {
+        "A": "20°",
+        "B": "30°",
+        "C": "40°",
+        "D": "50°"
+      },
+      "correct_answer": "A",
+      "explanation": "180×1/9 = 20°.",
+      "difficulty": "easy",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "A pie chart represents:",
+      "options": {
+        "A": "Lines",
+        "B": "Bars",
+        "C": "Proportions of a whole",
+        "D": "Angles of triangles"
+      },
+      "correct_answer": "C",
+      "explanation": "Pie charts show proportions of a whole using circular sectors.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 9,
+      "question": "The total angle in a pie chart is:",
+      "options": {
+        "A": "90°",
+        "B": "180°",
+        "C": "270°",
+        "D": "360°"
+      },
+      "correct_answer": "D",
+      "explanation": "A full circle has 360°.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "If 12 out of 40 students got grade A, the pie chart angle is:",
+      "options": {
+        "A": "72°",
+        "B": "90°",
+        "C": "108°",
+        "D": "120°"
+      },
+      "correct_answer": "C",
+      "explanation": "(12/40)×360 = 108°.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Direct proportion means:",
+      "options": {
+        "A": "Both quantities increase together",
+        "B": "One increases while other decreases",
+        "C": "Both remain constant",
+        "D": "Both become zero"
+      },
+      "correct_answer": "A",
+      "explanation": "In direct proportion, both quantities change in the same direction.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Inverse proportion means:",
+      "options": {
+        "A": "Both increase",
+        "B": "Both decrease",
+        "C": "One increases while the other decreases",
+        "D": "Both stay constant"
+      },
+      "correct_answer": "C",
+      "explanation": "Inverse proportional quantities change in opposite directions.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 13,
+      "question": "If speed increases, time taken to travel the same distance:",
+      "options": {
+        "A": "Increases",
+        "B": "Decreases",
+        "C": "Remains same",
+        "D": "Becomes zero"
+      },
+      "correct_answer": "B",
+      "explanation": "Speed and time are inversely proportional.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Which is an example of inverse proportion?",
+      "options": {
+        "A": "Distance and speed",
+        "B": "Workers and time",
+        "C": "Height and weight",
+        "D": "Age and marks"
+      },
+      "correct_answer": "B",
+      "explanation": "More workers mean less time required.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 15,
+      "question": "If 20 workers complete work in 4 days, 10 workers will take:",
+      "options": {
+        "A": "2 days",
+        "B": "4 days",
+        "C": "8 days",
+        "D": "10 days"
+      },
+      "correct_answer": "C",
+      "explanation": "Half workers require double time.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 16,
+      "question": "If speed doubles, travel time becomes:",
+      "options": {
+        "A": "Double",
+        "B": "Half",
+        "C": "Same",
+        "D": "Four times"
+      },
+      "correct_answer": "B",
+      "explanation": "Inverse proportion halves the time.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Ratios are useful in:",
+      "options": {
+        "A": "Cooking recipes",
+        "B": "Map scales",
+        "C": "Construction mixtures",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "Ratios are widely used in real-life situations.",
+      "difficulty": "easy",
+      "source_section": "Chapter Overview"
+    },
+    {
+      "question_number": 18,
+      "question": "Which chart represents proportions visually?",
+      "options": {
+        "A": "Bar chart",
+        "B": "Pie chart",
+        "C": "Line graph",
+        "D": "Histogram"
+      },
+      "correct_answer": "B",
+      "explanation": "Pie charts represent proportions.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 19,
+      "question": "If x and y are inversely proportional then:",
+      "options": {
+        "A": "x+y = constant",
+        "B": "x×y = constant",
+        "C": "x/y = constant",
+        "D": "x−y = constant"
+      },
+      "correct_answer": "B",
+      "explanation": "Inverse proportional quantities have constant product.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 20,
+      "question": "If 3 pumps fill a tank in 6 hours, more pumps will:",
+      "options": {
+        "A": "Increase time",
+        "B": "Decrease time",
+        "C": "Keep time same",
+        "D": "Stop filling"
+      },
+      "correct_answer": "B",
+      "explanation": "More pumps reduce the time required.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which ratio represents proportional ingredients?",
+      "options": {
+        "A": "2:1 and 4:2",
+        "B": "3:4 and 5:6",
+        "C": "2:3 and 5:8",
+        "D": "4:5 and 3:7"
+      },
+      "correct_answer": "A",
+      "explanation": "Both ratios simplify to 2:1.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 22,
+      "question": "If the total angle of a pie chart is 360°, a category representing 1/4 will have:",
+      "options": {
+        "A": "45°",
+        "B": "60°",
+        "C": "90°",
+        "D": "120°"
+      },
+      "correct_answer": "C",
+      "explanation": "360 × 1/4 = 90°.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which is NOT an example of inverse proportion?",
+      "options": {
+        "A": "Workers and time",
+        "B": "Speed and time",
+        "C": "Distance and time",
+        "D": "Pumps and time"
+      },
+      "correct_answer": "C",
+      "explanation": "Distance and time are directly proportional.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 24,
+      "question": "If the ratio of red:blue:white paint is 2:3:5 and total paint is 20 litres, white paint is:",
+      "options": {
+        "A": "8 litres",
+        "B": "10 litres",
+        "C": "12 litres",
+        "D": "14 litres"
+      },
+      "correct_answer": "B",
+      "explanation": "White = (5/10)×20 = 10 litres.",
+      "difficulty": "easy",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 25,
+      "question": "If x and y are directly proportional then:",
+      "options": {
+        "A": "x/y = constant",
+        "B": "x×y = constant",
+        "C": "x+y = constant",
+        "D": "x−y = constant"
+      },
+      "correct_answer": "A",
+      "explanation": "Direct proportional quantities have constant ratio.",
+      "difficulty": "easy",
+      "source_section": "Section 3.6"
+    }
+  ]
+}

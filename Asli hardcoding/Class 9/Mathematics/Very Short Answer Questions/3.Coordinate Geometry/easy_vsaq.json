@@ -1,0 +1,235 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-05T23:05:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the Cartesian plane?",
+            "answer": "The Cartesian plane is a plane formed by two perpendicular number lines called the x-axis and y-axis.",
+            "key_points": [
+                "coordinate plane",
+                "axes"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What are coordinate axes?",
+            "answer": "The x-axis and y-axis together are called coordinate axes.",
+            "key_points": [
+                "axes"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the horizontal axis called?",
+            "answer": "The horizontal axis is called the x-axis.",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the vertical axis called?",
+            "answer": "The vertical axis is called the y-axis.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the origin?",
+            "answer": "The origin is the point where the x-axis and y-axis intersect.",
+            "key_points": [
+                "origin"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What are the coordinates of the origin?",
+            "answer": "The coordinates of the origin are (0,0).",
+            "key_points": [
+                "origin coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How many quadrants are formed by coordinate axes?",
+            "answer": "Four quadrants are formed by coordinate axes.",
+            "key_points": [
+                "quadrants"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the x-coordinate also called?",
+            "answer": "The x-coordinate is called the abscissa.",
+            "key_points": [
+                "abscissa"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the y-coordinate also called?",
+            "answer": "The y-coordinate is called the ordinate.",
+            "key_points": [
+                "ordinate"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "How are coordinates written?",
+            "answer": "Coordinates are written in the form (x, y).",
+            "key_points": [
+                "ordered pair"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which coordinate is written first in an ordered pair?",
+            "answer": "The x-coordinate is written first.",
+            "key_points": [
+                "coordinate order"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the coordinate form of a point?",
+            "answer": "The coordinate form of a point is (x, y).",
+            "key_points": [
+                "coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the y-coordinate of a point on the x-axis?",
+            "answer": "The y-coordinate of a point on the x-axis is 0.",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the x-coordinate of a point on the y-axis?",
+            "answer": "The x-coordinate of a point on the y-axis is 0.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What are the coordinates of a point on the x-axis?",
+            "answer": "The coordinates of a point on the x-axis are (x, 0).",
+            "key_points": [
+                "x-axis coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What are the coordinates of a point on the y-axis?",
+            "answer": "The coordinates of a point on the y-axis are (0, y).",
+            "key_points": [
+                "y-axis coordinates"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which quadrant has both coordinates positive?",
+            "answer": "The first quadrant has both coordinates positive.",
+            "key_points": [
+                "quadrant I"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which quadrant has coordinates (-,+)?",
+            "answer": "The second quadrant has coordinates (-,+).",
+            "key_points": [
+                "quadrant II"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which quadrant has coordinates (-,-)?",
+            "answer": "The third quadrant has coordinates (-,-).",
+            "key_points": [
+                "quadrant III"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which quadrant has coordinates (+,-)?",
+            "answer": "The fourth quadrant has coordinates (+,-).",
+            "key_points": [
+                "quadrant IV"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What does the x-coordinate represent?",
+            "answer": "The x-coordinate represents the distance of a point from the y-axis.",
+            "key_points": [
+                "distance from y-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What does the y-coordinate represent?",
+            "answer": "The y-coordinate represents the distance of a point from the x-axis.",
+            "key_points": [
+                "distance from x-axis"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Name the mathematician who developed coordinate geometry.",
+            "answer": "René Descartes developed coordinate geometry.",
+            "key_points": [
+                "Descartes"
+            ],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 24,
+            "question": "What is another name for the Cartesian plane?",
+            "answer": "Another name for the Cartesian plane is the coordinate plane.",
+            "key_points": [
+                "coordinate plane"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the point where coordinate axes intersect called?",
+            "answer": "The point where coordinate axes intersect is called the origin.",
+            "key_points": [
+                "origin"
+            ],
+            "source_section": "Section 3.2"
+        }
+    ]
+}

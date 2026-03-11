@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: The Story of Flying",
+    "generated_at": "2026-03-09T15:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of this chapter and what is the main subject?",
+            "answer": "The chapter is written by Amelia Earhart, a famous American pilot. It describes her personal experiences and feelings while learning to fly an airplane.",
+            "answer_outline": ["Author's name", "Main subject", "Personal experience"],
+            "key_concepts": ["Amelia Earhart", "aviator", "flying"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How did Amelia feel during her very first flight?",
+            "answer": "Amelia felt a mix of nervousness and great excitement. She was thrilled by the sensation of leaving the ground and seeing the world from a new height.",
+            "answer_outline": ["Initial emotions", "Sensory experience", "Reaction to height"],
+            "key_concepts": ["excitement", "nervousness", "takeoff"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What did Amelia do to prepare for her career as a pilot?",
+            "answer": "Amelia took lessons from a professional instructor. she practiced regularly to handle the controls and studied how airplanes stay in the air.",
+            "answer_outline": ["Instruction", "Regular practice", "Study of flight"],
+            "key_concepts": ["training", "lessons", "practice"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Name some challenges Amelia faced while learning to fly.",
+            "answer": "She had to overcome her fear of the unknown, learn to control the heavy machine, and deal with changing weather conditions while in the sky.",
+            "answer_outline": ["Overcoming fear", "Machine control", "Weather challenges"],
+            "key_concepts": ["challenges", "fear", "weather"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why did flying give Amelia a sense of freedom?",
+            "answer": "Flying allowed her to rise above the ground and travel through the vast sky. It made her feel independent and joyful to be away from the busy world below.",
+            "answer_outline": ["Rising above the world", "Independence", "Joy of flight"],
+            "key_concepts": ["freedom", "independence", "sky"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a 'solo flight' and why was it important for Amelia?",
+            "answer": "A solo flight is when a pilot flies the plane alone without an instructor. It was important because it proved Amelia could handle the plane safely by herself.",
+            "answer_outline": ["Definition of solo flight", "Importance of independence", "Proof of skill"],
+            "key_concepts": ["solo flight", "independence", "confidence"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "How did the earth look to Amelia from high up in the air?",
+            "answer": "From the airplane, the earth looked beautiful and peaceful. Large things like houses and trees appeared very small, like toys on the ground.",
+            "answer_outline": ["Appearance of earth", "Small scale of objects", "Peaceful view"],
+            "key_concepts": ["view", "perspective", "landscape"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why was Amelia's instructor helpful to her?",
+            "answer": "The instructor taught her how to use the controls safely and encouraged her when she was nervous. He helped her build the confidence to fly on her own.",
+            "answer_outline": ["Teaching safety", "Emotional support", "Building confidence"],
+            "key_concepts": ["instructor", "support", "guidance"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What did Amelia learn about making mistakes during training?",
+            "answer": "She learned that mistakes were a part of learning. Every mistake helped her understand what she did wrong so she could do better next time.",
+            "answer_outline": ["Mistakes as part of learning", "Understanding errors", "Improvement"],
+            "key_concepts": ["learning", "mistakes", "improvement"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the instrument panel in an airplane used for?",
+            "answer": "The instrument panel has dials that tell the pilot how high they are and how fast they are going. It helps the pilot keep the plane steady.",
+            "answer_outline": ["Description of panel", "Telling height and speed", "Steady flight"],
+            "key_concepts": ["instruments", "dials", "control"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe Amelia's feelings after a successful landing.",
+            "answer": "Amelia felt proud and relieved after landing safely. It gave her a sense of accomplishment and made her eager to fly again.",
+            "answer_outline": ["Pride and relief", "Accomplishment", "Future motivation"],
+            "key_concepts": ["landing", "pride", "accomplishment"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is courage important in Amelia's story?",
+            "answer": "Courage was needed to face the fear of heights and to try something new. Amelia showed that by being brave, one can achieve great things.",
+            "answer_outline": ["Facing fear", "Trying new things", "Achieving goals"],
+            "key_concepts": ["courage", "bravery", "success"],
+            "marks": 4,
+            "source_section": "General"
+        },
+        {
+            "question_number": 13,
+            "question": "What does Amelia mean when she says she 'loved the sky'?",
+            "answer": "She loved the sky because it was peaceful, beautiful, and full of adventure. It was a place where she felt she truly belonged.",
+            "answer_outline": ["Beauty and peace", "Adventure", "Sense of belonging"],
+            "key_concepts": ["passion", "sky", "belonging"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How did regular practice help Amelia become a better pilot?",
+            "answer": "Regular practice helped her become comfortable with the airplane. It made her movements smooth and helped her remember exactly what to do in the air.",
+            "answer_outline": ["Comfort with plane", "Smooth movements", "Memory of tasks"],
+            "key_concepts": ["practice", "skill", "habit"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe the physical experience of being in an early airplane.",
+            "answer": "It was very loud because of the engine and often cold because the planes were open. The plane would also vibrate as it moved through the air.",
+            "answer_outline": ["Engine noise", "Cold temperature", "Vibration"],
+            "key_concepts": ["experience", "noise", "vibration"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What did Amelia realize about herself after she started flying?",
+            "answer": "She realized that she was much stronger and braver than she thought. Flying helped her discover her true passion for adventure.",
+            "answer_outline": ["Self-discovery", "Strength and bravery", "Passion"],
+            "key_concepts": ["realization", "discovery", "adventure"],
+            "marks": 4,
+            "source_section": "General"
+        },
+        {
+            "question_number": 17,
+            "question": "Why was it hard to fly in bad weather in the early days?",
+            "answer": "In bad weather, it was hard to see where you were going. Without modern tools, pilots had to be very careful not to get lost in clouds or rain.",
+            "answer_outline": ["Visibility issues", "No modern tools", "Getting lost"],
+            "key_concepts": ["weather", "visibility", "safety"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What role did imagination play in Amelia’s dream of flying?",
+            "answer": "Before she even started, Amelia imagined herself in the sky. Her imagination made her excited to learn and helped her stay focused on her goal.",
+            "answer_outline": ["Visualizing the sky", "Motivation", "Staying focused"],
+            "key_concepts": ["imagination", "dreams", "motivation"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "How did Amelia's friends and family react to her flying?",
+            "answer": "While some were worried, many encouraged her to follow her dreams. Their support helped her keep going during difficult times.",
+            "answer_outline": ["Worry vs. encouragement", "Support system", "Persistence"],
+            "key_concepts": ["support", "family", "encouragement"],
+            "marks": 4,
+            "source_section": "General"
+        },
+        {
+            "question_number": 20,
+            "question": "What does 'The Story of Flying' teach us about trying new things?",
+            "answer": "It teaches us that trying new things can be scary at first, but with practice and determination, we can find something we love.",
+            "answer_outline": ["Initial fear", "Practice and determination", "Finding passion"],
+            "key_concepts": ["lessons", "determination", "passion"],
+            "marks": 4,
+            "source_section": "General"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe one simple task a pilot must do before taking off.",
+            "answer": "A pilot must check all the instruments and parts of the plane to make sure everything is working correctly and the plane is safe to fly.",
+            "answer_outline": ["Checking instruments", "Safety check", "Pre-flight task"],
+            "key_concepts": ["pre-flight", "safety", "checking"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why does Amelia describe flying as an 'adventure'?",
+            "answer": "She calls it an adventure because every flight is a new experience. It takes you to places high above and challenges you in exciting ways.",
+            "answer_outline": ["New experiences", "Being high above", "Exciting challenges"],
+            "key_concepts": ["adventure", "experience", "thrill"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "How did Amelia feel about the engine of the airplane?",
+            "answer": "She saw the engine as the 'heart' of the plane. She learned to listen to its sound to make sure the plane was flying properly.",
+            "answer_outline": ["Engine as heart", "Listening to sounds", "Proper flight"],
+            "key_concepts": ["engine", "sounds", "mechanics"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What did Amelia think about other women becoming pilots?",
+            "answer": "Amelia wanted to show that women could fly just as well as men. She hoped her story would inspire other girls to become pilots too.",
+            "answer_outline": ["Equality in flying", "Inspiration for others", "Female pilots"],
+            "key_concepts": ["inspiration", "women in aviation", "equality"],
+            "marks": 4,
+            "source_section": "General"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the story of Amelia Earhart's learning to fly.",
+            "answer": "Amelia Earhart started as a nervous beginner but worked very hard with an instructor. Through practice and courage, she became a confident pilot who loved the freedom of the sky.",
+            "answer_outline": ["Beginning as a learner", "Hard work and practice", "Final success and freedom"],
+            "key_concepts": ["summary", "perseverance", "achievement"],
+            "marks": 5,
+            "source_section": "General"
+        }
+    ]
+}

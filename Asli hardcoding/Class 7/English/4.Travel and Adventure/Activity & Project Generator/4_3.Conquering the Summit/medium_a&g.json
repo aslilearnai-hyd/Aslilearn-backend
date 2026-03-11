@@ -1,0 +1,142 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "Conquering the Summit",
+  "difficulty": "Medium",
+  "source_pdf": "honeycomb_ch6.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Analysis of the Climbers",
+      "objective": "Understand the traits and actions of the climbers",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the chapter carefully",
+        "Identify key climbers and their actions",
+        "List 5 traits for each climber with examples from the story",
+        "Discuss your analysis with a partner"
+      ],
+      "learning_outcome": "Students learn to analyse character behaviour",
+      "evaluation": "Accuracy of traits and examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Understanding the Journey",
+      "objective": "Trace the climbers’ journey and challenges",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "List the main events of the climb in order",
+        "Identify challenges faced and how they were overcome",
+        "Write a paragraph summarising the journey",
+        "Share your summary with the class"
+      ],
+      "learning_outcome": "Students improve comprehension and sequencing skills",
+      "evaluation": "Completeness and clarity of summary (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Theme Identification",
+      "objective": "Recognize key themes in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss in pairs what the story teaches about perseverance, teamwork, and courage",
+        "Write a short paragraph explaining the theme",
+        "Share your ideas in class"
+      ],
+      "learning_outcome": "Students identify and explain themes in literature",
+      "evaluation": "Relevance and clarity of theme explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Descriptive Writing",
+      "objective": "Write descriptive passages about climbing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a scene from the climb",
+        "Write 4–5 sentences describing what climbers saw, felt, and heard",
+        "Use descriptive words and expressions",
+        "Read your passage aloud in class"
+      ],
+      "learning_outcome": "Students improve descriptive writing skills",
+      "evaluation": "Clarity and use of descriptive language (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Dialogue Writing",
+      "objective": "Practice writing dialogues from the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Select a short conversation between climbers",
+        "Rewrite it as a dialogue including emotions and expressions",
+        "Read it aloud to classmates"
+      ],
+      "learning_outcome": "Students develop writing and communication skills",
+      "evaluation": "Clarity and relevance of dialogue (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Vocabulary Building",
+      "objective": "Learn words related to mountaineering",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Find 10 new or challenging words in the chapter",
+        "Write their meanings",
+        "Use each word in a sentence"
+      ],
+      "learning_outcome": "Students improve vocabulary in context",
+      "evaluation": "Correct meanings and sentence usage (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Travel Diary Entry",
+      "objective": "Write a reflective diary entry",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are one of the climbers",
+        "Write a diary entry about a day of the climb including experiences and feelings",
+        "Share your entry with a partner"
+      ],
+      "learning_outcome": "Students practise narrative and reflective writing",
+      "evaluation": "Content, clarity, and relevance (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Sentence Construction Practice",
+      "objective": "Practice complex and compound sentences",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify complex sentences in the chapter",
+        "Underline main and subordinate clauses",
+        "Write three new sentences about the climb using similar structures"
+      ],
+      "learning_outcome": "Students improve grammar and sentence construction",
+      "evaluation": "Correct sentence formation and clause identification (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Compare Journeys",
+      "objective": "Analyze and compare climbing experiences",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss with a partner how the story’s climb is similar or different from a real-life journey you know",
+        "Write a short paragraph highlighting similarities and differences",
+        "Present your comparison to the class"
+      ],
+      "learning_outcome": "Students develop analytical and comparative writing skills",
+      "evaluation": "Depth and clarity of comparison (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Alternate Ending",
+      "objective": "Encourage imaginative writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about how the climb could end differently",
+        "Write 4–5 sentences describing your alternate ending",
+        "Share your alternate ending with classmates"
+      ],
+      "learning_outcome": "Students develop creativity and storytelling skills",
+      "evaluation": "Clarity and creativity of ending (10 marks)"
+    }
+  ]
+}

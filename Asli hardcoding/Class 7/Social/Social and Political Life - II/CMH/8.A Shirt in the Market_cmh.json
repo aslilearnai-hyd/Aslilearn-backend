@@ -1,0 +1,127 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 8: A Shirt in the Market",
+    "generated_at": "2026-03-07T18:00:00",
+    "concepts": [
+        {
+            "concept_name": "Production of a Shirt",
+            "difficulty": "easy",
+            "lesson": "A shirt goes through several stages before reaching the market. These stages include growing cotton, spinning yarn, weaving cloth, stitching garments, and selling the finished product.",
+            "real_example": "Cotton grown by farmers is sent to spinning mills where it is turned into yarn and later stitched into shirts in garment factories.",
+            "key_points": [
+                "Many stages involved in making a shirt",
+                "Different workers contribute to production",
+                "Final product reaches customers through markets"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "concept_name": "Cotton Farmers and Raw Materials",
+            "difficulty": "easy",
+            "lesson": "Cotton farmers grow cotton which serves as the raw material for making cloth and garments. Farmers sell cotton to traders or mills for further processing.",
+            "real_example": "Farmers in Gujarat and Maharashtra grow cotton that is later used by textile factories.",
+            "key_points": [
+                "Cotton is the main raw material",
+                "Farmers are the first step in production",
+                "Raw materials start the production chain"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "concept_name": "Spinning and Weaving",
+            "difficulty": "medium",
+            "lesson": "After cotton is harvested, it is sent to spinning mills where it is converted into yarn. This yarn is then woven into cloth in weaving units or textile factories.",
+            "real_example": "Textile mills convert cotton into yarn and weave it into fabric that is used for making shirts and other garments.",
+            "key_points": [
+                "Spinning converts cotton into yarn",
+                "Weaving converts yarn into cloth",
+                "Factories and mills play an important role"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "concept_name": "Garment Manufacturing",
+            "difficulty": "medium",
+            "lesson": "Garment factories cut, stitch, and assemble cloth into finished shirts. Workers in these factories perform specialized tasks such as cutting, stitching, and finishing.",
+            "real_example": "Garment workers in cities like Tiruppur stitch thousands of shirts for both domestic and export markets.",
+            "key_points": [
+                "Cloth is converted into garments",
+                "Workers specialize in different tasks",
+                "Factories produce large quantities of clothing"
+            ],
+            "source_section": "Section 8.4"
+        },
+        {
+            "concept_name": "Role of Traders and Middlemen",
+            "difficulty": "medium",
+            "lesson": "Traders and middlemen buy raw materials from farmers and sell them to factories or export companies. They connect producers with markets.",
+            "real_example": "A cotton trader purchases cotton from farmers and supplies it to textile mills.",
+            "key_points": [
+                "Middlemen connect producers and factories",
+                "They help goods move through the production chain",
+                "They often earn profit by buying and selling"
+            ],
+            "source_section": "Section 8.5"
+        },
+        {
+            "concept_name": "Subcontracting System",
+            "difficulty": "hard",
+            "lesson": "Large companies often subcontract work to smaller factories or workshops. These smaller units produce goods according to the requirements of big companies.",
+            "real_example": "Export companies give stitching work to small garment units that employ local workers.",
+            "key_points": [
+                "Big companies outsource work",
+                "Small units handle production tasks",
+                "Helps companies reduce production costs"
+            ],
+            "source_section": "Section 8.6"
+        },
+        {
+            "concept_name": "Workers and Wages",
+            "difficulty": "medium",
+            "lesson": "Workers involved in garment production often receive low wages compared to the high prices at which shirts are sold in the market.",
+            "real_example": "Garment workers may stitch many shirts daily but receive only small daily wages.",
+            "key_points": [
+                "Workers perform most production tasks",
+                "Wages are often low",
+                "Income inequality exists in the production chain"
+            ],
+            "source_section": "Section 8.7"
+        },
+        {
+            "concept_name": "Global Markets and Exports",
+            "difficulty": "hard",
+            "lesson": "Many shirts produced in garment factories are exported to international markets. Global demand influences production, pricing, and employment.",
+            "real_example": "Indian garment factories export shirts to countries in Europe and the United States.",
+            "key_points": [
+                "Garments sold in international markets",
+                "Global demand affects production levels",
+                "Export companies connect local production with global trade"
+            ],
+            "source_section": "Section 8.8"
+        },
+        {
+            "concept_name": "Price and Profit Distribution",
+            "difficulty": "hard",
+            "lesson": "Different participants in the production chain receive different shares of profit. Large companies and brands often earn the highest profits compared to farmers and workers.",
+            "real_example": "A branded shirt sold in a mall costs much more than the amount paid to the worker who stitched it.",
+            "key_points": [
+                "Profits are unevenly distributed",
+                "Brands and retailers earn larger margins",
+                "Workers and farmers earn smaller shares"
+            ],
+            "source_section": "Section 8.9"
+        },
+        {
+            "concept_name": "Production Chain of a Shirt",
+            "difficulty": "medium",
+            "lesson": "The production chain describes the sequence of people and processes involved in making and selling a shirt, from raw materials to the final customer.",
+            "real_example": "Cotton Farmer → Trader → Spinning Mill → Weaving Unit → Garment Factory → Retail Shop → Customer.",
+            "key_points": [
+                "Shows the flow of production",
+                "Many individuals contribute",
+                "Helps understand how markets work"
+            ],
+            "source_section": "Section 8.10"
+        }
+    ]
+}

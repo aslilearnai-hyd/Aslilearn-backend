@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: How do Organisms Reproduce?",
+  "generated_at": "2026-03-10T23:51:10",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Amoeba reproduces by which of the following methods?",
+      "options": {
+        "A": "Budding",
+        "B": "Fragmentation",
+        "C": "Binary fission",
+        "D": "Spore formation"
+      },
+      "correct_answer": "C",
+      "explanation": "Amoeba reproduces by splitting into two equal halves through binary fission.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The ability of an organism to replace its lost body parts is called:",
+      "options": {
+        "A": "Fission",
+        "B": "Regeneration",
+        "C": "Fragmentation",
+        "D": "Budding"
+      },
+      "correct_answer": "B",
+      "explanation": "Regeneration is the process by which organisms like Hydra and Planaria can grow back into full individuals from cut parts.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following organisms reproduces by budding?",
+      "options": {
+        "A": "Amoeba",
+        "B": "Hydra",
+        "C": "Plasmodium",
+        "D": "Leishmania"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydra uses regenerative cells for reproduction in the process of budding.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.4"
+    },
+    {
+      "question_number": 4,
+      "question": "The process of reproduction in yeast is:",
+      "options": {
+        "A": "Binary fission",
+        "B": "Budding",
+        "C": "Fragmentation",
+        "D": "Spore formation"
+      },
+      "correct_answer": "B",
+      "explanation": "Yeast cells develop small buds that separate and grow into new individuals.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "The thread-like structures that develop on moist bread are called:",
+      "options": {
+        "A": "Rhizoids",
+        "B": "Hyphae",
+        "C": "Stems",
+        "D": "Roots"
+      },
+      "correct_answer": "B",
+      "explanation": "The thread-like structures of the bread mould (Rhizopus) are called hyphae.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.6"
+    },
+    {
+      "question_number": 6,
+      "question": "The male reproductive part of a flower is the:",
+      "options": {
+        "A": "Pistil",
+        "B": "Stamen",
+        "C": "Petal",
+        "D": "Sepal"
+      },
+      "correct_answer": "B",
+      "explanation": "The stamen is the male reproductive part and it produces pollen grains.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 7,
+      "question": "The female reproductive part of a flower is the:",
+      "options": {
+        "A": "Stamen",
+        "B": "Carpel/Pistil",
+        "C": "Anther",
+        "D": "Filament"
+      },
+      "correct_answer": "B",
+      "explanation": "The carpel or pistil is the female reproductive part present in the center of a flower.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 8,
+      "question": "After fertilization, the ovule develops into a:",
+      "options": {
+        "A": "Fruit",
+        "B": "Seed",
+        "C": "Flower",
+        "D": "Embryo"
+      },
+      "correct_answer": "B",
+      "explanation": "The ovule develops a tough coat and is gradually converted into a seed.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 9,
+      "question": "After fertilization, the ovary ripens to form a:",
+      "options": {
+        "A": "Seed",
+        "B": "Fruit",
+        "C": "Leaf",
+        "D": "Pollen"
+      },
+      "correct_answer": "B",
+      "explanation": "The ovary grows rapidly and ripens to form a fruit.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following is a male sex hormone in humans?",
+      "options": {
+        "A": "Estrogen",
+        "B": "Progesterone",
+        "C": "Testosterone",
+        "D": "Thyroxin"
+      },
+      "correct_answer": "C",
+      "explanation": "Testosterone is produced by the testes and controls male secondary sexual characteristics.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    },
+    {
+      "question_number": 11,
+      "question": "The site of fertilization in human females is the:",
+      "options": {
+        "A": "Uterus",
+        "B": "Ovary",
+        "C": "Fallopian tube (Oviduct)",
+        "D": "Vagina"
+      },
+      "correct_answer": "C",
+      "explanation": "The egg is fertilized by the sperm in the fallopian tube.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    },
+    {
+      "question_number": 12,
+      "question": "The period of adolescence when the reproductive tissues begin to mature is called:",
+      "options": {
+        "A": "Adulthood",
+        "B": "Puberty",
+        "C": "Childhood",
+        "D": "Gestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Puberty is the period during which an individual becomes sexually mature.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which organ provides nutrition to the developing embryo in the uterus?",
+      "options": {
+        "A": "Oviduct",
+        "B": "Placenta",
+        "C": "Cervix",
+        "D": "Ovary"
+      },
+      "correct_answer": "B",
+      "explanation": "The placenta is a special tissue that allows the embryo to get nutrition and oxygen from the mother's blood.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    },
+    {
+      "question_number": 14,
+      "question": "How many chromosomes are present in a human zygote?",
+      "options": {
+        "A": "23",
+        "B": "46",
+        "C": "22",
+        "D": "44"
+      },
+      "correct_answer": "B",
+      "explanation": "A zygote is formed by the fusion of a sperm (23 chromosomes) and an egg (23 chromosomes), resulting in 46 chromosomes (23 pairs).",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Vegetative propagation in 'Bryophyllum' occurs through:",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "C",
+      "explanation": "Bryophyllum propagates through buds produced in the notches along the leaf margins.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "The transfer of pollen grains from the anther to the stigma is called:",
+      "options": {
+        "A": "Fertilization",
+        "B": "Pollination",
+        "C": "Germination",
+        "D": "Translocation"
+      },
+      "correct_answer": "B",
+      "explanation": "Pollination is the transfer of pollen from the male part (anther) to the female part (stigma).",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is a copper-releasing IUD?",
+      "options": {
+        "A": "Condom",
+        "B": "Copper-T",
+        "C": "Oral pills",
+        "D": "Surgical method"
+      },
+      "correct_answer": "B",
+      "explanation": "Copper-T is an Intra-Uterine Device used for contraception.",
+      "difficulty": "easy",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 18,
+      "question": "The number of parents required for asexual reproduction is:",
+      "options": {
+        "A": "One",
+        "B": "Two",
+        "C": "Three",
+        "D": "None"
+      },
+      "correct_answer": "A",
+      "explanation": "Asexual reproduction involves only a single parent.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Spirogyra reproduces by breaking into smaller pieces. This is called:",
+      "options": {
+        "A": "Fission",
+        "B": "Budding",
+        "C": "Fragmentation",
+        "D": "Regeneration"
+      },
+      "correct_answer": "C",
+      "explanation": "Spirogyra breaks up into smaller fragments upon maturation, each growing into a new individual.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a viral STD (Sexually Transmitted Disease)?",
+      "options": {
+        "A": "Gonorrhoea",
+        "B": "Syphilis",
+        "C": "Warts/HIV-AIDS",
+        "D": "Malaria"
+      },
+      "correct_answer": "C",
+      "explanation": "HIV-AIDS and warts are caused by viruses, whereas Gonorrhoea and Syphilis are bacterial.",
+      "difficulty": "easy",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 21,
+      "question": "The embryo gets implanted in the:",
+      "options": {
+        "A": "Ovary",
+        "B": "Uterus wall",
+        "C": "Vagina",
+        "D": "Oviduct"
+      },
+      "correct_answer": "B",
+      "explanation": "The fertilized egg (embryo) is implanted in the lining of the uterus.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    },
+    {
+      "question_number": 22,
+      "question": "The part of the flower that contains ovules is:",
+      "options": {
+        "A": "Stigma",
+        "B": "Style",
+        "C": "Ovary",
+        "D": "Anther"
+      },
+      "correct_answer": "C",
+      "explanation": "The swollen bottom part of the carpel is the ovary, which contains the ovules.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Blocking of vas deferens to prevent pregnancy is called:",
+      "options": {
+        "A": "Tubectomy",
+        "B": "Vasectomy",
+        "C": "Contraception",
+        "D": "Implantation"
+      },
+      "correct_answer": "B",
+      "explanation": "Vasectomy is the surgical method for males where the vas deferens is blocked.",
+      "difficulty": "easy",
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Plants like banana, rose, and jasmine have lost the capacity to produce:",
+      "options": {
+        "A": "Flowers",
+        "B": "Seeds",
+        "C": "Roots",
+        "D": "Leaves"
+      },
+      "correct_answer": "B",
+      "explanation": "Many plants like banana and jasmine are grown via vegetative propagation as they have lost the ability to produce seeds.",
+      "difficulty": "easy",
+      "source_section": "Section 7.2.5"
+    },
+    {
+      "question_number": 25,
+      "question": "The monthly cycle of changes in the human female reproductive system is called:",
+      "options": {
+        "A": "Puberty",
+        "B": "Menstruation",
+        "C": "Fertilization",
+        "D": "Gestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Menstruation is the monthly discharge of blood and the uterus lining if fertilization does not occur.",
+      "difficulty": "easy",
+      "source_section": "Section 7.3.3"
+    }
+  ]
+}

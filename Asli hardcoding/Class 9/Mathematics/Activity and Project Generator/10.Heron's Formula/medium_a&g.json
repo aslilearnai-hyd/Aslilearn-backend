@@ -1,0 +1,194 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Heron’s Formula",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class9_math_ch10.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Area of Triangle with Algebraic Sides",
+            "objective": "Calculate area using Heron’s formula with algebraic expressions",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take a triangle with sides a = x + 3, b = x + 4, c = x + 5",
+                "Calculate semi-perimeter s = (a + b + c)/2",
+                "Use Heron’s formula to express area in terms of x",
+                "Simplify the expression and record"
+            ],
+            "learning_outcome": "Applies Heron’s formula with algebraic side lengths",
+            "evaluation": "Correct expression and simplification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Comparing Areas of Two Triangles with Same Perimeter",
+            "objective": "Compare areas of triangles with same semi-perimeter but different side lengths",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Choose two sets of triangle sides with same s",
+                "Calculate area of each using Heron’s formula",
+                "Compare and identify which triangle has larger area",
+                "Record observations"
+            ],
+            "learning_outcome": "Understands how side lengths affect triangle area",
+            "evaluation": "Accurate calculations and observations (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Area of Right-Angled Triangle with Heron’s Formula",
+            "objective": "Verify Heron’s formula matches ½ × base × height",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator",
+                "Ruler"
+            ],
+            "steps": [
+                "Take triangle with sides 6 cm, 8 cm, 10 cm",
+                "Calculate area using ½ × base × height",
+                "Also calculate area using Heron’s formula",
+                "Compare results"
+            ],
+            "learning_outcome": "Confirms Heron’s formula works for right-angled triangles",
+            "evaluation": "Accurate calculation and comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Area of Triangle with Decimal Sides",
+            "objective": "Calculate area of triangle with decimal side lengths",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator",
+                "Ruler"
+            ],
+            "steps": [
+                "Take triangle with sides a = 5.7 cm, b = 6.3 cm, c = 4.8 cm",
+                "Calculate semi-perimeter s = (a + b + c)/2",
+                "Use Heron’s formula to find area",
+                "Record result in notebook"
+            ],
+            "learning_outcome": "Applies Heron’s formula with decimal side lengths",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Triangle Area using Perimeter Constraint",
+            "objective": "Find maximum area triangle for given perimeter using Heron’s formula",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take perimeter P = 12 cm",
+                "Choose multiple sets of triangle sides with sum 12 cm",
+                "Calculate area for each set using Heron’s formula",
+                "Identify which combination gives maximum area"
+            ],
+            "learning_outcome": "Explores relationship between perimeter and maximum area",
+            "evaluation": "Accurate calculations and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Area of Triangle with Mixed Units",
+            "objective": "Calculate area using Heron’s formula with sides in different units",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator",
+                "Ruler"
+            ],
+            "steps": [
+                "Take sides a = 5 m, b = 300 cm, c = 0.04 km",
+                "Convert all sides into same unit",
+                "Calculate semi-perimeter s",
+                "Use Heron’s formula to calculate area"
+            ],
+            "learning_outcome": "Applies Heron’s formula with unit conversion",
+            "evaluation": "Correct conversion and calculation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Triangle Area using Graph Paper",
+            "objective": "Draw triangle on graph paper and calculate area using Heron’s formula",
+            "materials": [
+                "Graph paper",
+                "Ruler",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Draw triangle with sides measured using graph scale",
+                "Measure sides using ruler",
+                "Calculate semi-perimeter and area using Heron’s formula",
+                "Compare with approximate visual area on graph"
+            ],
+            "learning_outcome": "Applies Heron’s formula practically using drawing",
+            "evaluation": "Accurate measurement and calculation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Exploring Heron’s Formula for Isosceles Triangle",
+            "objective": "Calculate area for various isosceles triangles and compare",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take isosceles triangles with sides a = b = 5 cm, c = 6 cm; a = b = 7 cm, c = 4 cm",
+                "Calculate semi-perimeter and area for each using Heron’s formula",
+                "Compare areas and note observations"
+            ],
+            "learning_outcome": "Understands effect of unequal base on area",
+            "evaluation": "Correct calculation and comparison (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Area of Triangle Formed by Intersecting Lines",
+            "objective": "Calculate area of triangle formed by intersection of given lines using distances as sides",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Ruler",
+                "Calculator"
+            ],
+            "steps": [
+                "Draw three lines intersecting to form triangle",
+                "Measure side lengths",
+                "Calculate semi-perimeter and area using Heron’s formula",
+                "Record result"
+            ],
+            "learning_outcome": "Applies Heron’s formula in coordinate or drawing context",
+            "evaluation": "Accurate measurement and calculation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Real-Life Triangle Area Estimation",
+            "objective": "Estimate and calculate area of triangular plots or objects using Heron’s formula",
+            "materials": [
+                "Measuring tape or ruler",
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Measure three sides of a triangular object or plot",
+                "Calculate semi-perimeter",
+                "Use Heron’s formula to calculate area",
+                "Compare with actual area if possible"
+            ],
+            "learning_outcome": "Connects Heron’s formula to real-life applications",
+            "evaluation": "Accurate measurement and area calculation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,258 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Understanding Marginalisation",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-06T22:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning of marginalisation.",
+      "answer": "Marginalisation refers to a situation where certain groups are pushed to the edge of society and have limited access to resources, opportunities and power.",
+      "answer_outline": [
+        "Definition of marginalisation",
+        "Limited access to opportunities"
+      ],
+      "key_concepts": ["marginalisation"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why some communities become marginalised.",
+      "answer": "Communities become marginalised due to social discrimination, economic inequality and lack of political representation.",
+      "answer_outline": [
+        "Social discrimination",
+        "Economic inequality",
+        "Lack of representation"
+      ],
+      "key_concepts": ["marginalisation"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Who are Adivasis? Explain their way of life.",
+      "answer": "Adivasis are indigenous tribal communities who traditionally live in forests and depend on natural resources for their livelihood.",
+      "answer_outline": [
+        "Definition of Adivasis",
+        "Dependence on forests",
+        "Traditional lifestyle"
+      ],
+      "key_concepts": ["Adivasis"],
+      "marks": 4,
+      "source_section": "Adivasis and Their Lives"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the relationship between Adivasis and forests.",
+      "answer": "Adivasis depend on forests for food, shelter, medicine and livelihood. Forests play an important role in their culture and traditions.",
+      "answer_outline": [
+        "Dependence on forest resources",
+        "Cultural connection"
+      ],
+      "key_concepts": ["Adivasis", "forests"],
+      "marks": 4,
+      "source_section": "Adivasis and Forests"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the problems faced by Adivasi communities due to development projects.",
+      "answer": "Development projects such as dams, mines and industries often lead to displacement of Adivasi communities and loss of their livelihoods.",
+      "answer_outline": ["Displacement", "Loss of livelihood"],
+      "key_concepts": ["development"],
+      "marks": 4,
+      "source_section": "Adivasis and Forests"
+    },
+    {
+      "question_number": 6,
+      "question": "What are minorities? Explain with examples.",
+      "answer": "Minorities are groups that are smaller in number compared to the rest of the population. They may differ in religion, language or culture.",
+      "answer_outline": ["Definition", "Examples of minority groups"],
+      "key_concepts": ["minorities"],
+      "marks": 4,
+      "source_section": "Minorities and Marginalisation"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how minority communities may face marginalisation.",
+      "answer": "Minority communities may face discrimination, lack of opportunities and social exclusion in education and employment.",
+      "answer_outline": ["Discrimination", "Limited opportunities"],
+      "key_concepts": ["minorities"],
+      "marks": 4,
+      "source_section": "Minorities and Marginalisation"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the meaning of stereotypes.",
+      "answer": "Stereotypes are fixed ideas or beliefs about a group of people that may not always be accurate.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["stereotypes"],
+      "marks": 3,
+      "source_section": "Stereotypes"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the meaning of prejudice.",
+      "answer": "Prejudice refers to judging people unfairly without knowing the facts.",
+      "answer_outline": ["Definition", "Unfair judgement"],
+      "key_concepts": ["prejudice"],
+      "marks": 3,
+      "source_section": "Prejudice"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how stereotypes can lead to discrimination.",
+      "answer": "Stereotypes create unfair assumptions about communities which can lead to prejudice and discrimination.",
+      "answer_outline": ["Stereotypes", "Prejudice", "Discrimination"],
+      "key_concepts": ["stereotypes", "discrimination"],
+      "marks": 4,
+      "source_section": "Social Issues"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Explain how marginalisation affects people's lives.",
+      "answer": "Marginalisation limits access to education, healthcare and employment, affecting people's living conditions.",
+      "answer_outline": [
+        "Limited access to resources",
+        "Impact on living standards"
+      ],
+      "key_concepts": ["marginalisation"],
+      "marks": 4,
+      "source_section": "Impact of Marginalisation"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the importance of equality in society.",
+      "answer": "Equality ensures that all people have equal rights, opportunities and respect in society.",
+      "answer_outline": ["Equal rights", "Fair opportunities"],
+      "key_concepts": ["equality"],
+      "marks": 4,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how education can help reduce marginalisation.",
+      "answer": "Education helps people gain knowledge, skills and opportunities that improve their social and economic conditions.",
+      "answer_outline": ["Access to education", "Better opportunities"],
+      "key_concepts": ["education"],
+      "marks": 4,
+      "source_section": "Role of Education"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain why respecting diversity is important in society.",
+      "answer": "Respecting diversity helps promote peace, cooperation and mutual understanding among communities.",
+      "answer_outline": ["Respect for differences", "Social harmony"],
+      "key_concepts": ["diversity"],
+      "marks": 4,
+      "source_section": "Diversity"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how discrimination affects social harmony.",
+      "answer": "Discrimination creates inequality and conflicts between communities, disturbing social harmony.",
+      "answer_outline": ["Inequality", "Social conflict"],
+      "key_concepts": ["discrimination"],
+      "marks": 4,
+      "source_section": "Social Issues"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain the role of government in reducing marginalisation.",
+      "answer": "The government can reduce marginalisation by creating laws, providing welfare programs and ensuring equal opportunities.",
+      "answer_outline": ["Government policies", "Support programs"],
+      "key_concepts": ["government"],
+      "marks": 4,
+      "source_section": "Government Role"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why protecting minority rights is important.",
+      "answer": "Protecting minority rights ensures equality, justice and respect for diversity in society.",
+      "answer_outline": ["Equal rights", "Social justice"],
+      "key_concepts": ["minority rights"],
+      "marks": 4,
+      "source_section": "Minority Protection"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how stereotypes and prejudice are related.",
+      "answer": "Stereotypes create fixed ideas about groups, and prejudice leads to unfair attitudes based on those ideas.",
+      "answer_outline": ["Stereotypes", "Prejudice"],
+      "key_concepts": ["stereotypes", "prejudice"],
+      "marks": 4,
+      "source_section": "Social Issues"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how marginalisation affects development.",
+      "answer": "Marginalisation prevents certain groups from contributing fully to society, which slows social and economic development.",
+      "answer_outline": ["Limited participation", "Impact on development"],
+      "key_concepts": ["development"],
+      "marks": 4,
+      "source_section": "Impact of Marginalisation"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how awareness can reduce discrimination.",
+      "answer": "Awareness helps people understand social inequalities and encourages respect for different communities.",
+      "answer_outline": ["Education", "Social awareness"],
+      "key_concepts": ["awareness"],
+      "marks": 4,
+      "source_section": "Social Awareness"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain how society can support marginalised communities.",
+      "answer": "Society can support marginalised communities by promoting equality, respect and access to opportunities.",
+      "answer_outline": ["Equal opportunities", "Social support"],
+      "key_concepts": ["support"],
+      "marks": 4,
+      "source_section": "Social Support"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how fairness and equality help society progress.",
+      "answer": "Fairness and equality allow everyone to participate and contribute to social and economic development.",
+      "answer_outline": ["Equal participation", "Social development"],
+      "key_concepts": ["fairness"],
+      "marks": 4,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how marginalisation can be reduced in society.",
+      "answer": "Marginalisation can be reduced through education, equal rights, social awareness and government policies.",
+      "answer_outline": [
+        "Education",
+        "Equal opportunities",
+        "Government support"
+      ],
+      "key_concepts": ["marginalisation"],
+      "marks": 5,
+      "source_section": "Solutions"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of inclusion in society.",
+      "answer": "Inclusion ensures that everyone is treated fairly and has equal opportunities to participate in society.",
+      "answer_outline": ["Equal participation", "Fair opportunities"],
+      "key_concepts": ["inclusion"],
+      "marks": 4,
+      "source_section": "Inclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why understanding marginalisation is important for building a fair society.",
+      "answer": "Understanding marginalisation helps people recognize inequality and work towards creating a more inclusive and just society.",
+      "answer_outline": ["Awareness of inequality", "Promotion of equality"],
+      "key_concepts": ["marginalisation", "equality"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

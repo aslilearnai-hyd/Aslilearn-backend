@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 1: Matter in Our Surroundings",
+    "generated_at": "2026-03-06T19:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the temperature of a substance remains constant during its melting point despite continuous heating.",
+            "answer": "The heat energy is consumed as 'Latent Heat of Fusion' to overcome the inter-particle forces of attraction to change the state from solid to liquid, rather than increasing the kinetic energy.",
+            "key_points": ["latent heat", "inter-particle forces", "constant temperature"],
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the physical significance of the 'Kelvin' scale over the 'Celsius' scale in scientific calculations?",
+            "answer": "The Kelvin scale is an absolute scale where 0 K (absolute zero) represents the point where molecular motion theoretically ceases, avoiding negative values in thermodynamic equations.",
+            "key_points": ["absolute zero", "molecular motion", "thermodynamics"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does the rate of diffusion of liquids increase significantly with a rise in temperature?",
+            "answer": "Increased temperature provides higher kinetic energy to the particles, leading to faster movement and more frequent collisions, which accelerates the intermixing process.",
+            "key_points": ["kinetic energy", "collisions", "diffusion rate"],
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How does the pressure exerted by a gas relate to the kinetic energy of its particles?",
+            "answer": "Pressure is the result of gas particles hitting the container walls; higher kinetic energy leads to more forceful and frequent impacts, thereby increasing the pressure.",
+            "key_points": ["wall collisions", "force per unit area", "kinetic energy"],
+            "source_section": "Section 1.3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of 'Sublimation' in the context of vapor pressure.",
+            "answer": "Sublimation occurs when the vapor pressure of a solid exceeds the atmospheric pressure at a temperature below its melting point, allowing it to bypass the liquid phase.",
+            "key_points": ["vapor pressure", "atmospheric pressure", "phase bypass"],
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the density of ice lower than the density of water, contrary to general rules for solids?",
+            "answer": "Ice has a cage-like structure with large empty spaces between molecules due to hydrogen bonding; when it melts, this structure collapses, and molecules pack closer together.",
+            "key_points": ["cage-like structure", "hydrogen bonding", "density anomaly"],
+            "source_section": "General Science/Conceptual"
+        },
+        {
+            "question_number": 7,
+            "question": "Differentiate between boiling and evaporation based on the energy of the particles involved.",
+            "answer": "Evaporation involves only surface particles with high kinetic energy escaping, while boiling is a bulk phenomenon where all particles gain enough energy to form vapor bubbles.",
+            "key_points": ["surface vs bulk", "kinetic energy", "bubble formation"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the 'Bose-Einstein Condensate' state of matter?",
+            "answer": "It is a state formed by cooling a gas of extremely low density to super-low temperatures (near absolute zero), where atoms collapse into a single quantum state.",
+            "key_points": ["super-low temperature", "quantum state", "low density"],
+            "source_section": "Section 1.4 (More to Know)"
+        },
+        {
+            "question_number": 9,
+            "question": "How does the presence of high humidity in the atmosphere inhibit the cooling effect of a desert cooler?",
+            "answer": "High humidity means the air is already saturated with water vapor, which reduces the rate of further evaporation from the cooler, thereby reducing the cooling efficiency.",
+            "key_points": ["saturation", "evaporation rate", "cooling efficiency"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the role of 'Atmospheric Pressure' in the boiling process.",
+            "answer": "A liquid boils only when its internal vapor pressure becomes equal to the external atmospheric pressure; thus, boiling points decrease at higher altitudes.",
+            "key_points": ["vapor pressure", "equilibrium", "altitude effect"],
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Why do we feel a cooling sensation when we apply acetone on our palm?",
+            "answer": "Acetone has a low boiling point; it absorbs the required latent heat of vaporization from the palm, causing the temperature of the skin to drop.",
+            "key_points": ["volatile liquid", "latent heat absorption", "cooling effect"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to the intermolecular space and intermolecular force when a gas is liquefied?",
+            "answer": "Intermolecular space decreases significantly while the intermolecular forces of attraction increase as particles are brought closer together.",
+            "key_points": ["intermolecular space", "attraction force", "liquefaction"],
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why 'Plasma' is considered the most common state of matter in the universe.",
+            "answer": "Plasma exists in stars (including the Sun) where extremely high temperatures ionize atoms into a mixture of free electrons and ions.",
+            "key_points": ["ionization", "stars", "high temperature"],
+            "source_section": "Section 1.4 (More to Know)"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is the cooling produced by evaporation considered a surface phenomenon?",
+            "answer": "Only the particles at the surface have enough kinetic energy to overcome the forces of attraction; their escape leaves the remaining bulk with a lower average energy.",
+            "key_points": ["surface particles", "average energy", "cooling"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Define 'Critical Temperature' in the context of liquefying a gas.",
+            "answer": "It is the temperature above which a gas cannot be liquefied, no matter how much pressure is applied.",
+            "key_points": ["liquefaction limit", "temperature threshold", "pressure"],
+            "source_section": "Advanced Conceptual"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does a gas fill completely the vessel in which it is kept?",
+            "answer": "Gas particles have negligible forces of attraction and high kinetic energy, allowing them to move randomly in all directions to occupy the available volume.",
+            "key_points": ["negligible attraction", "random motion", "volume occupancy"],
+            "source_section": "Section 1.3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the effect of adding impurities on the melting point of a solid?",
+            "answer": "Impurities generally lower the melting point of a solid (depression in freezing point) and increase the boiling point of a liquid.",
+            "key_points": ["impurities", "melting point depression", "boiling point elevation"],
+            "source_section": "Advanced Conceptual"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the term 'Rigidity' concerning the solid state.",
+            "answer": "Rigidity is the tendency of a substance to maintain its shape when subjected to outside force, owing to strong intermolecular forces.",
+            "key_points": ["maintain shape", "outside force", "intermolecular forces"],
+            "source_section": "Section 1.3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is solid CO2 stored under high pressure?",
+            "answer": "It is stored under high pressure to prevent it from subliming into gas, as it directly turns into vapor when pressure is reduced to 1 atmosphere.",
+            "key_points": ["dry ice", "sublimation prevention", "atmospheric pressure"],
+            "source_section": "Section 1.4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe the change in the motion of particles when a liquid reaches its boiling point.",
+            "answer": "At the boiling point, particles gain enough energy to break free from all intermolecular attractions and move independently in the gaseous state.",
+            "key_points": ["break attractions", "independent motion", "gaseous state"],
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do we see a 'milky' appearance in some gases like steam?",
+            "answer": "The milky appearance is due to the condensation of steam into tiny water droplets which scatter light.",
+            "key_points": ["condensation", "scattering of light", "water droplets"],
+            "source_section": "General Observation"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the rate of evaporation vary with the nature of the liquid?",
+            "answer": "Liquids with weaker intermolecular forces (like alcohol) evaporate faster than liquids with stronger forces (like water) at the same temperature.",
+            "key_points": ["intermolecular forces", "volatile liquids", "evaporation rate"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the relationship between 'Diffusion' and the 'Density' of a gas?",
+            "answer": "Generally, lighter gases (lower density) diffuse faster than heavier gases (higher density) at the same temperature and pressure.",
+            "key_points": ["density", "diffusion rate", "Graham's Law"],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does a wooden table be called a solid despite being porous at a microscopic level?",
+            "answer": "It maintains a definite shape and volume, is rigid, and its particles are fixed in position, satisfying the macroscopic definition of a solid.",
+            "key_points": ["definite shape", "definite volume", "rigidity"],
+            "source_section": "Section 1.3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the unit 'Pascal' used for in the study of matter?",
+            "answer": "Pascal (Pa) is the SI unit of pressure, representing a force of one Newton per square meter ($1 \text{ N/m}^2$).",
+            "key_points": ["SI unit", "pressure", "force/area"],
+            "source_section": "Section 1.4"
+        }
+    ]
+}

@@ -1,0 +1,185 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "The World of Metals and Non-Metals",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Compare physical properties of metals and non-metals with scientific terminology",
+        "Understand the chemical property of reaction with Oxygen and Water",
+        "Identify the nature of metallic and non-metallic oxides (Acidic/Basic)",
+        "Explain the displacement reaction using the reactivity series concept",
+        "Recognize exceptions in physical properties (Mercury, Sodium, Graphite)",
+        "Understand the process and prevention of Galvanization and Alloying",
+        "Correlate the properties of materials with their industrial applications"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Physical Properties & The Exceptions",
+            "topics_covered": [
+                "Luster, Malleability, Ductility, and Sonority (Advanced definitions)",
+                "Exceptions: Liquid metal (Mercury), Soft metals (Sodium/Potassium)",
+                "Non-metal exceptions: Lustrous Iodine and Conductive Graphite"
+            ],
+            "teaching_strategy": [
+                "Comparative chart construction",
+                "Demonstration of Graphite conducting electricity",
+                "Handling samples of different densities"
+            ],
+            "student_activities": [
+                "Create a 'Fact vs. Exception' table",
+                "Test the conductivity of a pencil lead (Graphite)"
+            ],
+            "assessment": [
+                "Quiz on exceptions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reaction with Oxygen",
+            "topics_covered": [
+                "Formation of Metallic Oxides",
+                "Burning of Magnesium ribbon",
+                "Nature of oxides (Basic for metals, Acidic for non-metals)"
+            ],
+            "teaching_strategy": [
+                "Teacher-led demonstration: Burning Magnesium",
+                "Litmus test of the resulting ash ($MgO$)",
+                "Word equations: $Metal + Oxygen \rightarrow Metal\ Oxide$"
+            ],
+            "student_activities": [
+                "Observe color change in litmus when testing magnesium ash",
+                "Write word equations for Iron and Copper oxidation"
+            ],
+            "assessment": [
+                "Observation report",
+                "Equation writing worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Reaction with Water and Acids",
+            "topics_covered": [
+                "Vigorous reaction of Sodium with water",
+                "Reaction of metals with dilute acids to produce Hydrogen gas",
+                "The 'Pop' sound test for Hydrogen"
+            ],
+            "teaching_strategy": [
+                "Video demonstration of Sodium in water (Safety first)",
+                "Lab experiment: Zinc granules + Dilute $HCl$",
+                "Instruction on safety while handling acids"
+            ],
+            "student_activities": [
+                "Perform the 'Pop' sound test under supervision",
+                "Compare the reactivity of Iron, Zinc, and Copper with acid"
+            ],
+            "assessment": [
+                "Lab safety viva",
+                "Short answer test on Hydrogen production"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Displacement Reactions",
+            "topics_covered": [
+                "Concept of the Reactivity Series",
+                "Reaction: $Iron + Copper\ Sulphate \rightarrow Iron\ Sulphate + Copper$",
+                "Why a 'stronger' metal pushes out a 'weaker' one"
+            ],
+            "teaching_strategy": [
+                "Experiment: Iron nails in Blue Vitriol (Copper Sulphate) solution",
+                "Color change observation (Blue to Green)"
+            ],
+            "student_activities": [
+                "Monitor the color change of the solution over 30 minutes",
+                "Predict outcomes of different metal-salt combinations"
+            ],
+            "assessment": [
+                "Prediction vs. Observation worksheet",
+                "Flowchart of reactivity"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Corrosion and Prevention",
+            "topics_covered": [
+                "The chemistry of Rusting ($Fe_2O_3 \cdot xH_2O$)",
+                "Conditions necessary for rusting",
+                "Prevention: Painting, Greasing, and Galvanization"
+            ],
+            "teaching_strategy": [
+                "Three-tube experiment (Air, Water, and Both)",
+                "Display of galvanized vs. non-galvanized steel"
+            ],
+            "student_activities": [
+                "Set up the rusting experiment for observation over 2 days",
+                "Discuss why ships rust faster in seawater"
+            ],
+            "assessment": [
+                "Experiment setup evaluation",
+                "Peer discussion on corrosion prevention"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Alloys and Uses of Non-Metals",
+            "topics_covered": [
+                "What are Alloys? (Steel, Brass, Bronze)",
+                "Enhancing properties through mixing",
+                "Uses of Sulfur (crackers), Phosphorus (matches), and Nitrogen (fertilizers)"
+            ],
+            "teaching_strategy": [
+                "Show and tell with different alloy samples",
+                "Discussion on why pure gold is not used for jewelry"
+            ],
+            "student_activities": [
+                "Match the alloy to its constituent metals",
+                "List 5 non-metals used in agriculture and medicine"
+            ],
+            "assessment": [
+                "Matching column worksheet",
+                "Group presentation on 'The Importance of Non-Metals'"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Mastery Assessment",
+            "topics_covered": [
+                "Complete chapter summary",
+                "Reactivity series recap",
+                "Solving complex word problems"
+            ],
+            "teaching_strategy": [
+                "Rapid-fire board quiz",
+                "Solving previous year/sample questions",
+                "Clarifying doubts on chemical reactions"
+            ],
+            "student_activities": [
+                "Participate in a team-based science quiz",
+                "Solve a mixed practice worksheet"
+            ],
+            "assessment": [
+                "Unit Test (20 marks)",
+                "Detailed MCQ section including 'Reasoning and Assertion'"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Magnesium ribbon, Zinc granules, Iron nails",
+        "Copper Sulphate crystals, Dilute HCl",
+        "Reactivity Series Wall Chart",
+        "Samples of Brass, Bronze, and Stainless Steel",
+        "Testing tubes, spirit lamps, and litmus paper"
+    ],
+    "evaluation_methods": [
+        "Lab Observation and reports",
+        "Word Equation tests",
+        "Predictive logic worksheets",
+        "Unit Test with MCQs",
+        "Scientific Reasoning questions"
+    ],
+    "teacher_tip": "Students often struggle with the 'Displacement Reaction' concept. Use the 'Bully vs. Weakling' analogy to explain how a more reactive metal takes the place of a less reactive one. Always emphasize the color changes as they are the best visual evidence for Class 7."
+}

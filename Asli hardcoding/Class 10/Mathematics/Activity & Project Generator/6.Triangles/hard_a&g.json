@@ -1,0 +1,150 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh106.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Similarity Proof Project",
+            "objective": "Prove similarity using criteria",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose triangles",
+                "Apply criteria"
+            ],
+            "learning_outcome": "Proof mastery",
+            "evaluation": "Logical proof (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Height and Distance Link",
+            "objective": "Apply similarity to heights",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Model situation",
+                "Apply ratios"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Correct application (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Scale Drawing Analysis",
+            "objective": "Analyse scale factor impact",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Draw scaled triangles",
+                "Compare areas"
+            ],
+            "learning_outcome": "Scale reasoning",
+            "evaluation": "Analysis accuracy (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Pythagoras via Similarity",
+            "objective": "Derive Pythagoras theorem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Use similar triangles",
+                "Derive result"
+            ],
+            "learning_outcome": "Concept depth",
+            "evaluation": "Derivation clarity (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Similarity Case",
+            "objective": "Study similarity in architecture",
+            "materials": [
+                "Internet",
+                "Project file"
+            ],
+            "steps": [
+                "Research structure",
+                "Explain similarity"
+            ],
+            "learning_outcome": "Research skill",
+            "evaluation": "Explanation quality (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Triangle Ratio Investigation",
+            "objective": "Investigate side ratios",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Measure sides",
+                "Compare ratios"
+            ],
+            "learning_outcome": "Investigative skill",
+            "evaluation": "Correct conclusion (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Error in Similarity Proofs",
+            "objective": "Detect proof errors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse wrong proof",
+                "Correct it"
+            ],
+            "learning_outcome": "Critical thinking",
+            "evaluation": "Correction accuracy (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Geometric Reasoning Task",
+            "objective": "Justify triangle properties",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse figure",
+                "Justify results"
+            ],
+            "learning_outcome": "Reasoning skill",
+            "evaluation": "Logical flow (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Triangle Applications Study",
+            "objective": "Study real-life triangle uses",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect examples",
+                "Explain usage"
+            ],
+            "learning_outcome": "Application awareness",
+            "evaluation": "Relevance (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Comparative Similarity Methods",
+            "objective": "Compare similarity criteria",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Apply criteria",
+                "Compare efficiency"
+            ],
+            "learning_outcome": "Analytical skill",
+            "evaluation": "Comparison depth (20 marks)"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Algebra Play",
+    "difficulty": "Medium",
+    "source_pdf": "hegp206.pdf",
+    "short_notes": {
+        "key_points": [
+            "Algebra helps generalize patterns using variables and expressions",
+            "Number tricks can be explained step by step using algebraic simplification",
+            "Number pyramids reveal patterns that can be written as algebraic expressions",
+            "Calendar grids show predictable numerical patterns that can be represented using variables",
+            "Digit manipulation problems can be solved by representing numbers algebraically"
+        ],
+        "examples": [
+            "If a number is x, then after doubling and subtracting the original number the result becomes x",
+            "Bottom row of pyramid a, b, c produces top expression a + 2b + c",
+            "Calendar grid numbers a, a+1, a+7, a+8 give sum 4a + 16",
+            "Two-digit number example: 47 can be written as 10×4 + 7"
+        ],
+        "formulas": [
+            "Top of 3-level number pyramid → a + 2b + c",
+            "Sum of calendar grid numbers → a + (a+1) + (a+7) + (a+8)",
+            "Two-digit number representation → 10a + b",
+            "Difference between number and reverse → 9(b − a)"
+        ],
+        "exam_tips": [
+            "Convert puzzle statements into algebraic expressions",
+            "Represent unknown numbers with variables before solving",
+            "Simplify expressions step by step",
+            "Always verify results by substituting numbers"
+        ]
+    }
+}

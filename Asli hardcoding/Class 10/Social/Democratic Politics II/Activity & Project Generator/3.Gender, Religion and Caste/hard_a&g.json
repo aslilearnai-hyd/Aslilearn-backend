@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter": "Gender, Religion and Caste",
+  "difficulty": "Hard",
+  "source_pdf": "jess403.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Gender Inequality Research Report",
+      "objective": "Critically analyse gender inequality in modern India",
+      "materials": ["Internet", "Books", "Notebook"],
+      "steps": [
+        "Collect statistics about literacy rates, employment and wages for men and women",
+        "Compare these statistics and identify patterns of inequality",
+        "Write a report explaining the reasons and suggest policy solutions"
+      ],
+      "learning_outcome": "Develops research and analytical skills on gender inequality",
+      "evaluation": "Depth of research and policy suggestions (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Women’s Reservation Policy Analysis",
+      "objective": "Evaluate the impact of reservation for women in politics",
+      "materials": ["Internet", "Notebook"],
+      "steps": [
+        "Study the Women’s Reservation Act and reservation in Panchayati Raj",
+        "Analyse how reservation affects women's political participation",
+        "Present arguments supporting or opposing the policy"
+      ],
+      "learning_outcome": "Understands policy impacts on political representation",
+      "evaluation": "Strength of arguments and evidence (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Comparative Study of Secularism",
+      "objective": "Compare secularism in India with other countries",
+      "materials": ["Internet", "Books", "Notebook"],
+      "steps": [
+        "Study how secularism works in India",
+        "Compare with secular models in countries like USA or France",
+        "Write a comparative analysis highlighting similarities and differences"
+      ],
+      "learning_outcome": "Develops comparative political analysis skills",
+      "evaluation": "Quality of comparison and interpretation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Communalism Case Investigation",
+      "objective": "Examine real-life consequences of communal politics",
+      "materials": ["Newspapers", "Internet", "Notebook"],
+      "steps": [
+        "Find a historical example of communal conflict in India",
+        "Analyse the causes and consequences of the conflict",
+        "Suggest democratic measures to prevent such conflicts"
+      ],
+      "learning_outcome": "Understands social and political consequences of communalism",
+      "evaluation": "Depth of investigation and solutions (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Religious Diversity Data Analysis",
+      "objective": "Interpret religious population data in India",
+      "materials": ["Census data", "Notebook", "Graph paper"],
+      "steps": [
+        "Collect data on population percentages of major religions in India",
+        "Represent the data using graphs or charts",
+        "Analyse trends and explain implications for democracy"
+      ],
+      "learning_outcome": "Develops statistical interpretation skills in political science",
+      "evaluation": "Accuracy of data and analysis (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Caste and Economic Inequality Study",
+      "objective": "Investigate relationship between caste and economic status",
+      "materials": ["Research articles", "Notebook"],
+      "steps": [
+        "Study poverty statistics related to different caste groups",
+        "Analyse patterns of inequality in income and education",
+        "Explain how historical discrimination influences present conditions"
+      ],
+      "learning_outcome": "Understands socio-economic effects of caste inequality",
+      "evaluation": "Quality of interpretation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Political Party Caste Strategy Analysis",
+      "objective": "Analyse how caste influences election strategies",
+      "materials": ["Newspapers", "Internet", "Notebook"],
+      "steps": [
+        "Study candidate selection in a recent election",
+        "Identify how caste composition of voters influences party decisions",
+        "Explain whether caste politics strengthens or weakens democracy"
+      ],
+      "learning_outcome": "Understands strategic role of caste in electoral politics",
+      "evaluation": "Critical analysis and examples (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Social Reformers Comparative Study",
+      "objective": "Compare contributions of major anti-caste reformers",
+      "materials": ["Books", "Internet", "Notebook"],
+      "steps": [
+        "Research the works of B.R. Ambedkar, Jyotiba Phule and Periyar",
+        "Compare their ideas and approaches to social reform",
+        "Write a comparative essay on their contributions"
+      ],
+      "learning_outcome": "Understands historical movements against caste discrimination",
+      "evaluation": "Depth of comparison and understanding (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Debate on Identity Politics",
+      "objective": "Critically evaluate identity-based politics",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide the class into two groups",
+        "One group argues identity politics helps disadvantaged groups",
+        "The other argues it divides society and weakens democracy"
+      ],
+      "learning_outcome": "Develops critical thinking about social divisions in politics",
+      "evaluation": "Strength of arguments and participation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Policy Proposal for Social Equality",
+      "objective": "Design policies to reduce social inequalities",
+      "materials": ["Notebook", "Research sources"],
+      "steps": [
+        "Identify major problems related to gender, religion and caste inequality",
+        "Design policies to address these problems",
+        "Present your proposal as a policy document"
+      ],
+      "learning_outcome": "Develops policy-making and problem-solving skills",
+      "evaluation": "Feasibility and originality of proposal (10 marks)"
+    }
+  ]
+}

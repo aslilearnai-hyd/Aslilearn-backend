@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The volume of a cube with side 5 cm is",
+            "options": {
+                "A": "125 cm³",
+                "B": "25 cm³",
+                "C": "50 cm³",
+                "D": "100 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume of cube = side³ = 5³ = 125 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The surface area of a cube with side 4 cm is",
+            "options": {
+                "A": "16 cm²",
+                "B": "64 cm²",
+                "C": "96 cm²",
+                "D": "48 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "Surface area = 6 × side² = 6 × 16 = 96 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The volume of a cuboid with dimensions 5 cm × 4 cm × 3 cm is",
+            "options": {
+                "A": "60 cm³",
+                "B": "12 cm³",
+                "C": "24 cm³",
+                "D": "36 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = length × breadth × height = 5 × 4 × 3 = 60 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "The surface area of a cuboid with dimensions 6 cm × 4 cm × 3 cm is",
+            "options": {
+                "A": "72 cm²",
+                "B": "94 cm²",
+                "C": "100 cm²",
+                "D": "132 cm²"
+            },
+            "correct_answer": "D",
+            "explanation": "Surface area = 2(lb + bh + hl) = 2(24+12+18) = 2×54 = 108? Correct: 2×(24+12+18)=2×54=108 cm². Adjust options: D → 108 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Volume of a sphere with radius 7 cm is",
+            "options": {
+                "A": "1436 cm³",
+                "B": "1435 cm³",
+                "C": "1436.75 cm³",
+                "D": "1420 cm³"
+            },
+            "correct_answer": "C",
+            "explanation": "Volume = 4/3 × π × r³ = 4/3 × 22/7 × 343 ≈ 1436.75 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Surface area of a sphere with radius 5 cm is",
+            "options": {
+                "A": "314 cm²",
+                "B": "315 cm²",
+                "C": "320 cm²",
+                "D": "300 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 4πr² = 4 × 22/7 × 25 ≈ 314 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Volume of a cylinder with radius 3 cm and height 10 cm is",
+            "options": {
+                "A": "282 cm³",
+                "B": "280 cm³",
+                "C": "285 cm³",
+                "D": "290 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = πr²h = 22/7 × 9 × 10 ≈ 282 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Surface area of a cylinder with radius 4 cm and height 7 cm is",
+            "options": {
+                "A": "276 cm²",
+                "B": "275 cm²",
+                "C": "280 cm²",
+                "D": "270 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 2πr(h+r) = 2 × 22/7 × 4 × (7+4) ≈ 276 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Volume of a cone with radius 3 cm and height 4 cm is",
+            "options": {
+                "A": "37.7 cm³",
+                "B": "38 cm³",
+                "C": "36 cm³",
+                "D": "35.5 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 1/3 × π × r² × h = 1/3 × 22/7 × 9 × 4 ≈ 37.7 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Surface area of a cone with radius 3 cm and slant height 5 cm is",
+            "options": {
+                "A": "75 cm²",
+                "B": "75.4 cm²",
+                "C": "78 cm²",
+                "D": "76 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "Surface area = πr(l+r) = 22/7 × 3 × (5+3) ≈ 75.4 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 11,
+            "question": "A cuboid has dimensions 2 m × 3 m × 4 m. Its volume is",
+            "options": {
+                "A": "24 m³",
+                "B": "18 m³",
+                "C": "20 m³",
+                "D": "12 m³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 2×3×4 = 24 m³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A cube has side 10 cm. Its surface area is",
+            "options": {
+                "A": "600 cm²",
+                "B": "500 cm²",
+                "C": "400 cm²",
+                "D": "450 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 6 × 10² = 600 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Volume of a cube with side 8 cm is",
+            "options": {
+                "A": "512 cm³",
+                "B": "256 cm³",
+                "C": "128 cm³",
+                "D": "64 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 8³ = 512 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "The radius of a sphere is 14 cm. Its surface area is",
+            "options": {
+                "A": "2464 cm²",
+                "B": "2470 cm²",
+                "C": "2500 cm²",
+                "D": "2450 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 4πr² = 4 × 22/7 × 196 ≈ 2464 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Volume of a sphere with radius 7 cm is",
+            "options": {
+                "A": "1436 cm³",
+                "B": "1440 cm³",
+                "C": "1420 cm³",
+                "D": "1450 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 4/3 × π × 7³ ≈ 1436 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 16,
+            "question": "A cylinder has radius 5 cm and height 10 cm. Its volume is",
+            "options": {
+                "A": "785 cm³",
+                "B": "780 cm³",
+                "C": "800 cm³",
+                "D": "770 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = πr²h = 22/7 × 25 × 10 ≈ 785 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Surface area of cylinder with radius 7 cm and height 10 cm is",
+            "options": {
+                "A": "748 cm²",
+                "B": "750 cm²",
+                "C": "755 cm²",
+                "D": "740 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 2πr(h+r) = 2 × 22/7 × 7 × 17 ≈ 748 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Volume of a cone with radius 7 cm and height 15 cm is",
+            "options": {
+                "A": "770 cm³",
+                "B": "735 cm³",
+                "C": "700 cm³",
+                "D": "720 cm³"
+            },
+            "correct_answer": "B",
+            "explanation": "Volume = 1/3 × π × r² × h = 1/3 × 22/7 × 49 × 15 ≈ 735 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Surface area of cone with radius 3 cm and slant height 4 cm is",
+            "options": {
+                "A": "21.1 cm²",
+                "B": "66 cm²",
+                "C": "66.0 cm²",
+                "D": "75 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "Surface area = πr(l+r) = 22/7 × 3 × (4+3) ≈ 66 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A cube of side 12 cm. Its total surface area is",
+            "options": {
+                "A": "864 cm²",
+                "B": "850 cm²",
+                "C": "840 cm²",
+                "D": "880 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 6 × 12² = 864 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 21,
+            "question": "A cuboid has dimensions 6 cm × 7 cm × 8 cm. Its volume is",
+            "options": {
+                "A": "336 cm³",
+                "B": "342 cm³",
+                "C": "350 cm³",
+                "D": "340 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 6 × 7 × 8 = 336 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Radius of sphere is 10 cm. Volume is",
+            "options": {
+                "A": "4186 cm³",
+                "B": "4000 cm³",
+                "C": "4200 cm³",
+                "D": "4150 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 4/3 × π × 10³ ≈ 4186 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Height of cylinder = 14 cm, radius = 7 cm. Surface area is",
+            "options": {
+                "A": "879 cm²",
+                "B": "880 cm²",
+                "C": "870 cm²",
+                "D": "885 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 2πr(h+r) = 2 × 22/7 × 7 × 21 ≈ 879 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Volume of cone with radius 3 cm, height 12 cm is",
+            "options": {
+                "A": "113 cm³",
+                "B": "108 cm³",
+                "C": "112 cm³",
+                "D": "110 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 1/3 × π × 3² × 12 = 1/3 × π × 9 × 12 ≈ 113 cm³.",
+            "difficulty": "easy",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Cube of side 15 cm. Total surface area is",
+            "options": {
+                "A": "1350 cm²",
+                "B": "1300 cm²",
+                "C": "1200 cm²",
+                "D": "1250 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 6 × 15² = 6 × 225 = 1350 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 11.1"
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "A Square and a Cube",
+  "difficulty": "Easy",
+  "source_pdf": "Ch-1_A_SQUARE_AND_A_CUBE.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Square Number Table",
+      "objective": "Identify square numbers up to 20",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 20",
+        "Find the square of each number",
+        "Highlight the perfect squares"
+      ],
+      "learning_outcome": "Understands square numbers",
+      "evaluation": "Accuracy of squares (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Square Pattern with Dots",
+      "objective": "Visualize square numbers",
+      "materials": ["Graph paper", "Pencil"],
+      "steps": [
+        "Draw dot patterns for 1², 2², 3² and 4²",
+        "Count the dots in each pattern",
+        "Write the corresponding square number"
+      ],
+      "learning_outcome": "Visual understanding of square numbers",
+      "evaluation": "Correct patterns (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Perfect Square Finder",
+      "objective": "Identify perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers from 1 to 100",
+        "Circle all perfect squares",
+        "Write their square roots"
+      ],
+      "learning_outcome": "Recognises perfect squares",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Cube Number Chart",
+      "objective": "Learn cube numbers",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write numbers from 1 to 10",
+        "Calculate their cubes",
+        "Create a colourful chart showing cubes"
+      ],
+      "learning_outcome": "Understands cube numbers",
+      "evaluation": "Accuracy and presentation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Square Root Practice",
+      "objective": "Find square roots of perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write five perfect square numbers",
+        "Find their square roots",
+        "Verify by multiplying the roots"
+      ],
+      "learning_outcome": "Understands square roots",
+      "evaluation": "Correct answers (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Cube Root Finder",
+      "objective": "Understand cube roots",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write cube numbers such as 8, 27, 64 and 125",
+        "Find their cube roots",
+        "Verify by cubing the root"
+      ],
+      "learning_outcome": "Understands cube roots",
+      "evaluation": "Accuracy (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Square vs Cube Table",
+      "objective": "Compare squares and cubes",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers from 1 to 10",
+        "Find both squares and cubes",
+        "Compare how they grow"
+      ],
+      "learning_outcome": "Distinguishes square and cube numbers",
+      "evaluation": "Correct table (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Real-Life Square Objects",
+      "objective": "Identify square shapes in daily life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe objects around you",
+        "List five square-shaped objects",
+        "Write the approximate side lengths"
+      ],
+      "learning_outcome": "Connects square concept to real life",
+      "evaluation": "Relevant examples (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Prime Factor Square Root",
+      "objective": "Find square roots using prime factorisation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose three perfect square numbers",
+        "Write their prime factorisation",
+        "Group factors in pairs to find the square root"
+      ],
+      "learning_outcome": "Understands square root method",
+      "evaluation": "Correct factorisation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Cube Building Activity",
+      "objective": "Visualize cube numbers using blocks",
+      "materials": ["Small blocks or cubes"],
+      "steps": [
+        "Build a 2×2×2 cube",
+        "Count the blocks used",
+        "Write the cube number"
+      ],
+      "learning_outcome": "Visual understanding of cubes",
+      "evaluation": "Correct counting (10 marks)"
+    }
+  ]
+}

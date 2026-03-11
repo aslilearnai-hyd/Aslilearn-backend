@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Somebody’s Mother",
+  "difficulty": "Medium",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Reflecting on Kindness",
+      "objective": "Encourage students to analyse the value of kindness in everyday life",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about a situation where you helped someone in need",
+        "Describe the situation briefly",
+        "Explain how your action affected the other person",
+        "Discuss how small acts of kindness can influence society"
+      ],
+      "learning_outcome": "Students develop empathy and understand the social impact of helping others",
+      "evaluation": "Clarity of reflection and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Vocabulary and Character Traits",
+      "objective": "Analyse descriptive words used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the words describing the old woman and the schoolboys",
+        "Group the words according to personality traits",
+        "Explain how these words help readers imagine the characters",
+        "Share your observations with the class"
+      ],
+      "learning_outcome": "Students understand the role of descriptive vocabulary in character development",
+      "evaluation": "Accuracy of word grouping and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Understanding Poetic Meaning",
+      "objective": "Interpret the meaning of important words and phrases in context",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the lines describing the old woman as 'ragged and grey'",
+        "Analyse what these words reveal about her condition",
+        "Explain how the weather and environment increase her difficulty",
+        "Write your interpretation in the notebook"
+      ],
+      "learning_outcome": "Students interpret poetic language and context",
+      "evaluation": "Depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Sequencing Events in the Poem",
+      "objective": "Develop comprehension by analysing the narrative flow",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify the key events described in the poem",
+        "Arrange the events in chronological order",
+        "Explain why the poet structured the poem in this way",
+        "Discuss how the sequence builds the message of the poem"
+      ],
+      "learning_outcome": "Students understand narrative structure in poetry",
+      "evaluation": "Correct order and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Exploring the Theme of Empathy",
+      "objective": "Understand the central theme of empathy and humanity",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify the main message of the poem",
+        "Explain why the other boys ignored the old woman",
+        "Analyse why the young boy chose to help her",
+        "Write a paragraph explaining the importance of empathy in society"
+      ],
+      "learning_outcome": "Students connect literature with real-life moral values",
+      "evaluation": "Logical explanation and examples (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Poetic Devices Analysis",
+      "objective": "Identify literary devices used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Find examples of simile, alliteration, and repetition",
+        "Explain how each device contributes to the poem’s meaning",
+        "Present your findings in class"
+      ],
+      "learning_outcome": "Students understand how literary devices enhance poetry",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Imagery Exploration",
+      "objective": "Analyse imagery used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify lines that describe the street and winter weather",
+        "Explain how the poet uses imagery to create a visual scene",
+        "Describe how this imagery reflects the old woman’s struggle",
+        "Write your interpretation in the notebook"
+      ],
+      "learning_outcome": "Students understand how imagery creates emotional impact",
+      "evaluation": "Quality of interpretation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Character Analysis Activity",
+      "objective": "Compare the behaviour of the characters in the poem",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Describe the character of the old woman",
+        "Describe the character of the young boy",
+        "Compare the behaviour of the boy with that of the other children",
+        "Explain what lesson the poet wants readers to learn"
+      ],
+      "learning_outcome": "Students analyse character behaviour and moral lessons",
+      "evaluation": "Depth of comparison and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Group Discussion on Humanity",
+      "objective": "Develop communication and critical thinking skills",
+      "materials": ["Notebook"],
+      "steps": [
+        "Form groups of four students",
+        "Discuss why people sometimes ignore those who need help",
+        "Suggest ways students can show kindness in everyday life",
+        "Present your group’s ideas to the class"
+      ],
+      "learning_outcome": "Students develop teamwork and social awareness",
+      "evaluation": "Participation and quality of ideas (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Diary Entry Writing",
+      "objective": "Encourage reflective writing about helping others",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are the boy in the poem",
+        "Write a diary entry describing the incident of helping the old woman",
+        "Explain what you felt before and after helping her",
+        "Conclude by writing what you learned from the experience"
+      ],
+      "learning_outcome": "Students develop creative and reflective writing skills",
+      "evaluation": "Creativity, structure, and expression (10 marks)"
+    }
+  ]
+}

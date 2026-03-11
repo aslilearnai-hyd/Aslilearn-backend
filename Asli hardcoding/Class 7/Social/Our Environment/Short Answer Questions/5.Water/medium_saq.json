@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 5: WATER: OUR LIFELINE",
+    "generated_at": "2026-03-07T22:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the water cycle in brief.",
+            "answer": "The water cycle describes the continuous movement of water through evaporation, condensation, precipitation, and collection.",
+            "key_concepts": ["water cycle", "evaporation", "precipitation"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the different forms of water found on Earth?",
+            "answer": "Water exists as freshwater in rivers, lakes, and glaciers; saltwater in oceans; and underground as groundwater.",
+            "key_concepts": ["freshwater", "saltwater", "groundwater"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How does deforestation affect water resources?",
+            "answer": "Deforestation reduces rainfall infiltration, lowers groundwater levels, and increases soil erosion, affecting rivers and lakes.",
+            "key_concepts": ["deforestation", "water impact"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe two methods of conserving groundwater.",
+            "answer": "Rainwater harvesting and recharge wells help replenish groundwater and prevent depletion.",
+            "key_concepts": ["groundwater conservation", "recharge methods"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 5,
+            "question": "How do glaciers contribute to river flow?",
+            "answer": "Glaciers store freshwater and release it gradually, maintaining river flow during dry periods.",
+            "key_concepts": ["glaciers", "river supply"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the importance of rivers for human settlements?",
+            "answer": "Rivers provide water for drinking, irrigation, transportation, and support agriculture and trade.",
+            "key_concepts": ["rivers", "human settlements"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain how urbanization impacts water quality.",
+            "answer": "Urbanization increases pollution, reduces infiltration, and contaminates rivers and groundwater due to waste and industrial discharge.",
+            "key_concepts": ["urbanization", "water quality"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the role of wetlands in water management.",
+            "answer": "Wetlands store excess water during floods, recharge groundwater, and maintain biodiversity.",
+            "key_concepts": ["wetlands", "flood control", "groundwater recharge"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the difference between rainwater harvesting and traditional water storage?",
+            "answer": "Rainwater harvesting collects and stores rainfall locally, while traditional storage depends on rivers, lakes, and wells.",
+            "key_concepts": ["rainwater harvesting", "water storage"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "How do industries affect freshwater resources?",
+            "answer": "Industries consume large amounts of water and release pollutants, reducing quality and availability of freshwater.",
+            "key_concepts": ["industrial water use", "pollution"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of sustainable water management.",
+            "answer": "Sustainable management ensures water is used efficiently, conserved, and replenished to meet present and future needs.",
+            "key_concepts": ["sustainable water use", "conservation"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "How does climate change affect water availability?",
+            "answer": "Changes in rainfall patterns, melting glaciers, and extreme weather events can cause droughts or floods, affecting water supply.",
+            "key_concepts": ["climate change", "water availability"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe two ways to reduce water pollution in rivers.",
+            "answer": "Treating sewage before discharge and controlling industrial waste can prevent river pollution.",
+            "key_concepts": ["water pollution control", "river protection"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What are aquifers and their importance?",
+            "answer": "Aquifers are underground water reservoirs that store groundwater, supporting wells and springs.",
+            "key_concepts": ["aquifers", "groundwater storage"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 15,
+            "question": "How can individuals contribute to water conservation?",
+            "answer": "By using water efficiently, fixing leaks, collecting rainwater, and avoiding pollution.",
+            "key_concepts": ["individual action", "water conservation"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the role of rivers in agriculture.",
+            "answer": "Rivers provide irrigation, deposit fertile soil, and support crop cultivation.",
+            "key_concepts": ["rivers", "irrigation", "fertile soil"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What are the effects of over-extraction of groundwater?",
+            "answer": "Over-extraction can lower water tables, cause wells to dry, and lead to land subsidence.",
+            "key_concepts": ["groundwater depletion", "land subsidence"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 18,
+            "question": "How do dams help in controlling floods?",
+            "answer": "Dams store excess water and release it gradually, reducing downstream flood risk.",
+            "key_concepts": ["dams", "flood control"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the significance of glaciers for India’s rivers.",
+            "answer": "Glaciers feed major rivers, providing water for agriculture, drinking, and hydropower during dry months.",
+            "key_concepts": ["glaciers", "river flow"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "How does urban planning affect water resources?",
+            "answer": "Poor planning reduces natural recharge areas, increases demand, and leads to pollution and scarcity.",
+            "key_concepts": ["urban planning", "water management"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the importance of wetlands in supporting biodiversity?",
+            "answer": "Wetlands provide habitats for many plants and animals and maintain ecological balance.",
+            "key_concepts": ["wetlands", "biodiversity"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is it important to conserve water in agriculture?",
+            "answer": "Efficient water use prevents scarcity, ensures crop yield, and sustains groundwater levels.",
+            "key_concepts": ["agriculture", "water conservation"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Describe the difference between renewable and non-renewable water sources.",
+            "answer": "Renewable sources like rivers and rain are naturally replenished, while non-renewable sources like deep aquifers are limited.",
+            "key_concepts": ["renewable water", "non-renewable water"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 24,
+            "question": "How can rainwater harvesting help in urban water supply?",
+            "answer": "It collects rainwater to recharge groundwater and reduces dependence on distant water sources.",
+            "key_concepts": ["rainwater harvesting", "urban supply"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the connection between water management and sustainable development.",
+            "answer": "Proper water management ensures availability, supports ecosystems, agriculture, and communities, promoting long-term sustainability.",
+            "key_concepts": ["sustainable development", "water management"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        }
+    ]
+}

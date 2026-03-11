@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 12: Earth, Moon, and the Sun",
+    "generated_at": "2026-03-06T12:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the Moon appears to change shape over a month.",
+            "answer": "The Moon’s appearance changes due to its position relative to the Sun and Earth, producing different phases.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is the day on Earth not exactly 24 hours?",
+            "answer": "A solar day is slightly longer than 24 hours due to Earth's orbit around the Sun, which makes the Sun appear to move slightly eastward each day.",
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the difference between total and partial solar eclipses.",
+            "answer": "A total solar eclipse completely blocks the Sun, while a partial eclipse blocks only part of it.",
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Why do shadows change length and direction during the day?",
+            "answer": "Because of the Sun’s changing position in the sky as Earth rotates.",
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why summers are hotter than winters in each hemisphere.",
+            "answer": "During summer, the hemisphere tilts toward the Sun, receiving more direct sunlight and longer days, whereas in winter it tilts away.",
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the synodic month longer than the sidereal month?",
+            "answer": "Because Earth moves in its orbit during the Moon’s revolution, so the Moon takes extra time to reach the same phase as seen from Earth.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why high tides are higher during full and new moons.",
+            "answer": "Because the Sun, Moon, and Earth are aligned, their gravitational forces combine, producing spring tides.",
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are lunar eclipses visible from anywhere on Earth’s night side?",
+            "answer": "Because Earth’s shadow is large enough to cover the Moon for observers on the night side.",
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does the Sun appear to rise in the east and set in the west?",
+            "answer": "Because Earth rotates from west to east on its axis.",
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the difference between apogee and perigee of the Moon.",
+            "answer": "Apogee is the point farthest from Earth in the Moon’s orbit, perigee is the closest point.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are eclipses not observed every month?",
+            "answer": "Because the Moon’s orbit is tilted about 5° to Earth’s orbit, so alignment for an eclipse occurs only occasionally.",
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the effect of Earth’s axial tilt on polar regions?",
+            "answer": "It causes long periods of daylight (polar day) or darkness (polar night) depending on the season.",
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why do neap tides occur during the Moon’s quarter phases?",
+            "answer": "Because the gravitational forces of the Sun and Moon are perpendicular, partially cancelling each other and producing lower tides.",
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "How does the Moon stabilize Earth’s axial tilt?",
+            "answer": "The Moon’s gravity reduces large variations in Earth’s tilt, keeping the climate relatively stable.",
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do the phases of the Moon always follow the same sequence?",
+            "answer": "Because the Moon revolves around Earth in a fixed direction, showing sunlighted portions in a predictable order.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What causes the length of a solar day to vary over the year?",
+            "answer": "Earth’s elliptical orbit and axial tilt cause the Sun to appear to move unevenly, changing solar day length.",
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why do we experience two high tides and two low tides daily?",
+            "answer": "Because of the Moon’s gravitational pull on Earth’s oceans and the centrifugal effect due to Earth’s rotation.",
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the significance of the Saros cycle?",
+            "answer": "It helps predict the timing and occurrence of eclipses.",
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How do the positions of the Sun and Moon influence tides?",
+            "answer": "When aligned, they cause higher spring tides; when at right angles, they cause lower neap tides.",
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the Moon visible during the day sometimes?",
+            "answer": "Because its orbit can place it above the horizon during daylight, reflecting sunlight.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why does the Moon rise about 50 minutes later each day?",
+            "answer": "Because it moves eastward in its orbit about 13° per day, delaying its rise relative to the stars.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why total solar eclipses are rare.",
+            "answer": "Because the Moon’s shadow covers only a small area on Earth and precise alignment is required.",
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Why does Earth have seasons while the Moon does not?",
+            "answer": "Earth has an axial tilt, causing seasonal variations, while the Moon has almost no tilt relative to its orbit around Earth.",
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the significance of the Moon’s libration?",
+            "answer": "It allows observers from Earth to see slightly more than half of the Moon’s surface over time.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 25,
+            "question": "How does the Earth-Moon-Sun system affect calendar design?",
+            "answer": "The phases of the Moon and Earth's revolution around the Sun help define months and years in calendars.",
+            "marks": 2,
+            "source_section": "Section 12.3"
+        }
+    ]
+}

@@ -1,0 +1,359 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 11: Areas Related to Circles",
+    "difficulty": "Easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a sector of a circle and explain its types.",
+            "answer": "A sector of a circle is the region enclosed by two radii and the corresponding arc. There are two types of sectors: minor sector, which is the smaller region, and major sector, which is the larger region.",
+            "answer_outline": [
+                "Definition of sector",
+                "Minor sector",
+                "Major sector"
+            ],
+            "key_concepts": [
+                "sector"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain what is meant by a segment of a circle.",
+            "answer": "A segment of a circle is the region enclosed by a chord and the corresponding arc. It is classified into minor segment and major segment.",
+            "answer_outline": [
+                "Definition",
+                "Minor segment",
+                "Major segment"
+            ],
+            "key_concepts": [
+                "segment"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the terms radius, diameter and chord of a circle.",
+            "answer": "The radius is the distance from the centre to the circle. The diameter is twice the radius. A chord is a line joining any two points on the circle.",
+            "answer_outline": [
+                "Radius",
+                "Diameter",
+                "Chord"
+            ],
+            "key_concepts": [
+                "radius",
+                "diameter",
+                "chord"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a quadrant? Explain with a diagram description.",
+            "answer": "A quadrant is one-fourth of a circle formed by two perpendicular radii making an angle of 90 degrees at the centre.",
+            "answer_outline": [
+                "Definition",
+                "Angle at centre"
+            ],
+            "key_concepts": [
+                "quadrant"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the meaning of arc of a circle.",
+            "answer": "An arc is a part of the circumference of a circle. It may be a minor arc or a major arc.",
+            "answer_outline": [
+                "Definition",
+                "Types of arc"
+            ],
+            "key_concepts": [
+                "arc"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Define circumference of a circle.",
+            "answer": "The circumference of a circle is the distance around the circle. It is given by the formula 2πr.",
+            "answer_outline": [
+                "Definition",
+                "Formula"
+            ],
+            "key_concepts": [
+                "circumference"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the formula for the area of a circle.",
+            "answer": "The area of a circle is given by πr², where r is the radius of the circle.",
+            "answer_outline": [
+                "Formula",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "area of circle"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is meant by minor and major segments?",
+            "answer": "The smaller region formed by a chord is called the minor segment, while the larger region is called the major segment.",
+            "answer_outline": [
+                "Minor segment",
+                "Major segment"
+            ],
+            "key_concepts": [
+                "segments"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the term central angle.",
+            "answer": "A central angle is the angle subtended by an arc at the centre of the circle.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "central angle"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 10,
+            "question": "State the value of π and explain why approximations are used.",
+            "answer": "π is an irrational number. Its value is approximately taken as 22/7 or 3.14 for calculations.",
+            "answer_outline": [
+                "Nature of π",
+                "Approximate values"
+            ],
+            "key_concepts": [
+                "pi"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain what is meant by a semicircle.",
+            "answer": "A semicircle is half of a circle formed by a diameter, subtending an angle of 180 degrees at the centre.",
+            "answer_outline": [
+                "Definition",
+                "Angle"
+            ],
+            "key_concepts": [
+                "semicircle"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why every diameter is a chord.",
+            "answer": "A diameter joins two points on the circle and hence satisfies the definition of a chord.",
+            "answer_outline": [
+                "Definition",
+                "Reason"
+            ],
+            "key_concepts": [
+                "diameter",
+                "chord"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why every chord is not a diameter.",
+            "answer": "A chord need not pass through the centre of the circle, whereas a diameter always does.",
+            "answer_outline": [
+                "Chord",
+                "Diameter"
+            ],
+            "key_concepts": [
+                "chord vs diameter"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the unit of area used in circle problems.",
+            "answer": "Area is measured in square units such as cm² or m².",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "area units"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain what happens to the area of a circle when radius increases.",
+            "answer": "The area of a circle increases as the square of the radius.",
+            "answer_outline": [
+                "Relation",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "area dependence"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the relationship between radius and diameter.",
+            "answer": "The diameter of a circle is twice its radius.",
+            "answer_outline": [
+                "Relation",
+                "Formula"
+            ],
+            "key_concepts": [
+                "radius",
+                "diameter"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the angle of a full circle?",
+            "answer": "The angle of a full circle at the centre is 360 degrees.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "full circle"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the meaning of area in geometry.",
+            "answer": "Area is the measure of the region enclosed by a closed figure.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "area"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why the area of a circle with radius zero is zero.",
+            "answer": "When radius is zero, there is no enclosed region, so area is zero.",
+            "answer_outline": [
+                "Radius zero",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "zero radius"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the term minor arc.",
+            "answer": "The smaller arc between two points on a circle is called the minor arc.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "minor arc"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the term major arc.",
+            "answer": "The larger arc between two points on a circle is called the major arc.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "major arc"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why a circle has infinite points on its boundary.",
+            "answer": "A circle is a continuous curve, hence it contains infinitely many points.",
+            "answer_outline": [
+                "Explanation"
+            ],
+            "key_concepts": [
+                "circle"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain what is meant by centre of a circle.",
+            "answer": "The centre is the point equidistant from all points on the circle.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "centre"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of radius in circle formulas.",
+            "answer": "The radius determines both area and circumference of a circle.",
+            "answer_outline": [
+                "Role",
+                "Formulas"
+            ],
+            "key_concepts": [
+                "radius"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarise basic terms related to circles.",
+            "answer": "Important terms include radius, diameter, chord, arc, sector, segment and circumference.",
+            "answer_outline": [
+                "List of terms"
+            ],
+            "key_concepts": [
+                "circle basics"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        }
+    ]
+}

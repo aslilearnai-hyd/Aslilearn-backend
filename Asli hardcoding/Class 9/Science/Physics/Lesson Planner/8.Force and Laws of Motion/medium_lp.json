@@ -1,0 +1,181 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Force and Laws of Motion",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of force and its effects",
+        "Differentiate balanced and unbalanced forces",
+        "Explain inertia and Newton’s First Law",
+        "Understand momentum and Newton’s Second Law",
+        "Apply formula F = ma in numerical problems",
+        "Understand Newton’s Third Law with real-life examples",
+        "Apply laws of motion in practical situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Force",
+            "topics_covered": [
+                "Concept of force",
+                "Push and pull forces",
+                "Effects of force"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Real-life examples",
+                "Board illustrations"
+            ],
+            "student_activities": [
+                "Identify push and pull examples",
+                "Discuss effects of force in daily life"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Concept discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Balanced and Unbalanced Forces",
+            "topics_covered": [
+                "Definition of balanced forces",
+                "Definition of unbalanced forces",
+                "Examples and demonstrations"
+            ],
+            "teaching_strategy": [
+                "Demonstration using objects",
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Observe classroom demonstration",
+                "Write examples of balanced forces"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Inertia and Newton’s First Law",
+            "topics_covered": [
+                "Meaning of inertia",
+                "Types of inertia",
+                "Newton’s First Law of Motion"
+            ],
+            "teaching_strategy": [
+                "Demonstration activities",
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Discuss inertia examples",
+                "Write daily life applications"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Momentum",
+            "topics_covered": [
+                "Definition of momentum",
+                "Formula p = mv",
+                "Factors affecting momentum"
+            ],
+            "teaching_strategy": [
+                "Formula explanation",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Solve simple momentum problems",
+                "Write definitions and formulas"
+            ],
+            "assessment": [
+                "Problem solving",
+                "Notebook activity"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Newton’s Second Law",
+            "topics_covered": [
+                "Statement of second law",
+                "Relationship between force, mass, and acceleration",
+                "Formula F = ma"
+            ],
+            "teaching_strategy": [
+                "Numerical examples",
+                "Board demonstrations"
+            ],
+            "student_activities": [
+                "Solve numerical problems",
+                "Discuss real-life applications"
+            ],
+            "assessment": [
+                "Numerical exercises",
+                "Concept questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Newton’s Third Law",
+            "topics_covered": [
+                "Action and reaction forces",
+                "Statement of third law",
+                "Examples such as walking, swimming, rocket motion"
+            ],
+            "teaching_strategy": [
+                "Demonstration experiments",
+                "Illustration with diagrams"
+            ],
+            "student_activities": [
+                "Observe balloon rocket experiment",
+                "List examples of action-reaction forces"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "Summary of Newton’s laws",
+                "Important formulas",
+                "Practice problems"
+            ],
+            "teaching_strategy": [
+                "Revision discussion",
+                "Problem solving session"
+            ],
+            "student_activities": [
+                "Solve textbook exercises",
+                "Participate in revision discussion"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Science textbook",
+        "Charts of Newton’s laws",
+        "Toy car, ball, and balloon for demonstrations"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Numerical problem solving",
+        "Class discussion"
+    ],
+    "teacher_tip": "Include demonstrations and simple numerical examples to help students understand the practical application of Newton’s laws."
+}

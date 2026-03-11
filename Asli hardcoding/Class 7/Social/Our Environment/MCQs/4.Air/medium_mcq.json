@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Air (Our Environment)",
+  "generated_at": "2026-03-07T18:24:05",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What happens to the temperature of the air as we go up in the layers of the Troposphere?",
+      "options": {
+        "A": "It increases",
+        "B": "It decreases",
+        "C": "It remains constant",
+        "D": "It first decreases then increases"
+      },
+      "correct_answer": "B",
+      "explanation": "In the troposphere, the temperature generally decreases with increasing altitude at a steady rate.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 2,
+      "question": "When the amount of Carbon Dioxide increases due to factory smoke or car fumes, it leads to:",
+      "options": {
+        "A": "Global Cooling",
+        "B": "Global Warming",
+        "C": "Oxygen depletion",
+        "D": "Nitrogen fixation"
+      },
+      "correct_answer": "B",
+      "explanation": "Increased levels of CO2 trap more heat in the atmosphere, raising the earth's average temperature, known as global warming.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is the Stratosphere considered the most ideal layer for flying aeroplanes?",
+      "options": {
+        "A": "It has the highest air pressure.",
+        "B": "It is almost free from clouds and associated weather phenomena.",
+        "C": "It has the most oxygen for engines to burn.",
+        "D": "It contains the ionosphere for better radio contact."
+      },
+      "correct_answer": "B",
+      "explanation": "The lack of clouds and turbulent weather in the stratosphere provides a smooth environment for long-distance flights.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 4,
+      "question": "The Ionosphere helps in radio transmission because:",
+      "options": {
+        "A": "It is very cold.",
+        "B": "Radio waves transmitted from the earth are reflected back to the earth by this layer.",
+        "C": "It contains clouds of burning meteorites.",
+        "D": "It is the thickest layer of air."
+      },
+      "correct_answer": "B",
+      "explanation": "The charged particles in the ionosphere reflect radio waves back to the surface, enabling long-distance communication.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is the correct sequence of atmospheric layers from the surface upwards?",
+      "options": {
+        "A": "Stratosphere, Troposphere, Mesosphere, Thermosphere, Exosphere",
+        "B": "Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere",
+        "C": "Troposphere, Mesosphere, Stratosphere, Exosphere, Thermosphere",
+        "D": "Exosphere, Thermosphere, Mesosphere, Stratosphere, Troposphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The layers are arranged based on temperature and composition: Troposphere (lowest), Stratosphere, Mesosphere, Thermosphere, and Exosphere (highest).",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Insolation decreases from the ______ towards the ______.",
+      "options": {
+        "A": "Poles, Equator",
+        "B": "Equator, Poles",
+        "C": "Sea, Land",
+        "D": "Mountains, Plains"
+      },
+      "correct_answer": "B",
+      "explanation": "The amount of solar energy received is highest at the equator and decreases as we move toward the poles.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why do cities have much higher temperatures than rural areas (villages)?",
+      "options": {
+        "A": "Because cities are closer to the sun.",
+        "B": "Concrete and metals in buildings and asphalts of roads trap heat.",
+        "C": "Villages have no air pressure.",
+        "D": "Cities have more oxygen."
+      },
+      "correct_answer": "B",
+      "explanation": "Urban materials like concrete and asphalt absorb heat during the day and release it slowly at night, creating 'urban heat islands'.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Air pressure is highest at ______ and decreases with ______.",
+      "options": {
+        "A": "Mountain tops, Depth",
+        "B": "Sea level, Height",
+        "C": "The Equator, Temperature",
+        "D": "Night, Day"
+      },
+      "correct_answer": "B",
+      "explanation": "Air pressure is maximum at sea level because the entire column of air is pressing down; it decreases as you rise higher into the atmosphere.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 9,
+      "question": "When air is heated, it ______ and becomes ______.",
+      "options": {
+        "A": "Contracts, heavier",
+        "B": "Expands, lighter",
+        "C": "Cool down, denser",
+        "D": "Dissolves, invisible"
+      },
+      "correct_answer": "B",
+      "explanation": "Heating causes air molecules to move apart (expand), making the air less dense and lighter, which causes it to rise.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What kind of pressure area is created in places where the temperature is high?",
+      "options": {
+        "A": "High pressure area",
+        "B": "Low pressure area",
+        "C": "Normal pressure area",
+        "D": "Vacuum"
+      },
+      "correct_answer": "B",
+      "explanation": "High temperature causes air to rise, leaving behind a low-pressure area on the surface.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Low pressure is associated with ______ and ______.",
+      "options": {
+        "A": "Clear skies, Dry weather",
+        "B": "Cloudy skies, Wet weather",
+        "C": "Very cold winds, Snow",
+        "D": "High speed winds, No rain"
+      },
+      "correct_answer": "B",
+      "explanation": "Rising air in low-pressure areas cools and condenses, forming clouds and eventually leading to precipitation.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 12,
+      "question": "The standard unit of measuring temperature is:",
+      "options": {
+        "A": "Richter scale",
+        "B": "Degree Celsius",
+        "C": "Millibars",
+        "D": "Metres"
+      },
+      "correct_answer": "B",
+      "explanation": "Degree Celsius is the standard unit, invented by Anders Celsius.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "On the Celsius scale, water freezes at ______ and boils at ______.",
+      "options": {
+        "A": "32°C, 212°C",
+        "B": "0°C, 100°C",
+        "C": "-10°C, 50°C",
+        "D": "100°C, 0°C"
+      },
+      "correct_answer": "B",
+      "explanation": "In the Celsius system, 0 is the freezing point of water and 100 is the boiling point at sea level.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which type of wind changes its direction in different seasons?",
+      "options": {
+        "A": "Permanent winds",
+        "B": "Local winds",
+        "C": "Seasonal winds",
+        "D": "Trade winds"
+      },
+      "correct_answer": "C",
+      "explanation": "Seasonal winds, such as the Monsoons in India, change their direction according to the season.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Land and sea breezes are examples of ______ winds.",
+      "options": {
+        "A": "Permanent",
+        "B": "Seasonal",
+        "C": "Local",
+        "D": "Cyclonic"
+      },
+      "correct_answer": "C",
+      "explanation": "Local winds blow only during a particular period of the day or year in a small area.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 16,
+      "question": "A 'Cyclonic Rainfall' is caused when:",
+      "options": {
+        "A": "Warm and cold air meet.",
+        "B": "Air is heated and rises vertically.",
+        "C": "Moist air strikes a mountain.",
+        "D": "The sun is directly overhead."
+      },
+      "correct_answer": "A",
+      "explanation": "Cyclonic rain occurs when a warm air mass and a cold air mass collide, forcing the warm air to rise.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Relief (Orographic) rainfall occurs when:",
+      "options": {
+        "A": "The ground is very hot.",
+        "B": "Moisture-laden air is forced to rise over a mountain barrier.",
+        "C": "A cyclone passes by.",
+        "D": "Plants release too much water."
+      },
+      "correct_answer": "B",
+      "explanation": "In Orographic rain, the physical 'relief' of the land (like mountains) forces air to rise and cool.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do we feel uncomfortable on a humid day?",
+      "options": {
+        "A": "Because the air is too dry.",
+        "B": "Because sweat from our body does not evaporate easily.",
+        "C": "Because the sun is not visible.",
+        "D": "Because the air pressure is too high."
+      },
+      "correct_answer": "B",
+      "explanation": "High humidity means the air is already full of moisture, so sweat evaporates slowly, making us feel sticky and hot.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Jet planes flying in the sky leave a white trail behind them. What is this trail?",
+      "options": {
+        "A": "Smoke from the fuel",
+        "B": "Condensed moisture from their engines",
+        "C": "Cloud seeds",
+        "D": "The ozone layer breaking"
+      },
+      "correct_answer": "B",
+      "explanation": "The moisture from engines condenses in the cold air, and the lack of air movement allows it to stay visible for some time.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which gas is found in very small quantities (0.00005%) but is very light and found in the Exosphere?",
+      "options": {
+        "A": "Argon",
+        "B": "Carbon dioxide",
+        "C": "Helium and Hydrogen",
+        "D": "Ozone"
+      },
+      "correct_answer": "C",
+      "explanation": "Light gases like helium and hydrogen float from the exosphere into space.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Plants cannot take ______ directly from the air; they need bacteria in the soil to convert it.",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Argon"
+      },
+      "correct_answer": "B",
+      "explanation": "Nitrogen is essential for plants, but they rely on bacteria in the soil and roots to 'fix' it into a usable form.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 22,
+      "question": "The average height of the Troposphere is about:",
+      "options": {
+        "A": "50 km",
+        "B": "13 km",
+        "C": "80 km",
+        "D": "400 km"
+      },
+      "correct_answer": "B",
+      "explanation": "The Troposphere extends up to an average height of 13 km from the earth's surface.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 23,
+      "question": "A wind is named after:",
+      "options": {
+        "A": "The place it goes to",
+        "B": "The direction from which it blows",
+        "C": "The speed at which it travels",
+        "D": "The person who discovered it"
+      },
+      "correct_answer": "B",
+      "explanation": "For example, a wind blowing from the West is called a 'Westerly'.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of these is a form of 'Solid' precipitation?",
+      "options": {
+        "A": "Rain",
+        "B": "Snow",
+        "C": "Dew",
+        "D": "Fog"
+      },
+      "correct_answer": "B",
+      "explanation": "Precipitation can be liquid (rain) or solid (snow, sleet, hail).",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "In which layer of the atmosphere does the temperature rise very rapidly with increasing height?",
+      "options": {
+        "A": "Mesosphere",
+        "B": "Thermosphere",
+        "C": "Troposphere",
+        "D": "Ozone layer"
+      },
+      "correct_answer": "B",
+      "explanation": "In the Thermosphere, temperature increases sharply because it absorbs high-energy solar radiation.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    }
+  ]
+}

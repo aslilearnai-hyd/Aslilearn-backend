@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Life Processes in Plants",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the process of photosynthesis and its essential requirements",
+        "Differentiate between various modes of heterotrophic nutrition in plants",
+        "Understand the function of vascular tissues (Xylem and Phloem) in transport",
+        "Describe the process and significance of transpiration",
+        "Compare asexual and sexual modes of reproduction in plants",
+        "Identify the parts of a flower and the stages of seed formation",
+        "Explain the importance of seed dispersal and the agents involved"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Photosynthesis: Food Making in Plants",
+            "topics_covered": [
+                "Requirements: Sunlight, Chlorophyll, $CO_2$, and Water",
+                "The chemical equation of photosynthesis",
+                "Role of Stomata in gas exchange"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic explanation of the process",
+                "Experimental demonstration: Testing a leaf for starch",
+                "Inquiry-based discussion: 'Can plants make food at night?'"
+            ],
+            "student_activities": [
+                "Observe stomata using a permanent slide or leaf peel",
+                "Write the word equation for photosynthesis in notebooks"
+            ],
+            "assessment": [
+                "Labeling a diagram of a leaf cross-section",
+                "Oral quiz on essential raw materials"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Heterotrophic and Special Nutrition",
+            "topics_covered": [
+                "Parasitic (Cuscuta) and Saprotrophic (Fungi) nutrition",
+                "Insectivorous plants (Pitcher plant)",
+                "Symbiosis: Lichens and Rhizobium"
+            ],
+            "teaching_strategy": [
+                "Visual aids showing various plant adaptations",
+                "Case study: Why do Pitcher plants eat insects?",
+                "Discussion on soil fertility and Nitrogen fixation"
+            ],
+            "student_activities": [
+                "Classify a list of plants based on their mode of nutrition",
+                "Observe bread mould (fungi) using a magnifying glass"
+            ],
+            "assessment": [
+                "Matching column: Mode of nutrition vs. Example",
+                "Short answer: 'The benefit of Lichens'"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Transport of Water and Nutrients",
+            "topics_covered": [
+                "Role of Xylem in water and mineral transport",
+                "Role of Phloem in food translocation",
+                "Absorption by root hairs"
+            ],
+            "teaching_strategy": [
+                "Analogy: Pipelines in a building",
+                "Experiment: Placing a celery stalk/balsam plant in colored water",
+                "Comparison chart: Xylem vs. Phloem"
+            ],
+            "student_activities": [
+                "Observe the upward movement of dye in a plant stem",
+                "Draw a flowchart showing the path of water from soil to leaf"
+            ],
+            "assessment": [
+                "Functional differences table (Xylem/Phloem)",
+                "Diagrammatic test of root absorption"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Transpiration: The Suction Pull",
+            "topics_covered": [
+                "Definition and process of transpiration",
+                "Factors affecting transpiration (Heat, Wind)",
+                "Significance: Cooling and transport pull"
+            ],
+            "teaching_strategy": [
+                "Demonstration: Tying a plastic bag around a potted plant",
+                "Discussion: 'How does water reach the top of a 100ft tree?'",
+                "Concept of 'Transpiration Pull'"
+            ],
+            "student_activities": [
+                "Observe water droplets inside the plastic bag experiment",
+                "Debate: Is transpiration a 'necessary evil'?"
+            ],
+            "assessment": [
+                "Reasoning question: 'Why do plants wilt in high heat?'",
+                "Worksheet on stomatal control"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Asexual Reproduction Methods",
+            "topics_covered": [
+                "Vegetative propagation (Roots, Stems, Leaves)",
+                "Budding (Yeast) and Fragmentation (Spirogyra)",
+                "Spore formation (Bread mould)"
+            ],
+            "teaching_strategy": [
+                "Show-and-tell: Potato with 'eyes', Ginger, Bryophyllum leaf",
+                "Microscopic view of Yeast budding",
+                "Discussion on advantages of asexual reproduction"
+            ],
+            "student_activities": [
+                "Sketch the stages of budding in Yeast",
+                "Identify vegetative parts in common kitchen plants"
+            ],
+            "assessment": [
+                "Identification quiz: Name the method of reproduction",
+                "Labeling stages of fragmentation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Sexual Reproduction: Flowers and Seeds",
+            "topics_covered": [
+                "Parts of a flower: Stamen and Pistil",
+                "Pollination: Self and Cross-pollination",
+                "Process of fertilization and zygote formation"
+            ],
+            "teaching_strategy": [
+                "Live dissection of a Hibiscus or Mustard flower",
+                "Animation/Slides showing pollen tube growth",
+                "Comparison of pollination agents (Wind, Water, Insects)"
+            ],
+            "student_activities": [
+                "Dissect a flower and paste parts in a scrapbook",
+                "Draw a labeled diagram of a Pistil showing fertilization"
+            ],
+            "assessment": [
+                "Flower anatomy labeling test",
+                "Sequence chart: From Pollen to Seed"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Seed Dispersal and Revision",
+            "topics_covered": [
+                "Need for dispersal (reducing competition)",
+                "Agents: Wind, Water, Animals, and Explosion",
+                "Review of the entire chapter"
+            ],
+            "teaching_strategy": [
+                "Display of various seeds (Dandelion, Xanthium, Maple)",
+                "Interactive quiz game: 'How did I travel?'",
+                "Clarifying doubts on transport and reproduction"
+            ],
+            "student_activities": [
+                "Examine seeds with hooks/wings and predict dispersal agent",
+                "Complete a chapter-end summary concept map"
+            ],
+            "assessment": [
+                "Medium-level Unit Test (25 marks)",
+                "Evaluation of the seed dispersal table"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Fresh Hibiscus flowers for dissection",
+        "Potted plant, plastic bags, and dye for experiments",
+        "Permanent slides of Stomata and Yeast",
+        "Magnifying glasses",
+        "NCERT Science Textbook and Charts"
+    ],
+    "evaluation_methods": [
+        "Scientific Lab Observation reports",
+        "Diagrammatic accuracy and labeling",
+        "Comparative tables (Modes of nutrition/reproduction)",
+        "Assertion and Reasoning based MCQs",
+        "Unit Test with short-answer questions"
+    ],
+    "teacher_tip": "When teaching about Xylem and Phloem, use the 'Elevator' vs. 'Two-way Street' analogy. Xylem only goes up (water), while Phloem goes both ways (food). Also, emphasize that seeds are the result of sexual reproduction, which leads to variation."
+}

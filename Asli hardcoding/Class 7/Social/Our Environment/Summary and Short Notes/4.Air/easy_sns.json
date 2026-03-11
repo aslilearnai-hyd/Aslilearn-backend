@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Air",
+    "difficulty": "Easy",
+    "source_pdf": "jegy104.pdf",
+    "short_notes": {
+        "key_points": [
+            "Our earth is surrounded by a huge blanket of air called the atmosphere.",
+            "The atmosphere provides the air we breathe and protects us from the harmful rays of the sun.",
+            "Nitrogen and Oxygen are the two gases which make up the bulk of the atmosphere.",
+            "Carbon dioxide, helium, ozone, argon, and hydrogen are found in lesser quantities.",
+            "Greenhouse effect is the trapping of heat by carbon dioxide, which keeps the earth warm enough to live in."
+        ],
+        "examples": [
+            "Composition of Air: Nitrogen (78%), Oxygen (21%), Argon (0.93%), Carbon dioxide (0.03%).",
+            "Atmosphere Layers: Troposphere, Stratosphere, Mesosphere, Thermosphere, and Exosphere.",
+            "Weather: The hour-to-hour or day-to-day condition of the atmosphere (e.g., sunny, rainy).",
+            "Climate: The average weather condition of a place over a long period of time."
+        ],
+        "formulas": [
+            "Air Composition = Nitrogen (78%) + Oxygen (21%) + Other Gases (1%)",
+            "Global Warming = Excess $CO_2$ $\\rightarrow$ Increased Heat Trapping $\\rightarrow$ Temperature Rise"
+        ],
+        "exam_tips": [
+            "Remember that Nitrogen is the most plentiful gas in the air, but plants cannot take it directly from the air.",
+            "Note that the Troposphere is the most important layer because it is where we breathe and where weather occurs.",
+            "Understand that as we go up the layers of the atmosphere, the pressure falls rapidly.",
+            "Identify that 'Wind' is the movement of air from high-pressure areas to low-pressure areas."
+        ]
+    }
+}

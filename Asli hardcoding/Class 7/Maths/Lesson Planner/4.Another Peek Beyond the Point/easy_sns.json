@@ -1,0 +1,49 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Another Peek Beyond the Point (Solid Shapes)",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Distinguish between 2D (plane) and 3D (solid) shapes",
+        "Identify common 3D shapes in the environment",
+        "Recognize basic attributes: length, breadth, and height",
+        "Understand the concept of volume as space occupied by solids",
+        "Name standard solids: Cube, Cuboid, Sphere, Cylinder, Cone"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "2D vs 3D Shapes",
+            "topics_covered": [
+                "Review of 2D shapes (Circle, Square, Triangle)",
+                "Introduction to 3D dimensions (Height/Depth)",
+                "Real-life examples of 3D objects"
+            ],
+            "teaching_strategy": [
+                "Object sorting activity",
+                "Comparison of a square (paper) vs a cube (box)",
+                "Visual identification"
+            ],
+            "student_activities": [
+                "",
+                "List 5 solid objects found in the school bag",
+                "Group activity: Sorting a box of mixed 2D/3D cutouts"
+            ],
+            "assessment": [
+                "Oral identification of shapes",
+                "Matching 2D bases to their 3D counterparts"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Exploring Basic Solids",
+            "topics_covered": [
+                "Characteristics of Spheres, Cylinders, and Cones",
+                "Flat surfaces vs. Curved surfaces",
+                "Naming shapes based on their properties"
+            ],
+            "teaching_strategy": [
+                "Hands-on 'Feel and Tell' session",
+                "Rolling vs. Sliding

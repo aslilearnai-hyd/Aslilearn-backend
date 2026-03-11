@@ -1,0 +1,157 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Social and Political Life – II: Understanding Media",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify different types of media and their roles",
+        "Understand media influence on society and public opinion",
+        "Develop skills to verify information and spot misinformation",
+        "Analyze news reporting and bias",
+        "Enhance research, critical thinking, and presentation skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Types of Media and Their Roles",
+            "topics_covered": [
+                "Print, broadcast, and digital media",
+                "Role of media in education and awareness",
+                "Examples of media impact on society"
+            ],
+            "teaching_strategy": [
+                "Show examples of newspapers, TV news clips, and social media posts",
+                "Class discussion on which media they use and why"
+            ],
+            "student_activities": [
+                "List media types they encounter daily",
+                "Discuss one way each type influences people"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Relevance of examples"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Analyzing News Reports",
+            "topics_covered": [
+                "Structure of news reports",
+                "Headlines, main story, and supporting details",
+                "Identifying factual information vs opinions"
+            ],
+            "teaching_strategy": [
+                "Provide sample news articles",
+                "Demonstrate identifying facts and opinions"
+            ],
+            "student_activities": [
+                "Highlight facts and opinions in a short news article",
+                "Discuss why differentiating is important"
+            ],
+            "assessment": [
+                "Accuracy in identifying facts and opinions",
+                "Participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Media Bias and Perspective",
+            "topics_covered": [
+                "Understanding bias in media",
+                "How perspectives shape reporting",
+                "Comparing multiple sources on the same topic"
+            ],
+            "teaching_strategy": [
+                "Show two news articles reporting the same event differently",
+                "Class discussion on differences and possible reasons"
+            ],
+            "student_activities": [
+                "Compare articles and identify differences in coverage",
+                "Explain which article seems more objective and why"
+            ],
+            "assessment": [
+                "Quality of analysis",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Spotting Fake News",
+            "topics_covered": [
+                "What is misinformation and fake news",
+                "Ways to verify online information",
+                "Understanding credibility of sources"
+            ],
+            "teaching_strategy": [
+                "Provide a mix of real and fake news examples",
+                "Demonstrate verification methods using credible sources"
+            ],
+            "student_activities": [
+                "Check one social media post or article for authenticity",
+                "Discuss the method used to verify it"
+            ],
+            "assessment": [
+                "Accuracy in verification",
+                "Clarity in explanation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Mini Media Project",
+            "topics_covered": [
+                "Creating short news stories",
+                "Simple reporting and writing skills",
+                "Presenting news to peers"
+            ],
+            "teaching_strategy": [
+                "Guide students on structuring a short news report",
+                "Encourage peer sharing and discussion"
+            ],
+            "student_activities": [
+                "Prepare a 5–6 sentence news story about a school or local event",
+                "Present it to the class"
+            ],
+            "assessment": [
+                "Clarity and relevance of report",
+                "Participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Media and Society Reflection",
+            "topics_covered": [
+                "Recap media types, verification, and bias",
+                "Discuss media’s influence on opinions and behavior",
+                "Reflect on responsible media consumption"
+            ],
+            "teaching_strategy": [
+                "Class discussion linking lessons to students’ daily media use",
+                "Ask reflective questions about media influence"
+            ],
+            "student_activities": [
+                "Write one reflection on how they can use media responsibly",
+                "Share in class discussion"
+            ],
+            "assessment": [
+                "Quality of reflection",
+                "Participation in discussion",
+                "Notebook notes"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Newspapers, online news articles, TV news clips",
+        "Charts and diagrams explaining media structure",
+        "Sample social media posts for analysis",
+        "Notebook and pen for writing activities"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Class discussion",
+        "News analysis worksheets",
+        "Mini project and reflection writing"
+    ],
+    "teacher_tip": "Encourage students to compare multiple sources, ask critical questions, and verify information. Use real-life examples and online media to make lessons relevant and interactive."
+}

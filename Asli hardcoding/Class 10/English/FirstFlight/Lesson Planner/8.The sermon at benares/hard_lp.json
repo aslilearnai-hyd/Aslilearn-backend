@@ -1,0 +1,158 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "The Sermon at Benares",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze Buddha’s teachings in detail and understand their relevance",
+        "Interpret the Four Noble Truths and Middle Path with examples",
+        "Understand the significance of Dharma in guiding behavior",
+        "Develop inferential and analytical skills using textual evidence",
+        "Reflect on moral and ethical lessons for daily life",
+        "Relate teachings to personal experiences and contemporary contexts"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Buddha’s background and enlightenment",
+                "Setting: Benares and audience of the sermon",
+                "Purpose and significance of the sermon"
+            ],
+            "teaching_strategy": [
+                "Storytelling with visuals of Benares and Buddha",
+                "Predictive questioning about what Buddha might teach"
+            ],
+            "student_activities": [
+                "Locate Benares on the map and discuss its importance",
+                "Discuss why Buddha’s teachings were significant for people"
+            ],
+            "assessment": [
+                "Oral Q&A on context and audience",
+                "Short written note summarizing purpose of the sermon"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Four Noble Truths – Part 1",
+            "topics_covered": [
+                "Concept of suffering (Dukkha)",
+                "Causes of suffering",
+                "Introduction to the first two Noble Truths"
+            ],
+            "teaching_strategy": [
+                "Explain using simple examples of daily life suffering",
+                "Discussion to relate causes of suffering to students’ experiences"
+            ],
+            "student_activities": [
+                "List examples of suffering they see in daily life",
+                "Discuss first two Noble Truths and their meaning in simple words"
+            ],
+            "assessment": [
+                "Oral Q&A on first two Noble Truths",
+                "Short written note summarizing examples discussed"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Four Noble Truths – Part 2",
+            "topics_covered": [
+                "Third and fourth Noble Truths: overcoming suffering and Eightfold Path",
+                "Practical applications of these teachings",
+                "Importance of moderation and right conduct"
+            ],
+            "teaching_strategy": [
+                "Use simple stories and scenarios to explain application",
+                "Illustrate moral choices with relatable examples"
+            ],
+            "student_activities": [
+                "Identify ways to reduce suffering in daily life",
+                "Discuss examples of following the Eightfold Path in school or home"
+            ],
+            "assessment": [
+                "Oral discussion on third and fourth Noble Truths",
+                "Short written note on practical application"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Middle Path and Ethical Living",
+            "topics_covered": [
+                "Meaning of the Middle Path and moderation",
+                "Avoiding extremes in life",
+                "Connecting ethical living to happiness and well-being"
+            ],
+            "teaching_strategy": [
+                "Explain using examples of balanced choices",
+                "Encourage students to reflect on personal habits"
+            ],
+            "student_activities": [
+                "Give examples from school or home where moderation helps",
+                "Discuss how Middle Path can guide behavior and decisions"
+            ],
+            "assessment": [
+                "Oral Q&A on Middle Path and moderation",
+                "Short written reflection on personal application"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Themes and Moral Lessons",
+            "topics_covered": [
+                "Key themes: suffering, moderation, moral responsibility, ethical living",
+                "Relevance of Buddha’s teachings to personal and social life",
+                "Reflection on lessons and values"
+            ],
+            "teaching_strategy": [
+                "Group discussion and analysis using textual evidence",
+                "Relate lessons to contemporary life and experiences"
+            ],
+            "student_activities": [
+                "Identify passages supporting each theme",
+                "Write a paragraph connecting one teaching to their life"
+            ],
+            "assessment": [
+                "Oral discussion on themes and lessons",
+                "Short written reflection connecting teachings to life"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Reflection",
+            "topics_covered": [
+                "Summary of key teachings and the Four Noble Truths",
+                "Significance of Middle Path and ethical conduct",
+                "Personal reflections and applications of Buddha’s teachings"
+            ],
+            "teaching_strategy": [
+                "Use charts, flashcards, or mind maps for revision",
+                "Encourage sharing insights and reflections in class discussion"
+            ],
+            "student_activities": [
+                "Create a simple chart summarizing Four Noble Truths and Middle Path",
+                "Write a few lines on how they can apply teachings in daily life"
+            ],
+            "assessment": [
+                "Oral quiz on teachings and themes",
+                "Class discussion on reflections and personal insights"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map showing Benares/Varanasi",
+        "Images of Buddha delivering sermon",
+        "Flashcards with key teachings and terms",
+        "Charts or mind maps summarizing Four Noble Truths and Middle Path"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Written analytical and reflective exercises",
+        "Class participation",
+        "Quizzes on teachings, themes, and applications",
+        "Group discussion and reflection"
+    ],
+    "teacher_tip": "Encourage students to analyze Buddha’s teachings critically. Focus on understanding suffering, the Four Noble Truths, and Middle Path. Use textual examples for reasoning, and connect lessons to students’ personal and social life."
+}

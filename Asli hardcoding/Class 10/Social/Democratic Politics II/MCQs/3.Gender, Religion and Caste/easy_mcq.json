@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Gender, Religion and Caste",
+  "generated_at": "2026-03-11T18:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What does gender division refer to?",
+      "options": {
+        "A": "Division of countries",
+        "B": "Division of work based on gender",
+        "C": "Division of wealth",
+        "D": "Division of language"
+      },
+      "correct_answer": "B",
+      "explanation": "Gender division refers to the unequal roles and responsibilities assigned to men and women.",
+      "difficulty": "easy",
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 2,
+      "question": "Who usually performs household work in traditional gender division?",
+      "options": {
+        "A": "Men",
+        "B": "Women",
+        "C": "Children",
+        "D": "Government"
+      },
+      "correct_answer": "B",
+      "explanation": "Traditionally, women are expected to perform household tasks.",
+      "difficulty": "easy",
+      "source_section": "Public/Private Division"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the main goal of feminist movements?",
+      "options": {
+        "A": "Promote male dominance",
+        "B": "Achieve equality for women",
+        "C": "Promote religion",
+        "D": "Increase taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "Feminist movements aim to achieve equal rights and opportunities for women.",
+      "difficulty": "easy",
+      "source_section": "Political Expression of Gender Division"
+    },
+    {
+      "question_number": 4,
+      "question": "Which term refers to a system where men dominate society?",
+      "options": {
+        "A": "Democracy",
+        "B": "Patriarchy",
+        "C": "Secularism",
+        "D": "Equality"
+      },
+      "correct_answer": "B",
+      "explanation": "Patriarchy is a system where men hold primary power in society.",
+      "difficulty": "easy",
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 5,
+      "question": "What is communalism?",
+      "options": {
+        "A": "Belief that religion should dominate politics",
+        "B": "Sharing community resources",
+        "C": "Working together peacefully",
+        "D": "Studying religion"
+      },
+      "correct_answer": "A",
+      "explanation": "Communalism is the belief that religion should guide political interests.",
+      "difficulty": "easy",
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 6,
+      "question": "India is considered which type of state regarding religion?",
+      "options": {
+        "A": "Religious state",
+        "B": "Secular state",
+        "C": "Military state",
+        "D": "Monarchy"
+      },
+      "correct_answer": "B",
+      "explanation": "India is a secular state that treats all religions equally.",
+      "difficulty": "easy",
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 7,
+      "question": "Which document guarantees freedom of religion in India?",
+      "options": {
+        "A": "Indian Constitution",
+        "B": "State laws",
+        "C": "School rules",
+        "D": "Local traditions"
+      },
+      "correct_answer": "A",
+      "explanation": "The Indian Constitution guarantees freedom of religion.",
+      "difficulty": "easy",
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 8,
+      "question": "The caste system in India is mainly based on:",
+      "options": {
+        "A": "Birth and occupation",
+        "B": "Age",
+        "C": "Income",
+        "D": "Education"
+      },
+      "correct_answer": "A",
+      "explanation": "The caste system historically grouped people by birth and occupation.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 9,
+      "question": "Untouchability is related to:",
+      "options": {
+        "A": "Gender inequality",
+        "B": "Religious festivals",
+        "C": "Caste discrimination",
+        "D": "Economic development"
+      },
+      "correct_answer": "C",
+      "explanation": "Untouchability was a discriminatory practice against certain caste groups.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 10,
+      "question": "Which leader fought strongly against caste discrimination?",
+      "options": {
+        "A": "B.R. Ambedkar",
+        "B": "Sachin Tendulkar",
+        "C": "Kalpana Chawla",
+        "D": "Ratan Tata"
+      },
+      "correct_answer": "A",
+      "explanation": "Dr. B.R. Ambedkar worked for equality and against caste discrimination.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 11,
+      "question": "Which factor helps reduce caste discrimination?",
+      "options": {
+        "A": "Education",
+        "B": "Isolation",
+        "C": "Tradition",
+        "D": "Superstition"
+      },
+      "correct_answer": "A",
+      "explanation": "Education increases awareness and helps reduce discrimination.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 12,
+      "question": "What does secularism promote?",
+      "options": {
+        "A": "Religious dominance",
+        "B": "Equal respect for all religions",
+        "C": "Single religion rule",
+        "D": "Religious conflict"
+      },
+      "correct_answer": "B",
+      "explanation": "Secularism ensures equal treatment of all religions.",
+      "difficulty": "easy",
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 13,
+      "question": "Which social division is based on religion?",
+      "options": {
+        "A": "Communalism",
+        "B": "Education",
+        "C": "Employment",
+        "D": "Migration"
+      },
+      "correct_answer": "A",
+      "explanation": "Communalism is based on religious identity.",
+      "difficulty": "easy",
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 14,
+      "question": "Political parties sometimes select candidates based on:",
+      "options": {
+        "A": "Caste composition",
+        "B": "Weather",
+        "C": "Sports results",
+        "D": "Fashion trends"
+      },
+      "correct_answer": "A",
+      "explanation": "Political parties often consider caste composition in elections.",
+      "difficulty": "easy",
+      "source_section": "Caste and Politics"
+    },
+    {
+      "question_number": 15,
+      "question": "Which system ensures equal rights for citizens?",
+      "options": {
+        "A": "Dictatorship",
+        "B": "Democracy",
+        "C": "Colonialism",
+        "D": "Monarchy"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy ensures equal participation and rights for citizens.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 16,
+      "question": "Gender equality means:",
+      "options": {
+        "A": "Men dominate society",
+        "B": "Women dominate society",
+        "C": "Equal rights for men and women",
+        "D": "Separate societies"
+      },
+      "correct_answer": "C",
+      "explanation": "Gender equality ensures equal opportunities for all genders.",
+      "difficulty": "easy",
+      "source_section": "Gender and Politics"
+    },
+    {
+      "question_number": 17,
+      "question": "Which concept promotes peaceful coexistence of religions?",
+      "options": {
+        "A": "Communalism",
+        "B": "Secularism",
+        "C": "Casteism",
+        "D": "Patriarchy"
+      },
+      "correct_answer": "B",
+      "explanation": "Secularism promotes equality and harmony among religions.",
+      "difficulty": "easy",
+      "source_section": "Secular State"
+    },
+    {
+      "question_number": 18,
+      "question": "Which social factor divides society into groups based on birth?",
+      "options": {
+        "A": "Gender",
+        "B": "Caste",
+        "C": "Education",
+        "D": "Income"
+      },
+      "correct_answer": "B",
+      "explanation": "Caste groups are traditionally based on birth.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 19,
+      "question": "Which principle ensures fairness in society?",
+      "options": {
+        "A": "Discrimination",
+        "B": "Equality",
+        "C": "Dominance",
+        "D": "Division"
+      },
+      "correct_answer": "B",
+      "explanation": "Equality ensures fair treatment for all citizens.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 20,
+      "question": "Which concept divides work based on gender roles?",
+      "options": {
+        "A": "Secularism",
+        "B": "Sexual division of labour",
+        "C": "Urbanization",
+        "D": "Industrialization"
+      },
+      "correct_answer": "B",
+      "explanation": "Sexual division of labour assigns different work roles to men and women.",
+      "difficulty": "easy",
+      "source_section": "Public/Private Division"
+    },
+    {
+      "question_number": 21,
+      "question": "Which social reformer worked against untouchability?",
+      "options": {
+        "A": "B.R. Ambedkar",
+        "B": "APJ Abdul Kalam",
+        "C": "MS Dhoni",
+        "D": "Raman"
+      },
+      "correct_answer": "A",
+      "explanation": "Dr. Ambedkar fought against caste discrimination and untouchability.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor improves social mobility in modern society?",
+      "options": {
+        "A": "Education",
+        "B": "Discrimination",
+        "C": "Isolation",
+        "D": "Superstition"
+      },
+      "correct_answer": "A",
+      "explanation": "Education helps individuals move beyond traditional social barriers.",
+      "difficulty": "easy",
+      "source_section": "Caste Inequalities"
+    },
+    {
+      "question_number": 23,
+      "question": "Which term refers to peaceful coexistence among religious groups?",
+      "options": {
+        "A": "Communal conflict",
+        "B": "Religious harmony",
+        "C": "Religious dominance",
+        "D": "Religious discrimination"
+      },
+      "correct_answer": "B",
+      "explanation": "Religious harmony promotes peaceful relations among communities.",
+      "difficulty": "easy",
+      "source_section": "Religion, Communalism and Politics"
+    },
+    {
+      "question_number": 24,
+      "question": "Which principle allows different social groups to participate in politics?",
+      "options": {
+        "A": "Dictatorship",
+        "B": "Democracy",
+        "C": "Colonialism",
+        "D": "Monarchy"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy allows participation of diverse groups in governance.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    },
+    {
+      "question_number": 25,
+      "question": "Which concept promotes equal rights and opportunities for all citizens?",
+      "options": {
+        "A": "Discrimination",
+        "B": "Equality",
+        "C": "Dominance",
+        "D": "Segregation"
+      },
+      "correct_answer": "B",
+      "explanation": "Equality ensures fairness and equal opportunities in society.",
+      "difficulty": "easy",
+      "source_section": "Overview"
+    }
+  ]
+}

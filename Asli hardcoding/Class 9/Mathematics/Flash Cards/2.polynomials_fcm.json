@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-05T21:45:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a polynomial?",
+                "correct_answer": "An algebraic expression with variables having non-negative integer powers",
+                "explanation": "Polynomials contain variables, constants and whole number exponents.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is a term in a polynomial?",
+                "correct_answer": "A part of a polynomial separated by addition or subtraction",
+                "explanation": "Each term consists of a coefficient and variable part.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is the coefficient of a term?",
+                "correct_answer": "The numerical factor multiplied with the variable",
+                "explanation": "For example, in 5x² the coefficient is 5.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is the degree of a polynomial?",
+                "correct_answer": "The highest power of the variable in the polynomial",
+                "explanation": "Degree helps classify the polynomial.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is a linear polynomial?",
+                "correct_answer": "A polynomial of degree one",
+                "explanation": "It is usually written as ax + b.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is a quadratic polynomial?",
+                "correct_answer": "A polynomial of degree two",
+                "explanation": "It has the general form ax² + bx + c.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is the zero of a polynomial?",
+                "correct_answer": "A value of the variable that makes the polynomial equal to zero",
+                "explanation": "If p(a) = 0, then a is called a zero of the polynomial.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "question": "State the Factor Theorem.",
+                "correct_answer": "If p(a) = 0, then (x − a) is a factor of p(x)",
+                "explanation": "It links the zeroes of a polynomial with its factors.",
+                "source_section": "Section 2.4"
+            },
+            {
+                "question": "What is factorisation of polynomials?",
+                "correct_answer": "Expressing a polynomial as a product of simpler polynomials",
+                "explanation": "It helps solve polynomial equations easily.",
+                "source_section": "Section 2.4"
+            },
+            {
+                "question": "What is an algebraic identity?",
+                "correct_answer": "An equation that is true for all values of the variables",
+                "explanation": "Identities help simplify and expand expressions.",
+                "source_section": "Section 2.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Polynomial",
+                "content": "A polynomial is an algebraic expression with variables raised to whole number powers only.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "title": "Degree of Polynomial",
+                "content": "The degree is the highest exponent of the variable present in the polynomial.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "title": "Zero of Polynomial",
+                "content": "A number that makes the polynomial equal to zero when substituted.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "title": "Factor Theorem",
+                "content": "If p(a)=0 then (x−a) is a factor of polynomial p(x).",
+                "source_section": "Section 2.4"
+            },
+            {
+                "title": "Algebraic Identities",
+                "content": "Identities like (x+y)² = x² + 2xy + y² help simplify expressions.",
+                "source_section": "Section 2.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "A linear polynomial has exactly one zero.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "fact": "A quadratic polynomial can have at most two zeroes.",
+                "source_section": "Section 2.3"
+            },
+            {
+                "fact": "The degree of a non-zero constant polynomial is zero.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "The degree of the zero polynomial is not defined.",
+                "source_section": "Section 2.2"
+            }
+        ]
+    }
+}

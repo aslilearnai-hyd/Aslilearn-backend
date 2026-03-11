@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Keeping Time with the Skies",
+  "generated_at": "2026-03-06T01:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how the rotation of the Earth helps measure time.",
+      "answer": "The rotation of the Earth on its axis causes day and night. One complete rotation takes about 24 hours, which forms the basis for measuring a day.",
+      "key_concepts": ["earth rotation", "day and night"],
+      "marks": 2,
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 2,
+      "question": "Why do shadows change length and direction during the day?",
+      "answer": "Shadows change because the Sun appears to move across the sky as the Earth rotates.",
+      "key_concepts": ["shadow", "earth rotation"],
+      "marks": 2,
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 3,
+      "question": "How did ancient people use the Sun to measure time?",
+      "answer": "Ancient people observed the position of the Sun in the sky and the movement of shadows to estimate time during the day.",
+      "key_concepts": ["sun", "time measurement"],
+      "marks": 2,
+      "source_section": "Early Time Measurement"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how a sundial works.",
+      "answer": "A sundial uses the position of the Sun and the shadow cast by a stick or pointer to indicate the time of day.",
+      "key_concepts": ["sundial"],
+      "marks": 2,
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 5,
+      "question": "Why are the phases of the Moon important in measuring time?",
+      "answer": "The phases of the Moon repeat in a regular cycle of about 29.5 days, which helped ancient people measure months.",
+      "key_concepts": ["moon phases"],
+      "marks": 2,
+      "source_section": "Lunar Cycle"
+    },
+    {
+      "question_number": 6,
+      "question": "What causes the different phases of the Moon?",
+      "answer": "Different phases occur because the portion of the Moon illuminated by the Sun changes as the Moon revolves around the Earth.",
+      "key_concepts": ["moon phases"],
+      "marks": 2,
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how the revolution of Earth helps measure a year.",
+      "answer": "The Earth takes about 365 days to complete one revolution around the Sun, which forms the basis of a year.",
+      "key_concepts": ["earth revolution"],
+      "marks": 2,
+      "source_section": "Earth’s Revolution"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do different constellations appear in different seasons?",
+      "answer": "As the Earth revolves around the Sun, different parts of the sky become visible at night during different seasons.",
+      "key_concepts": ["constellations", "earth revolution"],
+      "marks": 2,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a constellation?",
+      "answer": "A constellation is a group of stars that form a recognizable pattern in the sky.",
+      "key_concepts": ["constellations"],
+      "marks": 1,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is the North Star important for navigation?",
+      "answer": "The North Star remains almost fixed in the sky and helps people identify the north direction.",
+      "key_concepts": ["north star"],
+      "marks": 2,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why stars appear to move across the night sky.",
+      "answer": "Stars appear to move because the Earth rotates on its axis.",
+      "key_concepts": ["earth rotation"],
+      "marks": 2,
+      "source_section": "Star Movement"
+    },
+    {
+      "question_number": 12,
+      "question": "How did observing the sky help ancient civilizations develop calendars?",
+      "answer": "They observed regular patterns such as sunrise, sunset, and moon phases to organize days, months, and years.",
+      "key_concepts": ["calendars"],
+      "marks": 2,
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 13,
+      "question": "Why do we see the Moon shining at night?",
+      "answer": "The Moon shines because it reflects sunlight.",
+      "key_concepts": ["moon"],
+      "marks": 1,
+      "source_section": "Moon Observation"
+    },
+    {
+      "question_number": 14,
+      "question": "What is a solar calendar?",
+      "answer": "A solar calendar is based on the Earth's revolution around the Sun.",
+      "key_concepts": ["solar calendar"],
+      "marks": 2,
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 15,
+      "question": "What is a lunar calendar?",
+      "answer": "A lunar calendar is based on the phases of the Moon.",
+      "key_concepts": ["lunar calendar"],
+      "marks": 2,
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is astronomy important for understanding time?",
+      "answer": "Astronomy studies the movements of celestial bodies, which help measure time such as days, months, and years.",
+      "key_concepts": ["astronomy"],
+      "marks": 2,
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how the movement of the Moon helped ancient people measure months.",
+      "answer": "The Moon completes one cycle of phases in about 29.5 days, which was used to mark a month.",
+      "key_concepts": ["moon cycle"],
+      "marks": 2,
+      "source_section": "Lunar Cycle"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do we see different star patterns at different times of the night?",
+      "answer": "Different star patterns appear because the Earth keeps rotating during the night.",
+      "key_concepts": ["earth rotation"],
+      "marks": 2,
+      "source_section": "Star Movement"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how studying the sky helped early humans plan activities.",
+      "answer": "Observing the sky helped them predict seasons, measure time, and plan farming and travel.",
+      "key_concepts": ["early astronomy"],
+      "marks": 2,
+      "source_section": "Early Astronomy"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are constellations useful in astronomy?",
+      "answer": "Constellations help astronomers identify and locate stars in the sky.",
+      "key_concepts": ["constellations"],
+      "marks": 2,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 21,
+      "question": "What would happen if the Earth stopped rotating?",
+      "answer": "There would be no regular cycle of day and night.",
+      "key_concepts": ["earth rotation"],
+      "marks": 2,
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are astronomical observations repeated regularly?",
+      "answer": "Repeated observations help confirm patterns and accurately measure time cycles.",
+      "key_concepts": ["astronomy"],
+      "marks": 2,
+      "source_section": "Astronomy Observations"
+    },
+    {
+      "question_number": 23,
+      "question": "How does Earth’s movement influence our concept of time?",
+      "answer": "Earth’s rotation defines a day, and its revolution around the Sun defines a year.",
+      "key_concepts": ["earth movement"],
+      "marks": 2,
+      "source_section": "Earth’s Motion"
+    },
+    {
+      "question_number": 24,
+      "question": "Why were constellations important for ancient sailors?",
+      "answer": "Constellations helped sailors navigate and determine direction at night.",
+      "key_concepts": ["navigation"],
+      "marks": 2,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why studying celestial bodies is useful for understanding natural cycles.",
+      "answer": "Celestial movements follow predictable patterns that help measure time and understand natural cycles such as days, months, and years.",
+      "key_concepts": ["astronomy"],
+      "marks": 2,
+      "source_section": "Astronomy"
+    }
+  ]
+}

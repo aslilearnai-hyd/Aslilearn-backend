@@ -1,0 +1,257 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet",
+  "generated_at": "2026-03-05T14:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe three important features that make Earth suitable for life.",
+      "answer": "Earth supports life because it has liquid water, a protective atmosphere containing oxygen, and moderate temperatures due to its suitable distance from the Sun.",
+      "answer_outline": [
+        "Presence of water",
+        "Suitable atmosphere",
+        "Moderate temperature"
+      ],
+      "key_concepts": ["Earth", "life-supporting conditions"],
+      "marks": 5,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how Earth’s distance from the Sun helps maintain suitable temperatures for life.",
+      "answer": "Earth lies in the habitable zone where temperatures are neither too hot nor too cold, allowing water to remain in liquid form and supporting life.",
+      "answer_outline": [
+        "Habitable zone",
+        "Temperature balance",
+        "Liquid water"
+      ],
+      "key_concepts": ["habitable zone"],
+      "marks": 5,
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Compare rocky planets and gaseous planets in the solar system.",
+      "answer": "Rocky planets such as Mercury, Venus, Earth, and Mars have solid surfaces, while gaseous planets like Jupiter and Saturn are mainly composed of gases and lack a solid surface.",
+      "answer_outline": ["Rocky planets", "Gas giants", "Surface differences"],
+      "key_concepts": ["solar system planets"],
+      "marks": 5,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain why Venus is hotter than Mercury even though Mercury is closer to the Sun.",
+      "answer": "Venus has a thick atmosphere rich in carbon dioxide that traps heat through the greenhouse effect, making it hotter than Mercury.",
+      "answer_outline": ["Carbon dioxide atmosphere", "Greenhouse effect"],
+      "key_concepts": ["greenhouse effect"],
+      "marks": 5,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the concept of the habitable zone.",
+      "answer": "The habitable zone is the region around a star where temperatures allow water to exist in liquid form, making it suitable for life.",
+      "answer_outline": [
+        "Distance from star",
+        "Temperature range",
+        "Liquid water"
+      ],
+      "key_concepts": ["Goldilocks zone"],
+      "marks": 4,
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how Earth's gravity helps maintain life.",
+      "answer": "Earth’s gravity holds the atmosphere around the planet, ensuring that gases necessary for life such as oxygen remain available.",
+      "answer_outline": [
+        "Gravity",
+        "Atmospheric retention",
+        "Life-supporting gases"
+      ],
+      "key_concepts": ["gravity"],
+      "marks": 4,
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the role of the atmosphere in maintaining Earth’s temperature.",
+      "answer": "The atmosphere traps heat through the greenhouse effect, preventing extreme temperature variations and helping maintain suitable conditions for life.",
+      "answer_outline": ["Greenhouse effect", "Temperature regulation"],
+      "key_concepts": ["atmosphere"],
+      "marks": 5,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how the ozone layer protects living organisms.",
+      "answer": "The ozone layer absorbs harmful ultraviolet radiation from the Sun, protecting living organisms from cell damage.",
+      "answer_outline": ["UV radiation", "Ozone protection"],
+      "key_concepts": ["ozone layer"],
+      "marks": 4,
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how Earth’s magnetic field protects the planet.",
+      "answer": "Earth’s magnetic field deflects harmful charged particles from the Sun and cosmic rays, preventing damage to the atmosphere and living organisms.",
+      "answer_outline": ["Solar wind", "Magnetic protection"],
+      "key_concepts": ["magnetic field"],
+      "marks": 5,
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the role of water in sustaining life on Earth.",
+      "answer": "Water helps transport nutrients, regulate temperature, support aquatic life, and enable biological processes essential for living organisms.",
+      "answer_outline": [
+        "Nutrient transport",
+        "Temperature regulation",
+        "Habitat for organisms"
+      ],
+      "key_concepts": ["water"],
+      "marks": 5,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how soil contributes to the survival of plants.",
+      "answer": "Soil provides nutrients such as nitrogen and potassium that plants require for growth and development.",
+      "answer_outline": ["Nutrients", "Plant growth"],
+      "key_concepts": ["soil nutrients"],
+      "marks": 4,
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe how plants contribute to maintaining atmospheric balance.",
+      "answer": "Plants perform photosynthesis, absorbing carbon dioxide and releasing oxygen, maintaining the balance of gases in the atmosphere.",
+      "answer_outline": ["Photosynthesis", "Oxygen production"],
+      "key_concepts": ["photosynthesis"],
+      "marks": 5,
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the interaction between living and non-living components of Earth.",
+      "answer": "Living organisms depend on air, water, soil, and sunlight for survival. These interactions maintain ecological balance.",
+      "answer_outline": [
+        "Biotic factors",
+        "Abiotic factors",
+        "Ecosystem balance"
+      ],
+      "key_concepts": ["biosphere"],
+      "marks": 5,
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how reproduction ensures continuity of life.",
+      "answer": "Reproduction produces new individuals and allows species to continue across generations.",
+      "answer_outline": ["Production of offspring", "Continuation of species"],
+      "key_concepts": ["reproduction"],
+      "marks": 4,
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why offspring show similarities and differences from their parents.",
+      "answer": "Offspring inherit genetic information from both parents, leading to similarities while variations occur due to mixing of genes.",
+      "answer_outline": ["Genes", "Inheritance", "Variation"],
+      "key_concepts": ["genetics"],
+      "marks": 5,
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain vegetative propagation with two examples.",
+      "answer": "Vegetative propagation is reproduction in plants using parts such as roots, stems, or leaves. Examples include potato and ginger.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["vegetative propagation"],
+      "marks": 4,
+      "source_section": "Section 13.5.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain pollination in flowering plants.",
+      "answer": "Pollination is the transfer of pollen grains from the anther to the stigma of a flower, enabling fertilisation.",
+      "answer_outline": ["Transfer of pollen", "Agents like wind and insects"],
+      "key_concepts": ["pollination"],
+      "marks": 4,
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain fertilisation in plants.",
+      "answer": "Fertilisation occurs when male and female gametes combine to form a zygote, which develops into a seed.",
+      "answer_outline": ["Fusion of gametes", "Seed formation"],
+      "key_concepts": ["fertilisation"],
+      "marks": 4,
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain sexual reproduction in animals with an example.",
+      "answer": "Sexual reproduction involves the fusion of sperm and egg to form a zygote, which develops into an embryo and then a new organism.",
+      "answer_outline": ["Sperm and egg", "Zygote formation"],
+      "key_concepts": ["sexual reproduction"],
+      "marks": 4,
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how climate change affects the environment.",
+      "answer": "Climate change causes rising temperatures, melting glaciers, rising sea levels, and disturbances in ecosystems.",
+      "answer_outline": ["Temperature rise", "Environmental impacts"],
+      "key_concepts": ["climate change"],
+      "marks": 5,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how biodiversity loss affects ecosystems.",
+      "answer": "Loss of biodiversity disrupts food chains and weakens ecosystem stability, affecting survival of species.",
+      "answer_outline": ["Food chain disruption", "Ecosystem imbalance"],
+      "key_concepts": ["biodiversity"],
+      "marks": 4,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the effects of air pollution on living organisms.",
+      "answer": "Air pollution can cause respiratory diseases, damage crops, and contribute to climate change.",
+      "answer_outline": ["Health impact", "Environmental damage"],
+      "key_concepts": ["air pollution"],
+      "marks": 4,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why protecting natural resources is important.",
+      "answer": "Protecting natural resources ensures sustainability and maintains ecological balance necessary for life.",
+      "answer_outline": ["Sustainability", "Resource conservation"],
+      "key_concepts": ["natural resources"],
+      "marks": 4,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of environmental protection.",
+      "answer": "Environmental protection helps preserve ecosystems, prevent pollution, and ensure a healthy planet for future generations.",
+      "answer_outline": ["Ecosystem protection", "Sustainability"],
+      "key_concepts": ["environmental protection"],
+      "marks": 4,
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how Earth’s natural systems work together to support life.",
+      "answer": "The atmosphere, hydrosphere, geosphere, and biosphere interact to maintain environmental balance and sustain life.",
+      "answer_outline": ["Earth systems interaction", "Support for ecosystems"],
+      "key_concepts": ["Earth systems"],
+      "marks": 5,
+      "source_section": "Section 13.4"
+    }
+  ]
+}

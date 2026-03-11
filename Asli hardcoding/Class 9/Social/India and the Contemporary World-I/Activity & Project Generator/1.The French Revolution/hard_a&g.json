@@ -1,0 +1,149 @@
+{
+    "class": "Class 9",
+    "subject": "History",
+    "chapter": "The French Revolution",
+    "difficulty": "Hard",
+    "source_pdf": "iess301.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparative Analysis: Constitutional vs. Universal Rights",
+            "objective": "Critically evaluate the gap between revolutionary rhetoric and legislative reality",
+            "materials": ["Source B", "Source C", "Section 2.1 text"],
+            "steps": [
+                "Analyze the 'Declaration of the Rights of Man and Citizen' [cite: 345] alongside the specific voting qualifications of the 1791 Constitution[cite: 311].",
+                "Explain the paradox of a document claiming 'Men are born and remain free and equal' [cite: 346] while establishing a system of 'Passive Citizens' without voting rights[cite: 312].",
+                "Incorporate Jean-Paul Marat’s critique from 'L’Ami du peuple' regarding how wealth influences the law[cite: 337, 339].",
+                "Write a 500-word essay on whether the 1791 Constitution fulfilled the promise of the Revolution."
+            ],
+            "learning_outcome": "Develops critical thinking regarding the contradictions in early democratic frameworks",
+            "evaluation": "Depth of argument and effective use of contrasting sources (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Sociopolitical Simulation: The Estates General Deadlock",
+            "objective": "Understand the procedural mechanics of the transition from Feudalism to a National Assembly",
+            "materials": ["Classroom space", "Representatives cards"],
+            "steps": [
+                "Divide the class into three estates with the correct historical ratios (300:300:600)[cite: 194].",
+                "Simulate the 5 May 1789 meeting where the First and Second Estates are seated and the Third Estate stands at the back[cite: 194].",
+                "Debate the transition from 'estate-based voting' (one vote per estate) to 'head-based voting' (one vote per member)[cite: 198, 200].",
+                "Draft the 'Tennis Court Oath' collectively, justifying the decision to declare as a National Assembly[cite: 205]."
+            ],
+            "learning_outcome": "Analyzes the shift from feudal privilege to national sovereignty",
+            "evaluation": "Quality of debate and historical accuracy in the drafted oath (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Economic Historiography: The Subsistence Crisis",
+            "objective": "Synthesize demographic, climatic, and economic data to explain social collapse",
+            "materials": ["Fig. 4", "Section 1.1 statistics"],
+            "steps": [
+                "Map the population growth from 23 million in 1715 to 28 million in 1789 and its impact on food demand[cite: 122].",
+                "Analyze how the fixity of wages against the rising price of bread widened the rich-poor gap[cite: 125, 126, 127].",
+                "Complete the flow of a 'Subsistence Crisis' in Fig. 4 by inserting terms like 'Food riots' and 'increased number of deaths'[cite: 138, 153].",
+                "Research how 'hail or drought' acted as the final catalyst for the 1789 outbreak[cite: 127]."
+            ],
+            "learning_outcome": "Evaluates the multi-dimensional causes of revolutionary volatility",
+            "evaluation": "Technical accuracy in completing the economic flow and data analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Gender and Political Theory: The Gouges vs. Chaumette Debate",
+            "objective": "Analyze the philosophical justifications for and against gender equality in 1793",
+            "materials": ["Source F", "Source G"],
+            "steps": [
+                "Deconstruct Olympe de Gouges’ claim that 'Sovereignty resides in the nation, which is nothing but the union of woman and man'[cite: 567].",
+                "Contrast this with Chaumette’s biological essentialism argument about 'domestic duties' and 'motherhood'[cite: 582, 588].",
+                "Explain the irony of the Jacobin government using the law to exclude women from the very 'General Will' they claimed to represent[cite: 544, 568].",
+                "Predict the impact of these closures on the women's movement over the next 200 years[cite: 546]."
+            ],
+            "learning_outcome": "Examines the limits of Enlightenment thinking regarding gender",
+            "evaluation": "Critical analysis of the two conflicting worldviews (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Global Paradox: Slavery and the Rights of Man",
+            "objective": "Examine the tension between colonial mercantilism and revolutionary ideals",
+            "materials": ["Section 5 text", "Fig. 14"],
+            "steps": [
+                "Trace the 'Triangular Slave Trade' and explain why port cities like Bordeaux and Nantes flourished[cite: 598, 602].",
+                "Analyze why the National Assembly feared passing laws to abolish slavery (influence of businessmen)[cite: 605].",
+                "Compare the 1794 Convention decree freeing slaves with Napoleon’s 1804 reintroduction of slavery[cite: 606, 607].",
+                "Interpret the 1794 print (Fig. 14) and its depiction of the 'civilizing' mission[cite: 611, 613]."
+            ],
+            "learning_outcome": "Connects economic interests to the delay of moral and human rights reforms",
+            "evaluation": "Clarity in explaining the legislative timeline and image interpretation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Political Symbolism: An Etching Interpretation",
+            "objective": "Synthesize visual art and social commentary using the 'Spider and the Fly' metaphor",
+            "materials": ["Fig. 3 etching", "Section 1 text"],
+            "steps": [
+                "Interpret the etching 'The Spider and the Fly' (Fig. 3) where the nobleman is the spider and the peasant is the fly[cite: 118, 117].",
+                "Explain the meaning of the caption 'The more the devil has, the more he wants' in the context of feudal dues[cite: 121, 79].",
+                "Link the visual of the peasant bringing 'grain, fruits, money' to the specific taxes of Tithes and Taille[cite: 107, 81, 82].",
+                "Create an original modern-day metaphor for social inequality based on this historical etching."
+            ],
+            "learning_outcome": "Translates 18th-century visual propaganda into socio-economic theory",
+            "evaluation": "Creativity and depth of historical connection (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Jacobin Ideology: Terror as 'Justice'",
+            "objective": "Critically analyze the moral justification for state violence",
+            "materials": ["Source D", "Section 3.1 text"],
+            "steps": [
+                "Analyze Robespierre's definition of Terror as 'justice, swift, severe and inflexible'[cite: 488].",
+                "Contrast this with Camille Desmoulins' warning that guillotining enemies only creates ten more enemies[cite: 484].",
+                "List the cultural changes forced by the Jacobins, such as 'equality bread' and the replacement of 'Monsieur/Madame' with 'Citoyen/Citoyenne'[cite: 466, 468].",
+                "Debate: Is state violence ever justifiable to 'protect' democracy? Use the text to support both sides[cite: 487, 490]."
+            ],
+            "learning_outcome": "Evaluates the ethical dilemmas of revolutionary governance",
+            "evaluation": "Logic and evidence-based reasoning in the debate (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Napoleonic Duality: Liberator vs. Invader",
+            "objective": "Assess Napoleon’s role as both a destroyer of dynasties and a modernizer",
+            "materials": ["Conclusion text", "Fig. 17"],
+            "steps": [
+                "Identify Napoleon’s 'modernizing' laws: protection of private property and the decimal system[cite: 651].",
+                "Explain the transition in European sentiment from seeing him as a 'liberator' to an 'invading force'[cite: 652, 653].",
+                "Evaluate his defeat at Waterloo (1815) and why his ideas survived his political fall[cite: 654].",
+                "Discuss how his rise was paved by the 'political instability' of the Directory[cite: 505]."
+            ],
+            "learning_outcome": "Synthesizes the complex legacy of military dictatorship in political evolution",
+            "evaluation": "Comprehensiveness of the duality analysis (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The 'Great Fear' and Rural Dynamics",
+            "objective": "Analyze the spread of revolution through rumor and panic",
+            "materials": ["Fig. 6 map", "Section 2 text"],
+            "steps": [
+                "Describe the 'frenzy of fear' caused by rumors of 'bands of brigands' hired by lords[cite: 237, 238].",
+                "Explain the significance of peasants burning 'manorial dues' documents[cite: 239].",
+                "Analyze why the night of 4 August 1789 (abolishing the feudal system) was a direct result of this rural violence[cite: 241, 242].",
+                "Map the spread of the 'Great Fear' using Fig. 6 and identify the regions most affected[cite: 275, 277]."
+            ],
+            "learning_outcome": "Understands the symbiotic relationship between urban politics and rural revolt",
+            "evaluation": "Map accuracy and analysis of the 4 August decree (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Historiographical Legacy: The French Revolution and India",
+            "objective": "Connect European revolutionary events to global anti-colonial movements",
+            "materials": ["Box 2", "Conclusion text"],
+            "steps": [
+                "Investigate how Tipu Sultan and Rammohan Roy 'responded to the ideas coming from revolutionary France'[cite: 664].",
+                "Analyze Raja Rammohan Roy’s specific excitement regarding the July Revolution of 1830[cite: 668, 669].",
+                "Explain the concept of 'reworking' revolutionary ideas into a 'language of politics' suitable for colonised nations[cite: 15, 663].",
+                "Identify five democratic rights in the modern Indian Constitution that find their roots in 1789[cite: 684]."
+            ],
+            "learning_outcome": "Appreciates the global cross-pollination of political ideals",
+            "evaluation": "Ability to draw logical connections between French and Indian historical contexts (10 marks)"
+        }
+    ]
+}

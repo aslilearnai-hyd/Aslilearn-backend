@@ -1,0 +1,150 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "A Question of Trust",
+    "title": "Lesson Planner – A Question of Trust (Medium)",
+    "author": "Victor Canning",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse characters in detail",
+        "Understand plot structure and irony",
+        "Explain the theme with examples",
+        "Develop interpretative skills",
+        "Improve vocabulary and comprehension",
+        "Relate the lesson to ethical situations",
+        "Encourage analytical thinking"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author and Context",
+            "topics_covered": [
+                "Author background",
+                "Context of the story",
+                "Introduction to main ideas"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Listen and take notes",
+                "Share ideas about honesty"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Character Study – Horace Danby",
+            "topics_covered": [
+                "Dual nature of Horace",
+                "His profession and secret life"
+            ],
+            "teaching_strategy": [
+                "Textual analysis",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Support traits with examples"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Plot and Planning",
+            "topics_covered": [
+                "Horace’s preparation",
+                "Importance of planning"
+            ],
+            "teaching_strategy": [
+                "Sequential explanation"
+            ],
+            "student_activities": [
+                "List planning steps"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Role of the Young Lady",
+            "topics_covered": [
+                "Her behaviour",
+                "Deceptive tactics"
+            ],
+            "teaching_strategy": [
+                "Discussion",
+                "Question–answer"
+            ],
+            "student_activities": [
+                "Analyse her actions"
+            ],
+            "assessment": [
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Irony and Title",
+            "topics_covered": [
+                "Irony in events",
+                "Justification of the title"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Write title justification"
+            ],
+            "assessment": [
+                "Paragraph writing"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme and Moral Values",
+            "topics_covered": [
+                "Theme of trust",
+                "Moral lessons"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion"
+            ],
+            "student_activities": [
+                "Relate theme to real life"
+            ],
+            "assessment": [
+                "Written response"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Vocabulary, Revision, and Assessment",
+            "topics_covered": [
+                "Vocabulary",
+                "Summary",
+                "Revision"
+            ],
+            "teaching_strategy": [
+                "Recap",
+                "Testing"
+            ],
+            "student_activities": [
+                "Write summary",
+                "Answer short questions"
+            ],
+            "assessment": [
+                "Unit test"
+            ]
+        }
+    ],
+    "teacher_tip": "Encourage students to justify answers using incidents from the text."
+}

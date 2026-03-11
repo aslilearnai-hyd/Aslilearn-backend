@@ -1,0 +1,245 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: A Story of Numbers",
+  "generated_at": "2026-03-04T21:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the evolution of number systems from early counting methods to the Hindu–Arabic number system.",
+      "answer": "Early humans counted using objects such as stones, sticks and fingers. Later, tally marks were used to record numbers. Civilizations like the Egyptians and Romans developed their own number systems. Eventually the Hindu–Arabic number system, which uses digits 0–9 and place value, became widely accepted because it made calculations easier.",
+      "answer_outline": [
+        "Early counting methods",
+        "Development of ancient number systems",
+        "Introduction of Hindu–Arabic system"
+      ],
+      "key_concepts": ["number systems", "Hindu–Arabic numerals"],
+      "marks": 5,
+      "source_section": "Section 3.1–3.3"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the Roman numeral system and list its main symbols.",
+      "answer": "The Roman numeral system is an ancient number system used by the Romans. It uses symbols such as I, V, X, L, C, D and M to represent numbers. Numbers are formed by combining these symbols according to specific rules.",
+      "answer_outline": ["Definition", "List of symbols", "Explanation"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the limitations of the Roman numeral system.",
+      "answer": "The Roman numeral system does not use place value and has no symbol for zero. Because of this, performing arithmetic operations such as addition and multiplication becomes difficult.",
+      "answer_outline": [
+        "Lack of zero",
+        "No place value",
+        "Difficulty in calculations"
+      ],
+      "key_concepts": ["Roman numerals"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the importance of the Hindu–Arabic number system.",
+      "answer": "The Hindu–Arabic number system uses digits from 0 to 9 and follows the place value system. It allows easy representation of large numbers and simplifies arithmetic operations.",
+      "answer_outline": ["Digits 0–9", "Place value", "Ease of calculations"],
+      "key_concepts": ["decimal system"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of base in a number system with an example.",
+      "answer": "The base of a number system is the number of unique digits used in that system. For example, the decimal system has base 10 because it uses digits 0–9.",
+      "answer_outline": ["Definition of base", "Example"],
+      "key_concepts": ["base", "number systems"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain one-to-one correspondence in early counting methods.",
+      "answer": "One-to-one correspondence means matching each object being counted with a symbol or object used for counting. This ensured accurate counting in early systems.",
+      "answer_outline": ["Definition", "Purpose"],
+      "key_concepts": ["counting systems"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Convert the number 48 into Roman numerals.",
+      "answer": "48 = XLVIII.",
+      "answer_outline": ["Break into tens and ones", "Apply Roman symbols"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Convert the Roman numeral XCIV into the Hindu–Arabic number system.",
+      "answer": "XCIV = 94.",
+      "answer_outline": ["Interpret symbols", "Calculate value"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how place value works in the decimal number system.",
+      "answer": "In the decimal system, the value of each digit depends on its position. Each position represents powers of 10 such as ones, tens, hundreds and thousands.",
+      "answer_outline": ["Definition of place value", "Example"],
+      "key_concepts": ["place value"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the role of zero in the decimal number system.",
+      "answer": "Zero acts as a placeholder in the decimal system. It helps distinguish numbers such as 205 and 25 and allows the representation of large numbers accurately.",
+      "answer_outline": ["Placeholder role", "Importance"],
+      "key_concepts": ["zero", "place value"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Write Roman numerals for the numbers 75 and 120.",
+      "answer": "75 = LXXV and 120 = CXX.",
+      "answer_outline": ["Break numbers", "Apply symbols"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain how ancient civilizations used tally marks for counting.",
+      "answer": "Tally marks were used by drawing a mark for each object counted. After every five marks, a crossing line was drawn to represent a group of five.",
+      "answer_outline": ["Explanation", "Grouping of five"],
+      "key_concepts": ["tally marks"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why the Hindu–Arabic number system is more efficient than Roman numerals.",
+      "answer": "The Hindu–Arabic system uses place value and the digit zero, which makes calculations easier. Roman numerals lack place value and are difficult for arithmetic operations.",
+      "answer_outline": [
+        "Place value",
+        "Presence of zero",
+        "Ease of calculations"
+      ],
+      "key_concepts": ["decimal system", "Roman numerals"],
+      "marks": 5,
+      "source_section": "Section 3.2–3.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the importance of number systems in mathematics.",
+      "answer": "Number systems allow us to represent numbers, perform calculations and solve mathematical problems efficiently.",
+      "answer_outline": ["Representation of numbers", "Use in calculations"],
+      "key_concepts": ["number systems"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Convert the Roman numeral CDXL into Hindu–Arabic numerals.",
+      "answer": "CDXL = 440.",
+      "answer_outline": ["Interpret symbols", "Compute value"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the advantages of using a positional number system.",
+      "answer": "A positional number system allows the value of digits to depend on their position. This simplifies writing large numbers and performing arithmetic operations.",
+      "answer_outline": ["Definition", "Advantages"],
+      "key_concepts": ["positional system"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why zero is an important discovery in mathematics.",
+      "answer": "Zero made the positional number system possible and allowed accurate representation of large numbers and complex calculations.",
+      "answer_outline": ["Role in place value", "Importance in calculations"],
+      "key_concepts": ["zero"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Write Roman numerals for the numbers 96 and 144.",
+      "answer": "96 = XCVI and 144 = CXLIV.",
+      "answer_outline": ["Break numbers", "Apply Roman symbols"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how counting methods developed with human civilization.",
+      "answer": "Humans first counted using physical objects such as stones and sticks. Later they developed tally marks and number symbols to record larger quantities.",
+      "answer_outline": ["Early counting", "Development of symbols"],
+      "key_concepts": ["counting systems"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain why Roman numerals do not include zero.",
+      "answer": "The Roman numeral system was developed before the concept of zero was discovered, so it does not include a symbol for zero.",
+      "answer_outline": ["Historical reason"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Convert the number 399 into Roman numerals.",
+      "answer": "399 = CCCXCIX.",
+      "answer_outline": ["Break into hundreds, tens and ones", "Apply symbols"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how the decimal system simplifies calculations.",
+      "answer": "The decimal system uses place value and the digit zero, allowing easy addition, subtraction, multiplication and division.",
+      "answer_outline": ["Place value system", "Use of digits"],
+      "key_concepts": ["decimal system"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the meaning of positional value with an example.",
+      "answer": "In positional systems, the value of a digit depends on its position. For example, in 345, the digit 3 represents 300.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["place value"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain why Roman numerals are still used today.",
+      "answer": "Roman numerals are used in clocks, book chapters, movie titles and historical references.",
+      "answer_outline": ["Examples of usage"],
+      "key_concepts": ["Roman numerals"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of number representation in mathematics.",
+      "answer": "Number representation allows us to record quantities, perform calculations and communicate mathematical ideas effectively.",
+      "answer_outline": ["Recording quantities", "Use in calculations"],
+      "key_concepts": ["number representation"],
+      "marks": 4,
+      "source_section": "Section 3.1"
+    }
+  ]
+}

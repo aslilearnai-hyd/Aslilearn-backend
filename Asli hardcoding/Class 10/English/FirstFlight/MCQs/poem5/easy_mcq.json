@@ -1,0 +1,148 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Poem – The Trees",
+  "generated_at": "2026-03-09T14:55:00",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is the poet of 'The Trees'?",
+      "options": {
+        "A": "Adrienne Rich",
+        "B": "Robin Klein",
+        "C": "John Berryman",
+        "D": "Carolyn Wells"
+      },
+      "correct_answers": ["A"],
+      "explanation": "Adrienne Rich wrote this poem, using nature as a metaphor for social change and liberation.",
+      "difficulty": "easy",
+      "source_section": "Author"
+    },
+    {
+      "question_number": 2,
+      "question": "In the poem, where are the trees moving to?",
+      "options": {
+        "A": "From the forest to the house",
+        "B": "From the house to the forest",
+        "C": "From the garden to the hill",
+        "D": "From the park to the street"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The trees, which have been kept indoors as decorative pieces, are moving out of the house to return to the empty forest.",
+      "difficulty": "easy",
+      "source_section": "Poem Content"
+    },
+    {
+      "question_number": 3,
+      "question": "What active struggle are the roots engaged in during the night?",
+      "options": {
+        "A": "Growing deeper into the soil",
+        "B": "Disengaging themselves from the cracks in the veranda floor",
+        "C": "Soaking up water from the pots",
+        "D": "Breaking the windows of the house"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The poet describes the roots working all night to free themselves from the confinement of the house's flooring.",
+      "difficulty": "easy",
+      "source_section": "Imagery"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the poet doing while the trees are making their escape?",
+      "options": {
+        "A": "Sleeping peacefully in her room",
+        "B": "Sitting inside writing long letters",
+        "C": "Helping the trees move outside",
+        "D": "Watching television"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The poet sits in her room with the doors open to the veranda, writing long letters while observing the silent transition.",
+      "difficulty": "easy",
+      "source_section": "Poem Content"
+    },
+    {
+      "question_number": 5,
+      "question": "The poet compares the movement of the 'long-cramped boughs' to:",
+      "options": {
+        "A": "Birds flying for the first time",
+        "B": "Newly discharged patients moving toward clinic doors",
+        "C": "Children running out of school",
+        "D": "Soldiers returning from war"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The simile compares the stiff, tired branches to patients who are dazed but eager to leave a hospital after a long stay.",
+      "difficulty": "easy",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 6,
+      "question": "How does the poet describe the moon at the end of the poem?",
+      "options": {
+        "A": "As a whole, shining lamp",
+        "B": "Broken like a mirror into many pieces",
+        "C": "Hidden behind dark clouds",
+        "D": "A silver coin in the sky"
+      },
+      "correct_answers": ["B"],
+      "explanation": "As the trees move into the forest, their tall branches (crowns) break up the sight of the moon, making it look like a shattered mirror.",
+      "difficulty": "easy",
+      "source_section": "Imagery/Symbolism"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of these sensory details does the poet use to describe the trees' presence?",
+      "options": {
+        "A": "The smell of leaves and lichen reaching the room",
+        "B": "The sound of glass breaking as the trees move",
+        "C": "The sight of the moon in the oak's crown",
+        "D": "All of the above"
+      },
+      "correct_answers": ["D"],
+      "explanation": "The poet uses olfactory (smell), auditory (sound), and visual (sight) imagery to make the scene feel real and immediate.",
+      "difficulty": "easy",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the primary theme of 'The Trees'?",
+      "options": {
+        "A": "The inevitable victory of nature over human confinement",
+        "B": "The danger of walking in a forest at night",
+        "C": "The beauty of indoor gardening",
+        "D": "How to plant an oak tree"
+      },
+      "correct_answers": ["A"],
+      "explanation": "The poem focuses on the trees (symbolizing women or any oppressed group) breaking free from domestic spaces to reclaim their natural place.",
+      "difficulty": "easy",
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 9,
+      "question": "What 'voice' or sound reaches into the poet's room like a smell?",
+      "options": {
+        "A": "The whispering of the trees",
+        "B": "The smell of leaves and lichen",
+        "C": "The sound of the wind",
+        "D": "The voices of people outside"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The poet mentions that the 'smell of leaves and lichen still reaches like a voice into the rooms,' showing how nature's presence is persistent.",
+      "difficulty": "easy",
+      "source_section": "Poem Content"
+    },
+    {
+      "question_number": 10,
+      "question": "In the poem, a forest without trees is a place where:",
+      "options": {
+        "A": "Birds cannot sit and insects cannot hide",
+        "B": "The sun cannot bury its feet in shadow",
+        "C": "No one can find any wood",
+        "D": "Both A and B"
+      },
+      "correct_answers": ["D"],
+      "explanation": "Rich describes an empty forest as an unnatural place where ecological cycles (birds, insects, shadows) are completely broken.",
+      "difficulty": "easy",
+      "source_section": "Poem Content"
+    }
+  ]
+}

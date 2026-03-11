@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter: Exploring Forces",
+  "difficulty": "Medium",
+  "source_pdf": "hecu105.pdf",
+  "short_notes": {
+    "key_points": [
+      "Force is a push or pull that can change the state of motion or shape of an object",
+      "Forces can cause an object to start moving, stop moving, or change direction",
+      "Balanced forces act in opposite directions with equal magnitude and do not change motion",
+      "Unbalanced forces cause objects to accelerate or change their motion",
+      "Friction is a contact force that opposes the motion between two surfaces in contact"
+    ],
+    "examples": [
+      "A football changes direction when kicked by a player",
+      "Two people pushing a box from opposite sides with equal force keep it stationary",
+      "A rolling ball gradually stops due to friction with the ground",
+      "A magnet pulling a piece of iron without touching it"
+    ],
+    "formulas": [
+      "Force effect → Change in speed, direction, or shape",
+      "Balanced forces → Net force = 0",
+      "Unbalanced forces → Net force ≠ 0"
+    ],
+    "exam_tips": [
+      "Understand the difference between balanced and unbalanced forces",
+      "Explain friction with practical examples",
+      "Use diagrams when describing forces acting on objects",
+      "Remember that friction always acts opposite to motion"
+    ]
+  }
+}

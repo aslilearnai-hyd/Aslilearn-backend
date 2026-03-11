@@ -1,0 +1,915 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Adolescence: Stage of Growth and Change",
+    "generated_at": "2026-03-06T23:56:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Critically analyze the feedback mechanism of the endocrine system. How does the pituitary gland maintain hormonal balance during puberty?",
+            "answer": "The endocrine system operates on a feedback mechanism where the concentration of hormones in the blood regulates further secretion. During puberty, the hypothalamus signals the pituitary gland to release Gonadotropins. These stimulate the testes or ovaries to produce sex hormones. Once the level of sex hormones reaches a certain threshold, a signal is sent back to the pituitary to reduce secretion, ensuring the body maintains a precise hormonal balance required for steady development.",
+            "answer_outline": [
+                "Definition of feedback mechanism",
+                "Role of hypothalamus and pituitary",
+                "Stimulation of gonads",
+                "Regulation via hormone concentration"
+            ],
+            "key_concepts": [
+                "feedback mechanism",
+                "gonadotropins",
+                "homeostasis"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the chromosomal basis of sex determination. Why is the probability of having a boy or a girl always 50%?",
+            "answer": "Human females possess two X chromosomes (XX), while males possess one X and one Y chromosome (XY). All gametes (eggs) produced by a female carry an X chromosome. However, males produce two types of gametes (sperm) in equal proportion: 50% carrying X and 50% carrying Y. Since fertilization is a random process, there is an equal chance of an X-sperm or a Y-sperm meeting the egg, resulting in a 1:1 ratio for sex determination.",
+            "answer_outline": [
+                "Genotype of males and females",
+                "Types of gametes produced",
+                "Random nature of fertilization",
+                "Mathematical probability (50/50)"
+            ],
+            "key_concepts": [
+                "sex chromosomes",
+                "gametes",
+                "probability"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the physiological changes in the uterine wall during the menstrual cycle. What is the role of hormones in this preparation?",
+            "answer": "Under the influence of Estrogen and Progesterone, the uterine wall (endometrium) undergoes cyclic changes. It thickens and becomes highly vascularized (rich in blood vessels) to provide a nutrient-rich environment for a potential zygote. If fertilization fails, the drop in hormone levels causes the tissue to break down and shed. This intricate preparation is essential for the support of early embryonic life.",
+            "answer_outline": [
+                "Endometrium thickening",
+                "Vascularization process",
+                "Hormonal triggers (Estrogen/Progesterone)",
+                "Shedding mechanism"
+            ],
+            "key_concepts": [
+                "endometrium",
+                "progesterone",
+                "vascularization"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare the endocrine and exocrine glands. Why are endocrine glands referred to as 'ductless glands'?",
+            "answer": "Exocrine glands (like sweat and salivary glands) release their secretions through specialized tubes called ducts to specific locations. In contrast, endocrine glands lack ducts. They secrete hormones directly into the interstitial fluid, which then enters the bloodstream to be transported throughout the body. Because they rely on the circulatory system for transport rather than physical tubes, they are termed ductless glands.",
+            "answer_outline": [
+                "Definition of exocrine glands",
+                "Definition of endocrine glands",
+                "Transport mechanism difference",
+                "Justification of 'ductless' term"
+            ],
+            "key_concepts": [
+                "ductless glands",
+                "exocrine",
+                "circulatory transport"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the biochemical role of Iodine in the metamorphosis of amphibians. What happens in iodine-deficient water?",
+            "answer": "In amphibians like frogs, the transition from an aquatic tadpole to a terrestrial adult (metamorphosis) is regulated by Thyroxine. The synthesis of Thyroxine by the thyroid gland is strictly dependent on the availability of Iodine. In iodine-deficient water, the thyroid cannot produce sufficient hormone, leading to a developmental arrest where the tadpole grows in size but fails to undergo the morphological changes needed to become a frog.",
+            "answer_outline": [
+                "Role of Thyroxine in amphibians",
+                "Iodine as a raw material",
+                "Developmental arrest concept",
+                "Consequences for the life cycle"
+            ],
+            "key_concepts": [
+                "metamorphosis",
+                "thyroxine synthesis",
+                "iodine deficiency"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Analyze the impact of 'Growth Hormone' imbalance. Distinguish between Gigantism and Dwarfism.",
+            "answer": "Growth Hormone (GH) is secreted by the anterior pituitary. If there is hyper-secretion (excess) during the growing years, it leads to Gigantism, characterized by abnormal height and bone overgrowth. Conversely, hypo-secretion (deficiency) during childhood results in Pituitary Dwarfism, where the individual remains significantly shorter than average despite normal mental development and body proportions.",
+            "answer_outline": [
+                "Source of GH",
+                "Hyper-secretion vs Hypo-secretion",
+                "Symptoms of Gigantism",
+                "Symptoms of Dwarfism"
+            ],
+            "key_concepts": [
+                "gigantism",
+                "dwarfism",
+                "hyper-secretion"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 7,
+            "question": "How do the Adrenal glands help the body maintain ionic balance and respond to emergencies?",
+            "answer": "Adrenal glands perform dual functions. The adrenal cortex produces hormones like Aldosterone that regulate the salt (ionic) and water balance in the blood. The adrenal medulla produces Adrenaline (epinephrine), which prepares the body for emergencies by increasing heart rate, blood pressure, and glucose levels. Together, they ensure the body can maintain internal stability while reacting to external threats.",
+            "answer_outline": [
+                "Adrenal cortex vs Medulla",
+                "Regulation of salts/minerals",
+                "Adrenaline and emergency response",
+                "Fight or flight mechanism"
+            ],
+            "key_concepts": [
+                "aldosterone",
+                "ionic balance",
+                "epinephrine"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Evaluate the statement: 'Adolescence is a period of transition where the brain has the greatest capacity for learning, but the individual is most vulnerable to social pressures.'",
+            "answer": "Neurologically, the adolescent brain undergoes significant 'pruning' and reorganization, making it highly adaptable and efficient for learning. However, the prefrontal cortex, responsible for decision-making, matures later than the emotional centers. This developmental gap creates a vulnerability where teenagers may prioritize peer approval or immediate rewards over long-term safety, making guidance and a supportive environment crucial.",
+            "answer_outline": [
+                "Brain adaptability and learning",
+                "Prefrontal cortex maturation delay",
+                "Emotional vs Rational centers",
+                "Susceptibility to peer pressure"
+            ],
+            "key_concepts": [
+                "prefrontal cortex",
+                "decision-making",
+                "neurological pruning"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of 'Target Sites' in hormonal communication. Why doesn't a hormone affect every cell it touches?",
+            "answer": "Hormones travel through the general circulation, contacting almost every cell. However, they only elicit a response in 'Target Cells' that possess specific protein receptors compatible with the hormone's molecular structure. This lock-and-key mechanism ensures that a hormone like Testosterone only triggers changes in tissues like hair follicles or muscles, rather than affecting unrelated organs like the liver or lungs.",
+            "answer_outline": [
+                "Hormonal transport via blood",
+                "Receptor specificity",
+                "Lock-and-key analogy",
+                "Localized response in a global system"
+            ],
+            "key_concepts": [
+                "receptors",
+                "molecular structure",
+                "specificity"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the relationship between Pancreatic function and Diabetes? Explain the role of Insulin.",
+            "answer": "The Pancreas acts as an endocrine gland by secreting Insulin into the blood. Insulin's primary role is to facilitate the uptake of glucose by cells, thereby lowering blood sugar levels. If the pancreas fails to produce sufficient insulin, glucose remains in the bloodstream, leading to Hyperglycemia (Diabetes). This condition disrupts energy production and can damage various organ systems over time.",
+            "answer_outline": [
+                "Pancreas as an endocrine organ",
+                "Insulin and glucose uptake",
+                "Definition of Hyperglycemia",
+                "Long-term impact of insulin deficiency"
+            ],
+            "key_concepts": [
+                "hyperglycemia",
+                "pancreas",
+                "glucose metabolism"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the biological significance of 'Menopause'. Why does it occur only in females?",
+            "answer": "Menopause is the cessation of the menstrual cycle due to the depletion of the primary follicles in the ovaries and a significant drop in estrogen production. It occurs only in females because they are born with a finite number of eggs (oocytes). Once these are exhausted or the ovaries become unresponsive to pituitary hormones, the reproductive phase ends, protecting the aging body from the physical rigors of pregnancy.",
+            "answer_outline": [
+                "Depletion of ovarian follicles",
+                "Drop in Estrogen levels",
+                "Finite vs Infinite gamete production",
+                "Biological protection of the mother"
+            ],
+            "key_concepts": [
+                "follicle depletion",
+                "oocytes",
+                "reproductive cessation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 12,
+            "question": "How does the 'Purity of Gametes' principle relate to sex determination in humans?",
+            "answer": "The principle of 'Purity of Gametes' states that a gamete carries only one member of a gene/chromosome pair. In sex determination, every egg (gamete) produced by a female is 'pure' for the X chromosome. A sperm (gamete) is 'pure' for either X or Y. The sex of the offspring depends entirely on which 'pure' sperm successfully fuses with the 'pure' egg, illustrating the random segregation of chromosomes during meiosis.",
+            "answer_outline": [
+                "Definition of gamete purity",
+                "Segregation of X and Y",
+                "Fertilization as a fusion of haploid cells",
+                "Restoration of diploid XY/XX"
+            ],
+            "key_concepts": [
+                "purity of gametes",
+                "meiosis",
+                "haploid vs diploid"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the interaction between the Pituitary and the Thyroid glands in maintaining basal metabolic rate.",
+            "answer": "The Pituitary gland secretes Thyroid Stimulating Hormone (TSH). TSH travels to the Thyroid gland and triggers the release of Thyroxine. Thyroxine then increases the rate of cellular respiration and metabolism. If Thyroxine levels are too high, they inhibit TSH production (negative feedback); if too low, the pituitary increases TSH, demonstrating a tightly regulated axis for energy management.",
+            "answer_outline": [
+                "Role of TSH",
+                "Thyroxine and cellular respiration",
+                "Negative feedback loop",
+                "Energy management"
+            ],
+            "key_concepts": [
+                "TSH",
+                "metabolic rate",
+                "negative feedback"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is the incidence of 'Anemia' higher among adolescent girls compared to boys? Discuss the role of diet.",
+            "answer": "Adolescent girls lose significant amounts of iron-rich blood monthly through menstruation. Simultaneously, the rapid growth of adolescence increases the demand for blood volume in both sexes. If the dietary intake of iron (found in green leafy vegetables, meat, and jaggery) is insufficient to compensate for the menstrual loss, hemoglobin levels drop, leading to anemia, characterized by fatigue and reduced immunity.",
+            "answer_outline": [
+                "Menstrual blood loss",
+                "Increased blood volume during growth",
+                "Hemoglobin and Iron connection",
+                "Dietary recommendations"
+            ],
+            "key_concepts": [
+                "anemia",
+                "iron deficiency",
+                "hemoglobin"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        },
+        {
+            "question_number": 15,
+            "question": "What are the socio-psychological implications of early vs. late puberty in adolescents?",
+            "answer": "Puberty timing can affect self-esteem and social interactions. Early-maturing boys may gain social status due to physical strength, but may face pressure to act older. Early-maturing girls might feel self-conscious or face unwanted attention. Conversely, late-maturing individuals may feel anxious or 'left behind.' Understanding that these variations are normal biological timings is essential for maintaining mental health.",
+            "answer_outline": [
+                "Impact on self-esteem",
+                "Peer group dynamics",
+                "Gender-specific challenges",
+                "Biological variance awareness"
+            ],
+            "key_concepts": [
+                "puberty timing",
+                "self-esteem",
+                "social status"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how the 'Fight or Flight' response is chemically coordinated in the body.",
+            "answer": "When the brain perceives danger, it signals the adrenal medulla to flood the bloodstream with Adrenaline. Adrenaline binds to receptors in the heart (increasing rate), the lungs (dilating airways), and the liver (converting glycogen to glucose). This rapid chemical coordination redirects oxygen and energy to the muscles, allowing the individual to either confront the threat or escape it.",
+            "answer_outline": [
+                "Brain perception of threat",
+                "Adrenaline release",
+                "Specific organ responses",
+                "Energy redirection"
+            ],
+            "key_concepts": [
+                "fight or flight",
+                "glycogen",
+                "epinephrine"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Analyze the impact of 'Endocrine Disruptors' found in the environment on adolescent development.",
+            "answer": "Environmental chemicals (like certain plastics or pesticides) can act as endocrine disruptors by mimicking or blocking natural hormones. During the sensitive period of adolescence, these can interfere with the signaling of Estrogen or Testosterone, potentially leading to precocious (early) puberty, reproductive disorders, or imbalances in the growth of secondary sexual characters.",
+            "answer_outline": [
+                "Definition of endocrine disruptors",
+                "Mechanism (mimicking/blocking)",
+                "Impact on sex hormones",
+                "Potential developmental disorders"
+            ],
+            "key_concepts": [
+                "endocrine disruptors",
+                "mimicry",
+                "precocious puberty"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the maturation of follicles in the ovaries. How many eggs are typically released during a female's reproductive life?",
+            "answer": "At puberty, under the influence of FSH (Follicle Stimulating Hormone), one primary follicle among thousands matures in an ovary. After approximately 14 days, the mature egg is released (ovulation). Since this happens once a month for roughly 35 years (from age 13 to 48), a female typically releases about 400 to 500 mature eggs during her reproductive life.",
+            "answer_outline": [
+                "Role of FSH",
+                "Follicle to Ovulation process",
+                "Calculation of reproductive years",
+                "Estimate of total eggs released"
+            ],
+            "key_concepts": [
+                "FSH",
+                "ovulation",
+                "follicle maturation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How does the 'Adam's Apple' correlate with the changing frequency of the voice in boys?",
+            "answer": "The Adam's Apple is the external manifestation of a significantly enlarged Larynx. As the larynx grows, the vocal cords within it also become longer and thicker. In physics, longer and thicker strings vibrate at a lower frequency. Therefore, the physical growth of the Adam's Apple directly results in the lower-pitched, deeper voice characteristic of adult males.",
+            "answer_outline": [
+                "Larynx and vocal cord growth",
+                "Correlation with Adam's Apple",
+                "Physics of sound (frequency)",
+                "Low pitch result"
+            ],
+            "key_concepts": [
+                "frequency",
+                "vocal cords",
+                "larynx growth"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss the 'Critical Period' of nutrition in adolescence and its impact on adult health.",
+            "answer": "Adolescence is a 'critical period' because it is the second-fastest growth phase in life. Deficiency in calcium during this time can lead to weak bones (osteoporosis) in later life, while inadequate protein can lead to stunted muscular development. Proper nutrition now 'programs' the body for metabolic health, bone density, and reproductive capacity in adulthood.",
+            "answer_outline": [
+                "Growth rate context",
+                "Calcium and bone density",
+                "Protein and muscular growth",
+                "Long-term health programming"
+            ],
+            "key_concepts": [
+                "critical period",
+                "bone density",
+                "nutritional programming"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the Pituitary gland located in the brain if its primary targets are often in the lower body?",
+            "answer": "The pituitary gland is located at the base of the brain (below the hypothalamus) to allow for direct neurological control over the endocrine system. The hypothalamus monitors the body's status via the nervous system and sends chemical signals to the pituitary. This brain-centered location acts as the command center, coordinating distant organs like the gonads through the bloodstream.",
+            "answer_outline": [
+                "Proximity to hypothalamus",
+                "Integration of Nervous and Endocrine systems",
+                "Centralized control concept",
+                "Efficient signal coordination"
+            ],
+            "key_concepts": [
+                "hypothalamus",
+                "coordination",
+                "command center"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Examine the role of 'Pheromones' vs. 'Hormones'. Are human adolescent changes influenced by external chemical signals?",
+            "answer": "Hormones are internal chemical messengers that act within the body. Pheromones are external signals released to influence the behavior or physiology of others of the same species. While hormones like Estrogen and Testosterone clearly drive the physical changes of adolescence, the role of pheromones in human puberty is still a subject of scientific research, though they are vital in many animals.",
+            "answer_outline": [
+                "Internal vs External signaling",
+                "Hormone definition",
+                "Pheromone definition",
+                "Comparison in human context"
+            ],
+            "key_concepts": [
+                "pheromones",
+                "internal messengers",
+                "biochemical signaling"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the 'Sebaceous Glands' are affected by Androgens during puberty.",
+            "answer": "Sebaceous glands possess receptors for androgens (male hormones present in both sexes). During puberty, rising androgen levels stimulate these glands to increase in size and produce more sebum (oil). If the sebum becomes trapped by dead skin cells, it creates an anaerobic environment where bacteria thrive, causing the inflammatory response known as acne.",
+            "answer_outline": [
+                "Androgen receptors in skin",
+                "Sebum production increase",
+                "Mechanism of pore blockage",
+                "Bacterial growth and inflammation"
+            ],
+            "key_concepts": [
+                "androgens",
+                "sebum",
+                "inflammatory response"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the 'Epiphyseal Plate' and how does it relate to the end of height growth?",
+            "answer": "The epiphyseal plate (or growth plate) is a layer of cartilage at the ends of long bones. Under the influence of growth hormone, new bone is added here. At the end of adolescence, high levels of sex hormones cause these plates to 'close' or ossify into solid bone. Once the plates are closed, no further longitudinal growth is possible, establishing the individual's final adult height.",
+            "answer_outline": [
+                "Definition of growth plate",
+                "Cartilage to bone transition",
+                "Role of sex hormones in closure",
+                "Finality of height"
+            ],
+            "key_concepts": [
+                "epiphyseal plate",
+                "ossification",
+                "longitudinal growth"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Critically evaluate the importance of 'Sleep' for hormonal regulation in teenagers.",
+            "answer": "Sleep is crucial for adolescents because the Pituitary gland releases the majority of 'Growth Hormone' during deep sleep cycles. Furthermore, sleep deprivation disrupts the balance of appetite-regulating hormones and can lead to elevated stress hormones like cortisol. Adequate sleep is therefore not just for rest, but is a fundamental requirement for proper physical growth and emotional stability.",
+            "answer_outline": [
+                "Nocturnal release of GH",
+                "Impact of sleep on metabolic hormones",
+                "Cortisol and stress regulation",
+                "Conclusion on growth and stability"
+            ],
+            "key_concepts": [
+                "nocturnal GH release",
+                "cortisol",
+                "deep sleep"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        }
+    ]
+}{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Adolescence: Stage of Growth and Change",
+    "generated_at": "2026-03-06T23:56:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Critically analyze the feedback mechanism of the endocrine system. How does the pituitary gland maintain hormonal balance during puberty?",
+            "answer": "The endocrine system operates on a feedback mechanism where the concentration of hormones in the blood regulates further secretion. During puberty, the hypothalamus signals the pituitary gland to release Gonadotropins. These stimulate the testes or ovaries to produce sex hormones. Once the level of sex hormones reaches a certain threshold, a signal is sent back to the pituitary to reduce secretion, ensuring the body maintains a precise hormonal balance required for steady development.",
+            "answer_outline": [
+                "Definition of feedback mechanism",
+                "Role of hypothalamus and pituitary",
+                "Stimulation of gonads",
+                "Regulation via hormone concentration"
+            ],
+            "key_concepts": [
+                "feedback mechanism",
+                "gonadotropins",
+                "homeostasis"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the chromosomal basis of sex determination. Why is the probability of having a boy or a girl always 50%?",
+            "answer": "Human females possess two X chromosomes (XX), while males possess one X and one Y chromosome (XY). All gametes (eggs) produced by a female carry an X chromosome. However, males produce two types of gametes (sperm) in equal proportion: 50% carrying X and 50% carrying Y. Since fertilization is a random process, there is an equal chance of an X-sperm or a Y-sperm meeting the egg, resulting in a 1:1 ratio for sex determination.",
+            "answer_outline": [
+                "Genotype of males and females",
+                "Types of gametes produced",
+                "Random nature of fertilization",
+                "Mathematical probability (50/50)"
+            ],
+            "key_concepts": [
+                "sex chromosomes",
+                "gametes",
+                "probability"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the physiological changes in the uterine wall during the menstrual cycle. What is the role of hormones in this preparation?",
+            "answer": "Under the influence of Estrogen and Progesterone, the uterine wall (endometrium) undergoes cyclic changes. It thickens and becomes highly vascularized (rich in blood vessels) to provide a nutrient-rich environment for a potential zygote. If fertilization fails, the drop in hormone levels causes the tissue to break down and shed. This intricate preparation is essential for the support of early embryonic life.",
+            "answer_outline": [
+                "Endometrium thickening",
+                "Vascularization process",
+                "Hormonal triggers (Estrogen/Progesterone)",
+                "Shedding mechanism"
+            ],
+            "key_concepts": [
+                "endometrium",
+                "progesterone",
+                "vascularization"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare the endocrine and exocrine glands. Why are endocrine glands referred to as 'ductless glands'?",
+            "answer": "Exocrine glands (like sweat and salivary glands) release their secretions through specialized tubes called ducts to specific locations. In contrast, endocrine glands lack ducts. They secrete hormones directly into the interstitial fluid, which then enters the bloodstream to be transported throughout the body. Because they rely on the circulatory system for transport rather than physical tubes, they are termed ductless glands.",
+            "answer_outline": [
+                "Definition of exocrine glands",
+                "Definition of endocrine glands",
+                "Transport mechanism difference",
+                "Justification of 'ductless' term"
+            ],
+            "key_concepts": [
+                "ductless glands",
+                "exocrine",
+                "circulatory transport"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the biochemical role of Iodine in the metamorphosis of amphibians. What happens in iodine-deficient water?",
+            "answer": "In amphibians like frogs, the transition from an aquatic tadpole to a terrestrial adult (metamorphosis) is regulated by Thyroxine. The synthesis of Thyroxine by the thyroid gland is strictly dependent on the availability of Iodine. In iodine-deficient water, the thyroid cannot produce sufficient hormone, leading to a developmental arrest where the tadpole grows in size but fails to undergo the morphological changes needed to become a frog.",
+            "answer_outline": [
+                "Role of Thyroxine in amphibians",
+                "Iodine as a raw material",
+                "Developmental arrest concept",
+                "Consequences for the life cycle"
+            ],
+            "key_concepts": [
+                "metamorphosis",
+                "thyroxine synthesis",
+                "iodine deficiency"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Analyze the impact of 'Growth Hormone' imbalance. Distinguish between Gigantism and Dwarfism.",
+            "answer": "Growth Hormone (GH) is secreted by the anterior pituitary. If there is hyper-secretion (excess) during the growing years, it leads to Gigantism, characterized by abnormal height and bone overgrowth. Conversely, hypo-secretion (deficiency) during childhood results in Pituitary Dwarfism, where the individual remains significantly shorter than average despite normal mental development and body proportions.",
+            "answer_outline": [
+                "Source of GH",
+                "Hyper-secretion vs Hypo-secretion",
+                "Symptoms of Gigantism",
+                "Symptoms of Dwarfism"
+            ],
+            "key_concepts": [
+                "gigantism",
+                "dwarfism",
+                "hyper-secretion"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 7,
+            "question": "How do the Adrenal glands help the body maintain ionic balance and respond to emergencies?",
+            "answer": "Adrenal glands perform dual functions. The adrenal cortex produces hormones like Aldosterone that regulate the salt (ionic) and water balance in the blood. The adrenal medulla produces Adrenaline (epinephrine), which prepares the body for emergencies by increasing heart rate, blood pressure, and glucose levels. Together, they ensure the body can maintain internal stability while reacting to external threats.",
+            "answer_outline": [
+                "Adrenal cortex vs Medulla",
+                "Regulation of salts/minerals",
+                "Adrenaline and emergency response",
+                "Fight or flight mechanism"
+            ],
+            "key_concepts": [
+                "aldosterone",
+                "ionic balance",
+                "epinephrine"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Evaluate the statement: 'Adolescence is a period of transition where the brain has the greatest capacity for learning, but the individual is most vulnerable to social pressures.'",
+            "answer": "Neurologically, the adolescent brain undergoes significant 'pruning' and reorganization, making it highly adaptable and efficient for learning. However, the prefrontal cortex, responsible for decision-making, matures later than the emotional centers. This developmental gap creates a vulnerability where teenagers may prioritize peer approval or immediate rewards over long-term safety, making guidance and a supportive environment crucial.",
+            "answer_outline": [
+                "Brain adaptability and learning",
+                "Prefrontal cortex maturation delay",
+                "Emotional vs Rational centers",
+                "Susceptibility to peer pressure"
+            ],
+            "key_concepts": [
+                "prefrontal cortex",
+                "decision-making",
+                "neurological pruning"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of 'Target Sites' in hormonal communication. Why doesn't a hormone affect every cell it touches?",
+            "answer": "Hormones travel through the general circulation, contacting almost every cell. However, they only elicit a response in 'Target Cells' that possess specific protein receptors compatible with the hormone's molecular structure. This lock-and-key mechanism ensures that a hormone like Testosterone only triggers changes in tissues like hair follicles or muscles, rather than affecting unrelated organs like the liver or lungs.",
+            "answer_outline": [
+                "Hormonal transport via blood",
+                "Receptor specificity",
+                "Lock-and-key analogy",
+                "Localized response in a global system"
+            ],
+            "key_concepts": [
+                "receptors",
+                "molecular structure",
+                "specificity"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the relationship between Pancreatic function and Diabetes? Explain the role of Insulin.",
+            "answer": "The Pancreas acts as an endocrine gland by secreting Insulin into the blood. Insulin's primary role is to facilitate the uptake of glucose by cells, thereby lowering blood sugar levels. If the pancreas fails to produce sufficient insulin, glucose remains in the bloodstream, leading to Hyperglycemia (Diabetes). This condition disrupts energy production and can damage various organ systems over time.",
+            "answer_outline": [
+                "Pancreas as an endocrine organ",
+                "Insulin and glucose uptake",
+                "Definition of Hyperglycemia",
+                "Long-term impact of insulin deficiency"
+            ],
+            "key_concepts": [
+                "hyperglycemia",
+                "pancreas",
+                "glucose metabolism"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the biological significance of 'Menopause'. Why does it occur only in females?",
+            "answer": "Menopause is the cessation of the menstrual cycle due to the depletion of the primary follicles in the ovaries and a significant drop in estrogen production. It occurs only in females because they are born with a finite number of eggs (oocytes). Once these are exhausted or the ovaries become unresponsive to pituitary hormones, the reproductive phase ends, protecting the aging body from the physical rigors of pregnancy.",
+            "answer_outline": [
+                "Depletion of ovarian follicles",
+                "Drop in Estrogen levels",
+                "Finite vs Infinite gamete production",
+                "Biological protection of the mother"
+            ],
+            "key_concepts": [
+                "follicle depletion",
+                "oocytes",
+                "reproductive cessation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 12,
+            "question": "How does the 'Purity of Gametes' principle relate to sex determination in humans?",
+            "answer": "The principle of 'Purity of Gametes' states that a gamete carries only one member of a gene/chromosome pair. In sex determination, every egg (gamete) produced by a female is 'pure' for the X chromosome. A sperm (gamete) is 'pure' for either X or Y. The sex of the offspring depends entirely on which 'pure' sperm successfully fuses with the 'pure' egg, illustrating the random segregation of chromosomes during meiosis.",
+            "answer_outline": [
+                "Definition of gamete purity",
+                "Segregation of X and Y",
+                "Fertilization as a fusion of haploid cells",
+                "Restoration of diploid XY/XX"
+            ],
+            "key_concepts": [
+                "purity of gametes",
+                "meiosis",
+                "haploid vs diploid"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the interaction between the Pituitary and the Thyroid glands in maintaining basal metabolic rate.",
+            "answer": "The Pituitary gland secretes Thyroid Stimulating Hormone (TSH). TSH travels to the Thyroid gland and triggers the release of Thyroxine. Thyroxine then increases the rate of cellular respiration and metabolism. If Thyroxine levels are too high, they inhibit TSH production (negative feedback); if too low, the pituitary increases TSH, demonstrating a tightly regulated axis for energy management.",
+            "answer_outline": [
+                "Role of TSH",
+                "Thyroxine and cellular respiration",
+                "Negative feedback loop",
+                "Energy management"
+            ],
+            "key_concepts": [
+                "TSH",
+                "metabolic rate",
+                "negative feedback"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is the incidence of 'Anemia' higher among adolescent girls compared to boys? Discuss the role of diet.",
+            "answer": "Adolescent girls lose significant amounts of iron-rich blood monthly through menstruation. Simultaneously, the rapid growth of adolescence increases the demand for blood volume in both sexes. If the dietary intake of iron (found in green leafy vegetables, meat, and jaggery) is insufficient to compensate for the menstrual loss, hemoglobin levels drop, leading to anemia, characterized by fatigue and reduced immunity.",
+            "answer_outline": [
+                "Menstrual blood loss",
+                "Increased blood volume during growth",
+                "Hemoglobin and Iron connection",
+                "Dietary recommendations"
+            ],
+            "key_concepts": [
+                "anemia",
+                "iron deficiency",
+                "hemoglobin"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        },
+        {
+            "question_number": 15,
+            "question": "What are the socio-psychological implications of early vs. late puberty in adolescents?",
+            "answer": "Puberty timing can affect self-esteem and social interactions. Early-maturing boys may gain social status due to physical strength, but may face pressure to act older. Early-maturing girls might feel self-conscious or face unwanted attention. Conversely, late-maturing individuals may feel anxious or 'left behind.' Understanding that these variations are normal biological timings is essential for maintaining mental health.",
+            "answer_outline": [
+                "Impact on self-esteem",
+                "Peer group dynamics",
+                "Gender-specific challenges",
+                "Biological variance awareness"
+            ],
+            "key_concepts": [
+                "puberty timing",
+                "self-esteem",
+                "social status"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how the 'Fight or Flight' response is chemically coordinated in the body.",
+            "answer": "When the brain perceives danger, it signals the adrenal medulla to flood the bloodstream with Adrenaline. Adrenaline binds to receptors in the heart (increasing rate), the lungs (dilating airways), and the liver (converting glycogen to glucose). This rapid chemical coordination redirects oxygen and energy to the muscles, allowing the individual to either confront the threat or escape it.",
+            "answer_outline": [
+                "Brain perception of threat",
+                "Adrenaline release",
+                "Specific organ responses",
+                "Energy redirection"
+            ],
+            "key_concepts": [
+                "fight or flight",
+                "glycogen",
+                "epinephrine"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Analyze the impact of 'Endocrine Disruptors' found in the environment on adolescent development.",
+            "answer": "Environmental chemicals (like certain plastics or pesticides) can act as endocrine disruptors by mimicking or blocking natural hormones. During the sensitive period of adolescence, these can interfere with the signaling of Estrogen or Testosterone, potentially leading to precocious (early) puberty, reproductive disorders, or imbalances in the growth of secondary sexual characters.",
+            "answer_outline": [
+                "Definition of endocrine disruptors",
+                "Mechanism (mimicking/blocking)",
+                "Impact on sex hormones",
+                "Potential developmental disorders"
+            ],
+            "key_concepts": [
+                "endocrine disruptors",
+                "mimicry",
+                "precocious puberty"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the maturation of follicles in the ovaries. How many eggs are typically released during a female's reproductive life?",
+            "answer": "At puberty, under the influence of FSH (Follicle Stimulating Hormone), one primary follicle among thousands matures in an ovary. After approximately 14 days, the mature egg is released (ovulation). Since this happens once a month for roughly 35 years (from age 13 to 48), a female typically releases about 400 to 500 mature eggs during her reproductive life.",
+            "answer_outline": [
+                "Role of FSH",
+                "Follicle to Ovulation process",
+                "Calculation of reproductive years",
+                "Estimate of total eggs released"
+            ],
+            "key_concepts": [
+                "FSH",
+                "ovulation",
+                "follicle maturation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How does the 'Adam's Apple' correlate with the changing frequency of the voice in boys?",
+            "answer": "The Adam's Apple is the external manifestation of a significantly enlarged Larynx. As the larynx grows, the vocal cords within it also become longer and thicker. In physics, longer and thicker strings vibrate at a lower frequency. Therefore, the physical growth of the Adam's Apple directly results in the lower-pitched, deeper voice characteristic of adult males.",
+            "answer_outline": [
+                "Larynx and vocal cord growth",
+                "Correlation with Adam's Apple",
+                "Physics of sound (frequency)",
+                "Low pitch result"
+            ],
+            "key_concepts": [
+                "frequency",
+                "vocal cords",
+                "larynx growth"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss the 'Critical Period' of nutrition in adolescence and its impact on adult health.",
+            "answer": "Adolescence is a 'critical period' because it is the second-fastest growth phase in life. Deficiency in calcium during this time can lead to weak bones (osteoporosis) in later life, while inadequate protein can lead to stunted muscular development. Proper nutrition now 'programs' the body for metabolic health, bone density, and reproductive capacity in adulthood.",
+            "answer_outline": [
+                "Growth rate context",
+                "Calcium and bone density",
+                "Protein and muscular growth",
+                "Long-term health programming"
+            ],
+            "key_concepts": [
+                "critical period",
+                "bone density",
+                "nutritional programming"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the Pituitary gland located in the brain if its primary targets are often in the lower body?",
+            "answer": "The pituitary gland is located at the base of the brain (below the hypothalamus) to allow for direct neurological control over the endocrine system. The hypothalamus monitors the body's status via the nervous system and sends chemical signals to the pituitary. This brain-centered location acts as the command center, coordinating distant organs like the gonads through the bloodstream.",
+            "answer_outline": [
+                "Proximity to hypothalamus",
+                "Integration of Nervous and Endocrine systems",
+                "Centralized control concept",
+                "Efficient signal coordination"
+            ],
+            "key_concepts": [
+                "hypothalamus",
+                "coordination",
+                "command center"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Examine the role of 'Pheromones' vs. 'Hormones'. Are human adolescent changes influenced by external chemical signals?",
+            "answer": "Hormones are internal chemical messengers that act within the body. Pheromones are external signals released to influence the behavior or physiology of others of the same species. While hormones like Estrogen and Testosterone clearly drive the physical changes of adolescence, the role of pheromones in human puberty is still a subject of scientific research, though they are vital in many animals.",
+            "answer_outline": [
+                "Internal vs External signaling",
+                "Hormone definition",
+                "Pheromone definition",
+                "Comparison in human context"
+            ],
+            "key_concepts": [
+                "pheromones",
+                "internal messengers",
+                "biochemical signaling"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the 'Sebaceous Glands' are affected by Androgens during puberty.",
+            "answer": "Sebaceous glands possess receptors for androgens (male hormones present in both sexes). During puberty, rising androgen levels stimulate these glands to increase in size and produce more sebum (oil). If the sebum becomes trapped by dead skin cells, it creates an anaerobic environment where bacteria thrive, causing the inflammatory response known as acne.",
+            "answer_outline": [
+                "Androgen receptors in skin",
+                "Sebum production increase",
+                "Mechanism of pore blockage",
+                "Bacterial growth and inflammation"
+            ],
+            "key_concepts": [
+                "androgens",
+                "sebum",
+                "inflammatory response"
+            ],
+            "marks": 4,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the 'Epiphyseal Plate' and how does it relate to the end of height growth?",
+            "answer": "The epiphyseal plate (or growth plate) is a layer of cartilage at the ends of long bones. Under the influence of growth hormone, new bone is added here. At the end of adolescence, high levels of sex hormones cause these plates to 'close' or ossify into solid bone. Once the plates are closed, no further longitudinal growth is possible, establishing the individual's final adult height.",
+            "answer_outline": [
+                "Definition of growth plate",
+                "Cartilage to bone transition",
+                "Role of sex hormones in closure",
+                "Finality of height"
+            ],
+            "key_concepts": [
+                "epiphyseal plate",
+                "ossification",
+                "longitudinal growth"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Critically evaluate the importance of 'Sleep' for hormonal regulation in teenagers.",
+            "answer": "Sleep is crucial for adolescents because the Pituitary gland releases the majority of 'Growth Hormone' during deep sleep cycles. Furthermore, sleep deprivation disrupts the balance of appetite-regulating hormones and can lead to elevated stress hormones like cortisol. Adequate sleep is therefore not just for rest, but is a fundamental requirement for proper physical growth and emotional stability.",
+            "answer_outline": [
+                "Nocturnal release of GH",
+                "Impact of sleep on metabolic hormones",
+                "Cortisol and stress regulation",
+                "Conclusion on growth and stability"
+            ],
+            "key_concepts": [
+                "nocturnal GH release",
+                "cortisol",
+                "deep sleep"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.7"
+        }
+    ]
+}

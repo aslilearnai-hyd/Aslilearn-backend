@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Human Resources",
+  "generated_at": "2026-03-06T18:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why human resources are considered the most valuable resource.",
+      "answer": "Human resources are considered the most valuable resource because people use their knowledge, skills, and technology to develop and utilize natural resources effectively.",
+      "key_concepts": ["human resources importance"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "How do human skills transform natural resources into useful products?",
+      "answer": "Human skills help in processing, manufacturing, and managing natural resources to create useful goods and services.",
+      "key_concepts": ["human skills"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is population distribution uneven across the world?",
+      "answer": "Population distribution is uneven because of differences in climate, availability of water, fertile land, and economic opportunities.",
+      "key_concepts": ["population distribution"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how climate influences human settlement.",
+      "answer": "Moderate climates attract people for settlement, while extreme climates such as deserts or polar regions discourage large populations.",
+      "key_concepts": ["climate impact"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do fertile plains support large populations?",
+      "answer": "Fertile plains support agriculture and provide food resources, which attract large populations.",
+      "key_concepts": ["fertile land"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the importance of population density in planning development.",
+      "answer": "Population density helps governments understand pressure on land and plan infrastructure such as housing, schools, and transportation.",
+      "key_concepts": ["population density planning"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "How does migration affect population distribution?",
+      "answer": "Migration redistributes population by increasing population in some regions and decreasing it in others.",
+      "key_concepts": ["migration"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do people migrate from rural areas to urban areas?",
+      "answer": "People migrate from rural areas to urban areas for better employment opportunities and improved living conditions.",
+      "key_concepts": ["urban migration"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 9,
+      "question": "How do push factors influence migration?",
+      "answer": "Push factors such as unemployment, poverty, or natural disasters force people to leave their homes and migrate elsewhere.",
+      "key_concepts": ["push factors"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "How do pull factors influence migration?",
+      "answer": "Pull factors such as better jobs, education, and healthcare attract people to a new place.",
+      "key_concepts": ["pull factors"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is population composition important for governments?",
+      "answer": "Population composition helps governments understand age groups, literacy levels, and workforce distribution for better planning.",
+      "key_concepts": ["population composition"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "What does age structure reveal about a country’s population?",
+      "answer": "Age structure reveals the proportion of children, working adults, and elderly people in a population.",
+      "key_concepts": ["age structure"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is literacy an important indicator of development?",
+      "answer": "Literacy improves knowledge, awareness, and employment opportunities, contributing to social and economic development.",
+      "key_concepts": ["literacy"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "What information does a population pyramid provide?",
+      "answer": "A population pyramid provides information about the age and gender distribution of a population.",
+      "key_concepts": ["population pyramid"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Why is a large young population considered an advantage?",
+      "answer": "A large young population can contribute to economic growth if provided with education and employment opportunities.",
+      "key_concepts": ["young population"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the concept of human resource development.",
+      "answer": "Human resource development involves improving people’s skills, education, and health to increase productivity.",
+      "key_concepts": ["human resource development"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "How does education improve economic productivity?",
+      "answer": "Education increases knowledge and skills, enabling people to work efficiently and innovate.",
+      "key_concepts": ["education impact"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "How does healthcare contribute to national development?",
+      "answer": "Healthcare ensures a healthy workforce capable of working productively and supporting economic growth.",
+      "key_concepts": ["healthcare"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 19,
+      "question": "Why are skilled workers important for modern economies?",
+      "answer": "Skilled workers improve productivity, technological innovation, and industrial development.",
+      "key_concepts": ["skilled workforce"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "How does industrial development affect population patterns?",
+      "answer": "Industrial development attracts workers and increases population in urban areas.",
+      "key_concepts": ["industrial development"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 21,
+      "question": "How does transportation influence settlement patterns?",
+      "answer": "Transportation improves connectivity and encourages settlement in accessible regions.",
+      "key_concepts": ["transportation"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 22,
+      "question": "Why is population data essential for national planning?",
+      "answer": "Population data helps governments plan infrastructure such as schools, hospitals, housing, and employment programs.",
+      "key_concepts": ["population data"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 23,
+      "question": "How does human resource quality influence economic development?",
+      "answer": "A well-educated and healthy population improves productivity and economic progress.",
+      "key_concepts": ["economic development"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 24,
+      "question": "Why do developed countries focus on human resource development?",
+      "answer": "Developed countries invest in education and healthcare to create a skilled and productive workforce.",
+      "key_concepts": ["human development"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall role of human resources in shaping a nation’s future.",
+      "answer": "Human resources drive innovation, productivity, and economic growth, making them essential for a country's long-term development.",
+      "key_concepts": ["national development"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

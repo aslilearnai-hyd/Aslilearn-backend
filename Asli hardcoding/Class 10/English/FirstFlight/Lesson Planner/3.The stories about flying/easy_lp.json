@@ -1,0 +1,136 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "The Story of Flying",
+    "lesson_level": "Easy",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the story of the Wright brothers and the invention of the aeroplane",
+        "Identify key events leading to the first successful flight",
+        "Recognize qualities like determination, experimentation, and teamwork",
+        "Develop reading comprehension and summarizing skills",
+        "Appreciate the importance of persistence and innovation"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Wright Brothers",
+            "topics_covered": [
+                "Who the Wright brothers were",
+                "Early interests and experiments with flying",
+                "Setting: Ohio, USA in the early 1900s"
+            ],
+            "teaching_strategy": [
+                "Storytelling to introduce the Wright brothers",
+                "Show images of the Wright brothers and early gliders"
+            ],
+            "student_activities": [
+                "Locate Ohio, USA on the map",
+                "Discuss what children today invent or experiment with"
+            ],
+            "assessment": [
+                "Oral Q&A on who the Wright brothers were",
+                "Short written note on their early interests"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Early Experiments and Challenges",
+            "topics_covered": [
+                "First gliders and experiments with flight",
+                "Problems faced: balance, wind, and control",
+                "Lessons learned from failures"
+            ],
+            "teaching_strategy": [
+                "Explain cause and effect of trial and error",
+                "Show simple diagrams of early gliders"
+            ],
+            "student_activities": [
+                "Draw a simple diagram of a glider",
+                "Discuss how failure helped the brothers improve"
+            ],
+            "assessment": [
+                "Ask students what challenges the brothers faced",
+                "Oral Q&A on lessons learned from experiments"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "First Successful Flight",
+            "topics_covered": [
+                "December 17, 1903: first powered flight",
+                "The aeroplane and how it worked",
+                "Significance of the first flight"
+            ],
+            "teaching_strategy": [
+                "Narrate the flight as a story",
+                "Use images and simple explanation of the plane"
+            ],
+            "student_activities": [
+                "Create a timeline of key events leading to the first flight",
+                "Discuss what makes a flight successful"
+            ],
+            "assessment": [
+                "Oral questions on date, place, and achievement",
+                "Short written note summarizing the first flight"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Qualities of the Wright Brothers",
+            "topics_covered": [
+                "Determination, patience, and teamwork",
+                "Importance of experimentation and observation",
+                "Moral lesson: persistence leads to success"
+            ],
+            "teaching_strategy": [
+                "Discussion of character traits with examples",
+                "Explain importance of learning from mistakes"
+            ],
+            "student_activities": [
+                "List three qualities of the Wright brothers",
+                "Discuss how students can apply these qualities in daily life"
+            ],
+            "assessment": [
+                "Oral Q&A on qualities and lessons",
+                "Short written task on the moral of the story"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Revision and Reflection",
+            "topics_covered": [
+                "Summary of events and achievements",
+                "Key dates and places",
+                "Moral lessons and personal reflections"
+            ],
+            "teaching_strategy": [
+                "Use timeline and flashcards for revision",
+                "Encourage students to share reflections"
+            ],
+            "student_activities": [
+                "Create a timeline chart of events",
+                "Write a few lines on what they learned from the Wright brothers"
+            ],
+            "assessment": [
+                "Oral quiz on major events and dates",
+                "Class discussion on moral lessons and innovation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map of USA",
+        "Images of Wright brothers and their gliders",
+        "Timeline chart of experiments and first flight",
+        "Flashcards of key events and achievements"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Quick quizzes",
+        "Class participation",
+        "Worksheet activities",
+        "Group discussion"
+    ],
+    "teacher_tip": "Use storytelling and visuals to make the events engaging. Focus on qualities like determination, teamwork, and learning from failure. Encourage students to relate the story to their own experiences of persistence and curiosity."
+}

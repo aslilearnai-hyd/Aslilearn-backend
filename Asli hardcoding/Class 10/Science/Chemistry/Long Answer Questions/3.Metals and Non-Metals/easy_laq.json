@@ -1,0 +1,182 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Metals and Non-Metals",
+    "generated_at": "2026-03-10T23:48:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define the terms 'Malleability' and 'Ductility'. Give one example of a metal that possesses both properties.",
+            "answer": "Malleability is the property by which metals can be beaten into thin sheets. Ductility is the property by which metals can be drawn into thin wires. Gold is an excellent example of a metal that is both highly malleable and ductile.",
+            "answer_outline": [
+                "Definition of Malleability",
+                "Definition of Ductility",
+                "Example (Gold/Silver)"
+            ],
+            "key_concepts": [
+                "malleability",
+                "ductility",
+                "physical properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the general physical properties of metals? List any four.",
+            "answer": "Four general physical properties of metals are: 1. They are generally solid at room temperature. 2. They are lustrous (shiny). 3. They are good conductors of heat and electricity. 4. They are sonorous (produce a ringing sound when struck).",
+            "answer_outline": [
+                "State of matter",
+                "Lustre",
+                "Conductivity",
+                "Sonority"
+            ],
+            "key_concepts": [
+                "metals",
+                "lustre",
+                "conductivity",
+                "sonorous"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name one metal and one non-metal that exist as liquids at room temperature.",
+            "answer": "Mercury is the metal that exists as a liquid at room temperature. Bromine is the non-metal that exists as a liquid at room temperature.",
+            "answer_outline": [
+                "Liquid metal identification",
+                "Liquid non-metal identification"
+            ],
+            "key_concepts": [
+                "mercury",
+                "bromine",
+                "physical state",
+                "exceptions"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.1.1 & 3.1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What happens when metals react with oxygen? Give a balanced chemical equation for the reaction of Copper with oxygen.",
+            "answer": "When metals react with oxygen, they form metal oxides. These oxides are generally basic in nature. For example, when copper is heated in air, it reacts with oxygen to form black copper(II) oxide: 2Cu + O2 → 2CuO.",
+            "answer_outline": [
+                "Formation of metal oxides",
+                "Nature of metal oxides",
+                "Balanced equation for Copper"
+            ],
+            "key_concepts": [
+                "oxidation",
+                "metal oxide",
+                "copper oxide"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain 'Amphoteric Oxides' with two examples.",
+            "answer": "Amphoteric oxides are metal oxides which show both acidic as well as basic behavior. They react with both acids and bases to produce salt and water. Examples: Aluminium oxide (Al2O3) and Zinc oxide (ZnO).",
+            "answer_outline": [
+                "Definition of amphoteric",
+                "Reaction with both acids and bases",
+                "Two examples"
+            ],
+            "key_concepts": [
+                "amphoteric oxides",
+                "aluminium oxide",
+                "zinc oxide"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are Sodium and Potassium stored under kerosene oil?",
+            "answer": "Sodium and Potassium are highly reactive metals. They react so vigorously with the oxygen and moisture in the air that they can catch fire even at room temperature. To prevent accidental fires and protect them, they are kept immersed in kerosene oil.",
+            "answer_outline": [
+                "High reactivity of Alkali metals",
+                "Reaction with air/moisture",
+                "Safety and prevention of fire"
+            ],
+            "key_concepts": [
+                "sodium",
+                "potassium",
+                "reactivity",
+                "kerosene"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is 'Aqua Regia'? What is its special property?",
+            "answer": "Aqua Regia is a freshly prepared mixture of concentrated hydrochloric acid and concentrated nitric acid in the ratio of 3:1. Its special property is that it can dissolve noble metals like Gold and Platinum, even though neither acid can do so alone.",
+            "answer_outline": [
+                "Composition (HCl and HNO3)",
+                "Ratio (3:1)",
+                "Ability to dissolve Gold/Platinum"
+            ],
+            "key_concepts": [
+                "aqua regia",
+                "noble metals",
+                "dissolution"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "List three general properties of Ionic Compounds.",
+            "answer": "1. They are generally hard solids due to strong force of attraction between ions. 2. They have high melting and boiling points. 3. They conduct electricity when dissolved in water or in molten state, but not in solid state.",
+            "answer_outline": [
+                "Physical nature",
+                "Melting/Boiling points",
+                "Electrical conductivity"
+            ],
+            "key_concepts": [
+                "ionic compounds",
+                "melting point",
+                "conductivity"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Define 'Alloys' and give two examples along with their constituents.",
+            "answer": "An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal. Examples: 1. Brass (Copper and Zinc). 2. Bronze (Copper and Tin).",
+            "answer_outline": [
+                "Definition of alloy",
+                "Example 1: Brass",
+                "Example 2: Bronze"
+            ],
+            "key_concepts": [
+                "alloy",
+                "brass",
+                "bronze",
+                "homogeneous mixture"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'Galvanization'?",
+            "answer": "Galvanization is a method of protecting steel and iron from rusting by coating them with a thin layer of Zinc. Even if the zinc coating is scratched, the iron remains protected.",
+            "answer_outline": [
+                "Definition",
+                "Metal used (Zinc)",
+                "Purpose (Rust prevention)"
+            ],
+            "key_concepts": [
+                "galvanization",
+                "zinc coating",
+                "rust prevention"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

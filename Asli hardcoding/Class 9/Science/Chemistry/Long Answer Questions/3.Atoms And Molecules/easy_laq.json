@@ -1,0 +1,431 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T19:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State and explain the 'Law of Conservation of Mass' with a simple example.",
+            "answer": "The Law of Conservation of Mass states that mass can neither be created nor destroyed in a chemical reaction. This means the total mass of the reactants before the reaction is always equal to the total mass of the products after the reaction. For example, if 100g of mercuric oxide is heated, it decomposes to give 92.6g of mercury and 7.4g of oxygen ($92.6 + 7.4 = 100g$).",
+            "answer_outline": [
+                "Statement of the law",
+                "Total mass of reactants = Total mass of products",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "mass conservation",
+                "reactants",
+                "products"
+            ],
+            "marks": 5,
+            "source_section": "3.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define the 'Law of Constant Proportions' and give the example of water.",
+            "answer": "The Law of Constant Proportions states that in a chemical substance, the elements are always present in definite proportions by mass. For example, in water ($H_2O$), the ratio of the mass of hydrogen to the mass of oxygen is always 1:8, regardless of the source of the water. If 9g of water is decomposed, 1g of hydrogen and 8g of oxygen are always obtained.",
+            "answer_outline": [
+                "Statement of the law",
+                "Fixed ratio by mass",
+                "Water ($H_2O$) example"
+            ],
+            "key_concepts": [
+                "constant proportions",
+                "mass ratio",
+                "definite proportions"
+            ],
+            "marks": 5,
+            "source_section": "3.1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "List four major postulates of Dalton's Atomic Theory.",
+            "answer": "1. All matter is made of very tiny particles called atoms. 2. Atoms are indivisible particles, which cannot be created or destroyed in a chemical reaction. 3. Atoms of a given element are identical in mass and chemical properties. 4. Atoms of different elements have different masses and chemical properties.",
+            "answer_outline": [
+                "Indivisibility of atoms",
+                "Matter composition",
+                "Identical vs different elements"
+            ],
+            "key_concepts": [
+                "Dalton's theory",
+                "postulates",
+                "indivisible"
+            ],
+            "marks": 4,
+            "source_section": "3.1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What is an atom? How small are atoms?",
+            "answer": "An atom is the smallest particle of an element that may or may not exist independently but takes part in a chemical reaction. Atoms are extremely small, much smaller than anything we can imagine. Their size is measured in nanometers ($10^{-9}$ m). The atomic radius of a hydrogen atom is about $10^{-10}$ m.",
+            "answer_outline": [
+                "Definition of atom",
+                "Scale of size",
+                "Nanometer unit"
+            ],
+            "key_concepts": [
+                "atom",
+                "nanometer",
+                "atomic radius"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how symbols of elements are derived according to IUPAC.",
+            "answer": "IUPAC (International Union of Pure and Applied Chemistry) approves names of elements. Many symbols are the first one or two letters of the element's name in English (e.g., Hydrogen is H, Aluminum is Al). The first letter is always written as a capital letter and the second as a small letter. Some symbols are taken from names in Greek, Latin, or German (e.g., Iron is Fe from Ferrum, Sodium is Na from Natrium).",
+            "answer_outline": [
+                "Role of IUPAC",
+                "Rules for capitalization",
+                "Latin/Greek origins"
+            ],
+            "key_concepts": [
+                "IUPAC",
+                "chemical symbols",
+                "naming rules"
+            ],
+            "marks": 5,
+            "source_section": "3.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Define 'Atomic Mass Unit' (u). Why is Carbon-12 used as a reference?",
+            "answer": "One atomic mass unit is a mass unit equal to exactly one-twelfth ($1/12^{th}$) the mass of one atom of carbon-12. Carbon-12 was chosen as the standard reference because it is a stable isotope and allows the relative atomic masses of most elements to be expressed as whole numbers or near-whole numbers.",
+            "answer_outline": [
+                "Definition of 'u'",
+                "1/12th Carbon-12 mass",
+                "Reason for C-12 selection"
+            ],
+            "key_concepts": [
+                "atomic mass unit",
+                "Carbon-12",
+                "standard reference"
+            ],
+            "marks": 5,
+            "source_section": "3.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a molecule? Differentiate between molecules of elements and molecules of compounds.",
+            "answer": "A molecule is a group of two or more atoms that are chemically bonded together. Molecules of elements contain atoms of the same type (e.g., $O_2, P_4$). Molecules of compounds contain atoms of different elements combined in fixed proportions (e.g., $H_2O, CO_2$).",
+            "answer_outline": [
+                "Definition of molecule",
+                "Same atoms vs different atoms",
+                "Examples"
+            ],
+            "key_concepts": [
+                "molecule",
+                "element molecule",
+                "compound molecule"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Define 'Atomicity' and give examples of monoatomic, diatomic, and polyatomic molecules.",
+            "answer": "Atomicity is the number of atoms constituting a molecule. 1. Monoatomic: One atom (e.g., Argon Ar, Helium He). 2. Diatomic: Two atoms (e.g., Oxygen $O_2$, Nitrogen $N_2$). 3. Polyatomic: More than two atoms (e.g., Phosphorus $P_4$, Sulphur $S_8$).",
+            "answer_outline": [
+                "Definition of atomicity",
+                "Categories with examples"
+            ],
+            "key_concepts": [
+                "atomicity",
+                "monoatomic",
+                "diatomic",
+                "polyatomic"
+            ],
+            "marks": 5,
+            "source_section": "3.3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an ion? Differentiate between a cation and an anion.",
+            "answer": "An ion is a charged particle formed by atoms losing or gaining electrons. A negatively charged ion is called an 'anion' (e.g., $Cl^-$), and a positively charged ion is called a 'cation' (e.g., $Na^+$). Ions can be a single charged atom or a group of atoms (polyatomic) carrying a net charge.",
+            "answer_outline": [
+                "Definition of ion",
+                "Anion vs Cation",
+                "Charge type"
+            ],
+            "key_concepts": [
+                "ion",
+                "anion",
+                "cation"
+            ],
+            "marks": 4,
+            "source_section": "3.3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a polyatomic ion? Give two examples.",
+            "answer": "A polyatomic ion is a group of atoms that carries a net charge and behaves as a single unit in chemical reactions. Examples include the Ammonium ion ($NH_4^+$) and the Carbonate ion ($CO_3^{2-}$).",
+            "answer_outline": [
+                "Definition",
+                "Group of atoms carrying charge",
+                "Examples with formulas"
+            ],
+            "key_concepts": [
+                "polyatomic ion",
+                "ammonium",
+                "carbonate"
+            ],
+            "marks": 4,
+            "source_section": "3.3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Define 'Valency' and its role in writing chemical formulas.",
+            "answer": "Valency is the combining capacity of an element. It represents the number of electrons an atom needs to lose, gain, or share to reach a stable state. In writing chemical formulas, valencies of the different atoms are 'crossed over' to determine the number of atoms of each element required to balance the charge.",
+            "answer_outline": [
+                "Definition",
+                "Combining capacity",
+                "Criss-cross method application"
+            ],
+            "key_concepts": [
+                "valency",
+                "combining capacity",
+                "criss-cross method"
+            ],
+            "marks": 4,
+            "source_section": "3.4.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the rules for writing a chemical formula.",
+            "answer": "1. The valencies or charges on the ion must balance. 2. When a compound consists of a metal and a non-metal, the name or symbol of the metal is written first (e.g., $NaCl$, $CaO$). 3. In compounds formed with polyatomic ions, the ion is enclosed in a bracket before writing the number to indicate the ratio (e.g., $Mg(OH)_2$).",
+            "answer_outline": [
+                "Charge balance",
+                "Metal vs non-metal position",
+                "Use of brackets for polyatomic ions"
+            ],
+            "key_concepts": [
+                "chemical formula",
+                "balancing",
+                "naming conventions"
+            ],
+            "marks": 5,
+            "source_section": "3.4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Show the steps to write the formula of Aluminum Oxide.",
+            "answer": "1. Write the symbols of the elements: Al and O. 2. Write their valencies below them: Al has 3+ and O has 2-. 3. Criss-cross the valencies. The 2 from oxygen becomes the subscript for aluminum, and the 3 from aluminum becomes the subscript for oxygen. Formula: $Al_2O_3$.",
+            "answer_outline": [
+                "Step 1: Symbols",
+                "Step 2: Valencies",
+                "Step 3: Criss-cross result"
+            ],
+            "key_concepts": [
+                "formula writing",
+                "aluminum oxide",
+                "criss-cross"
+            ],
+            "marks": 4,
+            "source_section": "3.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is 'Molecular Mass'? Calculate the molecular mass of water ($H_2O$).",
+            "answer": "Molecular mass is the sum of the atomic masses of all the atoms in a molecule of the substance. For water ($H_2O$): Atomic mass of H = 1u, Atomic mass of O = 16u. Molecular mass = $(2 \times 1) + (1 \times 16) = 2 + 16 = 18u$.",
+            "answer_outline": [
+                "Definition",
+                "Sum of atomic masses",
+                "Calculation for H2O"
+            ],
+            "key_concepts": [
+                "molecular mass",
+                "water",
+                "atomic mass sum"
+            ],
+            "marks": 4,
+            "source_section": "3.5.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Define 'Formula Unit Mass'. How is it different from 'Molecular Mass'?",
+            "answer": "Formula unit mass is the sum of atomic masses of all atoms in a formula unit of a compound. It is calculated exactly like molecular mass, but the term is used for substances whose constituent particles are ions (like $NaCl$), whereas 'molecular mass' is used for substances that exist as discrete molecules (like $H_2O$).",
+            "answer_outline": [
+                "Definition",
+                "Calculation method",
+                "Ionic vs molecular substance distinction"
+            ],
+            "key_concepts": [
+                "formula unit mass",
+                "ionic compounds",
+                "molecular mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the concept of 'Mole' in chemistry.",
+            "answer": "A mole is a unit that represents $6.022 \times 10^{23}$ particles (atoms, molecules, or ions) of a substance. It is similar to a 'dozen' meaning 12. One mole of any substance has a mass equal to its relative atomic or molecular mass expressed in grams.",
+            "answer_outline": [
+                "Definition as a counting unit",
+                "Numerical value (Avogadro number)",
+                "Relation to molar mass"
+            ],
+            "key_concepts": [
+                "mole",
+                "Avogadro constant",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the Avogadro Constant? What is its value?",
+            "answer": "The Avogadro Constant ($N_A$) is the number of particles present in one mole of any substance. Its experimentally determined value is $6.022 \times 10^{23}$. It is named after the Italian scientist Amedeo Avogadro.",
+            "answer_outline": [
+                "Definition",
+                "Value ($6.022 \times 10^{23}$)",
+                "Naming origin"
+            ],
+            "key_concepts": [
+                "Avogadro constant",
+                "mole",
+                "particle count"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Differentiate between 'Gram Atomic Mass' and 'Relative Atomic Mass'.",
+            "answer": "Relative atomic mass is the mass of an atom compared to $1/12^{th}$ the mass of a Carbon-12 atom and is expressed in 'u'. Gram atomic mass is the mass of one mole of atoms of that element expressed in 'grams'. Numerically they are equal, but their units and scales (microscopic vs macroscopic) differ.",
+            "answer_outline": [
+                "Relative mass (u)",
+                "Gram mass (g)",
+                "Numerical equality vs unit difference"
+            ],
+            "key_concepts": [
+                "gram atomic mass",
+                "relative atomic mass",
+                "molar mass"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Calculate the number of moles in 52g of Helium.",
+            "answer": "Atomic mass of Helium = 4u. Molar mass of Helium = 4g. Moles = $\text{Given Mass} / \text{Molar Mass} = 52 / 4 = 13 \text{ moles}$.",
+            "answer_outline": [
+                "Identify molar mass of He",
+                "Formula: $\text{mass} / \text{molar mass}$",
+                "Final calculation"
+            ],
+            "key_concepts": [
+                "mole calculation",
+                "molar mass",
+                "helium"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the mass of 0.5 moles of Nitrogen gas ($N_2$)?",
+            "answer": "Atomic mass of N = 14u. Molar mass of $N_2 = 14 \times 2 = 28g$. Mass = $\text{Number of Moles} \times \text{Molar Mass} = 0.5 \times 28 = 14g$.",
+            "answer_outline": [
+                "Identify molar mass of N2",
+                "Formula: $\text{moles} \times \text{molar mass}$",
+                "Final calculation"
+            ],
+            "key_concepts": [
+                "molar mass",
+                "mass calculation",
+                "nitrogen gas"
+            ],
+            "marks": 4,
+            "source_section": "3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are atoms of most elements not able to exist independently?",
+            "answer": "Atoms of most elements are chemically reactive and seek to achieve a stable electronic configuration. They achieve this stability by combining with other atoms to form molecules or ions. Only noble gases like Helium and Argon are stable enough to exist as independent atoms.",
+            "answer_outline": [
+                "Chemical reactivity",
+                "Stability through bonding",
+                "Noble gas exception"
+            ],
+            "key_concepts": [
+                "atomic stability",
+                "chemical bonding",
+                "independent existence"
+            ],
+            "marks": 4,
+            "source_section": "3.2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "State the difference between $2H$ and $H_2$.",
+            "answer": "The symbol $2H$ represents two separate atoms of hydrogen. The symbol $H_2$ represents one molecule of hydrogen, which consists of two hydrogen atoms chemically bonded together.",
+            "answer_outline": [
+                "Explanation of $2H$ (atoms)",
+                "Explanation of $H_2$ (molecule)",
+                "Bonding distinction"
+            ],
+            "key_concepts": [
+                "coefficients",
+                "subscripts",
+                "atoms vs molecules"
+            ],
+            "marks": 4,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "List the elements present in the following compounds: (a) Quick lime, (b) Baking soda.",
+            "answer": "(a) Quick lime: Calcium and Oxygen (Calcium Oxide, $CaO$). (b) Baking soda: Sodium, Hydrogen, Carbon, and Oxygen (Sodium Hydrogen Carbonate, $NaHCO_3$).",
+            "answer_outline": [
+                "Identification of elements for each compound",
+                "Chemical names/formulas"
+            ],
+            "key_concepts": [
+                "compound composition",
+                "quick lime",
+                "baking soda"
+            ],
+            "marks": 4,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "How many atoms are present in a (a) $H_2S$ molecule and (b) $PO_4^{3-}$ ion?",
+            "answer": "(a) In $H_2S$, there are 2 atoms of Hydrogen and 1 atom of Sulphur, total = 3 atoms. (b) In $PO_4^{3-}$, there is 1 atom of Phosphorus and 4 atoms of Oxygen, total = 5 atoms.",
+            "answer_outline": [
+                "Counting atoms in H2S",
+                "Counting atoms in Phosphate ion"
+            ],
+            "key_concepts": [
+                "atom count",
+                "molecular formula",
+                "polyatomic ion"
+            ],
+            "marks": 4,
+            "source_section": "3.4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the importance of the mole concept in practical chemistry?",
+            "answer": "The mole concept is the bridge between the microscopic world of atoms/molecules and the macroscopic world of grams/kilograms. It allows chemists to calculate the exact mass of reactants needed to produce a specific amount of product by counting particles through their mass.",
+            "answer_outline": [
+                "Bridge between scales",
+                "Quantitative calculations",
+                "Practical laboratory use"
+            ],
+            "key_concepts": [
+                "mole concept",
+                "stoichiometry",
+                "mass-particle relationship"
+            ],
+            "marks": 5,
+            "source_section": "3.5"
+        }
+    ]
+}

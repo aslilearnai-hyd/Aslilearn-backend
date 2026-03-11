@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Hard",
+    "source_pdf": "jemh110.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Tangent Property Proof",
+            "objective": "Prove tangent–radius theorem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw figure",
+                "Write proof"
+            ],
+            "learning_outcome": "Proof mastery",
+            "evaluation": "Logical flow (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "External Tangent Analysis",
+            "objective": "Analyse tangents from external point",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw tangents",
+                "Compare lengths"
+            ],
+            "learning_outcome": "Property understanding",
+            "evaluation": "Correct reasoning (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Construction Precision Task",
+            "objective": "Construct tangents accurately",
+            "materials": [
+                "Compass",
+                "Scale"
+            ],
+            "steps": [
+                "Follow construction steps"
+            ],
+            "learning_outcome": "Construction skill",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Circle Error Diagnosis",
+            "objective": "Identify construction errors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse diagram",
+                "Correct it"
+            ],
+            "learning_outcome": "Critical thinking",
+            "evaluation": "Correct correction (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Tangent Case Study",
+            "objective": "Study tangents in engineering",
+            "materials": [
+                "Internet",
+                "Project file"
+            ],
+            "steps": [
+                "Research example",
+                "Explain concept"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Content quality (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Theorem Comparison",
+            "objective": "Compare circle theorems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List theorems",
+                "Compare usage"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Comparison depth (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Proof Writing Drill",
+            "objective": "Write structured proofs",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Select theorem",
+                "Write proof"
+            ],
+            "learning_outcome": "Proof structure skill",
+            "evaluation": "Logical clarity (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Diagram Interpretation Task",
+            "objective": "Interpret complex diagrams",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse diagram",
+                "Answer questions"
+            ],
+            "learning_outcome": "Diagram literacy",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Circle Applications Survey",
+            "objective": "Survey real-life circle applications",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect examples",
+                "Explain usage"
+            ],
+            "learning_outcome": "Application awareness",
+            "evaluation": "Relevance (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Concept Integration Task",
+            "objective": "Integrate circle concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve integrated problems"
+            ],
+            "learning_outcome": "Concept integration",
+            "evaluation": "Correctness (20 marks)"
+        }
+    ]
+}

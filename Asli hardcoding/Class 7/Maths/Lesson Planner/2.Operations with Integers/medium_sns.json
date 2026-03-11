@@ -1,0 +1,73 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Operations with Integers",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Add and subtract integers with different signs",
+        "Multiply integers using sign rules",
+        "Divide integers and understand result signs",
+        "Understand the properties of addition and subtraction (Commutative, Associative)",
+        "Solve two-step numerical expressions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Addition and Subtraction (Different Signs)",
+            "topics_covered": [
+                "Adding (+) and (-): Subtract smaller from larger and take the sign of the larger",
+                "Subtraction as 'Adding the Additive Inverse'",
+                "The 'Double Negative' rule: a - (-b) = a + b"
+            ],
+            "teaching_strategy": [
+                "Number line 'Direction Change' demonstration",
+                "Step-by-step subtraction-to-addition conversion"
+            ],
+            "student_activities": [
+                "",
+                "Solve: 15 - (-5) and (-20) + 8",
+                "Group activity: 'Who has the highest net score?' game"
+            ],
+            "assessment": [
+                "Exit slip with 3 subtraction problems",
+                "Board work for sign conversion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Multiplication and Division Rules",
+            "topics_covered": [
+                "Sign rules for products and quotients",
+                "The role of 1 (Multiplicative Identity) and 0",
+                "Pattern building: Why (-) x (-) = (+)"
+            ],
+            "teaching_strategy": [
+                "",
+                "Grid multiplication for signs",
+                "Discovery through repeated addition"
+            ],
+            "student_activities": [
+                "Complete a 5x5 integer multiplication table",
+                "Solve: (-12) ÷ 4 and (-6) x (-3)"
+            ],
+            "assessment": [
+                "Rapid-fire oral sign test",
+                "Sign-rule matching worksheet"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Sign rule posters (+, -, x, ÷)",
+        "Multiplication grids",
+        "Calculators for verification only",
+        "Worksheets with brackets"
+    ],
+    "evaluation_methods": [
+        "Middle-of-chapter quiz",
+        "Problem-solving speed drills",
+        "Homework assignments"
+    ],
+    "teacher_tip": "Teach the 'Friend/Enemy' mnemonic: The friend (+) of my friend (+) is my friend (+); the enemy (-) of my enemy (-) is my friend (+)."
+}

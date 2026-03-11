@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Arithmetic Progressions",
+    "difficulty": "Medium",
+    "source_pdf": "jemh105.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "AP Identification",
+            "objective": "Identify arithmetic progression",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Check differences",
+                "Confirm AP"
+            ],
+            "learning_outcome": "AP recognition",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "First Term & Difference",
+            "objective": "Find a and d",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe AP",
+                "Calculate a and d"
+            ],
+            "learning_outcome": "Understands AP parameters",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "AP Construction",
+            "objective": "Construct AP using a and d",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Use values",
+                "Write AP"
+            ],
+            "learning_outcome": "AP formation",
+            "evaluation": "Correct AP (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Term Prediction",
+            "objective": "Predict next terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Add common difference",
+                "Write terms"
+            ],
+            "learning_outcome": "Sequence extension",
+            "evaluation": "Correct terms (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "AP vs Non-AP",
+            "objective": "Differentiate AP and non-AP",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Compare differences",
+                "Conclude"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct differentiation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-Life AP Example",
+            "objective": "Identify AP in daily life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose example",
+                "Write sequence"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "AP Table Creation",
+            "objective": "Create AP table",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List terms",
+                "Tabulate values"
+            ],
+            "learning_outcome": "Organised thinking",
+            "evaluation": "Table correctness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Common Difference Comparison",
+            "objective": "Compare d values of APs",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Calculate d",
+                "Compare"
+            ],
+            "learning_outcome": "Comparative reasoning",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Finite vs Infinite AP",
+            "objective": "Differentiate finite and infinite AP",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe sequences",
+                "Classify"
+            ],
+            "learning_outcome": "Concept understanding",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "AP Error Detection",
+            "objective": "Detect errors in given AP",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Check differences",
+                "Identify mistake"
+            ],
+            "learning_outcome": "Analytical skill",
+            "evaluation": "Correct detection (10 marks)"
+        }
+    ]
+}

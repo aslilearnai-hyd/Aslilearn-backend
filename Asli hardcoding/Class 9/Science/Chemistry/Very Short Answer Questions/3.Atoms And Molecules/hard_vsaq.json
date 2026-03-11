@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Atoms and Molecules",
+    "generated_at": "2026-03-06T19:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Calculate the number of aluminum ions present in 0.051 g of aluminum oxide ($Al_2O_3$).",
+            "answer": "Molar mass of $Al_2O_3 = 102$ g. Moles = $0.051/102 = 0.0005$. Number of $Al^{3+}$ ions = $2 \times 0.0005 \times 6.022 \times 10^{23} = 6.022 \times 10^{20}$ ions.",
+            "key_points": ["aluminum oxide", "aluminum ions", "calculation"],
+            "source_section": "Section 3.5.3"
+        },
+        {
+            "question_number": 2,
+            "question": "If 100 g of calcium carbonate is heated, 56 g of calcium oxide is formed. According to the Law of Conservation of Mass, what is the mass of $CO_2$ released?",
+            "answer": "Mass of $CO_2 = \text{Total mass} - \text{Mass of CaO} = 100\text{ g} - 56\text{ g} = 44\text{ g}$.",
+            "key_points": ["conservation of mass", "decomposition", "calculation"],
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define 'Relative Atomic Mass' and explain why it has no units.",
+            "answer": "It is the ratio of the average mass of atoms of an element to $1/12^{th}$ the mass of a Carbon-12 atom. Being a ratio of two masses, it is a dimensionless quantity.",
+            "key_points": ["relative mass", "dimensionless", "Carbon-12"],
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "How many moles of $S_8$ are present in 128 g of Sulphur?",
+            "answer": "Molar mass of $S_8 = 32 \times 8 = 256$ g/mol. Moles = $128 / 256 = 0.5$ moles.",
+            "key_points": ["S8 molecule", "molar mass", "calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the mass of $6.022 \times 10^{23}$ molecules of $CO_2$?",
+            "answer": "It is equal to the molar mass of $CO_2$, which is 44 grams.",
+            "key_points": ["Avogadro's number", "molar mass", "carbon dioxide"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 6,
+            "question": "A compound with formula $X_2O_3$ has 30% oxygen by mass. Determine the atomic mass of X.",
+            "answer": "Mass of Oxygen is 48 (16x3). If 48 is 30%, total mass is 160. Mass of $X_2 = 160 - 48 = 112$. Atomic mass of $X = 112/2 = 56$ u (Iron).",
+            "key_points": ["percentage composition", "atomic mass", "stoichiometry"],
+            "source_section": "Numerical Problems"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the mass of a single atom of Oxygen in grams?",
+            "answer": "Mass = Atomic mass / Avogadro number = $16 / (6.022 \times 10^{23}) \approx 2.65 \times 10^{-23}$ g.",
+            "key_points": ["mass of one atom", "calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the Law of Multiple Proportions with an example.",
+            "answer": "If two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other are in a ratio of small whole numbers ($e.g., CO \text{ and } CO_2$).",
+            "key_points": ["multiple proportions", "Dalton's law", "carbon oxides"],
+            "source_section": "Advanced Conceptual"
+        },
+        {
+            "question_number": 9,
+            "question": "Calculate the percentage of water of crystallization in Blue Vitriol ($CuSO_4 \cdot 5H_2O$). (Cu=63.5, S=32, O=16, H=1)",
+            "answer": "Molar mass = 249.5. Mass of water = 90. Percentage = $(90 / 249.5) \times 100 \approx 36.07\%$.",
+            "key_points": ["water of crystallization", "blue vitriol", "percentage calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the mole a link between the mass of a substance and the number of its particles?",
+            "answer": "Because 1 mole of any substance is defined as both its gram atomic/molecular mass and a fixed number ($6.022 \times 10^{23}$) of particles.",
+            "key_points": ["mole concept", "Avogadro number", "molar mass"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Calculate the number of molecules in 4 g of Methane ($CH_4$).",
+            "answer": "Molar mass = 16 g. Moles = $4/16 = 0.25$. Molecules = $0.25 \times 6.022 \times 10^{23} = 1.505 \times 10^{23}$ molecules.",
+            "key_points": ["methane", "moles", "molecules"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Determine the formula of a compound where metal M (valency 2) reacts with a non-metal N (valency 3).",
+            "answer": "$M_3N_2$.",
+            "key_points": ["formula writing", "valency", "criss-cross"],
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How many protons and electrons are in a $P^{3-}$ ion? (Atomic number of P = 15)",
+            "answer": "Protons = 15; Electrons = $15 + 3 = 18$.",
+            "key_points": ["ion charge", "electrons", "phosphide ion"],
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the ratio of number of atoms in 44 g of $CO_2$ and 44 g of $N_2O$?",
+            "answer": "1:1. Both have the same molar mass (44) and same number of atoms per molecule (3).",
+            "key_points": ["comparison", "molar mass", "atomicity"],
+            "source_section": "Conceptual"
+        },
+        {
+            "question_number": 15,
+            "question": "Define 'Gram Molecular Mass'.",
+            "answer": "The molecular mass of a substance expressed in grams.",
+            "key_points": ["definition", "grams", "molecular mass"],
+            "source_section": "Section 3.5.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Calculate the mass of $0.2$ moles of Sodium Sulphite ($Na_2SO_3$). (Na=23, S=32, O=16)",
+            "answer": "Molar mass = 126 g. Mass = $0.2 \times 126 = 25.2$ g.",
+            "key_points": ["sodium sulphite", "molar mass", "calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Which has a greater mass: 1 mole of $O_2$ or 1 mole of $O_3$?",
+            "answer": "1 mole of $O_3$ (48 g) has a greater mass than 1 mole of $O_2$ (32 g).",
+            "key_points": ["comparison", "ozone", "oxygen"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Identify the polyatomic ions in $Ca_3(PO_4)_2$.",
+            "answer": "Phosphate ion ($PO_4^{3-}$).",
+            "key_points": ["calcium phosphate", "ion identification"],
+            "source_section": "Section 3.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Calculate the formula unit mass of $K_2CO_3$. (K=39, C=12, O=16)",
+            "answer": "$(39 \times 2) + 12 + (16 \times 3) = 78 + 12 + 48 = 138$ u.",
+            "key_points": ["potassium carbonate", "formula mass"],
+            "source_section": "Section 3.5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "How many moles of Hydrogen atoms are in 1 mole of $(NH_4)_2SO_4$?",
+            "answer": "8 moles of Hydrogen atoms.",
+            "key_points": ["ammonium sulphate", "atom count", "moles"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the mass of 1 mole of electrons? (Mass of an electron = $9.1 \times 10^{-28}$ g)",
+            "answer": "$9.1 \times 10^{-28} \times 6.022 \times 10^{23} \approx 0.000548$ g.",
+            "key_points": ["electron mass", "calculation", "Avogadro number"],
+            "source_section": "Advanced Conceptual"
+        },
+        {
+            "question_number": 22,
+            "question": "Define 'Mole' in terms of Carbon-12.",
+            "answer": "One mole is the amount of substance that contains as many particles as there are atoms in exactly 12 g of Carbon-12.",
+            "key_points": ["mole definition", "Carbon-12"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "State the difference between valency and ion charge.",
+            "answer": "Valency is a number representing combining capacity without a sign ($e.g., 2$); Ion charge includes a sign representing loss or gain of electrons ($e.g., 2+$).",
+            "key_points": ["valency", "charge", "difference"],
+            "source_section": "Section 3.4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the number of atoms in 1 u of Helium.",
+            "answer": "1 atom (since the mass of one He atom is 4 u, 1 u would be 1/4 of an atom; however, in standard context, 4 u = 1 atom). Correction: In 4 u of He, there is 1 atom.",
+            "key_points": ["atomic mass", "Helium"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the valency of Iron in $Fe_2O_3$?",
+            "answer": "3.",
+            "key_points": ["valency", "iron", "ferric"],
+            "source_section": "Section 3.4.1"
+        }
+    ]
+}

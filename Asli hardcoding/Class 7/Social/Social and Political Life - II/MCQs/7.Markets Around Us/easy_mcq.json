@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Markets Around Us",
+    "generated_at": "2026-03-07T20:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A weekly market is a market that:",
+            "options": {
+                "A": "Operates every day",
+                "B": "Operates only once a week",
+                "C": "Operates once a year",
+                "D": "Operates only at night"
+            },
+            "correct_answer": "B",
+            "explanation": "A weekly market is held on a fixed day each week where traders sell various goods.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "People who sell goods in markets are called:",
+            "options": {
+                "A": "Producers",
+                "B": "Traders or sellers",
+                "C": "Teachers",
+                "D": "Farmers only"
+            },
+            "correct_answer": "B",
+            "explanation": "Traders or sellers are people who sell goods in markets.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which type of market allows buyers to bargain for prices?",
+            "options": {
+                "A": "Weekly market",
+                "B": "Shopping mall",
+                "C": "Online store",
+                "D": "Supermarket"
+            },
+            "correct_answer": "A",
+            "explanation": "In weekly markets, buyers and sellers often negotiate prices through bargaining.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "A shop that sells goods directly to customers is called:",
+            "options": {
+                "A": "Factory",
+                "B": "Warehouse",
+                "C": "Retail shop",
+                "D": "Port"
+            },
+            "correct_answer": "C",
+            "explanation": "Retail shops sell goods directly to consumers in small quantities.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is an example of a neighbourhood market?",
+            "options": {
+                "A": "Local grocery shop",
+                "B": "International trade fair",
+                "C": "Airport shop",
+                "D": "Export warehouse"
+            },
+            "correct_answer": "A",
+            "explanation": "Neighbourhood markets include small shops located near homes, such as grocery stores.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which type of market usually has fixed prices?",
+            "options": {
+                "A": "Weekly market",
+                "B": "Shopping mall",
+                "C": "Street market",
+                "D": "Village market"
+            },
+            "correct_answer": "B",
+            "explanation": "Shopping malls and large retail stores usually have fixed prices with no bargaining.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "People who buy goods for their personal use are called:",
+            "options": {
+                "A": "Consumers",
+                "B": "Exporters",
+                "C": "Manufacturers",
+                "D": "Distributors"
+            },
+            "correct_answer": "A",
+            "explanation": "Consumers are individuals who purchase goods or services for personal use.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following goods is commonly sold in weekly markets?",
+            "options": {
+                "A": "Vegetables and fruits",
+                "B": "Airplanes",
+                "C": "Ships",
+                "D": "Computers only"
+            },
+            "correct_answer": "A",
+            "explanation": "Fresh vegetables, fruits, and daily necessities are commonly sold in weekly markets.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 9,
+            "question": "The main advantage of weekly markets is that:",
+            "options": {
+                "A": "Goods are cheaper",
+                "B": "Goods are always expensive",
+                "C": "There are no buyers",
+                "D": "Only luxury items are sold"
+            },
+            "correct_answer": "A",
+            "explanation": "Goods in weekly markets are often cheaper because sellers avoid high shop rents.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "A large building with many shops selling different goods is called:",
+            "options": {
+                "A": "Market yard",
+                "B": "Shopping mall",
+                "C": "Farm",
+                "D": "Warehouse"
+            },
+            "correct_answer": "B",
+            "explanation": "A shopping mall is a large complex with many shops selling various goods.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following is an example of a chain of markets?",
+            "options": {
+                "A": "Local farmers selling directly",
+                "B": "Producer → Wholesaler → Retailer → Consumer",
+                "C": "Consumer → Producer",
+                "D": "Teacher → Student"
+            },
+            "correct_answer": "B",
+            "explanation": "Goods often pass through wholesalers and retailers before reaching consumers.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Wholesalers mainly sell goods to:",
+            "options": {
+                "A": "Consumers",
+                "B": "Retailers",
+                "C": "Students",
+                "D": "Teachers"
+            },
+            "correct_answer": "B",
+            "explanation": "Wholesalers sell goods in bulk to retailers who then sell to consumers.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "A person who sells goods in small quantities is called:",
+            "options": {
+                "A": "Exporter",
+                "B": "Retailer",
+                "C": "Engineer",
+                "D": "Farmer"
+            },
+            "correct_answer": "B",
+            "explanation": "Retailers sell goods directly to consumers in small quantities.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do sellers in weekly markets not need permanent shops?",
+            "options": {
+                "A": "They move from place to place",
+                "B": "They only sell online",
+                "C": "They have factories",
+                "D": "They export goods"
+            },
+            "correct_answer": "A",
+            "explanation": "Weekly market sellers move to different locations on different days.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following markets mainly sells branded goods?",
+            "options": {
+                "A": "Weekly market",
+                "B": "Shopping mall",
+                "C": "Village fair",
+                "D": "Street stall"
+            },
+            "correct_answer": "B",
+            "explanation": "Shopping malls often sell branded and packaged goods.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which factor increases the price of goods in malls compared to weekly markets?",
+            "options": {
+                "A": "Higher rent and maintenance costs",
+                "B": "Lack of customers",
+                "C": "Absence of electricity",
+                "D": "No transportation"
+            },
+            "correct_answer": "A",
+            "explanation": "Malls have higher operational costs, which increases product prices.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Markets help consumers by:",
+            "options": {
+                "A": "Providing goods and services",
+                "B": "Building factories",
+                "C": "Creating forests",
+                "D": "Teaching in schools"
+            },
+            "correct_answer": "A",
+            "explanation": "Markets provide various goods and services that consumers need.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is an advantage of neighbourhood shops?",
+            "options": {
+                "A": "They are close to homes",
+                "B": "They sell only luxury goods",
+                "C": "They are open once a year",
+                "D": "They do not sell food"
+            },
+            "correct_answer": "A",
+            "explanation": "Neighbourhood shops are convenient because they are located close to people's homes.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which type of seller moves to different places on different days?",
+            "options": {
+                "A": "Mall shop owner",
+                "B": "Weekly market trader",
+                "C": "Factory owner",
+                "D": "Exporter"
+            },
+            "correct_answer": "B",
+            "explanation": "Weekly market traders travel to different markets on different days.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which type of market offers a variety of goods in one place once a week?",
+            "options": {
+                "A": "Weekly market",
+                "B": "Airport shop",
+                "C": "Online market",
+                "D": "Factory outlet"
+            },
+            "correct_answer": "A",
+            "explanation": "Weekly markets gather many sellers who offer different products in one place.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Retailers usually buy goods from:",
+            "options": {
+                "A": "Wholesalers",
+                "B": "Students",
+                "C": "Teachers",
+                "D": "Doctors"
+            },
+            "correct_answer": "A",
+            "explanation": "Retailers purchase goods from wholesalers in bulk.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which type of shop often allows customers to buy goods on credit?",
+            "options": {
+                "A": "Neighbourhood shop",
+                "B": "Mall store",
+                "C": "Airport shop",
+                "D": "Online store"
+            },
+            "correct_answer": "A",
+            "explanation": "Neighbourhood shops often allow regular customers to buy goods on credit.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The chain of markets connects:",
+            "options": {
+                "A": "Producers and consumers",
+                "B": "Students and teachers",
+                "C": "Doctors and patients",
+                "D": "Drivers and passengers"
+            },
+            "correct_answer": "A",
+            "explanation": "Markets link producers who make goods with consumers who buy them.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following sells goods directly from the producer to consumers?",
+            "options": {
+                "A": "Factory outlet",
+                "B": "Wholesale market",
+                "C": "Export company",
+                "D": "Warehouse"
+            },
+            "correct_answer": "A",
+            "explanation": "Factory outlets sell goods directly from producers to consumers.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which feature is common in weekly markets but not in malls?",
+            "options": {
+                "A": "Bargaining over prices",
+                "B": "Air conditioning",
+                "C": "Escalators",
+                "D": "Fixed prices"
+            },
+            "correct_answer": "A",
+            "explanation": "Bargaining is common in weekly markets but not usually allowed in malls.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        }
+    ]
+}

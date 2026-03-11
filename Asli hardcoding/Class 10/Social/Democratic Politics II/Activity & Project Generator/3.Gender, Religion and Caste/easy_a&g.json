@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter": "Gender, Religion and Caste",
+  "difficulty": "Easy",
+  "source_pdf": "jess403.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Household Work Survey",
+      "objective": "Understand gender division of labour at home",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Observe daily activities of male and female members in your family",
+        "Record the time spent on household work and outside work",
+        "Compare the results and discuss the differences"
+      ],
+      "learning_outcome": "Recognises unequal distribution of work between men and women",
+      "evaluation": "Accuracy of observation and comparison (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Gender Roles Discussion",
+      "objective": "Identify stereotypes related to gender roles",
+      "materials": ["Notebook"],
+      "steps": [
+        "List activities usually assigned to men and women",
+        "Discuss whether these roles are natural or socially created",
+        "Write your opinion about equal roles in society"
+      ],
+      "learning_outcome": "Understands gender stereotypes",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Women in Politics Research",
+      "objective": "Learn about women's participation in politics",
+      "materials": ["Internet/Books", "Notebook"],
+      "steps": [
+        "Find examples of women leaders in India",
+        "Write their contributions to politics",
+        "Discuss why representation of women is important"
+      ],
+      "learning_outcome": "Understands importance of women's political participation",
+      "evaluation": "Quality of research (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Representation Chart",
+      "objective": "Visualise women’s representation in parliament",
+      "materials": ["Graph paper", "Pencil", "Ruler"],
+      "steps": [
+        "Collect data on women representation in Lok Sabha",
+        "Create a bar graph showing percentages",
+        "Analyse the trend and write conclusions"
+      ],
+      "learning_outcome": "Learns data representation and interpretation",
+      "evaluation": "Accuracy and neatness (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Communalism Case Study",
+      "objective": "Understand the concept of communal politics",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Define communalism",
+        "Write examples of communal politics",
+        "Explain why communalism is harmful for democracy"
+      ],
+      "learning_outcome": "Understands dangers of communalism",
+      "evaluation": "Correct explanation with examples (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Secularism Poster",
+      "objective": "Promote the idea of secularism",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Write key principles of secularism",
+        "Illustrate equality of religions",
+        "Design a poster promoting harmony"
+      ],
+      "learning_outcome": "Understands the concept of a secular state",
+      "evaluation": "Creativity and message clarity (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Religious Diversity Chart",
+      "objective": "Understand religious diversity in India",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "List major religions in India",
+        "Write approximate population percentages",
+        "Create a pie chart representing the data"
+      ],
+      "learning_outcome": "Learns about India's religious diversity",
+      "evaluation": "Correct data representation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Caste System Timeline",
+      "objective": "Study changes in the caste system over time",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write about traditional caste practices",
+        "Note reforms introduced by social reformers",
+        "Create a timeline showing major changes"
+      ],
+      "learning_outcome": "Understands evolution of caste system in India",
+      "evaluation": "Correct historical understanding (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Leaders Against Caste Discrimination",
+      "objective": "Learn about social reformers",
+      "materials": ["Books/Internet", "Notebook"],
+      "steps": [
+        "Research leaders like B.R. Ambedkar, Mahatma Gandhi, and Jyotiba Phule",
+        "Write their contributions to reducing caste inequality",
+        "Present findings in class"
+      ],
+      "learning_outcome": "Recognises role of reformers in social equality",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Debate on Caste in Politics",
+      "objective": "Understand the role of caste in elections",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide class into two groups",
+        "One group argues caste influences politics positively",
+        "The other group argues it negatively affects democracy"
+      ],
+      "learning_outcome": "Develops critical thinking on caste and politics",
+      "evaluation": "Participation and arguments (10 marks)"
+    }
+  ]
+}

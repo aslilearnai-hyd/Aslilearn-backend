@@ -1,0 +1,144 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "Bholi",
+    "title": "Lesson Planner – Bholi",
+    "author": "K.A. Abbas",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse character development",
+        "Understand social issues",
+        "Interpret themes",
+        "Improve vocabulary usage",
+        "Develop writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author and Context",
+            "topics_covered": [
+                "Author background",
+                "Social setting"
+            ],
+            "teaching_strategy": [
+                "Explanation"
+            ],
+            "student_activities": [
+                "Discussion"
+            ],
+            "assessment": [
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Study – Bholi",
+            "topics_covered": [
+                "Personality traits"
+            ],
+            "teaching_strategy": [
+                "Character analysis"
+            ],
+            "student_activities": [
+                "Write traits"
+            ],
+            "assessment": [
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Role of the Teacher",
+            "topics_covered": [
+                "Teacher’s influence"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Explain role"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Themes and Social Issues",
+            "topics_covered": [
+                "Gender bias",
+                "Education"
+            ],
+            "teaching_strategy": [
+                "Value discussion"
+            ],
+            "student_activities": [
+                "Identify issues"
+            ],
+            "assessment": [
+                "Written work"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Marriage and Dowry",
+            "topics_covered": [
+                "Dowry system"
+            ],
+            "teaching_strategy": [
+                "Explanation"
+            ],
+            "student_activities": [
+                "Opinion writing"
+            ],
+            "assessment": [
+                "Evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Climax Analysis",
+            "topics_covered": [
+                "Bholi’s decision"
+            ],
+            "teaching_strategy": [
+                "Critical discussion"
+            ],
+            "student_activities": [
+                "Paragraph writing"
+            ],
+            "assessment": [
+                "Written test"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Vocabulary",
+            "topics_covered": [
+                "Summary",
+                "Vocabulary"
+            ],
+            "teaching_strategy": [
+                "Recap"
+            ],
+            "student_activities": [
+                "Summary writing"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard"
+    ],
+    "evaluation_methods": [
+        "Written tests",
+        "Participation",
+        "Notebook checking"
+    ],
+    "teacher_tip": "Guide students to connect the story with present-day social realities."
+}

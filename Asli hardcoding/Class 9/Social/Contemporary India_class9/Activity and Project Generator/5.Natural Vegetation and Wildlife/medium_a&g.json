@@ -1,0 +1,168 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter": "Natural Vegetation and Wildlife",
+    "difficulty": "Medium",
+    "source_pdf": "con9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparison of Forest Types",
+            "objective": "Understand differences between major forest types in India",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Draw a table with two columns",
+                "Write features of Tropical Evergreen Forests in one column",
+                "Write features of Tropical Deciduous Forests in the other",
+                "Add examples of trees found in each forest"
+            ],
+            "learning_outcome": "Students compare major vegetation types in India",
+            "evaluation": "Accuracy and clarity of comparison (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Vegetation Distribution Analysis",
+            "objective": "Analyze why different vegetation types occur in different regions",
+            "materials": [
+                "Map of India",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe the vegetation map in the textbook",
+                "Identify areas with evergreen forests and thorn forests",
+                "Explain why these regions have different vegetation"
+            ],
+            "learning_outcome": "Students understand how climate influences vegetation",
+            "evaluation": "Explanation of climatic factors (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Forest and Wildlife Relationship Study",
+            "objective": "Understand the connection between vegetation and wildlife",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "Choose two types of forests",
+                "List animals that live in each forest",
+                "Explain how forests support these animals"
+            ],
+            "learning_outcome": "Students understand ecological relationships",
+            "evaluation": "Correct explanation and examples (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Medicinal Plants Research",
+            "objective": "Learn about traditional medicinal plants in India",
+            "materials": [
+                "Notebook",
+                "Internet or library"
+            ],
+            "steps": [
+                "Select three medicinal plants mentioned in the chapter",
+                "Write their scientific or local names",
+                "Explain their medicinal uses"
+            ],
+            "learning_outcome": "Students understand the value of plant biodiversity",
+            "evaluation": "Completeness of research (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Wildlife Conservation Discussion",
+            "objective": "Understand the importance of wildlife protection",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Discuss threats to wildlife such as hunting and deforestation",
+                "Write three reasons for wildlife decline",
+                "Suggest two methods to protect wildlife"
+            ],
+            "learning_outcome": "Students develop awareness about conservation",
+            "evaluation": "Quality of suggestions (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Biosphere Reserve Study",
+            "objective": "Understand the purpose of biosphere reserves",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Write the definition of biosphere reserve",
+                "List five biosphere reserves in India",
+                "Describe their importance in conservation"
+            ],
+            "learning_outcome": "Students understand protected areas in India",
+            "evaluation": "Correct examples and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Forest Resource Utilization Chart",
+            "objective": "Identify how humans use forest resources",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Create a chart showing forest resources",
+                "Include wood, medicines, food and raw materials",
+                "Explain their uses in daily life"
+            ],
+            "learning_outcome": "Students understand economic importance of forests",
+            "evaluation": "Completeness and clarity (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Wildlife Habitat Mapping",
+            "objective": "Identify habitats of major animals in India",
+            "materials": [
+                "Map of India",
+                "Notebook"
+            ],
+            "steps": [
+                "Locate regions where tigers, elephants and rhinoceroses are found",
+                "Mark them on the map",
+                "Explain why these habitats are suitable"
+            ],
+            "learning_outcome": "Students link geography with wildlife distribution",
+            "evaluation": "Accuracy of mapping (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Human Impact on Forests Study",
+            "objective": "Analyze human activities affecting forests",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List human activities causing deforestation",
+                "Explain their effects on biodiversity",
+                "Suggest solutions to reduce forest loss"
+            ],
+            "learning_outcome": "Students analyze environmental issues",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Wildlife Protection Act Study",
+            "objective": "Understand government measures for wildlife conservation",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Write the year when the Wildlife Protection Act was introduced",
+                "Explain its objectives",
+                "List two benefits of this act"
+            ],
+            "learning_outcome": "Students understand legal protection of wildlife",
+            "evaluation": "Accuracy of information (10 marks)"
+        }
+    ]
+}

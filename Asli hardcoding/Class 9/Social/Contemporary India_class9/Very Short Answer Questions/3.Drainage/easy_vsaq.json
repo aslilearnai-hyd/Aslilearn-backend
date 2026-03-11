@@ -1,0 +1,244 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Drainage",
+    "generated_at": "2026-03-07T20:10:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is drainage?",
+            "answer": "Drainage is the river system of an area.",
+            "key_points": [
+                "river system",
+                "water flow"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a drainage basin?",
+            "answer": "The area drained by a single river system is called a drainage basin.",
+            "key_points": [
+                "river basin",
+                "area drained"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a water divide?",
+            "answer": "A water divide is an upland that separates two drainage basins.",
+            "key_points": [
+                "upland",
+                "separates basins"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name the two major groups of rivers in India.",
+            "answer": "Himalayan rivers and Peninsular rivers.",
+            "key_points": [
+                "Himalayan",
+                "Peninsular"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are perennial rivers?",
+            "answer": "Rivers that have water throughout the year are called perennial rivers.",
+            "key_points": [
+                "year-round flow"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Name one major Himalayan river.",
+            "answer": "The Ganga.",
+            "key_points": [
+                "Ganga river"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "From where does the Indus river originate?",
+            "answer": "The Indus river originates near Lake Mansarowar in Tibet.",
+            "key_points": [
+                "Tibet",
+                "Lake Mansarowar"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a tributary?",
+            "answer": "A tributary is a smaller river that joins a larger river.",
+            "key_points": [
+                "smaller river",
+                "joins main river"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Name one tributary of the Ganga.",
+            "answer": "Yamuna.",
+            "key_points": [
+                "Yamuna river"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Where does the Ganga emerge from the mountains?",
+            "answer": "At Haridwar.",
+            "key_points": [
+                "Haridwar"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the delta formed by the Ganga and Brahmaputra called?",
+            "answer": "The Sundarban Delta.",
+            "key_points": [
+                "Sundarban delta"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the largest peninsular river in India.",
+            "answer": "Godavari.",
+            "key_points": [
+                "Godavari river"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which two rivers flow westwards into the Arabian Sea?",
+            "answer": "Narmada and Tapi.",
+            "key_points": [
+                "Narmada",
+                "Tapi"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "From where does the Narmada river originate?",
+            "answer": "The Narmada rises from the Amarkantak hills.",
+            "key_points": [
+                "Amarkantak hills"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which river is known as the 'Dakshin Ganga'?",
+            "answer": "The Godavari river.",
+            "key_points": [
+                "Dakshin Ganga",
+                "Godavari"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Where does the Krishna river originate?",
+            "answer": "It originates near Mahabaleshwar in Maharashtra.",
+            "key_points": [
+                "Mahabaleshwar"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Where does the Kaveri river originate?",
+            "answer": "It originates in the Brahmagiri range of the Western Ghats.",
+            "key_points": [
+                "Brahmagiri range"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a lake?",
+            "answer": "A lake is a body of water surrounded by land.",
+            "key_points": [
+                "water body",
+                "surrounded by land"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Name one freshwater lake in India.",
+            "answer": "Dal Lake.",
+            "key_points": [
+                "Dal lake"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which is the largest freshwater lake in India?",
+            "answer": "Wular Lake.",
+            "key_points": [
+                "Wular lake"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Name one saltwater lake in India.",
+            "answer": "Sambhar Lake.",
+            "key_points": [
+                "Sambhar lake"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Give one use of lakes.",
+            "answer": "Lakes help regulate the flow of rivers.",
+            "key_points": [
+                "regulate river flow"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are rivers important for agriculture?",
+            "answer": "They provide water for irrigation.",
+            "key_points": [
+                "irrigation"
+            ],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "What causes river pollution?",
+            "answer": "Discharge of untreated sewage and industrial waste.",
+            "key_points": [
+                "sewage",
+                "industrial waste"
+            ],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Name the programme launched to clean the Ganga.",
+            "answer": "The Ganga Action Plan.",
+            "key_points": [
+                "Ganga Action Plan"
+            ],
+            "source_section": "Section 3.6"
+        }
+    ]
+}

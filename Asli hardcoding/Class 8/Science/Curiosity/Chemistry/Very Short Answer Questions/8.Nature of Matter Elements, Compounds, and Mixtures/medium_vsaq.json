@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-05T20:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How is matter defined in science?",
+      "answer": "Matter is anything that has mass and occupies space.",
+      "key_points": ["matter definition"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Why are most substances around us considered mixtures?",
+      "answer": "Because they contain two or more substances physically combined.",
+      "key_points": ["mixtures"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What property do components of a mixture retain?",
+      "answer": "They retain their original physical properties.",
+      "key_points": ["mixture properties"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What type of mixture has evenly distributed components?",
+      "answer": "Homogeneous mixture.",
+      "key_points": ["homogeneous mixture"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What type of mixture has visibly different components?",
+      "answer": "Heterogeneous mixture.",
+      "key_points": ["heterogeneous mixture"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which gas is most abundant in air?",
+      "answer": "Nitrogen.",
+      "key_points": ["air composition"],
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What observation indicates the presence of carbon dioxide in the limewater test?",
+      "answer": "The limewater turns milky.",
+      "key_points": ["limewater test"],
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "What distinguishes pure substances from mixtures?",
+      "answer": "Pure substances contain only one type of particle.",
+      "key_points": ["pure substance"],
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the smallest particle of an element?",
+      "answer": "Atom.",
+      "key_points": ["atom"],
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What forms when atoms combine chemically?",
+      "answer": "Molecules.",
+      "key_points": ["molecule formation"],
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What process separates water into hydrogen and oxygen using electricity?",
+      "answer": "Electrolysis.",
+      "key_points": ["electrolysis"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which gas is collected in double volume during electrolysis of water?",
+      "answer": "Hydrogen.",
+      "key_points": ["electrolysis observation"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 13,
+      "question": "What type of substance is formed when elements combine chemically?",
+      "answer": "Compound.",
+      "key_points": ["compound"],
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do compounds have properties different from their elements?",
+      "answer": "Because chemical reactions create new substances.",
+      "key_points": ["compound properties"],
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "What compound forms when iron reacts with sulfur on heating?",
+      "answer": "Iron sulfide.",
+      "key_points": ["iron sulfide"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What property helps iron be separated from a mixture with sulfur?",
+      "answer": "Magnetism.",
+      "key_points": ["magnetic separation"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 17,
+      "question": "What are alloys?",
+      "answer": "Mixtures of two or more metals.",
+      "key_points": ["alloys"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which alloy is made from copper and zinc?",
+      "answer": "Brass.",
+      "key_points": ["alloy example"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 19,
+      "question": "What naturally occurring substances make up rocks?",
+      "answer": "Minerals.",
+      "key_points": ["minerals"],
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 20,
+      "question": "What characteristic defines a mineral?",
+      "answer": "A naturally occurring solid with fixed composition.",
+      "key_points": ["mineral properties"],
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Which method separates insoluble solids from liquids?",
+      "answer": "Filtration.",
+      "key_points": ["filtration"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which process leaves solid solute behind after solvent evaporates?",
+      "answer": "Evaporation.",
+      "key_points": ["evaporation"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What process forms crystals from a solution?",
+      "answer": "Crystallization.",
+      "key_points": ["crystallization"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 24,
+      "question": "What classification divides matter into three groups in this chapter?",
+      "answer": "Elements, compounds, and mixtures.",
+      "key_points": ["classification"],
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is understanding matter important in science?",
+      "answer": "It helps explain the composition and properties of materials.",
+      "key_points": ["importance of matter"],
+      "source_section": "Summary"
+    }
+  ]
+}

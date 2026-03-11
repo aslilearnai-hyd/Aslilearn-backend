@@ -1,0 +1,173 @@
+{
+  "class": "Class 10",
+  "subject": "History",
+  "chapter": "Print Culture and the Modern World",
+  "difficulty": "Medium",
+  "source_pdf": "jess305.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "The Evolution of Mechanical Print",
+      "objective": "Compare the efficiency of woodblock printing and movable type",
+      "materials": [
+        "Cardboard",
+        "Potatoes or Rubber erasers (for carving)",
+        "Ink",
+        "Paper"
+      ],
+      "steps": [
+        "Carve a single word into a potato/eraser (Woodblock style) and print it 5 times",
+        "Create individual letter stamps (Movable type style) and assemble them to print the same word 5 times",
+        "Write a report on which method is easier for correcting errors or printing different sentences"
+      ],
+      "learning_outcome": "Understands why Gutenberg’s invention revolutionized production speed",
+      "evaluation": "Clarity of comparison and experimental notes (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Mapping the Global Print Journey",
+      "objective": "Trace the diffusion of printing technology across continents",
+      "materials": [
+        "World Map",
+        "Markers",
+        "Historical timeline notes"
+      ],
+      "steps": [
+        "Mark the 8th-century woodblock origins in East Asia",
+        "Trace the 13th-century transmission to Europe via Marco Polo",
+        "Mark the 16th-century arrival of the first press in Goa, India via Portuguese missionaries",
+        "Add dates and names of the first major books printed in each region"
+      ],
+      "learning_outcome": "Spatial and chronological understanding of technological diffusion",
+      "evaluation": "Accuracy of routes, dates, and geographic labeling (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "The Reading Public: Then vs. Now",
+      "objective": "Analyze how print created a common culture among the illiterate",
+      "materials": [
+        "Notebook",
+        "Reference to 'Oral Culture' in the textbook"
+      ],
+      "steps": [
+        "Research how early printers incorporated ballads and folk tales into books for those who couldn't read",
+        "Draw a scene of a 'tavern' or 'public reading' where one person reads aloud to a group",
+        "Compare this to modern 'Audiobooks' or 'Podcasts' in a short paragraph"
+      ],
+      "learning_outcome": "Recognizes the blurred lines between oral and written cultures",
+      "evaluation": "Analytical comparison and creative depiction (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Censorship Case Study: The Index",
+      "objective": "Understand the conflict between new ideas and established authority",
+      "materials": [
+        "Chart paper",
+        "Markers"
+      ],
+      "steps": [
+        "Research the Roman Catholic Church's 'Index of Prohibited Books' (1558)",
+        "List three types of ideas the Church wanted to suppress (e.g., science, anti-church views)",
+        "Create a 'Censorship Poster' representing why authorities feared the 'uneducated' reading books"
+      ],
+      "learning_outcome": "Analysis of how print challenged religious and political hierarchies",
+      "evaluation": "Depth of research and poster relevance (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "The 19th Century Indian Reform Press",
+      "objective": "Evaluate the role of print in Indian social reform",
+      "materials": [
+        "A4 Sheets",
+        "Reference to Raja Ram Mohan Roy"
+      ],
+      "steps": [
+        "Research 'Sambad Kaumudi' and its role in the debate against Sati",
+        "Identify the 'Samachar Chandrika' as the opposing conservative voice",
+        "Write a summary on how newspapers became a 'battleground' for social ideas"
+      ],
+      "learning_outcome": "Understands print as a tool for social mobilization and debate",
+      "evaluation": "Accuracy of historical details and analysis (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Women, Secret Literacy, and Print",
+      "objective": "Examine the clandestine nature of female education in 19th-century India",
+      "materials": [
+        "Notebook",
+        "Excerpts from Rashsundari Devi’s 'Amar Jiban'"
+      ],
+      "steps": [
+        "Write a fictional diary entry from the perspective of a woman in a conservative household trying to hide a book",
+        "Explain the significance of 'Amar Jiban' as the first full autobiography in Bengali",
+        "Discuss how print gave a 'public voice' to private domestic struggles"
+      ],
+      "learning_outcome": "Analyzes the link between print culture and gender empowerment",
+      "evaluation": "Emotional depth and historical authenticity (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "The Penny Press and Mass Literacy",
+      "objective": "Analyze the commercialization of print for the working class",
+      "materials": [
+        "Paper",
+        "Sketch pens"
+      ],
+      "steps": [
+        "Design a 19th-century style 'advertisement' for Penny Chapbooks or 'Bibliotheque Bleue'",
+        "Include prices (very low) and the type of content (almanacs, stories of knights)",
+        "Explain how 'cheapness' led to the 'Reading Mania' in Europe"
+      ],
+      "learning_outcome": "Understands the economic factors behind the growth of the reading public",
+      "evaluation": "Creative design and conceptual clarity (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Caricatures and the Nationalist Message",
+      "objective": "Decode visual print as a tool for political satire",
+      "materials": [
+        "Printouts of colonial-era Indian cartoons",
+        "Markers"
+      ],
+      "steps": [
+        "Analyze a 19th-century cartoon mocking 'Westernized' Indians or British officials",
+        "Label the symbols used (e.g., dress, posture) to convey the message",
+        "Explain why visual print was effective for reaching those who could not read"
+      ],
+      "learning_outcome": "Grasps the power of visual media in political propaganda",
+      "evaluation": "Critical analysis of visual symbols (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "The Vernacular Press Act Audit",
+      "objective": "Understand the legal hurdles faced by Indian newspapers",
+      "materials": [
+        "Notebook",
+        "Mock Newspaper template"
+      ],
+      "steps": [
+        "Research the provisions of the 1878 Act and its 'Irish' model",
+        "Create a mock newspaper front page that has been 'redacted' or censored by a colonial official",
+        "Write a short defense by the editor against the charge of 'sedition'"
+      ],
+      "learning_outcome": "Analyzes the struggle between state control and freedom of the press",
+      "evaluation": "Historical authenticity and presentation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Industrial Print: The Rotary Press",
+      "objective": "Assess the impact of industrial technology on print",
+      "materials": [
+        "Flowchart paper",
+        "Reference to Richard M. Hoe"
+      ],
+      "steps": [
+        "Create a flowchart showing the increase in printing capacity: Hand Press -> Steam-powered Press -> Cylindrical/Rotary Press",
+        "Identify the specific advantage of the Rotary press (printing 8,000 sheets per hour)",
+        "Discuss how this technology made daily newspapers possible"
+      ],
+      "learning_outcome": "Connects technological innovation to the birth of modern journalism",
+      "evaluation": "Technical accuracy and flowchart logic (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Midnight Visitor",
+    "title": "Lesson Planner – The Midnight Visitor (Hard)",
+    "author": "Robert Arthur",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Critically analyse characters and themes",
+        "Understand narrative techniques",
+        "Interpret irony and symbolism",
+        "Apply themes to complex real-life situations",
+        "Develop analytical and creative writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author, Context, and Genre",
+            "topics_covered": [
+                "Author background",
+                "Spy fiction genre",
+                "Context of the story"
+            ],
+            "teaching_strategy": [
+                "Lecture",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Genre comparison discussion"
+            ],
+            "assessment": [
+                "Oral interaction"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Character Study – Ausable",
+            "topics_covered": [
+                "Psychological traits",
+                "Use of intelligence"
+            ],
+            "teaching_strategy": [
+                "Close reading",
+                "Critical discussion"
+            ],
+            "student_activities": [
+                "Write analytical notes"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Narrator and Point of View",
+            "topics_covered": [
+                "Role of Fowler",
+                "Narrative perspective"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Textual analysis"
+            ],
+            "student_activities": [
+                "Analyse narrator’s role"
+            ],
+            "assessment": [
+                "Written answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Conflict Development",
+            "topics_covered": [
+                "Psychological conflict",
+                "Max’s character"
+            ],
+            "teaching_strategy": [
+                "Analytical discussion"
+            ],
+            "student_activities": [
+                "Explain Max’s reactions"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Suspense and Dialogue",
+            "topics_covered": [
+                "Use of dialogue",
+                "Suspense techniques"
+            ],
+            "teaching_strategy": [
+                "Text-based analysis"
+            ],
+            "student_activities": [
+                "Identify key dialogues"
+            ],
+            "assessment": [
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Irony and Symbolism",
+            "topics_covered": [
+                "Irony of the balcony",
+                "Symbolic meaning"
+            ],
+            "teaching_strategy": [
+                "Interpretative discussion"
+            ],
+            "student_activities": [
+                "Write interpretation"
+            ],
+            "assessment": [
+                "Analytical writing"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme and Author’s Message",
+            "topics_covered": [
+                "Presence of mind",
+                "Intelligence vs force"
+            ],
+            "teaching_strategy": [
+                "Critical discussion"
+            ],
+            "student_activities": [
+                "Support themes with evidence"
+            ],
+            "assessment": [
+                "Paragraph answers"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Creative Writing and Evaluation",
+            "topics_covered": [
+                "Alternative ending",
+                "Critical review",
+                "Revision"
+            ],
+            "teaching_strategy": [
+                "Creative task",
+                "Recap session"
+            ],
+            "student_activities": [
+                "Write alternative ending",
+                "Clear doubts"
+            ],
+            "assessment": [
+                "Written test",
+                "Creative evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Board",
+        "Reference notes"
+    ],
+    "evaluation_methods": [
+        "Analytical writing",
+        "Oral questioning",
+        "Written tests"
+    ],
+    "teacher_tip": "Guide students to focus on psychological conflict and irony rather than physical action."
+}

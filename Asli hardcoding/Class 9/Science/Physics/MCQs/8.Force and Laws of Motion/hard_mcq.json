@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Force and Laws of Motion",
+    "generated_at": "2026-03-06T16:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A body of mass 2 kg accelerates at 3 m/s². The force acting on it is:",
+            "options": {
+                "A": "3 N",
+                "B": "5 N",
+                "C": "6 N",
+                "D": "9 N"
+            },
+            "correct_answer": "C",
+            "explanation": "F = ma = 2 × 3 = 6 N.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 2,
+            "question": "A body moving with constant velocity has:",
+            "options": {
+                "A": "Zero acceleration",
+                "B": "Maximum force",
+                "C": "Increasing momentum",
+                "D": "Changing velocity"
+            },
+            "correct_answer": "A",
+            "explanation": "Constant velocity means acceleration is zero.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 3,
+            "question": "When no external force acts on a system, the total momentum:",
+            "options": {
+                "A": "Increases",
+                "B": "Decreases",
+                "C": "Remains constant",
+                "D": "Becomes zero"
+            },
+            "correct_answer": "C",
+            "explanation": "This is the law of conservation of momentum.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following situations illustrates inertia of motion?",
+            "options": {
+                "A": "Passengers move forward when bus stops",
+                "B": "Passengers move backward when bus starts",
+                "C": "Passengers lean outward on turning bus",
+                "D": "A stone falling"
+            },
+            "correct_answer": "A",
+            "explanation": "Passengers continue moving forward due to inertia of motion.",
+            "difficulty": "hard",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Impulse is equal to:",
+            "options": {
+                "A": "Force × time",
+                "B": "Mass × acceleration",
+                "C": "Velocity × time",
+                "D": "Momentum × time"
+            },
+            "correct_answer": "A",
+            "explanation": "Impulse equals force multiplied by time.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 6,
+            "question": "The unit of impulse is:",
+            "options": {
+                "A": "N",
+                "B": "kg m/s",
+                "C": "m/s²",
+                "D": "J"
+            },
+            "correct_answer": "B",
+            "explanation": "Impulse has the same unit as momentum.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "If mass remains constant, increasing force will:",
+            "options": {
+                "A": "Decrease acceleration",
+                "B": "Increase acceleration",
+                "C": "Keep acceleration same",
+                "D": "Stop motion"
+            },
+            "correct_answer": "B",
+            "explanation": "From F = ma, acceleration increases with force.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which pair represents action and reaction?",
+            "options": {
+                "A": "Weight and friction",
+                "B": "Push of hand and push of wall",
+                "C": "Speed and velocity",
+                "D": "Mass and weight"
+            },
+            "correct_answer": "B",
+            "explanation": "When a hand pushes a wall, the wall pushes back.",
+            "difficulty": "hard",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Which quantity remains unchanged during elastic collision?",
+            "options": {
+                "A": "Velocity",
+                "B": "Momentum",
+                "C": "Acceleration",
+                "D": "Force"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum is conserved during collision.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of the following has the greatest inertia?",
+            "options": {
+                "A": "1 kg stone",
+                "B": "2 kg iron block",
+                "C": "500 g book",
+                "D": "200 g ball"
+            },
+            "correct_answer": "B",
+            "explanation": "Greater mass means greater inertia.",
+            "difficulty": "hard",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Momentum of a moving object depends on:",
+            "options": {
+                "A": "Mass only",
+                "B": "Velocity only",
+                "C": "Mass and velocity",
+                "D": "Force only"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum = mass × velocity.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "The change in velocity per unit time is:",
+            "options": {
+                "A": "Momentum",
+                "B": "Acceleration",
+                "C": "Force",
+                "D": "Energy"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration is rate of change of velocity.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which quantity is measured in Newton?",
+            "options": {
+                "A": "Mass",
+                "B": "Force",
+                "C": "Velocity",
+                "D": "Time"
+            },
+            "correct_answer": "B",
+            "explanation": "Force is measured in Newton.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "A truck and a car collide. According to Newton’s Third Law:",
+            "options": {
+                "A": "Truck exerts greater force",
+                "B": "Car exerts greater force",
+                "C": "Both exert equal forces",
+                "D": "No force acts"
+            },
+            "correct_answer": "C",
+            "explanation": "Action and reaction forces are equal.",
+            "difficulty": "hard",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which law explains motion of rockets?",
+            "options": {
+                "A": "First law",
+                "B": "Second law",
+                "C": "Third law",
+                "D": "Law of inertia"
+            },
+            "correct_answer": "C",
+            "explanation": "Rocket propulsion works due to action-reaction forces.",
+            "difficulty": "hard",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which quantity has both magnitude and direction?",
+            "options": {
+                "A": "Mass",
+                "B": "Speed",
+                "C": "Force",
+                "D": "Distance"
+            },
+            "correct_answer": "C",
+            "explanation": "Force is a vector quantity.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following is scalar?",
+            "options": {
+                "A": "Velocity",
+                "B": "Momentum",
+                "C": "Force",
+                "D": "Mass"
+            },
+            "correct_answer": "D",
+            "explanation": "Mass has magnitude only.",
+            "difficulty": "hard",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Friction acts:",
+            "options": {
+                "A": "Along motion",
+                "B": "Opposite to motion",
+                "C": "Vertically upward",
+                "D": "Vertically downward"
+            },
+            "correct_answer": "B",
+            "explanation": "Friction opposes motion.",
+            "difficulty": "hard",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Seat belts protect passengers due to:",
+            "options": {
+                "A": "Velocity",
+                "B": "Inertia",
+                "C": "Acceleration",
+                "D": "Friction"
+            },
+            "correct_answer": "B",
+            "explanation": "Seat belts counteract inertia during sudden stops.",
+            "difficulty": "hard",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which law explains that objects remain at rest unless acted upon?",
+            "options": {
+                "A": "First law",
+                "B": "Second law",
+                "C": "Third law",
+                "D": "Gravity law"
+            },
+            "correct_answer": "A",
+            "explanation": "Newton’s First Law describes inertia.",
+            "difficulty": "hard",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which example shows Newton’s Third Law?",
+            "options": {
+                "A": "Walking",
+                "B": "Standing",
+                "C": "Sleeping",
+                "D": "Reading"
+            },
+            "correct_answer": "A",
+            "explanation": "Feet push the ground backward and ground pushes forward.",
+            "difficulty": "hard",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Momentum is:",
+            "options": {
+                "A": "Scalar",
+                "B": "Vector",
+                "C": "Constant",
+                "D": "Energy"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum has magnitude and direction.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Acceleration unit is:",
+            "options": {
+                "A": "m/s",
+                "B": "m/s²",
+                "C": "kg",
+                "D": "N"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration unit is metre per second squared.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Force depends on:",
+            "options": {
+                "A": "Mass and acceleration",
+                "B": "Mass only",
+                "C": "Velocity only",
+                "D": "Time only"
+            },
+            "correct_answer": "A",
+            "explanation": "Force = mass × acceleration.",
+            "difficulty": "hard",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "The scientist who proposed laws of motion is:",
+            "options": {
+                "A": "Einstein",
+                "B": "Newton",
+                "C": "Galileo",
+                "D": "Darwin"
+            },
+            "correct_answer": "B",
+            "explanation": "Sir Isaac Newton formulated the laws of motion.",
+            "difficulty": "hard",
+            "source_section": "Section 8"
+        }
+    ]
+}

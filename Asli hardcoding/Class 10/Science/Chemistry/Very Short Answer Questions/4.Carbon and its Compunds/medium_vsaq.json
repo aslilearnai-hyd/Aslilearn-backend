@@ -1,0 +1,208 @@
+{
+    "content_type": "Medium Questions",
+    "chapter": "Chapter: CARBON AND ITS COMPOUNDS",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why carbon forms compounds mainly by covalent bonding.",
+            "answer": "Carbon has 4 electrons in its valence shell. It cannot lose 4 electrons (requires too much energy) or gain 4 electrons (difficult for 6 protons to hold 10 electrons). Thus, it shares electrons to achieve stability.",
+            "key_concepts": ["covalent bonding", "tetravalency"],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is catenation? Why does carbon show this property to a maximum extent?",
+            "answer": "Catenation is the unique ability of an element to form bonds with other atoms of the same element, giving rise to large molecules. Carbon shows this because the C-C bond is very strong and stable.",
+            "key_concepts": ["catenation"],
+            "marks": 3,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Differentiate between saturated and unsaturated hydrocarbons.",
+            "answer": "Saturated hydrocarbons (alkanes) have only single bonds between carbon atoms and are generally less reactive. Unsaturated hydrocarbons (alkenes/alkynes) have double or triple bonds and are more reactive.",
+            "key_concepts": ["saturation", "unsaturation"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a homologous series? List any two characteristics of such a series.",
+            "answer": "A series of compounds where the same functional group substitutes for hydrogen in a carbon chain. Characteristics: 1. Successive members differ by a $-CH_2$ unit. 2. They show a gradation in physical properties.",
+            "key_concepts": ["homologous series"],
+            "marks": 3,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Why does carbon form a large number of compounds?",
+            "answer": "Due to two unique properties: 1. Tetravalency (ability to bond with four other atoms) and 2. Catenation (ability to form long chains or rings).",
+            "key_concepts": ["versatile nature of carbon"],
+            "marks": 3,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Draw the electron dot structure of Ethane ($C_2H_6$).",
+            "answer": "The structure shows two carbon atoms sharing one pair of electrons between them, and each carbon sharing one pair of electrons with three hydrogen atoms.",
+            "key_concepts": ["electron dot structure"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What are structural isomers? Draw the structures of the two isomers of Butane.",
+            "answer": "Compounds with the same molecular formula but different structural arrangements. For Butane ($C_4H_{10}$), the isomers are n-butane (straight chain) and isobutane (branched chain).",
+            "key_concepts": ["isomerism"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Define functional groups. Identify the functional groups in (a) Propanone and (b) Propanal.",
+            "answer": "An atom or group of atoms that defines the chemical properties of an organic compound. (a) Ketone ($>C=O$) in Propanone, (b) Aldehyde ($-CHO$) in Propanal.",
+            "key_concepts": ["functional groups"],
+            "marks": 3,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is the combustion of substances like coal or petroleum sometimes accompanied by a yellow flame and black smoke?",
+            "answer": "This happens during incomplete combustion when there is insufficient oxygen. Unburnt carbon particles are produced, which glow yellow and settle as soot.",
+            "key_concepts": ["combustion", "soot"],
+            "marks": 3,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is an oxidation reaction in the context of carbon compounds? Give an example.",
+            "answer": "A reaction where oxygen is added to a molecule. For example, Ethanol is oxidized to Ethanoic acid using alkaline $KMnO_4$ and heat.",
+            "key_concepts": ["oxidation"],
+            "marks": 3,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the 'Addition Reaction' with an example. What is its industrial application?",
+            "answer": "Unsaturated hydrocarbons add hydrogen in the presence of catalysts (Ni/Pd) to become saturated. Example: Hydrogenation of vegetable oils into vanaspati ghee.",
+            "key_concepts": ["addition reaction", "hydrogenation"],
+            "marks": 3,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a substitution reaction? Give the reaction of chlorine with methane.",
+            "answer": "A reaction where one type of atom/group is replaced by another. $CH_4 + Cl_2 \xrightarrow{sunlight} CH_3Cl + HCl$.",
+            "key_concepts": ["substitution reaction"],
+            "marks": 3,
+            "source_section": "Section 4.3.4"
+        },
+        {
+            "question_number": 13,
+            "question": "How can you distinguish between an alcohol and a carboxylic acid experimentally?",
+            "answer": "Add sodium bicarbonate ($NaHCO_3$) to both. Carboxylic acid will produce brisk effervescence due to $CO_2$ gas, whereas alcohol will not react.",
+            "key_concepts": ["chemical tests", "effervescence"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when Ethanol reacts with Sodium metal? Write the equation.",
+            "answer": "Sodium ethoxide and hydrogen gas are formed. $2Na + 2CH_3CH_2OH \rightarrow 2CH_3CH_2ONa + H_2 \uparrow$.",
+            "key_concepts": ["reaction of ethanol"],
+            "marks": 3,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the process of esterification with a chemical equation.",
+            "answer": "Reaction of an alcohol with a carboxylic acid in the presence of an acid catalyst to form an ester. $CH_3COOH + CH_3CH_2OH \xrightarrow{Acid} CH_3COOCH_2CH_3 + H_2O$.",
+            "key_concepts": ["esterification"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is saponification? Why is it called so?",
+            "answer": "The process of heating an ester with an alkali (NaOH) to produce alcohol and the sodium salt of carboxylic acid. It is called so because it is used in the preparation of soap.",
+            "key_concepts": ["saponification"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "How does ethanoic acid react with (a) Sodium hydroxide and (b) Sodium carbonate?",
+            "answer": "(a) $CH_3COOH + NaOH \rightarrow CH_3COONa + H_2O$. (b) $2CH_3COOH + Na_2CO_3 \rightarrow 2CH_3COONa + H_2O + CO_2$.",
+            "key_concepts": ["reactions of ethanoic acid"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the structure of a soap molecule.",
+            "answer": "A soap molecule has a long hydrocarbon tail (hydrophobic/water-repelling) and a short ionic head (hydrophilic/water-attracting).",
+            "key_concepts": ["soap structure"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the mechanism of the cleaning action of soaps.",
+            "answer": "Soap molecules form micelles where the tail attaches to the dirt (oil) and the head stays in water. When water is agitated, the micelles carry the dirt away into the water.",
+            "key_concepts": ["cleansing action", "micelles"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 20,
+            "question": "What is scum? How is it formed?",
+            "answer": "An insoluble curd-like precipitate formed when soap reacts with Calcium and Magnesium ions present in hard water.",
+            "key_concepts": ["scum", "hard water"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are detergents better than soaps for washing clothes in hard water?",
+            "answer": "Detergents are ammonium or sulphonate salts that do not form insoluble precipitates (scum) with the Calcium and Magnesium ions in hard water.",
+            "key_concepts": ["detergents vs soaps"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is 'Glacial Acetic Acid'? Why is it called so?",
+            "answer": "Pure ethanoic acid is called glacial acetic acid. It is called so because its melting point is 290 K, and it often freezes during winter in cold climates.",
+            "key_concepts": ["ethanoic acid"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How is Ethanol converted to Ethane? Write the conditions and the equation.",
+            "answer": "By heating ethanol at 443 K with excess concentrated sulphuric acid ($H_2SO_4$), which acts as a dehydrating agent. $CH_3CH_2OH \xrightarrow{H_2SO_4} CH_2=CH_2 + H_2O$.",
+            "key_concepts": ["dehydration"],
+            "marks": 3,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What are the disadvantages of using detergents over soaps?",
+            "answer": "Most detergents are non-biodegradable and cause water pollution, whereas soaps are biodegradable.",
+            "key_concepts": ["environmental impact"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Name the simplest ketone and draw its structure.",
+            "answer": "Propanone (Acetone). Structure: $CH_3-CO-CH_3$.",
+            "key_concepts": ["nomenclature", "ketones"],
+            "marks": 3,
+            "source_section": "Section 4.2.3"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-05T17:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is a characteristic of science?",
+            "options": {
+                "A": "Based on personal opinions",
+                "B": "Based on observations and experiments",
+                "C": "Always unchanging",
+                "D": "Only about facts from the past"
+            },
+            "correct_answer": "B",
+            "explanation": "Science is based on careful observations, experiments, and evidence.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who is considered the father of modern science?",
+            "options": {
+                "A": "Albert Einstein",
+                "B": "Galileo Galilei",
+                "C": "Isaac Newton",
+                "D": "Charles Darwin"
+            },
+            "correct_answer": "B",
+            "explanation": "Galileo Galilei is often called the father of modern science for his work in physics and astronomy.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is an example of scientific knowledge?",
+            "options": {
+                "A": "The Earth is round",
+                "B": "Blue is a good color",
+                "C": "Chocolate is tasty",
+                "D": "Aliens exist"
+            },
+            "correct_answer": "A",
+            "explanation": "The statement 'The Earth is round' is based on scientific evidence and observation.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of these methods is commonly used in science?",
+            "options": {
+                "A": "Guessing",
+                "B": "Observation and experimentation",
+                "C": "Reading myths",
+                "D": "Relying on tradition"
+            },
+            "correct_answer": "B",
+            "explanation": "Scientific methods rely on observation, experiments, and logical reasoning.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Which statement best describes the nature of scientific knowledge?",
+            "options": {
+                "A": "Permanent and absolute",
+                "B": "Tentative and evolving",
+                "C": "Based on myths",
+                "D": "Unchangeable"
+            },
+            "correct_answer": "B",
+            "explanation": "Scientific knowledge evolves as new discoveries and evidence emerge.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following is an example of a scientific observation?",
+            "options": {
+                "A": "The flower is red",
+                "B": "I like red flowers",
+                "C": "Red flowers bring good luck",
+                "D": "All flowers are beautiful"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific observations are objective, like noting the color of a flower.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which branch of science studies living organisms?",
+            "options": {
+                "A": "Physics",
+                "B": "Chemistry",
+                "C": "Biology",
+                "D": "Astronomy"
+            },
+            "correct_answer": "C",
+            "explanation": "Biology is the study of living organisms.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of these is an example of a hypothesis?",
+            "options": {
+                "A": "Plants need sunlight to grow",
+                "B": "The sun rises in the east",
+                "C": "Water freezes at 0°C",
+                "D": "The Earth is round"
+            },
+            "correct_answer": "A",
+            "explanation": "A hypothesis is a proposed explanation that can be tested through experiments.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do scientists perform experiments?",
+            "options": {
+                "A": "To prove their beliefs",
+                "B": "To test hypotheses",
+                "C": "To make stories interesting",
+                "D": "To create myths"
+            },
+            "correct_answer": "B",
+            "explanation": "Experiments help scientists test hypotheses and gather evidence.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which scientist proposed the laws of motion?",
+            "options": {
+                "A": "Galileo Galilei",
+                "B": "Isaac Newton",
+                "C": "Albert Einstein",
+                "D": "Nikola Tesla"
+            },
+            "correct_answer": "B",
+            "explanation": "Isaac Newton formulated the three laws of motion.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of these is an example of applied science?",
+            "options": {
+                "A": "Studying cells under a microscope",
+                "B": "Developing a new medicine",
+                "C": "Observing stars",
+                "D": "Classifying plants"
+            },
+            "correct_answer": "B",
+            "explanation": "Applied science uses scientific knowledge to develop practical solutions, like medicines.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of these tools is used by scientists to make observations?",
+            "options": {
+                "A": "Microscope",
+                "B": "Compass",
+                "C": "Calculator",
+                "D": "Hammer"
+            },
+            "correct_answer": "A",
+            "explanation": "Microscopes help scientists observe tiny details not visible to the naked eye.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which statement is true about scientific theories?",
+            "options": {
+                "A": "They are guesses",
+                "B": "They explain observed phenomena",
+                "C": "They cannot change",
+                "D": "They are based on opinions"
+            },
+            "correct_answer": "B",
+            "explanation": "Scientific theories are explanations based on evidence and observations.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following is NOT a branch of science?",
+            "options": {
+                "A": "Physics",
+                "B": "Literature",
+                "C": "Chemistry",
+                "D": "Biology"
+            },
+            "correct_answer": "B",
+            "explanation": "Literature is not a scientific discipline.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What does experimentation in science involve?",
+            "options": {
+                "A": "Testing ideas under controlled conditions",
+                "B": "Making guesses without observation",
+                "C": "Reading only books",
+                "D": "Using imagination alone"
+            },
+            "correct_answer": "A",
+            "explanation": "Experiments test hypotheses under controlled and repeatable conditions.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following is a scientific fact?",
+            "options": {
+                "A": "The Earth revolves around the Sun",
+                "B": "Chocolate tastes better than vanilla",
+                "C": "Dogs are cuter than cats",
+                "D": "Red is the best color"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific facts are statements based on evidence, like the Earth's revolution around the Sun.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following helps in the growth of scientific knowledge?",
+            "options": {
+                "A": "Curiosity and experiments",
+                "B": "Beliefs and myths",
+                "C": "Stories and legends",
+                "D": "Superstitions"
+            },
+            "correct_answer": "A",
+            "explanation": "Curiosity, observation, and experiments lead to new scientific discoveries.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is an example of pure science?",
+            "options": {
+                "A": "Studying chemical reactions",
+                "B": "Designing a rocket",
+                "C": "Developing a medicine",
+                "D": "Building a bridge"
+            },
+            "correct_answer": "A",
+            "explanation": "Pure science aims to gain knowledge, like studying chemical reactions, without immediate practical application.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is science considered a dynamic process?",
+            "options": {
+                "A": "Because it never changes",
+                "B": "Because it evolves with new evidence",
+                "C": "Because it is based on myths",
+                "D": "Because it is imaginary"
+            },
+            "correct_answer": "B",
+            "explanation": "Scientific knowledge changes and improves as new discoveries are made.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following shows scientific reasoning?",
+            "options": {
+                "A": "Predicting rain by observing clouds",
+                "B": "Believing a myth without proof",
+                "C": "Assuming things without evidence",
+                "D": "Following a superstition"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific reasoning involves making predictions based on observations and evidence.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which scientist is known for the theory of evolution?",
+            "options": {
+                "A": "Charles Darwin",
+                "B": "Isaac Newton",
+                "C": "Galileo Galilei",
+                "D": "Marie Curie"
+            },
+            "correct_answer": "A",
+            "explanation": "Charles Darwin proposed the theory of evolution by natural selection.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following is a method used to verify scientific results?",
+            "options": {
+                "A": "Repeating experiments",
+                "B": "Making random guesses",
+                "C": "Asking friends",
+                "D": "Relying on tradition"
+            },
+            "correct_answer": "A",
+            "explanation": "Repeating experiments ensures the results are reliable and reproducible.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following statements is correct?",
+            "options": {
+                "A": "Scientific knowledge is fixed",
+                "B": "Scientific knowledge is based on evidence",
+                "C": "Science depends on beliefs",
+                "D": "Science is only about memorization"
+            },
+            "correct_answer": "B",
+            "explanation": "Science relies on evidence obtained through observation and experimentation.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following is an example of technology based on science?",
+            "options": {
+                "A": "Mobile phones",
+                "B": "Folktales",
+                "C": "Myths",
+                "D": "Legends"
+            },
+            "correct_answer": "A",
+            "explanation": "Technology like mobile phones is developed using scientific knowledge.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of these is a feature of scientific experiments?",
+            "options": {
+                "A": "Controlled conditions",
+                "B": "Random opinions",
+                "C": "Superstitions",
+                "D": "Imagination only"
+            },
+            "correct_answer": "A",
+            "explanation": "Scientific experiments are performed under controlled and repeatable conditions to test hypotheses.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        }
+    ]
+}

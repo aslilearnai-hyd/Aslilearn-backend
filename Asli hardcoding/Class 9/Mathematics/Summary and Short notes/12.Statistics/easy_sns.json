@@ -1,0 +1,36 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Easy",
+    "short_notes": {
+        "key_points": [
+            "Statistics is the science of collecting, organizing, presenting, analyzing, and interpreting data.",
+            "Types of data: Qualitative (non-numerical), Quantitative (numerical).",
+            "Frequency: Number of times a particular value occurs.",
+            "Cumulative frequency: Sum of frequencies up to a certain class.",
+            "Measures of central tendency: Mean, Median, Mode.",
+            "Graphical representation: Bar graph, Histogram, Frequency Polygon, Cumulative Frequency Curve."
+        ],
+        "formulas": [
+            "Mean (grouped data) = Σ(f × x)/Σf",
+            "Median (grouped data) = L + [(n/2 − CF)/f] × h",
+            "Mode (grouped data) = L + [(f1 − f0)/(2f1 − f0 − f2)] × h",
+            "Cumulative frequency: Add frequencies sequentially up to a class",
+            "Less than cumulative frequency curve: plot upper class boundaries vs cumulative frequencies"
+        ],
+        "examples": [
+            "Data: 2,4,6,8,10 → Mean = (2+4+6+8+10)/5 = 6",
+            "Frequency table: Marks 0–10→3, 10–20→5, 20–30→7 → Cumulative frequencies: 3,8,15",
+            "Median class: Identify the class containing n/2-th item",
+            "Mode: Identify class with highest frequency and apply formula"
+        ],
+        "exam_tips": [
+            "Always check that frequencies add up to total n.",
+            "For median, draw less-than cumulative frequency graph to locate median class.",
+            "Mode is applicable for grouped data and requires the modal class.",
+            "Mean can also be calculated using assumed mean method for large numbers.",
+            "Draw clear graphs (histogram, frequency polygon) to avoid mistakes."
+        ]
+    }
+}

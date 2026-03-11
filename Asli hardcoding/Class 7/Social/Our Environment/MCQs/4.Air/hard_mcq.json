@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Air (Our Environment)",
+  "generated_at": "2026-03-07T18:25:30",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following describes the 'Greenhouse Effect' in the most scientifically accurate way according to the text?",
+      "options": {
+        "A": "Carbon dioxide absorbs all the solar radiation coming from the sun.",
+        "B": "Carbon dioxide prevents the earth's heat from escaping into space by trapping terrestrial radiation.",
+        "C": "The atmosphere creates heat through chemical reactions between Nitrogen and Oxygen.",
+        "D": "Green plants release heat during photosynthesis which warms the planet."
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon dioxide released in the atmosphere creates a green house effect by trapping the heat radiated from the earth.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "While Nitrogen is the most abundant gas, plants cannot use it directly. What is the primary mechanism for Nitrogen 'fixation' mentioned in the chapter?",
+      "options": {
+        "A": "Plants absorb it through their leaves during the night.",
+        "B": "Bacteria that live in the soil and roots of some plants change its form.",
+        "C": "Rainwater carries dissolved nitrogen into the stems.",
+        "D": "Lightning converts nitrogen into oxygen for plants."
+      },
+      "correct_answer": "B",
+      "explanation": "Bacteria, that live in the soil and roots of some plants, take nitrogen from the air and change its form so that plants can use it.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Global warming causes the melting of snow in the coldest parts of the world. What is the most dangerous long-term consequence of this mentioned in the text?",
+      "options": {
+        "A": "The earth will become a giant desert.",
+        "B": "Rising sea levels leading to the submergence of coastal areas.",
+        "C": "The atmosphere will disappear into space.",
+        "D": "All green plants will grow faster and consume all CO2."
+      },
+      "correct_answer": "B",
+      "explanation": "As a result of global warming, the sea level rises causing floods in the coastal areas. In the long run, this may lead to change in the climate leading to extinction of some plants and animals.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "The 'Mesosphere' extends up to the height of 80 km. What is its most distinguishing feature regarding space objects?",
+      "options": {
+        "A": "It contains the ozone layer which reflects meteorites.",
+        "B": "Meteorites burn up in this layer on entering from the space.",
+        "C": "It is the layer where satellites are stationed.",
+        "D": "The temperature rises to 2000 degrees Celsius here."
+      },
+      "correct_answer": "B",
+      "explanation": "The Mesosphere is the third layer where meteorites burn up due to atmospheric friction.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 5,
+      "question": "The 'Ionosphere' is a vital sub-layer of the Thermosphere. Why is it essential for modern communication?",
+      "options": {
+        "A": "It blocks all radio waves from leaving Earth.",
+        "B": "It reflects radio waves transmitted from the earth back to the surface.",
+        "C": "It generates its own electricity to power satellites.",
+        "D": "It is the only layer where air is thick enough for signals."
+      },
+      "correct_answer": "B",
+      "explanation": "The Ionosphere (80-400 km) reflects radio waves, facilitating long-distance wireless communication.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Why does the amount of 'Insolation' decrease as we move from the Equator towards the Poles?",
+      "options": {
+        "A": "The Poles are further away from the Sun than the Equator.",
+        "B": "The angle of the sun's rays becomes more slanting towards the poles, spreading energy over a larger area.",
+        "C": "The atmosphere is thicker at the Poles.",
+        "D": "The Poles are always covered in clouds."
+      },
+      "correct_answer": "B",
+      "explanation": "Insolation is the incoming solar energy. Its intensity decreases polewards because the sun's rays hit the earth at a more acute angle.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "If the earth's temperature rises too high, why would it become 'too warm for some crops to grow'?",
+      "options": {
+        "A": "The crops would catch fire spontaneously.",
+        "B": "High temperatures alter the climate and moisture levels required for specific biological cycles.",
+        "C": "The sun would consume all the nitrogen.",
+        "D": "Insects would eat all the crops instantly."
+      },
+      "correct_answer": "B",
+      "explanation": "Specific crops require particular temperature ranges and moisture levels; global warming shifts these climatic zones.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following statements about 'Air Pressure' is scientifically accurate?",
+      "options": {
+        "A": "We do not feel air pressure because it is very weak.",
+        "B": "Air presses us from all directions and our body exerts a counter pressure.",
+        "C": "Air pressure is the same at sea level and on Mt. Everest.",
+        "D": "Cold air exerts lower pressure than warm air."
+      },
+      "correct_answer": "B",
+      "explanation": "Air presses us with a great force on our bodies. However, we don't even feel it because the air presses us from all directions and our body exerts a counter pressure.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the relationship between 'Air Temperature' and 'Air Pressure'?",
+      "options": {
+        "A": "They are directly proportional; high temperature means high pressure.",
+        "B": "They are inversely proportional; high temperature leads to low pressure as air rises.",
+        "C": "Temperature has no effect on air pressure.",
+        "D": "Pressure only changes when it rains."
+      },
+      "correct_answer": "B",
+      "explanation": "In areas where temperature is high the air gets heated and rises. This creates a low-pressure area.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Why do astronauts have to wear special protective space suits filled with air when they go to the moon?",
+      "options": {
+        "A": "To keep them warm in the cold space.",
+        "B": "To prevent their body's counter-pressure from bursting blood vessels in the absence of external air pressure.",
+        "C": "To help them walk on the moon's surface.",
+        "D": "To protect them from moon dust."
+      },
+      "correct_answer": "B",
+      "explanation": "On the moon there is no air and hence no air pressure. If they did not wear these space suits, the counter pressure exerted by the body would make the blood vessels burst.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "The 'Westerlies' and 'Trade Winds' are categorized as 'Permanent Winds'. What defines them?",
+      "options": {
+        "A": "They blow only during the day.",
+        "B": "They blow constantly throughout the year in a particular direction.",
+        "C": "They only blow over the oceans.",
+        "D": "They change direction every six months."
+      },
+      "correct_answer": "B",
+      "explanation": "Permanent winds blow constantly throughout the year in a particular direction across the globe.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 12,
+      "question": "The 'Monsoon' in India is an example of which type of wind system?",
+      "options": {
+        "A": "Permanent winds",
+        "B": "Local winds",
+        "C": "Seasonal winds",
+        "D": "Cyclonic winds"
+      },
+      "correct_answer": "C",
+      "explanation": "Seasonal winds change their direction in different seasons. For example monsoons in India.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Consider the 'Cyclonic Rainfall' pattern. What occurs when a 'Warm Air' mass meets a 'Cold Air' mass?",
+      "options": {
+        "A": "The cold air rises above the warm air.",
+        "B": "The warm air, being lighter, rises above the cold air, leading to condensation and rain.",
+        "C": "They mix and disappear.",
+        "D": "The pressure becomes extremely high and prevents rain."
+      },
+      "correct_answer": "B",
+      "explanation": "In cyclonic rainfall, the lifting of warm air over cold air leads to cooling, condensation, and precipitation.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 14,
+      "question": "During the 'Odisha Cyclone' of 1999, what was the primary cause of the massive destruction in coastal areas?",
+      "options": {
+        "A": "Only the high wind speed.",
+        "B": "A combination of wind velocity, rain, and a massive tidal surge.",
+        "C": "A volcanic eruption triggered by the storm.",
+        "D": "The lack of trees in the area."
+      },
+      "correct_answer": "B",
+      "explanation": "The destruction was caused by three factors: wind velocity, rain and tidal surge. Winds of upto 260 km/h lasted for 36 hours.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3 (Case Study)"
+    },
+    {
+      "question_number": 15,
+      "question": "In the context of 'Humidity', why does wet clothes take longer to dry on a humid day?",
+      "options": {
+        "A": "There is no wind to dry the clothes.",
+        "B": "The air is already saturated with water vapor, reducing the rate of evaporation from the clothes.",
+        "C": "The clothes absorb more water from the air.",
+        "D": "The temperature is too low for evaporation."
+      },
+      "correct_answer": "B",
+      "explanation": "On a humid day, the air is full of water vapour, so it cannot easily take in more moisture from our sweat or wet clothes.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What happens to the moisture in the air when it rises and begins to cool?",
+      "options": {
+        "A": "It turns into oxygen.",
+        "B": "It condenses to form water droplets, which cluster together as clouds.",
+        "C": "It becomes invisible and stays as gas.",
+        "D": "It falls as dry dust."
+      },
+      "correct_answer": "B",
+      "explanation": "When the water vapour rises, it starts cooling. The water vapour condenses causing formation of droplets of water. Clouds are just masses of such water droplets.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is the 'Exosphere' considered the outermost frontier of the atmosphere?",
+      "options": {
+        "A": "It is the thickest layer of all.",
+        "B": "It has very thin air and light gases like Helium and Hydrogen float from here into space.",
+        "C": "It is where all the weather happens.",
+        "D": "It protects us from the greenhouse effect."
+      },
+      "correct_answer": "B",
+      "explanation": "The exosphere is the uppermost layer with very thin air where light gases eventually escape into outer space.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 18,
+      "question": "The 'Ozone Layer' is found in the Stratosphere. What would happen if this layer were to disappear?",
+      "options": {
+        "A": "We would have no air to breathe.",
+        "B": "The earth would be exposed to harmful ultraviolet rays from the sun.",
+        "C": "The temperature would drop to absolute zero.",
+        "D": "The moon would crash into the earth."
+      },
+      "correct_answer": "B",
+      "explanation": "The stratosphere contains a layer of ozone gas. It protects us from the harmful effect of the sun rays.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 19,
+      "question": "How do green plants act as a 'sink' for Carbon Dioxide?",
+      "options": {
+        "A": "They store CO2 in their roots forever.",
+        "B": "They use it for photosynthesis and release oxygen, balancing the atmosphere.",
+        "C": "They burn CO2 to create energy.",
+        "D": "They turn CO2 into nitrogen."
+      },
+      "correct_answer": "B",
+      "explanation": "Green plants use carbon dioxide to make their food and release oxygen, maintain a perfect balance in the atmosphere.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which layer of the atmosphere contains '99% of the total mass' of the atmosphere and all weather changes?",
+      "options": {
+        "A": "Stratosphere",
+        "B": "Troposphere",
+        "C": "Mesosphere",
+        "D": "Thermosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The Troposphere is the most dense layer and almost all weather phenomena like rainfall, fog and hailstorm occur in this layer.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is 'Convections Rainfall' more common in Equatorial regions?",
+      "options": {
+        "A": "Because it is always cold there.",
+        "B": "Intense heating causes the air to become light and rise vertically, leading to daily afternoon showers.",
+        "C": "There are too many mountains.",
+        "D": "The moon's gravity is stronger there."
+      },
+      "correct_answer": "B",
+      "explanation": "Convectional rainfall occurs when the energy of the sun heats the earth's surface and causes water to evaporate to form water vapour which then rises and cools.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 22,
+      "question": "A 'Wind Vane' is used to show the ______ of the wind.",
+      "options": {
+        "A": "Speed",
+        "B": "Direction",
+        "C": "Temperature",
+        "D": "Moisture"
+      },
+      "correct_answer": "B",
+      "explanation": "While an anemometer measures speed, the wind vane is specifically used to indicate the direction of the wind.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following gases accounts for '0.93%' of the atmosphere?",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Argon",
+        "C": "Helium",
+        "D": "Ozone"
+      },
+      "correct_answer": "B",
+      "explanation": "According to the pie chart in the NCERT book, Nitrogen (78%), Oxygen (21%), Argon (0.93%), and CO2 (0.03%) are the main components.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "What is 'Loo' in the context of Indian geography?",
+      "options": {
+        "A": "A seasonal monsoon wind.",
+        "B": "A hot and dry local wind of the northern plains.",
+        "C": "A cold wind from the Himalayas.",
+        "D": "The eye of a cyclone."
+      },
+      "correct_answer": "B",
+      "explanation": "Loo is a characteristic local wind of India, specifically a hot, dry afternoon wind in the summer.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Why does the temperature in the 'Thermosphere' increase so rapidly with height?",
+      "options": {
+        "A": "Because it is closer to the magma.",
+        "B": "Because it contains the Ionosphere and directly absorbs high-energy X-rays and UV radiation from the sun.",
+        "C": "Because there is no wind to cool it down.",
+        "D": "Because of the friction from satellites."
+      },
+      "correct_answer": "B",
+      "explanation": "In thermosphere temperature rises very rapidly with increasing height because it is the first layer to be hit by solar radiation.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    }
+  ]
+}

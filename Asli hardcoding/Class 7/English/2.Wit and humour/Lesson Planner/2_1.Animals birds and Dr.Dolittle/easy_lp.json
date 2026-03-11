@@ -1,0 +1,147 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Animals, Birds, and Dr. Dolittle",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the unique character of Dr. Dolittle and his love for animals",
+    "Identify the various animals and birds in the story",
+    "Learn the importance of kindness and empathy toward all living creatures",
+    "Recognize how communication helps in building relationships",
+    "Develop basic reading comprehension and descriptive vocabulary",
+    "Understand the sequence of events leading to Dr. Dolittle learning animal languages"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Meet Dr. Dolittle",
+      "topics_covered": [
+        "Introduction to Dr. Dolittle and his house in Puddleby",
+        "His collection of pets",
+        "Why he prefers animals over human patients"
+      ],
+      "teaching_strategy": [
+        "Class discussion: 'Who is your favorite animal?'",
+        "Introduce the setting and the Doctor's personality",
+        "Picture walk through the chapter to identify animals"
+      ],
+      "student_activities": [
+        "Draw a picture of Dr. Dolittle's house with his pets",
+        "Predict what kind of doctor he is based on his house"
+      ],
+      "assessment": ["Oral questioning", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "The Special Household",
+      "topics_covered": [
+        "Naming the animals: Jip (dog), Dab-Dab (duck), Gub-Gub (pig), etc.",
+        "The reaction of the townspeople",
+        "New vocabulary: 'Pantry', 'Hedgehog', 'Linen-closet'"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the first few pages",
+        "Match-the-animal: Match the character names with their species",
+        "Teacher explanation of difficult words"
+      ],
+      "student_activities": [
+        "Read aloud descriptions of the different pets",
+        "Fill in a 'Who’s Who' chart of the animals"
+      ],
+      "assessment": ["Matching worksheet", "Reading fluency"]
+    },
+    {
+      "period": 3,
+      "title": "Learning Animal Language",
+      "topics_covered": [
+        "The role of Polynesia the parrot",
+        "How animals 'speak' without words (tail-wagging, ear-twitching)",
+        "The decision to become an 'Animal Doctor'"
+      ],
+      "teaching_strategy": [
+        "Teacher-led reading and discussion on animal communication",
+        "Demonstrate 'animal signs' (e.g., a dog's bark vs. growl)",
+        "Highlighting the importance of listening"
+      ],
+      "student_activities": [
+        "Mime an animal’s feeling (e.g., hungry cat) for the class to guess",
+        "List 3 things Polynesia taught the Doctor"
+      ],
+      "assessment": ["Activity participation", "Short oral explanations"]
+    },
+    {
+      "period": 4,
+      "title": "The Change of Profession",
+      "topics_covered": [
+        "Dr. Dolittle giving up human medicine",
+        "His transition to treating animals",
+        "The Cat's-Meat-Man’s suggestion"
+      ],
+      "teaching_strategy": [
+        "Discussion on why it's important to do what you love",
+        "Explanation of the 'Cat's-Meat-Man' character",
+        "Role-play: The Doctor deciding to change his career"
+      ],
+      "student_activities": [
+        "Role-play the conversation between the Doctor and Polynesia",
+        "Write 2 sentences on why the Doctor is a kind man"
+      ],
+      "assessment": ["Role-play performance", "Sentence construction"]
+    },
+    {
+      "period": 5,
+      "title": "Success and New Friends",
+      "topics_covered": [
+        "The Doctor becomes famous among animals",
+        "Birds and animals coming from far away for help",
+        "The moral: Helping those who cannot help themselves"
+      ],
+      "teaching_strategy": [
+        "Read the ending together",
+        "Class discussion on how news travels in the animal world",
+        "Summarizing the story's message"
+      ],
+      "student_activities": [
+        "Write a 'Thank You' note from an animal patient to the Doctor",
+        "Share a story of when they helped an animal"
+      ],
+      "assessment": ["Creative writing (note)", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Review",
+      "topics_covered": [
+        "Vocabulary revision",
+        "Naming birds and animals",
+        "Simple present tense usage in descriptions"
+      ],
+      "teaching_strategy": [
+        "Grammar exercise: Using 'is/are' to describe animals",
+        "Revision quiz on story characters",
+        "Vocabulary matching game"
+      ],
+      "student_activities": [
+        "Complete a crossword puzzle with animal names from the story",
+        "Describe their favorite animal using 3 simple sentences"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Animal flashcards",
+    "Blackboard for drawing character maps",
+    "Toy animals or puppets (optional)",
+    "Printed vocabulary list"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Character identification chart",
+    "Role-play observation",
+    "Vocabulary worksheet",
+    "Simple descriptive writing"
+  ],
+  "teacher_tip": "Encourage students to make animal sounds and gestures while reading to make the lesson lively. Focus on the idea that every creature has a 'voice' if we just take the time to listen."
+}

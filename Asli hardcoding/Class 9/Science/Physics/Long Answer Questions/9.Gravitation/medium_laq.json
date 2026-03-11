@@ -1,0 +1,399 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T14:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the universal law of gravitation and write its formula.",
+            "answer": "The universal law of gravitation states that every object in the universe attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them. The formula is F = G(Mm)/d².",
+            "answer_outline": [
+                "Statement of law",
+                "Product of masses",
+                "Inverse square of distance",
+                "Formula F = G(Mm)/d²"
+            ],
+            "key_concepts": [
+                "gravitation",
+                "inverse square law"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the factors affecting gravitational force between two objects.",
+            "answer": "Gravitational force depends on the masses of the objects and the distance between them. Larger masses increase the force, while greater distance decreases it.",
+            "answer_outline": [
+                "Mass dependence",
+                "Distance dependence",
+                "Inverse square relation"
+            ],
+            "key_concepts": [
+                "mass",
+                "distance"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the concept of free fall with suitable examples.",
+            "answer": "Free fall is the motion of an object under the influence of gravity alone. For example, a stone dropped from a height falls freely toward Earth.",
+            "answer_outline": [
+                "Definition of free fall",
+                "Gravity as only force",
+                "Example"
+            ],
+            "key_concepts": [
+                "free fall"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain acceleration due to gravity and factors affecting it.",
+            "answer": "Acceleration due to gravity is the acceleration gained by an object due to Earth's gravitational force. It depends on the mass and radius of Earth.",
+            "answer_outline": [
+                "Definition",
+                "Formula g = GM/R²",
+                "Dependence on Earth mass and radius"
+            ],
+            "key_concepts": [
+                "acceleration due to gravity"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the difference between mass and weight with examples.",
+            "answer": "Mass is the amount of matter in an object and is constant everywhere. Weight is the gravitational force acting on an object and varies depending on gravity.",
+            "answer_outline": [
+                "Definition of mass",
+                "Definition of weight",
+                "Examples"
+            ],
+            "key_concepts": [
+                "mass",
+                "weight"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the value of weight changes at different places.",
+            "answer": "Weight depends on gravitational acceleration which varies with location such as altitude, latitude and distance from Earth's center.",
+            "answer_outline": [
+                "Weight formula",
+                "Variation in gravity"
+            ],
+            "key_concepts": [
+                "gravity variation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain thrust and pressure with examples.",
+            "answer": "Thrust is the force acting perpendicular to a surface. Pressure is the thrust acting per unit area.",
+            "answer_outline": [
+                "Definition of thrust",
+                "Definition of pressure",
+                "Examples"
+            ],
+            "key_concepts": [
+                "pressure",
+                "thrust"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how pressure depends on area.",
+            "answer": "Pressure is inversely proportional to the area on which force acts. Smaller area produces greater pressure.",
+            "answer_outline": [
+                "Formula P = F/A",
+                "Effect of area"
+            ],
+            "key_concepts": [
+                "pressure relation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain buoyant force and give examples.",
+            "answer": "Buoyant force is the upward force exerted by a fluid on an object immersed in it.",
+            "answer_outline": [
+                "Definition",
+                "Upward force",
+                "Examples"
+            ],
+            "key_concepts": [
+                "buoyant force"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why objects float in water.",
+            "answer": "Objects float when the buoyant force acting on them is greater than or equal to their weight.",
+            "answer_outline": [
+                "Buoyant force",
+                "Floating condition"
+            ],
+            "key_concepts": [
+                "floating"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of density in relation to floating.",
+            "answer": "Objects float if their density is less than that of the fluid and sink if their density is greater.",
+            "answer_outline": [
+                "Density definition",
+                "Relation to floating"
+            ],
+            "key_concepts": [
+                "density"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "State and explain Archimedes' principle.",
+            "answer": "Archimedes' principle states that a body immersed in fluid experiences an upward force equal to the weight of the fluid displaced.",
+            "answer_outline": [
+                "Statement",
+                "Fluid displacement",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "Archimedes principle"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the importance of Archimedes' principle.",
+            "answer": "It explains floating of ships, functioning of hydrometers and density measurement of liquids.",
+            "answer_outline": [
+                "Floating objects",
+                "Hydrometer",
+                "Density measurement"
+            ],
+            "key_concepts": [
+                "Archimedes applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why ships float but nails sink.",
+            "answer": "Ships float because they displace a large volume of water producing sufficient buoyant force.",
+            "answer_outline": [
+                "Water displacement",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain apparent weight in liquids.",
+            "answer": "Apparent weight is the reduced weight of an object when immersed in fluid due to buoyant force.",
+            "answer_outline": [
+                "Definition",
+                "Buoyant force effect"
+            ],
+            "key_concepts": [
+                "apparent weight"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why dams are thicker at the bottom.",
+            "answer": "Water pressure increases with depth so dams are built thicker at the bottom to withstand greater pressure.",
+            "answer_outline": [
+                "Pressure increases with depth",
+                "Structural strength"
+            ],
+            "key_concepts": [
+                "fluid pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the principle behind hydrometers.",
+            "answer": "Hydrometers work based on Archimedes' principle to measure density of liquids.",
+            "answer_outline": [
+                "Archimedes principle",
+                "Density measurement"
+            ],
+            "key_concepts": [
+                "hydrometer"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why astronauts experience weightlessness.",
+            "answer": "Astronauts are in continuous free fall while orbiting Earth which creates a sensation of weightlessness.",
+            "answer_outline": [
+                "Free fall",
+                "Orbiting motion"
+            ],
+            "key_concepts": [
+                "weightlessness"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the role of gravity in planetary motion.",
+            "answer": "Gravitational force between the Sun and planets keeps the planets in their orbits.",
+            "answer_outline": [
+                "Sun gravity",
+                "Planetary orbits"
+            ],
+            "key_concepts": [
+                "planetary motion"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the relationship between gravitational force and distance.",
+            "answer": "Gravitational force decreases as the square of the distance between objects increases.",
+            "answer_outline": [
+                "Inverse square relation",
+                "Effect of distance"
+            ],
+            "key_concepts": [
+                "inverse square law"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how submarines float and sink.",
+            "answer": "Submarines control buoyancy by adjusting ballast tanks to change density.",
+            "answer_outline": [
+                "Ballast tanks",
+                "Density control"
+            ],
+            "key_concepts": [
+                "submarine buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why camels walk easily on sand.",
+            "answer": "Their broad feet increase surface area and reduce pressure.",
+            "answer_outline": [
+                "Pressure formula",
+                "Large surface area"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why wide tyres are used in heavy vehicles.",
+            "answer": "Wide tyres increase surface area reducing pressure on the ground.",
+            "answer_outline": [
+                "Pressure reduction"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of gravity in daily life.",
+            "answer": "Gravity keeps objects on Earth, controls tides and maintains the atmosphere.",
+            "answer_outline": [
+                "Objects remain on Earth",
+                "Tides",
+                "Atmosphere retention"
+            ],
+            "key_concepts": [
+                "gravity importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the relationship between density and buoyancy.",
+            "answer": "The buoyant force depends on the density of the fluid and the volume of fluid displaced.",
+            "answer_outline": [
+                "Density",
+                "Fluid displacement",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "density",
+                "buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 9.6"
+        }
+    ]
+}

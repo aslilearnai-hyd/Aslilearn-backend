@@ -1,0 +1,258 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: A Truly Beautiful Mind",
+    "generated_at": "2026-03-07T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Examine Ramanujan’s early mathematical achievements and discuss their uniqueness compared to his contemporaries.",
+            "answer": "Ramanujan demonstrated originality in discovering infinite series, highly composite numbers, and novel formulas. Unlike contemporaries, he relied on intuition rather than formal proofs, producing results that were unconventional yet correct.",
+            "answer_outline": ["Early achievements", "Unique methods", "Comparison with contemporaries"],
+            "key_concepts": ["originality", "intuition", "contemporaries"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Analyze the psychological and environmental factors that shaped Ramanujan’s mathematical thinking.",
+            "answer": "Ramanujan’s curiosity, deep focus, and introspective nature, combined with the supportive yet traditional Indian environment, fostered self-reliance and innovative thinking. Isolation and limited formal instruction further strengthened his independent approach.",
+            "answer_outline": ["Psychological traits", "Environmental influence", "Effect on thinking"],
+            "key_concepts": ["psychology", "environment", "creativity"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the philosophical aspects of Ramanujan’s intuition in mathematics.",
+            "answer": "Ramanujan believed mathematical truths existed in a transcendent form, which he could intuitively perceive. His philosophical approach emphasized insight over stepwise derivation, blending spirituality with logical reasoning.",
+            "answer_outline": ["Philosophical belief", "Intuition", "Impact on methods"],
+            "key_concepts": ["intuition", "philosophy", "mathematical reasoning"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Evaluate the significance of Ramanujan’s correspondence with G.H. Hardy in transforming global mathematics.",
+            "answer": "The letters introduced original formulas and conjectures unknown to Western mathematicians. Hardy recognized their value, leading to collaboration that produced groundbreaking papers and integrated Indian mathematical genius into global research.",
+            "answer_outline": ["Correspondence content", "Hardy’s recognition", "Global impact"],
+            "key_concepts": ["correspondence", "collaboration", "impact"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Analyze the interplay between creativity and rigorous proof in Ramanujan’s work.",
+            "answer": "Ramanujan generated results intuitively and creatively, often without formal proof. Under Hardy, these were validated with rigorous proofs. This interplay shows the complementarity of inspiration and formal logic in advanced mathematics.",
+            "answer_outline": ["Creativity examples", "Proof development", "Interplay"],
+            "key_concepts": ["creativity", "proof", "validation"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Critically assess the impact of cultural, social, and familial influences on Ramanujan’s intellectual growth.",
+            "answer": "Cultural emphasis on respect for knowledge, family encouragement, and a society valuing scholarly achievement nurtured Ramanujan’s interest. Traditional methods, while restrictive, also promoted focus, discipline, and perseverance.",
+            "answer_outline": ["Cultural context", "Family support", "Intellectual growth"],
+            "key_concepts": ["culture", "family influence", "growth"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Examine the role of adversity in shaping Ramanujan’s perseverance and productivity.",
+            "answer": "Facing poverty, limited resources, and health challenges, Ramanujan persisted through self-study and problem-solving. Adversity fostered resilience, heightened focus, and strengthened his drive to innovate.",
+            "answer_outline": ["Challenges", "Perseverance", "Impact on work"],
+            "key_concepts": ["adversity", "resilience", "productivity"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss the mathematical significance of Ramanujan’s notebooks in contemporary research.",
+            "answer": "Notebooks contained thousands of formulas and conjectures in number theory, infinite series, and partitions. Contemporary mathematicians continue to explore these, proving their relevance and demonstrating the enduring value of his intuitive insights.",
+            "answer_outline": ["Notebook contents", "Contemporary relevance", "Research impact"],
+            "key_concepts": ["notebooks", "research", "mathematical significance"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Analyze how Ramanujan’s work exemplifies the integration of intuition and analytical thinking.",
+            "answer": "His intuitive discoveries provided hypotheses and insights, while analytical thinking, guided by Hardy, verified correctness through formal proofs. This integration advanced mathematical knowledge and highlighted a dual approach to problem-solving.",
+            "answer_outline": ["Intuition examples", "Analytical verification", "Integration"],
+            "key_concepts": ["intuition", "analysis", "integration"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Critically evaluate the role of Hardy in structuring and disseminating Ramanujan’s discoveries.",
+            "answer": "Hardy provided guidance in rigorous proof-writing, academic exposure, and publication, ensuring Ramanujan’s findings gained global recognition. Without Hardy, many discoveries might have remained unknown or unvalidated.",
+            "answer_outline": ["Mentorship", "Structuring discoveries", "Global dissemination"],
+            "key_concepts": ["mentorship", "validation", "recognition"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss how Ramanujan’s spiritual beliefs influenced his approach to mathematics.",
+            "answer": "Ramanujan viewed mathematical truths as divine revelations, which guided his intuitive exploration and fostered deep personal commitment to discovery.",
+            "answer_outline": ["Spiritual belief", "Mathematical intuition", "Influence on work"],
+            "key_concepts": ["spirituality", "intuition", "dedication"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Examine the global recognition of Ramanujan’s genius and its significance in Indian mathematics.",
+            "answer": "Recognition by Hardy and international publications showcased India’s intellectual contributions, inspiring future mathematicians and establishing Ramanujan as a symbol of national pride.",
+            "answer_outline": ["Global recognition", "Impact on India", "Legacy"],
+            "key_concepts": ["recognition", "national pride", "legacy"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Analyze Ramanujan’s ability to overcome isolation in his pursuit of mathematical excellence.",
+            "answer": "Despite limited peer interaction, Ramanujan engaged in self-directed learning and sustained intense focus, producing creative results that transcended his isolation.",
+            "answer_outline": ["Isolation", "Self-directed learning", "Achievements"],
+            "key_concepts": ["isolation", "focus", "achievement"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Discuss the interplay of originality and correctness in Ramanujan’s mathematical findings.",
+            "answer": "Many of Ramanujan’s original results initially lacked formal proof but were later verified correct, demonstrating the coexistence of unconventional creativity and mathematical validity.",
+            "answer_outline": ["Originality", "Correctness", "Examples"],
+            "key_concepts": ["originality", "validation", "innovation"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Examine the significance of independent research in shaping Ramanujan’s contributions.",
+            "answer": "Independent research enabled freedom from conventional constraints, fostering novel discoveries in number theory and infinite series, highlighting the value of self-directed exploration.",
+            "answer_outline": ["Independent research", "Freedom", "Impact on discoveries"],
+            "key_concepts": ["self-learning", "innovation", "research"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Analyze Ramanujan’s problem-solving methods in terms of pattern recognition and intuition.",
+            "answer": "He identified numerical patterns mentally, formulated conjectures, and applied intuitive reasoning to solve complex problems, later validated by formal proofs.",
+            "answer_outline": ["Pattern recognition", "Intuition", "Validation"],
+            "key_concepts": ["problem-solving", "intuition", "pattern recognition"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Critically assess the effect of health and environmental hardships on Ramanujan’s productivity.",
+            "answer": "Harsh climate, dietary differences, and illnesses affected his energy, yet he persisted in research. Adversity sometimes intensified focus, reflecting remarkable resilience.",
+            "answer_outline": ["Health challenges", "Environmental impact", "Productivity"],
+            "key_concepts": ["health", "resilience", "productivity"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Discuss the role of mentorship in bridging Ramanujan’s intuitive approach with formal mathematics.",
+            "answer": "Hardy’s mentorship guided Ramanujan to structure proofs, align his intuition with logical frameworks, and publish internationally, blending creativity with rigor.",
+            "answer_outline": ["Mentorship", "Bridging methods", "Publication impact"],
+            "key_concepts": ["mentorship", "creativity", "formalism"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Examine how Ramanujan’s work continues to influence modern mathematical research.",
+            "answer": "His conjectures, formulas, and notebooks inspire research in number theory, partitions, and combinatorics, highlighting enduring relevance and stimulating new discoveries.",
+            "answer_outline": ["Contributions", "Modern research", "Influence"],
+            "key_concepts": ["research", "legacy", "influence"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Analyze the philosophical and aesthetic aspects of a truly beautiful mind as exemplified by Ramanujan.",
+            "answer": "Ramanujan’s mind combined intuition, creativity, perseverance, and devotion to truth. The elegance and originality of his discoveries reflect both philosophical depth and mathematical beauty.",
+            "answer_outline": ["Intuition", "Creativity", "Perseverance", "Elegance of results"],
+            "key_concepts": ["philosophy", "beauty", "creativity"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Critically evaluate the importance of international collaboration in Ramanujan’s life.",
+            "answer": "Collaboration with Hardy enabled formal proof development, global recognition, and academic exposure, highlighting the significance of cross-cultural partnerships in advancing mathematical knowledge.",
+            "answer_outline": ["Collaboration", "Formalization", "Global impact"],
+            "key_concepts": ["collaboration", "recognition", "formalism"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Analyze the balance between independent thought and mentorship in Ramanujan’s mathematical success.",
+            "answer": "Independent intuition generated original discoveries; mentorship provided validation and structure. Success resulted from synergy between freedom and guidance.",
+            "answer_outline": ["Independent thought", "Mentorship", "Synergy"],
+            "key_concepts": ["independence", "mentorship", "success"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Sections 4.2-4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Examine the role of resilience and adaptability in Ramanujan’s achievements.",
+            "answer": "Despite cultural shock, illness, and isolation, Ramanujan adapted to new environments and continued research, demonstrating resilience critical to his prolific output.",
+            "answer_outline": ["Challenges", "Adaptation", "Resilience"],
+            "key_concepts": ["resilience", "adaptability", "achievement"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss the lessons Ramanujan’s life offers for aspiring mathematicians.",
+            "answer": "Key lessons include perseverance, self-learning, creativity, dedication, and valuing both intuition and rigor. His life encourages pursuit of passion despite obstacles.",
+            "answer_outline": ["Perseverance", "Self-learning", "Creativity", "Rigor"],
+            "key_concepts": ["lessons", "dedication", "creativity"],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Sections 4.1-4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Write an in-depth analytical summary of Ramanujan’s life emphasizing his struggles, discoveries, mentorship, and legacy.",
+            "answer": "Srinivasa Ramanujan, an Indian mathematical prodigy, overcame poverty, limited formal education, and health issues to produce groundbreaking results in number theory, infinite series, and partitions. Guided by Hardy, his intuitive discoveries were validated and published, gaining international acclaim. His perseverance, creativity, and devotion exemplify a truly beautiful mind, and his notebooks continue to inspire global mathematical research.",
+            "answer_outline": ["Early life", "Struggles", "Discoveries", "Mentorship", "Achievements", "Legacy"],
+            "key_concepts": ["summary", "achievements", "legacy", "creativity"],
+            "marks": 8,
+            "difficulty_level": "hard",
+            "source_section": "Sections 4.1-4.3"
+        }
+    ]
+}

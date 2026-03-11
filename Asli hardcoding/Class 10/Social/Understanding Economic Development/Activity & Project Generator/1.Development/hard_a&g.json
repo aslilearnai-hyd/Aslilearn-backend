@@ -1,0 +1,139 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Development 1",
+  "difficulty": "Hard",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "sl-no": 1,
+      "title": "Comprehensive Human Development Index (HDI) Research Project",
+      "objective": "To research and critically analyze HDI components and compare India with two other countries.",
+      "materials": "Internet access, textbook, notebook, chart paper, calculator",
+      "steps": [
+        "Research the latest HDI data for India and two countries (one developed, one developing).",
+        "Compare life expectancy, education level, and GNI per capita using tables and graphs.",
+        "Write a detailed report analyzing why differences exist and suggest improvements for India."
+      ],
+      "learning_outcome": "Students develop research and analytical skills while understanding global development comparisons.",
+      "evaluation": "Assess accuracy of data, depth of analysis, graphical representation, and quality of conclusions."
+    },
+    {
+      "sl-no": 2,
+      "title": "Local Area Development Audit",
+      "objective": "To evaluate development status of the local community using key indicators.",
+      "materials": "Survey forms, pen, mobile for photos (optional), notebook",
+      "steps": [
+        "Design a survey covering income, education, healthcare, sanitation, and employment.",
+        "Collect responses from at least 15 households and document observations.",
+        "Prepare a detailed report with findings, problems identified, and realistic recommendations."
+      ],
+      "learning_outcome": "Students connect textbook concepts with real-life local development conditions.",
+      "evaluation": "Evaluate survey design, data analysis, practicality of suggestions, and presentation."
+    },
+    {
+      "sl-no": 3,
+      "title": "Sustainable Development Case Study",
+      "objective": "To analyze a real-life environmental issue related to development.",
+      "materials": "Newspaper articles, internet resources, chart paper",
+      "steps": [
+        "Select a case such as deforestation, pollution, or water scarcity.",
+        "Study causes, impact on people, and economic consequences.",
+        "Propose sustainable solutions and present findings through a presentation or report."
+      ],
+      "learning_outcome": "Students understand the importance of balancing development with environmental protection.",
+      "evaluation": "Assess clarity of case explanation, logical solutions, and research depth."
+    },
+    {
+      "sl-no": 4,
+      "title": "Economic Growth vs Human Development Research",
+      "objective": "To examine the difference between economic growth and overall human development.",
+      "materials": "Internet, textbook, notebook",
+      "steps": [
+        "Collect GDP growth data and HDI rankings of three countries.",
+        "Analyze whether high GDP always means high development.",
+        "Prepare a comparative research report with examples."
+      ],
+      "learning_outcome": "Students critically analyze the limitations of economic growth as a sole indicator.",
+      "evaluation": "Check quality of comparison, use of data, and clarity of conclusions."
+    },
+    {
+      "sl-no": 5,
+      "title": "Gender Equality and Development Study",
+      "objective": "To explore the link between gender equality and development indicators.",
+      "materials": "Internet research, notebook, chart paper",
+      "steps": [
+        "Research female literacy, workforce participation, and health indicators.",
+        "Compare data of two states or countries.",
+        "Analyze how gender inequality affects overall development."
+      ],
+      "learning_outcome": "Students understand the importance of gender equality in national development.",
+      "evaluation": "Evaluate research accuracy, data interpretation, and analytical depth."
+    },
+    {
+      "sl-no": 6,
+      "title": "Public Facilities Mapping Project",
+      "objective": "To map and analyze public facilities in the community.",
+      "materials": "Graph paper, ruler, pen, local observation",
+      "steps": [
+        "Create a rough map of the locality showing schools, hospitals, roads, water sources.",
+        "Identify areas lacking facilities.",
+        "Prepare a development improvement proposal for those areas."
+      ],
+      "learning_outcome": "Students develop spatial thinking and practical understanding of public infrastructure.",
+      "evaluation": "Assess mapping accuracy, identification of gaps, and feasibility of proposals."
+    },
+    {
+      "sl-no": 7,
+      "title": "Per Capita Income and Inequality Analysis",
+      "objective": "To analyze income distribution and its effect on development.",
+      "materials": "Calculator, notebook, data sources",
+      "steps": [
+        "Collect income data of different groups in society.",
+        "Calculate per capita income and compare with national average.",
+        "Discuss income inequality and suggest measures to reduce it."
+      ],
+      "learning_outcome": "Students understand limitations of per capita income and income inequality issues.",
+      "evaluation": "Check correctness of calculations, depth of discussion, and suggested measures."
+    },
+    {
+      "sl-no": 8,
+      "title": "Vision 2040 Development Blueprint",
+      "objective": "To design a long-term development plan for India.",
+      "materials": "Chart paper, markers, research materials",
+      "steps": [
+        "Identify current challenges in education, health, employment, and environment.",
+        "Develop realistic and innovative solutions for the next 15 years.",
+        "Present the blueprint in a structured format with justification."
+      ],
+      "learning_outcome": "Students apply creative and strategic thinking to national development planning.",
+      "evaluation": "Evaluate creativity, feasibility, structure, and logical reasoning."
+    },
+    {
+      "sl-no": 9,
+      "title": "Rural vs Urban Development Comparative Study",
+      "objective": "To compare development indicators between rural and urban areas.",
+      "materials": "Survey sheets, notebook, internet (optional)",
+      "steps": [
+        "Collect data on literacy, employment, healthcare access in one rural and one urban area.",
+        "Compare findings using charts or tables.",
+        "Analyze key differences and suggest bridging measures."
+      ],
+      "learning_outcome": "Students understand regional disparities in development.",
+      "evaluation": "Assess data comparison quality, clarity of charts, and depth of analysis."
+    },
+    {
+      "sl-no": 10,
+      "title": "Development Documentary Project",
+      "objective": "To create a short documentary highlighting development challenges and solutions.",
+      "materials": "Mobile phone camera, notebook, editing app (optional)",
+      "steps": [
+        "Identify a development issue in the local community.",
+        "Interview at least two people and record observations.",
+        "Create a 5–7 minute documentary with conclusions and suggested solutions."
+      ],
+      "learning_outcome": "Students develop research, communication, and creative presentation skills.",
+      "evaluation": "Evaluate content accuracy, creativity, clarity of message, and suggested solutions."
+    }
+  ]
+}

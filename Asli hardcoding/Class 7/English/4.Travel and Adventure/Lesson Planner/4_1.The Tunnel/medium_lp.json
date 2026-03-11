@@ -1,0 +1,142 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Tunnel",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the story of the tunnel adventure in depth",
+    "Identify main and supporting characters",
+    "Analyze the sequence of events and challenges",
+    "Learn about teamwork, problem-solving, and decision-making",
+    "Develop descriptive writing and vocabulary skills",
+    "Interpret lessons and themes from the story"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Adventure and Curiosity",
+      "topics_covered": [
+        "Concept of adventure and curiosity",
+        "Introduction of narrator and friends",
+        "Setting of the story"
+      ],
+      "teaching_strategy": [
+        "Class discussion about adventurous activities",
+        "Introduce characters and setting",
+        "Brainstorm predictions about the story"
+      ],
+      "student_activities": [
+        "Share personal small adventure experiences",
+        "Predict what might happen in the story"
+      ],
+      "assessment": ["Oral questioning", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "Reading the Beginning",
+      "topics_covered": [
+        "Narrator and friends’ curiosity",
+        "Discovery of the tunnel",
+        "Initial planning and preparation for adventure"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the first part of the story",
+        "Teacher explanation of key vocabulary"
+      ],
+      "student_activities": [
+        "Read and summarize the first part",
+        "Identify characters and describe their traits"
+      ],
+      "assessment": ["Comprehension questions", "Character description"]
+    },
+    {
+      "period": 3,
+      "title": "Exploring the Tunnel",
+      "topics_covered": [
+        "Tunnel description and obstacles",
+        "Reactions of friends to challenges",
+        "Planning and decision-making during the adventure"
+      ],
+      "teaching_strategy": [
+        "Class discussion on problem-solving and teamwork",
+        "Ask students to visualize the tunnel"
+      ],
+      "student_activities": [
+        "Draw the tunnel and annotate key obstacles",
+        "Explain challenges faced and solutions used by characters"
+      ],
+      "assessment": ["Drawing and explanation accuracy", "Oral questioning"]
+    },
+    {
+      "period": 4,
+      "title": "Conflict and Problem Solving",
+      "topics_covered": [
+        "Difficulties and fears encountered",
+        "Teamwork in overcoming challenges",
+        "Balancing curiosity with caution"
+      ],
+      "teaching_strategy": [
+        "Guided discussion on decisions made by characters",
+        "Role-play to demonstrate problem-solving"
+      ],
+      "student_activities": [
+        "Role-play a key problem-solving moment",
+        "Explain the importance of teamwork in the scenario"
+      ],
+      "assessment": ["Role-play performance", "Short written answers"]
+    },
+    {
+      "period": 5,
+      "title": "Climax and Lessons Learned",
+      "topics_covered": [
+        "End of the tunnel adventure",
+        "Lessons learned by characters",
+        "Moral and theme of the story"
+      ],
+      "teaching_strategy": [
+        "Teacher-led discussion on story ending",
+        "Ask students to analyze characters’ learning"
+      ],
+      "student_activities": [
+        "Write the moral of the story with reasoning",
+        "Share personal experiences of learning from challenges"
+      ],
+      "assessment": ["Short paragraph writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Grammar Activities",
+      "topics_covered": [
+        "New vocabulary from the story",
+        "Compound words and conditional sentences",
+        "Sentence construction practice"
+      ],
+      "teaching_strategy": [
+        "Grammar exercises from textbook",
+        "Revision quiz on story events and vocabulary"
+      ],
+      "student_activities": [
+        "Form compound words and use them in sentences",
+        "Complete conditional sentences based on story context"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Character chart of the story",
+    "Printed vocabulary and exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Role play activities",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to analyze the challenges in the story and discuss how teamwork, careful planning, and curiosity are balanced during adventures."
+}

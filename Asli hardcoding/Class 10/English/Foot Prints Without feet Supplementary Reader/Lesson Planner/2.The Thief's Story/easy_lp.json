@@ -1,0 +1,160 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Thief’s Story",
+    "title": "Lesson Planner – The Thief’s Story",
+    "author": "Ruskin Bond",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify main characters and their traits",
+        "Understand the theme of trust and honesty",
+        "Recognise the importance of education",
+        "Develop basic vocabulary skills",
+        "Relate the lesson to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Story",
+            "topics_covered": [
+                "Introduction to Ruskin Bond",
+                "Background of the story",
+                "Overview of the plot"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Teacher explanation",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the story introduction",
+                "Share ideas about honesty and trust"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Characters and Setting",
+            "topics_covered": [
+                "Introduction to Hari Singh",
+                "Character of Anil",
+                "Setting of the story"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character discussion"
+            ],
+            "student_activities": [
+                "List main characters",
+                "Write one sentence about each character"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Hari Singh’s Life and Motives",
+            "topics_covered": [
+                "Hari Singh as a thief",
+                "Reasons for working with Anil",
+                "Early signs of change"
+            ],
+            "teaching_strategy": [
+                "Explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Identify Hari Singh’s motives",
+                "Class discussion"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Oral response"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Theft and Inner Conflict",
+            "topics_covered": [
+                "The act of stealing",
+                "Hari Singh’s thoughts and fear",
+                "Decision to return"
+            ],
+            "teaching_strategy": [
+                "Sequential storytelling",
+                "Cause–effect explanation"
+            ],
+            "student_activities": [
+                "List events of the theft",
+                "Sequence the events in order"
+            ],
+            "assessment": [
+                "Written exercise",
+                "Event sequencing check"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme, Message, and Ending",
+            "topics_covered": [
+                "Theme of trust and compassion",
+                "Role of forgiveness",
+                "Moral of the story"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Write the moral of the story",
+                "Discuss the ending in class"
+            ],
+            "assessment": [
+                "Short paragraph writing",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary, Revision, and Assessment",
+            "topics_covered": [
+                "New words from the lesson",
+                "Summary of the story",
+                "Overall revision"
+            ],
+            "teaching_strategy": [
+                "Vocabulary explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings of new words",
+                "Write a short summary of the lesson"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Flashcards for vocabulary"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Highlight how trust, kindness, and education can bring positive change in a person’s life using simple real-life examples."
+}

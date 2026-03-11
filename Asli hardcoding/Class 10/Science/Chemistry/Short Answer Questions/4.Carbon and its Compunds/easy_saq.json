@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-10T23:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the atomic number of carbon?",
+            "answer": "The atomic number of carbon is 6.",
+            "key_concepts": ["atomic number"],
+            "marks": 1,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How many valence electrons does a carbon atom have?",
+            "answer": "Carbon has 4 valence electrons.",
+            "key_concepts": ["valency", "electronic configuration"],
+            "marks": 1,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What type of chemical bond is formed by carbon?",
+            "answer": "Carbon forms covalent bonds by sharing its valence electrons.",
+            "key_concepts": ["covalent bond"],
+            "marks": 1,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is catenation?",
+            "answer": "Catenation is the unique ability of carbon atoms to form bonds with other atoms of carbon, giving rise to large molecules.",
+            "key_concepts": ["catenation"],
+            "marks": 1,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Define tetravalency of carbon.",
+            "answer": "Since carbon has a valency of four, it is capable of bonding with four other atoms of carbon or atoms of some other monovalent element.",
+            "key_concepts": ["tetravalency"],
+            "marks": 1,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are hydrocarbons?",
+            "answer": "All carbon compounds which contain only carbon and hydrogen are called hydrocarbons.",
+            "key_concepts": ["hydrocarbons"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the general formula for alkanes?",
+            "answer": "The general formula for alkanes is $C_nH_{2n+2}$.",
+            "key_concepts": ["alkanes", "saturated hydrocarbons"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the general formula for alkenes?",
+            "answer": "The general formula for alkenes is $C_nH_{2n}$.",
+            "key_concepts": ["alkenes", "unsaturated hydrocarbons"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the general formula for alkynes?",
+            "answer": "The general formula for alkynes is $C_nH_{2n-2}$.",
+            "key_concepts": ["alkynes"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Name the first member of the alkane series.",
+            "answer": "Methane ($CH_4$).",
+            "key_concepts": ["methane"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What are saturated carbon compounds?",
+            "answer": "Compounds of carbon which are linked by only single bonds between the carbon atoms are called saturated compounds.",
+            "key_concepts": ["saturated compounds"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What are unsaturated carbon compounds?",
+            "answer": "Compounds of carbon having double or triple bonds between their carbon atoms are called unsaturated compounds.",
+            "key_concepts": ["unsaturated compounds"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What are structural isomers?",
+            "answer": "Compounds with identical molecular formula but different structures are called structural isomers.",
+            "key_concepts": ["isomerism"],
+            "marks": 1,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a homologous series?",
+            "answer": "A series of compounds in which the same functional group substitutes for hydrogen in a carbon chain is called a homologous series.",
+            "key_concepts": ["homologous series"],
+            "marks": 1,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "By what molecular mass unit do adjacent members of a homologous series differ?",
+            "answer": "They differ by 14 atomic mass units ($u$).",
+            "key_concepts": ["homologous series"],
+            "marks": 1,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the functional group present in alcohols.",
+            "answer": "The hydroxyl group ($-OH$).",
+            "key_concepts": ["functional groups", "alcohols"],
+            "marks": 1,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Name the functional group present in aldehydes.",
+            "answer": "The aldehyde group ($-CHO$).",
+            "key_concepts": ["functional groups", "aldehydes"],
+            "marks": 1,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Name the functional group present in carboxylic acids.",
+            "answer": "The carboxyl group ($-COOH$).",
+            "key_concepts": ["functional groups"],
+            "marks": 1,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the common name of ethanoic acid?",
+            "answer": "Acetic acid.",
+            "key_concepts": ["ethanoic acid"],
+            "marks": 1,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is vinegar?",
+            "answer": "Vinegar is a 5-8% solution of acetic acid in water.",
+            "key_concepts": ["vinegar"],
+            "marks": 1,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is esterification?",
+            "answer": "The reaction of an alcohol with a carboxylic acid to produce an ester and water is called esterification.",
+            "key_concepts": ["esterification"],
+            "marks": 1,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is saponification?",
+            "answer": "The process of preparing soap by the hydrolysis of fats or oils with an alkali is called saponification.",
+            "key_concepts": ["saponification"],
+            "marks": 1,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What are micelles?",
+            "answer": "Micelles are clusters of molecules in which the hydrophobic tails are in the interior and the ionic ends are on the surface of the cluster.",
+            "key_concepts": ["micelles", "cleansing action"],
+            "marks": 1,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does soap not work in hard water?",
+            "answer": "Soap reacts with calcium and magnesium salts in hard water to form an insoluble substance called scum.",
+            "key_concepts": ["hard water", "scum"],
+            "marks": 1,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Name two allotropes of carbon.",
+            "answer": "Diamond and Graphite.",
+            "key_concepts": ["allotropes"],
+            "marks": 1,
+            "source_section": "Section 4.1"
+        }
+    ]
+}

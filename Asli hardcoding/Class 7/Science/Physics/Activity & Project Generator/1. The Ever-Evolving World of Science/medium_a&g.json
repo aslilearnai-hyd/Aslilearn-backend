@@ -1,0 +1,175 @@
+{
+    "class": "Class 7",
+    "subject": "Science (CBSE)",
+    "chapter": "The Ever-Evolving World of Science",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_science_ch1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparative Scientist Study",
+            "objective": "Analyze contributions of multiple scientists",
+            "materials": [
+                "Books or internet access",
+                "Notebook",
+                "Markers"
+            ],
+            "steps": [
+                "Select two scientists from different eras",
+                "Compare their discoveries and impact",
+                "Present a short report or chart"
+            ],
+            "learning_outcome": "Understands evolution of science through different contributors",
+            "evaluation": "Depth of comparison and clarity of presentation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Experiment Design Challenge",
+            "objective": "Learn to design a simple experiment",
+            "materials": [
+                "Household items",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Choose a small scientific question (e.g., effect of sunlight on plants)",
+                "Plan an experiment with steps and controls",
+                "Record expected outcomes"
+            ],
+            "learning_outcome": "Develops planning and critical thinking skills",
+            "evaluation": "Feasibility and clarity of experiment design (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Timeline of Discoveries with Causes and Effects",
+            "objective": "Link scientific discoveries with their societal impact",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Reference books"
+            ],
+            "steps": [
+                "List major discoveries (e.g., steam engine, electricity, antibiotics)",
+                "Write brief note on cause and effect of each discovery",
+                "Draw timeline connecting them chronologically"
+            ],
+            "learning_outcome": "Shows cause-effect relationship of scientific progress",
+            "evaluation": "Accuracy, connections, and presentation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Mini Research on Modern Inventions",
+            "objective": "Investigate modern innovations and technology",
+            "materials": [
+                "Internet or library access",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Select a modern invention (e.g., smartphone, renewable energy device)",
+                "Write about inventor, principle, and uses",
+                "Prepare a short presentation for class"
+            ],
+            "learning_outcome": "Develops research and reporting skills",
+            "evaluation": "Relevance, accuracy, and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Observation and Recording of Scientific Phenomena",
+            "objective": "Practice detailed observation over time",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Optional: magnifying glass or camera"
+            ],
+            "steps": [
+                "Observe a natural or physical phenomenon (e.g., plant growth, shadows, magnetism)",
+                "Record daily observations for a week",
+                "Analyze changes and possible causes"
+            ],
+            "learning_outcome": "Enhances systematic observation and analytical skills",
+            "evaluation": "Consistency and depth of observations (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Role of Tools in Scientific Experiments",
+            "objective": "Understand importance of scientific instruments",
+            "materials": [
+                "Pictures or small models of tools",
+                "Notebook",
+                "Markers"
+            ],
+            "steps": [
+                "Select 3 scientific tools from different eras",
+                "Describe their use and how they improved experiments",
+                "Present findings in a chart or report"
+            ],
+            "learning_outcome": "Comprehends evolution and significance of scientific tools",
+            "evaluation": "Detail, clarity, and relevance of presentation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Debate: Science and Society",
+            "objective": "Discuss pros and cons of scientific progress",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Form two groups – one supporting benefits, one discussing potential harms",
+                "Research examples and prepare arguments",
+                "Conduct a debate in class"
+            ],
+            "learning_outcome": "Encourages critical thinking and understanding societal impact of science",
+            "evaluation": "Quality of arguments and participation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Model of a Discovery Process",
+            "objective": "Visualize the steps of scientific discovery",
+            "materials": [
+                "Clay, cardboard, or recycled material",
+                "Colors or markers"
+            ],
+            "steps": [
+                "Select a discovery (e.g., microscope, penicillin)",
+                "Create a model showing how it was developed",
+                "Explain the process to the class"
+            ],
+            "learning_outcome": "Shows understanding of the experimental and iterative nature of science",
+            "evaluation": "Creativity and accuracy of model (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Science Newspaper Column",
+            "objective": "Document science news and discoveries",
+            "materials": [
+                "Notebook or paper",
+                "Pen or markers"
+            ],
+            "steps": [
+                "Select a recent scientific development",
+                "Write a short newspaper-style article",
+                "Include key facts and possible future implications"
+            ],
+            "learning_outcome": "Improves science communication skills",
+            "evaluation": "Content accuracy, clarity, and presentation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Group Poster: Evolution of Science",
+            "objective": "Collaborate to depict scientific progress",
+            "materials": [
+                "Large chart paper",
+                "Colors, markers, pictures"
+            ],
+            "steps": [
+                "Divide class into groups",
+                "Each group selects a period in science history",
+                "Create a poster showing major discoveries and scientists"
+            ],
+            "learning_outcome": "Enhances teamwork, creativity, and understanding of historical evolution",
+            "evaluation": "Completeness, accuracy, and teamwork (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,177 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Exploring Some Geometric Themes",
+  "difficulty": "Easy",
+  "source_pdf": "hegp204.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Fern Fractal Observation",
+      "objective": "Understand self-similarity in nature",
+      "materials": [
+        "Notebook",
+        "Pencil",
+        "Picture of a fern leaf"
+      ],
+      "steps": [
+        "Observe the fern leaf carefully",
+        "Notice how smaller leaves look like the whole leaf",
+        "Draw the fern pattern in your notebook"
+      ],
+      "learning_outcome": "Recognises fractals and self-similar patterns",
+      "evaluation": "Clarity of drawing and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Sierpinski Carpet Drawing",
+      "objective": "Understand fractal pattern generation",
+      "materials": [
+        "Graph paper",
+        "Pencil",
+        "Scale"
+      ],
+      "steps": [
+        "Draw a square and divide it into 9 equal squares",
+        "Remove the middle square",
+        "Repeat the process for the remaining squares till Step 2"
+      ],
+      "learning_outcome": "Understands recursive geometric patterns",
+      "evaluation": "Accuracy of steps and drawing (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Sierpinski Triangle Activity",
+      "objective": "Learn fractal formation using triangles",
+      "materials": [
+        "Notebook",
+        "Pencil",
+        "Scale"
+      ],
+      "steps": [
+        "Draw an equilateral triangle",
+        "Join midpoints of each side",
+        "Remove the middle triangle and repeat once more"
+      ],
+      "learning_outcome": "Identifies repeating geometric structures",
+      "evaluation": "Correct construction (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Koch Snowflake Construction",
+      "objective": "Explore fractal growth patterns",
+      "materials": [
+        "Graph paper",
+        "Pencil",
+        "Scale"
+      ],
+      "steps": [
+        "Draw an equilateral triangle",
+        "Divide each side into three equal parts",
+        "Construct a small triangle on the middle segment"
+      ],
+      "learning_outcome": "Understands iterative geometric design",
+      "evaluation": "Correct construction steps (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Solid Shape Identification",
+      "objective": "Identify different 3D solids",
+      "materials": [
+        "Notebook",
+        "Pencil"
+      ],
+      "steps": [
+        "List common solids like cube, cuboid, cone, and cylinder",
+        "Draw each shape",
+        "Label faces, edges, and vertices"
+      ],
+      "learning_outcome": "Understands properties of 3D shapes",
+      "evaluation": "Correct labeling (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Cube Net Making",
+      "objective": "Understand nets of solids",
+      "materials": [
+        "Chart paper",
+        "Scissors",
+        "Glue"
+      ],
+      "steps": [
+        "Draw a net of a cube with six squares",
+        "Cut the net carefully",
+        "Fold and glue to form a cube"
+      ],
+      "learning_outcome": "Relates 2D nets to 3D shapes",
+      "evaluation": "Proper cube construction (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Cylinder Net Activity",
+      "objective": "Understand the net of a cylinder",
+      "materials": [
+        "Chart paper",
+        "Scissors",
+        "Glue"
+      ],
+      "steps": [
+        "Draw a rectangle and two circles",
+        "Cut them out",
+        "Join them to form a cylinder"
+      ],
+      "learning_outcome": "Visualises transformation from flat shapes to solids",
+      "evaluation": "Correct assembly (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Shadow Observation",
+      "objective": "Understand projections and shadows",
+      "materials": [
+        "Torch",
+        "Small object",
+        "Wall surface"
+      ],
+      "steps": [
+        "Place an object near a wall",
+        "Shine a torch on it",
+        "Observe and draw the shadow shape"
+      ],
+      "learning_outcome": "Understands projection concepts",
+      "evaluation": "Correct observation and drawing (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Top–Front–Side View Drawing",
+      "objective": "Learn projections of solids",
+      "materials": [
+        "Notebook",
+        "Pencil",
+        "Cube block"
+      ],
+      "steps": [
+        "Place a cube on the table",
+        "Draw its top view",
+        "Draw its front and side views"
+      ],
+      "learning_outcome": "Understands orthographic projections",
+      "evaluation": "Accuracy of views (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Isometric Grid Drawing",
+      "objective": "Understand isometric representation",
+      "materials": [
+        "Isometric grid paper",
+        "Pencil"
+      ],
+      "steps": [
+        "Draw a cube on the isometric grid",
+        "Extend the drawing to make two joined cubes",
+        "Shade the visible faces"
+      ],
+      "learning_outcome": "Develops spatial visualization skills",
+      "evaluation": "Correct isometric drawing (10 marks)"
+    }
+  ]
+}

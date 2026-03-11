@@ -1,0 +1,363 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Introduction to Trigonometry",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-01T23:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove the identity (1 − sin²A)(1 + tan²A) = 1.",
+            "answer": "Using identities 1 − sin²A = cos²A and 1 + tan²A = sec²A, the product becomes cos²A × sec²A = 1.",
+            "answer_outline": [
+                "Substitution",
+                "Simplification",
+                "Result"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that sin A / cos A = tan A.",
+            "answer": "By definition, sin A = opposite/hypotenuse and cos A = adjacent/hypotenuse. Dividing gives tan A.",
+            "answer_outline": [
+                "Definitions",
+                "Division",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate sin 60° cos 30° + sin 30° cos 60°.",
+            "answer": "Substituting values gives 3/4 + 1/4 = 1.",
+            "answer_outline": [
+                "Substitution",
+                "Addition"
+            ],
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "If sin A = 1/2, find all other trigonometric ratios.",
+            "answer": "Using a right triangle, cos A = √3/2, tan A = 1/√3, sec A = 2/√3, cosec A = 2, cot A = √3.",
+            "answer_outline": [
+                "Triangle",
+                "Ratios",
+                "Reciprocals"
+            ],
+            "key_concepts": [
+                "ratios"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "If cos A = 1/2, find all trigonometric ratios of A.",
+            "answer": "Using a right triangle, sin A = √3/2, tan A = √3, sec A = 2, cosec A = 2/√3, cot A = 1/√3.",
+            "answer_outline": [
+                "Triangle",
+                "Ratios",
+                "Reciprocals"
+            ],
+            "key_concepts": [
+                "ratios"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove the identity (1 + tan²A)/(1 + sec²A) = sin²A.",
+            "answer": "Substitute identities and simplify to obtain sin²A.",
+            "answer_outline": [
+                "Substitution",
+                "Simplification"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Evaluate (sin 30° + cos 60°)².",
+            "answer": "(1/2 + 1/2)² = 1.",
+            "answer_outline": [
+                "Substitution",
+                "Squaring"
+            ],
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why tan A × cot A = 1.",
+            "answer": "Since tan A and cot A are reciprocals, their product equals 1.",
+            "answer_outline": [
+                "Definition",
+                "Reciprocal"
+            ],
+            "key_concepts": [
+                "product"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove the identity sec A / cosec A = tan A.",
+            "answer": "Writing sec A and cosec A in terms of cos A and sin A gives tan A.",
+            "answer_outline": [
+                "Definitions",
+                "Division"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the value of tan A if sec A = √2.",
+            "answer": "Using 1 + tan²A = sec²A, tan A = 1.",
+            "answer_outline": [
+                "Identity",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove the identity (1 − tan²A)/(1 + tan²A) = cos 2A (conceptual).",
+            "answer": "Using basic trigonometric identities, the expression simplifies to cos 2A.",
+            "answer_outline": [
+                "Transformation",
+                "Simplification"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why trigonometry is useful in measuring heights and distances.",
+            "answer": "Trigonometric ratios help calculate unknown heights or distances using angles.",
+            "answer_outline": [
+                "Height-distance",
+                "Ratios"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 13,
+            "question": "If sin A = cos A, find the value of A and justify.",
+            "answer": "When sin A = cos A, A = 45°.",
+            "answer_outline": [
+                "Equality",
+                "Standard angle"
+            ],
+            "key_concepts": [
+                "angles"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that cosec²A − cot²A = 1.",
+            "answer": "Using the identity 1 + cot²A = cosec²A, rearranging gives the result.",
+            "answer_outline": [
+                "Identity",
+                "Rearrangement"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that sec²A − tan²A = 1.",
+            "answer": "Using the identity 1 + tan²A = sec²A, subtract tan²A from both sides.",
+            "answer_outline": [
+                "Identity",
+                "Subtraction"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Evaluate sin²45° + cos²45°.",
+            "answer": "sin²45° + cos²45° = 1.",
+            "answer_outline": [
+                "Values",
+                "Identity"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Evaluate tan 30° × cot 60°.",
+            "answer": "(1/√3) × (1/√3) = 1/3.",
+            "answer_outline": [
+                "Substitution",
+                "Multiplication"
+            ],
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find all trigonometric ratios of A if tan A = √3.",
+            "answer": "A = 60°. Other ratios are obtained using standard values.",
+            "answer_outline": [
+                "Angle identification",
+                "Ratios"
+            ],
+            "key_concepts": [
+                "ratios"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why sin A increases as angle A increases from 0° to 90°.",
+            "answer": "As the angle increases, the opposite side increases relative to hypotenuse.",
+            "answer_outline": [
+                "Opposite side",
+                "Angle variation"
+            ],
+            "key_concepts": [
+                "sin"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why cos A decreases as angle A increases from 0° to 90°.",
+            "answer": "As angle increases, the adjacent side decreases relative to hypotenuse.",
+            "answer_outline": [
+                "Adjacent side",
+                "Angle variation"
+            ],
+            "key_concepts": [
+                "cos"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that sin A (sec A + tan A) = tan A + sec A − 1.",
+            "answer": "Using identities and simplification, the expression is verified.",
+            "answer_outline": [
+                "Expansion",
+                "Simplification"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 6,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Evaluate cos 60° (sec 30° + tan 30°).",
+            "answer": "Substituting values gives the final numerical result.",
+            "answer_outline": [
+                "Substitution",
+                "Calculation"
+            ],
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the concept of angle of elevation.",
+            "answer": "Angle of elevation is the angle between the horizontal and the line of sight when looking up.",
+            "answer_outline": [
+                "Definition",
+                "Diagram explanation"
+            ],
+            "key_concepts": [
+                "elevation"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the concept of angle of depression.",
+            "answer": "Angle of depression is the angle between the horizontal and the line of sight when looking down.",
+            "answer_outline": [
+                "Definition",
+                "Diagram explanation"
+            ],
+            "key_concepts": [
+                "depression"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the overall importance of trigonometry in mathematics.",
+            "answer": "Trigonometry forms the basis for advanced mathematics, physics, engineering and real-life problem solving.",
+            "answer_outline": [
+                "Foundation",
+                "Applications"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

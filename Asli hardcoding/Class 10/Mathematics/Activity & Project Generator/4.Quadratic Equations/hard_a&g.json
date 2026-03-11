@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Quadratic Equations",
+    "difficulty": "Hard",
+    "source_pdf": "jemh104.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Projectile Motion Study",
+            "objective": "Apply quadratic equations to motion",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Study motion equation",
+                "Analyse roots"
+            ],
+            "learning_outcome": "Physics application",
+            "evaluation": "Correct explanation (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Area Optimization Project",
+            "objective": "Optimise area using quadratics",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Form equation",
+                "Find maximum/minimum"
+            ],
+            "learning_outcome": "Optimization skill",
+            "evaluation": "Correct reasoning (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Quadratic in Architecture",
+            "objective": "Study parabolic designs",
+            "materials": [
+                "Internet"
+            ],
+            "steps": [
+                "Research arches",
+                "Explain equation"
+            ],
+            "learning_outcome": "Design application",
+            "evaluation": "Research quality (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Discriminant Case Study",
+            "objective": "Analyse nature of roots",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose equations",
+                "Compare discriminants"
+            ],
+            "learning_outcome": "Root analysis",
+            "evaluation": "Correct analysis (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Equation Formation from Data",
+            "objective": "Form quadratic equations from data",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect data",
+                "Form equation"
+            ],
+            "learning_outcome": "Modelling skill",
+            "evaluation": "Model accuracy (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Graph vs Algebra Comparison",
+            "objective": "Compare algebraic and graphical roots",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Solve both ways",
+                "Compare results"
+            ],
+            "learning_outcome": "Method comparison",
+            "evaluation": "Comparison clarity (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Real-Life Quadratic Problem",
+            "objective": "Solve real-life quadratic situation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Form equation",
+                "Interpret solution"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Correct interpretation (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Historical Quadratic Study",
+            "objective": "Study history of quadratic equations",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Research mathematicians",
+                "Prepare report"
+            ],
+            "learning_outcome": "Historical awareness",
+            "evaluation": "Content quality (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Parabola Shape Investigation",
+            "objective": "Investigate parabola opening",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot equations",
+                "Observe shapes"
+            ],
+            "learning_outcome": "Graph understanding",
+            "evaluation": "Correct observation (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quadratic Design Model",
+            "objective": "Create design using parabolas",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Design model",
+                "Explain equation"
+            ],
+            "learning_outcome": "Creativity",
+            "evaluation": "Design quality (20 marks)"
+        }
+    ]
+}

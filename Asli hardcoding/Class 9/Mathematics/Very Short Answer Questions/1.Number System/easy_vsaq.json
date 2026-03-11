@@ -1,0 +1,239 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-05T23:30:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are natural numbers?",
+            "answer": "Natural numbers are counting numbers starting from 1.",
+            "key_points": [
+                "natural numbers",
+                "counting numbers"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are whole numbers?",
+            "answer": "Whole numbers include zero and all natural numbers.",
+            "key_points": [
+                "whole numbers",
+                "includes zero"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are integers?",
+            "answer": "Integers are positive numbers, negative numbers, and zero.",
+            "key_points": [
+                "integers",
+                "positive and negative numbers"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a rational number?",
+            "answer": "A rational number can be written in the form p/q where q ≠ 0.",
+            "key_points": [
+                "rational numbers",
+                "fraction form"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is an irrational number?",
+            "answer": "An irrational number cannot be written in the form p/q.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Give one example of an irrational number.",
+            "answer": "√2 is an irrational number.",
+            "key_points": [
+                "irrational example"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What are real numbers?",
+            "answer": "Real numbers include both rational and irrational numbers.",
+            "key_points": [
+                "real numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the decimal expansion of a rational number?",
+            "answer": "It is either terminating or non-terminating repeating.",
+            "key_points": [
+                "decimal expansion"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What type of decimal expansion does an irrational number have?",
+            "answer": "It is non-terminating and non-repeating.",
+            "key_points": [
+                "irrational decimal"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Is √3 rational or irrational?",
+            "answer": "√3 is irrational.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a perfect square?",
+            "answer": "A perfect square is a number that is the square of an integer.",
+            "key_points": [
+                "perfect square"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Give an example of a perfect square.",
+            "answer": "16 is a perfect square.",
+            "key_points": [
+                "perfect square example"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is √9?",
+            "answer": "√9 = 3.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Is π rational or irrational?",
+            "answer": "π is irrational.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Can irrational numbers be written as fractions?",
+            "answer": "No, irrational numbers cannot be written as fractions.",
+            "key_points": [
+                "irrational definition"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the square root of 25?",
+            "answer": "The square root of 25 is 5.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the value of √4?",
+            "answer": "√4 = 2.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Is 0 a rational number?",
+            "answer": "Yes, 0 is a rational number.",
+            "key_points": [
+                "zero",
+                "rational numbers"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the value of √16?",
+            "answer": "√16 = 4.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a terminating decimal?",
+            "answer": "A decimal that ends after a finite number of digits.",
+            "key_points": [
+                "terminating decimal"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is a repeating decimal?",
+            "answer": "A decimal where digits repeat infinitely.",
+            "key_points": [
+                "repeating decimal"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Give one example of a rational number.",
+            "answer": "3/4 is a rational number.",
+            "key_points": [
+                "rational example"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the square root of 1?",
+            "answer": "The square root of 1 is 1.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of number is √5?",
+            "answer": "√5 is an irrational number.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the square root of 36?",
+            "answer": "The square root of 36 is 6.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 1.2"
+        }
+    ]
+}

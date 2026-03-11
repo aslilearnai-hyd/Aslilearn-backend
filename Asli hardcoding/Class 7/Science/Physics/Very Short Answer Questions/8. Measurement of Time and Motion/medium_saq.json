@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 8: Measurement of Time and Motion",
+    "generated_at": "2026-03-05T22:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define speed and write its formula.",
+            "answer": "Speed is the distance travelled by an object per unit time. Speed = Distance ÷ Time.",
+            "key_concepts": ["speed", "distance-time relationship"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between rest and motion.",
+            "answer": "An object is at rest if its position does not change with time, while it is in motion if its position changes with time.",
+            "key_concepts": ["rest", "motion"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "State the SI unit of speed.",
+            "answer": "The SI unit of speed is metre per second (m/s).",
+            "key_concepts": ["speed unit"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 4,
+            "question": "What is uniform motion? Give one example.",
+            "answer": "Uniform motion is when an object travels equal distances in equal intervals of time. Example: a car moving at constant speed.",
+            "key_concepts": ["uniform motion"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 5,
+            "question": "What is non-uniform motion? Give one example.",
+            "answer": "Non-uniform motion occurs when an object covers unequal distances in equal intervals of time. Example: a car moving in city traffic.",
+            "key_concepts": ["non-uniform motion"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the function of a stopwatch?",
+            "answer": "A stopwatch is used to measure short intervals of time accurately.",
+            "key_concepts": ["stopwatch", "time measurement"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is periodic motion? Give one example.",
+            "answer": "Periodic motion is motion that repeats at regular intervals of time, such as the motion of a pendulum.",
+            "key_concepts": ["periodic motion"],
+            "marks": 1,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 8,
+            "question": "What is oscillatory motion?",
+            "answer": "Oscillatory motion is the back-and-forth motion of an object about a fixed position.",
+            "key_concepts": ["oscillatory motion"],
+            "marks": 1,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 9,
+            "question": "What does a speedometer measure?",
+            "answer": "A speedometer measures the speed of a vehicle.",
+            "key_concepts": ["speedometer"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What does an odometer measure?",
+            "answer": "An odometer measures the total distance travelled by a vehicle.",
+            "key_concepts": ["odometer"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the relationship between distance, speed, and time?",
+            "answer": "Distance = Speed × Time.",
+            "key_concepts": ["distance-speed-time relation"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What type of motion is shown by the hands of a clock?",
+            "answer": "The hands of a clock show circular motion.",
+            "key_concepts": ["circular motion"],
+            "marks": 1,
+            "source_section": "Section 8.7"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the time period of motion?",
+            "answer": "Time period is the time taken to complete one full cycle of periodic motion.",
+            "key_concepts": ["time period"],
+            "marks": 1,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Name the instrument used to measure distance travelled by vehicles.",
+            "answer": "An odometer is used to measure the distance travelled by vehicles.",
+            "key_concepts": ["odometer"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What does a straight line represent in a distance–time graph?",
+            "answer": "A straight line represents uniform motion.",
+            "key_concepts": ["distance-time graph", "uniform motion"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What does a curved line in a distance–time graph indicate?",
+            "answer": "A curved line indicates non-uniform motion.",
+            "key_concepts": ["distance-time graph", "non-uniform motion"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Give an example of oscillatory motion.",
+            "answer": "The swinging of a pendulum is an example of oscillatory motion.",
+            "key_concepts": ["oscillatory motion", "pendulum"],
+            "marks": 1,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is time important in studying motion?",
+            "answer": "Time helps determine how fast an object moves and allows calculation of speed.",
+            "key_concepts": ["time measurement", "motion study"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the SI unit of distance?",
+            "answer": "The SI unit of distance is metre (m).",
+            "key_concepts": ["distance unit"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Name one device used for measuring longer intervals of time.",
+            "answer": "A clock is used for measuring longer intervals of time.",
+            "key_concepts": ["clock", "time measurement"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What kind of motion does a moving car usually have in city traffic?",
+            "answer": "A car in city traffic usually shows non-uniform motion.",
+            "key_concepts": ["non-uniform motion"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Give one example of circular motion in daily life.",
+            "answer": "The motion of the blades of a fan is an example of circular motion.",
+            "key_concepts": ["circular motion"],
+            "marks": 1,
+            "source_section": "Section 8.7"
+        },
+        {
+            "question_number": 23,
+            "question": "What happens to speed if distance increases while time remains constant?",
+            "answer": "The speed increases.",
+            "key_concepts": ["speed relationship"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens to speed if time increases while distance remains constant?",
+            "answer": "The speed decreases.",
+            "key_concepts": ["speed relationship"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Name one natural example of periodic motion.",
+            "answer": "The motion of the Earth around the Sun is an example of periodic motion.",
+            "key_concepts": ["periodic motion", "Earth revolution"],
+            "marks": 1,
+            "source_section": "Section 8.6"
+        }
+    ]
+}

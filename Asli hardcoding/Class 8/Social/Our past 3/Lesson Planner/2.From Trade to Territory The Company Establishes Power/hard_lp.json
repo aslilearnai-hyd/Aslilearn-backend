@@ -1,0 +1,157 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "From Trade to Territory",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse the reasons for the arrival of European trading companies in India",
+    "Evaluate how trading factories strengthened the political influence of the East India Company",
+    "Critically examine the causes and consequences of the Battle of Plassey",
+    "Assess the significance of the Battle of Buxar in the expansion of Company rule",
+    "Explain the importance of Diwani rights in strengthening British administrative control",
+    "Analyse how the East India Company transformed from a trading organisation into a political power"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "European Trade and the East India Company",
+      "topics_covered": [
+        "European interest in Indian trade",
+        "Formation of the East India Company",
+        "Trade goods and global trade networks"
+      ],
+      "teaching_strategy": [
+        "Map-based analysis",
+        "Historical discussion",
+        "Source-based explanation"
+      ],
+      "student_activities": [
+        "Analyse why European traders were attracted to Indian markets",
+        "Identify major trade routes and trading centers on a map",
+        "Discuss the importance of Indian textiles and spices in global trade"
+      ],
+      "assessment": [
+        "Oral questioning",
+        "Participation in analytical discussion"
+      ]
+    },
+    {
+      "period": 2,
+      "title": "Trading Factories and Political Influence",
+      "topics_covered": [
+        "Establishment of trading factories",
+        "Role of fortified settlements",
+        "Growth of British influence in Indian politics"
+      ],
+      "teaching_strategy": [
+        "Concept explanation",
+        "Cause–effect analysis",
+        "Map demonstration"
+      ],
+      "student_activities": [
+        "Prepare a short explanation on how trading factories strengthened Company power",
+        "Create a map marking major British trading settlements",
+        "Discuss how economic interests influenced political expansion"
+      ],
+      "assessment": ["Short written responses", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Battle of Plassey: Causes and Consequences",
+      "topics_covered": [
+        "Political situation in Bengal",
+        "Role of Siraj-ud-Daulah, Robert Clive, and Mir Jafar",
+        "Impact of the Battle of Plassey"
+      ],
+      "teaching_strategy": [
+        "Narrative explanation",
+        "Cause–effect analysis",
+        "Timeline method"
+      ],
+      "student_activities": [
+        "Prepare a cause–effect chart explaining the Battle of Plassey",
+        "Discuss how internal conflicts helped the Company win the battle",
+        "Write a short explanation on why the battle was a turning point in Indian history"
+      ],
+      "assessment": ["Group discussion", "Teacher feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Battle of Buxar and Consolidation of Power",
+      "topics_covered": [
+        "Background of the Battle of Buxar",
+        "Leaders involved and their roles",
+        "Importance of the battle in British expansion"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis",
+        "Event explanation",
+        "Class debate"
+      ],
+      "student_activities": [
+        "Compare the Battles of Plassey and Buxar",
+        "Discuss why the Battle of Buxar strengthened Company authority more than Plassey",
+        "Prepare a short analytical note on the significance of the battle"
+      ],
+      "assessment": ["Short written activity", "Oral questioning"]
+    },
+    {
+      "period": 5,
+      "title": "Diwani Rights and Company Administration",
+      "topics_covered": [
+        "Meaning of Diwani",
+        "Grant of Diwani rights in 1765",
+        "Impact on revenue collection and administration"
+      ],
+      "teaching_strategy": [
+        "Concept explanation",
+        "Case-study discussion",
+        "Example-based teaching"
+      ],
+      "student_activities": [
+        "Explain the significance of Diwani rights in strengthening Company power",
+        "Analyse how revenue collection affected farmers and local rulers",
+        "Create a short note on the administrative changes introduced by the Company"
+      ],
+      "assessment": ["Notebook checking", "Teacher observation"]
+    },
+    {
+      "period": 6,
+      "title": "Expansion of Company Rule and Critical Revision",
+      "topics_covered": [
+        "Expansion of British territories",
+        "Transformation from trade to political rule",
+        "Overall chapter recap"
+      ],
+      "teaching_strategy": [
+        "Flowchart explanation",
+        "Critical discussion",
+        "Question–answer session"
+      ],
+      "student_activities": [
+        "Create a flowchart showing the expansion of Company power",
+        "Discuss how economic motives led to political domination",
+        "Participate in a revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Map of India",
+    "Timeline chart",
+    "Historical illustrations or battle diagrams"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Group discussion",
+    "Participation in analytical activities"
+  ],
+  "teacher_tip": "Encourage students to analyse historical events critically by connecting economic interests, political strategies, and military conflicts that led to the expansion of British rule in India."
+}

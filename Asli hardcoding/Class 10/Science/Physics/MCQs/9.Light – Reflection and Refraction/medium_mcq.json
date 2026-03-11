@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "generated_at": "2026-03-11T05:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A concave mirror is used as a shaving mirror because it:",
+      "options": {
+        "A": "Produces virtual and diminished image",
+        "B": "Produces real and erect image",
+        "C": "Produces magnified and erect image",
+        "D": "Produces magnified and inverted image"
+      },
+      "correct_answer": "C",
+      "explanation": "Concave mirrors produce magnified and erect images when the object is close to the mirror.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The critical angle is defined as the angle of incidence in the denser medium at which:",
+      "options": {
+        "A": "Angle of refraction is 90°",
+        "B": "Angle of reflection is 0°",
+        "C": "Light bends towards normal",
+        "D": "Light stops completely"
+      },
+      "correct_answer": "A",
+      "explanation": "The critical angle is when the refracted ray in the rarer medium makes 90° with the normal.",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 3,
+      "question": "A convex mirror always produces:",
+      "options": {
+        "A": "Real, inverted images",
+        "B": "Virtual, erect, and diminished images",
+        "C": "Virtual, inverted images",
+        "D": "Real, erect images"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex mirrors always produce virtual, erect, and smaller images, regardless of object position.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A ray of light passes from air to glass. The angle of incidence is 30° and angle of refraction is 20°. The refractive index of glass is:",
+      "options": {
+        "A": "1.33",
+        "B": "1.5",
+        "C": "1.73",
+        "D": "1.25"
+      },
+      "correct_answer": "B",
+      "explanation": "Refractive index = sin(i)/sin(r) = sin30°/sin20° ≈ 1.5",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 5,
+      "question": "A ray incident at 45° on a plane mirror will reflect at an angle of:",
+      "options": {
+        "A": "90°",
+        "B": "45°",
+        "C": "135°",
+        "D": "0°"
+      },
+      "correct_answer": "B",
+      "explanation": "Angle of reflection equals angle of incidence, so 45°.",
+      "difficulty": "medium",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 6,
+      "question": "If the refractive index of water is 1.33, the speed of light in water is approximately:",
+      "options": {
+        "A": "2.25 × 10^8 m/s",
+        "B": "3 × 10^8 m/s",
+        "C": "1 × 10^8 m/s",
+        "D": "2 × 10^8 m/s"
+      },
+      "correct_answer": "A",
+      "explanation": "Speed in medium = c/n = 3 × 10^8 / 1.33 ≈ 2.25 × 10^8 m/s",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 7,
+      "question": "A ray strikes a concave mirror at its pole. The reflected ray:",
+      "options": {
+        "A": "Passes through the focus",
+        "B": "Reflects back along the incident path",
+        "C": "Becomes parallel to principal axis",
+        "D": "Goes to the center of curvature"
+      },
+      "correct_answer": "B",
+      "explanation": "A ray hitting the pole reflects symmetrically back along the same path.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 8,
+      "question": "A ray of light traveling from glass (n=1.5) to air strikes the surface at an angle greater than critical angle. The ray will:",
+      "options": {
+        "A": "Refract into air",
+        "B": "Reflect back into glass",
+        "C": "Stop at surface",
+        "D": "Disperse into spectrum"
+      },
+      "correct_answer": "B",
+      "explanation": "Total internal reflection occurs when incidence > critical angle; light reflects back into glass.",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which type of mirror is used as a rear-view mirror in vehicles?",
+      "options": {
+        "A": "Concave",
+        "B": "Convex",
+        "C": "Plane",
+        "D": "Parabolic"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex mirrors provide wide field of view and erect images.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 10,
+      "question": "A ray passes from air into a medium and bends towards the normal. This indicates that:",
+      "options": {
+        "A": "Medium is less dense than air",
+        "B": "Medium is denser than air",
+        "C": "Light slows down in air",
+        "D": "Light has stopped"
+      },
+      "correct_answer": "B",
+      "explanation": "Bending towards normal indicates light enters a denser medium.",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 11,
+      "question": "For a concave mirror, when the object is at infinity, the image is formed at:",
+      "options": {
+        "A": "Pole",
+        "B": "Focus",
+        "C": "Center of curvature",
+        "D": "Beyond center of curvature"
+      },
+      "correct_answer": "B",
+      "explanation": "Rays from a distant object converge at the focus of concave mirror.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 12,
+      "question": "A ray parallel to principal axis after reflection from a concave mirror passes through:",
+      "options": {
+        "A": "Pole",
+        "B": "Focus",
+        "C": "Center of curvature",
+        "D": "Principal axis"
+      },
+      "correct_answer": "B",
+      "explanation": "Parallel rays reflect and pass through focus in concave mirror.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 13,
+      "question": "If a ray of light travels from air to water, the ratio of sine of angle of incidence to sine of angle of refraction is:",
+      "options": {
+        "A": "1",
+        "B": "1.33",
+        "C": "0.75",
+        "D": "2"
+      },
+      "correct_answer": "B",
+      "explanation": "Refractive index n = sin i / sin r = 1.33 for water.",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 14,
+      "question": "A diver sees the Sun vertically above in water. Due to refraction, the Sun appears:",
+      "options": {
+        "A": "Lower than its actual position",
+        "B": "Higher than its actual position",
+        "C": "At the same position",
+        "D": "Invisible"
+      },
+      "correct_answer": "B",
+      "explanation": "Objects appear higher due to light bending towards normal in denser medium.",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 15,
+      "question": "The distance between the pole and focus of a spherical mirror is called:",
+      "options": {
+        "A": "Radius of curvature",
+        "B": "Focal length",
+        "C": "Center of curvature",
+        "D": "Principal axis"
+      },
+      "correct_answer": "B",
+      "explanation": "Focal length is the distance between pole and focus of mirror.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 16,
+      "question": "A ray of light enters a glass prism and deviates. This deviation is due to:",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Total internal reflection",
+        "D": "Dispersion only"
+      },
+      "correct_answer": "B",
+      "explanation": "Deviation occurs because light bends while entering and leaving prism (refraction).",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Total internal reflection is possible only when light travels from:",
+      "options": {
+        "A": "Denser to rarer medium",
+        "B": "Rarer to denser medium",
+        "C": "Denser to denser medium",
+        "D": "Rarer to rarer medium"
+      },
+      "correct_answer": "A",
+      "explanation": "TIR occurs when light moves from optically denser to rarer medium and incidence > critical angle.",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Which mirror can produce a real, inverted, and magnified image of an object placed between focus and center of curvature?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Flat surface"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave mirror forms real, inverted, magnified image when object is between focus and center of curvature.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 19,
+      "question": "A ray strikes the surface of water at 48° and reflects at 48°. If it refracts at 32°, the refractive index of water is:",
+      "options": {
+        "A": "1.33",
+        "B": "1.5",
+        "C": "1.25",
+        "D": "1.73"
+      },
+      "correct_answer": "A",
+      "explanation": "n = sin i / sin r = sin48° / sin32° ≈ 1.33",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 20,
+      "question": "The virtual image formed by a plane mirror is always:",
+      "options": {
+        "A": "Enlarged",
+        "B": "Diminished",
+        "C": "Same size as object",
+        "D": "Inverted"
+      },
+      "correct_answer": "C",
+      "explanation": "Plane mirror forms virtual image of the same size as the object.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 21,
+      "question": "In which medium does light travel the slowest among air, water, and glass?",
+      "options": {
+        "A": "Air",
+        "B": "Water",
+        "C": "Glass",
+        "D": "Vacuum"
+      },
+      "correct_answer": "C",
+      "explanation": "Light travels slowest in glass due to its higher refractive index.",
+      "difficulty": "medium",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 22,
+      "question": "A real image is always formed on a screen when:",
+      "options": {
+        "A": "Plane mirror is used",
+        "B": "Concave mirror is used",
+        "C": "Convex mirror is used",
+        "D": "Virtual lens is used"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave mirrors can form real images on a screen if the object is beyond focus.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 23,
+      "question": "A pencil appears bent when partially immersed in water. This is due to:",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Total internal reflection",
+        "D": "Dispersion"
+      },
+      "correct_answer": "B",
+      "explanation": "The apparent bending is due to refraction at water-air interface.",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 24,
+      "question": "A light ray traveling in air strikes a glass slab at 45° and emerges parallel to its original path. The lateral displacement occurs due to:",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Dispersion",
+        "D": "Absorption"
+      },
+      "correct_answer": "B",
+      "explanation": "Refraction at two surfaces of the slab causes lateral shift of the emergent ray.",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 25,
+      "question": "A ray incident along the principal axis of a concave mirror reflects:",
+      "options": {
+        "A": "Along principal axis itself",
+        "B": "Through focus",
+        "C": "Towards center of curvature",
+        "D": "Perpendicular to axis"
+      },
+      "correct_answer": "A",
+      "explanation": "A ray incident along principal axis passes through pole and reflects along the same path.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    }
+  ]
+}

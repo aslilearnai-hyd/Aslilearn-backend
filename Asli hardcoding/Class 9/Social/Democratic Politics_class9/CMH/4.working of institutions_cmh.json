@@ -1,0 +1,137 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 4: Working of Institutions",
+    "generated_at": "2026-03-06T20:10:00",
+    "concepts": [
+        {
+            "concept_name": "Political Institutions",
+            "difficulty": "easy",
+            "lesson": "Political institutions are organizations in a government that help make and implement decisions. In a democracy, institutions ensure that power is not concentrated in one person and that decisions follow proper procedures.",
+            "real_example": "Parliament, Executive and Judiciary are major political institutions in India.",
+            "key_points": [
+                "Help in decision making and governance",
+                "Follow rules and procedures",
+                "Ensure democratic functioning",
+                "Examples include Parliament, Executive and Judiciary"
+            ],
+            "source_section": "Overview"
+        },
+        {
+            "concept_name": "Policy Decision Process",
+            "difficulty": "medium",
+            "lesson": "Major policy decisions in a democracy are usually taken through a chain of institutions. Important decisions are discussed by leaders, approved by the cabinet and implemented by government officials.",
+            "real_example": "The Mandal Commission recommendation for reservation in government jobs was implemented through a government order.",
+            "key_points": [
+                "Decisions involve several institutions",
+                "Cabinet discusses and approves policies",
+                "Government departments implement decisions",
+                "Courts may review decisions if disputes arise"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "concept_name": "Parliament",
+            "difficulty": "easy",
+            "lesson": "Parliament is the highest law-making body in India. It represents the people and has the authority to make laws, control government spending and discuss important national issues.",
+            "real_example": "Parliament passes laws related to education, health and national policies.",
+            "key_points": [
+                "Highest law making body",
+                "Represents citizens",
+                "Controls government finances",
+                "Discusses national policies"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "concept_name": "Lok Sabha",
+            "difficulty": "easy",
+            "lesson": "Lok Sabha is the House of the People in the Indian Parliament. Its members are directly elected by citizens and it has greater power in matters such as passing money bills and controlling the government.",
+            "real_example": "If the Lok Sabha passes a vote of no confidence, the government must resign.",
+            "key_points": [
+                "Members elected directly by people",
+                "Five-year term",
+                "Controls the Council of Ministers",
+                "More powerful in financial matters"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "concept_name": "Rajya Sabha",
+            "difficulty": "easy",
+            "lesson": "Rajya Sabha is the Council of States and the upper house of Parliament. It represents the states of India and reviews laws passed by the Lok Sabha.",
+            "real_example": "Members of the Rajya Sabha are elected by elected members of state legislatures.",
+            "key_points": [
+                "Represents states of India",
+                "Members elected indirectly",
+                "Permanent house",
+                "Reviews and discusses laws"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "concept_name": "Political Executive",
+            "difficulty": "medium",
+            "lesson": "The political executive consists of elected leaders who take important decisions and run the government. They are responsible for implementing laws and policies.",
+            "real_example": "The Prime Minister and Council of Ministers form the political executive.",
+            "key_points": [
+                "Elected leaders run the government",
+                "Responsible for policy decisions",
+                "Includes Prime Minister and ministers",
+                "Accountable to Parliament"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "Permanent Executive",
+            "difficulty": "medium",
+            "lesson": "Permanent executives are civil servants who work in government departments and help implement policies. They remain in their positions even when governments change.",
+            "real_example": "IAS officers and other civil servants assist ministers in administration.",
+            "key_points": [
+                "Also called civil services",
+                "Not elected by people",
+                "Assist political leaders",
+                "Provide expert advice and administration"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "Prime Minister and Council of Ministers",
+            "difficulty": "medium",
+            "lesson": "The Prime Minister is the head of the government and leads the Council of Ministers. The council helps in making major decisions and implementing policies.",
+            "real_example": "Cabinet ministers discuss and decide national policies in cabinet meetings.",
+            "key_points": [
+                "Prime Minister leads the government",
+                "Council of Ministers assists in governance",
+                "Cabinet is the inner group of ministers",
+                "Responsible for policy decisions"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "President of India",
+            "difficulty": "easy",
+            "lesson": "The President is the head of the state and performs ceremonial duties. Most executive powers are exercised on the advice of the Council of Ministers.",
+            "real_example": "All laws passed by Parliament become official only after the President gives assent.",
+            "key_points": [
+                "Head of the state",
+                "Elected by MPs and MLAs",
+                "Acts on advice of Council of Ministers",
+                "Approves laws passed by Parliament"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "Judiciary",
+            "difficulty": "medium",
+            "lesson": "Judiciary is the system of courts that interprets laws and resolves disputes. It protects the Constitution and ensures justice for citizens.",
+            "real_example": "The Supreme Court can declare a law invalid if it violates the Constitution.",
+            "key_points": [
+                "Includes Supreme Court, High Courts and lower courts",
+                "Independent from legislature and executive",
+                "Protects fundamental rights",
+                "Has power of judicial review"
+            ],
+            "source_section": "Section 4.4"
+        }
+    ]
+}

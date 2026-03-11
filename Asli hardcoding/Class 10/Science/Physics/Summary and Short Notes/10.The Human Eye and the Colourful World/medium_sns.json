@@ -1,0 +1,38 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "The Human Eye and the Colourful World",
+    "difficulty": "Medium",
+    "source_book": "NCERT Science Textbook",
+    "short_notes": {
+        "key_points": [
+            "The human eye works like a camera and forms images on the retina",
+            "The cornea and eye lens help in refraction of light entering the eye",
+            "Ciliary muscles control the shape of the eye lens for focusing objects",
+            "The retina contains light sensitive cells that convert light into nerve signals",
+            "The optic nerve carries visual information from the retina to the brain",
+            "Defects of vision occur when the image is not properly formed on the retina",
+            "Atmospheric refraction and scattering of light produce many natural optical phenomena"
+        ],
+        "examples": [
+            "In myopia, distant objects appear blurred because the image forms in front of the retina",
+            "In hypermetropia, nearby objects appear blurred because the image forms behind the retina",
+            "Presbyopia occurs due to loss of elasticity of the eye lens in old age",
+            "Stars appear to twinkle due to atmospheric refraction of starlight",
+            "The apparent position of the Sun before sunrise is due to atmospheric refraction"
+        ],
+        "formulas": [
+            "Near point of a normal eye → 25 cm",
+            "Far point of a normal eye → Infinity",
+            "Dispersion → Splitting of white light into its constituent colours",
+            "Atmospheric refraction → Refraction of light caused by variation in air density in the atmosphere"
+        ],
+        "exam_tips": [
+            "Understand the working of the human eye and its important parts",
+            "Learn causes and corrections of common vision defects",
+            "Practice diagrams of myopia and hypermetropia corrections",
+            "Revise natural phenomena caused by atmospheric refraction",
+            "Remember the order of colours in the visible spectrum (VIBGYOR)"
+        ]
+    }
+}

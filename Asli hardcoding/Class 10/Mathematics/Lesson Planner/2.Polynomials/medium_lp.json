@@ -1,0 +1,167 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Polynomials",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply concepts of degree and types of polynomials",
+        "Find zeroes of quadratic polynomials using factorisation",
+        "Understand the relationship between zeroes and coefficients (introductory)",
+        "Interpret graphs of polynomials to identify zeroes",
+        "Solve application-based problems involving polynomials"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision and Concept Strengthening",
+            "topics_covered": [
+                "Definition of polynomials",
+                "Degree and types of polynomials",
+                "Review of zeroes"
+            ],
+            "teaching_strategy": [
+                "Recap through questioning",
+                "Concept-mapping on board"
+            ],
+            "student_activities": [
+                "Classify given expressions",
+                "Identify degree and type"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick written check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Zeroes of Quadratic Polynomials",
+            "topics_covered": [
+                "Factorisation method",
+                "Finding zeroes of quadratic polynomials"
+            ],
+            "teaching_strategy": [
+                "Worked examples",
+                "Step-by-step board solutions"
+            ],
+            "student_activities": [
+                "Find zeroes of x² − 5x + 6",
+                "Verify zeroes by substitution"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Board problems"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Relationship Between Zeroes and Coefficients (Introductory)",
+            "topics_covered": [
+                "Sum of zeroes",
+                "Product of zeroes (simple cases)"
+            ],
+            "teaching_strategy": [
+                "Formula explanation",
+                "Numerical examples"
+            ],
+            "student_activities": [
+                "Calculate sum and product of zeroes",
+                "Match coefficients with zeroes"
+            ],
+            "assessment": [
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Graphical Interpretation of Polynomials",
+            "topics_covered": [
+                "Graphs of quadratic polynomials",
+                "Number of zeroes from graphs"
+            ],
+            "teaching_strategy": [
+                "Graph plotting demonstration",
+                "Visual analysis"
+            ],
+            "student_activities": [
+                "Observe given graphs",
+                "State number of zeroes"
+            ],
+            "assessment": [
+                "Graph-based worksheet"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Comparing Different Polynomials Using Graphs",
+            "topics_covered": [
+                "Linear vs quadratic graphs",
+                "Effect of coefficients on graph shape"
+            ],
+            "teaching_strategy": [
+                "Side-by-side graph comparison",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Compare graphs",
+                "Explain differences"
+            ],
+            "assessment": [
+                "Oral explanation",
+                "Written comparison"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Application-Based Problems",
+            "topics_covered": [
+                "Word problems involving polynomials",
+                "Real-life interpretation of zeroes"
+            ],
+            "teaching_strategy": [
+                "Problem-solving approach",
+                "Think-aloud method"
+            ],
+            "student_activities": [
+                "Solve application problems",
+                "Present solution steps"
+            ],
+            "assessment": [
+                "Classwork evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Revision and Assessment",
+            "topics_covered": [
+                "Zeroes",
+                "Graphs",
+                "Relationships and applications"
+            ],
+            "teaching_strategy": [
+                "Quick recap",
+                "Mixed problem practice"
+            ],
+            "student_activities": [
+                "Revision quiz",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Short test (15 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Graph interpretation",
+        "Short written tests"
+    ],
+    "teacher_tip": "Encourage students to connect algebraic zeroes with graphical x-intercepts to deepen understanding."
+}

@@ -1,0 +1,47 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "Health: The Ultimate Treasure",
+  "difficulty": "Easy",
+  "source_pdf": "Health The Ultimate Treasure.pdf",
+  "short_notes": {
+    "key_points": [
+      "Health means a state of complete physical, mental, and social well-being",
+      "A healthy lifestyle includes balanced diet, exercise, proper sleep, and hygiene",
+      "Diseases are conditions that disturb normal body functioning",
+      "Communicable diseases spread from one person to another through pathogens",
+      "Non-communicable diseases do not spread and are often related to lifestyle",
+      "Immunity is the body's ability to fight infections",
+      "Vaccines help the immune system recognize and fight pathogens",
+      "Antibiotics are medicines used to treat bacterial infections"
+    ],
+    "examples": [
+      "Communicable disease example: Malaria spreads through mosquito bites",
+      "Waterborne disease example: Cholera spreads through contaminated water",
+      "Non-communicable disease example: Diabetes",
+      "Vector example: Mosquito spreading dengue",
+      "Vaccination example: Polio vaccine protects children from polio"
+    ],
+    "important_terms": [
+      "Health: Complete physical, mental, and social well-being",
+      "Pathogens: Disease-causing microorganisms such as bacteria, viruses, fungi, and protozoa",
+      "Vector: An organism that carries pathogens and spreads disease",
+      "Immunity: The body's natural defense system against diseases",
+      "Antibiotic Resistance: When bacteria become resistant to antibiotics"
+    ],
+    "prevention_measures": [
+      "Maintain personal hygiene",
+      "Drink clean and safe water",
+      "Remove stagnant water to prevent mosquito breeding",
+      "Take vaccines as recommended",
+      "Use antibiotics only when prescribed by a doctor"
+    ],
+    "exam_tips": [
+      "Remember the WHO definition of health",
+      "Understand the difference between symptoms and signs",
+      "Know the difference between communicable and non-communicable diseases",
+      "Remember examples of vector-borne and water-borne diseases",
+      "Understand why antibiotics do not work against viruses"
+    ]
+  }
+}

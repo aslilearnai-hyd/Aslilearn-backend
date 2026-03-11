@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "JEF P104 – A Question of Trust",
+    "title": "A Question of Trust – Easy MCQs",
+    "generated_at": "2026-03-02T22:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of the prose 'A Question of Trust'?",
+            "options": {
+                "A": "James Herriot",
+                "B": "Victor Canning",
+                "C": "Ruskin Bond",
+                "D": "O. Henry"
+            },
+            "correct_answer": "B",
+            "explanation": "The prose 'A Question of Trust' is written by Victor Canning.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Who is Horace Danby?",
+            "options": {
+                "A": "A teacher",
+                "B": "A librarian",
+                "C": "A locksmith",
+                "D": "A farmer"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace Danby is a locksmith by profession.",
+            "difficulty": "easy",
+            "source_section": "Beginning of the prose"
+        },
+        {
+            "question_number": 3,
+            "question": "What secret activity does Horace Danby do?",
+            "options": {
+                "A": "Writing books",
+                "B": "Stealing",
+                "C": "Teaching",
+                "D": "Painting"
+            },
+            "correct_answer": "B",
+            "explanation": "Though respectable, Horace secretly steals once a year.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 4,
+            "question": "What does Horace Danby like to collect?",
+            "options": {
+                "A": "Jewels",
+                "B": "Paintings",
+                "C": "Rare books",
+                "D": "Coins"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace steals to buy rare and expensive books.",
+            "difficulty": "easy",
+            "source_section": "Early part of the story"
+        },
+        {
+            "question_number": 5,
+            "question": "How often does Horace steal?",
+            "options": {
+                "A": "Every month",
+                "B": "Every week",
+                "C": "Every year",
+                "D": "Every day"
+            },
+            "correct_answer": "C",
+            "explanation": "He steals once a year to support his hobby.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 6,
+            "question": "Where does the robbery take place?",
+            "options": {
+                "A": "Horace’s house",
+                "B": "A library",
+                "C": "Shotover Grange",
+                "D": "A bank"
+            },
+            "correct_answer": "C",
+            "explanation": "The safe Horace plans to rob is at Shotover Grange.",
+            "difficulty": "easy",
+            "source_section": "Setting"
+        },
+        {
+            "question_number": 7,
+            "question": "Why was Horace confident about the robbery?",
+            "options": {
+                "A": "He was rich",
+                "B": "He had help",
+                "C": "He planned carefully",
+                "D": "The house was empty forever"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace was a careful planner and experienced thief.",
+            "difficulty": "easy",
+            "source_section": "Planning stage"
+        },
+        {
+            "question_number": 8,
+            "question": "What problem did Horace suffer from?",
+            "options": {
+                "A": "Asthma",
+                "B": "Hay fever",
+                "C": "Fever",
+                "D": "Cold"
+            },
+            "correct_answer": "B",
+            "explanation": "Horace suffered from hay fever.",
+            "difficulty": "easy",
+            "source_section": "Character description"
+        },
+        {
+            "question_number": 9,
+            "question": "Who was Sherry?",
+            "options": {
+                "A": "A servant",
+                "B": "A dog",
+                "C": "A thief",
+                "D": "A policeman"
+            },
+            "correct_answer": "B",
+            "explanation": "Sherry was the dog in the house.",
+            "difficulty": "easy",
+            "source_section": "Middle of the prose"
+        },
+        {
+            "question_number": 10,
+            "question": "Who did Horace meet inside the house?",
+            "options": {
+                "A": "A policeman",
+                "B": "A servant",
+                "C": "A young lady",
+                "D": "The owner"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace meets a young lady inside the house.",
+            "difficulty": "easy",
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 11,
+            "question": "What did the young lady pretend to be?",
+            "options": {
+                "A": "A servant",
+                "B": "The owner’s wife",
+                "C": "A guest",
+                "D": "A neighbour"
+            },
+            "correct_answer": "B",
+            "explanation": "She pretended to be the owner’s wife.",
+            "difficulty": "easy",
+            "source_section": "Interaction scene"
+        },
+        {
+            "question_number": 12,
+            "question": "What did the young lady ask Horace to do?",
+            "options": {
+                "A": "Leave immediately",
+                "B": "Call the police",
+                "C": "Open the safe",
+                "D": "Hide the jewels"
+            },
+            "correct_answer": "C",
+            "explanation": "She asked Horace to open the safe for her.",
+            "difficulty": "easy",
+            "source_section": "Conversation"
+        },
+        {
+            "question_number": 13,
+            "question": "Why did Horace remove his gloves?",
+            "options": {
+                "A": "To open the safe",
+                "B": "To eat food",
+                "C": "To light a cigarette",
+                "D": "To shake hands"
+            },
+            "correct_answer": "C",
+            "explanation": "He removed his gloves to light the young lady’s cigarette.",
+            "difficulty": "easy",
+            "source_section": "Middle of the prose"
+        },
+        {
+            "question_number": 14,
+            "question": "What mistake did Horace make?",
+            "options": {
+                "A": "Trusting the servants",
+                "B": "Leaving fingerprints",
+                "C": "Calling the police",
+                "D": "Taking extra jewels"
+            },
+            "correct_answer": "B",
+            "explanation": "Horace left fingerprints on the safe.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 15,
+            "question": "What happened to Horace in the end?",
+            "options": {
+                "A": "He escaped",
+                "B": "He became rich",
+                "C": "He was arrested",
+                "D": "He moved away"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace was arrested by the police.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 16,
+            "question": "Why was Horace caught by the police?",
+            "options": {
+                "A": "He confessed",
+                "B": "Witnesses saw him",
+                "C": "Fingerprints were found",
+                "D": "He returned the jewels"
+            },
+            "correct_answer": "C",
+            "explanation": "His fingerprints proved his guilt.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 17,
+            "question": "What profession did Horace take up in prison?",
+            "options": {
+                "A": "Teacher",
+                "B": "Cook",
+                "C": "Assistant librarian",
+                "D": "Clerk"
+            },
+            "correct_answer": "C",
+            "explanation": "Horace became an assistant librarian in prison.",
+            "difficulty": "easy",
+            "source_section": "Conclusion"
+        },
+        {
+            "question_number": 18,
+            "question": "What quality best describes the young lady?",
+            "options": {
+                "A": "Honest",
+                "B": "Kind",
+                "C": "Clever and deceptive",
+                "D": "Shy"
+            },
+            "correct_answer": "C",
+            "explanation": "She cleverly deceives Horace.",
+            "difficulty": "easy",
+            "source_section": "Characterisation"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the main theme of the story?",
+            "options": {
+                "A": "Courage",
+                "B": "Trust and deception",
+                "C": "Adventure",
+                "D": "Friendship"
+            },
+            "correct_answer": "B",
+            "explanation": "The story revolves around trust and betrayal.",
+            "difficulty": "easy",
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the title 'A Question of Trust' suitable?",
+            "options": {
+                "A": "Because Horace trusts the police",
+                "B": "Because trust leads to Horace’s downfall",
+                "C": "Because the servants are loyal",
+                "D": "Because Horace trusts himself"
+            },
+            "correct_answer": "B",
+            "explanation": "Horace’s misplaced trust causes his failure.",
+            "difficulty": "easy",
+            "source_section": "Title analysis"
+        },
+        {
+            "question_number": 21,
+            "question": "What kind of person did society think Horace was?",
+            "options": {
+                "A": "A criminal",
+                "B": "A thief",
+                "C": "A respectable citizen",
+                "D": "A spy"
+            },
+            "correct_answer": "C",
+            "explanation": "Society viewed Horace as respectable and honest.",
+            "difficulty": "easy",
+            "source_section": "Opening"
+        },
+        {
+            "question_number": 22,
+            "question": "What did Horace steal from Shotover Grange?",
+            "options": {
+                "A": "Books",
+                "B": "Money",
+                "C": "Jewels",
+                "D": "Paintings"
+            },
+            "correct_answer": "C",
+            "explanation": "The safe contained valuable jewels.",
+            "difficulty": "easy",
+            "source_section": "Middle"
+        },
+        {
+            "question_number": 23,
+            "question": "Why did the young lady come to the house?",
+            "options": {
+                "A": "To clean",
+                "B": "To meet Horace",
+                "C": "To steal jewels",
+                "D": "To check the house"
+            },
+            "correct_answer": "C",
+            "explanation": "She herself was a thief who wanted the jewels.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 24,
+            "question": "Which idea is proved false in the story?",
+            "options": {
+                "A": "Hard work pays",
+                "B": "Honour among thieves",
+                "C": "Justice is slow",
+                "D": "Books give knowledge"
+            },
+            "correct_answer": "B",
+            "explanation": "The story shows there is no honour among thieves.",
+            "difficulty": "easy",
+            "source_section": "Message"
+        },
+        {
+            "question_number": 25,
+            "question": "What lesson does the story teach?",
+            "options": {
+                "A": "Stealing is easy",
+                "B": "Trusting strangers is wise",
+                "C": "Crime leads to punishment",
+                "D": "Cleverness always wins"
+            },
+            "correct_answer": "C",
+            "explanation": "The story shows that crime ultimately results in punishment.",
+            "difficulty": "easy",
+            "source_section": "Moral"
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 5: NUMBER PLAY",
+  "generated_at": "2026-02-25T19:01:49.525200",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "Without computing, determine if the arithmetic expression 43 + 37 is an even number.",
+        "correct_answer": "Yes, it is an even number.",
+        "explanation": "43 is an odd number and 37 is an odd number. The sum of two odd numbers is always an even number.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "Which of the following algebraic expressions is guaranteed to give an even number for any integer values of its letter-numbers: 4m + 2n?",
+        "correct_answer": "4m + 2n.",
+        "explanation": "The expression 4m + 2n can be written as 2(2m + n). Since 2 is a factor of this expression, it will always evaluate to an even number for any integers m and n.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "Is the statement 'If 8 exactly divides two numbers separately, it must exactly divide their sum' Always True, Sometimes True, or Never True?",
+        "correct_answer": "Always True.",
+        "explanation": "If two numbers are multiples of 8 (e.g., 8a and 8b), their sum, 8a + 8b = 8(a + b), will also be a multiple of 8.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "Is the statement 'If a number is divisible by 8, then 8 also divides any two numbers (separately) that add up to the number' Always True, Sometimes True, or Never True?",
+        "correct_answer": "Sometimes True.",
+        "explanation": "A number divisible by 8 (e.g., 72) can be expressed as a sum of two multiples of 8 (e.g., 48 + 24), or as a sum of two numbers not separately divisible by 8 (e.g., 50 + 22).",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "Is the statement 'When you add an odd number to an even number we get a multiple of 6' Always True, Sometimes True, or Never True?",
+        "correct_answer": "Never True.",
+        "explanation": "The sum of an odd number and an even number is always an odd number. However, all multiples of 6 are even numbers, so their sum cannot be a multiple of 6.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "Which algebraic expression(s) capture all numbers that have a remainder of 3 when divided by 5?",
+        "correct_answer": "5k + 3 and 5k – 2.",
+        "explanation": "Numbers that leave a remainder of 3 when divided by 5 can be viewed as 3 more than a multiple of 5 (5k + 3) or 2 less than a multiple of 5 (5k – 2).",
+        "source_section": "Section 10"
+      },
+      {
+        "question": "If 661 leaves a remainder of 3 and 4779 leaves a remainder of 5 when divided by 7, what remainder will 4779 + 661 leave when divided by 7?",
+        "correct_answer": "1.",
+        "explanation": "When adding numbers, the remainder of the sum is the remainder of the sum of their individual remainders. Here, 5 + 3 = 8, and 8 divided by 7 leaves a remainder of 1.",
+        "source_section": "Section 11"
+      },
+      {
+        "question": "Is the statement 'If a number is divisible by 9, then the sum of its digits is divisible by 9' correct?",
+        "correct_answer": "Yes, this statement is correct.",
+        "explanation": "A number is divisible by 9 if and only if the sum of its digits is divisible by 9.",
+        "source_section": "Section 14"
+      },
+      {
+        "question": "Without dividing, determine if the number 123 is divisible by 9.",
+        "correct_answer": "No, 123 is not divisible by 9.",
+        "explanation": "To check divisibility by 9, sum the digits: 1 + 2 + 3 = 6. Since 6 is not divisible by 9, the number 123 is not divisible by 9.",
+        "source_section": "Section 15"
+      },
+      {
+        "question": "What is the digital root of the number 489710?",
+        "correct_answer": "2.",
+        "explanation": "The digital root is found by repeatedly adding the digits until a single digit is obtained: 4 + 8 + 9 + 7 + 1 + 0 = 29; then 2 + 9 = 11; then 1 + 1 = 2.",
+        "source_section": "Section 19"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Sums of Consecutive Odd Numbers",
+        "content": "All odd numbers can be written as a sum of two consecutive numbers. Anshu's examples include 7 = 3 + 4, 15 = 7 + 8.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Parity of Expressions with Four Consecutive Numbers",
+        "content": "When any four consecutive numbers are chosen, and '+' and '–' signs are placed between them in any of the eight possible ways, the resulting expressions always have an even parity.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Effect of Sign Switching on Parity",
+        "content": "Switching a single sign (e.g., +b to –b) in an expression like a ± b ± c ± d changes its value by an even number (e.g., 2b). This means all resulting expressions from such sign changes will have the same parity.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Classification of Even Numbers by Divisibility by 4",
+        "content": "Even numbers can be categorized based on their remainder when divided by 4: those that are multiples of 4 (remainder 0) or non-multiples of 4 (remainder 2).",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Sum of Two Even Non-Multiples of 4",
+        "content": "The sum of two even numbers that are not multiples of 4 (represented as 4p + 2 and 4q + 2) will always result in a multiple of 4 because their remainders of 2 add up to 4, making the total sum 4p + 4q + 4 = 4(p + q + 1).",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Divisibility by Least Common Multiple (LCM)",
+        "content": "In general, if a number A is divisible by both k and m, then A is also divisible by the Least Common Multiple (LCM) of k and m.",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Divisibility Shortcut for 10",
+        "content": "A number is divisible by 10 if and only if its units digit is '0'. This is because all place values (tens, hundreds, etc.) are multiples of 10, so only the units digit determines divisibility by 10.",
+        "source_section": "Section 12"
+      },
+      {
+        "title": "Divisibility Shortcut for 9",
+        "content": "A number is divisible by 9 if and only if the sum of its digits is divisible by 9. The single digit obtained by repeatedly adding the digits of a number is its remainder when divided by 9.",
+        "source_section": "Section 14"
+      },
+      {
+        "title": "Divisibility Shortcut for 3",
+        "content": "A number is divisible by 3 if the sum of its digits is divisible by 3. This method works similarly to the divisibility rule for 9.",
+        "source_section": "Section 15"
+      },
+      {
+        "title": "Divisibility Shortcut for 11 using Alternating Signs",
+        "content": "To check divisibility by 11, one method is to place alternating '+' and '–' signs before every digit, starting from the unit's digit, and then evaluate the resulting expression. If this result is 0 or a multiple of 11, the number is divisible by 11.",
+        "source_section": "Section 18"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Examples of natural numbers written as a sum of consecutive numbers include 7 = 3 + 4, 10 = 1 + 2 + 3 + 4, and 12 = 3 + 4 + 5.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Eight different expressions are possible when placing '+' and '–' signs between four consecutive numbers, such as 3 + 4 – 5 + 6 and 3 – 4 – 5 – 6.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "The basic rules for parity in addition and subtraction are: odd ± odd = even, even ± even = even, and odd ± even = odd.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Even numbers that are multiples of 4 leave a remainder of 0 when divided by 4, whereas even numbers that are not multiples of 4 leave a remainder of 2.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "If a number 'a' divides two numbers M and N, then 'a' will also divide their sum (M + N) and their difference (M – N).",
+        "source_section": "Section 7"
+      },
+      {
+        "fact": "If a number A is divisible by k, then all multiples of A (e.g., A times any integer) are also divisible by k.",
+        "source_section": "Section 8"
+      },
+      {
+        "fact": "If a number A is divisible by k, then A is also divisible by all the factors of k.",
+        "source_section": "Section 9"
+      },
+      {
+        "fact": "When any power of 10 (1, 10, 100, 1000, etc.) is divided by 9, the remainder is always 1.",
+        "source_section": "Section 14"
+      },
+      {
+        "fact": "All multiples of 9 are also multiples of 3.",
+        "source_section": "Section 15"
+      },
+      {
+        "fact": "Aryabhata II’s work Mahāsiddhānta (c. 950 CE) includes the method of computing a number's digital root by repeatedly adding its digits until a single-digit number is obtained.",
+        "source_section": "Section 20"
+      }
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 10: Work and Energy",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Calculate the work done when a force of 10 N displaces an object by 5 m in the direction of force.",
+      "answer": "Work done, W = F × d = 10 × 5 = 50 J.",
+      "key_points": ["work", "force", "displacement", "formula"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 2,
+      "question": "A body of mass 2 kg moves with velocity 3 m/s. Find its kinetic energy.",
+      "answer": "KE = 1/2 mv² = 1/2 × 2 × 3² = 9 J.",
+      "key_points": ["kinetic energy", "mass", "velocity", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the potential energy of a 5 kg object at a height of 4 m. (Take g = 10 m/s²)",
+      "answer": "PE = mgh = 5 × 10 × 4 = 200 J.",
+      "key_points": ["potential energy", "mass", "height", "gravity", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 4,
+      "question": "A force of 20 N acts at an angle of 60° to the displacement of 3 m. Calculate the work done.",
+      "answer": "W = F × d × cosθ = 20 × 3 × cos60° = 20 × 3 × 0.5 = 30 J.",
+      "key_points": ["work", "force", "displacement", "angle", "formula"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 5,
+      "question": "If a body has KE = 50 J, what will be the work done to stop it?",
+      "answer": "Work done = change in kinetic energy = 50 J (negative, to stop the body).",
+      "key_points": ["work", "kinetic energy", "stop body"],
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 6,
+      "question": "A 10 kg body is lifted to a height of 2 m. Calculate the work done against gravity. (g = 10 m/s²)",
+      "answer": "Work done = mgh = 10 × 10 × 2 = 200 J.",
+      "key_points": ["work", "gravity", "mass", "height", "formula"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Find the power if 200 J of work is done in 10 s.",
+      "answer": "Power = Work / Time = 200 / 10 = 20 W.",
+      "key_points": ["power", "work", "time", "formula"],
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 8,
+      "question": "A car of mass 1000 kg is moving at 20 m/s. Find its kinetic energy.",
+      "answer": "KE = 1/2 mv² = 1/2 × 1000 × 20² = 200,000 J.",
+      "key_points": ["kinetic energy", "mass", "velocity", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 9,
+      "question": "A 50 N force is applied to push a box 5 m along the floor. Work done by friction is 20 J against motion. Net work done?",
+      "answer": "Work done by applied force = 50 × 5 = 250 J. Net work = 250 − 20 = 230 J.",
+      "key_points": ["work", "friction", "net work", "formula"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 10,
+      "question": "A body of mass 2 kg falls from a height of 5 m. Find its potential energy at the top and kinetic energy just before hitting the ground. (g = 10 m/s²)",
+      "answer": "PE = mgh = 2 × 10 × 5 = 100 J; KE just before hitting ground = 100 J (by conservation of energy).",
+      "key_points": ["potential energy", "kinetic energy", "conservation of energy"],
+      "source_section": "Section 10.4, 10.6"
+    },
+    {
+      "question_number": 11,
+      "question": "Work done by a body moving horizontally under a vertical force?",
+      "answer": "Zero, because the force is perpendicular to displacement.",
+      "key_points": ["work", "perpendicular force", "displacement"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Find the work done when a force of 15 N moves an object 4 m at an angle of 0° to the displacement.",
+      "answer": "W = F × d × cos0° = 15 × 4 × 1 = 60 J.",
+      "key_points": ["work", "force", "displacement", "angle", "formula"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 13,
+      "question": "A 3 kg body is lifted to a height of 10 m. Calculate its potential energy. (g = 10 m/s²)",
+      "answer": "PE = mgh = 3 × 10 × 10 = 300 J.",
+      "key_points": ["potential energy", "mass", "height", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the velocity of a 2 kg body having 50 J of kinetic energy.",
+      "answer": "KE = 1/2 mv² → 50 = 1/2 × 2 × v² → v² = 50 → v ≈ 7.07 m/s.",
+      "key_points": ["velocity", "kinetic energy", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Work done by friction is considered positive or negative?",
+      "answer": "Negative, because friction opposes motion.",
+      "key_points": ["work", "friction", "negative work"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 16,
+      "question": "A 1000 J work is done in 50 s. Calculate the power.",
+      "answer": "Power = 1000 / 50 = 20 W.",
+      "key_points": ["power", "work", "time", "formula"],
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 17,
+      "question": "A spring stores 25 J of energy when stretched. What type of energy is this?",
+      "answer": "Potential energy.",
+      "key_points": ["spring", "potential energy", "mechanical energy"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 18,
+      "question": "If work done on a body is 100 J, what is the change in its kinetic energy?",
+      "answer": "Change in kinetic energy = 100 J (by work-energy theorem).",
+      "key_points": ["work", "kinetic energy", "work-energy theorem"],
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 19,
+      "question": "A 5 kg body falls from 10 m height. Calculate speed just before hitting the ground. (g = 10 m/s²)",
+      "answer": "PE at top = mgh = 5×10×10 = 500 J = KE just before impact → 1/2 mv² = 500 → v² = 200 → v ≈ 14.14 m/s.",
+      "key_points": ["falling body", "speed", "energy conservation"],
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 20,
+      "question": "State the work done by gravity on a freely falling body.",
+      "answer": "Positive, because gravity assists the motion of the body.",
+      "key_points": ["gravity", "work", "falling body", "positive work"],
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 21,
+      "question": "A body is moving on a frictionless horizontal surface. Work done by friction?",
+      "answer": "Zero, since there is no friction.",
+      "key_points": ["work", "frictionless surface", "zero work"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Define instantaneous velocity in terms of energy.",
+      "answer": "v = √(2 × KE / m), relates kinetic energy to instantaneous velocity.",
+      "key_points": ["velocity", "kinetic energy", "formula"],
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 23,
+      "question": "If a body moves under a force opposite to its motion, what type of work is done?",
+      "answer": "Negative work is done.",
+      "key_points": ["negative work", "opposite force", "motion"],
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 24,
+      "question": "A body of mass 2 kg moves at 10 m/s. Find kinetic energy and power if it stops in 5 s.",
+      "answer": "KE = 1/2 × 2 × 10² = 100 J; Power = Work / Time = 100 / 5 = 20 W.",
+      "key_points": ["kinetic energy", "power", "stopping", "formula"],
+      "source_section": "Section 10.4, 10.3"
+    },
+    {
+      "question_number": 25,
+      "question": "A force of 10 N moves an object 5 m along the direction of the force. If the object moves in opposite direction, work done?",
+      "answer": "Work done = −50 J (negative, as force opposes displacement).",
+      "key_points": ["work", "negative", "opposite direction", "force", "displacement"],
+      "source_section": "Section 10.2"
+    }
+  ]
+}

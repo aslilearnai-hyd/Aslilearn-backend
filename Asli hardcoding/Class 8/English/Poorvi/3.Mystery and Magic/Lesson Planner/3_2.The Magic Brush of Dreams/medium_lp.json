@@ -1,0 +1,137 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter_name": "A Concrete Example",
+  "lesson_level": "Medium",
+  "total_periods": 5,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Interpret the poem 'A Concrete Example' and its central idea",
+    "Analyse the character of Mrs. Jones and her unique gardening style",
+    "Identify literary devices such as imagery, humour, irony, and alliteration",
+    "Understand how wordplay and symbolism contribute to the meaning of the poem",
+    "Develop reading comprehension, vocabulary, and analytical skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introducing the Poem and Its Context",
+      "topics_covered": [
+        "Meaning of the word 'concrete'",
+        "Introduction to the poem and its theme",
+        "Garden-related vocabulary"
+      ],
+      "teaching_strategy": [
+        "Teacher-led discussion",
+        "Vocabulary exploration",
+        "Prediction activity about the poem"
+      ],
+      "student_activities": [
+        "Discuss the meaning of 'concrete' in different contexts",
+        "Share ideas about what makes a garden beautiful"
+      ],
+      "assessment": [
+        "Oral questioning",
+        "Participation in discussion"
+      ]
+    },
+    {
+      "period": 2,
+      "title": "Reading and Comprehending the Poem",
+      "topics_covered": [
+        "Reading the poem aloud",
+        "Understanding the description of Mrs. Jones’s garden",
+        "Identifying key images in the poem"
+      ],
+      "teaching_strategy": [
+        "Guided reading",
+        "Explanation of difficult lines"
+      ],
+      "student_activities": [
+        "Read the poem in groups",
+        "Highlight descriptive phrases that create images"
+      ],
+      "assessment": [
+        "Reading observation",
+        "Short comprehension questions"
+      ]
+    },
+    {
+      "period": 3,
+      "title": "Character and Imagery Analysis",
+      "topics_covered": [
+        "Character of Mrs. Jones",
+        "Imagery used to describe the garden",
+        "Visualising the poem’s setting"
+      ],
+      "teaching_strategy": [
+        "Discussion-based analysis",
+        "Teacher explanation with textual examples"
+      ],
+      "student_activities": [
+        "Draw or describe Mrs. Jones’s garden",
+        "Identify lines that reflect her personality"
+      ],
+      "assessment": [
+        "Notebook work",
+        "Drawing or description evaluation"
+      ]
+    },
+    {
+      "period": 4,
+      "title": "Literary Devices and Tone",
+      "topics_covered": [
+        "Humour in the poem",
+        "Situational irony in the ending",
+        "Alliteration and rhyme scheme"
+      ],
+      "teaching_strategy": [
+        "Explanation of literary devices",
+        "Examples from the poem"
+      ],
+      "student_activities": [
+        "Find examples of alliteration",
+        "Discuss how the ending creates humour"
+      ],
+      "assessment": [
+        "Short written responses",
+        "Class discussion participation"
+      ]
+    },
+    {
+      "period": 5,
+      "title": "Theme and Language Practice",
+      "topics_covered": [
+        "Theme of different perspectives on beauty",
+        "Vocabulary from the poem",
+        "Word formation exercises"
+      ],
+      "teaching_strategy": [
+        "Teacher-guided reflection",
+        "Language practice activities"
+      ],
+      "student_activities": [
+        "Write a short paragraph about the poem’s message",
+        "Complete vocabulary and word formation exercises"
+      ],
+      "assessment": [
+        "Worksheet evaluation",
+        "Short revision quiz"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Pictures of different types of gardens",
+    "Poem worksheet"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension exercises",
+    "Notebook and drawing activities",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to compare their own idea of a beautiful garden with Mrs. Jones’s unusual garden. This helps them understand the poem’s theme about different perspectives."
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Political Science)",
+  "chapter": "Political Parties",
+  "difficulty": "Medium",
+  "source_pdf": "jess404 (1).pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Functions of Political Parties Analysis",
+      "objective": "Analyse how political parties perform their functions in democracy",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "List the major functions of political parties",
+        "Explain each function with an example",
+        "Discuss which function is most important and why"
+      ],
+      "learning_outcome": "Students analyse the role of parties in democratic governance",
+      "evaluation": "Quality of explanation and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Party System Comparison Table",
+      "objective": "Compare different party systems in the world",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a table comparing one-party, two-party and multiparty systems",
+        "Write features of each system",
+        "Give examples of countries following each system"
+      ],
+      "learning_outcome": "Students understand different political party systems",
+      "evaluation": "Correct comparison and examples (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "National Party Profile",
+      "objective": "Study the ideology and role of a national political party",
+      "materials": ["Notebook", "Internet/Textbook"],
+      "steps": [
+        "Select one national party mentioned in the chapter",
+        "Write about its founding year, leader and ideology",
+        "Explain its role in Indian politics"
+      ],
+      "learning_outcome": "Students gain deeper knowledge of political parties in India",
+      "evaluation": "Accuracy of information (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "State vs National Parties",
+      "objective": "Understand the difference between national and state parties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the criteria for national party recognition",
+        "Write the criteria for state party recognition",
+        "List two examples of each and compare their influence"
+      ],
+      "learning_outcome": "Students understand the classification of political parties",
+      "evaluation": "Correct comparison (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Challenges to Political Parties Mind Map",
+      "objective": "Identify and organise the major challenges faced by political parties",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Write the four major challenges mentioned in the chapter",
+        "Create a mind map connecting these challenges",
+        "Add examples to explain each challenge"
+      ],
+      "learning_outcome": "Students understand problems in political party functioning",
+      "evaluation": "Clarity and creativity (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Election Campaign Observation",
+      "objective": "Understand how political parties communicate with voters",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe posters, speeches or news about an election campaign",
+        "Identify which political party is involved",
+        "Write three strategies used to influence voters"
+      ],
+      "learning_outcome": "Students learn practical aspects of election campaigning",
+      "evaluation": "Observation and analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Debate on Multiparty System",
+      "objective": "Evaluate advantages and disadvantages of multiparty systems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write arguments supporting multiparty systems",
+        "Write arguments against multiparty systems",
+        "Participate in a class debate"
+      ],
+      "learning_outcome": "Students develop analytical thinking about political systems",
+      "evaluation": "Clarity of arguments (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Political Party Symbol Study",
+      "objective": "Understand the significance of party symbols in elections",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "List five election symbols used by political parties",
+        "Identify the party associated with each symbol",
+        "Explain why symbols are important for voters"
+      ],
+      "learning_outcome": "Students understand how symbols help voters identify parties",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Reforms for Political Parties",
+      "objective": "Analyse possible reforms for improving political parties",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the reforms suggested in the chapter",
+        "Explain how each reform can improve democracy",
+        "Suggest one additional reform of your own"
+      ],
+      "learning_outcome": "Students develop critical thinking about political reforms",
+      "evaluation": "Logical reasoning (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Political Party Survey",
+      "objective": "Understand public opinion about political parties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Ask five people which political party they support",
+        "Record their reasons",
+        "Analyse the common factors influencing their choice"
+      ],
+      "learning_outcome": "Students learn how public opinion influences politics",
+      "evaluation": "Quality of survey analysis (10 marks)"
+    }
+  ]
+}

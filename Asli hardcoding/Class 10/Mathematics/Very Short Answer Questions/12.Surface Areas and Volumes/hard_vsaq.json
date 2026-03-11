@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 12: Surface Areas and Volumes",
+    "generated_at": "2026-03-01T21:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is CSA used instead of TSA in capsules?",
+            "answer": "Because base surfaces are not exposed.",
+            "key_points": [
+                "capsule CSA"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is volume always additive?",
+            "answer": "No part of volume disappears when solids join.",
+            "key_points": [
+                "volume rule"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which surface disappears when hemisphere is mounted?",
+            "answer": "The flat circular base.",
+            "key_points": [
+                "disappearing surface"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is slant height not equal to height in a cone?",
+            "answer": "Because slant height is along the curved surface.",
+            "key_points": [
+                "cone geometry"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is TSA less in combined solids?",
+            "answer": "Due to overlapping surfaces.",
+            "key_points": [
+                "overlap"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is radius common in joined solids?",
+            "answer": "To avoid gaps or projections.",
+            "key_points": [
+                "uniform radius"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is π constant in circular solids?",
+            "answer": "It relates circumference to diameter.",
+            "key_points": [
+                "pi concept"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Which solid has no edges?",
+            "answer": "Sphere.",
+            "key_points": [
+                "edges"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is base excluded in tents?",
+            "answer": "Base rests on ground.",
+            "key_points": [
+                "tent logic"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is capacity less than apparent volume?",
+            "answer": "Due to raised or hollow portions.",
+            "key_points": [
+                "capacity reduction"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which solid gives maximum volume for given TSA?",
+            "answer": "Sphere.",
+            "key_points": [
+                "optimization"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is CSA of hemisphere half of sphere?",
+            "answer": "Because hemisphere is half of sphere.",
+            "key_points": [
+                "hemisphere"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Why are cubic units used for volume?",
+            "answer": "Volume measures three-dimensional space.",
+            "key_points": [
+                "3D space"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is paint calculation based on CSA?",
+            "answer": "Paint covers only exposed curved areas.",
+            "key_points": [
+                "paint problems"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is TSA not doubled in joining?",
+            "answer": "Common surfaces merge.",
+            "key_points": [
+                "merged surfaces"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is height subtracted in cone problems?",
+            "answer": "To exclude hemispherical part.",
+            "key_points": [
+                "height adjustment"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which formula uses Pythagoras theorem?",
+            "answer": "Slant height of cone.",
+            "key_points": [
+                "pythagoras"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is volume conserved in hollowing?",
+            "answer": "Only solid material is removed.",
+            "key_points": [
+                "hollow volume"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which solid has highest CSA for same volume?",
+            "answer": "Cylinder.",
+            "key_points": [
+                "CSA comparison"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are hemispheres used in tanks?",
+            "answer": "To reduce stress and leakage.",
+            "key_points": [
+                "application"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is cone volume one-third of cylinder?",
+            "answer": "Due to tapering shape.",
+            "key_points": [
+                "cone logic"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why does hollow reduce mass?",
+            "answer": "Material is removed.",
+            "key_points": [
+                "mass"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is surface area important in insulation?",
+            "answer": "Heat loss depends on exposed area.",
+            "key_points": [
+                "practical use"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is sphere most efficient?",
+            "answer": "It encloses maximum volume for least surface.",
+            "key_points": [
+                "efficiency"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are curved surfaces smoother?",
+            "answer": "They have no edges or vertices.",
+            "key_points": [
+                "curved surfaces"
+            ],
+            "source_section": "12.1"
+        }
+    ]
+}

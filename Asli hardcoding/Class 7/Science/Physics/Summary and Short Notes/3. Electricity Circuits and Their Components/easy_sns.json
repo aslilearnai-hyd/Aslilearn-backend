@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Electricity: Circuits and their Components",
+    "difficulty": "Easy",
+    "source_pdf": "jess703.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electricity is a form of energy that allows devices to work",
+            "An electric circuit is a closed path through which electric current flows",
+            "Basic components of a circuit include a cell, wires, switch and bulb",
+            "A bulb glows only when the circuit is closed",
+            "Conductors allow electric current to pass through them"
+        ],
+        "examples": [
+            "Simple circuit: Cell → Wire → Switch → Bulb",
+            "Switch ON forms a closed circuit and the bulb glows",
+            "Switch OFF forms an open circuit and the bulb does not glow",
+            "Copper wire is a conductor used in circuits"
+        ],
+        "formulas": [
+            "Electric circuit → A closed path that allows current to flow",
+            "Closed circuit → Complete path where current flows",
+            "Open circuit → Broken path where current cannot flow"
+        ],
+        "exam_tips": [
+            "Remember the basic components of an electric circuit",
+            "Learn the difference between open and closed circuits",
+            "Practice drawing simple circuit diagrams",
+            "Know examples of conductors and insulators"
+        ]
+    }
+}

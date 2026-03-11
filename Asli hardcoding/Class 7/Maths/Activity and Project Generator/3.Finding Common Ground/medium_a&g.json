@@ -1,0 +1,170 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Finding Common Ground (Data Handling)",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class7_maths_finding_common_ground.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Double Bar Graph Comparison",
+            "objective": "Compare two sets of data on the same axes",
+            "materials": [
+                "Graph paper",
+                "Two different colored pencils",
+                "Ruler"
+            ],
+            "steps": [
+                "Collect the marks of two students in five different subjects",
+                "Choose an appropriate scale for the vertical axis",
+                "Draw bars side-by-side for each subject to compare their performance",
+                "Add a legend to distinguish between the two students"
+            ],
+            "learning_outcome": "Develops the ability to visualize comparative data",
+            "evaluation": "Accuracy of scale and clarity of comparison (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Median of Even Data Sets",
+            "objective": "Calculate the median when there is an even number of observations",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "List the weights of 8 friends in kilograms",
+                "Arrange the weights in ascending order",
+                "Identify the two middle terms",
+                "Calculate the average of these two terms to find the median weight"
+            ],
+            "learning_outcome": "Mastery of finding the median in even-numbered sets",
+            "evaluation": "Correct identification and averaging of middle terms (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Representative Value Analysis",
+            "objective": "Determine which central tendency best describes the data",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Collect the prices of 7 different snacks at the canteen",
+                "Calculate the Mean, Median, and Mode",
+                "If one snack is very expensive (an outlier), explain which representative value changes the most"
+            ],
+            "learning_outcome": "Understands the impact of outliers on mean vs. median",
+            "evaluation": "Quality of the analytical explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Probability Experiment: Dice Rolling",
+            "objective": "Calculate experimental probability of outcomes",
+            "materials": [
+                "A six-sided die",
+                "Notebook"
+            ],
+            "steps": [
+                "Roll the die 30 times and record each outcome",
+                "Calculate the probability of getting an even number (Total even rolls / 30)",
+                "Calculate the probability of getting a number greater than 4"
+            ],
+            "learning_outcome": "Applies the basic probability formula to experiments",
+            "evaluation": "Correct calculation of probabilities (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Average Rain Gauge",
+            "objective": "Calculate mean from larger data values",
+            "materials": [
+                "Internet or Newspaper",
+                "Notebook"
+            ],
+            "steps": [
+                "Find the monthly rainfall (in mm) of your city for the last 6 months",
+                "Find the total rainfall and the average monthly rainfall",
+                "Identify which months were 'above average' and 'below average'"
+            ],
+            "learning_outcome": "Uses arithmetic mean to analyze environmental trends",
+            "evaluation": "Accurate calculation and classification (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Frequency Distribution Table",
+            "objective": "Group data into a frequency table",
+            "materials": [
+                "Notebook",
+                "Ruler"
+            ],
+            "steps": [
+                "Get the ages of 25 people in your neighborhood",
+                "Create a table with columns for 'Age Group', 'Tally Marks', and 'Frequency'",
+                "Group the ages into intervals (e.g., 0-10, 11-20, etc.)",
+                "Calculate the total frequency to ensure it matches 25"
+            ],
+            "learning_outcome": "Learns to organize large data sets into groups",
+            "evaluation": "Correct grouping and tallying accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Chance and Choice Investigation",
+            "objective": "Distinguish between 'Equal Likely' and 'Not Equal Likely' events",
+            "materials": [
+                "A bag",
+                "5 red balls and 2 blue balls (or paper scraps)"
+            ],
+            "steps": [
+                "Place the items in the bag",
+                "Discuss the probability of picking a red ball vs. a blue ball",
+                "Perform 20 trials and record if the results match your prediction"
+            ],
+            "learning_outcome": "Understands that outcomes are not always equally likely",
+            "evaluation": "Logical prediction vs. experimental data analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Data Interpretation Challenge",
+            "objective": "Extract specific information from a given bar graph",
+            "materials": [
+                "A bar graph from a textbook or news article"
+            ],
+            "steps": [
+                "Identify the scale used in the graph",
+                "Find the difference between the maximum and minimum values shown",
+                "Calculate the mean value of the data represented by the bars"
+            ],
+            "learning_outcome": "Improves data literacy and graph reading skills",
+            "evaluation": "Correct extraction of information from the graph (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Weight vs. Height Correlation",
+            "objective": "Explore data pairs",
+            "materials": [
+                "Notebook",
+                "Scale"
+            ],
+            "steps": [
+                "Record the height and weight of 5 family members",
+                "Calculate the average height and the average weight",
+                "Does the person with the maximum height also have the maximum weight? Record your observation"
+            ],
+            "learning_outcome": "Introduces the concept of analyzing two related variables",
+            "evaluation": "Observation quality and calculation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Mode of Multimodal Data",
+            "objective": "Identify cases with more than one mode",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Consider the data set: 5, 8, 5, 12, 8, 15, 20",
+                "Identify which values repeat the most",
+                "Explain what happens when two different values have the same highest frequency"
+            ],
+            "learning_outcome": "Recognizes that a data set can be bimodal",
+            "evaluation": "Correct identification of multiple modes (10 marks)"
+        }
+    ]
+}

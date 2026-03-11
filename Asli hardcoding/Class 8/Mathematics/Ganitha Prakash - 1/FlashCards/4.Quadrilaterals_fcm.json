@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 4: Quadrilaterals",
+  "generated_at": "2026-03-04T18:55:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a quadrilateral?",
+        "correct_answer": "A polygon with four sides",
+        "explanation": "A quadrilateral has four sides, four vertices, and four angles.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "question": "What is a rectangle?",
+        "correct_answer": "A quadrilateral in which all angles are 90°",
+        "explanation": "In a rectangle, opposite sides are equal and parallel.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "question": "What is a square?",
+        "correct_answer": "A quadrilateral with all sides equal and all angles 90°",
+        "explanation": "A square is a special type of rectangle.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "question": "What is the sum of the angles of a quadrilateral?",
+        "correct_answer": "360°",
+        "explanation": "A quadrilateral can be divided into two triangles, each having 180°.",
+        "source_section": "Section 4.2"
+      },
+      {
+        "question": "What is a parallelogram?",
+        "correct_answer": "A quadrilateral in which opposite sides are parallel",
+        "explanation": "Opposite sides are also equal in length.",
+        "source_section": "Section 4.3"
+      },
+      {
+        "question": "What is a property of opposite angles in a parallelogram?",
+        "correct_answer": "Opposite angles are equal",
+        "explanation": "Adjacent angles add up to 180°.",
+        "source_section": "Section 4.3"
+      },
+      {
+        "question": "What happens to the diagonals of a rectangle?",
+        "correct_answer": "They are equal and bisect each other",
+        "explanation": "Both diagonals meet at their midpoint.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "question": "What happens to the diagonals of a square?",
+        "correct_answer": "They are equal, bisect each other, and intersect at right angles",
+        "explanation": "They also bisect the angles of the square.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "question": "What is the relationship between rectangles and parallelograms?",
+        "correct_answer": "Every rectangle is a parallelogram",
+        "explanation": "A rectangle satisfies the definition of a parallelogram.",
+        "source_section": "Section 4.3"
+      },
+      {
+        "question": "Why is every square also a rectangle?",
+        "correct_answer": "Because all angles of a square are 90°",
+        "explanation": "A rectangle only requires four right angles.",
+        "source_section": "Section 4.1"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Quadrilateral",
+        "content": "A quadrilateral is a polygon with four sides, four vertices, and four angles.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "title": "Rectangle Properties",
+        "content": "Opposite sides are equal and parallel, all angles are 90°, and diagonals are equal and bisect each other.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "title": "Square Properties",
+        "content": "All sides are equal, all angles are 90°, diagonals are equal and intersect at right angles.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "title": "Parallelogram Properties",
+        "content": "Opposite sides are parallel and equal, opposite angles are equal, and diagonals bisect each other.",
+        "source_section": "Section 4.3"
+      },
+      {
+        "title": "Angle Sum Property",
+        "content": "The sum of interior angles of any quadrilateral is always 360°.",
+        "source_section": "Section 4.2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "A quadrilateral can be divided into two triangles.",
+        "source_section": "Section 4.2"
+      },
+      {
+        "fact": "Every square is a rectangle and also a parallelogram.",
+        "source_section": "Section 4.1"
+      },
+      {
+        "fact": "Opposite angles of a parallelogram are always equal.",
+        "source_section": "Section 4.3"
+      },
+      {
+        "fact": "The diagonals of a square bisect its angles.",
+        "source_section": "Section 4.1"
+      }
+    ]
+  }
+}

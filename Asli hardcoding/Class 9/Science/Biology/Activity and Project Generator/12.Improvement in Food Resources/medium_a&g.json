@@ -1,0 +1,170 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Improvement in Food Resources",
+    "difficulty": "Medium",
+    "source_pdf": "s9_12.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Crop Variety Improvement Study",
+            "objective": "Understand the concept of crop variety improvement",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "List characteristics required for improved crop varieties",
+                "Research methods like hybridisation and genetic improvement",
+                "Prepare a short report explaining their benefits"
+            ],
+            "learning_outcome": "Explains how crop varieties are improved for higher yield",
+            "evaluation": "Accuracy of report and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Manure vs Fertilizer Comparison",
+            "objective": "Compare organic manure and chemical fertilizers",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "List properties of manure and fertilizers",
+                "Create a comparison table",
+                "Explain advantages and disadvantages of each"
+            ],
+            "learning_outcome": "Differentiates between manure and fertilizers",
+            "evaluation": "Correct comparison and explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Macro and Micro Nutrients Chart",
+            "objective": "Understand plant nutrient requirements",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "List macro-nutrients and micro-nutrients",
+                "Draw a table explaining their functions",
+                "Add examples of sources"
+            ],
+            "learning_outcome": "Identifies nutrients essential for plant growth",
+            "evaluation": "Accuracy and presentation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Irrigation Methods Model",
+            "objective": "Demonstrate irrigation systems",
+            "materials": [
+                "Cardboard",
+                "Clay",
+                "Water container"
+            ],
+            "steps": [
+                "Create a small model farm",
+                "Demonstrate irrigation using channels",
+                "Explain how water reaches crops"
+            ],
+            "learning_outcome": "Understands irrigation systems and water management",
+            "evaluation": "Functionality and explanation of model (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Intercropping Pattern Diagram",
+            "objective": "Understand intercropping patterns",
+            "materials": [
+                "Notebook",
+                "Color pencils"
+            ],
+            "steps": [
+                "Choose two crops grown together",
+                "Draw rows representing intercropping",
+                "Explain advantages of this pattern"
+            ],
+            "learning_outcome": "Explains how intercropping improves productivity",
+            "evaluation": "Accuracy of diagram and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Crop Protection Survey",
+            "objective": "Study methods of protecting crops",
+            "materials": [
+                "Notebook",
+                "Interview questions"
+            ],
+            "steps": [
+                "Talk to a local farmer or research online",
+                "List common crop pests and diseases",
+                "Write methods used to control them"
+            ],
+            "learning_outcome": "Understands crop protection techniques",
+            "evaluation": "Completeness of survey report (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Cattle Farming Case Study",
+            "objective": "Understand cattle management practices",
+            "materials": [
+                "Notebook",
+                "Internet resources"
+            ],
+            "steps": [
+                "Research feeding, shelter and breeding practices",
+                "Identify milch and draught animals",
+                "Prepare a short case study"
+            ],
+            "learning_outcome": "Explains cattle farming management",
+            "evaluation": "Quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Poultry Breeds Information Sheet",
+            "objective": "Learn about poultry breeds",
+            "materials": [
+                "Notebook",
+                "Reference material"
+            ],
+            "steps": [
+                "List indigenous and exotic poultry breeds",
+                "Write their characteristics",
+                "Explain their use for egg or meat production"
+            ],
+            "learning_outcome": "Understands poultry breed improvement",
+            "evaluation": "Correct information (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Composite Fish Culture Diagram",
+            "objective": "Understand composite fish farming",
+            "materials": [
+                "Chart paper",
+                "Color pencils"
+            ],
+            "steps": [
+                "Draw a fish pond showing different fish species",
+                "Label surface, middle and bottom feeders",
+                "Explain why this system increases yield"
+            ],
+            "learning_outcome": "Explains composite fish culture system",
+            "evaluation": "Clarity of diagram and explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Bee Species Identification",
+            "objective": "Learn about bee varieties used for honey production",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "List common bee species used in beekeeping",
+                "Write characteristics of each species",
+                "Explain their importance in honey production"
+            ],
+            "learning_outcome": "Recognizes bee varieties used in apiculture",
+            "evaluation": "Accuracy of information (10 marks)"
+        }
+    ]
+}

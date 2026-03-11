@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Chemical Reactions and Equations",
+  "generated_at": "2026-03-10T23:37:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "When solid Lead Nitrate is heated in a dry test tube, which of the following is correct regarding the stoichiometric coefficients of the gaseous products in the balanced equation?",
+      "options": {
+        "A": "Ratio of $NO_2$ to $O_2$ is 2:1",
+        "B": "Ratio of $NO_2$ to $O_2$ is 4:1",
+        "C": "Ratio of $NO_2$ to $O_2$ is 1:1",
+        "D": "Ratio of $NO_2$ to $O_2$ is 1:2"
+      },
+      "correct_answer": "B",
+      "explanation": "The balanced equation is $2Pb(NO_3)_2 \rightarrow 2PbO + 4NO_2 + O_2$. The ratio of $NO_2$ to $O_2$ is 4:1.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is a redox reaction where the same substance acts as both an oxidizing and a reducing agent (disproportionation)?",
+      "options": {
+        "A": "$2H_2 + O_2 \rightarrow 2H_2O$",
+        "B": "$2H_2O_2 \rightarrow 2H_2O + O_2$",
+        "C": "$CuO + H_2 \rightarrow Cu + H_2O$",
+        "D": "$MnO_2 + 4HCl \rightarrow MnCl_2 + 2H_2O + Cl_2$"
+      },
+      "correct_answer": "B",
+      "explanation": "In the decomposition of $H_2O_2$, oxygen in the peroxide is both oxidized to $O_2$ and reduced to $H_2O$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 3,
+      "question": "In the balanced equation $xPb(NO_3)_2 \rightarrow yPbO + zNO_2 + wO_2$, the sum of the coefficients $(x+y+z+w)$ is:",
+      "options": {
+        "A": "7",
+        "B": "9",
+        "C": "10",
+        "D": "11"
+      },
+      "correct_answer": "B",
+      "explanation": "The balanced equation is $2Pb(NO_3)_2 \rightarrow 2PbO + 4NO_2 + 1O_2$. Sum = $2+2+4+1 = 9$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A dilute ferrous sulphate solution was gradually added to the beaker containing acidified permanganate solution. The light purple color of the solution fades and finally disappears. Which of the following is the correct explanation for the observation?",
+      "options": {
+        "A": "$KMnO_4$ is an oxidizing agent, it oxidizes $FeSO_4$",
+        "B": "$FeSO_4$ acts as an oxidizing agent and oxidizes $KMnO_4$",
+        "C": "The color disappears due to dilution; no reaction occurs",
+        "D": "$KMnO_4$ is an unstable compound and decomposes in presence of $FeSO_4$"
+      },
+      "correct_answer": "A",
+      "explanation": "$KMnO_4$ is a strong oxidizing agent. It oxidizes $Fe^{2+}$ to $Fe^{3+}$, and in the process, the purple $MnO_4^-$ ion is reduced to colorless $Mn^{2+}$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following reactions involves both a change in oxidation state and the formation of a precipitate?",
+      "options": {
+        "A": "$AgNO_3 + NaCl \rightarrow AgCl + NaNO_3$",
+        "B": "$BaCl_2 + H_2SO_4 \rightarrow BaSO_4 + 2HCl$",
+        "C": "$2FeCl_3 + SnCl_2 \rightarrow 2FeCl_2 + SnCl_4$",
+        "D": "$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$"
+      },
+      "correct_answer": "D",
+      "explanation": "In $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$, $Fe$ is oxidized and $Cu$ is reduced. Though $Cu$ is a solid metal deposit (not a traditional ionic precipitate), in many contexts, this is the only redox option provided in precipitation contexts. (Note: A, B are double displacement but not redox).",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 6,
+      "question": "During the electrolysis of acidified water, if 20 mL of gas is collected at the cathode, the volume of gas collected at the anode will be:",
+      "options": {
+        "A": "20 mL",
+        "B": "40 mL",
+        "C": "10 mL",
+        "D": "5 mL"
+      },
+      "correct_answer": "C",
+      "explanation": "Cathode collects Hydrogen, Anode collects Oxygen. Since the ratio is 2:1, Oxygen volume is $20/2 = 10$ mL.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Consider the reaction: $2AgCl(s) \rightarrow 2Ag(s) + Cl_2(g)$. This reaction is used in black and white photography. The energy for this reaction is provided in the form of:",
+      "options": {
+        "A": "Heat",
+        "B": "Electricity",
+        "C": "Light",
+        "D": "Mechanical pressure"
+      },
+      "correct_answer": "C",
+      "explanation": "This is a photolytic decomposition reaction occurring in the presence of sunlight.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following is correct regarding the thermite reaction used to join railway tracks?",
+      "options": {
+        "A": "It is a combination reaction between $Fe$ and $Al_2O_3$",
+        "B": "It is a displacement reaction where $Al$ reduces $Fe_2O_3$",
+        "C": "It is an endothermic reaction",
+        "D": "The iron produced is in solid state"
+      },
+      "correct_answer": "B",
+      "explanation": "$Fe_2O_3 + 2Al \rightarrow 2Fe + Al_2O_3 + \text{Heat}$. It is highly exothermic, and the iron is produced in a molten (liquid) state.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 9,
+      "question": "When $SO_2$ gas is passed through an acidified solution of $K_2Cr_2O_7$, the oxidation state of Chromium changes from:",
+      "options": {
+        "A": "+6 to +2",
+        "B": "+6 to +3",
+        "C": "+3 to +6",
+        "D": "+7 to +2"
+      },
+      "correct_answer": "B",
+      "explanation": "In $K_2Cr_2O_7$, $Cr$ is in +6 state. It is reduced to $Cr^{3+}$ (green), which is +3 state.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Barium chloride reacts with aluminum sulphate to give aluminum chloride and a precipitate of barium sulphate. The balanced equation is:",
+      "options": {
+        "A": "$BaCl_2 + Al_2(SO_4)_3 \rightarrow 2AlCl_3 + BaSO_4$",
+        "B": "$3BaCl_2 + Al_2(SO_4)_3 \rightarrow 2AlCl_3 + 3BaSO_4$",
+        "C": "$3BaCl_2 + 2Al_2(SO_4)_3 \rightarrow 4AlCl_3 + 6BaSO_4$",
+        "D": "$BaCl_2 + Al_2(SO_4)_3 \rightarrow AlCl_3 + BaSO_4$"
+      },
+      "correct_answer": "B",
+      "explanation": "To balance $Al$ and $SO_4$ ions, the coefficients must be 3 for $BaCl_2$ and $BaSO_4$, and 2 for $AlCl_3$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which among the following is/are double displacement reaction(s)?\n(i) $Pb + CuCl_2 \rightarrow PbCl_2 + Cu$\n(ii) $Na_2SO_4 + BaCl_2 \rightarrow BaSO_4 + 2NaCl$\n(iii) $C + O_2 \rightarrow CO_2$\n(iv) $CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O$",
+      "options": {
+        "A": "(i) and (iv)",
+        "B": "(ii) only",
+        "C": "(i) and (ii)",
+        "D": "(iii) and (iv)"
+      },
+      "correct_answer": "B",
+      "explanation": "Only (ii) involves the mutual exchange of ions between two compounds.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 12,
+      "question": "In the reaction $3MnO_2 + 4Al \rightarrow 3Mn + 2Al_2O_3$, which substance is the reducing agent?",
+      "options": {
+        "A": "$MnO_2$",
+        "B": "$Al$",
+        "C": "$Mn$",
+        "D": "$Al_2O_3$"
+      },
+      "correct_answer": "B",
+      "explanation": "Aluminum ($Al$) is being oxidized (gains oxygen), so it acts as the reducing agent.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens when copper is heated in air? Identify the substance formed and its color.",
+      "options": {
+        "A": "$Cu_2O$, Red",
+        "B": "$CuO$, Black",
+        "C": "$Cu(OH)_2$, Blue",
+        "D": "$CuCO_3$, Green"
+      },
+      "correct_answer": "B",
+      "explanation": "Copper reacts with oxygen to form Copper(II) Oxide ($CuO$), which is black.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 14,
+      "question": "When hydrogen gas is passed over heated copper oxide, the black coating turns brown because:",
+      "options": {
+        "A": "Oxidation of $CuO$ takes place",
+        "B": "Reduction of $CuO$ to $Cu$ takes place",
+        "C": "Sublimation occurs",
+        "D": "$CuO$ reacts with $H_2$ to form $Cu(OH)_2$"
+      },
+      "correct_answer": "B",
+      "explanation": "$CuO + H_2 \rightarrow Cu + H_2O$. The black $CuO$ is reduced to brown copper metal.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is true for the reaction of burning methane?\n$CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O$",
+      "options": {
+        "A": "Carbon is reduced",
+        "B": "Hydrogen is oxidized",
+        "C": "Oxygen is the reducing agent",
+        "D": "It is an endothermic reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydrogen in methane is oxidized to water. Oxygen is the oxidizing agent.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 16,
+      "question": "A student takes 2g of Ferrous Sulphate crystals in a dry boiling tube and heats it. The correct sequence of observations is:",
+      "options": {
+        "A": "Green color $\rightarrow$ White $\rightarrow$ Brown",
+        "B": "White $\rightarrow$ Green $\rightarrow$ Black",
+        "C": "Green $\rightarrow$ Brown $\rightarrow$ White",
+        "D": "Green $\rightarrow$ Blue $\rightarrow$ Yellow"
+      },
+      "correct_answer": "A",
+      "explanation": "Green crystals ($FeSO_4 \cdot 7H_2O$) lose water to become white anhydrous $FeSO_4$, then decompose into brown $Fe_2O_3$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is not true regarding the 'Law of Conservation of Mass' in a chemical reaction?",
+      "options": {
+        "A": "Total mass of products = Total mass of reactants",
+        "B": "Number of atoms of each element remains same",
+        "C": "Total number of molecules always remains the same",
+        "D": "Mass is neither created nor destroyed"
+      },
+      "correct_answer": "C",
+      "explanation": "The number of molecules can change (e.g., $2H_2 + O_2 \rightarrow 2H_2O$ changes 3 molecules to 2), but mass and atom counts must remain constant.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1.2"
+    },
+    {
+      "question_number": 18,
+      "question": "The conversion of $Fe^{2+}$ to $Fe^{3+}$ is an example of:",
+      "options": {
+        "A": "Reduction",
+        "B": "Oxidation",
+        "C": "Hydrogenation",
+        "D": "Hydrolysis"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxidation is defined as the loss of electrons. $Fe^{2+}$ loses an electron to become $Fe^{3+}$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 19,
+      "question": "When a piece of Zinc is added to $CuSO_4$ solution, the solution becomes colorless because:",
+      "options": {
+        "A": "Zinc is less reactive than Copper",
+        "B": "$ZnSO_4$ is formed which is colorless",
+        "C": "Zinc oxide is formed",
+        "D": "Copper is oxidized"
+      },
+      "correct_answer": "B",
+      "explanation": "Zinc displaces Copper to form Zinc Sulphate ($ZnSO_4$), which is a colorless solution.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.3"
+    },
+    {
+      "question_number": 20,
+      "question": "In the reaction $2H_2S + SO_2 \rightarrow 3S + 2H_2O$, which substance is oxidized?",
+      "options": {
+        "A": "$H_2S$",
+        "B": "$SO_2$",
+        "C": "$S$",
+        "D": "$H_2O$"
+      },
+      "correct_answer": "A",
+      "explanation": "$H_2S$ loses hydrogen to form Sulfur, which is a form of oxidation.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Thermal decomposition of Calcium Carbonate is a key step in the manufacture of:",
+      "options": {
+        "A": "Steel",
+        "B": "Cement",
+        "C": "Plastics",
+        "D": "Soap"
+      },
+      "correct_answer": "B",
+      "explanation": "The production of Quick Lime ($CaO$) from limestone is vital in the cement industry.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What is observed when a solution of Potassium Iodide is added to a solution of Lead Nitrate in a test tube?",
+      "options": {
+        "A": "The solution becomes red",
+        "B": "A yellow precipitate is formed",
+        "C": "A white precipitate is formed",
+        "D": "No reaction takes place"
+      },
+      "correct_answer": "B",
+      "explanation": "Lead Iodide ($PbI_2$) is a characteristic yellow precipitate.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of the following is an endothermic reaction?",
+      "options": {
+        "A": "$C + O_2 \rightarrow CO_2$",
+        "B": "$N_2 + O_2 \rightarrow 2NO$",
+        "C": "$NaOH + HCl \rightarrow NaCl + H_2O$",
+        "D": "$CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O$"
+      },
+      "correct_answer": "B",
+      "explanation": "Most combination reactions are exothermic, but the combination of Nitrogen and Oxygen to form Nitric Oxide requires high heat.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 24,
+      "question": "A substance 'X' which is an oxide of a group 2 element is used intensively in the cement industry. This element is present in bones also. On treatment with water, it forms a solution which turns red litmus blue. Identify 'X'.",
+      "options": {
+        "A": "$CaO$",
+        "B": "$MgO$",
+        "C": "$Na_2O$",
+        "D": "$ZnO$"
+      },
+      "correct_answer": "A",
+      "explanation": "'X' is Calcium Oxide ($CaO$), used in cement and derived from Calcium (found in bones). Its aqueous solution is basic.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "The rate of corrosion of iron is increased by the presence of:",
+      "options": {
+        "A": "Vacuum",
+        "B": "Dry air",
+        "C": "Saline water",
+        "D": "Pure water"
+      },
+      "correct_answer": "C",
+      "explanation": "Electrolytes like salts in water speed up the electrochemical process of rusting/corrosion.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3.1"
+    }
+  ]
+}

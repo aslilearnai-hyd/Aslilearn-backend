@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "The Ever-Evolving World of Science",
+    "difficulty": "Medium",
+    "source_pdf": "jess701.pdf",
+    "short_notes": {
+        "key_points": [
+            "Science is a systematic study of the natural world based on observation and experimentation",
+            "Scientific knowledge evolves as new discoveries replace or improve previous ideas",
+            "Scientific methods involve observation, hypothesis, experimentation and conclusion",
+            "Technology develops from scientific discoveries and helps improve quality of life",
+            "Scientists collaborate and share knowledge to advance scientific understanding"
+        ],
+        "examples": [
+            "Development of vaccines to prevent infectious diseases",
+            "Use of satellites for communication, navigation and weather monitoring",
+            "Electric vehicles developed using scientific understanding of energy and motion",
+            "Medical imaging technologies such as X-rays and MRI used in healthcare"
+        ],
+        "formulas": [
+            "Scientific method → Observation → Hypothesis → Experiment → Conclusion",
+            "Innovation → Application of scientific knowledge to create new technologies"
+        ],
+        "exam_tips": [
+            "Understand the steps involved in the scientific method",
+            "Learn how scientific discoveries influence technological development",
+            "Remember important examples where science improved society",
+            "Explain concepts clearly with examples in descriptive answers"
+        ]
+    }
+}

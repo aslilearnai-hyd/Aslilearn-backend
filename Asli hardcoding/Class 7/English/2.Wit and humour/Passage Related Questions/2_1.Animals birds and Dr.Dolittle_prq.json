@@ -1,0 +1,120 @@
+{
+  "subject": "English",
+  "course_code": "JEF P101",
+  "chapter": "Animals, Birds, and Dr. Dolittle",
+  "title": "Extended Reading Passages with Questions – Dr. Dolittle",
+  "total_passages": 10,
+  "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+  "passages": [
+    {
+      "passage_number": 1,
+      "paragraph": "Dr. Dolittle was a kind man who lived in a small house. He started as a doctor for people, but he loved animals much more. Soon, his house was full of goldfishes, rabbits, and white mice.",
+      "questions": [
+        "What kind of man was Dr. Dolittle?",
+        "Where did he live?",
+        "What kind of doctor was he at first?",
+        "What did he love more than people?",
+        "Name three types of animals mentioned in his house."
+      ]
+    },
+    {
+      "passage_number": 2,
+      "paragraph": "Because he had so many pets, his human patients stopped coming to see him. Only the animals stayed. His sister, Sarah, told him he could not keep so many animals in the house.",
+      "questions": [
+        "Why did his human patients stop coming?",
+        "Who stayed with the doctor?",
+        "What was his sister’s name?",
+        "What did his sister tell him?",
+        "Did the doctor have many pets?"
+      ]
+    },
+    {
+      "passage_number": 3,
+      "paragraph": "Dr. Dolittle had a clever parrot named Polynesia. One day, Polynesia told him that animals have their own language. She said birds do not just chirp; they talk to each other using special sounds.",
+      "questions": [
+        "What was the parrot's name?",
+        "What did the parrot tell the doctor about animals?",
+        "Do birds only chirp according to Polynesia?",
+        "How do birds talk to each other?",
+        "Was the parrot clever?"
+      ]
+    },
+    {
+      "passage_number": 4,
+      "paragraph": "Polynesia began teaching Dr. Dolittle the bird language. He sat at the kitchen table with a notebook. He wrote down the meanings of different whistles and wing flaps.",
+      "questions": [
+        "What language did Polynesia teach the doctor?",
+        "Where did the doctor sit to learn?",
+        "What did he use to record his notes?",
+        "What two things did he write the meanings of?",
+        "Who was the teacher in this paragraph?"
+      ]
+    },
+    {
+      "passage_number": 5,
+      "paragraph": "After learning from the parrot, Dr. Dolittle could talk to any animal. He understood when the horse was tired or when the dog was hungry. He decided to become an animal doctor, or a veterinarian.",
+      "questions": [
+        "What could Dr. Dolittle do after his lessons?",
+        "What did he understand about the horse?",
+        "What did he understand about the dog?",
+        "What new job did he decide to take?",
+        "What is another word for an animal doctor?"
+      ]
+    },
+    {
+      "passage_number": 6,
+      "paragraph": "Word spread quickly among the birds and beasts. From the woods and the farms, sick animals came to see Dr. Dolittle. He fixed the broken wing of a sparrow and the sore paw of a cat.",
+      "questions": [
+        "Who heard the news about the doctor?",
+        "Where did the sick animals come from?",
+        "Whose broken wing did he fix?",
+        "What was wrong with the cat?",
+        "Did the animals come to see him?"
+      ]
+    },
+    {
+      "passage_number": 7,
+      "paragraph": "The doctor's house became a very busy place. He had a pig named Gub-Gub and a dog named Jip. They helped him look after the other animals who needed care.",
+      "questions": [
+        "How is the doctor's house described?",
+        "What was the pig's name?",
+        "What was the dog's name?",
+        "What did Gub-Gub and Jip do?",
+        "Who needed care?"
+      ]
+    },
+    {
+      "passage_number": 8,
+      "paragraph": "Dr. Dolittle used his knowledge of animal language to find out exactly what was wrong. He didn't have to guess. The animals could tell him where they felt pain or if they needed water.",
+      "questions": [
+        "What did the doctor use to find out what was wrong?",
+        "Did he have to guess the problem?",
+        "What could the animals tell him about their pain?",
+        "What else could they ask for if they were thirsty?",
+        "How did knowing the language help him?"
+      ]
+    },
+    {
+      "passage_number": 9,
+      "paragraph": "The doctor was very happy because he was doing what he loved. He didn't care about being rich. He just wanted to make sure all the birds and animals were healthy and safe.",
+      "questions": [
+        "How did the doctor feel about his work?",
+        "Did he care about being rich?",
+        "What was his main goal?",
+        "Which two groups of creatures did he want to keep healthy?",
+        "Was he doing what he loved?"
+      ]
+    },
+    {
+      "passage_number": 10,
+      "paragraph": "People from far away heard about the man who spoke to animals. Dr. Dolittle showed everyone that animals are intelligent and have feelings. He became the most famous animal doctor in the world.",
+      "questions": [
+        "Who heard about the doctor from far away?",
+        "What did the doctor show everyone about animals?",
+        "What two qualities of animals are mentioned?",
+        "How famous did he become?",
+        "Did he speak to animals?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 3: Water Resources",
+  "generated_at": "2026-03-11T16:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why water is considered a renewable resource despite increasing scarcity.",
+      "answer": "Water is renewable because it is continuously recycled through the hydrological cycle, but scarcity occurs due to overuse and mismanagement.",
+      "key_concepts": ["renewable resource", "hydrological cycle"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "How does over-exploitation of groundwater lead to water scarcity?",
+      "answer": "Excessive extraction lowers groundwater levels faster than natural recharge, leading to depletion of water resources.",
+      "key_concepts": ["groundwater depletion"],
+      "marks": 4,
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how industrialization contributes to water scarcity.",
+      "answer": "Industries consume large amounts of water and discharge pollutants that contaminate water sources.",
+      "key_concepts": ["industrialization", "water pollution"],
+      "marks": 4,
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 4,
+      "question": "Why are dams referred to as multipurpose river projects?",
+      "answer": "Dams provide irrigation, hydroelectric power, flood control, navigation, and water supply for domestic and industrial uses.",
+      "key_concepts": ["multipurpose river projects"],
+      "marks": 4,
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how sedimentation reduces the efficiency of dams.",
+      "answer": "Sediments accumulate at the bottom of reservoirs and reduce their water storage capacity.",
+      "key_concepts": ["sedimentation"],
+      "marks": 4,
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do large dams often cause displacement of people?",
+      "answer": "The construction of reservoirs behind dams submerges villages and agricultural lands.",
+      "key_concepts": ["displacement"],
+      "marks": 4,
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how irrigation can lead to environmental problems.",
+      "answer": "Excessive irrigation can cause soil salinisation and degradation of agricultural land.",
+      "key_concepts": ["irrigation", "salinisation"],
+      "marks": 4,
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 8,
+      "question": "How does rainwater harvesting help in groundwater recharge?",
+      "answer": "Collected rainwater infiltrates the soil and replenishes underground aquifers.",
+      "key_concepts": ["rainwater harvesting", "groundwater recharge"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why traditional water harvesting systems were effective in arid regions.",
+      "answer": "They were designed according to local climatic conditions and efficiently stored rainwater.",
+      "key_concepts": ["traditional systems"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is rooftop rainwater harvesting important in urban areas?",
+      "answer": "Urban areas have limited natural recharge due to concrete surfaces, so harvesting helps replenish groundwater.",
+      "key_concepts": ["urban water management"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the role of tankas in water conservation.",
+      "answer": "Tankas store rainwater collected from rooftops and provide drinking water in arid regions.",
+      "key_concepts": ["tankas"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 12,
+      "question": "How does the bamboo drip irrigation system conserve water?",
+      "answer": "It delivers water drop by drop directly to plant roots, minimizing wastage.",
+      "key_concepts": ["bamboo irrigation"],
+      "marks": 4,
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why water pollution contributes to water scarcity.",
+      "answer": "Polluted water becomes unsafe for human use, reducing the amount of usable water.",
+      "key_concepts": ["water pollution"],
+      "marks": 4,
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do some regions face water scarcity despite having abundant water resources?",
+      "answer": "Due to poor management, unequal distribution, and pollution of water resources.",
+      "key_concepts": ["water management"],
+      "marks": 4,
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the importance of dams in hydroelectric power generation.",
+      "answer": "Stored water falls through turbines to generate electricity.",
+      "key_concepts": ["hydroelectric power"],
+      "marks": 4,
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 16,
+      "question": "How do dams help regulate river flow?",
+      "answer": "Dams store excess water during heavy rainfall and release it gradually.",
+      "key_concepts": ["river regulation"],
+      "marks": 4,
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the importance of community participation in water conservation.",
+      "answer": "Communities can manage local water resources and promote sustainable water use.",
+      "key_concepts": ["community participation"],
+      "marks": 4,
+      "source_section": "Water Management"
+    },
+    {
+      "question_number": 18,
+      "question": "How does population growth affect water demand?",
+      "answer": "Population growth increases demand for water in agriculture, industry, and domestic activities.",
+      "key_concepts": ["population growth"],
+      "marks": 4,
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why sustainable water management is necessary.",
+      "answer": "It ensures that water resources are used efficiently and remain available for future generations.",
+      "key_concepts": ["sustainability"],
+      "marks": 4,
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 20,
+      "question": "How does deforestation affect water resources?",
+      "answer": "Deforestation reduces groundwater recharge and increases soil erosion.",
+      "key_concepts": ["deforestation"],
+      "marks": 4,
+      "source_section": "Water Resources"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the relationship between water resources and economic development.",
+      "answer": "Water resources support agriculture, industry, and energy production, which drive economic growth.",
+      "key_concepts": ["economic development"],
+      "marks": 4,
+      "source_section": "Water Resources"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are traditional water management systems considered sustainable?",
+      "answer": "They use local materials and adapt to environmental conditions with minimal ecological impact.",
+      "key_concepts": ["traditional sustainability"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of groundwater recharge for long-term water availability.",
+      "answer": "Groundwater recharge replenishes underground water reserves and maintains water supply.",
+      "key_concepts": ["groundwater recharge"],
+      "marks": 4,
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 24,
+      "question": "How can modern technology support water conservation?",
+      "answer": "Technologies such as drip irrigation and rainwater harvesting systems reduce water wastage.",
+      "key_concepts": ["water technology"],
+      "marks": 4,
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall significance of water resources in maintaining ecological balance.",
+      "answer": "Water resources support ecosystems, agriculture, and human life, making them essential for ecological balance.",
+      "key_concepts": ["ecological balance"],
+      "marks": 4,
+      "source_section": "Conclusion"
+    }
+  ]
+}

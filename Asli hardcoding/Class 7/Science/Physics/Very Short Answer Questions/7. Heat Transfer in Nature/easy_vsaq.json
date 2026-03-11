@@ -1,0 +1,373 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T21:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is heat transfer?",
+            "answer": "Heat transfer is the movement of thermal energy from a region of higher temperature to a region of lower temperature.",
+            "answer_outline": [
+                "Energy transfer",
+                "From higher temperature",
+                "To lower temperature"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "temperature difference"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the three modes of heat transfer.",
+            "answer": "The three modes of heat transfer are conduction, convection, and radiation.",
+            "answer_outline": [
+                "Conduction",
+                "Convection",
+                "Radiation"
+            ],
+            "key_concepts": [
+                "heat transfer methods"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "In which state of matter does conduction mainly occur?",
+            "answer": "Conduction mainly occurs in solids.",
+            "answer_outline": [
+                "Particles closely packed",
+                "Energy transferred through vibrations"
+            ],
+            "key_concepts": [
+                "conduction",
+                "solids"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which mode of heat transfer occurs in liquids and gases?",
+            "answer": "Convection occurs in liquids and gases.",
+            "answer_outline": [
+                "Heat transfer through movement",
+                "Occurs in fluids"
+            ],
+            "key_concepts": [
+                "convection",
+                "fluids"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which mode of heat transfer does not require a medium?",
+            "answer": "Radiation does not require a medium.",
+            "answer_outline": [
+                "Heat transfer through electromagnetic waves",
+                "Can travel through vacuum"
+            ],
+            "key_concepts": [
+                "radiation",
+                "vacuum"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does warm air rise?",
+            "answer": "Warm air rises because it becomes less dense when heated.",
+            "answer_outline": [
+                "Heating causes expansion",
+                "Lower density"
+            ],
+            "key_concepts": [
+                "density",
+                "convection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a good conductor of heat?",
+            "answer": "A good conductor is a material that allows heat to pass through it easily.",
+            "answer_outline": [
+                "Allows heat flow easily",
+                "Example: metals"
+            ],
+            "key_concepts": [
+                "conductors"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Give one example of a poor conductor of heat.",
+            "answer": "Wood is an example of a poor conductor of heat.",
+            "answer_outline": [
+                "Does not allow heat to pass easily"
+            ],
+            "key_concepts": [
+                "insulators"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do metals feel cold to touch?",
+            "answer": "Metals conduct heat away from the body quickly, making them feel colder.",
+            "answer_outline": [
+                "Good conductor",
+                "Heat leaves body quickly"
+            ],
+            "key_concepts": [
+                "conduction",
+                "thermal conductivity"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is insulation?",
+            "answer": "Insulation is the process of reducing heat transfer between objects or regions.",
+            "answer_outline": [
+                "Prevents heat flow",
+                "Uses insulating materials"
+            ],
+            "key_concepts": [
+                "insulation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the main function of a thermos flask?",
+            "answer": "A thermos flask keeps liquids hot or cold by minimizing heat transfer.",
+            "answer_outline": [
+                "Prevents heat loss",
+                "Maintains temperature"
+            ],
+            "key_concepts": [
+                "thermos flask",
+                "insulation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are woolen clothes warm in winter?",
+            "answer": "Wool traps air, which acts as an insulator and reduces heat loss.",
+            "answer_outline": [
+                "Air trapped in fibers",
+                "Air is poor conductor"
+            ],
+            "key_concepts": [
+                "insulation",
+                "wool"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What causes sea breeze?",
+            "answer": "Sea breeze is caused by the movement of cool air from the sea toward warmer land.",
+            "answer_outline": [
+                "Land heats faster",
+                "Warm air rises",
+                "Cool air moves from sea"
+            ],
+            "key_concepts": [
+                "sea breeze",
+                "convection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What causes land breeze?",
+            "answer": "Land breeze occurs when cool air from land moves toward the warmer sea at night.",
+            "answer_outline": [
+                "Land cools faster",
+                "Cool air moves toward sea"
+            ],
+            "key_concepts": [
+                "land breeze"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is radiation?",
+            "answer": "Radiation is the transfer of heat through electromagnetic waves without a medium.",
+            "answer_outline": [
+                "Energy transfer by waves",
+                "No medium required"
+            ],
+            "key_concepts": [
+                "radiation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Give one example of heat transfer by radiation.",
+            "answer": "Heat from the Sun reaching the Earth is an example of radiation.",
+            "answer_outline": [
+                "Sun's heat travels through space"
+            ],
+            "key_concepts": [
+                "solar radiation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Why do black surfaces absorb more heat?",
+            "answer": "Black surfaces absorb most of the incoming radiation and convert it into heat.",
+            "answer_outline": [
+                "Higher absorption",
+                "Less reflection"
+            ],
+            "key_concepts": [
+                "absorption",
+                "radiation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do light-colored surfaces reflect heat?",
+            "answer": "Light-colored surfaces reflect most of the radiation and absorb less heat.",
+            "answer_outline": [
+                "High reflection",
+                "Low absorption"
+            ],
+            "key_concepts": [
+                "reflection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What are convection currents?",
+            "answer": "Convection currents are circular movements of fluid caused by temperature differences.",
+            "answer_outline": [
+                "Warm fluid rises",
+                "Cool fluid sinks"
+            ],
+            "key_concepts": [
+                "convection currents"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are cooking utensils made of metal?",
+            "answer": "Metals are good conductors of heat and transfer heat efficiently to food.",
+            "answer_outline": [
+                "Good conductor",
+                "Faster heat transfer"
+            ],
+            "key_concepts": [
+                "conduction",
+                "metals"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do deserts cool quickly at night?",
+            "answer": "Deserts lose heat rapidly through radiation due to dry air and lack of moisture.",
+            "answer_outline": [
+                "Low moisture",
+                "Rapid radiation"
+            ],
+            "key_concepts": [
+                "radiation",
+                "desert climate"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What role does the Sun play in heat transfer on Earth?",
+            "answer": "The Sun provides heat energy to Earth mainly through radiation.",
+            "answer_outline": [
+                "Energy source",
+                "Radiation transfer"
+            ],
+            "key_concepts": [
+                "solar energy"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are thermos flasks silvered inside?",
+            "answer": "The silvered surface reflects heat radiation and reduces heat loss.",
+            "answer_outline": [
+                "Reflects radiation",
+                "Prevents heat loss"
+            ],
+            "key_concepts": [
+                "radiation",
+                "reflection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of heat transfer occurs in boiling water?",
+            "answer": "Convection occurs in boiling water.",
+            "answer_outline": [
+                "Hot water rises",
+                "Cool water sinks"
+            ],
+            "key_concepts": [
+                "convection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is air considered a poor conductor of heat?",
+            "answer": "Air molecules are far apart, which slows down the transfer of heat.",
+            "answer_outline": [
+                "Particles far apart",
+                "Slow energy transfer"
+            ],
+            "key_concepts": [
+                "insulation",
+                "air"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

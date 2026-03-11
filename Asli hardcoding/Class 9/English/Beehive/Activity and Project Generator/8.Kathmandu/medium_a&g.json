@@ -1,0 +1,152 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Kathmandu",
+    "author": "Vikram Seth",
+    "difficulty": "Medium",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparison of Two Temples",
+            "objective": "Understand the contrast between Pashupatinath and Baudhnath",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the descriptions of the two temples",
+                "List differences in atmosphere and surroundings",
+                "Write them in a comparison table"
+            ],
+            "learning_outcome": "Develops analytical reading skill",
+            "evaluation": "Correct comparison points (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Description of Pashupatinath Scene",
+            "objective": "Understand descriptive writing in prose",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraph describing Pashupatinath",
+                "Write 5–6 lines explaining the crowded atmosphere"
+            ],
+            "learning_outcome": "Improves descriptive writing ability",
+            "evaluation": "Relevant details included (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Street Life Observation",
+            "objective": "Identify activities happening in Kathmandu streets",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find examples of activities in the streets",
+                "Write at least six activities mentioned"
+            ],
+            "learning_outcome": "Recognises everyday life descriptions",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Character Study of the Flute Seller",
+            "objective": "Analyse the behaviour of the flute seller",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraph describing the flute seller",
+                "Write 5 points about his behaviour and lifestyle"
+            ],
+            "learning_outcome": "Understands character portrayal",
+            "evaluation": "Relevant points included (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Sounds in Kathmandu",
+            "objective": "Identify sound imagery in the lesson",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find examples of sounds described in the lesson",
+                "Write them in your notebook"
+            ],
+            "learning_outcome": "Recognises sensory imagery",
+            "evaluation": "Correct examples (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Author’s Feelings",
+            "objective": "Understand the narrator’s emotions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the last paragraphs of the lesson",
+                "Write how the author feels about the flute music"
+            ],
+            "learning_outcome": "Interprets emotions in prose",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Travel Route Analysis",
+            "objective": "Understand the route the author considered",
+            "materials": [
+                "Notebook",
+                "Map"
+            ],
+            "steps": [
+                "Identify the route mentioned by the author",
+                "List the places in order"
+            ],
+            "learning_outcome": "Understands geographical references",
+            "evaluation": "Correct sequence (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Theme of the Lesson",
+            "objective": "Identify the main idea of the prose",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the experiences described",
+                "Write 5 lines explaining the theme"
+            ],
+            "learning_outcome": "Understands thematic meaning",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Descriptive Words Collection",
+            "objective": "Improve vocabulary from the lesson",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find five descriptive words used in the lesson",
+                "Write their meanings"
+            ],
+            "learning_outcome": "Develops vocabulary skills",
+            "evaluation": "Correct meanings (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Message of the Lesson",
+            "objective": "Understand the deeper message",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about what the author learns from the visit",
+                "Write the message in 4–5 sentences"
+            ],
+            "learning_outcome": "Interprets moral or message",
+            "evaluation": "Clear explanation (10 marks)"
+        }
+    ]
+}

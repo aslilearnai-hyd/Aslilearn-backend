@@ -1,0 +1,157 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Necklace",
+    "title": "Lesson Planner – The Necklace (Medium)",
+    "author": "Guy de Maupassant",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse characters in detail",
+        "Understand themes and literary elements",
+        "Develop interpretative skills",
+        "Enhance vocabulary and expression",
+        "Understand cause and consequence",
+        "Relate themes to modern life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author and Social Background",
+            "topics_covered": [
+                "Guy de Maupassant’s writing style",
+                "Social setting of the story"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Note key points",
+                "Ask questions"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Character Study",
+            "topics_covered": [
+                "Character of Mme Loisel",
+                "Character of Mr Loisel"
+            ],
+            "teaching_strategy": [
+                "Text-based discussion",
+                "Character analysis"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Compare characters"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Desire and Dissatisfaction",
+            "topics_covered": [
+                "Mme Loisel’s ambitions",
+                "Impact of dissatisfaction"
+            ],
+            "teaching_strategy": [
+                "Cause–effect explanation"
+            ],
+            "student_activities": [
+                "Group discussion",
+                "Short paragraph writing"
+            ],
+            "assessment": [
+                "Written responses"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Necklace as a Turning Point",
+            "topics_covered": [
+                "Symbolic importance of the necklace",
+                "Loss and replacement"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples"
+            ],
+            "student_activities": [
+                "Identify turning points",
+                "Answer analytical questions"
+            ],
+            "assessment": [
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Life of Hardship",
+            "topics_covered": [
+                "Ten years of suffering",
+                "Transformation of Mme Loisel"
+            ],
+            "teaching_strategy": [
+                "Narrative explanation"
+            ],
+            "student_activities": [
+                "Describe changes in lifestyle"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Themes and Title Justification",
+            "topics_covered": [
+                "Themes of pride and materialism",
+                "Justification of the title"
+            ],
+            "teaching_strategy": [
+                "Thematic discussion"
+            ],
+            "student_activities": [
+                "Write theme-based answers"
+            ],
+            "assessment": [
+                "Paragraph evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Vocabulary",
+                "Overall recap"
+            ],
+            "teaching_strategy": [
+                "Revision session"
+            ],
+            "student_activities": [
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Unit test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Whiteboard",
+        "Worksheets"
+    ],
+    "evaluation_methods": [
+        "Written assignments",
+        "Oral questioning",
+        "Class participation"
+    ],
+    "teacher_tip": "Encourage students to connect themes of the story with present-day social pressures."
+}

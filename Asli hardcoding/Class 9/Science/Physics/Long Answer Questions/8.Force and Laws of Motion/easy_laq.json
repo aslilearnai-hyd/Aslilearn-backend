@@ -1,0 +1,405 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Force and Laws of Motion",
+    "generated_at": "2026-03-06T14:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of force with examples.",
+            "answer": "Force is a push or pull acting on an object that can change its state of motion or shape. Examples include pushing a trolley or pulling a rope.",
+            "answer_outline": [
+                "Definition of force",
+                "Push or pull",
+                "Effects on motion",
+                "Examples"
+            ],
+            "key_concepts": [
+                "force"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the effects of force on an object.",
+            "answer": "Force can change the speed of an object, change its direction of motion, start or stop motion, and change the shape of an object.",
+            "answer_outline": [
+                "Change speed",
+                "Change direction",
+                "Start or stop motion",
+                "Change shape"
+            ],
+            "key_concepts": [
+                "effects of force"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain balanced forces with examples.",
+            "answer": "Balanced forces are equal forces acting in opposite directions that do not change the state of motion of an object.",
+            "answer_outline": [
+                "Definition",
+                "Equal magnitude",
+                "Opposite direction",
+                "Example"
+            ],
+            "key_concepts": [
+                "balanced forces"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain unbalanced forces with examples.",
+            "answer": "Unbalanced forces are unequal forces acting on an object that cause a change in motion.",
+            "answer_outline": [
+                "Definition",
+                "Unequal forces",
+                "Cause motion",
+                "Example"
+            ],
+            "key_concepts": [
+                "unbalanced forces"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain inertia and its types.",
+            "answer": "Inertia is the tendency of an object to resist change in its state of rest or motion. Types include inertia of rest, motion and direction.",
+            "answer_outline": [
+                "Definition of inertia",
+                "Inertia of rest",
+                "Inertia of motion",
+                "Inertia of direction"
+            ],
+            "key_concepts": [
+                "inertia"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain Newton’s First Law of Motion.",
+            "answer": "Newton’s First Law states that an object remains at rest or continues to move with uniform velocity unless acted upon by an unbalanced external force.",
+            "answer_outline": [
+                "Statement",
+                "Relation with inertia",
+                "Examples"
+            ],
+            "key_concepts": [
+                "first law"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why Newton’s First Law is called the law of inertia.",
+            "answer": "Newton’s First Law explains the property of inertia, which is the tendency of objects to resist changes in motion.",
+            "answer_outline": [
+                "Definition of inertia",
+                "Explanation of law",
+                "Relation between them"
+            ],
+            "key_concepts": [
+                "law of inertia"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain momentum and write its formula.",
+            "answer": "Momentum is the quantity of motion possessed by an object and is equal to the product of mass and velocity.",
+            "answer_outline": [
+                "Definition",
+                "Formula p = mv",
+                "Units"
+            ],
+            "key_concepts": [
+                "momentum"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the factors affecting momentum.",
+            "answer": "Momentum depends on the mass and velocity of the object.",
+            "answer_outline": [
+                "Mass",
+                "Velocity",
+                "Effect on momentum"
+            ],
+            "key_concepts": [
+                "momentum factors"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain Newton’s Second Law of Motion.",
+            "answer": "Newton’s Second Law states that the rate of change of momentum of an object is proportional to the applied force.",
+            "answer_outline": [
+                "Statement",
+                "Relation with momentum",
+                "Examples"
+            ],
+            "key_concepts": [
+                "second law"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the formula F = ma.",
+            "answer": "The formula F = ma states that force equals mass multiplied by acceleration.",
+            "answer_outline": [
+                "Meaning of F",
+                "Meaning of m",
+                "Meaning of a"
+            ],
+            "key_concepts": [
+                "F = ma"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the SI unit of force.",
+            "answer": "The SI unit of force is Newton. One Newton is the force required to accelerate a mass of 1 kg by 1 m/s².",
+            "answer_outline": [
+                "Newton definition",
+                "SI unit explanation"
+            ],
+            "key_concepts": [
+                "newton"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain Newton’s Third Law of Motion.",
+            "answer": "Newton’s Third Law states that for every action there is an equal and opposite reaction.",
+            "answer_outline": [
+                "Statement",
+                "Action force",
+                "Reaction force"
+            ],
+            "key_concepts": [
+                "third law"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain action and reaction forces with examples.",
+            "answer": "Action and reaction forces are equal and opposite forces acting on different bodies.",
+            "answer_outline": [
+                "Definition",
+                "Equal magnitude",
+                "Opposite direction",
+                "Examples"
+            ],
+            "key_concepts": [
+                "action reaction"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain rocket propulsion using Newton’s Third Law.",
+            "answer": "Rockets move upward because gases expelled downward produce an equal and opposite reaction force.",
+            "answer_outline": [
+                "Gas ejection",
+                "Action reaction",
+                "Rocket movement"
+            ],
+            "key_concepts": [
+                "rocket propulsion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain friction and its role in motion.",
+            "answer": "Friction is the force that opposes motion between surfaces in contact.",
+            "answer_outline": [
+                "Definition",
+                "Opposes motion",
+                "Examples"
+            ],
+            "key_concepts": [
+                "friction"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why objects eventually stop moving.",
+            "answer": "Objects stop moving because friction opposes their motion.",
+            "answer_outline": [
+                "Friction",
+                "Energy loss"
+            ],
+            "key_concepts": [
+                "friction"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain inertia of rest with an example.",
+            "answer": "Inertia of rest is the tendency of an object to remain at rest.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "inertia of rest"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain inertia of motion with an example.",
+            "answer": "Inertia of motion is the tendency of a moving object to continue moving.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "inertia of motion"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain inertia of direction with an example.",
+            "answer": "Inertia of direction is the tendency of an object to resist change in direction.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "inertia of direction"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of Newton’s laws in daily life.",
+            "answer": "Newton’s laws help explain motion of vehicles, sports activities, and many mechanical systems.",
+            "answer_outline": [
+                "Examples",
+                "Applications"
+            ],
+            "key_concepts": [
+                "laws of motion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why seat belts are important in vehicles.",
+            "answer": "Seat belts prevent passengers from moving forward due to inertia during sudden stops.",
+            "answer_outline": [
+                "Inertia",
+                "Safety"
+            ],
+            "key_concepts": [
+                "seat belt"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why a heavier object has greater inertia.",
+            "answer": "Heavier objects have greater mass and therefore greater resistance to changes in motion.",
+            "answer_outline": [
+                "Mass relation",
+                "Resistance to change"
+            ],
+            "key_concepts": [
+                "mass inertia"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why momentum increases with velocity.",
+            "answer": "Momentum depends on velocity, so increasing velocity increases momentum.",
+            "answer_outline": [
+                "Momentum formula",
+                "Velocity relation"
+            ],
+            "key_concepts": [
+                "momentum"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the contribution of Sir Isaac Newton to physics.",
+            "answer": "Sir Isaac Newton formulated the three laws of motion which explain the motion of objects.",
+            "answer_outline": [
+                "Newton",
+                "Three laws",
+                "Importance"
+            ],
+            "key_concepts": [
+                "Newton"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 8"
+        }
+    ]
+}

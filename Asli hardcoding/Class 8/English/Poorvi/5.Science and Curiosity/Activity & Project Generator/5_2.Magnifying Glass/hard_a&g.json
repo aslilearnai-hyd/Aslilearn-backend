@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Magnifying Glass",
+  "difficulty": "Hard",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Analysis of the Poem",
+      "objective": "Analyse how the poet presents the idea of discovery through observation",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the poem carefully",
+        "Identify how the magnifying glass changes the speaker’s perception of small objects",
+        "Explain how observation transforms ordinary things into extraordinary experiences",
+        "Write a detailed paragraph analysing the central theme"
+      ],
+      "learning_outcome": "Students develop analytical reading and interpretation skills",
+      "evaluation": "Depth of analysis and textual evidence (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Interpretation of Imagery",
+      "objective": "Interpret visual imagery used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify at least three examples of imagery in the poem",
+        "Explain what each image represents",
+        "Discuss how imagery helps readers visualize magnified objects",
+        "Present your interpretation to the class"
+      ],
+      "learning_outcome": "Students understand how imagery enhances poetic meaning",
+      "evaluation": "Accuracy and depth of interpretation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Comparative Study: Science and Poetry",
+      "objective": "Relate scientific observation to poetic imagination",
+      "materials": ["Notebook", "Internet or reference books"],
+      "steps": [
+        "Research how microscopes and magnifying glasses help scientists observe small organisms",
+        "Compare scientific observation with the poet’s description in the poem",
+        "Write a short comparative explanation highlighting similarities and differences",
+        "Share your findings with classmates"
+      ],
+      "learning_outcome": "Students connect scientific concepts with literary imagination",
+      "evaluation": "Clarity of comparison and research quality (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Literary Devices Investigation",
+      "objective": "Analyse the effect of poetic devices in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify examples of metaphor, simile, and personification",
+        "Explain how these devices add meaning to the poem",
+        "Discuss how they influence the reader’s understanding of magnification",
+        "Write a detailed explanation with examples"
+      ],
+      "learning_outcome": "Students gain deeper understanding of poetic techniques",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Perspective Writing",
+      "objective": "Develop imaginative writing from a new perspective",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are a scientist observing the world through a magnifying glass",
+        "Describe what you see in a drop of water or a piece of moss",
+        "Use descriptive language and imagery",
+        "Write a short narrative explaining your observations"
+      ],
+      "learning_outcome": "Students develop creative and descriptive writing skills",
+      "evaluation": "Creativity, detail, and expression (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Symbolism Exploration",
+      "objective": "Understand symbolic meanings in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss whether the magnifying glass can symbolize curiosity or knowledge",
+        "Identify lines that support this interpretation",
+        "Explain how the symbol relates to human curiosity about the natural world",
+        "Write your explanation in the notebook"
+      ],
+      "learning_outcome": "Students interpret symbolic meanings in literature",
+      "evaluation": "Logical reasoning and textual support (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Debate: Observation vs Imagination",
+      "objective": "Evaluate the relationship between observation and imagination",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide the class into two groups",
+        "One group argues that scientific observation is more important",
+        "The other group argues that imagination is equally important",
+        "Conduct a structured debate using examples from the poem"
+      ],
+      "learning_outcome": "Students develop argumentation and critical thinking skills",
+      "evaluation": "Quality of arguments and participation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Research Project on Magnification Tools",
+      "objective": "Explore technological tools that magnify objects",
+      "materials": ["Internet or library resources", "Notebook"],
+      "steps": [
+        "Research different magnification tools such as microscopes and telescopes",
+        "Explain how each tool works",
+        "Describe their importance in scientific discoveries",
+        "Prepare a short report or presentation"
+      ],
+      "learning_outcome": "Students understand the scientific importance of magnification",
+      "evaluation": "Accuracy of research and presentation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Poem Rewriting Activity",
+      "objective": "Encourage creative reinterpretation of poetry",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Rewrite the poem from the perspective of the magnifying glass",
+        "Describe how it reveals hidden details in the world",
+        "Use poetic language and imagery",
+        "Share your rewritten poem with the class"
+      ],
+      "learning_outcome": "Students enhance creativity and poetic expression",
+      "evaluation": "Originality and language use (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Philosophical Reflection",
+      "objective": "Encourage deeper reflection on observation and knowledge",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Reflect on the idea that small things can reveal great wonders",
+        "Explain how careful observation helps in learning about the world",
+        "Connect this idea to real-life experiences or scientific discoveries",
+        "Write a reflective essay"
+      ],
+      "learning_outcome": "Students develop reflective thinking and analytical writing skills",
+      "evaluation": "Depth of thought and clarity of expression (10 marks)"
+    }
+  ]
+}

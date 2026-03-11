@@ -1,0 +1,137 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Rani Abbakka",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Critically analyze Rani Abbakka’s leadership and strategies",
+    "Understand historical, social, and ethical aspects of her reign",
+    "Reflect on courage, patriotism, and decision-making",
+    "Develop advanced reading comprehension, vocabulary, and inference skills",
+    "Apply analytical and creative writing through essays and reflections",
+    "Connect historical events to modern leadership and civic responsibility"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction and Advanced Discussion",
+      "topics_covered": [
+        "Historical context of Rani Abbakka’s reign",
+        "Complex qualities of leadership and courage",
+        "Challenges and threats faced"
+      ],
+      "teaching_strategy": [
+        "Teacher explains historical and social context",
+        "Class discussion on strategic thinking and ethical leadership"
+      ],
+      "student_activities": [
+        "List leadership qualities with examples from text and history",
+        "Discuss ethical dilemmas faced by leaders"
+      ],
+      "assessment": ["Oral questioning", "Discussion depth evaluation"]
+    },
+    {
+      "period": 2,
+      "title": "Analyzing Battles and Decisions",
+      "topics_covered": [
+        "Strategic planning and execution",
+        "Cause-effect relationships of decisions",
+        "Impacts on kingdom and society"
+      ],
+      "teaching_strategy": [
+        "Guided reading highlighting strategies and outcomes",
+        "Class discussion on tactical and moral reasoning"
+      ],
+      "student_activities": [
+        "Create a detailed cause-effect chart of events",
+        "Analyze strategic decisions in small groups"
+      ],
+      "assessment": ["Chart evaluation", "Group presentation"]
+    },
+    {
+      "period": 3,
+      "title": "Leadership and Ethical Analysis",
+      "topics_covered": [
+        "Bravery, intelligence, and diplomacy",
+        "Decision-making under pressure",
+        "Influence on society and morality"
+      ],
+      "teaching_strategy": [
+        "Teacher-led discussion of ethical dilemmas",
+        "Analysis of Rani Abbakka’s choices and impact"
+      ],
+      "student_activities": [
+        "Write an analytical paragraph on a leadership decision",
+        "Discuss moral and ethical implications"
+      ],
+      "assessment": ["Paragraph evaluation", "Class discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Reflection and Modern Connections",
+      "topics_covered": [
+        "Lessons in courage and decision-making",
+        "Applying historical lessons to modern life"
+      ],
+      "teaching_strategy": [
+        "Class discussion on applying lessons today",
+        "Teacher encourages critical thinking and reflection"
+      ],
+      "student_activities": [
+        "Write a reflection connecting Rani Abbakka’s bravery to modern leadership",
+        "Share examples from current events or history"
+      ],
+      "assessment": ["Reflection paragraph evaluation", "Oral sharing"]
+    },
+    {
+      "period": 5,
+      "title": "Advanced Essay Writing",
+      "topics_covered": [
+        "Analytical and reflective essay on key events",
+        "Connecting leadership, strategy, and societal impact"
+      ],
+      "teaching_strategy": [
+        "Teacher explains essay structure",
+        "Students brainstorm ideas and organize arguments"
+      ],
+      "student_activities": [
+        "Write a detailed essay analyzing Rani Abbakka’s actions and lessons learned",
+        "Include historical, ethical, and personal reflections"
+      ],
+      "assessment": ["Essay evaluation: content, analysis, reflection"]
+    },
+    {
+      "period": 6,
+      "title": "Vocabulary, Comprehension, and Revision",
+      "topics_covered": [
+        "Advanced vocabulary and expressions",
+        "Inference-based comprehension questions",
+        "Compound words, conditional sentences, and critical thinking exercises"
+      ],
+      "teaching_strategy": ["Teacher-led exercises and peer discussion"],
+      "student_activities": [
+        "Answer inference-based comprehension questions",
+        "Complete vocabulary and compound word exercises",
+        "Write a short analytical paragraph connecting Rani Abbakka’s leadership to civic responsibility"
+      ],
+      "assessment": ["Worksheet evaluation", "Paragraph/essay quality", "Class participation"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Whiteboard/Blackboard",
+    "Chalk/Markers",
+    "Printed timeline of events",
+    "Vocabulary and comprehension worksheets"
+  ],
+  "evaluation_methods": [
+    "Oral questioning and discussion",
+    "Paragraph and essay evaluation",
+    "Comprehension and inference exercises",
+    "Class discussion and analysis",
+    "Vocabulary exercises"
+  ],
+  "teacher_tip": "Encourage students to analyze both explicit and implicit lessons in leadership, strategy, and ethics. Use historical and contemporary examples to enhance understanding."
+}

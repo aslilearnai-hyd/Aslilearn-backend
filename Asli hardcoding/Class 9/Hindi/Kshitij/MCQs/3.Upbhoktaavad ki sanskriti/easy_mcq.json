@@ -1,0 +1,359 @@
+{
+    "content_type": "बहुविकल्पीय प्रश्न",
+    "chapter": "IHKS103 – उपभोक्तावाद की संस्कृति",
+    "title": "उपभोक्तावाद की संस्कृति – सरल स्तर MCQs",
+    "generated_at": "2026-03-11T04:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "‘उपभोक्तावाद की संस्कृति’ के लेखक कौन हैं?",
+            "options": {
+                "A": "श्यामाचरण दुबे",
+                "B": "मुंशी प्रेमचंद",
+                "C": "महादेवी वर्मा",
+                "D": "जयशंकर प्रसाद"
+            },
+            "correct_answer": "A",
+            "explanation": "‘उपभोक्तावाद की संस्कृति’ के लेखक श्यामाचरण दुबे हैं।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "उपभोक्तावाद का संबंध किससे है?",
+            "options": {
+                "A": "उत्पादन",
+                "B": "उपभोग",
+                "C": "शिक्षा",
+                "D": "कृषि"
+            },
+            "correct_answer": "B",
+            "explanation": "उपभोक्तावाद वस्तुओं के उपभोग से संबंधित है।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 3,
+            "question": "आज के समाज में सुख किससे जोड़ा जाने लगा है?",
+            "options": {
+                "A": "ज्ञान से",
+                "B": "भोग और उपभोग से",
+                "C": "सेवा से",
+                "D": "धर्म से"
+            },
+            "correct_answer": "B",
+            "explanation": "आज सुख को भोग और उपभोग से जोड़ा जाता है।",
+            "difficulty": "easy",
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 4,
+            "question": "लोग वस्तुएँ खरीदने के लिए किससे प्रभावित होते हैं?",
+            "options": {
+                "A": "विज्ञापन",
+                "B": "कृषि",
+                "C": "खेल",
+                "D": "पुस्तकें"
+            },
+            "correct_answer": "A",
+            "explanation": "विज्ञापन लोगों को वस्तुएँ खरीदने के लिए प्रेरित करते हैं।",
+            "difficulty": "easy",
+            "source_section": "विज्ञापन"
+        },
+        {
+            "question_number": 5,
+            "question": "उपभोक्तावादी संस्कृति में वस्तुएँ किसका प्रतीक बन जाती हैं?",
+            "options": {
+                "A": "ज्ञान",
+                "B": "प्रतिष्ठा",
+                "C": "सेवा",
+                "D": "धर्म"
+            },
+            "correct_answer": "B",
+            "explanation": "उपभोक्तावादी संस्कृति में वस्तुएँ सामाजिक प्रतिष्ठा का प्रतीक बन जाती हैं।",
+            "difficulty": "easy",
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 6,
+            "question": "लोग महँगी वस्तुएँ क्यों खरीदते हैं?",
+            "options": {
+                "A": "समय बिताने के लिए",
+                "B": "प्रतिष्ठा दिखाने के लिए",
+                "C": "खेलने के लिए",
+                "D": "पढ़ने के लिए"
+            },
+            "correct_answer": "B",
+            "explanation": "लोग अपनी सामाजिक प्रतिष्ठा दिखाने के लिए महँगी वस्तुएँ खरीदते हैं।",
+            "difficulty": "easy",
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 7,
+            "question": "लेखक ने किस वस्तु का उदाहरण दिया है?",
+            "options": {
+                "A": "घड़ी",
+                "B": "किताब",
+                "C": "कप",
+                "D": "पेन"
+            },
+            "correct_answer": "A",
+            "explanation": "लेखक ने घड़ी का उदाहरण दिया है।",
+            "difficulty": "easy",
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 8,
+            "question": "उपभोक्तावाद से समाज में क्या बढ़ता है?",
+            "options": {
+                "A": "शांति",
+                "B": "समानता",
+                "C": "असमानता",
+                "D": "मित्रता"
+            },
+            "correct_answer": "C",
+            "explanation": "उपभोक्तावाद से सामाजिक और आर्थिक असमानता बढ़ती है।",
+            "difficulty": "easy",
+            "source_section": "सामाजिक प्रभाव"
+        },
+        {
+            "question_number": 9,
+            "question": "छद्म आधुनिकता का क्या अर्थ है?",
+            "options": {
+                "A": "सच्ची आधुनिकता",
+                "B": "दिखावे की आधुनिकता",
+                "C": "पुरानी परंपरा",
+                "D": "कृषि विकास"
+            },
+            "correct_answer": "B",
+            "explanation": "छद्म आधुनिकता का अर्थ है दिखावे के लिए आधुनिकता अपनाना।",
+            "difficulty": "easy",
+            "source_section": "विश्लेषण"
+        },
+        {
+            "question_number": 10,
+            "question": "उपभोक्तावाद का संस्कृति पर क्या प्रभाव पड़ता है?",
+            "options": {
+                "A": "संस्कृति मजबूत होती है",
+                "B": "संस्कृति कमजोर होती है",
+                "C": "संस्कृति बदलती नहीं",
+                "D": "संस्कृति समाप्त हो जाती है"
+            },
+            "correct_answer": "B",
+            "explanation": "उपभोक्तावाद से सांस्कृतिक मूल्य कमजोर हो सकते हैं।",
+            "difficulty": "easy",
+            "source_section": "विश्लेषण"
+        },
+        {
+            "question_number": 11,
+            "question": "लेखक के अनुसार समाज में असंतोष क्यों बढ़ता है?",
+            "options": {
+                "A": "ज्ञान की कमी से",
+                "B": "आर्थिक असमानता से",
+                "C": "कृषि से",
+                "D": "खेल से"
+            },
+            "correct_answer": "B",
+            "explanation": "आर्थिक असमानता के कारण समाज में असंतोष बढ़ सकता है।",
+            "difficulty": "easy",
+            "source_section": "सामाजिक प्रभाव"
+        },
+        {
+            "question_number": 12,
+            "question": "उपभोक्तावादी संस्कृति किस प्रवृत्ति को बढ़ाती है?",
+            "options": {
+                "A": "सादगी",
+                "B": "दिखावा",
+                "C": "सत्य",
+                "D": "धैर्य"
+            },
+            "correct_answer": "B",
+            "explanation": "यह दिखावे की प्रवृत्ति को बढ़ाती है।",
+            "difficulty": "easy",
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 13,
+            "question": "लेखक के अनुसार समाज के लिए क्या आवश्यक है?",
+            "options": {
+                "A": "भोग",
+                "B": "प्रतिस्पर्धा",
+                "C": "संतुलित जीवन",
+                "D": "धन"
+            },
+            "correct_answer": "C",
+            "explanation": "संतुलित जीवन समाज के लिए आवश्यक है।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 14,
+            "question": "गांधीजी किस प्रकार के जीवन का समर्थन करते थे?",
+            "options": {
+                "A": "सादा जीवन",
+                "B": "भोग विलास",
+                "C": "प्रतिस्पर्धा",
+                "D": "व्यापार"
+            },
+            "correct_answer": "A",
+            "explanation": "गांधीजी सादा जीवन का समर्थन करते थे।",
+            "difficulty": "easy",
+            "source_section": "अंतिम भाग"
+        },
+        {
+            "question_number": 15,
+            "question": "गांधीजी के अनुसार हमें क्या बनाए रखना चाहिए?",
+            "options": {
+                "A": "धन",
+                "B": "संस्कृति",
+                "C": "प्रतिस्पर्धा",
+                "D": "भोग"
+            },
+            "correct_answer": "B",
+            "explanation": "हमें अपनी सांस्कृतिक पहचान बनाए रखनी चाहिए।",
+            "difficulty": "easy",
+            "source_section": "अंतिम भाग"
+        },
+        {
+            "question_number": 16,
+            "question": "लेखक उपभोक्तावादी संस्कृति को क्या मानते हैं?",
+            "options": {
+                "A": "समस्या",
+                "B": "उपलब्धि",
+                "C": "उपहार",
+                "D": "कला"
+            },
+            "correct_answer": "A",
+            "explanation": "लेखक इसे समाज के लिए समस्या मानते हैं।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 17,
+            "question": "अत्यधिक उपभोग से क्या हो सकता है?",
+            "options": {
+                "A": "संतुलन",
+                "B": "असंतुलन",
+                "C": "शांति",
+                "D": "ज्ञान"
+            },
+            "correct_answer": "B",
+            "explanation": "अत्यधिक उपभोग से सामाजिक असंतुलन हो सकता है।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 18,
+            "question": "उपभोक्तावाद किस प्रकार की मानसिकता पैदा करता है?",
+            "options": {
+                "A": "दिखावा",
+                "B": "सादगी",
+                "C": "धैर्य",
+                "D": "सत्य"
+            },
+            "correct_answer": "A",
+            "explanation": "यह दिखावे की मानसिकता पैदा करता है।",
+            "difficulty": "easy",
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 19,
+            "question": "उपभोक्तावाद किसे बढ़ावा देता है?",
+            "options": {
+                "A": "सादगी",
+                "B": "भौतिकवाद",
+                "C": "त्याग",
+                "D": "धर्म"
+            },
+            "correct_answer": "B",
+            "explanation": "उपभोक्तावाद भौतिकवाद को बढ़ावा देता है।",
+            "difficulty": "easy",
+            "source_section": "विश्लेषण"
+        },
+        {
+            "question_number": 20,
+            "question": "लेखक किस प्रकार के जीवन को बेहतर मानते हैं?",
+            "options": {
+                "A": "भोगपूर्ण",
+                "B": "प्रतिस्पर्धात्मक",
+                "C": "संतुलित",
+                "D": "आलसी"
+            },
+            "correct_answer": "C",
+            "explanation": "लेखक संतुलित जीवन को बेहतर मानते हैं।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 21,
+            "question": "उपभोक्तावाद का सबसे बड़ा प्रभाव किस पर पड़ता है?",
+            "options": {
+                "A": "संस्कृति",
+                "B": "कृषि",
+                "C": "खेल",
+                "D": "शिक्षा"
+            },
+            "correct_answer": "A",
+            "explanation": "इसका सबसे बड़ा प्रभाव संस्कृति पर पड़ता है।",
+            "difficulty": "easy",
+            "source_section": "विश्लेषण"
+        },
+        {
+            "question_number": 22,
+            "question": "लेखक के अनुसार समाज में संतुलन कैसे बनाए रखा जा सकता है?",
+            "options": {
+                "A": "भोग से",
+                "B": "संतुलित जीवन से",
+                "C": "धन से",
+                "D": "प्रतिस्पर्धा से"
+            },
+            "correct_answer": "B",
+            "explanation": "संतुलित जीवन से समाज में संतुलन बना रहता है।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 23,
+            "question": "उपभोक्तावाद किस प्रवृत्ति को कमजोर करता है?",
+            "options": {
+                "A": "संस्कृति",
+                "B": "दिखावा",
+                "C": "भौतिकवाद",
+                "D": "उपभोग"
+            },
+            "correct_answer": "A",
+            "explanation": "यह सांस्कृतिक मूल्यों को कमजोर करता है।",
+            "difficulty": "easy",
+            "source_section": "विश्लेषण"
+        },
+        {
+            "question_number": 24,
+            "question": "लेखक किस प्रकार के समाज की कल्पना करते हैं?",
+            "options": {
+                "A": "भोगवादी समाज",
+                "B": "संतुलित समाज",
+                "C": "प्रतिस्पर्धी समाज",
+                "D": "असमान समाज"
+            },
+            "correct_answer": "B",
+            "explanation": "लेखक संतुलित समाज की कल्पना करते हैं।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        },
+        {
+            "question_number": 25,
+            "question": "इस पाठ का मुख्य संदेश क्या है?",
+            "options": {
+                "A": "भोग करना",
+                "B": "संतुलित जीवन अपनाना",
+                "C": "प्रतिस्पर्धा बढ़ाना",
+                "D": "धन कमाना"
+            },
+            "correct_answer": "B",
+            "explanation": "पाठ का मुख्य संदेश संतुलित और सादगीपूर्ण जीवन अपनाना है।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+{
+    "course_code": "JEFP106",
+    "title": "The Making of a Scientist",
+    "difficulty": "Medium",
+    "activity_type": "Activity & Project Generator",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Detailed Theme Analysis",
+            "objective": "To analyse the central theme in detail",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson thoroughly",
+                "Identify the main theme and supporting ideas",
+                "Write the theme in 8–10 sentences with examples"
+            ],
+            "learning_outcome": "Analyses theme with supporting details",
+            "evaluation": "Depth of analysis and relevance (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Richard Ebright",
+            "objective": "To understand the protagonist’s personality",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify Richard Ebright’s qualities from the lesson",
+                "Write a character sketch in a short paragraph"
+            ],
+            "learning_outcome": "Explains character traits with evidence",
+            "evaluation": "Appropriate traits and clarity (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Role of Mother in Ebright’s Success",
+            "objective": "To analyse the influence of parental support",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "List the ways Ebright’s mother supported him",
+                "Explain each point briefly"
+            ],
+            "learning_outcome": "Understands supporting characters’ roles",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Cause–Effect Chart",
+            "objective": "To understand cause–effect relationships",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four causes and effects from the lesson",
+                "Present them in a chart format"
+            ],
+            "learning_outcome": "Identifies logical connections",
+            "evaluation": "Accuracy of relationships (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Scientific Curiosity Examples",
+            "objective": "To identify examples of curiosity in the text",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find incidents showing scientific curiosity",
+                "Explain any three incidents briefly"
+            ],
+            "learning_outcome": "Recognises inquiry-based learning",
+            "evaluation": "Relevant examples (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Summary with Key Achievements",
+            "objective": "To summarise with focus on achievements",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List Ebright’s major achievements",
+                "Write a summary highlighting them"
+            ],
+            "learning_outcome": "Summarises with focus points",
+            "evaluation": "Coverage and coherence (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Vocabulary in Context",
+            "objective": "To understand contextual word usage",
+            "materials": [
+                "Textbook",
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five key words from the lesson",
+                "Explain their meanings in context"
+            ],
+            "learning_outcome": "Uses vocabulary contextually",
+            "evaluation": "Correct contextual meaning (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Life Skills Identified",
+            "objective": "To identify life skills from the lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List any four life skills shown by Ebright",
+                "Explain how each skill helped him"
+            ],
+            "learning_outcome": "Identifies transferable skills",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Real-Life Scientist Comparison",
+            "objective": "To compare lesson with real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose a real-life scientist",
+                "Compare any two qualities with Richard Ebright"
+            ],
+            "learning_outcome": "Applies lesson concepts",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Paragraph on Failure and Success",
+            "objective": "To understand learning through failure",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify a failure faced by Ebright",
+                "Explain how it led to success"
+            ],
+            "learning_outcome": "Understands growth mindset",
+            "evaluation": "Clarity and insight (10 marks)"
+        }
+    ]
+}

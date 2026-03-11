@@ -1,0 +1,148 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "How Nature Works in Harmony",
+  "difficulty": "Medium",
+  "source_pdf": "12.How Nature Works in Harmony.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Comparative Habitat Study",
+      "objective": "Compare two habitats and analyse their ecological components",
+      "materials": ["Notebook", "Pencil", "Observation sheet"],
+      "steps": [
+        "Select two nearby habitats such as a pond and a garden",
+        "List the biotic and abiotic components found in each habitat",
+        "Compare the diversity of organisms in both habitats",
+        "Explain why certain organisms are found only in specific habitats"
+      ],
+      "learning_outcome": "Students analyse differences in habitat conditions and biodiversity",
+      "evaluation": "Quality of comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Population Density Calculation",
+      "objective": "Understand population distribution in an ecosystem",
+      "materials": ["Measuring tape", "Notebook"],
+      "steps": [
+        "Mark a 1 m × 1 m square area in a garden or field",
+        "Count the number of two plant species present",
+        "Calculate the population density of each species",
+        "Discuss reasons for differences in their population"
+      ],
+      "learning_outcome": "Students understand ecological population measurement",
+      "evaluation": "Accuracy of calculations and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Food Chain Construction",
+      "objective": "Analyse feeding relationships in an ecosystem",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Identify at least six organisms in a grassland or forest ecosystem",
+        "Arrange them according to trophic levels",
+        "Draw a food chain diagram with arrows showing energy flow",
+        "Explain the role of producers and consumers in the chain"
+      ],
+      "learning_outcome": "Students understand trophic levels and energy transfer",
+      "evaluation": "Correct sequence and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Food Web Analysis",
+      "objective": "Understand complex feeding interactions among organisms",
+      "materials": ["Chart paper", "Sketch pens"],
+      "steps": [
+        "List at least eight organisms in a natural ecosystem",
+        "Identify multiple feeding relationships among them",
+        "Create a food web diagram",
+        "Explain how the removal of one organism may affect others"
+      ],
+      "learning_outcome": "Students analyse ecological interdependence",
+      "evaluation": "Accuracy of relationships and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Role of Decomposers Investigation",
+      "objective": "Study how decomposers recycle nutrients",
+      "materials": ["Notebook", "Dead leaves", "Soil container"],
+      "steps": [
+        "Place dead leaves in a small container with soil",
+        "Observe changes for several days",
+        "Note signs of decomposition such as fungi or insects",
+        "Explain how decomposers help maintain ecosystem balance"
+      ],
+      "learning_outcome": "Students understand nutrient recycling in ecosystems",
+      "evaluation": "Observation and explanation quality (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Ecosystem Interaction Mapping",
+      "objective": "Identify interactions between biotic and abiotic components",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Observe a garden, pond, or farm ecosystem",
+        "List examples of interactions between organisms and environment",
+        "List interactions among organisms",
+        "Create a simple interaction map"
+      ],
+      "learning_outcome": "Students recognise ecological relationships",
+      "evaluation": "Correct identification of interactions (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Symbiotic Relationship Case Study",
+      "objective": "Investigate types of biological relationships",
+      "materials": ["Notebook", "Internet or library resources"],
+      "steps": [
+        "Find real-life examples of mutualism, commensalism, and parasitism",
+        "Describe the organisms involved",
+        "Explain the benefits or harms in each relationship",
+        "Present findings in a short report"
+      ],
+      "learning_outcome": "Students understand ecological interactions between species",
+      "evaluation": "Clarity and correctness of case study (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Ecosystem Disturbance Simulation",
+      "objective": "Understand how ecological changes affect ecosystems",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Choose a food chain such as grass → grasshopper → frog → snake",
+        "Remove one organism from the chain",
+        "Predict how this change affects the remaining organisms",
+        "Explain the cascading effects"
+      ],
+      "learning_outcome": "Students analyse ecological balance and consequences of disturbance",
+      "evaluation": "Logical reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Ecosystem Services Research",
+      "objective": "Understand benefits ecosystems provide to humans",
+      "materials": ["Notebook", "Internet resources"],
+      "steps": [
+        "Research how forests, wetlands, and oceans benefit humans",
+        "List ecosystem services such as oxygen production and flood control",
+        "Explain how human activities threaten these services"
+      ],
+      "learning_outcome": "Students understand the importance of ecosystem conservation",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Sustainable Farming Survey",
+      "objective": "Analyse modern and traditional farming practices",
+      "materials": ["Notebook", "Interview questions"],
+      "steps": [
+        "Interview a local farmer or research farming practices",
+        "Record information about fertilisers, pesticides, and crop rotation",
+        "Identify sustainable farming techniques",
+        "Prepare a report suggesting eco-friendly improvements"
+      ],
+      "learning_outcome": "Students understand links between agriculture and ecosystem health",
+      "evaluation": "Completeness and analysis of report (10 marks)"
+    }
+  ]
+}

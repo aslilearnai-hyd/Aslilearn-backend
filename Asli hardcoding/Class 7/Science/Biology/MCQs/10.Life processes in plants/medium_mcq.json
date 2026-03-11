@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Life Processes in Plants",
+  "generated_at": "2026-03-07T00:04:10",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is the correct equation representing Photosynthesis?",
+      "options": {
+        "A": "Carbon dioxide + Water → Carbohydrate + Oxygen",
+        "B": "Oxygen + Water → Carbohydrate + Carbon dioxide",
+        "C": "Carbohydrate + Oxygen → Carbon dioxide + Water",
+        "D": "Carbon dioxide + Oxygen → Carbohydrate + Water"
+      },
+      "correct_answer": "A",
+      "explanation": "In the presence of sunlight and chlorophyll, plants use $CO_2$ and water to synthesize glucose (carbohydrate) and release oxygen.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The guard cells are responsible for which of the following functions?",
+      "options": {
+        "A": "Capturing sunlight",
+        "B": "Opening and closing of stomatal pores",
+        "C": "Transporting water to the stem",
+        "D": "Storing starch"
+      },
+      "correct_answer": "B",
+      "explanation": "Guard cells regulate the opening and closing of stomata to control gas exchange and water loss.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Apart from leaves, photosynthesis can also take place in which other parts of certain plants (e.g., in a desert)?",
+      "options": {
+        "A": "Roots",
+        "B": "Green stems and green branches",
+        "C": "Dry bark",
+        "D": "Flowers"
+      },
+      "correct_answer": "B",
+      "explanation": "In desert plants like cactus, leaves are reduced to spines to reduce water loss, and green stems perform photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Why can humans and other animals not make food from carbon dioxide, water, and minerals like plants do?",
+      "options": {
+        "A": "Due to lack of digestive system",
+        "B": "Due to lack of chlorophyll",
+        "C": "Because they do not need solar energy",
+        "D": "Because they have a high body temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "Chlorophyll is essential to capture solar energy, which is the driving force for making food.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 5,
+      "question": "During the iodine test, a leaf is first boiled in alcohol. What is the purpose of this step?",
+      "options": {
+        "A": "To make the leaf soft",
+        "B": "To remove the chlorophyll",
+        "C": "To dissolve the starch",
+        "D": "To kill the leaf cells"
+      },
+      "correct_answer": "B",
+      "explanation": "Alcohol removes chlorophyll (decolorizes the leaf) so that the blue-black color change of the iodine test is clearly visible.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Insectivorous plants grow in soil that is deficient in which specific nutrient?",
+      "options": {
+        "A": "Iron",
+        "B": "Nitrogen",
+        "C": "Calcium",
+        "D": "Phosphorus"
+      },
+      "correct_answer": "B",
+      "explanation": "These plants trap insects to obtain nitrogen, which is not available in sufficient quantities in their soil.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "In a lichen, the fungus provides what to the alga?",
+      "options": {
+        "A": "Oxygen and Sugar",
+        "B": "Shelter, Water, and Minerals",
+        "C": "Chlorophyll",
+        "D": "Carbon dioxide only"
+      },
+      "correct_answer": "B",
+      "explanation": "The fungus provides the living environment and raw materials, while the alga provides the food via photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 8,
+      "question": "The mode of nutrition in which organisms take in nutrients in solution form from dead and decaying matter is:",
+      "options": {
+        "A": "Symbiotic nutrition",
+        "B": "Saprotrophic nutrition",
+        "C": "Parasitic nutrition",
+        "D": "Holozoic nutrition"
+      },
+      "correct_answer": "B",
+      "explanation": "Saprotrophic nutrition involves secreting digestive juices onto dead matter and absorbing the resulting solution.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Leguminous plants are often grown in crop rotation because they:",
+      "options": {
+        "A": "Consume very little water",
+        "B": "Replenish the soil with nitrogen",
+        "C": "Kill pests in the soil",
+        "D": "Provide shade to other plants"
+      },
+      "correct_answer": "B",
+      "explanation": "Due to their symbiotic relationship with Rhizobium, they add nitrogen back to the soil naturally.",
+      "difficulty": "medium",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following describes the function of Rhizobium?",
+      "options": {
+        "A": "It converts light into chemical energy",
+        "B": "It converts atmospheric nitrogen into a soluble form",
+        "C": "It helps in the transport of water",
+        "D": "It protects the plant from parasites"
+      },
+      "correct_answer": "B",
+      "explanation": "Rhizobium cannot make its own food but fixes nitrogen for leguminous plants in exchange for food and shelter.",
+      "difficulty": "medium",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 11,
+      "question": "Fungi can often be seen growing on bread or pickles during which season?",
+      "options": {
+        "A": "Hot and dry summer",
+        "B": "Hot and humid rainy season",
+        "C": "Cold and dry winter",
+        "D": "Autumn"
+      },
+      "correct_answer": "B",
+      "explanation": "Fungal spores germinate and grow rapidly in warm and moist/humid conditions.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 12,
+      "question": "The presence of starch in leaves indicates that ______ has occurred.",
+      "options": {
+        "A": "Transpiration",
+        "B": "Photosynthesis",
+        "C": "Respiration",
+        "D": "Fertilization"
+      },
+      "correct_answer": "B",
+      "explanation": "Starch is the storage form of the carbohydrates produced during photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 13,
+      "question": "In the Pitcher plant, the lid is a modified part of the:",
+      "options": {
+        "A": "Flower",
+        "B": "Stem",
+        "C": "Leaf",
+        "D": "Root"
+      },
+      "correct_answer": "C",
+      "explanation": "The pitcher itself and its lid are specialized modifications of the leaf structure.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 14,
+      "question": "What happens to the oxygen released during photosynthesis?",
+      "options": {
+        "A": "It is stored in the roots",
+        "B": "It is used by the plant for making minerals",
+        "C": "It is released into the atmosphere through stomata",
+        "D": "It is converted into starch"
+      },
+      "correct_answer": "C",
+      "explanation": "Oxygen is a gaseous byproduct that diffuses out of the leaves into the air.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 15,
+      "question": "The components of food that are necessary for our body are called:",
+      "options": {
+        "A": "Parasites",
+        "B": "Nutrients",
+        "C": "Autotrophs",
+        "D": "Saprophytes"
+      },
+      "correct_answer": "B",
+      "explanation": "Nutrients include carbohydrates, proteins, fats, vitamins, and minerals.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following is true for Algae?",
+      "options": {
+        "A": "They are parasites on other plants",
+        "B": "They lack chlorophyll",
+        "C": "They can prepare their own food by photosynthesis",
+        "D": "They only grow on dead matter"
+      },
+      "correct_answer": "C",
+      "explanation": "Algae contain chlorophyll, which gives them their green color and allows them to be autotrophic.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Farmers often add fertilizers rich in ______ to the soil.",
+      "options": {
+        "A": "Oxygen and Carbon",
+        "B": "Nitrogen, Phosphorus, and Potassium",
+        "C": "Hydrogen and Helium",
+        "D": "Iron and Silver"
+      },
+      "correct_answer": "B",
+      "explanation": "NPK (Nitrogen, Phosphorus, Potassium) are the primary nutrients needed for healthy plant growth.",
+      "difficulty": "medium",
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 18,
+      "question": "The plant on which a parasitic plant like Cuscuta climbs is called the:",
+      "options": {
+        "A": "Guest",
+        "B": "Host",
+        "C": "Saprophyte",
+        "D": "Partner"
+      },
+      "correct_answer": "B",
+      "explanation": "The host plant provides the nutrients that the parasite absorbs.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Why are leaves of plants kept in the dark for 72 hours before a photosynthesis experiment?",
+      "options": {
+        "A": "To increase chlorophyll content",
+        "B": "To destarch the leaves",
+        "C": "To kill the pests",
+        "D": "To allow the plant to breathe"
+      },
+      "correct_answer": "B",
+      "explanation": "Keeping the plant in the dark ensures that any pre-existing starch is used up by the plant.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Heterotrophic nutrition includes which of the following?",
+      "options": {
+        "A": "Only parasitic plants",
+        "B": "Only saprotrophic organisms",
+        "C": "Both parasitic and saprotrophic modes",
+        "D": "Plants that make their own food"
+      },
+      "correct_answer": "C",
+      "explanation": "Heterotrophic nutrition is any mode where organisms depend on others for food.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Sunlight, chlorophyll, carbon dioxide, and ______ are essential for photosynthesis.",
+      "options": {
+        "A": "Soil",
+        "B": "Nitrogen",
+        "C": "Water",
+        "D": "Oxygen"
+      },
+      "correct_answer": "C",
+      "explanation": "Water is a vital raw material absorbed by roots for the chemical reaction of photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "The organisms that have a 'symbiotic relationship' do which of the following?",
+      "options": {
+        "A": "One kills the other",
+        "B": "Both live together and share shelter and nutrients",
+        "C": "One lives inside the other without providing anything",
+        "D": "They never interact with each other"
+      },
+      "correct_answer": "B",
+      "explanation": "Symbiosis is a mutually beneficial association between two different organisms.",
+      "difficulty": "medium",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Red, brown, or violet leaves also perform photosynthesis because:",
+      "options": {
+        "A": "They don't need chlorophyll",
+        "B": "They have chlorophyll hidden by other pigments",
+        "C": "They take food from the soil",
+        "D": "They use moonlight"
+      },
+      "correct_answer": "B",
+      "explanation": "The large amount of other pigments masks the green color, but chlorophyll is still present for photosynthesis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Fungi secrete digestive juices onto dead matter to convert it into a ______.",
+      "options": {
+        "A": "Solid",
+        "B": "Gas",
+        "C": "Solution",
+        "D": "Starch"
+      },
+      "correct_answer": "C",
+      "explanation": "Saprotrophs use extracellular digestion to turn solids into a liquid solution for absorption.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Amoeba and humans are similar because both are ______.",
+      "options": {
+        "A": "Autotrophs",
+        "B": "Heterotrophs",
+        "C": "Saprophytes",
+        "D": "Parasites"
+      },
+      "correct_answer": "B",
+      "explanation": "Both Amoeba and humans cannot prepare their own food and must consume other organisms.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Story of Village Palampur",
+    "generated_at": "2026-03-07T00:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is considered 'Human Capital'?",
+            "options": {
+                "A": "Tractor and machinery",
+                "B": "Cash and raw materials",
+                "C": "Knowledge and enterprise to combine other factors",
+                "D": "Physical labor of workers"
+            },
+            "correct_answer": "C",
+            "explanation": "Human capital is the knowledge and enterprise required to put together land, labour, and physical capital to produce an output.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "The main reason why farmers in Palampur are able to grow three different crops in a year is:",
+            "options": {
+                "A": "Due to high rainfall",
+                "B": "Due to a well-developed system of irrigation",
+                "C": "Due to availability of cheap labor",
+                "D": "Due to large landholdings"
+            },
+            "correct_answer": "B",
+            "explanation": "Electricity transformed the irrigation system, allowing tubewells to irrigate large areas efficiently, enabling multiple cropping.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which crop is grown by farmers of Palampur during the Rabi season?",
+            "options": {
+                "A": "Jowar and Bajra",
+                "B": "Rice",
+                "C": "Wheat",
+                "D": "Sugarcane"
+            },
+            "correct_answer": "C",
+            "explanation": "Wheat is the main crop grown during the winter (Rabi) season in Palampur.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the consequence of the overuse of chemical fertilizers as seen in Punjab?",
+            "options": {
+                "A": "Soil becomes more fertile",
+                "B": "Groundwater level rises",
+                "C": "Degradation of soil health",
+                "D": "Increase in organic matter"
+            },
+            "correct_answer": "C",
+            "explanation": "Continuous use of chemical fertilizers leads to the degradation of soil health and depletion of groundwater.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Out of 450 families in Palampur, how many families cultivate more than 2 hectares of land?",
+            "options": {
+                "A": "150 families",
+                "B": "240 families",
+                "C": "60 families",
+                "D": "80 families"
+            },
+            "correct_answer": "C",
+            "explanation": "There are 60 families of medium and large farmers who cultivate more than 2 hectares of land.",
+            "difficulty": "medium",
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Why do landless labourers like Dala and Ramkali agree to work for low wages?",
+            "options": {
+                "A": "Because they are lazy",
+                "B": "Due to heavy competition for work among labourers",
+                "C": "Because the government sets low wages",
+                "D": "Because they don't need much money"
+            },
+            "correct_answer": "B",
+            "explanation": "There is heavy competition for work among farm labourers in Palampur, so people agree to work for lower wages.",
+            "difficulty": "medium",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 7,
+            "question": "In modern farming, the farmer needs more _________ than in traditional farming.",
+            "options": {
+                "A": "Family members",
+                "B": "Bullocks",
+                "C": "Cash/Working Capital",
+                "D": "Traditional seeds"
+            },
+            "correct_answer": "C",
+            "explanation": "Modern farming requires high-cost inputs like HYV seeds, fertilizers, and pesticides, necessitating more working capital.",
+            "difficulty": "medium",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 8,
+            "question": "Marketable surplus is the portion of produce that:",
+            "options": {
+                "A": "Is kept for family consumption",
+                "B": "Is used as seeds for next year",
+                "C": "Is sold in the market by farmers",
+                "D": "Is lost during harvest"
+            },
+            "correct_answer": "C",
+            "explanation": "Marketable surplus is the grain left over after meeting the family's consumption needs, which is sold for profit.",
+            "difficulty": "medium",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 9,
+            "question": "Which non-farm activity uses sugarcane as a raw material in Palampur?",
+            "options": {
+                "A": "Dairy",
+                "B": "Jaggery making",
+                "C": "Computer centre",
+                "D": "Transport"
+            },
+            "correct_answer": "B",
+            "explanation": "Mishrilal crushes sugarcane to produce jaggery, which is then sold to traders in Shahpur.",
+            "difficulty": "medium",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 10,
+            "question": "How do large farmers like Tejpal Singh use their savings?",
+            "options": {
+                "A": "By giving loans to small farmers",
+                "B": "By buying new machinery",
+                "C": "By depositing in banks",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "Large farmers use their earnings to provide loans, reinvest in fixed capital, and save for the next season.",
+            "difficulty": "medium",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 11,
+            "question": "What percentage of people are engaged in non-farming activities in Palampur?",
+            "options": {
+                "A": "75%",
+                "B": "50%",
+                "C": "25%",
+                "D": "10%"
+            },
+            "correct_answer": "C",
+            "explanation": "While 75% are dependent on farming, only 25% of the people working in Palampur are engaged in non-farm activities.",
+            "difficulty": "hard",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is a drawback of the Green Revolution?",
+            "options": {
+                "A": "Increase in grain production",
+                "B": "Self-sufficiency in food",
+                "C": "Loss of soil fertility and groundwater depletion",
+                "D": "Modernization of agriculture"
+            },
+            "correct_answer": "C",
+            "explanation": "The intensive use of chemicals and groundwater has led to long-term environmental degradation.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Small farmers like Savita face high _________ when borrowing from moneylenders.",
+            "options": {
+                "A": "Taxes",
+                "B": "Interest rates",
+                "C": "Profit margins",
+                "D": "Subsidies"
+            },
+            "correct_answer": "B",
+            "explanation": "Moneylenders often charge very high interest rates (e.g., 24% for four months) to small farmers.",
+            "difficulty": "medium",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 14,
+            "question": "The 'Wheat Revolution' stamp was released in 1968 by:",
+            "options": {
+                "A": "Mahatma Gandhi",
+                "B": "Jawaharlal Nehru",
+                "C": "Indira Gandhi",
+                "D": "Lal Bahadur Shastri"
+            },
+            "correct_answer": "C",
+            "explanation": "Indira Gandhi officially recorded the success of the Green Revolution by releasing this special stamp.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following is NOT a feature of traditional farming?",
+            "options": {
+                "A": "Use of cow-dung as fertilizer",
+                "B": "Use of HYV seeds",
+                "C": "Use of wooden ploughs",
+                "D": "Dependence on monsoon"
+            },
+            "correct_answer": "B",
+            "explanation": "HYV seeds are a feature of modern farming, whereas traditional farming uses ordinary seeds.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "In Palampur, 'Physical Capital' is divided into:",
+            "options": {
+                "A": "Land and Labour",
+                "B": "Fixed Capital and Working Capital",
+                "C": "Knowledge and Enterprise",
+                "D": "Tools and Education"
+            },
+            "correct_answer": "B",
+            "explanation": "Physical capital includes fixed capital (tools/buildings) and working capital (money/raw materials).",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "A bigha and guintha are units of:",
+            "options": {
+                "A": "Measuring weight of grain",
+                "B": "Measuring land area locally",
+                "C": "Measuring distance",
+                "D": "Measuring time"
+            },
+            "correct_answer": "B",
+            "explanation": "Bigha and Guintha are local units for measuring land area in various parts of India.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Large farmers use their capital to buy fixed assets like:",
+            "options": {
+                "A": "Seeds",
+                "B": "Tractors",
+                "C": "Fertilizers",
+                "D": "Pesticides"
+            },
+            "correct_answer": "B",
+            "explanation": "Tractors are fixed capital as they are expensive assets used over many years.",
+            "difficulty": "medium",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the status of irrigation for most of the small farmers in India today?",
+            "options": {
+                "A": "Fully irrigated",
+                "B": "Still dependent on rainfall",
+                "C": "Using drip irrigation",
+                "D": "No irrigation needed"
+            },
+            "correct_answer": "B",
+            "explanation": "A large part of the farming in India is still dependent on rainfall, despite the spread of tubewells.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Who provides the labour for small farmers?",
+            "options": {
+                "A": "Landless labourers",
+                "B": "The farmers themselves and their families",
+                "C": "Contract workers",
+                "D": "Medium farmers"
+            },
+            "correct_answer": "B",
+            "explanation": "Small farmers along with their families cultivate their own fields to save on labor costs.",
+            "difficulty": "medium",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Which factor of production is most abundant in village Palampur?",
+            "options": {
+                "A": "Land",
+                "B": "Labour",
+                "C": "Capital",
+                "D": "Enterprise"
+            },
+            "correct_answer": "B",
+            "explanation": "Labour is the most abundant factor of production, as many people are landless and seek work.",
+            "difficulty": "hard",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Modern farming requires more industrial goods like _________.",
+            "options": {
+                "A": "Bullocks",
+                "B": "Chemical fertilizers and pesticides",
+                "C": "Traditional seeds",
+                "D": "Organic manure"
+            },
+            "correct_answer": "B",
+            "explanation": "Modern farming depends on inputs manufactured in industries.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Transport services in Palampur connect the village to:",
+            "options": {
+                "A": "Delhi",
+                "B": "Raiganj and Shahpur",
+                "C": "Mumbai",
+                "D": "The Himalayas"
+            },
+            "correct_answer": "B",
+            "explanation": "The road connects Palampur to the big village of Raiganj and the small town of Shahpur.",
+            "difficulty": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is the use of 'Human Capital' vital for production?",
+            "options": {
+                "A": "Because it can work for long hours",
+                "B": "Because it is required to coordinate and manage other factors",
+                "C": "Because it is cheaper than machines",
+                "D": "Because it doesn't require land"
+            },
+            "correct_answer": "B",
+            "explanation": "Human capital is the only factor that 'combines' land, labour, and capital to make production possible.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "The surplus wheat produced by large farmers is bought by:",
+            "options": {
+                "A": "Traders at the market",
+                "B": "Small farmers",
+                "C": "The landless",
+                "D": "Shopkeepers for own use"
+            },
+            "correct_answer": "A",
+            "explanation": "Traders buy the surplus wheat at markets and sell it to shopkeepers in towns and cities.",
+            "difficulty": "medium",
+            "source_section": "Section 1.8"
+        }
+    ]
+}

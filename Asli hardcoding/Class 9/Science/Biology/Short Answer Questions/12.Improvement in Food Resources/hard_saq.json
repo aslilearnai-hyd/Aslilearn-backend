@@ -1,0 +1,287 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 12: Improvement in Food Resources",
+    "generated_at": "2026-03-06T01:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain two methods used for crop variety improvement.",
+            "answer": "Hybridisation and genetic modification are used to develop improved crop varieties with desirable traits.",
+            "key_concepts": [
+                "hybridisation",
+                "genetic improvement"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 2,
+            "question": "What are biotic and abiotic stresses in crops?",
+            "answer": "Biotic stresses are caused by pests and diseases while abiotic stresses are caused by environmental factors such as drought and salinity.",
+            "key_concepts": [
+                "biotic stress",
+                "abiotic stress"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the importance of macronutrients in plants.",
+            "answer": "Macronutrients such as nitrogen, phosphorus and potassium are required in large quantities for plant growth and development.",
+            "key_concepts": [
+                "macronutrients"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare manure and fertilizers.",
+            "answer": "Manure is organic and improves soil structure while fertilizers are chemical substances that provide specific nutrients quickly.",
+            "key_concepts": [
+                "manure",
+                "fertilizers"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Nutrient Management"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain two advantages of crop rotation.",
+            "answer": "Crop rotation improves soil fertility and helps control pests and diseases.",
+            "key_concepts": [
+                "crop rotation"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Cropping Patterns"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain two advantages of intercropping.",
+            "answer": "Intercropping increases crop yield and reduces the spread of pests and diseases.",
+            "key_concepts": [
+                "intercropping"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Cropping Patterns"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the harmful effects of weeds.",
+            "answer": "Weeds compete with crops for nutrients, water and sunlight and reduce crop yield.",
+            "key_concepts": [
+                "weeds"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 8,
+            "question": "What preventive measures are used to protect crops from pests?",
+            "answer": "Preventive measures include crop rotation, resistant crop varieties and biological pest control.",
+            "key_concepts": [
+                "pest control"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain two factors affecting milk production in cattle.",
+            "answer": "Balanced nutrition and proper health care are important factors affecting milk production.",
+            "key_concepts": [
+                "milk production"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 10,
+            "question": "What management practices are followed in poultry farming?",
+            "answer": "Poultry farming requires proper feeding, housing and disease control.",
+            "key_concepts": [
+                "poultry management"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Poultry Farming"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain two advantages of fish farming.",
+            "answer": "Fish farming provides high protein food and increases fish production.",
+            "key_concepts": [
+                "fish farming"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 12,
+            "question": "What is mariculture?",
+            "answer": "Mariculture is the farming of marine organisms such as fish and shellfish in seawater.",
+            "key_concepts": [
+                "mariculture"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of composite fish culture.",
+            "answer": "Composite fish culture involves growing different fish species together in a pond to utilize different food resources.",
+            "key_concepts": [
+                "composite fish culture"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is fish considered an important food source?",
+            "answer": "Fish is rich in proteins and essential nutrients and is relatively inexpensive.",
+            "key_concepts": [
+                "protein source"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the role of bees in pollination.",
+            "answer": "Bees transfer pollen from one flower to another which helps in fertilization and crop production.",
+            "key_concepts": [
+                "pollination"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 16,
+            "question": "What factors affect the quality of honey?",
+            "answer": "The type of flowers available and environmental conditions affect honey quality.",
+            "key_concepts": [
+                "honey quality"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are Italian bees preferred in apiculture?",
+            "answer": "Italian bees collect more honey and breed well.",
+            "key_concepts": [
+                "Italian bees"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 18,
+            "question": "What is pasturage in apiculture?",
+            "answer": "Pasturage refers to the availability of flowers from which bees collect nectar.",
+            "key_concepts": [
+                "pasturage"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain two advantages of integrated farming.",
+            "answer": "Integrated farming increases farm productivity and reduces waste by combining crops, livestock and fisheries.",
+            "key_concepts": [
+                "integrated farming"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Sustainable Farming"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is grain storage important?",
+            "answer": "Grain storage prevents loss due to pests, insects and moisture.",
+            "key_concepts": [
+                "grain storage"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Storage"
+        },
+        {
+            "question_number": 21,
+            "question": "What are the main causes of grain spoilage?",
+            "answer": "Moisture, insects, rodents and microorganisms cause grain spoilage.",
+            "key_concepts": [
+                "grain spoilage"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Storage"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of balanced feed for cattle.",
+            "answer": "Balanced feed ensures proper growth, health and milk production in cattle.",
+            "key_concepts": [
+                "balanced feed"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 23,
+            "question": "What are the main components of animal feed?",
+            "answer": "Animal feed consists of roughage and concentrates.",
+            "key_concepts": [
+                "roughage",
+                "concentrates"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain two advantages of organic farming.",
+            "answer": "Organic farming maintains soil fertility and reduces environmental pollution.",
+            "key_concepts": [
+                "organic farming"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Organic Farming"
+        },
+        {
+            "question_number": 25,
+            "question": "What is sustainable agriculture?",
+            "answer": "Sustainable agriculture is farming that meets present needs without harming future resources.",
+            "key_concepts": [
+                "sustainable agriculture"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Sustainable Farming"
+        }
+    ]
+}

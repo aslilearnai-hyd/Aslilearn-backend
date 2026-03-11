@@ -1,0 +1,184 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Adolescence: Stage of Growth and Change",
+    "difficulty": "Hard",
+    "source_pdf": "adolescence_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Analysis of Growth Velocity",
+            "objective": "Calculate and analyze the rate of growth (cm/year) during the pubertal spurt",
+            "materials": [
+                "Historical height data (from childhood health records)",
+                "Graph paper",
+                "Scientific calculator"
+            ],
+            "steps": [
+                "Collate your height data from age 5 to your current age",
+                "Calculate the growth velocity for each year: $V = H_{current} - H_{previous}$",
+                "Plot a line graph of 'Growth Velocity vs. Age'",
+                "Identify the 'Peak Height Velocity' (PHV) and correlate it with the onset of other pubertal changes"
+            ],
+            "learning_outcome": "Differentiates between absolute height and the rate of growth during adolescence",
+            "evaluation": "Precision of velocity calculations and graphical identification of the spurt (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Endocrine Signaling and Target Site Specificity",
+            "objective": "Examine how hormones travel through the bloodstream to reach specific target sites",
+            "materials": [
+                "Reference books",
+                "Poster board",
+                "Markers"
+            ],
+            "steps": [
+                "Research the concept of 'Target Sites' and hormone receptors",
+                "Diagram the pathway of FSH (Follicle Stimulating Hormone) from the Pituitary to the Gonads",
+                "Explain why FSH affects only reproductive organs and not, for example, the digestive system",
+                "Present the molecular 'Lock and Key' mechanism of hormone-receptor binding"
+            ],
+            "learning_outcome": "Understands the biochemical specificity of the endocrine system",
+            "evaluation": "Scientific accuracy in explaining hormone-receptor interactions (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Chemistry of Secondary Sexual Characteristics",
+            "objective": "Analyze the biochemical role of Testosterone and Estrogen in physiological changes",
+            "materials": [
+                "Research journals/Internet",
+                "Notebook"
+            ],
+            "steps": [
+                "Investigate how Testosterone stimulates the growth of the larynx (vocal cords) in boys",
+                "Study the role of Estrogen in the deposition of adipose tissue (fat) in specific body regions in girls",
+                "Compare the chemical structures of Testosterone and Estrogen (identify similarities and differences)",
+                "Summarize how slight chemical differences lead to vastly different physical outcomes"
+            ],
+            "learning_outcome": "Relates chemical signals to physical morphological transformations",
+            "evaluation": "Technical depth of the biochemical comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Genetic Probability: Sex-Linked Inheritance",
+            "objective": "Investigate why certain conditions (like color blindness) are more common in one sex",
+            "materials": [
+                "Punnett square templates",
+                "Case study data"
+            ],
+            "steps": [
+                "Understand the difference between Autosomes and Sex Chromosomes",
+                "Perform a genetic cross for a carrier mother ($X^C X$) and a normal father ($XY$)",
+                "Calculate the probability of a color-blind son vs. a color-blind daughter",
+                "Explain why the Y-chromosome cannot 'mask' recessive traits on the X-chromosome"
+            ],
+            "learning_outcome": "Advanced understanding of chromosomal sex determination and inheritance patterns",
+            "evaluation": "Correctness of the Punnett square and probability ratios (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Comparative Endocrinology: Metamorphosis Control",
+            "objective": "Analyze the role of Iodine and Thyroxine in amphibian development",
+            "materials": [
+                "Observation data (provided or researched)",
+                "Water samples",
+                "Iodine solution"
+            ],
+            "steps": [
+                "Research why tadpoles in iodine-deficient water fail to become frogs",
+                "Design a hypothetical experiment to test the effect of different iodine concentrations on metamorphosis speed",
+                "Draw a parallel between Iodine/Thyroxine in frogs and its role in human adolescent metabolism",
+                "Identify the symptoms of Thyroid dysfunction in humans"
+            ],
+            "learning_outcome": "Connects environmental chemistry to hormonal health across species",
+            "evaluation": "Logical experimental design and comparative analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Menstrual Cycle: Hormonal Fluctuations Graph",
+            "objective": "Map the rise and fall of Estrogen, Progesterone, LH, and FSH during a 28-day cycle",
+            "materials": [
+                "Multicolor pens",
+                "Graph paper",
+                "Reference data on hormone levels"
+            ],
+            "steps": [
+                "Plot four different colored lines on one graph representing the four hormones",
+                "Mark the 'LH Surge' and correlate it with the timing of Ovulation",
+                "Explain the 'Thickening of the Endometrium' in relation to Progesterone levels",
+                "Identify the 'Day 1' event and its cause (hormone withdrawal)"
+            ],
+            "learning_outcome": "Visualizes the complex interplay of multiple hormones in reproductive cycles",
+            "evaluation": "Accurate plotting of hormonal peaks and phase identification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Nutritional Bioavailability Research",
+            "objective": "Investigate how the body absorbs essential minerals during adolescence",
+            "materials": [
+                "Food labels",
+                "Nutritional charts",
+                "Internet resources"
+            ],
+            "steps": [
+                "Compare the Iron content in spinach vs. red meat (Heme vs. Non-heme iron)",
+                "Research how Vitamin C aids Iron absorption and how Calcium can inhibit it",
+                "Design a meal for an adolescent girl that maximizes Iron bioavailability",
+                "Explain the physiological need for increased RBC production during growth"
+            ],
+            "learning_outcome": "Understands the biochemical factors affecting nutrient absorption",
+            "evaluation": "Scientific reasoning in meal design and absorption factors (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Neuroplasticity and the Adolescent Brain",
+            "objective": "Examine the 'Synaptic Pruning' process during teenage years",
+            "materials": [
+                "Brain anatomy diagrams",
+                "Reference articles"
+            ],
+            "steps": [
+                "Define 'Synaptic Pruning' and its importance in brain efficiency",
+                "Research why the 'Prefrontal Cortex' is the last part of the brain to mature",
+                "Link this delayed maturation to common adolescent behaviors like risk-taking or impulsivity",
+                "Write a 500-word essay on 'The Biology of the Teenage Mind'"
+            ],
+            "learning_outcome": "Relates structural brain changes to psychological development",
+            "evaluation": "Depth of neurological research and quality of synthesis (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Impact of Stress on the Endocrine System",
+            "objective": "Investigate how Adrenaline and Cortisol affect adolescent growth",
+            "materials": [
+                "Heart rate monitor (optional)",
+                "Notebook"
+            ],
+            "steps": [
+                "Study the 'Fight or Flight' response and the Adrenal glands",
+                "Research how chronic stress (high Cortisol) can interfere with Growth Hormone (GH) secretion",
+                "Interview a school counselor on healthy stress management for students",
+                "Diagram the HPA (Hypothalamic-Pituitary-Adrenal) axis"
+            ],
+            "learning_outcome": "Understands the inhibitory relationship between stress hormones and growth",
+            "evaluation": "Accuracy of the HPA axis diagram and stress impact report (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Legal and Ethical Aspects of Adolescence",
+            "objective": "Analyze the intersection of biological maturity and legal responsibility",
+            "materials": [
+                "Legal documents (Constitution/Child Rights)",
+                "Case study examples"
+            ],
+            "steps": [
+                "Research the 'Legal Age of Marriage' and 'Age of Consent' in various countries",
+                "Discuss why laws are set based on both biological and mental maturity",
+                "Debate: 'Should biological maturity (puberty) define adulthood?'",
+                "Summarize the ethical implications of child marriage on adolescent health"
+            ],
+            "learning_outcome": "Applies biological knowledge to social and legal frameworks",
+            "evaluation": "Strength of arguments and ethical reasoning (10 marks)"
+        }
+    ]
+}

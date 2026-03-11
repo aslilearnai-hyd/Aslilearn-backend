@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 8: A SHIRT IN THE MARKET",
+    "generated_at": "2026-03-07T18:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are the main stages in producing a shirt?",
+            "answer": "The main stages are cotton cultivation, ginning, spinning, weaving, dyeing, tailoring, and retailing.",
+            "key_concepts": ["production stages", "supply chain"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who are the key workers involved in shirt production?",
+            "answer": "Key workers include farmers, ginners, spinners, weavers, dyers, tailors, transporters, and shopkeepers.",
+            "key_concepts": ["labor roles", "supply chain"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is cotton cultivation important for the shirt industry?",
+            "answer": "Cotton is the raw material for shirts. Its quality, yield, and availability directly affect production and pricing.",
+            "key_concepts": ["cotton cultivation", "raw material"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how the price of a shirt is determined.",
+            "answer": "Price is determined by production costs, labor wages, transport, profit margins of traders and retailers, and market demand.",
+            "key_concepts": ["pricing", "market factors"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What role do traders and middlemen play in the shirt market?",
+            "answer": "They transport goods, link producers to markets, manage sales, and sometimes influence prices and demand.",
+            "key_concepts": ["traders", "middlemen"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the shirt industry dependent on transportation?",
+            "answer": "Transportation moves raw materials to production sites and finished shirts to markets, affecting efficiency, timing, and cost.",
+            "key_concepts": ["transportation", "supply chain efficiency"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What are some challenges faced by workers in the shirt production process?",
+            "answer": "Challenges include low wages, long working hours, unsafe conditions, seasonal work, and lack of job security.",
+            "key_concepts": ["labor challenges", "worker welfare"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "How can fair trade practices improve the lives of workers?",
+            "answer": "Fair trade ensures fair wages, safe working conditions, respect for labor rights, and better livelihoods.",
+            "key_concepts": ["fair trade", "worker rights"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the environmental impact of cotton cultivation and textile production.",
+            "answer": "Impacts include water overuse, pesticide and chemical pollution, soil depletion, and textile waste, affecting ecosystems and human health.",
+            "key_concepts": ["environmental impact", "sustainability"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What sustainable practices can reduce environmental damage in shirt production?",
+            "answer": "Using organic cotton, natural dyes, water recycling, energy-efficient machinery, and proper waste management.",
+            "key_concepts": ["sustainable practices", "eco-friendly production"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "How does consumer behavior influence shirt production methods?",
+            "answer": "Consumer preference for affordable, ethical, or sustainable products affects production decisions, wages, and environmental practices.",
+            "key_concepts": ["consumer behavior", "market influence"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the difference between small-scale and large-scale production in the shirt industry?",
+            "answer": "Small-scale is labor-intensive, uses local skills, and produces limited quantities. Large-scale uses machines, increases output, but may reduce employment and affect wages.",
+            "key_concepts": ["production scale", "economic impact"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 13,
+            "question": "How do cooperatives support farmers and workers?",
+            "answer": "Cooperatives provide shared resources, fair prices, training, market access, and collective bargaining to improve income and work conditions.",
+            "key_concepts": ["cooperatives", "worker support"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is innovation important in the shirt production process?",
+            "answer": "Innovation increases efficiency, improves product quality, reduces labor strain, and can support sustainable practices.",
+            "key_concepts": ["innovation", "production efficiency"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how pricing strategies balance affordability and fair wages.",
+            "answer": "Prices must cover production costs, wages, and profits, while remaining affordable for consumers. Balancing ensures sustainability for workers and producers.",
+            "key_concepts": ["pricing strategy", "economic balance"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What are the social effects of low wages in the shirt industry?",
+            "answer": "Low wages lead to poor living standards, child labor, health issues, and social inequality.",
+            "key_concepts": ["low wages", "social impact"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "How can ethical consumer choices influence the global market?",
+            "answer": "Consumers choosing ethical or sustainable shirts encourage companies worldwide to adopt fair trade, eco-friendly practices, and better labor conditions.",
+            "key_concepts": ["ethical consumerism", "global market"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 18,
+            "question": "How does technology affect labor in shirt production?",
+            "answer": "Technology speeds up production, improves quality, reduces manual labor needs, but requires skilled workers and may replace traditional jobs.",
+            "key_concepts": ["technology impact", "labor"],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is studying the shirt supply chain useful for understanding the economy?",
+            "answer": "It shows how labor, production, trade, pricing, and consumer demand interact, revealing economic inequalities and market dynamics.",
+            "key_concepts": ["supply chain", "economic understanding"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 20,
+            "question": "How do global trade and local production affect each other in the shirt market?",
+            "answer": "Global demand can increase local production, influence pricing, labor demand, and introduce competition, affecting local livelihoods.",
+            "key_concepts": ["global-local interaction", "trade impact"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What role do labor unions play in the shirt industry?",
+            "answer": "Unions protect worker rights, ensure fair wages, safe working conditions, and provide collective bargaining power.",
+            "key_concepts": ["labor unions", "worker rights"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the environmental consequences of chemical dyes and water use in shirt production.",
+            "answer": "Chemical dyes pollute water and soil; excessive water use depletes resources, harms ecosystems, and affects communities.",
+            "key_concepts": ["environmental impact", "chemical pollution"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 23,
+            "question": "How can small-scale producers compete with large-scale manufacturers ethically?",
+            "answer": "By focusing on fair wages, quality, sustainable production, unique designs, and marketing to conscious consumers.",
+            "key_concepts": ["small-scale producers", "ethical competition"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Why should students learn about ethical and sustainable production practices?",
+            "answer": "It builds awareness about labor rights, environmental conservation, and responsible consumption.",
+            "key_concepts": ["ethical awareness", "sustainability education"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 25,
+            "question": "How are production, trade, labor, consumer demand, and environment interconnected in the shirt market?",
+            "answer": "Decisions in production affect labor conditions, trade opportunities, product pricing, consumer choices, and environmental impact. All elements influence each other in a cycle.",
+            "key_concepts": ["interconnectedness", "market system"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        }
+    ]
+}

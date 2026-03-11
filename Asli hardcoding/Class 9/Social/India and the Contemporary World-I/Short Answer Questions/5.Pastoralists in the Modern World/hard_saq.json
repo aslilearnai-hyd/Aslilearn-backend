@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 5: Pastoralists in the Modern World",
+  "generated_at": "2026-03-07T03:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Analyze how the 'seasonal cycle' of the Gujjar Bakarwals prevents the exhaustion of mountain pastures.",
+      "answer": "The Bakarwals move between winter pastures in the Shiwaliks and summer pastures in the high Himalayas. This horizontal and vertical mobility ensures that no single pasture is overgrazed, allowing the vegetation to recover naturally during the periods when the herders are absent.",
+      "key_concepts": ["rotational grazing", "pasture recovery", "vertical mobility"],
+      "marks": 3,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What was the 'Ecological Fallacy' in the British view of forest grazing?",
+      "answer": "The British believed herding destroyed forests by trampling saplings. However, they ignored that periodic grazing by nomadic herds actually cleared undergrowth and prevented massive forest fires, maintaining a balance that 'scientific' exclusion often disrupted.",
+      "key_concepts": ["ecological balance", "undergrowth clearing", "colonial bias"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the role of 'Canal Irrigation' in the displacement of Raika pastoralists in Rajasthan.",
+      "answer": "The expansion of canal colonies turned vast stretches of fallow land and communal pastures into permanent agricultural fields. This 'enclosure' of the desert forced Raikas to abandon traditional routes as they could no longer find open spaces for their herds to graze.",
+      "key_concepts": ["canal colonies", "land conversion", "enclosure"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "How did the 'Waste Land Rules' prioritize revenue over indigenous land-use systems?",
+      "answer": "The British defined 'waste' solely as land that did not produce tax or commercial crops. By granting these lands to settled farmers, they dismantled a sophisticated nomadic system that utilized 'marginal' lands, prioritizing state income over pastoral food security.",
+      "key_concepts": ["revenue settled", "marginal land", "indigenous systems"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Discuss the 'psychological impact' of the Criminal Tribes Act on nomadic communities.",
+      "answer": "By branding communities as 'criminal by birth,' the Act stigmatized their identity. It criminalized their very mode of existence—mobility—forcing them into a cycle of police harassment, restricted social access, and systemic poverty.",
+      "key_concepts": ["stigmatization", "social control", "identity politics"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "In what way did the 'Permit System' turn a customary right into a state-controlled 'grant'?",
+      "answer": "Before the Forest Acts, entry was a traditional right. The permit system required herders to specify dates and numbers of cattle, effectively making their survival dependent on the discretion of forest officials who could revoke access at any time.",
+      "key_concepts": ["legalized exclusion", "discretionary power", "bureaucratic control"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Analyze the impact of 1947 geopolitical changes on the Raika's 'transhumance' to Sindh.",
+      "answer": "The creation of a hard international border between India and Pakistan blocked the Raika's traditional trek to the Indus valley. This forced a radical shift in migration patterns toward Haryana, requiring herders to negotiate with a new set of settled farmers for grazing rights.",
+      "key_concepts": ["Partition 1947", "geopolitics", "transhumance"],
+      "marks": 3,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 8,
+      "question": "How did the loss of 'Dry Season Pastures' lead to a structural crisis in Maasai society?",
+      "answer": "The Maasai were pushed into a small, arid reserve. When they lost access to better-watered high-altitude lands (taken for white settlers and parks), localized droughts that were once manageable became catastrophic, wiping out entire herds.",
+      "key_concepts": ["land alienation", "drought vulnerability", "structural crisis"],
+      "marks": 3,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the 'Administrative Stratification' introduced by the British among the Maasai.",
+      "answer": "By appointing 'Chiefs,' the British introduced a centralized authority that did not exist in the traditional age-set system. These chiefs accumulated wealth through trade, while the common herder remained vulnerable, creating a new class hierarchy.",
+      "key_concepts": ["appointed chiefs", "wealth gap", "class formation"],
+      "marks": 3,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Contrast the 'Warriors' traditional status with their status under colonial rule.",
+      "answer": "Traditionally, Warriors gained status through cattle raids and bravery. The British banned raiding, stripping the youth of their social role and forcing them to seek low-status labor in towns, undermining the cultural fabric of the community.",
+      "key_concepts": ["cultural erosion", "banning of raids", "urban migration"],
+      "marks": 3,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 11,
+      "question": "How did 'Continuous Grazing' in restricted areas alter the botanical composition of pastures?",
+      "answer": "Restricting animals to fixed areas prevented the natural seeding and regrowth of nutritious grasses. Over time, these areas were taken over by hardy, unpalatable weeds, leading to a permanent decline in the quality of forage.",
+      "key_concepts": ["botanical change", "forage quality", "overgrazing"],
+      "marks": 3,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Evaluate the role of 'Game Reserves' as an instrument of colonial displacement.",
+      "answer": "Reserves like the Serengeti were created for European leisure (hunting and tourism). They were not 'empty' lands but prime grazing grounds. Their creation was a form of 'green' displacement that prioritized wildlife over human survival.",
+      "key_concepts": ["green displacement", "Serengeti", "leisure politics"],
+      "marks": 3,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Why did the 'Settled Agriculture' model fail to understand the logic of nomadism?",
+      "answer": "Colonial officials viewed land through the lens of permanent ownership and tax records. They failed to see that in fragile ecosystems, 'moving' is the only way to avoid resource depletion—a logic that is ecologically superior to fixed-plot farming in dry zones.",
+      "key_concepts": ["resource depletion", "ecological logic", "sedentary bias"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Discuss the 'double burden' of the Grazing Tax during the colonial period.",
+      "answer": "Pastoralists faced a double burden: the official tax per animal and the unofficial 'profit' extracted by private contractors who auctioned the right to collect. This led to extreme harassment and financial exhaustion of the herders.",
+      "key_concepts": ["auction system", "contractor exploitation", "financial burden"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "How did 'Wealthy Pastoralists' utilize the colonial economy to their advantage?",
+      "answer": "Unlike the poor herders, wealthy pastoralists diversified. They bought land, became settled farmers or traders, and lent money to poor herders. They survived droughts by using capital rather than livestock as their primary security.",
+      "key_concepts": ["diversification", "capital accumulation", "survival strategies"],
+      "marks": 3,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Analyze the impact of 'Forest Guards' as the face of colonial authority for herders.",
+      "answer": "Forest guards acted as 'gatekeepers' of survival. Their presence was characterized by petty corruption—demanding free milk, food, or cash for 'ignoring' minor infractions—turning daily grazing into a humiliating struggle for the pastoralists.",
+      "key_concepts": ["petty corruption", "gatekeeping", "bureaucratic harassment"],
+      "marks": 3,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the 'Social Significance' of the cattle raid in pre-colonial Maasai society?",
+      "answer": "Raiding was a formal mechanism for redistributing cattle wealth among tribes and allowed the 'Warriors' to demonstrate their fitness to join the 'Elders.' It was a controlled form of competition that maintained the tribe's health.",
+      "key_concepts": ["wealth redistribution", "rite of passage", "tribal strength"],
+      "marks": 3,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 18,
+      "question": "How did the 'Closing of the Commons' affect the gene pool and health of nomadic livestock?",
+      "answer": "Traditional migration allowed for the interbreeding of herds across different regions, ensuring a diverse and resilient gene pool. Restricted movement led to localized inbreeding and increased susceptibility to epidemics.",
+      "key_concepts": ["gene pool", "livestock resilience", "epidemics"],
+      "marks": 3,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the concept of 'Dhandis' and its role in Raika social organization.",
+      "answer": "Dhandis are small, mobile settlements where Raika families live during migration. They represent a specialized social unit that allows for the collective management of large herds and communal safety in the desert.",
+      "key_concepts": ["Dhandis", "social unit", "collective management"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Discuss the 'Invisibility' of pastoralists in the modern state’s economic planning.",
+      "answer": "The text notes that we often forget pastoralists because they exist on the 'margins' of the modern economy. Their contribution to the leather, wool, and meat industries is often overlooked because they lack fixed property and political representation.",
+      "key_concepts": ["economic invisibility", "marginalization", "unrecorded contribution"],
+      "marks": 3,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 21,
+      "question": "Analyze the importance of 'Fallow Land' for the Dhangar migration cycle.",
+      "answer": "Dhangars rely on the post-harvest fallow period of agricultural fields. Their presence is a biological necessity for farmers, as the sheep manure 'recharges' the soil for the next crop, creating a symbiotic link between herding and farming.",
+      "key_concepts": ["soil recharge", "symbiosis", "fallow land"],
+      "marks": 3,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What does the term 'Endless Plains' tell us about the Maasai's pre-colonial world?",
+      "answer": "The term (Serengeti) reflects a world without artificial borders, where land was a shared resource. The colonial imposition of fences and boundaries was a psychological and physical trauma for a people who viewed land as 'infinite'.",
+      "key_concepts": ["Serengeti", "borderless society", "shared resources"],
+      "marks": 3,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 23,
+      "question": "How did the 'Maasai Reserve' in Southern Kenya function as a 'poverty trap'?",
+      "answer": "By confining herders to a semi-arid zone that could not support their cattle during dry cycles, the reserve ensured that herders would lose their wealth, forcing them to become a cheap labor source for colonial projects.",
+      "key_concepts": ["labor reserve", "poverty trap", "forced labor"],
+      "marks": 3,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Discuss the 'Environmental Resilience' of the Gaddi shepherds' migration.",
+      "answer": "Gaddis time their movements precisely with the snowmelt and harvest. This resilience is a form of 'applied ecology' that allows them to thrive in one of the world's most difficult terrains through deep traditional knowledge.",
+      "key_concepts": ["applied ecology", "traditional knowledge", "Himalayan adaptation"],
+      "marks": 3,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Evaluate the statement: 'Pastoralism is not a primitive remnant but a modern adaptation.'",
+      "answer": "In the face of climate change and environmental degradation, pastoralism is increasingly seen as a modern solution for dry-land management. It uses mobile strategies that are more resilient than fixed agriculture in the face of unpredictable rain.",
+      "key_concepts": ["modern adaptation", "climate resilience", "sustainable future"],
+      "marks": 3,
+      "source_section": "Conclusion"
+    }
+  ]
+}

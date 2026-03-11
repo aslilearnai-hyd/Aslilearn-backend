@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-01T14:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why can a polynomial of degree n not have more than n zeroes?",
+            "answer": "Because the maximum number of x-axis intersections equals the degree.",
+            "key_points": [
+                "theoretical reasoning"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is the degree of the zero polynomial not defined?",
+            "answer": "Because it has no non-zero term to determine the highest power.",
+            "key_points": [
+                "zero polynomial"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does a linear polynomial intersect the x-axis at only one point?",
+            "answer": "Because it has degree one and forms a straight line.",
+            "key_points": [
+                "linear graph"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why does a quadratic polynomial have at most two zeroes?",
+            "answer": "Because its graph is a parabola of degree two.",
+            "key_points": [
+                "quadratic reasoning"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why does a constant polynomial generally have no zeroes?",
+            "answer": "Because its graph is a horizontal line not intersecting the x-axis.",
+            "key_points": [
+                "constant polynomial"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is p(0) equal to the constant term?",
+            "answer": "Because all terms containing x become zero when x = 0.",
+            "key_points": [
+                "substitution logic"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does the graph of a polynomial help find zeroes?",
+            "answer": "Because zeroes correspond to x-axis intersections.",
+            "key_points": [
+                "graphical interpretation"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why can a polynomial have fewer zeroes than its degree?",
+            "answer": "Because some roots may be imaginary or repeated.",
+            "key_points": [
+                "nature of roots"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is ax² + bx not a linear polynomial?",
+            "answer": "Because the highest power of x is 2.",
+            "key_points": [
+                "classification"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Why does the graph of a constant polynomial never slope?",
+            "answer": "Because the value of the polynomial remains the same for all x.",
+            "key_points": [
+                "graph behavior"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why can a polynomial have repeated zeroes?",
+            "answer": "Because the graph may touch the x-axis without cutting it.",
+            "key_points": [
+                "repeated roots"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does the degree depend only on the highest power?",
+            "answer": "Because the highest power determines the end behavior of the graph.",
+            "key_points": [
+                "degree concept"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is graphical method not exact?",
+            "answer": "Because graph reading depends on scale and approximation.",
+            "key_points": [
+                "limitations"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is x² − 4 symmetric about the y-axis?",
+            "answer": "Because it contains only even powers of x.",
+            "key_points": [
+                "symmetry"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is the graph of a cubic polynomial not symmetric?",
+            "answer": "Because it contains odd powers of x.",
+            "key_points": [
+                "graph behavior"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Why does substituting a zero make the polynomial value zero?",
+            "answer": "Because zeroes are defined as values that satisfy p(x) = 0.",
+            "key_points": [
+                "definition"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is degree important in studying polynomials?",
+            "answer": "Because it determines the shape and maximum zeroes of the graph.",
+            "key_points": [
+                "importance of degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is 0 considered a constant polynomial?",
+            "answer": "Because it has no variable term.",
+            "key_points": [
+                "zero polynomial"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why can a polynomial not have fractional powers?",
+            "answer": "Because polynomial exponents must be whole numbers.",
+            "key_points": [
+                "definition constraint"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is the graph of a quadratic polynomial curved?",
+            "answer": "Because it involves a squared term.",
+            "key_points": [
+                "graph reasoning"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is x = 2 a zero of x² − 4?",
+            "answer": "Because substituting x = 2 gives value zero.",
+            "key_points": [
+                "verification"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why does x² + 1 have no real zeroes?",
+            "answer": "Because its graph does not intersect the x-axis.",
+            "key_points": [
+                "no real roots"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is the constant term important in a polynomial?",
+            "answer": "Because it determines the value of the polynomial at x = 0.",
+            "key_points": [
+                "constant term"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does the graph of x³ pass through the origin?",
+            "answer": "Because p(0) = 0 for x³.",
+            "key_points": [
+                "origin crossing"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are polynomials useful in real-life modelling?",
+            "answer": "Because they represent smooth and continuous relationships.",
+            "key_points": [
+                "applications"
+            ],
+            "source_section": "Section 2.1"
+        }
+    ]
+}

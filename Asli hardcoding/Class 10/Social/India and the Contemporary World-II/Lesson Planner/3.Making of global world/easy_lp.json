@@ -1,0 +1,174 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science",
+  "book": "India and Contemporary World II",
+  "chapter_number": 5,
+  "chapter_name": "The Making of a Global World",
+  "lesson_level": "Easy",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the concept of globalization and early global trade",
+    "Identify key explorers, trade routes, and colonial empires",
+    "Recognize the role of industrialization in connecting the world",
+    "Learn about the spread of ideas, cultures, and technology",
+    "Develop ability to relate historical globalization to modern trade and communication"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Globalization",
+      "topics_covered": [
+        "Definition of globalization",
+        "Early global connections and trade",
+        "Importance of trade routes"
+      ],
+      "teaching_strategy": [
+        "Use world maps to show trade routes",
+        "Discussion in simple terms about early global connections"
+      ],
+      "student_activities": [
+        "Locate important trade routes on the map",
+        "Oral discussion on how goods, ideas, and people moved"
+      ],
+      "assessment": [
+        "Ask students to explain globalization in their own words",
+        "Quick oral Q&A on trade routes and connections"
+      ]
+    },
+    {
+      "period": 2,
+      "title": "Explorers and Discovery",
+      "topics_covered": [
+        "Role of European explorers",
+        "Impact of voyages on trade and colonies",
+        "Famous explorers: Columbus, Vasco da Gama, Magellan"
+      ],
+      "teaching_strategy": [
+        "Show images and maps of explorers’ routes",
+        "Simple storytelling approach for voyages and discoveries"
+      ],
+      "student_activities": [
+        "Trace explorers’ routes on maps",
+        "Match explorers with their discoveries"
+      ],
+      "assessment": [
+        "Ask students to name one explorer and his discovery"
+      ]
+    },
+    {
+      "period": 3,
+      "title": "Colonial Empires",
+      "topics_covered": [
+        "Major European colonial empires",
+        "Expansion of British, French, Dutch empires",
+        "Impact on trade, society, and culture"
+      ],
+      "teaching_strategy": [
+        "Use maps to show colonial territories",
+        "Explain impacts of colonization in simple language"
+      ],
+      "student_activities": [
+        "Label colonies on world map",
+        "Oral discussion on impact of colonization"
+      ],
+      "assessment": [
+        "Quick oral quiz on colonies and their countries"
+      ]
+    },
+    {
+      "period": 4,
+      "title": "Industrialization and Trade",
+      "topics_covered": [
+        "Industrial Revolution and global trade",
+        "New transportation and communication methods",
+        "Effect on global connections"
+      ],
+      "teaching_strategy": [
+        "Show images of steam engines, railways, and ports",
+        "Discuss the link between industrialization and global trade"
+      ],
+      "student_activities": [
+        "Identify regions influenced by industrial trade on map",
+        "Oral discussion on changes brought by industrialization"
+      ],
+      "assessment": [
+        "Ask students how industrialization changed global trade"
+      ]
+    },
+    {
+      "period": 5,
+      "title": "Spread of Ideas and Cultures",
+      "topics_covered": [
+        "Missionaries, education, and religion",
+        "Spread of languages, art, and technology",
+        "Exchange of ideas across continents"
+      ],
+      "teaching_strategy": [
+        "Show images and examples of cultural exchange",
+        "Discuss in simple terms"
+      ],
+      "student_activities": [
+        "Identify examples of cultural exchange",
+        "Explain one example in one sentence"
+      ],
+      "assessment": [
+        "Quick written task: list two examples of cultural exchange"
+      ]
+    },
+    {
+      "period": 6,
+      "title": "Global Conflicts and Trade",
+      "topics_covered": [
+        "Wars and conflicts impacting trade",
+        "Competition among colonial powers",
+        "Effect on societies and economies"
+      ],
+      "teaching_strategy": [
+        "Use maps and timelines for visual explanation",
+        "Simple discussion on conflicts and their effects"
+      ],
+      "student_activities": [
+        "Locate regions affected by conflicts",
+        "Class discussion on outcomes of trade wars"
+      ],
+      "assessment": [
+        "Oral questions on conflicts and trade impact"
+      ]
+    },
+    {
+      "period": 7,
+      "title": "Chapter Revision",
+      "topics_covered": [
+        "Summary of explorers, trade, industrialization, and cultural exchange",
+        "Review maps, timelines, and key terms"
+      ],
+      "teaching_strategy": [
+        "Interactive revision using map and timeline activities",
+        "Class discussion summarizing key points"
+      ],
+      "student_activities": [
+        "Group quiz on key events, explorers, and trade routes",
+        "Fill timelines and maps for revision"
+      ],
+      "assessment": [
+        "Short oral quiz covering all major events and concepts",
+        "Class discussion on lessons learned"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "World maps showing trade routes and colonies",
+    "Images of explorers, industrialization, and cultural exchange",
+    "Timeline charts for major events",
+    "Flashcards with explorers, colonies, and contributions"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Quick quizzes",
+    "Class participation",
+    "Worksheet activities",
+    "Group discussion"
+  ],
+  "teacher_tip": "Use visuals and storytelling for easy-level students. Focus on key explorers, colonies, and global trade. Encourage students to participate using maps, timelines, and flashcards."
+}

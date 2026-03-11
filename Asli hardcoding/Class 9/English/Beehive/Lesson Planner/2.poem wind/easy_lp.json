@@ -1,0 +1,114 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Wind",
+    "lesson_level": "Easy",
+    "total_periods": 4,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the general theme of the poem",
+        "Identify simple poetic devices such as personification",
+        "Summarize the main ideas of each stanza",
+        "Develop basic reading comprehension and vocabulary",
+        "Relate the poem to nature and human response"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Poem",
+            "topics_covered": [
+                "About the poet (Subramania Bharati)",
+                "Theme of the poem: power of nature",
+                "Initial reading and understanding"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud",
+                "Discussion about wind and its effect on surroundings"
+            ],
+            "student_activities": [
+                "Listen carefully to the poem",
+                "Share own experiences of windy weather"
+            ],
+            "assessment": [
+                "Oral questions on poem’s theme",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Stanza Analysis",
+            "topics_covered": [
+                "Stanza-wise meaning",
+                "Personification of wind",
+                "Imagery of destruction caused by wind"
+            ],
+            "teaching_strategy": [
+                "Explain each stanza line by line",
+                "Highlight simple poetic devices"
+            ],
+            "student_activities": [
+                "Underline words describing wind",
+                "Write simple meanings of each stanza in notebook"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral answers to questions on stanza meaning"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Human Response and Moral Lesson",
+            "topics_covered": [
+                "How humans can prepare for challenges",
+                "Lesson on building strength and resilience",
+                "Connection of poem to real life"
+            ],
+            "teaching_strategy": [
+                "Discussion on how humans face challenges",
+                "Explain symbolism of strong homes and steadfast hearts"
+            ],
+            "student_activities": [
+                "Give examples of human preparation",
+                "Discuss how poem teaches resilience"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Revision and Recap",
+            "topics_covered": [
+                "Summary of the poem",
+                "Poetic devices learned",
+                "Theme and moral lesson"
+            ],
+            "teaching_strategy": [
+                "Recap key points of poem",
+                "Ask students to summarize in their own words"
+            ],
+            "student_activities": [
+                "Write short summary of poem",
+                "Identify personification and imagery used"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Participation marks in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing personification and examples"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Focus on helping students understand the poem’s theme and personification, using simple language and relatable examples from nature."
+}

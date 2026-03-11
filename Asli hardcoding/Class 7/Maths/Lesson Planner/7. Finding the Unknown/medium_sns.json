@@ -1,0 +1,72 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Finding the Unknown (Simple Equations)",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve one-step equations using the Balancing Method",
+        "Apply Inverse Operations (Addition/Subtraction, Multiplication/Division)",
+        "Understand the Transposition method for solving equations",
+        "Verify solutions by substitution",
+        "Solve equations involving negative integers"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "The Balancing Method",
+            "topics_covered": [
+                "Adding/Subtracting the same number from both sides",
+                "Multiplying/Dividing both sides by the same non-zero number",
+                "Keeping the 'Scale' balanced"
+            ],
+            "teaching_strategy": [
+                "Step-by-step 'Action-Reaction' demonstration",
+                "Visualizing operations on a balance scale",
+                "[Image showing balancing an equation by adding or subtracting from both sides]"
+            ],
+            "student_activities": [
+                "Solve $x - 8 = 10$ by adding 8 to both sides",
+                "Solve $5y = 35$ by dividing both sides by 5"
+            ],
+            "assessment": [
+                "Calculation speed drill",
+                "Board work showing all balancing steps"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Transposition Method",
+            "topics_covered": [
+                "Moving terms across the '=' sign",
+                "Sign change rules during transposition",
+                "Comparing Balancing vs Transposition"
+            ],
+            "teaching_strategy": [
+                "The 'Bridge' analogy: Crossing the '=' bridge flips the sign",
+                "Flowchart of sign changes ($+ \to -$, $\times \to \div$)"
+            ],
+            "student_activities": [
+                "Solve $3x + 4 = 19$ using transposition",
+                "Verify the answer by putting the value back into the original equation"
+            ],
+            "assessment": [
+                "Transposition accuracy quiz",
+                "Exit slip: 'Check if $x=4$ is the solution for $2x + 2 = 10$'"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Operation sign-change posters",
+        "Algebra tiles",
+        "Worksheets with step-by-step scaffolding",
+        "Numbered dice for equation building"
+    ],
+    "evaluation_methods": [
+        "Step-by-step problem solving tests",
+        "Verification check worksheets",
+        "Peer-review of solving methods"
+    ],
+    "teacher_tip": "Always tell students to 'Check your work!' by plugging the answer back in. It’s the only math topic where you can know if you got 100% before the teacher grades it."
+}

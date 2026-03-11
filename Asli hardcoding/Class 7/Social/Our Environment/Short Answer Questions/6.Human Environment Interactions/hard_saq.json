@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 6: HUMAN ENVIRONMENT INTERACTIONS",
+    "generated_at": "2026-03-07T17:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of human-environment interaction with suitable examples.",
+            "answer": "Human-environment interaction refers to the ways humans adapt to, modify, and depend on the environment. For example, constructing dams alters rivers for irrigation and electricity, while terrace farming in hilly regions adapts agriculture to slopes.",
+            "key_concepts": ["human-environment interaction", "adaptation", "modification"],
+            "marks": 5,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Analyze how different climates influence human settlement patterns.",
+            "answer": "Climate affects settlements by determining housing, clothing, and economic activities. Cold regions have insulated homes and warmer clothing; tropical areas have ventilated homes and cultivate crops like rice or sugarcane; arid regions rely on wells and drought-resistant crops.",
+            "key_concepts": ["climate", "human settlement", "adaptation"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the challenges of sustainable resource management in urban areas.",
+            "answer": "Urban areas face overuse of water, energy, and land. Pollution, waste disposal, and deforestation are major challenges. Sustainable management requires recycling, renewable energy, afforestation, and efficient urban planning.",
+            "key_concepts": ["sustainable management", "urban resources"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how human activities contribute to climate change and its impacts.",
+            "answer": "Activities like burning fossil fuels, deforestation, and industrial emissions increase greenhouse gases, causing global warming. Impacts include rising temperatures, extreme weather, sea-level rise, and disruption of ecosystems.",
+            "key_concepts": ["climate change", "human impact", "global warming"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Examine the role of forests in supporting both human life and ecological balance.",
+            "answer": "Forests provide timber, food, medicines, and maintain oxygen-carbon dioxide balance. They prevent soil erosion, regulate water cycles, and support biodiversity, which humans depend on for survival.",
+            "key_concepts": ["forests", "ecology", "human dependence"],
+            "marks": 5,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How do humans adapt to flood-prone regions? Explain with examples.",
+            "answer": "Humans build raised houses, embankments, and drainage systems. Example: In Assam, homes are built on stilts and flood-resistant crops are grown to reduce losses.",
+            "key_concepts": ["flood adaptation", "resilient settlements"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Analyze the consequences of overpopulation on water and land resources.",
+            "answer": "Overpopulation increases demand for drinking water, irrigation, and land. It leads to depletion of aquifers, deforestation for settlements, reduced soil fertility, and water pollution.",
+            "key_concepts": ["overpopulation", "resource pressure"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss the measures to reduce air and water pollution caused by human activities.",
+            "answer": "Measures include using clean energy, controlling industrial emissions, recycling waste, planting trees, treating sewage, and reducing use of chemicals in agriculture.",
+            "key_concepts": ["pollution control", "air and water"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Evaluate the role of technology in resource conservation and sustainable development.",
+            "answer": "Technology enables efficient water use, renewable energy production, soil fertility monitoring, and forest management. It reduces resource wastage and environmental damage, promoting sustainable development.",
+            "key_concepts": ["technology", "sustainable development"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how human settlements in desert areas adapt to extreme conditions.",
+            "answer": "Settlements use camels for transport, store water in tanks, construct mud houses to maintain cooler temperatures, and grow drought-resistant crops to survive in deserts.",
+            "key_concepts": ["desert adaptation", "human settlement"],
+            "marks": 5,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Analyze the interdependence between agriculture and environmental factors.",
+            "answer": "Agriculture depends on soil fertility, water availability, climate, and seasons. Changes in rainfall, temperature, or soil quality directly affect crop yields and food security.",
+            "key_concepts": ["agriculture", "environmental dependence"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss the impact of mining and industrialization on ecosystems.",
+            "answer": "Mining and industries cause deforestation, soil degradation, water pollution, and habitat loss, reducing biodiversity and disrupting ecological balance.",
+            "key_concepts": ["mining", "industrial impact", "ecosystem"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 13,
+            "question": "How does urban planning contribute to sustainable human-environment interaction?",
+            "answer": "Urban planning ensures proper waste management, green spaces, water conservation, and efficient resource use, reducing environmental stress and supporting sustainable living.",
+            "key_concepts": ["urban planning", "sustainability"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of biodiversity for humans and ecosystems.",
+            "answer": "Biodiversity provides food, medicines, raw materials, regulates climate, and maintains ecosystem stability, all essential for human survival and environmental health.",
+            "key_concepts": ["biodiversity", "ecosystem services"],
+            "marks": 5,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Examine how natural disasters influence human migration and settlements.",
+            "answer": "Floods, earthquakes, and droughts force people to migrate, build resilient homes, or relocate settlements. For example, repeated flooding in lowlands causes communities to move to higher grounds.",
+            "key_concepts": ["natural disasters", "human migration"],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss the concept of sustainable development and its relevance in the 21st century.",
+            "answer": "Sustainable development involves using resources responsibly to meet present needs without harming future generations. It is crucial to combat resource depletion, pollution, and climate change.",
+            "key_concepts": ["sustainable development", "resources"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the relationship between human activities and soil erosion.",
+            "answer": "Deforestation, overgrazing, and improper farming practices remove vegetation, leaving soil exposed and vulnerable to erosion by wind and water.",
+            "key_concepts": ["soil erosion", "human impact"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Analyze how human adaptation varies in mountainous versus coastal regions.",
+            "answer": "In mountains, people terrace-farm and build homes on slopes, while in coastal regions, they build stilted houses and protective embankments against floods and tides.",
+            "key_concepts": ["adaptation", "mountainous and coastal regions"],
+            "marks": 5,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the role of government policies in environmental conservation.",
+            "answer": "Governments regulate resource use, enforce pollution control, promote afforestation, and implement conservation projects to ensure sustainable development.",
+            "key_concepts": ["government role", "conservation"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Evaluate the effects of deforestation on climate and human life.",
+            "answer": "Deforestation reduces carbon absorption, increases greenhouse gases, alters rainfall patterns, causes soil erosion, and reduces resources like timber and medicinal plants.",
+            "key_concepts": ["deforestation", "climate impact", "human life"],
+            "marks": 5,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 21,
+            "question": "How do human settlements adapt to water scarcity in arid regions?",
+            "answer": "Settlements use water-saving technologies, store rainwater, drill wells, and cultivate drought-resistant crops to manage scarcity.",
+            "key_concepts": ["water scarcity", "adaptation"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Discuss the impact of human activities on river ecosystems.",
+            "answer": "Activities like dam construction, pollution, and overfishing disrupt water flow, harm aquatic life, and reduce water quality.",
+            "key_concepts": ["river ecosystems", "human impact"],
+            "marks": 5,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the concept of environmental sustainability with examples.",
+            "answer": "Environmental sustainability involves using resources so that ecosystems remain healthy. Examples include using solar energy, rainwater harvesting, and organic farming.",
+            "key_concepts": ["environmental sustainability", "examples"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Analyze the role of renewable energy in reducing environmental degradation.",
+            "answer": "Renewable energy sources like solar, wind, and hydro reduce dependence on fossil fuels, lower greenhouse gas emissions, and minimize pollution.",
+            "key_concepts": ["renewable energy", "environmental protection"],
+            "marks": 5,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of studying human-environment interactions for future planning.",
+            "answer": "Understanding human-environment interactions helps in disaster management, sustainable urban planning, resource conservation, and mitigating climate change for future generations.",
+            "key_concepts": ["human-environment interaction", "future planning"],
+            "marks": 5,
+            "source_section": "Section 6.1"
+        }
+    ]
+}

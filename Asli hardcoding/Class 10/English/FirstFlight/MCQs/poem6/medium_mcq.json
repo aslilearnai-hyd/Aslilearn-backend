@@ -1,0 +1,148 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Poem – Fog",
+  "generated_at": "2026-03-09T15:10:00",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following best describes the central literary device used by Carl Sandburg in 'Fog'?",
+      "options": {
+        "A": "An explicit simile using 'like' or 'as' to compare weather to an animal",
+        "B": "An extended metaphor that sustains the image of a cat throughout the poem",
+        "C": "Hyperbolic personification of the city streets",
+        "D": "A rhythmic onomatopoeia mimicking the sound of footsteps"
+      },
+      "correct_answers": ["B"],
+      "explanation": "Sandburg uses an extended metaphor, directly attributing the physical traits and behaviors of a cat (little feet, haunches, silent movement) to the fog without using comparative words like 'like' or 'as'.",
+      "difficulty": "medium",
+      "source_section": "Literary Devices"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the significance of the phrase 'on little cat feet' in establishing the poem's tone?",
+      "options": {
+        "A": "It emphasizes the stealthy, silent, and delicate arrival of the fog",
+        "B": "It suggests that the fog is a domestic and friendly force",
+        "C": "It creates a sense of speed and urgency",
+        "D": "It highlights the small size of the harbor"
+      },
+      "correct_answers": ["A"],
+      "explanation": "The 'little cat feet' imagery immediately establishes a tone of quietness and stealth, mirroring how fog appears suddenly but without making any sound.",
+      "difficulty": "medium",
+      "source_section": "Imagery"
+    },
+    {
+      "question_number": 3,
+      "question": "The fog 'sits looking / over harbor and city'. What does this choice of verbs imply about the fog's nature?",
+      "options": {
+        "A": "That the fog is a mindless, random occurrence",
+        "B": "That the fog possesses a quiet, observational agency or curiosity",
+        "C": "That the fog is waiting to attack the city",
+        "D": "That the fog is stationary and will never leave"
+      },
+      "correct_answers": ["B"],
+      "explanation": "By using verbs like 'sits' and 'looking,' Sandburg gives the fog a living, almost watchful quality, as if it is a visitor taking in the view before moving on.",
+      "difficulty": "medium",
+      "source_section": "Poetic Agency"
+    },
+    {
+      "question_number": 4,
+      "question": "How does the word 'haunches' contribute to the reader's visualization of the fog?",
+      "options": {
+        "A": "It suggests the fog is lying flat and spread out across the water",
+        "B": "It evokes the specific posture of a cat sitting on its back legs, poised to move",
+        "C": "It indicates the fog is falling from a great height",
+        "D": "It implies the fog has a heavy, solid weight"
+      },
+      "correct_answers": ["B"],
+      "explanation": "'Haunches' specifically refers to the hindquarters of an animal. This reinforces the cat metaphor, making the fog seem like it is crouched and ready to leap or leave at any moment.",
+      "difficulty": "medium",
+      "source_section": "Imagery/Vocabulary"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the structural effect of the poem's final line, 'and then moves on'?",
+      "options": {
+        "A": "It creates a sense of unresolved mystery",
+        "B": "It emphasizes the transient and fleeting nature of the fog",
+        "C": "It indicates that the fog has been defeated by the city",
+        "D": "It shows that the poet is tired of the weather"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The final line brings the poem's 'narrative arc' to a close, reminding the reader that fog is a temporary visitor that disappears as quietly as it arrived.",
+      "difficulty": "medium",
+      "source_section": "Structure"
+    },
+    {
+      "question_number": 6,
+      "question": "Which specific atmospheric qualities does the poem highlight through its lack of rhyming and short lines?",
+      "options": {
+        "A": "The chaotic and loud energy of a busy harbor",
+        "B": "A sense of minimalism, stillness, and breathless quiet",
+        "C": "The rhythmic, predictable pattern of the tide",
+        "D": "The industrial strength of the city"
+      },
+      "correct_answers": ["B"],
+      "explanation": "The free verse and short lines mirror the 'minimalist' presence of the fog itself, creating a reading experience that feels still and quiet.",
+      "difficulty": "medium",
+      "source_section": "Poetic Form"
+    },
+    {
+      "question_number": 7,
+      "question": "How does Sandburg create a sense of 'unity' between nature and the urban landscape?",
+      "options": {
+        "A": "By showing the harbor and city being 'watched' by the fog",
+        "B": "By describing the city lights shining through the mist",
+        "C": "By having the fog physically damage the harbor structures",
+        "D": "By focusing on the people living in the city"
+      },
+      "correct_answers": ["A"],
+      "explanation": "The fog 'looks' over both the 'harbor' (nature) and the 'city' (man-made), acting as a bridge that covers both without discrimination.",
+      "difficulty": "medium",
+      "source_section": "Thematic Content"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the tonal difference between the first and second stanzas?",
+      "options": {
+        "A": "The first is about movement, while the second is about stationary observation",
+        "B": "The first is loud and the second is quiet",
+        "C": "The first is about the past and the second is about the future",
+        "D": "The first is happy and the second is sad"
+      },
+      "correct_answers": ["A"],
+      "explanation": "The first stanza captures the action of 'coming,' while the second stanza focuses on the fog 'sitting' and 'looking' before the final movement of leaving.",
+      "difficulty": "medium",
+      "source_section": "Tone/Structure"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following best explains why 'Fog' is considered an example of Imagism?",
+      "options": {
+        "A": "It provides a long, detailed history of the harbor",
+        "B": "It presents a clear, concentrated, and single image to describe a concept",
+        "C": "It uses complex words to explain scientific weather patterns",
+        "D": "It focuses on the poet's personal emotional reaction to the cold"
+      },
+      "correct_answers": ["B"],
+      "explanation": "Imagism is a movement that favors precision and the 'direct treatment of the thing.' Sandburg's 'Fog' is a perfect example because it uses one clear image (the cat) to define the essence of fog.",
+      "difficulty": "medium",
+      "source_section": "Literary Context"
+    },
+    {
+      "question_number": 10,
+      "question": "What do 'silent haunches' suggest about the relationship between the fog and the city?",
+      "options": {
+        "A": "The fog is indifferent and separate from the city's noise",
+        "B": "The fog is actively listening to the city's secrets",
+        "C": "The fog is protecting the city from the harbor",
+        "D": "The fog is a permanent part of the city's architecture"
+      },
+      "correct_answers": ["A"],
+      "explanation": "The silence and the 'haunches' suggest a detached, feline indifference. The fog is there, observing, but it remains separate and untouched by the city's activities.",
+      "difficulty": "medium",
+      "source_section": "Thematic Analysis"
+    }
+  ]
+}

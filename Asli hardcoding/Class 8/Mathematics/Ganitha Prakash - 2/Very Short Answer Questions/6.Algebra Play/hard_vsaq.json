@@ -1,0 +1,241 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Algebra Play",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-05T13:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the algebraic form of a three-digit number with digits a, b, and c?",
+            "answer": "The number is written as 100a + 10b + c.",
+            "key_points": [
+                "digit representation",
+                "three-digit number"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the algebraic form of the reverse of a three-digit number 100a + 10b + c?",
+            "answer": "The reverse is 100c + 10b + a.",
+            "key_points": [
+                "digit reversal"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the expression for the difference between a two-digit number and its reverse?",
+            "answer": "The difference is 9(b − a).",
+            "key_points": [
+                "divisibility",
+                "digit representation"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the expression for the sum of a two-digit number and its reverse?",
+            "answer": "The sum is 11(a + b).",
+            "key_points": [
+                "divisibility rule"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is the difference between a number and its reverse always divisible by 9?",
+            "answer": "Because the algebraic expression simplifies to 9(b − a).",
+            "key_points": [
+                "factorisation",
+                "divisibility"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the sum of a number and its reverse divisible by 11?",
+            "answer": "Because the expression simplifies to 11(a + b).",
+            "key_points": [
+                "factorisation",
+                "divisibility"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the expression for the top number of a four-row pyramid with base numbers a, b, c, and d?",
+            "answer": "The top number is a + 3b + 3c + d.",
+            "key_points": [
+                "number pyramid",
+                "patterns"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What mathematical pattern is similar to the coefficients in number pyramid expressions?",
+            "answer": "The pattern is similar to Pascal's Triangle.",
+            "key_points": [
+                "Pascal triangle",
+                "patterns"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How can algebra help solve complex number puzzles?",
+            "answer": "By representing unknown numbers with variables and simplifying expressions.",
+            "key_points": [
+                "algebraic reasoning"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the algebraic expression for abcabc?",
+            "answer": "abcabc = abc × 1001.",
+            "key_points": [
+                "number patterns"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the factorisation of 1001?",
+            "answer": "1001 = 7 × 11 × 13.",
+            "key_points": [
+                "factorisation"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is abcabc divisible by 7, 11, and 13?",
+            "answer": "Because abcabc = abc × 1001 and 1001 = 7 × 11 × 13.",
+            "key_points": [
+                "divisibility",
+                "factorisation"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 13,
+            "question": "What mathematical reasoning is used to explain number tricks?",
+            "answer": "Algebraic reasoning.",
+            "key_points": [
+                "logical reasoning"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What role do variables play in algebraic puzzles?",
+            "answer": "Variables represent unknown numbers that can be manipulated algebraically.",
+            "key_points": [
+                "variables"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the general rule used in number pyramids?",
+            "answer": "Each number equals the sum of the two numbers below it.",
+            "key_points": [
+                "addition rule"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What mathematical idea helps derive formulas in puzzles?",
+            "answer": "Pattern generalization.",
+            "key_points": [
+                "patterns"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What type of reasoning is developed through Algebra Play activities?",
+            "answer": "Logical and algebraic reasoning.",
+            "key_points": [
+                "reasoning skills"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What mathematical method helps prove divisibility patterns?",
+            "answer": "Algebraic factorisation.",
+            "key_points": [
+                "factorisation"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 19,
+            "question": "What does algebra help reveal in number puzzles?",
+            "answer": "Hidden numerical patterns.",
+            "key_points": [
+                "patterns"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is pattern recognition important in algebra?",
+            "answer": "It helps create formulas and general mathematical rules.",
+            "key_points": [
+                "pattern recognition"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 21,
+            "question": "How can repeating numbers be analyzed mathematically?",
+            "answer": "By expressing them as multiples of powers of 10.",
+            "key_points": [
+                "number representation"
+            ],
+            "source_section": "Section 6.6"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the purpose of using algebra in calendar puzzles?",
+            "answer": "To express the relationships between numbers in a general form.",
+            "key_points": [
+                "calendar patterns"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "What skill is strengthened by solving algebra puzzles?",
+            "answer": "Analytical thinking.",
+            "key_points": [
+                "analytical thinking"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What does the expression 4a + 16 represent in calendar puzzles?",
+            "answer": "The sum of numbers in a 2×2 calendar grid.",
+            "key_points": [
+                "calendar grid formula"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the main objective of Algebra Play activities?",
+            "answer": "To explore mathematical patterns using algebraic thinking.",
+            "key_points": [
+                "algebraic thinking"
+            ],
+            "source_section": "Section 6.1"
+        }
+    ]
+}

@@ -1,0 +1,406 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 5: The Fundamental Unit of Life",
+    "generated_at": "2026-03-06T04:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Describe the discovery of the cell and the development of cell theory.",
+            "answer": "Robert Hooke discovered cells in cork in 1665. Later scientists Schleiden and Schwann proposed that all living organisms are made of cells. Virchow later added that new cells arise from pre-existing cells.",
+            "answer_outline": [
+                "Discovery by Robert Hooke",
+                "Schleiden and Schwann",
+                "Virchow contribution",
+                "Cell theory statements"
+            ],
+            "key_concepts": [
+                "cell discovery",
+                "cell theory"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the fluid mosaic model of the plasma membrane.",
+            "answer": "The fluid mosaic model explains that the plasma membrane consists of a phospholipid bilayer with proteins embedded in it. These molecules move laterally making the membrane flexible.",
+            "answer_outline": [
+                "Phospholipid bilayer",
+                "Embedded proteins",
+                "Membrane flexibility"
+            ],
+            "key_concepts": [
+                "fluid mosaic model"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain diffusion, osmosis and active transport with examples.",
+            "answer": "Diffusion is movement from higher to lower concentration. Osmosis is diffusion of water through a semi-permeable membrane. Active transport moves substances against the gradient using energy.",
+            "answer_outline": [
+                "Diffusion definition",
+                "Osmosis definition",
+                "Active transport definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "diffusion",
+                "osmosis",
+                "active transport"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the structure and functions of the nucleus.",
+            "answer": "The nucleus is surrounded by a nuclear membrane and contains nucleoplasm and chromosomes. It controls cell activities and stores genetic information.",
+            "answer_outline": [
+                "Nuclear membrane",
+                "Chromosomes",
+                "Functions"
+            ],
+            "key_concepts": [
+                "nucleus"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the structure and functions of mitochondria.",
+            "answer": "Mitochondria are double-membrane organelles where cellular respiration occurs producing ATP.",
+            "answer_outline": [
+                "Double membrane",
+                "ATP production",
+                "Powerhouse of cell"
+            ],
+            "key_concepts": [
+                "mitochondria"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the functions of endoplasmic reticulum in detail.",
+            "answer": "Endoplasmic reticulum forms a network for synthesis and transport of proteins and lipids.",
+            "answer_outline": [
+                "Rough ER",
+                "Smooth ER",
+                "Transport"
+            ],
+            "key_concepts": [
+                "endoplasmic reticulum"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe the structure and role of Golgi apparatus.",
+            "answer": "Golgi apparatus modifies, packages and distributes proteins and lipids to different parts of the cell.",
+            "answer_outline": [
+                "Stacked membranes",
+                "Modification",
+                "Packaging",
+                "Transport"
+            ],
+            "key_concepts": [
+                "Golgi apparatus"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain lysosomes and why they are called suicide bags.",
+            "answer": "Lysosomes contain digestive enzymes that break down wastes and damaged cell parts and may digest the cell itself.",
+            "answer_outline": [
+                "Digestive enzymes",
+                "Intracellular digestion",
+                "Suicide bag concept"
+            ],
+            "key_concepts": [
+                "lysosomes"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain plastids and their types with functions.",
+            "answer": "Plastids include chloroplasts, chromoplasts and leucoplasts which perform photosynthesis and storage.",
+            "answer_outline": [
+                "Chloroplast",
+                "Chromoplast",
+                "Leucoplast"
+            ],
+            "key_concepts": [
+                "plastids"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the role of vacuoles in plant cells.",
+            "answer": "Vacuoles store water, nutrients and wastes and maintain cell turgidity.",
+            "answer_outline": [
+                "Storage",
+                "Turgidity"
+            ],
+            "key_concepts": [
+                "vacuole"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Differentiate between plant and animal cells.",
+            "answer": "Plant cells have cell wall, chloroplast and large vacuole while animal cells lack them.",
+            "answer_outline": [
+                "Cell wall",
+                "Chloroplast",
+                "Vacuole"
+            ],
+            "key_concepts": [
+                "plant cells",
+                "animal cells"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain prokaryotic and eukaryotic cells.",
+            "answer": "Prokaryotic cells lack a true nucleus while eukaryotic cells have a well-defined nucleus and organelles.",
+            "answer_outline": [
+                "Definition",
+                "Examples",
+                "Differences"
+            ],
+            "key_concepts": [
+                "prokaryotic",
+                "eukaryotic"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the structure and function of chromosomes.",
+            "answer": "Chromosomes are made of DNA and proteins and carry genetic information.",
+            "answer_outline": [
+                "DNA",
+                "Genes",
+                "Function"
+            ],
+            "key_concepts": [
+                "chromosomes"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain DNA and its role in heredity.",
+            "answer": "DNA stores genetic information and controls protein synthesis.",
+            "answer_outline": [
+                "Genetic material",
+                "Inheritance"
+            ],
+            "key_concepts": [
+                "DNA"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain genes and their importance.",
+            "answer": "Genes are units of heredity that determine traits.",
+            "answer_outline": [
+                "Definition",
+                "Role"
+            ],
+            "key_concepts": [
+                "genes"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain mitosis with its importance.",
+            "answer": "Mitosis produces identical daughter cells and is important for growth and repair.",
+            "answer_outline": [
+                "Definition",
+                "Stages",
+                "Importance"
+            ],
+            "key_concepts": [
+                "mitosis"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain meiosis and its significance.",
+            "answer": "Meiosis produces four cells with half chromosome number and is essential for sexual reproduction.",
+            "answer_outline": [
+                "Chromosome reduction",
+                "Gamete formation"
+            ],
+            "key_concepts": [
+                "meiosis"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the importance of cell division in living organisms.",
+            "answer": "Cell division helps in growth, repair and reproduction.",
+            "answer_outline": [
+                "Growth",
+                "Repair",
+                "Reproduction"
+            ],
+            "key_concepts": [
+                "cell division"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the concept of unicellular organisms with examples.",
+            "answer": "Unicellular organisms consist of a single cell performing all life processes such as Amoeba.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "unicellular"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain multicellular organisms with examples.",
+            "answer": "Multicellular organisms consist of many cells specialized for different functions.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "multicellular"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why cells are called the structural and functional units of life.",
+            "answer": "Cells form the structure of organisms and perform all vital functions.",
+            "answer_outline": [
+                "Structure",
+                "Functions"
+            ],
+            "key_concepts": [
+                "cell"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of ribosomes in protein synthesis.",
+            "answer": "Ribosomes read genetic instructions and assemble amino acids to form proteins.",
+            "answer_outline": [
+                "Protein synthesis",
+                "Location"
+            ],
+            "key_concepts": [
+                "ribosomes"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the cell membrane maintains homeostasis.",
+            "answer": "The plasma membrane regulates movement of substances to maintain internal balance.",
+            "answer_outline": [
+                "Selective permeability",
+                "Transport"
+            ],
+            "key_concepts": [
+                "homeostasis"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of chloroplasts in plants.",
+            "answer": "Chloroplasts contain chlorophyll and carry out photosynthesis producing food for the plant.",
+            "answer_outline": [
+                "Chlorophyll",
+                "Photosynthesis"
+            ],
+            "key_concepts": [
+                "chloroplast"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the overall importance of cells in sustaining life.",
+            "answer": "Cells perform metabolism, growth, reproduction and maintain life processes in organisms.",
+            "answer_outline": [
+                "Metabolism",
+                "Growth",
+                "Reproduction"
+            ],
+            "key_concepts": [
+                "cells"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5"
+        }
+    ]
+}

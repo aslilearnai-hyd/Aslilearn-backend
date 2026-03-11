@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: A Shirt in the Market",
+    "generated_at": "2026-03-07T21:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the main raw material used to make shirts?",
+            "options": {
+                "A": "Cotton",
+                "B": "Iron",
+                "C": "Plastic",
+                "D": "Wood"
+            },
+            "correct_answer": "A",
+            "explanation": "Cotton is the primary raw material used to produce fabric for shirts.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who grows cotton for making shirts?",
+            "options": {
+                "A": "Farmers",
+                "B": "Retailers",
+                "C": "Tailors",
+                "D": "Traders"
+            },
+            "correct_answer": "A",
+            "explanation": "Farmers cultivate cotton which is the starting point of shirt production.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the process of turning cotton into yarn called?",
+            "options": {
+                "A": "Spinning",
+                "B": "Weaving",
+                "C": "Dyeing",
+                "D": "Stitching"
+            },
+            "correct_answer": "A",
+            "explanation": "Spinning converts raw cotton fibers into yarn.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the process of turning yarn into fabric called?",
+            "options": {
+                "A": "Spinning",
+                "B": "Weaving",
+                "C": "Harvesting",
+                "D": "Knitting only"
+            },
+            "correct_answer": "B",
+            "explanation": "Weaving interlaces yarn to create fabric.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Who stitches the fabric to make shirts?",
+            "options": {
+                "A": "Farmers",
+                "B": "Tailors",
+                "C": "Miners",
+                "D": "Drivers"
+            },
+            "correct_answer": "B",
+            "explanation": "Tailors cut and stitch the fabric into shirts.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Who usually sells the final shirt to the consumer?",
+            "options": {
+                "A": "Retailers",
+                "B": "Farmers",
+                "C": "Spinners",
+                "D": "Weavers"
+            },
+            "correct_answer": "A",
+            "explanation": "Retailers sell finished products directly to customers.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What do middlemen do in the production chain?",
+            "options": {
+                "A": "Grow cotton",
+                "B": "Connect producers and buyers",
+                "C": "Design shirts",
+                "D": "Export machines"
+            },
+            "correct_answer": "B",
+            "explanation": "Middlemen buy products from producers and sell them to traders or factories.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which stage adds color to the fabric?",
+            "options": {
+                "A": "Dyeing",
+                "B": "Harvesting",
+                "C": "Spinning",
+                "D": "Cutting"
+            },
+            "correct_answer": "A",
+            "explanation": "Dyeing is the process of adding color to fabrics.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do farmers often sell cotton to middlemen?",
+            "options": {
+                "A": "To get immediate payment",
+                "B": "To build factories",
+                "C": "To avoid harvesting",
+                "D": "To make shirts themselves"
+            },
+            "correct_answer": "A",
+            "explanation": "Middlemen often provide immediate cash and access to markets.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which resource is heavily used in cotton farming and dyeing?",
+            "options": {
+                "A": "Water",
+                "B": "Coal",
+                "C": "Petroleum",
+                "D": "Gold"
+            },
+            "correct_answer": "A",
+            "explanation": "Water is required for cotton cultivation and fabric dyeing.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a cooperative?",
+            "options": {
+                "A": "A group of producers working together",
+                "B": "A government office",
+                "C": "A factory machine",
+                "D": "A shopping mall"
+            },
+            "correct_answer": "A",
+            "explanation": "Cooperatives allow producers to work together and gain better market power.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is one benefit of cooperatives for small producers?",
+            "options": {
+                "A": "Better prices",
+                "B": "Less production",
+                "C": "No work",
+                "D": "Free factories"
+            },
+            "correct_answer": "A",
+            "explanation": "Cooperatives help producers negotiate better prices for their products.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following is a problem caused by chemical dyes?",
+            "options": {
+                "A": "Water pollution",
+                "B": "Air pollution only",
+                "C": "Forest fires",
+                "D": "Noise pollution"
+            },
+            "correct_answer": "A",
+            "explanation": "Chemical dyes can contaminate water bodies and harm ecosystems.",
+            "difficulty": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which stage comes first in shirt production?",
+            "options": {
+                "A": "Cotton cultivation",
+                "B": "Weaving",
+                "C": "Stitching",
+                "D": "Selling"
+            },
+            "correct_answer": "A",
+            "explanation": "The production chain starts with growing cotton.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is technology important in textile production?",
+            "options": {
+                "A": "It improves efficiency",
+                "B": "It stops farming",
+                "C": "It removes retailers",
+                "D": "It eliminates cotton"
+            },
+            "correct_answer": "A",
+            "explanation": "Technology speeds up processes like spinning and weaving.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which group mainly benefits from selling shirts directly to consumers?",
+            "options": {
+                "A": "Producers",
+                "B": "Drivers",
+                "C": "Teachers",
+                "D": "Pilots"
+            },
+            "correct_answer": "A",
+            "explanation": "Direct selling allows producers to earn more profit.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which stage turns yarn into cloth?",
+            "options": {
+                "A": "Weaving",
+                "B": "Harvesting",
+                "C": "Mining",
+                "D": "Farming"
+            },
+            "correct_answer": "A",
+            "explanation": "Weaving is the process that converts yarn into cloth.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What does the term 'supply chain' refer to?",
+            "options": {
+                "A": "Steps involved in producing and selling goods",
+                "B": "A type of machine",
+                "C": "A shop building",
+                "D": "A type of crop"
+            },
+            "correct_answer": "A",
+            "explanation": "Supply chain refers to the sequence of processes from production to sale.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following is an example of ethical consumption?",
+            "options": {
+                "A": "Buying eco-friendly clothes",
+                "B": "Buying more plastic",
+                "C": "Throwing clothes away",
+                "D": "Ignoring production methods"
+            },
+            "correct_answer": "A",
+            "explanation": "Ethical consumption includes buying sustainably produced goods.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Which stage directly involves designing and shaping the shirt?",
+            "options": {
+                "A": "Stitching",
+                "B": "Harvesting",
+                "C": "Spinning",
+                "D": "Trading"
+            },
+            "correct_answer": "A",
+            "explanation": "Stitching shapes fabric into finished garments.",
+            "difficulty": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following helps reduce exploitation of producers?",
+            "options": {
+                "A": "Cooperatives",
+                "B": "More middlemen",
+                "C": "Higher pollution",
+                "D": "Less production"
+            },
+            "correct_answer": "A",
+            "explanation": "Cooperatives increase bargaining power and reduce exploitation.",
+            "difficulty": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the final step in the shirt production chain?",
+            "options": {
+                "A": "Selling to consumers",
+                "B": "Growing cotton",
+                "C": "Spinning yarn",
+                "D": "Weaving fabric"
+            },
+            "correct_answer": "A",
+            "explanation": "The process ends when the product reaches consumers.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which factor can influence the final price of a shirt?",
+            "options": {
+                "A": "Costs added at each stage",
+                "B": "Weather only",
+                "C": "Number of farmers only",
+                "D": "River length"
+            },
+            "correct_answer": "A",
+            "explanation": "Costs and profits added at different stages affect the final price.",
+            "difficulty": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following best describes sustainable production?",
+            "options": {
+                "A": "Production that protects environment and workers",
+                "B": "Production with no workers",
+                "C": "Production with unlimited resources",
+                "D": "Production without selling"
+            },
+            "correct_answer": "A",
+            "explanation": "Sustainable production balances economic, environmental, and social factors.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is it important to understand how a shirt is produced?",
+            "options": {
+                "A": "To appreciate the work and resources involved",
+                "B": "To avoid buying clothes",
+                "C": "To stop farming",
+                "D": "To remove tailors"
+            },
+            "correct_answer": "A",
+            "explanation": "Understanding production increases awareness about labor and environmental impact.",
+            "difficulty": "easy",
+            "source_section": "Section 8.5"
+        }
+    ]
+}

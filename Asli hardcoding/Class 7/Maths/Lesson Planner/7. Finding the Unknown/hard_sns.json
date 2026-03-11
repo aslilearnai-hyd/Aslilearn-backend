@@ -1,0 +1,73 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Finding the Unknown (Simple Equations)",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve multi-step equations involving brackets",
+        "Apply the Distributive Property to solve complex equations",
+        "Solve word problems with multiple conditions",
+        "Solve equations with variables on both sides",
+        "Create algebraic models for real-world geometric and financial problems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Equations with Brackets and Multiple Steps",
+            "topics_covered": [
+                "Using Distributive Law: $a(x + b) = c$",
+                "Combining like terms before solving",
+                "Order of operations in solving (Reverse PEMDAS)"
+            ],
+            "teaching_strategy": [
+                "Area model for distribution visualization",
+                "Layer-by-layer peeling strategy (removing outer terms first)",
+                ""
+            ],
+            "student_activities": [
+                "Solve $2(x - 3) + 5 = 15$",
+                "Simplify and solve $4(2y + 1) = 28$"
+            ],
+            "assessment": [
+                "Complex equation challenge",
+                "Error analysis: 'Spot the mistake in this bracket expansion'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced Word Problems",
+            "topics_covered": [
+                "Age-related problems (Past, Present, Future)",
+                "Geometric problems (Perimeter and unknowns)",
+                "Consecutive integer problems"
+            ],
+            "teaching_strategy": [
+                "Table method for age problems",
+                "Diagram-to-Equation strategy for geometry",
+                ""
+            ],
+            "student_activities": [
+                "Solve: 'The sum of three consecutive integers is 51. Find the numbers.'",
+                "A father is 3 times as old as his son. In 12 years, he will be twice as old. Find their ages."
+            ],
+            "assessment": [
+                "Word problem modeling test",
+                "Final chapter comprehensive exam"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Complex word problem task cards",
+        "Algebraic modeling software",
+        "Challenge worksheets (Olympiad level)",
+        "Step-by-step logic organizers"
+    ],
+    "evaluation_methods": [
+        "Final written examination",
+        "Logical derivation rubrics",
+        "Creative word problem project"
+    ],
+    "teacher_tip": "Encourage students to define their variable clearly first (e.g., 'Let x be the son's age'). Half the battle in hard word problems is just setting up the variable!"
+}

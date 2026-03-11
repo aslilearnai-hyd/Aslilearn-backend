@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Light – Mirrors and Lenses",
+  "generated_at": "2026-03-05T22:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is light?",
+      "options": {
+        "A": "A form of energy that helps us see",
+        "B": "A type of force",
+        "C": "A type of sound",
+        "D": "A type of liquid"
+      },
+      "correct_answer": "A",
+      "explanation": "Light is a form of energy that enables us to see objects.",
+      "difficulty": "easy",
+      "source_section": "Introduction to Light"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is a natural source of light?",
+      "options": {
+        "A": "Bulb",
+        "B": "Sun",
+        "C": "Torch",
+        "D": "Lamp"
+      },
+      "correct_answer": "B",
+      "explanation": "The Sun is the main natural source of light.",
+      "difficulty": "easy",
+      "source_section": "Sources of Light"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is an artificial source of light?",
+      "options": {
+        "A": "Sun",
+        "B": "Stars",
+        "C": "Electric bulb",
+        "D": "Fireflies"
+      },
+      "correct_answer": "C",
+      "explanation": "Electric bulbs are artificial sources of light.",
+      "difficulty": "easy",
+      "source_section": "Sources of Light"
+    },
+    {
+      "question_number": 4,
+      "question": "What happens when light strikes a mirror?",
+      "options": {
+        "A": "It disappears",
+        "B": "It bends",
+        "C": "It reflects",
+        "D": "It breaks"
+      },
+      "correct_answer": "C",
+      "explanation": "Light bounces back from a mirror. This is called reflection.",
+      "difficulty": "easy",
+      "source_section": "Reflection of Light"
+    },
+    {
+      "question_number": 5,
+      "question": "What type of mirror is commonly used in homes?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Spherical mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Plane mirrors are flat mirrors used in homes.",
+      "difficulty": "easy",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 6,
+      "question": "What is reflection of light?",
+      "options": {
+        "A": "Bending of light",
+        "B": "Breaking of light",
+        "C": "Bouncing back of light",
+        "D": "Stopping of light"
+      },
+      "correct_answer": "C",
+      "explanation": "Reflection is the bouncing back of light from a surface.",
+      "difficulty": "easy",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 7,
+      "question": "Which mirror forms an image of the same size as the object?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Magnifying mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Plane mirrors form images that are the same size as the object.",
+      "difficulty": "easy",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 8,
+      "question": "Which mirror is used as a rear-view mirror in vehicles?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Convex mirrors provide a wider field of view.",
+      "difficulty": "easy",
+      "source_section": "Uses of Mirrors"
+    },
+    {
+      "question_number": 9,
+      "question": "Which mirror curves inward?",
+      "options": {
+        "A": "Convex mirror",
+        "B": "Plane mirror",
+        "C": "Concave mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Concave mirrors curve inward.",
+      "difficulty": "easy",
+      "source_section": "Types of Mirrors"
+    },
+    {
+      "question_number": 10,
+      "question": "Which mirror curves outward?",
+      "options": {
+        "A": "Convex mirror",
+        "B": "Plane mirror",
+        "C": "Concave mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Convex mirrors bulge outward.",
+      "difficulty": "easy",
+      "source_section": "Types of Mirrors"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the sideways reversal of images in a mirror called?",
+      "options": {
+        "A": "Refraction",
+        "B": "Lateral inversion",
+        "C": "Reflection",
+        "D": "Diffusion"
+      },
+      "correct_answer": "B",
+      "explanation": "Lateral inversion is the left-right reversal seen in mirrors.",
+      "difficulty": "easy",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 12,
+      "question": "Which mirror is commonly used as a shaving mirror?",
+      "options": {
+        "A": "Convex mirror",
+        "B": "Concave mirror",
+        "C": "Plane mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave mirrors produce magnified images when the object is close.",
+      "difficulty": "easy",
+      "source_section": "Uses of Mirrors"
+    },
+    {
+      "question_number": 13,
+      "question": "Which device uses mirrors to see objects from hidden positions?",
+      "options": {
+        "A": "Periscope",
+        "B": "Microscope",
+        "C": "Thermometer",
+        "D": "Compass"
+      },
+      "correct_answer": "A",
+      "explanation": "Periscopes use mirrors to view objects from hidden positions.",
+      "difficulty": "easy",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 14,
+      "question": "What type of lens is thicker in the middle?",
+      "options": {
+        "A": "Concave lens",
+        "B": "Convex lens",
+        "C": "Plane lens",
+        "D": "Flat lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex lenses are thicker at the center.",
+      "difficulty": "easy",
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 15,
+      "question": "What type of lens is thinner in the middle?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane lens",
+        "D": "Flat lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave lenses are thinner at the center.",
+      "difficulty": "easy",
+      "source_section": "Lenses"
+    },
+    {
+      "question_number": 16,
+      "question": "Which lens is used in magnifying glasses?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane mirror",
+        "D": "Convex mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Convex lenses enlarge objects.",
+      "difficulty": "easy",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 17,
+      "question": "Which lens is used to correct short-sightedness?",
+      "options": {
+        "A": "Convex lens",
+        "B": "Concave lens",
+        "C": "Plane mirror",
+        "D": "Flat lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave lenses help correct short-sighted vision.",
+      "difficulty": "easy",
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 18,
+      "question": "Which property of light helps us see objects in mirrors?",
+      "options": {
+        "A": "Refraction",
+        "B": "Reflection",
+        "C": "Diffusion",
+        "D": "Absorption"
+      },
+      "correct_answer": "B",
+      "explanation": "Mirrors form images due to reflection of light.",
+      "difficulty": "easy",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 19,
+      "question": "Which mirror always forms smaller images?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Concave mirror",
+        "C": "Convex mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "C",
+      "explanation": "Convex mirrors always form smaller images.",
+      "difficulty": "easy",
+      "source_section": "Types of Mirrors"
+    },
+    {
+      "question_number": 20,
+      "question": "Which mirror produces a magnified image when the object is close?",
+      "options": {
+        "A": "Convex mirror",
+        "B": "Concave mirror",
+        "C": "Plane mirror",
+        "D": "Flat mirror"
+      },
+      "correct_answer": "B",
+      "explanation": "Concave mirrors magnify objects placed near them.",
+      "difficulty": "easy",
+      "source_section": "Types of Mirrors"
+    },
+    {
+      "question_number": 21,
+      "question": "Which object reflects light to form images?",
+      "options": {
+        "A": "Mirror",
+        "B": "Stone",
+        "C": "Water",
+        "D": "Sand"
+      },
+      "correct_answer": "A",
+      "explanation": "Mirrors reflect light and form images.",
+      "difficulty": "easy",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 22,
+      "question": "What allows us to see objects around us?",
+      "options": {
+        "A": "Sound",
+        "B": "Light",
+        "C": "Heat",
+        "D": "Wind"
+      },
+      "correct_answer": "B",
+      "explanation": "We see objects when light from them enters our eyes.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 23,
+      "question": "Which mirror is flat in shape?",
+      "options": {
+        "A": "Plane mirror",
+        "B": "Convex mirror",
+        "C": "Concave mirror",
+        "D": "Spherical mirror"
+      },
+      "correct_answer": "A",
+      "explanation": "Plane mirrors have flat surfaces.",
+      "difficulty": "easy",
+      "source_section": "Plane Mirrors"
+    },
+    {
+      "question_number": 24,
+      "question": "Which property of light allows images to form in mirrors?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Absorption",
+        "D": "Diffusion"
+      },
+      "correct_answer": "A",
+      "explanation": "Images in mirrors form due to reflection.",
+      "difficulty": "easy",
+      "source_section": "Reflection"
+    },
+    {
+      "question_number": 25,
+      "question": "Which device uses lenses to see very small objects?",
+      "options": {
+        "A": "Microscope",
+        "B": "Periscope",
+        "C": "Compass",
+        "D": "Barometer"
+      },
+      "correct_answer": "A",
+      "explanation": "Microscopes use lenses to magnify tiny objects.",
+      "difficulty": "easy",
+      "source_section": "Applications"
+    }
+  ]
+}

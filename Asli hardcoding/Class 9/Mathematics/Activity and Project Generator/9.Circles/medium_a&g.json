@@ -1,0 +1,194 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class9_math_ch9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Constructing Tangents from a Point Outside Circle",
+            "objective": "Learn to draw tangents from an external point",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Mark a point P outside the circle",
+                "Construct tangents from P to the circle using compass and ruler",
+                "Label points of contact and tangents"
+            ],
+            "learning_outcome": "Understands tangent construction from external point",
+            "evaluation": "Accurate construction and labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Angle Subtended by Chord",
+            "objective": "Explore angles subtended by a chord at the center and circumference",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with chord AB",
+                "Draw radii OA and OB",
+                "Measure angle at center and angle at circumference subtended by the chord",
+                "Observe relationship"
+            ],
+            "learning_outcome": "Understands angle properties of a circle",
+            "evaluation": "Accurate drawing, measurement, and observation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Cyclic Quadrilateral Verification",
+            "objective": "Verify opposite angles of a cyclic quadrilateral sum to 180°",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a cyclic quadrilateral ABCD inside a circle",
+                "Measure opposite angles (∠A + ∠C, ∠B + ∠D)",
+                "Verify that each pair sums to 180°"
+            ],
+            "learning_outcome": "Understands properties of cyclic quadrilaterals",
+            "evaluation": "Accurate measurement and verification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Tangent Perpendicular to Radius",
+            "objective": "Verify that tangent is perpendicular to radius at point of contact",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Ruler",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Draw a tangent at a point on the circumference",
+                "Draw radius to the point of contact",
+                "Measure the angle between radius and tangent"
+            ],
+            "learning_outcome": "Understands tangent-radius perpendicularity",
+            "evaluation": "Correct construction and measurement (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Equal Tangents from External Point",
+            "objective": "Observe that lengths of tangents from external point are equal",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle and an external point P",
+                "Draw two tangents from P to circle",
+                "Measure lengths of tangents from P to points of contact",
+                "Compare lengths"
+            ],
+            "learning_outcome": "Understands equal tangent property",
+            "evaluation": "Accurate construction and measurement (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Angle in Semicircle",
+            "objective": "Verify that angle subtended by diameter is a right angle",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with diameter AB",
+                "Choose a point C on circumference (not on diameter)",
+                "Draw triangle ABC",
+                "Measure ∠ACB and verify it is 90°"
+            ],
+            "learning_outcome": "Understands right angle property of semicircle",
+            "evaluation": "Accurate drawing and verification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Constructing Circle with Given Chord and Angle",
+            "objective": "Construct a circle passing through a chord making given angle at circumference",
+            "materials": [
+                "Compass",
+                "Protractor",
+                "Ruler",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw chord AB of given length",
+                "Use protractor to mark angle at circumference",
+                "Locate center using perpendicular bisector of chord",
+                "Draw the circle passing through chord endpoints"
+            ],
+            "learning_outcome": "Applies construction with chord-angle property",
+            "evaluation": "Accurate construction and labeling (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Observing Arcs and Sectors",
+            "objective": "Learn to identify major and minor arcs and sectors",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle and chord AB",
+                "Shade minor arc and major arc formed by AB",
+                "Draw radii to form sector corresponding to minor arc"
+            ],
+            "learning_outcome": "Recognises arcs and sectors",
+            "evaluation": "Accurate drawing and labeling (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Concentric Circles with Different Radii",
+            "objective": "Understand concentric circles and measure radius difference",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw two concentric circles with same center but different radii",
+                "Measure the radii",
+                "Observe the distance between circles (ring width)"
+            ],
+            "learning_outcome": "Understands concentric circles and spacing",
+            "evaluation": "Accurate construction and observation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Circles in Daily Life",
+            "objective": "Observe and analyze circles around you",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Look for circular objects in home or school",
+                "Draw at least three examples",
+                "Label center, radius, and chord if applicable"
+            ],
+            "learning_outcome": "Connects circle concepts to real-life objects",
+            "evaluation": "Relevant examples and correct labeling (10 marks)"
+        }
+    ]
+}

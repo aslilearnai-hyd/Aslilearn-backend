@@ -1,0 +1,283 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 6: Lines and Angles",
+    "generated_at": "2026-03-06T01:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If two adjacent angles are x and 2x forming a linear pair, find x.",
+            "answer": "x + 2x = 180 → 3x = 180 → x = 60°.",
+            "key_concepts": [
+                "linear pair equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 2,
+            "question": "If vertically opposite angles are (3x + 10)° and (5x − 30)°, find x.",
+            "answer": "3x + 10 = 5x − 30 → 2x = 40 → x = 20.",
+            "key_concepts": [
+                "vertical angle equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 3,
+            "question": "If two supplementary angles are (x + 20)° and (2x − 10)°, find x.",
+            "answer": "x + 20 + 2x − 10 = 180 → 3x + 10 = 180 → x = 70.",
+            "key_concepts": [
+                "supplementary equation"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "If angles around a point are 2x, 3x and 4x, find x.",
+            "answer": "2x + 3x + 4x = 360 → 9x = 360 → x = 40°.",
+            "key_concepts": [
+                "angles around a point"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 5,
+            "question": "If two angles of a linear pair are (2x + 20)° and (4x − 10)°, find x.",
+            "answer": "2x + 20 + 4x − 10 = 180 → 6x + 10 = 180 → x = 25.",
+            "key_concepts": [
+                "linear pair algebra"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "If one angle of a linear pair is three times the other, find the angles.",
+            "answer": "Let smaller angle = x. Then x + 3x = 180 → x = 45°, other = 135°.",
+            "key_concepts": [
+                "linear pair"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Angles around a point are 80°, 120° and 100°. Find the fourth angle.",
+            "answer": "360 − (80 + 120 + 100) = 60°.",
+            "key_concepts": [
+                "angles around a point"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "If two angles are complementary and equal, find each angle.",
+            "answer": "Each angle = 45°.",
+            "key_concepts": [
+                "complementary angles"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "If two angles are supplementary and equal, find each angle.",
+            "answer": "Each angle = 90°.",
+            "key_concepts": [
+                "supplementary angles"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "If vertically opposite angles are 5x and (3x + 40), find x.",
+            "answer": "5x = 3x + 40 → x = 20.",
+            "key_concepts": [
+                "vertical angles"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why vertically opposite angles are equal.",
+            "answer": "Because each pair forms a linear pair and supplementary relationships prove equality.",
+            "key_concepts": [
+                "vertical angles theorem"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how corresponding angles help identify parallel lines.",
+            "answer": "If corresponding angles formed by a transversal are equal, the two lines are parallel.",
+            "key_concepts": [
+                "corresponding angles"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the relation between interior angles on the same side of a transversal.",
+            "answer": "They are supplementary when lines are parallel.",
+            "key_concepts": [
+                "interior angles"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the supplement of 125°.",
+            "answer": "55°.",
+            "key_concepts": [
+                "supplementary"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the complement of 65°.",
+            "answer": "25°.",
+            "key_concepts": [
+                "complementary"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "State the theorem about lines parallel to the same line.",
+            "answer": "Lines parallel to the same line are parallel to each other.",
+            "key_concepts": [
+                "parallel lines theorem"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the measure of a reflex angle greater than 180° but less than?",
+            "answer": "360°.",
+            "key_concepts": [
+                "reflex angle"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of angle is 175°?",
+            "answer": "Obtuse angle.",
+            "key_concepts": [
+                "obtuse"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of angle is 15°?",
+            "answer": "Acute angle.",
+            "key_concepts": [
+                "acute"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What type of angle is 180°?",
+            "answer": "Straight angle.",
+            "key_concepts": [
+                "straight angle"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What type of angle is 220°?",
+            "answer": "Reflex angle.",
+            "key_concepts": [
+                "reflex"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "State the linear pair axiom.",
+            "answer": "If a ray stands on a line, the sum of the adjacent angles formed is 180°.",
+            "key_concepts": [
+                "linear pair axiom"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the sum of angles around a point?",
+            "answer": "360°.",
+            "key_concepts": [
+                "angles around a point"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 24,
+            "question": "State the vertically opposite angles theorem.",
+            "answer": "When two lines intersect, vertically opposite angles are equal.",
+            "key_concepts": [
+                "vertical angles"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "State the relation between alternate interior angles when lines are parallel.",
+            "answer": "Alternate interior angles are equal.",
+            "key_concepts": [
+                "alternate interior"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.5"
+        }
+    ]
+}

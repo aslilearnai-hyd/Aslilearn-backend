@@ -1,0 +1,139 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "The Road Not Taken",
+  "difficulty": "Hard",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Poem Understanding Activity",
+      "objective": "Understand the meaning of the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Identify the situation faced by the poet",
+        "Write why the poet could not travel both roads"
+      ],
+      "learning_outcome": "Understands the central situation in the poem",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Stanza Analysis",
+      "objective": "Analyze each stanza of the poem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide the poem into four stanzas",
+        "Write the main idea of each stanza",
+        "Discuss your answers in class"
+      ],
+      "learning_outcome": "Develops analytical reading skills",
+      "evaluation": "Correct interpretation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Imagery Identification",
+      "objective": "Identify imagery used in the poem",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Find lines that describe nature",
+        "Write how the poet describes the forest",
+        "Explain how imagery helps visualize the poem"
+      ],
+      "learning_outcome": "Understands poetic imagery",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Choice and Consequence Chart",
+      "objective": "Understand the impact of decisions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Draw two columns named 'Choice' and 'Result'",
+        "Write the poet’s choice in the first column",
+        "Write possible results of that choice in the second column"
+      ],
+      "learning_outcome": "Understands the relationship between choices and outcomes",
+      "evaluation": "Logical explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Figure of Speech Identification",
+      "objective": "Identify poetic devices in the poem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Find examples of metaphor in the poem",
+        "Write what the two roads symbolize",
+        "Explain the meaning of the metaphor"
+      ],
+      "learning_outcome": "Recognizes poetic devices",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Compare the Two Roads",
+      "objective": "Understand the poet's comparison",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the description of the first road",
+        "Write the description of the second road",
+        "Explain how both roads are actually similar"
+      ],
+      "learning_outcome": "Develops comparison skills",
+      "evaluation": "Accurate comparison (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Group Discussion",
+      "objective": "Encourage critical thinking",
+      "materials": ["Notebook"],
+      "steps": [
+        "Discuss why the poet chose the less travelled road",
+        "Share opinions with classmates",
+        "Write the group’s conclusion"
+      ],
+      "learning_outcome": "Improves critical thinking and communication",
+      "evaluation": "Participation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Personal Reflection Writing",
+      "objective": "Relate the poem to personal life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Think about a decision you made in your life",
+        "Write how that decision affected you",
+        "Compare it with the poet’s decision"
+      ],
+      "learning_outcome": "Connects literature with real-life experiences",
+      "evaluation": "Clarity and relevance (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Poetic Tone Activity",
+      "objective": "Identify the tone of the poem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Read the last stanza carefully",
+        "Write the tone of the poet (thoughtful, reflective, etc.)",
+        "Explain why the poet says it with a sigh"
+      ],
+      "learning_outcome": "Understands poetic tone and mood",
+      "evaluation": "Correct interpretation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Alternative Ending Activity",
+      "objective": "Encourage creative thinking",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine the poet took the other road",
+        "Write 5-6 sentences describing what might happen",
+        "Share your ideas in class"
+      ],
+      "learning_outcome": "Develops creative and critical thinking",
+      "evaluation": "Creativity and logical ideas (10 marks)"
+    }
+  ]
+}

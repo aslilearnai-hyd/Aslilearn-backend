@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-05T23:22:00",
+    "difficulty": "hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the zeroes of x²−5x+6.",
+            "answer": "2 and 3",
+            "key_points": [
+                "factorisation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Factorise x³−1.",
+            "answer": "(x−1)(x²+x+1)",
+            "key_points": [
+                "sum of cubes"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Find p(2) if p(x)=x³−8.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Expand (x+y)³.",
+            "answer": "x³+3x²y+3xy²+y³",
+            "key_points": [
+                "cube identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the degree of 7x⁶+3x³+1.",
+            "answer": "6",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Find p(−2) if p(x)=x²+4x+4.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Factorise x²−5x+6.",
+            "answer": "(x−2)(x−3)",
+            "key_points": [
+                "quadratic factorisation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the value of (a+b)²−(a−b)².",
+            "answer": "4ab",
+            "key_points": [
+                "identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Find p(3) if p(x)=x³.",
+            "answer": "27",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Factorise x²−49.",
+            "answer": "(x−7)(x+7)",
+            "key_points": [
+                "difference of squares"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Write the identity for (x+y+z)².",
+            "answer": "x²+y²+z²+2xy+2yz+2zx",
+            "key_points": [
+                "three-variable identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the zero of polynomial 2x−6.",
+            "answer": "3",
+            "key_points": [
+                "zero"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Find p(1) if p(x)=x³−1.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Factorise x³−27.",
+            "answer": "(x−3)(x²+3x+9)",
+            "key_points": [
+                "difference of cubes"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the degree of 5x⁸+2x⁴+1.",
+            "answer": "8",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Find p(−1) if p(x)=x³+1.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Factorise x²+7x+10.",
+            "answer": "(x+5)(x+2)",
+            "key_points": [
+                "quadratic factorisation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Find (a+b)²+(a−b)².",
+            "answer": "2a²+2b²",
+            "key_points": [
+                "identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Find p(4) if p(x)=x²−16.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Factorise x³+8.",
+            "answer": "(x+2)(x²−2x+4)",
+            "key_points": [
+                "sum of cubes"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the degree of 9x⁹+1.",
+            "answer": "9",
+            "key_points": [
+                "degree"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Find p(5) if p(x)=x−5.",
+            "answer": "0",
+            "key_points": [
+                "evaluation"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Factorise x²−11x+24.",
+            "answer": "(x−3)(x−8)",
+            "key_points": [
+                "quadratic factorisation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the value of (x+y)²−x²−y².",
+            "answer": "2xy",
+            "key_points": [
+                "identity"
+            ],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Find p(0) if p(x)=x³+5.",
+            "answer": "5",
+            "key_points": [
+                "constant term"
+            ],
+            "source_section": "Section 2.3"
+        }
+    ]
+}

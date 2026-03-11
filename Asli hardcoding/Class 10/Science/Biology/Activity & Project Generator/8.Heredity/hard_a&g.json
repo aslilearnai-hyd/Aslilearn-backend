@@ -1,0 +1,175 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Heredity",
+    "difficulty": "Hard",
+    "source_pdf": "cbse_class10_science_ch8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Extended Family Pedigree Analysis",
+            "objective": "Analyze inheritance pattern over generations",
+            "materials": [
+                "Notebook",
+                "Family history data"
+            ],
+            "steps": [
+                "Collect trait data (e.g., attached earlobes or color blindness if known) for 3 generations",
+                "Draw detailed pedigree chart using standard symbols",
+                "Determine mode of inheritance (autosomal dominant/recessive or sex-linked)",
+                "Justify with reasons"
+            ],
+            "learning_outcome": "Applies advanced pedigree analysis",
+            "evaluation": "Chart accuracy, inference, and justification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Dihybrid Cross Simulation with Beads",
+            "objective": "Understand independent assortment",
+            "materials": [
+                "Colored beads/beans (4 colors for 2 traits)",
+                "Chart paper"
+            ],
+            "steps": [
+                "Simulate dihybrid cross (e.g., round/yellow × wrinkled/green peas)",
+                "Perform random mating for F2 using beads",
+                "Calculate observed phenotypic ratio and compare to 9:3:3:1",
+                "Discuss chi-square if deviation"
+            ],
+            "learning_outcome": "Demonstrates Mendel's second law quantitatively",
+            "evaluation": "Ratio calculation, comparison, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Blood Group Inheritance Case Studies",
+            "objective": "Handle multiple alleles and codominance",
+            "materials": [
+                "Reference books/internet",
+                "Paper"
+            ],
+            "steps": [
+                "Take real/fictional parent blood groups (e.g., AB × O)",
+                "Predict possible child blood groups with Punnett squares",
+                "Research and explain rare cases (e.g., Bombay phenotype impact)",
+                "Discuss transfusion implications"
+            ],
+            "learning_outcome": "Masters complex allele interactions",
+            "evaluation": "Accuracy, research depth, and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Sex-Linked Traits Probability Calculation",
+            "objective": "Calculate risks in genetic disorders",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Take color blindness (X-linked recessive) example",
+                "If mother carrier × normal father, calculate probabilities for sons/daughters",
+                "Extend to multiple generations or hemophilia",
+                "Present as report with diagrams"
+            ],
+            "learning_outcome": "Applies probability to sex-linked inheritance",
+            "evaluation": "Mathematical accuracy and report (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Variation Data Collection and Graphing",
+            "objective": "Analyze quantitative variation",
+            "materials": [
+                "Measuring tape",
+                "Graph paper"
+            ],
+            "steps": [
+                "Measure height or finger length in 40+ students",
+                "Plot histogram and calculate mean/range",
+                "Discuss causes (genes + environment) and evolutionary significance",
+                "Suggest how natural selection acts on it"
+            ],
+            "learning_outcome": "Links variation to evolution",
+            "evaluation": "Data quality, graph, and discussion (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Mendel's Laws Experimental Design",
+            "objective": "Design hypothetical pea experiment",
+            "materials": [
+                "Notebook",
+                "Reference"
+            ],
+            "steps": [
+                "Design test cross to verify dominance or linkage",
+                "Explain controls, variables, sample size",
+                "Predict results and how to analyze",
+                "Relate to real pea experiments"
+            ],
+            "learning_outcome": "Develops scientific method application",
+            "evaluation": "Design logic and detail (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Debate: Genetics vs Environment in Traits",
+            "objective": "Critically evaluate nature vs nurture",
+            "materials": [
+                "Research notes"
+            ],
+            "steps": [
+                "Divide into teams",
+                "Use examples (height, intelligence, diseases like diabetes)",
+                "Argue with evidence from chapter and beyond",
+                "Conclude with balanced scientific view"
+            ],
+            "learning_outcome": "Builds critical thinking on heredity",
+            "evaluation": "Research, arguments, rebuttal (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Mutation Impact Research Project",
+            "objective": "Explore variations from mutations",
+            "materials": [
+                "Internet/books"
+            ],
+            "steps": [
+                "Research one mutation (sickle cell anemia, Down syndrome)",
+                "Explain cause, inheritance pattern, effects",
+                "Discuss advantage in heterozygous state (e.g., malaria resistance)",
+                "Present as poster/report"
+            ],
+            "learning_outcome": "Understands source of new variations",
+            "evaluation": "Depth, accuracy, presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Advanced Heredity Quiz with Numerical Problems",
+            "objective": "Solve complex problems",
+            "materials": [
+                "Question set"
+            ],
+            "steps": [
+                "Prepare/include problems on ratios, probabilities, crosses",
+                "Conduct timed quiz in groups",
+                "Discuss solutions with explanations"
+            ],
+            "learning_outcome": "Tests higher-order application",
+            "evaluation": "Problem-solving and discussion (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Innovative Genetic Solution Idea",
+            "objective": "Apply heredity to real-world problem",
+            "materials": [
+                "Notebook",
+                "Colors"
+            ],
+            "steps": [
+                "Identify issue (e.g., crop disease resistance, genetic disorder prevention)",
+                "Propose selective breeding or simple genetic idea",
+                "Sketch model, explain inheritance basis",
+                "Present feasibility and ethics"
+            ],
+            "learning_outcome": "Encourages creative application of concepts",
+            "evaluation": "Originality, science accuracy, ethics (10 marks)"
+        }
+    ]
+}

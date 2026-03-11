@@ -1,0 +1,147 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty": "Medium",
+    "source_pdf": "jemh108.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Trig Ratio Identification",
+            "objective": "Identify correct trigonometric ratios",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw right triangle",
+                "Identify opposite, adjacent, hypotenuse"
+            ],
+            "learning_outcome": "Applies trig ratio definitions",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Angle Change Effect",
+            "objective": "Observe change in ratios with angle",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Change angle",
+                "Observe side ratios"
+            ],
+            "learning_outcome": "Understands angle dependency",
+            "evaluation": "Observation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Trig Ratio Table",
+            "objective": "Organise trigonometric ratios",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Create table",
+                "Fill values"
+            ],
+            "learning_outcome": "Systematic organisation",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Real-Life Angle Scenario",
+            "objective": "Apply trigonometry to daily life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose scenario",
+                "Explain triangle formed"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Explanation clarity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Ratio Comparison",
+            "objective": "Compare sin, cos, tan values",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Select angle",
+                "Compare ratios"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Trig Identity Awareness",
+            "objective": "Understand reciprocal relations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write identities",
+                "Explain meaning"
+            ],
+            "learning_outcome": "Conceptual understanding",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Diagram Interpretation",
+            "objective": "Interpret trigonometric diagrams",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse given diagram",
+                "Answer questions"
+            ],
+            "learning_outcome": "Diagram reading skill",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Common Errors List",
+            "objective": "Identify common mistakes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List errors",
+                "Correct them"
+            ],
+            "learning_outcome": "Error awareness",
+            "evaluation": "Correct corrections (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Trig Vocabulary Drill",
+            "objective": "Strengthen terminology",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Define terms"
+            ],
+            "learning_outcome": "Terminology mastery",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Concept Summary",
+            "objective": "Summarise trigonometry basics",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write summary"
+            ],
+            "learning_outcome": "Concept consolidation",
+            "evaluation": "Clarity (10 marks)"
+        }
+    ]
+}

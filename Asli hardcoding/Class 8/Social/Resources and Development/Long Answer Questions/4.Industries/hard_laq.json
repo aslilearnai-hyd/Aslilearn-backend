@@ -1,0 +1,305 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Industries",
+  "generated_at": "2026-03-06T12:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Analyze the importance of industries in economic development.",
+      "answer": "Industries play a crucial role in economic development by producing goods, generating employment, promoting trade, and improving infrastructure. Industrial growth also increases national income and raises living standards.",
+      "answer_outline": [
+        "Production of goods",
+        "Employment generation",
+        "Trade and economic growth"
+      ],
+      "key_concepts": ["economic development", "industries"],
+      "marks": 6,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the industrial system with detailed examples.",
+      "answer": "An industrial system consists of inputs, processes, and outputs. Inputs include raw materials, labor, and capital. The process involves manufacturing activities, and outputs are finished goods. For example, cotton, labor, and machinery are used to produce cloth in a textile factory.",
+      "answer_outline": [
+        "Inputs",
+        "Manufacturing process",
+        "Outputs",
+        "Example"
+      ],
+      "key_concepts": ["industrial system"],
+      "marks": 6,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "Evaluate the factors affecting the location of industries.",
+      "answer": "Industrial location depends on factors such as availability of raw materials, power supply, labor, transport, markets, and government policies. These factors determine the efficiency and cost of industrial production.",
+      "answer_outline": [
+        "Raw materials",
+        "Labor and power",
+        "Transport and markets",
+        "Government policies"
+      ],
+      "key_concepts": ["industrial location"],
+      "marks": 6,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "Discuss the classification of industries based on raw materials and provide examples.",
+      "answer": "Industries are classified based on raw materials as agro-based, mineral-based, marine-based, and forest-based industries. Agro-based industries use agricultural products, mineral-based industries use minerals, marine-based industries depend on ocean resources, and forest-based industries use forest products.",
+      "answer_outline": [
+        "Agro-based industries",
+        "Mineral-based industries",
+        "Marine-based industries",
+        "Forest-based industries"
+      ],
+      "key_concepts": ["industry classification"],
+      "marks": 6,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Compare small-scale and large-scale industries.",
+      "answer": "Small-scale industries require less investment and labor and often produce goods on a smaller scale. Large-scale industries require heavy investment, advanced machinery, and a large workforce to produce goods in bulk.",
+      "answer_outline": [
+        "Small-scale industries",
+        "Large-scale industries",
+        "Key differences"
+      ],
+      "key_concepts": ["scale of industry"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Analyze the role of infrastructure in industrial development.",
+      "answer": "Infrastructure such as roads, railways, ports, electricity, and communication systems supports industrial development by enabling transportation of raw materials and finished goods and ensuring efficient production.",
+      "answer_outline": [
+        "Transport infrastructure",
+        "Power supply",
+        "Communication systems"
+      ],
+      "key_concepts": ["infrastructure"],
+      "marks": 6,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how labor availability influences industrial growth.",
+      "answer": "Labor is essential for operating machinery and carrying out production activities. Regions with skilled and unskilled labor attract industries due to availability of workforce.",
+      "answer_outline": [
+        "Role of labor",
+        "Skilled workforce",
+        "Industrial productivity"
+      ],
+      "key_concepts": ["labor"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 8,
+      "question": "Discuss the relationship between industries and natural resources.",
+      "answer": "Industries depend heavily on natural resources such as minerals, forests, and agricultural products. The availability of these resources influences the location and development of industries.",
+      "answer_outline": [
+        "Dependence on resources",
+        "Resource-based industries"
+      ],
+      "key_concepts": ["natural resources"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the development of major industrial regions in the world.",
+      "answer": "Industrial regions developed in areas with abundant natural resources, skilled labor, advanced technology, and strong transport networks. Examples include Western Europe, Eastern North America, and Eastern Asia.",
+      "answer_outline": [
+        "Industrial concentration",
+        "Examples of regions",
+        "Reasons for development"
+      ],
+      "key_concepts": ["industrial regions"],
+      "marks": 6,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "Analyze the causes of industrial pollution.",
+      "answer": "Industrial pollution is caused by factory emissions, chemical waste, and improper disposal of industrial materials. These pollutants contaminate air, water, and soil.",
+      "answer_outline": [
+        "Factory emissions",
+        "Chemical waste",
+        "Improper disposal"
+      ],
+      "key_concepts": ["industrial pollution"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "Evaluate the effects of industrial pollution on the environment.",
+      "answer": "Industrial pollution damages ecosystems, contaminates water bodies, degrades soil quality, and causes health problems for humans and animals.",
+      "answer_outline": [
+        "Air pollution effects",
+        "Water contamination",
+        "Health impacts"
+      ],
+      "key_concepts": ["environmental impact"],
+      "marks": 6,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the importance of sustainable industrial development.",
+      "answer": "Sustainable industrial development aims to balance industrial growth with environmental protection. It promotes efficient resource use, pollution control, and renewable energy.",
+      "answer_outline": [
+        "Environmental protection",
+        "Efficient resource use",
+        "Sustainable growth"
+      ],
+      "key_concepts": ["sustainability"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 13,
+      "question": "Discuss how recycling can reduce industrial waste.",
+      "answer": "Recycling allows industries to reuse materials, reduce waste production, and conserve natural resources, which helps reduce environmental damage.",
+      "answer_outline": [
+        "Reuse of materials",
+        "Waste reduction",
+        "Resource conservation"
+      ],
+      "key_concepts": ["recycling"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "Analyze the role of technology in modern industries.",
+      "answer": "Technology improves efficiency and productivity in industries by introducing advanced machinery, automation, and digital production methods.",
+      "answer_outline": [
+        "Automation",
+        "Advanced machinery",
+        "Efficiency improvements"
+      ],
+      "key_concepts": ["technology"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the role of government policies in promoting industrial development.",
+      "answer": "Governments promote industrial development through industrial policies, financial support, infrastructure development, and environmental regulations.",
+      "answer_outline": [
+        "Industrial policies",
+        "Infrastructure support",
+        "Financial incentives"
+      ],
+      "key_concepts": ["government policy"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 16,
+      "question": "Discuss the importance of markets in industrial production.",
+      "answer": "Markets are important because industries depend on demand from consumers. Industries are often located near markets to reduce distribution costs.",
+      "answer_outline": ["Consumer demand", "Market proximity"],
+      "key_concepts": ["market"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how industries contribute to regional development.",
+      "answer": "Industries encourage regional development by improving infrastructure, increasing employment opportunities, and attracting investment.",
+      "answer_outline": ["Infrastructure improvement", "Employment growth"],
+      "key_concepts": ["regional development"],
+      "marks": 5,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 18,
+      "question": "Analyze the link between industries and trade.",
+      "answer": "Industries produce goods that are traded locally and internationally. Industrial growth therefore strengthens domestic and global trade networks.",
+      "answer_outline": [
+        "Production of goods",
+        "Domestic and international trade"
+      ],
+      "key_concepts": ["trade"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of energy resources in industrial production.",
+      "answer": "Industries require energy to operate machines and equipment. Reliable energy sources ensure continuous production and industrial efficiency.",
+      "answer_outline": ["Energy requirements", "Industrial productivity"],
+      "key_concepts": ["energy"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 20,
+      "question": "Discuss the importance of transportation in industrial growth.",
+      "answer": "Transportation systems help move raw materials to factories and distribute finished goods to markets, making them essential for industrial growth.",
+      "answer_outline": [
+        "Transport of raw materials",
+        "Distribution of products"
+      ],
+      "key_concepts": ["transport"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the relationship between industrial growth and employment generation.",
+      "answer": "Industrial growth creates jobs in factories, transport, trade, and services, which improves living standards and economic development.",
+      "answer_outline": ["Job creation", "Economic benefits"],
+      "key_concepts": ["employment"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "Evaluate the advantages and disadvantages of industrial development.",
+      "answer": "Industrial development increases economic growth and employment but can also cause environmental pollution and resource depletion if not managed properly.",
+      "answer_outline": ["Advantages", "Disadvantages"],
+      "key_concepts": ["industrial development"],
+      "marks": 6,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how industries influence the standard of living.",
+      "answer": "Industries improve the standard of living by producing goods, providing employment, and increasing economic prosperity.",
+      "answer_outline": ["Production of goods", "Income growth"],
+      "key_concepts": ["living standards"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 24,
+      "question": "Discuss the importance of industrial planning for sustainable development.",
+      "answer": "Industrial planning helps manage resources efficiently, reduce pollution, and ensure long-term economic growth without damaging the environment.",
+      "answer_outline": ["Resource management", "Environmental protection"],
+      "key_concepts": ["industrial planning"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall impact of industries on modern society.",
+      "answer": "Industries shape modern society by producing goods, creating employment, supporting trade, and influencing economic and technological development.",
+      "answer_outline": [
+        "Economic growth",
+        "Technological development",
+        "Improved living standards"
+      ],
+      "key_concepts": ["industries"],
+      "marks": 6,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

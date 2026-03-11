@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Another Peek Beyond the Point",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T01:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Arrange the following in ascending order: 2.08, 2.80, 2.008, 2.0.",
+            "answer": "2.0, 2.008, 2.08, 2.80.",
+            "key_concepts": ["ordering decimals"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "A car covers a distance of 89.1 km in 2.2 hours. What is the average distance covered by it in 1 hour?",
+            "answer": "89.1 ÷ 2.2 = 891 / 22 = 40.5 km.",
+            "key_concepts": ["division of decimals", "word problem"],
+            "marks": 3,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the product: 1.01 × 0.01 × 10.",
+            "answer": "0.0101 × 10 = 0.101.",
+            "key_concepts": ["multiplication of multiple decimals"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Convert 35 mm to cm, m, and km.",
+            "answer": "3.5 cm, 0.035 m, 0.000035 km.",
+            "key_concepts": ["multiple unit conversions"],
+            "marks": 3,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Simplify: 10.05 × 1.05.",
+            "answer": "10.5525",
+            "key_concepts": ["decimal multiplication"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Express 7 rupees 7 paise as rupees using decimals.",
+            "answer": "₹7.07",
+            "key_concepts": ["currency conversion"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the area of a rectangle whose length is 5.7 cm and breadth is 3 cm.",
+            "answer": "Area = 5.7 × 3 = 17.1 sq. cm.",
+            "key_concepts": ["area of rectangle", "multiplication"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Divide 30.94 by 0.7.",
+            "answer": "309.4 / 7 = 44.2.",
+            "key_concepts": ["division by decimal"],
+            "marks": 2,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 9,
+            "question": "What should be added to 15.07 to get 20?",
+            "answer": "20.00 - 15.07 = 4.93.",
+            "key_concepts": ["decimal subtraction"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Write 2.345 in expanded form.",
+            "answer": "2 + 3/10 + 4/100 + 5/1000.",
+            "key_concepts": ["expanded form"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the value of 0.5 × 0.5 × 0.5.",
+            "answer": "0.125",
+            "key_concepts": ["cubing decimals"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Divide 7.75 by 0.25.",
+            "answer": "775 / 25 = 31.",
+            "key_concepts": ["decimal division"],
+            "marks": 2,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Each side of a regular polygon is 2.5 cm in length. The perimeter of the polygon is 12.5 cm. How many sides does the polygon have?",
+            "answer": "12.5 ÷ 2.5 = 5 sides (Pentagon).",
+            "key_concepts": ["perimeter", "polygon sides"],
+            "marks": 3,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Convert 0.005 into a fraction in simplest form.",
+            "answer": "5/1000 = 1/200.",
+            "key_concepts": ["simplifying fractions"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Find: 101.01 × 0.01.",
+            "answer": "1.0101",
+            "key_concepts": ["multiplication"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 16,
+            "question": "If 1 kg of rice costs ₹42.50, what is the cost of 12.5 kg of rice?",
+            "answer": "42.50 × 12.5 = ₹531.25.",
+            "key_concepts": ["multiplication application"],
+            "marks": 3,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Subtract the sum of 2.3 and 4.56 from 10.",
+            "answer": "Sum = 6.86. 10.00 - 6.86 = 3.14.",
+            "key_concepts": ["multi-step decimal operations"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the average of 4.2, 3.8, and 7.6.",
+            "answer": "(4.2 + 3.8 + 7.6) / 3 = 15.6 / 3 = 5.2.",
+            "key_concepts": ["averages"],
+            "marks": 3,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Express 50 paise as a decimal of a rupee.",
+            "answer": "0.50 or 0.5.",
+            "key_concepts": ["fractions to decimals"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Evaluate: 0.80 ÷ 5.",
+            "answer": "0.16",
+            "key_concepts": ["division"],
+            "marks": 1,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Which is smaller: 2.03 or 2.003?",
+            "answer": "2.003",
+            "key_concepts": ["comparison"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Multiply: 11.2 × 0.15.",
+            "answer": "1.68",
+            "key_concepts": ["multiplication"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Convert 4.5 km to meters.",
+            "answer": "4500 m.",
+            "key_concepts": ["unit conversion"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the value of: 3.5 ÷ 1000.",
+            "answer": "0.0035",
+            "key_concepts": ["division by powers of 10"],
+            "marks": 1,
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 25,
+            "question": "A rectangle has an area of 12.25 sq. cm. If its breadth is 2.5 cm, find its length.",
+            "answer": "12.25 ÷ 2.5 = 4.9 cm.",
+            "key_concepts": ["division application"],
+            "marks": 3,
+            "source_section": "Section 2.6"
+        }
+    ]
+}

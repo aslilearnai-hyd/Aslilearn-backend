@@ -1,0 +1,359 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-03-02T10:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a linear equation in two variables and give two examples.",
+            "answer": "A linear equation in two variables is an equation of the form ax + by + c = 0, where a and b are not both zero. Examples include x + y = 5 and 2x − 3y = 7.",
+            "answer_outline": [
+                "Definition",
+                "General form",
+                "Examples"
+            ],
+            "key_concepts": [
+                "linear equation"
+            ],
+            "marks": 5,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain what is meant by a pair of linear equations in two variables.",
+            "answer": "A pair of linear equations in two variables consists of two linear equations involving the same variables, usually x and y, considered simultaneously.",
+            "answer_outline": [
+                "Meaning",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "pair of equations"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the graphical representation of a linear equation.",
+            "answer": "The graphical representation of a linear equation in two variables is a straight line on the coordinate plane.",
+            "answer_outline": [
+                "Graph",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "graph of linear equation"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain what is meant by the solution of a pair of linear equations.",
+            "answer": "The solution of a pair of linear equations is the ordered pair (x, y) that satisfies both equations simultaneously.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "solution"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the graphical method of solving a pair of linear equations.",
+            "answer": "In the graphical method, both equations are plotted on the same coordinate plane. The point of intersection of the two lines gives the solution.",
+            "answer_outline": [
+                "Plotting",
+                "Intersection"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain what is meant by a consistent pair of linear equations.",
+            "answer": "A consistent pair of linear equations is one that has at least one solution.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "consistent system"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain what is meant by an inconsistent pair of linear equations.",
+            "answer": "An inconsistent pair of linear equations is one that has no solution.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "inconsistent system"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the case when a pair of linear equations has a unique solution.",
+            "answer": "A pair of linear equations has a unique solution when their graphs intersect at exactly one point.",
+            "answer_outline": [
+                "Intersecting lines",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "unique solution"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the case when a pair of linear equations has no solution.",
+            "answer": "A pair of linear equations has no solution when their graphs are parallel and never intersect.",
+            "answer_outline": [
+                "Parallel lines",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "no solution"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the case when a pair of linear equations has infinitely many solutions.",
+            "answer": "A pair of linear equations has infinitely many solutions when their graphs coincide completely.",
+            "answer_outline": [
+                "Coincident lines",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "infinitely many solutions"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why the graph of a linear equation is a straight line.",
+            "answer": "Because the highest power of the variable in a linear equation is one, resulting in a straight-line graph.",
+            "answer_outline": [
+                "Degree",
+                "Graph shape"
+            ],
+            "key_concepts": [
+                "linear graph"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain what is meant by an ordered pair.",
+            "answer": "An ordered pair (x, y) represents a point in the coordinate plane and a possible solution of a linear equation.",
+            "answer_outline": [
+                "Definition",
+                "Usage"
+            ],
+            "key_concepts": [
+                "ordered pair"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why two equations are needed to find two unknowns.",
+            "answer": "One equation is not sufficient to determine unique values of two variables, so two equations are required.",
+            "answer_outline": [
+                "Reason",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "unknowns"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the elimination method of solving linear equations.",
+            "answer": "In the elimination method, one variable is eliminated by adding or subtracting the equations, making it easier to solve for the other variable.",
+            "answer_outline": [
+                "Elimination",
+                "Steps"
+            ],
+            "key_concepts": [
+                "elimination method"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the substitution method of solving linear equations.",
+            "answer": "In the substitution method, one variable is expressed in terms of the other and substituted into the second equation.",
+            "answer_outline": [
+                "Substitution",
+                "Steps"
+            ],
+            "key_concepts": [
+                "substitution method"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the cross-multiplication method of solving linear equations.",
+            "answer": "The cross-multiplication method is used when equations are in standard form and gives the solution directly using determinants.",
+            "answer_outline": [
+                "Standard form",
+                "Method"
+            ],
+            "key_concepts": [
+                "cross multiplication"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why graphical method gives only approximate solutions.",
+            "answer": "Because the accuracy of the solution depends on the scale and precision of the graph drawn.",
+            "answer_outline": [
+                "Limitation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain what is meant by a simultaneous equation.",
+            "answer": "Simultaneous equations are equations that are solved together to find common solutions.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "simultaneous equations"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of solving pair of linear equations.",
+            "answer": "They help solve real-life problems involving two unknown quantities.",
+            "answer_outline": [
+                "Importance",
+                "Applications"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how linear equations are used in daily life.",
+            "answer": "Linear equations are used in problems involving cost, distance, speed, and other relationships with constant rates.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": [
+                "daily life applications"
+            ],
+            "marks": 4,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the meaning of intersecting lines in linear equations.",
+            "answer": "Intersecting lines meet at one point, indicating a unique solution of the equations.",
+            "answer_outline": [
+                "Intersection",
+                "Solution"
+            ],
+            "key_concepts": [
+                "intersecting lines"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the meaning of parallel lines in linear equations.",
+            "answer": "Parallel lines never intersect, indicating that the equations have no solution.",
+            "answer_outline": [
+                "Parallel lines",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the meaning of coincident lines in linear equations.",
+            "answer": "Coincident lines lie exactly on each other, indicating infinitely many solutions.",
+            "answer_outline": [
+                "Coincident lines",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "coincident lines"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why algebraic methods are preferred over graphical method.",
+            "answer": "Because algebraic methods give exact solutions, while graphical method gives approximate solutions.",
+            "answer_outline": [
+                "Comparison",
+                "Reason"
+            ],
+            "key_concepts": [
+                "algebraic methods"
+            ],
+            "marks": 4,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the role of slope in determining the nature of solutions.",
+            "answer": "Slope determines whether lines intersect, are parallel, or coincide, thus deciding the number of solutions.",
+            "answer_outline": [
+                "Slope",
+                "Nature of solution"
+            ],
+            "key_concepts": [
+                "slope"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        }
+    ]
+}

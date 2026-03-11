@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Globalisation and the Indian Economy",
+  "difficulty": "Medium",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "MNC Impact Analysis",
+      "objective": "To examine the role of multinational companies in India.",
+      "materials": "Notebook, internet/textbook",
+      "steps": [
+        "Select one multinational company operating in India.",
+        "Identify its products and investment in India.",
+        "Write two positive and two negative impacts."
+      ],
+      "learning_outcome": "Students analyze the impact of MNCs on the Indian economy.",
+      "evaluation": "Check accuracy of information and balanced analysis."
+    },
+    {
+      "title": "Export-Import Comparison Table",
+      "objective": "To compare India’s exports and imports.",
+      "materials": "Notebook, textbook data",
+      "steps": [
+        "List five major exports and five imports of India.",
+        "Create a comparison table.",
+        "Write two observations about trade patterns."
+      ],
+      "learning_outcome": "Students understand trade flow and patterns.",
+      "evaluation": "Assess correctness and clarity of observations."
+    },
+    {
+      "title": "Globalisation Before and After 1991",
+      "objective": "To analyze economic changes after liberalisation.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List key economic features before 1991.",
+        "List major reforms introduced after 1991.",
+        "Write a short comparison paragraph."
+      ],
+      "learning_outcome": "Students understand economic reforms and their impact.",
+      "evaluation": "Check completeness and accuracy of comparison."
+    },
+    {
+      "title": "Small Producers Case Study",
+      "objective": "To examine the impact of globalisation on small producers.",
+      "materials": "Textbook case study, notebook",
+      "steps": [
+        "Read a case study of a small producer.",
+        "Identify challenges faced due to global competition.",
+        "Suggest two solutions for improvement."
+      ],
+      "learning_outcome": "Students analyze challenges faced by local businesses.",
+      "evaluation": "Assess understanding and practicality of suggestions."
+    },
+    {
+      "title": "WTO Role Analysis",
+      "objective": "To understand the functions and impact of WTO.",
+      "materials": "Textbook, notebook",
+      "steps": [
+        "List three functions of WTO.",
+        "Explain how WTO influences trade rules.",
+        "Write one benefit and one criticism of WTO."
+      ],
+      "learning_outcome": "Students understand global trade governance.",
+      "evaluation": "Check clarity and balanced explanation."
+    },
+    {
+      "title": "Foreign Investment Research Activity",
+      "objective": "To identify sectors receiving foreign investment in India.",
+      "materials": "Internet/textbook, notebook",
+      "steps": [
+        "List sectors attracting foreign investment.",
+        "Give one example of foreign company in each sector.",
+        "Explain how FDI supports growth."
+      ],
+      "learning_outcome": "Students understand the importance of foreign direct investment.",
+      "evaluation": "Evaluate relevance of examples and explanation."
+    },
+    {
+      "title": "Consumer Choice Analysis",
+      "objective": "To analyze how globalisation affects consumer choices.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "Choose three products with both Indian and foreign brands.",
+        "Compare price and features.",
+        "Write a short conclusion on benefits to consumers."
+      ],
+      "learning_outcome": "Students understand competition and consumer benefits.",
+      "evaluation": "Assess comparison clarity and reasoning."
+    },
+    {
+      "title": "Interconnection Flowchart",
+      "objective": "To understand how countries are interconnected through trade.",
+      "materials": "Chart paper, markers",
+      "steps": [
+        "Select a product like a mobile phone.",
+        "Identify countries involved in its production.",
+        "Draw a flowchart showing global connections."
+      ],
+      "learning_outcome": "Students understand global production networks.",
+      "evaluation": "Check logical connections and clarity."
+    },
+    {
+      "title": "Impact of Globalisation Debate",
+      "objective": "To evaluate positive and negative effects of globalisation.",
+      "materials": "Notebook, pen",
+      "steps": [
+        "List advantages and disadvantages of globalisation.",
+        "Support each point with one example.",
+        "Summarize your viewpoint in 4–5 lines."
+      ],
+      "learning_outcome": "Students develop critical thinking on globalisation.",
+      "evaluation": "Assess balance of arguments and clarity of viewpoint."
+    },
+    {
+      "title": "Digital Globalisation Study",
+      "objective": "To explore the role of technology in globalisation.",
+      "materials": "Internet, notebook",
+      "steps": [
+        "Identify examples of digital globalisation (e-commerce, IT services).",
+        "Explain how technology connects countries.",
+        "Write two benefits for India."
+      ],
+      "learning_outcome": "Students understand role of technology in global integration.",
+      "evaluation": "Check relevance of examples and explanation."
+    }
+  ]
+}

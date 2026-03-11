@@ -1,0 +1,411 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 11: Electricity",
+    "generated_at": "2026-03-10T23:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define electric current and potential difference. Explain the relationship between them.",
+            "answer": "Electric current is the rate of flow of electric charge (I = Q/t). Potential difference is the work done per unit charge in moving charge from one point to another (V = W/Q). They are related by Ohm's law: V = IR, where current is directly proportional to potential difference at constant temperature.",
+            "answer_outline": [
+                "Definition of current",
+                "Definition of potential difference",
+                "Ohm's law relationship"
+            ],
+            "key_concepts": [
+                "electric current",
+                "potential difference",
+                "Ohm's law"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State Ohm's law and explain it with the help of a V-I graph.",
+            "answer": "Ohm's law states that current through a conductor is directly proportional to potential difference across it at constant temperature (V = IR). The V-I graph is a straight line through origin; slope gives resistance R.",
+            "answer_outline": [
+                "Statement of Ohm's law",
+                "V-I graph description",
+                "Slope interpretation"
+            ],
+            "key_concepts": [
+                "Ohm's law",
+                "V-I graph",
+                "resistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe an experiment to verify Ohm's law.",
+            "answer": "Set up circuit with battery, rheostat, ammeter, voltmeter, and resistor. Vary potential difference using rheostat, record V and I values. Plot V vs I graph; straight line confirms Ohm's law. Slope = R.",
+            "answer_outline": [
+                "Circuit setup",
+                "Procedure",
+                "Graph and conclusion"
+            ],
+            "key_concepts": [
+                "Ohm's law verification",
+                "experiment"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the factors on which resistance of a conductor depends.",
+            "answer": "Resistance R depends on: length l (R ∝ l), area of cross-section A (R ∝ 1/A), material (resistivity ρ), temperature (increases with temperature for metals). Formula: R = ρl/A.",
+            "answer_outline": [
+                "Length dependence",
+                "Area dependence",
+                "Material (resistivity)",
+                "Temperature effect"
+            ],
+            "key_concepts": [
+                "resistance factors",
+                "resistivity"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Derive the expression for equivalent resistance when three resistors are connected in series.",
+            "answer": "In series, same current I flows through each. Total V = V1 + V2 + V3 = IR1 + IR2 + IR3 = I(R1 + R2 + R3). Thus, Req = R1 + R2 + R3.",
+            "answer_outline": [
+                "Current same in series",
+                "Voltage addition",
+                "Equivalent resistance derivation"
+            ],
+            "key_concepts": [
+                "series combination",
+                "equivalent resistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Derive the expression for equivalent resistance when three resistors are connected in parallel.",
+            "answer": "In parallel, same V across each. Total I = I1 + I2 + I3 = V/R1 + V/R2 + V/R3 = V(1/R1 + 1/R2 + 1/R3). Thus, 1/Req = 1/R1 + 1/R2 + 1/R3.",
+            "answer_outline": [
+                "Voltage same in parallel",
+                "Current addition",
+                "Equivalent resistance derivation"
+            ],
+            "key_concepts": [
+                "parallel combination",
+                "equivalent resistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the advantages of parallel combination over series combination in domestic wiring.",
+            "answer": "In parallel, voltage same across devices, each operates independently. If one fails, others continue. In series, current same; one failure breaks circuit. Parallel allows different power devices.",
+            "answer_outline": [
+                "Voltage and independence",
+                "Failure impact",
+                "Domestic wiring suitability"
+            ],
+            "key_concepts": [
+                "parallel advantages",
+                "domestic circuits"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain Joule's law of heating and its applications.",
+            "answer": "Heat produced H = I²Rt (Joule's law). Applications: electric heater (nichrome coil), bulb filament (tungsten), fuse (low melting point wire melts on overload), toaster.",
+            "answer_outline": [
+                "Joule's law formula",
+                "Derivation basis",
+                "Applications"
+            ],
+            "key_concepts": [
+                "heating effect",
+                "Joule's law"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Define electric power. Derive expressions for power in terms of V, I, R.",
+            "answer": "Electric power is rate of electrical energy consumption (P = VI). From V = IR, P = I²R or P = V²/R.",
+            "answer_outline": [
+                "Definition",
+                "P = VI",
+                "Alternative expressions"
+            ],
+            "key_concepts": [
+                "electric power",
+                "power formulas"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain commercial unit of electrical energy and how to calculate electricity bill.",
+            "answer": "Commercial unit is kilowatt-hour (kWh) = 1 unit = 3.6 × 10^6 J. Energy = Power × time (kWh). Bill = units × rate per unit.",
+            "answer_outline": [
+                "kWh definition",
+                "Energy calculation",
+                "Bill example"
+            ],
+            "key_concepts": [
+                "kWh",
+                "electricity bill"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why nichrome is used in heating appliances.",
+            "answer": "Nichrome has high resistivity and high melting point, produces more heat (H = I²Rt) without melting easily. Oxidation resistant, durable for heaters/toasters.",
+            "answer_outline": [
+                "High resistivity",
+                "High melting point",
+                "Practical advantages"
+            ],
+            "key_concepts": [
+                "nichrome",
+                "heating appliances"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the role of fuse in domestic circuits.",
+            "answer": "Fuse is safety device with low melting point wire. On overload/short circuit, high current melts wire, breaks circuit, prevents fire/accident. Placed in live wire.",
+            "answer_outline": [
+                "Fuse working",
+                "Overload protection",
+                "Placement"
+            ],
+            "key_concepts": [
+                "fuse",
+                "safety device"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe the factors affecting resistivity of a material.",
+            "answer": "Resistivity ρ depends on material nature and temperature. Increases with temperature for metals (free electrons collide more), decreases for semiconductors. Independent of dimensions.",
+            "answer_outline": [
+                "Material dependence",
+                "Temperature effect",
+                "Dimension independence"
+            ],
+            "key_concepts": [
+                "resistivity",
+                "temperature coefficient"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why transmission of electric power is done at high voltage.",
+            "answer": "Power loss = I²R. High voltage reduces current for same power (P = VI). Lower current means lower I²R loss in transmission lines, efficient long-distance power transfer.",
+            "answer_outline": [
+                "Power loss formula",
+                "High V low I",
+                "Efficiency gain"
+            ],
+            "key_concepts": [
+                "power transmission",
+                "high voltage"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the difference between ohmic and non-ohmic conductors with examples.",
+            "answer": "Ohmic: obey Ohm's law, V-I straight line (e.g., metal wire at constant temp). Non-ohmic: do not obey, V-I curve (e.g., filament bulb - resistance increases with temp; diode - unidirectional).",
+            "answer_outline": [
+                "Ohmic definition and example",
+                "Non-ohmic definition and examples",
+                "V-I characteristics"
+            ],
+            "key_concepts": [
+                "ohmic conductors",
+                "non-ohmic"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Calculate the equivalent resistance when resistors are connected in mixed series-parallel combination.",
+            "answer": "First find parallel equivalent (1/Rp = 1/R + 1/R), then add series resistors. Example: two 4Ω parallel (Rp=2Ω) in series with 6Ω → Req = 2 + 6 = 8Ω.",
+            "answer_outline": [
+                "Parallel calculation",
+                "Series addition",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "mixed combination",
+                "equivalent resistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain earthing in domestic electrical circuits.",
+            "answer": "Earthing connects metal body of appliances to ground via earth wire. Provides low-resistance path for leakage current, prevents shock. Earth wire green/yellow, connected to ground pit.",
+            "answer_outline": [
+                "Earthing purpose",
+                "Leakage protection",
+                "Wire and connection"
+            ],
+            "key_concepts": [
+                "earthing",
+                "safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the heating effect of electric current with formula and one numerical application.",
+            "answer": "Heating effect: H = I²Rt. Example: 5A current through 10Ω resistor for 2 min → H = 25 × 10 × 120 = 30000 J = 30 kJ.",
+            "answer_outline": [
+                "Joule's law",
+                "Formula",
+                "Numerical calculation"
+            ],
+            "key_concepts": [
+                "heating effect",
+                "Joule's law"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why metals like copper are used for electrical transmission wires.",
+            "answer": "Copper has low resistivity, good conductor, low power loss (I²R small), ductile for wires, corrosion resistant, cost-effective for long-distance transmission.",
+            "answer_outline": [
+                "Low resistivity",
+                "Low loss",
+                "Practical properties"
+            ],
+            "key_concepts": [
+                "copper conductor",
+                "transmission"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe domestic electric circuits with diagram.",
+            "answer": "Live wire (red), neutral (black), earth (green). Parallel connections for appliances, fuse/MCB in live wire, earthing for safety. Main switch and distribution board.",
+            "answer_outline": [
+                "Wires and colours",
+                "Parallel setup",
+                "Safety devices"
+            ],
+            "key_concepts": [
+                "domestic circuits",
+                "wiring diagram"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the principle behind electric fuse and MCB.",
+            "answer": "Fuse: low melting wire melts on overload. MCB (Miniature Circuit Breaker): electromagnet trips switch on overload. Both protect from short circuit/fire; MCB resettable.",
+            "answer_outline": [
+                "Fuse mechanism",
+                "MCB mechanism",
+                "Comparison"
+            ],
+            "key_concepts": [
+                "fuse",
+                "MCB"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 22,
+            "question": "Calculate power dissipated in a resistor and explain energy conservation.",
+            "answer": "Power P = I²R or V²/R. Energy conserved: electrical energy converts to heat/light. Example: 100W bulb at 220V → I = P/V = 0.45A, R = V²/P = 484Ω.",
+            "answer_outline": [
+                "Power formulas",
+                "Energy conversion",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "power dissipation",
+                "energy conservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain temperature dependence of resistance in conductors and semiconductors.",
+            "answer": "Conductors: resistance increases with temperature (more collisions). Semiconductors: decreases (more charge carriers released). Thermistors use this property.",
+            "answer_outline": [
+                "Conductors behaviour",
+                "Semiconductors behaviour",
+                "Applications"
+            ],
+            "key_concepts": [
+                "temperature effect",
+                "conductors vs semiconductors"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss the importance of earthing in preventing electric shocks.",
+            "answer": "Earthing provides low-resistance path to ground for fault current, trips circuit breaker/fuse, prevents user shock. Metal appliances earthed via green wire.",
+            "answer_outline": [
+                "Fault current path",
+                "Shock prevention",
+                "Wiring role"
+            ],
+            "key_concepts": [
+                "earthing",
+                "shock safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.7"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the working of an electric bulb and why tungsten is used as filament.",
+            "answer": "Current heats tungsten filament to incandescence, emits light. Tungsten: high melting point (3422°C), high resistivity, doesn't oxidise easily in vacuum/inert gas.",
+            "answer_outline": [
+                "Heating to glow",
+                "Tungsten properties",
+                "Advantages"
+            ],
+            "key_concepts": [
+                "electric bulb",
+                "tungsten filament"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.5"
+        }
+    ]
+}

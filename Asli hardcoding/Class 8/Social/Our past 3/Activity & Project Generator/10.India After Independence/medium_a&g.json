@@ -1,0 +1,159 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science (History)",
+  "chapter": "India After Independence",
+  "difficulty": "Medium",
+  "source_book": "NCERT - Our Pasts III",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Constitution Makers Research Activity",
+      "objective": "Understand the role of leaders in drafting the Indian Constitution",
+      "materials": [
+        "Textbook",
+        "Internet or library books",
+        "Chart paper",
+        "Marker pens"
+      ],
+      "steps": [
+        "Read about the making of the Indian Constitution",
+        "Identify key members of the Constituent Assembly such as Dr. B.R. Ambedkar, Jawaharlal Nehru, and Rajendra Prasad",
+        "Write their roles in the drafting process",
+        "Prepare a chart showing their contributions"
+      ],
+      "learning_outcome": "Students understand the importance of the Constituent Assembly and its leaders",
+      "evaluation": "Accuracy of research and presentation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "States Reorganisation Map Project",
+      "objective": "Analyze how linguistic demands led to the formation of new states",
+      "materials": [
+        "Outline map of India",
+        "Atlas",
+        "Color pencils",
+        "Textbook"
+      ],
+      "steps": [
+        "Study the States Reorganisation Act of 1956",
+        "Mark states formed or reorganized based on language",
+        "Color each state and label its official language",
+        "Write a short note explaining why linguistic states were created"
+      ],
+      "learning_outcome": "Students understand the role of language in administrative reorganization",
+      "evaluation": "Correct map work and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Refugee Rehabilitation Study",
+      "objective": "Understand the challenges faced after Partition and how refugees were resettled",
+      "materials": ["Textbook", "Notebook", "Photographs if available"],
+      "steps": [
+        "Read about the migration during Partition",
+        "List problems faced by refugees such as housing, employment, and security",
+        "Study how the government helped them settle",
+        "Write a short report summarizing your findings"
+      ],
+      "learning_outcome": "Students understand the social and economic impact of Partition",
+      "evaluation": "Depth of explanation and clarity (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Five Year Plans Analysis",
+      "objective": "Examine the goals and achievements of India's early Five-Year Plans",
+      "materials": ["Textbook", "Chart paper", "Marker pens"],
+      "steps": [
+        "Study the objectives of the First and Second Five-Year Plans",
+        "Identify focus areas such as agriculture, irrigation, and industry",
+        "Prepare a comparative chart showing their goals and achievements",
+        "Discuss how they contributed to India's development"
+      ],
+      "learning_outcome": "Students understand planned economic development in independent India",
+      "evaluation": "Comparison and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Green Revolution Case Study",
+      "objective": "Analyze the impact of the Green Revolution on Indian agriculture",
+      "materials": ["Textbook", "Notebook", "Chart paper"],
+      "steps": [
+        "Read about the Green Revolution and the introduction of high-yield variety seeds",
+        "Identify regions where it had major impact",
+        "List benefits such as increased food production",
+        "Discuss challenges like environmental issues"
+      ],
+      "learning_outcome": "Students understand both positive and negative effects of agricultural modernization",
+      "evaluation": "Balanced explanation and presentation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Language and Identity Discussion",
+      "objective": "Explore how language influences identity and politics in India",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify different languages spoken across India",
+        "Study movements demanding linguistic states",
+        "Discuss why language became an important political issue",
+        "Write a summary of your discussion"
+      ],
+      "learning_outcome": "Students understand how language shaped political and regional identity",
+      "evaluation": "Quality of reasoning and explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Science and Technology Development Timeline",
+      "objective": "Understand India's progress in science and technology after independence",
+      "materials": ["Chart paper", "Marker pens", "Textbook"],
+      "steps": [
+        "List important institutions such as ISRO and DRDO",
+        "Identify key achievements like satellite launches and nuclear research",
+        "Create a timeline showing major milestones",
+        "Add brief descriptions for each event"
+      ],
+      "learning_outcome": "Students recognize India's advancements in science and technology",
+      "evaluation": "Accuracy and organization of information (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Role of Women in Nation Building",
+      "objective": "Understand the contributions of women in post-independence India",
+      "materials": ["Textbook", "Notebook", "Internet for additional research"],
+      "steps": [
+        "Identify notable women leaders and reformers",
+        "Study their contributions in politics, education, or social reform",
+        "Prepare a short report about their work",
+        "Share findings with classmates"
+      ],
+      "learning_outcome": "Students appreciate the role of women in shaping modern India",
+      "evaluation": "Quality of research and explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Urban and Rural Development Comparison",
+      "objective": "Analyze development differences between rural and urban areas",
+      "materials": ["Notebook", "Pen", "Local observations"],
+      "steps": [
+        "Observe facilities available in your town or village",
+        "List services such as roads, schools, hospitals, and markets",
+        "Compare these with facilities in nearby urban areas",
+        "Write a short comparative report"
+      ],
+      "learning_outcome": "Students understand uneven development patterns in India",
+      "evaluation": "Observation and analytical explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Debate on Development Policies",
+      "objective": "Encourage critical thinking about India's development strategies",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Divide the class into two groups",
+        "Choose a topic such as 'Industrial development vs agricultural development'",
+        "Each group prepares arguments",
+        "Conduct a classroom debate"
+      ],
+      "learning_outcome": "Students develop analytical and communication skills while understanding development issues",
+      "evaluation": "Participation and strength of arguments (10 marks)"
+    }
+  ]
+}

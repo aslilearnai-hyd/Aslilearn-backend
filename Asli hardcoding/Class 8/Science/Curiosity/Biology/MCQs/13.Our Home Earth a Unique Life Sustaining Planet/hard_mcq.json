@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet",
+  "generated_at": "2026-03-05T21:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If Earth were much closer to the Sun, which of the following would most likely occur?",
+      "options": {
+        "A": "Oceans would freeze",
+        "B": "Liquid water would evaporate quickly",
+        "C": "Atmosphere would become thicker",
+        "D": "Earth’s gravity would increase"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher temperatures would cause water to evaporate, making life difficult.",
+      "difficulty": "hard",
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which condition would most likely prevent a planet from supporting life?",
+      "options": {
+        "A": "Presence of liquid water",
+        "B": "Moderate temperature",
+        "C": "Absence of atmosphere",
+        "D": "Presence of sunlight"
+      },
+      "correct_answer": "C",
+      "explanation": "Without an atmosphere, gases escape and harmful radiation reaches the surface.",
+      "difficulty": "hard",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following best explains why Venus is hotter than Mercury?",
+      "options": {
+        "A": "Venus is closer to the Sun",
+        "B": "Venus has a thick carbon dioxide atmosphere",
+        "C": "Venus rotates faster",
+        "D": "Mercury has oceans"
+      },
+      "correct_answer": "B",
+      "explanation": "The thick carbon dioxide atmosphere traps heat due to a strong greenhouse effect.",
+      "difficulty": "hard",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 4,
+      "question": "If Earth lost its magnetic field, which event would most likely happen?",
+      "options": {
+        "A": "Increase in rainfall",
+        "B": "Solar wind damaging the atmosphere",
+        "C": "Earth’s gravity decreasing",
+        "D": "Plants growing faster"
+      },
+      "correct_answer": "B",
+      "explanation": "Magnetic fields deflect harmful charged particles from the Sun.",
+      "difficulty": "hard",
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Which combination of factors mainly maintains Earth's temperature balance?",
+      "options": {
+        "A": "Distance from Sun and greenhouse gases",
+        "B": "Ocean currents and mountains",
+        "C": "Wind and rainfall",
+        "D": "Volcanoes and earthquakes"
+      },
+      "correct_answer": "A",
+      "explanation": "Earth’s distance and greenhouse gases maintain moderate temperatures.",
+      "difficulty": "hard",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 6,
+      "question": "If photosynthesis stopped on Earth, what would be the first major consequence?",
+      "options": {
+        "A": "Decrease in oxygen levels",
+        "B": "Increase in rainfall",
+        "C": "Increase in soil nutrients",
+        "D": "Decrease in gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "Photosynthesis produces oxygen needed by most living organisms.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which system interaction mainly supports plant growth?",
+      "options": {
+        "A": "Atmosphere and geosphere",
+        "B": "Hydrosphere and biosphere",
+        "C": "Geosphere, hydrosphere, and atmosphere",
+        "D": "Atmosphere and lithosphere only"
+      },
+      "correct_answer": "C",
+      "explanation": "Plants need soil, water, and air to grow.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which situation best shows the interaction of Earth's systems?",
+      "options": {
+        "A": "Rain falling on land and supporting plant growth",
+        "B": "Wind blowing over mountains",
+        "C": "Sun rising in the east",
+        "D": "Earth rotating on its axis"
+      },
+      "correct_answer": "A",
+      "explanation": "Rain (hydrosphere), land (geosphere), and plants (biosphere) interact.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which factor would most directly affect biodiversity?",
+      "options": {
+        "A": "Climate stability",
+        "B": "Deforestation",
+        "C": "Sunrise and sunset",
+        "D": "Moon phases"
+      },
+      "correct_answer": "B",
+      "explanation": "Deforestation destroys habitats and reduces biodiversity.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 10,
+      "question": "Which environmental change can disrupt food chains most severely?",
+      "options": {
+        "A": "Small temperature change",
+        "B": "Extinction of producers",
+        "C": "Seasonal rainfall",
+        "D": "Wind direction changes"
+      },
+      "correct_answer": "B",
+      "explanation": "Producers form the base of all food chains.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which planet characteristic is most important for retaining an atmosphere?",
+      "options": {
+        "A": "Distance from Sun",
+        "B": "Planetary gravity",
+        "C": "Number of moons",
+        "D": "Color of surface"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity holds atmospheric gases around the planet.",
+      "difficulty": "hard",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which situation best explains the greenhouse effect?",
+      "options": {
+        "A": "Heat trapped by atmospheric gases",
+        "B": "Clouds blocking sunlight",
+        "C": "Earth reflecting sunlight",
+        "D": "Ocean waves absorbing heat"
+      },
+      "correct_answer": "A",
+      "explanation": "Greenhouse gases trap heat in the atmosphere.",
+      "difficulty": "hard",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which process maintains ecological balance by recycling nutrients?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Respiration",
+        "C": "Decomposition",
+        "D": "Evaporation"
+      },
+      "correct_answer": "C",
+      "explanation": "Decomposers break down dead organisms and return nutrients to soil.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4.3"
+    },
+    {
+      "question_number": 14,
+      "question": "If carbon dioxide levels increased greatly, what would be the likely outcome?",
+      "options": {
+        "A": "Cooling of Earth",
+        "B": "Global warming",
+        "C": "Decrease in rainfall",
+        "D": "Increase in oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Excess CO₂ strengthens the greenhouse effect.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 15,
+      "question": "Which statement best explains ecological balance?",
+      "options": {
+        "A": "Equal number of plants and animals",
+        "B": "Stable interactions among organisms and environment",
+        "C": "Maximum rainfall every year",
+        "D": "Equal number of predators and prey"
+      },
+      "correct_answer": "B",
+      "explanation": "Ecological balance involves stable relationships among organisms and environment.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 16,
+      "question": "Which environmental action would best reduce climate change?",
+      "options": {
+        "A": "Increasing fossil fuel use",
+        "B": "Reducing forest area",
+        "C": "Using renewable energy",
+        "D": "Burning waste"
+      },
+      "correct_answer": "C",
+      "explanation": "Renewable energy reduces greenhouse gas emissions.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Which event would most affect the water cycle?",
+      "options": {
+        "A": "Increase in wind speed",
+        "B": "Large-scale deforestation",
+        "C": "Moon rotation",
+        "D": "Ocean currents"
+      },
+      "correct_answer": "B",
+      "explanation": "Forests influence rainfall and evaporation processes.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 18,
+      "question": "Which factor is essential for the survival of aquatic ecosystems?",
+      "options": {
+        "A": "High soil fertility",
+        "B": "Dissolved oxygen in water",
+        "C": "Strong winds",
+        "D": "Mountain ranges"
+      },
+      "correct_answer": "B",
+      "explanation": "Aquatic organisms require dissolved oxygen for respiration.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Which condition would most likely reduce biodiversity?",
+      "options": {
+        "A": "Stable ecosystems",
+        "B": "Habitat destruction",
+        "C": "Moderate rainfall",
+        "D": "Balanced food chains"
+      },
+      "correct_answer": "B",
+      "explanation": "Habitat loss directly reduces species populations.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 20,
+      "question": "Which event could disrupt Earth's atmospheric balance?",
+      "options": {
+        "A": "More tree planting",
+        "B": "Rapid industrial emissions",
+        "C": "Natural rainfall",
+        "D": "Ocean waves"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial emissions increase greenhouse gases and pollution.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which process in plants directly supports life by producing food and oxygen?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Germination"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis produces food and oxygen essential for ecosystems.",
+      "difficulty": "hard",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which global environmental issue is mainly caused by increased greenhouse gases?",
+      "options": {
+        "A": "Soil erosion",
+        "B": "Global warming",
+        "C": "Desertification",
+        "D": "Water pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Greenhouse gases trap heat and warm Earth’s climate.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 23,
+      "question": "Which environmental solution helps maintain ecological balance?",
+      "options": {
+        "A": "Overhunting animals",
+        "B": "Conservation of ecosystems",
+        "C": "Increasing pollution",
+        "D": "Deforestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Conservation protects ecosystems and biodiversity.",
+      "difficulty": "hard",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor mainly determines whether a planet can support complex life?",
+      "options": {
+        "A": "Surface color",
+        "B": "Presence of water and atmosphere",
+        "C": "Number of moons",
+        "D": "Length of year"
+      },
+      "correct_answer": "B",
+      "explanation": "Water and atmosphere are essential for sustaining life.",
+      "difficulty": "hard",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best summarizes why Earth supports life?",
+      "options": {
+        "A": "Earth is the largest planet",
+        "B": "Earth has a balanced combination of water, atmosphere, temperature, and protection from radiation",
+        "C": "Earth has many mountains",
+        "D": "Earth rotates quickly"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiple environmental factors together make Earth suitable for life.",
+      "difficulty": "hard",
+      "source_section": "Section 13.1"
+    }
+  ]
+}

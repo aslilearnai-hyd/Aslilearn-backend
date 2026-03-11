@@ -1,0 +1,164 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Earth, Moon, and the Sun",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze Earth's rotation, revolution, and axial tilt mathematically",
+        "Explain causes of day-length variation and solstices",
+        "Understand Moon phases and predict lunar calendar events",
+        "Analyze solar and lunar eclipses and predict their occurrence",
+        "Calculate tidal variations using Moon and Sun alignment",
+        "Interpret complex diagrams and real-world observations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Earth’s Rotation and Time Zones",
+            "topics_covered": [
+                "Earth’s rotation and its effect on day/night duration",
+                "Calculation of local and standard time differences",
+                "Concept of international date line"
+            ],
+            "teaching_strategy": [
+                "Demonstration with globe and light source",
+                "Problem-solving using rotation and longitude"
+            ],
+            "student_activities": [
+                "Calculate time difference between two cities",
+                "Observe day-night simulation for different latitudes"
+            ],
+            "assessment": [
+                "Problem-solving exercises",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Earth’s Revolution and Seasons – Advanced",
+            "topics_covered": [
+                "Earth’s revolution around Sun",
+                "Tilt of 23.5° and seasonal changes",
+                "Calculation of day-length variation in different latitudes",
+                "Understanding solstices and equinoxes quantitatively"
+            ],
+            "teaching_strategy": [
+                "Globe simulation of tilted axis",
+                "Discussion using diagrams and charts"
+            ],
+            "student_activities": [
+                "Predict day-length for summer/winter solstice at different latitudes",
+                "Compare seasonal differences between hemispheres"
+            ],
+            "assessment": [
+                "Diagram and calculation checking",
+                "Oral reasoning questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Moon Phases and Lunar Calendar",
+            "topics_covered": [
+                "Moon phases and positions relative to Earth and Sun",
+                "Lunar month calculation (29.5 days)",
+                "Predicting dates of new Moon and full Moon"
+            ],
+            "teaching_strategy": [
+                "Moon modeling with lamp and ball",
+                "Discussion of lunar calendar and its applications"
+            ],
+            "student_activities": [
+                "Construct Moon phase chart for a month",
+                "Predict phases on given dates"
+            ],
+            "assessment": [
+                "Chart and prediction evaluation",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Eclipses – Solar and Lunar Analysis",
+            "topics_covered": [
+                "Causes of solar and lunar eclipses",
+                "Conditions for total, partial, and annular eclipses",
+                "Predicting eclipses using Moon’s orbit and nodes"
+            ],
+            "teaching_strategy": [
+                "Hands-on demonstration with globe, lamp, and ball",
+                "Analytical discussion on alignment conditions"
+            ],
+            "student_activities": [
+                "Simulate eclipses and measure angles",
+                "Determine eclipse types for given positions"
+            ],
+            "assessment": [
+                "Practical observation",
+                "Diagram-based evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Tides and Gravitational Effects",
+            "topics_covered": [
+                "Gravitational pull of Moon and Sun",
+                "Spring and neap tides",
+                "Tidal calculations and predictions",
+                "Effect of alignment and declination of Moon"
+            ],
+            "teaching_strategy": [
+                "Model tides using water and Moon-Sun alignment",
+                "Problem-solving for tidal height estimation"
+            ],
+            "student_activities": [
+                "Predict high and low tides for given dates",
+                "Observe variations in tide with Moon phase"
+            ],
+            "assessment": [
+                "Tidal calculation worksheets",
+                "Practical demonstration"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Advanced Diagrams, and Q&A",
+            "topics_covered": [
+                "Earth’s rotation and revolution",
+                "Day-night duration and seasons",
+                "Moon phases, eclipses, and tides",
+                "Predicting real-world astronomical events"
+            ],
+            "teaching_strategy": [
+                "Advanced diagram-based quiz",
+                "Problem-solving in groups",
+                "Rapid-fire conceptual questioning"
+            ],
+            "student_activities": [
+                "Draw and label complex Earth-Sun-Moon diagrams",
+                "Solve reasoning problems on eclipses, seasons, and tides"
+            ],
+            "assessment": [
+                "Written problem-solving test",
+                "Diagram accuracy evaluation",
+                "Class participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Globe with tilt mechanism",
+        "Lamp for Sun simulation",
+        "Ball for Moon modeling",
+        "Charts of Earth, Moon, Sun, and tides",
+        "Markers or Chalk"
+    ],
+    "evaluation_methods": [
+        "Oral reasoning questions",
+        "Practical demonstrations",
+        "Problem-solving worksheets",
+        "Diagram and chart evaluation",
+        "Short written tests"
+    ],
+    "teacher_tip": "Encourage analytical reasoning, diagram interpretation, and calculations; use real-world examples for tides, eclipses, and day-length variations."
+}

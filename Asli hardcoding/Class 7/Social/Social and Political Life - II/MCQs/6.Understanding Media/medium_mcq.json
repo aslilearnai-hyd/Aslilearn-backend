@@ -1,0 +1,358 @@
+{
+  "content_type": "Multiple Choice Questions",
+  "chapter": "Chapter 6: Understanding Media",
+  "generated_at": "2026-03-07T19:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is media called 'mass media'?",
+      "options": {
+        "A": "Because it reaches a large number of people",
+        "B": "Because it is used only by the government",
+        "C": "Because it is available only in cities",
+        "D": "Because it is used only for entertainment"
+      },
+      "correct_answer": "A",
+      "explanation": "Mass media reaches a very large audience at the same time.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is an example of print media?",
+      "options": {
+        "A": "Television",
+        "B": "Newspaper",
+        "C": "Radio",
+        "D": "Podcast"
+      },
+      "correct_answer": "B",
+      "explanation": "Newspapers are part of print media because they are printed publications.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which factor strongly influences what appears in media?",
+      "options": {
+        "A": "Weather conditions",
+        "B": "Technology only",
+        "C": "Money and business interests",
+        "D": "School education"
+      },
+      "correct_answer": "C",
+      "explanation": "Media is often influenced by business interests and the need to earn profit.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Advertisements are mainly used in media to:",
+      "options": {
+        "A": "Provide entertainment",
+        "B": "Promote products and services",
+        "C": "Conduct elections",
+        "D": "Publish laws"
+      },
+      "correct_answer": "B",
+      "explanation": "Advertisements promote products and help companies reach customers.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do television channels show many advertisements?",
+      "options": {
+        "A": "To increase their income",
+        "B": "To reduce viewers",
+        "C": "To avoid news reporting",
+        "D": "To promote education only"
+      },
+      "correct_answer": "A",
+      "explanation": "Advertisements are a major source of revenue for television channels.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is NOT a form of media?",
+      "options": {
+        "A": "Radio",
+        "B": "Television",
+        "C": "Newspaper",
+        "D": "Notebook"
+      },
+      "correct_answer": "D",
+      "explanation": "A notebook is not used for mass communication.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Media plays an important role in a democracy because it:",
+      "options": {
+        "A": "Controls the government",
+        "B": "Informs citizens about important issues",
+        "C": "Stops elections",
+        "D": "Creates laws"
+      },
+      "correct_answer": "B",
+      "explanation": "Media helps citizens stay informed and participate in democracy.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following is electronic media?",
+      "options": {
+        "A": "Magazine",
+        "B": "Poster",
+        "C": "Television",
+        "D": "Book"
+      },
+      "correct_answer": "C",
+      "explanation": "Television is an electronic medium that broadcasts audio and video.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Why do companies advertise their products on media platforms?",
+      "options": {
+        "A": "To reduce sales",
+        "B": "To inform and attract customers",
+        "C": "To avoid competition",
+        "D": "To close their businesses"
+      },
+      "correct_answer": "B",
+      "explanation": "Advertisements help companies inform people and increase sales.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which group mainly owns many media companies?",
+      "options": {
+        "A": "Farmers",
+        "B": "Business groups",
+        "C": "Teachers",
+        "D": "Students"
+      },
+      "correct_answer": "B",
+      "explanation": "Many media houses are owned by large business corporations.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What does media often try to increase?",
+      "options": {
+        "A": "Agriculture",
+        "B": "Viewership and profits",
+        "C": "School holidays",
+        "D": "Government taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher viewership increases advertising revenue.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following best describes media coverage?",
+      "options": {
+        "A": "Reporting and presenting news",
+        "B": "Writing textbooks",
+        "C": "Producing crops",
+        "D": "Teaching in schools"
+      },
+      "correct_answer": "A",
+      "explanation": "Media coverage refers to reporting events and issues.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of these is a common source of income for media companies?",
+      "options": {
+        "A": "Advertisements",
+        "B": "Farming",
+        "C": "Mining",
+        "D": "Fishing"
+      },
+      "correct_answer": "A",
+      "explanation": "Advertisements provide a major part of media revenue.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What does media help people understand?",
+      "options": {
+        "A": "Current events",
+        "B": "Only school lessons",
+        "C": "Only sports",
+        "D": "Only advertisements"
+      },
+      "correct_answer": "A",
+      "explanation": "Media provides information about events and issues in society.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Which medium spreads information quickly across the world?",
+      "options": {
+        "A": "Television",
+        "B": "Radio",
+        "C": "Internet",
+        "D": "Poster"
+      },
+      "correct_answer": "C",
+      "explanation": "The internet allows information to spread instantly worldwide.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are attractive advertisements created?",
+      "options": {
+        "A": "To entertain only",
+        "B": "To encourage people to buy products",
+        "C": "To reduce competition",
+        "D": "To increase taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "Advertisements are designed to influence consumer behavior.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which media platform mainly uses sound to communicate?",
+      "options": {
+        "A": "Radio",
+        "B": "Television",
+        "C": "Newspaper",
+        "D": "Magazine"
+      },
+      "correct_answer": "A",
+      "explanation": "Radio communicates information primarily through audio.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of these helps media attract advertisers?",
+      "options": {
+        "A": "Higher audience numbers",
+        "B": "Lower viewership",
+        "C": "Fewer programs",
+        "D": "Less coverage"
+      },
+      "correct_answer": "A",
+      "explanation": "A larger audience attracts more advertisers.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Media can influence people's opinions by:",
+      "options": {
+        "A": "Ignoring events",
+        "B": "Presenting information in different ways",
+        "C": "Stopping news",
+        "D": "Avoiding discussions"
+      },
+      "correct_answer": "B",
+      "explanation": "The way news is presented can shape public opinion.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is part of broadcast media?",
+      "options": {
+        "A": "Radio",
+        "B": "Book",
+        "C": "Magazine",
+        "D": "Poster"
+      },
+      "correct_answer": "A",
+      "explanation": "Radio broadcasts information to a wide audience.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Media helps people stay aware of:",
+      "options": {
+        "A": "Local and global events",
+        "B": "Only school exams",
+        "C": "Only sports",
+        "D": "Only entertainment"
+      },
+      "correct_answer": "A",
+      "explanation": "Media informs people about events happening locally and globally.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of the following best describes media's influence?",
+      "options": {
+        "A": "It shapes public opinion",
+        "B": "It grows crops",
+        "C": "It builds roads",
+        "D": "It manufactures goods"
+      },
+      "correct_answer": "A",
+      "explanation": "Media influences how people think about issues.",
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor often decides what news gets shown?",
+      "options": {
+        "A": "Advertising revenue",
+        "B": "Weather",
+        "C": "School timetable",
+        "D": "Sports events only"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic interests and advertising can influence media content.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the main goal of many media companies?",
+      "options": {
+        "A": "Profit",
+        "B": "Farming",
+        "C": "Manufacturing",
+        "D": "Teaching"
+      },
+      "correct_answer": "A",
+      "explanation": "Many media companies operate as businesses aiming to make profit.",
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which media form combines both sound and visuals?",
+      "options": {
+        "A": "Radio",
+        "B": "Television",
+        "C": "Newspaper",
+        "D": "Magazine"
+      },
+      "correct_answer": "B",
+      "explanation": "Television uses both audio and video to communicate.",
+      "marks": 5,
+      "source_section": "Section 6.1"
+    }
+  ]
+}

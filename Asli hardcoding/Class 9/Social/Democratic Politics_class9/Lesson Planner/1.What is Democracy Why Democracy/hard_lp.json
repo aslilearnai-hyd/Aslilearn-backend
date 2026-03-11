@@ -1,0 +1,175 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Political Science",
+    "chapter_name": "What is Democracy? Why Democracy?",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the concept and definition of democracy",
+        "Evaluate the four features of democracy",
+        "Interpret real-world political examples",
+        "Understand democratic values and political equality",
+        "Critically examine arguments for and against democracy",
+        "Explain how democracy manages social diversity",
+        "Understand democracy as a principle beyond government",
+        "Develop critical thinking about democratic practices"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Understanding Democracy",
+            "topics_covered": [
+                "Definition of democracy",
+                "Origin of the word democracy"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Write and explain democracy definition"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Need for Defining Democracy",
+            "topics_covered": [
+                "Different meanings of democracy",
+                "Importance of clear definition"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Examples"
+            ],
+            "student_activities": [
+                "Discuss everyday uses of democracy"
+            ],
+            "assessment": [
+                "Short written questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Major Decisions by Elected Leaders",
+            "topics_covered": [
+                "Importance of elected representatives",
+                "Example of Pakistan"
+            ],
+            "teaching_strategy": [
+                "Case study method"
+            ],
+            "student_activities": [
+                "Analyze the case example"
+            ],
+            "assessment": [
+                "Concept-based questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Free and Fair Elections",
+            "topics_covered": [
+                "Electoral competition",
+                "Examples of China and Mexico"
+            ],
+            "teaching_strategy": [
+                "Comparison analysis"
+            ],
+            "student_activities": [
+                "Write comparison between democratic and controlled elections"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Political Equality",
+            "topics_covered": [
+                "Universal adult franchise",
+                "Equal value of votes"
+            ],
+            "teaching_strategy": [
+                "Example-based teaching"
+            ],
+            "student_activities": [
+                "Discuss importance of equality in democracy"
+            ],
+            "assessment": [
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Rule of Law and Rights",
+            "topics_covered": [
+                "Constitutional limits",
+                "Citizens' rights",
+                "Role of judiciary"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "List democratic rights"
+            ],
+            "assessment": [
+                "Concept checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Arguments for and Against Democracy",
+            "topics_covered": [
+                "Criticisms of democracy",
+                "Advantages of democracy"
+            ],
+            "teaching_strategy": [
+                "Debate activity"
+            ],
+            "student_activities": [
+                "Participate in debate"
+            ],
+            "assessment": [
+                "Participation evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Broader Meaning of Democracy and Revision",
+            "topics_covered": [
+                "Democracy beyond government",
+                "Democracy in everyday life",
+                "Chapter revision"
+            ],
+            "teaching_strategy": [
+                "Summary discussion"
+            ],
+            "student_activities": [
+                "Discuss democracy in family and school",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (15 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Markers",
+        "Civics textbook",
+        "Charts and diagrams"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Written exercises",
+        "Debate participation",
+        "Short quizzes"
+    ],
+    "teacher_tip": "Use real political examples and classroom discussions to develop students' analytical thinking about democracy."
+}

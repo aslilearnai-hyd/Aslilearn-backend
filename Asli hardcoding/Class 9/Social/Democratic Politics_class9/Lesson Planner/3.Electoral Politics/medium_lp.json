@@ -1,0 +1,182 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter_name": "Electoral Politics",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the importance of elections in democracy",
+        "Understand democratic elections and political competition",
+        "Learn about electoral constituencies and reserved constituencies",
+        "Understand voters list and universal adult franchise",
+        "Explain the process of elections in India",
+        "Analyze the role of the Election Commission",
+        "Evaluate challenges to free and fair elections"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Meaning and Importance of Elections",
+            "topics_covered": [
+                "Definition of elections",
+                "Importance of elections in democracy",
+                "Examples of elections in India"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Real-life examples",
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Discuss why people vote",
+                "List different types of elections in India"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick concept check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Why Do We Need Elections?",
+            "topics_covered": [
+                "Role of representatives",
+                "How elections allow people to choose leaders",
+                "Changing governments through elections"
+            ],
+            "teaching_strategy": [
+                "Discussion-based teaching",
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Write reasons why elections are necessary",
+                "Discuss examples of elected leaders"
+            ],
+            "assessment": [
+                "Short written responses",
+                "Notebook review"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Political Competition",
+            "topics_covered": [
+                "Meaning of political competition",
+                "Advantages of political competition",
+                "Criticisms of political competition"
+            ],
+            "teaching_strategy": [
+                "Group discussion",
+                "Debate activity"
+            ],
+            "student_activities": [
+                "List advantages and disadvantages of political competition",
+                "Participate in a short class debate"
+            ],
+            "assessment": [
+                "Participation observation",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Electoral Constituencies",
+            "topics_covered": [
+                "Meaning of constituency",
+                "Lok Sabha and Assembly constituencies",
+                "Equal population principle"
+            ],
+            "teaching_strategy": [
+                "Map explanation",
+                "Visual diagrams"
+            ],
+            "student_activities": [
+                "Identify their local constituency",
+                "Draw a simple constituency map"
+            ],
+            "assessment": [
+                "Map activity evaluation",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Reserved Constituencies and Voters List",
+            "topics_covered": [
+                "Reservation for SC and ST",
+                "Universal adult franchise",
+                "Preparation of voters list"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Example-based discussion"
+            ],
+            "student_activities": [
+                "Write eligibility conditions for voting",
+                "Discuss importance of reservation"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Election Process in India",
+            "topics_covered": [
+                "Nomination of candidates",
+                "Election campaigns",
+                "Polling and counting of votes"
+            ],
+            "teaching_strategy": [
+                "Flowchart explanation",
+                "Step-by-step teaching"
+            ],
+            "student_activities": [
+                "Create an election process flowchart",
+                "Explain steps of voting"
+            ],
+            "assessment": [
+                "Diagram checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Election Commission and Challenges",
+            "topics_covered": [
+                "Role of Election Commission",
+                "Free and fair elections",
+                "Challenges in Indian elections"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Concept summary"
+            ],
+            "student_activities": [
+                "List functions of Election Commission",
+                "Discuss problems in elections"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Civics textbook",
+        "Election process charts",
+        "Map of India"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Flowchart activity",
+        "Class discussion"
+    ],
+    "teacher_tip": "Encourage students to connect election concepts with real events such as Lok Sabha and Assembly elections."
+}

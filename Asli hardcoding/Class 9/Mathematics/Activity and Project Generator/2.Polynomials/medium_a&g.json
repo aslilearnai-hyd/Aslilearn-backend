@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Medium",
+    "source_pdf": "m9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Polynomial Degree Investigation",
+            "objective": "Analyse the degree of different polynomials",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write 10 different polynomials",
+                "Identify the highest power in each",
+                "Record the degree and classify them"
+            ],
+            "learning_outcome": "Understands degree concept",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Polynomial Classification Table",
+            "objective": "Classify polynomials by degree",
+            "materials": [
+                "Chart paper",
+                "Marker"
+            ],
+            "steps": [
+                "Create columns for linear, quadratic, cubic",
+                "Write examples under each column",
+                "Explain why they belong to that category"
+            ],
+            "learning_outcome": "Recognises polynomial types",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Polynomial Evaluation Activity",
+            "objective": "Calculate values of polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five polynomials",
+                "Choose values of variables",
+                "Calculate the polynomial value for each"
+            ],
+            "learning_outcome": "Improves substitution skills",
+            "evaluation": "Correct answers (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Zero Verification Task",
+            "objective": "Verify whether given numbers are zeroes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a polynomial",
+                "Substitute the given value",
+                "Check whether the result equals zero"
+            ],
+            "learning_outcome": "Understands zero of polynomial",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Factor Theorem Exploration",
+            "objective": "Use Factor Theorem to check factors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose a polynomial",
+                "Substitute a value for x",
+                "Check if result is zero to determine factor"
+            ],
+            "learning_outcome": "Applies Factor Theorem",
+            "evaluation": "Correct reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Quadratic Factorisation Practice",
+            "objective": "Factorise quadratic polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write 5 quadratic expressions",
+                "Split the middle term",
+                "Find the factors"
+            ],
+            "learning_outcome": "Develops factorisation skills",
+            "evaluation": "Correct factorisation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Polynomial Identity Verification",
+            "objective": "Verify algebraic identities",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write identities like (x+y)^2",
+                "Expand both sides",
+                "Verify equality"
+            ],
+            "learning_outcome": "Understands identities",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Polynomial Expansion Task",
+            "objective": "Expand expressions using identities",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write expressions like (x+2)^2",
+                "Apply identity",
+                "Write expanded form"
+            ],
+            "learning_outcome": "Practices expansion techniques",
+            "evaluation": "Correct expansion (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Real-life Polynomial Example",
+            "objective": "Relate polynomials to real-life situations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think of a real-life example",
+                "Write an expression using variables",
+                "Explain how it forms a polynomial"
+            ],
+            "learning_outcome": "Connects math to real life",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Polynomial Quiz Creation",
+            "objective": "Design a quiz on polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Prepare five questions",
+                "Include identification and evaluation",
+                "Exchange quiz with classmates"
+            ],
+            "learning_outcome": "Improves conceptual understanding",
+            "evaluation": "Quality of questions (10 marks)"
+        }
+    ]
+}

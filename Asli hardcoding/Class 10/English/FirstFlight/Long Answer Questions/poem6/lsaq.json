@@ -1,0 +1,42 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem – Fog",
+    "generated_at": "2026-03-09T12:54:15",
+    "total_questions": 2,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Describe how Carl Sandburg presents the fog in the poem. Include the literary devices he uses and the effect they create.",
+            "answer": "Carl Sandburg presents the fog through a singular, powerful metaphor, likening its arrival to that of a cat. By stating it comes on 'little cat feet,' he emphasizes the silence, stealth, and unpredictability of this natural phenomenon. The poet uses an extended metaphor and personification to imbue the fog with animal-like intent; it 'sits looking' over the harbor and city on 'silent haunches.' This imagery creates a sense of a watchful, independent entity that is both graceful and mysterious. The brevity of the poem—written in free verse with short, clipped lines—mimics the fleeting nature of the fog itself, leaving the reader with a vivid, transitory impression of a quiet visitor that vanishes as quickly as it appeared.",
+            "answer_outline": [
+                "The central metaphor of the cat ('little cat feet')",
+                "Use of personification and kinetic imagery ('silent haunches')",
+                "The effect of the poem's structural brevity on the theme of transience"
+            ],
+            "key_concepts": [
+                "extended metaphor",
+                "stealth",
+                "visual imagery"
+            ],
+            "marks": 5,
+            "source_section": "Poem Analysis"
+        },
+        {
+            "question_number": 2,
+            "question": "What message or theme does the poem 'Fog' convey about nature, and how does the poet achieve it?",
+            "answer": "The poem 'Fog' explores the themes of transience, the silence of nature, and the coexistence of the natural and urban worlds. Sandburg achieves this by personifying the fog as a creature that observes the 'harbor and city' without interfering with them. This highlights nature's independent and stoic presence. The theme of transience is captured in the final line, 'and then moves on,' suggesting that beauty and change in nature are often subtle and short-lived. By using a minimalist style, Sandburg strips away unnecessary details to focus on a single moment of awareness, encouraging the reader to find wonder in the quiet, everyday movements of the natural world that often go unnoticed in the bustle of city life.",
+            "answer_outline": [
+                "Nature's independent and silent observation of the urban landscape",
+                "The theme of impermanence and the 'ephemeral' nature of fog",
+                "Minimalism as a tool to highlight subtle natural beauty"
+            ],
+            "key_concepts": [
+                "transience",
+                "urban vs. natural",
+                "stoicism"
+            ],
+            "marks": 5,
+            "source_section": "Thematic Analysis"
+        }
+    ]
+}

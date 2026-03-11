@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Circles",
+    "difficulty_level": "Medium",
+    "generated_at": "2026-02-28T04:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The radius of a circle is perpendicular to the tangent at the point of?",
+            "options": {
+                "A": "Centre",
+                "B": "Intersection",
+                "C": "Contact",
+                "D": "Diameter"
+            },
+            "correct_answer": "C",
+            "explanation": "Radius is perpendicular to the tangent at the point of contact.",
+            "difficulty": "medium",
+            "source_section": "Tangent Properties"
+        },
+        {
+            "question_number": 2,
+            "question": "How many tangents can be drawn to a circle from an external point?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "Two tangents can be drawn from an external point.",
+            "difficulty": "medium",
+            "source_section": "Tangents"
+        },
+        {
+            "question_number": 3,
+            "question": "The line segment joining the centre of a circle to any point on the circle is called?",
+            "options": {
+                "A": "Chord",
+                "B": "Diameter",
+                "C": "Radius",
+                "D": "Tangent"
+            },
+            "correct_answer": "C",
+            "explanation": "Radius joins the centre to a point on the circle.",
+            "difficulty": "medium",
+            "source_section": "Basic Terms"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following is the longest chord of a circle?",
+            "options": {
+                "A": "Radius",
+                "B": "Diameter",
+                "C": "Arc",
+                "D": "Tangent"
+            },
+            "correct_answer": "B",
+            "explanation": "Diameter is the longest chord of a circle.",
+            "difficulty": "medium",
+            "source_section": "Chords"
+        },
+        {
+            "question_number": 5,
+            "question": "A line which intersects the circle at exactly two points is called?",
+            "options": {
+                "A": "Tangent",
+                "B": "Radius",
+                "C": "Chord",
+                "D": "Secant"
+            },
+            "correct_answer": "D",
+            "explanation": "A secant cuts the circle at two points.",
+            "difficulty": "medium",
+            "source_section": "Secant"
+        },
+        {
+            "question_number": 6,
+            "question": "If a chord passes through the centre of a circle, it is called?",
+            "options": {
+                "A": "Radius",
+                "B": "Arc",
+                "C": "Diameter",
+                "D": "Tangent"
+            },
+            "correct_answer": "C",
+            "explanation": "A diameter is a chord passing through the centre.",
+            "difficulty": "medium",
+            "source_section": "Diameter"
+        },
+        {
+            "question_number": 7,
+            "question": "The distance from the centre to the tangent is equal to?",
+            "options": {
+                "A": "Diameter",
+                "B": "Radius",
+                "C": "Chord",
+                "D": "Arc"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance from centre to tangent equals radius.",
+            "difficulty": "medium",
+            "source_section": "Tangent Properties"
+        },
+        {
+            "question_number": 8,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "All chords are diameters",
+                "B": "All diameters are chords",
+                "C": "All tangents are secants",
+                "D": "All arcs are straight lines"
+            },
+            "correct_answer": "B",
+            "explanation": "Every diameter is a chord.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 9,
+            "question": "The common point between a tangent and a circle is called?",
+            "options": {
+                "A": "Centre",
+                "B": "Radius",
+                "C": "Point of contact",
+                "D": "Arc"
+            },
+            "correct_answer": "C",
+            "explanation": "The tangent touches the circle at the point of contact.",
+            "difficulty": "medium",
+            "source_section": "Tangent"
+        },
+        {
+            "question_number": 10,
+            "question": "Tangents drawn from an external point to a circle are?",
+            "options": {
+                "A": "Unequal",
+                "B": "Parallel",
+                "C": "Equal",
+                "D": "Perpendicular"
+            },
+            "correct_answer": "C",
+            "explanation": "Tangents from an external point are equal in length.",
+            "difficulty": "medium",
+            "source_section": "Tangents"
+        },
+        {
+            "question_number": 11,
+            "question": "The boundary of a circle is called?",
+            "options": {
+                "A": "Radius",
+                "B": "Diameter",
+                "C": "Circumference",
+                "D": "Sector"
+            },
+            "correct_answer": "C",
+            "explanation": "Circumference is the boundary of a circle.",
+            "difficulty": "medium",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is not a part of a circle?",
+            "options": {
+                "A": "Chord",
+                "B": "Radius",
+                "C": "Square",
+                "D": "Arc"
+            },
+            "correct_answer": "C",
+            "explanation": "Square is not related to a circle.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 13,
+            "question": "How many radii can a circle have?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "Finite",
+                "D": "Infinite"
+            },
+            "correct_answer": "D",
+            "explanation": "A circle has infinitely many radii.",
+            "difficulty": "medium",
+            "source_section": "Radius"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following always lies inside the circle?",
+            "options": {
+                "A": "Tangent",
+                "B": "Centre",
+                "C": "Secant",
+                "D": "Arc"
+            },
+            "correct_answer": "B",
+            "explanation": "Centre always lies inside the circle.",
+            "difficulty": "medium",
+            "source_section": "Centre"
+        },
+        {
+            "question_number": 15,
+            "question": "If the radius of a circle is 7 cm, its diameter is?",
+            "options": {
+                "A": "7 cm",
+                "B": "14 cm",
+                "C": "21 cm",
+                "D": "49 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Diameter = 2 × radius = 14 cm.",
+            "difficulty": "medium",
+            "source_section": "Basic Relations"
+        },
+        {
+            "question_number": 16,
+            "question": "Which line touches the circle at only one point?",
+            "options": {
+                "A": "Secant",
+                "B": "Chord",
+                "C": "Tangent",
+                "D": "Diameter"
+            },
+            "correct_answer": "C",
+            "explanation": "A tangent touches the circle at one point.",
+            "difficulty": "medium",
+            "source_section": "Tangent"
+        },
+        {
+            "question_number": 17,
+            "question": "Which part of a circle is curved?",
+            "options": {
+                "A": "Radius",
+                "B": "Diameter",
+                "C": "Chord",
+                "D": "Arc"
+            },
+            "correct_answer": "D",
+            "explanation": "An arc is curved.",
+            "difficulty": "medium",
+            "source_section": "Arcs"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following passes through the centre?",
+            "options": {
+                "A": "Arc",
+                "B": "Chord",
+                "C": "Diameter",
+                "D": "Tangent"
+            },
+            "correct_answer": "C",
+            "explanation": "Diameter passes through the centre.",
+            "difficulty": "medium",
+            "source_section": "Diameter"
+        },
+        {
+            "question_number": 19,
+            "question": "A secant always intersects the circle at?",
+            "options": {
+                "A": "One point",
+                "B": "Two points",
+                "C": "Three points",
+                "D": "No point"
+            },
+            "correct_answer": "B",
+            "explanation": "A secant cuts the circle at two points.",
+            "difficulty": "medium",
+            "source_section": "Secant"
+        },
+        {
+            "question_number": 20,
+            "question": "Which statement is false?",
+            "options": {
+                "A": "Diameter is a chord",
+                "B": "Tangent is perpendicular to radius",
+                "C": "All chords are equal",
+                "D": "Circle has only one centre"
+            },
+            "correct_answer": "C",
+            "explanation": "All chords are not equal.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 21,
+            "question": "The region between a chord and its corresponding arc is called?",
+            "options": {
+                "A": "Sector",
+                "B": "Segment",
+                "C": "Radius",
+                "D": "Diameter"
+            },
+            "correct_answer": "B",
+            "explanation": "That region is called a segment.",
+            "difficulty": "medium",
+            "source_section": "Segments"
+        },
+        {
+            "question_number": 22,
+            "question": "The region enclosed by two radii and an arc is called?",
+            "options": {
+                "A": "Segment",
+                "B": "Sector",
+                "C": "Chord",
+                "D": "Secant"
+            },
+            "correct_answer": "B",
+            "explanation": "This region is called a sector.",
+            "difficulty": "medium",
+            "source_section": "Sectors"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following has no end points?",
+            "options": {
+                "A": "Chord",
+                "B": "Radius",
+                "C": "Diameter",
+                "D": "Arc"
+            },
+            "correct_answer": "D",
+            "explanation": "An arc is curved and has no endpoints like a line segment.",
+            "difficulty": "medium",
+            "source_section": "Arcs"
+        },
+        {
+            "question_number": 24,
+            "question": "How many centres does a circle have?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "A circle has exactly one centre.",
+            "difficulty": "medium",
+            "source_section": "Centre"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is always correct?",
+            "options": {
+                "A": "All chords pass through centre",
+                "B": "All diameters are radii",
+                "C": "All radii are equal",
+                "D": "All tangents pass through centre"
+            },
+            "correct_answer": "C",
+            "explanation": "All radii of a circle are equal.",
+            "difficulty": "medium",
+            "source_section": "Summary"
+        }
+    ]
+}

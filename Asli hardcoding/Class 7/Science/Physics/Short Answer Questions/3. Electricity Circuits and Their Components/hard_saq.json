@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 3: Electricity: Circuits and their Components",
+    "generated_at": "2026-03-05T21:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how resistance affects the flow of electric current in a circuit.",
+            "answer": "Resistance opposes the flow of electric current. When resistance increases, the current flowing through the circuit decreases. When resistance decreases, more current can flow through the circuit.",
+            "key_concepts": ["resistance", "electric current"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe the role of a cell in maintaining electric current in a circuit.",
+            "answer": "A cell provides electrical energy and maintains a potential difference between its terminals. This potential difference pushes charges through the circuit and keeps the current flowing.",
+            "key_concepts": ["electric cell", "potential difference"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why a closed circuit is necessary for an electric device to work.",
+            "answer": "A closed circuit provides a complete path for electric current to flow from the power source through the device and back to the source. Without a closed path, current cannot flow and the device will not operate.",
+            "key_concepts": ["closed circuit", "electric current"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare the working of a series circuit and a parallel circuit.",
+            "answer": "In a series circuit, components are connected one after another and the same current flows through all components. In a parallel circuit, components are connected in separate branches and each branch receives the same voltage.",
+            "key_concepts": ["series circuit", "parallel circuit"],
+            "marks": 3,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how an electric bulb produces light.",
+            "answer": "An electric bulb contains a thin filament. When current flows through the filament, it heats up due to resistance and becomes hot enough to emit light.",
+            "key_concepts": ["filament", "resistance", "electric bulb"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe how a fuse protects electrical appliances.",
+            "answer": "A fuse contains a thin wire with a low melting point. When excessive current flows, the wire melts and breaks the circuit, preventing damage to appliances.",
+            "key_concepts": ["fuse", "circuit protection"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why conductors are important in electric circuits.",
+            "answer": "Conductors allow electric current to pass through them easily. They are used to connect different components of a circuit so that electricity can flow properly.",
+            "key_concepts": ["conductors", "electric current"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why insulators are used to cover electric wires.",
+            "answer": "Insulators prevent electric current from escaping the wires. They protect people from electric shocks and ensure safe transmission of electricity.",
+            "key_concepts": ["insulators", "safety"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the function of an ammeter and how it is connected in a circuit.",
+            "answer": "An ammeter measures the amount of electric current flowing in a circuit. It is connected in series so that the entire current passes through it.",
+            "key_concepts": ["ammeter", "current measurement"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the purpose of a voltmeter in an electric circuit.",
+            "answer": "A voltmeter measures the potential difference between two points in a circuit. It is connected in parallel across the component being measured.",
+            "key_concepts": ["voltmeter", "potential difference"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain what happens during an electric short circuit.",
+            "answer": "A short circuit occurs when current flows through a path with very low resistance. This causes a sudden increase in current which may damage wires and appliances.",
+            "key_concepts": ["short circuit", "electric safety"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why parallel circuits are commonly used in household wiring.",
+            "answer": "Parallel circuits allow each appliance to receive the same voltage and work independently. If one appliance stops working, the others continue to function.",
+            "key_concepts": ["parallel circuit", "household wiring"],
+            "marks": 3,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how a switch controls the flow of electricity in a circuit.",
+            "answer": "A switch opens or closes a circuit. When closed, it allows current to flow; when open, it breaks the circuit and stops the flow of current.",
+            "key_concepts": ["switch", "circuit control"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe the relationship between voltage, current, and resistance according to Ohm’s Law.",
+            "answer": "Ohm’s Law states that the current flowing through a conductor is directly proportional to the voltage and inversely proportional to the resistance, expressed as V = IR.",
+            "key_concepts": ["Ohm's law", "voltage", "current", "resistance"],
+            "marks": 3,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why electrical safety rules are important in homes and schools.",
+            "answer": "Electrical safety rules prevent accidents such as electric shocks, fires, and damage to appliances by ensuring proper handling and use of electrical devices.",
+            "key_concepts": ["electrical safety"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why metals like copper and aluminum are used in electrical wiring.",
+            "answer": "Metals like copper and aluminum are good conductors of electricity and allow current to flow easily with minimal energy loss.",
+            "key_concepts": ["conductors", "electrical wiring"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the importance of circuit diagrams in studying electrical circuits.",
+            "answer": "Circuit diagrams use standard symbols to represent components, making complex electrical circuits easier to understand and analyze.",
+            "key_concepts": ["circuit diagrams", "symbols"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain what would happen if insulation around electric wires is damaged.",
+            "answer": "If insulation is damaged, current may leak from the wire, which can cause electric shocks, short circuits, or fire hazards.",
+            "key_concepts": ["insulation", "electric hazards"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why electric appliances should not be used with wet hands.",
+            "answer": "Water conducts electricity, so using appliances with wet hands increases the risk of electric shock.",
+            "key_concepts": ["electric shock", "conductors"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe how electric current produces heating in a conductor.",
+            "answer": "When current flows through a conductor, electrical energy is converted into heat energy due to resistance. This effect is called the heating effect of electric current.",
+            "key_concepts": ["heating effect", "resistance"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why circuit breakers are used instead of fuses in modern homes.",
+            "answer": "Circuit breakers automatically switch off the circuit when excessive current flows and can be reset easily, unlike fuses which must be replaced after melting.",
+            "key_concepts": ["circuit breaker", "electric safety"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how electric current flows through a conductor.",
+            "answer": "Electric current flows through a conductor due to the movement of electrons from the negative terminal of a power source to the positive terminal through the circuit.",
+            "key_concepts": ["electron flow", "electric current"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why thick wires are used in high-power electrical connections.",
+            "answer": "Thick wires have lower resistance and can carry larger currents safely without overheating.",
+            "key_concepts": ["resistance", "current capacity"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of potential difference in an electric circuit.",
+            "answer": "Potential difference provides the force that pushes electric charges through a conductor, enabling current to flow in the circuit.",
+            "key_concepts": ["potential difference", "electric current"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why proper earthing is important in electrical installations.",
+            "answer": "Earthing provides a safe path for excess electric current to flow into the ground, preventing electric shocks and protecting appliances.",
+            "key_concepts": ["earthing", "electric safety"],
+            "marks": 3,
+            "source_section": "Section 3.9"
+        }
+    ]
+}

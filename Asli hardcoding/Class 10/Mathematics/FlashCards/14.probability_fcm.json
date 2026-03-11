@@ -1,0 +1,95 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "jemh114: Probability",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is probability?",
+                "correct_answer": "Measure of chance of an event.",
+                "explanation": "Value lies between 0 and 1.",
+                "source_section": "Basics"
+            },
+            {
+                "question": "Formula for probability?",
+                "correct_answer": "Favourable outcomes / Total outcomes",
+                "explanation": "Basic rule.",
+                "source_section": "Formula"
+            },
+            {
+                "question": "What is sample space?",
+                "correct_answer": "Set of all possible outcomes.",
+                "explanation": "Written as S.",
+                "source_section": "Sample Space"
+            },
+            {
+                "question": "Probability of sure event?",
+                "correct_answer": "1",
+                "explanation": "Always occurs.",
+                "source_section": "Events"
+            },
+            {
+                "question": "Probability of impossible event?",
+                "correct_answer": "0",
+                "explanation": "Never occurs.",
+                "source_section": "Events"
+            },
+            {
+                "question": "What is an event?",
+                "correct_answer": "Subset of sample space.",
+                "explanation": "Favourable outcomes.",
+                "source_section": "Events"
+            },
+            {
+                "question": "What is complementary event?",
+                "correct_answer": "Event not happening.",
+                "explanation": "1 − P(E).",
+                "source_section": "Concept"
+            },
+            {
+                "question": "Example of random experiment?",
+                "correct_answer": "Tossing a coin",
+                "explanation": "Outcome uncertain.",
+                "source_section": "Examples"
+            },
+            {
+                "question": "Can probability be negative?",
+                "correct_answer": "No",
+                "explanation": "Range is 0 to 1.",
+                "source_section": "Concept"
+            },
+            {
+                "question": "First step in probability problems?",
+                "correct_answer": "Write sample space",
+                "explanation": "Avoids mistakes.",
+                "source_section": "Method"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Sample Space",
+                "content": "List of all possible outcomes.",
+                "source_section": "Sample Space"
+            },
+            {
+                "title": "Event",
+                "content": "Set of favourable outcomes.",
+                "source_section": "Events"
+            },
+            {
+                "title": "Complementary Event",
+                "content": "Event that does not occur.",
+                "source_section": "Concept"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Probability values range from 0 to 1.",
+                "source_section": "Basics"
+            },
+            {
+                "fact": "Sum of probabilities of all outcomes is 1.",
+                "source_section": "Concept"
+            }
+        ]
+    }
+}

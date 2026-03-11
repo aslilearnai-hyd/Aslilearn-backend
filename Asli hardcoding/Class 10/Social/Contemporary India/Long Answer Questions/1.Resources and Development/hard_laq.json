@@ -1,0 +1,313 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: Resources and Development",
+  "lesson_level": "Hard",
+  "generated_at": "2026-03-11T14:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why resources are considered a function of human activities.",
+      "answer": "Resources are not simply gifts of nature. They become useful only when humans apply knowledge, skills, and technology to transform natural materials into usable forms. Human institutions and technological advancements help accelerate economic development through efficient resource utilization.",
+      "answer_outline": [
+        "Definition of resource",
+        "Human role in transforming nature",
+        "Technology and institutional support",
+        "Examples"
+      ],
+      "key_concepts": ["resource function", "human activity"],
+      "marks": 6,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Discuss the major classifications of resources and explain their significance.",
+      "answer": "Resources can be classified based on origin, exhaustibility, ownership, and status of development. This classification helps in understanding the availability, management, and sustainability of resources.",
+      "answer_outline": [
+        "Origin classification",
+        "Exhaustibility classification",
+        "Ownership classification",
+        "Status of development"
+      ],
+      "key_concepts": ["resource classification"],
+      "marks": 6,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Analyze the concept of sustainable development and explain its importance in modern society.",
+      "answer": "Sustainable development ensures that economic growth occurs without harming the environment and without compromising the needs of future generations. It promotes responsible resource use and environmental protection.",
+      "answer_outline": [
+        "Definition of sustainable development",
+        "Environmental protection",
+        "Future generations",
+        "Examples of sustainable practices"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 6,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Discuss the objectives and outcomes of the Rio Earth Summit of 1992.",
+      "answer": "The Rio Earth Summit addressed global environmental challenges and led to agreements such as the Declaration on Global Climatic Change and Agenda 21 to promote sustainable development.",
+      "answer_outline": [
+        "Purpose of the summit",
+        "Global environmental concerns",
+        "Agenda 21",
+        "International cooperation"
+      ],
+      "key_concepts": ["Rio Earth Summit", "Agenda 21"],
+      "marks": 6,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the importance of resource planning in India.",
+      "answer": "Resource planning is essential in India because resources are unevenly distributed. Proper planning ensures balanced regional development and sustainable use of resources.",
+      "answer_outline": [
+        "Uneven resource distribution",
+        "Balanced regional development",
+        "Efficient resource use"
+      ],
+      "key_concepts": ["resource planning"],
+      "marks": 6,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the steps involved in resource planning and explain their significance.",
+      "answer": "The steps include identification of resources, creation of planning structures, and integration of resource development plans with national development strategies.",
+      "answer_outline": [
+        "Identification and inventory",
+        "Planning structure",
+        "Implementation"
+      ],
+      "key_concepts": ["resource planning steps"],
+      "marks": 6,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Evaluate the reasons why resource-rich regions may remain economically backward.",
+      "answer": "Resource-rich regions may remain economically backward due to lack of technology, infrastructure, skilled manpower, and proper governance.",
+      "answer_outline": [
+        "Resource availability",
+        "Lack of infrastructure",
+        "Need for technology and institutions"
+      ],
+      "key_concepts": ["regional development"],
+      "marks": 6,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Analyze the importance of land as a natural resource.",
+      "answer": "Land supports vegetation, wildlife, agriculture, transport systems, and human settlements, making it a vital resource for survival and development.",
+      "answer_outline": [
+        "Economic importance",
+        "Environmental importance",
+        "Human settlement"
+      ],
+      "key_concepts": ["land resource"],
+      "marks": 6,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the land use pattern in India and the factors affecting it.",
+      "answer": "Land use patterns are influenced by both physical factors such as climate and soil, and human factors such as population density and technological advancement.",
+      "answer_outline": [
+        "Land use categories",
+        "Physical factors",
+        "Human factors"
+      ],
+      "key_concepts": ["land use pattern"],
+      "marks": 6,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of land degradation and its major causes.",
+      "answer": "Land degradation refers to the deterioration of land quality due to natural and human activities such as deforestation, overgrazing, mining, and industrial pollution.",
+      "answer_outline": [
+        "Definition",
+        "Human causes",
+        "Environmental consequences"
+      ],
+      "key_concepts": ["land degradation"],
+      "marks": 6,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Discuss different methods used to control land degradation.",
+      "answer": "Methods include afforestation, controlled grazing, regulation of mining activities, and proper disposal of industrial waste.",
+      "answer_outline": [
+        "Afforestation",
+        "Controlled grazing",
+        "Waste management"
+      ],
+      "key_concepts": ["land conservation"],
+      "marks": 6,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the process of soil formation and factors influencing it.",
+      "answer": "Soil formation occurs through weathering of rocks influenced by climate, vegetation, parent material, relief, and time.",
+      "answer_outline": [
+        "Weathering process",
+        "Climatic influence",
+        "Biological influence"
+      ],
+      "key_concepts": ["soil formation"],
+      "marks": 6,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 13,
+      "question": "Describe the soil profile and its layers with a diagrammatic explanation.",
+      "answer": "A soil profile consists of layers such as topsoil, subsoil, substratum, and bedrock, each with distinct properties.",
+      "answer_outline": [
+        "Definition of soil profile",
+        "Layers and characteristics"
+      ],
+      "key_concepts": ["soil profile"],
+      "marks": 6,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the characteristics and distribution of alluvial soil in India.",
+      "answer": "Alluvial soil is fertile and found mainly in the northern plains and river deltas. It supports crops like rice, wheat, and sugarcane.",
+      "answer_outline": [
+        "Formation",
+        "Distribution",
+        "Agricultural importance"
+      ],
+      "key_concepts": ["alluvial soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 15,
+      "question": "Analyze the properties of black soil and its agricultural significance.",
+      "answer": "Black soil retains moisture well and is ideal for cotton cultivation due to its clayey nature and mineral richness.",
+      "answer_outline": [
+        "Formation",
+        "Moisture retention",
+        "Agricultural importance"
+      ],
+      "key_concepts": ["black soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 16,
+      "question": "Discuss the formation and characteristics of red and yellow soils.",
+      "answer": "Red and yellow soils develop from crystalline rocks and get their color from iron content.",
+      "answer_outline": ["Formation", "Color due to iron", "Distribution"],
+      "key_concepts": ["red soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the formation and agricultural use of laterite soils.",
+      "answer": "Laterite soils form in tropical areas with heavy rainfall and are suitable for plantation crops like tea and coffee.",
+      "answer_outline": [
+        "Formation through leaching",
+        "Location",
+        "Agricultural importance"
+      ],
+      "key_concepts": ["laterite soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Describe the characteristics of arid soils and their limitations.",
+      "answer": "Arid soils are sandy, saline, and found in desert regions with low rainfall and low organic matter.",
+      "answer_outline": ["Dry climate", "High salt content", "Low fertility"],
+      "key_concepts": ["arid soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the characteristics of forest soils.",
+      "answer": "Forest soils are found in hilly regions and vary in texture depending on altitude and vegetation.",
+      "answer_outline": [
+        "Location",
+        "Texture variations",
+        "Vegetation influence"
+      ],
+      "key_concepts": ["forest soil"],
+      "marks": 6,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the causes and consequences of soil erosion.",
+      "answer": "Soil erosion occurs due to wind, water, deforestation, and improper farming practices, leading to loss of fertile soil and reduced agricultural productivity.",
+      "answer_outline": ["Natural causes", "Human causes", "Consequences"],
+      "key_concepts": ["soil erosion"],
+      "marks": 6,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 21,
+      "question": "Discuss different types of soil erosion with examples.",
+      "answer": "Types include sheet erosion, gully erosion, and wind erosion, each caused by different natural forces.",
+      "answer_outline": ["Sheet erosion", "Gully erosion", "Wind erosion"],
+      "key_concepts": ["types of soil erosion"],
+      "marks": 6,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain terrace farming and contour ploughing as soil conservation techniques.",
+      "answer": "Terrace farming creates step-like fields on slopes, while contour ploughing follows contour lines to slow water flow and prevent soil erosion.",
+      "answer_outline": ["Terrace farming", "Contour ploughing", "Benefits"],
+      "key_concepts": ["soil conservation"],
+      "marks": 6,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the role of shelter belts in preventing soil erosion.",
+      "answer": "Shelter belts are rows of trees planted to reduce wind speed and prevent wind erosion in arid regions.",
+      "answer_outline": ["Definition", "Method", "Benefits"],
+      "key_concepts": ["shelter belts"],
+      "marks": 6,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Evaluate the importance of soil conservation for sustainable agriculture.",
+      "answer": "Soil conservation helps maintain soil fertility, prevent erosion, and ensure long-term agricultural productivity.",
+      "answer_outline": [
+        "Soil fertility protection",
+        "Prevention of erosion",
+        "Sustainable farming"
+      ],
+      "key_concepts": ["soil conservation"],
+      "marks": 6,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Discuss why conservation of resources is essential for future development.",
+      "answer": "Conserving resources ensures ecological balance, sustainable economic growth, and availability of resources for future generations.",
+      "answer_outline": [
+        "Environmental balance",
+        "Economic sustainability",
+        "Future generations"
+      ],
+      "key_concepts": ["resource conservation"],
+      "marks": 6,
+      "source_section": "Section 1.2"
+    }
+  ]
+}

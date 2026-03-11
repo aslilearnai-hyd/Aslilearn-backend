@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Federalism",
+  "generated_at": "2026-03-11T17:28:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is federalism considered a system of power sharing?",
+      "answer": "Because powers are divided between central and state governments.",
+      "key_points": ["power sharing"],
+      "source_section": "What is Federalism?"
+    },
+    {
+      "question_number": 2,
+      "question": "Which principle ensures that the Constitution is the highest authority in a federation?",
+      "answer": "Constitutional supremacy.",
+      "key_points": ["constitutional supremacy"],
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 3,
+      "question": "Which list includes subjects that require national level uniformity?",
+      "answer": "Union List.",
+      "key_points": ["Union List"],
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 4,
+      "question": "Which list allows both Union and State governments to legislate?",
+      "answer": "Concurrent List.",
+      "key_points": ["Concurrent List"],
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 5,
+      "question": "Which federation type is formed when independent states voluntarily unite?",
+      "answer": "Coming together federation.",
+      "key_points": ["coming together federation"],
+      "source_section": "Formation of Federations"
+    },
+    {
+      "question_number": 6,
+      "question": "Which federation type exists when a large country divides powers among states?",
+      "answer": "Holding together federation.",
+      "key_points": ["holding together federation"],
+      "source_section": "Formation of Federations"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is India described as a Union of States?",
+      "answer": "Because states cannot leave the federation.",
+      "key_points": ["Union of States"],
+      "source_section": "What makes India a federal country?"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor strengthened federalism in India after the 1990s?",
+      "answer": "Coalition governments.",
+      "key_points": ["coalition government"],
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 9,
+      "question": "Which political groups represent state interests in national politics?",
+      "answer": "Regional parties.",
+      "key_points": ["regional parties"],
+      "source_section": "Centre-State Relations"
+    },
+    {
+      "question_number": 10,
+      "question": "Which reform recognized the importance of local self-government?",
+      "answer": "Decentralisation reforms.",
+      "key_points": ["decentralisation"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 11,
+      "question": "Which constitutional amendments strengthened local governments?",
+      "answer": "73rd and 74th Amendments.",
+      "key_points": ["73rd amendment", "74th amendment"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 12,
+      "question": "Which institution operates at the village level in the Panchayati Raj system?",
+      "answer": "Gram Panchayat.",
+      "key_points": ["Gram Panchayat"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 13,
+      "question": "Which body includes all adult members of a village?",
+      "answer": "Gram Sabha.",
+      "key_points": ["Gram Sabha"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 14,
+      "question": "Which institution works at the district level in rural governance?",
+      "answer": "Zilla Parishad.",
+      "key_points": ["Zilla Parishad"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 15,
+      "question": "Which level of government manages urban services like sanitation?",
+      "answer": "Municipal government.",
+      "key_points": ["municipality"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 16,
+      "question": "Which institution ensures that governments follow the Constitution?",
+      "answer": "Judiciary.",
+      "key_points": ["judiciary"],
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 17,
+      "question": "Which subject belongs to the Union List?",
+      "answer": "Foreign affairs.",
+      "key_points": ["Union List"],
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 18,
+      "question": "Which subject belongs to the State List?",
+      "answer": "Police.",
+      "key_points": ["State List"],
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 19,
+      "question": "Which concept allows governance closer to people?",
+      "answer": "Decentralisation.",
+      "key_points": ["decentralisation"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 20,
+      "question": "Which feature of federalism helps manage diversity in large countries?",
+      "answer": "Regional autonomy.",
+      "key_points": ["regional autonomy"],
+      "source_section": "Federalism in India"
+    },
+    {
+      "question_number": 21,
+      "question": "Which language policy allowed states to use regional languages?",
+      "answer": "Indian language policy.",
+      "key_points": ["language policy"],
+      "source_section": "Language Policy"
+    },
+    {
+      "question_number": 22,
+      "question": "Which constitutional body protects the balance of power between governments?",
+      "answer": "Supreme Court.",
+      "key_points": ["Supreme Court"],
+      "source_section": "Key Features of Federalism"
+    },
+    {
+      "question_number": 23,
+      "question": "Which level of government deals with defence and international relations?",
+      "answer": "Union Government.",
+      "key_points": ["Union government"],
+      "source_section": "Distribution of Powers"
+    },
+    {
+      "question_number": 24,
+      "question": "Which reform promoted people's participation in local governance?",
+      "answer": "Panchayati Raj reforms.",
+      "key_points": ["Panchayati Raj"],
+      "source_section": "Decentralisation in India"
+    },
+    {
+      "question_number": 25,
+      "question": "Which concept ensures cooperation among different levels of government?",
+      "answer": "Cooperative federalism.",
+      "key_points": ["cooperative federalism"],
+      "source_section": "Federalism in India"
+    }
+  ]
+}

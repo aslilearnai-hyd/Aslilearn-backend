@@ -1,0 +1,289 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Confronting Marginalisation",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-06T23:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of marginalisation and its impact on society.",
+      "answer": "Marginalisation refers to the process in which certain groups are pushed to the edges of society and denied equal opportunities. It results in social inequality, limited access to resources and lack of participation in decision-making.",
+      "answer_outline": [
+        "Meaning of marginalisation",
+        "Causes of marginalisation",
+        "Impact on society"
+      ],
+      "key_concepts": ["marginalisation", "social inequality"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how social inequality leads to marginalisation.",
+      "answer": "Social inequality creates unequal access to resources, education and opportunities. This results in certain groups being excluded from development and social participation.",
+      "answer_outline": [
+        "Social inequality",
+        "Limited opportunities",
+        "Social exclusion"
+      ],
+      "key_concepts": ["inequality", "marginalisation"],
+      "marks": 4,
+      "source_section": "Marginalisation"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the historical discrimination faced by Scheduled Castes in India.",
+      "answer": "Scheduled Castes historically faced untouchability and social discrimination which prevented them from accessing education, public spaces and employment opportunities.",
+      "answer_outline": [
+        "Untouchability",
+        "Social discrimination",
+        "Limited opportunities"
+      ],
+      "key_concepts": ["scheduled castes", "untouchability"],
+      "marks": 5,
+      "source_section": "SC Communities"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the challenges faced by Scheduled Tribes in India.",
+      "answer": "Scheduled Tribes often face displacement from forests, loss of traditional livelihoods and lack of access to education and healthcare.",
+      "answer_outline": [
+        "Loss of land",
+        "Development issues",
+        "Limited services"
+      ],
+      "key_concepts": ["scheduled tribes"],
+      "marks": 5,
+      "source_section": "ST Communities"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the role of the Indian Constitution in protecting marginalised groups.",
+      "answer": "The Constitution provides Fundamental Rights and legal protections that ensure equality and prohibit discrimination against marginalised communities.",
+      "answer_outline": [
+        "Fundamental Rights",
+        "Equality before law",
+        "Protection from discrimination"
+      ],
+      "key_concepts": ["constitution", "fundamental rights"],
+      "marks": 5,
+      "source_section": "Constitutional Protection"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the significance of the Right to Equality in confronting marginalisation.",
+      "answer": "The Right to Equality guarantees equal treatment under the law and prohibits discrimination based on caste, religion, gender or place of birth.",
+      "answer_outline": [
+        "Equality before law",
+        "Protection against discrimination"
+      ],
+      "key_concepts": ["right to equality"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how laws help in confronting marginalisation.",
+      "answer": "Laws protect disadvantaged groups from discrimination, ensure justice and promote equality in society.",
+      "answer_outline": [
+        "Legal protection",
+        "Punishment for discrimination",
+        "Promotion of equality"
+      ],
+      "key_concepts": ["laws"],
+      "marks": 4,
+      "source_section": "Protective Laws"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the importance of the SC/ST Prevention of Atrocities Act.",
+      "answer": "The Act protects Scheduled Castes and Scheduled Tribes from violence, discrimination and exploitation and ensures legal action against offenders.",
+      "answer_outline": [
+        "Protection from atrocities",
+        "Legal punishment",
+        "Social justice"
+      ],
+      "key_concepts": ["SC/ST Act"],
+      "marks": 5,
+      "source_section": "Protective Laws"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of social justice and its importance.",
+      "answer": "Social justice ensures fairness, equality and equal opportunities for all members of society, especially disadvantaged groups.",
+      "answer_outline": [
+        "Fair treatment",
+        "Equal opportunities",
+        "Reduction of inequality"
+      ],
+      "key_concepts": ["social justice"],
+      "marks": 4,
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the importance of reservation policies in India.",
+      "answer": "Reservation policies provide educational and employment opportunities to historically disadvantaged communities.",
+      "answer_outline": [
+        "Equal opportunities",
+        "Educational access",
+        "Employment benefits"
+      ],
+      "key_concepts": ["reservation"],
+      "marks": 5,
+      "source_section": "Reservation Policies"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how education helps reduce marginalisation.",
+      "answer": "Education empowers individuals with knowledge and skills, enabling them to access better opportunities and improve their social status.",
+      "answer_outline": [
+        "Knowledge",
+        "Employment opportunities",
+        "Social mobility"
+      ],
+      "key_concepts": ["education"],
+      "marks": 4,
+      "source_section": "Social Development"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the role of the government in promoting social equality.",
+      "answer": "The government promotes equality through laws, welfare schemes and development programs aimed at disadvantaged communities.",
+      "answer_outline": [
+        "Government policies",
+        "Welfare programs",
+        "Legal protection"
+      ],
+      "key_concepts": ["government"],
+      "marks": 4,
+      "source_section": "Government Policies"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how discrimination creates barriers for marginalised groups.",
+      "answer": "Discrimination prevents people from accessing opportunities, resources and social participation, which limits their development.",
+      "answer_outline": [
+        "Social barriers",
+        "Limited access",
+        "Economic impact"
+      ],
+      "key_concepts": ["discrimination"],
+      "marks": 4,
+      "source_section": "Marginalisation"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the relationship between equality and democracy.",
+      "answer": "Equality ensures that all citizens have equal rights and opportunities, which is essential for a fair democratic system.",
+      "answer_outline": ["Equal participation", "Fair representation"],
+      "key_concepts": ["democracy", "equality"],
+      "marks": 4,
+      "source_section": "Democratic Principles"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how the Constitution supports social justice.",
+      "answer": "The Constitution provides rights, protections and policies that ensure fairness and equality in society.",
+      "answer_outline": [
+        "Legal rights",
+        "Equality",
+        "Protection of disadvantaged groups"
+      ],
+      "key_concepts": ["constitution"],
+      "marks": 5,
+      "source_section": "Constitutional Principles"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the importance of protecting minority communities.",
+      "answer": "Protecting minority communities ensures their rights, culture and identity are respected in society.",
+      "answer_outline": ["Cultural protection", "Equal rights"],
+      "key_concepts": ["minorities"],
+      "marks": 4,
+      "source_section": "Minority Rights"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how social awareness can reduce marginalisation.",
+      "answer": "Awareness encourages people to respect diversity, challenge discrimination and promote equality.",
+      "answer_outline": ["Education", "Respect for diversity"],
+      "key_concepts": ["social awareness"],
+      "marks": 4,
+      "source_section": "Social Equality"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of equality in maintaining social harmony.",
+      "answer": "Equality ensures fair treatment and reduces conflicts among different communities.",
+      "answer_outline": ["Fair treatment", "Social harmony"],
+      "key_concepts": ["equality"],
+      "marks": 4,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how laws promote equality in society.",
+      "answer": "Laws establish rules that prevent discrimination and ensure equal treatment for all citizens.",
+      "answer_outline": ["Legal framework", "Equal rights"],
+      "key_concepts": ["law"],
+      "marks": 4,
+      "source_section": "Law and Equality"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how protecting marginalised groups contributes to national development.",
+      "answer": "Ensuring equality allows all citizens to contribute to economic and social progress.",
+      "answer_outline": ["Equal participation", "Economic growth"],
+      "key_concepts": ["development"],
+      "marks": 4,
+      "source_section": "Social Development"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the role of citizens in promoting equality and justice.",
+      "answer": "Citizens can respect diversity, oppose discrimination and support laws that protect disadvantaged groups.",
+      "answer_outline": ["Social responsibility", "Respect for diversity"],
+      "key_concepts": ["citizenship"],
+      "marks": 4,
+      "source_section": "Citizenship"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how the Constitution promotes unity in diversity.",
+      "answer": "The Constitution guarantees equal rights and respects cultural differences among communities.",
+      "answer_outline": ["Equality", "Respect for diversity"],
+      "key_concepts": ["constitution"],
+      "marks": 4,
+      "source_section": "Constitutional Values"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of Fundamental Rights in confronting marginalisation.",
+      "answer": "Fundamental Rights protect citizens from discrimination and ensure equality and dignity.",
+      "answer_outline": ["Equality", "Protection from discrimination"],
+      "key_concepts": ["fundamental rights"],
+      "marks": 4,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how social justice strengthens democracy.",
+      "answer": "Social justice ensures that all citizens have equal participation and opportunities in society.",
+      "answer_outline": ["Equal participation", "Democratic values"],
+      "key_concepts": ["democracy"],
+      "marks": 4,
+      "source_section": "Democratic Society"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how confronting marginalisation can create a more inclusive society.",
+      "answer": "Addressing marginalisation ensures equality, dignity and opportunities for all communities, leading to a fair and inclusive society.",
+      "answer_outline": ["Equality", "Dignity", "Inclusive development"],
+      "key_concepts": ["inclusion", "social justice"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty": "Hard",
+    "source_pdf": "jemh108.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Trig Ratio Derivation",
+            "objective": "Derive trigonometric ratios",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Use right triangle",
+                "Derive ratios"
+            ],
+            "learning_outcome": "Derivation skill",
+            "evaluation": "Logical derivation (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Angle Dependency Study",
+            "objective": "Analyse ratio change with angle",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Vary angle",
+                "Observe ratios"
+            ],
+            "learning_outcome": "Concept depth",
+            "evaluation": "Observation accuracy (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Trig Identities Project",
+            "objective": "Prove basic identities",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Select identity",
+                "Prove stepwise"
+            ],
+            "learning_outcome": "Proof mastery",
+            "evaluation": "Logical flow (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Real-Life Trig Analysis",
+            "objective": "Apply trigonometry to measurements",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Choose object",
+                "Estimate dimensions"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Correct application (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Ratio Comparison Case",
+            "objective": "Compare trig ratios analytically",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse sin, cos, tan",
+                "Compare"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Correct comparison (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Diagram Error Analysis",
+            "objective": "Detect diagram mistakes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse diagram",
+                "Correct it"
+            ],
+            "learning_outcome": "Critical thinking",
+            "evaluation": "Correction accuracy (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Trigonometry in Navigation",
+            "objective": "Study navigation applications",
+            "materials": [
+                "Internet",
+                "Project file"
+            ],
+            "steps": [
+                "Research usage",
+                "Prepare report"
+            ],
+            "learning_outcome": "Research skill",
+            "evaluation": "Content depth (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Historical Trigonometry Study",
+            "objective": "Study evolution of trigonometry",
+            "materials": [
+                "Internet"
+            ],
+            "steps": [
+                "Research history",
+                "Write summary"
+            ],
+            "learning_outcome": "Concept awareness",
+            "evaluation": "Depth and clarity (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Trig Vocabulary Precision",
+            "objective": "Use precise trig terminology",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Define terms",
+                "Use in context"
+            ],
+            "learning_outcome": "Terminology mastery",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Comparative Trig Methods",
+            "objective": "Compare trig approaches",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve using different ratios",
+                "Compare"
+            ],
+            "learning_outcome": "Method selection skill",
+            "evaluation": "Comparison depth (20 marks)"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "class": "Class 6",
+    "subject": "Mathematics",
+    "chapter": "Tales by Dots and Lines",
+    "difficulty": "Easy",
+    "source_pdf": "hegp205.pdf",
+    "short_notes": {
+        "key_points": [
+            "Data is a collection of facts, numbers or observations",
+            "Mean represents the average value of a dataset",
+            "Median represents the middle value when data is arranged in order",
+            "Dot plots show data using dots above a number line",
+            "Line graphs show how values change over time"
+        ],
+        "examples": [
+            "Mean of 2, 4, 6 = 4",
+            "Median of 3, 5, 7 = 5",
+            "Dot plot showing number of books read by students",
+            "Line graph showing temperature changes during a day"
+        ],
+        "formulas": [
+            "Mean = Sum of observations / Number of observations",
+            "Median (odd number of values) = Middle value",
+            "Median (even number of values) = Average of two middle values"
+        ],
+        "exam_tips": [
+            "Always arrange numbers in order before finding the median",
+            "Check the number of observations before calculating mean",
+            "Use clear scales while drawing graphs",
+            "Read graph axes carefully in exam questions"
+        ]
+    }
+}

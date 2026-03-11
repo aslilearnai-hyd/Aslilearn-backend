@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Life Processes in Animals",
+    "difficulty": "Easy",
+    "source_pdf": "jesc105.pdf",
+    "short_notes": {
+        "key_points": [
+            "Life processes are the basic functions performed by living organisms to survive on Earth.",
+            "Nutrition involves taking in food and its utilization by the body for energy and growth.",
+            "Respiration is the process of breaking down food to release energy using oxygen.",
+            "Circulation is the transport of nutrients, oxygen, and waste products within the body.",
+            "Excretion is the removal of harmful metabolic waste products from the body."
+        ],
+        "examples": [
+            "Digestion: Breaking down complex starch into simple sugars like glucose.",
+            "Breathing Organs: Humans use lungs, fish use gills, and insects use spiracles.",
+            "Transport: Blood carrying oxygen from the lungs to all parts of the body.",
+            "Excretion: Sweating and urinating to remove excess salts and urea."
+        ],
+        "formulas": [
+            "Cellular Respiration: Glucose + Oxygen → Carbon Dioxide + Water + Energy",
+            "Human Heart Rate: Average 72 to 80 beats per minute"
+        ],
+        "exam_tips": [
+            "Remember that digestion starts in the mouth, not the stomach.",
+            "Don't confuse breathing (physical) with respiration (chemical).",
+            "Identify the heart as the muscular pump of the circulatory system.",
+            "Note that the kidneys are the primary organs for filtering waste from the blood."
+        ]
+    }
+}

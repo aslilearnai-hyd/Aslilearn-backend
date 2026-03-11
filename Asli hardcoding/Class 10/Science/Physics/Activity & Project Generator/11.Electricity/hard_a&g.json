@@ -1,0 +1,165 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Electricity",
+    "difficulty": "Hard",
+    "source_pdf": "cbse_class10_science_ch11.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Resistivity Measurement Experiment",
+            "objective": "Determine resistivity of material",
+            "materials": [
+                "Wire samples, meter scale, micrometer, ammeter, voltmeter"
+            ],
+            "steps": [
+                "Measure length, diameter, V, I for wire",
+                "Calculate R, then resistivity ρ = R × A / l",
+                "Compare for different materials",
+                "Discuss errors"
+            ],
+            "learning_outcome": "Masters resistivity calculation",
+            "evaluation": "Precision, formula application, analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Complex Circuit Analysis",
+            "objective": "Solve mixed series-parallel circuits",
+            "materials": [
+                "Notebook, calculator"
+            ],
+            "steps": [
+                "Design a circuit with 4-5 resistors (mixed combo)",
+                "Calculate equivalent R, total current, power in each",
+                "Verify with assumed voltage",
+                "Present step-by-step reduction"
+            ],
+            "learning_outcome": "Handles advanced circuit problems",
+            "evaluation": "Correct equivalent R and power calc (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Joule's Heating Numerical Investigation",
+            "objective": "Analyze heat in different scenarios",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve problems: heat in series vs parallel, fuse wire melting",
+                "Calculate time for given heat/energy",
+                "Discuss why nichrome used in heaters"
+            ],
+            "learning_outcome": "Applies H = I²Rt quantitatively",
+            "evaluation": "Depth of solutions and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Non-Ohmic Devices Study",
+            "objective": "Explore deviation from Ohm's law",
+            "materials": [
+                "Diode/LED, bulb (non-linear), graph paper"
+            ],
+            "steps": [
+                "Plot V-I for filament bulb and diode",
+                "Observe non-linear curve",
+                "Explain temperature effect or junction barrier"
+            ],
+            "learning_outcome": "Understands limitations of Ohm's law",
+            "evaluation": "Graphs, interpretation, explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Power Transmission Efficiency Model",
+            "objective": "Understand why high voltage transmission",
+            "materials": [
+                "Reference data, calculator"
+            ],
+            "steps": [
+                "Calculate power loss (I²R) for low vs high voltage transmission",
+                "Use example (100W at 10V vs 1000V)",
+                "Discuss role of transformers",
+                "Present report"
+            ],
+            "learning_outcome": "Links chapter to real power grids",
+            "evaluation": "Calculations, analysis, report (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Fuse and MCB Comparative Study",
+            "objective": "Analyze safety devices",
+            "materials": [
+                "Research, notebook"
+            ],
+            "steps": [
+                "Research working of fuse vs MCB",
+                "Calculate rating for given circuit",
+                "Compare advantages/disadvantages",
+                "Suggest for home use"
+            ],
+            "learning_outcome": "Deepens safety understanding",
+            "evaluation": "Research depth and comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Debate: Renewable vs Conventional Energy Costs",
+            "objective": "Apply electricity concepts to energy debate",
+            "materials": [
+                "Research notes"
+            ],
+            "steps": [
+                "Teams argue on cost per kWh, transmission losses",
+                "Use numerical examples from chapter",
+                "Conclude with balanced view"
+            ],
+            "learning_outcome": "Critical thinking on energy",
+            "evaluation": "Arguments, numerical support (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Superconductor Introduction Research",
+            "objective": "Explore advanced resistance concept",
+            "materials": [
+                "Internet/books"
+            ],
+            "steps": [
+                "Research superconductors (zero resistance)",
+                "Explain Meissner effect briefly",
+                "Discuss potential in power transmission",
+                "Present poster"
+            ],
+            "learning_outcome": "Extends chapter to modern physics",
+            "evaluation": "Accuracy and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Advanced Numericals Challenge Quiz",
+            "objective": "Solve tough problems",
+            "materials": [
+                "Question set"
+            ],
+            "steps": [
+                "Include problems on equivalent R, power, heating time",
+                "Timed individual/group solving",
+                "Discuss tricky parts"
+            ],
+            "learning_outcome": "Higher-order problem solving",
+            "evaluation": "Accuracy and speed (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Innovative Energy-Saving Device Idea",
+            "objective": "Creative application",
+            "materials": [
+                "Notebook, colors"
+            ],
+            "steps": [
+                "Propose device reducing losses (smart switch, etc.)",
+                "Explain using Ohm's law, power formulas",
+                "Sketch, calculate efficiency gain",
+                "Discuss feasibility"
+            ],
+            "learning_outcome": "Stimulates innovation",
+            "evaluation": "Originality, science basis, ethics (10 marks)"
+        }
+    ]
+}

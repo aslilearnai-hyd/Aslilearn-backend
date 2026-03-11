@@ -1,0 +1,40 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Easy",
+    "source_pdf": "m9_2.pdf",
+    "short_notes": {
+        "key_points": [
+            "A polynomial is an algebraic expression consisting of variables and coefficients with non-negative integer powers",
+            "Terms in a polynomial are separated by addition or subtraction",
+            "The coefficient is the numerical factor of a variable",
+            "The degree of a polynomial is the highest power of the variable",
+            "A linear polynomial has degree 1",
+            "A quadratic polynomial has degree 2",
+            "A cubic polynomial has degree 3",
+            "A zero of a polynomial is the value of the variable that makes the polynomial equal to zero"
+        ],
+        "examples": [
+            "Polynomial example: 3x² + 2x + 1",
+            "Linear polynomial: 2x + 3",
+            "Quadratic polynomial: x² + 4x + 5",
+            "Cubic polynomial: x³ + 2x² + x + 1",
+            "Zero example: For x − 4, zero is 4",
+            "Constant polynomial: 7"
+        ],
+        "formulas": [
+            "(a + b)² = a² + 2ab + b²",
+            "(a − b)² = a² − 2ab + b²",
+            "a² − b² = (a + b)(a − b)",
+            "(a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca"
+        ],
+        "exam_tips": [
+            "Always identify the highest power to determine the degree of a polynomial",
+            "Remember that a linear polynomial has exactly one zero",
+            "Use algebraic identities to simplify expressions quickly",
+            "Check factorisation carefully while solving polynomial problems",
+            "Practice substitution to find values of polynomials"
+        ]
+    }
+}

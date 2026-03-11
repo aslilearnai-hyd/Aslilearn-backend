@@ -1,0 +1,173 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Euclid’s Geometry",
+    "difficulty": "Easy",
+    "source_pdf": "m9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Point Dot Model",
+            "objective": "Understand the concept of a point",
+            "materials": [
+                "Chart paper",
+                "Marker"
+            ],
+            "steps": [
+                "Draw several dots on chart paper",
+                "Label them as A, B, C, D",
+                "Explain that each dot represents a point"
+            ],
+            "learning_outcome": "Recognises representation of points",
+            "evaluation": "Correct labelling of points (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Line Drawing Activity",
+            "objective": "Understand a straight line",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Mark two points A and B",
+                "Use a ruler to join them",
+                "Extend the line on both sides"
+            ],
+            "learning_outcome": "Understands straight line concept",
+            "evaluation": "Accuracy of drawing (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Line Segment Identification",
+            "objective": "Identify a line segment",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw points A and B",
+                "Join them with a straight line",
+                "Explain that AB is a line segment"
+            ],
+            "learning_outcome": "Distinguishes line segment",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Circle Drawing Task",
+            "objective": "Understand Euclid’s postulate of drawing a circle",
+            "materials": [
+                "Compass",
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Mark a point as centre",
+                "Use compass to draw a circle",
+                "Label centre and radius"
+            ],
+            "learning_outcome": "Learns circle construction",
+            "evaluation": "Correct circle drawing (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Right Angle Check",
+            "objective": "Understand that all right angles are equal",
+            "materials": [
+                "Protractor",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two right angles using protractor",
+                "Measure both angles",
+                "Compare their values"
+            ],
+            "learning_outcome": "Recognises equality of right angles",
+            "evaluation": "Correct measurement (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Two Points One Line",
+            "objective": "Understand that only one line passes through two points",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Ruler"
+            ],
+            "steps": [
+                "Mark two points A and B",
+                "Draw the straight line AB",
+                "Try drawing another different straight line through the same points"
+            ],
+            "learning_outcome": "Understands uniqueness of line through two points",
+            "evaluation": "Explanation clarity (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Axiom Matching",
+            "objective": "Recognise Euclid’s axioms",
+            "materials": [
+                "Worksheet",
+                "Pen"
+            ],
+            "steps": [
+                "List axioms on the left",
+                "List examples on the right",
+                "Match each axiom with the correct example"
+            ],
+            "learning_outcome": "Identifies axioms with examples",
+            "evaluation": "Correct matching (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Midpoint Drawing",
+            "objective": "Identify midpoint of a line segment",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a line segment AB",
+                "Measure its length",
+                "Mark the midpoint C"
+            ],
+            "learning_outcome": "Understands midpoint concept",
+            "evaluation": "Correct midpoint marking (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Intersecting Lines Observation",
+            "objective": "Observe intersection of lines",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw two lines",
+                "Make them intersect",
+                "Mark the intersection point"
+            ],
+            "learning_outcome": "Understands intersection concept",
+            "evaluation": "Correct diagram (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Geometry in Daily Life",
+            "objective": "Identify geometric ideas in real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe objects around you",
+                "Identify examples of points, lines, and circles",
+                "Write three examples"
+            ],
+            "learning_outcome": "Connects geometry with real life",
+            "evaluation": "Relevant examples (10 marks)"
+        }
+    ]
+}

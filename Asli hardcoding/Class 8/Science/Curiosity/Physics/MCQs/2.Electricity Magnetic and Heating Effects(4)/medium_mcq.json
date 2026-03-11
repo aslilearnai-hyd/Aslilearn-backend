@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-05T21:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which condition is necessary for a bulb to glow in a circuit?",
+      "options": {
+        "A": "Open circuit",
+        "B": "Closed circuit",
+        "C": "Broken wire",
+        "D": "No battery"
+      },
+      "correct_answer": "B",
+      "explanation": "A bulb glows only when the circuit is complete and current flows.",
+      "difficulty": "medium",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 2,
+      "question": "What will happen if a switch in a circuit is turned OFF?",
+      "options": {
+        "A": "Current increases",
+        "B": "Circuit becomes open",
+        "C": "Bulb glows brighter",
+        "D": "Battery stops working"
+      },
+      "correct_answer": "B",
+      "explanation": "Turning OFF the switch breaks the circuit, stopping current flow.",
+      "difficulty": "medium",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 3,
+      "question": "Which property of a material allows electric current to pass through it easily?",
+      "options": {
+        "A": "Resistance",
+        "B": "Conductivity",
+        "C": "Elasticity",
+        "D": "Hardness"
+      },
+      "correct_answer": "B",
+      "explanation": "Materials with high conductivity allow electric current to pass easily.",
+      "difficulty": "medium",
+      "source_section": "Conductors"
+    },
+    {
+      "question_number": 4,
+      "question": "Which effect of electric current is used in electric irons?",
+      "options": {
+        "A": "Magnetic effect",
+        "B": "Heating effect",
+        "C": "Chemical effect",
+        "D": "Cooling effect"
+      },
+      "correct_answer": "B",
+      "explanation": "Electric irons work by converting electrical energy into heat.",
+      "difficulty": "medium",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 5,
+      "question": "What happens when too much current flows through a circuit?",
+      "options": {
+        "A": "Bulb stops glowing",
+        "B": "Fuse melts",
+        "C": "Battery disappears",
+        "D": "Switch breaks automatically"
+      },
+      "correct_answer": "B",
+      "explanation": "A fuse melts due to excessive heating when excess current flows.",
+      "difficulty": "medium",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 6,
+      "question": "Which device uses the magnetic effect of electric current?",
+      "options": {
+        "A": "Electric heater",
+        "B": "Electric bell",
+        "C": "Electric iron",
+        "D": "Electric kettle"
+      },
+      "correct_answer": "B",
+      "explanation": "Electric bells work using electromagnets created by current.",
+      "difficulty": "medium",
+      "source_section": "Electric Bell"
+    },
+    {
+      "question_number": 7,
+      "question": "What will happen if the number of turns in the coil of an electromagnet increases?",
+      "options": {
+        "A": "Magnetic strength decreases",
+        "B": "Magnetic strength increases",
+        "C": "Magnet stops working",
+        "D": "Electric current stops"
+      },
+      "correct_answer": "B",
+      "explanation": "Increasing the number of coil turns strengthens an electromagnet.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 8,
+      "question": "Which core material is commonly used in electromagnets?",
+      "options": {
+        "A": "Plastic",
+        "B": "Glass",
+        "C": "Soft iron",
+        "D": "Rubber"
+      },
+      "correct_answer": "C",
+      "explanation": "Soft iron is used because it magnetizes easily.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following increases the strength of an electromagnet?",
+      "options": {
+        "A": "Decreasing current",
+        "B": "Increasing current",
+        "C": "Removing coil",
+        "D": "Removing core"
+      },
+      "correct_answer": "B",
+      "explanation": "More current increases magnetic field strength.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the main advantage of electromagnets over permanent magnets?",
+      "options": {
+        "A": "They are heavier",
+        "B": "They work without electricity",
+        "C": "They can be switched on and off",
+        "D": "They are natural magnets"
+      },
+      "correct_answer": "C",
+      "explanation": "Electromagnets work only when current flows and can be controlled.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 11,
+      "question": "Which instrument is used to detect the magnetic field around a current carrying wire?",
+      "options": {
+        "A": "Compass",
+        "B": "Thermometer",
+        "C": "Barometer",
+        "D": "Voltmeter"
+      },
+      "correct_answer": "A",
+      "explanation": "A compass needle deflects in a magnetic field.",
+      "difficulty": "medium",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 12,
+      "question": "What type of energy conversion occurs in an electric heater?",
+      "options": {
+        "A": "Electrical to heat",
+        "B": "Heat to electrical",
+        "C": "Light to electrical",
+        "D": "Mechanical to electrical"
+      },
+      "correct_answer": "A",
+      "explanation": "Electrical energy converts to heat energy.",
+      "difficulty": "medium",
+      "source_section": "Heating Appliances"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are wires coated with insulating materials?",
+      "options": {
+        "A": "To increase voltage",
+        "B": "To prevent electric shock",
+        "C": "To produce magnetism",
+        "D": "To increase current"
+      },
+      "correct_answer": "B",
+      "explanation": "Insulation protects people from electric shocks.",
+      "difficulty": "medium",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 14,
+      "question": "Which factor mainly produces heat in a wire carrying current?",
+      "options": {
+        "A": "Resistance",
+        "B": "Weight",
+        "C": "Color",
+        "D": "Length"
+      },
+      "correct_answer": "A",
+      "explanation": "Heat is produced due to resistance in the conductor.",
+      "difficulty": "medium",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the main function of a fuse in a circuit?",
+      "options": {
+        "A": "Increase current",
+        "B": "Protect circuit",
+        "C": "Increase voltage",
+        "D": "Produce light"
+      },
+      "correct_answer": "B",
+      "explanation": "A fuse protects appliances from excessive current.",
+      "difficulty": "medium",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 16,
+      "question": "Which condition causes a short circuit?",
+      "options": {
+        "A": "Broken wire",
+        "B": "Live and neutral wires touching",
+        "C": "Bulb glowing",
+        "D": "Switch ON"
+      },
+      "correct_answer": "B",
+      "explanation": "A short circuit occurs when wires of different potential touch.",
+      "difficulty": "medium",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 17,
+      "question": "Which property of a heating coil prevents it from melting easily?",
+      "options": {
+        "A": "Low melting point",
+        "B": "High melting point",
+        "C": "Low resistance",
+        "D": "Low temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "Heating coils are made of materials with high melting points.",
+      "difficulty": "medium",
+      "source_section": "Heating Appliances"
+    },
+    {
+      "question_number": 18,
+      "question": "What happens to the magnetic field if current direction is reversed?",
+      "options": {
+        "A": "Magnetic field disappears",
+        "B": "Magnetic field direction reverses",
+        "C": "Magnetic field increases",
+        "D": "Magnetic field becomes permanent"
+      },
+      "correct_answer": "B",
+      "explanation": "Reversing current changes magnetic field direction.",
+      "difficulty": "medium",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 19,
+      "question": "Which energy transformation occurs in a glowing bulb?",
+      "options": {
+        "A": "Electrical to light",
+        "B": "Light to heat",
+        "C": "Mechanical to electrical",
+        "D": "Heat to electrical"
+      },
+      "correct_answer": "A",
+      "explanation": "Bulbs convert electrical energy into light energy.",
+      "difficulty": "medium",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are electromagnets used in cranes for lifting scrap metal?",
+      "options": {
+        "A": "They are permanent",
+        "B": "They can be switched on and off",
+        "C": "They are natural magnets",
+        "D": "They do not require electricity"
+      },
+      "correct_answer": "B",
+      "explanation": "Electromagnets can be controlled using electric current.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 21,
+      "question": "Which effect of electric current produces a magnetic field around a wire?",
+      "options": {
+        "A": "Heating effect",
+        "B": "Magnetic effect",
+        "C": "Chemical effect",
+        "D": "Light effect"
+      },
+      "correct_answer": "B",
+      "explanation": "Current flowing through a conductor produces a magnetic field.",
+      "difficulty": "medium",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 22,
+      "question": "Which component connects different parts of an electric circuit?",
+      "options": {
+        "A": "Wire",
+        "B": "Bulb",
+        "C": "Battery",
+        "D": "Switch"
+      },
+      "correct_answer": "A",
+      "explanation": "Wires connect the different components of a circuit.",
+      "difficulty": "medium",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 23,
+      "question": "What will happen if insulation of wires is damaged?",
+      "options": {
+        "A": "Current increases automatically",
+        "B": "Risk of electric shock increases",
+        "C": "Bulb becomes brighter",
+        "D": "Circuit becomes closed"
+      },
+      "correct_answer": "B",
+      "explanation": "Damaged insulation exposes wires and may cause electric shocks.",
+      "difficulty": "medium",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor mainly determines how strong an electromagnet becomes?",
+      "options": {
+        "A": "Number of coil turns",
+        "B": "Color of wire",
+        "C": "Length of switch",
+        "D": "Weight of battery"
+      },
+      "correct_answer": "A",
+      "explanation": "More turns in the coil increase magnetic strength.",
+      "difficulty": "medium",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 25,
+      "question": "Which device converts electrical energy into sound using electromagnets?",
+      "options": {
+        "A": "Electric bell",
+        "B": "Electric iron",
+        "C": "Electric heater",
+        "D": "Electric kettle"
+      },
+      "correct_answer": "A",
+      "explanation": "Electric bells use electromagnets to produce sound.",
+      "difficulty": "medium",
+      "source_section": "Electric Bell"
+    }
+  ]
+}

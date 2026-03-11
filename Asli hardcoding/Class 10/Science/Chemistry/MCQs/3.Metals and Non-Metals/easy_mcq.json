@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Metals and Non-metals",
+  "generated_at": "2026-03-10T23:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following metals exists in a liquid state at room temperature?",
+      "options": {
+        "A": "Sodium",
+        "B": "Mercury",
+        "C": "Gallium",
+        "D": "Silver"
+      },
+      "correct_answer": "B",
+      "explanation": "Mercury is the only metal that is found in the liquid state at room temperature.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The property of metals by which they can be beaten into thin sheets is called:",
+      "options": {
+        "A": "Ductility",
+        "B": "Malleability",
+        "C": "Sonority",
+        "D": "Conductivity"
+      },
+      "correct_answer": "B",
+      "explanation": "Malleability is the property that allows metals to be hammered into thin sheets, like gold and silver foils.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is the most ductile metal?",
+      "options": {
+        "A": "Copper",
+        "B": "Aluminium",
+        "C": "Gold",
+        "D": "Iron"
+      },
+      "correct_answer": "C",
+      "explanation": "Gold is the most ductile metal; a wire of about 2 km length can be drawn from 1 gram of gold.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Non-metals are generally poor conductors of electricity. However, one form of carbon is a good conductor. Identify it:",
+      "options": {
+        "A": "Diamond",
+        "B": "Graphite",
+        "C": "Coal",
+        "D": "Coke"
+      },
+      "correct_answer": "B",
+      "explanation": "Graphite is an allotrope of carbon that is a very good conductor of electricity.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following non-metals is a liquid at room temperature?",
+      "options": {
+        "A": "Iodine",
+        "B": "Bromine",
+        "C": "Chlorine",
+        "D": "Sulfur"
+      },
+      "correct_answer": "B",
+      "explanation": "Bromine is the only non-metal that exists as a liquid at room temperature.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Metals that react with both acids as well as bases to produce salt and water are called:",
+      "options": {
+        "A": "Acidic oxides",
+        "B": "Basic oxides",
+        "C": "Amphoteric oxides",
+        "D": "Neutral oxides"
+      },
+      "correct_answer": "C",
+      "explanation": "Amphoteric oxides like aluminium oxide ($Al_2O_3$) react with both acids and bases.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following metals is stored in kerosene to prevent it from catching fire?",
+      "options": {
+        "A": "Magnesium",
+        "B": "Iron",
+        "C": "Sodium",
+        "D": "Gold"
+      },
+      "correct_answer": "C",
+      "explanation": "Sodium and Potassium are highly reactive metals that react vigorously with air and water, so they are kept under kerosene.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "When a metal reacts with water, the gas evolved is:",
+      "options": {
+        "A": "Oxygen",
+        "B": "Hydrogen",
+        "C": "Nitrogen",
+        "D": "Carbon dioxide"
+      },
+      "correct_answer": "B",
+      "explanation": "Metals react with water to produce metal oxides and hydrogen gas.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "An alloy is a:",
+      "options": {
+        "A": "Pure element",
+        "B": "Compound",
+        "C": "Homogeneous mixture",
+        "D": "Heterogeneous mixture"
+      },
+      "correct_answer": "C",
+      "explanation": "An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following metals does not react even with steam?",
+      "options": {
+        "A": "Iron",
+        "B": "Aluminium",
+        "C": "Copper",
+        "D": "Zinc"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals like Lead, Copper, Silver, and Gold do not react with water at all, even with steam.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following non-metals is lustrous (shiny)?",
+      "options": {
+        "A": "Sulfur",
+        "B": "Oxygen",
+        "C": "Iodine",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Non-metals are generally dull, but Iodine is an exception as it is lustrous.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "The most abundant metal in the earth's crust is:",
+      "options": {
+        "A": "Iron",
+        "B": "Aluminium",
+        "C": "Calcium",
+        "D": "Sodium"
+      },
+      "correct_answer": "B",
+      "explanation": "Aluminium is the most abundant metal in the earth's crust, followed by Iron.",
+      "difficulty": "easy",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Food cans are coated with tin and not with zinc because:",
+      "options": {
+        "A": "Zinc is costlier than tin",
+        "B": "Zinc has a higher melting point than tin",
+        "C": "Zinc is more reactive than tin",
+        "D": "Zinc is less reactive than tin"
+      },
+      "correct_answer": "C",
+      "explanation": "Zinc is more reactive than tin and could react with the organic acids present in food.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "An ionic bond is formed by the:",
+      "options": {
+        "A": "Sharing of electrons",
+        "B": "Transfer of electrons",
+        "C": "Loss of protons",
+        "D": "Gain of neutrons"
+      },
+      "correct_answer": "B",
+      "explanation": "Ionic bonds are formed by the transfer of electrons from a metal to a non-metal.",
+      "difficulty": "easy",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following metals is the best conductor of heat?",
+      "options": {
+        "A": "Lead",
+        "B": "Mercury",
+        "C": "Silver",
+        "D": "Iron"
+      },
+      "correct_answer": "C",
+      "explanation": "Silver and Copper are the best conductors of heat.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Rusting of iron can be prevented by coating it with a layer of zinc. This process is called:",
+      "options": {
+        "A": "Anodising",
+        "B": "Galvanisation",
+        "C": "Alloying",
+        "D": "Painting"
+      },
+      "correct_answer": "B",
+      "explanation": "Galvanisation is a method of protecting steel and iron from rusting by coating them with a thin layer of zinc.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Solder is an alloy of:",
+      "options": {
+        "A": "Copper and Tin",
+        "B": "Lead and Tin",
+        "C": "Copper and Zinc",
+        "D": "Iron and Carbon"
+      },
+      "correct_answer": "B",
+      "explanation": "Solder is an alloy of Lead and Tin ($Pb$ and $Sn$) and has a low melting point.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Metals generally form oxides that are:",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "None of these"
+      },
+      "correct_answer": "B",
+      "explanation": "Most metals produce basic oxides when dissolved in water.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Aqua regia is a mixture of concentrated $HCl$ and concentrated $HNO_3$ in the ratio:",
+      "options": {
+        "A": "1:3",
+        "B": "3:1",
+        "C": "2:2",
+        "D": "3:2"
+      },
+      "correct_answer": "B",
+      "explanation": "Aqua regia (royal water) is a freshly prepared mixture of concentrated $HCl$ and concentrated $HNO_3$ in a 3:1 ratio.",
+      "difficulty": "easy",
+      "source_section": "Section 3.2.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a property of ionic compounds?",
+      "options": {
+        "A": "Low melting point",
+        "B": "Soluble in petrol",
+        "C": "Conduct electricity in solid state",
+        "D": "High melting and boiling points"
+      },
+      "correct_answer": "D",
+      "explanation": "Ionic compounds have high melting and boiling points due to strong electrostatic forces between ions.",
+      "difficulty": "easy",
+      "source_section": "Section 3.3.1"
+    },
+    {
+      "question_number": 21,
+      "question": "The minerals from which metals can be profitably extracted are called:",
+      "options": {
+        "A": "Gangs",
+        "B": "Ores",
+        "C": "Flux",
+        "D": "Slag"
+      },
+      "correct_answer": "B",
+      "explanation": "Ores are minerals that contain a very high percentage of a particular metal and the metal can be profitably extracted from it.",
+      "difficulty": "easy",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Brass is an alloy of:",
+      "options": {
+        "A": "Copper and Zinc",
+        "B": "Copper and Tin",
+        "C": "Lead and Tin",
+        "D": "Zinc and Iron"
+      },
+      "correct_answer": "A",
+      "explanation": "Brass is an alloy made of Copper and Zinc.",
+      "difficulty": "easy",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which metal is used in the manufacture of Thermometers?",
+      "options": {
+        "A": "Alcohol",
+        "B": "Mercury",
+        "C": "Sodium",
+        "D": "Silver"
+      },
+      "correct_answer": "B",
+      "explanation": "Mercury is used in thermometers because it is a liquid at room temperature and expands uniformly with heat.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Non-metals generally form oxides that are:",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "Both A and C"
+      },
+      "correct_answer": "D",
+      "explanation": "Non-metals produce acidic oxides (like $SO_2$) or neutral oxides (like $CO$ or $H_2O$).",
+      "difficulty": "easy",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following metals can be cut with a knife?",
+      "options": {
+        "A": "Sodium",
+        "B": "Iron",
+        "C": "Copper",
+        "D": "Aluminium"
+      },
+      "correct_answer": "A",
+      "explanation": "Alkali metals like Sodium, Potassium, and Lithium are soft enough to be cut with a knife.",
+      "difficulty": "easy",
+      "source_section": "Section 3.1"
+    }
+  ]
+}

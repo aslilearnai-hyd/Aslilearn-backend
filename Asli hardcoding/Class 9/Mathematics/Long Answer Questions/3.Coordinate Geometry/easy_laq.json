@@ -1,0 +1,404 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-06T01:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the Cartesian plane with a diagram.",
+            "answer": "The Cartesian plane is formed by two perpendicular number lines called the x-axis and y-axis. Their intersection point is called the origin. The plane is divided into four quadrants.",
+            "answer_outline": [
+                "Definition of Cartesian plane",
+                "x-axis and y-axis",
+                "Origin",
+                "Four quadrants"
+            ],
+            "key_concepts": [
+                "Cartesian plane",
+                "axes"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain coordinate axes and their importance.",
+            "answer": "Coordinate axes consist of the x-axis and y-axis which are perpendicular to each other. They help locate points in the coordinate plane using ordered pairs.",
+            "answer_outline": [
+                "Definition of coordinate axes",
+                "x-axis",
+                "y-axis",
+                "Use in locating points"
+            ],
+            "key_concepts": [
+                "coordinate axes"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the concept of origin in coordinate geometry.",
+            "answer": "The origin is the point where the x-axis and y-axis intersect. Its coordinates are (0,0) and it serves as the reference point for locating all other points.",
+            "answer_outline": [
+                "Definition",
+                "Coordinates (0,0)",
+                "Importance"
+            ],
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain what an ordered pair represents.",
+            "answer": "An ordered pair (x,y) represents the position of a point in the coordinate plane where x indicates the horizontal distance and y indicates the vertical distance.",
+            "answer_outline": [
+                "Definition",
+                "x-coordinate",
+                "y-coordinate"
+            ],
+            "key_concepts": [
+                "ordered pair"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the terms abscissa and ordinate.",
+            "answer": "Abscissa refers to the x-coordinate of a point and ordinate refers to the y-coordinate of a point in the coordinate plane.",
+            "answer_outline": [
+                "Definition of abscissa",
+                "Definition of ordinate"
+            ],
+            "key_concepts": [
+                "abscissa",
+                "ordinate"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the four quadrants in the Cartesian plane.",
+            "answer": "The coordinate axes divide the plane into four quadrants: I, II, III and IV. Each quadrant has a specific combination of positive and negative coordinates.",
+            "answer_outline": [
+                "Quadrant I",
+                "Quadrant II",
+                "Quadrant III",
+                "Quadrant IV"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the sign of coordinates in each quadrant.",
+            "answer": "Quadrant I has (+,+), Quadrant II has (-,+), Quadrant III has (-,-), and Quadrant IV has (+,-).",
+            "answer_outline": [
+                "Signs in Quadrant I",
+                "Signs in Quadrant II",
+                "Signs in Quadrant III",
+                "Signs in Quadrant IV"
+            ],
+            "key_concepts": [
+                "quadrant signs"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how points are located in the Cartesian plane.",
+            "answer": "Points are located using ordered pairs (x,y). The x-coordinate gives the horizontal distance from the y-axis and the y-coordinate gives the vertical distance from the x-axis.",
+            "answer_outline": [
+                "Ordered pair",
+                "x-coordinate",
+                "y-coordinate"
+            ],
+            "key_concepts": [
+                "point location"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why the point (0,5) lies on the y-axis.",
+            "answer": "A point lies on the y-axis if its x-coordinate is zero. In (0,5), x = 0 so it lies on the y-axis.",
+            "answer_outline": [
+                "Definition of y-axis",
+                "Condition x=0",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the point (7,0) lies on the x-axis.",
+            "answer": "A point lies on the x-axis if its y-coordinate is zero. In (7,0), y = 0 so it lies on the x-axis.",
+            "answer_outline": [
+                "Definition of x-axis",
+                "Condition y=0",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the coordinates of points on the x-axis.",
+            "answer": "Points on the x-axis have coordinates of the form (x,0) where the y-coordinate is zero.",
+            "answer_outline": [
+                "Definition",
+                "General form",
+                "Example"
+            ],
+            "key_concepts": [
+                "x-axis coordinates"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the coordinates of points on the y-axis.",
+            "answer": "Points on the y-axis have coordinates of the form (0,y) where the x-coordinate is zero.",
+            "answer_outline": [
+                "Definition",
+                "General form",
+                "Example"
+            ],
+            "key_concepts": [
+                "y-axis coordinates"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the importance of the origin in coordinate geometry.",
+            "answer": "The origin acts as the reference point for measuring horizontal and vertical distances used to locate points in the coordinate plane.",
+            "answer_outline": [
+                "Definition",
+                "Reference point",
+                "Importance"
+            ],
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how quadrants are numbered in the Cartesian plane.",
+            "answer": "Quadrants are numbered anticlockwise starting from the top-right region as Quadrant I, followed by II, III and IV.",
+            "answer_outline": [
+                "Quadrant numbering",
+                "Direction"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why points on the axes do not belong to any quadrant.",
+            "answer": "Points on the axes have either x = 0 or y = 0 and lie exactly on the boundary between quadrants.",
+            "answer_outline": [
+                "Axes definition",
+                "Boundary explanation"
+            ],
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Describe the position of a point whose coordinates are both positive.",
+            "answer": "A point with both coordinates positive lies in the first quadrant.",
+            "answer_outline": [
+                "Sign explanation",
+                "Quadrant identification"
+            ],
+            "key_concepts": [
+                "quadrant I"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe the position of a point whose coordinates are both negative.",
+            "answer": "A point with both coordinates negative lies in the third quadrant.",
+            "answer_outline": [
+                "Sign explanation",
+                "Quadrant identification"
+            ],
+            "key_concepts": [
+                "quadrant III"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe the position of a point with negative x and positive y.",
+            "answer": "Such a point lies in the second quadrant.",
+            "answer_outline": [
+                "Sign explanation",
+                "Quadrant identification"
+            ],
+            "key_concepts": [
+                "quadrant II"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe the position of a point with positive x and negative y.",
+            "answer": "Such a point lies in the fourth quadrant.",
+            "answer_outline": [
+                "Sign explanation",
+                "Quadrant identification"
+            ],
+            "key_concepts": [
+                "quadrant IV"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the relationship between the axes and quadrants.",
+            "answer": "The x-axis and y-axis divide the Cartesian plane into four quadrants.",
+            "answer_outline": [
+                "Axes",
+                "Division of plane",
+                "Quadrants"
+            ],
+            "key_concepts": [
+                "axes",
+                "quadrants"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of ordered pairs in coordinate geometry.",
+            "answer": "Ordered pairs help represent the exact position of points in the coordinate plane.",
+            "answer_outline": [
+                "Definition",
+                "Use in locating points"
+            ],
+            "key_concepts": [
+                "ordered pairs"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why coordinate geometry is useful in mathematics.",
+            "answer": "Coordinate geometry helps represent geometric shapes and points using numbers and algebra.",
+            "answer_outline": [
+                "Use in geometry",
+                "Graph representation"
+            ],
+            "key_concepts": [
+                "coordinate geometry"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the role of the x-axis in locating points.",
+            "answer": "The x-axis measures horizontal distance of points from the y-axis.",
+            "answer_outline": [
+                "Horizontal measurement",
+                "Example"
+            ],
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of the y-axis in locating points.",
+            "answer": "The y-axis measures vertical distance of points from the x-axis.",
+            "answer_outline": [
+                "Vertical measurement",
+                "Example"
+            ],
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the contribution of René Descartes to coordinate geometry.",
+            "answer": "René Descartes introduced the Cartesian coordinate system which connects algebra and geometry.",
+            "answer_outline": [
+                "Mathematician",
+                "Coordinate system",
+                "Importance"
+            ],
+            "key_concepts": [
+                "Descartes"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Introduction"
+        }
+    ]
+}

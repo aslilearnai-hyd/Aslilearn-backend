@@ -1,0 +1,272 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 4: Political Parties",
+  "generated_at": "2026-03-11T13:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the role of political parties in modern democratic societies.",
+      "answer": "Political parties organize public opinion, contest elections, form governments, and provide policy alternatives. They connect citizens with the government and ensure representation of different interests in society.",
+      "answer_outline": [
+        "Connection between citizens and government",
+        "Election participation",
+        "Policy formulation",
+        "Representation of interests"
+      ],
+      "key_concepts": ["democracy", "political representation"],
+      "marks": 5,
+      "source_section": "Meaning"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyse how political parties influence law-making in a democratic country.",
+      "answer": "Political parties influence law-making because legislators usually belong to parties and follow party policies. Party leadership often guides decisions during debates and voting in the legislature.",
+      "answer_outline": [
+        "Role of legislators",
+        "Party leadership influence",
+        "Voting patterns"
+      ],
+      "key_concepts": ["legislature", "law making"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 3,
+      "question": "Evaluate the importance of opposition parties in maintaining democratic accountability.",
+      "answer": "Opposition parties monitor government actions, criticise incorrect policies, and present alternative solutions. Their presence ensures transparency and accountability in governance.",
+      "answer_outline": [
+        "Government monitoring",
+        "Policy criticism",
+        "Alternative proposals"
+      ],
+      "key_concepts": ["opposition", "accountability"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 4,
+      "question": "Compare one-party, two-party, and multiparty systems in terms of political stability and representation.",
+      "answer": "One-party systems provide stability but lack competition. Two-party systems offer stable governance with limited choices. Multiparty systems provide broader representation but may lead to coalition governments.",
+      "answer_outline": [
+        "Definition of each system",
+        "Advantages",
+        "Disadvantages"
+      ],
+      "key_concepts": ["party systems"],
+      "marks": 5,
+      "source_section": "Party Systems"
+    },
+    {
+      "question_number": 5,
+      "question": "Analyse why India follows a multiparty system.",
+      "answer": "India follows a multiparty system because of its social, cultural, and regional diversity. Multiple parties allow representation of different communities and regional interests.",
+      "answer_outline": [
+        "Social diversity",
+        "Regional representation",
+        "Democratic participation"
+      ],
+      "key_concepts": ["multiparty system"],
+      "marks": 5,
+      "source_section": "Party Systems"
+    },
+    {
+      "question_number": 6,
+      "question": "Examine the role of regional parties in Indian politics.",
+      "answer": "Regional parties represent local issues and interests of specific states. They often play an important role in coalition governments and influence national policy decisions.",
+      "answer_outline": [
+        "Representation of regional interests",
+        "Role in coalition governments",
+        "Impact on national policies"
+      ],
+      "key_concepts": ["regional parties"],
+      "marks": 5,
+      "source_section": "State parties"
+    },
+    {
+      "question_number": 7,
+      "question": "Evaluate the role of political parties in shaping public opinion.",
+      "answer": "Political parties raise social and political issues, organize campaigns, and influence media discussions. This process helps shape public opinion in democratic societies.",
+      "answer_outline": [
+        "Issue identification",
+        "Campaign activities",
+        "Media influence"
+      ],
+      "key_concepts": ["public opinion"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 8,
+      "question": "Analyse the impact of coalition governments on political stability.",
+      "answer": "Coalition governments allow representation of multiple parties but may sometimes lead to instability if disagreements occur among coalition partners.",
+      "answer_outline": ["Formation of coalitions", "Advantages", "Challenges"],
+      "key_concepts": ["coalition politics"],
+      "marks": 5,
+      "source_section": "Party Systems"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the criteria used by the Election Commission to recognise national parties in India.",
+      "answer": "The Election Commission recognizes national parties based on vote share and seats won in multiple states in Lok Sabha or Assembly elections.",
+      "answer_outline": [
+        "Vote percentage criteria",
+        "Seat requirements",
+        "Nationwide presence"
+      ],
+      "key_concepts": ["Election Commission", "national parties"],
+      "marks": 5,
+      "source_section": "National parties"
+    },
+    {
+      "question_number": 10,
+      "question": "Analyse how political parties represent social divisions in society.",
+      "answer": "Political parties often represent different social groups, ideologies, and interests. This allows diverse voices to be represented in democratic decision-making.",
+      "answer_outline": [
+        "Representation of communities",
+        "Ideological differences"
+      ],
+      "key_concepts": ["social representation"],
+      "marks": 5,
+      "source_section": "Meaning"
+    },
+    {
+      "question_number": 11,
+      "question": "Examine the problem of lack of internal democracy in political parties.",
+      "answer": "Many parties concentrate power in a few leaders, limiting participation of ordinary members in decision-making.",
+      "answer_outline": ["Power concentration", "Limited member participation"],
+      "key_concepts": ["internal democracy"],
+      "marks": 5,
+      "source_section": "Challenges"
+    },
+    {
+      "question_number": 12,
+      "question": "Discuss the issue of dynastic succession and its impact on political parties.",
+      "answer": "Dynastic succession occurs when leadership positions pass within families, reducing opportunities for talented party members.",
+      "answer_outline": [
+        "Family-based leadership",
+        "Impact on party democracy"
+      ],
+      "key_concepts": ["dynastic politics"],
+      "marks": 5,
+      "source_section": "Challenges"
+    },
+    {
+      "question_number": 13,
+      "question": "Analyse how money and muscle power influence electoral politics.",
+      "answer": "Financial resources and influence can affect candidate selection and election results, sometimes undermining democratic fairness.",
+      "answer_outline": ["Financial influence", "Election outcomes"],
+      "key_concepts": ["money power"],
+      "marks": 5,
+      "source_section": "Challenges"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the problem of limited ideological differences among political parties.",
+      "answer": "When parties have similar policies, voters may find it difficult to choose between them.",
+      "answer_outline": ["Similar policy positions", "Impact on voter choice"],
+      "key_concepts": ["ideological similarity"],
+      "marks": 5,
+      "source_section": "Challenges"
+    },
+    {
+      "question_number": 15,
+      "question": "Evaluate the role of the anti-defection law in maintaining political stability.",
+      "answer": "The anti-defection law prevents elected representatives from switching parties after elections, helping maintain stable governments.",
+      "answer_outline": ["Definition", "Purpose", "Impact on stability"],
+      "key_concepts": ["anti-defection law"],
+      "marks": 5,
+      "source_section": "Reforms"
+    },
+    {
+      "question_number": 16,
+      "question": "Analyse the importance of transparency in election funding.",
+      "answer": "Transparency in election funding ensures that voters know the sources of party finances and helps prevent corruption.",
+      "answer_outline": ["Funding disclosure", "Prevention of corruption"],
+      "key_concepts": ["transparency"],
+      "marks": 5,
+      "source_section": "Reforms"
+    },
+    {
+      "question_number": 17,
+      "question": "Discuss how citizens can contribute to reforming political parties.",
+      "answer": "Citizens can demand transparency, support democratic reforms, and actively participate in political processes.",
+      "answer_outline": ["Public awareness", "Citizen participation"],
+      "key_concepts": ["citizen participation"],
+      "marks": 5,
+      "source_section": "Reforms"
+    },
+    {
+      "question_number": 18,
+      "question": "Evaluate how political parties provide access to government machinery for citizens.",
+      "answer": "Political parties help citizens communicate with government officials and access public services through their representatives.",
+      "answer_outline": ["Communication channel", "Public assistance"],
+      "key_concepts": ["government access"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 19,
+      "question": "Analyse the relationship between political parties and policy-making.",
+      "answer": "Political parties formulate policies based on their ideologies and promises made during elections.",
+      "answer_outline": ["Party ideology", "Policy implementation"],
+      "key_concepts": ["policy making"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 20,
+      "question": "Discuss how alliances among political parties affect elections.",
+      "answer": "Alliances allow parties to combine their support base and increase chances of winning elections.",
+      "answer_outline": ["Election alliances", "Strategic cooperation"],
+      "key_concepts": ["political alliances"],
+      "marks": 5,
+      "source_section": "Party Systems"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how political parties influence national development policies.",
+      "answer": "The ruling party designs and implements development policies based on its ideology and election promises.",
+      "answer_outline": ["Policy planning", "Implementation"],
+      "key_concepts": ["development policies"],
+      "marks": 5,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 22,
+      "question": "Analyse how political parties contribute to democratic stability.",
+      "answer": "Political parties provide structure to political competition and ensure peaceful transfer of power through elections.",
+      "answer_outline": ["Political organization", "Peaceful power transfer"],
+      "key_concepts": ["democratic stability"],
+      "marks": 5,
+      "source_section": "Meaning"
+    },
+    {
+      "question_number": 23,
+      "question": "Discuss the significance of political party reforms in strengthening democracy.",
+      "answer": "Reforms improve transparency, accountability, and internal democracy within political parties.",
+      "answer_outline": ["Transparency", "Accountability"],
+      "key_concepts": ["political reforms"],
+      "marks": 5,
+      "source_section": "Reforms"
+    },
+    {
+      "question_number": 24,
+      "question": "Evaluate the role of media in monitoring political parties.",
+      "answer": "Media informs citizens about political activities and exposes corruption or unfair practices.",
+      "answer_outline": ["Public awareness", "Media accountability"],
+      "key_concepts": ["media role"],
+      "marks": 5,
+      "source_section": "Reforms"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how political parties strengthen democratic governance.",
+      "answer": "Political parties organize elections, represent citizens, formulate policies, and provide leadership for governance.",
+      "answer_outline": ["Representation", "Policy formation", "Leadership"],
+      "key_concepts": ["democratic governance"],
+      "marks": 5,
+      "source_section": "Meaning"
+    }
+  ]
+}

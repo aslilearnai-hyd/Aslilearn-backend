@@ -1,0 +1,388 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "generated_at": "2026-03-10T23:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "State the two laws of reflection of light. Explain the term lateral inversion with the help of a plane mirror.",
+      "answer": "The two laws of reflection are: (i) The incident ray, reflected ray and the normal at the point of incidence lie in the same plane. (ii) The angle of incidence is equal to the angle of reflection. Lateral inversion is the phenomenon in which the left side of the object appears as the right side in the mirror image and vice versa.",
+      "answer_outline": [
+        "State both laws of reflection",
+        "Definition of lateral inversion",
+        "Example using plane mirror"
+      ],
+      "key_concepts": [
+        "laws of reflection",
+        "plane mirror",
+        "lateral inversion"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Define pole, principal focus and centre of curvature of a spherical mirror.",
+      "answer": "Pole (P) is the midpoint of the reflecting surface of the mirror. Principal focus (F) is the point where rays parallel to the principal axis converge after reflection (for concave mirror) or appear to diverge from (for convex mirror). Centre of curvature (C) is the centre of the sphere of which the mirror surface is a part.",
+      "answer_outline": [
+        "Definition of pole",
+        "Definition of principal focus",
+        "Definition of centre of curvature"
+      ],
+      "key_concepts": [
+        "spherical mirror terms",
+        "principal focus",
+        "centre of curvature"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is focal length of a spherical mirror? Write the relation between focal length and radius of curvature.",
+      "answer": "Focal length is the distance between the pole and the principal focus of a mirror. The relation between radius of curvature and focal length is R = 2f.",
+      "answer_outline": [
+        "Definition of focal length",
+        "Relation R = 2f"
+      ],
+      "key_concepts": [
+        "focal length",
+        "radius of curvature"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 4,
+      "question": "State the mirror formula for spherical mirrors. Mention the sign conventions used for mirror calculations.",
+      "answer": "The mirror formula is 1/f = 1/v + 1/u. According to the Cartesian sign convention, distances measured in the direction of incident light are positive and distances measured opposite are negative. Object distance is usually negative and focal length of concave mirror is negative.",
+      "answer_outline": [
+        "Mirror formula",
+        "Explanation of sign convention"
+      ],
+      "key_concepts": [
+        "mirror formula",
+        "sign convention"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain why convex mirrors are used as rear-view mirrors in vehicles.",
+      "answer": "Convex mirrors are used as rear-view mirrors because they always form virtual, erect and diminished images. They also provide a wider field of view, allowing drivers to see a larger area of traffic behind the vehicle.",
+      "answer_outline": [
+        "Nature of image formed",
+        "Wide field of view explanation"
+      ],
+      "key_concepts": [
+        "convex mirror",
+        "rear-view mirror"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Define refraction of light. State Snell's law of refraction.",
+      "answer": "Refraction is the bending of light when it passes from one transparent medium to another due to change in speed. Snell's law states that for a given pair of media, the ratio of sine of angle of incidence to sine of angle of refraction is constant.",
+      "answer_outline": [
+        "Definition of refraction",
+        "Statement of Snell's law"
+      ],
+      "key_concepts": [
+        "refraction",
+        "Snell's law"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 7,
+      "question": "What is refractive index? Write its formula in terms of speed of light.",
+      "answer": "Refractive index of a medium is the ratio of speed of light in vacuum to the speed of light in that medium. It is given by μ = c / v.",
+      "answer_outline": [
+        "Definition of refractive index",
+        "Formula μ = c/v"
+      ],
+      "key_concepts": [
+        "refractive index",
+        "speed of light"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain why a pencil partially immersed in water appears bent.",
+      "answer": "The pencil appears bent because of refraction of light. Light rays from the part of the pencil inside water bend when they pass from water to air. Due to this bending, the submerged portion appears raised, giving the appearance of a bent pencil.",
+      "answer_outline": [
+        "Refraction explanation",
+        "Apparent shift of object"
+      ],
+      "key_concepts": [
+        "refraction",
+        "apparent depth"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Define total internal reflection. State the conditions required for it to occur.",
+      "answer": "Total internal reflection is the complete reflection of light back into the denser medium when it strikes the boundary at an angle greater than the critical angle. Conditions: (i) Light must travel from denser to rarer medium. (ii) Angle of incidence must be greater than the critical angle.",
+      "answer_outline": [
+        "Definition of total internal reflection",
+        "Two conditions"
+      ],
+      "key_concepts": [
+        "total internal reflection",
+        "critical angle"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What is an optical fibre? Mention one application of it.",
+      "answer": "An optical fibre is a thin transparent fibre made of glass or plastic through which light signals travel using total internal reflection. It is widely used in telecommunication for transmitting data over long distances.",
+      "answer_outline": [
+        "Definition of optical fibre",
+        "Application in communication"
+      ],
+      "key_concepts": [
+        "optical fibre",
+        "communication"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Define power of a lens. State its SI unit.",
+      "answer": "Power of a lens is the measure of its ability to converge or diverge light rays. It is defined as the reciprocal of focal length in metres. The SI unit is dioptre (D).",
+      "answer_outline": [
+        "Definition of power",
+        "Formula P = 1/f",
+        "Unit dioptre"
+      ],
+      "key_concepts": [
+        "power of lens",
+        "dioptre"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Differentiate between convex lens and concave lens.",
+      "answer": "A convex lens is thicker at the centre and converges parallel light rays to a focus. A concave lens is thinner at the centre and diverges parallel light rays.",
+      "answer_outline": [
+        "Structure difference",
+        "Effect on light rays"
+      ],
+      "key_concepts": [
+        "convex lens",
+        "concave lens"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 13,
+      "question": "State the lens formula used for thin lenses.",
+      "answer": "The lens formula is given by 1/f = 1/v − 1/u where f is focal length, v is image distance and u is object distance.",
+      "answer_outline": [
+        "Lens formula statement",
+        "Meaning of variables"
+      ],
+      "key_concepts": [
+        "lens formula",
+        "image distance"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Define magnification produced by a lens. Write its formula.",
+      "answer": "Magnification is the ratio of the height of the image to the height of the object. It is given by m = h'/h = v/u.",
+      "answer_outline": [
+        "Definition of magnification",
+        "Formula m = v/u"
+      ],
+      "key_concepts": [
+        "magnification",
+        "lens image size"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Why is a convex lens used as a magnifying glass?",
+      "answer": "A convex lens is used as a magnifying glass because when the object is placed between the focal point and the lens, it forms a virtual, erect and enlarged image which helps in viewing small objects clearly.",
+      "answer_outline": [
+        "Object position",
+        "Nature of image formed"
+      ],
+      "key_concepts": [
+        "magnifying glass",
+        "convex lens"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 16,
+      "question": "What is dispersion of light?",
+      "answer": "Dispersion of light is the splitting of white light into its constituent colours (VIBGYOR) when it passes through a prism.",
+      "answer_outline": [
+        "Definition of dispersion",
+        "Mention spectrum"
+      ],
+      "key_concepts": [
+        "dispersion",
+        "spectrum"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Name the colours of the visible spectrum formed due to dispersion.",
+      "answer": "The colours of the visible spectrum are Violet, Indigo, Blue, Green, Yellow, Orange and Red (VIBGYOR).",
+      "answer_outline": [
+        "List all seven colours"
+      ],
+      "key_concepts": [
+        "visible spectrum",
+        "VIBGYOR"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 18,
+      "question": "What is atmospheric refraction?",
+      "answer": "Atmospheric refraction is the bending of light as it passes through different layers of the Earth's atmosphere having different densities.",
+      "answer_outline": [
+        "Definition",
+        "Cause due to varying density"
+      ],
+      "key_concepts": [
+        "atmospheric refraction"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Why do stars twinkle?",
+      "answer": "Stars twinkle due to atmospheric refraction. As starlight passes through layers of the atmosphere with varying densities, its path changes continuously, making the star appear to flicker.",
+      "answer_outline": [
+        "Atmospheric refraction",
+        "Continuous change in light path"
+      ],
+      "key_concepts": [
+        "twinkling of stars",
+        "atmospheric refraction"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 20,
+      "question": "Why do planets not twinkle like stars?",
+      "answer": "Planets are much closer to Earth and appear as extended sources of light. The variations due to atmospheric refraction average out, so planets usually do not twinkle.",
+      "answer_outline": [
+        "Extended source explanation",
+        "Effect of atmosphere"
+      ],
+      "key_concepts": [
+        "planets vs stars",
+        "twinkling"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the near point of a normal human eye?",
+      "answer": "The near point of a normal human eye is the closest distance at which an object can be seen clearly without strain. It is approximately 25 cm.",
+      "answer_outline": [
+        "Definition",
+        "Value 25 cm"
+      ],
+      "key_concepts": [
+        "near point",
+        "human eye"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the far point of a normal human eye?",
+      "answer": "The far point of a normal human eye is the farthest point at which an object can be seen clearly. For a normal eye it is at infinity.",
+      "answer_outline": [
+        "Definition",
+        "Value infinity"
+      ],
+      "key_concepts": [
+        "far point",
+        "normal eye"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the power of accommodation of the eye?",
+      "answer": "Power of accommodation is the ability of the eye lens to change its focal length in order to focus objects at different distances on the retina.",
+      "answer_outline": [
+        "Definition",
+        "Function of eye lens"
+      ],
+      "key_concepts": [
+        "power of accommodation",
+        "eye lens"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Name two defects of vision and the lenses used to correct them.",
+      "answer": "Myopia (short-sightedness) is corrected using a concave lens. Hypermetropia (long-sightedness) is corrected using a convex lens.",
+      "answer_outline": [
+        "Name defects",
+        "Corresponding corrective lenses"
+      ],
+      "key_concepts": [
+        "myopia",
+        "hypermetropia",
+        "corrective lenses"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 25,
+      "question": "What is a simple microscope?",
+      "answer": "A simple microscope is an optical instrument that uses a single convex lens to produce a magnified virtual image of a small object.",
+      "answer_outline": [
+        "Definition",
+        "Lens used",
+        "Image formed"
+      ],
+      "key_concepts": [
+        "simple microscope",
+        "convex lens"
+      ],
+      "marks": 3,
+      "source_section": "Section 9.4"
+    }
+  ]
+}

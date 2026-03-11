@@ -1,0 +1,42 @@
+{
+    "chapter_code": "BEEHIVE_SLUMBER",
+    "chapter_title": "A Slumber Did My Spirit Seal",
+    "content_type": "Reading Comprehension Passages",
+    "total_passages": 3,
+    "instruction": "Read each passage carefully and answer the questions that follow. Answers should be based only on the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "A slumber did my spirit seal; I had no human fears. She seemed a thing that could not feel the touch of earthly years.",
+            "questions": [
+                "What sealed the poet’s spirit?",
+                "What did the poet not have at that time?",
+                "How did the girl seem to the poet?",
+                "What does the phrase 'earthly years' refer to?",
+                "Why did the poet believe the girl was untouched by time?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "No motion has she now, no force; she neither hears nor sees.",
+            "questions": [
+                "What change has happened to the girl now?",
+                "What does the poet say about her motion and force?",
+                "What senses does she no longer have?",
+                "What does this line suggest about the girl's condition?",
+                "What feeling does the poet express in these lines?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Rolled round in earth’s diurnal course with rocks and stones and trees.",
+            "questions": [
+                "What does the phrase 'earth’s diurnal course' mean?",
+                "With what natural elements is the girl now associated?",
+                "What does this line suggest about the girl's state after death?",
+                "Which elements of nature are mentioned in the passage?",
+                "What idea about life and nature does the poet convey here?"
+            ]
+        }
+    ]
+}

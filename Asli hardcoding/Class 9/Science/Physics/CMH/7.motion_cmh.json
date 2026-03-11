@@ -1,0 +1,163 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T10:30:00",
+    "concepts": [
+        {
+            "concept_name": "Motion",
+            "difficulty": "easy",
+            "lesson": "Motion is the change in position of an object with respect to time and a reference point. If the position of an object changes over time, the object is said to be in motion.",
+            "real_example": "A moving car on a road is an example of motion.",
+            "key_points": [
+                "Change in position with time",
+                "Requires a reference point",
+                "Objects may appear moving or stationary depending on observer",
+                "Examples: moving vehicles, flying birds"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "concept_name": "Distance",
+            "difficulty": "easy",
+            "lesson": "Distance is the total path length travelled by an object during its motion. It does not depend on direction and is always a positive quantity.",
+            "real_example": "If a person walks around a park and covers 500 m, the total path travelled is the distance.",
+            "key_points": [
+                "Total path length travelled",
+                "Scalar quantity",
+                "Does not depend on direction",
+                "Measured in metres (m)"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "concept_name": "Displacement",
+            "difficulty": "easy",
+            "lesson": "Displacement is the shortest distance between the initial and final positions of an object. It has both magnitude and direction.",
+            "real_example": "If a student walks 20 m east and returns to the starting point, displacement is zero.",
+            "key_points": [
+                "Shortest distance between two points",
+                "Vector quantity",
+                "Has direction",
+                "May be zero even when distance is not zero"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "concept_name": "Uniform Motion",
+            "difficulty": "easy",
+            "lesson": "Uniform motion occurs when an object travels equal distances in equal intervals of time.",
+            "real_example": "A train moving at a constant speed on a straight track shows uniform motion.",
+            "key_points": [
+                "Equal distances in equal intervals of time",
+                "Speed remains constant",
+                "Straight-line motion is common",
+                "Distance-time graph is a straight line"
+            ],
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "concept_name": "Non-Uniform Motion",
+            "difficulty": "easy",
+            "lesson": "Non-uniform motion occurs when an object travels unequal distances in equal intervals of time.",
+            "real_example": "A car moving in city traffic usually shows non-uniform motion.",
+            "key_points": [
+                "Unequal distances in equal intervals of time",
+                "Speed changes continuously",
+                "Common in daily life",
+                "Graph is not a straight line"
+            ],
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "concept_name": "Speed",
+            "difficulty": "easy",
+            "lesson": "Speed is the distance travelled by an object per unit time. It tells how fast an object is moving.",
+            "real_example": "If a car travels 100 km in 2 hours, its speed is 50 km/h.",
+            "key_points": [
+                "Distance per unit time",
+                "Scalar quantity",
+                "SI unit is m/s",
+                "Formula: speed = distance / time"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "concept_name": "Velocity",
+            "difficulty": "medium",
+            "lesson": "Velocity is the speed of an object in a specific direction. It describes both how fast and in which direction an object moves.",
+            "real_example": "A car moving at 60 km/h towards the north has velocity.",
+            "key_points": [
+                "Speed with direction",
+                "Vector quantity",
+                "SI unit is m/s",
+                "Changes if direction or speed changes"
+            ],
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "concept_name": "Acceleration",
+            "difficulty": "medium",
+            "lesson": "Acceleration is the rate of change of velocity with time. It occurs when an object increases or decreases its speed or changes direction.",
+            "real_example": "A bicycle speeding up when a rider pedals faster shows acceleration.",
+            "key_points": [
+                "Change in velocity per unit time",
+                "Can be positive or negative",
+                "SI unit is m/s²",
+                "Occurs in speeding up or slowing down"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "concept_name": "Distance-Time Graph",
+            "difficulty": "medium",
+            "lesson": "A distance-time graph shows how distance changes with time. It helps in understanding the type of motion of an object.",
+            "real_example": "A straight line on a distance-time graph represents uniform motion.",
+            "key_points": [
+                "Time on X-axis",
+                "Distance on Y-axis",
+                "Straight line indicates uniform motion",
+                "Curved line indicates non-uniform motion"
+            ],
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "concept_name": "Velocity-Time Graph",
+            "difficulty": "medium",
+            "lesson": "A velocity-time graph represents how velocity changes with time. The area under the graph gives the displacement of the object.",
+            "real_example": "If velocity remains constant, the graph is a straight horizontal line.",
+            "key_points": [
+                "Time on X-axis",
+                "Velocity on Y-axis",
+                "Slope represents acceleration",
+                "Area under graph represents displacement"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "concept_name": "Equations of Motion",
+            "difficulty": "hard",
+            "lesson": "The equations of motion describe the relationship between velocity, acceleration, time, and distance for objects moving with uniform acceleration.",
+            "real_example": "These equations help calculate the distance travelled by a moving car.",
+            "key_points": [
+                "v = u + at",
+                "s = ut + 1/2 at²",
+                "v² - u² = 2as",
+                "Applicable only for uniform acceleration"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "concept_name": "Uniform Circular Motion",
+            "difficulty": "medium",
+            "lesson": "Uniform circular motion occurs when an object moves along a circular path with constant speed. Even though speed is constant, velocity changes because direction changes.",
+            "real_example": "The motion of the Earth around the Sun is an example of uniform circular motion.",
+            "key_points": [
+                "Motion along a circular path",
+                "Speed remains constant",
+                "Direction changes continuously",
+                "Object experiences acceleration"
+            ],
+            "source_section": "Section 7.6"
+        }
+    ]
+}

@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 11: Areas Related to Circles",
+    "difficulty": "Hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Write the formula for the area of a major sector.",
+            "answer": "Area of major sector = πr² − area of minor sector.",
+            "key_points": [
+                "major sector"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Write the formula for the area of a major segment.",
+            "answer": "Area of major segment = πr² − area of minor segment.",
+            "key_points": [
+                "major segment"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How is the area of a triangle OAB found in a segment?",
+            "answer": "By using the formula (1/2) × base × height.",
+            "key_points": [
+                "triangle area"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is used to find the height of a triangle in a segment?",
+            "answer": "Cosine ratio is used.",
+            "key_points": [
+                "trigonometry"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the angle of a sector if it forms a semicircle?",
+            "answer": "The angle is 180 degrees.",
+            "key_points": [
+                "semicircle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the arc length of a full circle?",
+            "answer": "The arc length of a full circle is 2πr.",
+            "key_points": [
+                "circumference"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which part is subtracted to get the area of a segment?",
+            "answer": "The area of the triangle is subtracted.",
+            "key_points": [
+                "segment calculation"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the angle of the major sector if the minor sector is 70°?",
+            "answer": "The angle of the major sector is 290°.",
+            "key_points": [
+                "major sector angle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the area of a sector if θ = 360°?",
+            "answer": "The area is πr².",
+            "key_points": [
+                "full sector"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the arc length when θ = 360°?",
+            "answer": "The arc length is 2πr.",
+            "key_points": [
+                "full arc"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Which angle is used to calculate arc length?",
+            "answer": "The angle at the centre is used.",
+            "key_points": [
+                "central angle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to arc length if radius increases?",
+            "answer": "The arc length increases.",
+            "key_points": [
+                "radius effect"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the area of a sector when θ = 0°?",
+            "answer": "The area is zero.",
+            "key_points": [
+                "zero angle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the arc length when θ = 0°?",
+            "answer": "The arc length is zero.",
+            "key_points": [
+                "zero arc"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What geometric method is used to find area of triangle inside a circle?",
+            "answer": "Trigonometric method is used.",
+            "key_points": [
+                "triangle method"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the shape of the region between two radii and an arc?",
+            "answer": "The shape is a sector.",
+            "key_points": [
+                "sector"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which value of π is preferred for exact calculations?",
+            "answer": "The value 22/7 is preferred.",
+            "key_points": [
+                "exact value"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the total angle of minor and major sectors together?",
+            "answer": "The total angle is 360 degrees.",
+            "key_points": [
+                "total angle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which area is always larger: major segment or minor segment?",
+            "answer": "The major segment is always larger.",
+            "key_points": [
+                "comparison"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the unit of area of a segment?",
+            "answer": "The unit is square units.",
+            "key_points": [
+                "area unit"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the angle between two radii in a quadrant?",
+            "answer": "The angle is 90 degrees.",
+            "key_points": [
+                "quadrant angle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the area of a circle if r = 1 unit?",
+            "answer": "The area is π square units.",
+            "key_points": [
+                "unit circle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What type of triangle is formed by two radii and a chord?",
+            "answer": "An isosceles triangle is formed.",
+            "key_points": [
+                "isosceles triangle"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Which area is subtracted to find the minor segment?",
+            "answer": "The area of the triangle is subtracted from the sector.",
+            "key_points": [
+                "minor segment"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the sum of angles around a point?",
+            "answer": "The sum of angles around a point is 360 degrees.",
+            "key_points": [
+                "angles around point"
+            ],
+            "source_section": "Section 11.1"
+        }
+    ]
+}

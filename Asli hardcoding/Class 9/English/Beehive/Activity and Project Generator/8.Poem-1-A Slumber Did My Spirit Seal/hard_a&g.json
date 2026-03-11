@@ -1,0 +1,150 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "A Slumber Did My Spirit Seal",
+    "author": "William Wordsworth",
+    "difficulty": "Hard",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Theme Analysis",
+            "objective": "Analyse the deeper theme of the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Write a paragraph explaining the central theme"
+            ],
+            "learning_outcome": "Develops thematic interpretation",
+            "evaluation": "Clear analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Emotional Tone",
+            "objective": "Analyse the emotional tone of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the poet’s feelings about death",
+                "Write how the tone changes in the poem"
+            ],
+            "learning_outcome": "Understands emotional expression",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Imagery Analysis",
+            "objective": "Analyse imagery used in the poem",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find imagery related to nature",
+                "Explain how it contributes to meaning"
+            ],
+            "learning_outcome": "Recognises poetic imagery",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Symbolism Interpretation",
+            "objective": "Understand symbolic meaning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the symbolic meaning of 'earth's diurnal course'",
+                "Write a paragraph about its significance"
+            ],
+            "learning_outcome": "Understands symbolism in poetry",
+            "evaluation": "Logical interpretation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Structure Analysis",
+            "objective": "Analyse the poem’s structure",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Observe the stanza pattern",
+                "Explain how the structure supports the theme"
+            ],
+            "learning_outcome": "Recognises poetic structure",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Poetic Devices",
+            "objective": "Identify literary devices used",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find at least two poetic devices",
+                "Explain how they enhance the poem"
+            ],
+            "learning_outcome": "Understands literary techniques",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Title Interpretation",
+            "objective": "Analyse the meaning of the title",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how the title relates to the poem",
+                "Support your answer with examples"
+            ],
+            "learning_outcome": "Interprets title significance",
+            "evaluation": "Logical interpretation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Philosophical Meaning",
+            "objective": "Understand philosophical ideas in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the poem’s view of life and death",
+                "Write a short paragraph"
+            ],
+            "learning_outcome": "Understands philosophical meaning",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Critical Appreciation",
+            "objective": "Develop appreciation of poetry",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write why the poem is meaningful",
+                "Explain its emotional impact"
+            ],
+            "learning_outcome": "Develops appreciation skills",
+            "evaluation": "Thoughtful explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Personal Reflection",
+            "objective": "Encourage personal interpretation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write your personal response to the poem",
+                "Explain what message you learned"
+            ],
+            "learning_outcome": "Encourages reflective thinking",
+            "evaluation": "Meaningful reflection (10 marks)"
+        }
+    ]
+}

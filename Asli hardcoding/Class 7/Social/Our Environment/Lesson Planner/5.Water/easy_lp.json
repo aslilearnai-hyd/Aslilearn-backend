@@ -1,0 +1,153 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Water: Our Lifeline",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the importance of water in daily life",
+        "Learn about sources of water like rivers, lakes, and groundwater",
+        "Know about water scarcity and reasons behind it",
+        "Learn simple methods of conserving water",
+        "Develop observation and problem-solving skills related to water"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Importance of Water",
+            "topics_covered": [
+                "Why water is essential for life",
+                "Uses of water in households, agriculture, and industry"
+            ],
+            "teaching_strategy": [
+                "Storytelling with examples",
+                "Ask students to list how they use water daily"
+            ],
+            "student_activities": [
+                "List all uses of water they can think of",
+                "Share stories or examples from home about water use"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Sources of Water",
+            "topics_covered": [
+                "Rivers, lakes, ponds, and groundwater",
+                "Rainfall and seasonal water sources"
+            ],
+            "teaching_strategy": [
+                "Show pictures of rivers, lakes, and wells",
+                "Ask students to identify local water sources"
+            ],
+            "student_activities": [
+                "Draw a diagram of a river, lake, and well",
+                "List sources of water in their locality"
+            ],
+            "assessment": [
+                "Drawing evaluation",
+                "Participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Water Cycle",
+            "topics_covered": [
+                "Evaporation, condensation, precipitation",
+                "Runoff and collection in rivers and lakes"
+            ],
+            "teaching_strategy": [
+                "Demonstrate a simple water cycle using a bowl and plastic wrap",
+                "Use charts and diagrams to explain"
+            ],
+            "student_activities": [
+                "Draw the water cycle",
+                "Explain the stages in their own words"
+            ],
+            "assessment": [
+                "Drawing and explanation",
+                "Participation in demonstration"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Water Scarcity and Causes",
+            "topics_covered": [
+                "Reasons for water scarcity",
+                "Overuse, pollution, uneven distribution, and drought"
+            ],
+            "teaching_strategy": [
+                "Show pictures of dry rivers and wells",
+                "Ask students to suggest reasons for shortage"
+            ],
+            "student_activities": [
+                "List causes of water scarcity",
+                "Discuss what happens when water is wasted"
+            ],
+            "assessment": [
+                "Participation",
+                "Quick oral Q&A"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Water Conservation Methods",
+            "topics_covered": [
+                "Rainwater harvesting",
+                "Saving water at home and school",
+                "Planting trees and protecting lakes and rivers"
+            ],
+            "teaching_strategy": [
+                "Show videos or pictures of water-saving methods",
+                "Demonstrate simple ways to save water in daily life"
+            ],
+            "student_activities": [
+                "Draw a simple rainwater harvesting system",
+                "List three ways they can save water daily"
+            ],
+            "assessment": [
+                "Drawing evaluation",
+                "Participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Fun Quiz",
+            "topics_covered": [
+                "Recap of water uses, sources, cycle, scarcity, and conservation",
+                "Simple cause-effect questions about water",
+                "Relate lessons to students’ own water use"
+            ],
+            "teaching_strategy": [
+                "Fun quiz with pictures and multiple choice",
+                "Class discussion about personal water habits"
+            ],
+            "student_activities": [
+                "Answer quiz questions",
+                "Draw or share one thing they learned about saving water"
+            ],
+            "assessment": [
+                "Quiz scores",
+                "Participation",
+                "Notebook notes"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Pictures of rivers, lakes, wells, and water cycles",
+        "Simple models or diagrams for demonstration",
+        "Drawing sheets and colors",
+        "Charts showing water-saving methods"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Class discussion",
+        "Notebook checking",
+        "Fun quiz"
+    ],
+    "teacher_tip": "Make lessons interactive and visual. Use stories, drawings, and charts. Encourage students to share experiences about water at home and school."
+}

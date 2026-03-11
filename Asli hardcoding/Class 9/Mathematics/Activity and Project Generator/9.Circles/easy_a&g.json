@@ -1,0 +1,181 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class9_math_ch9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Drawing a Circle",
+            "objective": "Learn to draw circles with given radius",
+            "materials": [
+                "Compass",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Use compass to draw a circle with radius 3 cm",
+                "Label the center as O",
+                "Draw a few radii and mark points on the circumference"
+            ],
+            "learning_outcome": "Understands circle, center, and radius",
+            "evaluation": "Accurate drawing and labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Identifying Chords",
+            "objective": "Learn what chords are in a circle",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Compass"
+            ],
+            "steps": [
+                "Draw a circle",
+                "Draw two different chords",
+                "Label endpoints of chords"
+            ],
+            "learning_outcome": "Recognises chords in a circle",
+            "evaluation": "Correct identification and labeling (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Drawing Diameter",
+            "objective": "Understand diameter as a special chord",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Draw a chord passing through O",
+                "Label it as diameter"
+            ],
+            "learning_outcome": "Understands concept of diameter",
+            "evaluation": "Accurate drawing (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Drawing Tangents",
+            "objective": "Learn to draw tangent at a point on a circle",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Mark a point on the circumference",
+                "Draw a tangent at that point using ruler"
+            ],
+            "learning_outcome": "Understands tangent line",
+            "evaluation": "Correct tangent construction (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Radius and Diameter Relationship",
+            "objective": "Understand that diameter = 2 × radius",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle",
+                "Measure radius and diameter",
+                "Verify that diameter = 2 × radius"
+            ],
+            "learning_outcome": "Recognises relationship between radius and diameter",
+            "evaluation": "Accurate measurement and verification (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Identifying Circumference Points",
+            "objective": "Learn what points lie on the circumference",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Mark 5 points on the circumference",
+                "Connect points to form chords"
+            ],
+            "learning_outcome": "Recognises circumference points",
+            "evaluation": "Correct points and chords drawn (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Observing Arcs",
+            "objective": "Identify major and minor arcs",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle and a chord AB",
+                "Label the two arcs formed as major and minor",
+                "Write observations"
+            ],
+            "learning_outcome": "Understands arcs of a circle",
+            "evaluation": "Correct identification and labeling (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Identifying Sector and Segment",
+            "objective": "Understand sectors and segments of a circle",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a circle and chord AB",
+                "Shade the segment and sector formed",
+                "Label them properly"
+            ],
+            "learning_outcome": "Recognises sector and segment",
+            "evaluation": "Accurate drawing and labeling (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Drawing Concentric Circles",
+            "objective": "Understand concentric circles and their properties",
+            "materials": [
+                "Compass",
+                "Pencil",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a circle with center O",
+                "Draw another circle with same center but different radius",
+                "Observe and note that centers are same"
+            ],
+            "learning_outcome": "Understands concentric circles",
+            "evaluation": "Accurate construction and observation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Circle in Daily Life",
+            "objective": "Observe circle shapes around you",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Look for circular objects around home or school",
+                "Draw at least three examples",
+                "Label radius, diameter, and center"
+            ],
+            "learning_outcome": "Connects circle concepts to real life",
+            "evaluation": "Relevant examples and labeling (10 marks)"
+        }
+    ]
+}

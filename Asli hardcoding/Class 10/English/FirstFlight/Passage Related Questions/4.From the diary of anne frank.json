@@ -1,0 +1,70 @@
+{
+   "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 4: From the Diary of Anne Frank",
+    "title": "Extended Reading Passages with Questions – From the Diary of Anne Frank",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "From the Diary of Anne Frank",
+        "paragraph": "Anne Frank describes her life hiding in the Secret Annex during World War II. She shares her daily routines, fears, and hopes. Despite the fear of discovery, she finds moments of happiness in small things.",
+        "questions": [
+          "Who is Anne Frank and where is she hiding?",
+          "What does she describe about her daily life?",
+          "How does she cope with fear?",
+          "Identify words that show hope and small joys.",
+          "Why is this paragraph important for understanding her experiences?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "From the Diary of Anne Frank",
+        "paragraph": "Anne reflects on her relationships with her family and others in hiding. She experiences tensions but also finds comfort in companionship. Writing in her diary becomes her way to express thoughts and emotions.",
+        "questions": [
+          "How does Anne describe her relationships?",
+          "What tensions does she face?",
+          "How does the diary help her?",
+          "Which words show her feelings of comfort and stress?",
+          "Why is writing important for Anne?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "From the Diary of Anne Frank",
+        "paragraph": "Anne’s diary reveals her dreams, aspirations, and insights about human nature. Despite the harsh circumstances, she maintains hope and optimism, inspiring readers around the world.",
+        "questions": [
+          "What does Anne’s diary reveal about her thoughts?",
+          "How does she maintain hope?",
+          "Which words show optimism?",
+          "Why is her diary influential?",
+          "What is the main idea of this paragraph?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "From the Diary of Anne Frank",
+        "paragraph": "Anne notices the little things that bring happiness, like a beautiful day or a kind gesture from someone in hiding. These small joys help her endure the difficulties of confinement.",
+        "questions": [
+          "What little things bring happiness to Anne?",
+          "How do these small joys help her?",
+          "Which words show endurance?",
+          "Why is noticing small joys important?",
+          "How does this paragraph emphasize hope?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "From the Diary of Anne Frank",
+        "paragraph": "Through her writing, Anne learns to understand her emotions better and reflects on her own growth. The diary becomes a companion, a confidante, and a source of strength.",
+        "questions": [
+          "How does writing help Anne understand herself?",
+          "What role does the diary play in her life?",
+          "Which words indicate personal growth?",
+          "Why is the diary described as a companion?",
+          "How does this paragraph show the power of expression?"
+        ]
+      }
+    ]
+  }

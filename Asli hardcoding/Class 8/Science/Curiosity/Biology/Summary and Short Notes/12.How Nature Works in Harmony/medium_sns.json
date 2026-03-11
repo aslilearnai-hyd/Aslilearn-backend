@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "How Nature Works in Harmony",
+  "difficulty": "Medium",
+  "source_pdf": "12.How Nature Works in Harmony.pdf",
+  "short_notes": {
+    "key_points": [
+      "An ecosystem is formed by interactions between living organisms and their environment",
+      "Biotic components include plants, animals, and microorganisms",
+      "Abiotic components include sunlight, water, air, soil, and temperature",
+      "Energy flows through ecosystems mainly from the sun",
+      "Producers convert sunlight into food through photosynthesis",
+      "Consumers depend on producers or other animals for food",
+      "Decomposers break down dead organisms and recycle nutrients",
+      "Food webs connect multiple food chains and increase ecosystem stability"
+    ],
+    "examples": [
+      "Grassland ecosystem: grass, insects, herbivores, predators",
+      "Food chain example: Grass → Rabbit → Fox",
+      "Aquatic ecosystem: fish, algae, plankton, water and sunlight",
+      "Decomposition example: bacteria breaking down dead plants"
+    ],
+    "relationships": [
+      "Producer → Herbivore → Carnivore",
+      "Dead organisms → Decomposers → Soil nutrients → Plants",
+      "Sunlight → Photosynthesis → Energy for food chains"
+    ],
+    "exam_tips": [
+      "Draw labeled food chain diagrams when possible",
+      "Remember the difference between food chain and food web",
+      "Explain roles of producers, consumers, and decomposers clearly",
+      "Use real-life ecosystem examples like forest or pond"
+    ]
+  }
+}

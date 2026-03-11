@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Chemical Reactions and Equations",
+    "difficulty": "Easy",
+    "source_pdf": "jesc101.pdf",
+    "short_notes": {
+        "key_points": [
+            "A chemical reaction occurs when chemical bonds between atoms are broken and new bonds are formed to create new substances.",
+            "A balanced chemical equation has an equal number of atoms of each element on both the reactant and product sides.",
+            "Chemical reactions are characterized by observations like change in state, color, temperature, or evolution of a gas.",
+            "The Law of Conservation of Mass states that mass can neither be created nor destroyed in a chemical reaction.",
+            "Reaction types include combination, decomposition, displacement, double displacement, and redox reactions."
+        ],
+        "examples": [
+            "Combination Reaction: Burning of magnesium ribbon in air ($2Mg + O_2 \rightarrow 2MgO$).",
+            "Decomposition Reaction: Heating of ferrous sulphate crystals or the electrolysis of water.",
+            "Displacement Reaction: An iron nail dipping in copper sulphate solution, where iron displaces copper.",
+            "Exothermic Reaction: Respiration and the burning of natural gas (release of heat).",
+            "Endothermic Reaction: Photosynthesis and the decomposition of calcium carbonate (absorption of heat)."
+        ],
+        "formulas": [
+            "General Balanced Equation: $aA + bB \rightarrow cC + dD$",
+            "Mass Conservation: $\text{Total Mass of Reactants} = \text{Total Mass of Products}$",
+            "Redox Identification: $\text{Oxidation} = \text{Gain of O}_2 \text{ or Loss of H}_2$; $\text{Reduction} = \text{Loss of O}_2 \text{ or Gain of H}_2$"
+        ],
+        "exam_tips": [
+            "Always include the physical states of reactants and products (s, l, g, aq) for a complete equation.",
+            "Remember that 'precipitate' refers to an insoluble solid formed during a liquid-phase reaction.",
+            "Don't confuse 'corrosion' (damage to metals) with 'rancidity' (oxidation of fats/oils in food).",
+            "Use the 'hit and trial' method systematically to balance equations, starting with the element that has the maximum number of atoms."
+        ]
+    }
+}

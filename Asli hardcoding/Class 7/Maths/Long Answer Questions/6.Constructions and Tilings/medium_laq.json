@@ -1,0 +1,403 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Constructions and Tilings",
+    "generated_at": "2026-03-05T01:52:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the step-by-step process to construct a perpendicular bisector of a line segment AB using only a compass and a straightedge.",
+            "answer": "1. Set the compass width to more than half the length of AB. 2. Place the needle at A and draw arcs above and below the line. 3. Keeping the same width, place the needle at B and draw arcs that intersect the first two. 4. Use a straightedge to join the two points where the arcs intersect. This line is the perpendicular bisector.",
+            "answer_outline": [
+                "Setting compass width (> half)",
+                "Drawing arcs from both endpoints",
+                "Identifying intersection points",
+                "Drawing the final line"
+            ],
+            "key_concepts": [
+                "perpendicular bisector",
+                "equidistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is it mathematically necessary to set the compass width to 'more than half' the length of the segment when constructing a perpendicular bisector?",
+            "answer": "If the compass width is exactly half, the arcs will only touch at one point (the midpoint). If the width is less than half, the arcs will not meet at all. To define a unique line, we need two distinct intersection points, which only occurs if the width is greater than half.",
+            "answer_outline": [
+                "Explain the case for 'less than half'",
+                "Explain the case for 'exactly half'",
+                "Conclude with the need for two intersection points"
+            ],
+            "key_concepts": [
+                "arc intersection",
+                "construction logic"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe how to construct an angle of 60° using a compass and a ruler.",
+            "answer": "1. Draw a line and mark a point O. 2. Draw a large arc from O cutting the line at A. 3. Without changing the compass width, place the needle at A and draw another arc cutting the first one at B. 4. Join OB. The angle AOB is exactly 60° because triangle OAB is equilateral.",
+            "answer_outline": [
+                "Initial arc from center",
+                "Second arc from intersection point",
+                "Connecting to form the angle",
+                "Explanation (equilateral triangle property)"
+            ],
+            "key_concepts": [
+                "60 degree angle",
+                "equilateral triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the 'Vertex Sum' rule for tiling a plane with regular polygons?",
+            "answer": "For a shape to tile a plane, the interior angles of the polygons meeting at any vertex must add up exactly to 360°. If the sum is less, there will be gaps; if it is more, the tiles will overlap.",
+            "answer_outline": [
+                "State the 360° requirement",
+                "Explain the consequence of being less than 360°",
+                "Explain the consequence of being more than 360°"
+            ],
+            "key_concepts": [
+                "vertex sum",
+                "tiling logic"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that a regular pentagon cannot tile a plane by using its interior angle measure.",
+            "answer": "The interior angle of a regular pentagon is 108°. According to the vertex sum rule, 360 must be divisible by the interior angle. Since $360 / 108 = 3.33$, we cannot fit a whole number of pentagons around a point. Three pentagons leave a gap ($324°$), and four would overlap ($432°$).",
+            "answer_outline": [
+                "Identify interior angle (108°)",
+                "Apply the divisibility test (360/angle)",
+                "Conclude based on the gap/overlap"
+            ],
+            "key_concepts": [
+                "pentagon tiling",
+                "interior angles"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the difference between a 'Regular Tiling' and a 'Semi-Regular Tiling'.",
+            "answer": "A regular tiling uses only one type of regular polygon (e.g., all squares). A semi-regular tiling uses two or more different types of regular polygons (e.g., octagons and squares) arranged in the same pattern at every vertex.",
+            "answer_outline": [
+                "Define regular tiling",
+                "Define semi-regular tiling",
+                "Mention the vertex pattern requirement"
+            ],
+            "key_concepts": [
+                "regular tiling",
+                "semi-regular tiling"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "How can you construct a 30° angle using the construction of a 60° angle?",
+            "answer": "First, construct a 60° angle using a compass. Then, construct the angle bisector of that 60° angle. The resulting two angles will each measure exactly 30°.",
+            "answer_outline": [
+                "Construct 60° base",
+                "Apply angle bisector method",
+                "Resulting measurement"
+            ],
+            "key_concepts": [
+                "angle bisector",
+                "30 degree angle"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "A student wants to copy an angle $ABC$ to a new location. What are the essential steps?",
+            "answer": "1. Draw a ray $QR$. 2. Draw an arc on the original angle with center $B$, cutting arms at $X$ and $Y$. 3. Use the same radius to draw an arc on $QR$ with center $Q$. 4. Measure the distance $XY$ with the compass and mark that same distance on the new arc. 5. Join the intersection to $Q$.",
+            "answer_outline": [
+                "Identify initial arc radius",
+                "Transfer arc to new ray",
+                "Measure 'opening' of the angle",
+                "Complete the second ray"
+            ],
+            "key_concepts": [
+                "copying an angle",
+                "compass measurement"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why an equilateral triangle can tile a plane but a regular heptagon (7 sides) cannot.",
+            "answer": "Equilateral triangle interior angles are 60°; since $360 / 60 = 6$, exactly six triangles meet at a vertex. For a heptagon, the interior angle is approx 128.57°; 360 is not divisible by this, meaning they cannot meet perfectly at a point.",
+            "answer_outline": [
+                "Calculate/state angle for triangle",
+                "Calculate/state angle for heptagon",
+                "Apply 360° divisibility test"
+            ],
+            "key_concepts": [
+                "tiling",
+                "heptagon"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Define 'Concentric Circles' and describe how to construct two of them.",
+            "answer": "Concentric circles are circles that share the same center point but have different radii. To construct them, keep the compass needle fixed at the same point 'O' for both, but change the opening of the compass arms between the first and second drawing.",
+            "answer_outline": [
+                "Definition (same center, different radii)",
+                "Construction technique (fixed needle, varied arm)"
+            ],
+            "key_concepts": [
+                "concentric circles",
+                "radius"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 11,
+            "question": "In the construction of a perpendicular from a point P 'on' a line, why do we draw two arcs on either side of P first?",
+            "answer": "The two arcs create two points on the line that are equidistant from P. By treating these two points as the ends of a new segment, P becomes the midpoint. Constructing a perpendicular bisector for these two points ensures the line passes through P.",
+            "answer_outline": [
+                "Creating equidistant points",
+                "Relating to perpendicular bisector logic",
+                "Ensuring the line passes through P"
+            ],
+            "key_concepts": [
+                "perpendicular construction",
+                "midpoint"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a 'Tiling of the Plane' and what are the two main conditions for a pattern to be called a tiling?",
+            "answer": "It is a collection of shapes that covers the 2D plane. The conditions are: (1) No gaps (every part of the plane is covered) and (2) No overlaps (no two shapes occupy the same space).",
+            "answer_outline": [
+                "General definition",
+                "Gap condition",
+                "Overlap condition"
+            ],
+            "key_concepts": [
+                "tessellation",
+                "plane coverage"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Can any arbitrary (non-regular) triangle tile a plane? Explain.",
+            "answer": "Yes. Any triangle (even scalene) can tile a plane. By rotating the triangle 180° around the midpoint of its sides, you can create a pattern that fills the space perfectly because the sum of the angles in a triangle is 180°, and two sets of these angles (360°) can meet at a vertex.",
+            "answer_outline": [
+                "Answer Yes",
+                "Explain via rotation/reflection",
+                "Relate to the 180° angle sum property"
+            ],
+            "key_concepts": [
+                "triangle tiling",
+                "rotation"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe how you would construct a 90° angle using only the method for a perpendicular bisector.",
+            "answer": "1. Draw a line and mark a point M. 2. Use a compass to mark two points A and B on the line, equal distances from M. 3. Construct the perpendicular bisector of segment AB. Since M is the midpoint, the bisector will pass through M at a 90° angle to the line.",
+            "answer_outline": [
+                "Establish a segment with M as midpoint",
+                "Apply perpendicular bisector steps",
+                "Identify the resulting 90° angle"
+            ],
+            "key_concepts": [
+                "90 degree angle",
+                "perpendicular bisector"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "In a tiling of regular hexagons, how many hexagons meet at a single vertex? Justify with math.",
+            "answer": "Three hexagons meet at a vertex. Each interior angle of a regular hexagon is 120°. Since $120 \\times 3 = 360°$, three hexagons fit perfectly around a point without gaps.",
+            "answer_outline": [
+                "Identify hexagon angle (120°)",
+                "Multiply to reach 360°",
+                "State the count"
+            ],
+            "key_concepts": [
+                "hexagon tiling",
+                "vertex sum"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the role of 'arcs' in determining the midpoint of a segment during construction?",
+            "answer": "Arcs drawn from both endpoints with the same radius ensure that the intersection points are equidistant from both A and B. A line connecting these intersections will always cross the segment at its exact center (midpoint).",
+            "answer_outline": [
+                "Equidistance property",
+                "Role of intersection points",
+                "Defining the midpoint"
+            ],
+            "key_concepts": [
+                "arcs",
+                "midpoint"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "How do you verify if a construction is accurate?",
+            "answer": "You can verify by using measuring tools: use a ruler to check if segments are equal or a protractor to check if angles match the intended degree (e.g., checking a constructed 90° angle).",
+            "answer_outline": [
+                "Use of ruler for length",
+                "Use of protractor for angles"
+            ],
+            "key_concepts": [
+                "verification",
+                "accuracy"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "If you want to tile a floor with squares and equilateral triangles together, how many of each must meet at a vertex?",
+            "answer": "One possible arrangement is two squares (90° + 90° = 180°) and three triangles (60° + 60° + 60° = 180°). Together, $180 + 180 = 360°$.",
+            "answer_outline": [
+                "State angles of square and triangle",
+                "Find a combination that sums to 360°"
+            ],
+            "key_concepts": [
+                "semi-regular tiling",
+                "combination"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is an 'Angle Bisector' and how does the construction ensure the two angles are equal?",
+            "answer": "An angle bisector is a ray that divides an angle into two equal parts. The construction uses arcs to find a point in the interior that is equidistant from both arms of the angle, ensuring the line to that point splits the angle perfectly.",
+            "answer_outline": [
+                "Definition of bisector",
+                "Explanation of equidistance from arms"
+            ],
+            "key_concepts": [
+                "angle bisector",
+                "equidistant"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "When tiling with rectangles, does it matter if they are placed horizontally or vertically? Why?",
+            "answer": "No, because the interior angles of a rectangle are always 90°. As long as four corners meet (or edges align), they will always sum to 360°, allowing for a gapless tiling regardless of orientation.",
+            "answer_outline": [
+                "Identify rectangle angle (90°)",
+                "Apply vertex sum rule",
+                "Conclude on orientation"
+            ],
+            "key_concepts": [
+                "rectangle tiling",
+                "orientation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 21,
+            "question": "How do you construct a perpendicular to a line from a point 'outside' it?",
+            "answer": "1. Place the needle at the point P. 2. Draw an arc that cuts the line at two points, A and B. 3. From A and B, draw arcs below the line that intersect at Q. 4. Join PQ. The line PQ is perpendicular to the given line.",
+            "answer_outline": [
+                "Initial arc to find two points on line",
+                "Arcs from those points to find intersection",
+                "Final line connection"
+            ],
+            "key_concepts": [
+                "perpendicular construction",
+                "external point"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Can a regular octagon tile a plane by itself? Explain with calculation.",
+            "answer": "No. The interior angle of a regular octagon is 135°. $360 / 135 = 2.66$. Since 360 is not divisible by 135, two octagons (270°) leave a gap, and three (405°) will overlap.",
+            "answer_outline": [
+                "Octagon angle (135°)",
+                "Divisibility test",
+                "Conclusion (gap/overlap)"
+            ],
+            "key_concepts": [
+                "octagon",
+                "tiling"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the difference between a circle and an arc in the context of construction instructions?",
+            "answer": "An instruction to 'draw a circle' means a full 360° closed curve. An instruction to 'draw an arc' usually means drawing a small part of that curve, often just enough to find an intersection point.",
+            "answer_outline": [
+                "Compare 360° vs partial curve",
+                "Explain the purpose of each (boundary vs intersection)"
+            ],
+            "key_concepts": [
+                "circle vs arc"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is the compass better than a ruler for copying the length of a line segment?",
+            "answer": "A ruler can have parallax errors and requires the user to remember and mark a number. A compass 'locks' the physical distance between its points, allowing for a direct transfer of length without the need for numerical reading, making it more precise.",
+            "answer_outline": [
+                "Ruler error (parallax/memory)",
+                "Compass advantage (physical locking/direct transfer)"
+            ],
+            "key_concepts": [
+                "precision",
+                "copying lengths"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Name a tiling pattern found in nature and identify the shape involved.",
+            "answer": "A honeycomb is a tiling pattern found in nature, and it uses the regular hexagon shape.",
+            "answer_outline": [
+                "Identify pattern (honeycomb)",
+                "Identify shape (hexagon)"
+            ],
+            "key_concepts": [
+                "nature",
+                "hexagon tiling"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        }
+    ]
+}

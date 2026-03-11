@@ -1,0 +1,156 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter_name": "Physical Features of India",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand India's physiographic diversity",
+        "Explain Himalayan divisions and importance",
+        "Analyze formation of Northern Plains",
+        "Understand plateau structure and mineral resources",
+        "Compare Western and Eastern Ghats",
+        "Study desert and coastal regions",
+        "Understand island groups of India"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Physical Diversity",
+            "topics_covered": [
+                "Meaning of physical features",
+                "Importance of landforms"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Example-based teaching"
+            ],
+            "student_activities": [
+                "List landforms found in India"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Major Physiographic Divisions",
+            "topics_covered": [
+                "Six divisions of India's relief"
+            ],
+            "teaching_strategy": [
+                "Map-based teaching"
+            ],
+            "student_activities": [
+                "Mark divisions on map"
+            ],
+            "assessment": [
+                "Map work checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Himalayan Mountains",
+            "topics_covered": [
+                "Himadri",
+                "Himachal",
+                "Shiwaliks"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation"
+            ],
+            "student_activities": [
+                "Draw Himalayan structure"
+            ],
+            "assessment": [
+                "Short questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Northern Plains Formation",
+            "topics_covered": [
+                "Indus, Ganga, Brahmaputra systems",
+                "Alluvial soil"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Explain importance of plains"
+            ],
+            "assessment": [
+                "Written responses"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Relief Features of Plains",
+            "topics_covered": [
+                "Bhabar",
+                "Terai",
+                "Bhangar",
+                "Khadar"
+            ],
+            "teaching_strategy": [
+                "Diagram teaching"
+            ],
+            "student_activities": [
+                "Create comparison table"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Peninsular Plateau and Ghats",
+            "topics_covered": [
+                "Central Highlands",
+                "Deccan Plateau",
+                "Western and Eastern Ghats"
+            ],
+            "teaching_strategy": [
+                "Map explanation"
+            ],
+            "student_activities": [
+                "Locate plateau regions"
+            ],
+            "assessment": [
+                "Map questions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Desert, Coasts and Islands",
+            "topics_covered": [
+                "Indian Desert",
+                "Coastal Plains",
+                "Island groups"
+            ],
+            "teaching_strategy": [
+                "Summary discussion"
+            ],
+            "student_activities": [
+                "Revision activity"
+            ],
+            "assessment": [
+                "Short quiz"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Atlas",
+        "Physical map of India",
+        "Charts"
+    ],
+    "evaluation_methods": [
+        "Map work",
+        "Short quizzes",
+        "Notebook checking",
+        "Class discussion"
+    ],
+    "teacher_tip": "Encourage students to practice map work regularly to understand India's physical divisions."
+}

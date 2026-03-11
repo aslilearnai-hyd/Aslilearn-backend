@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Area",
+    "generated_at": "2026-03-04T19:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the formula for the area of a rectangle?",
+            "options": {
+                "A": "length + width",
+                "B": "length × width",
+                "C": "2 × (length + width)",
+                "D": "length ÷ width"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of a rectangle = length × width.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the area of a rectangle with length 7 cm and width 4 cm?",
+            "options": {
+                "A": "11 cm²",
+                "B": "21 cm²",
+                "C": "28 cm²",
+                "D": "32 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "Area = 7 × 4 = 28 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What unit is commonly used to measure area?",
+            "options": {
+                "A": "cm",
+                "B": "cm²",
+                "C": "m",
+                "D": "kg"
+            },
+            "correct_answer": "B",
+            "explanation": "Area is measured in square units like cm² or m².",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What happens when a rectangle is divided by its diagonal?",
+            "options": {
+                "A": "It forms two congruent triangles",
+                "B": "It forms three triangles",
+                "C": "It forms a square",
+                "D": "It forms a trapezium"
+            },
+            "correct_answer": "A",
+            "explanation": "A diagonal divides the rectangle into two equal triangles.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the formula for the area of a triangle?",
+            "options": {
+                "A": "base × height",
+                "B": "½ × base × height",
+                "C": "base + height",
+                "D": "2 × base × height"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of triangle = ½ × base × height.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "If the base of a triangle is doubled but the height remains the same, the area becomes:",
+            "options": {
+                "A": "Half",
+                "B": "Double",
+                "C": "Same",
+                "D": "Four times"
+            },
+            "correct_answer": "B",
+            "explanation": "Area is directly proportional to the base.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the formula for the area of a parallelogram?",
+            "options": {
+                "A": "base × height",
+                "B": "½ × base × height",
+                "C": "base + height",
+                "D": "2 × base × height"
+            },
+            "correct_answer": "A",
+            "explanation": "Area of parallelogram = base × height.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which geometric process involves cutting a shape and rearranging it without changing its area?",
+            "options": {
+                "A": "Rotation",
+                "B": "Reflection",
+                "C": "Dissection",
+                "D": "Translation"
+            },
+            "correct_answer": "C",
+            "explanation": "Dissection involves cutting and rearranging shapes while keeping the same area.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the area of a parallelogram with base 10 cm and height 6 cm?",
+            "options": {
+                "A": "30 cm²",
+                "B": "60 cm²",
+                "C": "50 cm²",
+                "D": "16 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "Area = base × height = 10 × 6.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the formula for the area of a rhombus using diagonals?",
+            "options": {
+                "A": "d1 × d2",
+                "B": "½ × d1 × d2",
+                "C": "d1 + d2",
+                "D": "2 × d1 × d2"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of rhombus = ½ × product of diagonals.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "If the diagonals of a rhombus are 12 cm and 10 cm, its area is:",
+            "options": {
+                "A": "60 cm²",
+                "B": "120 cm²",
+                "C": "100 cm²",
+                "D": "30 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Area = ½ × 12 × 10 = 60 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which shape has exactly one pair of parallel sides?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Trapezium",
+                "D": "Rhombus"
+            },
+            "correct_answer": "C",
+            "explanation": "A trapezium has one pair of parallel sides.",
+            "difficulty": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the formula for the area of a trapezium?",
+            "options": {
+                "A": "½ × height × (sum of parallel sides)",
+                "B": "base × height",
+                "C": "½ × base × height",
+                "D": "length × width"
+            },
+            "correct_answer": "A",
+            "explanation": "Area = ½ × height × (a + b).",
+            "difficulty": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "If parallel sides of a trapezium are 8 cm and 12 cm and height is 5 cm, the area is:",
+            "options": {
+                "A": "40 cm²",
+                "B": "50 cm²",
+                "C": "60 cm²",
+                "D": "80 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "Area = ½ × 5 × (8 + 12) = 50 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which shape can always be divided into triangles to calculate its area?",
+            "options": {
+                "A": "Polygon",
+                "B": "Circle",
+                "C": "Oval",
+                "D": "Sphere"
+            },
+            "correct_answer": "A",
+            "explanation": "Any polygon can be divided into triangles.",
+            "difficulty": "medium",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the area of a triangle with base 12 cm and height 8 cm?",
+            "options": {
+                "A": "96 cm²",
+                "B": "48 cm²",
+                "C": "24 cm²",
+                "D": "36 cm²"
+            },
+            "correct_answer": "B",
+            "explanation": "Area = ½ × 12 × 8 = 48 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The diagonals of a rectangle intersect at:",
+            "options": {
+                "A": "Right angles",
+                "B": "Midpoints",
+                "C": "Parallel lines",
+                "D": "Unequal points"
+            },
+            "correct_answer": "B",
+            "explanation": "Diagonals of a rectangle bisect each other.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 18,
+            "question": "If a square has side length 6 cm, its area is:",
+            "options": {
+                "A": "12 cm²",
+                "B": "24 cm²",
+                "C": "36 cm²",
+                "D": "48 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "Area of square = side² = 36 cm².",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following shapes always has equal sides?",
+            "options": {
+                "A": "Trapezium",
+                "B": "Rhombus",
+                "C": "Rectangle",
+                "D": "Parallelogram"
+            },
+            "correct_answer": "B",
+            "explanation": "All sides of a rhombus are equal.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which unit is suitable for measuring the area of land?",
+            "options": {
+                "A": "cm²",
+                "B": "m²",
+                "C": "km²",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Different area units are used depending on the size.",
+            "difficulty": "easy",
+            "source_section": "Section 7.7"
+        },
+        {
+            "question_number": 21,
+            "question": "1 square inch equals approximately:",
+            "options": {
+                "A": "2.54 cm²",
+                "B": "5 cm²",
+                "C": "6.45 cm²",
+                "D": "10 cm²"
+            },
+            "correct_answer": "C",
+            "explanation": "1 in² ≈ 6.4516 cm².",
+            "difficulty": "hard",
+            "source_section": "Section 7.7"
+        },
+        {
+            "question_number": 22,
+            "question": "If two triangles have equal bases and equal heights, their areas are:",
+            "options": {
+                "A": "Different",
+                "B": "Equal",
+                "C": "Half",
+                "D": "Double"
+            },
+            "correct_answer": "B",
+            "explanation": "Same base and height implies equal area.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which shape is formed when two identical trapeziums are joined appropriately?",
+            "options": {
+                "A": "Rectangle",
+                "B": "Triangle",
+                "C": "Parallelogram",
+                "D": "Circle"
+            },
+            "correct_answer": "C",
+            "explanation": "Two trapeziums can form a parallelogram.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 24,
+            "question": "The area of a rhombus with diagonals 20 cm and 15 cm is:",
+            "options": {
+                "A": "150 cm²",
+                "B": "200 cm²",
+                "C": "120 cm²",
+                "D": "300 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Area = ½ × 20 × 15 = 150 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement about area is correct?",
+            "options": {
+                "A": "Area measures boundary length",
+                "B": "Area measures surface covered",
+                "C": "Area is measured in meters only",
+                "D": "Area equals perimeter"
+            },
+            "correct_answer": "B",
+            "explanation": "Area represents the surface covered by a region.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        }
+    ]
+}

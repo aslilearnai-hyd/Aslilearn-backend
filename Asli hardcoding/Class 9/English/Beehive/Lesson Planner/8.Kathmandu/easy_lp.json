@@ -1,0 +1,155 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Kathmandu",
+    "title": "Lesson Planner – Kathmandu",
+    "author": "Vikram Seth",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the events described in the travelogue",
+        "Identify the places visited by the author",
+        "Understand the cultural diversity of Kathmandu",
+        "Recognise descriptive language in the prose",
+        "Develop reading and comprehension skills",
+        "Relate travel experiences with real-life observations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Travelogue",
+            "topics_covered": [
+                "Introduction to Vikram Seth",
+                "Meaning of travelogue",
+                "Overview of Kathmandu"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Share experiences of visiting temples or tourist places"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Visit to Pashupatinath Temple",
+            "topics_covered": [
+                "Description of Pashupatinath temple",
+                "Crowded atmosphere",
+                "Activities around the temple"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Explanation of scenes"
+            ],
+            "student_activities": [
+                "Identify things happening at the temple",
+                "List people and animals mentioned"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Baudhnath Stupa and Market Area",
+            "topics_covered": [
+                "Description of Baudhnath stupa",
+                "Peaceful atmosphere",
+                "Shops around the shrine"
+            ],
+            "teaching_strategy": [
+                "Guided reading",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Compare the two temples",
+                "Write differences in points"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Street Life of Kathmandu",
+            "topics_covered": [
+                "Busy streets and markets",
+                "Sounds and activities",
+                "Items sold in the market"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Visual description"
+            ],
+            "student_activities": [
+                "List sounds heard in the street",
+                "Describe a busy market"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook work"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Flute Seller",
+            "topics_covered": [
+                "Description of the flute seller",
+                "Importance of music",
+                "Author’s feelings"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Value-based discussion"
+            ],
+            "student_activities": [
+                "Explain why the flute attracts the author"
+            ],
+            "assessment": [
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme, Vocabulary and Revision",
+            "topics_covered": [
+                "Theme of the lesson",
+                "New vocabulary words",
+                "Summary of the lesson"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Vocabulary explanation"
+            ],
+            "student_activities": [
+                "Write meanings of new words",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English textbook",
+        "Blackboard or whiteboard",
+        "Chalk or markers",
+        "Pictures of Kathmandu temples"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Student participation"
+    ],
+    "teacher_tip": "Use pictures or videos of temples and markets to help students imagine the scenes described in the travelogue."
+}

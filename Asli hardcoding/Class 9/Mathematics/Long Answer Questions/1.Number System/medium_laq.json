@@ -1,0 +1,389 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-06T01:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between rational and irrational numbers with examples.",
+            "answer": "Rational numbers can be written in the form p/q where q ≠ 0, such as 1/2 or 3/4. Irrational numbers cannot be expressed as p/q and have non-terminating non-repeating decimals such as √2 and π.",
+            "answer_outline": [
+                "Definition of rational numbers",
+                "Examples",
+                "Definition of irrational numbers",
+                "Examples"
+            ],
+            "key_concepts": [
+                "rational numbers",
+                "irrational numbers"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1, 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the classification of real numbers with a diagram.",
+            "answer": "Real numbers consist of rational and irrational numbers. Rational numbers include integers and fractions. Irrational numbers cannot be written as fractions.",
+            "answer_outline": [
+                "Real numbers",
+                "Rational numbers",
+                "Irrational numbers"
+            ],
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain terminating and non-terminating decimals with examples.",
+            "answer": "Terminating decimals end after a finite number of digits such as 0.25. Non-terminating decimals continue infinitely and may be repeating or non-repeating.",
+            "answer_outline": [
+                "Definition",
+                "Examples",
+                "Difference"
+            ],
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why √16 is rational and √2 is irrational.",
+            "answer": "√16 = 4 which is an integer and therefore rational. √2 cannot be written as p/q and its decimal expansion is non-terminating non-repeating.",
+            "answer_outline": [
+                "Evaluation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of number line representation of real numbers.",
+            "answer": "Real numbers can be represented as points on a number line where each point corresponds to a real number.",
+            "answer_outline": [
+                "Definition",
+                "Representation"
+            ],
+            "key_concepts": [
+                "number line"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain prime numbers with examples.",
+            "answer": "Prime numbers have exactly two factors: 1 and the number itself. Examples include 2, 3, and 5.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain composite numbers with examples.",
+            "answer": "Composite numbers have more than two factors. Examples include 4, 6 and 8.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "composite numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain coprime numbers with examples.",
+            "answer": "Two numbers are coprime if their HCF is 1. Example: 8 and 15.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "coprime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the concept of square numbers.",
+            "answer": "Square numbers are obtained when a number is multiplied by itself such as 4, 9 and 16.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "square numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the concept of square roots.",
+            "answer": "The square root of a number is a value that when multiplied by itself gives the original number.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why π is irrational.",
+            "answer": "π has a non-terminating non-repeating decimal expansion and cannot be written as a fraction.",
+            "answer_outline": [
+                "Definition",
+                "Reason"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why √25 is rational.",
+            "answer": "√25 = 5 which is an integer and therefore rational.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the decimal expansion of rational numbers.",
+            "answer": "The decimal expansion of rational numbers either terminates or repeats infinitely.",
+            "answer_outline": [
+                "Property",
+                "Examples"
+            ],
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain irrational numbers with examples.",
+            "answer": "Irrational numbers cannot be written as fractions and have non-terminating non-repeating decimals.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of prime numbers.",
+            "answer": "Prime numbers are building blocks of natural numbers through prime factorization.",
+            "answer_outline": [
+                "Definition",
+                "Importance"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the concept of factors and multiples.",
+            "answer": "Factors divide numbers exactly while multiples are obtained by multiplying a number.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "factors",
+                "multiples"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the meaning of perfect squares.",
+            "answer": "Perfect squares are numbers whose square roots are integers.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "perfect squares"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why 0 is a rational number.",
+            "answer": "0 can be written as 0/1 where numerator and denominator are integers.",
+            "answer_outline": [
+                "Fraction form",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the role of irrational numbers in mathematics.",
+            "answer": "Irrational numbers help represent values like π and √2 used in geometry and measurement.",
+            "answer_outline": [
+                "Importance",
+                "Examples"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why every integer is a rational number.",
+            "answer": "Any integer can be written as p/q where q=1.",
+            "answer_outline": [
+                "Fraction form",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the meaning of decimal representation of numbers.",
+            "answer": "Decimal representation expresses numbers using digits and decimal point.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "decimal representation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why √1 is rational.",
+            "answer": "√1 = 1 which is an integer.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why √3 is irrational.",
+            "answer": "√3 cannot be written as p/q and its decimal expansion is non-terminating non-repeating.",
+            "answer_outline": [
+                "Definition",
+                "Reason"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the difference between factors and prime factors.",
+            "answer": "Factors divide numbers exactly while prime factors are prime numbers that divide the number.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "prime factors"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the concept of real numbers on number line.",
+            "answer": "Every real number corresponds to a point on the number line.",
+            "answer_outline": [
+                "Definition",
+                "Representation"
+            ],
+            "key_concepts": [
+                "number line"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

@@ -1,0 +1,360 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Coordinate Geometry",
+    "generated_at": "2026-03-01T20:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the distance formula using coordinate geometry.",
+            "answer": "The distance formula is derived using the Pythagoras theorem. By drawing perpendiculars from the given points to the axes, the distance between the points is obtained as √[(x₂ − x₁)² + (y₂ − y₁)²].",
+            "answer_outline": [
+                "Construction",
+                "Use of Pythagoras theorem",
+                "Final formula"
+            ],
+            "key_concepts": [
+                "distance formula"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how to check whether three given points are collinear.",
+            "answer": "Three points are collinear if the sum of the distances between any two pairs of points is equal to the distance between the remaining pair.",
+            "answer_outline": [
+                "Distance calculation",
+                "Comparison",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "collinearity"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the section formula for internal division.",
+            "answer": "The section formula gives the coordinates of a point dividing a line segment internally in a given ratio using proportional distances.",
+            "answer_outline": [
+                "Definition",
+                "Formula",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "section formula"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Derive the midpoint formula using the section formula.",
+            "answer": "The midpoint divides the line segment in the ratio 1:1. Substituting m₁ = m₂ = 1 in the section formula gives the midpoint formula.",
+            "answer_outline": [
+                "Ratio 1:1",
+                "Substitution",
+                "Result"
+            ],
+            "key_concepts": [
+                "midpoint"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how coordinate geometry helps in finding the shape of a quadrilateral.",
+            "answer": "By using distance formula and midpoint formula, properties such as equal sides and equal diagonals can be verified.",
+            "answer_outline": [
+                "Distance",
+                "Midpoint",
+                "Identification"
+            ],
+            "key_concepts": [
+                "quadrilateral"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2, 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how distance formula is used to verify a right-angled triangle.",
+            "answer": "By calculating all three sides and checking whether the square of the largest side equals the sum of squares of the other two sides.",
+            "answer_outline": [
+                "Distance calculation",
+                "Pythagoras theorem"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the concept of locus with an example.",
+            "answer": "A locus is the set of all points satisfying a given condition. For example, points equidistant from two fixed points lie on the perpendicular bisector.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "locus"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how midpoint formula is used to verify a parallelogram.",
+            "answer": "If the midpoints of diagonals are the same, the quadrilateral is a parallelogram.",
+            "answer_outline": [
+                "Diagonal midpoint",
+                "Verification"
+            ],
+            "key_concepts": [
+                "parallelogram"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how the distance formula helps in identifying a square.",
+            "answer": "A square has equal sides and equal diagonals which can be verified using distance formula.",
+            "answer_outline": [
+                "Equal sides",
+                "Equal diagonals"
+            ],
+            "key_concepts": [
+                "square"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain internal division with a diagrammatic idea.",
+            "answer": "Internal division means the dividing point lies between two endpoints of the line segment.",
+            "answer_outline": [
+                "Concept",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "internal division"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why distance between two points is always positive.",
+            "answer": "Distance represents length, which cannot be negative.",
+            "answer_outline": [
+                "Meaning of distance"
+            ],
+            "key_concepts": [
+                "distance"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how section formula is useful in real-life situations.",
+            "answer": "It helps locate positions such as relay towers or division points in given ratios.",
+            "answer_outline": [
+                "Application",
+                "Examples"
+            ],
+            "key_concepts": [
+                "section formula"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why points on x-axis have zero y-coordinate.",
+            "answer": "Points on x-axis have no vertical distance from it, so y = 0.",
+            "answer_outline": [
+                "Concept",
+                "Reason"
+            ],
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why points on y-axis have zero x-coordinate.",
+            "answer": "Points on y-axis have no horizontal distance from it, so x = 0.",
+            "answer_outline": [
+                "Concept",
+                "Reason"
+            ],
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how distance formula helps in finding the perimeter of a triangle.",
+            "answer": "By calculating the lengths of all three sides using distance formula and adding them.",
+            "answer_outline": [
+                "Side lengths",
+                "Perimeter"
+            ],
+            "key_concepts": [
+                "perimeter"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of coordinate geometry in daily life.",
+            "answer": "It is used in navigation, engineering, mapping and construction.",
+            "answer_outline": [
+                "Applications"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how a triangle can be identified as isosceles using coordinates.",
+            "answer": "If two sides calculated using distance formula are equal, the triangle is isosceles.",
+            "answer_outline": [
+                "Equal sides",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "isosceles triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the role of perpendicular axes in coordinate geometry.",
+            "answer": "They provide a reference system to locate points accurately.",
+            "answer_outline": [
+                "Axes",
+                "Purpose"
+            ],
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how coordinates help in representing geometric figures.",
+            "answer": "Coordinates convert geometric figures into algebraic forms for easy analysis.",
+            "answer_outline": [
+                "Representation",
+                "Benefit"
+            ],
+            "key_concepts": [
+                "representation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the meaning of an ordered pair.",
+            "answer": "An ordered pair (x, y) represents the position of a point in a plane.",
+            "answer_outline": [
+                "Definition"
+            ],
+            "key_concepts": [
+                "ordered pair"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how section formula is derived using similarity of triangles.",
+            "answer": "It is derived using AA similarity and proportional sides.",
+            "answer_outline": [
+                "Similarity",
+                "Derivation"
+            ],
+            "key_concepts": [
+                "similarity"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the relationship between algebra and coordinate geometry.",
+            "answer": "Algebraic equations are used to study geometric figures.",
+            "answer_outline": [
+                "Algebra",
+                "Geometry"
+            ],
+            "key_concepts": [
+                "analytical geometry"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how midpoint formula helps in finding centres of figures.",
+            "answer": "It helps find the centre by locating the midpoint of diagonals.",
+            "answer_outline": [
+                "Centre",
+                "Midpoint"
+            ],
+            "key_concepts": [
+                "midpoint"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the use of distance formula in verifying congruency.",
+            "answer": "Equal corresponding side lengths confirm congruency.",
+            "answer_outline": [
+                "Distance",
+                "Congruency"
+            ],
+            "key_concepts": [
+                "congruency"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarise the applications of distance and section formula.",
+            "answer": "They are used to find lengths, midpoints, ratios and verify geometric shapes.",
+            "answer_outline": [
+                "Distance",
+                "Section formula"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "source_section": "Chapter Summary"
+        }
+    ]
+}

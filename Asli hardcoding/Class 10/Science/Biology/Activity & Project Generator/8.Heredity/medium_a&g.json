@@ -1,0 +1,185 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Heredity",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class10_science_ch8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Family Traits Survey",
+            "objective": "Understand inheritance of visible traits",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Family photos or family members"
+            ],
+            "steps": [
+                "Survey at least 10-15 family members or relatives",
+                "Record traits like tongue rolling, attached/free earlobes, dimples, eye color, hair type",
+                "Tabulate who has dominant vs. recessive traits",
+                "Draw a simple family tree showing pattern"
+            ],
+            "learning_outcome": "Recognizes how traits are inherited from parents",
+            "evaluation": "Accuracy of data and pattern identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Mendel's Pea Plant Model",
+            "objective": "Demonstrate monohybrid cross and laws of inheritance",
+            "materials": [
+                "Chart paper",
+                "Markers/colors",
+                "Seeds/beans of two colors (representing alleles)"
+            ],
+            "steps": [
+                "Choose one trait (e.g., tall/short plants)",
+                "Prepare Punnett square for F1 and F2 generations",
+                "Use colored beans to simulate crossing and show ratios (3:1)",
+                "Display on chart with explanation of dominance"
+            ],
+            "learning_outcome": "Understands Mendel's laws and segregation of alleles",
+            "evaluation": "Correctness of ratios and presentation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Inheritance of Blood Groups Poster",
+            "objective": "Learn about multiple alleles and codominance",
+            "materials": [
+                "A3 paper",
+                "Colors/sketch pens",
+                "Reference books or internet"
+            ],
+            "steps": [
+                "Research ABO blood groups and Rh factor",
+                "Illustrate possible blood groups from parents (e.g., A and B parents)",
+                "Show Punnett squares and real-life importance (transfusions)",
+                "Add impact on health/population"
+            ],
+            "learning_outcome": "Appreciates complex inheritance patterns beyond simple dominance",
+            "evaluation": "Accuracy, creativity, and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Sex Determination Chart",
+            "objective": "Understand role of chromosomes in sex determination",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Diagrams of chromosomes"
+            ],
+            "steps": [
+                "Draw human chromosomes (46 total, focus on pair 23)",
+                "Show XX (female) and XY (male) gametes",
+                "Prepare Punnett square for sex determination (50:50 ratio)",
+                "Discuss exceptions or sex-linked traits briefly"
+            ],
+            "learning_outcome": "Learns chromosomal basis of sex determination",
+            "evaluation": "Diagram clarity and conceptual accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Variation in Population Activity",
+            "objective": "Observe accumulation of variations",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Classmates or family"
+            ],
+            "steps": [
+                "Measure height/hand span of 20-30 students",
+                "Record data and plot a simple bar graph/histogram",
+                "Discuss why variations exist (sexual reproduction, mutations)",
+                "Relate to chapter concept of variations being useful for species"
+            ],
+            "learning_outcome": "Understands role of variation in evolution/survival",
+            "evaluation": "Data collection, graph, and discussion quality (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Pedigree Analysis of Traits",
+            "objective": "Analyze inheritance patterns in families",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Family history info"
+            ],
+            "steps": [
+                "Choose a trait (e.g., color blindness if known, or curly hair)",
+                "Create a pedigree chart for 3 generations",
+                "Identify if autosomal dominant/recessive or sex-linked",
+                "Present and explain findings"
+            ],
+            "learning_outcome": "Applies inheritance concepts to real family data",
+            "evaluation": "Chart accuracy and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Genetic Terms Crossword Puzzle",
+            "objective": "Reinforce key vocabulary",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Textbook references"
+            ],
+            "steps": [
+                "List 10-12 terms (e.g., allele, dominant, recessive, genotype, phenotype, heredity, gene, chromosome)",
+                "Create a crossword or word search puzzle",
+                "Exchange with peers to solve and discuss meanings"
+            ],
+            "learning_outcome": "Strengthens scientific terminology related to heredity",
+            "evaluation": "Puzzle design and correctness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Role Play: Mendel’s Experiments",
+            "objective": "Re-enact Mendel's work",
+            "materials": [
+                "Props (fake pea plants, seeds)",
+                "Notebook for script"
+            ],
+            "steps": [
+                "Group members act as Mendel performing crosses",
+                "Explain pure breeding, hybridization, F1/F2 results",
+                "Highlight observations leading to laws of inheritance",
+                "Perform short skit for class"
+            ],
+            "learning_outcome": "Deepens understanding of historical scientific process",
+            "evaluation": "Accuracy of science and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Quiz on Heredity Concepts",
+            "objective": "Test and reinforce chapter knowledge",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Question cards"
+            ],
+            "steps": [
+                "Prepare 15-20 questions (MCQs, short answer on traits, crosses, sex determination)",
+                "Conduct group quiz competition",
+                "Discuss answers and clarify doubts"
+            ],
+            "learning_outcome": "Reinforces key concepts interactively",
+            "evaluation": "Question quality and participation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Debate: Role of Heredity vs Environment",
+            "objective": "Explore nature vs nurture",
+            "materials": [
+                "Notebook for points",
+                "Reference materials"
+            ],
+            "steps": [
+                "Divide class into teams",
+                "Debate using examples (intelligence, height, diseases)",
+                "Relate to chapter (inherited traits vs acquired variations)",
+                "Conclude with balanced view"
+            ],
+            "learning_outcome": "Develops critical thinking on inheritance factors",
+            "evaluation": "Research, arguments, and conclusion (10 marks)"
+        }
+    ]
+}

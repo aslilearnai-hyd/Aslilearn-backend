@@ -1,0 +1,170 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "The Human Eye and the Colourful World",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the structure and working of the human eye including accommodation",
+        "Explain common vision defects and their correction using lenses",
+        "Describe refraction and dispersion through a prism and rainbow formation",
+        "Explain atmospheric refraction phenomena like twinkling of stars and sunrise/sunset effects",
+        "Understand scattering of light and its role in sky color and Tyndall effect",
+        "Apply concepts to everyday optical phenomena through diagrams and simple experiments"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Human Eye Structure and Power of Accommodation",
+            "topics_covered": [
+                "Parts of the eye: cornea, iris, pupil, lens, retina, ciliary muscles",
+                "Functioning: image formation, power of accommodation",
+                "Near point, far point, persistence of vision"
+            ],
+            "teaching_strategy": [
+                "Lecture with labeled diagrams",
+                "Interactive discussion on how eye focuses near/far objects",
+                "Show eye model or video"
+            ],
+            "student_activities": [
+                "Draw and label human eye diagram",
+                "Explain accommodation with simple ray sketches",
+                "Discuss changes with age"
+            ],
+            "assessment": [
+                "Diagram labeling accuracy",
+                "Short oral/written explanation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Defects of Vision and Corrections",
+            "topics_covered": [
+                "Myopia (near-sightedness), hypermetropia (far-sightedness), presbyopia",
+                "Causes, ray diagrams, correction using concave/convex lenses",
+                "Bifocal lenses and basic lens power concept"
+            ],
+            "teaching_strategy": [
+                "Demonstration with lenses and charts",
+                "Ray diagram drawing on board",
+                "Group discussion on spectacles"
+            ],
+            "student_activities": [
+                "Draw ray diagrams for defects and corrections",
+                "Identify defect from given scenarios",
+                "Calculate simple lens power examples"
+            ],
+            "assessment": [
+                "Ray diagram correctness",
+                "Worksheet on defects"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Refraction and Dispersion by Prism",
+            "topics_covered": [
+                "Refraction through prism: deviation and minimum deviation",
+                "Dispersion: splitting of white light into spectrum",
+                "Rainbow formation mechanism"
+            ],
+            "teaching_strategy": [
+                "Prism experiment demonstration",
+                "Explain VIBGYOR order and wavelength bending",
+                "Use prism video/simulation"
+            ],
+            "student_activities": [
+                "Trace rays through prism on paper",
+                "Observe and draw spectrum",
+                "Explain rainbow with diagram"
+            ],
+            "assessment": [
+                "Ray tracing and spectrum drawing",
+                "Explanation questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Atmospheric Refraction Phenomena",
+            "topics_covered": [
+                "Atmospheric refraction due to density variation",
+                "Twinkling of stars, planets vs stars",
+                "Advanced sunrise and delayed sunset"
+            ],
+            "teaching_strategy": [
+                "Animated explanation of ray bending",
+                "Discussion on observations",
+                "Compare star/planet twinkling"
+            ],
+            "student_activities": [
+                "Draw ray paths for twinkling and sunrise",
+                "Observe evening sky (if possible) and note twinkling",
+                "Write reasons for phenomena"
+            ],
+            "assessment": [
+                "Diagrams and written explanations",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Scattering of Light and Tyndall Effect",
+            "topics_covered": [
+                "Scattering: why sky is blue, sunset is red",
+                "Tyndall effect demonstration",
+                "Dependence on wavelength (shorter wavelengths scatter more)"
+            ],
+            "teaching_strategy": [
+                "Milk-water torch demonstration",
+                "Explain Rayleigh scattering simply",
+                "Link to daily life examples"
+            ],
+            "student_activities": [
+                "Perform/record Tyndall effect observations",
+                "Draw side/front view of scattering",
+                "Explain blue sky and red sunset"
+            ],
+            "assessment": [
+                "Observation notes",
+                "Explanation accuracy"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Application and Assessment",
+            "topics_covered": [
+                "Recap all phenomena and concepts",
+                "Real-life applications (rainbows, optical illusions, pollution effects)",
+                "Common exam-type questions"
+            ],
+            "teaching_strategy": [
+                "Mind map creation on board",
+                "Quiz and doubt clearing",
+                "Discussion on environmental optics"
+            ],
+            "student_activities": [
+                "Solve mixed MCQs, short answers, diagrams",
+                "Create concept mind map",
+                "Discuss one real-world application"
+            ],
+            "assessment": [
+                "Quiz scores",
+                "Mind map and notebook check"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human eye model/chart",
+        "Convex/concave lenses, prism, torch, milk-water beaker",
+        "Whiteboard, markers, ray diagram sheets",
+        "Projector for animations/videos",
+        "Worksheets and question banks"
+    ],
+    "evaluation_methods": [
+        "Ray diagrams and labeling",
+        "Short answers and explanations",
+        "Practical observations",
+        "Quiz and class participation"
+    ],
+    "teacher_tip": "Use lots of ray diagrams and real-life examples to make abstract concepts concrete. Encourage students to observe sky colors and twinkling stars at home for better retention. Balance theory with hands-on demos."
+}

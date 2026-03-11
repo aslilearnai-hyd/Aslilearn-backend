@@ -1,0 +1,147 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter": "Power-sharing",
+  "difficulty": "Hard",
+  "source_pdf": "jess401.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Comparative Political Analysis",
+      "objective": "Critically compare the political responses of Belgium and Sri Lanka to ethnic diversity",
+      "materials": ["Notebook", "Textbook", "Internet"],
+      "steps": [
+        "Identify the ethnic composition of Belgium and Sri Lanka",
+        "Analyse the policies adopted by both governments",
+        "Evaluate the political consequences of these policies",
+        "Write a comparative report explaining why Belgium avoided conflict while Sri Lanka faced civil war"
+      ],
+      "learning_outcome": "Develops critical comparative analysis of political systems",
+      "evaluation": "Depth of analysis and clarity of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Policy Design Activity",
+      "objective": "Design a power-sharing model for a multi-ethnic country",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Imagine a country with three ethnic groups",
+        "Design a constitution that ensures equal participation in government",
+        "Include provisions for language, education and political representation",
+        "Present the model to the class"
+      ],
+      "learning_outcome": "Applies democratic principles to institutional design",
+      "evaluation": "Creativity and feasibility of the model (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Civil War Impact Study",
+      "objective": "Evaluate the social and economic impact of civil conflict",
+      "materials": ["Notebook", "Research sources"],
+      "steps": [
+        "Research the Sri Lankan civil war",
+        "Identify its causes related to power sharing",
+        "Analyse its impact on society, economy and politics",
+        "Prepare a research summary"
+      ],
+      "learning_outcome": "Develops research and analytical skills in political science",
+      "evaluation": "Use of evidence and depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Power-sharing Systems Diagram",
+      "objective": "Analyse different institutional forms of power sharing",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "List the four forms of power sharing",
+        "Create a conceptual diagram showing relationships between them",
+        "Add examples from different countries",
+        "Explain how each system limits concentration of power"
+      ],
+      "learning_outcome": "Understands institutional checks and balances in democracy",
+      "evaluation": "Accuracy and conceptual clarity (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Debate on Majority Rule vs Power Sharing",
+      "objective": "Critically evaluate democratic governance models",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide the class into two groups",
+        "One group supports majority rule",
+        "The other supports power sharing",
+        "Conduct a structured debate and summarise key arguments"
+      ],
+      "learning_outcome": "Enhances argumentation and critical thinking",
+      "evaluation": "Strength of arguments and participation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Constitution Analysis",
+      "objective": "Understand constitutional provisions for power sharing in India",
+      "materials": ["Indian Constitution extracts", "Notebook"],
+      "steps": [
+        "Identify constitutional provisions related to federalism",
+        "Study provisions for representation of minorities and weaker sections",
+        "Explain how these provisions promote power sharing"
+      ],
+      "learning_outcome": "Connects constitutional design with democratic principles",
+      "evaluation": "Correct interpretation of constitutional provisions (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Coalition Politics Case Study",
+      "objective": "Examine how coalition governments operate",
+      "materials": ["Internet", "Notebook"],
+      "steps": [
+        "Research a coalition government in India or another country",
+        "Identify participating political parties",
+        "Explain how power is shared among them",
+        "Evaluate advantages and challenges of coalition politics"
+      ],
+      "learning_outcome": "Understands practical functioning of political alliances",
+      "evaluation": "Quality of case study analysis (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Media Analysis Project",
+      "objective": "Analyse media coverage of power-sharing conflicts",
+      "materials": ["Newspaper", "Notebook"],
+      "steps": [
+        "Collect three news articles related to ethnic or political conflict",
+        "Identify underlying power-sharing issues",
+        "Compare how media reports on these conflicts",
+        "Write an analytical report"
+      ],
+      "learning_outcome": "Develops media literacy and political analysis",
+      "evaluation": "Depth of analysis and critical thinking (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Community Representation Data Study",
+      "objective": "Analyse representation of different groups in governance",
+      "materials": ["Government websites", "Notebook"],
+      "steps": [
+        "Collect data on representation of different communities in parliament or local government",
+        "Create a data table showing representation patterns",
+        "Interpret the data to assess inclusiveness"
+      ],
+      "learning_outcome": "Develops data interpretation skills in political studies",
+      "evaluation": "Accuracy of data and interpretation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Democratic Stability Research Paper",
+      "objective": "Evaluate the role of power sharing in maintaining democratic stability",
+      "materials": ["Notebook", "Research sources"],
+      "steps": [
+        "Study examples of countries with strong power-sharing systems",
+        "Compare them with countries experiencing internal conflicts",
+        "Analyse the relationship between power sharing and stability",
+        "Write a short research paper"
+      ],
+      "learning_outcome": "Develops advanced research and synthesis skills",
+      "evaluation": "Quality of research and argument (10 marks)"
+    }
+  ]
+}

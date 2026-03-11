@@ -1,0 +1,293 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Tales by Dots and Lines",
+  "generated_at": "2026-03-05T13:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the steps involved in calculating the mean of a dataset with an example.",
+      "answer": "The mean is calculated by adding all observations and dividing the total by the number of observations. For example, for numbers 4, 6, 8, the mean is (4+6+8)/3 = 6.",
+      "answer_outline": [
+        "Add all observations",
+        "Count number of observations",
+        "Divide total by number of observations"
+      ],
+      "key_concepts": ["mean", "average"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how the median of a dataset is determined when the number of observations is even.",
+      "answer": "When the number of observations is even, the median is the average of the two middle values after arranging the numbers in order.",
+      "answer_outline": [
+        "Arrange numbers in order",
+        "Identify two middle values",
+        "Find their average"
+      ],
+      "key_concepts": ["median"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the steps involved in creating a dot plot and explain its usefulness.",
+      "answer": "To create a dot plot, first draw a number line representing possible values. Then place dots above each value according to its frequency. Dot plots help visualize distribution and frequency of data.",
+      "answer_outline": [
+        "Draw number line",
+        "Mark values",
+        "Place dots for frequency",
+        "Interpret distribution"
+      ],
+      "key_concepts": ["dot plot", "data representation"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how a line graph helps in understanding trends in data.",
+      "answer": "A line graph connects data points with straight lines to show changes over time, helping identify trends, patterns, and increases or decreases in data.",
+      "answer_outline": ["Plot points", "Connect with lines", "Observe trends"],
+      "key_concepts": ["line graph", "trend analysis"],
+      "marks": 5,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Find the mean of the numbers 10, 15, 20, 25 and explain the process.",
+      "answer": "Mean = (10 + 15 + 20 + 25) / 4 = 70 / 4 = 17.5.",
+      "answer_outline": ["Add values", "Divide by number of observations"],
+      "key_concepts": ["mean"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why the median is considered a better measure than mean in some cases.",
+      "answer": "Median is less affected by extreme values or outliers, so it better represents the central tendency in skewed datasets.",
+      "answer_outline": [
+        "Define median",
+        "Explain effect of outliers",
+        "Comparison with mean"
+      ],
+      "key_concepts": ["median", "outliers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Construct a dot plot for the dataset: 3, 4, 4, 5, 6, 6, 6 and interpret it.",
+      "answer": "Dots are placed above each value according to frequency. The plot shows that 6 appears most frequently.",
+      "answer_outline": [
+        "Create number line",
+        "Plot dots",
+        "Interpret frequencies"
+      ],
+      "key_concepts": ["dot plot"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how data visualization improves understanding of numerical information.",
+      "answer": "Data visualization uses graphs and charts to present data clearly, making patterns, relationships, and trends easier to identify.",
+      "answer_outline": [
+        "Define data visualization",
+        "Examples of graphs",
+        "Benefits"
+      ],
+      "key_concepts": ["data visualization"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Find the median of the dataset: 12, 18, 20, 24, 30, 36.",
+      "answer": "Median = (20 + 24) / 2 = 22.",
+      "answer_outline": [
+        "Arrange data",
+        "Identify middle values",
+        "Calculate average"
+      ],
+      "key_concepts": ["median"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the difference between a dot plot and a line graph.",
+      "answer": "A dot plot displays frequency of individual values while a line graph shows trends or changes over time.",
+      "answer_outline": [
+        "Define dot plot",
+        "Define line graph",
+        "Compare purposes"
+      ],
+      "key_concepts": ["dot plot", "line graph"],
+      "marks": 5,
+      "source_section": "Section 5.1, 5.2"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Calculate the mean of the numbers 5, 10, 15, 20, 25.",
+      "answer": "Mean = 75 / 5 = 15.",
+      "answer_outline": ["Add values", "Divide by number of values"],
+      "key_concepts": ["mean"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 12,
+      "question": "Explain how spreadsheets help in analysing data.",
+      "answer": "Spreadsheets help organise data in tables, perform calculations automatically using formulas, and create graphs easily.",
+      "answer_outline": [
+        "Organizing data",
+        "Automatic calculations",
+        "Graph generation"
+      ],
+      "key_concepts": ["spreadsheets", "data analysis"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Find the median of numbers 2, 6, 8, 10, 12.",
+      "answer": "Median = 8.",
+      "answer_outline": ["Arrange values", "Find middle value"],
+      "key_concepts": ["median"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Explain the steps involved in plotting a line graph.",
+      "answer": "Steps include selecting axes, marking scale, plotting points for each data value, and joining points with straight lines.",
+      "answer_outline": [
+        "Draw axes",
+        "Select scale",
+        "Plot points",
+        "Join points"
+      ],
+      "key_concepts": ["line graph"],
+      "marks": 5,
+      "source_section": "Section 5.2"
+    },
+
+    {
+      "question_number": 15,
+      "question": "Find the mean of numbers 8, 12, 16 and 20.",
+      "answer": "Mean = (8 + 12 + 16 + 20) / 4 = 14.",
+      "answer_outline": ["Add values", "Divide by count"],
+      "key_concepts": ["mean"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain why graphs are important in presenting data.",
+      "answer": "Graphs visually represent data, making it easier to understand trends, comparisons, and patterns.",
+      "answer_outline": ["Define graphs", "Explain advantages"],
+      "key_concepts": ["data representation"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+
+    {
+      "question_number": 17,
+      "question": "Find the median of numbers 6, 9, 12, 15, 18.",
+      "answer": "Median = 12.",
+      "answer_outline": ["Arrange values", "Find middle value"],
+      "key_concepts": ["median"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Explain the role of frequency in a dot plot.",
+      "answer": "Frequency indicates how many times a value occurs, represented by the number of dots above that value.",
+      "answer_outline": [
+        "Define frequency",
+        "Explain representation in dot plot"
+      ],
+      "key_concepts": ["frequency", "dot plot"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Calculate the mean of numbers 6, 12, 18 and 24.",
+      "answer": "Mean = (6 + 12 + 18 + 24) / 4 = 15.",
+      "answer_outline": ["Add values", "Divide by number"],
+      "key_concepts": ["mean"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Explain the importance of organising data before analysis.",
+      "answer": "Organising data helps in identifying patterns, performing calculations easily, and presenting results clearly.",
+      "answer_outline": ["Define data organization", "Explain benefits"],
+      "key_concepts": ["data organisation"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Find the median of numbers 10, 14, 18, 22, 26.",
+      "answer": "Median = 18.",
+      "answer_outline": ["Arrange numbers", "Find middle value"],
+      "key_concepts": ["median"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Explain how trends can be identified from a line graph.",
+      "answer": "By observing the slope and direction of lines connecting data points, we can identify increasing, decreasing, or stable trends.",
+      "answer_outline": ["Observe direction", "Identify patterns"],
+      "key_concepts": ["line graph", "trend"],
+      "marks": 5,
+      "source_section": "Section 5.2"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Find the mean of numbers 3, 6, 9, 12 and 15.",
+      "answer": "Mean = 45 / 5 = 9.",
+      "answer_outline": ["Add values", "Divide by count"],
+      "key_concepts": ["mean"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Explain how dot plots help in comparing datasets.",
+      "answer": "Dot plots allow visual comparison of frequencies and distribution of values between datasets.",
+      "answer_outline": ["Show distribution", "Compare frequencies"],
+      "key_concepts": ["dot plot"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+
+    {
+      "question_number": 25,
+      "question": "Discuss the importance of mean and median in analysing real-life data.",
+      "answer": "Mean and median summarise datasets and help understand central tendencies, making it easier to analyse real-life situations such as exam scores or rainfall data.",
+      "answer_outline": ["Define mean and median", "Explain real-life use"],
+      "key_concepts": ["mean", "median", "data analysis"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Inside Our Earth (Our Environment)",
+  "generated_at": "2026-03-07T18:18:30",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If we compare the Earth to an onion, which characteristic of its layers is most accurate according to the NCERT text?",
+      "options": {
+        "A": "The layers are all of equal thickness.",
+        "B": "It is made of several concentric layers with one inside another.",
+        "C": "The layers are mixed randomly like a marble cake.",
+        "D": "Only the outermost layer is solid."
+      },
+      "correct_answer": "B",
+      "explanation": "Just like an onion, the earth is made up of several concentric layers (layers with the same center) one inside another.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The continental crust is 35 km thick, while the oceanic crust is only 5 km. What does this imply about the 'Sial' and 'Sima' layers?",
+      "options": {
+        "A": "Sial is denser than Sima.",
+        "B": "The oceanic crust (Sima) is thinner but forms the base of the ocean basins.",
+        "C": "Sial is found only at the core.",
+        "D": "Sima is found only on mountain tops."
+      },
+      "correct_answer": "B",
+      "explanation": "The thin oceanic crust (5 km) is primarily 'Sima', while the thicker continental mass (35 km) is primarily 'Sial'.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the specific volume distribution of the Earth's interior layers?",
+      "options": {
+        "A": "Crust 1%, Mantle 84%, Core 15%",
+        "B": "Crust 10%, Mantle 70%, Core 20%",
+        "C": "Crust 5%, Mantle 15%, Core 80%",
+        "D": "Crust 15%, Mantle 84%, Core 1%"
+      },
+      "correct_answer": "A",
+      "explanation": "The crust occupies only 1% of the volume, the mantle 84%, and the core makes up the remaining 15%.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "The term 'Nife' (Nickel and Ferrous) refers to the core. Why is the 'Ferrous' part significant?",
+      "options": {
+        "A": "It means the core is made of plastic.",
+        "B": "It refers to the high iron content in the innermost layer.",
+        "C": "It indicates that the core is made of aluminum.",
+        "D": "It suggests the core is very cold."
+      },
+      "correct_answer": "B",
+      "explanation": "'Fe' stands for Ferrous, which is the scientific name for Iron, one of the two main minerals in the core.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following describes the formation of 'Extrusive' igneous rocks compared to 'Intrusive' ones?",
+      "options": {
+        "A": "Extrusive rocks have large grains; Intrusive have fine grains.",
+        "B": "Extrusive rocks cool rapidly on the surface; Intrusive rocks cool slowly deep inside.",
+        "C": "Extrusive rocks are made of fossils; Intrusive are made of sand.",
+        "D": "There is no difference in their cooling rates."
+      },
+      "correct_answer": "B",
+      "explanation": "Rapid cooling on the surface creates fine-grained extrusive rocks (Basalt), while slow cooling inside creates large-grained intrusive rocks (Granite).",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "How does the 'Rock Cycle' demonstrate the principle of conservation of matter?",
+      "options": {
+        "A": "Rocks are destroyed and never return.",
+        "B": "One type of rock changes into another in a continuous cyclic manner.",
+        "C": "The Earth is constantly getting smaller.",
+        "D": "Rocks only change into liquid magma."
+      },
+      "correct_answer": "B",
+      "explanation": "The rock cycle is a continuous process where igneous, sedimentary, and metamorphic rocks transform into one another without 'disappearing'.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are fossils primarily found in sedimentary rocks and not igneous or metamorphic rocks?",
+      "options": {
+        "A": "Igneous rocks are too cold.",
+        "B": "The high heat of magma and the pressure/heat of metamorphism destroy organic remains.",
+        "C": "Animals do not like to die near volcanoes.",
+        "D": "Only sedimentary rocks have the right color for fossils."
+      },
+      "correct_answer": "B",
+      "explanation": "Igneous rocks form from molten magma (too hot for life), and metamorphic rocks undergo changes that crush or melt fossils; sedimentary layers 'trap' and preserve them.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "The Latin word 'Sedimentum' means to settle. How does this relate to the formation of 'Sandstone'?",
+      "options": {
+        "A": "Sand grains settle, are transported, and then compressed into layers.",
+        "B": "Sandstone is fire-born.",
+        "C": "Sandstone is formed by melting.",
+        "D": "Sandstone only settles in the core."
+      },
+      "correct_answer": "A",
+      "explanation": "Sandstone is a sedimentary rock formed when grains of sand settle and are compressed/hardened into layers.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Metamorphic rocks are the result of 'Metamorphose'. What triggers this change in Limestone to Marble?",
+      "options": {
+        "A": "Only the presence of water.",
+        "B": "The influence of great heat and pressure over time.",
+        "C": "The cooling of lava.",
+        "D": "The action of wind."
+      },
+      "correct_answer": "B",
+      "explanation": "Igneous and sedimentary rocks change into metamorphic rocks when subjected to extreme heat and pressure.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which layer of the Earth would you find at a depth of 3500 km to 5000 km?",
+      "options": {
+        "A": "Crust",
+        "B": "Mantle",
+        "C": "Core",
+        "D": "Sial"
+      },
+      "correct_answer": "C",
+      "explanation": "The mantle ends at 2900 km; beyond that is the core, which has a radius of about 3500 km.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the fundamental difference between a 'Rock' and a 'Mineral'?",
+      "options": {
+        "A": "Rocks have a definite chemical composition; minerals do not.",
+        "B": "Rocks are natural masses of mineral matter; minerals are substances with definite physical/chemical properties.",
+        "C": "Minerals are only found in the core; rocks are only on the crust.",
+        "D": "There is no difference."
+      },
+      "correct_answer": "B",
+      "explanation": "Rocks are aggregates of minerals, whereas minerals are specific chemical substances with distinct properties.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2 / 2.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Why can we not dig to the center of the Earth?",
+      "options": {
+        "A": "There is no oxygen.",
+        "B": "The heat and pressure are too high for any equipment or human to survive.",
+        "C": "It is illegal.",
+        "D": "The center is made of water."
+      },
+      "correct_answer": "B",
+      "explanation": "The extreme temperature and pressure conditions in the mantle and core make it technologically impossible to dig 6000 km deep.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "If you find a rock with a very smooth, fine-grained texture, it is most likely:",
+      "options": {
+        "A": "Intrusive igneous rock",
+        "B": "Extrusive igneous rock",
+        "C": "A layer of sial",
+        "D": "The core"
+      },
+      "correct_answer": "B",
+      "explanation": "Extrusive igneous rocks (like Basalt) cool quickly on the surface, which results in a very fine-grained structure.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "In the rock cycle, what must happen to metamorphic rock before it can become igneous rock again?",
+      "options": {
+        "A": "It must be broken into sediments.",
+        "B": "It must melt into molten magma.",
+        "C": "It must be carved into a monument.",
+        "D": "It must stay in the crust."
+      },
+      "correct_answer": "B",
+      "explanation": "For any rock to become 'igneous', it must first melt into magma and then cool/solidify.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 15,
+      "question": "The 'Crust' is broken into plates. According to the depth mentioned, where would the boundary between the Crust and Mantle be found?",
+      "options": {
+        "A": "At 5 km under the continents.",
+        "B": "At 35 km under the continents and 5 km under the oceans.",
+        "C": "At 2900 km.",
+        "D": "At the center of the earth."
+      },
+      "correct_answer": "B",
+      "explanation": "The crust's depth is 35 km on land and 5 km under the ocean floor; the mantle starts immediately after.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Granite is an intrusive rock. Why does it have large grains?",
+      "options": {
+        "A": "It contains more iron.",
+        "B": "It cools down very slowly deep inside the earth, allowing crystals to grow.",
+        "C": "It is made of fossils.",
+        "D": "It is found only in South Africa."
+      },
+      "correct_answer": "B",
+      "explanation": "Slow cooling of magma within the crust allows for the formation of larger mineral grains.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of these sequences represents the correct order of the 'Rock Cycle' following an initial volcanic eruption?",
+      "options": {
+        "A": "Sedimentary -> Magma -> Metamorphic",
+        "B": "Magma -> Igneous -> Sedimentary -> Metamorphic -> Magma",
+        "C": "Metamorphic -> Igneous -> Magma",
+        "D": "Crust -> Mantle -> Core"
+      },
+      "correct_answer": "B",
+      "explanation": "Magma cools to Igneous; Igneous breaks into Sedimentary; Sedimentary changes to Metamorphic; Metamorphic melts back into Magma.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 18,
+      "question": "What happens to 'Slate' if it is subjected to even further extreme heat and pressure?",
+      "options": {
+        "A": "It turns back into clay.",
+        "B": "It might eventually melt into magma.",
+        "C": "It becomes a sedimentary rock.",
+        "D": "It turns into sandstone."
+      },
+      "correct_answer": "B",
+      "explanation": "Metamorphic rocks like slate, if continued to be heated, will eventually reach their melting point and become magma.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Why are minerals like petroleum and natural gas called 'Fossil Fuels' in the context of this chapter?",
+      "options": {
+        "A": "Because they are found in the mantle.",
+        "B": "Because they are formed from the remains of organisms trapped in sedimentary layers.",
+        "C": "Because they are made of fire.",
+        "D": "Because they are found in the core."
+      },
+      "correct_answer": "B",
+      "explanation": "Fuels like coal and petroleum are minerals that originate from organic matter preserved in rocks.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 20,
+      "question": "The 'Basalt' found in the Deccan Plateau suggests that this area was once:",
+      "options": {
+        "A": "Under a giant glacier.",
+        "B": "Subject to massive volcanic activity where lava cooled on the surface.",
+        "C": "A deep sea trench.",
+        "D": "Made of pure granite."
+      },
+      "correct_answer": "B",
+      "explanation": "Basalt is an extrusive igneous rock formed from surface lava; its presence indicates past volcanic eruptions.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "How does 'Limestone' differ from 'Marble'?",
+      "options": {
+        "A": "Limestone is igneous; Marble is sedimentary.",
+        "B": "Limestone is sedimentary; Marble is the metamorphic form of limestone.",
+        "C": "Marble is found in the core; Limestone on the crust.",
+        "D": "They are the same thing."
+      },
+      "correct_answer": "B",
+      "explanation": "Limestone changes into marble due to metamorphic processes (heat and pressure).",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 22,
+      "question": "The Earth's core has a radius of 3500 km. Is this larger or smaller than the Mantle's thickness?",
+      "options": {
+        "A": "Larger (3500 km vs 2900 km).",
+        "B": "Smaller (3500 km vs 6000 km).",
+        "C": "Exactly the same.",
+        "D": "Smaller (3500 km vs 5000 km)."
+      },
+      "correct_answer": "A",
+      "explanation": "The Core radius is 3500 km, while the Mantle extends to a depth of 2900 km.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What provides the 'definite chemical composition' of a mineral?",
+      "options": {
+        "A": "The color of the rock.",
+        "B": "The specific arrangement and types of atoms within it.",
+        "C": "The weight of the crust.",
+        "D": "The person who digs it up."
+      },
+      "correct_answer": "B",
+      "explanation": "Minerals are defined by their internal structure and chemical makeup, which remains consistent.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 24,
+      "question": "In the context of 'Sima', why is Magnesium mentioned alongside Silica for the oceanic crust?",
+      "options": {
+        "A": "Because Magnesium makes the crust float.",
+        "B": "Because those are the two dominant minerals found in the rocks under the ocean.",
+        "C": "Because Magnesium is only found in water.",
+        "D": "Because it makes the crust red."
+      },
+      "correct_answer": "B",
+      "explanation": "The oceanic crust's chemical profile is predominantly Silica and Magnesium (Si + Ma).",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the Crust called 'The thinnest of all layers' if it is 35 km thick?",
+      "options": {
+        "A": "Because 35 km is very small compared to the 2900 km mantle and 3500 km core.",
+        "B": "Because it is made of paper.",
+        "C": "Because it is only 1 km thick in most places.",
+        "D": "Because it is actually only 5 km thick everywhere."
+      },
+      "correct_answer": "A",
+      "explanation": "Proportionally, the crust is extremely thin compared to the vast depths of the mantle and core.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    }
+  ]
+}

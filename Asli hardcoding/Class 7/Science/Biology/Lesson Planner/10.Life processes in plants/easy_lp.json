@@ -1,0 +1,375 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Life Processes in Animals",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the five basic steps of nutrition in animals",
+        "Recognize and label the main organs of the human digestive system",
+        "Understand the difference between breathing and cellular respiration in simple terms",
+        "Describe how humans and other animals (fish, insects, earthworms) breathe",
+        "Identify the components of the circulatory system (Heart and Blood)",
+        "Understand the basic role of kidneys in removing liquid waste",
+        "Relate healthy habits to the proper functioning of body systems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Nutrition: How Food is Used",
+            "topics_covered": [
+                "The 5 steps: Ingestion, Digestion, Absorption, Assimilation, Egestion",
+                "Different ways of taking in food (Scraping, Siphoning, Chewing)",
+                "Digestion in Amoeba (Simple view of pseudopodia)"
+            ],
+            "teaching_strategy": [
+                "Storytelling: 'The Journey of a Biscuit'",
+                "Picture sorting: Match animals to their feeding methods",
+                "Simple flow-charting on the board"
+            ],
+            "student_activities": [
+                "Identify feeding modes of common animals (Bee, Snail, Eagle)",
+                "Draw a 'Nutrition Ladder' with the 5 steps"
+            ],
+            "assessment": [
+                "Oral quiz on the 5 steps",
+                "Worksheet: 'How do I eat?'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Human Digestive System",
+            "topics_covered": [
+                "Organs: Mouth, Oesophagus, Stomach, Intestines",
+                "The role of teeth (Types and care)",
+                "Importance of saliva and water in digestion"
+            ],
+            "teaching_strategy": [
+                "Using a large colorful human torso chart",
+                "Comparison: Mouth as a 'grinder' and stomach as a 'mixer'",
+                "Mirror activity for tooth identification"
+            ],
+            "student_activities": [
+                "Label a 'Fill-in-the-Organs' worksheet",
+                "Use a mirror to count and identify their own teeth"
+            ],
+            "assessment": [
+                "Diagram labeling accuracy",
+                "Quick-fire round: Name the organ's job"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Breathing: In and Out",
+            "topics_covered": [
+                "The mechanism of breathing (Inhalation vs. Exhalation)",
+                "Organs involved: Nose, Windpipe, Lungs, Diaphragm",
+                "Breathing rate and physical activity"
+            ],
+            "teaching_strategy": [
+                "Breathing exercise: 'Feel your chest expand'",
+                "Demonstration: Balloon-and-bottle lung model",
+                "Class discussion on why we pant after running"
+            ],
+            "student_activities": [
+                "Record breaths per minute while sitting vs. after spot-jogging",
+                "Observe the movement of the balloon in the lung model"
+            ],
+            "assessment": [
+                "Exit slip: Name two things that happen during inhalation",
+                "Breath-rate data table review"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Breathing in the Animal World",
+            "topics_covered": [
+                "Gills in Fish (Breathing underwater)",
+                "Spiracles in Cockroaches",
+                "Skin breathing in Earthworms/Frogs"
+            ],
+            "teaching_strategy": [
+                "Visual aids/Videos of fish and insects",
+                "Comparison table: Lungs vs. Gills vs. Spiracles",
+                "Analogy: Spiracles as 'tiny windows' for air"
+            ],
+            "student_activities": [
+                "Draw a fish and highlight the gill area",
+                "Match animals to their breathing methods in a fun puzzle"
+            ],
+            "assessment": [
+                "Matching column worksheet",
+                "Short answer: 'How does an earthworm stay moist?'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Heart and Blood",
+            "topics_covered": [
+                "The Heart as a non-stop pump",
+                "Blood components: Red (Oxygen) and White (Fighting germs)",
+                "Pulse rate: Feeling the heartbeat in the wrist"
+            ],
+            "teaching_strategy": [
+                "Water-pump analogy for the heart",
+                "Finding the pulse (Hands-on guidance)",
+                "Simple chart showing blood's 'delivery service' job"
+            ],
+            "student_activities": [
+                "Learn to find and count their pulse rate",
+                "Listen to a 'Heartbeat beatbox' to understand the rhythm (Lub-Dub)"
+            ],
+            "assessment": [
+                "Oral quiz: What is the main job of the heart?",
+                "Pulse counting accuracy check"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Excretion: Removing Waste",
+            "topics_covered": [
+                "Why we need to remove waste (Toxins)",
+                "The Kidneys and Urinary Bladder",
+                "Sweat as a way to cool down and clean the body"
+            ],
+            "teaching_strategy": [
+                "Sieve/Strainer demonstration to show filtration",
+                "Simple diagram of the human excretory system",
+                "Discussion on the importance of drinking water"
+            ],
+            "student_activities": [
+                "Trace and color the urinary system diagram",
+                "Brainstorm: 'What are 3 ways waste leaves our body?'"
+            ],
+            "assessment": [
+                "Labeling the excretory system",
+                "Worksheet: Waste removal matching"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision: The Healthy Body",
+            "topics_covered": [
+                "Recap of all systems working together",
+                "Healthy food for a healthy heart and stomach",
+                "Doubt clearing session"
+            ],
+            "teaching_strategy": [
+                "Interactive board game: 'Body Bingo'",
+                "Summary poster creation",
+                "Group recap session"
+            ],
+            "student_activities": [
+                "Participate in the 'Life Processes' quiz",
+                "Complete the chapter summary worksheet"
+            ],
+            "assessment": [
+                "Easy-level Unit Test (15 marks)",
+                "Review of the final body-system mind map"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Body Organ Charts",
+        "Balloon lung model",
+        "Pulse/Heartbeat sound recording",
+        "Sieve and colored water for filtration demo",
+        "NCERT Science Textbook"
+    ],
+    "evaluation_methods": [
+        "Simple Diagram Labeling",
+        "Oral Questioning",
+        "Multiple Choice Questions (MCQs)",
+        "Matching and True/False worksheets",
+        "Notebook review"
+    ],
+    "teacher_tip": "Keep the focus on 'Function over Formula'. For an easy level, it's more important that they know *where* the heart is and *what* it does rather than the names of every valve. Use the 'Delivery Service' analogy for blood—it picks up oxygen and drops off waste!"
+}{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Life Processes in Animals",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the five basic steps of nutrition in animals",
+        "Recognize and label the main organs of the human digestive system",
+        "Understand the difference between breathing and cellular respiration in simple terms",
+        "Describe how humans and other animals (fish, insects, earthworms) breathe",
+        "Identify the components of the circulatory system (Heart and Blood)",
+        "Understand the basic role of kidneys in removing liquid waste",
+        "Relate healthy habits to the proper functioning of body systems"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Nutrition: How Food is Used",
+            "topics_covered": [
+                "The 5 steps: Ingestion, Digestion, Absorption, Assimilation, Egestion",
+                "Different ways of taking in food (Scraping, Siphoning, Chewing)",
+                "Digestion in Amoeba (Simple view of pseudopodia)"
+            ],
+            "teaching_strategy": [
+                "Storytelling: 'The Journey of a Biscuit'",
+                "Picture sorting: Match animals to their feeding methods",
+                "Simple flow-charting on the board"
+            ],
+            "student_activities": [
+                "Identify feeding modes of common animals (Bee, Snail, Eagle)",
+                "Draw a 'Nutrition Ladder' with the 5 steps"
+            ],
+            "assessment": [
+                "Oral quiz on the 5 steps",
+                "Worksheet: 'How do I eat?'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Human Digestive System",
+            "topics_covered": [
+                "Organs: Mouth, Oesophagus, Stomach, Intestines",
+                "The role of teeth (Types and care)",
+                "Importance of saliva and water in digestion"
+            ],
+            "teaching_strategy": [
+                "Using a large colorful human torso chart",
+                "Comparison: Mouth as a 'grinder' and stomach as a 'mixer'",
+                "Mirror activity for tooth identification"
+            ],
+            "student_activities": [
+                "Label a 'Fill-in-the-Organs' worksheet",
+                "Use a mirror to count and identify their own teeth"
+            ],
+            "assessment": [
+                "Diagram labeling accuracy",
+                "Quick-fire round: Name the organ's job"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Breathing: In and Out",
+            "topics_covered": [
+                "The mechanism of breathing (Inhalation vs. Exhalation)",
+                "Organs involved: Nose, Windpipe, Lungs, Diaphragm",
+                "Breathing rate and physical activity"
+            ],
+            "teaching_strategy": [
+                "Breathing exercise: 'Feel your chest expand'",
+                "Demonstration: Balloon-and-bottle lung model",
+                "Class discussion on why we pant after running"
+            ],
+            "student_activities": [
+                "Record breaths per minute while sitting vs. after spot-jogging",
+                "Observe the movement of the balloon in the lung model"
+            ],
+            "assessment": [
+                "Exit slip: Name two things that happen during inhalation",
+                "Breath-rate data table review"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Breathing in the Animal World",
+            "topics_covered": [
+                "Gills in Fish (Breathing underwater)",
+                "Spiracles in Cockroaches",
+                "Skin breathing in Earthworms/Frogs"
+            ],
+            "teaching_strategy": [
+                "Visual aids/Videos of fish and insects",
+                "Comparison table: Lungs vs. Gills vs. Spiracles",
+                "Analogy: Spiracles as 'tiny windows' for air"
+            ],
+            "student_activities": [
+                "Draw a fish and highlight the gill area",
+                "Match animals to their breathing methods in a fun puzzle"
+            ],
+            "assessment": [
+                "Matching column worksheet",
+                "Short answer: 'How does an earthworm stay moist?'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Heart and Blood",
+            "topics_covered": [
+                "The Heart as a non-stop pump",
+                "Blood components: Red (Oxygen) and White (Fighting germs)",
+                "Pulse rate: Feeling the heartbeat in the wrist"
+            ],
+            "teaching_strategy": [
+                "Water-pump analogy for the heart",
+                "Finding the pulse (Hands-on guidance)",
+                "Simple chart showing blood's 'delivery service' job"
+            ],
+            "student_activities": [
+                "Learn to find and count their pulse rate",
+                "Listen to a 'Heartbeat beatbox' to understand the rhythm (Lub-Dub)"
+            ],
+            "assessment": [
+                "Oral quiz: What is the main job of the heart?",
+                "Pulse counting accuracy check"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Excretion: Removing Waste",
+            "topics_covered": [
+                "Why we need to remove waste (Toxins)",
+                "The Kidneys and Urinary Bladder",
+                "Sweat as a way to cool down and clean the body"
+            ],
+            "teaching_strategy": [
+                "Sieve/Strainer demonstration to show filtration",
+                "Simple diagram of the human excretory system",
+                "Discussion on the importance of drinking water"
+            ],
+            "student_activities": [
+                "Trace and color the urinary system diagram",
+                "Brainstorm: 'What are 3 ways waste leaves our body?'"
+            ],
+            "assessment": [
+                "Labeling the excretory system",
+                "Worksheet: Waste removal matching"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision: The Healthy Body",
+            "topics_covered": [
+                "Recap of all systems working together",
+                "Healthy food for a healthy heart and stomach",
+                "Doubt clearing session"
+            ],
+            "teaching_strategy": [
+                "Interactive board game: 'Body Bingo'",
+                "Summary poster creation",
+                "Group recap session"
+            ],
+            "student_activities": [
+                "Participate in the 'Life Processes' quiz",
+                "Complete the chapter summary worksheet"
+            ],
+            "assessment": [
+                "Easy-level Unit Test (15 marks)",
+                "Review of the final body-system mind map"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Body Organ Charts",
+        "Balloon lung model",
+        "Pulse/Heartbeat sound recording",
+        "Sieve and colored water for filtration demo",
+        "NCERT Science Textbook"
+    ],
+    "evaluation_methods": [
+        "Simple Diagram Labeling",
+        "Oral Questioning",
+        "Multiple Choice Questions (MCQs)",
+        "Matching and True/False worksheets",
+        "Notebook review"
+    ],
+    "teacher_tip": "Keep the focus on 'Function over Formula'. For an easy level, it's more important that they know *where* the heart is and *what* it does rather than the names of every valve. Use the 'Delivery Service' analogy for blood—it picks up oxygen and drops off waste!"
+}

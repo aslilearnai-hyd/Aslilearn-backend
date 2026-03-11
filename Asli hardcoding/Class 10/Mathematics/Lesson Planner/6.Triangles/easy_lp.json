@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Triangles",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the basic concept of triangles",
+        "Identify parts of a triangle",
+        "Classify triangles based on sides and angles",
+        "Understand the angle sum property of triangles",
+        "Relate triangles to real-life examples",
+        "Develop basic problem-solving skills using triangle properties"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Triangles",
+            "topics_covered": [
+                "Meaning of a triangle",
+                "Formation of triangles",
+                "Examples from daily life"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Use of simple drawings",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Identify triangular objects in the classroom",
+                "Draw simple triangles in notebook"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook observation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Parts of a Triangle",
+            "topics_covered": [
+                "Sides of a triangle",
+                "Vertices",
+                "Angles of a triangle"
+            ],
+            "teaching_strategy": [
+                "Board illustrations",
+                "Labeling demonstration"
+            ],
+            "student_activities": [
+                "Label sides, angles, and vertices",
+                "Match parts with names"
+            ],
+            "assessment": [
+                "Labeling exercise",
+                "Short written questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Types of Triangles Based on Sides",
+            "topics_covered": [
+                "Scalene triangle",
+                "Isosceles triangle",
+                "Equilateral triangle"
+            ],
+            "teaching_strategy": [
+                "Comparison-based explanation",
+                "Real-life examples"
+            ],
+            "student_activities": [
+                "Classify given triangles",
+                "Draw one example of each type"
+            ],
+            "assessment": [
+                "MCQs",
+                "Worksheet activity"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Types of Triangles Based on Angles",
+            "topics_covered": [
+                "Acute-angled triangle",
+                "Right-angled triangle",
+                "Obtuse-angled triangle"
+            ],
+            "teaching_strategy": [
+                "Angle-based diagrams",
+                "Demonstration using protractor"
+            ],
+            "student_activities": [
+                "Measure angles of drawn triangles",
+                "Identify type based on angles"
+            ],
+            "assessment": [
+                "Practical angle measurement",
+                "Short quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Angle Sum Property of a Triangle",
+            "topics_covered": [
+                "Statement of angle sum property",
+                "Verification using paper folding",
+                "Simple numerical problems"
+            ],
+            "teaching_strategy": [
+                "Activity-based learning",
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Verify angle sum using cut-outs",
+                "Solve basic problems"
+            ],
+            "assessment": [
+                "Problem-solving exercise",
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Practice",
+            "topics_covered": [
+                "Types of triangles",
+                "Angle sum property",
+                "Overall chapter revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Practice worksheet"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Geometry box",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Diagram-based questions",
+        "Short written tests"
+    ],
+    "teacher_tip": "Ensure students clearly understand triangle types and angle sum property, as these concepts are fundamental for similarity and trigonometry in higher classes."
+}

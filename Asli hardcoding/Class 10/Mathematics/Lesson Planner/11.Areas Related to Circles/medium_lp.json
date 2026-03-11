@@ -1,0 +1,158 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Areas Related to Circles",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Recall area and circumference of a circle",
+        "Apply formulas for area of sector and arc length",
+        "Solve numerical problems involving semicircles and quadrants",
+        "Handle medium-level area problems accurately",
+        "Improve formula selection and unit usage"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Area and Circumference",
+            "topics_covered": [
+                "Area of circle",
+                "Circumference formula"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Solve revision numericals"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Area of Sector",
+            "topics_covered": [
+                "Sector definition",
+                "Area formula",
+                "Angle-based application"
+            ],
+            "teaching_strategy": [
+                "Diagram-based explanation"
+            ],
+            "student_activities": [
+                "Draw and shade sectors",
+                "Solve basic sector problems"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Length of an Arc",
+            "topics_covered": [
+                "Arc length formula",
+                "Relation with circumference"
+            ],
+            "teaching_strategy": [
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Calculate arc length"
+            ],
+            "assessment": [
+                "Short written test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Area of Semicircle and Quadrant",
+            "topics_covered": [
+                "Semicircle",
+                "Quadrant",
+                "Area relationships"
+            ],
+            "teaching_strategy": [
+                "Comparison method"
+            ],
+            "student_activities": [
+                "Solve numerical problems"
+            ],
+            "assessment": [
+                "Classwork review"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Area of Segment",
+            "topics_covered": [
+                "Minor segment",
+                "Sector minus triangle concept"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation"
+            ],
+            "student_activities": [
+                "Find segment areas"
+            ],
+            "assessment": [
+                "Worksheet evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Mixed Application Problems",
+            "topics_covered": [
+                "Combination of circle figures"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Solve medium-level problems"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Error Analysis and Practice",
+            "topics_covered": [
+                "Common calculation mistakes",
+                "Unit errors"
+            ],
+            "teaching_strategy": [
+                "Error discussion"
+            ],
+            "student_activities": [
+                "Correct incorrect solutions"
+            ],
+            "assessment": [
+                "Peer assessment"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Test",
+            "topics_covered": [
+                "Complete chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teacher_tip": "Remind students to convert degrees correctly and use π consistently to avoid calculation errors."
+}

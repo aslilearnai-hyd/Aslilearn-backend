@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Triangles",
+    "difficulty_level": "Medium",
+    "generated_at": "2026-02-28T03:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If two sides of a triangle are 5 cm and 7 cm, the third side can be?",
+            "options": {
+                "A": "1 cm",
+                "B": "2 cm",
+                "C": "12 cm",
+                "D": "10 cm"
+            },
+            "correct_answer": "D",
+            "explanation": "Third side must be less than sum and greater than difference (2 < x < 12).",
+            "difficulty": "medium",
+            "source_section": "Triangle Inequality"
+        },
+        {
+            "question_number": 2,
+            "question": "Which triangle has all angles equal?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Scalene",
+                "C": "Equilateral",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "Equilateral triangle has all angles equal.",
+            "difficulty": "medium",
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 3,
+            "question": "The sum of interior angles of a triangle is always?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "360°"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle sum property of a triangle is 180°.",
+            "difficulty": "medium",
+            "source_section": "Angle Sum Property"
+        },
+        {
+            "question_number": 4,
+            "question": "If one angle of a triangle is 100°, the triangle is?",
+            "options": {
+                "A": "Acute",
+                "B": "Right",
+                "C": "Obtuse",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle greater than 90° makes it obtuse.",
+            "difficulty": "medium",
+            "source_section": "Classification by Angles"
+        },
+        {
+            "question_number": 5,
+            "question": "In a right-angled triangle, the side opposite the right angle is?",
+            "options": {
+                "A": "Base",
+                "B": "Height",
+                "C": "Hypotenuse",
+                "D": "Median"
+            },
+            "correct_answer": "C",
+            "explanation": "Hypotenuse is opposite the right angle.",
+            "difficulty": "medium",
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 6,
+            "question": "Which triangle has exactly two equal sides?",
+            "options": {
+                "A": "Scalene",
+                "B": "Isosceles",
+                "C": "Equilateral",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "Isosceles triangle has two equal sides.",
+            "difficulty": "medium",
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 7,
+            "question": "The longest side of a triangle lies opposite the?",
+            "options": {
+                "A": "Smallest angle",
+                "B": "Right angle",
+                "C": "Largest angle",
+                "D": "Equal angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Largest angle has the longest opposite side.",
+            "difficulty": "medium",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 8,
+            "question": "How many medians does a triangle have?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "A triangle has three medians.",
+            "difficulty": "medium",
+            "source_section": "Medians"
+        },
+        {
+            "question_number": 9,
+            "question": "If two angles of a triangle are 45° and 55°, the third angle is?",
+            "options": {
+                "A": "70°",
+                "B": "80°",
+                "C": "90°",
+                "D": "60°"
+            },
+            "correct_answer": "A",
+            "explanation": "Third angle = 180° − (45° + 55°) = 70°.",
+            "difficulty": "medium",
+            "source_section": "Angle Sum"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of the following triangles cannot exist?",
+            "options": {
+                "A": "30°, 60°, 90°",
+                "B": "60°, 60°, 60°",
+                "C": "100°, 40°, 40°",
+                "D": "90°, 45°, 50°"
+            },
+            "correct_answer": "D",
+            "explanation": "Sum exceeds 180°.",
+            "difficulty": "medium",
+            "source_section": "Angle Sum"
+        },
+        {
+            "question_number": 11,
+            "question": "A triangle having sides 6 cm, 6 cm, and 10 cm is?",
+            "options": {
+                "A": "Equilateral",
+                "B": "Isosceles",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "Two sides are equal.",
+            "difficulty": "medium",
+            "source_section": "Side Based Classification"
+        },
+        {
+            "question_number": 12,
+            "question": "Which triangle has no equal sides?",
+            "options": {
+                "A": "Equilateral",
+                "B": "Isosceles",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "Scalene triangle has all sides unequal.",
+            "difficulty": "medium",
+            "source_section": "Types"
+        },
+        {
+            "question_number": 13,
+            "question": "The point where medians intersect is called?",
+            "options": {
+                "A": "Centroid",
+                "B": "Circumcentre",
+                "C": "Orthocentre",
+                "D": "Incentre"
+            },
+            "correct_answer": "A",
+            "explanation": "Medians intersect at the centroid.",
+            "difficulty": "medium",
+            "source_section": "Concurrent Lines"
+        },
+        {
+            "question_number": 14,
+            "question": "Which triangle always has all angles acute?",
+            "options": {
+                "A": "Right",
+                "B": "Obtuse",
+                "C": "Equilateral",
+                "D": "Scalene"
+            },
+            "correct_answer": "C",
+            "explanation": "Each angle of equilateral triangle is 60°.",
+            "difficulty": "medium",
+            "source_section": "Angle Properties"
+        },
+        {
+            "question_number": 15,
+            "question": "A triangle cannot have?",
+            "options": {
+                "A": "Two acute angles",
+                "B": "One obtuse angle",
+                "C": "Two right angles",
+                "D": "One right angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum would exceed 180°.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 16,
+            "question": "If all sides are equal, the triangle is also?",
+            "options": {
+                "A": "Scalene",
+                "B": "Right",
+                "C": "Isosceles",
+                "D": "Obtuse"
+            },
+            "correct_answer": "C",
+            "explanation": "Equilateral triangle is a special isosceles triangle.",
+            "difficulty": "medium",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 17,
+            "question": "Which angle is opposite the base of an isosceles triangle?",
+            "options": {
+                "A": "Equal angle",
+                "B": "Unequal angle",
+                "C": "Right angle",
+                "D": "Obtuse angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Unequal side is opposite unequal angle.",
+            "difficulty": "medium",
+            "source_section": "Isosceles Triangle"
+        },
+        {
+            "question_number": 18,
+            "question": "How many altitudes does a triangle have?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "A triangle has three altitudes.",
+            "difficulty": "medium",
+            "source_section": "Altitudes"
+        },
+        {
+            "question_number": 19,
+            "question": "Which triangle has one angle greater than 90°?",
+            "options": {
+                "A": "Acute",
+                "B": "Right",
+                "C": "Obtuse",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Obtuse triangle has one obtuse angle.",
+            "difficulty": "medium",
+            "source_section": "Classification"
+        },
+        {
+            "question_number": 20,
+            "question": "The shortest side of a triangle lies opposite the?",
+            "options": {
+                "A": "Largest angle",
+                "B": "Smallest angle",
+                "C": "Right angle",
+                "D": "Obtuse angle"
+            },
+            "correct_answer": "B",
+            "explanation": "Smallest angle has the shortest opposite side.",
+            "difficulty": "medium",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 21,
+            "question": "A triangle with angles 50°, 60°, 70° is?",
+            "options": {
+                "A": "Right",
+                "B": "Obtuse",
+                "C": "Acute",
+                "D": "Isosceles"
+            },
+            "correct_answer": "C",
+            "explanation": "All angles are less than 90°.",
+            "difficulty": "medium",
+            "source_section": "Classification"
+        },
+        {
+            "question_number": 22,
+            "question": "Which triangle property is always true?",
+            "options": {
+                "A": "All sides are equal",
+                "B": "Sum of angles is 180°",
+                "C": "One angle is right",
+                "D": "Two sides are equal"
+            },
+            "correct_answer": "B",
+            "explanation": "Angle sum property holds for all triangles.",
+            "difficulty": "medium",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following sides can form a triangle?",
+            "options": {
+                "A": "2, 3, 6",
+                "B": "4, 5, 10",
+                "C": "5, 6, 9",
+                "D": "3, 4, 8"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of any two sides must be greater than the third.",
+            "difficulty": "medium",
+            "source_section": "Triangle Inequality"
+        },
+        {
+            "question_number": 24,
+            "question": "Which triangle has all sides different and one right angle?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Scalene right triangle",
+                "C": "Equilateral",
+                "D": "Obtuse"
+            },
+            "correct_answer": "B",
+            "explanation": "Right-angled scalene triangle.",
+            "difficulty": "medium",
+            "source_section": "Mixed Classification"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "All isosceles triangles are equilateral",
+                "B": "All equilateral triangles are isosceles",
+                "C": "All scalene triangles are right-angled",
+                "D": "All right triangles are isosceles"
+            },
+            "correct_answer": "B",
+            "explanation": "Equilateral triangle has at least two equal sides.",
+            "difficulty": "medium",
+            "source_section": "Summary"
+        }
+    ]
+}

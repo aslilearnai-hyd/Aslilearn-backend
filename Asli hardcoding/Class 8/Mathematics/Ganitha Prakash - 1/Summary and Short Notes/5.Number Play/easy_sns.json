@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 5: Number Play",
+  "difficulty": "Easy",
+  "source_pdf": "ch-5_NUMBER_PLAY.pdf",
+  "short_notes": {
+    "key_points": [
+      "Even numbers are numbers divisible by 2",
+      "Odd numbers are numbers that are not divisible by 2",
+      "Multiples are obtained by multiplying a number by integers",
+      "Factors are numbers that divide another number exactly",
+      "Divisibility rules help check whether a number is divisible by another number"
+    ],
+    "examples": [
+      "Even number: 12",
+      "Odd number: 9",
+      "Multiple of 5: 20",
+      "Factor of 18: 3"
+    ],
+    "formulas": [
+      "Even number form → 2n",
+      "Odd number form → 2n + 1",
+      "Multiple of a number → n × k"
+    ],
+    "exam_tips": [
+      "Check divisibility by 2 using the last digit",
+      "Numbers ending with 0 or 5 are divisible by 5",
+      "Add digits to check divisibility by 3 or 9",
+      "Write factors carefully when solving factor problems"
+    ]
+  }
+}

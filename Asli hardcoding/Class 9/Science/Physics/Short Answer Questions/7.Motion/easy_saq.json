@@ -1,0 +1,291 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T12:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is motion?",
+            "answer": "Motion is the change in position of an object with respect to time and a reference point.",
+            "key_concepts": [
+                "motion",
+                "change in position"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is meant by a reference point?",
+            "answer": "A reference point is a fixed point used to describe the position of an object.",
+            "key_concepts": [
+                "reference point",
+                "position"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define distance.",
+            "answer": "Distance is the total path length travelled by an object during its motion.",
+            "key_concepts": [
+                "distance",
+                "total path"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Define displacement.",
+            "answer": "Displacement is the shortest distance between the initial and final positions of an object.",
+            "key_concepts": [
+                "displacement",
+                "shortest distance"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "State one difference between distance and displacement.",
+            "answer": "Distance is the total path travelled while displacement is the shortest distance between initial and final positions.",
+            "key_concepts": [
+                "distance vs displacement"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is uniform motion?",
+            "answer": "Uniform motion occurs when an object covers equal distances in equal intervals of time.",
+            "key_concepts": [
+                "uniform motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is non-uniform motion?",
+            "answer": "Non-uniform motion occurs when an object covers unequal distances in equal intervals of time.",
+            "key_concepts": [
+                "non-uniform motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Define speed.",
+            "answer": "Speed is the distance travelled by an object per unit time.",
+            "key_concepts": [
+                "speed",
+                "distance per time"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is average speed?",
+            "answer": "Average speed is the total distance travelled divided by the total time taken.",
+            "key_concepts": [
+                "average speed"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the SI unit of speed?",
+            "answer": "The SI unit of speed is metre per second (m/s).",
+            "key_concepts": [
+                "m/s"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Define velocity.",
+            "answer": "Velocity is the speed of an object in a given direction.",
+            "key_concepts": [
+                "velocity",
+                "direction"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Define acceleration.",
+            "answer": "Acceleration is the rate of change of velocity with time.",
+            "key_concepts": [
+                "acceleration"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the SI unit of acceleration?",
+            "answer": "The SI unit of acceleration is metre per second squared (m/s²).",
+            "key_concepts": [
+                "m/s²"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is uniform acceleration?",
+            "answer": "Uniform acceleration occurs when velocity changes by equal amounts in equal intervals of time.",
+            "key_concepts": [
+                "uniform acceleration"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What does a distance-time graph represent?",
+            "answer": "A distance-time graph represents how distance changes with time.",
+            "key_concepts": [
+                "distance-time graph"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What does the slope of a distance-time graph indicate?",
+            "answer": "The slope of a distance-time graph indicates the speed of the object.",
+            "key_concepts": [
+                "graph slope",
+                "speed"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What does a velocity-time graph show?",
+            "answer": "A velocity-time graph shows how velocity changes with time.",
+            "key_concepts": [
+                "velocity-time graph"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What does the area under a velocity-time graph represent?",
+            "answer": "The area under a velocity-time graph represents displacement.",
+            "key_concepts": [
+                "graph area",
+                "displacement"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write the first equation of motion.",
+            "answer": "v = u + at.",
+            "key_concepts": [
+                "equation of motion"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Write the second equation of motion.",
+            "answer": "s = ut + ½at².",
+            "key_concepts": [
+                "equation of motion"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Write the third equation of motion.",
+            "answer": "v² − u² = 2as.",
+            "key_concepts": [
+                "equation of motion"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is uniform circular motion?",
+            "answer": "Uniform circular motion is the motion of an object along a circular path with constant speed.",
+            "key_concepts": [
+                "circular motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Give one example of circular motion.",
+            "answer": "The motion of the Earth around the Sun is an example of circular motion.",
+            "key_concepts": [
+                "example of circular motion"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Name the instrument used to measure distance travelled by a vehicle.",
+            "answer": "An odometer measures the distance travelled by a vehicle.",
+            "key_concepts": [
+                "odometer"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Name the instrument used to measure speed of a vehicle.",
+            "answer": "A speedometer measures the speed of a vehicle.",
+            "key_concepts": [
+                "speedometer"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 7.2"
+        }
+    ]
+}

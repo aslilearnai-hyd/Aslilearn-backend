@@ -1,0 +1,240 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: The Case of the Fifth Word",
+  "generated_at": "2026-03-09T16:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is Encyclopedia Brown?",
+      "answer": "Encyclopedia Brown is a young boy who is famous for his intelligence and ability to solve difficult mysteries.",
+      "answer_outline": [
+        "Young boy detective",
+        "Very intelligent",
+        "Solves mysteries"
+      ],
+      "key_concepts": ["Encyclopedia Brown"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What was the profession of Encyclopedia Brown’s father?",
+      "answer": "Encyclopedia Brown’s father was the Chief of Police in Idaville.",
+      "answer_outline": ["Chief of Police", "Works in the police department"],
+      "key_concepts": ["Chief Brown"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Why was the boy called 'Encyclopedia'?",
+      "answer": "He was called Encyclopedia because he read many books and remembered a lot of facts.",
+      "answer_outline": ["Reads many books", "Remembers facts"],
+      "key_concepts": ["nickname"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 4,
+      "question": "Who was Tim Nolan?",
+      "answer": "Tim Nolan was a man who had once been suspected of being involved in a jewellery robbery.",
+      "answer_outline": ["Suspected robber", "Connected to jewellery theft"],
+      "key_concepts": ["Tim Nolan"],
+      "marks": 4,
+      "source_section": "Story Background"
+    },
+    {
+      "question_number": 5,
+      "question": "Who was Daniel Davenport?",
+      "answer": "Daniel Davenport was Nolan’s friend who was also suspected of being involved in the robbery.",
+      "answer_outline": ["Friend of Nolan", "Suspected partner in robbery"],
+      "key_concepts": ["Daniel Davenport"],
+      "marks": 4,
+      "source_section": "Story Background"
+    },
+    {
+      "question_number": 6,
+      "question": "What happened to Tim Nolan?",
+      "answer": "Tim Nolan died after suffering a stroke.",
+      "answer_outline": ["Had a stroke", "Passed away"],
+      "key_concepts": ["Tim Nolan"],
+      "marks": 4,
+      "source_section": "Story Conflict"
+    },
+    {
+      "question_number": 7,
+      "question": "What did Nolan leave on the kitchen table before dying?",
+      "answer": "Nolan left his will on the kitchen table.",
+      "answer_outline": ["Will left on table", "Before his death"],
+      "key_concepts": ["will"],
+      "marks": 4,
+      "source_section": "Story Conflict"
+    },
+    {
+      "question_number": 8,
+      "question": "What strange message was attached to Nolan’s will?",
+      "answer": "The message contained four strange words: Nom, Utes, Sweden, and Hurts.",
+      "answer_outline": ["Nom", "Utes", "Sweden", "Hurts"],
+      "key_concepts": ["coded message"],
+      "marks": 5,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 9,
+      "question": "Why were the four words confusing to Chief Brown?",
+      "answer": "The four words did not make sense and appeared unrelated to the case.",
+      "answer_outline": [
+        "Words seemed meaningless",
+        "Police could not understand them"
+      ],
+      "key_concepts": ["mystery clue"],
+      "marks": 4,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 10,
+      "question": "What question did Encyclopedia Brown ask after hearing the message?",
+      "answer": "He asked whether there was a young fir tree in Nolan’s nursery.",
+      "answer_outline": ["Asked about fir tree", "Related to nursery"],
+      "key_concepts": ["fir tree"],
+      "marks": 4,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 11,
+      "question": "How did Encyclopedia Brown interpret the coded words?",
+      "answer": "He realized that the words represented the days of the week.",
+      "answer_outline": ["Connected to days of week", "Hidden meaning"],
+      "key_concepts": ["code"],
+      "marks": 5,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 12,
+      "question": "What did the words Nom, Utes, Sweden, and Hurts represent?",
+      "answer": "They represented Monday, Tuesday, Wednesday, and Thursday after removing the letters 'day'.",
+      "answer_outline": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "key_concepts": ["days of week"],
+      "marks": 5,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 13,
+      "question": "What was the missing fifth word in the message?",
+      "answer": "The missing fifth word represented Friday.",
+      "answer_outline": ["Fifth word", "Friday"],
+      "key_concepts": ["fifth word"],
+      "marks": 4,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 14,
+      "question": "What did the word 'Fir' indicate?",
+      "answer": "The word 'Fir' pointed to the young fir tree in Nolan’s nursery.",
+      "answer_outline": ["Fir tree", "Location clue"],
+      "key_concepts": ["fir tree"],
+      "marks": 4,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 15,
+      "question": "Where was the stolen jewellery hidden?",
+      "answer": "The jewellery was hidden under the young fir tree in Nolan’s nursery.",
+      "answer_outline": ["Hidden under tree", "In the nursery"],
+      "key_concepts": ["hidden jewellery"],
+      "marks": 5,
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 16,
+      "question": "How did Encyclopedia Brown solve the mystery?",
+      "answer": "He solved the mystery by decoding the message and identifying the hidden meaning of the fifth word.",
+      "answer_outline": ["Decoded message", "Used logical reasoning"],
+      "key_concepts": ["reasoning"],
+      "marks": 5,
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 17,
+      "question": "Why did Nolan write the coded message?",
+      "answer": "Nolan wrote the coded message to tell Davenport where the jewellery was hidden.",
+      "answer_outline": ["Message for Davenport", "Hidden location"],
+      "key_concepts": ["coded message"],
+      "marks": 4,
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 18,
+      "question": "What qualities of Encyclopedia Brown helped solve the case?",
+      "answer": "His intelligence, observation, and logical reasoning helped him solve the case.",
+      "answer_outline": ["Observation", "Logical thinking"],
+      "key_concepts": ["detective skills"],
+      "marks": 4,
+      "source_section": "Character Analysis"
+    },
+    {
+      "question_number": 19,
+      "question": "Why was Chief Brown proud of his son?",
+      "answer": "Chief Brown was proud because his son was able to solve difficult mysteries.",
+      "answer_outline": ["Solved difficult case", "Showed intelligence"],
+      "key_concepts": ["pride"],
+      "marks": 4,
+      "source_section": "Character Analysis"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the main conflict in the story?",
+      "answer": "The conflict is the mystery of the missing jewellery and the strange coded message left by Nolan.",
+      "answer_outline": ["Missing jewellery", "Coded message"],
+      "key_concepts": ["conflict"],
+      "marks": 4,
+      "source_section": "Story Conflict"
+    },
+    {
+      "question_number": 21,
+      "question": "What lesson does the story teach about problem solving?",
+      "answer": "The story teaches that careful thinking and observation can help solve problems.",
+      "answer_outline": ["Observation", "Logical reasoning"],
+      "key_concepts": ["problem solving"],
+      "marks": 4,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are clues important in mystery stories?",
+      "answer": "Clues help detectives find hidden information and solve mysteries.",
+      "answer_outline": ["Guide detectives", "Reveal hidden truths"],
+      "key_concepts": ["clues"],
+      "marks": 4,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of logical reasoning in the story.",
+      "answer": "Logical reasoning helped Encyclopedia understand the coded message and solve the mystery.",
+      "answer_outline": ["Connect clues", "Find solution"],
+      "key_concepts": ["logic"],
+      "marks": 4,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 24,
+      "question": "Describe the relationship between Encyclopedia Brown and his father.",
+      "answer": "They share a close relationship and often discuss cases together at the dinner table.",
+      "answer_outline": ["Father-son relationship", "Discuss mysteries"],
+      "key_concepts": ["family"],
+      "marks": 4,
+      "source_section": "Character Analysis"
+    },
+    {
+      "question_number": 25,
+      "question": "Summarize the story 'The Case of the Fifth Word'.",
+      "answer": "The story tells how Encyclopedia Brown solves the mystery of hidden jewellery by decoding a strange message left by Tim Nolan. His intelligence and reasoning lead to the discovery of the jewellery under a fir tree.",
+      "answer_outline": ["Mystery message", "Code solved", "Jewellery found"],
+      "key_concepts": ["summary"],
+      "marks": 5,
+      "source_section": "Overall Story"
+    }
+  ]
+}

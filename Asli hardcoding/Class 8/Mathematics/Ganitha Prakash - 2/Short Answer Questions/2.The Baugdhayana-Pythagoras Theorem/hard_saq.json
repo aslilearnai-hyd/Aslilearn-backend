@@ -1,0 +1,211 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+  "generated_at": "2026-03-05T12:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Find the hypotenuse of a right triangle whose sides are 9 and 40.",
+      "answer": "c² = 9² + 40² = 81 + 1600 = 1681, so c = 41.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 2,
+      "question": "Find the diagonal of a square of side 12 units.",
+      "answer": "The diagonal is 12√2 units.",
+      "key_concepts": ["square diagonal"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the missing number in the Pythagorean triple (20, 21, ?).",
+      "answer": "20² + 21² = 400 + 441 = 841 = 29², so the missing number is 29.",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 4,
+      "question": "Find the diagonal of a rectangle whose sides are 16 and 30 units.",
+      "answer": "d² = 16² + 30² = 256 + 900 = 1156, so d = 34.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 5,
+      "question": "If the hypotenuse is 25 and one side is 7, find the other side.",
+      "answer": "Other side² = 25² − 7² = 625 − 49 = 576, so the other side = 24.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Find the square of the diagonal of a square with side 8 units.",
+      "answer": "Diagonal² = 2 × 8² = 2 × 64 = 128.",
+      "key_concepts": ["square diagonal"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Find the hypotenuse when the sides of a right triangle are 11 and 60.",
+      "answer": "c² = 11² + 60² = 121 + 3600 = 3721, so c = 61.",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 8,
+      "question": "Find the diagonal of a rectangle with sides 7 and 24.",
+      "answer": "d² = 7² + 24² = 49 + 576 = 625, so d = 25.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 9,
+      "question": "Simplify √72.",
+      "answer": "√72 = √(36 × 2) = 6√2.",
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Find the diagonal of a square whose area is 50 square units.",
+      "answer": "Side² = 50 → side = √50 = 5√2, diagonal = side√2 = 10.",
+      "key_concepts": ["square diagonal"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Find the missing number in the triple (12, 35, ?).",
+      "answer": "12² + 35² = 144 + 1225 = 1369 = 37², so the number is 37.",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Find the square of the hypotenuse if the other sides are 8 and 15.",
+      "answer": "Hypotenuse² = 8² + 15² = 64 + 225 = 289.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Find the value of √98 in simplest radical form.",
+      "answer": "√98 = √(49 × 2) = 7√2.",
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the diagonal of a square with side 15 units.",
+      "answer": "The diagonal is 15√2.",
+      "key_concepts": ["square diagonal"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Find the missing side of a right triangle if c = 17 and one side is 8.",
+      "answer": "Other side² = 17² − 8² = 289 − 64 = 225 → side = 15.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Find the square of 19.",
+      "answer": "19² = 361.",
+      "key_concepts": ["square numbers"],
+      "marks": 1,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Find the hypotenuse if the sides are 28 and 45.",
+      "answer": "c² = 28² + 45² = 784 + 2025 = 2809 → c = 53.",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Simplify √200.",
+      "answer": "√200 = √(100 × 2) = 10√2.",
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Find the diagonal of a rectangle whose sides are 20 and 21.",
+      "answer": "d² = 20² + 21² = 400 + 441 = 841 → d = 29.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.7"
+    },
+    {
+      "question_number": 20,
+      "question": "Find the missing number in the triple (16, 63, ?).",
+      "answer": "16² + 63² = 256 + 3969 = 4225 = 65².",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Simplify √128.",
+      "answer": "√128 = √(64 × 2) = 8√2.",
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Find the diagonal of a square with side 20.",
+      "answer": "Diagonal = 20√2.",
+      "key_concepts": ["square diagonal"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Find the hypotenuse if the sides are 48 and 55.",
+      "answer": "c² = 48² + 55² = 2304 + 3025 = 5329 → c = 73.",
+      "key_concepts": ["Pythagorean triples"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Simplify √162.",
+      "answer": "√162 = √(81 × 2) = 9√2.",
+      "key_concepts": ["square roots"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Find the diagonal of a rectangle with sides 24 and 45.",
+      "answer": "d² = 24² + 45² = 576 + 2025 = 2601 → d = 51.",
+      "key_concepts": ["Pythagoras theorem"],
+      "marks": 2,
+      "source_section": "Section 2.7"
+    }
+  ]
+}

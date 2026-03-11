@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "New Kings and Kingdoms",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the transformation of Samantas into independent dynastic rulers",
+        "Examine the socio-political significance of rituals like Hiranya-garbha",
+        "Understand the administrative machinery and taxation systems of medieval kingdoms",
+        "Evaluate the 'Tripartite Struggle' as a conflict for resources and prestige",
+        "Describe the architectural and artistic achievements of the Chola dynasty",
+        "Analyze the sophisticated irrigation and agricultural developments in the Kaveri delta",
+        "Explain the democratic and committee-based functioning of the Chola Sabha"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Emergence of New Dynasties",
+            "topics_covered": [
+                "The role of Samantas in the 7th century",
+                "Case Study: Rashtrakutas gaining independence from Chalukyas",
+                "Rituals of legitimacy: Hiranya-garbha (The Golden Womb)"
+            ],
+            "teaching_strategy": [
+                "Discussion: 'How does a subordinate become a master?'",
+                "Analysis of the use of Brahmanas to gain Kshatriya status",
+                "Mapping the Gurjara-Pratiharas, Palas, and Rashtrakutas"
+            ],
+            "student_activities": [
+                "Locate the three major new dynasties on a blank map of India",
+                "Write a short paragraph explaining the significance of the Hiranya-garbha ritual"
+            ],
+            "assessment": [
+                "Short answer: Define 'Samanta' and 'Maha-mandaleshvara'",
+                "Identification of the original professions of the Kadamba and Gurjara-Pratihara founders"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Administration in the Kingdoms",
+            "topics_covered": [
+                "Royal Titles: Maharaja-adhiraja and Tribhuvana-chakravartin",
+                "Resources and Revenue: The 400 types of taxes (Vetti and Kadamai)",
+                "Utilization of wealth: Temples, Forts, and Warfare"
+            ],
+            "teaching_strategy": [
+                "Categorizing medieval taxes: Forced labor vs. Cash/Kind",
+                "Flowcharting the distribution of revenue from peasant to king",
+                "Discussion on why positions in the army were often hereditary"
+            ],
+            "student_activities": [
+                "Create a 'Tax Chart' showing the different groups who paid revenue to the king",
+                "Compare medieval tax collection with modern government taxation"
+            ],
+            "assessment": [
+                "Explaining the difference between 'Vetti' and 'Kadamai'",
+                "Listing three purposes for which the king's resources were used"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Prashastis and the Rewards of Knowledge",
+            "topics_covered": [
+                "Content and nature of Prashastis",
+                "Land grants (Brahmadeya) and copper plate inscriptions",
+                "Kalhana's 'Rajatarangini' as a critical historical source"
+            ],
+            "teaching_strategy": [
+                "Analyzing a sample Prashasti of Nagabhata",
+                "Contrast study: Court poets vs. Kalhana’s critical history of Kashmir",
+                "Visual analysis of the royal seals on copper plates"
+            ],
+            "student_activities": [
+                "Identify what kings gave to Brahmanas in land grants (based on the textbook description)",
+                "Discuss: 'Why did Kalhana differ from other court poets?'"
+            ],
+            "assessment": [
+                "Matching: Kings vs. their achievements mentioned in Prashastis",
+                "Short note on the information recorded on copper plates"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Warfare for Wealth and Territory",
+            "topics_covered": [
+                "The Tripartite Struggle for Kanauj",
+                "Sultan Mahmud of Ghazni’s raids on religious centers",
+                "Al-Biruni’s 'Kitab-al-Hind' and Chahamana (Chauhan) expansion"
+            ],
+            "teaching_strategy": [
+                "Analyzing why Kanauj was the 'prize' of North India",
+                "Discussion on the targeting of temples during medieval warfare",
+                "Timeline of Muhammad Ghori vs. Prithviraj III"
+            ],
+            "student_activities": [
+                "Trace the path of Sultan Mahmud of Ghazni from Afghanistan to Somnath",
+                "Write a summary of Al-Biruni's contribution to Indian history"
+            ],
+            "assessment": [
+                "Defining 'Tripartite Struggle'",
+                "Comparing the outcomes of the First and Second Battles of Tarain"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Splendour of the Cholas",
+            "topics_covered": [
+                "The rise of the Cholas: Vijayalaya to Rajendra I",
+                "Temple Architecture: Thanjavur and Gangaikonda-cholapuram",
+                "Chola Bronze sculpture: Process and Significance"
+            ],
+            "teaching_strategy": [
+                "Visual presentation of Chola temples as social and economic hubs",
+                "Explaining the 'Lost Wax' technique (briefly) used for bronze statues",
+                "Discussion on how Rajendra I used the navy to expand to Southeast Asia"
+            ],
+            "student_activities": [
+                "Sketch a simple diagram of a Chola temple showing it as a nucleus of settlements",
+                "Find the Kaveri River and Thanjavur on a map of South India"
+            ],
+            "assessment": [
+                "Describing the role of Chola temples beyond worship",
+                "Identifying the unique feature of Chola Bronze images"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Agriculture and Irrigation in the Chola Kingdom",
+            "topics_covered": [
+                "Clearing of forests and leveling of land in the Kaveri delta",
+                "Techniques: Embankments, Canals, and Wells",
+                "Role of the king and villagers in planning water resources"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic explanation of the canal system in the delta",
+                "Discussion on the necessity of two crops a year in the South",
+                "Analyzing the 'state-led' efforts in large-scale irrigation"
+            ],
+            "student_activities": [
+                "List four different methods of irrigation mentioned in the Chola records",
+                "Write a short note on why the Kaveri delta was ideal for agriculture"
+            ],
+            "assessment": [
+                "Explaining the term 'Vadi-vaykkal' (if applicable) or general Chola irrigation",
+                "True/False: Did Chola kings take a personal interest in irrigation?"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Administration of the Chola Empire",
+            "topics_covered": [
+                "Settlements of peasants (Ur) and groups of villages (Nadu)",
+                "The Sabha and its committees (Variyams)",
+                "The Uttaramerur Inscriptions: Qualification for membership"
+            ],
+            "teaching_strategy": [
+                "Role-play of the 'Pot-ticket' (Kudavolai) system of election",
+                "Analyzing the strict criteria for joining the Sabha",
+                "Review of the chapter through a mind map"
+            ],
+            "student_activities": [
+                "List the qualifications required to become a member of a committee in the Chola Sabha",
+                "Categorize the different committees: Gardens, Temples, Irrigation"
+            ],
+            "assessment": [
+                "Unit Test (25 marks)",
+                "Evaluation of the 'Qualifications list' based on the Uttaramerur inscription"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Political map of India (Medieval Period)",
+        "Images of the Chola Nataraja and Thanjavur Temple",
+        "Photographs of copper plates and inscriptions",
+        "Video/Animation of the 'Lost Wax' technique"
+    ],
+    "evaluation_methods": [
+        "Map work assessment (Dynasties and Cities)",
+        "Comparative analysis of administration (Chola vs. North Indian)",
+        "Short-answer and objective tests",
+        "Evaluation of the 'Sabha' qualification chart",
+        "Historical terminology quiz"
+    ],
+    "teacher_tip": "When teaching about the Cholas, emphasize that the temple was a 'bank' and an 'employer'. This helps students move beyond the idea of temples as just religious buildings and see them as economic powerhouses."
+}

@@ -1,0 +1,210 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T22:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how habitat destruction can lead to human–wildlife conflict.",
+      "answer": "When habitats are destroyed, animals move into human areas searching for food and shelter.",
+      "key_concepts": ["habitat loss"],
+      "marks": 2,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Why are ecosystems considered dynamic systems?",
+      "answer": "Ecosystems constantly change due to interactions among organisms and environmental conditions.",
+      "key_concepts": ["ecosystem dynamics"],
+      "marks": 2,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 3,
+      "question": "What would happen if herbivores disappeared from an ecosystem?",
+      "answer": "Carnivores would lose their food source and plant populations might increase.",
+      "key_concepts": ["food chain"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 4,
+      "question": "Why are decomposers essential for nutrient cycles?",
+      "answer": "They break down dead matter and release nutrients back into the soil.",
+      "key_concepts": ["nutrient cycle"],
+      "marks": 2,
+      "source_section": "Section 12.6"
+    },
+
+    {
+      "question_number": 5,
+      "question": "How can pollution disturb aquatic ecosystems?",
+      "answer": "Pollution reduces oxygen levels and harms aquatic organisms.",
+      "key_concepts": ["pollution"],
+      "marks": 2,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do food webs increase ecosystem stability?",
+      "answer": "They provide multiple feeding relationships and alternative energy pathways.",
+      "key_concepts": ["food web"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 7,
+      "question": "How does competition help regulate population size?",
+      "answer": "Competition limits resources, preventing uncontrolled population growth.",
+      "key_concepts": ["competition"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how biodiversity improves ecosystem resilience.",
+      "answer": "Higher biodiversity allows ecosystems to recover from disturbances more easily.",
+      "key_concepts": ["biodiversity"],
+      "marks": 2,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 9,
+      "question": "How can removing one species affect an entire ecosystem?",
+      "answer": "It can disrupt food chains and cause population imbalances.",
+      "key_concepts": ["ecosystem disturbance"],
+      "marks": 2,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are predators important in ecosystems?",
+      "answer": "Predators control prey populations and maintain balance.",
+      "key_concepts": ["predators"],
+      "marks": 2,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how forests act as carbon sinks.",
+      "answer": "Forests absorb carbon dioxide during photosynthesis.",
+      "key_concepts": ["forests"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are mangroves critical for coastal ecosystems?",
+      "answer": "They protect coastlines and provide habitats for marine organisms.",
+      "key_concepts": ["mangroves"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 13,
+      "question": "How does overfishing affect marine ecosystems?",
+      "answer": "It disrupts food chains and reduces fish populations.",
+      "key_concepts": ["overfishing"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are protected areas important for biodiversity?",
+      "answer": "They safeguard species and habitats from human activities.",
+      "key_concepts": ["protected areas"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 15,
+      "question": "How does climate change affect ecosystems?",
+      "answer": "It alters habitats and affects species survival.",
+      "key_concepts": ["climate change"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Why do ecosystems rely on nutrient recycling?",
+      "answer": "Recycling ensures nutrients remain available for plant growth.",
+      "key_concepts": ["nutrient cycle"],
+      "marks": 2,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 17,
+      "question": "How can invasive species disturb ecosystems?",
+      "answer": "They compete with native species and disrupt ecological balance.",
+      "key_concepts": ["invasive species"],
+      "marks": 2,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of trophic levels.",
+      "answer": "They show energy transfer between organisms in food chains.",
+      "key_concepts": ["trophic levels"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Why are ecosystems interconnected?",
+      "answer": "Organisms and environmental factors interact across ecosystems.",
+      "key_concepts": ["ecosystem interaction"],
+      "marks": 2,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 20,
+      "question": "How does agriculture depend on ecosystems?",
+      "answer": "Agriculture relies on soil fertility, pollination, and nutrient cycles.",
+      "key_concepts": ["ecosystem services"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is sustainable resource use important?",
+      "answer": "It prevents depletion of natural resources.",
+      "key_concepts": ["sustainability"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "How can ecosystem restoration help biodiversity?",
+      "answer": "Restoring habitats allows species to recover.",
+      "key_concepts": ["restoration"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "Why do organisms adapt to their habitats?",
+      "answer": "Adaptations help organisms survive in specific environmental conditions.",
+      "key_concepts": ["adaptation"],
+      "marks": 2,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 24,
+      "question": "How does sunlight drive ecosystem energy flow?",
+      "answer": "Sunlight provides energy for photosynthesis in producers.",
+      "key_concepts": ["energy flow"],
+      "marks": 2,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is protecting ecosystems essential for future generations?",
+      "answer": "Healthy ecosystems provide resources and environmental stability.",
+      "key_concepts": ["conservation"],
+      "marks": 2,
+      "source_section": "Section 12.9"
+    }
+  ]
+}

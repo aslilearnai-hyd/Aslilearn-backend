@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Heredity",
+    "generated_at": "2026-03-10T23:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the main reason Mendel selected pea plants for his experiments?",
+            "options": {
+                "A": "They grow very slowly",
+                "B": "They show clear contrasting traits",
+                "C": "They require special soil",
+                "D": "They cannot reproduce"
+            },
+            "correct_answer": "B",
+            "explanation": "Pea plants show clear contrasting traits like tall/short and yellow/green seeds, making them suitable for genetic studies.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which ratio did Mendel observe in the F2 generation for a monohybrid cross?",
+            "options": {
+                "A": "1:1",
+                "B": "2:1",
+                "C": "3:1",
+                "D": "9:3:3:1"
+            },
+            "correct_answer": "C",
+            "explanation": "In a monohybrid cross, the phenotypic ratio in the F2 generation is typically 3:1.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which term refers to different forms of a gene?",
+            "options": {
+                "A": "Alleles",
+                "B": "Chromosomes",
+                "C": "Cells",
+                "D": "Proteins"
+            },
+            "correct_answer": "A",
+            "explanation": "Alleles are different forms of the same gene controlling a particular trait.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the genotype of a hybrid tall pea plant in Mendel's experiment?",
+            "options": {
+                "A": "TT",
+                "B": "Tt",
+                "C": "tt",
+                "D": "T"
+            },
+            "correct_answer": "B",
+            "explanation": "A hybrid tall plant contains one dominant allele (T) and one recessive allele (t).",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which law states that allele pairs separate during gamete formation?",
+            "options": {
+                "A": "Law of Dominance",
+                "B": "Law of Segregation",
+                "C": "Law of Motion",
+                "D": "Law of Evolution"
+            },
+            "correct_answer": "B",
+            "explanation": "The law of segregation states that allele pairs separate during the formation of gametes.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which process ensures genetic variation during sexual reproduction?",
+            "options": {
+                "A": "DNA copying",
+                "B": "Gamete formation",
+                "C": "Cell respiration",
+                "D": "Photosynthesis"
+            },
+            "correct_answer": "B",
+            "explanation": "During gamete formation, genes from parents mix and produce variations.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the phenotype of a plant with genotype Tt if T represents tallness?",
+            "options": {
+                "A": "Short",
+                "B": "Tall",
+                "C": "Medium",
+                "D": "Dwarf"
+            },
+            "correct_answer": "B",
+            "explanation": "Since tallness (T) is dominant, the plant will appear tall.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which structure carries genes from parents to offspring?",
+            "options": {
+                "A": "Chromosomes",
+                "B": "Leaves",
+                "C": "Roots",
+                "D": "Proteins"
+            },
+            "correct_answer": "A",
+            "explanation": "Chromosomes carry genes that determine inherited traits.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which cross involves two pairs of contrasting traits?",
+            "options": {
+                "A": "Monohybrid cross",
+                "B": "Dihybrid cross",
+                "C": "Hybrid cross",
+                "D": "Self cross"
+            },
+            "correct_answer": "B",
+            "explanation": "A dihybrid cross studies inheritance of two different traits simultaneously.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What phenotypic ratio appears in the F2 generation of a dihybrid cross?",
+            "options": {
+                "A": "3:1",
+                "B": "1:2:1",
+                "C": "9:3:3:1",
+                "D": "1:1"
+            },
+            "correct_answer": "C",
+            "explanation": "A dihybrid cross typically produces a 9:3:3:1 phenotypic ratio.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the main function of DNA?",
+            "options": {
+                "A": "Transport oxygen",
+                "B": "Store genetic information",
+                "C": "Digest food",
+                "D": "Produce energy"
+            },
+            "correct_answer": "B",
+            "explanation": "DNA stores and transmits genetic information from one generation to the next.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which process leads to the formation of gametes?",
+            "options": {
+                "A": "Mitosis",
+                "B": "Meiosis",
+                "C": "Photosynthesis",
+                "D": "Respiration"
+            },
+            "correct_answer": "B",
+            "explanation": "Meiosis produces gametes with half the number of chromosomes.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is variation important for species?",
+            "options": {
+                "A": "It prevents reproduction",
+                "B": "It helps survival in changing environments",
+                "C": "It stops evolution",
+                "D": "It reduces population"
+            },
+            "correct_answer": "B",
+            "explanation": "Variation helps organisms adapt and survive environmental changes.",
+            "difficulty": "medium",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which pair represents homologous chromosomes?",
+            "options": {
+                "A": "Two identical chromosomes from different parents",
+                "B": "Two different chromosomes",
+                "C": "Chromosomes from the same parent",
+                "D": "Only one chromosome"
+            },
+            "correct_answer": "A",
+            "explanation": "Homologous chromosomes are pairs containing genes for the same traits, one from each parent.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What determines the sex of a child in humans?",
+            "options": {
+                "A": "Mother’s chromosome",
+                "B": "Father’s chromosome",
+                "C": "Environmental factors",
+                "D": "Food habits"
+            },
+            "correct_answer": "B",
+            "explanation": "The father contributes either an X or Y chromosome which determines the sex of the child.",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Which chromosome combination produces a female child?",
+            "options": {
+                "A": "XY",
+                "B": "YY",
+                "C": "XX",
+                "D": "XO"
+            },
+            "correct_answer": "C",
+            "explanation": "Females have two X chromosomes (XX).",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Which chromosome combination produces a male child?",
+            "options": {
+                "A": "XX",
+                "B": "XY",
+                "C": "YY",
+                "D": "XO"
+            },
+            "correct_answer": "B",
+            "explanation": "Males have one X and one Y chromosome.",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What is mutation?",
+            "options": {
+                "A": "Permanent change in DNA",
+                "B": "Cell division",
+                "C": "Gene duplication",
+                "D": "Normal variation"
+            },
+            "correct_answer": "A",
+            "explanation": "Mutation is a sudden and permanent change in genetic material.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which term describes organisms having identical alleles?",
+            "options": {
+                "A": "Heterozygous",
+                "B": "Homozygous",
+                "C": "Hybrid",
+                "D": "Dominant"
+            },
+            "correct_answer": "B",
+            "explanation": "Homozygous organisms have identical alleles for a trait.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which term describes organisms having different alleles?",
+            "options": {
+                "A": "Heterozygous",
+                "B": "Homozygous",
+                "C": "Dominant",
+                "D": "Recessive"
+            },
+            "correct_answer": "A",
+            "explanation": "Heterozygous organisms have two different alleles for a trait.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which factor causes genetic variation during meiosis?",
+            "options": {
+                "A": "Crossing over",
+                "B": "Photosynthesis",
+                "C": "Respiration",
+                "D": "Digestion"
+            },
+            "correct_answer": "A",
+            "explanation": "Crossing over exchanges genetic material between chromosomes, creating variation.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which scientist explained evolution using variation and natural selection?",
+            "options": {
+                "A": "Gregor Mendel",
+                "B": "Charles Darwin",
+                "C": "Louis Pasteur",
+                "D": "Albert Einstein"
+            },
+            "correct_answer": "B",
+            "explanation": "Charles Darwin explained evolution through natural selection and variation.",
+            "difficulty": "medium",
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Which molecule forms the structure of chromosomes?",
+            "options": {
+                "A": "DNA",
+                "B": "Protein",
+                "C": "Carbohydrate",
+                "D": "Lipid"
+            },
+            "correct_answer": "A",
+            "explanation": "Chromosomes are mainly made of DNA and proteins.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the main role of genes?",
+            "options": {
+                "A": "Produce energy",
+                "B": "Control traits",
+                "C": "Transport oxygen",
+                "D": "Digest food"
+            },
+            "correct_answer": "B",
+            "explanation": "Genes control the inherited traits of organisms.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following best explains heredity?",
+            "options": {
+                "A": "Transmission of traits through genes",
+                "B": "Energy production in cells",
+                "C": "Movement of chromosomes",
+                "D": "Cell respiration"
+            },
+            "correct_answer": "A",
+            "explanation": "Heredity is the transmission of traits from parents to offspring through genes.",
+            "difficulty": "medium",
+            "source_section": "Section 8.1"
+        }
+    ]
+}

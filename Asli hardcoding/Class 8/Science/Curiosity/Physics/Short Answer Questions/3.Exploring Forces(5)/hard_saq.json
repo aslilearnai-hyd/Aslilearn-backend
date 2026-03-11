@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-06T00:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how a force can change the direction of motion of an object.",
+      "answer": "A force applied to a moving object can alter its direction of motion, such as when a bat hits a moving ball.",
+      "key_concepts": ["change in direction", "force and motion"],
+      "marks": 3,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 2,
+      "question": "Why is friction considered both useful and harmful?",
+      "answer": "Friction is useful because it allows us to walk and hold objects, but it is harmful because it causes wear and tear of surfaces.",
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain why objects eventually stop when sliding on the ground.",
+      "answer": "Objects stop due to friction between the object and the surface, which opposes motion and gradually reduces speed.",
+      "key_concepts": ["friction", "motion"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 4,
+      "question": "How does gravitational force affect objects on Earth?",
+      "answer": "Gravitational force pulls objects toward the center of the Earth, causing them to fall downward.",
+      "key_concepts": ["gravitational force"],
+      "marks": 3,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the difference between balanced and unbalanced forces.",
+      "answer": "Balanced forces are equal forces acting in opposite directions and do not change motion, while unbalanced forces cause a change in motion.",
+      "key_concepts": ["balanced forces", "unbalanced forces"],
+      "marks": 3,
+      "source_section": "Balanced and Unbalanced Forces"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is friction greater on rough surfaces than on smooth surfaces?",
+      "answer": "Rough surfaces have more irregularities that interlock with each other, increasing friction.",
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain why lubricants are used in machines.",
+      "answer": "Lubricants reduce friction between moving parts of machines, allowing smoother movement and reducing wear.",
+      "key_concepts": ["lubrication", "friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do vehicles have tread patterns on their tires?",
+      "answer": "Tread patterns increase friction between the tire and the road, improving grip and preventing slipping.",
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how magnetic force acts without contact.",
+      "answer": "Magnetic force can attract or repel objects such as iron without physical contact because it acts through a magnetic field.",
+      "key_concepts": ["magnetic force"],
+      "marks": 3,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe how electrostatic force can attract small objects.",
+      "answer": "Electrostatic force occurs when objects gain electric charge and attract small objects such as pieces of paper.",
+      "key_concepts": ["electrostatic force"],
+      "marks": 3,
+      "source_section": "Electrostatic Force"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how force can change the speed of an object.",
+      "answer": "Applying force can increase or decrease the speed of an object, such as accelerating or braking a bicycle.",
+      "key_concepts": ["speed change"],
+      "marks": 3,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 12,
+      "question": "Why does a magnet attract iron objects?",
+      "answer": "A magnet produces a magnetic field that exerts force on magnetic materials like iron.",
+      "key_concepts": ["magnetic force"],
+      "marks": 3,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why it is easier to push a trolley on wheels than drag it.",
+      "answer": "Rolling friction between wheels and the ground is much smaller than sliding friction, making movement easier.",
+      "key_concepts": ["rolling friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 14,
+      "question": "Why does a parachute slow down the fall of a person?",
+      "answer": "A parachute increases air resistance, which opposes gravitational force and slows the fall.",
+      "key_concepts": ["air resistance"],
+      "marks": 3,
+      "source_section": "Forces in Air"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how forces act in tug-of-war.",
+      "answer": "In tug-of-war, two teams pull in opposite directions, and the team applying greater force wins.",
+      "key_concepts": ["balanced forces"],
+      "marks": 3,
+      "source_section": "Balanced Forces"
+    },
+    {
+      "question_number": 16,
+      "question": "Why do objects move when pushed or pulled?",
+      "answer": "Objects move because an applied force overcomes resistance and changes their state of motion.",
+      "key_concepts": ["force and motion"],
+      "marks": 3,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how air resistance acts as a force.",
+      "answer": "Air resistance opposes the motion of objects moving through air and slows them down.",
+      "key_concepts": ["air resistance"],
+      "marks": 3,
+      "source_section": "Forces in Air"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do heavier objects require more force to move?",
+      "answer": "Heavier objects have greater inertia and require more force to start moving.",
+      "key_concepts": ["inertia"],
+      "marks": 3,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how forces can change the shape of objects.",
+      "answer": "Applying force can stretch, compress, or bend objects, changing their shape.",
+      "key_concepts": ["shape change"],
+      "marks": 3,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is friction necessary for walking?",
+      "answer": "Friction between our feet and the ground prevents slipping and allows us to move forward.",
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how gravity keeps objects on Earth.",
+      "answer": "Gravity pulls objects toward the center of the Earth, preventing them from floating away.",
+      "key_concepts": ["gravity"],
+      "marks": 3,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 22,
+      "question": "Why do astronauts appear weightless in space?",
+      "answer": "Astronauts appear weightless because they are in continuous free fall around the Earth.",
+      "key_concepts": ["gravity"],
+      "marks": 3,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why pushing a wall does not move it.",
+      "answer": "The wall experiences an equal and opposite force that balances the push, so it does not move.",
+      "key_concepts": ["balanced forces"],
+      "marks": 3,
+      "source_section": "Balanced Forces"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is friction reduced by polishing surfaces?",
+      "answer": "Polishing makes surfaces smoother, reducing irregularities and decreasing friction.",
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why ships can move through water despite friction.",
+      "answer": "Ships have powerful engines that produce enough force to overcome water resistance and friction.",
+      "key_concepts": ["force and motion"],
+      "marks": 3,
+      "source_section": "Forces in Water"
+    }
+  ]
+}

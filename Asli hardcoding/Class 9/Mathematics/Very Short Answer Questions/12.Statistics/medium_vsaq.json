@@ -1,0 +1,184 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 12: Statistics",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T03:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define mean for grouped data using the direct method.",
+            "answer": "Mean = (Σf×x)/Σf, where f is the frequency of each class and x is the class midpoint.",
+            "key_points": ["mean", "grouped data", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Define median for grouped data.",
+            "answer": "Median = L + [(N/2 - CF)/f] × h, where L = lower boundary of median class, N = total frequency, CF = cumulative frequency before median class, f = frequency of median class, h = class width.",
+            "key_points": ["median", "grouped data", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Define mode for grouped data.",
+            "answer": "Mode = L + [(f1 - f0)/(2f1 - f0 - f2)] × h, where L = lower boundary of modal class, f1 = frequency of modal class, f0 = frequency of previous class, f2 = frequency of next class, h = class width.",
+            "key_points": ["mode", "grouped data", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the difference between mean, median and mode?",
+            "answer": "Mean is the average of data, median is the middle value, mode is the most frequent value.",
+            "key_points": ["mean", "median", "mode", "comparison"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 5,
+            "question": "How do you find cumulative frequency for a data set?",
+            "answer": "Cumulative frequency is found by adding the frequency of each class to the sum of the frequencies of all preceding classes.",
+            "key_points": ["cumulative frequency", "calculation"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain less than and more than ogives.",
+            "answer": "Less than ogive plots cumulative frequencies up to the upper class boundary; More than ogive plots cumulative frequencies from the upper class boundary downward.",
+            "key_points": ["ogive", "less than", "more than"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "How can you estimate the mean from a histogram?",
+            "answer": "Take the midpoints of each class, multiply by corresponding frequencies, sum them and divide by total frequency.",
+            "key_points": ["mean", "histogram", "estimation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 8,
+            "question": "How do you find the mode from a histogram?",
+            "answer": "Mode is estimated as the value corresponding to the highest bar in the histogram (modal class).",
+            "key_points": ["mode", "histogram", "estimation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a cumulative frequency table?",
+            "answer": "A cumulative frequency table shows the running total of frequencies for all classes up to that point.",
+            "key_points": ["cumulative frequency", "table"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the relationship between median and cumulative frequency?",
+            "answer": "Median corresponds to the class where cumulative frequency reaches N/2, where N is total frequency.",
+            "key_points": ["median", "cumulative frequency"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the empirical relation between mean, median, and mode.",
+            "answer": "Empirical relation: Mode ≈ 3 Median - 2 Mean for moderately skewed data.",
+            "key_points": ["mean", "median", "mode", "empirical relation"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the cumulative frequency of the last class?",
+            "answer": "The cumulative frequency of the last class equals the total frequency (N) of the data set.",
+            "key_points": ["cumulative frequency", "last class"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How is frequency polygon drawn from a histogram?",
+            "answer": "Mark midpoints of each class on X-axis, plot corresponding frequencies on Y-axis, join points with straight lines.",
+            "key_points": ["frequency polygon", "histogram", "drawing"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How do you estimate median from an ogive?",
+            "answer": "Locate N/2 on Y-axis, draw a horizontal line to meet the ogive, drop a vertical to X-axis to read the median value.",
+            "key_points": ["median", "ogive", "estimation"],
+            "source_section": "Section 12.3, 12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is class width?",
+            "answer": "Class width (h) = upper class boundary - lower class boundary.",
+            "key_points": ["class width", "definition"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the modal class?",
+            "answer": "The class with the highest frequency is called the modal class.",
+            "key_points": ["modal class", "definition"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 17,
+            "question": "How can you tell if data is skewed using mean, median, and mode?",
+            "answer": "If Mean > Median > Mode, data is positively skewed; If Mean < Median < Mode, data is negatively skewed.",
+            "key_points": ["skewness", "mean", "median", "mode"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the class mark used for in calculations?",
+            "answer": "Class mark is used as a representative value of a class for estimating mean or other statistics.",
+            "key_points": ["class mark", "mean estimation"],
+            "source_section": "Section 12.2, 12.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the difference between less than ogive and more than ogive?",
+            "answer": "Less than ogive cumulates frequencies from lowest up, more than ogive cumulates from highest down.",
+            "key_points": ["ogive", "comparison"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how to calculate mean using assumed mean method.",
+            "answer": "Mean = A + Σf*d/Σf, where A = assumed mean, d = deviation of midpoints from A, f = frequency.",
+            "key_points": ["mean", "assumed mean", "formula"],
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 21,
+            "question": "How do you find cumulative frequency less than a class?",
+            "answer": "Sum all frequencies of classes whose upper boundary is less than the given class.",
+            "key_points": ["cumulative frequency", "less than"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 22,
+            "question": "How do you find cumulative frequency more than a class?",
+            "answer": "Subtract cumulative frequency up to that class from total frequency.",
+            "key_points": ["cumulative frequency", "more than"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How is a histogram different from a bar graph?",
+            "answer": "Histogram uses contiguous bars for continuous data; bar graph uses separated bars for discrete data.",
+            "key_points": ["histogram", "bar graph", "difference"],
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the effect of changing class width on frequency distribution?",
+            "answer": "Increasing class width decreases number of classes, may reduce detail; decreasing width increases number of classes, more detail.",
+            "key_points": ["class width", "effect", "frequency distribution"],
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do we use cumulative frequency?",
+            "answer": "Cumulative frequency helps in estimating median, percentiles, and understanding distribution of data.",
+            "key_points": ["cumulative frequency", "purpose"],
+            "source_section": "Section 12.2, 12.4"
+        }
+    ]
+}

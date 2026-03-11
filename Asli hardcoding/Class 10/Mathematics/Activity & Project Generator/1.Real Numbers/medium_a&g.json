@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Real Numbers",
+    "difficulty": "Medium",
+    "source_pdf": "jemh101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Prime Power Writing",
+            "objective": "Express numbers using powers of primes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Factorise the given numbers",
+                "Rewrite them using prime powers"
+            ],
+            "learning_outcome": "Uses Fundamental Theorem of Arithmetic",
+            "evaluation": "Correct use of prime powers (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "HCF–LCM Relation Check",
+            "objective": "Verify the relationship between HCF and LCM",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find HCF and LCM of given pairs",
+                "Verify HCF × LCM = product of numbers"
+            ],
+            "learning_outcome": "Applies number relationships",
+            "evaluation": "Verification accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Factor Comparison",
+            "objective": "Compare HCF and LCM values",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose number pairs",
+                "Compare HCF and LCM values"
+            ],
+            "learning_outcome": "Develops logical reasoning",
+            "evaluation": "Explanation clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Euclid’s Algorithm Practice",
+            "objective": "Apply Euclid’s Division Algorithm",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Apply division steps",
+                "Continue until remainder becomes zero"
+            ],
+            "learning_outcome": "Understands algorithmic process",
+            "evaluation": "Correct steps (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Irrational Proof Steps",
+            "objective": "Understand steps in irrational number proofs",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write proof steps separately",
+                "Arrange them in correct logical order"
+            ],
+            "learning_outcome": "Understands proof structure",
+            "evaluation": "Correct sequencing (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Decimal Prediction",
+            "objective": "Predict the nature of decimal expansion",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Factorise denominator",
+                "Predict decimal type without division"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Correct prediction (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Co-prime Pair Finder",
+            "objective": "Identify co-prime numbers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose number pairs",
+                "Find their HCF"
+            ],
+            "learning_outcome": "Understands co-prime concept",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Multiple Method Comparison",
+            "objective": "Compare different HCF methods",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find HCF using two methods",
+                "Compare results"
+            ],
+            "learning_outcome": "Method selection skill",
+            "evaluation": "Comparison clarity (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Number Property Table",
+            "objective": "Record number properties systematically",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Create a table",
+                "Fill number properties"
+            ],
+            "learning_outcome": "Organised thinking",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Fraction Analyzer",
+            "objective": "Analyse rational numbers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Reduce fractions to lowest form",
+                "Predict decimal expansion"
+            ],
+            "learning_outcome": "Rational number mastery",
+            "evaluation": "Correct reasoning (10 marks)"
+        }
+    ]
+}

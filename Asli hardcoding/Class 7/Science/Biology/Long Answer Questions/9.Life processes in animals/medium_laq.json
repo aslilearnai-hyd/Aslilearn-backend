@@ -1,0 +1,459 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Life Processes in Animals",
+    "generated_at": "2026-03-06T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between Aerobic and Anaerobic respiration with examples.",
+            "answer": "Aerobic respiration occurs in the presence of oxygen, completely breaking down food into carbon dioxide, water, and a large amount of energy (e.g., humans). Anaerobic respiration occurs without oxygen, breaking down food into alcohol and carbon dioxide (in yeast) or lactic acid (in human muscles), releasing much less energy.",
+            "answer_outline": [
+                "Presence vs. absence of oxygen",
+                "End products of both types",
+                "Energy efficiency comparison",
+                "Examples (Yeast/Humans)"
+            ],
+            "key_concepts": [
+                "aerobic",
+                "anaerobic",
+                "lactic acid"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why do we get muscle cramps after heavy exercise? How can we get relief from them?",
+            "answer": "During heavy exercise, our muscles need more energy than the oxygen supplied can provide. Muscle cells switch to anaerobic respiration, producing lactic acid. The accumulation of lactic acid causes cramps. Relief can be obtained through a hot water bath or massage, which improves blood circulation and helps break down lactic acid into $CO_2$ and water.",
+            "answer_outline": [
+                "Oxygen debt during exercise",
+                "Lactic acid production",
+                "Mechanism of cramps",
+                "Methods for relief"
+            ],
+            "key_concepts": [
+                "muscle cramps",
+                "lactic acid",
+                "anaerobic respiration"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the composition of human blood and the specific function of each component.",
+            "answer": "Blood consists of Plasma (liquid part) and three types of cells: 1. Red Blood Cells (RBCs) contain hemoglobin to transport oxygen. 2. White Blood Cells (WBCs) fight germs and provide immunity. 3. Platelets help in blood clotting to prevent excessive bleeding from injuries.",
+            "answer_outline": [
+                "Plasma role",
+                "RBC and Hemoglobin",
+                "WBC as defense",
+                "Platelets and clotting"
+            ],
+            "key_concepts": [
+                "plasma",
+                "RBC",
+                "WBC",
+                "platelets"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between Arteries and Veins based on their structure and function.",
+            "answer": "Arteries carry oxygen-rich blood away from the heart to all parts of the body; they have thick, elastic walls to withstand high pressure. Veins carry carbon dioxide-rich blood back to the heart; they have thinner walls and possess valves to ensure blood flows only in one direction.",
+            "answer_outline": [
+                "Direction of blood flow",
+                "Nature of blood (Oxygen vs. CO2)",
+                "Wall thickness/elasticity",
+                "Presence of valves"
+            ],
+            "key_concepts": [
+                "arteries",
+                "veins",
+                "valves"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are 'Capillaries' and why are they essential for life processes?",
+            "answer": "Capillaries are extremely thin-walled, narrow blood vessels that connect arteries to veins. They are essential because their thin walls allow the exchange of nutrients, oxygen, and waste materials between the blood and the surrounding body cells via diffusion.",
+            "answer_outline": [
+                "Structure of capillaries",
+                "Connection role",
+                "Exchange of materials",
+                "Diffusion process"
+            ],
+            "key_concepts": [
+                "capillaries",
+                "thin-walled",
+                "material exchange"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the 'Double Circulation' system work in the human heart?",
+            "answer": "In double circulation, blood passes through the heart twice in one complete cycle. In the first loop (pulmonary), the heart pumps deoxygenated blood to the lungs and receives oxygenated blood back. In the second loop (systemic), the heart pumps oxygenated blood to the rest of the body and receives deoxygenated blood.",
+            "answer_outline": [
+                "Heart as a dual pump",
+                "Pulmonary circulation",
+                "Systemic circulation",
+                "Separation of blood types"
+            ],
+            "key_concepts": [
+                "double circulation",
+                "pulmonary",
+                "systemic"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe the path of air from the nostrils to the lungs in humans.",
+            "answer": "Air is taken in through the nostrils, where it is filtered by hair and mucus. It passes through the nasal cavity into the windpipe (trachea). The trachea divides into two bronchi, which enter the lungs and branch into smaller tubes called bronchioles, finally ending in tiny air sacs called alveoli.",
+            "answer_outline": [
+                "Nasal passage",
+                "Trachea",
+                "Bronchi/Bronchioles",
+                "Alveoli (end point)"
+            ],
+            "key_concepts": [
+                "nasal cavity",
+                "trachea",
+                "alveoli"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the role of the 'Diaphragm' during the breathing process?",
+            "answer": "The diaphragm is a large, flat muscle at the floor of the chest cavity. During inhalation, it moves down, increasing chest volume and pulling air in. During exhalation, it relaxes and moves up, decreasing chest volume and pushing air out of the lungs.",
+            "answer_outline": [
+                "Location of diaphragm",
+                "Inhalation movement",
+                "Exhalation movement",
+                "Volume/Pressure changes"
+            ],
+            "key_concepts": [
+                "diaphragm",
+                "inhalation",
+                "chest cavity"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how the 'Kidneys' filter blood to form urine.",
+            "answer": "Blood enters the kidneys through renal arteries. Inside, thousands of tiny filters (nephrons) remove nitrogenous wastes like urea and excess salts from the blood. Useful substances like glucose and water are reabsorbed back into the blood, while the remaining waste liquid forms urine, which travels to the bladder.",
+            "answer_outline": [
+                "Blood entry",
+                "Filtration by nephrons",
+                "Selective reabsorption",
+                "Urine formation"
+            ],
+            "key_concepts": [
+                "nephrons",
+                "filtration",
+                "reabsorption"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why do different animals excrete different types of nitrogenous wastes? Give examples.",
+            "answer": "The type of waste depends on water availability. Fish excrete ammonia, which is highly toxic but easily dissolves in their surrounding water. Birds, lizards, and snakes excrete a semi-solid white paste (uric acid) to conserve water. Mammals like humans excrete urea dissolved in water (urine).",
+            "answer_outline": [
+                "Toxicity vs. water conservation",
+                "Ammonia (Fish)",
+                "Uric acid (Birds/Reptiles)",
+                "Urea (Mammals)"
+            ],
+            "key_concepts": [
+                "ammonia",
+                "uric acid",
+                "urea"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the function of 'Stomata' in the context of life processes.",
+            "answer": "Stomata are tiny pores on the surface of leaves. They allow the exchange of gases ($CO_2$ for photosynthesis and $O_2$ for respiration). They also facilitate 'transpiration,' the loss of water vapor which helps in pulling water up from the roots and cooling the plant.",
+            "answer_outline": [
+                "Gas exchange",
+                "Transpiration pull",
+                "Regulation of water loss",
+                "Photosynthesis connection"
+            ],
+            "key_concepts": [
+                "stomata",
+                "transpiration",
+                "gas exchange"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1 (Plants context)"
+        },
+        {
+            "question_number": 12,
+            "question": "What is 'Transpiration Pull' and how does it help in the transport of water?",
+            "answer": "Transpiration is the evaporation of water from leaves. This creates a suction force or 'pull' (similar to drinking through a straw) that draws water and minerals from the roots up through the xylem vessels to the top of tall trees.",
+            "answer_outline": [
+                "Evaporation at leaves",
+                "Suction force creation",
+                "Xylem involvement",
+                "Height of transport"
+            ],
+            "key_concepts": [
+                "transpiration pull",
+                "xylem",
+                "suction"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is it important to separate oxygenated and deoxygenated blood in the heart?",
+            "answer": "Separating the two types of blood prevents them from mixing, which ensures a highly efficient supply of oxygen to all body cells. This efficiency is necessary for warm-blooded animals (like humans) who need high energy to maintain a constant body temperature.",
+            "answer_outline": [
+                "Prevention of mixing",
+                "Oxygen supply efficiency",
+                "Energy requirements",
+                "Body temperature maintenance"
+            ],
+            "key_concepts": [
+                "oxygenated blood",
+                "separation",
+                "efficiency"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the role of 'Phloem' in plants.",
+            "answer": "Phloem is a specialized vascular tissue that transports food (sugars) made in the leaves during photosynthesis to all other parts of the plant, including roots and storage organs. This process is known as translocation.",
+            "answer_outline": [
+                "Tissue type",
+                "Substance transported (food)",
+                "Direction of flow",
+                "Translocation definition"
+            ],
+            "key_concepts": [
+                "phloem",
+                "translocation",
+                "food transport"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How does the 'Tracheal System' in insects function differently from human lungs?",
+            "answer": "In insects, oxygen enters through spiracles and travels through tracheal tubes directly to the tissues, bypassing the blood. In humans, air enters the lungs where oxygen must be picked up by the blood (hemoglobin) and transported to the tissues.",
+            "answer_outline": [
+                "Direct vs. indirect transport",
+                "Role of blood",
+                "Insects: spiracles/tracheae",
+                "Humans: lungs/blood"
+            ],
+            "key_concepts": [
+                "tracheal system",
+                "spiracles",
+                "direct oxygen delivery"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of 'Valves' in the heart and veins.",
+            "answer": "Valves act as one-way doors. In the heart, they ensure blood flows from the atria to the ventricles and into arteries without leaking backward. In veins, they prevent blood from flowing backward away from the heart due to gravity, especially in the legs.",
+            "answer_outline": [
+                "One-way flow",
+                "Prevention of backflow",
+                "Heart valves",
+                "Vein valves"
+            ],
+            "key_concepts": [
+                "valves",
+                "backflow",
+                "unidirectional"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is 'Cellular Respiration' and where does it occur?",
+            "answer": "Cellular respiration is the process of breaking down food (glucose) in the presence or absence of oxygen to release energy. It occurs inside the cells of all living organisms, specifically within the mitochondria.",
+            "answer_outline": [
+                "Definition",
+                "Purpose (energy release)",
+                "Location (Cells/Mitochondria)",
+                "Universality"
+            ],
+            "key_concepts": [
+                "cellular respiration",
+                "glucose",
+                "mitochondria"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Discuss the significance of the 'Heartbeat' and its relation to the pulse rate.",
+            "answer": "Each heartbeat represents one complete contraction and relaxation of the heart muscles. This sends a wave of pressure through the arteries, which we feel as a 'pulse'. Therefore, the pulse rate per minute is exactly equal to the heart rate per minute.",
+            "answer_outline": [
+                "Contraction/Relaxation cycle",
+                "Pressure wave in arteries",
+                "Direct correlation",
+                "Monitoring health"
+            ],
+            "key_concepts": [
+                "heartbeat",
+                "pulse rate",
+                "contraction"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How do plants and animals differ in their methods of transporting materials?",
+            "answer": "Animals use a complex circulatory system with a pumping heart and blood to transport materials. Plants lack a pump; they use vascular tissues (Xylem and Phloem) and physical forces like transpiration pull and osmosis to move water, minerals, and food.",
+            "answer_outline": [
+                "Pump (Heart) vs. No pump",
+                "Blood vs. Vascular tissue",
+                "Active vs. Passive forces",
+                "Speed of transport"
+            ],
+            "key_concepts": [
+                "circulatory system",
+                "vascular tissue",
+                "transportation"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What are the effects of 'Kidney Failure' and how can it be managed?",
+            "answer": "Kidney failure leads to the accumulation of toxic nitrogenous wastes in the blood, which can be fatal. It can be managed by regular 'Dialysis' (artificial filtration) or a 'Kidney Transplant' from a suitable donor to restore the excretory function.",
+            "answer_outline": [
+                "Waste accumulation",
+                "Health consequences",
+                "Management via Dialysis",
+                "Management via Transplant"
+            ],
+            "key_concepts": [
+                "kidney failure",
+                "dialysis",
+                "transplant"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the role of 'Alveoli' in the respiratory system.",
+            "answer": "Alveoli are tiny, balloon-like air sacs at the end of bronchioles with very thin walls surrounded by blood capillaries. They provide a large surface area for the diffusion of oxygen into the blood and carbon dioxide out of the blood.",
+            "answer_outline": [
+                "Structure (air sacs)",
+                "Large surface area",
+                "Gas exchange via diffusion",
+                "Capillary connection"
+            ],
+            "key_concepts": [
+                "alveoli",
+                "diffusion",
+                "surface area"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the left ventricle wall thicker than the right ventricle wall?",
+            "answer": "The right ventricle only needs to pump blood a short distance to the lungs (low pressure). The left ventricle must pump oxygenated blood to the entire rest of the body, requiring much stronger muscular contractions and higher pressure.",
+            "answer_outline": [
+                "Destination of blood",
+                "Distance comparison",
+                "Pressure requirements",
+                "Muscular adaptation"
+            ],
+            "key_concepts": [
+                "left ventricle",
+                "muscular wall",
+                "systemic pressure"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does 'Transpiration' help in temperature regulation in plants?",
+            "answer": "Similar to how sweating cools humans, transpiration involves the evaporation of water from leaf surfaces. This evaporation consumes heat energy from the plant, thereby lowering the temperature of the leaves and protecting them from heat damage.",
+            "answer_outline": [
+                "Evaporative cooling",
+                "Sweating analogy",
+                "Heat energy consumption",
+                "Protection from sun"
+            ],
+            "key_concepts": [
+                "evaporative cooling",
+                "transpiration",
+                "heat protection"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is 'Urea' and how is it produced in the body?",
+            "answer": "Urea is a nitrogenous waste product. It is produced in the liver as a result of the breakdown of excess proteins (amino acids). It is then carried by the blood to the kidneys to be excreted in urine.",
+            "answer_outline": [
+                "Definition of urea",
+                "Site of production (Liver)",
+                "Source (Protein breakdown)",
+                "Excretion path"
+            ],
+            "key_concepts": [
+                "urea",
+                "liver",
+                "protein breakdown"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Describe the function of 'Root Hairs' in the transport system of plants.",
+            "answer": "Root hairs are thin outgrowths of root epidermal cells that significantly increase the surface area of the root. This increased area allows for the efficient absorption of water and dissolved mineral nutrients from the soil via osmosis.",
+            "answer_outline": [
+                "Structure (outgrowths)",
+                "Surface area increase",
+                "Absorption efficiency",
+                "Osmosis/Diffusion"
+            ],
+            "key_concepts": [
+                "root hairs",
+                "surface area",
+                "absorption"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        }
+    ]
+}

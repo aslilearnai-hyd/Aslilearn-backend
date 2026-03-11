@@ -1,0 +1,184 @@
+{
+  "content_type": "Hard Level Questions",
+  "chapter": "Chapter 1: The French Revolution",
+  "difficulty": "Hard",
+  "generated_at": "2026-03-07T13:09:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Evaluate the role of the American War of Independence in accelerating the collapse of the French Old Regime.",
+      "answer": "The war added over a billion livres to an existing 2 billion livre debt, forcing the state to spend a massive percentage of its budget on interest payments[cite: 66, 68]. Beyond financial ruin, the American example provided a successful practical application of Enlightenment ideals regarding individual rights, which served as a critical intellectual model for French political thinkers[cite: 158, 159].",
+      "key_points": ["Debt escalation", "Interest burden", "Practical application of rights", "Intellectual catalyst"],
+      "source_section": "Section 1, 1.3"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze the contradictions inherent in the status of 'Active' versus 'Passive' citizens in the 1791 Constitution.",
+      "answer": "While the Declaration of Rights stated that men are born free and equal [cite: 346], the 1791 Constitution institutionalized inequality by granting voting rights only to 'active' citizens—men over 25 who paid significant taxes[cite: 311]. This effectively excluded women, the poor, and younger men, transferring power from the aristocracy to a wealthy property-owning class[cite: 312, 313, 338].",
+      "key_points": ["Institutionalized inequality", "Property-based franchise", "Exclusion of women/poor", "Shift to bourgeoisie power"],
+      "source_section": "Section 2.1, Source B"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how the 'Subsistence Crisis' functioned as a structural failure of the Old Regime's socio-economic system.",
+      "answer": "The crisis was a cycle where population growth outpaced grain production, leading to price spikes for bread—the staple diet[cite: 122, 124]. Because wages were fixed by workshop owners and did not rise with inflation, the gap between rich and poor widened, leaving the masses vulnerable to famine whenever drought or hail reduced the harvest[cite: 125, 126, 127].",
+      "key_points": ["Fixed wages vs. inflation", "Agricultural production lag", "Widening wealth gap", "Staple food vulnerability"],
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Contrast the perspectives of Camille Desmoulins and Robespierre regarding the use of state terror to achieve liberty.",
+      "answer": "Robespierre argued that terror was 'nothing but justice' and necessary to annihilate enemies to consolidate democracy[cite: 487, 488]. In contrast, Desmoulins argued that liberty should be defined by happiness and reason, warning that guillotining enemies only created more enemies among their grieving families and friends[cite: 483, 484].",
+      "key_points": ["Terror as justice", "Annihilation of enemies", "Liberty as happiness", "Cycles of violence"],
+      "source_section": "Source D"
+    },
+    {
+      "question_number": 5,
+      "question": "How did the August 1792 insurrection transform the political landscape of France?",
+      "answer": "Prompted by food shortages and the threat of foreign invasion, Jacobins led an attack on the Tuileries Palace, massacring guards and holding the king hostage[cite: 446, 447]. This led to the suspension of the monarchy, the imprisonment of the royal family, and a transition to a Republic through universal male suffrage, regardless of wealth[cite: 448, 449, 450].",
+      "key_points": ["Tuileries storming", "End of Monarchy", "Universal male suffrage", "Republic declaration"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 6,
+      "question": "Discuss the ideological significance of the 'sans-culottes' dress code within the context of class struggle.",
+      "answer": "The Jacobins wore long striped trousers to distinguish themselves from the 'noble' wearers of knee breeches[cite: 425, 426]. This was a symbolic proclamation of the end of aristocratic power and the rise of the political influence of small shopkeepers, artisans, and daily-wage workers[cite: 423, 443, 444].",
+      "key_points": ["Symbolic clothing", "Anti-aristocratic sentiment", "Class identity", "Political empowerment"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "Examine why the National Assembly was hesitant to abolish slavery despite its rhetoric on human rights.",
+      "answer": "The Assembly held long debates but feared passing laws that would alienate powerful businessmen[cite: 604, 605]. These individuals' incomes were dependent on the slave trade, creating a conflict between the revolutionary ideal of 'universal rights' and the economic interests of the influential middle class[cite: 605, 608].",
+      "key_points": ["Economic interests", "Business lobby pressure", "Rhetoric vs. Reality", "Colonial dependencies"],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 8,
+      "question": "In what ways did the Directory reflect the 'reactionary' phase of the French Revolution?",
+      "answer": "Following the fall of Robespierre, the wealthier middle classes seized power and introduced a new constitution that stripped the vote from non-propertied sections[cite: 500, 501]. This moved away from the radical Jacobin equality and established a five-member executive intended to prevent one-man rule, though it ultimately led to instability[cite: 502, 503, 504].",
+      "key_points": ["Disenfranchisement", "Middle class control", "Executive division", "Political instability"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Analyze Olympe de Gouges' critique of the 'Declaration of the Rights of Man and Citizen'.",
+      "answer": "De Gouges argued that the original Declaration excluded women from the 'natural' rights each human being deserved[cite: 554]. She asserted that since women are subject to the same laws and punishments as men, they must also be equally entitled to all public honors, employment, and a say in the formulation of the general will[cite: 565, 570, 572].",
+      "key_points": ["Exclusion of women", "Universal suffrage demand", "Equality in law/punishment", "Public office access"],
+      "source_section": "Section 4, Source F"
+    },
+    {
+      "question_number": 10,
+      "question": "Assess how the French Revolution reinterpreted the concept of 'Sovereignty'.",
+      "answer": "The Revolution shifted the source of sovereignty from the 'divine right' of the monarch to the nation itself[cite: 150, 349]. Article 3 of the Declaration established that no individual could exercise authority that did not emanate directly from the people, making the 'general will' the basis of law[cite: 350, 353].",
+      "key_points": ["Nation as source of power", "End of divine right", "General will", "Popular authority"],
+      "source_section": "Source C"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the role of 'Political Clubs' as centers of revolutionary mobilization.",
+      "answer": "Clubs like the Jacobins provided a space for citizens to discuss government policies and coordinate actions[cite: 418, 419]. They were essential rallying points for those who felt the 1791 Constitution did not provide enough rights to the poor, eventually allowing these groups to plan insurrections[cite: 417, 446].",
+      "key_points": ["Jacobin club", "Rallying points", "Grassroots planning", "Protest coordination"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 12,
+      "question": "How did the Revolutionary wars of 1792 change the nature of the Revolution?",
+      "answer": "The war against Prussia and Austria turned a domestic political struggle into a 'war of people against kings' across Europe[cite: 408, 410]. This led to mass mobilization, economic hardship for those at home, and intensified radicalism as the population became convinced the revolution needed to be carried further to succeed[cite: 409, 415, 417].",
+      "key_points": ["International conflict", "Mass mobilization", "Economic strain", "Increased radicalization"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 13,
+      "question": "Analyze the impact of the abolition of censorship on the spread of revolutionary consciousness.",
+      "answer": "By proclaiming freedom of expression a natural right, the Revolution allowed ideas to bypass the King's approval[cite: 631, 633]. This flooded society with print media that brought philosophical debates on liberty and justice to the masses in the countryside, who had previously been isolated from such ideas[cite: 634, 639].",
+      "key_points": ["End of royal approval", "Print flood", "Rural penetration", "Accessible philosophy"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 14,
+      "question": "What does the symbol of the 'Snake biting its tail' suggest about the Revolution's view of its own principles?",
+      "answer": "As a symbol of eternity, the ring suggests that the principles of the Revolution (liberty, equality) have no beginning or end[cite: 372]. It implies that these rights are timeless truths that exist independently of specific governments or temporal laws[cite: 334].",
+      "key_points": ["Eternity", "Timeless rights", "Independent truths", "Symbolism"],
+      "source_section": "Box 1"
+    },
+    {
+      "question_number": 15,
+      "question": "Evaluate the significance of the Civil Code/Napoleonic Code in relation to Revolutionary ideals.",
+      "answer": "Napoleon introduced laws that modernized Europe, such as the protection of private property and a uniform decimal system for weights[cite: 651]. While these carried revolutionary ideas of modern law to conquered territories, they were paradoxically paired with an invading military force that eventually suppressed freedom[cite: 653, 654].",
+      "key_points": ["Modernization", "Property protection", "Standardization", "Invading force paradox"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the significance of the 4 August 1789 decree by the National Assembly.",
+      "answer": "This decree abolished the entire feudal system of obligations and taxes, including the tithes paid to the Church[cite: 242, 244]. It stripped the clergy and nobility of their birth privileges and allowed the government to confiscate Church lands worth at least 2 billion livres[cite: 243, 245].",
+      "key_points": ["Feudalism abolition", "End of tithes", "Confiscation of assets", "Privilege removal"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 17,
+      "question": "How did Jean-Paul Marat view the influence of wealth on the law in the post-1789 period?",
+      "answer": "Marat argued that the task of representing the people had merely shifted from the aristocracy to the rich[cite: 338, 339]. He predicted that the poor would eventually cast off the 'yoke' of the wealthy just as they had done to the aristocrats, as the law only lasted as long as people obeyed it[cite: 341, 342].",
+      "key_points": ["Wealth's influence", "Wealthy as new elite", "Future rebellion", "Conditional obedience"],
+      "source_section": "Source B"
+    },
+    {
+      "question_number": 18,
+      "question": "Analyze the role of women in the bread riots and their political impact.",
+      "answer": "High prices and bread hoarding led angry women to storm bakeries and eventually march to Versailles on 5 October 1789 to bring the king back to Paris[cite: 234, 513]. Their active participation was a means to pressure the government into improving lives and recognizing their political stake in the nation[cite: 514, 515].",
+      "key_points": ["Bakery storming", "March to Versailles", "Pressure on government", "Political visibility"],
+      "source_section": "Section 2, 4"
+    },
+    {
+      "question_number": 19,
+      "question": "Discuss the 'Triangular Slave Trade' as a vital component of 18th-century French economic growth.",
+      "answer": "The trade linked Europe, Africa, and the Americas, where slaves were branded, shackled, and packed into ships for a three-month voyage[cite: 598, 600]. The resulting slave labor provided the sugar, coffee, and indigo that fueled the prosperity of French port cities like Bordeaux and Nantes[cite: 601, 602].",
+      "key_points": ["Branding/Shackling", "Bordeaux/Nantes wealth", "Caribbean exploitation", "Global commodity demand"],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 20,
+      "question": "How did the Reign of Terror seek to standardize equality in daily life?",
+      "answer": "The government forbade the use of expensive white flour, requiring all to eat 'equality bread' (pain d'égalité) made of wholewheat[cite: 466]. It also mandated changes in speech, replacing 'Monsieur' and 'Madame' with 'Citoyen' and 'Citoyenne' to reflect a society without titles[cite: 467, 468].",
+      "key_points": ["Equality bread", "Linguistic equality", "Abolition of titles", "Social engineering"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Examine the role of the 'Estates General' as a tool of royal authority and its subsequent failure.",
+      "answer": "The Estates General was an advisory body that only the monarch could call, with the last meeting occurring in 1614[cite: 190, 191]. It failed in 1789 when the Third Estate refused to accept the one-estate-one-vote rule, demanding instead that the assembly vote as a whole[cite: 198, 200].",
+      "key_points": ["Monarchical control", "1614 hiatus", "Voting deadlock", "Assembly as a whole"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 22,
+      "question": "Contrast the views of the 'middle class' and the 'clergy/nobility' regarding the source of social position.",
+      "answer": "The First and Second Estates believed social position and privileges were determined by birth[cite: 77]. The emerging middle class of the Third Estate argued that no group should have birth privileges and that social position must instead depend solely on an individual's merit[cite: 147, 148].",
+      "key_points": ["Birth privilege", "Meritocracy", "Third Estate education", "Class conflict"],
+      "source_section": "Section 1, 1.3"
+    },
+    {
+      "question_number": 23,
+      "question": "What was the significance of the 'Tennis Court Oath' in establishing the National Assembly's legitimacy?",
+      "answer": "By swearing not to disperse until a constitution was drafted, the representatives took on the role of 'spokesmen for the whole French nation'[cite: 203, 205]. This act shifted the source of political legitimacy from the King to the elected representatives of the people[cite: 205, 349].",
+      "key_points": ["National spokesmen", "Constitutional oath", "Legitimacy shift", "Defiance of monarch"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 24,
+      "question": "Analyze the impact of the French Revolution on colonised peoples in the 19th and 20th centuries.",
+      "answer": "Colonised peoples reworked the French idea of 'freedom from bondage' to suit their own movements for sovereign nation-states[cite: 663]. Figures like Tipu Sultan and Raja Rammohan Roy in India were inspired by these revolutionary ideas, demonstrating their global reach[cite: 664, 667].",
+      "key_points": ["Sovereign nation-states", "Freedom from bondage", "Global inspiration", "Anti-colonialism"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "How did the Revolutionary government utilize 'Festivals' and 'Symbols' to mobilize subjects?",
+      "answer": "Governments staged large festivals using Greek and Roman symbols to provide an aura of 'hallowed history' to the new regime[cite: 494, 495]. Symbols like the 'Phrygian cap' and 'Broken chain' were used to visually communicate the core value of liberty to an illiterate population[cite: 367, 445].",
+      "key_points": ["Cultural mobilization", "Classical symbolism", "Illiteracy strategies", "Civic loyalty"],
+      "source_section": "Box 1, Section 3.1"
+    }
+  ]
+}

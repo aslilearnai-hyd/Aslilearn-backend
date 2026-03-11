@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter 1: Exploring the Investigative World of Science",
+  "difficulty": "Easy",
+  "source_pdf": "hecu101.pdf",
+  "short_notes": {
+    "key_points": [
+      "Science helps us understand the natural world through observation and experiments",
+      "Investigation in science involves asking questions and finding answers through evidence",
+      "Scientific investigations follow steps such as observation, hypothesis, experiment, and conclusion",
+      "Scientists use tools and instruments to collect accurate data",
+      "Careful observation and recording of results are important in scientific investigations"
+    ],
+    "examples": [
+      "Observing how plants grow in sunlight and shade",
+      "Testing which material conducts heat faster",
+      "Measuring the time taken for a ball to fall from a height",
+      "Observing changes when substances are mixed"
+    ],
+    "formulas": [
+      "Science investigation steps → Observation → Hypothesis → Experiment → Result → Conclusion",
+      "Measurement formula → Speed = Distance ÷ Time",
+      "Basic data recording → Result = Observation + Measurement"
+    ],
+    "exam_tips": [
+      "Remember the main steps of scientific investigation",
+      "Always mention observation and conclusion in answers",
+      "Use real-life examples when explaining investigations",
+      "Understand the importance of experiments in science"
+    ]
+  }
+}

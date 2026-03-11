@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science - Geography",
+  "chapter": "Resources",
+  "difficulty": "Medium",
+  "source_pdf": "Resources.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Case Study on Resource Utilization",
+      "objective": "Analyze how natural resources are used in different regions",
+      "materials": ["NCERT Textbook", "Notebook", "Internet resources"],
+      "steps": [
+        "Students select a region in India",
+        "Identify the natural resources available in that region",
+        "Study how people use those resources",
+        "Prepare a short case study report"
+      ],
+      "learning_outcome": "Students understand how resources influence regional development",
+      "evaluation": "Depth of analysis and clarity of case study (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Resource Classification Chart",
+      "objective": "Understand different classifications of resources",
+      "materials": ["Chart paper", "Markers", "Textbook"],
+      "steps": [
+        "Read the classification of resources in the textbook",
+        "Create a chart showing natural, human-made, and human resources",
+        "Add examples under each category",
+        "Explain the chart to the class"
+      ],
+      "learning_outcome": "Students clearly distinguish between various resource categories",
+      "evaluation": "Accuracy and presentation of the chart (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Map Work: Global Resource Distribution",
+      "objective": "Identify major resource-rich regions of the world",
+      "materials": ["World map", "Atlas", "Pencil"],
+      "steps": [
+        "Use an atlas to locate regions rich in minerals and energy resources",
+        "Mark coal, petroleum, and iron regions on the world map",
+        "Label each region clearly",
+        "Discuss why resources are unevenly distributed"
+      ],
+      "learning_outcome": "Students understand the global distribution of important resources",
+      "evaluation": "Accuracy of map marking and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Debate on Resource Conservation",
+      "objective": "Discuss the importance of conserving natural resources",
+      "materials": ["Notebook", "Pen", "Blackboard"],
+      "steps": [
+        "Divide students into two groups",
+        "One group discusses problems caused by resource overuse",
+        "The other group suggests solutions for conservation",
+        "Conduct a structured classroom debate"
+      ],
+      "learning_outcome": "Students analyze environmental issues related to resource exploitation",
+      "evaluation": "Participation and strength of arguments (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Survey of Resource Use in the Community",
+      "objective": "Understand how resources are used in everyday life",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Students survey households in their neighborhood",
+        "Record types of resources used such as water, electricity, and fuel",
+        "Analyze which resources are renewable or non-renewable",
+        "Prepare a short report"
+      ],
+      "learning_outcome": "Students relate theoretical concepts of resources to real-life usage",
+      "evaluation": "Completeness and accuracy of the report (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Poster on Sustainable Development",
+      "objective": "Promote awareness about sustainable resource management",
+      "materials": ["Chart paper", "Color pencils", "Markers"],
+      "steps": [
+        "Students design posters about sustainable development",
+        "Include messages about saving water, forests, and minerals",
+        "Use creative slogans and drawings",
+        "Display posters in the classroom"
+      ],
+      "learning_outcome": "Students understand the concept of sustainability",
+      "evaluation": "Creativity and relevance of the message (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Role Play on Resource Management",
+      "objective": "Understand the role of communities in managing resources",
+      "materials": ["Role cards", "Simple props"],
+      "steps": [
+        "Assign roles such as villagers, farmers, environmentalists, and government officials",
+        "Discuss a scenario of resource depletion",
+        "Suggest solutions for sustainable use",
+        "Perform the role play in class"
+      ],
+      "learning_outcome": "Students understand collaborative approaches to resource management",
+      "evaluation": "Creativity and understanding of the topic (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Reading Analysis: Resource Depletion",
+      "objective": "Analyze problems caused by excessive resource use",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read a section about resource depletion",
+        "Identify causes and consequences",
+        "Write a short summary",
+        "Discuss possible solutions in class"
+      ],
+      "learning_outcome": "Students develop analytical skills related to environmental issues",
+      "evaluation": "Clarity and depth of analysis (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Resource Flow Diagram",
+      "objective": "Understand how resources move from nature to human use",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Select a resource such as water or minerals",
+        "Create a flow diagram showing extraction, processing, and usage",
+        "Explain each stage clearly",
+        "Present the diagram to the class"
+      ],
+      "learning_outcome": "Students understand the lifecycle of resources",
+      "evaluation": "Clarity and completeness of the diagram (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Project: School Resource Audit",
+      "objective": "Assess how resources are used in school",
+      "materials": ["Notebook", "Chart paper", "Pen"],
+      "steps": [
+        "Observe water and electricity usage in school",
+        "Record areas where resources are wasted",
+        "Suggest strategies for conservation",
+        "Prepare a report and present it to the class"
+      ],
+      "learning_outcome": "Students develop practical awareness of resource conservation",
+      "evaluation": "Quality of observations and recommendations (10 marks)"
+    }
+  ]
+}

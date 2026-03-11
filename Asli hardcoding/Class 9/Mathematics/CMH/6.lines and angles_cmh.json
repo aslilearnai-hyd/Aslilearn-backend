@@ -1,0 +1,137 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 6: Lines and Angles",
+    "generated_at": "2026-03-05T21:30:00",
+    "concepts": [
+        {
+            "concept_name": "Types of Angles",
+            "difficulty": "easy",
+            "lesson": "Angles are formed when two rays originate from the same point called the vertex. Depending on their measures, angles are classified into acute, right, obtuse, straight, and reflex angles. An acute angle is less than 90°, a right angle equals 90°, an obtuse angle lies between 90° and 180°, a straight angle equals 180°, and a reflex angle is greater than 180° but less than 360°. Understanding these categories helps students recognize and measure angles in geometric figures and in real-life situations such as corners of objects and intersections of lines.",
+            "real_example": "The corner of a book forms a right angle of 90°.",
+            "key_points": [
+                "Angles are formed by two rays with a common vertex",
+                "Acute angle < 90°",
+                "Right angle = 90°",
+                "Obtuse angle between 90° and 180°",
+                "Straight angle = 180°"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "concept_name": "Complementary and Supplementary Angles",
+            "difficulty": "easy",
+            "lesson": "Two angles are called complementary when their sum equals 90°, and supplementary when their sum equals 180°. These relationships help determine unknown angles in diagrams. Complementary angles often appear in right triangles and perpendicular lines, while supplementary angles appear on straight lines or linear pairs. Understanding these concepts simplifies solving geometry problems where angle relationships are involved.",
+            "real_example": "30° and 60° are complementary angles.",
+            "key_points": [
+                "Complementary angles sum to 90°",
+                "Supplementary angles sum to 180°",
+                "Used to calculate unknown angles",
+                "Common in geometric diagrams"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "concept_name": "Adjacent Angles",
+            "difficulty": "easy",
+            "lesson": "Adjacent angles are two angles that share a common vertex and a common arm while their other arms lie on different sides of the common arm. The sum of adjacent angles equals the larger angle formed by the outer arms. Recognizing adjacent angles helps in understanding more complex angle relationships such as linear pairs and angles around a point.",
+            "real_example": "Angles formed when a door is partially opened are adjacent.",
+            "key_points": [
+                "Share a common vertex",
+                "Share a common arm",
+                "Non-common arms lie on opposite sides",
+                "Sum equals the larger outer angle"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "concept_name": "Linear Pair of Angles",
+            "difficulty": "medium",
+            "lesson": "A linear pair is formed when a ray stands on a straight line, creating two adjacent angles whose non-common arms form a straight line. According to the linear pair axiom, the sum of these two adjacent angles is always 180°. This concept is essential for solving many angle problems in geometry and forms the basis for proving several other theorems related to intersecting lines.",
+            "real_example": "Angles of 110° and 70° on a straight line form a linear pair.",
+            "key_points": [
+                "Formed by a ray standing on a line",
+                "Angles are adjacent",
+                "Sum equals 180°",
+                "Important geometric axiom"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "concept_name": "Vertically Opposite Angles",
+            "difficulty": "medium",
+            "lesson": "When two lines intersect each other, they form four angles. The angles opposite each other across the intersection are called vertically opposite angles. A key theorem states that vertically opposite angles are always equal. This property helps determine unknown angles when intersecting lines appear in geometric figures or diagrams.",
+            "real_example": "If one angle formed by intersecting lines is 65°, the vertically opposite angle is also 65°.",
+            "key_points": [
+                "Formed by intersecting lines",
+                "Opposite angles are equal",
+                "Useful for solving angle problems",
+                "Fundamental geometry theorem"
+            ],
+            "source_section": "Section 6.4"
+        },
+        {
+            "concept_name": "Intersecting and Parallel Lines",
+            "difficulty": "easy",
+            "lesson": "Lines in a plane can either intersect or remain parallel. Intersecting lines meet at a point and form angles at their intersection. Parallel lines never meet even if extended infinitely in both directions. The distance between parallel lines remains constant everywhere. These concepts are fundamental for understanding geometric constructions and diagrams.",
+            "real_example": "Railway tracks are examples of parallel lines.",
+            "key_points": [
+                "Intersecting lines meet at a point",
+                "Parallel lines never meet",
+                "Distance between parallel lines is constant",
+                "Common in geometric figures"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "concept_name": "Angles Formed by a Transversal",
+            "difficulty": "medium",
+            "lesson": "When a transversal intersects two parallel lines, several pairs of special angles are formed, including corresponding angles, alternate interior angles, and interior angles on the same side of the transversal. Corresponding and alternate interior angles are equal when the lines are parallel, while interior angles on the same side add up to 180°. These relationships allow us to determine unknown angles and prove whether lines are parallel.",
+            "real_example": "Angles formed when a road crosses two parallel railway tracks.",
+            "key_points": [
+                "Formed by transversal cutting parallel lines",
+                "Corresponding angles are equal",
+                "Alternate interior angles are equal",
+                "Interior angles on same side sum to 180°"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "concept_name": "Lines Parallel to the Same Line",
+            "difficulty": "medium",
+            "lesson": "A fundamental theorem in geometry states that if two lines are parallel to the same line, then they are parallel to each other. This property helps establish relationships between multiple lines in a diagram and simplifies proofs involving parallel lines. It is widely used in geometry problems involving transversals and angle relationships.",
+            "real_example": "If line A is parallel to line B, and line B is parallel to line C, then line A is parallel to line C.",
+            "key_points": [
+                "Parallelism is transitive",
+                "Helps prove lines are parallel",
+                "Important theorem in geometry",
+                "Used with transversal properties"
+            ],
+            "source_section": "Section 6.5"
+        },
+        {
+            "concept_name": "Angles Around a Point",
+            "difficulty": "medium",
+            "lesson": "When several rays originate from a single point, the angles formed around that point add up to 360°. This property is useful when solving problems involving multiple angles around a vertex. By subtracting known angles from 360°, unknown angles can easily be determined.",
+            "real_example": "Four angles around a point measuring 90° each sum to 360°.",
+            "key_points": [
+                "Angles around a point sum to 360°",
+                "Helps determine missing angles",
+                "Used in many geometric diagrams"
+            ],
+            "source_section": "Section 6.4 Examples"
+        },
+        {
+            "concept_name": "Application of Angle Theorems",
+            "difficulty": "hard",
+            "lesson": "Angle theorems such as linear pair, vertically opposite angles, and parallel line angle relationships are often combined to solve complex geometry problems. By identifying known angle relationships and applying appropriate theorems step by step, unknown angles can be calculated logically. This approach builds reasoning skills and prepares students for higher-level geometric proofs and problem-solving.",
+            "real_example": "Using alternate interior angles and linear pairs to find missing angles in a parallel line diagram.",
+            "key_points": [
+                "Combines multiple angle properties",
+                "Used in advanced geometry problems",
+                "Requires logical reasoning",
+                "Common in examinations"
+            ],
+            "source_section": "Section 6.4–6.5 Examples"
+        }
+    ]
+}

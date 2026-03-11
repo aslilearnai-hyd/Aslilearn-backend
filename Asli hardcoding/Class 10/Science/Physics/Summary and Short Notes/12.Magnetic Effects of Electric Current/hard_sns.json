@@ -1,0 +1,34 @@
+{
+  "class": "Class 10",
+  "subject": "Science",
+  "chapter": "Magnetic Effects of Electric Current",
+  "difficulty": "Hard",
+  "source_pdf": "jesc112.pdf",
+  "short_notes": {
+    "key_points": [
+      "Magnetic field lines represent the direction and strength of a magnetic field around a conductor",
+      "The strength of magnetic field around a conductor depends on the current and distance from the conductor",
+      "A solenoid produces a strong and nearly uniform magnetic field inside it",
+      "Electromagnetic induction occurs when there is a change in magnetic field around a conductor",
+      "Electric generators convert mechanical energy into electrical energy based on electromagnetic induction"
+    ],
+    "examples": [
+      "Crane magnets lifting heavy iron scrap using electromagnets",
+      "Electric motor used in washing machines and grinders",
+      "Hydroelectric power plants using generators to produce electricity",
+      "Fuse protecting appliances by breaking the circuit during excessive current"
+    ],
+    "formulas": [
+      "Fleming's Left-Hand Rule → Determines direction of motion of a conductor",
+      "Fleming's Right-Hand Rule → Determines direction of induced current",
+      "AC frequency in India → 50 Hz",
+      "Power transmission principle → High voltage reduces energy loss"
+    ],
+    "exam_tips": [
+      "Understand both Fleming's left-hand and right-hand rules",
+      "Practice explaining the working of electric motor and generator with diagrams",
+      "Learn safety measures like earthing, fuse and circuit breakers",
+      "Focus on reasoning questions related to electromagnetic induction"
+    ]
+  }
+}

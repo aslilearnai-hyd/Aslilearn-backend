@@ -1,0 +1,113 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 12: Statistics",
+    "generated_at": "2026-03-05T20:45:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is statistics?",
+                "correct_answer": "A branch of mathematics dealing with collection, organization, analysis, and interpretation of data",
+                "explanation": "It helps in making sense of numerical information in real-life situations.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "question": "Define raw data.",
+                "correct_answer": "Unprocessed data collected directly from observation or survey",
+                "explanation": "Raw data is in its original form and needs to be organized for analysis.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "question": "What is meant by grouped data?",
+                "correct_answer": "Data that is arranged in classes or intervals",
+                "explanation": "Grouping makes it easier to summarize and interpret large data sets.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "question": "What is a frequency distribution table?",
+                "correct_answer": "A table showing classes/values and the number of times each occurs",
+                "explanation": "It organizes data to show how frequently each value appears.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "question": "Define class interval.",
+                "correct_answer": "The difference between upper and lower boundaries of a class",
+                "explanation": "Represents the range of values grouped together in a class.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "question": "Define class mark.",
+                "correct_answer": "Mid-point of a class interval = (Lower limit + Upper limit)/2",
+                "explanation": "Used to represent all data values in that class.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "question": "What is the mean of ungrouped data?",
+                "correct_answer": "Sum of all observations divided by number of observations",
+                "explanation": "It gives the average value of the data set.",
+                "source_section": "Section 12.3"
+            },
+            {
+                "question": "How is mean calculated for grouped data?",
+                "correct_answer": "Mean = Σ(f × x)/Σf, where f = frequency, x = class mark",
+                "explanation": "Weighted average using class marks as representatives of each class.",
+                "source_section": "Section 12.3"
+            },
+            {
+                "question": "Define median.",
+                "correct_answer": "The middle value of an ordered data set",
+                "explanation": "It divides the data into two equal halves.",
+                "source_section": "Section 12.4"
+            },
+            {
+                "question": "Define mode.",
+                "correct_answer": "The value that occurs most frequently in the data set",
+                "explanation": "Represents the value with highest occurrence.",
+                "source_section": "Section 12.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Statistics Basics",
+                "content": "Statistics involves collection, organization, representation, and interpretation of data.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "title": "Grouped vs Ungrouped Data",
+                "content": "Grouped data is arranged in classes; ungrouped data is raw and unorganized.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "title": "Frequency Table",
+                "content": "Organizes data into classes and their frequencies for easy analysis.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "title": "Measures of Central Tendency",
+                "content": "Mean, median, and mode describe the central point of data.",
+                "source_section": "Section 12.3-12.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Sum of frequencies = total number of observations.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "fact": "Class mark represents all values in a class for calculation purposes.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "fact": "Mean gives the average; median divides data into halves; mode shows most frequent value.",
+                "source_section": "Section 12.3-12.5"
+            },
+            {
+                "fact": "Grouped data is used when there are too many observations to list individually.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "fact": "Median and mode are less affected by extreme values compared to mean.",
+                "source_section": "Section 12.4-12.5"
+            }
+        ]
+    }
+}

@@ -1,0 +1,254 @@
+{
+  "content_type": "Medium Questions",
+  "chapter": "Chapter 13: Our Environment",
+  "generated_at": "2026-03-10T23:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the flow of energy in an ecosystem with the help of a suitable diagram. Why is this flow said to be unidirectional?",
+      "answer": "Energy enters the ecosystem from the sun and is captured by producers through photosynthesis. It flows to herbivores, then carnivores. At each trophic level, only ~10% energy is transferred (rest lost as heat/respiration). Diagram: Sun → Producers → Herbivores → Carnivores → Decomposers (with arrows showing 10% transfer). It is unidirectional because energy lost as heat cannot be reused or returned to producers.",
+      "answer_outline": [
+        "Energy source and capture",
+        "Stepwise transfer with percentages",
+        "Diagram description",
+        "Reason for unidirectional flow"
+      ],
+      "key_concepts": [
+        "energy flow",
+        "unidirectional",
+        "10% law"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Differentiate between producers, consumers and decomposers. Give two examples of each and explain their role in energy transfer.",
+      "answer": "Producers (autotrophs): make food (e.g., grass, algae) – first trophic level, capture solar energy. Consumers (heterotrophs): depend on others – herbivores (cow), carnivores (lion) – transfer energy. Decomposers (bacteria, fungi): break down dead matter – recycle nutrients, return minerals to soil for producers. Role: Producers start energy chain, consumers pass it on, decomposers close nutrient cycle.",
+      "answer_outline": [
+        "Definition + examples of each",
+        "Trophic level / position",
+        "Specific role in energy/nutrient flow"
+      ],
+      "key_concepts": [
+        "producers consumers decomposers",
+        "energy and nutrient cycling"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 3,
+      "question": "With the help of a food web, explain how removal of one organism can affect the entire ecosystem.",
+      "answer": "Food web: Grass → Rabbit/Deer/Insect → Fox/Wolf → Lion. If rabbits are removed: insects increase (less competition), deer population may rise (more grass), foxes suffer (less food), wolves/lions affected indirectly. Shows interdependence; disruption at one level affects balance and stability of the ecosystem.",
+      "answer_outline": [
+        "Draw/describe simple food web",
+        "Choose one organism removal",
+        "Step-by-step chain reaction",
+        "Conclusion on interdependence"
+      ],
+      "key_concepts": [
+        "food web",
+        "interdependence",
+        "ecosystem balance"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain biological magnification with a suitable example. Why are humans most affected by it?",
+      "answer": "Biological magnification: increase in concentration of toxic non-biodegradable substances at higher trophic levels. Example: DDT in water (0.0003 ppm) → algae (0.04 ppm) → small fish (0.5 ppm) → large fish (2 ppm) → birds/humans (25–50 ppm). Humans most affected because they occupy top position in many food chains and consume organisms from lower levels (fish, birds, etc.).",
+      "answer_outline": [
+        "Definition and process",
+        "Numerical example with DDT",
+        "Diagram of increasing concentration",
+        "Reason humans worst affected"
+      ],
+      "key_concepts": [
+        "biological magnification",
+        "DDT example",
+        "top consumer impact"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 5,
+      "question": "How does ozone depletion affect life on Earth? Suggest three measures to protect the ozone layer.",
+      "answer": "Effects: More UV-B reaches Earth → skin cancer, cataracts, weakened immunity in humans; reduced photosynthesis in plants; damage to phytoplankton → affects aquatic food chains. Measures: (i) Reduce/eliminate use of CFCs (Montreal Protocol), (ii) Use eco-friendly refrigerants (HFCs), (iii) Minimize aerosol sprays and fire extinguishers containing halons.",
+      "answer_outline": [
+        "Two major effects on humans",
+        "Effects on plants and aquatic life",
+        "Three practical measures"
+      ],
+      "key_concepts": [
+        "ozone depletion effects",
+        "protection measures"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain why there is less biodiversity at higher trophic levels compared to lower ones.",
+      "answer": "Due to 10% law: only 10% energy transfers to next level, so less energy available at higher trophic levels → fewer organisms can be supported. Producers have maximum energy and biomass, top carnivores have least. Hence, number of species and individuals decreases up the food chain (pyramid of numbers/energy).",
+      "answer_outline": [
+        "Reference to 10% law",
+        "Energy availability decrease",
+        "Pyramid explanation",
+        "Conclusion on biodiversity"
+      ],
+      "key_concepts": [
+        "energy pyramid",
+        "biodiversity gradient"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is improper disposal of plastic waste considered more harmful than improper disposal of paper waste?",
+      "answer": "Plastics are non-biodegradable → persist for hundreds of years, cause soil/water pollution, kill animals (ingestion/entanglement), release toxins on burning, contribute to microplastics in food chain. Paper is biodegradable → decomposed by microbes in months, less persistent pollution, can be composted or recycled easily.",
+      "answer_outline": [
+        "Nature and persistence of plastics",
+        "Environmental and health hazards",
+        "Contrast with paper waste"
+      ],
+      "key_concepts": [
+        "non-biodegradable waste",
+        "plastic pollution"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the role of decomposers in maintaining the balance of an ecosystem.",
+      "answer": "Decomposers (bacteria, fungi) break down dead plants/animals/waste into simple inorganic substances (CO₂, water, minerals). They return nutrients to soil → used by producers again. Prevent accumulation of waste, complete nutrient cycle, maintain soil fertility and ecosystem balance.",
+      "answer_outline": [
+        "Breakdown process",
+        "Nutrient recycling",
+        "Prevention of waste accumulation",
+        "Overall balance"
+      ],
+      "key_concepts": [
+        "decomposers role",
+        "nutrient cycling"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Why do most food chains have only 3–4 trophic levels? Explain with reason and calculation.",
+      "answer": "Because of 10% law. Suppose producers get 10,000 J → herbivores get 1,000 J (10%) → primary carnivores 100 J → secondary carnivores 10 J. Beyond this, energy is too low to support another level. Hence, usually 3–4 levels only.",
+      "answer_outline": [
+        "Statement of 10% law",
+        "Numerical illustration",
+        "Conclusion on trophic levels"
+      ],
+      "key_concepts": [
+        "10% law application",
+        "trophic level limitation"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how excessive use of chemical fertilizers and pesticides affects the environment and human health.",
+      "answer": "Run-off causes water pollution (eutrophication → algal blooms → oxygen depletion → fish death). Non-biodegradable pesticides undergo biomagnification → high concentration in humans → neurological damage, cancer risk. Soil fertility decreases over time due to chemical imbalance.",
+      "answer_outline": [
+        "Water pollution and eutrophication",
+        "Biomagnification effect",
+        "Human health risks"
+      ],
+      "key_concepts": [
+        "chemical pollution",
+        "eutrophication",
+        "biomagnification"
+      ],
+      "marks": 5,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the significance of the Montreal Protocol? How has it helped the environment?",
+      "answer": "Montreal Protocol (1987) is an international treaty to phase out production and consumption of ozone-depleting substances (CFCs, halons, etc.). It has led to significant reduction in these chemicals → ozone layer is slowly recovering → less harmful UV radiation reaching Earth.",
+      "answer_outline": [
+        "Year and purpose",
+        "Substances targeted",
+        "Positive outcome on ozone layer"
+      ],
+      "key_concepts": [
+        "Montreal Protocol",
+        "ozone recovery"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 12,
+      "question": "Suggest three ways by which students can contribute towards reducing environmental pollution in their daily life.",
+      "answer": "(i) Use cloth/jute bags instead of plastic bags and carry own water bottle to reduce plastic waste. (ii) Segregate biodegradable and non-biodegradable waste at home and promote composting. (iii) Save electricity and water, use public transport/cycle to reduce fossil fuel consumption and air pollution.",
+      "answer_outline": [
+        "Three practical suggestions",
+        "Each linked to pollution reduction"
+      ],
+      "key_concepts": [
+        "individual level action",
+        "sustainable habits"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is a garden considered a self-sustaining ecosystem while an aquarium is not?",
+      "answer": "Garden: natural producers, consumers, decomposers; sunlight, rain, soil nutrients available; cycles continue independently. Aquarium: artificial; limited producers (few plants), no natural decomposers, needs external input (food, oxygen, cleaning) by humans → not self-sustaining.",
+      "answer_outline": [
+        "Natural vs artificial",
+        "Components in garden",
+        "Limitations in aquarium"
+      ],
+      "key_concepts": [
+        "natural vs artificial ecosystem"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how burning of waste in open areas is more harmful than dumping it in landfills.",
+      "answer": "Burning releases toxic gases (dioxins, furans, CO, particulate matter) → air pollution, respiratory diseases, acid rain. Landfills cause leachate polluting groundwater but burning adds immediate atmospheric pollution and greenhouse gases. Both bad, but open burning directly affects air quality more severely.",
+      "answer_outline": [
+        "Air pollution from burning",
+        "Health and climate impact",
+        "Contrast with landfill issues"
+      ],
+      "key_concepts": [
+        "open burning hazards"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "How does the increase in carbon dioxide in the atmosphere affect the environment? Mention one human activity responsible for it.",
+      "answer": "Increased CO₂ → enhanced greenhouse effect → global warming → climate change, melting ice caps, sea level rise, extreme weather. One major human activity: burning of fossil fuels (coal, petrol, diesel) in industries, vehicles and power plants.",
+      "answer_outline": [
+        "Greenhouse effect and warming",
+        "Environmental consequences",
+        "Major human cause"
+      ],
+      "key_concepts": [
+        "global warming",
+        "CO₂ increase"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    }
+  ]
+}

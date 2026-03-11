@@ -1,0 +1,163 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 3: Drainage",
+    "generated_at": "2026-03-07T19:30:00",
+    "concepts": [
+        {
+            "concept_name": "Drainage",
+            "difficulty": "easy",
+            "lesson": "Drainage refers to the river system of an area. It describes how water from different streams and rivers flows and drains into larger water bodies like seas or oceans.",
+            "real_example": "Small streams from hills join together to form larger rivers such as the Ganga.",
+            "key_points": [
+                "System of rivers and streams",
+                "Water flows towards a common outlet",
+                "Includes rivers, tributaries and streams",
+                "Important part of physical geography"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Drainage Basin",
+            "difficulty": "easy",
+            "lesson": "A drainage basin is the area drained by a single river and its tributaries. All the water within this region eventually flows into the same river.",
+            "real_example": "The Ganga basin is one of the largest drainage basins in India.",
+            "key_points": [
+                "Area drained by a river system",
+                "Includes main river and tributaries",
+                "Separated by water divides",
+                "Important for water resource planning"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Water Divide",
+            "difficulty": "easy",
+            "lesson": "A water divide is an elevated land area such as a hill or mountain that separates two drainage basins.",
+            "real_example": "The upland near Ambala separates the Indus and Ganga river systems.",
+            "key_points": [
+                "Highland separating drainage basins",
+                "Controls river flow direction",
+                "Found in mountain regions",
+                "Important geographical boundary"
+            ],
+            "source_section": "Section 3.1"
+        },
+        {
+            "concept_name": "Himalayan Rivers",
+            "difficulty": "medium",
+            "lesson": "Himalayan rivers originate from glaciers and receive water from both snowmelt and rainfall. These rivers are perennial and flow throughout the year.",
+            "real_example": "The Ganga, Brahmaputra and Indus are major Himalayan rivers.",
+            "key_points": [
+                "Originate from Himalayan glaciers",
+                "Perennial rivers",
+                "Long courses",
+                "Carry large amounts of silt"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Peninsular Rivers",
+            "difficulty": "medium",
+            "lesson": "Peninsular rivers originate from the Peninsular plateau and mainly depend on rainfall. Most of these rivers are seasonal.",
+            "real_example": "Godavari, Krishna, Mahanadi and Kaveri are important peninsular rivers.",
+            "key_points": [
+                "Originate in Western Ghats or central highlands",
+                "Seasonal rivers",
+                "Shorter courses",
+                "Flow mostly towards the Bay of Bengal"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "River System",
+            "difficulty": "easy",
+            "lesson": "A river system consists of a main river along with all its tributaries that join it during its journey to the sea.",
+            "real_example": "The Ganga river system includes tributaries like Yamuna, Ghaghara and Kosi.",
+            "key_points": [
+                "Main river and tributaries",
+                "Forms a network of rivers",
+                "Drains a large basin area",
+                "Supports agriculture and settlements"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Tributary",
+            "difficulty": "easy",
+            "lesson": "A tributary is a smaller river or stream that joins a larger river during its course.",
+            "real_example": "Yamuna is a major tributary of the Ganga.",
+            "key_points": [
+                "Joins a main river",
+                "Part of a river system",
+                "Adds water and sediment",
+                "Common in large drainage basins"
+            ],
+            "source_section": "Section 3.2"
+        },
+        {
+            "concept_name": "Delta",
+            "difficulty": "medium",
+            "lesson": "A delta is formed when a river deposits sediments at its mouth where it enters a sea or ocean. Over time, these deposits form fertile land.",
+            "real_example": "The Sundarban delta is formed by the Ganga and Brahmaputra rivers.",
+            "key_points": [
+                "Formed by sediment deposition",
+                "Occurs at river mouth",
+                "Very fertile region",
+                "Often densely populated"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "concept_name": "Rift Valley Rivers",
+            "difficulty": "medium",
+            "lesson": "Some rivers flow through rift valleys created by tectonic activity. These valleys form due to faulting of the earth’s crust.",
+            "real_example": "The Narmada and Tapi rivers flow through rift valleys.",
+            "key_points": [
+                "Formed due to faulting",
+                "Rivers flow through deep valleys",
+                "Usually flow westwards",
+                "Examples include Narmada and Tapi"
+            ],
+            "source_section": "Section 3.3"
+        },
+        {
+            "concept_name": "Lakes",
+            "difficulty": "easy",
+            "lesson": "A lake is a body of water surrounded by land. Lakes may be natural or formed by human activities such as dam construction.",
+            "real_example": "Dal Lake in Kashmir attracts many tourists.",
+            "key_points": [
+                "Water body surrounded by land",
+                "May be natural or artificial",
+                "Important for tourism",
+                "Helps regulate river flow"
+            ],
+            "source_section": "Section 3.4"
+        },
+        {
+            "concept_name": "Importance of Rivers",
+            "difficulty": "medium",
+            "lesson": "Rivers are vital for human life because they provide water for agriculture, industries, transport and electricity generation.",
+            "real_example": "Many cities such as Varanasi and Kolkata developed along rivers.",
+            "key_points": [
+                "Provide water for irrigation",
+                "Support settlements",
+                "Used for hydroelectric power",
+                "Important for transportation"
+            ],
+            "source_section": "Section 3.5"
+        },
+        {
+            "concept_name": "River Pollution",
+            "difficulty": "hard",
+            "lesson": "River pollution occurs when harmful substances such as sewage, chemicals and industrial waste enter rivers and contaminate the water.",
+            "real_example": "Untreated industrial waste released into rivers can damage aquatic life.",
+            "key_points": [
+                "Caused by sewage and industrial waste",
+                "Reduces water quality",
+                "Harms aquatic life",
+                "Requires pollution control measures"
+            ],
+            "source_section": "Section 3.6"
+        }
+    ]
+}

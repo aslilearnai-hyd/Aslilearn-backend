@@ -1,0 +1,76 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Connecting the Dots (Data Handling)",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Calculate the Median for odd and even numbers of observations",
+        "Construct and interpret Double Bar Graphs",
+        "Understand basic Probability and chance",
+        "Predict outcomes using probability (Certain, Impossible, Likely)",
+        "Analyze complex data sets to draw conclusions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Median and Double Bar Graphs",
+            "topics_covered": [
+                "Finding the middle value (Median) in ordered data",
+                "Comparing two sets of data simultaneously",
+                "Interpreting growth or decline from double bars"
+            ],
+            "teaching_strategy": [
+                "Ordering-the-data demonstration (essential for Median)",
+                "Comparative analysis of two years of data",
+                ""
+            ],
+            "student_activities": [
+                "Find the median of [12, 3, 18, 7, 5] and [12, 3, 18, 7, 5, 20]",
+                "Draw a double bar graph for 'Temperature in Two Cities'"
+            ],
+            "assessment": [
+                "Median ordering test",
+                "Double bar graph interpretation worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Chance and Probability",
+            "topics_covered": [
+                "Concepts of 'Equally Likely' outcomes",
+                "The probability scale (0 to 1)",
+                "Predicting outcomes with dice, coins, and marbles"
+            ],
+            "teaching_strategy": [
+                "Experimental probability (Tossing a coin 20 times)",
+                "The formula: Favorable / Total",
+                "
+
+[Image of probability scale from impossible to certain]
+"
+            ],
+            "student_activities": [
+                "Calculate the probability of picking a red ball from a bag of mixed colors",
+                "List all possible outcomes of rolling two dice"
+            ],
+            "assessment": [
+                "Probability scenario quiz",
+                "Final chapter examination"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Dice and coins",
+        "Colored marbles or counters",
+        "Double bar graph templates",
+        "Advanced data handling software/spreadsheets"
+    ],
+    "evaluation_methods": [
+        "Comprehensive written test",
+        "Probability experiment report",
+        "Critical thinking data analysis tasks"
+    ],
+    "teacher_tip": "Students often forget to arrange data in order before finding the Median. Make it a 'Mantra': Median? MUST order first!"
+}

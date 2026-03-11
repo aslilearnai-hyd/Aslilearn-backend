@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: LIFE PROCESSES IN PLANTS",
+    "generated_at": "2026-03-07T00:04:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is photosynthesis considered a unique process on Earth?",
+            "answer": "It is the only process that captures solar energy and converts it into chemical energy (food) for all living organisms.",
+            "key_concepts": ["energy conversion"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How do plants obtain nitrogen for synthesizing proteins since they cannot use atmospheric nitrogen?",
+            "answer": "They absorb nitrogen in soluble forms (nitrates) from the soil, provided by nitrogen-fixing bacteria or fertilizers.",
+            "key_concepts": ["nitrogen absorption"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 3,
+            "question": "What role do guard cells play in the survival of a plant?",
+            "answer": "They regulate the opening and closing of stomata to balance gas exchange and prevent excessive water loss.",
+            "key_concepts": ["stomata regulation"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the Pitcher plant performs photosynthesis even though it is insectivorous.",
+            "answer": "It grows in nitrogen-deficient soil; it makes food via photosynthesis but eats insects to fulfill its nitrogen requirements.",
+            "key_concepts": ["partial heterotrophs"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the suction pull (transpiration pull) and how is it created?",
+            "answer": "It is a force created by the evaporation of water from leaves, which pulls water upwards from the roots through the xylem.",
+            "key_concepts": ["transpiration pull"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why do farmers grow leguminous plants like pulses in rotation with other crops?",
+            "answer": "To naturally enrich the soil with nitrogen through the Rhizobium bacteria present in their root nodules.",
+            "key_concepts": ["soil replenishment"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What happens during the 'dark phase' or 'light-independent' part of photosynthesis?",
+            "answer": "Carbon dioxide is reduced to carbohydrates (glucose) using the energy captured during the light phase.",
+            "key_concepts": ["photosynthesis stages"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the symbiotic relationship found in Lichens.",
+            "answer": "The fungus provides shelter and water, while the algae (or cyanobacteria) provides food through photosynthesis.",
+            "key_concepts": ["symbiosis"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why are some leaves red, brown, or violet in color instead of green?",
+            "answer": "These leaves have chlorophyll, but it is masked by larger amounts of other colored pigments like anthocyanins.",
+            "key_concepts": ["leaf pigments"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "State the equation for photosynthesis.",
+            "answer": "$6CO_2 + 6H_2O \xrightarrow{\text{Sunlight, Chlorophyll}} C_6H_{12}O_6 + 6O_2$",
+            "key_concepts": ["photosynthesis equation"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is food transported in the form of 'sucrose' rather than 'starch' in phloem?",
+            "answer": "Sucrose is soluble in water and can be easily transported through the sap, whereas starch is insoluble.",
+            "key_concepts": ["translocation"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "How do saprotrophs like fungi digest their food?",
+            "answer": "They secrete digestive juices onto dead matter to convert it into a solution, then absorb the nutrients from it.",
+            "key_concepts": ["extracellular digestion"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Distinguish between a 'Parasite' and a 'Saprotroph'.",
+            "answer": "Parasites derive nutrition from a living host; saprotrophs derive nutrition from dead and decaying matter.",
+            "key_concepts": ["modes of nutrition"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is 'Translocation'?",
+            "answer": "The process of transporting synthesized food from the leaves to other parts of the plant through the phloem.",
+            "key_concepts": ["food transport"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What are 'Starch' tests used to prove in plant experiments?",
+            "answer": "They are used to prove that photosynthesis has taken place, as starch is the stored form of glucose produced.",
+            "key_concepts": ["iodine test"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How do aquatic plants like Hydrilla perform photosynthesis?",
+            "answer": "They use carbon dioxide dissolved in water through their general body surface.",
+            "key_concepts": ["aquatic photosynthesis"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is the underside of a leaf usually lighter in color and contains more stomata?",
+            "answer": "To reduce direct sunlight exposure on stomata, which helps minimize water loss through transpiration.",
+            "key_concepts": ["leaf anatomy"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What would happen to life on Earth if photosynthesis stopped?",
+            "answer": "Food production would cease and oxygen levels would deplete, eventually leading to the extinction of almost all life.",
+            "key_concepts": ["importance of photosynthesis"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which specific mineral is essential for the formation of chlorophyll?",
+            "answer": "Magnesium",
+            "key_concepts": ["plant nutrition"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "How does a parasitic plant like Cuscuta identify its host?",
+            "answer": "It uses chemical sensors to detect the presence of a host and then wraps around it to absorb nutrients.",
+            "key_concepts": ["parasitism"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the role of xylem vessels in the plant structure.",
+            "answer": "They form a continuous network of channels from roots to leaves to transport water and dissolved minerals.",
+            "key_concepts": ["water transport"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why do mushrooms often grow in damp, dark places?",
+            "answer": "They are saprotrophs that require moisture to secrete digestive enzymes and do not need light since they don't photosynthesize.",
+            "key_concepts": ["saprotrophic conditions"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the difference between Autotrophs and Heterotrophs?",
+            "answer": "Autotrophs make their own food from simple substances; heterotrophs depend on plants or other animals for food.",
+            "key_concepts": ["nutrition classification"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "How does transpiration help in cooling the plant?",
+            "answer": "Evaporation of water from the leaf surface absorbs heat, lowering the temperature of the plant body.",
+            "key_concepts": ["cooling effect"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What are the essential raw materials required for photosynthesis?",
+            "answer": "Carbon dioxide, water, sunlight, and chlorophyll.",
+            "key_concepts": ["raw materials"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

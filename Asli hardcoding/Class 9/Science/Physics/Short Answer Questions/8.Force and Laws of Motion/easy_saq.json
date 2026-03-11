@@ -1,0 +1,287 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 8: Force and Laws of Motion",
+    "generated_at": "2026-03-06T13:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is force? Give one example.",
+            "answer": "Force is a push or pull acting on an object. Example: pushing a trolley.",
+            "key_concepts": [
+                "force",
+                "push or pull"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State two effects of force.",
+            "answer": "Force can change the speed of an object and change the direction of motion.",
+            "key_concepts": [
+                "effects of force"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are balanced forces?",
+            "answer": "Balanced forces are equal forces acting in opposite directions that do not change the state of motion of an object.",
+            "key_concepts": [
+                "balanced forces"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What are unbalanced forces?",
+            "answer": "Unbalanced forces are forces that cause a change in the state of motion of an object.",
+            "key_concepts": [
+                "unbalanced forces"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Define inertia.",
+            "answer": "Inertia is the tendency of an object to resist change in its state of motion or rest.",
+            "key_concepts": [
+                "inertia"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What does inertia depend on?",
+            "answer": "Inertia depends on the mass of the object.",
+            "key_concepts": [
+                "mass",
+                "inertia"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "State Newton’s First Law of Motion.",
+            "answer": "An object remains at rest or in uniform motion in a straight line unless acted upon by an unbalanced force.",
+            "key_concepts": [
+                "first law of motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is Newton’s First Law called the law of inertia?",
+            "answer": "Because it explains the tendency of objects to resist changes in their state of motion.",
+            "key_concepts": [
+                "law of inertia"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is momentum?",
+            "answer": "Momentum is the product of mass and velocity of an object.",
+            "key_concepts": [
+                "momentum",
+                "p = mv"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Write the formula for momentum.",
+            "answer": "Momentum = mass × velocity (p = mv).",
+            "key_concepts": [
+                "momentum formula"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the SI unit of momentum?",
+            "answer": "The SI unit of momentum is kg m/s.",
+            "key_concepts": [
+                "momentum unit"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "State Newton’s Second Law of Motion.",
+            "answer": "The rate of change of momentum of an object is proportional to the applied force.",
+            "key_concepts": [
+                "second law"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Write the formula for force.",
+            "answer": "Force = mass × acceleration (F = ma).",
+            "key_concepts": [
+                "F = ma"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the SI unit of force?",
+            "answer": "Newton (N).",
+            "key_concepts": [
+                "force unit"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Define one Newton.",
+            "answer": "One Newton is the force that produces acceleration of 1 m/s² in a mass of 1 kg.",
+            "key_concepts": [
+                "newton"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 16,
+            "question": "State Newton’s Third Law of Motion.",
+            "answer": "For every action there is an equal and opposite reaction.",
+            "key_concepts": [
+                "third law"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Do action and reaction act on the same object?",
+            "answer": "No, they act on different objects.",
+            "key_concepts": [
+                "action reaction"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Give one example of Newton’s Third Law.",
+            "answer": "A gun recoils backward when a bullet is fired forward.",
+            "key_concepts": [
+                "recoil"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do passengers fall forward when a bus stops suddenly?",
+            "answer": "Due to inertia of motion.",
+            "key_concepts": [
+                "inertia example"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is friction?",
+            "answer": "Friction is the force that opposes motion between two surfaces.",
+            "key_concepts": [
+                "friction"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do objects stop after some time when pushed?",
+            "answer": "Because friction opposes motion.",
+            "key_concepts": [
+                "friction"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the SI unit of mass?",
+            "answer": "Kilogram (kg).",
+            "key_concepts": [
+                "mass unit"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which quantity measures inertia?",
+            "answer": "Mass measures inertia.",
+            "key_concepts": [
+                "mass",
+                "inertia"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Name the three laws of motion.",
+            "answer": "Newton’s First Law, Second Law, and Third Law of Motion.",
+            "key_concepts": [
+                "three laws"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8"
+        },
+        {
+            "question_number": 25,
+            "question": "Who proposed the laws of motion?",
+            "answer": "Sir Isaac Newton.",
+            "key_concepts": [
+                "Newton"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 8"
+        }
+    ]
+}

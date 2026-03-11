@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Coordinate Geometry",
+    "difficulty_level": "Medium",
+    "generated_at": "2026-02-28T03:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The distance of the point (–3, 4) from the X-axis is?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "7"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance from X-axis is |y| = 4.",
+            "difficulty": "medium",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 2,
+            "question": "The distance of the point (6, –8) from the Y-axis is?",
+            "options": {
+                "A": "6",
+                "B": "8",
+                "C": "10",
+                "D": "14"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance from Y-axis is |x| = 6.",
+            "difficulty": "medium",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 3,
+            "question": "Which point lies on the Y-axis?",
+            "options": {
+                "A": "(3, 0)",
+                "B": "(0, –5)",
+                "C": "(–4, 2)",
+                "D": "(2, –3)"
+            },
+            "correct_answer": "B",
+            "explanation": "Points on Y-axis have x = 0.",
+            "difficulty": "medium",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 4,
+            "question": "If a point lies in the fourth quadrant, its coordinates are of the form?",
+            "options": {
+                "A": "(+, +)",
+                "B": "(–, +)",
+                "C": "(–, –)",
+                "D": "(+, –)"
+            },
+            "correct_answer": "D",
+            "explanation": "Fourth quadrant has x positive and y negative.",
+            "difficulty": "medium",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 5,
+            "question": "The point (0, 0) lies?",
+            "options": {
+                "A": "In first quadrant",
+                "B": "On X-axis",
+                "C": "On Y-axis",
+                "D": "On both axes"
+            },
+            "correct_answer": "D",
+            "explanation": "Origin lies on both axes.",
+            "difficulty": "medium",
+            "source_section": "Origin"
+        },
+        {
+            "question_number": 6,
+            "question": "Which quadrant contains the point (–5, –7)?",
+            "options": {
+                "A": "I",
+                "B": "II",
+                "C": "III",
+                "D": "IV"
+            },
+            "correct_answer": "C",
+            "explanation": "Both coordinates are negative → third quadrant.",
+            "difficulty": "medium",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 7,
+            "question": "The abscissa of the point (–9, 4) is?",
+            "options": {
+                "A": "4",
+                "B": "–4",
+                "C": "9",
+                "D": "–9"
+            },
+            "correct_answer": "D",
+            "explanation": "Abscissa means x-coordinate.",
+            "difficulty": "medium",
+            "source_section": "Terminology"
+        },
+        {
+            "question_number": 8,
+            "question": "The ordinate of the point (6, –11) is?",
+            "options": {
+                "A": "6",
+                "B": "11",
+                "C": "–11",
+                "D": "–6"
+            },
+            "correct_answer": "C",
+            "explanation": "Ordinate means y-coordinate.",
+            "difficulty": "medium",
+            "source_section": "Terminology"
+        },
+        {
+            "question_number": 9,
+            "question": "Which point is at a distance 5 units from the X-axis?",
+            "options": {
+                "A": "(3, 5)",
+                "B": "(5, 0)",
+                "C": "(–5, 3)",
+                "D": "(0, 5)"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance from X-axis = |y| = 5.",
+            "difficulty": "medium",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of the following points lies in the second quadrant?",
+            "options": {
+                "A": "(4, –2)",
+                "B": "(–6, 5)",
+                "C": "(–3, –4)",
+                "D": "(2, 6)"
+            },
+            "correct_answer": "B",
+            "explanation": "Second quadrant has x negative and y positive.",
+            "difficulty": "medium",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 11,
+            "question": "If x = 0 for a point, it lies on the?",
+            "options": {
+                "A": "X-axis",
+                "B": "Y-axis",
+                "C": "Origin",
+                "D": "Quadrant I"
+            },
+            "correct_answer": "B",
+            "explanation": "x = 0 indicates Y-axis.",
+            "difficulty": "medium",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 12,
+            "question": "If y = 0 for a point, it lies on the?",
+            "options": {
+                "A": "X-axis",
+                "B": "Y-axis",
+                "C": "Origin",
+                "D": "Quadrant II"
+            },
+            "correct_answer": "A",
+            "explanation": "y = 0 indicates X-axis.",
+            "difficulty": "medium",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 13,
+            "question": "Which point is closest to the X-axis?",
+            "options": {
+                "A": "(4, 6)",
+                "B": "(–3, 2)",
+                "C": "(1, –1)",
+                "D": "(–5, 4)"
+            },
+            "correct_answer": "C",
+            "explanation": "Closest point has smallest |y| value.",
+            "difficulty": "medium",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 14,
+            "question": "Which point is equidistant from both axes?",
+            "options": {
+                "A": "(4, 2)",
+                "B": "(–3, 3)",
+                "C": "(5, 1)",
+                "D": "(0, 4)"
+            },
+            "correct_answer": "B",
+            "explanation": "|x| = |y| = 3.",
+            "difficulty": "medium",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 15,
+            "question": "Which statement is correct?",
+            "options": {
+                "A": "Origin lies in first quadrant",
+                "B": "Origin lies in second quadrant",
+                "C": "Origin lies on both axes",
+                "D": "Origin lies in third quadrant"
+            },
+            "correct_answer": "C",
+            "explanation": "Origin lies on both axes.",
+            "difficulty": "medium",
+            "source_section": "Summary"
+        },
+        {
+            "question_number": 16,
+            "question": "The distance of the point (–2, 0) from the Y-axis is?",
+            "options": {
+                "A": "0",
+                "B": "2",
+                "C": "–2",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance from Y-axis is |x| = 2.",
+            "difficulty": "medium",
+            "source_section": "Distance from Axes"
+        },
+        {
+            "question_number": 17,
+            "question": "Which point lies exactly on the X-axis?",
+            "options": {
+                "A": "(0, 3)",
+                "B": "(–4, 0)",
+                "C": "(2, –5)",
+                "D": "(–1, 4)"
+            },
+            "correct_answer": "B",
+            "explanation": "Points on X-axis have y = 0.",
+            "difficulty": "medium",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 18,
+            "question": "Which quadrant contains the point (8, –1)?",
+            "options": {
+                "A": "I",
+                "B": "II",
+                "C": "III",
+                "D": "IV"
+            },
+            "correct_answer": "D",
+            "explanation": "x positive, y negative → fourth quadrant.",
+            "difficulty": "medium",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 19,
+            "question": "The point whose abscissa and ordinate are equal is?",
+            "options": {
+                "A": "(4, 2)",
+                "B": "(–3, –3)",
+                "C": "(5, –5)",
+                "D": "(0, 6)"
+            },
+            "correct_answer": "B",
+            "explanation": "Abscissa = ordinate.",
+            "difficulty": "medium",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following points lies farthest from the X-axis?",
+            "options": {
+                "A": "(2, 3)",
+                "B": "(–4, –7)",
+                "C": "(5, 1)",
+                "D": "(–6, 4)"
+            },
+            "correct_answer": "B",
+            "explanation": "Greatest |y| value is 7.",
+            "difficulty": "medium",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 21,
+            "question": "If a point lies on Y-axis, its x-coordinate is?",
+            "options": {
+                "A": "1",
+                "B": "0",
+                "C": "–1",
+                "D": "Any value"
+            },
+            "correct_answer": "B",
+            "explanation": "x = 0 for Y-axis.",
+            "difficulty": "medium",
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 22,
+            "question": "Which point lies in the first quadrant?",
+            "options": {
+                "A": "(–3, 5)",
+                "B": "(4, –2)",
+                "C": "(5, 6)",
+                "D": "(–6, –1)"
+            },
+            "correct_answer": "C",
+            "explanation": "Both coordinates positive.",
+            "difficulty": "medium",
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 23,
+            "question": "The distance of the origin from X-axis is?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "Undefined",
+                "D": "∞"
+            },
+            "correct_answer": "A",
+            "explanation": "Origin lies on X-axis.",
+            "difficulty": "medium",
+            "source_section": "Origin"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following points is equidistant from both axes?",
+            "options": {
+                "A": "(2, 5)",
+                "B": "(–4, 4)",
+                "C": "(6, –3)",
+                "D": "(0, 7)"
+            },
+            "correct_answer": "B",
+            "explanation": "|x| = |y| = 4.",
+            "difficulty": "medium",
+            "source_section": "Distance Concept"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is always true?",
+            "options": {
+                "A": "Origin lies in a quadrant",
+                "B": "Every point lies in a quadrant",
+                "C": "Points on axes do not lie in any quadrant",
+                "D": "All points have positive coordinates"
+            },
+            "correct_answer": "C",
+            "explanation": "Points on axes are not part of any quadrant.",
+            "difficulty": "medium",
+            "source_section": "Summary"
+        }
+    ]
+}

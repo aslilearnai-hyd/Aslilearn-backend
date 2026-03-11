@@ -1,0 +1,183 @@
+{
+  "content_type": "Short Answer Questions",
+  "chapter": "Chapter 2: People as Resource",
+  "generated_at": "2026-03-07T01:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How does investment in human capital yield a return similar to physical capital?",
+      "answer": "Investment in human capital through education, training, and healthcare increases the productivity and efficiency of an individual. This enhanced productivity leads to higher earnings and contributes more significantly to the National Income, just as a better machine yields more output.",
+      "key_points": ["productivity", "return on investment", "national income"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the concept of 'virtuous cycle' of human development with an example.",
+      "answer": "A virtuous cycle is created when educated parents, recognizing the value of education, invest heavily in their children's schooling and health. This leads to a more capable next generation. Example: Sakal's education led to a better job and salary, allowing for further family growth.",
+      "key_points": ["virtuous cycle", "investment", "inter-generational growth"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is the population considered an asset rather than a liability?",
+      "answer": "Population is an asset when it is healthy, educated, and skilled. Such a population contributes to the Gross National Product (GNP) through its productive work. It only becomes a liability when it lacks education and health, requiring more resources than it produces.",
+      "key_points": ["asset", "liability", "GNP", "productivity"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Distinguish between market and non-market activities.",
+      "answer": "Market activities involve remuneration and are performed for pay or profit (e.g., a teacher in a school). Non-market activities are performed for self-consumption (e.g., a mother cooking for her family or a farmer growing crops only for home use).",
+      "key_points": ["remuneration", "profit", "self-consumption"],
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 5,
+      "question": "How do education and skill formation determine an individual's earnings?",
+      "answer": "Education enhances a person's cognitive abilities and productivity, while skill formation provides specialized technical knowledge. In the labor market, those with higher education and technical skills command higher wages because they provide higher value to employers.",
+      "key_points": ["earnings", "productivity", "specialized knowledge"],
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Analyze the reasons for the low pay of women in the unorganized sector.",
+      "answer": "Women often have less access to education and skill training than men. In the unorganized sector, jobs often lack security and legal protection, and the traditional bias that women are less 'productive' leads to a lower wage gap.",
+      "key_points": ["gender pay gap", "unorganized sector", "skill gap"],
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the three-sector model of economic activities with one example each.",
+      "answer": "1. Primary: Extraction of natural resources (e.g., Mining). 2. Secondary: Processing raw materials (e.g., Sugar manufacturing). 3. Tertiary: Providing services (e.g., Banking).",
+      "key_points": ["primary", "secondary", "tertiary"],
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "What is 'Sarva Shiksha Abhiyan' and what is its time-bound goal?",
+      "answer": "It is a central government initiative in partnership with states to provide universal elementary education. Its goal was to enroll all children in the 6–14 age group in school by 2010.",
+      "key_points": ["universal education", "6–14 years", "elementary"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 9,
+      "question": "How does health serve as an indispensable basis for realizing one’s potential?",
+      "answer": "A healthy person has the physical and mental endurance to work and learn. Without health, a person cannot maximize their productivity, and they become a liability to their family and organization because they cannot work consistently.",
+      "key_points": ["health", "potential", "productivity"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the significance of the Mid-day Meal scheme in schools.",
+      "answer": "The scheme aims to improve the nutritional status of children and increase school attendance and retention by providing a cooked lunch. It also encourages children from poor families to stay in school.",
+      "key_points": ["nutrition", "attendance", "retention"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the difference between birth rate and death rate? How do they affect population growth?",
+      "answer": "Birth rate is babies born per 1000 people; death rate is people dying per 1000. If the birth rate is higher than the death rate, the population grows. A declining death rate with a high birth rate leads to rapid population expansion.",
+      "key_points": ["birth rate", "death rate", "population growth"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "What do you understand by the term 'literacy rate'? Why is it unequal among genders in India?",
+      "answer": "Literacy rate is the percentage of people who can read and write. It is unequal because of historical social biases where families prioritized the education of boys over girls, and girls were often kept home for domestic chores.",
+      "key_points": ["literacy", "gender inequality", "social bias"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Define unemployment. Who belongs to the 'workforce population' in India?",
+      "answer": "Unemployment is when people willing to work at prevailing wages cannot find jobs. In India, the workforce population consists of people aged 15 to 59 years.",
+      "key_points": ["unemployment", "15–59 years", "willingness"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain 'disguised unemployment' with an example from the agriculture sector.",
+      "answer": "It is a situation where more people work on a task than required. Example: If a farm needs 3 workers but 5 family members are working, the 2 extra people are disguisedly unemployed because their removal wouldn't decrease production.",
+      "key_points": ["disguised unemployment", "zero marginal productivity", "agriculture"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 15,
+      "question": "What is seasonal unemployment? Why is it common in rural areas?",
+      "answer": "It is unemployment that occurs during specific months when no work is available. In rural areas, farming is seasonal (sowing, weeding, harvesting), so laborers remain idle during the months in between.",
+      "key_points": ["seasonal", "rural", "agricultural cycle"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is 'educated unemployment' a peculiar problem in urban India?",
+      "answer": "It is a paradox where many people with matriculation, graduation, and PG degrees cannot find jobs, while at the same time, industries face a shortage of technically skilled manpower.",
+      "key_points": ["educated unemployment", "urban", "skill mismatch"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 17,
+      "question": "How does unemployment lead to the wastage of human resources?",
+      "answer": "People who could be assets to the economy turn into liabilities. The investment made in their education and health is wasted if they cannot contribute to the production of goods and services.",
+      "key_points": ["wastage", "liability", "asset"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Describe the impact of unemployment on the overall growth of an economy.",
+      "answer": "High unemployment increases the dependency ratio, puts a strain on the working population, and indicates a depressed economy. It can lead to social unrest and a decline in the health and quality of life of the people.",
+      "key_points": ["dependency ratio", "economic growth", "quality of life"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Compare the employment scenarios in the Primary and Tertiary sectors.",
+      "answer": "The Primary sector is the most labor-absorbing (especially agriculture) but suffers from underemployment. The Tertiary sector is growing rapidly (IT, banking) and offers higher-paying jobs but requires specific technical skills.",
+      "key_points": ["labor-absorbing", "skill-intensive", "sectoral shift"],
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 20,
+      "question": "What is 'Infant Mortality Rate' and why is its decline a good indicator of development?",
+      "answer": "IMR is the number of deaths of children under one year per 1000 live births. A decline indicates better healthcare, improved nutrition, and effective immunization, showing a better quality of life.",
+      "key_points": ["IMR", "healthcare", "development indicator"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 21,
+      "question": "How did Japan become a rich country without having natural resources?",
+      "answer": "Japan invested heavily in its human resources (education and health). Its skilled and healthy population used technology and efficiency to turn imported raw materials into high-value products.",
+      "key_points": ["Japan", "human capital", "efficiency", "technology"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the role of 'Navodaya Vidyalayas' in the Indian education system?",
+      "answer": "They were established by the government to provide high-quality education to talented children in rural areas, ensuring that talent is nurtured regardless of geographical or financial background.",
+      "key_points": ["Navodaya Vidyalayas", "rural talent", "quality education"],
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the difference between 'Vicious Cycle' and 'Virtuous Cycle' of human development.",
+      "answer": "A virtuous cycle involves investment in health and education leading to prosperity. A vicious cycle occurs when uneducated/unhealthy parents cannot invest in their children, keeping the next generation in the same disadvantaged state.",
+      "key_points": ["vicious cycle", "virtuous cycle", "poverty trap"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is the Tertiary sector growing faster than the other two sectors in recent years?",
+      "answer": "With economic development, demand for services like transport, banking, tourism, and IT increases. Also, the government provides basic services like hospitals and schools, which fall under this sector.",
+      "key_points": ["services", "economic development", "tertiary growth"],
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "How can vocationalization of education reduce the problem of educated unemployment?",
+      "answer": "Vocationalization provides job-specific skills (like coding, carpentry, or nursing) to students. This makes them immediately employable after school/college, bridging the gap between degrees and industry requirements.",
+      "key_points": ["vocationalization", "employability", "skill gap"],
+      "source_section": "Section 2.3"
+    }
+  ]
+}

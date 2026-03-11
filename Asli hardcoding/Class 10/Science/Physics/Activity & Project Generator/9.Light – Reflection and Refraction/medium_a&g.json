@@ -1,0 +1,195 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Light – Reflection and Refraction",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class10_science_ch9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Verification of Mirror Formula for Concave Mirror",
+            "objective": "Verify mirror formula and magnification using concave mirror",
+            "materials": [
+                "Concave mirror",
+                "Object (illuminated arrow or candle)",
+                "Screen",
+                "Meter scale",
+                "Optical bench (or stand)"
+            ],
+            "steps": [
+                "Set up concave mirror on optical bench",
+                "Fix object at different positions (beyond C, at C, between C & F)",
+                "Adjust screen for sharp real image",
+                "Record u, v, calculate f using 1/f = 1/v + 1/u, and magnification m = -v/u",
+                "Tabulate 5-6 readings and find average f"
+            ],
+            "learning_outcome": "Verifies mirror formula experimentally and understands sign convention",
+            "evaluation": "Table accuracy, calculations, and average focal length (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Ray Diagram Construction Challenge",
+            "objective": "Draw precise ray diagrams for spherical mirrors and lenses",
+            "materials": [
+                "Graph paper",
+                "Scale, protractor, compass",
+                "Colors",
+                "Textbook reference"
+            ],
+            "steps": [
+                "Draw ray diagrams for concave mirror (object between F & P, at infinity)",
+                "Draw for convex lens (object at 2F, beyond 2F)",
+                "Use at least 3 rays each, label nature, position, size",
+                "Compare with experimental observations"
+            ],
+            "learning_outcome": "Masters ray construction rules and predicts image characteristics",
+            "evaluation": "Precision, correct rays, labeling (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Refractive Index of Glass Slab with Pins",
+            "objective": "Determine refractive index using pins and lateral shift",
+            "materials": [
+                "Thick glass slab",
+                "Drawing board, white paper",
+                "Pins (4-6)",
+                "Protractor, scale"
+            ],
+            "steps": [
+                "Fix slab, draw outline",
+                "Place two pins for incident ray at 30°, 45°, 60°",
+                "Look through slab, place emergent pins in line",
+                "Trace rays, measure i, r, lateral shift d",
+                "Calculate μ = sin i / sin r and from shift formula"
+            ],
+            "learning_outcome": "Calculates refractive index accurately from multiple angles",
+            "evaluation": "Graph of sin i vs sin r, average μ (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Power of Convex Lens Experiment",
+            "objective": "Find focal length and power of convex lens using distant object",
+            "materials": [
+                "Convex lens",
+                "Screen",
+                "Distant object (window/sunlight)",
+                "Meter scale"
+            ],
+            "steps": [
+                "Focus image of distant object on screen",
+                "Measure image distance ≈ f",
+                "Repeat 5 times for different positions",
+                "Calculate power P = 1/f (in m)",
+                "Discuss errors"
+            ],
+            "learning_outcome": "Understands lens power and its unit dioptre",
+            "evaluation": "Readings table, average P, error discussion (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Comparison of Mirrors and Lenses Applications",
+            "objective": "Analyze real-life uses with ray diagrams",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Reference images"
+            ],
+            "steps": [
+                "Select 4 devices: shaving mirror, rear-view mirror, magnifying glass, projector lens",
+                "Draw ray diagrams showing image formation",
+                "Explain why specific mirror/lens is used",
+                "Discuss advantages/disadvantages"
+            ],
+            "learning_outcome": "Applies concepts to practical optical instruments",
+            "evaluation": "Diagrams, explanations, depth (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Total Internal Reflection Demonstration",
+            "objective": "Observe TIR using laser and water stream or prism",
+            "materials": [
+                "Laser pointer",
+                "Transparent plastic bottle with water hole",
+                "Dark room"
+            ],
+            "steps": [
+                "Fill bottle, poke small hole, shine laser into stream",
+                "Observe light bending and staying in stream (TIR)",
+                "Explain critical angle and conditions for TIR",
+                "Relate to optical fibres"
+            ],
+            "learning_outcome": "Understands TIR and its applications",
+            "evaluation": "Observation notes, explanation, diagram (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Lens Combination Activity",
+            "objective": "Study effective focal length of two thin lenses in contact",
+            "materials": [
+                "Two convex lenses (different f)",
+                "Torch, screen",
+                "Scale"
+            ],
+            "steps": [
+                "Find individual f1, f2 using distant object",
+                "Place in contact, find combined f",
+                "Verify 1/F = 1/f1 + 1/f2",
+                "Calculate power addition"
+            ],
+            "learning_outcome": "Learns lens power addition for combination",
+            "evaluation": "Calculations, verification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Apparent Depth vs Real Depth Graph",
+            "objective": "Plot graph and find refractive index of water",
+            "materials": [
+                "Beaker, water, coin",
+                "Scale, graph paper"
+            ],
+            "steps": [
+                "Vary water depth, measure real and apparent depth",
+                "Take 6-8 readings",
+                "Plot real vs apparent depth, find slope = μ",
+                "Discuss limitations"
+            ],
+            "learning_outcome": "Uses graphical method for refractive index",
+            "evaluation": "Graph accuracy, μ value, discussion (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Sign Convention Application Numerical Poster",
+            "objective": "Solve numerical problems using formulas",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Collect 5 numerical problems (mirror/lens formula, magnification, power)",
+                "Solve step-by-step with sign convention",
+                "Present on poster with diagrams",
+                "Explain common mistakes"
+            ],
+            "learning_outcome": "Masters numerical solving with sign rules",
+            "evaluation": "Correct solutions, presentation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Optical Illusion Model with Mirrors",
+            "objective": "Create illusion using multiple reflections",
+            "materials": [
+                "Two plane mirrors",
+                "Cardboard box",
+                "Object/toy"
+            ],
+            "steps": [
+                "Fix mirrors at angle to create multiple images",
+                "Place object, observe infinite images",
+                "Explain using laws of reflection",
+                "Relate to kaleidoscope"
+            ],
+            "learning_outcome": "Applies reflection to create optical effects",
+            "evaluation": "Working model, explanation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Triangles",
+    "difficulty": "Easy",
+    "source_pdf": "jemh106.pdf",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a triangle?",
+            "answer": "A triangle is a closed figure formed by three line segments.",
+            "key_points": [
+                "triangle"
+            ],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "How many sides does a triangle have?",
+            "answer": "Three",
+            "key_points": [
+                "sides"
+            ],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 3,
+            "question": "How many angles does a triangle have?",
+            "answer": "Three",
+            "key_points": [
+                "angles"
+            ],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the sum of the angles of a triangle?",
+            "answer": "180°",
+            "key_points": [
+                "angle sum"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 5,
+            "question": "What is an equilateral triangle?",
+            "answer": "A triangle with all sides equal.",
+            "key_points": [
+                "equilateral"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 6,
+            "question": "What is an isosceles triangle?",
+            "answer": "A triangle with two equal sides.",
+            "key_points": [
+                "isosceles"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a scalene triangle?",
+            "answer": "A triangle with all sides unequal.",
+            "key_points": [
+                "scalene"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a right-angled triangle?",
+            "answer": "A triangle having one angle equal to 90°.",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an acute-angled triangle?",
+            "answer": "A triangle with all angles less than 90°.",
+            "key_points": [
+                "acute triangle"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 10,
+            "question": "What is an obtuse-angled triangle?",
+            "answer": "A triangle with one angle greater than 90°.",
+            "key_points": [
+                "obtuse triangle"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 11,
+            "question": "How many medians does a triangle have?",
+            "answer": "Three",
+            "key_points": [
+                "medians"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 12,
+            "question": "How many altitudes does a triangle have?",
+            "answer": "Three",
+            "key_points": [
+                "altitudes"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 13,
+            "question": "How many sides are equal in an equilateral triangle?",
+            "answer": "Three",
+            "key_points": [
+                "equilateral"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 14,
+            "question": "How many sides are equal in an isosceles triangle?",
+            "answer": "Two",
+            "key_points": [
+                "isosceles"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 15,
+            "question": "Which triangle has no equal sides?",
+            "answer": "Scalene triangle",
+            "key_points": [
+                "scalene"
+            ],
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the longest side of a right-angled triangle called?",
+            "answer": "Hypotenuse",
+            "key_points": [
+                "hypotenuse"
+            ],
+            "source_section": "Right Triangle"
+        },
+        {
+            "question_number": 17,
+            "question": "How many vertices does a triangle have?",
+            "answer": "Three",
+            "key_points": [
+                "vertices"
+            ],
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the point where the medians meet called?",
+            "answer": "Centroid",
+            "key_points": [
+                "centroid"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the point where altitudes meet called?",
+            "answer": "Orthocentre",
+            "key_points": [
+                "orthocentre"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the point where angle bisectors meet called?",
+            "answer": "Incentre",
+            "key_points": [
+                "incentre"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the point where perpendicular bisectors meet called?",
+            "answer": "Circumcentre",
+            "key_points": [
+                "circumcentre"
+            ],
+            "source_section": "Lines in a Triangle"
+        },
+        {
+            "question_number": 22,
+            "question": "What tool is used to draw triangles?",
+            "answer": "Ruler",
+            "key_points": [
+                "construction"
+            ],
+            "source_section": "Construction"
+        },
+        {
+            "question_number": 23,
+            "question": "Can a triangle have two right angles?",
+            "answer": "No",
+            "key_points": [
+                "angles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 24,
+            "question": "Can a triangle have all obtuse angles?",
+            "answer": "No",
+            "key_points": [
+                "angles"
+            ],
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the shape formed by joining three non-collinear points?",
+            "answer": "Triangle",
+            "key_points": [
+                "definition"
+            ],
+            "source_section": "Introduction"
+        }
+    ]
+}

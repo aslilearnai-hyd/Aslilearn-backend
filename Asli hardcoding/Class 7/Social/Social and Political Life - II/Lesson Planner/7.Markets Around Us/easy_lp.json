@@ -1,0 +1,152 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Markets Around Us",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand what markets are and why they exist",
+        "Identify different types of markets in the locality",
+        "Learn about goods, services, and price variations",
+        "Observe buyer-seller interactions and trade practices",
+        "Develop observation, comparison, and basic analytical skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Markets",
+            "topics_covered": [
+                "Definition of a market",
+                "Purpose of markets in daily life",
+                "Different goods and services sold"
+            ],
+            "teaching_strategy": [
+                "Show pictures of local markets and shops",
+                "Ask students about markets they visit"
+            ],
+            "student_activities": [
+                "Share names of markets they know",
+                "Discuss what they buy or see in markets"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Types of Markets",
+            "topics_covered": [
+                "Local markets, weekly haats, and supermarkets",
+                "Differences between small shops and large stores"
+            ],
+            "teaching_strategy": [
+                "Use charts or slides showing different market types",
+                "Compare pictures of traditional and modern markets"
+            ],
+            "student_activities": [
+                "Identify different types of markets around them",
+                "Discuss which type they prefer and why"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Notebook notes"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Goods and Services",
+            "topics_covered": [
+                "Difference between goods and services",
+                "Examples from markets they visit"
+            ],
+            "teaching_strategy": [
+                "Show real-life examples or pictures",
+                "Ask students to sort items into goods and services"
+            ],
+            "student_activities": [
+                "Create a small list of goods and services seen in a market",
+                "Share examples with classmates"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral Q&A"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Price and Bargaining",
+            "topics_covered": [
+                "How prices vary in different shops",
+                "Introduction to bargaining and negotiation"
+            ],
+            "teaching_strategy": [
+                "Show examples of price tags and price differences",
+                "Role-play a small buyer-seller scenario in class"
+            ],
+            "student_activities": [
+                "Simulate buying an item and bargaining",
+                "Compare prices of items from different shops"
+            ],
+            "assessment": [
+                "Participation in role-play",
+                "Observation of understanding"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Trade and Exchange",
+            "topics_covered": [
+                "Barter system vs money transactions",
+                "How trade helps people get what they need"
+            ],
+            "teaching_strategy": [
+                "Storytelling about barter and early trade",
+                "Use props to demonstrate exchange"
+            ],
+            "student_activities": [
+                "Simulate a simple barter activity in class",
+                "Identify what could be exchanged in real-life markets"
+            ],
+            "assessment": [
+                "Participation in activity",
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Fun Quiz",
+            "topics_covered": [
+                "Recap of market types, goods, services, and trade",
+                "Simple cause-effect questions about market activities"
+            ],
+            "teaching_strategy": [
+                "Fun quiz with pictures and multiple choice",
+                "Class discussion relating markets to daily life"
+            ],
+            "student_activities": [
+                "Answer quiz questions",
+                "Draw or share one thing they learned about markets"
+            ],
+            "assessment": [
+                "Quiz scores",
+                "Participation",
+                "Notebook notes"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Pictures of local markets, shops, and products",
+        "Simple props for trade and barter demonstration",
+        "Charts for goods and services",
+        "Drawing sheets and colors for activities"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Class discussion",
+        "Notebook checking",
+        "Fun quiz and role-play participation"
+    ],
+    "teacher_tip": "Use real-life examples and encourage students to relate markets to their daily shopping experiences. Keep activities interactive with role-play and drawing tasks."
+}

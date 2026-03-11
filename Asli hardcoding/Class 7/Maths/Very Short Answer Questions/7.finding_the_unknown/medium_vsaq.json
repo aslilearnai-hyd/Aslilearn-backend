@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: FINDING THE UNKNOWN (ALGEBRAIC EQUATIONS)",
+    "generated_at": "2026-03-06T00:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Solve the equation: $2x + 5 = 17$.",
+            "answer": "$2x = 12 \\Rightarrow x = 6$.",
+            "key_concepts": ["Two-step equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Write an algebraic expression for: 'Add 7 to $x$ and then multiply the result by 3'.",
+            "answer": "$3(x + 7)$.",
+            "key_concepts": ["Order of operations", "Brackets"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "answer": "$3a = 15 \\Rightarrow a = 5$.",
+            "question": "Solve for $a$: $3a - 4 = 11$.",
+            "key_concepts": ["Transposition"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "If the perimeter of a square is $P$, write the expression for the length of its side $s$.",
+            "answer": "$s = P/4$.",
+            "key_concepts": ["Algebraic formulas"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Solve: $x/3 + 1 = 5$.",
+            "answer": "$x/3 = 4 \\Rightarrow x = 12$.",
+            "key_concepts": ["Solving equations with division"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the value of $2(x - 3)$ when $x = 10$?",
+            "answer": "$2(10 - 3) = 2(7) = 14$.",
+            "key_concepts": ["Substitution", "Brackets"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Translate into an equation: 'If you subtract 5 from 4 times a number $n$, you get 19'.",
+            "answer": "$4n - 5 = 19$.",
+            "key_concepts": ["Translating word problems"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Solve: $15 - 2y = 7$.",
+            "answer": "$-2y = -8 \\Rightarrow y = 4$.",
+            "key_concepts": ["Negative coefficients"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the value of $y$ if $y + y + y = 21$.",
+            "answer": "$3y = 21 \\Rightarrow y = 7$.",
+            "key_concepts": ["Combining like terms"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "A fruit seller has $x$ apples. He sells 20 and has 35 left. Form an equation.",
+            "answer": "$x - 20 = 35$.",
+            "key_concepts": ["Forming equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Solve: $5(x + 2) = 30$.",
+            "answer": "$x + 2 = 6 \\Rightarrow x = 4$.",
+            "key_concepts": ["Equations with brackets"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "If $x = 4$, which is larger: $3x + 2$ or $4x - 1$?",
+            "answer": "$3(4)+2 = 14$; $4(4)-1 = 15$. So $4x - 1$ is larger.",
+            "key_concepts": ["Substitution and Comparison"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What number should be added to $x$ so that the result is $2x$?",
+            "answer": "$x$ (because $x + x = 2x$).",
+            "key_concepts": ["Basic identities"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Solve for $m$: $10 = m/2 - 3$.",
+            "answer": "$13 = m/2 \\Rightarrow m = 26$.",
+            "key_concepts": ["Two-step equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Write the expression: 'A number $z$ divided by 4 and then decreased by 6'.",
+            "answer": "$z/4 - 6$.",
+            "key_concepts": ["Algebraic operations"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "If the sum of three consecutive integers is 18, form an equation using $x$ as the first integer.",
+            "answer": "$x + (x+1) + (x+2) = 18$ or $3x + 3 = 18$.",
+            "key_concepts": ["Consecutive integers"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Solve: $1.2x = 6$.",
+            "answer": "$x = 6/1.2 \\Rightarrow x = 5$.",
+            "key_concepts": ["Decimals in equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "If $p = -2$, find the value of $5p + 10$.",
+            "answer": "$5(-2) + 10 = -10 + 10 = 0$.",
+            "key_concepts": ["Integers and substitution"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Simplify the expression: $4x + 3y - 2x + y$.",
+            "answer": "$2x + 4y$.",
+            "key_concepts": ["Simplification"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Express in words: $2(x + 5) = 20$.",
+            "answer": "Twice the sum of $x$ and 5 is equal to 20.",
+            "key_concepts": ["Verbalizing equations"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Solve for $k$: $3k + 3 = 0$.",
+            "answer": "$3k = -3 \\Rightarrow k = -1$.",
+            "key_concepts": ["Zero as a result"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "If a father is $x$ years old and his son is 25 years younger, what is the son's age?",
+            "answer": "$x - 25$.",
+            "key_concepts": ["Age problems"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Solve: $7y = 4y + 9$.",
+            "answer": "$3y = 9 \\Rightarrow y = 3$.",
+            "key_concepts": ["Variables on both sides"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the constant term in the expression $4x^2 + 7x - 9$.",
+            "answer": "$-9$.",
+            "key_concepts": ["Constants"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 25,
+            "question": "If $x/5 = 12/60$, what is $x$?",
+            "answer": "$x/5 = 1/5 \\Rightarrow x = 1$.",
+            "key_concepts": ["Ratio and proportion in algebra"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        }
+    ]
+}

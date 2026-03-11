@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 7: Proportional Reasoning - 1",
+  "difficulty": "Medium",
+  "source_pdf": "ch-7_PROPORTINAL_REASONING-1.pdf",
+  "short_notes": {
+    "key_points": [
+      "A ratio compares two quantities and shows their relationship",
+      "Ratios can be simplified by dividing both terms by their common factor",
+      "Equivalent ratios represent the same proportional relationship",
+      "A proportion is formed when two ratios are equal",
+      "Proportional reasoning helps solve problems involving scaling and comparisons"
+    ],
+    "examples": [
+      "Simplified ratio: 8:12 = 2:3",
+      "Equivalent ratios: 3:5 = 6:10",
+      "Proportion example: 4:6 = 8:12",
+      "Real-life example: recipe ingredients scaled for more servings"
+    ],
+    "formulas": [
+      "Ratio → a:b = a/b",
+      "Simplifying ratio → divide both numbers by HCF",
+      "Proportion rule → a:b = c:d if a × d = b × c"
+    ],
+    "exam_tips": [
+      "Convert quantities to the same units before forming ratios",
+      "Use HCF to simplify ratios quickly",
+      "Use cross multiplication to verify proportions",
+      "Check answers carefully in proportion problems"
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Structure of the Atom",
+    "difficulty": "Hard",
+    "source_pdf": "iesc104.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Analysis of Rutherford’s Postulates",
+            "objective": "To correlate experimental observations with the mathematical probability of alpha-particle deflection.",
+            "materials": [
+                "Detailed diagram of Alpha-particle scattering experiment",
+                "Graph paper"
+            ],
+            "steps": [
+                "Analyze the observation that 1 out of 12,000 particles rebounded at 180 degrees.",
+                "Calculate the approximate volume of the nucleus relative to the atom based on these statistics.",
+                "Construct a diagram showing the concentrated positive charge and the vast empty space as proposed by Rutherford."
+            ],
+            "learning_outcome": "Synthesizes how a single rare observation led to the discovery of the atomic nucleus and the overthrow of the Thomson model.",
+            "evaluation": "Explain why the rebound of alpha particles was described as 'firing a 15-inch shell at a piece of tissue paper and it comes back and hits you' (10 marks)."
+        },
+        
+
+[Image of scattering of alpha-particles by a gold foil]
+
+        {
+            "sl_no": 2,
+            "title": "Stability Paradox: Maxwell’s Theory vs. Rutherford",
+            "objective": "To investigate the theoretical failure of the nuclear model regarding electromagnetic radiation.",
+            "materials": [
+                "Research notes on Maxwell’s electromagnetic theory"
+            ],
+            "steps": [
+                "Examine the theory that any accelerated charged particle must radiate energy.",
+                "Model the spiral path an electron would take if it lost energy while revolving around the nucleus.",
+                "Discuss how Bohr’s concept of 'discrete orbits' resolved the paradox of atomic collapse."
+            ],
+            "learning_outcome": "Evaluates the necessity of quantized energy levels in maintaining atomic stability.",
+            "evaluation": "Provide a technical argument for why Rutherford’s atom should be unstable according to classical physics (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Bohr-Bury Configuration Logic",
+            "objective": "To derive the electronic distribution of elements based on energetic stability.",
+            "materials": [
+                "Table 4.1",
+                "Compass and Ruler"
+            ],
+            "steps": [
+                "Apply the $2n^2$ rule for the first four shells (K, L, M, N).",
+                "Analyze the 'Octet Rule' constraint for the outermost shell regardless of $n$.",
+                "Derive the step-wise filling order for Potassium (Z=19) and Calcium (Z=20) where the N-shell begins before the M-shell is full."
+            ],
+            "learning_outcome": "Mastery of advanced electronic configuration and the principles of shell capacity.",
+            "evaluation": "Determine the electronic configuration of an element with atomic number 18 and explain its stability (10 marks)."
+        },
+        
+        {
+            "sl_no": 4,
+            "title": "Valency and Chemical Reactivity Trends",
+            "objective": "To correlate the number of valence electrons with the periodic nature of reactivity.",
+            "materials": [
+                "Schematic structures of the first 18 elements"
+            ],
+            "steps": [
+                "Compare the valence shells of Helium, Neon, and Argon.",
+                "Identify why elements with 1 or 7 valence electrons are highly reactive compared to those with full shells.",
+                "Calculate the valency of Phosphorus and Sulphur, explaining why they exhibit multiple valencies (e.g., Phosphorus as 3 or 5)."
+            ],
+            "learning_outcome": "Understands that chemical activity is a drive toward a stable octet configuration.",
+            "evaluation": "Differentiate between 'valence electrons' and 'valency' using Magnesium and Nitrogen as examples (10 marks)."
+        },
+        
+        {
+            "sl_no": 5,
+            "title": "Mass Spectrometry Concept: Average Atomic Mass",
+            "objective": "To calculate the fractional atomic mass of elements based on isotopic abundance.",
+            "materials": [
+                "Abundance data for Chlorine and Carbon isotopes",
+                "Scientific Calculator"
+            ],
+            "steps": [
+                "Use the data: Cl-35 (75%) and Cl-37 (25%).",
+                "Formulate the weighted average equation to find the relative atomic mass.",
+                "Research why the mass of a single atom of Chlorine is never 35.5 u, yet the average mass is."
+            ],
+            "learning_outcome": "Mathematical proficiency in calculating isotopic distributions and understanding fractional mass units.",
+            "evaluation": "Calculate the average atomic mass of an element X existing as 90% of ${}_{8}^{16}X$ and 10% of ${}_{8}^{18}X$ (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "The Neutron Discovery and Nucleon Balance",
+            "objective": "To examine the contribution of J. Chadwick and the concept of mass number.",
+            "materials": [
+                "Periodic table",
+                "Atomic data for Hydrogen isotopes"
+            ],
+            "steps": [
+                "Discuss the discovery of the neutron in 1932 and its location in the nucleus.",
+                "Calculate the number of neutrons in different isotopes of Hydrogen (Protium, Deuterium, Tritium).",
+                "Analyze why the mass of an atom is concentrated in the nucleus by comparing proton and electron masses."
+            ],
+            "learning_outcome": "Understands the definition of mass number (A) as the total number of protons and neutrons (nucleons).",
+            "evaluation": "An atom has mass number 4 and 2 protons. Determine the number of neutrons and name the element (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Isotopes vs. Isobars: Structural Divergence",
+            "objective": "To contrast nuclear variants based on atomic and mass numbers.",
+            "materials": [
+                "Data sets for Calcium (Z=20, A=40) and Argon (Z=18, A=40)"
+            ],
+            "steps": [
+                "Compare the number of protons and neutrons in Calcium and Argon.",
+                "Define Isobars as atoms of different elements with the same mass number.",
+                "Contrast these with Isotopes of Carbon (C-12 and C-14) regarding their chemical properties."
+            ],
+            "learning_outcome": "Distinguishes between elements that share mass vs. elements that share identity.",
+            "evaluation": "Compare isotopes and isobars based on their chemical reactivity and sub-atomic counts (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Industrial and Medical Radiochemistry",
+            "objective": "To evaluate the specific properties of isotopes in technology.",
+            "materials": [
+                "Case studies on Uranium-235, Cobalt-60, and Iodine isotopes"
+            ],
+            "steps": [
+                "Investigate how an isotope of Uranium is used as fuel in nuclear reactors.",
+                "Research the role of the Cobalt isotope in cancer therapy and the Iodine isotope in treating goitre.",
+                "Identify why isotopes of the same element have similar chemical properties but different physical properties."
+            ],
+            "learning_outcome": "Appreciates the practical application of atomic structure in modern science and medicine.",
+            "evaluation": "Explain why the chemical properties of isotopes remain identical despite different masses (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Composition of the Nucleus and Notation",
+            "objective": "To master the standard notation ${}_{Z}^{A}X$ for atoms and ions.",
+            "materials": [
+                "Symbols of elements"
+            ],
+            "steps": [
+                "Practice writing the notation for the Oxide ion ($O^{2-}$) and Sodium ion ($Na^{+}$).",
+                "Analyze the change in the number of electrons vs. the stability of the nucleus during ion formation.",
+                "Verify that the mass number remains unchanged during chemical ion formation."
+            ],
+            "learning_outcome": "Understands that chemical reactions involve valence electrons, while the nucleus remains intact.",
+            "evaluation": "If an ion $X^{2-}$ has 10 electrons and 8 neutrons, calculate the atomic number and mass number of X (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Atomic Theory Comparison Project",
+            "objective": "To construct a timeline of the evolution of atomic models.",
+            "materials": [
+                "Summaries of Thomson, Rutherford, and Bohr models"
+            ],
+            "steps": [
+                "Compare the location and behavior of electrons in all three models.",
+                "Analyze the discovery of the three sub-atomic particles: electron (Thomson), proton (Goldstein/Rutherford), and neutron (Chadwick).",
+                "Summarize how each model improved upon the previous one's limitations."
+            ],
+            "learning_outcome": "Provides a comprehensive overview of the historical development of atomic structure.",
+            "evaluation": "Compare all the proposed models of an atom given in this chapter in a tabular form (10 marks)."
+        }
+    ]
+}

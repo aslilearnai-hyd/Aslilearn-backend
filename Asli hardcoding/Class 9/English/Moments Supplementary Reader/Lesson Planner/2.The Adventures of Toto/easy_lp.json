@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Adventures of Toto",
+    "title": "Lesson Planner – The Adventures of Toto",
+    "author": "Ruskin Bond",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify main characters and their traits",
+        "Understand Toto’s mischievous behaviour",
+        "Develop vocabulary from the lesson",
+        "Improve reading and comprehension skills",
+        "Relate the story to real-life experiences with animals"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Story",
+            "topics_covered": [
+                "Introduction to Ruskin Bond",
+                "Background of the story",
+                "Overview of Toto and Grandfather"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Teacher explanation",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share experiences about pets or animals"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Characters and Setting",
+            "topics_covered": [
+                "Character of Toto",
+                "Character of Grandfather",
+                "Setting of Grandfather’s private zoo"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character discussion"
+            ],
+            "student_activities": [
+                "List the characters",
+                "Write one sentence describing each character"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Toto’s Mischief",
+            "topics_covered": [
+                "Toto destroying the closet",
+                "Toto’s playful nature",
+                "Humorous incidents in the house"
+            ],
+            "teaching_strategy": [
+                "Story explanation",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Identify mischievous acts of Toto",
+                "Discuss why Toto behaves this way"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Train Journey Episode",
+            "topics_covered": [
+                "Journey to Saharanpur",
+                "Ticket collector incident",
+                "Humour in the situation"
+            ],
+            "teaching_strategy": [
+                "Narrative explanation",
+                "Guided questioning"
+            ],
+            "student_activities": [
+                "Explain the ticket collector incident",
+                "Identify the humorous element"
+            ],
+            "assessment": [
+                "Oral explanation",
+                "Short written response"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Toto’s Bath and Kitchen Incident",
+            "topics_covered": [
+                "Toto’s bathing habit",
+                "The kettle incident",
+                "Understanding animal behaviour"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Discussion on animal instincts"
+            ],
+            "student_activities": [
+                "Describe how Toto takes a bath",
+                "Discuss why the kettle incident was dangerous"
+            ],
+            "assessment": [
+                "Notebook exercise",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme, Moral, and Revision",
+            "topics_covered": [
+                "Theme of the story",
+                "Relationship between humans and animals",
+                "Summary and revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Write the moral of the story",
+                "Write a short summary of the lesson"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Flashcards for vocabulary",
+        "Pictures of animals or pets"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to share their experiences with pets and discuss how animals behave differently from humans to make the lesson more engaging."
+}

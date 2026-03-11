@@ -1,0 +1,146 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Probability",
+    "difficulty": "Medium",
+    "source_pdf": "jemh114.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Sample Space Construction",
+            "objective": "Construct sample space",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List outcomes",
+                "Verify completeness"
+            ],
+            "learning_outcome": "Sample space understanding",
+            "evaluation": "Correct listing (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Favourable Outcomes",
+            "objective": "Identify favourable cases",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Define event",
+                "List favourable outcomes"
+            ],
+            "learning_outcome": "Event understanding",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Probability Calculation",
+            "objective": "Calculate probability",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Apply formula",
+                "Compute value"
+            ],
+            "learning_outcome": "Applies probability formula",
+            "evaluation": "Correct calculation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Event Classification",
+            "objective": "Classify events",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List events",
+                "Classify"
+            ],
+            "learning_outcome": "Event classification",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Probability",
+            "objective": "Apply probability to life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose example",
+                "Explain"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Explanation clarity (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Experimental vs Theoretical",
+            "objective": "Compare probability types",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Prediction Activity",
+            "objective": "Predict outcomes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Predict event",
+                "Justify"
+            ],
+            "learning_outcome": "Reasoning skill",
+            "evaluation": "Logical justification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Error Analysis",
+            "objective": "Find probability mistakes",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse wrong solution",
+                "Correct it"
+            ],
+            "learning_outcome": "Error correction",
+            "evaluation": "Correct correction (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Concept Summary",
+            "objective": "Summarise probability concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write summary"
+            ],
+            "learning_outcome": "Concept consolidation",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Reflection Task",
+            "objective": "Reflect on probability learning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write reflections"
+            ],
+            "learning_outcome": "Deep understanding",
+            "evaluation": "Depth (10 marks)"
+        }
+    ]
+}

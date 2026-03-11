@@ -1,0 +1,31 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Real Numbers",
+    "difficulty": "Hard",
+    "source_pdf": "jemh101.pdf",
+    "short_notes": {
+        "key_points": [
+            "Irrational numbers are proved using proof by contradiction",
+            "If a prime p divides a², then p divides a",
+            "Non-terminating non-repeating decimals represent irrational numbers",
+            "Euclid’s Division Algorithm is efficient for large numbers"
+        ],
+        "examples": [
+            "√2 is irrational (proved by contradiction)",
+            "7/12 has a non-terminating repeating decimal",
+            "If HCF = 6 and product = 1800, then LCM = 300"
+        ],
+        "formulas": [
+            "Euclid’s Division Algorithm: a = bq + r",
+            "LCM = (a × b) / HCF",
+            "Irrational decimal → non-terminating and non-repeating"
+        ],
+        "exam_tips": [
+            "Always reduce fractions before analysing decimal expansion",
+            "Write assumption, contradiction, and conclusion clearly in proofs",
+            "Do not skip logical justification in irrationality proofs",
+            "Watch out for hidden exam traps in decimal questions"
+        ]
+    }
+}

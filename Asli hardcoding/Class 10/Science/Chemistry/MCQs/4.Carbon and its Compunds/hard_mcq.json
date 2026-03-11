@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Carbon and its Compounds",
+  "generated_at": "2026-03-10T23:45:30",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is the correct reason why carbon cannot form $C^{4+}$ cations?",
+      "options": {
+        "A": "It requires a very small amount of energy to remove four electrons",
+        "B": "It would require a large amount of energy to remove four electrons leaving a carbon cation with six protons in its nucleus holding on to just two electrons",
+        "C": "The nucleus would not be able to hold onto the remaining electrons",
+        "D": "Carbon is a non-metal and can only gain electrons"
+      },
+      "correct_answer": "B",
+      "explanation": "Removing four electrons from a carbon atom requires a massive amount of energy, making the formation of $C^{4+}$ energetically unfavorable.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "An organic compound 'A' on heating with concentrated $H_2SO_4$ forms a compound 'B' which on addition of one mole of hydrogen in presence of Ni forms a compound 'C'. One mole of 'C' on combustion forms two moles of $CO_2$ and three moles of $H_2O$. Identify 'A':",
+      "options": {
+        "A": "Methanol",
+        "B": "Ethanol",
+        "C": "Ethanal",
+        "D": "Ethanoic acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Ethanol ('A') dehydrates to Ethene ('B'). Ethene adds $H_2$ to form Ethane ('C'). Ethane ($C_2H_6$) combusts to give $2CO_2$ and $3H_2O$.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "The number of structural isomers possible for Pentane ($C_5H_{12}$) is:",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "B",
+      "explanation": "Pentane has three isomers: n-pentane, isopentane (2-methylbutane), and neopentane (2,2-dimethylpropane).",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A salt 'X' is formed by the reaction of Ethanoic acid and Sodium Carbonate. When 'X' is heated with Soda-lime, it produces a gas 'Y'. Identify 'X' and 'Y':",
+      "options": {
+        "A": "X = Sodium acetate, Y = Methane",
+        "B": "X = Sodium ethanoate, Y = Ethane",
+        "C": "X = Sodium bicarbonate, Y = $CO_2$",
+        "D": "X = Ethyl ethanoate, Y = Methane"
+      },
+      "correct_answer": "A",
+      "explanation": "$CH_3COONa$ (X) reacts with Soda-lime ($NaOH + CaO$) in a decarboxylation reaction to produce Methane (Y).",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following statements about Buckminsterfullerene is correct?",
+      "options": {
+        "A": "It contains only hexagonal rings of carbon atoms",
+        "B": "It is a pyramid-shaped molecule",
+        "C": "It contains 20 hexagons and 12 pentagons of carbon atoms",
+        "D": "It is a hard, abrasive material like diamond"
+      },
+      "correct_answer": "C",
+      "explanation": "$C_{60}$ (Fullerene) consists of 60 carbon atoms arranged in a spherical shape resembling a soccer ball, with 20 hexagons and 12 pentagons.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following will give a positive test with Tincture of Iodine (alkaline $I_2$ and heat) to form a yellow precipitate of Iodoform?",
+      "options": {
+        "A": "Methanol",
+        "B": "Ethanol",
+        "C": "Ethanoic acid",
+        "D": "Methanoic acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Ethanol contains the $CH_3CH(OH)-$ group which reacts with alkaline iodine to form iodoform ($CHI_3$), a yellow precipitate.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 7,
+      "question": "How many C-C and C-H bonds are present in Cyclohexane respectively?",
+      "options": {
+        "A": "6, 6",
+        "B": "6, 12",
+        "C": "5, 10",
+        "D": "6, 10"
+      },
+      "correct_answer": "B",
+      "explanation": "Cyclohexane ($C_6H_{12}$) is a ring of 6 carbons. It has 6 C-C single bonds and 12 C-H single bonds.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "The order of increasing boiling points for the following compounds is:",
+      "options": {
+        "A": "Methane < Ethanol < Ethanoic acid",
+        "B": "Ethanoic acid < Ethanol < Methane",
+        "C": "Ethanol < Ethanoic acid < Methane",
+        "D": "Methane < Ethanoic acid < Ethanol"
+      },
+      "correct_answer": "A",
+      "explanation": "Ethanoic acid has the highest boiling point due to stronger intermolecular hydrogen bonding (dimer formation), followed by Ethanol, then Methane (non-polar).",
+      "difficulty": "hard",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens when alkaline potassium permanganate is added drop by drop to warm ethanol in a test tube?",
+      "options": {
+        "A": "The pink color persists immediately",
+        "B": "The pink color disappears initially and then persists when in excess",
+        "C": "The solution turns blue",
+        "D": "A gas with a pungent odor is evolved"
+      },
+      "correct_answer": "B",
+      "explanation": "Alkaline $KMnO_4$ is an oxidizing agent. It is used up oxidizing ethanol to ethanoic acid (losing its color). Once all ethanol is oxidized, the pink color remains.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following represents the correct order of the ability to cause 'Hardness of Water'?",
+      "options": {
+        "A": "$Na^+ > Ca^{2+} > Mg^{2+}$",
+        "B": "$Ca^{2+} = Mg^{2+} > Na^+$",
+        "C": "$Na^+ > Mg^{2+} > Ca^{2+}$",
+        "D": "$K^+ > Na^+$"
+      },
+      "correct_answer": "B",
+      "explanation": "Hardness is caused specifically by Calcium and Magnesium salts. Sodium and Potassium salts do not cause hardness.",
+      "difficulty": "hard",
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 11,
+      "question": "The combustion of 1 mole of a hydrocarbon 'X' yields 3 moles of $CO_2$ and 4 moles of $H_2O$. Hydrocarbon 'X' is:",
+      "options": {
+        "A": "Propene",
+        "B": "Propane",
+        "C": "Propyne",
+        "D": "Ethane"
+      },
+      "correct_answer": "B",
+      "explanation": "3 moles of $CO_2$ implies 3 Carbons. 4 moles of $H_2O$ implies 8 Hydrogens. Formula: $C_3H_8$ (Propane).",
+      "difficulty": "hard",
+      "source_section": "Section 4.3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "In the presence of sunlight, Chlorine reacts with Methane to form $CH_3Cl, CH_2Cl_2, CHCl_3,$ and $CCl_4$. This is an example of:",
+      "options": {
+        "A": "Addition reaction",
+        "B": "Free radical substitution",
+        "C": "Oxidation",
+        "D": "Elimination"
+      },
+      "correct_answer": "B",
+      "explanation": "Alkanes undergo substitution reactions where hydrogen atoms are replaced by chlorine atoms one by one.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3.4"
+    },
+    {
+      "question_number": 13,
+      "question": "During the preparation of soap, why is common salt ($NaCl$) added to the mixture?",
+      "options": {
+        "A": "To make the soap salty",
+        "B": "To increase the cleaning capacity",
+        "C": "To favor the precipitation of soap",
+        "D": "To act as a catalyst"
+      },
+      "correct_answer": "C",
+      "explanation": "Adding $NaCl$ decreases the solubility of soap (salting out), causing it to precipitate from the aqueous solution.",
+      "difficulty": "hard",
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is the correct IUPAC name for $CH_3-CH(OH)-CH_2-CHO$?",
+      "options": {
+        "A": "3-hydroxybutanal",
+        "B": "2-hydroxybutanal",
+        "C": "3-hydroxybutanol",
+        "D": "Butan-1-al-3-ol"
+      },
+      "correct_answer": "A",
+      "explanation": "The aldehyde group ($-CHO$) takes priority (carbon 1). At carbon 3, there is a hydroxy ($-OH$) substituent.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.5"
+    },
+    {
+      "question_number": 15,
+      "question": "A student added a few drops of ethanoic acid to solid sodium hydrogen carbonate. The observation recorded was:",
+      "options": {
+        "A": "A colorless and odorless gas evolved with brisk effervescence",
+        "B": "A gas with a pungent odor evolved",
+        "C": "The mixture turned green",
+        "D": "No reaction took place"
+      },
+      "correct_answer": "A",
+      "explanation": "The reaction produces $CO_2$ gas, which is colorless, odorless, and causes brisk effervescence.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Identify the compound that will decolorize bromine water:",
+      "options": {
+        "A": "$C_2H_6$",
+        "B": "$C_3H_8$",
+        "C": "$C_2H_4$",
+        "D": "$CH_4$"
+      },
+      "correct_answer": "C",
+      "explanation": "Unsaturated hydrocarbons (like ethene $C_2H_4$) undergo addition with bromine, causing the reddish-brown color to disappear.",
+      "difficulty": "hard",
+      "source_section": "Section 4.3.3"
+    },
+    {
+      "question_number": 17,
+      "question": "The functional group of an organic compound that gives a fruity smell on reaction with an alcohol is:",
+      "options": {
+        "A": "Alcohol",
+        "B": "Carboxylic acid",
+        "C": "Ketone",
+        "D": "Aldehyde"
+      },
+      "correct_answer": "B",
+      "explanation": "Carboxylic acids react with alcohols to form esters, which have characteristic fruity smells.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following is the first member of the Ketone homologous series?",
+      "options": {
+        "A": "Methanone",
+        "B": "Ethanone",
+        "C": "Propanone",
+        "D": "Butanone"
+      },
+      "correct_answer": "C",
+      "explanation": "A ketone group ($-CO-$) must be between two carbons, so the smallest ketone must have at least 3 carbons.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Denatured alcohol is ethanol that has been made unfit for drinking by adding:",
+      "options": {
+        "A": "Water",
+        "B": "Methanol and Copper Sulphate",
+        "C": "Ethanoic acid",
+        "D": "Sugar"
+      },
+      "correct_answer": "B",
+      "explanation": "Methanol is poisonous, and copper sulphate is added to give it a blue color for easy identification.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following bonds is strongest?",
+      "options": {
+        "A": "$C-C$ (Single bond)",
+        "B": "$C=C$ (Double bond)",
+        "C": "$C \equiv C$ (Triple bond)",
+        "D": "All have equal strength"
+      },
+      "correct_answer": "C",
+      "explanation": "Triple bonds share three pairs of electrons, resulting in a shorter and much stronger bond than double or single bonds.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which of the following is not a property of Graphite?",
+      "options": {
+        "A": "It is a good conductor of electricity",
+        "B": "It is used as a lubricant",
+        "C": "Each carbon atom is bonded to four other carbon atoms",
+        "D": "It has a layered hexagonal structure"
+      },
+      "correct_answer": "C",
+      "explanation": "In graphite, each carbon atom is bonded to three other carbon atoms. The fourth electron is free, allowing for electrical conductivity.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 22,
+      "question": "The gas released during the anaerobic decomposition of cow-dung in a biogas plant is primarily:",
+      "options": {
+        "A": "Ethane",
+        "B": "Methane",
+        "C": "$CO_2$",
+        "D": "$H_2S$"
+      },
+      "correct_answer": "B",
+      "explanation": "Biogas contains up to 75% Methane, which makes it an excellent fuel.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Ethanol reacts with hot concentrated $H_2SO_4$ to give Ethene. In this reaction, $H_2SO_4$ acts as a:",
+      "options": {
+        "A": "Oxidizing agent",
+        "B": "Reducing agent",
+        "C": "Dehydrating agent",
+        "D": "Substitution agent"
+      },
+      "correct_answer": "C",
+      "explanation": "Concentrated sulphuric acid removes water molecules from ethanol, acting as a dehydrating agent.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "The structural formula of Benzene is:",
+      "options": {
+        "A": "$C_6H_{12}$",
+        "B": "$C_6H_6$ (Cyclic with alternate double bonds)",
+        "C": "$C_6H_{14}$",
+        "D": "$C_6H_6$ (Straight chain)"
+      },
+      "correct_answer": "B",
+      "explanation": "Benzene is a cyclic hydrocarbon with 6 carbon atoms and alternate single and double bonds.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the result of the reaction between Ethanol and Ethanoic acid in the presence of an acid catalyst?",
+      "options": {
+        "A": "Saponification",
+        "B": "Esterification",
+        "C": "Hydrogenation",
+        "D": "Polymerization"
+      },
+      "correct_answer": "B",
+      "explanation": "This reaction forms an ester (Ethyl ethanoate) and is called Esterification.",
+      "difficulty": "hard",
+      "source_section": "Section 4.4.2"
+    }
+  ]
+}

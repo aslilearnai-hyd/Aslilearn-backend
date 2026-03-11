@@ -1,0 +1,209 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Resources",
+  "generated_at": "2026-03-06T15:40:00",
+  "difficulty": "medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define resources and give one example.",
+      "answer": "Resources are things that satisfy human needs and have value. For example, water.",
+      "key_concepts": ["resources"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What conditions must be satisfied for something to become a resource?",
+      "answer": "A resource must be technologically accessible, economically feasible, and culturally acceptable.",
+      "key_concepts": ["resource conditions"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are natural resources? Give one example.",
+      "answer": "Natural resources are obtained directly from nature. For example, air.",
+      "key_concepts": ["natural resources"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What are human-made resources?",
+      "answer": "Human-made resources are created by humans using natural resources and technology.",
+      "key_concepts": ["human-made resources"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "Give two examples of human-made resources.",
+      "answer": "Roads and buildings.",
+      "key_concepts": ["examples"],
+      "marks": 2,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What are human resources?",
+      "answer": "Human resources refer to people's knowledge, skills, and abilities.",
+      "key_concepts": ["human resources"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are human resources important for development?",
+      "answer": "Human resources help in developing technology and managing resources effectively.",
+      "key_concepts": ["importance"],
+      "marks": 2,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "What are renewable resources? Give one example.",
+      "answer": "Renewable resources are those that can regenerate naturally over time, such as solar energy.",
+      "key_concepts": ["renewable resources"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "What are non-renewable resources? Give one example.",
+      "answer": "Non-renewable resources take millions of years to form and cannot be replaced quickly, such as coal.",
+      "key_concepts": ["non-renewable resources"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 10,
+      "question": "What is resource conservation?",
+      "answer": "Resource conservation means using resources carefully and responsibly to prevent depletion.",
+      "key_concepts": ["resource conservation"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is resource conservation necessary?",
+      "answer": "It helps protect resources so that future generations can also use them.",
+      "key_concepts": ["conservation importance"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "What is sustainable development?",
+      "answer": "Sustainable development means meeting present needs without harming future generations.",
+      "key_concepts": ["sustainable development"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 13,
+      "question": "Give one example of a sustainable practice.",
+      "answer": "Using renewable energy such as wind or solar power.",
+      "key_concepts": ["sustainability"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are resources unevenly distributed on Earth?",
+      "answer": "Because of differences in climate, geography, and geological conditions.",
+      "key_concepts": ["resource distribution"],
+      "marks": 2,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 15,
+      "question": "Name two natural resources important for agriculture.",
+      "answer": "Soil and water.",
+      "key_concepts": ["agriculture"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 16,
+      "question": "What role do minerals play in industries?",
+      "answer": "Minerals provide raw materials required for manufacturing goods.",
+      "key_concepts": ["minerals"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 17,
+      "question": "What is resource depletion?",
+      "answer": "Resource depletion is the reduction of natural resources due to excessive use.",
+      "key_concepts": ["resource depletion"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 18,
+      "question": "How does population growth affect resources?",
+      "answer": "Population growth increases demand for food, water, and energy resources.",
+      "key_concepts": ["population growth"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 19,
+      "question": "Name one renewable source of energy used to generate electricity.",
+      "answer": "Solar energy.",
+      "key_concepts": ["renewable energy"],
+      "marks": 2,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are forests important natural resources?",
+      "answer": "Forests help maintain ecological balance and support biodiversity.",
+      "key_concepts": ["forests"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 21,
+      "question": "How can recycling help conserve resources?",
+      "answer": "Recycling reduces the need for extracting new natural resources.",
+      "key_concepts": ["recycling"],
+      "marks": 2,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 22,
+      "question": "Which natural resource is essential for human survival?",
+      "answer": "Water.",
+      "key_concepts": ["water"],
+      "marks": 2,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 23,
+      "question": "How does technology help in resource development?",
+      "answer": "Technology helps convert natural materials into useful resources.",
+      "key_concepts": ["technology"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 24,
+      "question": "What is responsible resource use?",
+      "answer": "Responsible resource use means using resources efficiently without wasting them.",
+      "key_concepts": ["resource management"],
+      "marks": 2,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the goal of sustainable resource management?",
+      "answer": "The goal is to ensure resources remain available for future generations.",
+      "key_concepts": ["sustainability"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

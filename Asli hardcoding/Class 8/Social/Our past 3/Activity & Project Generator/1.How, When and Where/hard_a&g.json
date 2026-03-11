@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter": "How, When and Where",
+  "difficulty": "Hard",
+  "source_pdf": "class8_history_english.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Analysis of Periodisation",
+      "objective": "Analyse different ways of dividing Indian history",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write the periodisation proposed by James Mill",
+        "Write the modern division used by historians",
+        "Explain two problems with James Mill’s classification"
+      ],
+      "learning_outcome": "Develops critical understanding of historical periodisation",
+      "evaluation": "Depth of analysis (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Colonial Perspective Investigation",
+      "objective": "Understand how British historians interpreted Indian history",
+      "materials": ["Notebook"],
+      "steps": [
+        "Identify how British historians described Indian society before British rule",
+        "Write two examples from the chapter",
+        "Explain whether this interpretation is fair or biased"
+      ],
+      "learning_outcome": "Develops analytical thinking about historical bias",
+      "evaluation": "Quality of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Historical Sources Evaluation",
+      "objective": "Evaluate reliability of historical records",
+      "materials": ["Notebook"],
+      "steps": [
+        "List different types of sources used by historians",
+        "Explain why official records may not always show the full picture",
+        "Suggest another source historians can use"
+      ],
+      "learning_outcome": "Understands limitations of historical sources",
+      "evaluation": "Critical explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Colonial Impact Study",
+      "objective": "Analyse political, economic and social changes under British rule",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write three changes introduced by the British administration",
+        "Explain how each change affected Indian society",
+        "Give one example of a long-term impact"
+      ],
+      "learning_outcome": "Develops deeper understanding of colonial influence",
+      "evaluation": "Analytical explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Historical Debate Activity",
+      "objective": "Encourage discussion on historical interpretation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Prepare arguments supporting British periodisation",
+        "Prepare arguments against it",
+        "Present your opinion in a short paragraph"
+      ],
+      "learning_outcome": "Develops debating and reasoning skills",
+      "evaluation": "Strength of argument (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Visual Source Interpretation",
+      "objective": "Interpret historical images and advertisements",
+      "materials": ["Notebook"],
+      "steps": [
+        "Select an image or advertisement shown in the chapter",
+        "Describe what you see in the image",
+        "Explain what it reveals about society during that time"
+      ],
+      "learning_outcome": "Learns to analyse visual historical evidence",
+      "evaluation": "Interpretation depth (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Administration Records Analysis",
+      "objective": "Understand the role of government documentation in history",
+      "materials": ["Notebook"],
+      "steps": [
+        "Explain why the British produced large numbers of records",
+        "Write two types of administrative documents",
+        "Explain how historians use them today"
+      ],
+      "learning_outcome": "Recognises importance of archival records",
+      "evaluation": "Clarity and accuracy (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Colonial Terminology Research",
+      "objective": "Understand key historical terms",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write definitions of colonialism, periodisation and sources",
+        "Explain how each term is used in the chapter",
+        "Give one example related to Indian history"
+      ],
+      "learning_outcome": "Strengthens conceptual understanding",
+      "evaluation": "Accuracy of explanations (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Alternative History Writing",
+      "objective": "Encourage new perspectives on historical writing",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short passage describing Indian history from the perspective of common people",
+        "Focus on their daily life and experiences",
+        "Explain why this perspective is important"
+      ],
+      "learning_outcome": "Encourages inclusive historical thinking",
+      "evaluation": "Creativity and insight (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Mini Historical Research Project",
+      "objective": "Conduct simple historical research using different sources",
+      "materials": ["Notebook", "Library or internet"],
+      "steps": [
+        "Choose a topic related to the chapter",
+        "Collect information from at least two sources",
+        "Write a short report summarising your findings"
+      ],
+      "learning_outcome": "Develops research and synthesis skills",
+      "evaluation": "Completeness and accuracy (10 marks)"
+    }
+  ]
+}

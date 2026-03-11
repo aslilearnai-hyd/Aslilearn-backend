@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 1: The Road Not Taken",
+    "generated_at": "2026-03-08T23:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the poet of 'The Road Not Taken'?",
+            "answer": "Robert Frost",
+            "answer_outline": ["Author's name"],
+            "key_concepts": ["Robert Frost"],
+            "marks": 2,
+            "source_section": "Title/Author"
+        },
+        {
+            "question_number": 2,
+            "question": "How many roads did the poet see in the wood?",
+            "answer": "Two roads",
+            "answer_outline": ["Number of roads"],
+            "key_concepts": ["two roads"],
+            "marks": 2,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 3,
+            "question": "What does the poet compare the roads to?",
+            "answer": "Different choices in life",
+            "answer_outline": ["Symbolism of roads"],
+            "key_concepts": ["choices", "life paths"],
+            "marks": 3,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which road did the poet choose?",
+            "answer": "The one less traveled by",
+            "answer_outline": ["Choice made by poet"],
+            "key_concepts": ["road less traveled"],
+            "marks": 3,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 5,
+            "question": "Why did the poet wish he could travel both roads?",
+            "answer": "Because he wanted to see where each path might lead, but he had to choose one",
+            "answer_outline": ["Reason for wish", "Choice limitation"],
+            "key_concepts": ["decision making", "limitations"],
+            "marks": 3,
+            "source_section": "Stanza 1–2"
+        },
+        {
+            "question_number": 6,
+            "question": "What color is the wood mentioned in the poem?",
+            "answer": "Yellow",
+            "answer_outline": ["Description of setting"],
+            "key_concepts": ["yellow wood"],
+            "marks": 2,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 7,
+            "question": "Did the poet return to the first road he didn’t take?",
+            "answer": "No, he kept it for another day, but he doubts if he will ever come back",
+            "answer_outline": ["Future intention", "Uncertainty"],
+            "key_concepts": ["first road", "returning"],
+            "marks": 3,
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 8,
+            "question": "What does 'the road less traveled by' symbolize?",
+            "answer": "Making unconventional or individual choices",
+            "answer_outline": ["Meaning", "Symbolism"],
+            "key_concepts": ["unconventional choice", "individuality"],
+            "marks": 3,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the main theme of the poem?",
+            "answer": "The importance of choices and how they shape our lives",
+            "answer_outline": ["Theme", "Explanation"],
+            "key_concepts": ["choices", "life paths"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 10,
+            "question": "How does the poet feel about his choice?",
+            "answer": "He feels that taking the less traveled road has made a difference in his life",
+            "answer_outline": ["Feeling", "Impact of choice"],
+            "key_concepts": ["decision impact", "reflection"],
+            "marks": 4,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which stanza talks about keeping the first road for another day?",
+            "answer": "Second stanza",
+            "answer_outline": ["Stanza identification"],
+            "key_concepts": ["second stanza"],
+            "marks": 2,
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 12,
+            "question": "What literary device is used when comparing the roads to life choices?",
+            "answer": "Metaphor",
+            "answer_outline": ["Literary device identification"],
+            "key_concepts": ["metaphor"],
+            "marks": 3,
+            "source_section": "Stanza 1–4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the tone of the poem?",
+            "answer": "Reflective and thoughtful",
+            "answer_outline": ["Tone description"],
+            "key_concepts": ["reflective", "thoughtful"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does the poet say 'I doubted if I should ever come back'?",
+            "answer": "Because life choices are usually irreversible",
+            "answer_outline": ["Explanation", "Theme"],
+            "key_concepts": ["irreversibility", "choices"],
+            "marks": 3,
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the meaning of 'And that has made all the difference'?",
+            "answer": "The poet’s choice of the less traveled road has significantly affected his life",
+            "answer_outline": ["Interpretation", "Impact of choice"],
+            "key_concepts": ["life impact", "decision"],
+            "marks": 4,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 16,
+            "question": "How many stanzas are in the poem?",
+            "answer": "Four stanzas",
+            "answer_outline": ["Poem structure"],
+            "key_concepts": ["stanza count"],
+            "marks": 2,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 17,
+            "question": "Which words indicate that the poet could not travel both roads?",
+            "answer": "'And sorry I could not travel both'",
+            "answer_outline": ["Phrase identification"],
+            "key_concepts": ["cannot travel both"],
+            "marks": 2,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 18,
+            "question": "What does the poet mean by 'wanted wear' in describing the road?",
+            "answer": "It refers to how much the road has been walked on or used",
+            "answer_outline": ["Explanation", "Imagery"],
+            "key_concepts": ["road usage", "imagery"],
+            "marks": 3,
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which literary device is present in 'Two roads diverged in a yellow wood'?",
+            "answer": "Imagery and metaphor",
+            "answer_outline": ["Device identification"],
+            "key_concepts": ["imagery", "metaphor"],
+            "marks": 3,
+            "source_section": "Stanza 1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why does the poet describe the roads as 'about the same'?",
+            "answer": "To show that choices may seem similar but their outcomes can differ",
+            "answer_outline": ["Explanation", "Life lesson"],
+            "key_concepts": ["choices", "outcomes"],
+            "marks": 3,
+            "source_section": "Stanza 2"
+        },
+        {
+            "question_number": 21,
+            "question": "What does the poet reflect on in the last stanza?",
+            "answer": "He reflects on how his choice has affected his life",
+            "answer_outline": ["Reflection", "Impact"],
+            "key_concepts": ["reflection", "life impact"],
+            "marks": 3,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 22,
+            "question": "What lesson does the poem teach about decision making?",
+            "answer": "Every decision matters and shapes the course of life",
+            "answer_outline": ["Lesson", "Explanation"],
+            "key_concepts": ["decision making", "life"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 23,
+            "question": "Which stanza contains the line 'I shall be telling this with a sigh'?",
+            "answer": "Fourth stanza",
+            "answer_outline": ["Stanza identification"],
+            "key_concepts": ["fourth stanza", "line reference"],
+            "marks": 2,
+            "source_section": "Stanza 4"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of poem is 'The Road Not Taken'?",
+            "answer": "Narrative and reflective poem",
+            "answer_outline": ["Poem type", "Explanation"],
+            "key_concepts": ["narrative", "reflective"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 25,
+            "question": "Give an example of a decision in your life similar to the poet’s choice.",
+            "answer": "Students can answer based on personal experience, e.g., choosing a hobby or subject",
+            "answer_outline": ["Personal example", "Explanation"],
+            "key_concepts": ["personal choice", "life decision"],
+            "marks": 5,
+            "source_section": "Application"
+        }
+    ]
+}

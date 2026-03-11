@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "The Proposal",
+  "difficulty": "Easy",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Sketch – Lomov",
+      "objective": "Understand Lomov’s personality and quirks.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Read the play carefully",
+        "List 5 traits of Lomov with examples from the text",
+        "Write a short paragraph describing his character"
+      ],
+      "learning_outcome": "Students will analyze character traits and textual evidence.",
+      "evaluation": "Accuracy of traits and examples, clarity of paragraph"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Sketch – Natalia",
+      "objective": "Understand Natalia’s personality and behavior.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify 5 traits of Natalia with supporting lines from the play",
+        "Write a paragraph describing her character",
+        "Discuss how her traits create humor in the play"
+      ],
+      "learning_outcome": "Students will develop understanding of characterization and comic elements.",
+      "evaluation": "Correct identification, textual support, and clarity"
+    },
+    {
+      "sl_no": 3,
+      "title": "Dialogue Act-Out",
+      "objective": "Practice speaking skills and understand play dynamics.",
+      "materials": ["Notebook", "Optional props"],
+      "steps": [
+        "Choose a humorous scene from the play",
+        "Assign roles and act out the dialogue",
+        "Focus on expression, tone, and timing"
+      ],
+      "learning_outcome": "Students will develop oral expression and understanding of humor in plays.",
+      "evaluation": "Participation, clarity, and expressiveness"
+    },
+    {
+      "sl_no": 4,
+      "title": "Sequence of Events Chart",
+      "objective": "Understand the sequence of the play’s plot.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "List main events of the play in order",
+        "Draw a simple chart showing cause-effect relationships",
+        "Share findings with the class"
+      ],
+      "learning_outcome": "Students will develop organizational and analytical skills.",
+      "evaluation": "Accuracy of sequence and clarity of presentation"
+    },
+    {
+      "sl_no": 5,
+      "title": "Vocabulary Building",
+      "objective": "Learn and use new words from the play.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify 10 new words from the play",
+        "Write meanings and use each in a sentence",
+        "Create a short paragraph using 5–6 words"
+      ],
+      "learning_outcome": "Students will improve vocabulary and contextual usage.",
+      "evaluation": "Correct meanings, sentence construction, and paragraph clarity"
+    },
+    {
+      "sl_no": 6,
+      "title": "Comic Strip Creation",
+      "objective": "Visualize humorous moments of the play.",
+      "materials": ["Drawing sheet, Colors/Pencils, Pen"],
+      "steps": [
+        "Select one funny scene",
+        "Create a 4–5 panel comic strip showing the action and dialogues",
+        "Label emotions and actions clearly"
+      ],
+      "learning_outcome": "Students will understand humor and sequencing through visual representation.",
+      "evaluation": "Creativity, relevance, and clarity"
+    },
+    {
+      "sl_no": 7,
+      "title": "Short Speech – Humor in Relationships",
+      "objective": "Discuss humor and misunderstandings in relationships.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Prepare a 1–2 minute speech on humorous misunderstandings in relationships",
+        "Use examples from the play",
+        "Present confidently in class"
+      ],
+      "learning_outcome": "Students will develop speaking skills and relate literature to life.",
+      "evaluation": "Confidence, relevance, and clarity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Comparison Chart – Characters’ Reactions",
+      "objective": "Compare how Lomov and Natalia react in conflicts.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "List 3 conflicts in the play",
+        "Write reactions of Lomov and Natalia for each",
+        "Draw a comparison chart and discuss in class"
+      ],
+      "learning_outcome": "Students will analyze character behavior and interpersonal dynamics.",
+      "evaluation": "Accuracy and clarity of comparison"
+    },
+    {
+      "sl_no": 9,
+      "title": "Alternate Ending Activity",
+      "objective": "Encourage creative thinking and writing.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine an alternate ending for the play",
+        "Write a short scene showing a different resolution",
+        "Include dialogue and character reactions"
+      ],
+      "learning_outcome": "Students will develop creativity and understanding of plot structure.",
+      "evaluation": "Creativity, logical flow, and textual consistency"
+    },
+    {
+      "sl_no": 10,
+      "title": "Role Reflection Journal",
+      "objective": "Reflect on characters’ emotions and motives.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a journal entry as either Lomov or Natalia",
+        "Describe your thoughts and feelings during key moments",
+        "Reflect on why certain reactions occurred"
+      ],
+      "learning_outcome": "Students will deepen empathy and analytical understanding of characters.",
+      "evaluation": "Emotional insight, textual relevance, and clarity"
+    }
+  ]
+}

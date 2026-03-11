@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter: Exploring Forces",
+  "difficulty": "Hard",
+  "source_pdf": "hecu105.pdf",
+  "short_notes": {
+    "key_points": [
+      "Force is an interaction that can change the motion, direction, or shape of an object",
+      "When multiple forces act on an object, the overall effect depends on the net force acting on it",
+      "Balanced forces result in no change in the state of motion, while unbalanced forces cause acceleration",
+      "Friction arises due to irregularities on surfaces in contact and always opposes motion",
+      "Non-contact forces such as gravitational, magnetic, and electrostatic forces act without physical contact"
+    ],
+    "examples": [
+      "Two teams pulling a rope with equal strength in a tug-of-war create balanced forces",
+      "A car accelerates when the engine produces a force greater than friction and air resistance",
+      "A magnet attracting iron filings demonstrates magnetic force",
+      "A charged comb attracting small paper pieces shows electrostatic force"
+    ],
+    "formulas": [
+      "Net force = Sum of all forces acting on an object",
+      "Balanced forces → Net force = 0",
+      "Unbalanced forces → Net force causes change in motion"
+    ],
+    "exam_tips": [
+      "Clearly distinguish between contact and non-contact forces in answers",
+      "Explain friction using the concept of surface irregularities",
+      "Always mention net force when discussing multiple forces acting on an object",
+      "Use real-life examples such as vehicles, sports, and magnets to explain concepts"
+    ]
+  }
+}

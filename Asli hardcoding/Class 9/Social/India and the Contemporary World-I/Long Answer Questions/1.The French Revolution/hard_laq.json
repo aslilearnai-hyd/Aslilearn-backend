@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: The French Revolution",
+  "generated_at": "2026-03-07T03:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How did the unequal social structure of the 'Old Regime' contribute to the outbreak of the French Revolution?",
+      "answer": "The Old Regime's social structure was based on feudalism, dividing the population into three estates. The First and Second Estates (Clergy and Nobility) held 60% of the land and enjoyed tax exemptions. The Third Estate bore the entire tax burden (Tithes and Taille) despite having little land or political influence. This structural inequality created deep resentment among the rising middle class and starving peasantry.",
+      "answer_outline": ["Define the 'Old Regime' and the three estates", "Detail the tax exemptions and land ownership of the elite", "Explain the burden on the Third Estate as a trigger"],
+      "key_concepts": ["Old Regime", "Feudal Privileges", "Tax Inequality"],
+      "marks": 5,
+      "source_section": "1.1 French Society During the Late Eighteenth Century"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze the impact of the American War of Independence on France's internal political and economic crisis.",
+      "answer": "By helping the thirteen American colonies gain independence from Britain, France added over a billion livres to its existing debt. This forced Louis XVI to seek new taxes. Politically, French soldiers returned home with radical ideas about liberty and democracy, which challenged the absolute power of the French monarchy.",
+      "answer_outline": ["Identify the financial cost (debt increase)", "Connect debt to the necessity of new taxes", "Mention the spread of democratic ideals from America"],
+      "key_concepts": ["War Debt", "Political Liberalism", "Louis XVI"],
+      "marks": 5,
+      "source_section": "1.1 French Society During the Late Eighteenth Century"
+    },
+    {
+      "question_number": 3,
+      "question": "Examine the factors that led to a 'Subsistence Crisis' in France during the 1780s.",
+      "answer": "The crisis was fueled by rapid population growth which outpaced food production. This led to high demand and rising bread prices. Wages remained fixed and didn't match the inflation. Natural disasters like drought and hail destroyed harvests, creating an extreme situation where the basic means of livelihood were endangered.",
+      "answer_outline": ["Population growth vs. food production", "Wage stagnation and price inflation", "Environmental triggers (hail/drought)"],
+      "key_concepts": ["Subsistence Crisis", "Economic Inflation", "Harvest Failure"],
+      "marks": 4,
+      "source_section": "1.1 The Struggle to Survive"
+    },
+    {
+      "question_number": 4,
+      "question": "What was the role of philosophers like Montesquieu and Rousseau in shaping the revolutionary mindset?",
+      "answer": "Montesquieu’s 'The Spirit of the Laws' proposed a division of power between the legislative, executive, and judiciary, challenging absolute rule. Rousseau’s 'The Social Contract' argued for a government based on a contract between people and their representatives. These ideas provided a logical framework for a government based on rights rather than divine privilege.",
+      "answer_outline": ["Detail Montesquieu's Separation of Powers", "Explain Rousseau's Social Contract theory", "Highlight the shift from divine right to popular sovereignty"],
+      "key_concepts": ["Enlightenment", "Separation of Powers", "Popular Sovereignty"],
+      "marks": 5,
+      "source_section": "1.3 A Growing Middle Class"
+    },
+    {
+      "question_number": 5,
+      "question": "Discuss the significance of the meeting of the Estates General on 5 May 1789.",
+      "answer": "This was the first such meeting since 1614. It highlighted the conflict over voting rights; the King insisted on 'one estate, one vote,' while the Third Estate demanded 'one member, one vote.' The rejection of this democratic demand led the Third Estate to walk out and eventually form the National Assembly.",
+      "answer_outline": ["Historical context (last met in 1614)", "The dispute over voting mechanisms", "Impact of the King's rejection on the Third Estate"],
+      "key_concepts": ["Estates General", "Voting Rights", "National Assembly"],
+      "marks": 4,
+      "source_section": "2.1 The Outbreak of the Revolution"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the events and significance of the Tennis Court Oath.",
+      "answer": "On 20 June 1789, the Third Estate met in an indoor tennis court at Versailles after being locked out of the hall. They declared themselves the National Assembly and swore not to disperse until they had drafted a constitution for France. This was a revolutionary act as it shifted the source of legal authority from the King to the people's representatives.",
+      "answer_outline": ["Location and date (Versailles, 20 June)", "Goal: Drafting a constitution", "Significance in limiting royal power"],
+      "key_concepts": ["Tennis Court Oath", "Constitutionalism", "Popular Authority"],
+      "marks": 5,
+      "source_section": "2.1 The Outbreak of the Revolution"
+    },
+    {
+      "question_number": 7,
+      "question": "Evaluate the political system established by the Constitution of 1791.",
+      "answer": "The Constitution of 1791 transformed France into a constitutional monarchy. It separated powers into the Legislature, Executive, and Judiciary. However, it was not fully democratic as it limited voting to 'Active Citizens' (wealthy men), leaving women and poor men as 'Passive Citizens' without political rights.",
+      "answer_outline": ["Identify the separation of powers", "Explain the role of the National Assembly", "Critique the Active/Passive citizenship divide"],
+      "key_concepts": ["Constitutional Monarchy", "Active Citizens", "Passive Citizens"],
+      "marks": 5,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 8,
+      "question": "How did the 'Declaration of the Rights of Man and Citizen' redefine the relationship between the state and the individual?",
+      "answer": "The Declaration established that rights like liberty, property, and equality were 'natural and inalienable.' It declared that the source of all sovereignty resides in the nation (the people) and not the monarch. It made the state responsible for protecting these rights, shifting the individual's status from a 'subject' to a 'citizen.'",
+      "answer_outline": ["List key 'natural' rights", "Explain the shift in sovereignty", "Detail the state's duty to protect individuals"],
+      "key_concepts": ["Natural Rights", "Sovereignty", "Citizenship"],
+      "marks": 5,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 9,
+      "question": "What led to the radicalization of the revolution and the rise of the Jacobin Club?",
+      "answer": "The failure of the 1791 Constitution to provide rights to the poor, combined with war against Prussia/Austria and food shortages, led to radicalization. The Jacobin Club, led by Robespierre, appealed to the 'sans-culottes' (working class) by promising more radical equality and a republic without a king.",
+      "answer_outline": ["Inadequacy of the 1791 political system", "Impact of war and food scarcity", "The Jacobin appeal to the lower classes"],
+      "key_concepts": ["Radicalization", "Jacobin Club", "Sans-culottes"],
+      "marks": 4,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 10,
+      "question": "Discuss the significance of 10 August 1792 in the abolition of the monarchy.",
+      "answer": "On this day, Parisians, led by the Jacobins, stormed the Palace of the Tuileries, massacred the King’s guards, and held the King himself as hostage. This insurrection led to the suspension of the monarchy, the imprisonment of the royal family, and the call for elections to a new assembly called the Convention.",
+      "answer_outline": ["Insurrection at the Tuileries", "Imprisonment of the King", "Transition to the Convention"],
+      "key_concepts": ["Tuileries", "Convention", "Republic"],
+      "marks": 5,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 11,
+      "question": "Critically analyze Robespierre’s use of 'Terror' as a political tool during 1793-1794.",
+      "answer": "Robespierre justified terror as 'inflexible justice' necessary to protect the Republic. He executed nobles, clergy, and even fellow revolutionaries who disagreed with his methods. While it aimed to consolidate the republic, it created a climate of fear and eventually led to Robespierre's own downfall and execution by the same system.",
+      "answer_outline": ["Ideological justification of terror", "Targeting of 'enemies' (Revolutionary Tribunal)", "The ultimate failure and execution of Robespierre"],
+      "key_concepts": ["Reign of Terror", "Revolutionary Tribunal", "Guillotine"],
+      "marks": 5,
+      "source_section": "3.1 The Reign of Terror"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe the economic reforms introduced during the Reign of Terror.",
+      "answer": "Robespierre’s government placed a 'maximum ceiling' on wages and prices to control inflation. Meat and bread were rationed. Peasants were forced to transport their grain to cities and sell it at prices fixed by the government. The use of expensive white flour was banned to promote 'Equality Bread.'",
+      "answer_outline": ["Price and wage controls", "Rationing of essentials", "Forced grain sale at fixed prices"],
+      "key_concepts": ["Economic Controls", "Equality Bread", "Rationing"],
+      "marks": 4,
+      "source_section": "3.1 The Reign of Terror"
+    },
+    {
+      "question_number": 13,
+      "question": "What were the reasons for the failure of the Directory in France?",
+      "answer": "The Directory was an executive of five members designed to prevent one-man rule. However, it suffered from political instability as the Directors frequently clashed with the legislative councils. This paralysis and lack of strong leadership paved the way for Napoleon Bonaparte to seize power through a military coup.",
+      "answer_outline": ["Structure of the Directory (5 members)", "Clash between executive and legislature", "Political vacuum leading to Napoleon"],
+      "key_concepts": ["Directory", "Political Instability", "Napoleon"],
+      "marks": 4,
+      "source_section": "3.2 A Directory Rules France"
+    },
+    {
+      "question_number": 14,
+      "question": "Assess the role and demands of women’s political clubs during the revolutionary years.",
+      "answer": "Women formed over sixty clubs, most famously the 'Society of Revolutionary and Republican Women.' They demanded the right to vote, to be elected to the Assembly, and to hold political office. They argued that the Declaration of Rights was hypocritical if it did not include women.",
+      "answer_outline": ["Formation of clubs (Society of Revolutionary and Republican Women)", "Specific political demands (suffrage/office)", "Critique of the male-only declaration of rights"],
+      "key_concepts": ["Olympe de Gouges", "Women's Suffrage", "Political Clubs"],
+      "marks": 5,
+      "source_section": "4. Did Women have a Revolution?"
+    },
+    {
+      "question_number": 15,
+      "question": "How did the revolutionary government initially improve the lives of women before the Reign of Terror?",
+      "answer": "The government introduced state schools and made schooling compulsory for girls. Marriage was made into a contract entered into freely and registered under civil law. Divorce was made legal and could be applied for by both men and women. Women were also permitted to train for jobs and run small businesses.",
+      "answer_outline": ["Education reforms (compulsory schooling)", "Marriage and divorce laws", "Economic freedom and job training"],
+      "key_concepts": ["Social Reforms", "Civil Law", "Women's Education"],
+      "marks": 5,
+      "source_section": "4. Did Women have a Revolution?"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the link between the French Revolution and the Abolition of Slavery.",
+      "answer": "The Revolution's talk of 'Universal Rights' created a debate about slavery in the colonies. The National Assembly hesitated for fear of losing plantation income, but the Convention of 1794 finally abolished slavery. However, Napoleon reintroduced it in 1804 to please plantation owners, and it was only permanently abolished in 1848.",
+      "answer_outline": ["Conflict between 'Universal Rights' and plantation economy", "The 1794 Abolition decree", "Napoleon's reintroduction and the final 1848 abolition"],
+      "key_concepts": ["Convention", "Napoleon", "Plantation Economy"],
+      "marks": 5,
+      "source_section": "5. The Abolition of Slavery"
+    },
+    {
+      "question_number": 17,
+      "question": "Discuss the socio-economic importance of ports like Bordeaux and Nantes in the 18th century.",
+      "answer": "These ports became incredibly wealthy through the 'Triangular Slave Trade.' They served as the hubs where French merchants bought slaves from Africa and sent them to the Caribbean. This trade provided the capital that fueled the growth of these cities and supported the lifestyle of the French elite.",
+      "answer_outline": ["Role in the Triangular Trade", "Economic prosperity derived from slavery", "Connection to the Caribbean plantations"],
+      "key_concepts": ["Triangular Trade", "Bordeaux", "Nantes"],
+      "marks": 4,
+      "source_section": "5. The Abolition of Slavery"
+    },
+    {
+      "question_number": 18,
+      "question": "How did the abolition of censorship in 1789 transform the public sphere in France?",
+      "answer": "Before 1789, all material required the King’s approval. After its abolition, freedom of speech became a natural right. This led to a flood of newspapers, pamphlets, and books that debated government actions. Visual arts and songs also spread revolutionary ideas to the illiterate, creating a vibrant, politically active public.",
+      "answer_outline": ["End of the King's approval for publications", "Explosion of print culture", "Role of arts/songs in spreading ideas"],
+      "key_concepts": ["Censorship", "Freedom of Press", "Public Debate"],
+      "marks": 5,
+      "source_section": "6. The Revolution and Everyday Life"
+    },
+    {
+      "question_number": 19,
+      "question": "Examine Napoleon Bonaparte’s role as both a 'modernizer' and a 'conqueror' of Europe.",
+      "answer": "As a modernizer, Napoleon introduced the Civil Code (Napoleonic Code), uniform weights and measures, and protection of private property. As a conqueror, he placed his family members on European thrones and led aggressive wars. Initially seen as a liberator, his armies eventually came to be viewed as an invading force.",
+      "answer_outline": ["Administrative reforms (Civil Code/Weights)", "Imperial expansion and dynastic politics", "Changing perception from 'liberator' to 'invader'"],
+      "key_concepts": ["Napoleonic Code", "Modernization", "Battle of Waterloo"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 20,
+      "question": "Analyze why the French Revolution is considered a 'turning point' in world history.",
+      "answer": "It introduced the concepts of liberty, equality, and fraternity, which challenged monarchies worldwide. It showed that sovereignty belongs to the 'nation' (people), not the king. Its ideas inspired 19th-century movements in Europe and anti-colonial struggles in countries like India, shifting the global political focus toward democratic rights.",
+      "answer_outline": ["Introduction of Liberty, Equality, Fraternity", "Shift in sovereignty to the people", "Influence on global anti-colonial movements"],
+      "key_concepts": ["Liberty", "Equality", "Fraternity"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 21,
+      "question": "Describe the symbolism of the 'Sans-culottes' clothing and its political meaning.",
+      "answer": "The Sans-culottes (meaning 'those without knee-breeches') wore long striped trousers to distinguish themselves from the nobles who wore knee-breeches. They also wore red liberty caps. This clothing was a political statement of equality and a rejection of the aristocratic fashion of the Old Regime.",
+      "answer_outline": ["Description of long striped trousers vs. knee-breeches", "Meaning of the term 'Sans-culottes'", "Significance of the red cap (Liberty)"],
+      "key_concepts": ["Sans-culottes", "Red Liberty Cap", "Class Identity"],
+      "marks": 4,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 22,
+      "question": "How did the 'Great Fear' (Grand Peur) influence the National Assembly in 1789?",
+      "answer": "As rumors spread that lords were hiring brigands to destroy crops, peasants attacked chateaux and burned manorial records. This rural violence forced the National Assembly to act quickly. On 4 August 1789, they abolished the feudal system of obligations and taxes to restore order and appease the peasantry.",
+      "answer_outline": ["Explain the cause of the 'Great Fear'", "Describe peasant attacks on manor houses", "The result: Decree of 4 August 1789"],
+      "key_concepts": ["Great Fear", "Chateaux", "Abolition of Feudalism"],
+      "marks": 4,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 23,
+      "question": "Compare the political rights of the 1791 Constitution with those of the Jacobin Constitution (1793).",
+      "answer": "The 1791 Constitution limited the vote to 'Active Citizens' based on property and tax. In contrast, the Jacobin-led Convention of 1793 granted the right to vote to all men aged 21 and above, regardless of wealth. The 1793 version was significantly more democratic, though it was never fully implemented due to the war.",
+      "answer_outline": ["1791: Property-based voting (Active Citizens)", "1793: Universal male suffrage (21+)", "Briefly mention the implementation gap"],
+      "key_concepts": ["Universal Male Suffrage", "Property Rights", "Constitutional Comparison"],
+      "marks": 5,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 24,
+      "question": "Evaluate the impact of the French Revolution on Indian reformers like Tipu Sultan and Raja Rammohan Roy.",
+      "answer": "Tipu Sultan and Raja Rammohan Roy were deeply impressed by the ideas of Liberty and Equality. Tipu Sultan planted a 'Tree of Liberty' and corresponded with French revolutionaries. Rammohan Roy visited France and was a passionate advocate for the spread of revolutionary ideas to India to challenge local feudalism and British rule.",
+      "answer_outline": ["Identify specific reformers", "Examples of influence (Tree of Liberty)", "Link to Indian anti-colonial thought"],
+      "key_concepts": ["Tipu Sultan", "Raja Rammohan Roy", "Global Influence"],
+      "marks": 4,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "What were the limitations of the 'Universal Rights' as implemented during the French Revolution?",
+      "answer": "Despite the name, 'Universal Rights' initially excluded women, slaves in the colonies, and men without property. It took nearly 150 years for women to get the vote (1944) and several decades for slavery to be permanently abolished. The revolution was a step toward equality, but it struggled to apply its own principles to all members of society.",
+      "answer_outline": ["Exclusion of women (Passive Citizens)", "The delay in abolishing slavery", "Wealth-based political exclusion"],
+      "key_concepts": ["Universalism", "Passive Citizens", "Abolition"],
+      "marks": 5,
+      "source_section": "Multiple Sections"
+    }
+  ]
+}

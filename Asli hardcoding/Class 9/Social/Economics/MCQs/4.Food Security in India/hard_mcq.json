@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Food Security in India",
+  "generated_at": "2026-03-07T00:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The 1943 Bengal Famine shifted the global understanding of food security from 'Availability' to which other critical concept?",
+      "options": {
+        "A": "Agricultural production",
+        "B": "Individual Entitlements and Accessibility",
+        "C": "International Trade",
+        "D": "Climate adaptation"
+      },
+      "correct_answer": "B",
+      "explanation": "Amartya Sen's analysis of the famine proved that people died not because food wasn't in the country, but because they lost the 'entitlement' or ability to access/afford it due to inflation.",
+      "difficulty": "hard",
+      "source_section": "4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the primary fiscal 'trade-off' of the Minimum Support Price (MSP) system for the Indian government?",
+      "options": {
+        "A": "High production vs Low exports",
+        "B": "Incentivizing farmers vs Increasing the Food Subsidy bill and Fiscal Deficit",
+        "C": "Rural growth vs Urban migration",
+        "D": "Chemical use vs Organic farming"
+      },
+      "correct_answer": "B",
+      "explanation": "While MSP encourages production, open-ended procurement leads to massive storage costs and a widening gap between procurement and issue prices, paid for by the government.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 3,
+      "question": "The 'Inclusion Error' in the Targeted Public Distribution System (TPDS) refers to:",
+      "options": {
+        "A": "Poor people being left out of the BPL list",
+        "B": "Non-poor (APL) households illegally obtaining BPL/Antyodaya cards",
+        "C": "Including pulses instead of only wheat",
+        "D": "Including women in the work force"
+      },
+      "correct_answer": "B",
+      "explanation": "Inclusion errors happen when benefits meant for the poor are diverted to those who do not technically qualify, leading to resource leakage.",
+      "difficulty": "hard",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "How does the National Food Security Act (2013) legally empower the Indian citizen?",
+      "options": {
+        "A": "By providing free seeds to everyone",
+        "B": "By turning food from a 'discretionary welfare' to a 'legal entitlement'",
+        "C": "By banning private trade of grain",
+        "D": "By making all food free in the market"
+      },
+      "correct_answer": "B",
+      "explanation": "NFSA 2013 creates a legal obligation for the state to provide 5kg of grain per person to the covered population, allowing for judicial intervention if violated.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 5,
+      "question": "The 'Carrying Cost' of foodgrains managed by the FCI includes interest, storage, and transport. Why does this cost increase during surplus years?",
+      "options": {
+        "A": "Because farmers refuse to sell",
+        "B": "Because grain is kept in storage for longer periods due to open-ended procurement exceeding buffer norms",
+        "C": "Because the market price falls",
+        "D": "Because transport becomes expensive in summer"
+      },
+      "correct_answer": "B",
+      "explanation": "When the government procures more than it can distribute, the interest on loans and warehouse rent accumulate, raising the total subsidy bill.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which socio-economic factor is most responsible for the 'Gendered' dimension of food insecurity in Indian households?",
+      "options": {
+        "A": "Women working more in fields",
+        "B": "Intra-household inequality where women eat last and least",
+        "C": "Lack of education for girls",
+        "D": "Higher calorie needs of women"
+      },
+      "correct_answer": "B",
+      "explanation": "Cultural norms often dictate that women eat after the men and children, leading to chronic malnutrition and anemia even in households that aren't 'income poor'.",
+      "difficulty": "hard",
+      "source_section": "4.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the primary ecological risk of the current MSP-Procurement system focused only on Wheat and Rice?",
+      "options": {
+        "A": "Increase in forest cover",
+        "B": "Monoculture leading to groundwater depletion and soil salinity",
+        "C": "Too many organic fertilizers",
+        "D": "Decrease in pesticide use"
+      },
+      "correct_answer": "B",
+      "explanation": "The focus on water-intensive crops (rice) in semi-arid regions (Punjab/Haryana) has led to an environmental crisis, threatening future production.",
+      "difficulty": "hard",
+      "source_section": "4.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is 'Nutritional Security' considered a more advanced goal than simple 'Food Security'?",
+      "options": {
+        "A": "It is cheaper to implement",
+        "B": "It addresses 'Hidden Hunger' by ensuring a balance of micronutrients, not just bulk calories",
+        "C": "It only focuses on the rich",
+        "D": "It encourages imports"
+      },
+      "correct_answer": "B",
+      "explanation": "A person can have a full stomach of rice but still suffer from malnutrition due to lack of proteins, vitamins, and minerals.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 9,
+      "question": "In urban India, why is the 'Informal Sector' worker particularly vulnerable to food price shocks?",
+      "options": {
+        "A": "They don't have bank accounts",
+        "B": "Their wages are not 'indexed' to inflation, and they lack permanent addresses for ration cards",
+        "C": "They only eat outside",
+        "D": "They don't work in agriculture"
+      },
+      "correct_answer": "B",
+      "explanation": "Casual laborers have stagnant daily wages; when food prices rise, their purchasing power collapses, and migration makes accessing PDS difficult.",
+      "difficulty": "hard",
+      "source_section": "4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Identify the 'Buffer Stock' norm's function in 'Price Stabilization'.",
+      "options": {
+        "A": "To keep prices as high as possible",
+        "B": "To prevent price crashes for farmers and price spikes for consumers",
+        "C": "To eliminate the private market completely",
+        "D": "To determine the export duty"
+      },
+      "correct_answer": "B",
+      "explanation": "The government intervenes by buying at a floor (MSP) and selling at a ceiling (through Open Market Sales) to reduce market volatility.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "The success of the Academy of Development Science (ADS) in Maharashtra proves that:",
+      "options": {
+        "A": "Government is always the best provider",
+        "B": "Decentralized 'Grain Banks' run by NGOs/Communities can be more resilient in remote tribal areas",
+        "C": "Only technology can solve hunger",
+        "D": "Tribals do not need food security"
+      },
+      "correct_answer": "B",
+      "explanation": "ADS showed that local storage and management by the people can solve the 'last-mile' connectivity issues of the centralized PDS.",
+      "difficulty": "hard",
+      "source_section": "4.5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the result of 'Open-ended Procurement' on the National Grain Reserve?",
+      "options": {
+        "A": "Constant shortage",
+        "B": "Overflowing granaries far exceeding the buffer norms, leading to rot and wastage",
+        "C": "Lowering of food subsidies",
+        "D": "Increased exports of wheat"
+      },
+      "correct_answer": "B",
+      "explanation": "Since the FCI must buy whatever the farmers bring at MSP, stocks often pile up to double the required safety levels.",
+      "difficulty": "hard",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "How does 'Chronic Hunger' act as a barrier to 'Human Capital Formation'?",
+      "options": {
+        "A": "It makes people too tall",
+        "B": "It causes 'Stunting' and 'Wasting,' permanently reducing cognitive and physical productivity in the future workforce",
+        "C": "It increases the number of schools",
+        "D": "It has no impact on the economy"
+      },
+      "correct_answer": "B",
+      "explanation": "Malnutrition in early years creates a permanent disability in learning and working capacity, trapping the next generation in poverty.",
+      "difficulty": "hard",
+      "source_section": "4.2.1"
+    },
+    {
+      "question_number": 14,
+      "question": "The 'Marketable Surplus' produced by a farmer is primarily determined by:",
+      "options": {
+        "A": "The color of the grain",
+        "B": "Total production minus self-consumption and seeds",
+        "C": "The price of the tractor",
+        "D": "The location of the warehouse"
+      },
+      "correct_answer": "B",
+      "explanation": "Only when a farmer produces more than they need for their family can they sell to the government or open market.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Why did the 'Targeted PDS' (TPDS) shift away from the 'Universal PDS' in 1997?",
+      "options": {
+        "A": "To increase the population",
+        "B": "To reduce the fiscal burden by focusing subsidies only on those below the poverty line",
+        "C": "To provide free food to the rich",
+        "D": "To stop food imports"
+      },
+      "correct_answer": "B",
+      "explanation": "The government aimed to make the system more efficient by targeting resources specifically at those who couldn't afford market prices.",
+      "difficulty": "hard",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Identify the 'Logistical Paradox' of India's food security.",
+      "options": {
+        "A": "Wheat is grown in the south",
+        "B": "Surplus is in the North/West (Punjab/Haryana) while high-need areas are in the East/South (Bihar/WB/Odisha)",
+        "C": "PDS shops are only in cities",
+        "D": "FCI does not have trucks"
+      },
+      "correct_answer": "B",
+      "explanation": "The massive geographical gap between production and consumption centers makes transportation and storage highly expensive and prone to loss.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which term describes the right of a community to define its own food and agricultural systems?",
+      "options": {
+        "A": "Food Security",
+        "B": "Food Sovereignty",
+        "C": "Agricultural Subsidy",
+        "D": "Market Liberalization"
+      },
+      "correct_answer": "B",
+      "explanation": "Food Sovereignty is a broader concept that includes self-reliance and community-led decision making over food production.",
+      "difficulty": "hard",
+      "source_section": "4.5"
+    },
+    {
+      "question_number": 18,
+      "question": "The 'Subsidy' in the PDS system is the mathematical difference between:",
+      "options": {
+        "A": "Market Price and Export Price",
+        "B": "Economic Cost (Procurement + Distribution) and the Issue Price",
+        "C": "MSP and Market Price",
+        "D": "Taxes and Profits"
+      },
+      "correct_answer": "B",
+      "explanation": "The government pays the full cost of buying and moving the grain but collects very little from the poor; the taxpayer pays the 'subsidy' gap.",
+      "difficulty": "hard",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "In the context of 'Vulnerability,' why are female infants and the elderly termed the 'poorest of the poor'?",
+      "options": {
+        "A": "Because they don't work",
+        "B": "Because of systemic denial of equal access to resources within a household",
+        "C": "Because they eat more food",
+        "D": "Because they are in urban areas"
+      },
+      "correct_answer": "B",
+      "explanation": "Even in households with food, intra-family bias leads to higher malnutrition among these groups.",
+      "difficulty": "hard",
+      "source_section": "4.2"
+    },
+    {
+      "question_number": 20,
+      "question": "What is 'Hidden Hunger'?",
+      "options": {
+        "A": "Eating food in secret",
+        "B": "Micronutrient (Vitamins/Minerals) deficiency despite adequate caloric intake",
+        "C": "Hunger during the night",
+        "D": "Lack of water"
+      },
+      "correct_answer": "B",
+      "explanation": "A diet solely based on rice/wheat might fill the stomach but leave the person deficient in iron, iodine, and vitamins.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 21,
+      "question": "The 'Food-for-Work' program addresses which two fundamental challenges simultaneously?",
+      "options": {
+        "A": "Inflation and Exports",
+        "B": "Immediate hunger and Rural infrastructure/unemployment",
+        "C": "Banking and Education",
+        "D": "Industrialization and Imports"
+      },
+      "correct_answer": "B",
+      "explanation": "By paying in grain for labor on roads or wells, it provides both a meal and a durable asset for the village.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Why is the PDS 'Issue Price' kept near the market price for the APL (Above Poverty Line) category?",
+      "options": {
+        "A": "To earn a profit",
+        "B": "To act as a disincentive for those who can afford market rates, thus saving subsidies",
+        "C": "To pay the farmers more",
+        "D": "To compete with private stores"
+      },
+      "correct_answer": "B",
+      "explanation": "This reduces the government's burden by ensuring only those truly in need receive high levels of subsidy.",
+      "difficulty": "hard",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 23,
+      "question": "How does 'Diversification' into millets (Jowar/Bajra) improve food security?",
+      "options": {
+        "A": "They are more expensive",
+        "B": "They are climate-resilient and provide superior nutritional value compared to rice/wheat",
+        "C": "They grow only in cities",
+        "D": "They don't need water at all"
+      },
+      "correct_answer": "B",
+      "explanation": "Coarse grains are 'nutri-cereals' and grow well in drought-prone areas where rice would fail.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Identify the 'Institutional Challenge' in the cooperative model of PDS (like in Tamil Nadu).",
+      "options": {
+        "A": "Lack of government control",
+        "B": "Need for efficient community monitoring to prevent local-level corruption",
+        "C": "Too many shops",
+        "D": "High market prices"
+      },
+      "correct_answer": "B",
+      "explanation": "While cooperatives are effective, they require strong social accountability to ensure the manager doesn't divert stocks.",
+      "difficulty": "hard",
+      "source_section": "4.5"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the primary objective of 'Bio-fortification' in food security strategy?",
+      "options": {
+        "A": "To make food look better",
+        "B": "To increase the nutrient density (vitamins/minerals) in staple crops like wheat and rice",
+        "C": "To grow food in laboratories",
+        "D": "To increase the shelf life of bread"
+      },
+      "correct_answer": "B",
+      "explanation": "It helps solve the 'Hidden Hunger' problem at the source by making the staples themselves more nutritious.",
+      "difficulty": "hard",
+      "source_section": "4.4"
+    }
+  ]
+}

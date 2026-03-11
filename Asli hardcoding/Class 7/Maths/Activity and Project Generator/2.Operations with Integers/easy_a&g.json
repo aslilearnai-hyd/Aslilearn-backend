@@ -1,0 +1,164 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Operations with Integers",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class7_maths_ch1_integers.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Human Number Line",
+            "objective": "Understand addition and subtraction of integers physically",
+            "materials": [
+                "Chalk or masking tape",
+                "Open space"
+            ],
+            "steps": [
+                "Draw a long number line on the floor from -10 to 10",
+                "Stand at zero and move forward for positive and backward for negative",
+                "Solve $3 + (-5)$ by walking the steps and noting the final position"
+            ],
+            "learning_outcome": "Visualizes movement on a number line for integer operations",
+            "evaluation": "Correct positioning on the number line (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Integer Sign Rules Table",
+            "objective": "Memorize the rules for multiplication and division",
+            "materials": [
+                "Chart paper",
+                "Colored markers"
+            ],
+            "steps": [
+                "Create a $2 \times 2$ grid for multiplication signs",
+                "Fill in the results for $(+) \times (+)$, $(+) \times (-)$, $(-) \times (+)$, and $(-) \times (-)$",
+                "Decorate the chart and hang it in the study area"
+            ],
+            "learning_outcome": "Memorizes the fundamental sign laws of integers",
+            "evaluation": "Accuracy of the sign rules (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Colored Counter Addition",
+            "objective": "Add integers using the cancellation method",
+            "materials": [
+                "Red buttons (for negative)",
+                "Blue buttons (for positive)"
+            ],
+            "steps": [
+                "Represent $-4 + 6$ using 4 red and 6 blue buttons",
+                "Pair one red with one blue to make 'zero pairs'",
+                "Count the remaining buttons to find the sum"
+            ],
+            "learning_outcome": "Understand the concept of additive inverse and zero pairs",
+            "evaluation": "Correct count of remaining counters (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Temperature Tracking",
+            "objective": "Apply integers to real-world temperature changes",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Note down the morning and night temperatures of five cold cities",
+                "Calculate the difference (fall in temperature) using subtraction",
+                "Represent the drop as a negative integer"
+            ],
+            "learning_outcome": "Uses integers to represent real-life rising and falling values",
+            "evaluation": "Correct subtraction of temperatures (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Integer Ladder",
+            "objective": "Practice vertical number line operations",
+            "materials": [
+                "Notebook",
+                "Scale"
+            ],
+            "steps": [
+                "Draw a vertical number line representing a building with basement floors",
+                "If a lift starts at floor 2 and goes down 5 floors, where is it?",
+                "Show the calculation: $2 - 5 = -3$"
+            ],
+            "learning_outcome": "Recognizes vertical applications of negative numbers",
+            "evaluation": "Correct labeling and calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Multiplication Patterns",
+            "objective": "Observe how patterns lead to negative results",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write the table of 3 down to $3 \times 0$",
+                "Continue the pattern to $3 \times (-1), 3 \times (-2)$",
+                "Observe how the product decreases by 3 each time"
+            ],
+            "learning_outcome": "Derives the rules of negative multiplication through patterns",
+            "evaluation": "Logical sequence of the number pattern (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Integer War Card Game",
+            "objective": "Compare the value of integers quickly",
+            "materials": [
+                "Playing cards (Red = Negative, Black = Positive)"
+            ],
+            "steps": [
+                "Two players flip a card at the same time",
+                "The player with the higher integer value wins the round",
+                "Record the scores using a tally mark system"
+            ],
+            "learning_outcome": "Quickly compares positive and negative magnitudes",
+            "evaluation": "Correct identification of the greater integer (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Properties Match-Up",
+            "objective": "Identify Commutative and Associative properties",
+            "materials": [
+                "Flash cards"
+            ],
+            "steps": [
+                "Write $a + b = b + a$ on one card and its name on another",
+                "Do the same for Associative and Distributive properties",
+                "Shuffle and match the property with its correct equation"
+            ],
+            "learning_outcome": "Identifies the fundamental properties of integer operations",
+            "evaluation": "Correct matching of all property pairs (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Zero Sum Game",
+            "objective": "Find integers that add up to zero",
+            "materials": [
+                "Small slips of paper"
+            ],
+            "steps": [
+                "Write integers from -10 to 10 on slips",
+                "Pick a slip and find another slip that makes the sum zero",
+                "Write down the pairs (e.g., $-7, 7$)"
+            ],
+            "learning_outcome": "Reinforces the concept of additive identity and inverse",
+            "evaluation": "Accuracy of the zero-sum pairs (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Integer Story Problems",
+            "objective": "Convert words into integer expressions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Create five short stories (e.g., 'A bird dives 4m down, then climbs 2m')",
+                "Write the mathematical expression for each story",
+                "Solve the expression to find the final answer"
+            ],
+            "learning_outcome": "Translates linguistic problems into mathematical operations",
+            "evaluation": "Correct translation and solution (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,175 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Magnetic Effects of Electric Current",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the production of magnetic field by electric current",
+        "Describe magnetic field lines and patterns around conductors, loops, and solenoids",
+        "Apply rules like right-hand thumb rule and Fleming's left-hand rule",
+        "Explain working of electric motor and force on current-carrying conductor",
+        "Identify applications like electromagnets and domestic wiring safety",
+        "Perform simple experiments to observe magnetic effects"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Magnetic Field and Oersted's Experiment",
+            "topics_covered": [
+                "Magnetic field and field lines properties",
+                "Oersted's discovery: current produces magnetic field",
+                "Magnetic field due to straight current-carrying conductor",
+                "Right-hand thumb rule"
+            ],
+            "teaching_strategy": [
+                "Demonstration of Oersted's experiment with compass and wire",
+                "Interactive drawing of field lines on board",
+                "Explanation with real examples (compass deflection)"
+            ],
+            "student_activities": [
+                "Observe compass deflection with current ON/OFF",
+                "Draw concentric circular field lines for straight wire",
+                "Apply right-hand thumb rule to determine direction for 5 cases"
+            ],
+            "assessment": [
+                "Observation notes and direction accuracy",
+                "Diagram labeling"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Magnetic Field Due to Circular Loop and Solenoid",
+            "topics_covered": [
+                "Magnetic field pattern around current-carrying circular loop",
+                "Magnetic field due to solenoid",
+                "Solenoid as electromagnet",
+                "Factors affecting magnetic field strength"
+            ],
+            "teaching_strategy": [
+                "Demonstration with coil and iron nail (electromagnet)",
+                "Comparison of solenoid field with bar magnet",
+                "Discussion on increasing field strength"
+            ],
+            "student_activities": [
+                "Make a simple solenoid using wire and nail, test with paper clips",
+                "Draw field lines for loop and solenoid",
+                "List factors affecting solenoid field (current, turns, core)"
+            ],
+            "assessment": [
+                "Electromagnet demonstration success",
+                "Field line diagrams"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Force on Current-Carrying Conductor",
+            "topics_covered": [
+                "Force on current-carrying conductor in magnetic field",
+                "Fleming's left-hand rule",
+                "Fleming's right-hand rule (introduction for generator context)",
+                "DC motor principle"
+            ],
+            "teaching_strategy": [
+                "Demonstration of force using current-carrying wire between magnets",
+                "Guided application of Fleming's left-hand rule",
+                "Simple motor model explanation"
+            ],
+            "student_activities": [
+                "Apply Fleming's left-hand rule to predict direction in 4-5 scenarios",
+                "Build a basic model of DC motor using coil, magnet, battery",
+                "Observe rotation and explain using rule"
+            ],
+            "assessment": [
+                "Rule application correctness",
+                "Motor model working and explanation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Electric Motor and Electromagnet Applications",
+            "topics_covered": [
+                "Working of electric motor (split ring commutator)",
+                "Electromagnets and their uses",
+                "Advantages over permanent magnets"
+            ],
+            "teaching_strategy": [
+                "Animated/video explanation of motor (if available)",
+                "Group discussion on applications (cranes, MRI, speakers)",
+                "Problem-solving on direction of force/motion"
+            ],
+            "student_activities": [
+                "Disassemble/reassemble toy motor or draw labeled diagram",
+                "Solve 5-6 application-based questions on motor direction",
+                "Make chart of 6 real-life electromagnet uses"
+            ],
+            "assessment": [
+                "Diagram accuracy",
+                "Chart content and questions solved"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Domestic Electric Circuits and Safety",
+            "topics_covered": [
+                "Household wiring (live, neutral, earth)",
+                "Fuse, MCB, earthing importance",
+                "Overloading and short circuit risks",
+                "Safety precautions"
+            ],
+            "teaching_strategy": [
+                "Demonstration/model of domestic circuit",
+                "Discussion on common faults and protection",
+                "Real-life case examples"
+            ],
+            "student_activities": [
+                "Draw labeled domestic circuit diagram with fuse and earthing",
+                "Identify safety features in home wiring (survey/note)",
+                "Solve questions on why earthing prevents shocks"
+            ],
+            "assessment": [
+                "Circuit diagram completeness",
+                "Safety explanation quality"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Worksheet and Application Questions",
+            "topics_covered": [
+                "Recap of rules, field patterns, motor, circuits",
+                "Common numerical/conceptual questions",
+                "Integration with daily life"
+            ],
+            "teaching_strategy": [
+                "Quick revision quiz (diagrams + rules)",
+                "Worksheet with mixed questions",
+                "Doubt clearing and peer teaching"
+            ],
+            "student_activities": [
+                "Solve 20-question worksheet (MCQ, diagrams, short answer)",
+                "Discuss answers in groups",
+                "Write one application per major concept"
+            ],
+            "assessment": [
+                "Worksheet performance",
+                "Participation and notebook"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Straight wire, battery, compass, iron filings",
+        "Copper coil, iron nail, paper clips (for electromagnet)",
+        "Horse-shoe magnet, connecting wires",
+        "Simple DC motor kit or model",
+        "Whiteboard, markers, NCERT textbook diagrams"
+    ],
+    "evaluation_methods": [
+        "Diagram and rule application checking",
+        "Practical demonstration observation",
+        "Worksheet and short quiz",
+        "Model/chart evaluation",
+        "Participation in discussions"
+    ],
+    "teacher_tip": "Use plenty of direction-based practice with rules (thumb/fingers) to avoid confusion. Demonstrate every experiment live for safety and clarity. Relate concepts to everyday devices like fans, mixers, and wiring to boost interest and retention."
+}

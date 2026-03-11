@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "The Baudhāyana-Pythagoras Theorem",
+  "difficulty": "Medium",
+  "source_pdf": "hegp202.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Diagonal Square Investigation",
+      "objective": "Understand how the diagonal creates a square with double area",
+      "materials": ["Notebook", "Pencil", "Scale"],
+      "steps": [
+        "Draw a square of side 4 cm",
+        "Draw its diagonal",
+        "Construct a square on the diagonal",
+        "Calculate and compare both areas"
+      ],
+      "learning_outcome": "Understands geometric relation between square and its diagonal",
+      "evaluation": "Correct construction and area comparison (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Half-Area Square Construction",
+      "objective": "Construct a square whose area is half of a given square",
+      "materials": ["Square paper", "Scale"],
+      "steps": [
+        "Draw a square of side 8 cm",
+        "Join the midpoints of all sides",
+        "Observe the inner tilted square",
+        "Calculate its area"
+      ],
+      "learning_outcome": "Recognizes geometric methods to reduce area",
+      "evaluation": "Correct explanation of half-area property (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Hypotenuse Bounds Activity",
+      "objective": "Estimate the value of √2 using bounds",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Find squares of decimals between 1.4 and 1.5",
+        "Identify numbers whose square is close to 2",
+        "Write lower and upper bounds",
+        "Estimate √2 up to 3 decimal places"
+      ],
+      "learning_outcome": "Learns approximation of irrational numbers",
+      "evaluation": "Accuracy of estimation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Triangle Hypotenuse Calculator",
+      "objective": "Apply formula c² = a² + b²",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Draw a right triangle with sides 5 cm and 12 cm",
+        "Calculate the square of both sides",
+        "Find the hypotenuse using the theorem",
+        "Verify with measurement"
+      ],
+      "learning_outcome": "Applies Pythagoras theorem correctly",
+      "evaluation": "Correct calculation and verification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Missing Side Finder",
+      "objective": "Find unknown side lengths in right triangles",
+      "materials": ["Notebook"],
+      "steps": [
+        "Given a right triangle with hypotenuse 17 cm and one side 8 cm",
+        "Apply Pythagoras theorem",
+        "Find the missing side",
+        "Check solution using square values"
+      ],
+      "learning_outcome": "Develops algebraic problem-solving skills",
+      "evaluation": "Correct derivation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Square Combination Exploration",
+      "objective": "Combine two squares of different areas",
+      "materials": ["Chart paper", "Pencil", "Scale"],
+      "steps": [
+        "Draw squares of side 3 cm and 4 cm",
+        "Form a right triangle using these sides",
+        "Construct a square on the hypotenuse",
+        "Compare areas of squares"
+      ],
+      "learning_outcome": "Understands that a² + b² = c² geometrically",
+      "evaluation": "Correct demonstration (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Primitive Triple Investigation",
+      "objective": "Identify primitive Pythagorean triples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write triples like (3,4,5), (5,12,13)",
+        "Check common factors",
+        "Classify primitive and non-primitive triples",
+        "Explain your reasoning"
+      ],
+      "learning_outcome": "Understands concept of primitive triples",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Scaled Triple Generator",
+      "objective": "Generate new triples using multiplication",
+      "materials": ["Notebook"],
+      "steps": [
+        "Start with triple (3,4,5)",
+        "Multiply by 2,3,4,5",
+        "Write new triples",
+        "Verify theorem for each"
+      ],
+      "learning_outcome": "Understands scaling property of triples",
+      "evaluation": "Correct generated triples (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Rectangle Diagonal Investigation",
+      "objective": "Find rectangle diagonal using theorem",
+      "materials": ["Notebook", "Scale"],
+      "steps": [
+        "Draw rectangle with sides 6 cm and 8 cm",
+        "Measure diagonal",
+        "Calculate diagonal using theorem",
+        "Compare results"
+      ],
+      "learning_outcome": "Applies theorem in quadrilaterals",
+      "evaluation": "Correct calculation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real Life Lotus Problem",
+      "objective": "Solve a real-life geometry problem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Model lotus problem using a right triangle",
+        "Let water depth be x",
+        "Form equation using theorem",
+        "Solve for x"
+      ],
+      "learning_outcome": "Applies theorem in contextual problems",
+      "evaluation": "Correct equation and solution (10 marks)"
+    }
+  ]
+}

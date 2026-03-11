@@ -1,0 +1,36 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter": "Area",
+    "difficulty": "Easy",
+    "source_pdf": "hegp207.pdf",
+    "short_notes": {
+        "key_points": [
+            "Area is the measure of the surface covered by a two-dimensional shape",
+            "Area is measured in square units such as cm² or m²",
+            "A rectangle’s area depends on its length and width",
+            "A square is a special rectangle with all sides equal",
+            "Triangles, parallelograms, rhombuses and trapeziums have specific formulas to calculate their area"
+        ],
+        "examples": [
+            "Area of rectangle (10 cm × 5 cm) = 50 cm²",
+            "Area of square (side 6 cm) = 36 cm²",
+            "Area of triangle with base 8 cm and height 5 cm = 20 cm²",
+            "Area of parallelogram with base 7 cm and height 6 cm = 42 cm²"
+        ],
+        "formulas": [
+            "Rectangle → Area = length × width",
+            "Square → Area = side × side",
+            "Triangle → Area = ½ × base × height",
+            "Parallelogram → Area = base × height",
+            "Rhombus → Area = ½ × product of diagonals",
+            "Trapezium → Area = ½ × height × (sum of parallel sides)"
+        ],
+        "exam_tips": [
+            "Always use square units when writing the final answer",
+            "Identify the correct base and perpendicular height",
+            "Use the correct formula for each geometric shape",
+            "Draw diagrams to understand shapes clearly"
+        ]
+    }
+}

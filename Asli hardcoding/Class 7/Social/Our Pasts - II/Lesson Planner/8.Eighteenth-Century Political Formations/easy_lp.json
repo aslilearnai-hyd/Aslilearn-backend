@@ -1,0 +1,151 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Eighteenth-Century Political Formations",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Know about the Mughal empire decline",
+        "Learn about important regional rulers",
+        "Understand that European companies had power in India",
+        "Identify a few major battles",
+        "Learn how people governed different regions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Mughal Empire Decline",
+            "topics_covered": [
+                "Why the Mughal empire became weak",
+                "New powers in India"
+            ],
+            "teaching_strategy": [
+                "Storytelling",
+                "Class discussion with simple map"
+            ],
+            "student_activities": [
+                "Name reasons for decline",
+                "Locate main Mughal regions on map"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook note"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Regional Powers",
+            "topics_covered": [
+                "Marathas, Sikhs, Nizams, Rajputs",
+                "Friendships and fights between states"
+            ],
+            "teaching_strategy": [
+                "Show maps",
+                "Talk about rulers"
+            ],
+            "student_activities": [
+                "Pick one state and say one fact",
+                "Discuss who was friend or enemy"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook note"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "European Companies",
+            "topics_covered": [
+                "British and French companies",
+                "Trading posts and influence"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Show map of trading posts"
+            ],
+            "student_activities": [
+                "Name one trading post",
+                "Say how companies affected India"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook note"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Major Battles",
+            "topics_covered": [
+                "Battle of Plassey",
+                "Battle of Buxar"
+            ],
+            "teaching_strategy": [
+                "Map exercise",
+                "Simple storytelling of battles"
+            ],
+            "student_activities": [
+                "Mark battle locations",
+                "Say one outcome of a battle"
+            ],
+            "assessment": [
+                "Map check",
+                "Participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Governance",
+            "topics_covered": [
+                "How regional rulers collected taxes",
+                "Simple comparison with Mughal system"
+            ],
+            "teaching_strategy": [
+                "Simple chart on board",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Fill a small table comparing systems",
+                "Talk about which seems easier"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Quiz",
+            "topics_covered": [
+                "Recap rulers, battles, and companies",
+                "Short quiz with simple questions"
+            ],
+            "teaching_strategy": [
+                "Fun quiz",
+                "Class discussion on key points"
+            ],
+            "student_activities": [
+                "Answer quiz",
+                "Share one fact learned"
+            ],
+            "assessment": [
+                "Quiz results",
+                "Participation",
+                "Notebook note"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Maps of 18th-century India",
+        "Simple timeline chart",
+        "Whiteboard/Blackboard",
+        "Pictures of rulers and battles"
+    ],
+    "evaluation_methods": [
+        "Oral questions",
+        "Map exercises",
+        "Notebook checking",
+        "Simple quiz"
+    ],
+    "teacher_tip": "Focus on main facts only, use maps and stories, keep explanations simple and engaging for easy understanding."
+}

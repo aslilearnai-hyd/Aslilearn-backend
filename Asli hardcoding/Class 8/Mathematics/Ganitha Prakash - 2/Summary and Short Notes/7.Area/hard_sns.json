@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Area",
+  "difficulty": "Hard",
+  "source_pdf": "hegp207.pdf",
+  "short_notes": {
+    "key_points": [
+      "Area formulas are derived using geometric transformations",
+      "Parallelograms can be converted into rectangles with the same base and height",
+      "Two congruent triangles can form a parallelogram",
+      "Complex shapes can be decomposed into simpler geometric figures",
+      "Area relationships help solve problems involving equal areas"
+    ],
+    "examples": [
+      "Two triangles with the same base and height have equal area",
+      "Area of rhombus with diagonals 24 cm and 18 cm = 216 cm²",
+      "Area of trapezium with bases 20 cm and 14 cm and height 10 cm = 170 cm²",
+      "Area of composite polygon found by dividing into triangles"
+    ],
+    "formulas": [
+      "Rectangle → Area = length × width",
+      "Triangle → Area = 1/2 × base × height",
+      "Parallelogram → Area = base × height",
+      "Rhombus → Area = 1/2 × d1 × d2",
+      "Trapezium → Area = 1/2 × height × (sum of parallel sides)"
+    ],
+    "exam_tips": [
+      "Understand derivation of formulas rather than memorizing them",
+      "Use geometric reasoning when solving area comparisons",
+      "Draw auxiliary lines to divide irregular shapes",
+      "Check that dimensions correspond to the correct formula"
+    ]
+  }
+}

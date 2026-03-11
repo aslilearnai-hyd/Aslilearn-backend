@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Electricity: Magnetic and Heating Effects",
+  "difficulty": "Easy",
+  "source_pdf": "hecu101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Simple Electric Circuit",
+      "objective": "Understand how electric circuits work",
+      "materials": ["Battery", "Small bulb", "Connecting wires", "Switch"],
+      "steps": [
+        "Connect the battery, bulb, and switch using wires",
+        "Close the switch to complete the circuit",
+        "Observe the bulb glowing"
+      ],
+      "learning_outcome": "Understands how a closed circuit allows current to flow",
+      "evaluation": "Correct circuit connection (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Heating Effect of Electric Current",
+      "objective": "Observe how electric current produces heat",
+      "materials": [
+        "Battery",
+        "Thin nichrome wire",
+        "Switch",
+        "Connecting wires"
+      ],
+      "steps": [
+        "Connect the nichrome wire in a circuit with a battery",
+        "Close the switch",
+        "Observe the wire getting warm"
+      ],
+      "learning_outcome": "Understands heating effect of current",
+      "evaluation": "Observation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Electromagnet Experiment",
+      "objective": "Understand how electricity creates magnetism",
+      "materials": ["Iron nail", "Copper wire", "Battery", "Paper clips"],
+      "steps": [
+        "Wrap copper wire around the iron nail",
+        "Connect the wire ends to the battery",
+        "Bring the nail near paper clips and observe attraction"
+      ],
+      "learning_outcome": "Learns how electromagnets work",
+      "evaluation": "Ability to demonstrate attraction (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Testing Conductors and Insulators",
+      "objective": "Identify materials that conduct electricity",
+      "materials": [
+        "Battery",
+        "Bulb",
+        "Wires",
+        "Different materials (coin, rubber, pencil, plastic)"
+      ],
+      "steps": [
+        "Make a simple circuit with a gap",
+        "Place different materials in the gap",
+        "Observe if the bulb glows"
+      ],
+      "learning_outcome": "Distinguishes conductors and insulators",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Electricity Safety Poster",
+      "objective": "Understand safe use of electricity",
+      "materials": ["Chart paper", "Markers", "Colours"],
+      "steps": [
+        "Draw a poster showing safe electrical practices",
+        "Include do's and don'ts",
+        "Present the poster to the class"
+      ],
+      "learning_outcome": "Promotes electrical safety awareness",
+      "evaluation": "Creativity and correctness (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Switch On–Switch Off Investigation",
+      "objective": "Understand the role of a switch in a circuit",
+      "materials": ["Battery", "Bulb", "Switch", "Wires"],
+      "steps": [
+        "Create a circuit with a switch",
+        "Turn the switch on and off",
+        "Observe how the bulb responds"
+      ],
+      "learning_outcome": "Understands how switches control current",
+      "evaluation": "Explanation of circuit behaviour (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Electromagnet Strength Test",
+      "objective": "Investigate factors affecting electromagnet strength",
+      "materials": ["Iron nail", "Copper wire", "Battery", "Paper clips"],
+      "steps": [
+        "Wrap the wire around the nail with few turns",
+        "Connect to battery and count paper clips lifted",
+        "Increase number of turns and repeat"
+      ],
+      "learning_outcome": "Learns how coil turns affect magnetic strength",
+      "evaluation": "Observation and comparison (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Simple Electric Bell Model",
+      "objective": "Understand the use of electromagnets in devices",
+      "materials": ["Battery", "Iron nail", "Copper wire", "Metal strip"],
+      "steps": [
+        "Create an electromagnet using nail and wire",
+        "Arrange the metal strip so it touches and breaks the circuit",
+        "Observe repeated tapping movement"
+      ],
+      "learning_outcome": "Understands application of electromagnets",
+      "evaluation": "Working model demonstration (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Identify Electric Appliances",
+      "objective": "Recognize devices that use heating effect",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List appliances like iron, heater, kettle",
+        "Write how electricity produces heat in them",
+        "Explain their use"
+      ],
+      "learning_outcome": "Connects electricity with real-life devices",
+      "evaluation": "Correct examples (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Circuit Drawing Practice",
+      "objective": "Learn to represent circuits using symbols",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Draw symbols for battery, bulb, switch, and wire",
+        "Create a circuit diagram",
+        "Label all components"
+      ],
+      "learning_outcome": "Understands circuit representation",
+      "evaluation": "Accuracy of diagram (10 marks)"
+    }
+  ]
+}

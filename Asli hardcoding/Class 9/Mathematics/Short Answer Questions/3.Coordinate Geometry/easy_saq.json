@@ -1,0 +1,286 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-06T00:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the Cartesian plane?",
+            "answer": "The Cartesian plane is a plane formed by two perpendicular number lines called the x-axis and y-axis.",
+            "key_concepts": [
+                "Cartesian plane",
+                "axes"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What are coordinate axes?",
+            "answer": "The x-axis and y-axis together are called coordinate axes.",
+            "key_concepts": [
+                "coordinate axes"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the origin?",
+            "answer": "The origin is the point where the x-axis and y-axis intersect.",
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the coordinates of the origin.",
+            "answer": "The coordinates of the origin are (0,0).",
+            "key_concepts": [
+                "origin coordinates"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is meant by an ordered pair?",
+            "answer": "An ordered pair (x,y) represents the coordinates of a point in the Cartesian plane.",
+            "key_concepts": [
+                "ordered pair"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the abscissa of a point?",
+            "answer": "The abscissa is the x-coordinate of a point.",
+            "key_concepts": [
+                "abscissa"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the ordinate of a point?",
+            "answer": "The ordinate is the y-coordinate of a point.",
+            "key_concepts": [
+                "ordinate"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How many quadrants are formed by the coordinate axes?",
+            "answer": "Four quadrants are formed by the coordinate axes.",
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which quadrant contains points with positive coordinates?",
+            "answer": "The first quadrant contains points with positive coordinates.",
+            "key_concepts": [
+                "quadrant I"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "In which quadrant does the point (-3,4) lie?",
+            "answer": "The point (-3,4) lies in the second quadrant.",
+            "key_concepts": [
+                "quadrant II"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "In which quadrant does the point (-5,-6) lie?",
+            "answer": "The point (-5,-6) lies in the third quadrant.",
+            "key_concepts": [
+                "quadrant III"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "In which quadrant does the point (6,-3) lie?",
+            "answer": "The point (6,-3) lies in the fourth quadrant.",
+            "key_concepts": [
+                "quadrant IV"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What are the coordinates of a point on the x-axis?",
+            "answer": "The coordinates of a point on the x-axis are (x,0).",
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What are the coordinates of a point on the y-axis?",
+            "answer": "The coordinates of a point on the y-axis are (0,y).",
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the y-coordinate of any point on the x-axis?",
+            "answer": "The y-coordinate of any point on the x-axis is 0.",
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the x-coordinate of any point on the y-axis?",
+            "answer": "The x-coordinate of any point on the y-axis is 0.",
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which axis does the point (4,0) lie on?",
+            "answer": "The point (4,0) lies on the x-axis.",
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which axis does the point (0,5) lie on?",
+            "answer": "The point (0,5) lies on the y-axis.",
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write the abscissa and ordinate of the point (6,3).",
+            "answer": "Abscissa = 6 and ordinate = 3.",
+            "key_concepts": [
+                "abscissa",
+                "ordinate"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Write the abscissa and ordinate of the point (-7,2).",
+            "answer": "Abscissa = -7 and ordinate = 2.",
+            "key_concepts": [
+                "abscissa",
+                "ordinate"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Name the mathematician associated with coordinate geometry.",
+            "answer": "René Descartes is associated with coordinate geometry.",
+            "key_concepts": [
+                "Descartes"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 22,
+            "question": "What is another name for the Cartesian plane?",
+            "answer": "Another name for the Cartesian plane is the coordinate plane.",
+            "key_concepts": [
+                "coordinate plane"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What does the x-coordinate represent?",
+            "answer": "The x-coordinate represents the distance from the y-axis.",
+            "key_concepts": [
+                "x-coordinate"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What does the y-coordinate represent?",
+            "answer": "The y-coordinate represents the distance from the x-axis.",
+            "key_concepts": [
+                "y-coordinate"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Find the quadrant of the point (5,7).",
+            "answer": "The point (5,7) lies in the first quadrant.",
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        }
+    ]
+}

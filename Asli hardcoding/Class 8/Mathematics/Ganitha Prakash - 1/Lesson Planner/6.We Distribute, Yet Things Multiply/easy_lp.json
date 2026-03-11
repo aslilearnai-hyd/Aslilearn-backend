@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "We Distribute, Yet Things Multiply",
+  "difficulty": "Easy",
+  "source_pdf": "ch-6_WE_DISTRIBUTE,_YET_THINGS_MULTIPLY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Simple Distribution Practice",
+      "objective": "Understand distributive property",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write expressions like 3(4 + 2)",
+        "Multiply 3 with both numbers",
+        "Find the final result"
+      ],
+      "learning_outcome": "Understands distributive property",
+      "evaluation": "Correct expansion (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Bracket Expansion",
+      "objective": "Practice expanding brackets",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 5(2 + 3)",
+        "Multiply the number outside with each number inside",
+        "Write the simplified answer"
+      ],
+      "learning_outcome": "Learns bracket expansion",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Simple Algebra Distribution",
+      "objective": "Understand distribution with variables",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 2(x + 4)",
+        "Multiply 2 with x and 4",
+        "Write the final expression"
+      ],
+      "learning_outcome": "Understands distributive property with variables",
+      "evaluation": "Correct expansion (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Factor Finding",
+      "objective": "Identify common factors",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 6x + 12",
+        "Find the common factor",
+        "Rewrite using brackets"
+      ],
+      "learning_outcome": "Learns basic factorisation",
+      "evaluation": "Correct factorisation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Distribution Check",
+      "objective": "Verify distributive property",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 4(3 + 5)",
+        "Solve using distribution",
+        "Solve by adding first and compare"
+      ],
+      "learning_outcome": "Recognises distributive rule",
+      "evaluation": "Correct verification (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Expression Simplification",
+      "objective": "Simplify algebraic expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 3(x + 2)",
+        "Expand the brackets",
+        "Write the simplified result"
+      ],
+      "learning_outcome": "Practices expression simplification",
+      "evaluation": "Correct simplification (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Like Terms Activity",
+      "objective": "Identify and combine like terms",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 2x + 3x",
+        "Identify like terms",
+        "Add the coefficients"
+      ],
+      "learning_outcome": "Understands like terms",
+      "evaluation": "Correct simplification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Distribution Chart",
+      "objective": "Visualise distributive property",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Write the distributive rule",
+        "Show examples with steps",
+        "Display the chart"
+      ],
+      "learning_outcome": "Reinforces distributive concept",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Simple Algebra Puzzle",
+      "objective": "Solve simple algebra expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 2(x + 3)",
+        "Expand the brackets",
+        "Find the final simplified form"
+      ],
+      "learning_outcome": "Applies distributive rule in algebra",
+      "evaluation": "Correct answer (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real-Life Distribution",
+      "objective": "Connect distributive property with real situations",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a situation involving equal groups",
+        "Write the mathematical expression",
+        "Solve using distribution"
+      ],
+      "learning_outcome": "Applies algebra to real-life context",
+      "evaluation": "Correct reasoning (10 marks)"
+    }
+  ]
+}

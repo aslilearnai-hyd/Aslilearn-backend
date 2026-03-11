@@ -1,0 +1,153 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Magnifying Glass",
+  "difficulty": "Medium",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Exploring Objects with a Magnifying Glass",
+      "objective": "Analyse how magnification reveals hidden details in everyday objects",
+      "materials": [
+        "Magnifying glass",
+        "Leaf",
+        "Piece of chalk",
+        "Notebook",
+        "Pen"
+      ],
+      "steps": [
+        "Observe a small object like a leaf or chalk using a magnifying glass",
+        "Identify the patterns or textures visible through magnification",
+        "Compare the appearance with normal observation",
+        "Record your findings in the notebook"
+      ],
+      "learning_outcome": "Students develop observation and analytical skills",
+      "evaluation": "Accuracy of observations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Understanding Visual Imagery in Poetry",
+      "objective": "Interpret imagery used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem 'Magnifying Glass' carefully",
+        "Identify lines where the poet describes small objects in detail",
+        "Explain how the imagery helps readers visualize the scene",
+        "Write your explanation in the notebook"
+      ],
+      "learning_outcome": "Students understand how imagery enhances poetic meaning",
+      "evaluation": "Quality of interpretation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Poem Summary Activity",
+      "objective": "Develop summarizing and comprehension skills",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the poem attentively",
+        "Identify the central idea of the poem",
+        "Write a summary explaining how the magnifying glass reveals wonders in nature",
+        "Share your summary with the teacher"
+      ],
+      "learning_outcome": "Students improve comprehension and writing skills",
+      "evaluation": "Clarity and accuracy of summary (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Poetic Devices Identification",
+      "objective": "Recognize literary devices used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Re-read the poem carefully",
+        "Identify examples of simile, metaphor, and personification",
+        "Write the lines containing these devices",
+        "Explain how each device enhances the poem"
+      ],
+      "learning_outcome": "Students understand the role of literary devices in poetry",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Illustration of Magnified Objects",
+      "objective": "Visualize and represent magnified details creatively",
+      "materials": ["Drawing sheet", "Pencil", "Colours"],
+      "steps": [
+        "Choose a small object like moss, chalk, or a drop of water",
+        "Draw the object as seen normally",
+        "Draw how it might appear when magnified",
+        "Label the newly visible details"
+      ],
+      "learning_outcome": "Students understand magnification through visual representation",
+      "evaluation": "Creativity and clarity of drawing (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Vocabulary and Meaning Activity",
+      "objective": "Expand vocabulary from the poem",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Identify unfamiliar words from the poem",
+        "Find their meanings using a dictionary",
+        "Write the meanings in your notebook",
+        "Use each word in a meaningful sentence"
+      ],
+      "learning_outcome": "Students improve vocabulary and contextual understanding",
+      "evaluation": "Correct meanings and sentence formation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Scientific Tools Discussion",
+      "objective": "Understand tools used for magnification",
+      "materials": ["Notebook"],
+      "steps": [
+        "Discuss different magnifying tools such as microscopes and telescopes",
+        "Explain how each tool helps in scientific observation",
+        "Write examples of fields where these tools are used",
+        "Present your ideas in class"
+      ],
+      "learning_outcome": "Students connect poetry with scientific observation",
+      "evaluation": "Depth of explanation and participation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Collective Nouns Practice",
+      "objective": "Strengthen grammar knowledge of collective nouns",
+      "materials": ["Textbook exercise", "Notebook"],
+      "steps": [
+        "Read the list of collective nouns in the exercise",
+        "Match phrases such as 'a swarm of' with the correct noun",
+        "Write the correct combinations in your notebook"
+      ],
+      "learning_outcome": "Students learn correct usage of collective nouns",
+      "evaluation": "Accuracy of matching (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Idioms with 'Eye' Exercise",
+      "objective": "Learn idiomatic expressions related to observation",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read idioms related to the word 'eye'",
+        "Match them with their meanings",
+        "Write example sentences using each idiom"
+      ],
+      "learning_outcome": "Students understand figurative language in English",
+      "evaluation": "Correct usage in sentences (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Writing: A World Through a Lens",
+      "objective": "Encourage creative and descriptive writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you have a powerful magnifying lens",
+        "Describe what you would observe in nature",
+        "Explain how magnification changes your perception",
+        "Write a short paragraph describing the experience"
+      ],
+      "learning_outcome": "Students develop imagination and descriptive writing skills",
+      "evaluation": "Creativity, language, and coherence (10 marks)"
+    }
+  ]
+}

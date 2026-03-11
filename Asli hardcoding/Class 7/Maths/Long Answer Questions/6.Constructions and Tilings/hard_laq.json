@@ -1,0 +1,398 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Constructions and Tilings",
+    "generated_at": "2026-03-05T01:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how to construct a 75° angle using only a compass and a straightedge. Show the logical breakdown of the angles used.",
+            "answer": "A 75° angle is constructed by bisecting the 30° space between 60° and 90°. Steps: 1. Construct a 90° perpendicular. 2. Construct a 60° angle using the same base. 3. The space between 60° and 90° is 30°. 4. Bisect this 30° angle to get 15°. 5. Adding this to the base 60° gives $60 + 15 = 75°$.",
+            "answer_outline": [
+                "Identify 75° as 60° + 15°",
+                "Construct 90° and 60°",
+                "Bisect the difference",
+                "Final angle verification"
+            ],
+            "key_concepts": [
+                "composite angles",
+                "angle bisector"
+            ],
+            "marks": 6,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Derive the formula for the interior angle of a regular n-sided polygon and explain why it determines if a shape can tile a plane.",
+            "answer": "Formula: $(n-2) \\times 180 / n$. For a shape to tile a plane, this value must be a factor of 360 (i.e., $360 / \\text{angle} = \\text{integer}$). If the result is not an integer, the shapes cannot meet at a vertex without gaps or overlaps.",
+            "answer_outline": [
+                "State the interior angle formula",
+                "Explain the 360° vertex sum rule",
+                "Link divisibility to gapless tiling"
+            ],
+            "key_concepts": [
+                "interior angles",
+                "tiling constraints"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the construction of a 120° angle and explain its relationship to a regular hexagon.",
+            "answer": "1. Draw a line and arc from O. 2. Mark 60° (Point A) and then, from A, mark another 60° (Point B) on the same arc. 3. Join OB. A regular hexagon has interior angles of 120°, so this construction provides the exact 'turning angle' needed to draw the sides of a hexagon.",
+            "answer_outline": [
+                "Step-by-step 120° construction",
+                "Relate to hexagon interior angle sum"
+            ],
+            "key_concepts": [
+                "120 degree angle",
+                "hexagon properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove using the vertex sum rule that there are only three possible regular tilings of a plane.",
+            "answer": "The interior angles of regular polygons are 60° (triangle), 90° (square), 108° (pentagon), 120° (hexagon), 135° (octagon). Only 60, 90, and 120 are factors of 360 ($360/60=6, 360/90=4, 360/120=3$). Since no other regular polygon angle (which increases as sides increase) can divide 360 into an integer $\\ge 3$, only these three work.",
+            "answer_outline": [
+                "List angles of common regular polygons",
+                "Test divisibility by 360",
+                "Conclude based on the limits of $n$"
+            ],
+            "key_concepts": [
+                "regular tilings",
+                "vertex sum",
+                "divisibility"
+            ],
+            "marks": 6,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Given a line segment AB, how can you construct a square using only a compass and straightedge?",
+            "answer": "1. Construct perpendiculars at points A and B. 2. Use a compass set to length AB to mark points C and D on these perpendiculars. 3. Join CD. Because all angles are 90° and all sides are equal to AB, the figure is a square.",
+            "answer_outline": [
+                "Construct perpendiculars at endpoints",
+                "Transfer segment length to vertical lines",
+                "Complete the quadrilateral"
+            ],
+            "key_concepts": [
+                "square construction",
+                "perpendiculars"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the concept of 'Dual Tilings'.",
+            "answer": "A dual tiling is formed by connecting the centers of the polygons in an existing tiling. For example, connecting the centers of a hexagonal tiling creates a triangular tiling. This shows the deep geometric connection between different shapes.",
+            "answer_outline": [
+                "Define dual tiling",
+                "Provide an example (hexagon to triangle)"
+            ],
+            "key_concepts": [
+                "dual tiling",
+                "geometric centers"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "If you are given a circle, how can you find its center using only a compass and straightedge?",
+            "answer": "1. Draw any two non-parallel chords in the circle. 2. Construct the perpendicular bisector of each chord. 3. The point where these two bisectors intersect is the center of the circle.",
+            "answer_outline": [
+                "Draw chords",
+                "Construct perpendicular bisectors",
+                "Identify intersection as center"
+            ],
+            "key_concepts": [
+                "circle center",
+                "chords",
+                "perpendicular bisector"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why can an isosceles triangle tile a plane, but a circle cannot? Discuss in terms of 'plane coverage'.",
+            "answer": "Tiling requires 100% coverage. Isosceles triangles can be flipped and joined to form parallelograms, which stack with no gaps. Circles, due to their constant curvature, always leave 'interstitial spaces' (gaps) regardless of how tightly they are packed.",
+            "answer_outline": [
+                "Explain triangle stacking",
+                "Explain circle gaps (curvature)"
+            ],
+            "key_concepts": [
+                "plane coverage",
+                "curvature"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe how to construct a 45° angle by bisecting a 90° angle.",
+            "answer": "1. Construct a perpendicular line to get 90°. 2. Place the compass needle at the vertex and draw an arc cutting both arms. 3. From those two points, draw arcs in the interior that intersect. 4. Join the vertex to the intersection. Each resulting angle is 45°.",
+            "answer_outline": [
+                "90° base construction",
+                "Bisector steps",
+                "Resulting angles"
+            ],
+            "key_concepts": [
+                "45 degree angle",
+                "bisector"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a 'Semi-regular Tiling' (Archimedean Tiling)? Give a specific example and show the vertex calculation.",
+            "answer": "It is a tiling using two or more regular polygons where every vertex is identical. Example: A tiling of octagons and squares. At each vertex, two octagons (135° each) and one square (90°) meet. Sum: $135 + 135 + 90 = 360°$.",
+            "answer_outline": [
+                "Define semi-regular tiling",
+                "Identify octagons/squares example",
+                "Verify with 360° sum"
+            ],
+            "key_concepts": [
+                "semi-regular tiling",
+                "vertex sum"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Constructing a 150° angle requires the combination of which two standard constructions?",
+            "answer": "It can be done by adding 60° and 90°, or by bisecting the 60° angle outside of a 120° angle. Most simply: $90° + 60° = 150°$.",
+            "answer_outline": [
+                "Identify angle components",
+                "Suggest construction path"
+            ],
+            "key_concepts": [
+                "composite angles"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why the 'Incenter' of a triangle is found using angle bisectors.",
+            "answer": "The incenter is the center of the circle that fits perfectly inside a triangle. Every point on an angle bisector is equidistant from the two sides of that angle. The point where all three bisectors meet is equidistant from all three sides, which is the definition of the incenter.",
+            "answer_outline": [
+                "Define incenter",
+                "Explain equidistance property of bisectors",
+                "Link intersection to circle center"
+            ],
+            "key_concepts": [
+                "incenter",
+                "angle bisector",
+                "equidistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "How do you construct a line parallel to a given line through a point P not on the line?",
+            "answer": "1. Draw a transversal through P cutting the line at A. 2. Measure the angle formed at A. 3. Copy this angle at point P (alternate interior angles or corresponding angles). 4. The new line will be parallel to the original.",
+            "answer_outline": [
+                "Draw transversal",
+                "Identify angle",
+                "Copy angle to P",
+                "Invoke parallel line properties"
+            ],
+            "key_concepts": [
+                "parallel lines",
+                "copying angles"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Is it possible to tile a plane with a regular icosagon (20 sides)? Justify.",
+            "answer": "No. Interior angle = $(18-2) \\times 180 / 20 = 162°$. $360 / 162 = 2.22$. Since this is not an integer, it cannot tile the plane.",
+            "answer_outline": [
+                "Calculate interior angle",
+                "Check 360° divisibility"
+            ],
+            "key_concepts": [
+                "tiling",
+                "icosagon"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Define the 'Circumcenter' and how it is constructed.",
+            "answer": "The circumcenter is the center of the circle that passes through all three vertices of a triangle. It is constructed by finding the point of intersection of the perpendicular bisectors of the triangle's sides.",
+            "answer_outline": [
+                "Definition (outer circle center)",
+                "Construction tool (perpendicular bisectors)"
+            ],
+            "key_concepts": [
+                "circumcenter",
+                "perpendicular bisector"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why 'Scaling' a tile pattern does not affect its ability to tile the plane.",
+            "answer": "Tiling depends on the interior angles of the shapes, not their side lengths. Scaling (enlarging or shrinking) changes the size but preserves all angles; therefore, the vertex sum remains 360°.",
+            "answer_outline": [
+                "Contrast side length vs angles",
+                "Explain angle preservation in scaling"
+            ],
+            "key_concepts": [
+                "scaling",
+                "angle preservation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe the construction of a 135° angle.",
+            "answer": "135° can be constructed as $90° + 45°$. First, construct a 90° angle. Then, extend one line to form a 180° straight angle. Bisect the remaining 90° space. $90 + 45 = 135°$.",
+            "answer_outline": [
+                "Identify components (90 + 45)",
+                "Step-by-step logic"
+            ],
+            "key_concepts": [
+                "135 degree angle",
+                "composite construction"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "How many regular triangles meet at a vertex in a regular tiling? Show the math.",
+            "answer": "Six triangles meet at a vertex. Math: Interior angle of equilateral triangle is 60°. $360 / 60 = 6$.",
+            "answer_outline": [
+                "State angle",
+                "Calculate count"
+            ],
+            "key_concepts": [
+                "triangular tiling",
+                "vertex sum"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the 'Line of Symmetry' in a hexagonal tiling?",
+            "answer": "A hexagonal tiling has multiple lines of symmetry. These lines can pass through the centers of opposite sides of the hexagons or through opposite vertices.",
+            "answer_outline": [
+                "Define symmetry line",
+                "Describe the two types of paths in the tiling"
+            ],
+            "key_concepts": [
+                "symmetry",
+                "hexagonal tiling"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why a 'Protractor' is usually not allowed in formal geometric constructions.",
+            "answer": "Formal constructions (Euclidean constructions) rely on logic and the properties of points and lines, using only a compass and straightedge. A protractor is a measuring tool that introduces physical estimation rather than logical proof.",
+            "answer_outline": [
+                "Cite Euclidean tradition",
+                "Contrast logic vs physical measurement"
+            ],
+            "key_concepts": [
+                "Euclidean construction",
+                "logic vs measurement"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "If you have constructed a 90° angle, how do you use it to find a 105° angle?",
+            "answer": "105° can be thought of as $90° + 15°$. 1. Construct 90°. 2. On the outside, construct a 30° angle (by bisecting 60°). 3. Bisect that 30° to get 15°. 4. $90 + 15 = 105°$.",
+            "answer_outline": [
+                "Identify components (90 + 15)",
+                "Logical construction steps"
+            ],
+            "key_concepts": [
+                "105 degree angle",
+                "angle addition"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Can any quadrilateral (even irregular) tile a plane? Explain.",
+            "answer": "Yes. Any quadrilateral can tile a plane because the sum of its interior angles is 360°. By rotating the quadrilateral 180° around the midpoints of its sides, all four distinct angles can meet at every vertex, summing to exactly 360°.",
+            "answer_outline": [
+                "Answer Yes",
+                "Cite 360° angle sum property",
+                "Explain the rotation/meeting of angles"
+            ],
+            "key_concepts": [
+                "quadrilateral tiling",
+                "vertex sum"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a 'Non-periodic Tiling' (Penrose Tiling)?",
+            "answer": "It is a tiling that covers the plane but never repeats its pattern exactly, no matter how much it is shifted. It often uses shapes based on the 'golden ratio'.",
+            "answer_outline": [
+                "Define non-periodic",
+                "Mention lack of translation symmetry"
+            ],
+            "key_concepts": [
+                "non-periodic tiling",
+                "Penrose"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Describe the construction of an 'Equilateral Triangle' given a segment AB.",
+            "answer": "1. Set compass to length AB. 2. Draw an arc with center A. 3. Draw an arc with center B. 4. Connect A and B to the intersection point C. $AB=BC=CA$.",
+            "answer_outline": [
+                "Set radius to side length",
+                "Intersect arcs from both ends",
+                "Complete the triangle"
+            ],
+            "key_concepts": [
+                "equilateral triangle",
+                "construction"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "How does the 'Parallel Postulate' relate to tiling with squares?",
+            "answer": "The parallel postulate ensures that the angles in a square remain 90° as you extend the pattern across the infinite plane. Without it, the lines would curve or diverge, making it impossible to tile a flat surface perfectly.",
+            "answer_outline": [
+                "Link parallel lines to square angles",
+                "Explain the need for a 'flat' plane (Euclidean geometry)"
+            ],
+            "key_concepts": [
+                "parallel postulate",
+                "plane geometry"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        }
+    ]
+}

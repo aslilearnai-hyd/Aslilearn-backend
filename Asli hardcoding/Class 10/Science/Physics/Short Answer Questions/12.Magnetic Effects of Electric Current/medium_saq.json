@@ -1,0 +1,383 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+    "generated_at": "2026-03-11T00:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define magnetic field.",
+            "answer": "Magnetic field is the space around a magnet or a current-carrying conductor in which magnetic force is experienced by other magnets or moving charges.",
+            "answer_outline": [
+                "Region around magnet/current",
+                "Experiences magnetic force"
+            ],
+            "key_concepts": [
+                "magnetic field",
+                "force experienced"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the instrument used by Oersted to show magnetic effect of current.",
+            "answer": "Oersted used a magnetic compass needle to demonstrate that electric current produces a magnetic field.",
+            "answer_outline": [
+                "Compass needle",
+                "Deflection observed"
+            ],
+            "key_concepts": [
+                "Oersted experiment",
+                "magnetic effect"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the shape of magnetic field lines around a straight current-carrying conductor?",
+            "answer": "The magnetic field lines form concentric circles with the conductor at the centre.",
+            "answer_outline": [
+                "Concentric circles",
+                "Conductor as centre"
+            ],
+            "key_concepts": [
+                "straight conductor",
+                "circular field lines"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "State the right-hand thumb rule for determining direction of magnetic field.",
+            "answer": "If the thumb of right hand points in the direction of current, the direction of curled fingers gives the direction of magnetic field lines.",
+            "answer_outline": [
+                "Thumb points current",
+                "Fingers show field direction"
+            ],
+            "key_concepts": [
+                "right-hand thumb rule",
+                "direction"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a solenoid?",
+            "answer": "A solenoid is a long coil of many turns of insulated copper wire wound in cylindrical shape.",
+            "answer_outline": [
+                "Coil of many turns",
+                "Cylindrical form"
+            ],
+            "key_concepts": [
+                "solenoid",
+                "coil"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the magnetic field inside a solenoid behave?",
+            "answer": "Inside a long solenoid, the magnetic field is uniform, strong, and parallel to its axis; outside it is very weak.",
+            "answer_outline": [
+                "Uniform and strong inside",
+                "Weak outside"
+            ],
+            "key_concepts": [
+                "solenoid field",
+                "uniformity"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "State Fleming's left-hand rule.",
+            "answer": "If forefinger, middle finger and thumb of left hand are stretched mutually perpendicular: forefinger points magnetic field, middle finger current, thumb force.",
+            "answer_outline": [
+                "Forefinger - field",
+                "Middle - current, thumb - force"
+            ],
+            "key_concepts": [
+                "Fleming's left-hand rule",
+                "directions"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the principle of an electric motor?",
+            "answer": "Electric motor works on the principle that a current-carrying conductor placed in a magnetic field experiences a mechanical force.",
+            "answer_outline": [
+                "Force on current in field",
+                "Mechanical force"
+            ],
+            "key_concepts": [
+                "motor principle",
+                "magnetic force"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the function of split ring commutator in DC motor?",
+            "answer": "Split ring commutator reverses the direction of current in the coil after every half rotation to keep the coil rotating in the same direction.",
+            "answer_outline": [
+                "Reverses current",
+                "Continuous rotation"
+            ],
+            "key_concepts": [
+                "commutator",
+                "current reversal"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Define electromagnetic induction.",
+            "answer": "Electromagnetic induction is the phenomenon of producing an induced current in a closed circuit due to change in magnetic flux linked with it.",
+            "answer_outline": [
+                "Induced current",
+                "Change in magnetic flux"
+            ],
+            "key_concepts": [
+                "electromagnetic induction",
+                "flux change"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 11,
+            "question": "State Fleming's right-hand rule.",
+            "answer": "If forefinger, thumb and middle finger of right hand are stretched mutually perpendicular: forefinger - magnetic field, thumb - motion, middle finger - induced current.",
+            "answer_outline": [
+                "Thumb - motion",
+                "Middle - induced current"
+            ],
+            "key_concepts": [
+                "Fleming's right-hand rule",
+                "induced current"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What is an electric generator?",
+            "answer": "Electric generator converts mechanical energy into electrical energy based on electromagnetic induction.",
+            "answer_outline": [
+                "Mechanical to electrical",
+                "Induction principle"
+            ],
+            "key_concepts": [
+                "generator",
+                "energy conversion"
+            ],
+            "marks": 2,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Differentiate between AC and DC generator in terms of commutator.",
+            "answer": "AC generator uses slip rings (produces alternating current), DC generator uses split ring commutator (produces direct current).",
+            "answer_outline": [
+                "Slip rings vs split rings",
+                "AC vs DC output"
+            ],
+            "key_concepts": [
+                "AC/DC difference",
+                "commutator type"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are magnetic field lines closed curves?",
+            "answer": "Magnetic field lines form closed loops because magnetic monopoles do not exist; lines emerge from north pole and enter south pole, continuing inside the magnet.",
+            "answer_outline": [
+                "No monopoles",
+                "Closed loops"
+            ],
+            "key_concepts": [
+                "field lines",
+                "closed curves"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do field lines never intersect each other?",
+            "answer": "If two field lines intersect, it would mean magnetic field has two directions at the point of intersection, which is impossible.",
+            "answer_outline": [
+                "Unique direction",
+                "No intersection"
+            ],
+            "key_concepts": [
+                "field lines property",
+                "direction"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How can the strength of magnetic field of a solenoid be increased?",
+            "answer": "By increasing current, increasing number of turns per unit length, or inserting soft iron core inside the solenoid.",
+            "answer_outline": [
+                "Increase current/turns",
+                "Soft iron core"
+            ],
+            "key_concepts": [
+                "solenoid strength",
+                "factors"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is soft iron preferred as core in electromagnets?",
+            "answer": "Soft iron increases magnetic field strength significantly and loses its magnetism immediately when current is switched off.",
+            "answer_outline": [
+                "High permeability",
+                "Temporary magnetism"
+            ],
+            "key_concepts": [
+                "soft iron core",
+                "electromagnet"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the role of brushes in an electric motor.",
+            "answer": "Brushes maintain electrical contact between the split ring commutator and the external circuit, allowing current to flow into the coil continuously.",
+            "answer_outline": [
+                "Electrical contact",
+                "Current supply"
+            ],
+            "key_concepts": [
+                "brushes",
+                "motor"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do we use parallel circuits in domestic wiring?",
+            "answer": "Parallel circuits ensure each appliance gets full voltage, can be switched on/off independently, and if one fails, others continue to work.",
+            "answer_outline": [
+                "Full voltage",
+                "Independent operation"
+            ],
+            "key_concepts": [
+                "parallel connection",
+                "domestic circuits"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the purpose of earth wire in household circuits?",
+            "answer": "Earth wire provides a low-resistance path for leakage current to flow to ground, preventing electric shock if live wire touches appliance body.",
+            "answer_outline": [
+                "Leakage path to ground",
+                "Shock prevention"
+            ],
+            "key_concepts": [
+                "earth wire",
+                "safety"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Differentiate between short-circuiting and overloading.",
+            "answer": "Short-circuiting: Live and neutral wires touch directly causing very high current. Overloading: Too many appliances switched on simultaneously exceed safe current limit.",
+            "answer_outline": [
+                "Direct contact vs excess load",
+                "High current cause"
+            ],
+            "key_concepts": [
+                "short circuit",
+                "overloading"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 22,
+            "question": "How does a fuse protect electrical circuits?",
+            "answer": "Fuse has low melting point wire; excessive current melts it, breaking the circuit and preventing damage from overheating or fire.",
+            "answer_outline": [
+                "Melts on high current",
+                "Breaks circuit"
+            ],
+            "key_concepts": [
+                "fuse",
+                "safety device"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is induced current produced when a magnet is moved towards a coil?",
+            "answer": "Movement of magnet changes magnetic flux linked with coil, inducing emf and current according to Faraday's law of electromagnetic induction.",
+            "answer_outline": [
+                "Flux change",
+                "Faraday's law"
+            ],
+            "key_concepts": [
+                "induced current",
+                "flux variation"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Give reason why galvanometer needle deflects when current is passed through a nearby wire.",
+            "answer": "Current in wire produces magnetic field which exerts force on magnetic needle, causing deflection (Oersted's experiment).",
+            "answer_outline": [
+                "Magnetic field produced",
+                "Force on needle"
+            ],
+            "key_concepts": [
+                "Oersted observation",
+                "deflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why the magnetic field is stronger near the poles of a bar magnet.",
+            "answer": "Field lines are closer together near poles, indicating stronger magnetic field; density of field lines is proportional to field strength.",
+            "answer_outline": [
+                "Closer field lines",
+                "Higher density"
+            ],
+            "key_concepts": [
+                "field strength",
+                "pole region"
+            ],
+            "marks": 3,
+            "source_section": "Section 12.1"
+        }
+    ]
+}

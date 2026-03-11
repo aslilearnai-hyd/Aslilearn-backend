@@ -1,0 +1,127 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "Ruling the Countryside",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Explain how the British collected land revenue in India",
+    "Understand the features of the Permanent Settlement",
+    "Analyse the role of zamindars, peasants and moneylenders",
+    "Understand the system of indigo cultivation",
+    "Examine the problems faced by indigo farmers",
+    "Explain the causes and outcomes of the Indigo Revolt"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "British Land Revenue Policies",
+      "topics_covered": [
+        "Meaning of land revenue",
+        "Importance of land revenue for the British administration",
+        "Early British attempts to collect revenue"
+      ],
+      "teaching_strategy": [
+        "Interactive lecture",
+        "Concept explanation with examples",
+        "Guided questioning"
+      ],
+      "student_activities": [
+        "Discuss how farmers produce crops and pay taxes",
+        "List reasons why the British depended on land revenue"
+      ],
+      "assessment": ["Oral questioning", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "Permanent Settlement System",
+      "topics_covered": [
+        "Introduction of Permanent Settlement in 1793",
+        "Role of Lord Cornwallis",
+        "Main features of the system"
+      ],
+      "teaching_strategy": ["Diagram explanation", "Example-based discussion"],
+      "student_activities": [
+        "Write the features of the Permanent Settlement",
+        "Explain the responsibilities of zamindars"
+      ],
+      "assessment": ["Short written activity", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Zamindars, Peasants and Rural Society",
+      "topics_covered": [
+        "Role of zamindars",
+        "Condition of peasants",
+        "Role of moneylenders"
+      ],
+      "teaching_strategy": ["Case-based explanation", "Class discussion"],
+      "student_activities": [
+        "List the duties of zamindars",
+        "Discuss problems faced by peasants due to high taxes"
+      ],
+      "assessment": ["Teacher observation", "Student responses"]
+    },
+    {
+      "period": 4,
+      "title": "Indigo Cultivation System",
+      "topics_covered": [
+        "What is indigo",
+        "Demand for indigo dye in Europe",
+        "The advance system used by planters"
+      ],
+      "teaching_strategy": ["Visual explanation", "Source-based discussion"],
+      "student_activities": [
+        "Explain how indigo was grown by peasants",
+        "Discuss why indigo cultivation was not profitable for farmers"
+      ],
+      "assessment": ["Short oral responses", "Notebook activity"]
+    },
+    {
+      "period": 5,
+      "title": "Problems of Indigo Farmers",
+      "topics_covered": [
+        "Forced indigo cultivation",
+        "Economic losses for farmers",
+        "Oppression by indigo planters"
+      ],
+      "teaching_strategy": ["Story-based explanation", "Group discussion"],
+      "student_activities": [
+        "Write two problems faced by indigo farmers",
+        "Discuss how farmers tried to resist the system"
+      ],
+      "assessment": ["Short written explanation", "Teacher feedback"]
+    },
+    {
+      "period": 6,
+      "title": "Indigo Revolt and Chapter Recap",
+      "topics_covered": [
+        "Indigo Revolt of 1859–1860",
+        "Reasons for the revolt",
+        "Outcomes and importance of the revolt"
+      ],
+      "teaching_strategy": ["Concept explanation", "Revision discussion"],
+      "student_activities": [
+        "Write the causes of the Indigo Revolt",
+        "Participate in a group quiz for revision"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Images of indigo cultivation",
+    "Charts explaining revenue systems"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Student participation"
+  ],
+  "teacher_tip": "Encourage students to connect the land revenue system with the everyday life of farmers to help them better understand the social and economic impact of British policies."
+}

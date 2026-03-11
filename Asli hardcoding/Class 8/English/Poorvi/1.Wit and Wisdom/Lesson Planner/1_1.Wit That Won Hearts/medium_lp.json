@@ -1,0 +1,142 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter_name": "The Wit That Won Hearts",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the historical and cultural background of the Vijayanagara Empire",
+    "Analyse the character traits of Tenali Rama and King Krishnadeva Raya",
+    "Identify the conflict and resolution in the story",
+    "Understand how wit and humour can resolve misunderstandings",
+    "Develop critical thinking and communication skills through discussions and activities",
+    "Improve vocabulary and grammar through contextual exercises"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Understanding Wit and Wisdom",
+      "topics_covered": [
+        "Meaning of wit and wisdom",
+        "Importance of humour in solving problems",
+        "Qualities of witty individuals"
+      ],
+      "teaching_strategy": [
+        "Brainstorming session",
+        "Discussion of riddles in the textbook",
+        "Teacher-led questioning"
+      ],
+      "student_activities": [
+        "Solve riddles in pairs",
+        "List and explain qualities of a witty person"
+      ],
+      "assessment": ["Oral questioning", "Pair discussion evaluation"]
+    },
+    {
+      "period": 2,
+      "title": "Historical Background and Characters",
+      "topics_covered": [
+        "The Vijayanagara Empire",
+        "King Krishnadeva Raya",
+        "Tenali Rama as a poet and advisor"
+      ],
+      "teaching_strategy": [
+        "Story narration",
+        "Use of board diagrams to explain the court structure"
+      ],
+      "student_activities": [
+        "Read the introductory passage",
+        "Identify the roles of important characters"
+      ],
+      "assessment": [
+        "Short oral questions",
+        "Character identification activity"
+      ]
+    },
+    {
+      "period": 3,
+      "title": "Conflict in the Story",
+      "topics_covered": [
+        "The king’s poem",
+        "The queen’s reaction",
+        "Development of misunderstanding"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the story",
+        "Discussion on misunderstandings and communication"
+      ],
+      "student_activities": [
+        "Explain the cause of the conflict",
+        "Discuss examples of misunderstandings in daily life"
+      ],
+      "assessment": ["Comprehension questions", "Group discussion feedback"]
+    },
+    {
+      "period": 4,
+      "title": "Tenali Rama’s Problem-Solving Strategy",
+      "topics_covered": [
+        "Presentation of the paddy seeds idea",
+        "Indirect communication strategy",
+        "Importance of wit in persuasion"
+      ],
+      "teaching_strategy": [
+        "Dialogue analysis",
+        "Teacher explanation of the court scene"
+      ],
+      "student_activities": [
+        "Role-play the court scene",
+        "Write a short explanation of Tenali Rama’s strategy"
+      ],
+      "assessment": ["Role play observation", "Written response evaluation"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Moral Interpretation",
+      "topics_covered": [
+        "The king’s realization",
+        "Reconciliation between the king and queen",
+        "Interpretation of the story’s moral"
+      ],
+      "teaching_strategy": [
+        "Teacher-guided discussion",
+        "Moral interpretation exercise"
+      ],
+      "student_activities": [
+        "Write the lesson learned from the story",
+        "Discuss how wisdom helps resolve conflicts"
+      ],
+      "assessment": ["Short paragraph writing", "Peer discussion evaluation"]
+    },
+    {
+      "period": 6,
+      "title": "Language Practice and Revision",
+      "topics_covered": [
+        "Vocabulary from the chapter",
+        "Compound words",
+        "Conditional sentences"
+      ],
+      "teaching_strategy": ["Worksheet exercises", "Quick revision quiz"],
+      "student_activities": [
+        "Create compound words",
+        "Complete conditional sentence exercises"
+      ],
+      "assessment": ["Worksheet evaluation", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Story character chart",
+    "Printed riddles and worksheets"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension activities",
+    "Role play evaluation",
+    "Written exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to analyse how Tenali Rama solved the problem indirectly. Discuss why using humour and intelligence can sometimes be more effective than direct confrontation."
+}

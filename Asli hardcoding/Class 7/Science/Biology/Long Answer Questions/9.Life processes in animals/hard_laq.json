@@ -1,0 +1,458 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Life Processes in Animals",
+    "generated_at": "2026-03-07T00:01:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze the chemical equation of Aerobic Respiration. Why is it considered the reverse of Photosynthesis?",
+            "answer": "Aerobic respiration breaks down glucose in the presence of oxygen to release carbon dioxide, water, and energy: $C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O + Energy$. It is the reverse of photosynthesis because photosynthesis stores energy by consuming $CO_2$ and $H_2O$ to produce glucose and $O_2$, whereas respiration releases that stored energy by breaking down glucose.",
+            "answer_outline": [
+                "Chemical equation of respiration",
+                "Comparison of reactants and products",
+                "Energy storage vs. release",
+                "Interdependence of the two processes"
+            ],
+            "key_concepts": [
+                "glucose oxidation",
+                "energy release",
+                "metabolic cycle"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the 'Oxygen Debt' mechanism in human muscles during strenuous physical activity.",
+            "answer": "During intense exercise, the demand for energy exceeds the oxygen supply (anaerobic conditions). Muscles produce lactic acid to gain quick energy. This creates an 'oxygen debt' because the body must later consume extra oxygen to oxidize the accumulated lactic acid back into carbon dioxide and water. This is why we continue to breathe heavily even after stopping the exercise.",
+            "answer_outline": [
+                "Anaerobic respiration in muscles",
+                "Lactic acid accumulation",
+                "Definition of oxygen debt",
+                "Recovery period breathing"
+            ],
+            "key_concepts": [
+                "oxygen debt",
+                "lactic acid",
+                "strenuous exercise"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the structural and functional adaptations of 'Alveoli' that maximize gas exchange efficiency.",
+            "answer": "Alveoli have several adaptations: 1. Extremely thin walls (one cell thick) for rapid diffusion. 2. A massive total surface area (approx. 80 $m^2$ in humans). 3. An extensive network of surrounding capillaries. 4. A moist inner surface that allows gases to dissolve before diffusing across the membrane.",
+            "answer_outline": [
+                "Thickness of membrane",
+                "Surface area to volume ratio",
+                "Capillary density",
+                "Moisture role"
+            ],
+            "key_concepts": [
+                "diffusion",
+                "surface area",
+                "capillary network"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare the 'Single Circulation' in fish with 'Double Circulation' in mammals. Why is the latter more efficient?",
+            "answer": "In fish, blood passes through the heart once (Heart $\\rightarrow$ Gills $\\rightarrow$ Body $\\rightarrow$ Heart). In mammals, it passes twice (Pulmonary and Systemic). Double circulation is more efficient because it maintains high blood pressure to the body tissues, ensuring a faster delivery of oxygen and nutrients, which is vital for high-metabolism, warm-blooded animals.",
+            "answer_outline": [
+                "Path of blood in fish",
+                "Path of blood in mammals",
+                "Pressure differences",
+                "Metabolic requirements"
+            ],
+            "key_concepts": [
+                "single circulation",
+                "double circulation",
+                "blood pressure"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Discuss the significance of the 'Cardiac Cycle'. How do the Atria and Ventricles coordinate their contractions?",
+            "answer": "The cardiac cycle involves rhythmic contraction (systole) and relaxation (diastole). First, both atria contract to push blood into the ventricles. Then, the ventricles contract with higher pressure to pump blood to the lungs and body. Valves (tricuspid, bicuspid, and semilunar) ensure blood moves in one direction and prevent mixing or backflow during these pressure changes.",
+            "answer_outline": [
+                "Systole and Diastole",
+                "Sequential contraction",
+                "Role of valves during cycle",
+                "Unidirectional flow"
+            ],
+            "key_concepts": [
+                "cardiac cycle",
+                "systole",
+                "diastole"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Evaluate the 'Selective Reabsorption' process in the nephrons of the kidney.",
+            "answer": "During filtration, almost all small molecules (glucose, amino acids, salts, water) enter the nephron. Selective reabsorption occurs as the filtrate moves through the tubule; the body 'picks back' the useful substances into the blood. The amount of water reabsorbed depends on the body's hydration levels, which is a key mechanism for maintaining osmotic balance (osmoregulation).",
+            "answer_outline": [
+                "Initial filtration vs. reabsorption",
+                "Substances reabsorbed",
+                "Regulation of water",
+                "Importance of osmoregulation"
+            ],
+            "key_concepts": [
+                "selective reabsorption",
+                "nephron",
+                "osmoregulation"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the 'Cohesion-Tension Theory' of water transport in tall trees.",
+            "answer": "As water evaporates from the leaves (transpiration), it creates a negative pressure or 'tension'. Because water molecules are 'sticky' (cohesion), they form a continuous column in the xylem. The tension at the top pulls the entire column upward from the roots. This physical force is strong enough to move water over 100 meters high without a pump.",
+            "answer_outline": [
+                "Transpiration pull",
+                "Cohesion of water molecules",
+                "Xylem as a continuous tube",
+                "Movement against gravity"
+            ],
+            "key_concepts": [
+                "cohesion",
+                "tension",
+                "xylem"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does the 'Pulse Rate' increase during emotional stress or fear? Relate this to the endocrine system.",
+            "answer": "Under stress, the adrenal glands release the hormone Adrenaline. This hormone acts on the heart's natural pacemaker (SA node), increasing the frequency of heartbeats. A faster heartbeat pumps more blood and oxygen to the muscles, preparing the body for 'fight or flight'. This surge in heart rate is directly reflected as an increased pulse rate in the arteries.",
+            "answer_outline": [
+                "Role of Adrenaline",
+                "Effect on heart rate",
+                "Biological purpose (readiness)",
+                "Correlation with pulse"
+            ],
+            "key_concepts": [
+                "adrenaline",
+                "pulse rate",
+                "fight or flight"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Differentiate between the 'Excretory Products' of aquatic and terrestrial animals in terms of energy and water loss.",
+            "answer": "Ammonia (aquatic) is toxic and requires vast amounts of water to excrete but very little energy to produce. Urea (terrestrial) is less toxic and conserves water but requires more energy. Uric acid (birds/reptiles) is the least toxic and can be excreted as a paste with almost no water loss, but it requires the most metabolic energy to synthesize.",
+            "answer_outline": [
+                "Ammonia vs. Urea vs. Uric Acid",
+                "Toxicity levels",
+                "Water requirement",
+                "Energy expenditure"
+            ],
+            "key_concepts": [
+                "nitrogenous waste",
+                "metabolic cost",
+                "water conservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe the mechanism of 'Phloem Loading' and 'Unloading' during translocation.",
+            "answer": "Food (sucrose) is actively loaded into the phloem tubes at the 'source' (leaves) using energy. This increases the concentration of sugar, causing water to enter by osmosis and create high pressure. This pressure pushes the food towards the 'sink' (roots/fruits), where it is unloaded. This 'pressure-flow' mechanism allows plants to move food in any direction.",
+            "answer_outline": [
+                "Source and Sink concept",
+                "Active loading of sucrose",
+                "Role of osmotic pressure",
+                "Bidirectional flow"
+            ],
+            "key_concepts": [
+                "phloem",
+                "translocation",
+                "pressure-flow"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the role of 'Carbonic Anhydrase' and how is Carbon Dioxide primarily transported in the blood?",
+            "answer": "Unlike oxygen, which is carried by hemoglobin, $CO_2$ is primarily transported as bicarbonate ions in the plasma. The enzyme Carbonic Anhydrase inside RBCs quickly converts $CO_2$ and water into bicarbonate. This makes the transport of $CO_2$ highly efficient and helps in maintaining the pH level of the blood.",
+            "answer_outline": [
+                "CO2 transport methods",
+                "Bicarbonate formation",
+                "Enzyme role",
+                "pH buffering"
+            ],
+            "key_concepts": [
+                "bicarbonate ions",
+                "carbonic anhydrase",
+                "blood pH"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why 'Pulmonary Arteries' and 'Pulmonary Veins' are exceptions to the general rule of blood vessels.",
+            "answer": "Normally, arteries carry oxygenated blood and veins carry deoxygenated blood. However, the Pulmonary Artery carries deoxygenated blood from the heart to the lungs for oxygenation. Conversely, the Pulmonary Vein carries freshly oxygenated blood from the lungs back to the heart. They are named based on the direction of flow (Artery = Away from heart) rather than the oxygen content.",
+            "answer_outline": [
+                "General rule of vessels",
+                "Exception in pulmonary circuit",
+                "Naming logic (Direction vs. Content)",
+                "Destination of these vessels"
+            ],
+            "key_concepts": [
+                "pulmonary artery",
+                "pulmonary vein",
+                "vessel naming"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Analyze the impact of 'High Altitude' on the life processes of animals. How does the body compensate?",
+            "answer": "At high altitudes, the partial pressure of oxygen is low. To compensate, the body increases the production of Red Blood Cells and Hemoglobin to trap more oxygen. Additionally, the breathing rate and heart rate increase to circulate oxygen faster to the tissues. This is a physiological adaptation called acclimatization.",
+            "answer_outline": [
+                "Oxygen availability problem",
+                "RBC count increase",
+                "Breathing rate changes",
+                "Acclimatization"
+            ],
+            "key_concepts": [
+                "high altitude",
+                "RBC production",
+                "partial pressure"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1 & 11.2"
+        },
+        {
+            "question_number": 14,
+            "question": "How does 'Dialysis' replicate the function of the Glomerulus and the Bowman’s Capsule?",
+            "answer": "In a dialysis machine, blood flows through cellophane tubes that act as a semi-permeable membrane, similar to the Glomerulus. The dialysis fluid surrounding the tubes has a concentration similar to blood but lacks nitrogenous wastes. Wastes diffuse out of the blood into the fluid, mimicking the filtration and waste removal process of a healthy kidney.",
+            "answer_outline": [
+                "Semi-permeable membrane role",
+                "Diffusion of waste",
+                "Comparison to Glomerulus",
+                "Dialysis fluid composition"
+            ],
+            "key_concepts": [
+                "dialysis",
+                "semi-permeable",
+                "diffusion gradient"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Discuss the 'Counter-Current' principle in the context of heat regulation or gas exchange in animals.",
+            "answer": "In many animals (like ducks' legs or fish gills), fluids flow in opposite directions in adjacent vessels. In fish gills, blood flows opposite to the water. This maintains a favorable concentration gradient for oxygen along the entire length of the capillary, allowing the fish to extract much more oxygen than if the fluids flowed in the same direction.",
+            "answer_outline": [
+                "Opposite flow mechanism",
+                "Concentration gradient maintenance",
+                "Example in fish gills",
+                "Efficiency of exchange"
+            ],
+            "key_concepts": [
+                "counter-current",
+                "concentration gradient",
+                "exchange efficiency"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the role of 'ATP' in cellular respiration. Why is it called the 'Energy Currency'?",
+            "answer": "During respiration, the energy released from glucose is used to synthesize ATP (Adenosine Triphosphate) molecules. ATP stores this energy in its chemical bonds. When a cell needs energy for any process (like muscle contraction or nerve impulses), it breaks down ATP. Like money used for different transactions, ATP is the universal 'currency' used for all cellular work.",
+            "answer_outline": [
+                "Synthesis of ATP",
+                "Storage of energy in bonds",
+                "Usage in cellular work",
+                "Universal currency analogy"
+            ],
+            "key_concepts": [
+                "ATP",
+                "energy currency",
+                "chemical bonds"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "How does 'Root Pressure' contribute to the transport of water, and why is it insufficient for tall trees?",
+            "answer": "Root pressure is an osmotic pressure within the cells of a root system that causes sap to rise through a plant stem. It is caused by the active transport of mineral ions into the root xylem, followed by water. While it can push water up a few meters in small plants or at night, it lacks the force required to overcome the massive gravity and resistance of tall trees.",
+            "answer_outline": [
+                "Osmotic pressure in roots",
+                "Active transport of ions",
+                "Guttation phenomenon",
+                "Limitations of height"
+            ],
+            "key_concepts": [
+                "root pressure",
+                "osmosis",
+                "active transport"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the 'Rh Factor' in blood, and why is it important during blood transfusion?",
+            "answer": "The Rh factor is an antigen found on the surface of RBCs (Rh positive if present, Rh negative if absent). If an Rh-negative person receives Rh-positive blood, their immune system will produce antibodies to attack the 'foreign' Rh cells. This can cause severe clumping of blood and kidney failure, making Rh matching vital for safe transfusions.",
+            "answer_outline": [
+                "Definition of Rh antigen",
+                "Positive vs. Negative",
+                "Immune response/Antibodies",
+                "Transfusion safety"
+            ],
+            "key_concepts": [
+                "Rh factor",
+                "antigen",
+                "blood compatibility"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the significance of 'Lenticels' in woody plants.",
+            "answer": "In woody plants, the thick bark prevents gas exchange through the stem surface. Lenticels are small, lens-shaped openings in the bark that provide a pathway for the direct exchange of gases between the internal tissues of the stem and the atmosphere, ensuring that living cells in the wood can respire.",
+            "answer_outline": [
+                "Problem of bark barrier",
+                "Structure of lenticels",
+                "Gas exchange role",
+                "Respiration in stems"
+            ],
+            "key_concepts": [
+                "lenticels",
+                "bark",
+                "stem respiration"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Analyze the role of 'Serum' vs. 'Plasma'. How do they differ during a clinical test?",
+            "answer": "Plasma is the liquid part of blood containing all clotting factors and proteins. Serum is the liquid that remains after blood has been allowed to clot; it is essentially plasma without the clotting factor 'fibrinogen'. Clinically, serum is often preferred for testing because it is more stable once the clotting proteins are removed.",
+            "answer_outline": [
+                "Definitions",
+                "Fibrinogen difference",
+                "Clotting process",
+                "Clinical usage"
+            ],
+            "key_concepts": [
+                "serum",
+                "plasma",
+                "fibrinogen"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain 'Guttation' and distinguish it from 'Transpiration'.",
+            "answer": "Guttation is the loss of water in liquid form from the tips or edges of leaves through special pores called hydathodes, usually occurring at night when root pressure is high. Transpiration is the loss of water in the form of vapor through stomata, usually occurring during the day. Guttation involves liquid water containing salts, while transpiration is pure water vapor.",
+            "answer_outline": [
+                "State of water (Liquid vs. Vapor)",
+                "Hydathodes vs. Stomata",
+                "Timing (Night vs. Day)",
+                "Purity of water"
+            ],
+            "key_concepts": [
+                "guttation",
+                "hydathodes",
+                "root pressure"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2 & 11.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is 'Ventricle' contraction stronger than 'Atrial' contraction?",
+            "answer": "The atria only need to push blood a very short distance into the ventricles immediately below them. Ventricles, however, must generate enough pressure to force blood through the entire pulmonary or systemic circuit. Consequently, the ventricular walls are much thicker and contain more powerful cardiac muscle fibers to generate that necessary force.",
+            "answer_outline": [
+                "Distance of transport",
+                "Pressure requirements",
+                "Wall thickness comparison",
+                "Muscle fiber density"
+            ],
+            "key_concepts": [
+                "atria",
+                "ventricles",
+                "muscular force"
+            ],
+            "marks": 3,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does 'Fermentation' in yeast differ from 'Anaerobic Respiration' in human muscles?",
+            "answer": "In yeast, glucose is broken down into Ethanol (alcohol) and Carbon Dioxide ($C_6H_{12}O_6 \\rightarrow 2C_2H_5OH + 2CO_2$). In human muscles, glucose is broken down into Lactic Acid only, with no carbon dioxide produced ($C_6H_{12}O_6 \\rightarrow 2C_3H_6O_3$). Both release very small amounts of energy compared to aerobic respiration.",
+            "answer_outline": [
+                "Products in yeast (Ethanol/CO2)",
+                "Products in muscle (Lactic Acid)",
+                "Chemical differences",
+                "Energy yield comparison"
+            ],
+            "key_concepts": [
+                "fermentation",
+                "ethanol",
+                "lactic acid"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Evaluate the importance of 'Sphygmomanometer' and 'Stethoscope' in monitoring circulatory health.",
+            "answer": "A sphygmomanometer measures blood pressure, providing two values: Systolic (during heart contraction) and Diastolic (during relaxation). A stethoscope allows a doctor to hear the 'lub-dub' sounds of valves closing. Together, they help diagnose conditions like hypertension (high blood pressure) or valvular heart disease by assessing both the pressure and the mechanical rhythm of the heart.",
+            "answer_outline": [
+                "Function of Sphygmomanometer",
+                "Function of Stethoscope",
+                "Systolic/Diastolic explanation",
+                "Diagnostic value"
+            ],
+            "key_concepts": [
+                "blood pressure",
+                "heart sounds",
+                "hypertension"
+            ],
+            "marks": 5,
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 25,
+            "question": "How do 'Xylem Vessels' maintain their structure under the intense tension of transpiration?",
+            "answer": "Xylem vessels are made of dead cells (tracheids and vessels) whose walls are heavily thickened with a tough substance called 'Lignin'. Lignin provides high mechanical strength, acting like internal reinforcing rings or spirals. This prevents the tubes from collapsing inward when the 'suction' or tension from transpiration pull is at its peak.",
+            "answer_outline": [
+                "Dead cell structure",
+                "Lignin thickening",
+                "Prevention of collapse",
+                "Mechanical strength"
+            ],
+            "key_concepts": [
+                "lignin",
+                "mechanical strength",
+                "xylem vessels"
+            ],
+            "marks": 4,
+            "source_section": "Section 11.2"
+        }
+    ]
+}

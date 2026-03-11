@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Conquering the Summit",
+  "generated_at": "2026-03-08T20:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who leads the climbing team?",
+      "answer": "An experienced climber.",
+      "key_points": ["leader"],
+      "source_section": "Character"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the main goal of the climbers?",
+      "answer": "To reach the mountain summit.",
+      "key_points": ["goal"],
+      "source_section": "Story Event"
+    },
+    {
+      "question_number": 3,
+      "question": "What challenges do the climbers face?",
+      "answer": "Steep paths, cold weather, and tiredness.",
+      "key_points": ["challenges"],
+      "source_section": "Conflict"
+    },
+    {
+      "question_number": 4,
+      "question": "How do the climbers help each other?",
+      "answer": "By giving support and encouragement.",
+      "key_points": ["teamwork"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 5,
+      "question": "What qualities are needed to succeed?",
+      "answer": "Courage, determination, and teamwork.",
+      "key_points": ["qualities"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is preparation important?",
+      "answer": "To stay safe and succeed in the climb.",
+      "key_points": ["preparation"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 7,
+      "question": "How do climbers handle tiredness?",
+      "answer": "By resting and helping each other.",
+      "key_points": ["endurance"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 8,
+      "question": "What keeps the climbers motivated?",
+      "answer": "Their goal and teamwork.",
+      "key_points": ["motivation"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 9,
+      "question": "How do climbers stay safe?",
+      "answer": "By moving carefully and supporting one another.",
+      "key_points": ["safety"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 10,
+      "question": "What feelings do climbers experience?",
+      "answer": "Excitement, fear, and happiness.",
+      "key_points": ["emotions"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the main lesson of the story?",
+      "answer": "Bravery, teamwork, and persistence lead to success.",
+      "key_points": ["lesson"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 12,
+      "question": "Do climbers face the mountain alone?",
+      "answer": "No, they climb as a team.",
+      "key_points": ["teamwork"],
+      "source_section": "Story Event"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is courage important?",
+      "answer": "To face dangers and continue climbing.",
+      "key_points": ["courage"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 14,
+      "question": "What makes reaching the summit special?",
+      "answer": "It shows they overcame challenges.",
+      "key_points": ["achievement"],
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 15,
+      "question": "How do climbers encourage each other?",
+      "answer": "Through kind words and helping hands.",
+      "key_points": ["encouragement"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the hardest part of the climb?",
+      "answer": "Steep paths and cold weather.",
+      "key_points": ["challenge"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 17,
+      "question": "How do climbers manage fear?",
+      "answer": "By staying calm and moving carefully.",
+      "key_points": ["fear management"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 18,
+      "question": "What role does the leader play?",
+      "answer": "Guides and encourages the team.",
+      "key_points": ["leader"],
+      "source_section": "Character"
+    },
+    {
+      "question_number": 19,
+      "question": "What restores energy during the climb?",
+      "answer": "Resting and teamwork.",
+      "key_points": ["endurance"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 20,
+      "question": "What does teamwork help achieve?",
+      "answer": "Safety, support, and reaching the summit.",
+      "key_points": ["teamwork", "success"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 21,
+      "question": "Why is planning important before climbing?",
+      "answer": "To avoid risks and stay safe.",
+      "key_points": ["planning"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 22,
+      "question": "How do climbers deal with difficult paths?",
+      "answer": "By supporting each other and moving carefully.",
+      "key_points": ["challenge", "support"],
+      "source_section": "Climax"
+    },
+    {
+      "question_number": 23,
+      "question": "What does the mountain represent?",
+      "answer": "A challenge to overcome.",
+      "key_points": ["symbolism"],
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 24,
+      "question": "How do climbers feel at the summit?",
+      "answer": "Happy and accomplished.",
+      "key_points": ["emotions"],
+      "source_section": "Resolution"
+    },
+    {
+      "question_number": 25,
+      "question": "Summarize the main message in one sentence.",
+      "answer": "Teamwork, courage, and perseverance help achieve difficult goals.",
+      "key_points": ["message"],
+      "source_section": "Conclusion"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "A Homage to Our Brave Soldiers",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the role and sacrifices of soldiers",
+    "Recognize bravery, patriotism, and dedication",
+    "Learn about soldiers’ lives and duties",
+    "Develop empathy for soldiers and their families",
+    "Improve reading comprehension and vocabulary",
+    "Reflect on personal responsibilities and civic values"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Soldiers",
+      "topics_covered": [
+        "Who are soldiers",
+        "Importance of soldiers in society",
+        "Bravery and patriotism"
+      ],
+      "teaching_strategy": [
+        "Class discussion on soldiers and their duties",
+        "Brainstorm examples of bravery",
+        "Reading an introductory paragraph from the chapter"
+      ],
+      "student_activities": [
+        "List qualities of soldiers",
+        "Share stories or examples of bravery from media or history"
+      ],
+      "assessment": ["Oral questions", "Pair discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Understanding the Letter",
+      "topics_covered": [
+        "Letter addressed to soldiers",
+        "Emotions expressed: hope, gratitude, concern",
+        "Purpose of the letter"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the letter",
+        "Teacher explanation of key expressions",
+        "Discussion of emotions and tone"
+      ],
+      "student_activities": [
+        "Underline emotional expressions",
+        "Summarize the main message in 2–3 sentences"
+      ],
+      "assessment": ["Short oral questions", "Written summary"]
+    },
+    {
+      "period": 3,
+      "title": "Soldiers’ Duties and Challenges",
+      "topics_covered": [
+        "Daily life of soldiers",
+        "Challenges faced during service",
+        "Importance of discipline and teamwork"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Teacher narration of real-life examples"
+      ],
+      "student_activities": [
+        "List key duties and challenges",
+        "Discuss in pairs how soldiers overcome difficulties"
+      ],
+      "assessment": ["Comprehension questions", "Group discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Bravery and Patriotism in Action",
+      "topics_covered": [
+        "Examples of soldiers’ bravery",
+        "Patriotic acts and sacrifices",
+        "Impact on society and families"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation using examples from the text",
+        "Discussion on patriotism and civic duty"
+      ],
+      "student_activities": [
+        "Share examples of bravery from the chapter",
+        "Write one short paragraph on a soldier’s brave act"
+      ],
+      "assessment": ["Written paragraph", "Class discussion"]
+    },
+    {
+      "period": 5,
+      "title": "Reflection and Moral Values",
+      "topics_covered": [
+        "Gratitude towards soldiers",
+        "Lessons learned from soldiers’ dedication",
+        "Personal responsibility and civic values"
+      ],
+      "teaching_strategy": [
+        "Discussion on moral lessons",
+        "Teacher-led reflection activity"
+      ],
+      "student_activities": [
+        "Write 2–3 sentences on how students can honor soldiers",
+        "Share personal reflections in class"
+      ],
+      "assessment": ["Paragraph writing", "Oral sharing"]
+    },
+    {
+      "period": 6,
+      "title": "Vocabulary and Revision Activities",
+      "topics_covered": [
+        "New words from the chapter",
+        "Compound words",
+        "Simple comprehension questions"
+      ],
+      "teaching_strategy": ["Word exercises from textbook", "Revision quiz"],
+      "student_activities": [
+        "List and learn new vocabulary",
+        "Complete exercises on compound words",
+        "Answer 5 comprehension questions"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Printed letter from the chapter",
+    "Word list for vocabulary exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension exercises",
+    "Paragraph writing",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to discuss the feelings of soldiers and their families. Ask students to share stories or examples from media or history to make the lesson more relatable."
+}

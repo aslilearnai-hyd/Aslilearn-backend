@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Electoral Politics",
+    "generated_at": "2026-03-07T23:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is an election?",
+            "options": {
+                "A": "Selection of representatives by voting",
+                "B": "Appointment of leaders",
+                "C": "Selection by judges",
+                "D": "Selection by army"
+            },
+            "correct_answer": "A",
+            "explanation": "An election is a process through which citizens choose their representatives.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "In a democracy, leaders are chosen by:",
+            "options": {
+                "A": "Judges",
+                "B": "Citizens",
+                "C": "Army",
+                "D": "Kings"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens choose their leaders through elections in a democracy.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is necessary for democratic elections?",
+            "options": {
+                "A": "Only one candidate",
+                "B": "Real competition among candidates",
+                "C": "No voting",
+                "D": "Selection by government"
+            },
+            "correct_answer": "B",
+            "explanation": "Democratic elections require real competition among candidates.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is political competition?",
+            "options": {
+                "A": "Competition among voters",
+                "B": "Competition among political parties",
+                "C": "Competition among judges",
+                "D": "Competition among teachers"
+            },
+            "correct_answer": "B",
+            "explanation": "Political competition refers to contest among political parties to win elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "The minimum voting age in India is:",
+            "options": {
+                "A": "16 years",
+                "B": "18 years",
+                "C": "20 years",
+                "D": "25 years"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens aged 18 or above have the right to vote.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "The right to vote for all adults is called:",
+            "options": {
+                "A": "Universal adult franchise",
+                "B": "Monarchy",
+                "C": "Dictatorship",
+                "D": "Nomination"
+            },
+            "correct_answer": "A",
+            "explanation": "Universal adult franchise means every adult citizen has the right to vote.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "A geographical area from which a representative is elected is called:",
+            "options": {
+                "A": "Village",
+                "B": "Constituency",
+                "C": "District",
+                "D": "Block"
+            },
+            "correct_answer": "B",
+            "explanation": "A constituency is an area from which voters elect a representative.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Reserved constituencies are meant for:",
+            "options": {
+                "A": "Women only",
+                "B": "Scheduled Castes and Scheduled Tribes",
+                "C": "Teachers",
+                "D": "Doctors"
+            },
+            "correct_answer": "B",
+            "explanation": "Some constituencies are reserved for SC and ST candidates.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "The list of eligible voters is called:",
+            "options": {
+                "A": "Census list",
+                "B": "Voters list",
+                "C": "Election report",
+                "D": "Population list"
+            },
+            "correct_answer": "B",
+            "explanation": "The voters list contains names of all eligible voters.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Another name for voters list is:",
+            "options": {
+                "A": "Electoral roll",
+                "B": "Election law",
+                "C": "Vote paper",
+                "D": "Assembly roll"
+            },
+            "correct_answer": "A",
+            "explanation": "Voters list is also called electoral roll.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "The activities of political parties to attract voters are called:",
+            "options": {
+                "A": "Campaign",
+                "B": "Election counting",
+                "C": "Voting",
+                "D": "Nomination"
+            },
+            "correct_answer": "A",
+            "explanation": "Election campaigns help parties promote their policies.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Voting takes place in:",
+            "options": {
+                "A": "Election hall",
+                "B": "Polling booth",
+                "C": "School office",
+                "D": "Government house"
+            },
+            "correct_answer": "B",
+            "explanation": "Voters cast their vote at polling booths.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which machine is used for voting in India?",
+            "options": {
+                "A": "ATM",
+                "B": "EVM",
+                "C": "Computer",
+                "D": "Printer"
+            },
+            "correct_answer": "B",
+            "explanation": "Electronic Voting Machines (EVMs) are used in elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Who conducts elections in India?",
+            "options": {
+                "A": "Supreme Court",
+                "B": "Election Commission",
+                "C": "President",
+                "D": "Prime Minister"
+            },
+            "correct_answer": "B",
+            "explanation": "The Election Commission conducts elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "The main function of Election Commission is to:",
+            "options": {
+                "A": "Conduct elections",
+                "B": "Make laws",
+                "C": "Collect taxes",
+                "D": "Run schools"
+            },
+            "correct_answer": "A",
+            "explanation": "The Election Commission organizes and supervises elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Free and fair elections mean:",
+            "options": {
+                "A": "No voting",
+                "B": "Voting without pressure",
+                "C": "Only one candidate",
+                "D": "Government chooses winner"
+            },
+            "correct_answer": "B",
+            "explanation": "Voters must vote freely without pressure.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "An election held to fill a vacant seat is called:",
+            "options": {
+                "A": "General election",
+                "B": "By-election",
+                "C": "Local election",
+                "D": "Village election"
+            },
+            "correct_answer": "B",
+            "explanation": "By-elections are conducted when a seat becomes vacant.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Elections held for all constituencies are called:",
+            "options": {
+                "A": "Local election",
+                "B": "General election",
+                "C": "Special election",
+                "D": "Village election"
+            },
+            "correct_answer": "B",
+            "explanation": "General elections are conducted nationwide.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "The candidate with the highest votes is:",
+            "options": {
+                "A": "Rejected",
+                "B": "Winner",
+                "C": "Judge",
+                "D": "Teacher"
+            },
+            "correct_answer": "B",
+            "explanation": "The candidate with the most votes wins the election.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which institution ensures free elections?",
+            "options": {
+                "A": "Parliament",
+                "B": "Election Commission",
+                "C": "Army",
+                "D": "Police"
+            },
+            "correct_answer": "B",
+            "explanation": "Election Commission ensures fairness in elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Voter turnout refers to:",
+            "options": {
+                "A": "Number of candidates",
+                "B": "Number of voters who vote",
+                "C": "Number of parties",
+                "D": "Number of officers"
+            },
+            "correct_answer": "B",
+            "explanation": "Voter turnout measures the participation of voters.",
+            "difficulty": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "The rule book for candidates during elections is called:",
+            "options": {
+                "A": "Election law",
+                "B": "Model Code of Conduct",
+                "C": "Civil code",
+                "D": "Constitution"
+            },
+            "correct_answer": "B",
+            "explanation": "The Model Code of Conduct guides election behavior.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Election symbols help voters to:",
+            "options": {
+                "A": "Recognize parties",
+                "B": "Choose judges",
+                "C": "Choose teachers",
+                "D": "Count votes"
+            },
+            "correct_answer": "A",
+            "explanation": "Symbols help voters easily identify candidates.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Who can vote in India?",
+            "options": {
+                "A": "Citizens above 18",
+                "B": "Only ministers",
+                "C": "Only judges",
+                "D": "Only soldiers"
+            },
+            "correct_answer": "A",
+            "explanation": "All citizens aged 18 or above can vote.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Elections allow citizens to:",
+            "options": {
+                "A": "Choose leaders",
+                "B": "Make laws",
+                "C": "Write constitution",
+                "D": "Control courts"
+            },
+            "correct_answer": "A",
+            "explanation": "Citizens choose their leaders through elections.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        }
+    ]
+}

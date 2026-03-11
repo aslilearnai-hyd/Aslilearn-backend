@@ -1,0 +1,272 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Agriculture",
+  "generated_at": "2026-03-11T12:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define agriculture and explain its importance in India.",
+      "answer": "Agriculture is the practice of cultivating crops and raising animals to produce food and raw materials. It is important because it provides food for the population and raw materials for industries.",
+      "answer_outline": [
+        "Definition of agriculture",
+        "Importance for food production",
+        "Role in providing raw materials"
+      ],
+      "key_concepts": ["agriculture"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the characteristics of primitive subsistence farming.",
+      "answer": "Primitive subsistence farming is practiced on small patches of land using simple tools and family labour. It depends mainly on monsoon rainfall and natural soil fertility.",
+      "answer_outline": [
+        "Small land holdings",
+        "Traditional tools",
+        "Dependence on natural conditions"
+      ],
+      "key_concepts": ["primitive subsistence farming"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the concept of shifting cultivation.",
+      "answer": "Shifting cultivation is a farming method in which land is cleared by cutting and burning vegetation. Crops are grown for a short time until soil fertility decreases, after which farmers move to a new area.",
+      "answer_outline": [
+        "Clearing land",
+        "Temporary cultivation",
+        "Moving to new land"
+      ],
+      "key_concepts": ["shifting cultivation"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the features of intensive subsistence farming.",
+      "answer": "Intensive subsistence farming uses small land areas but involves high labour input and modern techniques such as irrigation and fertilizers to increase crop yield.",
+      "answer_outline": [
+        "High labour input",
+        "Use of fertilizers and irrigation",
+        "High productivity"
+      ],
+      "key_concepts": ["intensive subsistence farming"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the characteristics of commercial farming.",
+      "answer": "Commercial farming focuses on producing crops for sale in markets. It uses modern technology, high-yielding seeds, fertilizers, and mechanized equipment.",
+      "answer_outline": [
+        "Production for market",
+        "Modern technology",
+        "Use of fertilizers and machinery"
+      ],
+      "key_concepts": ["commercial farming"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain plantation agriculture and give examples.",
+      "answer": "Plantation agriculture is a type of commercial farming where a single crop is grown on a large area using modern techniques and labour.",
+      "answer_outline": [
+        "Large estates",
+        "Single crop cultivation",
+        "Examples like tea and coffee"
+      ],
+      "key_concepts": ["plantation agriculture"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the cropping seasons in India.",
+      "answer": "India has three cropping seasons: Rabi, Kharif, and Zaid. Rabi crops are grown in winter, Kharif crops during monsoon, and Zaid crops in summer.",
+      "answer_outline": ["Rabi season", "Kharif season", "Zaid season"],
+      "key_concepts": ["cropping seasons"],
+      "marks": 5,
+      "source_section": "Cropping Pattern"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the climatic conditions required for the cultivation of rice.",
+      "answer": "Rice requires high temperature, high humidity, and annual rainfall above 100 cm.",
+      "answer_outline": ["High temperature", "High humidity", "Heavy rainfall"],
+      "key_concepts": ["rice cultivation"],
+      "marks": 5,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the climatic conditions required for the cultivation of wheat.",
+      "answer": "Wheat requires a cool growing season and bright sunshine during harvesting.",
+      "answer_outline": [
+        "Cool climate",
+        "Moderate rainfall",
+        "Sunshine during harvest"
+      ],
+      "key_concepts": ["wheat cultivation"],
+      "marks": 5,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the importance of millets in Indian agriculture.",
+      "answer": "Millets are nutritious crops rich in minerals and vitamins and can grow in dry regions.",
+      "answer_outline": ["High nutritional value", "Grown in dry regions"],
+      "key_concepts": ["millets"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the role of pulses in agriculture.",
+      "answer": "Pulses are important sources of protein and improve soil fertility by fixing nitrogen.",
+      "answer_outline": ["Source of protein", "Improves soil fertility"],
+      "key_concepts": ["pulses"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the importance of sugarcane in India.",
+      "answer": "Sugarcane is an important crop used to produce sugar, jaggery, and ethanol.",
+      "answer_outline": ["Economic importance", "Industrial uses"],
+      "key_concepts": ["sugarcane"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the importance of oilseeds in Indian agriculture.",
+      "answer": "Oilseeds are used to produce cooking oils and industrial products.",
+      "answer_outline": ["Cooking oil production", "Industrial uses"],
+      "key_concepts": ["oilseeds"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the characteristics of tea cultivation.",
+      "answer": "Tea requires warm and humid climate, well-drained soil, and abundant labour.",
+      "answer_outline": ["Warm climate", "High humidity", "Labour-intensive"],
+      "key_concepts": ["tea cultivation"],
+      "marks": 4,
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the conditions required for coffee cultivation.",
+      "answer": "Coffee requires tropical climate, moderate rainfall, and well-drained soil.",
+      "answer_outline": [
+        "Tropical climate",
+        "Moderate rainfall",
+        "Well-drained soil"
+      ],
+      "key_concepts": ["coffee cultivation"],
+      "marks": 4,
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the concept of horticulture crops.",
+      "answer": "Horticulture involves cultivation of fruits, vegetables, and flowers.",
+      "answer_outline": ["Fruit cultivation", "Vegetable cultivation"],
+      "key_concepts": ["horticulture"],
+      "marks": 4,
+      "source_section": "Horticulture Crops"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the characteristics of cotton cultivation.",
+      "answer": "Cotton requires high temperature, light rainfall, and black soil.",
+      "answer_outline": ["High temperature", "Black soil", "Moderate rainfall"],
+      "key_concepts": ["cotton"],
+      "marks": 4,
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of jute in industry.",
+      "answer": "Jute is used to produce ropes, bags, carpets, and other products.",
+      "answer_outline": ["Industrial uses", "Economic importance"],
+      "key_concepts": ["jute"],
+      "marks": 4,
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the climatic conditions required for rubber cultivation.",
+      "answer": "Rubber requires hot and humid climate with heavy rainfall.",
+      "answer_outline": ["High temperature", "High rainfall"],
+      "key_concepts": ["rubber"],
+      "marks": 4,
+      "source_section": "Non-Food Crops"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the meaning of technological reforms in agriculture.",
+      "answer": "Technological reforms involve introducing modern technology such as high-yielding seeds, fertilizers, and irrigation systems.",
+      "answer_outline": ["Modern technology", "Improved crop yield"],
+      "key_concepts": ["technological reforms"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the Green Revolution and its importance.",
+      "answer": "The Green Revolution increased agricultural production using modern inputs like fertilizers and HYV seeds.",
+      "answer_outline": [
+        "Introduction of modern technology",
+        "Increase in crop production"
+      ],
+      "key_concepts": ["green revolution"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the role of irrigation in agriculture.",
+      "answer": "Irrigation provides water to crops when rainfall is insufficient and helps increase crop yield.",
+      "answer_outline": ["Water supply", "Improves crop production"],
+      "key_concepts": ["irrigation"],
+      "marks": 4,
+      "source_section": "Agriculture Practices"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how agriculture supports industries.",
+      "answer": "Agriculture provides raw materials such as cotton, sugarcane, and jute to industries.",
+      "answer_outline": ["Raw material supply", "Industry support"],
+      "key_concepts": ["agriculture and industry"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of agriculture for India's economy.",
+      "answer": "Agriculture provides employment, food security, and raw materials for industries.",
+      "answer_outline": ["Employment", "Food supply", "Industrial support"],
+      "key_concepts": ["agriculture economy"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the major challenges faced by agriculture in India.",
+      "answer": "Major challenges include dependence on monsoon, small land holdings, and lack of modern technology.",
+      "answer_outline": [
+        "Dependence on rainfall",
+        "Small land holdings",
+        "Limited technology"
+      ],
+      "key_concepts": ["agriculture challenges"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    }
+  ]
+}

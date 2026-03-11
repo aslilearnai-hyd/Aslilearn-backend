@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3",
+  "generated_at": "2026-02-27T21:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who was the famous Portuguese explorer that reached India by sea in 1498?",
+      "options": {
+        "A": "Christopher Columbus",
+        "B": "Vasco da Gama",
+        "C": "Ferdinand Magellan",
+        "D": "James Cook"
+      },
+      "correct_answer": "B",
+      "explanation": "Vasco da Gama reached Calicut, India, in 1498, opening the sea route from Europe to India.",
+      "difficulty": "easy",
+      "source_section": "Early European Exploration"
+    },
+    {
+      "question_number": 2,
+      "question": "Which commodity was highly demanded in Europe from Asia?",
+      "options": {
+        "A": "Spices",
+        "B": "Potatoes",
+        "C": "Corn",
+        "D": "Coffee"
+      },
+      "correct_answer": "A",
+      "explanation": "Spices such as pepper, cloves, and cinnamon were in high demand in Europe.",
+      "difficulty": "easy",
+      "source_section": "Trade Commodities"
+    },
+    {
+      "question_number": 3,
+      "question": "What was the Silk Route?",
+      "options": {
+        "A": "A European road",
+        "B": "A trade route connecting Europe and Asia",
+        "C": "A railway network in India",
+        "D": "A shipping route in the Atlantic"
+      },
+      "correct_answer": "B",
+      "explanation": "The Silk Route was an ancient network of trade routes connecting Europe and Asia.",
+      "difficulty": "easy",
+      "source_section": "Trade Routes"
+    },
+    {
+      "question_number": 4,
+      "question": "Which European countries were early participants in global trade?",
+      "options": {
+        "A": "Portugal, Spain, Netherlands, England",
+        "B": "France, Germany, Russia only",
+        "C": "China, Japan, Korea",
+        "D": "India, Egypt, Persia"
+      },
+      "correct_answer": "A",
+      "explanation": "Portugal, Spain, Netherlands, and England were major European powers in global trade.",
+      "difficulty": "easy",
+      "source_section": "European Trade Expansion"
+    },
+    {
+      "question_number": 5,
+      "question": "Which crop was introduced to Europe from America during the Columbian Exchange?",
+      "options": {
+        "A": "Sugarcane",
+        "B": "Potatoes",
+        "C": "Wheat",
+        "D": "Rice"
+      },
+      "correct_answer": "B",
+      "explanation": "Potatoes were one of the crops introduced to Europe from the Americas during the Columbian Exchange.",
+      "difficulty": "easy",
+      "source_section": "Columbian Exchange"
+    },
+    {
+      "question_number": 6,
+      "question": "Which company established trade dominance in India in the 17th century?",
+      "options": {
+        "A": "British East India Company",
+        "B": "Dutch East India Company",
+        "C": "French East India Company",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "The British, Dutch, and French East India Companies all competed for trade dominance in India.",
+      "difficulty": "easy",
+      "source_section": "European Companies in India"
+    },
+    {
+      "question_number": 7,
+      "question": "Which precious metal did Europeans trade for spices in Asia?",
+      "options": {
+        "A": "Gold and Silver",
+        "B": "Iron",
+        "C": "Copper",
+        "D": "Tin"
+      },
+      "correct_answer": "A",
+      "explanation": "Europeans used gold and silver to purchase spices and other goods from Asia.",
+      "difficulty": "easy",
+      "source_section": "Trade Commodities"
+    },
+    {
+      "question_number": 8,
+      "question": "What is mercantilism?",
+      "options": {
+        "A": "A system to promote local crafts only",
+        "B": "An economic theory focusing on trade surplus and accumulation of wealth",
+        "C": "A religious ideology",
+        "D": "A navigation method"
+      },
+      "correct_answer": "B",
+      "explanation": "Mercantilism emphasized trade surplus and accumulation of wealth through colonies and trade.",
+      "difficulty": "easy",
+      "source_section": "Economic Ideas"
+    },
+    {
+      "question_number": 9,
+      "question": "Which route was primarily used to transport spices from India to Europe?",
+      "options": {
+        "A": "Atlantic Route",
+        "B": "Maritime Route around Africa",
+        "C": "Trans-Siberian Route",
+        "D": "Panama Canal Route"
+      },
+      "correct_answer": "B",
+      "explanation": "European ships sailed around the Cape of Good Hope to reach India for spices.",
+      "difficulty": "easy",
+      "source_section": "Trade Routes"
+    },
+    {
+      "question_number": 10,
+      "question": "Which crop came from Asia to Europe and became very popular?",
+      "options": {
+        "A": "Coffee",
+        "B": "Tomatoes",
+        "C": "Corn",
+        "D": "Potatoes"
+      },
+      "correct_answer": "A",
+      "explanation": "Coffee was introduced from Asia to Europe and gained popularity.",
+      "difficulty": "easy",
+      "source_section": "Columbian Exchange"
+    },
+    {
+      "question_number": 11,
+      "question": "Which movement encouraged Europeans to explore sea routes to Asia?",
+      "options": {
+        "A": "Renaissance",
+        "B": "Industrial Revolution",
+        "C": "Enlightenment",
+        "D": "French Revolution"
+      },
+      "correct_answer": "A",
+      "explanation": "The Renaissance encouraged curiosity, science, and exploration of new routes.",
+      "difficulty": "easy",
+      "source_section": "European Exploration"
+    },
+    {
+      "question_number": 12,
+      "question": "Which country first established a colony in India?",
+      "options": {
+        "A": "Portugal",
+        "B": "Britain",
+        "C": "France",
+        "D": "Netherlands"
+      },
+      "correct_answer": "A",
+      "explanation": "Portugal was the first European country to establish colonies in India, like Goa.",
+      "difficulty": "easy",
+      "source_section": "European Companies in India"
+    },
+    {
+      "question_number": 13,
+      "question": "Which route connected China to Europe through Central Asia?",
+      "options": {
+        "A": "Silk Route",
+        "B": "Spice Route",
+        "C": "Maritime Route",
+        "D": "Transatlantic Route"
+      },
+      "correct_answer": "A",
+      "explanation": "The Silk Route linked China to Europe across Central Asia for silk and other goods.",
+      "difficulty": "easy",
+      "source_section": "Trade Routes"
+    },
+    {
+      "question_number": 14,
+      "question": "Which European country dominated spice trade in the East Indies?",
+      "options": {
+        "A": "Portugal",
+        "B": "Netherlands",
+        "C": "France",
+        "D": "Spain"
+      },
+      "correct_answer": "B",
+      "explanation": "The Dutch East India Company controlled spice trade in the East Indies.",
+      "difficulty": "easy",
+      "source_section": "European Companies in Asia"
+    },
+    {
+      "question_number": 15,
+      "question": "Which disease came to Europe from the Americas during the Columbian Exchange?",
+      "options": {
+        "A": "Smallpox",
+        "B": "Measles",
+        "C": "Malaria",
+        "D": "None"
+      },
+      "correct_answer": "D",
+      "explanation": "Smallpox and measles went from Europe to the Americas, not the other way around.",
+      "difficulty": "easy",
+      "source_section": "Columbian Exchange"
+    },
+    {
+      "question_number": 16,
+      "question": "Which country controlled the spice trade in Malabar region before Europeans?",
+      "options": {
+        "A": "Arab traders",
+        "B": "China",
+        "C": "England",
+        "D": "Netherlands"
+      },
+      "correct_answer": "A",
+      "explanation": "Arab traders controlled spice trade in India before the arrival of Europeans.",
+      "difficulty": "easy",
+      "source_section": "Trade Before Europeans"
+    },
+    {
+      "question_number": 17,
+      "question": "Which ocean did Europeans cross to reach India?",
+      "options": {
+        "A": "Atlantic Ocean",
+        "B": "Indian Ocean",
+        "C": "Pacific Ocean",
+        "D": "Arctic Ocean"
+      },
+      "correct_answer": "B",
+      "explanation": "European ships sailed across the Indian Ocean to reach India and trade spices.",
+      "difficulty": "easy",
+      "source_section": "European Exploration"
+    },
+    {
+      "question_number": 18,
+      "question": "Which European company first established trade in Bengal?",
+      "options": {
+        "A": "British East India Company",
+        "B": "Dutch East India Company",
+        "C": "French East India Company",
+        "D": "Portuguese Company"
+      },
+      "correct_answer": "A",
+      "explanation": "The British East India Company established trade posts in Bengal in the 17th century.",
+      "difficulty": "easy",
+      "source_section": "European Companies in India"
+    },
+    {
+      "question_number": 19,
+      "question": "Which commodity was exported from India to Europe?",
+      "options": {
+        "A": "Cotton",
+        "B": "Potatoes",
+        "C": "Corn",
+        "D": "Coffee only"
+      },
+      "correct_answer": "A",
+      "explanation": "Cotton, along with spices and textiles, was exported from India to Europe.",
+      "difficulty": "easy",
+      "source_section": "Trade Commodities"
+    },
+    {
+      "question_number": 20,
+      "question": "Which area was called the 'Spice Islands'?",
+      "options": {
+        "A": "Indonesia",
+        "B": "India",
+        "C": "China",
+        "D": "Arabia"
+      },
+      "correct_answer": "A",
+      "explanation": "The Maluku Islands in Indonesia were known as the 'Spice Islands'.",
+      "difficulty": "easy",
+      "source_section": "Trade Commodities"
+    },
+    {
+      "question_number": 21,
+      "question": "Which European explorer discovered the Americas while searching for a sea route to India?",
+      "options": {
+        "A": "Vasco da Gama",
+        "B": "Christopher Columbus",
+        "C": "Ferdinand Magellan",
+        "D": "James Cook"
+      },
+      "correct_answer": "B",
+      "explanation": "Columbus reached the Americas in 1492 while searching for a route to India.",
+      "difficulty": "easy",
+      "source_section": "Exploration"
+    },
+    {
+      "question_number": 22,
+      "question": "Which crop came from Europe to India during early global trade?",
+      "options": {
+        "A": "Maize",
+        "B": "Rice",
+        "C": "Cotton",
+        "D": "Spices"
+      },
+      "correct_answer": "A",
+      "explanation": "Maize and other crops like potatoes came from Europe/Americas to India.",
+      "difficulty": "easy",
+      "source_section": "Columbian Exchange"
+    },
+    {
+      "question_number": 23,
+      "question": "Which trading company first reached Japan?",
+      "options": {
+        "A": "British East India Company",
+        "B": "Dutch East India Company",
+        "C": "French East India Company",
+        "D": "Portuguese Company"
+      },
+      "correct_answer": "B",
+      "explanation": "The Dutch East India Company traded with Japan in the 17th century.",
+      "difficulty": "easy",
+      "source_section": "European Companies"
+    },
+    {
+      "question_number": 24,
+      "question": "Which idea encouraged Europeans to explore new lands?",
+      "options": {
+        "A": "Colonialism",
+        "B": "Renaissance curiosity and scientific knowledge",
+        "C": "Industrial Revolution",
+        "D": "Socialism"
+      },
+      "correct_answer": "B",
+      "explanation": "Renaissance knowledge and curiosity encouraged exploration.",
+      "difficulty": "easy",
+      "source_section": "European Exploration"
+    },
+    {
+      "question_number": 25,
+      "question": "Which European country colonized Goa?",
+      "options": {
+        "A": "Portugal",
+        "B": "France",
+        "C": "Britain",
+        "D": "Netherlands"
+      },
+      "correct_answer": "A",
+      "explanation": "Portugal colonized Goa in India in the early 16th century.",
+      "difficulty": "easy",
+      "source_section": "European Colonies"
+    }
+  ]
+}

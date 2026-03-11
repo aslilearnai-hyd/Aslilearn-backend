@@ -1,0 +1,709 @@
+{
+    "subject": "English",
+    "book": "Moments",
+    "Content": "Essay Writing",
+    "class": "9",
+    "total_questions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Importance of Parents",
+            "question": "Write an essay explaining how the story highlights the importance of parents in a child’s life."
+        },
+        {
+            "id": 2,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Childhood Innocence",
+            "question": "Write an essay describing the innocence and curiosity of childhood shown in the story."
+        },
+        {
+            "id": 3,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Real Happiness",
+            "question": "Write an essay explaining that love and security are more valuable than material things."
+        },
+        {
+            "id": 4,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Festivals and Fairs",
+            "question": "Write an essay describing the colourful atmosphere of fairs and festivals."
+        },
+        {
+            "id": 5,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Fear of Loneliness",
+            "question": "Write an essay describing the fear and loneliness experienced by the child."
+        },
+        {
+            "id": 6,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Value of Family",
+            "question": "Write an essay discussing the importance of family bonds."
+        },
+        {
+            "id": 7,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Child Psychology",
+            "question": "Write an essay on the behaviour and psychology of children."
+        },
+        {
+            "id": 8,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Attractions of a Fair",
+            "question": "Write an essay describing the attractions of a village fair."
+        },
+        {
+            "id": 9,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Parental Care",
+            "question": "Write an essay describing the role of parents in guiding children."
+        },
+        {
+            "id": 10,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Lesson of the Story",
+            "question": "Write an essay explaining the moral lesson conveyed in the story."
+        },
+        {
+            "id": 11,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Animals as Pets",
+            "question": "Write an essay discussing the advantages and challenges of keeping animals as pets."
+        },
+        {
+            "id": 12,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Grandfather’s Character",
+            "question": "Write an essay describing Grandfather’s love for animals."
+        },
+        {
+            "id": 13,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Humour in the Story",
+            "question": "Write an essay explaining how humour is created through Toto’s actions."
+        },
+        {
+            "id": 14,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Animal Intelligence",
+            "question": "Write an essay describing the intelligence of animals with reference to Toto."
+        },
+        {
+            "id": 15,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Responsibility of Pet Owners",
+            "question": "Write an essay discussing the responsibility of keeping pets."
+        },
+        {
+            "id": 16,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Mischievous Animals",
+            "question": "Write an essay describing the mischievous nature of animals."
+        },
+        {
+            "id": 17,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Human-Animal Relationship",
+            "question": "Write an essay on the relationship between humans and animals."
+        },
+        {
+            "id": 18,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Toto as a Character",
+            "question": "Write an essay describing Toto’s character in the story."
+        },
+        {
+            "id": 19,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Pets and Responsibility",
+            "question": "Write an essay explaining why keeping pets requires responsibility."
+        },
+        {
+            "id": 20,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Humour and Entertainment",
+            "question": "Write an essay on humour as an element of storytelling."
+        },
+        {
+            "id": 21,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Power of Storytelling",
+            "question": "Write an essay explaining the art of storytelling as shown by Iswaran."
+        },
+        {
+            "id": 22,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Imagination in Stories",
+            "question": "Write an essay discussing the importance of imagination in storytelling."
+        },
+        {
+            "id": 23,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Friendship and Loyalty",
+            "question": "Write an essay describing Iswaran’s loyalty towards Mahendra."
+        },
+        {
+            "id": 24,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Fear and Superstition",
+            "question": "Write an essay discussing fear and superstition in the story."
+        },
+        {
+            "id": 25,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Influence of Books",
+            "question": "Write an essay explaining how books influence imagination."
+        },
+        {
+            "id": 26,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Foolish Leadership",
+            "question": "Write an essay on the dangers of foolish leadership."
+        },
+        {
+            "id": 27,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Wisdom vs Foolishness",
+            "question": "Write an essay comparing wisdom and foolishness."
+        },
+        {
+            "id": 28,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Importance of Wisdom",
+            "question": "Write an essay explaining why wisdom is essential in leadership."
+        },
+        {
+            "id": 29,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Justice in Society",
+            "question": "Write an essay discussing justice in society."
+        },
+        {
+            "id": 30,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Greed and Consequences",
+            "question": "Write an essay explaining how greed can lead to danger."
+        },
+        {
+            "id": 31,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "True Compassion",
+            "question": "Write an essay describing the compassion of the Happy Prince."
+        },
+        {
+            "id": 32,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Sacrifice for Others",
+            "question": "Write an essay explaining the theme of sacrifice."
+        },
+        {
+            "id": 33,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Friendship",
+            "question": "Write an essay describing the friendship between the swallow and the prince."
+        },
+        {
+            "id": 34,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Kindness and Humanity",
+            "question": "Write an essay explaining how kindness can change lives."
+        },
+        {
+            "id": 35,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Helping the Poor",
+            "question": "Write an essay on helping the poor and needy."
+        },
+        {
+            "id": 36,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Natural Disasters",
+            "question": "Write an essay on the impact of natural disasters."
+        },
+        {
+            "id": 37,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Courage in Crisis",
+            "question": "Write an essay on courage during difficult situations."
+        },
+        {
+            "id": 38,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Leadership in Disaster",
+            "question": "Write an essay describing Prashant as a leader."
+        },
+        {
+            "id": 39,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Helping Others",
+            "question": "Write an essay on helping others during disasters."
+        },
+        {
+            "id": 40,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Hope After Disaster",
+            "question": "Write an essay explaining how hope helps people survive disasters."
+        },
+        {
+            "id": 41,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Power of Hope",
+            "question": "Write an essay on the power of hope in human life."
+        },
+        {
+            "id": 42,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "True Friendship",
+            "question": "Write an essay describing the friendship between Sue and Johnsy."
+        },
+        {
+            "id": 43,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Art and Sacrifice",
+            "question": "Write an essay on Behrman’s sacrifice as a true artist."
+        },
+        {
+            "id": 44,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Faith and Determination",
+            "question": "Write an essay on how faith can influence life."
+        },
+        {
+            "id": 45,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Meaning of True Art",
+            "question": "Write an essay explaining the meaning of true art."
+        },
+        {
+            "id": 46,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Meaning of Home",
+            "question": "Write an essay explaining the difference between a house and a home."
+        },
+        {
+            "id": 47,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Challenges of Teenage Life",
+            "question": "Write an essay on challenges faced by teenagers."
+        },
+        {
+            "id": 48,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Value of Friendship",
+            "question": "Write an essay on the importance of friendship."
+        },
+        {
+            "id": 49,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Coping with Loss",
+            "question": "Write an essay on coping with loss and tragedy."
+        },
+        {
+            "id": 50,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Support from Society",
+            "question": "Write an essay on how society supports people in difficult times."
+        },
+        {
+            "id": 51,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Power of Kindness",
+            "question": "Write an essay on how kindness can transform lives."
+        },
+        {
+            "id": 52,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Value of Hard Work",
+            "question": "Write an essay on the importance of hard work."
+        },
+        {
+            "id": 53,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Transformation of Lushkoff",
+            "question": "Write an essay describing the transformation of Lushkoff."
+        },
+        {
+            "id": 54,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Honesty in Life",
+            "question": "Write an essay on honesty as a human value."
+        },
+        {
+            "id": 55,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Role of Olga",
+            "question": "Write an essay describing Olga’s role in changing Lushkoff’s life."
+        },
+        {
+            "id": 56,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Human Values in Literature",
+            "question": "Write an essay on the human values shown in the stories of Moments."
+        },
+        {
+            "id": 57,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Kindness",
+            "question": "Write an essay on kindness as a universal value."
+        },
+        {
+            "id": 58,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Courage",
+            "question": "Write an essay on courage in difficult situations."
+        },
+        {
+            "id": 59,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Hope",
+            "question": "Write an essay on hope as a source of strength."
+        },
+        {
+            "id": 60,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Value of Friendship",
+            "question": "Write an essay on the importance of friendship in life."
+        },
+        {
+            "id": 61,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Education",
+            "question": "Write an essay on the importance of education in shaping character."
+        },
+        {
+            "id": 62,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Helping Others",
+            "question": "Write an essay on the value of helping others."
+        },
+        {
+            "id": 63,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Role of Compassion",
+            "question": "Write an essay on compassion as a human quality."
+        },
+        {
+            "id": 64,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Life Lessons from Stories",
+            "question": "Write an essay describing life lessons learned from stories."
+        },
+        {
+            "id": 65,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Honesty",
+            "question": "Write an essay explaining the importance of honesty."
+        },
+        {
+            "id": 66,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Responsibility",
+            "question": "Write an essay on personal responsibility."
+        },
+        {
+            "id": 67,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Overcoming Difficulties",
+            "question": "Write an essay on overcoming difficulties in life."
+        },
+        {
+            "id": 68,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Leadership",
+            "question": "Write an essay on leadership qualities."
+        },
+        {
+            "id": 69,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Value of Determination",
+            "question": "Write an essay on determination in achieving success."
+        },
+        {
+            "id": 70,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Human Kindness",
+            "question": "Write an essay describing kindness as a powerful human value."
+        },
+        {
+            "id": 71,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Value of Friendship in Society",
+            "question": "Write an essay discussing the importance of friendship in society."
+        },
+        {
+            "id": 72,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Helping the Needy",
+            "question": "Write an essay on helping the needy and poor."
+        },
+        {
+            "id": 73,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Strength of the Human Spirit",
+            "question": "Write an essay on the strength of the human spirit."
+        },
+        {
+            "id": 74,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Facing Challenges",
+            "question": "Write an essay on facing challenges with courage."
+        },
+        {
+            "id": 75,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Moral Values",
+            "question": "Write an essay on moral values in modern life."
+        },
+        {
+            "id": 76,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Compassion",
+            "question": "Write an essay explaining why compassion is important."
+        },
+        {
+            "id": 77,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Humanity",
+            "question": "Write an essay on humanity as the greatest virtue."
+        },
+        {
+            "id": 78,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Courage and Hope",
+            "question": "Write an essay explaining how courage and hope help people succeed."
+        },
+        {
+            "id": 79,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Helping Society",
+            "question": "Write an essay on individual responsibility towards society."
+        },
+        {
+            "id": 80,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Learning from Literature",
+            "question": "Write an essay explaining how literature teaches life lessons."
+        },
+        {
+            "id": 81,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Hope in Life",
+            "question": "Write an essay describing hope as a powerful force in life."
+        },
+        {
+            "id": 82,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Human Relationships",
+            "question": "Write an essay describing the importance of relationships."
+        },
+        {
+            "id": 83,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Value of Compassion in Society",
+            "question": "Write an essay on compassion in society."
+        },
+        {
+            "id": 84,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Kindness in Daily Life",
+            "question": "Write an essay describing how kindness affects daily life."
+        },
+        {
+            "id": 85,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Lessons from Literature",
+            "question": "Write an essay on lessons learned from literature."
+        },
+        {
+            "id": 86,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Role of Moral Values",
+            "question": "Write an essay on the role of moral values in shaping character."
+        },
+        {
+            "id": 87,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Determination",
+            "question": "Write an essay explaining the role of determination in success."
+        },
+        {
+            "id": 88,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Compassion and Humanity",
+            "question": "Write an essay on compassion and humanity."
+        },
+        {
+            "id": 89,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Learning Through Experiences",
+            "question": "Write an essay explaining how experiences teach valuable lessons."
+        },
+        {
+            "id": 90,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Helping Others",
+            "question": "Write an essay describing why helping others is important."
+        },
+        {
+            "id": 91,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Value of Courage",
+            "question": "Write an essay on courage as a human quality."
+        },
+        {
+            "id": 92,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Faith and Determination",
+            "question": "Write an essay explaining the importance of faith and determination."
+        },
+        {
+            "id": 93,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Positive Thinking",
+            "question": "Write an essay on the importance of positive thinking."
+        },
+        {
+            "id": 94,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Helping the Poor",
+            "question": "Write an essay explaining why society should help the poor."
+        },
+        {
+            "id": 95,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Kindness and Compassion",
+            "question": "Write an essay describing the role of kindness and compassion."
+        },
+        {
+            "id": 96,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Moral Education",
+            "question": "Write an essay explaining the importance of moral education."
+        },
+        {
+            "id": 97,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Human Values in Society",
+            "question": "Write an essay describing the importance of human values."
+        },
+        {
+            "id": 98,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Helping Humanity",
+            "question": "Write an essay on helping humanity."
+        },
+        {
+            "id": 99,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Life Lessons from Stories",
+            "question": "Write an essay explaining how stories teach important life lessons."
+        },
+        {
+            "id": 100,
+            "chapter": "General Reflection",
+            "source": "Moments – All Chapters",
+            "title": "Message of the Book",
+            "question": "Write an essay summarising the key messages of the book Moments."
+        }
+    ]
+}

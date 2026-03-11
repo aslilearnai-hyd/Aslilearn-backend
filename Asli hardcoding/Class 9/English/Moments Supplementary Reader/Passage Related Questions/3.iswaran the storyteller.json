@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG 9",
+    "chapter": "Iswaran the Storyteller",
+    "title": "Extended Reading Passages with Questions – Iswaran the Storyteller",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Mahendra worked as a junior supervisor in a firm that offered supervisors for construction projects. His work required him to move frequently from one place to another such as remote bridges, dams and factories. Because of these frequent transfers, he often lived alone in temporary shelters near the construction sites.",
+            "questions": [
+                "What was Mahendra’s profession?",
+                "Why did Mahendra move frequently from place to place?",
+                "Where did Mahendra usually stay during his work?",
+                "What type of places did Mahendra visit for work?",
+                "Why did Mahendra often live alone?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Iswaran served as Mahendra’s cook and companion. He followed Mahendra wherever he was posted and managed all the household work. Even in deserted areas, Iswaran managed to prepare delicious meals by arranging vegetables and other supplies somehow.",
+            "questions": [
+                "Who was Iswaran?",
+                "What role did Iswaran play in Mahendra’s life?",
+                "What work did Iswaran manage for Mahendra?",
+                "How did Iswaran arrange food in remote places?",
+                "Why was Iswaran important to Mahendra?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Apart from cooking, Iswaran loved reading popular Tamil thrillers. These books influenced his imagination and storytelling style. Every evening, he would narrate stories to Mahendra with dramatic gestures and suspenseful descriptions.",
+            "questions": [
+                "What kind of books did Iswaran enjoy reading?",
+                "How did these books influence Iswaran?",
+                "When did Iswaran usually tell stories?",
+                "How did Iswaran narrate his stories?",
+                "Why were Iswaran’s stories interesting?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "One day Iswaran described an incident involving a fallen tree on the road. Instead of simply describing it as a tree, he presented it dramatically as a huge bushy beast lying across the road. His imaginative description made the incident sound mysterious and exciting.",
+            "questions": [
+                "What incident did Iswaran describe?",
+                "How did he describe the fallen tree?",
+                "What effect did his description create?",
+                "Why did the incident sound mysterious?",
+                "What quality of Iswaran is shown here?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "Iswaran once narrated a thrilling story about a mad elephant that had escaped from a timber yard. The elephant ran through the town, breaking fences and destroying stalls. People ran away in fear as the elephant entered a school ground and caused more destruction.",
+            "questions": [
+                "What animal appeared in Iswaran’s story?",
+                "Where did the elephant escape from?",
+                "What damage did the elephant cause?",
+                "How did people react to the elephant?",
+                "Where did the elephant finally enter?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "According to Iswaran, he confronted the mad elephant bravely. He claimed that he struck the elephant’s toenail with a stick using a martial art technique. Surprisingly, the elephant collapsed and was later revived by a veterinarian.",
+            "questions": [
+                "How did Iswaran claim to stop the elephant?",
+                "What martial art technique did he mention?",
+                "Which part of the elephant did he strike?",
+                "What happened to the elephant after the blow?",
+                "Who later revived the elephant?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "One evening, Iswaran prepared a special meal because it was considered an auspicious day to honour ancestral spirits. During dinner, he told Mahendra that the factory area where they lived was once a burial ground where ghosts were believed to appear.",
+            "questions": [
+                "Why did Iswaran prepare a special meal?",
+                "What belief was connected with that day?",
+                "What did Iswaran say about the factory area?",
+                "What were people believed to see there?",
+                "When did Iswaran tell this story?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Iswaran described a terrifying female ghost with matted hair and a foetus in its arms. According to him, the ghost appeared on full-moon nights. Although Mahendra laughed and said ghosts were imaginary, the story slowly affected his imagination.",
+            "questions": [
+                "What kind of ghost did Iswaran describe?",
+                "What was the ghost holding?",
+                "When did the ghost appear?",
+                "How did Mahendra react initially?",
+                "What effect did the story have on Mahendra later?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "One night Mahendra woke up after hearing a strange moaning sound. Curious and frightened, he looked out of the window and saw a dark cloudy figure holding something. The sight filled him with fear and he broke into a cold sweat.",
+            "questions": [
+                "What woke Mahendra at night?",
+                "What did Mahendra see outside the window?",
+                "How did Mahendra feel at that moment?",
+                "What physical reaction did he experience?",
+                "Why was Mahendra frightened?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "The next morning Iswaran casually mentioned that Mahendra must have seen the female ghost. Although Mahendra tried to explain the incident as imagination or auto-suggestion, he decided to leave the place soon. The story shows how imagination and suggestion can strongly influence human emotions.",
+            "questions": [
+                "What did Iswaran say the next morning?",
+                "How did Mahendra try to explain the incident?",
+                "What decision did Mahendra take afterward?",
+                "What does the story show about imagination?",
+                "What message does the story convey?"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Water Resources",
+  "generated_at": "2026-03-11T15:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which process continuously renews water on Earth?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Hydrological cycle",
+        "C": "Respiration",
+        "D": "Weathering"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is continuously recycled through the hydrological cycle.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the main source of freshwater on Earth?",
+      "options": {
+        "A": "Oceans",
+        "B": "Rainfall",
+        "C": "Mountains",
+        "D": "Forests"
+      },
+      "correct_answer": "B",
+      "explanation": "Freshwater mainly comes from precipitation such as rainfall.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "What does water scarcity mean?",
+      "options": {
+        "A": "Excess water availability",
+        "B": "Shortage of water resources",
+        "C": "Heavy rainfall",
+        "D": "Floods"
+      },
+      "correct_answer": "B",
+      "explanation": "Water scarcity refers to the shortage of sufficient water resources.",
+      "difficulty": "easy",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 4,
+      "question": "Which sector uses the largest amount of water?",
+      "options": {
+        "A": "Agriculture",
+        "B": "Transport",
+        "C": "Tourism",
+        "D": "Education"
+      },
+      "correct_answer": "A",
+      "explanation": "Agriculture consumes the largest share of water resources.",
+      "difficulty": "easy",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a dam?",
+      "options": {
+        "A": "A natural lake",
+        "B": "A barrier built across a river",
+        "C": "A type of irrigation canal",
+        "D": "A groundwater tank"
+      },
+      "correct_answer": "B",
+      "explanation": "A dam is a barrier built across flowing water to store and control it.",
+      "difficulty": "easy",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is a multipurpose river project?",
+      "options": {
+        "A": "Bhakra Nangal",
+        "B": "Delhi Metro",
+        "C": "Golden Quadrilateral",
+        "D": "Green Revolution"
+      },
+      "correct_answer": "A",
+      "explanation": "Bhakra Nangal is a major multipurpose river project in India.",
+      "difficulty": "easy",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is a benefit of dams?",
+      "options": {
+        "A": "Flood control",
+        "B": "Deforestation",
+        "C": "Pollution",
+        "D": "Soil erosion"
+      },
+      "correct_answer": "A",
+      "explanation": "Dams help regulate river flow and control floods.",
+      "difficulty": "easy",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 8,
+      "question": "Rainwater harvesting means:",
+      "options": {
+        "A": "Wasting rainwater",
+        "B": "Collecting and storing rainwater",
+        "C": "Purifying seawater",
+        "D": "Building dams"
+      },
+      "correct_answer": "B",
+      "explanation": "Rainwater harvesting is the collection and storage of rainwater.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 9,
+      "question": "Which traditional water storage system is used in Rajasthan?",
+      "options": {
+        "A": "Tankas",
+        "B": "Canals",
+        "C": "Reservoirs",
+        "D": "Aqueducts"
+      },
+      "correct_answer": "A",
+      "explanation": "Tankas are underground tanks used to store rainwater in Rajasthan.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 10,
+      "question": "Which state made rooftop rainwater harvesting compulsory?",
+      "options": {
+        "A": "Kerala",
+        "B": "Tamil Nadu",
+        "C": "Punjab",
+        "D": "Bihar"
+      },
+      "correct_answer": "B",
+      "explanation": "Tamil Nadu made rooftop rainwater harvesting mandatory in buildings.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 11,
+      "question": "Which irrigation system uses bamboo pipes?",
+      "options": {
+        "A": "Drip irrigation",
+        "B": "Bamboo drip irrigation",
+        "C": "Canal irrigation",
+        "D": "Flood irrigation"
+      },
+      "correct_answer": "B",
+      "explanation": "Bamboo drip irrigation uses bamboo pipes to transport water.",
+      "difficulty": "easy",
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 12,
+      "question": "In which state is bamboo drip irrigation practiced?",
+      "options": {
+        "A": "Meghalaya",
+        "B": "Gujarat",
+        "C": "Punjab",
+        "D": "Rajasthan"
+      },
+      "correct_answer": "A",
+      "explanation": "Bamboo drip irrigation is traditionally practiced in Meghalaya.",
+      "difficulty": "easy",
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following causes water scarcity?",
+      "options": {
+        "A": "Population growth",
+        "B": "Tree planting",
+        "C": "Rainfall",
+        "D": "Water conservation"
+      },
+      "correct_answer": "A",
+      "explanation": "Increasing population raises water demand and contributes to water scarcity.",
+      "difficulty": "easy",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 14,
+      "question": "What is groundwater?",
+      "options": {
+        "A": "Water found under the Earth's surface",
+        "B": "Water in rivers",
+        "C": "Water in clouds",
+        "D": "Water in oceans"
+      },
+      "correct_answer": "A",
+      "explanation": "Groundwater is water stored beneath the Earth's surface.",
+      "difficulty": "easy",
+      "source_section": "Water Resources"
+    },
+    {
+      "question_number": 15,
+      "question": "Which activity helps conserve water?",
+      "options": {
+        "A": "Rainwater harvesting",
+        "B": "Water wastage",
+        "C": "Pollution",
+        "D": "Over-extraction"
+      },
+      "correct_answer": "A",
+      "explanation": "Rainwater harvesting helps conserve and store water.",
+      "difficulty": "easy",
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 16,
+      "question": "Which river project is built on the Narmada River?",
+      "options": {
+        "A": "Sardar Sarovar",
+        "B": "Bhakra Nangal",
+        "C": "Hirakud",
+        "D": "Tehri"
+      },
+      "correct_answer": "A",
+      "explanation": "The Sardar Sarovar Dam is built on the Narmada River.",
+      "difficulty": "easy",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the main purpose of irrigation?",
+      "options": {
+        "A": "Supply water to crops",
+        "B": "Generate electricity",
+        "C": "Build roads",
+        "D": "Store minerals"
+      },
+      "correct_answer": "A",
+      "explanation": "Irrigation provides water to crops for agricultural production.",
+      "difficulty": "easy",
+      "source_section": "Water Use"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following reduces groundwater levels?",
+      "options": {
+        "A": "Rainwater harvesting",
+        "B": "Over-extraction",
+        "C": "Water conservation",
+        "D": "Afforestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Excessive extraction of groundwater lowers water levels.",
+      "difficulty": "easy",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 19,
+      "question": "Which method stores rainwater underground?",
+      "options": {
+        "A": "Tanka",
+        "B": "Bridge",
+        "C": "Pipeline",
+        "D": "Dam gate"
+      },
+      "correct_answer": "A",
+      "explanation": "Tankas are underground storage tanks for rainwater.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the purpose of rainwater harvesting in cities?",
+      "options": {
+        "A": "Increase pollution",
+        "B": "Recharge groundwater",
+        "C": "Build dams",
+        "D": "Increase floods"
+      },
+      "correct_answer": "B",
+      "explanation": "Rainwater harvesting helps recharge groundwater in urban areas.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 21,
+      "question": "Which of the following is a traditional irrigation method?",
+      "options": {
+        "A": "Bamboo drip irrigation",
+        "B": "Hydroelectric power",
+        "C": "Reservoir storage",
+        "D": "Pipeline transport"
+      },
+      "correct_answer": "A",
+      "explanation": "Bamboo drip irrigation is a traditional irrigation technique.",
+      "difficulty": "easy",
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 22,
+      "question": "Which activity pollutes water resources?",
+      "options": {
+        "A": "Industrial waste discharge",
+        "B": "Rainwater harvesting",
+        "C": "Water conservation",
+        "D": "Tree planting"
+      },
+      "correct_answer": "A",
+      "explanation": "Industrial waste can contaminate water sources.",
+      "difficulty": "easy",
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 23,
+      "question": "What is one major benefit of rainwater harvesting?",
+      "options": {
+        "A": "Increases water wastage",
+        "B": "Stores water for future use",
+        "C": "Pollutes rivers",
+        "D": "Reduces rainfall"
+      },
+      "correct_answer": "B",
+      "explanation": "Rainwater harvesting stores water for later use.",
+      "difficulty": "easy",
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 24,
+      "question": "Which structure stores water created by a dam?",
+      "options": {
+        "A": "Reservoir",
+        "B": "Pipeline",
+        "C": "Bridge",
+        "D": "Tunnel"
+      },
+      "correct_answer": "A",
+      "explanation": "A reservoir stores water behind a dam.",
+      "difficulty": "easy",
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following helps manage water resources sustainably?",
+      "options": {
+        "A": "Overuse of groundwater",
+        "B": "Water conservation practices",
+        "C": "Industrial pollution",
+        "D": "Water wastage"
+      },
+      "correct_answer": "B",
+      "explanation": "Water conservation ensures sustainable use of water resources.",
+      "difficulty": "easy",
+      "source_section": "Water Conservation"
+    }
+  ]
+}

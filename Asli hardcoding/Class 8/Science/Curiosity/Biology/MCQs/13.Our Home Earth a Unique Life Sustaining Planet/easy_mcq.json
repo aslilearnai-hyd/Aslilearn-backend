@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet",
+  "generated_at": "2026-03-05T20:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is Earth considered a unique planet?",
+      "options": {
+        "A": "It is the largest planet",
+        "B": "It supports life",
+        "C": "It has the most moons",
+        "D": "It is closest to the Sun"
+      },
+      "correct_answer": "B",
+      "explanation": "Earth is the only known planet that supports life because it has water, atmosphere, and suitable temperature.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which layer of Earth supports life?",
+      "options": {
+        "A": "Core",
+        "B": "Mantle",
+        "C": "Crust",
+        "D": "Inner core"
+      },
+      "correct_answer": "C",
+      "explanation": "Life exists mainly in the thin outer layer called the crust.",
+      "difficulty": "easy",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which planet is known as the Blue Planet?",
+      "options": {
+        "A": "Mars",
+        "B": "Earth",
+        "C": "Venus",
+        "D": "Jupiter"
+      },
+      "correct_answer": "B",
+      "explanation": "Earth appears blue from space due to the large amount of water on its surface.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the region around a star where liquid water can exist?",
+      "options": {
+        "A": "Solar belt",
+        "B": "Habitable zone",
+        "C": "Asteroid zone",
+        "D": "Gravity zone"
+      },
+      "correct_answer": "B",
+      "explanation": "The habitable or Goldilocks zone allows water to remain in liquid form.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which planet is the hottest due to the greenhouse effect?",
+      "options": {
+        "A": "Mercury",
+        "B": "Earth",
+        "C": "Venus",
+        "D": "Mars"
+      },
+      "correct_answer": "C",
+      "explanation": "Venus has a thick carbon dioxide atmosphere causing extreme greenhouse heating.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which gas is mainly responsible for the greenhouse effect?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Helium"
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon dioxide traps heat and contributes to the greenhouse effect.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What protects Earth from harmful ultraviolet rays?",
+      "options": {
+        "A": "Magnetic field",
+        "B": "Ozone layer",
+        "C": "Clouds",
+        "D": "Rain"
+      },
+      "correct_answer": "B",
+      "explanation": "The ozone layer absorbs harmful ultraviolet radiation from the Sun.",
+      "difficulty": "easy",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Earth behaves like a giant:",
+      "options": {
+        "A": "Battery",
+        "B": "Magnet",
+        "C": "Light source",
+        "D": "Satellite"
+      },
+      "correct_answer": "B",
+      "explanation": "Earth behaves like a giant magnet due to movement of molten iron in its core.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Which particles from the Sun can harm Earth's atmosphere?",
+      "options": {
+        "A": "Solar wind",
+        "B": "Rain",
+        "C": "Clouds",
+        "D": "Gravity waves"
+      },
+      "correct_answer": "A",
+      "explanation": "Solar wind contains high-energy particles that can damage the atmosphere.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Which Earth system includes water bodies like oceans and rivers?",
+      "options": {
+        "A": "Biosphere",
+        "B": "Hydrosphere",
+        "C": "Atmosphere",
+        "D": "Geosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The hydrosphere includes all water on Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which Earth system includes rocks, soil, and minerals?",
+      "options": {
+        "A": "Hydrosphere",
+        "B": "Biosphere",
+        "C": "Geosphere",
+        "D": "Atmosphere"
+      },
+      "correct_answer": "C",
+      "explanation": "The geosphere consists of the solid parts of Earth including rocks and soil.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which process allows plants to produce food using sunlight?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Digestion",
+        "D": "Fermentation"
+      },
+      "correct_answer": "B",
+      "explanation": "Plants use photosynthesis to convert sunlight into food.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which gas do plants release during photosynthesis?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "A",
+      "explanation": "Plants release oxygen as a by-product of photosynthesis.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which process ensures the continuation of life?",
+      "options": {
+        "A": "Respiration",
+        "B": "Reproduction",
+        "C": "Digestion",
+        "D": "Photosynthesis"
+      },
+      "correct_answer": "B",
+      "explanation": "Reproduction produces new individuals and ensures species survival.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 15,
+      "question": "In asexual reproduction, offspring are:",
+      "options": {
+        "A": "Different from parents",
+        "B": "Identical to parent",
+        "C": "Always smaller",
+        "D": "Always larger"
+      },
+      "correct_answer": "B",
+      "explanation": "Asexual reproduction produces genetically identical offspring.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which reproduction involves two parents?",
+      "options": {
+        "A": "Asexual reproduction",
+        "B": "Sexual reproduction",
+        "C": "Vegetative reproduction",
+        "D": "Budding"
+      },
+      "correct_answer": "B",
+      "explanation": "Sexual reproduction involves male and female gametes from two parents.",
+      "difficulty": "easy",
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "What is formed when male and female gametes combine?",
+      "options": {
+        "A": "Embryo",
+        "B": "Zygote",
+        "C": "Seed",
+        "D": "Cell"
+      },
+      "correct_answer": "B",
+      "explanation": "Fusion of gametes forms a zygote.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which environmental issue is caused by excessive greenhouse gases?",
+      "options": {
+        "A": "Flooding",
+        "B": "Global warming",
+        "C": "Earthquakes",
+        "D": "Volcanoes"
+      },
+      "correct_answer": "B",
+      "explanation": "Greenhouse gases trap heat and cause global warming.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 19,
+      "question": "Which crisis refers to climate change, biodiversity loss, and pollution?",
+      "options": {
+        "A": "Triple planetary crisis",
+        "B": "Environmental collapse",
+        "C": "Solar crisis",
+        "D": "Energy crisis"
+      },
+      "correct_answer": "A",
+      "explanation": "These three major environmental problems are called the triple planetary crisis.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 20,
+      "question": "Which human activity contributes to climate change?",
+      "options": {
+        "A": "Burning fossil fuels",
+        "B": "Planting trees",
+        "C": "Recycling waste",
+        "D": "Saving water"
+      },
+      "correct_answer": "A",
+      "explanation": "Burning fossil fuels releases greenhouse gases.",
+      "difficulty": "medium",
+      "source_section": "Section 13.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which natural resource covers about 70% of Earth's surface?",
+      "options": {
+        "A": "Soil",
+        "B": "Water",
+        "C": "Air",
+        "D": "Minerals"
+      },
+      "correct_answer": "B",
+      "explanation": "Water covers about 70% of Earth's surface.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which layer of the atmosphere contains the ozone layer?",
+      "options": {
+        "A": "Troposphere",
+        "B": "Stratosphere",
+        "C": "Mesosphere",
+        "D": "Thermosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The ozone layer lies in the stratosphere.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which process returns nutrients to the soil?",
+      "options": {
+        "A": "Respiration",
+        "B": "Decomposition",
+        "C": "Photosynthesis",
+        "D": "Evaporation"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposers break down dead matter and recycle nutrients.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which ecosystem component includes all living organisms?",
+      "options": {
+        "A": "Hydrosphere",
+        "B": "Geosphere",
+        "C": "Biosphere",
+        "D": "Atmosphere"
+      },
+      "correct_answer": "C",
+      "explanation": "The biosphere includes all living organisms on Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 13.4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which action helps protect Earth’s environment?",
+      "options": {
+        "A": "Burning fossil fuels",
+        "B": "Cutting forests",
+        "C": "Recycling materials",
+        "D": "Increasing pollution"
+      },
+      "correct_answer": "C",
+      "explanation": "Recycling reduces waste and pollution.",
+      "difficulty": "easy",
+      "source_section": "Section 13.6"
+    }
+  ]
+}

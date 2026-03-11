@@ -1,0 +1,237 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 8: Quadrilaterals",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-05T23:58:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a quadrilateral?",
+            "answer": "A quadrilateral is a polygon with four sides, four vertices, and four angles.",
+            "key_points": [
+                "four sides",
+                "polygon"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the sum of interior angles of a quadrilateral?",
+            "answer": "360°",
+            "key_points": [
+                "angle sum property"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a parallelogram?",
+            "answer": "A quadrilateral with both pairs of opposite sides parallel is called a parallelogram.",
+            "key_points": [
+                "opposite sides parallel"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What are the properties of a parallelogram?",
+            "answer": "Opposite sides are equal, opposite angles are equal, diagonals bisect each other.",
+            "key_points": [
+                "properties"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a rectangle?",
+            "answer": "A parallelogram with all angles 90° is called a rectangle.",
+            "key_points": [
+                "right angles"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a square?",
+            "answer": "A quadrilateral with all sides equal and all angles 90° is called a square.",
+            "key_points": [
+                "equal sides",
+                "right angles"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a rhombus?",
+            "answer": "A quadrilateral with all sides equal is called a rhombus.",
+            "key_points": [
+                "equal sides"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a trapezium?",
+            "answer": "A quadrilateral with only one pair of opposite sides parallel is called a trapezium.",
+            "key_points": [
+                "one pair parallel"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a kite?",
+            "answer": "A quadrilateral with two pairs of adjacent sides equal is called a kite.",
+            "key_points": [
+                "adjacent sides equal"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "In a parallelogram, what can be said about opposite sides?",
+            "answer": "Opposite sides are equal.",
+            "key_points": [
+                "parallelogram"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "In a parallelogram, what can be said about opposite angles?",
+            "answer": "Opposite angles are equal.",
+            "key_points": [
+                "parallelogram"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 12,
+            "question": "In a parallelogram, what can be said about diagonals?",
+            "answer": "Diagonals bisect each other.",
+            "key_points": [
+                "parallelogram"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the property of diagonals in a rectangle?",
+            "answer": "Diagonals are equal and bisect each other.",
+            "key_points": [
+                "rectangle"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the property of diagonals in a rhombus?",
+            "answer": "Diagonals bisect each other at right angles.",
+            "key_points": [
+                "rhombus"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the property of diagonals in a square?",
+            "answer": "Diagonals are equal and bisect each other at right angles.",
+            "key_points": [
+                "square"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 16,
+            "question": "In a trapezium, how many pairs of sides are parallel?",
+            "answer": "One pair of sides is parallel.",
+            "key_points": [
+                "trapezium"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "In a kite, how are the diagonals related?",
+            "answer": "One diagonal is the axis of symmetry and diagonals intersect at right angles.",
+            "key_points": [
+                "kite",
+                "diagonals"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which quadrilateral has all sides equal and all angles equal?",
+            "answer": "Square",
+            "key_points": [
+                "square"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which quadrilateral has opposite sides equal and angles equal?",
+            "answer": "Rectangle",
+            "key_points": [
+                "rectangle"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which quadrilateral has all sides equal but angles not necessarily 90°?",
+            "answer": "Rhombus",
+            "key_points": [
+                "rhombus"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the sum of exterior angles of any quadrilateral?",
+            "answer": "360°",
+            "key_points": [
+                "exterior angle sum"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the sum of two diagonals in a rectangle?",
+            "answer": "Diagonals are equal in length.",
+            "key_points": [
+                "rectangle"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the property of angles between unequal sides of a kite?",
+            "answer": "Angles between unequal sides are equal.",
+            "key_points": [
+                "kite"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "In a parallelogram, what is the relation between adjacent angles?",
+            "answer": "Adjacent angles are supplementary.",
+            "key_points": [
+                "parallelogram"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which quadrilateral has exactly one pair of parallel sides?",
+            "answer": "Trapezium",
+            "key_points": [
+                "trapezium"
+            ],
+            "source_section": "Section 8.2"
+        }
+    ]
+}

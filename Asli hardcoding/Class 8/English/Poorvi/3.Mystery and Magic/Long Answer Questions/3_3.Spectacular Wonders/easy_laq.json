@@ -1,0 +1,319 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Spectacular Wonders",
+  "generated_at": "2026-03-09T16:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are natural wonders?",
+      "answer": "Natural wonders are amazing features created by nature over a long period of time. They include mountains, valleys, forests, waterfalls, and other beautiful natural places.",
+      "answer_outline": [
+        "Definition of natural wonders",
+        "Created by nature",
+        "Examples of natural formations"
+      ],
+      "key_concepts": ["natural wonders"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Where is the Valley of Flowers located?",
+      "answer": "The Valley of Flowers is located in the Chamoli district of Uttarakhand in the Himalayan region of India.",
+      "answer_outline": [
+        "Location in Uttarakhand",
+        "Himalayan region",
+        "Chamoli district"
+      ],
+      "key_concepts": ["Valley of Flowers"],
+      "marks": 4,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is the Valley of Flowers famous?",
+      "answer": "The Valley of Flowers is famous for its large variety of colourful and exotic flowers that bloom during certain months of the year.",
+      "answer_outline": [
+        "Many types of flowers",
+        "Colourful landscape",
+        "Seasonal blooming"
+      ],
+      "key_concepts": ["flowers", "biodiversity"],
+      "marks": 4,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 4,
+      "question": "Name some flowers found in the Valley of Flowers.",
+      "answer": "Some flowers found in the Valley of Flowers include orchids, marigolds, daisies, primulas, poppies, and anemones.",
+      "answer_outline": [
+        "Orchids",
+        "Marigolds",
+        "Daisies",
+        "Other flower species"
+      ],
+      "key_concepts": ["flower species"],
+      "marks": 4,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is the Valley of Flowers considered a special natural place?",
+      "answer": "The Valley of Flowers is special because it has rich biodiversity and a beautiful natural landscape filled with many plants and animals.",
+      "answer_outline": [
+        "Rich biodiversity",
+        "Natural beauty",
+        "Unique ecosystem"
+      ],
+      "key_concepts": ["biodiversity"],
+      "marks": 5,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 6,
+      "question": "What kinds of animals can be found in the Valley of Flowers?",
+      "answer": "Animals such as the grey langur, flying squirrel, red fox, and snow leopard can be found in the Valley of Flowers.",
+      "answer_outline": [
+        "Grey langur",
+        "Flying squirrel",
+        "Red fox",
+        "Snow leopard"
+      ],
+      "key_concepts": ["wildlife"],
+      "marks": 4,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 7,
+      "question": "What is biodiversity?",
+      "answer": "Biodiversity refers to the variety of plants, animals, and other living organisms found in a particular area or ecosystem.",
+      "answer_outline": [
+        "Meaning of biodiversity",
+        "Variety of living organisms",
+        "Importance in ecosystems"
+      ],
+      "key_concepts": ["biodiversity"],
+      "marks": 4,
+      "source_section": "Environmental Importance"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is biodiversity important?",
+      "answer": "Biodiversity is important because it helps maintain ecological balance and supports life in an ecosystem.",
+      "answer_outline": [
+        "Maintains ecological balance",
+        "Supports plants and animals",
+        "Protects natural habitats"
+      ],
+      "key_concepts": ["ecosystem"],
+      "marks": 4,
+      "source_section": "Environmental Importance"
+    },
+    {
+      "question_number": 9,
+      "question": "What are Living Root Bridges?",
+      "answer": "Living Root Bridges are natural bridges made by guiding the roots of rubber trees across rivers and streams.",
+      "answer_outline": [
+        "Bridges made from tree roots",
+        "Natural construction",
+        "Strong and durable"
+      ],
+      "key_concepts": ["Living Root Bridges"],
+      "marks": 4,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 10,
+      "question": "Where are the Living Root Bridges found?",
+      "answer": "Living Root Bridges are mainly found in the state of Meghalaya in northeastern India.",
+      "answer_outline": ["Location in Meghalaya", "Northeastern India"],
+      "key_concepts": ["Meghalaya"],
+      "marks": 4,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 11,
+      "question": "Who created the Living Root Bridges?",
+      "answer": "The Living Root Bridges were created by local indigenous communities who guided tree roots over many years to form strong bridges.",
+      "answer_outline": [
+        "Local communities",
+        "Traditional knowledge",
+        "Long process of growth"
+      ],
+      "key_concepts": ["indigenous communities"],
+      "marks": 5,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 12,
+      "question": "Why were Living Root Bridges useful for villagers?",
+      "answer": "They helped villagers cross rivers safely, especially during the rainy season when water levels rise.",
+      "answer_outline": [
+        "Crossing rivers",
+        "Useful during monsoon",
+        "Safe passage"
+      ],
+      "key_concepts": ["monsoon"],
+      "marks": 4,
+      "source_section": "Living Root Bridges"
+    },
+    {
+      "question_number": 13,
+      "question": "How are Living Root Bridges environmentally friendly?",
+      "answer": "Living Root Bridges are environmentally friendly because they are made from natural materials and do not harm the environment.",
+      "answer_outline": [
+        "Natural materials",
+        "No pollution",
+        "Sustainable structure"
+      ],
+      "key_concepts": ["sustainability"],
+      "marks": 5,
+      "source_section": "Human-Nature Interaction"
+    },
+    {
+      "question_number": 14,
+      "question": "What role does traditional knowledge play in building root bridges?",
+      "answer": "Traditional knowledge helps local communities guide tree roots to grow in a way that forms strong and useful bridges.",
+      "answer_outline": [
+        "Skills passed through generations",
+        "Use of nature",
+        "Sustainable method"
+      ],
+      "key_concepts": ["traditional knowledge"],
+      "marks": 5,
+      "source_section": "Human-Nature Interaction"
+    },
+    {
+      "question_number": 15,
+      "question": "Why should natural wonders be protected?",
+      "answer": "Natural wonders should be protected to preserve biodiversity, maintain ecosystems, and allow future generations to enjoy them.",
+      "answer_outline": [
+        "Protect nature",
+        "Preserve biodiversity",
+        "Future generations"
+      ],
+      "key_concepts": ["conservation"],
+      "marks": 5,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 16,
+      "question": "What threats can damage natural wonders?",
+      "answer": "Pollution, deforestation, climate change, and irresponsible tourism can damage natural wonders.",
+      "answer_outline": [
+        "Pollution",
+        "Deforestation",
+        "Climate change",
+        "Tourism impact"
+      ],
+      "key_concepts": ["environmental threats"],
+      "marks": 4,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 17,
+      "question": "How can people help protect natural wonders?",
+      "answer": "People can protect natural wonders by reducing pollution, conserving forests, and following responsible tourism practices.",
+      "answer_outline": [
+        "Protect forests",
+        "Reduce pollution",
+        "Responsible tourism"
+      ],
+      "key_concepts": ["conservation"],
+      "marks": 5,
+      "source_section": "Environmental Awareness"
+    },
+    {
+      "question_number": 18,
+      "question": "What makes the Valley of Flowers attractive to tourists?",
+      "answer": "Its colourful flowers, beautiful scenery, and rare wildlife make the Valley of Flowers attractive to tourists.",
+      "answer_outline": ["Beautiful flowers", "Scenic landscape", "Wildlife"],
+      "key_concepts": ["tourism"],
+      "marks": 4,
+      "source_section": "Valley of Flowers"
+    },
+    {
+      "question_number": 19,
+      "question": "What does the chapter teach us about nature?",
+      "answer": "The chapter teaches us to admire nature’s beauty and understand the importance of protecting natural environments.",
+      "answer_outline": [
+        "Beauty of nature",
+        "Respect for environment",
+        "Need for conservation"
+      ],
+      "key_concepts": ["nature appreciation"],
+      "marks": 4,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are places like the Valley of Flowers important for science?",
+      "answer": "They help scientists study plants, animals, and ecosystems, which improves understanding of biodiversity.",
+      "answer_outline": [
+        "Scientific study",
+        "Research on biodiversity",
+        "Environmental knowledge"
+      ],
+      "key_concepts": ["scientific research"],
+      "marks": 4,
+      "source_section": "Environmental Importance"
+    },
+    {
+      "question_number": 21,
+      "question": "How do natural wonders inspire people?",
+      "answer": "Natural wonders inspire people by showing the beauty and power of nature and encouraging curiosity and exploration.",
+      "answer_outline": [
+        "Beauty of nature",
+        "Curiosity and exploration",
+        "Inspiration"
+      ],
+      "key_concepts": ["inspiration"],
+      "marks": 4,
+      "source_section": "Theme"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the importance of ecosystems in natural areas.",
+      "answer": "Ecosystems support plants, animals, and other organisms, maintaining balance in nature.",
+      "answer_outline": [
+        "Support living organisms",
+        "Maintain ecological balance"
+      ],
+      "key_concepts": ["ecosystem"],
+      "marks": 4,
+      "source_section": "Environmental Importance"
+    },
+    {
+      "question_number": 23,
+      "question": "How do Living Root Bridges show cooperation between humans and nature?",
+      "answer": "They show how humans can work with nature by guiding tree roots instead of cutting trees to build bridges.",
+      "answer_outline": ["Working with nature", "Sustainable construction"],
+      "key_concepts": ["human-nature relationship"],
+      "marks": 5,
+      "source_section": "Human-Nature Interaction"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the main message of the chapter?",
+      "answer": "The chapter highlights the beauty of natural wonders and the importance of protecting them.",
+      "answer_outline": ["Natural beauty", "Environmental protection"],
+      "key_concepts": ["theme"],
+      "marks": 4,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "Write a short summary of the chapter 'Spectacular Wonders'.",
+      "answer": "The chapter describes amazing natural wonders such as the Valley of Flowers in Uttarakhand and the Living Root Bridges in Meghalaya. It explains their beauty, ecological importance, and the need to protect them.",
+      "answer_outline": [
+        "Description of Valley of Flowers",
+        "Living Root Bridges",
+        "Importance of conservation"
+      ],
+      "key_concepts": ["summary"],
+      "marks": 5,
+      "source_section": "Overall Chapter"
+    }
+  ]
+}

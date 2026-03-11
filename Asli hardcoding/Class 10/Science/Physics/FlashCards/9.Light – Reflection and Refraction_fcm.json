@@ -1,0 +1,118 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 9: Light – Reflection and Refraction",
+  "generated_at": "2026-03-11T04:20:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is reflection of light?",
+        "correct_answer": "The bouncing back of light when it strikes a surface",
+        "explanation": "When light hits a smooth surface like a mirror, it returns into the same medium instead of passing through.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "question": "State the first law of reflection.",
+        "correct_answer": "The angle of incidence is equal to the angle of reflection",
+        "explanation": "This means that the incoming light ray and the reflected light ray make equal angles with the normal.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "question": "State the second law of reflection.",
+        "correct_answer": "The incident ray, reflected ray, and the normal all lie in the same plane",
+        "explanation": "This ensures that reflection follows a predictable geometric path.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "question": "What is a plane mirror?",
+        "correct_answer": "A mirror with a flat reflective surface",
+        "explanation": "Plane mirrors form virtual, erect, and same-sized images of objects.",
+        "source_section": "Section 9.2"
+      },
+      {
+        "question": "What type of image is formed by a plane mirror?",
+        "correct_answer": "Virtual, erect, and same-sized image",
+        "explanation": "The image cannot be obtained on a screen because it appears behind the mirror.",
+        "source_section": "Section 9.2"
+      },
+      {
+        "question": "What is refraction of light?",
+        "correct_answer": "The bending of light when it passes from one medium to another",
+        "explanation": "Refraction occurs due to the change in speed of light in different media.",
+        "source_section": "Section 9.3"
+      },
+      {
+        "question": "Why does refraction occur?",
+        "correct_answer": "Because the speed of light changes when it moves between different media",
+        "explanation": "Light travels at different speeds in air, water, glass, and other materials.",
+        "source_section": "Section 9.3"
+      },
+      {
+        "question": "What is the refractive index of a medium?",
+        "correct_answer": "The ratio of the speed of light in vacuum to the speed of light in the medium",
+        "explanation": "It indicates how much light slows down in a medium compared to vacuum.",
+        "source_section": "Section 9.4"
+      },
+      {
+        "question": "What happens when light passes from a rarer medium to a denser medium?",
+        "correct_answer": "It bends towards the normal",
+        "explanation": "This happens because light slows down in a denser medium.",
+        "source_section": "Section 9.4"
+      },
+      {
+        "question": "What happens when light passes from a denser medium to a rarer medium?",
+        "correct_answer": "It bends away from the normal",
+        "explanation": "This happens because light speeds up in a rarer medium.",
+        "source_section": "Section 9.4"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Reflection of Light",
+        "content": "The bouncing back of light into the same medium after striking a surface.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "title": "Laws of Reflection",
+        "content": "1) Angle of incidence = Angle of reflection. 2) Incident ray, reflected ray and normal lie in the same plane.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "title": "Refraction of Light",
+        "content": "The bending of light when it passes from one medium to another due to change in speed.",
+        "source_section": "Section 9.3"
+      },
+      {
+        "title": "Refractive Index",
+        "content": "It measures how much light slows down in a medium compared to vacuum.",
+        "source_section": "Section 9.4"
+      },
+      {
+        "title": "Image in Plane Mirror",
+        "content": "Virtual, erect, same size as object, and laterally inverted.",
+        "source_section": "Section 9.2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Reflection follows two basic laws relating angles and the plane of rays.",
+        "source_section": "Section 9.1"
+      },
+      {
+        "fact": "Refraction occurs due to change in speed of light between media.",
+        "source_section": "Section 9.3"
+      },
+      {
+        "fact": "Light bends toward the normal when entering a denser medium.",
+        "source_section": "Section 9.4"
+      },
+      {
+        "fact": "Light bends away from the normal when entering a rarer medium.",
+        "source_section": "Section 9.4"
+      },
+      {
+        "fact": "Plane mirrors always form virtual images that cannot be captured on a screen.",
+        "source_section": "Section 9.2"
+      }
+    ]
+  }
+}

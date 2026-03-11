@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 5: Minerals and Energy Resources",
+  "generated_at": "2026-03-11T13:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a mineral?",
+      "answer": "A mineral is a naturally occurring homogeneous substance with a definite internal structure.",
+      "key_concepts": ["mineral"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What are ores?",
+      "answer": "Ores are mineral deposits that contain enough metal to make extraction economically possible.",
+      "key_concepts": ["ores"],
+      "marks": 2,
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 3,
+      "question": "Name one ferrous mineral.",
+      "answer": "Iron ore.",
+      "key_concepts": ["ferrous minerals"],
+      "marks": 1,
+      "source_section": "Ferrous Minerals"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the main use of iron ore?",
+      "answer": "Iron ore is mainly used in the production of steel.",
+      "key_concepts": ["iron ore"],
+      "marks": 2,
+      "source_section": "Iron Ore"
+    },
+    {
+      "question_number": 5,
+      "question": "Name one non-ferrous mineral.",
+      "answer": "Copper.",
+      "key_concepts": ["non-ferrous minerals"],
+      "marks": 1,
+      "source_section": "Non-Ferrous Minerals"
+    },
+    {
+      "question_number": 6,
+      "question": "From which ore is aluminium obtained?",
+      "answer": "Aluminium is obtained from bauxite.",
+      "key_concepts": ["bauxite"],
+      "marks": 1,
+      "source_section": "Bauxite"
+    },
+    {
+      "question_number": 7,
+      "question": "What is mica used for?",
+      "answer": "Mica is used in electrical and electronic industries because of its insulating properties.",
+      "key_concepts": ["mica"],
+      "marks": 2,
+      "source_section": "Non-Metallic Minerals"
+    },
+    {
+      "question_number": 8,
+      "question": "What is limestone mainly used for?",
+      "answer": "Limestone is mainly used in the cement industry.",
+      "key_concepts": ["limestone"],
+      "marks": 2,
+      "source_section": "Rock Minerals"
+    },
+    {
+      "question_number": 9,
+      "question": "What are placer deposits?",
+      "answer": "Placer deposits are minerals found in the sands of river beds and valley floors.",
+      "key_concepts": ["placer deposits"],
+      "marks": 2,
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 10,
+      "question": "Name one mineral obtained from placer deposits.",
+      "answer": "Gold.",
+      "key_concepts": ["gold"],
+      "marks": 1,
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 11,
+      "question": "Name the most abundant fossil fuel in India.",
+      "answer": "Coal.",
+      "key_concepts": ["coal"],
+      "marks": 1,
+      "source_section": "Coal"
+    },
+    {
+      "question_number": 12,
+      "question": "What is petroleum used for?",
+      "answer": "Petroleum is used as fuel and as a raw material for many industries.",
+      "key_concepts": ["petroleum"],
+      "marks": 2,
+      "source_section": "Petroleum"
+    },
+    {
+      "question_number": 13,
+      "question": "Where is Mumbai High located?",
+      "answer": "Mumbai High is located in the Arabian Sea off the western coast of India.",
+      "key_concepts": ["Mumbai High"],
+      "marks": 2,
+      "source_section": "Petroleum"
+    },
+    {
+      "question_number": 14,
+      "question": "What is natural gas used for?",
+      "answer": "Natural gas is used as a domestic fuel and for generating electricity.",
+      "key_concepts": ["natural gas"],
+      "marks": 2,
+      "source_section": "Natural Gas"
+    },
+    {
+      "question_number": 15,
+      "question": "What is hydroelectric power?",
+      "answer": "Hydroelectric power is electricity generated using flowing water.",
+      "key_concepts": ["hydroelectric power"],
+      "marks": 2,
+      "source_section": "Electricity"
+    },
+    {
+      "question_number": 16,
+      "question": "Name one multipurpose river valley project in India.",
+      "answer": "Bhakra Nangal Project.",
+      "key_concepts": ["river valley projects"],
+      "marks": 1,
+      "source_section": "Electricity"
+    },
+    {
+      "question_number": 17,
+      "question": "What is nuclear energy?",
+      "answer": "Nuclear energy is energy produced by altering the structure of atoms.",
+      "key_concepts": ["nuclear energy"],
+      "marks": 2,
+      "source_section": "Nuclear Energy"
+    },
+    {
+      "question_number": 18,
+      "question": "Name one renewable energy source.",
+      "answer": "Solar energy.",
+      "key_concepts": ["renewable energy"],
+      "marks": 1,
+      "source_section": "Non-Conventional Energy"
+    },
+    {
+      "question_number": 19,
+      "question": "What is solar energy?",
+      "answer": "Solar energy is energy obtained from sunlight.",
+      "key_concepts": ["solar energy"],
+      "marks": 2,
+      "source_section": "Solar Energy"
+    },
+    {
+      "question_number": 20,
+      "question": "What is wind energy?",
+      "answer": "Wind energy is energy generated by using the power of moving air.",
+      "key_concepts": ["wind energy"],
+      "marks": 2,
+      "source_section": "Wind Energy"
+    },
+    {
+      "question_number": 21,
+      "question": "What is biogas?",
+      "answer": "Biogas is a fuel produced from decomposition of organic waste such as cattle dung.",
+      "key_concepts": ["biogas"],
+      "marks": 2,
+      "source_section": "Biogas"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are mineral resources considered non-renewable?",
+      "answer": "Mineral resources take millions of years to form and cannot be replaced quickly.",
+      "key_concepts": ["non-renewable"],
+      "marks": 2,
+      "source_section": "Mineral Conservation"
+    },
+    {
+      "question_number": 23,
+      "question": "Name one environmental problem caused by mining.",
+      "answer": "Air pollution.",
+      "key_concepts": ["mining hazards"],
+      "marks": 1,
+      "source_section": "Hazards of Mining"
+    },
+    {
+      "question_number": 24,
+      "question": "What is energy conservation?",
+      "answer": "Energy conservation means using energy resources carefully and efficiently.",
+      "key_concepts": ["energy conservation"],
+      "marks": 2,
+      "source_section": "Energy Conservation"
+    },
+    {
+      "question_number": 25,
+      "question": "Give one example of a non-conventional energy source.",
+      "answer": "Wind energy.",
+      "key_concepts": ["renewable energy"],
+      "marks": 1,
+      "source_section": "Non-Conventional Energy"
+    }
+  ]
+}

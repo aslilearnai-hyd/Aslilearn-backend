@@ -1,0 +1,38 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Easy",
+    "short_notes": {
+        "key_points": [
+            "A circle is the set of all points in a plane at a fixed distance (radius) from a fixed point (center).",
+            "Radius: Distance from center to any point on the circle.",
+            "Diameter: Twice the radius (d = 2r).",
+            "Chord: Line segment joining two points on the circle.",
+            "Tangent: Line touching the circle at exactly one point.",
+            "Secant: Line intersecting the circle at two points.",
+            "The perpendicular from the center to a chord bisects the chord.",
+            "Equal chords of a circle are equidistant from the center."
+        ],
+        "formulas": [
+            "Circumference: C = 2πr or πd",
+            "Area of circle: A = πr²",
+            "Length of arc: L = (θ/360) × 2πr, where θ is in degrees",
+            "Area of sector: (θ/360) × πr²",
+            "Chord length: l = 2√(r² - d²), where d is distance from center to chord"
+        ],
+        "examples": [
+            "Radius of a circle with circumference 31.4 cm → r = C/2π = 31.4/6.28 = 5 cm",
+            "Area of circle with r = 7 cm → A = πr² = 3.14×49 ≈ 153.86 cm²",
+            "Chord of length 8 cm at distance 3 cm from center, r = √(d² + (l/2)²) = √(3² + 4²) = 5 cm",
+            "Length of arc of 60° in circle of radius 6 cm → L = (60/360)×2π6 = 2π ≈ 12.56 cm"
+        ],
+        "exam_tips": [
+            "Always identify radius, diameter, chord, tangent in diagrams.",
+            "Use perpendicular from center to chord to find distance or length of chord.",
+            "Convert angles to radians if formula requires.",
+            "Check if the problem involves arc, sector, or segment and use correct formula.",
+            "For tangent problems, remember radius ⊥ tangent at the point of contact."
+        ]
+    }
+}

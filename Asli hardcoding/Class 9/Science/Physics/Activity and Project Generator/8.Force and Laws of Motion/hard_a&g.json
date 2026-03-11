@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Force and Laws of Motion",
+    "difficulty": "Hard",
+    "source_pdf": "s9_8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Measuring Acceleration Using Ramp",
+            "objective": "Calculate acceleration of a moving object",
+            "materials": [
+                "Ramp",
+                "Toy car",
+                "Stopwatch",
+                "Measuring tape"
+            ],
+            "steps": [
+                "Release the toy car from top of ramp",
+                "Measure distance travelled",
+                "Record time taken",
+                "Calculate acceleration"
+            ],
+            "learning_outcome": "Students calculate acceleration experimentally",
+            "evaluation": "Correct calculations (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Momentum Calculation Activity",
+            "objective": "Determine momentum of moving objects",
+            "materials": [
+                "Two balls",
+                "Weighing scale",
+                "Ramp"
+            ],
+            "steps": [
+                "Measure mass of both balls",
+                "Roll them down ramp",
+                "Estimate velocity",
+                "Calculate momentum"
+            ],
+            "learning_outcome": "Students apply formula p = mv",
+            "evaluation": "Correct formula usage (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Investigating Newton’s Second Law",
+            "objective": "Relate force with acceleration mathematically",
+            "materials": [
+                "Cart",
+                "Spring balance",
+                "Weights"
+            ],
+            "steps": [
+                "Pull cart with known force",
+                "Measure acceleration",
+                "Repeat with different masses",
+                "Compare results"
+            ],
+            "learning_outcome": "Students verify F = ma relationship",
+            "evaluation": "Graph and analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Impulse and Time Experiment",
+            "objective": "Understand force-time relationship",
+            "materials": [
+                "Ball",
+                "Soft cushion",
+                "Hard board"
+            ],
+            "steps": [
+                "Drop ball on hard surface",
+                "Drop ball on cushion",
+                "Compare rebound and impact"
+            ],
+            "learning_outcome": "Students understand how increasing time reduces force",
+            "evaluation": "Concept explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Rocket Propulsion Model",
+            "objective": "Demonstrate Newton’s third law in rockets",
+            "materials": [
+                "Balloon",
+                "Straw",
+                "Thread",
+                "Tape"
+            ],
+            "steps": [
+                "Create balloon rocket setup",
+                "Release air from balloon",
+                "Measure distance travelled"
+            ],
+            "learning_outcome": "Students understand propulsion due to reaction force",
+            "evaluation": "Observation analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Friction Measurement Activity",
+            "objective": "Measure frictional force",
+            "materials": [
+                "Wooden block",
+                "Spring balance"
+            ],
+            "steps": [
+                "Pull block with spring balance",
+                "Record force required to move block",
+                "Repeat on different surfaces"
+            ],
+            "learning_outcome": "Students quantify frictional force",
+            "evaluation": "Recorded data accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Action-Reaction Cart Activity",
+            "objective": "Demonstrate Newton’s third law with carts",
+            "materials": [
+                "Two small carts",
+                "Heavy object"
+            ],
+            "steps": [
+                "Place students on two carts",
+                "Throw object between them",
+                "Observe cart movement"
+            ],
+            "learning_outcome": "Students observe action-reaction forces in motion",
+            "evaluation": "Observation report (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Force and Direction Study",
+            "objective": "Understand how force changes direction of motion",
+            "materials": [
+                "Ball",
+                "Bat"
+            ],
+            "steps": [
+                "Roll ball in straight line",
+                "Hit it with bat",
+                "Observe change in direction"
+            ],
+            "learning_outcome": "Students learn force can change direction of motion",
+            "evaluation": "Concept explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Investigating Inertia of Motion",
+            "objective": "Study inertia during moving motion",
+            "materials": [
+                "Toy car",
+                "Small object"
+            ],
+            "steps": [
+                "Place object on toy car",
+                "Move the car and stop suddenly",
+                "Observe motion of object"
+            ],
+            "learning_outcome": "Students understand inertia of motion",
+            "evaluation": "Observation analysis (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Energy Transfer in Collisions",
+            "objective": "Study motion after collision",
+            "materials": [
+                "Two balls",
+                "Flat surface"
+            ],
+            "steps": [
+                "Roll one ball towards another stationary ball",
+                "Observe motion after collision",
+                "Measure distance travelled"
+            ],
+            "learning_outcome": "Students understand momentum transfer during collisions",
+            "evaluation": "Analysis report (10 marks)"
+        }
+    ]
+}

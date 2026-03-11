@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 8: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-05T17:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of matter with suitable examples.",
+      "answer": "Matter is anything that has mass and occupies space. Examples include air, water, soil, and books.",
+      "answer_outline": ["Definition of matter", "Mass and space", "Examples"],
+      "key_concepts": ["matter"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why most materials around us are mixtures.",
+      "answer": "Most materials are mixtures because they contain more than one substance combined without chemical reaction, such as air or food.",
+      "answer_outline": ["Multiple substances", "Examples like air"],
+      "key_concepts": ["mixtures"],
+      "marks": 5,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain what components of a mixture are.",
+      "answer": "Components of a mixture are the individual substances that combine to form the mixture while retaining their properties.",
+      "answer_outline": ["Definition", "Properties retained"],
+      "key_concepts": ["components"],
+      "marks": 4,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the characteristics of uniform mixtures.",
+      "answer": "Uniform mixtures have evenly distributed components and appear the same throughout the mixture.",
+      "answer_outline": ["Even distribution", "Examples"],
+      "key_concepts": ["uniform mixtures"],
+      "marks": 4,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the characteristics of non-uniform mixtures.",
+      "answer": "Non-uniform mixtures have components that are unevenly distributed and can often be seen separately.",
+      "answer_outline": ["Uneven distribution", "Examples"],
+      "key_concepts": ["non-uniform mixtures"],
+      "marks": 4,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how air is an example of a mixture.",
+      "answer": "Air contains nitrogen, oxygen, carbon dioxide, and water vapour mixed together without chemical reaction.",
+      "answer_outline": ["Gases in air", "Mixture concept"],
+      "key_concepts": ["air mixture"],
+      "marks": 5,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the limewater test used to detect carbon dioxide.",
+      "answer": "When carbon dioxide reacts with limewater, calcium carbonate forms, turning the solution milky.",
+      "answer_outline": ["Reaction", "Milky appearance"],
+      "key_concepts": ["limewater test"],
+      "marks": 4,
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of pure substances in science.",
+      "answer": "Pure substances consist of only one type of particle and cannot be separated into other substances by physical processes.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["pure substances"],
+      "marks": 5,
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how the scientific meaning of purity differs from everyday meaning.",
+      "answer": "In daily life, pure means free from impurities, but scientifically it means a substance made of only one type of particle.",
+      "answer_outline": ["Common meaning", "Scientific meaning"],
+      "key_concepts": ["purity"],
+      "marks": 4,
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the properties of elements.",
+      "answer": "Elements are pure substances made of identical atoms and cannot be broken down into simpler substances chemically.",
+      "answer_outline": ["Atoms", "Pure substance"],
+      "key_concepts": ["elements"],
+      "marks": 5,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the concept of atoms in elements.",
+      "answer": "Atoms are the smallest particles of elements that retain their chemical properties.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["atoms"],
+      "marks": 4,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain how molecules of elements are formed.",
+      "answer": "Atoms combine to form molecules of elements to achieve stability, such as oxygen molecules formed by two oxygen atoms.",
+      "answer_outline": ["Atom combination", "Example"],
+      "key_concepts": ["molecules"],
+      "marks": 4,
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how water can be broken down into hydrogen and oxygen.",
+      "answer": "Passing electric current through water decomposes it into hydrogen and oxygen gases.",
+      "answer_outline": ["Electrolysis", "Gas formation"],
+      "key_concepts": ["electrolysis"],
+      "marks": 5,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain what compounds are with examples.",
+      "answer": "Compounds are substances formed when elements combine chemically in fixed ratios. Examples include water and common salt.",
+      "answer_outline": ["Chemical combination", "Examples"],
+      "key_concepts": ["compounds"],
+      "marks": 5,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why compounds have different properties from their elements.",
+      "answer": "When elements chemically combine, they form new substances with completely different properties.",
+      "answer_outline": ["Chemical bonding", "New properties"],
+      "key_concepts": ["compound properties"],
+      "marks": 4,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the experiment of heating sugar and its results.",
+      "answer": "Heating sugar produces carbon and water, showing that sugar is a compound made of carbon, hydrogen, and oxygen.",
+      "answer_outline": ["Heating process", "Products"],
+      "key_concepts": ["decomposition"],
+      "marks": 5,
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the mixture of iron filings and sulfur powder.",
+      "answer": "Iron filings and sulfur powder form a mixture where both substances retain their individual properties.",
+      "answer_outline": ["Mixture formation", "Properties retained"],
+      "key_concepts": ["mixture"],
+      "marks": 4,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the formation of iron sulfide.",
+      "answer": "Heating iron and sulfur causes them to react chemically to form iron sulfide, a compound.",
+      "answer_outline": ["Heating", "Chemical reaction"],
+      "key_concepts": ["iron sulfide"],
+      "marks": 5,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the differences between mixtures and compounds.",
+      "answer": "Mixtures are physical combinations with retained properties, while compounds are chemical combinations with new properties.",
+      "answer_outline": ["Mixture characteristics", "Compound characteristics"],
+      "key_concepts": ["mixtures", "compounds"],
+      "marks": 5,
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the concept of alloys.",
+      "answer": "Alloys are mixtures of two or more metals that improve strength and durability.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["alloys"],
+      "marks": 4,
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how elements and compounds are used in daily life.",
+      "answer": "Elements like iron are used in construction while compounds such as water are essential for life.",
+      "answer_outline": ["Examples", "Applications"],
+      "key_concepts": ["applications"],
+      "marks": 4,
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the importance of understanding matter in science.",
+      "answer": "Understanding matter helps scientists design new materials, medicines, and technologies.",
+      "answer_outline": ["Scientific understanding", "Applications"],
+      "key_concepts": ["matter"],
+      "marks": 4,
+      "source_section": "Section 8.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain what minerals are.",
+      "answer": "Minerals are naturally occurring solid substances found in the Earth with fixed chemical compositions.",
+      "answer_outline": ["Definition", "Natural occurrence"],
+      "key_concepts": ["minerals"],
+      "marks": 4,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain examples of common minerals.",
+      "answer": "Examples of minerals include quartz, calcite, mica, and olivine.",
+      "answer_outline": ["Examples"],
+      "key_concepts": ["minerals"],
+      "marks": 4,
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the classification of matter into elements, compounds, and mixtures.",
+      "answer": "Matter can be classified as elements (single type of atom), compounds (chemical combination of elements), and mixtures (physical combination of substances).",
+      "answer_outline": ["Elements", "Compounds", "Mixtures"],
+      "key_concepts": ["classification of matter"],
+      "marks": 5,
+      "source_section": "Summary"
+    }
+  ]
+}

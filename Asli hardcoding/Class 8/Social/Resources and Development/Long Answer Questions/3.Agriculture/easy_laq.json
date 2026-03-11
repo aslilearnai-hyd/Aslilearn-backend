@@ -1,0 +1,272 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Agriculture",
+  "generated_at": "2026-03-06T12:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning and importance of agriculture.",
+      "answer": "Agriculture is the practice of cultivating crops and raising animals for food, fiber, and other products. It is an important primary economic activity that provides food, raw materials for industries, and employment to millions of people.",
+      "answer_outline": [
+        "Definition of agriculture",
+        "Agriculture as a primary activity",
+        "Importance for food and employment"
+      ],
+      "key_concepts": ["agriculture"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the role of agriculture in the economy.",
+      "answer": "Agriculture supports the economy by providing food, raw materials for industries, and employment. It also contributes to trade and national income.",
+      "answer_outline": [
+        "Food production",
+        "Employment generation",
+        "Industrial raw materials"
+      ],
+      "key_concepts": ["economic importance"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain subsistence farming.",
+      "answer": "Subsistence farming is a type of agriculture in which farmers grow crops mainly to feed themselves and their families rather than for sale in markets.",
+      "answer_outline": [
+        "Definition",
+        "Small-scale production",
+        "Family consumption"
+      ],
+      "key_concepts": ["subsistence farming"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain commercial farming.",
+      "answer": "Commercial farming is practiced to produce crops for sale in markets. It involves large-scale production, modern technology, and high investment.",
+      "answer_outline": [
+        "Market-oriented production",
+        "Use of modern technology",
+        "Large-scale farming"
+      ],
+      "key_concepts": ["commercial farming"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the difference between subsistence and commercial farming.",
+      "answer": "Subsistence farming focuses on producing crops for family consumption, while commercial farming focuses on producing crops for sale. Subsistence farming uses traditional tools, while commercial farming uses modern technology.",
+      "answer_outline": [
+        "Purpose of production",
+        "Scale of farming",
+        "Use of technology"
+      ],
+      "key_concepts": ["farming comparison"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the physical factors affecting agriculture.",
+      "answer": "Physical factors such as climate, soil, and relief influence agricultural productivity. Crops require suitable temperature, rainfall, fertile soil, and favorable land conditions.",
+      "answer_outline": ["Climate", "Soil fertility", "Relief conditions"],
+      "key_concepts": ["physical factors"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the human factors affecting agriculture.",
+      "answer": "Human factors such as labor, technology, irrigation, and government policies influence agricultural productivity and efficiency.",
+      "answer_outline": [
+        "Labor availability",
+        "Use of technology",
+        "Irrigation facilities"
+      ],
+      "key_concepts": ["human factors"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the importance of climate in agriculture.",
+      "answer": "Climate determines the type of crops grown in a region. Temperature and rainfall influence crop growth and agricultural productivity.",
+      "answer_outline": ["Temperature", "Rainfall", "Crop suitability"],
+      "key_concepts": ["climate"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the importance of soil in agriculture.",
+      "answer": "Soil provides nutrients and support for plant growth. Fertile soil improves crop yield and agricultural productivity.",
+      "answer_outline": [
+        "Soil nutrients",
+        "Soil fertility",
+        "Crop productivity"
+      ],
+      "key_concepts": ["soil"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the crop seasons in India.",
+      "answer": "India has three main crop seasons: Kharif, Rabi, and Zaid. Kharif crops are grown during the monsoon, Rabi crops during winter, and Zaid crops during summer.",
+      "answer_outline": ["Kharif crops", "Rabi crops", "Zaid crops"],
+      "key_concepts": ["crop seasons"],
+      "marks": 5,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain Kharif crops with examples.",
+      "answer": "Kharif crops are grown during the monsoon season. Examples include rice, maize, and cotton.",
+      "answer_outline": ["Monsoon crops", "Examples"],
+      "key_concepts": ["Kharif"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain Rabi crops with examples.",
+      "answer": "Rabi crops are grown during the winter season. Examples include wheat, barley, and mustard.",
+      "answer_outline": ["Winter crops", "Examples"],
+      "key_concepts": ["Rabi"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain Zaid crops with examples.",
+      "answer": "Zaid crops are grown during the short summer season between Rabi and Kharif crops. Examples include watermelon and cucumber.",
+      "answer_outline": ["Summer crops", "Examples"],
+      "key_concepts": ["Zaid"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain major food crops grown in the world.",
+      "answer": "Major food crops include rice, wheat, maize, and pulses. These crops form the staple diet of many people around the world.",
+      "answer_outline": ["Examples of food crops", "Importance in diet"],
+      "key_concepts": ["food crops"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain major cash crops.",
+      "answer": "Cash crops are grown mainly for sale in markets and include cotton, tea, coffee, and sugarcane.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["cash crops"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the importance of cotton as a cash crop.",
+      "answer": "Cotton is an important cash crop used in the textile industry. It supports industrial production and trade.",
+      "answer_outline": ["Industrial use", "Economic importance"],
+      "key_concepts": ["cotton"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the characteristics of plantation agriculture.",
+      "answer": "Plantation agriculture involves large-scale farming of a single crop such as tea, coffee, or rubber. It requires large capital investment and modern technology.",
+      "answer_outline": [
+        "Large-scale farming",
+        "Single crop",
+        "Use of modern methods"
+      ],
+      "key_concepts": ["plantation agriculture"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the importance of tea plantations.",
+      "answer": "Tea plantations produce tea for domestic consumption and export. They contribute to economic growth and employment.",
+      "answer_outline": ["Tea production", "Export importance"],
+      "key_concepts": ["tea"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain modern agricultural methods.",
+      "answer": "Modern agriculture uses machines, fertilizers, pesticides, improved seeds, and irrigation systems to increase productivity.",
+      "answer_outline": ["Use of machinery", "Improved seeds", "Irrigation"],
+      "key_concepts": ["modern agriculture"],
+      "marks": 5,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the importance of irrigation in agriculture.",
+      "answer": "Irrigation provides water to crops when rainfall is insufficient. It helps increase crop yield and ensures stable agricultural production.",
+      "answer_outline": ["Water supply", "Crop productivity"],
+      "key_concepts": ["irrigation"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the impact of fertilizers and pesticides on agriculture.",
+      "answer": "Fertilizers improve soil fertility while pesticides protect crops from pests. However, excessive use can harm the environment.",
+      "answer_outline": ["Advantages", "Environmental impact"],
+      "key_concepts": ["fertilizers", "pesticides"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain sustainable agriculture.",
+      "answer": "Sustainable agriculture focuses on protecting natural resources while maintaining agricultural productivity through eco-friendly practices.",
+      "answer_outline": [
+        "Environmental protection",
+        "Sustainable farming practices"
+      ],
+      "key_concepts": ["sustainable agriculture"],
+      "marks": 5,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of crop rotation.",
+      "answer": "Crop rotation improves soil fertility and reduces pests by alternating different crops on the same land.",
+      "answer_outline": ["Soil fertility", "Pest control"],
+      "key_concepts": ["crop rotation"],
+      "marks": 4,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the environmental challenges in agriculture.",
+      "answer": "Agriculture faces challenges such as soil degradation, water scarcity, and climate change, which affect crop productivity.",
+      "answer_outline": ["Soil problems", "Water scarcity", "Climate change"],
+      "key_concepts": ["agricultural challenges"],
+      "marks": 5,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall importance of agriculture in human life.",
+      "answer": "Agriculture provides food, employment, and raw materials for industries. It is essential for economic development and food security.",
+      "answer_outline": [
+        "Food production",
+        "Employment",
+        "Economic development"
+      ],
+      "key_concepts": ["importance of agriculture"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

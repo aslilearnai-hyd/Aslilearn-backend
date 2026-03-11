@@ -1,0 +1,423 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: The World of Metals and Non-Metals",
+    "generated_at": "2026-03-06T22:42:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are metals? Give three common examples of metals used in daily life.",
+            "answer": "Metals are elements that are generally hard, shiny, and good conductors of heat and electricity. Examples include Iron (used in construction), Copper (used in electric wires), and Aluminium (used in kitchen utensils).",
+            "answer_outline": [
+                "Definition of metals",
+                "Key properties (hard, shiny, conductors)",
+                "Daily life examples"
+            ],
+            "key_concepts": [
+                "metals",
+                "conductors",
+                "examples"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define 'Malleability' and provide an example of its use.",
+            "answer": "Malleability is the property of metals that allows them to be beaten into thin sheets without breaking. For example, aluminium is beaten into thin foils used for wrapping food.",
+            "answer_outline": [
+                "Definition of malleability",
+                "Application in daily life (foils)"
+            ],
+            "key_concepts": [
+                "malleability",
+                "sheets",
+                "aluminium foil"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is 'Ductility'? Name one metal that is highly ductile.",
+            "answer": "Ductility is the property by which metals can be drawn or stretched into thin wires. Copper and gold are highly ductile metals; for instance, copper is widely used for electrical wiring.",
+            "answer_outline": [
+                "Definition of ductility",
+                "Example of ductile metal"
+            ],
+            "key_concepts": [
+                "ductility",
+                "wires",
+                "copper"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why are school bells made of metal instead of wood?",
+            "answer": "Metals are 'sonorous,' meaning they produce a deep, ringing sound when struck. Wood is non-sonorous and produces a dull thud, which is why metals are preferred for making bells.",
+            "answer_outline": [
+                "Concept of sonority",
+                "Comparison between metal and wood sound",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "sonorous",
+                "ringing sound",
+                "bells"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What are non-metals? Give three examples of non-metals.",
+            "answer": "Non-metals are elements that are generally dull, brittle (break easily), and poor conductors of heat and electricity. Examples include Oxygen, Sulphur, and Carbon.",
+            "answer_outline": [
+                "Definition of non-metals",
+                "Physical state/appearance",
+                "Examples"
+            ],
+            "key_concepts": [
+                "non-metals",
+                "brittle",
+                "insulators"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are handles of cooking pans usually made of plastic or wood?",
+            "answer": "Cooking pans are made of metals because they are good conductors of heat. However, the handles are made of plastic or wood because these materials are poor conductors (insulators), which prevents our hands from getting burnt.",
+            "answer_outline": [
+                "Conductivity of metals",
+                "Insulating property of plastic/wood",
+                "Safety reason"
+            ],
+            "key_concepts": [
+                "conduction",
+                "insulators",
+                "safety"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Name the only metal that is found in liquid state at room temperature.",
+            "answer": "Mercury is the only metal that exists as a liquid at room temperature. It is commonly used in thermometers because it expands evenly when heated.",
+            "answer_outline": [
+                "Identification of Mercury",
+                "Physical state exception",
+                "Common use"
+            ],
+            "key_concepts": [
+                "mercury",
+                "liquid metal",
+                "thermometer"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Identify a non-metal that is essential for our life and breathing.",
+            "answer": "Oxygen is the non-metal that is essential for the respiration (breathing) of all living organisms. It is also necessary for the process of burning (combustion).",
+            "answer_outline": [
+                "Identification of Oxygen",
+                "Importance for life",
+                "Role in combustion"
+            ],
+            "key_concepts": [
+                "oxygen",
+                "respiration",
+                "life"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What happens to a piece of coal when it is hammered? What is this property called?",
+            "answer": "When coal (a form of carbon/non-metal) is hammered, it breaks into small pieces or powder. This property is called 'Brittleness.'",
+            "answer_outline": [
+                "Observation (breaking)",
+                "Naming the property (brittleness)"
+            ],
+            "key_concepts": [
+                "coal",
+                "brittleness",
+                "non-metal"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is copper used for making electrical wires?",
+            "answer": "Copper is used for electrical wires because it is a very good conductor of electricity, allowing current to flow easily. It is also ductile, meaning it can be easily drawn into thin wires.",
+            "answer_outline": [
+                "Electrical conductivity",
+                "Ductility",
+                "Practical application"
+            ],
+            "key_concepts": [
+                "copper",
+                "electrical conductor",
+                "wiring"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Compare metals and non-metals based on their appearance (lustre).",
+            "answer": "Metals have a shiny surface, a property known as 'Metallic Lustre.' In contrast, non-metals are generally dull and do not shine (except for iodine and graphite).",
+            "answer_outline": [
+                "Lustre in metals",
+                "Appearance of non-metals",
+                "Exceptions"
+            ],
+            "key_concepts": [
+                "lustre",
+                "shiny",
+                "dull"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What kind of oxides are formed when metals react with oxygen?",
+            "answer": "When metals react with oxygen, they form metal oxides which are generally 'Basic' in nature. For example, magnesium burns to form magnesium oxide, which turns red litmus paper blue.",
+            "answer_outline": [
+                "Reaction with oxygen",
+                "Nature of oxide (basic)",
+                "Litmus test result"
+            ],
+            "key_concepts": [
+                "metal oxides",
+                "basic",
+                "litmus"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What kind of oxides are formed when non-metals react with oxygen?",
+            "answer": "Non-metals react with oxygen to form non-metal oxides which are generally 'Acidic' in nature. For example, sulphur burns to form sulphur dioxide, which turns blue litmus paper red.",
+            "answer_outline": [
+                "Reaction with oxygen",
+                "Nature of oxide (acidic)",
+                "Litmus test result"
+            ],
+            "key_concepts": [
+                "non-metal oxides",
+                "acidic",
+                "litmus"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Name two metals that are so soft they can be cut with a knife.",
+            "answer": "Sodium and Potassium are two metals that are exceptions to the rule of hardness; they are soft enough to be cut easily with a kitchen knife.",
+            "answer_outline": [
+                "Identification of soft metals",
+                "Exception to hardness"
+            ],
+            "key_concepts": [
+                "sodium",
+                "potassium",
+                "soft metals"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is sodium metal stored in kerosene?",
+            "answer": "Sodium is highly reactive. It reacts vigorously with the oxygen and moisture (water vapor) present in the air, catching fire. To prevent this, it is kept immersed in kerosene.",
+            "answer_outline": [
+                "High reactivity",
+                "Reaction with air/water",
+                "Protective storage"
+            ],
+            "key_concepts": [
+                "sodium",
+                "kerosene",
+                "reactivity"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What gas is produced when metals react with dilute acids?",
+            "answer": "When metals react with dilute acids, they generally produce Hydrogen gas. This gas can be identified by the 'pop' sound it makes when a burning matchstick is brought near it.",
+            "answer_outline": [
+                "Product identification (Hydrogen)",
+                "The 'pop' sound test"
+            ],
+            "key_concepts": [
+                "hydrogen gas",
+                "acid reaction",
+                "pop sound"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Name a non-metal used in the purification of water.",
+            "answer": "Chlorine is the non-metal commonly used in water treatment plants to kill germs and bacteria, making the water safe for drinking.",
+            "answer_outline": [
+                "Identification of Chlorine",
+                "Use in water purification"
+            ],
+            "key_concepts": [
+                "chlorine",
+                "purification",
+                "drinking water"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which non-metal is used in purple-colored antiseptic solutions applied on wounds?",
+            "answer": "Iodine is the non-metal used to make antiseptic solutions (like Tincture of Iodine). It is applied to wounds to prevent infection.",
+            "answer_outline": [
+                "Identification of Iodine",
+                "Medical use (antiseptic)"
+            ],
+            "key_concepts": [
+                "iodine",
+                "antiseptic",
+                "wounds"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is 'Graphite' and why is it special compared to other non-metals?",
+            "answer": "Graphite is a form of Carbon. It is special because, unlike most non-metals, it is a very good conductor of electricity. It is used in pencil leads and batteries.",
+            "answer_outline": [
+                "Definition of Graphite",
+                "Electrical conductivity exception",
+                "Uses"
+            ],
+            "key_concepts": [
+                "graphite",
+                "carbon",
+                "conductor"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are gold and silver used for making jewellery?",
+            "answer": "Gold and silver are used for jewellery because they are highly lustrous (shiny), malleable, and ductile. Most importantly, they do not react easily with air or moisture, so they do not tarnish or rust.",
+            "answer_outline": [
+                "Physical properties (lustre, etc.)",
+                "Low reactivity (noble metals)",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "gold",
+                "silver",
+                "jewellery"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is 'Galvanization'?",
+            "answer": "Galvanization is the process of applying a protective coating of Zinc metal on iron or steel objects to prevent them from rusting.",
+            "answer_outline": [
+                "Definition",
+                "Metal used (Zinc)",
+                "Purpose (rust prevention)"
+            ],
+            "key_concepts": [
+                "galvanization",
+                "zinc",
+                "rusting"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Name two non-metals used in fertilizers to enhance plant growth.",
+            "answer": "Nitrogen and Phosphorus are two essential non-metals used in the manufacture of fertilizers to provide nutrients to plants.",
+            "answer_outline": [
+                "Identification (Nitrogen, Phosphorus)",
+                "Role in agriculture"
+            ],
+            "key_concepts": [
+                "fertilizers",
+                "nitrogen",
+                "phosphorus"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "State whether non-metals generally react with dilute acids.",
+            "answer": "Generally, non-metals do not react with dilute acids. This is a key chemical difference between metals and non-metals.",
+            "answer_outline": [
+                "Reaction status",
+                "Contrast with metals"
+            ],
+            "key_concepts": [
+                "non-metals",
+                "acids",
+                "no reaction"
+            ],
+            "marks": 2,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is an 'Alloy'? Give one example.",
+            "answer": "An alloy is a uniform mixture of two or more metals, or a metal and a non-metal. For example, Steel is an alloy made of iron and carbon.",
+            "answer_outline": [
+                "Definition of alloy",
+                "Example (Steel)"
+            ],
+            "key_concepts": [
+                "alloy",
+                "mixture",
+                "steel"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Briefly describe why phosphorus is stored in water.",
+            "answer": "Phosphorus is a very reactive non-metal. It catches fire spontaneously if exposed to air. Since it does not react with water, it is stored in water to prevent it from coming into contact with atmospheric oxygen.",
+            "answer_outline": [
+                "Reactivity of phosphorus",
+                "Reaction with air",
+                "Storage in water"
+            ],
+            "key_concepts": [
+                "phosphorus",
+                "water storage",
+                "reactivity"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        }
+    ]
+}

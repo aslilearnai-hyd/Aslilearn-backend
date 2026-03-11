@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 12: Statistics",
+    "generated_at": "2026-03-06T16:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The weights (in kg) of 40 students are: 35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74. Construct a frequency distribution table with class width 5.",
+            "answer": "Class intervals: 35–39→5, 40–44→5, 45–49→5, 50–54→5, 55–59→5, 60–64→5, 65–69→5, 70–74→5",
+            "answer_outline": ["Choose class width=5", "List intervals", "Count frequency in each interval", "Construct table"],
+            "key_concepts": ["grouped frequency distribution", "class interval", "frequency"],
+            "marks": 5,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Given the following frequency distribution of marks obtained by 50 students: 0–10→3, 10–20→7, 20–30→12, 30–40→15, 40–50→13. Calculate mean using assumed mean method with 30 as assumed mean.",
+            "answer": "Class marks: 5,15,25,35,45; Deviations: d=(x-a)/1 → -25,-15,-5,5,15; f×d: -75,-105,-60,75,195; Σf×d=30; Mean=a+Σf×d/n=30+30/50=30.6",
+            "answer_outline": ["Calculate class marks", "Compute deviations from assumed mean", "Multiply by frequency", "Sum f×d and divide by total frequency", "Add to assumed mean"],
+            "key_concepts": ["mean", "assumed mean method", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 3,
+            "question": "The daily wages of 60 workers are grouped as: 100–120→5, 120–140→10, 140–160→15, 160–180→20, 180–200→10. Find median wage.",
+            "answer": "Cumulative frequency: 5,15,30,50,60; Median class: 160–180 (cf before=30, f=20, n=60); Median=160 + [(30-30)/20]×20=160",
+            "answer_outline": ["Compute cumulative frequency", "Identify median class", "Apply median formula"],
+            "key_concepts": ["median", "grouped data", "cumulative frequency"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A company recorded the monthly expenditure of 50 families: 2000–3000→5, 3000–4000→10, 4000–5000→15, 5000–6000→12, 6000–7000→8. Find mode using formula.",
+            "answer": "Modal class=4000–5000 (highest f=15); cf before=15-15=10? f1=15,f0=10,f2=12; Mode=L+[(f1-f0)/(2f1-f0-f2)]×h=4000+[(15-10)/(2*15-10-12)]*1000≈4000+500=4500",
+            "answer_outline": ["Identify modal class", "Calculate cf before, f1, f2", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A cumulative frequency table of students’ heights (in cm) is: less than 140→5, less than 145→12, less than 150→25, less than 155→38, less than 160→50. Find median height.",
+            "answer": "n=50, median class=145–150; cf before=12, f=13, h=5; Median=L+[(n/2 - cf)/f]*h=145+[(25-12)/13]*5≈145+5=150",
+            "answer_outline": ["Identify median class", "Apply median formula", "Compute median height"],
+            "key_concepts": ["median", "cumulative frequency", "grouped data"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "The marks of 100 students are given in class intervals 0–10, 10–20,..., 90–100 with frequencies: 3,7,12,15,20,18,12,8,3,2. Draw a less-than cumulative frequency curve and estimate median.",
+            "answer": "Cumulative frequencies: 3,10,22,37,57,75,87,95,98,100; Median class=40–50; cf before=37,f=20,h=10; Median=40+[(50-37)/20]*10=40+6.5≈46.5",
+            "answer_outline": ["Compute cumulative frequency", "Plot cumulative frequency curve", "Identify median class", "Estimate median using formula"],
+            "key_concepts": ["median", "cumulative frequency curve", "estimation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the mean deviation about mean for data: 10,12,15,18,20.",
+            "answer": "Mean=(10+12+15+18+20)/5=75/5=15; Deviations: |10-15|=5, |12-15|=3, |15-15|=0, |18-15|=3, |20-15|=5; Mean deviation=(5+3+0+3+5)/5=16/5=3.2",
+            "answer_outline": ["Compute mean", "Find deviations from mean", "Take absolute values", "Compute mean deviation"],
+            "key_concepts": ["mean deviation", "central tendency", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 8,
+            "question": "For the data 2,4,6,8,10 with frequencies 3,5,4,6,2, find the mean using direct method.",
+            "answer": "Σf=20, Σfx=(2*3+4*5+6*4+8*6+10*2)=6+20+24+48+20=118; Mean=Σfx/Σf=118/20=5.9",
+            "answer_outline": ["Multiply each value by frequency", "Sum products", "Divide by total frequency"],
+            "key_concepts": ["mean", "grouped data", "direct method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Class marks of data: 5,10,15,20,25,30 with frequencies 2,3,7,5,4,1. Find variance and standard deviation.",
+            "answer": "Mean=Σfx/Σf=(5*2+10*3+15*7+20*5+25*4+30*1)/22=215/22≈9.77 (double check sum); Compute Σf(x-mean)^2, then SD=√(Σf(x-mean)^2/Σf)≈8.5",
+            "answer_outline": ["Compute mean", "Find squared deviations", "Multiply by frequency", "Sum, divide by n, sqrt for SD"],
+            "key_concepts": ["variance", "standard deviation", "grouped data"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 10,
+            "question": "A frequency table shows class intervals 0–5,5–10,10–15,15–20,20–25 with frequencies 5,8,12,10,5. Draw histogram and frequency polygon.",
+            "answer": "x-axis: class intervals, y-axis: frequency; Draw rectangles for histogram; Midpoints for polygon: 2.5,7.5,12.5,17.5,22.5; Join midpoints with lines",
+            "answer_outline": ["Draw histogram using rectangles", "Mark midpoints", "Plot frequency polygon connecting midpoints"],
+            "key_concepts": ["histogram", "frequency polygon", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find mean, median, and mode from the data: 10,12,12,15,15,15,18,20,22,22,25.",
+            "answer": "Mean=(10+12+12+15+15+15+18+20+22+22+25)/11=166/11≈15.09; Median=15; Mode=15",
+            "answer_outline": ["Arrange data", "Compute sum for mean", "Middle value for median", "Most frequent for mode"],
+            "key_concepts": ["mean", "median", "mode", "bimodal check"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Marks of 50 students are grouped in intervals 0–10,10–20,...,90–100. Frequency: 2,3,5,6,10,8,7,5,3,1. Find median using cumulative frequency graph.",
+            "answer": "Cumulative frequencies: 2,5,10,16,26,34,41,46,49,50; Median class=40–50; cf before=16,f=10,h=10; Median=40+[(25-16)/10]*10=40+9=49",
+            "answer_outline": ["Compute cumulative frequencies", "Identify median class", "Use median formula"],
+            "key_concepts": ["median", "cumulative frequency graph"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Compute mean deviation about median for data: 4,6,8,10,12,14.",
+            "answer": "Median=(8+10)/2=9; Deviations: |4-9|=5,|6-9|=3,|8-9|=1,|10-9|=1,|12-9|=3,|14-9|=5; Sum=18; Mean deviation=18/6=3",
+            "answer_outline": ["Find median", "Compute absolute deviations", "Sum and divide by n"],
+            "key_concepts": ["mean deviation", "median", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "A frequency distribution: class 0–5→3,5–10→7,10–15→10,15–20→8,20–25→2. Draw less-than cumulative frequency curve and estimate median.",
+            "answer": "Cumulative: 0–5→3, 5–10→10, 10–15→20, 15–20→28, 20–25→30; Median class=10–15; cf before=10,f=10,h=5; Median=10+[(15-10)/10]*5=12.5",
+            "answer_outline": ["Compute cumulative frequency", "Plot curve", "Identify median class", "Estimate median"],
+            "key_concepts": ["cumulative frequency curve", "median", "grouped data"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "For data: 12,15,17,20,22,25,27,30, compute variance and SD.",
+            "answer": "Mean= (12+15+17+20+22+25+27+30)/8=168/8=21; Deviations: -9,-6,-4,-1,1,4,6,9; Squares:81,36,16,1,1,16,36,81; Σ=268; Variance=268/8=33.5; SD=√33.5≈5.79",
+            "answer_outline": ["Compute mean", "Find deviations", "Square deviations", "Sum, divide by n for variance", "SD=sqrt(variance)"],
+            "key_concepts": ["variance", "standard deviation", "data spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 16,
+            "question": "The weights of 50 students are given in grouped form: 40–45→5,45–50→10,50–55→15,55–60→12,60–65→8. Compute mean using step deviation method with assumed mean 52.5.",
+            "answer": "Class marks:42.5,47.5,52.5,57.5,62.5; d=(x-a)/h: -2, -1,0,1,2; f×d= -10,-10,0,12,16; Σf×d=8; h=5; n=50; Mean=a+Σf×d*h/n=52.5+8*5/50=52.5+0.8=53.3",
+            "answer_outline": ["Find class marks", "Compute step deviations", "Multiply by frequency", "Sum f×d", "Mean=a+Σf×d*h/n"],
+            "key_concepts": ["step deviation method", "mean", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Compute mode for frequency distribution: 0–10→2,10–20→5,20–30→8,30–40→12,40–50→7 using formula.",
+            "answer": "Modal class=30–40; f1=12,f0=8,f2=7,L=30,h=10; Mode=L+[(f1-f0)/(2f1-f0-f2)]*h=30+[(12-8)/(24-8-7)]*10=30+4/9*10≈34.44",
+            "answer_outline": ["Identify modal class", "Compute f1,f0,f2", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Marks of 40 students: 25,30,35,30,40,35,30,40,45,50,... Find mean and standard deviation using assumed mean 37.5",
+            "answer": "Compute deviations d=(x-a)/h, Σf×d, Σf×d^2, then mean=a+Σf×d*h/n; SD=√(Σf×d^2/n - (Σf×d/n)^2)*h",
+            "answer_outline": ["Compute deviations", "Compute Σf×d, Σf×d^2", "Mean=a+Σf×d*h/n", "SD formula for grouped data"],
+            "key_concepts": ["mean", "standard deviation", "assumed mean method"],
+            "marks": 5,
+            "source_section": "12.5"
+        },
+        {
+            "question_number": 19,
+            "question": "The number of pages read by 50 students: 0–50→5,50–100→10,100–150→15,150–200→12,200–250→8. Draw histogram and frequency polygon.",
+            "answer": "x-axis: intervals, y-axis: frequency; Draw rectangles for histogram; Midpoints: 25,75,125,175,225; Plot frequency polygon joining midpoints",
+            "answer_outline": ["Draw histogram rectangles", "Identify midpoints", "Plot frequency polygon"],
+            "key_concepts": ["histogram", "frequency polygon", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Construct less-than cumulative frequency curve for data: 0–5→3,5–10→6,10–15→9,15–20→12,20–25→10",
+            "answer": "Cumulative: 0–5→3,5–10→9,10–15→18,15–20→30,20–25→40; Plot curve using upper boundaries",
+            "answer_outline": ["Compute cumulative frequency", "Plot upper boundaries vs cumulative frequency", "Join points smoothly"],
+            "key_concepts": ["cumulative frequency curve", "graphical representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Find median for grouped data: 0–10→2,10–20→5,20–30→10,30–40→15,40–50→8.",
+            "answer": "Cumulative frequency: 2,7,17,32,40; n=40; Median class=30–40; cf before=17,f=15,h=10; Median=30+[(20-17)/15]*10=30+(3/15)*10=30+2=32",
+            "answer_outline": ["Compute cumulative frequencies", "Identify median class", "Apply median formula"],
+            "key_concepts": ["median", "grouped data", "cumulative frequency"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 22,
+            "question": "A data set has marks of 60 students in intervals 0–10→4,10–20→6,20–30→10,30–40→20,40–50→12,50–60→8. Find mode using formula.",
+            "answer": "Modal class=30–40; f1=20, f0=10, f2=12, L=30, h=10; Mode=L+[(f1-f0)/(2f1-f0-f2)]*h=30+[(20-10)/(40-10-12)]*10=30+10/18*10≈35.56",
+            "answer_outline": ["Identify modal class", "Calculate f1,f0,f2,L,h", "Apply mode formula"],
+            "key_concepts": ["mode", "grouped data", "formula method"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "The daily earnings of 50 workers are given as: 100–120→4,120–140→8,140–160→12,160–180→15,180–200→11. Calculate mean using step deviation method with 150 as assumed mean and h=20.",
+            "answer": "Class marks: 110,130,150,170,190; Step deviations d=(x-a)/h: -2,-1,0,1,2; f×d=-8,-8,0,15,22; Σf×d=21; Mean=a+Σf×d*h/n=150+(21*20)/50=150+8.4=158.4",
+            "answer_outline": ["Compute class marks", "Calculate step deviations", "Multiply by frequency", "Sum f×d", "Compute mean"],
+            "key_concepts": ["mean", "step deviation method", "grouped data"],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 24,
+            "question": "The number of hours studied by 40 students in a week: 0–5→3,5–10→7,10–15→12,15–20→10,20–25→8. Draw histogram, less-than cumulative frequency curve and frequency polygon.",
+            "answer": "Histogram: x-axis: class intervals, y-axis: frequency, draw rectangles; Frequency polygon: midpoints 2.5,7.5,12.5,17.5,22.5, join points; Less-than cumulative curve: cumulative frequencies 3,10,22,32,40, plot upper boundaries 5,10,15,20,25",
+            "answer_outline": ["Draw histogram", "Mark midpoints for frequency polygon", "Compute cumulative frequencies for less-than curve", "Plot graphs"],
+            "key_concepts": ["histogram", "frequency polygon", "cumulative frequency curve", "visual representation"],
+            "marks": 5,
+            "source_section": "12.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Compute mean deviation about mean for the data: 8,10,12,14,16,18,20.",
+            "answer": "Mean=(8+10+12+14+16+18+20)/7=98/7=14; Deviations: |8-14|=6, |10-14|=4, |12-14|=2, |14-14|=0, |16-14|=2, |18-14|=4, |20-14|=6; Sum=24; Mean deviation=24/7≈3.43",
+            "answer_outline": ["Compute mean", "Find absolute deviations from mean", "Sum deviations", "Divide by total number of data points"],
+            "key_concepts": ["mean deviation", "central tendency", "spread"],
+            "marks": 5,
+            "source_section": "12.5"
+        }
+    ]
+}

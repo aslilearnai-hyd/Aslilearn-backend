@@ -1,0 +1,238 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-05T19:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is force?",
+      "answer": "Force is a push or pull acting on an object.",
+      "answer_outline": ["Definition of force"],
+      "key_concepts": ["force"],
+      "marks": 3,
+      "source_section": "Introduction to Forces"
+    },
+    {
+      "question_number": 2,
+      "question": "Give two examples of force in daily life.",
+      "answer": "Pushing a door and pulling a cart are examples of force.",
+      "answer_outline": ["Examples of push and pull"],
+      "key_concepts": ["force"],
+      "marks": 3,
+      "source_section": "Examples of Forces"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the effects of force?",
+      "answer": "Force can start motion, stop motion, change the direction of motion or change the shape of an object.",
+      "answer_outline": [
+        "Start motion",
+        "Stop motion",
+        "Change direction",
+        "Change shape"
+      ],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain how force can change the shape of an object.",
+      "answer": "When force is applied to objects such as a rubber band or sponge, their shape changes because the applied force deforms them.",
+      "answer_outline": ["Application of force", "Change in shape"],
+      "key_concepts": ["deformation"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 5,
+      "question": "What is muscular force?",
+      "answer": "Muscular force is the force exerted by the muscles of humans or animals.",
+      "answer_outline": ["Force produced by muscles"],
+      "key_concepts": ["muscular force"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 6,
+      "question": "Give two examples of muscular force.",
+      "answer": "Lifting a bag and kicking a football are examples of muscular force.",
+      "answer_outline": ["Human muscle actions"],
+      "key_concepts": ["muscular force"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 7,
+      "question": "What is friction?",
+      "answer": "Friction is the force that opposes the motion of objects when they move over a surface.",
+      "answer_outline": ["Definition of friction"],
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 8,
+      "question": "Give two examples where friction is useful.",
+      "answer": "Friction helps us walk without slipping and allows brakes to stop vehicles.",
+      "answer_outline": ["Walking", "Braking"],
+      "key_concepts": ["friction"],
+      "marks": 3,
+      "source_section": "Uses of Friction"
+    },
+    {
+      "question_number": 9,
+      "question": "What is gravitational force?",
+      "answer": "Gravitational force is the force with which the Earth attracts objects towards its center.",
+      "answer_outline": ["Earth's attraction"],
+      "key_concepts": ["gravity"],
+      "marks": 3,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 10,
+      "question": "Give one example of gravitational force.",
+      "answer": "An apple falling from a tree is an example of gravitational force.",
+      "answer_outline": ["Object falling"],
+      "key_concepts": ["gravity"],
+      "marks": 3,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 11,
+      "question": "What are contact forces?",
+      "answer": "Contact forces are forces that act only when two objects are in physical contact.",
+      "answer_outline": ["Physical contact"],
+      "key_concepts": ["contact forces"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 12,
+      "question": "Give two examples of contact forces.",
+      "answer": "Muscular force and friction are examples of contact forces.",
+      "answer_outline": ["Muscular force", "Friction"],
+      "key_concepts": ["contact forces"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 13,
+      "question": "What are non-contact forces?",
+      "answer": "Non-contact forces are forces that act without physical contact between objects.",
+      "answer_outline": ["Force without contact"],
+      "key_concepts": ["non-contact forces"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 14,
+      "question": "Give two examples of non-contact forces.",
+      "answer": "Gravitational force and magnetic force are examples of non-contact forces.",
+      "answer_outline": ["Gravity", "Magnetism"],
+      "key_concepts": ["non-contact forces"],
+      "marks": 3,
+      "source_section": "Types of Forces"
+    },
+    {
+      "question_number": 15,
+      "question": "What is magnetic force?",
+      "answer": "Magnetic force is the force exerted by magnets which attracts or repels magnetic materials.",
+      "answer_outline": ["Magnet action"],
+      "key_concepts": ["magnetic force"],
+      "marks": 3,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how a magnet attracts iron objects.",
+      "answer": "A magnet produces a magnetic field that attracts materials like iron, nickel and cobalt.",
+      "answer_outline": ["Magnetic field", "Attraction"],
+      "key_concepts": ["magnetism"],
+      "marks": 4,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how force can change the direction of motion.",
+      "answer": "When a force is applied to a moving object, its direction can change. For example, hitting a moving ball with a bat changes its direction.",
+      "answer_outline": ["Force applied", "Direction change"],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how force can start motion.",
+      "answer": "A stationary object can begin to move when a force is applied to it, such as pushing a stationary cart.",
+      "answer_outline": ["Start motion"],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how force can stop motion.",
+      "answer": "Force applied opposite to the direction of motion can stop a moving object, such as applying brakes to stop a bicycle.",
+      "answer_outline": ["Opposite force", "Stopping motion"],
+      "key_concepts": ["effects of force"],
+      "marks": 4,
+      "source_section": "Effects of Force"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain why friction slows down moving objects.",
+      "answer": "Friction opposes motion between surfaces in contact, causing moving objects to gradually slow down.",
+      "answer_outline": ["Opposition to motion"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Friction"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why objects fall towards the Earth.",
+      "answer": "Objects fall towards the Earth due to gravitational force which pulls them downward.",
+      "answer_outline": ["Earth's gravity"],
+      "key_concepts": ["gravity"],
+      "marks": 4,
+      "source_section": "Gravitational Force"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why magnets attract certain metals.",
+      "answer": "Magnets attract metals such as iron, nickel and cobalt because these materials respond to magnetic fields.",
+      "answer_outline": ["Magnetic materials"],
+      "key_concepts": ["magnetism"],
+      "marks": 4,
+      "source_section": "Magnetic Force"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why friction is necessary for walking.",
+      "answer": "Friction between the feet and the ground prevents slipping and allows us to walk safely.",
+      "answer_outline": ["Prevent slipping"],
+      "key_concepts": ["friction"],
+      "marks": 4,
+      "source_section": "Uses of Friction"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how forces act in everyday activities.",
+      "answer": "Forces act when we push, pull, lift, throw or move objects in daily activities.",
+      "answer_outline": ["Examples of daily forces"],
+      "key_concepts": ["force"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of studying forces.",
+      "answer": "Studying forces helps us understand how objects move and interact in the physical world.",
+      "answer_outline": ["Understanding motion", "Applications"],
+      "key_concepts": ["force"],
+      "marks": 4,
+      "source_section": "Conclusion"
+    }
+  ]
+}

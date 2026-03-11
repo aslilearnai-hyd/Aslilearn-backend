@@ -1,0 +1,159 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "Our Home: Earth, a Unique Life Sustaining Planet",
+  "difficulty": "Medium",
+  "source_pdf": "Our Home Earth A Unique Life Sustaining Planet.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Investigating Earth's Habitable Zone",
+      "objective": "Understand how Earth’s distance from the Sun allows life to exist",
+      "materials": [
+        "Lamp (Sun model)",
+        "Three balls (planets)",
+        "Thermometer",
+        "Ruler"
+      ],
+      "steps": [
+        "Place the lamp at the center to represent the Sun",
+        "Place three balls at different distances from the lamp",
+        "Measure temperature near each ball",
+        "Discuss which distance may allow liquid water"
+      ],
+      "learning_outcome": "Students analyze the concept of the habitable or Goldilocks zone",
+      "evaluation": "Temperature comparison and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Planet Comparison Research",
+      "objective": "Compare Earth with other planets in the solar system",
+      "materials": ["Internet or library resources", "Notebook", "Chart paper"],
+      "steps": [
+        "Collect data on temperature, atmosphere, and size of planets",
+        "Create a comparison table",
+        "Highlight features that make Earth suitable for life",
+        "Present findings to the class"
+      ],
+      "learning_outcome": "Students understand why Earth is unique among planets",
+      "evaluation": "Accuracy of data and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Modeling the Greenhouse Effect",
+      "objective": "Investigate how gases trap heat in Earth's atmosphere",
+      "materials": [
+        "Two transparent containers",
+        "Thermometers",
+        "Plastic wrap",
+        "Sunlight"
+      ],
+      "steps": [
+        "Place thermometers in both containers",
+        "Cover one container with plastic wrap",
+        "Place both in sunlight",
+        "Record temperature changes after 20 minutes"
+      ],
+      "learning_outcome": "Students understand the greenhouse effect and its role in maintaining Earth’s temperature",
+      "evaluation": "Recorded observations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Magnetic Shield Demonstration",
+      "objective": "Understand the protective role of Earth's magnetic field",
+      "materials": ["Bar magnet", "Iron filings", "Paper sheet"],
+      "steps": [
+        "Place magnet under paper",
+        "Sprinkle iron filings over the paper",
+        "Observe the magnetic field pattern",
+        "Relate the pattern to Earth’s magnetic protection"
+      ],
+      "learning_outcome": "Students connect magnetic fields with planetary protection",
+      "evaluation": "Diagram and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Water Cycle Simulation",
+      "objective": "Explore the role of water in sustaining life",
+      "materials": ["Glass bowl", "Plastic sheet", "Warm water", "Small stone"],
+      "steps": [
+        "Pour warm water into the bowl",
+        "Cover with plastic sheet and place stone in center",
+        "Observe condensation forming underneath",
+        "Discuss evaporation and precipitation"
+      ],
+      "learning_outcome": "Students understand water circulation in nature",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Soil Nutrient Investigation",
+      "objective": "Analyze how soil nutrients affect plant growth",
+      "materials": ["Two pots", "Soil", "Seeds", "Organic fertilizer", "Water"],
+      "steps": [
+        "Plant seeds in two pots",
+        "Add fertilizer to one pot only",
+        "Water regularly for one week",
+        "Measure plant height daily"
+      ],
+      "learning_outcome": "Students learn the importance of soil nutrients",
+      "evaluation": "Growth comparison chart (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Ecosystem Balance Investigation",
+      "objective": "Understand relationships between living organisms",
+      "materials": ["Chart paper", "Markers", "Reference materials"],
+      "steps": [
+        "Draw a simple ecosystem",
+        "Identify producers, consumers, and decomposers",
+        "Explain energy flow in the system",
+        "Discuss what happens if one group disappears"
+      ],
+      "learning_outcome": "Students understand ecological balance",
+      "evaluation": "Correct food chain explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Climate Change Data Study",
+      "objective": "Investigate trends in global temperature changes",
+      "materials": ["Internet resources", "Notebook", "Graph paper"],
+      "steps": [
+        "Collect temperature data for the last 10–20 years",
+        "Plot a graph",
+        "Identify trends",
+        "Discuss possible causes"
+      ],
+      "learning_outcome": "Students understand climate change patterns",
+      "evaluation": "Graph accuracy and analysis (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Atmosphere Layer Model",
+      "objective": "Understand different layers of Earth’s atmosphere",
+      "materials": ["Chart paper", "Colored pencils", "Reference materials"],
+      "steps": [
+        "Draw a vertical diagram of Earth’s atmosphere",
+        "Label troposphere, stratosphere, mesosphere, thermosphere",
+        "Write functions of each layer",
+        "Highlight the ozone layer"
+      ],
+      "learning_outcome": "Students learn the protective role of atmospheric layers",
+      "evaluation": "Diagram accuracy and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Environmental Protection Action Plan",
+      "objective": "Encourage solutions for environmental challenges",
+      "materials": ["Notebook", "Pen", "Reference materials"],
+      "steps": [
+        "Identify local environmental problems",
+        "Suggest possible solutions",
+        "Prepare an action plan",
+        "Present ideas to the class"
+      ],
+      "learning_outcome": "Students develop environmental awareness and problem-solving skills",
+      "evaluation": "Practical solutions and presentation (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 5: A Legend of the Northland",
+    "difficulty": "hard",
+    "generated_at": "2026-03-08T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze the symbolic meaning of the mother’s greed in the poem.",
+            "answer": "The mother’s greed symbolizes human selfishness and the moral consequences of excessive desire, serving as a cautionary example.",
+            "answer_outline": ["Symbolism", "Analysis"],
+            "key_concepts": ["greed", "selfishness", "moral consequences"],
+            "marks": 4
+        },
+        {
+            "question_number": 2,
+            "question": "Examine how Hawthorne uses folk tale elements to teach moral lessons.",
+            "answer": "Hawthorne uses simple narrative, rhyme, repetition, and exaggerated characters to convey moral lessons in the style of traditional folk tales.",
+            "answer_outline": ["Folk tale elements", "Moral teaching"],
+            "key_concepts": ["folk tale", "storytelling", "moral lesson"],
+            "marks": 4
+        },
+        {
+            "question_number": 3,
+            "question": "Discuss the poem’s exploration of consequences and justice.",
+            "answer": "The poem demonstrates that selfish actions lead to negative outcomes, highlighting a natural moral order where greed is punished and generosity is rewarded.",
+            "answer_outline": ["Consequences", "Justice"],
+            "key_concepts": ["cause and effect", "moral order", "punishment"],
+            "marks": 4
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the role of exaggeration and humor in conveying the poem’s moral.",
+            "answer": "Exaggeration and humor make the story engaging and memorable while softening the didactic tone, ensuring the moral lesson is impactful yet entertaining.",
+            "answer_outline": ["Exaggeration", "Humor", "Moral effect"],
+            "key_concepts": ["hyperbole", "engagement", "didactic storytelling"],
+            "marks": 4
+        },
+        {
+            "question_number": 5,
+            "question": "Examine the significance of the orchard setting in the poem.",
+            "answer": "The orchard symbolizes abundance and natural generosity, contrasting with human greed and reinforcing the moral of moderation and gratitude.",
+            "answer_outline": ["Setting", "Symbolism"],
+            "key_concepts": ["nature", "abundance", "contrast"],
+            "marks": 4
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss how the poem reflects human psychology and moral behavior.",
+            "answer": "The poem explores human tendencies like greed, curiosity, and desire, showing how these traits lead to predictable moral outcomes, teaching self-reflection.",
+            "answer_outline": ["Human behavior", "Moral lesson"],
+            "key_concepts": ["psychology", "morality", "self-reflection"],
+            "marks": 4
+        },
+        {
+            "question_number": 7,
+            "question": "Analyze how dialogue is used to reveal character traits and advance the story.",
+            "answer": "Dialogue shows the mother’s commanding nature, the girl’s curiosity, and the old woman’s wisdom, while moving the narrative and emphasizing the moral lesson.",
+            "answer_outline": ["Dialogue", "Characterization", "Narrative progression"],
+            "key_concepts": ["character traits", "story advancement", "moral emphasis"],
+            "marks": 4
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the moral implications of the poem in a broader social context.",
+            "answer": "The poem warns that excessive greed can harm not only individuals but communities, promoting ethical behavior and social responsibility.",
+            "answer_outline": ["Social context", "Moral implications"],
+            "key_concepts": ["greed", "ethics", "social responsibility"],
+            "marks": 4
+        },
+        {
+            "question_number": 9,
+            "question": "Interpret the poem’s narrative style and its impact on readers.",
+            "answer": "The simple, story-like narrative with rhyme and repetition makes the poem accessible, engaging, and effective in delivering moral lessons.",
+            "answer_outline": ["Narrative style", "Effect"],
+            "key_concepts": ["storytelling", "rhyme", "moral impact"],
+            "marks": 4
+        },
+        {
+            "question_number": 10,
+            "question": "Analyze the contrast between human behavior and natural generosity.",
+            "answer": "Human greed contrasts sharply with the orchard’s generosity, highlighting the folly of selfishness and the value of moderation.",
+            "answer_outline": ["Contrast", "Analysis"],
+            "key_concepts": ["human vs nature", "selfishness", "moderation"],
+            "marks": 4
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss the role of moral exaggeration in shaping the reader’s perception.",
+            "answer": "Exaggerated actions of characters highlight their flaws and amplify the moral lesson, making it easier for readers to understand and remember.",
+            "answer_outline": ["Exaggeration", "Reader perception"],
+            "key_concepts": ["hyperbole", "moral clarity", "impact"],
+            "marks": 4
+        },
+        {
+            "question_number": 12,
+            "question": "Examine the interplay between narrative humor and ethical teaching.",
+            "answer": "Humor entertains while simultaneously emphasizing the consequences of greed, balancing enjoyment with ethical instruction.",
+            "answer_outline": ["Humor", "Ethics", "Balance"],
+            "key_concepts": ["entertainment", "moral lesson", "balance"],
+            "marks": 4
+        },
+        {
+            "question_number": 13,
+            "question": "Interpret the poem in terms of universal human values.",
+            "answer": "It underscores universal values like honesty, generosity, and the avoidance of greed, relevant across cultures and eras.",
+            "answer_outline": ["Universal values", "Analysis"],
+            "key_concepts": ["honesty", "generosity", "anti-greed"],
+            "marks": 4
+        },
+        {
+            "question_number": 14,
+            "question": "Analyze the poet’s technique in combining narrative and didactic elements.",
+            "answer": "Hawthorne blends storytelling with moral instruction through structured plot, dialogue, and character exaggeration, making lessons memorable.",
+            "answer_outline": ["Technique", "Narrative", "Didactic elements"],
+            "key_concepts": ["storytelling", "moral teaching", "technique"],
+            "marks": 4
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the poem’s relevance in teaching ethical reflection to young readers.",
+            "answer": "The poem encourages children to recognize greed and selfishness and to value generosity, fostering ethical thinking early.",
+            "answer_outline": ["Relevance", "Ethics", "Young readers"],
+            "key_concepts": ["ethical reflection", "child education", "moral lesson"],
+            "marks": 4
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss how repetition strengthens the poem’s themes.",
+            "answer": "Repeated words and phrases emphasize key ideas like greed, curiosity, and moral consequence, reinforcing the overall lesson.",
+            "answer_outline": ["Repetition", "Effect", "Theme reinforcement"],
+            "key_concepts": ["repetition", "emphasis", "themes"],
+            "marks": 4
+        },
+        {
+            "question_number": 17,
+            "question": "Examine the impact of the mother’s downfall on the reader.",
+            "answer": "It evokes both humor and moral reflection, showing that negative actions have direct consequences.",
+            "answer_outline": ["Downfall", "Impact", "Moral lesson"],
+            "key_concepts": ["consequence", "reflection", "humor"],
+            "marks": 4
+        },
+        {
+            "question_number": 18,
+            "question": "Analyze how the poem blends storytelling with allegory.",
+            "answer": "Characters and events serve as allegorical representations of human traits like greed and generosity, teaching lessons beyond the literal story.",
+            "answer_outline": ["Storytelling", "Allegory"],
+            "key_concepts": ["allegory", "human traits", "moral teaching"],
+            "marks": 4
+        },
+        {
+            "question_number": 19,
+            "question": "Discuss how the poem demonstrates cause-and-effect relationships.",
+            "answer": "The mother’s greedy actions directly lead to negative consequences, showing clear moral cause-and-effect reasoning.",
+            "answer_outline": ["Cause and effect", "Analysis"],
+            "key_concepts": ["greed", "consequence", "moral reasoning"],
+            "marks": 4
+        },
+        {
+            "question_number": 20,
+            "question": "Examine the poet’s use of folk rhyme and meter to enhance the narrative.",
+            "answer": "Rhyme and meter create a musical quality, making the story easier to follow and reinforcing key lessons through rhythm and repetition.",
+            "answer_outline": ["Rhyme", "Meter", "Narrative impact"],
+            "key_concepts": ["rhyme", "meter", "storytelling"],
+            "marks": 4
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how the poem encourages moral self-awareness in readers.",
+            "answer": "By showing the repercussions of greed and the virtues of generosity, it prompts readers to reflect on their own behavior.",
+            "answer_outline": ["Moral self-awareness", "Encouragement"],
+            "key_concepts": ["reflection", "ethics", "behavior"],
+            "marks": 4
+        },
+        {
+            "question_number": 22,
+            "question": "Analyze the function of characterization in conveying moral lessons.",
+            "answer": "Characters are exaggerated to clearly represent traits like greed or wisdom, making ethical lessons more vivid and understandable.",
+            "answer_outline": ["Characterization", "Moral impact"],
+            "key_concepts": ["exaggeration", "lesson clarity", "traits"],
+            "marks": 4
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the poem’s relevance in modern times.",
+            "answer": "Greed and selfishness remain relevant issues, and the poem’s lessons on generosity, moderation, and ethical behavior still apply today.",
+            "answer_outline": ["Modern relevance", "Ethics"],
+            "key_concepts": ["contemporary relevance", "greed", "generosity"],
+            "marks": 4
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the interplay of narrative tension and moral clarity in the poem.",
+            "answer": "Tension arises from the mother’s actions and potential consequences, while the moral is always clear, maintaining engagement without ambiguity.",
+            "answer_outline": ["Tension", "Moral clarity", "Effect"],
+            "key_concepts": ["narrative tension", "lesson clarity", "engagement"],
+            "marks": 4
+        },
+        {
+            "question_number": 25,
+            "question": "Provide a comprehensive interpretive analysis of the poem.",
+            "answer": "The poem blends humor, exaggeration, and folk storytelling to teach that greed brings misfortune, generosity brings reward, and ethical reflection is essential, making it timeless and universally applicable.",
+            "answer_outline": ["Interpretation", "Analysis", "Moral"],
+            "key_concepts": ["greed", "generosity", "ethical reflection", "timelessness"],
+            "marks": 5
+        }
+    ]
+}

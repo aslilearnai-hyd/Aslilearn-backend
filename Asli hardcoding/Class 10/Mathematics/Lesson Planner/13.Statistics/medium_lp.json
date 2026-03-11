@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Statistics",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand different types of data clearly",
+        "Apply formulas for mean, median, and mode",
+        "Interpret data from tables and graphs",
+        "Solve medium-level statistical problems accurately",
+        "Improve calculation speed and accuracy"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Data and Types",
+            "topics_covered": [
+                "Raw data",
+                "Grouped and ungrouped data",
+                "Discrete and continuous data"
+            ],
+            "teaching_strategy": [
+                "Recap discussion",
+                "Real-life examples"
+            ],
+            "student_activities": [
+                "Classify given data sets"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Arithmetic Mean – Direct Method",
+            "topics_covered": [
+                "Mean formula",
+                "Simple numerical problems"
+            ],
+            "teaching_strategy": [
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Calculate mean for small data sets"
+            ],
+            "assessment": [
+                "Classwork review"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mean – Assumed Mean Method",
+            "topics_covered": [
+                "Concept of assumed mean",
+                "Numerical problems"
+            ],
+            "teaching_strategy": [
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Solve medium-level mean problems"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Median of Grouped Data",
+            "topics_covered": [
+                "Cumulative frequency",
+                "Median formula"
+            ],
+            "teaching_strategy": [
+                "Tabular explanation"
+            ],
+            "student_activities": [
+                "Prepare cumulative frequency tables",
+                "Find median"
+            ],
+            "assessment": [
+                "Short written test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Mode of Grouped Data",
+            "topics_covered": [
+                "Modal class",
+                "Mode formula"
+            ],
+            "teaching_strategy": [
+                "Concept-based explanation"
+            ],
+            "student_activities": [
+                "Identify modal class",
+                "Solve numerical problems"
+            ],
+            "assessment": [
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Graphical Representation",
+            "topics_covered": [
+                "Bar graph",
+                "Histogram",
+                "Frequency polygon (introduction)"
+            ],
+            "teaching_strategy": [
+                "Graph drawing demonstration"
+            ],
+            "student_activities": [
+                "Draw graphs on graph paper"
+            ],
+            "assessment": [
+                "Graph evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Mixed Statistical Problems",
+            "topics_covered": [
+                "Mean, median, and mode combined"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Solve mixed problems"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Test",
+            "topics_covered": [
+                "Complete chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session"
+            ],
+            "student_activities": [
+                "Solve mixed problems",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teacher_tip": "Ensure students arrange data correctly and choose the appropriate method before starting calculations."
+}

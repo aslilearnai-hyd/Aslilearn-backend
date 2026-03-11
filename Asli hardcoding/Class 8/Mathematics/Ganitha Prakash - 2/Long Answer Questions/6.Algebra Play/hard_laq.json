@@ -1,0 +1,234 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 6: Algebra Play",
+  "generated_at": "2026-03-04T20:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Design a number trick that always gives the result 3 and prove it algebraically.",
+      "answer": "Let the number be x. Multiply by 2, add 6, divide by 2, subtract x. Result = 3.",
+      "answer_outline": ["Define variable", "Apply operations", "Simplify"],
+      "key_concepts": ["number tricks", "algebraic proof"],
+      "marks": 6,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Derive the expression for the top number in a four-row number pyramid.",
+      "answer": "If the bottom row numbers are a, b, c, d then the top number becomes a + 3b + 3c + d.",
+      "answer_outline": ["Assign variables", "Build rows", "Simplify"],
+      "key_concepts": ["patterns", "expressions"],
+      "marks": 6,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the relationship between Fibonacci numbers and number pyramids.",
+      "answer": "Using Fibonacci numbers at the base creates predictable sums higher in the pyramid.",
+      "answer_outline": ["Sequence pattern"],
+      "key_concepts": ["Fibonacci"],
+      "marks": 6,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Prove the algebraic formula for the sum of a 2×2 calendar grid.",
+      "answer": "Sum = 4a + 16.",
+      "answer_outline": ["Assign variable", "Add terms"],
+      "key_concepts": ["algebraic expressions"],
+      "marks": 6,
+      "source_section": "Section 6.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain algebraically why the largest digit should be the multiplier to get the largest product.",
+      "answer": "Comparing algebraic products shows qp × r produces the maximum value.",
+      "answer_outline": ["Define digits", "Compare products"],
+      "key_concepts": ["comparison"],
+      "marks": 6,
+      "source_section": "Section 6.5"
+    },
+    {
+      "question_number": 6,
+      "question": "Prove that the difference of a two-digit number and its reverse is divisible by 9.",
+      "answer": "Difference = 9(b − a).",
+      "answer_outline": ["Represent digits", "Factorise"],
+      "key_concepts": ["divisibility"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 7,
+      "question": "Show algebraically that the sum of a number and its reverse is divisible by 11.",
+      "answer": "(10a+b)+(10b+a)=11(a+b).",
+      "answer_outline": ["Representation", "Factorization"],
+      "key_concepts": ["divisibility"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain algebraically why repeating a three-digit number abcabc is divisible by 7, 11 and 13.",
+      "answer": "abcabc = abc × 1001 and 1001 = 7 × 11 × 13.",
+      "answer_outline": ["Factorisation"],
+      "key_concepts": ["number properties"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 9,
+      "question": "Solve the horses and hens puzzle using algebra.",
+      "answer": "Let horses = x and hens = y. Solve equations using heads and legs.",
+      "answer_outline": ["Form equations", "Solve"],
+      "key_concepts": ["linear equations"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 10,
+      "question": "Solve the age puzzle where a mother is five times her daughter's age.",
+      "answer": "Form equations based on given conditions and solve.",
+      "answer_outline": ["Define variables", "Solve equations"],
+      "key_concepts": ["age problems"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain algebraically how the dosa cart profit problem can be solved.",
+      "answer": "Use equations to relate cost, selling price and profit.",
+      "answer_outline": ["Cost equation"],
+      "key_concepts": ["applications"],
+      "marks": 6,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain how algebra helps decode number tricks.",
+      "answer": "Variables represent unknown numbers allowing operations to be simplified.",
+      "answer_outline": ["Variables"],
+      "key_concepts": ["algebra"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Derive the algebraic expression for a three-digit number.",
+      "answer": "If digits are a, b, c then the number is 100a + 10b + c.",
+      "answer_outline": ["Place values"],
+      "key_concepts": ["digit representation"],
+      "marks": 5,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how patterns help in predicting results in number tricks.",
+      "answer": "Patterns reveal consistent results which can be expressed using algebraic formulas.",
+      "answer_outline": ["Pattern observation", "Generalization"],
+      "key_concepts": ["patterns"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how algebra can represent unknown quantities in puzzles.",
+      "answer": "Unknown numbers are represented by variables and solved using equations.",
+      "answer_outline": ["Variables", "Equations"],
+      "key_concepts": ["variables"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the role of algebra in solving real-life problems.",
+      "answer": "Algebra helps convert real-life situations into mathematical equations.",
+      "answer_outline": ["Modelling"],
+      "key_concepts": ["applications"],
+      "marks": 5,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how number pyramids help develop algebraic thinking.",
+      "answer": "They show patterns that can be expressed using algebraic expressions.",
+      "answer_outline": ["Pattern reasoning"],
+      "key_concepts": ["algebraic thinking"],
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the concept of variables with suitable examples.",
+      "answer": "Variables represent unknown numbers such as x in x + 5 = 10.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["variables"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how algebra can simplify complicated calculations.",
+      "answer": "By using formulas and expressions, repeated calculations can be simplified.",
+      "answer_outline": ["Expression simplification"],
+      "key_concepts": ["algebraic simplification"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain why number tricks appear magical but are actually based on algebra.",
+      "answer": "They follow algebraic operations that always produce predictable results.",
+      "answer_outline": ["Hidden algebra"],
+      "key_concepts": ["algebraic reasoning"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how Fibonacci numbers appear in everyday patterns.",
+      "answer": "Fibonacci numbers appear in natural patterns such as plant growth and spirals.",
+      "answer_outline": ["Examples"],
+      "key_concepts": ["Fibonacci sequence"],
+      "marks": 5,
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the difference between a constant and a variable.",
+      "answer": "A constant has a fixed value whereas a variable can change.",
+      "answer_outline": ["Definitions"],
+      "key_concepts": ["constants", "variables"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how algebraic expressions represent real-world quantities.",
+      "answer": "Expressions combine variables and constants to represent quantities.",
+      "answer_outline": ["Expression components"],
+      "key_concepts": ["algebraic expressions"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how factorisation helps prove divisibility rules.",
+      "answer": "Factorisation shows common factors which confirm divisibility.",
+      "answer_outline": ["Factorisation"],
+      "key_concepts": ["divisibility"],
+      "marks": 5,
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of algebra in mathematics.",
+      "answer": "Algebra provides a systematic way to describe patterns and relationships between numbers.",
+      "answer_outline": ["Importance"],
+      "key_concepts": ["algebra"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    }
+  ]
+}

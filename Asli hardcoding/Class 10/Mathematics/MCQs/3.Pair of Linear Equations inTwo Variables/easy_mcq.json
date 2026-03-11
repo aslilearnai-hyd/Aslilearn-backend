@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-02-27T19:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A linear equation in two variables has how many variables?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "It contains two variables.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Graph of a linear equation is a",
+            "options": {
+                "A": "Circle",
+                "B": "Curve",
+                "C": "Straight line",
+                "D": "Parabola"
+            },
+            "correct_answer": "C",
+            "explanation": "Linear equations represent straight lines.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "If two lines intersect, the system has",
+            "options": {
+                "A": "No solution",
+                "B": "One solution",
+                "C": "Two solutions",
+                "D": "Infinite solutions"
+            },
+            "correct_answer": "B",
+            "explanation": "Intersecting lines meet at one point.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Parallel lines represent",
+            "options": {
+                "A": "Unique solution",
+                "B": "Infinite solutions",
+                "C": "No solution",
+                "D": "Two solutions"
+            },
+            "correct_answer": "C",
+            "explanation": "Parallel lines never intersect.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Coincident lines have",
+            "options": {
+                "A": "No solution",
+                "B": "One solution",
+                "C": "Two solutions",
+                "D": "Infinite solutions"
+            },
+            "correct_answer": "D",
+            "explanation": "Coincident lines overlap completely.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Equation x + y = 5 represents",
+            "options": {
+                "A": "Curve",
+                "B": "Point",
+                "C": "Line",
+                "D": "Circle"
+            },
+            "correct_answer": "C",
+            "explanation": "It is a linear equation.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "How many equations are required to solve two variables?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "Two equations are required.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Solution of pair of equations means",
+            "options": {
+                "A": "Common point",
+                "B": "Parallel lines",
+                "C": "Slope",
+                "D": "Equation"
+            },
+            "correct_answer": "A",
+            "explanation": "Solution is the common point.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which pair has no solution?",
+            "options": {
+                "A": "Intersecting",
+                "B": "Coincident",
+                "C": "Parallel",
+                "D": "Same"
+            },
+            "correct_answer": "C",
+            "explanation": "Parallel lines never meet.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Graphical method uses",
+            "options": {
+                "A": "Algebra",
+                "B": "Graph",
+                "C": "Formula",
+                "D": "Calculator"
+            },
+            "correct_answer": "B",
+            "explanation": "Graphical method uses graphs.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Equation 2x + 3y = 6 has how many solutions?",
+            "options": {
+                "A": "One",
+                "B": "Two",
+                "C": "Infinite",
+                "D": "Zero"
+            },
+            "correct_answer": "C",
+            "explanation": "A line has infinite points.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "If a₁/a₂ = b₁/b₂ ≠ c₁/c₂ then lines are",
+            "options": {
+                "A": "Intersecting",
+                "B": "Parallel",
+                "C": "Coincident",
+                "D": "Perpendicular"
+            },
+            "correct_answer": "B",
+            "explanation": "Condition for parallel lines.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which represents consistent system?",
+            "options": {
+                "A": "Parallel",
+                "B": "Intersecting",
+                "C": "None",
+                "D": "Both A and C"
+            },
+            "correct_answer": "B",
+            "explanation": "Intersecting lines have solution.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Point of intersection gives",
+            "options": {
+                "A": "Slope",
+                "B": "Equation",
+                "C": "Solution",
+                "D": "Axis"
+            },
+            "correct_answer": "C",
+            "explanation": "Intersection point is solution.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "System with no solution is called",
+            "options": {
+                "A": "Consistent",
+                "B": "Dependent",
+                "C": "Independent",
+                "D": "Inconsistent"
+            },
+            "correct_answer": "D",
+            "explanation": "No solution means inconsistent.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Number of solutions of coincident lines is",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "Infinite"
+            },
+            "correct_answer": "D",
+            "explanation": "Infinite common points.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which method uses plotting?",
+            "options": {
+                "A": "Algebraic",
+                "B": "Graphical",
+                "C": "Substitution",
+                "D": "Elimination"
+            },
+            "correct_answer": "B",
+            "explanation": "Graphical method uses plots.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Pair of equations represent",
+            "options": {
+                "A": "One line",
+                "B": "Two lines",
+                "C": "Curve",
+                "D": "Circle"
+            },
+            "correct_answer": "B",
+            "explanation": "Each equation is a line.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "If lines coincide, ratios are",
+            "options": {
+                "A": "All equal",
+                "B": "All unequal",
+                "C": "Two equal",
+                "D": "None"
+            },
+            "correct_answer": "A",
+            "explanation": "Condition for coincident lines.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Linear equations are of degree",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Linear equations have degree 1.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "x = 2, y = 3 is a",
+            "options": {
+                "A": "Line",
+                "B": "Point",
+                "C": "Equation",
+                "D": "Graph"
+            },
+            "correct_answer": "B",
+            "explanation": "It represents a point.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Graphical solution is approximate because",
+            "options": {
+                "A": "Uses calculator",
+                "B": "Uses drawing",
+                "C": "Uses algebra",
+                "D": "Exact method"
+            },
+            "correct_answer": "B",
+            "explanation": "Graph reading may have errors.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which is a solution of x + y = 5?",
+            "options": {
+                "A": "(1,1)",
+                "B": "(2,2)",
+                "C": "(3,2)",
+                "D": "(0,0)"
+            },
+            "correct_answer": "C",
+            "explanation": "3 + 2 = 5.",
+            "difficulty": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Pair of equations is consistent if it has",
+            "options": {
+                "A": "No solution",
+                "B": "At least one solution",
+                "C": "Only two solutions",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Consistent means solvable.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Two equations represent same line if they are",
+            "options": {
+                "A": "Parallel",
+                "B": "Intersecting",
+                "C": "Coincident",
+                "D": "Perpendicular"
+            },
+            "correct_answer": "C",
+            "explanation": "Same line means coincident.",
+            "difficulty": "easy",
+            "source_section": "Section 3.2"
+        }
+    ]
+}

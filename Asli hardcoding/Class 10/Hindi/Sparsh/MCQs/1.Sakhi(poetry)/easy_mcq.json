@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Sakhi (Kabir)",
+  "generated_at": "2026-03-10T00:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "‘साखी’ शब्द किस शब्द से बना है?",
+      "options": {
+        "A": "साक्षी",
+        "B": "साथी",
+        "C": "सखी",
+        "D": "सखा"
+      },
+      "correct_answer": "A",
+      "explanation": "साखी शब्द ‘साक्षी’ से बना है जिसका अर्थ प्रत्यक्ष ज्ञान होता है।",
+      "difficulty": "easy",
+      "source_section": "पाठ प्रवेश"
+    },
+    {
+      "question_number": 2,
+      "question": "कबीर किस प्रकार के कवि थे?",
+      "options": {
+        "A": "भक्ति कवि",
+        "B": "प्रकृति कवि",
+        "C": "हास्य कवि",
+        "D": "वीर कवि"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर भक्ति आंदोलन के प्रमुख संत और कवि थे।",
+      "difficulty": "easy",
+      "source_section": "कबीर का परिचय"
+    },
+    {
+      "question_number": 3,
+      "question": "‘ऐसी वाणी बोलिए’ साखी में किस बात का महत्व बताया गया है?",
+      "options": {
+        "A": "मीठी वाणी",
+        "B": "तेज आवाज",
+        "C": "क्रोध",
+        "D": "चुप रहना"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर ने मीठी और विनम्र वाणी के महत्व को बताया है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 4,
+      "question": "मीठी वाणी से क्या होता है?",
+      "options": {
+        "A": "लोग दुखी होते हैं",
+        "B": "लोग खुश होते हैं",
+        "C": "लोग नाराज़ होते हैं",
+        "D": "कुछ नहीं होता"
+      },
+      "correct_answer": "B",
+      "explanation": "मीठी वाणी से दूसरों को सुख और खुशी मिलती है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 5,
+      "question": "‘कस्तूरी कुंडल बसे’ साखी में कस्तूरी किसका प्रतीक है?",
+      "options": {
+        "A": "ईश्वर",
+        "B": "धन",
+        "C": "खुशी",
+        "D": "मित्र"
+      },
+      "correct_answer": "A",
+      "explanation": "कस्तूरी का उदाहरण ईश्वर के भीतर होने का प्रतीक है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 6,
+      "question": "कबीर के अनुसार ईश्वर कहाँ है?",
+      "options": {
+        "A": "केवल मंदिर में",
+        "B": "केवल जंगल में",
+        "C": "हर व्यक्ति के भीतर",
+        "D": "केवल आकाश में"
+      },
+      "correct_answer": "C",
+      "explanation": "कबीर के अनुसार ईश्वर हर व्यक्ति के भीतर होता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 7,
+      "question": "‘जब मैं था तब हरि नहीं’ साखी में किसका त्याग करने की बात कही गई है?",
+      "options": {
+        "A": "अहंकार",
+        "B": "धन",
+        "C": "भोजन",
+        "D": "खेल"
+      },
+      "correct_answer": "A",
+      "explanation": "इस साखी में अहंकार छोड़ने का संदेश दिया गया है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 8,
+      "question": "अहंकार छोड़ने से क्या प्राप्त होता है?",
+      "options": {
+        "A": "धन",
+        "B": "ज्ञान",
+        "C": "खेल",
+        "D": "भोजन"
+      },
+      "correct_answer": "B",
+      "explanation": "अहंकार छोड़ने से सच्चा ज्ञान प्राप्त होता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 9,
+      "question": "‘निंदक नियरे राखिए’ साखी में किसका महत्व बताया गया है?",
+      "options": {
+        "A": "मित्र",
+        "B": "निंदक",
+        "C": "शिक्षक",
+        "D": "राजा"
+      },
+      "correct_answer": "B",
+      "explanation": "कबीर कहते हैं कि निंदक हमें सुधारने में मदद करता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 10,
+      "question": "निंदक से क्या लाभ होता है?",
+      "options": {
+        "A": "गलतियाँ सुधरती हैं",
+        "B": "झगड़ा होता है",
+        "C": "धन मिलता है",
+        "D": "भोजन मिलता है"
+      },
+      "correct_answer": "A",
+      "explanation": "निंदक हमारी गलतियों को बताकर हमें सुधारता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 11,
+      "question": "‘पोथी पढ़ि पढ़ि जग मुआ’ साखी में किसका महत्व बताया गया है?",
+      "options": {
+        "A": "अनुभव",
+        "B": "खेल",
+        "C": "भोजन",
+        "D": "धन"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर बताते हैं कि अनुभव से ही सच्चा ज्ञान मिलता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 12,
+      "question": "कबीर की भाषा कैसी है?",
+      "options": {
+        "A": "कठिन",
+        "B": "सरल",
+        "C": "अंग्रेजी",
+        "D": "संस्कृत"
+      },
+      "correct_answer": "B",
+      "explanation": "कबीर की भाषा सरल और लोकभाषा पर आधारित है।",
+      "difficulty": "easy",
+      "source_section": "भाषा की विशेषता"
+    },
+    {
+      "question_number": 13,
+      "question": "कबीर की भाषा को क्या कहा जाता है?",
+      "options": {
+        "A": "सधुक्कड़ी",
+        "B": "ब्रज",
+        "C": "संस्कृत",
+        "D": "अंग्रेजी"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की भाषा को सधुक्कड़ी कहा जाता है।",
+      "difficulty": "easy",
+      "source_section": "भाषा की विशेषता"
+    },
+    {
+      "question_number": 14,
+      "question": "कबीर की साखियाँ किस छंद में लिखी गई हैं?",
+      "options": {
+        "A": "दोहा",
+        "B": "गीत",
+        "C": "गजल",
+        "D": "कविता"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की साखियाँ दोहा छंद में लिखी गई हैं।",
+      "difficulty": "easy",
+      "source_section": "पाठ प्रवेश"
+    },
+    {
+      "question_number": 15,
+      "question": "कबीर किस आंदोलन से जुड़े थे?",
+      "options": {
+        "A": "भक्ति आंदोलन",
+        "B": "स्वतंत्रता आंदोलन",
+        "C": "खेल आंदोलन",
+        "D": "व्यापार आंदोलन"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर भक्ति आंदोलन के प्रमुख संत थे।",
+      "difficulty": "easy",
+      "source_section": "कबीर का परिचय"
+    },
+    {
+      "question_number": 16,
+      "question": "कबीर की साखियाँ किस प्रकार की शिक्षा देती हैं?",
+      "options": {
+        "A": "नैतिक शिक्षा",
+        "B": "खेल शिक्षा",
+        "C": "व्यापार शिक्षा",
+        "D": "यात्रा शिक्षा"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की साखियाँ नैतिक और आध्यात्मिक शिक्षा देती हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 17,
+      "question": "कबीर के अनुसार सच्चा ज्ञान कैसे प्राप्त होता है?",
+      "options": {
+        "A": "अनुभव से",
+        "B": "खेल से",
+        "C": "भोजन से",
+        "D": "धन से"
+      },
+      "correct_answer": "A",
+      "explanation": "सच्चा ज्ञान अनुभव से प्राप्त होता है।",
+      "difficulty": "easy",
+      "source_section": "साखी"
+    },
+    {
+      "question_number": 18,
+      "question": "कबीर की साखियाँ किस बारे में शिक्षा देती हैं?",
+      "options": {
+        "A": "जीवन मूल्य",
+        "B": "खेल",
+        "C": "भोजन",
+        "D": "खरीदारी"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की साखियाँ जीवन मूल्यों और नैतिकता की शिक्षा देती हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 19,
+      "question": "कबीर के अनुसार अच्छे व्यवहार का क्या परिणाम होता है?",
+      "options": {
+        "A": "प्रेम और शांति",
+        "B": "झगड़ा",
+        "C": "डर",
+        "D": "उदासी"
+      },
+      "correct_answer": "A",
+      "explanation": "अच्छे व्यवहार से समाज में प्रेम और शांति बनी रहती है।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 20,
+      "question": "कबीर की साखियाँ लोगों को क्या करने के लिए प्रेरित करती हैं?",
+      "options": {
+        "A": "सत्य और अच्छे व्यवहार अपनाने के लिए",
+        "B": "झगड़ा करने के लिए",
+        "C": "देश छोड़ने के लिए",
+        "D": "खेलने के लिए"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की साखियाँ सत्य और अच्छे जीवन की प्रेरणा देती हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 21,
+      "question": "कबीर की साखियों में मुख्य रूप से किसका महत्व बताया गया है?",
+      "options": {
+        "A": "सत्य",
+        "B": "धन",
+        "C": "खेल",
+        "D": "भोजन"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर सत्य और ज्ञान के महत्व को बताते हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 22,
+      "question": "कबीर की साखियाँ किसके लिए लिखी गई थीं?",
+      "options": {
+        "A": "सामान्य लोगों के लिए",
+        "B": "केवल राजाओं के लिए",
+        "C": "केवल बच्चों के लिए",
+        "D": "केवल विद्वानों के लिए"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर की साखियाँ सामान्य लोगों के लिए लिखी गई थीं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 23,
+      "question": "कबीर ने अपनी साखियों में किसका विरोध किया है?",
+      "options": {
+        "A": "अज्ञान और अहंकार",
+        "B": "खेल",
+        "C": "भोजन",
+        "D": "यात्रा"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर अज्ञान और अहंकार का विरोध करते हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 24,
+      "question": "कबीर के अनुसार मनुष्य को कैसा व्यवहार करना चाहिए?",
+      "options": {
+        "A": "विनम्र",
+        "B": "क्रोधित",
+        "C": "घमंडी",
+        "D": "लापरवाह"
+      },
+      "correct_answer": "A",
+      "explanation": "कबीर विनम्र और मधुर व्यवहार की शिक्षा देते हैं।",
+      "difficulty": "easy",
+      "source_section": "साखियों का संदेश"
+    },
+    {
+      "question_number": 25,
+      "question": "‘साखी’ पाठ का मुख्य संदेश क्या है?",
+      "options": {
+        "A": "सत्य और अच्छे व्यवहार का पालन करना",
+        "B": "झगड़ा करना",
+        "C": "देश छोड़ना",
+        "D": "खेल खेलना"
+      },
+      "correct_answer": "A",
+      "explanation": "पाठ का मुख्य संदेश सत्य, विनम्रता और अच्छे व्यवहार को अपनाना है।",
+      "difficulty": "easy",
+      "source_section": "पाठ का निष्कर्ष"
+    }
+  ]
+}

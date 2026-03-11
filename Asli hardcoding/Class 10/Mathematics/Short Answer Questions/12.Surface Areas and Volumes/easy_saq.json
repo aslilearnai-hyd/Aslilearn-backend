@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 12: Surface Areas and Volumes",
+    "generated_at": "2026-03-01T21:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a cuboid.",
+            "answer": "A cuboid is a solid bounded by six rectangular faces.",
+            "key_concepts": [
+                "cuboid"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define a cube.",
+            "answer": "A cube is a cuboid in which all edges are equal.",
+            "key_concepts": [
+                "cube"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Write the formula for curved surface area of a cylinder.",
+            "answer": "The curved surface area of a cylinder is 2πrh.",
+            "key_concepts": [
+                "CSA of cylinder"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the formula for total surface area of a cube.",
+            "answer": "The total surface area of a cube is 6a².",
+            "key_concepts": [
+                "TSA of cube"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Define a hemisphere.",
+            "answer": "A hemisphere is half of a sphere.",
+            "key_concepts": [
+                "hemisphere"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Write the formula for volume of a cuboid.",
+            "answer": "The volume of a cuboid is l × b × h.",
+            "key_concepts": [
+                "volume of cuboid"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Write the formula for volume of a cube.",
+            "answer": "The volume of a cube is a³.",
+            "key_concepts": [
+                "volume of cube"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is meant by curved surface area?",
+            "answer": "Curved surface area is the area of only the curved part of a solid.",
+            "key_concepts": [
+                "CSA"
+            ],
+            "marks": 2,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Write the formula for curved surface area of a cone.",
+            "answer": "The curved surface area of a cone is πrl.",
+            "key_concepts": [
+                "CSA of cone"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the base shape of a cylinder?",
+            "answer": "The base of a cylinder is circular.",
+            "key_concepts": [
+                "cylinder base"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Write the formula for volume of a cylinder.",
+            "answer": "The volume of a cylinder is πr²h.",
+            "key_concepts": [
+                "volume of cylinder"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Define slant height of a cone.",
+            "answer": "Slant height is the distance from the vertex of the cone to any point on the circumference of the base.",
+            "key_concepts": [
+                "slant height"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Write the formula for curved surface area of a hemisphere.",
+            "answer": "The curved surface area of a hemisphere is 2πr².",
+            "key_concepts": [
+                "CSA of hemisphere"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Write the formula for volume of a cone.",
+            "answer": "The volume of a cone is (1/3)πr²h.",
+            "key_concepts": [
+                "volume of cone"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is meant by total surface area?",
+            "answer": "Total surface area is the sum of the areas of all the faces of a solid.",
+            "key_concepts": [
+                "TSA"
+            ],
+            "marks": 2,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Write the formula for volume of a hemisphere.",
+            "answer": "The volume of a hemisphere is (2/3)πr³.",
+            "key_concepts": [
+                "volume of hemisphere"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "State the approximate value of π.",
+            "answer": "The approximate value of π is 3.14 or 22/7.",
+            "key_concepts": [
+                "pi value"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the unit of surface area?",
+            "answer": "The unit of surface area is square units like cm² or m².",
+            "key_concepts": [
+                "units"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the unit of volume?",
+            "answer": "The unit of volume is cubic units like cm³ or m³.",
+            "key_concepts": [
+                "units"
+            ],
+            "marks": 1,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "How many faces does a cube have?",
+            "answer": "A cube has six faces.",
+            "key_concepts": [
+                "faces"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the shape of the base of a cone?",
+            "answer": "The base of a cone is circular.",
+            "key_concepts": [
+                "cone base"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the diameter of a sphere?",
+            "answer": "The diameter of a sphere is twice its radius.",
+            "key_concepts": [
+                "diameter"
+            ],
+            "marks": 1,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is capacity?",
+            "answer": "Capacity is the amount of liquid a container can hold.",
+            "key_concepts": [
+                "capacity"
+            ],
+            "marks": 2,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the shape of a medicine capsule?",
+            "answer": "A medicine capsule is a cylinder with two hemispherical ends.",
+            "key_concepts": [
+                "capsule"
+            ],
+            "marks": 2,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the shape of a water tank generally?",
+            "answer": "Water tanks are generally cylindrical in shape.",
+            "key_concepts": [
+                "application"
+            ],
+            "marks": 2,
+            "source_section": "12.1"
+        }
+    ]
+}

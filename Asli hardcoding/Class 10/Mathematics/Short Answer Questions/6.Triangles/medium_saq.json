@@ -1,0 +1,263 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 6: Triangles",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-01T19:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State the two conditions required for two triangles to be similar.",
+            "answer": "Two triangles are similar if their corresponding angles are equal and their corresponding sides are proportional.",
+            "key_concepts": [
+                "similar triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are all equilateral triangles similar?",
+            "answer": "All equilateral triangles have all angles equal to 60° and their corresponding sides are proportional.",
+            "key_concepts": [
+                "equilateral triangles",
+                "similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 3,
+            "question": "State the Basic Proportionality Theorem.",
+            "answer": "If a line is drawn parallel to one side of a triangle to intersect the other two sides, it divides those sides in the same ratio.",
+            "key_concepts": [
+                "BPT",
+                "Thales theorem"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What is meant by the converse of the Basic Proportionality Theorem?",
+            "answer": "If a line divides two sides of a triangle in the same ratio, then it is parallel to the third side.",
+            "key_concepts": [
+                "converse of BPT"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Differentiate between congruent and similar triangles.",
+            "answer": "Congruent triangles have the same shape and size, whereas similar triangles have the same shape but not necessarily the same size.",
+            "key_concepts": [
+                "congruent vs similar"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "State the AAA similarity criterion.",
+            "answer": "If all corresponding angles of two triangles are equal, then the triangles are similar.",
+            "key_concepts": [
+                "AAA similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "State the AA similarity criterion.",
+            "answer": "If two angles of one triangle are equal to two angles of another triangle, then the triangles are similar.",
+            "key_concepts": [
+                "AA similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "State the SSS similarity criterion.",
+            "answer": "If the corresponding sides of two triangles are proportional, then the triangles are similar.",
+            "key_concepts": [
+                "SSS similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 9,
+            "question": "State the SAS similarity criterion.",
+            "answer": "If one angle of a triangle is equal to one angle of another triangle and the including sides are proportional, then the triangles are similar.",
+            "key_concepts": [
+                "SAS similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is meant by scale factor in similar triangles?",
+            "answer": "Scale factor is the ratio of the corresponding sides of two similar triangles.",
+            "key_concepts": [
+                "scale factor"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are corresponding angles equal in similar triangles?",
+            "answer": "Because similar triangles have the same shape, their corresponding angles are equal.",
+            "key_concepts": [
+                "corresponding angles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are all circles similar?",
+            "answer": "All circles have the same shape irrespective of their radii.",
+            "key_concepts": [
+                "similar figures"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Can two right-angled triangles be similar? Give reason.",
+            "answer": "Yes, if their corresponding acute angles are equal, then they are similar.",
+            "key_concepts": [
+                "right triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens to the ratio of areas of two similar triangles?",
+            "answer": "The ratio of their areas is equal to the square of the ratio of their corresponding sides.",
+            "key_concepts": [
+                "areas of similar triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are a square and a rectangle not similar?",
+            "answer": "Though their angles are equal, their corresponding sides are not in the same ratio.",
+            "key_concepts": [
+                "non-similar figures"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of parallel lines in triangle similarity.",
+            "answer": "Parallel lines help in establishing proportional sides using the Basic Proportionality Theorem.",
+            "key_concepts": [
+                "parallel lines",
+                "BPT"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is meant by indirect measurement?",
+            "answer": "Indirect measurement is finding distances or heights using similarity instead of direct measurement.",
+            "key_concepts": [
+                "applications of similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why are corresponding sides proportional in similar triangles?",
+            "answer": "Because similar triangles are scaled versions of each other.",
+            "key_concepts": [
+                "proportionality"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 19,
+            "question": "What is meant by equiangular triangles?",
+            "answer": "Triangles whose corresponding angles are equal are called equiangular triangles.",
+            "key_concepts": [
+                "equiangular triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are similar figures not necessarily congruent?",
+            "answer": "Because similar figures may differ in size even though they have the same shape.",
+            "key_concepts": [
+                "similar vs congruent"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is meant by corresponding vertices?",
+            "answer": "Vertices that occupy the same relative position in similar figures are called corresponding vertices.",
+            "key_concepts": [
+                "correspondence"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is correct correspondence important in writing similarity statements?",
+            "answer": "Incorrect correspondence leads to wrong proportional relationships between sides.",
+            "key_concepts": [
+                "triangle correspondence"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Can two isosceles triangles be always similar?",
+            "answer": "No, unless their corresponding angles are equal or sides are proportional.",
+            "key_concepts": [
+                "isosceles triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the role of medians in similar triangles?",
+            "answer": "Medians of similar triangles are proportional to the corresponding sides.",
+            "key_concepts": [
+                "medians",
+                "similar triangles"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is triangle similarity important in geometry?",
+            "answer": "It helps in solving problems related to height, distance, and scale.",
+            "key_concepts": [
+                "applications of similarity"
+            ],
+            "marks": 2,
+            "source_section": "Section 6.1"
+        }
+    ]
+}

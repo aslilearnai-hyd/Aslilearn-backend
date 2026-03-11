@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: Human Resources",
+  "generated_at": "2026-03-07T12:50:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What are human resources?",
+        "correct_answer": "People and their skills, knowledge, and abilities that contribute to economic development",
+        "explanation": "Human resources refer to people who use their knowledge and skills to develop resources and improve productivity.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is population distribution?",
+        "correct_answer": "The way people are spread across the Earth's surface",
+        "explanation": "Population distribution shows where people live and how populations vary across different regions.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is population density?",
+        "correct_answer": "The number of people living per unit area of land",
+        "explanation": "Population density helps understand how crowded a region is.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "Name two densely populated regions of the world.",
+        "correct_answer": "South Asia and East Asia",
+        "explanation": "These regions have fertile land, favorable climate, and economic opportunities that support large populations.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "Name two sparsely populated regions of the world.",
+        "correct_answer": "Polar regions and deserts",
+        "explanation": "Extreme climates and lack of resources make these regions difficult for large populations.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What are the main factors affecting population distribution?",
+        "correct_answer": "Physical factors and human factors",
+        "explanation": "Physical factors include climate and water availability, while human factors include jobs and industries.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What are the three main causes of population change?",
+        "correct_answer": "Birth rate, death rate, and migration",
+        "explanation": "Population size changes due to births, deaths, and the movement of people.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is migration?",
+        "correct_answer": "The movement of people from one place to another",
+        "explanation": "Migration occurs due to push factors such as unemployment or pull factors such as better opportunities.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "What is population composition?",
+        "correct_answer": "The structure of population based on age, gender, literacy, and occupation",
+        "explanation": "Population composition helps understand the characteristics of a population.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What is human resource development?",
+        "correct_answer": "The process of improving people's skills, education, and health",
+        "explanation": "Human resource development increases productivity and supports national development.",
+        "source_section": "Section 8"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Human Resources",
+        "content": "Human resources refer to people and their abilities that help develop natural resources and improve economic activities.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Population Distribution",
+        "content": "Population distribution refers to how people are spread across the world, with some regions having dense populations and others having sparse populations.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Population Density",
+        "content": "Population density measures the number of people living in a particular area and helps understand settlement patterns.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Migration",
+        "content": "Migration is the movement of people from one place to another due to push factors like unemployment or pull factors like better opportunities.",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Human Resource Development",
+        "content": "Human resource development focuses on improving education, healthcare, and skills to enhance productivity and development.",
+        "source_section": "Section 8"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "People are considered the most valuable resource because they develop and use other resources.",
+        "source_section": "Chapter Summary"
+      },
+      {
+        "fact": "Population density helps measure how crowded a place is.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Migration can change the population distribution of a region.",
+        "source_section": "Section 6"
+      },
+      {
+        "fact": "Education and healthcare improve the quality of human resources.",
+        "source_section": "Section 8"
+      }
+    ]
+  }
+}

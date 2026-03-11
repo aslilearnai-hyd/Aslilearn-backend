@@ -1,0 +1,38 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter": "Poverty as a Challenge",
+    "difficulty": "Easy",
+    "short_notes": {
+        "key_points": [
+            "Poverty is a situation in which a person is unable to get the minimum basic necessities of life like food, clothing, and shelter.",
+            "In India, poverty is measured using the 'Poverty Line,' which is based on income or consumption levels.",
+            "A minimum calorie intake is used to determine the poverty line: 2400 calories per person per day in rural areas and 2100 calories in urban areas.",
+            "The Poverty Line is higher in urban areas monetarily because the cost of essential goods is higher in cities.",
+            "Social Exclusion and Vulnerability are two important ways to look at poverty beyond just income.",
+            "Social groups most vulnerable to poverty are Scheduled Castes (SC) and Scheduled Tribes (ST). Economic groups include agricultural laborers and urban casual laborers.",
+            "The government uses a two-pronged strategy: Promotion of economic growth and Targeted anti-poverty programs.",
+            "Important schemes include MGNREGA (100 days of guaranteed work), PMRY, and SGSY."
+        ],
+        "formulas": [
+            "Poverty Line (India) = Cost of Minimum Calorie Requirement + Basic Non-food Expenses",
+            "Rural Calorie Norm: 2400 kcal/day",
+            "Urban Calorie Norm: 2100 kcal/day",
+            "World Bank Standard: living on less than $1.90 per day."
+        ],
+        "examples": [
+            "Social Exclusion: A poor person living only with other poor people, excluded from using the same facilities as better-off people.",
+            "Vulnerability: A person who has a higher risk of becoming poor if there is a flood or if they lose their job.",
+            "Inter-state disparity: Bihar and Odisha have the highest poverty rates, while Kerala and Punjab have the lowest.",
+            "Poorest of the poor: Women, elderly people, and female infants within a poor family who are denied equal resources.",
+            "Targeted Scheme: A village laborer getting work through the MGNREGA scheme to earn wages."
+        ],
+        "exam_tips": [
+            "Remember that calorie needs are higher in rural areas because people do more physical work.",
+            "Identify the organization that conducts poverty surveys: NSSO (National Sample Survey Organisation).",
+            "Know the difference between SC/ST (social groups) and Agricultural/Casual laborers (economic groups).",
+            "Kerala reduced poverty by investing in 'Human Resources' (Education/Health).",
+            "West Bengal reduced poverty through 'Land Reforms'."
+        ]
+    }
+}

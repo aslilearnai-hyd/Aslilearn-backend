@@ -1,0 +1,241 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: How, When and Where",
+  "generated_at": "2026-03-05T20:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is history? Explain its importance.",
+      "answer": "History is the study of past events and how societies changed over time. It helps us understand how present-day societies developed.",
+      "answer_outline": [
+        "Definition of history",
+        "Importance of studying the past",
+        "Connection between past and present"
+      ],
+      "key_concepts": ["history"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Why are dates important in history?",
+      "answer": "Dates help historians organise events in chronological order and understand the sequence of historical developments.",
+      "answer_outline": ["Meaning of dates in history", "Role in chronology"],
+      "key_concepts": ["dates", "chronology"],
+      "marks": 3,
+      "source_section": "How Important are Dates?"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the limitations of focusing only on dates in history.",
+      "answer": "Dates alone cannot explain the causes or effects of events. Historians must also study social, political and economic changes.",
+      "answer_outline": ["Importance of events", "Limitations of dates"],
+      "key_concepts": ["dates"],
+      "marks": 4,
+      "source_section": "How Important are Dates?"
+    },
+    {
+      "question_number": 4,
+      "question": "What is periodisation in history?",
+      "answer": "Periodisation is the division of history into different periods to make the study of history easier and more organised.",
+      "answer_outline": ["Definition of periodisation", "Purpose"],
+      "key_concepts": ["periodisation"],
+      "marks": 3,
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the three periods of Indian history according to James Mill.",
+      "answer": "James Mill divided Indian history into three periods: Hindu period, Muslim period and British period.",
+      "answer_outline": ["Hindu period", "Muslim period", "British period"],
+      "key_concepts": ["James Mill", "periodisation"],
+      "marks": 4,
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do historians criticize James Mill’s classification of Indian history?",
+      "answer": "Historians criticize it because it divides history based only on religion and ignores the diversity of Indian society.",
+      "answer_outline": ["Religion-based classification", "Limitations"],
+      "key_concepts": ["James Mill"],
+      "marks": 4,
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 7,
+      "question": "What is colonialism?",
+      "answer": "Colonialism is a system in which one country controls and rules another country for political and economic benefits.",
+      "answer_outline": ["Definition", "Example of British rule in India"],
+      "key_concepts": ["colonialism"],
+      "marks": 3,
+      "source_section": "What is Colonial?"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain how the British created records during their rule.",
+      "answer": "The British administration created detailed records such as reports, letters and surveys to manage their governance effectively.",
+      "answer_outline": ["Types of records", "Purpose of record keeping"],
+      "key_concepts": ["official records"],
+      "marks": 4,
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 9,
+      "question": "What are official records? Explain their importance.",
+      "answer": "Official records are documents produced by the government that provide information about administration and policies.",
+      "answer_outline": ["Definition", "Importance for historians"],
+      "key_concepts": ["official records"],
+      "marks": 4,
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the role of surveys in British administration.",
+      "answer": "The British conducted surveys to collect information about land, population and resources for better administration.",
+      "answer_outline": ["Purpose of surveys", "Examples"],
+      "key_concepts": ["surveys"],
+      "marks": 4,
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 11,
+      "question": "What are historical sources?",
+      "answer": "Historical sources are materials such as documents, letters, photographs and reports that provide information about the past.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["historical sources"],
+      "marks": 3,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the different types of sources used by historians.",
+      "answer": "Historians use written sources, visual sources and archaeological sources to study the past.",
+      "answer_outline": [
+        "Written sources",
+        "Visual sources",
+        "Archaeological sources"
+      ],
+      "key_concepts": ["sources"],
+      "marks": 4,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why historians use evidence to study history.",
+      "answer": "Evidence helps historians verify events and construct reliable explanations of the past.",
+      "answer_outline": ["Meaning of evidence", "Importance in history"],
+      "key_concepts": ["historical evidence"],
+      "marks": 3,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how historians interpret historical events.",
+      "answer": "Historians analyse sources and evidence to understand events and explain their causes and effects.",
+      "answer_outline": ["Analysis of sources", "Interpretation"],
+      "key_concepts": ["historical interpretation"],
+      "marks": 4,
+      "source_section": "Understanding History"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how British rule influenced historical record keeping.",
+      "answer": "The British administration maintained detailed records to control governance, which later became important sources for historians.",
+      "answer_outline": ["Administrative purpose", "Historical value"],
+      "key_concepts": ["colonial records"],
+      "marks": 4,
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the importance of archives in history.",
+      "answer": "Archives are places where historical documents are preserved. They help historians access reliable information about past events.",
+      "answer_outline": ["Definition of archives", "Importance"],
+      "key_concepts": ["archives"],
+      "marks": 3,
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how newspapers are useful sources of history.",
+      "answer": "Newspapers provide information about events, opinions and social conditions of a particular time period.",
+      "answer_outline": ["Information about events", "Public opinions"],
+      "key_concepts": ["newspapers"],
+      "marks": 3,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the role of letters and diaries as historical sources.",
+      "answer": "Letters and diaries provide personal accounts of events and help historians understand individual experiences.",
+      "answer_outline": ["Personal experiences", "Historical value"],
+      "key_concepts": ["letters", "diaries"],
+      "marks": 3,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why history cannot be divided strictly into clear periods.",
+      "answer": "Historical events and developments often overlap, making strict divisions between periods difficult.",
+      "answer_outline": ["Overlapping events", "Complex historical changes"],
+      "key_concepts": ["periodisation"],
+      "marks": 4,
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the importance of studying colonial history.",
+      "answer": "Studying colonial history helps understand how foreign rule affected the political, economic and social life of a country.",
+      "answer_outline": ["Impact of colonial rule", "Historical understanding"],
+      "key_concepts": ["colonialism"],
+      "marks": 4,
+      "source_section": "What is Colonial?"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how maps help historians.",
+      "answer": "Maps help historians understand geographical changes, boundaries and locations of historical events.",
+      "answer_outline": ["Geographical information", "Historical events"],
+      "key_concepts": ["maps"],
+      "marks": 3,
+      "source_section": "Historical Sources"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why historians must analyse sources carefully.",
+      "answer": "Sources may contain bias or incomplete information, so historians must analyse them critically.",
+      "answer_outline": ["Bias in sources", "Critical analysis"],
+      "key_concepts": ["source analysis"],
+      "marks": 4,
+      "source_section": "Understanding History"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how historical evidence helps understand past societies.",
+      "answer": "Evidence from documents, objects and records helps historians understand how people lived and interacted in the past.",
+      "answer_outline": ["Evidence types", "Understanding society"],
+      "key_concepts": ["historical evidence"],
+      "marks": 4,
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain why studying history is important for students.",
+      "answer": "Studying history helps students understand cultural heritage, social changes and lessons from past events.",
+      "answer_outline": ["Understanding heritage", "Learning from past events"],
+      "key_concepts": ["history education"],
+      "marks": 3,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how historians construct knowledge about the past.",
+      "answer": "Historians collect evidence from different sources, analyse it and interpret the information to reconstruct historical events.",
+      "answer_outline": ["Collection of sources", "Analysis", "Interpretation"],
+      "key_concepts": ["historical research"],
+      "marks": 5,
+      "source_section": "Understanding History"
+    }
+  ]
+}

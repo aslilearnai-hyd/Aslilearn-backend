@@ -1,0 +1,155 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "How Nature Works in Harmony",
+  "difficulty": "Hard",
+  "source_pdf": "12.How Nature Works in Harmony.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Ecosystem Model Design",
+      "objective": "Design and explain a working ecosystem model",
+      "materials": [
+        "Transparent container",
+        "Soil",
+        "Small plants",
+        "Water",
+        "Notebook"
+      ],
+      "steps": [
+        "Create a small closed ecosystem model using soil, plants, and water",
+        "Observe interactions between biotic and abiotic components for several days",
+        "Record changes in moisture, plant growth, and organisms present",
+        "Explain how the components maintain balance in the system"
+      ],
+      "learning_outcome": "Students understand ecosystem balance and interdependence",
+      "evaluation": "Scientific explanation and observations (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Food Web Impact Analysis",
+      "objective": "Analyse ecological consequences of species removal",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Construct a food web for a forest ecosystem with at least eight organisms",
+        "Select one species and assume it disappears",
+        "Predict how this will affect other organisms in the food web",
+        "Explain the cascading ecological effects"
+      ],
+      "learning_outcome": "Students develop analytical skills in ecological systems",
+      "evaluation": "Depth of reasoning and accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Population Change Simulation",
+      "objective": "Study population fluctuations in an ecosystem",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Create a simple ecosystem model with producers, herbivores, and carnivores",
+        "Assume population numbers for each organism",
+        "Simulate changes such as drought or predator removal",
+        "Calculate and explain population changes over time"
+      ],
+      "learning_outcome": "Students understand ecological balance and population dynamics",
+      "evaluation": "Logical reasoning and calculation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Energy Flow Investigation",
+      "objective": "Analyse energy transfer through trophic levels",
+      "materials": ["Notebook", "Research resources"],
+      "steps": [
+        "Select a food chain with at least four trophic levels",
+        "Estimate the energy available at each level using the 10% energy transfer rule",
+        "Create a pyramid of energy diagram",
+        "Explain why higher trophic levels support fewer organisms"
+      ],
+      "learning_outcome": "Students understand energy flow and ecological pyramids",
+      "evaluation": "Accuracy of calculations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Decomposition Rate Experiment",
+      "objective": "Investigate factors affecting decomposition",
+      "materials": ["Two containers", "Soil", "Dead leaves", "Water"],
+      "steps": [
+        "Place equal amounts of dead leaves in two containers",
+        "Keep one container moist and the other dry",
+        "Observe decomposition for several days",
+        "Compare and explain the differences in decomposition rates"
+      ],
+      "learning_outcome": "Students understand environmental factors influencing decomposition",
+      "evaluation": "Observation quality and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Ecosystem Interaction Mapping",
+      "objective": "Map complex interactions among ecosystem components",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose a natural ecosystem such as a pond or forest",
+        "Identify at least ten organisms and environmental factors",
+        "Draw arrows showing interactions among them",
+        "Explain positive and negative interactions"
+      ],
+      "learning_outcome": "Students analyse complex ecological networks",
+      "evaluation": "Completeness and clarity of interaction map (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Human Impact Case Study",
+      "objective": "Evaluate human activities affecting ecosystems",
+      "materials": ["Notebook", "Internet or library resources"],
+      "steps": [
+        "Research an ecosystem affected by human activities such as deforestation or pollution",
+        "Describe the original ecosystem conditions",
+        "Explain how human activities changed the ecosystem",
+        "Suggest sustainable solutions"
+      ],
+      "learning_outcome": "Students understand environmental conservation challenges",
+      "evaluation": "Quality of research and proposed solutions (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Biodiversity Assessment",
+      "objective": "Measure biodiversity in a small ecosystem",
+      "materials": ["Notebook", "Observation sheet"],
+      "steps": [
+        "Select a small ecosystem such as a garden or park",
+        "List all visible plant and animal species",
+        "Calculate species diversity based on the number of species present",
+        "Discuss why biodiversity is important for ecosystem stability"
+      ],
+      "learning_outcome": "Students understand biodiversity and ecosystem resilience",
+      "evaluation": "Completeness of species identification (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Sustainable Agriculture Proposal",
+      "objective": "Design eco-friendly farming practices",
+      "materials": ["Notebook", "Research resources"],
+      "steps": [
+        "Study current farming practices in your region",
+        "Identify environmental problems caused by chemical fertilizers or pesticides",
+        "Design a sustainable farming plan using organic practices",
+        "Explain how it benefits soil health and biodiversity"
+      ],
+      "learning_outcome": "Students connect agriculture with ecosystem sustainability",
+      "evaluation": "Creativity and feasibility of proposal (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Ecosystem Conservation Campaign",
+      "objective": "Promote awareness about ecosystem protection",
+      "materials": ["Poster materials", "Notebook"],
+      "steps": [
+        "Research environmental threats to ecosystems",
+        "Create posters or presentations explaining ecosystem importance",
+        "Suggest practical conservation steps for communities",
+        "Present the campaign in school"
+      ],
+      "learning_outcome": "Students develop environmental awareness and advocacy skills",
+      "evaluation": "Effectiveness of communication (10 marks)"
+    }
+  ]
+}

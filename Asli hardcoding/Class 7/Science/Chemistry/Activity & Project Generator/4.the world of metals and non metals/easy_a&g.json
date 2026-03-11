@@ -1,0 +1,199 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "The World of Metals and Non-metals",
+    "difficulty": "Easy",
+    "source_pdf": "the_world_of_metals_and_non_metals_class7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Lustre Hunt",
+            "objective": "Identify and distinguish between shiny (lustrous) and dull surfaces",
+            "materials": [
+                "Iron nail",
+                "Copper wire",
+                "Coal piece",
+                "Aluminium foil",
+                "Sandpaper"
+            ],
+            "steps": [
+                "Observe the surface of each material as it is",
+                "Rub each material with sandpaper to remove any dust or rust",
+                "Observe which materials shine after being cleaned",
+                "Classify them into 'Lustrous' and 'Non-lustrous'"
+            ],
+            "learning_outcome": "Understands that metals generally have a shiny appearance (metallic lustre)",
+            "evaluation": "Correct classification of materials based on lustre (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Malleability Test",
+            "objective": "Observe how different materials react to being hammered",
+            "materials": [
+                "Hammer",
+                "Aluminium wire",
+                "Pencil lead (Graphite)",
+                "Iron nail",
+                "Small piece of coal"
+            ],
+            "steps": [
+                "Place the iron nail on a hard surface and hit it carefully with a hammer",
+                "Repeat the process with aluminium wire, pencil lead, and coal",
+                "Observe if the material flattens into a sheet or breaks into pieces",
+                "Identify which substances are malleable and which are brittle"
+            ],
+            "learning_outcome": "Distinguishes between malleability in metals and brittleness in non-metals",
+            "evaluation": "Accuracy in identifying malleable vs. brittle substances (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Ductility Detective",
+            "objective": "Explore the property of materials being drawn into wires",
+            "materials": [
+                "Samples of copper wire",
+                "Plastic thread",
+                "Rubber band",
+                "Gold or silver jewelry (observation only)"
+            ],
+            "steps": [
+                "Try to gently stretch the materials",
+                "Look around the house for items that are shaped like wires",
+                "List which materials are used for making electrical wires and why",
+                "Explain why we don't see wires made of coal or sulfur"
+            ],
+            "learning_outcome": "Understands ductility as a characteristic property of metals",
+            "evaluation": "Logical explanation of material choice for wires (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Ringing Test (Sonority)",
+            "objective": "Test which materials produce a ringing sound when struck",
+            "materials": [
+                "Metal spoon",
+                "Wooden block",
+                "Metal bell",
+                "Plastic scale"
+            ],
+            "steps": [
+                "Strike the metal spoon against a hard surface",
+                "Strike the wooden block and the plastic scale similarly",
+                "Listen to the sound produced (ringing vs. thud)",
+                "Relate this to why school bells are made of metal"
+            ],
+            "learning_outcome": "Identifies sonority as a property of metals",
+            "evaluation": "Correct identification of sonorous materials (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Heat Conductor Race",
+            "objective": "Compare heat conduction in metals and non-metals",
+            "materials": [
+                "Metal spoon",
+                "Wooden spoon",
+                "Glass of hot water"
+            ],
+            "steps": [
+                "Place both spoons in a glass of hot water",
+                "Wait for 2 minutes",
+                "Touch the handle of both spoons",
+                "Note which one feels hotter"
+            ],
+            "learning_outcome": "Concludes that metals are good conductors of heat",
+            "evaluation": "Accurate recording of temperature difference (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Simple Electric Tester",
+            "objective": "Test the electrical conductivity of various objects",
+            "materials": [
+                "Battery (9V)",
+                "Small LED bulb",
+                "Wires",
+                "Eraser",
+                "Coin",
+                "Pencil sharpened at both ends"
+            ],
+            "steps": [
+                "Connect the battery and bulb to make an open circuit",
+                "Place a coin in the gap and see if the bulb glows",
+                "Repeat with an eraser and the graphite of a pencil",
+                "Record which materials allow electricity to pass"
+            ],
+            "learning_outcome": "Identifies conductors and insulators among common objects",
+            "evaluation": "Successful circuit testing and data recording (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Rusting Observation",
+            "objective": "Identify the conditions required for iron to rust",
+            "materials": [
+                "Three iron nails",
+                "Three glass jars",
+                "Water",
+                "Oil"
+            ],
+            "steps": [
+                "Jar 1: Place a dry nail (Air only)",
+                "Jar 2: Place a nail completely in boiled water with a layer of oil on top (Water only)",
+                "Jar 3: Place a nail half-dipped in water (Air and Water)",
+                "Observe for 3 days and see which nail develops a brown coating"
+            ],
+            "learning_outcome": "Understands that both air and moisture are needed for rusting",
+            "evaluation": "Correct observation of rusting conditions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Hardness Scale",
+            "objective": "Compare the hardness of different elements",
+            "materials": [
+                "Iron nail",
+                "Aluminium wire",
+                "Soap",
+                "Candle wax"
+            ],
+            "steps": [
+                "Try to scratch the soap with your fingernail",
+                "Try to scratch the iron nail with your fingernail",
+                "Try to cut the candle wax with a plastic knife",
+                "Rank the materials from softest to hardest"
+            ],
+            "learning_outcome": "Recognizes that most metals are hard but some substances are soft",
+            "evaluation": "Logical ranking of materials by hardness (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Uses of Non-metals Poster",
+            "objective": "Research and display the importance of non-metals in life",
+            "materials": [
+                "Chart paper",
+                "Crayons",
+                "Images from magazines"
+            ],
+            "steps": [
+                "Identify non-metals like Oxygen, Nitrogen, and Chlorine",
+                "Find out one use for each (e.g., breathing, fertilizers, water purification)",
+                "Draw or paste pictures representing these uses",
+                "Label them clearly"
+            ],
+            "learning_outcome": "Appreciates the vital role of non-metals in everyday life",
+            "evaluation": "Creativity and correctness of information (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Metal vs. Non-metal Bingo",
+            "objective": "Reinforce vocabulary and properties of elements",
+            "materials": [
+                "Paper",
+                "Pen"
+            ],
+            "steps": [
+                "Create a 3x3 grid with names of metals and non-metals",
+                "Teacher/Friend calls out a property (e.g., 'I am liquid at room temperature')",
+                "Cross out the corresponding element (e.g., Mercury)",
+                "The first to get a row/column wins"
+            ],
+            "learning_outcome": "Quick recall of elemental properties and names",
+            "evaluation": "Participation and correct identification during the game (10 marks)"
+        }
+    ]
+}

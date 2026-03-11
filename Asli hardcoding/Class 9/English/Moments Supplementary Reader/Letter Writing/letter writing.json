@@ -1,0 +1,709 @@
+{
+    "subject": "English",
+    "book": "Moments",
+    "Content": "Letter Writing",
+    "class": "9",
+    "total_questions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Experience at the Fair",
+            "question": "Write a letter to your friend describing your experience of visiting a village fair."
+        },
+        {
+            "id": 2,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Child Lost in a Fair",
+            "question": "Write a letter to the editor highlighting the importance of child safety in crowded fairs."
+        },
+        {
+            "id": 3,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Importance of Parents",
+            "question": "Write a letter to your younger sibling explaining the importance of parents in a child's life."
+        },
+        {
+            "id": 4,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Value of Family",
+            "question": "Write a letter to your cousin describing why family support is important."
+        },
+        {
+            "id": 5,
+            "chapter": "The Lost Child",
+            "source": "Moments – Chapter 1",
+            "title": "Festival Experience",
+            "question": "Write a letter to your friend describing a memorable festival you attended."
+        },
+        {
+            "id": 6,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Keeping Pets",
+            "question": "Write a letter to your friend describing your experience of keeping a pet."
+        },
+        {
+            "id": 7,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Advice on Pet Care",
+            "question": "Write a letter advising your friend on how to properly care for pets."
+        },
+        {
+            "id": 8,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Funny Pet Incident",
+            "question": "Write a letter describing a funny incident involving a pet."
+        },
+        {
+            "id": 9,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Animal Behaviour",
+            "question": "Write a letter to your friend explaining how intelligent animals can be."
+        },
+        {
+            "id": 10,
+            "chapter": "The Adventures of Toto",
+            "source": "Moments – Chapter 2",
+            "title": "Responsible Pet Ownership",
+            "question": "Write a letter explaining the responsibilities of keeping pets."
+        },
+        {
+            "id": 11,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Storytelling Skills",
+            "question": "Write a letter to your friend describing a person who is a great storyteller."
+        },
+        {
+            "id": 12,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Influence of Stories",
+            "question": "Write a letter explaining how stories influence imagination."
+        },
+        {
+            "id": 13,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Fear and Superstition",
+            "question": "Write a letter to your friend discussing superstitions in society."
+        },
+        {
+            "id": 14,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Books and Imagination",
+            "question": "Write a letter to your cousin explaining how books improve imagination."
+        },
+        {
+            "id": 15,
+            "chapter": "Iswaran the Storyteller",
+            "source": "Moments – Chapter 3",
+            "title": "Importance of Reading",
+            "question": "Write a letter explaining why reading books is important."
+        },
+        {
+            "id": 16,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Wisdom in Leadership",
+            "question": "Write a letter to the editor explaining why wise leadership is important."
+        },
+        {
+            "id": 17,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Importance of Wisdom",
+            "question": "Write a letter advising your friend to make wise decisions in life."
+        },
+        {
+            "id": 18,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Justice in Society",
+            "question": "Write a letter to the editor discussing the importance of justice in society."
+        },
+        {
+            "id": 19,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Greed and Consequences",
+            "question": "Write a letter advising a friend not to be greedy."
+        },
+        {
+            "id": 20,
+            "chapter": "In the Kingdom of Fools",
+            "source": "Moments – Chapter 4",
+            "title": "Learning from Stories",
+            "question": "Write a letter explaining the lesson learnt from this story."
+        },
+        {
+            "id": 21,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Helping the Poor",
+            "question": "Write a letter to the editor describing the importance of helping the poor."
+        },
+        {
+            "id": 22,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Kindness and Compassion",
+            "question": "Write a letter explaining how kindness can change lives."
+        },
+        {
+            "id": 23,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "True Friendship",
+            "question": "Write a letter describing the value of true friendship."
+        },
+        {
+            "id": 24,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Selfless Service",
+            "question": "Write a letter explaining the importance of selfless service."
+        },
+        {
+            "id": 25,
+            "chapter": "The Happy Prince",
+            "source": "Moments – Chapter 5",
+            "title": "Helping Society",
+            "question": "Write a letter describing why people should help the needy."
+        },
+        {
+            "id": 26,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Natural Disaster Experience",
+            "question": "Write a letter to your friend describing the experience of a natural disaster."
+        },
+        {
+            "id": 27,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Helping Victims",
+            "question": "Write a letter to the editor requesting help for disaster victims."
+        },
+        {
+            "id": 28,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Importance of Courage",
+            "question": "Write a letter describing the importance of courage during disasters."
+        },
+        {
+            "id": 29,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Relief Work",
+            "question": "Write a letter describing relief work after disasters."
+        },
+        {
+            "id": 30,
+            "chapter": "Weathering the Storm in Ersama",
+            "source": "Moments – Chapter 6",
+            "title": "Hope After Disaster",
+            "question": "Write a letter explaining how hope helps people survive disasters."
+        },
+        {
+            "id": 31,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Power of Hope",
+            "question": "Write a letter to your friend explaining the importance of hope in life."
+        },
+        {
+            "id": 32,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "True Friendship",
+            "question": "Write a letter describing the value of friendship."
+        },
+        {
+            "id": 33,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Art and Sacrifice",
+            "question": "Write a letter describing Behrman’s sacrifice."
+        },
+        {
+            "id": 34,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Helping Friends",
+            "question": "Write a letter advising your friend to support others during illness."
+        },
+        {
+            "id": 35,
+            "chapter": "The Last Leaf",
+            "source": "Moments – Chapter 7",
+            "title": "Meaning of True Art",
+            "question": "Write a letter explaining why true art requires sacrifice."
+        },
+        {
+            "id": 36,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Fire Accident Experience",
+            "question": "Write a letter to your friend describing a fire accident in your area."
+        },
+        {
+            "id": 37,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Importance of Friendship",
+            "question": "Write a letter describing how friends help during difficult times."
+        },
+        {
+            "id": 38,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Meaning of Home",
+            "question": "Write a letter explaining the difference between a house and a home."
+        },
+        {
+            "id": 39,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Helping Victims",
+            "question": "Write a letter requesting help for fire accident victims."
+        },
+        {
+            "id": 40,
+            "chapter": "A House Is Not a Home",
+            "source": "Moments – Chapter 8",
+            "title": "Teenage Challenges",
+            "question": "Write a letter explaining challenges faced by teenagers."
+        },
+        {
+            "id": 41,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Importance of Hard Work",
+            "question": "Write a letter explaining the importance of hard work."
+        },
+        {
+            "id": 42,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Transformation in Life",
+            "question": "Write a letter describing how people can change their lives."
+        },
+        {
+            "id": 43,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Power of Kindness",
+            "question": "Write a letter explaining how kindness can change people."
+        },
+        {
+            "id": 44,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Helping the Poor",
+            "question": "Write a letter describing ways to help poor people."
+        },
+        {
+            "id": 45,
+            "chapter": "The Beggar",
+            "source": "Moments – Chapter 9",
+            "title": "Honesty in Life",
+            "question": "Write a letter explaining the importance of honesty."
+        },
+        {
+            "id": 46,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Education",
+            "question": "Write a letter explaining the importance of education."
+        },
+        {
+            "id": 47,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Reading",
+            "question": "Write a letter encouraging your friend to read storybooks."
+        },
+        {
+            "id": 48,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Moral Values",
+            "question": "Write a letter explaining the importance of moral values."
+        },
+        {
+            "id": 49,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Others",
+            "question": "Write a letter explaining why helping others is important."
+        },
+        {
+            "id": 50,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Courage",
+            "question": "Write a letter explaining the importance of courage."
+        },
+        {
+            "id": 51,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Hope in Life",
+            "question": "Write a letter explaining the importance of hope."
+        },
+        {
+            "id": 52,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Kindness",
+            "question": "Write a letter describing how kindness improves society."
+        },
+        {
+            "id": 53,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Leadership",
+            "question": "Write a letter explaining the importance of leadership."
+        },
+        {
+            "id": 54,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Society",
+            "question": "Write a letter explaining the role of individuals in society."
+        },
+        {
+            "id": 55,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Learning from Stories",
+            "question": "Write a letter explaining lessons learnt from stories."
+        },
+        {
+            "id": 56,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Values",
+            "question": "Write a letter explaining the importance of human values."
+        },
+        {
+            "id": 57,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Determination",
+            "question": "Write a letter describing the role of determination in success."
+        },
+        {
+            "id": 58,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Positive Thinking",
+            "question": "Write a letter explaining the importance of positive thinking."
+        },
+        {
+            "id": 59,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Friendship",
+            "question": "Write a letter explaining the value of friendship."
+        },
+        {
+            "id": 60,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping the Needy",
+            "question": "Write a letter explaining why people should help the needy."
+        },
+        {
+            "id": 61,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Learning Through Literature",
+            "question": "Write a letter explaining how literature teaches life lessons."
+        },
+        {
+            "id": 62,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Relationships",
+            "question": "Write a letter describing the importance of relationships."
+        },
+        {
+            "id": 63,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Facing Challenges",
+            "question": "Write a letter explaining how to face challenges in life."
+        },
+        {
+            "id": 64,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Hard Work",
+            "question": "Write a letter explaining the value of hard work."
+        },
+        {
+            "id": 65,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Self-Improvement",
+            "question": "Write a letter describing how people can improve themselves."
+        },
+        {
+            "id": 66,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Humanity",
+            "question": "Write a letter explaining the importance of humanity."
+        },
+        {
+            "id": 67,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Courage and Hope",
+            "question": "Write a letter explaining the importance of courage and hope."
+        },
+        {
+            "id": 68,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Responsibility",
+            "question": "Write a letter explaining the importance of responsibility."
+        },
+        {
+            "id": 69,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Compassion",
+            "question": "Write a letter explaining the importance of compassion."
+        },
+        {
+            "id": 70,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Humanity",
+            "question": "Write a letter describing why humanity should help each other."
+        },
+        {
+            "id": 71,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Role of Moral Values",
+            "question": "Write a letter explaining the importance of moral values."
+        },
+        {
+            "id": 72,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Education and Character",
+            "question": "Write a letter explaining how education shapes character."
+        },
+        {
+            "id": 73,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Society",
+            "question": "Write a letter encouraging people to help society."
+        },
+        {
+            "id": 74,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Kindness",
+            "question": "Write a letter describing how kindness improves life."
+        },
+        {
+            "id": 75,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Learning from Experience",
+            "question": "Write a letter explaining how experiences teach valuable lessons."
+        },
+        {
+            "id": 76,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Reading Literature",
+            "question": "Write a letter explaining the importance of reading literature."
+        },
+        {
+            "id": 77,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Others",
+            "question": "Write a letter describing ways to help others."
+        },
+        {
+            "id": 78,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Positive Attitude",
+            "question": "Write a letter explaining the importance of a positive attitude."
+        },
+        {
+            "id": 79,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Honesty",
+            "question": "Write a letter explaining the importance of honesty."
+        },
+        {
+            "id": 80,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Determination",
+            "question": "Write a letter explaining why determination is important."
+        },
+        {
+            "id": 81,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping the Poor",
+            "question": "Write a letter encouraging people to help the poor."
+        },
+        {
+            "id": 82,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Values",
+            "question": "Write a letter explaining the importance of human values."
+        },
+        {
+            "id": 83,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Responsibility in Society",
+            "question": "Write a letter explaining social responsibility."
+        },
+        {
+            "id": 84,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Kindness in Life",
+            "question": "Write a letter explaining how kindness improves society."
+        },
+        {
+            "id": 85,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Value of Friendship",
+            "question": "Write a letter explaining the value of friendship."
+        },
+        {
+            "id": 86,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Courage",
+            "question": "Write a letter explaining the importance of courage."
+        },
+        {
+            "id": 87,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Positive Thinking",
+            "question": "Write a letter encouraging positive thinking."
+        },
+        {
+            "id": 88,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Life Lessons",
+            "question": "Write a letter describing life lessons learnt from literature."
+        },
+        {
+            "id": 89,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Humanity",
+            "question": "Write a letter encouraging people to help humanity."
+        },
+        {
+            "id": 90,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Determination",
+            "question": "Write a letter explaining the importance of determination."
+        },
+        {
+            "id": 91,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Value of Compassion",
+            "question": "Write a letter explaining the importance of compassion."
+        },
+        {
+            "id": 92,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Education",
+            "question": "Write a letter encouraging education."
+        },
+        {
+            "id": 93,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Society",
+            "question": "Write a letter explaining how individuals help society."
+        },
+        {
+            "id": 94,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Relationships",
+            "question": "Write a letter explaining the importance of relationships."
+        },
+        {
+            "id": 95,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Value of Kindness",
+            "question": "Write a letter explaining the value of kindness."
+        },
+        {
+            "id": 96,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Importance of Humanity",
+            "question": "Write a letter explaining the importance of humanity."
+        },
+        {
+            "id": 97,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Learning from Stories",
+            "question": "Write a letter explaining how stories teach life lessons."
+        },
+        {
+            "id": 98,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Helping Others",
+            "question": "Write a letter encouraging people to help others."
+        },
+        {
+            "id": 99,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Human Values in Life",
+            "question": "Write a letter explaining the importance of human values in life."
+        },
+        {
+            "id": 100,
+            "chapter": "General",
+            "source": "Moments – All Chapters",
+            "title": "Message of the Book",
+            "question": "Write a letter explaining the overall message of the book Moments."
+        }
+    ]
+}

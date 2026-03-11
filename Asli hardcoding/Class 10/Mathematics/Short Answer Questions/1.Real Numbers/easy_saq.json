@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 1: Real Numbers",
+    "generated_at": "2026-02-27T17:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a rational number with an example.",
+            "answer": "A rational number is a number that can be written in the form p/q where p and q are integers and q ≠ 0. Example: 3/5.",
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define an irrational number.",
+            "answer": "An irrational number is a number that cannot be written in the form p/q and has a non-terminating, non-repeating decimal expansion.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "State Euclid’s Division Algorithm.",
+            "answer": "For any two positive integers a and b, there exist whole numbers q and r such that a = bq + r, where 0 ≤ r < b.",
+            "key_concepts": [
+                "Euclid’s Division Algorithm"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a prime number?",
+            "answer": "A prime number is a number greater than 1 that has exactly two factors: 1 and itself.",
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is meant by prime factorisation?",
+            "answer": "Prime factorisation is the process of expressing a number as a product of its prime factors.",
+            "key_concepts": [
+                "prime factorisation"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Define HCF.",
+            "answer": "HCF is the greatest number that divides two or more given numbers exactly.",
+            "key_concepts": [
+                "HCF"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Define LCM.",
+            "answer": "LCM is the smallest number that is exactly divisible by two or more given numbers.",
+            "key_concepts": [
+                "LCM"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "State the Fundamental Theorem of Arithmetic.",
+            "answer": "Every composite number can be expressed as a product of prime numbers and this factorisation is unique except for the order of the factors.",
+            "key_concepts": [
+                "FTA"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Give one example of an irrational number.",
+            "answer": "√2 is an irrational number.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What are real numbers?",
+            "answer": "Real numbers include both rational and irrational numbers.",
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the decimal expansion of a rational number?",
+            "answer": "The decimal expansion of a rational number is either terminating or non-terminating repeating.",
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a composite number?",
+            "answer": "A composite number is a number greater than 1 that has more than two factors.",
+            "key_concepts": [
+                "composite numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the HCF of two coprime numbers?",
+            "answer": "The HCF of two coprime numbers is 1.",
+            "key_concepts": [
+                "coprime numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is proof by contradiction?",
+            "answer": "It is a method of proof where the opposite of the statement is assumed and shown to lead to a contradiction.",
+            "key_concepts": [
+                "proof by contradiction"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Is √9 rational or irrational? Give reason.",
+            "answer": "√9 is rational because √9 = 3, which is an integer.",
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What does r represent in Euclid’s Division Algorithm?",
+            "answer": "r represents the remainder.",
+            "key_concepts": [
+                "division algorithm"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Is π rational or irrational?",
+            "answer": "π is an irrational number.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the smallest prime number?",
+            "answer": "The smallest prime number is 2.",
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write the prime factorisation of 36.",
+            "answer": "36 = 2² × 3².",
+            "key_concepts": [
+                "prime factorisation"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the value of the remainder when a number is exactly divisible?",
+            "answer": "The remainder is zero.",
+            "key_concepts": [
+                "division"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Can irrational numbers be represented as fractions?",
+            "answer": "No, irrational numbers cannot be represented as fractions.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the HCF of 15 and 28?",
+            "answer": "The HCF of 15 and 28 is 1.",
+            "key_concepts": [
+                "HCF"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the LCM of 4 and 6?",
+            "answer": "The LCM of 4 and 6 is 12.",
+            "key_concepts": [
+                "LCM"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the nature of decimal expansion of √2?",
+            "answer": "It is non-terminating and non-repeating.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "State one property of irrational numbers.",
+            "answer": "Irrational numbers cannot be written as fractions.",
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

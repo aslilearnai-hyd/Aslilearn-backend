@@ -1,0 +1,178 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "The Fundamental Unit of Life",
+    "difficulty": "Medium",
+    "source_pdf": "s9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Osmosis with Potato Cups",
+            "objective": "Demonstrate osmosis using plant cells",
+            "materials": [
+                "Potato",
+                "Knife",
+                "Sugar",
+                "Salt",
+                "Water",
+                "Beaker"
+            ],
+            "steps": [
+                "Cut a potato into two halves and scoop a cavity",
+                "Fill one cavity with sugar and another with salt",
+                "Place them in water and observe after 1 hour"
+            ],
+            "learning_outcome": "Understands osmosis through plant tissue",
+            "evaluation": "Observation accuracy and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Cell Organelle Function Chart",
+            "objective": "Explain functions of major cell organelles",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Reference book"
+            ],
+            "steps": [
+                "Draw major organelles such as nucleus, ER, mitochondria and Golgi apparatus",
+                "Write the function of each organelle",
+                "Present the chart to the class"
+            ],
+            "learning_outcome": "Explains roles of cell organelles",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Observation of Cell Division Images",
+            "objective": "Understand stages of cell division",
+            "materials": [
+                "Textbook images",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe diagrams of mitosis in the textbook",
+                "Write the stages in correct order",
+                "Draw and label each stage"
+            ],
+            "learning_outcome": "Understands mitosis stages",
+            "evaluation": "Correct sequence and diagrams (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Diffusion Rate Experiment",
+            "objective": "Study factors affecting diffusion",
+            "materials": [
+                "Beaker",
+                "Hot water",
+                "Cold water",
+                "Food color"
+            ],
+            "steps": [
+                "Add food color to hot water and cold water separately",
+                "Observe spreading of color",
+                "Compare diffusion rates"
+            ],
+            "learning_outcome": "Relates temperature with diffusion rate",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Plant vs Animal Cell Model Comparison",
+            "objective": "Compare plant and animal cell structures",
+            "materials": [
+                "Clay",
+                "Cardboard",
+                "Labels"
+            ],
+            "steps": [
+                "Make two models representing plant and animal cells",
+                "Label major organelles",
+                "Highlight structural differences"
+            ],
+            "learning_outcome": "Identifies differences between cell types",
+            "evaluation": "Accuracy of model and labels (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Prokaryotic vs Eukaryotic Cell Table",
+            "objective": "Differentiate cell types",
+            "materials": [
+                "Notebook",
+                "Reference material"
+            ],
+            "steps": [
+                "List characteristics of prokaryotic cells",
+                "List characteristics of eukaryotic cells",
+                "Create a comparison table"
+            ],
+            "learning_outcome": "Understands structural differences",
+            "evaluation": "Correct comparison table (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Microscope Usage Demonstration",
+            "objective": "Learn proper microscope handling",
+            "materials": [
+                "Compound microscope",
+                "Prepared slide"
+            ],
+            "steps": [
+                "Adjust the microscope using coarse adjustment",
+                "Focus using fine adjustment",
+                "Observe prepared slide and draw structure"
+            ],
+            "learning_outcome": "Operates microscope properly",
+            "evaluation": "Correct observation and diagram (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Cell Organelle Flashcard Game",
+            "objective": "Improve recall of organelle functions",
+            "materials": [
+                "Flash cards",
+                "Markers"
+            ],
+            "steps": [
+                "Write organelle names on flashcards",
+                "Write functions on separate cards",
+                "Students match organelles with correct functions"
+            ],
+            "learning_outcome": "Remembers organelle functions",
+            "evaluation": "Correct matching (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Observation of Chloroplast in Leaf Cells",
+            "objective": "Identify chloroplasts in plant cells",
+            "materials": [
+                "Leaf sample",
+                "Microscope",
+                "Slide"
+            ],
+            "steps": [
+                "Prepare a thin leaf peel",
+                "Place it on a slide with water",
+                "Observe green chloroplasts under microscope"
+            ],
+            "learning_outcome": "Recognizes chloroplast function",
+            "evaluation": "Correct observation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Cell Organelles Role Play",
+            "objective": "Understand functions of organelles creatively",
+            "materials": [
+                "Role cards",
+                "Chart paper"
+            ],
+            "steps": [
+                "Assign students different organelles as roles",
+                "Each student explains their function",
+                "Class discusses cell coordination"
+            ],
+            "learning_outcome": "Understands cooperative function of organelles",
+            "evaluation": "Participation and explanation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,314 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Proportional Reasoning – 2",
+  "difficulty": "Hard",
+  "generated_at": "2026-03-04T18:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Show that the ratios 8:4:2:1 and 4:2:1:0.5 are proportional.",
+      "answer": "Each term in the second ratio is half the corresponding term in the first ratio. Therefore both ratios represent the same proportional relationship.",
+      "answer_outline": [
+        "Write both ratios",
+        "Compare scaling factor",
+        "Conclude proportionality"
+      ],
+      "key_concepts": ["multi-term ratios", "proportions"],
+      "marks": 5,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 2,
+      "question": "A map has a scale of 1:6000000. If the distance between two cities is 4.5 cm on the map, find the actual distance.",
+      "answer": "1 cm represents 60 km. Therefore 4.5 cm represents 270 km.",
+      "answer_outline": [
+        "Convert map scale",
+        "Multiply by map distance"
+      ],
+      "key_concepts": ["map scale", "representative fraction"],
+      "marks": 5,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 3,
+      "question": "A mixture contains ingredients in the ratio 8:4:2:1. If only 2 units of the second ingredient are available, determine the quantities of the other ingredients.",
+      "answer": "Original ratio scaled by 0.5 gives 4:2:1:0.5.",
+      "answer_outline": [
+        "Identify scaling factor",
+        "Multiply each ratio term"
+      ],
+      "key_concepts": ["ratio scaling"],
+      "marks": 5,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Divide 180 in the ratio 2:3:5.",
+      "answer": "Sum of ratio = 10. Each unit = 18. Shares = 36, 54, 90.",
+      "answer_outline": [
+        "Add ratio terms",
+        "Divide total quantity",
+        "Multiply ratio values"
+      ],
+      "key_concepts": ["ratio division"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Construct a triangle whose angles are in the ratio 2:3:7.",
+      "answer": "Sum of ratios = 12. Angles = 30°, 45°, and 105°.",
+      "answer_outline": [
+        "Sum ratios",
+        "Divide 180°",
+        "Calculate angles"
+      ],
+      "key_concepts": ["triangle angles", "ratios"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Construct a triangle with side lengths in the ratio 3:4:5 and explain whether all such triangles are congruent.",
+      "answer": "Triangles with sides in ratio 3:4:5 are similar but not necessarily congruent because the scale may differ.",
+      "answer_outline": [
+        "Triangle construction",
+        "Explain similarity"
+      ],
+      "key_concepts": ["similarity", "triangle ratios"],
+      "marks": 6,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is it not possible to construct a triangle with side lengths in the ratio 1:3:5?",
+      "answer": "The triangle inequality rule fails because the sum of two smaller sides must be greater than the largest side.",
+      "answer_outline": [
+        "State triangle inequality rule",
+        "Apply to ratio"
+      ],
+      "key_concepts": ["triangle inequality"],
+      "marks": 5,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "A pie chart represents grades of 40 students as 12, 10, 8, 6, and 4. Find the angle representing grade B.",
+      "answer": "Angle = (10/40) × 360 = 90°.",
+      "answer_outline": [
+        "Find proportion",
+        "Multiply by 360°"
+      ],
+      "key_concepts": ["pie chart angles"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how to construct a pie chart step by step.",
+      "answer": "Collect data, find total, calculate sector angles using value/total × 360°, draw circle, mark angles using protractor.",
+      "answer_outline": [
+        "Collect data",
+        "Calculate angles",
+        "Draw chart"
+      ],
+      "key_concepts": ["pie chart construction"],
+      "marks": 5,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "If 5 workers move 4500 bricks in a day, how many workers are needed to move 18000 bricks?",
+      "answer": "Workers = (18000 × 5) / 4500 = 20 workers.",
+      "answer_outline": [
+        "Use direct proportion",
+        "Solve equation"
+      ],
+      "key_concepts": ["direct proportion"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why speed and time are inversely proportional.",
+      "answer": "For a fixed distance, increasing speed decreases time while maintaining constant product.",
+      "answer_outline": [
+        "Fixed distance concept",
+        "Explain inverse relation"
+      ],
+      "key_concepts": ["inverse proportion"],
+      "marks": 4,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 12,
+      "question": "A cyclist travels a fixed distance in 3 hours at 30 km/h. How long will it take at 60 km/h?",
+      "answer": "Speed doubled so time halves. Time = 1.5 hours.",
+      "answer_outline": [
+        "Identify inverse relation",
+        "Calculate new time"
+      ],
+      "key_concepts": ["speed-time relation"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 13,
+      "question": "20 workers take 4 days to complete a road. How many days will 10 workers take?",
+      "answer": "20 × 4 = 10 × x → x = 8 days.",
+      "answer_outline": [
+        "Inverse proportion",
+        "Solve equation"
+      ],
+      "key_concepts": ["work-time relation"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 14,
+      "question": "Two pumps fill a tank in 18 hours. How long will four pumps take?",
+      "answer": "2 × 18 = 4 × x → x = 9 hours.",
+      "answer_outline": [
+        "Identify inverse relation",
+        "Solve equation"
+      ],
+      "key_concepts": ["inverse proportion"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 15,
+      "question": "80 students have food for 15 days. If 20 more students join, how long will the food last?",
+      "answer": "80 × 15 = 100 × x → x = 12 days.",
+      "answer_outline": [
+        "Inverse proportion",
+        "Solve equation"
+      ],
+      "key_concepts": ["inverse proportion"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 16,
+      "question": "If Ram completes work in 1 hour and Shyam in 1.5 hours, how long will they take together?",
+      "answer": "Combined work rate = 1 + 2/3 = 5/3 units/hour. Time = 3/5 hour.",
+      "answer_outline": [
+        "Calculate work rate",
+        "Add rates",
+        "Find total time"
+      ],
+      "key_concepts": ["combined work"],
+      "marks": 6,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how ratios are used in construction mixtures.",
+      "answer": "Materials like cement, sand, and gravel are mixed in fixed ratios to ensure proper strength.",
+      "answer_outline": [
+        "Construction mixture ratios",
+        "Importance"
+      ],
+      "key_concepts": ["construction ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why ratios are useful in recipe preparation.",
+      "answer": "Ratios maintain ingredient proportions ensuring consistent taste and quality.",
+      "answer_outline": [
+        "Ingredient proportions",
+        "Practical use"
+      ],
+      "key_concepts": ["recipe ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how scaling ratios is useful in real life.",
+      "answer": "Scaling ratios helps adjust quantities in recipes, maps, and construction materials.",
+      "answer_outline": [
+        "Definition",
+        "Examples"
+      ],
+      "key_concepts": ["ratio scaling"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain why proportional reasoning is important in mathematics.",
+      "answer": "It helps compare quantities and solve problems involving ratios, scaling, and rates.",
+      "answer_outline": [
+        "Importance",
+        "Applications"
+      ],
+      "key_concepts": ["proportional reasoning"],
+      "marks": 4,
+      "source_section": "Chapter overview"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the difference between direct and inverse proportion.",
+      "answer": "In direct proportion both quantities increase together; in inverse proportion one increases while the other decreases.",
+      "answer_outline": [
+        "Definition direct proportion",
+        "Definition inverse proportion"
+      ],
+      "key_concepts": ["direct proportion", "inverse proportion"],
+      "marks": 4,
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how pie charts help interpret data distributions.",
+      "answer": "Pie charts visually represent proportions making comparisons easier.",
+      "answer_outline": [
+        "Visual comparison",
+        "Proportion representation"
+      ],
+      "key_concepts": ["data interpretation"],
+      "marks": 4,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how proportional reasoning is used in engineering.",
+      "answer": "Engineers use ratios to mix materials, design structures, and maintain accurate scale models.",
+      "answer_outline": [
+        "Engineering mixtures",
+        "Design scaling"
+      ],
+      "key_concepts": ["engineering ratios"],
+      "marks": 4,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how maps use ratios to represent distances.",
+      "answer": "Maps use representative fractions so that large geographical distances can be shown on small surfaces.",
+      "answer_outline": [
+        "Scale representation",
+        "Example"
+      ],
+      "key_concepts": ["map scale"],
+      "marks": 4,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why inverse proportion is useful in solving work problems.",
+      "answer": "Increasing workers decreases time needed because work rate increases proportionally.",
+      "answer_outline": [
+        "Work-time relationship",
+        "Example"
+      ],
+      "key_concepts": ["inverse proportion", "work problems"],
+      "marks": 5,
+      "source_section": "Section 3.6"
+    }
+  ]
+}

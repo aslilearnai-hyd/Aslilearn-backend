@@ -1,0 +1,175 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Light – Reflection and Refraction",
+    "lesson_level": "easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the laws of reflection and refraction using ray diagrams and experimental evidence",
+        "Apply mirror and lens formulas with sign conventions to solve complex numerical problems",
+        "Evaluate image characteristics (real/virtual, erect/inverted, magnified/diminished) critically",
+        "Understand refractive index, apparent depth, and total internal reflection through quantitative analysis",
+        "Develop skills in experimental verification, error analysis, and graphical interpretation",
+        "Apply optical concepts to real-world phenomena and devices, fostering critical thinking"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Reflection of Light and Spherical Mirrors",
+            "topics_covered": [
+                "Laws of reflection and plane mirrors",
+                "Spherical mirrors: concave and convex",
+                "Key terms: centre of curvature, principal axis, focus, focal length",
+                "Sign convention for mirrors"
+            ],
+            "teaching_strategy": [
+                "Interactive derivation of mirror formula basics",
+                "Ray diagram construction on board with student input",
+                "Discussion on real-life mirror applications"
+            ],
+            "student_activities": [
+                "Draw ray diagrams for plane mirror and spherical mirrors (object at different positions)",
+                "Solve 3-4 numericals on focal length and radius of curvature",
+                "Critically analyze why convex mirrors are used in vehicles"
+            ],
+            "assessment": [
+                "Ray diagram accuracy and labeling",
+                "Numerical solutions with sign convention"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Image Formation by Spherical Mirrors and Mirror Formula",
+            "topics_covered": [
+                "Image formation cases for concave and convex mirrors",
+                "Mirror formula (1/f = 1/v + 1/u) and magnification (m = -v/u)",
+                "Real vs virtual images, nature, and applications"
+            ],
+            "teaching_strategy": [
+                "Demonstration using concave/convex mirrors and ray box",
+                "Guided problem-solving session with board work",
+                "Group discussion on errors in ray tracing"
+            ],
+            "student_activities": [
+                "Perform experiment to verify mirror formula (u-v readings, plot 1/u vs 1/v graph)",
+                "Calculate focal length graphically and compare with formula method",
+                "Solve advanced numericals involving magnification and image nature"
+            ],
+            "assessment": [
+                "Graph accuracy and focal length calculation",
+                "Error analysis in experimental data"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Refraction of Light and Refractive Index",
+            "topics_covered": [
+                "Laws of refraction (Snell's law)",
+                "Refractive index and factors affecting it",
+                "Refraction through rectangular glass slab and apparent depth",
+                "Total internal reflection and critical angle"
+            ],
+            "teaching_strategy": [
+                "Live demonstration of refraction using glass slab and laser pointer",
+                "Quantitative discussion on apparent depth formula",
+                "Explanation of TIR with optical fibre example"
+            ],
+            "student_activities": [
+                "Trace ray through glass slab at multiple angles, measure lateral shift and i/r",
+                "Calculate refractive index using sin i / sin r and apparent depth method",
+                "Solve numericals on critical angle and TIR conditions"
+            ],
+            "assessment": [
+                "Ray tracing precision and μ calculations",
+                "Inference on medium dependence"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Refraction by Spherical Lenses and Lens Formula",
+            "topics_covered": [
+                "Thin lenses: convex and concave",
+                "Image formation ray diagrams",
+                "Lens formula (1/f = 1/v - 1/u) and magnification",
+                "Power of lens (P = 1/f in dioptre)"
+            ],
+            "teaching_strategy": [
+                "Ray diagram construction challenge",
+                "Demonstration of lens image formation using optical bench",
+                "Problem-solving on lens combinations"
+            ],
+            "student_activities": [
+                "Determine focal length of convex lens using distant object and u-v method",
+                "Plot graph for lens formula verification",
+                "Solve numericals on lens power, combination, and defect correction"
+            ],
+            "assessment": [
+                "Experimental readings and graph",
+                "Numerical accuracy with sign convention"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Applications, Optical Instruments, and Critical Analysis",
+            "topics_covered": [
+                "Applications of mirrors and lenses (magnifiers, projectors, spectacles)",
+                "Dispersion, scattering (qualitative link to next chapter)",
+                "Critical evaluation of optical illusions and common misconceptions"
+            ],
+            "teaching_strategy": [
+                "Case study discussion on optical devices",
+                "Group analysis of real-world problems (e.g., myopia correction)",
+                "Debate on ray optics limitations"
+            ],
+            "student_activities": [
+                "Build simple model (e.g., periscope or magnifying glass setup)",
+                "Analyze provided data sets from lens/mirror experiments for errors",
+                "Solve application-based critical thinking questions"
+            ],
+            "assessment": [
+                "Model functionality and explanation",
+                "Critical analysis report"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Advanced Problem-Solving, and Assessment",
+            "topics_covered": [
+                "Recap of formulas, sign conventions, ray diagrams",
+                "Numerical and conceptual integration",
+                "Real-life applications and limitations of ray optics"
+            ],
+            "teaching_strategy": [
+                "Mixed quiz (conceptual, numerical, diagram-based)",
+                "Peer review of solutions",
+                "Discussion on advanced applications (e.g., fibre optics, cameras)"
+            ],
+            "student_activities": [
+                "Solve a 15-question hard-level quiz (including graphs and derivations basics)",
+                "Group problem-solving on complex scenarios",
+                "Reflect on chapter in notebook with personal examples"
+            ],
+            "assessment": [
+                "Quiz performance",
+                "Participation and notebook quality",
+                "Critical reflection"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Plane mirror, concave/convex mirrors, convex/concave lenses",
+        "Laser pointer or ray box, optical bench, glass slab",
+        "Meter scale, protractor, graph paper",
+        "Whiteboard/markers for ray diagrams",
+        "Sample numerical problem sets and data tables"
+    ],
+    "evaluation_methods": [
+        "Ray diagram evaluation",
+        "Experimental verification and calculations",
+        "Numerical problem-solving accuracy",
+        "Critical thinking quiz and reflections",
+        "Group participation and peer assessment"
+    ],
+    "teacher_tip": "Emphasize sign conventions rigorously to avoid common errors. Encourage students to justify answers with ray diagrams and experimental evidence. Use numerical problems to build analytical skills and discuss real-world limitations of ideal ray optics assumptions."
+}

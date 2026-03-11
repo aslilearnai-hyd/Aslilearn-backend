@@ -1,0 +1,187 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Exploring Substances: Acidic, Basic and Neutral",
+    "difficulty": "Easy",
+    "source_pdf": "exploring_substances_class7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Natural Indicator Paper",
+            "objective": "Prepare and test turmeric paper as a natural indicator",
+            "materials": [
+                "Turmeric powder",
+                "Water",
+                "White paper strips",
+                "Soap solution"
+            ],
+            "steps": [
+                "Mix turmeric with a little water to make a paste",
+                "Apply the paste on paper strips and let them dry",
+                "Put a drop of soap solution on the strip",
+                "Observe the color change to reddish-brown"
+            ],
+            "learning_outcome": "Understands how natural indicators react with bases",
+            "evaluation": "Successful preparation and observation of color change (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Kitchen Substance Testing",
+            "objective": "Classify common household items into acidic, basic, or neutral",
+            "materials": [
+                "Lemon juice",
+                "Baking soda solution",
+                "Sugar water",
+                "Turmeric indicator"
+            ],
+            "steps": [
+                "Take small samples of each substance in separate bowls",
+                "Test each with the turmeric indicator",
+                "Record which ones change color and which do not",
+                "Categorize them in a table"
+            ],
+            "learning_outcome": "Identifies acidic and basic substances in daily life",
+            "evaluation": "Correct classification in the table (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Litmus Paper Demonstration",
+            "objective": "Observe the effect of acids and bases on litmus paper",
+            "materials": [
+                "Red and Blue litmus paper",
+                "Vinegar",
+                "Lime water"
+            ],
+            "steps": [
+                "Dip blue litmus into vinegar and observe the change",
+                "Dip red litmus into lime water and observe the change",
+                "Record the final colors"
+            ],
+            "learning_outcome": "Learns the standard laboratory test for acids and bases",
+            "evaluation": "Accuracy in describing color transitions (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The China Rose Indicator",
+            "objective": "Create an indicator using China Rose (Hibiscus) petals",
+            "materials": [
+                "China Rose petals",
+                "Warm water",
+                "Beaker/Glass"
+            ],
+            "steps": [
+                "Place petals in warm water until the water becomes colored",
+                "Filter the solution to use as an indicator",
+                "Add to an acid (lemon) and a base (detergent)",
+                "Note the dark pink (acid) and green (base) colors"
+            ],
+            "learning_outcome": "Discovers different colors produced by organic indicators",
+            "evaluation": "Extraction of indicator and correct color recording (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Neutralization in a Bottle",
+            "objective": "Observe the reaction between an acid and a base",
+            "materials": [
+                "Vinegar",
+                "Baking soda",
+                "Small bottle",
+                "Balloon"
+            ],
+            "steps": [
+                "Pour vinegar into a bottle",
+                "Put baking soda inside a balloon",
+                "Fix the balloon over the bottle neck and drop the soda in",
+                "Observe the fizzing and balloon inflation"
+            ],
+            "learning_outcome": "Visualizes the gas release during a neutralization reaction",
+            "evaluation": "Explanation of the reaction observed (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Acid Rain Model",
+            "objective": "Understand how pollutants make water acidic",
+            "materials": [
+                "Distilled water",
+                "Litmus paper",
+                "Drinking straw"
+            ],
+            "steps": [
+                "Test distilled water with litmus (it should stay neutral)",
+                "Blow air (CO2) through a straw into the water for 2 minutes",
+                "Test the water again with blue litmus",
+                "Observe the slight acidic shift"
+            ],
+            "learning_outcome": "Relates carbon dioxide to the formation of weak acids",
+            "evaluation": "Logical connection between breath and acidity (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Identifying Neutral Substances",
+            "objective": "Learn that not everything is acidic or basic",
+            "materials": [
+                "Salt solution",
+                "Glucose solution",
+                "Distilled water",
+                "Indicators"
+            ],
+            "steps": [
+                "Test each liquid with both red and blue litmus",
+                "Note that no color change occurs in either",
+                "Define these as neutral substances"
+            ],
+            "learning_outcome": "Defines neutral substances based on indicator tests",
+            "evaluation": "Correct identification of neutral samples (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Safety Poster: Handling Bases",
+            "objective": "Learn safety precautions for corrosive substances",
+            "materials": [
+                "Drawing sheet",
+                "Colors",
+                "Markers"
+            ],
+            "steps": [
+                "Research why we shouldn't touch strong bases with bare hands",
+                "Draw 'Do' and 'Don't' illustrations for the lab",
+                "Include a warning about the 'soapy' feel of bases"
+            ],
+            "learning_outcome": "Promotes lab safety and awareness of substance properties",
+            "evaluation": "Creativity and accuracy of safety information (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Antacid Comparison",
+            "objective": "Understand how bases treat acidity in the stomach",
+            "materials": [
+                "Vinegar (simulating stomach acid)",
+                "Antacid tablet/Milk of Magnesia",
+                "Indicator"
+            ],
+            "steps": [
+                "Add indicator to vinegar",
+                "Slowly add crushed antacid",
+                "Watch the indicator change back to a neutral color"
+            ],
+            "learning_outcome": "Applies neutralization to human health/medicine",
+            "evaluation": "Understanding of the 'Acid + Base' remedy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Substance Detective Quiz",
+            "objective": "Test knowledge of acids, bases, and salts",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Create 5 MCQ questions on natural indicators",
+                "Create 5 True/False questions on neutralization",
+                "Swap with a partner and grade each other"
+            ],
+            "learning_outcome": "Consolidates theoretical knowledge of the chapter",
+            "evaluation": "Quality of questions and correct answering (10 marks)"
+        }
+    ]
+}

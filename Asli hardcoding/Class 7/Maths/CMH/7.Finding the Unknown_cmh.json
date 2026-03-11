@@ -1,0 +1,55 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 4: Finding the Unknown (Simple Equations)",
+    "generated_at": "2026-03-05T01:10:00",
+    "concepts": [
+        {
+            "concept_name": "Setting up an Equation",
+            "difficulty": "easy",
+            "lesson": "An equation is a condition on a variable. It says that two expressions are equal. To 'find the unknown', we first translate word problems into mathematical statements where a letter (like $x$ or $y$) represents the unknown quantity.",
+            "real_example": "\"Ten more than a number is 25\" becomes the equation $x + 10 = 25$.",
+            "key_points": [
+                "The '=' sign is essential",
+                "Variable represents the unknown",
+                "LHS (Left Hand Side) = RHS (Right Hand Side)"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "concept_name": "Solving by Balancing",
+            "difficulty": "medium",
+            "lesson": "An equation is like a weighing balance. To keep it balanced, whatever operation you perform on one side (add, subtract, multiply, or divide), you must perform the exact same operation on the other side to find the value of the variable.",
+            "real_example": " To solve $x + 5 = 12$, subtract 5 from both sides to get $x = 7$.",
+            "key_points": [
+                "Keep the balance at all times",
+                "Inverse operations: $+$ goes with $-$, $\\times$ goes with $\\div$",
+                "Goal is to isolate the variable"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "concept_name": "Transposition Method",
+            "difficulty": "medium",
+            "lesson": "Transposition is a faster way to solve equations. Moving a number from one side to the other changes its sign. A positive number becomes negative on the other side, and a multiplying number becomes a divisor.",
+            "real_example": "In $2x = 10$, 'transpose' 2 to the RHS to get $x = 10/2 = 5$.",
+            "key_points": [
+                "Change sign when crossing '='",
+                "Most efficient for multi-step equations",
+                "Always check your answer by substitution"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "Applications to Real-Life Problems",
+            "difficulty": "hard",
+            "lesson": "Finding the unknown is used to solve riddles, calculate ages, or find dimensions. The process involves identifying what is unknown, forming an equation, and solving it to find the 'hidden' value in a story problem.",
+            "real_example": "If Rahul's father is 3 times as old as Rahul and their total age is 60, we solve $x + 3x = 60$ to find Rahul is 15.",
+            "key_points": [
+                "Define the variable clearly",
+                "Translate 'is' as '='",
+                "Interpret the result back into context"
+            ],
+            "source_section": "Section 4.4"
+        }
+    ]
+}

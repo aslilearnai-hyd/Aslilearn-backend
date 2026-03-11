@@ -1,0 +1,137 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Rani Abbakka",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze Rani Abbakka’s leadership qualities in depth",
+    "Understand her strategies and decision-making",
+    "Reflect on courage, patriotism, and responsibility",
+    "Develop critical thinking and reading comprehension",
+    "Apply historical knowledge through writing and discussion",
+    "Expand vocabulary and analytical skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction and Context",
+      "topics_covered": [
+        "Historical background of Rani Abbakka",
+        "Her kingdom and threats she faced",
+        "Qualities of a leader"
+      ],
+      "teaching_strategy": [
+        "Teacher explains historical context",
+        "Class discussion on leadership challenges"
+      ],
+      "student_activities": [
+        "List leadership qualities with examples",
+        "Discuss how Rani Abbakka overcame difficulties"
+      ],
+      "assessment": ["Oral questioning", "Pair discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Analyzing Key Events",
+      "topics_covered": [
+        "Important battles and decisions",
+        "Strategies used for victories",
+        "Impact of her decisions on her kingdom"
+      ],
+      "teaching_strategy": [
+        "Guided reading highlighting strategic actions",
+        "Teacher explains cause-effect relationships"
+      ],
+      "student_activities": [
+        "Create a timeline of key events",
+        "Discuss consequences of each action"
+      ],
+      "assessment": ["Timeline evaluation", "Discussion participation"]
+    },
+    {
+      "period": 3,
+      "title": "Qualities and Decision-Making",
+      "topics_covered": [
+        "Bravery, intelligence, and strategic thinking",
+        "Problem-solving and planning",
+        "Influence on people and society"
+      ],
+      "teaching_strategy": [
+        "Discussion of leadership qualities",
+        "Teacher explains examples from the chapter"
+      ],
+      "student_activities": [
+        "Write a short paragraph analyzing one quality",
+        "Discuss in groups which quality was most critical"
+      ],
+      "assessment": ["Paragraph evaluation", "Class discussion"]
+    },
+    {
+      "period": 4,
+      "title": "Reflection and Comparison",
+      "topics_covered": [
+        "Connecting historical bravery to modern life",
+        "Reflection on personal courage and decision-making"
+      ],
+      "teaching_strategy": [
+        "Class discussion on applying lessons to personal life",
+        "Teacher encourages reflections and examples"
+      ],
+      "student_activities": [
+        "Write a reflection paragraph on one lesson from Rani Abbakka",
+        "Share examples of courage from personal or historical contexts"
+      ],
+      "assessment": ["Reflection paragraph evaluation", "Oral sharing"]
+    },
+    {
+      "period": 5,
+      "title": "Creative and Analytical Writing",
+      "topics_covered": [
+        "Write a short analytical essay on a battle or event",
+        "Include strategic thinking and leadership qualities"
+      ],
+      "teaching_strategy": [
+        "Teacher explains essay structure",
+        "Students brainstorm ideas for writing"
+      ],
+      "student_activities": [
+        "Write an essay analyzing Rani Abbakka’s decisions and impact",
+        "Include personal reflection on leadership and bravery"
+      ],
+      "assessment": ["Essay evaluation: content, analysis, reflection"]
+    },
+    {
+      "period": 6,
+      "title": "Vocabulary and Revision",
+      "topics_covered": [
+        "Advanced vocabulary from the chapter",
+        "Compound words and comprehension questions",
+        "Short analytical quiz on key events"
+      ],
+      "teaching_strategy": ["Worksheet exercises", "Class discussion"],
+      "student_activities": [
+        "Use new vocabulary in sentences",
+        "Answer comprehension and inference questions",
+        "Complete compound word exercises"
+      ],
+      "assessment": ["Worksheet evaluation", "Quiz performance"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Whiteboard/Blackboard",
+    "Chalk/Markers",
+    "Printed timeline of key events",
+    "Vocabulary worksheets"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Paragraph and essay writing",
+    "Comprehension and inference-based exercises",
+    "Class discussion",
+    "Vocabulary exercises"
+  ],
+  "teacher_tip": "Encourage students to analyze cause-effect relationships in battles and decisions. Ask them to connect lessons from history to modern leadership examples."
+}

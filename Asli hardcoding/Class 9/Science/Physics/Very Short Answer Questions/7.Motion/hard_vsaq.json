@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T11:45:00",
+    "difficulty": "hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A car travels 100 m in 5 s. What is its speed?",
+            "answer": "20 m/s.",
+            "key_points": [
+                "speed = distance/time"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Convert 72 km/h into m/s.",
+            "answer": "20 m/s.",
+            "key_points": [
+                "divide by 3.6"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A body moves with velocity 10 m/s for 5 s. Find displacement.",
+            "answer": "50 m.",
+            "key_points": [
+                "s = vt"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Calculate acceleration if velocity changes from 10 m/s to 20 m/s in 5 s.",
+            "answer": "2 m/s².",
+            "key_points": [
+                "a = (v−u)/t"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "A train starts from rest and reaches 10 m/s in 5 s. Find acceleration.",
+            "answer": "2 m/s².",
+            "key_points": [
+                "initial velocity zero"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Write the formula used to calculate displacement using velocity-time graph.",
+            "answer": "Displacement equals the area under the velocity-time graph.",
+            "key_points": [
+                "graph area"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What will be the displacement of an object if its velocity-time graph is a straight horizontal line?",
+            "answer": "Displacement increases uniformly with time.",
+            "key_points": [
+                "uniform velocity"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If a body moves in a circle at constant speed, what changes continuously?",
+            "answer": "Direction of velocity.",
+            "key_points": [
+                "direction change"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the displacement after one complete round of a circular track?",
+            "answer": "Zero.",
+            "key_points": [
+                "initial equals final"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the speed of an object covering 60 m in 3 s?",
+            "answer": "20 m/s.",
+            "key_points": [
+                "speed calculation"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 11,
+            "question": "If initial velocity is zero, what is the first equation of motion?",
+            "answer": "v = at.",
+            "key_points": [
+                "u = 0"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to acceleration when velocity remains constant?",
+            "answer": "Acceleration becomes zero.",
+            "key_points": [
+                "no change in velocity"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the acceleration of a body moving with uniform velocity?",
+            "answer": "Zero.",
+            "key_points": [
+                "constant velocity"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "If a body moves with constant acceleration, what type of graph is obtained for velocity-time?",
+            "answer": "A straight line.",
+            "key_points": [
+                "linear relation"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What does a curved distance-time graph represent?",
+            "answer": "Non-uniform motion.",
+            "key_points": [
+                "changing speed"
+            ],
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens to velocity when acceleration is negative?",
+            "answer": "Velocity decreases.",
+            "key_points": [
+                "retardation"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What quantity is measured by the slope of a velocity-time graph?",
+            "answer": "Acceleration.",
+            "key_points": [
+                "slope"
+            ],
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the formula to calculate speed?",
+            "answer": "Speed = distance / time.",
+            "key_points": [
+                "speed formula"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the formula for displacement using the second equation of motion?",
+            "answer": "s = ut + ½at².",
+            "key_points": [
+                "second equation"
+            ],
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Which physical quantity has both magnitude and direction?",
+            "answer": "Vector quantity.",
+            "key_points": [
+                "vector"
+            ],
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Give an example where velocity changes but speed remains constant.",
+            "answer": "Uniform circular motion.",
+            "key_points": [
+                "constant speed"
+            ],
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 22,
+            "question": "What type of motion is shown by a freely falling object?",
+            "answer": "Uniformly accelerated motion.",
+            "key_points": [
+                "constant acceleration"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the displacement of a body that moves 5 m east and 5 m west?",
+            "answer": "Zero.",
+            "key_points": [
+                "opposite direction"
+            ],
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens to speed if distance increases but time remains constant?",
+            "answer": "Speed increases.",
+            "key_points": [
+                "speed relation"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What kind of motion is represented by a straight line in a distance-time graph?",
+            "answer": "Uniform motion.",
+            "key_points": [
+                "straight line graph"
+            ],
+            "source_section": "Section 7.4.1"
+        }
+    ]
+}

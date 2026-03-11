@@ -1,0 +1,383 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 10: Light – Reflection and Refraction",
+    "generated_at": "2026-03-11T00:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define reflection of light.",
+            "answer": "Reflection of light is the process by which light rays falling on a surface bounce back into the same medium.",
+            "answer_outline": [
+                "Bouncing back of light",
+                "Same medium"
+            ],
+            "key_concepts": [
+                "reflection",
+                "incident ray"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State the laws of reflection of light.",
+            "answer": "1. Angle of incidence is equal to angle of reflection. 2. Incident ray, reflected ray and normal lie in the same plane.",
+            "answer_outline": [
+                "i = r",
+                "Same plane"
+            ],
+            "key_concepts": [
+                "laws of reflection",
+                "normal"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What type of image is formed by a plane mirror?",
+            "answer": "A plane mirror forms a virtual, erect and laterally inverted image of the same size as the object.",
+            "answer_outline": [
+                "Virtual and erect",
+                "Laterally inverted"
+            ],
+            "key_concepts": [
+                "plane mirror",
+                "lateral inversion"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the difference between a concave and a convex mirror?",
+            "answer": "A concave mirror is curved inwards and converges light rays, while a convex mirror is curved outwards and diverges light rays.",
+            "answer_outline": [
+                "Concave – converges",
+                "Convex – diverges"
+            ],
+            "key_concepts": [
+                "concave mirror",
+                "convex mirror"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Define the radius of curvature of a spherical mirror.",
+            "answer": "Radius of curvature is the radius of the sphere of which the mirror forms a part.",
+            "answer_outline": [
+                "Radius of sphere",
+                "Mirror surface"
+            ],
+            "key_concepts": [
+                "radius of curvature",
+                "spherical mirror"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the relation between focal length and radius of curvature?",
+            "answer": "Focal length (f) is half the radius of curvature (R), i.e., f = R/2.",
+            "answer_outline": [
+                "f = R/2",
+                "Mathematical relation"
+            ],
+            "key_concepts": [
+                "focal length",
+                "radius of curvature"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Name one device that uses a concave mirror.",
+            "answer": "Concave mirrors are used in solar cookers to concentrate sunlight.",
+            "answer_outline": [
+                "Solar cooker",
+                "Concentrates rays"
+            ],
+            "key_concepts": [
+                "concave mirror",
+                "application"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are convex mirrors used as rear-view mirrors in vehicles?",
+            "answer": "Convex mirrors provide a wider field of view and form erect images of objects, making them suitable as rear-view mirrors.",
+            "answer_outline": [
+                "Wider field of view",
+                "Erect image"
+            ],
+            "key_concepts": [
+                "convex mirror",
+                "rear-view mirror"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is refraction of light?",
+            "answer": "Refraction is the bending of light when it passes obliquely from one transparent medium to another due to change in its speed.",
+            "answer_outline": [
+                "Bending of light",
+                "Change in speed"
+            ],
+            "key_concepts": [
+                "refraction",
+                "medium change"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "State Snell’s law.",
+            "answer": "The ratio of sine of angle of incidence to sine of angle of refraction is constant for a given pair of media.",
+            "answer_outline": [
+                "sin i / sin r = constant",
+                "Refractive index"
+            ],
+            "key_concepts": [
+                "Snell's law",
+                "refractive index"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Define absolute refractive index.",
+            "answer": "Absolute refractive index of a medium is the ratio of speed of light in vacuum to speed of light in that medium.",
+            "answer_outline": [
+                "n = c/v",
+                "Vacuum comparison"
+            ],
+            "key_concepts": [
+                "absolute refractive index",
+                "speed of light"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does a coin placed in water appear raised?",
+            "answer": "Due to refraction, light rays from the coin bend away from the normal when coming out of water, making the coin appear raised.",
+            "answer_outline": [
+                "Apparent depth",
+                "Refraction effect"
+            ],
+            "key_concepts": [
+                "apparent depth",
+                "refraction"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is lateral displacement?",
+            "answer": "Lateral displacement is the perpendicular distance between the path of the incident ray and the emergent ray when light passes through a glass slab.",
+            "answer_outline": [
+                "Sideways shift",
+                "Parallel rays"
+            ],
+            "key_concepts": [
+                "lateral displacement",
+                "glass slab"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a convex lens?",
+            "answer": "A convex lens is thicker in the middle and thinner at the edges and converges parallel rays of light.",
+            "answer_outline": [
+                "Converging lens",
+                "Thicker centre"
+            ],
+            "key_concepts": [
+                "convex lens",
+                "converging"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a concave lens?",
+            "answer": "A concave lens is thinner in the middle and thicker at the edges and diverges parallel rays of light.",
+            "answer_outline": [
+                "Diverging lens",
+                "Thinner centre"
+            ],
+            "key_concepts": [
+                "concave lens",
+                "diverging"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the power of a lens?",
+            "answer": "Power of a lens is a measure of its ability to converge or diverge light rays. It is equal to the reciprocal of focal length in metres.",
+            "answer_outline": [
+                "P = 1/f",
+                "Dioptre"
+            ],
+            "key_concepts": [
+                "power of lens",
+                "dioptre"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 17,
+            "question": "State the mirror formula.",
+            "answer": "The mirror formula is 1/f = 1/v + 1/u, where f is focal length, v is image distance and u is object distance.",
+            "answer_outline": [
+                "1/f = 1/v + 1/u",
+                "Spherical mirror"
+            ],
+            "key_concepts": [
+                "mirror formula",
+                "sign convention"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the nature of image formed by a convex mirror?",
+            "answer": "A convex mirror always forms a virtual, erect and diminished image.",
+            "answer_outline": [
+                "Virtual erect",
+                "Diminished"
+            ],
+            "key_concepts": [
+                "convex mirror",
+                "image characteristics"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do we see a rainbow after rain?",
+            "answer": "Rainbow is formed due to refraction, dispersion and total internal reflection of sunlight by water droplets.",
+            "answer_outline": [
+                "Refraction and dispersion",
+                "Water droplets"
+            ],
+            "key_concepts": [
+                "dispersion",
+                "rainbow formation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is total internal reflection?",
+            "answer": "Total internal reflection occurs when light travelling in a denser medium is incident on a rarer medium at an angle greater than the critical angle and gets completely reflected back.",
+            "answer_outline": [
+                "Denser to rarer",
+                "Beyond critical angle"
+            ],
+            "key_concepts": [
+                "total internal reflection",
+                "critical angle"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do stars twinkle?",
+            "answer": "Twinkling of stars is caused by atmospheric refraction due to varying density layers in the atmosphere, changing the apparent position of stars.",
+            "answer_outline": [
+                "Atmospheric refraction",
+                "Density variation"
+            ],
+            "key_concepts": [
+                "atmospheric refraction",
+                "twinkling"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 22,
+            "question": "State the lens formula.",
+            "answer": "The lens formula is 1/f = 1/v – 1/u, where f is focal length, v is image distance and u is object distance.",
+            "answer_outline": [
+                "1/f = 1/v – 1/u",
+                "Thin lens"
+            ],
+            "key_concepts": [
+                "lens formula",
+                "sign convention"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is magnification?",
+            "answer": "Magnification is the ratio of the height of the image to the height of the object. It is also given by m = v/u.",
+            "answer_outline": [
+                "m = h'/h",
+                "m = v/u"
+            ],
+            "key_concepts": [
+                "magnification",
+                "image size"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is a convex lens used as a magnifying glass?",
+            "answer": "When an object is placed between the optical centre and the focus of a convex lens, it forms a virtual, erect and magnified image.",
+            "answer_outline": [
+                "Virtual magnified image",
+                "Object position"
+            ],
+            "key_concepts": [
+                "convex lens",
+                "magnifying glass"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the SI unit of power of a lens?",
+            "answer": "The SI unit of power of a lens is dioptre (D).",
+            "answer_outline": [
+                "Dioptre",
+                "Symbol D"
+            ],
+            "key_concepts": [
+                "power unit",
+                "dioptre"
+            ],
+            "marks": 2,
+            "source_section": "Section 10.5"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 4: The Lake Isle of Innisfree",
+    "generated_at": "2026-03-08T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Discuss the significance of the poem’s title in relation to its theme.",
+            "answer": "The title emphasizes the poet’s desire for a specific location, Innisfree, which symbolizes peace, solitude, and escape from urban life.",
+            "answer_outline": ["Title significance", "Theme connection"],
+            "key_concepts": ["Innisfree", "solitude", "peace"],
+            "marks": 3
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how W.B. Yeats combines Romantic and Symbolist elements in the poem.",
+            "answer": "Yeats uses nature imagery, emotion, and individual experience (Romantic) while giving symbolic meaning to Innisfree as spiritual refuge (Symbolist).",
+            "answer_outline": ["Romantic elements", "Symbolist elements"],
+            "key_concepts": ["Romanticism", "Symbolism", "nature", "solitude"],
+            "marks": 3
+        },
+        {
+            "question_number": 3,
+            "question": "Analyze how auditory imagery contributes to the mood of the poem.",
+            "answer": "Sounds like 'lake water lapping' and 'cricket sings' create serenity and reinforce the poet’s inner peace and longing.",
+            "answer_outline": ["Auditory imagery", "Mood effect"],
+            "key_concepts": ["auditory imagery", "serenity", "peace"],
+            "marks": 3
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the role of visual imagery in establishing the poet’s ideal world.",
+            "answer": "Visual images like 'midnight’s all a glimmer' and 'noon a purple glow' depict a tranquil, vivid environment, highlighting contrast with urban life.",
+            "answer_outline": ["Visual imagery", "Ideal world"],
+            "key_concepts": ["visual imagery", "urban contrast", "tranquility"],
+            "marks": 3
+        },
+        {
+            "question_number": 5,
+            "question": "Examine the theme of solitude in the poem.",
+            "answer": "Solitude represents self-reflection, spiritual peace, and personal freedom, showing Yeats’s longing for a contemplative life.",
+            "answer_outline": ["Theme", "Explanation"],
+            "key_concepts": ["solitude", "self-reflection", "spiritual peace"],
+            "marks": 3
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss the symbolism of the poet’s cabin.",
+            "answer": "The cabin symbolizes simplicity, self-sufficiency, and a harmonious life close to nature.",
+            "answer_outline": ["Symbolism", "Explanation"],
+            "key_concepts": ["cabin", "simplicity", "nature"],
+            "marks": 3
+        },
+        {
+            "question_number": 7,
+            "question": "Interpret the meaning of 'bee-loud glade' in a symbolic sense.",
+            "answer": "It symbolizes productive labor, peaceful coexistence with nature, and natural harmony.",
+            "answer_outline": ["Literal", "Symbolic meaning"],
+            "key_concepts": ["bee-loud glade", "harmony", "nature"],
+            "marks": 3
+        },
+        {
+            "question_number": 8,
+            "question": "Examine how Yeats uses repetition in the poem and its effect.",
+            "answer": "The repeated line 'I will arise and go now' emphasizes his yearning and emotional intensity for leaving the urban world.",
+            "answer_outline": ["Repetition", "Effect"],
+            "key_concepts": ["repetition", "yearning", "emotional intensity"],
+            "marks": 3
+        },
+        {
+            "question_number": 9,
+            "question": "Analyze the contrast between urban life and the natural world in the poem.",
+            "answer": "Urban life is busy, chaotic, and impersonal, while nature is calm, serene, and spiritually fulfilling, reflecting the poet’s escape desire.",
+            "answer_outline": ["Contrast", "Analysis"],
+            "key_concepts": ["urban", "nature", "contrast", "escape"],
+            "marks": 3
+        },
+        {
+            "question_number": 10,
+            "question": "Discuss the use of sensory imagery and its contribution to the poem’s immersive quality.",
+            "answer": "Yeats employs auditory, visual, and tactile imagery, enabling readers to vividly experience the island’s peace and simplicity.",
+            "answer_outline": ["Sensory imagery", "Effect"],
+            "key_concepts": ["auditory", "visual", "tactile imagery", "immersion"],
+            "marks": 3
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the emotional state of the poet and how it is reflected in the poem.",
+            "answer": "The poet feels longing, yearning, and a sense of nostalgia, reflected in his depiction of Innisfree and the desire for peace.",
+            "answer_outline": ["Emotional state", "Reflection"],
+            "key_concepts": ["longing", "yearning", "peace"],
+            "marks": 3
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss how the poem reflects Yeats’ philosophical beliefs.",
+            "answer": "Yeats emphasizes harmony with nature, the need for spiritual retreat, and the importance of simplicity and contemplation in life.",
+            "answer_outline": ["Philosophy", "Examples"],
+            "key_concepts": ["nature", "spiritual retreat", "contemplation"],
+            "marks": 3
+        },
+        {
+            "question_number": 13,
+            "question": "Interpret the line 'while I stand on the roadway, or on the pavements grey'.",
+            "answer": "It contrasts the dreary, monotonous urban environment with the vibrant, peaceful island, highlighting the poet’s desire for escape.",
+            "answer_outline": ["Line meaning", "Contrast"],
+            "key_concepts": ["urban life", "Innisfree", "escape"],
+            "marks": 3
+        },
+        {
+            "question_number": 14,
+            "question": "Discuss how the poem demonstrates the Romantic ideal of nature as a restorative force.",
+            "answer": "Nature provides solace, refreshment, and inspiration, echoing the Romantic belief that natural environments restore emotional and spiritual balance.",
+            "answer_outline": ["Romanticism", "Restoration"],
+            "key_concepts": ["nature", "restoration", "Romantic ideal"],
+            "marks": 3
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of time references like 'midnight' and 'noon' in the poem.",
+            "answer": "They show the continuous, gentle presence of nature and reflect the poet’s awareness of its beauty at different times of day.",
+            "answer_outline": ["Time references", "Significance"],
+            "key_concepts": ["midnight", "noon", "nature"],
+            "marks": 3
+        },
+        {
+            "question_number": 16,
+            "question": "Analyze the significance of hearing the lake water 'in the deep heart’s core'.",
+            "answer": "It symbolizes the poet’s profound spiritual connection with nature, beyond physical experience.",
+            "answer_outline": ["Line analysis", "Spiritual meaning"],
+            "key_concepts": ["lake water", "heart", "spiritual connection"],
+            "marks": 3
+        },
+        {
+            "question_number": 17,
+            "question": "How does the poem blend personal longing with universal themes?",
+            "answer": "Yeats’ personal desire for Innisfree represents a universal human need for peace, retreat, and harmony with nature.",
+            "answer_outline": ["Personal", "Universal"],
+            "key_concepts": ["longing", "peace", "universal theme"],
+            "marks": 3
+        },
+        {
+            "question_number": 18,
+            "question": "Examine the role of natural cycles in the poem.",
+            "answer": "Morning, noon, and night reflect ongoing natural rhythms that sustain life and provide emotional continuity for the poet.",
+            "answer_outline": ["Natural cycles", "Effect"],
+            "key_concepts": ["time", "nature cycles", "emotional continuity"],
+            "marks": 3
+        },
+        {
+            "question_number": 19,
+            "question": "How does the poem reflect Yeats’ use of pastoral imagery?",
+            "answer": "The island, cabin, bee-rows, and nature’s sounds create a pastoral setting emphasizing simplicity, harmony, and rural beauty.",
+            "answer_outline": ["Pastoral imagery", "Examples"],
+            "key_concepts": ["pastoral", "simplicity", "nature"],
+            "marks": 3
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss the poem’s tone and how it is achieved.",
+            "answer": "The tone is calm, reflective, and longing, achieved through gentle imagery, repetition, and careful word choice.",
+            "answer_outline": ["Tone", "Techniques"],
+            "key_concepts": ["calm", "reflective", "word choice"],
+            "marks": 3
+        },
+        {
+            "question_number": 21,
+            "question": "Analyze the impact of Yeats’ choice of first-person narration.",
+            "answer": "It creates intimacy, allowing readers to experience his emotions, thoughts, and desire for solitude personally.",
+            "answer_outline": ["Narration", "Effect"],
+            "key_concepts": ["first-person", "intimacy", "emotional impact"],
+            "marks": 3
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how the poem balances descriptive imagery with emotional reflection.",
+            "answer": "Detailed nature descriptions are interwoven with the poet’s longing and inner reflection, blending external and internal landscapes.",
+            "answer_outline": ["Descriptive imagery", "Emotional reflection"],
+            "key_concepts": ["nature", "emotion", "balance"],
+            "marks": 3
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the role of simplicity in the poet’s ideal life.",
+            "answer": "Simplicity in dwelling, work, and environment represents harmony with nature and spiritual fulfillment.",
+            "answer_outline": ["Simplicity", "Role"],
+            "key_concepts": ["simplicity", "spiritual fulfillment", "harmony"],
+            "marks": 3
+        },
+        {
+            "question_number": 24,
+            "question": "How does the poem reflect Yeats’ personal philosophy of retreat and contemplation?",
+            "answer": "It embodies his belief that escaping busy life into nature is essential for self-reflection and spiritual nourishment.",
+            "answer_outline": ["Philosophy", "Explanation"],
+            "key_concepts": ["retreat", "contemplation", "nature"],
+            "marks": 3
+        },
+        {
+            "question_number": 25,
+            "question": "Provide an interpretive analysis of the poem’s overall message.",
+            "answer": "The poem advocates finding peace and spiritual renewal through communion with nature, highlighting the timeless human desire for solace and simplicity.",
+            "answer_outline": ["Interpretation", "Message"],
+            "key_concepts": ["peace", "spiritual renewal", "solitude"],
+            "marks": 4
+        }
+    ]
+}

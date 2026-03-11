@@ -1,0 +1,284 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-06T00:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a tissue?",
+            "answer": "A tissue is a group of similar cells that perform a specific function.",
+            "key_concepts": [
+                "tissue definition"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are tissues important in multicellular organisms?",
+            "answer": "Tissues allow division of labour where different cells perform specialized functions efficiently.",
+            "key_concepts": [
+                "division of labour"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the two main types of plant tissues.",
+            "answer": "The two main types are meristematic tissue and permanent tissue.",
+            "key_concepts": [
+                "plant tissues"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is meristematic tissue?",
+            "answer": "Meristematic tissue is plant tissue that divides continuously and helps in plant growth.",
+            "key_concepts": [
+                "meristematic tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Where is apical meristem found?",
+            "answer": "Apical meristem is found at the tips of roots and stems.",
+            "key_concepts": [
+                "apical meristem"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are permanent tissues?",
+            "answer": "Permanent tissues are tissues that have lost the ability to divide and perform specific functions.",
+            "key_concepts": [
+                "permanent tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Name the three simple permanent tissues.",
+            "answer": "Parenchyma, collenchyma and sclerenchyma.",
+            "key_concepts": [
+                "simple tissues"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the function of parenchyma?",
+            "answer": "Parenchyma stores food and helps in photosynthesis in plants.",
+            "key_concepts": [
+                "parenchyma function"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the function of collenchyma?",
+            "answer": "Collenchyma provides flexibility and support to plant parts.",
+            "key_concepts": [
+                "collenchyma function"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the function of sclerenchyma?",
+            "answer": "Sclerenchyma provides mechanical strength to plants.",
+            "key_concepts": [
+                "sclerenchyma function"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What are complex permanent tissues?",
+            "answer": "Complex permanent tissues are made of different types of cells working together to perform a function.",
+            "key_concepts": [
+                "complex tissues"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the two complex permanent tissues in plants.",
+            "answer": "Xylem and phloem.",
+            "key_concepts": [
+                "xylem",
+                "phloem"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the function of xylem?",
+            "answer": "Xylem transports water and minerals from roots to other parts of the plant.",
+            "key_concepts": [
+                "water transport"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the function of phloem?",
+            "answer": "Phloem transports food from leaves to other parts of the plant.",
+            "key_concepts": [
+                "food transport"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What are stomata?",
+            "answer": "Stomata are small pores on leaves that allow exchange of gases.",
+            "key_concepts": [
+                "stomata"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the four main types of animal tissues.",
+            "answer": "Epithelial, connective, muscular and nervous tissues.",
+            "key_concepts": [
+                "animal tissues"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is epithelial tissue?",
+            "answer": "Epithelial tissue forms the covering of body surfaces and organs.",
+            "key_concepts": [
+                "epithelial tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Give two examples of connective tissue.",
+            "answer": "Bone and cartilage are examples of connective tissue.",
+            "key_concepts": [
+                "connective tissue"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the function of connective tissue?",
+            "answer": "Connective tissue supports, connects and binds body parts.",
+            "key_concepts": [
+                "support"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is muscular tissue?",
+            "answer": "Muscular tissue helps in movement by contraction and relaxation.",
+            "key_concepts": [
+                "muscle movement"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Name the three types of muscular tissue.",
+            "answer": "Striated, smooth and cardiac muscles.",
+            "key_concepts": [
+                "muscle types"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which muscle tissue is found in the heart?",
+            "answer": "Cardiac muscle tissue is found in the heart.",
+            "key_concepts": [
+                "cardiac muscle"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is nervous tissue?",
+            "answer": "Nervous tissue transmits nerve impulses throughout the body.",
+            "key_concepts": [
+                "nervous tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is a neuron?",
+            "answer": "A neuron is the structural and functional unit of nervous tissue.",
+            "key_concepts": [
+                "neuron"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Name the three main parts of a neuron.",
+            "answer": "Cell body, dendrites and axon.",
+            "key_concepts": [
+                "neuron parts"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 6.3.4"
+        }
+    ]
+}

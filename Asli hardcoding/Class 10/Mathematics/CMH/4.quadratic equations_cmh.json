@@ -1,0 +1,55 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-02-27T21:00:00",
+    "concepts": [
+        {
+            "concept_name": "Quadratic Equation",
+            "difficulty": "easy",
+            "lesson": "A quadratic equation is an algebraic equation of the form ax² + bx + c = 0, where a, b, and c are real numbers and a ≠ 0. The presence of the squared term makes the equation second degree in nature. Quadratic equations typically arise in problems involving area, motion, and geometry. Each quadratic equation has at most two solutions, called roots, which may be real or non-real. Graphically, a quadratic equation represents a parabola whose shape depends on the coefficient of x².",
+            "real_example": "x² − 5x + 6 = 0",
+            "key_points": [
+                "Degree is 2",
+                "Has at most two roots",
+                "Represents a parabola"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "concept_name": "Methods of Solving Quadratic Equations",
+            "difficulty": "medium",
+            "lesson": "Quadratic equations can be solved using three standard methods: factorisation, completing the square, and the quadratic formula. Factorisation is the simplest method when the quadratic expression can be easily broken into factors. Completing the square transforms the equation into a perfect square form, making it easier to solve. The quadratic formula provides a general solution that works for all quadratic equations, regardless of their form. Choosing the appropriate method depends on the nature of the given equation.",
+            "real_example": "Solving x² − 3x − 4 = 0 by factorisation.",
+            "key_points": [
+                "Factorisation is simplest",
+                "Formula works for all cases",
+                "Graph gives approximate roots"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "concept_name": "Discriminant",
+            "difficulty": "medium",
+            "lesson": "The discriminant of a quadratic equation ax² + bx + c = 0 is given by D = b² − 4ac. The value of the discriminant determines the nature of the roots without actually solving the equation. A positive discriminant indicates two distinct real roots, zero discriminant indicates two equal real roots, and a negative discriminant indicates that the equation has no real roots. The discriminant plays a key role in analysis and problem classification.",
+            "real_example": "D = 0 gives equal roots.",
+            "key_points": [
+                "D > 0 → real and distinct",
+                "D = 0 → real and equal",
+                "D < 0 → no real roots"
+            ],
+            "source_section": "Section 4.4"
+        },
+        {
+            "concept_name": "Nature of Roots",
+            "difficulty": "hard",
+            "lesson": "The nature of the roots of a quadratic equation depends entirely on the value of the discriminant. By analysing the discriminant, one can determine whether the roots are real or non-real and whether they are equal or distinct. This concept is particularly useful in reasoning-based questions and in applications involving graphs, as it helps predict how the parabola intersects the x-axis. Understanding the nature of roots strengthens both algebraic and graphical interpretation skills.",
+            "real_example": "x² + 1 = 0 has no real roots.",
+            "key_points": [
+                "Discriminant-based classification",
+                "Important for reasoning questions",
+                "Used in graph analysis"
+            ],
+            "source_section": "Section 4.4"
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "Fractions in Disguise (Percentages)",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Convert fractions, decimals, and percentages",
+        "Calculate percentages of quantities",
+        "Compare values using percentages",
+        "Solve percentage increase and decrease problems",
+        "Apply percentages in real-life contexts",
+        "Solve profit, loss, and discount problems",
+        "Understand simple interest and compounding basics"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision of Fractions, Decimals, and Percentages",
+            "topics_covered": [
+                "Relationship between fractions, decimals, and percentages",
+                "Conversion methods"
+            ],
+            "teaching_strategy": [
+                "Board demonstrations",
+                "Interactive questioning"
+            ],
+            "student_activities": [
+                "Convert 0.75 and 0.25 into percentages",
+                "Convert 35% and 80% into fractions"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Peer checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Percentage of a Quantity",
+            "topics_covered": [
+                "Finding percentage using multiplication",
+                "Using proportional reasoning"
+            ],
+            "teaching_strategy": [
+                "Worked examples",
+                "Step-by-step explanation"
+            ],
+            "student_activities": [
+                "Find 15% of 240",
+                "Calculate 12% of 350"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mental Percentage Calculations",
+            "topics_covered": [
+                "Quick calculations using 10%, 5%, and 1%",
+                "Estimation techniques"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Mental math exercises"
+            ],
+            "student_activities": [
+                "Calculate 25% of 80 mentally",
+                "Find 20% of 200"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Rapid-fire quiz"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Comparing Quantities Using Percentages",
+            "topics_covered": [
+                "Comparing exam scores",
+                "Using percentages to standardize comparisons"
+            ],
+            "teaching_strategy": [
+                "Real-life examples",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "Convert scores into percentages",
+                "Identify the highest performer"
+            ],
+            "assessment": [
+                "Group presentation",
+                "Short written test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Percentage Increase and Decrease",
+            "topics_covered": [
+                "Percentage increase formula",
+                "Percentage decrease formula"
+            ],
+            "teaching_strategy": [
+                "Example-based teaching",
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Find percentage increase from 60 to 90",
+                "Find percentage decrease from 200 to 150"
+            ],
+            "assessment": [
+                "Worksheet questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Profit, Loss, and Discount",
+            "topics_covered": [
+                "Cost price and selling price",
+                "Profit percentage",
+                "Discount calculation"
+            ],
+            "teaching_strategy": [
+                "Role-play shopping activity",
+                "Board problem solving"
+            ],
+            "student_activities": [
+                "Calculate profit when CP = ₹300 and SP = ₹360",
+                "Find selling price after 20% discount on ₹500"
+            ],
+            "assessment": [
+                "MCQs",
+                "Practice problems"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Interest and Chapter Revision",
+            "topics_covered": [
+                "Simple interest concept",
+                "Introduction to compounding",
+                "Chapter summary"
+            ],
+            "teaching_strategy": [
+                "Flowchart explanation",
+                "Mixed question solving"
+            ],
+            "student_activities": [
+                "Calculate interest on ₹2000 at 10% per year",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard",
+        "Markers",
+        "NCERT Mathematics textbook",
+        "Percentage charts"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short tests",
+        "MCQs",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Encourage mental calculations using 10%, 5%, and 1% to improve speed and number sense."
+}

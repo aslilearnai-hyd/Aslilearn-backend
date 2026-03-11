@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 2: Polynomials",
+    "generated_at": "2026-02-28T21:30:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a polynomial?",
+                "correct_answer": "An algebraic expression with non-negative integer powers of variables",
+                "explanation": "Polynomials contain variables raised only to whole number powers.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is the degree of a polynomial?",
+                "correct_answer": "The highest power of the variable in the polynomial",
+                "explanation": "Degree is determined by the maximum exponent of the variable.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is a linear polynomial?",
+                "correct_answer": "A polynomial of degree 1",
+                "explanation": "Linear polynomials are of the form ax + b.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is a quadratic polynomial?",
+                "correct_answer": "A polynomial of degree 2",
+                "explanation": "Quadratic polynomials are of the form ax² + bx + c.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is the zero of a polynomial?",
+                "correct_answer": "A value of the variable for which the polynomial becomes zero",
+                "explanation": "Zeroes are found by solving p(x) = 0.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "How are zeroes of a polynomial related to its graph?",
+                "correct_answer": "Zeroes correspond to the x-intercepts of the graph",
+                "explanation": "Where the graph cuts the x-axis, the polynomial value is zero.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is the maximum number of zeroes of a polynomial?",
+                "correct_answer": "Equal to the degree of the polynomial",
+                "explanation": "A polynomial of degree n can have at most n zeroes.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "question": "What is a constant polynomial?",
+                "correct_answer": "A polynomial with degree zero",
+                "explanation": "A non-zero constant has degree 0.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "What is the degree of the zero polynomial?",
+                "correct_answer": "The degree of the zero polynomial is not defined",
+                "explanation": "Zero polynomial has no non-zero term.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "question": "Which polynomial represents a straight line graph?",
+                "correct_answer": "A linear polynomial",
+                "explanation": "Graphs of linear polynomials are straight lines.",
+                "source_section": "Section 2.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Forms of Polynomials",
+                "content": "Linear, quadratic and cubic polynomials are classified based on degree as 1, 2 and 3 respectively.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "title": "Zeroes and Graphs",
+                "content": "The number of zeroes of a polynomial is equal to the number of times its graph cuts the x-axis.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "title": "Degree Concept",
+                "content": "The degree of a polynomial helps in predicting the maximum number of zeroes.",
+                "source_section": "Section 2.1"
+            },
+            {
+                "title": "Constant Polynomial",
+                "content": "A constant polynomial has degree zero and its graph is a horizontal line.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "title": "Zero Polynomial",
+                "content": "The zero polynomial has undefined degree and its value is always zero.",
+                "source_section": "Section 2.1"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "A polynomial of degree one always represents a straight line.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "A quadratic polynomial can have at most two zeroes.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "Zeroes of a polynomial are also called roots.",
+                "source_section": "Section 2.2"
+            },
+            {
+                "fact": "Graphs help in visualising the nature and number of zeroes.",
+                "source_section": "Section 2.2"
+            }
+        ]
+    }
+}

@@ -1,0 +1,178 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter_name": "Electoral Politics",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain democratic elections and political representation",
+        "Analyze the role of political competition in democracy",
+        "Understand electoral constituencies and reservations",
+        "Explain voters list and universal adult franchise",
+        "Describe the election process in detail",
+        "Evaluate the role of the Election Commission",
+        "Analyze participation of voters in elections",
+        "Critically examine challenges to Indian elections"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Electoral Politics",
+            "topics_covered": [
+                "Meaning of electoral politics",
+                "Importance of elections in democracy"
+            ],
+            "teaching_strategy": [
+                "Interactive lecture",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Discuss recent elections in India"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Need for Elections",
+            "topics_covered": [
+                "Representative democracy",
+                "Role of citizens in choosing leaders"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Write reasons why elections are necessary"
+            ],
+            "assessment": [
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Political Competition",
+            "topics_covered": [
+                "Meaning of political competition",
+                "Benefits and criticisms"
+            ],
+            "teaching_strategy": [
+                "Debate activity"
+            ],
+            "student_activities": [
+                "Debate advantages and disadvantages of political competition"
+            ],
+            "assessment": [
+                "Participation evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Electoral Constituencies",
+            "topics_covered": [
+                "Constituencies in Lok Sabha and Assembly",
+                "Equal population principle"
+            ],
+            "teaching_strategy": [
+                "Map-based explanation"
+            ],
+            "student_activities": [
+                "Locate constituencies on map"
+            ],
+            "assessment": [
+                "Map evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Reservation and Voters List",
+            "topics_covered": [
+                "Reserved constituencies",
+                "Universal adult franchise",
+                "Electoral roll"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Write eligibility criteria for voting"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Election Campaign and Polling",
+            "topics_covered": [
+                "Campaign rules",
+                "Model Code of Conduct",
+                "Polling process"
+            ],
+            "teaching_strategy": [
+                "Flowchart and examples"
+            ],
+            "student_activities": [
+                "Create a voting process diagram"
+            ],
+            "assessment": [
+                "Diagram evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Counting of Votes and Election Results",
+            "topics_covered": [
+                "Vote counting",
+                "Declaration of results",
+                "Majority rule"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Analyze a sample election result"
+            ],
+            "assessment": [
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Election Commission and Challenges",
+            "topics_covered": [
+                "Powers of Election Commission",
+                "Free and fair elections",
+                "Challenges such as money power and criminal influence"
+            ],
+            "teaching_strategy": [
+                "Discussion",
+                "Case study analysis"
+            ],
+            "student_activities": [
+                "Discuss possible election reforms"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Civics textbook",
+        "Election process charts",
+        "Map of India",
+        "Sample election data"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Debate participation",
+        "Diagram drawing",
+        "Short quizzes"
+    ],
+    "teacher_tip": "Encourage students to analyze real election news and connect concepts with current democratic practices."
+}

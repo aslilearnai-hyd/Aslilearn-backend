@@ -1,0 +1,165 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Number Systems",
+    "difficulty": "Medium",
+    "source_pdf": "m9_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Rational Number Finder",
+            "objective": "Find rational numbers between two given numbers",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write two rational numbers such as 2/3 and 3/4",
+                "Find five rational numbers between them",
+                "Verify each number using decimal form"
+            ],
+            "learning_outcome": "Understands density of rational numbers",
+            "evaluation": "Correct answers (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Number Line Representation",
+            "objective": "Represent rational numbers on a number line",
+            "materials": [
+                "Graph paper",
+                "Scale"
+            ],
+            "steps": [
+                "Draw a number line from 0 to 1",
+                "Mark fractions like 1/2, 1/3, 3/4",
+                "Label all points clearly"
+            ],
+            "learning_outcome": "Develops graphical representation skills",
+            "evaluation": "Correct marking (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Terminating vs Recurring Decimals",
+            "objective": "Identify decimal expansion types",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Convert fractions such as 1/4, 1/3, 7/8",
+                "Observe decimal patterns",
+                "Classify them as terminating or recurring"
+            ],
+            "learning_outcome": "Understands decimal representation of rationals",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Irrational Number Search",
+            "objective": "Explore irrational numbers",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "List numbers like √2, √5, π",
+                "Write their approximate decimal values",
+                "Explain why they are irrational"
+            ],
+            "learning_outcome": "Recognizes irrational numbers",
+            "evaluation": "Explanation clarity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Equivalent Rational Numbers",
+            "objective": "Generate equivalent rational numbers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose five fractions",
+                "Multiply numerator and denominator by the same number",
+                "Write three equivalent forms"
+            ],
+            "learning_outcome": "Understands equivalence of rational numbers",
+            "evaluation": "Correct answers (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Square Root on Number Line",
+            "objective": "Represent square roots graphically",
+            "materials": [
+                "Graph paper",
+                "Compass",
+                "Scale"
+            ],
+            "steps": [
+                "Draw a number line",
+                "Construct √2 using geometric method",
+                "Mark its approximate position"
+            ],
+            "learning_outcome": "Visualizes irrational numbers",
+            "evaluation": "Accuracy of construction (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Decimal Expansion Investigation",
+            "objective": "Study decimal expansion patterns",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Convert 1/7, 2/7, 3/7 to decimals",
+                "Observe repeating patterns",
+                "Write conclusions"
+            ],
+            "learning_outcome": "Understands repeating decimal patterns",
+            "evaluation": "Observation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Real Number Classification Table",
+            "objective": "Classify numbers into sets",
+            "materials": [
+                "Chart paper",
+                "Marker"
+            ],
+            "steps": [
+                "Create columns for natural, whole, integer, rational, irrational",
+                "Fill with examples",
+                "Display the chart"
+            ],
+            "learning_outcome": "Understands number hierarchy",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Irrational Between Rationals",
+            "objective": "Find irrational numbers between rational numbers",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take rational numbers like 1 and 2",
+                "Find irrational numbers between them",
+                "Write decimal approximations"
+            ],
+            "learning_outcome": "Explores density of real numbers",
+            "evaluation": "Correct examples (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Number System Tree Diagram",
+            "objective": "Visualize number system structure",
+            "materials": [
+                "Chart paper",
+                "Colors"
+            ],
+            "steps": [
+                "Draw a tree diagram",
+                "Show relations between natural, whole, integer, rational and irrational numbers"
+            ],
+            "learning_outcome": "Understands number system hierarchy",
+            "evaluation": "Diagram accuracy (10 marks)"
+        }
+    ]
+}

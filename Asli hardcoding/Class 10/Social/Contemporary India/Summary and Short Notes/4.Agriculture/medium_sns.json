@@ -1,0 +1,34 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Geography)",
+  "chapter": "Agriculture",
+  "difficulty": "Medium",
+  "source_pdf": "jess104.pdf",
+  "short_notes": {
+    "key_points": [
+      "Agriculture provides employment to a large portion of India's population",
+      "Primitive subsistence farming uses traditional tools and family labour",
+      "Intensive subsistence farming produces maximum output from small land areas",
+      "Commercial farming produces crops mainly for the market",
+      "Cropping patterns depend on climate, soil, and irrigation"
+    ],
+    "examples": [
+      "Rice requires high rainfall and temperature above 25°C",
+      "Wheat requires cool climate and moderate rainfall",
+      "Tea plantations require labour and humid climate",
+      "Jute grows well in fertile flood plains",
+      "Rubber grows in hot and humid climates"
+    ],
+    "formulas": [
+      "Agricultural Productivity = Technology + Irrigation + Fertilizers",
+      "Crop Distribution = Climate + Soil + Water Availability",
+      "Farm Output = Land Resources × Farming Methods"
+    ],
+    "exam_tips": [
+      "Understand the differences between types of farming",
+      "Remember climatic requirements for major crops",
+      "Practice explaining why certain crops grow in specific regions",
+      "Use examples of crops to support answers in exams"
+    ]
+  }
+}

@@ -1,0 +1,408 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 10: The Human Eye and the Colourful World",
+    "generated_at": "2026-03-11T00:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the power of accommodation decreases with age, leading to presbyopia. Relate it to changes in the lens and ciliary muscles.",
+            "answer": "With age, the crystalline lens loses elasticity and becomes rigid, while ciliary muscles weaken. This reduces the ability to increase lens curvature for near vision, causing difficulty in reading or seeing close objects (presbyopia).",
+            "answer_outline": [
+                "Lens loses elasticity",
+                "Ciliary muscles weaken",
+                "Reduced near vision accommodation"
+            ],
+            "key_concepts": [
+                "presbyopia mechanism",
+                "lens properties"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "A myopic person has a far point at 120 cm. What type and power of lens is required for correction? (Assume near point remains normal.)",
+            "answer": "Concave lens is required. Power P = -1/f = -1/1.2 m = -0.833 D (approximately -0.83 D or -5/6 D). The lens forms virtual image at infinity for distant objects.",
+            "answer_outline": [
+                "Concave lens",
+                "f = -120 cm = -1.2 m",
+                "P = -1/f ≈ -0.83 D"
+            ],
+            "key_concepts": [
+                "myopia correction",
+                "lens power calculation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is the least distance of distinct vision considered 25 cm for a normal eye? Explain its relation to maximum accommodation.",
+            "answer": "25 cm is the minimum distance at which the eye can focus clearly using maximum accommodation (thickest lens). Closer than this causes strain as the eye cannot converge rays sufficiently.",
+            "answer_outline": [
+                "Maximum accommodation limit",
+                "Strain beyond 25 cm",
+                "Standard reference distance"
+            ],
+            "key_concepts": [
+                "least distance",
+                "accommodation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between the cause of myopia due to eyeball elongation versus excessive corneal curvature. How does each affect image formation?",
+            "answer": "Elongated eyeball → image forms in front of retina even with normal lens. Excessive corneal curvature → stronger convergence, image again in front of retina. Both cause distant objects to appear blurred.",
+            "answer_outline": [
+                "Elongated eyeball vs strong cornea",
+                "Image position before retina",
+                "Effect on distant vision"
+            ],
+            "key_concepts": [
+                "myopia causes",
+                "image formation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why bifocal lenses are preferred over two separate spectacles for a person suffering from both presbyopia and hypermetropia.",
+            "answer": "Bifocal lenses have upper portion for distant vision (convex if needed) and lower portion for near vision (stronger convex). This allows seamless switching without changing glasses, unlike separate pairs.",
+            "answer_outline": [
+                "Upper for distant, lower for near",
+                "Convenience and seamless use",
+                "Single pair solution"
+            ],
+            "key_concepts": [
+                "bifocal lenses",
+                "presbyopia + hypermetropia"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does dispersion occur in a prism but not in a glass slab? Give reasons involving angle of incidence and deviation.",
+            "answer": "In a prism, non-parallel refracting surfaces cause net deviation and different colours deviate differently due to varying refractive index. In a slab, parallel surfaces cause equal and opposite deviation, so colours recombine and no net dispersion is observed.",
+            "answer_outline": [
+                "Non-parallel surfaces in prism",
+                "Parallel surfaces in slab",
+                "Net deviation vs recombination"
+            ],
+            "key_concepts": [
+                "dispersion prism vs slab",
+                "deviation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the sequence of optical phenomena involved in rainbow formation. Why is the violet colour inside and red outside?",
+            "answer": "Sunlight undergoes refraction (entering drop), dispersion (into colours), total internal reflection at back surface, and refraction (exiting). Violet deviates most (higher refractive index), so it emerges at smaller angle → inner arc; red deviates least → outer arc.",
+            "answer_outline": [
+                "Refraction → dispersion → TIR → refraction",
+                "Violet higher deviation, inner",
+                "Red lower deviation, outer"
+            ],
+            "key_concepts": [
+                "rainbow mechanism",
+                "angular deviation"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does the apparent position of a star change continuously while planets do not? Relate it to angular size and coherence of refraction effects.",
+            "answer": "Stars are point sources; small atmospheric refraction fluctuations cause noticeable position and intensity changes (twinkling). Planets have finite angular size; refraction effects average over the disc, resulting in negligible variation.",
+            "answer_outline": [
+                "Point source vs extended source",
+                "Fluctuations average out",
+                "Coherence of effect"
+            ],
+            "key_concepts": [
+                "twinkling stars vs planets",
+                "angular size"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Calculate the approximate time difference between geometric and apparent sunrise due to atmospheric refraction. (Assume Earth radius and standard refraction angle.)",
+            "answer": "Refraction bends light ~0.5° below horizon. Earth rotates 15°/hour → 0.5° corresponds to ~2 minutes. Thus, sunrise appears ~2 minutes earlier than geometric position (similar for sunset delay).",
+            "answer_outline": [
+                "Refraction ~0.5°",
+                "15°/hour rotation",
+                "~2 minutes advance"
+            ],
+            "key_concepts": [
+                "advance sunrise",
+                "refraction angle"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the sky dark (black) when viewed from space or high altitude, even though sunlight is present?",
+            "answer": "No atmosphere means no scattering of sunlight. Direct sunlight reaches the observer only if looking towards the Sun; elsewhere, no scattered light enters the eye, so the background appears black.",
+            "answer_outline": [
+                "Absence of scattering",
+                "No diffused light",
+                "Direct sunlight only"
+            ],
+            "key_concepts": [
+                "dark sky in space",
+                "scattering absence"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why red light is used in traffic signals for 'stop' but not blue or violet, even though blue scatters more.",
+            "answer": "Red has longest wavelength, scatters least (Rayleigh scattering ∝ 1/λ⁴), penetrates fog/smoke/dust better, remains visible from far. Blue/violet scatter too much and get lost quickly.",
+            "answer_outline": [
+                "Least scattering (long λ)",
+                "Better penetration in adverse weather",
+                "Visibility over distance"
+            ],
+            "key_concepts": [
+                "red in signals",
+                "Rayleigh law"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 12,
+            "question": "How does atmospheric refraction cause the Sun to appear elliptical (flattened) near the horizon? Explain differential bending.",
+            "answer": "Rays from lower edge travel through denser layers longer, bending more than upper edge rays. This compresses vertical diameter while horizontal remains almost unchanged, flattening the image.",
+            "answer_outline": [
+                "Lower rays bend more",
+                "Vertical compression",
+                "Horizontal unchanged"
+            ],
+            "key_concepts": [
+                "flattened Sun",
+                "differential refraction"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Differentiate between Rayleigh scattering and Tyndall scattering. Give one natural phenomenon for each.",
+            "answer": "Rayleigh: scattering by molecules << wavelength (blue sky). Tyndall: scattering by larger colloidal particles (path of light in dusty room or milk in water). Rayleigh ∝ 1/λ⁴; Tyndall less wavelength-dependent.",
+            "answer_outline": [
+                "Molecules vs larger particles",
+                "Blue sky vs visible beam",
+                "Wavelength dependence"
+            ],
+            "key_concepts": [
+                "Rayleigh vs Tyndall",
+                "scattering types"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does the setting Sun sometimes appear distorted or broken into segments near the horizon?",
+            "answer": "Mirage-like effects from temperature gradients create varying refractive index layers (superior/inferior mirage), bending rays irregularly and distorting or segmenting the Sun’s image.",
+            "answer_outline": [
+                "Temperature gradient layers",
+                "Irregular refraction",
+                "Mirage-like distortion"
+            ],
+            "key_concepts": [
+                "distorted sunset",
+                "refraction layers"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 15,
+            "question": "A hypermetropic eye has near point at 50 cm instead of 25 cm. What focal length convex lens is needed to restore normal near vision?",
+            "answer": "Lens should form image at actual near point (50 cm) when object is at 25 cm. Using lens formula: 1/f = 1/v - 1/u = 1/(-0.5) - 1/(-0.25) = -2 + 4 = +2 D → f = +50 cm.",
+            "answer_outline": [
+                "Object at 25 cm, image at 50 cm",
+                "1/f = 4 - 2 = +2 D",
+                "Convex lens, f = 50 cm"
+            ],
+            "key_concepts": [
+                "hypermetropia correction",
+                "lens formula application"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why danger signals use red light while emergency vehicle lights often use blue. Relate to scattering and visibility requirements.",
+            "answer": "Red scatters least → used for stationary/fixed signals needing long-distance visibility in poor weather. Blue scatters more but is more eye-catching and stands out against common backgrounds, used for moving vehicles needing immediate attention.",
+            "answer_outline": [
+                "Red: least scatter, penetration",
+                "Blue: high contrast, attention",
+                "Different purpose"
+            ],
+            "key_concepts": [
+                "red vs blue usage",
+                "scattering application"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the variation in atmospheric density with height influence the extent of scattering and colour of the sky at different altitudes?",
+            "answer": "At low altitudes, dense atmosphere scatters blue strongly → deep blue sky. At higher altitudes, thinner air scatters less → sky becomes lighter blue then violet-black. In space, no scattering → black.",
+            "answer_outline": [
+                "Density decreases with height",
+                "Less scattering → paler to black",
+                "Altitude effect on colour"
+            ],
+            "key_concepts": [
+                "sky colour variation",
+                "altitude and density"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the angular diameter of the Sun slightly larger at sunrise/sunset than at noon due to refraction?",
+            "answer": "Refraction lifts the entire Sun image upward, but lower limb is lifted more than upper, slightly increasing apparent vertical diameter compared to noon when refraction is minimal.",
+            "answer_outline": [
+                "Differential lifting of limbs",
+                "Increased apparent size",
+                "Horizon vs zenith refraction"
+            ],
+            "key_concepts": [
+                "Sun size illusion",
+                "refraction"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the role of total internal reflection in rainbow formation and why primary and secondary rainbows have opposite colour order.",
+            "answer": "Primary: one internal reflection → colours in order violet inside, red outside. Secondary: two internal reflections → colours reverse (red inside, violet outside) and appear fainter due to more light loss.",
+            "answer_outline": [
+                "One vs two reflections",
+                "Colour order reversal",
+                "Intensity difference"
+            ],
+            "key_concepts": [
+                "primary vs secondary rainbow",
+                "TIR"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why do astronauts see no twinkling of stars from space, but still see the Sun rise and set?",
+            "answer": "No atmosphere → no refraction fluctuations → no twinkling. Sun rise/set still occurs due to spacecraft orbit and Earth’s rotation blocking/unblocking direct sunlight.",
+            "answer_outline": [
+                "No atmosphere, no refraction",
+                "No twinkling",
+                "Sun visibility by geometry"
+            ],
+            "key_concepts": [
+                "space observation",
+                "twinkling absence"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 21,
+            "question": "If Earth had no atmosphere, how would sunrise, sunset, and sky appearance differ from now?",
+            "answer": "Sunrise/sunset instantaneous (no advance/delay or flattening). Sky black all day except direct Sun view. No scattering → no blue sky, no twilight, no rainbows.",
+            "answer_outline": [
+                "Instant horizon crossing",
+                "Black sky",
+                "No scattering phenomena"
+            ],
+            "key_concepts": [
+                "no atmosphere effects",
+                "visual differences"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3 & 10.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why fog appears white or greyish while smoke from a chimney appears bluish when sunlight passes through it.",
+            "answer": "Fog droplets are larger → Mie scattering (less wavelength-dependent) → scatters all colours equally → white/grey. Smoke particles smaller → Rayleigh scattering → blue more scattered.",
+            "answer_outline": [
+                "Droplet size: Mie vs Rayleigh",
+                "Equal vs preferential scattering",
+                "White vs blue appearance"
+            ],
+            "key_concepts": [
+                "fog vs smoke scattering",
+                "particle size"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 23,
+            "question": "How does the ciliary muscle and suspensory ligament work antagonistically during accommodation for near and far vision?",
+            "answer": "For near: ciliary muscles contract → suspensory ligaments relax → lens becomes more convex (thicker). For far: ciliary muscles relax → ligaments tighten → lens flattens (thinner).",
+            "answer_outline": [
+                "Contract + relax for near",
+                "Relax + tighten for far",
+                "Antagonistic action"
+            ],
+            "key_concepts": [
+                "accommodation mechanism",
+                "muscle-ligament interaction"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is cataract surgery not just removal but replacement with intraocular lens? Explain optical consequence if not replaced.",
+            "answer": "Removing cloudy lens leaves eye highly hypermetropic (aphakia) as cornea alone provides ~43 D, insufficient for proper focus. Artificial IOL restores converging power (~20 D) for clear vision.",
+            "answer_outline": [
+                "Aphakia: extreme hypermetropia",
+                "IOL restores power",
+                "Focus without replacement impossible"
+            ],
+            "key_concepts": [
+                "cataract surgery",
+                "optical role of lens"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Integrate dispersion, scattering, and refraction to explain why the sky is blue, clouds are white, and the setting Sun is red.",
+            "answer": "Dispersion splits white light; scattering (Rayleigh) makes blue dominate daytime sky; large cloud droplets scatter all wavelengths equally (Mie) → white; long path at sunset scatters blue/violet away, red reaches observer.",
+            "answer_outline": [
+                "Scattering → blue sky",
+                "Mie scattering → white clouds",
+                "Path length → red sunset"
+            ],
+            "key_concepts": [
+                "integrated phenomena",
+                "sky, cloud, sunset colours"
+            ],
+            "marks": 3,
+            "source_section": "Section 10.3 & 10.4"
+        }
+    ]
+}

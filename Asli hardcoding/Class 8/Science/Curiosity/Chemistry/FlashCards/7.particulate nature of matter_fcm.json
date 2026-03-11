@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 7: Particulate Nature of Matter",
+  "generated_at": "2026-03-05T13:40:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is matter composed of?",
+        "correct_answer": "Extremely small particles",
+        "explanation": "Experiments such as grinding chalk and dissolving sugar show that matter is made of tiny particles that cannot be seen with the naked eye.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "question": "What are constituent particles?",
+        "correct_answer": "The smallest units that make up a substance",
+        "explanation": "A substance like chalk or sugar consists of many tiny particles called constituent particles.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "question": "What are interparticle spaces?",
+        "correct_answer": "Spaces between particles of matter",
+        "explanation": "When sugar dissolves in water, sugar particles occupy spaces between water particles.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "question": "What are interparticle attractions?",
+        "correct_answer": "Forces of attraction between particles of matter",
+        "explanation": "These forces hold particles together and determine the state of matter.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "question": "What are the properties of solids?",
+        "correct_answer": "Solids have a definite shape and definite volume",
+        "explanation": "Particles in solids are tightly packed and held by strong attractive forces.",
+        "source_section": "Section 7.2.1"
+      },
+      {
+        "question": "Why do liquids take the shape of their container?",
+        "correct_answer": "Because liquid particles can move freely within a limited space",
+        "explanation": "Particles in liquids are less tightly packed than solids, allowing them to flow and take the container's shape.",
+        "source_section": "Section 7.2.2"
+      },
+      {
+        "question": "Why do gases fill the entire available space?",
+        "correct_answer": "Because gas particles move freely in all directions",
+        "explanation": "Gas particles have very weak attractive forces and large spaces between them.",
+        "source_section": "Section 7.2.3"
+      },
+      {
+        "question": "Why can gases be compressed easily?",
+        "correct_answer": "Because there are large spaces between gas particles",
+        "explanation": "Applying pressure pushes the particles closer together.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "question": "What is diffusion?",
+        "correct_answer": "The spreading of particles from one place to another due to their motion",
+        "explanation": "Particles move constantly, causing substances to spread throughout a liquid or gas.",
+        "source_section": "Section 7.4"
+      },
+      {
+        "question": "Why does the smell of perfume spread throughout a room?",
+        "correct_answer": "Because gas particles move continuously and diffuse through air",
+        "explanation": "Air particles collide with fragrance particles and help them spread across the room.",
+        "source_section": "Section 7.4"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Particle Nature of Matter",
+        "content": "Matter is composed of extremely small particles that cannot be seen with the naked eye.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "title": "Interparticle Attraction",
+        "content": "Particles of matter attract each other. The strength of this attraction determines the state of matter.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "title": "States of Matter",
+        "content": "Matter exists in three main states: solid, liquid, and gas, each with different particle arrangements and movements.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "title": "Interparticle Spacing",
+        "content": "The space between particles is smallest in solids, larger in liquids, and largest in gases.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "title": "Movement of Particles",
+        "content": "Particles in matter are always moving. Their movement increases when temperature increases.",
+        "source_section": "Section 7.4"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Matter is made up of extremely small particles called atoms and molecules.",
+        "source_section": "Chapter Summary"
+      },
+      {
+        "fact": "Interparticle attraction is strongest in solids and weakest in gases.",
+        "source_section": "Chapter Summary"
+      },
+      {
+        "fact": "Particles in liquids move more freely than particles in solids.",
+        "source_section": "Chapter Summary"
+      },
+      {
+        "fact": "Diffusion occurs faster in gases than in liquids.",
+        "source_section": "Section 7.4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 2: Is Matter Around Us Pure",
+  "difficulty": "Medium",
+  "short_notes": {
+    "key_points": [
+      "Matter can be pure (elements or compounds) or mixtures",
+      "Mixtures can be homogeneous (solutions) or heterogeneous (suspensions, colloids)",
+      "Solutions have solute completely dissolved in solvent, showing no Tyndall effect",
+      "Suspensions have large particles that settle on standing",
+      "Colloids have intermediate-sized particles; they show Tyndall effect but do not settle",
+      "Alloys are homogeneous mixtures of metals or metals with non-metals and cannot be separated physically",
+      "Saturated solutions contain maximum solute at a given temperature",
+      "Separation techniques include filtration, evaporation, distillation, centrifugation, chromatography, and crystallization"
+    ],
+    "examples": [
+      "Sugar in water is a solution (homogeneous mixture)",
+      "Oil in water is a suspension (heterogeneous mixture)",
+      "Milk is a colloid showing Tyndall effect",
+      "Brass is an alloy of copper and zinc",
+      "Salt crystallization from seawater demonstrates separation of a pure substance from solution"
+    ],
+    "formulas": [
+      "Solubility = Mass of solute / Volume of solvent × 100",
+      "Saturated solution: solute present = maximum solubility at given temperature",
+      "Density = Mass / Volume"
+    ],
+    "exam_tips": [
+      "Classify mixtures as homogeneous or heterogeneous",
+      "Identify solute, solvent, and type of mixture",
+      "Explain separation techniques with examples",
+      "Distinguish between solution, suspension, and colloid using Tyndall effect",
+      "Use solubility and saturation concepts in numerical problems"
+    ]
+  }
+}

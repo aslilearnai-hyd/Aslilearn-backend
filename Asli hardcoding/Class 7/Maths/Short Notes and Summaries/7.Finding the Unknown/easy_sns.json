@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Finding the Unknown (Simple Equations)",
+    "difficulty": "Easy",
+    "source_pdf": "jemh104.pdf",
+    "short_notes": {
+        "key_points": [
+            "An equation is a mathematical statement showing that two expressions are equal",
+            "A variable is an unknown value represented by a letter (e.g., $x, y, z$)",
+            "The Left Hand Side (LHS) must always equal the Right Hand Side (RHS)",
+            "An equation remains the same if the LHS and RHS are interchanged"
+        ],
+        "examples": [
+            "Simple Equation: $x + 5 = 10$",
+            "Variable: In $3y = 12$, '$y$' is the variable",
+            "Equality: $10 + 2 = 12$ is an arithmetic equation",
+            "Expression: $2x + 3$ (Note: This is NOT an equation as it lacks an '=' sign)"
+        ],
+        "formulas": [
+            "Equation Structure $\rightarrow$ Expression 1 = Expression 2",
+            "Solution $\rightarrow$ The value of the variable that satisfies the equation"
+        ],
+        "exam_tips": [
+            "Identify the variable first before attempting to solve",
+            "Remember that 'is' or 'gives' in a word problem usually means '='",
+            "Don't confuse an algebraic expression with an equation",
+            "Start with simple one-step equations to build your confidence"
+        ]
+    }
+}

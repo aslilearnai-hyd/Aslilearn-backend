@@ -1,0 +1,159 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Rain on the Roof",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the poem’s imagery, sound, and mood in depth",
+        "Interpret the poet’s use of figurative language, symbolism, and rhythm",
+        "Explore philosophical and emotional reflections evoked by rain",
+        "Develop critical thinking and analytical writing skills",
+        "Connect poetic themes to personal experiences and universal human feelings"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Poet Context",
+            "topics_covered": [
+                "Biography of Henry Wadsworth Longfellow",
+                "Historical and literary context of the poem",
+                "Theme of reflection, nostalgia, and human connection with nature"
+            ],
+            "teaching_strategy": [
+                "Lecture on poet’s life and style",
+                "Discuss cultural and historical relevance of nature poetry"
+            ],
+            "student_activities": [
+                "Take notes on poet and context",
+                "Discuss initial impressions of rain and human emotions"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Stanza Analysis: Literal and Symbolic Meaning",
+            "topics_covered": [
+                "Line-by-line analysis of first half of poem",
+                "Literal description of rain and roof",
+                "Symbolism of rain for reflection and memory"
+            ],
+            "teaching_strategy": [
+                "Detailed explanation of imagery and symbols",
+                "Encourage students to visualize scenes and emotions"
+            ],
+            "student_activities": [
+                "Annotate stanzas with notes on literal and symbolic meaning",
+                "Explain personal interpretation of each stanza"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Oral explanation of stanza meanings"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Figurative Language and Poetic Devices",
+            "topics_covered": [
+                "Personification, alliteration, assonance, repetition",
+                "How rhythm and sound reinforce mood",
+                "Connection of devices to thematic expression"
+            ],
+            "teaching_strategy": [
+                "Highlight devices in text and analyze their impact",
+                "Use examples from the poem to illustrate effect"
+            ],
+            "student_activities": [
+                "Identify all figurative devices",
+                "Write notes on how each enhances meaning"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class participation in device analysis"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Emotional and Philosophical Reflection",
+            "topics_covered": [
+                "Reflection on nostalgia and human memory",
+                "Interpretation of rain as metaphor for life’s continuity",
+                "Exploration of inner thoughts evoked by nature"
+            ],
+            "teaching_strategy": [
+                "Class discussion on abstract meanings",
+                "Guide students to connect poem to personal life experiences"
+            ],
+            "student_activities": [
+                "Write reflective paragraph on feelings evoked by rain",
+                "Share interpretations in small groups"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Critical Analysis and Comparative Discussion",
+            "topics_covered": [
+                "Compare poem with other nature poems",
+                "Critical evaluation of Longfellow’s style",
+                "Discussion on universality of human emotions evoked by rain"
+            ],
+            "teaching_strategy": [
+                "Group discussion and comparison activity",
+                "Encourage analytical and interpretive reasoning"
+            ],
+            "student_activities": [
+                "Compare with one other poem of similar theme",
+                "Present findings in class discussion"
+            ],
+            "assessment": [
+                "Oral presentation",
+                "Participation marks in discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Analytical Summary, and Assessment",
+            "topics_covered": [
+                "Recap of all stanzas, devices, mood, and themes",
+                "Short analytical writing exercises",
+                "Discussion of abstract meanings and life lessons"
+            ],
+            "teaching_strategy": [
+                "Class discussion and Q&A",
+                "Short essay writing on thematic and stylistic analysis"
+            ],
+            "student_activities": [
+                "Write analytical essay connecting imagery, mood, and theme",
+                "Participate in class discussion and peer feedback"
+            ],
+            "assessment": [
+                "Short written analytical essay",
+                "Class discussion evaluation",
+                "Notebook checking"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing figurative devices, imagery, and rhythm",
+        "Handouts with reflection and analysis questions"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short analytical essays",
+        "Class discussion participation",
+        "Short written tests on stanza meanings and devices"
+    ],
+    "teacher_tip": "Encourage students to analyze both literal and symbolic meanings, linking imagery, sound, and rhythm to mood and philosophical reflection on life and memory."
+}

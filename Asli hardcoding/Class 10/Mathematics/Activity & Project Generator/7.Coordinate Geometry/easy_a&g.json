@@ -1,0 +1,145 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Easy",
+    "source_pdf": "jemh107.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Plotting Basics",
+            "objective": "Plot given points on graph paper",
+            "materials": [
+                "Graph paper",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw X and Y axes",
+                "Plot five given points"
+            ],
+            "learning_outcome": "Understands coordinate plane",
+            "evaluation": "Correct plotting (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Quadrant Finder",
+            "objective": "Identify quadrants of points",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write given points",
+                "Mention their quadrants"
+            ],
+            "learning_outcome": "Quadrant identification",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Axis Points Activity",
+            "objective": "Identify points on axes",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot points on X/Y axis"
+            ],
+            "learning_outcome": "Axis concept clarity",
+            "evaluation": "Correct placement (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Distance Guess",
+            "objective": "Estimate distance visually",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot two points",
+                "Estimate distance"
+            ],
+            "learning_outcome": "Distance intuition",
+            "evaluation": "Reasonable estimate (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Origin Game",
+            "objective": "Understand origin",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List properties of origin"
+            ],
+            "learning_outcome": "Origin concept",
+            "evaluation": "Explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Mirror Points",
+            "objective": "Reflect points across axes",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot point",
+                "Plot its reflection"
+            ],
+            "learning_outcome": "Symmetry basics",
+            "evaluation": "Correct reflection (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Join the Dots",
+            "objective": "Form shapes using points",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot points",
+                "Join them"
+            ],
+            "learning_outcome": "Shape recognition",
+            "evaluation": "Neat diagram (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Coordinate Quiz",
+            "objective": "Recall coordinate rules",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Answer short questions"
+            ],
+            "learning_outcome": "Concept recall",
+            "evaluation": "Correct answers (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Real Life Graph",
+            "objective": "Relate coordinates to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw road map using coordinates"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Creativity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Distance Formula Intro",
+            "objective": "Understand need of distance formula",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain with example"
+            ],
+            "learning_outcome": "Concept awareness",
+            "evaluation": "Clarity (10 marks)"
+        }
+    ]
+}

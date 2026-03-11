@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "difficulty": "Hard",
+  "generated_at": "2026-03-05T14:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which scientific advancement made the discovery of microorganisms possible?",
+      "options": {
+        "A": "Thermometer",
+        "B": "Microscope",
+        "C": "Barometer",
+        "D": "Telescope"
+      },
+      "correct_answer": "B",
+      "explanation": "The microscope magnifies tiny organisms that cannot be seen with the naked eye.",
+      "difficulty": "hard",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What conclusion did scientists draw after Robert Hooke observed cork under a microscope?",
+      "options": {
+        "A": "Cells exist in all living organisms",
+        "B": "Plants grow faster in light",
+        "C": "Microorganisms cause diseases",
+        "D": "All organisms contain chlorophyll"
+      },
+      "correct_answer": "A",
+      "explanation": "Hooke's discovery of cells led to the understanding that organisms are made of cells.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which statement best explains why cells differ in shape and size?",
+      "options": {
+        "A": "Cells grow randomly",
+        "B": "Cells perform specialized functions",
+        "C": "Cells are identical in all organisms",
+        "D": "Cells depend only on environment"
+      },
+      "correct_answer": "B",
+      "explanation": "Cells adapt their structure to perform specific functions.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following observations would most strongly suggest the presence of microorganisms?",
+      "options": {
+        "A": "Food turning into compost",
+        "B": "Plants growing taller",
+        "C": "Water freezing",
+        "D": "Sunlight heating soil"
+      },
+      "correct_answer": "A",
+      "explanation": "Decomposition of organic matter indicates microbial activity.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which experiment demonstrates the role of yeast in fermentation?",
+      "options": {
+        "A": "Growing plants in soil",
+        "B": "Mixing yeast with sugar solution and observing gas bubbles",
+        "C": "Heating water",
+        "D": "Observing leaves in sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Gas bubbles indicate carbon dioxide released during yeast fermentation.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are Rhizobium bacteria important for farmers?",
+      "options": {
+        "A": "They increase soil nitrogen levels",
+        "B": "They reduce soil nutrients",
+        "C": "They produce oxygen only",
+        "D": "They cause plant diseases"
+      },
+      "correct_answer": "A",
+      "explanation": "Rhizobium bacteria fix nitrogen and improve soil fertility.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which statement correctly describes the relationship between cells, tissues, and organs?",
+      "options": {
+        "A": "Organs form tissues",
+        "B": "Cells combine to form tissues which form organs",
+        "C": "Tissues form cells",
+        "D": "Organs combine to form cells"
+      },
+      "correct_answer": "B",
+      "explanation": "Cells form tissues, tissues form organs.",
+      "difficulty": "hard",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following best explains why microorganisms are important in nutrient cycles?",
+      "options": {
+        "A": "They consume sunlight",
+        "B": "They break down organic matter and recycle nutrients",
+        "C": "They stop plant growth",
+        "D": "They reduce oxygen levels"
+      },
+      "correct_answer": "B",
+      "explanation": "Microorganisms decompose organic matter and recycle nutrients.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which microorganism group includes organisms capable of photosynthesis?",
+      "options": {
+        "A": "Protozoa",
+        "B": "Microalgae",
+        "C": "Bacteria",
+        "D": "Fungi"
+      },
+      "correct_answer": "B",
+      "explanation": "Microalgae perform photosynthesis and produce oxygen.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "If microorganisms were removed from an ecosystem, what would most likely happen?",
+      "options": {
+        "A": "Plants would grow faster",
+        "B": "Organic waste would accumulate",
+        "C": "Oxygen levels would increase",
+        "D": "Animals would disappear immediately"
+      },
+      "correct_answer": "B",
+      "explanation": "Without decomposers, organic matter would not break down.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Which observation best indicates fermentation occurring in dough?",
+      "options": {
+        "A": "Dough shrinking",
+        "B": "Dough rising due to gas formation",
+        "C": "Dough turning black",
+        "D": "Dough becoming dry"
+      },
+      "correct_answer": "B",
+      "explanation": "Fermentation releases carbon dioxide that causes dough to rise.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which structure allows plant cells to maintain shape and rigidity?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Cytoplasm",
+        "C": "Cell wall",
+        "D": "Membrane"
+      },
+      "correct_answer": "C",
+      "explanation": "The cell wall provides structural support.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following would most likely be observed under a microscope in pond water?",
+      "options": {
+        "A": "Amoeba",
+        "B": "Bird",
+        "C": "Fish",
+        "D": "Insect"
+      },
+      "correct_answer": "A",
+      "explanation": "Amoeba is a microscopic organism found in pond water.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which cell structure contains the instructions for growth and reproduction?",
+      "options": {
+        "A": "Cell membrane",
+        "B": "Nucleus",
+        "C": "Cytoplasm",
+        "D": "Cell wall"
+      },
+      "correct_answer": "B",
+      "explanation": "The nucleus contains genetic material controlling cell processes.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Why is fermentation important in food preparation?",
+      "options": {
+        "A": "It destroys nutrients",
+        "B": "It improves taste and texture",
+        "C": "It prevents cooking",
+        "D": "It removes oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Fermentation enhances flavor and texture in foods like bread and curd.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which organism is unicellular and performs all life processes in a single cell?",
+      "options": {
+        "A": "Human",
+        "B": "Amoeba",
+        "C": "Tree",
+        "D": "Fish"
+      },
+      "correct_answer": "B",
+      "explanation": "Amoeba is a unicellular organism.",
+      "difficulty": "hard",
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which part of the cell is the site for most chemical reactions?",
+      "options": {
+        "A": "Cytoplasm",
+        "B": "Nucleus",
+        "C": "Membrane",
+        "D": "Cell wall"
+      },
+      "correct_answer": "A",
+      "explanation": "Most metabolic activities occur in the cytoplasm.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which factor most directly affects the rate of microbial decomposition?",
+      "options": {
+        "A": "Temperature and moisture",
+        "B": "Plant color",
+        "C": "Animal size",
+        "D": "Sunlight only"
+      },
+      "correct_answer": "A",
+      "explanation": "Microbial activity increases with suitable temperature and moisture.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Which microorganism is responsible for nitrogen fixation in legumes?",
+      "options": {
+        "A": "Rhizobium",
+        "B": "Amoeba",
+        "C": "Yeast",
+        "D": "Fungi"
+      },
+      "correct_answer": "A",
+      "explanation": "Rhizobium bacteria fix atmospheric nitrogen.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which ecological function is primarily carried out by decomposer microorganisms?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Nutrient recycling",
+        "C": "Water purification only",
+        "D": "Animal reproduction"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposer microbes recycle nutrients in ecosystems.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 21,
+      "question": "Which observation indicates microbial growth in milk?",
+      "options": {
+        "A": "Milk freezing",
+        "B": "Milk turning into curd",
+        "C": "Milk boiling",
+        "D": "Milk evaporating"
+      },
+      "correct_answer": "B",
+      "explanation": "Curd formation occurs due to bacterial fermentation.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which feature distinguishes plant cells from animal cells?",
+      "options": {
+        "A": "Cell membrane",
+        "B": "Cell wall",
+        "C": "Cytoplasm",
+        "D": "Nucleus"
+      },
+      "correct_answer": "B",
+      "explanation": "Plant cells have a cell wall, while animal cells do not.",
+      "difficulty": "hard",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which group of microorganisms includes organisms like yeast?",
+      "options": {
+        "A": "Bacteria",
+        "B": "Fungi",
+        "C": "Protozoa",
+        "D": "Algae"
+      },
+      "correct_answer": "B",
+      "explanation": "Yeast belongs to the fungi group.",
+      "difficulty": "hard",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor explains why microorganisms are vital to ecosystems?",
+      "options": {
+        "A": "They remove sunlight",
+        "B": "They recycle nutrients and support food chains",
+        "C": "They stop plant growth",
+        "D": "They remove oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Microorganisms recycle nutrients and maintain ecosystem balance.",
+      "difficulty": "hard",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best describes the invisible living world?",
+      "options": {
+        "A": "It contains only harmful organisms",
+        "B": "It consists of microscopic life forms that play important roles in ecosystems",
+        "C": "It includes only plant cells",
+        "D": "It is unrelated to the environment"
+      },
+      "correct_answer": "B",
+      "explanation": "The invisible living world includes microorganisms essential for ecological balance.",
+      "difficulty": "hard",
+      "source_section": "Introduction"
+    }
+  ]
+}

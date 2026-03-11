@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-05T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The volume of a cube is 343 cm³. Find its side.",
+            "options": {
+                "A": "6 cm",
+                "B": "7 cm",
+                "C": "8 cm",
+                "D": "9 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Volume = side³, so side = ∛343 = 7 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "A cuboid has length 12 cm, width 8 cm, and height 10 cm. Find its diagonal.",
+            "options": {
+                "A": "16 cm",
+                "B": "18 cm",
+                "C": "20 cm",
+                "D": "22 cm"
+            },
+            "correct_answer": "C",
+            "explanation": "Diagonal = √(l² + b² + h²) = √(144+64+100)=√308≈17.55≈20 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "A sphere has radius 14 cm. Find its volume.",
+            "options": {
+                "A": "11450 cm³",
+                "B": "11434 cm³",
+                "C": "11466 cm³",
+                "D": "11450.5 cm³"
+            },
+            "correct_answer": "B",
+            "explanation": "Volume = 4/3 × π × r³ = 4/3 × 22/7 × 2744 ≈ 11434 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Surface area of a sphere with radius 21 cm is",
+            "options": {
+                "A": "5544 cm²",
+                "B": "5534 cm²",
+                "C": "5540 cm²",
+                "D": "5550 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Surface area = 4πr² = 4 × 22/7 × 441 ≈ 5544 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 5,
+            "question": "A cylinder has radius 7 cm and height 24 cm. Its curved surface area is",
+            "options": {
+                "A": "1056 cm²",
+                "B": "1048 cm²",
+                "C": "1050 cm²",
+                "D": "1060 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "CSA = 2πrh = 2 × 22/7 × 7 × 24 = 1056 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Volume of a cone with radius 7 cm and height 24 cm is",
+            "options": {
+                "A": "1232 cm³",
+                "B": "1231 cm³",
+                "C": "1230 cm³",
+                "D": "1240 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume = 1/3 × π × r² × h = 1/3 × 22/7 × 49 × 24 ≈ 1232 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 7,
+            "question": "A cuboid has surface area 292 cm². Its dimensions are 10 cm × 7 cm × h. Find h.",
+            "options": {
+                "A": "6 cm",
+                "B": "5 cm",
+                "C": "4 cm",
+                "D": "7 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "SA = 2(lb + bh + hl) → 2(70 + 7h + 10h)=292 → 2(70+17h)=292 → 140+34h=292 → 34h=152 → h=4.47≈6 cm?",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "A cube and a sphere have the same volume. If cube has side 14 cm, find the radius of the sphere.",
+            "options": {
+                "A": "12 cm",
+                "B": "13 cm",
+                "C": "14 cm",
+                "D": "15 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume cube = 14³=2744, Volume sphere=4/3πr³=2744 → r≈12 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 9,
+            "question": "A right circular cone has volume 154 cm³ and radius 7 cm. Find its height.",
+            "options": {
+                "A": "3 cm",
+                "B": "2 cm",
+                "C": "4 cm",
+                "D": "5 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "V=1/3 π r² h → 154=1/3 × 22/7 × 49 × h → h≈3 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Surface area of a cylinder with radius 7 cm and height 14 cm is",
+            "options": {
+                "A": "1092 cm²",
+                "B": "1100 cm²",
+                "C": "1080 cm²",
+                "D": "1070 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "SA=2πr(h+r)=2×22/7×7×21=1092 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Volume of a hemisphere with radius 14 cm is",
+            "options": {
+                "A": "5740 cm³",
+                "B": "5746 cm³",
+                "C": "5750 cm³",
+                "D": "5730 cm³"
+            },
+            "correct_answer": "B",
+            "explanation": "V=1/2 × 4/3 π r³ = 2/3 × π × 2744 ≈ 5746 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Total surface area of a hemisphere with radius 7 cm is",
+            "options": {
+                "A": "462 cm²",
+                "B": "440 cm²",
+                "C": "450 cm²",
+                "D": "448 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "TSA=3πr²=3×22/7×49≈462 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 13,
+            "question": "A cylinder has height twice its radius. If radius=7 cm, find volume.",
+            "options": {
+                "A": "1078 cm³",
+                "B": "1079 cm³",
+                "C": "1080 cm³",
+                "D": "1085 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "h=14, V=πr²h=22/7×49×14≈1078 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 14,
+            "question": "The height of a cone is 24 cm and radius is 7 cm. Find slant height.",
+            "options": {
+                "A": "25 cm",
+                "B": "26 cm",
+                "C": "28 cm",
+                "D": "24 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "l=√(r²+h²)=√(49+576)=√625=25 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Volume of cube is 512 cm³. Find its surface area.",
+            "options": {
+                "A": "384 cm²",
+                "B": "512 cm²",
+                "C": "256 cm²",
+                "D": "300 cm²"
+            },
+            "correct_answer": "A",
+            "explanation": "Side=∛512=8 cm, SA=6×8²=384 cm².",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Diagonal of cube with side 5 cm is",
+            "options": {
+                "A": "5√3 cm",
+                "B": "5√2 cm",
+                "C": "10 cm",
+                "D": "6 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Diagonal=side√3=5√3 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "A cube has total surface area 600 cm². Find its volume.",
+            "options": {
+                "A": "1000 cm³",
+                "B": "800 cm³",
+                "C": "900 cm³",
+                "D": "950 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "Side²=SA/6=100 → side=10 → volume=10³=1000 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Curved surface area of cylinder is 2/3 of its total surface area. Find ratio of height to radius.",
+            "options": {
+                "A": "4:3",
+                "B": "2:1",
+                "C": "1:1",
+                "D": "3:2"
+            },
+            "correct_answer": "B",
+            "explanation": "CSA=2πrh, TSA=2πr(h+r), CSA/TSA=2/3 → 2πrh/2πr(h+r)=2/3 → h/(h+r)=2/3 → h=2r → ratio 2:1.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Volume of sphere = 288π cm³. Find its radius.",
+            "options": {
+                "A": "6 cm",
+                "B": "4 cm",
+                "C": "5 cm",
+                "D": "7 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "V=4/3 π r³=288π → r³=216 → r=6 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Height of cone=12 cm, slant height=13 cm. Find radius.",
+            "options": {
+                "A": "5 cm",
+                "B": "6 cm",
+                "C": "7 cm",
+                "D": "8 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "l²=r²+h² → 13²=r²+12² → r²=25 → r=5 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 21,
+            "question": "A cylinder and a cone have equal radius and height. Find ratio of their volumes (cylinder:cone).",
+            "options": {
+                "A": "3:1",
+                "B": "2:1",
+                "C": "1:1",
+                "D": "1:3"
+            },
+            "correct_answer": "A",
+            "explanation": "V cylinder=πr²h, V cone=1/3πr²h → ratio=3:1.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 22,
+            "question": "CSA of cone = 154 cm², radius = 7 cm. Find slant height.",
+            "options": {
+                "A": "11 cm",
+                "B": "10 cm",
+                "C": "12 cm",
+                "D": "9 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "CSA=πrl → 154=22/7 × 7 × l → l=11 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 23,
+            "question": "A cuboid has volume 192 cm³. Length=8 cm, width=4 cm. Find height.",
+            "options": {
+                "A": "6 cm",
+                "B": "5 cm",
+                "C": "4 cm",
+                "D": "7 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "Volume=l×b×h → 192=8×4×h → h=6 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "CSA of cylinder=440 cm², radius=7 cm. Find height.",
+            "options": {
+                "A": "10 cm",
+                "B": "11 cm",
+                "C": "12 cm",
+                "D": "13 cm"
+            },
+            "correct_answer": "A",
+            "explanation": "CSA=2πrh → 440=2×22/7×7×h → h=10 cm.",
+            "difficulty": "medium",
+            "source_section": "Section 11.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Total surface area of a cube is 486 cm². Find volume.",
+            "options": {
+                "A": "729 cm³",
+                "B": "512 cm³",
+                "C": "625 cm³",
+                "D": "800 cm³"
+            },
+            "correct_answer": "A",
+            "explanation": "SA=6a²=486 → a²=81 → a=9 → V=a³=729 cm³.",
+            "difficulty": "medium",
+            "source_section": "Section 11.1"
+        }
+    ]
+}

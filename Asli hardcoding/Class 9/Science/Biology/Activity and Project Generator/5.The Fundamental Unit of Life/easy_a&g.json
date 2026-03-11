@@ -1,0 +1,181 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "The Fundamental Unit of Life",
+    "difficulty": "Easy",
+    "source_pdf": "s9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Observation of Onion Peel Cells",
+            "objective": "Understand the structure of plant cells",
+            "materials": [
+                "Onion",
+                "Microscope",
+                "Glass slide",
+                "Cover slip",
+                "Water",
+                "Safranin"
+            ],
+            "steps": [
+                "Peel a thin layer from an onion bulb",
+                "Place it on a glass slide with a drop of water",
+                "Add safranin stain and cover with a cover slip",
+                "Observe under a microscope"
+            ],
+            "learning_outcome": "Identifies cell wall, nucleus, and cytoplasm in plant cells",
+            "evaluation": "Accuracy of diagram and observation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Human Cheek Cell Observation",
+            "objective": "Observe animal cells",
+            "materials": [
+                "Glass slide",
+                "Methylene blue stain",
+                "Toothpick",
+                "Microscope"
+            ],
+            "steps": [
+                "Gently scrape the inside of the cheek using a toothpick",
+                "Spread the sample on a glass slide",
+                "Add methylene blue stain",
+                "Observe under a microscope"
+            ],
+            "learning_outcome": "Understands structure of animal cells",
+            "evaluation": "Correct identification of nucleus and cell membrane (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Cell Model Making",
+            "objective": "Understand parts of a cell",
+            "materials": [
+                "Clay or thermocol",
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "Prepare a 3D model of a plant or animal cell",
+                "Label organelles like nucleus, cytoplasm and membrane",
+                "Explain the function of each organelle"
+            ],
+            "learning_outcome": "Visualizes cell structure and organelles",
+            "evaluation": "Correct labeling and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Diffusion Demonstration",
+            "objective": "Understand diffusion process",
+            "materials": [
+                "Beaker",
+                "Water",
+                "Ink or food color"
+            ],
+            "steps": [
+                "Fill a beaker with water",
+                "Add a drop of ink slowly",
+                "Observe how the ink spreads in water"
+            ],
+            "learning_outcome": "Explains diffusion as movement from high to low concentration",
+            "evaluation": "Observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Osmosis with Raisins",
+            "objective": "Understand osmosis",
+            "materials": [
+                "Dry raisins",
+                "Two bowls",
+                "Water",
+                "Salt solution"
+            ],
+            "steps": [
+                "Place raisins in plain water for a few hours",
+                "Place other raisins in salt water",
+                "Observe size changes in both samples"
+            ],
+            "learning_outcome": "Understands movement of water across membranes",
+            "evaluation": "Correct comparison and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Cell Organelle Chart",
+            "objective": "Learn functions of organelles",
+            "materials": [
+                "Chart paper",
+                "Sketch pens"
+            ],
+            "steps": [
+                "List organelles such as nucleus, mitochondria, ER, and Golgi apparatus",
+                "Draw simple diagrams",
+                "Write functions beside each organelle"
+            ],
+            "learning_outcome": "Recognizes functions of cell organelles",
+            "evaluation": "Clarity and completeness (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Plant vs Animal Cell Comparison",
+            "objective": "Differentiate plant and animal cells",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "Draw diagrams of plant and animal cells",
+                "List differences between them",
+                "Highlight features like cell wall and vacuole"
+            ],
+            "learning_outcome": "Understands structural differences in cells",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Microscope Parts Identification",
+            "objective": "Learn parts of a microscope",
+            "materials": [
+                "Compound microscope",
+                "Notebook"
+            ],
+            "steps": [
+                "Observe a compound microscope",
+                "Identify parts like eyepiece, objective lens, and stage",
+                "Draw and label the microscope"
+            ],
+            "learning_outcome": "Recognizes microscope structure",
+            "evaluation": "Correct labeling (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Prokaryotic vs Eukaryotic Cells",
+            "objective": "Understand types of cells",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "Write examples of prokaryotic and eukaryotic cells",
+                "List major differences between them",
+                "Prepare a comparison table"
+            ],
+            "learning_outcome": "Differentiates cell types",
+            "evaluation": "Accuracy of table (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Cell Organelles Matching Activity",
+            "objective": "Recall functions of organelles",
+            "materials": [
+                "Flash cards",
+                "Notebook"
+            ],
+            "steps": [
+                "Write organelle names on cards",
+                "Write their functions on separate cards",
+                "Match each organelle with its function"
+            ],
+            "learning_outcome": "Improves memory of cell organelle functions",
+            "evaluation": "Correct matching (10 marks)"
+        }
+    ]
+}

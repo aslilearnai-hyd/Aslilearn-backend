@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 4: Air",
+    "generated_at": "2026-03-07T18:22:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What are the two most plentiful gases in the atmosphere?",
+                "correct_answer": "Nitrogen and Oxygen",
+                "explanation": "Nitrogen makes up 78% and Oxygen makes up 21% of the air we breathe.",
+                "source_section": "Composition of the Atmosphere"
+            },
+            {
+                "question": "Why is Carbon dioxide called a greenhouse gas?",
+                "correct_answer": "Because it traps heat radiated from the earth",
+                "explanation": "By creating a greenhouse effect, it keeps the earth warm enough to sustain life; without it, the earth would be too cold.",
+                "source_section": "Composition of the Atmosphere"
+            },
+            {
+                "question": "Name the five layers of the atmosphere starting from the earth's surface.",
+                "correct_answer": "Troposphere, Stratosphere, Mesosphere, Thermosphere, and Exosphere",
+                "explanation": "These layers are divided based on temperature conditions and altitude.",
+                "source_section": "Structure of the Atmosphere"
+            },
+            {
+                "question": "In which layer of the atmosphere is the Ozone layer found?",
+                "correct_answer": "Stratosphere",
+                "explanation": "The ozone layer protects us from the harmful effects of the sun's ultraviolet rays.",
+                "source_section": "Structure of the Atmosphere"
+            },
+            {
+                "question": "What is the importance of the Troposphere?",
+                "correct_answer": "It is the layer where we breathe and where all weather phenomena occur",
+                "explanation": "Almost all weather changes like rainfall, fog, and hailstorms happen in this layer.",
+                "source_section": "Structure of the Atmosphere"
+            },
+            {
+                "question": "Define 'Insolation'.",
+                "correct_answer": "The incoming solar energy intercepted by the earth",
+                "explanation": "The amount of insolation decreases from the equator towards the poles.",
+                "source_section": "Weather and Climate"
+            },
+            {
+                "question": "What is Air Pressure?",
+                "correct_answer": "The pressure exerted by the weight of air on the earth's surface",
+                "explanation": "As we go up the layers of the atmosphere, the pressure falls rapidly.",
+                "source_section": "Weather and Climate"
+            },
+            {
+                "question": "What are the three types of winds?",
+                "correct_answer": "Permanent winds, Seasonal winds, and Local winds",
+                "explanation": "Permanent winds blow constantly; Seasonal winds change direction; Local winds blow only during specific periods.",
+                "source_section": "Weather and Climate"
+            },
+            {
+                "question": "What is 'Loo'?",
+                "correct_answer": "A hot and dry local wind of the northern plains of India",
+                "explanation": "It is a characteristic local wind that blows during the summer season.",
+                "source_section": "Weather and Climate"
+            },
+            {
+                "question": "What are the three types of rainfall?",
+                "correct_answer": "Convectional, Orographic, and Cyclonic rainfall",
+                "explanation": "These are classified based on the mechanism of how the air rises and cools to form rain.",
+                "source_section": "Weather and Climate"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Global Warming",
+                "content": "When the level of $CO_2$ increases due to factory smoke or car fumes, the heat retained increases the temperature of the earth.",
+                "source_section": "Composition of the Atmosphere"
+            },
+            {
+                "title": "Ionosphere",
+                "content": "A part of the Thermosphere that helps in radio transmission by reflecting radio waves back to earth.",
+                "source_section": "Structure of the Atmosphere"
+            },
+            {
+                "title": "Wind Direction",
+                "content": "Wind is named after the direction from which it blows, e.g., a 'Westerly' blows from the West.",
+                "source_section": "Weather and Climate"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "On the moon, there is no air and hence no air pressure.",
+                "source_section": "Weather and Climate"
+            },
+            {
+                "fact": "Meteorites burn up in the Mesosphere on entering from space.",
+                "source_section": "Structure of the Atmosphere"
+            },
+            {
+                "fact": "Plants need nitrogen for their survival, but they cannot take it directly from the air.",
+                "source_section": "Composition of the Atmosphere"
+            }
+        ]
+    }
+}

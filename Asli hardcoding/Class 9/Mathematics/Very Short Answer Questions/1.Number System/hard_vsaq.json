@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-05T23:50:00",
+    "difficulty": "hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Express 0.333... as a fraction.",
+            "answer": "0.333... = 1/3.",
+            "key_points": [
+                "recurring decimal"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Is √50 rational or irrational?",
+            "answer": "√50 is irrational.",
+            "key_points": [
+                "irrational numbers"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Write √18 in simplest radical form.",
+            "answer": "√18 = 3√2.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Is 0.1010010001... rational?",
+            "answer": "No, it is irrational.",
+            "key_points": [
+                "non repeating decimal"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Write √72 in simplest form.",
+            "answer": "√72 = 6√2.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What type of number is √121?",
+            "answer": "√121 = 11 which is rational.",
+            "key_points": [
+                "perfect squares"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Write 0.125 as a fraction.",
+            "answer": "0.125 = 1/8.",
+            "key_points": [
+                "decimal conversion"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Write √98 in simplest form.",
+            "answer": "√98 = 7√2.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Is √144 rational?",
+            "answer": "Yes, √144 = 12.",
+            "key_points": [
+                "perfect squares"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Write √200 in simplest form.",
+            "answer": "√200 = 10√2.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Write √32 in simplest form.",
+            "answer": "√32 = 4√2.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Is √121 rational?",
+            "answer": "Yes, √121 = 11.",
+            "key_points": [
+                "perfect squares"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Write √75 in simplest form.",
+            "answer": "√75 = 5√3.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Is √169 rational?",
+            "answer": "Yes, √169 = 13.",
+            "key_points": [
+                "perfect squares"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Write √48 in simplest form.",
+            "answer": "√48 = 4√3.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Write √27 in simplest form.",
+            "answer": "√27 = 3√3.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Write √20 in simplest form.",
+            "answer": "√20 = 2√5.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Write √63 in simplest form.",
+            "answer": "√63 = 3√7.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write √45 in simplest form.",
+            "answer": "√45 = 3√5.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Write √147 in simplest form.",
+            "answer": "√147 = 7√3.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Write √162 in simplest form.",
+            "answer": "√162 = 9√2.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Write √243 in simplest form.",
+            "answer": "√243 = 9√3.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Write √50 in simplest form.",
+            "answer": "√50 = 5√2.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Write √98 in simplest form.",
+            "answer": "√98 = 7√2.",
+            "key_points": [
+                "radical simplification"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Write √108 in simplest form.",
+            "answer": "√108 = 6√3.",
+            "key_points": [
+                "simplifying radicals"
+            ],
+            "source_section": "Section 1.2"
+        }
+    ]
+}

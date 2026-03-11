@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 9: Some Applications of Trigonometry",
+    "generated_at": "2026-03-01T21:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is meant by line of sight?",
+            "answer": "The line of sight is the straight line drawn from the eye of an observer to the object being viewed.",
+            "key_concepts": [
+                "line of sight"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define angle of elevation.",
+            "answer": "The angle formed by the line of sight with the horizontal when the object is above the observer's eye level is called angle of elevation.",
+            "key_concepts": [
+                "angle of elevation"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define angle of depression.",
+            "answer": "The angle formed by the line of sight with the horizontal when the object is below the observer's eye level is called angle of depression.",
+            "key_concepts": [
+                "angle of depression"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is mostly used to find heights?",
+            "answer": "Tangent ratio is mostly used to find heights.",
+            "key_concepts": [
+                "tangent ratio"
+            ],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the value of tan 45°?",
+            "answer": "tan 45° = 1.",
+            "key_concepts": [
+                "tan 45"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the value of tan 30°?",
+            "answer": "tan 30° = 1/√3.",
+            "key_concepts": [
+                "tan 30"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the value of tan 60°?",
+            "answer": "tan 60° = √3.",
+            "key_concepts": [
+                "tan 60"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 8,
+            "question": "What type of triangle is used in trigonometry problems?",
+            "answer": "Right-angled triangle.",
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is sin 30°?",
+            "answer": "sin 30° = 1/2.",
+            "key_concepts": [
+                "sin 30"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 10,
+            "question": "What is cos 60°?",
+            "answer": "cos 60° = 1/2.",
+            "key_concepts": [
+                "cos 60"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 11,
+            "question": "What is sin 90°?",
+            "answer": "sin 90° = 1.",
+            "key_concepts": [
+                "sin 90"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 12,
+            "question": "What is cos 0°?",
+            "answer": "cos 0° = 1.",
+            "key_concepts": [
+                "cos 0"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 13,
+            "question": "Which ratio is opposite divided by adjacent?",
+            "answer": "Tangent ratio.",
+            "key_concepts": [
+                "tan definition"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 14,
+            "question": "Which ratio is adjacent divided by hypotenuse?",
+            "answer": "Cosine ratio.",
+            "key_concepts": [
+                "cos definition"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 15,
+            "question": "Which ratio is opposite divided by hypotenuse?",
+            "answer": "Sine ratio.",
+            "key_concepts": [
+                "sin definition"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 16,
+            "question": "Is angle of elevation always acute?",
+            "answer": "Yes, angle of elevation is always acute.",
+            "key_concepts": [
+                "acute angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Is angle of depression always acute?",
+            "answer": "Yes, angle of depression is always acute.",
+            "key_concepts": [
+                "acute angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is cot 45°?",
+            "answer": "cot 45° = 1.",
+            "key_concepts": [
+                "cot 45"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 19,
+            "question": "Which ratio is reciprocal of tan?",
+            "answer": "Cotangent.",
+            "key_concepts": [
+                "cot"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the horizontal line used as reference?",
+            "answer": "Eye level or horizontal line.",
+            "key_concepts": [
+                "horizontal reference"
+            ],
+            "marks": 1,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is tan 0°?",
+            "answer": "tan 0° = 0.",
+            "key_concepts": [
+                "tan 0"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 22,
+            "question": "What is cos 90°?",
+            "answer": "cos 90° = 0.",
+            "key_concepts": [
+                "cos 90"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 23,
+            "question": "Which ratio is undefined at 90°?",
+            "answer": "Tangent ratio.",
+            "key_concepts": [
+                "tan undefined"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Values"
+        },
+        {
+            "question_number": 24,
+            "question": "Which ratio is reciprocal of sine?",
+            "answer": "Cosecant.",
+            "key_concepts": [
+                "cosec"
+            ],
+            "marks": 1,
+            "source_section": "Trigonometric Ratios"
+        },
+        {
+            "question_number": 25,
+            "question": "State one application of trigonometry.",
+            "answer": "Trigonometry is used to find heights and distances.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 2,
+            "source_section": "Summary"
+        }
+    ]
+}

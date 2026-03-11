@@ -1,0 +1,149 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter": "Resources and Development",
+  "difficulty": "Hard",
+  "source_pdf": "jess101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Resource Distribution Analysis",
+      "objective": "Analyze how uneven distribution of resources affects development",
+      "materials": ["Notebook", "Atlas", "Internet"],
+      "steps": [
+        "Select two states of India with different resource availability",
+        "List the major natural resources found in each state",
+        "Compare their economic development indicators such as industries or GDP contribution",
+        "Write a short report explaining the relationship between resources and development"
+      ],
+      "learning_outcome": "Students develop analytical skills in studying geographical resource distribution",
+      "evaluation": "Depth of comparison and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Sustainable Development Case Study",
+      "objective": "Evaluate sustainable development practices",
+      "materials": ["Notebook", "Internet research"],
+      "steps": [
+        "Choose a real-world example of sustainable development in India",
+        "Explain the resources involved and how they are managed",
+        "Identify environmental, economic, and social benefits",
+        "Suggest improvements for better sustainability"
+      ],
+      "learning_outcome": "Students understand the importance of balancing development and environmental protection",
+      "evaluation": "Quality of research and evaluation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Land Use Change Investigation",
+      "objective": "Study how land use patterns change over time",
+      "materials": ["Notebook", "Old maps or online data"],
+      "steps": [
+        "Collect information about land use in your region over the last 10–20 years",
+        "Identify changes such as urban expansion or reduction in agricultural land",
+        "Analyze the reasons behind these changes",
+        "Discuss possible environmental impacts"
+      ],
+      "learning_outcome": "Students learn to analyze temporal changes in land use patterns",
+      "evaluation": "Accuracy and analysis (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Soil Type and Crop Suitability Study",
+      "objective": "Examine the relationship between soil type and crop production",
+      "materials": ["Notebook", "Agricultural data"],
+      "steps": [
+        "Select two major soil types in India",
+        "Identify crops commonly grown in these soils",
+        "Explain why these soils are suitable for those crops",
+        "Suggest improvements in soil management"
+      ],
+      "learning_outcome": "Students connect soil properties with agricultural productivity",
+      "evaluation": "Scientific reasoning (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Land Degradation Mapping",
+      "objective": "Investigate causes and distribution of land degradation",
+      "materials": ["India outline map", "Colour pencils"],
+      "steps": [
+        "Mark regions in India affected by land degradation",
+        "Label the main causes such as mining, overgrazing, deforestation, or over-irrigation",
+        "Prepare a short explanation for each cause",
+        "Suggest preventive measures"
+      ],
+      "learning_outcome": "Students understand spatial distribution of environmental problems",
+      "evaluation": "Accuracy of mapping and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Soil Conservation Field Study",
+      "objective": "Observe soil conservation methods in practice",
+      "materials": ["Notebook", "Camera (optional)"],
+      "steps": [
+        "Visit a nearby agricultural field or hilly area",
+        "Identify soil conservation techniques used such as terrace farming or contour ploughing",
+        "Interview a farmer or local resident about the method used",
+        "Write a field report with observations"
+      ],
+      "learning_outcome": "Students gain practical exposure to soil conservation methods",
+      "evaluation": "Field observation quality (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Impact of Resource Exploitation Debate",
+      "objective": "Develop critical thinking about resource exploitation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide students into two groups",
+        "One group supports rapid industrial use of resources",
+        "The other group supports strict conservation",
+        "Conduct a debate and summarize key arguments"
+      ],
+      "learning_outcome": "Students understand conflicting perspectives on resource utilization",
+      "evaluation": "Argument strength and clarity (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Rio Earth Summit Research",
+      "objective": "Study international environmental agreements",
+      "materials": ["Notebook", "Internet research"],
+      "steps": [
+        "Research the Rio Earth Summit of 1992",
+        "Explain its goals and major declarations",
+        "Discuss the concept of Agenda 21",
+        "Explain how these initiatives influence sustainable development today"
+      ],
+      "learning_outcome": "Students understand global environmental cooperation",
+      "evaluation": "Quality of research (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Resource Planning Model",
+      "objective": "Design a simplified model of resource planning",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Create a flowchart showing stages of resource planning",
+        "Include resource identification, planning structure, and implementation",
+        "Add examples from India",
+        "Present the model to the class"
+      ],
+      "learning_outcome": "Students understand systematic planning for resource management",
+      "evaluation": "Clarity and completeness (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Future Resource Scenario Essay",
+      "objective": "Predict challenges in resource management",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine the world in 2050 with increasing population",
+        "Discuss potential resource shortages",
+        "Suggest technological or policy solutions",
+        "Write a structured essay presenting your ideas"
+      ],
+      "learning_outcome": "Students develop forward-thinking and problem-solving skills",
+      "evaluation": "Creativity and logical reasoning (10 marks)"
+    }
+  ]
+}

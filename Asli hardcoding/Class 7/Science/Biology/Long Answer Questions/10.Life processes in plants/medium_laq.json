@@ -1,0 +1,458 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Life Processes in Plants",
+    "generated_at": "2026-03-07T00:03:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How is solar energy captured and converted into chemical energy during photosynthesis?",
+            "answer": "Chlorophyll, the green pigment in leaves, acts as a solar collector that traps energy from sunlight. This energy is used to drive a chemical reaction between carbon dioxide (from air) and water (from soil). The process results in the synthesis of carbohydrates (glucose), effectively storing the solar energy in the form of chemical bonds within the food.",
+            "answer_outline": [
+                "Role of chlorophyll",
+                "Reaction between CO2 and H2O",
+                "Synthesis of glucose",
+                "Energy storage concept"
+            ],
+            "key_concepts": [
+                "energy conversion",
+                "chlorophyll",
+                "glucose synthesis"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why do desert plants have scales or spines instead of broad leaves? How do they perform photosynthesis?",
+            "answer": "Desert plants have modified leaves (scales or spines) to reduce water loss through transpiration in harsh, dry climates. In such plants, the process of photosynthesis is carried out by the green stems, which contain chlorophyll and are adapted to perform the 'food factory' function typically handled by leaves.",
+            "answer_outline": [
+                "Adaptation for water conservation",
+                "Reduction of transpiration",
+                "Role of green stems",
+                "Presence of chlorophyll in stems"
+            ],
+            "key_concepts": [
+                "transpiration",
+                "adaptation",
+                "green stems"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the mechanism by which stomata regulate gas exchange and water loss.",
+            "answer": "Stomata are surrounded by two kidney-shaped 'guard cells'. When water flows into these cells, they swell and curve outward, opening the stoma to allow $CO_2$ to enter for photosynthesis. When the guard cells lose water, they become flaccid and straighten, closing the stoma to prevent excessive water loss through transpiration.",
+            "answer_outline": [
+                "Structure of guard cells",
+                "Opening mechanism (swelling)",
+                "Closing mechanism (flaccidity)",
+                "Regulation of CO2 and H2O"
+            ],
+            "key_concepts": [
+                "guard cells",
+                "stomata regulation",
+                "gas exchange"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how nitrogen, which is abundant in the air, becomes available to plants for protein synthesis.",
+            "answer": "Although nitrogen is 78% of the atmosphere, plants cannot absorb it directly. Soil bacteria like Rhizobium convert gaseous nitrogen into soluble nitrates that roots can absorb. Additionally, farmers add nitrogen-rich fertilizers to the soil, providing the necessary raw materials for plants to synthesize proteins and fats.",
+            "answer_outline": [
+                "Gaseous nitrogen limitation",
+                "Role of nitrogen-fixing bacteria",
+                "Absorption of soluble nitrates",
+                "Role of fertilizers"
+            ],
+            "key_concepts": [
+                "nitrogen fixation",
+                "Rhizobium",
+                "nitrates"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2 & 1.6"
+        },
+        {
+            "question_number": 5,
+            "question": "Compare and contrast the nutritional modes of a Parasite and a Saprotroph.",
+            "answer": "A parasite (like Cuscuta) derives its nutrition from a living 'host' organism, often harming it by depriving it of nutrients. A saprotroph (like Mushrooms) obtains nutrients from dead and decaying organic matter by secreting digestive juices externally and then absorbing the resulting solution. One relies on living tissue, while the other relies on dead matter.",
+            "answer_outline": [
+                "Parasite (Living host)",
+                "Saprotroph (Dead matter)",
+                "External digestion in saprotrophs",
+                "Impact on host/source"
+            ],
+            "key_concepts": [
+                "parasitic nutrition",
+                "saprotrophic nutrition",
+                "host vs. decay"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3 & 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Why are insectivorous plants considered 'partial heterotrophs'?",
+            "answer": "Insectivorous plants like the Pitcher plant have green leaves and can perform photosynthesis to make carbohydrates. However, they grow in nitrogen-deficient soil. To fulfill their nitrogen requirement for protein synthesis, they trap and digest insects. Since they make their own food but rely on animals for specific nutrients, they are partial heterotrophs.",
+            "answer_outline": [
+                "Ability to photosynthesize",
+                "Nitrogen-poor soil conditions",
+                "Trapping/digesting insects",
+                "Reason for partial dependency"
+            ],
+            "key_concepts": [
+                "partial heterotrophs",
+                "nitrogen deficiency",
+                "insect digestion"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Detail the symbiotic relationship found in Lichens. How do both partners benefit?",
+            "answer": "Lichens consist of an alga and a fungus living in close association. The alga is an autotroph and provides food through photosynthesis. The fungus provides the physical shelter, protects the alga from drying out, and absorbs water and minerals from the surroundings for the alga. This mutual cooperation allows them to survive in harsh environments.",
+            "answer_outline": [
+                "Partners (Alga and Fungus)",
+                "Contribution of Alga (Food)",
+                "Contribution of Fungus (Shelter/Water)",
+                "Mutual benefit significance"
+            ],
+            "key_concepts": [
+                "lichens",
+                "symbiosis",
+                "mutualism"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 8,
+            "question": "How do fungi suddenly appear on food items during the rainy season?",
+            "answer": "Fungal spores are generally present in the air in a dormant state. During the rainy season, the air is warm and humid, providing the perfect conditions for these spores to germinate. When they land on wet and warm surfaces (like moist bread or leather), they germinate and grow into a visible fungal colony.",
+            "answer_outline": [
+                "Presence of air-borne spores",
+                "Ideal conditions (Moisture/Warmth)",
+                "Germination process",
+                "Growth on organic surfaces"
+            ],
+            "key_concepts": [
+                "fungal spores",
+                "humidity",
+                "germination"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of 'Root Nodules' in leguminous plants.",
+            "answer": "Root nodules are small swellings on the roots of legumes (peas, beans) that house Rhizobium bacteria. These bacteria fix atmospheric nitrogen into a form the plant can use. In return, the plant provides food and shelter to the bacteria. This relationship reduces the need for nitrogenous fertilizers in the soil where such crops are grown.",
+            "answer_outline": [
+                "Structure of nodules",
+                "Rhizobium habitat",
+                "Nitrogen fixation role",
+                "Mutual benefit/Agricultural impact"
+            ],
+            "key_concepts": [
+                "root nodules",
+                "legumes",
+                "Rhizobium"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe an experiment to show that sunlight is necessary for photosynthesis.",
+            "answer": "Take a potted plant and keep it in the dark for 72 hours to de-starch it. Partially cover one leaf with a black paper strip and expose the plant to sunlight for 6 hours. Test the leaf for starch using iodine. The uncovered part turns blue-black (starch present), while the covered part remains brown (no starch), proving sunlight is essential.",
+            "answer_outline": [
+                "De-starching the plant",
+                "Partial leaf covering",
+                "Iodine test procedure",
+                "Observation and conclusion"
+            ],
+            "key_concepts": [
+                "iodine test",
+                "starch",
+                "light necessity"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is it said that life on Earth is impossible without photosynthesis?",
+            "answer": "Photosynthesis is the primary source of food for all living organisms; animals depend directly or indirectly on plants. Furthermore, photosynthesis releases oxygen as a byproduct, which is vital for the respiration of almost all living beings. Without this process, there would be no food and no breathable oxygen.",
+            "answer_outline": [
+                "Primary food production",
+                "Oxygen release for respiration",
+                "Energy flow in ecosystems",
+                "Balance of atmospheric gases"
+            ],
+            "key_concepts": [
+                "food chain",
+                "oxygen production",
+                "survival"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens to the glucose produced during photosynthesis? Explain the storage mechanism.",
+            "answer": "The glucose produced is used by the plant for energy and growth. The excess glucose is converted into a complex carbohydrate called starch and stored in different parts like leaves, stems, or roots. Starch acts as a reserved food supply that the plant can use when photosynthesis is not occurring (e.g., at night).",
+            "answer_outline": [
+                "Immediate use for energy",
+                "Conversion to starch",
+                "Storage locations",
+                "Reserved energy concept"
+            ],
+            "key_concepts": [
+                "glucose",
+                "starch",
+                "storage"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How do saprotrophs contribute to the recycling of nutrients in nature?",
+            "answer": "Saprotrophs break down dead organic matter (leaves, fallen trees, dead animals) into simpler substances. By doing this, they return essential minerals and nutrients back into the soil, making them available for green plants to absorb again. They act as nature's 'decomposers,' preventing the waste from accumulating.",
+            "answer_outline": [
+                "Breakdown of dead matter",
+                "Release of minerals to soil",
+                "Nutrient cycling",
+                "Role as decomposers"
+            ],
+            "key_concepts": [
+                "nutrient recycling",
+                "decomposers",
+                "soil fertility"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.4 & 1.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Differentiate between 'Autotrophic' and 'Heterotrophic' nutrition.",
+            "answer": "Autotrophic nutrition is where organisms (green plants, some bacteria) synthesize their own food from simple inorganic substances like $CO_2$ and $H_2O$. Heterotrophic nutrition is where organisms (animals, fungi) cannot make their own food and must consume organic matter produced by others.",
+            "answer_outline": [
+                "Source of raw materials",
+                "Synthesis vs. Consumption",
+                "Energy source (Solar vs. Chemical)",
+                "Examples"
+            ],
+            "key_concepts": [
+                "autotrophs",
+                "heterotrophs",
+                "food synthesis"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the importance of 'Chloroplasts' in the process of photosynthesis?",
+            "answer": "Chloroplasts are the cellular organelles that house chlorophyll. They act as the site of photosynthesis where light energy is absorbed. Within the chloroplasts, the chemical reactions that convert carbon dioxide and water into glucose take place. Without chloroplasts, a cell cannot organize the complex machinery needed for photosynthesis.",
+            "answer_outline": [
+                "Organelle definition",
+                "Site of reaction",
+                "Storage of chlorophyll",
+                "Energy absorption center"
+            ],
+            "key_concepts": [
+                "chloroplasts",
+                "organelles",
+                "site of synthesis"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "How does the 'Iodine Test' confirm the occurrence of photosynthesis?",
+            "answer": "Iodine is a chemical indicator that turns blue-black in the presence of starch. Since starch is the storage form of glucose produced during photosynthesis, a blue-black color in a leaf after an iodine test confirms that the leaf was successfully performing photosynthesis and producing food.",
+            "answer_outline": [
+                "Iodine as indicator",
+                "Color change (Blue-black)",
+                "Presence of starch",
+                "Link to photosynthesis"
+            ],
+            "key_concepts": [
+                "iodine test",
+                "starch detection",
+                "indicator"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the role of 'Cuscuta' in a host-parasite relationship.",
+            "answer": "Cuscuta (Amarbel) is a yellow, tubular plant that lacks chlorophyll. It climbs onto a green 'host' tree and uses special root-like structures to penetrate the host's vascular system. It absorbs ready-made nutrients and water from the host, often causing the host to weaken or lose its valuable nutrients.",
+            "answer_outline": [
+                "Lack of chlorophyll",
+                "Climbing/penetrating mechanism",
+                "Nutrient absorption",
+                "Impact on host tree"
+            ],
+            "key_concepts": [
+                "Cuscuta",
+                "parasite",
+                "nutrient theft"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do Algae look green and how do they differ from fungi in terms of nutrition?",
+            "answer": "Algae look green because they contain chlorophyll, allowing them to be autotrophs that make their own food through photosynthesis. Fungi, however, lack chlorophyll and cannot perform photosynthesis; they are saprotrophs or parasites that depend on external organic matter for nutrition.",
+            "answer_outline": [
+                "Presence vs. absence of chlorophyll",
+                "Algae as Autotrophs",
+                "Fungi as Heterotrophs/Saprotrophs",
+                "Visual appearance reason"
+            ],
+            "key_concepts": [
+                "algae",
+                "fungi",
+                "chlorophyll presence"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2 & 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What are the three main minerals found in fertilizers that plants need most?",
+            "answer": "Plants primarily require Nitrogen (for leaf and protein growth), Phosphorus (for root and flower development), and Potassium (for overall health and water regulation). These are the three 'macronutrients' commonly replenished by farmers using N-P-K fertilizers.",
+            "answer_outline": [
+                "Nitrogen (N)",
+                "Phosphorus (P)",
+                "Potassium (K)",
+                "Specific roles of each"
+            ],
+            "key_concepts": [
+                "NPK",
+                "macronutrients",
+                "fertilizers"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why the lid of the Pitcher plant closes when an insect enters.",
+            "answer": "The lid and the pitcher are part of a trap. Inside the pitcher, there are hair-like structures directed downwards. When an insect lands and moves inside, the lid closes to prevent escape. The hairs trap the insect, making it fall into the digestive juices at the bottom for nutrient extraction.",
+            "answer_outline": [
+                "Modified leaf lid",
+                "Downward-pointing hairs",
+                "Closing mechanism",
+                "Trapping for digestion"
+            ],
+            "key_concepts": [
+                "pitcher plant",
+                "trapping mechanism",
+                "digestive juices"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "How do plants obtain Carbon Dioxide from the atmosphere?",
+            "answer": "Plants obtain carbon dioxide through tiny pores on the underside of leaves called stomata. $CO_2$ enters these pores by the process of diffusion. Once inside, the gas reaches the cells containing chloroplasts to be used as a raw material for photosynthesis.",
+            "answer_outline": [
+                "Role of stomata",
+                "Diffusion process",
+                "Path to chloroplasts",
+                "Raw material usage"
+            ],
+            "key_concepts": [
+                "stomata",
+                "carbon dioxide",
+                "diffusion"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the importance of 'Transpiration' in the transport of water in plants?",
+            "answer": "Transpiration is the evaporation of water from leaf stomata. This loss of water creates a suction force (transpiration pull) that helps pull water and dissolved minerals from the roots up to the leaves. It also helps in cooling the plant body during hot weather.",
+            "answer_outline": [
+                "Evaporation from leaves",
+                "Suction pull creation",
+                "Upward mineral transport",
+                "Cooling effect"
+            ],
+            "key_concepts": [
+                "transpiration pull",
+                "water transport",
+                "cooling"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.2 (contextual)"
+        },
+        {
+            "question_number": 23,
+            "question": "Can a plant survive without a Nucleus in its cells? Why or why not?",
+            "answer": "No, a plant cannot survive for long without a nucleus. The nucleus is the 'control center' of the cell that contains genetic material and directs all life processes, including growth and repair. Without it, the cell cannot reproduce or coordinate the chemical reactions necessary for life.",
+            "answer_outline": [
+                "Nucleus as control center",
+                "Genetic material storage",
+                "Coordination of life processes",
+                "Reproduction/Growth necessity"
+            ],
+            "key_concepts": [
+                "nucleus",
+                "control center",
+                "cell survival"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.2 (Cells box)"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss the impact of 'Fungal Diseases' on crops and humans.",
+            "answer": "Fungi can be harmful; they cause diseases like rust of wheat or rots in fruits, which can destroy entire crops. In humans, certain fungi cause skin infections like ringworm. However, some fungi are beneficial, such as Yeast used in baking and Penicillium used to make antibiotics.",
+            "answer_outline": [
+                "Crop destruction examples",
+                "Human skin infections",
+                "Beneficial uses (Yeast/Antibiotics)",
+                "Economic/Health impact"
+            ],
+            "key_concepts": [
+                "fungal disease",
+                "antibiotics",
+                "yeast"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do farmers grow leguminous crops in rotation with other crops?",
+            "answer": "Farmers use crop rotation with legumes because these plants, through the Rhizobium in their roots, naturally replenish the soil's nitrogen levels. This improves soil fertility for the next crop (like wheat or rice) and reduces the farmer's dependency on expensive chemical nitrogenous fertilizers.",
+            "answer_outline": [
+                "Nitrogen replenishment",
+                "Soil fertility improvement",
+                "Reduction in fertilizer cost",
+                "Sustainable agriculture practice"
+            ],
+            "key_concepts": [
+                "crop rotation",
+                "soil fertility",
+                "sustainable farming"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.6"
+        }
+    ]
+}

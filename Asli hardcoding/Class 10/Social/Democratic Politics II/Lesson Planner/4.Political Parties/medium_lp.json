@@ -1,0 +1,163 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Political Science)",
+  "chapter_name": "Political Parties",
+  "lesson_level": "Medium",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Explain the meaning and structure of political parties",
+    "Analyse the functions performed by political parties in democracy",
+    "Compare different party systems in the world",
+    "Differentiate between national and state parties in India",
+    "Evaluate the role of political parties in shaping public opinion",
+    "Identify major challenges faced by political parties",
+    "Propose reforms to strengthen democratic functioning of parties"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Meaning and Structure of Political Parties",
+      "topics_covered": [
+        "Definition of political party",
+        "Importance of parties in democracy",
+        "Components: leaders, active members and followers"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation with examples from Indian politics",
+        "Concept mapping activity"
+      ],
+      "student_activities": [
+        "Students create a concept map of a political party structure",
+        "Identify roles of different members"
+      ],
+      "assessment": ["Oral questioning", "Short concept explanation"]
+    },
+    {
+      "period": 2,
+      "title": "Functions of Political Parties",
+      "topics_covered": [
+        "Contest elections",
+        "Form governments",
+        "Make laws",
+        "Shape public opinion",
+        "Role of opposition"
+      ],
+      "teaching_strategy": [
+        "Case study discussion",
+        "Examples from parliamentary debates"
+      ],
+      "student_activities": [
+        "Students match real-life examples with party functions",
+        "Write short notes on two important functions"
+      ],
+      "assessment": ["Class exercise", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Importance of Political Parties",
+      "topics_covered": [
+        "Why democracies need political parties",
+        "Role of parties in organizing public opinion",
+        "Impact on government policies"
+      ],
+      "teaching_strategy": [
+        "Think–pair–share discussion",
+        "Teacher explanation with scenarios"
+      ],
+      "student_activities": [
+        "Discuss what would happen if there were no political parties",
+        "Write short reflections"
+      ],
+      "assessment": ["Group discussion evaluation", "Short written response"]
+    },
+    {
+      "period": 4,
+      "title": "Types of Party Systems",
+      "topics_covered": [
+        "One-party system",
+        "Two-party system",
+        "Multiparty system"
+      ],
+      "teaching_strategy": [
+        "Comparative chart on board",
+        "Examples from countries like USA, UK and India"
+      ],
+      "student_activities": [
+        "Prepare a comparison table of party systems",
+        "Discuss advantages and disadvantages"
+      ],
+      "assessment": ["Short written comparison", "Oral questioning"]
+    },
+    {
+      "period": 5,
+      "title": "National and State Parties in India",
+      "topics_covered": [
+        "Recognition criteria by Election Commission",
+        "Examples of national parties",
+        "Role of regional parties"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation with real examples",
+        "Map-based activity"
+      ],
+      "student_activities": [
+        "Identify national and state parties",
+        "Research one regional party and present its role"
+      ],
+      "assessment": ["Student presentation", "Notebook evaluation"]
+    },
+    {
+      "period": 6,
+      "title": "Challenges to Political Parties",
+      "topics_covered": [
+        "Lack of internal democracy",
+        "Dynastic succession",
+        "Role of money and muscle power",
+        "Lack of meaningful choices"
+      ],
+      "teaching_strategy": [
+        "Discussion using newspaper examples",
+        "Teacher-led analysis"
+      ],
+      "student_activities": [
+        "Group discussion on challenges",
+        "Write solutions for one challenge"
+      ],
+      "assessment": ["Worksheet activity", "Peer discussion"]
+    },
+    {
+      "period": 7,
+      "title": "Reforms and Critical Thinking",
+      "topics_covered": [
+        "Political party reforms",
+        "Role of citizens and media",
+        "Chapter revision"
+      ],
+      "teaching_strategy": [
+        "Debate on political reforms",
+        "Quiz-based revision"
+      ],
+      "student_activities": [
+        "Suggest reforms to improve political parties",
+        "Participate in chapter review quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Concept clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Democratic Politics Textbook",
+    "Political party symbols chart",
+    "Newspaper articles or news clips"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Group discussions",
+    "Short written tests",
+    "Student presentations"
+  ],
+  "teacher_tip": "Encourage students to connect textbook concepts with current political events to better understand the role and functioning of political parties in democracy."
+}

@@ -1,0 +1,206 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Control and Coordination",
+    "generated_at": "2026-03-10T23:56:45",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A person is unable to maintain their posture and balance while walking in a straight line or picking up a fallen object. Which part of the brain is likely affected? Explain its role in voluntary actions.",
+            "answer": "The Cerebellum, located in the hindbrain, is likely affected. While the Cerebrum initiates the intent for voluntary actions, the Cerebellum is responsible for the precision of these actions and for maintaining the posture and equilibrium of the body. Without its proper functioning, coordinated movements like walking in a straight line become impossible.",
+            "answer_outline": [
+                "Identification of the Cerebellum",
+                "Distinction between initiation (Cerebrum) and coordination (Cerebellum)",
+                "Explanation of posture and balance",
+                "Clinical manifestation in movement"
+            ],
+            "key_concepts": [
+                "cerebellum",
+                "hindbrain",
+                "posture",
+                "precision",
+                "voluntary coordination"
+            ],
+            "marks": 4,
+            "source_section": "Section 6.1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Compare and contrast the mechanism of response in the 'sensitive plant' (Mimosa pudica) with the conduction of an impulse in a human neuron. Focus on the nature of signals used.",
+            "answer": "In humans, neurons use electrochemical impulses—electrical along the axon and chemical (neurotransmitters) at the synapse. In the sensitive plant, there is no specialized nervous tissue. Instead, plants use electrical-chemical means to convey information from cell to cell. Unlike animal cells, plant cells achieve movement by changing the amount of water (turgor pressure) within them, causing swelling or shrinking, rather than using specialized muscle proteins.",
+            "answer_outline": [
+                "Animal: Electrochemical signals via neurons",
+                "Plant: Electrical-chemical means without nervous tissue",
+                "Mechanism of movement: Muscle proteins vs Turgor pressure",
+                "Speed and specificity comparison"
+            ],
+            "key_concepts": [
+                "turgor pressure",
+                "electrochemical impulse",
+                "Mimosa pudica",
+                "synapse",
+                "movement independent of growth"
+            ],
+            "marks": 5,
+            "source_section": "Section 6.1.4 & 6.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is the flow of signals in a synapse typically unidirectional? Explain the biochemical reason behind this constraint.",
+            "answer": "Signal flow is unidirectional because the chemical messengers (neurotransmitters) are only present in the axon terminals (synaptic vesicles) of the pre-synaptic neuron. The specialized receptors for these chemicals are located only on the dendritic tips of the post-synaptic neuron. Therefore, the signal can only jump from the axon of one neuron to the dendrite of the next, and never in reverse.",
+            "answer_outline": [
+                "Anatomy of the synapse",
+                "Location of neurotransmitters (Axon tip)",
+                "Location of receptors (Dendrite tip)",
+                "Directionality of chemical diffusion"
+            ],
+            "key_concepts": [
+                "synapse",
+                "neurotransmitter",
+                "unidirectional",
+                "receptor",
+                "dendritic tip"
+            ],
+            "marks": 3,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the 'Reflex Arc'. Why has it evolved in animals even though they possess a complex brain? What happens if the spinal cord is injured?",
+            "answer": "Reflex arcs evolved as an efficient survival mechanism for quick responses to urgent stimuli, as the thinking process of the brain is too slow. By involving only the spinal cord, the response time is minimized. If the spinal cord is injured, the reflex arc pathway is broken; signals from receptors will fail to reach the effector muscles, and sensory information will not reach the brain, leading to paralysis and loss of sensation.",
+            "answer_outline": [
+                "Evolutionary advantage (Speed/Survival)",
+                "Limitations of 'brain thinking' time",
+                "Spinal cord as the primary reflex center",
+                "Consequences of spinal injury"
+            ],
+            "key_concepts": [
+                "reflex arc",
+                "evolutionary efficiency",
+                "thinking tissue",
+                "spinal cord injury",
+                "emergency response"
+            ],
+            "marks": 5,
+            "source_section": "Section 6.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the role of the 'Hypothalamus' in linking the nervous system to the endocrine system. How does it control the 'Master Gland'?",
+            "answer": "The Hypothalamus acts as the bridge between the two systems. It receives neural signals and responds by secreting 'releasing hormones'. These hormones travel to the Pituitary gland (Master Gland) and signal it to either start or stop the secretion of various other hormones. For example, it regulates growth by controlling the release of Growth Hormone from the pituitary.",
+            "answer_outline": [
+                "Hypothalamus as the bridge",
+                "Neuro-endocrine link",
+                "Control over the Pituitary gland",
+                "Concept of releasing hormones"
+            ],
+            "key_concepts": [
+                "hypothalamus",
+                "pituitary gland",
+                "releasing hormones",
+                "neuro-endocrine coordination"
+            ],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the biochemical mechanism by which 'Auxins' cause a plant shoot to bend towards light? Explain the redistribution of the hormone.",
+            "answer": "When growing plants detect light, auxin is synthesized at the shoot tip. It is sensitive to light and diffuses toward the shady side of the shoot. The higher concentration of auxin on the shady side stimulates cells to grow longer (elongation) compared to the cells on the sunny side. This differential growth causes the shoot to bend towards the light source, a process called positive phototropism.",
+            "answer_outline": [
+                "Synthesis at shoot tip",
+                "Diffusion to the shady side",
+                "Cell elongation mechanism",
+                "Resultant bending (Phototropism)"
+            ],
+            "key_concepts": [
+                "auxin",
+                "phototropism",
+                "cell elongation",
+                "shady side",
+                "differential growth"
+            ],
+            "marks": 4,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "In a situation of extreme fear, the body undergoes several physiological changes. Describe the role of the endocrine system in this 'Fight or Flight' response.",
+            "answer": "During fear, the Adrenal glands secrete Adrenaline directly into the blood. Adrenaline acts on the heart, making it beat faster to supply more oxygen to muscles. It reduces blood flow to the digestive system and skin by contracting small muscles around arteries, diverting blood to skeletal muscles. The breathing rate also increases due to the contraction of the diaphragm and rib muscles. This prepares the body to either fight the threat or flee.",
+            "answer_outline": [
+                "Secretion of Adrenaline",
+                "Effect on heart and oxygen supply",
+                "Blood diversion mechanism",
+                "Changes in breathing rate",
+                "Survival objective"
+            ],
+            "key_concepts": [
+                "adrenaline",
+                "adrenal glands",
+                "fight or flight",
+                "target organs",
+                "metabolic surge"
+            ],
+            "marks": 5,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 8,
+            "question": "How does 'Abscisic Acid' function as a growth inhibitor? Contrast its role with that of 'Gibberellins'.",
+            "answer": "Abscisic Acid is a plant hormone that inhibits growth and promotes dormancy. Its effects include the wilting of leaves and closing of stomata during water stress. In contrast, Gibberellins are growth promoters that stimulate stem elongation and break seed dormancy. While Gibberellins accelerate metabolic processes for growth, Abscisic acid slows them down to help the plant survive adverse conditions.",
+            "answer_outline": [
+                "Growth inhibition by Abscisic Acid",
+                "Wilting of leaves/Dormancy",
+                "Stem elongation by Gibberellins",
+                "Opposing physiological roles"
+            ],
+            "key_concepts": [
+                "abscisic acid",
+                "gibberellins",
+                "growth inhibitor",
+                "wilting",
+                "dormancy"
+            ],
+            "marks": 3,
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is 'Chemical Communication' (Hormones) often more advantageous than 'Electrical Communication' (Nerve impulses) in multicellular organisms?",
+            "answer": "Electrical impulses are very fast but have limitations: they only reach cells connected by nervous tissue, and once an impulse is generated, the cell needs time to reset before a second one can be sent. Chemical communication via hormones can reach every cell of the body through the blood, regardless of nervous connection. It can also be persistent and provides a steady, long-term transformational change (like growth or puberty) that electrical signals cannot sustain.",
+            "answer_outline": [
+                "Limitation of nervous reach",
+                "Reset time of nerve cells",
+                "Ubiquity of chemical signals (via blood)",
+                "Short-term vs Long-term coordination"
+            ],
+            "key_concepts": [
+                "chemical communication",
+                "electrical impulse",
+                "cellular reach",
+                "persistent response"
+            ],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Differentiate between 'Nastic movements' and 'Tropic movements' in plants. Provide one example where a plant shows both types of movements in different organs.",
+            "answer": "Tropic movements are directional growth movements in response to a stimulus (e.g., roots growing towards gravity/geotropism). Nastic movements are non-directional and independent of growth, usually occurring due to turgor changes (e.g., closing of Mimosa leaves). In a pea plant, the tendrils show tropic movement (thigmotropism) as they grow around a support, while the leaves may show nastic movements in response to light or touch.",
+            "answer_outline": [
+                "Directionality (Tropic vs Nastic)",
+                "Dependency on growth",
+                "Mechanism of action",
+                "Example of both in one plant"
+            ],
+            "key_concepts": [
+                "tropic movement",
+                "nastic movement",
+                "directional response",
+                "growth independence"
+            ],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        }
+    ]
+}

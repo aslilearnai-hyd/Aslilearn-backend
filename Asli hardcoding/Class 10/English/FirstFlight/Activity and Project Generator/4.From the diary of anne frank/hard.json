@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "The Diary of Anne Frank",
+  "difficulty": "Hard",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Psychological Analysis of Anne Frank",
+      "objective": "Examine Anne Frank’s emotional resilience under extreme stress.",
+      "materials": ["Notebook", "Reference books or internet"],
+      "steps": [
+        "Select three diary entries reflecting fear, hope, or anxiety",
+        "Analyze her coping strategies and mindset",
+        "Write a comparative essay linking her psychological state with modern concepts of resilience"
+      ],
+      "learning_outcome": "Students will connect literary content with psychological analysis and critical thinking.",
+      "evaluation": "Depth of insight, logical reasoning, and textual evidence"
+    },
+    {
+      "sl_no": 2,
+      "title": "Ethical Dilemma Case Study",
+      "objective": "Critically evaluate ethical decisions made by Anne and her family.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify one major ethical dilemma (e.g., risking exposure to help others)",
+        "Discuss potential alternative actions and outcomes",
+        "Write a structured essay analyzing the choices, consequences, and moral implications"
+      ],
+      "learning_outcome": "Students will develop ethical reasoning and structured analytical skills.",
+      "evaluation": "Balanced argumentation, clarity, and textual support"
+    },
+    {
+      "sl_no": 3,
+      "title": "Comparative Historical Study",
+      "objective": "Link Anne Frank’s diary to the broader context of the Holocaust and WWII.",
+      "materials": ["Notebook", "Internet/books for research"],
+      "steps": [
+        "Research historical events affecting Jews in Nazi-occupied Netherlands",
+        "Compare these events with Anne’s experiences in hiding",
+        "Prepare a detailed report or presentation connecting diary content and historical facts"
+      ],
+      "learning_outcome": "Students will develop historical understanding and contextual literary analysis.",
+      "evaluation": "Accuracy, depth of research, and clarity of connection"
+    },
+    {
+      "sl_no": 4,
+      "title": "Character Transformation Essay",
+      "objective": "Analyze the psychological and emotional development of Anne Frank over time.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select diary entries from early, middle, and late periods of hiding",
+        "Identify changes in Anne’s attitudes, thoughts, and coping strategies",
+        "Write a structured essay detailing her character growth and resilience"
+      ],
+      "learning_outcome": "Students will understand character arc, personal resilience, and emotional depth.",
+      "evaluation": "Insightfulness, coherence, and textual support"
+    },
+    {
+      "sl_no": 5,
+      "title": "Symbolism and Motif Analysis",
+      "objective": "Identify and interpret symbols and recurring motifs in the diary.",
+      "materials": ["Notebook", "Chart paper", "Markers"],
+      "steps": [
+        "Identify symbols such as the diary, window, or annex",
+        "Explain the significance of each symbol and its relation to major themes",
+        "Create a chart linking symbols and motifs to themes like hope, courage, and fear"
+      ],
+      "learning_outcome": "Students will deepen literary analysis and understand symbolic representation.",
+      "evaluation": "Accuracy, clarity, and connection to themes"
+    },
+    {
+      "sl_no": 6,
+      "title": "Perspective Writing – Alternate Narrator",
+      "objective": "Explore diary events from the perspective of another character.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a character such as Otto Frank or Miep Gies",
+        "Write a 1–2 page diary entry describing a key event from their perspective",
+        "Highlight differences in perception, emotions, and priorities"
+      ],
+      "learning_outcome": "Students will practice creative writing and understand multiple perspectives.",
+      "evaluation": "Creativity, textual relevance, and accuracy of perspective"
+    },
+    {
+      "sl_no": 7,
+      "title": "Philosophical and Moral Analysis",
+      "objective": "Analyze the deeper moral and philosophical lessons in the diary.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify major moral or philosophical insights (e.g., resilience, hope, human nature)",
+        "Provide textual evidence for each insight",
+        "Write an analytical essay connecting these lessons to modern life"
+      ],
+      "learning_outcome": "Students will critically evaluate moral lessons and reflect on contemporary relevance.",
+      "evaluation": "Depth of analysis, logical reasoning, and textual support"
+    },
+    {
+      "sl_no": 8,
+      "title": "Creative Multimedia Project",
+      "objective": "Represent Anne Frank’s experiences creatively using multimedia.",
+      "materials": ["Computer", "Presentation software", "Optional images or drawings"],
+      "steps": [
+        "Create a short video, slide show, or interactive presentation highlighting key diary events and emotions",
+        "Include quotes, visuals, and symbolic elements",
+        "Present the project to the class"
+      ],
+      "learning_outcome": "Students will develop multimedia presentation skills and creative interpretation.",
+      "evaluation": "Creativity, accuracy, relevance, and presentation quality"
+    },
+    {
+      "sl_no": 9,
+      "title": "Ethical Debate – Choices in Hiding",
+      "objective": "Develop critical thinking and debate skills.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Divide into two groups to debate a key decision by Anne or her family",
+        "Support arguments with textual evidence from the diary",
+        "Conduct a structured debate including rebuttals and conclusion"
+      ],
+      "learning_outcome": "Students will enhance critical thinking, ethical reasoning, and public speaking skills.",
+      "evaluation": "Clarity, argument strength, and textual evidence use"
+    },
+    {
+      "sl_no": 10,
+      "title": "Comparative Literature Study",
+      "objective": "Compare themes of the diary with another work on war, persecution, or resilience.",
+      "materials": ["Notebook", "Textbook", "Reference books"],
+      "steps": [
+        "Choose a book or story about war or persecution",
+        "Identify common themes, symbols, and character struggles",
+        "Write a comparative essay highlighting similarities and differences"
+      ],
+      "learning_outcome": "Students will develop comparative literary analysis and global awareness.",
+      "evaluation": "Depth of comparison, textual support, and clarity of analysis"
+    }
+  ]
+}

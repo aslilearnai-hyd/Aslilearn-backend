@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 5: Minerals and Energy Resources",
+  "generated_at": "2026-03-11T12:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Minerals in igneous and metamorphic rocks are usually found in which form?",
+      "options": {
+        "A": "Layers",
+        "B": "Veins and lodes",
+        "C": "River deposits",
+        "D": "Ocean beds"
+      },
+      "correct_answer": "B",
+      "explanation": "In igneous and metamorphic rocks minerals occur in cracks, crevices, faults or joints called veins and lodes.",
+      "difficulty": "medium",
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 2,
+      "question": "Which mineral is obtained from placer deposits?",
+      "options": {
+        "A": "Gold",
+        "B": "Coal",
+        "C": "Gypsum",
+        "D": "Bauxite"
+      },
+      "correct_answer": "A",
+      "explanation": "Placer deposits in river sands often contain minerals like gold, silver and platinum.",
+      "difficulty": "medium",
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 3,
+      "question": "Which state is the largest producer of bauxite in India?",
+      "options": {
+        "A": "Odisha",
+        "B": "Punjab",
+        "C": "Haryana",
+        "D": "Bihar"
+      },
+      "correct_answer": "A",
+      "explanation": "Odisha is the largest producer of bauxite in India.",
+      "difficulty": "medium",
+      "source_section": "Bauxite"
+    },
+    {
+      "question_number": 4,
+      "question": "Which iron ore has excellent magnetic qualities?",
+      "options": {
+        "A": "Hematite",
+        "B": "Magnetite",
+        "C": "Lignite",
+        "D": "Anthracite"
+      },
+      "correct_answer": "B",
+      "explanation": "Magnetite has excellent magnetic qualities and contains up to 70% iron.",
+      "difficulty": "medium",
+      "source_section": "Iron Ore"
+    },
+    {
+      "question_number": 5,
+      "question": "Which mineral is used to manufacture bleaching powder and paints?",
+      "options": {
+        "A": "Manganese",
+        "B": "Copper",
+        "C": "Gold",
+        "D": "Silver"
+      },
+      "correct_answer": "A",
+      "explanation": "Manganese is used in steel manufacturing, bleaching powder and paints.",
+      "difficulty": "medium",
+      "source_section": "Manganese"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following coal types has the highest carbon content?",
+      "options": {
+        "A": "Peat",
+        "B": "Lignite",
+        "C": "Bituminous",
+        "D": "Anthracite"
+      },
+      "correct_answer": "D",
+      "explanation": "Anthracite is the highest quality coal with the highest carbon content.",
+      "difficulty": "medium",
+      "source_section": "Coal"
+    },
+    {
+      "question_number": 7,
+      "question": "Which belt contains the famous Bailadila iron ore deposits?",
+      "options": {
+        "A": "Odisha-Jharkhand belt",
+        "B": "Durg-Bastar-Chandrapur belt",
+        "C": "Karnataka belt",
+        "D": "Maharashtra-Goa belt"
+      },
+      "correct_answer": "B",
+      "explanation": "Bailadila deposits are located in the Durg-Bastar-Chandrapur belt in Chhattisgarh.",
+      "difficulty": "medium",
+      "source_section": "Iron Ore"
+    },
+    {
+      "question_number": 8,
+      "question": "Which mineral is the backbone of industrial development?",
+      "options": {
+        "A": "Copper",
+        "B": "Iron ore",
+        "C": "Bauxite",
+        "D": "Salt"
+      },
+      "correct_answer": "B",
+      "explanation": "Iron ore is essential for steel production and industrial development.",
+      "difficulty": "medium",
+      "source_section": "Iron Ore"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following minerals is formed by decomposition of surface rocks?",
+      "options": {
+        "A": "Gold",
+        "B": "Bauxite",
+        "C": "Copper",
+        "D": "Mica"
+      },
+      "correct_answer": "B",
+      "explanation": "Bauxite forms through decomposition of surface rocks leaving residual material.",
+      "difficulty": "medium",
+      "source_section": "Mode of Occurrence"
+    },
+    {
+      "question_number": 10,
+      "question": "Which place in India has major copper mines?",
+      "options": {
+        "A": "Khetri",
+        "B": "Agra",
+        "C": "Jaipur",
+        "D": "Varanasi"
+      },
+      "correct_answer": "A",
+      "explanation": "Khetri mines in Rajasthan are important copper producing areas.",
+      "difficulty": "medium",
+      "source_section": "Copper"
+    },
+    {
+      "question_number": 11,
+      "question": "Which fossil fuel is mainly used for electricity generation in India?",
+      "options": {
+        "A": "Coal",
+        "B": "Solar",
+        "C": "Wind",
+        "D": "Water"
+      },
+      "correct_answer": "A",
+      "explanation": "Coal provides a large share of electricity generation in India.",
+      "difficulty": "medium",
+      "source_section": "Coal"
+    },
+    {
+      "question_number": 12,
+      "question": "Which region contains the Damodar Valley coalfields?",
+      "options": {
+        "A": "West Bengal and Jharkhand",
+        "B": "Punjab and Haryana",
+        "C": "Kerala and Tamil Nadu",
+        "D": "Gujarat and Rajasthan"
+      },
+      "correct_answer": "A",
+      "explanation": "The Damodar Valley coalfields are located in Jharkhand and West Bengal.",
+      "difficulty": "medium",
+      "source_section": "Coal Distribution"
+    },
+    {
+      "question_number": 13,
+      "question": "Which area is known for offshore petroleum production in India?",
+      "options": {
+        "A": "Mumbai High",
+        "B": "Delhi Basin",
+        "C": "Punjab Basin",
+        "D": "Bihar Basin"
+      },
+      "correct_answer": "A",
+      "explanation": "Mumbai High is a major offshore petroleum producing region.",
+      "difficulty": "medium",
+      "source_section": "Petroleum"
+    },
+    {
+      "question_number": 14,
+      "question": "Which pipeline connects Hazira, Vijaipur and Jagdishpur?",
+      "options": {
+        "A": "HVJ Gas Pipeline",
+        "B": "Delhi Pipeline",
+        "C": "Assam Pipeline",
+        "D": "Punjab Pipeline"
+      },
+      "correct_answer": "A",
+      "explanation": "The HVJ pipeline connects Hazira, Vijaipur and Jagdishpur.",
+      "difficulty": "medium",
+      "source_section": "Natural Gas"
+    },
+    {
+      "question_number": 15,
+      "question": "Which energy resource is produced by altering the structure of atoms?",
+      "options": {
+        "A": "Nuclear energy",
+        "B": "Wind energy",
+        "C": "Solar energy",
+        "D": "Coal energy"
+      },
+      "correct_answer": "A",
+      "explanation": "Nuclear energy is produced by altering atomic structures.",
+      "difficulty": "medium",
+      "source_section": "Nuclear Energy"
+    },
+    {
+      "question_number": 16,
+      "question": "Which mineral resource is considered finite and non-renewable?",
+      "options": {
+        "A": "Minerals",
+        "B": "Sunlight",
+        "C": "Wind",
+        "D": "Water"
+      },
+      "correct_answer": "A",
+      "explanation": "Mineral resources are finite because they take millions of years to form.",
+      "difficulty": "medium",
+      "source_section": "Mineral Conservation"
+    },
+    {
+      "question_number": 17,
+      "question": "Which state has famous mica deposits in the Koderma belt?",
+      "options": {
+        "A": "Jharkhand",
+        "B": "Punjab",
+        "C": "Kerala",
+        "D": "Goa"
+      },
+      "correct_answer": "A",
+      "explanation": "Koderma in Jharkhand is famous for mica production.",
+      "difficulty": "medium",
+      "source_section": "Mica"
+    },
+    {
+      "question_number": 18,
+      "question": "Which renewable energy source uses ocean tides?",
+      "options": {
+        "A": "Tidal energy",
+        "B": "Wind energy",
+        "C": "Solar energy",
+        "D": "Biogas"
+      },
+      "correct_answer": "A",
+      "explanation": "Tidal energy uses the movement of ocean tides to generate electricity.",
+      "difficulty": "medium",
+      "source_section": "Tidal Energy"
+    },
+    {
+      "question_number": 19,
+      "question": "Which Indian state has the largest wind farm cluster?",
+      "options": {
+        "A": "Tamil Nadu",
+        "B": "Punjab",
+        "C": "Haryana",
+        "D": "Bihar"
+      },
+      "correct_answer": "A",
+      "explanation": "Tamil Nadu has the largest wind farm cluster in India.",
+      "difficulty": "medium",
+      "source_section": "Wind Energy"
+    },
+    {
+      "question_number": 20,
+      "question": "Which material is mainly used in biogas plants?",
+      "options": {
+        "A": "Cattle dung",
+        "B": "Coal",
+        "C": "Petroleum",
+        "D": "Sand"
+      },
+      "correct_answer": "A",
+      "explanation": "Biogas plants commonly use cattle dung and organic waste.",
+      "difficulty": "medium",
+      "source_section": "Biogas"
+    },
+    {
+      "question_number": 21,
+      "question": "Which source of energy is considered conventional?",
+      "options": {
+        "A": "Coal",
+        "B": "Wind",
+        "C": "Solar",
+        "D": "Tidal"
+      },
+      "correct_answer": "A",
+      "explanation": "Coal is a conventional energy source widely used in the past.",
+      "difficulty": "medium",
+      "source_section": "Conventional Energy"
+    },
+    {
+      "question_number": 22,
+      "question": "Which mineral is essential for cement production and iron smelting?",
+      "options": {
+        "A": "Limestone",
+        "B": "Gold",
+        "C": "Copper",
+        "D": "Salt"
+      },
+      "correct_answer": "A",
+      "explanation": "Limestone is a basic raw material in cement production and smelting iron ore.",
+      "difficulty": "medium",
+      "source_section": "Rock Minerals"
+    },
+    {
+      "question_number": 23,
+      "question": "Which sector uses energy to propel vehicles?",
+      "options": {
+        "A": "Transport",
+        "B": "Education",
+        "C": "Health",
+        "D": "Sports"
+      },
+      "correct_answer": "A",
+      "explanation": "Transport systems require energy to run vehicles.",
+      "difficulty": "medium",
+      "source_section": "Energy Resources"
+    },
+    {
+      "question_number": 24,
+      "question": "Which process helps conserve mineral resources?",
+      "options": {
+        "A": "Recycling metals",
+        "B": "Burning fuels",
+        "C": "Increasing mining",
+        "D": "Dumping waste"
+      },
+      "correct_answer": "A",
+      "explanation": "Recycling metals helps conserve mineral resources.",
+      "difficulty": "medium",
+      "source_section": "Mineral Conservation"
+    },
+    {
+      "question_number": 25,
+      "question": "Which energy source is derived from the heat inside the Earth?",
+      "options": {
+        "A": "Geothermal energy",
+        "B": "Solar energy",
+        "C": "Wind energy",
+        "D": "Coal energy"
+      },
+      "correct_answer": "A",
+      "explanation": "Geothermal energy uses heat from the Earth's interior to produce electricity.",
+      "difficulty": "medium",
+      "source_section": "Geothermal Energy"
+    }
+  ]
+}

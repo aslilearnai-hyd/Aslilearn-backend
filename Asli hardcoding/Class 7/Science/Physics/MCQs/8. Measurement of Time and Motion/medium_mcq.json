@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Measurement of Time and Motion",
+    "generated_at": "2026-03-05T22:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following best defines speed?",
+            "options": {
+                "A": "Distance travelled per unit time",
+                "B": "Time taken per unit distance",
+                "C": "Change in direction of motion",
+                "D": "Force applied on an object"
+            },
+            "correct_answer": "A",
+            "explanation": "Speed is defined as the distance travelled by an object per unit time.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 2,
+            "question": "A car travels 120 km in 2 hours. What is its speed?",
+            "options": {
+                "A": "40 km/h",
+                "B": "50 km/h",
+                "C": "60 km/h",
+                "D": "80 km/h"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed = Distance ÷ Time = 120 ÷ 2 = 60 km/h.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which instrument measures the total distance travelled by a vehicle?",
+            "options": {
+                "A": "Stopwatch",
+                "B": "Odometer",
+                "C": "Speedometer",
+                "D": "Thermometer"
+            },
+            "correct_answer": "B",
+            "explanation": "An odometer measures the total distance travelled by a vehicle.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which type of motion is shown by a swinging pendulum?",
+            "options": {
+                "A": "Circular motion",
+                "B": "Oscillatory motion",
+                "C": "Random motion",
+                "D": "Rectilinear motion"
+            },
+            "correct_answer": "B",
+            "explanation": "A pendulum moves to and fro about its mean position, which is oscillatory motion.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "The motion of the Earth around the Sun is an example of:",
+            "options": {
+                "A": "Rectilinear motion",
+                "B": "Circular motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "B",
+            "explanation": "The Earth revolves around the Sun in a circular path.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which quantity helps us determine how fast an object is moving?",
+            "options": {
+                "A": "Mass",
+                "B": "Temperature",
+                "C": "Speed",
+                "D": "Volume"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed indicates how fast an object is moving.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following shows periodic motion?",
+            "options": {
+                "A": "Flying bird",
+                "B": "Swinging pendulum",
+                "C": "Running dog",
+                "D": "Falling stone"
+            },
+            "correct_answer": "B",
+            "explanation": "A pendulum repeats its motion after equal intervals of time.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If a bus covers 150 km in 3 hours, its speed is:",
+            "options": {
+                "A": "30 km/h",
+                "B": "40 km/h",
+                "C": "50 km/h",
+                "D": "60 km/h"
+            },
+            "correct_answer": "C",
+            "explanation": "Speed = 150 ÷ 3 = 50 km/h.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following motions is not periodic?",
+            "options": {
+                "A": "Pendulum motion",
+                "B": "Motion of Earth around the Sun",
+                "C": "Running athlete",
+                "D": "Clock hands movement"
+            },
+            "correct_answer": "C",
+            "explanation": "Running motion does not repeat in equal intervals regularly.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which device is commonly used in sports to measure short time intervals?",
+            "options": {
+                "A": "Odometer",
+                "B": "Stopwatch",
+                "C": "Speedometer",
+                "D": "Thermometer"
+            },
+            "correct_answer": "B",
+            "explanation": "A stopwatch is used to measure short intervals of time.",
+            "difficulty": "medium",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Which motion is shown by the blades of a rotating fan?",
+            "options": {
+                "A": "Circular motion",
+                "B": "Rectilinear motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Fan blades rotate around a fixed axis forming circular motion.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which unit is commonly used to express speed of vehicles?",
+            "options": {
+                "A": "m/s",
+                "B": "km/h",
+                "C": "kg",
+                "D": "m"
+            },
+            "correct_answer": "B",
+            "explanation": "Vehicle speeds are commonly expressed in kilometres per hour.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which type of motion does a ball rolling on a straight road show?",
+            "options": {
+                "A": "Rectilinear motion",
+                "B": "Circular motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Motion along a straight path is rectilinear motion.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 14,
+            "question": "A cyclist covers 30 km in 2 hours. What is the speed?",
+            "options": {
+                "A": "10 km/h",
+                "B": "15 km/h",
+                "C": "20 km/h",
+                "D": "30 km/h"
+            },
+            "correct_answer": "B",
+            "explanation": "Speed = 30 ÷ 2 = 15 km/h.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which instrument records both distance and speed in vehicles?",
+            "options": {
+                "A": "Odometer and speedometer",
+                "B": "Stopwatch and barometer",
+                "C": "Thermometer and odometer",
+                "D": "Compass and stopwatch"
+            },
+            "correct_answer": "A",
+            "explanation": "Speedometer measures speed and odometer measures distance.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which motion is shown by a child on a merry-go-round?",
+            "options": {
+                "A": "Rectilinear motion",
+                "B": "Circular motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "B",
+            "explanation": "A merry-go-round moves in a circular path.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following motions repeats at regular intervals?",
+            "options": {
+                "A": "Random motion",
+                "B": "Periodic motion",
+                "C": "Rectilinear motion",
+                "D": "Linear motion"
+            },
+            "correct_answer": "B",
+            "explanation": "Periodic motion repeats itself after equal time intervals.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 18,
+            "question": "If distance remains constant but time increases, speed will:",
+            "options": {
+                "A": "Increase",
+                "B": "Decrease",
+                "C": "Remain same",
+                "D": "Become zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Speed = distance/time, so increasing time decreases speed.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which motion is seen in a vibrating guitar string?",
+            "options": {
+                "A": "Circular motion",
+                "B": "Oscillatory motion",
+                "C": "Random motion",
+                "D": "Rectilinear motion"
+            },
+            "correct_answer": "B",
+            "explanation": "The string moves to and fro about its mean position.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which motion occurs when direction changes unpredictably?",
+            "options": {
+                "A": "Circular motion",
+                "B": "Rectilinear motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "C",
+            "explanation": "Random motion involves irregular changes in direction.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which instrument helps calculate speed by measuring time?",
+            "options": {
+                "A": "Stopwatch",
+                "B": "Thermometer",
+                "C": "Compass",
+                "D": "Barometer"
+            },
+            "correct_answer": "A",
+            "explanation": "A stopwatch measures time which helps calculate speed.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which example shows circular motion?",
+            "options": {
+                "A": "Car moving on a straight road",
+                "B": "Fan blades rotating",
+                "C": "Child sliding down a slide",
+                "D": "Stone falling down"
+            },
+            "correct_answer": "B",
+            "explanation": "Fan blades rotate around a central axis.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which quantity represents how far an object travels?",
+            "options": {
+                "A": "Speed",
+                "B": "Distance",
+                "C": "Time",
+                "D": "Mass"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance represents the total path covered.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "A train covers 200 km in 4 hours. What is its speed?",
+            "options": {
+                "A": "40 km/h",
+                "B": "50 km/h",
+                "C": "60 km/h",
+                "D": "70 km/h"
+            },
+            "correct_answer": "B",
+            "explanation": "Speed = 200 ÷ 4 = 50 km/h.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which motion occurs when an object moves back and forth about a fixed point?",
+            "options": {
+                "A": "Rectilinear motion",
+                "B": "Circular motion",
+                "C": "Oscillatory motion",
+                "D": "Random motion"
+            },
+            "correct_answer": "C",
+            "explanation": "Oscillatory motion involves repeated back and forth movement.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        }
+    ]
+}

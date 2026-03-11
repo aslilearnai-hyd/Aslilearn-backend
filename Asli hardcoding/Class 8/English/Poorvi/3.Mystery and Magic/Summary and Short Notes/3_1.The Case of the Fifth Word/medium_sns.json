@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "The Case of the Fifth Word",
+  "difficulty": "Medium",
+  "source_pdf": "The Case of the Fifth Word.pdf",
+  "short_notes": {
+    "key_points": [
+      "Encyclopedia Brown, whose real name is Leroy Brown, is a clever boy who helps his father solve difficult mysteries",
+      "His father, Chief Brown, often shares unsolved police cases with him during dinner discussions",
+      "Tim Nolan, who once lived in Idaville, was suspected of taking part in a jewellery robbery with Daniel Davenport",
+      "Before dying, Nolan left a coded message on a calendar sheet containing four strange words",
+      "Encyclopedia Brown decoded the message and discovered the location where the stolen jewellery was hidden"
+    ],
+    "examples": [
+      "Chief Brown brought home the mystery of Nolan’s death and the strange message",
+      "The four words written by Nolan were Nom, Utes, Sweden, and Hurts",
+      "These words were actually clues representing Monday, Tuesday, Wednesday, and Thursday",
+      "The missing fifth word represented Friday",
+      "The hidden jewellery was discovered under a young fir tree in Nolan’s nursery"
+    ],
+    "formulas_or_processes": [
+      "Problem → Mystery of the stolen jewellery and Nolan’s coded message",
+      "Clue → Four unusual words written on a calendar sheet",
+      "Observation → Encyclopedia realizes the words represent days of the week",
+      "Inference → The missing fifth word corresponds to Friday",
+      "Solution → The clue points to the fir tree where the jewellery was hidden"
+    ],
+    "exam_tips": [
+      "Remember the role of Encyclopedia Brown as a young detective with excellent reasoning skills",
+      "Understand how the calendar sheet helped identify the pattern of days",
+      "Focus on the logic behind removing the word 'day' from the days of the week to form the coded words",
+      "Be clear about how the missing fifth word helped reveal the hiding place of the jewellery"
+    ]
+  }
+}

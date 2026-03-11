@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG9",
+    "chapter": "The Adventures of Toto",
+    "title": "Extended Reading Passages with Questions – The Adventures of Toto",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Grandfather was fond of keeping different animals as pets. One day he bought a little monkey from a tonga-driver for five rupees. The monkey was tied to a feeding trough and looked very unhappy. Grandfather felt sorry for the poor animal and decided to add him to his private zoo.",
+            "questions": [
+                "Who was fond of keeping animals?",
+                "From whom did Grandfather buy the monkey?",
+                "How much did Grandfather pay for the monkey?",
+                "Where was the monkey tied?",
+                "Why did Grandfather decide to buy the monkey?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "The monkey was named Toto. He was a pretty little monkey with bright, mischievous eyes and pearly white teeth. His tail was long and flexible and could be used like a third hand. Toto was very playful and always ready to create trouble.",
+            "questions": [
+                "What was the name of the monkey?",
+                "How are Toto’s eyes described?",
+                "What colour were Toto’s teeth?",
+                "How did Toto use his tail?",
+                "What kind of nature did Toto have?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Grandfather decided to keep Toto secretly at first because Grandmother did not like new animals in the house. Toto was kept in a small closet opening into the narrator’s bedroom. However, Toto soon began to show his mischievous nature by tearing the wallpaper and shredding the narrator’s school blazer.",
+            "questions": [
+                "Why was Toto kept secretly?",
+                "Where was Toto kept initially?",
+                "What did Toto tear in the closet?",
+                "Whose blazer did Toto shred?",
+                "What did Toto’s actions reveal about his nature?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "After the destruction in the closet, Toto was shifted to a cage in the servants’ quarters. Grandfather’s private zoo included many animals such as rabbits, a tortoise, and a squirrel. Toto, however, did not allow any of the animals to sleep peacefully because of his restless activities at night.",
+            "questions": [
+                "Where was Toto moved after the closet incident?",
+                "What animals were in Grandfather’s private zoo?",
+                "How did Toto disturb the other animals?",
+                "What time did Toto trouble the animals most?",
+                "What does this show about Toto’s behaviour?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "One day Grandfather had to travel to Saharanpur to collect his pension. He decided to take Toto along with him. Toto was carried in a large black canvas kit-bag. The bag kept jumping and rolling on the platform because Toto was moving inside it.",
+            "questions": [
+                "Where was Grandfather travelling?",
+                "Why was he going there?",
+                "How was Toto carried during the journey?",
+                "Why did the bag keep jumping?",
+                "Where did people notice the bag?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "At the railway ticket office, Toto suddenly poked his head out of the bag. The ticket collector saw him and insisted that Toto was a dog. According to the rules, Grandfather had to pay three rupees as fare for the animal.",
+            "questions": [
+                "Where did Toto show his head?",
+                "Who noticed Toto at the ticket office?",
+                "What did the ticket collector call Toto?",
+                "How much fare did Grandfather pay?",
+                "Why did Grandfather have to pay the fare?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "Later, Toto was kept in the stable with Nana, the family donkey. Toto enjoyed troubling Nana and often bit her ears with his sharp teeth. Nana did not like this behaviour but had to tolerate it.",
+            "questions": [
+                "Where was Toto kept later?",
+                "Who was Nana?",
+                "How did Toto trouble Nana?",
+                "What part of Nana did Toto bite?",
+                "How did Nana react to Toto’s behaviour?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "Toto loved taking warm baths in winter. He would carefully test the temperature of the water with his hand before stepping in. One day he got into a kettle of warm water placed on the fire and almost boiled himself before Grandmother rescued him.",
+            "questions": [
+                "What did Toto enjoy during winter?",
+                "How did Toto test the water temperature?",
+                "Where did Toto jump one day?",
+                "Why was the kettle dangerous?",
+                "Who saved Toto from the kettle?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "During one lunch-time, Toto jumped onto the dining table and grabbed a dish of pullao. When Grandmother screamed, Toto threw a plate at her and ran to the branches of a jackfruit tree with the dish.",
+            "questions": [
+                "Where did Toto jump during lunch?",
+                "What food did Toto grab?",
+                "Who screamed during the incident?",
+                "What did Toto throw at Grandmother?",
+                "Where did Toto run with the dish?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "Toto stayed in the jackfruit tree until he finished eating all the rice. After finishing, he threw the dish down to spite Grandmother. Because of the damage he caused in the house, the family finally sold Toto back to the tonga-driver for three rupees.",
+            "questions": [
+                "Where did Toto stay while eating the rice?",
+                "What did Toto do after finishing the rice?",
+                "Why did he throw the dish down?",
+                "Why did the family decide to sell Toto?",
+                "For how much was Toto sold back?"
+            ]
+        }
+    ]
+}

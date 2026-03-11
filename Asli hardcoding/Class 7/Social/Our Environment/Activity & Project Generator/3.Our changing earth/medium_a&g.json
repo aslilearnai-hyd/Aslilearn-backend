@@ -1,0 +1,190 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Our Changing Earth",
+    "difficulty": "Medium",
+    "source_pdf": "our_environment_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Lithospheric Plate Movement Simulation",
+            "objective": "Understand how convection currents in the mantle move plates",
+            "materials": [
+                "Beaker",
+                "Tripod stand",
+                "Burner",
+                "Water",
+                "Small pieces of colored paper",
+                "Cardboard"
+            ],
+            "steps": [
+                "Fill the beaker with water and place small pieces of paper on the surface",
+                "Heat the water from the bottom and observe the path of the paper pieces",
+                "Place two small cardboard pieces (plates) on the water surface",
+                "Observe how they move apart or collide as the water (magma) circulates"
+            ],
+            "learning_outcome": "Explains the relationship between internal heat and tectonic plate movement",
+            "evaluation": "Correct description of the circular motion of the paper/cardboard (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Mapping the 'Ring of Fire'",
+            "objective": "Identify the relationship between plate boundaries and volcanoes",
+            "materials": [
+                "Outline world map",
+                "Red markers",
+                "Reference data of active volcanoes"
+            ],
+            "steps": [
+                "Plot the locations of major active volcanoes (e.g., Mt. Fuji, Mt. Etna) on the map",
+                "Draw the major tectonic plate boundaries using a dashed line",
+                "Observe the concentration of volcanoes along the edges of the Pacific Plate",
+                "Label this region as the 'Circum-Pacific Belt' or 'Ring of Fire'"
+            ],
+            "learning_outcome": "Visualizes the distribution of endogenic forces along plate margins",
+            "evaluation": "Accuracy of the volcano plotting and boundary alignment (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Seismic Wave Intensity Chart",
+            "objective": "Understand the Richter scale and the spread of earthquake energy",
+            "materials": [
+                "Graph paper",
+                "Measuring scale",
+                "Flashlight"
+            ],
+            "steps": [
+                "Shine a flashlight on a wall from a distance of 1 foot and measure the circle of light",
+                "Move back to 5 feet and observe how the light spreads but gets dimmer",
+                "Relate the 'Focus' to the flashlight and the 'Epicenter' to the wall",
+                "Create a table showing the destructive capacity of Richter scale levels 2.0, 5.0, and 7.0"
+            ],
+            "learning_outcome": "Explains how the intensity of an earthquake decreases with distance from the epicenter",
+            "evaluation": "Correct interpretation of the Richter scale data (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Ox-bow Lake Evolution Model",
+            "objective": "Trace the transformation of a river meander into a lake",
+            "materials": [
+                "Sand tray",
+                "Water",
+                "Blue dye",
+                "Small sticks"
+            ],
+            "steps": [
+                "Create a winding channel (meander) in the sand tray",
+                "Pour water slowly and observe erosion on the outer curve and deposition on the inner curve",
+                "Simulate a 'flood' by increasing water flow until the meander neck is cut off",
+                "Identify the isolated water body as an 'Ox-bow lake'"
+            ],
+            "learning_outcome": "Demonstrates the dual processes of erosion and deposition in river landforms",
+            "evaluation": "Scientific explanation of the 'cutoff' process (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Mushroom Rock: Wind Abrasion Study",
+            "objective": "Analyze why wind erosion is more effective on lower rock surfaces",
+            "materials": [
+                "Sandpaper",
+                "Soft chalk or clay column",
+                "Fan (optional)"
+            ],
+            "steps": [
+                "Rub the bottom half of a chalk column vigorously with sandpaper for 2 minutes",
+                "Rub the top half gently for only 30 seconds",
+                "Observe the resulting 'mushroom' shape with a narrow base and wide top",
+                "Explain how wind carries heavier sand particles closer to the ground"
+            ],
+            "learning_outcome": "Connects the height of wind-blown particles to the specific shape of desert landforms",
+            "evaluation": "Explanation of differential erosion (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Coastal Erosion Sequence",
+            "objective": "Understand the progressive formation of Sea Arches and Stacks",
+            "materials": [
+                "Clay",
+                "Water spray bottle",
+                "Straw"
+            ],
+            "steps": [
+                "Shape a clay cliff and blow air/water at a small point to create a 'Sea Cave'",
+                "Continue until the hole goes through to form a 'Sea Arch'",
+                "Simulate the roof collapsing to leave a vertical pillar called a 'Stack'",
+                "Label each stage in your observation log"
+            ],
+            "learning_outcome": "Visualizes the transition of landforms over time due to wave action",
+            "evaluation": "Correct identification of the stages of coastal erosion (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Glacial Moraine Sorting",
+            "objective": "Differentiate between glacial deposits and river deposits",
+            "materials": [
+                "Ice block mixed with sand and pebbles",
+                "Glass of water with sand and pebbles"
+            ],
+            "steps": [
+                "Stir the glass of water and observe how materials settle by size (sorted)",
+                "Let the ice block melt on a flat surface and observe the unsorted pile (Moraine)",
+                "Compare the 'sorting' ability of water vs. the 'dumping' nature of ice",
+                "Write a note on why glacial moraines are unsorted"
+            ],
+            "learning_outcome": "Distinguishes the characteristics of glacial deposition",
+            "evaluation": "Comparative analysis of sorted vs. unsorted sediments (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Floodplain Siltation Test",
+            "objective": "Observe how levees and floodplains are formed",
+            "materials": [
+                "Slanted board",
+                "Muddy water",
+                "Small pebbles"
+            ],
+            "steps": [
+                "Pour muddy water down the center of a slanted board",
+                "Observe how the heavy pebbles stay near the 'river bank' (Levee)",
+                "Observe how fine silt spreads over the flat area (Floodplain)",
+                "Explain why floodplains are fertile"
+            ],
+            "learning_outcome": "Understands the depositional logic behind river valley landforms",
+            "evaluation": "Diagram showing the arrangement of sediments after the 'flood' (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Endogenic vs. Exogenic Force Sorting",
+            "objective": "Categorize Earth's movements based on their energy source",
+            "materials": [
+                "T-chart template",
+                "Cards with landform names (e.g., Delta, Waterfall, Volcano, Mountain range)"
+            ],
+            "steps": [
+                "Classify 'Sudden Movements' and 'Diastrophic Forces' under Endogenic",
+                "Classify 'Erosional and Depositional' activities under Exogenic",
+                "Identify which force creates new land and which wears it down",
+                "Summarize the relationship between these two opposing forces"
+            ],
+            "learning_outcome": "Synthesizes the internal and external drivers of landscape change",
+            "evaluation": "Accuracy in classification and conceptual clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Local Disaster Preparedness Plan",
+            "objective": "Apply earthquake safety knowledge to a specific environment",
+            "materials": [
+                "Map of your home or school",
+                "Red and Green stickers"
+            ],
+            "steps": [
+                "Identify 'Safe Spots' (under sturdy furniture) with green stickers",
+                "Identify 'Danger Spots' (near windows, mirrors, or heavy cabinets) with red stickers",
+                "Plan an evacuation route that leads to an open area",
+                "Draft a 3-step 'Drop, Cover, Hold on' instruction sheet"
+            ],
+            "learning_outcome": "Develops practical safety skills based on scientific understanding of seismic waves",
+            "evaluation": "Feasibility and completeness of the safety plan (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,177 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "Nelson Mandela: Long Walk to Freedom",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand Nelson Mandela’s life and struggle against apartheid in detail",
+        "Analyze key events, decisions, and their consequences",
+        "Identify and interpret Mandela’s character traits and values",
+        "Develop inferential and critical thinking skills",
+        "Relate lessons of leadership, courage, and perseverance to real life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Early Life",
+            "topics_covered": [
+                "Author and context of the autobiography",
+                "Mandela’s birth, family, and childhood",
+                "Early influences and values"
+            ],
+            "teaching_strategy": [
+                "Storytelling to introduce early life",
+                "Discussion of rural South African society"
+            ],
+            "student_activities": [
+                "Locate South Africa on the map",
+                "Discuss qualities Mandela learned from childhood experiences"
+            ],
+            "assessment": [
+                "Oral Q&A on Mandela’s early life and values",
+                "Short written note on childhood influence on character"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Education and Awareness of Racial Inequality",
+            "topics_covered": [
+                "Schooling and early education",
+                "Awareness of racial discrimination under apartheid",
+                "Emergence of leadership qualities"
+            ],
+            "teaching_strategy": [
+                "Explain apartheid in student-friendly terms",
+                "Use stories from Mandela’s school days to highlight awareness"
+            ],
+            "student_activities": [
+                "Identify key events that shaped Mandela’s understanding of injustice",
+                "Discuss how education helped Mandela develop leadership"
+            ],
+            "assessment": [
+                "Oral questions on apartheid and early awareness",
+                "Short written task on leadership traits"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Mandela’s Entry into Politics",
+            "topics_covered": [
+                "Joining the African National Congress (ANC)",
+                "Participation in peaceful protests and civil rights movements",
+                "Decisions that show courage and strategic thinking"
+            ],
+            "teaching_strategy": [
+                "Use a timeline to explain political events",
+                "Discuss significance of non-violent protest"
+            ],
+            "student_activities": [
+                "Draw a timeline showing key political events",
+                "Discuss why Mandela chose peaceful methods initially"
+            ],
+            "assessment": [
+                "Oral Q&A on political choices and strategies",
+                "Short written summary of early political actions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Imprisonment and Perseverance",
+            "topics_covered": [
+                "Mandela’s arrest and sentence",
+                "Life in prison: challenges and endurance",
+                "Maintaining hope and faith during adversity"
+            ],
+            "teaching_strategy": [
+                "Storytelling of Robben Island experiences",
+                "Highlight examples of patience, perseverance, and courage"
+            ],
+            "student_activities": [
+                "Discuss how Mandela stayed strong in prison",
+                "List qualities that helped him survive hardships"
+            ],
+            "assessment": [
+                "Oral Q&A on imprisonment and coping strategies",
+                "Short written note on perseverance and hope"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Release and Leadership",
+            "topics_covered": [
+                "Release after 27 years of imprisonment",
+                "Role in dismantling apartheid",
+                "Becoming South Africa’s first Black president"
+            ],
+            "teaching_strategy": [
+                "Explain events leading to release and presidency",
+                "Use images and quotes to illustrate leadership qualities"
+            ],
+            "student_activities": [
+                "Discuss why Mandela is considered a hero",
+                "List key achievements after release"
+            ],
+            "assessment": [
+                "Oral Q&A on leadership and achievements",
+                "Short written summary of Mandela’s impact"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Character Analysis and Moral Lessons",
+            "topics_covered": [
+                "Leadership, courage, determination, and integrity",
+                "Values of equality, justice, and human rights",
+                "Lessons students can learn from Mandela’s life"
+            ],
+            "teaching_strategy": [
+                "Use character charts to analyze traits",
+                "Discussion on moral and social lessons"
+            ],
+            "student_activities": [
+                "Create a character chart showing Mandela’s qualities",
+                "Discuss real-life applications of these values"
+            ],
+            "assessment": [
+                "Short written task on lessons learned",
+                "Class discussion on how values can guide students today"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Chapter Discussion",
+            "topics_covered": [
+                "Summary of key events and achievements",
+                "Revision of character traits and themes",
+                "Critical thinking and discussion on leadership and justice"
+            ],
+            "teaching_strategy": [
+                "Use timeline and charts for review",
+                "Conduct Q&A, quizzes, and group discussion"
+            ],
+            "student_activities": [
+                "Make a timeline of Mandela’s life",
+                "Group quiz on events, leadership, and moral lessons"
+            ],
+            "assessment": [
+                "Oral quiz on chapter highlights",
+                "Written summary linking character traits to events"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map of South Africa",
+        "Images of Nelson Mandela and Robben Island",
+        "Timeline chart of Mandela’s life",
+        "Character charts and flashcards of events"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and discussion",
+        "Written exercises and assignments",
+        "Class participation and group discussion",
+        "Quizzes on events, themes, and character analysis"
+    ],
+    "teacher_tip": "Focus on analyzing Mandela’s decisions, qualities, and leadership. Encourage students to reflect on values like courage, justice, and equality. Use timelines, images, and quotes for better engagement."
+}

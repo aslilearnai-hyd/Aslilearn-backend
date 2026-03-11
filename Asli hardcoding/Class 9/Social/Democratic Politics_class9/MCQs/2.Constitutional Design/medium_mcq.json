@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Constitutional Design",
+    "generated_at": "2026-03-07T22:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Apartheid refers to:",
+            "options": {
+                "A": "Economic policy",
+                "B": "Racial discrimination system",
+                "C": "Political reform",
+                "D": "Trade agreement"
+            },
+            "correct_answer": "B",
+            "explanation": "Apartheid was a racial segregation system in South Africa.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who led the struggle against apartheid?",
+            "options": {
+                "A": "Nelson Mandela",
+                "B": "Martin Luther King",
+                "C": "Abraham Lincoln",
+                "D": "Gandhi"
+            },
+            "correct_answer": "A",
+            "explanation": "Nelson Mandela led the anti-apartheid movement.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The organization that led the anti-apartheid movement was:",
+            "options": {
+                "A": "United Nations",
+                "B": "African National Congress",
+                "C": "European Union",
+                "D": "League of Nations"
+            },
+            "correct_answer": "B",
+            "explanation": "The African National Congress led the movement.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which body drafted the Constitution of India?",
+            "options": {
+                "A": "Parliament",
+                "B": "Supreme Court",
+                "C": "Constituent Assembly",
+                "D": "Cabinet"
+            },
+            "correct_answer": "C",
+            "explanation": "The Constituent Assembly drafted the Constitution.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Who chaired the Drafting Committee?",
+            "options": {
+                "A": "Jawaharlal Nehru",
+                "B": "B.R. Ambedkar",
+                "C": "Rajendra Prasad",
+                "D": "Sardar Patel"
+            },
+            "correct_answer": "B",
+            "explanation": "Dr. B.R. Ambedkar chaired the Drafting Committee.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "The Constitution of India was adopted on:",
+            "options": {
+                "A": "26 January 1950",
+                "B": "26 November 1949",
+                "C": "15 August 1947",
+                "D": "1 January 1950"
+            },
+            "correct_answer": "B",
+            "explanation": "It was adopted on 26 November 1949.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Republic Day celebrates:",
+            "options": {
+                "A": "Adoption of Constitution",
+                "B": "Independence",
+                "C": "Enforcement of Constitution",
+                "D": "Election day"
+            },
+            "correct_answer": "C",
+            "explanation": "The Constitution came into force on 26 January 1950.",
+            "difficulty": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "The introduction to the Constitution is called:",
+            "options": {
+                "A": "Article",
+                "B": "Preamble",
+                "C": "Act",
+                "D": "Law"
+            },
+            "correct_answer": "B",
+            "explanation": "The Preamble introduces the Constitution.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Which value means fairness in society?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "A",
+            "explanation": "Justice ensures fairness.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 10,
+            "question": "Which value means freedom of expression?",
+            "options": {
+                "A": "Equality",
+                "B": "Justice",
+                "C": "Liberty",
+                "D": "Fraternity"
+            },
+            "correct_answer": "C",
+            "explanation": "Liberty means freedom.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 11,
+            "question": "Which value ensures equal opportunity?",
+            "options": {
+                "A": "Justice",
+                "B": "Equality",
+                "C": "Liberty",
+                "D": "Fraternity"
+            },
+            "correct_answer": "B",
+            "explanation": "Equality ensures equal opportunities.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 12,
+            "question": "Which value promotes unity?",
+            "options": {
+                "A": "Justice",
+                "B": "Fraternity",
+                "C": "Liberty",
+                "D": "Equality"
+            },
+            "correct_answer": "B",
+            "explanation": "Fraternity promotes unity.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 13,
+            "question": "Which term means independent authority?",
+            "options": {
+                "A": "Sovereign",
+                "B": "Socialist",
+                "C": "Secular",
+                "D": "Republic"
+            },
+            "correct_answer": "A",
+            "explanation": "Sovereign means independence.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 14,
+            "question": "Which term means equal respect for religions?",
+            "options": {
+                "A": "Secular",
+                "B": "Socialist",
+                "C": "Republic",
+                "D": "Justice"
+            },
+            "correct_answer": "A",
+            "explanation": "Secular means equal respect for religions.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 15,
+            "question": "Which term means reducing economic inequality?",
+            "options": {
+                "A": "Socialist",
+                "B": "Sovereign",
+                "C": "Republic",
+                "D": "Liberty"
+            },
+            "correct_answer": "A",
+            "explanation": "Socialist means reducing inequality.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 16,
+            "question": "Which term means elected head of state?",
+            "options": {
+                "A": "Republic",
+                "B": "Sovereign",
+                "C": "Secular",
+                "D": "Socialist"
+            },
+            "correct_answer": "A",
+            "explanation": "Republic means elected head of state.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 17,
+            "question": "Which body ensures laws follow the Constitution?",
+            "options": {
+                "A": "Judiciary",
+                "B": "Army",
+                "C": "Police",
+                "D": "Election Commission"
+            },
+            "correct_answer": "A",
+            "explanation": "Judiciary protects the Constitution.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which concept ensures government accountability?",
+            "options": {
+                "A": "Democracy",
+                "B": "Autocracy",
+                "C": "Monarchy",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy ensures accountability.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which value protects freedom?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "B",
+            "explanation": "Liberty protects freedom.",
+            "difficulty": "medium",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 20,
+            "question": "Which principle means everyone follows the law?",
+            "options": {
+                "A": "Rule of law",
+                "B": "Fraternity",
+                "C": "Liberty",
+                "D": "Justice"
+            },
+            "correct_answer": "A",
+            "explanation": "Rule of law means law applies to all.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which body represents the people in law making?",
+            "options": {
+                "A": "Parliament",
+                "B": "Army",
+                "C": "Court",
+                "D": "Police"
+            },
+            "correct_answer": "A",
+            "explanation": "Parliament makes laws.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which feature allows changes in Constitution?",
+            "options": {
+                "A": "Amendment",
+                "B": "Election",
+                "C": "Judgment",
+                "D": "Bill"
+            },
+            "correct_answer": "A",
+            "explanation": "Amendments allow constitutional change.",
+            "difficulty": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Democracy means:",
+            "options": {
+                "A": "Rule by people",
+                "B": "Rule by king",
+                "C": "Rule by army",
+                "D": "Rule by judges"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy means rule by people.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Citizens participate in democracy mainly by:",
+            "options": {
+                "A": "Voting",
+                "B": "Studying",
+                "C": "Trading",
+                "D": "Traveling"
+            },
+            "correct_answer": "A",
+            "explanation": "Voting allows participation.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which document protects citizens’ rights?",
+            "options": {
+                "A": "Constitution",
+                "B": "Law book",
+                "C": "Election list",
+                "D": "Budget"
+            },
+            "correct_answer": "A",
+            "explanation": "The Constitution protects citizens' rights.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

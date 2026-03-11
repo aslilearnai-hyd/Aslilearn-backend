@@ -1,0 +1,179 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Real Numbers",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_outcomes": [
+        "Use the Fundamental Theorem of Arithmetic in complex reasoning problems",
+        "Solve advanced HCF and LCM problems including hidden conditions",
+        "Apply Euclid’s Division Algorithm to non-trivial numerical cases",
+        "Write complete mathematical proofs for irrational numbers",
+        "Analyse decimal expansions of rational numbers rigorously",
+        "Solve board-level and HOTS questions confidently"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Fundamental Theorem of Arithmetic – Deep Reasoning",
+            "topics_covered": [
+                "Uniqueness of prime factorisation",
+                "Expression of numbers using powers of primes",
+                "Implications of FTA in number theory"
+            ],
+            "teaching_strategy": [
+                "Proof-based explanation of uniqueness",
+                "Discussion of counterexamples",
+                "Solving large-number factorisation problems"
+            ],
+            "student_activities": [
+                "Factorise 32760 and write in ascending powers of primes",
+                "Explain why prime factorisation is unique in words"
+            ],
+            "assessment": [
+                "Reason-based written questions",
+                "Error analysis tasks"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced HCF and LCM Problems",
+            "topics_covered": [
+                "HCF and LCM of two and three numbers",
+                "Use of HCF × LCM = product",
+                "Limitations of the formula"
+            ],
+            "teaching_strategy": [
+                "Derivation-based discussion",
+                "Comparison of two-number vs three-number cases"
+            ],
+            "student_activities": [
+                "Find HCF and LCM of 96 and 404",
+                "Explain why the product rule fails for three numbers"
+            ],
+            "assessment": [
+                "Board-level numerical problems",
+                "Conceptual short-answer questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complex Word Problems on HCF and LCM",
+            "topics_covered": [
+                "Remainder-based problems",
+                "Simultaneous event problems",
+                "Hidden condition problems"
+            ],
+            "teaching_strategy": [
+                "Backward reasoning technique",
+                "Identification of adjusted numbers"
+            ],
+            "student_activities": [
+                "Solve problems involving remainders",
+                "Classify problems as HCF-based or LCM-based with justification"
+            ],
+            "assessment": [
+                "HOTS questions",
+                "Step-mark evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Euclid’s Division Algorithm – Advanced Application",
+            "topics_covered": [
+                "Repeated division method",
+                "HCF of large integers",
+                "Comparison with prime factorisation"
+            ],
+            "teaching_strategy": [
+                "Algorithm tracing",
+                "Efficiency comparison discussion"
+            ],
+            "student_activities": [
+                "Find HCF of 135 and 225 using Euclid’s Algorithm",
+                "Compare steps with prime factorisation method"
+            ],
+            "assessment": [
+                "Long-answer problems",
+                "Method comparison questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Irrational Numbers – Complete Proof Writing",
+            "topics_covered": [
+                "Proof of irrationality of √2",
+                "Proof of irrationality of √3 and √5",
+                "Use of theorem: if p divides a² then p divides a"
+            ],
+            "teaching_strategy": [
+                "Line-by-line proof explanation",
+                "Highlighting contradiction clearly"
+            ],
+            "student_activities": [
+                "Write complete proof of irrationality of √3",
+                "Identify the contradiction point in the proof"
+            ],
+            "assessment": [
+                "Full-proof writing questions",
+                "Assertion–Reason questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Decimal Expansion – Logical Analysis",
+            "topics_covered": [
+                "Terminating decimals",
+                "Non-terminating repeating decimals",
+                "Connection with prime factors of denominator"
+            ],
+            "teaching_strategy": [
+                "Rule derivation using prime factorisation",
+                "Justification-based explanation"
+            ],
+            "student_activities": [
+                "Analyse decimal nature of 13/20, 7/12, 11/30",
+                "Explain reasoning without performing division"
+            ],
+            "assessment": [
+                "Reason-based MCQs",
+                "Short analytical answers"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Board-Level Integration and Evaluation",
+            "topics_covered": [
+                "Complete chapter integration",
+                "Mixed HOTS and proof-based problems"
+            ],
+            "teaching_strategy": [
+                "Timed problem-solving",
+                "Student explanation of solutions"
+            ],
+            "student_activities": [
+                "Solve board-pattern test",
+                "Peer explanation of reasoning"
+            ],
+            "assessment": [
+                "Hard-level chapter test (20–25 marks)",
+                "Detailed answer evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "NCERT Mathematics Textbook",
+        "Board-level worksheets",
+        "Proof flowcharts"
+    ],
+    "common_student_difficulties": [
+        "Skipping logical steps in proofs",
+        "Misusing HCF × LCM formula",
+        "Incorrect identification of contradiction",
+        "Confusion in remainder-based problems",
+        "Assuming decimal nature without factorisation"
+    ],
+    "teacher_tip": "At hard level, insist on mathematical language, logical flow, and justification in every answer. Precision is the key to full marks."
+}

@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Algebra Play",
+  "generated_at": "2026-03-11T10:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Simplify: 3x + 5x.",
+      "answer": "8x",
+      "key_concepts": ["like terms"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Simplify: 7a − 2a.",
+      "answer": "5a",
+      "key_concepts": ["like terms"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the value of x if x + 6 = 10.",
+      "answer": "x = 4",
+      "key_concepts": ["simple equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Simplify: 4y + 3 + 2y.",
+      "answer": "6y + 3",
+      "key_concepts": ["combining like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 5,
+      "question": "Find the value of x if x − 5 = 9.",
+      "answer": "x = 14",
+      "key_concepts": ["simple equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "Write an algebraic expression for: 'five more than a number x'.",
+      "answer": "x + 5",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "Write an algebraic expression for: 'three times a number y'.",
+      "answer": "3y",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 8,
+      "question": "Simplify: 6m + 4m + 2.",
+      "answer": "10m + 2",
+      "key_concepts": ["like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 9,
+      "question": "Find the value of x if 2x = 12.",
+      "answer": "x = 6",
+      "key_concepts": ["linear equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 10,
+      "question": "Simplify: 9p − 3p + 4.",
+      "answer": "6p + 4",
+      "key_concepts": ["combining like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 11,
+      "question": "Find the value of x if x/2 = 7.",
+      "answer": "x = 14",
+      "key_concepts": ["linear equations"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 12,
+      "question": "Write an algebraic expression for: 'ten less than a number n'.",
+      "answer": "n − 10",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 13,
+      "question": "Simplify: 5a + 3 + 2a + 4.",
+      "answer": "7a + 7",
+      "key_concepts": ["like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the value of x if x + 8 = 15.",
+      "answer": "x = 7",
+      "key_concepts": ["simple equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 15,
+      "question": "Write an algebraic expression for: 'twice a number increased by 3'.",
+      "answer": "2x + 3",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 16,
+      "question": "Simplify: 8b − 3b + 2.",
+      "answer": "5b + 2",
+      "key_concepts": ["combining like terms"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 17,
+      "question": "Find the value of x if 3x = 21.",
+      "answer": "x = 7",
+      "key_concepts": ["linear equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 18,
+      "question": "Simplify: 2y + 6 + 3y.",
+      "answer": "5y + 6",
+      "key_concepts": ["like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 19,
+      "question": "Write an algebraic expression for: 'four times a number minus 2'.",
+      "answer": "4x − 2",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 20,
+      "question": "Find the value of x if x − 3 = 11.",
+      "answer": "x = 14",
+      "key_concepts": ["simple equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 21,
+      "question": "Simplify: 4c + 5c.",
+      "answer": "9c",
+      "key_concepts": ["like terms"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "Find the value of x if x/3 = 5.",
+      "answer": "x = 15",
+      "key_concepts": ["linear equations"],
+      "marks": 2,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 23,
+      "question": "Simplify: 7m + 2 + 3m.",
+      "answer": "10m + 2",
+      "key_concepts": ["combining like terms"],
+      "marks": 2,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 24,
+      "question": "Write an algebraic expression for: 'a number divided by 4'.",
+      "answer": "x/4",
+      "key_concepts": ["algebraic expressions"],
+      "marks": 1,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 25,
+      "question": "Find the value of x if 5x = 20.",
+      "answer": "x = 4",
+      "key_concepts": ["linear equations"],
+      "marks": 1,
+      "source_section": "Section 2"
+    }
+  ]
+}

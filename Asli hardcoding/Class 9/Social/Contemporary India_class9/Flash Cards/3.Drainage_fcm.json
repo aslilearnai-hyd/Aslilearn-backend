@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 3: Drainage",
+    "generated_at": "2026-03-07T19:50:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is drainage?",
+                "correct_answer": "The river system of an area",
+                "explanation": "Drainage describes how rivers and streams flow through a region and drain into larger water bodies such as seas or oceans.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "What is a drainage basin?",
+                "correct_answer": "The area drained by a single river system",
+                "explanation": "All water from this region flows into the same main river and its tributaries.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "What is a water divide?",
+                "correct_answer": "An upland that separates two drainage basins",
+                "explanation": "A water divide is usually a mountain or highland that directs rivers to flow in different directions.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "Name the three major Himalayan river systems.",
+                "correct_answer": "Indus, Ganga and Brahmaputra",
+                "explanation": "These rivers originate in the Himalayas and are perennial because they are fed by glaciers and rainfall.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "Why are Himalayan rivers called perennial rivers?",
+                "correct_answer": "Because they have water throughout the year",
+                "explanation": "They receive water from both rainfall and melting snow from the Himalayas.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What are peninsular rivers?",
+                "correct_answer": "Rivers that originate in the Peninsular plateau and mainly depend on rainfall",
+                "explanation": "Most peninsular rivers are seasonal and have shorter courses compared to Himalayan rivers.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "Which two major rivers flow westwards into the Arabian Sea?",
+                "correct_answer": "Narmada and Tapi",
+                "explanation": "These rivers flow through rift valleys and drain into the Arabian Sea instead of the Bay of Bengal.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "question": "Which is the largest peninsular river in India?",
+                "correct_answer": "Godavari",
+                "explanation": "The Godavari is also called the 'Dakshin Ganga' because of its large size and basin.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "question": "What is a delta?",
+                "correct_answer": "A landform created by deposition of sediments at the mouth of a river",
+                "explanation": "Deltas form when rivers slow down and deposit sediments where they meet the sea.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "question": "Which is the largest freshwater lake in India?",
+                "correct_answer": "Wular Lake",
+                "explanation": "Wular Lake is located in Jammu and Kashmir and is formed due to tectonic activity.",
+                "source_section": "Section 3.4"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Drainage System in India",
+                "content": "The drainage system of India is divided into two main groups: Himalayan rivers and Peninsular rivers.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Himalayan Rivers",
+                "content": "Himalayan rivers originate from glaciers and receive water from both rainfall and melting snow. They have long courses and carry large amounts of silt.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Peninsular Rivers",
+                "content": "Peninsular rivers originate in the Western Ghats or central highlands and mainly depend on rainfall for their flow.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Importance of Lakes",
+                "content": "Lakes regulate river flow, prevent floods, help in hydel power generation, and promote tourism and recreation.",
+                "source_section": "Section 3.4"
+            },
+            {
+                "title": "Role of Rivers in Economy",
+                "content": "Rivers provide water for irrigation, transportation, hydroelectric power generation, and support human settlements.",
+                "source_section": "Section 3.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "The Sundarban delta is the largest delta in the world.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "fact": "The Brahmaputra river is called Tsang Po in Tibet and Jamuna in Bangladesh.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "fact": "Godavari is known as the 'Dakshin Ganga' because it is the largest peninsular river.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "fact": "Most rivers of peninsular India flow eastwards into the Bay of Bengal.",
+                "source_section": "Section 3.3"
+            }
+        ]
+    }
+}

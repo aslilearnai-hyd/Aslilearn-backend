@@ -1,0 +1,95 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "jemh111: Areas Related to Circles",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "Formula for area of circle?",
+                "correct_answer": "πr²",
+                "explanation": "Basic area formula.",
+                "source_section": "Formulas"
+            },
+            {
+                "question": "What is a sector?",
+                "correct_answer": "Region bounded by two radii and an arc.",
+                "explanation": "Part of circle.",
+                "source_section": "Parts"
+            },
+            {
+                "question": "Formula for area of sector?",
+                "correct_answer": "(θ/360) × πr²",
+                "explanation": "Depends on angle.",
+                "source_section": "Formulas"
+            },
+            {
+                "question": "What is a semicircle?",
+                "correct_answer": "Half of a circle.",
+                "explanation": "180° sector.",
+                "source_section": "Parts"
+            },
+            {
+                "question": "Area of semicircle?",
+                "correct_answer": "(1/2)πr²",
+                "explanation": "Half area.",
+                "source_section": "Formulas"
+            },
+            {
+                "question": "What is a quadrant?",
+                "correct_answer": "Quarter of a circle.",
+                "explanation": "90° sector.",
+                "source_section": "Parts"
+            },
+            {
+                "question": "What is arc length?",
+                "correct_answer": "Length of curved part of sector.",
+                "explanation": "Measured along arc.",
+                "source_section": "Arc"
+            },
+            {
+                "question": "Unit of area?",
+                "correct_answer": "Square units",
+                "explanation": "cm², m².",
+                "source_section": "Units"
+            },
+            {
+                "question": "Common value of π?",
+                "correct_answer": "22/7 or 3.14",
+                "explanation": "Approximate values.",
+                "source_section": "Constants"
+            },
+            {
+                "question": "First step in problems?",
+                "correct_answer": "Draw the figure",
+                "explanation": "Helps visualization.",
+                "source_section": "Method"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Sector",
+                "content": "Part of a circle enclosed by radii and arc.",
+                "source_section": "Parts"
+            },
+            {
+                "title": "Semicircle",
+                "content": "Half of a full circle.",
+                "source_section": "Parts"
+            },
+            {
+                "title": "Arc Length",
+                "content": "Length of curved boundary of sector.",
+                "source_section": "Arc"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Area depends on square of radius.",
+                "source_section": "Formulas"
+            },
+            {
+                "fact": "Units must always be squared.",
+                "source_section": "Units"
+            }
+        ]
+    }
+}

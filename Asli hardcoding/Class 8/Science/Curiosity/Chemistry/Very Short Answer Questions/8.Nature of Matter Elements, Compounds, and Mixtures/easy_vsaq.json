@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Nature of Matter – Elements, Compounds, and Mixtures",
+  "generated_at": "2026-03-05T20:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is matter?",
+      "answer": "Anything that has mass and occupies space.",
+      "key_points": ["matter definition"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What is a mixture?",
+      "answer": "A combination of two or more substances not chemically combined.",
+      "key_points": ["mixture"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the components of a mixture?",
+      "answer": "The individual substances present in a mixture.",
+      "key_points": ["components"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a uniform mixture?",
+      "answer": "A mixture in which components are evenly distributed.",
+      "key_points": ["uniform mixture"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Give one example of a non-uniform mixture.",
+      "answer": "Sand mixed with water.",
+      "key_points": ["heterogeneous mixture"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is air considered a mixture?",
+      "answer": "Because it contains different gases mixed together.",
+      "key_points": ["air mixture"],
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What happens when carbon dioxide is passed through limewater?",
+      "answer": "Limewater turns milky.",
+      "key_points": ["limewater test"],
+      "source_section": "Section 8.1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a pure substance?",
+      "answer": "A substance made of only one type of particle.",
+      "key_points": ["pure substance"],
+      "source_section": "Section 8.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What is an element?",
+      "answer": "A pure substance made of only one type of atom.",
+      "key_points": ["element"],
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What is an atom?",
+      "answer": "The smallest particle of an element that retains its properties.",
+      "key_points": ["atom"],
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is a molecule?",
+      "answer": "A group of two or more atoms chemically bonded together.",
+      "key_points": ["molecule"],
+      "source_section": "Section 8.3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is electrolysis?",
+      "answer": "The process of breaking a compound using electricity.",
+      "key_points": ["electrolysis"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which gases are produced during electrolysis of water?",
+      "answer": "Hydrogen and oxygen.",
+      "key_points": ["electrolysis of water"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 14,
+      "question": "What is a compound?",
+      "answer": "A substance formed by chemical combination of two or more elements.",
+      "key_points": ["compound"],
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Give one example of a compound.",
+      "answer": "Water.",
+      "key_points": ["compound example"],
+      "source_section": "Section 8.3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "What happens when iron and sulfur are heated together?",
+      "answer": "They form iron sulfide.",
+      "key_points": ["iron sulfide"],
+      "source_section": "Section 8.3"
+    },
+    {
+      "question_number": 17,
+      "question": "What is an alloy?",
+      "answer": "A mixture of two or more metals.",
+      "key_points": ["alloy"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Give one example of an alloy.",
+      "answer": "Bronze.",
+      "key_points": ["alloy example"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 19,
+      "question": "What is a mineral?",
+      "answer": "A naturally occurring solid substance found in the Earth.",
+      "key_points": ["minerals"],
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 20,
+      "question": "Give one example of a mineral.",
+      "answer": "Quartz.",
+      "key_points": ["mineral example"],
+      "source_section": "Section 8.5"
+    },
+    {
+      "question_number": 21,
+      "question": "How can mixtures be separated?",
+      "answer": "By physical methods.",
+      "key_points": ["separation of mixtures"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which method separates sand from water?",
+      "answer": "Filtration.",
+      "key_points": ["filtration"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which method separates dissolved salt from water?",
+      "answer": "Evaporation.",
+      "key_points": ["evaporation"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which method separates iron filings from sand?",
+      "answer": "Magnetic separation.",
+      "key_points": ["magnetic separation"],
+      "source_section": "Section 8.1"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the main classification of matter in this chapter?",
+      "answer": "Elements, compounds, and mixtures.",
+      "key_points": ["classification of matter"],
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

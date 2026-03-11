@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-06T17:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the surface area of a cube of side 7 cm.",
+            "answer": "Surface area of cube = 6 × side² = 6 × 7² = 6 × 49 = 294 cm²",
+            "answer_outline": ["Surface area formula SA=6a²", "Substitute a=7", "Calculate 6×49=294"],
+            "key_concepts": ["cube", "surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the volume of a cube whose side is 5 cm.",
+            "answer": "Volume of cube = side³ = 5³ = 125 cm³",
+            "answer_outline": ["Volume formula V=a³", "Substitute a=5", "Calculate 5³=125"],
+            "key_concepts": ["cube", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the surface area of a cuboid with length 10 cm, breadth 6 cm, and height 4 cm.",
+            "answer": "Surface area = 2(lb + bh + hl) = 2(10×6 + 6×4 + 4×10) = 2(60 + 24 + 40) = 2×124 = 248 cm²",
+            "answer_outline": ["SA=2(lb+bh+hl)", "Compute 10×6, 6×4, 4×10", "Add and multiply by 2"],
+            "key_concepts": ["cuboid", "surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the volume of a cuboid with length 8 cm, breadth 5 cm, and height 3 cm.",
+            "answer": "Volume = l×b×h = 8×5×3 = 120 cm³",
+            "answer_outline": ["V=l×b×h", "Substitute l=8, b=5, h=3", "Calculate 8×5×3=120"],
+            "key_concepts": ["cuboid", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the surface area of a sphere of radius 7 cm.",
+            "answer": "Surface area = 4πr² = 4×3.14×7² = 4×3.14×49 ≈ 615.44 cm²",
+            "answer_outline": ["SA=4πr²", "r=7", "Calculate 4×3.14×49 ≈615.44"],
+            "key_concepts": ["sphere", "surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the volume of a sphere of radius 5 cm.",
+            "answer": "Volume = (4/3)πr³ = (4/3)×3.14×5³ = (4/3)×3.14×125 ≈ 523.33 cm³",
+            "answer_outline": ["V=(4/3)πr³", "r=5", "Calculate (4/3)×3.14×125 ≈523.33"],
+            "key_concepts": ["sphere", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the curved surface area of a cylinder of radius 7 cm and height 10 cm.",
+            "answer": "CSA = 2πrh = 2×3.14×7×10 ≈ 439.6 cm²",
+            "answer_outline": ["CSA=2πrh", "Substitute r=7, h=10", "Calculate 2×3.14×7×10 ≈439.6"],
+            "key_concepts": ["cylinder", "curved surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the total surface area of a cylinder of radius 5 cm and height 12 cm.",
+            "answer": "TSA = 2πr(h+r) = 2×3.14×5(12+5) = 31.4×17 ≈ 533.8 cm²",
+            "answer_outline": ["TSA=2πr(h+r)", "Substitute r=5, h=12", "Calculate 2×3.14×5×17 ≈533.8"],
+            "key_concepts": ["cylinder", "total surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the volume of a cylinder of radius 7 cm and height 10 cm.",
+            "answer": "Volume = πr²h = 3.14×7²×10 = 3.14×49×10 ≈ 1538.6 cm³",
+            "answer_outline": ["V=πr²h", "r=7, h=10", "Calculate 3.14×49×10 ≈1538.6"],
+            "key_concepts": ["cylinder", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the curved surface area of a cone of radius 7 cm and slant height 24 cm.",
+            "answer": "CSA = πrl = 3.14×7×24 ≈ 527.52 cm²",
+            "answer_outline": ["CSA=πrl", "r=7, l=24", "Calculate 3.14×7×24 ≈527.52"],
+            "key_concepts": ["cone", "curved surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the total surface area of a cone of radius 7 cm and height 24 cm.",
+            "answer": "Slant height l=√(r²+h²)=√(7²+24²)=√(49+576)=√625=25 cm; TSA=πr(l+r)=3.14×7(25+7)=3.14×7×32≈702.56 cm²",
+            "answer_outline": ["Find slant height l", "TSA=πr(l+r)", "Calculate 3.14×7×32≈702.56"],
+            "key_concepts": ["cone", "total surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the volume of a cone of radius 7 cm and height 24 cm.",
+            "answer": "Volume = (1/3)πr²h = (1/3)×3.14×7²×24 ≈ 1231.04 cm³",
+            "answer_outline": ["V=(1/3)πr²h", "Substitute r=7, h=24", "Calculate (1/3)×3.14×49×24≈1231.04"],
+            "key_concepts": ["cone", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 13,
+            "question": "A sphere of radius 7 cm is melted to form smaller spheres of radius 1 cm each. Find the number of smaller spheres.",
+            "answer": "Volume of large sphere=4/3 π7³≈1436.03; Volume of small sphere=4/3 π1³≈4.19; Number=1436.03/4.19≈343 spheres",
+            "answer_outline": ["Compute volume of large sphere", "Compute volume of small sphere", "Divide volumes to find number of spheres"],
+            "key_concepts": ["sphere", "volume", "conversion"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 14,
+            "question": "A solid cylinder of radius 7 cm and height 10 cm is melted to form a cone of same radius. Find the height of the cone.",
+            "answer": "Volume cylinder=πr²h=3.14×49×10≈1538.6; Volume cone=(1/3)πr²H=1538.6 ⇒ H=1538.6×3/(3.14×49)≈30 cm",
+            "answer_outline": ["Compute volume of cylinder", "Equate to volume of cone", "Solve for height H"],
+            "key_concepts": ["cylinder", "cone", "volume conservation"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the surface area of a hemisphere of radius 7 cm.",
+            "answer": "Curved surface area=2πr²=2×3.14×7²=2×3.14×49≈307.72 cm²; Total SA=Curved+base=307.72+πr²≈307.72+153.86≈461.58 cm²",
+            "answer_outline": ["CSA=2πr²", "Base area=πr²", "TSA=CSA+base≈461.58"],
+            "key_concepts": ["hemisphere", "surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the volume of a hemisphere of radius 7 cm.",
+            "answer": "Volume= (2/3)πr³= (2/3)×3.14×343≈718.67 cm³",
+            "answer_outline": ["V=(2/3)πr³", "Substitute r=7", "Calculate (2/3)×3.14×343≈718.67"],
+            "key_concepts": ["hemisphere", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 17,
+            "question": "A cube of side 12 cm is melted to form a cylinder of radius 6 cm. Find the height of the cylinder.",
+            "answer": "Volume cube=12³=1728 cm³; Volume cylinder=πr²h=π6²h=36πh=1728 ⇒ h=1728/36π≈48/π≈15.28 cm",
+            "answer_outline": ["Compute cube volume", "Equate to cylinder volume", "Solve for height h"],
+            "key_concepts": ["cube", "cylinder", "volume conservation"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the curved surface area of a cylinder whose volume is 1540 cm³ and height 14 cm.",
+            "answer": "Volume=πr²h=1540 ⇒ πr²×14=1540 ⇒ r²=1540/(3.14×14)≈35; r≈5.92 cm; CSA=2πrh=2×3.14×5.92×14≈520.7 cm²",
+            "answer_outline": ["Find radius from volume formula", "CSA=2πrh", "Substitute values to calculate CSA"],
+            "key_concepts": ["cylinder", "curved surface area", "volume relation"],
+            "marks": 5,
+            "source_section": "11.2,11.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the total surface area of a cylinder with radius 5 cm and height equal to diameter.",
+            "answer": "Height h=2r=10 cm; TSA=2πr(h+r)=2×3.14×5(10+5)=31.4×15≈471 cm²",
+            "answer_outline": ["Compute height=h=2r", "TSA=2πr(h+r)", "Substitute values to calculate TSA"],
+            "key_concepts": ["cylinder", "total surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 20,
+            "question": "The radius of a spherical balloon is 14 cm. Find its surface area.",
+            "answer": "SA=4πr²=4×3.14×14²=4×3.14×196≈2460.16 cm²",
+            "answer_outline": ["SA=4πr²", "Substitute r=14", "Calculate 4×3.14×196≈2460.16"],
+            "key_concepts": ["sphere", "surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the volume of a sphere of radius 14 cm.",
+            "answer": "Volume=4/3 πr³=4/3×3.14×14³=4.19×2744≈11499.36 cm³",
+            "answer_outline": ["V=4/3 πr³", "Substitute r=14", "Calculate 4.19×2744≈11499.36"],
+            "key_concepts": ["sphere", "volume", "geometry"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 22,
+            "question": "A cone has height 24 cm and base radius 7 cm. Find slant height and curved surface area.",
+            "answer": "Slant height l=√(r²+h²)=√(7²+24²)=√625=25 cm; CSA=πrl=3.14×7×25≈549.5 cm²",
+            "answer_outline": ["Compute slant height l", "CSA=πrl", "Calculate 3.14×7×25≈549.5"],
+            "key_concepts": ["cone", "curved surface area", "geometry"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 23,
+            "question": "A solid hemisphere of radius 10 cm is placed on a cylinder of same radius and height 14 cm. Find total surface area of combination.",
+            "answer": "CSA hemisphere=2πr²=2×3.14×100=628; TSA cylinder=2πrh+πr²=2×3.14×10×14+314=879.2+314≈1193.2; Total SA=CSA hemisphere + lateral cylinder=628+879.2≈1507.2 cm²",
+            "answer_outline": ["Compute CSA hemisphere", "Compute lateral SA cylinder", "Add for total SA"],
+            "key_concepts": ["hemisphere", "cylinder", "total surface area", "combination solid"],
+            "marks": 5,
+            "source_section": "11.2"
+        },
+        {
+            "question_number": 24,
+            "question": "A solid cone of radius 7 cm and height 24 cm is hollowed out from a solid cylinder of same base and height. Find volume of remaining solid.",
+            "answer": "Volume cylinder=πr²h=3.14×49×24≈3692.64; Volume cone=(1/3)πr²h≈1230.88; Remaining volume=3692.64-1230.88≈2461.76 cm³",
+            "answer_outline": ["Compute cylinder volume", "Compute cone volume", "Subtract to find remaining solid"],
+            "key_concepts": ["cylinder", "cone", "volume subtraction"],
+            "marks": 5,
+            "source_section": "11.3"
+        },
+        {
+            "question_number": 25,
+            "question": "A cube of side 21 cm is melted to form smaller spheres each of radius 3 cm. Find number of spheres.",
+            "answer": "Volume cube=21³=9261; Volume sphere=4/3 π3³=4.19×27≈113.13; Number of spheres=9261/113.13≈82",
+            "answer_outline": ["Compute cube volume", "Compute sphere volume", "Divide to get number of spheres"],
+            "key_concepts": ["cube", "sphere", "volume conversion"],
+            "marks": 5,
+            "source_section": "11.3"
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Economics)",
+  "chapter_name": "Money and Credit",
+  "lesson_level": "Easy",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the meaning and functions of money",
+    "Differentiate between barter system and money system",
+    "Learn the meaning of credit",
+    "Identify formal and informal sources of credit",
+    "Understand the role of banks and RBI",
+    "Recognise problems like debt trap"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Barter System and Need for Money",
+      "topics_covered": [
+        "Meaning of barter system",
+        "Double coincidence of wants",
+        "Need for money"
+      ],
+      "teaching_strategy": [
+        "Role play activity (barter exchange)",
+        "Simple board explanation"
+      ],
+      "student_activities": [
+        "Participate in barter role play",
+        "Explain double coincidence problem in own words"
+      ],
+      "assessment": ["Oral questioning", "Short answer questions"]
+    },
+    {
+      "period": 2,
+      "title": "Functions of Money",
+      "topics_covered": [
+        "Medium of exchange",
+        "Unit of account",
+        "Store of value"
+      ],
+      "teaching_strategy": [
+        "Daily life examples",
+        "Comparison table (Barter vs Money)"
+      ],
+      "student_activities": [
+        "List 5 daily uses of money",
+        "Match functions with examples"
+      ],
+      "assessment": ["Fill in the blanks", "MCQs"]
+    },
+    {
+      "period": 3,
+      "title": "Modern Forms of Money",
+      "topics_covered": [
+        "Currency notes and coins",
+        "Demand deposits",
+        "Cheques"
+      ],
+      "teaching_strategy": [
+        "Explanation using sample cheque format",
+        "Discussion on bank accounts"
+      ],
+      "student_activities": [
+        "Identify features of currency notes",
+        "Explain how cheque works"
+      ],
+      "assessment": ["Short written questions", "Notebook checking"]
+    },
+    {
+      "period": 4,
+      "title": "Credit and Loan Activities",
+      "topics_covered": [
+        "Meaning of credit",
+        "Terms of credit (interest, collateral, documentation)",
+        "Positive and negative effects of credit"
+      ],
+      "teaching_strategy": [
+        "Simple case study (farmer taking loan)",
+        "Board explanation"
+      ],
+      "student_activities": [
+        "Identify terms of credit in example",
+        "Short note on benefits of credit"
+      ],
+      "assessment": ["True/False questions", "Short answer questions"]
+    },
+    {
+      "period": 5,
+      "title": "Formal and Informal Sources of Credit",
+      "topics_covered": [
+        "Formal sector (banks, cooperatives)",
+        "Informal sector (moneylenders, traders)",
+        "Differences between them"
+      ],
+      "teaching_strategy": ["Comparison chart", "Real-life examples"],
+      "student_activities": [
+        "Prepare comparison table",
+        "Identify local credit sources"
+      ],
+      "assessment": ["MCQs", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Role of Banks and RBI",
+      "topics_covered": [
+        "Functions of banks",
+        "RBI as central bank",
+        "Importance of supervision"
+      ],
+      "teaching_strategy": [
+        "Simple explanation with diagram",
+        "Question-answer method"
+      ],
+      "student_activities": ["List functions of banks", "Short note on RBI"],
+      "assessment": ["Short paragraph writing", "Oral questioning"]
+    },
+    {
+      "period": 7,
+      "title": "Debt Trap and Chapter Revision",
+      "topics_covered": [
+        "Meaning of debt trap",
+        "Importance of formal credit",
+        "Chapter recap"
+      ],
+      "teaching_strategy": [
+        "Simple story-based explanation",
+        "Quick revision quiz"
+      ],
+      "student_activities": [
+        "Explain debt trap with example",
+        "Participate in group quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification session"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "NCERT Economics Textbook",
+    "Sample cheque image",
+    "Comparison charts"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "MCQs",
+    "Notebook checking",
+    "Short answer tests",
+    "Group quiz"
+  ],
+  "teacher_tip": "Use simple real-life examples like bank accounts and small loans to make abstract financial concepts easier for students to understand."
+}

@@ -1,0 +1,400 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T14:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the universal law of gravitation and explain its significance.",
+            "answer": "The universal law of gravitation states that every object attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them. The formula is F = G(Mm)/r². This law explains planetary motion and the falling of objects.",
+            "answer_outline": [
+                "Statement of law",
+                "Dependence on mass",
+                "Inverse square relation",
+                "Significance"
+            ],
+            "key_concepts": [
+                "universal gravitation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how gravitational force is responsible for planetary motion.",
+            "answer": "Gravitational attraction between the Sun and planets keeps the planets moving in elliptical orbits around the Sun.",
+            "answer_outline": [
+                "Sun gravity",
+                "Planetary motion",
+                "Orbit formation"
+            ],
+            "key_concepts": [
+                "planetary motion"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the derivation and significance of acceleration due to gravity.",
+            "answer": "Acceleration due to gravity is derived from Newton's law as g = GM/R². It represents the acceleration experienced by objects due to Earth's gravity.",
+            "answer_outline": [
+                "Formula derivation",
+                "Dependence on Earth mass and radius",
+                "Importance"
+            ],
+            "key_concepts": [
+                "g formula"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the value of g varies with altitude and depth.",
+            "answer": "The value of g decreases with altitude because distance from Earth's center increases. It also decreases with depth because the mass contributing to gravitational pull decreases.",
+            "answer_outline": [
+                "Altitude effect",
+                "Depth effect",
+                "Gravity variation"
+            ],
+            "key_concepts": [
+                "variation of g"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Compare mass and weight and explain their relationship mathematically.",
+            "answer": "Mass is the amount of matter in an object and remains constant. Weight is the gravitational force acting on it and is calculated by W = mg.",
+            "answer_outline": [
+                "Definition of mass",
+                "Definition of weight",
+                "Formula W = mg"
+            ],
+            "key_concepts": [
+                "mass vs weight"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how pressure depends on force and area with examples.",
+            "answer": "Pressure is defined as force per unit area. Increasing force increases pressure while increasing area decreases pressure.",
+            "answer_outline": [
+                "Pressure formula",
+                "Effect of force",
+                "Effect of area",
+                "Examples"
+            ],
+            "key_concepts": [
+                "pressure"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why buildings have wide foundations using pressure concept.",
+            "answer": "Wide foundations increase surface area and reduce pressure on the ground ensuring stability.",
+            "answer_outline": [
+                "Pressure formula",
+                "Large area",
+                "Structural stability"
+            ],
+            "key_concepts": [
+                "pressure application"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain buoyant force and derive its relation with displaced fluid.",
+            "answer": "Buoyant force is the upward force exerted by a fluid. According to Archimedes' principle it equals the weight of the displaced fluid.",
+            "answer_outline": [
+                "Buoyant force definition",
+                "Archimedes principle",
+                "Relation to displaced fluid"
+            ],
+            "key_concepts": [
+                "buoyant force"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the principle of flotation.",
+            "answer": "A floating body displaces its own weight of fluid. When buoyant force equals weight, the body floats.",
+            "answer_outline": [
+                "Floating condition",
+                "Weight balance",
+                "Buoyant force"
+            ],
+            "key_concepts": [
+                "flotation principle"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain Archimedes' principle with experimental verification.",
+            "answer": "Archimedes' principle states that a body immersed in a fluid experiences an upward force equal to the weight of the displaced fluid. This can be verified using a spring balance and water container.",
+            "answer_outline": [
+                "Statement",
+                "Experiment setup",
+                "Observation"
+            ],
+            "key_concepts": [
+                "Archimedes principle"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why a steel ship floats but a small steel nail sinks.",
+            "answer": "Ships displace large volumes of water creating enough buoyant force while nails displace very little water.",
+            "answer_outline": [
+                "Displacement",
+                "Buoyant force",
+                "Floating condition"
+            ],
+            "key_concepts": [
+                "ship buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the working principle of hydrometers.",
+            "answer": "Hydrometers measure liquid density based on Archimedes' principle by observing the level at which the instrument floats.",
+            "answer_outline": [
+                "Archimedes principle",
+                "Density measurement"
+            ],
+            "key_concepts": [
+                "hydrometer"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why submarines can float, sink and remain suspended.",
+            "answer": "Submarines adjust ballast tanks to change density allowing control over buoyancy.",
+            "answer_outline": [
+                "Ballast tanks",
+                "Density adjustment",
+                "Buoyancy control"
+            ],
+            "key_concepts": [
+                "submarine buoyancy"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of gravity in maintaining Earth's atmosphere.",
+            "answer": "Earth's gravitational force holds atmospheric gases close to the planet preventing them from escaping into space.",
+            "answer_outline": [
+                "Gravity",
+                "Atmosphere retention"
+            ],
+            "key_concepts": [
+                "atmosphere gravity"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why tides occur in oceans.",
+            "answer": "Tides occur due to gravitational attraction between Earth, Moon and Sun which pulls ocean water.",
+            "answer_outline": [
+                "Moon gravity",
+                "Ocean movement"
+            ],
+            "key_concepts": [
+                "tides"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the concept of apparent weight in fluids.",
+            "answer": "Apparent weight equals actual weight minus buoyant force.",
+            "answer_outline": [
+                "Actual weight",
+                "Buoyant force",
+                "Apparent weight formula"
+            ],
+            "key_concepts": [
+                "apparent weight"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the role of density in buoyancy.",
+            "answer": "The buoyant force depends on fluid density and volume of displaced fluid.",
+            "answer_outline": [
+                "Density definition",
+                "Buoyancy relation"
+            ],
+            "key_concepts": [
+                "density"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why g is slightly higher at the poles than at the equator.",
+            "answer": "Earth is flattened at poles so distance from center is smaller resulting in higher gravity.",
+            "answer_outline": [
+                "Earth shape",
+                "Gravity difference"
+            ],
+            "key_concepts": [
+                "g variation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why pressure in liquids increases with depth.",
+            "answer": "Pressure increases with depth because the weight of liquid above increases.",
+            "answer_outline": [
+                "Liquid weight",
+                "Depth relation"
+            ],
+            "key_concepts": [
+                "fluid pressure"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the applications of Archimedes' principle in daily life.",
+            "answer": "Applications include ship design, hydrometers, submarines and lactometers.",
+            "answer_outline": [
+                "Ship design",
+                "Hydrometers",
+                "Submarines"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain gravitational force as a universal force.",
+            "answer": "Gravitational force acts between all masses in the universe including planets, stars and objects on Earth.",
+            "answer_outline": [
+                "Universal nature",
+                "Examples"
+            ],
+            "key_concepts": [
+                "universal force"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why astronauts experience weightlessness in orbit.",
+            "answer": "Astronauts are in continuous free fall around Earth producing weightlessness.",
+            "answer_outline": [
+                "Orbit motion",
+                "Free fall"
+            ],
+            "key_concepts": [
+                "weightlessness"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the relationship between buoyancy and floating stability of ships.",
+            "answer": "Floating stability depends on buoyant force balancing weight and proper distribution of mass.",
+            "answer_outline": [
+                "Buoyant force",
+                "Weight balance",
+                "Stability"
+            ],
+            "key_concepts": [
+                "floating stability"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of gravitational force in the universe.",
+            "answer": "Gravity controls planetary motion, galaxy formation and keeps celestial bodies bound together.",
+            "answer_outline": [
+                "Planetary motion",
+                "Galaxy formation"
+            ],
+            "key_concepts": [
+                "gravity importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how Archimedes' principle is applied in measuring density.",
+            "answer": "Density can be measured by determining the weight of fluid displaced by an object immersed in it.",
+            "answer_outline": [
+                "Fluid displacement",
+                "Density calculation"
+            ],
+            "key_concepts": [
+                "density measurement"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 9.6"
+        }
+    ]
+}

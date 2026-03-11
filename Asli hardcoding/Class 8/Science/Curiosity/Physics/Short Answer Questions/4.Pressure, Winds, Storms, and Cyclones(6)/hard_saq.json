@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Pressure, Winds, Storms and Cyclones",
+  "generated_at": "2026-03-06T01:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is pressure?",
+      "answer": "Pressure is the force acting on a unit area of a surface.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 2,
+      "question": "Write the formula for pressure.",
+      "answer": "Pressure = Force / Area.",
+      "key_concepts": ["pressure formula"],
+      "marks": 1,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 3,
+      "question": "What happens to pressure when the area decreases?",
+      "answer": "Pressure increases when the area decreases.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 4,
+      "question": "Give one example of pressure in daily life.",
+      "answer": "Sharp knives cut easily because they exert more pressure.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 5,
+      "question": "What is atmospheric pressure?",
+      "answer": "Atmospheric pressure is the pressure exerted by the weight of air in the atmosphere.",
+      "key_concepts": ["atmospheric pressure"],
+      "marks": 2,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 6,
+      "question": "Name the instrument used to measure atmospheric pressure.",
+      "answer": "A barometer is used to measure atmospheric pressure.",
+      "key_concepts": ["barometer"],
+      "marks": 1,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 7,
+      "question": "What is wind?",
+      "answer": "Wind is the movement of air from a region of high pressure to a region of low pressure.",
+      "key_concepts": ["wind"],
+      "marks": 2,
+      "source_section": "Wind"
+    },
+    {
+      "question_number": 8,
+      "question": "What causes wind to move?",
+      "answer": "Wind moves due to differences in air pressure.",
+      "key_concepts": ["air pressure"],
+      "marks": 2,
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a storm?",
+      "answer": "A storm is a strong disturbance in the atmosphere with strong winds and often rain.",
+      "key_concepts": ["storm"],
+      "marks": 2,
+      "source_section": "Storms"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a cyclone?",
+      "answer": "A cyclone is a large storm system with strong rotating winds around a low-pressure center.",
+      "key_concepts": ["cyclone"],
+      "marks": 2,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 11,
+      "question": "Where do cyclones usually form?",
+      "answer": "Cyclones usually form over warm ocean waters.",
+      "key_concepts": ["cyclone formation"],
+      "marks": 2,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 12,
+      "question": "Why do camels have broad feet?",
+      "answer": "Camels have broad feet to reduce pressure on sand and prevent sinking.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 13,
+      "question": "Why do tractors have wide tyres?",
+      "answer": "Wide tyres reduce pressure on the ground and prevent the tractor from sinking in soil.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the SI unit of pressure?",
+      "answer": "The SI unit of pressure is Pascal (Pa).",
+      "key_concepts": ["pressure unit"],
+      "marks": 1,
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 15,
+      "question": "Why do mountaineers find it difficult to breathe at high altitudes?",
+      "answer": "Atmospheric pressure and oxygen levels decrease at high altitudes.",
+      "key_concepts": ["atmospheric pressure"],
+      "marks": 2,
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 16,
+      "question": "What is a low-pressure area?",
+      "answer": "A low-pressure area is a region where air pressure is lower than surrounding areas.",
+      "key_concepts": ["air pressure"],
+      "marks": 2,
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 17,
+      "question": "What is a high-pressure area?",
+      "answer": "A high-pressure area is a region where air pressure is higher than surrounding areas.",
+      "key_concepts": ["air pressure"],
+      "marks": 2,
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 18,
+      "question": "What type of weather is usually associated with cyclones?",
+      "answer": "Cyclones usually bring strong winds, heavy rainfall, and storms.",
+      "key_concepts": ["cyclone"],
+      "marks": 2,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the calm center of a cyclone called?",
+      "answer": "The calm center of a cyclone is called the eye.",
+      "key_concepts": ["cyclone structure"],
+      "marks": 1,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 20,
+      "question": "Why do sharp nails penetrate wood easily?",
+      "answer": "Sharp nails have a small area and produce greater pressure.",
+      "key_concepts": ["pressure"],
+      "marks": 2,
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 21,
+      "question": "What role does atmospheric pressure play in weather?",
+      "answer": "Changes in atmospheric pressure influence wind, storms, and weather patterns.",
+      "key_concepts": ["atmospheric pressure"],
+      "marks": 2,
+      "source_section": "Weather and Pressure"
+    },
+    {
+      "question_number": 22,
+      "question": "Why do winds blow from high-pressure to low-pressure areas?",
+      "answer": "Air naturally moves from regions of higher pressure to lower pressure to balance pressure differences.",
+      "key_concepts": ["wind"],
+      "marks": 2,
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 23,
+      "question": "Name one natural disaster caused by strong winds.",
+      "answer": "Cyclones are natural disasters caused by strong winds.",
+      "key_concepts": ["cyclone"],
+      "marks": 1,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are buildings damaged during cyclones?",
+      "answer": "Buildings are damaged due to extremely strong winds and heavy rainfall.",
+      "key_concepts": ["cyclone impact"],
+      "marks": 2,
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 25,
+      "question": "Why do weather scientists study air pressure?",
+      "answer": "Air pressure helps scientists predict weather conditions such as storms and cyclones.",
+      "key_concepts": ["weather prediction"],
+      "marks": 2,
+      "source_section": "Weather and Pressure"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 3: Atoms and Molecules",
+  "difficulty": "Hard",
+  "short_notes": {
+    "key_points": [
+      "Atoms are the fundamental units of matter and retain their identity during chemical reactions",
+      "Molecules are formed by the chemical combination of two or more atoms in definite proportions",
+      "Elements are pure substances made of only one kind of atom; compounds are made of two or more elements in fixed ratios",
+      "Law of multiple proportions: When two elements form more than one compound, the ratio of masses of one element that combines with fixed mass of the other is a small whole number",
+      "Dalton’s atomic theory explains the nature of atoms and formation of molecules",
+      "Molecular mass is the sum of atomic masses of all atoms in a molecule",
+      "Formula unit is the smallest repeating unit of an ionic compound (e.g., NaCl)",
+      "Empirical formula gives the simplest whole number ratio of elements in a compound"
+    ],
+    "examples": [
+      "CO and CO₂ follow the law of multiple proportions: 12g C combines with 16g O to form CO and with 32g O to form CO₂",
+      "H₂O has molecular mass 18 u (2×1 + 16), NH₃ has molecular mass 17 u (14+3×1)",
+      "NaCl’s formula unit has 1 Na⁺ and 1 Cl⁻",
+      "Empirical formula of glucose (C₆H₁₂O₆) is CH₂O",
+      "Hydrogen peroxide (H₂O₂) and water (H₂O) illustrate molecules with same elements in different proportions"
+    ],
+    "formulas": [
+      "Molecular mass = Sum of atomic masses of all atoms in molecule",
+      "Mass percent of element = (Mass of element / Molecular mass) × 100",
+      "Empirical formula ratio = Divide atomic ratios by greatest common factor",
+      "Mass ratio in compounds = Mass of element1 / Mass of element2 according to formula"
+    ],
+    "exam_tips": [
+      "Use Dalton’s atomic theory to explain formation of molecules and compounds",
+      "Apply law of multiple proportions in numerical problems",
+      "Distinguish between molecular formula, empirical formula, and formula unit",
+      "Calculate molecular mass, mass percent, and mass ratios in compounds",
+      "Provide clear examples of elements, molecules, and compounds in exams"
+    ]
+  }
+}

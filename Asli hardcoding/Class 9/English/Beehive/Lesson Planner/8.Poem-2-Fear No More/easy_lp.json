@@ -1,0 +1,135 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Fear No More",
+    "title": "Lesson Planner – Fear No More",
+    "author": "William Shakespeare",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the theme of the poem",
+        "Identify the message about life and death",
+        "Recognise imagery and poetic language",
+        "Develop poetry reading skills",
+        "Improve vocabulary understanding",
+        "Encourage appreciation of poetry"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Shakespeare",
+            "topics_covered": [
+                "Introduction to William Shakespeare",
+                "Overview of the poem"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Listen to poem reading"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "First Stanza Explanation",
+            "topics_covered": [
+                "Freedom from worldly hardships",
+                "Meaning of sun and winter imagery"
+            ],
+            "teaching_strategy": [
+                "Poem reading",
+                "Explanation"
+            ],
+            "student_activities": [
+                "Identify hardships mentioned"
+            ],
+            "assessment": [
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Second Stanza Explanation",
+            "topics_covered": [
+                "Equality of all people in death",
+                "Meaning of 'come to dust'"
+            ],
+            "teaching_strategy": [
+                "Guided explanation"
+            ],
+            "student_activities": [
+                "Discuss examples of equality in death"
+            ],
+            "assessment": [
+                "Short written answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Third Stanza Meaning",
+            "topics_covered": [
+                "Freedom from fear and criticism",
+                "Peace after death"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Write examples from the poem"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Message",
+            "topics_covered": [
+                "Theme of mortality",
+                "Message of peace and equality"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion"
+            ],
+            "student_activities": [
+                "Explain the message of the poem"
+            ],
+            "assessment": [
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Recitation and Revision",
+            "topics_covered": [
+                "Poem recitation",
+                "Summary and revision"
+            ],
+            "teaching_strategy": [
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Recite the poem",
+                "Write summary"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English textbook",
+        "Blackboard",
+        "Poetry recitation audio"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Explain the poem using simple real-life examples so students understand the philosophical idea of equality in death."
+}

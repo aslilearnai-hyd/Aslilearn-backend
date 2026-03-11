@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 12: Earth, Moon, and the Sun",
+    "generated_at": "2026-03-06T11:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the synodic month is longer than the sidereal month.",
+            "answer": "The synodic month is longer because it measures the Moon's phases relative to the Sun, and as Earth moves in its orbit, the Moon must travel a bit further to reach the same phase, making it about 29.5 days instead of 27.3 days.",
+            "key_concepts": ["synodic month", "sidereal month", "Earth-Moon-Sun motion"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe how the tilt of Earth's axis and its revolution combine to create solstices and equinoxes.",
+            "answer": "The 23.5° axial tilt of Earth combined with its revolution around the Sun causes different hemispheres to tilt toward or away from the Sun at different times. Solstices occur when the Sun is at its maximum declination, and equinoxes occur when the Sun is directly above the equator.",
+            "key_concepts": ["axial tilt", "Earth revolution", "solstice", "equinox"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why the Moon’s apparent size can sometimes cover the Sun completely during a solar eclipse despite the Sun being much larger.",
+            "answer": "Although the Sun is about 400 times larger than the Moon, it is also about 400 times farther away from Earth, making their apparent sizes nearly equal, allowing the Moon to cover the Sun during total solar eclipses.",
+            "key_concepts": ["apparent size", "solar eclipse", "distance ratio"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Discuss how the variation in Earth's distance from the Sun affects the intensity of seasons.",
+            "answer": "While axial tilt mainly causes seasons, the Earth-Sun distance slightly affects seasonal intensity. During perihelion, Earth is closer to the Sun, slightly increasing solar energy received, while during aphelion, Earth is farther, slightly decreasing it.",
+            "key_concepts": ["perihelion", "aphelion", "seasonal intensity", "Earth-Sun distance"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the difference between a penumbral, partial, and total lunar eclipse in terms of shadow geometry.",
+            "answer": "A total lunar eclipse occurs when the Moon passes completely through Earth's umbra. A partial lunar eclipse occurs when only part of the Moon passes through the umbra. A penumbral eclipse occurs when the Moon passes only through Earth's penumbra, causing a faint shading.",
+            "key_concepts": ["umbra", "penumbra", "lunar eclipse types"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does the Moon move about 13° eastward each day relative to the stars?",
+            "answer": "The Moon completes a 360° orbit around Earth in about 27.3 days, moving roughly 13° eastward each day relative to the fixed stars, which is why it rises later each day.",
+            "key_concepts": ["Moon motion", "sidereal orbit", "apparent shift"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe how the combination of Earth's rotation and revolution produces the analemma curve of the Sun's position.",
+            "answer": "The analemma arises from the tilt of Earth's axis and its elliptical orbit, causing the Sun's declination and apparent time to vary through the year, producing the figure-eight pattern when observed at the same time daily.",
+            "key_concepts": ["analemma", "Earth tilt", "elliptical orbit", "Sun declination"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why spring tides occur twice a month and how lunar and solar gravitational forces combine.",
+            "answer": "Spring tides occur during new and full moons when the Sun, Moon, and Earth are aligned, combining their gravitational pulls, which results in higher high tides and lower low tides, occurring roughly twice a month.",
+            "key_concepts": ["spring tide", "gravitational alignment", "tidal forces"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Why does the apparent motion of stars change with latitude?",
+            "answer": "Stars appear to rotate around the celestial pole. At higher latitudes, circumpolar stars never set, while at the equator, stars rise and set perpendicular to the horizon, making apparent motion latitude-dependent.",
+            "key_concepts": ["apparent motion", "latitude effect", "circumpolar stars"],
+            "marks": 4,
+            "source_section": "Section 12.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the Moon’s gravitational effect on Earth’s oceans is not uniform.",
+            "answer": "Tidal forces depend on the inverse cube of the distance, so areas closer to the Moon experience higher tides. Also, Earth's rotation and coastline shapes create variations in local tidal heights.",
+            "key_concepts": ["tidal forces", "gravitational variation", "Earth rotation"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Discuss why total solar eclipses are only visible along a narrow path on Earth’s surface.",
+            "answer": "The Moon's umbra is very small relative to Earth, so only locations directly in this narrow path experience totality, while areas in the penumbra see a partial eclipse.",
+            "key_concepts": ["solar eclipse path", "umbra", "Earth surface"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how the precession of Earth's axis affects long-term astronomical observations.",
+            "answer": "Precession causes the orientation of Earth's axis to change over ~26,000 years, slowly shifting the position of the celestial poles and affecting star coordinates and timing of equinoxes.",
+            "key_concepts": ["axial precession", "celestial pole shift", "equinox timing"],
+            "marks": 4,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is the Moon gradually moving away from Earth and what are the consequences?",
+            "answer": "Due to tidal interactions, the Moon gains angular momentum and drifts away at ~3.8 cm/year, causing Earth's rotation to slow and lengthening the day over time.",
+            "key_concepts": ["tidal interaction", "Moon recession", "Earth rotation slowing"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how eclipses can help scientists study the Sun’s corona.",
+            "answer": "During a total solar eclipse, the Moon blocks the Sun's bright disk, revealing the faint corona, allowing scientists to observe its structure, temperature, and magnetic fields.",
+            "key_concepts": ["solar corona", "total eclipse observation", "Sun study"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe why the Earth experiences seasons with varying intensity in the two hemispheres.",
+            "answer": "The Northern and Southern hemispheres have different land and water distribution; oceans heat and cool more slowly than land, making southern summers milder and winters warmer compared to the northern hemisphere.",
+            "key_concepts": ["hemisphere differences", "seasonal intensity", "land-water effect"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why a lunar eclipse can only occur during a full moon, but not every full moon causes one.",
+            "answer": "A lunar eclipse occurs when the Moon passes through Earth’s shadow during a full moon. Most full moons do not align with the shadow due to the Moon’s orbital tilt of ~5°.",
+            "key_concepts": ["lunar eclipse", "full moon", "orbital tilt"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does the apparent path of the Sun shift northward and southward over the year?",
+            "answer": "Because of Earth’s axial tilt, as it orbits the Sun, the Sun’s declination changes, moving north in summer and south in winter relative to the equator.",
+            "key_concepts": ["Sun declination", "Earth tilt", "apparent Sun path"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Discuss the role of the Moon in stabilizing Earth’s axial tilt.",
+            "answer": "The Moon’s gravitational pull stabilizes Earth’s tilt, reducing extreme variations that could otherwise cause drastic climate changes over geological time.",
+            "key_concepts": ["axial stability", "Moon gravity", "climate moderation"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why eclipses are predictable using the Saros cycle.",
+            "answer": "The Saros cycle (~18 years 11 days) combines lunar orbital periods so that Sun, Earth, and Moon align similarly, allowing prediction of eclipses in time and location.",
+            "key_concepts": ["Saros cycle", "eclipse prediction", "orbital periodicity"],
+            "marks": 4,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why do high latitude regions experience polar day and polar night?",
+            "answer": "Due to Earth’s axial tilt, above the Arctic and Antarctic Circles, the Sun does not set for part of the year (polar day) or does not rise for part of the year (polar night).",
+            "key_concepts": ["axial tilt", "polar day", "polar night"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe the difference in tidal patterns between diurnal, semidiurnal, and mixed tides.",
+            "answer": "Diurnal tides have one high and low tide daily, semidiurnal have two equal high and low tides, and mixed tides have two unequal high and low tides, influenced by Moon-Sun alignment and geography.",
+            "key_concepts": ["tidal types", "diurnal", "semidiurnal", "mixed tides"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how lunar libration allows us to see slightly more than half of the Moon’s surface over time.",
+            "answer": "Due to variations in the Moon’s orbital speed, tilt, and orientation, libration slightly shifts the visible portion, letting us observe ~59% of its surface from Earth.",
+            "key_concepts": ["lunar libration", "orbital motion", "Moon visibility"],
+            "marks": 4,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss how Earth's rotation and axial tilt influence the apparent motion of the Sun along the ecliptic.",
+            "answer": "Earth’s rotation causes daily motion, and its tilt causes seasonal shifts in the Sun’s path along the ecliptic, making the Sun appear higher or lower in the sky depending on the season.",
+            "key_concepts": ["Earth rotation", "axial tilt", "Sun apparent motion", "ecliptic"],
+            "marks": 4,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why the Moon’s gravitational pull causes bulges on both sides of Earth’s oceans.",
+            "answer": "One bulge forms on the side facing the Moon due to direct attraction, and the opposite bulge forms due to the centrifugal force of Earth-Moon system rotation, creating two high tides daily.",
+            "key_concepts": ["tidal bulges", "gravitational pull", "centrifugal force"],
+            "marks": 4,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does Earth’s precession change the pole star over millennia?",
+            "answer": "Precession slowly shifts Earth’s rotational axis, moving the north celestial pole along a circle, so different stars become the pole star over thousands of years.",
+            "key_concepts": ["axial precession", "pole star change", "celestial pole"],
+            "marks": 4,
+            "source_section": "Section 12.6"
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Lake Isle of Innisfree",
+    "lesson_level": "Medium",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the poem’s imagery, sound, and mood",
+        "Interpret the poet’s use of figurative language",
+        "Understand the theme of peace, solitude, and nature",
+        "Develop analytical and reflective writing skills",
+        "Relate the poem’s theme to personal experiences"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Poet Context",
+            "topics_covered": [
+                "Biography of W.B. Yeats",
+                "Historical context and literary style",
+                "Theme of the poem: peace, nature, and solitude"
+            ],
+            "teaching_strategy": [
+                "Teacher presents poet’s background",
+                "Discussion on why poets are inspired by nature and solitude"
+            ],
+            "student_activities": [
+                "Take notes on poet and context",
+                "Share experiences of peaceful natural places"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Stanza Analysis – Imagery",
+            "topics_covered": [
+                "Imagery of lake, cabin, bee-loud glade",
+                "Visual and auditory imagery",
+                "Mood evoked: calm, reflective, peaceful"
+            ],
+            "teaching_strategy": [
+                "Read stanza aloud and discuss imagery",
+                "Ask students to visualize each scene"
+            ],
+            "student_activities": [
+                "Underline descriptive words in poem",
+                "Explain in own words what images they evoke"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral answers on imagery and mood"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Figurative Language and Poetic Devices",
+            "topics_covered": [
+                "Alliteration, repetition, and personification",
+                "How devices enhance mood and theme",
+                "Symbolism of nature and solitude"
+            ],
+            "teaching_strategy": [
+                "Highlight examples in the poem",
+                "Explain their contribution to theme and mood"
+            ],
+            "student_activities": [
+                "Identify poetic devices in stanzas",
+                "Write one sentence on the effect of each device"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Reflection and Personal Connection",
+            "topics_covered": [
+                "Poet’s longing for peace and simplicity",
+                "Connection between nature and human emotions",
+                "Students’ personal experiences of calm or solitude"
+            ],
+            "teaching_strategy": [
+                "Class discussion on reflection and personal feelings",
+                "Guide students to connect the poem to real-life experiences"
+            ],
+            "student_activities": [
+                "Write short paragraph on a peaceful place they imagine",
+                "Share reflections in pairs or groups"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook submission"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Revision and Analytical Summary",
+            "topics_covered": [
+                "Recap of stanzas, imagery, devices, and mood",
+                "Summary of poem in own words",
+                "Discussion of theme and significance"
+            ],
+            "teaching_strategy": [
+                "Ask students to summarize poem aloud",
+                "Highlight key points and poetic techniques"
+            ],
+            "student_activities": [
+                "Write analytical summary of poem",
+                "Identify imagery, mood, and figurative devices"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Participation in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing imagery, sound, and poetic devices"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short analytical writing",
+        "Class discussion participation"
+    ],
+    "teacher_tip": "Encourage students to analyze imagery and poetic devices, and to connect the poet’s longing for peace to their own experiences of nature and solitude."
+}

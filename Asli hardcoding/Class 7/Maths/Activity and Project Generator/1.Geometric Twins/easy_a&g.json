@@ -1,0 +1,176 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Geometric Twins (Congruence of Triangles)",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class7_maths_geometric_twins.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Tracing Paper Twins",
+            "objective": "Understand the concept of congruence through superposition",
+            "materials": [
+                "Tracing paper",
+                "Crayons",
+                "Scissors",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a triangle on a sheet of paper",
+                "Trace the exact same triangle onto tracing paper",
+                "Cut out the traced triangle and place it over the original to see if they cover each other exactly"
+            ],
+            "learning_outcome": "Understands that congruent figures are identical in shape and size",
+            "evaluation": "Perfect overlap of shapes (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "SSS Congruence Construction",
+            "objective": "Verify Side-Side-Side congruence criterion",
+            "materials": [
+                "Ruler",
+                "Compass",
+                "Pencil"
+            ],
+            "steps": [
+                "Construct a triangle with sides 4cm, 5cm, and 6cm",
+                "Construct a second triangle with the same measurements",
+                "Cut them out to verify they are congruent"
+            ],
+            "learning_outcome": "Learns the SSS condition for congruence",
+            "evaluation": "Accuracy of measurements and construction (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "SAS Match-Up",
+            "objective": "Understand Side-Angle-Side congruence",
+            "materials": [
+                "Protractor",
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two triangles with two sides of 5cm and 7cm",
+                "Ensure the included angle between these sides is 60 degrees for both",
+                "Measure the third side to see if they match"
+            ],
+            "learning_outcome": "Applies the SAS rule to identify congruent twins",
+            "evaluation": "Correct measurement of the included angle (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "ASA Rule Explorer",
+            "objective": "Verify Angle-Side-Angle congruence",
+            "materials": [
+                "Protractor",
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a line segment of 6cm",
+                "Draw angles of 40 and 80 degrees at the endpoints",
+                "Complete the triangle and repeat the process to create its 'twin'"
+            ],
+            "learning_outcome": "Understands the ASA congruence criterion",
+            "evaluation": "Correct construction of angles and side (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "RHS Right-Angle Twins",
+            "objective": "Practice Right angle-Hypotenuse-Side congruence",
+            "materials": [
+                "Set square",
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two right-angled triangles",
+                "Make sure both have a hypotenuse of 10cm and one side of 6cm",
+                "Verify if the remaining side is equal in both"
+            ],
+            "learning_outcome": "Identifies congruence in right-angled triangles",
+            "evaluation": "Correct identification of hypotenuse and right angle (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-World Congruence Hunt",
+            "objective": "Identify congruent objects in the environment",
+            "materials": [
+                "Camera or Sketchbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find five pairs of 'geometric twins' in your house (e.g., biscuits, tiles, stamps)",
+                "List them and explain why they are congruent",
+                "Measure their dimensions to prove congruence"
+            ],
+            "learning_outcome": "Relates mathematical congruence to real-life objects",
+            "evaluation": "Diversity of examples and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The 'Not-a-Twin' Challenge",
+            "objective": "Distinguish between similarity and congruence",
+            "materials": [
+                "Graph paper",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw two equilateral triangles, one with 3cm sides and one with 6cm sides",
+                "Explain why they have the same shape but are NOT congruent twins",
+                "Note down the difference in size"
+            ],
+            "learning_outcome": "Differentiates between congruent and similar figures",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Congruent Stamp Making",
+            "objective": "Create congruent patterns",
+            "materials": [
+                "Potato or Eraser",
+                "Paint",
+                "Paper"
+            ],
+            "steps": [
+                "Carve a simple triangle shape into a potato or eraser",
+                "Use it as a stamp to create a pattern on paper",
+                "Explain why every stamped image is a congruent twin of the others"
+            ],
+            "learning_outcome": "Visualizes congruence through repeated patterns",
+            "evaluation": "Creativity and conceptual link (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Corresponding Parts Labeling",
+            "objective": "Identify CPCT (Corresponding Parts of Congruent Triangles)",
+            "materials": [
+                "Colored pens",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two congruent triangles ABC and PQR",
+                "Color corresponding sides with the same colors",
+                "List all 6 pairs of corresponding parts (3 sides, 3 angles)"
+            ],
+            "learning_outcome": "Correctly identifies corresponding vertices and sides",
+            "evaluation": "Accuracy in matching parts (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Congruence Logic Quiz",
+            "objective": "Reinforce criteria for triangle congruence",
+            "materials": [
+                "Notebook",
+                "Flashcards"
+            ],
+            "steps": [
+                "Create 5 'True or False' questions about congruence (e.g., 'Are all circles congruent?')",
+                "Swap the quiz with a classmate",
+                "Grade each other's work based on the rules learned"
+            ],
+            "learning_outcome": "Strengthens theoretical understanding of congruence rules",
+            "evaluation": "Logical consistency of questions/answers (10 marks)"
+        }
+    ]
+}

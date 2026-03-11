@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Keeping Time with the Skies",
+  "difficulty": "Easy",
+  "source_pdf": "hecu111.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Phases of the Moon Observation",
+      "objective": "Observe and record the changing phases of the Moon",
+      "materials": ["Notebook", "Pencil", "Calendar"],
+      "steps": [
+        "Observe the Moon each night for 15 days",
+        "Draw the shape of the Moon you see",
+        "Record the date for each observation",
+        "Identify the pattern of phases"
+      ],
+      "learning_outcome": "Understands the sequence of lunar phases",
+      "evaluation": "Accuracy of observations (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Sun Shadow Time Activity",
+      "objective": "Understand how the Sun's position changes during the day",
+      "materials": ["Stick", "Ground surface", "Chalk", "Clock"],
+      "steps": [
+        "Place a stick vertically in the ground",
+        "Mark the tip of the shadow every hour",
+        "Observe how the shadow changes direction and length",
+        "Record the results"
+      ],
+      "learning_outcome": "Learns how the Sun’s position helps measure time",
+      "evaluation": "Correct recording of observations (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Simple Sundial Model",
+      "objective": "Understand ancient methods of time measurement",
+      "materials": ["Cardboard", "Stick", "Marker", "Compass"],
+      "steps": [
+        "Insert a stick vertically into cardboard",
+        "Mark shadow positions at different times",
+        "Label time markings around the stick",
+        "Use it to estimate time during the day"
+      ],
+      "learning_outcome": "Understands the working of a sundial",
+      "evaluation": "Working model demonstration (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Constellation Identification",
+      "objective": "Learn to identify constellations in the night sky",
+      "materials": ["Star chart", "Notebook"],
+      "steps": [
+        "Observe the night sky on a clear evening",
+        "Locate common constellations like Orion or Ursa Major",
+        "Draw their patterns in your notebook",
+        "Label the stars"
+      ],
+      "learning_outcome": "Develops ability to recognize constellations",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Day and Night Demonstration",
+      "objective": "Understand how Earth’s rotation causes day and night",
+      "materials": ["Globe", "Torch"],
+      "steps": [
+        "Place the globe in a dark room",
+        "Shine a torch representing the Sun",
+        "Rotate the globe slowly",
+        "Observe how different areas receive light"
+      ],
+      "learning_outcome": "Understands how Earth's rotation causes day and night",
+      "evaluation": "Explanation of concept (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Calendar Investigation",
+      "objective": "Understand how lunar cycles influence calendars",
+      "materials": ["Calendar", "Notebook"],
+      "steps": [
+        "Identify full moon and new moon dates in a calendar",
+        "Calculate the gap between them",
+        "Record observations",
+        "Discuss how lunar cycles influence calendars"
+      ],
+      "learning_outcome": "Understands the connection between lunar phases and calendars",
+      "evaluation": "Accuracy of analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Star Movement Observation",
+      "objective": "Observe apparent movement of stars in the sky",
+      "materials": ["Notebook", "Star chart"],
+      "steps": [
+        "Observe a group of stars at night",
+        "Note their position relative to a landmark",
+        "Observe again after one hour",
+        "Record changes in position"
+      ],
+      "learning_outcome": "Learns that stars appear to move due to Earth’s rotation",
+      "evaluation": "Observation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Moon Phase Model",
+      "objective": "Demonstrate lunar phases using a model",
+      "materials": ["Ball", "Torch", "Dark room"],
+      "steps": [
+        "Hold the ball representing the Moon",
+        "Use the torch as the Sun",
+        "Move around the torch slowly",
+        "Observe the illuminated portion of the ball"
+      ],
+      "learning_outcome": "Understands how Moon phases occur",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Earth Rotation Experiment",
+      "objective": "Understand the rotation of Earth",
+      "materials": ["Globe", "Marker"],
+      "steps": [
+        "Mark a location on the globe",
+        "Rotate the globe slowly",
+        "Observe how the marked point moves",
+        "Relate this motion to day-night cycle"
+      ],
+      "learning_outcome": "Understands Earth's rotation concept",
+      "evaluation": "Concept clarity (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Sky Observation Diary",
+      "objective": "Encourage regular observation of the night sky",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Observe the sky for 7 days",
+        "Record visible stars, moon phase, and weather conditions",
+        "Note any changes observed",
+        "Summarize findings"
+      ],
+      "learning_outcome": "Develops observational skills in astronomy",
+      "evaluation": "Consistency of entries (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Gravitation",
+    "difficulty": "Hard",
+    "source_pdf": "s9_9.pdf",
+    "short_notes": {
+        "key_points": [
+            "Gravitational force is a universal attractive force acting between all masses in the universe",
+            "Newton's universal law of gravitation explains planetary motion, tides and falling bodies",
+            "Acceleration due to gravity is derived from the equation g = GM/R²",
+            "The value of g varies with altitude, depth and latitude due to Earth's shape and rotation",
+            "Weight of an object is directly proportional to mass and gravitational acceleration",
+            "Pressure exerted by a body is inversely proportional to the area of contact",
+            "Buoyant force arises due to pressure differences in fluids",
+            "Archimedes' principle states that buoyant force equals the weight of the displaced fluid",
+            "Floating condition occurs when buoyant force equals the weight of the object",
+            "Density plays a major role in determining whether an object floats, sinks or remains suspended"
+        ],
+        "examples": [
+            "Satellites remain in orbit due to gravitational attraction of Earth",
+            "Ocean tides caused by gravitational pull of the Moon and Sun",
+            "Hydrometers measuring density of liquids",
+            "Lactometers measuring purity of milk",
+            "Wide tyres in vehicles reducing pressure on the ground",
+            "Dams built thicker at the bottom to withstand higher water pressure"
+        ],
+        "formulas": [
+            "Universal law of gravitation → F = G(Mm)/r²",
+            "Acceleration due to gravity → g = GM/R²",
+            "Weight → W = mg",
+            "Pressure → P = F/A",
+            "Buoyant force → Weight of displaced fluid",
+            "Density → Density = Mass / Volume"
+        ],
+        "exam_tips": [
+            "Remember inverse square relation of gravitational force with distance",
+            "Be able to derive g = GM/R² from Newton's law",
+            "Understand differences between mass and weight conceptually",
+            "Use Archimedes' principle to explain floating and sinking problems",
+            "Link density and buoyancy concepts in numerical questions"
+        ]
+    }
+}

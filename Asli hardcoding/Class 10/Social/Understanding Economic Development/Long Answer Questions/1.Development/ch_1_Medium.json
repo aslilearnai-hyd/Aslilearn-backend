@@ -1,0 +1,258 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Class 10 Economics - Chapter 1: Development",
+  "difficulty": "Medium to Hard",
+  "generated_at": "2026-02-28T05:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the meaning of development. Why is development different for different people?",
+      "answer": "Development refers to improvement in the quality of life of people. It includes economic growth, better income, education, healthcare, equality and security. Development is different for different people because their needs, priorities and social backgrounds vary. For example, a farmer may want better irrigation while a teacher may want better salary and job security.",
+      "answer_outline": [
+        "Definition of development",
+        "Includes income and non-income factors",
+        "Different goals for different people",
+        "Examples"
+      ],
+      "key_concepts": ["development", "quality of life", "developmental goals"],
+      "marks": 8
+    },
+    {
+      "question_number": 2,
+      "question": "Discuss the various developmental goals of different categories of people.",
+      "answer": "Different categories of people have different developmental goals. Landless labourers may want more days of employment and better wages. Women may want equality and safety. Farmers may want higher crop prices and irrigation facilities. Thus, development depends on individual aspirations and social conditions.",
+      "answer_outline": [
+        "Different groups",
+        "Economic goals",
+        "Social goals",
+        "Examples"
+      ],
+      "key_concepts": [
+        "developmental goals",
+        "economic and social aspirations"
+      ],
+      "marks": 8
+    },
+    {
+      "question_number": 3,
+      "question": "Explain per capita income and its limitations as a measure of development.",
+      "answer": "Per capita income is the average income of a country calculated by dividing total national income by total population. It helps compare countries but has limitations. It does not show income inequality, access to public facilities or overall quality of life.",
+      "answer_outline": [
+        "Definition and formula",
+        "Use in comparison",
+        "Limitations"
+      ],
+      "key_concepts": ["per capita income", "inequality", "limitations"],
+      "marks": 8
+    },
+    {
+      "question_number": 4,
+      "question": "What is the Human Development Index (HDI)? Explain its components.",
+      "answer": "HDI is an index prepared by UNDP to measure development. It includes life expectancy (health), years of schooling (education) and per capita income (standard of living). It provides a broader view of development than income alone.",
+      "answer_outline": [
+        "Prepared by UNDP",
+        "Health indicator",
+        "Education indicator",
+        "Income indicator"
+      ],
+      "key_concepts": ["HDI", "health", "education", "income"],
+      "marks": 8
+    },
+    {
+      "question_number": 5,
+      "question": "Why is income not the only measure of development?",
+      "answer": "Income alone does not reflect living standards, health conditions or education levels. Non-income factors like literacy rate, infant mortality rate and access to public facilities are equally important.",
+      "answer_outline": [
+        "Income importance",
+        "Non-income indicators",
+        "Examples"
+      ],
+      "key_concepts": ["non-income indicators", "living standards"],
+      "marks": 8
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the importance of public facilities in development.",
+      "answer": "Public facilities such as schools, hospitals, clean water and transport improve quality of life. They ensure equal access to services and reduce inequality in society.",
+      "answer_outline": ["Definition", "Examples", "Impact on equality"],
+      "key_concepts": ["public facilities", "equality", "quality of life"],
+      "marks": 8
+    },
+    {
+      "question_number": 7,
+      "question": "What is sustainable development? Why is it necessary?",
+      "answer": "Sustainable development means using resources in a way that future generations can also meet their needs. It is necessary to prevent depletion of natural resources and environmental degradation.",
+      "answer_outline": [
+        "Definition",
+        "Need for conservation",
+        "Future generations"
+      ],
+      "key_concepts": ["sustainable development", "resource conservation"],
+      "marks": 8
+    },
+    {
+      "question_number": 8,
+      "question": "How does education contribute to development?",
+      "answer": "Education improves skills, productivity and employment opportunities. It also promotes awareness, equality and better decision-making.",
+      "answer_outline": ["Skill development", "Employment", "Social awareness"],
+      "key_concepts": ["education", "human capital"],
+      "marks": 8
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the term infant mortality rate and its significance.",
+      "answer": "Infant mortality rate is the number of children who die before the age of one per 1000 live births. It indicates healthcare quality and living standards.",
+      "answer_outline": ["Definition", "Indicator of health", "Importance"],
+      "key_concepts": ["infant mortality rate", "health indicator"],
+      "marks": 8
+    },
+    {
+      "question_number": 10,
+      "question": "Discuss how economic development and environmental protection can conflict.",
+      "answer": "Industrial growth may increase income but can cause pollution and resource depletion. Thus, economic development must balance environmental protection.",
+      "answer_outline": [
+        "Industrial growth",
+        "Environmental damage",
+        "Need for balance"
+      ],
+      "key_concepts": ["economic growth", "environmental protection"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 11,
+      "question": "Why is equality an important aspect of development?",
+      "answer": "Equality ensures fair distribution of resources and opportunities, reducing poverty and social discrimination.",
+      "answer_outline": ["Definition", "Fair distribution", "Social justice"],
+      "key_concepts": ["equality", "social justice"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 12,
+      "question": "Compare economic development and human development.",
+      "answer": "Economic development focuses on income growth, while human development includes health, education and living standards.",
+      "answer_outline": ["Economic focus", "Human focus", "Difference"],
+      "key_concepts": ["economic development", "human development"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 13,
+      "question": "Explain how development goals can sometimes conflict.",
+      "answer": "A factory may create jobs but cause pollution. Thus, one group benefits while another suffers.",
+      "answer_outline": ["Example", "Conflicting interests"],
+      "key_concepts": ["conflicting goals", "trade-offs"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 14,
+      "question": "How is literacy rate used as a development indicator?",
+      "answer": "Literacy rate shows the education level of a population and reflects social development.",
+      "answer_outline": ["Definition", "Indicator of education"],
+      "key_concepts": ["literacy rate", "education indicator"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 15,
+      "question": "Why is health considered a key indicator of development?",
+      "answer": "Healthy individuals are more productive and have longer life expectancy, improving overall development.",
+      "answer_outline": ["Health importance", "Productivity"],
+      "key_concepts": ["health", "life expectancy"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain how per capita income helps in comparing countries.",
+      "answer": "It provides average income data, helping compare standards of living among countries.",
+      "answer_outline": ["Definition", "Comparison"],
+      "key_concepts": ["comparison", "average income"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 17,
+      "question": "Discuss the role of government in development.",
+      "answer": "The government provides public facilities, ensures equality and promotes sustainable development.",
+      "answer_outline": ["Public services", "Policy making"],
+      "key_concepts": ["government role", "public welfare"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 18,
+      "question": "How does poverty affect development?",
+      "answer": "Poverty limits access to education, health and employment, slowing development.",
+      "answer_outline": ["Impact on living standards", "Limited opportunities"],
+      "key_concepts": ["poverty", "inequality"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 19,
+      "question": "Explain why sustainable use of resources is important.",
+      "answer": "It prevents environmental degradation and ensures resources for future generations.",
+      "answer_outline": ["Resource conservation", "Future security"],
+      "key_concepts": ["sustainability", "resource management"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 20,
+      "question": "How does employment contribute to development?",
+      "answer": "Employment increases income, reduces poverty and improves living standards.",
+      "answer_outline": ["Income", "Standard of living"],
+      "key_concepts": ["employment", "income growth"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 21,
+      "question": "What is national income and how does it relate to development?",
+      "answer": "National income is the total income earned in a country in a year. Higher national income usually indicates economic growth.",
+      "answer_outline": ["Definition", "Relation to growth"],
+      "key_concepts": ["national income", "economic growth"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 22,
+      "question": "Explain how development can improve quality of life.",
+      "answer": "Development increases access to education, healthcare, employment and social security, improving living standards.",
+      "answer_outline": ["Access to services", "Improved standards"],
+      "key_concepts": ["quality of life", "living standards"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 23,
+      "question": "Why is human development considered more comprehensive than economic development?",
+      "answer": "Human development includes social indicators like health and education along with income.",
+      "answer_outline": ["Broader concept", "Multiple indicators"],
+      "key_concepts": ["human development", "comprehensive measure"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 24,
+      "question": "Discuss the importance of life expectancy in development.",
+      "answer": "Life expectancy reflects healthcare quality and living conditions of a country.",
+      "answer_outline": ["Definition", "Health indicator"],
+      "key_concepts": ["life expectancy", "health"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 25,
+      "question": "How can development be made inclusive?",
+      "answer": "Development can be made inclusive by ensuring equal opportunities, reducing inequality and providing public facilities for all.",
+      "answer_outline": ["Equal opportunities", "Public welfare"],
+      "key_concepts": ["inclusive development", "equality"],
+      "marks": 8
+    }
+  ]
+}

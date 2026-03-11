@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Statistics",
+    "difficulty_level": "Medium",
+    "generated_at": "2026-02-28T05:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Statistics is mainly concerned with?",
+            "options": {
+                "A": "Solving equations",
+                "B": "Collection and analysis of data",
+                "C": "Geometric constructions",
+                "D": "Algebraic identities"
+            },
+            "correct_answer": "B",
+            "explanation": "Statistics deals with collection, organisation, analysis and interpretation of data.",
+            "difficulty": "medium",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Data which has not been arranged in any order is called?",
+            "options": {
+                "A": "Grouped data",
+                "B": "Primary data",
+                "C": "Raw data",
+                "D": "Secondary data"
+            },
+            "correct_answer": "C",
+            "explanation": "Unarranged data is known as raw data.",
+            "difficulty": "medium",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is a measure of central tendency?",
+            "options": {
+                "A": "Range",
+                "B": "Mean",
+                "C": "Class interval",
+                "D": "Frequency"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean is a measure of central tendency.",
+            "difficulty": "medium",
+            "source_section": "Central Tendency"
+        },
+        {
+            "question_number": 4,
+            "question": "The arithmetic mean of the data 2, 4, 6, 8 is?",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "Mean = (2+4+6+8)/4 = 5.",
+            "difficulty": "medium",
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 5,
+            "question": "The value which occurs most frequently in a data set is called?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is the most frequently occurring value.",
+            "difficulty": "medium",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 6,
+            "question": "The median of the data 3, 5, 7, 9, 11 is?",
+            "options": {
+                "A": "5",
+                "B": "7",
+                "C": "9",
+                "D": "11"
+            },
+            "correct_answer": "B",
+            "explanation": "The middle value is 7.",
+            "difficulty": "medium",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 7,
+            "question": "Which measure of central tendency is least affected by extreme values?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "B",
+            "explanation": "Median is least affected by extreme values.",
+            "difficulty": "medium",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following graphs represents grouped data using rectangles?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "B",
+            "explanation": "Histogram represents grouped data using rectangles.",
+            "difficulty": "medium",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 9,
+            "question": "Which graph represents cumulative frequency?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "D",
+            "explanation": "Ogive is the cumulative frequency curve.",
+            "difficulty": "medium",
+            "source_section": "Ogive"
+        },
+        {
+            "question_number": 10,
+            "question": "The sum of all frequencies in a frequency distribution is equal to?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Total number of observations",
+                "D": "Mode"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of frequencies equals total observations.",
+            "difficulty": "medium",
+            "source_section": "Frequency"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following is NOT a measure of central tendency?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "D",
+            "explanation": "Range is a measure of dispersion, not central tendency.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 12,
+            "question": "Which measure of central tendency may not exist for some data sets?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode may not exist if no value repeats.",
+            "difficulty": "medium",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 13,
+            "question": "Data collected by the investigator himself is called?",
+            "options": {
+                "A": "Secondary data",
+                "B": "Grouped data",
+                "C": "Primary data",
+                "D": "Raw data"
+            },
+            "correct_answer": "C",
+            "explanation": "Primary data is collected first-hand.",
+            "difficulty": "medium",
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 14,
+            "question": "Heights of students in a class represent which type of data?",
+            "options": {
+                "A": "Discrete",
+                "B": "Continuous",
+                "C": "Grouped",
+                "D": "Primary"
+            },
+            "correct_answer": "B",
+            "explanation": "Height is continuous data.",
+            "difficulty": "medium",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 15,
+            "question": "Which measure of central tendency divides data into two equal parts?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "B",
+            "explanation": "Median divides data into two equal parts.",
+            "difficulty": "medium",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following charts is circular in shape?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "C",
+            "explanation": "Pie chart is circular.",
+            "difficulty": "medium",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 17,
+            "question": "Which measure gives the most typical value of data?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode gives the most typical value.",
+            "difficulty": "medium",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 18,
+            "question": "Which step comes first in statistical investigation?",
+            "options": {
+                "A": "Analysis",
+                "B": "Interpretation",
+                "C": "Collection of data",
+                "D": "Presentation"
+            },
+            "correct_answer": "C",
+            "explanation": "Data collection is the first step.",
+            "difficulty": "medium",
+            "source_section": "Process"
+        },
+        {
+            "question_number": 19,
+            "question": "Which type of data can take fractional values?",
+            "options": {
+                "A": "Discrete",
+                "B": "Grouped",
+                "C": "Continuous",
+                "D": "Primary"
+            },
+            "correct_answer": "C",
+            "explanation": "Continuous data can take fractional values.",
+            "difficulty": "medium",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 20,
+            "question": "Which graph is always increasing?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Ogive",
+                "D": "Pie chart"
+            },
+            "correct_answer": "C",
+            "explanation": "Ogive (cumulative frequency curve) is always increasing.",
+            "difficulty": "medium",
+            "source_section": "Ogive"
+        },
+        {
+            "question_number": 21,
+            "question": "Which measure of central tendency is affected most by extreme values?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean is affected most by extreme values.",
+            "difficulty": "medium",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 22,
+            "question": "The difference between the highest and lowest observation is called?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "D",
+            "explanation": "Range = highest value − lowest value.",
+            "difficulty": "medium",
+            "source_section": "Range"
+        },
+        {
+            "question_number": 23,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "Mode is always present",
+                "B": "Median is always an observation",
+                "C": "Mean can be fractional",
+                "D": "Range is a central tendency"
+            },
+            "correct_answer": "C",
+            "explanation": "Mean can be fractional.",
+            "difficulty": "medium",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 24,
+            "question": "Which type of data is represented by number of students in a class?",
+            "options": {
+                "A": "Continuous",
+                "B": "Discrete",
+                "C": "Grouped",
+                "D": "Secondary"
+            },
+            "correct_answer": "B",
+            "explanation": "Number of students is discrete data.",
+            "difficulty": "medium",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 25,
+            "question": "Statistics is useful because it helps us to?",
+            "options": {
+                "A": "Guess results",
+                "B": "Organise and interpret data",
+                "C": "Draw geometric figures",
+                "D": "Solve algebraic equations"
+            },
+            "correct_answer": "B",
+            "explanation": "Statistics helps in organising and interpreting data.",
+            "difficulty": "medium",
+            "source_section": "Summary"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-04T14:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a fractal?",
+            "options": {
+                "A": "A three dimensional object",
+                "B": "A self-similar geometric pattern",
+                "C": "A straight line",
+                "D": "A polygon"
+            },
+            "correct_answer": "B",
+            "explanation": "Fractals show repeating patterns at smaller scales.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is an example of a fractal?",
+            "options": {
+                "A": "Circle",
+                "B": "Sierpinski Triangle",
+                "C": "Rectangle",
+                "D": "Cube"
+            },
+            "correct_answer": "B",
+            "explanation": "Sierpinski Triangle is a well known fractal.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Who discovered the Sierpinski Carpet?",
+            "options": {
+                "A": "Euclid",
+                "B": "Sierpinski",
+                "C": "Archimedes",
+                "D": "Pythagoras"
+            },
+            "correct_answer": "B",
+            "explanation": "The fractal was discovered by the Polish mathematician Sierpinski.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "The Koch Snowflake starts with which shape?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Equilateral triangle",
+                "D": "Circle"
+            },
+            "correct_answer": "C",
+            "explanation": "The Koch Snowflake begins with an equilateral triangle.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which artist is famous for fractal style art patterns?",
+            "options": {
+                "A": "Leonardo da Vinci",
+                "B": "M.C. Escher",
+                "C": "Picasso",
+                "D": "Van Gogh"
+            },
+            "correct_answer": "B",
+            "explanation": "M.C. Escher created artwork with repeating geometric patterns.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "How many faces does a cube have?",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_answer": "C",
+            "explanation": "A cube has 6 faces.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How many edges does a cube have?",
+            "options": {
+                "A": "8",
+                "B": "10",
+                "C": "12",
+                "D": "16"
+            },
+            "correct_answer": "C",
+            "explanation": "A cube has 12 edges.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How many vertices does a cube have?",
+            "options": {
+                "A": "6",
+                "B": "8",
+                "C": "10",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "A cube has 8 vertices.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "A prism has how many identical bases?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "A prism has two identical polygon bases.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a net of a solid?",
+            "options": {
+                "A": "A curved surface",
+                "B": "A flat pattern that folds into a solid",
+                "C": "A shadow of a solid",
+                "D": "A projection"
+            },
+            "correct_answer": "B",
+            "explanation": "A net is a flat pattern that forms a solid when folded.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "How many possible nets does a cube have?",
+            "options": {
+                "A": "5",
+                "B": "8",
+                "C": "11",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "A cube has 11 distinct nets.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which shape appears in the isometric projection of a cube?",
+            "options": {
+                "A": "Square",
+                "B": "Rectangle",
+                "C": "Hexagon",
+                "D": "Triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "The isometric projection of a cube appears as a hexagon.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which view shows the object as seen from above?",
+            "options": {
+                "A": "Front view",
+                "B": "Side view",
+                "C": "Top view",
+                "D": "Back view"
+            },
+            "correct_answer": "C",
+            "explanation": "Top view shows the object as seen from above.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following helps draw 3D objects on paper?",
+            "options": {
+                "A": "Graph paper",
+                "B": "Isometric grid",
+                "C": "Circle grid",
+                "D": "Number line"
+            },
+            "correct_answer": "B",
+            "explanation": "Isometric grids are used to draw three dimensional figures.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What does projection represent?",
+            "options": {
+                "A": "Volume of object",
+                "B": "Shadow or outline of object on a plane",
+                "C": "Area of object",
+                "D": "Edge length"
+            },
+            "correct_answer": "B",
+            "explanation": "Projection shows the outline of an object on a plane.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which view shows the object from the front side?",
+            "options": {
+                "A": "Top view",
+                "B": "Side view",
+                "C": "Front view",
+                "D": "Bottom view"
+            },
+            "correct_answer": "C",
+            "explanation": "Front view represents how the object appears from the front.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following is a polyhedron?",
+            "options": {
+                "A": "Cube",
+                "B": "Sphere",
+                "C": "Cylinder",
+                "D": "Cone"
+            },
+            "correct_answer": "A",
+            "explanation": "A cube is a polyhedron with flat faces.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What does a vertex represent in a solid?",
+            "options": {
+                "A": "Flat surface",
+                "B": "Meeting point of edges",
+                "C": "Curved surface",
+                "D": "Interior region"
+            },
+            "correct_answer": "B",
+            "explanation": "Vertices are points where edges meet.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which solid has circular bases?",
+            "options": {
+                "A": "Cube",
+                "B": "Cylinder",
+                "C": "Prism",
+                "D": "Pyramid"
+            },
+            "correct_answer": "B",
+            "explanation": "A cylinder has two circular bases.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "How many triangular faces does a triangular pyramid have?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "A triangular pyramid has four triangular faces.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following objects forms a shadow similar to projection?",
+            "options": {
+                "A": "Solid under light",
+                "B": "Circle",
+                "C": "Triangle",
+                "D": "Rectangle"
+            },
+            "correct_answer": "A",
+            "explanation": "A shadow of an object represents its projection.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which mathematical concept helps draw engineering designs?",
+            "options": {
+                "A": "Fractals",
+                "B": "Isometric drawings",
+                "C": "Prime numbers",
+                "D": "Algebraic equations"
+            },
+            "correct_answer": "B",
+            "explanation": "Isometric drawings are used in engineering designs.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What happens to the shadow when the light source moves far away?",
+            "options": {
+                "A": "It disappears",
+                "B": "It becomes smaller",
+                "C": "It becomes similar to projection",
+                "D": "It changes colour"
+            },
+            "correct_answer": "C",
+            "explanation": "A distant light source produces a shadow similar to projection.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which property is common in fractals?",
+            "options": {
+                "A": "Curved edges",
+                "B": "Self similarity",
+                "C": "Circular shape",
+                "D": "Constant area"
+            },
+            "correct_answer": "B",
+            "explanation": "Fractals repeat similar patterns at different scales.",
+            "difficulty": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the main purpose of projections in geometry?",
+            "options": {
+                "A": "Calculate volume",
+                "B": "Represent 3D objects on 2D plane",
+                "C": "Measure angles",
+                "D": "Find perimeter"
+            },
+            "correct_answer": "B",
+            "explanation": "Projections help represent three dimensional objects on flat surfaces.",
+            "difficulty": "easy",
+            "source_section": "Section 4.2"
+        }
+    ]
+}

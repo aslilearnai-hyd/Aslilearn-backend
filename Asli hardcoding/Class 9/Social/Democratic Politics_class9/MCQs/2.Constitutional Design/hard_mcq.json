@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Constitutional Design",
+    "generated_at": "2026-03-07T23:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which factor mainly helped South Africa move from apartheid to democracy?",
+            "options": {
+                "A": "Military intervention",
+                "B": "Negotiations between leaders",
+                "C": "Economic sanctions only",
+                "D": "Foreign rule"
+            },
+            "correct_answer": "B",
+            "explanation": "Negotiations between black and white leaders helped South Africa transition to democracy.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which feature of a constitution limits the power of government?",
+            "options": {
+                "A": "Fundamental values",
+                "B": "Rule of law",
+                "C": "Political parties",
+                "D": "Media"
+            },
+            "correct_answer": "B",
+            "explanation": "Rule of law ensures that the government must follow constitutional rules.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is the Indian Constitution considered legitimate?",
+            "options": {
+                "A": "It was written quickly",
+                "B": "It represents consensus among diverse groups",
+                "C": "It was imposed by leaders",
+                "D": "It was written by a single person"
+            },
+            "correct_answer": "B",
+            "explanation": "The Constitution reflects the agreement of different sections of society.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which constitutional value ensures freedom of thought and expression?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "B",
+            "explanation": "Liberty ensures freedom of thought, expression and belief.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 5,
+            "question": "Which provision allows the Constitution to adapt to social change?",
+            "options": {
+                "A": "Amendment procedure",
+                "B": "Preamble",
+                "C": "Judiciary",
+                "D": "Parliament"
+            },
+            "correct_answer": "A",
+            "explanation": "Amendments allow modifications to the Constitution when necessary.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Which principle ensures equality before the law?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "C",
+            "explanation": "Equality ensures that all citizens are treated equally before the law.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 7,
+            "question": "The idea of fraternity in the Constitution promotes:",
+            "options": {
+                "A": "Economic development",
+                "B": "National unity and brotherhood",
+                "C": "Political rivalry",
+                "D": "Military strength"
+            },
+            "correct_answer": "B",
+            "explanation": "Fraternity encourages unity and brotherhood among citizens.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 8,
+            "question": "Which body was responsible for discussing and drafting the Constitution?",
+            "options": {
+                "A": "Lok Sabha",
+                "B": "Constituent Assembly",
+                "C": "Rajya Sabha",
+                "D": "Supreme Court"
+            },
+            "correct_answer": "B",
+            "explanation": "The Constituent Assembly debated and drafted the Constitution.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which concept ensures that government decisions follow established laws?",
+            "options": {
+                "A": "Fraternity",
+                "B": "Rule of law",
+                "C": "Socialism",
+                "D": "Liberty"
+            },
+            "correct_answer": "B",
+            "explanation": "Rule of law ensures that laws govern the country.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which constitutional value focuses on removing social and economic inequalities?",
+            "options": {
+                "A": "Justice",
+                "B": "Socialist",
+                "C": "Equality",
+                "D": "Liberty"
+            },
+            "correct_answer": "B",
+            "explanation": "Socialism aims to reduce economic inequalities.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 11,
+            "question": "Which term means India has the authority to make its own decisions?",
+            "options": {
+                "A": "Republic",
+                "B": "Sovereign",
+                "C": "Secular",
+                "D": "Socialist"
+            },
+            "correct_answer": "B",
+            "explanation": "Sovereign means complete independence in decision-making.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 12,
+            "question": "Which feature of democracy ensures accountability of rulers?",
+            "options": {
+                "A": "Regular elections",
+                "B": "Judicial review",
+                "C": "Economic growth",
+                "D": "Foreign policy"
+            },
+            "correct_answer": "A",
+            "explanation": "Regular elections make leaders accountable to citizens.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which group was most affected by apartheid?",
+            "options": {
+                "A": "White Europeans",
+                "B": "Black Africans",
+                "C": "Asian traders",
+                "D": "European tourists"
+            },
+            "correct_answer": "B",
+            "explanation": "Black Africans were denied basic rights under apartheid.",
+            "difficulty": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which principle promotes fairness in governance?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Fraternity",
+                "D": "Secularism"
+            },
+            "correct_answer": "A",
+            "explanation": "Justice ensures fairness in society and governance.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 15,
+            "question": "Which body protects the Constitution in India?",
+            "options": {
+                "A": "Army",
+                "B": "Judiciary",
+                "C": "Media",
+                "D": "Election Commission"
+            },
+            "correct_answer": "B",
+            "explanation": "The judiciary protects and interprets the Constitution.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which concept ensures equal political rights?",
+            "options": {
+                "A": "Liberty",
+                "B": "Justice",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "C",
+            "explanation": "Equality ensures equal political rights.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 17,
+            "question": "Which value helps maintain unity in a diverse society?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Fraternity",
+                "D": "Equality"
+            },
+            "correct_answer": "C",
+            "explanation": "Fraternity promotes unity and harmony.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 18,
+            "question": "Which feature ensures that government decisions follow constitutional principles?",
+            "options": {
+                "A": "Judicial review",
+                "B": "Military control",
+                "C": "Foreign policy",
+                "D": "Economic reforms"
+            },
+            "correct_answer": "A",
+            "explanation": "Judicial review checks government actions against the Constitution.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which principle ensures participation of citizens in governance?",
+            "options": {
+                "A": "Democracy",
+                "B": "Autocracy",
+                "C": "Monarchy",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy allows citizens to participate through elections.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which constitutional value protects freedom of religion?",
+            "options": {
+                "A": "Secularism",
+                "B": "Justice",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "A",
+            "explanation": "Secularism ensures equal respect for all religions.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 21,
+            "question": "Which institution makes laws in India?",
+            "options": {
+                "A": "Parliament",
+                "B": "Supreme Court",
+                "C": "Election Commission",
+                "D": "President"
+            },
+            "correct_answer": "A",
+            "explanation": "Parliament is the law-making body.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which constitutional value ensures social justice?",
+            "options": {
+                "A": "Justice",
+                "B": "Liberty",
+                "C": "Equality",
+                "D": "Fraternity"
+            },
+            "correct_answer": "A",
+            "explanation": "Justice promotes fairness and social equality.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 23,
+            "question": "Which principle ensures freedom from external control?",
+            "options": {
+                "A": "Republic",
+                "B": "Sovereign",
+                "C": "Secular",
+                "D": "Socialist"
+            },
+            "correct_answer": "B",
+            "explanation": "Sovereign means independence in internal and external affairs.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 24,
+            "question": "Which democratic feature allows peaceful change of government?",
+            "options": {
+                "A": "Elections",
+                "B": "Military rule",
+                "C": "Monarchy",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Elections allow peaceful transfer of power.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which concept ensures that laws apply equally to all citizens?",
+            "options": {
+                "A": "Equality",
+                "B": "Liberty",
+                "C": "Justice",
+                "D": "Fraternity"
+            },
+            "correct_answer": "A",
+            "explanation": "Equality ensures equal treatment under the law.",
+            "difficulty": "hard",
+            "source_section": "Preamble Concepts"
+        }
+    ]
+}

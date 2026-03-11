@@ -1,0 +1,120 @@
+{
+  "subject": "English",
+  "course_code": "JEF P101",
+  "chapter": "The Case of the Fifth Word",
+  "title": "Extended Reading Passages with Questions – The Case of the Fifth Word",
+  "total_passages": 10,
+  "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+  "passages": [
+    {
+      "passage_number": 1,
+      "paragraph": "Encyclopedia Brown was a young boy known for his intelligence and excellent memory. He lived in the town of Idaville and was famous for solving mysteries that puzzled even adults.",
+      "questions": [
+        "Who was Encyclopedia Brown?",
+        "Where did he live?",
+        "What was he known for?",
+        "Who was puzzled by the mysteries he solved?",
+        "Why was he famous in his town?"
+      ]
+    },
+    {
+      "passage_number": 2,
+      "paragraph": "Encyclopedia Brown’s father was the Chief of Police in Idaville. At dinner, he often discussed difficult cases with his son because the boy had an extraordinary ability to analyze clues.",
+      "questions": [
+        "Who was Encyclopedia Brown’s father?",
+        "What was his job?",
+        "When did he discuss cases with his son?",
+        "Why did he share the cases with Encyclopedia?",
+        "What special ability did Encyclopedia have?"
+      ]
+    },
+    {
+      "passage_number": 3,
+      "paragraph": "One evening, Chief Brown mentioned a robbery that had taken place years earlier. Two masked men had stolen valuable jewellery from a shop, but the police had never found the stolen items.",
+      "questions": [
+        "What did Chief Brown mention one evening?",
+        "What had the robbers stolen?",
+        "How many robbers were involved?",
+        "Did the police recover the jewellery?",
+        "When had the robbery happened?"
+      ]
+    },
+    {
+      "passage_number": 4,
+      "paragraph": "Tim Nolan was one of the men suspected in the robbery. However, the police had never found enough evidence to prove his guilt.",
+      "questions": [
+        "Who was suspected in the robbery?",
+        "Why was Nolan suspected?",
+        "Did the police have enough evidence?",
+        "What could the police not prove?",
+        "What problem did the police face in the investigation?"
+      ]
+    },
+    {
+      "passage_number": 5,
+      "paragraph": "Nolan had a friend named Daniel Davenport, who was also suspected in the crime. The two men had met while they were in prison and became close friends.",
+      "questions": [
+        "Who was Nolan’s friend?",
+        "What was Davenport suspected of?",
+        "Where did Nolan and Davenport meet?",
+        "What kind of relationship did they develop?",
+        "Why were they both suspected?"
+      ]
+    },
+    {
+      "passage_number": 6,
+      "paragraph": "Years later, Nolan died suddenly after suffering a stroke. On the kitchen table, the police found his will and a strange message written on a piece of paper.",
+      "questions": [
+        "What happened to Nolan?",
+        "What caused his death?",
+        "Where was the will found?",
+        "What else was found on the table?",
+        "Why was the message unusual?"
+      ]
+    },
+    {
+      "passage_number": 7,
+      "paragraph": "The message contained four strange words: Nom, Utes, Sweden, and Hurts. The police could not understand their meaning and were confused by the unusual message.",
+      "questions": [
+        "How many words were in the message?",
+        "What were the four words?",
+        "Why were the police confused?",
+        "What did the words seem like at first?",
+        "What problem did the police face?"
+      ]
+    },
+    {
+      "passage_number": 8,
+      "paragraph": "When Chief Brown told his son about the message, Encyclopedia Brown immediately began to think carefully. He realized that the words were related to the days of the week.",
+      "questions": [
+        "Who heard about the message from Chief Brown?",
+        "What did Encyclopedia Brown start doing?",
+        "What did he realize about the words?",
+        "What were the words connected to?",
+        "How did he approach the problem?"
+      ]
+    },
+    {
+      "passage_number": 9,
+      "paragraph": "Encyclopedia Brown discovered that the four words represented Monday, Tuesday, Wednesday, and Thursday without the letters 'day'. This helped him find the missing fifth word.",
+      "questions": [
+        "What did the four words represent?",
+        "Which days were mentioned?",
+        "What letters were removed from the words?",
+        "What did this discovery help him find?",
+        "Why was the pattern important?"
+      ]
+    },
+    {
+      "passage_number": 10,
+      "paragraph": "The missing fifth word pointed to a fir tree in Nolan’s nursery. When the police searched under the tree, they finally found the stolen jewellery.",
+      "questions": [
+        "What did the missing fifth word indicate?",
+        "Where was the tree located?",
+        "What did the police find under the tree?",
+        "Who solved the mystery?",
+        "How did the story end?"
+      ]
+    }
+  ]
+}

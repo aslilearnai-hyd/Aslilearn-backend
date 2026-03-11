@@ -1,0 +1,155 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Happy Prince",
+    "author": "Oscar Wilde",
+    "difficulty": "Hard",
+    "source_pdf": "eng9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Theme Analysis",
+            "objective": "Analyze the major themes of the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify themes such as kindness, sacrifice, and social inequality",
+                "Explain each theme with examples from the story"
+            ],
+            "learning_outcome": "Understands thematic analysis",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Symbolism of the Statue",
+            "objective": "Understand symbolic meaning in literature",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Analyze what the statue represents in society",
+                "Explain how it changes during the story"
+            ],
+            "learning_outcome": "Recognizes symbolism",
+            "evaluation": "Insightful interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Contrast Between Rich and Poor",
+            "objective": "Analyze social inequality in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify examples of rich and poor characters",
+                "Explain the contrast between their lives"
+            ],
+            "learning_outcome": "Understands social criticism",
+            "evaluation": "Detailed explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Role of Sacrifice",
+            "objective": "Understand sacrifice as a central idea",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify sacrifices made by the prince and the swallow",
+                "Explain their importance in the story"
+            ],
+            "learning_outcome": "Analyzes moral values",
+            "evaluation": "Logical reasoning (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Interpretation of the Ending",
+            "objective": "Understand the deeper meaning of the ending",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the ending carefully",
+                "Explain why God calls the lead heart and the swallow the most precious things"
+            ],
+            "learning_outcome": "Develops interpretative thinking",
+            "evaluation": "Insightful interpretation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Narrative Style Study",
+            "objective": "Analyze the storytelling style of Oscar Wilde",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify elements like dialogue, description, and narration",
+                "Write how they contribute to the story"
+            ],
+            "learning_outcome": "Understands narrative techniques",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Critical Character Comparison",
+            "objective": "Compare the prince and the swallow",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List similarities and differences between the two characters",
+                "Write a short comparison paragraph"
+            ],
+            "learning_outcome": "Develops comparative analysis skills",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Rewriting the Ending",
+            "objective": "Encourage creative thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine a different ending for the story",
+                "Write it in 6–8 sentences"
+            ],
+            "learning_outcome": "Enhances creative writing",
+            "evaluation": "Originality and clarity (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Moral Interpretation",
+            "objective": "Analyze the moral lesson deeply",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the moral message",
+                "Explain how the characters demonstrate this moral"
+            ],
+            "learning_outcome": "Understands ethical themes",
+            "evaluation": "Depth of reasoning (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Literary Appreciation",
+            "objective": "Appreciate the literary beauty of the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify one descriptive passage from the story",
+                "Explain why it is effective and meaningful"
+            ],
+            "learning_outcome": "Develops literary appreciation",
+            "evaluation": "Thoughtful explanation (10 marks)"
+        }
+    ]
+}

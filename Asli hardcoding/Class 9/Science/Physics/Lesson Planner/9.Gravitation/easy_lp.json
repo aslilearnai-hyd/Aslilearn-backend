@@ -1,0 +1,161 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Gravitation",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of gravitation",
+        "Learn the universal law of gravitation",
+        "Understand free fall and acceleration due to gravity",
+        "Differentiate mass and weight",
+        "Understand pressure and thrust",
+        "Learn the concepts of buoyancy and Archimedes' principle"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Gravitation",
+            "topics_covered": [
+                "Concept of gravitation",
+                "Examples of gravitational force",
+                "Newton's observation of falling objects"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Story-based explanation of Newton",
+                "Board illustration"
+            ],
+            "student_activities": [
+                "Discuss examples of falling objects",
+                "Explain why objects fall towards the Earth"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Concept discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Universal Law of Gravitation",
+            "topics_covered": [
+                "Statement of universal law of gravitation",
+                "Formula F = G(Mm)/d²",
+                "Importance of the law"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Formula derivation explanation",
+                "Examples from planetary motion"
+            ],
+            "student_activities": [
+                "Write the gravitational formula",
+                "Solve simple numerical examples"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Free Fall and Acceleration due to Gravity",
+            "topics_covered": [
+                "Meaning of free fall",
+                "Acceleration due to gravity",
+                "Value of g near Earth"
+            ],
+            "teaching_strategy": [
+                "Demonstration with falling objects",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Discuss examples of free fall",
+                "Solve simple problems using g"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Problem-solving"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Mass and Weight",
+            "topics_covered": [
+                "Definition of mass",
+                "Definition of weight",
+                "Relationship W = m × g"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Comparison table"
+            ],
+            "student_activities": [
+                "Write differences between mass and weight",
+                "Calculate weight of objects"
+            ],
+            "assessment": [
+                "Short answer questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Thrust and Pressure",
+            "topics_covered": [
+                "Definition of thrust",
+                "Definition of pressure",
+                "Formula Pressure = Force / Area"
+            ],
+            "teaching_strategy": [
+                "Real-life examples such as sharp knives",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Identify examples of pressure in daily life",
+                "Solve simple numerical problems"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Concept check"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Buoyancy and Archimedes' Principle",
+            "topics_covered": [
+                "Concept of buoyancy",
+                "Floating and sinking of objects",
+                "Archimedes' principle"
+            ],
+            "teaching_strategy": [
+                "Water demonstration activity",
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Observe floating and sinking objects in water",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Chapter revision discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Science textbook",
+        "Charts showing gravitational force",
+        "Water container and small objects for buoyancy demonstration"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Numerical problem solving",
+        "Class discussion"
+    ],
+    "teacher_tip": "Use simple demonstrations such as dropping objects and floating items in water to help students clearly understand gravitational force and buoyancy."
+}

@@ -1,0 +1,25 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Surface Areas and Volumes",
+    "difficulty": "Medium",
+    "source_pdf": "jemh112.pdf",
+    "short_notes": {
+        "key_points": [
+            "Different solids have different formulas",
+            "Unit conversion is essential",
+            "Selection of CSA or TSA depends on problem"
+        ],
+        "examples": [
+            "Cylinder and cone problems",
+            "Sphere volume problems"
+        ],
+        "formulas": [
+            "Volume of cone = (1/3)πr²h"
+        ],
+        "exam_tips": [
+            "Identify solid correctly",
+            "Check units before substitution"
+        ]
+    }
+}

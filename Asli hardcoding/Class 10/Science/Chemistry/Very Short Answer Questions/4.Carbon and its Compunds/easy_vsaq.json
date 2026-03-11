@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: CARBON AND ITS COMPOUNDS",
+    "generated_at": "2026-03-10T23:42:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the atomic number of carbon?",
+            "answer": "6",
+            "key_concepts": ["atomic structure"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What type of chemical bond is formed by carbon?",
+            "answer": "Covalent bond",
+            "key_concepts": ["covalent bonding"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the valency of carbon?",
+            "answer": "4 (Tetravalency)",
+            "key_concepts": ["tetravalency"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the property of self-linking of carbon atoms to form long chains called?",
+            "answer": "Catenation",
+            "key_concepts": ["catenation"],
+            "marks": 2,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Name the two major allotropes of carbon.",
+            "answer": "Diamond and Graphite",
+            "key_concepts": ["allotropes"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are compounds made up of only carbon and hydrogen called?",
+            "answer": "Hydrocarbons",
+            "key_concepts": ["hydrocarbons"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the general formula for Alkanes?",
+            "answer": "$C_nH_{2n+2}$",
+            "key_concepts": ["alkanes"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the general formula for Alkenes?",
+            "answer": "$C_nH_{2n}$",
+            "key_concepts": ["alkenes"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the general formula for Alkynes?",
+            "answer": "$C_nH_{2n-2}$",
+            "key_concepts": ["alkynes"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which gas is the main constituent of Biogas and CNG?",
+            "answer": "Methane ($CH_4$)",
+            "key_concepts": ["methane"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What are hydrocarbons containing only single bonds called?",
+            "answer": "Saturated hydrocarbons",
+            "key_concepts": ["saturation"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What are hydrocarbons containing double or triple bonds called?",
+            "answer": "Unsaturated hydrocarbons",
+            "key_concepts": ["unsaturation"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is a series of compounds with the same functional group and similar chemical properties called?",
+            "answer": "Homologous series",
+            "key_concepts": ["homologous series"],
+            "marks": 2,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the functional group present in Alcohols?",
+            "answer": "—OH (Hydroxyl group)",
+            "key_concepts": ["functional groups"],
+            "marks": 2,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the functional group present in Carboxylic acids?",
+            "answer": "—COOH (Carboxyl group)",
+            "key_concepts": ["functional groups"],
+            "marks": 2,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the reaction in which unsaturated hydrocarbons add hydrogen to become saturated.",
+            "answer": "Addition reaction (Hydrogenation)",
+            "key_concepts": ["chemical properties"],
+            "marks": 2,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the common name of Ethanol?",
+            "answer": "Ethyl alcohol",
+            "key_concepts": ["ethanol"],
+            "marks": 2,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is 5-8% solution of acetic acid in water called?",
+            "answer": "Vinegar",
+            "key_concepts": ["ethanoic acid"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the reaction between an alcohol and a carboxylic acid to form a sweet-smelling substance called?",
+            "answer": "Esterification",
+            "key_concepts": ["esters"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What are sweet-smelling substances used in making perfumes called?",
+            "answer": "Esters",
+            "key_concepts": ["esters"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the alkaline hydrolysis of an ester to form soap called?",
+            "answer": "Saponification",
+            "key_concepts": ["soap"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which part of a soap molecule is water-loving (hydrophilic)?",
+            "answer": "The ionic head",
+            "key_concepts": ["soap structure"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Which part of a soap molecule is water-fearing (hydrophobic)?",
+            "answer": "The hydrocarbon tail",
+            "key_concepts": ["soap structure"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 24,
+            "question": "What are spherical aggregates of soap molecules in water called?",
+            "answer": "Micelles",
+            "key_concepts": ["micelles"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do soaps not work well in hard water?",
+            "answer": "Because they react with calcium and magnesium ions to form an insoluble precipitate called scum.",
+            "key_concepts": ["hard water"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        }
+    ]
+}

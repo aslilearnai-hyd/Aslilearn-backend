@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Connecting the Dots (Solid Shapes)",
+    "generated_at": "2026-03-06T00:13:30",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A polyhedron has 30 edges and 20 vertices. How many faces does it have?",
+            "options": {
+                "A": "10",
+                "B": "12",
+                "C": "15",
+                "D": "52"
+            },
+            "correct_answer": "B",
+            "explanation": "Using Euler's formula $F + V - E = 2$: $F + 20 - 30 = 2 \\Rightarrow F - 10 = 2 \\Rightarrow F = 12$. (This is a regular dodecahedron).",
+            "difficulty": "hard",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 2,
+            "question": "If a cube is sliced by a plane passing through the midpoints of three edges meeting at one vertex, what is the shape of the cross-section?",
+            "options": {
+                "A": "Right-angled triangle",
+                "B": "Equilateral triangle",
+                "C": "Square",
+                "D": "Isosceles trapezium"
+            },
+            "correct_answer": "B",
+            "explanation": "The distance between the midpoints of the three edges is equal, forming a triangle with three equal sides.",
+            "difficulty": "hard",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 3,
+            "question": "A prism has 24 vertices. How many edges does it have?",
+            "options": {
+                "A": "12",
+                "B": "24",
+                "C": "36",
+                "D": "48"
+            },
+            "correct_answer": "C",
+            "explanation": "For a prism, vertices $V = 2n$. If $2n = 24$, then $n = 12$. Edges $E = 3n = 3 \\times 12 = 36$.",
+            "difficulty": "hard",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following polyhedra is the 'dual' of a cube (formed by connecting the centers of each face of a cube)?",
+            "options": {
+                "A": "Tetrahedron",
+                "B": "Octahedron",
+                "C": "Dodecahedron",
+                "D": "Icosahedron"
+            },
+            "correct_answer": "B",
+            "explanation": "A cube has 6 faces. Its dual must have 6 vertices. An octahedron has exactly 6 vertices.",
+            "difficulty": "hard",
+            "source_section": "Advanced Geometry"
+        },
+        {
+            "question_number": 5,
+            "question": "A solid is formed by 12 pentagonal faces. How many edges are in this solid?",
+            "options": {
+                "A": "60",
+                "B": "30",
+                "C": "20",
+                "D": "24"
+            },
+            "correct_answer": "B",
+            "explanation": "Total edges = $(\\text{Number of faces} \\times \\text{edges per face}) / 2 = (12 \\times 5) / 2 = 30$.",
+            "difficulty": "hard",
+            "source_section": "Polyhedron Properties"
+        },
+        {
+            "question_number": 6,
+            "question": "A pyramid has 100 edges. What is the shape of its base?",
+            "options": {
+                "A": "50-sided polygon",
+                "5": "100-sided polygon",
+                "C": "25-sided polygon",
+                "D": "Square"
+            },
+            "correct_answer": "A",
+            "explanation": "In a pyramid, edges $E = 2n$. If $2n = 100$, then $n = 50$.",
+            "difficulty": "hard",
+            "source_section": "Pyramids"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the minimum number of planes required to enclose a 3D space to form a polyhedron?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "A tetrahedron (triangular pyramid) is the simplest polyhedron and requires 4 faces to enclose volume.",
+            "difficulty": "hard",
+            "source_section": "Polyhedrons"
+        },
+        {
+            "question_number": 8,
+            "question": "A vertical slice is made through a square pyramid that does NOT pass through the apex. The cross-section is a:",
+            "options": {
+                "A": "Triangle",
+                "B": "Square",
+                "C": "Trapezium",
+                "D": "Pentagon"
+            },
+            "correct_answer": "C",
+            "explanation": "The slice intersects the base and two slant faces, creating a shape with one pair of parallel sides.",
+            "difficulty": "hard",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following can NOT be a cross-section of a cube?",
+            "options": {
+                "A": "Triangle",
+                "B": "Hexagon",
+                "C": "Octagon",
+                "D": "Pentagon"
+            },
+            "correct_answer": "C",
+            "explanation": "A cube has 6 faces. A cross-section can have at most 6 sides (one for each face it intersects).",
+            "difficulty": "hard",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 10,
+            "question": "In a regular icosahedron, there are 20 triangular faces. How many vertices does it have?",
+            "options": {
+                "A": "12",
+                "B": "30",
+                "C": "20",
+                "D": "10"
+            },
+            "correct_answer": "A",
+            "explanation": "Edges $E = (20 \\times 3)/2 = 30$. Using $F + V - E = 2 \\Rightarrow 20 + V - 30 = 2 \\Rightarrow V = 12$.",
+            "difficulty": "hard",
+            "source_section": "Platonic Solids"
+        },
+        {
+            "question_number": 11,
+            "question": "A prism and a pyramid have the same base. If the pyramid has $x$ edges, the prism has:",
+            "options": {
+                "A": "x + n edges",
+                "B": "1.5x edges",
+                "C": "2x edges",
+                "D": "x + 2 edges"
+            },
+            "correct_answer": "B",
+            "explanation": "Pyramid edges $x = 2n$. Prism edges $= 3n$. Since $3n = 1.5 \\times (2n)$, the prism has $1.5x$ edges.",
+            "difficulty": "hard",
+            "source_section": "Comparative Geometry"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the Euler characteristic ($F + V - E$) for a cylinder?",
+            "options": {
+                "A": "2",
+                "B": "1",
+                "C": "0",
+                "D": "Not defined for non-polyhedra"
+            },
+            "correct_answer": "D",
+            "explanation": "Euler's formula $F + V - E = 2$ strictly applies to polyhedra with flat faces and straight edges.",
+            "difficulty": "hard",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 13,
+            "question": "How many vertices does a truncated cube have (a cube where all 8 corners are cut off)?",
+            "options": {
+                "A": "8",
+                "B": "16",
+                "C": "24",
+                "D": "32"
+            },
+            "correct_answer": "C",
+            "explanation": "Each of the 8 original vertices is replaced by a triangular face, creating 3 new vertices at each corner. $8 \\times 3 = 24$.",
+            "difficulty": "hard",
+            "source_section": "Truncated Solids"
+        },
+        {
+            "question_number": 14,
+            "question": "A polyhedron has $V$ vertices and $F$ faces. If $V=12$ and $F=8$, the solid is a:",
+            "options": {
+                "A": "Hexagonal Prism",
+                "B": "Hexagonal Pyramid",
+                "C": "Octagonal Prism",
+                "D": "Square Prism"
+            },
+            "correct_answer": "A",
+            "explanation": "For a hexagonal prism, $n=6$. $V = 2n = 12$. $F = n+2 = 8$.",
+            "difficulty": "hard",
+            "source_section": "Prisms"
+        },
+        {
+            "question_number": 15,
+            "question": "The 'net' of a solid shows 1 hexagon and 6 triangles. This solid is a:",
+            "options": {
+                "A": "Hexagonal Prism",
+                "B": "Hexagonal Pyramid",
+                "C": "Octahedron",
+                "D": "Hexagon"
+            },
+            "correct_answer": "B",
+            "explanation": "One base (hexagon) and triangular lateral faces define a pyramid.",
+            "difficulty": "hard",
+            "source_section": "Nets"
+        },
+        {
+            "question_number": 16,
+            "question": "Which object can cast both a circular shadow and a square shadow depending on its orientation?",
+            "options": {
+                "A": "Sphere",
+                "B": "Cone",
+                "C": "Cylinder",
+                "D": "Cube"
+            },
+            "correct_answer": "C",
+            "explanation": "A cylinder with height equal to its diameter casts a circular shadow from the top and a square shadow from the side.",
+            "difficulty": "hard",
+            "source_section": "Shadows"
+        },
+        {
+            "question_number": 17,
+            "question": "If you slice a cube through the midpoints of six of its edges, the cross-section is a:",
+            "options": {
+                "A": "Square",
+                "B": "Regular Hexagon",
+                "C": "Rectangle",
+                "D": "Rhombus"
+            },
+            "correct_answer": "B",
+            "explanation": "Slicing through 6 midpoints perfectly bisects the cube into a hexagonal plane.",
+            "difficulty": "hard",
+            "source_section": "Cross-sections"
+        },
+        {
+            "question_number": 18,
+            "question": "How many edges meet at each vertex of a regular dodecahedron?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "A",
+            "explanation": "A dodecahedron has pentagonal faces; 3 edges meet at each of its 20 vertices.",
+            "difficulty": "hard",
+            "source_section": "Platonic Solids"
+        },
+        {
+            "question_number": 19,
+            "question": "A polyhedron has $V=10$ and $E=15$. How many faces does it have?",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_answer": "C",
+            "explanation": "$F + 10 - 15 = 2 \\Rightarrow F - 5 = 2 \\Rightarrow F = 7$.",
+            "difficulty": "hard",
+            "source_section": "Euler's Formula"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of these is a 'regular' polyhedron?",
+            "options": {
+                "A": "Cuboid",
+                "B": "Tetrahedron",
+                "C": "Square Pyramid",
+                "D": "Triangular Prism"
+            },
+            "correct_answer": "B",
+            "explanation": "A regular polyhedron (Platonic solid) has all faces as identical regular polygons. Cuboids and prisms are generally not regular.",
+            "difficulty": "hard",
+            "source_section": "Platonic Solids"
+        },
+        {
+            "question_number": 21,
+            "question": "The total number of faces in a prism with $n$ edges is:",
+            "options": {
+                "A": "n/3 + 2",
+                "B": "n + 2",
+                "C": "2n + 2",
+                "D": "n/2 + 1"
+            },
+            "correct_answer": "A",
+            "explanation": "Since $E = 3n$ for a prism, the base sides $n = E/3$. Faces $= n + 2 = (E/3) + 2$.",
+            "difficulty": "hard",
+            "source_section": "Prism Properties"
+        },
+        {
+            "question_number": 22,
+            "question": "A solid has 12 edges and 8 vertices. If all faces are identical, the solid is a:",
+            "options": {
+                "A": "Cube",
+                "B": "Octahedron",
+                "C": "Square Pyramid",
+                "D": "Triangular Prism"
+            },
+            "correct_answer": "A",
+            "explanation": "A cube has $F=6, V=8, E=12$ and all 6 faces are identical squares.",
+            "difficulty": "hard",
+            "source_section": "Solid Identification"
+        },
+        {
+            "question_number": 23,
+            "question": "How many vertices are in a pyramid with 15 edges?",
+            "options": {
+                "A": "8",
+                "B": "16",
+                "C": "Cannot exist",
+                "D": "15"
+            },
+            "correct_answer": "C",
+            "explanation": "In a pyramid, edges $E = 2n$, which must always be an even number. 15 is odd.",
+            "difficulty": "hard",
+            "source_section": "Pyramid Properties"
+        },
+        {
+            "question_number": 24,
+            "question": "The top view of a 'bolted nut' (hexagonal prism with a circular hole) is a:",
+            "options": {
+                "A": "Hexagon",
+                "B": "Circle",
+                "C": "Hexagon with a circle inside",
+                "D": "Rectangle"
+            },
+            "correct_answer": "C",
+            "explanation": "The top view captures the outer hexagonal boundary and the inner circular void.",
+            "difficulty": "hard",
+            "source_section": "Views of Solids"
+        },
+        {
+            "question_number": 25,
+            "question": "Which solid has the same number of faces as vertices?",
+            "options": {
+                "A": "Cube",
+                "B": "Triangular Prism",
+                "C": "Triangular Pyramid",
+                "D": "Octahedron"
+            },
+            "correct_answer": "C",
+            "explanation": "A triangular pyramid (tetrahedron) has 4 faces and 4 vertices.",
+            "difficulty": "hard",
+            "source_section": "Solid Properties"
+        }
+    ]
+}

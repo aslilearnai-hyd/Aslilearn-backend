@@ -1,0 +1,378 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-05T15:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the hypotenuse of a right triangle whose sides are 9 cm and 40 cm.",
+            "answer": "Using the Pythagoras theorem, c² = 9² + 40² = 81 + 1600 = 1681. Therefore c = 41 cm.",
+            "answer_outline": [
+                "Apply Pythagoras theorem",
+                "Square numbers",
+                "Find square root"
+            ],
+            "key_concepts": [
+                "Pythagoras theorem",
+                "right triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the diagonal of a rectangle whose sides are 20 cm and 21 cm.",
+            "answer": "d² = 20² + 21² = 400 + 441 = 841, therefore d = 29 cm.",
+            "answer_outline": [
+                "Use theorem",
+                "Calculate squares",
+                "Square root"
+            ],
+            "key_concepts": [
+                "rectangle diagonal",
+                "Pythagoras theorem"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 3,
+            "question": "Verify whether the numbers 10, 24 and 26 form a Pythagorean triple.",
+            "answer": "10² + 24² = 100 + 576 = 676 and √676 = 26. Hence they satisfy a² + b² = c².",
+            "answer_outline": [
+                "Square numbers",
+                "Verify equation"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the length of the diagonal of a square whose side is 15 cm.",
+            "answer": "Diagonal = a√2 = 15√2 cm.",
+            "answer_outline": [
+                "Diagonal formula",
+                "Substitute value"
+            ],
+            "key_concepts": [
+                "square diagonal"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the missing side of a right triangle if the hypotenuse is 25 cm and one side is 7 cm.",
+            "answer": "Other side² = 25² − 7² = 625 − 49 = 576, therefore side = 24 cm.",
+            "answer_outline": [
+                "Use theorem",
+                "Subtract squares",
+                "Find root"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Show that the numbers 8, 15 and 17 form a Pythagorean triple.",
+            "answer": "8² + 15² = 64 + 225 = 289 = 17². Hence they form a Pythagorean triple.",
+            "answer_outline": [
+                "Square numbers",
+                "Verify equality"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the diagonal of a rectangle with sides 16 cm and 30 cm.",
+            "answer": "d² = 16² + 30² = 256 + 900 = 1156, therefore d = 34 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": [
+                "rectangle diagonal"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the hypotenuse if the sides of a right triangle are 11 cm and 60 cm.",
+            "answer": "c² = 11² + 60² = 121 + 3600 = 3721, therefore c = 61 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how the Pythagoras theorem can be used to determine whether a triangle is right-angled.",
+            "answer": "If the square of the longest side equals the sum of the squares of the other two sides, the triangle is right-angled.",
+            "answer_outline": [
+                "Longest side",
+                "Square comparison",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "right triangle test"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the diagonal of a square whose side is 18 cm.",
+            "answer": "Diagonal = 18√2 cm.",
+            "answer_outline": [
+                "Use formula",
+                "Substitute value"
+            ],
+            "key_concepts": [
+                "square diagonal"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+
+        {
+            "question_number": 11,
+            "question": "Find the hypotenuse if the sides of a right triangle are 20 cm and 21 cm.",
+            "answer": "c² = 20² + 21² = 400 + 441 = 841, therefore c = 29 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Calculate squares"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+
+        {
+            "question_number": 12,
+            "question": "Explain the geometric interpretation of the Pythagoras theorem.",
+            "answer": "The area of the square built on the hypotenuse equals the sum of the areas of squares built on the other two sides of a right triangle.",
+            "answer_outline": [
+                "Squares on triangle sides",
+                "Area comparison"
+            ],
+            "key_concepts": [
+                "geometric proof"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.4"
+        },
+
+        {
+            "question_number": 13,
+            "question": "Find the diagonal of a rectangle whose sides are 24 cm and 45 cm.",
+            "answer": "d² = 24² + 45² = 576 + 2025 = 2601, therefore d = 51 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Square numbers",
+                "Square root"
+            ],
+            "key_concepts": [
+                "rectangle diagonal"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.7"
+        },
+
+        {
+            "question_number": 14,
+            "question": "Show that (12, 35, 37) is a Pythagorean triple.",
+            "answer": "12² + 35² = 144 + 1225 = 1369 = 37².",
+            "answer_outline": [
+                "Square numbers",
+                "Verify relation"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.5"
+        },
+
+        {
+            "question_number": 15,
+            "question": "Find the missing side if the hypotenuse is 41 cm and one side is 9 cm.",
+            "answer": "Other side² = 41² − 9² = 1681 − 81 = 1600, therefore side = 40 cm.",
+            "answer_outline": [
+                "Apply theorem",
+                "Subtract squares"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.4"
+        },
+
+        {
+            "question_number": 16,
+            "question": "Find the diagonal of a square whose side is 25 cm.",
+            "answer": "Diagonal = 25√2 cm.",
+            "answer_outline": [
+                "Use formula",
+                "Substitute value"
+            ],
+            "key_concepts": [
+                "square diagonal"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+
+        {
+            "question_number": 17,
+            "question": "Explain why the hypotenuse is always the longest side of a right triangle.",
+            "answer": "The hypotenuse lies opposite the right angle, and according to the Pythagoras relation its square equals the sum of the squares of the other two sides, making it the longest side.",
+            "answer_outline": [
+                "Opposite right angle",
+                "Square relation"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.4"
+        },
+
+        {
+            "question_number": 18,
+            "question": "Find the diagonal of a rectangle whose sides are 7 cm and 24 cm.",
+            "answer": "d² = 7² + 24² = 49 + 576 = 625, therefore d = 25 cm.",
+            "answer_outline": [
+                "Apply theorem"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+
+        {
+            "question_number": 19,
+            "question": "Explain the importance of Pythagorean triples in mathematics.",
+            "answer": "They help identify right triangles and simplify calculations where integer side lengths are required.",
+            "answer_outline": [
+                "Right triangle identification",
+                "Integer calculations"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.5"
+        },
+
+        {
+            "question_number": 20,
+            "question": "Find the hypotenuse if the sides are 28 cm and 45 cm.",
+            "answer": "c² = 28² + 45² = 784 + 2025 = 2809, therefore c = 53 cm.",
+            "answer_outline": [
+                "Apply theorem"
+            ],
+            "key_concepts": [
+                "Pythagorean triples"
+            ],
+            "marks": 5,
+            "source_section": "Section 2.5"
+        },
+
+        {
+            "question_number": 21,
+            "question": "Find the diagonal of a square whose side is 20 cm.",
+            "answer": "Diagonal = 20√2 cm.",
+            "answer_outline": [
+                "Use formula"
+            ],
+            "key_concepts": [
+                "square diagonal"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.3"
+        },
+
+        {
+            "question_number": 22,
+            "question": "Explain how the Pythagoras theorem is applied in surveying and navigation.",
+            "answer": "It helps calculate distances between points and determine shortest paths by forming right triangles.",
+            "answer_outline": [
+                "Distance calculation",
+                "Navigation use"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "Section 2.7"
+        },
+
+        {
+            "question_number": 23,
+            "question": "Find the diagonal of a rectangle with sides 18 cm and 24 cm.",
+            "answer": "d² = 18² + 24² = 324 + 576 = 900, therefore d = 30 cm.",
+            "answer_outline": [
+                "Apply theorem"
+            ],
+            "key_concepts": [
+                "rectangle diagonal"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+
+        {
+            "question_number": 24,
+            "question": "Explain how the theorem helps determine the distance between two points on a grid.",
+            "answer": "By forming a right triangle between the points and applying the relation a² + b² = c² to calculate the direct distance.",
+            "answer_outline": [
+                "Grid coordinates",
+                "Right triangle"
+            ],
+            "key_concepts": [
+                "distance formula concept"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        },
+
+        {
+            "question_number": 25,
+            "question": "Explain why the theorem is fundamental in coordinate geometry.",
+            "answer": "It forms the basis of the distance formula and helps calculate distances between points on the coordinate plane.",
+            "answer_outline": [
+                "Coordinate geometry",
+                "Distance formula"
+            ],
+            "key_concepts": [
+                "coordinate geometry"
+            ],
+            "marks": 4,
+            "source_section": "Section 2.7"
+        }
+    ]
+}

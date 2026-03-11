@@ -1,0 +1,402 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 13: Our Environment",
+  "generated_at": "2026-03-10T23:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define ecosystem. Name its two main components.",
+      "answer": "An ecosystem is a structural and functional unit of the biosphere consisting of living organisms interacting with each other and their physical environment. Its two main components are: (i) Biotic components (living organisms like producers, consumers, decomposers) and (ii) Abiotic components (non-living factors like sunlight, water, temperature, soil).",
+      "answer_outline": [
+        "Definition of ecosystem",
+        "Biotic components",
+        "Abiotic components"
+      ],
+      "key_concepts": [
+        "ecosystem",
+        "biotic and abiotic components"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are trophic levels? Give an example of a food chain and state the different trophic levels in it.",
+      "answer": "Trophic levels are the positions occupied by organisms in a food chain based on their mode of nutrition. Example: Grass (producer) → Grasshopper (herbivore) → Frog (primary carnivore) → Snake (secondary carnivore) → Hawk (top carnivore). Trophic levels: 1st - producers, 2nd - primary consumers, 3rd - secondary consumers, 4th - tertiary consumers.",
+      "answer_outline": [
+        "Definition of trophic levels",
+        "Example food chain",
+        "Trophic levels in the example"
+      ],
+      "key_concepts": [
+        "trophic levels",
+        "food chain"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Differentiate between food chain and food web.",
+      "answer": "A food chain is a linear sequence showing the transfer of food energy from producers to consumers (e.g., grass → deer → lion). A food web is a complex interconnected network of multiple food chains in an ecosystem, showing realistic feeding relationships among organisms.",
+      "answer_outline": [
+        "Definition and nature of food chain",
+        "Definition and nature of food web",
+        "Key difference"
+      ],
+      "key_concepts": [
+        "food chain",
+        "food web"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 4,
+      "question": "State the 10% law of energy flow in an ecosystem.",
+      "answer": "According to the 10% law proposed by Raymond Lindeman, only about 10% of the energy available at one trophic level is transferred to the next higher trophic level. The remaining 90% is lost mainly as heat during metabolic processes or remains unutilized.",
+      "answer_outline": [
+        "Statement of the law",
+        "Percentage transferred",
+        "Reason for energy loss"
+      ],
+      "key_concepts": [
+        "energy flow",
+        "10% law"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Why are there usually only 4-5 trophic levels in a food chain?",
+      "answer": "There are usually only 4-5 trophic levels because of the 10% law of energy transfer. At each level, only 10% energy is available to the next level, so by the time it reaches higher levels, very little energy remains to support another trophic level.",
+      "answer_outline": [
+        "Reference to 10% law",
+        "Progressive energy decrease",
+        "Limitation on trophic levels"
+      ],
+      "key_concepts": [
+        "trophic levels limitation",
+        "energy transfer"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are some substances biodegradable and some non-biodegradable?",
+      "answer": "Biodegradable substances can be broken down into simpler harmless substances by decomposers (bacteria/fungi) through natural biological processes (e.g., paper, food waste). Non-biodegradable substances cannot be broken down by decomposers (e.g., plastics, DDT) and persist in the environment, causing pollution.",
+      "answer_outline": [
+        "Definition and cause for biodegradable",
+        "Definition and cause for non-biodegradable",
+        "Examples"
+      ],
+      "key_concepts": [
+        "biodegradable",
+        "non-biodegradable",
+        "decomposers"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the phenomenon of biological magnification (biomagnification) with an example.",
+      "answer": "Biological magnification is the progressive increase in concentration of non-biodegradable harmful chemicals in organisms at higher trophic levels. Example: DDT concentration increases from water (low) to producers to fish to birds/humans (very high), harming top consumers more severely.",
+      "answer_outline": [
+        "Definition",
+        "Process explanation",
+        "Example with DDT"
+      ],
+      "key_concepts": [
+        "biological magnification",
+        "non-biodegradable chemicals"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is the maximum concentration of pesticides like DDT found in human beings?",
+      "answer": "Pesticides like DDT are non-biodegradable and get accumulated progressively at each trophic level through biological magnification. Humans occupy the top trophic level in many food chains, so they receive the highest concentration of these chemicals.",
+      "answer_outline": [
+        "Non-biodegradable nature",
+        "Biological magnification",
+        "Position of humans in food chain"
+      ],
+      "key_concepts": [
+        "DDT accumulation",
+        "top trophic level"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What is ozone? How does it affect any ecosystem?",
+      "answer": "Ozone (O₃) is a gas present in the stratosphere forming the ozone layer. It protects the ecosystem by absorbing harmful ultraviolet (UV) radiations from the sun, preventing skin cancer, cataracts, and damage to plants and marine life.",
+      "answer_outline": [
+        "Definition of ozone",
+        "Location and function",
+        "Protective role in ecosystem"
+      ],
+      "key_concepts": [
+        "ozone layer",
+        "UV radiation protection"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What are the causes of ozone layer depletion? Name two ozone-depleting substances.",
+      "answer": "Ozone layer depletion is caused by chemicals that release chlorine and bromine atoms in the stratosphere, which catalytically destroy ozone. Two major ozone-depleting substances are chlorofluorocarbons (CFCs) and halons.",
+      "answer_outline": [
+        "Cause of depletion",
+        "Mechanism",
+        "Two examples"
+      ],
+      "key_concepts": [
+        "ozone depletion",
+        "CFCs",
+        "halons"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Why has there been a large hue and cry against the use of CFCs?",
+      "answer": "CFCs cause depletion of the ozone layer in the stratosphere. This allows harmful UV radiations to reach Earth's surface, leading to skin cancer, cataracts, reduced immunity, and damage to plants and animals.",
+      "answer_outline": [
+        "Effect on ozone layer",
+        "Harmful UV consequences",
+        "Human and ecological impact"
+      ],
+      "key_concepts": [
+        "CFCs",
+        "ozone depletion effects"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What are the harmful effects of UV radiations on living organisms?",
+      "answer": "UV radiations cause skin cancer and cataracts in humans, reduce immunity, damage DNA leading to mutations, decrease photosynthesis in plants, and harm phytoplankton (base of aquatic food chains), affecting ecosystems.",
+      "answer_outline": [
+        "Effects on humans",
+        "Effects on plants and animals",
+        "Ecosystem impact"
+      ],
+      "key_concepts": [
+        "UV radiation effects"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the management of garbage we produce.",
+      "answer": "Garbage management involves segregation into biodegradable and non-biodegradable waste. Biodegradable waste can be composted. Non-biodegradable waste should be recycled or disposed safely to reduce pollution and landfill burden.",
+      "answer_outline": [
+        "Segregation of waste",
+        "Composting for biodegradable",
+        "Recycling/disposal for non-biodegradable"
+      ],
+      "key_concepts": [
+        "waste management",
+        "composting",
+        "recycling"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Why should we switch from plastic cups to paper cups or kulhads, even though paper cups also cause issues?",
+      "answer": "Plastic cups are non-biodegradable, persist long, and cause pollution. Paper cups are biodegradable but use resources and may have plastic lining. Kulhads are eco-friendly and biodegradable, promoting sustainable practices over disposable items.",
+      "answer_outline": [
+        "Problem with plastics",
+        "Issues with paper cups",
+        "Advantage of kulhads"
+      ],
+      "key_concepts": [
+        "waste disposal issues",
+        "sustainable alternatives"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "What are the advantages of using biodegradable substances over non-biodegradable ones?",
+      "answer": "Biodegradable substances are broken down naturally by decomposers, reducing pollution and waste accumulation. Non-biodegradable substances persist, cause long-term pollution, and lead to problems like biological magnification and landfill overload.",
+      "answer_outline": [
+        "Natural breakdown",
+        "Reduced pollution",
+        "Contrast with non-biodegradable effects"
+      ],
+      "key_concepts": [
+        "biodegradable advantages"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Differentiate between biodegradable and non-biodegradable wastes with examples.",
+      "answer": "Biodegradable wastes: broken down by microbes (e.g., vegetable peels, paper). Non-biodegradable wastes: not broken down (e.g., plastics, glass, metals). Biodegradable wastes can be composted; non-biodegradable need recycling or safe disposal.",
+      "answer_outline": [
+        "Definition and process",
+        "Examples",
+        "Management difference"
+      ],
+      "key_concepts": [
+        "biodegradable vs non-biodegradable"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Why do we need to manage our garbage properly?",
+      "answer": "Improper garbage management leads to pollution of soil, water, and air, spreads diseases, harms wildlife, causes biological magnification, and depletes resources. Proper management reduces environmental damage and promotes sustainability.",
+      "answer_outline": [
+        "Consequences of poor management",
+        "Environmental and health impacts",
+        "Benefits of proper management"
+      ],
+      "key_concepts": [
+        "garbage management importance"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the role of decomposers in an ecosystem?",
+      "answer": "Decomposers (bacteria and fungi) break down dead remains and waste of organisms into simpler inorganic substances. They recycle nutrients back into the soil, making them available to producers, thus maintaining nutrient cycling.",
+      "answer_outline": [
+        "Definition and organisms",
+        "Breakdown process",
+        "Nutrient recycling role"
+      ],
+      "key_concepts": [
+        "decomposers",
+        "nutrient cycling"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why energy flow in an ecosystem is unidirectional.",
+      "answer": "Energy flow is unidirectional because solar energy captured by producers is transferred progressively to consumers but is not recycled back to producers. Energy is lost as heat at each level and cannot be reused.",
+      "answer_outline": [
+        "Unidirectional nature",
+        "Loss as heat",
+        "No recycling of energy"
+      ],
+      "key_concepts": [
+        "energy flow direction"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 20,
+      "question": "How do human activities affect the environment? Give two examples.",
+      "answer": "Human activities like excessive use of CFCs deplete the ozone layer, allowing harmful UV rays. Excessive use of pesticides and fertilizers causes biological magnification and water pollution, disrupting ecosystems and food chains.",
+      "answer_outline": [
+        "General impact",
+        "Example 1: ozone depletion",
+        "Example 2: chemical pollution"
+      ],
+      "key_concepts": [
+        "human impact",
+        "environmental problems"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 21,
+      "question": "What is an artificial ecosystem? Give an example.",
+      "answer": "An artificial ecosystem is man-made with controlled biotic and abiotic components, maintained by human efforts. Example: aquarium (fish, plants, water, light, temperature controlled by humans).",
+      "answer_outline": [
+        "Definition",
+        "Human maintenance",
+        "Example"
+      ],
+      "key_concepts": [
+        "artificial ecosystem"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are producers always at the first trophic level in every food chain?",
+      "answer": "Producers (green plants) are at the first trophic level because they convert solar energy into chemical energy through photosynthesis, making food available for all other organisms (consumers) in the ecosystem.",
+      "answer_outline": [
+        "Role of producers",
+        "Photosynthesis",
+        "Dependency of consumers"
+      ],
+      "key_concepts": [
+        "producers position"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What will be the amount of energy available to the next level if 10,000 J is available at the producer level?",
+      "answer": "According to the 10% law, only 10% energy is transferred to the next trophic level. So, 10% of 10,000 J = 1,000 J will be available to the primary consumers.",
+      "answer_outline": [
+        "Reference to 10% law",
+        "Calculation",
+        "Result"
+      ],
+      "key_concepts": [
+        "energy transfer calculation"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 24,
+      "question": "How does improper disposal of waste affect the environment?",
+      "answer": "Improper disposal leads to soil and water pollution, spreads diseases, harms aquatic and terrestrial life, causes biomagnification of toxins, and contributes to land degradation and resource wastage.",
+      "answer_outline": [
+        "Pollution types",
+        "Health and ecological harm",
+        "Long-term effects"
+      ],
+      "key_concepts": [
+        "waste disposal effects"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Suggest two practices to reduce garbage generation and promote sustainable living.",
+      "answer": "Two practices: (i) Reduce, reuse, and recycle materials to minimize waste (e.g., use cloth bags instead of plastic). (ii) Compost biodegradable kitchen waste at home to produce manure and reduce landfill burden.",
+      "answer_outline": [
+        "Practice 1: Reduce/Reuse/Recycle",
+        "Practice 2: Composting",
+        "Benefits"
+      ],
+      "key_concepts": [
+        "sustainable practices",
+        "waste reduction"
+      ],
+      "marks": 3,
+      "source_section": "Section 13.2.2"
+    }
+  ]
+}

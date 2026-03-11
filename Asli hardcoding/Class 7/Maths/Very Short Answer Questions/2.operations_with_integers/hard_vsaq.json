@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: OPERATIONS WITH INTEGERS",
+    "generated_at": "2026-03-05T03:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In a test, (+5) marks are given for every correct answer and (-2) marks for every incorrect answer. Radhika answered all questions and scored 30 marks, though she got 10 correct answers. How many incorrect answers did she give?",
+            "answer": "Marks from correct = 10 × 5 = 50. Marks lost = 50 - 30 = 20. Incorrect answers = 20 ÷ 2 = 10.",
+            "key_concepts": ["marking system logic", "integer applications"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the product using suitable properties: (-18) × (-10) × 9",
+            "answer": "[(-18) × (-10)] × 9 = 180 × 9 = 1620 (Associative property)",
+            "key_concepts": ["associative property"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Is (a ÷ b) ÷ c = a ÷ (b ÷ c) for integers? Provide a counter-example.",
+            "answer": "No. Let a=16, b=4, c=2. (16÷4)÷2 = 2. 16÷(4÷2) = 8. 2 ≠ 8.",
+            "key_concepts": ["non-associativity of division"],
+            "marks": 3,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Evaluate: [(-16) ÷ 4] × [(-42) ÷ (-7)]",
+            "answer": "(-4) × 6 = -24",
+            "key_concepts": ["order of operations"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Determine the integer whose product with (-1) is 0.",
+            "answer": "0",
+            "key_concepts": ["zero property"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "A certain freezing process requires that room temperature be lowered from 40°C at the rate of 5°C every hour. What will be the room temperature 12 hours after the process begins?",
+            "answer": "40 - (12 × 5) = 40 - 60 = -20°C",
+            "key_concepts": ["rate of change"],
+            "marks": 3,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the value of: (-1) × (-1) × (-1) ... 100 times.",
+            "answer": "1 (since 100 is even)",
+            "key_concepts": ["parity of exponents"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Simplify: (-8) × 9 + (-8) × 7",
+            "answer": "-8 × (9 + 7) = -8 × 16 = -128",
+            "key_concepts": ["distributive property"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "If a = -8, b = -7, c = 6, verify that (a + b) + c = a + (b + c).",
+            "answer": "LHS: (-15) + 6 = -9; RHS: -8 + (-1) = -9. Verified.",
+            "key_concepts": ["associative property of addition"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the integer 'a' if a ÷ 4 = -12.",
+            "answer": "a = -12 × 4 = -48",
+            "key_concepts": ["inverse operations"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Evaluate: 70 × (-19) + (-1) × 70",
+            "answer": "70 × [(-19) + (-1)] = 70 × (-20) = -1400",
+            "key_concepts": ["distributive property"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the sign of the product if we multiply 103 negative integers and 65 positive integers?",
+            "answer": "Negative (103 is odd)",
+            "key_concepts": ["product of negative integers"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "The sum of two integers is -16. If one of them is 53, find the other.",
+            "answer": "x + 53 = -16; x = -16 - 53 = -69",
+            "key_concepts": ["linear equations with integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Starting from (-5) × 4, find (-5) × (-3) using a pattern.",
+            "answer": "-20, -15, -10, -5, 0, 5, 10, 15 (incrementing by 5 each time).",
+            "key_concepts": ["patterns in multiplication"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Simplify: 23 - 41 - 11",
+            "answer": "-18 - 11 = -29",
+            "key_concepts": ["subtraction sequence"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Does [a × b] × c = a × [b × c] hold for all integers? Name the property.",
+            "answer": "Yes, Associative property of multiplication.",
+            "key_concepts": ["associativity"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Find: 625 × (-35) + (-625) × 65",
+            "answer": "625 × [(-35) + (-65)] = 625 × (-100) = -62500",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the value of x: x ÷ (-1) = -36",
+            "answer": "x = 36",
+            "key_concepts": ["division"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "If the temperature at 6 AM was -4°C and it rose by 8°C by noon, what was the noon temperature?",
+            "answer": "-4 + 8 = 4°C",
+            "key_concepts": ["addition of integers"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Is closure property valid for division of integers? Explain.",
+            "answer": "No, because -3 ÷ 2 is not an integer.",
+            "key_concepts": ["closure property"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the product: (-15) × 0 × (-18)",
+            "answer": "0",
+            "key_concepts": ["multiplication by zero"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the value of: [(-6) + 5] - [(-2) - 1]",
+            "answer": "(-1) - (-3) = -1 + 3 = 2",
+            "key_concepts": ["brackets and signs"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "A shopkeeper earns a profit of ₹1 by selling one pen and incurs a loss of 40 paise per pencil. In a month, she incurs a loss of ₹5. If she sold 45 pens, how many pencils did she sell?",
+            "answer": "Profit from pens = ₹45. Total Loss = -₹5. Loss from pencils = -₹5 - ₹45 = -₹50. Number of pencils = 5000 / 40 = 125.",
+            "key_concepts": ["complex word problem"],
+            "marks": 4,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Simplify: (-100) ÷ [(-20) ÷ (-4)]",
+            "answer": "(-100) ÷ 5 = -20",
+            "key_concepts": ["nested division"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Find: 15 × (-25) × (-4) × (-10)",
+            "answer": "15 × [(-25) × (-4)] × (-10) = 15 × 100 × (-10) = -15000",
+            "key_concepts": ["grouping for ease of calculation"],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

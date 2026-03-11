@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Judiciary",
+  "generated_at": "2026-03-07T13:10:00",
+  "difficulty": "medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the main role of the judiciary in India?",
+      "options": {
+        "A": "To make laws",
+        "B": "To interpret laws and deliver justice",
+        "C": "To collect taxes",
+        "D": "To conduct elections"
+      },
+      "correct_answer": "B",
+      "explanation": "The judiciary interprets laws and ensures justice in society.",
+      "difficulty": "medium",
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 2,
+      "question": "Which court is the highest court in India?",
+      "options": {
+        "A": "District Court",
+        "B": "High Court",
+        "C": "Supreme Court",
+        "D": "Civil Court"
+      },
+      "correct_answer": "C",
+      "explanation": "The Supreme Court is the highest judicial authority in India.",
+      "difficulty": "medium",
+      "source_section": "Supreme Court"
+    },
+    {
+      "question_number": 3,
+      "question": "Which court functions at the state level?",
+      "options": {
+        "A": "District Court",
+        "B": "High Court",
+        "C": "Supreme Court",
+        "D": "Village Court"
+      },
+      "correct_answer": "B",
+      "explanation": "High Courts function at the state level in the judicial system.",
+      "difficulty": "medium",
+      "source_section": "High Courts"
+    },
+    {
+      "question_number": 4,
+      "question": "Which court deals with cases at the district level?",
+      "options": {
+        "A": "District Court",
+        "B": "High Court",
+        "C": "Supreme Court",
+        "D": "International Court"
+      },
+      "correct_answer": "A",
+      "explanation": "District Courts handle cases at the district level.",
+      "difficulty": "medium",
+      "source_section": "District Courts"
+    },
+    {
+      "question_number": 5,
+      "question": "Who is the head of the Supreme Court of India?",
+      "options": {
+        "A": "President of India",
+        "B": "Prime Minister",
+        "C": "Chief Justice of India",
+        "D": "Governor"
+      },
+      "correct_answer": "C",
+      "explanation": "The Chief Justice of India heads the Supreme Court.",
+      "difficulty": "medium",
+      "source_section": "Supreme Court"
+    },
+    {
+      "question_number": 6,
+      "question": "What does the term 'judicial independence' mean?",
+      "options": {
+        "A": "Courts depend on the government",
+        "B": "Courts make political decisions",
+        "C": "Courts can make decisions without outside pressure",
+        "D": "Courts follow government orders"
+      },
+      "correct_answer": "C",
+      "explanation": "Judicial independence means courts make decisions freely without influence.",
+      "difficulty": "medium",
+      "source_section": "Independence of Judiciary"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following protects citizens' Fundamental Rights?",
+      "options": {
+        "A": "Legislature",
+        "B": "Judiciary",
+        "C": "Executive",
+        "D": "Police"
+      },
+      "correct_answer": "B",
+      "explanation": "The judiciary protects Fundamental Rights through legal decisions.",
+      "difficulty": "medium",
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 8,
+      "question": "Which system refers to the arrangement of courts at different levels?",
+      "options": {
+        "A": "Judicial hierarchy",
+        "B": "Political hierarchy",
+        "C": "Economic system",
+        "D": "Federal structure"
+      },
+      "correct_answer": "A",
+      "explanation": "Judicial hierarchy refers to courts arranged at different levels.",
+      "difficulty": "medium",
+      "source_section": "Court Hierarchy"
+    },
+    {
+      "question_number": 9,
+      "question": "What is an appeal in the judicial system?",
+      "options": {
+        "A": "A request to review a court decision",
+        "B": "A police investigation",
+        "C": "A government law",
+        "D": "A tax rule"
+      },
+      "correct_answer": "A",
+      "explanation": "An appeal asks a higher court to review a lower court’s decision.",
+      "difficulty": "medium",
+      "source_section": "Appeals"
+    },
+    {
+      "question_number": 10,
+      "question": "Which court hears appeals from District Courts?",
+      "options": {
+        "A": "High Court",
+        "B": "Supreme Court",
+        "C": "Civil Court",
+        "D": "Village Court"
+      },
+      "correct_answer": "A",
+      "explanation": "High Courts hear appeals from District Courts.",
+      "difficulty": "medium",
+      "source_section": "High Courts"
+    },
+    {
+      "question_number": 11,
+      "question": "Which principle means everyone is equal before the law?",
+      "options": {
+        "A": "Rule of law",
+        "B": "Colonial rule",
+        "C": "Economic reform",
+        "D": "Political control"
+      },
+      "correct_answer": "A",
+      "explanation": "Rule of law ensures that laws apply equally to all citizens.",
+      "difficulty": "medium",
+      "source_section": "Rule of Law"
+    },
+    {
+      "question_number": 12,
+      "question": "Which concept allows courts to examine whether laws follow the Constitution?",
+      "options": {
+        "A": "Judicial review",
+        "B": "Judicial hierarchy",
+        "C": "Judicial appointment",
+        "D": "Judicial activism"
+      },
+      "correct_answer": "A",
+      "explanation": "Judicial review allows courts to check the constitutionality of laws.",
+      "difficulty": "medium",
+      "source_section": "Judicial Review"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following ensures fairness in trials?",
+      "options": {
+        "A": "Police system",
+        "B": "Judiciary",
+        "C": "School system",
+        "D": "Market system"
+      },
+      "correct_answer": "B",
+      "explanation": "The judiciary ensures fair trials and justice.",
+      "difficulty": "medium",
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 14,
+      "question": "Which level of court is directly below the Supreme Court?",
+      "options": {
+        "A": "District Court",
+        "B": "High Court",
+        "C": "Village Court",
+        "D": "Civil Court"
+      },
+      "correct_answer": "B",
+      "explanation": "High Courts are below the Supreme Court in the judicial hierarchy.",
+      "difficulty": "medium",
+      "source_section": "Court Hierarchy"
+    },
+    {
+      "question_number": 15,
+      "question": "Which value is protected by the judiciary through court decisions?",
+      "options": {
+        "A": "Equality",
+        "B": "Entertainment",
+        "C": "Trade",
+        "D": "Transport"
+      },
+      "correct_answer": "A",
+      "explanation": "Courts protect equality and rights through legal decisions.",
+      "difficulty": "medium",
+      "source_section": "Rights Protection"
+    },
+    {
+      "question_number": 16,
+      "question": "Which concept allows citizens to approach courts for public issues?",
+      "options": {
+        "A": "Public Interest Litigation",
+        "B": "Private law",
+        "C": "Civil dispute",
+        "D": "Criminal trial"
+      },
+      "correct_answer": "A",
+      "explanation": "Public Interest Litigation allows citizens to seek justice for public causes.",
+      "difficulty": "medium",
+      "source_section": "Public Interest Litigation"
+    },
+    {
+      "question_number": 17,
+      "question": "Which court decision is binding on all other courts in India?",
+      "options": {
+        "A": "District Court",
+        "B": "High Court",
+        "C": "Supreme Court",
+        "D": "Local Court"
+      },
+      "correct_answer": "C",
+      "explanation": "Supreme Court decisions are binding on all courts.",
+      "difficulty": "medium",
+      "source_section": "Supreme Court"
+    },
+    {
+      "question_number": 18,
+      "question": "Which concept ensures fairness and equality in the legal system?",
+      "options": {
+        "A": "Rule of law",
+        "B": "Colonial rule",
+        "C": "Political authority",
+        "D": "Economic system"
+      },
+      "correct_answer": "A",
+      "explanation": "Rule of law ensures that everyone is treated equally before the law.",
+      "difficulty": "medium",
+      "source_section": "Rule of Law"
+    },
+    {
+      "question_number": 19,
+      "question": "Which branch of government interprets the Constitution?",
+      "options": {
+        "A": "Executive",
+        "B": "Legislature",
+        "C": "Judiciary",
+        "D": "Media"
+      },
+      "correct_answer": "C",
+      "explanation": "The judiciary interprets the Constitution.",
+      "difficulty": "medium",
+      "source_section": "Role of Judiciary"
+    },
+    {
+      "question_number": 20,
+      "question": "Which process allows higher courts to review decisions of lower courts?",
+      "options": {
+        "A": "Appeal",
+        "B": "Election",
+        "C": "Taxation",
+        "D": "Administration"
+      },
+      "correct_answer": "A",
+      "explanation": "Appeals allow higher courts to review lower court decisions.",
+      "difficulty": "medium",
+      "source_section": "Appeals"
+    },
+    {
+      "question_number": 21,
+      "question": "Which value helps maintain trust in the judicial system?",
+      "options": {
+        "A": "Fairness",
+        "B": "Bias",
+        "C": "Conflict",
+        "D": "Discrimination"
+      },
+      "correct_answer": "A",
+      "explanation": "Fairness and transparency build trust in the judiciary.",
+      "difficulty": "medium",
+      "source_section": "Judicial System"
+    },
+    {
+      "question_number": 22,
+      "question": "Which document provides the framework for the Indian judiciary?",
+      "options": {
+        "A": "The Constitution",
+        "B": "School rules",
+        "C": "Newspaper",
+        "D": "Market laws"
+      },
+      "correct_answer": "A",
+      "explanation": "The Constitution defines the structure and powers of the judiciary.",
+      "difficulty": "medium",
+      "source_section": "Indian Constitution"
+    },
+    {
+      "question_number": 23,
+      "question": "Which value ensures that justice is delivered fairly?",
+      "options": {
+        "A": "Equality before law",
+        "B": "Political power",
+        "C": "Economic growth",
+        "D": "Administrative control"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality before law ensures fair treatment for everyone.",
+      "difficulty": "medium",
+      "source_section": "Rule of Law"
+    },
+    {
+      "question_number": 24,
+      "question": "Which concept protects citizens against misuse of power?",
+      "options": {
+        "A": "Judicial review",
+        "B": "Colonial rule",
+        "C": "Political authority",
+        "D": "Economic reform"
+      },
+      "correct_answer": "A",
+      "explanation": "Judicial review allows courts to check government actions.",
+      "difficulty": "medium",
+      "source_section": "Judicial Review"
+    },
+    {
+      "question_number": 25,
+      "question": "Which institution ensures that justice is delivered according to law?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Police",
+        "C": "Market",
+        "D": "School"
+      },
+      "correct_answer": "A",
+      "explanation": "The judiciary ensures justice according to the law.",
+      "difficulty": "medium",
+      "source_section": "Conclusion"
+    }
+  ]
+}

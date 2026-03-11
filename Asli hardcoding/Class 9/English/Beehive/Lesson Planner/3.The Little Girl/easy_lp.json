@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Little Girl",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the story and main events of 'The Little Girl'",
+        "Identify the key characters and their traits",
+        "Comprehend the father–daughter relationship",
+        "Sequence events in the story correctly",
+        "Develop basic comprehension and summarization skills",
+        "Learn and use new vocabulary from the chapter"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Author: Katherine Mansfield",
+                "Setting of the story",
+                "Main characters: Kezia and her father"
+            ],
+            "teaching_strategy": [
+                "Discussion about family relationships",
+                "Board explanation of story context"
+            ],
+            "student_activities": [
+                "Predict the story plot",
+                "Discuss personal experiences with strict or caring parents"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reading – Part 1",
+            "topics_covered": [
+                "Kezia’s daily life and her feelings about her father",
+                "Introduction to incidents such as the speech practice",
+                "Understanding Kezia’s emotions"
+            ],
+            "teaching_strategy": [
+                "Read aloud by students",
+                "Explain difficult words and expressions"
+            ],
+            "student_activities": [
+                "Underline important phrases",
+                "Write 2–3 sentences on Kezia’s feelings"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Quick oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Reading – Part 2",
+            "topics_covered": [
+                "Pin-cushion incident and its impact",
+                "Kezia’s nightmare",
+                "How the father–daughter relationship evolves"
+            ],
+            "teaching_strategy": [
+                "Guided reading",
+                "Discussion on character reactions"
+            ],
+            "student_activities": [
+                "List events in chronological order",
+                "Explain each event in one sentence"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook activity evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Character Analysis",
+            "topics_covered": [
+                "Traits of Kezia and her father",
+                "Understanding their emotions and motivations",
+                "How events influence character behavior"
+            ],
+            "teaching_strategy": [
+                "Mind mapping on board",
+                "Group discussion of character traits"
+            ],
+            "student_activities": [
+                "Write 3–4 character traits with examples",
+                "Explain character responses in 2–3 sentences"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Values",
+            "topics_covered": [
+                "Main theme: Father–daughter relationship and understanding",
+                "Values of love, care, and empathy",
+                "Lesson for readers"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion",
+                "Brainstorming session on moral lessons"
+            ],
+            "student_activities": [
+                "Write the theme in 2–3 sentences",
+                "Give examples from the story to support the theme"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary, Summary, and Reflection",
+            "topics_covered": [
+                "Key vocabulary from the chapter",
+                "Writing a short summary of the story",
+                "Reflecting on the father–daughter relationship"
+            ],
+            "teaching_strategy": [
+                "Flowchart of events on board",
+                "Board explanation of summary writing"
+            ],
+            "student_activities": [
+                "List new words with meanings",
+                "Write a summary in 8–10 sentences",
+                "Reflect on personal experiences with parents or elders"
+            ],
+            "assessment": [
+                "Written summary evaluation",
+                "Vocabulary quiz",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Printed story excerpts"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Class participation",
+        "Oral questioning",
+        "Short written exercises",
+        "Summary writing"
+    ],
+    "teacher_tip": "Encourage students to relate the story to their own experiences with family and discuss how understanding emotions improves relationships."
+}

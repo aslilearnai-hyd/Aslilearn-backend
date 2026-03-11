@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Triangles",
+    "generated_at": "2026-03-06T11:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define a triangle and give one example.",
+            "answer": "A triangle is a closed figure formed by three line segments joining three non-collinear points. Example: an equilateral triangle.",
+            "answer_outline": ["Definition", "Example"],
+            "key_concepts": ["triangle"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State the angle sum property of a triangle.",
+            "answer": "The sum of the three interior angles of a triangle is 180°.",
+            "answer_outline": ["Statement", "Explanation"],
+            "key_concepts": ["angle sum property"],
+            "marks": 4,
+            "source_section": "7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Classify triangles based on sides.",
+            "answer": "Equilateral: all sides equal; Isosceles: two sides equal; Scalene: all sides unequal.",
+            "answer_outline": ["Equilateral", "Isosceles", "Scalene"],
+            "key_concepts": ["types based on sides"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Classify triangles based on angles.",
+            "answer": "Acute-angled: all angles < 90°; Right-angled: one angle = 90°; Obtuse-angled: one angle > 90°.",
+            "answer_outline": ["Acute", "Right", "Obtuse"],
+            "key_concepts": ["types based on angles"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of median of a triangle.",
+            "answer": "A median is a line segment joining a vertex to the midpoint of the opposite side.",
+            "answer_outline": ["Definition", "Example"],
+            "key_concepts": ["median"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the concept of altitude of a triangle.",
+            "answer": "An altitude is a perpendicular drawn from a vertex to the opposite side or its extension.",
+            "answer_outline": ["Definition", "Example"],
+            "key_concepts": ["altitude"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the concept of angle bisector of a triangle.",
+            "answer": "An angle bisector divides the angle at a vertex into two equal angles.",
+            "answer_outline": ["Definition", "Example"],
+            "key_concepts": ["angle bisector"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the concept of perpendicular bisector of a side of a triangle.",
+            "answer": "A perpendicular bisector is a line perpendicular to a side and passing through its midpoint.",
+            "answer_outline": ["Definition", "Example"],
+            "key_concepts": ["perpendicular bisector"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "State the triangle inequality theorem.",
+            "answer": "The sum of any two sides of a triangle is greater than the third side.",
+            "answer_outline": ["Statement", "Explanation"],
+            "key_concepts": ["triangle inequality"],
+            "marks": 4,
+            "source_section": "7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the centroid of a triangle.",
+            "answer": "The centroid is the point of intersection of medians and divides each median in a 2:1 ratio.",
+            "answer_outline": ["Definition", "Properties"],
+            "key_concepts": ["centroid"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the incenter of a triangle.",
+            "answer": "The incenter is the point of intersection of angle bisectors and is the center of the inscribed circle.",
+            "answer_outline": ["Definition", "Properties"],
+            "key_concepts": ["incenter"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the circumcenter of a triangle.",
+            "answer": "The circumcenter is the intersection of perpendicular bisectors of sides and is the center of the circumscribed circle.",
+            "answer_outline": ["Definition", "Properties"],
+            "key_concepts": ["circumcenter"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the orthocenter of a triangle.",
+            "answer": "The orthocenter is the intersection point of altitudes of a triangle.",
+            "answer_outline": ["Definition", "Properties"],
+            "key_concepts": ["orthocenter"],
+            "marks": 4,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the area of a triangle using base and height.",
+            "answer": "Area = 1/2 × base × height.",
+            "answer_outline": ["Formula", "Explanation"],
+            "key_concepts": ["area"],
+            "marks": 4,
+            "source_section": "7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain area of a triangle using Heron's formula.",
+            "answer": "Area = √[s(s−a)(s−b)(s−c)] where s = (a+b+c)/2 and a, b, c are sides of the triangle.",
+            "answer_outline": ["Formula", "Explanation"],
+            "key_concepts": ["area", "Heron's formula"],
+            "marks": 4,
+            "source_section": "7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain similarity of triangles.",
+            "answer": "Triangles are similar if their corresponding angles are equal and corresponding sides are proportional.",
+            "answer_outline": ["Definition", "Explanation"],
+            "key_concepts": ["similar triangles"],
+            "marks": 4,
+            "source_section": "7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "State the criteria for similarity of triangles.",
+            "answer": "AA, SAS, and SSS are the criteria for similarity of triangles.",
+            "answer_outline": ["Criteria", "Explanation"],
+            "key_concepts": ["similarity criteria"],
+            "marks": 4,
+            "source_section": "7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain Pythagoras theorem in right-angled triangles.",
+            "answer": "In a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides.",
+            "answer_outline": ["Statement", "Explanation"],
+            "key_concepts": ["Pythagoras theorem"],
+            "marks": 4,
+            "source_section": "7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain Pythagoras theorem using similar triangles.",
+            "answer": "By drawing a perpendicular from the right angle to the hypotenuse, the resulting smaller triangles are similar; using proportionality, we derive a² + b² = c².",
+            "answer_outline": ["Construction", "Proof"],
+            "key_concepts": ["Pythagoras theorem", "similar triangles"],
+            "marks": 4,
+            "source_section": "7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain properties of equilateral triangles.",
+            "answer": "All sides are equal, all angles are 60°, medians, altitudes, and angle bisectors coincide.",
+            "answer_outline": ["Sides", "Angles", "Special lines"],
+            "key_concepts": ["equilateral triangle"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain properties of isosceles triangles.",
+            "answer": "Two sides are equal, angles opposite equal sides are equal, medians and altitudes have special relations.",
+            "answer_outline": ["Sides", "Angles", "Special lines"],
+            "key_concepts": ["isosceles triangle"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain properties of scalene triangles.",
+            "answer": "All sides unequal, all angles unequal, medians, altitudes, and bisectors are distinct.",
+            "answer_outline": ["Sides", "Angles", "Special lines"],
+            "key_concepts": ["scalene triangle"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of triangles in geometry.",
+            "answer": "Triangles are fundamental in geometry, used in constructions, proofs, and establishing properties of other polygons.",
+            "answer_outline": ["Importance", "Examples"],
+            "key_concepts": ["geometry applications"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of triangles in daily life.",
+            "answer": "Triangles are used in construction, engineering, bridges, and design due to their stability and structural strength.",
+            "answer_outline": ["Importance", "Examples"],
+            "key_concepts": ["daily life applications"],
+            "marks": 4,
+            "source_section": "7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the centroid, circumcenter, and orthocenter relation in an equilateral triangle.",
+            "answer": "In an equilateral triangle, the centroid, circumcenter, and orthocenter coincide at a single point.",
+            "answer_outline": ["Definition", "Explanation"],
+            "key_concepts": ["triangle centers"],
+            "marks": 4,
+            "source_section": "7.4"
+        }
+    ]
+}

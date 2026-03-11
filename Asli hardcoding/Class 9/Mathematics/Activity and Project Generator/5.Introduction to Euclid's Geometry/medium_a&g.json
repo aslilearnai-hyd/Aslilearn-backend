@@ -1,0 +1,170 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Euclid’s Geometry",
+    "difficulty": "Medium",
+    "source_pdf": "m9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Axioms Illustration Chart",
+            "objective": "Understand Euclid’s axioms with visual examples",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write three Euclid axioms",
+                "Draw diagrams illustrating each axiom",
+                "Explain the meaning below each diagram"
+            ],
+            "learning_outcome": "Understands axioms through diagrams",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Unique Line Investigation",
+            "objective": "Verify that only one line passes through two points",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Mark two points A and B",
+                "Draw a line through them",
+                "Attempt drawing another different line through the same points"
+            ],
+            "learning_outcome": "Understands uniqueness of a line",
+            "evaluation": "Correct reasoning (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Circle Construction Activity",
+            "objective": "Apply Euclid’s third postulate",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a line segment AB",
+                "Use compass to draw circles with centres A and B",
+                "Mark their intersection point"
+            ],
+            "learning_outcome": "Applies circle construction",
+            "evaluation": "Accuracy of construction (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Equilateral Triangle Construction",
+            "objective": "Construct equilateral triangle using Euclid's method",
+            "materials": [
+                "Compass",
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a line segment AB",
+                "Draw circles with centres A and B",
+                "Join intersection point to A and B"
+            ],
+            "learning_outcome": "Learns geometric construction",
+            "evaluation": "Correct triangle construction (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Axiom Demonstration",
+            "objective": "Demonstrate 'things equal to same thing are equal'",
+            "materials": [
+                "Scale",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw three equal line segments",
+                "Compare their lengths",
+                "Write the axiom explanation"
+            ],
+            "learning_outcome": "Understands equality principle",
+            "evaluation": "Correct demonstration (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Line Extension Activity",
+            "objective": "Understand postulate about extending a line",
+            "materials": [
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw a line segment AB",
+                "Extend it on both sides",
+                "Label the extended line"
+            ],
+            "learning_outcome": "Understands infinite extension of line",
+            "evaluation": "Correct diagram (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Intersecting Lines Model",
+            "objective": "Explore intersection of lines",
+            "materials": [
+                "Chart paper",
+                "Scale"
+            ],
+            "steps": [
+                "Draw two intersecting lines",
+                "Mark intersection point",
+                "Explain why two lines meet at one point"
+            ],
+            "learning_outcome": "Understands line intersection",
+            "evaluation": "Accuracy of explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Right Angle Comparison",
+            "objective": "Verify all right angles are equal",
+            "materials": [
+                "Protractor",
+                "Notebook"
+            ],
+            "steps": [
+                "Draw two right angles",
+                "Measure them using protractor",
+                "Compare results"
+            ],
+            "learning_outcome": "Understands right angle equality",
+            "evaluation": "Correct measurement (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Geometry Terms Table",
+            "objective": "Understand undefined terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List point, line, plane",
+                "Write simple explanations",
+                "Draw small diagrams"
+            ],
+            "learning_outcome": "Identifies undefined terms",
+            "evaluation": "Completeness (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Euclid Timeline",
+            "objective": "Learn historical background of Euclid",
+            "materials": [
+                "Chart paper"
+            ],
+            "steps": [
+                "Write key events related to Euclid",
+                "Arrange them in timeline format",
+                "Add small illustrations"
+            ],
+            "learning_outcome": "Understands history of geometry",
+            "evaluation": "Presentation quality (10 marks)"
+        }
+    ]
+}

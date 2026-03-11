@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science (Civics)",
+  "chapter": "Judiciary",
+  "difficulty": "Hard",
+  "source_pdf": "class8_political_life_III.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Analyse Judicial Independence",
+      "objective": "Understand why the judiciary must remain independent from other branches of government",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Write the meaning of judicial independence",
+        "Explain how independence protects citizens’ rights",
+        "Give two examples of situations where independent courts are necessary"
+      ],
+      "learning_outcome": "Explains the importance of judicial independence",
+      "evaluation": "Depth of explanation and examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Hierarchy of Courts Case Flow",
+      "objective": "Understand how cases move through the judicial system",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Write the three main levels of courts in India",
+        "Draw a flow diagram showing how a case can move from a lower court to the Supreme Court",
+        "Explain the idea of appeal"
+      ],
+      "learning_outcome": "Understands the appellate system in the judiciary",
+      "evaluation": "Accuracy of diagram and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Public Interest Litigation Research",
+      "objective": "Understand how PIL helps citizens approach the courts",
+      "materials": ["Textbook", "Internet/Newspaper", "Notebook"],
+      "steps": [
+        "Research one example of Public Interest Litigation in India",
+        "Write what issue was raised in the PIL",
+        "Explain how the court’s decision helped the public"
+      ],
+      "learning_outcome": "Connects judiciary functions with real-life cases",
+      "evaluation": "Quality of research and explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Mock Court Activity",
+      "objective": "Understand how a court hearing works",
+      "materials": ["Notebook", "Classroom discussion"],
+      "steps": [
+        "Create a simple case scenario in class",
+        "Assign roles like judge, lawyer, and witness",
+        "Conduct a short mock trial and give a verdict"
+      ],
+      "learning_outcome": "Understands courtroom procedures and decision-making",
+      "evaluation": "Participation and understanding of roles (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Case Study: Protection of Rights",
+      "objective": "Analyse how courts protect Fundamental Rights",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Write about a situation where someone’s rights are violated",
+        "Explain how the person can approach the court",
+        "Explain how the judiciary can restore justice"
+      ],
+      "learning_outcome": "Applies judicial principles to real-life situations",
+      "evaluation": "Logical reasoning and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Compare Civil and Criminal Justice",
+      "objective": "Understand different types of legal cases",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the meaning of civil and criminal cases",
+        "List two differences between them",
+        "Give one example of each type"
+      ],
+      "learning_outcome": "Develops analytical understanding of legal systems",
+      "evaluation": "Accuracy of comparison (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Role of Evidence in Justice",
+      "objective": "Understand how evidence influences court decisions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write what evidence means in law",
+        "List different types of evidence used in courts",
+        "Explain how evidence helps judges make fair decisions"
+      ],
+      "learning_outcome": "Understands the importance of evidence in the justice system",
+      "evaluation": "Clarity and correctness (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Judiciary and Democracy Essay",
+      "objective": "Understand the relationship between judiciary and democracy",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a short essay explaining why courts are important in a democracy",
+        "Explain how the judiciary protects equality and justice",
+        "Include examples from India"
+      ],
+      "learning_outcome": "Explains the democratic role of the judiciary",
+      "evaluation": "Clarity and depth of essay (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Study a Landmark Judgement",
+      "objective": "Understand the impact of important court decisions",
+      "materials": ["Textbook", "Internet", "Notebook"],
+      "steps": [
+        "Find one important Supreme Court judgement",
+        "Write what the case was about",
+        "Explain how the judgement affected society"
+      ],
+      "learning_outcome": "Recognises the influence of judicial decisions",
+      "evaluation": "Accuracy and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Critical Thinking: Justice in Society",
+      "objective": "Encourage analysis of justice in real life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write three situations where people may need to go to court",
+        "Explain how the judiciary can solve these issues",
+        "Explain why equal justice is important for society"
+      ],
+      "learning_outcome": "Applies the concept of justice to everyday situations",
+      "evaluation": "Logical reasoning and examples (10 marks)"
+    }
+  ]
+}

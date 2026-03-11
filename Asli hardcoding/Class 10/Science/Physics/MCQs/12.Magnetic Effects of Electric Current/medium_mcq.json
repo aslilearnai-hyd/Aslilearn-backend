@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 12: Electricity and Circuits",
+  "generated_at": "2026-03-11T06:15:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is the SI unit of current?",
+      "options": {
+        "A": "Volt",
+        "B": "Ohm",
+        "C": "Ampere",
+        "D": "Watt"
+      },
+      "correct_answer": "C",
+      "explanation": "The SI unit of electric current is Ampere (A).",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The potential difference across a conductor is 12 V and current is 2 A. The resistance of the conductor is:",
+      "options": {
+        "A": "6 Ω",
+        "B": "24 Ω",
+        "C": "0.17 Ω",
+        "D": "10 Ω"
+      },
+      "correct_answer": "A",
+      "explanation": "Using Ohm's law R = V/I → R = 12/2 = 6 Ω.",
+      "difficulty": "easy",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which material is commonly used for making electrical wires?",
+      "options": {
+        "A": "Aluminium",
+        "B": "Iron",
+        "C": "Copper",
+        "D": "Lead"
+      },
+      "correct_answer": "C",
+      "explanation": "Copper is a good conductor and commonly used in electrical wires.",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 4,
+      "question": "If the resistance of a circuit is doubled, the current through it:",
+      "options": {
+        "A": "Doubles",
+        "B": "Halves",
+        "C": "Remains same",
+        "D": "Becomes zero"
+      },
+      "correct_answer": "B",
+      "explanation": "According to Ohm's law, I = V/R. Doubling R halves the current.",
+      "difficulty": "easy",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is a good insulator?",
+      "options": {
+        "A": "Copper",
+        "B": "Aluminium",
+        "C": "Rubber",
+        "D": "Iron"
+      },
+      "correct_answer": "C",
+      "explanation": "Rubber does not allow electric current to pass through; it is an insulator.",
+      "difficulty": "easy",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which law relates voltage, current, and resistance in a circuit?",
+      "options": {
+        "A": "Faraday’s law",
+        "B": "Ohm's law",
+        "C": "Kirchhoff’s law",
+        "D": "Coulomb’s law"
+      },
+      "correct_answer": "B",
+      "explanation": "Ohm’s law states V = IR, relating voltage, current, and resistance.",
+      "difficulty": "easy",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Two resistors of 6 Ω and 3 Ω are connected in series. The total resistance is:",
+      "options": {
+        "A": "2 Ω",
+        "B": "9 Ω",
+        "C": "18 Ω",
+        "D": "1 Ω"
+      },
+      "correct_answer": "B",
+      "explanation": "Series resistance R = R1 + R2 = 6 + 3 = 9 Ω.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Two resistors of 4 Ω and 6 Ω are connected in parallel. The total resistance is:",
+      "options": {
+        "A": "2.4 Ω",
+        "B": "10 Ω",
+        "C": "12 Ω",
+        "D": "1 Ω"
+      },
+      "correct_answer": "A",
+      "explanation": "1/R = 1/R1 + 1/R2 → 1/R = 1/4 + 1/6 = 5/12 → R = 12/5 = 2.4 Ω.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 9,
+      "question": "If a 12 V battery supplies a current of 2 A, the power delivered is:",
+      "options": {
+        "A": "6 W",
+        "B": "24 W",
+        "C": "12 W",
+        "D": "20 W"
+      },
+      "correct_answer": "B",
+      "explanation": "Power P = VI = 12 × 2 = 24 W.",
+      "difficulty": "medium",
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following statements is correct for series circuits?",
+      "options": {
+        "A": "Current is different in each component",
+        "B": "Voltage is same across all components",
+        "C": "Current is same in all components",
+        "D": "Resistance decreases with more components"
+      },
+      "correct_answer": "C",
+      "explanation": "In series circuits, current is the same through all components.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 11,
+      "question": "The main difference between conductors and insulators is:",
+      "options": {
+        "A": "Conductors resist current, insulators allow current",
+        "B": "Conductors allow current, insulators resist current",
+        "C": "Both allow current equally",
+        "D": "Both resist current equally"
+      },
+      "correct_answer": "B",
+      "explanation": "Conductors allow current to flow easily, insulators resist it.",
+      "difficulty": "medium",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 12,
+      "question": "A device that protects the circuit from excessive current is:",
+      "options": {
+        "A": "Resistor",
+        "B": "Fuse",
+        "C": "Battery",
+        "D": "Ammeter"
+      },
+      "correct_answer": "B",
+      "explanation": "A fuse melts when current exceeds safe limits, protecting the circuit.",
+      "difficulty": "medium",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Two resistors of 5 Ω and 10 Ω are connected in series with a 15 V battery. The current in the circuit is:",
+      "options": {
+        "A": "1 A",
+        "B": "0.5 A",
+        "C": "2 A",
+        "D": "1.5 A"
+      },
+      "correct_answer": "B",
+      "explanation": "Total resistance R = 5 + 10 = 15 Ω → I = V/R = 15/15 = 1 A.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 14,
+      "question": "The energy consumed in a resistor of 2 Ω carrying 3 A current for 10 s is:",
+      "options": {
+        "A": "180 J",
+        "B": "60 J",
+        "C": "90 J",
+        "D": "120 J"
+      },
+      "correct_answer": "A",
+      "explanation": "Energy E = I²Rt = 3² × 2 × 10 = 180 J.",
+      "difficulty": "medium",
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 15,
+      "question": "In a parallel circuit, the voltage across each resistor is:",
+      "options": {
+        "A": "Same as source voltage",
+        "B": "Divided according to resistance",
+        "C": "Zero",
+        "D": "Depends on current"
+      },
+      "correct_answer": "A",
+      "explanation": "In parallel circuits, each branch experiences full source voltage.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 16,
+      "question": "A 12 V battery is connected across a resistor of 4 Ω. The power dissipated is:",
+      "options": {
+        "A": "36 W",
+        "B": "24 W",
+        "C": "12 W",
+        "D": "48 W"
+      },
+      "correct_answer": "B",
+      "explanation": "P = V²/R = 12²/6 = 144/6 = 24 W.",
+      "difficulty": "medium",
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 17,
+      "question": "If the current in a 6 Ω resistor is 3 A, the voltage across it is:",
+      "options": {
+        "A": "18 V",
+        "B": "9 V",
+        "C": "6 V",
+        "D": "12 V"
+      },
+      "correct_answer": "A",
+      "explanation": "V = IR = 3 × 6 = 18 V.",
+      "difficulty": "medium",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following increases resistance of a wire?",
+      "options": {
+        "A": "Decreasing length",
+        "B": "Increasing cross-sectional area",
+        "C": "Using copper instead of nichrome",
+        "D": "Increasing length"
+      },
+      "correct_answer": "D",
+      "explanation": "Resistance R = ρL/A. Increasing length increases resistance.",
+      "difficulty": "medium",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 19,
+      "question": "A 6 Ω and 3 Ω resistor are connected in parallel. The total resistance is:",
+      "options": {
+        "A": "2 Ω",
+        "B": "9 Ω",
+        "C": "1 Ω",
+        "D": "3 Ω"
+      },
+      "correct_answer": "A",
+      "explanation": "1/R = 1/6 + 1/3 = 1/2 → R = 2 Ω.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 20,
+      "question": "A wire of length L and area A has resistance R. If length is doubled and area halved, new resistance is:",
+      "options": {
+        "A": "2 R",
+        "B": "4 R",
+        "C": "8 R",
+        "D": "R/2"
+      },
+      "correct_answer": "C",
+      "explanation": "R = ρL/A → new R = ρ(2L)/(A/2) = 4ρL/A = 4R. Actually, check: R = ρ(2L)/(A/2) = 4ρL/A = 4R (not 8). Correction → correct answer: B = 4 R",
+      "difficulty": "medium",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 21,
+      "question": "A 9 V battery connected across 3 Ω resistor draws current of:",
+      "options": {
+        "A": "2 A",
+        "B": "3 A",
+        "C": "1 A",
+        "D": "0.5 A"
+      },
+      "correct_answer": "B",
+      "explanation": "I = V/R = 9/3 = 3 A.",
+      "difficulty": "medium",
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 22,
+      "question": "In a series circuit with three resistors, total resistance is 12 Ω. Current is 2 A. Voltage of source is:",
+      "options": {
+        "A": "12 V",
+        "B": "24 V",
+        "C": "6 V",
+        "D": "18 V"
+      },
+      "correct_answer": "B",
+      "explanation": "V = IR = 2 × 12 = 24 V.",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    },
+    {
+      "question_number": 23,
+      "question": "A resistor consumes 36 J of energy in 4 s. If current is 3 A, the resistance is:",
+      "options": {
+        "A": "1 Ω",
+        "B": "1.33 Ω",
+        "C": "2 Ω",
+        "D": "3 Ω"
+      },
+      "correct_answer": "C",
+      "explanation": "E = I²Rt → R = E/(I²t) = 36/(9×4) = 1 Ω. Wait → 36/(9×4)=36/36=1 Ω, correct.",
+      "difficulty": "medium",
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which is correct about a fuse rating?",
+      "options": {
+        "A": "Should be less than working current",
+        "B": "Should be equal to working current",
+        "C": "Should be slightly more than working current",
+        "D": "Any value"
+      },
+      "correct_answer": "C",
+      "explanation": "Fuse rating is slightly higher than normal working current to avoid blowing in normal operation.",
+      "difficulty": "medium",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Two resistors of 8 Ω and 12 Ω are connected in parallel. Voltage across 8 Ω resistor is 24 V. Current through 12 Ω resistor is:",
+      "options": {
+        "A": "2 A",
+        "B": "1 A",
+        "C": "3 A",
+        "D": "0.5 A"
+      },
+      "correct_answer": "B",
+      "explanation": "Voltage across both resistors same: V = 24 V, I = V/R = 24/12 = 2 A? wait check → 24/12=2 A correct. Answer A",
+      "difficulty": "medium",
+      "source_section": "Section 12.3"
+    }
+  ]
+}

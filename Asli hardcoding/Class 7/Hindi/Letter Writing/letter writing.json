@@ -1,0 +1,709 @@
+{
+  "subject": "Hindi",
+  "book": "Malhar",
+  "content": "Letter Writing (पत्र लेखन)",
+  "class": "7",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "Giridhar Kaviraay Ki Kundliya",
+      "source": "Malhar – Chapter 1",
+      "title": "प्रकृति का प्रेम",
+      "question": "अपने मित्र को पत्र लिखकर प्राकृतिक सुंदरता और उसके संरक्षण के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 2,
+      "chapter": "Giridhar Kaviraay Ki Kundliya",
+      "source": "Malhar – Chapter 1",
+      "title": "सद्गुण",
+      "question": "अपने छोटे भाई को पत्र लिखकर सद्गुणों के पालन के महत्व के बारे में समझाइए।"
+    },
+    {
+      "id": 3,
+      "chapter": "Varsha Bahar",
+      "source": "Malhar – Chapter 2",
+      "title": "बारिश का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर वर्षा ऋतु की सुंदरता और महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 4,
+      "chapter": "Varsha Bahar",
+      "source": "Malhar – Chapter 2",
+      "title": "प्रकृति और मानव",
+      "question": "अपने मित्र को पत्र लिखकर मानव और प्रकृति के संबंध के बारे में समझाइए।"
+    },
+    {
+      "id": 5,
+      "chapter": "Ek Ratri Ki Baat",
+      "source": "Malhar – Chapter 3",
+      "title": "सच्चाई",
+      "question": "अपने मित्र को पत्र लिखकर सच्चाई और ईमानदारी का महत्व समझाइए।"
+    },
+    {
+      "id": 6,
+      "chapter": "Ek Ratri Ki Baat",
+      "source": "Malhar – Chapter 3",
+      "title": "संवेदनशीलता",
+      "question": "अपने छोटे भाई को पत्र लिखकर दूसरों के प्रति संवेदनशील होने की सलाह दीजिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "Humari Sanskriti",
+      "source": "Malhar – Chapter 4",
+      "title": "संस्कृति का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर हमारी संस्कृति और उसकी विशेषताओं के बारे में बताइए।"
+    },
+    {
+      "id": 8,
+      "chapter": "Humari Sanskriti",
+      "source": "Malhar – Chapter 4",
+      "title": "त्योहार",
+      "question": "अपने मित्र को पत्र लिखकर हमारे प्रमुख त्योहारों के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 9,
+      "chapter": "Mitra Ki Yaad",
+      "source": "Malhar – Chapter 5",
+      "title": "मित्रता",
+      "question": "अपने मित्र को पत्र लिखकर सच्ची मित्रता और उसकी विशेषताओं के बारे में बताइए।"
+    },
+    {
+      "id": 10,
+      "chapter": "Mitra Ki Yaad",
+      "source": "Malhar – Chapter 5",
+      "title": "सहयोग",
+      "question": "अपने मित्र को पत्र लिखकर मित्रता में सहयोग का महत्व समझाइए।"
+    },
+    {
+      "id": 11,
+      "chapter": "Chidiya",
+      "source": "Malhar – Chapter 6",
+      "title": "पक्षियों की सुरक्षा",
+      "question": "नगर निगम को पत्र लिखकर पक्षियों के संरक्षण के लिए उपाय सुझाइए।"
+    },
+    {
+      "id": 12,
+      "chapter": "Chidiya",
+      "source": "Malhar – Chapter 6",
+      "title": "प्रकृति प्रेम",
+      "question": "अपने मित्र को पत्र लिखकर प्रकृति और पक्षियों के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 13,
+      "chapter": "Sanskritik Yatra",
+      "source": "Malhar – Chapter 7",
+      "title": "तीर्थ यात्रा",
+      "question": "अपने मित्र को पत्र लिखकर किसी तीर्थ यात्रा के अनुभव का वर्णन कीजिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "Sanskritik Yatra",
+      "source": "Malhar – Chapter 7",
+      "title": "धार्मिक महत्व",
+      "question": "अपने मित्र को पत्र लिखकर तीर्थस्थल के धार्मिक महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 15,
+      "chapter": "Ek Shiksha",
+      "source": "Malhar – Chapter 8",
+      "title": "नैतिक शिक्षा",
+      "question": "अपने मित्र को पत्र लिखकर नैतिक शिक्षा और उसके महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 16,
+      "chapter": "Ek Shiksha",
+      "source": "Malhar – Chapter 8",
+      "title": "सदाचार",
+      "question": "अपने छोटे भाई को पत्र लिखकर सदाचार का पालन करने की सलाह दीजिए।"
+    },
+    {
+      "id": 17,
+      "chapter": "Nayi Soch",
+      "source": "Malhar – Chapter 9",
+      "title": "सकारात्मक सोच",
+      "question": "अपने मित्र को पत्र लिखकर जीवन में सकारात्मक सोच रखने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 18,
+      "chapter": "Nayi Soch",
+      "source": "Malhar – Chapter 9",
+      "title": "नई आदतें",
+      "question": "अपने छोटे भाई को पत्र लिखकर अच्छी आदतें अपनाने की सलाह दीजिए।"
+    },
+    {
+      "id": 19,
+      "chapter": "Samajik Sandesh",
+      "source": "Malhar – Chapter 10",
+      "title": "सामाजिक जिम्मेदारी",
+      "question": "अपने मित्र को पत्र लिखकर समाज में जिम्मेदार नागरिक बनने का महत्व बताइए।"
+    },
+    {
+      "id": 20,
+      "chapter": "Samajik Sandesh",
+      "source": "Malhar – Chapter 10",
+      "title": "सामाजिक सेवा",
+      "question": "अपने मित्र को पत्र लिखकर समाज सेवा करने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 21,
+      "chapter": "School Life",
+      "source": "General Writing",
+      "title": "विद्यालय जीवन",
+      "question": "अपने मित्र को पत्र लिखकर अपने विद्यालय जीवन के अनुभव साझा कीजिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "School Life",
+      "source": "General Writing",
+      "title": "पढ़ाई में सफलता",
+      "question": "अपने मित्र को पत्र लिखकर पढ़ाई में सफलता प्राप्त करने के उपाय बताइए।"
+    },
+    {
+      "id": 23,
+      "chapter": "School Life",
+      "source": "General Writing",
+      "title": "पुस्तकालय सुविधा",
+      "question": "प्रधानाचार्य को पत्र लिखकर विद्यालय में पुस्तकालय सुविधाओं को बढ़ाने का अनुरोध कीजिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "School Life",
+      "source": "General Writing",
+      "title": "अवकाश के लिए आवेदन",
+      "question": "प्रधानाचार्य को पत्र लिखकर बीमारी के कारण अवकाश के लिए आवेदन पत्र लिखिए।"
+    },
+    {
+      "id": 25,
+      "chapter": "Health and Sports",
+      "source": "General Writing",
+      "title": "स्वास्थ्य का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर स्वास्थ्य के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 26,
+      "chapter": "Health and Sports",
+      "source": "General Writing",
+      "title": "खेलों का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर खेलों के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 27,
+      "chapter": "Health and Sports",
+      "source": "General Writing",
+      "title": "व्यायाम का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर नियमित व्यायाम करने की सलाह दीजिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "Value Letters",
+      "source": "General Writing",
+      "title": "ईमानदारी",
+      "question": "अपने मित्र को पत्र लिखकर ईमानदारी के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 29,
+      "chapter": "Value Letters",
+      "source": "General Writing",
+      "title": "अनुशासन",
+      "question": "अपने छोटे भाई को पत्र लिखकर अनुशासन का पालन करने की सलाह दीजिए।"
+    },
+    {
+      "id": 30,
+      "chapter": "Value Letters",
+      "source": "General Writing",
+      "title": "सच्चाई",
+      "question": "अपने मित्र को पत्र लिखकर सच्चाई के मार्ग पर चलने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 31,
+      "chapter": "Environmental Letters",
+      "source": "General Writing",
+      "title": "पर्यावरण संरक्षण",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर पर्यावरण संरक्षण के महत्व को बताइए।"
+    },
+    {
+      "id": 32,
+      "chapter": "Environmental Letters",
+      "source": "General Writing",
+      "title": "जल संरक्षण",
+      "question": "अपने मित्र को पत्र लिखकर जल संरक्षण के महत्व के बारे में समझाइए।"
+    },
+    {
+      "id": 33,
+      "chapter": "Environmental Letters",
+      "source": "General Writing",
+      "title": "पेड़ लगाओ",
+      "question": "नगर निगम को पत्र लिखकर पेड़ लगाने के अभियान को बढ़ावा देने का अनुरोध कीजिए।"
+    },
+    {
+      "id": 34,
+      "chapter": "Environmental Letters",
+      "source": "General Writing",
+      "title": "स्वच्छता अभियान",
+      "question": "नगर निगम को पत्र लिखकर अपने क्षेत्र में स्वच्छता अभियान चलाने का अनुरोध कीजिए।"
+    },
+    {
+      "id": 35,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "बाल श्रम",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर बाल श्रम की समस्या पर चिंता व्यक्त कीजिए।"
+    },
+    {
+      "id": 36,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "शिक्षा का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर शिक्षा के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 37,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "महिला शिक्षा",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर महिला शिक्षा के महत्व को बताइए।"
+    },
+    {
+      "id": 38,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "सामाजिक एकता",
+      "question": "अपने मित्र को पत्र लिखकर सामाजिक एकता के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 39,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "डिजिटल शिक्षा",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर डिजिटल शिक्षा के महत्व को बताइए।"
+    },
+    {
+      "id": 40,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "साहित्य से सीख",
+      "question": "अपने मित्र को पत्र लिखकर साहित्य से मिलने वाली सीख के बारे में बताइए।"
+    },
+    {
+      "id": 41,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "किताबों का महत्व",
+      "question": "अपने छोटे भाई को पत्र लिखकर किताबों के महत्व को समझाइए।"
+    },
+    {
+      "id": 42,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "जीवन की सीख",
+      "question": "अपने मित्र को पत्र लिखकर जीवन की महत्वपूर्ण सीख साझा कीजिए।"
+    },
+    {
+      "id": 43,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "अच्छा नागरिक",
+      "question": "अपने मित्र को पत्र लिखकर एक अच्छे नागरिक के गुण बताइए।"
+    },
+    {
+      "id": 44,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "देश सेवा",
+      "question": "अपने मित्र को पत्र लिखकर देश सेवा के महत्व को समझाइए।"
+    },
+    {
+      "id": 45,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "जीवन का उद्देश्य",
+      "question": "अपने मित्र को पत्र लिखकर जीवन के उद्देश्य के बारे में बताइए।"
+    },
+    {
+      "id": 46,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "सफलता का मार्ग",
+      "question": "अपने मित्र को पत्र लिखकर सफलता प्राप्त करने के उपाय बताइए।"
+    },
+    {
+      "id": 47,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "अच्छा इंसान बनना",
+      "question": "अपने मित्र को पत्र लिखकर अच्छा इंसान बनने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 48,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "जीवन मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर जीवन मूल्यों के महत्व को समझाइए।"
+    },
+    {
+      "id": 49,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "जीवन की दिशा",
+      "question": "अपने मित्र को पत्र लिखकर जीवन में सही दिशा चुनने की सलाह दीजिए।"
+    },
+    {
+      "id": 50,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "ज्ञान का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर ज्ञान के महत्व के बारे में बताइए।"
+    },
+     {
+      "id": 51,
+      "chapter": "Advanced Letters",
+      "source": "General Writing",
+      "title": "मानव मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर मानव मूल्यों के महत्व को समझाइए।"
+    },
+    {
+      "id": 52,
+      "chapter": "Advanced Letters",
+      "source": "General Writing",
+      "title": "नैतिक जीवन",
+      "question": "अपने मित्र को पत्र लिखकर नैतिक जीवन जीने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 53,
+      "chapter": "Advanced Letters",
+      "source": "General Writing",
+      "title": "समाज सेवा",
+      "question": "अपने मित्र को पत्र लिखकर समाज सेवा के महत्व को बताइए।"
+    },
+    {
+      "id": 54,
+      "chapter": "Advanced Letters",
+      "source": "General Writing",
+      "title": "सामाजिक जिम्मेदारी",
+      "question": "अपने मित्र को पत्र लिखकर सामाजिक जिम्मेदारी निभाने की सलाह दीजिए।"
+    },
+    {
+      "id": 55,
+      "chapter": "Advanced Letters",
+      "source": "General Writing",
+      "title": "चरित्र निर्माण",
+      "question": "अपने मित्र को पत्र लिखकर चरित्र निर्माण के महत्व को समझाइए।"
+    },
+    {
+      "id": 56,
+      "chapter": "Environment Letters",
+      "source": "General Writing",
+      "title": "प्रदूषण",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर बढ़ते प्रदूषण की समस्या बताइए।"
+    },
+    {
+      "id": 57,
+      "chapter": "Environment Letters",
+      "source": "General Writing",
+      "title": "प्लास्टिक का उपयोग",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर प्लास्टिक के उपयोग को कम करने का सुझाव दीजिए।"
+    },
+    {
+      "id": 58,
+      "chapter": "Environment Letters",
+      "source": "General Writing",
+      "title": "जल प्रदूषण",
+      "question": "समाचार पत्र के संपादक को पत्र लिखकर जल प्रदूषण की समस्या के समाधान का सुझाव दीजिए।"
+    },
+    {
+      "id": 59,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "बाल शिक्षा",
+      "question": "अपने मित्र को पत्र लिखकर बच्चों की शिक्षा के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 60,
+      "chapter": "Social Letters",
+      "source": "General Writing",
+      "title": "महिला सशक्तिकरण",
+      "question": "अपने मित्र को पत्र लिखकर महिला सशक्तिकरण के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 61,
+      "chapter": "Value Letters",
+      "source": "General Writing",
+      "title": "सहिष्णुता",
+      "question": "अपने मित्र को पत्र लिखकर सहिष्णुता और समझदारी के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 62,
+      "chapter": "Value Letters",
+      "source": "General Writing",
+      "title": "परिश्रम",
+      "question": "अपने छोटे भाई को पत्र लिखकर परिश्रम के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 63,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "सही निर्णय",
+      "question": "अपने मित्र को पत्र लिखकर जीवन में सही निर्णय लेने की सलाह दीजिए।"
+    },
+    {
+      "id": 64,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "आत्मविश्वास",
+      "question": "अपने मित्र को पत्र लिखकर आत्मविश्वास बनाए रखने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 65,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "धैर्य",
+      "question": "अपने मित्र को पत्र लिखकर धैर्य रखने की सलाह दीजिए।"
+    },
+    {
+      "id": 66,
+      "chapter": "Student Perspective",
+      "source": "General Writing",
+      "title": "अध्ययन की योजना",
+      "question": "अपने मित्र को पत्र लिखकर अपनी पढ़ाई की योजना के बारे में बताइए।"
+    },
+    {
+      "id": 67,
+      "chapter": "Student Perspective",
+      "source": "General Writing",
+      "title": "परीक्षा की तैयारी",
+      "question": "अपने मित्र को पत्र लिखकर परीक्षा की तैयारी के बारे में बताइए।"
+    },
+    {
+      "id": 68,
+      "chapter": "Student Perspective",
+      "source": "General Writing",
+      "title": "पढ़ाई और खेल",
+      "question": "अपने मित्र को पत्र लिखकर पढ़ाई और खेल दोनों के महत्व को समझाइए।"
+    },
+    {
+      "id": 69,
+      "chapter": "Creative Letters",
+      "source": "General Writing",
+      "title": "भविष्य के सपने",
+      "question": "अपने मित्र को पत्र लिखकर अपने भविष्य के सपनों के बारे में बताइए।"
+    },
+    {
+      "id": 70,
+      "chapter": "Creative Letters",
+      "source": "General Writing",
+      "title": "मेरा लक्ष्य",
+      "question": "अपने मित्र को पत्र लिखकर अपने जीवन के लक्ष्य के बारे में बताइए।"
+    },
+    {
+      "id": 71,
+      "chapter": "Creative Letters",
+      "source": "General Writing",
+      "title": "आदर्श व्यक्तित्व",
+      "question": "अपने मित्र को पत्र लिखकर अपने आदर्श व्यक्तित्व के बारे में बताइए।"
+    },
+    {
+      "id": 72,
+      "chapter": "Creative Letters",
+      "source": "General Writing",
+      "title": "समाज के नाम पत्र",
+      "question": "समाज के नाम पत्र लिखकर नैतिक मूल्यों का महत्व बताइए।"
+    },
+    {
+      "id": 73,
+      "chapter": "Creative Letters",
+      "source": "General Writing",
+      "title": "युवाओं के नाम पत्र",
+      "question": "युवाओं के नाम पत्र लिखकर उन्हें देश के विकास में योगदान देने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 74,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "साहित्य और जीवन",
+      "question": "अपने मित्र को पत्र लिखकर साहित्य और जीवन के संबंध के बारे में बताइए।"
+    },
+    {
+      "id": 75,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "युवाओं के लिए संदेश",
+      "question": "युवाओं के नाम पत्र लिखकर उन्हें नैतिक मूल्यों का पालन करने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 76,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "चरित्र निर्माण",
+      "question": "अपने मित्र को पत्र लिखकर चरित्र निर्माण के महत्व को समझाइए।"
+    },
+    {
+      "id": 77,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "नैतिकता",
+      "question": "अपने मित्र को पत्र लिखकर नैतिकता के महत्व को समझाइए।"
+    },
+    {
+      "id": 78,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "आधुनिक जीवन के मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर आधुनिक जीवन में मूल्यों के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 79,
+      "chapter": "Conclusion Letters",
+      "source": "General Writing",
+      "title": "सोच में बदलाव",
+      "question": "अपने मित्र को पत्र लिखकर बताइए कि अच्छी पुस्तकों ने आपकी सोच कैसे बदली।"
+    },
+    {
+      "id": 80,
+      "chapter": "Conclusion Letters",
+      "source": "General Writing",
+      "title": "व्यक्तिगत विकास",
+      "question": "अपने मित्र को पत्र लिखकर व्यक्तिगत विकास के महत्व को समझाइए।"
+    },
+    {
+      "id": 81,
+      "chapter": "Conclusion Letters",
+      "source": "General Writing",
+      "title": "जीवन में मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर जीवन में मूल्यों को अपनाने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 82,
+      "chapter": "Conclusion Letters",
+      "source": "General Writing",
+      "title": "बेहतर इंसान बनना",
+      "question": "अपने मित्र को पत्र लिखकर बेहतर इंसान बनने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 83,
+      "chapter": "Conclusion Letters",
+      "source": "General Writing",
+      "title": "जीवन का संदेश",
+      "question": "अपने मित्र को पत्र लिखकर जीवन के महत्वपूर्ण संदेश साझा कीजिए।"
+    },
+    {
+      "id": 84,
+      "chapter": "Extended Conclusion",
+      "source": "General Writing",
+      "title": "साहित्य का महत्व",
+      "question": "अपने मित्र को पत्र लिखकर साहित्य के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 85,
+      "chapter": "Extended Conclusion",
+      "source": "General Writing",
+      "title": "समाज के नाम संदेश",
+      "question": "समाज के नाम पत्र लिखकर नैतिक मूल्यों का महत्व बताइए।"
+    },
+    {
+      "id": 86,
+      "chapter": "Extended Conclusion",
+      "source": "General Writing",
+      "title": "जीवन की सीख",
+      "question": "अपने मित्र को पत्र लिखकर जीवन की सीख साझा कीजिए।"
+    },
+    {
+      "id": 87,
+      "chapter": "Extended Conclusion",
+      "source": "General Writing",
+      "title": "मानव मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर मानव मूल्यों के महत्व को समझाइए।"
+    },
+    {
+      "id": 88,
+      "chapter": "Extended Conclusion",
+      "source": "General Writing",
+      "title": "अंतिम संदेश",
+      "question": "अपने मित्र को पत्र लिखकर जीवन के मुख्य मूल्यों का संदेश दीजिए।"
+    },
+    {
+      "id": 89,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "मानसिक शक्ति",
+      "question": "अपने मित्र को पत्र लिखकर मानसिक शक्ति के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 90,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "सच्ची बुद्धिमत्ता",
+      "question": "अपने मित्र को पत्र लिखकर सच्ची बुद्धिमत्ता का अर्थ समझाइए।"
+    },
+    {
+      "id": 91,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "स्वयं सुधार",
+      "question": "अपने मित्र को पत्र लिखकर स्वयं को सुधारने के उपाय बताइए।"
+    },
+    {
+      "id": 92,
+      "chapter": "Life Skills",
+      "source": "General Writing",
+      "title": "जीवन के विकल्प",
+      "question": "अपने मित्र को पत्र लिखकर जीवन में सही विकल्प चुनने की सलाह दीजिए।"
+    },
+    {
+      "id": 93,
+      "chapter": "Health Letters",
+      "source": "General Writing",
+      "title": "स्वच्छता और स्वास्थ्य",
+      "question": "अपने मित्र को पत्र लिखकर स्वच्छता और स्वास्थ्य के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 94,
+      "chapter": "Health Letters",
+      "source": "General Writing",
+      "title": "खाद्य और स्वास्थ्य",
+      "question": "अपने मित्र को पत्र लिखकर संतुलित आहार और स्वास्थ्य के महत्व के बारे में समझाइए।"
+    },
+    {
+      "id": 95,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "मानव कमजोरियाँ",
+      "question": "अपने मित्र को पत्र लिखकर मानव कमजोरियों के बारे में चर्चा कीजिए।"
+    },
+    {
+      "id": 96,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "व्यक्तित्व विकास",
+      "question": "अपने मित्र को पत्र लिखकर व्यक्तित्व विकास के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 97,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "सामाजिक मूल्य",
+      "question": "अपने मित्र को पत्र लिखकर सामाजिक मूल्यों के महत्व के बारे में बताइए।"
+    },
+    {
+      "id": 98,
+      "chapter": "Reflection Letters",
+      "source": "General Writing",
+      "title": "सफलता के उपाय",
+      "question": "अपने मित्र को पत्र लिखकर सफलता प्राप्त करने के उपाय बताइए।"
+    },
+    {
+      "id": 99,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "सकारात्मक जीवन",
+      "question": "अपने मित्र को पत्र लिखकर सकारात्मक जीवन जीने की प्रेरणा दीजिए।"
+    },
+    {
+      "id": 100,
+      "chapter": "Final Letters",
+      "source": "General Writing",
+      "title": "अंतिम संदेश",
+      "question": "अपने मित्र को पत्र लिखकर जीवन के मुख्य मूल्यों और संदेश का वर्णन कीजिए।"
+    }
+  ]
+}

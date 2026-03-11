@@ -1,0 +1,98 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 9: The Proposal",
+    "generated_at": "2026-03-09T01:38:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Critically analyze 'The Proposal' as a 'Comedy of Manners' that exposes the moral vacuum of the landed gentry.",
+            "answer": "The play functions as a Comedy of Manners by satirizing the etiquette and social expectations of the Russian upper class. The moral vacuum is evident in how the characters instantaneously abandon 'polite' society rules for vulgar abuse the moment their property interests are threatened. Their obsession with 'Oxen Meadows' over human union suggests a society where the price of land is clearly defined, but the value of a person is negligible.",
+            "answer_outline": ["Definition of Comedy of Manners", "Etiquette vs. Vulgarity", "Property as the primary moral compass", "Critique of 19th-century social structures"],
+            "key_concepts": ["Comedy of Manners", "Satire", "Moral Vacuum", "Social Expectations"],
+            "marks": 6,
+            "source_section": "General Analysis"
+        },
+        {
+            "question_number": 2,
+            "question": "Deconstruct the character of Lomov as an 'Anti-Hero' whose physical frailty mirrors his psychological insecurity.",
+            "answer": "Lomov subverts the traditional romantic lead. His hypochondria and constant physical collapses (palpitations, numbing limbs) are externalizations of his internal anxiety about his social and economic standing. He is an anti-hero whose 'battle' is not for the lady's heart, but for the validation of his legal deeds and ancestral honor, making his physical weakness a metaphor for the decadence of his class.",
+            "answer_outline": ["Subversion of the romantic hero", "Hypochondria as psychological insecurity", "Physicality as a metaphor for class decay", "Prioritizing legal deeds over romance"],
+            "key_concepts": ["Anti-Hero", "Metaphor", "Hypochondria", "Class Decay"],
+            "marks": 6,
+            "source_section": "Character Traits"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate the 'Farce' as a dramatic tool for highlighting the absurdity of arranged marriages for convenience.",
+            "answer": "Chekhov employs farcical elements—exaggerated fainting, hysterical shouting, and rapid-fire insults—to strip the 'marriage of convenience' of its dignity. By making the proposal process look ridiculous and chaotic, the play suggests that marriages based purely on land consolidation and social security are inherently absurd and devoid of the harmony they claim to establish.",
+            "answer_outline": ["Characteristics of Farce", "Exaggeration of physical and verbal conflict", "Marriage as land consolidation", "Absurdity vs. Dignity"],
+            "key_concepts": ["Farce", "Absurdity", "Arranged Marriage", "Social Security"],
+            "marks": 6,
+            "source_section": "General Analysis"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyse the 'Subtext of Desperation' in Natalya’s hysterical reaction to the news of the proposal.",
+            "answer": "Natalya’s sudden shift from aggressive landowner to a wailing, desperate woman reveals the high stakes for a woman of her class. At twenty-five, she is nearing 'spinsterhood' in her society's eyes. Her hysteria is not driven by love for Lomov, but by the existential dread of losing her last chance at marital and economic security, proving that her 'love' is actually a calculated survival instinct.",
+            "answer_outline": ["Hysteria as social anxiety", "Gender constraints for 19th-century women", "Love vs. Survival instinct", "Economic security in marriage"],
+            "key_concepts": ["Subtext", "Hysteria", "Existential Dread", "Survival"],
+            "marks": 6,
+            "source_section": "The Turning Point"
+        },
+        {
+            "question_number": 5,
+            "question": "Discuss the 'Cyclical Narrative Structure' of the play and its philosophical implications.",
+            "answer": "The play is structured as a series of repeating cycles: Attempted Peace → Petty Disagreement → Escalation → Physical Collapse → Temporary Reconciliation. This cycle implies that the characters are trapped in their own temperaments and social roles. Philosophically, it suggests that even a significant life event like marriage will not change their nature; they are doomed to a life of repetitive, petty conflict.",
+            "answer_outline": ["Structural repetition", "Conflict as an inescapable loop", "Static nature of characters", "Philosophical pessimism"],
+            "key_concepts": ["Cycle", "Structure", "Temperament", "Conflict"],
+            "marks": 6,
+            "source_section": "General Analysis"
+        },
+        {
+            "question_number": 6,
+            "question": "Examine the 'Politics of Property'—how land ownership replaces individual identity in the play.",
+            "answer": "Identity in the play is entirely derived from property. Lomov and Natalya do not argue as individuals; they argue as the legal representatives of their estates. Their 'ancestral rights' to Oxen Meadows and the superiority of their dogs (Guess vs. Squeezer) are their only sources of self-worth. Individual personality is totally eclipsed by the need to protect the 'boundaries' of their wealth.",
+            "answer_outline": ["Property as identity", "Legal representatives vs. individuals", "Estate boundaries vs. personal connection", "Self-worth derived from possession"],
+            "key_concepts": ["Identity", "Land Ownership", "Ego", "Boundaries"],
+            "marks": 6,
+            "source_section": "The First Argument"
+        },
+        {
+            "question_number": 7,
+            "question": "How does Chekhov use 'Linguistic Violence' to underscore the fragility of neighborly relations?",
+            "answer": "The dialogue transitions instantly from 'my dear fellow' and 'precious' to 'villain,' 'scarecrow,' and 'blind hen.' This linguistic violence reveals that the veneer of neighborly affection is extremely thin. The characters use insults to perform 'character assassination' on each other's families, suggesting that the social fabric of the landed gentry is held together only by a fragile, superficial politeness.",
+            "answer_outline": ["Shifts in address and tone", "Character assassination and insults", "Superficiality of neighborly bonds", "Social fabric analysis"],
+            "key_concepts": ["Dialogue", "Tone", "Character Assassination", "Social Fabric"],
+            "marks": 6,
+            "source_section": "The First Argument"
+        },
+        {
+            "question_number": 8,
+            "question": "Analyze Chubukov as a 'Merchant of Matrimony'—evaluating his ethical stance toward his daughter.",
+            "answer": "Chubukov acts more as a broker than a father. He is willing to suppress his own dislike for Lomov to 'seal the deal.' His ethical stance is purely transactional; he forces the marriage forward even while the couple is in mid-argument, simply to rid himself of the 'burden' of his daughter. He treats Natalya as a commodity to be traded for the stabilization of his social circle.",
+            "answer_outline": ["Transactional fatherhood", "Suppressing conflict for economic gain", "Daughter as a commodity", "Transactional ethics"],
+            "key_concepts": ["Ethics", "Transaction", "Commodity", "Broker"],
+            "marks": 6,
+            "source_section": "Chubukov's Perspective"
+        },
+        {
+            "question_number": 9,
+            "question": "Evaluate the 'Dramaturgy of the Faint'—how Lomov’s physical collapse dictates the play's pacing.",
+            "answer": "Lomov's fainting spells act as dramatic 'resets.' Every time the verbal conflict reaches an unbearable peak, his physical collapse forces a pause. This creates a rhythmic pacing where the audience is kept in a state of high tension followed by farcical relief. The faint allows Natalya to reveal her true desperation and allows Chubukov to force the engagement through, serving as a vital plot device.",
+            "answer_outline": ["Fainting as a structural device", "Managing narrative tension", "Forcing the resolution", "Farcical relief"],
+            "key_concepts": ["Dramaturgy", "Pacing", "Plot Device", "Tension"],
+            "marks": 6,
+            "source_section": "Character Traits"
+        },
+        {
+            "question_number": 10,
+            "question": "Assess the 'Irony of Tradition' in the formal proposal rituals described in the play.",
+            "answer": "The play mocks the 'sacred' tradition of a marriage proposal. Tradition dictates formal dress, fatherly blessings, and romantic declarations. However, in this play, the blessing is forced, the dress is ruined by physical struggle, and the declarations are replaced by shouting matches about land. This irony suggests that the 'tradition' is a hollow mask for the raw, competitive nature of the characters.",
+            "answer_outline": ["Maiming traditional rituals", "Formal dress vs. chaotic behavior", "Blessings as forced outcomes", "Hollowness of social masks"],
+            "key_concepts": ["Irony", "Tradition", "Ritual", "Mockery"],
+            "marks": 6,
+            "source_section": "The Beginning"
+        }
+    ]
+}

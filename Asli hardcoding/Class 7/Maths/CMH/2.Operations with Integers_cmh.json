@@ -1,0 +1,103 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter : Integers (Operations)",
+    "generated_at": "2026-03-05T10:30:00",
+    "concepts": [
+        {
+            "concept_name": "Addition of Integers",
+            "difficulty": "easy",
+            "lesson": "When adding integers with the same sign, we add their absolute values and keep the common sign. When adding integers with different signs, we find the difference between their absolute values and use the sign of the integer with the larger absolute value. This can be visualized as movement on a number line: moving right for positive and left for negative.",
+            "real_example": " Adding $(-5) + (-3) = -8$, while $(-5) + 3 = -2$.",
+            "key_points": [
+                "Same signs: Add and keep sign",
+                "Different signs: Subtract and take sign of larger value",
+                "Right move for positive, left move for negative"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "concept_name": "Subtraction of Integers",
+            "difficulty": "medium",
+            "lesson": "Subtraction is essentially adding the additive inverse (opposite) of the number being subtracted. To subtract an integer $b$ from $a$, we change the operation to addition and change the sign of $b$: $a - b = a + (-b)$. This rule helps handle 'minus a minus' situations where subtracting a negative becomes addition.",
+            "real_example": "$5 - (-3) = 5 + 3 = 8$.",
+            "key_points": [
+                "Subtracting is adding the opposite",
+                "Change sign of the second number",
+                "Follow addition rules after conversion"
+            ],
+            "source_section": "Section 1.2"
+        },
+        {
+            "concept_name": "Multiplication of Integers",
+            "difficulty": "easy",
+            "lesson": "The product of two integers with the same sign is always positive. The product of two integers with different signs is always negative. If you multiply an even number of negative integers, the result is positive; if you multiply an odd number of negative integers, the result is negative.",
+            "real_example": " $(-4) \times (-5) = 20$ and $(-4) \times 5 = -20$.",
+            "key_points": [
+                "(+) \u00d7 (+) = (+)",
+                "(-) \u00d7 (-) = (+)",
+                "(-) \u00d7 (+) = (-)"
+            ],
+            "source_section": "Section 1.3"
+        },
+        {
+            "concept_name": "Division of Integers",
+            "difficulty": "easy",
+            "lesson": "Division follows the same sign rules as multiplication. Dividing two integers with the same sign results in a positive quotient, while dividing two integers with different signs results in a negative quotient. Division by zero is undefined, and $0$ divided by any non-zero integer is $0$.",
+            "real_example": "(-10) \u00f7 (-2) = 5, but (-10) \u00f7 2 = -5.",
+            "key_points": [
+                "Same signs give positive results",
+                "Different signs give negative results",
+                "Division by zero is not allowed"
+            ],
+            "source_section": "Section 1.4"
+        },
+        {
+            "concept_name": "Properties of Addition and Subtraction",
+            "difficulty": "medium",
+            "lesson": "Integers follow the Closure Property (sum/difference is always an integer) and the Commutative Property for addition ($a+b = b+a$). However, subtraction is NOT commutative ($a-b \neq b-a$). The Associative Property also applies to addition, and $0$ is the additive identity.",
+            "real_example": "$(-3) + 5 = 5 + (-3) = 2$, but $5 - (-3) \neq (-3) - 5$.",
+            "key_points": [
+                "Addition is commutative and associative",
+                "Subtraction is not commutative",
+                "Additive Identity is 0"
+            ],
+            "source_section": "Section 1.5"
+        },
+        {
+            "concept_name": "Properties of Multiplication",
+            "difficulty": "hard",
+            "lesson": "Integers are closed under multiplication. They follow commutative and associative properties. A unique feature is the Distributive Property of Multiplication over Addition: $a \times (b + c) = (a \times b) + (a \times c)$. This is vital for simplifying complex algebraic expressions.",
+            "real_example": " $2 \times (10 + 3) = (2 \times 10) + (2 \times 3) = 26$.",
+            "key_points": [
+                "Multiplicative Identity is 1",
+                "Multiplication by 0 is 0",
+                "Distributive property simplifies calculations"
+            ],
+            "source_section": "Section 1.6"
+        },
+        {
+            "concept_name": "BODMAS/PEMDAS with Integers",
+            "difficulty": "hard",
+            "lesson": "When multiple operations are present, we follow a specific order: Brackets, Orders (powers), Division/Multiplication (left to right), and Addition/Subtraction (left to right). With integers, one must be extra careful with negative signs inside brackets and when multiplying across brackets.",
+            "real_example": "Evaluate: $(-20) + (-8) \u00f7 (-2) \times 3 = (-20) + 4 \times 3 = (-20) + 12 = -8$.",
+            "key_points": [
+                "Always solve brackets first",
+                "Multiplication/Division have equal priority",
+                "Watch sign changes carefully"
+            ],
+            "source_section": "Section 1.7"
+        },
+        {
+            "concept_name": "Real-life Applications",
+            "difficulty": "medium",
+            "lesson": "Integers are used to represent opposite situations like profit/loss, above/below sea level, and rise/fall in temperature. Calculating the net change in these scenarios requires mastery of integer operations.",
+            "real_example": "If the temperature was $-5^\circ C$ and it dropped by $10^\circ C$, the new temperature is $(-5) - 10 = -15^\circ C$.",
+            "key_points": [
+                "Elevation and depth",
+                "Financial credits and debits",
+                "Temperature fluctuations"
+            ],
+            "source_section": "Applications Section"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Electricity",
+    "difficulty": "Medium",
+    "source_pdf": "science_textbook_class10_chapter11.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric current is the rate of flow of electric charge through a conductor",
+            "Electric current is measured using an ammeter and its SI unit is ampere",
+            "Potential difference is the work done to move a unit charge between two points",
+            "Ohm’s law states that current is directly proportional to voltage when temperature remains constant",
+            "Resistance is the opposition offered by a conductor to the flow of electric current",
+            "Resistors can be connected in series or parallel in an electric circuit",
+            "Electric power is the rate at which electrical energy is consumed"
+        ],
+        "examples": [
+            "A current flows in a wire when it is connected to a battery forming a closed circuit",
+            "An electric bulb glows when current passes through its filament",
+            "Resistors connected in series increase the total resistance of the circuit",
+            "Resistors connected in parallel decrease the total resistance",
+            "Household appliances like fans and refrigerators use electrical energy"
+        ],
+        "formulas": [
+            "Electric current → I = Q/t",
+            "Ohm’s Law → V = IR",
+            "Resistance in series → R = R1 + R2 + R3",
+            "Resistance in parallel → 1/R = 1/R1 + 1/R2 + 1/R3",
+            "Electric power → P = VI",
+            "Electric energy → E = VIt"
+        ],
+        "exam_tips": [
+            "Remember the definitions of current, potential difference, and resistance",
+            "Practice numerical problems using Ohm’s law",
+            "Understand differences between series and parallel combinations",
+            "Learn formulas for calculating electric power and electrical energy",
+            "Draw and label circuit diagrams clearly in exams"
+        ]
+    }
+}

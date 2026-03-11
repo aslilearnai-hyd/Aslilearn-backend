@@ -1,0 +1,149 @@
+{
+    "class": "Class 9",
+    "subject": "History",
+    "chapter": "The French Revolution",
+    "difficulty": "Medium",
+    "source_pdf": "iess301.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Economic Chain Reaction",
+            "objective": "Analyze the structural causes of the empty treasury and the subsequent tax crisis",
+            "materials": ["Notebook", "Calculator", "Flowchart paper"],
+            "steps": [
+                "Identify the specific reasons why the French treasury was empty in 1774[cite: 62, 63, 64].",
+                "Calculate the total debt in livres after the American war of independence and the interest burden placed on the state[cite: 66, 67, 68].",
+                "Diagram the sequence of events from 'Bad Harvest' to 'Subsistence Crisis' using Fig. 4 as a guide[cite: 134, 138, 153].",
+                "Explain why increasing taxes alone would not have sufficed under the existing estate system[cite: 70, 83]."
+            ],
+            "learning_outcome": "Connects macro-economic failure to social unrest and political desperation",
+            "evaluation": "Accuracy of financial data and logical flow of the economic flowchart (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Philosophical Roots of Revolution",
+            "objective": "Compare the political theories that challenged the absolute monarchy",
+            "materials": ["Reference books", "Comparison table"],
+            "steps": [
+                "Research the core arguments in Locke’s 'Two Treatises of Government' and Rousseau’s 'The Social Contract'[cite: 149, 150, 156].",
+                "Summarize Montesquieu’s proposal in 'The Spirit of the Laws' regarding the division of power[cite: 157].",
+                "Identify how the American Constitution served as a practical example for French thinkers[cite: 158, 159].",
+                "Discuss how these ideas were spread among the illiterate population[cite: 160, 161]."
+            ],
+            "learning_outcome": "Analyzes how intellectual movements provide the framework for political change",
+            "evaluation": "Depth of comparison between the three philosophers (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Estates General Deadlock",
+            "objective": "Understand the procedural conflict that triggered the National Assembly's formation",
+            "materials": ["Role-play script", "Notebook"],
+            "steps": [
+                "Contrast the traditional voting principle of the Estates General with the Third Estate's demand for 'one member, one vote'[cite: 198, 200].",
+                "Describe the seating arrangement at Versailles and how it physically represented social inequality[cite: 194].",
+                "Draft a 'protest letter' from the perspective of a Third Estate representative explaining why they walked out on 5 May 1789[cite: 192, 202].",
+                "Explain the significance of the Tennis Court Oath in limiting royal power[cite: 204, 205]."
+            ],
+            "learning_outcome": "Identifies the shift from a feudal assembly to a sovereign national body",
+            "evaluation": "Argumentative strength of the protest letter and role-play (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Women’s Political Activism: Olympe de Gouges",
+            "objective": "Critically evaluate the gender-based contradictions in revolutionary rights",
+            "materials": ["Source C", "Source F", "Venn Diagram"],
+            "steps": [
+                "Compare the 'Declaration of the Rights of Man and Citizen' with Olympe de Gouges' 'Declaration of the Rights of Woman and Citizen'[cite: 345, 555, 564].",
+                "Use a Venn Diagram to show which rights were shared and which were unique to De Gouges’ manifesto[cite: 565, 566, 567].",
+                "Analyze the arguments used by Chaumette to justify the closure of women's clubs[cite: 581, 582, 591].",
+                "Formulate a rebuttal to Chaumette from the perspective of a member of the Society of Revolutionary and Republican Women[cite: 524, 580]."
+            ],
+            "learning_outcome": "Critically assesses the concept of 'universal rights' during the Revolution",
+            "evaluation": "Critical thinking in the rebuttal and accuracy of the Venn diagram (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Triangular Slave Trade and its Paradox",
+            "objective": "Analyze the conflict between revolutionary ideals and economic interests",
+            "materials": ["World Map", "Source documents"],
+            "steps": [
+                "Map the 'Triangular Slave Trade' routes involving Europe, Africa, and the Americas[cite: 598, 599].",
+                "Identify the specific commodities that made the slave trade essential to port cities like Bordeaux and Nantes[cite: 596, 602].",
+                "Explain why the National Assembly hesitated to abolish slavery despite the Declaration of Rights[cite: 604, 605].",
+                "Contrast the Convention’s 1794 decree with Napoleon’s 1804 policy on slavery[cite: 606, 607]."
+            ],
+            "learning_outcome": "Understands the global economic context and the contradictions of the Revolution",
+            "evaluation": "Clarity of the map and explanation of the legislative delays (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Constitutional Monarchy vs. Republic",
+            "objective": "Differentiate between the political systems of 1791 and 1792",
+            "materials": ["Fig. 7", "Notebook"],
+            "steps": [
+                "Using Fig. 7, explain how the 1791 system of 'indirect election' worked[cite: 289, 307, 309, 310].",
+                "Define the powers of 'Veto' and 'Control' held by the King and the Assembly[cite: 293, 296, 299].",
+                "Describe the events of 10 August 1792 that led to the imprisonment of the royal family[cite: 447, 448].",
+                "List the changes in voting rights when France transitioned to a Republic under the Convention[cite: 449, 450]."
+            ],
+            "learning_outcome": "Distinguishes between different stages of revolutionary governance",
+            "evaluation": "Correct explanation of political terminology and transitions (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Logic of the Terror",
+            "objective": "Examine the conflicting definitions of 'Liberty' during 1793-1794",
+            "materials": ["Source D", "Debate cards"],
+            "steps": [
+                "Analyze Robespierre's speech: Why did he believe 'terror' was necessary for 'democracy'?[cite: 487, 488].",
+                "Contrast this with Desmoulins' view of liberty as 'Happiness, Reason, Equality, Justice'[cite: 482, 483].",
+                "List the specific economic measures (price ceilings, rationing) that characterized the Reign of Terror[cite: 464, 465, 466].",
+                "Explain the eventual downfall of Robespierre and the rise of the Directory[cite: 470, 471, 500]."
+            ],
+            "learning_outcome": "Evaluates how extreme political circumstances can lead to the suspension of civil liberties",
+            "evaluation": "Balanced analysis of the two conflicting viewpoints in Source D (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Abolition of Censorship and the Public Sphere",
+            "objective": "Evaluate the impact of freedom of the press on everyday life",
+            "materials": ["Newspaper templates", "Pencils"],
+            "steps": [
+                "Explain the 'Abolition of Censorship' law passed after 1789[cite: 631, 632].",
+                "Discuss how the Declaration of Rights made 'freedom of speech' a natural right[cite: 633].",
+                "Create a mock front page for a 1790 French newspaper reporting on either the fall of the Bastille or the abolition of feudal dues[cite: 236, 242, 634].",
+                "Describe how plays and songs were used to convey philosophical ideas to the masses[cite: 638, 639]."
+            ],
+            "learning_outcome": "Understands the role of media in shaping public opinion and revolutionary culture",
+            "evaluation": "Historical accuracy and creative use of 'Source' material in the newspaper (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Napoleon as a Modernizer",
+            "objective": "Assess the administrative legacy of the Napoleonic era",
+            "materials": ["Chart paper", "Markers"],
+            "steps": [
+                "Identify the administrative reforms introduced by Napoleon (e.g., Civil Code, decimal system)[cite: 651].",
+                "Explain the shift in perception of Napoleonic armies from 'liberators' to 'invaders'[cite: 652, 653].",
+                "Evaluate the long-term impact of his reforms on Europe even after his defeat at Waterloo[cite: 654].",
+                "Research the 'Napoleonic Code' and list three ways it protected private property[cite: 651]."
+            ],
+            "learning_outcome": "Synthesizes the role of a military dictator in spreading revolutionary administrative ideals",
+            "evaluation": "Comprehensive list of reforms and their long-term significance (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Global Legacy: India and Beyond",
+            "objective": "Trace the influence of the French Revolution on anti-colonial movements",
+            "materials": ["Notebook", "Reference material on Indian history"],
+            "steps": [
+                "Identify the two Indian individuals mentioned in the text who responded to French revolutionary ideas[cite: 664].",
+                "Summarize Raja Rammohan Roy’s reaction to the July Revolution of 1830[cite: 668, 669].",
+                "Explain how colonised peoples 'reworked' the idea of freedom into sovereign nation-state movements[cite: 663].",
+                "List three democratic rights we enjoy today in India that have roots in the French Revolution[cite: 684]."
+            ],
+            "learning_outcome": "Connects European history to global and national political developments",
+            "evaluation": "Ability to link 18th-century French ideas to modern Indian democracy (10 marks)"
+        }
+    ]
+}

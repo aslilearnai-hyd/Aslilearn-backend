@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "India After Independence",
+  "generated_at": "2026-03-06T13:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which leader played a key role in integrating the princely states into the Indian Union?",
+      "options": {
+        "A": "Dr. B. R. Ambedkar",
+        "B": "Sardar Vallabhbhai Patel",
+        "C": "Jawaharlal Nehru",
+        "D": "Rajendra Prasad"
+      },
+      "correct_answer": "B",
+      "explanation": "Sardar Vallabhbhai Patel led the process of integrating princely states into India.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "The Constitution of India was adopted by the Constituent Assembly in which year?",
+      "options": {
+        "A": "1947",
+        "B": "1949",
+        "C": "1950",
+        "D": "1952"
+      },
+      "correct_answer": "B",
+      "explanation": "The Constitution was adopted on 26 November 1949 and came into effect on 26 January 1950.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which committee of the Constituent Assembly prepared the draft of the Constitution?",
+      "options": {
+        "A": "Planning Committee",
+        "B": "Drafting Committee",
+        "C": "Union Committee",
+        "D": "Finance Committee"
+      },
+      "correct_answer": "B",
+      "explanation": "The Drafting Committee chaired by Dr. B. R. Ambedkar prepared the Constitution draft.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which movement strongly influenced the demand for linguistic states?",
+      "options": {
+        "A": "Telugu-speaking movement",
+        "B": "Industrial movement",
+        "C": "Agricultural reform movement",
+        "D": "Trade union movement"
+      },
+      "correct_answer": "A",
+      "explanation": "The demand for a Telugu-speaking state led to the formation of Andhra Pradesh.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "The States Reorganisation Commission submitted its report in which year?",
+      "options": {
+        "A": "1953",
+        "B": "1955",
+        "C": "1956",
+        "D": "1957"
+      },
+      "correct_answer": "B",
+      "explanation": "The States Reorganisation Commission submitted its report in 1955.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which economic strategy guided India's development through planned programs?",
+      "options": {
+        "A": "Capitalism",
+        "B": "Economic planning",
+        "C": "Colonial policy",
+        "D": "Trade monopoly"
+      },
+      "correct_answer": "B",
+      "explanation": "India adopted economic planning through Five-Year Plans to guide development.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Which economist influenced the industrial focus of the Second Five-Year Plan?",
+      "options": {
+        "A": "Adam Smith",
+        "B": "P. C. Mahalanobis",
+        "C": "Amartya Sen",
+        "D": "Milton Friedman"
+      },
+      "correct_answer": "B",
+      "explanation": "P. C. Mahalanobis proposed the model focusing on heavy industry development.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor mainly contributed to the success of the Green Revolution?",
+      "options": {
+        "A": "Traditional farming",
+        "B": "High-yield variety seeds",
+        "C": "Reduction in irrigation",
+        "D": "Decrease in fertilizers"
+      },
+      "correct_answer": "B",
+      "explanation": "High-yield seeds combined with fertilizers and irrigation increased production.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 9,
+      "question": "Which scientist played an important role in the agricultural transformation of India?",
+      "options": {
+        "A": "Homi J. Bhabha",
+        "B": "M. S. Swaminathan",
+        "C": "Vikram Sarabhai",
+        "D": "A. P. J. Abdul Kalam"
+      },
+      "correct_answer": "B",
+      "explanation": "Dr. M. S. Swaminathan is known as the father of the Green Revolution in India.",
+      "difficulty": "hard",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "Which principle of the Constitution ensures that India has both central and state governments?",
+      "options": {
+        "A": "Federalism",
+        "B": "Socialism",
+        "C": "Secularism",
+        "D": "Democracy"
+      },
+      "correct_answer": "A",
+      "explanation": "Federalism divides powers between central and state governments.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 11,
+      "question": "Which concept promotes peaceful coexistence among India's diverse communities?",
+      "options": {
+        "A": "Colonialism",
+        "B": "National integration",
+        "C": "Industrialization",
+        "D": "Urbanization"
+      },
+      "correct_answer": "B",
+      "explanation": "National integration promotes unity among different cultures and regions.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 12,
+      "question": "Which institution ensures free and fair elections in India?",
+      "options": {
+        "A": "Supreme Court",
+        "B": "Election Commission",
+        "C": "Planning Commission",
+        "D": "Finance Commission"
+      },
+      "correct_answer": "B",
+      "explanation": "The Election Commission supervises elections in India.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 13,
+      "question": "Which development helped India enter the space age?",
+      "options": {
+        "A": "Agricultural reforms",
+        "B": "Space research programs",
+        "C": "Industrial policies",
+        "D": "Trade agreements"
+      },
+      "correct_answer": "B",
+      "explanation": "India established space research institutions and launched satellites.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "Which organization is responsible for India's space research?",
+      "options": {
+        "A": "DRDO",
+        "B": "ISRO",
+        "C": "BARC",
+        "D": "HAL"
+      },
+      "correct_answer": "B",
+      "explanation": "ISRO conducts India's space research and satellite programs.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Urbanization in India increased mainly due to which factor?",
+      "options": {
+        "A": "Forest development",
+        "B": "Industrial growth",
+        "C": "Agricultural decline",
+        "D": "Climate change"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial expansion created jobs in cities, leading to urban growth.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 16,
+      "question": "Which sector played a major role in improving communication and technology?",
+      "options": {
+        "A": "Science and technology",
+        "B": "Agriculture",
+        "C": "Trade",
+        "D": "Tourism"
+      },
+      "correct_answer": "A",
+      "explanation": "Scientific research institutions contributed to technological development.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 17,
+      "question": "Which program aimed to improve the quality of life of citizens after independence?",
+      "options": {
+        "A": "Development programs",
+        "B": "Colonial policies",
+        "C": "Trade monopolies",
+        "D": "Military expansion"
+      },
+      "correct_answer": "A",
+      "explanation": "Development programs improved infrastructure, education, and healthcare.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 18,
+      "question": "Which democratic principle allows citizens to choose their representatives?",
+      "options": {
+        "A": "Monarchy",
+        "B": "Democracy",
+        "C": "Colonialism",
+        "D": "Dictatorship"
+      },
+      "correct_answer": "B",
+      "explanation": "Democracy ensures people elect representatives through elections.",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 19,
+      "question": "Which development strategy focused on building large public sector industries?",
+      "options": {
+        "A": "First Five-Year Plan",
+        "B": "Second Five-Year Plan",
+        "C": "Green Revolution",
+        "D": "Industrial Policy Resolution"
+      },
+      "correct_answer": "B",
+      "explanation": "The Second Plan emphasized heavy industries and public sector enterprises.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 20,
+      "question": "Which factor strengthened India's national identity despite diversity?",
+      "options": {
+        "A": "Democratic governance",
+        "B": "Military rule",
+        "C": "Colonial trade",
+        "D": "Foreign alliances"
+      },
+      "correct_answer": "A",
+      "explanation": "Democratic values helped maintain unity in a diverse nation.",
+      "difficulty": "medium",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which concept refers to balanced development across sectors like agriculture, industry, and infrastructure?",
+      "options": {
+        "A": "Economic planning",
+        "B": "Urbanization",
+        "C": "Colonization",
+        "D": "Industrial monopoly"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic planning aims to develop multiple sectors systematically.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which agricultural innovation significantly increased crop productivity?",
+      "options": {
+        "A": "Traditional seeds",
+        "B": "High-yield variety seeds",
+        "C": "Manual irrigation",
+        "D": "Reduced fertilizer use"
+      },
+      "correct_answer": "B",
+      "explanation": "HYV seeds increased productivity during the Green Revolution.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which development improved transport and infrastructure in India?",
+      "options": {
+        "A": "Economic planning",
+        "B": "Colonial administration",
+        "C": "Agricultural decline",
+        "D": "Forest conservation"
+      },
+      "correct_answer": "A",
+      "explanation": "Economic planning supported the development of infrastructure projects.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which concept refers to the overall progress of a nation in economic, social, and political aspects?",
+      "options": {
+        "A": "National development",
+        "B": "Colonial rule",
+        "C": "Trade empire",
+        "D": "Agricultural decline"
+      },
+      "correct_answer": "A",
+      "explanation": "National development describes progress across multiple sectors.",
+      "difficulty": "medium",
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 25,
+      "question": "Which combination best describes India's progress after independence?",
+      "options": {
+        "A": "Military expansion only",
+        "B": "Agricultural decline",
+        "C": "Political democracy, economic planning, and social development",
+        "D": "Colonial trade growth"
+      },
+      "correct_answer": "C",
+      "explanation": "India developed through democratic governance, economic planning, and social progress.",
+      "difficulty": "hard",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

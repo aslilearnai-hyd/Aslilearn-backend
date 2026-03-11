@@ -1,0 +1,70 @@
+{
+   "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 6: Mijbil the Otter",
+    "title": "Extended Reading Passages with Questions – Mijbil the Otter",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "Mijbil the Otter",
+        "paragraph": "During a visit to Iraq, Gavin Maxwell came across a baby otter that had been separated from its family. He decided to take it home with him to raise and care for it.",
+        "questions": [
+          "Who is Gavin Maxwell?",
+          "Where did he find the baby otter?",
+          "What condition was the otter in?",
+          "Why did he decide to take it home?",
+          "Which words show care and concern?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "Mijbil the Otter",
+        "paragraph": "The otter, named Mijbil, quickly adapted to his new environment. He learned to play, eat, and interact with Maxwell and his family, showing intelligence and affection.",
+        "questions": [
+          "What is the otter’s name?",
+          "How did Mijbil adapt to his new home?",
+          "What behaviors show his intelligence?",
+          "Which words indicate affection?",
+          "Why is this paragraph important for understanding Mijbil’s character?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "Mijbil the Otter",
+        "paragraph": "Maxwell trained Mijbil to swim and explore safely. The otter enjoyed running around, diving in water, and playing games, bringing joy to everyone around.",
+        "questions": [
+          "What activities did Maxwell train Mijbil to do?",
+          "How did Mijbil enjoy his new environment?",
+          "Which words show excitement and playfulness?",
+          "What effect did Mijbil have on people?",
+          "Why is this paragraph significant in the story?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "Mijbil the Otter",
+        "paragraph": "Despite being an exotic pet, Mijbil developed a strong bond with Maxwell. The otter’s playful nature and curiosity made him a beloved companion.",
+        "questions": [
+          "What kind of relationship did Mijbil have with Maxwell?",
+          "Which words show the otter’s playful nature?",
+          "Why was Mijbil considered a beloved companion?",
+          "How did curiosity contribute to the otter’s character?",
+          "What is the main idea of this paragraph?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "Mijbil the Otter",
+        "paragraph": "Over time, Mijbil grew bigger and stronger, but his loyalty and playful behavior remained. Maxwell cherished the memories of raising the otter, highlighting the bond between humans and animals.",
+        "questions": [
+          "How did Mijbil change over time?",
+          "What qualities remained in the otter?",
+          "Which words show loyalty and playfulness?",
+          "How did Maxwell feel about Mijbil?",
+          "What is the main idea of this paragraph?"
+        ]
+      }
+    ]
+  }

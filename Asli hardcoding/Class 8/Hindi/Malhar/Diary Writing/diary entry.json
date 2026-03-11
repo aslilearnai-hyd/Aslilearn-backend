@@ -1,0 +1,728 @@
+{
+  "subject": "Hindi",
+  "book": "Malhar",
+  "content": "Diary Entry",
+  "class": "8",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "Svadesh",
+      "source": "Malhar – Chapter 1",
+      "title": "देशप्रेम की भावना",
+      "question": "अपने देश के प्रति प्रेम और गर्व की भावना व्यक्त करते हुए एक डायरी लेख लिखिए।"
+    },
+    {
+      "id": 2,
+      "chapter": "Svadesh",
+      "source": "Malhar – Chapter 1",
+      "title": "मातृभूमि का सम्मान",
+      "question": "मातृभूमि के महत्व को समझते हुए अपने विचारों को डायरी के रूप में लिखिए।"
+    },
+    {
+      "id": 3,
+      "chapter": "Svadesh",
+      "source": "Malhar – Chapter 1",
+      "title": "प्राकृतिक सुंदरता",
+      "question": "अपने देश की प्राकृतिक सुंदरता देखकर अपनी भावनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 4,
+      "chapter": "Svadesh",
+      "source": "Malhar – Chapter 1",
+      "title": "राष्ट्रीय गर्व",
+      "question": "अपने देश पर गर्व महसूस करने के अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 5,
+      "chapter": "Svadesh",
+      "source": "Malhar – Chapter 1",
+      "title": "देश सेवा",
+      "question": "देश की सेवा करने की प्रेरणा पर एक डायरी लेख लिखिए।"
+    },
+
+    {
+      "id": 6,
+      "chapter": "Do Gauraiya",
+      "source": "Malhar – Chapter 2",
+      "title": "गौरैयों का जीवन",
+      "question": "दो गौरैयों को देखकर अपनी भावनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "Do Gauraiya",
+      "source": "Malhar – Chapter 2",
+      "title": "घोंसले का दृश्य",
+      "question": "गौरैयों के घोंसले का दृश्य देखकर अपनी प्रतिक्रिया डायरी में लिखिए।"
+    },
+    {
+      "id": 8,
+      "chapter": "Do Gauraiya",
+      "source": "Malhar – Chapter 2",
+      "title": "प्रकृति से जुड़ाव",
+      "question": "प्रकृति और पक्षियों के साथ अपने अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 9,
+      "chapter": "Do Gauraiya",
+      "source": "Malhar – Chapter 2",
+      "title": "पक्षियों की स्वतंत्रता",
+      "question": "पक्षियों की स्वतंत्रता को देखकर अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 10,
+      "chapter": "Do Gauraiya",
+      "source": "Malhar – Chapter 2",
+      "title": "प्रकृति की रक्षा",
+      "question": "पक्षियों और प्रकृति की रक्षा के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 11,
+      "chapter": "Ek Aashirvad",
+      "source": "Malhar – Chapter 3",
+      "title": "आशीर्वाद का महत्व",
+      "question": "किसी बड़े से मिले आशीर्वाद के अनुभव पर डायरी लिखिए।"
+    },
+    {
+      "id": 12,
+      "chapter": "Ek Aashirvad",
+      "source": "Malhar – Chapter 3",
+      "title": "माता-पिता का आशीर्वाद",
+      "question": "माता-पिता के आशीर्वाद के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 13,
+      "chapter": "Ek Aashirvad",
+      "source": "Malhar – Chapter 3",
+      "title": "जीवन की प्रेरणा",
+      "question": "किसी प्रेरणादायक व्यक्ति से मिले आशीर्वाद को डायरी में लिखिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "Ek Aashirvad",
+      "source": "Malhar – Chapter 3",
+      "title": "आशीर्वाद की शक्ति",
+      "question": "जीवन में आशीर्वाद की शक्ति पर डायरी लिखिए।"
+    },
+    {
+      "id": 15,
+      "chapter": "Ek Aashirvad",
+      "source": "Malhar – Chapter 3",
+      "title": "आभार व्यक्त करना",
+      "question": "अपने जीवन में मिले सहयोग और आशीर्वाद के लिए आभार व्यक्त करते हुए डायरी लिखिए।"
+    },
+
+    {
+      "id": 16,
+      "chapter": "Haridwar",
+      "source": "Malhar – Chapter 4",
+      "title": "तीर्थ यात्रा",
+      "question": "हरिद्वार की यात्रा के अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 17,
+      "chapter": "Haridwar",
+      "source": "Malhar – Chapter 4",
+      "title": "गंगा स्नान",
+      "question": "गंगा में स्नान करने के अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 18,
+      "chapter": "Haridwar",
+      "source": "Malhar – Chapter 4",
+      "title": "गंगा आरती",
+      "question": "गंगा आरती के दृश्य को देखकर अपनी भावनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 19,
+      "chapter": "Haridwar",
+      "source": "Malhar – Chapter 4",
+      "title": "तीर्थ स्थल का वातावरण",
+      "question": "तीर्थ स्थल के वातावरण का वर्णन करते हुए डायरी लिखिए।"
+    },
+    {
+      "id": 20,
+      "chapter": "Haridwar",
+      "source": "Malhar – Chapter 4",
+      "title": "आध्यात्मिक अनुभव",
+      "question": "हरिद्वार में मिले आध्यात्मिक अनुभव पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 21,
+      "chapter": "Kabir Ke Dohe",
+      "source": "Malhar – Chapter 5",
+      "title": "कबीर की शिक्षा",
+      "question": "कबीर के दोहों से मिली सीख पर डायरी लिखिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "Kabir Ke Dohe",
+      "source": "Malhar – Chapter 5",
+      "title": "सादा जीवन",
+      "question": "सादा जीवन और उच्च विचार के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 23,
+      "chapter": "Kabir Ke Dohe",
+      "source": "Malhar – Chapter 5",
+      "title": "सत्य का महत्व",
+      "question": "जीवन में सत्य के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "Kabir Ke Dohe",
+      "source": "Malhar – Chapter 5",
+      "title": "अहंकार का त्याग",
+      "question": "अहंकार त्यागने की आवश्यकता पर डायरी लिखिए।"
+    },
+    {
+      "id": 25,
+      "chapter": "Kabir Ke Dohe",
+      "source": "Malhar – Chapter 5",
+      "title": "मानवता का संदेश",
+      "question": "कबीर के मानवता के संदेश पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 26,
+      "chapter": "Ek Tokri Bhar Mitti",
+      "source": "Malhar – Chapter 6",
+      "title": "गरीब विधवा की स्थिति",
+      "question": "गरीब विधवा की स्थिति देखकर अपनी भावनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 27,
+      "chapter": "Ek Tokri Bhar Mitti",
+      "source": "Malhar – Chapter 6",
+      "title": "मानवता की जीत",
+      "question": "कहानी में दिखाई गई मानवता पर डायरी लिखिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "Ek Tokri Bhar Mitti",
+      "source": "Malhar – Chapter 6",
+      "title": "जमींदार का परिवर्तन",
+      "question": "जमींदार के परिवर्तन पर अपनी प्रतिक्रिया डायरी में लिखिए।"
+    },
+    {
+      "id": 29,
+      "chapter": "Ek Tokri Bhar Mitti",
+      "source": "Malhar – Chapter 6",
+      "title": "गरीबों के प्रति दया",
+      "question": "गरीबों के प्रति दया और संवेदना के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 30,
+      "chapter": "Ek Tokri Bhar Mitti",
+      "source": "Malhar – Chapter 6",
+      "title": "समानता का संदेश",
+      "question": "समानता और न्याय के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 31,
+      "chapter": "Mat Baandho",
+      "source": "Malhar – Chapter 7",
+      "title": "स्वतंत्रता का महत्व",
+      "question": "स्वतंत्रता के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 32,
+      "chapter": "Mat Baandho",
+      "source": "Malhar – Chapter 7",
+      "title": "पक्षियों की आज़ादी",
+      "question": "पक्षियों को पिंजरे में बंद करने के विषय पर अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 33,
+      "chapter": "Mat Baandho",
+      "source": "Malhar – Chapter 7",
+      "title": "प्रकृति से प्रेम",
+      "question": "प्रकृति और जीव-जंतुओं के प्रति प्रेम पर डायरी लिखिए।"
+    },
+    {
+      "id": 34,
+      "chapter": "Mat Baandho",
+      "source": "Malhar – Chapter 7",
+      "title": "बंधनों का विरोध",
+      "question": "जीवों को बंधन में रखने के विरोध में डायरी लिखिए।"
+    },
+    {
+      "id": 35,
+      "chapter": "Mat Baandho",
+      "source": "Malhar – Chapter 7",
+      "title": "प्राकृतिक जीवन",
+      "question": "प्राकृतिक जीवन के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 36,
+      "chapter": "Naye Mehman",
+      "source": "Malhar – Chapter 8",
+      "title": "नए मेहमान का स्वागत",
+      "question": "घर में आए नए मेहमान के स्वागत का अनुभव डायरी में लिखिए।"
+    },
+    {
+      "id": 37,
+      "chapter": "Naye Mehman",
+      "source": "Malhar – Chapter 8",
+      "title": "अतिथि देवो भव",
+      "question": "अतिथि सत्कार के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 38,
+      "chapter": "Naye Mehman",
+      "source": "Malhar – Chapter 8",
+      "title": "परिवार की खुशी",
+      "question": "मेहमान के आने से परिवार में आई खुशी का वर्णन डायरी में लिखिए।"
+    },
+    {
+      "id": 39,
+      "chapter": "Naye Mehman",
+      "source": "Malhar – Chapter 8",
+      "title": "सामाजिक संबंध",
+      "question": "अतिथियों के माध्यम से बनने वाले सामाजिक संबंधों पर डायरी लिखिए।"
+    },
+    {
+      "id": 40,
+      "chapter": "Naye Mehman",
+      "source": "Malhar – Chapter 8",
+      "title": "अतिथि का सम्मान",
+      "question": "अतिथि के सम्मान का महत्व बताते हुए डायरी लिखिए।"
+    },
+
+    {
+      "id": 41,
+      "chapter": "Aadmi Ka Anupat",
+      "source": "Malhar – Chapter 9",
+      "title": "मनुष्य का मूल्य",
+      "question": "मनुष्य के वास्तविक मूल्य पर डायरी लिखिए।"
+    },
+    {
+      "id": 42,
+      "chapter": "Aadmi Ka Anupat",
+      "source": "Malhar – Chapter 9",
+      "title": "चरित्र का महत्व",
+      "question": "चरित्र के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 43,
+      "chapter": "Aadmi Ka Anupat",
+      "source": "Malhar – Chapter 9",
+      "title": "अच्छे गुण",
+      "question": "जीवन में अच्छे गुणों के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 44,
+      "chapter": "Aadmi Ka Anupat",
+      "source": "Malhar – Chapter 9",
+      "title": "ईमानदारी",
+      "question": "ईमानदारी के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 45,
+      "chapter": "Aadmi Ka Anupat",
+      "source": "Malhar – Chapter 9",
+      "title": "नैतिक मूल्य",
+      "question": "नैतिक मूल्यों पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 46,
+      "chapter": "Tarun Ke Swapn",
+      "source": "Malhar – Chapter 10",
+      "title": "युवाओं के सपने",
+      "question": "देश के लिए युवाओं के सपनों पर डायरी लिखिए।"
+    },
+    {
+      "id": 47,
+      "chapter": "Tarun Ke Swapn",
+      "source": "Malhar – Chapter 10",
+      "title": "देश की प्रगति",
+      "question": "देश की प्रगति में युवाओं की भूमिका पर डायरी लिखिए।"
+    },
+    {
+      "id": 48,
+      "chapter": "Tarun Ke Swapn",
+      "source": "Malhar – Chapter 10",
+      "title": "देशभक्ति",
+      "question": "युवाओं में देशभक्ति की भावना पर डायरी लिखिए।"
+    },
+    {
+      "id": 49,
+      "chapter": "Tarun Ke Swapn",
+      "source": "Malhar – Chapter 10",
+      "title": "भविष्य की आशा",
+      "question": "देश के उज्ज्वल भविष्य के बारे में अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 50,
+      "chapter": "Tarun Ke Swapn",
+      "source": "Malhar – Chapter 10",
+      "title": "युवा शक्ति",
+      "question": "युवा शक्ति के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 51,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "पुस्तक से मिली सीख",
+      "question": "मल्हार पुस्तक से मिली प्रमुख सीख पर डायरी लिखिए।"
+    },
+    {
+      "id": 52,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा पसंदीदा पाठ",
+      "question": "अपने पसंदीदा पाठ के बारे में डायरी लिखिए।"
+    },
+    {
+      "id": 53,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन मूल्य",
+      "question": "मल्हार के पाठों से मिले जीवन मूल्यों पर डायरी लिखिए।"
+    },
+    {
+      "id": 54,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "प्रेरणादायक कहानी",
+      "question": "किसी प्रेरणादायक कहानी पर डायरी लिखिए।"
+    },
+    {
+      "id": 55,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "सीख और अनुभव",
+      "question": "इस पुस्तक को पढ़कर अपने अनुभव डायरी में लिखिए।"
+    },
+
+    {
+      "id": 56,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मैंने क्या सीखा",
+      "question": "इस पुस्तक से आपने क्या सीखा, उस पर डायरी लिखिए।"
+    },
+    {
+      "id": 57,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा अनुभव",
+      "question": "मल्हार पढ़ने का अनुभव डायरी में लिखिए।"
+    },
+    {
+      "id": 58,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मेरी प्रेरणा",
+      "question": "किस पाठ ने आपको सबसे अधिक प्रेरित किया, उस पर डायरी लिखिए।"
+    },
+    {
+      "id": 59,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन में उपयोग",
+      "question": "इन पाठों की सीख को जीवन में कैसे अपनाएँगे, इस पर डायरी लिखिए।"
+    },
+    {
+      "id": 60,
+      "chapter": "Student Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "पढ़ाई का महत्व",
+      "question": "पढ़ाई और ज्ञान के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 61,
+      "chapter": "Practice",
+      "source": "All Chapters – Malhar",
+      "title": "सच्चाई",
+      "question": "जीवन में सच्चाई के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 62,
+      "chapter": "Practice",
+      "source": "All Chapters – Malhar",
+      "title": "ईमानदारी",
+      "question": "ईमानदारी के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 63,
+      "chapter": "Practice",
+      "source": "All Chapters – Malhar",
+      "title": "दया",
+      "question": "दया और सहानुभूति के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 64,
+      "chapter": "Practice",
+      "source": "All Chapters – Malhar",
+      "title": "प्रकृति का संरक्षण",
+      "question": "प्रकृति के संरक्षण पर डायरी लिखिए।"
+    },
+    {
+      "id": 65,
+      "chapter": "Practice",
+      "source": "All Chapters – Malhar",
+      "title": "मानवता",
+      "question": "मानवता के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 66,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "अगर मैं पक्षी होता",
+      "question": "कल्पना कीजिए कि आप एक पक्षी हैं और अपने अनुभव डायरी में लिखिए।"
+    },
+    {
+      "id": 67,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "अगर मैं देश का नेता होता",
+      "question": "कल्पना कीजिए कि आप देश के नेता हैं और अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 68,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरी यात्रा",
+      "question": "किसी यात्रा के अनुभव पर डायरी लिखिए।"
+    },
+    {
+      "id": 69,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा सपना",
+      "question": "अपने जीवन के सपनों के बारे में डायरी लिखिए।"
+    },
+    {
+      "id": 70,
+      "chapter": "Creative",
+      "source": "All Chapters – Malhar",
+      "title": "मेरी प्रेरणा",
+      "question": "आपको प्रेरित करने वाले व्यक्ति पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 71,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Malhar",
+      "title": "परीक्षा की तैयारी",
+      "question": "हिंदी परीक्षा की तैयारी करते समय अपनी भावनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 72,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Malhar",
+      "title": "स्कूल का अनुभव",
+      "question": "स्कूल में बिताए एक दिन का अनुभव डायरी में लिखिए।"
+    },
+    {
+      "id": 73,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा शिक्षक",
+      "question": "अपने प्रिय शिक्षक के बारे में डायरी लिखिए।"
+    },
+    {
+      "id": 74,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Malhar",
+      "title": "मेरे मित्र",
+      "question": "अपने मित्रों के साथ बिताए समय पर डायरी लिखिए।"
+    },
+    {
+      "id": 75,
+      "chapter": "Student Diary",
+      "source": "All Chapters – Malhar",
+      "title": "मेरी पढ़ाई",
+      "question": "पढ़ाई के अनुभवों को डायरी में लिखिए।"
+    },
+
+    {
+      "id": 76,
+      "chapter": "Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "गलतियों से सीख",
+      "question": "जीवन में की गई गलतियों से मिली सीख पर डायरी लिखिए।"
+    },
+    {
+      "id": 77,
+      "chapter": "Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "आत्मविश्वास",
+      "question": "आत्मविश्वास के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 78,
+      "chapter": "Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "संघर्ष और सफलता",
+      "question": "संघर्ष और सफलता के संबंध पर डायरी लिखिए।"
+    },
+    {
+      "id": 79,
+      "chapter": "Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "सही निर्णय",
+      "question": "जीवन में सही निर्णय लेने पर डायरी लिखिए।"
+    },
+    {
+      "id": 80,
+      "chapter": "Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन के मूल्य",
+      "question": "जीवन के मूल्यों पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 81,
+      "chapter": "Advanced",
+      "source": "All Chapters – Malhar",
+      "title": "मानव स्वभाव",
+      "question": "मानव स्वभाव के बारे में अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 82,
+      "chapter": "Advanced",
+      "source": "All Chapters – Malhar",
+      "title": "मन की शक्ति",
+      "question": "मन की शक्ति पर डायरी लिखिए।"
+    },
+    {
+      "id": 83,
+      "chapter": "Advanced",
+      "source": "All Chapters – Malhar",
+      "title": "सच्ची सफलता",
+      "question": "सच्ची सफलता का अर्थ समझाते हुए डायरी लिखिए।"
+    },
+    {
+      "id": 84,
+      "chapter": "Advanced",
+      "source": "All Chapters – Malhar",
+      "title": "आत्म सुधार",
+      "question": "स्वयं को बेहतर बनाने के प्रयासों पर डायरी लिखिए।"
+    },
+    {
+      "id": 85,
+      "chapter": "Advanced",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन के चुनाव",
+      "question": "जीवन में किए जाने वाले चुनावों पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 86,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "साहित्य से सीख",
+      "question": "साहित्य से मिलने वाली सीख पर डायरी लिखिए।"
+    },
+    {
+      "id": 87,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "युवाओं के लिए संदेश",
+      "question": "युवाओं के लिए प्रेरणादायक संदेश देते हुए डायरी लिखिए।"
+    },
+    {
+      "id": 88,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "नैतिक दिशा",
+      "question": "जीवन में नैतिक दिशा के महत्व पर डायरी लिखिए।"
+    },
+    {
+      "id": 89,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "सही जीवन मार्ग",
+      "question": "सही जीवन मार्ग चुनने पर डायरी लिखिए।"
+    },
+    {
+      "id": 90,
+      "chapter": "Final Reflection",
+      "source": "All Chapters – Malhar",
+      "title": "मानवता और मूल्य",
+      "question": "मानवता और मूल्यों के महत्व पर डायरी लिखिए।"
+    },
+
+    {
+      "id": 91,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "नई सोच",
+      "question": "इस पुस्तक को पढ़कर आई नई सोच पर डायरी लिखिए।"
+    },
+    {
+      "id": 92,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "व्यक्तिगत विकास",
+      "question": "अपने व्यक्तिगत विकास के बारे में डायरी लिखिए।"
+    },
+    {
+      "id": 93,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "सीख को अपनाना",
+      "question": "सीखी गई बातों को जीवन में अपनाने पर डायरी लिखिए।"
+    },
+    {
+      "id": 94,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "बेहतर इंसान बनना",
+      "question": "बेहतर इंसान बनने की कोशिश पर डायरी लिखिए।"
+    },
+    {
+      "id": 95,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "मेरे विचार",
+      "question": "पुस्तक के बारे में अपने विचार डायरी में लिखिए।"
+    },
+
+    {
+      "id": 96,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "अंतिम अनुभव",
+      "question": "मल्हार पुस्तक पढ़ने का अंतिम अनुभव डायरी में लिखिए।"
+    },
+    {
+      "id": 97,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "मेरी प्रेरणा",
+      "question": "इस पुस्तक से मिली सबसे बड़ी प्रेरणा पर डायरी लिखिए।"
+    },
+    {
+      "id": 98,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "जीवन की दिशा",
+      "question": "पुस्तक से मिली सीख ने जीवन की दिशा कैसे बदली, इस पर डायरी लिखिए।"
+    },
+    {
+      "id": 99,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "मेरा निष्कर्ष",
+      "question": "मल्हार पुस्तक के बारे में अपना निष्कर्ष डायरी में लिखिए।"
+    },
+    {
+      "id": 100,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Malhar",
+      "title": "अंतिम विचार",
+      "question": "इस पुस्तक से मिली जीवन की सबसे महत्वपूर्ण सीख पर डायरी लिखिए।"
+    }
+  ]
+}

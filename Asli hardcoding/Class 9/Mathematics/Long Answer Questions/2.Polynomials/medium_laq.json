@@ -1,0 +1,375 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-06T01:45:00",
+    "difficulty": "medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the value of p(x)=2x²+3x+1 when x=2.",
+            "answer": "Substitute x=2 → p(2)=2(4)+6+1=15.",
+            "answer_outline": [
+                "Substitute value",
+                "Simplify"
+            ],
+            "key_concepts": [
+                "evaluation of polynomial"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the zero of the polynomial x−9.",
+            "answer": "x−9=0 ⇒ x=9.",
+            "answer_outline": [
+                "Set polynomial to zero",
+                "Solve"
+            ],
+            "key_concepts": [
+                "zero of polynomial"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Factorise x²−16.",
+            "answer": "x²−16=(x−4)(x+4).",
+            "answer_outline": [
+                "Identify difference of squares",
+                "Factorise"
+            ],
+            "key_concepts": [
+                "difference of squares"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Expand (x+5)² using identity.",
+            "answer": "(x+5)²=x²+10x+25.",
+            "answer_outline": [
+                "Apply identity",
+                "Simplify"
+            ],
+            "key_concepts": [
+                "algebraic identities"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the degree and coefficient of x² in 7x²+4x+3.",
+            "answer": "Degree=2, coefficient of x²=7.",
+            "answer_outline": [
+                "Identify highest power",
+                "Identify coefficient"
+            ],
+            "key_concepts": [
+                "degree",
+                "coefficients"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Factorise x²−9.",
+            "answer": "(x−3)(x+3).",
+            "answer_outline": [
+                "Difference of squares",
+                "Factorisation"
+            ],
+            "key_concepts": [
+                "factorisation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Find p(3) if p(x)=x²+4x+1.",
+            "answer": "p(3)=9+12+1=22.",
+            "answer_outline": [
+                "Substitute value",
+                "Simplify"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Expand (2x+3)².",
+            "answer": "4x²+12x+9.",
+            "answer_outline": [
+                "Apply identity",
+                "Simplify"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how to find the degree of a polynomial with example.",
+            "answer": "The degree is the highest power of the variable. Example: Degree of 5x³+2x+1 is 3.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Factorise x²+7x+10.",
+            "answer": "(x+5)(x+2).",
+            "answer_outline": [
+                "Find two numbers",
+                "Factorise"
+            ],
+            "key_concepts": [
+                "quadratic factorisation"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find p(4) if p(x)=x²−5.",
+            "answer": "16−5=11.",
+            "answer_outline": [
+                "Substitute",
+                "Simplify"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain quadratic polynomial with example.",
+            "answer": "A polynomial with degree 2 is called quadratic. Example: x²+3x+1.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "quadratic polynomial"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Expand (x−6)².",
+            "answer": "x²−12x+36.",
+            "answer_outline": [
+                "Apply identity"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Find p(2) if p(x)=x³.",
+            "answer": "8.",
+            "answer_outline": [
+                "Substitution"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain factorisation of polynomials with example.",
+            "answer": "Factorisation means writing a polynomial as product of simpler polynomials. Example: x²−9=(x−3)(x+3).",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "factorisation"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Find p(5) if p(x)=x²−25.",
+            "answer": "0.",
+            "answer_outline": [
+                "Substitution"
+            ],
+            "key_concepts": [
+                "zero"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Expand (3x+4)².",
+            "answer": "9x²+24x+16.",
+            "answer_outline": [
+                "Identity"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the constant term in 6x³+5x²+2.",
+            "answer": "2.",
+            "answer_outline": [
+                "Identify constant term"
+            ],
+            "key_concepts": [
+                "constant term"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain linear polynomial with example.",
+            "answer": "A polynomial of degree 1 is called linear polynomial. Example: 2x+5.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "linear polynomial"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find p(−2) if p(x)=x².",
+            "answer": "4.",
+            "answer_outline": [
+                "Substitution"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Factorise x²−36.",
+            "answer": "(x−6)(x+6).",
+            "answer_outline": [
+                "Difference of squares"
+            ],
+            "key_concepts": [
+                "factorisation"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Find degree of 8x⁵+3x²+1.",
+            "answer": "5.",
+            "answer_outline": [
+                "Highest power"
+            ],
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Expand (x+7)².",
+            "answer": "x²+14x+49.",
+            "answer_outline": [
+                "Identity"
+            ],
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Find p(1) if p(x)=x²+2x+3.",
+            "answer": "6.",
+            "answer_outline": [
+                "Substitute"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain cubic polynomial with example.",
+            "answer": "A polynomial with degree 3 is cubic. Example: x³+2x²+1.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "cubic polynomial"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

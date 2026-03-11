@@ -1,0 +1,234 @@
+{
+    "content_type": "अति लघु प्रश्न",
+    "chapter": "IHKS111 – ग्राम श्री",
+    "title": "ग्राम श्री – सरल स्तर VSAQ",
+    "generated_at": "2026-03-10T00:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "‘ग्राम श्री’ कविता के कवि कौन हैं?",
+            "answer": "सुमित्रानंदन पंत।",
+            "key_points": [
+                "कवि"
+            ],
+            "source_section": "कवि परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "सुमित्रानंदन पंत का जन्म कहाँ हुआ था?",
+            "answer": "उत्तराखंड के कौसानी गाँव में।",
+            "key_points": [
+                "जन्म स्थान"
+            ],
+            "source_section": "कवि परिचय"
+        },
+        {
+            "question_number": 3,
+            "question": "‘ग्राम श्री’ कविता में किसका वर्णन किया गया है?",
+            "answer": "गाँव की प्राकृतिक सुंदरता का।",
+            "key_points": [
+                "प्रकृति"
+            ],
+            "source_section": "कविता"
+        },
+        {
+            "question_number": 4,
+            "question": "कविता में खेतों में कैसी हरियाली दिखाई देती है?",
+            "answer": "मखमल जैसी कोमल हरियाली।",
+            "key_points": [
+                "हरियाली"
+            ],
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 5,
+            "question": "सूर्य की किरणें खेतों पर कैसी चमक उत्पन्न करती हैं?",
+            "answer": "चाँदी जैसी चमक।",
+            "key_points": [
+                "किरणें"
+            ],
+            "source_section": "प्रारंभ"
+        },
+        {
+            "question_number": 6,
+            "question": "कविता में किस फसल का उल्लेख मिलता है?",
+            "answer": "गेहूँ की फसल।",
+            "key_points": [
+                "फसल"
+            ],
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 7,
+            "question": "सरसों के फूल किस रंग के बताए गए हैं?",
+            "answer": "पीले रंग के।",
+            "key_points": [
+                "रंग"
+            ],
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 8,
+            "question": "फूलों के बीच कौन उड़ती रहती हैं?",
+            "answer": "तितलियाँ।",
+            "key_points": [
+                "तितलियाँ"
+            ],
+            "source_section": "फूलों का वर्णन"
+        },
+        {
+            "question_number": 9,
+            "question": "कविता में किस पक्षी का उल्लेख किया गया है?",
+            "answer": "कोयल का।",
+            "key_points": [
+                "पक्षी"
+            ],
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 10,
+            "question": "कविता में किस नदी का वर्णन मिलता है?",
+            "answer": "गंगा नदी का।",
+            "key_points": [
+                "नदी"
+            ],
+            "source_section": "अंतिम भाग"
+        },
+        {
+            "question_number": 11,
+            "question": "गंगा की रेत को किस प्रकार बताया गया है?",
+            "answer": "सतरंगी रेत।",
+            "key_points": [
+                "रेत"
+            ],
+            "source_section": "अंतिम भाग"
+        },
+        {
+            "question_number": 12,
+            "question": "कविता में किस फल का उल्लेख मिलता है?",
+            "answer": "आम का।",
+            "key_points": [
+                "फल"
+            ],
+            "source_section": "फल वर्णन"
+        },
+        {
+            "question_number": 13,
+            "question": "कविता में जामुन का उल्लेख किस रूप में है?",
+            "answer": "फल के रूप में।",
+            "key_points": [
+                "जामुन"
+            ],
+            "source_section": "फल वर्णन"
+        },
+        {
+            "question_number": 14,
+            "question": "अमरूद के फलों पर कैसी चित्तियाँ बताई गई हैं?",
+            "answer": "लाल चित्तियाँ।",
+            "key_points": [
+                "चित्तियाँ"
+            ],
+            "source_section": "फल वर्णन"
+        },
+        {
+            "question_number": 15,
+            "question": "कविता में किस सब्जी का उल्लेख मिलता है?",
+            "answer": "टमाटर का।",
+            "key_points": [
+                "सब्जी"
+            ],
+            "source_section": "सब्जी वर्णन"
+        },
+        {
+            "question_number": 16,
+            "question": "कविता में किस मसाले का उल्लेख मिलता है?",
+            "answer": "धनिया का।",
+            "key_points": [
+                "मसाला"
+            ],
+            "source_section": "मध्य भाग"
+        },
+        {
+            "question_number": 17,
+            "question": "कवि ने गाँव की तुलना किससे की है?",
+            "answer": "मरकत डिब्बे से।",
+            "key_points": [
+                "उपमा"
+            ],
+            "source_section": "अंत"
+        },
+        {
+            "question_number": 18,
+            "question": "‘मरकत’ किस रंग का रत्न होता है?",
+            "answer": "हरे रंग का।",
+            "key_points": [
+                "रंग"
+            ],
+            "source_section": "शब्दार्थ"
+        },
+        {
+            "question_number": 19,
+            "question": "कविता में किस मौसम का वर्णन मिलता है?",
+            "answer": "बसंत ऋतु का।",
+            "key_points": [
+                "ऋतु"
+            ],
+            "source_section": "कविता"
+        },
+        {
+            "question_number": 20,
+            "question": "कविता में प्रकृति को कैसा बताया गया है?",
+            "answer": "सुंदर और आकर्षक।",
+            "key_points": [
+                "प्रकृति"
+            ],
+            "source_section": "समग्र कविता"
+        },
+        {
+            "question_number": 21,
+            "question": "कविता में किस प्रकार का जीवन दर्शाया गया है?",
+            "answer": "ग्रामीण जीवन।",
+            "key_points": [
+                "जीवन"
+            ],
+            "source_section": "समग्र कविता"
+        },
+        {
+            "question_number": 22,
+            "question": "कवि को गाँव का वातावरण कैसा लगता है?",
+            "answer": "मन को आकर्षित करने वाला।",
+            "key_points": [
+                "वातावरण"
+            ],
+            "source_section": "अंतिम भाग"
+        },
+        {
+            "question_number": 23,
+            "question": "कविता में प्रकृति के कौन-कौन से तत्व मिलते हैं?",
+            "answer": "खेत, फूल, फल और पक्षी।",
+            "key_points": [
+                "प्राकृतिक तत्व"
+            ],
+            "source_section": "पूरी कविता"
+        },
+        {
+            "question_number": 24,
+            "question": "कविता का मुख्य विषय क्या है?",
+            "answer": "गाँव की प्राकृतिक सुंदरता।",
+            "key_points": [
+                "विषय"
+            ],
+            "source_section": "समग्र कविता"
+        },
+        {
+            "question_number": 25,
+            "question": "कविता से हमें क्या संदेश मिलता है?",
+            "answer": "प्रकृति और ग्रामीण जीवन का महत्व।",
+            "key_points": [
+                "संदेश"
+            ],
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

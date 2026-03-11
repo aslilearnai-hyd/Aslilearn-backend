@@ -1,0 +1,170 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter_name": "Electricity",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze and solve complex series-parallel circuit problems",
+        "Apply Ohm's law and Joule's law quantitatively in varied scenarios",
+        "Calculate resistivity, power loss, and efficiency in transmission",
+        "Evaluate factors affecting resistance and non-ohmic behavior",
+        "Interpret V-I graphs for different materials",
+        "Critically discuss real-world applications (power grids, safety devices)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Ohm's Law and Resistivity",
+            "topics_covered": [
+                "Ohm's law limitations (non-ohmic devices)",
+                "Resistivity and temperature dependence",
+                "Experiment to find resistivity"
+            ],
+            "teaching_strategy": [
+                "Show V-I graphs for bulb/diode",
+                "Explain temperature coefficient",
+                "Guided resistivity calculation"
+            ],
+            "student_activities": [
+                "Plot and analyze V-I graph for filament lamp",
+                "Calculate resistivity using given data (l, A, R)",
+                "Discuss why resistance increases with temperature"
+            ],
+            "assessment": [
+                "Graph interpretation",
+                "Calculation accuracy"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Complex Circuit Reduction",
+            "topics_covered": [
+                "Mixed series-parallel combinations",
+                "Symmetrical circuits and infinite ladders (conceptual)",
+                "Current division and voltage drop"
+            ],
+            "teaching_strategy": [
+                "Step-by-step reduction method",
+                "Solve advanced NCERT exemplar problems",
+                "Discuss symmetry tricks"
+            ],
+            "student_activities": [
+                "Find equivalent resistance in 3-4 complex networks",
+                "Calculate current in each branch",
+                "Verify with assumed voltage"
+            ],
+            "assessment": [
+                "Equivalent R and branch currents",
+                "Step-by-step working"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Joule's Heating and Power Loss Analysis",
+            "topics_covered": [
+                "H = I²Rt applications (fuse, heater)",
+                "Power loss in transmission lines",
+                "Why high voltage transmission"
+            ],
+            "teaching_strategy": [
+                "Numerical on heat and melting time",
+                "Calculate % power loss at low vs high voltage",
+                "Discuss transformers role"
+            ],
+            "student_activities": [
+                "Solve heating and transmission loss problems",
+                "Compare power loss for 220V vs 11kV",
+                "Write report on advantages of AC transmission"
+            ],
+            "assessment": [
+                "Numerical solutions",
+                "Analysis quality"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Electric Power, Energy, and Efficiency",
+            "topics_covered": [
+                "Power formulas derivations",
+                "Commercial energy units and billing",
+                "Efficiency of appliances"
+            ],
+            "teaching_strategy": [
+                "Derive P = VI, I²R, V²/R",
+                "Solve multi-step energy + cost problems",
+                "Discuss star-rated appliances"
+            ],
+            "student_activities": [
+                "Calculate monthly bill for mixed appliances",
+                "Find efficiency of a device given input/output",
+                "Solve advanced numericals"
+            ],
+            "assessment": [
+                "Complex calculations",
+                "Efficiency reasoning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Domestic Wiring, Safety Devices, and Critical Analysis",
+            "topics_covered": [
+                "Live, neutral, earth wiring",
+                "Fuse vs MCB vs ELCB",
+                "Earthing importance and short circuits"
+            ],
+            "teaching_strategy": [
+                "Draw detailed house wiring diagram",
+                "Compare safety devices with pros/cons",
+                "Case study discussion on accidents"
+            ],
+            "student_activities": [
+                "Draw labelled house wiring circuit",
+                "Analyze a given fault scenario",
+                "Debate: 'MCB is better than fuse – agree/disagree?'"
+            ],
+            "assessment": [
+                "Diagram accuracy",
+                "Analysis and debate arguments"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Comprehensive Revision and Challenge Problems",
+            "topics_covered": [
+                "Full chapter recap with key formulas",
+                "Advanced board/exemplar numericals",
+                "Real-world electricity challenges"
+            ],
+            "teaching_strategy": [
+                "Mixed tough quiz + discussion",
+                "Solve previous year board questions",
+                "Link to renewable energy transmission"
+            ],
+            "student_activities": [
+                "Solve 12-15 challenging numericals",
+                "Analyze one case study (e.g., power theft impact)",
+                "Present one innovative idea for energy saving"
+            ],
+            "assessment": [
+                "Quiz and problem-solving performance",
+                "Presentation and notebook"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT textbook and exemplar problems",
+        "Circuit simulation tools (if available) or paper circuits",
+        "Detailed wiring charts",
+        "Graph paper for V-I plots",
+        "Calculator for numericals"
+    ],
+    "evaluation_methods": [
+        "Advanced numerical accuracy",
+        "Circuit analysis and diagrams",
+        "Critical discussion and case studies",
+        "Comprehensive quiz"
+    ],
+    "teacher_tip": "Focus heavily on multi-step numericals and diagram labelling – these fetch high marks in boards. Encourage students to show all steps clearly. Use real-life scenarios (power cuts, bills, appliances) to make hard concepts meaningful."
+}

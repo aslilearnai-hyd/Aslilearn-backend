@@ -1,0 +1,298 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 7: Particulate Nature of Matter",
+  "generated_at": "2026-03-05T14:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain what is meant by the particulate nature of matter.",
+      "answer": "The particulate nature of matter means that all matter is made up of extremely small particles that cannot be seen with the naked eye.",
+      "answer_outline": [
+        "Matter made of tiny particles",
+        "Particles are extremely small",
+        "Cannot be seen without special tools"
+      ],
+      "key_concepts": ["particles of matter"],
+      "marks": 5,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the chalk grinding activity that demonstrates the particulate nature of matter.",
+      "answer": "When a chalk stick is broken into smaller pieces and ground into powder, each piece still remains chalk, showing that matter can be divided into smaller particles without changing its nature.",
+      "answer_outline": [
+        "Breaking chalk into pieces",
+        "Grinding into powder",
+        "Substance remains the same"
+      ],
+      "key_concepts": ["particle nature"],
+      "marks": 5,
+      "source_section": "Activity 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how dissolving sugar in water shows that matter is made of particles.",
+      "answer": "When sugar dissolves in water, it spreads throughout the liquid and cannot be seen, but the water tastes sweet. This shows that sugar breaks into tiny particles that mix with water.",
+      "answer_outline": [
+        "Sugar dissolves in water",
+        "Particles spread throughout solution",
+        "Sweet taste proves presence of sugar"
+      ],
+      "key_concepts": ["dissolution"],
+      "marks": 5,
+      "source_section": "Activity 7.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of interparticle spaces with an example.",
+      "answer": "Particles of matter have spaces between them. When sugar dissolves in water, sugar particles occupy spaces between water particles.",
+      "answer_outline": [
+        "Spaces between particles",
+        "Example of sugar dissolving in water"
+      ],
+      "key_concepts": ["interparticle spaces"],
+      "marks": 4,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What are interparticle forces of attraction? Explain their importance.",
+      "answer": "Interparticle forces of attraction are forces that hold particles of matter together. These forces determine the physical state of matter.",
+      "answer_outline": [
+        "Definition",
+        "Role in holding particles together",
+        "Determines states of matter"
+      ],
+      "key_concepts": ["interparticle attraction"],
+      "marks": 5,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the arrangement of particles in solids.",
+      "answer": "In solids, particles are closely packed and held together by strong forces of attraction. They can only vibrate around fixed positions.",
+      "answer_outline": [
+        "Closely packed particles",
+        "Strong attraction",
+        "Limited movement"
+      ],
+      "key_concepts": ["solids"],
+      "marks": 4,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain why solids have a definite shape and volume.",
+      "answer": "Solids have a definite shape and volume because their particles are tightly packed and held in fixed positions by strong attractive forces.",
+      "answer_outline": ["Strong attraction", "Particles fixed in position"],
+      "key_concepts": ["properties of solids"],
+      "marks": 4,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the properties of liquids based on particle arrangement.",
+      "answer": "Particles in liquids are loosely packed and can move around each other. Therefore, liquids have a definite volume but no fixed shape.",
+      "answer_outline": [
+        "Loosely packed particles",
+        "Particles move freely",
+        "Definite volume but no fixed shape"
+      ],
+      "key_concepts": ["liquids"],
+      "marks": 5,
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the properties of gases based on particle arrangement.",
+      "answer": "Gas particles are far apart and move freely in all directions. Therefore, gases have no fixed shape or volume.",
+      "answer_outline": [
+        "Particles far apart",
+        "Very weak attraction",
+        "Free movement"
+      ],
+      "key_concepts": ["gases"],
+      "marks": 5,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why gases can be compressed easily.",
+      "answer": "Gases can be compressed easily because there are large spaces between gas particles.",
+      "answer_outline": [
+        "Large spaces between particles",
+        "Particles move closer under pressure"
+      ],
+      "key_concepts": ["compressibility"],
+      "marks": 4,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Describe the syringe experiment used to demonstrate compressibility of gases.",
+      "answer": "When air in a syringe is compressed by pushing the plunger while covering the opening, the air volume decreases. This shows gases are compressible.",
+      "answer_outline": [
+        "Air trapped in syringe",
+        "Plunger pushed inward",
+        "Volume decreases"
+      ],
+      "key_concepts": ["gas compression"],
+      "marks": 5,
+      "source_section": "Activity 7.6"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the role of interparticle spacing in determining states of matter.",
+      "answer": "Interparticle spacing is smallest in solids, larger in liquids, and largest in gases. This difference determines the properties of each state.",
+      "answer_outline": [
+        "Minimum spacing in solids",
+        "Moderate spacing in liquids",
+        "Maximum spacing in gases"
+      ],
+      "key_concepts": ["particle spacing"],
+      "marks": 5,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the concept of diffusion.",
+      "answer": "Diffusion is the movement of particles from one place to another due to their continuous motion.",
+      "answer_outline": [
+        "Continuous particle motion",
+        "Spreading of particles"
+      ],
+      "key_concepts": ["diffusion"],
+      "marks": 4,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Describe the potassium permanganate experiment demonstrating diffusion in liquids.",
+      "answer": "When potassium permanganate crystals are added to water, the purple color spreads throughout the liquid due to diffusion.",
+      "answer_outline": ["Crystal added to water", "Color spreads gradually"],
+      "key_concepts": ["diffusion in liquids"],
+      "marks": 5,
+      "source_section": "Activity 7.8"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why diffusion occurs faster in hot water than in cold water.",
+      "answer": "Diffusion occurs faster in hot water because particles move faster at higher temperatures.",
+      "answer_outline": [
+        "Temperature increases particle motion",
+        "Faster spreading of particles"
+      ],
+      "key_concepts": ["temperature effect"],
+      "marks": 4,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how the smell of perfume spreads throughout a room.",
+      "answer": "Perfume particles mix with air particles and spread due to the continuous motion of gas particles.",
+      "answer_outline": ["Gas particle motion", "Diffusion in air"],
+      "key_concepts": ["gas diffusion"],
+      "marks": 4,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the process of melting using particle theory.",
+      "answer": "When a solid is heated, particles vibrate more rapidly and overcome attractive forces, causing the solid to change into a liquid.",
+      "answer_outline": [
+        "Heating increases vibration",
+        "Forces weaken",
+        "Solid becomes liquid"
+      ],
+      "key_concepts": ["melting"],
+      "marks": 5,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Define melting point and give examples.",
+      "answer": "Melting point is the temperature at which a solid changes into a liquid. For example, ice melts at 0°C.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["melting point"],
+      "marks": 4,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Define boiling point.",
+      "answer": "Boiling point is the temperature at which a liquid changes into vapour.",
+      "answer_outline": [
+        "Liquid to gas change",
+        "Occurs at boiling temperature"
+      ],
+      "key_concepts": ["boiling point"],
+      "marks": 4,
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain evaporation.",
+      "answer": "Evaporation is the process by which a liquid slowly changes into vapour at temperatures below its boiling point.",
+      "answer_outline": ["Surface phenomenon", "Occurs below boiling point"],
+      "key_concepts": ["evaporation"],
+      "marks": 4,
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why liquids can flow but solids cannot.",
+      "answer": "Liquids can flow because their particles move freely within limited space, while particles in solids remain fixed.",
+      "answer_outline": [
+        "Particle movement in liquids",
+        "Fixed particles in solids"
+      ],
+      "key_concepts": ["flow of liquids"],
+      "marks": 5,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the difference between fluids and solids.",
+      "answer": "Fluids such as liquids and gases can flow and change shape easily, whereas solids retain a fixed shape.",
+      "answer_outline": ["Definition of fluids", "Difference from solids"],
+      "key_concepts": ["fluids"],
+      "marks": 4,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of the particulate nature of matter in everyday life.",
+      "answer": "The particulate nature explains phenomena such as dissolving sugar, spreading perfume, evaporation of water, and mixing of gases.",
+      "answer_outline": ["Examples from daily life"],
+      "key_concepts": ["particle theory"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how soap helps remove oily stains.",
+      "answer": "Soap molecules surround oil particles and allow them to mix with water so they can be washed away.",
+      "answer_outline": [
+        "Soap particles attach to oil",
+        "Oil removed with water"
+      ],
+      "key_concepts": ["soap action"],
+      "marks": 4,
+      "source_section": "Chapter Example"
+    },
+    {
+      "question_number": 25,
+      "question": "Summarize the particle model of solids, liquids, and gases.",
+      "answer": "In solids, particles are tightly packed with strong attraction. In liquids, particles are less tightly packed and move freely within limited space. In gases, particles are far apart and move freely in all directions.",
+      "answer_outline": [
+        "Solid particle arrangement",
+        "Liquid particle arrangement",
+        "Gas particle arrangement"
+      ],
+      "key_concepts": ["states of matter"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

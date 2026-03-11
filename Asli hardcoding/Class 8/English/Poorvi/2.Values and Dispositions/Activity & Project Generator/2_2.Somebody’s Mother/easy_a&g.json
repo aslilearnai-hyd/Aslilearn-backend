@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Somebody’s Mother",
+  "difficulty": "Easy",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Helping Someone Reflection",
+      "objective": "Encourage students to reflect on acts of kindness",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Recall a time when you helped someone",
+        "Write two words describing how you felt after helping",
+        "Write what the other person might have felt",
+        "Share your responses with classmates"
+      ],
+      "learning_outcome": "Students understand the emotional value of helping others",
+      "evaluation": "Clarity of reflection and participation in sharing (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Word Association Activity",
+      "objective": "Develop understanding of descriptive vocabulary",
+      "materials": ["Word list from textbook", "Notebook"],
+      "steps": [
+        "Read the list of words given in the activity",
+        "Circle the words that describe an elderly person",
+        "Underline the words that describe a school student",
+        "Discuss reasons for your choices with classmates"
+      ],
+      "learning_outcome": "Students learn to associate vocabulary with appropriate contexts",
+      "evaluation": "Correct classification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Understanding Word Meaning",
+      "objective": "Improve vocabulary comprehension",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the line describing the woman as 'ragged'",
+        "Review the different meanings of the word",
+        "Select the correct meaning used in the poem",
+        "Discuss the reason with classmates"
+      ],
+      "learning_outcome": "Students learn contextual meanings of words",
+      "evaluation": "Correct identification of meaning (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Poem Event Sequencing",
+      "objective": "Understand the sequence of events in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "List the events described in the poem",
+        "Arrange them in the correct order",
+        "Discuss the sequence with classmates"
+      ],
+      "learning_outcome": "Students develop comprehension and sequencing skills",
+      "evaluation": "Correct arrangement of events (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Theme Identification",
+      "objective": "Recognise the central theme of the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem again carefully",
+        "Identify the central message of the poem",
+        "Discuss whether the poem highlights kindness or adventure",
+        "Write your explanation in the notebook"
+      ],
+      "learning_outcome": "Students understand the importance of empathy and kindness",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Poetic Devices Identification",
+      "objective": "Identify poetic devices used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the poem carefully",
+        "Identify examples of simile, alliteration, and repetition",
+        "Write the examples in your notebook",
+        "Discuss how they enhance the poem"
+      ],
+      "learning_outcome": "Students learn literary techniques used in poetry",
+      "evaluation": "Correct identification of poetic devices (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Imagery in Poetry",
+      "objective": "Understand how imagery creates vivid scenes",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the descriptive lines in the poem",
+        "Identify phrases that create imagery",
+        "Explain how these phrases describe the street and weather",
+        "Share your explanation with the class"
+      ],
+      "learning_outcome": "Students develop literary interpretation skills",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Character Comparison",
+      "objective": "Analyse characters in the poem",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Compare the old woman and the young boy",
+        "Write qualities describing each character",
+        "Explain how the boy’s actions show empathy",
+        "Discuss your analysis with classmates"
+      ],
+      "learning_outcome": "Students understand character traits and moral values",
+      "evaluation": "Depth of comparison and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Narrating a Helping Experience",
+      "objective": "Improve speaking and storytelling skills",
+      "materials": ["Notebook"],
+      "steps": [
+        "Think of a time when you helped someone",
+        "Describe what happened and how you helped",
+        "Explain how you felt afterward",
+        "Narrate your experience to the class"
+      ],
+      "learning_outcome": "Students improve communication and storytelling skills",
+      "evaluation": "Clarity and confidence in narration (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Diary Entry Writing",
+      "objective": "Develop reflective writing skills",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about a day when you helped someone",
+        "Write a diary entry describing the situation",
+        "Explain how you helped and how you felt",
+        "Conclude by reflecting on why helping others is important"
+      ],
+      "learning_outcome": "Students improve personal writing and empathy",
+      "evaluation": "Structure, expression, and clarity (10 marks)"
+    }
+  ]
+}

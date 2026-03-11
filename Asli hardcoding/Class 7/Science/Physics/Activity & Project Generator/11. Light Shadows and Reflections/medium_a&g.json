@@ -1,0 +1,184 @@
+{
+    "class": "Class 7",
+    "subject": "Science (CBSE)",
+    "chapter": "Light: Shadows and Reflections",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_science_ch11.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Measuring Shadow Length at Different Times",
+            "objective": "Study change in shadow length during the day",
+            "materials": [
+                "Stick or pencil",
+                "Measuring tape",
+                "Sunlight"
+            ],
+            "steps": [
+                "Place the stick vertically in sunlight",
+                "Measure shadow length in the morning, noon, and evening",
+                "Record and compare shadow lengths"
+            ],
+            "learning_outcome": "Understands relation between sun’s position and shadow length",
+            "evaluation": "Accurate measurement and analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Determining Angle of Incidence and Reflection",
+            "objective": "Apply laws of reflection practically",
+            "materials": [
+                "Plane mirror",
+                "Laser pointer or torch",
+                "Protractor",
+                "White sheet"
+            ],
+            "steps": [
+                "Place mirror on white sheet",
+                "Shine laser at different angles and mark incident and reflected rays",
+                "Measure angles using protractor and verify reflection law"
+            ],
+            "learning_outcome": "Applies law of reflection quantitatively",
+            "evaluation": "Correct measurement of angles and verification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Comparing Shadow Sharpness with Different Light Sources",
+            "objective": "Understand effect of light source size on shadow",
+            "materials": [
+                "Opaque object",
+                "Torch",
+                "Candle",
+                "LED lamp",
+                "Wall or screen"
+            ],
+            "steps": [
+                "Shine each light source on the object to form shadows",
+                "Observe sharpness and clarity",
+                "Record and compare observations"
+            ],
+            "learning_outcome": "Learns effect of light source dimensions on shadow quality",
+            "evaluation": "Accurate observations and comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Creating a Simple Periscope with Calculated Angles",
+            "objective": "Understand reflection and light path control",
+            "materials": [
+                "Cardboard box",
+                "Two mirrors",
+                "Protractor",
+                "Tape/scissors"
+            ],
+            "steps": [
+                "Cut holes on opposite sides of the box",
+                "Fix mirrors at 45° using protractor for accuracy",
+                "Look through periscope to see objects indirectly"
+            ],
+            "learning_outcome": "Applies reflection principles and geometric angles",
+            "evaluation": "Periscope works with correctly positioned mirrors (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Investigating Multiple Shadows",
+            "objective": "Study effect of multiple light sources on shadow formation",
+            "materials": [
+                "Two or more torches",
+                "Opaque object",
+                "Screen or wall"
+            ],
+            "steps": [
+                "Place object in front of wall",
+                "Shine multiple torches from different angles",
+                "Observe number, size, and direction of shadows"
+            ],
+            "learning_outcome": "Understands superposition of shadows from multiple light sources",
+            "evaluation": "Correct observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Reflection from Curved Mirrors",
+            "objective": "Observe focal points of concave and convex mirrors",
+            "materials": [
+                "Concave mirror",
+                "Convex mirror",
+                "Torch",
+                "Screen"
+            ],
+            "steps": [
+                "Shine torch on concave mirror, move screen to locate focused light",
+                "Repeat with convex mirror and observe divergence",
+                "Compare light behavior for both mirrors"
+            ],
+            "learning_outcome": "Understands converging and diverging properties of mirrors",
+            "evaluation": "Correct demonstration and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Shadow Angle vs Object Angle Experiment",
+            "objective": "Study effect of object rotation on shadow",
+            "materials": [
+                "Opaque flat object",
+                "Torch",
+                "White wall",
+                "Protractor"
+            ],
+            "steps": [
+                "Place object in front of wall and shine torch",
+                "Rotate object at different angles",
+                "Measure shadow orientation and compare with object angle"
+            ],
+            "learning_outcome": "Connects object orientation to shadow direction",
+            "evaluation": "Accurate measurement and correlation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Exploring Lateral Inversion",
+            "objective": "Observe lateral inversion in plane mirrors",
+            "materials": [
+                "Plane mirror",
+                "Alphabet letters or arrow signs"
+            ],
+            "steps": [
+                "Place letter/arrow in front of mirror",
+                "Observe reversed image",
+                "Record direction and explain inversion"
+            ],
+            "learning_outcome": "Understands lateral inversion in reflections",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Combining Shadows with Transparent and Opaque Materials",
+            "objective": "Understand light partial blocking and shadow blending",
+            "materials": [
+                "Transparent sheet",
+                "Translucent paper",
+                "Opaque cardboard",
+                "Torch",
+                "Screen"
+            ],
+            "steps": [
+                "Shine torch through each material individually",
+                "Observe and compare shadows formed",
+                "Place materials together to see combined shadow effect"
+            ],
+            "learning_outcome": "Learns effect of different material transparency on shadows",
+            "evaluation": "Accurate observations and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quiz on Reflection and Shadows",
+            "objective": "Reinforce medium-level concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Prepare five questions on angles, shadow properties, and mirror types",
+                "Prepare five questions on multiple shadows and light behavior",
+                "Exchange with a friend and solve"
+            ],
+            "learning_outcome": "Strengthens analytical understanding of chapter",
+            "evaluation": "Quality of questions and answers (10 marks)"
+        }
+    ]
+}

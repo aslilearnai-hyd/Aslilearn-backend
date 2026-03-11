@@ -1,0 +1,361 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Human Resources",
+  "generated_at": "2026-03-06T16:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why are human resources considered more valuable than natural resources?",
+      "options": {
+        "A": "They create climate conditions",
+        "B": "They utilize natural resources and develop technology",
+        "C": "They produce rainfall",
+        "D": "They control natural disasters"
+      },
+      "correct_answer": "B",
+      "explanation": "Human resources apply knowledge and technology to use natural resources effectively.",
+      "difficulty": "hard",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which factor best explains why South Asia has a dense population?",
+      "options": {
+        "A": "Frequent earthquakes",
+        "B": "Fertile plains and favorable climate",
+        "C": "Extreme cold climate",
+        "D": "Lack of water resources"
+      },
+      "correct_answer": "B",
+      "explanation": "Fertile land and moderate climate attract large populations.",
+      "difficulty": "hard",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "Population density is most useful for:",
+      "options": {
+        "A": "Understanding settlement pressure on land",
+        "B": "Calculating rainfall",
+        "C": "Identifying mineral deposits",
+        "D": "Determining soil fertility"
+      },
+      "correct_answer": "A",
+      "explanation": "Population density shows how crowded a region is and helps analyze pressure on resources.",
+      "difficulty": "hard",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "Which combination of factors most strongly attracts population to urban areas?",
+      "options": {
+        "A": "Cold climate and forests",
+        "B": "Job opportunities and infrastructure",
+        "C": "Mountains and deserts",
+        "D": "Glaciers and rivers"
+      },
+      "correct_answer": "B",
+      "explanation": "Urban areas attract people due to employment opportunities and better facilities.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which factor primarily influences migration from rural to urban areas?",
+      "options": {
+        "A": "Availability of forests",
+        "B": "Lack of employment in villages",
+        "C": "Presence of deserts",
+        "D": "Decrease in rainfall"
+      },
+      "correct_answer": "B",
+      "explanation": "Unemployment in rural areas pushes people to migrate to cities.",
+      "difficulty": "hard",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "A country with a wide-base population pyramid usually indicates:",
+      "options": {
+        "A": "Low birth rate",
+        "B": "Rapid population growth",
+        "C": "Declining population",
+        "D": "Stable population"
+      },
+      "correct_answer": "B",
+      "explanation": "A wide base represents a large young population and high birth rate.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "Which population characteristic is most useful for planning education facilities?",
+      "options": {
+        "A": "Migration rate",
+        "B": "Age structure",
+        "C": "Climate",
+        "D": "Industrial growth"
+      },
+      "correct_answer": "B",
+      "explanation": "Age structure shows the number of children who need schools.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor improves the productivity of human resources the most?",
+      "options": {
+        "A": "Education and skill training",
+        "B": "Deserts",
+        "C": "Volcanoes",
+        "D": "Glaciers"
+      },
+      "correct_answer": "A",
+      "explanation": "Education and skill development increase productivity and innovation.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following best describes the relationship between health and economic productivity?",
+      "options": {
+        "A": "Health has no impact on productivity",
+        "B": "Healthy workers are more productive",
+        "C": "Health reduces economic growth",
+        "D": "Health affects only migration"
+      },
+      "correct_answer": "B",
+      "explanation": "Healthy individuals can work efficiently and contribute to economic growth.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "Which factor mainly explains the growth of cities in industrial regions?",
+      "options": {
+        "A": "Mineral deposits only",
+        "B": "Employment opportunities created by industries",
+        "C": "Low rainfall",
+        "D": "High altitude"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial jobs attract migrants and increase urban population.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which type of migration occurs when people move to another country permanently?",
+      "options": {
+        "A": "Seasonal migration",
+        "B": "Internal migration",
+        "C": "International migration",
+        "D": "Temporary migration"
+      },
+      "correct_answer": "C",
+      "explanation": "International migration involves movement between countries.",
+      "difficulty": "hard",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 12,
+      "question": "Why do polar regions have sparse populations?",
+      "options": {
+        "A": "Lack of water",
+        "B": "Extreme climate and limited resources",
+        "C": "High rainfall",
+        "D": "Excessive industries"
+      },
+      "correct_answer": "B",
+      "explanation": "Extreme cold climate and limited resources discourage settlements.",
+      "difficulty": "hard",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which demographic indicator helps measure educational development?",
+      "options": {
+        "A": "Birth rate",
+        "B": "Literacy rate",
+        "C": "Population density",
+        "D": "Migration rate"
+      },
+      "correct_answer": "B",
+      "explanation": "Literacy rate indicates the educational level of a population.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "Which factor mainly supports agricultural settlements?",
+      "options": {
+        "A": "Fertile soil and water availability",
+        "B": "Glaciers",
+        "C": "Volcanoes",
+        "D": "Deserts"
+      },
+      "correct_answer": "A",
+      "explanation": "Fertile land and water support agriculture and population growth.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 15,
+      "question": "Which population group contributes most to the workforce?",
+      "options": {
+        "A": "Children",
+        "B": "Working-age adults",
+        "C": "Elderly population",
+        "D": "Infants"
+      },
+      "correct_answer": "B",
+      "explanation": "Working-age adults form the main labor force in a country.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which factor improves connectivity and economic activity in settlements?",
+      "options": {
+        "A": "Transportation networks",
+        "B": "Glaciers",
+        "C": "Volcanoes",
+        "D": "Deserts"
+      },
+      "correct_answer": "A",
+      "explanation": "Transportation systems encourage trade and settlement growth.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which factor mainly determines the quality of human resources?",
+      "options": {
+        "A": "Climate",
+        "B": "Education and healthcare",
+        "C": "Mountains",
+        "D": "Forests"
+      },
+      "correct_answer": "B",
+      "explanation": "Education and healthcare improve the quality of human resources.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "Which indicator helps governments plan infrastructure and services?",
+      "options": {
+        "A": "Population data",
+        "B": "Rainfall data",
+        "C": "Soil type",
+        "D": "Forest cover"
+      },
+      "correct_answer": "A",
+      "explanation": "Population data helps governments plan development projects.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor contributes most to technological innovation?",
+      "options": {
+        "A": "Deserts",
+        "B": "Skilled human resources",
+        "C": "Forests",
+        "D": "Mountains"
+      },
+      "correct_answer": "B",
+      "explanation": "Skilled and educated people drive technological progress.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "Which condition can negatively affect economic development?",
+      "options": {
+        "A": "High literacy",
+        "B": "Poor health and lack of education",
+        "C": "Good transportation",
+        "D": "Industrial growth"
+      },
+      "correct_answer": "B",
+      "explanation": "Poor health and low education reduce productivity.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which factor is most important in transforming natural resources into useful products?",
+      "options": {
+        "A": "Human skills",
+        "B": "Rainfall",
+        "C": "Climate",
+        "D": "Mountains"
+      },
+      "correct_answer": "A",
+      "explanation": "Human knowledge and skills help transform natural resources into goods.",
+      "difficulty": "hard",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor mainly supports economic growth in developed countries?",
+      "options": {
+        "A": "High population only",
+        "B": "Skilled and educated workforce",
+        "C": "Large forests",
+        "D": "Deserts"
+      },
+      "correct_answer": "B",
+      "explanation": "Developed countries rely on skilled human resources for economic growth.",
+      "difficulty": "hard",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 23,
+      "question": "Which demographic factor indicates a country's future workforce potential?",
+      "options": {
+        "A": "Age structure",
+        "B": "Rainfall pattern",
+        "C": "Soil fertility",
+        "D": "Mineral resources"
+      },
+      "correct_answer": "A",
+      "explanation": "Age structure shows the number of people entering the workforce.",
+      "difficulty": "hard",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor most strongly influences migration to developed countries?",
+      "options": {
+        "A": "Better economic opportunities",
+        "B": "Extreme weather",
+        "C": "High mountains",
+        "D": "Forest resources"
+      },
+      "correct_answer": "A",
+      "explanation": "People migrate to developed countries for better economic opportunities.",
+      "difficulty": "hard",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 25,
+      "question": "Which factor ultimately determines a country's long-term development?",
+      "options": {
+        "A": "Natural disasters",
+        "B": "Quality of human resources",
+        "C": "Forest density",
+        "D": "Rainfall patterns"
+      },
+      "correct_answer": "B",
+      "explanation": "The education, health, and skills of people determine national development.",
+      "difficulty": "hard",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

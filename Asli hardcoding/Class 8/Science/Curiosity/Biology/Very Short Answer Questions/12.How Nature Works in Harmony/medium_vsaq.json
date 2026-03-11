@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-05T23:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why do organisms need a suitable habitat?",
+      "answer": "Because habitats provide food, water, shelter, and proper environmental conditions for survival.",
+      "key_points": ["habitat"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "How are biotic and abiotic components related in an ecosystem?",
+      "answer": "Biotic components depend on abiotic components like air, water, and sunlight for survival.",
+      "key_points": ["biotic-abiotic interaction"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why are plants called producers?",
+      "answer": "Because they produce their own food using sunlight through photosynthesis.",
+      "key_points": ["producers"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do animals depend on producers?",
+      "answer": "Producers are the main source of energy in food chains.",
+      "key_points": ["energy flow"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 5,
+      "question": "Why are decomposers necessary in ecosystems?",
+      "answer": "They break down dead organisms and recycle nutrients back to the soil.",
+      "key_points": ["decomposers"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 6,
+      "question": "What would happen if decomposers disappeared?",
+      "answer": "Dead organisms would accumulate and nutrients would not return to the soil.",
+      "key_points": ["decomposition"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is the sun important for ecosystems?",
+      "answer": "It is the main source of energy for photosynthesis in plants.",
+      "key_points": ["energy source"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 8,
+      "question": "Why are food chains important?",
+      "answer": "They show how energy flows from one organism to another.",
+      "key_points": ["food chain"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "Why are food webs more complex than food chains?",
+      "answer": "Because they include many interconnected food chains.",
+      "key_points": ["food web"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 10,
+      "question": "What role do predators play in ecosystems?",
+      "answer": "They control prey populations and maintain balance.",
+      "key_points": ["predators"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 11,
+      "question": "What is competition in ecosystems?",
+      "answer": "It occurs when organisms compete for limited resources such as food or space.",
+      "key_points": ["competition"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 12,
+      "question": "Why is biodiversity important?",
+      "answer": "It increases ecosystem stability and resilience.",
+      "key_points": ["biodiversity"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 13,
+      "question": "How does deforestation affect ecosystems?",
+      "answer": "It destroys habitats and reduces biodiversity.",
+      "key_points": ["deforestation"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are forests important for ecosystems?",
+      "answer": "They support biodiversity and help regulate climate.",
+      "key_points": ["forests"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 15,
+      "question": "How do mangrove forests help coastal ecosystems?",
+      "answer": "They protect coastlines from erosion and storms.",
+      "key_points": ["mangroves"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 16,
+      "question": "Why do organisms interact in ecosystems?",
+      "answer": "They interact to obtain food, shelter, and other resources.",
+      "key_points": ["ecosystem interaction"],
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Why are ecosystems interconnected?",
+      "answer": "Changes in one ecosystem can affect others through environmental interactions.",
+      "key_points": ["ecosystem link"],
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 18,
+      "question": "How do decomposers help plant growth?",
+      "answer": "They release nutrients into the soil for plants to use.",
+      "key_points": ["nutrient cycle"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 19,
+      "question": "Why is conservation important?",
+      "answer": "It helps protect ecosystems and biodiversity.",
+      "key_points": ["conservation"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "What is ecosystem balance?",
+      "answer": "A stable relationship among organisms and environmental factors.",
+      "key_points": ["ecosystem balance"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 21,
+      "question": "How can pollution affect ecosystems?",
+      "answer": "It harms organisms and disturbs ecological balance.",
+      "key_points": ["pollution"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "Why do organisms adapt to their habitats?",
+      "answer": "Adaptations help them survive in specific environmental conditions.",
+      "key_points": ["adaptation"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Why are protected areas important?",
+      "answer": "They help conserve wildlife and natural habitats.",
+      "key_points": ["protected areas"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 24,
+      "question": "How does biodiversity support ecosystem balance?",
+      "answer": "Different species maintain ecological stability through interactions.",
+      "key_points": ["biodiversity balance"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are ecosystems important for human life?",
+      "answer": "They provide essential resources such as food, water, oxygen, and climate regulation.",
+      "key_points": ["ecosystem importance"],
+      "source_section": "Section 12.9"
+    }
+  ]
+}

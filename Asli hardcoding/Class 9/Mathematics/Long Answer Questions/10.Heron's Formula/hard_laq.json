@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 10: Heron's Formula",
+    "generated_at": "2026-03-06T14:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that Heron's formula works for a triangle with sides 13.5 cm, 14.2 cm, 15.1 cm.",
+            "answer": "s = (13.5+14.2+15.1)/2 = 21.4; Area = √[21.4×(21.4-13.5)(21.4-14.2)(21.4-15.1)] ≈ √[21.4×7.9×7.2×6.3] ≈ √7642.8 ≈ 87.4 cm².",
+            "answer_outline": ["Calculate s = 21.4", "Compute (s-a)(s-b)(s-c)=7.9×7.2×6.3", "Area = √7642.8 ≈ 87.4 cm²"],
+            "key_concepts": ["decimal sides", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "A triangle has sides 5 cm, 12 cm, 13 cm. Verify that Heron's formula equals ½×base×height.",
+            "answer": "s = 15; Area = √[15×(15-5)(15-12)(15-13)] = √[15×10×3×2] = √900 = 30 cm². ½×5×12 = 30 cm².",
+            "answer_outline": ["s = 15", "Compute √[s(s-a)(s-b)(s-c)] = 30", "Compare with ½×5×12=30"],
+            "key_concepts": ["right triangle", "Heron's formula", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A triangle has sides in AP: 7 cm, 10 cm, 13 cm. Find its area using Heron’s formula.",
+            "answer": "s = (7+10+13)/2 = 15; Area = √[15×8×5×2] = √1200 ≈ 34.64 cm².",
+            "answer_outline": ["s = 15", "(s-a)(s-b)(s-c) = 8×5×2", "Area = √1200 ≈ 34.64 cm²"],
+            "key_concepts": ["arithmetic progression", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that for an equilateral triangle of side a, Heron's formula reduces to (√3/4)a².",
+            "answer": "s = 3a/2; Area = √[s(s-a)^3] = √[(3a/2)(a/2)^3] = √[3a^4/16] = (√3/4)a².",
+            "answer_outline": ["s = 3a/2", "Area = √[s(s-a)^3]", "Simplify √(3a^4/16) = (√3/4)a²"],
+            "key_concepts": ["equilateral triangle", "Heron's formula", "proof"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "A triangle has sides 13 cm, 14 cm, 15 cm. Find its area and the radius of its incircle.",
+            "answer": "s = 21; Area = √[21×8×7×6] = √7056 = 84 cm². Radius r = Area/s = 84/21 = 4 cm.",
+            "answer_outline": ["s = 21", "Area = 84 cm²", "r = Area/s = 4 cm"],
+            "key_concepts": ["Heron's formula", "incircle radius", "triangle properties"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "A triangle has sides 7 cm, 24 cm, 25 cm. Find area and check if circumcircle radius is correct.",
+            "answer": "s = 28; Area = √[28×21×4×3] = √7056 = 84 cm²; Circumradius R = (abc)/(4×Area) = (7×24×25)/(4×84) = 30/4 = 7.5 cm.",
+            "answer_outline": ["s = 28", "Area = 84 cm²", "R = (abc)/(4×Area) = 7.5 cm"],
+            "key_concepts": ["right triangle", "Heron's formula", "circumcircle radius"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Triangle sides 9 cm, 9 cm, 12 cm. Find area and altitude from base 12 cm.",
+            "answer": "s = 15; Area = √[15×6×6×3]=√1620≈40.25 cm²; Height h = 2×Area/base = 2×40.25/12 ≈ 6.71 cm.",
+            "answer_outline": ["s = 15", "Area ≈40.25 cm²", "Height h = 2×Area/base ≈ 6.71 cm"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "altitude"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Triangle sides 10 cm, 14 cm, 18 cm. Find area and verify if it is obtuse.",
+            "answer": "s = 21; Area = √[21×11×7×3]=√4851 ≈ 69.65 cm². Check: c²>a²+b² → 18²>10²+14² → 324>100+196 → 324>296 ✅ Obtuse.",
+            "answer_outline": ["s = 21", "Area ≈69.65 cm²", "Check obtuse condition c²>a²+b²"],
+            "key_concepts": ["Heron's formula", "obtuse triangle", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Triangle sides 6.5 cm, 7.2 cm, 8.1 cm. Find area using Heron’s formula.",
+            "answer": "s = (6.5+7.2+8.1)/2=10.9; Area = √[10.9×4.4×3.7×2.8] ≈ √497.12 ≈ 22.3 cm².",
+            "answer_outline": ["s=10.9", "(s-a)(s-b)(s-c)=4.4×3.7×2.8", "Area ≈22.3 cm²"],
+            "key_concepts": ["decimal sides", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Triangle sides 7 cm, 7 cm, 9 cm. Find area and radius of incircle.",
+            "answer": "s = 11.5; Area = √[11.5×4.5×4.5×2.5]=√580.3125 ≈ 24.09 cm²; r = Area/s ≈ 24.09/11.5 ≈ 2.1 cm.",
+            "answer_outline": ["s=11.5", "Area ≈24.09 cm²", "r = Area/s ≈2.1 cm"],
+            "key_concepts": ["Heron's formula", "incircle radius", "isosceles triangle"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Triangle sides 8 cm, 15 cm, 17 cm. Verify area and circumradius.",
+            "answer": "s = 20; Area = √[20×12×5×3]=√3600=60 cm²; R=(abc)/(4×Area)=(8×15×17)/(4×60)=34 cm/4=8.5 cm.",
+            "answer_outline": ["s = 20", "Area=60 cm²", "R = (abc)/(4×Area)=8.5 cm"],
+            "key_concepts": ["Heron's formula", "circumcircle radius", "right triangle"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Triangle sides 12 cm, 16 cm, 20 cm. Find area and verify if right-angled.",
+            "answer": "s = 24; Area = √[24×12×8×4]=√9216=96 cm²; 12²+16²=144+256=400=20² ✅ Right-angled.",
+            "answer_outline": ["s=24", "Area=96 cm²", "Check 12²+16²=20² for right-angle"],
+            "key_concepts": ["Heron's formula", "right triangle", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Triangle sides 5 cm, 5 cm, 6 cm. Find area and altitude from base 6 cm.",
+            "answer": "s = 8; Area = √[8×3×3×2]=√144=12 cm²; Height = 2×Area/base = 24/6 = 4 cm.",
+            "answer_outline": ["s=8", "Area=12 cm²", "Height=4 cm"],
+            "key_concepts": ["isosceles triangle", "altitude", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Triangle sides in GP: 3 cm, 6 cm, 12 cm. Determine if triangle exists, then area.",
+            "answer": "Check: 3+6>12 ❌ Not possible. Triangle cannot be formed.",
+            "answer_outline": ["Check triangle inequality", "3+6≤12 ⇒ Not a triangle"],
+            "key_concepts": ["geometric progression", "triangle existence", "Heron's formula"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Triangle sides 9 cm, 40 cm, 41 cm. Find area and verify right-angle.",
+            "answer": "s = 45; Area = √[45×36×5×4]=√32400=180 cm²; Check 9²+40²=81+1600=1681=41² ✅ Right-angled.",
+            "answer_outline": ["s=45", "Area=180 cm²", "Check 9²+40²=41²"],
+            "key_concepts": ["Heron's formula", "right triangle", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Triangle sides 10 cm, 11 cm, 12 cm. Find area and radius of incircle.",
+            "answer": "s=16.5; Area = √[16.5×6.5×5.5×4.5]=√2659.31 ≈ 51.57 cm²; r = Area/s ≈ 51.57/16.5 ≈ 3.13 cm.",
+            "answer_outline": ["s=16.5", "Area ≈51.57 cm²", "r ≈3.13 cm"],
+            "key_concepts": ["Heron's formula", "incircle radius", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Triangle sides 8 cm, 8 cm, 8 cm. Find area and verify with formula (√3/4)a².",
+            "answer": "s=12; Area=√[12×4×4×4]=√768≈27.71 cm²; (√3/4)×8²=16√3≈27.71 cm² ✅",
+            "answer_outline": ["s=12", "Area≈27.71 cm²", "Compare with (√3/4)a²≈27.71 cm²"],
+            "key_concepts": ["equilateral triangle", "Heron's formula", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Triangle sides 6 cm, 10 cm, 14 cm. Verify if triangle exists, then find area.",
+            "answer": "Check: 6+10>14? 16>14 ✅, 6+14>10 ✅, 10+14>6 ✅. s=15; Area=√[15×9×5×1]=√675 ≈25.98 cm².",
+            "answer_outline": ["Check triangle inequality", "s=15", "Area ≈25.98 cm²"],
+            "key_concepts": ["triangle existence", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Triangle sides 7.5 cm, 9.3 cm, 10.1 cm. Find area using Heron’s formula.",
+            "answer": "s = 13.45; Area = √[13.45×5.95×4.15×3.35] ≈ √1112.14 ≈ 33.36 cm².",
+            "answer_outline": ["s=13.45", "(s-a)(s-b)(s-c)=5.95×4.15×3.35", "Area≈33.36 cm²"],
+            "key_concepts": ["decimal sides", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Triangle sides 9 cm, 10 cm, 13 cm. Find area and check obtuse property.",
+            "answer": "s = 16; Area = √[16×7×6×3]=√2016 ≈ 44.91 cm²; Check: c²>a²+b² → 13²>9²+10² →169>81+100 →169>181 ❌ Acute triangle.",
+            "answer_outline": ["s=16", "Area≈44.91 cm²", "Check obtuse condition c²>a²+b²"],
+            "key_concepts": ["Heron's formula", "obtuse triangle", "verification"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Triangle sides 12 cm, 13 cm, 15 cm. Find area and altitude from side 15 cm.",
+            "answer": "s = 20; Area = √[20×8×7×5]=√5600≈74.83 cm²; Altitude h=2×Area/base=2×74.83/15≈9.98 cm.",
+            "answer_outline": ["s=20", "Area≈74.83 cm²", "Height=2×Area/15≈9.98 cm"],
+            "key_concepts": ["Heron's formula", "altitude", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Triangle sides 7 cm, 24 cm, 25 cm. Find area and inradius.",
+            "answer": "s=28; Area=84 cm²; r=Area/s=84/28=3 cm.",
+            "answer_outline": ["s=28", "Area=84 cm²", "r=3 cm"],
+            "key_concepts": ["Heron's formula", "inradius", "right triangle"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Triangle sides 5 cm, 12 cm, 13 cm. Verify area and circumradius.",
+            "answer": "s=15; Area=30 cm²; R=(abc)/(4×Area)=(5×12×13)/(120)=780/120=6.5 cm.",
+            "answer_outline": ["s=15", "Area=30 cm²", "R=6.5 cm"],
+            "key_concepts": ["Heron's formula", "circumradius", "right triangle"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Triangle sides 6.2 cm, 7.4 cm, 8.1 cm. Find area using Heron’s formula.",
+            "answer": "s = (6.2+7.4+8.1)/2 = 10.85; Area = √[10.85×(10.85-6.2)(10.85-7.4)(10.85-8.1)] = √[10.85×4.65×3.45×2.75] ≈ √479.55 ≈ 21.9 cm².",
+            "answer_outline": ["s = 10.85", "(s-a)(s-b)(s-c)=4.65×3.45×2.75", "Area ≈21.9 cm²"],
+            "key_concepts": ["decimal sides", "Heron's formula", "triangle area"],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Triangle sides 15 cm, 15 cm, 24 cm. Find area and check if triangle is obtuse.",
+            "answer": "s = (15+15+24)/2 = 27; Area = √[27×(27-15)×(27-15)×(27-24)] = √[27×12×12×3] = √11664 ≈ 108 cm². Check obtuse: 24² > 15²+15² → 576 > 450 ✅ Obtuse triangle.",
+            "answer_outline": ["s = 27", "Area = √11664 ≈ 108 cm²", "Check obtuse condition: 24² > 15²+15²"],
+            "key_concepts": ["isosceles triangle", "Heron's formula", "obtuse triangle"],
+            "marks": 5,
+            "source_section": "10.2"
+        }
+    ]
+}

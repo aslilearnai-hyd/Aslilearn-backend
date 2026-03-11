@@ -1,0 +1,408 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 10: The Human Eye and the Colourful World",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the relation for power of accommodation. Calculate the change in focal length when the eye focuses from infinity to 25 cm.",
+            "answer": "Power P = 1/f (metres). Far point infinity → f = ∞, P = 0 D. Near point 25 cm = 0.25 m, P = 1/0.25 = 4 D. Change in power = 4 D. Lens power increases by 4 dioptres for near vision.",
+            "answer_outline": [
+                "Power formula",
+                "Calculation for far and near",
+                "Change in power"
+            ],
+            "key_concepts": [
+                "accommodation power",
+                "dioptre calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "A person has myopia with far point 100 cm. Calculate the power of corrective lens needed. Draw ray diagram.",
+            "answer": "Far point = 100 cm = 1 m. For normal eye, far point ∞. Lens power P = 1/f = 1/(-1) = -1 D (concave). Diagram: Parallel rays converge at 1 m; concave lens makes them parallel again.",
+            "answer_outline": [
+                "Formula P = 1/f - 1/D (D = far point)",
+                "Numerical calculation",
+                "Ray diagram"
+            ],
+            "key_concepts": [
+                "myopia correction",
+                "lens power calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A hypermetropic person has near point 50 cm. Find the power of convex lens required. Show ray diagram.",
+            "answer": "Near point 50 cm = 0.5 m. Normal near point 0.25 m. Lens power P = 1/0.25 - 1/0.5 = 4 - 2 = +2 D. Diagram: Rays from 25 cm form at 50 cm without lens; convex lens shifts to 25 cm.",
+            "answer_outline": [
+                "Lens power formula for hypermetropia",
+                "Calculation",
+                "Ray diagram"
+            ],
+            "key_concepts": [
+                "hypermetropia correction",
+                "numerical problem"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain minimum deviation in a prism. Derive the relation between refractive index, prism angle A, and minimum deviation δ_m.",
+            "answer": "At minimum deviation, angle of incidence = angle of emergence. δ_m = 2i - A. Refractive index μ = sin((A + δ_m)/2) / sin(A/2). Used to find μ experimentally.",
+            "answer_outline": [
+                "Condition for minimum deviation",
+                "Derivation steps",
+                "Final formula"
+            ],
+            "key_concepts": [
+                "minimum deviation",
+                "prism formula"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 5,
+            "question": "In a prism experiment, angle of prism A = 60°, minimum deviation δ_m = 38°. Calculate refractive index of glass.",
+            "answer": "μ = sin((A + δ_m)/2) / sin(A/2) = sin((60 + 38)/2) / sin(30°) = sin(49°) / 0.5 ≈ 0.7547 / 0.5 ≈ 1.509. Hence μ ≈ 1.51.",
+            "answer_outline": [
+                "Given values",
+                "Substitute in formula",
+                "Numerical result"
+            ],
+            "key_concepts": [
+                "prism numerical",
+                "refractive index"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Derive the condition for primary rainbow. Why is red colour seen on the outer edge?",
+            "answer": "For primary rainbow, deviation angle ≈ 42° for red, 40° for violet. Red deviates least, appears outer. Internal reflection + dispersion separates colours. Diagram: Ray path with angles.",
+            "answer_outline": [
+                "Deviation angle calculation",
+                "Colour separation reason",
+                "Ray diagram"
+            ],
+            "key_concepts": [
+                "rainbow derivation",
+                "colour order"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Using Rayleigh scattering formula, show why blue light scatters 16 times more than red light (λ_red = 2λ_blue approx).",
+            "answer": "Intensity I ∝ 1/λ⁴. If λ_red ≈ 2λ_blue, then I_blue / I_red = (λ_red / λ_blue)⁴ = 2⁴ = 16. Hence blue scatters 16 times more than red.",
+            "answer_outline": [
+                "Scattering law",
+                "Wavelength ratio",
+                "Numerical ratio"
+            ],
+            "key_concepts": [
+                "Rayleigh law",
+                "1/λ⁴"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why the intensity of scattered light is maximum for violet but sky appears blue not violet.",
+            "answer": "Violet scatters most (shortest λ), but solar spectrum has less violet energy and eye sensitivity lower for violet. Blue has higher intensity in sunlight and eye response, so sky appears blue.",
+            "answer_outline": [
+                "Scattering amount",
+                "Solar spectrum factor",
+                "Human eye sensitivity"
+            ],
+            "key_concepts": [
+                "violet vs blue",
+                "eye response"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 9,
+            "question": "A myopic person uses -3 D lens. Find his far point. Explain why he cannot see distant objects clearly.",
+            "answer": "P = -3 D → f = 1/P = -1/3 m = -33.3 cm. Far point is 33.3 cm. Image forms before retina for distant objects due to elongated eyeball.",
+            "answer_outline": [
+                "Power to focal length",
+                "Far point calculation",
+                "Cause of defect"
+            ],
+            "key_concepts": [
+                "myopia numerical",
+                "far point"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the formation of secondary rainbow. Why are colours reversed compared to primary?",
+            "answer": "Secondary rainbow: Double internal reflection in raindrop, deviation ≈ 51°. Colours reversed because second reflection inverts order. Violet outside, red inside.",
+            "answer_outline": [
+                "Double reflection",
+                "Deviation angle",
+                "Colour reversal reason"
+            ],
+            "key_concepts": [
+                "secondary rainbow",
+                "colour inversion"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Calculate approximate time difference between actual and apparent sunrise due to refraction.",
+            "answer": "Sun subtends ~0.5° angle. Refraction raises sun by ~0.5° at horizon. Earth rotates 15°/hour → time delay ≈ (0.5/15) × 60 min ≈ 2 minutes each for sunrise and sunset.",
+            "answer_outline": [
+                "Angular displacement",
+                "Earth rotation rate",
+                "Time calculation"
+            ],
+            "key_concepts": [
+                "sunrise delay",
+                "refraction calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does pollution cause more reddish sunsets? Explain using scattering concept.",
+            "answer": "Pollutants (larger particles) cause Mie scattering (less wavelength dependent). More red/orange transmitted and scattered forward, enhancing red hues at sunset.",
+            "answer_outline": [
+                "Pollution particle size",
+                "Mie vs Rayleigh",
+                "Enhanced red transmission"
+            ],
+            "key_concepts": [
+                "pollution sunset",
+                "Mie scattering"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 13,
+            "question": "A person cannot read book at 25 cm but can at 40 cm. Identify defect and calculate lens power.",
+            "answer": "Hypermetropia (near point 40 cm). Required lens makes 40 cm object appear at 25 cm. P = 1/0.25 - 1/0.40 = 4 - 2.5 = +1.5 D.",
+            "answer_outline": [
+                "Defect identification",
+                "Lens power formula",
+                "Numerical solution"
+            ],
+            "key_concepts": [
+                "hypermetropia numerical",
+                "near point correction"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why danger signals are red and not blue using quantitative scattering argument.",
+            "answer": "Scattering I ∝ 1/λ⁴. λ_blue ≈ 450 nm, λ_red ≈ 650 nm. Ratio (650/450)⁴ ≈ (1.44)⁴ ≈ 4.3. Blue scatters ~4 times more, lost in fog; red travels farther.",
+            "answer_outline": [
+                "Wavelength values",
+                "Scattering ratio",
+                "Visibility advantage"
+            ],
+            "key_concepts": [
+                "red signal",
+                "scattering quantitative"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Discuss limitations of simple lens eye model and real eye differences.",
+            "answer": "Simple model assumes single lens, ignores cornea power, chromatic aberration, spherical aberration. Real eye has cornea (~43 D), lens (~17-30 D variable), retina curvature, brain correction for inversion.",
+            "answer_outline": [
+                "Simplifications in model",
+                "Real eye features ignored",
+                "Aberrations"
+            ],
+            "key_concepts": [
+                "eye model limitations",
+                "chromatic aberration"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain colour vision mechanism. Why is red-green colour blindness more common in males?",
+            "answer": "Three cone types (S, M, L for blue, green, red). Brain mixes signals. Red-green blindness: X-linked recessive gene defect. Males have one X chromosome, so more affected if defective.",
+            "answer_outline": [
+                "Cone types",
+                "Genetic cause",
+                "Sex-linked inheritance"
+            ],
+            "key_concepts": [
+                "colour vision",
+                "colour blindness genetics"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Derive approximate angle for primary rainbow using Snell's law and reflection.",
+            "answer": "For red light, i ≈ 59.4°, r ≈ 40.2°, deviation after refraction + reflection + refraction ≈ 42°. Similar for violet ~40°. Average 42° cone angle for primary rainbow.",
+            "answer_outline": [
+                "Ray path angles",
+                "Deviation calculation",
+                "Cone angle"
+            ],
+            "key_concepts": [
+                "rainbow angle derivation",
+                "Snell's law"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how LASIK surgery corrects vision defects. Mention advantages and risks.",
+            "answer": "Excimer laser reshapes cornea to adjust refractive power. For myopia, flattens cornea; hypermetropia, steepens. Advantages: Permanent, quick recovery. Risks: Dry eyes, halos, under/over-correction.",
+            "answer_outline": [
+                "Laser reshaping",
+                "Defect-specific changes",
+                "Pros and cons"
+            ],
+            "key_concepts": [
+                "LASIK",
+                "cornea reshaping"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do we see mirages on hot roads? Explain with refraction diagram.",
+            "answer": "Hot air near road less dense, lower refractive index. Light from sky bends upward (total internal reflection-like), appears as water. Diagram: Curved ray path from sky to observer via hot layer.",
+            "answer_outline": [
+                "Temperature gradient",
+                "Refraction bending",
+                "Ray diagram"
+            ],
+            "key_concepts": [
+                "mirage",
+                "inferior mirage"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 20,
+            "question": "A person with presbyopia uses +2 D for reading and -1.5 D for distance. Explain bifocal lens design.",
+            "answer": "Upper part concave (-1.5 D) for distant vision, lower part convex (+2 D) for near. Combined lens allows both without switching. Power difference provides accommodation aid.",
+            "answer_outline": [
+                "Powers for each part",
+                "Design reason",
+                "Combined effect"
+            ],
+            "key_concepts": [
+                "bifocal lens",
+                "presbyopia correction"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Compare Rayleigh and Mie scattering. Give one atmospheric example of each.",
+            "answer": "Rayleigh: Small particles (<< λ), I ∝ 1/λ⁴, blue sky. Mie: Larger particles (~ λ), less wavelength dependent, white clouds, hazy pollution skies.",
+            "answer_outline": [
+                "Particle size difference",
+                "Wavelength dependence",
+                "Examples"
+            ],
+            "key_concepts": [
+                "Rayleigh Mie comparison",
+                "atmospheric examples"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why astronauts see black sky from space but blue sky from Earth.",
+            "answer": "No atmosphere in space → no scattering, sky black. On Earth, atmosphere scatters sunlight (blue most), sky appears blue from scattered light in all directions.",
+            "answer_outline": [
+                "Absence of scattering in space",
+                "Scattering in atmosphere",
+                "Observer position difference"
+            ],
+            "key_concepts": [
+                "black sky space",
+                "blue sky Earth"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Calculate the power of eye lens when viewing an object at 25 cm if cornea power is 43 D and image distance is 2.3 cm.",
+            "answer": "Total power needed P = 1/v - 1/u = 1/0.023 - 1/(-0.25) ≈ 43.48 + 4 = 47.48 D. Lens power = total - cornea = 47.48 - 43 ≈ 4.48 D (accommodation).",
+            "answer_outline": [
+                "Lens maker formula application",
+                "Numerical steps",
+                "Accommodation power"
+            ],
+            "key_concepts": [
+                "eye power calculation",
+                "accommodation"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Discuss environmental factors affecting vision (UV exposure, pollution) and preventive measures.",
+            "answer": "UV causes cataracts, pterygium. Pollution increases scattering, haze, eye irritation. Prevention: UV-protective sunglasses, avoid direct sun, pollution masks, regular eye check-ups.",
+            "answer_outline": [
+                "UV effects",
+                "Pollution effects",
+                "Preventive steps"
+            ],
+            "key_concepts": [
+                "eye health environment",
+                "UV pollution"
+            ],
+            "marks": 5,
+            "source_section": "Related context"
+        },
+        {
+            "question_number": 25,
+            "question": "Critically analyze the statement: 'The blue colour of sky is due to reflection from sea/oceans.' Give scientific reasons.",
+            "answer": "Incorrect. Sea reflects blue from sky but sky is blue even over land/deserts. True cause: Rayleigh scattering by air molecules, independent of surface reflection. Sea appears blue due to absorption of red + reflection of blue sky.",
+            "answer_outline": [
+                "Statement evaluation",
+                "Scientific cause (scattering)",
+                "Role of oceans vs atmosphere"
+            ],
+            "key_concepts": [
+                "common misconception",
+                "scattering proof"
+            ],
+            "marks": 5,
+            "source_section": "Section 10.4"
+        }
+    ]
+}

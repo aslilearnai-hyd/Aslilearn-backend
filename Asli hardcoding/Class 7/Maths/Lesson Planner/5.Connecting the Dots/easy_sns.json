@@ -1,0 +1,72 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Connecting the Dots (Data Handling)",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Collect and record data systematically",
+        "Use Tally Marks to organize information",
+        "Understand the concept of Frequency",
+        "Read and interpret simple Pictographs",
+        "Appreciate the importance of data in daily life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Data Collection and Tally Marks",
+            "topics_covered": [
+                "What is data?",
+                "Organizing raw data",
+                "The 'Five-Count' rule for Tally Marks"
+            ],
+            "teaching_strategy": [
+                "Class survey (Favorite colors/fruits)",
+                "Board demonstration of the diagonal 5th mark",
+                ""
+            ],
+            "student_activities": [
+                "Record the favorite sport of 10 classmates using tallies",
+                "Convert a list of random numbers into a frequency table"
+            ],
+            "assessment": [
+                "Oral checking of tally counts",
+                "Quick worksheet on building a frequency table"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Pictographs",
+            "topics_covered": [
+                "Representing data with symbols",
+                "Understanding the 'Key' or 'Scale' of a pictograph",
+                "Interpreting partial symbols (e.g., half a picture)"
+            ],
+            "teaching_strategy": [
+                "Comparison of tally tables vs. pictographs",
+                "Visual analysis of different keys"
+            ],
+            "student_activities": [
+                "Create a pictograph for 'Number of books read' where 1 book icon = 2 books",
+                "Answer questions based on a provided fruit-stall pictograph"
+            ],
+            "assessment": [
+                "Pictograph interpretation quiz",
+                "Notebook review"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Charts with tally mark patterns",
+        "Sticker sets for pictographs",
+        "Daily newspapers with weather data",
+        "NCERT Textbook"
+    ],
+    "evaluation_methods": [
+        "Frequency table accuracy check",
+        "Pictograph decoding exercise",
+        "Classroom participation"
+    ],
+    "teacher_tip": "Always remind students that the 'Key' is the most important part of a pictograph—without it, the pictures are just drawings, not data!"
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "The Sermon at Benares",
+  "difficulty": "Medium",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Comparative Teachings Chart",
+      "objective": "Compare the sermon’s teachings with modern moral lessons.",
+      "materials": ["Notebook", "Pen", "Chart paper"],
+      "steps": [
+        "List 5 key teachings from the sermon",
+        "Compare each teaching with a modern life lesson or personal experience",
+        "Present findings in a chart format"
+      ],
+      "learning_outcome": "Students will connect historical teachings with contemporary life.",
+      "evaluation": "Accuracy, relevance, and clarity of comparison"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Analysis – Buddha as Teacher",
+      "objective": "Understand Buddha’s teaching methods and qualities.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify 5 qualities of Buddha from the sermon (e.g., wise, calm, persuasive)",
+        "Provide textual examples for each quality",
+        "Write a short analytical paragraph"
+      ],
+      "learning_outcome": "Students will develop analytical and comprehension skills.",
+      "evaluation": "Correct identification, textual support, and clarity"
+    },
+    {
+      "sl_no": 3,
+      "title": "Theme Essay – Right Conduct",
+      "objective": "Explore the theme of moral living in the sermon.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify the sermon’s main teachings on ethical behavior",
+        "Write a structured essay explaining why these teachings are important",
+        "Include examples from daily life to support your points"
+      ],
+      "learning_outcome": "Students will enhance essay writing and moral reasoning.",
+      "evaluation": "Coherence, relevance, and use of examples"
+    },
+    {
+      "sl_no": 4,
+      "title": "Dialogue Reconstruction",
+      "objective": "Recreate dialogues between Buddha and disciples creatively.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose one teaching session from the chapter",
+        "Write a dialogue between Buddha and his disciples discussing that teaching",
+        "Highlight key points of the lesson in the dialogue"
+      ],
+      "learning_outcome": "Students will practice creative writing and interpretation of text.",
+      "evaluation": "Accuracy, creativity, and textual relevance"
+    },
+    {
+      "sl_no": 5,
+      "title": "Reflection – Personal Ethics",
+      "objective": "Relate sermon teachings to personal ethical decisions.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select a teaching on morality or duty from the sermon",
+        "Reflect on how you have applied or could apply it in your life",
+        "Write a one-page reflection"
+      ],
+      "learning_outcome": "Students will connect literary and philosophical ideas to personal life.",
+      "evaluation": "Depth, clarity, and personal connection"
+    },
+    {
+      "sl_no": 6,
+      "title": "Timeline of Teachings",
+      "objective": "Organize the sermon’s teachings chronologically or logically.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "Identify main points of the sermon",
+        "Arrange them in a timeline or logical flow",
+        "Present and explain the sequence"
+      ],
+      "learning_outcome": "Students will strengthen sequencing and analytical skills.",
+      "evaluation": "Accuracy, clarity, and logical arrangement"
+    },
+    {
+      "sl_no": 7,
+      "title": "Poster – Symbolism and Meaning",
+      "objective": "Explore symbols used in the sermon and their significance.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "Identify symbols or metaphors used in the sermon",
+        "Explain the meaning of each symbol",
+        "Design a poster representing these symbols visually"
+      ],
+      "learning_outcome": "Students will understand literary devices and visual representation.",
+      "evaluation": "Correct interpretation, creativity, and clarity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Group Discussion – Relevance Today",
+      "objective": "Discuss the sermon’s relevance in modern life.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Discuss how Buddha’s teachings apply to current social and personal situations",
+        "Give 2–3 real-life examples per group member",
+        "Summarize the discussion for class presentation"
+      ],
+      "learning_outcome": "Students will develop critical thinking, discussion, and presentation skills.",
+      "evaluation": "Participation, clarity, and relevance of examples"
+    },
+    {
+      "sl_no": 9,
+      "title": "Vocabulary in Context",
+      "objective": "Use new words from the chapter in meaningful context.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select 8–10 new words from the sermon",
+        "Write their meanings and use them in sentences relating to teachings",
+        "Share sentences in class"
+      ],
+      "learning_outcome": "Students will enhance vocabulary and application skills.",
+      "evaluation": "Correct usage, grammar, and contextual relevance"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Summary – Illustrated Essay",
+      "objective": "Summarize the sermon creatively with illustrations.",
+      "materials": ["Notebook", "Colors or crayons", "Pen"],
+      "steps": [
+        "Write a one-page summary of the sermon",
+        "Include illustrations or symbols to represent key points",
+        "Explain the illustrations briefly"
+      ],
+      "learning_outcome": "Students will combine writing and visual creativity to demonstrate comprehension.",
+      "evaluation": "Completeness, creativity, and textual accuracy"
+    }
+  ]
+}

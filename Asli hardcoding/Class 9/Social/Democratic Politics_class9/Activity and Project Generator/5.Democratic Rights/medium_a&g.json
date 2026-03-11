@@ -1,0 +1,165 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Democratic Rights",
+    "difficulty": "Medium",
+    "source_pdf": "dem9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Case Study on Life Without Rights",
+            "objective": "Understand consequences when democratic rights are denied",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the examples of Guantanamo Bay, Saudi Arabia and Kosovo",
+                "Discuss what rights were denied in each case",
+                "Write a short comparison of the three situations"
+            ],
+            "learning_outcome": "Students analyze situations where rights are violated",
+            "evaluation": "Accuracy of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Fundamental Rights Mind Map",
+            "objective": "Understand connections among different Fundamental Rights",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write 'Fundamental Rights' at the center",
+                "Draw branches for each right",
+                "Add examples of how each right is applied in daily life"
+            ],
+            "learning_outcome": "Students visualize relationships among rights",
+            "evaluation": "Clarity and organization (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Debate on Freedom of Speech",
+            "objective": "Understand limits of freedom of expression",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Divide students into two groups",
+                "One group argues that freedom of speech should be unlimited",
+                "The other group argues that restrictions are necessary"
+            ],
+            "learning_outcome": "Students understand balance between freedom and responsibility",
+            "evaluation": "Quality of arguments (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Right to Equality Investigation",
+            "objective": "Identify examples of equality and discrimination",
+            "materials": [
+                "Notebook",
+                "Newspapers"
+            ],
+            "steps": [
+                "Collect examples of discrimination from newspapers",
+                "Explain which aspect of Right to Equality is violated",
+                "Suggest ways to promote equality"
+            ],
+            "learning_outcome": "Students recognize discrimination issues",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Court Procedure Activity",
+            "objective": "Understand how courts protect rights",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Study the concept of Right to Constitutional Remedies",
+                "Write steps involved when a citizen approaches the court",
+                "Explain the role of the Supreme Court"
+            ],
+            "learning_outcome": "Students understand judicial protection of rights",
+            "evaluation": "Accuracy of explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Child Labour Awareness Survey",
+            "objective": "Understand Right against Exploitation",
+            "materials": [
+                "Survey sheet",
+                "Notebook"
+            ],
+            "steps": [
+                "Conduct a small survey in your locality",
+                "Find if any children are working in shops or factories",
+                "Write a report explaining why child labour is illegal"
+            ],
+            "learning_outcome": "Students understand exploitation issues",
+            "evaluation": "Quality of survey report (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Religious Freedom Case Analysis",
+            "objective": "Understand secularism and freedom of religion",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify situations where religious freedom is protected",
+                "Discuss limits of religious practices",
+                "Write a paragraph explaining secularism"
+            ],
+            "learning_outcome": "Students understand secular principles",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Minority Rights Project",
+            "objective": "Understand cultural and educational rights",
+            "materials": [
+                "Chart paper",
+                "Reference books"
+            ],
+            "steps": [
+                "Choose one minority community in India",
+                "Study its language and cultural practices",
+                "Explain how the Constitution protects their rights"
+            ],
+            "learning_outcome": "Students understand minority protections",
+            "evaluation": "Completeness of project (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Human Rights Organization Study",
+            "objective": "Learn about NHRC and human rights protection",
+            "materials": [
+                "Internet",
+                "Notebook"
+            ],
+            "steps": [
+                "Research the National Human Rights Commission",
+                "List its major functions",
+                "Present findings in class"
+            ],
+            "learning_outcome": "Students understand institutional protection of rights",
+            "evaluation": "Accuracy of research (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Rights Violation Report Writing",
+            "objective": "Develop awareness about human rights violations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify a human rights violation reported in the news",
+                "Explain the rights involved",
+                "Suggest solutions to prevent such violations"
+            ],
+            "learning_outcome": "Students critically analyze rights violations",
+            "evaluation": "Quality of report (10 marks)"
+        }
+    ]
+}

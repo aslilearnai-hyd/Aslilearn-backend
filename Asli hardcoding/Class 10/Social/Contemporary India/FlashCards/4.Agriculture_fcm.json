@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: Agriculture",
+  "generated_at": "2026-03-11T11:15:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is agriculture?",
+        "correct_answer": "The practice of cultivating crops and raising animals for food and raw materials",
+        "explanation": "Agriculture is a primary economic activity that supports food production and industries.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "What is primitive subsistence farming?",
+        "correct_answer": "A traditional farming method practiced on small land using simple tools and family labour",
+        "explanation": "It often involves shifting cultivation and depends on natural soil fertility and rainfall.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "question": "What is shifting cultivation?",
+        "correct_answer": "A farming method where land is cleared by cutting and burning vegetation and cultivated for a short time",
+        "explanation": "After soil fertility decreases, farmers move to another piece of land.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "question": "What is intensive subsistence farming?",
+        "correct_answer": "A farming method where farmers use small land areas intensively to produce high yields",
+        "explanation": "It uses large amounts of labour and modern inputs such as fertilizers and irrigation.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "question": "What is commercial farming?",
+        "correct_answer": "Farming where crops are grown mainly for sale in markets",
+        "explanation": "It involves the use of modern technology, fertilizers, and mechanized equipment.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "question": "What are the three main cropping seasons in India?",
+        "correct_answer": "Rabi, Kharif, and Zaid",
+        "explanation": "These seasons depend on climatic conditions and determine the time crops are grown.",
+        "source_section": "Cropping Pattern"
+      },
+      {
+        "question": "What are Rabi crops?",
+        "correct_answer": "Crops grown in winter and harvested in summer",
+        "explanation": "Examples include wheat, barley, peas, gram, and mustard.",
+        "source_section": "Cropping Pattern"
+      },
+      {
+        "question": "What are Kharif crops?",
+        "correct_answer": "Crops grown during the monsoon season",
+        "explanation": "Examples include rice, maize, cotton, jute, and groundnut.",
+        "source_section": "Cropping Pattern"
+      },
+      {
+        "question": "What is plantation agriculture?",
+        "correct_answer": "A type of commercial farming where a single crop is grown on large estates",
+        "explanation": "Plantation crops require large capital investment and labour.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "question": "What was the Green Revolution?",
+        "correct_answer": "An agricultural movement that increased crop production using modern technology",
+        "explanation": "It introduced high-yielding seeds, fertilizers, irrigation, and mechanization.",
+        "source_section": "Technological and Institutional Reforms"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Agriculture",
+        "content": "Agriculture is one of the most important primary activities and provides livelihood to a large population in India.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Types of Farming",
+        "content": "Important farming types include primitive subsistence farming, intensive subsistence farming, and commercial farming.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "title": "Cropping Seasons",
+        "content": "India has three cropping seasons: Rabi (winter), Kharif (monsoon), and Zaid (summer).",
+        "source_section": "Cropping Pattern"
+      },
+      {
+        "title": "Plantation Crops",
+        "content": "Tea, coffee, rubber, and sugarcane are examples of plantation crops grown on large estates.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "title": "Agricultural Reforms",
+        "content": "Reforms such as land reforms and the Green Revolution improved agricultural productivity.",
+        "source_section": "Technological and Institutional Reforms"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "India is one of the world's largest producers of rice and wheat.",
+        "source_section": "Major Crops"
+      },
+      {
+        "fact": "Rice is the staple food crop of a majority of the population in India.",
+        "source_section": "Major Crops"
+      },
+      {
+        "fact": "Plantation agriculture usually focuses on a single crop grown over a large area.",
+        "source_section": "Types of Farming"
+      },
+      {
+        "fact": "The Green Revolution significantly increased food grain production in India.",
+        "source_section": "Technological and Institutional Reforms"
+      }
+    ]
+  }
+}

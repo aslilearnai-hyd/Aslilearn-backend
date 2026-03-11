@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Life Processes",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the biochemical steps of photosynthesis and the role of stomata",
+        "Compare aerobic and anaerobic respiration pathways in different organisms",
+        "Describe the human digestive system and the role of specific enzymes",
+        "Explain the double circulation system and the structure of the human heart",
+        "Understand the mechanism of urine formation in the nephron",
+        "Compare transportation mechanisms in plants (ascent of sap vs. translocation)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Nutrition in Plants & Stomatal Mechanism",
+            "topics_covered": [
+                "Detailed events of Photosynthesis",
+                "Structure and function of Stomata",
+                "Experimental proof: Necessity of Chlorophyll/CO2"
+            ],
+            "teaching_strategy": [
+                "Discussion on the three main steps of photosynthesis",
+                "Microscopic view/Slides of stomata",
+                "Flowchart of energy conversion"
+            ],
+            "student_activities": [
+                "Draw the cross-section of a leaf labeling chloroplasts",
+                "Predict what happens if stomata are blocked with vaseline"
+            ],
+            "assessment": [
+                "Labeling leaf anatomy",
+                "Short answer: Role of guard cells"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Human Digestive System & Enzymes",
+            "topics_covered": [
+                "Peristaltic movements",
+                "Role of Gastric glands (HCl, Pepsin, Mucus)",
+                "Functions of Liver and Pancreas (Bile, Trypsin, Lipase)"
+            ],
+            "teaching_strategy": [
+                "Step-by-step digestion flowchart",
+                "Analogy: Enzymes as 'biological scissors'",
+                "Discussion on the length of small intestine in herbivores vs. carnivores"
+            ],
+            "student_activities": [
+                "Create a table mapping organs to the enzymes they secrete",
+                "Diagrammatically represent the role of Villi in absorption"
+            ],
+            "assessment": [
+                "Notebook check: Digestion flowchart",
+                "Quiz: Emulsification of fats"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Respiration: Pathways of Glucose Breakdown",
+            "topics_covered": [
+                "Breakdown of Glucose in Cytoplasm (Pyruvate)",
+                "Pathways in Yeast, Muscle cells, and Mitochondria",
+                "ATP as the energy currency"
+            ],
+            "teaching_strategy": [
+                "The 'Glucose Fate' flowchart on the board",
+                "Comparing energy yield in aerobic vs. anaerobic respiration",
+                "Discussion on lactic acid and muscle fatigue"
+            ],
+            "student_activities": [
+                "Draw the flowchart of glucose breakdown",
+                "Calculate the difference in ATP production between the two modes"
+            ],
+            "assessment": [
+                "Flowchart completion test",
+                "Exit slip: Why is ATP called energy currency?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Human Respiratory System",
+            "topics_covered": [
+                "Mechanism of breathing (Inhalation/Exhalation)",
+                "Role of Diaphragm and Ribs",
+                "Alveoli as the site of gas exchange"
+            ],
+            "teaching_strategy": [
+                "Lung model demonstration (Bell jar experiment)",
+                "Explaining diffusion of gases in Alveoli",
+                "Discussion on residual volume and Hemoglobin"
+            ],
+            "student_activities": [
+                "Draft a paragraph explaining how pressure changes lead to inhalation",
+                "Observe a chart of the respiratory tree"
+            ],
+            "assessment": [
+                "Short written test on breathing mechanism",
+                "Identifying the respiratory pigment"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Transportation: The Human Heart",
+            "topics_covered": [
+                "Structure of Heart (Atria and Ventricles)",
+                "Double Circulation (Pulmonary and Systemic)",
+                "Blood pressure and Sphygmomanometer"
+            ],
+            "teaching_strategy": [
+                "3D Heart model demonstration",
+                "Tracing the path of oxygenated vs. deoxygenated blood",
+                "Explaining why the left ventricular wall is thicker"
+            ],
+            "student_activities": [
+                "Draw a schematic diagram of double circulation",
+                "Measure pulse rate before and after 1 minute of jumping"
+            ],
+            "assessment": [
+                "Labeling heart diagram",
+                "Reasoning: Importance of separation of right/left sides"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Transportation in Plants & Excretion Intro",
+            "topics_covered": [
+                "Xylem: Suction pull and Transpiration",
+                "Phloem: Translocation of food (ATP usage)",
+                "Human Excretory System: Kidney structure"
+            ],
+            "teaching_strategy": [
+                "Discussion on how tall trees get water (Transpiration pull)",
+                "Comparison: Xylem (Physical) vs. Phloem (Biological/Active)",
+                "Chart of the urinary system"
+            ],
+            "student_activities": [
+                "List the components of the excretory system",
+                "Differentiate between Transpiration and Translocation"
+            ],
+            "assessment": [
+                "Table completion on plant transport",
+                "Oral quiz on Kidney functions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "The Nephron & Revision",
+            "topics_covered": [
+                "Structure of a Nephron",
+                "Mechanism of Urine formation (Filtration, Reabsorption)",
+                "Hemodialysis (Artificial Kidney)"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic walkthrough of Bowman’s capsule and Tubule",
+                "Discussion on selective reabsorption of glucose/salts",
+                "Chapter mind-map revision"
+            ],
+            "student_activities": [
+                "Label a complex Nephron diagram",
+                "Complete a 20-mark comprehensive practice test"
+            ],
+            "assessment": [
+                "Summative Chapter Test (20 marks)",
+                "Review of common diagram errors"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Heart and Kidney Models",
+        "NCERT Science Textbook & Lab Manual",
+        "Slides of Leaf TS and Stomata",
+        "Bell jar and balloon lung model",
+        "Digital animations of Double Circulation"
+    ],
+    "evaluation_methods": [
+        "Flowchart and Diagram assessments",
+        "Comparative tables",
+        "MCQs and Assertion-Reasoning questions",
+        "Short descriptive tests",
+        "Practical file review"
+    ],
+    "teacher_tip": "Students often confuse 'respiration' with 'breathing' and 'Xylem' with 'Phloem'. Use consistent color coding (Red for Oxygenated/Food, Blue for Deoxygenated/Water) throughout your charts and board work to provide a visual anchor."
+}

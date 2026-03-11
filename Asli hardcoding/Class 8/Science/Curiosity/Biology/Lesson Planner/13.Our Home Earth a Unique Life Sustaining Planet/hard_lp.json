@@ -1,0 +1,107 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter_name": "Our Home: Earth, a Unique Life Sustaining Planet",
+  "lesson_level": "Hard",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Evaluate the scientific reasons Earth supports life",
+    "Investigate the role of atmosphere and magnetic field in planetary protection",
+    "Analyze interactions between Earth's major systems",
+    "Examine reproduction as a process enabling life continuity",
+    "Critically analyze environmental threats and propose solutions",
+    "Develop research and problem-solving skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Investigating Planetary Habitability",
+      "topics_covered": [
+        "Conditions required for life",
+        "Earth compared with other planets"
+      ],
+      "teaching_strategy": ["Problem-based learning"],
+      "student_activities": [
+        "Design a hypothetical planet capable of supporting life"
+      ],
+      "assessment": ["Presentation evaluation"]
+    },
+    {
+      "period": 2,
+      "title": "Solar System Data Analysis",
+      "topics_covered": ["Planet size", "Temperature", "Atmosphere"],
+      "teaching_strategy": ["Data interpretation"],
+      "student_activities": [
+        "Analyze planetary data and determine habitability"
+      ],
+      "assessment": ["Worksheet analysis"]
+    },
+    {
+      "period": 3,
+      "title": "Habitable Zone Modeling",
+      "topics_covered": ["Goldilocks zone", "Liquid water conditions"],
+      "teaching_strategy": ["Experimental modeling"],
+      "student_activities": [
+        "Create a model demonstrating habitable zones around stars"
+      ],
+      "assessment": ["Model explanation"]
+    },
+    {
+      "period": 4,
+      "title": "Greenhouse Effect and Climate Change",
+      "topics_covered": ["Greenhouse gases", "Global warming"],
+      "teaching_strategy": ["Experiment demonstration"],
+      "student_activities": [
+        "Conduct simple greenhouse experiment and record observations"
+      ],
+      "assessment": ["Lab report"]
+    },
+    {
+      "period": 5,
+      "title": "Magnetic Shield of Earth",
+      "topics_covered": ["Solar wind", "Magnetic protection"],
+      "teaching_strategy": ["Scientific model demonstration"],
+      "student_activities": [
+        "Investigate how magnetic fields deflect charged particles"
+      ],
+      "assessment": ["Concept explanation"]
+    },
+    {
+      "period": 6,
+      "title": "Earth System Dynamics",
+      "topics_covered": [
+        "Atmosphere-hydrosphere interaction",
+        "Energy flow in ecosystems"
+      ],
+      "teaching_strategy": ["Systems thinking activity"],
+      "student_activities": [
+        "Create a systems diagram showing Earth processes"
+      ],
+      "assessment": ["Diagram evaluation"]
+    },
+    {
+      "period": 7,
+      "title": "Environmental Challenges and Solutions",
+      "topics_covered": ["Climate change", "Biodiversity loss", "Pollution"],
+      "teaching_strategy": ["Debate and problem-solving session"],
+      "student_activities": [
+        "Develop a community action plan to protect the environment"
+      ],
+      "assessment": ["Project presentation (10 marks)"]
+    }
+  ],
+  "teaching_aids": [
+    "Solar system datasets",
+    "Magnets and experimental materials",
+    "Climate data charts",
+    "Science textbook diagrams"
+  ],
+  "evaluation_methods": [
+    "Project evaluation",
+    "Experimental reports",
+    "Concept analysis questions",
+    "Presentations"
+  ],
+  "teacher_tip": "Encourage inquiry and research so students actively explore how planetary conditions influence life."
+}

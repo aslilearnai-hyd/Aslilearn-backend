@@ -1,0 +1,361 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Finding the Unknown",
+    "generated_at": "2026-03-05T01:36:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a 'Variable' in mathematics? Give an example of how it is used.",
+            "answer": "A variable is a symbol, usually a letter like $x$, $y$, or $n$, that stands for a number whose value is not yet known or can change. Example: In the expression $x + 5$, $x$ is the variable.",
+            "answer_outline": [
+                "Define the term variable",
+                "Mention the use of letters",
+                "Provide a basic algebraic example"
+            ],
+            "key_concepts": [
+                "variable",
+                "symbols"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "If 'a' represents the number of apples in a basket and you add 3 more, how would you write this as an algebraic expression?",
+            "answer": "The expression would be $a + 3$.",
+            "answer_outline": [
+                "Identify the starting variable",
+                "Translate 'add' into a mathematical operator"
+            ],
+            "key_concepts": [
+                "algebraic expressions",
+                "addition"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the difference between an 'Expression' and an 'Equation'?",
+            "answer": "An expression is a mathematical phrase (like $x + 2$), while an equation is a statement that two expressions are equal, containing an '=' sign (like $x + 2 = 10$).",
+            "answer_outline": [
+                "Define expression",
+                "Define equation",
+                "Highlight the presence of the equals sign"
+            ],
+            "key_concepts": [
+                "expression vs equation"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Solve for $x$: $x - 7 = 10$.",
+            "answer": "To find $x$, we add 7 to both sides of the equation: $x = 10 + 7$. Therefore, $x = 17$.",
+            "answer_outline": [
+                "Identify the inverse operation (addition)",
+                "Calculate the final value"
+            ],
+            "key_concepts": [
+                "one-step equations",
+                "inverse operations"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the statement 'Five times a number $n$ is 30' as an equation.",
+            "answer": "The equation is $5n = 30$.",
+            "answer_outline": [
+                "Translate 'times' to multiplication",
+                "Translate 'is' to equals"
+            ],
+            "key_concepts": [
+                "translating words to math"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What does it mean to 'Solve' an equation?",
+            "answer": "Solving an equation means finding the specific value of the variable that makes the equation a true statement.",
+            "answer_outline": [
+                "Define solving",
+                "Mention making the statement 'true'"
+            ],
+            "key_concepts": [
+                "solution",
+                "equality"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "If $y = 4$, find the value of the expression $3y + 2$.",
+            "answer": "Substitute 4 for $y$: $3(4) + 2 = 12 + 2 = 14$.",
+            "answer_outline": [
+                "Substitute the given value",
+                "Follow order of operations (multiply then add)"
+            ],
+            "key_concepts": [
+                "substitution",
+                "evaluating expressions"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "A pen costs ₹10. Write an expression for the cost of 'p' such pens.",
+            "answer": "The expression is $10p$.",
+            "answer_outline": [
+                "Identify unit cost",
+                "Multiply by the number of items"
+            ],
+            "key_concepts": [
+                "multiplication expression"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Solve for $m$: $4m = 20$.",
+            "answer": "Since $m$ is multiplied by 4, we divide both sides by 4: $m = 20 / 4$. Therefore, $m = 5$.",
+            "answer_outline": [
+                "Identify inverse operation (division)",
+                "Perform calculation"
+            ],
+            "key_concepts": [
+                "one-step equations",
+                "division"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "In the expression $7x - 4$, identify the variable and the constant.",
+            "answer": "The variable is $x$ and the constant is $-4$.",
+            "answer_outline": [
+                "Define variable part",
+                "Define fixed numerical part"
+            ],
+            "key_concepts": [
+                "variable",
+                "constant"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Translate this expression into words: $z / 2$.",
+            "answer": "Possible answers: 'z divided by 2' or 'half of z'.",
+            "answer_outline": [
+                "Provide verbal description of division"
+            ],
+            "key_concepts": [
+                "verbal expressions"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 12,
+            "question": "If you are 'x' years old now, what was your age 5 years ago?",
+            "answer": "The age was $x - 5$.",
+            "answer_outline": [
+                "Subtract time from current age variable"
+            ],
+            "key_concepts": [
+                "age problems",
+                "subtraction"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Solve: $k + 12 = 25$.",
+            "answer": "Subtract 12 from both sides: $k = 25 - 12$. So, $k = 13$.",
+            "answer_outline": [
+                "Apply inverse operation"
+            ],
+            "key_concepts": [
+                "one-step equations"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What number makes this equation true? $n / 3 = 6$.",
+            "answer": "Multiply both sides by 3: $n = 6 \\times 3$. So, $n = 18$.",
+            "answer_outline": [
+                "Undo the division with multiplication"
+            ],
+            "key_concepts": [
+                "one-step equations"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do we use letters instead of blank boxes (like $\\square + 2 = 5$) in higher mathematics?",
+            "answer": "Letters are easier to write, more versatile for complex problems involving multiple unknowns, and allow us to write general rules or formulas clearly.",
+            "answer_outline": [
+                "Versatility",
+                "Ease of writing",
+                "Generalization"
+            ],
+            "key_concepts": [
+                "algebraic notation"
+            ],
+            "marks": 3,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Write an expression for: '9 subtracted from $y$'.",
+            "answer": "The expression is $y - 9$.",
+            "answer_outline": [
+                "Recognize the order of subtraction"
+            ],
+            "key_concepts": [
+                "subtraction order"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Check if $x = 3$ is the solution to $2x + 1 = 7$.",
+            "answer": "Substitute $x = 3$ into the equation: $2(3) + 1 = 6 + 1 = 7$. Since $7 = 7$, $x = 3$ is the correct solution.",
+            "answer_outline": [
+                "Perform substitution",
+                "Compare LHS and RHS"
+            ],
+            "key_concepts": [
+                "verification",
+                "solution"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Raju has $b$ books. His friend has twice as many. How many books does the friend have?",
+            "answer": "The friend has $2b$ books.",
+            "answer_outline": [
+                "Multiply variable by 2"
+            ],
+            "key_concepts": [
+                "expressions"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Solve for $p$: $p - 15 = 0$.",
+            "answer": "Add 15 to both sides: $p = 15$.",
+            "answer_outline": [
+                "Simple addition move"
+            ],
+            "key_concepts": [
+                "equations"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Write an expression for the perimeter of a square with side length 's'.",
+            "answer": "Perimeter = $4s$ (since a square has 4 equal sides).",
+            "answer_outline": [
+                "Use geometric knowledge",
+                "Express as algebraic multiplication"
+            ],
+            "key_concepts": [
+                "perimeter",
+                "geometry in algebra"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "If $x + 10 = 10$, what is the value of $x$?",
+            "answer": "Subtract 10 from both sides: $x = 10 - 10 = 0$.",
+            "answer_outline": [
+                "Recognize the identity"
+            ],
+            "key_concepts": [
+                "zero value"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Identify the operation in the expression $x/5$.",
+            "answer": "The operation is division.",
+            "answer_outline": [
+                "Recognize the fraction bar"
+            ],
+            "key_concepts": [
+                "operations"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Write an equation for: 'A number $w$ increased by 8 gives 20'.",
+            "answer": "The equation is $w + 8 = 20$.",
+            "answer_outline": [
+                "Identify keywords for addition and equals"
+            ],
+            "key_concepts": [
+                "translation"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "If $t = 10$, what is $t / 5$?",
+            "answer": "$10 / 5 = 2$.",
+            "answer_outline": [
+                "Direct substitution"
+            ],
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the variable in the equation $4 + 2 = 6$? Explain.",
+            "answer": "There is no variable in this equation. It consists entirely of constants (numbers) and is a purely numerical statement.",
+            "answer_outline": [
+                "Identify lack of variable",
+                "Define as numerical equation"
+            ],
+            "key_concepts": [
+                "constants",
+                "equations"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

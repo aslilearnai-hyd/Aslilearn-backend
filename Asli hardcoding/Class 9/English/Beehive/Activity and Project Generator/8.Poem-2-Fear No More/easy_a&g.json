@@ -1,0 +1,121 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Fear No More",
+    "author": "William Shakespeare",
+    "difficulty": "Easy",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Poet and Poem",
+            "objective": "Identify the poet",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Read the poem",
+                "Write the poet's name and poem title"
+            ],
+            "learning_outcome": "Recognises the author",
+            "evaluation": "Correct answer (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Theme of the Poem",
+            "objective": "Understand the main idea",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Write the theme in 2–3 sentences"
+            ],
+            "learning_outcome": "Understands theme of the poem",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Meaning of Dust",
+            "objective": "Understand symbolic meaning",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find the meaning of 'come to dust'",
+                "Write what it symbolises"
+            ],
+            "learning_outcome": "Understands poetic symbolism",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Things We Need Not Fear",
+            "objective": "Identify key ideas",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "List the things people need not fear after death",
+                "Write them in points"
+            ],
+            "learning_outcome": "Identifies main points in the poem",
+            "evaluation": "Correct listing (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Natural Elements",
+            "objective": "Recognise nature imagery",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find natural elements mentioned",
+                "Write them in your notebook"
+            ],
+            "learning_outcome": "Understands imagery",
+            "evaluation": "Correct examples (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Message of the Poem",
+            "objective": "Understand the moral idea",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the message of the poem",
+                "Write 3–4 lines explaining it"
+            ],
+            "learning_outcome": "Understands life message",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Vocabulary from the Poem",
+            "objective": "Improve vocabulary",
+            "materials": [
+                "Dictionary"
+            ],
+            "steps": [
+                "Choose three difficult words",
+                "Write meanings and sentences"
+            ],
+            "learning_outcome": "Develops vocabulary skills",
+            "evaluation": "Correct meaning and usage (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Recitation Practice",
+            "objective": "Develop reading and speaking skills",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Read the poem aloud",
+                "Practice reciting it clearly"
+            ],
+            "learning_outcome": "Improves pronunciation and confidence",
+            "evaluation": "Clear recitation (10 marks)"
+        }
+    ]
+}

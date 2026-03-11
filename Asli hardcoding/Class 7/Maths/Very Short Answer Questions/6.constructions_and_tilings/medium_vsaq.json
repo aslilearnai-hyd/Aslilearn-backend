@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: CONSTRUCTIONS AND TILINGS",
+    "generated_at": "2026-03-06T00:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why does a regular hexagon tile a plane while a regular pentagon does not?",
+            "answer": "A regular hexagon's interior angle (120°) is a factor of 360°, whereas a pentagon's (108°) is not.",
+            "key_concepts": ["Interior angles", "Tessellation logic"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How can you construct a 30° angle using only a compass and a ruler?",
+            "answer": "First construct a 60° angle and then bisect it.",
+            "key_concepts": ["Angle construction", "Bisection"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "A tiling is made of squares and regular octagons. How many of each meet at a single vertex?",
+            "answer": "One square and two regular octagons ($90° + 135° + 135° = 360°$).",
+            "key_concepts": ["Semi-regular tiling", "Angle sums"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the measure of the interior angle of a regular octagon?",
+            "answer": "135°",
+            "key_concepts": ["Polygon properties"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the difference between a 'Regular Tiling' and a 'Monohedral Tiling'.",
+            "answer": "Regular tiling uses only one regular polygon; monohedral tiling uses only one shape (which may or may not be regular).",
+            "key_concepts": ["Tiling classification"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 6,
+            "question": "To construct a 90° angle, which two angles do you typically construct first as a base?",
+            "answer": "60° and 120°, then bisect the region between them.",
+            "key_concepts": ["Compass construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Does every triangle tessellate? Give a reason.",
+            "answer": "Yes, because the sum of angles in a triangle is 180°, and placing six of them around a point (using two sets of each angle) creates 360°.",
+            "key_concepts": ["Triangle tessellation"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 8,
+            "question": "How do you check if a line is a perpendicular bisector of another line segment?",
+            "answer": "Check if it passes through the midpoint and if the angle of intersection is 90°.",
+            "key_concepts": ["Geometric verification"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the sum of interior angles of a regular hexagon?",
+            "answer": "720° ($ (6-2) \\times 180° $).",
+            "key_concepts": ["Polygon angle sum"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 10,
+            "question": "In a semi-regular tiling, if two equilateral triangles and two hexagons meet at a vertex, what is the sum of angles?",
+            "answer": "$(60° \\times 2) + (120° \\times 2) = 120° + 240° = 360°$.",
+            "key_concepts": ["Vertex configurations"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the mathematical condition for a regular $n$-gon to tile the plane by itself?",
+            "answer": "The interior angle ($ \frac{(n-2)180}{n} $) must be a factor of 360°.",
+            "key_concepts": ["Tessellation condition"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the steps to construct a 45° angle from a 90° angle.",
+            "answer": "Place the compass on the vertex, mark arcs on both arms, then from those points draw intersecting arcs and join to the vertex.",
+            "key_concepts": ["Angle bisection"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Is it possible to have a tiling where every vertex has a different configuration of shapes?",
+            "answer": "Yes, this is known as an 'Irregular Tiling'.",
+            "key_concepts": ["Irregular tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the angle of a regular 12-sided polygon (dodecagon)? Does it tile with other shapes?",
+            "answer": "150°. Yes, it can tile with equilateral triangles and squares ($150° + 150° + 60° = 360°$).",
+            "key_concepts": ["Semi-regular tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What tool is essential to ensure a construction is 'pure' (Classical Construction)?",
+            "answer": "A collapsible compass and an unmarked straightedge.",
+            "key_concepts": ["Construction history"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Can you tile a plane with any quadrilateral? Justify.",
+            "answer": "Yes, because the sum of interior angles of any quadrilateral is 360°.",
+            "key_concepts": ["Quadrilateral tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "To draw a line parallel to line $L$ through point $P$, what basic construction do we use?",
+            "answer": "We usually construct a transversal and then copy an angle (like a corresponding or alternate interior angle).",
+            "key_concepts": ["Parallel line construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Define an 'Aperiodic Tiling'.",
+            "answer": "A tiling that covers the plane without a repeating translational pattern (e.g., Penrose tiles).",
+            "key_concepts": ["Advanced tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "How many circles must you draw (minimum) to find the midpoint of a line segment using a compass?",
+            "answer": "Two circles (or two sets of arcs) of the same radius centered at the endpoints.",
+            "key_concepts": ["Perpendicular bisector"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the measure of the angle formed at the vertex of a semi-regular tiling made of two squares and three equilateral triangles?",
+            "answer": "$(90° \\times 2) + (60° \\times 3) = 180° + 180° = 360°$.",
+            "key_concepts": ["Vertex configurations"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the compass opened to 'more than half' the distance when bisecting a line segment?",
+            "answer": "To ensure that the two arcs intersect each other.",
+            "key_concepts": ["Construction accuracy"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Identify the shape: 'I have four equal sides but my angles are not 90°. I can tile the plane.'",
+            "answer": "A Rhombus.",
+            "key_concepts": ["Tiling shapes"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "In a 75° angle construction, which two standard angles are bisected?",
+            "answer": "The region between 60° and 90° is bisected ($60° + 15° = 75°$).",
+            "key_concepts": ["Composite angle construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What do we call a tiling where every tile is the same size and shape, but they are not regular polygons?",
+            "answer": "A Monohedral Tiling.",
+            "key_concepts": ["Tiling terminology"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the angle between the two lines of a set-square used to draw a 30° angle?",
+            "answer": "30°, 60°, and 90°.",
+            "key_concepts": ["Set-square tools"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        }
+    ]
+}

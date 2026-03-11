@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "difficulty_level": "Medium",
+  "chapter": "Chapter: Our Home Earth – A Unique Life-Sustaining Planet",
+  "generated_at": "2026-03-11T21:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is Earth considered a unique planet in the solar system?",
+      "answer": "Because it has suitable temperature, air, and water needed to support life.",
+      "key_points": ["life support"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the atmosphere and why is it important?",
+      "answer": "The atmosphere is the layer of gases surrounding Earth that protects life and provides air for breathing.",
+      "key_points": ["atmosphere"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Name the three main components that make Earth suitable for life.",
+      "answer": "Air, water, and land.",
+      "key_points": ["life support"],
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the lithosphere?",
+      "answer": "The solid outer layer of Earth consisting of land, rocks, and soil.",
+      "key_points": ["lithosphere"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What does the hydrosphere include?",
+      "answer": "All water bodies such as oceans, rivers, lakes, and groundwater.",
+      "key_points": ["hydrosphere"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the biosphere?",
+      "answer": "The zone of Earth where living organisms exist.",
+      "key_points": ["biosphere"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "How does the atmosphere protect life on Earth?",
+      "answer": "It blocks harmful solar radiation and maintains a suitable temperature.",
+      "key_points": ["atmosphere protection"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is the Sun important for life on Earth?",
+      "answer": "It provides heat and energy required for photosynthesis and climate regulation.",
+      "key_points": ["solar energy"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 9,
+      "question": "What role do plants play in maintaining atmospheric balance?",
+      "answer": "Plants absorb carbon dioxide and release oxygen during photosynthesis.",
+      "key_points": ["photosynthesis"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 10,
+      "question": "What is evaporation in the water cycle?",
+      "answer": "The process where water changes into vapor due to heat from the Sun.",
+      "key_points": ["evaporation"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 11,
+      "question": "What is condensation in the water cycle?",
+      "answer": "The process where water vapor cools and forms clouds.",
+      "key_points": ["condensation"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 12,
+      "question": "What role does precipitation play in the water cycle?",
+      "answer": "It returns water from clouds back to Earth's surface.",
+      "key_points": ["precipitation"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is soil important for plants?",
+      "answer": "It provides nutrients, water, and support for plant growth.",
+      "key_points": ["soil"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is biodiversity and why is it important?",
+      "answer": "Biodiversity is the variety of living organisms that help maintain ecosystem stability.",
+      "key_points": ["biodiversity"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 15,
+      "question": "How do decomposers help ecosystems?",
+      "answer": "They break down dead matter and recycle nutrients back into the soil.",
+      "key_points": ["decomposers"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What is climate?",
+      "answer": "The long-term average pattern of weather conditions in a region.",
+      "key_points": ["climate"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "What causes the greenhouse effect?",
+      "answer": "Gases such as carbon dioxide trap heat in the atmosphere.",
+      "key_points": ["greenhouse gases"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is the ozone layer important?",
+      "answer": "It protects Earth from harmful ultraviolet radiation from the Sun.",
+      "key_points": ["ozone layer"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 19,
+      "question": "How does deforestation affect Earth's environment?",
+      "answer": "It reduces oxygen production and disrupts ecosystems.",
+      "key_points": ["deforestation"],
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 20,
+      "question": "What are natural resources?",
+      "answer": "Materials obtained from nature that humans use for survival and development.",
+      "key_points": ["natural resources"],
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 21,
+      "question": "What are renewable resources?",
+      "answer": "Resources that can be replenished naturally in a short time.",
+      "key_points": ["renewable resources"],
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 22,
+      "question": "Why should natural resources be conserved?",
+      "answer": "To ensure their availability for future generations.",
+      "key_points": ["conservation"],
+      "source_section": "Section 3.6"
+    },
+    {
+      "question_number": 23,
+      "question": "How does the biosphere connect land, water, and air?",
+      "answer": "Living organisms interact with the lithosphere, hydrosphere, and atmosphere.",
+      "key_points": ["biosphere interaction"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is Earth’s temperature suitable for life?",
+      "answer": "Because the atmosphere traps heat and maintains a stable climate.",
+      "key_points": ["temperature regulation"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 25,
+      "question": "What makes Earth different from other planets?",
+      "answer": "The presence of water, oxygen, and suitable environmental conditions for life.",
+      "key_points": ["unique planet"],
+      "source_section": "Conclusion"
+    }
+  ]
+}

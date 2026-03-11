@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: The Amazing World of Solutes, Solvents, and Solutions",
+  "generated_at": "2026-03-05T20:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a solution?",
+      "options": {
+        "A": "A non-uniform mixture",
+        "B": "A pure substance",
+        "C": "A uniform mixture of solute and solvent",
+        "D": "A mixture of solids only"
+      },
+      "correct_answer": "C",
+      "explanation": "A solution is a homogeneous mixture where a solute dissolves in a solvent.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which substance dissolves in a solvent?",
+      "options": {
+        "A": "Solute",
+        "B": "Solution",
+        "C": "Mixture",
+        "D": "Compound"
+      },
+      "correct_answer": "A",
+      "explanation": "The solute is the substance that dissolves in the solvent.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which substance dissolves the solute?",
+      "options": {
+        "A": "Solvent",
+        "B": "Mixture",
+        "C": "Gas",
+        "D": "Compound"
+      },
+      "correct_answer": "A",
+      "explanation": "The solvent is the substance in which the solute dissolves.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is an example of a solution?",
+      "options": {
+        "A": "Sand in water",
+        "B": "Salt in water",
+        "C": "Oil and water",
+        "D": "Stone in water"
+      },
+      "correct_answer": "B",
+      "explanation": "Salt dissolves completely in water forming a uniform mixture.",
+      "difficulty": "easy",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which gas acts as the solvent in air?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "B",
+      "explanation": "Nitrogen is present in the largest proportion in air.",
+      "difficulty": "medium",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 6,
+      "question": "A solution that cannot dissolve more solute is called:",
+      "options": {
+        "A": "Unsaturated solution",
+        "B": "Dilute solution",
+        "C": "Saturated solution",
+        "D": "Concentrated solution"
+      },
+      "correct_answer": "C",
+      "explanation": "A saturated solution contains the maximum amount of solute at a given temperature.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 7,
+      "question": "A solution that can dissolve more solute is called:",
+      "options": {
+        "A": "Unsaturated solution",
+        "B": "Saturated solution",
+        "C": "Neutral solution",
+        "D": "Dense solution"
+      },
+      "correct_answer": "A",
+      "explanation": "Unsaturated solutions can dissolve additional solute.",
+      "difficulty": "easy",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Solubility is defined as:",
+      "options": {
+        "A": "Amount of solvent used",
+        "B": "Maximum amount of solute that dissolves",
+        "C": "Weight of solution",
+        "D": "Mass of mixture"
+      },
+      "correct_answer": "B",
+      "explanation": "Solubility is the maximum amount of solute that dissolves in a solvent at a specific temperature.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What usually happens to solubility of solids when temperature increases?",
+      "options": {
+        "A": "It decreases",
+        "B": "It increases",
+        "C": "It remains constant",
+        "D": "It becomes zero"
+      },
+      "correct_answer": "B",
+      "explanation": "Most solids dissolve more in liquids at higher temperatures.",
+      "difficulty": "medium",
+      "source_section": "Section 9.2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Gas solubility in water generally:",
+      "options": {
+        "A": "Increases with temperature",
+        "B": "Decreases with temperature",
+        "C": "Remains unchanged",
+        "D": "Becomes zero"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher temperatures cause gases to escape from liquids.",
+      "difficulty": "medium",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which gas dissolved in water helps fish breathe?",
+      "options": {
+        "A": "Nitrogen",
+        "B": "Hydrogen",
+        "C": "Oxygen",
+        "D": "Carbon dioxide"
+      },
+      "correct_answer": "C",
+      "explanation": "Fish use dissolved oxygen for respiration.",
+      "difficulty": "easy",
+      "source_section": "Section 9.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which property determines whether an object floats or sinks?",
+      "options": {
+        "A": "Colour",
+        "B": "Density",
+        "C": "Temperature",
+        "D": "Size"
+      },
+      "correct_answer": "B",
+      "explanation": "Objects float or sink depending on their density compared to water.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following will float on water?",
+      "options": {
+        "A": "Iron nail",
+        "B": "Stone",
+        "C": "Wood",
+        "D": "Coin"
+      },
+      "correct_answer": "C",
+      "explanation": "Wood has lower density than water.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 14,
+      "question": "What is density?",
+      "options": {
+        "A": "Mass of an object",
+        "B": "Volume of an object",
+        "C": "Mass per unit volume",
+        "D": "Weight of liquid"
+      },
+      "correct_answer": "C",
+      "explanation": "Density describes how much mass is contained in a given volume.",
+      "difficulty": "easy",
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Which formula represents density?",
+      "options": {
+        "A": "Density = Mass × Volume",
+        "B": "Density = Mass ÷ Volume",
+        "C": "Density = Volume ÷ Mass",
+        "D": "Density = Mass + Volume"
+      },
+      "correct_answer": "B",
+      "explanation": "Density is calculated by dividing mass by volume.",
+      "difficulty": "easy",
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Which instrument is used to measure mass?",
+      "options": {
+        "A": "Thermometer",
+        "B": "Balance",
+        "C": "Ruler",
+        "D": "Barometer"
+      },
+      "correct_answer": "B",
+      "explanation": "Mass is measured using a weighing balance.",
+      "difficulty": "easy",
+      "source_section": "Activity 9.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which instrument measures liquid volume?",
+      "options": {
+        "A": "Measuring cylinder",
+        "B": "Thermometer",
+        "C": "Spring balance",
+        "D": "Microscope"
+      },
+      "correct_answer": "A",
+      "explanation": "Measuring cylinders are used to measure volume of liquids.",
+      "difficulty": "easy",
+      "source_section": "Activity 9.5"
+    },
+    {
+      "question_number": 18,
+      "question": "Which method measures volume of irregular objects?",
+      "options": {
+        "A": "Heating method",
+        "B": "Evaporation method",
+        "C": "Displacement method",
+        "D": "Condensation method"
+      },
+      "correct_answer": "C",
+      "explanation": "The displacement method measures volume using water level change.",
+      "difficulty": "medium",
+      "source_section": "Activity 9.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Ice floats on water because:",
+      "options": {
+        "A": "Ice is heavier",
+        "B": "Ice has higher density",
+        "C": "Ice has lower density",
+        "D": "Ice is warmer"
+      },
+      "correct_answer": "C",
+      "explanation": "Ice is less dense than liquid water.",
+      "difficulty": "medium",
+      "source_section": "Section 9.5"
+    },
+    {
+      "question_number": 20,
+      "question": "Hot air balloons rise because:",
+      "options": {
+        "A": "Hot air is heavier",
+        "B": "Hot air is less dense",
+        "C": "Hot air is colder",
+        "D": "Hot air disappears"
+      },
+      "correct_answer": "B",
+      "explanation": "Heated air expands and becomes less dense.",
+      "difficulty": "medium",
+      "source_section": "Section 9.5.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which state of matter is most compressible?",
+      "options": {
+        "A": "Solid",
+        "B": "Liquid",
+        "C": "Gas",
+        "D": "Plasma"
+      },
+      "correct_answer": "C",
+      "explanation": "Gas particles are far apart and easily compressed.",
+      "difficulty": "medium",
+      "source_section": "Section 9.5.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Which liquid floats on water due to lower density?",
+      "options": {
+        "A": "Mercury",
+        "B": "Oil",
+        "C": "Salt water",
+        "D": "Vinegar"
+      },
+      "correct_answer": "B",
+      "explanation": "Oil has lower density than water.",
+      "difficulty": "easy",
+      "source_section": "Section 9.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Why should measuring cylinders be read at eye level?",
+      "options": {
+        "A": "To avoid spilling",
+        "B": "To avoid parallax error",
+        "C": "To increase temperature",
+        "D": "To measure mass"
+      },
+      "correct_answer": "B",
+      "explanation": "Eye-level reading ensures accurate measurement.",
+      "difficulty": "medium",
+      "source_section": "Activity 9.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Which factor helps dissolve solids faster?",
+      "options": {
+        "A": "Cooling",
+        "B": "Stirring",
+        "C": "Freezing",
+        "D": "Evaporation"
+      },
+      "correct_answer": "B",
+      "explanation": "Stirring increases contact between solute and solvent.",
+      "difficulty": "medium",
+      "source_section": "Section 9.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are solutions important in everyday life?",
+      "options": {
+        "A": "They produce sunlight",
+        "B": "They help substances mix uniformly",
+        "C": "They reduce gravity",
+        "D": "They create oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": "Solutions allow substances to mix evenly for cooking, medicines, and chemical processes.",
+      "difficulty": "medium",
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-06T02:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What determines whether current flows in a circuit?",
+      "answer": "Current flows only when the circuit is closed and connected to a power source.",
+      "key_points": ["closed circuit"],
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 2,
+      "question": "Why does a fuse protect electrical appliances?",
+      "answer": "A fuse melts when excessive current flows, breaking the circuit and preventing damage.",
+      "key_points": ["fuse"],
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 3,
+      "question": "What happens to the resistance wire in an electric heater?",
+      "answer": "It becomes very hot due to the heating effect of current.",
+      "key_points": ["heating effect"],
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 4,
+      "question": "Why does the filament of an electric bulb glow?",
+      "answer": "The filament becomes white hot due to the heating effect of electric current.",
+      "key_points": ["electric bulb"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 5,
+      "question": "What happens when a current-carrying wire is placed near a compass?",
+      "answer": "The compass needle deflects due to the magnetic field around the wire.",
+      "key_points": ["magnetic effect"],
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 6,
+      "question": "Why is soft iron used as the core in electromagnets?",
+      "answer": "Soft iron easily becomes magnetized and quickly loses magnetism when current stops.",
+      "key_points": ["electromagnets"],
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 7,
+      "question": "How does increasing the number of turns in a coil affect an electromagnet?",
+      "answer": "It increases the strength of the electromagnet.",
+      "key_points": ["electromagnet strength"],
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 8,
+      "question": "Why does excessive current cause damage in circuits?",
+      "answer": "It produces excessive heat which can damage wires and appliances.",
+      "key_points": ["heating effect"],
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens to the magnetic field when electric current stops?",
+      "answer": "The magnetic field disappears.",
+      "key_points": ["magnetic field"],
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 10,
+      "question": "Why are electromagnets called temporary magnets?",
+      "answer": "They act as magnets only when electric current flows.",
+      "key_points": ["electromagnets"],
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 11,
+      "question": "How does an electric bell use electromagnetism?",
+      "answer": "Electric current creates a magnetic field that pulls the hammer to strike the bell.",
+      "key_points": ["electric bell"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are heating appliances made with high-resistance wires?",
+      "answer": "High resistance wires produce more heat when current flows.",
+      "key_points": ["resistance"],
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens if a circuit has no power source?",
+      "answer": "Electric current cannot flow.",
+      "key_points": ["electric source"],
+      "source_section": "Electric Sources"
+    },
+    {
+      "question_number": 14,
+      "question": "Why are electromagnets preferred over permanent magnets in machines?",
+      "answer": "Their magnetism can be controlled by switching the current on or off.",
+      "key_points": ["electromagnets"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 15,
+      "question": "What role does insulation play in electrical wiring?",
+      "answer": "It prevents current leakage and protects users from electric shocks.",
+      "key_points": ["insulation"],
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 16,
+      "question": "Why does the magnetic field form around a current-carrying wire?",
+      "answer": "Moving electric charges produce a magnetic field around the conductor.",
+      "key_points": ["magnetic field"],
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 17,
+      "question": "How does increasing electric current affect heating?",
+      "answer": "Increasing current increases the heat produced.",
+      "key_points": ["heating effect"],
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is a fuse placed in series in a circuit?",
+      "answer": "So that all current passes through it and it can break the circuit when needed.",
+      "key_points": ["fuse"],
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 19,
+      "question": "What would happen if an electromagnet used a steel core?",
+      "answer": "It would remain magnetized even after current stops.",
+      "key_points": ["electromagnet core"],
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are electric cranes able to release metal objects easily?",
+      "answer": "Switching off the current removes the magnetism.",
+      "key_points": ["electric crane"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 21,
+      "question": "What does a battery provide in an electric circuit?",
+      "answer": "Electrical energy for current flow.",
+      "key_points": ["battery"],
+      "source_section": "Electric Sources"
+    },
+    {
+      "question_number": 22,
+      "question": "Why does an electric iron become hot when switched on?",
+      "answer": "Electric current produces heat due to resistance in the heating element.",
+      "key_points": ["heating effect"],
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 23,
+      "question": "How does increasing the number of cells affect a circuit?",
+      "answer": "It increases the electric current in the circuit.",
+      "key_points": ["cells"],
+      "source_section": "Electric Sources"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are circuit diagrams used in electricity studies?",
+      "answer": "They represent electric circuits clearly using symbols.",
+      "key_points": ["circuit diagrams"],
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 25,
+      "question": "Why must electrical appliances be connected properly in circuits?",
+      "answer": "Proper connections ensure safe and correct functioning of the appliances.",
+      "key_points": ["electric circuits"],
+      "source_section": "Electric Circuits"
+    }
+  ]
+}

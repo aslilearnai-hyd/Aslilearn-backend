@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Number Play",
+  "difficulty": "Hard",
+  "source_pdf": "ch-5_NUMBER_PLAY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Consecutive Number Investigation",
+      "objective": "Explore patterns in sums of consecutive numbers",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write five sets of four consecutive numbers",
+        "Insert '+' and '-' signs between them in different ways",
+        "Calculate the results and observe patterns"
+      ],
+      "learning_outcome": "Recognises patterns in arithmetic expressions",
+      "evaluation": "Correct calculations and pattern explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Parity Exploration",
+      "objective": "Understand even and odd number patterns",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write ten arithmetic expressions using even and odd numbers",
+        "Calculate the results",
+        "Identify whether the results are even or odd"
+      ],
+      "learning_outcome": "Understands parity properties",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Always, Sometimes, Never Activity",
+      "objective": "Analyse mathematical statements",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write five mathematical statements about factors and multiples",
+        "Test them with different numbers",
+        "Classify each statement as always true, sometimes true or never true"
+      ],
+      "learning_outcome": "Develops logical reasoning",
+      "evaluation": "Correct classification and justification (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Divisibility Rule Investigation",
+      "objective": "Explore divisibility patterns",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write ten numbers divisible by 9",
+        "Add their digits",
+        "Observe the relationship between the sum of digits and divisibility"
+      ],
+      "learning_outcome": "Understands divisibility rules",
+      "evaluation": "Correct observations (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Algebraic Expression Analysis",
+      "objective": "Identify expressions that always produce even numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write algebraic expressions like 2n, 4m + 2q and 3x + 2",
+        "Substitute different integer values",
+        "Identify which expressions always produce even numbers"
+      ],
+      "learning_outcome": "Understands algebraic reasoning",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Multiple of Four Investigation",
+      "objective": "Investigate patterns in multiples of four",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose pairs of even numbers",
+        "Add them together",
+        "Check when the sum becomes a multiple of four"
+      ],
+      "learning_outcome": "Understands number patterns",
+      "evaluation": "Correct pattern explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Remainder Pattern Exploration",
+      "objective": "Explore numbers leaving specific remainders",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers that leave remainder 3 when divided by 5",
+        "Identify the pattern",
+        "Express the pattern using algebraic form"
+      ],
+      "learning_outcome": "Understands modular arithmetic concept",
+      "evaluation": "Correct pattern expression (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Expression Parity Project",
+      "objective": "Investigate parity of algebraic expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like a+b, a-b and a+b+c",
+        "Substitute even and odd numbers",
+        "Analyse the parity of results"
+      ],
+      "learning_outcome": "Develops reasoning about algebraic parity",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Divisibility Logic Puzzle",
+      "objective": "Solve divisibility puzzles",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create five puzzles involving divisibility rules",
+        "Exchange puzzles with classmates",
+        "Solve and explain the solutions"
+      ],
+      "learning_outcome": "Improves logical thinking",
+      "evaluation": "Correct solutions and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Number Pattern Research",
+      "objective": "Investigate number patterns using algebra",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Choose a number pattern involving addition or subtraction",
+        "Test the pattern with multiple numbers",
+        "Explain the pattern using algebraic reasoning"
+      ],
+      "learning_outcome": "Connects arithmetic patterns with algebra",
+      "evaluation": "Correct reasoning and explanation (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+    "content_type": "Long Questions (Hard Level)",
+    "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+    "generated_at": "2026-03-10T23:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the properties of magnetic field lines in detail. Justify why two magnetic field lines never intersect and why they form closed loops. Draw the field lines around a bar magnet and a current-carrying solenoid, highlighting similarities and differences.",
+            "answer": "Properties: Emerge from N-pole, enter S-pole; closed loops; never intersect (unique direction at a point); density indicates strength; tangent gives direction. Never intersect: Two directions at one point impossible. Closed loops: Magnetic field lines are continuous (no monopole). Bar magnet: Divergent outside, convergent inside poles. Solenoid: Uniform inside, weak outside, resembles bar magnet but field stronger and more uniform inside due to current.",
+            "answer_outline": [
+                "Detailed properties (5+)",
+                "Justification for non-intersection and closed loops",
+                "Diagrams comparison"
+            ],
+            "key_concepts": [
+                "field lines properties",
+                "no intersection reason",
+                "bar magnet vs solenoid"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.1 & 12.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe Oersted's experiment in detail and its significance. Using the right-hand thumb rule, explain the direction of magnetic field for a straight conductor and a circular loop. Derive the condition for maximum field strength at the centre of the loop.",
+            "answer": "Oersted: Compass near wire deflects on current flow → proves current produces magnetic field. Significance: Links electricity and magnetism. Right-hand rule: Thumb current, fingers field circles. Circular loop: Field at centre B = μ₀ I N / (2R) (N=1), maximum when current high, radius small, turns more.",
+            "answer_outline": [
+                "Experiment details + significance",
+                "Rule applications",
+                "Field at centre derivation basis"
+            ],
+            "key_concepts": [
+                "Oersted",
+                "right-hand rule",
+                "loop field"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Derive the expression for magnetic field inside a long solenoid. Explain why the field is uniform inside and negligible outside. How does inserting a soft iron core affect it? Give one practical application of this property.",
+            "answer": "B = μ₀ n I (n = turns per unit length). Uniform inside due to additive fields from turns; outside cancellation. Soft iron core: High permeability → B increases many times (electromagnet). Application: Strong temporary magnets in cranes, relays.",
+            "answer_outline": [
+                "Derivation basis",
+                "Uniformity reason",
+                "Core effect + application"
+            ],
+            "key_concepts": [
+                "solenoid field derivation",
+                "electromagnet"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 4,
+            "question": "State Fleming's left-hand rule. Explain its application in an electric motor. Why does the coil rotate continuously? Discuss the role of split ring commutator in detail and what happens if it is replaced by slip rings.",
+            "answer": "Forefinger field, middle current, thumb force. Motor: Force on sides causes torque. Continuous rotation: Commutator reverses current every half turn, reversing force direction to maintain torque. If slip rings: AC output, coil oscillates (no continuous rotation).",
+            "answer_outline": [
+                "Rule",
+                "Motor working",
+                "Commutator detailed role + comparison"
+            ],
+            "key_concepts": [
+                "Fleming left",
+                "motor commutator"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the principle of electromagnetic induction with Faraday's law. Describe an experiment to demonstrate it. State Lenz's law and prove how it follows conservation of energy using an example of a magnet approaching a coil.",
+            "answer": "Induced emf = -dΦ/dt. Experiment: Magnet in/out coil → galvanometer deflection. Lenz: Induced current opposes flux change. Example: Approaching N-pole → induced current creates N-pole to repel → work against motion → mechanical energy to electrical.",
+            "answer_outline": [
+                "Principle + Faraday",
+                "Experiment",
+                "Lenz + energy conservation proof"
+            ],
+            "key_concepts": [
+                "induction",
+                "Faraday Lenz",
+                "energy conservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe the construction and working of an AC generator with a labelled diagram. Derive the expression for induced emf. Explain why AC is preferred for long-distance transmission over DC.",
+            "answer": "Coil rotates in field → changing flux → emf = NBAω sinωt. Slip rings collect AC. AC preferred: Step-up transformers reduce current → low I²R loss over long distances.",
+            "answer_outline": [
+                "Construction + diagram",
+                "Working + emf derivation",
+                "Transmission advantage"
+            ],
+            "key_concepts": [
+                "AC generator",
+                "transformer advantage"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Compare and contrast electric motor and electric generator in terms of: (i) energy conversion, (ii) principle, (iii) commutator/slip rings, (iv) Fleming's rule used, (v) practical output. Give one real-life example for each.",
+            "answer": "Motor: Electrical → mechanical, induction + force, split commutator, left-hand rule, fan. Generator: Mechanical → electrical, induction + emf, slip rings (AC), right-hand rule, power plant alternator.",
+            "answer_outline": [
+                "Five-point comparison",
+                "Examples"
+            ],
+            "key_concepts": [
+                "motor vs generator"
+            ],
+            "marks": 5,
+            "source_section": "Sections 12.4 & 12.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the force experienced by a current-carrying conductor in a magnetic field. Derive F = BIL sinθ. Under what conditions is the force: (i) maximum, (ii) zero? Apply Fleming's left-hand rule to determine direction in a given scenario.",
+            "answer": "Lorentz force basis. F = BIL sinθ. Max: θ=90°. Zero: θ=0° or 180°. Rule application for direction.",
+            "answer_outline": [
+                "Derivation",
+                "Conditions",
+                "Rule application"
+            ],
+            "key_concepts": [
+                "force on conductor",
+                "F = BIL sinθ"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an electromagnet? How does its strength depend on various factors? Compare it with a permanent magnet. Explain two situations where electromagnets are preferred over permanent magnets.",
+            "answer": "Current in solenoid + iron core. Factors: I, n, core material. Temporary, controllable strength. Preferred: Cranes (on/off), MRI (adjustable field).",
+            "answer_outline": [
+                "Definition + factors",
+                "Comparison",
+                "Preference situations"
+            ],
+            "key_concepts": [
+                "electromagnet vs permanent"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain overloading and short-circuiting in domestic circuits. Describe the working of: (i) fuse, (ii) MCB. Why is MCB preferred nowadays? Draw a simple domestic wiring diagram showing placement of these devices.",
+            "answer": "Overload: High current heating. Short: Very high current. Fuse melts. MCB trips electromagnetically, resettable. Preferred: Convenient, faster. Diagram: Live wire with MCB/fuse, parallel appliances, earth wire.",
+            "answer_outline": [
+                "Causes",
+                "Devices working",
+                "Preference + diagram"
+            ],
+            "key_concepts": [
+                "overloading short circuit",
+                "fuse MCB"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Using Lenz's law, explain why eddy currents are produced in a metal sheet when moved in a magnetic field. Mention two methods to reduce eddy current losses in devices like transformers.",
+            "answer": "Changing flux → induced currents oppose change → eddy currents (circular). Reduce: Laminated core (insulated sheets), high-resistivity material.",
+            "answer_outline": [
+                "Eddy current explanation",
+                "Lenz application",
+                "Reduction methods"
+            ],
+            "key_concepts": [
+                "eddy currents",
+                "Lenz law"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe the working of an electric bell. Explain the role of electromagnet and make-and-break mechanism. What happens if the contact point is fixed permanently?",
+            "answer": "Current → electromagnet attracts armature → hammer strikes → breaks circuit → de-energises → spring returns → repeats. If fixed: No break → continuous attraction → no ringing.",
+            "answer_outline": [
+                "Working",
+                "Mechanism",
+                "If fixed issue"
+            ],
+            "key_concepts": [
+                "electric bell"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is soft iron used as core in electromagnets and transformers? Explain the terms: (i) magnetic permeability, (ii) retentivity, (iii) coercivity. Compare with steel.",
+            "answer": "High permeability (concentrates flux), low retentivity (demagnetises fast). Steel: High retentivity → permanent. Permeability: B/H ease. Retentivity: Residual magnetism. Coercivity: Demagnetising field needed.",
+            "answer_outline": [
+                "Soft iron reasons",
+                "Terms definition",
+                "Comparison"
+            ],
+            "key_concepts": [
+                "core properties",
+                "magnetic terms"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why a current-carrying conductor experiences a force in a magnetic field but not when parallel to it. Calculate the force on a 50 cm conductor carrying 4 A in 0.5 T field at 60° angle.",
+            "answer": "F = BIL sinθ; sin0=0 → no force parallel. Calculation: F = 0.5 × 4 × 0.5 × sin60 = 0.5 × 4 × 0.5 × (√3/2) = √3 N ≈ 1.732 N.",
+            "answer_outline": [
+                "Reason",
+                "Formula application",
+                "Numerical"
+            ],
+            "key_concepts": [
+                "force condition",
+                "numerical"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Differentiate between DC motor and AC generator on the basis of: Principle, Commutator, Direction of current, Energy conversion, Output waveform. Suggest modifications to convert AC generator to DC generator.",
+            "answer": "DC motor: Force on current, split ring, unidirectional current, elec→mech. AC gen: Induced emf, slip rings, alternating, mech→elec. Convert: Replace slip rings with split commutator.",
+            "answer_outline": [
+                "Five differences",
+                "Modification"
+            ],
+            "key_concepts": [
+                "DC motor AC generator"
+            ],
+            "marks": 5,
+            "source_section": "Sections 12.4 & 12.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the pattern of magnetic field lines due to current in: (i) straight conductor, (ii) circular loop, (iii) solenoid. How does the field strength vary with distance in case (i)?",
+            "answer": "(i) Concentric circles, B ∝ 1/r. (ii) Loops through plane, strong at centre. (iii) Uniform inside. Variation: Inverse with distance for straight wire.",
+            "answer_outline": [
+                "Three patterns",
+                "Strength variation"
+            ],
+            "key_concepts": [
+                "field patterns",
+                "variation"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2 & 12.3"
+        },
+        {
+            "question_number": 17,
+            "question": "State Fleming's right-hand rule. Apply it to find induced current direction when: (i) North pole of magnet enters coil, (ii) South pole leaves coil. Relate to Lenz's law.",
+            "answer": "Thumb motion, forefinger field, middle current. (i) Current opposes entry (creates N-pole). (ii) Opposes leaving (creates S-pole). Matches Lenz: Opposes flux change.",
+            "answer_outline": [
+                "Rule",
+                "Applications",
+                "Lenz relation"
+            ],
+            "key_concepts": [
+                "Fleming right",
+                "Lenz"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do household appliances use parallel circuits instead of series? Relate to magnetic effects in context of fuse/MCB operation during short circuit.",
+            "answer": "Parallel: Same voltage, independent operation, one fails others work. Short circuit: Very high current → fuse/MCB acts fast (magnetic/thermal) to break circuit, prevents fire.",
+            "answer_outline": [
+                "Parallel advantages",
+                "Fuse/MCB in short circuit"
+            ],
+            "key_concepts": [
+                "domestic circuits",
+                "safety magnetic"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe how electromagnetic induction is applied in induction cookers. Explain the role of changing magnetic field and eddy currents.",
+            "answer": "Alternating current in coil → changing B → eddy currents in vessel base → heating by I²R. Efficient, no flame.",
+            "answer_outline": [
+                "Principle",
+                "Eddy currents role"
+            ],
+            "key_concepts": [
+                "induction cooker"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why magnetic field lines are crowded near poles of a bar magnet but uniform inside a solenoid. Derive relation for field at centre of current-carrying circular coil.",
+            "answer": "Poles: Diverging/converging → crowded. Solenoid: Additive parallel fields → uniform. B = μ₀ I / (2R) at centre.",
+            "answer_outline": [
+                "Crowding vs uniform reason",
+                "Derivation"
+            ],
+            "key_concepts": [
+                "field comparison",
+                "coil field"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2 & 12.3"
+        },
+        {
+            "question_number": 21,
+            "question": "In what way does Lenz's law demonstrate conservation of energy in electromagnetic induction? Illustrate with a case when a coil is pulled out of a magnetic field.",
+            "answer": "Induced current opposes change → external agent does work against opposition → energy conserved (mechanical to electrical + heat). Pulled out: Induced current attracts coil → work done.",
+            "answer_outline": [
+                "Lenz energy link",
+                "Illustration"
+            ],
+            "key_concepts": [
+                "Lenz conservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Discuss the factors affecting the force on a current-carrying conductor placed in a magnetic field. Derive the formula and calculate force when conductor is at 30° to field.",
+            "answer": "B, I, L, sinθ. F = BIL sinθ. At 30°: sin30=0.5 → half maximum.",
+            "answer_outline": [
+                "Factors",
+                "Derivation",
+                "Calculation example"
+            ],
+            "key_concepts": [
+                "force factors"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the principle behind the deflection of a compass needle near a current-carrying wire. Using Biot-Savart law basis, why does field decrease with distance?",
+            "answer": "Current produces B → interacts with needle magnet. Biot-Savart: dB ∝ I dl sinθ / r² → B ∝ 1/r for straight wire.",
+            "answer_outline": [
+                "Deflection reason",
+                "1/r dependence"
+            ],
+            "key_concepts": [
+                "compass deflection",
+                "Biot-Savart"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is earthing essential in domestic wiring? Explain how leakage current is handled safely using magnetic effects in MCB.",
+            "answer": "Provides low-resistance path for fault current → prevents shock. MCB: High current → electromagnet pulls trip lever → breaks circuit instantly.",
+            "answer_outline": [
+                "Earthing need",
+                "MCB magnetic action"
+            ],
+            "key_concepts": [
+                "earthing",
+                "MCB"
+            ],
+            "marks": 5,
+            "source_section": "Section 12.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Integrate concepts: Explain how a DC motor can be converted into a DC generator and vice versa. Discuss changes in commutator, energy flow, and Fleming's rule application.",
+            "answer": "Same construction. Motor to generator: Provide mechanical input instead of current. Commutator same (for DC). Motor: Left rule (force). Generator: Right rule (induced current). Energy reverses.",
+            "answer_outline": [
+                "Conversion process",
+                "Commutator energy rule changes"
+            ],
+            "key_concepts": [
+                "motor generator conversion"
+            ],
+            "marks": 5,
+            "source_section": "Sections 12.4 & 12.5"
+        }
+    ]
+}

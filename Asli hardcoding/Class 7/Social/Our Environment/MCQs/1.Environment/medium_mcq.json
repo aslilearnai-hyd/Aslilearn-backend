@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Environment (Our Environment)",
+  "generated_at": "2026-03-07T18:12:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following best describes the 'Lithosphere' beyond just being the land we walk on?",
+      "options": {
+        "A": "It is a uniform layer of soil across the globe.",
+        "B": "It is an irregular surface with various landforms like mountains, plateaus, and valleys.",
+        "C": "It is the gaseous layer that contains minerals.",
+        "D": "It consists only of the ocean floor."
+      },
+      "correct_answer": "B",
+      "explanation": "The lithosphere is an irregular surface with various landforms such as mountains, plateaus, plains, and valleys, found both on continents and ocean floors.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "The atmosphere consists of a number of gases, dust, and water vapour. What is the primary cause of changes in weather and climate?",
+      "options": {
+        "A": "Changes in the Lithosphere",
+        "B": "Changes in the Atmosphere",
+        "C": "Movement of the Biosphere",
+        "D": "The Barter system"
+      },
+      "correct_answer": "B",
+      "explanation": "The changes in the atmosphere produce changes in the weather and climate.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is an example of the interaction within an ecosystem?",
+      "options": {
+        "A": "A cow grazing in a field",
+        "B": "A mountain standing still",
+        "C": "The sun shining on a rock",
+        "D": "A road connecting two cities"
+      },
+      "correct_answer": "A",
+      "explanation": "An ecosystem is formed by the interaction of all living organisms with each other and with their physical surroundings.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Why did early humans have a smaller impact on the environment compared to modern humans?",
+      "options": {
+        "A": "They didn't know how to use fire.",
+        "B": "They had a simple life and fulfilled requirements from nature.",
+        "C": "They lived only in the hydrosphere.",
+        "D": "The atmosphere was thicker back then."
+      },
+      "correct_answer": "B",
+      "explanation": "Early humans adapted themselves to the natural surroundings and led a simple life, fulfilling their needs from the nature around them.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is a component of the 'Human Environment'?",
+      "options": {
+        "A": "Political situations",
+        "B": "Rivers",
+        "C": "Mountains",
+        "D": "Plants"
+      },
+      "correct_answer": "A",
+      "explanation": "The human environment includes individual, family, community, religion, educational, economic, and political situations.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What happens when the balance between the natural and human environment is disturbed?",
+      "options": {
+        "A": "The lithosphere disappears.",
+        "B": "Environmental pollution and climate issues arise.",
+        "C": "The Barter system becomes stronger.",
+        "D": "Plants grow faster."
+      },
+      "correct_answer": "B",
+      "explanation": "A perfect balance is necessary between the natural and human environment; humans must learn to live and use their environment in a harmonious way to avoid degradation.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Landforms are found over the ______ and also on the ______.",
+      "options": {
+        "A": "Atmosphere, Hydrosphere",
+        "B": "Continents, Ocean floors",
+        "C": "Mountains, Clouds",
+        "D": "Plants, Animals"
+      },
+      "correct_answer": "B",
+      "explanation": "Landforms are part of the lithosphere and are found over the continents and also on the ocean floors.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which revolution enabled large scale production in the human environment?",
+      "options": {
+        "A": "Information Revolution",
+        "B": "Industrial Revolution",
+        "C": "Transportation Revolution",
+        "D": "Green Revolution"
+      },
+      "correct_answer": "B",
+      "explanation": "Industrial Revolution enabled large scale production, changing the way humans interact with the environment.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 9,
+      "question": "The 'Narrow Zone' where life exists is characterized by the interaction of:",
+      "options": {
+        "A": "Plants and Animals only",
+        "B": "Land, Water, and Air",
+        "C": "Sun and Moon",
+        "D": "Rocks and Minerals"
+      },
+      "correct_answer": "B",
+      "explanation": "Biosphere is the narrow zone of the earth where land, water, and air interact with each other to support life.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of these is NOT a natural ecosystem?",
+      "options": {
+        "A": "Desert",
+        "B": "Aquarium",
+        "C": "Forest",
+        "D": "Mountain"
+      },
+      "correct_answer": "B",
+      "explanation": "An aquarium is an artificial or human-made ecosystem, unlike deserts, forests, or mountains which occur naturally.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the primary function of the Atmosphere?",
+      "options": {
+        "A": "To provide mineral wealth",
+        "B": "To support land for agriculture",
+        "C": "To protect us from harmful rays and scorching heat",
+        "D": "To facilitate the Barter system"
+      },
+      "correct_answer": "C",
+      "explanation": "The atmosphere acts as a shield protecting the earth from harmful rays and the scorching heat of the sun.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "The 'Barter System' was replaced primarily by the use of:",
+      "options": {
+        "A": "Plants",
+        "B": "Money",
+        "C": "Land",
+        "D": "Water"
+      },
+      "correct_answer": "B",
+      "explanation": "The Barter system (exchange of goods) was phased out as money was introduced to facilitate trade.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Which domain is essential for agriculture and human settlements?",
+      "options": {
+        "A": "Atmosphere",
+        "B": "Hydrosphere",
+        "C": "Lithosphere",
+        "D": "Exosphere"
+      },
+      "correct_answer": "C",
+      "explanation": "Lithosphere is the domain that provides us forests, grasslands for grazing, land for agriculture and human settlements.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What made communication easier and speedy across the world?",
+      "options": {
+        "A": "Information Revolution",
+        "B": "Wheel invention",
+        "C": "Barter system",
+        "D": "Hydrosphere"
+      },
+      "correct_answer": "A",
+      "explanation": "Information revolution made communication easier and speedy across the world.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Abiotic components are essentially:",
+      "options": {
+        "A": "Living things",
+        "B": "Non-living things",
+        "C": "Human-made things",
+        "D": "Only gases"
+      },
+      "correct_answer": "B",
+      "explanation": "Abiotic refers to the world of non-living elements, such as land.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "A pond, a large rain forest, or a small garden can all be examples of:",
+      "options": {
+        "A": "Lithospheres",
+        "B": "Atmospheres",
+        "C": "Ecosystems",
+        "D": "Barter systems"
+      },
+      "correct_answer": "C",
+      "explanation": "An ecosystem can be as large as a rain forest or as small as a pond; it is defined by the interaction of organisms in that space.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is a threat to the environment caused by human activity?",
+      "options": {
+        "A": "Rainfall",
+        "B": "Pollution from cars",
+        "C": "Photosynthesis",
+        "D": "Gravitational force"
+      },
+      "correct_answer": "B",
+      "explanation": "Humans modify the environment (e.g., cars fume polluting the air), which can become a threat to the natural balance.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 18,
+      "question": "The gravitational force of the earth is most directly responsible for holding the:",
+      "options": {
+        "A": "Hydrosphere",
+        "B": "Atmosphere",
+        "C": "Lithosphere",
+        "D": "Biosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The gravitational force of the earth holds the atmosphere around it.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which component is 'Biotic'?",
+      "options": {
+        "A": "Sand",
+        "B": "Fungi",
+        "C": "Rocks",
+        "D": "Water"
+      },
+      "correct_answer": "B",
+      "explanation": "Fungi are living organisms, making them part of the biotic world.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Human beings modify the natural environment to:",
+      "options": {
+        "A": "Keep it exactly the same",
+        "B": "Suit their needs",
+        "C": "Increase the gravitational force",
+        "D": "Stop the water cycle"
+      },
+      "correct_answer": "B",
+      "explanation": "Human beings modify the natural environment to suit their needs, such as building factories or growing crops.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 21,
+      "question": "The Hydrosphere is essential for:",
+      "options": {
+        "A": "Only fish",
+        "B": "All living organisms",
+        "C": "Only humans",
+        "D": "Non-living things"
+      },
+      "correct_answer": "B",
+      "explanation": "The hydrosphere is essential for all living organisms as water is a basic requirement for life.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of the following is part of the 'Abiotic' world?",
+      "options": {
+        "A": "Forest",
+        "B": "Insects",
+        "C": "Plateau",
+        "D": "Birds"
+      },
+      "correct_answer": "C",
+      "explanation": "A plateau is a landform (part of the lithosphere), which is a non-living (abiotic) element.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 23,
+      "question": "The relationship between living organisms and their surroundings forms:",
+      "options": {
+        "A": "An Ecosystem",
+        "B": "The Lithosphere",
+        "C": "A Barter system",
+        "D": "A Political situation"
+      },
+      "correct_answer": "A",
+      "explanation": "The relation between the living organisms, as well as the relation between the organisms and their surroundings, form an ecosystem.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 24,
+      "question": "What provides the thin layer of soil on the earth's surface?",
+      "options": {
+        "A": "Atmosphere",
+        "B": "Lithosphere",
+        "C": "Hydrosphere",
+        "D": "Exosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The lithosphere is covered by a thin layer of soil.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is World Environment Day significant?",
+      "options": {
+        "A": "It marks the start of the Barter system.",
+        "B": "It is a day to focus on protecting our natural surroundings.",
+        "C": "It is the day the lithosphere was formed.",
+        "D": "It celebrates the invention of the wheel."
+      },
+      "correct_answer": "B",
+      "explanation": "World Environment Day (June 5) is significant for raising global awareness and action for the protection of the environment.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    }
+  ]
+}

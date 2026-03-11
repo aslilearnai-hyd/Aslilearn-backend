@@ -1,0 +1,169 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Political Science",
+    "chapter": "What is Democracy? Why Democracy?",
+    "difficulty": "Hard",
+    "source_pdf": "dem9_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Research Project on Democratic and Non-Democratic Countries",
+            "objective": "Analyse different political systems",
+            "materials": [
+                "Internet",
+                "Reference books",
+                "Notebook"
+            ],
+            "steps": [
+                "Select one democratic and one non-democratic country",
+                "Research their political systems",
+                "Prepare a comparative report"
+            ],
+            "learning_outcome": "Students critically analyse political systems",
+            "evaluation": "Depth of research and comparison (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Analysis of Democratic Features",
+            "objective": "Evaluate how democratic principles work in real life",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Study the four features of democracy",
+                "Find real-world examples for each feature",
+                "Explain how these features strengthen democracy"
+            ],
+            "learning_outcome": "Students apply theoretical concepts to real situations",
+            "evaluation": "Quality of examples and explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Essay on Why Democracy is the Best Form of Government",
+            "objective": "Develop analytical writing skills",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Identify arguments supporting democracy",
+                "Write an essay explaining these arguments",
+                "Include examples from different countries"
+            ],
+            "learning_outcome": "Students develop critical thinking and writing skills",
+            "evaluation": "Logical reasoning and clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Mock Parliament Activity",
+            "objective": "Understand decision-making in democracy",
+            "materials": [
+                "Classroom space",
+                "Role cards"
+            ],
+            "steps": [
+                "Assign roles such as ministers, opposition and speaker",
+                "Discuss a proposed policy",
+                "Debate and vote on the decision"
+            ],
+            "learning_outcome": "Students understand parliamentary procedures",
+            "evaluation": "Participation and argument quality (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Critical Review of Elections",
+            "objective": "Evaluate fairness in elections",
+            "materials": [
+                "Notebook",
+                "Newspaper articles"
+            ],
+            "steps": [
+                "Study election systems in different countries",
+                "Identify factors affecting fairness",
+                "Write a critical review"
+            ],
+            "learning_outcome": "Students analyse democratic processes",
+            "evaluation": "Critical thinking and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Research on Citizens’ Rights",
+            "objective": "Understand constitutional rights",
+            "materials": [
+                "Constitution reference",
+                "Notebook"
+            ],
+            "steps": [
+                "List fundamental rights of citizens",
+                "Explain their role in protecting democracy",
+                "Provide examples where rights were violated"
+            ],
+            "learning_outcome": "Students understand legal protection of rights",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Democracy and Social Diversity Study",
+            "objective": "Understand democracy in diverse societies",
+            "materials": [
+                "Notebook",
+                "Reference sources"
+            ],
+            "steps": [
+                "Study how democracy manages social diversity",
+                "Provide examples from India",
+                "Explain the importance of tolerance and participation"
+            ],
+            "learning_outcome": "Students analyse democracy in diverse societies",
+            "evaluation": "Quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Role of Opposition in Democracy",
+            "objective": "Understand checks and balances",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Study the role of opposition parties",
+                "Explain how they ensure accountability",
+                "Provide examples from parliamentary debates"
+            ],
+            "learning_outcome": "Students understand political accountability",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Democratic Values Campaign",
+            "objective": "Promote democratic awareness",
+            "materials": [
+                "Posters",
+                "Charts"
+            ],
+            "steps": [
+                "Design a campaign promoting democratic values",
+                "Create posters and slogans",
+                "Present them to classmates"
+            ],
+            "learning_outcome": "Students develop awareness of democratic values",
+            "evaluation": "Creativity and message effectiveness (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Critical Analysis of Democracy in India",
+            "objective": "Evaluate democracy in practice",
+            "materials": [
+                "Notebook",
+                "News sources"
+            ],
+            "steps": [
+                "Identify strengths and weaknesses of democracy in India",
+                "Analyse political participation and governance",
+                "Write a report with suggestions for improvement"
+            ],
+            "learning_outcome": "Students critically evaluate democratic functioning",
+            "evaluation": "Analytical depth and reasoning (10 marks)"
+        }
+    ]
+}

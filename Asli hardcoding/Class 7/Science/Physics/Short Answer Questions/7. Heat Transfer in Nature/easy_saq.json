@@ -1,0 +1,386 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T19:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is heat transfer?",
+            "answer": "Heat transfer is the movement of thermal energy from a hotter object or region to a colder one.",
+            "answer_outline": [
+                "Definition of heat transfer",
+                "Movement from hot to cold"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "thermal energy"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the three main methods of heat transfer.",
+            "answer": "The three methods are conduction, convection, and radiation.",
+            "answer_outline": [
+                "Conduction",
+                "Convection",
+                "Radiation"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "radiation"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is conduction?",
+            "answer": "Conduction is the transfer of heat through a material without movement of the material itself.",
+            "answer_outline": [
+                "Heat transfer through direct contact",
+                "No movement of particles as a whole"
+            ],
+            "key_concepts": [
+                "conduction",
+                "solids"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Give one example of heat transfer by conduction.",
+            "answer": "When a metal spoon placed in hot tea becomes hot, heat is transferred through conduction.",
+            "answer_outline": [
+                "Example using metal spoon",
+                "Heat transfer through contact"
+            ],
+            "key_concepts": [
+                "conduction",
+                "daily life example"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What are conductors?",
+            "answer": "Conductors are materials that allow heat to pass through them easily, such as metals.",
+            "answer_outline": [
+                "Definition of conductors",
+                "Example metals"
+            ],
+            "key_concepts": [
+                "conductors",
+                "metals"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are insulators?",
+            "answer": "Insulators are materials that do not allow heat to pass through them easily, such as wood or plastic.",
+            "answer_outline": [
+                "Definition of insulators",
+                "Examples like wood and plastic"
+            ],
+            "key_concepts": [
+                "insulators",
+                "heat resistance"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is convection?",
+            "answer": "Convection is the transfer of heat in liquids and gases through the movement of particles.",
+            "answer_outline": [
+                "Heat transfer in fluids",
+                "Movement of particles"
+            ],
+            "key_concepts": [
+                "convection",
+                "fluids"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Give one example of convection in daily life.",
+            "answer": "Boiling water in a pot shows convection as hot water rises and cooler water sinks.",
+            "answer_outline": [
+                "Boiling water example",
+                "Hot rises, cold sinks"
+            ],
+            "key_concepts": [
+                "convection",
+                "liquids"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is radiation?",
+            "answer": "Radiation is the transfer of heat through electromagnetic waves without needing a medium.",
+            "answer_outline": [
+                "Heat transfer through waves",
+                "No medium required"
+            ],
+            "key_concepts": [
+                "radiation",
+                "electromagnetic waves"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Give an example of heat transfer by radiation.",
+            "answer": "Heat from the Sun reaching the Earth is an example of radiation.",
+            "answer_outline": [
+                "Sun as heat source",
+                "Energy travels through space"
+            ],
+            "key_concepts": [
+                "radiation",
+                "solar energy"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why do metals feel colder than wood?",
+            "answer": "Metals conduct heat away from our hands faster than wood, so they feel colder.",
+            "answer_outline": [
+                "Metal conducts heat faster",
+                "Wood acts as insulator"
+            ],
+            "key_concepts": [
+                "conduction",
+                "thermal conductivity"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a sea breeze?",
+            "answer": "Sea breeze is the movement of cool air from the sea toward land during the day due to heating of land.",
+            "answer_outline": [
+                "Land heats faster",
+                "Cool air moves from sea"
+            ],
+            "key_concepts": [
+                "sea breeze",
+                "convection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is a land breeze?",
+            "answer": "Land breeze is the movement of cool air from land to sea during the night when land cools faster.",
+            "answer_outline": [
+                "Land cools faster at night",
+                "Air moves toward sea"
+            ],
+            "key_concepts": [
+                "land breeze",
+                "convection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are cooking utensils made of metals?",
+            "answer": "Metals conduct heat quickly, allowing food to cook efficiently.",
+            "answer_outline": [
+                "Metals are good conductors",
+                "Efficient cooking"
+            ],
+            "key_concepts": [
+                "conduction",
+                "metals"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do we wear light-colored clothes in summer?",
+            "answer": "Light-colored clothes reflect most of the sunlight and absorb less heat, keeping us cooler.",
+            "answer_outline": [
+                "Reflection of radiation",
+                "Less heat absorption"
+            ],
+            "key_concepts": [
+                "radiation",
+                "reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are houses painted white in hot regions?",
+            "answer": "White paint reflects solar radiation and reduces heat absorption.",
+            "answer_outline": [
+                "Reflection of sunlight",
+                "Reduced heat gain"
+            ],
+            "key_concepts": [
+                "radiation",
+                "reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is a thermos flask used for?",
+            "answer": "A thermos flask is used to keep liquids hot or cold by reducing heat transfer.",
+            "answer_outline": [
+                "Prevents heat loss",
+                "Maintains temperature"
+            ],
+            "key_concepts": [
+                "insulation",
+                "heat transfer"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "How does insulation reduce heat transfer?",
+            "answer": "Insulation reduces conduction and convection by trapping air and slowing heat movement.",
+            "answer_outline": [
+                "Trapped air",
+                "Reduced heat flow"
+            ],
+            "key_concepts": [
+                "insulation",
+                "heat transfer"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are deserts very hot during the day?",
+            "answer": "Desert sand absorbs heat quickly from the Sun due to low specific heat.",
+            "answer_outline": [
+                "Strong solar radiation",
+                "Low heat capacity"
+            ],
+            "key_concepts": [
+                "radiation",
+                "specific heat"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are nights cold in deserts?",
+            "answer": "Sand loses heat quickly by radiation at night, causing rapid cooling.",
+            "answer_outline": [
+                "Fast heat loss",
+                "Radiation into space"
+            ],
+            "key_concepts": [
+                "radiation",
+                "desert climate"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What role does the Sun play in Earth's heat transfer?",
+            "answer": "The Sun provides energy through radiation that heats the Earth.",
+            "answer_outline": [
+                "Solar radiation",
+                "Earth heating"
+            ],
+            "key_concepts": [
+                "solar radiation",
+                "heat transfer"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is water used as a coolant in engines?",
+            "answer": "Water absorbs large amounts of heat due to its high specific heat capacity.",
+            "answer_outline": [
+                "High specific heat",
+                "Efficient heat absorption"
+            ],
+            "key_concepts": [
+                "specific heat",
+                "cooling systems"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "How do ocean currents affect climate?",
+            "answer": "Ocean currents carry warm or cold water to different regions, influencing temperatures and climate.",
+            "answer_outline": [
+                "Movement of warm/cold water",
+                "Climate influence"
+            ],
+            "key_concepts": [
+                "ocean currents",
+                "convection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the role of convection in weather formation?",
+            "answer": "Warm air rises and cool air sinks, forming convection currents that create winds and clouds.",
+            "answer_outline": [
+                "Warm air rises",
+                "Cool air sinks",
+                "Weather formation"
+            ],
+            "key_concepts": [
+                "convection",
+                "weather"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do solar cookers use black surfaces?",
+            "answer": "Black surfaces absorb more solar radiation, increasing heat for cooking.",
+            "answer_outline": [
+                "High absorption of radiation",
+                "Efficient heating"
+            ],
+            "key_concepts": [
+                "radiation",
+                "solar cooker"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Electricity",
+    "difficulty": "Hard",
+    "source_pdf": "science_textbook_class10_chapter11.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric current is defined as the flow of electric charge per unit time through a conductor",
+            "Potential difference between two points drives electric current in a circuit",
+            "Ohm’s law establishes the relationship between current, voltage, and resistance",
+            "Resistance of a conductor depends on its length, cross-sectional area, and nature of material",
+            "In series circuits the same current flows through all components",
+            "In parallel circuits the potential difference across each component is the same",
+            "Electrical energy consumed in appliances is measured in kilowatt-hour (kWh)"
+        ],
+        "examples": [
+            "If voltage across a resistor is doubled while resistance remains constant, current also doubles",
+            "In a series combination of three resistors, total resistance is the sum of individual resistances",
+            "In parallel combination of resistors, total resistance is less than the smallest resistor",
+            "Electric heaters convert electrical energy into heat energy",
+            "A 100 W bulb consumes more electrical energy than a 60 W bulb when used for the same time"
+        ],
+        "formulas": [
+            "Electric current → I = Q/t",
+            "Ohm’s Law → V = IR",
+            "Resistance of a conductor → R = ρL/A",
+            "Series resistance → R = R1 + R2 + R3",
+            "Parallel resistance → 1/R = 1/R1 + 1/R2 + 1/R3",
+            "Electric power → P = VI = I²R = V²/R",
+            "Electrical energy → E = P × t"
+        ],
+        "exam_tips": [
+            "Solve numerical problems involving Ohm’s law and resistance combinations",
+            "Understand the derivation of resistance in series and parallel circuits",
+            "Memorize all formulas related to electric power and electrical energy",
+            "Pay attention to unit conversions such as watt to kilowatt and joule to kilowatt-hour",
+            "Practice reasoning questions related to household wiring and appliance power ratings"
+        ]
+    }
+}

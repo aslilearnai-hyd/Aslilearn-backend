@@ -1,0 +1,297 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 3: Drainage",
+    "generated_at": "2026-03-07T20:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is meant by drainage?",
+            "answer": "Drainage refers to the river system of an area, including the network of rivers and streams that drain water into a larger water body.",
+            "key_concepts": [
+                "drainage system",
+                "river network"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a drainage basin?",
+            "answer": "A drainage basin is the area drained by a single river and its tributaries.",
+            "key_concepts": [
+                "river basin",
+                "tributaries"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a water divide?",
+            "answer": "A water divide is an elevated land area that separates two drainage basins.",
+            "key_concepts": [
+                "upland",
+                "separates basins"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name the two major groups of rivers in India.",
+            "answer": "The two major groups are Himalayan rivers and Peninsular rivers.",
+            "key_concepts": [
+                "Himalayan rivers",
+                "Peninsular rivers"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are Himalayan rivers?",
+            "answer": "Himalayan rivers originate from glaciers and have water throughout the year.",
+            "key_concepts": [
+                "glacial origin",
+                "perennial"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Name the three major Himalayan river systems.",
+            "answer": "Indus, Ganga and Brahmaputra.",
+            "key_concepts": [
+                "Indus",
+                "Ganga",
+                "Brahmaputra"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a tributary?",
+            "answer": "A tributary is a smaller river that joins a larger river.",
+            "key_concepts": [
+                "smaller river",
+                "joins main river"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Name two tributaries of the Ganga.",
+            "answer": "Yamuna and Ghaghara.",
+            "key_concepts": [
+                "Yamuna",
+                "Ghaghara"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Where does the Ganga originate?",
+            "answer": "The Ganga originates from the Gangotri Glacier in Uttarakhand.",
+            "key_concepts": [
+                "Gangotri glacier"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the Sundarban delta?",
+            "answer": "The Sundarban delta is the delta formed by the Ganga and Brahmaputra rivers.",
+            "key_concepts": [
+                "delta formation"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What are Peninsular rivers?",
+            "answer": "Peninsular rivers originate in the Peninsular plateau and depend mainly on rainfall.",
+            "key_concepts": [
+                "rainfall dependent"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the largest peninsular river in India.",
+            "answer": "Godavari.",
+            "key_concepts": [
+                "Godavari river"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which rivers flow westwards into the Arabian Sea?",
+            "answer": "Narmada and Tapi.",
+            "key_concepts": [
+                "Narmada",
+                "Tapi"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Where does the Narmada originate?",
+            "answer": "The Narmada originates from the Amarkantak hills.",
+            "key_concepts": [
+                "Amarkantak"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a lake?",
+            "answer": "A lake is a body of water surrounded by land.",
+            "key_concepts": [
+                "water body"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Name two freshwater lakes in India.",
+            "answer": "Dal Lake and Wular Lake.",
+            "key_concepts": [
+                "Dal lake",
+                "Wular lake"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Name one saltwater lake in India.",
+            "answer": "Sambhar Lake.",
+            "key_concepts": [
+                "Sambhar lake"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Give one importance of lakes.",
+            "answer": "Lakes help regulate the flow of rivers.",
+            "key_concepts": [
+                "flow regulation"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How do rivers help agriculture?",
+            "answer": "Rivers provide water for irrigation.",
+            "key_concepts": [
+                "irrigation"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 20,
+            "question": "How do rivers help generate electricity?",
+            "answer": "River water is used to produce hydroelectric power.",
+            "key_concepts": [
+                "hydropower"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are rivers important for settlements?",
+            "answer": "Because they provide water and fertile soil.",
+            "key_concepts": [
+                "water supply",
+                "fertile soil"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What causes river pollution?",
+            "answer": "River pollution is caused by sewage, industrial waste and chemicals.",
+            "key_concepts": [
+                "sewage",
+                "industrial waste"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the Ganga Action Plan?",
+            "answer": "It is a programme launched to clean the Ganga river.",
+            "key_concepts": [
+                "river cleaning"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are clean rivers important?",
+            "answer": "Because they provide safe water and support aquatic life.",
+            "key_concepts": [
+                "safe water",
+                "ecosystem"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Name one use of rivers in transportation.",
+            "answer": "Rivers provide natural routes for transporting goods and people.",
+            "key_concepts": [
+                "water transport"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 3.5"
+        }
+    ]
+}

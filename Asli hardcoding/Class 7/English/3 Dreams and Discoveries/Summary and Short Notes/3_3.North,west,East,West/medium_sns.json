@@ -1,0 +1,35 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "North South East West",
+  "difficulty": "Medium",
+  "source_pdf": "North South East West.pdf",
+  "short_notes": {
+    "key_points": [
+      "The chapter explores 'Navigation' as both a scientific tool and a fundamental life skill.",
+      "It explains the concept of the 'Cardinal Points' and how they remain constant regardless of where a person is standing.",
+      "The text introduces the 'Magnetic Compass,' explaining the interaction between the Earth's magnetic poles and the compass needle.",
+      "It touches upon how ancient explorers and sailors navigated the vast oceans without modern technology like GPS.",
+      "The narrative emphasizes that understanding directions helps in understanding maps and the layout of the physical world."
+    ],
+    "examples": [
+      "The 'Pole Star' (North Star): Used by night travelers because it stays fixed in the North sky while other stars move.",
+      "Magnetic Attraction: The needle of a compass is a tiny magnet that aligns itself with the Earth's magnetic field.",
+      "Bird Migration: The chapter may mention how birds use 'internal compasses' to fly thousands of miles in the right direction.",
+      "Map Orientation: Maps are traditionally designed with North at the top to create a universal standard for all travelers.",
+      "The 'Setting Sun': If you are lost in the evening, facing the sunset tells you where West is, allowing you to calculate the other three points."
+    ],
+    "formulas_or_processes": [
+      "The Solar Method → Morning: Face Sun (E), Behind (W), Left (N), Right (S).",
+      "The Compass Rule → The 'red' or 'dark' end of the needle always seeks Magnetic North.",
+      "Cardinal Sequence → Moving clockwise from North: N → E → S → W (mnemonic: 'Never Eat Soggy Wheat').",
+      "Mapping → Translating 3D physical space into a 2D representation using North as the primary anchor."
+    ],
+    "exam_tips": [
+      "Understand the difference between 'True North' (the star) and 'Magnetic North' (the compass).",
+      "Be able to explain why the Sun is the most reliable 'natural' compass for daytime travel.",
+      "Learn the mnemonic 'Never Eat Soggy Wheat' to remember the clockwise order of directions.",
+      "Focus on 'Intercardinal Points' if mentioned: North-East, North-West, South-East, and South-West."
+    ]
+  }
+}

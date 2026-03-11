@@ -1,0 +1,198 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Matter in Our Surroundings",
+    "difficulty": "Medium",
+    "source_pdf": "iesc101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Investigating Inter-particle Space",
+            "objective": "To demonstrate that particles of matter have space between them[cite: 481, 484].",
+            "materials": [
+                "100 mL Beaker [cite: 431]",
+                "Water [cite: 431]",
+                "Salt or Sugar [cite: 432]",
+                "Glass rod [cite: 432]",
+                "Measuring cylinder [cite: 579]"
+            ],
+            "steps": [
+                "Fill a beaker with 50 mL of water and mark the level[cite: 431].",
+                "Add a measured quantity of salt and dissolve it by stirring with a glass rod[cite: 432].",
+                "Observe the final water level and note any changes[cite: 433].",
+                "Repeat with a larger quantity of salt until no more dissolves."
+            ],
+            "learning_outcome": "Concludes that salt particles get into the spaces between water particles[cite: 442, 506].",
+            "evaluation": "Explain why the volume does not increase significantly initially (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Estimating Particle Size through Dilution",
+            "objective": "To visualize how small the particles of matter are[cite: 443].",
+            "materials": [
+                "Potassium permanganate crystals [cite: 446]",
+                "Five 100 mL Beakers [cite: 466, 467]",
+                "10 mL Measuring tube [cite: 450]",
+                "Water [cite: 446]"
+            ],
+            "steps": [
+                "Dissolve 2 crystals of $KMnO_{4}$ in 100 mL of water[cite: 446].",
+                "Transfer 10 mL of this solution into 90 mL of clear water[cite: 450].",
+                "Repeat this dilution process up to 8 times[cite: 452].",
+                "Compare the color of the final beaker with the first one[cite: 474]."
+            ],
+            "learning_outcome": "Proves that a few crystals contain millions of tiny particles[cite: 476, 479].",
+            "evaluation": "Discuss the limit of visibility in the dilution process (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Thermal Energy and Kinetic Theory",
+            "objective": "To observe the relationship between temperature and particle movement[cite: 504].",
+            "materials": [
+                "Hot water [cite: 493]",
+                "Cold water [cite: 493]",
+                "Copper sulphate crystals [cite: 493]",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Drop a crystal into a glass of hot water and another into cold water[cite: 493].",
+                "Do not stir; allow crystals to settle[cite: 494].",
+                "Observe the spread of color just above the crystal over time[cite: 495, 496].",
+                "Measure the time taken for the color to reach the top in both cases."
+            ],
+            "learning_outcome": "Confirms that kinetic energy of particles increases with temperature[cite: 504, 806].",
+            "evaluation": "Explain the change in the rate of mixing with temperature (10 marks)."
+        },
+        {
+            "sl_no": 4,
+            "title": "Diffusion Rates in Different Fluids",
+            "objective": "To compare the rate of diffusion in liquids of different densities[cite: 507, 616].",
+            "materials": [
+                "Two beakers of water [cite: 485]",
+                "Blue/Red Ink [cite: 486]",
+                "Honey [cite: 486]",
+                "Glass rod"
+            ],
+            "steps": [
+                "Drop ink slowly along the side of the first beaker[cite: 486].",
+                "Drop honey in the same way into the second beaker[cite: 486].",
+                "Record observations immediately and after several hours[cite: 488, 490].",
+                "Compare the uniformity of color/texture in both beakers."
+            ],
+            "learning_outcome": "Identifies that intermixing occurs on its own by particles getting into spaces[cite: 505, 506].",
+            "evaluation": "Analyze why honey takes longer to diffuse than ink (10 marks)."
+        },
+        {
+            "sl_no": 5,
+            "title": "Force of Attraction Model",
+            "objective": "To understand that strength of attraction varies between substances[cite: 533].",
+            "materials": [
+                "Iron nail [cite: 516]",
+                "Chalk [cite: 516]",
+                "Rubber band [cite: 516]",
+                "Hammer [cite: 517]"
+            ],
+            "steps": [
+                "Try breaking each item by hammering, cutting, or stretching[cite: 517].",
+                "Note which substance requires the most force to break[cite: 518].",
+                "Compare these results to a 'human chain' model of particles[cite: 512, 513]."
+            ],
+            "learning_outcome": "Recognizes that forces between particles keep matter together[cite: 532, 843].",
+            "evaluation": "Rank the materials by the strength of their inter-particle forces (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "State Properties and Rigidity",
+            "objective": "To classify articles based on shape, boundaries, and volume[cite: 557].",
+            "materials": [
+                "Pen, book, needle, wooden stick [cite: 553, 554]",
+                "Syringe [cite: 603]",
+                "Water [cite: 578]"
+            ],
+            "steps": [
+                "Sketch the shape of solid articles and check for definite boundaries[cite: 556, 561].",
+                "Attempt to compress the solids by applying force[cite: 560].",
+                "Pour 50 mL of water into different shaped containers and check volume[cite: 581, 582].",
+                "Verify if the liquid maintains its shape or flows[cite: 583, 584]."
+            ],
+            "learning_outcome": "Distinguishes between rigid solids and fluid liquids[cite: 563, 587].",
+            "evaluation": "Tabulate differences between solid and liquid states (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Compressibility and Particle Distance",
+            "objective": "To compare inter-particle distances in states of matter[cite: 745, 757].",
+            "materials": [
+                "Three 100 mL syringes [cite: 603]",
+                "Rubber corks [cite: 603]",
+                "Pistons [cite: 604]",
+                "Chalk, water, and air [cite: 605]"
+            ],
+            "steps": [
+                "Seal syringe nozzles and fill them with air, water, and chalk respectively[cite: 603, 605].",
+                "Apply vaseline to pistons for smooth movement[cite: 606].",
+                "Push the pistons and measure the distance moved[cite: 607].",
+                "Calculate the 'compressibility factor' based on piston movement[cite: 608]."
+            ],
+            "learning_outcome": "Observes that gases have the most space between particles[cite: 596, 616].",
+            "evaluation": "Explain why gases are used in LPG and CNG cylinders (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Latent Heat and Change of State",
+            "objective": "To study temperature behavior during melting and boiling[cite: 682, 686].",
+            "materials": [
+                "150 g Ice [cite: 650]",
+                "Thermometer [cite: 650]",
+                "Burner [cite: 672]",
+                "Glass stirrer [cite: 668]"
+            ],
+            "steps": [
+                "Heat ice and record the temperature at which it starts melting[cite: 682].",
+                "Note the temperature until all ice has converted to water[cite: 683, 697].",
+                "Continue heating until the water boils and vaporizes[cite: 685, 686].",
+                "Plot a time-temperature graph for the entire process."
+            ],
+            "learning_outcome": "Understand that heat is used to overcome forces of attraction (Latent Heat)[cite: 700, 701].",
+            "evaluation": "Explain why temperature remains constant during change of state (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Sublimation vs. Deposition",
+            "objective": "To observe state changes that bypass the liquid phase[cite: 724].",
+            "materials": [
+                "Camphor or Ammonium chloride [cite: 727]",
+                "China dish and Inverted funnel [cite: 727, 728]",
+                "Cotton plug [cite: 729]",
+                "Burner [cite: 740]"
+            ],
+            "steps": [
+                "Place crushed camphor in a china dish with an inverted funnel[cite: 727, 728].",
+                "Seal the funnel stem with cotton and heat slowly[cite: 729, 742].",
+                "Observe camphor vapors and the solidified camphor on the funnel walls[cite: 730, 733].",
+                "Identify which part of the process is sublimation and which is deposition[cite: 743]."
+            ],
+            "learning_outcome": "Defines the direct interconversion between solid and gaseous states[cite: 743, 849].",
+            "evaluation": "Compare these results with the melting of ice (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Factors Affecting Evaporation Rate",
+            "objective": "To analyze how external conditions influence evaporation[cite: 790].",
+            "materials": [
+                "Test tube [cite: 794]",
+                "Two China dishes [cite: 795, 796]",
+                "Fan [cite: 794]",
+                "Water [cite: 794]"
+            ],
+            "steps": [
+                "Put 5 mL water in a test tube and 5 mL in a china dish near a fan[cite: 794, 795].",
+                "Put 5 mL in another china dish inside a closed cupboard[cite: 796].",
+                "Record the time/days taken for evaporation in each case[cite: 798].",
+                "Repeat on a rainy day to check the effect of humidity[cite: 799]."
+            ],
+            "learning_outcome": "Determines that surface area, wind speed, and humidity affect evaporation[cite: 801, 803, 807, 810].",
+            "evaluation": "Predict the evaporation rate for a larger surface area like a floor (10 marks)."
+        }
+    ]
+}

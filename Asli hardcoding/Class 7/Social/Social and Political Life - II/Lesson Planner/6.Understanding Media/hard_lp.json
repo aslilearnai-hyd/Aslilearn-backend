@@ -1,0 +1,157 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Social and Political Life – II: Understanding Media",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze media bias, perspectives, and framing",
+        "Investigate misinformation and its societal impact",
+        "Develop ethical understanding of media responsibilities",
+        "Plan and present media literacy campaigns",
+        "Enhance research, critical thinking, and multimedia communication skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Critical Media Analysis",
+            "topics_covered": [
+                "Media framing and bias",
+                "Comparing multiple news sources",
+                "Analyzing headlines and language"
+            ],
+            "teaching_strategy": [
+                "Provide multiple articles on the same event",
+                "Guide students to compare reporting styles and identify perspectives"
+            ],
+            "student_activities": [
+                "Analyze differences between articles",
+                "Prepare a short report identifying bias and objective facts"
+            ],
+            "assessment": [
+                "Depth of analysis",
+                "Accuracy and clarity of report"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Investigating Misinformation",
+            "topics_covered": [
+                "Identifying fake news",
+                "Verifying online content",
+                "Tracing sources of misinformation"
+            ],
+            "teaching_strategy": [
+                "Demonstrate verification techniques",
+                "Discuss real-life misinformation cases"
+            ],
+            "student_activities": [
+                "Select a trending online post or news",
+                "Verify its authenticity and document findings"
+            ],
+            "assessment": [
+                "Correctness of verification",
+                "Clarity of explanation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Media Ethics and Responsibilities",
+            "topics_covered": [
+                "Ethical dilemmas in journalism",
+                "Privacy, sensationalism, and accountability",
+                "Role of media in democracy"
+            ],
+            "teaching_strategy": [
+                "Present case studies on ethical challenges in reporting",
+                "Class discussion on possible ethical solutions"
+            ],
+            "student_activities": [
+                "Analyze a media ethics case",
+                "Propose alternative approaches to reporting"
+            ],
+            "assessment": [
+                "Depth of reasoning",
+                "Relevance and justification of solutions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Multimedia Media Awareness Campaign",
+            "topics_covered": [
+                "Planning awareness campaigns",
+                "Designing posters, videos, and digital content",
+                "Communicating media literacy messages"
+            ],
+            "teaching_strategy": [
+                "Show examples of media campaigns",
+                "Guide students in planning message, visuals, and medium"
+            ],
+            "student_activities": [
+                "Design a short multimedia campaign on verifying news",
+                "Present or record it for the class"
+            ],
+            "assessment": [
+                "Creativity, clarity, and effectiveness of campaign",
+                "Teamwork and presentation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Investigative Journalism Mini-Project",
+            "topics_covered": [
+                "Researching local events or issues",
+                "Interviewing, observation, and reporting",
+                "Presenting findings with multiple perspectives"
+            ],
+            "teaching_strategy": [
+                "Guide students in collecting data and structuring a report",
+                "Provide checklists for verification and balanced reporting"
+            ],
+            "student_activities": [
+                "Identify a local issue or event",
+                "Collect information and write a detailed news report"
+            ],
+            "assessment": [
+                "Research quality and accuracy",
+                "Depth and balance of reporting"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Media Impact Reflection and Debate",
+            "topics_covered": [
+                "Media influence on public opinion",
+                "Social and cultural impact of news and advertisements",
+                "Responsible media consumption"
+            ],
+            "teaching_strategy": [
+                "Class debate or discussion on media influence",
+                "Use examples from social media, TV, and newspapers"
+            ],
+            "student_activities": [
+                "Prepare arguments for debate on media impact",
+                "Write a reflection on their own media use and responsibility"
+            ],
+            "assessment": [
+                "Participation in debate",
+                "Quality of reflection",
+                "Critical thinking and reasoning"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Newspaper articles, online news portals, and social media examples",
+        "Charts or slides explaining media bias and ethics",
+        "Case studies on media controversies",
+        "Tools for creating posters, videos, and presentations"
+    ],
+    "evaluation_methods": [
+        "Project reports and campaigns",
+        "Class discussion and debates",
+        "Observation of critical thinking and research skills",
+        "Notebook and reflection notes"
+    ],
+    "teacher_tip": "Encourage students to question information critically, compare sources, and think ethically about media. Use real-world examples and guide them in creating projects and campaigns for active learning."
+}

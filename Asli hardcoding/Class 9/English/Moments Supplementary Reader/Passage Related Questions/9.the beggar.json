@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG9",
+    "chapter": "The Beggar",
+    "title": "Extended Reading Passages with Questions – The Beggar",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "One day a ragged beggar stopped Sergei, a lawyer, in the street. The beggar asked for money and said that he had been a schoolteacher who had lost his job because of false accusations. His miserable appearance and trembling voice made him appear pitiful.",
+            "questions": [
+                "Who stopped Sergei in the street?",
+                "What profession did the beggar claim to have?",
+                "Why did the beggar say he lost his job?",
+                "How did the beggar appear?",
+                "What was the beggar asking Sergei for?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Sergei looked at the beggar carefully and suddenly remembered that he had met the same man earlier. At that time the beggar had told a different story, claiming that he was a student expelled from school. Sergei realised that the man was lying to gain sympathy.",
+            "questions": [
+                "What did Sergei suddenly remember?",
+                "What had the beggar claimed earlier?",
+                "Why did Sergei realise the beggar was lying?",
+                "What was the beggar trying to gain?",
+                "How did Sergei identify the lie?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Sergei became angry when he understood the deception. He scolded the beggar for cheating people and advised him to stop lying. Instead of begging, Sergei insisted that the man should work honestly and earn his living with dignity.",
+            "questions": [
+                "How did Sergei react after discovering the lie?",
+                "Why did Sergei scold the beggar?",
+                "What advice did Sergei give him?",
+                "What did Sergei say about honest work?",
+                "What did Sergei want the beggar to stop doing?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "The beggar admitted that he was indeed lying. His real name was Lushkoff, and he had once been a singer in a Russian choir. However, he lost his job because of his drinking habits and was forced to beg for survival.",
+            "questions": [
+                "What was the beggar’s real name?",
+                "What was Lushkoff’s earlier profession?",
+                "Why did he lose his job?",
+                "Why did Lushkoff begin begging?",
+                "What did Lushkoff confess to Sergei?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "Sergei decided to help Lushkoff by offering him work. He asked him to chop wood at his house and promised to pay him for the task. Although Lushkoff was weak and reluctant, he agreed to do the work out of shame and necessity.",
+            "questions": [
+                "What work did Sergei offer Lushkoff?",
+                "Where was Lushkoff asked to work?",
+                "How did Lushkoff feel about the work?",
+                "Why did Lushkoff accept the job?",
+                "What did Sergei promise in return?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "When Lushkoff arrived at Sergei’s house, he was taken to the woodshed by Olga, the cook. She looked at him angrily and scolded him for his drinking habits and laziness. Despite her harsh words, she felt pity for his miserable condition.",
+            "questions": [
+                "Who took Lushkoff to the woodshed?",
+                "What was Olga’s profession?",
+                "Why did Olga scold Lushkoff?",
+                "How did Olga actually feel about him?",
+                "Where was Lushkoff taken to work?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "Lushkoff tried to chop the wood, but he was weak and unable to work properly. Seeing his helpless state, Olga secretly chopped the wood herself. At the same time she scolded him bitterly and even shed tears while speaking about his ruined life.",
+            "questions": [
+                "Why was Lushkoff unable to chop the wood?",
+                "Who actually chopped the wood?",
+                "Why did Olga help him secretly?",
+                "What emotions did Olga show while scolding him?",
+                "What did Olga say about Lushkoff’s life?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "After that day, Lushkoff continued to come to Sergei’s house for small jobs such as shovelling snow and cleaning the yard. Sergei paid him regularly and eventually helped him get copying work in an office.",
+            "questions": [
+                "What other jobs did Lushkoff do?",
+                "How did Sergei support Lushkoff?",
+                "What type of work did Sergei help him get later?",
+                "Why did Lushkoff continue visiting Sergei’s house?",
+                "How did Sergei treat Lushkoff?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "Two years later Sergei met Lushkoff again at a theatre ticket window. Lushkoff had changed completely and was now working as a notary. He earned a decent salary and lived a respectable life.",
+            "questions": [
+                "Where did Sergei meet Lushkoff again?",
+                "How long had passed since their last meeting?",
+                "What job did Lushkoff have now?",
+                "How had Lushkoff’s life changed?",
+                "What does this meeting reveal?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "During their conversation, Sergei proudly said that he had helped reform Lushkoff. However, Lushkoff explained that the real credit belonged to Olga. Her compassion, tears, and kind heart had inspired him to change his life.",
+            "questions": [
+                "What did Sergei believe about Lushkoff’s reform?",
+                "Who did Lushkoff say actually helped him?",
+                "What qualities of Olga influenced Lushkoff?",
+                "How did Olga’s compassion affect him?",
+                "What message does this passage convey?"
+            ]
+        }
+    ]
+}

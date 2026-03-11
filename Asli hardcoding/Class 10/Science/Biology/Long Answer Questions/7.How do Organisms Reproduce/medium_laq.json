@@ -1,0 +1,198 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: How do Organisms Reproduce?",
+    "generated_at": "2026-03-10T23:51:30",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the importance of 'Variation' in a population? How does DNA copying lead to variation?",
+            "answer": "Variation is important for the survival of a species over time, as it allows some individuals to survive drastic environmental changes (like temperature shifts). During DNA copying, chemical reactions occur to build a copy. No biochemical process is absolutely reliable; therefore, slight inaccuracies result in variations in the new DNA molecule compared to the original.",
+            "answer_outline": [
+                "Survival advantage of variation",
+                "Environmental niche changes",
+                "Inaccuracy in biochemical DNA replication",
+                "Comparison of parent and daughter DNA"
+            ],
+            "key_concepts": [
+                "variation",
+                "DNA copying",
+                "natural selection",
+                "species survival"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the process of 'Regeneration' and why it is not the same as reproduction.",
+            "answer": "Regeneration is the ability of an organism to give rise to a new individual from its body parts if it is cut or broken into pieces (e.g., Planaria). It is not the same as reproduction because most organisms would not normally depend on being cut up to be able to reproduce; it is more of a specialized repair mechanism.",
+            "answer_outline": [
+                "Definition of regeneration",
+                "Example of Planaria",
+                "Role of specialized cells",
+                "Distinction from regular reproduction"
+            ],
+            "key_concepts": [
+                "regeneration",
+                "planaria",
+                "specialized cells",
+                "repair mechanism"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe 'Spore Formation' in Rhizopus. Why is this method advantageous for the organism?",
+            "answer": "Rhizopus produces spores in structures called sporangia. These spores are covered by thick walls that protect them until they come into contact with a moist surface. This is advantageous because it allows the organism to survive unfavorable conditions and spread over large distances through the air.",
+            "answer_outline": [
+                "Structure of sporangia",
+                "Protective spore walls",
+                "Dispersal through air",
+                "Survival in harsh environments"
+            ],
+            "key_concepts": [
+                "rhizopus",
+                "spores",
+                "sporangia",
+                "asexual reproduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2.6"
+        },
+        {
+            "question_number": 4,
+            "question": "Trace the path of a Pollen Tube from the stigma to the female germ cell. What is the result of fertilization in plants?",
+            "answer": "After a pollen grain lands on the stigma, it germinates and a pollen tube grows down through the style to reach the ovary. The male germ cell travels through this tube to reach the ovule. Fertilization results in the formation of a zygote, which eventually develops into an embryo inside the seed.",
+            "answer_outline": [
+                "Germination of pollen",
+                "Growth through the style",
+                "Entry into the ovule",
+                "Zygote and embryo formation"
+            ],
+            "key_concepts": [
+                "pollen tube",
+                "style",
+                "ovule",
+                "zygote"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is 'Sexual Reproduction' considered more advantageous than 'Asexual Reproduction' in terms of evolution?",
+            "answer": "Sexual reproduction involves the fusion of two different germ cells (gametes) from two individuals, which leads to a new combination of DNA. This process creates significant variations within a population. These variations are the raw material for evolution, allowing species to adapt better to changing environments compared to asexual reproduction.",
+            "answer_outline": [
+                "Fusion of two DNA sets",
+                "Increased genetic diversity",
+                "Adaptability to environment",
+                "Role in long-term evolution"
+            ],
+            "key_concepts": [
+                "sexual reproduction",
+                "genetic diversity",
+                "evolution",
+                "gametes"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the role of the 'Placenta' in the development of a human embryo.",
+            "answer": "The placenta is a special disc-like tissue embedded in the uterine wall. It provides a large surface area for the transfer of glucose and oxygen from the mother's blood to the embryo. It also allows for the removal of waste products (like urea and $CO_2$) from the embryo's blood into the mother's blood.",
+            "answer_outline": [
+                "Structure of placenta (villi)",
+                "Nutrient and oxygen supply",
+                "Waste removal function",
+                "Connection via umbilical cord"
+            ],
+            "key_concepts": [
+                "placenta",
+                "embryo",
+                "uterus",
+                "nutrition"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is 'Menstruation'? Why does it occur?",
+            "answer": "Menstruation is the periodic discharge of blood and mucosal tissue from the inner lining of the uterus through the vagina. It occurs when an egg released by the ovary is not fertilized. The thick, spongy uterine lining prepared to receive an embryo is no longer needed and breaks down.",
+            "answer_outline": [
+                "Condition (Egg not fertilized)",
+                "Breakdown of uterine lining",
+                "Duration and cycle",
+                "Significance in reproductive cycle"
+            ],
+            "key_concepts": [
+                "menstruation",
+                "uterine lining",
+                "ovulation",
+                "unfertilized egg"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Differentiate between 'Fragmentation' and 'Regeneration' with examples.",
+            "answer": "Fragmentation occurs in simple organisms where the body simply breaks into smaller pieces upon maturation, each growing into a new individual (e.g., Spirogyra). Regeneration is the ability to grow back lost parts or a whole body from a fragment, usually involving specialized cells (e.g., Planaria). Regeneration can be a repair mechanism, while fragmentation is a primary mode of reproduction.",
+            "answer_outline": [
+                "Complexity of organisms",
+                "Process of breaking vs regrowth",
+                "Examples (Spirogyra vs Planaria)",
+                "Biological intent (Reproduction vs Repair)"
+            ],
+            "key_concepts": [
+                "fragmentation",
+                "regeneration",
+                "spirogyra",
+                "complexity"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.2 & 7.2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How do the 'Vas Deferens' and 'Fallopian Tubes' facilitate reproduction in males and females respectively?",
+            "answer": "The Vas Deferens is a tube that carries sperms from the testes to the urethra in males. The Fallopian Tube (Oviduct) carries the egg from the ovary to the uterus in females and is also the primary site where fertilization of the egg by a sperm takes place.",
+            "answer_outline": [
+                "Function of Vas Deferens",
+                "Function of Fallopian Tube",
+                "Site of fertilization",
+                "Transport of gametes"
+            ],
+            "key_concepts": [
+                "vas deferens",
+                "fallopian tube",
+                "fertilization",
+                "transport"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'Tissue Culture'? Mention its significance.",
+            "answer": "Tissue culture is the technique of growing new plants from a small piece of plant tissue (explants) in an artificial nutrient medium under sterile conditions. Significance: It allows for the rapid production of many plants from a single parent in a disease-free environment, and is used for ornamental plants like Orchids.",
+            "answer_outline": [
+                "Definition and method",
+                "Nutrient medium and callus",
+                "Disease-free production",
+                "Commercial/Ornamental use"
+            ],
+            "key_concepts": [
+                "tissue culture",
+                "callus",
+                "sterile conditions",
+                "micropropagation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.5"
+        }
+    ]
+}

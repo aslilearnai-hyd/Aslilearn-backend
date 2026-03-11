@@ -1,0 +1,156 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Lost Child",
+    "author": "Mulk Raj Anand",
+    "difficulty": "Medium",
+    "source_pdf": "eng9_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Character Description of the Child",
+            "objective": "Understand the personality of the child",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the story carefully",
+                "Write 5 sentences describing the nature of the child",
+                "Support your points with examples from the story"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Relevant points and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Reasons for Lagging Behind",
+            "objective": "Understand why the child keeps lagging behind",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the different attractions on the way to the fair",
+                "List the reasons why the child stops again and again",
+                "Explain them briefly"
+            ],
+            "learning_outcome": "Understands cause and effect",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Fair Attractions List",
+            "objective": "Identify the attractions present in the fair",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List the different attractions the child notices at the fair",
+                "Write one sentence describing each attraction"
+            ],
+            "learning_outcome": "Recognises descriptive elements",
+            "evaluation": "Accuracy of points (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Child’s Changing Desires",
+            "objective": "Understand how the child’s desires change",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the items the child wanted before getting lost",
+                "Explain why he refuses them later"
+            ],
+            "learning_outcome": "Understands emotional development",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Description of the Crowd",
+            "objective": "Understand how the crowd is described in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find the paragraph describing the crowd",
+                "Write 4–5 lines explaining how the crowd affected the child"
+            ],
+            "learning_outcome": "Understands setting and atmosphere",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Actions of the Kind Man",
+            "objective": "Analyse the behaviour of the man who helps the child",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List the different things the man offers the child",
+                "Explain why he tries these methods"
+            ],
+            "learning_outcome": "Understands supportive characters",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence Chart",
+            "objective": "Understand the flow of events in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five important events in the story",
+                "Arrange them in chronological order"
+            ],
+            "learning_outcome": "Understands narrative structure",
+            "evaluation": "Correct sequencing (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Theme Identification",
+            "objective": "Identify the main theme of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the message conveyed by the story",
+                "Write 4–5 sentences explaining the theme"
+            ],
+            "learning_outcome": "Understands central idea",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Feelings Before and After Getting Lost",
+            "objective": "Compare the child’s emotions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Describe how the child felt before getting lost",
+                "Describe how he felt after getting lost"
+            ],
+            "learning_outcome": "Understands emotional contrast",
+            "evaluation": "Clear comparison (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Lesson Learned",
+            "objective": "Understand the value conveyed by the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the importance of parents shown in the story",
+                "Write 5 sentences explaining what the story teaches us"
+            ],
+            "learning_outcome": "Recognises moral values",
+            "evaluation": "Meaningful explanation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter": "Power-sharing",
+  "difficulty": "Easy",
+  "source_pdf": "jess401.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Community Diversity Chart",
+      "objective": "Understand ethnic diversity in different countries",
+      "materials": ["Chart paper", "Notebook", "Pencil"],
+      "steps": [
+        "List the ethnic communities of Belgium",
+        "List the ethnic communities of Sri Lanka",
+        "Create a comparison chart showing language and population percentage"
+      ],
+      "learning_outcome": "Recognises diversity in societies",
+      "evaluation": "Accuracy of information and neat presentation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Map Identification Activity",
+      "objective": "Identify regions of ethnic communities",
+      "materials": ["World map", "Colour pencils"],
+      "steps": [
+        "Locate Belgium and Sri Lanka on a world map",
+        "Mark regions where major communities live",
+        "Label the communities using different colours"
+      ],
+      "learning_outcome": "Develops map reading and interpretation skills",
+      "evaluation": "Correct marking and labeling (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Majoritarianism Discussion",
+      "objective": "Understand the concept of majoritarianism",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write the meaning of majoritarianism",
+        "List policies adopted in Sri Lanka favouring Sinhala speakers",
+        "Discuss its impact on Tamil communities"
+      ],
+      "learning_outcome": "Understands effects of majority dominance",
+      "evaluation": "Clear explanation and examples (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Belgium Model Study",
+      "objective": "Learn how Belgium resolved community conflict",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write key features of the Belgian power-sharing model",
+        "Identify roles of central, state, and community governments",
+        "Explain how these arrangements reduced conflict"
+      ],
+      "learning_outcome": "Understands practical solutions to social conflicts",
+      "evaluation": "Correct explanation of arrangements (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Civil War Case Study",
+      "objective": "Analyse the causes of civil war in Sri Lanka",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Write causes of the Sri Lankan civil war",
+        "Describe demands of Tamil groups",
+        "Summarise its social and economic impact"
+      ],
+      "learning_outcome": "Develops analytical understanding of conflicts",
+      "evaluation": "Quality of analysis (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Reasons for Power Sharing Poster",
+      "objective": "Understand prudential and moral reasons for power sharing",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write prudential reasons for power sharing",
+        "Write moral reasons for power sharing",
+        "Illustrate each reason with an example"
+      ],
+      "learning_outcome": "Differentiates between types of reasons",
+      "evaluation": "Clarity and creativity (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Forms of Power Sharing Table",
+      "objective": "Identify different forms of power sharing",
+      "materials": ["Notebook"],
+      "steps": [
+        "List the four forms of power sharing",
+        "Give examples of each form",
+        "Present them in a table format"
+      ],
+      "learning_outcome": "Recognises institutional arrangements in democracy",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Role Play on Coalition Government",
+      "objective": "Understand how political parties share power",
+      "materials": ["Name cards", "Notebook"],
+      "steps": [
+        "Assign students different political parties",
+        "Simulate an election result without clear majority",
+        "Form a coalition government through discussion"
+      ],
+      "learning_outcome": "Experiences democratic negotiation and cooperation",
+      "evaluation": "Participation and understanding (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Local Governance Survey",
+      "objective": "Observe power sharing at local level",
+      "materials": ["Notebook", "Interview questions"],
+      "steps": [
+        "Visit or research about a local panchayat or municipality",
+        "Identify roles of elected members",
+        "Write a short report on how decisions are shared"
+      ],
+      "learning_outcome": "Connects textbook concepts with real-life governance",
+      "evaluation": "Quality of report (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "News Analysis on Power Sharing",
+      "objective": "Understand contemporary examples of power sharing",
+      "materials": ["Newspaper", "Notebook"],
+      "steps": [
+        "Collect one news article related to government power sharing",
+        "Identify the groups involved",
+        "Explain how power is being shared or disputed"
+      ],
+      "learning_outcome": "Improves critical thinking about current affairs",
+      "evaluation": "Depth of explanation (10 marks)"
+    }
+  ]
+}

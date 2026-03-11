@@ -1,0 +1,383 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 9: Light – Reflection and Refraction",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is reflection of light?",
+            "answer": "Reflection of light is the phenomenon in which light bounces back into the same medium after striking a surface.",
+            "answer_outline": [
+                "Bouncing back of light",
+                "Same medium"
+            ],
+            "key_concepts": [
+                "reflection",
+                "light propagation"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State the two laws of reflection.",
+            "answer": "1. The angle of incidence equals the angle of reflection. 2. The incident ray, reflected ray, and normal lie in the same plane.",
+            "answer_outline": [
+                "Angle i = angle r",
+                "Same plane"
+            ],
+            "key_concepts": [
+                "laws of reflection",
+                "angle of incidence"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a plane mirror?",
+            "answer": "A plane mirror is a flat reflecting surface that forms virtual, erect, and laterally inverted images of the same size as the object.",
+            "answer_outline": [
+                "Flat surface",
+                "Virtual erect image"
+            ],
+            "key_concepts": [
+                "plane mirror",
+                "lateral inversion"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What are spherical mirrors?",
+            "answer": "Spherical mirrors are curved mirrors whose reflecting surface is part of a sphere, either concave or convex.",
+            "answer_outline": [
+                "Curved reflecting surface",
+                "Concave or convex"
+            ],
+            "key_concepts": [
+                "spherical mirrors",
+                "curvature"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Define the principal focus of a concave mirror.",
+            "answer": "The principal focus of a concave mirror is the point on the principal axis where parallel rays converge after reflection.",
+            "answer_outline": [
+                "Convergence point",
+                "Principal axis"
+            ],
+            "key_concepts": [
+                "principal focus",
+                "concave mirror"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the focal length of a spherical mirror?",
+            "answer": "Focal length is half the radius of curvature (f = R/2).",
+            "answer_outline": [
+                "f = R/2",
+                "Relation to curvature"
+            ],
+            "key_concepts": [
+                "focal length",
+                "radius of curvature"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Give one use of a concave mirror.",
+            "answer": "Concave mirrors are used in torches, searchlights, and solar furnaces to concentrate light rays.",
+            "answer_outline": [
+                "Concentrates light",
+                "Real life application"
+            ],
+            "key_concepts": [
+                "concave mirror",
+                "converging"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Give one use of a convex mirror.",
+            "answer": "Convex mirrors are used as rear-view mirrors in vehicles because they give an erect and wider field of view.",
+            "answer_outline": [
+                "Wider field of view",
+                "Erect image"
+            ],
+            "key_concepts": [
+                "convex mirror",
+                "diverging"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is refraction of light?",
+            "answer": "Refraction of light is the bending of light when it passes from one transparent medium to another due to change in speed.",
+            "answer_outline": [
+                "Bending of light",
+                "Change in medium"
+            ],
+            "key_concepts": [
+                "refraction",
+                "speed change"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "State Snell's law of refraction.",
+            "answer": "The ratio of sine of angle of incidence to sine of angle of refraction is constant for a given pair of media (sin i / sin r = n).",
+            "answer_outline": [
+                "sin i / sin r = constant",
+                "Refractive index"
+            ],
+            "key_concepts": [
+                "Snell's law",
+                "refractive index"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is refractive index?",
+            "answer": "Refractive index of a medium is the ratio of speed of light in vacuum to speed of light in that medium (n = c/v).",
+            "answer_outline": [
+                "n = c/v",
+                "Relative speed"
+            ],
+            "key_concepts": [
+                "refractive index",
+                "optical density"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does a pencil appear bent in water?",
+            "answer": "Due to refraction, light from the immersed part bends at the water-air interface, making the pencil appear bent.",
+            "answer_outline": [
+                "Refraction at interface",
+                "Apparent shift"
+            ],
+            "key_concepts": [
+                "refraction",
+                "apparent depth"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is lateral displacement in a glass slab?",
+            "answer": "Lateral displacement is the sideways shift of the emergent ray parallel to the incident ray when light passes through a glass slab.",
+            "answer_outline": [
+                "Parallel shift",
+                "Slab refraction"
+            ],
+            "key_concepts": [
+                "lateral displacement",
+                "glass slab"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a convex lens?",
+            "answer": "A convex lens is thicker at the centre and thinner at the edges, converging light rays to a point.",
+            "answer_outline": [
+                "Converging lens",
+                "Thicker centre"
+            ],
+            "key_concepts": [
+                "convex lens",
+                "converging"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a concave lens?",
+            "answer": "A concave lens is thinner at the centre and thicker at the edges, diverging light rays.",
+            "answer_outline": [
+                "Diverging lens",
+                "Thinner centre"
+            ],
+            "key_concepts": [
+                "concave lens",
+                "diverging"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Define the power of a lens.",
+            "answer": "Power of a lens is the ability to converge or diverge light rays, measured as the reciprocal of focal length in metres (P = 1/f).",
+            "answer_outline": [
+                "P = 1/f",
+                "Dioptre unit"
+            ],
+            "key_concepts": [
+                "power of lens",
+                "dioptre"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the sign convention for mirrors?",
+            "answer": "Object distance (u) is negative, real image and focal length for concave mirror are negative, virtual image positive.",
+            "answer_outline": [
+                "New Cartesian sign",
+                "Real negative"
+            ],
+            "key_concepts": [
+                "sign convention",
+                "mirror formula"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do convex mirrors form virtual images?",
+            "answer": "Convex mirrors diverge light rays, so they appear to come from behind the mirror, forming virtual, erect, and diminished images.",
+            "answer_outline": [
+                "Diverging rays",
+                "Virtual erect"
+            ],
+            "key_concepts": [
+                "convex mirror",
+                "image nature"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is the refractive index of glass greater than that of water?",
+            "answer": "Light travels slower in glass than in water, so glass has higher optical density and higher refractive index.",
+            "answer_outline": [
+                "Slower speed in glass",
+                "Higher n"
+            ],
+            "key_concepts": [
+                "refractive index",
+                "optical density"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What happens when light goes from denser to rarer medium?",
+            "answer": "Light bends away from the normal, and if angle of incidence exceeds critical angle, total internal reflection occurs.",
+            "answer_outline": [
+                "Bends away",
+                "Total internal reflection"
+            ],
+            "key_concepts": [
+                "refraction",
+                "total internal reflection"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do stars twinkle?",
+            "answer": "Twinkling occurs due to refraction of starlight through Earth's atmosphere with varying density layers, causing apparent position changes.",
+            "answer_outline": [
+                "Atmospheric refraction",
+                "Density variation"
+            ],
+            "key_concepts": [
+                "atmospheric refraction",
+                "twinkling"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the lens formula?",
+            "answer": "The lens formula is 1/f = 1/v - 1/u, where f is focal length, v is image distance, u is object distance.",
+            "answer_outline": [
+                "1/f = 1/v - 1/u",
+                "Relation"
+            ],
+            "key_concepts": [
+                "lens formula",
+                "magnification"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Define magnification for lenses.",
+            "answer": "Magnification (m) is the ratio of image height to object height, also m = v/u (with signs).",
+            "answer_outline": [
+                "m = h'/h = v/u",
+                "Size ratio"
+            ],
+            "key_concepts": [
+                "magnification",
+                "lens"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are convex lenses used in magnifying glasses?",
+            "answer": "Convex lenses form virtual, erect, and enlarged images when the object is placed between the lens and focal point.",
+            "answer_outline": [
+                "Enlarged virtual image",
+                "Close object"
+            ],
+            "key_concepts": [
+                "convex lens",
+                "magnifier"
+            ],
+            "marks": 3,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the unit of power of a lens?",
+            "answer": "The SI unit of power of a lens is dioptre (D), where 1 D = 1 m⁻¹.",
+            "answer_outline": [
+                "Dioptre (D)",
+                "1/f in metres"
+            ],
+            "key_concepts": [
+                "power",
+                "dioptre"
+            ],
+            "marks": 2,
+            "source_section": "Section 9.5"
+        }
+    ]
+}

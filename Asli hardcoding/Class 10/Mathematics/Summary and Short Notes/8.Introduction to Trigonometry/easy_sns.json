@@ -1,0 +1,29 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "difficulty": "Easy",
+    "source_pdf": "jemh108.pdf",
+    "short_notes": {
+        "key_points": [
+            "Trigonometry deals with the relationship between angles and sides of a right-angled triangle",
+            "Six trigonometric ratios are defined",
+            "Ratios depend on the angle, not the size of the triangle"
+        ],
+        "examples": [
+            "sin θ = perpendicular / hypotenuse",
+            "cos θ = base / hypotenuse",
+            "tan θ = perpendicular / base"
+        ],
+        "formulas": [
+            "sin θ = 1 / cosec θ",
+            "cos θ = 1 / sec θ",
+            "tan θ = 1 / cot θ"
+        ],
+        "exam_tips": [
+            "Identify base and perpendicular correctly",
+            "Remember standard angle values",
+            "Use correct ratio as per question"
+        ]
+    }
+}

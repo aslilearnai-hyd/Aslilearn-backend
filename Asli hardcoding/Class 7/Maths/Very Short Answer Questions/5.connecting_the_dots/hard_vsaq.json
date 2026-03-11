@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: CONNECTING THE DOTS (BASICS OF GEOMETRY)",
+    "generated_at": "2026-03-06T00:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If an angle is $28^{\\circ}$ less than its supplement, find the measure of the angle.",
+            "answer": "Let the angle be $x$. $x = (180 - x) - 28 \\Rightarrow 2x = 152 \\Rightarrow x = 76^{\\circ}$.",
+            "key_concepts": ["supplementary angles"],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Two parallel lines are cut by a transversal. If the interior angles on the same side are $(2x - 8)^{\\circ}$ and $(3x - 7)^{\\circ}$, find $x$.",
+            "answer": "$(2x - 8) + (3x - 7) = 180 \\Rightarrow 5x - 15 = 180 \\Rightarrow 5x = 195 \\Rightarrow x = 39$.",
+            "key_concepts": ["consecutive interior angles"],
+            "marks": 3,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Can a triangle have sides of length 7 cm, 8 cm, and 15 cm? Justify.",
+            "answer": "No, because $7 + 8 = 15$. The sum of any two sides must be strictly greater than the third side.",
+            "key_concepts": ["triangle inequality theorem"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the measure of the angle between the hands of a clock at 3:30?",
+            "answer": "The hour hand is midway between 3 and 4 ($105^{\\circ}$ from 12) and the minute hand is at 6 ($180^{\\circ}$ from 12). Angle = $180 - 105 = 75^{\\circ}$.",
+            "key_concepts": ["clock angles"],
+            "marks": 3,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 5,
+            "question": "An angle is four times its complement. Find the measure of the angle.",
+            "answer": "$x = 4(90 - x) \\Rightarrow x = 360 - 4x \\Rightarrow 5x = 360 \\Rightarrow x = 72^{\\circ}$.",
+            "key_concepts": ["complementary angles"],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 6,
+            "question": "If the angles of a triangle are in the ratio 2:3:5, find the measure of the largest angle.",
+            "answer": "$2x + 3x + 5x = 180 \\Rightarrow 10x = 180 \\Rightarrow x = 18$. Largest angle = $5 \\times 18 = 90^{\\circ}$.",
+            "key_concepts": ["angle sum property", "ratios"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the reflex angle corresponding to an angle of $135^{\\circ}$?",
+            "answer": "$360^{\\circ} - 135^{\\circ} = 225^{\\circ}$.",
+            "key_concepts": ["reflex angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 8,
+            "question": "If two lines intersect and one of the vertically opposite angles is $90^{\\circ}$, what are the measures of the other three angles?",
+            "answer": "All three angles will be $90^{\\circ}$.",
+            "key_concepts": ["vertically opposite angles", "linear pair"],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "In $\\triangle ABC$, $\\angle A = 2\\angle B$ and $\\angle C = 3\\angle B$. Find $\\angle B$.",
+            "answer": "$2B + B + 3B = 180 \\Rightarrow 6B = 180 \\Rightarrow B = 30^{\\circ}$.",
+            "key_concepts": ["angle sum property"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 10,
+            "question": "How many degrees does the hour hand of a clock turn in 4 hours?",
+            "answer": "$4 \\times 30^{\\circ} = 120^{\\circ}$.",
+            "key_concepts": ["clock geometry"],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 11,
+            "question": "If the bisectors of two adjacent supplementary angles are drawn, what is the angle between them?",
+            "answer": "$90^{\\circ}$ (since $\\frac{1}{2}x + \\frac{1}{2}(180-x) = 90$).",
+            "key_concepts": ["angle bisectors", "supplementary angles"],
+            "marks": 3,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Two complementary angles are in the ratio 4:5. Find the angles.",
+            "answer": "$4x + 5x = 90 \\Rightarrow 9x = 90 \\Rightarrow x = 10$. Angles are $40^{\\circ}$ and $50^{\\circ}$.",
+            "key_concepts": ["complementary angles", "ratios"],
+            "marks": 2,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Can a triangle be both isosceles and obtuse-angled? Provide an example.",
+            "answer": "Yes. Example: A triangle with angles $120^{\\circ}$, $30^{\\circ}$, and $30^{\\circ}$.",
+            "key_concepts": ["triangle classification"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "If $L \\parallel M$ and $M \\parallel N$, then what is the relationship between $L$ and $N$?",
+            "answer": "$L \\parallel N$.",
+            "key_concepts": ["transitive property of parallel lines"],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the angle which is equal to its complement.",
+            "answer": "$45^{\\circ}$.",
+            "key_concepts": ["complementary angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "In a right-angled triangle, if one acute angle is double the other, find the angles.",
+            "answer": "$x + 2x = 90 \\Rightarrow 3x = 90 \\Rightarrow x = 30$. Angles are $30^{\\circ}$, $60^{\\circ}$, and $90^{\\circ}$.",
+            "key_concepts": ["right triangle properties"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Define a 'Concave Polygon'.",
+            "answer": "A polygon where at least one interior angle is greater than $180^{\\circ}$.",
+            "key_concepts": ["polygons"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "If two lines are perpendicular to the same line, what is their relationship to each other?",
+            "answer": "They are parallel to each other.",
+            "key_concepts": ["perpendicular and parallel lines"],
+            "marks": 2,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "An exterior angle of a triangle is $110^{\\circ}$. If one of the interior opposite angles is $40^{\\circ}$, find the other.",
+            "answer": "$110 - 40 = 70^{\\circ}$.",
+            "key_concepts": ["exterior angle property"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the sum of the interior angles of a quadrilateral?",
+            "answer": "$360^{\\circ}$.",
+            "key_concepts": ["quadrilaterals"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "If an angle is $x$, express its supplement using $x$.",
+            "answer": "$180 - x$.",
+            "key_concepts": ["supplementary angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 22,
+            "question": "In $\\triangle PQR$, $PQ = PR$. If $\\angle Q = 55^{\\circ}$, find $\\angle P$.",
+            "answer": "$\\angle R = \\angle Q = 55^{\\circ}$. $\\angle P = 180 - (55 + 55) = 70^{\\circ}$.",
+            "key_concepts": ["isosceles triangle properties"],
+            "marks": 2,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Define 'Co-interior Angles'.",
+            "answer": "The pair of interior angles on the same side of the transversal when it intersects two lines.",
+            "key_concepts": ["transversal angles"],
+            "marks": 1,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "True or False: A triangle can have two obtuse angles.",
+            "answer": "False (The sum would exceed $180^{\\circ}$).",
+            "key_concepts": ["angle sum property"],
+            "marks": 1,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the supplement of a right angle?",
+            "answer": "$90^{\\circ}$.",
+            "key_concepts": ["supplementary angles"],
+            "marks": 1,
+            "source_section": "Section 6.3"
+        }
+    ]
+}

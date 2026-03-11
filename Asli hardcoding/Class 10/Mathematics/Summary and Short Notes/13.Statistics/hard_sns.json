@@ -1,0 +1,24 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Hard",
+    "source_pdf": "jemh113.pdf",
+    "short_notes": {
+        "key_points": [
+            "Case-study data interpretation is common",
+            "Graphs must be analysed logically",
+            "Calculation accuracy is crucial"
+        ],
+        "examples": [
+            "Case-based statistical problems"
+        ],
+        "formulas": [
+            "Median and mode formulas"
+        ],
+        "exam_tips": [
+            "Maintain neat tables",
+            "Show all steps clearly"
+        ]
+    }
+}

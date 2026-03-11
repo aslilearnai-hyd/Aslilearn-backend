@@ -1,0 +1,384 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Connecting the Dots (Understanding Elementary Shapes)",
+    "generated_at": "2026-03-05T01:42:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the difference between an 'Obtuse' angle and a 'Reflex' angle? Provide the degree range for both.",
+            "answer": "An obtuse angle is greater than 90° but less than 180°. A reflex angle is greater than 180° but less than 360°.",
+            "answer_outline": [
+                "Define obtuse angle range",
+                "Define reflex angle range",
+                "Compare their positions relative to a straight line"
+            ],
+            "key_concepts": [
+                "angle classification",
+                "obtuse",
+                "reflex"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 2,
+            "question": "If a line segment $AB$ is 8 cm long and $C$ is its midpoint, and $D$ is the midpoint of $AC$, find the length of $AD$.",
+            "answer": "Since $C$ is the midpoint of $AB$, $AC = 8/2 = 4$ cm. Since $D$ is the midpoint of $AC$, $AD = 4/2 = 2$ cm.",
+            "answer_outline": [
+                "Calculate first midpoint distance",
+                "Calculate second midpoint distance",
+                "State final length"
+            ],
+            "key_concepts": [
+                "midpoint",
+                "line segment division"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the relationship between a Rectangle and a Parallelogram. Is every parallelogram a rectangle?",
+            "answer": "A rectangle is a special type of parallelogram where all four angles are right angles (90°). Every rectangle is a parallelogram, but not every parallelogram is a rectangle (because a parallelogram can have non-90° angles).",
+            "answer_outline": [
+                "State shared properties",
+                "Identify the defining constraint (90° angles)",
+                "Explain the logic of the subset relationship"
+            ],
+            "key_concepts": [
+                "quadrilaterals",
+                "parallelogram",
+                "rectangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 4,
+            "question": "How many degrees does the hour hand of a clock turn when it moves from 12 to 5?",
+            "answer": "The clock is a circle (360°). Each hour represents $360 / 12 = 30°$. From 12 to 5 is 5 hours. Total turn = $5 \\times 30 = 150°$.",
+            "answer_outline": [
+                "Find degrees per hour",
+                "Count number of hours moved",
+                "Multiply to find total angle"
+            ],
+            "key_concepts": [
+                "clock angles",
+                "fractions of a circle"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why a 'Square' can be called a 'Regular Quadrilateral'.",
+            "answer": "A regular polygon must be both equilateral (all sides equal) and equiangular (all angles equal). A square has four equal sides and four equal angles (all 90°), thus fitting the definition perfectly.",
+            "answer_outline": [
+                "Define regular polygon requirements",
+                "Apply to square properties",
+                "Conclude based on definitions"
+            ],
+            "key_concepts": [
+                "regular polygon",
+                "square"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.8"
+        },
+        {
+            "question_number": 6,
+            "question": "Compare an 'Isosceles Triangle' and an 'Equilateral Triangle'. Can an equilateral triangle be called isosceles?",
+            "answer": "An isosceles triangle has at least 2 equal sides. An equilateral triangle has all 3 sides equal. Yes, an equilateral triangle is also isosceles because it satisfies the condition of having at least 2 equal sides.",
+            "answer_outline": [
+                "Define both triangle types",
+                "Analyze the 'at least' condition",
+                "Clarify the categorical relationship"
+            ],
+            "key_concepts": [
+                "triangle classification",
+                "isosceles",
+                "equilateral"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 7,
+            "question": "What are the number of faces, edges, and vertices for a Square Pyramid?",
+            "answer": "Faces = 5 (1 square base + 4 triangular sides). Vertices = 5 (4 at the base + 1 at the top). Edges = 8 (4 at the base + 4 rising to the vertex).",
+            "answer_outline": [
+                "Identify shape of base and sides",
+                "Count Faces, Vertices, and Edges individually"
+            ],
+            "key_concepts": [
+                "3D shapes",
+                "pyramid properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 8,
+            "question": "Distinguish between a 'Cylinder' and a 'Cone'.",
+            "answer": "A cylinder has two circular bases that are parallel and congruent. A cone has only one circular base and a single vertex at the top where the curved surface meets.",
+            "answer_outline": [
+                "Contrast number of bases",
+                "Describe the top of each shape (circular vs point)"
+            ],
+            "key_concepts": [
+                "3D solids",
+                "cylinder",
+                "cone"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a 'Straight Angle' in terms of revolutions? How many right angles does it contain?",
+            "answer": "A straight angle is $1/2$ of a revolution. It contains exactly 2 right angles (90° + 90° = 180°).",
+            "answer_outline": [
+                "Relate angle to full circle fraction",
+                "State count of 90 degree segments"
+            ],
+            "key_concepts": [
+                "angles",
+                "revolutions"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "In a Right-angled Isosceles triangle, what are the measures of the three angles?",
+            "answer": "One angle is 90° (right angle). The other two must be equal (isosceles) and sum to 90° (to make the total 180°). Therefore, the angles are 90°, 45°, and 45°.",
+            "answer_outline": [
+                "Identify the 90 degree constraint",
+                "Apply the equal angles property of isosceles triangles",
+                "Use the angle sum property of 180°"
+            ],
+            "key_concepts": [
+                "triangle properties",
+                "angle sum"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Name a quadrilateral that has exactly one pair of parallel sides.",
+            "answer": "A Trapezium (or Trapezoid).",
+            "answer_outline": [
+                "Provide the specific shape name"
+            ],
+            "key_concepts": [
+                "trapezium",
+                "parallel sides"
+            ],
+            "marks": 2,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the instrument used to measure an angle, and what are the units of measurement?",
+            "answer": "The instrument is a Protractor. The units of measurement are Degrees (°).",
+            "answer_outline": [
+                "Name the tool",
+                "Name the unit"
+            ],
+            "key_concepts": [
+                "protractor",
+                "degrees"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe a 'Triangular Prism'. How many rectangular faces does it have?",
+            "answer": "A triangular prism has two identical triangular bases and three rectangular side faces. It has a total of 5 faces.",
+            "answer_outline": [
+                "Describe the bases",
+                "Identify the shape of the lateral faces",
+                "Provide the count of rectangles"
+            ],
+            "key_concepts": [
+                "prism",
+                "faces"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens to the measure of an angle if the lengths of its arms are increased? Explain.",
+            "answer": "The measure of the angle remains the same. The angle depends only on the opening between the two rays, not on how long the rays are drawn.",
+            "answer_outline": [
+                "State the effect (none)",
+                "Explain that rays are infinite/length is irrelevant to opening"
+            ],
+            "key_concepts": [
+                "angle properties",
+                "rays"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 15,
+            "question": "How many degrees are in: (a) 1/4 of a revolution? (b) 3/4 of a revolution?",
+            "answer": "(a) $1/4$ of 360° = 90°. (b) $3/4$ of 360° = 270°.",
+            "answer_outline": [
+                "Apply fractions to 360 degrees"
+            ],
+            "key_concepts": [
+                "revolutions",
+                "degrees"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Define a 'Rhombus' and state how it differs from a Square.",
+            "answer": "A rhombus is a parallelogram with all four sides of equal length. It differs from a square because its angles do not have to be 90°.",
+            "answer_outline": [
+                "State side property",
+                "Identify the angle difference"
+            ],
+            "key_concepts": [
+                "rhombus",
+                "square"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.7"
+        },
+        {
+            "question_number": 17,
+            "question": "A triangle has side lengths of 5 cm, 5 cm, and 8 cm. Classify it based on its sides.",
+            "answer": "Since two sides are equal (5 cm), it is an Isosceles Triangle.",
+            "answer_outline": [
+                "Check side equality",
+                "Assign the name"
+            ],
+            "key_concepts": [
+                "isosceles triangle"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the angle between the directions North and West?",
+            "answer": "The angle is 90° (a right angle).",
+            "answer_outline": [
+                "Visualize the cardinal directions"
+            ],
+            "key_concepts": [
+                "directions",
+                "right angle"
+            ],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How many vertices does a 'Sphere' have?",
+            "answer": "A sphere has zero vertices because it has no flat faces or edges that meet at a point.",
+            "answer_outline": [
+                "State count (0)",
+                "Explain based on surface type"
+            ],
+            "key_concepts": [
+                "sphere",
+                "vertices"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 20,
+            "question": "Classify a triangle with angles 30°, 60°, and 90° based on its angles.",
+            "answer": "It is a Right-angled Triangle because one of its angles is exactly 90°.",
+            "answer_outline": [
+                "Identify the critical 90 degree angle"
+            ],
+            "key_concepts": [
+                "right triangle"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the sum of any two sides of a triangle compared to the third side? (Triangle Inequality Property).",
+            "answer": "The sum of the lengths of any two sides of a triangle is always greater than the length of the third side.",
+            "answer_outline": [
+                "State the relationship (>)"
+            ],
+            "key_concepts": [
+                "triangle inequality"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Define 'Parallel Lines' and give a real-life example from your house.",
+            "answer": "Parallel lines are lines that never meet, no matter how long they are extended, and the distance between them is always constant. Example: Opposite edges of a door or the tracks of a sliding window.",
+            "answer_outline": [
+                "Definition of parallelism",
+                "Provide relevant example"
+            ],
+            "key_concepts": [
+                "parallel lines"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Which polygon has 6 sides? Is it always regular?",
+            "answer": "A hexagon has 6 sides. It is not always regular; it is only regular if all 6 sides and all 6 angles are equal.",
+            "answer_outline": [
+                "Identify hexagon",
+                "Clarify 'regular' vs 'irregular' possibility"
+            ],
+            "key_concepts": [
+                "hexagon",
+                "regular polygon"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.8"
+        },
+        {
+            "question_number": 24,
+            "question": "What 3D shape has 6 identical square faces?",
+            "answer": "A Cube.",
+            "answer_outline": [
+                "Provide the name"
+            ],
+            "key_concepts": [
+                "cube"
+            ],
+            "marks": 2,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 25,
+            "question": "If you turn through two right angles, what type of angle have you formed?",
+            "answer": "A Straight Angle (180°).",
+            "answer_outline": [
+                "Add the right angles",
+                "Assign the type"
+            ],
+            "key_concepts": [
+                "straight angle",
+                "right angle"
+            ],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        }
+    ]
+}

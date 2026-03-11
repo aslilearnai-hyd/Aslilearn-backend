@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Globalisation and the Indian Economy",
+  "difficulty": "Medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why do MNCs set up production units in different countries?",
+      "options": {
+        "A": "To avoid selling goods",
+        "B": "To reduce production cost and increase profits",
+        "C": "To stop trade",
+        "D": "To promote barter"
+      },
+      "correct_answer": "B",
+      "explanation": "MNCs set up units where labor and other costs are lower to maximize profits."
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is a major reason for globalisation?",
+      "options": {
+        "A": "Improvement in transport and communication",
+        "B": "Increase in tariffs",
+        "C": "Trade restrictions",
+        "D": "Closed markets"
+      },
+      "correct_answer": "A",
+      "explanation": "Better transport and communication connect markets globally."
+    },
+    {
+      "question_number": 3,
+      "question": "How do MNCs spread their production globally?",
+      "options": {
+        "A": "By closing factories",
+        "B": "By joint ventures and FDI",
+        "C": "By increasing tariffs",
+        "D": "By stopping exports"
+      },
+      "correct_answer": "B",
+      "explanation": "MNCs expand through Foreign Direct Investment and partnerships."
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following best describes liberalisation?",
+      "options": {
+        "A": "Imposing heavy taxes on imports",
+        "B": "Removing trade barriers and restrictions",
+        "C": "Stopping foreign investment",
+        "D": "Nationalising industries"
+      },
+      "correct_answer": "B",
+      "explanation": "Liberalisation reduces government restrictions on trade."
+    },
+    {
+      "question_number": 5,
+      "question": "What is the main role of WTO?",
+      "options": {
+        "A": "Provide loans to farmers",
+        "B": "Regulate international trade rules",
+        "C": "Issue currency",
+        "D": "Control banks"
+      },
+      "correct_answer": "B",
+      "explanation": "WTO sets rules for global trade among countries."
+    },
+    {
+      "question_number": 6,
+      "question": "How does globalisation benefit consumers?",
+      "options": {
+        "A": "Limited product choices",
+        "B": "Higher prices only",
+        "C": "More variety and better quality",
+        "D": "Less competition"
+      },
+      "correct_answer": "C",
+      "explanation": "Consumers get better quality and more options due to competition."
+    },
+    {
+      "question_number": 7,
+      "question": "Which is a negative impact of globalisation on small producers?",
+      "options": {
+        "A": "Better profits always",
+        "B": "Increased competition from MNCs",
+        "C": "Government support",
+        "D": "Lower taxes"
+      },
+      "correct_answer": "B",
+      "explanation": "Small producers struggle to compete with large MNCs."
+    },
+    {
+      "question_number": 8,
+      "question": "What is outsourcing?",
+      "options": {
+        "A": "Producing only in home country",
+        "B": "Hiring services from another country",
+        "C": "Increasing import taxes",
+        "D": "Stopping exports"
+      },
+      "correct_answer": "B",
+      "explanation": "Outsourcing means giving work to foreign firms."
+    },
+    {
+      "question_number": 9,
+      "question": "Why did India adopt liberalisation in 1991?",
+      "options": {
+        "A": "To increase trade barriers",
+        "B": "To integrate with global economy",
+        "C": "To reduce exports",
+        "D": "To stop foreign investment"
+      },
+      "correct_answer": "B",
+      "explanation": "India opened its economy to global markets in 1991."
+    },
+    {
+      "question_number": 10,
+      "question": "Which sector benefited most from outsourcing?",
+      "options": {
+        "A": "IT and services",
+        "B": "Subsistence farming",
+        "C": "Village crafts only",
+        "D": "Handloom only"
+      },
+      "correct_answer": "A",
+      "explanation": "IT and BPO services grew due to outsourcing."
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following is a trade barrier?",
+      "options": {
+        "A": "Tariff",
+        "B": "FDI",
+        "C": "Export promotion",
+        "D": "Global marketing"
+      },
+      "correct_answer": "A",
+      "explanation": "Tariffs increase cost of imports."
+    },
+    {
+      "question_number": 12,
+      "question": "Which company acquired Indian brands like Thums Up?",
+      "options": {
+        "A": "Nestle",
+        "B": "Pepsi",
+        "C": "Coca-Cola",
+        "D": "Sony"
+      },
+      "correct_answer": "C",
+      "explanation": "Coca-Cola acquired Indian soft drink brands."
+    },
+    {
+      "question_number": 13,
+      "question": "Why do MNCs prefer countries with cheap labor?",
+      "options": {
+        "A": "To increase production cost",
+        "B": "To maximize profits",
+        "C": "To reduce exports",
+        "D": "To increase tariffs"
+      },
+      "correct_answer": "B",
+      "explanation": "Lower labor costs increase profit margins."
+    },
+    {
+      "question_number": 14,
+      "question": "Which reform helped Indian companies compete globally?",
+      "options": {
+        "A": "Liberalisation",
+        "B": "Isolation",
+        "C": "Nationalisation",
+        "D": "Trade ban"
+      },
+      "correct_answer": "A",
+      "explanation": "Liberalisation reduced restrictions and encouraged competition."
+    },
+    {
+      "question_number": 15,
+      "question": "Which is an example of foreign direct investment?",
+      "options": {
+        "A": "Buying foreign goods",
+        "B": "Opening a factory in another country",
+        "C": "Paying import tax",
+        "D": "Selling products locally"
+      },
+      "correct_answer": "B",
+      "explanation": "FDI involves investing in production abroad."
+    },
+    {
+      "question_number": 16,
+      "question": "How has technology supported globalisation?",
+      "options": {
+        "A": "Slower communication",
+        "B": "Faster information sharing",
+        "C": "Higher trade barriers",
+        "D": "Reduced transport"
+      },
+      "correct_answer": "B",
+      "explanation": "Technology speeds up communication and trade."
+    },
+    {
+      "question_number": 17,
+      "question": "Which statement is true about globalisation?",
+      "options": {
+        "A": "It benefits everyone equally",
+        "B": "It connects producers to global markets",
+        "C": "It stops trade",
+        "D": "It eliminates competition"
+      },
+      "correct_answer": "B",
+      "explanation": "Globalisation links producers to international markets."
+    },
+    {
+      "question_number": 18,
+      "question": "Which group benefited most from globalisation in India?",
+      "options": {
+        "A": "Large producers",
+        "B": "Small farmers only",
+        "C": "Village artisans only",
+        "D": "Unemployed youth only"
+      },
+      "correct_answer": "A",
+      "explanation": "Large producers benefited from global markets."
+    },
+    {
+      "question_number": 19,
+      "question": "What happens when import duties are reduced?",
+      "options": {
+        "A": "Foreign goods become cheaper",
+        "B": "Trade decreases",
+        "C": "Exports stop",
+        "D": "Markets close"
+      },
+      "correct_answer": "A",
+      "explanation": "Lower duties make imported goods cheaper."
+    },
+    {
+      "question_number": 20,
+      "question": "Which factor attracts MNC investment?",
+      "options": {
+        "A": "Poor infrastructure",
+        "B": "Skilled workforce",
+        "C": "High trade barriers",
+        "D": "Political instability"
+      },
+      "correct_answer": "B",
+      "explanation": "Skilled workforce and infrastructure attract MNCs."
+    },
+    {
+      "question_number": 21,
+      "question": "Globalisation increases economic:",
+      "options": {
+        "A": "Isolation",
+        "B": "Interdependence",
+        "C": "Closure",
+        "D": "Barter"
+      },
+      "correct_answer": "B",
+      "explanation": "Countries become interdependent through trade."
+    },
+    {
+      "question_number": 22,
+      "question": "Which Indian reform reduced import restrictions?",
+      "options": {
+        "A": "Liberalisation",
+        "B": "Privatisation",
+        "C": "Nationalisation",
+        "D": "Isolation"
+      },
+      "correct_answer": "A",
+      "explanation": "Liberalisation removed many trade restrictions."
+    },
+    {
+      "question_number": 23,
+      "question": "Why do consumers prefer global brands?",
+      "options": {
+        "A": "Lower quality",
+        "B": "More variety and improved quality",
+        "C": "Higher prices",
+        "D": "Less competition"
+      },
+      "correct_answer": "B",
+      "explanation": "Global brands offer variety and quality."
+    },
+    {
+      "question_number": 24,
+      "question": "Which policy protects domestic industries from foreign competition?",
+      "options": {
+        "A": "Tariff",
+        "B": "FDI",
+        "C": "Outsourcing",
+        "D": "Export promotion"
+      },
+      "correct_answer": "A",
+      "explanation": "Tariffs increase cost of imports and protect domestic firms."
+    },
+    {
+      "question_number": 25,
+      "question": "Balanced globalisation requires:",
+      "options": {
+        "A": "Only MNC growth",
+        "B": "Benefits for all sections of society",
+        "C": "High tariffs",
+        "D": "No trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Globalisation should benefit workers, producers and consumers."
+    }
+  ]
+}

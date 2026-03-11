@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Industries",
+  "generated_at": "2026-03-05T20:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is meant by industrial production?",
+      "answer": "The process of converting raw materials into finished goods.",
+      "key_points": ["industrial production"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which sector converts raw materials into finished products?",
+      "answer": "Secondary sector.",
+      "key_points": ["secondary sector"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the main function of tertiary industries?",
+      "answer": "Providing services related to production and trade.",
+      "key_points": ["tertiary sector"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which industry uses agricultural products as raw materials?",
+      "answer": "Agro-based industry.",
+      "key_points": ["agro-based industries"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which industry uses minerals such as iron ore and coal?",
+      "answer": "Mineral-based industry.",
+      "key_points": ["mineral-based industries"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is meant by marine-based industries?",
+      "answer": "Industries that use products from the sea as raw materials.",
+      "key_points": ["marine-based industries"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 7,
+      "question": "What are the three components of an industrial system?",
+      "answer": "Inputs, processes, and outputs.",
+      "key_points": ["industrial system"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the role of labor in industries?",
+      "answer": "Labor provides the workforce required for production.",
+      "key_points": ["labor"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is meant by industrial location?",
+      "answer": "The place where industries are set up for production.",
+      "key_points": ["industrial location"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 10,
+      "question": "Name one factor that influences the location of industries.",
+      "answer": "Availability of raw materials.",
+      "key_points": ["location factors"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is transport important for industries?",
+      "answer": "It helps move raw materials and finished products.",
+      "key_points": ["transport"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the role of power in industries?",
+      "answer": "Power provides energy to run machines and equipment.",
+      "key_points": ["power supply"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 13,
+      "question": "What is meant by industrial cluster?",
+      "answer": "A group of industries located in the same region.",
+      "key_points": ["industrial clusters"],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 14,
+      "question": "Give an example of a large-scale industry.",
+      "answer": "Automobile manufacturing industry.",
+      "key_points": ["large-scale industries"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the main characteristic of small-scale industries?",
+      "answer": "They operate with limited capital and workforce.",
+      "key_points": ["small-scale industries"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 16,
+      "question": "What type of pollution is caused by smoke from factories?",
+      "answer": "Air pollution.",
+      "key_points": ["air pollution"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 17,
+      "question": "What type of pollution occurs when industrial waste enters rivers?",
+      "answer": "Water pollution.",
+      "key_points": ["water pollution"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the meaning of environmental degradation?",
+      "answer": "Damage to the natural environment due to human activities.",
+      "key_points": ["environment"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 19,
+      "question": "What is meant by sustainable industrial development?",
+      "answer": "Industrial growth that protects natural resources and the environment.",
+      "key_points": ["sustainable development"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is recycling important in industries?",
+      "answer": "It helps reduce waste and conserve resources.",
+      "key_points": ["recycling"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 21,
+      "question": "How do industries contribute to employment?",
+      "answer": "Industries create jobs for workers in production and services.",
+      "key_points": ["employment"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the role of markets in industries?",
+      "answer": "Markets allow industries to sell their products.",
+      "key_points": ["market"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the function of infrastructure in industrial development?",
+      "answer": "Infrastructure supports industries with transport, communication, and power.",
+      "key_points": ["infrastructure"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 24,
+      "question": "Which sector of industry mainly provides services?",
+      "answer": "Tertiary sector.",
+      "key_points": ["tertiary sector"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are industries important for a country's development?",
+      "answer": "They increase production, employment, and economic growth.",
+      "key_points": ["industrial development"],
+      "source_section": "Conclusion"
+    }
+  ]
+}

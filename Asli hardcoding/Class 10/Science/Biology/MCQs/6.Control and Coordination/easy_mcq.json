@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Control and Coordination",
+  "generated_at": "2026-03-10T23:49:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The functional unit of the nervous system is called a:",
+      "options": {
+        "A": "Nephron",
+        "B": "Neuron",
+        "C": "Axon",
+        "D": "Dendrite"
+      },
+      "correct_answer": "B",
+      "explanation": "Neurons (nerve cells) are the basic structural and functional units of the nervous system.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The gap between two neurons is called a:",
+      "options": {
+        "A": "Dendrite",
+        "B": "Synapse",
+        "C": "Axon",
+        "D": "Impulse"
+      },
+      "correct_answer": "B",
+      "explanation": "A synapse is the small gap across which nerve impulses pass from one neuron to the next.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which part of the neuron receives information from other cells?",
+      "options": {
+        "A": "Axon",
+        "B": "Cell body",
+        "C": "Dendrite",
+        "D": "Nerve ending"
+      },
+      "correct_answer": "C",
+      "explanation": "Dendrites are the branch-like structures that pick up signals/information from other neurons.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which part of the brain is responsible for thinking and memory?",
+      "options": {
+        "A": "Cerebellum",
+        "B": "Medulla",
+        "C": "Cerebrum",
+        "D": "Midbrain"
+      },
+      "correct_answer": "C",
+      "explanation": "The cerebrum (forebrain) is the main thinking part of the brain and controls intelligence and memory.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Reflex actions are primarily controlled by the:",
+      "options": {
+        "A": "Brain",
+        "B": "Spinal Cord",
+        "C": "Muscles",
+        "D": "Heart"
+      },
+      "correct_answer": "B",
+      "explanation": "Reflex arcs are formed in the spinal cord for quick, automatic responses to stimuli.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.2"
+    },
+    {
+      "question_number": 6,
+      "question": "The posture and balance of the body are controlled by the:",
+      "options": {
+        "A": "Cerebrum",
+        "B": "Cerebellum",
+        "C": "Medulla",
+        "D": "Pons"
+      },
+      "correct_answer": "B",
+      "explanation": "The cerebellum, located in the hindbrain, is responsible for precision of voluntary actions and maintaining posture.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Involuntary actions like blood pressure and salivation are controlled by the:",
+      "options": {
+        "A": "Forebrain",
+        "B": "Medulla",
+        "C": "Spinal cord",
+        "D": "Hypothalamus"
+      },
+      "correct_answer": "B",
+      "explanation": "Involuntary actions are controlled by the hindbrain, specifically the medulla.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the direction of a nerve impulse in a neuron?",
+      "options": {
+        "A": "Axon -> Dendrite -> Cell body",
+        "B": "Cell body -> Dendrite -> Axon",
+        "C": "Dendrite -> Cell body -> Axon",
+        "D": "Axon -> Cell body -> Dendrite"
+      },
+      "correct_answer": "C",
+      "explanation": "The impulse is acquired at the dendrite, travels to the cell body, and then along the axon.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which hormone is associated with the 'fight or flight' response?",
+      "options": {
+        "A": "Insulin",
+        "B": "Thyroxin",
+        "C": "Adrenaline",
+        "D": "Estrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Adrenaline is secreted by the adrenal glands during stress or emergency situations.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 10,
+      "question": "The growth of a pollen tube towards an ovule is an example of:",
+      "options": {
+        "A": "Phototropism",
+        "B": "Hydrotropism",
+        "C": "Chemotropism",
+        "D": "Geotropism"
+      },
+      "correct_answer": "C",
+      "explanation": "Chemotropism is movement or growth in response to chemical stimuli.",
+      "difficulty": "easy",
+      "source_section": "Section 6.2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "A plant hormone that promotes cell division is:",
+      "options": {
+        "A": "Auxin",
+        "B": "Gibberellin",
+        "C": "Cytokinin",
+        "D": "Abscisic acid"
+      },
+      "correct_answer": "C",
+      "explanation": "Cytokinins are present in areas of rapid cell division, such as in fruits and seeds.",
+      "difficulty": "easy",
+      "source_section": "Section 6.2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Iodine is necessary for the synthesis of which hormone?",
+      "options": {
+        "A": "Insulin",
+        "B": "Thyroxin",
+        "C": "Adrenaline",
+        "D": "Auxin"
+      },
+      "correct_answer": "B",
+      "explanation": "The thyroid gland requires iodine to produce thyroxin, which regulates metabolism.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Which hormone is responsible for lowering blood sugar levels?",
+      "options": {
+        "A": "Glucagon",
+        "B": "Insulin",
+        "C": "Thyroxin",
+        "D": "Growth hormone"
+      },
+      "correct_answer": "B",
+      "explanation": "Insulin is produced by the pancreas and helps regulate and lower blood glucose levels.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 14,
+      "question": "The movement of a sunflower in response to the sun is called:",
+      "options": {
+        "A": "Geotropism",
+        "B": "Phototropism",
+        "C": "Hydrotropism",
+        "D": "Chemotropism"
+      },
+      "correct_answer": "B",
+      "explanation": "Phototropism is the growth or movement of a plant part toward or away from light.",
+      "difficulty": "easy",
+      "source_section": "Section 6.2.2"
+    },
+    {
+      "question_number": 15,
+      "question": "The main function of Abscisic acid in plants is to:",
+      "options": {
+        "A": "Promote growth",
+        "B": "Inhibit growth",
+        "C": "Promote cell division",
+        "D": "Increase stem length"
+      },
+      "correct_answer": "B",
+      "explanation": "Abscisic acid is a growth inhibitor; its effects include the wilting of leaves.",
+      "difficulty": "easy",
+      "source_section": "Section 6.2.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which part of the brain controls the 'hunger' sensation?",
+      "options": {
+        "A": "Cerebellum",
+        "B": "Forebrain (Hypothalamus)",
+        "C": "Medulla",
+        "D": "Pons"
+      },
+      "correct_answer": "B",
+      "explanation": "Specific centers in the forebrain are associated with hunger and the feeling of being full.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Gustatory receptors detect:",
+      "options": {
+        "A": "Smell",
+        "B": "Taste",
+        "C": "Light",
+        "D": "Sound"
+      },
+      "correct_answer": "B",
+      "explanation": "Gustatory receptors are located on the tongue and are responsible for the sense of taste.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Olfactory receptors detect:",
+      "options": {
+        "A": "Sound",
+        "B": "Taste",
+        "C": "Touch",
+        "D": "Smell"
+      },
+      "correct_answer": "D",
+      "explanation": "Olfactory receptors are located in the nose and detect various smells.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.1"
+    },
+    {
+      "question_number": 19,
+      "question": "The protective layers of the brain are called:",
+      "options": {
+        "A": "Nephrons",
+        "B": "Meninges",
+        "C": "Pleura",
+        "D": "Pericardium"
+      },
+      "correct_answer": "B",
+      "explanation": "The brain is protected by a fluid-filled balloon (Cerebrospinal fluid) and membranes called meninges within the bony skull.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Growth hormone is secreted by the:",
+      "options": {
+        "A": "Thyroid gland",
+        "B": "Pituitary gland",
+        "C": "Adrenal gland",
+        "D": "Pancreas"
+      },
+      "correct_answer": "B",
+      "explanation": "The pituitary gland, located at the base of the brain, secretes growth hormone.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 21,
+      "question": "A person with 'Goitre' has a swollen:",
+      "options": {
+        "A": "Neck",
+        "B": "Abdomen",
+        "C": "Eyes",
+        "D": "Hands"
+      },
+      "correct_answer": "A",
+      "explanation": "Goitre is the swelling of the thyroid gland in the neck, usually caused by iodine deficiency.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Movement of the 'Touch-me-not' (Mimosa pudica) plant is:",
+      "options": {
+        "A": "A growth-related movement",
+        "B": "Not related to growth",
+        "C": "Phototropism",
+        "D": "Geotropism"
+      },
+      "correct_answer": "B",
+      "explanation": "The folding of leaves in Mimosa pudica is a rapid response to touch (Nastic movement) and does not involve growth.",
+      "difficulty": "easy",
+      "source_section": "Section 6.2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "The central nervous system (CNS) consists of:",
+      "options": {
+        "A": "Brain and Nerves",
+        "B": "Brain and Spinal Cord",
+        "C": "Spinal Cord and Nerves",
+        "D": "Nerves only"
+      },
+      "correct_answer": "B",
+      "explanation": "The CNS is composed of the brain and the spinal cord.",
+      "difficulty": "easy",
+      "source_section": "Section 6.1.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Testosterone is produced by the:",
+      "options": {
+        "A": "Ovaries",
+        "B": "Testes",
+        "C": "Pancreas",
+        "D": "Thyroid"
+      },
+      "correct_answer": "B",
+      "explanation": "Testosterone is the male sex hormone produced by the testes.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Estrogen is produced by the:",
+      "options": {
+        "A": "Testes",
+        "B": "Ovaries",
+        "C": "Pituitary",
+        "D": "Adrenal"
+      },
+      "correct_answer": "B",
+      "explanation": "Estrogen is the female sex hormone produced by the ovaries.",
+      "difficulty": "easy",
+      "source_section": "Section 6.3"
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Another Peek Beyond the Point (Basic Geometrical Ideas)",
+    "generated_at": "2026-03-05T01:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that the number of diagonals in a polygon with 'n' sides is given by the formula $n(n - 3) / 2$.",
+            "answer": "Each of the $n$ vertices can be joined to $(n - 3)$ other vertices (excluding itself and its two immediate neighbors). This gives $n(n - 3)$ connections. However, each diagonal is counted twice (once from each end), so we divide by 2 to get $n(n - 3) / 2$.",
+            "answer_outline": [
+                "Identify total vertices",
+                "Explain why 3 vertices must be excluded for each point",
+                "Explain the division by 2 due to double counting"
+            ],
+            "key_concepts": [
+                "polygon diagonals",
+                "combinatorics"
+            ],
+            "marks": 6,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 2,
+            "question": "If 'n' lines are drawn in a plane such that no two are parallel and no three are concurrent, find the total number of points of intersection.",
+            "answer": "Since no two lines are parallel, every pair of lines will intersect. Since no three are concurrent, every intersection point is unique to exactly one pair. The number of ways to choose 2 lines out of $n$ is $n(n - 1) / 2$. Thus, there are $n(n - 1) / 2$ intersection points.",
+            "answer_outline": [
+                "Establish that every pair intersects",
+                "Explain the significance of non-concurrency",
+                "Apply the combination formula"
+            ],
+            "key_concepts": [
+                "intersecting lines",
+                "counting points"
+            ],
+            "marks": 6,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Can a simple closed curve have an odd number of intersection points with a single straight line that passes through its interior? Explain using the Jordan Curve Theorem concept.",
+            "answer": "No. If a line enters the interior of a closed curve, it must eventually leave it to reach the exterior. Every 'entry' requires an 'exit'. Therefore, the line must cross the boundary an even number of times.",
+            "answer_outline": [
+                "Define the entry and exit logic",
+                "Relate to the interior/exterior properties",
+                "Conclude on parity (evenness)"
+            ],
+            "key_concepts": [
+                "closed curves",
+                "topology"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.7"
+        },
+        {
+            "question_number": 4,
+            "question": "In a circle, prove that the diameter is the longest chord.",
+            "answer": "Consider a chord AB and the center O. In triangle OAB, by the triangle inequality, $OA + OB > AB$. Since $OA$ and $OB$ are radii ($r$), $2r > AB$. Since $2r$ is the diameter ($D$), then $D > AB$. If the chord passes through O, then $AB = 2r$. Thus, $D \\ge$ any chord.",
+            "answer_outline": [
+                "Construct a triangle using radii and a chord",
+                "Apply the Triangle Inequality Theorem",
+                "Compare sum of radii to the diameter"
+            ],
+            "key_concepts": [
+                "diameter",
+                "triangle inequality"
+            ],
+            "marks": 6,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 5,
+            "question": "Given 10 points in a plane where 4 points are collinear and the rest are non-collinear, how many unique lines can be formed?",
+            "answer": "Total lines from 10 points = $10 \\times 9 / 2 = 45$. However, the 4 collinear points only form 1 line instead of $4 \\times 3 / 2 = 6$ lines. We subtract the 6 'lost' lines and add back the 1 unique line they form. Total = $45 - 6 + 1 = 40$ lines.",
+            "answer_outline": [
+                "Calculate total possible lines",
+                "Identify the 'over-counted' lines from collinear points",
+                "Adjust the total"
+            ],
+            "key_concepts": [
+                "collinearity",
+                "combinatorial geometry"
+            ],
+            "marks": 6,
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the 'Interior' of an angle is an infinite region while the 'Interior' of a triangle is a finite region.",
+            "answer": "An angle is formed by two rays that extend infinitely. Because the 'arms' never end, the space between them continues forever. A triangle is formed by three line segments (finite lengths) that enclose a specific, bounded area.",
+            "answer_outline": [
+                "Contrast rays vs line segments",
+                "Explain the concept of boundedness",
+                "Conclude on area finiteness"
+            ],
+            "key_concepts": [
+                "angle interior",
+                "bounded vs unbounded"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.9 - 4.10"
+        },
+        {
+            "question_number": 7,
+            "question": "A circle and a triangle are drawn in the same plane. What is the maximum number of points at which they can intersect?",
+            "answer": "A line (a side of the triangle) can intersect a circle at a maximum of 2 points. Since a triangle has 3 sides, the maximum number of intersection points is $3 \\times 2 = 6$.",
+            "answer_outline": [
+                "Analyze intersection of one line and a circle",
+                "Multiply by the number of triangle sides",
+                "Verify with a mental sketch"
+            ],
+            "key_concepts": [
+                "intersection",
+                "circle and polygon"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 8,
+            "question": "If a quadrilateral is 'concave', explain what happens to its diagonals.",
+            "answer": "In a concave quadrilateral, one of the diagonals lies in the 'Exterior' of the figure. This occurs because one interior angle is greater than 180°, pushing the connection between two non-adjacent vertices outside the boundary.",
+            "answer_outline": [
+                "Define concave quadrilateral",
+                "Describe diagonal placement",
+                "Relate to reflex angles"
+            ],
+            "key_concepts": [
+                "concave vs convex",
+                "diagonals"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.11"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that if two circles intersect at more than two points, they must be the same circle.",
+            "answer": "A circle is uniquely determined by 3 non-collinear points. If two circles share 3 points, they share the unique circle defined by those 3 points. Therefore, they must coincide completely.",
+            "answer_outline": [
+                "State the rule for defining a circle",
+                "Explain the uniqueness of the center and radius",
+                "Conclude on coincidence"
+            ],
+            "key_concepts": [
+                "uniqueness of circles",
+                "intersection"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 10,
+            "question": "Can three lines in a plane be such that they have exactly two points of intersection in total? Explain.",
+            "answer": "Yes. This happens when two lines are parallel and a third line (transversal) intersects both of them. The two points of intersection are where the transversal meets each parallel line.",
+            "answer_outline": [
+                "Answer (Yes)",
+                "Describe the configuration (parallel + transversal)",
+                "Count the intersections"
+            ],
+            "key_concepts": [
+                "parallel lines",
+                "transversal"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the minimum number of points required to define: (a) A unique line? (b) A unique plane? (c) A unique circle?",
+            "answer": "(a) 2 distinct points. (b) 3 non-collinear points. (c) 3 non-collinear points.",
+            "answer_outline": [
+                "List requirements for each geometric entity"
+            ],
+            "key_concepts": [
+                "axioms",
+                "uniqueness"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.1 - 4.12"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the difference between 'concentric circles' and 'intersecting circles'.",
+            "answer": "Concentric circles share the same center but have different radii; they never intersect. Intersecting circles have different centers and share one (tangent) or two points on their boundaries.",
+            "answer_outline": [
+                "Define concentricity",
+                "Define intersection",
+                "Compare center and common points"
+            ],
+            "key_concepts": [
+                "concentric circles",
+                "circle positions"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 13,
+            "question": "In a polygon of 'n' sides, how many triangles can be formed by connecting one vertex to all other non-adjacent vertices?",
+            "answer": "Connecting one vertex to all others creates $(n - 2)$ triangles. For example, a quadrilateral ($n=4$) becomes 2 triangles, and a pentagon ($n=5$) becomes 3 triangles.",
+            "answer_outline": [
+                "Identify the vertex to start from",
+                "Observe the formation of sub-triangles",
+                "State the generalized formula"
+            ],
+            "key_concepts": [
+                "triangulation",
+                "polygons"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 14,
+            "question": "If a line segment AB has a length of 10 cm, how many points on the segment are at a distance of 3 cm from endpoint A? How many in the entire plane?",
+            "answer": "On the segment, there is exactly 1 point (moving 3cm towards B). In the entire plane, there are infinite points forming a circle with radius 3cm centered at A.",
+            "answer_outline": [
+                "Address the 1D constraint (line segment)",
+                "Address the 2D constraint (plane)",
+                "Identify the geometric shape (circle)"
+            ],
+            "key_concepts": [
+                "locus",
+                "circle definition"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe a scenario where the 'Point of Intersection' of two lines does not exist in a 3D space, even if the lines are not parallel.",
+            "answer": "This occurs with 'Skew Lines'. Skew lines are lines that are not in the same plane; they are not parallel and they never intersect.",
+            "answer_outline": [
+                "Introduce skew lines",
+                "Explain the lack of a common plane",
+                "Contrast with parallel/intersecting lines"
+            ],
+            "key_concepts": [
+                "skew lines",
+                "3D geometry"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "In a quadrilateral ABCD, if the diagonals AC and BD intersect at O, prove that $AB + BC + CD + DA > AC + BD$.",
+            "answer": "In $\\triangle ABC, AB + BC > AC$. In $\\triangle ADC, AD + CD > AC$. Adding these: $AB + BC + CD + DA > 2AC$. Similarly, $AB + BC + CD + DA > 2BD$. Adding both and dividing by 2 yields the result.",
+            "answer_outline": [
+                "Apply triangle inequality to sub-triangles",
+                "Combine inequalities",
+                "Simplify to the required result"
+            ],
+            "key_concepts": [
+                "quadrilateral perimeter",
+                "triangle inequality"
+            ],
+            "marks": 6,
+            "source_section": "Section 4.11"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the difference between a 'chord' and a 'secant'?",
+            "answer": "A chord is a 'Line Segment' whose endpoints are on the circle. A secant is a 'Line' that passes through the circle, intersecting it at two points and extending infinitely in both directions.",
+            "answer_outline": [
+                "Contrast segment vs line",
+                "Identify shared intersection points"
+            ],
+            "key_concepts": [
+                "secant",
+                "chord"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 18,
+            "question": "How many points are common to two parallel lines? How many to two coincident lines?",
+            "answer": "Parallel lines have 0 points in common. Coincident lines (lines that lie on top of each other) have an infinite number of points in common.",
+            "answer_outline": [
+                "Define commonality for parallel",
+                "Define commonality for coincident"
+            ],
+            "key_concepts": [
+                "parallel vs coincident"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 19,
+            "question": "A point 'P' is in the interior of $\\angle ABC$. Is it necessary that 'P' is also in the interior of the triangle formed by A, B, and C? Explain.",
+            "answer": "No. The interior of $\\angle ABC$ is an infinite region extending along the rays BA and BC. If point P is very far out along the rays, it will be outside the boundary segment AC, thus outside the triangle.",
+            "answer_outline": [
+                "Answer (No)",
+                "Describe the infinite nature of the angle",
+                "Describe the finite nature of the triangle"
+            ],
+            "key_concepts": [
+                "interior regions",
+                "boundedness"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.9 - 4.10"
+        },
+        {
+            "question_number": 20,
+            "question": "If you are given 6 points on a circle, how many triangles can be formed using these points as vertices?",
+            "answer": "Since no 3 points on a circle are collinear, every combination of 3 points forms a triangle. Formula: $n(n - 1)(n - 2) / 6$. For $n=6$: $6 \\times 5 \\times 4 / 6 = 20$ triangles.",
+            "answer_outline": [
+                "Check for collinearity",
+                "Apply the combination formula for 3 points"
+            ],
+            "key_concepts": [
+                "triangle counting",
+                "circles"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why a circle is not considered a polygon even though it is a simple closed curve.",
+            "answer": "By definition, a polygon must be composed of a finite number of 'line segments' joined end-to-end. A circle is composed of a continuously 'curved' line, meaning it has no straight edges or vertices.",
+            "answer_outline": [
+                "State polygon definition (line segments)",
+                "Identify circle composition (curved line)",
+                "Conclude on the discrepancy"
+            ],
+            "key_concepts": [
+                "polygons",
+                "circle definition"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.8"
+        },
+        {
+            "question_number": 22,
+            "question": "A line segment is divided by 3 points into 4 equal parts. If the total length is 16 cm, find the distance between the first and third dividing points.",
+            "answer": "Total parts = 4. Length of each part = $16 / 4 = 4$ cm. The distance between the 1st and 3rd dividing point covers 2 parts. Distance = $2 \\times 4 = 8$ cm.",
+            "answer_outline": [
+                "Calculate segment length per part",
+                "Identify the number of parts between the specified points",
+                "Calculate total distance"
+            ],
+            "key_concepts": [
+                "line segment division"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Can an angle have a 'diagonal'? Why or why not?",
+            "answer": "No. A diagonal is a segment connecting non-adjacent vertices of a 'polygon'. An angle is not a polygon; it consists of two rays and a single vertex. There is no other vertex to connect to.",
+            "answer_outline": [
+                "Answer (No)",
+                "Recall the definition of a diagonal",
+                "Contrast angle structure with polygon structure"
+            ],
+            "key_concepts": [
+                "angle",
+                "diagonals"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.9"
+        },
+        {
+            "question_number": 24,
+            "question": "In a circle with center O, if chord AB = chord CD, what can you say about their distances from the center? (Knowledge-based hard question).",
+            "answer": "Equal chords of a circle are equidistant from the center. This means the perpendicular distance from O to AB is equal to the perpendicular distance from O to CD.",
+            "answer_outline": [
+                "State the property of equal chords",
+                "Explain what 'distance' means in this context (perpendicular)"
+            ],
+            "key_concepts": [
+                "chords",
+                "equidistance"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.12"
+        },
+        {
+            "question_number": 25,
+            "question": "How many 'Regions' does a quadrilateral divide a plane into?",
+            "answer": "A quadrilateral divides the plane into 3 regions: 1. The Interior (inside). 2. The Boundary (the sides). 3. The Exterior (outside). Note: Often in topology, we say 2 regions (inside and outside) if the boundary is not counted as a separate region of space.",
+            "answer_outline": [
+                "Identify the three zones",
+                "Clarify the role of the boundary"
+            ],
+            "key_concepts": [
+                "regions",
+                "quadrilateral"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.11"
+        }
+    ]
+}

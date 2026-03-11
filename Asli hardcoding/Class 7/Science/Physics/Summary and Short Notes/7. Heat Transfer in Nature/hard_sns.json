@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Electricity: Circuits and their Components",
+    "difficulty": "Hard",
+    "source_pdf": "jess703.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric circuits must form a continuous conducting path between the positive and negative terminals of a power source",
+            "Circuit diagrams are simplified representations of electrical circuits using standard symbols",
+            "Electrical components perform specific roles such as providing energy, controlling current flow or converting electrical energy into light or heat",
+            "Multiple components can be connected in series or parallel to create different circuit behaviours",
+            "Safety and proper insulation are important when dealing with electrical circuits"
+        ],
+        "examples": [
+            "Series circuit example: Two bulbs connected in one path share the same current",
+            "Parallel circuit example: Bulbs connected in different branches glow independently",
+            "Circuit diagram symbols: Cell (long and short line), bulb (circle with filament), switch (break in line)",
+            "Testing conductivity: Using a bulb tester circuit to check if a material allows current flow"
+        ],
+        "formulas": [
+            "Electric circuit → Continuous closed path for current flow",
+            "Series connection → Components connected one after another in a single path",
+            "Parallel connection → Components connected in separate branches across the same source"
+        ],
+        "exam_tips": [
+            "Memorize common circuit symbols used in diagrams",
+            "Understand differences between series and parallel connections",
+            "Practice drawing labeled circuit diagrams",
+            "Focus on reasoning questions about why a bulb glows or does not glow in a circuit"
+        ]
+    }
+}

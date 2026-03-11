@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 8: A SHIRT IN THE MARKET",
+    "generated_at": "2026-03-07T19:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the first stage in shirt production?",
+            "answer": "Cotton cultivation",
+            "key_concepts": ["production stages"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who cuts and stitches the fabric?",
+            "answer": "Tailors",
+            "key_concepts": ["tailoring"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why do farmers sell cotton to middlemen?",
+            "answer": "To get immediate cash and access to markets",
+            "key_concepts": ["middlemen", "market access"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Name one method to get fair prices for producers.",
+            "answer": "Joining cooperatives",
+            "key_concepts": ["cooperatives", "fair price"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is used to add color to fabric?",
+            "answer": "Dyes",
+            "key_concepts": ["dyeing"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Which stage comes after spinning?",
+            "answer": "Weaving",
+            "key_concepts": ["production stages"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What do middlemen do in cotton trade?",
+            "answer": "They buy cotton from farmers and sell it to traders or factories",
+            "key_concepts": ["middlemen", "trade"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is water needed in shirt production?",
+            "answer": "For cotton cultivation and dyeing fabric",
+            "key_concepts": ["water usage"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Who sells the shirt to the consumer?",
+            "answer": "Retailers",
+            "key_concepts": ["retail"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Name one problem caused by synthetic dyes.",
+            "answer": "Water pollution",
+            "key_concepts": ["environmental impact"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Give one way consumers can support ethical production.",
+            "answer": "Buying eco-friendly or fairly produced shirts",
+            "key_concepts": ["ethical consumption"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the final stage in shirt production?",
+            "answer": "Selling in the market",
+            "key_concepts": ["supply chain"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What do tailors make from fabric?",
+            "answer": "Shirts",
+            "key_concepts": ["tailoring"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is fair trade important for producers?",
+            "answer": "It ensures fair prices and better income",
+            "key_concepts": ["fair trade"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Name one stage where technology helps.",
+            "answer": "Spinning or weaving",
+            "key_concepts": ["technology", "production"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Who integrates local communities in the production chain?",
+            "answer": "Factories or production units",
+            "key_concepts": ["production chain"],
+            "marks": 1,
+            "source_section": "Section 8.1-8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is one way small producers can improve income?",
+            "answer": "Sell directly to consumers",
+            "key_concepts": ["direct selling", "income"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Name one natural resource needed for cotton growth.",
+            "answer": "Water",
+            "key_concepts": ["natural resources"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do small producers form cooperatives?",
+            "answer": "To get better prices and share resources",
+            "key_concepts": ["cooperatives"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Name one way consumers can reduce environmental harm.",
+            "answer": "Buy sustainably produced shirts",
+            "key_concepts": ["sustainability"],
+            "marks": 1,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Who adds profit margins to the price of shirts?",
+            "answer": "Retailers",
+            "key_concepts": ["pricing"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Name one thing workers need in factories.",
+            "answer": "Fair wages",
+            "key_concepts": ["worker welfare"],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What do producers do with harvested cotton?",
+            "answer": "Sell it to middlemen or traders",
+            "key_concepts": ["cotton trade"],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is water used in dyeing?",
+            "answer": "To mix dyes and rinse fabric",
+            "key_concepts": ["dyeing process"],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Give one lesson learned from Chapter 8.",
+            "answer": "Clothing production involves multiple stages and ethical practices",
+            "key_concepts": ["production process", "ethics"],
+            "marks": 1,
+            "source_section": "Section 8.1-8.5"
+        }
+    ]
+}

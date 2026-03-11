@@ -1,0 +1,183 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "The Baudhāyana-Pythagoras Theorem",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of doubling and halving the area of a square",
+        "Recognize the relation between the diagonal of a square and its area",
+        "Understand the concept of √2 and irrational numbers",
+        "Apply the Baudhāyana-Pythagoras theorem to right triangles",
+        "Identify and generate Pythagorean triples",
+        "Solve real-life problems using the Pythagoras theorem"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Doubling a Square",
+            "topics_covered": [
+                "Concept of area of a square",
+                "Doubling the area of a square",
+                "Role of the diagonal in forming a square with double area"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation on board",
+                "Use of grid squares",
+                "Discussion of geometric reasoning"
+            ],
+            "student_activities": [
+                "Draw a square and its diagonal",
+                "Construct a square on the diagonal",
+                "Compare the areas of both squares"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Notebook drawing check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Paper Activity: Doubling a Square",
+            "topics_covered": [
+                "Paper cutting method",
+                "Rearranging shapes to create double area square"
+            ],
+            "teaching_strategy": [
+                "Hands-on demonstration",
+                "Step-by-step cutting activity"
+            ],
+            "student_activities": [
+                "Cut two identical squares",
+                "Rearrange pieces to create a square with double area"
+            ],
+            "assessment": [
+                "Observation of activity",
+                "Group explanation of results"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Halving a Square",
+            "topics_covered": [
+                "Constructing a square with half the area",
+                "Midpoint construction",
+                "Understanding geometric symmetry"
+            ],
+            "teaching_strategy": [
+                "Folding paper demonstration",
+                "Board diagrams"
+            ],
+            "student_activities": [
+                "Fold square paper to form inner square",
+                "Identify the midpoints and resulting shape"
+            ],
+            "assessment": [
+                "Short written explanation",
+                "Diagram checking"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Isosceles Right Triangle and √2",
+            "topics_covered": [
+                "Hypotenuse of an isosceles right triangle",
+                "Relation c² = 2a²",
+                "Introduction to √2"
+            ],
+            "teaching_strategy": [
+                "Step-by-step derivation",
+                "Use of square area explanation"
+            ],
+            "student_activities": [
+                "Draw right triangle with sides 1 and 1",
+                "Calculate hypotenuse",
+                "Estimate √2 using decimals"
+            ],
+            "assessment": [
+                "Numerical exercises",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Combining Two Squares and Pythagoras Theorem",
+            "topics_covered": [
+                "Combining squares of different sizes",
+                "Right triangle relation",
+                "Statement of Baudhāyana-Pythagoras theorem"
+            ],
+            "teaching_strategy": [
+                "Geometric diagrams",
+                "Stepwise construction explanation"
+            ],
+            "student_activities": [
+                "Draw squares with sides a and b",
+                "Construct square on hypotenuse",
+                "Verify a² + b² = c²"
+            ],
+            "assessment": [
+                "Board problems",
+                "Peer discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Pythagorean Triples",
+            "topics_covered": [
+                "Definition of Pythagorean triples",
+                "Examples such as (3,4,5), (5,12,13)",
+                "Primitive and scaled triples"
+            ],
+            "teaching_strategy": [
+                "Pattern observation",
+                "Multiplication method explanation"
+            ],
+            "student_activities": [
+                "List triples up to 20",
+                "Generate scaled triples from (3,4,5)"
+            ],
+            "assessment": [
+                "Worksheet problems",
+                "Short quiz"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Applications and Chapter Revision",
+            "topics_covered": [
+                "Real-life applications of Pythagoras theorem",
+                "Example: Lotus problem",
+                "Chapter summary and key points"
+            ],
+            "teaching_strategy": [
+                "Problem-solving discussion",
+                "Revision quiz"
+            ],
+            "student_activities": [
+                "Solve real-life word problems",
+                "Participate in group quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Ganita Prakash Textbook",
+        "Graph paper",
+        "Square paper for cutting activity"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Worksheet exercises",
+        "Short quizzes",
+        "Group discussions"
+    ],
+    "teacher_tip": "Encourage hands-on geometric constructions and paper activities to help students visually understand how the Pythagoras theorem emerges from square areas."
+}

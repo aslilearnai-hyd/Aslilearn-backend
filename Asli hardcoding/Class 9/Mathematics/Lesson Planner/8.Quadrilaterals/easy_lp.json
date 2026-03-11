@@ -1,0 +1,130 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Quadrilaterals",
+    "lesson_level": "Easy",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the definition of quadrilaterals",
+        "Identify different types of quadrilaterals",
+        "Learn the sum of interior angles of quadrilaterals",
+        "Recognize basic properties of special quadrilaterals",
+        "Develop basic construction skills using ruler and protractor"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Quadrilaterals",
+            "topics_covered": [
+                "Definition of quadrilaterals",
+                "Identification of quadrilaterals in daily life",
+                "Sum of interior angles"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Use real-life objects to demonstrate"
+            ],
+            "student_activities": [
+                "Draw any four-sided shape",
+                "Count and verify interior angles"
+            ],
+            "assessment": [
+                "MCQs on identification",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Types of Quadrilaterals",
+            "topics_covered": [
+                "Parallelogram, rectangle, rhombus, square, trapezium, kite"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic explanation",
+                "Show differences between types"
+            ],
+            "student_activities": [
+                "Draw at least one example of each type",
+                "Label sides and vertices"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Simple diagram-based quiz"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Basic Properties of Quadrilaterals",
+            "topics_covered": [
+                "Opposite sides, opposite angles, diagonals"
+            ],
+            "teaching_strategy": [
+                "Use diagrams to explain properties",
+                "Group discussion of observations"
+            ],
+            "student_activities": [
+                "Measure sides and angles of drawn quadrilaterals",
+                "Identify parallel sides"
+            ],
+            "assessment": [
+                "Practical observation",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Construction of Quadrilaterals",
+            "topics_covered": [
+                "Using ruler and protractor",
+                "Drawing basic shapes accurately"
+            ],
+            "teaching_strategy": [
+                "Stepwise board demonstration",
+                "Hands-on construction"
+            ],
+            "student_activities": [
+                "Construct a parallelogram, rectangle, and square",
+                "Label sides and diagonals"
+            ],
+            "assessment": [
+                "Accuracy of construction",
+                "Neatness of diagrams"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Revision and Simple Exercises",
+            "topics_covered": [
+                "Recap of types and properties",
+                "Solving simple angle and side problems"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Answer 5–6 simple exercises",
+                "Participate in quick quiz"
+            ],
+            "assessment": [
+                "Short written test",
+                "Peer evaluation of drawings"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ruler and Protractor",
+        "Graph paper",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Practical diagram assessment"
+    ],
+    "teacher_tip": "Focus on helping students visualize quadrilaterals and understand basic properties before moving to proofs and calculations."
+}

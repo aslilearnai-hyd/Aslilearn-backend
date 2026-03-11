@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: Judiciary",
+  "generated_at": "2026-03-06T20:15:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the judiciary?",
+        "correct_answer": "The branch of government that interprets laws and delivers justice.",
+        "explanation": "It resolves disputes and ensures laws are followed.",
+        "source_section": "What is the Role of the Judiciary?"
+      },
+      {
+        "question": "What is the main role of the judiciary?",
+        "correct_answer": "To interpret laws and protect the rights of citizens.",
+        "explanation": "Courts ensure justice and fairness in society.",
+        "source_section": "Role of the Judiciary"
+      },
+      {
+        "question": "What is the highest court in India?",
+        "correct_answer": "The Supreme Court.",
+        "explanation": "It is the final court of appeal and the guardian of the Constitution.",
+        "source_section": "Structure of the Judiciary"
+      },
+      {
+        "question": "What are the three levels of courts in India?",
+        "correct_answer": "Supreme Court, High Courts and District Courts.",
+        "explanation": "These levels form the hierarchical structure of the Indian judiciary.",
+        "source_section": "Structure of Courts"
+      },
+      {
+        "question": "What does independence of the judiciary mean?",
+        "correct_answer": "Courts can make decisions without interference from the government.",
+        "explanation": "This ensures fair and unbiased judgments.",
+        "source_section": "Independence of the Judiciary"
+      },
+      {
+        "question": "What is Public Interest Litigation (PIL)?",
+        "correct_answer": "A case filed in court for the benefit of the public.",
+        "explanation": "It allows people to seek justice for those whose rights are violated.",
+        "source_section": "Public Interest Litigation"
+      },
+      {
+        "question": "What is an appeal in the judicial system?",
+        "correct_answer": "A request to a higher court to review a lower court’s decision.",
+        "explanation": "People can approach higher courts if they are not satisfied with the judgment.",
+        "source_section": "Judicial System"
+      },
+      {
+        "question": "What is the difference between civil and criminal cases?",
+        "correct_answer": "Civil cases involve disputes between individuals, while criminal cases involve crimes against the law.",
+        "explanation": "Courts handle both types of cases to maintain justice.",
+        "source_section": "Types of Cases"
+      },
+      {
+        "question": "How does the judiciary protect Fundamental Rights?",
+        "correct_answer": "By allowing citizens to approach courts when their rights are violated.",
+        "explanation": "Courts can order actions to restore rights and stop injustice.",
+        "source_section": "Protection of Rights"
+      },
+      {
+        "question": "Why is the judiciary important in a democracy?",
+        "correct_answer": "It ensures justice, equality and protection of rights.",
+        "explanation": "An independent judiciary prevents misuse of power.",
+        "source_section": "Judiciary and Democracy"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Judiciary",
+        "content": "The judiciary is responsible for interpreting laws and resolving disputes between citizens and the government.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Structure of the Judiciary",
+        "content": "India has a hierarchical judicial system consisting of the Supreme Court, High Courts and District Courts.",
+        "source_section": "Structure of Courts"
+      },
+      {
+        "title": "Independence of Judiciary",
+        "content": "Judges are independent and can make decisions without pressure from the executive or legislature.",
+        "source_section": "Independence of Judiciary"
+      },
+      {
+        "title": "Public Interest Litigation",
+        "content": "PIL allows individuals or groups to approach the court to protect public interest and rights.",
+        "source_section": "Public Interest Litigation"
+      },
+      {
+        "title": "Protection of Rights",
+        "content": "Courts ensure that citizens’ Fundamental Rights are protected under the Constitution.",
+        "source_section": "Fundamental Rights"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The Supreme Court is the highest court in India.",
+        "source_section": "Structure of the Judiciary"
+      },
+      {
+        "fact": "Public Interest Litigation allows people to file cases for public welfare.",
+        "source_section": "Public Interest Litigation"
+      },
+      {
+        "fact": "An independent judiciary is essential for a democratic country.",
+        "source_section": "Judiciary and Democracy"
+      },
+      {
+        "fact": "Courts can declare government actions unconstitutional if they violate the Constitution.",
+        "source_section": "Judicial Review"
+      }
+    ]
+  }
+}

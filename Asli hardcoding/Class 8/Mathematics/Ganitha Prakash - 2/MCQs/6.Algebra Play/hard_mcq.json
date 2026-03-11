@@ -1,0 +1,349 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 6: Algebra Play",
+  "generated_at": "2026-03-04T22:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If the bottom row of a pyramid is a, b, c, d, what is the top expression?",
+      "options": {
+        "A": "a + b + c + d",
+        "B": "a + 2b + 2c + d",
+        "C": "a + 3b + 3c + d",
+        "D": "2a + 2b + 2c + 2d"
+      },
+      "correct_answer": "C",
+      "explanation": "Four-row pyramid leads to binomial pattern a + 3b + 3c + d.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+    {
+      "question_number": 2,
+      "question": "If the sum of a 2×2 calendar grid is 36, what is the top-left number?",
+      "options": {"A": "4", "B": "5", "C": "6", "D": "7"},
+      "correct_answer": "B",
+      "explanation": "4a + 16 = 36 → a = 5.",
+      "difficulty": "hard",
+      "source_section": "Section 6.4"
+    },
+    {
+      "question_number": 3,
+      "question": "Which expression represents the difference between a number and its reverse?",
+      "options": {
+        "A": "9(a−b)",
+        "B": "9(b−a)",
+        "C": "11(a+b)",
+        "D": "a+b"
+      },
+      "correct_answer": "B",
+      "explanation": "(10b+a)−(10a+b)=9(b−a).",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+    {
+      "question_number": 4,
+      "question": "abcabc is divisible by 7, 11 and 13 because:",
+      "options": {
+        "A": "abcabc = abc × 100",
+        "B": "abcabc = abc × 1000",
+        "C": "abcabc = abc × 1001",
+        "D": "abcabc = abc × 999"
+      },
+      "correct_answer": "C",
+      "explanation": "1001 = 7 × 11 × 13.",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+
+    {
+      "question_number": 5,
+      "question": "If p < q < r, the largest product arrangement is:",
+      "options": {
+        "A": "pq × r",
+        "B": "qp × r",
+        "C": "rp × q",
+        "D": "rq × p"
+      },
+      "correct_answer": "B",
+      "explanation": "Largest digit used as multiplier and remaining digits in descending order.",
+      "difficulty": "hard",
+      "source_section": "Section 6.5"
+    },
+
+    {
+      "question_number": 6,
+      "question": "Which identity represents the top of a 3-row pyramid?",
+      "options": {
+        "A": "a+b+c",
+        "B": "a+2b+c",
+        "C": "a+b+2c",
+        "D": "2a+b+c"
+      },
+      "correct_answer": "B",
+      "explanation": "Derived algebraically from pyramid rule.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+
+    {
+      "question_number": 7,
+      "question": "If a calendar grid sum equals 56, find a.",
+      "options": {"A": "8", "B": "9", "C": "10", "D": "11"},
+      "correct_answer": "C",
+      "explanation": "4a + 16 = 56 → a = 10.",
+      "difficulty": "hard",
+      "source_section": "Section 6.4"
+    },
+
+    {
+      "question_number": 8,
+      "question": "What is the sum expression of grid numbers a, a+1, a+7, a+8?",
+      "options": {
+        "A": "3a + 16",
+        "B": "4a + 16",
+        "C": "4a + 8",
+        "D": "2a + 16"
+      },
+      "correct_answer": "B",
+      "explanation": "Adding all four gives 4a + 16.",
+      "difficulty": "hard",
+      "source_section": "Section 6.4"
+    },
+
+    {
+      "question_number": 9,
+      "question": "Which sequence property appears in pyramid investigations?",
+      "options": {
+        "A": "Prime property",
+        "B": "Arithmetic property",
+        "C": "Fibonacci property",
+        "D": "Geometric property"
+      },
+      "correct_answer": "C",
+      "explanation": "Fibonacci sequence relationships appear.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+
+    {
+      "question_number": 10,
+      "question": "If the difference between reversed numbers equals 45, the quotient after dividing by 9 is:",
+      "options": {"A": "4", "B": "5", "C": "6", "D": "7"},
+      "correct_answer": "B",
+      "explanation": "45 ÷ 9 = 5.",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+
+    {
+      "question_number": 11,
+      "question": "The sum of a number and its reverse equals:",
+      "options": {
+        "A": "9(a+b)",
+        "B": "10(a+b)",
+        "C": "11(a+b)",
+        "D": "12(a+b)"
+      },
+      "correct_answer": "C",
+      "explanation": "(10a+b)+(10b+a)=11(a+b).",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+
+    {
+      "question_number": 12,
+      "question": "Which concept is mainly used to generalize patterns?",
+      "options": {"A": "Geometry", "B": "Algebra", "C": "Statistics", "D": "Calculus"},
+      "correct_answer": "B",
+      "explanation": "Algebra expresses patterns using variables.",
+      "difficulty": "hard",
+      "source_section": "Section 6.1"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Which expression equals qp × r?",
+      "options": {
+        "A": "(10q+p)r",
+        "B": "(10p+q)r",
+        "C": "10(q+p)r",
+        "D": "qp+r"
+      },
+      "correct_answer": "A",
+      "explanation": "qp represents number 10q+p.",
+      "difficulty": "hard",
+      "source_section": "Section 6.5"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Which mathematical skill is used to justify number tricks?",
+      "options": {
+        "A": "Measurement",
+        "B": "Algebraic reasoning",
+        "C": "Graphing",
+        "D": "Drawing"
+      },
+      "correct_answer": "B",
+      "explanation": "Algebra explains the logic of tricks.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+
+    {
+      "question_number": 15,
+      "question": "If the base row is Fibonacci numbers 1,2,3 the top becomes:",
+      "options": {"A": "6", "B": "7", "C": "8", "D": "9"},
+      "correct_answer": "C",
+      "explanation": "Second row = 3 and 5 → top = 8.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which concept explains why patterns remain consistent?",
+      "options": {
+        "A": "Algebraic rules",
+        "B": "Guessing",
+        "C": "Estimation",
+        "D": "Randomization"
+      },
+      "correct_answer": "A",
+      "explanation": "Algebra ensures consistent patterns.",
+      "difficulty": "hard",
+      "source_section": "Section 6.1"
+    },
+
+    {
+      "question_number": 17,
+      "question": "If digits a and b satisfy b>a, the difference becomes:",
+      "options": {
+        "A": "9(a+b)",
+        "B": "9(b−a)",
+        "C": "11(a+b)",
+        "D": "10(a−b)"
+      },
+      "correct_answer": "B",
+      "explanation": "Derived algebraically.",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Which term describes patterns discovered through puzzles?",
+      "options": {
+        "A": "Mathematical modelling",
+        "B": "Pattern recognition",
+        "C": "Random guessing",
+        "D": "Measurement"
+      },
+      "correct_answer": "B",
+      "explanation": "Patterns reveal structure in puzzles.",
+      "difficulty": "hard",
+      "source_section": "Section 6.1"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Which value satisfies 20 + 2c = 60?",
+      "options": {"A": "10", "B": "15", "C": "20", "D": "25"},
+      "correct_answer": "C",
+      "explanation": "2c = 40 so c = 20.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Which method determines the largest product arrangement?",
+      "options": {
+        "A": "Estimation",
+        "B": "Algebraic comparison",
+        "C": "Guessing",
+        "D": "Measurement"
+      },
+      "correct_answer": "B",
+      "explanation": "Products are compared algebraically.",
+      "difficulty": "hard",
+      "source_section": "Section 6.5"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which property ensures every step in tricks works for all numbers?",
+      "options": {
+        "A": "Algebraic generalization",
+        "B": "Numerical guessing",
+        "C": "Random testing",
+        "D": "Measurement"
+      },
+      "correct_answer": "A",
+      "explanation": "Algebra generalizes results.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Which mathematical idea links puzzles and equations?",
+      "options": {
+        "A": "Variables",
+        "B": "Angles",
+        "C": "Shapes",
+        "D": "Graphs"
+      },
+      "correct_answer": "A",
+      "explanation": "Variables represent unknown numbers.",
+      "difficulty": "hard",
+      "source_section": "Section 6.1"
+    },
+
+    {
+      "question_number": 23,
+      "question": "If the sum of digits pattern repeats indefinitely, it is called:",
+      "options": {
+        "A": "Pattern cycle",
+        "B": "Mathematical sequence",
+        "C": "Random order",
+        "D": "Measurement rule"
+      },
+      "correct_answer": "B",
+      "explanation": "Repeating relationships form sequences.",
+      "difficulty": "hard",
+      "source_section": "Section 6.3"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Which algebraic concept helps justify divisibility tricks?",
+      "options": {
+        "A": "Factorisation",
+        "B": "Measurement",
+        "C": "Geometry",
+        "D": "Angles"
+      },
+      "correct_answer": "A",
+      "explanation": "Factorisation explains divisibility.",
+      "difficulty": "hard",
+      "source_section": "Section 6.6"
+    },
+
+    {
+      "question_number": 25,
+      "question": "What is the main learning goal of Algebra Play?",
+      "options": {
+        "A": "Memorizing formulas",
+        "B": "Understanding patterns using algebra",
+        "C": "Drawing shapes",
+        "D": "Measuring angles"
+      },
+      "correct_answer": "B",
+      "explanation": "The chapter focuses on exploring number patterns through algebra.",
+      "difficulty": "hard",
+      "source_section": "Section 6.1"
+    }
+  ]
+}

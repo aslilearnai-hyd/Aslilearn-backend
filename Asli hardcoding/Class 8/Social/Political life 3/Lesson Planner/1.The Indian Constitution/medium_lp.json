@@ -1,0 +1,138 @@
+{
+  "class": "Class 8",
+  "subject": "Civics",
+  "chapter_name": "The Indian Constitution",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse the purpose and importance of the Constitution",
+    "Evaluate why democratic countries need a constitution",
+    "Understand the historical process of drafting the Indian Constitution",
+    "Examine key features such as federalism, parliamentary system and separation of powers",
+    "Analyse the role of Fundamental Rights in protecting citizens",
+    "Evaluate how constitutional values promote democracy and social justice"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Concept and Purpose of a Constitution",
+      "topics_covered": [
+        "Definition of a constitution",
+        "Functions of a constitution in a democratic state",
+        "Relationship between constitution and governance"
+      ],
+      "teaching_strategy": [
+        "Concept explanation",
+        "Critical questioning",
+        "Real-world examples"
+      ],
+      "student_activities": [
+        "Students analyse how rules influence behaviour in institutions",
+        "Write a short explanation of why a country needs a constitution"
+      ],
+      "assessment": ["Concept questioning", "Short written explanation"]
+    },
+    {
+      "period": 2,
+      "title": "Historical Context of the Indian Constitution",
+      "topics_covered": [
+        "Role of the Constituent Assembly",
+        "Debates and discussions during constitution making",
+        "Adoption of the Constitution on 26 January 1950"
+      ],
+      "teaching_strategy": [
+        "Historical explanation",
+        "Timeline analysis",
+        "Interactive questioning"
+      ],
+      "student_activities": [
+        "Create a timeline of events related to constitution making",
+        "Discuss why multiple viewpoints were important during drafting"
+      ],
+      "assessment": ["Timeline activity", "Teacher observation"]
+    },
+    {
+      "period": 3,
+      "title": "Key Features of the Indian Constitution",
+      "topics_covered": [
+        "Federalism",
+        "Parliamentary form of government",
+        "Separation of powers"
+      ],
+      "teaching_strategy": [
+        "Diagram explanation",
+        "Comparative analysis",
+        "Concept discussion"
+      ],
+      "student_activities": [
+        "Draw a diagram showing the division of powers",
+        "Explain how federalism helps govern a large country"
+      ],
+      "assessment": ["Concept explanation", "Notebook review"]
+    },
+    {
+      "period": 4,
+      "title": "Role of Parliament and Government",
+      "topics_covered": [
+        "Parliamentary system",
+        "Accountability of the executive to Parliament",
+        "Role of elected representatives"
+      ],
+      "teaching_strategy": ["Case discussion", "Example-based teaching"],
+      "student_activities": [
+        "Analyse how the Prime Minister and Council of Ministers are accountable to Parliament",
+        "Discuss the importance of representation in democracy"
+      ],
+      "assessment": ["Group discussion", "Teacher feedback"]
+    },
+    {
+      "period": 5,
+      "title": "Fundamental Rights and Constitutional Values",
+      "topics_covered": [
+        "Meaning of Fundamental Rights",
+        "Examples such as Right to Equality and Freedom",
+        "Protection of rights through courts"
+      ],
+      "teaching_strategy": [
+        "Case-based discussion",
+        "Critical thinking questions"
+      ],
+      "student_activities": [
+        "Analyse a scenario where citizens’ rights are violated",
+        "Explain how the Constitution protects these rights"
+      ],
+      "assessment": ["Scenario analysis", "Short written response"]
+    },
+    {
+      "period": 6,
+      "title": "Constitutional Values and Chapter Review",
+      "topics_covered": [
+        "Justice, equality and secularism",
+        "Importance of constitutional values in democracy",
+        "Comprehensive chapter revision"
+      ],
+      "teaching_strategy": ["Discussion and reflection", "Revision quiz"],
+      "student_activities": [
+        "Write a short reflection on the importance of constitutional values",
+        "Participate in a quiz covering the entire chapter"
+      ],
+      "assessment": ["Short test (10 marks)", "Concept clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Civics textbook",
+    "Concept diagrams",
+    "Timeline charts"
+  ],
+  "evaluation_methods": [
+    "Concept-based questioning",
+    "Notebook checking",
+    "Short analytical tasks",
+    "Group discussions",
+    "Revision quizzes"
+  ],
+  "teacher_tip": "Encourage students to connect constitutional principles such as equality and justice with real-life social situations to deepen their understanding of democratic governance."
+}

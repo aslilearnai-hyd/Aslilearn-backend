@@ -1,0 +1,382 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Exploring Some Geometric Themes",
+  "generated_at": "2026-03-04T15:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How many squares remain after Step 2 in the Sierpinski Carpet?",
+      "options": {
+        "A": "16",
+        "B": "32",
+        "C": "64",
+        "D": "72"
+      },
+      "correct_answer": "C",
+      "explanation": "8 squares remain after Step 1 and each produces 8 smaller squares giving 64.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 2,
+      "question": "How many sides are present in the Koch Snowflake after Step 2?",
+      "options": {
+        "A": "12",
+        "B": "24",
+        "C": "48",
+        "D": "36"
+      },
+      "correct_answer": "C",
+      "explanation": "Sides follow the pattern 3 × 4² = 48.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 3,
+      "question": "Which property explains the infinite perimeter of the Koch Snowflake?",
+      "options": {
+        "A": "Symmetry",
+        "B": "Recursive growth",
+        "C": "Congruence",
+        "D": "Translation"
+      },
+      "correct_answer": "B",
+      "explanation": "Recursive addition of segments increases the perimeter indefinitely.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 4,
+      "question": "Which mathematical sequence describes the number of sides in the Koch Snowflake?",
+      "options": {
+        "A": "Arithmetic sequence",
+        "B": "Geometric sequence",
+        "C": "Fibonacci sequence",
+        "D": "Harmonic sequence"
+      },
+      "correct_answer": "B",
+      "explanation": "The number of sides multiplies by 4 each step.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 5,
+      "question": "How many edges does a prism with hexagonal base have?",
+      "options": {
+        "A": "12",
+        "B": "18",
+        "C": "20",
+        "D": "24"
+      },
+      "correct_answer": "B",
+      "explanation": "Edges = 3n for prism where n=6 so edges=18.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 6,
+      "question": "How many vertices does a hexagonal prism have?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "14"
+      },
+      "correct_answer": "C",
+      "explanation": "Vertices = 2n where n=6 giving 12 vertices.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 7,
+      "question": "Which concept is used to determine shortest path on cuboid surfaces?",
+      "options": {
+        "A": "Rotation",
+        "B": "Using nets",
+        "C": "Reflection",
+        "D": "Scaling"
+      },
+      "correct_answer": "B",
+      "explanation": "The cuboid is unfolded to a net and the straight line gives shortest path.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 8,
+      "question": "Which property is lost when projecting a 3D object onto a plane?",
+      "options": {
+        "A": "Parallelism",
+        "B": "Depth",
+        "C": "Direction",
+        "D": "Length"
+      },
+      "correct_answer": "B",
+      "explanation": "Projection removes depth information.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 9,
+      "question": "What shape appears when viewing a cube from a corner in isometric projection?",
+      "options": {
+        "A": "Square",
+        "B": "Hexagon",
+        "C": "Triangle",
+        "D": "Octagon"
+      },
+      "correct_answer": "B",
+      "explanation": "The projection forms a hexagonal outline.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 10,
+      "question": "Which drawing technique preserves equal angles between three axes?",
+      "options": {
+        "A": "Orthographic",
+        "B": "Perspective",
+        "C": "Isometric",
+        "D": "Oblique"
+      },
+      "correct_answer": "C",
+      "explanation": "Isometric drawing uses equal angles between axes.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 11,
+      "question": "How many nets can a cube have?",
+      "options": {
+        "A": "9",
+        "B": "10",
+        "C": "11",
+        "D": "12"
+      },
+      "correct_answer": "C",
+      "explanation": "A cube has exactly 11 distinct nets.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 12,
+      "question": "Which mathematical idea explains fractal generation?",
+      "options": {
+        "A": "Recursion",
+        "B": "Rotation",
+        "C": "Translation",
+        "D": "Reflection"
+      },
+      "correct_answer": "A",
+      "explanation": "Fractals are generated through recursive steps.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 13,
+      "question": "What happens to the number of holes in Sierpinski Carpet as steps increase?",
+      "options": {
+        "A": "Remains constant",
+        "B": "Decreases",
+        "C": "Increases exponentially",
+        "D": "Becomes zero"
+      },
+      "correct_answer": "C",
+      "explanation": "Holes increase exponentially with steps.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Which branch of mathematics studies fractals?",
+      "options": {
+        "A": "Algebra",
+        "B": "Fractal geometry",
+        "C": "Statistics",
+        "D": "Number theory"
+      },
+      "correct_answer": "B",
+      "explanation": "Fractal geometry studies fractal structures.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 15,
+      "question": "Which concept helps engineers represent objects clearly?",
+      "options": {
+        "A": "Projection",
+        "B": "Factorization",
+        "C": "Integration",
+        "D": "Matrices"
+      },
+      "correct_answer": "A",
+      "explanation": "Engineering drawings use projections.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which solid has 5 faces including base?",
+      "options": {
+        "A": "Cube",
+        "B": "Square pyramid",
+        "C": "Cylinder",
+        "D": "Sphere"
+      },
+      "correct_answer": "B",
+      "explanation": "A square pyramid has 5 faces.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 17,
+      "question": "Which fractal pattern produces triangular holes?",
+      "options": {
+        "A": "Koch curve",
+        "B": "Sierpinski triangle",
+        "C": "Cantor set",
+        "D": "Circle fractal"
+      },
+      "correct_answer": "B",
+      "explanation": "Sierpinski triangle creates triangular holes.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Which property allows fractals to model natural patterns?",
+      "options": {
+        "A": "Self similarity",
+        "B": "Congruence",
+        "C": "Perpendicularity",
+        "D": "Parallelism"
+      },
+      "correct_answer": "A",
+      "explanation": "Natural objects often show self similarity.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Which object demonstrates projection best?",
+      "options": {
+        "A": "Cube shadow",
+        "B": "Circle drawing",
+        "C": "Triangle sketch",
+        "D": "Straight line"
+      },
+      "correct_answer": "A",
+      "explanation": "Shadow of a cube illustrates projection.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Which view shows height and depth of an object?",
+      "options": {
+        "A": "Front view",
+        "B": "Top view",
+        "C": "Side view",
+        "D": "Bottom view"
+      },
+      "correct_answer": "C",
+      "explanation": "Side view displays height and depth.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which geometric idea is used in computer graphics for mountains and clouds?",
+      "options": {
+        "A": "Prisms",
+        "B": "Fractals",
+        "C": "Pyramids",
+        "D": "Cubes"
+      },
+      "correct_answer": "B",
+      "explanation": "Fractals are used to model natural landscapes.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Which figure is used to analyze cube stacking problems?",
+      "options": {
+        "A": "Isometric grid",
+        "B": "Number line",
+        "C": "Circle",
+        "D": "Rectangle"
+      },
+      "correct_answer": "A",
+      "explanation": "Isometric grids help analyze cube stacking.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Which property remains unchanged in projection?",
+      "options": {
+        "A": "Area",
+        "B": "Volume",
+        "C": "Parallelism",
+        "D": "Color"
+      },
+      "correct_answer": "C",
+      "explanation": "Parallel lines remain parallel after projection.",
+      "difficulty": "hard",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Which type of pattern repeats infinitely in fractals?",
+      "options": {
+        "A": "Linear pattern",
+        "B": "Self similar pattern",
+        "C": "Circular pattern",
+        "D": "Random pattern"
+      },
+      "correct_answer": "B",
+      "explanation": "Fractals repeat self similar patterns infinitely.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 25,
+      "question": "Which concept combines art and mathematics in geometry?",
+      "options": {
+        "A": "Fractals",
+        "B": "Prisms",
+        "C": "Pyramids",
+        "D": "Cylinders"
+      },
+      "correct_answer": "A",
+      "explanation": "Fractals combine mathematical rules with artistic patterns.",
+      "difficulty": "hard",
+      "source_section": "Section 4.1"
+    }
+  ]
+}

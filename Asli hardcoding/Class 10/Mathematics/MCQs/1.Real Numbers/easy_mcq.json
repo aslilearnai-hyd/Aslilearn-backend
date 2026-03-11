@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: Real Numbers",
+    "generated_at": "2026-02-27T16:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is a prime number?",
+            "options": {
+                "A": "4",
+                "B": "6",
+                "C": "7",
+                "D": "9"
+            },
+            "correct_answer": "C",
+            "explanation": "7 has exactly two factors: 1 and 7.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the prime factorisation of 20?",
+            "options": {
+                "A": "2 × 10",
+                "B": "4 × 5",
+                "C": "2² × 5",
+                "D": "20 × 1"
+            },
+            "correct_answer": "C",
+            "explanation": "20 = 2 × 2 × 5 = 2² × 5.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which number has only one prime factor?",
+            "options": {
+                "A": "6",
+                "B": "10",
+                "C": "16",
+                "D": "15"
+            },
+            "correct_answer": "C",
+            "explanation": "16 = 2⁴, so it has only one prime factor.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the HCF of 8 and 12?",
+            "options": {
+                "A": "2",
+                "B": "4",
+                "C": "6",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "Common factors of 8 and 12 are 1, 2, and 4.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is an irrational number?",
+            "options": {
+                "A": "3/4",
+                "B": "0.25",
+                "C": "√2",
+                "D": "5"
+            },
+            "correct_answer": "C",
+            "explanation": "√2 cannot be expressed as p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the LCM of 4 and 6?",
+            "options": {
+                "A": "6",
+                "B": "12",
+                "C": "18",
+                "D": "24"
+            },
+            "correct_answer": "B",
+            "explanation": "12 is the smallest number divisible by both 4 and 6.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which is the smallest prime number?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "2 is the smallest prime number.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which number is divisible by both 2 and 5?",
+            "options": {
+                "A": "15",
+                "B": "20",
+                "C": "9",
+                "D": "14"
+            },
+            "correct_answer": "B",
+            "explanation": "20 is divisible by 2 and 5.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following is a composite number?",
+            "options": {
+                "A": "11",
+                "B": "13",
+                "C": "17",
+                "D": "21"
+            },
+            "correct_answer": "D",
+            "explanation": "21 = 3 × 7.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which number has prime factorisation 3² × 5?",
+            "options": {
+                "A": "45",
+                "B": "30",
+                "C": "15",
+                "D": "90"
+            },
+            "correct_answer": "A",
+            "explanation": "45 = 3 × 3 × 5.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following is a rational number?",
+            "options": {
+                "A": "√3",
+                "B": "√5",
+                "C": "3/7",
+                "D": "√7"
+            },
+            "correct_answer": "C",
+            "explanation": "3/7 is of the form p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the HCF of 12 and 18?",
+            "options": {
+                "A": "3",
+                "B": "6",
+                "C": "9",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "HCF of 12 and 18 is 6.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following numbers ends with digit 0?",
+            "options": {
+                "A": "2⁵",
+                "B": "3⁴",
+                "C": "5 × 2",
+                "D": "7²"
+            },
+            "correct_answer": "C",
+            "explanation": "A number divisible by 2 and 5 ends with 0.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which number has exactly two factors?",
+            "options": {
+                "A": "9",
+                "B": "10",
+                "C": "11",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "11 has only two factors: 1 and 11.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the LCM of 3 and 5?",
+            "options": {
+                "A": "5",
+                "B": "10",
+                "C": "15",
+                "D": "20"
+            },
+            "correct_answer": "C",
+            "explanation": "15 is divisible by both 3 and 5.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which number is even?",
+            "options": {
+                "A": "7",
+                "B": "11",
+                "C": "14",
+                "D": "15"
+            },
+            "correct_answer": "C",
+            "explanation": "14 is divisible by 2.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which is an odd prime number?",
+            "options": {
+                "A": "2",
+                "B": "4",
+                "C": "6",
+                "D": "7"
+            },
+            "correct_answer": "D",
+            "explanation": "7 is a prime and odd.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is not irrational?",
+            "options": {
+                "A": "√2",
+                "B": "√3",
+                "C": "√5",
+                "D": "4"
+            },
+            "correct_answer": "D",
+            "explanation": "4 is a rational number.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following is divisible by 3?",
+            "options": {
+                "A": "14",
+                "B": "16",
+                "C": "18",
+                "D": "20"
+            },
+            "correct_answer": "C",
+            "explanation": "18 ÷ 3 = 6.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which is the smallest composite number?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "D",
+            "explanation": "4 has more than two factors.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which number is a perfect square?",
+            "options": {
+                "A": "18",
+                "B": "20",
+                "C": "25",
+                "D": "27"
+            },
+            "correct_answer": "C",
+            "explanation": "25 = 5².",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the HCF of 5 and 15?",
+            "options": {
+                "A": "3",
+                "B": "5",
+                "C": "15",
+                "D": "1"
+            },
+            "correct_answer": "B",
+            "explanation": "5 divides both numbers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following is co-prime with 9?",
+            "options": {
+                "A": "6",
+                "B": "12",
+                "C": "28",
+                "D": "18"
+            },
+            "correct_answer": "C",
+            "explanation": "9 and 28 share no common factors.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which number is divisible by both 8 and 12?",
+            "options": {
+                "A": "24",
+                "B": "36",
+                "C": "48",
+                "D": "60"
+            },
+            "correct_answer": "C",
+            "explanation": "48 is divisible by both 8 and 12.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "All primes are even",
+                "B": "All even numbers are prime",
+                "C": "2 is the only even prime",
+                "D": "1 is a prime number"
+            },
+            "correct_answer": "C",
+            "explanation": "2 is the only even prime.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

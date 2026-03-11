@@ -1,0 +1,271 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Agriculture",
+  "difficulty": "Medium",
+  "generated_at": "2026-03-11T13:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why agriculture is considered an important primary activity in India.",
+      "answer": "Agriculture is considered a primary activity because it produces food for the population and provides raw materials for many industries. A large portion of India's population depends on agriculture for their livelihood.",
+      "answer_outline": [
+        "Meaning of primary activity",
+        "Employment in agriculture",
+        "Supply of food and industrial raw materials"
+      ],
+      "key_concepts": ["agriculture importance"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Differentiate between primitive subsistence farming and intensive subsistence farming.",
+      "answer": "Primitive subsistence farming uses simple tools and depends on natural conditions, while intensive subsistence farming uses more labour, irrigation, and fertilizers to increase production.",
+      "answer_outline": [
+        "Tools and technology",
+        "Labour intensity",
+        "Productivity"
+      ],
+      "key_concepts": ["subsistence farming"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how commercial farming differs from subsistence farming.",
+      "answer": "Commercial farming produces crops mainly for sale in markets and uses modern technology, whereas subsistence farming produces crops mainly for family consumption.",
+      "answer_outline": [
+        "Purpose of production",
+        "Technology used",
+        "Scale of farming"
+      ],
+      "key_concepts": ["commercial farming"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the characteristics of plantation agriculture.",
+      "answer": "Plantation agriculture involves growing a single crop on large estates using modern techniques and large labour force. The produce is mainly used for industrial processing and export.",
+      "answer_outline": [
+        "Large estates",
+        "Single crop cultivation",
+        "Capital and labour intensive"
+      ],
+      "key_concepts": ["plantation agriculture"],
+      "marks": 5,
+      "source_section": "Types of Farming"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the three cropping seasons of India with examples.",
+      "answer": "India has three cropping seasons: Rabi (winter crops like wheat), Kharif (monsoon crops like rice), and Zaid (summer crops like watermelon).",
+      "answer_outline": ["Rabi crops", "Kharif crops", "Zaid crops"],
+      "key_concepts": ["cropping seasons"],
+      "marks": 5,
+      "source_section": "Cropping Pattern"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the geographical conditions required for the cultivation of rice.",
+      "answer": "Rice requires high temperature, high humidity, and heavy rainfall. It grows well in fertile alluvial soils and regions with abundant water supply.",
+      "answer_outline": ["Temperature", "Rainfall", "Soil conditions"],
+      "key_concepts": ["rice cultivation"],
+      "marks": 5,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the conditions required for wheat cultivation in India.",
+      "answer": "Wheat requires cool climate during growth and bright sunshine during harvest. It grows well in fertile soil with moderate rainfall.",
+      "answer_outline": [
+        "Cool growing season",
+        "Moderate rainfall",
+        "Sunshine during harvest"
+      ],
+      "key_concepts": ["wheat cultivation"],
+      "marks": 5,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain why millets are considered nutritious crops.",
+      "answer": "Millets are rich in nutrients such as iron, calcium, and fiber. They are also drought-resistant crops suitable for dry regions.",
+      "answer_outline": [
+        "High nutritional value",
+        "Adaptability to dry regions"
+      ],
+      "key_concepts": ["millets"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the importance of pulses in Indian agriculture.",
+      "answer": "Pulses are an important source of protein and improve soil fertility by fixing nitrogen from the atmosphere.",
+      "answer_outline": ["Source of protein", "Soil fertility improvement"],
+      "key_concepts": ["pulses"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the role of sugarcane in Indian agriculture and industry.",
+      "answer": "Sugarcane is used to produce sugar, jaggery, ethanol, and other by-products. It supports sugar industries and provides employment.",
+      "answer_outline": ["Industrial importance", "Economic contribution"],
+      "key_concepts": ["sugarcane"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the importance of oilseeds in the Indian economy.",
+      "answer": "Oilseeds are used to produce edible oils and are important for cooking, industry, and export.",
+      "answer_outline": ["Cooking oil production", "Industrial uses"],
+      "key_concepts": ["oilseeds"],
+      "marks": 4,
+      "source_section": "Major Crops"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe the climatic conditions required for tea cultivation.",
+      "answer": "Tea requires warm and humid climate, well-drained soil, and abundant rainfall.",
+      "answer_outline": ["Warm climate", "High rainfall", "Well-drained soil"],
+      "key_concepts": ["tea cultivation"],
+      "marks": 4,
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why coffee cultivation is limited to certain regions in India.",
+      "answer": "Coffee requires specific climatic conditions such as moderate rainfall, shade, and well-drained soil, which are available mainly in southern India.",
+      "answer_outline": ["Climatic requirements", "Regional distribution"],
+      "key_concepts": ["coffee cultivation"],
+      "marks": 4,
+      "source_section": "Plantation Crops"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the importance of horticulture in Indian agriculture.",
+      "answer": "Horticulture includes cultivation of fruits, vegetables, and flowers. It contributes to nutrition, employment, and export earnings.",
+      "answer_outline": [
+        "Fruit and vegetable production",
+        "Economic importance"
+      ],
+      "key_concepts": ["horticulture"],
+      "marks": 4,
+      "source_section": "Horticulture Crops"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the conditions required for cotton cultivation.",
+      "answer": "Cotton requires high temperature, light rainfall, and black soil for its growth.",
+      "answer_outline": ["Temperature", "Rainfall", "Soil type"],
+      "key_concepts": ["cotton cultivation"],
+      "marks": 4,
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the importance of jute as a fibre crop.",
+      "answer": "Jute is used to produce ropes, bags, mats, carpets, and other products. It is an important export crop.",
+      "answer_outline": ["Industrial uses", "Export importance"],
+      "key_concepts": ["jute"],
+      "marks": 4,
+      "source_section": "Fibre Crops"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the climatic conditions needed for rubber cultivation.",
+      "answer": "Rubber requires high temperature, heavy rainfall, and humid climate.",
+      "answer_outline": ["Temperature", "Rainfall", "Humidity"],
+      "key_concepts": ["rubber cultivation"],
+      "marks": 4,
+      "source_section": "Non-Food Crops"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how agriculture supports industries in India.",
+      "answer": "Agriculture provides raw materials such as cotton for textiles, sugarcane for sugar industries, and jute for packaging industries.",
+      "answer_outline": ["Raw materials", "Industrial linkage"],
+      "key_concepts": ["agriculture and industry"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the role of irrigation in increasing agricultural productivity.",
+      "answer": "Irrigation ensures water supply to crops during low rainfall and improves crop yield.",
+      "answer_outline": ["Water supply", "Higher productivity"],
+      "key_concepts": ["irrigation"],
+      "marks": 4,
+      "source_section": "Agricultural Practices"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the meaning of technological reforms in agriculture.",
+      "answer": "Technological reforms involve the use of modern inputs such as HYV seeds, fertilizers, pesticides, and irrigation systems.",
+      "answer_outline": ["Modern technology", "Improved productivity"],
+      "key_concepts": ["technological reforms"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the importance of the Green Revolution in India.",
+      "answer": "The Green Revolution increased agricultural production through the use of HYV seeds, fertilizers, irrigation, and modern machinery.",
+      "answer_outline": [
+        "Introduction of modern technology",
+        "Increase in food grain production"
+      ],
+      "key_concepts": ["green revolution"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the importance of land reforms in Indian agriculture.",
+      "answer": "Land reforms aimed to improve land ownership systems, reduce inequality, and increase agricultural productivity.",
+      "answer_outline": ["Improved land distribution", "Better productivity"],
+      "key_concepts": ["land reforms"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the role of government schemes in supporting farmers.",
+      "answer": "Government schemes provide financial support, crop insurance, and credit facilities to farmers.",
+      "answer_outline": ["Financial assistance", "Risk reduction"],
+      "key_concepts": ["farmer schemes"],
+      "marks": 4,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the challenges faced by agriculture in India.",
+      "answer": "Challenges include dependence on monsoon, small land holdings, and limited access to modern technology.",
+      "answer_outline": [
+        "Dependence on rainfall",
+        "Small farms",
+        "Technological limitations"
+      ],
+      "key_concepts": ["agriculture challenges"],
+      "marks": 5,
+      "source_section": "Agricultural Reforms"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the relationship between agriculture, climate, and soil.",
+      "answer": "Agricultural production depends heavily on climate and soil conditions, which determine crop suitability and productivity.",
+      "answer_outline": [
+        "Climate influence",
+        "Soil fertility",
+        "Crop suitability"
+      ],
+      "key_concepts": ["agriculture factors"],
+      "marks": 5,
+      "source_section": "Cropping Pattern"
+    }
+  ]
+}

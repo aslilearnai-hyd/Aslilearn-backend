@@ -1,0 +1,34 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Finding the Common Ground (Symmetry)",
+    "difficulty": "Hard",
+    "source_pdf": "jemh112.pdf",
+    "short_notes": {
+        "key_points": [
+            "Figures can have both line and rotational symmetry (the 'Common Ground')",
+            "Translational symmetry involves sliding a pattern without rotating or flipping it",
+            "Tessellations (tilings) are created using combined symmetry operations",
+            "Point symmetry is a special case where a figure matches itself after a $180^{\\circ}$ rotation"
+        ],
+        "examples": [
+            "Both symmetries: Square (4 lines, Order 4), Regular Hexagon (6 lines, Order 6) 
+
+[Image of lines of symmetry in regular polygons]
+",
+            "Translational: Honeycomb patterns, wallpaper designs, brick walls",
+            "Natural symmetry: Snowflakes (hexagonal), Starfish (pentagonal) ",
+            "Alphabet check: Letter 'Z' has rotational symmetry but no line symmetry"
+        ],
+        "formulas": [
+            "For a shape to tile $\\rightarrow \\text{Interior angle sum at vertex} = 360^{\\circ}$",
+            "Symmetry in coordinates $\\rightarrow (x, y)$ reflected over y-axis becomes $(-x, y)$"
+        ],
+        "exam_tips": [
+            "Identify the 'Common Ground' by listing both the number of lines and the order of rotation",
+            "In complex designs (like Rangoli), look for a repeating basic unit",
+            "Regular pentagons do not have rotational symmetry of order 2 ($180^{\\circ}$)",
+            "Practice visualizing the 'net' effect of multiple transformations (reflection + rotation)"
+        ]
+    }
+}

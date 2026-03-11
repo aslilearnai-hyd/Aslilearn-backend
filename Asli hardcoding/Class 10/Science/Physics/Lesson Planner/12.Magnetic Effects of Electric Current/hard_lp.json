@@ -1,0 +1,175 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Magnetic Effects of Electric Current",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze magnetic field patterns and directions using rules critically",
+        "Evaluate force on conductors and motor working with quantitative aspects",
+        "Apply Fleming's rules in complex scenarios and error analysis in experiments",
+        "Understand solenoid as electromagnet with factors quantitatively",
+        "Critically assess domestic circuit safety and faults with real-world reasoning",
+        "Develop experimental, analytical, and problem-solving skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Magnetic Field Due to Conductors – Advanced Patterns",
+            "topics_covered": [
+                "Magnetic field lines properties and conventions",
+                "Field due to straight conductor and circular loop (centre formula qualitative)",
+                "Right-hand thumb rule applications",
+                "Superposition of fields"
+            ],
+            "teaching_strategy": [
+                "Advanced demonstration with iron filings for loop and straight wire",
+                "Derive direction using rule in multiple orientations",
+                "Discussion on field strength variation"
+            ],
+            "student_activities": [
+                "Plot field lines using compass for straight wire and loop at multiple points",
+                "Solve direction prediction problems with diagrams",
+                "Analyze superposition case (two parallel wires)"
+            ],
+            "assessment": [
+                "Field line patterns and direction accuracy",
+                "Problem-solving with justification"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Solenoid and Electromagnet – Quantitative Analysis",
+            "topics_covered": [
+                "Magnetic field inside solenoid",
+                "Factors affecting field strength (current, turns, length, core)",
+                "Electromagnet vs permanent magnet",
+                "Applications requiring strong fields"
+            ],
+            "teaching_strategy": [
+                "Experiment to vary current/turns and observe attraction",
+                "Graphical discussion on field vs factors",
+                "Case studies (MRI, relays)"
+            ],
+            "student_activities": [
+                "Vary parameters in solenoid setup, record paper clip count (force proxy)",
+                "Plot graph of strength vs turns/current",
+                "Calculate relative field increase theoretically"
+            ],
+            "assessment": [
+                "Graph and data analysis",
+                "Inference on factors"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Force on Conductor and Fleming's Rules",
+            "topics_covered": [
+                "Force magnitude and direction (F = BIL sinθ qualitative)",
+                "Fleming's left-hand rule detailed",
+                "Current reversal/magnetic field reversal effects"
+            ],
+            "teaching_strategy": [
+                "Demonstration of force direction change",
+                "Guided complex rule application",
+                "Error sources in direction observation"
+            ],
+            "student_activities": [
+                "Predict force direction in 8-10 varied scenarios (angle, reversal)",
+                "Perform force demo and note errors (alignment, current stability)",
+                "Solve rule-based numerical/conceptual problems"
+            ],
+            "assessment": [
+                "Rule application precision",
+                "Error analysis notes"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Electric Motor – Construction and Working Analysis",
+            "topics_covered": [
+                "Principle of DC motor",
+                "Role of split ring commutator",
+                "Torque production and efficiency factors",
+                "Commercial motor modifications"
+            ],
+            "teaching_strategy": [
+                "Dissect motor model, explain each part",
+                "Discussion on back EMF and practical efficiency",
+                "Problem-solving on rotation direction"
+            ],
+            "student_activities": [
+                "Build/analyze motor model, reverse current to observe direction change",
+                "Solve advanced questions on commutator function",
+                "Critically evaluate limitations (heating, wear)"
+            ],
+            "assessment": [
+                "Model explanation depth",
+                "Question accuracy"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Domestic Circuits – Safety and Fault Analysis",
+            "topics_covered": [
+                "Series vs parallel in household wiring",
+                "Role of fuse, MCB, earthing in detail",
+                "Overload, short circuit, leakage current",
+                "Safety standards and common faults"
+            ],
+            "teaching_strategy": [
+                "Model of complete domestic circuit with faults simulation",
+                "Case study analysis (real accidents)",
+                "Debate on earthing necessity"
+            ],
+            "student_activities": [
+                "Draw detailed circuit with calculations for current distribution",
+                "Analyze fault scenarios (why fuse blows, earthing saves)",
+                "Propose safety improvements for given wiring diagram"
+            ],
+            "assessment": [
+                "Circuit analysis report",
+                "Fault reasoning depth"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Advanced Problems, and Critical Assessment",
+            "topics_covered": [
+                "Integration of rules, motor, circuits",
+                "Mixed numerical/diagram/conceptual questions",
+                "Limitations and modern applications"
+            ],
+            "teaching_strategy": [
+                "Hard-level quiz with diagrams and applications",
+                "Peer review of answers",
+                "Discussion on emerging tech (maglev, etc.)"
+            ],
+            "student_activities": [
+                "Solve 15-20 hard questions (including graphs, directions, faults)",
+                "Group critique of solutions",
+                "Reflect on chapter with real-world critique"
+            ],
+            "assessment": [
+                "Quiz results",
+                "Critical reflection and participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Copper wire, battery, compass, iron filings, horse-shoe magnet",
+        "Solenoid coil, variable resistor, ammeter",
+        "DC motor kit, split ring model",
+        "Domestic circuit board/model with fuse/MCB",
+        "Graph paper, whiteboard for rules and diagrams"
+    ],
+    "evaluation_methods": [
+        "Experimental data and graph evaluation",
+        "Rule/diagram accuracy in complex cases",
+        "Advanced problem-solving",
+        "Critical analysis reports",
+        "Quiz and peer assessment"
+    ],
+    "teacher_tip": "Stress consistent use of right/left-hand rules with physical gestures. Incorporate error analysis in every experiment to build scientific temperament. Challenge students with 'why' and 'what if' questions to deepen understanding beyond rote application."
+}

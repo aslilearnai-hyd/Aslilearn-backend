@@ -1,0 +1,177 @@
+{
+"class": "Class 8",
+"subject": "Mathematics",
+"chapter_name": "Tales by Dots and Lines",
+"lesson_level": "Medium",
+"total_periods": 7,
+"period_duration_minutes": "40-45",
+"overall_learning_objectives": [
+"Analyse how the mean changes when values are added or removed",
+"Understand the balancing property of mean",
+"Calculate median in datasets with even and odd number of observations",
+"Use frequency tables to compute mean and median",
+"Use spreadsheets to compute totals and averages",
+"Interpret patterns and trends using line graphs",
+"Apply statistical concepts to real-life datasets"
+],
+"lesson_plan": [
+{
+"period": 1,
+"title": "Exploring the Mean with Multiple Data Sets",
+"topics_covered": [
+"Mean as the center of data",
+"Mean in datasets with more than two numbers",
+"Observing patterns in averages"
+],
+"teaching_strategy": [
+"Worked examples on board",
+"Guided questioning",
+"Data exploration"
+],
+"student_activities": [
+"Calculate mean for different sets of numbers",
+"Compare means of different datasets"
+],
+"assessment": [
+"Quick quiz",
+"Notebook review"
+]
+},
+{
+"period": 2,
+"title": "Balancing Property of the Mean",
+"topics_covered": [
+"Mean as balance point",
+"Distance of observations from mean",
+"Uniqueness of the mean"
+],
+"teaching_strategy": [
+"Graphical dot plot explanation",
+"Interactive discussion"
+],
+"student_activities": [
+"Compute distances of numbers from the mean",
+"Verify balancing property"
+],
+"assessment": [
+"Conceptual questions"
+]
+},
+{
+"period": 3,
+"title": "Mean Changes with Data Modification",
+"topics_covered": [
+"Effect of adding values",
+"Effect of removing values",
+"Unchanged mean scenarios"
+],
+"teaching_strategy": [
+"Problem-solving exercises",
+"Think-pair-share activity"
+],
+"student_activities": [
+"Add and remove values in datasets",
+"Observe effect on mean"
+],
+"assessment": [
+"Written practice problems"
+]
+},
+{
+"period": 4,
+"title": "Median in Complex Data Sets",
+"topics_covered": [
+"Median in ordered data",
+"Median for even number of observations",
+"Median behaviour when data changes"
+],
+"teaching_strategy": [
+"Sorting exercises",
+"Step-by-step explanation"
+],
+"student_activities": [
+"Arrange numbers and find median",
+"Predict median changes"
+],
+"assessment": [
+"Short worksheet"
+]
+},
+{
+"period": 5,
+"title": "Mean and Median with Frequency Tables",
+"topics_covered": [
+"Frequency tables",
+"Mean using frequency method",
+"Median using cumulative frequency"
+],
+"teaching_strategy": [
+"Example-based teaching",
+"Board calculations"
+],
+"student_activities": [
+"Create frequency table",
+"Calculate mean and median"
+],
+"assessment": [
+"Problem-solving activity"
+]
+},
+{
+"period": 6,
+"title": "Spreadsheet Applications",
+"topics_covered": [
+"Spreadsheet basics",
+"SUM and AVERAGE formulas",
+"Analysing class marks"
+],
+"teaching_strategy": [
+"Computer demonstration",
+"Guided practice"
+],
+"student_activities": [
+"Enter data in spreadsheet",
+"Calculate averages"
+],
+"assessment": [
+"Spreadsheet task evaluation"
+]
+},
+{
+"period": 7,
+"title": "Line Graph Analysis and Revision",
+"topics_covered": [
+"Plotting line graphs",
+"Identifying patterns in data",
+"Chapter revision"
+],
+"teaching_strategy": [
+"Graph plotting demonstration",
+"Group analysis discussion"
+],
+"student_activities": [
+"Draw line graph from rainfall data",
+"Interpret trends"
+],
+"assessment": [
+"Short chapter test",
+"Class discussion"
+]
+}
+],
+"teaching_aids": [
+"Blackboard",
+"Graph paper",
+"Markers or chalk",
+"Spreadsheet software",
+"NCERT textbook"
+],
+"evaluation_methods": [
+"Worksheets",
+"Class discussions",
+"Graph drawing tasks",
+"Short quizzes",
+"Notebook checking"
+],
+"teacher_tip": "Encourage students to analyse patterns rather than only calculate values, so they understand how mean and median behave in real data."
+}

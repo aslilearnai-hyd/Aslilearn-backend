@@ -1,0 +1,304 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 12: Improvement in Food Resources",
+    "generated_at": "2026-03-06T01:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is improvement in food resources necessary?",
+            "answer": "Improvement in food resources is necessary to increase food production to meet the needs of the growing population.",
+            "key_concepts": [
+                "food production",
+                "population growth"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Name two major sources of food.",
+            "answer": "Plants and animals are the two major sources of food.",
+            "key_concepts": [
+                "plants",
+                "animals"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 3,
+            "question": "What are cereals? Give two examples.",
+            "answer": "Cereals are crops that provide carbohydrates. Examples: rice and wheat.",
+            "key_concepts": [
+                "cereals",
+                "carbohydrates"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Types"
+        },
+        {
+            "question_number": 4,
+            "question": "What are pulses?",
+            "answer": "Pulses are crops that are rich in proteins.",
+            "key_concepts": [
+                "pulses",
+                "proteins"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Crop Types"
+        },
+        {
+            "question_number": 5,
+            "question": "What are oil seeds? Give one example.",
+            "answer": "Oil seeds are crops grown to obtain edible oil. Example: mustard.",
+            "key_concepts": [
+                "oil seeds",
+                "edible oil"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Types"
+        },
+        {
+            "question_number": 6,
+            "question": "What are Kharif crops? Give one example.",
+            "answer": "Kharif crops are grown during the rainy season. Example: paddy.",
+            "key_concepts": [
+                "kharif crops",
+                "rainy season"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Seasons"
+        },
+        {
+            "question_number": 7,
+            "question": "What are Rabi crops? Give one example.",
+            "answer": "Rabi crops are grown during the winter season. Example: wheat.",
+            "key_concepts": [
+                "rabi crops",
+                "winter season"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Seasons"
+        },
+        {
+            "question_number": 8,
+            "question": "Define hybridisation.",
+            "answer": "Hybridisation is the crossing of genetically dissimilar plants to produce improved varieties.",
+            "key_concepts": [
+                "hybridisation",
+                "crop improvement"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 9,
+            "question": "What is manure?",
+            "answer": "Manure is organic matter obtained from plant and animal waste used to improve soil fertility.",
+            "key_concepts": [
+                "organic manure",
+                "soil fertility"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Manure"
+        },
+        {
+            "question_number": 10,
+            "question": "What are fertilizers?",
+            "answer": "Fertilizers are chemical substances added to soil to supply nutrients to plants.",
+            "key_concepts": [
+                "fertilizers",
+                "plant nutrients"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Fertilizers"
+        },
+        {
+            "question_number": 11,
+            "question": "What is irrigation?",
+            "answer": "Irrigation is the artificial supply of water to crops.",
+            "key_concepts": [
+                "irrigation",
+                "water supply"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Irrigation"
+        },
+        {
+            "question_number": 12,
+            "question": "Name two sources of irrigation.",
+            "answer": "Wells and canals are sources of irrigation.",
+            "key_concepts": [
+                "wells",
+                "canals"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Irrigation"
+        },
+        {
+            "question_number": 13,
+            "question": "What are weeds?",
+            "answer": "Weeds are unwanted plants growing along with crops.",
+            "key_concepts": [
+                "weeds",
+                "unwanted plants"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are weeds harmful?",
+            "answer": "Weeds compete with crops for nutrients, water and sunlight.",
+            "key_concepts": [
+                "competition",
+                "nutrients"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 15,
+            "question": "What are pesticides?",
+            "answer": "Pesticides are chemicals used to control pests and diseases in crops.",
+            "key_concepts": [
+                "pesticides",
+                "crop protection"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 16,
+            "question": "What is animal husbandry?",
+            "answer": "Animal husbandry is the scientific management of livestock.",
+            "key_concepts": [
+                "livestock management"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Animal Husbandry"
+        },
+        {
+            "question_number": 17,
+            "question": "What is cattle farming?",
+            "answer": "Cattle farming is the rearing of cattle for milk production and agricultural work.",
+            "key_concepts": [
+                "cattle farming",
+                "milk production"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 18,
+            "question": "What is poultry farming?",
+            "answer": "Poultry farming is the raising of domestic birds for eggs and meat.",
+            "key_concepts": [
+                "poultry",
+                "eggs",
+                "meat"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Poultry Farming"
+        },
+        {
+            "question_number": 19,
+            "question": "What is fish farming?",
+            "answer": "Fish farming is the breeding and raising of fish in ponds or tanks.",
+            "key_concepts": [
+                "fish culture"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 20,
+            "question": "What is aquaculture?",
+            "answer": "Aquaculture is the farming of fish and other aquatic organisms.",
+            "key_concepts": [
+                "aquaculture"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 21,
+            "question": "What is composite fish culture?",
+            "answer": "Composite fish culture is growing different species of fish together in one pond.",
+            "key_concepts": [
+                "multiple fish species"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 22,
+            "question": "What is bee-keeping?",
+            "answer": "Bee-keeping is the rearing of bees for honey and wax production.",
+            "key_concepts": [
+                "apiculture",
+                "honey"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 23,
+            "question": "What is apiculture?",
+            "answer": "Apiculture is another name for bee-keeping.",
+            "key_concepts": [
+                "apiculture",
+                "bee keeping"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 24,
+            "question": "Name one product obtained from bee-keeping.",
+            "answer": "Honey is obtained from bee-keeping.",
+            "key_concepts": [
+                "honey"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 25,
+            "question": "What is mixed farming?",
+            "answer": "Mixed farming is the practice of growing crops and raising livestock together.",
+            "key_concepts": [
+                "mixed farming",
+                "crops and livestock"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Introduction"
+        }
+    ]
+}

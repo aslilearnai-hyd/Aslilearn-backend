@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 1: The French Revolution",
+  "difficulty": "Easy",
+  "generated_at": "2026-03-07T13:06:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "On what date did the city of Paris witness the storming of the Bastille?",
+      "answer": "The Bastille was stormed on the morning of 14 July 1789. [cite: 36, 41]",
+      "key_points": ["14 July 1789", "Bastille"],
+      "source_section": "Chapter I"
+    },
+    {
+      "question_number": 2,
+      "question": "Who was the King of France when the revolution broke out?",
+      "answer": "Louis XVI of the Bourbon family was the King of France. [cite: 60]",
+      "key_points": ["Louis XVI", "Bourbon family"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which estate in French society was the only one that paid taxes?",
+      "answer": "Only the members of the third estate paid taxes. [cite: 70, 83]",
+      "key_points": ["Third estate", "Taxes"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "What was the 'taille'?",
+      "answer": "The taille was a direct tax to be paid directly to the state. [cite: 82, 98]",
+      "key_points": ["Direct tax", "State"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 5,
+      "question": "What were 'tithes'?",
+      "answer": "Tithes were a tax levied by the church, comprising one-tenth of the agricultural produce. [cite: 81, 97]",
+      "key_points": ["Church tax", "One-tenth", "Agricultural produce"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "Define 'Subsistence crisis'.",
+      "answer": "It is an extreme situation where the basic means of livelihood are endangered. [cite: 128, 130]",
+      "key_points": ["Extreme situation", "Basic means of livelihood"],
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Who were the 'Active citizens' according to the Constitution of 1791?",
+      "answer": "Men above 25 years of age who paid taxes equal to at least 3 days of a labourer's wage. [cite: 311]",
+      "key_points": ["Men above 25", "Taxpayers"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which philosopher proposed a division of power within the government in 'The Spirit of the Laws'?",
+      "answer": "Montesquieu proposed the division of power between the legislative, executive, and judiciary. [cite: 157]",
+      "key_points": ["Montesquieu", "Division of power"],
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 9,
+      "question": "What did the 'Broken chain' symbolise?",
+      "answer": "Chains were used to fetter slaves, so a broken chain stands for the act of becoming free. [cite: 377]",
+      "key_points": ["Becoming free", "Freedom"],
+      "source_section": "Box 1"
+    },
+    {
+      "question_number": 10,
+      "question": "Who wrote the influential pamphlet 'What is the Third Estate'?",
+      "answer": "Abbé Sieyès wrote the pamphlet. [cite: 231]",
+      "key_points": ["Abbé Sieyès", "Pamphlet"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 11,
+      "question": "What was the 'Estates General'?",
+      "answer": "The Estates General was a political body to which the three estates sent their representatives. [cite: 189]",
+      "key_points": ["Political body", "Representatives"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 12,
+      "question": "When did the National Assembly take the Tennis Court Oath?",
+      "answer": "They assembled and took the oath on 20 June 1789. [cite: 204, 205]",
+      "key_points": ["20 June", "National Assembly", "Tennis Court"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 13,
+      "question": "What was the 'Marseillaise'?",
+      "answer": "It was a patriotic song composed by Roget de L'Isle, which is now the national anthem of France. [cite: 411, 413]",
+      "key_points": ["Patriotic song", "National anthem"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 14,
+      "question": "Who were the 'sans-culottes'?",
+      "answer": "Jacobin members who wore long striped trousers to set themselves apart from nobles who wore knee breeches. [cite: 425, 444]",
+      "key_points": ["Jacobins", "No knee breeches", "Striped trousers"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 15,
+      "question": "What was the 'guillotine'?",
+      "answer": "A device consisting of two poles and a blade with which a person is beheaded. [cite: 462]",
+      "key_points": ["Execution device", "Dr Guillotin"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which period is referred to as the 'Reign of Terror'?",
+      "answer": "The period from 1793 to 1794. [cite: 460]",
+      "key_points": ["1793 to 1794", "Robespierre"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 17,
+      "question": "When did French women finally win the right to vote?",
+      "answer": "Women in France won the right to vote in 1946. [cite: 549]",
+      "key_points": ["1946", "Right to vote"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 18,
+      "question": "Who was Olympe de Gouges?",
+      "answer": "One of the most important politically active women in revolutionary France who wrote the Declaration of the Rights of Woman and Citizen. [cite: 552, 553, 555]",
+      "key_points": ["Revolutionary woman", "Declaration of Rights"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 19,
+      "question": "In which year was slavery finally abolished in French colonies?",
+      "answer": "Slavery was finally abolished in French colonies in 1848. [cite: 609]",
+      "key_points": ["1848", "Abolition of slavery"],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 20,
+      "question": "What does the 'Red Phrygian cap' symbolise?",
+      "answer": "It was a cap worn by a slave upon becoming free. [cite: 384, 445]",
+      "key_points": ["Liberty", "Former slave"],
+      "source_section": "Box 1"
+    },
+    {
+      "question_number": 21,
+      "question": "When did Napoleon Bonaparte crown himself Emperor of France?",
+      "answer": "Napoleon crowned himself Emperor in 1804. [cite: 217, 650]",
+      "key_points": ["1804", "Emperor"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 22,
+      "question": "At which battle was Napoleon finally defeated?",
+      "answer": "He was finally defeated at Waterloo in 1815. [cite: 220, 654]",
+      "key_points": ["Waterloo", "1815"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 23,
+      "question": "What were the 'natural and inalienable rights' mentioned in the Constitution?",
+      "answer": "Rights such as the right to life, freedom of speech, freedom of opinion, and equality before law. [cite: 334]",
+      "key_points": ["Right to life", "Freedom of speech", "Equality"],
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Name the two Indian individuals who responded to the ideas coming from revolutionary France.",
+      "answer": "Tipu Sultan and Rammohan Roy. [cite: 664]",
+      "key_points": ["Tipu Sultan", "Rammohan Roy"],
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "What was the 'Convention'?",
+      "answer": "The newly elected assembly which abolished the monarchy and declared France a republic on 21 September 1792. [cite: 450]",
+      "key_points": ["Elected assembly", "Republic"],
+      "source_section": "Section 3"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 8: Force and Laws of Motion",
+    "generated_at": "2026-03-06T16:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following situations represents balanced forces?",
+            "options": {
+                "A": "A book resting on a table",
+                "B": "A football being kicked",
+                "C": "A car accelerating",
+                "D": "A rocket launching"
+            },
+            "correct_answer": "A",
+            "explanation": "The weight of the book and the normal force from the table balance each other.",
+            "difficulty": "medium",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which factor directly affects the inertia of an object?",
+            "options": {
+                "A": "Velocity",
+                "B": "Acceleration",
+                "C": "Mass",
+                "D": "Force"
+            },
+            "correct_answer": "C",
+            "explanation": "Inertia depends on the mass of the object.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which law explains why passengers move backward when a bus starts suddenly?",
+            "options": {
+                "A": "Newton’s First Law",
+                "B": "Newton’s Second Law",
+                "C": "Newton’s Third Law",
+                "D": "Law of Gravitation"
+            },
+            "correct_answer": "A",
+            "explanation": "Passengers tend to remain at rest due to inertia.",
+            "difficulty": "medium",
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "If the mass of an object doubles while acceleration remains constant, the force will:",
+            "options": {
+                "A": "Remain same",
+                "B": "Double",
+                "C": "Halve",
+                "D": "Become zero"
+            },
+            "correct_answer": "B",
+            "explanation": "From F = ma, if mass doubles, force doubles.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is a vector quantity?",
+            "options": {
+                "A": "Mass",
+                "B": "Speed",
+                "C": "Momentum",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum has magnitude and direction.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Momentum becomes zero when:",
+            "options": {
+                "A": "Mass is zero",
+                "B": "Velocity is zero",
+                "C": "Force is zero",
+                "D": "Acceleration is zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum = mass × velocity. If velocity is zero, momentum is zero.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "The change in momentum of an object depends on:",
+            "options": {
+                "A": "Force applied",
+                "B": "Time of action",
+                "C": "Both force and time",
+                "D": "Velocity only"
+            },
+            "correct_answer": "C",
+            "explanation": "Impulse equals force multiplied by time.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which example illustrates Newton’s Third Law?",
+            "options": {
+                "A": "Walking on the ground",
+                "B": "A book resting on a table",
+                "C": "A stone falling",
+                "D": "A car accelerating"
+            },
+            "correct_answer": "A",
+            "explanation": "The foot pushes the ground backward and the ground pushes the person forward.",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Which quantity remains constant in the absence of external forces?",
+            "options": {
+                "A": "Velocity",
+                "B": "Momentum",
+                "C": "Acceleration",
+                "D": "Force"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum is conserved when no external force acts.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What happens to momentum when velocity increases?",
+            "options": {
+                "A": "Decreases",
+                "B": "Remains constant",
+                "C": "Increases",
+                "D": "Becomes zero"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum is directly proportional to velocity.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which quantity is defined as rate of change of momentum?",
+            "options": {
+                "A": "Force",
+                "B": "Acceleration",
+                "C": "Velocity",
+                "D": "Energy"
+            },
+            "correct_answer": "A",
+            "explanation": "Force equals the rate of change of momentum.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "The SI unit of impulse is:",
+            "options": {
+                "A": "N",
+                "B": "kg m/s",
+                "C": "m/s",
+                "D": "J"
+            },
+            "correct_answer": "B",
+            "explanation": "Impulse has the same unit as momentum.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which example shows inertia of direction?",
+            "options": {
+                "A": "Passengers lean outward on a turning bus",
+                "B": "A book on a table",
+                "C": "A falling apple",
+                "D": "A car speeding"
+            },
+            "correct_answer": "A",
+            "explanation": "Objects resist change in direction due to inertia.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Which scientist formulated the three laws of motion?",
+            "options": {
+                "A": "Galileo",
+                "B": "Newton",
+                "C": "Einstein",
+                "D": "Kepler"
+            },
+            "correct_answer": "B",
+            "explanation": "Sir Isaac Newton proposed the laws of motion.",
+            "difficulty": "medium",
+            "source_section": "Section 8"
+        },
+        {
+            "question_number": 15,
+            "question": "Friction mainly acts:",
+            "options": {
+                "A": "Along motion",
+                "B": "Opposite to motion",
+                "C": "Upward",
+                "D": "Downward"
+            },
+            "correct_answer": "B",
+            "explanation": "Friction opposes the motion of objects.",
+            "difficulty": "medium",
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following increases momentum?",
+            "options": {
+                "A": "Decrease mass",
+                "B": "Increase velocity",
+                "C": "Decrease velocity",
+                "D": "Reduce acceleration"
+            },
+            "correct_answer": "B",
+            "explanation": "Momentum increases with velocity.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which example demonstrates conservation of momentum?",
+            "options": {
+                "A": "Two skaters pushing each other",
+                "B": "Stone falling",
+                "C": "Car stopping",
+                "D": "Walking"
+            },
+            "correct_answer": "A",
+            "explanation": "The total momentum remains constant.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 18,
+            "question": "A heavier object has:",
+            "options": {
+                "A": "Less inertia",
+                "B": "More inertia",
+                "C": "Same inertia",
+                "D": "No inertia"
+            },
+            "correct_answer": "B",
+            "explanation": "Inertia increases with mass.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which law explains the recoil of a gun?",
+            "options": {
+                "A": "First law",
+                "B": "Second law",
+                "C": "Third law",
+                "D": "Law of inertia"
+            },
+            "correct_answer": "C",
+            "explanation": "Action and reaction forces cause recoil.",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Momentum depends on:",
+            "options": {
+                "A": "Mass only",
+                "B": "Velocity only",
+                "C": "Mass and velocity",
+                "D": "Acceleration"
+            },
+            "correct_answer": "C",
+            "explanation": "Momentum = mass × velocity.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 21,
+            "question": "The SI unit of mass is:",
+            "options": {
+                "A": "kg",
+                "B": "N",
+                "C": "m/s",
+                "D": "J"
+            },
+            "correct_answer": "A",
+            "explanation": "Mass is measured in kilograms.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which quantity is scalar?",
+            "options": {
+                "A": "Force",
+                "B": "Momentum",
+                "C": "Mass",
+                "D": "Acceleration"
+            },
+            "correct_answer": "C",
+            "explanation": "Mass has magnitude only.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which law explains motion of rockets?",
+            "options": {
+                "A": "First law",
+                "B": "Second law",
+                "C": "Third law",
+                "D": "Law of gravity"
+            },
+            "correct_answer": "C",
+            "explanation": "Rocket propulsion follows Newton’s Third Law.",
+            "difficulty": "medium",
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Acceleration depends on:",
+            "options": {
+                "A": "Velocity change",
+                "B": "Time",
+                "C": "Both velocity change and time",
+                "D": "Mass only"
+            },
+            "correct_answer": "C",
+            "explanation": "Acceleration is change in velocity per unit time.",
+            "difficulty": "medium",
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Seat belts in cars reduce injury due to:",
+            "options": {
+                "A": "Gravity",
+                "B": "Momentum",
+                "C": "Inertia",
+                "D": "Velocity"
+            },
+            "correct_answer": "C",
+            "explanation": "Seat belts counteract inertia during sudden stops.",
+            "difficulty": "medium",
+            "source_section": "Section 8.3"
+        }
+    ]
+}

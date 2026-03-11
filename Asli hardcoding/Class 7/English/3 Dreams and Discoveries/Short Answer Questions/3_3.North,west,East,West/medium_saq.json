@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "North, South, East, West (Geography/Navigation)",
+  "generated_at": "2026-03-10T00:56:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the difference between cardinal and intermediate directions?",
+      "answer": "Cardinal directions are the four main points (North, South, East, West), while intermediate directions are the points in between them (North-East, South-East, South-West, North-West) used for more accuracy.",
+      "key_concepts": ["cardinal", "intermediate", "accuracy"],
+      "marks": 3,
+      "source_section": "Direction Basics"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how the Sun helps in identifying the four main directions.",
+      "answer": "The Sun rises in the East and sets in the West. If you face the morning Sun (East), West is behind you, North is to your left, and South is to your right.",
+      "key_concepts": ["sunrise", "relative orientation"],
+      "marks": 3,
+      "source_section": "Natural Indicators"
+    },
+    {
+      "question_number": 3,
+      "question": "Why does a magnetic compass needle always point North?",
+      "answer": "The Earth acts like a giant magnet with its own magnetic poles. The compass needle is a small magnet that aligns itself with the Earth's magnetic field, pointing toward the Magnetic North Pole.",
+      "key_concepts": ["magnetism", "Earth's magnetic field"],
+      "marks": 3,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a 'Compass Rose' and why is it found on maps?",
+      "answer": "A compass rose is a figure on a map used to display the orientation of the cardinal directions. It helps the reader understand which way is North, South, East, or West relative to the landmarks shown.",
+      "key_concepts": ["compass rose", "map orientation"],
+      "marks": 3,
+      "source_section": "Map Reading"
+    },
+    {
+      "question_number": 5,
+      "question": "How can you find North at night without a compass in the Northern Hemisphere?",
+      "answer": "By locating the 'Pole Star' (Polaris). It is a fixed star that stays almost exactly above the North Pole. You can find it by following the 'pointer stars' at the edge of the Big Dipper constellation.",
+      "key_concepts": ["Pole Star", "Polaris", "Big Dipper"],
+      "marks": 3,
+      "source_section": "Night Navigation"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the 'Shadow Stick' method to find East and West.",
+      "answer": "Place a stick in the ground and mark the tip of its shadow with a stone (West). Wait 15 minutes and mark the new shadow tip (East). A line connecting the two stones gives you the East-West line.",
+      "key_concepts": ["shadow stick", "sun movement"],
+      "marks": 3,
+      "source_section": "Field Techniques"
+    },
+    {
+      "question_number": 7,
+      "question": "In which direction would the shadow of an object fall at noon in the Northern Hemisphere?",
+      "answer": "At noon, the Sun is at its highest point in the South; therefore, the shadow of an object will fall toward the North.",
+      "key_concepts": ["noon sun", "shadow direction"],
+      "marks": 3,
+      "source_section": "Sun and Shadows"
+    },
+    {
+      "question_number": 8,
+      "question": "Why is it important for sailors to use a compass instead of just the Sun?",
+      "answer": "The Sun is not always visible due to clouds, fog, or night. A compass works in all weather conditions and at all times, providing a constant reference for navigation across the open sea.",
+      "key_concepts": ["reliability", "navigation"],
+      "marks": 3,
+      "source_section": "Usage"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the abbreviations for the four intermediate directions?",
+      "answer": "The abbreviations are NE (North-East), SE (South-East), SW (South-West), and NW (North-West).",
+      "key_concepts": ["abbreviations", "standardization"],
+      "marks": 3,
+      "source_section": "Direction Basics"
+    },
+    {
+      "question_number": 10,
+      "question": "How does an analog watch help you find South during the day?",
+      "answer": "In the Northern Hemisphere, point the hour hand at the Sun. The line exactly halfway between the hour hand and 12 o'clock points toward the South.",
+      "key_concepts": ["analog watch method", "bisecting angle"],
+      "marks": 3,
+      "source_section": "Field Techniques"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the concept of 'Magnetic North' vs. 'True North'.",
+      "answer": "True North is the fixed point of the Earth's axis (the North Pole). Magnetic North is the point where the Earth's magnetic field points, which can shift slightly over time.",
+      "key_concepts": ["True North", "Magnetic North"],
+      "marks": 3,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 12,
+      "question": "Why is North usually placed at the top of a map?",
+      "answer": "It is a global convention (standard) that helps people worldwide use and understand maps consistently. This makes it easier to compare different maps of the same area.",
+      "key_concepts": ["convention", "standardization"],
+      "marks": 3,
+      "source_section": "Map Reading"
+    },
+    {
+      "question_number": 13,
+      "question": "What natural signs on trees can help you identify directions?",
+      "answer": "In many regions, moss tends to grow on the North side of trees because it is shadier and damper. Also, branches might be thicker on the South side as they receive more sunlight.",
+      "key_concepts": ["moss growth", "sunlight", "nature signs"],
+      "marks": 3,
+      "source_section": "Natural Indicators"
+    },
+    {
+      "question_number": 14,
+      "question": "If a person is traveling from India to the North Pole, in which direction are they moving?",
+      "answer": "They are moving in the North direction.",
+      "key_concepts": ["geography", "orientation"],
+      "marks": 3,
+      "source_section": "General"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the degree measurement for East on a compass if North is 0°?",
+      "answer": "If North is 0°, moving clockwise, East is at 90°.",
+      "key_concepts": ["degrees", "bearings"],
+      "marks": 3,
+      "source_section": "Advanced Directions"
+    },
+    {
+      "question_number": 16,
+      "question": "How can birds and other animals find their way during migration without tools?",
+      "answer": "Many animals have a natural 'internal compass.' They can sense the Earth's magnetic field, use the position of the Sun and stars, and recognize landmarks.",
+      "key_concepts": ["internal compass", "migration"],
+      "marks": 3,
+      "source_section": "Nature"
+    },
+    {
+      "question_number": 17,
+      "question": "Describe the relationship between the Earth's rotation and the Sun's position.",
+      "answer": "The Earth rotates from West to East. This makes it appear as though the Sun is moving across the sky from East to West.",
+      "key_concepts": ["rotation", "apparent motion"],
+      "marks": 3,
+      "source_section": "Sun and Directions"
+    },
+    {
+      "question_number": 18,
+      "question": "Which intermediate direction lies exactly opposite to North-West?",
+      "answer": "The direction exactly opposite to North-West is South-East.",
+      "key_concepts": ["opposites", "symmetry"],
+      "marks": 3,
+      "source_section": "Direction Basics"
+    },
+    {
+      "question_number": 19,
+      "question": "Why shouldn't you use a compass near large iron objects or magnets?",
+      "answer": "Iron and magnets create their own magnetic fields which can 'distract' the compass needle, causing it to point away from the Earth's North Pole (magnetic interference).",
+      "key_concepts": ["magnetic interference", "accuracy"],
+      "marks": 3,
+      "source_section": "The Compass"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the meaning of 'clockwise' in the context of directions?",
+      "answer": "Clockwise is the direction the hands of a clock move. On a compass, the order North -> East -> South -> West is clockwise.",
+      "key_concepts": ["clockwise", "order"],
+      "marks": 3,
+      "source_section": "Direction Basics"
+    },
+    {
+      "question_number": 21,
+      "question": "If you are walking South-West and you turn 180 degrees, which direction are you now facing?",
+      "answer": "You are facing North-East.",
+      "key_concepts": ["degree turns", "opposites"],
+      "marks": 3,
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain why sailors in the Southern Hemisphere use the 'Southern Cross' instead of the Pole Star.",
+      "answer": "The Pole Star is not visible from the Southern Hemisphere. Instead, sailors use the Southern Cross constellation to find the South Celestial Pole and determine South.",
+      "key_concepts": ["Southern Cross", "hemisphere difference"],
+      "marks": 3,
+      "source_section": "Night Navigation"
+    },
+    {
+      "question_number": 23,
+      "question": "How does a map scale relate to direction?",
+      "answer": "While the scale tells you the distance, the compass rose on the map tells you the direction. Both are needed together to find a destination accurately.",
+      "key_concepts": ["scale vs direction", "map components"],
+      "marks": 3,
+      "source_section": "Map Reading"
+    },
+    {
+      "question_number": 24,
+      "question": "What is 'Dead Reckoning' in navigation?",
+      "answer": "It is the process of calculating one's current position by using a previously determined position and advancing that position based upon known speed, time, and direction.",
+      "key_concepts": ["dead reckoning", "calculation"],
+      "marks": 3,
+      "source_section": "Advanced Navigation"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the primary benefit of knowing intermediate directions like 'North-North-East'?",
+      "answer": "They allow for even greater precision in navigation, which is vital for pilots and ship captains to stay on a very specific course.",
+      "key_concepts": ["precision", "professional navigation"],
+      "marks": 3,
+      "source_section": "Advanced Directions"
+    }
+  ]
+}

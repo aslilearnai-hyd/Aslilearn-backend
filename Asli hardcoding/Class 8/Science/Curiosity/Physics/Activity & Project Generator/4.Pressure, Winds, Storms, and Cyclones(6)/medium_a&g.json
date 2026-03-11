@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Pressure, Winds, Storms, and Cyclones",
+  "difficulty": "Medium",
+  "source_pdf": "hecu106.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Pressure and Area Experiment",
+      "objective": "Understand how pressure changes with area",
+      "materials": ["Book", "Foam or sponge", "Ruler"],
+      "steps": [
+        "Place a book flat on the sponge and observe the indentation",
+        "Now place the book vertically on its edge",
+        "Compare how deep the sponge is pressed",
+        "Explain how area affects pressure"
+      ],
+      "learning_outcome": "Learns that smaller area produces greater pressure",
+      "evaluation": "Observation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Liquid Pressure Demonstration",
+      "objective": "Understand that liquid pressure increases with depth",
+      "materials": ["Plastic bottle", "Water", "Pin"],
+      "steps": [
+        "Make three holes at different heights on a plastic bottle",
+        "Fill the bottle with water",
+        "Observe water flow from each hole",
+        "Compare the distance the water travels"
+      ],
+      "learning_outcome": "Understands that liquid pressure increases with depth",
+      "evaluation": "Observation accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Air Pressure Demonstration",
+      "objective": "Show that air exerts pressure",
+      "materials": ["Glass", "Water", "Cardboard"],
+      "steps": [
+        "Fill the glass with water",
+        "Place cardboard over the mouth of the glass",
+        "Invert the glass carefully",
+        "Observe that the cardboard holds the water"
+      ],
+      "learning_outcome": "Recognizes atmospheric pressure",
+      "evaluation": "Explanation of observation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Wind Direction Observation",
+      "objective": "Understand how winds move",
+      "materials": ["Paper strips", "Stick", "Tape"],
+      "steps": [
+        "Attach paper strips to a stick",
+        "Place it outside in an open area",
+        "Observe the direction in which strips move",
+        "Record observations at different times of day"
+      ],
+      "learning_outcome": "Learns how wind direction can be observed",
+      "evaluation": "Observation record (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Balloon Air Pressure Activity",
+      "objective": "Understand pressure differences in air",
+      "materials": ["Two balloons", "Thread", "Straw"],
+      "steps": [
+        "Inflate one balloon and keep another uninflated",
+        "Connect them using a straw",
+        "Observe the transfer of air",
+        "Explain why the balloons change size"
+      ],
+      "learning_outcome": "Understands air moves from high pressure to low pressure",
+      "evaluation": "Explanation clarity (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Paper Strip Airflow Experiment",
+      "objective": "Observe pressure change due to fast-moving air",
+      "materials": ["Paper strip"],
+      "steps": [
+        "Hold a strip of paper so it hangs freely",
+        "Blow air over the top of the strip",
+        "Observe the movement of the paper",
+        "Explain the reason for the movement"
+      ],
+      "learning_outcome": "Understands that fast-moving air lowers pressure",
+      "evaluation": "Scientific explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Wind Speed Comparison",
+      "objective": "Observe how wind strength varies",
+      "materials": ["Light ribbon", "Stick", "Notebook"],
+      "steps": [
+        "Attach ribbon to a stick",
+        "Observe its movement on calm and windy days",
+        "Record the observations",
+        "Compare wind strength"
+      ],
+      "learning_outcome": "Learns that wind speed varies due to pressure differences",
+      "evaluation": "Data recording (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Storm Impact Research",
+      "objective": "Understand effects of storms",
+      "materials": ["Notebook", "Internet or newspaper"],
+      "steps": [
+        "Research one recent storm or cyclone",
+        "Note its location and effects",
+        "Write how people were affected",
+        "Suggest safety measures"
+      ],
+      "learning_outcome": "Connects scientific concepts with real-world events",
+      "evaluation": "Quality of research (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Cyclone Formation Model",
+      "objective": "Understand how cyclones form",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Draw a diagram showing warm air rising and cool air moving in",
+        "Label pressure differences",
+        "Show rotation due to Earth's movement",
+        "Explain the cyclone formation process"
+      ],
+      "learning_outcome": "Understands the process of cyclone formation",
+      "evaluation": "Accuracy of diagram (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Weather Observation Diary",
+      "objective": "Observe daily weather conditions",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Record wind, clouds, and temperature each day for a week",
+        "Note strong wind or calm days",
+        "Compare patterns",
+        "Relate observations to pressure differences"
+      ],
+      "learning_outcome": "Develops weather observation skills",
+      "evaluation": "Consistency and analysis (10 marks)"
+    }
+  ]
+}

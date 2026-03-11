@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: Gender, Religion and Caste",
+  "generated_at": "2026-03-11T17:05:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is gender division?",
+        "correct_answer": "A social division based on unequal roles and responsibilities assigned to men and women",
+        "explanation": "Gender division is created by social expectations rather than biological differences.",
+        "source_section": "Gender and Politics"
+      },
+      {
+        "question": "What is sexual division of labour?",
+        "correct_answer": "A system where household work is done mainly by women and outside work by men",
+        "explanation": "This division often undervalues women’s household work.",
+        "source_section": "Public/Private Division"
+      },
+      {
+        "question": "What is patriarchy?",
+        "correct_answer": "A social system where men hold primary power and dominate in society",
+        "explanation": "In patriarchal societies, men often control political, economic, and family decisions.",
+        "source_section": "Gender and Politics"
+      },
+      {
+        "question": "What is a feminist?",
+        "correct_answer": "A person who believes in equal rights and opportunities for men and women",
+        "explanation": "Feminists advocate for gender equality in society.",
+        "source_section": "Political Expression of Gender Division"
+      },
+      {
+        "question": "What is communalism?",
+        "correct_answer": "A belief that religion is the principal basis of social community",
+        "explanation": "Communalism often leads to conflict between religious groups.",
+        "source_section": "Religion, Communalism and Politics"
+      },
+      {
+        "question": "What is a secular state?",
+        "correct_answer": "A state that does not favor any religion and treats all religions equally",
+        "explanation": "In a secular state, citizens are free to practice any religion.",
+        "source_section": "Secular State"
+      },
+      {
+        "question": "What does the Indian Constitution guarantee regarding religion?",
+        "correct_answer": "Freedom to profess, practice, and propagate any religion",
+        "explanation": "The Constitution ensures equality and prevents discrimination on religious grounds.",
+        "source_section": "Secular State"
+      },
+      {
+        "question": "What is the caste system?",
+        "correct_answer": "A social system where people are grouped based on hereditary occupation and social status",
+        "explanation": "The caste system historically created social inequality in India.",
+        "source_section": "Caste Inequalities"
+      },
+      {
+        "question": "What is untouchability?",
+        "correct_answer": "A discriminatory practice where certain caste groups were treated as socially inferior and excluded",
+        "explanation": "Untouchability was officially abolished by the Indian Constitution.",
+        "source_section": "Caste Inequalities"
+      },
+      {
+        "question": "How does caste influence politics in India?",
+        "correct_answer": "Political parties often consider caste composition when selecting candidates",
+        "explanation": "Caste-based mobilization sometimes influences election strategies.",
+        "source_section": "Caste and Politics"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Gender Division",
+        "content": "Gender division refers to unequal social roles assigned to men and women by society.",
+        "source_section": "Gender and Politics"
+      },
+      {
+        "title": "Feminist Movement",
+        "content": "Feminist movements aim to achieve equal rights and opportunities for women.",
+        "source_section": "Political Expression of Gender Division"
+      },
+      {
+        "title": "Communalism",
+        "content": "Communalism occurs when religion is used as the basis for political identity and conflict.",
+        "source_section": "Religion, Communalism and Politics"
+      },
+      {
+        "title": "Secularism",
+        "content": "Secularism means that the state does not promote any particular religion and treats all religions equally.",
+        "source_section": "Secular State"
+      },
+      {
+        "title": "Caste System",
+        "content": "The caste system is a traditional form of social division based on hereditary occupations and social hierarchy.",
+        "source_section": "Caste Inequalities"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Women constitute about half of the population but have historically had low political representation.",
+        "source_section": "Gender and Politics"
+      },
+      {
+        "fact": "India has no official state religion.",
+        "source_section": "Secular State"
+      },
+      {
+        "fact": "The Indian Constitution bans untouchability.",
+        "source_section": "Caste Inequalities"
+      },
+      {
+        "fact": "Reservation of seats for women exists in Panchayati Raj institutions.",
+        "source_section": "Women’s Political Representation"
+      }
+    ]
+  }
+}

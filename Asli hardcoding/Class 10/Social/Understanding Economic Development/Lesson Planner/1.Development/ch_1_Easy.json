@@ -1,0 +1,154 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Economics)",
+  "chapter_name": "Development",
+  "lesson_level": "Easy",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the meaning of development",
+    "Identify different developmental goals",
+    "Understand income and per capita income",
+    "Learn about Human Development Index (HDI)",
+    "Compare developed and developing countries",
+    "Understand sustainable development"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Development",
+      "topics_covered": [
+        "Meaning of development",
+        "Different people, different goals",
+        "Examples of developmental goals"
+      ],
+      "teaching_strategy": [
+        "Class discussion",
+        "Real-life examples",
+        "Question-answer session"
+      ],
+      "student_activities": [
+        "List personal development goals",
+        "Discuss how goals differ between farmer, student, and businessman"
+      ],
+      "assessment": ["Oral questioning", "Short written response (2-3 lines)"]
+    },
+    {
+      "period": 2,
+      "title": "Income and Other Goals",
+      "topics_covered": [
+        "Role of income in development",
+        "Non-material goals (security, respect, equality)",
+        "Conflicting goals"
+      ],
+      "teaching_strategy": [
+        "Story-based explanation",
+        "Board examples",
+        "Think-pair-share activity"
+      ],
+      "student_activities": [
+        "Identify material and non-material goals",
+        "Group discussion on conflicting goals"
+      ],
+      "assessment": ["MCQs", "Short answer questions"]
+    },
+    {
+      "period": 3,
+      "title": "National Development and Per Capita Income",
+      "topics_covered": [
+        "National income",
+        "Per capita income",
+        "Comparison between countries"
+      ],
+      "teaching_strategy": [
+        "Simple numerical examples",
+        "Comparison chart on board"
+      ],
+      "student_activities": [
+        "Calculate per capita income using simple data",
+        "Compare two imaginary countries"
+      ],
+      "assessment": ["Class exercise problems", "Notebook checking"]
+    },
+    {
+      "period": 4,
+      "title": "Human Development Index (HDI)",
+      "topics_covered": [
+        "Meaning of HDI",
+        "Components: Health, Education, Income",
+        "Importance of HDI"
+      ],
+      "teaching_strategy": [
+        "Flowchart explanation",
+        "Comparison of India and Sri Lanka (example)"
+      ],
+      "student_activities": [
+        "List components of HDI",
+        "Identify which indicator belongs to health or education"
+      ],
+      "assessment": ["Fill in the blanks", "True/False questions"]
+    },
+    {
+      "period": 5,
+      "title": "Public Facilities",
+      "topics_covered": [
+        "Meaning of public facilities",
+        "Examples: hospitals, schools, roads",
+        "Importance of government role"
+      ],
+      "teaching_strategy": ["Real-life examples", "Local area discussion"],
+      "student_activities": [
+        "List public facilities in your area",
+        "Explain why they are important"
+      ],
+      "assessment": ["Short paragraph writing", "Oral questioning"]
+    },
+    {
+      "period": 6,
+      "title": "Sustainable Development",
+      "topics_covered": [
+        "Meaning of sustainable development",
+        "Renewable and non-renewable resources",
+        "Need for conservation"
+      ],
+      "teaching_strategy": [
+        "Diagram explanation",
+        "Examples of overuse of resources"
+      ],
+      "student_activities": [
+        "Identify renewable and non-renewable resources",
+        "Suggest ways to conserve resources"
+      ],
+      "assessment": ["MCQs", "Short answer questions"]
+    },
+    {
+      "period": 7,
+      "title": "Chapter Revision and Assessment",
+      "topics_covered": [
+        "Revision of key concepts",
+        "Comparison of income vs HDI",
+        "Quick recap of sustainable development"
+      ],
+      "teaching_strategy": ["Quiz-based revision", "Concept mapping"],
+      "student_activities": [
+        "Group quiz competition",
+        "Prepare small concept map of chapter"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification session"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Economics Textbook",
+    "Charts showing HDI components"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "MCQs",
+    "Short answer tests",
+    "Group discussion"
+  ],
+  "teacher_tip": "Focus on explaining development beyond income. Use real-life examples to help students understand HDI and sustainable development clearly."
+}

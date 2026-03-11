@@ -1,0 +1,174 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Pair of Linear Equations in Two Variables",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand linear equations in two variables",
+        "Represent linear equations graphically",
+        "Understand consistency of a pair of equations",
+        "Identify number of solutions using graphs",
+        "Solve simple pairs of equations using graphical method"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Linear Equations in Two Variables",
+            "topics_covered": [
+                "Revision of linear equations in one variable",
+                "Linear equations in two variables",
+                "General form ax + by + c = 0"
+            ],
+            "teaching_strategy": [
+                "Revision discussion",
+                "Simple examples on board"
+            ],
+            "student_activities": [
+                "Identify variables in given equations",
+                "Write equations in standard form"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short written exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Graph of a Linear Equation",
+            "topics_covered": [
+                "Graphical representation",
+                "Finding points on a line",
+                "Plotting straight lines"
+            ],
+            "teaching_strategy": [
+                "Graph plotting demonstration",
+                "Table of values method"
+            ],
+            "student_activities": [
+                "Draw graph of x + y = 4",
+                "Plot points on graph paper"
+            ],
+            "assessment": [
+                "Graph checking",
+                "Notebook correction"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Pair of Linear Equations – Graphical Method",
+            "topics_covered": [
+                "Two linear equations",
+                "Graphical solution",
+                "Point of intersection"
+            ],
+            "teaching_strategy": [
+                "Side-by-side graph plotting",
+                "Visual explanation"
+            ],
+            "student_activities": [
+                "Solve a pair using graph",
+                "Mark intersection point"
+            ],
+            "assessment": [
+                "Board problems",
+                "Peer correction"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Consistency of a Pair of Linear Equations",
+            "topics_covered": [
+                "Intersecting lines",
+                "Parallel lines",
+                "Coincident lines"
+            ],
+            "teaching_strategy": [
+                "Graph comparison",
+                "Discussion-based learning"
+            ],
+            "student_activities": [
+                "Identify nature of solutions from graphs",
+                "Class discussion"
+            ],
+            "assessment": [
+                "Oral assessment",
+                "MCQs"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Conditions for No Solution and Infinite Solutions",
+            "topics_covered": [
+                "Coefficient ratios",
+                "Geometrical interpretation"
+            ],
+            "teaching_strategy": [
+                "Explanation using examples",
+                "Formula-based reasoning"
+            ],
+            "student_activities": [
+                "Match equations with type of solution",
+                "Solve classification problems"
+            ],
+            "assessment": [
+                "Worksheet",
+                "Short answers"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Simple Applications of Linear Equations",
+            "topics_covered": [
+                "Word problems",
+                "Real-life situations"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving",
+                "Think-aloud method"
+            ],
+            "student_activities": [
+                "Solve simple word problems",
+                "Explain steps orally"
+            ],
+            "assessment": [
+                "Classwork evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Revision and Assessment",
+            "topics_covered": [
+                "Key concepts",
+                "Graphical method",
+                "Nature of solutions"
+            ],
+            "teaching_strategy": [
+                "Quick recap",
+                "Mixed problem solving"
+            ],
+            "student_activities": [
+                "Revision quiz",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Short test (10 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "Ruler",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Graph work",
+        "MCQs",
+        "Short answer tests",
+        "Notebook checking"
+    ],
+    "teacher_tip": "Spend more time on graphical interpretation to help students visualize solutions clearly."
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: ENVIRONMENT",
+    "generated_at": "2026-03-07T18:14:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze why the Lithosphere is considered a source of mineral wealth rather than just a landmass.",
+            "answer": "It is the outermost solid layer of the earth composed of various rocks and minerals which are essential for industrial and economic development.",
+            "key_concepts": ["mineral resources"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the 'Atmosphere' act as a thermal buffer for the Earth?",
+            "answer": "By containing gases and water vapor that trap heat (greenhouse effect) and shield the planet from the sun's scorching UV radiation.",
+            "key_concepts": ["atmospheric protection"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate the statement: 'The ecosystem is a functional unit of nature'.",
+            "answer": "It is where living organisms interact among themselves and with their physical environment through energy flow and nutrient cycling.",
+            "key_concepts": ["functional ecology"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the primary catalyst for the 'modification of the environment' by modern human beings?",
+            "answer": "The Industrial Revolution and the advancement of technology, which allowed humans to exploit natural resources at an unprecedented scale.",
+            "key_concepts": ["human modification"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of 'neighborhood' in the context of the etymology of the word Environment.",
+            "answer": "Derived from the French 'Environer', it suggests that the environment is everything that immediate surrounds and influences an organism.",
+            "key_concepts": ["etymology of environment"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the 'Biosphere' dependent on the existence of the Lithosphere, Hydrosphere, and Atmosphere?",
+            "answer": "Because life can only exist where the solid surface, water bodies, and air overlap to provide the necessary nutrients and conditions.",
+            "key_concepts": ["interdependence of domains"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Contrast the 'Biotic' and 'Abiotic' factors in a tropical rainforest ecosystem.",
+            "answer": "Biotic factors include trees, jaguars, and insects; Abiotic factors include high rainfall, humidity, and nutrient-poor soil.",
+            "key_concepts": ["ecosystem components"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "How did the transition from a 'simple life' to a 'technological life' affect the Earth's natural balance?",
+            "answer": "Early humans fulfilled needs from nature, whereas modern humans create a surplus that leads to pollution and resource depletion.",
+            "key_concepts": ["human environment evolution"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What role does the 'Gravitational Force' of the Earth play in maintaining the Environment?",
+            "answer": "It holds the atmosphere in place, preventing the gases required for life from escaping into outer space.",
+            "key_concepts": ["gravity and atmosphere"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Identify the 'Human-made' components that have replaced natural ecosystems in urban areas.",
+            "answer": "Concrete structures like buildings, roads, and bridges which modify the local climate (urban heat islands).",
+            "key_concepts": ["human-made environment"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why a 'Pond' is considered a self-sustaining ecosystem.",
+            "answer": "Because it contains producers (plants), consumers (fish), and decomposers that interact within a defined watery environment.",
+            "key_concepts": ["ecosystem sustainability"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the significant difference between 'Natural Environment' and 'Human Environment'?",
+            "answer": "Natural environment consists of biological and physical entities; Human environment consists of social, cultural, and political interactions.",
+            "key_concepts": ["environmental classification"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "How does the 'Information Revolution' impact the global environment today?",
+            "answer": "It has made communication instantaneous and global, allowing for better environmental monitoring but increasing energy consumption.",
+            "key_concepts": ["technological impact"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Why do landforms like mountains and plains exist even on the 'Ocean Floors'?",
+            "answer": "Because the Lithosphere (crust) extends under the oceans, featuring its own rugged topography similar to the continents.",
+            "key_concepts": ["lithospheric landforms"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe the interdependence between 'Plants' and 'Animals' in the carbon cycle.",
+            "answer": "Animals provide $CO_2$ for plant photosynthesis, while plants provide $O_2$ and food for animal survival.",
+            "key_concepts": ["biotic interdependence"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What constitutes the 'Social Environment' of a human being?",
+            "answer": "The family, community, religion, educational institutions, and political systems an individual interacts with.",
+            "key_concepts": ["human environment components"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is the celebration of 'World Environment Day' globally significant?",
+            "answer": "It serves as a collective reminder to protect the natural balance and address human-induced environmental issues like climate change.",
+            "key_concepts": ["environmental awareness"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "How did 'Agriculture' mark a turning point in the human environment?",
+            "answer": "It led to a settled life, food surplus, and the development of trade systems like the 'Barter System'.",
+            "key_concepts": ["agricultural impact"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Define 'Abiotic' in a way that includes more than just 'land'.",
+            "answer": "It encompasses all non-living physical and chemical elements in the ecosystem, including sunlight, temperature, and minerals.",
+            "key_concepts": ["abiotic factors"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the relationship between 'Needs' and 'Greed' in the context of environmental modification?",
+            "answer": "Needs lead to sustainable use of resources, while greed (excessive modification) leads to a disturbed natural balance.",
+            "key_concepts": ["sustainable development"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why the 'Atmosphere' is not a uniform layer.",
+            "answer": "It consists of a varying mixture of gases, dust particles, and water vapor that changes with altitude and location.",
+            "key_concepts": ["atmospheric composition"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is 'Water' (Hydrosphere) found in various forms in the environment?",
+            "answer": "It exists as liquid (oceans), solid (glaciers), and gas (water vapor) to facilitate the global water cycle.",
+            "key_concepts": ["hydrospheric states"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Analyze the role of 'Decomposers' in maintaining the ecosystem.",
+            "answer": "They break down dead biotic material into abiotic nutrients, thereby recycling matter within the environment.",
+            "key_concepts": ["nutrient cycling"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "How does 'Culture' form a part of the human environment?",
+            "answer": "Culture dictates how humans perceive, use, and modify their natural surroundings through traditions and values.",
+            "key_concepts": ["human environment"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the ultimate goal of studying 'Our Environment'?",
+            "answer": "To understand the complex interactions between natural and human systems to foster a sustainable future.",
+            "key_concepts": ["environmental education"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        }
+    ]
+}

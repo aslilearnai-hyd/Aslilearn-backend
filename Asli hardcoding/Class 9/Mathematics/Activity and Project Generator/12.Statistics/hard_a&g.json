@@ -1,0 +1,201 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class9_math_ch12.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Advanced Data Collection Project",
+            "objective": "Collect large real-life data set and organize it",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Measuring tools or survey forms"
+            ],
+            "steps": [
+                "Choose a topic (e.g., daily temperatures, footfall in school, household water usage)",
+                "Collect data for at least 50 entries",
+                "Tabulate the data in classes or intervals",
+                "Draw frequency, cumulative frequency tables"
+            ],
+            "learning_outcome": "Develops skills for handling large data sets",
+            "evaluation": "Accuracy and completeness of data (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Comparison of Multiple Data Sets",
+            "objective": "Analyze and compare multiple groups using statistical measures",
+            "materials": [
+                "Notebook",
+                "Graph paper",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take data from three different classes (e.g., marks in a test)",
+                "Calculate mean, median, and mode for each class",
+                "Draw comparative bar graphs and cumulative frequency curves",
+                "Write observations on which class performed better and why"
+            ],
+            "learning_outcome": "Applies statistics to comparative analysis",
+            "evaluation": "Correct calculation, graphs, and analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Box-and-Whisker Plot Creation",
+            "objective": "Represent grouped data using a box plot",
+            "materials": [
+                "Graph paper",
+                "Notebook",
+                "Pencil",
+                "Ruler"
+            ],
+            "steps": [
+                "Take data for a group of students (e.g., heights or marks)",
+                "Calculate quartiles Q1, Q2 (median), Q3",
+                "Draw box-and-whisker plot to visualize spread and central tendency",
+                "Analyze data skewness and range"
+            ],
+            "learning_outcome": "Visualizes data distribution using advanced plots",
+            "evaluation": "Correct quartiles, plot, and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Probability Connection Project",
+            "objective": "Relate frequency data to probability",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Dice or coins",
+                "Calculator"
+            ],
+            "steps": [
+                "Collect data from tossing dice or coins multiple times",
+                "Record frequency of each outcome",
+                "Calculate experimental probability",
+                "Compare with theoretical probability and analyze differences"
+            ],
+            "learning_outcome": "Connects statistics with probability concepts",
+            "evaluation": "Correct probability calculations and analysis (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Statistical Analysis of Real-Life Survey",
+            "objective": "Conduct survey and analyze using statistical measures",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Survey forms",
+                "Calculator"
+            ],
+            "steps": [
+                "Conduct survey on topics like favourite food, mode of transport, or study hours",
+                "Organize data in frequency tables",
+                "Calculate mean, median, mode, and range",
+                "Draw bar graphs, pie charts, and cumulative frequency curves",
+                "Write observations and conclusions"
+            ],
+            "learning_outcome": "Applies all statistical tools to real-life situations",
+            "evaluation": "Completeness, correct calculations, and graphical representation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Time-Series Data Analysis",
+            "objective": "Collect and analyze data over time",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Graph paper"
+            ],
+            "steps": [
+                "Take data like daily rainfall, stock prices, or temperatures over 30 days",
+                "Draw time-series graph with days on x-axis and values on y-axis",
+                "Calculate trends, averages, and fluctuations",
+                "Interpret results"
+            ],
+            "learning_outcome": "Analyzes statistical trends over time",
+            "evaluation": "Accurate graph, calculations, and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Grouped Data Analysis with Cumulative Frequencies",
+            "objective": "Calculate median, quartiles, and mode for grouped data",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Take data in class intervals",
+                "Calculate cumulative frequencies",
+                "Determine median using median formula",
+                "Calculate quartiles Q1 and Q3",
+                "Calculate mode using modal class formula"
+            ],
+            "learning_outcome": "Advanced calculation skills for grouped data",
+            "evaluation": "Correct results for median, quartiles, and mode (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Correlation Analysis Project",
+            "objective": "Analyze relationship between two variables",
+            "materials": [
+                "Notebook",
+                "Pencil",
+                "Calculator"
+            ],
+            "steps": [
+                "Collect paired data (e.g., hours studied vs marks obtained)",
+                "Draw scatter diagram",
+                "Observe trend and discuss correlation (positive/negative/no correlation)",
+                "Write findings"
+            ],
+            "learning_outcome": "Understands correlation using statistics",
+            "evaluation": "Correct scatter plot and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Advanced Pie Chart Project",
+            "objective": "Represent complex categorical data using pie chart",
+            "materials": [
+                "Graph paper",
+                "Notebook",
+                "Pencil",
+                "Protractor",
+                "Colours"
+            ],
+            "steps": [
+                "Collect categorical data (e.g., students’ favourite subjects or sports)",
+                "Calculate angles for each category",
+                "Draw pie chart accurately using protractor",
+                "Label each sector and write percentage values"
+            ],
+            "learning_outcome": "Represents complex data visually",
+            "evaluation": "Correct angles, labeling, and percentages (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Comprehensive Statistical Project",
+            "objective": "Combine data collection, tabulation, graphing, and analysis",
+            "materials": [
+                "Notebook",
+                "Graph paper",
+                "Pencil",
+                "Calculator",
+                "Survey tools"
+            ],
+            "steps": [
+                "Select a topic for survey (e.g., daily habits of students)",
+                "Collect data for at least 50 entries",
+                "Create frequency and cumulative frequency tables",
+                "Calculate mean, median, mode, and range",
+                "Draw bar graphs, pie charts, and cumulative frequency curves",
+                "Interpret data and write detailed observations"
+            ],
+            "learning_outcome": "Integrates all statistical methods in one comprehensive project",
+            "evaluation": "Accuracy, completeness, graphical representation, and analysis (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: What is Democracy? Why Democracy?",
+    "generated_at": "2026-03-07T22:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which combination correctly represents the four features of democracy?",
+            "options": {
+                "A": "Elected rulers, free elections, political equality, rule of law",
+                "B": "Military rule, monarchy, elections, dictatorship",
+                "C": "Single party rule, monarchy, equality, dictatorship",
+                "D": "Military rule, dictatorship, monarchy, hereditary rule"
+            },
+            "correct_answer": "A",
+            "explanation": "These four are the essential features of democracy.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which situation best represents democracy?",
+            "options": {
+                "A": "Military decides policies",
+                "B": "People elect leaders who make decisions",
+                "C": "King appoints government",
+                "D": "Single party controls elections"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy involves elected representatives chosen by citizens.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following indicates lack of democratic elections?",
+            "options": {
+                "A": "Multiple parties contest elections",
+                "B": "Candidates chosen by one political party only",
+                "C": "Citizens vote freely",
+                "D": "Regular elections"
+            },
+            "correct_answer": "B",
+            "explanation": "Limited candidate choice weakens democracy.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which democratic principle ensures fairness in political participation?",
+            "options": {
+                "A": "One person one vote one value",
+                "B": "Military rule",
+                "C": "Single party rule",
+                "D": "Hereditary rule"
+            },
+            "correct_answer": "A",
+            "explanation": "This principle ensures political equality.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which statement best explains democracy as accountable government?",
+            "options": {
+                "A": "Leaders inherit power",
+                "B": "Leaders are answerable to citizens through elections",
+                "C": "Military leaders control government",
+                "D": "Citizens cannot question leaders"
+            },
+            "correct_answer": "B",
+            "explanation": "Regular elections make leaders accountable.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which feature allows peaceful change of rulers in democracy?",
+            "options": {
+                "A": "Military rule",
+                "B": "Free and fair elections",
+                "C": "Single party rule",
+                "D": "Monarchy"
+            },
+            "correct_answer": "B",
+            "explanation": "Elections allow citizens to replace leaders peacefully.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is democracy considered better for decision making?",
+            "options": {
+                "A": "Decisions are made by kings",
+                "B": "Discussion and consultation occur",
+                "C": "Military controls decisions",
+                "D": "Single leader decides everything"
+            },
+            "correct_answer": "B",
+            "explanation": "Discussion reduces mistakes in decisions.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which democratic value helps resolve conflicts?",
+            "options": {
+                "A": "Violence",
+                "B": "Dialogue and discussion",
+                "C": "Military control",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "B",
+            "explanation": "Democracy resolves conflicts through peaceful discussion.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which feature of democracy enhances dignity of citizens?",
+            "options": {
+                "A": "Equal participation in decision making",
+                "B": "Military rule",
+                "C": "Dictatorship",
+                "D": "Monarchy"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy treats citizens as equal participants.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "How does democracy allow correction of mistakes?",
+            "options": {
+                "A": "War",
+                "B": "Elections",
+                "C": "Military takeover",
+                "D": "Monarchy"
+            },
+            "correct_answer": "B",
+            "explanation": "Citizens can replace rulers through elections.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which country example shows military dominance despite elections?",
+            "options": {
+                "A": "India",
+                "B": "Pakistan",
+                "C": "Japan",
+                "D": "Brazil"
+            },
+            "correct_answer": "B",
+            "explanation": "Pakistan under General Musharraf had military influence.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which country required Communist Party approval for candidates?",
+            "options": {
+                "A": "China",
+                "B": "India",
+                "C": "USA",
+                "D": "France"
+            },
+            "correct_answer": "A",
+            "explanation": "China allows elections but with limited candidate choice.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which country had one-party dominance for decades?",
+            "options": {
+                "A": "Mexico",
+                "B": "Germany",
+                "C": "India",
+                "D": "Australia"
+            },
+            "correct_answer": "A",
+            "explanation": "Mexico had a dominant party for many years.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which system involves citizens electing representatives?",
+            "options": {
+                "A": "Representative democracy",
+                "B": "Dictatorship",
+                "C": "Monarchy",
+                "D": "Military rule"
+            },
+            "correct_answer": "A",
+            "explanation": "People elect representatives to govern.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is representative democracy necessary?",
+            "options": {
+                "A": "Population is very large",
+                "B": "People cannot vote",
+                "C": "Kings rule",
+                "D": "Military rule exists"
+            },
+            "correct_answer": "A",
+            "explanation": "Large populations make direct democracy impractical.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Which democratic feature limits government power?",
+            "options": {
+                "A": "Constitution",
+                "B": "Military rule",
+                "C": "Dictatorship",
+                "D": "Monarchy"
+            },
+            "correct_answer": "A",
+            "explanation": "The constitution sets limits on government authority.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which value helps democracy manage social diversity?",
+            "options": {
+                "A": "Consultation",
+                "B": "Violence",
+                "C": "Dictatorship",
+                "D": "Military rule"
+            },
+            "correct_answer": "A",
+            "explanation": "Consultation helps different groups coexist peacefully.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which system promotes equality in political rights?",
+            "options": {
+                "A": "Universal adult franchise",
+                "B": "Monarchy",
+                "C": "Military rule",
+                "D": "Single party rule"
+            },
+            "correct_answer": "A",
+            "explanation": "All adults have the right to vote.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which democratic value strengthens citizen participation?",
+            "options": {
+                "A": "Freedom of expression",
+                "B": "Military rule",
+                "C": "Dictatorship",
+                "D": "Monarchy"
+            },
+            "correct_answer": "A",
+            "explanation": "Freedom of expression allows citizens to voice opinions.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which system allows peaceful coexistence in diverse societies?",
+            "options": {
+                "A": "Democracy",
+                "B": "Dictatorship",
+                "C": "Military rule",
+                "D": "Monarchy"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy allows discussion among diverse groups.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Which factor strengthens democracy the most?",
+            "options": {
+                "A": "Active citizen participation",
+                "B": "Military control",
+                "C": "Single ruler",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Participation strengthens democracy.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which democratic principle ensures fairness in elections?",
+            "options": {
+                "A": "Political equality",
+                "B": "Military rule",
+                "C": "Monarchy",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Political equality ensures equal voting rights.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which feature ensures leaders follow legal limits?",
+            "options": {
+                "A": "Rule of law",
+                "B": "Military rule",
+                "C": "Monarchy",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Rule of law limits government power.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which democratic value promotes better decision making?",
+            "options": {
+                "A": "Discussion",
+                "B": "Violence",
+                "C": "Military rule",
+                "D": "Dictatorship"
+            },
+            "correct_answer": "A",
+            "explanation": "Discussion and consultation improve decisions.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement correctly describes democracy?",
+            "options": {
+                "A": "People elect rulers and participate in governance",
+                "B": "Military controls government",
+                "C": "Kings rule permanently",
+                "D": "Citizens cannot criticize leaders"
+            },
+            "correct_answer": "A",
+            "explanation": "Democracy is based on elections and citizen participation.",
+            "difficulty": "hard",
+            "source_section": "Section 1.1"
+        }
+    ]
+}

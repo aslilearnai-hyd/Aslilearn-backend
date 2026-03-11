@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Law and Social Justice",
+  "generated_at": "2026-03-07T15:20:00",
+  "difficulty": "hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why are labour laws necessary in modern industrial societies?",
+      "options": {
+        "A": "To increase company profits",
+        "B": "To protect workers from exploitation",
+        "C": "To reduce worker rights",
+        "D": "To support unsafe industries"
+      },
+      "correct_answer": "B",
+      "explanation": "Labour laws protect workers from unfair wages, unsafe conditions and exploitation.",
+      "difficulty": "hard",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which principle ensures that workers are paid fairly for their labour?",
+      "options": {
+        "A": "Minimum wage law",
+        "B": "Trade monopoly",
+        "C": "Colonial rule",
+        "D": "Political authority"
+      },
+      "correct_answer": "A",
+      "explanation": "Minimum wage laws ensure that workers receive a legally fixed minimum salary.",
+      "difficulty": "hard",
+      "source_section": "Minimum Wages"
+    },
+    {
+      "question_number": 3,
+      "question": "Which law regulates safety, health and working conditions in factories?",
+      "options": {
+        "A": "Factory Act",
+        "B": "Trade Act",
+        "C": "Education Act",
+        "D": "Transport Act"
+      },
+      "correct_answer": "A",
+      "explanation": "The Factory Act ensures safe and regulated working conditions in factories.",
+      "difficulty": "hard",
+      "source_section": "Factories"
+    },
+    {
+      "question_number": 4,
+      "question": "Which constitutional value supports fair treatment of workers in society?",
+      "options": {
+        "A": "Justice",
+        "B": "Bias",
+        "C": "Discrimination",
+        "D": "Conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Justice ensures fair treatment and protection of workers’ rights.",
+      "difficulty": "hard",
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 5,
+      "question": "Which law prohibits children from working in hazardous occupations?",
+      "options": {
+        "A": "Child Labour Prohibition Act",
+        "B": "Trade Regulation Act",
+        "C": "Industrial Tax Act",
+        "D": "Transport Act"
+      },
+      "correct_answer": "A",
+      "explanation": "This law bans children from working in hazardous industries.",
+      "difficulty": "hard",
+      "source_section": "Child Labour"
+    },
+    {
+      "question_number": 6,
+      "question": "Which institution is responsible for interpreting labour laws and delivering justice?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Market",
+        "C": "Hospital",
+        "D": "School"
+      },
+      "correct_answer": "A",
+      "explanation": "Courts interpret laws and ensure justice in labour disputes.",
+      "difficulty": "hard",
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 7,
+      "question": "Which concept refers to fairness in distribution of opportunities and resources?",
+      "options": {
+        "A": "Social justice",
+        "B": "Colonial rule",
+        "C": "Economic monopoly",
+        "D": "Political dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice ensures fair opportunities and protection of rights.",
+      "difficulty": "hard",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 8,
+      "question": "Which organisation is formed by workers to demand better wages and working conditions?",
+      "options": {
+        "A": "Labour unions",
+        "B": "Hospitals",
+        "C": "Schools",
+        "D": "Markets"
+      },
+      "correct_answer": "A",
+      "explanation": "Labour unions represent workers and advocate for their rights.",
+      "difficulty": "hard",
+      "source_section": "Labour Rights"
+    },
+    {
+      "question_number": 9,
+      "question": "Which situation represents a violation of labour laws?",
+      "options": {
+        "A": "Workers receiving minimum wages",
+        "B": "Workers working in safe conditions",
+        "C": "Children employed in hazardous factories",
+        "D": "Workers receiving protective equipment"
+      },
+      "correct_answer": "C",
+      "explanation": "Employing children in hazardous factories violates child labour laws.",
+      "difficulty": "hard",
+      "source_section": "Child Labour"
+    },
+    {
+      "question_number": 10,
+      "question": "Which government body creates laws related to labour and worker protection?",
+      "options": {
+        "A": "Parliament",
+        "B": "Market authorities",
+        "C": "Factories",
+        "D": "Schools"
+      },
+      "correct_answer": "A",
+      "explanation": "Parliament makes laws that regulate labour and employment.",
+      "difficulty": "hard",
+      "source_section": "Law Making"
+    },
+    {
+      "question_number": 11,
+      "question": "Which principle ensures that companies must follow safety standards?",
+      "options": {
+        "A": "Safety regulations",
+        "B": "Colonial authority",
+        "C": "Economic monopoly",
+        "D": "Political control"
+      },
+      "correct_answer": "A",
+      "explanation": "Safety regulations require companies to maintain safe workplaces.",
+      "difficulty": "hard",
+      "source_section": "Worker Safety"
+    },
+    {
+      "question_number": 12,
+      "question": "Which concept ensures dignity and equality for workers?",
+      "options": {
+        "A": "Social justice",
+        "B": "Colonial rule",
+        "C": "Economic exploitation",
+        "D": "Political dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice promotes dignity and equal rights.",
+      "difficulty": "hard",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 13,
+      "question": "Which example shows proper implementation of labour laws?",
+      "options": {
+        "A": "Workers paid below minimum wage",
+        "B": "Factories providing safety equipment",
+        "C": "Children working in mines",
+        "D": "Workers forced to work overtime without pay"
+      },
+      "correct_answer": "B",
+      "explanation": "Providing safety equipment follows labour safety laws.",
+      "difficulty": "hard",
+      "source_section": "Worker Safety"
+    },
+    {
+      "question_number": 14,
+      "question": "Which value supports fairness in labour relations?",
+      "options": {
+        "A": "Justice",
+        "B": "Bias",
+        "C": "Discrimination",
+        "D": "Conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Justice ensures fairness between employers and workers.",
+      "difficulty": "hard",
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 15,
+      "question": "Which law protects workers from extremely long working hours?",
+      "options": {
+        "A": "Factory Act",
+        "B": "Trade Act",
+        "C": "Transport Act",
+        "D": "Education Act"
+      },
+      "correct_answer": "A",
+      "explanation": "The Factory Act regulates working hours in factories.",
+      "difficulty": "hard",
+      "source_section": "Factories"
+    },
+    {
+      "question_number": 16,
+      "question": "Which value promotes dignity of labour?",
+      "options": {
+        "A": "Equality",
+        "B": "Colonial rule",
+        "C": "Economic monopoly",
+        "D": "Political authority"
+      },
+      "correct_answer": "A",
+      "explanation": "Equality ensures respect and dignity for workers.",
+      "difficulty": "hard",
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 17,
+      "question": "Which group benefits most from labour protection laws?",
+      "options": {
+        "A": "Workers",
+        "B": "Factory owners",
+        "C": "Politicians",
+        "D": "Business investors"
+      },
+      "correct_answer": "A",
+      "explanation": "Labour protection laws primarily benefit workers.",
+      "difficulty": "hard",
+      "source_section": "Labour Rights"
+    },
+    {
+      "question_number": 18,
+      "question": "Which action shows violation of minimum wage laws?",
+      "options": {
+        "A": "Paying workers the legal minimum wage",
+        "B": "Paying workers below the legal minimum wage",
+        "C": "Providing workers safety equipment",
+        "D": "Giving workers paid holidays"
+      },
+      "correct_answer": "B",
+      "explanation": "Paying workers below minimum wage is illegal.",
+      "difficulty": "hard",
+      "source_section": "Minimum Wages"
+    },
+    {
+      "question_number": 19,
+      "question": "Which concept supports equal rights for workers in society?",
+      "options": {
+        "A": "Social justice",
+        "B": "Colonial authority",
+        "C": "Economic monopoly",
+        "D": "Political dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice supports equal rights and fairness.",
+      "difficulty": "hard",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 20,
+      "question": "Which value helps reduce exploitation of workers?",
+      "options": {
+        "A": "Justice",
+        "B": "Bias",
+        "C": "Conflict",
+        "D": "Discrimination"
+      },
+      "correct_answer": "A",
+      "explanation": "Justice helps prevent exploitation and unfair treatment.",
+      "difficulty": "hard",
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 21,
+      "question": "Which principle ensures companies are legally responsible for worker safety?",
+      "options": {
+        "A": "Safety laws",
+        "B": "Colonial rule",
+        "C": "Political authority",
+        "D": "Economic monopoly"
+      },
+      "correct_answer": "A",
+      "explanation": "Safety laws require companies to maintain safe workplaces.",
+      "difficulty": "hard",
+      "source_section": "Worker Safety"
+    },
+    {
+      "question_number": 22,
+      "question": "Which institution ensures enforcement of labour laws through legal judgments?",
+      "options": {
+        "A": "Judiciary",
+        "B": "Market",
+        "C": "Hospital",
+        "D": "School"
+      },
+      "correct_answer": "A",
+      "explanation": "The judiciary enforces laws through legal decisions.",
+      "difficulty": "hard",
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 23,
+      "question": "Which principle promotes fairness and equal opportunities in employment?",
+      "options": {
+        "A": "Social justice",
+        "B": "Colonial authority",
+        "C": "Economic monopoly",
+        "D": "Political control"
+      },
+      "correct_answer": "A",
+      "explanation": "Social justice ensures fairness in employment opportunities.",
+      "difficulty": "hard",
+      "source_section": "Social Justice"
+    },
+    {
+      "question_number": 24,
+      "question": "Which action best reflects social justice in workplaces?",
+      "options": {
+        "A": "Providing fair wages and safe working conditions",
+        "B": "Ignoring worker complaints",
+        "C": "Reducing worker salaries",
+        "D": "Allowing unsafe workplaces"
+      },
+      "correct_answer": "A",
+      "explanation": "Fair wages and safe conditions reflect social justice.",
+      "difficulty": "hard",
+      "source_section": "Worker Safety"
+    },
+    {
+      "question_number": 25,
+      "question": "Which principle helps protect workers from exploitation in democratic societies?",
+      "options": {
+        "A": "Social justice and labour laws",
+        "B": "Colonial rule",
+        "C": "Economic monopoly",
+        "D": "Political dominance"
+      },
+      "correct_answer": "A",
+      "explanation": "Labour laws and social justice principles protect workers from exploitation.",
+      "difficulty": "hard",
+      "source_section": "Conclusion"
+    }
+  ]
+}

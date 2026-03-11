@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 4: Quadratic Equations",
+    "generated_at": "2026-03-01T21:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why a quadratic equation can have at most two roots.",
+            "answer": "Because the degree of a quadratic equation is two.",
+            "key_concepts": [
+                "degree and roots"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why the discriminant is important in solving quadratic equations.",
+            "answer": "Because it determines the nature of the roots without solving the equation.",
+            "key_concepts": [
+                "discriminant"
+            ],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Why does a parabola touch the x-axis when roots are equal?",
+            "answer": "Because the discriminant is zero.",
+            "key_concepts": [
+                "equal roots"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why a quadratic equation with D < 0 has no real roots.",
+            "answer": "Because the square root of a negative number is not real.",
+            "key_concepts": [
+                "imaginary roots"
+            ],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Why does the parabola open upwards when a > 0?",
+            "answer": "Because the leading coefficient is positive.",
+            "key_concepts": [
+                "opening"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does the parabola open downwards when a < 0?",
+            "answer": "Because the leading coefficient is negative.",
+            "key_concepts": [
+                "opening"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why the vertex gives maximum or minimum value.",
+            "answer": "Because it is the turning point of the parabola.",
+            "key_concepts": [
+                "vertex"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is quadratic formula called a universal method?",
+            "answer": "Because it works for all quadratic equations.",
+            "key_concepts": [
+                "quadratic formula"
+            ],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why graphical method gives only approximate roots.",
+            "answer": "Because accuracy depends on scale and drawing.",
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is completing the square helpful in finding vertex?",
+            "answer": "Because it converts the equation into vertex form.",
+            "key_concepts": [
+                "completing square"
+            ],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why does x² + 1 = 0 have no real solution?",
+            "answer": "Because x² is always non-negative.",
+            "key_concepts": [
+                "no real roots"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why roots are equidistant from the axis of symmetry.",
+            "answer": "Because the parabola is symmetric.",
+            "key_concepts": [
+                "symmetry"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why are quadratic equations useful in optimisation problems?",
+            "answer": "Because they help find maximum or minimum values.",
+            "key_concepts": [
+                "optimisation"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why the graph of a quadratic equation is continuous.",
+            "answer": "Because it has no breaks or gaps.",
+            "key_concepts": [
+                "continuity"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why does the discriminant become zero for perfect square quadratics?",
+            "answer": "Because they have equal roots.",
+            "key_concepts": [
+                "perfect square"
+            ],
+            "marks": 3,
+            "source_section": "4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are quadratic equations used in physics?",
+            "answer": "Because many motions follow parabolic paths.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why quadratic equations cannot model exponential growth.",
+            "answer": "Because exponential growth does not have constant second differences.",
+            "key_concepts": [
+                "limitations"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why does changing b shift the parabola horizontally?",
+            "answer": "Because b affects the axis of symmetry.",
+            "key_concepts": [
+                "graph shift"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does changing c shift the parabola vertically?",
+            "answer": "Because c is the y-intercept.",
+            "key_concepts": [
+                "graph shift"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why the highest power determines the shape of the graph.",
+            "answer": "Because it controls the curvature of the equation.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Why can a quadratic equation have repeated roots?",
+            "answer": "Because the discriminant can be zero.",
+            "key_concepts": [
+                "repeated roots"
+            ],
+            "marks": 3,
+            "source_section": "4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why roots correspond to x-intercepts.",
+            "answer": "Because roots occur where y = 0.",
+            "key_concepts": [
+                "x-intercepts"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is the axis of symmetry important in graph analysis?",
+            "answer": "Because it divides the parabola into two equal halves.",
+            "key_concepts": [
+                "axis of symmetry"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does a quadratic graph have only one turning point?",
+            "answer": "Because the degree is two.",
+            "key_concepts": [
+                "turning point"
+            ],
+            "marks": 3,
+            "source_section": "4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of quadratic equations in mathematics.",
+            "answer": "Because they model many real-life and theoretical problems.",
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 3,
+            "source_section": "4.1"
+        }
+    ]
+}

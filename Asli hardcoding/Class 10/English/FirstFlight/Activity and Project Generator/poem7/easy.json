@@ -1,0 +1,138 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Poem – The Tale of Custard the Dragon",
+  "difficulty": "Easy",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Observation",
+      "objective": "Identify the main characters and their traits.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Read the poem carefully.",
+        "List all the characters mentioned in the poem.",
+        "Write 1–2 sentences describing each character."
+      ],
+      "learning_outcome": "Students recognize characters and basic personality traits.",
+      "evaluation": "Correct identification and simple descriptions."
+    },
+    {
+      "sl_no": 2,
+      "title": "Custard’s Courage",
+      "objective": "Understand Custard’s brave action.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Find the stanza where the pirate appears.",
+        "Describe what Custard does to defeat the pirate.",
+        "Write 3–4 sentences explaining why this act is brave."
+      ],
+      "learning_outcome": "Students understand the key event showing courage.",
+      "evaluation": "Clarity and correctness of explanation."
+    },
+    {
+      "sl_no": 3,
+      "title": "Finding Rhyming Words",
+      "objective": "Recognize rhyme in poetry.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Read the poem aloud.",
+        "Find 10 pairs of rhyming words from the poem.",
+        "Write them in your notebook."
+      ],
+      "learning_outcome": "Students identify rhymes and understand poetic sound.",
+      "evaluation": "Correct rhyming word pairs."
+    },
+    {
+      "sl_no": 4,
+      "title": "Funny and Imaginative Lines",
+      "objective": "Understand humor and imagination in the poem.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Find 4–5 lines that sound funny or interesting.",
+        "Write them down.",
+        "Explain in one sentence why they are humorous."
+      ],
+      "learning_outcome": "Students recognize humor in poetry.",
+      "evaluation": "Correct examples and simple explanations."
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Drawing",
+      "objective": "Visualize the characters and events.",
+      "materials": ["Drawing sheet", "Colors", "Pencil"],
+      "steps": [
+        "Draw Custard the dragon and Belinda’s house.",
+        "Include other characters like Mustard, Ink, Blink, and the pirate.",
+        "Write a short caption below the drawing."
+      ],
+      "learning_outcome": "Students express understanding through visual creativity.",
+      "evaluation": "Creativity and relation to the poem."
+    },
+    {
+      "sl_no": 6,
+      "title": "Short Summary",
+      "objective": "Summarize the poem in simple language.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Read the poem once again.",
+        "Write the main events in 5–6 sentences.",
+        "Include the pirate scene and Custard’s bravery."
+      ],
+      "learning_outcome": "Students practice summarizing a poem.",
+      "evaluation": "Accuracy and completeness of summary."
+    },
+    {
+      "sl_no": 7,
+      "title": "Role Play Activity",
+      "objective": "Understand characters through acting.",
+      "materials": ["None"],
+      "steps": [
+        "Assign roles: Belinda, Custard, Mustard, Ink, Blink, and the pirate.",
+        "Act out the scene where the pirate enters the house.",
+        "Show each character’s reaction."
+      ],
+      "learning_outcome": "Students develop understanding through dramatization.",
+      "evaluation": "Participation and character expression."
+    },
+    {
+      "sl_no": 8,
+      "title": "Vocabulary Builder",
+      "objective": "Learn new words from the poem.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Find 5 new words from the poem (e.g., gaped, flustered).",
+        "Write their meanings.",
+        "Use each word in a simple sentence."
+      ],
+      "learning_outcome": "Students improve vocabulary skills.",
+      "evaluation": "Correct meanings and sentences."
+    },
+    {
+      "sl_no": 9,
+      "title": "Character Comparison",
+      "objective": "Compare the bravery of characters.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write 3–4 sentences comparing Custard with Belinda, Mustard, Ink, and Blink.",
+        "Explain who is truly brave and why."
+      ],
+      "learning_outcome": "Students analyze characters in a simple way.",
+      "evaluation": "Clear and logical comparison."
+    },
+    {
+      "sl_no": 10,
+      "title": "Reflection on Courage",
+      "objective": "Relate the poem to personal experience.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think of a time when you were brave.",
+        "Write 4–5 sentences about your experience.",
+        "Explain how it is similar to Custard’s courage."
+      ],
+      "learning_outcome": "Students connect literature with real-life experiences.",
+      "evaluation": "Relevance and clarity of reflection."
+    }
+  ]
+}

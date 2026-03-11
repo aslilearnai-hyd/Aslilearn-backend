@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 6: Population",
+    "generated_at": "2026-03-08T23:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which factor most strongly influences the uneven distribution of population in India?",
+            "options": {
+                "A": "Availability of fertile land and water",
+                "B": "Political boundaries",
+                "C": "Language diversity",
+                "D": "Religious practices"
+            },
+            "correct_answer": "A",
+            "explanation": "Population tends to concentrate in areas with fertile land and sufficient water supply.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which region of India has the lowest population density due to harsh climatic conditions?",
+            "options": {
+                "A": "Northern Plains",
+                "B": "Western Coastal Plains",
+                "C": "Thar Desert",
+                "D": "Eastern Plateau"
+            },
+            "correct_answer": "C",
+            "explanation": "The Thar Desert has extreme climate and scarce water, leading to sparse population.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which indicator is calculated as the difference between birth rate and death rate?",
+            "options": {
+                "A": "Population density",
+                "B": "Natural increase",
+                "C": "Growth rate",
+                "D": "Population composition"
+            },
+            "correct_answer": "B",
+            "explanation": "Natural increase equals birth rate minus death rate.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why does India continue to add millions of people every decade despite declining growth rates?",
+            "options": {
+                "A": "High immigration",
+                "B": "Large population base",
+                "C": "Increased migration",
+                "D": "Urbanization"
+            },
+            "correct_answer": "B",
+            "explanation": "Even a small growth rate applied to a large population results in a large increase.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following best describes population composition?",
+            "options": {
+                "A": "Total number of people",
+                "B": "Population distribution across regions",
+                "C": "Structure of population by age, sex and occupation",
+                "D": "Population growth rate"
+            },
+            "correct_answer": "C",
+            "explanation": "Population composition refers to the demographic structure of a population.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which factor mainly caused the decline in death rates in India during the 20th century?",
+            "options": {
+                "A": "Migration",
+                "B": "Industrialization",
+                "C": "Improved healthcare and sanitation",
+                "D": "Population control policies"
+            },
+            "correct_answer": "C",
+            "explanation": "Better medical facilities and sanitation reduced death rates.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following best explains rural to urban migration?",
+            "options": {
+                "A": "Migration due to fertile land",
+                "B": "Movement to cities for better employment and services",
+                "C": "Movement due to agricultural expansion",
+                "D": "Movement due to cultural differences"
+            },
+            "correct_answer": "B",
+            "explanation": "People migrate to cities mainly for employment and better facilities.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which of the following is considered a push factor for migration?",
+            "options": {
+                "A": "Industrial jobs",
+                "B": "Urban infrastructure",
+                "C": "Unemployment in rural areas",
+                "D": "Better education"
+            },
+            "correct_answer": "C",
+            "explanation": "Unemployment forces people to leave their home regions.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following best represents a pull factor for migration?",
+            "options": {
+                "A": "Poverty",
+                "B": "Natural disasters",
+                "C": "Employment opportunities",
+                "D": "Water scarcity"
+            },
+            "correct_answer": "C",
+            "explanation": "Better employment opportunities attract migrants.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Migration within national boundaries is called:",
+            "options": {
+                "A": "International migration",
+                "B": "Internal migration",
+                "C": "External migration",
+                "D": "Global migration"
+            },
+            "correct_answer": "B",
+            "explanation": "Internal migration occurs within a country.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which group represents the future workforce of India?",
+            "options": {
+                "A": "Children",
+                "B": "Adolescents",
+                "C": "Elderly",
+                "D": "Farmers"
+            },
+            "correct_answer": "B",
+            "explanation": "Adolescents form the future workforce.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which problem is widely found among adolescent girls due to nutritional deficiency?",
+            "options": {
+                "A": "Malaria",
+                "B": "Anaemia",
+                "C": "Diabetes",
+                "D": "Tuberculosis"
+            },
+            "correct_answer": "B",
+            "explanation": "Anaemia is common due to iron deficiency.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following improves the quality of population?",
+            "options": {
+                "A": "Industrial growth",
+                "B": "Migration",
+                "C": "Education and healthcare",
+                "D": "Urbanization"
+            },
+            "correct_answer": "C",
+            "explanation": "Education and healthcare improve human resources.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which sector mainly attracts rural migrants to cities?",
+            "options": {
+                "A": "Agriculture",
+                "B": "Forestry",
+                "C": "Industry and services",
+                "D": "Mining"
+            },
+            "correct_answer": "C",
+            "explanation": "Industrial and service sectors provide employment in cities.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following statements about population density is correct?",
+            "options": {
+                "A": "It measures population growth",
+                "B": "It measures people per square kilometre",
+                "C": "It measures migration rate",
+                "D": "It measures birth rate"
+            },
+            "correct_answer": "B",
+            "explanation": "Population density measures number of people per unit area.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which factor contributes most to rapid population growth?",
+            "options": {
+                "A": "High death rate",
+                "B": "High birth rate",
+                "C": "Migration",
+                "D": "Urbanization"
+            },
+            "correct_answer": "B",
+            "explanation": "High birth rates significantly increase population growth.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which geographical factor supports dense population in river valleys?",
+            "options": {
+                "A": "Cold climate",
+                "B": "Fertile soil and water availability",
+                "C": "Mountain barriers",
+                "D": "Sparse vegetation"
+            },
+            "correct_answer": "B",
+            "explanation": "River valleys provide fertile soil and water for agriculture.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following best explains population planning?",
+            "options": {
+                "A": "Increasing migration",
+                "B": "Balancing population growth with resources",
+                "C": "Encouraging industrial growth",
+                "D": "Reducing urban population"
+            },
+            "correct_answer": "B",
+            "explanation": "Population planning helps maintain balance between people and resources.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which policy aims to stabilize population growth in India?",
+            "options": {
+                "A": "Green Revolution",
+                "B": "National Population Policy",
+                "C": "Industrial Policy",
+                "D": "Urban Development Policy"
+            },
+            "correct_answer": "B",
+            "explanation": "National Population Policy focuses on population stabilization.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which age group defines adolescents according to the chapter?",
+            "options": {
+                "A": "5–14 years",
+                "B": "10–19 years",
+                "C": "20–30 years",
+                "D": "15–25 years"
+            },
+            "correct_answer": "B",
+            "explanation": "Adolescents are people aged 10–19 years.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following best explains urban population growth?",
+            "options": {
+                "A": "High birth rate only",
+                "B": "Rural to urban migration and natural increase",
+                "C": "Decrease in death rate only",
+                "D": "International migration"
+            },
+            "correct_answer": "B",
+            "explanation": "Urban population grows through migration and natural increase.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which factor mainly leads to sparse population in deserts?",
+            "options": {
+                "A": "High rainfall",
+                "B": "Water scarcity and extreme climate",
+                "C": "Industrialization",
+                "D": "Urbanization"
+            },
+            "correct_answer": "B",
+            "explanation": "Harsh desert conditions discourage settlements.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which demographic indicator reflects healthcare improvements?",
+            "options": {
+                "A": "Birth rate",
+                "B": "Death rate",
+                "C": "Migration rate",
+                "D": "Population density"
+            },
+            "correct_answer": "B",
+            "explanation": "A lower death rate indicates improved healthcare facilities.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which statement best explains the relationship between population and resources?",
+            "options": {
+                "A": "Population decreases resources",
+                "B": "Population uses and develops resources",
+                "C": "Population has no relation to resources",
+                "D": "Resources create population"
+            },
+            "correct_answer": "B",
+            "explanation": "People develop and use resources for economic activities.",
+            "difficulty": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following helps achieve sustainable development?",
+            "options": {
+                "A": "Rapid population growth",
+                "B": "Population planning and resource management",
+                "C": "Urban migration",
+                "D": "Industrial expansion only"
+            },
+            "correct_answer": "B",
+            "explanation": "Population planning helps balance population growth with available resources.",
+            "difficulty": "hard",
+            "source_section": "Section 6.2"
+        }
+    ]
+}

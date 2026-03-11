@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: FINDING THE UNKNOWN (ADVANCED ALGEBRA)",
+    "generated_at": "2026-03-06T00:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Solve for $x$: $3(x - 5) = 2(x + 1)$.",
+            "answer": "$3x - 15 = 2x + 2 \\Rightarrow 3x - 2x = 2 + 15 \\Rightarrow x = 17$.",
+            "key_concepts": ["Distributive property", "Variables on both sides"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the value of $y$ if $\\frac{y}{2} - \\frac{y}{3} = 5$.",
+            "answer": "Multiplying by LCM 6: $3y - 2y = 30 \\Rightarrow y = 30$.",
+            "key_concepts": ["Equations with fractions"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "If $2n + 7 = 3n - 5$, what is the value of $n$?",
+            "answer": "$7 + 5 = 3n - 2n \\Rightarrow n = 12$.",
+            "key_concepts": ["Variables on both sides"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "The sum of three consecutive even integers is 48. Form an equation and find the smallest integer.",
+            "answer": "$x + (x+2) + (x+4) = 48 \\Rightarrow 3x + 6 = 48 \\Rightarrow 3x = 42 \\Rightarrow x = 14$.",
+            "key_concepts": ["Consecutive integers", "Modeling"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Solve for $a$: $4 - (a - 3) = 10$.",
+            "answer": "$4 - a + 3 = 10 \\Rightarrow 7 - a = 10 \\Rightarrow -a = 3 \\Rightarrow a = -3$.",
+            "key_concepts": ["Negative signs and brackets"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Find $x$ if $20\\% \\text{ of } x$ is $50$.",
+            "answer": "$0.20x = 50 \\Rightarrow x = 50 / 0.20 \\Rightarrow x = 250$.",
+            "key_concepts": ["Percentages in algebra"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the value of $x^2 - 5x + 6$ when $x = -2$?",
+            "answer": "$(-2)^2 - 5(-2) + 6 = 4 + 10 + 6 = 20$.",
+            "key_concepts": ["Substitution with negative numbers"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Solve: $0.5x + 1.5 = 4$.",
+            "answer": "$0.5x = 2.5 \\Rightarrow x = 2.5 / 0.5 \\Rightarrow x = 5$.",
+            "key_concepts": ["Decimals in equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "If $\\frac{2}{3}x = 10$, find the value of $x + 5$.",
+            "answer": "$2x = 30 \\Rightarrow x = 15$. Then $15 + 5 = 20$.",
+            "key_concepts": ["Fractional coefficients", "Two-part problem"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Simplify: $3(2x - 4) - 2(x - 5)$.",
+            "answer": "$6x - 12 - 2x + 10 = 4x - 2$.",
+            "key_concepts": ["Simplifying expressions"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Form an equation: 'A number $k$ is divided by 2, and the result is 5 more than $k/3$'.",
+            "answer": "$k/2 = k/3 + 5$.",
+            "key_concepts": ["Forming complex equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Solve for $z$: $5z - (2z + 1) = 8$.",
+            "answer": "$5z - 2z - 1 = 8 \\Rightarrow 3z = 9 \\Rightarrow z = 3$.",
+            "key_concepts": ["Subtracting expressions"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "If $\\frac{x+2}{3} = 4$, find $x$.",
+            "answer": "$x + 2 = 12 \\Rightarrow x = 10$.",
+            "key_concepts": ["Fractional equations"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find two numbers such that their sum is 20 and one is 4 more than the other.",
+            "answer": "$x + (x+4) = 20 \\Rightarrow 2x = 16 \\Rightarrow x = 8$. Numbers are 8 and 12.",
+            "key_concepts": ["Number problems"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Solve for $x$: $7x - 2 = 3x + 10$.",
+            "answer": "$4x = 12 \\Rightarrow x = 3$.",
+            "key_concepts": ["Transposition"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "If $x = 1/2$, find the value of $4x + 6$.",
+            "answer": "$4(1/2) + 6 = 2 + 6 = 8$.",
+            "key_concepts": ["Fractions in substitution"],
+            "marks": 1,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Solve: $10 = 2(x - 4) + 2$.",
+            "answer": "$10 = 2x - 8 + 2 \\Rightarrow 10 = 2x - 6 \\Rightarrow 16 = 2x \\Rightarrow x = 8$.",
+            "key_concepts": ["Equations with multiple constants"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "The breadth of a rectangle is $b$ cm. Its length is 3 cm more than twice the breadth. Express length in terms of $b$.",
+            "answer": "$2b + 3$.",
+            "key_concepts": ["Geometric expressions"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "If $\\frac{3x-1}{2} = 7$, solve for $x$.",
+            "answer": "$3x - 1 = 14 \\Rightarrow 3x = 15 \\Rightarrow x = 5$.",
+            "key_concepts": ["Multi-step solving"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Solve: $x/4 - 1 = x/6$.",
+            "answer": "Multiplying by 12: $3x - 12 = 2x \\Rightarrow x = 12$.",
+            "key_concepts": ["Variables on both sides of fractions"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 21,
+            "question": "An angle is double its supplement. Find the angle.",
+            "answer": "$x = 2(180 - x) \\Rightarrow x = 360 - 2x \\Rightarrow 3x = 360 \\Rightarrow x = 120^{\\circ}$.",
+            "key_concepts": ["Geometric algebra"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Solve for $m$: $15 - (3m - 1) = 2(m + 3)$.",
+            "answer": "$15 - 3m + 1 = 2m + 6 \\Rightarrow 16 - 3m = 2m + 6 \\Rightarrow 10 = 5m \\Rightarrow m = 2$.",
+            "key_concepts": ["Advanced distribution"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find $x$ if $x + (x+1) + (x+2) = 0$.",
+            "answer": "$3x + 3 = 0 \\Rightarrow 3x = -3 \\Rightarrow x = -1$.",
+            "key_concepts": ["Negative solutions"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "A number is as much greater than 10 as it is less than 30. Find the number.",
+            "answer": "$x - 10 = 30 - x \\Rightarrow 2x = 40 \\Rightarrow x = 20$.",
+            "key_concepts": ["Balanced modeling"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Solve: $2.5x - 7 = 0.5x + 3$.",
+            "answer": "$2x = 10 \\Rightarrow x = 5$.",
+            "key_concepts": ["Decimal transposition"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        }
+    ]
+}

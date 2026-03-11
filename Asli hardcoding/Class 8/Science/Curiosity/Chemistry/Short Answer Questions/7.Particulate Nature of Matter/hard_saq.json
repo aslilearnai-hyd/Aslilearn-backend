@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 7: Particulate Nature of Matter",
+  "generated_at": "2026-03-05T17:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How does the chalk grinding activity support the particulate nature of matter?",
+      "answer": "Grinding chalk shows that matter can be broken into smaller particles without changing its composition.",
+      "key_concepts": ["particulate nature"],
+      "marks": 2,
+      "source_section": "Activity 7.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Why does sugar dissolve in water without increasing the volume significantly?",
+      "answer": "Because sugar particles occupy the spaces between water particles.",
+      "key_concepts": ["interparticle spaces"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What conclusion about particle motion can be drawn from diffusion experiments?",
+      "answer": "Particles of matter are in continuous motion.",
+      "key_concepts": ["particle motion"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do solids maintain a definite shape?",
+      "answer": "Because particles in solids are strongly attracted and fixed in position.",
+      "key_concepts": ["solid properties"],
+      "marks": 2,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do liquids have definite volume but no fixed shape?",
+      "answer": "Because liquid particles are close together but can move around each other.",
+      "key_concepts": ["liquid properties"],
+      "marks": 2,
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Why do gases expand to fill any container?",
+      "answer": "Because gas particles move freely in all directions and occupy available space.",
+      "key_concepts": ["gas expansion"],
+      "marks": 2,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain why gases can be compressed more easily than solids.",
+      "answer": "Because gases have large spaces between particles whereas solids have tightly packed particles.",
+      "key_concepts": ["compressibility"],
+      "marks": 2,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 8,
+      "question": "What scientific principle is demonstrated by the syringe experiment?",
+      "answer": "It demonstrates that gases are compressible due to large spaces between particles.",
+      "key_concepts": ["gas compression"],
+      "marks": 2,
+      "source_section": "Activity 7.6"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does diffusion occur faster in gases than in liquids?",
+      "answer": "Because gas particles move faster and are farther apart.",
+      "key_concepts": ["diffusion rate"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 10,
+      "question": "How does temperature affect particle movement?",
+      "answer": "Increasing temperature increases the kinetic energy and speed of particles.",
+      "key_concepts": ["temperature effect"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Why does the smell of perfume spread throughout a room?",
+      "answer": "Because perfume particles diffuse through air due to their continuous motion.",
+      "key_concepts": ["gas diffusion"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Why does potassium permanganate spread uniformly in water without stirring?",
+      "answer": "Because particles move randomly and diffuse throughout the liquid.",
+      "key_concepts": ["diffusion experiment"],
+      "marks": 2,
+      "source_section": "Activity 7.8"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens to particle motion when a solid melts?",
+      "answer": "Particles gain energy and move more freely.",
+      "key_concepts": ["melting"],
+      "marks": 2,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Why is melting considered a physical change?",
+      "answer": "Because only the physical state changes while the substance remains the same.",
+      "key_concepts": ["physical change"],
+      "marks": 2,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Why does evaporation occur at temperatures below boiling point?",
+      "answer": "Because some surface particles gain enough energy to escape as vapor.",
+      "key_concepts": ["evaporation"],
+      "marks": 2,
+      "source_section": "Section 7.2.2"
+    },
+    {
+      "question_number": 16,
+      "question": "How does wind speed affect evaporation?",
+      "answer": "Higher wind speed removes vapor from the surface and increases evaporation.",
+      "key_concepts": ["evaporation factors"],
+      "marks": 2,
+      "source_section": "Evaporation Concept"
+    },
+    {
+      "question_number": 17,
+      "question": "Why does increasing surface area increase evaporation?",
+      "answer": "Because more particles are exposed at the surface and can escape as vapor.",
+      "key_concepts": ["evaporation factors"],
+      "marks": 2,
+      "source_section": "Evaporation Concept"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do gases have very low density compared to solids?",
+      "answer": "Because gas particles are far apart with large empty spaces.",
+      "key_concepts": ["gas density"],
+      "marks": 2,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 19,
+      "question": "What happens to interparticle attraction when matter changes from solid to gas?",
+      "answer": "The interparticle attraction becomes very weak.",
+      "key_concepts": ["state change"],
+      "marks": 2,
+      "source_section": "States of Matter"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are liquids called fluids?",
+      "answer": "Because their particles can move freely, allowing them to flow.",
+      "key_concepts": ["fluids"],
+      "marks": 2,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which state of matter has the highest kinetic energy of particles?",
+      "answer": "Gases have the highest kinetic energy.",
+      "key_concepts": ["particle motion"],
+      "marks": 2,
+      "source_section": "Section 7.2.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Why do solids generally have high density?",
+      "answer": "Because particles are tightly packed with very little space between them.",
+      "key_concepts": ["solid density"],
+      "marks": 2,
+      "source_section": "Section 7.2.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What property of gases causes them to exert pressure on container walls?",
+      "answer": "Continuous movement and collisions of gas particles with container walls.",
+      "key_concepts": ["gas pressure"],
+      "marks": 2,
+      "source_section": "Gas Properties"
+    },
+    {
+      "question_number": 24,
+      "question": "How does particle spacing change from solid to liquid to gas?",
+      "answer": "Particle spacing increases progressively from solid to liquid to gas.",
+      "key_concepts": ["particle spacing"],
+      "marks": 2,
+      "source_section": "States of Matter"
+    },
+    {
+      "question_number": 25,
+      "question": "State the main idea of the particle model of matter.",
+      "answer": "Matter consists of tiny particles that are in constant motion and have spaces and forces between them.",
+      "key_concepts": ["particle theory"],
+      "marks": 2,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

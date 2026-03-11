@@ -1,0 +1,177 @@
+{
+    "class": "Class 7",
+    "subject": "Civics (Social and Political Life - II)",
+    "chapter": "Growing Up as Boys and Girls",
+    "difficulty": "Hard",
+    "source_pdf": "social_and_political_life_2_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Sociological Analysis of Samoan vs. Indian Patriarchy",
+            "objective": "Deconstruct how social structures determine gender freedom",
+            "materials": [
+                "Research papers or detailed summaries of Margaret Mead's study",
+                "Notebook"
+            ],
+            "steps": [
+                "Compare the lack of 'adolescent distress' in 1920s Samoa with the restricted movement of girls in 1960s Madhya Pradesh",
+                "Analyze the 'point of transition' (when children moved from mother's care to community work) in both societies",
+                "Argue how the physical layout of a town (open vs. secluded) enforces gender norms",
+                "Evaluate why the Samoan model challenged the then-prevalent Western and Indian ideas of 'natural' gender behavior"
+            ],
+            "learning_outcome": "Critically assesses the 'Social Construction of Gender' versus biological determinism",
+            "evaluation": "Depth of sociological comparison and quality of the structural argument (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Economic Valuation of Unpaid Care Work (GDP Inclusion)",
+            "objective": "Apply economic concepts to quantify devalued domestic labor",
+            "materials": [
+                "National Sample Survey (NSS) Time-Use data",
+                "Calculator",
+                "Internet"
+            ],
+            "steps": [
+                "Research the 'Time-Use Survey' results in India showing the hours women spend on 'unpaid care' vs. men",
+                "Using a 'Replacement Cost' method, calculate what a housewife's monthly salary would be based on minimum wages for various tasks",
+                "Discuss the concept of 'GDP' and why housework is currently excluded from it",
+                "Write a policy proposal on why recognizing this labor is essential for women's economic empowerment"
+            ],
+            "learning_outcome": "Synthesizes economic principles with social justice to challenge the devaluing of domestic work",
+            "evaluation": "Accuracy of calculations and logical strength of the policy proposal (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The 'Invisible Labor' and Global Care Chains",
+            "objective": "Investigate the intersection of gender, class, and domestic work",
+            "materials": [
+                "Case study of Melani from the textbook",
+                "News articles on domestic worker rights"
+            ],
+            "steps": [
+                "Analyze Melani’s story to identify the 'triple burden' (poverty, caste/class, and gender)",
+                "Research the 'Domestic Workers Social Security Act' or similar local laws",
+                "Investigate why domestic work is often excluded from 'formal' labor protections",
+                "Create a report on the 'Global Care Chain'—how women from poorer regions migrate to do domestic work in richer areas"
+            ],
+            "learning_outcome": "Examines how gender inequality is compounded by economic and social status",
+            "evaluation": "Critical analysis of labor laws and the intersectional nature of Melani’s struggle (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Constitutional Ethics: Equality in the Private Sphere",
+            "objective": "Evaluate the conflict between traditional roles and Constitutional mandates",
+            "materials": [
+                "Constitution of India (Article 14 and 15)",
+                "Legal case summaries on domestic rights"
+            ],
+            "steps": [
+                "The Constitution says being male or female should not be a reason for discrimination. Analyze if this holds true 'inside' the Indian home",
+                "Discuss the legal status of 'Housework'—is it a choice, a duty, or a form of forced labor?",
+                "Analyze why the law often hesitates to interfere in the 'private sphere' of the family",
+                "Draft a 'Home Constitution' that aligns family roles with national democratic values"
+            ],
+            "learning_outcome": "Evaluates the implementation of democratic principles within the family unit",
+            "evaluation": "Legal and ethical depth of the 'Home Constitution' (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Spatial Segregation and the 'Male Gaze'",
+            "objective": "Analyze the impact of safety and surveillance on women's mobility",
+            "materials": [
+                "Map of local neighborhood",
+                "Survey interviews"
+            ],
+            "steps": [
+                "Based on the MP school case study, map out 'safe' and 'unsafe' zones in your locality for girls",
+                "Identify 'liminal spaces' (streets, corners) where boys loiter and girls feel the need to move fast",
+                "Interview older women to see how their 'fear of the street' was taught as 'modesty'",
+                "Write a critique on how urban planning can either restrict or liberate gender movement"
+            ],
+            "learning_outcome": "Analyzes the relationship between physical space, safety, and gendered behavior",
+            "evaluation": "Observation of spatial patterns and critical reflection on mobility (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Deconstructing the 'Double Burden' Syndrome",
+            "objective": "Explore the psychological and physical impact of dual roles",
+            "materials": [
+                "Interviews with working women",
+                "Health journals (stress-related data)"
+            ],
+            "steps": [
+                "Define 'Double Burden' using qualitative data from three working women in different sectors",
+                "Analyze the 'Leisure Gap'—the difference in free time between men and women in the same household",
+                "Investigate the 'Second Shift'—a term for housework done after a full day of paid work",
+                "Propose a 'Shared Responsibility Model' that accounts for mental labor (planning meals, managing kids)"
+            ],
+            "learning_outcome": "Recognizes the mental and physical toll of the uneven distribution of domestic labor",
+            "evaluation": "Insightfulness of the 'Leisure Gap' analysis and the model's viability (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Critique of Government Intervention: The Crèche Law",
+            "objective": "Evaluate the effectiveness of legislative measures for equality",
+            "materials": [
+                "Maternity Benefit (Amendment) Act, 2017",
+                "Company audit reports (online)"
+            ],
+            "steps": [
+                "Study the law requiring crèches in establishments with over 50 employees (updated from 30 in text)",
+                "Find out why many companies avoid hiring women to bypass these 'costly' legal requirements",
+                "Discuss if such laws 'unintentionally' lead to hiring discrimination",
+                "Debate: 'Should the cost of crèches be borne by the employer, or the State through taxes?'"
+            ],
+            "learning_outcome": "Critically appraises the gaps between law-making and law-implementation regarding gender",
+            "evaluation": "Complexity of the debate and understanding of labor market dynamics (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Media and the 'Care Economy' Narrative",
+            "objective": "Analyze how advertisements devalue care-giving work",
+            "materials": [
+                "TV advertisements for detergents, soaps, and insurance"
+            ],
+            "steps": [
+                "Watch 5 ads where a woman is shown 'happily' doing laundry or cooking for the family",
+                "Identify the 'glorification' of self-sacrifice—how the ad makes the woman's 'unpaid work' seem like a 'labor of love' only",
+                "Explain how this 'glorification' prevents people from seeing it as 'strenuous labor'",
+                "Redesign an ad that shows a man and woman sharing a domestic task as a professional responsibility"
+            ],
+            "learning_outcome": "Identifies the subtle ways media romanticizes domestic labor to avoid economic questioning",
+            "evaluation": "Critical deconstruction of ad narratives and the quality of the redesign (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The 'Pink Collar' Ghettoization Inquiry",
+            "objective": "Link childhood socialization to professional segregation",
+            "materials": [
+                "Employment statistics by gender and sector"
+            ],
+            "steps": [
+                "Research why certain jobs (Nursing, Teaching) are 'Pink Collar' and why they offer lower pay than 'Blue/White Collar' jobs",
+                "Connect this to the 'toys' and 'stories' given to girls (dolls, tea sets) as discussed in the book",
+                "Analyze the 'Glass Ceiling'—why women are concentrated at the 'care' level and absent from 'leadership' level",
+                "Explain how 'socializing' girls to be 'nurturers' limits their economic potential"
+            ],
+            "learning_outcome": "Correlates childhood gender roles with long-term economic outcomes and career limits",
+            "evaluation": "Clarity in connecting socialization with labor market trends (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Sustainable Equality: A Policy Draft for Rural India",
+            "objective": "Design interventions for specific socio-geographic contexts",
+            "materials": [
+                "Information on Anganwadis and Self-Help Groups (SHGs)"
+            ],
+            "steps": [
+                "Identify the specific 'time-poverty' of rural women (fetching water, firewood, cattle care)",
+                "Draft a policy that uses technology (e.g., piped water, solar cookers) to reduce 'unpaid labor time'",
+                "Explain how 'Self-Help Groups' can help shift the 'devaluation' of women's work into 'income-generating' work",
+                "Argue why 'Equality at Home' is the first step toward 'Sustainable Development Goals' (SDG 5)"
+            ],
+            "learning_outcome": "Integrates gender equality with sustainable development and technological intervention",
+            "evaluation": "Feasibility and innovation of the rural policy draft (10 marks)"
+        }
+    ]
+}

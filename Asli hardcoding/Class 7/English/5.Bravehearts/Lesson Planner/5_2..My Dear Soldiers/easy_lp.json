@@ -1,0 +1,140 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "My Dear Soldiers",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the emotions and message in the letter to soldiers",
+    "Recognize bravery, dedication, and patriotism",
+    "Identify key expressions of gratitude and hope",
+    "Develop basic reading comprehension and vocabulary",
+    "Learn the structure of simple letters",
+    "Reflect on personal responsibility and civic values"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to the Chapter",
+      "topics_covered": [
+        "Purpose of letters to soldiers",
+        "Understanding gratitude and appreciation",
+        "Basic emotions in writing"
+      ],
+      "teaching_strategy": [
+        "Class discussion on why we write letters",
+        "Teacher explains importance of expressing gratitude",
+        "Read the first paragraph aloud"
+      ],
+      "student_activities": [
+        "Identify feelings expressed in the paragraph",
+        "List words that show gratitude or encouragement"
+      ],
+      "assessment": ["Oral questions", "Pair discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Understanding the Letter",
+      "topics_covered": [
+        "Structure of the letter",
+        "Main message and emotions",
+        "Vocabulary: hope, courage, duty"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the letter",
+        "Highlight key sentences and expressions",
+        "Discussion on the main ideas"
+      ],
+      "student_activities": [
+        "Summarize the main idea in 2–3 sentences",
+        "Underline words expressing emotion"
+      ],
+      "assessment": ["Written summary", "Oral questioning"]
+    },
+    {
+      "period": 3,
+      "title": "Soldiers’ Qualities",
+      "topics_covered": [
+        "Bravery, discipline, teamwork",
+        "Challenges soldiers face",
+        "How soldiers serve the country"
+      ],
+      "teaching_strategy": [
+        "Class discussion on qualities",
+        "Teacher explains duties and sacrifices"
+      ],
+      "student_activities": [
+        "Make a list of soldier qualities",
+        "Discuss in pairs which qualities are most important"
+      ],
+      "assessment": ["List evaluation", "Discussion participation"]
+    },
+    {
+      "period": 4,
+      "title": "Reflection on Bravery",
+      "topics_covered": [
+        "Emotional and moral lessons",
+        "Recognizing dedication and service",
+        "Personal reflection on courage"
+      ],
+      "teaching_strategy": [
+        "Teacher explains the importance of bravery",
+        "Discuss examples from the text"
+      ],
+      "student_activities": [
+        "Write a few sentences describing one brave act mentioned",
+        "Share reflections in class"
+      ],
+      "assessment": ["Written sentences", "Class discussion"]
+    },
+    {
+      "period": 5,
+      "title": "Letter Writing Practice",
+      "topics_covered": [
+        "Writing a simple formal letter",
+        "Expressing gratitude and encouragement"
+      ],
+      "teaching_strategy": [
+        "Teacher demonstrates letter structure",
+        "Discuss how to include feelings of respect and hope"
+      ],
+      "student_activities": [
+        "Write a short letter to a soldier expressing gratitude",
+        "Include at least two qualities or actions you admire"
+      ],
+      "assessment": ["Letter evaluation: content and structure"]
+    },
+    {
+      "period": 6,
+      "title": "Vocabulary and Revision",
+      "topics_covered": [
+        "New words from the chapter",
+        "Compound words and simple comprehension",
+        "Short quiz on letter content"
+      ],
+      "teaching_strategy": ["Worksheet exercises", "Revision quiz"],
+      "student_activities": [
+        "Learn and use new vocabulary in sentences",
+        "Complete comprehension questions",
+        "Match compound words with meanings"
+      ],
+      "assessment": ["Worksheet completion", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard/Whiteboard",
+    "Chalk/Markers",
+    "Printed copy of the letter",
+    "Vocabulary list for exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension",
+    "Paragraph/letter writing",
+    "Vocabulary exercises",
+    "Class participation"
+  ],
+  "teacher_tip": "Encourage students to discuss the feelings of soldiers and their families. Ask them to write letters connecting personal reflections to the text."
+}

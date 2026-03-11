@@ -1,0 +1,190 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Changes Around Us: Physical and Chemical",
+    "difficulty": "Medium",
+    "source_pdf": "changes_around_us_class7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Crystallization of Alum",
+            "objective": "Obtain pure crystals through a physical process",
+            "materials": [
+                "Alum (Phitkari)",
+                "Beaker",
+                "Water",
+                "Thread"
+            ],
+            "steps": [
+                "Prepare a saturated solution of alum in hot water",
+                "Filter the solution into a clean glass",
+                "Suspend a small 'seed' crystal using a thread",
+                "Leave it overnight and observe the growth of large, well-defined crystals"
+            ],
+            "learning_outcome": "Understands crystallization as a method of purification and a physical change",
+            "evaluation": "Quality of crystals formed and explanation of saturation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Magnesium Ribbon Mystery",
+            "objective": "Study the chemical change of burning a metal",
+            "materials": [
+                "Magnesium ribbon",
+                "Tongs",
+                "Burner",
+                "Red and Blue litmus paper"
+            ],
+            "steps": [
+                "Clean the magnesium ribbon with sandpaper",
+                "Hold it with tongs and burn it; collect the white ash",
+                "Dissolve the ash in a little water",
+                "Test the solution with litmus paper to see if a new substance was formed"
+            ],
+            "learning_outcome": "Identifies the formation of a new substance (Magnesium Oxide) as a chemical change",
+            "evaluation": "Correct identification of the basic nature of the ash solution (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Vinegar and Baking Soda Volcano",
+            "objective": "Observe gas evolution as a sign of chemical change",
+            "materials": [
+                "Vinegar",
+                "Baking soda",
+                "Glass jar",
+                "Matchstick"
+            ],
+            "steps": [
+                "Place baking soda in a jar and add vinegar",
+                "Observe the rapid fizzing and bubble formation",
+                "Lower a burning matchstick into the mouth of the jar",
+                "Observe the flame go out due to Carbon Dioxide"
+            ],
+            "learning_outcome": "Recognizes that the production of a new gas is a characteristic of chemical change",
+            "evaluation": "Explanation of the chemical reaction and gas identification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Copper Sulphate and Iron Reaction",
+            "objective": "Demonstrate a displacement chemical change",
+            "materials": [
+                "Copper Sulphate (Blue vitriol)",
+                "Iron nail",
+                "Glass beaker",
+                "Dilute sulphuric acid (few drops)"
+            ],
+            "steps": [
+                "Make a blue solution of copper sulphate",
+                "Drop a clean iron nail into the solution",
+                "Wait for 30 minutes and observe the color shift from blue to green",
+                "Check the nail for a brown copper coating"
+            ],
+            "learning_outcome": "Understands that a change in color and the formation of a deposit indicate a chemical change",
+            "evaluation": "Accuracy in describing the displacement process (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Curdling of Milk",
+            "objective": "Analyze the chemical transformation of milk into curd",
+            "materials": [
+                "Warm milk",
+                "A spoonful of curd or lemon juice",
+                "Bowl"
+            ],
+            "steps": [
+                "Add a little curd to warm milk and keep it in a warm place",
+                "Wait for 5-6 hours until the milk sets",
+                "Compare the taste, texture, and smell of the milk vs. the curd",
+                "Try to reverse the curd back to milk"
+            ],
+            "learning_outcome": "Explains why curdling is a chemical change and is irreversible",
+            "evaluation": "Comparison table of milk and curd properties (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Galvanization Observation",
+            "objective": "Study methods to prevent chemical changes (rusting)",
+            "materials": [
+                "Ordinary iron nail",
+                "Galvanized (zinc-coated) iron nail",
+                "Salt water"
+            ],
+            "steps": [
+                "Place both nails in a concentrated salt solution",
+                "Leave them for 48 hours",
+                "Observe which nail shows signs of corrosion",
+                "Explain how the zinc coating protects the iron"
+            ],
+            "learning_outcome": "Understands that preventing exposure to oxygen/moisture stops chemical changes",
+            "evaluation": "Logical explanation of the protective layer (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Expansion on Heating",
+            "objective": "Observe physical change in volume",
+            "materials": [
+                "Glass bottle",
+                "Balloon",
+                "Hot and Cold water"
+            ],
+            "steps": [
+                "Stretch a balloon over the mouth of an empty bottle",
+                "Place the bottle in hot water; observe the balloon inflate",
+                "Move the bottle to cold water; observe the balloon deflate",
+                "Discuss if the air inside changed into something new"
+            ],
+            "learning_outcome": "Demonstrates that expansion and contraction are physical changes",
+            "evaluation": "Correct reasoning for why this is a reversible physical change (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Burning of Candle: Dual Change",
+            "objective": "Identify both physical and chemical changes occurring together",
+            "materials": [
+                "Wax candle",
+                "Matchstick"
+            ],
+            "steps": [
+                "Light a candle and observe the melting wax (collect it as it cools)",
+                "Observe the burning wick and the release of smoke/heat",
+                "Identify which part is physical (melting) and which is chemical (burning)"
+            ],
+            "learning_outcome": "Recognizes that some processes involve both types of changes simultaneously",
+            "evaluation": "Clearly distinguishing between the melting wax and burning wick (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Sublimation of Camphor",
+            "objective": "Observe a direct change of state",
+            "materials": [
+                "Camphor (Kapoor)",
+                "China dish",
+                "Inverted funnel",
+                "Cotton plug"
+            ],
+            "steps": [
+                "Place camphor in the dish and cover it with an inverted funnel",
+                "Plug the funnel stem with cotton and heat gently",
+                "Observe the camphor turn into gas and then deposit back on the funnel walls",
+                "Explain why this is physical"
+            ],
+            "learning_outcome": "Understands sublimation as a physical change where identity is retained",
+            "evaluation": "Diagram and explanation of the sublimation process (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Change Lab Report",
+            "objective": "Document and summarize various changes",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Perform three minor changes (e.g., breaking a pencil, mixing salt in water, adding lemon to tea)",
+                "Record 'Initial State', 'Action', 'Resulting State'",
+                "Conclude if each was Physical or Chemical based on properties"
+            ],
+            "learning_outcome": "Strengthens scientific reporting and evidence-based conclusion",
+            "evaluation": "Accuracy of the lab report and classification (10 marks)"
+        }
+    ]
+}

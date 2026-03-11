@@ -1,0 +1,168 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A Slumber Did My Spirit Seal",
+    "title": "Lesson Planner – A Slumber Did My Spirit Seal",
+    "author": "William Wordsworth",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse the poetic theme of death and nature",
+        "Interpret symbolism in the poem",
+        "Identify poetic devices and imagery",
+        "Understand Romantic poetry characteristics",
+        "Develop critical appreciation of poetry"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Wordsworth and Romanticism",
+            "topics_covered": [
+                "Life of Wordsworth",
+                "Features of Romantic poetry"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Discuss nature poetry"
+            ],
+            "assessment": [
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Poem Recitation and First Reading",
+            "topics_covered": [
+                "Poem recitation",
+                "Initial understanding"
+            ],
+            "teaching_strategy": [
+                "Recitation",
+                "Explanation"
+            ],
+            "student_activities": [
+                "Read poem aloud"
+            ],
+            "assessment": [
+                "Oral responses"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "First Stanza Analysis",
+            "topics_covered": [
+                "Meaning of slumber",
+                "Poet’s perception of the girl"
+            ],
+            "teaching_strategy": [
+                "Line-by-line analysis"
+            ],
+            "student_activities": [
+                "Explain stanza"
+            ],
+            "assessment": [
+                "Short answers"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Second Stanza Analysis",
+            "topics_covered": [
+                "Acceptance of death",
+                "Nature imagery"
+            ],
+            "teaching_strategy": [
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Identify imagery"
+            ],
+            "assessment": [
+                "Notebook work"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Symbolism and Imagery",
+            "topics_covered": [
+                "Symbolic meaning",
+                "Earth’s diurnal course"
+            ],
+            "teaching_strategy": [
+                "Concept explanation"
+            ],
+            "student_activities": [
+                "Interpret symbolism"
+            ],
+            "assessment": [
+                "Written explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Poetic Devices",
+            "topics_covered": [
+                "Imagery",
+                "Metaphor",
+                "Theme"
+            ],
+            "teaching_strategy": [
+                "Analytical discussion"
+            ],
+            "student_activities": [
+                "List poetic devices"
+            ],
+            "assessment": [
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Critical Appreciation",
+            "topics_covered": [
+                "Philosophical meaning",
+                "Poet’s message"
+            ],
+            "teaching_strategy": [
+                "Interpretative discussion"
+            ],
+            "student_activities": [
+                "Write appreciation paragraph"
+            ],
+            "assessment": [
+                "Written responses"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Poem summary",
+                "Important questions"
+            ],
+            "teaching_strategy": [
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write summary"
+            ],
+            "assessment": [
+                "Short test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English textbook",
+        "Blackboard",
+        "Poetry audio recordings"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Encourage students to interpret the poem’s emotional and philosophical meaning rather than memorising lines."
+}

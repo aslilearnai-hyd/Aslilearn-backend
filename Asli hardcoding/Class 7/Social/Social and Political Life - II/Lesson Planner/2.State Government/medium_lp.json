@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Social and Political Life - II",
+    "chapter_name": "State government",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the broad definition of health including physical, mental, and environmental aspects",
+        "Compare the features, costs, and availability of Public and Private health services",
+        "Explain the importance of tax revenue in funding public welfare and health infrastructure",
+        "Evaluate the legal implications of the 'Right to Health' through the Hakim Sheikh case",
+        "Identify the challenges faced by vulnerable groups in accessing quality healthcare",
+        "Examine the 'Kerala Model' and 'Costa Rican approach' as successful health strategies",
+        "Understand the state government's responsibility in preventing communicable diseases"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "The Dual Face of Indian Healthcare",
+            "topics_covered": [
+                "Definition of Health: Beyond illness (clean water, nutrition, mental state)",
+                "The Paradox: Large medical infrastructure vs. poor health indicators",
+                "Brainstorming: Why do millions suffer from preventable diseases like TB and Malaria?"
+            ],
+            "teaching_strategy": [
+                "Comparative data analysis using the 'Health in India' table from NCERT",
+                "Discussion on 'Preventive' vs. 'Curative' healthcare",
+                "Visualizing the impact of sanitation on health"
+            ],
+            "student_activities": [
+                "Draft a 'Health Profile' of an ideal healthy village",
+                "Debate: Is India a 'Medical Hub' for foreigners but a 'Health Crisis' for its own poor?"
+            ],
+            "assessment": [
+                "Short answer: Define 'Communicable Diseases' with 3 examples",
+                "Explanation of why health includes 'mental strain'"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Public Health Services and the Law",
+            "topics_covered": [
+                "Structure of Public Health: PHCs, District Hospitals, and Medical Colleges",
+                "The story of Hakim Sheikh: Judicial intervention and the 'Right to Life'",
+                "Why are they called 'Public' services?"
+            ],
+            "teaching_strategy": [
+                "Case Study analysis of the PBKMS vs. State of West Bengal ruling",
+                "Flowcharting the hierarchy of government medical facilities",
+                "Discussion on the 'Accountability' of government hospitals"
+            ],
+            "student_activities": [
+                "Summarize the Supreme Court's verdict in the Hakim Sheikh case",
+                "Identify the nearest Government Hospital and its services"
+            ],
+            "assessment": [
+                "Defining 'Public Health' in terms of ownership and funding",
+                "HOTS: 'Why is the government legally bound to provide emergency care?'"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Private Health Services and Costs",
+            "topics_covered": [
+                "Growth of Private healthcare: Specialized clinics and labs",
+                "The experience of Ranjan vs. Aman (NCERT Comic Strip)",
+                "Issues of high cost, unnecessary medicines, and profit motives"
+            ],
+            "teaching_strategy": [
+                "Comparing the 'Time-Cost' factor in Private vs. Public sectors",
+                "Discussion on 'Medical Ethics' (unnecessary tests and medicines)",
+                "Analyzing the availability of private services in rural vs. urban areas"
+            ],
+            "student_activities": [
+                "Create a T-chart comparing Aman and Ranjan's hospital experiences",
+                "Role-play: A conversation between a private doctor and a poor patient"
+            ],
+            "assessment": [
+                "Listing 3 reasons why private healthcare is becoming dominant",
+                "Identifying the 'hidden costs' of private treatment"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Role of Taxes in Healthcare",
+            "topics_covered": [
+                "What is Tax and why do we pay it?",
+                "Public services funded by taxes (Defense, Police, Health, Education)",
+                "Social equity through tax-funded healthcare"
+            ],
+            "teaching_strategy": [
+                "Diagram: The cycle of Tax $\rightarrow$ Government $\rightarrow$ Public Welfare",
+                "Discussion: 'If we pay taxes, why should we pay again for government services?'",
+                "Analyzing 'Subsidized' rates in public hospitals"
+            ],
+            "student_activities": [
+                "List 5 public services provided by the government using tax money",
+                "Write a short paragraph on the importance of paying taxes for the poor"
+            ],
+            "assessment": [
+                "Oral quiz: Name the main source of income for public services",
+                "True/False on the use of tax revenue"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Equality in Health: Challenges",
+            "topics_covered": [
+                "Availability vs. Affordability: Why 40% of people borrow money for illness",
+                "Gender inequality in health: Neglect of women's health needs",
+                "Challenges in tribal areas: Lack of PHCs and private interest"
+            ],
+            "teaching_strategy": [
+                "Statistical analysis: The 'Cost of Illness' for a poor family",
+                "Discussion on 'Generic Medicines' vs. 'Branded Medicines'",
+                "Brainstorming solutions for rural healthcare shortage"
+            ],
+            "student_activities": [
+                "Poster making: 'Healthcare - A Right, Not a Privilege'",
+                "Interviewing a family member about the cost of their last medical visit"
+            ],
+            "assessment": [
+                "Explaining why women's health is often neglected",
+                "Defining 'Generic Names' in medicine"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Case Studies: Kerala and Costa Rica",
+            "topics_covered": [
+                "The Kerala Model (1996): Decentralization of the health budget",
+                "The Costa Rican approach: Investing army funds into health and education",
+                "The impact of safe water and basic amenities on life expectancy"
+            ],
+            "teaching_strategy": [
+                "Mapping Kerala and Costa Rica on India and World maps",
+                "Comparative study: How money spent on 'Army' vs. 'Health' changes a country",
+                "Analyzing the success of Panchayats in Kerala"
+            ],
+            "student_activities": [
+                "Draw a 'Health Budget' pie chart for a hypothetical 'Army-free' country",
+                "Summarize the 3 key changes made by the Kerala government in 1996"
+            ],
+            "assessment": [
+                "Short note: What is the 'Costa Rican Approach'?",
+                "Evaluation of the role of Panchayats in health"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Synthesis and Mastery Assessment",
+            "topics_covered": [
+                "Summary of the State's role in public welfare",
+                "Review of key terms: PHC, OPD, Generic, Communicable",
+                "Applying concepts to solve NCERT back-exercises"
+            ],
+            "teaching_strategy": [
+                "Concept mapping the chapter: Health $\rightarrow$ Services $\rightarrow$ Issues $\rightarrow$ Solutions",
+                "Peer-led quiz on the Hakim Sheikh case and Kerala model",
+                "Doubt-clearing session"
+            ],
+            "student_activities": [
+                "Complete the integrated chapter mind map",
+                "Final Summative Unit Test"
+            ],
+            "assessment": [
+                "Unit Test (25 marks)",
+                "Review of the final chapter mind map"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT Textbook: Social and Political Life - II",
+        "Charts showing the hierarchy of PHCs and Hospitals",
+        "Clippings of news reports on health issues",
+        "World and India Maps",
+        "Samples/Pictures of Generic vs. Branded medicines"
+    ],
+    "evaluation_methods": [
+        "Comparative tables (Public vs. Private)",
+        "Case study analysis writing",
+        "Flowcharts on tax utilization",
+        "MCQs on constitutional provisions",
+        "Mapping and Poster evaluations"
+    ],
+    "teacher_tip": "Use the story of Aman and Ranjan to bridge the gap between abstract 'Government' and real-life 'Health'. Encourage students to bring a medicine strip from home to identify the 'Generic' and 'Brand' names to make the lesson practical."
+}

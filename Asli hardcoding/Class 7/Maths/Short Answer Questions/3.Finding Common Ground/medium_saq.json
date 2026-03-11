@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Finding Common Ground",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T01:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the HCF of 36 and 84 using the prime factorization method.",
+            "answer": "36 = 2 × 2 × 3 × 3; 84 = 2 × 2 × 3 × 7. Common factors = 2 × 2 × 3 = 12.",
+            "key_concepts": ["prime factorization", "HCF"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "The HCF of two numbers is 6 and their LCM is 36. If one number is 12, find the other number.",
+            "answer": "Product of numbers = HCF × LCM. 12 × x = 6 × 36. x = 216 / 12 = 18.",
+            "key_concepts": ["HCF-LCM relationship"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the smallest number which when divided by 12, 16, and 24 leaves no remainder?",
+            "answer": "LCM of 12, 16, and 24 is 48.",
+            "key_concepts": ["LCM", "division"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the HCF of 108 and 144.",
+            "answer": "36.",
+            "key_concepts": ["HCF"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Two bells toll at intervals of 15 and 20 minutes respectively. If they toll together at 8:00 AM, at what time will they toll together again?",
+            "answer": "LCM of 15 and 20 is 60 minutes. They will toll together at 9:00 AM.",
+            "key_concepts": ["LCM word problem"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the greatest number that can exactly divide 42, 70, and 98.",
+            "answer": "HCF of 42, 70, and 98 is 14.",
+            "key_concepts": ["HCF", "divisibility"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "If the LCM of two co-prime numbers is 117, what is their HCF?",
+            "answer": "The HCF of any two co-prime numbers is 1.",
+            "key_concepts": ["co-prime numbers", "HCF"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the LCM of 16, 24, and 40 using the division method.",
+            "answer": "LCM = 2 × 2 × 2 × 2 × 3 × 5 = 240.",
+            "key_concepts": ["division method", "LCM"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Three tankers contain 403 liters, 434 liters, and 465 liters of diesel respectively. Find the maximum capacity of a container that can measure the diesel of all three tankers in exact number of times.",
+            "answer": "HCF of 403, 434, and 465 is 31 liters.",
+            "key_concepts": ["HCF application"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Are the numbers 18 and 35 co-prime? Justify your answer.",
+            "answer": "Factors of 18: 1, 2, 3, 6, 9, 18. Factors of 35: 1, 5, 7, 35. Only common factor is 1, so they are co-prime.",
+            "key_concepts": ["co-prime verification"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the smallest 4-digit number which is divisible by 18, 24, and 32.",
+            "answer": "LCM of 18, 24, 32 is 288. Multiples of 288 are 288, 576, 864, 1152. Smallest 4-digit is 1152.",
+            "key_concepts": ["LCM", "multiples"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Can two numbers have 15 as their HCF and 110 as their LCM? Give reason.",
+            "answer": "No, because the HCF must always be a factor of the LCM, and 110 is not divisible by 15.",
+            "key_concepts": ["HCF-LCM property"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the prime factorization of 980.",
+            "answer": "2 × 2 × 5 × 7 × 7.",
+            "key_concepts": ["prime factorization"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "The product of two numbers is 2160 and their HCF is 12. Find their LCM.",
+            "answer": "LCM = Product / HCF = 2160 / 12 = 180.",
+            "key_concepts": ["HCF-LCM relationship"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the HCF of 75, 60, and 105?",
+            "answer": "15.",
+            "key_concepts": ["HCF of three numbers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the LCM of 20, 25, and 30.",
+            "answer": "300.",
+            "key_concepts": ["LCM calculation"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the smallest number which when divided by 6, 15, and 18 leaves a remainder 5 in each case.",
+            "answer": "LCM of 6, 15, 18 is 90. Required number = 90 + 5 = 95.",
+            "key_concepts": ["LCM", "remainders"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the difference between a factor and a multiple.",
+            "answer": "A factor divides a number exactly, while a multiple is a product of that number and an integer.",
+            "key_concepts": ["definitions"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the HCF of two consecutive even numbers.",
+            "answer": "The HCF of any two consecutive even numbers is always 2.",
+            "key_concepts": ["HCF properties"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the LCM of 12 and 48. What do you observe?",
+            "answer": "LCM is 48. Observation: If one number is a factor of another, the larger number is their LCM.",
+            "key_concepts": ["LCM property"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Express 144 as a product of powers of its prime factors.",
+            "answer": "2⁴ × 3².",
+            "key_concepts": ["prime factorization", "exponents"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the HCF of 17 and 31?",
+            "answer": "1 (since both are prime).",
+            "key_concepts": ["HCF", "prime numbers"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the LCM of 9 and 4. Are they co-prime?",
+            "answer": "LCM is 36. Yes, they are co-prime as HCF is 1.",
+            "key_concepts": ["LCM", "co-prime"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the largest number that divides 60 and 75 leaving no remainder.",
+            "answer": "HCF of 60 and 75 is 15.",
+            "key_concepts": ["HCF"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Determine the prime factorization of 20570.",
+            "answer": "2 × 5 × 11 × 11 × 17.",
+            "key_concepts": ["prime factorization"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        }
+    ]
+}

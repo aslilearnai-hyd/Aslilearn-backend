@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Physical Features of India",
+    "generated_at": "2026-03-08T22:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which tectonic plates collided to form the Himalayas?",
+            "options": {
+                "A": "Indian Plate and Eurasian Plate",
+                "B": "African Plate and Indian Plate",
+                "C": "Eurasian Plate and Pacific Plate",
+                "D": "Australian Plate and African Plate"
+            },
+            "correct_answer": "A",
+            "explanation": "The Himalayas were formed by the collision of the Indian Plate with the Eurasian Plate.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Which Himalayan range contains the highest peaks and permanent snow?",
+            "options": {
+                "A": "Himachal",
+                "B": "Shiwaliks",
+                "C": "Himadri",
+                "D": "Aravali"
+            },
+            "correct_answer": "C",
+            "explanation": "Himadri or the Great Himalayas contain the highest peaks.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which valley lies between the Himachal and Shiwalik ranges?",
+            "options": {
+                "A": "Duns",
+                "B": "Doabs",
+                "C": "Terai",
+                "D": "Bhangar"
+            },
+            "correct_answer": "A",
+            "explanation": "Duns are longitudinal valleys between Himachal and Shiwalik ranges.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which river forms the world's largest delta?",
+            "options": {
+                "A": "Godavari",
+                "B": "Krishna",
+                "C": "Ganga-Brahmaputra",
+                "D": "Mahanadi"
+            },
+            "correct_answer": "C",
+            "explanation": "The Ganga-Brahmaputra river system forms the Sundarbans delta.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Which physiographic division was part of the Gondwana land?",
+            "options": {
+                "A": "Northern Plains",
+                "B": "Peninsular Plateau",
+                "C": "Himalayas",
+                "D": "Coastal Plains"
+            },
+            "correct_answer": "B",
+            "explanation": "The Peninsular Plateau was part of the ancient Gondwana landmass.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Which plateau is known as the storehouse of minerals in India?",
+            "options": {
+                "A": "Malwa Plateau",
+                "B": "Chotanagpur Plateau",
+                "C": "Bundelkhand Plateau",
+                "D": "Meghalaya Plateau"
+            },
+            "correct_answer": "B",
+            "explanation": "Chotanagpur Plateau contains rich deposits of coal, iron and minerals.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Which mountain range acts as the watershed between the Narmada and Tapi rivers?",
+            "options": {
+                "A": "Aravali Range",
+                "B": "Satpura Range",
+                "C": "Vindhya Range",
+                "D": "Western Ghats"
+            },
+            "correct_answer": "B",
+            "explanation": "Satpura Range lies between the Narmada and Tapi rivers.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Which is the highest peak of the Eastern Ghats?",
+            "options": {
+                "A": "Mahendragiri",
+                "B": "Anai Mudi",
+                "C": "Nanda Devi",
+                "D": "Kanchenjunga"
+            },
+            "correct_answer": "A",
+            "explanation": "Mahendragiri is the highest peak of the Eastern Ghats.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following rivers flows through a rift valley?",
+            "options": {
+                "A": "Ganga",
+                "B": "Brahmaputra",
+                "C": "Narmada",
+                "D": "Kaveri"
+            },
+            "correct_answer": "C",
+            "explanation": "Narmada flows through a rift valley between the Vindhya and Satpura ranges.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Which hills separate the Deccan Plateau from the coastal plains?",
+            "options": {
+                "A": "Satpura Hills",
+                "B": "Nilgiri Hills",
+                "C": "Western Ghats",
+                "D": "Aravali Hills"
+            },
+            "correct_answer": "C",
+            "explanation": "Western Ghats separate the Deccan Plateau from the western coastal plains.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which is the only large river in the Indian Desert?",
+            "options": {
+                "A": "Sabarmati",
+                "B": "Luni",
+                "C": "Chambal",
+                "D": "Tapi"
+            },
+            "correct_answer": "B",
+            "explanation": "Luni is the only large river flowing through the Indian Desert.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Which type of sand dunes are most common in the Thar Desert?",
+            "options": {
+                "A": "Barchans",
+                "B": "Linear dunes",
+                "C": "Star dunes",
+                "D": "Parabolic dunes"
+            },
+            "correct_answer": "A",
+            "explanation": "Barchans are crescent shaped dunes common in deserts.",
+            "difficulty": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Which coastal region lies between Mangalore and Kanyakumari?",
+            "options": {
+                "A": "Konkan Coast",
+                "B": "Kannad Coast",
+                "C": "Malabar Coast",
+                "D": "Coromandel Coast"
+            },
+            "correct_answer": "C",
+            "explanation": "Malabar Coast lies between Mangalore and Kanyakumari.",
+            "difficulty": "hard",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Which rivers form the major deltas on the eastern coast?",
+            "options": {
+                "A": "Narmada and Tapi",
+                "B": "Mahanadi Godavari Krishna Kaveri",
+                "C": "Sabarmati and Luni",
+                "D": "Indus and Jhelum"
+            },
+            "correct_answer": "B",
+            "explanation": "These rivers form large deltas on the eastern coast.",
+            "difficulty": "hard",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Which strait separates India and Sri Lanka?",
+            "options": {
+                "A": "Malacca Strait",
+                "B": "Palk Strait",
+                "C": "Hormuz Strait",
+                "D": "Bering Strait"
+            },
+            "correct_answer": "B",
+            "explanation": "Palk Strait separates India from Sri Lanka.",
+            "difficulty": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 16,
+            "question": "Which island group is located closer to Myanmar?",
+            "options": {
+                "A": "Lakshadweep",
+                "B": "Andaman and Nicobar",
+                "C": "Minicoy",
+                "D": "Maldives"
+            },
+            "correct_answer": "B",
+            "explanation": "Andaman and Nicobar islands lie close to Myanmar.",
+            "difficulty": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 17,
+            "question": "Which island contains India's only active volcano?",
+            "options": {
+                "A": "Minicoy",
+                "B": "Barren Island",
+                "C": "Little Andaman",
+                "D": "Car Nicobar"
+            },
+            "correct_answer": "B",
+            "explanation": "Barren Island in the Andaman Sea has an active volcano.",
+            "difficulty": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 18,
+            "question": "Which region of India is known for heavy rainfall due to orographic effect?",
+            "options": {
+                "A": "Indian Desert",
+                "B": "Western Ghats",
+                "C": "Northern Plains",
+                "D": "Aravali Hills"
+            },
+            "correct_answer": "B",
+            "explanation": "Western Ghats cause heavy rainfall on the windward side.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which plateau lies between the Narmada and the Tapi rivers?",
+            "options": {
+                "A": "Malwa Plateau",
+                "B": "Chotanagpur Plateau",
+                "C": "Satpura Plateau",
+                "D": "Bundelkhand Plateau"
+            },
+            "correct_answer": "C",
+            "explanation": "Satpura Plateau lies between the Narmada and Tapi rivers.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which hill range forms the eastern boundary of the Peninsular Plateau?",
+            "options": {
+                "A": "Aravali Range",
+                "B": "Eastern Ghats",
+                "C": "Satpura Range",
+                "D": "Western Ghats"
+            },
+            "correct_answer": "B",
+            "explanation": "Eastern Ghats form the eastern boundary of the plateau.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which physiographic division of India is most densely populated?",
+            "options": {
+                "A": "Northern Plains",
+                "B": "Himalayas",
+                "C": "Peninsular Plateau",
+                "D": "Indian Desert"
+            },
+            "correct_answer": "A",
+            "explanation": "Northern Plains support dense population due to fertile land.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which plateau lies to the east of the Chotanagpur Plateau?",
+            "options": {
+                "A": "Malwa Plateau",
+                "B": "Meghalaya Plateau",
+                "C": "Bundelkhand Plateau",
+                "D": "Satpura Plateau"
+            },
+            "correct_answer": "B",
+            "explanation": "The Meghalaya Plateau lies east of the Chotanagpur Plateau.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which river island is located in the Brahmaputra River?",
+            "options": {
+                "A": "Majuli",
+                "B": "Minicoy",
+                "C": "Barren Island",
+                "D": "Little Andaman"
+            },
+            "correct_answer": "A",
+            "explanation": "Majuli island lies in the Brahmaputra River.",
+            "difficulty": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which physiographic division of India is known for extensive mineral resources?",
+            "options": {
+                "A": "Northern Plains",
+                "B": "Peninsular Plateau",
+                "C": "Indian Desert",
+                "D": "Coastal Plains"
+            },
+            "correct_answer": "B",
+            "explanation": "The Peninsular Plateau is rich in mineral deposits.",
+            "difficulty": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which physiographic division acts as a natural climatic barrier for India?",
+            "options": {
+                "A": "Peninsular Plateau",
+                "B": "Himalayas",
+                "C": "Indian Desert",
+                "D": "Coastal Plains"
+            },
+            "correct_answer": "B",
+            "explanation": "The Himalayas block cold winds and influence India's climate.",
+            "difficulty": "hard",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

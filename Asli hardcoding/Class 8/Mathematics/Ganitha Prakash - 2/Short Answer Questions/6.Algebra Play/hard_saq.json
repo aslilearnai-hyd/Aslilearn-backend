@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Algebra Play",
+  "generated_at": "2026-03-11T10:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Simplify: 5x + 3y − 2x + 4y.",
+      "answer": "3x + 7y",
+      "key_concepts": ["like terms", "simplification"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Simplify: 7a − 3b + 4a + 2b − 5.",
+      "answer": "11a − b − 5",
+      "key_concepts": ["combining like terms"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the value of x if 4x + 7 = 3x + 15.",
+      "answer": "x = 8",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Solve: 5x − 9 = 2x + 12.",
+      "answer": "x = 7",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Simplify: 3(2x + 5) + 4x.",
+      "answer": "10x + 15",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "Simplify: 2(3a − 4) + 5a.",
+      "answer": "11a − 8",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "Find the value of x if 3x + 5 = 2x + 11.",
+      "answer": "x = 6",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 8,
+      "question": "Solve: 2(x + 4) = 3x − 2.",
+      "answer": "x = 10",
+      "key_concepts": ["linear equations", "distributive property"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 9,
+      "question": "Simplify: 4x + 3 − (2x − 5).",
+      "answer": "2x + 8",
+      "key_concepts": ["simplification", "sign rules"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 10,
+      "question": "Solve: 7x − 4 = 5x + 10.",
+      "answer": "x = 7",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 11,
+      "question": "Simplify: 3(2y + 4) − 2(y − 5).",
+      "answer": "4y + 22",
+      "key_concepts": ["distributive property"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 12,
+      "question": "Solve: 4(x − 3) = 2x + 10.",
+      "answer": "x = 11",
+      "key_concepts": ["linear equations"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 13,
+      "question": "Simplify: 5(2m + 3) − 3m.",
+      "answer": "7m + 15",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 14,
+      "question": "Solve: 6x + 5 = 3x + 20.",
+      "answer": "x = 5",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 15,
+      "question": "Simplify: 8a − 3(2a − 4).",
+      "answer": "2a + 12",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 16,
+      "question": "Solve: 5(x − 2) = 3x + 4.",
+      "answer": "x = 7",
+      "key_concepts": ["linear equations"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 17,
+      "question": "Simplify: 2(4b − 3) + 5b.",
+      "answer": "13b − 6",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 18,
+      "question": "Solve: 3(x + 2) + x = 18.",
+      "answer": "x = 3",
+      "key_concepts": ["linear equations"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 19,
+      "question": "Simplify: 6y − (2y − 7).",
+      "answer": "4y + 7",
+      "key_concepts": ["sign rules", "like terms"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 20,
+      "question": "Solve: 8x − 3 = 2x + 21.",
+      "answer": "x = 4",
+      "key_concepts": ["linear equations"],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 21,
+      "question": "Simplify: 3(2c + 1) + 4( c − 2 ).",
+      "answer": "10c − 5",
+      "key_concepts": ["distributive property"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 22,
+      "question": "Solve: 2(x + 5) + 3x = 25.",
+      "answer": "x = 3",
+      "key_concepts": ["linear equations"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 23,
+      "question": "Simplify: 7m − 2(3m − 4).",
+      "answer": "m + 8",
+      "key_concepts": ["distributive property"],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 24,
+      "question": "Solve: 4x + 9 = 3(x + 5).",
+      "answer": "x = 6",
+      "key_concepts": ["linear equations"],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 25,
+      "question": "Simplify: 5( x + 2 ) − 3( x − 4 ).",
+      "answer": "2x + 22",
+      "key_concepts": ["distributive property"],
+      "marks": 4,
+      "source_section": "Section 1"
+    }
+  ]
+}

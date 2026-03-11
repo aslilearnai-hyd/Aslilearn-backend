@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Prove that work done by a variable force along a straight line is given by the area under the force-displacement graph.",
+      "answer": "For a variable force F(x), infinitesimal work dW = F(x) dx. Total work, W = ∫ F(x) dx over the displacement, which equals the area under the F–x graph.",
+      "key_concepts": ["variable force", "work", "integration", "graph"],
+      "marks": 4,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 2,
+      "question": "A body of mass 5 kg slides down a frictionless incline of height 10 m. Calculate its speed at the bottom using energy conservation.",
+      "answer": "PE at top = mgh = 5 × 9.8 × 10 = 490 J. KE at bottom = 1/2 m v² = 490 ⇒ v² = 196 ⇒ v ≈ 14 m/s.",
+      "key_concepts": ["energy conservation", "kinetic energy", "potential energy", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the work-energy theorem and derive its mathematical expression.",
+      "answer": "Work done by net force on a body = Change in kinetic energy. W = F × d = ΔKE = 1/2 m v² - 1/2 m u².",
+      "key_concepts": ["work-energy theorem", "derivation", "kinetic energy"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 4,
+      "question": "A 2 kg object is acted upon by a force F(x) = 10x N over a displacement from x = 0 to x = 5 m. Calculate the work done.",
+      "answer": "W = ∫0^5 F(x) dx = ∫0^5 10x dx = 10 × (x²/2)|0^5 = 10 × 25/2 = 125 J.",
+      "key_concepts": ["variable force", "integration", "work", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Derive the expression for the total mechanical energy of a body in free fall.",
+      "answer": "Total mechanical energy, E = KE + PE = 1/2 m v² + m g h. Using v² = 2 g (h₀ - h), E = constant = m g h₀.",
+      "key_concepts": ["mechanical energy", "free fall", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 6,
+      "question": "A block is pushed along a horizontal surface with friction. If 500 J of work is done and 100 J is lost to friction, find the increase in kinetic energy.",
+      "answer": "Work done = ΔKE + Work done against friction ⇒ ΔKE = 500 - 100 = 400 J.",
+      "key_concepts": ["work", "friction", "kinetic energy", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 7,
+      "question": "Show that the work done by gravity on a body moving along a vertical path depends only on the vertical displacement.",
+      "answer": "W = F × h = m g × vertical height. Independent of the path taken, depends only on initial and final vertical positions.",
+      "key_concepts": ["work", "gravity", "conservative force", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 8,
+      "question": "A body of mass m slides down a frictionless incline of height h. Derive its velocity at the bottom using energy conservation and kinematics.",
+      "answer": "Using conservation of energy: m g h = 1/2 m v² ⇒ v = √(2 g h). Using v² = u² + 2 a s (a = g sinθ, s = h / sinθ), same result is obtained.",
+      "key_concepts": ["energy conservation", "kinematics", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the difference between conservative and non-conservative forces with examples.",
+      "answer": "Conservative forces (gravity, spring) depend only on initial and final positions; W = -ΔPE. Non-conservative forces (friction, air resistance) depend on path; W is lost as heat.",
+      "key_concepts": ["conservative force", "non-conservative force", "examples", "work"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 10,
+      "question": "A body of mass 3 kg is dropped from 20 m. Calculate work done by gravity and kinetic energy just before hitting the ground.",
+      "answer": "Work done by gravity = m g h = 3 × 9.8 × 20 = 588 J. KE at bottom = 588 J.",
+      "key_concepts": ["work", "gravity", "kinetic energy", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 11,
+      "question": "A car accelerates from 10 m/s to 20 m/s with a mass of 1000 kg. Calculate the work done by the engine.",
+      "answer": "ΔKE = 1/2 m (v² - u²) = 1/2 × 1000 × (400 - 100) = 150,000 J.",
+      "key_concepts": ["work", "kinetic energy", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Derive the expression for kinetic energy using work done by a constant force.",
+      "answer": "W = F × d = m a × d; using v² = u² + 2 a d, W = m (v² - u²)/2 = ΔKE = 1/2 m v² - 1/2 m u².",
+      "key_concepts": ["kinetic energy", "work", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 13,
+      "question": "A 50 kg mass is lifted vertically by 4 m. If the lifting is done in 5 s, calculate the power developed.",
+      "answer": "Work done = m g h = 50 × 9.8 × 4 = 1960 J. Power = W / t = 1960 / 5 ≈ 392 W.",
+      "key_concepts": ["work", "power", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 14,
+      "question": "A body of mass 2 kg moves under a variable force F(x) = 5 + x N from x = 0 to x = 4 m. Calculate the work done.",
+      "answer": "W = ∫0^4 (5 + x) dx = [5x + x²/2]0^4 = 20 + 8 = 28 J.",
+      "key_concepts": ["variable force", "integration", "work", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 15,
+      "question": "A pendulum of length 2 m is released from 30° angle. Find the speed at the lowest point using energy conservation.",
+      "answer": "h = L(1 - cosθ) = 2(1 - cos30°) ≈ 0.268 m. KE = m g h ⇒ v = √(2 g h) ≈ √(2 × 9.8 × 0.268) ≈ 2.29 m/s.",
+      "key_concepts": ["pendulum", "energy conservation", "velocity", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain why work done by friction is negative and derive an expression for it.",
+      "answer": "Friction opposes motion ⇒ displacement opposite to force ⇒ work done W = - f × d.",
+      "key_concepts": ["friction", "negative work", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 17,
+      "question": "A block slides down an inclined plane of height h and length l with friction. Derive an expression for work done against friction.",
+      "answer": "W_friction = f × l, where f = μ m g cosθ. Total work done by gravity = m g h; kinetic energy = m g h - μ m g cosθ × l.",
+      "key_concepts": ["work", "friction", "inclined plane", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 18,
+      "question": "A body is projected vertically upwards with velocity u. Derive the maximum height in terms of u and g using energy conservation.",
+      "answer": "Initial KE = 1/2 m u², At max height KE = 0, PE = m g h_max ⇒ 1/2 m u² = m g h_max ⇒ h_max = u² / (2 g).",
+      "key_concepts": ["vertical projection", "maximum height", "energy conservation", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Derive an expression for velocity of a body moving along a horizontal frictionless surface under a constant force.",
+      "answer": "W = F × d = ΔKE = 1/2 m v² ⇒ v = √(2 F d / m).",
+      "key_concepts": ["horizontal motion", "work", "kinetic energy", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 20,
+      "question": "A spring with spring constant k is compressed by x. Derive an expression for the work done in compressing it.",
+      "answer": "dW = F dx = k x dx ⇒ W = ∫0^x k x dx = 1/2 k x².",
+      "key_concepts": ["spring", "work", "derivation", "formula"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 21,
+      "question": "A roller coaster car of mass 500 kg descends from a height of 25 m. Calculate its speed at the bottom ignoring friction.",
+      "answer": "PE = m g h = 500 × 9.8 × 25 = 122,500 J; KE = 1/2 m v² = 122,500 ⇒ v² = 245 ⇒ v ≈ 15.65 m/s.",
+      "key_concepts": ["roller coaster", "energy conservation", "speed", "calculation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the relation between work done and change in potential energy for conservative forces.",
+      "answer": "For conservative force F, W = - ΔPE; work done by force decreases potential energy by equal amount.",
+      "key_concepts": ["conservative force", "work", "potential energy", "relation"],
+      "marks": 4,
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 23,
+      "question": "A body of mass 2 kg is moving with 4 m/s and comes to rest due to friction over 8 m. Find the force of friction.",
+      "answer": "Work done by friction = ΔKE = 1/2 m v² = 1/2 × 2 × 16 = 16 J. W = F × d ⇒ F = 16 / 8 = 2 N.",
+      "key_concepts": ["friction", "work", "calculation", "kinetic energy"],
+      "marks": 4,
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Derive the expression for power in terms of force and velocity when force acts along the direction of motion.",
+      "answer": "P = Work / time = F × d / t = F × v (since v = d/t).",
+      "key_concepts": ["power", "force", "velocity", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 25,
+      "question": "A body slides down a smooth slope of height h and length l. Derive an expression for its acceleration along the slope using energy conservation.",
+      "answer": "PE lost = m g h = KE gained = 1/2 m v² ⇒ v² = 2 g h. Using v² = 2 a l ⇒ a = g h / l.",
+      "key_concepts": ["slope", "energy conservation", "acceleration", "derivation"],
+      "marks": 4,
+      "source_section": "Section 10.4"
+    }
+  ]
+}

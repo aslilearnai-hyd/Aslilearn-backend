@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 4: The Mughals (16th to 17th Century)",
+    "generated_at": "2026-03-08T22:38:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "Who were the ancestors of the Mughals on their mother's and father's sides?",
+                "correct_answer": "Genghis Khan (maternal) and Timur (paternal)",
+                "explanation": "They were descendants of Genghis Khan, ruler of Mongol tribes, and Timur, the ruler of Iran, Iraq, and modern-day Turkey.",
+                "source_section": "Who were the Mughals?"
+            },
+            {
+                "question": "At what age did Babur succeed to the throne of Ferghana?",
+                "correct_answer": "12 years old",
+                "explanation": "He succeeded in 1494 but was forced to leave his ancestral throne due to the invasion of another Mongol group, the Uzbegs.",
+                "source_section": "Mughal Military Campaigns"
+            },
+            {
+                "question": "What was the 'Mansabdari' system?",
+                "correct_answer": "A grading system used by the Mughals to fix rank, salary, and military responsibilities",
+                "explanation": "The term 'mansabdar' refers to an individual who holds a 'mansab', meaning a position or rank.",
+                "source_section": "Mansabdars and Jagirdars"
+            },
+            {
+                "question": "Define 'Zat' in the Mughal administrative context.",
+                "correct_answer": "A numerical value that determined the rank and salary of a mansabdar",
+                "explanation": "The higher the zat, the more prestigious was the noble’s position in court and the larger his salary.",
+                "source_section": "Mansabdars and Jagirdars"
+            },
+            {
+                "question": "What were 'Jagirs'?",
+                "correct_answer": "Land assignments given to mansabdars to collect revenue as salary",
+                "explanation": "Mansabdars did not actually reside in or administer their jagirs; they only had rights to the revenue collected by their servants.",
+                "source_section": "Mansabdars and Jagirdars"
+            },
+            {
+                "question": "What was 'Zabt'?",
+                "correct_answer": "A revenue system based on careful survey of crop yields and prices over a 10-year period",
+                "explanation": "It was prevalent in areas where Mughal administrators could survey the land and keep very careful accounts.",
+                "source_section": "Zabt and Zamindars"
+            },
+            {
+                "question": "Who was Akbar's revenue minister who carried out the land surveys?",
+                "correct_answer": "Todar Mal",
+                "explanation": "He carried out a careful survey of crop yields, prices, and areas cultivated for a 10-year period (1570–1580).",
+                "source_section": "Zabt and Zamindars"
+            },
+            {
+                "question": "What is the meaning of 'Sulh-i-kul'?",
+                "correct_answer": "Universal peace",
+                "explanation": "It was a principle of governance based on ethics, honesty, and justice that did not discriminate between people of different religions.",
+                "source_section": "Akbar’s Policies"
+            },
+            {
+                "question": "Who wrote the 'Akbar Nama' and 'Ain-i Akbari'?",
+                "correct_answer": "Abul Fazl",
+                "explanation": "He was a close friend and courtier of Akbar; the Ain-i Akbari deals with Akbar’s administration, household, and army.",
+                "source_section": "Akbar’s Policies"
+            },
+            {
+                "question": "What were 'Zamindars' in the Mughal empire?",
+                "correct_answer": "Intermediaries who collected land revenue from peasants",
+                "explanation": "The Mughals used one term—zamindars—to describe all intermediaries, whether they were local headmen or powerful chieftains.",
+                "source_section": "Zabt and Zamindars"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Primogeniture vs. Coparcenary",
+                "content": "The Mughals did not follow primogeniture (eldest son inherits); they followed the Timurid custom of coparcenary inheritance, or a division of the inheritance amongst all the sons.",
+                "source_section": "Mughal Traditions of Succession"
+            },
+            {
+                "title": "Ibadat Khana",
+                "content": "A prayer house where Akbar held discussions with learned individuals from various religions like Ulama, Brahmanas, and Jesuit priests.",
+                "source_section": "Akbar’s Policies"
+            },
+            {
+                "title": "The Big Six",
+                "content": "The major Mughal emperors were Babur, Humayun, Akbar, Jahangir, Shah Jahan, and Aurangzeb.",
+                "source_section": "Mughal Military Campaigns"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Cannons were an important addition to 16th-century warfare; Babur used them effectively in the first battle of Panipat.",
+                "source_section": "Mughal Military Campaigns"
+            },
+            {
+                "fact": "Nur Jahan (Mehrunnisa) exercised tremendous influence in Jahangir's court and had coins struck in her name.",
+                "source_section": "Jahangir’s Court"
+            },
+            {
+                "fact": "The Taj Mahal was constructed during the reign of Shah Jahan as a mausoleum for his wife Mumtaz Mahal.",
+                "source_section": "Mughal Empire in the 17th Century"
+            }
+        ]
+    }
+}

@@ -1,0 +1,367 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Coordinate Geometry",
+    "generated_at": "2026-03-06T02:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the process of plotting multiple points and identifying the quadrant for each.",
+            "answer": "Points are plotted using their coordinates and their quadrant is identified based on coordinate signs.",
+            "answer_outline": [
+                "Plotting",
+                "Quadrant identification"
+            ],
+            "key_concepts": [
+                "plotting"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how coordinate geometry links algebra and geometry with examples.",
+            "answer": "Equations represent geometric objects such as lines and curves.",
+            "answer_outline": [
+                "Algebraic equations",
+                "Geometric representation"
+            ],
+            "key_concepts": [
+                "coordinate geometry"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how the position of points changes when coordinates change sign.",
+            "answer": "Changing the sign of coordinates moves the point into different quadrants.",
+            "answer_outline": [
+                "Sign change",
+                "Quadrant movement"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how the origin acts as a reference point in coordinate geometry.",
+            "answer": "Distances along axes are measured from the origin.",
+            "answer_outline": [
+                "Reference point"
+            ],
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the graphical representation of points in all four quadrants.",
+            "answer": "Each quadrant contains points with specific sign combinations of coordinates.",
+            "answer_outline": [
+                "Quadrant signs"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how coordinates help determine the location of objects on a map.",
+            "answer": "Coordinates specify exact positions on maps similar to latitude and longitude.",
+            "answer_outline": [
+                "Coordinates",
+                "Maps"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the concept of symmetry about the axes.",
+            "answer": "Points may be mirrored across axes producing symmetrical coordinates.",
+            "answer_outline": [
+                "Reflection",
+                "Axes symmetry"
+            ],
+            "key_concepts": [
+                "symmetry"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the importance of coordinate geometry in computer graphics.",
+            "answer": "Computer graphics use coordinate systems to display images and shapes.",
+            "answer_outline": [
+                "Coordinates",
+                "Graphics"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how plotting several points can represent a line or curve.",
+            "answer": "Multiple plotted points connected together form lines or curves.",
+            "answer_outline": [
+                "Plotting",
+                "Line formation"
+            ],
+            "key_concepts": [
+                "graphs"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the role of coordinate geometry in navigation systems.",
+            "answer": "Navigation systems use coordinate positions to determine location and direction.",
+            "answer_outline": [
+                "Coordinates",
+                "Navigation"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how sign combinations determine the quadrant of any point.",
+            "answer": "Signs of coordinates determine quadrant positions.",
+            "answer_outline": [
+                "Sign rules"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the importance of axes in graphing equations.",
+            "answer": "Axes provide reference for plotting graphs of equations.",
+            "answer_outline": [
+                "Axes"
+            ],
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how coordinate geometry is applied in physics.",
+            "answer": "Coordinates help represent motion and positions in physics graphs.",
+            "answer_outline": [
+                "Physics graphs"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the difference between plotting and graphing.",
+            "answer": "Plotting refers to marking points while graphing involves representing relationships using plotted points.",
+            "answer_outline": [
+                "Plotting",
+                "Graphing"
+            ],
+            "key_concepts": [
+                "graphs"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain how coordinate geometry is useful in engineering design.",
+            "answer": "Engineers use coordinate systems to design structures and machines.",
+            "answer_outline": [
+                "Engineering use"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how coordinate geometry helps analyze geometric transformations.",
+            "answer": "Transformations such as translation and reflection can be represented using coordinates.",
+            "answer_outline": [
+                "Transformations"
+            ],
+            "key_concepts": [
+                "transformations"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how coordinates help describe movement on a plane.",
+            "answer": "Coordinates track movement horizontally and vertically across the plane.",
+            "answer_outline": [
+                "Movement"
+            ],
+            "key_concepts": [
+                "coordinates"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how plotting helps understand algebraic equations.",
+            "answer": "Graphing equations visually shows relationships between variables.",
+            "answer_outline": [
+                "Graphing"
+            ],
+            "key_concepts": [
+                "graphs"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of the Cartesian coordinate system in mathematics.",
+            "answer": "It provides a framework for linking algebra and geometry.",
+            "answer_outline": [
+                "Mathematical framework"
+            ],
+            "key_concepts": [
+                "coordinate system"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how coordinate geometry is used in architecture.",
+            "answer": "Architects use coordinate systems to design building layouts and structures.",
+            "answer_outline": [
+                "Architecture"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how coordinate geometry helps solve geometric problems.",
+            "answer": "It converts geometric relationships into algebraic calculations.",
+            "answer_outline": [
+                "Algebraic solution"
+            ],
+            "key_concepts": [
+                "problem solving"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how coordinate geometry is applied in robotics.",
+            "answer": "Robots use coordinate systems to navigate and position objects.",
+            "answer_outline": [
+                "Robotics"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how graphs represent real-world relationships.",
+            "answer": "Graphs visually display relationships between quantities.",
+            "answer_outline": [
+                "Graph interpretation"
+            ],
+            "key_concepts": [
+                "graphs"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the significance of quadrants in interpreting graphs.",
+            "answer": "Quadrants indicate positive or negative relationships between variables.",
+            "answer_outline": [
+                "Quadrant meaning"
+            ],
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the historical importance of René Descartes' coordinate system.",
+            "answer": "Descartes' coordinate system revolutionized mathematics by connecting algebra with geometry.",
+            "answer_outline": [
+                "Historical contribution"
+            ],
+            "key_concepts": [
+                "Descartes"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Introduction"
+        }
+    ]
+}

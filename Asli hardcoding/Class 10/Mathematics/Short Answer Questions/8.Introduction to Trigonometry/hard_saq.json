@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 8: Introduction to Trigonometry",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-01T22:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Evaluate sin²30° + cos²30°.",
+            "answer": "sin²30° + cos²30° = 1.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Evaluate sec²45° – tan²45°.",
+            "answer": "sec²45° – tan²45° = 1.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Find A if tan A = 1/√3.",
+            "answer": "A = 30°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Find A if sin A = √3/2.",
+            "answer": "A = 60°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Evaluate tan 45° + cot 45°.",
+            "answer": "tan 45° + cot 45° = 2.",
+            "key_concepts": [
+                "tan cot"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Evaluate sin 90° – cos 0°.",
+            "answer": "sin 90° – cos 0° = 0.",
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Find cos A if sin A = 1/2.",
+            "answer": "cos A = √3/2.",
+            "key_concepts": [
+                "cos"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Find sec A if cos A = 1/2.",
+            "answer": "sec A = 2.",
+            "key_concepts": [
+                "sec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Find cosec A if sin A = 1/2.",
+            "answer": "cosec A = 2.",
+            "key_concepts": [
+                "cosec"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which identity relates tan²A and sec²A?",
+            "answer": "1 + tan²A = sec²A.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which identity relates cot²A and cosec²A?",
+            "answer": "1 + cot²A = cosec²A.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Find tan A if cos A = sin A.",
+            "answer": "tan A = 1.",
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Evaluate cos²60° + sin²60°.",
+            "answer": "cos²60° + sin²60° = 1.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Find sin A if cosec A = √2.",
+            "answer": "sin A = 1/√2.",
+            "key_concepts": [
+                "sin"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Find A if sec A = 2.",
+            "answer": "A = 60°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Evaluate sec 0° + cos 0°.",
+            "answer": "sec 0° + cos 0° = 2.",
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which ratio becomes infinite at 90°?",
+            "answer": "Tangent.",
+            "key_concepts": [
+                "undefined"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Evaluate sin 60° cos 30°.",
+            "answer": "sin 60° cos 30° = 3/4.",
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Find cot 30°.",
+            "answer": "cot 30° = √3.",
+            "key_concepts": [
+                "cot"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Find tan A if sec A = √2.",
+            "answer": "tan A = 1.",
+            "key_concepts": [
+                "tan"
+            ],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Evaluate tan A × cot A.",
+            "answer": "tan A × cot A = 1.",
+            "key_concepts": [
+                "product"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Find A if sin A = 1.",
+            "answer": "A = 90°.",
+            "key_concepts": [
+                "angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find cos A if sec A = 2.",
+            "answer": "cos A = 1/2.",
+            "key_concepts": [
+                "cos"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Evaluate sin 30° + cos 60°.",
+            "answer": "sin 30° + cos 60° = 1.",
+            "key_concepts": [
+                "values"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which trigonometric identity is used most frequently?",
+            "answer": "sin²A + cos²A = 1.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 1,
+            "source_section": "Section 8.4"
+        }
+    ]
+}

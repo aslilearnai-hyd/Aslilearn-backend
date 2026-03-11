@@ -1,0 +1,180 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Heat Transfer in Nature",
+    "difficulty": "Easy",
+    "source_pdf": "cbse_class7_science_ch7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Conduction Demonstration",
+            "objective": "Understand heat transfer by conduction",
+            "materials": [
+                "Metal rod",
+                "Candle",
+                "Wax",
+                "Cloth"
+            ],
+            "steps": [
+                "Light a candle and heat one end of the metal rod",
+                "Place small wax drops on the rod",
+                "Observe melting of wax and note time taken"
+            ],
+            "learning_outcome": "Recognizes conduction in solids",
+            "evaluation": "Observation notes and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Convection in Water",
+            "objective": "Observe heat transfer through convection",
+            "materials": [
+                "Beaker",
+                "Water",
+                "Food color",
+                "Heat source"
+            ],
+            "steps": [
+                "Fill a beaker with water and heat it gently",
+                "Add a drop of food color at the bottom",
+                "Observe movement of color in water"
+            ],
+            "learning_outcome": "Understands convection currents in liquids",
+            "evaluation": "Explanation of observed pattern (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Radiation from Sun",
+            "objective": "Identify heat transfer by radiation",
+            "materials": [
+                "Thermometer",
+                "Black and white paper",
+                "Sunlight"
+            ],
+            "steps": [
+                "Place thermometer on black paper under sunlight",
+                "Place another thermometer on white paper under sunlight",
+                "Compare temperature readings after 5 minutes"
+            ],
+            "learning_outcome": "Understands radiation and effect of color",
+            "evaluation": "Correct observation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Insulator vs Conductor",
+            "objective": "Differentiate between heat insulators and conductors",
+            "materials": [
+                "Metal spoon",
+                "Wooden spoon",
+                "Hot water"
+            ],
+            "steps": [
+                "Place both spoons in hot water",
+                "Touch handles carefully and note temperature change",
+                "Identify conductor and insulator"
+            ],
+            "learning_outcome": "Recognizes materials as conductors or insulators",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Temperature Change Observation",
+            "objective": "Observe heat transfer in everyday objects",
+            "materials": [
+                "Thermometer",
+                "Cup of hot water",
+                "Cup of cold water"
+            ],
+            "steps": [
+                "Measure temperature of both cups initially",
+                "Place thermometer in hot water and record temperature every 1 minute",
+                "Place thermometer in cold water and record temperature"
+            ],
+            "learning_outcome": "Understands temperature change over time",
+            "evaluation": "Accuracy of recorded observations (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Conduction in Solids",
+            "objective": "Observe effect of different materials on heat transfer",
+            "materials": [
+                "Metal, wooden, and plastic rods",
+                "Candle",
+                "Wax"
+            ],
+            "steps": [
+                "Heat one end of each rod over a candle",
+                "Place wax drops on other end",
+                "Compare which wax melts first"
+            ],
+            "learning_outcome": "Compares conduction in different solids",
+            "evaluation": "Explanation based on observations (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Effect of Surface Color on Heat Absorption",
+            "objective": "Learn how color affects radiation absorption",
+            "materials": [
+                "Black and white cups",
+                "Hot water",
+                "Thermometer"
+            ],
+            "steps": [
+                "Pour equal hot water into both cups",
+                "Measure temperature after 5 minutes",
+                "Compare heat retention in both cups"
+            ],
+            "learning_outcome": "Understands effect of color on heat absorption",
+            "evaluation": "Accurate comparison and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Air Convection Experiment",
+            "objective": "Observe convection in gases",
+            "materials": [
+                "Glass jar",
+                "Incense stick",
+                "Heat source"
+            ],
+            "steps": [
+                "Place incense stick at the bottom of a jar",
+                "Heat jar gently from one side",
+                "Observe smoke movement indicating air convection"
+            ],
+            "learning_outcome": "Visualizes convection currents in air",
+            "evaluation": "Observation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Design a Simple Thermos",
+            "objective": "Apply insulation concept in real life",
+            "materials": [
+                "Plastic cup",
+                "Aluminum foil",
+                "Cotton",
+                "Hot water"
+            ],
+            "steps": [
+                "Wrap cup with foil and cotton",
+                "Pour hot water and measure temperature after 10 minutes",
+                "Compare with unwrapped cup"
+            ],
+            "learning_outcome": "Understands insulation to reduce heat loss",
+            "evaluation": "Effectiveness of homemade thermos (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Create a Heat Transfer Quiz",
+            "objective": "Reinforce chapter concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Prepare five questions on conduction",
+                "Prepare five questions on convection and radiation",
+                "Exchange with a friend and solve"
+            ],
+            "learning_outcome": "Strengthens understanding of heat transfer",
+            "evaluation": "Quality of questions and answers (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 5: Number Play",
+  "generated_at": "2026-03-05T00:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following numbers is both a multiple of 2 and 3?",
+      "options": {
+        "A": "14",
+        "B": "18",
+        "C": "25",
+        "D": "27"
+      },
+      "correct_answer": "B",
+      "explanation": "18 is divisible by both 2 and 3.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following numbers is divisible by both 4 and 5?",
+      "options": {
+        "A": "10",
+        "B": "15",
+        "C": "20",
+        "D": "25"
+      },
+      "correct_answer": "C",
+      "explanation": "20 ÷ 4 = 5 and 20 ÷ 5 = 4.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the smallest number divisible by both 3 and 4?",
+      "options": {
+        "A": "6",
+        "B": "9",
+        "C": "12",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "explanation": "12 is the smallest number divisible by both 3 and 4.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which number is a factor of both 24 and 36?",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "11"
+      },
+      "correct_answer": "B",
+      "explanation": "6 divides both 24 and 36.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following numbers is divisible by 9?",
+      "options": {
+        "A": "45",
+        "B": "46",
+        "C": "47",
+        "D": "48"
+      },
+      "correct_answer": "A",
+      "explanation": "45 ÷ 9 = 5.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which number is a multiple of both 5 and 6?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "30 is divisible by both 5 and 6.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which number is divisible by 8?",
+      "options": {
+        "A": "32",
+        "B": "36",
+        "C": "40",
+        "D": "44"
+      },
+      "correct_answer": "A",
+      "explanation": "32 ÷ 8 = 4.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which number is divisible by both 7 and 3?",
+      "options": {
+        "A": "18",
+        "B": "21",
+        "C": "24",
+        "D": "27"
+      },
+      "correct_answer": "B",
+      "explanation": "21 ÷ 7 = 3 and 21 ÷ 3 = 7.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following numbers is divisible by 4?",
+      "options": {
+        "A": "26",
+        "B": "28",
+        "C": "30",
+        "D": "34"
+      },
+      "correct_answer": "B",
+      "explanation": "28 ÷ 4 = 7.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which number is divisible by both 2 and 9?",
+      "options": {
+        "A": "16",
+        "B": "18",
+        "C": "20",
+        "D": "22"
+      },
+      "correct_answer": "B",
+      "explanation": "18 is divisible by both 2 and 9.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Which number is a common multiple of 4 and 6?",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "14",
+        "D": "16"
+      },
+      "correct_answer": "B",
+      "explanation": "12 is divisible by both 4 and 6.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which number is divisible by 5 but not by 2?",
+      "options": {
+        "A": "20",
+        "B": "30",
+        "C": "35",
+        "D": "40"
+      },
+      "correct_answer": "C",
+      "explanation": "35 is divisible by 5 but not by 2.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following numbers is divisible by both 3 and 5?",
+      "options": {
+        "A": "12",
+        "B": "15",
+        "C": "18",
+        "D": "21"
+      },
+      "correct_answer": "B",
+      "explanation": "15 ÷ 3 = 5 and 15 ÷ 5 = 3.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which number is divisible by both 8 and 3?",
+      "options": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "36"
+      },
+      "correct_answer": "B",
+      "explanation": "24 is divisible by both 8 and 3.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which number is a factor of both 30 and 45?",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "7",
+        "D": "11"
+      },
+      "correct_answer": "B",
+      "explanation": "5 divides both numbers.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which number is divisible by both 4 and 7?",
+      "options": {
+        "A": "14",
+        "B": "21",
+        "C": "28",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "28 ÷ 4 = 7 and 28 ÷ 7 = 4.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which number is divisible by both 6 and 5?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "30 ÷ 6 = 5 and 30 ÷ 5 = 6.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which number is divisible by both 9 and 2?",
+      "options": {
+        "A": "16",
+        "B": "18",
+        "C": "20",
+        "D": "24"
+      },
+      "correct_answer": "B",
+      "explanation": "18 is divisible by both 9 and 2.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which number is divisible by both 3 and 8?",
+      "options": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "40"
+      },
+      "correct_answer": "B",
+      "explanation": "24 is divisible by both 3 and 8.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which number is divisible by both 2 and 7?",
+      "options": {
+        "A": "14",
+        "B": "21",
+        "C": "25",
+        "D": "27"
+      },
+      "correct_answer": "A",
+      "explanation": "14 is divisible by both 2 and 7.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which number is divisible by both 4 and 9?",
+      "options": {
+        "A": "24",
+        "B": "36",
+        "C": "40",
+        "D": "48"
+      },
+      "correct_answer": "B",
+      "explanation": "36 ÷ 4 = 9 and 36 ÷ 9 = 4.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which number is divisible by both 5 and 9?",
+      "options": {
+        "A": "40",
+        "B": "45",
+        "C": "50",
+        "D": "55"
+      },
+      "correct_answer": "B",
+      "explanation": "45 is divisible by both 5 and 9.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which number is divisible by both 6 and 4?",
+      "options": {
+        "A": "12",
+        "B": "18",
+        "C": "24",
+        "D": "30"
+      },
+      "correct_answer": "C",
+      "explanation": "24 ÷ 6 = 4 and 24 ÷ 4 = 6.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which number is divisible by both 3 and 7?",
+      "options": {
+        "A": "18",
+        "B": "21",
+        "C": "24",
+        "D": "27"
+      },
+      "correct_answer": "B",
+      "explanation": "21 ÷ 3 = 7 and 21 ÷ 7 = 3.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which number is divisible by both 8 and 5?",
+      "options": {
+        "A": "20",
+        "B": "30",
+        "C": "40",
+        "D": "50"
+      },
+      "correct_answer": "C",
+      "explanation": "40 ÷ 8 = 5 and 40 ÷ 5 = 8.",
+      "difficulty": "medium",
+      "source_section": "Section 5.2"
+    }
+  ]
+}

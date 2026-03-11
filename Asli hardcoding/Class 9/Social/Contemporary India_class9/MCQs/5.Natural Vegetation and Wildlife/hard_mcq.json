@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Natural Vegetation and Wildlife",
+    "generated_at": "2026-03-08T20:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which combination of factors mainly determines the type of natural vegetation in a region?",
+            "options": {
+                "A": "Population and industry",
+                "B": "Climate and soil",
+                "C": "Transport and trade",
+                "D": "Education and culture"
+            },
+            "correct_answer": "B",
+            "explanation": "Climate and soil conditions mainly determine natural vegetation.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is NOT a type of natural vegetation found in India?",
+            "options": {
+                "A": "Tropical Evergreen Forest",
+                "B": "Tropical Deciduous Forest",
+                "C": "Temperate Desert Forest",
+                "D": "Mangrove Forest"
+            },
+            "correct_answer": "C",
+            "explanation": "Temperate desert forest is not a vegetation type found in India.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following forests is most dense and multi-layered?",
+            "options": {
+                "A": "Thorn forests",
+                "B": "Evergreen forests",
+                "C": "Montane forests",
+                "D": "Deciduous forests"
+            },
+            "correct_answer": "B",
+            "explanation": "Evergreen forests are dense and have multilayer vegetation.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which pair of trees is commonly found in tropical evergreen forests?",
+            "options": {
+                "A": "Teak and Sal",
+                "B": "Ebony and Mahogany",
+                "C": "Babool and Acacia",
+                "D": "Pine and Deodar"
+            },
+            "correct_answer": "B",
+            "explanation": "Ebony and mahogany are common evergreen forest trees.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which vegetation type is adapted to survive in regions with rainfall less than 70 cm?",
+            "options": {
+                "A": "Evergreen forests",
+                "B": "Deciduous forests",
+                "C": "Thorn forests",
+                "D": "Mangrove forests"
+            },
+            "correct_answer": "C",
+            "explanation": "Thorn forests grow in areas with very low rainfall.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which forest type changes according to altitude in mountainous regions?",
+            "options": {
+                "A": "Montane forests",
+                "B": "Evergreen forests",
+                "C": "Mangrove forests",
+                "D": "Thorn forests"
+            },
+            "correct_answer": "A",
+            "explanation": "Montane forests vary with altitude in mountains.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which feature helps mangrove trees survive in tidal waters?",
+            "options": {
+                "A": "Broad leaves",
+                "B": "Long straight trunks",
+                "C": "Breathing roots",
+                "D": "Large fruits"
+            },
+            "correct_answer": "C",
+            "explanation": "Mangrove trees have breathing roots that help them survive in waterlogged soil.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "The Sundarbans mangrove forests are located in which delta?",
+            "options": {
+                "A": "Mahanadi delta",
+                "B": "Godavari delta",
+                "C": "Krishna delta",
+                "D": "Ganga-Brahmaputra delta"
+            },
+            "correct_answer": "D",
+            "explanation": "The Sundarbans are located in the Ganga-Brahmaputra delta.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which animal species is exclusively protected in Gir National Park?",
+            "options": {
+                "A": "Tiger",
+                "B": "Asiatic lion",
+                "C": "Snow leopard",
+                "D": "Elephant"
+            },
+            "correct_answer": "B",
+            "explanation": "The Asiatic lion survives only in Gir National Park.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which medicinal plant is used to treat snake bites and blood pressure?",
+            "options": {
+                "A": "Neem",
+                "B": "Sarpagandha",
+                "C": "Tulsi",
+                "D": "Bamboo"
+            },
+            "correct_answer": "B",
+            "explanation": "Sarpagandha is widely used in traditional medicine.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which group of animals includes gharials and crocodiles?",
+            "options": {
+                "A": "Mammals",
+                "B": "Birds",
+                "C": "Reptiles",
+                "D": "Amphibians"
+            },
+            "correct_answer": "C",
+            "explanation": "Crocodiles and gharials are reptiles.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which bird migrates thousands of kilometers to reach India in winter?",
+            "options": {
+                "A": "Peacock",
+                "B": "Siberian crane",
+                "C": "Parrot",
+                "D": "Crow"
+            },
+            "correct_answer": "B",
+            "explanation": "Siberian cranes migrate to India during winter.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which law was passed in India to protect wildlife species?",
+            "options": {
+                "A": "Forest Protection Act 1952",
+                "B": "Wildlife Protection Act 1972",
+                "C": "Environmental Safety Act 1960",
+                "D": "Nature Conservation Act 1980"
+            },
+            "correct_answer": "B",
+            "explanation": "The Wildlife Protection Act was implemented in 1972.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Which conservation project was launched specifically for tiger protection?",
+            "options": {
+                "A": "Project Rhino",
+                "B": "Project Elephant",
+                "C": "Project Tiger",
+                "D": "Project Forest"
+            },
+            "correct_answer": "C",
+            "explanation": "Project Tiger was launched in 1973 to protect tigers.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following is the main aim of biosphere reserves?",
+            "options": {
+                "A": "Urban development",
+                "B": "Agricultural expansion",
+                "C": "Conservation of biodiversity",
+                "D": "Mining activities"
+            },
+            "correct_answer": "C",
+            "explanation": "Biosphere reserves conserve ecosystems and biodiversity.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following biosphere reserves is located in southern India?",
+            "options": {
+                "A": "Nilgiri",
+                "B": "Sundarbans",
+                "C": "Nanda Devi",
+                "D": "Pachmarhi"
+            },
+            "correct_answer": "A",
+            "explanation": "Nilgiri Biosphere Reserve lies in southern India.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following activities leads directly to habitat destruction?",
+            "options": {
+                "A": "Afforestation",
+                "B": "Deforestation",
+                "C": "Forest conservation",
+                "D": "Wildlife protection"
+            },
+            "correct_answer": "B",
+            "explanation": "Deforestation destroys natural habitats.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following ecosystems supports both terrestrial and aquatic life?",
+            "options": {
+                "A": "Mangrove forests",
+                "B": "Thorn forests",
+                "C": "Montane forests",
+                "D": "Deciduous forests"
+            },
+            "correct_answer": "A",
+            "explanation": "Mangrove forests support both land and marine organisms.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which factor is responsible for variation in vegetation across mountain slopes?",
+            "options": {
+                "A": "Altitude",
+                "B": "Population",
+                "C": "Urbanization",
+                "D": "Transport"
+            },
+            "correct_answer": "A",
+            "explanation": "Vegetation changes with altitude due to climate variation.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which species is considered endangered in India?",
+            "options": {
+                "A": "Tiger",
+                "B": "Crow",
+                "C": "Pigeon",
+                "D": "Goat"
+            },
+            "correct_answer": "A",
+            "explanation": "The tiger is considered an endangered species in India.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which vegetation type is most useful for protecting coastal regions from storms?",
+            "options": {
+                "A": "Thorn forests",
+                "B": "Mangrove forests",
+                "C": "Deciduous forests",
+                "D": "Montane forests"
+            },
+            "correct_answer": "B",
+            "explanation": "Mangroves protect coasts from storms and erosion.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following helps maintain ecological balance?",
+            "options": {
+                "A": "Biodiversity",
+                "B": "Urbanization",
+                "C": "Industrialization",
+                "D": "Mining"
+            },
+            "correct_answer": "A",
+            "explanation": "Biodiversity maintains ecological balance.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which conservation method protects animals in their natural habitats?",
+            "options": {
+                "A": "Zoos",
+                "B": "Wildlife sanctuaries",
+                "C": "Museums",
+                "D": "Laboratories"
+            },
+            "correct_answer": "B",
+            "explanation": "Wildlife sanctuaries protect animals in natural habitats.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Which human activity has the greatest negative impact on forests?",
+            "options": {
+                "A": "Plantation",
+                "B": "Deforestation",
+                "C": "Forest conservation",
+                "D": "Wildlife protection"
+            },
+            "correct_answer": "B",
+            "explanation": "Deforestation destroys forests and ecosystems.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is biodiversity conservation necessary?",
+            "options": {
+                "A": "To increase pollution",
+                "B": "To protect species and ecosystems",
+                "C": "To build industries",
+                "D": "To expand cities"
+            },
+            "correct_answer": "B",
+            "explanation": "Conservation protects species and maintains ecological balance.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        }
+    ]
+}

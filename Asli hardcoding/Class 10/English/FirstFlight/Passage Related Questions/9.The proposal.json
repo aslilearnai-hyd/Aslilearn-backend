@@ -1,0 +1,70 @@
+{
+   "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 9: The Proposal",
+    "title": "Extended Reading Passages with Questions – The Proposal",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "The Proposal",
+        "paragraph": "Lomov, a nervous landowner, visits his neighbour Chubukov’s house to propose marriage to Chubukov’s daughter, Natalya. He is anxious and careful about how he presents himself.",
+        "questions": [
+          "Who is Lomov and why does he visit Chubukov’s house?",
+          "What is Lomov’s purpose in visiting?",
+          "How is Lomov feeling?",
+          "Which words show his nervousness?",
+          "Why is this paragraph important for setting the story?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "The Proposal",
+        "paragraph": "Natalya is outspoken and proud. She engages in arguments with Lomov about trivial matters, which escalates tension between them.",
+        "questions": [
+          "How is Natalya described in this paragraph?",
+          "What does she argue about with Lomov?",
+          "Which words show her pride and assertiveness?",
+          "How does the argument affect the atmosphere?",
+          "Why is this paragraph important for the plot?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "The Proposal",
+        "paragraph": "Despite the arguments, Lomov continues with his marriage proposal. He is determined to win Natalya’s approval and is willing to overlook minor disagreements.",
+        "questions": [
+          "What does Lomov continue to do despite the arguments?",
+          "Which words show his determination?",
+          "How does he handle minor disagreements?",
+          "What does this tell you about Lomov’s character?",
+          "Why is this paragraph important for the story’s development?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "The Proposal",
+        "paragraph": "Chubukov, observing the interaction, becomes anxious and intervenes occasionally to prevent the arguments from escalating. He is concerned about the outcome of the proposal.",
+        "questions": [
+          "How does Chubukov react to Lomov and Natalya’s arguments?",
+          "What actions does he take to manage the situation?",
+          "Which words show his concern?",
+          "Why is Chubukov’s intervention important?",
+          "What is the main idea of this paragraph?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "The Proposal",
+        "paragraph": "Eventually, after many misunderstandings and quarrels, Lomov and Natalya reconcile. The proposal is accepted, and the story humorously portrays human pride, stubbornness, and the complexities of relationships.",
+        "questions": [
+          "What happens at the end of the proposal?",
+          "How do Lomov and Natalya resolve their quarrels?",
+          "Which words show the humorous aspect of the story?",
+          "What human traits are highlighted in this paragraph?",
+          "What is the main idea of this paragraph?"
+        ]
+      }
+    ]
+  }

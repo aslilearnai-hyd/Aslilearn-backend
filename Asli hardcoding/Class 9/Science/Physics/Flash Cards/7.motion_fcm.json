@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T11:05:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is motion?",
+                "correct_answer": "Motion is the change in position of an object with respect to time.",
+                "explanation": "An object is said to be in motion if its position changes with time relative to a reference point.",
+                "source_section": "Section 7.1"
+            },
+            {
+                "question": "What is distance?",
+                "correct_answer": "Distance is the total path length travelled by an object.",
+                "explanation": "Distance is a scalar quantity and does not depend on direction.",
+                "source_section": "Section 7.1.1"
+            },
+            {
+                "question": "What is displacement?",
+                "correct_answer": "Displacement is the shortest distance between the initial and final positions of an object.",
+                "explanation": "Displacement is a vector quantity because it has both magnitude and direction.",
+                "source_section": "Section 7.1.1"
+            },
+            {
+                "question": "What is uniform motion?",
+                "correct_answer": "Uniform motion is when an object travels equal distances in equal intervals of time.",
+                "explanation": "In uniform motion the speed of the object remains constant.",
+                "source_section": "Section 7.1.2"
+            },
+            {
+                "question": "What is non-uniform motion?",
+                "correct_answer": "Non-uniform motion occurs when an object travels unequal distances in equal intervals of time.",
+                "explanation": "In this type of motion the speed or velocity of the object changes.",
+                "source_section": "Section 7.1.2"
+            },
+            {
+                "question": "What is speed?",
+                "correct_answer": "Speed is the distance travelled per unit time.",
+                "explanation": "It indicates how fast an object is moving and its SI unit is metre per second (m/s).",
+                "source_section": "Section 7.2"
+            },
+            {
+                "question": "What is velocity?",
+                "correct_answer": "Velocity is the speed of an object in a specific direction.",
+                "explanation": "Velocity is a vector quantity because it includes both magnitude and direction.",
+                "source_section": "Section 7.2.1"
+            },
+            {
+                "question": "What is acceleration?",
+                "correct_answer": "Acceleration is the rate of change of velocity with time.",
+                "explanation": "Acceleration occurs when an object's speed or direction changes.",
+                "source_section": "Section 7.3"
+            },
+            {
+                "question": "What does the slope of a distance-time graph represent?",
+                "correct_answer": "Speed of the object",
+                "explanation": "The slope of a distance-time graph shows how quickly distance changes with time.",
+                "source_section": "Section 7.4.1"
+            },
+            {
+                "question": "What are the three equations of motion?",
+                "correct_answer": "v = u + at, s = ut + 1/2 at², and v² − u² = 2as",
+                "explanation": "These equations describe motion with uniform acceleration.",
+                "source_section": "Section 7.5"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Motion Definition",
+                "content": "Motion refers to the change in position of an object with respect to time and a reference point.",
+                "source_section": "Section 7.1"
+            },
+            {
+                "title": "Distance vs Displacement",
+                "content": "Distance is the total path travelled by an object, whereas displacement is the shortest distance between initial and final positions.",
+                "source_section": "Section 7.1.1"
+            },
+            {
+                "title": "Speed and Velocity",
+                "content": "Speed is the rate of distance travelled while velocity is the rate of displacement with direction.",
+                "source_section": "Section 7.2"
+            },
+            {
+                "title": "Acceleration",
+                "content": "Acceleration describes how quickly the velocity of an object changes over time.",
+                "source_section": "Section 7.3"
+            },
+            {
+                "title": "Equations of Motion",
+                "content": "The three equations of motion relate velocity, acceleration, time, and distance for uniformly accelerated motion.",
+                "source_section": "Section 7.5"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Distance is always greater than or equal to displacement.",
+                "source_section": "Section 7.1.1"
+            },
+            {
+                "fact": "The SI unit of speed and velocity is metre per second (m/s).",
+                "source_section": "Section 7.2"
+            },
+            {
+                "fact": "Acceleration can be positive or negative depending on whether velocity increases or decreases.",
+                "source_section": "Section 7.3"
+            },
+            {
+                "fact": "An object moving in a circular path with constant speed is said to have uniform circular motion.",
+                "source_section": "Section 7.6"
+            }
+        ]
+    }
+}

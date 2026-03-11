@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Geometric Twins (Congruence)",
+    "difficulty": "Medium",
+    "source_pdf": "jemh102.pdf",
+    "short_notes": {
+        "key_points": [
+            "SSS Criterion: Three sides of one triangle equal three sides of another",
+            "SAS Criterion: Two sides and the included angle must be equal",
+            "ASA Criterion: Two angles and the included side must be equal",
+            "CPCT stands for Corresponding Parts of Congruent Triangles",
+            "If two triangles are congruent, all their 6 corresponding parts are equal"
+        ],
+        "examples": [
+            "SSS: $\\triangle ABC$ with $(3,4,5)$ and $\\triangle DEF$ with $(3,4,5)$ sides are congruent ",
+            "SAS: $AB=DE, AC=DF$ and $\\angle A = \\angle D = 50^{\\circ}$ ",
+            "ASA: $\\angle B=\\angle E, \\angle C=\\angle F$ and side $BC=EF$",
+            "CPCT use: After proving $\\triangle ABC \\cong \\triangle DEF$, we can say $AC=DF$ by CPCT"
+        ],
+        "formulas": [
+            "SSS $\\rightarrow S_1=S_1', S_2=S_2', S_3=S_3'$",
+            "SAS $\\rightarrow S_1=S_1', \\angle \\text{Included} = \\angle \\text{Included}', S_2=S_2'$"
+        ],
+        "exam_tips": [
+            "For SAS, ensure the angle is strictly between the two equal sides",
+            "For ASA, ensure the side is strictly between the two equal angles",
+            "Draw a rough sketch to identify corresponding parts before writing the proof",
+            "Always state the specific criterion (SSS, SAS, etc.) used in your answer"
+        ]
+    }
+}

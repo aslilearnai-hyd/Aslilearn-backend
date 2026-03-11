@@ -1,0 +1,238 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T12:05:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is gravitation?",
+            "answer": "Gravitation is the force of attraction between any two objects in the universe.",
+            "key_points": [
+                "force of attraction",
+                "between objects"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Who discovered the law of gravitation?",
+            "answer": "Isaac Newton.",
+            "key_points": [
+                "Isaac Newton"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "State the universal law of gravitation.",
+            "answer": "Every object attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+            "key_points": [
+                "product of masses",
+                "inverse square distance"
+            ],
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Write the formula for gravitational force.",
+            "answer": "F = G(Mm)/d².",
+            "key_points": [
+                "gravitational formula"
+            ],
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What does G represent in the gravitation formula?",
+            "answer": "Universal gravitational constant.",
+            "key_points": [
+                "gravitational constant"
+            ],
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is free fall?",
+            "answer": "Free fall is the motion of an object when it falls towards the Earth under gravity alone.",
+            "key_points": [
+                "gravity only"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is acceleration due to gravity?",
+            "answer": "Acceleration produced in an object due to Earth's gravitational force.",
+            "key_points": [
+                "acceleration",
+                "gravity"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the value of g near the Earth's surface?",
+            "answer": "9.8 m/s².",
+            "key_points": [
+                "9.8 m/s²"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is mass?",
+            "answer": "Mass is the amount of matter present in an object.",
+            "key_points": [
+                "amount of matter"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is weight?",
+            "answer": "Weight is the force with which the Earth attracts an object.",
+            "key_points": [
+                "force of gravity"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Write the formula for weight.",
+            "answer": "W = m × g.",
+            "key_points": [
+                "W = m × g"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the SI unit of weight?",
+            "answer": "Newton (N).",
+            "key_points": [
+                "Newton"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Does mass change from place to place?",
+            "answer": "No, mass remains constant.",
+            "key_points": [
+                "constant"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Does weight change from place to place?",
+            "answer": "Yes, weight depends on gravity.",
+            "key_points": [
+                "depends on gravity"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is thrust?",
+            "answer": "Thrust is the force acting perpendicular to a surface.",
+            "key_points": [
+                "force",
+                "perpendicular"
+            ],
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is pressure?",
+            "answer": "Pressure is the force acting per unit area.",
+            "key_points": [
+                "force per unit area"
+            ],
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Write the formula for pressure.",
+            "answer": "Pressure = Force / Area.",
+            "key_points": [
+                "pressure formula"
+            ],
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the SI unit of pressure?",
+            "answer": "Pascal (Pa).",
+            "key_points": [
+                "Pascal"
+            ],
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is buoyancy?",
+            "answer": "Buoyancy is the upward force exerted by a fluid on an object.",
+            "key_points": [
+                "upward force"
+            ],
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is buoyant force also called?",
+            "answer": "Upthrust.",
+            "key_points": [
+                "upthrust"
+            ],
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do objects float in water?",
+            "answer": "Objects float if their density is less than the density of water.",
+            "key_points": [
+                "density"
+            ],
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What happens if the density of an object is greater than water?",
+            "answer": "The object sinks.",
+            "key_points": [
+                "sinks"
+            ],
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 23,
+            "question": "State Archimedes' principle.",
+            "answer": "A body immersed in a fluid experiences an upward force equal to the weight of the fluid displaced.",
+            "key_points": [
+                "displaced fluid"
+            ],
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Name an instrument based on Archimedes' principle.",
+            "answer": "Hydrometer.",
+            "key_points": [
+                "hydrometer"
+            ],
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Why do ships float on water?",
+            "answer": "Ships float because buoyant force balances their weight.",
+            "key_points": [
+                "buoyant force"
+            ],
+            "source_section": "Section 9.6"
+        }
+    ]
+}

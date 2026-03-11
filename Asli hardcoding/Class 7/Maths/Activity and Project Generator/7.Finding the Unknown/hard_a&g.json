@@ -1,0 +1,174 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT - Ganita Prakash)",
+    "chapter": "Finding the Unknown (Simple Equations)",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class7_maths_finding_the_unknown.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "The Cross-Multiplication Master",
+            "objective": "Solve equations with variables in the numerator on both sides",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Take an equation like $\\frac{x + 2}{3} = \\frac{2x - 1}{5}$",
+                "Apply cross-multiplication: $5(x + 2) = 3(2x - 1)$",
+                "Expand the brackets and move all $x$ terms to one side",
+                "Solve for $x$ and verify the result by substituting it into the original fraction"
+            ],
+            "learning_outcome": "Masters the technique of clearing denominators in complex linear equations",
+            "evaluation": "Correct expansion and final fractional or integer solution (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Consecutive Integer Investigation",
+            "objective": "Solve number logic problems using algebraic definitions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Problem: 'The sum of three consecutive even integers is 78. Find the numbers.'",
+                "Define the integers as $x$, $x+2$, and $x+4$",
+                "Set up the equation: $x + (x+2) + (x+4) = 78$",
+                "Solve for $x$ and list all three numbers. Repeat for consecutive odd integers"
+            ],
+            "learning_outcome": "Learns to define multiple unknowns in relation to a single variable",
+            "evaluation": "Correct setup and identification of all three integers (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Speed, Distance, and Time Model",
+            "objective": "Use linear equations to solve motion problems",
+            "materials": [
+                "Notebook",
+                "Graph paper"
+            ],
+            "steps": [
+                "Scenario: A bus travels at $x$ km/h. A car travels $20$ km/h faster. In 3 hours, the car covers $60$ km more than the bus.",
+                "Write expressions for distances: Bus $= 3x$, Car $= 3(x + 20)$",
+                "Form the equation: $3(x + 20) - 3x = 60$",
+                "Analyze the result. Does the speed $x$ affect the difference in this specific case? Explain why."
+            ],
+            "learning_outcome": "Analyzes real-world rates and their algebraic dependencies",
+            "evaluation": "Logical derivation and explanation of the constant difference (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Perimeter Variable Puzzle",
+            "objective": "Solve for dimensions when perimeter and ratios are given",
+            "materials": [
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "The length of a rectangle is $5$ cm more than twice its breadth. If the perimeter is $58$ cm, find the area.",
+                "Let breadth $= x$ and length $= 2x + 5$",
+                "Equation: $2[x + (2x + 5)] = 58$",
+                "Solve for $x$, find both dimensions, and finally calculate the area"
+            ],
+            "learning_outcome": "Integrates multi-step geometry formulas with algebraic solving",
+            "evaluation": "Correct dimensions and final area calculation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The LCM Denominator Clearer",
+            "objective": "Solve equations with multiple fractional terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve $\\frac{x}{2} - \\frac{x}{3} = \\frac{1}{4} + \\frac{x}{6}$",
+                "Find the LCM of all denominators (2, 3, 4, 6) which is 12",
+                "Multiply every term in the equation by 12 to eliminate fractions",
+                "Solve the resulting whole-number equation"
+            ],
+            "learning_outcome": "Uses LCM to simplify and solve complex fractional equations",
+            "evaluation": "Successful removal of fractions and correct final value (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Digital Coin Purse Logic",
+            "objective": "Solve value-based problems with two types of variables",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "A purse has ₹2 and ₹5 coins. The number of ₹2 coins is double the ₹5 coins. Total value is ₹108.",
+                "Let number of ₹5 coins $= x$ and ₹2 coins $= 2x$",
+                "Equation: $5(x) + 2(2x) = 108$",
+                "Solve to find the count of each coin type"
+            ],
+            "learning_outcome": "Differentiates between the 'quantity' of items and their 'total value' in algebra",
+            "evaluation": "Correct equation setup and coin counts (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Negative Variable Trap",
+            "objective": "Handle equations where the variable coefficient is negative",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve $15 - 3(x - 1) = x + 2$",
+                "Carefully distribute the $-3$ into the bracket (remember $-3 \times -1 = +3$)",
+                "Group $x$ terms and constants, ensuring signs are correct during transposition",
+                "Check the solution using substitution"
+            ],
+            "learning_outcome": "Develops precision in sign management during algebraic manipulation",
+            "evaluation": "Accuracy in distribution and sign handling (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Reverse Engineering an Equation",
+            "objective": "Create a complex equation from a simple solution",
+            "materials": [
+                "Paper",
+                "Pen"
+            ],
+            "steps": [
+                "Start with the solution $x = -2$",
+                "Perform at least 4 operations on both sides (e.g., multiply by 3, add 10, divide by 2, etc.)",
+                "Write the final complex equation and give it to a friend to solve",
+                "Ensure the friend arrives back at $x = -2$"
+            ],
+            "learning_outcome": "Understands the symmetry and 'balance' of equations from the inside out",
+            "evaluation": "Complexity and mathematical validity of the created equation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Supplementary Angle Variables",
+            "objective": "Solve for unknowns in intersecting line diagrams",
+            "materials": [
+                "Ruler",
+                "Protractor"
+            ],
+            "steps": [
+                "Two angles form a linear pair. One is $20^{\circ}$ more than one-third of the other.",
+                "Let one angle be $x$. The other is $\\frac{1}{3}x + 20$",
+                "Equation: $x + (\\frac{1}{3}x + 20) = 180$",
+                "Solve for $x$ and find both angle measures"
+            ],
+            "learning_outcome": "Applies fractional algebraic expressions to geometric theorems",
+            "evaluation": "Correct angle measures and algebraic steps (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Comparison Shopper (Best Deal)",
+            "objective": "Use equations to find the 'Break-Even' point",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Gym A charges ₹500 fee + ₹50 per session. Gym B charges no fee but ₹100 per session.",
+                "Let $x$ be the number of sessions. Write equations for both: $500 + 50x$ and $100x$",
+                "Set them equal to find when both gyms cost the same",
+                "Determine which gym is better if you plan to go 15 times a month"
+            ],
+            "learning_outcome": "Uses algebra for comparative cost analysis and decision making",
+            "evaluation": "Correct 'break-even' value and logical recommendation (10 marks)"
+        }
+    ]
+}

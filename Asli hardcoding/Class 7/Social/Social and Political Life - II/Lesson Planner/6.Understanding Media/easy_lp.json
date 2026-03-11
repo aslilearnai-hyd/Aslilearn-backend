@@ -1,0 +1,157 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Social and Political Life – II: Understanding Media",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Know different types of media and sources of information",
+        "Understand how news is reported and shared",
+        "Learn about the role of media in society",
+        "Identify fake news and the importance of verifying information",
+        "Develop observation, analysis, and communication skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "What is Media?",
+            "topics_covered": [
+                "Definition of media",
+                "Types of media: print, broadcast, digital",
+                "Examples in daily life"
+            ],
+            "teaching_strategy": [
+                "Show pictures of newspapers, TV, and social media",
+                "Ask students what they use to get news"
+            ],
+            "student_activities": [
+                "List media they use daily",
+                "Share one way media helps them"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "News and Information",
+            "topics_covered": [
+                "How news is reported",
+                "Different sections of newspapers or news portals",
+                "Simple news language"
+            ],
+            "teaching_strategy": [
+                "Show newspaper front page or online news portal",
+                "Discuss headlines and news sections"
+            ],
+            "student_activities": [
+                "Identify local, national, and sports news in a newspaper",
+                "Share which news interests them most and why"
+            ],
+            "assessment": [
+                "Observation of participation",
+                "Quick oral Q&A"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Role of Media in Society",
+            "topics_covered": [
+                "How media informs people",
+                "Media in education and social awareness",
+                "Media as a watchdog in society"
+            ],
+            "teaching_strategy": [
+                "Class discussion on recent news events",
+                "Use examples of media influencing positive change"
+            ],
+            "student_activities": [
+                "Give an example of a news story that helped society",
+                "Discuss why it was important"
+            ],
+            "assessment": [
+                "Participation",
+                "Relevance of examples"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Fake News and Verification",
+            "topics_covered": [
+                "What is fake news",
+                "How to verify news and information",
+                "Simple tips to check credibility"
+            ],
+            "teaching_strategy": [
+                "Show a real vs fake news example",
+                "Discuss steps to verify online information"
+            ],
+            "student_activities": [
+                "Identify if a sample news story is true or false",
+                "Discuss how they can check facts"
+            ],
+            "assessment": [
+                "Participation",
+                "Accuracy in identifying fake news"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Creating a Mini News Report",
+            "topics_covered": [
+                "Simple reporting skills",
+                "Writing short news stories",
+                "Sharing news with peers"
+            ],
+            "teaching_strategy": [
+                "Demonstrate writing a short news snippet",
+                "Show examples of simple news reporting"
+            ],
+            "student_activities": [
+                "Write a 3–4 line news story on school or local event",
+                "Share it with classmates"
+            ],
+            "assessment": [
+                "Participation",
+                "Clarity and relevance of report"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Quiz",
+            "topics_covered": [
+                "Recap of types of media, news reporting, and verification",
+                "Simple questions to test understanding",
+                "Relate media lessons to daily life"
+            ],
+            "teaching_strategy": [
+                "Fun quiz with examples and multiple-choice questions",
+                "Class discussion connecting to their own media use"
+            ],
+            "student_activities": [
+                "Answer quiz questions",
+                "Share one interesting thing learned about media"
+            ],
+            "assessment": [
+                "Quiz scores",
+                "Participation",
+                "Notebook notes"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Pictures of newspapers, TV, social media icons",
+        "Sample news reports (print or digital)",
+        "Charts for visual explanation",
+        "Notebook and pen for writing activities"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Class discussion",
+        "Notebook checking",
+        "Fun quiz and reporting activity"
+    ],
+    "teacher_tip": "Keep lessons interactive with real-life examples. Use newspapers, online news snippets, and discussions to make media relatable. Encourage students to ask questions and check facts themselves."
+}

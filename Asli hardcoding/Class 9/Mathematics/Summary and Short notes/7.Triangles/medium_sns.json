@@ -1,0 +1,39 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Medium",
+    "short_notes": {
+        "key_points": [
+            "A triangle is a polygon with three sides and three angles",
+            "Sum of interior angles of a triangle = 180°; sum of exterior angles = 360°",
+            "Types based on sides: equilateral, isosceles, scalene",
+            "Types based on angles: acute, right, obtuse",
+            "Triangles are congruent if they satisfy SSS, SAS, ASA, AAS, RHS",
+            "Triangles are similar if corresponding angles are equal and sides are proportional",
+            "Median, altitude, bisector, and perpendicular bisector are important line segments in triangles"
+        ],
+        "examples": [
+            "Equilateral triangle: all sides = a, all angles = 60°",
+            "Isosceles triangle: two sides = 5 cm, base = 6 cm; angles opposite equal sides are equal",
+            "Scalene triangle: sides 4 cm, 5 cm, 6 cm; all sides and angles unequal",
+            "Right triangle: 3,4,5 satisfies Pythagoras theorem",
+            "Similar triangles: ΔABC ~ ΔPQR if ∠A=∠P, ∠B=∠Q, AB/PQ=BC/QR=AC/PR"
+        ],
+        "formulas": [
+            "Area = 1/2 × base × height",
+            "Heron’s formula: Area = √[s(s-a)(s-b)(s-c)], s=(a+b+c)/2",
+            "Pythagoras theorem: hypotenuse² = base² + height²",
+            "Median formula: m_a = 1/2 √(2b² + 2c² − a²)",
+            "Altitude: h = 2 × Area / base",
+            "Perimeter = sum of sides"
+        ],
+        "exam_tips": [
+            "Use congruence and similarity conditions carefully to solve problems",
+            "Label all sides and angles in diagrams",
+            "Always check triangle inequality before constructing a triangle",
+            "For Heron’s formula, calculate semi-perimeter first",
+            "Use median, altitude, and bisector formulas when needed in advanced problems"
+        ]
+    }
+}

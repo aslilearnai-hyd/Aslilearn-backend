@@ -1,0 +1,156 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "A Question of Trust",
+    "author": "Victor Canning",
+    "difficulty": "Easy",
+    "source_pdf": "jefp104.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "List of Main Characters",
+            "objective": "Identify the main characters in the prose",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "List the main characters mentioned in the story",
+                "Write one sentence describing each character"
+            ],
+            "learning_outcome": "Identifies characters and understands their basic roles",
+            "evaluation": "Correct listing with brief description (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Horace Danby",
+            "objective": "Understand the personality of Horace Danby",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraphs describing Horace Danby",
+                "Write 4–5 sentences about his habits and nature"
+            ],
+            "learning_outcome": "Understands character traits of the protagonist",
+            "evaluation": "Relevant points with clarity (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Horace Danby’s Hobby",
+            "objective": "Identify Horace Danby’s interest and motivation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find what Horace likes to collect",
+                "Write 3 sentences explaining why he steals every year"
+            ],
+            "learning_outcome": "Understands character motivation",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Setting of the Story",
+            "objective": "Understand where the story takes place",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the main place mentioned in the story",
+                "Write 3–4 lines describing the setting"
+            ],
+            "learning_outcome": "Understands the importance of setting",
+            "evaluation": "Clear and correct description (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Role of the Young Lady",
+            "objective": "Understand the role of the young lady in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the conversation between Horace and the young lady",
+                "Write three points describing her behaviour"
+            ],
+            "learning_outcome": "Identifies key role in the plot",
+            "evaluation": "Correct points mentioned (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Reason for Horace’s Arrest",
+            "objective": "Understand the cause of Horace Danby’s downfall",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Recall the ending of the story",
+                "Write 3–4 sentences explaining why Horace was arrested"
+            ],
+            "learning_outcome": "Understands cause–effect relationship",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four important events in the story",
+                "Arrange them in the correct order"
+            ],
+            "learning_outcome": "Understands story structure",
+            "evaluation": "Correct sequencing of events (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary Builder",
+            "objective": "Improve vocabulary using the lesson",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five new words from the lesson",
+                "Write their meanings and frame one sentence for each"
+            ],
+            "learning_outcome": "Enhances vocabulary skills",
+            "evaluation": "Correct meanings and usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Theme of the Story",
+            "objective": "Understand the central idea of the prose",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the message conveyed by the story",
+                "Write the theme in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands the theme of the lesson",
+            "evaluation": "Clear identification of theme (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Moral of the Story",
+            "objective": "Understand the moral lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Reflect on the ending of the story",
+                "Write the moral in your own words"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Meaningful moral explanation (10 marks)"
+        }
+    ]
+}

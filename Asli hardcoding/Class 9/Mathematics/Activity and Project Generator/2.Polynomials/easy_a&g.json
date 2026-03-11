@@ -1,0 +1,162 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Easy",
+    "source_pdf": "m9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Polynomial Identification",
+            "objective": "Identify polynomial expressions",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write 10 algebraic expressions",
+                "Identify which are polynomials",
+                "Explain why the others are not"
+            ],
+            "learning_outcome": "Understands polynomial definition",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Term Finder",
+            "objective": "Identify terms of a polynomial",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five polynomials",
+                "Underline each term",
+                "Count the number of terms"
+            ],
+            "learning_outcome": "Recognises polynomial terms",
+            "evaluation": "Correct term identification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Coefficient List",
+            "objective": "Identify coefficients of variables",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write 5 polynomials",
+                "List coefficients of each variable",
+                "Discuss constant terms"
+            ],
+            "learning_outcome": "Understands coefficients",
+            "evaluation": "Accuracy of coefficients (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Degree Detector",
+            "objective": "Find the degree of polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write 8 polynomials",
+                "Identify highest power of variable",
+                "Write the degree"
+            ],
+            "learning_outcome": "Determines degree correctly",
+            "evaluation": "Correct answers (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Monomial–Binomial–Trinomial Sort",
+            "objective": "Classify polynomials by number of terms",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write different polynomials",
+                "Create three columns",
+                "Place them under monomial, binomial, or trinomial"
+            ],
+            "learning_outcome": "Understands polynomial classification",
+            "evaluation": "Correct grouping (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Value of Polynomial",
+            "objective": "Evaluate polynomial values",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a polynomial like p(x)=2x²+3x+1",
+                "Substitute values for x",
+                "Calculate p(1), p(2), p(3)"
+            ],
+            "learning_outcome": "Learns substitution method",
+            "evaluation": "Correct calculations (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Zero Finder",
+            "objective": "Identify zero of a polynomial",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take a simple polynomial like x−2",
+                "Substitute different values",
+                "Find where the value becomes zero"
+            ],
+            "learning_outcome": "Understands polynomial zero",
+            "evaluation": "Correct zero identification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Polynomial Chart",
+            "objective": "Create visual representation of polynomial types",
+            "materials": [
+                "Chart paper",
+                "Colours"
+            ],
+            "steps": [
+                "Draw sections for linear, quadratic, cubic",
+                "Write examples in each section",
+                "Decorate the chart"
+            ],
+            "learning_outcome": "Recognises polynomial degrees",
+            "evaluation": "Neatness and correctness (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Identity Expansion Practice",
+            "objective": "Practice algebraic identities",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write identities like (x+y)²",
+                "Expand them",
+                "Verify with numerical values"
+            ],
+            "learning_outcome": "Understands algebraic identities",
+            "evaluation": "Correct expansion (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Simple Factorisation",
+            "objective": "Factorise simple polynomials",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write quadratic expressions",
+                "Split the middle term",
+                "Find factors"
+            ],
+            "learning_outcome": "Develops factorisation skill",
+            "evaluation": "Correct factors (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-05T21:55:00",
+  "difficulty": "hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which condition will make a bulb glow brightest in a circuit?",
+      "options": {
+        "A": "Open circuit",
+        "B": "Closed circuit with good conductors",
+        "C": "Broken wire",
+        "D": "No battery"
+      },
+      "correct_answer": "B",
+      "explanation": "A closed circuit with good conductors allows maximum current flow and the bulb glows brightly.",
+      "difficulty": "hard",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 2,
+      "question": "If the number of turns in a coil of an electromagnet is doubled, what happens to its magnetic strength?",
+      "options": {
+        "A": "It decreases",
+        "B": "It remains the same",
+        "C": "It increases",
+        "D": "It disappears"
+      },
+      "correct_answer": "C",
+      "explanation": "Increasing the number of turns in the coil strengthens the magnetic field.",
+      "difficulty": "hard",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 3,
+      "question": "Which factor does NOT affect the strength of an electromagnet?",
+      "options": {
+        "A": "Number of turns in the coil",
+        "B": "Amount of electric current",
+        "C": "Material of the core",
+        "D": "Color of the wire"
+      },
+      "correct_answer": "D",
+      "explanation": "The color of the wire has no effect on magnetic strength.",
+      "difficulty": "hard",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 4,
+      "question": "What will happen if the direction of electric current in a coil is reversed?",
+      "options": {
+        "A": "Magnetic field disappears",
+        "B": "Magnetic field direction reverses",
+        "C": "Heat production stops",
+        "D": "Battery stops working"
+      },
+      "correct_answer": "B",
+      "explanation": "Reversing current changes the direction of the magnetic field.",
+      "difficulty": "hard",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 5,
+      "question": "Which property of heating elements allows them to produce more heat?",
+      "options": {
+        "A": "Low resistance",
+        "B": "High resistance",
+        "C": "Low melting point",
+        "D": "Low conductivity"
+      },
+      "correct_answer": "B",
+      "explanation": "Heating elements are made of materials with high resistance to produce heat.",
+      "difficulty": "hard",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 6,
+      "question": "Which situation best demonstrates the magnetic effect of current?",
+      "options": {
+        "A": "Bulb glowing",
+        "B": "Compass needle deflecting near a wire",
+        "C": "Iron getting hot",
+        "D": "Battery charging"
+      },
+      "correct_answer": "B",
+      "explanation": "A compass needle deflects due to the magnetic field around a current-carrying wire.",
+      "difficulty": "hard",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 7,
+      "question": "Why are heating coils made of alloys instead of pure metals?",
+      "options": {
+        "A": "They melt quickly",
+        "B": "They have high resistance and high melting point",
+        "C": "They conduct electricity poorly",
+        "D": "They are cheaper"
+      },
+      "correct_answer": "B",
+      "explanation": "Alloys have high resistance and high melting points, making them suitable for heating elements.",
+      "difficulty": "hard",
+      "source_section": "Heating Appliances"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following best explains the working of an electric bell?",
+      "options": {
+        "A": "Heating effect of current",
+        "B": "Chemical effect of current",
+        "C": "Magnetic effect of current",
+        "D": "Cooling effect of current"
+      },
+      "correct_answer": "C",
+      "explanation": "Electric bells operate using electromagnets created by current.",
+      "difficulty": "hard",
+      "source_section": "Electric Bell"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens when too many appliances are connected to a single circuit?",
+      "options": {
+        "A": "Circuit cools down",
+        "B": "Current decreases",
+        "C": "Overloading occurs",
+        "D": "Voltage disappears"
+      },
+      "correct_answer": "C",
+      "explanation": "Too many appliances cause excessive current, leading to overloading.",
+      "difficulty": "hard",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 10,
+      "question": "Which phenomenon occurs when live and neutral wires touch directly?",
+      "options": {
+        "A": "Heating effect",
+        "B": "Short circuit",
+        "C": "Magnetic effect",
+        "D": "Insulation"
+      },
+      "correct_answer": "B",
+      "explanation": "Direct contact of wires causes a short circuit.",
+      "difficulty": "hard",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 11,
+      "question": "Why is soft iron used as the core of electromagnets?",
+      "options": {
+        "A": "It retains magnetism permanently",
+        "B": "It loses magnetism quickly when current stops",
+        "C": "It does not conduct electricity",
+        "D": "It increases heat production"
+      },
+      "correct_answer": "B",
+      "explanation": "Soft iron becomes magnetized easily and loses magnetism quickly.",
+      "difficulty": "hard",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 12,
+      "question": "Which energy transformation occurs in an electric bell?",
+      "options": {
+        "A": "Electrical to heat",
+        "B": "Electrical to magnetic to sound",
+        "C": "Heat to electrical",
+        "D": "Light to electrical"
+      },
+      "correct_answer": "B",
+      "explanation": "Electric bells convert electrical energy into magnetic energy and then sound.",
+      "difficulty": "hard",
+      "source_section": "Electric Bell"
+    },
+    {
+      "question_number": 13,
+      "question": "What happens to the heating effect if current increases?",
+      "options": {
+        "A": "Heat decreases",
+        "B": "Heat increases",
+        "C": "Heat remains constant",
+        "D": "Heat disappears"
+      },
+      "correct_answer": "B",
+      "explanation": "Higher current produces more heat in a conductor.",
+      "difficulty": "hard",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 14,
+      "question": "Which device protects electrical circuits from excessive current?",
+      "options": {
+        "A": "Battery",
+        "B": "Switch",
+        "C": "Fuse",
+        "D": "Wire"
+      },
+      "correct_answer": "C",
+      "explanation": "A fuse melts and breaks the circuit when current becomes too high.",
+      "difficulty": "hard",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor mainly determines the heating effect in a wire?",
+      "options": {
+        "A": "Resistance of wire",
+        "B": "Color of wire",
+        "C": "Length of battery",
+        "D": "Weight of wire"
+      },
+      "correct_answer": "A",
+      "explanation": "Heat produced depends mainly on resistance of the conductor.",
+      "difficulty": "hard",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 16,
+      "question": "What will happen if insulation around a wire is damaged?",
+      "options": {
+        "A": "Current decreases",
+        "B": "Risk of electric shock increases",
+        "C": "Magnetism disappears",
+        "D": "Battery stops working"
+      },
+      "correct_answer": "B",
+      "explanation": "Damaged insulation exposes wires and can cause electric shock.",
+      "difficulty": "hard",
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 17,
+      "question": "Which device converts electrical energy into both heat and light?",
+      "options": {
+        "A": "Electric iron",
+        "B": "Bulb",
+        "C": "Compass",
+        "D": "Switch"
+      },
+      "correct_answer": "B",
+      "explanation": "Bulbs convert electrical energy into light and some heat.",
+      "difficulty": "hard",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are electromagnets used in scrap yard cranes?",
+      "options": {
+        "A": "They are permanent magnets",
+        "B": "They can lift heavy iron objects and release them easily",
+        "C": "They do not require electricity",
+        "D": "They produce heat"
+      },
+      "correct_answer": "B",
+      "explanation": "Electromagnets can be switched on to lift metal and off to release it.",
+      "difficulty": "hard",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 19,
+      "question": "Which phenomenon demonstrates the link between electricity and magnetism?",
+      "options": {
+        "A": "Heating of iron rod",
+        "B": "Compass deflection near current-carrying wire",
+        "C": "Bulb glowing",
+        "D": "Fuse melting"
+      },
+      "correct_answer": "B",
+      "explanation": "The deflection of a compass shows magnetic field due to electric current.",
+      "difficulty": "hard",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 20,
+      "question": "What happens to an electromagnet when electric current stops?",
+      "options": {
+        "A": "It becomes stronger",
+        "B": "It loses magnetism",
+        "C": "It becomes permanent",
+        "D": "It produces heat"
+      },
+      "correct_answer": "B",
+      "explanation": "Electromagnets work only when current flows.",
+      "difficulty": "hard",
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 21,
+      "question": "Which component in a circuit mainly controls current flow?",
+      "options": {
+        "A": "Switch",
+        "B": "Wire",
+        "C": "Battery",
+        "D": "Bulb"
+      },
+      "correct_answer": "A",
+      "explanation": "Switches control whether current flows or stops.",
+      "difficulty": "hard",
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 22,
+      "question": "Which energy conversion occurs in an electric iron?",
+      "options": {
+        "A": "Electrical to heat",
+        "B": "Heat to electrical",
+        "C": "Light to heat",
+        "D": "Magnetic to electrical"
+      },
+      "correct_answer": "A",
+      "explanation": "Electric irons convert electrical energy into heat.",
+      "difficulty": "hard",
+      "source_section": "Heating Appliances"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor will reduce heating in a wire?",
+      "options": {
+        "A": "Increasing resistance",
+        "B": "Reducing current",
+        "C": "Increasing voltage",
+        "D": "Using thinner wire"
+      },
+      "correct_answer": "B",
+      "explanation": "Lower current results in less heat generation.",
+      "difficulty": "hard",
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 24,
+      "question": "Which scientific discovery first demonstrated the magnetic effect of current?",
+      "options": {
+        "A": "Compass deflection experiment",
+        "B": "Bulb glowing experiment",
+        "C": "Heating coil experiment",
+        "D": "Battery charging experiment"
+      },
+      "correct_answer": "A",
+      "explanation": "The compass deflection experiment showed magnetic fields around current-carrying wires.",
+      "difficulty": "hard",
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 25,
+      "question": "Which device in a circuit converts electrical energy mainly into sound energy?",
+      "options": {
+        "A": "Electric heater",
+        "B": "Electric bell",
+        "C": "Electric bulb",
+        "D": "Electric iron"
+      },
+      "correct_answer": "B",
+      "explanation": "Electric bells convert electrical energy into sound using electromagnets.",
+      "difficulty": "hard",
+      "source_section": "Electric Bell"
+    }
+  ]
+}

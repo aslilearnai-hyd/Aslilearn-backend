@@ -1,0 +1,32 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Polynomials",
+    "difficulty": "Hard",
+    "source_pdf": "jemh102.pdf",
+    "short_notes": {
+        "key_points": [
+            "A polynomial of degree n can have at most n real zeroes",
+            "The number of zeroes equals the number of x-axis intersections of its graph",
+            "Repeated zeroes occur when the graph touches the x-axis",
+            "Relationship exists between zeroes and coefficients of quadratic polynomials",
+            "Remainder and Factor Theorems help analyse polynomials algebraically"
+        ],
+        "examples": [
+            "If zeroes of x² − 7x + 10 are 2 and 5, then sum of zeroes = 7",
+            "Graph touching x-axis at one point shows repeated zero",
+            "If p(1) = 0, then (x − 1) is a factor of p(x)"
+        ],
+        "formulas": [
+            "Sum of zeroes (quadratic) → −b/a",
+            "Product of zeroes (quadratic) → c/a",
+            "Remainder Theorem → p(a) gives remainder on division by (x − a)"
+        ],
+        "exam_tips": [
+            "Use degree to predict number of zeroes before solving",
+            "Touching vs cutting the x-axis is crucial in graph-based questions",
+            "Forming polynomial from given zeroes is a common HOTS question",
+            "Always link algebraic zeroes with graphical behaviour"
+        ]
+    }
+}

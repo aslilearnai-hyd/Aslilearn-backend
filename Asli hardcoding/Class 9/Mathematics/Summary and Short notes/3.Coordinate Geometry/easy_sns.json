@@ -1,0 +1,47 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Easy",
+    "source_pdf": "m9_3.pdf",
+    "short_notes": {
+        "key_points": [
+            "Coordinate geometry helps locate points on a plane using numbers",
+            "The Cartesian plane is formed by two perpendicular number lines",
+            "The horizontal line is called the x-axis",
+            "The vertical line is called the y-axis",
+            "The point where the two axes intersect is called the origin",
+            "The origin has coordinates (0,0)",
+            "Points on the plane are represented using ordered pairs (x,y)",
+            "The x-coordinate is called abscissa and the y-coordinate is called ordinate",
+            "The coordinate axes divide the plane into four quadrants",
+            "Quadrants are numbered I, II, III and IV in anticlockwise direction"
+        ],
+        "examples": [
+            "Origin example: (0,0)",
+            "Point in first quadrant: (3,4)",
+            "Point in second quadrant: (-3,4)",
+            "Point in third quadrant: (-4,-5)",
+            "Point in fourth quadrant: (5,-2)",
+            "Point on x-axis: (4,0)",
+            "Point on y-axis: (0,6)"
+        ],
+        "formulas": [
+            "Ordered pair representation → (x, y)",
+            "Point on x-axis → (x, 0)",
+            "Point on y-axis → (0, y)",
+            "Origin coordinates → (0, 0)",
+            "Quadrant I signs → (+, +)",
+            "Quadrant II signs → (-, +)",
+            "Quadrant III signs → (-, -)",
+            "Quadrant IV signs → (+, -)"
+        ],
+        "exam_tips": [
+            "Always write coordinates in the form (x,y)",
+            "Remember that x-coordinate is written first",
+            "Points on axes do not belong to any quadrant",
+            "Check the sign of coordinates to identify the quadrant",
+            "Use graph paper to accurately plot points in the coordinate plane"
+        ]
+    }
+}

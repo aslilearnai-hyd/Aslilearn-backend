@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 12: Surface Areas and Volumes",
+    "generated_at": "2026-03-01T21:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is the base area not included while finding CSA?",
+            "answer": "Because CSA considers only the curved surface.",
+            "key_points": [
+                "CSA concept"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is TSA not the sum of TSAs in combined solids?",
+            "answer": "Because some surfaces disappear when solids are joined.",
+            "key_points": [
+                "combined solids"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What part disappears when a cone is mounted on a hemisphere?",
+            "answer": "The circular base of the cone disappears.",
+            "key_points": [
+                "joined surfaces"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which surfaces are visible in a cylinder with hemispherical ends?",
+            "answer": "Only curved surfaces are visible.",
+            "key_points": [
+                "visible surfaces"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Why is slant height required in CSA of cone?",
+            "answer": "Because the curved surface depends on slant height.",
+            "key_points": [
+                "slant height"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What happens to volume when solids are combined?",
+            "answer": "Volumes are added together.",
+            "key_points": [
+                "volume addition"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is CSA used to calculate paint required?",
+            "answer": "Because paint covers only exposed surfaces.",
+            "key_points": [
+                "practical use"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which formula is used for CSA of a hemisphere?",
+            "answer": "CSA = 2πr².",
+            "key_points": [
+                "hemisphere CSA"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is π needed in circular solids?",
+            "answer": "Because their bases or surfaces are circular.",
+            "key_points": [
+                "pi usage"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the shape of a medicine capsule?",
+            "answer": "Cylinder with two hemispherical ends.",
+            "key_points": [
+                "capsule shape"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which formula gives TSA of a sphere?",
+            "answer": "TSA = 4πr².",
+            "key_points": [
+                "sphere TSA"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is volume measured in cubic units?",
+            "answer": "Because it measures space occupied.",
+            "key_points": [
+                "volume unit"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the curved surface of a cone called?",
+            "answer": "Lateral surface.",
+            "key_points": [
+                "cone surface"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which solid has only one curved surface?",
+            "answer": "Sphere.",
+            "key_points": [
+                "sphere"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is radius same in joined solids?",
+            "answer": "To ensure smooth fitting.",
+            "key_points": [
+                "smooth joining"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which surface is not painted in tents?",
+            "answer": "The base surface.",
+            "key_points": [
+                "tent problems"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is capacity measured in?",
+            "answer": "Cubic units or litres.",
+            "key_points": [
+                "capacity"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which solid is used to model water tanks?",
+            "answer": "Cylinder.",
+            "key_points": [
+                "application"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which part reduces capacity in a glass?",
+            "answer": "Hemispherical raised portion.",
+            "key_points": [
+                "glass capacity"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What does l represent in cone formula?",
+            "answer": "Slant height.",
+            "key_points": [
+                "notation"
+            ],
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What happens to base area when hollowed?",
+            "answer": "It is subtracted.",
+            "key_points": [
+                "hollow solids"
+            ],
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which solid is half of a cylinder?",
+            "answer": "Semi-cylinder.",
+            "key_points": [
+                "half cylinder"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is height important in volume?",
+            "answer": "It determines vertical space.",
+            "key_points": [
+                "height"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which solid has maximum volume for same radius?",
+            "answer": "Sphere.",
+            "key_points": [
+                "comparison"
+            ],
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the use of TSA?",
+            "answer": "To calculate covering material.",
+            "key_points": [
+                "TSA use"
+            ],
+            "source_section": "12.2"
+        }
+    ]
+}

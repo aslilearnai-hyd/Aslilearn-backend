@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: How, When and Where",
+  "generated_at": "2026-03-06T20:10:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is history?",
+        "correct_answer": "History is the study of past events.",
+        "explanation": "Historians study past events to understand how societies changed over time.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "Why do we study history?",
+        "correct_answer": "To understand how people, societies and events changed over time.",
+        "explanation": "History helps us learn from past experiences and understand present society.",
+        "source_section": "Why Study History?"
+      },
+      {
+        "question": "What do historians use to study the past?",
+        "correct_answer": "Sources such as documents, books, letters and official records.",
+        "explanation": "These sources provide evidence about past events.",
+        "source_section": "Sources of History"
+      },
+      {
+        "question": "Who are historians?",
+        "correct_answer": "People who study and write about the past.",
+        "explanation": "Historians collect evidence and interpret historical events.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "What are official records?",
+        "correct_answer": "Documents created by governments to record important events and activities.",
+        "explanation": "They help historians understand administrative and political history.",
+        "source_section": "Official Records"
+      },
+      {
+        "question": "What is meant by periodisation in history?",
+        "correct_answer": "Dividing history into different periods or time sections.",
+        "explanation": "This helps historians study historical developments more clearly.",
+        "source_section": "Periodisation"
+      },
+      {
+        "question": "Who divided Indian history into Hindu, Muslim and British periods?",
+        "correct_answer": "James Mill.",
+        "explanation": "He wrote the book 'A History of British India'.",
+        "source_section": "James Mill and Periodisation"
+      },
+      {
+        "question": "Why is James Mill’s periodisation criticised?",
+        "correct_answer": "Because it ignored the diversity and complexity of Indian society.",
+        "explanation": "Historians believe history cannot be divided only by religion.",
+        "source_section": "Criticism of Periodisation"
+      },
+      {
+        "question": "What are surveys in history?",
+        "correct_answer": "Investigations conducted to collect information about land, people and resources.",
+        "explanation": "The British conducted surveys to understand and control India better.",
+        "source_section": "Colonial Surveys"
+      },
+      {
+        "question": "Why did the British preserve official documents?",
+        "correct_answer": "To record administrative activities and maintain control over the country.",
+        "explanation": "These records helped the British govern India effectively.",
+        "source_section": "Official Documents"
+      }
+    ],
+    "notes": [
+      {
+        "title": "History",
+        "content": "History is the study of past events and helps us understand how societies, cultures and governments changed over time.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Sources of History",
+        "content": "Historians study documents, letters, official records, maps and surveys to understand the past.",
+        "source_section": "Sources"
+      },
+      {
+        "title": "Periodisation",
+        "content": "Historians divide history into periods to make the study of historical developments easier.",
+        "source_section": "Periodisation"
+      },
+      {
+        "title": "Colonial Records",
+        "content": "The British government kept detailed records and documents to manage administration in India.",
+        "source_section": "Official Records"
+      },
+      {
+        "title": "Surveys",
+        "content": "The British conducted surveys such as revenue surveys and census surveys to collect information about land and people.",
+        "source_section": "Colonial Surveys"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "James Mill divided Indian history into Hindu, Muslim and British periods.",
+        "source_section": "Periodisation"
+      },
+      {
+        "fact": "The British preserved large numbers of official records during their rule in India.",
+        "source_section": "Official Records"
+      },
+      {
+        "fact": "Surveys and maps were used by the British to understand and control India.",
+        "source_section": "Colonial Administration"
+      },
+      {
+        "fact": "History helps us understand how societies changed over time.",
+        "source_section": "Introduction"
+      }
+    ]
+  }
+}

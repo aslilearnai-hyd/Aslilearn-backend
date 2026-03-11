@@ -1,0 +1,286 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 5: The Fundamental Unit of Life",
+    "generated_at": "2026-03-06T02:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why mitochondria are called semi-autonomous organelles.",
+            "answer": "Mitochondria are called semi-autonomous organelles because they have their own DNA and ribosomes and can synthesize some of their own proteins.",
+            "key_concepts": [
+                "mitochondria",
+                "semi autonomous"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain plasmolysis with an example.",
+            "answer": "Plasmolysis is the shrinking of cytoplasm away from the cell wall when a plant cell loses water in a hypertonic solution. Example: onion peel in salt solution.",
+            "key_concepts": [
+                "plasmolysis"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the structure and function of the plasma membrane.",
+            "answer": "The plasma membrane is a thin selectively permeable membrane that surrounds the cell and regulates entry and exit of substances.",
+            "key_concepts": [
+                "plasma membrane"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the structure of the nucleus.",
+            "answer": "The nucleus consists of a nuclear membrane, nucleoplasm and chromosomes which carry genetic information.",
+            "key_concepts": [
+                "nucleus"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the functions of lysosomes.",
+            "answer": "Lysosomes contain digestive enzymes that break down waste materials and damaged cell parts.",
+            "key_concepts": [
+                "lysosomes"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is the plasma membrane called selectively permeable?",
+            "answer": "It is called selectively permeable because it allows only certain substances to pass through while restricting others.",
+            "key_concepts": [
+                "selectively permeable"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the functions of the endoplasmic reticulum.",
+            "answer": "Endoplasmic reticulum forms channels for transport of materials and helps in synthesis of proteins and lipids.",
+            "key_concepts": [
+                "endoplasmic reticulum"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 8,
+            "question": "Differentiate between rough ER and smooth ER.",
+            "answer": "Rough ER has ribosomes and synthesizes proteins, whereas smooth ER lacks ribosomes and synthesizes lipids.",
+            "key_concepts": [
+                "rough ER",
+                "smooth ER"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of Golgi apparatus in the cell.",
+            "answer": "Golgi apparatus modifies, packages and transports proteins and lipids to different parts of the cell.",
+            "key_concepts": [
+                "Golgi apparatus"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why lysosomes are called suicide bags.",
+            "answer": "Lysosomes contain enzymes that can digest cell components and sometimes destroy the entire cell.",
+            "key_concepts": [
+                "lysosomes"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the structure of chromosomes.",
+            "answer": "Chromosomes are thread-like structures composed of DNA and proteins that carry genetic information.",
+            "key_concepts": [
+                "chromosomes"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the role of chloroplasts in plant cells.",
+            "answer": "Chloroplasts contain chlorophyll which absorbs sunlight and carries out photosynthesis.",
+            "key_concepts": [
+                "chloroplast"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the function of vacuoles in plant cells.",
+            "answer": "Vacuoles store water, nutrients and wastes and help maintain turgidity of plant cells.",
+            "key_concepts": [
+                "vacuole"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are plant cells more rigid than animal cells?",
+            "answer": "Plant cells have a rigid cell wall made of cellulose which provides strength and rigidity.",
+            "key_concepts": [
+                "cell wall"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of diffusion in cells.",
+            "answer": "Diffusion allows gases like oxygen and carbon dioxide to move in and out of the cell.",
+            "key_concepts": [
+                "diffusion"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of osmosis in plants.",
+            "answer": "Osmosis helps plant roots absorb water from the soil.",
+            "key_concepts": [
+                "osmosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Differentiate between prokaryotic and eukaryotic cells.",
+            "answer": "Prokaryotic cells lack a true nucleus and membrane-bound organelles, whereas eukaryotic cells have them.",
+            "key_concepts": [
+                "prokaryotic",
+                "eukaryotic"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why cells are called the basic unit of life.",
+            "answer": "Cells are the smallest units capable of performing all vital life processes.",
+            "key_concepts": [
+                "basic unit of life"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe the role of DNA in cells.",
+            "answer": "DNA stores hereditary information and controls the synthesis of proteins.",
+            "key_concepts": [
+                "DNA"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the importance of mitosis.",
+            "answer": "Mitosis produces identical daughter cells for growth and repair.",
+            "key_concepts": [
+                "mitosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of meiosis.",
+            "answer": "Meiosis produces gametes with half the chromosome number and maintains genetic stability.",
+            "key_concepts": [
+                "meiosis"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how ribosomes help in protein synthesis.",
+            "answer": "Ribosomes read genetic instructions from RNA and assemble amino acids to form proteins.",
+            "key_concepts": [
+                "ribosomes"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the role of genes in heredity.",
+            "answer": "Genes are units of DNA that carry information responsible for inheritance of traits.",
+            "key_concepts": [
+                "genes"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why plant cells have chloroplasts.",
+            "answer": "Plant cells have chloroplasts because they perform photosynthesis.",
+            "key_concepts": [
+                "chloroplast"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why cells divide.",
+            "answer": "Cells divide for growth, repair of damaged tissues and reproduction.",
+            "key_concepts": [
+                "cell division"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        }
+    ]
+}

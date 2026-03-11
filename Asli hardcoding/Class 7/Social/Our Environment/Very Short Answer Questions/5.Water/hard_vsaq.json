@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 5: WATER: OUR LIFELINE",
+    "generated_at": "2026-03-07T23:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between surface water and groundwater with examples.",
+            "answer": "Surface water is found in rivers, lakes, and ponds, while groundwater is stored beneath the Earth's surface in aquifers. For example, the Ganga provides surface water, while water in wells comes from groundwater.",
+            "key_concepts": ["surface water", "groundwater"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Discuss the causes and consequences of water scarcity.",
+            "answer": "Causes include overuse, pollution, climate change, and uneven rainfall. Consequences are droughts, reduced crop yields, drinking water shortage, and ecosystem stress.",
+            "key_concepts": ["water scarcity", "causes and effects"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the water cycle and its significance for life on Earth.",
+            "answer": "The water cycle includes evaporation, condensation, precipitation, and collection. It ensures continuous availability of water for drinking, agriculture, and ecosystems.",
+            "key_concepts": ["water cycle", "life support"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How do wetlands help in flood control and groundwater recharge?",
+            "answer": "Wetlands act as sponges, absorbing excess rainfall and releasing it slowly. This controls floods and allows water to infiltrate into the ground, recharging aquifers.",
+            "key_concepts": ["wetlands", "flood control", "groundwater recharge"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the methods of rainwater harvesting and their benefits.",
+            "answer": "Methods include rooftop harvesting, check dams, and percolation tanks. Benefits are groundwater recharge, reduced water scarcity, and prevention of waterlogging.",
+            "key_concepts": ["rainwater harvesting", "benefits"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss the impact of deforestation on the water cycle.",
+            "answer": "Deforestation reduces transpiration and rainfall, increases surface runoff, lowers groundwater recharge, and can lead to droughts and soil erosion.",
+            "key_concepts": ["deforestation", "water cycle impact"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the concept of integrated water resource management.",
+            "answer": "It is the coordinated management of surface water, groundwater, and rainwater to meet human, agricultural, and ecological needs sustainably.",
+            "key_concepts": ["integrated water management"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the effects of floods on society and the environment.",
+            "answer": "Floods can destroy homes, crops, and infrastructure, displace people, contaminate water sources, and cause soil erosion and habitat loss.",
+            "key_concepts": ["flood effects"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is desalination and what challenges are associated with it?",
+            "answer": "Desalination removes salt from seawater to make it potable. Challenges include high cost, energy consumption, and disposal of salt and brine.",
+            "key_concepts": ["desalination", "challenges"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "How does urbanization affect the availability and quality of water?",
+            "answer": "Urbanization increases water demand, reduces groundwater recharge, increases pollution from sewage and industries, and leads to water scarcity.",
+            "key_concepts": ["urbanization", "water impact"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how glaciers contribute to the water supply and the impact of global warming.",
+            "answer": "Glaciers store freshwater and feed rivers. Global warming causes glaciers to melt faster, affecting river flow and leading to water shortages and floods.",
+            "key_concepts": ["glaciers", "global warming"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss the importance of rivers in agriculture, industry, and electricity generation.",
+            "answer": "Rivers provide irrigation water, supply water for industries, and are used to generate hydroelectric power, supporting human life and development.",
+            "key_concepts": ["rivers", "agriculture", "industry", "electricity"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain surface runoff and its role in both water supply and flooding.",
+            "answer": "Surface runoff flows over land into rivers and lakes. It replenishes water bodies but can cause floods if excessive rainfall exceeds absorption capacity.",
+            "key_concepts": ["surface runoff"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 14,
+            "question": "How do human activities contribute to water pollution?",
+            "answer": "Industrial discharge, sewage, pesticides, fertilizers, and plastic waste contaminate rivers, lakes, and groundwater, affecting health and ecosystems.",
+            "key_concepts": ["water pollution", "human impact"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the difference between renewable and non-renewable water sources, with examples?",
+            "answer": "Renewable sources like rivers and rainfall replenish naturally, while non-renewable sources like deep aquifers are limited and replenish slowly.",
+            "key_concepts": ["renewable", "non-renewable water"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss the methods and advantages of storing water for future use.",
+            "answer": "Methods include dams, reservoirs, and tanks. Advantages include reliable water supply, flood control, and irrigation support.",
+            "key_concepts": ["water storage methods"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "How does climate change affect precipitation and water availability?",
+            "answer": "Climate change can cause erratic rainfall, more floods and droughts, and reduce freshwater availability in some regions.",
+            "key_concepts": ["climate change", "precipitation", "water availability"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the significance of groundwater recharge and techniques to enhance it.",
+            "answer": "Groundwater recharge maintains water levels in wells and aquifers. Techniques include rainwater harvesting, percolation tanks, and recharge pits.",
+            "key_concepts": ["groundwater recharge", "techniques"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe the impact of floods and droughts on ecosystems.",
+            "answer": "Floods can wash away soil and organisms, while droughts can dry wetlands and rivers, affecting plants, animals, and biodiversity.",
+            "key_concepts": ["flood impact", "drought impact", "ecosystems"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the role of integrated water management in sustainable development?",
+            "answer": "It ensures efficient and equitable use of water for agriculture, industry, and domestic needs while protecting ecosystems.",
+            "key_concepts": ["integrated water management", "sustainable development"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain desalination and its importance in arid regions.",
+            "answer": "Desalination removes salt from seawater, providing potable water in arid regions where freshwater is scarce.",
+            "key_concepts": ["desalination", "arid regions"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "How do rivers influence cultural, economic, and social life?",
+            "answer": "Rivers support agriculture, trade, transport, provide drinking water, and are often central to cultural and religious practices.",
+            "key_concepts": ["rivers", "economic and cultural life"],
+            "marks": 4,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the challenges in managing water resources in urban areas.",
+            "answer": "Challenges include high demand, pollution, over-extraction of groundwater, insufficient storage, and erratic rainfall.",
+            "key_concepts": ["urban water management", "challenges"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the concept of watershed management.",
+            "answer": "Watershed management involves conserving soil and water in a catchment area to ensure sustainable water supply and prevent floods and erosion.",
+            "key_concepts": ["watershed management"],
+            "marks": 4,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is sustainable water management crucial for future generations?",
+            "answer": "Sustainable management ensures that water remains available for drinking, agriculture, and ecosystems, prevents pollution, and reduces the risk of scarcity.",
+            "key_concepts": ["sustainable water management", "future generations"],
+            "marks": 4,
+            "source_section": "Section 5.3"
+        }
+    ]
+}

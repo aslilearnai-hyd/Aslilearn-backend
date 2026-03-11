@@ -1,0 +1,165 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Political Science)",
+  "chapter_name": "Political Parties",
+  "lesson_level": "Hard",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyse the role of political parties in democratic governance",
+    "Evaluate the importance of political parties in representative democracies",
+    "Compare different party systems and their impact on governance",
+    "Examine the role of national and regional parties in Indian politics",
+    "Critically analyse challenges faced by political parties",
+    "Evaluate reforms required to strengthen democratic institutions",
+    "Apply political concepts to real-world political situations"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Political Parties and Democracy",
+      "topics_covered": [
+        "Meaning of political parties",
+        "Relationship between political parties and democracy",
+        "Political representation in large societies"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation using real political examples",
+        "Case study discussion on elections"
+      ],
+      "student_activities": [
+        "Students analyse why political parties are necessary in democracies",
+        "Write a short paragraph explaining their importance"
+      ],
+      "assessment": ["Concept-based questions", "Short written reflection"]
+    },
+    {
+      "period": 2,
+      "title": "Functions of Political Parties in Governance",
+      "topics_covered": [
+        "Election participation",
+        "Policy formulation",
+        "Role in law making",
+        "Government formation and opposition"
+      ],
+      "teaching_strategy": [
+        "Case study of parliamentary functioning",
+        "Interactive discussion"
+      ],
+      "student_activities": [
+        "Students analyse real examples of political party functions",
+        "Prepare a short presentation on one function"
+      ],
+      "assessment": ["Presentation evaluation", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Comparative Study of Party Systems",
+      "topics_covered": [
+        "One-party system",
+        "Two-party system",
+        "Multiparty system"
+      ],
+      "teaching_strategy": [
+        "Comparative analysis using charts",
+        "Examples from USA, UK and India"
+      ],
+      "student_activities": [
+        "Create a comparative table of party systems",
+        "Evaluate which system is more effective and why"
+      ],
+      "assessment": ["Analytical writing exercise", "Oral discussion"]
+    },
+    {
+      "period": 4,
+      "title": "National and Regional Parties in India",
+      "topics_covered": [
+        "Recognition criteria by Election Commission",
+        "Major national parties",
+        "Role of regional parties in coalition governments"
+      ],
+      "teaching_strategy": [
+        "Explanation using examples from Indian politics",
+        "Map-based analysis"
+      ],
+      "student_activities": [
+        "Research a regional party and present its role",
+        "Analyse how regional parties influence national politics"
+      ],
+      "assessment": ["Student presentation", "Research notes evaluation"]
+    },
+    {
+      "period": 5,
+      "title": "Challenges Faced by Political Parties",
+      "topics_covered": [
+        "Lack of internal democracy",
+        "Dynastic succession",
+        "Influence of money and muscle power",
+        "Limited ideological differences"
+      ],
+      "teaching_strategy": [
+        "Discussion using newspaper case studies",
+        "Teacher-led analysis"
+      ],
+      "student_activities": [
+        "Students analyse real examples of these challenges",
+        "Group discussion on consequences for democracy"
+      ],
+      "assessment": ["Group report", "Participation evaluation"]
+    },
+    {
+      "period": 6,
+      "title": "Political Party Reforms",
+      "topics_covered": [
+        "Anti-defection law",
+        "Election transparency",
+        "Internal democracy reforms",
+        "Role of citizens and media"
+      ],
+      "teaching_strategy": [
+        "Debate-based learning",
+        "Teacher explanation of reforms"
+      ],
+      "student_activities": [
+        "Debate: 'Are political party reforms sufficient?'",
+        "Write suggestions for improving political parties"
+      ],
+      "assessment": ["Debate performance", "Written reform proposal"]
+    },
+    {
+      "period": 7,
+      "title": "Critical Review and Chapter Application",
+      "topics_covered": [
+        "Role of political parties in modern democracy",
+        "Linking theory with current political events",
+        "Chapter revision"
+      ],
+      "teaching_strategy": ["Case-based discussion", "Quiz and review session"],
+      "student_activities": [
+        "Analyse a recent election news report",
+        "Participate in chapter review quiz"
+      ],
+      "assessment": [
+        "Short test (10 marks)",
+        "Concept clarification discussion"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Democratic Politics Textbook",
+    "Newspaper articles",
+    "Political party symbol charts",
+    "Map of India"
+  ],
+  "evaluation_methods": [
+    "Conceptual questioning",
+    "Student presentations",
+    "Group discussions",
+    "Debates",
+    "Short written tests",
+    "Research-based assignments"
+  ],
+  "teacher_tip": "Encourage students to analyse real political events and election results so they can connect textbook concepts with practical democratic processes."
+}

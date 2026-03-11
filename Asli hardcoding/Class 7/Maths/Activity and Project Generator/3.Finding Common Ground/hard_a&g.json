@@ -1,0 +1,174 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT)",
+    "chapter": "Finding Common Ground (Data Handling)",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class7_maths_finding_common_ground.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Weighted Mean Investigation",
+            "objective": "Understand how different weights affect the average",
+            "materials": [
+                "Notebook",
+                "Calculator"
+            ],
+            "steps": [
+                "Assume a student's final grade is 40% exams, 40% projects, and 20% homework",
+                "Calculate the grade for a student with scores: Exam=70, Project=90, Homework=100",
+                "Compare this 'weighted mean' to the simple arithmetic mean of the three scores",
+                "Explain why they differ"
+            ],
+            "learning_outcome": "Analyzes complex representative values used in real-world grading",
+            "evaluation": "Accuracy of weighted calculation and comparison (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Outlier Impact Study",
+            "objective": "Analyze the sensitivity of mean and median to extreme values",
+            "materials": [
+                "Graph paper",
+                "Notebook"
+            ],
+            "steps": [
+                "Create a data set of 10 household incomes: nine at 30,000 and one at 5,00,000",
+                "Calculate the Mean and Median",
+                "Represent this data on a number line",
+                "Argue which value (Mean or Median) better represents the 'common ground' of the group"
+            ],
+            "learning_outcome": "Critically evaluates the reliability of different central tendencies",
+            "evaluation": "Strength of the mathematical argument regarding outliers (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Advanced Double Bar Graph Interpretation",
+            "objective": "Analyze trends and proportions in comparative data",
+            "materials": [
+                "Double bar graph of Import/Export data",
+                "Ruler"
+            ],
+            "steps": [
+                "Find a graph showing multi-year performance of two companies",
+                "Calculate the percentage increase or decrease for both companies over three years",
+                "Predict the next year's value based on the observed trend",
+                "Discuss the limitations of such predictions"
+            ],
+            "learning_outcome": "Uses data visualization for trend analysis and forecasting",
+            "evaluation": "Depth of trend analysis and calculation accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Probability of Compound Events",
+            "objective": "Calculate probability for two independent events",
+            "materials": [
+                "Two coins",
+                "Notebook"
+            ],
+            "steps": [
+                "Toss two coins simultaneously 40 times",
+                "Record outcomes: (H,H), (H,T), (T,H), (T,T)",
+                "Calculate the experimental probability of getting 'exactly one head'",
+                "Compare the result with the theoretical probability ($1/2$)"
+            ],
+            "learning_outcome": "Masters the concept of sample space and compound probability",
+            "evaluation": "Correct recording of sample space and probability (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Backtracking the Mean",
+            "objective": "Find a missing value using the given mean",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "The mean of 5 numbers is 28. If one number is excluded, the mean becomes 25",
+                "Write an algebraic equation to find the excluded number",
+                "Solve for $x$ and verify the result",
+                "Create a similar problem involving 10 numbers and solve it"
+            ],
+            "learning_outcome": "Uses algebraic manipulation to solve data problems",
+            "evaluation": "Correct algebraic steps and final answer (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The Birthday Paradox (Mini Version)",
+            "objective": "Explore probability in a group",
+            "materials": [
+                "List of birthdays for 20 people"
+            ],
+            "steps": [
+                "Collect the birth months of 20 random people",
+                "Find the frequency of each month",
+                "Calculate the probability that a person picked at random was born in a month with 31 days",
+                "Check if any two people share the same birth month and discuss the 'chance'"
+            ],
+            "learning_outcome": "Applies probability concepts to group demographics",
+            "evaluation": "Accurate frequency distribution and probability (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Scale Manipulation in Graphs",
+            "objective": "Understand how graph scales can misrepresent data",
+            "materials": [
+                "Graph paper",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw a bar graph for the data [A=10, B=12] using a scale starting at 0",
+                "Draw the same data using a scale starting at 8 (a 'broken' axis)",
+                "Explain how the second graph makes the difference between A and B look much larger",
+                "Discuss why this can be misleading in advertisements"
+            ],
+            "learning_outcome": "Develops critical thinking towards visual data representation",
+            "evaluation": "Clarity of the two graphs and the ethical discussion (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Mean of Grouped Data (Simplified)",
+            "objective": "Estimate the mean of data in intervals",
+            "materials": [
+                "Frequency table from previous Medium activity"
+            ],
+            "steps": [
+                "Find the 'mid-point' of each age interval (e.g., for 10-20, mid-point is 15)",
+                "Multiply each mid-point by its frequency",
+                "Sum these products and divide by the total frequency",
+                "Compare this estimated mean with the actual mean of the raw data"
+            ],
+            "learning_outcome": "Introduces the concept of group-mean calculation",
+            "evaluation": "Correct application of the $\\frac{\\sum f \cdot x}{\\sum f}$ logic (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Non-Numerical Data Handling",
+            "objective": "Determine central tendency for categorical data",
+            "materials": [
+                "Survey data on 'Blood Groups'"
+            ],
+            "steps": [
+                "Collect blood group data (A, B, AB, O) from 20 people",
+                "Explain why the 'Mean' cannot be calculated for this data",
+                "Identify the Mode and discuss why it is the only useful representative value here"
+            ],
+            "learning_outcome": "Differentiates between numerical and categorical data analysis",
+            "evaluation": "Logical explanation of data types and mode (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Data Scientist’s Report",
+            "objective": "Synthesize all data handling concepts into a project",
+            "materials": [
+                "Poster paper",
+                "Collected survey data"
+            ],
+            "steps": [
+                "Conduct a survey on 'Hours of sleep vs. Academic scores' for 10 students",
+                "Represent the data using a double bar graph",
+                "Calculate the Range, Mean, and Median for both variables",
+                "Write a 100-word conclusion on whether 'common ground' exists between the two variables"
+            ],
+            "learning_outcome": "Combines collection, organization, representation, and interpretation of data",
+            "evaluation": "Completeness and professionalism of the final report (10 marks)"
+        }
+    ]
+}

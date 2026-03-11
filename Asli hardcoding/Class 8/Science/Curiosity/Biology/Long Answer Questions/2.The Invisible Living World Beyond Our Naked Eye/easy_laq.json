@@ -1,0 +1,327 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "generated_at": "2026-03-05T13:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why many organisms cannot be seen with the naked eye.",
+      "answer": "Many organisms are extremely small in size and cannot be seen without magnification. These tiny living organisms are called microorganisms and require microscopes to be observed.",
+      "answer_outline": [
+        "Size limitation of human eye",
+        "Definition of microorganisms",
+        "Need for microscope"
+      ],
+      "key_concepts": ["microorganisms", "microscope"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe how lenses help in observing small objects.",
+      "answer": "Lenses bend light rays and magnify objects, making them appear larger. This principle is used in magnifying glasses and microscopes to observe tiny structures.",
+      "answer_outline": [
+        "Curved glass lenses",
+        "Magnification",
+        "Application in microscopes"
+      ],
+      "key_concepts": ["lenses", "magnification"],
+      "marks": 5,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain Robert Hooke’s discovery of cells.",
+      "answer": "Robert Hooke observed a thin slice of cork using a microscope and saw tiny compartments that resembled honeycomb structures. He named these compartments cells.",
+      "answer_outline": [
+        "Observation of cork",
+        "Use of microscope",
+        "Naming of cells"
+      ],
+      "key_concepts": ["cell discovery"],
+      "marks": 5,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the contribution of Antonie van Leeuwenhoek to microbiology.",
+      "answer": "Antonie van Leeuwenhoek improved microscopes and was the first to observe microorganisms such as bacteria and blood cells, earning the title Father of Microbiology.",
+      "answer_outline": [
+        "Improvement of microscopes",
+        "Observation of microorganisms",
+        "Importance in microbiology"
+      ],
+      "key_concepts": ["microbiology"],
+      "marks": 5,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the basic structure of a cell.",
+      "answer": "A typical cell consists of a cell membrane, cytoplasm, and nucleus. The cell membrane controls the movement of substances, the cytoplasm carries out life processes, and the nucleus regulates cell activities.",
+      "answer_outline": [
+        "Cell membrane",
+        "Cytoplasm",
+        "Nucleus"
+      ],
+      "key_concepts": ["cell structure"],
+      "marks": 5,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the function of the cell membrane.",
+      "answer": "The cell membrane encloses the cell and regulates the movement of substances into and out of the cell, maintaining internal balance.",
+      "answer_outline": [
+        "Outer boundary",
+        "Selective permeability",
+        "Protection"
+      ],
+      "key_concepts": ["cell membrane"],
+      "marks": 4,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the role of cytoplasm in the cell.",
+      "answer": "Cytoplasm contains various cell components and is the site where most metabolic activities occur.",
+      "answer_outline": [
+        "Location in cell",
+        "Contains organelles",
+        "Site of life processes"
+      ],
+      "key_concepts": ["cytoplasm"],
+      "marks": 4,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the function of the nucleus in a cell.",
+      "answer": "The nucleus controls cell activities and regulates growth and reproduction of the cell.",
+      "answer_outline": [
+        "Control center",
+        "Contains genetic material",
+        "Regulates activities"
+      ],
+      "key_concepts": ["nucleus"],
+      "marks": 4,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the differences between plant cells and animal cells.",
+      "answer": "Plant cells have a cell wall, chloroplasts, and a large vacuole, while animal cells lack these structures.",
+      "answer_outline": [
+        "Cell wall",
+        "Chloroplast",
+        "Vacuole differences"
+      ],
+      "key_concepts": ["plant cell", "animal cell"],
+      "marks": 5,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why cells differ in shape and structure.",
+      "answer": "Cells differ in shape and structure because they are specialized to perform different functions in the body.",
+      "answer_outline": [
+        "Specialization",
+        "Examples like nerve cells and muscle cells"
+      ],
+      "key_concepts": ["cell specialization"],
+      "marks": 4,
+      "source_section": "Section 2.1.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the levels of organization in living organisms.",
+      "answer": "Cells form tissues, tissues form organs, organs form organ systems, and organ systems together form an organism.",
+      "answer_outline": [
+        "Cell",
+        "Tissue",
+        "Organ",
+        "Organ system",
+        "Organism"
+      ],
+      "key_concepts": ["levels of organization"],
+      "marks": 5,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain what microorganisms are.",
+      "answer": "Microorganisms are tiny living organisms that cannot be seen with the naked eye and can only be observed using microscopes.",
+      "answer_outline": [
+        "Definition",
+        "Examples"
+      ],
+      "key_concepts": ["microorganisms"],
+      "marks": 4,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the different types of microorganisms.",
+      "answer": "Common types include bacteria, fungi, protozoa, and algae.",
+      "answer_outline": [
+        "Bacteria",
+        "Fungi",
+        "Protozoa",
+        "Algae"
+      ],
+      "key_concepts": ["types of microorganisms"],
+      "marks": 4,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how microorganisms help clean the environment.",
+      "answer": "Microorganisms decompose dead plants and animals, converting them into simpler substances that enrich the soil.",
+      "answer_outline": [
+        "Decomposition",
+        "Nutrient recycling"
+      ],
+      "key_concepts": ["decomposition"],
+      "marks": 5,
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how microorganisms help in making manure.",
+      "answer": "Microorganisms break down organic waste such as fruit and vegetable peels into nutrient-rich manure.",
+      "answer_outline": [
+        "Organic waste decomposition",
+        "Manure formation"
+      ],
+      "key_concepts": ["composting"],
+      "marks": 4,
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the role of yeast in food preparation.",
+      "answer": "Yeast ferments sugar and releases carbon dioxide, causing dough to rise and making bread soft and fluffy.",
+      "answer_outline": [
+        "Fermentation",
+        "Carbon dioxide production",
+        "Food preparation"
+      ],
+      "key_concepts": ["yeast", "fermentation"],
+      "marks": 5,
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain how bacteria help in curd formation.",
+      "answer": "Lactobacillus bacteria convert lactose in milk into lactic acid, turning milk into curd.",
+      "answer_outline": [
+        "Lactobacillus",
+        "Fermentation",
+        "Lactic acid formation"
+      ],
+      "key_concepts": ["curd formation"],
+      "marks": 4,
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how Rhizobium bacteria benefit plants.",
+      "answer": "Rhizobium bacteria live in root nodules of legumes and fix atmospheric nitrogen, making it available to plants.",
+      "answer_outline": [
+        "Root nodules",
+        "Nitrogen fixation",
+        "Soil fertility"
+      ],
+      "key_concepts": ["Rhizobium", "nitrogen fixation"],
+      "marks": 5,
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of microalgae in nature.",
+      "answer": "Microalgae produce oxygen through photosynthesis and serve as food for aquatic organisms.",
+      "answer_outline": [
+        "Photosynthesis",
+        "Oxygen production",
+        "Food source"
+      ],
+      "key_concepts": ["microalgae"],
+      "marks": 4,
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the difference between unicellular and multicellular organisms.",
+      "answer": "Unicellular organisms consist of a single cell, while multicellular organisms consist of many specialized cells.",
+      "answer_outline": [
+        "Definition",
+        "Examples"
+      ],
+      "key_concepts": ["unicellular", "multicellular"],
+      "marks": 4,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why the cell is called the basic unit of life.",
+      "answer": "Cells perform all essential life processes and form the building blocks of all living organisms.",
+      "answer_outline": [
+        "Basic structure",
+        "Life processes"
+      ],
+      "key_concepts": ["cell"],
+      "marks": 5,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how microorganisms contribute to nutrient recycling.",
+      "answer": "Microorganisms decompose organic matter and release nutrients back into the soil, supporting plant growth.",
+      "answer_outline": [
+        "Decomposition",
+        "Nutrient cycle"
+      ],
+      "key_concepts": ["nutrient recycling"],
+      "marks": 4,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the importance of microscopes in biological research.",
+      "answer": "Microscopes allow scientists to observe cells and microorganisms, helping them understand life at a microscopic level.",
+      "answer_outline": [
+        "Magnification",
+        "Scientific discoveries"
+      ],
+      "key_concepts": ["microscope"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how microorganisms are both beneficial and harmful.",
+      "answer": "Some microorganisms help in decomposition, fermentation, and nitrogen fixation, while others cause diseases in plants and animals.",
+      "answer_outline": [
+        "Benefits",
+        "Harmful effects"
+      ],
+      "key_concepts": ["beneficial microbes", "harmful microbes"],
+      "marks": 5,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the overall importance of microorganisms in human life.",
+      "answer": "Microorganisms play important roles in food production, environmental cleaning, agriculture, and maintaining ecological balance.",
+      "answer_outline": [
+        "Food production",
+        "Environmental role",
+        "Agricultural importance"
+      ],
+      "key_concepts": ["microorganisms"],
+      "marks": 5,
+      "source_section": "Section 2.4"
+    }
+  ]
+}

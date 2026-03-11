@@ -1,0 +1,248 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 12: Improvement in Food Resources",
+    "generated_at": "2026-03-06T00:35:00",
+    "difficulty": "hard",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are biotic stresses in crops?",
+            "answer": "Biotic stresses are damages caused by living organisms such as pests, insects and pathogens.",
+            "key_points": [
+                "living organisms",
+                "pests"
+            ],
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 2,
+            "question": "What are abiotic stresses in crops?",
+            "answer": "Abiotic stresses are damages caused by non-living factors like drought, salinity and temperature.",
+            "key_points": [
+                "non living factors",
+                "drought"
+            ],
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 3,
+            "question": "Why are short duration crops economical?",
+            "answer": "They allow farmers to grow multiple crops in a year.",
+            "key_points": [
+                "short maturity",
+                "multiple cropping"
+            ],
+            "source_section": "Crop Variety Improvement"
+        },
+        {
+            "question_number": 4,
+            "question": "Why are dwarf varieties preferred in cereals?",
+            "answer": "They use fewer nutrients and produce higher yields.",
+            "key_points": [
+                "higher yield",
+                "less nutrient use"
+            ],
+            "source_section": "Agronomic Characteristics"
+        },
+        {
+            "question_number": 5,
+            "question": "Why should fertilizers be used carefully?",
+            "answer": "Excess fertilizers may pollute water and harm soil organisms.",
+            "key_points": [
+                "water pollution",
+                "soil damage"
+            ],
+            "source_section": "Fertilizers"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is organic farming beneficial?",
+            "answer": "It maintains soil fertility and reduces environmental pollution.",
+            "key_points": [
+                "environment friendly",
+                "soil fertility"
+            ],
+            "source_section": "Organic Farming"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is irrigation necessary during drought?",
+            "answer": "Because rainfall is insufficient to meet crop water requirements.",
+            "key_points": [
+                "lack of rainfall",
+                "water requirement"
+            ],
+            "source_section": "Irrigation"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does mixed cropping reduce risk of crop failure?",
+            "answer": "Because if one crop fails, the other may still produce yield.",
+            "key_points": [
+                "risk reduction"
+            ],
+            "source_section": "Cropping Patterns"
+        },
+        {
+            "question_number": 9,
+            "question": "Why is intercropping beneficial?",
+            "answer": "It improves nutrient utilization and reduces pest spread.",
+            "key_points": [
+                "efficient nutrients",
+                "pest control"
+            ],
+            "source_section": "Cropping Patterns"
+        },
+        {
+            "question_number": 10,
+            "question": "Why should preventive methods be preferred in crop protection?",
+            "answer": "They reduce crop damage without excessive chemical use.",
+            "key_points": [
+                "less chemicals",
+                "crop safety"
+            ],
+            "source_section": "Crop Protection"
+        },
+        {
+            "question_number": 11,
+            "question": "What are milch animals?",
+            "answer": "Milch animals are animals raised for milk production.",
+            "key_points": [
+                "milk producing animals"
+            ],
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 12,
+            "question": "What are draught animals?",
+            "answer": "Draught animals are animals used for agricultural work like ploughing.",
+            "key_points": [
+                "farm work animals"
+            ],
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 13,
+            "question": "Why are cross-breeds used in cattle farming?",
+            "answer": "To combine desirable traits like high milk yield and disease resistance.",
+            "key_points": [
+                "hybrid breeds",
+                "better productivity"
+            ],
+            "source_section": "Cattle Farming"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are broilers given protein-rich feed?",
+            "answer": "To promote rapid growth for meat production.",
+            "key_points": [
+                "protein diet",
+                "fast growth"
+            ],
+            "source_section": "Poultry Farming"
+        },
+        {
+            "question_number": 15,
+            "question": "Why are vaccinations given to poultry?",
+            "answer": "To prevent infectious diseases.",
+            "key_points": [
+                "disease prevention"
+            ],
+            "source_section": "Poultry Farming"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is fish considered a cheap source of protein?",
+            "answer": "Because it provides high protein at relatively low cost.",
+            "key_points": [
+                "cheap protein source"
+            ],
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are multiple fish species cultured together?",
+            "answer": "To utilize different food resources in the pond.",
+            "key_points": [
+                "efficient resource use"
+            ],
+            "source_section": "Composite Fish Culture"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is fish seed availability important in fish farming?",
+            "answer": "It ensures continuous fish production.",
+            "key_points": [
+                "fish breeding",
+                "production continuity"
+            ],
+            "source_section": "Fish Production"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are bee colonies maintained near flowering plants?",
+            "answer": "Because bees collect nectar and pollen from flowers.",
+            "key_points": [
+                "nectar",
+                "pollen"
+            ],
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 20,
+            "question": "What determines the quality of honey?",
+            "answer": "The type of flowers available to bees.",
+            "key_points": [
+                "pasturage",
+                "flower type"
+            ],
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are Italian bees used in commercial honey production?",
+            "answer": "They collect more honey and breed well.",
+            "key_points": [
+                "high yield"
+            ],
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 22,
+            "question": "What is pasturage in apiculture?",
+            "answer": "Pasturage is the availability of flowers for bees to collect nectar.",
+            "key_points": [
+                "flower availability"
+            ],
+            "source_section": "Bee-Keeping"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the role of satellites in marine fishing?",
+            "answer": "They help locate large schools of fish in the sea.",
+            "key_points": [
+                "fish detection"
+            ],
+            "source_section": "Marine Fisheries"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is grain storage important?",
+            "answer": "It prevents loss of food due to pests and moisture.",
+            "key_points": [
+                "food preservation"
+            ],
+            "source_section": "Storage"
+        },
+        {
+            "question_number": 25,
+            "question": "What is integrated farming?",
+            "answer": "Integrated farming combines crop production with livestock and fisheries.",
+            "key_points": [
+                "multiple farming systems"
+            ],
+            "source_section": "Sustainable Farming"
+        }
+    ]
+}

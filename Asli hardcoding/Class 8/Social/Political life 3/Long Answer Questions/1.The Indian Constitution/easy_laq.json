@@ -1,0 +1,248 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: The Indian Constitution",
+  "generated_at": "2026-03-06T21:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a Constitution?",
+      "answer": "A Constitution is a set of fundamental rules and principles that guide how a country is governed.",
+      "answer_outline": [
+        "Definition of Constitution",
+        "Rules for governing a country"
+      ],
+      "key_concepts": ["constitution"],
+      "marks": 3,
+      "source_section": "Why Does a Country Need a Constitution?"
+    },
+    {
+      "question_number": 2,
+      "question": "Why does a country need a Constitution?",
+      "answer": "A country needs a Constitution to provide rules for governance and to protect the rights of citizens.",
+      "answer_outline": [
+        "Rules for government",
+        "Protection of citizens' rights"
+      ],
+      "key_concepts": ["constitution", "governance"],
+      "marks": 3,
+      "source_section": "Why Does a Country Need a Constitution?"
+    },
+    {
+      "question_number": 3,
+      "question": "When did the Constitution of India come into effect?",
+      "answer": "The Constitution of India came into effect on 26 January 1950.",
+      "answer_outline": ["Adoption date", "Republic Day"],
+      "key_concepts": ["constitution"],
+      "marks": 2,
+      "source_section": "Making of the Constitution"
+    },
+    {
+      "question_number": 4,
+      "question": "Who was the chairman of the Drafting Committee of the Indian Constitution?",
+      "answer": "Dr. B.R. Ambedkar was the chairman of the Drafting Committee.",
+      "answer_outline": ["Role of Drafting Committee", "Dr. B.R. Ambedkar"],
+      "key_concepts": ["B.R. Ambedkar"],
+      "marks": 2,
+      "source_section": "Making of the Constitution"
+    },
+    {
+      "question_number": 5,
+      "question": "What is federalism?",
+      "answer": "Federalism is a system of government where power is divided between the central government and state governments.",
+      "answer_outline": ["Division of powers", "Central and state governments"],
+      "key_concepts": ["federalism"],
+      "marks": 3,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 6,
+      "question": "What is a parliamentary form of government?",
+      "answer": "It is a system where the executive is responsible to the legislature and the Prime Minister leads the government.",
+      "answer_outline": [
+        "Executive responsible to legislature",
+        "Role of Prime Minister"
+      ],
+      "key_concepts": ["parliamentary system"],
+      "marks": 3,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 7,
+      "question": "What is separation of powers?",
+      "answer": "Separation of powers means dividing government powers among the legislature, executive and judiciary.",
+      "answer_outline": ["Three branches of government", "Different roles"],
+      "key_concepts": ["separation of powers"],
+      "marks": 3,
+      "source_section": "Key Features of the Constitution"
+    },
+    {
+      "question_number": 8,
+      "question": "What are Fundamental Rights?",
+      "answer": "Fundamental Rights are basic rights guaranteed to all citizens by the Constitution.",
+      "answer_outline": ["Basic rights", "Protection of citizens"],
+      "key_concepts": ["fundamental rights"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 9,
+      "question": "Give two examples of Fundamental Rights.",
+      "answer": "Right to Equality and Right to Freedom are examples of Fundamental Rights.",
+      "answer_outline": ["Right to Equality", "Right to Freedom"],
+      "key_concepts": ["fundamental rights"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 10,
+      "question": "What does secularism mean in the Indian Constitution?",
+      "answer": "Secularism means the state treats all religions equally and does not favor any religion.",
+      "answer_outline": [
+        "Equal treatment of religions",
+        "No official religion"
+      ],
+      "key_concepts": ["secularism"],
+      "marks": 3,
+      "source_section": "Secularism"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Why is the Constitution important in a democracy?",
+      "answer": "It ensures fair governance, protects citizens' rights and limits the power of government.",
+      "answer_outline": ["Protection of rights", "Limits government power"],
+      "key_concepts": ["democracy"],
+      "marks": 3,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the role of the judiciary in the Constitution?",
+      "answer": "The judiciary interprets laws and protects the rights of citizens.",
+      "answer_outline": ["Interpretation of laws", "Protection of rights"],
+      "key_concepts": ["judiciary"],
+      "marks": 3,
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 13,
+      "question": "Who makes laws in India?",
+      "answer": "The Parliament of India makes laws.",
+      "answer_outline": ["Role of Parliament", "Law-making body"],
+      "key_concepts": ["parliament"],
+      "marks": 2,
+      "source_section": "Parliament"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the role of the executive?",
+      "answer": "The executive implements and enforces laws.",
+      "answer_outline": ["Implementation of laws", "Government administration"],
+      "key_concepts": ["executive"],
+      "marks": 2,
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 15,
+      "question": "Why should government powers be limited?",
+      "answer": "To prevent misuse of power and protect citizens' rights.",
+      "answer_outline": ["Prevent misuse of power", "Protect democracy"],
+      "key_concepts": ["government power"],
+      "marks": 3,
+      "source_section": "Importance of Constitution"
+    },
+
+    {
+      "question_number": 16,
+      "question": "What is the significance of 26 January in India?",
+      "answer": "On this day the Constitution of India came into effect and India became a republic.",
+      "answer_outline": ["Constitution came into effect", "Republic Day"],
+      "key_concepts": ["republic day"],
+      "marks": 3,
+      "source_section": "Making of Constitution"
+    },
+    {
+      "question_number": 17,
+      "question": "How does the Constitution protect citizens?",
+      "answer": "It guarantees Fundamental Rights and ensures equality before the law.",
+      "answer_outline": ["Fundamental Rights", "Equality before law"],
+      "key_concepts": ["rights"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 18,
+      "question": "What is democracy?",
+      "answer": "Democracy is a system of government where people elect their representatives.",
+      "answer_outline": ["Government by people", "Election of representatives"],
+      "key_concepts": ["democracy"],
+      "marks": 2,
+      "source_section": "Democratic Principles"
+    },
+    {
+      "question_number": 19,
+      "question": "What is equality before the law?",
+      "answer": "It means all citizens are treated equally under the law.",
+      "answer_outline": ["Equal treatment", "No discrimination"],
+      "key_concepts": ["equality"],
+      "marks": 2,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the role of citizens in a democracy?",
+      "answer": "Citizens participate in elections and follow the Constitution and laws.",
+      "answer_outline": ["Voting", "Following laws"],
+      "key_concepts": ["citizens"],
+      "marks": 3,
+      "source_section": "Democratic Participation"
+    },
+
+    {
+      "question_number": 21,
+      "question": "What is meant by rule of law?",
+      "answer": "Rule of law means that laws apply equally to all people.",
+      "answer_outline": ["Equality before law", "Fair justice"],
+      "key_concepts": ["rule of law"],
+      "marks": 3,
+      "source_section": "Constitutional Principles"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the Constitution maintain unity in India?",
+      "answer": "By promoting equality, justice and respect for diversity.",
+      "answer_outline": ["Equality", "Respect for diversity"],
+      "key_concepts": ["unity"],
+      "marks": 3,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 23,
+      "question": "Why should citizens know about the Constitution?",
+      "answer": "It helps them understand their rights and duties.",
+      "answer_outline": ["Awareness of rights", "Responsible citizenship"],
+      "key_concepts": ["citizenship"],
+      "marks": 3,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 24,
+      "question": "How does the Constitution support equality?",
+      "answer": "By guaranteeing Fundamental Rights and prohibiting discrimination.",
+      "answer_outline": ["Right to Equality", "Protection from discrimination"],
+      "key_concepts": ["equality"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why the Constitution is called the supreme law of the country.",
+      "answer": "The Constitution is the highest law and all other laws must follow it.",
+      "answer_outline": ["Supreme law", "All laws must follow it"],
+      "key_concepts": ["constitution"],
+      "marks": 4,
+      "source_section": "Constitutional Supremacy"
+    }
+  ]
+}

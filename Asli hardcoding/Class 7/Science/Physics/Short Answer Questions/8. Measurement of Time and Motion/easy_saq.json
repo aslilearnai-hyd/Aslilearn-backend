@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 8: Measurement of Time and Motion",
+    "generated_at": "2026-03-05T19:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is time?",
+            "answer": "Time is the measure of duration between two events.",
+            "key_concepts": ["time", "duration", "measurement"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is motion?",
+            "answer": "Motion is the change in position of an object with respect to time.",
+            "key_concepts": ["motion", "position", "time"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Give two examples of objects in motion.",
+            "answer": "A moving car and a flying bird are examples of objects in motion.",
+            "key_concepts": ["examples of motion"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What instrument is used to measure time?",
+            "answer": "Clocks and stopwatches are instruments used to measure time.",
+            "key_concepts": ["clock", "stopwatch"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a stopwatch?",
+            "answer": "A stopwatch is a device used to measure short intervals of time accurately.",
+            "key_concepts": ["stopwatch", "time interval"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Define periodic motion.",
+            "answer": "Periodic motion is motion that repeats itself at equal intervals of time.",
+            "key_concepts": ["periodic motion"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Give an example of periodic motion.",
+            "answer": "The swinging of a pendulum is an example of periodic motion.",
+            "key_concepts": ["pendulum", "periodic motion"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the SI unit of time?",
+            "answer": "The SI unit of time is the second.",
+            "key_concepts": ["SI unit", "second"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "How was time measured in ancient days?",
+            "answer": "In ancient times, people used the movement of the Sun, water clocks, and sand clocks to measure time.",
+            "key_concepts": ["ancient time measurement", "sundial", "water clock"],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a sundial?",
+            "answer": "A sundial is a device that tells time using the shadow cast by the Sun.",
+            "key_concepts": ["sundial", "shadow"],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What is speed?",
+            "answer": "Speed is the distance travelled by an object in a unit of time.",
+            "key_concepts": ["speed", "distance", "time"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Write the formula for speed.",
+            "answer": "Speed = Distance ÷ Time.",
+            "key_concepts": ["speed formula"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the SI unit of speed?",
+            "answer": "The SI unit of speed is metre per second (m/s).",
+            "key_concepts": ["SI unit", "speed"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Name two units used to measure time.",
+            "answer": "Second and minute are two units used to measure time.",
+            "key_concepts": ["time units"],
+            "marks": 2,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What is uniform motion?",
+            "answer": "Uniform motion is when an object covers equal distances in equal intervals of time.",
+            "key_concepts": ["uniform motion"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 16,
+            "question": "What is non-uniform motion?",
+            "answer": "Non-uniform motion is when an object covers unequal distances in equal intervals of time.",
+            "key_concepts": ["non-uniform motion"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is accurate time measurement important?",
+            "answer": "Accurate time measurement helps in calculating speed, scheduling activities, and studying motion.",
+            "key_concepts": ["time measurement importance"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a pendulum?",
+            "answer": "A pendulum is a weight suspended from a fixed point that swings back and forth.",
+            "key_concepts": ["pendulum"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "How does a pendulum help measure time?",
+            "answer": "The regular swinging motion of a pendulum can be used to measure equal intervals of time.",
+            "key_concepts": ["pendulum", "time measurement"],
+            "marks": 2,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is a time interval?",
+            "answer": "A time interval is the duration between two events.",
+            "key_concepts": ["time interval"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Name two modern devices used to measure time accurately.",
+            "answer": "Digital clocks and atomic clocks are modern devices used for accurate time measurement.",
+            "key_concepts": ["digital clock", "atomic clock"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is distance?",
+            "answer": "Distance is the total length of the path travelled by an object.",
+            "key_concepts": ["distance"],
+            "marks": 2,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 23,
+            "question": "How are time and motion related?",
+            "answer": "Motion describes how an object's position changes with respect to time.",
+            "key_concepts": ["time", "motion"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why were sundials not always reliable?",
+            "answer": "Sundials do not work at night or during cloudy weather because they depend on sunlight.",
+            "key_concepts": ["sundial limitation"],
+            "marks": 2,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Give one example of motion in daily life.",
+            "answer": "A bus moving on the road is an example of motion in daily life.",
+            "key_concepts": ["motion example"],
+            "marks": 2,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

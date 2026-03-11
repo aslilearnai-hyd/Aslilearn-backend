@@ -1,0 +1,34 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Area",
+  "difficulty": "Medium",
+  "source_pdf": "hegp207.pdf",
+  "short_notes": {
+    "key_points": [
+      "Area formulas are derived from basic shapes like rectangles",
+      "A triangle has half the area of a parallelogram with the same base and height",
+      "The height of a parallelogram is the perpendicular distance between its bases",
+      "Diagonals of a rhombus divide it into four equal triangles",
+      "Irregular polygons can be divided into triangles to calculate area"
+    ],
+    "examples": [
+      "Area of triangle with base 12 cm and height 10 cm = 60 cm²",
+      "Area of parallelogram with base 15 cm and height 8 cm = 120 cm²",
+      "Area of rhombus with diagonals 10 cm and 8 cm = 40 cm²",
+      "Area of trapezium with parallel sides 8 cm and 12 cm and height 5 cm = 50 cm²"
+    ],
+    "formulas": [
+      "Triangle → Area = 1/2 × base × height",
+      "Parallelogram → Area = base × height",
+      "Rhombus → Area = 1/2 × d1 × d2",
+      "Trapezium → Area = 1/2 × height × (a + b)"
+    ],
+    "exam_tips": [
+      "Always check that height is perpendicular to the base",
+      "Label base and height clearly in diagrams",
+      "Use correct units in final answers",
+      "Break complex figures into simpler shapes"
+    ]
+  }
+}

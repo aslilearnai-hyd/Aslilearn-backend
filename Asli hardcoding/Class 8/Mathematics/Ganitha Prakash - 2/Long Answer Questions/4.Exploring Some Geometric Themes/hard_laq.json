@@ -1,0 +1,313 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-04T13:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the formula for the number of squares remaining in the Sierpinski Carpet after the nth step.",
+            "answer": "At each step every square produces 8 smaller squares, so the number of remaining squares follows the pattern Rn = 8^n.",
+            "answer_outline": [
+                "Observation of pattern",
+                "Recursive growth",
+                "Formula derivation"
+            ],
+            "key_concepts": ["fractal growth"],
+            "marks": 6,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how the number of holes increases in the Sierpinski Carpet pattern.",
+            "answer": "At each step every remaining square produces a hole, so the total number of holes increases cumulatively according to H(n+1) = Hn + Rn.",
+            "answer_outline": [
+                "Initial hole count",
+                "Recursive relation",
+                "Growth pattern"
+            ],
+            "key_concepts": ["fractal holes"],
+            "marks": 6,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the number of sides in the Koch Snowflake after n steps.",
+            "answer": "The number of sides increases by a factor of 4 at each step. Therefore the number of sides after n steps is 3 × 4^n.",
+            "answer_outline": [
+                "Initial sides",
+                "Multiplication pattern",
+                "General formula"
+            ],
+            "key_concepts": ["Koch snowflake"],
+            "marks": 6,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why the perimeter of the Koch Snowflake grows indefinitely.",
+            "answer": "Each step multiplies the number of sides while decreasing their length, causing the total perimeter to increase without bound.",
+            "answer_outline": [
+                "Side multiplication",
+                "Length reduction",
+                "Perimeter increase"
+            ],
+            "key_concepts": ["fractal perimeter"],
+            "marks": 6,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Show that joining the midpoints of an equilateral triangle divides it into four identical equilateral triangles.",
+            "answer": "Joining the midpoints creates four congruent triangles with equal side lengths due to parallel mid-segments.",
+            "answer_outline": [
+                "Midpoint theorem",
+                "Triangle congruence"
+            ],
+            "key_concepts": ["triangle subdivision"],
+            "marks": 6,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how fractals demonstrate infinite complexity using simple geometric rules.",
+            "answer": "Fractals use simple iterative rules that repeat infinitely, producing complex shapes with self-similar structures.",
+            "answer_outline": [
+                "Iterative rules",
+                "Infinite repetition"
+            ],
+            "key_concepts": ["fractal complexity"],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Derive the number of faces, edges and vertices of a prism whose base is an n-sided polygon.",
+            "answer": "Faces = n + 2, Edges = 3n, Vertices = 2n.",
+            "answer_outline": [
+                "Base faces",
+                "Side faces",
+                "Edge counting"
+            ],
+            "key_concepts": ["prism properties"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Derive the number of faces, edges and vertices of a pyramid with an n-sided base.",
+            "answer": "Faces = n + 1, Edges = 2n, Vertices = n + 1.",
+            "answer_outline": [
+                "Base face",
+                "Triangular faces"
+            ],
+            "key_concepts": ["pyramid geometry"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how nets help determine the shortest path on the surface of a cuboid.",
+            "answer": "By unfolding the cuboid into a net, the surface path becomes a straight line which represents the shortest distance.",
+            "answer_outline": [
+                "Cuboid net",
+                "Straight-line distance"
+            ],
+            "key_concepts": ["surface shortest path"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the shortest path between two points on a cuboid surface is not always along the edges.",
+            "answer": "The shortest path is obtained by unfolding the cuboid and drawing a straight line on the net.",
+            "answer_outline": [
+                "Surface path",
+                "Net transformation"
+            ],
+            "key_concepts": ["geodesic path"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how different unfoldings of a cuboid can produce different path lengths.",
+            "answer": "Different nets position the two points differently, resulting in different straight-line distances.",
+            "answer_outline": [
+                "Different nets",
+                "Distance comparison"
+            ],
+            "key_concepts": ["cuboid nets"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why projections of parallel lines remain parallel.",
+            "answer": "Projection preserves direction relationships, so parallel lines remain parallel in the projection.",
+            "answer_outline": [
+                "Parallel lines",
+                "Projection property"
+            ],
+            "key_concepts": ["parallel lines"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why different objects may have identical projections.",
+            "answer": "Projection removes depth information, so different objects may produce identical two-dimensional projections.",
+            "answer_outline": [
+                "Loss of depth",
+                "Projection ambiguity"
+            ],
+            "key_concepts": ["projection ambiguity"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how shadows approximate projections when the light source is very far away.",
+            "answer": "When the light source is distant, rays become parallel and the shadow becomes identical to the projection.",
+            "answer_outline": [
+                "Parallel rays",
+                "Shadow projection"
+            ],
+            "key_concepts": ["shadow geometry"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why projections are useful in engineering design.",
+            "answer": "Multiple projections help represent all dimensions of an object clearly for construction.",
+            "answer_outline": [
+                "Engineering drawings",
+                "Orthographic views"
+            ],
+            "key_concepts": ["engineering drawing"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why the isometric projection of a cube appears as a hexagon.",
+            "answer": "When viewed from a corner, the edges project equally forming a hexagonal outline.",
+            "answer_outline": [
+                "Cube orientation",
+                "Equal edge projection"
+            ],
+            "key_concepts": ["isometric projection"],
+            "marks": 6,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how isometric grids help represent three-dimensional shapes.",
+            "answer": "The grid provides equal spacing along three axes, allowing accurate drawing of 3D objects.",
+            "answer_outline": [
+                "Grid axes",
+                "Equal spacing"
+            ],
+            "key_concepts": ["isometric grid"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how Tetris-like cube arrangements help understand isometric drawings.",
+            "answer": "They help visualize how cubes connect in three dimensions and how edges align on isometric grids.",
+            "answer_outline": [
+                "Cube arrangement",
+                "Isometric representation"
+            ],
+            "key_concepts": ["cube structures"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain how impossible triangles create optical illusions.",
+            "answer": "Impossible triangles combine inconsistent projections that appear possible in two dimensions but cannot exist in three dimensions.",
+            "answer_outline": [
+                "Visual illusion",
+                "Projection inconsistency"
+            ],
+            "key_concepts": ["optical illusion"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the importance of visualisation in solving geometric problems.",
+            "answer": "Visualisation helps understand spatial relationships and solve complex geometry problems.",
+            "answer_outline": [
+                "Spatial reasoning",
+                "Problem solving"
+            ],
+            "key_concepts": ["visualisation"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how stacking cubes can produce different projections.",
+            "answer": "Different cube arrangements change the visible faces, producing different projections.",
+            "answer_outline": [
+                "Cube stacking",
+                "Viewpoint change"
+            ],
+            "key_concepts": ["cube projections"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how nets help build three-dimensional models.",
+            "answer": "Nets provide a flat template that can be folded to form three-dimensional objects.",
+            "answer_outline": [
+                "Flat pattern",
+                "Folding process"
+            ],
+            "key_concepts": ["solid nets"],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how fractals are used in computer graphics.",
+            "answer": "Fractals generate realistic natural patterns like mountains, trees and clouds in computer graphics.",
+            "answer_outline": [
+                "Fractal modelling",
+                "Graphics application"
+            ],
+            "key_concepts": ["computer fractals"],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the mathematical idea behind recursive geometric constructions.",
+            "answer": "Recursive constructions repeat the same geometric rule at each step to generate complex patterns.",
+            "answer_outline": [
+                "Repeated rule",
+                "Iteration"
+            ],
+            "key_concepts": ["recursive geometry"],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how fractal patterns combine mathematics and art.",
+            "answer": "Fractals create visually appealing patterns while following strict mathematical rules.",
+            "answer_outline": [
+                "Mathematical rule",
+                "Artistic pattern"
+            ],
+            "key_concepts": ["fractal art"],
+            "marks": 5,
+            "source_section": "Section 4.1"
+        }
+    ]
+}

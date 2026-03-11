@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter": "Gender, Religion and Caste",
+  "difficulty": "Medium",
+  "source_pdf": "jess403.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Gender Division Analysis",
+      "objective": "Analyse how gender division affects society",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write examples of gender roles in family and workplace",
+        "Explain how these roles affect opportunities for women",
+        "Suggest ways to promote gender equality"
+      ],
+      "learning_outcome": "Develops analytical understanding of gender division",
+      "evaluation": "Quality of analysis and suggestions (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Time Use Survey Project",
+      "objective": "Study differences in work patterns of men and women",
+      "materials": ["Notebook", "Stopwatch/Clock"],
+      "steps": [
+        "Record daily activities of two male and two female family members",
+        "Categorise activities such as paid work, household work and leisure",
+        "Calculate total hours spent and compare results"
+      ],
+      "learning_outcome": "Understands unequal distribution of labour",
+      "evaluation": "Accuracy of data and interpretation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Women Representation Study",
+      "objective": "Examine women's representation in political institutions",
+      "materials": ["Internet/Books", "Notebook"],
+      "steps": [
+        "Collect data about women representation in Lok Sabha and State Assemblies",
+        "Compare with global averages",
+        "Write a report explaining reasons for low representation"
+      ],
+      "learning_outcome": "Understands political participation of women",
+      "evaluation": "Clarity of report and analysis (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Feminist Movement Case Study",
+      "objective": "Understand the role of feminist movements",
+      "materials": ["Textbook", "Internet", "Notebook"],
+      "steps": [
+        "Research the goals of feminist movements",
+        "Identify major achievements of these movements",
+        "Discuss their impact on education and employment opportunities for women"
+      ],
+      "learning_outcome": "Understands social movements for gender equality",
+      "evaluation": "Depth of research (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Forms of Communalism Chart",
+      "objective": "Identify different forms of communal politics",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "List different forms of communalism",
+        "Provide examples for each form",
+        "Illustrate the impact of communalism on society"
+      ],
+      "learning_outcome": "Understands communal politics and its consequences",
+      "evaluation": "Completeness and clarity of chart (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Secularism Case Analysis",
+      "objective": "Understand the role of secularism in democracy",
+      "materials": ["Notebook"],
+      "steps": [
+        "Explain the concept of a secular state",
+        "List constitutional provisions that ensure secularism",
+        "Write how secularism helps maintain social harmony"
+      ],
+      "learning_outcome": "Develops understanding of constitutional values",
+      "evaluation": "Logical explanation and examples (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Religious Diversity Research",
+      "objective": "Study religious diversity in India",
+      "materials": ["Internet", "Notebook"],
+      "steps": [
+        "List major religious communities in India",
+        "Find their population percentages",
+        "Explain how diversity influences politics"
+      ],
+      "learning_outcome": "Understands religious diversity and its political impact",
+      "evaluation": "Accuracy of data and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Caste Inequality Investigation",
+      "objective": "Examine persistence of caste inequality",
+      "materials": ["Notebook"],
+      "steps": [
+        "Explain historical reasons for caste inequality",
+        "Identify modern changes in caste relations",
+        "Discuss whether caste inequality still exists today"
+      ],
+      "learning_outcome": "Develops critical understanding of caste system",
+      "evaluation": "Quality of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Caste and Elections Study",
+      "objective": "Analyse how caste influences electoral politics",
+      "materials": ["Newspapers", "Internet", "Notebook"],
+      "steps": [
+        "Collect examples where caste influenced elections",
+        "Explain how political parties consider caste composition",
+        "Discuss whether caste alone determines election results"
+      ],
+      "learning_outcome": "Understands relationship between caste and politics",
+      "evaluation": "Depth of analysis (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Debate: Social Divisions and Democracy",
+      "objective": "Evaluate the impact of social divisions on democracy",
+      "materials": ["Notebook"],
+      "steps": [
+        "Divide class into groups",
+        "Discuss whether social divisions strengthen or weaken democracy",
+        "Present arguments supported by examples"
+      ],
+      "learning_outcome": "Develops critical thinking about democracy",
+      "evaluation": "Quality of arguments and participation (10 marks)"
+    }
+  ]
+}

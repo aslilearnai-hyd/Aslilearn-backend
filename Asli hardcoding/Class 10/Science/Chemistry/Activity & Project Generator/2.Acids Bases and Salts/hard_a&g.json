@@ -1,0 +1,202 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Acids, Bases and Salts",
+    "difficulty": "Hard",
+    "source_pdf": "acids_bases_salts_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Stoichiometry of Neutralization",
+            "objective": "Determine the exact molar concentration of an unknown acid via titration",
+            "materials": [
+                "Burette",
+                "Pipette",
+                "Conical flask",
+                "0.1M NaOH solution",
+                "Unknown concentration of HCl",
+                "Phenolphthalein indicator"
+            ],
+            "steps": [
+                "Pipette 10ml of the unknown HCl into a conical flask and add 2 drops of phenolphthalein",
+                "Fill the burette with 0.1M NaOH and record the initial reading",
+                "Titrate the acid by adding NaOH dropwise until a persistent faint pink color appears",
+                "Record the final volume and calculate the molarity using the formula $M_1V_1 = M_2V_2$"
+            ],
+            "learning_outcome": "Applies the principle of molarity and stoichiometry to quantitative chemical analysis",
+            "evaluation": "Precision of the calculated molarity and volume readings (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Investigation of Buffer Capacity",
+            "objective": "Understand how certain solutions resist changes in pH",
+            "materials": [
+                "Distilled water",
+                "Ammonium acetate solution",
+                "pH meter or Universal indicator",
+                "Dilute HCl",
+                "Dilute NaOH"
+            ],
+            "steps": [
+                "Measure the initial pH of distilled water and ammonium acetate",
+                "Add 2 drops of dilute HCl to both and record the change in pH",
+                "Repeat with 2 drops of NaOH in fresh samples",
+                "Analyze why the pH of ammonium acetate remains relatively stable compared to water"
+            ],
+            "learning_outcome": "Analyzes the role of weak acids and their conjugate bases in maintaining pH balance",
+            "evaluation": "Data table showing pH shifts and a theoretical explanation of buffer action (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Kinetics of Gas Evolution",
+            "objective": "Compare the rate of $H_2$ gas production between strong and weak acids",
+            "materials": [
+                "Magnesium ribbon (equal lengths)",
+                "1.0M HCl",
+                "1.0M Ethanoic acid ($CH_3COOH$)",
+                "Two gas syringes or inverted measuring cylinders",
+                "Stopwatch"
+            ],
+            "steps": [
+                "React a piece of Magnesium with 1.0M HCl and measure the volume of $H_2$ gas every 10 seconds",
+                "Repeat the process using 1.0M Ethanoic acid",
+                "Plot 'Volume of Gas' vs 'Time' for both reactions on the same graph",
+                "Explain the difference in slopes based on ion concentration"
+            ],
+            "learning_outcome": "Relates the degree of dissociation of acids to the rate of chemical kinetics",
+            "evaluation": "Accuracy of the graph and interpretation of reaction rates (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Hydrolysis of Salts and pH Prediction",
+            "objective": "Predict and verify the pH of various salt solutions",
+            "materials": [
+                "Sodium chloride ($NaCl$)",
+                "Sodium carbonate ($Na_2CO_3$)",
+                "Ammonium chloride ($NH_4Cl$)",
+                "pH paper"
+            ],
+            "steps": [
+                "Dissolve 1g of each salt in 10ml of distilled water",
+                "Test the pH of each solution",
+                "Identify which parent acid and base formed each salt",
+                "Explain why $Na_2CO_3$ is basic and $NH_4Cl$ is acidic using hydrolysis equations"
+            ],
+            "learning_outcome": "Evaluates how the strength of parent acids/bases determines the nature of the resulting salt",
+            "evaluation": "Correct identification of salt types and hydrolysis reactions (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Quantitative Water of Crystallization",
+            "objective": "Calculate the molecular formula of a hydrated salt via thermal analysis",
+            "materials": [
+                "Hydrated Magnesium Sulphate ($MgSO_4 \cdot xH_2O$)",
+                "Crucible and lid",
+                "Analytical balance",
+                "Bunsen burner"
+            ],
+            "steps": [
+                "Weigh the empty crucible, then weigh it with the hydrated salt",
+                "Heat the crucible strongly with the lid slightly ajar for 15 minutes",
+                "Cool and reweigh; repeat heating until the mass becomes constant",
+                "Calculate the moles of water lost and determine the integer value of '$x$'"
+            ],
+            "learning_outcome": "Applies mass-mole conversions to determine empirical and molecular formulas",
+            "evaluation": "Mathematical derivation showing the steps to find the value of $x$ (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Electrical Conductivity vs. Ion Concentration",
+            "objective": "Investigate the relationship between dilution and conductivity",
+            "materials": [
+                "Concentrated $H_2SO_4$",
+                "Conductivity probe or Ammeter setup",
+                "Beaker",
+                "Burette for water addition"
+            ],
+            "steps": [
+                "Measure the conductivity of a 2.0M acid solution",
+                "Successively dilute the solution to 1.0M, 0.5M, and 0.1M",
+                "Record the current (Amps) at each concentration",
+                "Research why conductivity increases with concentration but molar conductivity increases with dilution"
+            ],
+            "learning_outcome": "Distinguishes between total conductivity and molar conductivity in electrolytes",
+            "evaluation": "Graph showing the correlation between concentration and current (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Chemistry of Bleaching Powder",
+            "objective": "Synthesize and test the properties of Calcium Oxychloride",
+            "materials": [
+                "Slaked lime ($Ca(OH)_2$)",
+                "Chlorine gas source (or research based)",
+                "Colored cloth strips",
+                "Dilute acid"
+            ],
+            "steps": [
+                "Study the reaction: $Ca(OH)_2 + Cl_2 \rightarrow CaOCl_2 + H_2O$",
+                "Add a sample of bleaching powder to water and add a colored cloth strip",
+                "Add a few drops of dilute acid to speed up the bleaching",
+                "Explain the role of 'available chlorine' in the bleaching process"
+            ],
+            "learning_outcome": "Understands the oxidative nature of bleaching agents in domestic applications",
+            "evaluation": "Writing the reaction for the release of chlorine from bleaching powder (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Enthalpy of Neutralization Measurement",
+            "objective": "Determine the heat released during an acid-base reaction",
+            "materials": [
+                "Polystyrene cup (Calorimeter)",
+                "Thermometer (0.1 degree precision)",
+                "1.0M HCl",
+                "1.0M NaOH"
+            ],
+            "steps": [
+                "Measure 50ml of 1.0M HCl and 50ml of 1.0M NaOH and ensure they are at the same temperature",
+                "Mix them in the calorimeter and record the maximum temperature reached",
+                "Calculate the heat ($q$) using $q = mc\Delta T$",
+                "Convert the heat to $\Delta H$ in kJ/mol"
+            ],
+            "learning_outcome": "Quantifies the energy change associated with the formation of water from $H^+$ and $OH^-$ ions",
+            "evaluation": "Correct thermal calculation and units ($kJ/mol$) (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Synthesis of Plaster of Paris",
+            "objective": "Control the dehydration of Gypsum to achieve a specific hydrate",
+            "materials": [
+                "Gypsum ($CaSO_4 \cdot 2H_2O$)",
+                "Oven or Temperature-controlled sand bath",
+                "Watch glass"
+            ],
+            "steps": [
+                "Heat Gypsum precisely at 373 K ($100^\circ C$)",
+                "Observe the transformation to a white powder",
+                "Discuss what happens if the temperature exceeds $100^\circ C$ (formation of 'dead burnt plaster')",
+                "Mix the resulting powder with water and observe the setting time"
+            ],
+            "learning_outcome": "Recognizes the importance of temperature control in chemical manufacturing",
+            "evaluation": "Explanation of the chemical difference between Gypsum and POP (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Amphoteric Behavior of Aluminum",
+            "objective": "Investigate dual reactivity using balanced complex equations",
+            "materials": [
+                "Aluminum foil",
+                "Strong HCl",
+                "Strong NaOH",
+                "Testing kit for $H_2$ gas"
+            ],
+            "steps": [
+                "React Aluminum with HCl and write the balanced equation",
+                "React Aluminum with NaOH and identify the product (Sodium Aluminate)",
+                "Calculate the volume of $H_2$ gas produced per gram of Aluminum in both cases theoretically",
+                "Explain why Aluminum is used in kitchenware despite its reactivity"
+            ],
+            "learning_outcome": "Mastery of complex metal-base reactions and the concept of protective oxide layers",
+            "evaluation": "Balanced chemical equations for both reactions and theoretical gas yield calculation (10 marks)"
+        }
+    ]
+}

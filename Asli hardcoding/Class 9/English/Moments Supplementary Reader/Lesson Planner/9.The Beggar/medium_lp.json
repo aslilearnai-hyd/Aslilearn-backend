@@ -1,0 +1,181 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Beggar",
+    "title": "Lesson Planner – The Beggar",
+    "author": "Anton Chekhov",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline and structure of the lesson",
+        "Analyse the characters and their motivations",
+        "Understand the theme of kindness, reform, and dignity of labour",
+        "Develop vocabulary and comprehension skills",
+        "Interpret the moral and social message of the story",
+        "Relate the lesson to real-life experiences"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Author Introduction and Story Context",
+            "topics_covered": [
+                "Introduction to Anton Chekhov",
+                "Background of the story",
+                "Overview of 'The Beggar'"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Interactive discussion",
+                "Story introduction"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share ideas about poverty and begging"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reading and Understanding the Beginning",
+            "topics_covered": [
+                "Introduction of Lushkoff",
+                "His false identities",
+                "First meeting with Sergei"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Teacher explanation"
+            ],
+            "student_activities": [
+                "Read the passage",
+                "Identify the problem in the story"
+            ],
+            "assessment": [
+                "Short oral questions",
+                "Notebook observation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Characters and Conflict",
+            "topics_covered": [
+                "Character of Sergei",
+                "Character of Lushkoff",
+                "Conflict between honesty and dishonesty"
+            ],
+            "teaching_strategy": [
+                "Character discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Discuss the conflict"
+            ],
+            "assessment": [
+                "Written character description",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Role of Olga",
+            "topics_covered": [
+                "Introduction of Olga",
+                "Her behaviour toward Lushkoff",
+                "Her hidden acts of kindness"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Discuss Olga’s role",
+                "Write two sentences about her kindness"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Transformation of Lushkoff",
+            "topics_covered": [
+                "Work given by Sergei",
+                "Gradual change in Lushkoff",
+                "Meeting after two years"
+            ],
+            "teaching_strategy": [
+                "Sequential storytelling",
+                "Cause–effect explanation"
+            ],
+            "student_activities": [
+                "Arrange events in sequence",
+                "Explain the transformation"
+            ],
+            "assessment": [
+                "Written sequencing task",
+                "Short answers"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme and Moral",
+            "topics_covered": [
+                "Theme of compassion",
+                "Importance of honest work",
+                "Social message of the story"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Interpretative questioning"
+            ],
+            "student_activities": [
+                "Explain the theme",
+                "Write the moral of the story"
+            ],
+            "assessment": [
+                "Paragraph writing",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Vocabulary, Summary and Revision",
+            "topics_covered": [
+                "Key vocabulary from the lesson",
+                "Summary writing",
+                "Overall revision"
+            ],
+            "teaching_strategy": [
+                "Vocabulary explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings of new words",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short written test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English textbook",
+        "Blackboard or whiteboard",
+        "Chalk or markers",
+        "Vocabulary flashcards"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to discuss how kindness and empathy can influence positive change in society."
+}

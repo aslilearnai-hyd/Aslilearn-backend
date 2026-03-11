@@ -1,0 +1,38 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solutes, Solvents, and Solutions",
+  "difficulty": "Hard",
+  "source_pdf": "hecu109.pdf",
+  "short_notes": {
+    "key_points": [
+      "Solutions are homogeneous mixtures where solute particles are evenly distributed at the molecular level",
+      "Solubility depends on temperature, pressure (for gases), and the nature of the substances involved",
+      "Saturated solutions contain the maximum amount of solute that can dissolve at a specific temperature",
+      "Gas solubility decreases with increasing temperature because gas particles escape more easily",
+      "Density plays a major role in natural phenomena such as floating, sinking, and atmospheric movement",
+      "Changes in temperature and pressure can alter density and solubility in physical systems"
+    ],
+    "examples": [
+      "Nitrogen acts as the solvent in air because it is present in the largest proportion",
+      "Warm polluted water contains less oxygen, affecting aquatic organisms",
+      "Oil floats on water because it has lower density and is immiscible with water",
+      "Hot air balloons rise because heated air becomes less dense",
+      "Ice floats on water because water expands and becomes less dense when frozen"
+    ],
+    "formulas_or_processes": [
+      "Density formula: Density = Mass / Volume",
+      "Relative density = Density of substance / Density of water",
+      "Displacement method process: Submerge object → Measure change in water level → Calculate volume",
+      "Particle model of dissolution: Solute particles separate and spread among solvent particles",
+      "Thermal expansion: Heating causes particles to move apart increasing volume and lowering density"
+    ],
+    "exam_tips": [
+      "Be able to explain scientifically why objects float or sink using density comparison",
+      "Understand experimental procedures such as saturation and displacement method",
+      "Explain the effect of temperature on both solubility and density",
+      "Revise real-life applications such as ships, hot air balloons, and aquatic ecosystems",
+      "Practice explaining processes using particle-level reasoning"
+    ]
+  }
+}

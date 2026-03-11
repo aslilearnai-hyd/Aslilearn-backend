@@ -1979,6 +1979,49 @@ export async function getChaptersForSubject(classNumber, subject) {
       }
     }
     
+    // Fallback: derive chapters from CMH JSON filenames (for JSON-based Class 7–10 content)
+    // Looks for files like "1.Geometric Twins_cmh.json" inside "<Class>/<Subject>/CMH"
+    try {
+      const cmhPath = path.join(classBasePath, subjectFolder, 'CMH');
+      await fs.access(cmhPath);
+      const cmhFiles = await fs.readdir(cmhPath);
+      
+      cmhFiles
+        .filter(name => name.toLowerCase().endsWith('_cmh.json'))
+        .forEach((file) => {
+          const baseName = file.replace(/_cmh\.json$/i, '');
+          
+          // Try to parse leading number before first dot as chapter number
+          const parts = baseName.split('.');
+          let chapterNumber = parseInt(parts[0], 10);
+          let chapterName;
+          
+          if (!isNaN(chapterNumber)) {
+            chapterName = parts.slice(1).join('.').trim() || `Chapter ${chapterNumber}`;
+          } else {
+            // If no leading number, fall back to next available number
+            chapterNumber = chapters.length + 1;
+            chapterName = baseName;
+          }
+          
+          const chapterCode = `C${chapterNumber}`;
+          
+          if (!chapterMap.has(chapterCode)) {
+            const chapter = {
+              chapterNumber,
+              chapterCode,
+              chapterName,
+              duration: null,
+              subjectArea: null
+            };
+            chapters.push(chapter);
+            chapterMap.set(chapterCode, chapter);
+          }
+        });
+    } catch (err) {
+      // CMH folder may not exist for all subjects/classes; ignore silently
+    }
+    
     // Sort chapters by type (C first, then P) and then by number
     chapters.sort((a, b) => {
       const aType = a.chapterCode.charAt(0);

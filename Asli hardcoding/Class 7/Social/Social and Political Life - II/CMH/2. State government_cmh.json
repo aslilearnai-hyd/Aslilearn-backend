@@ -1,0 +1,103 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 2: State Government",
+    "generated_at": "2026-03-08T01:42:00",
+    "concepts": [
+        {
+            "concept_name": "Definition of Health",
+            "difficulty": "easy",
+            "lesson": "Health means our ability to remain free of illness and injuries. However, health is not only about disease. It also depends on factors like clean drinking water, a pollution-free environment, and adequate food. If people live in cramped conditions or are under a lot of mental strain, they cannot be considered truly healthy.",
+            "real_example": "A person might not be sick, but if they are drinking dirty water, they are at high risk for health issues like cholera.",
+            "key_points": [
+                "Beyond just being free of disease",
+                "Includes clean water and environment",
+                "Mental well-being is part of health"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "concept_name": "Public Health Services",
+            "difficulty": "easy",
+            "lesson": "Public health services are a chain of health centres and hospitals run by the government. They are linked together so that they cover both rural and urban areas. These services are 'public' because they are meant for all citizens and are funded by the taxes that we pay to the government.",
+            "real_example": "Primary Health Centres (PHCs) in villages provide basic treatment for common illnesses.",
+            "key_points": [
+                "Run by the government",
+                "Funded by public taxes",
+                "Meant to provide low-cost or free care"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "Private Health Facilities",
+            "difficulty": "easy",
+            "lesson": "Private health facilities are not owned or controlled by the government. Patients have to pay a lot of money for every service they use. These are mostly found in urban areas and include large hospitals with modern equipment, private clinics, and specialized laboratories.",
+            "real_example": "Large multi-specialty hospitals like Apollo or Fortis where patients pay for private rooms and advanced tests.",
+            "key_points": [
+                "Owned by individuals or companies",
+                "Concentrated in urban areas",
+                "Services are expensive"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "Health Care and Equality",
+            "difficulty": "medium",
+            "lesson": "In India, we face a situation where private services are increasing but public services are not. This leads to inequality because private services are expensive and often out of reach for the poor. Many people have to borrow money or sell their possessions to pay for medical expenses in private hospitals.",
+            "real_example": "A poor family might go into deep debt to pay for a private surgery because the government hospital was too crowded.",
+            "key_points": [
+                "Private care is not affordable for everyone",
+                "Only 20% of the population can afford all required medicines",
+                "Inadequate public health infrastructure creates inequality"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "concept_name": "Government's Duty to Protect Life",
+            "difficulty": "medium",
+            "lesson": "The Constitution states that it is the primary duty of the government to ensure the welfare of the people and provide health care facilities to all. The Court has ruled that the 'Right to Life' (Article 21) includes the right to health. If a government hospital cannot provide timely treatment to a person, it means that the protection of life is not being given.",
+            "real_example": "The case of Hakim Sheik, who sued the government after being refused treatment by several state hospitals.",
+            "key_points": [
+                "Constitution mandates welfare and health",
+                "Health is part of the 'Right to Life'",
+                "Government must provide timely emergency care"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "The Kerala Experience",
+            "difficulty": "medium",
+            "lesson": "In 1996, the Kerala government made major changes. 40% of the state budget was given to Panchayats. This allowed them to plan and provide for requirements like water, food, women’s development, and education. This decentralized approach led to a significant improvement in the health situation of the state.",
+            "real_example": "Villages in Kerala ensuring that water supply schemes worked and health centres were well-staffed.",
+            "key_points": [
+                "Decentralized funding to local bodies",
+                "Focus on basic needs like water and education",
+                "Improved health outcomes through planning"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "concept_name": "The Costa Rican Approach",
+            "difficulty": "hard",
+            "lesson": "Costa Rica is considered one of the healthiest countries in Central America. The government took a very important decision not to have an army. The money that would have been spent on the military was instead spent on health, education, and other basic needs of the people. They believe a country must be healthy to develop.",
+            "real_example": "The Costa Rican government providing safe drinking water and sanitation to all its citizens as a priority over defense.",
+            "key_points": [
+                "Abolished the military to fund social welfare",
+                "Focus on preventive health care",
+                "Healthy population is the base for development"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "concept_name": "Medical Tourism and Ethics",
+            "difficulty": "hard",
+            "lesson": "India gets a large number of 'medical tourists'—people from other countries who come here for treatment at costs lower than in their home countries. While this brings in money, it creates an ethical gap where world-class facilities are available for foreigners and the rich, but the local poor suffer due to lack of basic public health care.",
+            "real_example": "A foreigner getting a heart transplant in a private Indian hospital while a local laborer waits months for a basic checkup.",
+            "key_points": [
+                "Growth of high-end private healthcare for profit",
+                "Contrast between luxury clinics and poor public wards",
+                "Focus shifts from basic health to expensive treatments"
+            ],
+            "source_section": "Section 2.3"
+        }
+    ]
+}

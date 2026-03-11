@@ -1,0 +1,181 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - Geography)",
+    "chapter": "Water: Our Lifeline",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_geography_ch5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Detailed River Study",
+            "objective": "Understand the course, tributaries, and uses of a major river",
+            "materials": [
+                "Atlas",
+                "Notebook",
+                "Internet or reference books"
+            ],
+            "steps": [
+                "Choose a major river in India",
+                "Research its source, tributaries, and length",
+                "Note how people use the river for irrigation, transport, and drinking water",
+                "Create a detailed diagram showing river course and major uses"
+            ],
+            "learning_outcome": "Students gain detailed knowledge of river systems and their significance",
+            "evaluation": "Completeness, accuracy, and diagram clarity (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Water Quality Testing",
+            "objective": "Analyze water quality and detect impurities",
+            "materials": [
+                "Samples of water from different sources",
+                "Litmus paper",
+                "Clear glass or jar"
+            ],
+            "steps": [
+                "Collect water from tap, river, and pond",
+                "Observe color, smell, and clarity",
+                "Test pH using litmus paper",
+                "Record findings and compare sources"
+            ],
+            "learning_outcome": "Students understand water quality variations and pollution indicators",
+            "evaluation": "Observation accuracy and analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Rainwater Harvesting Design Plan",
+            "objective": "Plan a simple rainwater harvesting system",
+            "materials": [
+                "Chart paper",
+                "Pencils and markers",
+                "Notebook"
+            ],
+            "steps": [
+                "Study your school or home layout",
+                "Draw a rainwater harvesting system including collection, filtration, and storage",
+                "Label all components and describe their functions"
+            ],
+            "learning_outcome": "Students learn practical ways to collect and conserve rainwater",
+            "evaluation": "Accuracy, creativity, and labeling (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Impact of Water Scarcity Case Study",
+            "objective": "Understand effects of water scarcity on communities",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet or newspaper articles"
+            ],
+            "steps": [
+                "Select a region in India affected by water scarcity",
+                "Research causes, effects, and solutions implemented",
+                "Write a case study with 3 major impacts and suggested solutions"
+            ],
+            "learning_outcome": "Students understand water scarcity challenges and management efforts",
+            "evaluation": "Research quality and clarity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Groundwater Level Observation",
+            "objective": "Analyze groundwater availability in your area",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Local borewell or water table data (if available)"
+            ],
+            "steps": [
+                "Collect data on groundwater depth from local sources",
+                "Compare with past records (if available)",
+                "Write observations on seasonal changes and human impact"
+            ],
+            "learning_outcome": "Students understand how groundwater levels fluctuate and factors affecting them",
+            "evaluation": "Data collection accuracy and analysis (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Comparative Study: Traditional vs Modern Water Management",
+            "objective": "Compare traditional water conservation methods with modern techniques",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet or textbooks"
+            ],
+            "steps": [
+                "List traditional methods (step wells, tanks, ponds) and modern methods (rainwater harvesting, dams)",
+                "Compare effectiveness, cost, and sustainability",
+                "Create a table summarizing differences and advantages"
+            ],
+            "learning_outcome": "Students understand evolution of water management methods",
+            "evaluation": "Comparison accuracy and clarity (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Local Water Body Observation Report",
+            "objective": "Observe human impact on a nearby water body",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Camera (optional)"
+            ],
+            "steps": [
+                "Visit a local river, lake, or pond",
+                "Observe pollution, usage, and surrounding activities",
+                "Write a report suggesting ways to protect and maintain it"
+            ],
+            "learning_outcome": "Students connect classroom knowledge with local environmental issues",
+            "evaluation": "Observation detail and practical suggestions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Water Footprint Calculation",
+            "objective": "Analyze personal water consumption",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet or reference books"
+            ],
+            "steps": [
+                "List daily water uses including drinking, cooking, bathing, and washing",
+                "Calculate approximate liters used per day",
+                "Reflect on ways to reduce water footprint and write a short plan"
+            ],
+            "learning_outcome": "Students understand individual responsibility in water conservation",
+            "evaluation": "Calculation accuracy and reflection (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Poster: Effects of Water Pollution",
+            "objective": "Illustrate the consequences of water pollution on humans and wildlife",
+            "materials": [
+                "A3 paper",
+                "Colors",
+                "Pictures or cutouts"
+            ],
+            "steps": [
+                "Choose one type of water pollution (chemical, plastic, sewage)",
+                "Show effects on humans, animals, and plants",
+                "Add suggestions to reduce pollution"
+            ],
+            "learning_outcome": "Students understand environmental impact of polluted water",
+            "evaluation": "Visual clarity, creativity, and accuracy (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Mini Field Survey: Water Usage Patterns",
+            "objective": "Analyze water usage patterns in households",
+            "materials": [
+                "Questionnaire",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Prepare a 5-question survey on household water usage",
+                "Interview at least 5 households",
+                "Analyze data and present results in a table or chart"
+            ],
+            "learning_outcome": "Students gain understanding of real-life water consumption trends",
+            "evaluation": "Survey design, data collection, and presentation (10 marks)"
+        }
+    ]
+}

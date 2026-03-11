@@ -1,0 +1,127 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 11: Sound",
+  "generated_at": "2026-03-06T21:03:00",
+  "concepts": [
+    {
+      "concept_name": "Production of Sound",
+      "difficulty": "easy",
+      "lesson": "Sound is a form of energy that creates a hearing sensation[cite: 4, 502]. It is produced when objects vibrate, which means they move rapidly back and forth[cite: 43, 541]. This vibration can be started by striking, plucking, rubbing, or blowing on various objects[cite: 41, 539].",
+      "real_example": "The human voice is created by the vibration of vocal cords[cite: 44, 542].",
+      "key_points": [
+        "Sound is a form of energy[cite: 4, 502].",
+        "Vibrating objects produce sound[cite: 51, 549].",
+        "Vibration is rapid to-and-fro motion[cite: 43, 541]."
+      ],
+      "source_section": "Section 11.1"
+    },
+    {
+      "concept_name": "Propagation of Sound",
+      "difficulty": "medium",
+      "lesson": "Sound travels through a substance called a medium, which can be a solid, liquid, or gas[cite: 51, 52, 549, 550]. As an object vibrates, it sets nearby particles in motion[cite: 53, 551]. These particles don't travel to the ear themselves; instead, they displace adjacent particles and return to their original position, passing the disturbance forward[cite: 54, 56, 58, 552, 554, 556].",
+      "real_example": "Air is the most common medium for sound travel[cite: 65, 563].",
+      "key_points": [
+        "Sound requires a medium to travel[cite: 51, 549].",
+        "It is the disturbance, not the particles, that travels[cite: 60, 62, 558, 560].",
+        "Sound waves are mechanical waves[cite: 64, 562]."
+      ],
+      "source_section": "Section 11.2"
+    },
+    {
+      "concept_name": "Compressions and Rarefactions",
+      "difficulty": "medium",
+      "lesson": "When a vibrating object moves forward, it pushes and compresses the air, creating a high-pressure region called a compression (C)[cite: 66, 67, 564, 565]. When it moves backward, it creates a low-pressure region called a rarefaction (R)[cite: 69, 567]. A series of these pressure variations forms a sound wave[cite: 70, 71, 568, 569].",
+      "real_example": "A vibrating tuning fork creating pressure waves in the air[cite: 76, 574].",
+      "key_points": [
+        "Compression is a region of high pressure and density[cite: 79, 81, 577, 579].",
+        "Rarefaction is a region of low pressure and density[cite: 79, 81, 577, 579].",
+        "Propagation is the movement of these density variations[cite: 82, 580]."
+      ],
+      "source_section": "Section 11.2"
+    },
+    {
+      "concept_name": "Longitudinal Waves",
+      "difficulty": "medium",
+      "lesson": "Sound waves are longitudinal waves[cite: 107, 605]. This means the particles of the medium move back and forth in a direction parallel to the direction the wave is traveling[cite: 105, 603]. This is different from transverse waves, where particles move up and down perpendicular to the wave direction[cite: 110, 608].",
+      "real_example": "A wave moving through a stretched slinky when it is pushed and pulled[cite: 101, 599].",
+      "key_points": [
+        "Particles move parallel to the wave direction[cite: 105, 603].",
+        "Sound waves are categorized as longitudinal[cite: 107, 605].",
+        "Light is a transverse wave, not a mechanical one[cite: 112, 610]."
+      ],
+      "source_section": "Section 11.2.1"
+    },
+    {
+      "concept_name": "Wavelength and Frequency",
+      "difficulty": "medium",
+      "lesson": "Wavelength (λ) is the distance between two consecutive compressions or rarefactions[cite: 126, 624]. Frequency (v) is the number of complete oscillations per unit time[cite: 172, 670]. Wave speed is calculated as frequency multiplied by wavelength ($V = λv$)[cite: 233, 234, 731, 732].",
+      "real_example": "A sound with a frequency of 2 kHz and a wavelength of 35 cm travels at 700 m/s[cite: 235, 242, 733, 740].",
+      "key_points": [
+        "The SI unit of wavelength is the metre (m)[cite: 127, 625].",
+        "The SI unit of frequency is the hertz (Hz)[cite: 133, 174, 631, 672].",
+        "Frequency is the reciprocal of the time period ($v = 1/T$)[cite: 179, 677]."
+      ],
+      "source_section": "Section 11.2.2"
+    },
+    {
+      "concept_name": "Amplitude and Loudness",
+      "difficulty": "medium",
+      "lesson": "Amplitude is the maximum disturbance of the medium from its mean value[cite: 188, 686]. The loudness of a sound is determined by its amplitude[cite: 199, 697]. A sound with higher energy has a larger amplitude and is heard as louder[cite: 200, 217, 698, 715].",
+      "real_example": "Striking a table harder produces a louder sound because of a larger amplitude[cite: 215, 713].",
+      "key_points": [
+        "Amplitude determines loudness or softness[cite: 199, 697].",
+        "Loudness is the ear's response to sound intensity[cite: 253, 751].",
+        "Intensity is the sound energy passing through a unit area per second[cite: 251, 749]."
+      ],
+      "source_section": "Section 11.2.2"
+    },
+    {
+      "concept_name": "Reflection of Sound (Echo)",
+      "difficulty": "medium",
+      "lesson": "Sound bounces off solid or liquid surfaces just like light[cite: 275, 276, 773, 774]. An echo is the reflected sound heard shortly after the original[cite: 299, 797]. To hear a distinct echo, the reflection must arrive at least 0.1 seconds after the original sound[cite: 301, 799].",
+      "real_example": "Hearing your own voice back after shouting near a tall building or mountain[cite: 299, 797].",
+      "key_points": [
+        "Sound follows the same laws of reflection as light[cite: 276, 774].",
+        "Minimum distance for a distinct echo in air at 22°C is 17.2 m[cite: 304, 802].",
+        "Successive reflections cause the rolling of thunder[cite: 306, 804]."
+      ],
+      "source_section": "Section 11.3"
+    },
+    {
+      "concept_name": "Reverberation",
+      "difficulty": "medium",
+      "lesson": "In a large hall, sound persists due to repeated reflections from the walls[cite: 308, 806]. This persistence is called reverberation[cite: 309, 807]. Excessive reverberation can be reduced by using sound-absorbent materials like compressed fibreboard or heavy drapes on walls and ceilings[cite: 311, 809].",
+      "real_example": "The design of auditoriums and cinemas to control sound persistence[cite: 311, 809].",
+      "key_points": [
+        "Reverberation is the repeated reflection resulting in sound persistence[cite: 309, 807].",
+        "Undesirable in large halls if it is excessive[cite: 310, 808].",
+        "Absorbent materials are used to reduce it[cite: 311, 809]."
+      ],
+      "source_section": "Section 11.3.2"
+    },
+    {
+      "concept_name": "Range of Hearing",
+      "difficulty": "easy",
+      "lesson": "The audible range for humans is roughly 20 Hz to 20,000 Hz[cite: 347, 845]. Sounds below 20 Hz are called infrasound (or infrasonic), and sounds above 20,000 Hz (20 kHz) are called ultrasound (or ultrasonic)[cite: 350, 355, 848, 853].",
+      "real_example": "Elephants use infrasound to communicate, while bats use ultrasound to navigate[cite: 352, 356, 850, 854].",
+      "key_points": [
+        "Human audible range: 20 Hz – 20 kHz[cite: 347, 845].",
+        "Infrasound is below 20 Hz[cite: 350, 848].",
+        "Ultrasound is above 20 kHz[cite: 355, 853]."
+      ],
+      "source_section": "Section 11.4"
+    },
+    {
+      "concept_name": "Applications of Ultrasound",
+      "difficulty": "hard",
+      "lesson": "Ultrasound has high frequency and can travel through obstacles along well-defined paths[cite: 372, 870]. It is used for cleaning hard-to-reach parts, detecting flaws in metal structures, and medical imaging[cite: 374, 377, 389, 872, 875, 887].",
+      "real_example": "Echocardiography uses ultrasound to create images of the heart[cite: 388, 389, 886, 887].",
+      "key_points": [
+        "Used to detect cracks in metal blocks[cite: 377, 875].",
+        "Ultrasound scanners image internal organs like the liver or kidneys[cite: 389, 390, 887, 888].",
+        "Can be used to break kidney stones into fine grains[cite: 437, 935]."
+      ],
+      "source_section": "Section 11.5"
+    }
+  ]
+}

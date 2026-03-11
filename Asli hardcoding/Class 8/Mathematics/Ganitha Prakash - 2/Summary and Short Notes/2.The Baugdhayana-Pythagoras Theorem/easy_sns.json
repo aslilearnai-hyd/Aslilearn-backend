@@ -1,0 +1,32 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter": "The Baudhāyana-Pythagoras Theorem",
+    "difficulty": "Easy",
+    "source_pdf": "hegp202.pdf",
+    "short_notes": {
+        "key_points": [
+            "A right-angled triangle has one angle equal to 90°",
+            "The side opposite the right angle is called the hypotenuse",
+            "The Baudhāyana-Pythagoras theorem relates the three sides of a right triangle",
+            "The square of the hypotenuse equals the sum of the squares of the other two sides",
+            "The diagonal of a square forms two right triangles"
+        ],
+        "examples": [
+            "Pythagorean triple: (3, 4, 5)",
+            "Another triple: (5, 12, 13)",
+            "Diagonal of square with side 1 = √2",
+            "Right triangle example: sides 6, 8, 10"
+        ],
+        "formulas": [
+            "Pythagoras theorem → a² + b² = c²",
+            "Diagonal of square → a√2",
+            "Diagonal of rectangle → √(l² + b²)"
+        ],
+        "exam_tips": [
+            "Always identify the hypotenuse (largest side)",
+            "Use squares of numbers when applying the theorem",
+            "Check if a triangle is right-angled by verifying a² + b² = c²"
+        ]
+    }
+}

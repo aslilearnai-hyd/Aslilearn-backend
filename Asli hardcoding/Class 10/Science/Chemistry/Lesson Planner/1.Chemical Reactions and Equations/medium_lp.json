@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Chemical Reactions and Equations",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Interpret and balance complex chemical equations using the Law of Conservation of Mass",
+        "Classify and predict the products of various chemical reactions",
+        "Explain the mechanism of displacement and double displacement reactions",
+        "Differentiate between exothermic and endothermic reactions with energy profiles",
+        "Analyze redox reactions in terms of gain/loss of oxygen and hydrogen",
+        "Apply knowledge of corrosion and rancidity to real-world preservation techniques"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Chemical Equations and Balancing",
+            "topics_covered": [
+                "Significance of a balanced chemical equation",
+                "Step-by-step balancing (Hit and Trial method)",
+                "Writing state symbols and reaction conditions"
+            ],
+            "teaching_strategy": [
+                "Problem-solving demonstration",
+                "Peer-to-peer tutoring for complex equations",
+                "Whiteboard practice"
+            ],
+            "student_activities": [
+                "Balance a set of 10 equations of increasing difficulty",
+                "Identify mistakes in purposely 'wrong' balanced equations"
+            ],
+            "assessment": [
+                "Timed balancing challenge",
+                "Notebook check for step-by-step working"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Combination and Decomposition Reactions",
+            "topics_covered": [
+                "Synthesis of Slaked Lime (Exothermic)",
+                "Thermal decomposition of Ferrous Sulphate and Lead Nitrate",
+                "Electrolytic decomposition of water"
+            ],
+            "teaching_strategy": [
+                "Demonstration of heating Lead Nitrate (brown fumes)",
+                "Comparison of energy absorption vs. release",
+                "Video on Photolytic decomposition of Silver Chloride"
+            ],
+            "student_activities": [
+                "Draw a detailed labeled diagram of water electrolysis",
+                "Record observations of color changes in Ferrous Sulphate crystals"
+            ],
+            "assessment": [
+                "Short answer questions on gas identification",
+                "Classification worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Displacement Reactions",
+            "topics_covered": [
+                "Single displacement reactions",
+                "Metal reactivity series application",
+                "Reaction of Zinc/Iron with Copper Sulphate"
+            ],
+            "teaching_strategy": [
+                "Laboratory experiment: Iron nails in $CuSO_{4}$",
+                "Using the Reactivity Series mnemonic",
+                "Case studies: Why does color change occur?"
+            ],
+            "student_activities": [
+                "Perform the Iron nail experiment and record time-based changes",
+                "Predict outcomes of reactions based on the reactivity series"
+            ],
+            "assessment": [
+                "Practical file viva-voce",
+                "Predictive MCQ test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Double Displacement and Precipitation",
+            "topics_covered": [
+                "Exchange of ions between reactants",
+                "Formation of insoluble precipitates",
+                "Reaction between Barium Chloride and Sodium Sulphate"
+            ],
+            "teaching_strategy": [
+                "Live demonstration of white precipitate formation",
+                "Ionic equation breakdown",
+                "Visual flowcharts for ion exchange"
+            ],
+            "student_activities": [
+                "Write the chemical formulas for precipitates formed in given reactions",
+                "Group discussion on the 'insolubility' factor"
+            ],
+            "assessment": [
+                "Equation writing quiz",
+                "Identifying the 'Precipitate' from a list of products"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Oxidation and Reduction (Redox)",
+            "topics_covered": [
+                "Concept of Oxidation (Oxygen gain/Hydrogen loss)",
+                "Concept of Reduction (Oxygen loss/Hydrogen gain)",
+                "Identifying Oxidizing and Reducing agents"
+            ],
+            "teaching_strategy": [
+                "Interactive 'Oxygen Transfer' roleplay",
+                "Step-by-step analysis of the $CuO + H_{2}$ reaction",
+                "Visual aid: Redox 'half-reaction' logic"
+            ],
+            "student_activities": [
+                "Labeling Redox components in 5 specific equations",
+                "Problem-solving: Finding the substance oxidized/reduced"
+            ],
+            "assessment": [
+                "Worksheet on Redox identification",
+                "Short written test"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Effects of Oxidation in Daily Life",
+            "topics_covered": [
+                "Corrosion of metals (Rusting, Black coating on Silver, Green on Copper)",
+                "Rancidity of fats and oils",
+                "Preventive measures (Antioxidants, Nitrogen flushing, Galvanization)"
+            ],
+            "teaching_strategy": [
+                "Observation of corroded metal samples",
+                "Analyzing food packaging labels for antioxidants",
+                "Group debate: Economic impact of corrosion"
+            ],
+            "student_activities": [
+                "Investigate household items for signs of oxidation",
+                "Create a comparison table for prevention methods"
+            ],
+            "assessment": [
+                "Case-study based questions",
+                "Evaluation of student-collected 'Prevention' lists"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Board-Pattern Assessment",
+            "topics_covered": [
+                "Consolidated review of all 5 reaction types",
+                "Assertion-Reasoning questions practice",
+                "Solving Case-based study questions"
+            ],
+            "teaching_strategy": [
+                "Mind-mapping on the blackboard",
+                "Rapid-fire board questions",
+                "Solving NCERT exemplar problems"
+            ],
+            "student_activities": [
+                "Complete a comprehensive chapter summary map",
+                "Solve a 20-mark mock test"
+            ],
+            "assessment": [
+                "Formal assessment (20 marks)",
+                "Analysis of common errors in balancing/formula writing"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Science Lab Chemicals ($BaCl_{2}$, $Na_{2}SO_{4}$, $Pb(NO_{3})_{2}$, $CuSO_{4}$)",
+        "Periodic Table & Reactivity Series charts",
+        "NCERT Science Textbook & Exemplar",
+        "Interactive Digital Simulator for balancing equations",
+        "Sample objects showing corrosion"
+    ],
+    "evaluation_methods": [
+        "Balanced equation worksheets",
+        "Practical observation logs",
+        "Assertion & Reason based MCQs",
+        "Predictive reaction tests",
+        "Unit test evaluation"
+    ],
+    "teacher_tip": "At this level, students often struggle with the 'Ion Exchange' concept in Double Displacement. Use colored chalk or markers to represent different ions and physically 'swap' them on the board to make the concept concrete."
+}

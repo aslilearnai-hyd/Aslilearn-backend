@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science - Geography",
+  "chapter": "Agriculture",
+  "difficulty": "Easy",
+  "source_pdf": "Agriculture.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Types of Farming Identification",
+      "objective": "Understand different types of farming",
+      "materials": ["Notebook", "Textbook", "Pen"],
+      "steps": [
+        "Teacher explains different types of farming such as subsistence and commercial farming",
+        "Students list examples of farming practices",
+        "Classify them into subsistence or commercial farming",
+        "Discuss their importance"
+      ],
+      "learning_outcome": "Students identify different types of farming methods",
+      "evaluation": "Correct classification of farming types (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Crop Season Chart",
+      "objective": "Learn about crop seasons in India",
+      "materials": ["Chart paper", "Markers", "Textbook"],
+      "steps": [
+        "Teacher explains Kharif, Rabi, and Zaid crop seasons",
+        "Students prepare a chart showing crops grown in each season",
+        "Add examples like rice, wheat, and vegetables",
+        "Display the chart in class"
+      ],
+      "learning_outcome": "Students understand the different crop seasons",
+      "evaluation": "Accuracy of crop classification (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Map Activity: Major Crops of India",
+      "objective": "Locate major crop growing regions in India",
+      "materials": ["Map of India", "Atlas", "Pencil"],
+      "steps": [
+        "Provide a blank map of India",
+        "Mark areas where rice, wheat, and cotton are grown",
+        "Label each region clearly",
+        "Discuss why these crops grow in those regions"
+      ],
+      "learning_outcome": "Students learn the geographical distribution of crops",
+      "evaluation": "Accuracy of map marking (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Poster on Importance of Agriculture",
+      "objective": "Create awareness about agriculture",
+      "materials": ["Chart paper", "Color pencils", "Markers"],
+      "steps": [
+        "Students create posters about the importance of agriculture",
+        "Include drawings of farmers and crops",
+        "Add slogans related to farming",
+        "Display posters in the classroom"
+      ],
+      "learning_outcome": "Students understand the importance of agriculture in daily life",
+      "evaluation": "Creativity and relevance of poster (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Group Discussion on Modern Farming",
+      "objective": "Understand modern agricultural practices",
+      "materials": ["Notebook", "Blackboard"],
+      "steps": [
+        "Divide the class into groups",
+        "Discuss modern techniques like irrigation and fertilizers",
+        "List advantages of modern farming",
+        "Present ideas to the class"
+      ],
+      "learning_outcome": "Students understand how technology improves agriculture",
+      "evaluation": "Participation and clarity of ideas (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Farm Visit or Observation",
+      "objective": "Observe farming practices in real life",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Students observe nearby farms or farming activities",
+        "Note types of crops grown",
+        "Observe farming tools used",
+        "Write observations in a notebook"
+      ],
+      "learning_outcome": "Students connect textbook knowledge with real-life farming",
+      "evaluation": "Completeness of observation notes (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Seed Collection Activity",
+      "objective": "Identify different crop seeds",
+      "materials": ["Different crop seeds", "Notebook"],
+      "steps": [
+        "Students collect seeds of crops like rice, wheat, and pulses",
+        "Label each seed type",
+        "Discuss which crop each seed belongs to",
+        "Create a small seed collection display"
+      ],
+      "learning_outcome": "Students identify common crop seeds",
+      "evaluation": "Accuracy of identification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Reading and Reflection on Food Production",
+      "objective": "Understand the importance of agriculture in food supply",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the section on food production",
+        "Identify major food crops",
+        "Write a short paragraph about how agriculture supports people",
+        "Discuss answers in class"
+      ],
+      "learning_outcome": "Students understand the role of agriculture in food security",
+      "evaluation": "Quality of reflection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Role Play on Farmer’s Life",
+      "objective": "Understand challenges faced by farmers",
+      "materials": ["Simple props", "Dialogue notes"],
+      "steps": [
+        "Assign roles such as farmer, trader, and consumer",
+        "Discuss problems faced by farmers",
+        "Suggest possible solutions",
+        "Act out the scenario"
+      ],
+      "learning_outcome": "Students understand agricultural challenges and solutions",
+      "evaluation": "Creativity and understanding (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Project: Agriculture Around Us",
+      "objective": "Study crops grown in the local area",
+      "materials": ["Notebook", "Chart paper", "Markers"],
+      "steps": [
+        "Identify crops grown in the local region",
+        "Collect information about planting and harvesting seasons",
+        "Prepare a small report",
+        "Present the findings in class"
+      ],
+      "learning_outcome": "Students understand local agricultural practices",
+      "evaluation": "Quality of information and presentation (10 marks)"
+    }
+  ]
+}

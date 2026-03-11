@@ -1,0 +1,174 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Circles",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand and apply theorems related to chords and their distances from the center",
+        "Understand properties of tangents and secants",
+        "Apply circle theorems to solve numerical problems",
+        "Relate central and inscribed angles",
+        "Develop problem-solving skills using circle properties"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Review of Circle Basics",
+            "topics_covered": [
+                "Revisiting radius, diameter, chord, tangent, secant",
+                "Quick recap of angle subtended by chord at center"
+            ],
+            "teaching_strategy": [
+                "Class discussion",
+                "Diagram-based recap"
+            ],
+            "student_activities": [
+                "Draw circle diagrams and label all parts",
+                "Identify properties from diagrams"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick diagram labeling exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Chords Equidistance Theorem",
+            "topics_covered": [
+                "Equal chords are equidistant from the center",
+                "Chord length and distance relation from center"
+            ],
+            "teaching_strategy": [
+                "Stepwise diagram explanation",
+                "Interactive questioning"
+            ],
+            "student_activities": [
+                "Draw two equal chords and verify distances",
+                "Measure distances using ruler"
+            ],
+            "assessment": [
+                "Check diagrams",
+                "Short written questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Properties of Tangents",
+            "topics_covered": [
+                "Tangent perpendicular to radius at point of contact",
+                "Two tangents from an external point are equal in length"
+            ],
+            "teaching_strategy": [
+                "Demonstrate with compass and ruler",
+                "Use simple proofs without heavy algebra"
+            ],
+            "student_activities": [
+                "Draw tangents from an external point",
+                "Measure and compare lengths"
+            ],
+            "assessment": [
+                "Diagram checking",
+                "Oral questioning on properties"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Angle Properties Involving Chords",
+            "topics_covered": [
+                "Angle subtended by chord at center vs. circumference",
+                "Angles in the same segment are equal"
+            ],
+            "teaching_strategy": [
+                "Draw multiple examples on board",
+                "Explain step-by-step"
+            ],
+            "student_activities": [
+                "Draw circles with chords and calculate angles",
+                "Verify theorem by measurement"
+            ],
+            "assessment": [
+                "Worksheet questions",
+                "Group discussion verification"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Secant and Tangent Problems",
+            "topics_covered": [
+                "Lengths of tangents from external point",
+                "Intersecting secants properties"
+            ],
+            "teaching_strategy": [
+                "Explain with numerical examples",
+                "Stepwise problem-solving"
+            ],
+            "student_activities": [
+                "Calculate tangent lengths using formulas",
+                "Draw diagrams to verify"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short problem-solving quiz"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Numerical Problems on Chords and Tangents",
+            "topics_covered": [
+                "Find chord lengths",
+                "Distance of chords from center",
+                "Tangent lengths from external points"
+            ],
+            "teaching_strategy": [
+                "Solve examples on board",
+                "Encourage students to attempt stepwise"
+            ],
+            "student_activities": [
+                "Solve 3–4 numerical problems",
+                "Discuss solutions in pairs"
+            ],
+            "assessment": [
+                "Classwork submission",
+                "Peer checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Quiz",
+            "topics_covered": [
+                "All circle properties",
+                "Chord, tangent, secant, and angle theorems",
+                "Mixed numerical problems"
+            ],
+            "teaching_strategy": [
+                "Interactive quiz",
+                "Quick recap and clarification"
+            ],
+            "student_activities": [
+                "Participate in group quiz",
+                "Solve 1–2 problems individually"
+            ],
+            "assessment": [
+                "Quiz scoring",
+                "Accuracy in numerical solutions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Compass, ruler, and protractor",
+        "Graph paper",
+        "Blackboard/Whiteboard",
+        "NCERT Mathematics textbook",
+        "Chalk/markers"
+    ],
+    "evaluation_methods": [
+        "Diagram verification",
+        "Notebook checking",
+        "MCQs and short questions",
+        "Class quizzes",
+        "Group activity assessment"
+    ],
+    "teacher_tip": "Focus on visual understanding of chords, tangents, and angles; practical drawing exercises help internalize the theorems for problem-solving."
+}

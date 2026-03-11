@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Acids, Bases and Salts",
+  "generated_at": "2026-03-10T23:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "An aqueous solution turns red litmus solution blue. Excess addition of which of the following solution would reverse the change?",
+      "options": {
+        "A": "Baking powder",
+        "B": "Lime",
+        "C": "Ammonium hydroxide solution",
+        "D": "Hydrochloric acid"
+      },
+      "correct_answer": "D",
+      "explanation": "The original solution is basic (turns red litmus blue). To reverse this, we need an excess of an acidic solution like Hydrochloric acid.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "During the preparation of hydrogen chloride gas on a humid day, the gas is usually passed through the guard tube containing calcium chloride. The role of calcium chloride is to:",
+      "options": {
+        "A": "Absorb the evolved gas",
+        "B": "Moisten the gas",
+        "C": "Absorb moisture from the gas",
+        "D": "Absorb $Cl^-$ ions from the evolved gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Calcium chloride is a drying agent; it absorbs moisture from the $HCl$ gas to ensure it is dry for testing with litmus paper.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following salts does not contain water of crystallisation?",
+      "options": {
+        "A": "Blue vitriol",
+        "B": "Baking soda",
+        "C": "Washing soda",
+        "D": "Gypsum"
+      },
+      "correct_answer": "B",
+      "explanation": "Baking soda ($NaHCO_3$) is an anhydrous salt. Blue vitriol, Washing soda, and Gypsum all contain specific molecules of water of crystallisation.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.4"
+    },
+    {
+      "question_number": 4,
+      "question": "In terms of acidic strength, which one of the following is in the correct increasing order?",
+      "options": {
+        "A": "Water < Acetic acid < Hydrochloric acid",
+        "B": "Water < Hydrochloric acid < Acetic acid",
+        "C": "Acetic acid < Water < Hydrochloric acid",
+        "D": "Hydrochloric acid < Water < Acetic acid"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is neutral, Acetic acid is a weak acid, and Hydrochloric acid is a strong acid.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 5,
+      "question": "What happens when a solution of an acid is mixed with a solution of a base in a test tube?\n(i) The temperature of the solution increases\n(ii) The temperature of the solution decreases\n(iii) The temperature of the solution remains the same\n(iv) Salt formation takes place",
+      "options": {
+        "A": "(i) only",
+        "B": "(i) and (iii)",
+        "C": "(ii) and (iii)",
+        "D": "(i) and (iv)"
+      },
+      "correct_answer": "D",
+      "explanation": "Neutralisation is an exothermic reaction (releases heat) and results in the formation of salt and water.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1.4"
+    },
+    {
+      "question_number": 6,
+      "question": "When $HCl(g)$ is passed through water, it forms an acidic solution. Which of the following is responsible for this?",
+      "options": {
+        "A": "Dissociation into $H^+$ and $Cl^-$ ions",
+        "B": "Formation of $H_3O^+$ ions",
+        "C": "Reaction with Oxygen",
+        "D": "Both A and B"
+      },
+      "correct_answer": "D",
+      "explanation": "$H^+$ ions cannot exist alone; they combine with water molecules to form hydronium ions ($H_3O^+$).",
+      "difficulty": "medium",
+      "source_section": "Section 2.2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Sodium hydrogen carbonate when added to acetic acid evolves a gas. Which of the following statements are true about the gas evolved?\n(i) It turns lime water milky\n(ii) It extinguishes a burning splinter\n(iii) It dissolves in a solution of sodium hydroxide\n(iv) It has a pungent odour",
+      "options": {
+        "A": "(i) and (ii)",
+        "B": "(i), (ii) and (iii)",
+        "C": "(ii), (iii) and (iv)",
+        "D": "(i) and (iv)"
+      },
+      "correct_answer": "B",
+      "explanation": "The gas is $CO_2$. It turns lime water milky, extinguishes fire, and reacts with $NaOH$ (an alkali) to form sodium carbonate.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Common salt ($NaCl$), besides being used in kitchen, can also be used as the raw material for making:\n(i) Washing soda\n(ii) Bleaching powder\n(iii) Baking soda\n(iv) Slaked lime",
+      "options": {
+        "A": "(i) and (ii)",
+        "B": "(i), (ii) and (iii)",
+        "C": "(i) and (iii)",
+        "D": "(i), (iii) and (iv)"
+      },
+      "correct_answer": "B",
+      "explanation": "$NaCl$ is used to produce $NaOH$, $Cl_2$, and $H_2$. These are then used to make washing soda, bleaching powder, and baking soda.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following level of pH represents a strong alkali?",
+      "options": {
+        "A": "7",
+        "B": "2",
+        "C": "10",
+        "D": "14"
+      },
+      "correct_answer": "D",
+      "explanation": "The further the pH value is from 7 toward 14, the stronger the alkali.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 10,
+      "question": "When copper oxide and dilute hydrochloric acid react, the color of the solution becomes blue-green due to the formation of:",
+      "options": {
+        "A": "Copper(I) chloride",
+        "B": "Copper(II) chloride",
+        "C": "Copper(II) hydroxide",
+        "D": "Copper(II) oxide"
+      },
+      "correct_answer": "B",
+      "explanation": "Metal oxides are basic; they react with acids to form salt and water. $CuO + 2HCl \rightarrow CuCl_2 + H_2O$. $CuCl_2$ is blue-green.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1.5"
+    },
+    {
+      "question_number": 11,
+      "question": "A sample of soil is mixed with water and allowed to settle. The clear supernatant solution turns the pH paper yellowish-orange. Which of the following would change the colour of this pH paper to greenish-blue?",
+      "options": {
+        "A": "Lemon juice",
+        "B": "Vinegar",
+        "C": "Common salt",
+        "D": "An antacid"
+      },
+      "correct_answer": "D",
+      "explanation": "Yellowish-orange indicates the soil is acidic. To move toward greenish-blue (basic/neutral), we must add a base like an antacid.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3.1"
+    },
+    {
+      "question_number": 12,
+      "question": "The chemical formula of Plaster of Paris is $CaSO_4 \cdot \frac{1}{2}H_2O$. How is it prepared?",
+      "options": {
+        "A": "By heating Gypsum at 373 K",
+        "B": "By heating Gypsum at 473 K",
+        "C": "By heating Calcium Carbonate",
+        "D": "By reacting Slaked lime with Chlorine"
+      },
+      "correct_answer": "A",
+      "explanation": "Heating Gypsum at exactly 100°C (373 K) causes it to lose a specific amount of water to become the hemihydrate.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Identify the correct representation of the reaction occurring during the Chlor-alkali process:",
+      "options": {
+        "A": "$2NaCl(l) + 2H_2O(l) \rightarrow 2NaOH(l) + Cl_2(g) + H_2(g)$",
+        "B": "$2NaCl(aq) + 2H_2O(aq) \rightarrow 2NaOH(aq) + Cl_2(g) + H_2(g)$",
+        "C": "$2NaCl(aq) + 2H_2O(l) \rightarrow 2NaOH(aq) + Cl_2(aq) + H_2(aq)$",
+        "D": "$2NaCl(aq) + 2H_2O(l) \rightarrow 2NaOH(aq) + Cl_2(g) + H_2(g)$"
+      },
+      "correct_answer": "D",
+      "explanation": "The process uses aqueous brine ($NaCl$) and liquid water to produce aqueous $NaOH$, and gaseous $Cl_2$ and $H_2$.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is/are olfactory indicators?",
+      "options": {
+        "A": "Litmus",
+        "B": "Vanilla and Onion",
+        "C": "Turmeric",
+        "D": "Methyl orange"
+      },
+      "correct_answer": "B",
+      "explanation": "Olfactory indicators are substances whose odour changes in acidic or basic media.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following is used for dissolution of gold?",
+      "options": {
+        "A": "Hydrochloric acid",
+        "B": "Sulphuric acid",
+        "C": "Nitric acid",
+        "D": "Aqua regia"
+      },
+      "correct_answer": "D",
+      "explanation": "Aqua regia is a freshly prepared mixture of concentrated $HCl$ and concentrated $HNO_3$ in the ratio of 3:1.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1.2 (Box item)"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following statements is correct about an aqueous solution of an acid and of a base?\n(i) Higher the pH, stronger the acid\n(ii) Higher the pH, weaker the acid\n(iii) Lower the pH, stronger the base\n(iv) Lower the pH, weaker the base",
+      "options": {
+        "A": "(i) and (iii)",
+        "B": "(ii) and (iii)",
+        "C": "(i) and (iv)",
+        "D": "(ii) and (iv)"
+      },
+      "correct_answer": "D",
+      "explanation": "pH is inversely proportional to $H^+$ concentration. High pH means low acidity (weak acid) and low pH means low basicity (weak base).",
+      "difficulty": "medium",
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the result of the dilution of an acid or a base?",
+      "options": {
+        "A": "Increase in concentration of $H_3O^+/OH^-$ per unit volume",
+        "B": "Decrease in concentration of $H_3O^+/OH^-$ per unit volume",
+        "C": "No change in concentration",
+        "D": "Formation of a salt"
+      },
+      "correct_answer": "B",
+      "explanation": "Dilution involves adding water, which increases the volume while the amount of ions stays the same, thus lowering the concentration per unit volume.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Nettle sting and honey-bee sting can be treated by rubbing the affected area with:",
+      "options": {
+        "A": "Lemon juice",
+        "B": "Vinegar",
+        "C": "Baking soda paste",
+        "D": "Formic acid"
+      },
+      "correct_answer": "C",
+      "explanation": "These stings contain methanoic acid. Rubbing a mild base like baking soda neutralizes the acid and provides relief.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Identify the base that is not an alkali:",
+      "options": {
+        "A": "$NaOH$",
+        "B": "$KOH$",
+        "C": "$Cu(OH)_2$",
+        "D": "$Ca(OH)_2$"
+      },
+      "correct_answer": "C",
+      "explanation": "$Cu(OH)_2$ is a base but it is not soluble in water, therefore it is not an alkali.",
+      "difficulty": "medium",
+      "source_section": "Section 2.2.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a salt of a strong acid and a weak base?",
+      "options": {
+        "A": "$NaCl$",
+        "B": "$KNO_3$",
+        "C": "$NH_4Cl$",
+        "D": "$CH_3COONa$"
+      },
+      "correct_answer": "C",
+      "explanation": "$NH_4Cl$ is formed from $HCl$ (strong acid) and $NH_4OH$ (weak base). Its solution is slightly acidic.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Sodium carbonate is a basic salt because it is a salt of:",
+      "options": {
+        "A": "Strong acid and strong base",
+        "B": "Weak acid and weak base",
+        "C": "Strong acid and weak base",
+        "D": "Weak acid and strong base"
+      },
+      "correct_answer": "D",
+      "explanation": "It is formed from Carbonic acid (weak) and Sodium hydroxide (strong).",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Calcium phosphate is present in tooth enamel. Its nature is:",
+      "options": {
+        "A": "Basic",
+        "B": "Acidic",
+        "C": "Neutral",
+        "D": "Amphoteric"
+      },
+      "correct_answer": "A",
+      "explanation": "Calcium phosphate is a basic salt. Acid produced in the mouth reacts with this basic salt to cause decay.",
+      "difficulty": "medium",
+      "source_section": "Section 2.3.1"
+    },
+    {
+      "question_number": 23,
+      "question": "When anhydrous copper sulphate is treated with water, it turns:",
+      "options": {
+        "A": "White",
+        "B": "Blue",
+        "C": "Green",
+        "D": "Yellow"
+      },
+      "correct_answer": "B",
+      "explanation": "Anhydrous $CuSO_4$ is white, but it turns blue upon gaining water of crystallisation to become $CuSO_4 \cdot 5H_2O$.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.4"
+    },
+    {
+      "question_number": 24,
+      "question": "One of the constituents of baking powder is sodium hydrogen carbonate, the other constituent is:",
+      "options": {
+        "A": "Hydrochloric acid",
+        "B": "Tartaric acid",
+        "C": "Acetic acid",
+        "D": "Sulphuric acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Baking powder is a mixture of baking soda and a mild edible acid like tartaric acid.",
+      "difficulty": "medium",
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following property is not shown by acids?",
+      "options": {
+        "A": "They turn blue litmus red",
+        "B": "They have sour taste",
+        "C": "They feel soapy to touch",
+        "D": "They react with bases to form salts"
+      },
+      "correct_answer": "C",
+      "explanation": "Feeling soapy to touch is a property of bases, not acids.",
+      "difficulty": "medium",
+      "source_section": "Section 2.1"
+    }
+  ]
+}

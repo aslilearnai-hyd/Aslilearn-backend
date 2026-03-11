@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Our Changing Earth (Our Environment)",
+  "generated_at": "2026-03-07T18:22:15",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The movement of Lithospheric plates is driven by a specific thermal process in the mantle. Which description best matches this process?",
+      "options": {
+        "A": "Linear flow of magma from the core to the crust.",
+        "B": "Circular movement of molten magma due to internal heat.",
+        "C": "Random explosions of gas in the mantle.",
+        "D": "The gravitational pull of the moon on the Earth's interior."
+      },
+      "correct_answer": "B",
+      "explanation": "The molten magma inside the earth moves in a circular manner, creating convection currents that shift the lithospheric plates.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is classified as a 'Diastrophic Force' under Endogenic movements?",
+      "options": {
+        "A": "Volcanic eruptions",
+        "B": "Landslides",
+        "C": "Mountain building",
+        "D": "Glacial erosion"
+      },
+      "correct_answer": "C",
+      "explanation": "Endogenic forces are divided into sudden movements (earthquakes, volcanoes) and diastrophic forces, which are slow processes like building mountains.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Analyze the relationship between the 'Focus' and the 'Epicentre'. Which statement is geographically accurate?",
+      "options": {
+        "A": "The Focus is the point on the surface, and the Epicentre is below it.",
+        "B": "Seismic waves originate at the Epicentre and travel to the Focus.",
+        "C": "The Epicentre is the point on the surface directly vertical to the internal Focus.",
+        "D": "Vibrations are weakest at the Epicentre and strongest at the Focus."
+      },
+      "correct_answer": "C",
+      "explanation": "The focus is where the movement starts in the crust; the epicentre is the location on the surface directly above it.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 4,
+      "question": "In the context of seismic waves, which property distinguishes 'P waves' from other wave types?",
+      "options": {
+        "A": "They travel only along the surface.",
+        "B": "They are longitudinal waves.",
+        "C": "They are the most destructive waves (Surface waves).",
+        "D": "They are transverse waves."
+      },
+      "correct_answer": "B",
+      "explanation": "P waves are longitudinal waves, S waves are transverse waves, and L waves are surface waves.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 5,
+      "question": "The intensity of an earthquake decreases as one moves away from the epicentre. Why is the damage usually greatest 'closest' to the epicentre?",
+      "options": {
+        "A": "Because the Focus is located exactly at that spot.",
+        "B": "Because seismic energy is most concentrated and waves have maximum amplitude at the point of origin on the surface.",
+        "C": "Because the crust is thinnest at the epicentre.",
+        "D": "Because the epicentre is always located in a city."
+      },
+      "correct_answer": "B",
+      "explanation": "Vibrations travel outwards from the epicentre as waves; the energy is most potent at the start and dissipates as it spreads.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 6,
+      "question": "How does the Richter scale measure the 'magnitude' of an earthquake in terms of power?",
+      "options": {
+        "A": "It is a linear scale where 6.0 is twice as strong as 3.0.",
+        "B": "It is a logarithmic scale where small increases in number represent significant increases in destructive energy.",
+        "C": "It measures the time duration of the vibration.",
+        "D": "It only measures the depth of the Focus."
+      },
+      "correct_answer": "B",
+      "explanation": "Though the text doesn't use the word 'logarithmic', it notes that 5.0 causes damage, 6.0 is very strong, and 7.0 is a major earthquake, indicating a non-linear increase in power.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What specifically causes a river to form a 'Waterfall' according to the text's description of erosion?",
+      "options": {
+        "A": "The river meeting the ocean.",
+        "B": "The river tumbling over very hard rocks or down a steep valley side.",
+        "C": "The river entering a desert.",
+        "D": "The formation of a delta."
+      },
+      "correct_answer": "B",
+      "explanation": "A waterfall is formed when a river erodes soft rock faster than hard rock, or tumbles off a steep precipice.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 8,
+      "question": "A 'Meander' loop becomes an 'Ox-bow lake' through which dual process?",
+      "options": {
+        "A": "Weathering and Glaciation.",
+        "B": "Continuous erosion and deposition along the sides of the meander.",
+        "C": "The river drying up and raining again.",
+        "D": "Wind erosion and sand deposition."
+      },
+      "correct_answer": "B",
+      "explanation": "Continuous erosion on the outer bank and deposition on the inner bank brings the meander loops closer until they intersect and cut off.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 9,
+      "question": "During floods, rivers deposit layers of 'Fine Soil' and other materials called ______ along their banks.",
+      "options": {
+        "A": "Moraines",
+        "B": "Loess",
+        "C": "Sediments",
+        "D": "Stalactites"
+      },
+      "correct_answer": "C",
+      "explanation": "The deposition of fine soil (sediments) leads to the formation of flat fertile floodplains.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the primary role of 'Distributaries' in the formation of a Delta?",
+      "options": {
+        "A": "They increase the speed of the river to reach the sea.",
+        "B": "They act as channels for the collection and deposition of sediments at the river's mouth.",
+        "C": "They carry water back to the mountains.",
+        "D": "They prevent the sea from entering the river."
+      },
+      "correct_answer": "B",
+      "explanation": "Each distributary forms its own mouth; the collection of sediments from all mouths forms a delta.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 11,
+      "question": "The formation of 'Stacks' in coastal areas is an evolutionary process. What is the correct sequence?",
+      "options": {
+        "A": "Sea Arch -> Sea Cave -> Stack",
+        "B": "Sea Cave -> Sea Arch -> Stack",
+        "C": "Sea Cliff -> Stack -> Sea Cave",
+        "D": "Beach -> Stack -> Sea Arch"
+      },
+      "correct_answer": "B",
+      "explanation": "Waves form caves; caves enlarge into arches (roof only); the roof collapses, leaving isolated walls called stacks.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 12,
+      "question": "A 'Sea Cliff' is formed by:",
+      "options": {
+        "A": "Deposition of sand on the shore.",
+        "B": "Vertical erosion of the rocky coast by sea waves.",
+        "C": "Glaciers melting into the sea.",
+        "D": "Wind blowing against coastal mountains."
+      },
+      "correct_answer": "B",
+      "explanation": "The steep rocky coast rising almost vertically above sea water is called sea cliff.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 13,
+      "question": "How do 'Glacial Moraines' differ from 'River Sediments'?",
+      "options": {
+        "A": "They are only made of water.",
+        "B": "They consist of materials like big and small rocks, sand, and silt deposited by ice.",
+        "C": "They are found only in deserts.",
+        "D": "They are formed by the action of wind."
+      },
+      "correct_answer": "B",
+      "explanation": "Glacial moraines are specifically the debris (rocks/sand/silt) left behind by moving ice/glaciers.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "In deserts, why does the wind erode the 'lower section' of a rock more effectively than the 'upper section'?",
+      "options": {
+        "A": "Because the bottom of the rock is softer.",
+        "B": "Because wind carries heavier sand particles closer to the ground, increasing abrasion at the base.",
+        "C": "Because the top of the rock is protected by clouds.",
+        "D": "Because it only blows at night."
+      },
+      "correct_answer": "B",
+      "explanation": "Winds erode the lower section of the rock more than the upper part, creating mushroom rocks with narrow bases.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 15,
+      "question": "The 'Loess' deposits in China are unique because:",
+      "options": {
+        "A": "They are made of heavy boulders.",
+        "B": "They are formed by the deposition of extremely fine and light sand over vast areas.",
+        "C": "They are found under the ocean.",
+        "D": "They are caused by volcanic ash."
+      },
+      "correct_answer": "B",
+      "explanation": "When sand is very fine and light, the wind can carry it over very long distances and deposit it in large areas called loess.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following is an example of an 'Exogenic' process causing a change in the Earth's surface?",
+      "options": {
+        "A": "The eruption of Mount Etna.",
+        "B": "A landslide in the Himalayas.",
+        "C": "The formation of a delta by the River Nile.",
+        "D": "An earthquake in Bhuj."
+      },
+      "correct_answer": "C",
+      "explanation": "Exogenic forces are surface forces; the work of a river (delta formation) is exogenic, whereas the others are endogenic (internal origin).",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the 'safe spot' recommended by NCERT for protection against falling debris during an earthquake?",
+      "options": {
+        "A": "Under a kitchen counter, table or desk.",
+        "B": "Standing in the middle of a large hall.",
+        "C": "Taking shelter under a tall tree.",
+        "D": "Staying near a glass window to see what is happening."
+      },
+      "correct_answer": "A",
+      "explanation": "The textbook advises finding a 'safe spot' under sturdy furniture to protect oneself from falling objects.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 18,
+      "question": "The 'Bhuj Earthquake' case study mentions the magnitude was 6.9. According to the Richter scale classification, this is:",
+      "options": {
+        "A": "A slight tremor.",
+        "B": "Very strong and capable of causing major damage.",
+        "C": "A minor event that dropped few things.",
+        "D": "Impossible to measure."
+      },
+      "correct_answer": "B",
+      "explanation": "A 6.0 magnitude is classified as 'very strong' and a 7.0 as 'major'; 6.9 is nearly a major earthquake.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Why do glaciers form lakes in the mountains?",
+      "options": {
+        "A": "They transport water from the sea.",
+        "B": "They carve out hollows that later fill with meltwater.",
+        "C": "They attract rain clouds.",
+        "D": "They are actually frozen lakes."
+      },
+      "correct_answer": "B",
+      "explanation": "Glaciers carve out deep hollows; as the ice melts they get filled with water and become beautiful lakes in the mountains.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which feature is formed when sand dunes are very small and occur in groups?",
+      "options": {
+        "A": "Mushroom rocks",
+        "B": "Loess",
+        "C": "Sand dunes (low hill-like structures)",
+        "D": "Stacks"
+      },
+      "correct_answer": "C",
+      "explanation": "Sand dunes are specifically the low hill-like structures formed when wind stops blowing and sand falls.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Which of these is NOT an agent of 'Gradation' (the process of leveling land)?",
+      "options": {
+        "A": "Sea waves",
+        "B": "Glaciers",
+        "C": "Volcanoes",
+        "D": "Running water"
+      },
+      "correct_answer": "C",
+      "explanation": "Gradation involves erosion and deposition on the surface (Exogenic); volcanoes are Endogenic forces that typically build land up.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1/3.2"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the 'Work of Ice' fundamentally change the solid rock beneath a glacier?",
+      "options": {
+        "A": "It melts the rock with friction.",
+        "B": "It erodes the landscape by bulldozing soil and stones to expose solid rock.",
+        "C": "It turns rock into sand immediately.",
+        "D": "It has no effect on solid rock."
+      },
+      "correct_answer": "B",
+      "explanation": "Glaciers erode the landscape by bulldozing soil and stones to expose the solid rock below.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "The Niagara Falls is located on the border of which two countries?",
+      "options": {
+        "A": "Brazil and Argentina",
+        "B": "Zambia and Zimbabwe",
+        "C": "Canada and USA",
+        "D": "India and Nepal"
+      },
+      "correct_answer": "C",
+      "explanation": "Niagara Falls is located on the border between Canada and USA in North America.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the primary factor that causes a river to 'Meander' as it enters a plain?",
+      "options": {
+        "A": "Increased speed of water.",
+        "B": "The flat gradient which reduces velocity and leads to lateral erosion.",
+        "C": "The presence of glaciers.",
+        "D": "Volcanic activity in the plain."
+      },
+      "correct_answer": "B",
+      "explanation": "As the river enters the plain it twists and turns forming large bends known as meanders due to the change in terrain.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which statement best summarizes the theme of 'Our Changing Earth'?",
+      "options": {
+        "A": "The Earth's surface is static and never changes.",
+        "B": "Internal forces build the Earth up, while external forces wear it down.",
+        "C": "The Earth is only changed by human activity.",
+        "D": "The lithospheric plates stopped moving millions of years ago."
+      },
+      "correct_answer": "B",
+      "explanation": "The chapter highlights how Endogenic forces (internal) create landforms and Exogenic forces (external) erode and reshape them.",
+      "difficulty": "hard",
+      "source_section": "Whole Chapter"
+    }
+  ]
+}

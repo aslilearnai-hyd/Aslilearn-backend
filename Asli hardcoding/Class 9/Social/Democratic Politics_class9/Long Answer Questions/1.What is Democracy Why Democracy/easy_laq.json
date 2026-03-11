@@ -1,0 +1,407 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: What is Democracy? Why Democracy?",
+    "generated_at": "2026-03-07T20:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the meaning of democracy.",
+            "answer": "Democracy is a form of government in which the rulers are elected by the people. It ensures participation of citizens in choosing leaders and influencing decisions.",
+            "answer_outline": [
+                "Definition of democracy",
+                "Role of people in elections",
+                "Participation in decision making"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the origin and meaning of the word democracy.",
+            "answer": "The word democracy comes from the Greek words 'demos' meaning people and 'kratia' meaning rule. Thus democracy means rule by the people.",
+            "answer_outline": [
+                "Greek origin",
+                "Meaning of demos",
+                "Meaning of kratia",
+                "Rule by the people"
+            ],
+            "key_concepts": [
+                "origin of democracy"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the first feature of democracy.",
+            "answer": "The first feature of democracy is that the final decision-making power must rest with leaders elected by the people.",
+            "answer_outline": [
+                "Elected leaders",
+                "Decision-making power",
+                "Role of citizens"
+            ],
+            "key_concepts": [
+                "elected leaders"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the importance of free and fair elections in democracy.",
+            "answer": "Free and fair elections allow citizens to choose their leaders and change them if necessary. They ensure genuine political competition.",
+            "answer_outline": [
+                "Free elections",
+                "Real political competition",
+                "Right to change rulers"
+            ],
+            "key_concepts": [
+                "elections"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the principle 'one person, one vote, one value'.",
+            "answer": "This principle means every adult citizen has equal voting rights and each vote has equal value regardless of social or economic status.",
+            "answer_outline": [
+                "Equal voting rights",
+                "Political equality",
+                "Importance of equal value"
+            ],
+            "key_concepts": [
+                "political equality"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain universal adult franchise.",
+            "answer": "Universal adult franchise means every adult citizen has the right to vote irrespective of caste, gender, religion or wealth.",
+            "answer_outline": [
+                "Definition",
+                "Equal voting rights",
+                "Importance in democracy"
+            ],
+            "key_concepts": [
+                "adult franchise"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of the constitution in democracy.",
+            "answer": "The constitution sets limits on government powers and protects the rights of citizens.",
+            "answer_outline": [
+                "Constitution",
+                "Limits government power",
+                "Protects rights"
+            ],
+            "key_concepts": [
+                "constitution"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why democracy is considered an accountable form of government.",
+            "answer": "In democracy, leaders must answer to citizens and face elections regularly, making them accountable.",
+            "answer_outline": [
+                "Accountability",
+                "Elections",
+                "Responsibility to citizens"
+            ],
+            "key_concepts": [
+                "accountability"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain two arguments against democracy.",
+            "answer": "Democracy may lead to delays in decision-making and frequent changes in leadership.",
+            "answer_outline": [
+                "Delays in decisions",
+                "Frequent leadership change"
+            ],
+            "key_concepts": [
+                "criticism"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain two arguments in favour of democracy.",
+            "answer": "Democracy improves decision-making and provides peaceful ways to resolve conflicts.",
+            "answer_outline": [
+                "Better decision making",
+                "Peaceful conflict resolution"
+            ],
+            "key_concepts": [
+                "advantages"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how democracy improves the quality of decisions.",
+            "answer": "Democracy involves discussions and consultations which reduce mistakes in decisions.",
+            "answer_outline": [
+                "Discussion",
+                "Consultation",
+                "Better decisions"
+            ],
+            "key_concepts": [
+                "decision quality"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how democracy resolves conflicts.",
+            "answer": "Democracy provides peaceful ways for resolving differences through dialogue and compromise.",
+            "answer_outline": [
+                "Discussion",
+                "Peaceful methods",
+                "Conflict resolution"
+            ],
+            "key_concepts": [
+                "conflict"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how democracy enhances dignity of citizens.",
+            "answer": "Democracy recognizes every citizen as equal and gives them the right to participate in decision making.",
+            "answer_outline": [
+                "Equality",
+                "Participation",
+                "Citizen dignity"
+            ],
+            "key_concepts": [
+                "citizen dignity"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how democracy allows correction of mistakes.",
+            "answer": "In democracy, people can replace leaders through elections if they are dissatisfied.",
+            "answer_outline": [
+                "Public discussion",
+                "Elections",
+                "Changing rulers"
+            ],
+            "key_concepts": [
+                "correction of mistakes"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the importance of elections in democracy.",
+            "answer": "Elections allow citizens to choose their leaders and ensure accountability.",
+            "answer_outline": [
+                "Choosing leaders",
+                "Accountability",
+                "Participation"
+            ],
+            "key_concepts": [
+                "elections"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain democracy as a method of decision making.",
+            "answer": "Democracy involves consultation and participation of people in decision-making.",
+            "answer_outline": [
+                "Consultation",
+                "Participation",
+                "Collective decisions"
+            ],
+            "key_concepts": [
+                "decision making"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain representative democracy.",
+            "answer": "Representative democracy is a system where people elect representatives who make decisions on their behalf.",
+            "answer_outline": [
+                "Definition",
+                "Election of representatives",
+                "Role in governance"
+            ],
+            "key_concepts": [
+                "representative democracy"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why representative democracy is necessary.",
+            "answer": "In modern countries population is large, so people elect representatives to govern.",
+            "answer_outline": [
+                "Large population",
+                "Practical governance",
+                "Election of representatives"
+            ],
+            "key_concepts": [
+                "representative system"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain democracy as a principle in everyday life.",
+            "answer": "Democracy can be practiced in families, schools and organizations through consultation and participation.",
+            "answer_outline": [
+                "Democratic values",
+                "Participation",
+                "Examples in daily life"
+            ],
+            "key_concepts": [
+                "democratic principle"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the importance of citizen participation in democracy.",
+            "answer": "Citizen participation ensures effective functioning of democracy through voting and political involvement.",
+            "answer_outline": [
+                "Voting",
+                "Participation",
+                "Strengthening democracy"
+            ],
+            "key_concepts": [
+                "participation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the role of discussion in democratic decision making.",
+            "answer": "Discussion allows different viewpoints to be considered before decisions are made.",
+            "answer_outline": [
+                "Discussion",
+                "Different opinions",
+                "Better decisions"
+            ],
+            "key_concepts": [
+                "discussion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the relationship between democracy and equality.",
+            "answer": "Democracy promotes equality by giving equal political rights to all citizens.",
+            "answer_outline": [
+                "Equality",
+                "Voting rights",
+                "Political participation"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why democracy is suitable for diverse societies.",
+            "answer": "Democracy allows different groups to coexist peacefully and express their views.",
+            "answer_outline": [
+                "Diversity",
+                "Peaceful coexistence",
+                "Equal rights"
+            ],
+            "key_concepts": [
+                "diversity"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how democratic governments are limited by law.",
+            "answer": "Democratic governments must follow constitutional rules and respect citizens' rights.",
+            "answer_outline": [
+                "Rule of law",
+                "Constitution",
+                "Rights protection"
+            ],
+            "key_concepts": [
+                "rule of law"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why democracy requires active citizens.",
+            "answer": "Democracy depends on citizens participating in elections and political activities.",
+            "answer_outline": [
+                "Participation",
+                "Voting",
+                "Active citizens"
+            ],
+            "key_concepts": [
+                "citizens role"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.4"
+        }
+    ]
+}

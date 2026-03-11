@@ -1,0 +1,133 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science (Civics)",
+  "chapter_name": "Judiciary",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze the role of the judiciary in a democratic system",
+    "Understand the structure and hierarchy of the Indian judicial system",
+    "Explain the concept of judicial independence and its importance",
+    "Evaluate how courts protect Fundamental Rights",
+    "Understand the role of Public Interest Litigation (PIL)",
+    "Develop critical thinking about justice and equality under law"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Role of the Judiciary in Democracy",
+      "topics_covered": [
+        "Meaning and functions of the judiciary",
+        "Importance of justice in democratic governance",
+        "Role of courts in maintaining rule of law"
+      ],
+      "teaching_strategy": [
+        "Interactive lecture",
+        "Case-based explanation",
+        "Critical questioning"
+      ],
+      "student_activities": [
+        "Students discuss why a country needs courts",
+        "Analyze a real-life example where courts ensured justice"
+      ],
+      "assessment": ["Concept questions", "Student responses"]
+    },
+    {
+      "period": 2,
+      "title": "Structure of the Indian Judiciary",
+      "topics_covered": [
+        "Hierarchy of courts",
+        "Supreme Court, High Courts and Subordinate Courts",
+        "Appellate jurisdiction"
+      ],
+      "teaching_strategy": ["Diagram explanation", "Comparative discussion"],
+      "student_activities": [
+        "Create a chart showing the hierarchy of courts",
+        "Explain how cases move from lower courts to higher courts"
+      ],
+      "assessment": ["Diagram evaluation", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Independence of the Judiciary",
+      "topics_covered": [
+        "Meaning of judicial independence",
+        "Separation of powers",
+        "Importance for democracy"
+      ],
+      "teaching_strategy": ["Concept explanation", "Group discussion"],
+      "student_activities": [
+        "Debate why judges must remain independent from political influence",
+        "List factors that help maintain judicial independence"
+      ],
+      "assessment": ["Group participation", "Teacher observation"]
+    },
+    {
+      "period": 4,
+      "title": "Judicial Review and Protection of Rights",
+      "topics_covered": [
+        "Judicial review",
+        "Protection of Fundamental Rights",
+        "Examples of landmark judgments"
+      ],
+      "teaching_strategy": [
+        "Example-based explanation",
+        "Case study discussion"
+      ],
+      "student_activities": [
+        "Analyze a case where courts protected citizens' rights",
+        "Write how judicial review ensures constitutional supremacy"
+      ],
+      "assessment": ["Short analytical response", "Teacher feedback"]
+    },
+    {
+      "period": 5,
+      "title": "Public Interest Litigation (PIL)",
+      "topics_covered": [
+        "Meaning of PIL",
+        "Importance for social justice",
+        "Examples of PIL cases"
+      ],
+      "teaching_strategy": [
+        "Problem-solving approach",
+        "Interactive questioning"
+      ],
+      "student_activities": [
+        "Discuss situations where PIL can be filed",
+        "Write how PIL helps marginalized communities"
+      ],
+      "assessment": ["Notebook checking", "Oral questioning"]
+    },
+    {
+      "period": 6,
+      "title": "Application and Chapter Review",
+      "topics_covered": [
+        "Role of judiciary in protecting democracy",
+        "Importance of fair justice",
+        "Chapter recap and revision"
+      ],
+      "teaching_strategy": ["Quiz-based revision", "Critical discussion"],
+      "student_activities": [
+        "Participate in a short quiz",
+        "Write a short paragraph explaining why an independent judiciary is essential"
+      ],
+      "assessment": ["Short test (10 marks)", "Concept evaluation"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Civics textbook",
+    "Court hierarchy diagram",
+    "Case study handouts"
+  ],
+  "evaluation_methods": [
+    "Conceptual questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Group discussions",
+    "Participation in analytical activities"
+  ],
+  "teacher_tip": "Encourage students to analyze real-life court cases to understand how the judiciary protects democracy and citizens' rights."
+}

@@ -1,0 +1,157 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Structure of the Atom",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "An element has atomic number 15 and mass number 31. The number of neutrons present in the atom is:",
+      "options": ["15", "16", "31", "46"],
+      "answer": "16"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following electronic configurations is correct for aluminium (Atomic number 13)?",
+      "options": ["2,8,3", "2,7,4", "2,8,2,1", "2,6,5"],
+      "answer": "2,8,3"
+    },
+    {
+      "question_number": 3,
+      "question": "The maximum number of electrons that can be accommodated in the N shell is:",
+      "options": ["18", "32", "16", "8"],
+      "answer": "32"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following pairs represents isotopes?",
+      "options": ["17Cl35 and 17Cl37", "18Ar40 and 20Ca40", "6C14 and 7N14", "11Na23 and 12Mg24"],
+      "answer": "17Cl35 and 17Cl37"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following pairs represents isobars?",
+      "options": ["17Cl35 and 17Cl37", "18Ar40 and 20Ca40", "1H1 and 1H2", "6C12 and 6C13"],
+      "answer": "18Ar40 and 20Ca40"
+    },
+    {
+      "question_number": 6,
+      "question": "An atom has the electronic configuration 2,8,7. The valency of this atom is:",
+      "options": ["1", "2", "7", "8"],
+      "answer": "1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following statements about Rutherford’s model is correct?",
+      "options": ["Electrons are embedded in a positive sphere", "Atom is mostly empty space", "Electrons move in fixed shells", "Neutrons are present in nucleus"],
+      "answer": "Atom is mostly empty space"
+    },
+    {
+      "question_number": 8,
+      "question": "An element X has atomic number 12. The number of valence electrons is:",
+      "options": ["1", "2", "3", "8"],
+      "answer": "2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following electronic configurations violates the Bohr–Bury rules?",
+      "options": ["2,8,8", "2,8,18", "2,10,6", "2,8,1"],
+      "answer": "2,10,6"
+    },
+    {
+      "question_number": 10,
+      "question": "The total number of electrons in Ca²⁺ ion (Atomic number 20) is:",
+      "options": ["18", "20", "22", "16"],
+      "answer": "18"
+    },
+    {
+      "question_number": 11,
+      "question": "Which particle has nearly the same mass as a proton?",
+      "options": ["Electron", "Neutron", "Positron", "Photon"],
+      "answer": "Neutron"
+    },
+    {
+      "question_number": 12,
+      "question": "If an atom loses two electrons, it becomes:",
+      "options": ["An anion", "A cation", "Neutral", "An isotope"],
+      "answer": "A cation"
+    },
+    {
+      "question_number": 13,
+      "question": "The element with electronic configuration 2,8,8,1 belongs to which group?",
+      "options": ["Group 1", "Group 2", "Group 17", "Group 18"],
+      "answer": "Group 1"
+    },
+    {
+      "question_number": 14,
+      "question": "The atomic number of an element is 17. The number of electrons in its valence shell is:",
+      "options": ["5", "6", "7", "8"],
+      "answer": "7"
+    },
+    {
+      "question_number": 15,
+      "question": "Which of the following atoms has completely filled outermost shell?",
+      "options": ["Neon", "Sodium", "Chlorine", "Magnesium"],
+      "answer": "Neon"
+    },
+    {
+      "question_number": 16,
+      "question": "An atom with mass number 23 and atomic number 11 has how many neutrons?",
+      "options": ["11", "12", "13", "23"],
+      "answer": "12"
+    },
+    {
+      "question_number": 17,
+      "question": "Which experiment led to the discovery of the nucleus?",
+      "options": ["Cathode ray experiment", "Gold foil experiment", "Oil drop experiment", "Alpha scattering experiment"],
+      "answer": "Gold foil experiment"
+    },
+    {
+      "question_number": 18,
+      "question": "The element with atomic number 8 will have how many electrons in its valence shell?",
+      "options": ["4", "5", "6", "8"],
+      "answer": "6"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following represents the correct electronic configuration of chlorine (17)?",
+      "options": ["2,8,7", "2,7,8", "2,8,6,1", "2,6,9"],
+      "answer": "2,8,7"
+    },
+    {
+      "question_number": 20,
+      "question": "Which statement about isotopes is correct?",
+      "options": ["They have different chemical properties", "They have same atomic number", "They have same mass number", "They have different number of protons"],
+      "answer": "They have same atomic number"
+    },
+    {
+      "question_number": 21,
+      "question": "The valency of oxygen is:",
+      "options": ["1", "2", "3", "6"],
+      "answer": "2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which element has electronic configuration 2,8,2?",
+      "options": ["Magnesium", "Sodium", "Aluminium", "Silicon"],
+      "answer": "Magnesium"
+    },
+    {
+      "question_number": 23,
+      "question": "Which particle determines the mass number of an atom?",
+      "options": ["Electron", "Proton", "Neutron", "Proton and neutron"],
+      "answer": "Proton and neutron"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of the following ions has 10 electrons?",
+      "options": ["Na⁺", "Mg²⁺", "F⁻", "All of these"],
+      "answer": "All of these"
+    },
+    {
+      "question_number": 25,
+      "question": "The maximum number of electrons that can be present in a shell with n = 3 is:",
+      "options": ["8", "18", "32", "9"],
+      "answer": "18"
+    }
+  ]
+}

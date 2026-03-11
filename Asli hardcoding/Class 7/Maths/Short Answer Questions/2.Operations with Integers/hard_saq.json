@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Operations with Integers",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T01:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Evaluate using properties: (-625) × (-35) + (-625) × 65.",
+            "answer": "(-625) × [(-35) + 65] = (-625) × 30 = -18,750.",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "A shopkeeper earns a profit of ₹1 by selling one pen and incurs a loss of 40 paise per pencil. In a month, she incurs a loss of ₹5. If she sold 45 pens, how many pencils did she sell?",
+            "answer": "Profit from pens = ₹45. Total loss = -₹5. Loss from pencils = -5 - 45 = -₹50. Number of pencils = -5000 / -40 = 125 pencils.",
+            "key_concepts": ["integer application", "unit conversion"],
+            "marks": 4,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the value of: [(-100) ÷ 20] × [(-8) + (-2)] ÷ (-1).",
+            "answer": "(-5) × (-10) ÷ (-1) = 50 ÷ (-1) = -50.",
+            "key_concepts": ["BODMAS", "nested operations"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 4,
+            "question": "If a and b are two integers such that a × b = -24 and a - b = 10, find the values of a and b.",
+            "answer": "The integers are 2 and -12 or 12 and -2. Checking a - b = 10: -2 - (-12) = 10. So, a = -2, b = -12.",
+            "key_concepts": ["logical reasoning", "integer pairs"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Verify whether (a ÷ b) ÷ c = a ÷ (b ÷ c) for a = -16, b = 4, c = -2.",
+            "answer": "LHS: (-4) ÷ -2 = 2. RHS: -16 ÷ (-2) = 8. LHS ≠ RHS. Division is not associative.",
+            "key_concepts": ["associative property"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the product: (-1) × (-2) × (-3) × ... × (-10).",
+            "answer": "Since there are 10 (even) negative integers, the product is positive. 10! = 3,628,800.",
+            "key_concepts": ["factorial", "sign rules"],
+            "marks": 4,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "In a competitive exam, 4 marks are given for every correct answer, -2 for every incorrect, and 0 for not attempting. If a student scores -8 marks and got 4 correct answers, how many questions were incorrect?",
+            "answer": "Correct: 4 * 4 = 16. Score: -8. Incorrect marks = -8 - 16 = -24. Incorrect answers = -24 / -2 = 12.",
+            "key_concepts": ["word problems"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Evaluate: 100 + (-20) × (-5) ÷ [(-10) - (-5)].",
+            "answer": "100 + 100 ÷ (-5) = 100 - 20 = 80.",
+            "key_concepts": ["order of operations"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that the product of an even number of negative integers is positive.",
+            "answer": "Negative integers paired up become positive: (-) × (-) = (+). Even number means all are paired, resulting in a positive product.",
+            "key_concepts": ["proof", "multiplication properties"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Simplify: (-20) × (-1) + (-20) × (-9) + 20 × (-10).",
+            "answer": "20 + 180 - 200 = 0.",
+            "key_concepts": ["simplification"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the difference between the largest 3-digit negative integer and the smallest 2-digit positive integer?",
+            "answer": "Largest 3-digit negative = -100. Smallest 2-digit positive = 10. Difference = -100 - 10 = -110.",
+            "key_concepts": ["place value", "comparison"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A certain freezing process requires that room temperature be lowered from 40°C at the rate of 5°C every hour. What will be the room temperature 10 hours after the process begins?",
+            "answer": "Initial: 40. Change: 10 * (-5) = -50. Final: 40 - 50 = -10°C.",
+            "key_concepts": ["rate of change"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Find x if: (-15) × [x + (-2)] = 60.",
+            "answer": "x - 2 = 60 / -15 → x - 2 = -4 → x = -2.",
+            "key_concepts": ["linear equations with integers"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Can the sum of two integers be smaller than both the integers? Give an example.",
+            "answer": "Yes, when both integers are negative. Example: (-2) + (-3) = -5. (-5 < -2 and -5 < -3).",
+            "key_concepts": ["addition properties"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Calculate: 1 - 2 + 3 - 4 + 5 - 6 ... + 19 - 20.",
+            "answer": "Ten pairs of (1 - 2) = 10 × (-1) = -10.",
+            "key_concepts": ["series", "patterns"],
+            "marks": 4,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Solve: [(-8) × (-9)] ÷ [(-2) × (-3) × (-1)].",
+            "answer": "72 ÷ (-6) = -12.",
+            "key_concepts": ["division of products"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Is (a - b) - c = a - (b - c) for integers? Prove with a = 5, b = 3, c = 2.",
+            "answer": "LHS: (5-3)-2 = 0. RHS: 5-(3-2) = 4. 0 ≠ 4. Subtraction is not associative.",
+            "key_concepts": ["associative property"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "A submarine descends at 50m/min. If it starts from 20m above sea level, find its position after 45 minutes.",
+            "answer": "Start: +20. Descent: 45 * (-50) = -2250. Position: 20 - 2250 = -2230m.",
+            "key_concepts": ["descent word problems"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Find an integer 'a' such that a ÷ (-1) = -a.",
+            "answer": "This is true for any integer because a ÷ (-1) is always -a.",
+            "key_concepts": ["multiplicative identity"],
+            "marks": 1,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "If x * y = x + y + (x × y), find the value of (-5) * 3.",
+            "answer": "-5 + 3 + (-15) = -17.",
+            "key_concepts": ["custom operations"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "The sum of two integers is -16. If one of them is 53, find the other.",
+            "answer": "x + 53 = -16 → x = -16 - 53 = -69.",
+            "key_concepts": ["addition"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the product using properties: 8 × 49 × (-125).",
+            "answer": "[8 × (-125)] × 49 = -1000 × 49 = -49,000.",
+            "key_concepts": ["associative property of multiplication"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find an integer 'p' such that p × (-5) = 35.",
+            "answer": "p = 35 / -5 = -7.",
+            "key_concepts": ["solving for variables"],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "State the distributive property of multiplication over subtraction.",
+            "answer": "a × (b - c) = (a × b) - (a × c).",
+            "key_concepts": ["distributive property"],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Determine the quotient of (-15625) ÷ (-125).",
+            "answer": "125",
+            "key_concepts": ["long division of integers"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        }
+    ]
+}

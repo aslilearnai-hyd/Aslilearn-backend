@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "How Nature Works in Harmony",
+  "difficulty": "Hard",
+  "source_pdf": "12.How Nature Works in Harmony.pdf",
+  "short_notes": {
+    "key_points": [
+      "Ecosystem balance depends on complex interactions among organisms",
+      "Changes in population size of one species can affect the entire ecosystem",
+      "Biodiversity increases ecosystem stability and resilience",
+      "Predators regulate prey populations and maintain ecological balance",
+      "Nutrient cycling ensures that essential minerals return to the soil",
+      "Human activities such as deforestation and pollution disturb ecosystems",
+      "Sustainable practices help maintain ecological harmony"
+    ],
+    "examples": [
+      "If predators disappear, herbivore populations may increase excessively",
+      "Mangrove ecosystems protect coastlines from erosion",
+      "Deforestation reduces biodiversity and destroys habitats",
+      "Pollution in rivers can reduce oxygen levels and harm fish populations"
+    ],
+    "ecological_relationships": [
+      "Mutualism: both organisms benefit (bees and flowers)",
+      "Commensalism: one benefits and the other is unaffected (birds nesting on trees)",
+      "Parasitism: one organism benefits while the other is harmed (ticks on animals)",
+      "Competition: organisms compete for limited resources"
+    ],
+    "exam_tips": [
+      "Explain ecosystem interactions using cause-and-effect reasoning",
+      "Use examples of ecological relationships in answers",
+      "Mention biodiversity and conservation in long answers",
+      "Relate human activities to ecosystem imbalance"
+    ]
+  }
+}

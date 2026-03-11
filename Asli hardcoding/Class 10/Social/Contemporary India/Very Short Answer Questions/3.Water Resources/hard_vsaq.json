@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 3: Water Resources",
+  "generated_at": "2026-03-11T17:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why can water scarcity occur even in areas with adequate rainfall?",
+      "answer": "Due to mismanagement, unequal distribution, and overuse of water resources.",
+      "key_points": ["water scarcity"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 2,
+      "question": "How does over-extraction affect groundwater levels?",
+      "answer": "It lowers groundwater levels faster than natural recharge.",
+      "key_points": ["groundwater depletion"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 3,
+      "question": "Why are multipurpose river projects important for agriculture?",
+      "answer": "They provide irrigation water to farmlands.",
+      "key_points": ["multipurpose river projects"],
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 4,
+      "question": "What environmental issue is caused by sediment accumulation in dams?",
+      "answer": "Reduction of reservoir storage capacity.",
+      "key_points": ["sedimentation"],
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 5,
+      "question": "Why do environmentalists criticize large dams?",
+      "answer": "They damage ecosystems and displace communities.",
+      "key_points": ["dam criticism"],
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 6,
+      "question": "How does urbanization contribute to water scarcity?",
+      "answer": "Concrete surfaces reduce groundwater recharge.",
+      "key_points": ["urbanization"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 7,
+      "question": "Why is rainwater harvesting considered sustainable?",
+      "answer": "It collects rainwater and replenishes groundwater naturally.",
+      "key_points": ["rainwater harvesting"],
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 8,
+      "question": "What role do traditional water harvesting systems play in arid regions?",
+      "answer": "They store rainwater efficiently for later use.",
+      "key_points": ["traditional systems"],
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 9,
+      "question": "How does bamboo drip irrigation conserve water?",
+      "answer": "It delivers water directly to plant roots drop by drop.",
+      "key_points": ["bamboo irrigation"],
+      "source_section": "Traditional Irrigation Systems"
+    },
+    {
+      "question_number": 10,
+      "question": "Why does industrial development increase water demand?",
+      "answer": "Industries require large quantities of water for production.",
+      "key_points": ["industrialization"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 11,
+      "question": "How does pollution contribute to water scarcity?",
+      "answer": "Polluted water becomes unsafe for human use.",
+      "key_points": ["water pollution"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are reservoirs important in water management?",
+      "answer": "They store water for irrigation, power generation, and domestic use.",
+      "key_points": ["reservoir"],
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the relationship between population growth and water scarcity?",
+      "answer": "Increasing population raises demand for water resources.",
+      "key_points": ["population growth"],
+      "source_section": "Water Scarcity"
+    },
+    {
+      "question_number": 14,
+      "question": "Why is groundwater recharge important?",
+      "answer": "It replenishes underground water sources and maintains supply.",
+      "key_points": ["groundwater recharge"],
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 15,
+      "question": "How do dams help regulate river flow?",
+      "answer": "They store excess water and release it gradually.",
+      "key_points": ["river regulation"],
+      "source_section": "Multipurpose River Projects"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is water conservation necessary for sustainable development?",
+      "answer": "It ensures long-term availability of water resources.",
+      "key_points": ["water conservation"],
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 17,
+      "question": "How does deforestation affect water resources?",
+      "answer": "It reduces groundwater recharge and increases soil erosion.",
+      "key_points": ["deforestation"],
+      "source_section": "Water Resources"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are traditional water systems considered environmentally friendly?",
+      "answer": "They use natural methods with minimal ecological impact.",
+      "key_points": ["traditional sustainability"],
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 19,
+      "question": "How can community participation improve water management?",
+      "answer": "Communities can maintain local water resources and promote conservation.",
+      "key_points": ["community participation"],
+      "source_section": "Water Management"
+    },
+    {
+      "question_number": 20,
+      "question": "What is integrated water resource management?",
+      "answer": "Coordinated planning and management of water resources.",
+      "key_points": ["IWRM"],
+      "source_section": "Water Management"
+    },
+    {
+      "question_number": 21,
+      "question": "Why do cities face groundwater depletion despite rainfall?",
+      "answer": "Urban surfaces prevent water from seeping into the ground.",
+      "key_points": ["urban groundwater"],
+      "source_section": "Rainwater Harvesting"
+    },
+    {
+      "question_number": 22,
+      "question": "How does irrigation support food security?",
+      "answer": "It provides water needed for crop production.",
+      "key_points": ["irrigation"],
+      "source_section": "Water Use"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is sedimentation harmful to dam efficiency?",
+      "answer": "It reduces the reservoir's water storage capacity.",
+      "key_points": ["sedimentation"],
+      "source_section": "Criticism of Multipurpose Projects"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is sustainable water use important for ecosystems?",
+      "answer": "It protects natural habitats and maintains ecological balance.",
+      "key_points": ["ecosystem balance"],
+      "source_section": "Water Conservation"
+    },
+    {
+      "question_number": 25,
+      "question": "How do water resources contribute to economic growth?",
+      "answer": "They support agriculture, industry, and energy production.",
+      "key_points": ["economic development"],
+      "source_section": "Water Resources"
+    }
+  ]
+}

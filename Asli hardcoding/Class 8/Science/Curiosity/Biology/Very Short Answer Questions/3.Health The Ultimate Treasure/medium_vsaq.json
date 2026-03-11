@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-05T18:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is health considered more than just the absence of disease?",
+      "answer": "Because health includes physical, mental, and social well-being.",
+      "key_points": ["health concept"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "How can mental health influence physical health?",
+      "answer": "Stress or emotional problems can lead to physical illness.",
+      "key_points": ["mental health"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is a balanced diet important?",
+      "answer": "It provides essential nutrients required for body functions.",
+      "key_points": ["balanced diet"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "How does exercise help maintain good health?",
+      "answer": "Exercise strengthens the body and improves immunity.",
+      "key_points": ["exercise benefits"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is clean environment important for health?",
+      "answer": "It reduces the spread of disease-causing pathogens.",
+      "key_points": ["environmental health"],
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the difference between symptoms and signs?",
+      "answer": "Symptoms are felt by the patient while signs are observed by doctors.",
+      "key_points": ["symptoms vs signs"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "How do communicable diseases spread?",
+      "answer": "Through pathogens via air, water, food, contact, or vectors.",
+      "key_points": ["disease transmission"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Why are mosquitoes considered dangerous vectors?",
+      "answer": "They carry pathogens that cause diseases like malaria and dengue.",
+      "key_points": ["vectors"],
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the role of immunity in health?",
+      "answer": "Immunity protects the body against infections.",
+      "key_points": ["immunity"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "How do vaccines protect people from diseases?",
+      "answer": "Vaccines prepare the immune system to recognize pathogens.",
+      "key_points": ["vaccines"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Why are vaccination programs important?",
+      "answer": "They help prevent the spread of infectious diseases.",
+      "key_points": ["vaccination programs"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Why should antibiotics not be used unnecessarily?",
+      "answer": "Misuse can cause antibiotic resistance.",
+      "key_points": ["antibiotics"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a lifestyle disease?",
+      "answer": "A disease caused mainly by unhealthy lifestyle habits.",
+      "key_points": ["lifestyle diseases"],
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Give one example of a lifestyle disease.",
+      "answer": "Diabetes.",
+      "key_points": ["lifestyle disease example"],
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Why should stagnant water be removed from surroundings?",
+      "answer": "It prevents mosquito breeding.",
+      "key_points": ["vector control"],
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is clean drinking water essential?",
+      "answer": "It prevents waterborne diseases.",
+      "key_points": ["clean water"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 17,
+      "question": "How does hygiene help prevent diseases?",
+      "answer": "Hygiene removes pathogens and reduces infection risk.",
+      "key_points": ["hygiene"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are antibiotics effective against bacteria?",
+      "answer": "They kill bacteria or stop their growth.",
+      "key_points": ["antibiotics"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Why do antibiotics not work against viruses?",
+      "answer": "Because viruses have different biological structures.",
+      "key_points": ["antibiotics limitation"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 20,
+      "question": "How does pollution affect human health?",
+      "answer": "It can cause respiratory and other health problems.",
+      "key_points": ["pollution"],
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are public health campaigns important?",
+      "answer": "They spread awareness about disease prevention.",
+      "key_points": ["public health"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Why should people complete the full antibiotic course?",
+      "answer": "To prevent antibiotic resistance.",
+      "key_points": ["antibiotic resistance"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 23,
+      "question": "How can healthy habits improve immunity?",
+      "answer": "They strengthen the body's defense system.",
+      "key_points": ["healthy habits"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are clean surroundings important in communities?",
+      "answer": "They reduce the spread of infectious diseases.",
+      "key_points": ["sanitation"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 25,
+      "question": "How does vaccination help communities?",
+      "answer": "It builds herd immunity and prevents outbreaks.",
+      "key_points": ["herd immunity"],
+      "source_section": "Section 3.5"
+    }
+  ]
+}

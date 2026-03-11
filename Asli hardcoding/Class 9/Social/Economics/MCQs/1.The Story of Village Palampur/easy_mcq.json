@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Story of Village Palampur",
+    "generated_at": "2026-03-07T00:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the main production activity in village Palampur?",
+            "options": {
+                "A": "Manufacturing",
+                "B": "Transport",
+                "C": "Farming",
+                "D": "Shopkeeping"
+            },
+            "correct_answer": "C",
+            "explanation": "Farming is the primary source of livelihood for 75% of the population in Palampur.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is a fixed capital for a farmer?",
+            "options": {
+                "A": "Seeds",
+                "B": "Tractors",
+                "C": "Fertilizers",
+                "D": "Money in hand"
+            },
+            "correct_answer": "B",
+            "explanation": "Fixed capital includes tools, machines, and buildings that can be used in production over many years.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The four requirements of production are land, labour, physical capital and _________.",
+            "options": {
+                "A": "Knowledge and enterprise (Human Capital)",
+                "B": "Electricity",
+                "C": "Irrigation",
+                "D": "Transport"
+            },
+            "correct_answer": "A",
+            "explanation": "Human capital is necessary to combine land, labour, and physical capital to produce an output.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Working capital includes which of the following?",
+            "options": {
+                "A": "Tools and Machines",
+                "B": "Buildings",
+                "C": "Raw materials and money in hand",
+                "D": "Fixed assets"
+            },
+            "correct_answer": "C",
+            "explanation": "Raw materials and money are called working capital as they are used up during the production process.",
+            "difficulty": "medium",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Bigni and Raiganj are nearby _________ of Palampur.",
+            "options": {
+                "A": "Towns",
+                "B": "Districts",
+                "C": "Villages",
+                "D": "States"
+            },
+            "correct_answer": "C",
+            "explanation": "Raiganj is a big village 3 km from Palampur, and Shahpur is the nearest small town.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the standard unit of measuring land in villages?",
+            "options": {
+                "A": "Metre",
+                "B": "Hectare",
+                "C": "Bigha",
+                "D": "Gunta"
+            },
+            "correct_answer": "B",
+            "explanation": "While local units like Bigha exist, the standard SI unit used globally and in textbooks for land area is the hectare.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Growing more than one crop on a piece of land during a year is known as:",
+            "options": {
+                "A": "Uni-cropping",
+                "B": "Multiple cropping",
+                "C": "Modern farming",
+                "D": "Mixed farming"
+            },
+            "correct_answer": "B",
+            "explanation": "Multiple cropping is the most common way of increasing production on a fixed amount of land.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "The Green Revolution in the late 1960s was associated with the production of:",
+            "options": {
+                "A": "Pulses and Oilseeds",
+                "B": "Wheat and Rice",
+                "C": "Cotton and Jute",
+                "D": "Sugar and Tea"
+            },
+            "correct_answer": "B",
+            "explanation": "The Green Revolution primarily introduced HYV seeds for wheat and rice to increase food grain production.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What does HYV stand for?",
+            "options": {
+                "A": "High Yielding Varieties",
+                "B": "Heavy Yielding Vehicles",
+                "C": "High Young Varieties",
+                "D": "Heavy Yielding Varieties"
+            },
+            "correct_answer": "A",
+            "explanation": "HYV seeds produce much greater amounts of grain on a single plant compared to traditional seeds.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which state was the first to try out modern farming methods in India?",
+            "options": {
+                "A": "Tamil Nadu",
+                "B": "Punjab",
+                "C": "Rajasthan",
+                "D": "Kerala"
+            },
+            "correct_answer": "B",
+            "explanation": "Farmers of Punjab, Haryana, and Western Uttar Pradesh were the first to use HYV seeds and chemical fertilizers.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the primary reason for the loss of soil fertility in modern farming?",
+            "options": {
+                "A": "Over-irrigation",
+                "B": "Increased use of chemical fertilizers",
+                "C": "Planting trees",
+                "D": "Using cow dung"
+            },
+            "correct_answer": "B",
+            "explanation": "Chemical fertilizers kill bacteria and other microorganisms in the soil, leading to a long-term loss of fertility.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 12,
+            "question": "How many families live in village Palampur?",
+            "options": {
+                "A": "450",
+                "B": "150",
+                "C": "240",
+                "D": "80"
+            },
+            "correct_answer": "A",
+            "explanation": "Palampur has about 450 families belonging to several different castes.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Landless labourers in Palampur usually come from:",
+            "options": {
+                "A": "Upper caste families",
+                "B": "Dalit and landless families",
+                "C": "Medium farmers",
+                "D": "Large farmers"
+            },
+            "correct_answer": "B",
+            "explanation": "150 families, most of them Dalits, are landless and work on others' fields.",
+            "difficulty": "medium",
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Who provides the labour for medium and large farmers?",
+            "options": {
+                "A": "Their own family members",
+                "B": "Hired farm labourers",
+                "C": "Small farmers",
+                "D": "Machines only"
+            },
+            "correct_answer": "B",
+            "explanation": "Medium and large farmers hire farm labourers to work on their large fields.",
+            "difficulty": "medium",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Small farmers usually borrow money for capital from:",
+            "options": {
+                "A": "Banks",
+                "B": "Village moneylenders or large farmers",
+                "C": "Government",
+                "D": "Cooperative societies"
+            },
+            "correct_answer": "B",
+            "explanation": "Most small farmers have to borrow money at high interest rates from moneylenders because they lack savings.",
+            "difficulty": "medium",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 16,
+            "question": "Tejpal Singh, a large farmer, sells his surplus wheat at:",
+            "options": {
+                "A": "Palampur market",
+                "B": "Raiganj market",
+                "C": "City of Shahpur",
+                "D": "He doesn't sell"
+            },
+            "correct_answer": "B",
+            "explanation": "Tejpal Singh sells his surplus wheat at the Raiganj market and has good earnings.",
+            "difficulty": "medium",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following is a non-farming activity?",
+            "options": {
+                "A": "Growing wheat",
+                "B": "Dairy farming",
+                "C": "Irrigation",
+                "D": "Sowing seeds"
+            },
+            "correct_answer": "B",
+            "explanation": "Dairy is a common non-farming activity in many families of Palampur.",
+            "difficulty": "easy",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 18,
+            "question": "Mishrilal's mechanical sugarcane crushing machine is an example of:",
+            "options": {
+                "A": "Transport",
+                "B": "Small-scale manufacturing",
+                "C": "Dairy",
+                "D": "Shopkeeping"
+            },
+            "correct_answer": "B",
+            "explanation": "Mishrilal has set up a small manufacturing unit to produce jaggery from sugarcane.",
+            "difficulty": "medium",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 19,
+            "question": "Kareem has started a _________ in the village.",
+            "options": {
+                "A": "Dairy farm",
+                "B": "Computer class centre",
+                "C": "Transport service",
+                "D": "Flour mill"
+            },
+            "correct_answer": "B",
+            "explanation": "Kareem bought computers and started classes for students who were going to town for college.",
+            "difficulty": "easy",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the main source of irrigation in Palampur?",
+            "options": {
+                "A": "Persian wheels",
+                "B": "Electric-run tubewells",
+                "C": "Canals",
+                "D": "Rainfall"
+            },
+            "correct_answer": "B",
+            "explanation": "Electricity transformed irrigation by enabling the use of electric tubewells instead of Persian wheels.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "The consumption of chemical fertilizers is highest in which state of India?",
+            "options": {
+                "A": "Punjab",
+                "B": "Haryana",
+                "C": "Uttar Pradesh",
+                "D": "Maharashtra"
+            },
+            "correct_answer": "A",
+            "explanation": "Punjab has the highest consumption of chemical fertilizers due to the intensive use of modern farming methods.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Jowar and Bajra are grown during the _________ season.",
+            "options": {
+                "A": "Rabi",
+                "B": "Kharif",
+                "C": "Zaid",
+                "D": "Winter"
+            },
+            "correct_answer": "B",
+            "explanation": "Kharif crops (rainy season) in Palampur include Jowar and Bajra, which are used as cattle feed.",
+            "difficulty": "medium",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "How many families are landless in Palampur?",
+            "options": {
+                "A": "450",
+                "B": "150",
+                "C": "240",
+                "D": "60"
+            },
+            "correct_answer": "B",
+            "explanation": "One third of the 450 families, i.e., 150 families, are landless.",
+            "difficulty": "medium",
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the result of continuous use of groundwater for tubewell irrigation?",
+            "options": {
+                "A": "Rise in water table",
+                "B": "Depletion of water table",
+                "C": "Increase in soil fertility",
+                "D": "No change"
+            },
+            "correct_answer": "B",
+            "explanation": "Continuous pumping of groundwater for irrigation leads to the lowering of the water table.",
+            "difficulty": "medium",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Medium and large farmers have their own _________ from farming to arrange for capital.",
+            "options": {
+                "A": "Loans",
+                "B": "Savings",
+                "C": "Debts",
+                "D": "Grants"
+            },
+            "correct_answer": "B",
+            "explanation": "Large farmers have surplus produce which they sell to create savings for future capital needs.",
+            "difficulty": "medium",
+            "source_section": "Section 1.7"
+        }
+    ]
+}

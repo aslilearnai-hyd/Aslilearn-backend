@@ -1,0 +1,208 @@
+{
+    "content_type": "Medium Questions",
+    "chapter": "Chapter: CHEMICAL REACTIONS AND EQUATIONS",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is it necessary to balance a skeletal chemical equation?",
+            "answer": "To satisfy the Law of Conservation of Mass, which states that mass can neither be created nor destroyed in a chemical reaction; thus, the number of atoms of each element must remain the same.",
+            "key_concepts": ["law of conservation of mass", "balancing equations"],
+            "marks": 3,
+            "source_section": "Section 1.1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is observed when a solution of potassium iodide is added to a solution of lead nitrate? Name the type of reaction.",
+            "answer": "A yellow precipitate of lead iodide is formed. This is a double displacement and precipitation reaction.",
+            "key_concepts": ["precipitation", "double displacement"],
+            "marks": 3,
+            "source_section": "Section 1.2.4"
+        },
+        {
+            "question_number": 3,
+            "question": "A shiny brown colored element 'X' on heating in air becomes black in color. Name the element 'X' and the black colored compound formed.",
+            "answer": "Element 'X' is Copper (Cu). The black colored compound is Copper(II) Oxide (CuO).",
+            "key_concepts": ["oxidation", "copper oxide"],
+            "marks": 3,
+            "source_section": "Section 1.2.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between exothermic and endothermic reactions with one example each.",
+            "answer": "Exothermic reactions release heat (e.g., burning of natural gas). Endothermic reactions absorb heat/energy (e.g., decomposition of calcium carbonate).",
+            "key_concepts": ["energy changes"],
+            "marks": 3,
+            "source_section": "Section 1.2.1 & 1.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the balanced chemical equation for the reaction: Barium chloride + Aluminium sulphate → Barium sulphate + Aluminium chloride.",
+            "answer": "3BaCl2 + Al2(SO4)3 → 3BaSO4 + 2AlCl3",
+            "key_concepts": ["balancing equations"],
+            "marks": 3,
+            "source_section": "Section 1.1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the role of a catalyst in a chemical reaction?",
+            "answer": "A catalyst is a substance that increases the rate of a chemical reaction without itself undergoing any permanent chemical change.",
+            "key_concepts": ["catalyst"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does the color of copper sulphate solution change when an iron nail is dipped in it?",
+            "answer": "Iron is more reactive than copper, so it displaces copper from the copper sulphate solution, forming green iron sulphate and depositing copper on the nail.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 3,
+            "source_section": "Section 1.2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Identify the substances that are oxidized and reduced in: CuO + H2 → Cu + H2O.",
+            "answer": "H2 is oxidized to H2O; CuO is reduced to Cu.",
+            "key_concepts": ["redox", "oxidation", "reduction"],
+            "marks": 3,
+            "source_section": "Section 1.2.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the term 'Thermal Decomposition' with a balanced equation.",
+            "answer": "When a decomposition reaction is carried out by heating. Example: CaCO3(s) --Heat--> CaO(s) + CO2(g).",
+            "key_concepts": ["decomposition"],
+            "marks": 3,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'rancidity'? Suggest two methods to prevent it.",
+            "answer": "The oxidation of fats and oils in food resulting in foul smell and taste. Prevention: 1. Adding antioxidants, 2. Nitrogen flushing.",
+            "key_concepts": ["rancidity"],
+            "marks": 3,
+            "source_section": "Section 1.3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why do we apply paint on iron articles?",
+            "answer": "To prevent rusting by creating a barrier that stops air (oxygen) and moisture from coming into contact with the iron surface.",
+            "key_concepts": ["corrosion prevention"],
+            "marks": 3,
+            "source_section": "Section 1.3.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is decomposition of silver chloride stored in dark-colored bottles?",
+            "answer": "Silver chloride decomposes in the presence of light. Dark bottles prevent light from entering and triggering this reaction.",
+            "key_concepts": ["photolytic decomposition"],
+            "marks": 3,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Write the chemical equation for the reaction of quicklime with water. What type of reaction is it?",
+            "answer": "CaO + H2O → Ca(OH)2 + Heat. It is a combination and exothermic reaction.",
+            "key_concepts": ["combination reaction"],
+            "marks": 3,
+            "source_section": "Section 1.2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when dilute hydrochloric acid is added to iron filings?",
+            "answer": "Hydrogen gas and iron(II) chloride are produced: Fe + 2HCl → FeCl2 + H2.",
+            "key_concepts": ["acid-metal reaction"],
+            "marks": 3,
+            "source_section": "Section 1.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "How can you test for the evolution of Hydrogen gas during a reaction?",
+            "answer": "Bring a burning splinter near the mouth of the test tube; the gas burns with a 'pop' sound.",
+            "key_concepts": ["gas identification"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Define 'Precipitation Reaction' with an example.",
+            "answer": "A reaction that produces an insoluble solid (precipitate). Example: Na2SO4 + BaCl2 → BaSO4(s) + 2NaCl.",
+            "key_concepts": ["precipitate"],
+            "marks": 3,
+            "source_section": "Section 1.2.4"
+        },
+        {
+            "question_number": 17,
+            "question": "During the electrolysis of water, why is the volume of gas collected at one electrode double the other?",
+            "answer": "Water (H2O) contains two parts hydrogen and one part oxygen by volume. Thus, hydrogen collected is double the oxygen.",
+            "key_concepts": ["electrolysis"],
+            "marks": 3,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the difference between Displacement and Double Displacement reactions?",
+            "answer": "Displacement involves one element replacing another; Double Displacement involves an exchange of ions between two compounds.",
+            "key_concepts": ["reaction types"],
+            "marks": 3,
+            "source_section": "Section 1.2.3 & 1.2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "State the observations when Lead Nitrate powder is heated in a boiling tube.",
+            "answer": "Brown fumes of Nitrogen Dioxide (NO2) are evolved and a yellow residue of Lead Oxide (PbO) is left.",
+            "key_concepts": ["decomposition"],
+            "marks": 3,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why respiration is an exothermic process.",
+            "answer": "During respiration, glucose combines with oxygen in cells and breaks down into CO2 and water, releasing energy.",
+            "key_concepts": ["respiration"],
+            "marks": 3,
+            "source_section": "Section 1.2.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Define corrosion. Name a metal that does not corrode easily.",
+            "answer": "Corrosion is the gradual destruction of metals by chemical reaction with the environment. Gold/Platinum do not corrode easily.",
+            "key_concepts": ["corrosion"],
+            "marks": 3,
+            "source_section": "Section 1.3.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is an oxidizing agent? Identify it in: ZnO + C → Zn + CO.",
+            "answer": "An oxidizing agent is a substance that gives oxygen or removes hydrogen. Here, ZnO is the oxidizing agent.",
+            "key_concepts": ["oxidizing agent"],
+            "marks": 3,
+            "source_section": "Section 1.2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What do the symbols (s), (l), (g), and (aq) represent in a chemical equation?",
+            "answer": "(s) Solid, (l) Liquid, (g) Gas, and (aq) Aqueous solution (dissolved in water).",
+            "key_concepts": ["physical states"],
+            "marks": 3,
+            "source_section": "Section 1.1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Why are decomposition reactions called the opposite of combination reactions?",
+            "answer": "In combination, two or more substances form one product; in decomposition, one reactant breaks down into two or more products.",
+            "key_concepts": ["reaction types"],
+            "marks": 3,
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Balance: Fe + H2O → Fe3O4 + H2.",
+            "answer": "3Fe + 4H2O → Fe3O4 + 4H2",
+            "key_concepts": ["balancing"],
+            "marks": 3,
+            "source_section": "Section 1.1.2"
+        }
+    ]
+}

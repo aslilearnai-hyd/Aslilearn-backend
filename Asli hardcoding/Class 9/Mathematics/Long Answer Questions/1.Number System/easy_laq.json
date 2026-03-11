@@ -1,0 +1,394 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-06T01:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define natural numbers and whole numbers with examples.",
+            "answer": "Natural numbers are counting numbers starting from 1 such as 1, 2, 3, 4. Whole numbers include all natural numbers along with zero. Example: 0, 1, 2, 3.",
+            "answer_outline": [
+                "Definition of natural numbers",
+                "Examples",
+                "Definition of whole numbers",
+                "Examples"
+            ],
+            "key_concepts": [
+                "natural numbers",
+                "whole numbers"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain integers with examples.",
+            "answer": "Integers are numbers that include positive numbers, negative numbers and zero. Examples include -3, -2, -1, 0, 1, 2, 3.",
+            "answer_outline": [
+                "Definition of integers",
+                "Positive integers",
+                "Negative integers",
+                "Examples"
+            ],
+            "key_concepts": [
+                "integers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Define rational numbers and give examples.",
+            "answer": "A rational number is a number that can be expressed in the form p/q where p and q are integers and q ≠ 0. Examples include 1/2, 3/4 and 5.",
+            "answer_outline": [
+                "Definition",
+                "Fraction form",
+                "Examples"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Define irrational numbers and give examples.",
+            "answer": "Irrational numbers are numbers that cannot be written in the form p/q. Their decimal expansion is non-terminating and non-repeating. Examples include √2, √3 and π.",
+            "answer_outline": [
+                "Definition",
+                "Decimal property",
+                "Examples"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain real numbers with examples.",
+            "answer": "Real numbers include all rational and irrational numbers. They represent all numbers that can be shown on the number line.",
+            "answer_outline": [
+                "Definition",
+                "Classification",
+                "Examples"
+            ],
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain square roots with examples.",
+            "answer": "The square root of a number is a value that when multiplied by itself gives the original number. Example: √9 = 3 and √16 = 4.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain terminating decimals with examples.",
+            "answer": "A terminating decimal is a decimal number that ends after a finite number of digits. Example: 0.25 and 0.5.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "terminating decimals"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain recurring decimals with examples.",
+            "answer": "Recurring decimals are decimals in which digits repeat infinitely. Example: 0.333… and 0.666….",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "recurring decimals"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why √4 is rational.",
+            "answer": "√4 = 2, which is an integer. Since integers can be written in the form p/q, √4 is rational.",
+            "answer_outline": [
+                "Evaluation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why √9 is rational.",
+            "answer": "√9 = 3. Since 3 is an integer, it can be written as 3/1 and is therefore rational.",
+            "answer_outline": [
+                "Evaluation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "square roots"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why √5 is irrational.",
+            "answer": "√5 cannot be written in the form p/q and its decimal expansion is non-terminating and non-repeating.",
+            "answer_outline": [
+                "Definition of irrational numbers",
+                "Reason"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why π is irrational.",
+            "answer": "π has a non-terminating and non-repeating decimal expansion and cannot be written as a fraction.",
+            "answer_outline": [
+                "Decimal nature",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of number line.",
+            "answer": "A number line is a straight line on which numbers are represented as points. Positive numbers lie on the right side of zero and negative numbers lie on the left side.",
+            "answer_outline": [
+                "Definition",
+                "Representation",
+                "Positive and negative numbers"
+            ],
+            "key_concepts": [
+                "number line"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the classification of real numbers.",
+            "answer": "Real numbers are classified into rational numbers and irrational numbers.",
+            "answer_outline": [
+                "Real numbers",
+                "Rational numbers",
+                "Irrational numbers"
+            ],
+            "key_concepts": [
+                "real numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why 0 is a rational number.",
+            "answer": "0 can be written as 0/1 where numerator and denominator are integers.",
+            "answer_outline": [
+                "Fraction form",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why 1 is neither prime nor composite.",
+            "answer": "1 has only one factor whereas prime numbers have two factors and composite numbers have more than two.",
+            "answer_outline": [
+                "Factors of 1",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the meaning of prime numbers with examples.",
+            "answer": "Prime numbers are numbers that have exactly two factors: 1 and itself. Examples: 2, 3, 5.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "prime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain composite numbers with examples.",
+            "answer": "Composite numbers are numbers that have more than two factors. Examples: 4, 6, 8.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "composite numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain coprime numbers with examples.",
+            "answer": "Two numbers are coprime if their HCF is 1. Example: 8 and 15.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "coprime numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain HCF with an example.",
+            "answer": "HCF is the greatest number that divides two numbers exactly. Example: HCF of 12 and 18 is 6.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "HCF"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain LCM with an example.",
+            "answer": "LCM is the smallest number divisible by two numbers. Example: LCM of 4 and 6 is 12.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "LCM"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain prime factorisation with example.",
+            "answer": "Prime factorisation is expressing a number as product of prime numbers. Example: 60 = 2² × 3 × 5.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "prime factorisation"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why every integer is rational.",
+            "answer": "Any integer can be written in the form p/q such as 5 = 5/1.",
+            "answer_outline": [
+                "Fraction form",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "rational numbers"
+            ],
+            "marks": 3,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the decimal expansion of rational numbers.",
+            "answer": "The decimal expansion of rational numbers either terminates or repeats infinitely.",
+            "answer_outline": [
+                "Property",
+                "Examples"
+            ],
+            "key_concepts": [
+                "decimal expansion"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of irrational numbers.",
+            "answer": "Irrational numbers help represent values that cannot be expressed as fractions and appear frequently in geometry such as √2 and π.",
+            "answer_outline": [
+                "Definition",
+                "Importance",
+                "Examples"
+            ],
+            "key_concepts": [
+                "irrational numbers"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

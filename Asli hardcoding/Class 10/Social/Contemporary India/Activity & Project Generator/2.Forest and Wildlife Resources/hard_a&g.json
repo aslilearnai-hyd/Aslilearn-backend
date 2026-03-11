@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Social Science (Geography)",
+  "chapter": "Forest and Wildlife Resources",
+  "difficulty": "Hard",
+  "source_pdf": "jess102.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Ecosystem Dependency Model",
+      "objective": "Analyze ecological interdependence among species",
+      "materials": ["Chart paper", "Sketch pens", "Notebook"],
+      "steps": [
+        "Choose a forest ecosystem",
+        "Identify producers, consumers, and decomposers",
+        "Create a diagram showing energy flow and ecological relationships"
+      ],
+      "learning_outcome": "Students analyze complex ecosystem interactions",
+      "evaluation": "Accuracy and completeness of ecological model (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Biodiversity Data Interpretation",
+      "objective": "Interpret biodiversity information and trends",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Research biodiversity statistics of India",
+        "Create a table showing species diversity across regions",
+        "Analyze reasons for high biodiversity in certain regions"
+      ],
+      "learning_outcome": "Students develop analytical skills using biodiversity data",
+      "evaluation": "Quality of data interpretation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Wildlife Conservation Policy Review",
+      "objective": "Evaluate major wildlife protection laws",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research the Wildlife Protection Act of 1972",
+        "List key provisions of the act",
+        "Evaluate its impact on wildlife conservation in India"
+      ],
+      "learning_outcome": "Students understand environmental policies and their impact",
+      "evaluation": "Depth of policy analysis (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Case Study on Project Tiger",
+      "objective": "Study a major wildlife conservation program",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research the history of Project Tiger",
+        "Explain the reasons behind declining tiger population",
+        "Evaluate the effectiveness of the project"
+      ],
+      "learning_outcome": "Students develop case study analysis skills",
+      "evaluation": "Critical evaluation of conservation efforts (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Forest Management Strategy Comparison",
+      "objective": "Compare different forest management approaches",
+      "materials": ["Notebook"],
+      "steps": [
+        "Compare Reserved, Protected, and Unclassed forests",
+        "Analyze advantages and limitations of each category",
+        "Suggest improvements for forest management"
+      ],
+      "learning_outcome": "Students critically evaluate forest management strategies",
+      "evaluation": "Quality of comparative analysis (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Community-Based Conservation Analysis",
+      "objective": "Evaluate the role of communities in conservation",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research the Chipko Movement",
+        "Explain its social and environmental impact",
+        "Compare it with another community conservation effort"
+      ],
+      "learning_outcome": "Students understand the power of grassroots movements",
+      "evaluation": "Depth of comparative analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Sacred Groves Research Project",
+      "objective": "Investigate traditional ecological conservation",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research sacred groves in India",
+        "Explain their ecological importance",
+        "Discuss how cultural traditions help protect biodiversity"
+      ],
+      "learning_outcome": "Students analyze cultural contributions to conservation",
+      "evaluation": "Research quality and explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Environmental Problem Investigation",
+      "objective": "Investigate a real environmental issue affecting wildlife",
+      "materials": ["Notebook", "Internet", "Newspaper articles"],
+      "steps": [
+        "Identify a wildlife conservation issue in India",
+        "Analyze causes and consequences",
+        "Propose realistic solutions"
+      ],
+      "learning_outcome": "Students develop problem-solving and research skills",
+      "evaluation": "Depth of investigation and proposed solutions (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Joint Forest Management Evaluation",
+      "objective": "Assess effectiveness of JFM program",
+      "materials": ["Notebook", "Internet"],
+      "steps": [
+        "Research the concept of Joint Forest Management",
+        "Analyze benefits for local communities and forests",
+        "Suggest improvements for better participation"
+      ],
+      "learning_outcome": "Students evaluate participatory conservation programs",
+      "evaluation": "Analytical explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Sustainable Development Proposal",
+      "objective": "Design a sustainable conservation plan",
+      "materials": ["Notebook", "Chart paper"],
+      "steps": [
+        "Choose a forest region in India",
+        "Identify threats to biodiversity in that region",
+        "Propose a sustainable development plan balancing conservation and human needs"
+      ],
+      "learning_outcome": "Students apply environmental concepts to real-world planning",
+      "evaluation": "Creativity and practicality of proposal (10 marks)"
+    }
+  ]
+}

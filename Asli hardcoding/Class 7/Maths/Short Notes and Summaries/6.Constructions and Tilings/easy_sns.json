@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Constructions and Tilings",
+    "difficulty": "Easy",
+    "source_pdf": "jemh114.pdf",
+    "short_notes": {
+        "key_points": [
+            "Geometric construction is the process of drawing shapes using only a ruler and a compass",
+            "A ruler is used to draw straight lines, while a compass is used to draw arcs and circles",
+            "Parallel lines are lines in a plane that never meet, no matter how far they are extended",
+            "Tilings (tessellations) are patterns of shapes that cover a surface without gaps or overlaps"
+        ],
+        "examples": [
+            "Tools: Using a 15 cm ruler and a metallic compass",
+            "Parallel lines: The opposite edges of a ruler or a railway track",
+            "Simple Tiling: Square floor tiles in a kitchen",
+            "Base line: Drawing a 5 cm segment as the start of a triangle"
+        ],
+        "formulas": [
+            "Parallel line property $\rightarrow$ Distance between two parallel lines remains constant",
+            "Sum of angles at a point in tiling $\rightarrow 360^{\circ}$"
+        ],
+        "exam_tips": [
+            "Keep your pencil tip sharp for precise arcs and points",
+            "Always draw a rough sketch before starting the actual construction",
+            "Ensure the compass hinge is tight so the radius doesn't change mid-draw",
+            "Identify the given measurements (sides and angles) clearly before beginning"
+        ]
+    }
+}

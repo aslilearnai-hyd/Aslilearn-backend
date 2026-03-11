@@ -1,0 +1,379 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 13: Our Environment",
+    "generated_at": "2026-03-11T00:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is an ecosystem? Give two examples of natural and artificial ecosystems.",
+            "answer": "An ecosystem is a functional unit of the environment consisting of living organisms and their non-living surroundings interacting with each other. Natural: forest, pond; Artificial: aquarium, crop field.",
+            "answer_outline": [
+                "Definition: biotic + abiotic interaction",
+                "Examples: natural and artificial"
+            ],
+            "key_concepts": [
+                "ecosystem definition",
+                "examples"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between food chain and food web.",
+            "answer": "Food chain is a linear sequence showing transfer of energy from producers to consumers. Food web is a network of interconnected food chains showing multiple feeding relationships in an ecosystem.",
+            "answer_outline": [
+                "Linear vs networked",
+                "Single vs multiple paths"
+            ],
+            "key_concepts": [
+                "food chain vs food web"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 3,
+            "question": "State the 10% law of energy transfer in an ecosystem.",
+            "answer": "According to the 10% law, only about 10% of the energy available at one trophic level is transferred to the next trophic level; the rest is lost mainly as heat.",
+            "answer_outline": [
+                "10% transfer",
+                "Loss as heat"
+            ],
+            "key_concepts": [
+                "10% law",
+                "energy transfer"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is the pyramid of energy always upright?",
+            "answer": "The pyramid of energy is always upright because energy decreases at each successive trophic level due to the 10% law and losses in the form of heat and respiration.",
+            "answer_outline": [
+                "Energy decreases upward",
+                "Losses at each level"
+            ],
+            "key_concepts": [
+                "energy pyramid",
+                "upright nature"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is biomagnification? Give one example.",
+            "answer": "Biomagnification is the progressive increase in concentration of a non-biodegradable toxic substance at each trophic level in a food chain. Example: DDT accumulation in birds of prey.",
+            "answer_outline": [
+                "Increasing concentration upward",
+                "DDT example"
+            ],
+            "key_concepts": [
+                "biomagnification",
+                "example"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Name two ozone-depleting substances and state one harmful effect of ozone depletion.",
+            "answer": "Two ozone-depleting substances are CFCs (chlorofluorocarbons) and halons. Harmful effect: increased UV radiation reaching Earth, causing skin cancer and damage to eyes.",
+            "answer_outline": [
+                "CFCs and halons",
+                "UV increase and health effects"
+            ],
+            "key_concepts": [
+                "ozone depleters",
+                "effects"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the role of ozone in the atmosphere?",
+            "answer": "Ozone in the stratosphere absorbs most of the harmful ultraviolet (UV) radiation from the Sun, protecting living organisms on Earth from DNA damage and skin/eye problems.",
+            "answer_outline": [
+                "Absorbs UV rays",
+                "Protects life"
+            ],
+            "key_concepts": [
+                "ozone function",
+                "UV protection"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Differentiate between biodegradable and non-biodegradable substances. Give one example of each.",
+            "answer": "Biodegradable substances can be broken down by microbes into harmless simpler compounds (example: vegetable peels). Non-biodegradable substances cannot be decomposed by microbes and persist (example: plastic bags).",
+            "answer_outline": [
+                "Decomposable vs non-decomposable",
+                "Examples: peels vs plastic"
+            ],
+            "key_concepts": [
+                "biodegradable vs non-biodegradable"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Why should we segregate biodegradable and non-biodegradable wastes before disposal?",
+            "answer": "Segregation allows biodegradable wastes to be composted easily and non-biodegradable wastes to be recycled or disposed safely, reducing landfill burden, pollution, and promoting resource recovery.",
+            "answer_outline": [
+                "Enables composting and recycling",
+                "Reduces pollution and waste"
+            ],
+            "key_concepts": [
+                "waste segregation",
+                "benefits"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the role of decomposers in an ecosystem.",
+            "answer": "Decomposers break down dead plants and animals into simpler inorganic substances, releasing nutrients back into the soil for reuse by producers, thus completing the nutrient cycle.",
+            "answer_outline": [
+                "Breakdown of dead matter",
+                "Nutrient recycling"
+            ],
+            "key_concepts": [
+                "decomposers",
+                "nutrient cycle"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 11,
+            "question": "If 10,000 J of energy is available to producers, how much energy is available to secondary consumers in a food chain? Explain.",
+            "answer": "Producers: 10,000 J; Primary consumers: 1,000 J; Secondary consumers: 100 J (10% law). Energy decreases at each level due to losses in respiration and heat.",
+            "answer_outline": [
+                "10,000 → 1,000 → 100 J",
+                "Loss at each step"
+            ],
+            "key_concepts": [
+                "10% law application"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are most food chains limited to 3–4 trophic levels?",
+            "answer": "Due to the 10% law, energy available decreases drastically at higher levels (only ~10% transfers), so very little energy remains after 3–4 levels to support another population.",
+            "answer_outline": [
+                "Drastic energy reduction",
+                "Insufficient for higher levels"
+            ],
+            "key_concepts": [
+                "trophic levels limit",
+                "energy transfer"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How does excessive use of pesticides affect the balance in an ecosystem?",
+            "answer": "Pesticides kill useful insects and birds, enter food chains, cause biomagnification, reduce biodiversity, and disturb natural predator-prey balance, leading to pest resurgence or ecosystem imbalance.",
+            "answer_outline": [
+                "Kills non-target organisms",
+                "Biomagnification and imbalance"
+            ],
+            "key_concepts": [
+                "pesticide effects",
+                "ecosystem balance"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the Montreal Protocol? Why is it important?",
+            "answer": "The Montreal Protocol is an international agreement to phase out production and use of ozone-depleting substances like CFCs. It is important because it has helped slow ozone depletion and allowed partial recovery of the ozone layer.",
+            "answer_outline": [
+                "International agreement",
+                "Phase-out of ODS",
+                "Ozone recovery"
+            ],
+            "key_concepts": [
+                "Montreal Protocol",
+                "importance"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Why do we see fewer top carnivores than herbivores in an ecosystem?",
+            "answer": "Due to the 10% law, only a small fraction of energy reaches top carnivores, supporting fewer individuals. Herbivores receive more energy directly from producers, allowing larger populations.",
+            "answer_outline": [
+                "Low energy availability at top",
+                "Larger populations at base"
+            ],
+            "key_concepts": [
+                "trophic level populations",
+                "energy flow"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how UV radiation harms human health if the ozone layer is depleted.",
+            "answer": "Depleted ozone allows more UV-B rays to reach Earth, causing increased cases of skin cancer, cataracts, weakened immune system, and damage to crops and marine phytoplankton.",
+            "answer_outline": [
+                "More UV-B penetration",
+                "Skin cancer, eye damage"
+            ],
+            "key_concepts": [
+                "UV effects",
+                "health impact"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is composting considered a better method for managing biodegradable waste?",
+            "answer": "Composting converts biodegradable waste into nutrient-rich manure using natural decomposition, reduces landfill use, prevents methane emission, and returns nutrients to soil for plant growth.",
+            "answer_outline": [
+                "Natural decomposition",
+                "Nutrient-rich manure",
+                "Reduces landfill"
+            ],
+            "key_concepts": [
+                "composting benefits"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 18,
+            "question": "What will happen if all the decomposers are removed from an ecosystem?",
+            "answer": "Dead organisms and waste will accumulate, nutrients will not be recycled, soil fertility will decrease, producers will lack raw materials, and the entire food chain will eventually collapse.",
+            "answer_outline": [
+                "Waste accumulation",
+                "No nutrient recycling",
+                "Ecosystem collapse"
+            ],
+            "key_concepts": [
+                "decomposers essential",
+                "consequence of absence"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.1"
+        },
+        {
+            "question_number": 19,
+            "question": "How does energy flow differ from nutrient cycling in an ecosystem?",
+            "answer": "Energy flow is unidirectional—from Sun to producers to consumers—and lost as heat. Nutrient cycling is cyclic—nutrients are reused repeatedly through decomposition and uptake by producers.",
+            "answer_outline": [
+                "Unidirectional vs cyclic",
+                "Energy lost, nutrients reused"
+            ],
+            "key_concepts": [
+                "energy flow vs nutrient cycle"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are plastics considered harmful to the environment?",
+            "answer": "Plastics are non-biodegradable, persist for hundreds of years, cause pollution in soil and water, harm wildlife through ingestion/entanglement, and release microplastics that enter food chains.",
+            "answer_outline": [
+                "Non-biodegradable",
+                "Wildlife harm and microplastics"
+            ],
+            "key_concepts": [
+                "plastic pollution"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why humans are most affected by biomagnification of harmful chemicals.",
+            "answer": "Humans occupy the top trophic level, consume organisms from lower levels where toxins have already magnified, and store fat-soluble toxins in body tissues over long periods.",
+            "answer_outline": [
+                "Top trophic level",
+                "Fat-soluble accumulation"
+            ],
+            "key_concepts": [
+                "biomagnification in humans"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the significance of the ozone layer being present in the stratosphere?",
+            "answer": "The stratosphere has high ozone concentration that effectively absorbs UV radiation before it reaches the troposphere and Earth's surface, protecting life from harmful rays.",
+            "answer_outline": [
+                "High ozone concentration",
+                "Absorbs UV in stratosphere"
+            ],
+            "key_concepts": [
+                "stratospheric ozone"
+            ],
+            "marks": 2,
+            "source_section": "Section 13.4"
+        },
+        {
+            "question_number": 23,
+            "question": "How can students help in reducing non-biodegradable waste in daily life?",
+            "answer": "Students can carry cloth/jute bags, use metal/steel bottles instead of plastic, segregate waste, reuse notebooks, avoid single-use plastics, and promote recycling in school.",
+            "answer_outline": [
+                "Reduce plastic use",
+                "Reuse and recycle"
+            ],
+            "key_concepts": [
+                "individual actions",
+                "waste reduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is it better to use public transport or bicycles instead of private vehicles for short distances?",
+            "answer": "It reduces fuel consumption, lowers air pollution and greenhouse gases, decreases traffic congestion, conserves fossil fuels, and helps maintain ecological balance.",
+            "answer_outline": [
+                "Less pollution and fuel use",
+                "Environmental benefits"
+            ],
+            "key_concepts": [
+                "transport impact",
+                "pollution reduction"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how excessive use of chemical fertilizers affects the environment.",
+            "answer": "Excess fertilizers run off into water bodies causing eutrophication (algal blooms), oxygen depletion, death of aquatic life, and soil degradation due to nutrient imbalance and reduced fertility over time.",
+            "answer_outline": [
+                "Runoff and eutrophication",
+                "Aquatic life damage",
+                "Soil degradation"
+            ],
+            "key_concepts": [
+                "fertilizer pollution",
+                "eutrophication"
+            ],
+            "marks": 3,
+            "source_section": "Section 13.3"
+        }
+    ]
+}

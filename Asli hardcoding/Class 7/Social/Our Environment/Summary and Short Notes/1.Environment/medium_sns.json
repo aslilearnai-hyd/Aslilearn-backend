@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Environment",
+    "difficulty": "Medium",
+    "source_pdf": "jegy101.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Lithosphere is the solid crust or the hard top layer of the earth made up of rocks and minerals.",
+            "An Ecosystem is a system formed by the interaction of all living organisms with each other and with their physical environment.",
+            "The Atmosphere is the thin layer of air that surrounds the earth, held in place by the earth's gravitational force.",
+            "The Hydrosphere comprises various sources of water and different types of water bodies like rivers, lakes, and oceans.",
+            "Humans modify the natural environment to suit their needs, which can lead to ecological imbalance if not managed sustainably."
+        ],
+        "examples": [
+            "Ecosystems: A large rain forest, grassland, desert, mountains, lake, or even a small pond.",
+            "Lithosphere functions: Provides land for agriculture, human settlements, and is a source of mineral wealth.",
+            "Atmosphere functions: Protects us from the harmful rays and scorching heat of the sun.",
+            "Human interaction: Early humans adapted to nature, but modern humans have learned to grow crops and domesticate animals."
+        ],
+        "formulas": [
+            "Interaction Model: Living Organisms $\\rightleftharpoons$ Surroundings = Ecosystem",
+            "Atmospheric Protection: Atmosphere $\\rightarrow$ Filter $\\rightarrow$ UV Radiation/Heat"
+        ],
+        "exam_tips": [
+            "Differentiate clearly between 'Biosphere' (the zone of life) and 'Ecosystem' (the interaction within that zone).",
+            "Remember that the atmosphere consists of a number of gases, dust, and water vapour.",
+            "Recognize that the barter system was an early form of human environment interaction for trade.",
+            "Note that the hydrosphere is essential for all living organisms, not just humans."
+        ]
+    }
+}

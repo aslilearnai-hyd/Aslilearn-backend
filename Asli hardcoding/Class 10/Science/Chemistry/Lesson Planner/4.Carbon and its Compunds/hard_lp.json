@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Carbon and its Compounds",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the hybrid nature of carbon bonds and the geometry of allotropes",
+        "Master IUPAC nomenclature for polyfunctional and branched compounds",
+        "Explain the thermodynamics and mechanisms of Esterification and Saponification",
+        "Differentiate between structural, chain, and position isomerism with complex examples",
+        "Evaluate the oxidative and reductive pathways of alcohols and carboxylic acids",
+        "Analyze the chemical kinetics of soap action and the coordination chemistry of scum formation"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Covalent Bonding & Geometric Isomerism",
+            "topics_covered": [
+                "Nature of covalent bonds: Single, Double, and Triple",
+                "Tetravalency and the 109.5° bond angle (Basic intro to 3D geometry)",
+                "Structural vs. Position Isomerism in Butene and Pentene"
+            ],
+            "teaching_strategy": [
+                "3D Molecular Model demonstration",
+                "Analyzing why Carbon doesn't form $C^{4+}$ or $C^{4-}$ ions",
+                "Visualizing the 'pi' and 'sigma' bond concept (simplified)"
+            ],
+            "student_activities": [
+                "Draw all 5 structural isomers of Hexane ($C_{6}H_{14}$)",
+                "Calculate the total number of shared electron pairs in Benzene"
+            ],
+            "assessment": [
+                "Isomer identification worksheet",
+                "Oral quiz on bond angles and stability"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced Nomenclature & Polyfunctional Groups",
+            "topics_covered": [
+                "IUPAC rules for compounds with multiple functional groups",
+                "Priority order of functional groups (Carboxylic acid > Alcohol > Halogen)",
+                "Naming branched alkanes and alkenes"
+            ],
+            "teaching_strategy": [
+                "The 'Main Chain' selection algorithm",
+                "Drills on numbering from the end nearest to the priority group",
+                "Decoding complex names into structures"
+            ],
+            "student_activities": [
+                "Name complex molecules like 2-bromo-3-methylbutanoic acid",
+                "Draw structures for 'But-2-yne' and 'Propan-2-ol'"
+            ],
+            "assessment": [
+                "Nomenclature 'Code-breaker' challenge",
+                "Peer-evaluation of IUPAC naming"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Oxidation and Addition Mechanisms",
+            "topics_covered": [
+                "Mechanism of alkaline $KMnO_{4}$ oxidation",
+                "Hydrogenation kinetics and catalyst roles (Ni/Pd)",
+                "Substitution reactions in higher alkanes"
+            ],
+            "teaching_strategy": [
+                "Step-by-step electron transfer in oxidation",
+                "Comparison: Why saturated fats are solid and unsaturated are liquid",
+                "Discussion on why addition is an 'atom economy' favorable reaction"
+            ],
+            "student_activities": [
+                "Identify the oxidizing agent in the conversion of Propanol to Propanoic acid",
+                "Predict the product of 'HBr' addition to Propene (Intro to Markovnikov logic)"
+            ],
+            "assessment": [
+                "Equation prediction test",
+                "Short answer: Role of catalyst in hydrogenation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Chemistry of Ethanol: Reactions & Safety",
+            "topics_covered": [
+                "Dehydration of ethanol to ethene ($H_{2}SO_{4}$ at 443K)",
+                "Reaction with Sodium: Formation of Sodium Ethoxide",
+                "Denatured spirit and methanol toxicity"
+            ],
+            "teaching_strategy": [
+                "Temperature-dependent reactions of ethanol",
+                "The 'Pop' test for Hydrogen during Sodium reaction",
+                "Real-world case study: The chemistry of hangover and liver cirrhosis"
+            ],
+            "student_activities": [
+                "Write the mechanism for ethanol dehydration",
+                "Research: Why is Methanol considered a poison at the molecular level?"
+            ],
+            "assessment": [
+                "Reaction condition quiz (Temperature/Catalyst focus)",
+                "Worksheet on Ethanol's chemical properties"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Ethanoic Acid and Esterification Dynamics",
+            "topics_covered": [
+                "Properties of glacial acetic acid",
+                "Esterification: Reaction of acid and alcohol",
+                "Hydrolysis of esters (Acidic and Basic)"
+            ],
+            "teaching_strategy": [
+                "The 'Sweet-smelling' ester experiment in the lab",
+                "Analyzing why the reaction is reversible",
+                "Mechanism of the reaction with Carbonates ($NaHCO_{3}$/ $Na_{2}CO_{3}$)"
+            ],
+            "student_activities": [
+                "Perform the Esterification reaction and smell the product",
+                "Observe the effervescence of $CO_{2}$ and record the balanced equation"
+            ],
+            "assessment": [
+                "Practical log evaluation",
+                "HOTS: Identifying 'Compound A' and 'Compound B' in an ester puzzle"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Saponification and Micelle Kinetics",
+            "topics_covered": [
+                "Preparation of soap (Saponification mechanism)",
+                "Thermodynamics of Hydrophilic vs. Hydrophobic ends",
+                "Micelle formation in 3D space"
+            ],
+            "teaching_strategy": [
+                "Soap making demonstration using vegetable oil and $NaOH$",
+                "Analyzing the 'Tyndall effect' in soap solutions",
+                "Molecular animation of grease trapping"
+            ],
+            "student_activities": [
+                "Prepare a small sample of soap in a test tube",
+                "Draw a cross-section of a micelle trapping a dirt particle"
+            ],
+            "assessment": [
+                "Diagram labeling test",
+                "Explaining the role of the ionic 'head' in water solubility"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Hard Water and Detergent Analysis",
+            "topics_covered": [
+                "Scum formation: Reaction of soap with $Ca^{2+}$ and $Mg^{2+}$ ions",
+                "Structure of synthetic detergents (Sulfonates)",
+                "Environmental impact of non-biodegradable detergents"
+            ],
+            "teaching_strategy": [
+                "Experimental comparison: Lather formation in hard vs. distilled water",
+                "Analyzing the chemical formula of Scum (Calcium Stearate)",
+                "Comprehensive revision through Assertion-Reasoning questions"
+            ],
+            "student_activities": [
+                "Test the 'cleansing capacity' of soap vs. detergent in hard water",
+                "Solve a 25-mark advanced chapter test"
+            ],
+            "assessment": [
+                "Summative Assessment (25 Marks)",
+                "Review of logic in multi-step chemical conversions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Advanced Molecular Model Kit (incl. lone pairs)",
+        "Chemicals: Glacial Acetic Acid, Ethanol, Conc. $H_{2}SO_{4}$, $NaOH$, $KMnO_{4}$",
+        "Hard water salts ($CaCl_{2}$), Vegetable oil",
+        "NCERT Exemplar and IIT-JEE Foundation material",
+        "Ester samples (Amyl acetate/Ethyl acetate)"
+    ],
+    "evaluation_methods": [
+        "Multi-step conversion puzzles",
+        "IUPAC nomenclature exam (Hard)",
+        "Mechanism-based descriptive answers",
+        "Assertion & Reason MCQs",
+        "Practical skill assessment"
+    ],
+    "teacher_tip": "At the 'Hard' level, students often struggle with the reversibility of Esterification. Teach them the 'Le Chatelier' concept (simply) by explaining that removing water as it forms helps drive the reaction toward the ester."
+}

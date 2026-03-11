@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Changes Around Us: Physical and Chemical",
+    "difficulty": "Hard",
+    "source_pdf": "jesc103.pdf",
+    "short_notes": {
+        "key_points": [
+            "Chemical changes involve the breaking and forming of chemical bonds, resulting in a change in the internal molecular structure.",
+            "The mass of substances remains constant in a closed system during these changes (Law of Conservation of Mass).",
+            "Ozone layer depletion is a vital chemical change where $O_3$ absorbs UV radiation and breaks down into $O_2$, protecting Earth.",
+            "Crystallization is technically a physical change because the chemical identity of the substance remains identical throughout the phase transition.",
+            "The rate of rusting is significantly accelerated by the presence of electrolytes (like salt in sea water), which increases the conductivity of water."
+        ],
+        "examples": [
+            "Endothermic Change: Dissolving ammonium chloride in water (physical/chemical boundary where heat is absorbed).",
+            "Displacement Chemistry: When $Fe$ replaces $Cu$ in $CuSO_4$, the blue color disappears because the $Cu^{2+}$ ions are reduced to metallic copper.",
+            "Galvanic Protection: Zinc acts as a 'sacrificial anode' because it is more reactive than Iron and oxidizes first.",
+            "Protective Oxidation: Aluminum does not rust like iron because it forms a thin, tough, transparent layer of Aluminum Oxide ($Al_2O_3$) that prevents further reaction."
+        ],
+        "formulas": [
+            "Complete Rusting Equation: $4Fe + 3O_2 + xH_2O \rightarrow 2Fe_2O_3 \cdot xH_2O$ (Hydrated Ferric Oxide)",
+            "Reaction with Magnesium Ribbon: $2Mg + O_2 \rightarrow 2MgO$ (White Ash)",
+            "Nature of Magnesium Ash: $MgO + H_2O \rightarrow Mg(OH)_2$ (Turns red litmus blue, proving it is basic)"
+        ],
+        "exam_tips": [
+            "Differentiate between 'Melting' and 'Dissolving'; both are physical but involve different molecular interactions.",
+            "In the Lime Water test, remember that adding *excess* $CO_2$ will eventually make the milkiness disappear as soluble Calcium Bicarbonate forms.",
+            "Understand that the burning of a candle is a dual change: physical (melting/wicking) and chemical (combustion of hydrocarbons).",
+            "Be precise: Rust is not just 'Iron Oxide', it is specifically 'Hydrated Iron Oxide'."
+        ]
+    }
+}

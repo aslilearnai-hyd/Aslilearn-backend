@@ -1,0 +1,259 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Medium",
+    "source_pdf": "jemh107.pdf",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the Cartesian coordinate system.",
+            "answer": "The Cartesian coordinate system uses two perpendicular axes to locate points using ordered pairs.",
+            "key_concepts": [
+                "Cartesian system"
+            ],
+            "marks": 3,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe the position of a point in the first quadrant.",
+            "answer": "In the first quadrant, both x and y coordinates are positive.",
+            "key_concepts": [
+                "first quadrant"
+            ],
+            "marks": 2,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how to plot a point on the Cartesian plane.",
+            "answer": "Move horizontally for x-coordinate and vertically for y-coordinate to mark the point.",
+            "key_concepts": [
+                "plotting points"
+            ],
+            "marks": 3,
+            "source_section": "Plotting Points"
+        },
+        {
+            "question_number": 4,
+            "question": "What are the coordinates of a point lying on the x-axis?",
+            "answer": "The y-coordinate is zero while x can be any real number.",
+            "key_concepts": [
+                "x-axis"
+            ],
+            "marks": 2,
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 5,
+            "question": "What are the coordinates of a point lying on the y-axis?",
+            "answer": "The x-coordinate is zero while y can be any real number.",
+            "key_concepts": [
+                "y-axis"
+            ],
+            "marks": 2,
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 6,
+            "question": "Differentiate between x-axis and y-axis.",
+            "answer": "The x-axis is horizontal and the y-axis is vertical.",
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 2,
+            "source_section": "Axes"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the significance of the origin.",
+            "answer": "The origin is the reference point from which all coordinates are measured.",
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 3,
+            "source_section": "Cartesian Plane"
+        },
+        {
+            "question_number": 8,
+            "question": "In which quadrant does the point (−4, −6) lie?",
+            "answer": "The point lies in the third quadrant.",
+            "key_concepts": [
+                "third quadrant"
+            ],
+            "marks": 1,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 9,
+            "question": "In which quadrant does the point (5, −2) lie?",
+            "answer": "The point lies in the fourth quadrant.",
+            "key_concepts": [
+                "fourth quadrant"
+            ],
+            "marks": 1,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is an ordered pair important?",
+            "answer": "It gives exact position of a point on the plane.",
+            "key_concepts": [
+                "ordered pair"
+            ],
+            "marks": 2,
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 11,
+            "question": "State the sign of x-coordinate to the right of y-axis.",
+            "answer": "Positive",
+            "key_concepts": [
+                "x-coordinate"
+            ],
+            "marks": 1,
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 12,
+            "question": "State the sign of y-coordinate above x-axis.",
+            "answer": "Positive",
+            "key_concepts": [
+                "y-coordinate"
+            ],
+            "marks": 1,
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 13,
+            "question": "What happens to the coordinates when a point moves left?",
+            "answer": "The x-coordinate decreases.",
+            "key_concepts": [
+                "movement"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens to the coordinates when a point moves upward?",
+            "answer": "The y-coordinate increases.",
+            "key_concepts": [
+                "movement"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 15,
+            "question": "Can two different points have the same coordinates?",
+            "answer": "No, each point has a unique ordered pair.",
+            "key_concepts": [
+                "uniqueness"
+            ],
+            "marks": 2,
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is the Cartesian plane divided into four quadrants?",
+            "answer": "To identify the position of points based on signs of coordinates.",
+            "key_concepts": [
+                "quadrants"
+            ],
+            "marks": 3,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 17,
+            "question": "Is the point (0, 5) in any quadrant?",
+            "answer": "No, it lies on the y-axis.",
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 2,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 18,
+            "question": "Is the point (−3, 0) in any quadrant?",
+            "answer": "No, it lies on the x-axis.",
+            "key_concepts": [
+                "axes"
+            ],
+            "marks": 2,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 19,
+            "question": "Write one real-life example of coordinate geometry.",
+            "answer": "Locating places on maps.",
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 2,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why coordinate geometry is useful.",
+            "answer": "It helps represent geometric problems algebraically.",
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 3,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the distance of origin from itself?",
+            "answer": "Zero",
+            "key_concepts": [
+                "origin"
+            ],
+            "marks": 1,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 22,
+            "question": "Which quadrant contains points with x negative and y positive?",
+            "answer": "Second quadrant",
+            "key_concepts": [
+                "second quadrant"
+            ],
+            "marks": 1,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 23,
+            "question": "Which quadrant contains points with x positive and y negative?",
+            "answer": "Fourth quadrant",
+            "key_concepts": [
+                "fourth quadrant"
+            ],
+            "marks": 1,
+            "source_section": "Quadrants"
+        },
+        {
+            "question_number": 24,
+            "question": "Define horizontal distance in coordinate geometry.",
+            "answer": "Distance measured parallel to x-axis.",
+            "key_concepts": [
+                "distance"
+            ],
+            "marks": 2,
+            "source_section": "Coordinates"
+        },
+        {
+            "question_number": 25,
+            "question": "Define vertical distance in coordinate geometry.",
+            "answer": "Distance measured parallel to y-axis.",
+            "key_concepts": [
+                "distance"
+            ],
+            "marks": 2,
+            "source_section": "Coordinates"
+        }
+    ]
+}

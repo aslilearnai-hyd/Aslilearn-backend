@@ -1,0 +1,127 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 11: Electricity",
+    "generated_at": "2026-03-11T02:25:00",
+    "concepts": [
+        {
+            "concept_name": "Electric Charge and Current",
+            "difficulty": "easy",
+            "lesson": "Electric current is the flow of electric charges through a conductor. It occurs when charges move due to a potential difference across a circuit.",
+            "real_example": "When a battery is connected to a bulb through wires, electrons flow through the circuit and the bulb glows.",
+            "key_points": [
+                "Current is the flow of electric charge",
+                "Measured in ampere (A)",
+                "Requires a closed circuit to flow"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "concept_name": "Electric Potential Difference",
+            "difficulty": "easy",
+            "lesson": "Potential difference is the work done to move a unit charge from one point to another in an electric circuit. It is the driving force that causes current to flow.",
+            "real_example": "A battery creates a potential difference that pushes electrons through wires to light a bulb.",
+            "key_points": [
+                "Measured in volts (V)",
+                "Causes electric current to flow",
+                "Measured using a voltmeter"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "concept_name": "Ohm’s Law",
+            "difficulty": "medium",
+            "lesson": "Ohm’s law states that the electric current through a conductor is directly proportional to the potential difference across its ends, provided the temperature remains constant.",
+            "real_example": "If the voltage applied across a resistor is doubled, the current through it also doubles, assuming resistance remains constant.",
+            "key_points": [
+                "Relationship between voltage, current, and resistance",
+                "Expressed as V = IR",
+                "Valid only when temperature is constant"
+            ],
+            "source_section": "Section 11.2"
+        },
+        {
+            "concept_name": "Resistance of a Conductor",
+            "difficulty": "medium",
+            "lesson": "Resistance is the property of a conductor that opposes the flow of electric current. It depends on the length, cross-sectional area, and nature of the material.",
+            "real_example": "Thin wires offer more resistance than thick wires made of the same material.",
+            "key_points": [
+                "Unit of resistance is ohm (Ω)",
+                "Depends on length, area, and material",
+                "Longer wires have greater resistance"
+            ],
+            "source_section": "Section 11.2"
+        },
+        {
+            "concept_name": "Resistors in Series",
+            "difficulty": "medium",
+            "lesson": "In a series circuit, resistors are connected end-to-end so that the same current flows through each resistor. The total resistance is the sum of individual resistances.",
+            "real_example": "Decorative lights connected one after another in a line behave like resistors in series.",
+            "key_points": [
+                "Same current flows through all resistors",
+                "Total resistance increases",
+                "R = R1 + R2 + R3"
+            ],
+            "source_section": "Section 11.3"
+        },
+        {
+            "concept_name": "Resistors in Parallel",
+            "difficulty": "hard",
+            "lesson": "In a parallel circuit, resistors are connected across the same two points. Each resistor has the same potential difference, and the total resistance decreases.",
+            "real_example": "Household wiring uses parallel circuits so that appliances receive the same voltage.",
+            "key_points": [
+                "Same voltage across each resistor",
+                "Total resistance decreases",
+                "1/R = 1/R1 + 1/R2 + 1/R3"
+            ],
+            "source_section": "Section 11.3"
+        },
+        {
+            "concept_name": "Heating Effect of Electric Current",
+            "difficulty": "medium",
+            "lesson": "When electric current passes through a conductor, heat is produced due to resistance. This phenomenon is known as the heating effect of electric current.",
+            "real_example": "Electric heaters and electric irons use the heating effect of current to produce heat.",
+            "key_points": [
+                "Heat produced due to resistance",
+                "Used in heating appliances",
+                "Related to electrical energy conversion"
+            ],
+            "source_section": "Section 11.4"
+        },
+        {
+            "concept_name": "Electric Power",
+            "difficulty": "medium",
+            "lesson": "Electric power is the rate at which electrical energy is consumed or converted in an electric circuit. It indicates how fast energy is used by an appliance.",
+            "real_example": "A 100 W bulb consumes electrical energy faster than a 60 W bulb.",
+            "key_points": [
+                "Measured in watt (W)",
+                "P = VI",
+                "Indicates rate of energy consumption"
+            ],
+            "source_section": "Section 11.5"
+        },
+        {
+            "concept_name": "Electrical Energy Consumption",
+            "difficulty": "hard",
+            "lesson": "Electrical energy consumed by an appliance depends on its power and the time for which it is used. It is commonly measured in kilowatt-hour (kWh), also called a unit of electricity.",
+            "real_example": "If a 1 kW heater runs for 1 hour, it consumes 1 kWh of electrical energy.",
+            "key_points": [
+                "Energy = Power × Time",
+                "Unit is kilowatt-hour (kWh)",
+                "Used for electricity billing"
+            ],
+            "source_section": "Section 11.5"
+        },
+        {
+            "concept_name": "Safety Devices in Electric Circuits",
+            "difficulty": "easy",
+            "lesson": "Safety devices such as fuses and circuit breakers protect electrical circuits from excessive current and prevent damage to appliances.",
+            "real_example": "A fuse melts and breaks the circuit when too much current flows through it.",
+            "key_points": [
+                "Protect circuits from overload",
+                "Fuse breaks circuit when current exceeds limit",
+                "Ensures electrical safety"
+            ],
+            "source_section": "Section 11.6"
+        }
+    ]
+}

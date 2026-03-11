@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: The Story of Flying",
+    "generated_at": "2026-03-09T15:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyse how Amelia Earhart's first flight acted as a catalyst for her career.",
+            "answer": "Amelia’s first flight transformed her from a curious spectator into an active participant. The visceral experience of lifting off the ground replaced her intellectual interest with a profound emotional drive to master aviation.",
+            "answer_outline": ["Initial curiosity", "Emotional impact of takeoff", "Decision to pursue training"],
+            "key_concepts": ["catalyst", "first flight", "motivation"],
+            "marks": 5,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Discuss the importance of technical preparation in Amelia’s journey to becoming a pilot.",
+            "answer": "Beyond physical practice, Amelia studied aerodynamics and instrument mechanics. This technical foundation was essential for her to understand the 'why' behind the plane's movements, ensuring safety through knowledge.",
+            "answer_outline": ["Study of aerodynamics", "Instrument training", "Safety through knowledge"],
+            "key_concepts": ["preparation", "technical skills", "aerodynamics"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the challenges of navigating without modern technology like GPS in early aviation.",
+            "answer": "Early pilots relied on visual landmarks and 'dead reckoning.' This required constant environmental awareness and the ability to translate ground features into a mental map to maintain a correct flight path.",
+            "answer_outline": ["Lack of GPS", "Visual landmarks", "Mental mapping"],
+            "key_concepts": ["navigation", "dead reckoning", "environment"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Evaluate the role of the flying instructor in Amelia’s early development.",
+            "answer": "The instructor provided a balance of technical guidance and emotional support. By correcting her mistakes and gradually increasing her responsibility, the instructor built the confidence necessary for her solo flight.",
+            "answer_outline": ["Technical guidance", "Correction of mistakes", "Building solo confidence"],
+            "key_concepts": ["mentorship", "instruction", "trust"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the sensory contrast between 'Ground Life' and 'Flight Life' as depicted in the text.",
+            "answer": "Earhart contrasts the cluttered, noisy, and heavy sensations of the ground with the expansive, silent, and weightless feeling of the sky. This shift represents her personal feeling of true freedom.",
+            "answer_outline": ["Ground clutter/noise", "Sky expansiveness", "Symbolism of freedom"],
+            "key_concepts": ["sensory contrast", "freedom", "atmosphere"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How did Amelia manage the fear associated with solo flights?",
+            "answer": "Amelia managed fear through rigorous practice and logical focus. By concentrating on specific cockpit tasks and safety procedures, she prevented her nervous energy from turning into paralyzing panic.",
+            "answer_outline": ["Task-oriented focus", "Rigorous practice", "Panic prevention"],
+            "key_concepts": ["fear management", "focus", "solo flight"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Analyse the significance of the first solo flight as a professional milestone.",
+            "answer": "The solo flight was a psychological threshold that proved Amelia’s self-reliance. It removed the 'safety net' of the instructor, confirming her ability to handle the aircraft's total responsibility alone.",
+            "answer_outline": ["Psychological threshold", "Removal of safety net", "Proof of self-reliance"],
+            "key_concepts": ["solo flight", "milestone", "self-reliance"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Discuss how viewing the earth from an airplane changed Amelia’s perspective on the world.",
+            "answer": "High-altitude flight reduced cities and landscape features to toy-like dimensions. This 'aerial view' fostered a sense of humility and a broader understanding of the planet's vastness and beauty.",
+            "answer_outline": ["Reduction of scale", "Sense of humility", "Appreciation of beauty"],
+            "key_concepts": ["perspective", "humility", "landscape"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What does the text suggest about the relationship between 'Mistakes' and 'Proficiency'?",
+            "answer": "Earhart views mistakes as essential learning tools. Each error in judgment or technique during training provided data that allowed her to refine her skills and prepare for real-world emergencies.",
+            "answer_outline": ["Mistakes as data", "Refinement of skills", "Emergency preparation"],
+            "key_concepts": ["learning", "proficiency", "experience"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Evaluate the importance of the instrument panel in managing flight risks.",
+            "answer": "The instrument panel provided objective data that complemented Amelia's intuition. Mastering these dials allowed her to maintain control even when her senses were confused by weather or darkness.",
+            "answer_outline": ["Objective data", "Complementing intuition", "Control in poor conditions"],
+            "key_concepts": ["instrumentation", "risk management", "control"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how Earhart’s story inspires readers to face their own 'Invisble Fears'.",
+            "answer": "By documenting her journey from a nervous beginner to a record-breaking pilot, Earhart shows that courage is a built habit. She inspires others to pursue their passions despite internal hesitation.",
+            "answer_outline": ["Documentation of growth", "Courage as a habit", "Inspiration to pursue passion"],
+            "key_concepts": ["inspiration", "courage", "growth"],
+            "marks": 5,
+            "source_section": "General"
+        },
+        {
+            "question_number": 12,
+            "question": "Analyse the physical toll of early aviation on the pilot’s body.",
+            "answer": "Early pilots endured extreme cold, engine vibrations, and loud noise. These physical stressors required high levels of stamina and mental toughness to maintain focus during long flights.",
+            "answer_outline": ["Environmental stressors", "Requirement for stamina", "Focus under discomfort"],
+            "key_concepts": ["physical toll", "stamina", "endurance"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Discuss the 'Price of Freedom' as it relates to the discipline of flight training.",
+            "answer": "The freedom of the sky was not free; it was earned through the confinement of ground school and hours of repetitive practice. This discipline ensured that the pilot was worthy of the sky's liberation.",
+            "answer_outline": ["Freedom vs. Discipline", "Ground school confinement", "Earned liberation"],
+            "key_concepts": ["freedom", "discipline", "effort"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Evaluate the importance of 'Mental Mapping' in solo cross-country navigation.",
+            "answer": "Mental mapping allowed Amelia to internalize geographical features. This mental agility was crucial for staying on course when visual cues were limited or when navigating unfamiliar territories.",
+            "answer_outline": ["Internalizing geography", "Mental agility", "Navigation in limited visibility"],
+            "key_concepts": ["mental mapping", "navigation", "spatial awareness"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "How did Earhart’s writing style reflect her identity as a pilot?",
+            "answer": "Her writing is direct, factual, and precise, mirroring the clear decision-making required in a cockpit. She avoids excessive sentimentality to focus on the essential truths of her experience.",
+            "answer_outline": ["Direct prose", "Precision in description", "Reflecting cockpit mindset"],
+            "key_concepts": ["writing style", "identity", "precision"],
+            "marks": 5,
+            "source_section": "General"
+        },
+        {
+            "question_number": 16,
+            "question": "Discuss the symbolic importance of the airplane as an 'Extension of the Self'.",
+            "answer": "The aircraft was not just a machine; it responded to Amelia’s touch like an extension of her body. This symbiotic bond allowed for more intuitive and successful navigation of the elements.",
+            "answer_outline": ["Machine as extension", "Response to touch", "Symbiotic bond"],
+            "key_concepts": ["symbiosis", "mechanics", "extension"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Analyse the theme of 'Solitude' vs. 'Loneliness' in the cockpit.",
+            "answer": "While Amelia was physically alone, the cockpit provided a 'productive solitude' where she was focused and connected to her environment, rather than feeling lonely or abandoned.",
+            "answer_outline": ["Physical isolation", "Productive solitude", "Environmental connection"],
+            "key_concepts": ["solitude", "focus", "connection"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "How did Earhart address the social challenges of being a female pioneer in a male-dominated field?",
+            "answer": "She focused on her competence and achievements rather than her gender. By consistently proving her technical skills, she earned respect and opened doors for future female aviators.",
+            "answer_outline": ["Focus on competence", "Technical achievement", "Respect through performance"],
+            "key_concepts": ["gender", "pioneer", "competence"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Evaluate the role of 'Persistence' in overcoming learning plateaus.",
+            "answer": "During times when her progress seemed to stall, persistence allowed Amelia to keep practicing until she achieved a breakthrough. This resilience was the key to her eventual mastery of flight.",
+            "answer_outline": ["Learning plateaus", "Breakthroughs", "Resilience through practice"],
+            "key_concepts": ["persistence", "learning", "breakthrough"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how 'Scientific Curiosity' helped Amelia overcome irrational fears.",
+            "answer": "Understanding the physics of flight—such as how lift works—turned the 'magic' of flying into a predictable science. This logical approach made the sky feel like a safe place to explore.",
+            "answer_outline": ["Physics of flight", "Predictable science", "Logic over fear"],
+            "key_concepts": ["curiosity", "science", "logic"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Discuss the importance of 'Checklists' and 'Procedures' in Amelia’s flying routine.",
+            "answer": "Procedures provided a mental structure that reduced the chance of error. By following established protocols, Amelia could manage the complexity of the plane even during stressful situations.",
+            "answer_outline": ["Mental structure", "Error reduction", "Protocol management"],
+            "key_concepts": ["procedures", "routine", "safety"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Analyse the impact of 'Weather' as a major variable in early flight planning.",
+            "answer": "Weather was an unpredictable force that could change a flight's outcome. Amelia had to learn to read clouds and wind patterns, integrating environmental data with her technical navigation.",
+            "answer_outline": ["Unpredictability of weather", "Reading environmental signs", "Navigation integration"],
+            "key_concepts": ["weather", "variables", "planning"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How did successful landings impact Amelia’s psychological state during training?",
+            "answer": "Every successful landing acted as positive reinforcement, building her confidence for the next flight. It was physical proof that she was gaining control over the powerful machine.",
+            "answer_outline": ["Positive reinforcement", "Confidence building", "Proof of control"],
+            "key_concepts": ["landings", "psychology", "confidence"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the significance of 'Fuel Management' as a critical task for long-distance pilots.",
+            "answer": "Managing fuel required careful calculation and timing. It symbolized the pilot's responsibility for the machine's limits and taught Amelia the importance of planning for the unexpected.",
+            "answer_outline": ["Calculation and timing", "Responsibility for limits", "Planning for uncertainty"],
+            "key_concepts": ["fuel management", "limits", "planning"],
+            "marks": 5,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the theme of 'Personal Growth through Exploration' in the chapter.",
+            "answer": "The chapter illustrates that by exploring the unknown sky, Amelia explored her own limits. Her growth as a pilot was ultimately a journey toward self-discovery and independent achievement.",
+            "answer_outline": ["Exploring the unknown", "Testing personal limits", "Self-discovery"],
+            "key_concepts": ["personal growth", "exploration", "achievement"],
+            "marks": 5,
+            "source_section": "General"
+        }
+    ]
+}

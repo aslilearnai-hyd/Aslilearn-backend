@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Introduction to Euclid’s Geometry",
+    "generated_at": "2026-03-05T22:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which civilisation used geometry to redraw land boundaries after floods of the Nile?",
+            "options": {
+                "A": "Greek",
+                "B": "Egyptian",
+                "C": "Roman",
+                "D": "Chinese"
+            },
+            "correct_answer": "B",
+            "explanation": "Egyptians used geometry to redraw boundaries after Nile floods.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The ratio of bricks used in the Indus Valley civilisation was:",
+            "options": {
+                "A": "3:2:1",
+                "B": "4:2:1",
+                "C": "2:1:1",
+                "D": "5:3:2"
+            },
+            "correct_answer": "B",
+            "explanation": "The bricks had ratio length : breadth : thickness = 4:2:1.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which mathematician first proved that a circle is bisected by its diameter?",
+            "options": {
+                "A": "Euclid",
+                "B": "Thales",
+                "C": "Pythagoras",
+                "D": "Archimedes"
+            },
+            "correct_answer": "B",
+            "explanation": "Thales gave the first known geometric proof.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Euclid arranged his work in how many books?",
+            "options": {
+                "A": "10",
+                "B": "11",
+                "C": "12",
+                "D": "13"
+            },
+            "correct_answer": "D",
+            "explanation": "Euclid divided Elements into 13 books.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 5,
+            "question": "A plane surface has:",
+            "options": {
+                "A": "Length only",
+                "B": "Length and breadth",
+                "C": "Length breadth and height",
+                "D": "No dimension"
+            },
+            "correct_answer": "B",
+            "explanation": "A surface has two dimensions: length and breadth.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which term refers to a terminated line?",
+            "options": {
+                "A": "Ray",
+                "B": "Line segment",
+                "C": "Angle",
+                "D": "Chord"
+            },
+            "correct_answer": "B",
+            "explanation": "A terminated line corresponds to a line segment.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which Euclid postulate deals with circles?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "Postulate 3 allows drawing circles with any centre and radius.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If equals are subtracted from equals, the remainders are:",
+            "options": {
+                "A": "Unequal",
+                "B": "Equal",
+                "C": "Greater",
+                "D": "Zero"
+            },
+            "correct_answer": "B",
+            "explanation": "This is one of Euclid’s axioms.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "The edges of a surface are:",
+            "options": {
+                "A": "Points",
+                "B": "Angles",
+                "C": "Lines",
+                "D": "Planes"
+            },
+            "correct_answer": "C",
+            "explanation": "Lines form the boundaries of surfaces.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which type of reasoning did Greek mathematicians emphasise?",
+            "options": {
+                "A": "Statistical reasoning",
+                "B": "Deductive reasoning",
+                "C": "Numerical reasoning",
+                "D": "Experimental reasoning"
+            },
+            "correct_answer": "B",
+            "explanation": "Greeks used deductive reasoning in geometry.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Which shape was commonly used for Vedic altars?",
+            "options": {
+                "A": "Triangles",
+                "B": "Rectangles",
+                "C": "Combination of geometric shapes",
+                "D": "Circles only"
+            },
+            "correct_answer": "C",
+            "explanation": "Altars used combinations of rectangles, triangles and trapeziums.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A system of axioms is called consistent if:",
+            "options": {
+                "A": "It has no axioms",
+                "B": "No contradictions arise",
+                "C": "It has many axioms",
+                "D": "It is complex"
+            },
+            "correct_answer": "B",
+            "explanation": "Consistency means no statement contradicts another.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which axiom states that the whole is greater than the part?",
+            "options": {
+                "A": "Axiom 2",
+                "B": "Axiom 3",
+                "C": "Axiom 5",
+                "D": "Axiom 7"
+            },
+            "correct_answer": "C",
+            "explanation": "Euclid's axiom states the whole is greater than its part.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which object has three dimensions?",
+            "options": {
+                "A": "Line",
+                "B": "Plane",
+                "C": "Surface",
+                "D": "Solid"
+            },
+            "correct_answer": "D",
+            "explanation": "A solid has three dimensions.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which statement represents Euclid’s Postulate 4?",
+            "options": {
+                "A": "Lines intersect",
+                "B": "All right angles are equal",
+                "C": "Circle with any radius",
+                "D": "Line through two points"
+            },
+            "correct_answer": "B",
+            "explanation": "Postulate 4 states all right angles are equal.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which is NOT an undefined term?",
+            "options": {
+                "A": "Point",
+                "B": "Line",
+                "C": "Plane",
+                "D": "Triangle"
+            },
+            "correct_answer": "D",
+            "explanation": "Triangle is defined using lines.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which concept represents a location without dimension?",
+            "options": {
+                "A": "Line",
+                "B": "Surface",
+                "C": "Point",
+                "D": "Solid"
+            },
+            "correct_answer": "C",
+            "explanation": "A point represents a location with no dimension.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Two distinct lines can intersect at:",
+            "options": {
+                "A": "0 or 1 point",
+                "B": "2 points",
+                "C": "3 points",
+                "D": "Infinite points"
+            },
+            "correct_answer": "A",
+            "explanation": "Two lines intersect at most one point.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which branch of maths deals with shapes and spaces?",
+            "options": {
+                "A": "Algebra",
+                "B": "Arithmetic",
+                "C": "Geometry",
+                "D": "Statistics"
+            },
+            "correct_answer": "C",
+            "explanation": "Geometry studies shapes and space.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Which concept forms the basis for constructing theorems?",
+            "options": {
+                "A": "Guesses",
+                "B": "Proofs",
+                "C": "Experiments",
+                "D": "Measurements"
+            },
+            "correct_answer": "B",
+            "explanation": "Theorems are proved through logical proofs.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "A line has which property?",
+            "options": {
+                "A": "Breadthless length",
+                "B": "Width",
+                "C": "Height",
+                "D": "Volume"
+            },
+            "correct_answer": "A",
+            "explanation": "Euclid defined a line as breadthless length.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "The study of geometry in ancient India was recorded in:",
+            "options": {
+                "A": "Sulbasutras",
+                "B": "Vedas",
+                "C": "Arthashastra",
+                "D": "Puranas"
+            },
+            "correct_answer": "A",
+            "explanation": "Sulbasutras contain geometrical constructions.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which concept describes the edges of surfaces?",
+            "options": {
+                "A": "Angles",
+                "B": "Lines",
+                "C": "Points",
+                "D": "Planes"
+            },
+            "correct_answer": "B",
+            "explanation": "Lines form edges of surfaces.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "The ends of a line are called:",
+            "options": {
+                "A": "Angles",
+                "B": "Points",
+                "C": "Surfaces",
+                "D": "Planes"
+            },
+            "correct_answer": "B",
+            "explanation": "According to Euclid, the ends of a line are points.",
+            "difficulty": "medium",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which mathematician developed many geometric properties before Euclid?",
+            "options": {
+                "A": "Thales",
+                "B": "Pythagoras",
+                "C": "Newton",
+                "D": "Gauss"
+            },
+            "correct_answer": "B",
+            "explanation": "Pythagoras and his group developed geometry significantly.",
+            "difficulty": "medium",
+            "source_section": "Section 5.1"
+        }
+    ]
+}

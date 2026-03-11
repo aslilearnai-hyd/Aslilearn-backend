@@ -1,0 +1,33 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Pair of Linear Equations in Two Variables",
+    "difficulty": "Easy",
+    "source_pdf": "jemh103.pdf",
+    "short_notes": {
+        "key_points": [
+            "A linear equation in two variables is of the form ax + by + c = 0",
+            "Such an equation represents a straight line on a graph",
+            "A pair of linear equations represents two straight lines",
+            "The solution of a pair of equations is the point of intersection of the lines",
+            "A pair of linear equations may have one solution, no solution, or infinitely many solutions"
+        ],
+        "examples": [
+            "x + y = 5",
+            "2x + 3y − 6 = 0",
+            "Intersecting lines give one solution"
+        ],
+        "formulas": [
+            "General form → ax + by + c = 0",
+            "Intersecting lines → one solution",
+            "Parallel lines → no solution",
+            "Coincident lines → infinitely many solutions"
+        ],
+        "exam_tips": [
+            "Always convert equations to standard form before comparing",
+            "Graphical method gives approximate solutions",
+            "Nature of solutions depends on coefficients of equations",
+            "Intersecting lines always have exactly one solution"
+        ]
+    }
+}

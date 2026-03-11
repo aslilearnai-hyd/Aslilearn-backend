@@ -1,0 +1,609 @@
+{
+    "subject": "English",
+    "book": "Moments",
+    "Content": "Diary Entry",
+    "class": "9",
+    "total_questions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "chapter": "The Lost Child",
+            "title": "Excitement at the Fair",
+            "question": "Write a diary entry as the lost child describing your excitement while walking towards the fair with your parents."
+        },
+        {
+            "id": 2,
+            "chapter": "The Lost Child",
+            "title": "Desire for Toys",
+            "question": "Write a diary entry as the child expressing your desire for the toys displayed at the fair."
+        },
+        {
+            "id": 3,
+            "chapter": "The Lost Child",
+            "title": "Attraction of the Sweet Shop",
+            "question": "Write a diary entry as the child describing your temptation after seeing the sweets at the fair."
+        },
+        {
+            "id": 4,
+            "chapter": "The Lost Child",
+            "title": "Lost in the Crowd",
+            "question": "Write a diary entry as the child after realising that you have lost your parents in the fair."
+        },
+        {
+            "id": 5,
+            "chapter": "The Lost Child",
+            "title": "Kind Stranger",
+            "question": "Write a diary entry as the child describing the moment when a kind stranger tried to help you."
+        },
+        {
+            "id": 6,
+            "chapter": "The Lost Child",
+            "title": "Realising Parents’ Love",
+            "question": "Write a diary entry as the child realising that your parents are more important than toys and sweets."
+        },
+        {
+            "id": 7,
+            "chapter": "The Lost Child",
+            "title": "Fear and Loneliness",
+            "question": "Write a diary entry describing the child’s fear and loneliness after getting lost."
+        },
+        {
+            "id": 8,
+            "chapter": "The Lost Child",
+            "title": "Memories of the Fair",
+            "question": "Write a diary entry recalling the colourful sights of the fair."
+        },
+        {
+            "id": 9,
+            "chapter": "The Lost Child",
+            "title": "Longing for Parents",
+            "question": "Write a diary entry as the child crying for his parents."
+        },
+        {
+            "id": 10,
+            "chapter": "The Lost Child",
+            "title": "Lesson Learned",
+            "question": "Write a diary entry expressing what the child learned from the incident."
+        },
+        {
+            "id": 11,
+            "chapter": "The Adventures of Toto",
+            "title": "Buying Toto",
+            "question": "Write a diary entry as the narrator describing the day Grandfather bought Toto."
+        },
+        {
+            "id": 12,
+            "chapter": "The Adventures of Toto",
+            "title": "Toto’s Mischief",
+            "question": "Write a diary entry describing Toto’s mischievous activities at home."
+        },
+        {
+            "id": 13,
+            "chapter": "The Adventures of Toto",
+            "title": "Grandmother’s Reaction",
+            "question": "Write a diary entry imagining Grandmother’s feelings after discovering Toto."
+        },
+        {
+            "id": 14,
+            "chapter": "The Adventures of Toto",
+            "title": "Journey to Saharanpur",
+            "question": "Write a diary entry as Grandfather describing the train journey with Toto."
+        },
+        {
+            "id": 15,
+            "chapter": "The Adventures of Toto",
+            "title": "Ticket Collector Incident",
+            "question": "Write a diary entry describing the incident with the ticket collector."
+        },
+        {
+            "id": 16,
+            "chapter": "The Adventures of Toto",
+            "title": "Toto in the Bathroom",
+            "question": "Write a diary entry describing Toto’s experience with the hot bath."
+        },
+        {
+            "id": 17,
+            "chapter": "The Adventures of Toto",
+            "title": "Trouble in the Kitchen",
+            "question": "Write a diary entry describing Toto’s destructive behaviour in the kitchen."
+        },
+        {
+            "id": 18,
+            "chapter": "The Adventures of Toto",
+            "title": "A Clever Monkey",
+            "question": "Write a diary entry praising Toto’s cleverness and intelligence."
+        },
+        {
+            "id": 19,
+            "chapter": "The Adventures of Toto",
+            "title": "Grandfather’s Zoo",
+            "question": "Write a diary entry about the animals in Grandfather’s private zoo."
+        },
+        {
+            "id": 20,
+            "chapter": "The Adventures of Toto",
+            "title": "Selling Toto",
+            "question": "Write a diary entry describing the sadness when Toto had to be sold."
+        },
+        {
+            "id": 21,
+            "chapter": "Iswaran the Storyteller",
+            "title": "First Impression",
+            "question": "Write a diary entry as Mahendra describing your first impression of Iswaran."
+        },
+        {
+            "id": 22,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Amazing Cook",
+            "question": "Write a diary entry praising Iswaran’s cooking skills."
+        },
+        {
+            "id": 23,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Storytelling Talent",
+            "question": "Write a diary entry describing Iswaran’s storytelling ability."
+        },
+        {
+            "id": 24,
+            "chapter": "Iswaran the Storyteller",
+            "title": "The Elephant Story",
+            "question": "Write a diary entry as Mahendra describing Iswaran’s dramatic elephant story."
+        },
+        {
+            "id": 25,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Ghost Story",
+            "question": "Write a diary entry describing the ghost story narrated by Iswaran."
+        },
+        {
+            "id": 26,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Fear at Night",
+            "question": "Write a diary entry describing Mahendra’s fear after hearing the ghost story."
+        },
+        {
+            "id": 27,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Seeing the Ghost",
+            "question": "Write a diary entry describing Mahendra’s reaction after seeing a dark figure."
+        },
+        {
+            "id": 28,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Leaving the Place",
+            "question": "Write a diary entry as Mahendra deciding to leave the place."
+        },
+        {
+            "id": 29,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Lonely Life",
+            "question": "Write a diary entry describing Mahendra’s lonely life at work sites."
+        },
+        {
+            "id": 30,
+            "chapter": "Iswaran the Storyteller",
+            "title": "Importance of Companionship",
+            "question": "Write a diary entry reflecting on Iswaran’s importance in Mahendra’s life."
+        },
+        {
+            "id": 31,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Arrival in the Strange Kingdom",
+            "question": "Write a diary entry as the guru describing your arrival in the Kingdom of Fools."
+        },
+        {
+            "id": 32,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Cheap Food",
+            "question": "Write a diary entry as the disciple expressing excitement about cheap food."
+        },
+        {
+            "id": 33,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Guru’s Warning",
+            "question": "Write a diary entry describing the guru’s warning about the foolish kingdom."
+        },
+        {
+            "id": 34,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Disciple’s Decision",
+            "question": "Write a diary entry explaining why the disciple decided to stay."
+        },
+        {
+            "id": 35,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Strange Justice",
+            "question": "Write a diary entry describing the strange justice of the foolish king."
+        },
+        {
+            "id": 36,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Death Sentence",
+            "question": "Write a diary entry describing the disciple’s fear after being sentenced."
+        },
+        {
+            "id": 37,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Guru’s Clever Plan",
+            "question": "Write a diary entry as the guru describing your clever plan."
+        },
+        {
+            "id": 38,
+            "chapter": "In the Kingdom of Fools",
+            "title": "King’s Foolishness",
+            "question": "Write a diary entry about the foolish decisions of the king."
+        },
+        {
+            "id": 39,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Escape from Danger",
+            "question": "Write a diary entry describing the guru and disciple escaping safely."
+        },
+        {
+            "id": 40,
+            "chapter": "In the Kingdom of Fools",
+            "title": "Lesson from the Kingdom",
+            "question": "Write a diary entry reflecting on the lesson learned from the kingdom."
+        },
+        {
+            "id": 41,
+            "chapter": "The Happy Prince",
+            "title": "Swallow Arrives",
+            "question": "Write a diary entry as the swallow describing your arrival in the city."
+        },
+        {
+            "id": 42,
+            "chapter": "The Happy Prince",
+            "title": "Prince’s Tears",
+            "question": "Write a diary entry as the swallow describing the tears of the Happy Prince."
+        },
+        {
+            "id": 43,
+            "chapter": "The Happy Prince",
+            "title": "Helping the Poor",
+            "question": "Write a diary entry describing the Prince’s desire to help the poor."
+        },
+        {
+            "id": 44,
+            "chapter": "The Happy Prince",
+            "title": "First Act of Kindness",
+            "question": "Write a diary entry describing the delivery of the ruby."
+        },
+        {
+            "id": 45,
+            "chapter": "The Happy Prince",
+            "title": "Sacrificing the Sapphire",
+            "question": "Write a diary entry about giving away the Prince’s sapphire eyes."
+        },
+        {
+            "id": 46,
+            "chapter": "The Happy Prince",
+            "title": "Removing the Gold",
+            "question": "Write a diary entry describing how the gold was given to the poor."
+        },
+        {
+            "id": 47,
+            "chapter": "The Happy Prince",
+            "title": "Friendship",
+            "question": "Write a diary entry describing the friendship between the Prince and the swallow."
+        },
+        {
+            "id": 48,
+            "chapter": "The Happy Prince",
+            "title": "Cold Winter",
+            "question": "Write a diary entry describing the harsh winter night."
+        },
+        {
+            "id": 49,
+            "chapter": "The Happy Prince",
+            "title": "Swallow’s Sacrifice",
+            "question": "Write a diary entry describing the swallow’s sacrifice."
+        },
+        {
+            "id": 50,
+            "chapter": "The Happy Prince",
+            "title": "A Noble Heart",
+            "question": "Write a diary entry praising the Prince’s kindness."
+        },
+        {
+            "id": 51,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Cyclone Begins",
+            "question": "Write a diary entry as Prashant describing the beginning of the cyclone."
+        },
+        {
+            "id": 52,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Night of Terror",
+            "question": "Write a diary entry describing the terrifying night during the cyclone."
+        },
+        {
+            "id": 53,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Stranded on the Roof",
+            "question": "Write a diary entry describing the experience of being stranded on the roof."
+        },
+        {
+            "id": 54,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Devastation",
+            "question": "Write a diary entry describing the destruction caused by the cyclone."
+        },
+        {
+            "id": 55,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Searching for Family",
+            "question": "Write a diary entry as Prashant searching for his family."
+        },
+        {
+            "id": 56,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Relief Work",
+            "question": "Write a diary entry describing Prashant’s relief work for villagers."
+        },
+        {
+            "id": 57,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Helping Children",
+            "question": "Write a diary entry about helping orphaned children."
+        },
+        {
+            "id": 58,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Food Distribution",
+            "question": "Write a diary entry describing the distribution of food."
+        },
+        {
+            "id": 59,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Courage",
+            "question": "Write a diary entry reflecting Prashant’s courage."
+        },
+        {
+            "id": 60,
+            "chapter": "Weathering the Storm in Ersama",
+            "title": "Hope After Disaster",
+            "question": "Write a diary entry describing hope after the cyclone."
+        },
+        {
+            "id": 61,
+            "chapter": "The Last Leaf",
+            "title": "Johnsy’s Illness",
+            "question": "Write a diary entry as Sue describing Johnsy’s illness."
+        },
+        {
+            "id": 62,
+            "chapter": "The Last Leaf",
+            "title": "Counting Leaves",
+            "question": "Write a diary entry describing Johnsy counting the falling leaves."
+        },
+        {
+            "id": 63,
+            "chapter": "The Last Leaf",
+            "title": "Sue’s Worry",
+            "question": "Write a diary entry expressing Sue’s worry for Johnsy."
+        },
+        {
+            "id": 64,
+            "chapter": "The Last Leaf",
+            "title": "Doctor’s Advice",
+            "question": "Write a diary entry describing the doctor’s advice."
+        },
+        {
+            "id": 65,
+            "chapter": "The Last Leaf",
+            "title": "Behrman’s Concern",
+            "question": "Write a diary entry describing Behrman’s concern."
+        },
+        {
+            "id": 66,
+            "chapter": "The Last Leaf",
+            "title": "Stormy Night",
+            "question": "Write a diary entry describing the stormy night."
+        },
+        {
+            "id": 67,
+            "chapter": "The Last Leaf",
+            "title": "The Last Leaf",
+            "question": "Write a diary entry about the last leaf that never fell."
+        },
+        {
+            "id": 68,
+            "chapter": "The Last Leaf",
+            "title": "Behrman’s Sacrifice",
+            "question": "Write a diary entry about Behrman’s sacrifice."
+        },
+        {
+            "id": 69,
+            "chapter": "The Last Leaf",
+            "title": "Hope Returns",
+            "question": "Write a diary entry describing Johnsy’s recovery."
+        },
+        {
+            "id": 70,
+            "chapter": "The Last Leaf",
+            "title": "True Art",
+            "question": "Write a diary entry praising Behrman’s masterpiece."
+        },
+        {
+            "id": 71,
+            "chapter": "A House Is Not a Home",
+            "title": "New School",
+            "question": "Write a diary entry describing the author’s feelings about the new school."
+        },
+        {
+            "id": 72,
+            "chapter": "A House Is Not a Home",
+            "title": "Feeling Lonely",
+            "question": "Write a diary entry about feeling lonely at the new school."
+        },
+        {
+            "id": 73,
+            "chapter": "A House Is Not a Home",
+            "title": "The Fire",
+            "question": "Write a diary entry describing the fire accident."
+        },
+        {
+            "id": 74,
+            "chapter": "A House Is Not a Home",
+            "title": "Saving Memories",
+            "question": "Write a diary entry about saving memories from the fire."
+        },
+        {
+            "id": 75,
+            "chapter": "A House Is Not a Home",
+            "title": "Losing Everything",
+            "question": "Write a diary entry describing the pain of losing the house."
+        },
+        {
+            "id": 76,
+            "chapter": "A House Is Not a Home",
+            "title": "School Support",
+            "question": "Write a diary entry describing the support from classmates."
+        },
+        {
+            "id": 77,
+            "chapter": "A House Is Not a Home",
+            "title": "Kindness of Friends",
+            "question": "Write a diary entry describing kindness from schoolmates."
+        },
+        {
+            "id": 78,
+            "chapter": "A House Is Not a Home",
+            "title": "Finding the Cat",
+            "question": "Write a diary entry describing the moment the cat was found."
+        },
+        {
+            "id": 79,
+            "chapter": "A House Is Not a Home",
+            "title": "New Beginning",
+            "question": "Write a diary entry about starting a new life."
+        },
+        {
+            "id": 80,
+            "chapter": "A House Is Not a Home",
+            "title": "Meaning of Home",
+            "question": "Write a diary entry explaining the meaning of home."
+        },
+        {
+            "id": 81,
+            "chapter": "The Beggar",
+            "title": "Meeting Sergei",
+            "question": "Write a diary entry as Lushkoff describing your first meeting with Sergei."
+        },
+        {
+            "id": 82,
+            "chapter": "The Beggar",
+            "title": "Caught Lying",
+            "question": "Write a diary entry describing the moment Sergei caught you lying."
+        },
+        {
+            "id": 83,
+            "chapter": "The Beggar",
+            "title": "First Work",
+            "question": "Write a diary entry about chopping wood for the first time."
+        },
+        {
+            "id": 84,
+            "chapter": "The Beggar",
+            "title": "Olga’s Kindness",
+            "question": "Write a diary entry praising Olga’s kindness."
+        },
+        {
+            "id": 85,
+            "chapter": "The Beggar",
+            "title": "Realisation",
+            "question": "Write a diary entry describing Lushkoff’s realisation about life."
+        },
+        {
+            "id": 86,
+            "chapter": "The Beggar",
+            "title": "Struggling Life",
+            "question": "Write a diary entry about the struggles of a beggar."
+        },
+        {
+            "id": 87,
+            "chapter": "The Beggar",
+            "title": "Path to Change",
+            "question": "Write a diary entry describing the beginning of change."
+        },
+        {
+            "id": 88,
+            "chapter": "The Beggar",
+            "title": "New Job",
+            "question": "Write a diary entry describing Lushkoff’s new job."
+        },
+        {
+            "id": 89,
+            "chapter": "The Beggar",
+            "title": "Gratitude",
+            "question": "Write a diary entry expressing gratitude to Olga."
+        },
+        {
+            "id": 90,
+            "chapter": "The Beggar",
+            "title": "A Changed Man",
+            "question": "Write a diary entry describing how Lushkoff changed his life."
+        },
+        {
+            "id": 91,
+            "chapter": "General Reflection",
+            "title": "Value of Kindness",
+            "question": "Write a diary entry reflecting on the importance of kindness in life."
+        },
+        {
+            "id": 92,
+            "chapter": "General Reflection",
+            "title": "Helping Others",
+            "question": "Write a diary entry describing how helping others brings happiness."
+        },
+        {
+            "id": 93,
+            "chapter": "General Reflection",
+            "title": "Overcoming Fear",
+            "question": "Write a diary entry describing how fear can be overcome."
+        },
+        {
+            "id": 94,
+            "chapter": "General Reflection",
+            "title": "Power of Hope",
+            "question": "Write a diary entry about the power of hope."
+        },
+        {
+            "id": 95,
+            "chapter": "General Reflection",
+            "title": "Friendship",
+            "question": "Write a diary entry describing the importance of friendship."
+        },
+        {
+            "id": 96,
+            "chapter": "General Reflection",
+            "title": "Life Lessons",
+            "question": "Write a diary entry about lessons learned from stories."
+        },
+        {
+            "id": 97,
+            "chapter": "General Reflection",
+            "title": "Importance of Family",
+            "question": "Write a diary entry about the importance of family."
+        },
+        {
+            "id": 98,
+            "chapter": "General Reflection",
+            "title": "Facing Challenges",
+            "question": "Write a diary entry describing how challenges make us stronger."
+        },
+        {
+            "id": 99,
+            "chapter": "General Reflection",
+            "title": "Kindness and Humanity",
+            "question": "Write a diary entry reflecting on kindness and humanity."
+        },
+        {
+            "id": 100,
+            "chapter": "General Reflection",
+            "title": "Message from the Stories",
+            "question": "Write a diary entry summarising the message you learned from the Moments stories."
+        }
+    ]
+}

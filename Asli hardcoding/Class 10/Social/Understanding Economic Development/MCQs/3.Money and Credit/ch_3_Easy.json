@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the basic function of money?",
+      "options": {
+        "A": "Barter goods",
+        "B": "Medium of exchange",
+        "C": "Increase population",
+        "D": "Produce goods"
+      },
+      "correct_answer": "B",
+      "explanation": "Money acts as a medium of exchange to buy and sell goods and services."
+    },
+    {
+      "question_number": 2,
+      "question": "Barter system means:",
+      "options": {
+        "A": "Using paper money",
+        "B": "Exchange of goods for goods",
+        "C": "Saving money in bank",
+        "D": "Using digital payments"
+      },
+      "correct_answer": "B",
+      "explanation": "Barter system is direct exchange of goods without money."
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is a modern form of money?",
+      "options": {
+        "A": "Gold coins only",
+        "B": "Paper notes and coins",
+        "C": "Cattle",
+        "D": "Grains"
+      },
+      "correct_answer": "B",
+      "explanation": "Modern money includes paper notes and coins issued by the government."
+    },
+    {
+      "question_number": 4,
+      "question": "Who issues currency notes in India?",
+      "options": {
+        "A": "Government of India",
+        "B": "Reserve Bank of India",
+        "C": "World Bank",
+        "D": "IMF"
+      },
+      "correct_answer": "B",
+      "explanation": "RBI issues currency notes on behalf of the Government of India."
+    },
+    {
+      "question_number": 5,
+      "question": "Which is a formal source of credit?",
+      "options": {
+        "A": "Moneylender",
+        "B": "Friend",
+        "C": "Bank",
+        "D": "Trader"
+      },
+      "correct_answer": "C",
+      "explanation": "Banks are formal sources of credit regulated by RBI."
+    },
+    {
+      "question_number": 6,
+      "question": "Which is an informal source of credit?",
+      "options": {
+        "A": "Commercial bank",
+        "B": "Cooperative bank",
+        "C": "Moneylender",
+        "D": "RBI"
+      },
+      "correct_answer": "C",
+      "explanation": "Moneylenders are informal sources not regulated by RBI."
+    },
+    {
+      "question_number": 7,
+      "question": "Interest is:",
+      "options": {
+        "A": "Loan amount",
+        "B": "Extra money paid on borrowed amount",
+        "C": "Savings",
+        "D": "Tax"
+      },
+      "correct_answer": "B",
+      "explanation": "Interest is the extra money paid for borrowing."
+    },
+    {
+      "question_number": 8,
+      "question": "Demand deposits are:",
+      "options": {
+        "A": "Money kept at home",
+        "B": "Deposits that can be withdrawn anytime",
+        "C": "Fixed deposits only",
+        "D": "Loans"
+      },
+      "correct_answer": "B",
+      "explanation": "Demand deposits can be withdrawn on demand."
+    },
+    {
+      "question_number": 9,
+      "question": "Cheque is an example of:",
+      "options": {
+        "A": "Barter",
+        "B": "Paper money",
+        "C": "Digital currency",
+        "D": "Bank instrument"
+      },
+      "correct_answer": "D",
+      "explanation": "Cheque is a bank instrument used for payments."
+    },
+    {
+      "question_number": 10,
+      "question": "Collateral means:",
+      "options": {
+        "A": "Interest rate",
+        "B": "Security against loan",
+        "C": "Savings",
+        "D": "Deposit"
+      },
+      "correct_answer": "B",
+      "explanation": "Collateral is an asset given as security for a loan."
+    },
+    {
+      "question_number": 11,
+      "question": "Which sector is regulated by RBI?",
+      "options": {
+        "A": "Informal sector",
+        "B": "Formal sector",
+        "C": "Private moneylenders",
+        "D": "Friends"
+      },
+      "correct_answer": "B",
+      "explanation": "Formal sector like banks are regulated by RBI."
+    },
+    {
+      "question_number": 12,
+      "question": "Double coincidence of wants is a problem of:",
+      "options": {
+        "A": "Modern banking",
+        "B": "Barter system",
+        "C": "Digital payment",
+        "D": "ATM"
+      },
+      "correct_answer": "B",
+      "explanation": "Barter requires both parties to want each other's goods."
+    },
+    {
+      "question_number": 13,
+      "question": "Which is an example of digital payment?",
+      "options": {
+        "A": "Cash",
+        "B": "Cheque",
+        "C": "UPI",
+        "D": "Gold"
+      },
+      "correct_answer": "C",
+      "explanation": "UPI is a digital payment method."
+    },
+    {
+      "question_number": 14,
+      "question": "Bank deposits help in:",
+      "options": {
+        "A": "Keeping money idle",
+        "B": "Providing loans to others",
+        "C": "Increasing barter",
+        "D": "Reducing trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Banks use deposits to give loans."
+    },
+    {
+      "question_number": 15,
+      "question": "Self Help Groups mainly provide:",
+      "options": {
+        "A": "International loans",
+        "B": "Small loans to members",
+        "C": "Government taxes",
+        "D": "Exports"
+      },
+      "correct_answer": "B",
+      "explanation": "SHGs provide small credit to members."
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following is legal tender in India?",
+      "options": {
+        "A": "Foreign currency",
+        "B": "RBI issued notes",
+        "C": "Gold ornaments",
+        "D": "Property papers"
+      },
+      "correct_answer": "B",
+      "explanation": "RBI issued notes are legal tender."
+    },
+    {
+      "question_number": 17,
+      "question": "Credit means:",
+      "options": {
+        "A": "Saving money",
+        "B": "Borrowing money",
+        "C": "Paying tax",
+        "D": "Printing notes"
+      },
+      "correct_answer": "B",
+      "explanation": "Credit means borrowing money with promise to repay."
+    },
+    {
+      "question_number": 18,
+      "question": "High interest rates are usually charged by:",
+      "options": {
+        "A": "Banks",
+        "B": "RBI",
+        "C": "Moneylenders",
+        "D": "Government"
+      },
+      "correct_answer": "C",
+      "explanation": "Moneylenders often charge higher interest."
+    },
+    {
+      "question_number": 19,
+      "question": "Which document is proof of bank transaction?",
+      "options": {
+        "A": "Receipt",
+        "B": "Cheque",
+        "C": "Passbook",
+        "D": "Currency note"
+      },
+      "correct_answer": "C",
+      "explanation": "Passbook records bank transactions."
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a function of money?",
+      "options": {
+        "A": "Store of value",
+        "B": "Increase poverty",
+        "C": "Reduce trade",
+        "D": "Create conflict"
+      },
+      "correct_answer": "A",
+      "explanation": "Money stores value for future use."
+    },
+    {
+      "question_number": 21,
+      "question": "Which institution supervises banks in India?",
+      "options": {
+        "A": "RBI",
+        "B": "UNDP",
+        "C": "WTO",
+        "D": "WHO"
+      },
+      "correct_answer": "A",
+      "explanation": "RBI supervises and regulates banks."
+    },
+    {
+      "question_number": 22,
+      "question": "Loan taken for business expansion is:",
+      "options": {
+        "A": "Unproductive credit",
+        "B": "Productive credit",
+        "C": "Illegal credit",
+        "D": "Barter"
+      },
+      "correct_answer": "B",
+      "explanation": "Productive credit generates income."
+    },
+    {
+      "question_number": 23,
+      "question": "Which is safer source of credit?",
+      "options": {
+        "A": "Moneylender",
+        "B": "Bank",
+        "C": "Trader",
+        "D": "Relative"
+      },
+      "correct_answer": "B",
+      "explanation": "Banks are regulated and safer."
+    },
+    {
+      "question_number": 24,
+      "question": "ATM allows:",
+      "options": {
+        "A": "Barter",
+        "B": "Cash withdrawal",
+        "C": "Printing money",
+        "D": "Taking loans only"
+      },
+      "correct_answer": "B",
+      "explanation": "ATM allows withdrawal of cash."
+    },
+    {
+      "question_number": 25,
+      "question": "Main advantage of money over barter is:",
+      "options": {
+        "A": "Double coincidence of wants",
+        "B": "Difficulty in exchange",
+        "C": "Easy exchange of goods and services",
+        "D": "Limited trade"
+      },
+      "correct_answer": "C",
+      "explanation": "Money removes the problem of double coincidence of wants."
+    }
+  ]
+}

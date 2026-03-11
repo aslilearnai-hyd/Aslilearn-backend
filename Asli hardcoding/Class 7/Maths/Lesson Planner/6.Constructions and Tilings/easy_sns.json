@@ -1,0 +1,71 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Constructions and Tilings",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify basic geometry tools and their uses",
+        "Understand the concept of parallel lines in a plane",
+        "Recognize tilings and tessellations in the environment",
+        "Differentiate between regular and irregular polygons",
+        "Draw simple line segments and circles using a compass"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "The Geometry Toolbox",
+            "topics_covered": [
+                "Role of the straightedge (ruler) and compass",
+                "Maintaining tool precision (sharp pencils, tight hinges)",
+                "Concepts of arcs and points of intersection"
+            ],
+            "teaching_strategy": [
+                "Tool demonstration and safety",
+                "Step-by-step arc drawing"
+            ],
+            "student_activities": [
+                "Practice drawing concentric circles",
+                "Construct a line segment of exactly 6.3 cm"
+            ],
+            "assessment": [
+                "Tool identification quiz",
+                "Accuracy check of drawn segments"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Introduction to Tilings",
+            "topics_covered": [
+                "What is a tessellation?",
+                "Identifying shapes that fit together (squares, rectangles)",
+                "Finding patterns in floor tiles and walls"
+            ],
+            "teaching_strategy": [
+                "Visual presentation of real-world tilings",
+                "Hand-on activity with tile cut-outs"
+            ],
+            "student_activities": [
+                "Identify tilings in school corridors",
+                "Color a pre-drawn square grid to create a pattern"
+            ],
+            "assessment": [
+                "Identifying 'Gaps' and 'Overlaps' in sample patterns",
+                "Notebook review"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Geometry box",
+        "Square-grid paper",
+        "Plastic tile sets",
+        "NCERT Textbook"
+    ],
+    "evaluation_methods": [
+        "Observational check of tool usage",
+        "Simple pattern completion tasks",
+        "Oral questioning"
+    ],
+    "teacher_tip": "Remind students that in 'Pure' construction, we don't use the markings on a ruler to measure angles; we only use the compass and straightedge!"
+}

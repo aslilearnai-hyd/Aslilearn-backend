@@ -1,0 +1,208 @@
+{
+    "content_type": "Hard Questions (HOTS)",
+    "chapter": "Chapter: METALS AND NON-METALS",
+    "generated_at": "2026-03-11T00:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A metal M does not liberate hydrogen from acids but reacts with oxygen to give a black color product. It also reacts with silver nitrate solution to give a white precipitate of silver. Identify M and explain the observations.",
+            "answer": "Metal M is Copper (Cu). It reacts with oxygen to form black Copper(II) Oxide ($CuO$). It is less reactive than Hydrogen, so it doesn't displace it from acids. It displaces Silver from $AgNO_3$ as it is more reactive than silver.",
+            "key_concepts": ["reactivity series", "metal oxides"],
+            "marks": 5,
+            "source_section": "Section 3.2.1 & 3.2.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is the method of 'Electrolytic Reduction' used for extracting highly reactive metals like Sodium and Magnesium, while Carbon reduction is used for Zinc and Iron?",
+            "answer": "Highly reactive metals have a higher affinity for oxygen than carbon does. Carbon cannot reduce their oxides. Electrolytic reduction provides enough energy to overcome the strong chemical bonds in these stable oxides.",
+            "key_concepts": ["electrolytic reduction", "chemical affinity"],
+            "marks": 5,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why the extraction of copper from its sulphide ore involves 'self-reduction'. Write the relevant chemical equations.",
+            "answer": "Copper sulphide is first roasted to form oxide. Then, the remaining sulphide reacts with the oxide formed to give metal: $2Cu_2S + 3O_2 \rightarrow 2Cu_2O + 2SO_2$; then $2Cu_2O + Cu_2S \rightarrow 6Cu + SO_2$.",
+            "key_concepts": ["self-reduction", "roasting"],
+            "marks": 5,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "An element forms an oxide $A_2O_3$ which is acidic in nature. Identify the element A as a metal or non-metal. Justify your answer with a chemical property.",
+            "answer": "Element A is a non-metal because non-metal oxides are generally acidic (dissolve in water to form acids). Metals usually form basic or amphoteric oxides.",
+            "key_concepts": ["nature of oxides", "non-metals"],
+            "marks": 5,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Discuss the process of 'Anodising' of Aluminium. Why is it called a 'self-protecting' metal?",
+            "answer": "Anodising creates a thick, uniform oxide layer via electrolysis. It is 'self-protecting' because even without treatment, it forms a thin oxide film that prevents further oxygen penetration and corrosion.",
+            "key_concepts": ["anodising", "corrosion"],
+            "marks": 5,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "How can you separate a mixture of Iron filings and Alumina ($Al_2O_3$) using the chemical properties of Aluminium?",
+            "answer": "Treat the mixture with concentrated Sodium Hydroxide. $Al_2O_3$ (amphoteric) dissolves to form soluble Sodium Aluminate, while Iron remains as a solid residue. Filter and then recover Aluminium.",
+            "key_concepts": ["amphoteric nature", "chemical separation"],
+            "marks": 5,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What happens when Manganese Dioxide is heated with Aluminium powder? Why is this reaction used to produce Manganese metal?",
+            "answer": "$3MnO_2 + 4Al \rightarrow 3Mn + 2Al_2O_3 + Heat$. This is a highly exothermic displacement reaction where Al acts as a reducing agent because it is more reactive than Mn.",
+            "key_concepts": ["displacement reaction", "reduction"],
+            "marks": 5,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is pure Gold not used for making ornaments? Name two metals that can be alloyed with gold to make it hard.",
+            "answer": "Pure (24K) gold is extremely soft and easily loses its shape. It is alloyed with Silver or Copper (22K or 18K) to increase its mechanical strength and durability.",
+            "key_concepts": ["alloys", "jewelry"],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "When Zinc is added to a solution of Iron(II) sulphate, the green color fades. If Copper is added to the same solution, no change occurs. Arrange Zn, Fe, and Cu in decreasing order of reactivity.",
+            "answer": "Order: $Zn > Fe > Cu$. Zinc displaces Iron (color fades), meaning $Zn > Fe$. Copper cannot displace Iron, meaning $Fe > Cu$.",
+            "key_concepts": ["reactivity series", "displacement"],
+            "marks": 5,
+            "source_section": "Section 3.2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why ionic compounds conduct electricity in the molten state but not in the solid state.",
+            "answer": "In the solid state, ions are held in a rigid lattice by strong electrostatic forces and cannot move. In the molten state, these forces are overcome, allowing ions to move freely towards electrodes.",
+            "key_concepts": ["ionic properties", "electrical conductivity"],
+            "marks": 5,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Compare the reaction of Potassium and Calcium with water. Why is the former more dangerous?",
+            "answer": "Both react with water, but Potassium's reaction is so violent and exothermic that the hydrogen evolved catches fire immediately. Calcium's reaction is less violent, and the hydrogen does not ignite.",
+            "key_concepts": ["reactivity with water"],
+            "marks": 5,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is 'Gangue'? How is it removed during the enrichment of ores?",
+            "answer": "Gangue refers to unwanted impurities like soil, sand, and rocky material. It is removed using physical (gravity separation, froth floatation) or chemical properties (leaching) based on the differences between the ore and gangue.",
+            "key_concepts": ["ore enrichment", "gangue"],
+            "marks": 5,
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the term 'Amalgam'. How does it differ from a regular alloy?",
+            "answer": "An Amalgam is a specific type of alloy where one of the constituent elements is Mercury. Regular alloys can be any combination of metals/non-metals without requiring Mercury.",
+            "key_concepts": ["mercury", "alloys"],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Why are Carbonate and Sulphide ores usually converted into oxides during the process of extraction?",
+            "answer": "It is much easier to obtain a metal from its oxide using a reducing agent (like Carbon) than it is to extract it directly from carbonates or sulphides.",
+            "key_concepts": ["metallurgy", "reduction"],
+            "marks": 5,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the Thermite reaction? Write the equation and explain its importance in repairing machinery.",
+            "answer": "$Fe_2O_3 + 2Al \rightarrow 2Fe + Al_2O_3 + Heat$. The iron produced is in a molten state due to high heat, allowing it to flow into and fill cracks in railway tracks or heavy machine parts.",
+            "key_concepts": ["thermite", "displacement"],
+            "marks": 5,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the formation of Magnesium Chloride ($MgCl_2$) through electron transfer. Why does it have a high melting point?",
+            "answer": "Mg loses 2 electrons ($Mg^{2+}$), and two Cl atoms each gain 1 electron ($2Cl^-$). The resulting strong electrostatic attraction creates a high melting point lattice.",
+            "key_concepts": ["ionic bond", "electron transfer"],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Describe the process of electrolytic refining of Copper. Where does the pure copper deposit?",
+            "answer": "An impure copper anode dissolves into an acidic $CuSO_4$ electrolyte, and pure copper ions migrate to deposit on a thin pure copper cathode. Impurities settle as 'anode mud'.",
+            "key_concepts": ["electrolytic refining", "copper purification"],
+            "marks": 5,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Why do some metals like Silver and Copper lose their shine and develop a colored layer over time?",
+            "answer": "This is due to corrosion. Silver reacts with Sulphur in air to form black $Ag_2S$. Copper reacts with moist $CO_2$ to form a green coating of basic Copper Carbonate.",
+            "key_concepts": ["corrosion", "tarnish"],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is Hydrogen gas not evolved when a metal reacts with Nitric Acid (except for Mn and Mg)?",
+            "answer": "Nitric acid ($HNO_3$) is a strong oxidizing agent. It oxidizes the Hydrogen produced into water and itself gets reduced to nitrogen oxides ($N_2O, NO, NO_2$).",
+            "key_concepts": ["nitric acid", "oxidation"],
+            "marks": 5,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Define 'Galvanisation'. Why is it effective even if the zinc coating is scratched?",
+            "answer": "Coating iron/steel with Zinc. It is effective because Zinc is more reactive than Iron and acts as a 'sacrificial anode', corroding in place of the iron.",
+            "key_concepts": ["galvanisation", "sacrificial protection"],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "An element E reacts with water to form a solution which turns phenolphthalein pink. Is E a metal or a non-metal?",
+            "answer": "E is a metal. Its reaction with water forms a base (hydroxide), which turns phenolphthalein pink. Metals typically form basic hydroxides.",
+            "key_concepts": ["metal-water reaction", "bases"],
+            "marks": 5,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What are the constituents of Bronze and Solder? Mention one use for each alloy.",
+            "answer": "Bronze: Copper and Tin (used for statues/medals). Solder: Lead and Tin (used for welding electrical wires due to low melting point).",
+            "key_concepts": ["alloys", "industrial use"],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Why does Magnesium react with hot water but not cold water? What is the observation?",
+            "answer": "Magnesium is less reactive than Sodium/Calcium and requires more energy to react. It reacts with hot water to form $Mg(OH)_2$ and $H_2$. The metal floats due to $H_2$ bubbles.",
+            "key_concepts": ["reactivity", "observation"],
+            "marks": 5,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "How is 'Aqua Regia' able to dissolve gold even though neither HCl nor $HNO_3$ can do it alone?",
+            "answer": "The mixture produces nascent chlorine and nitrosyl chloride which are highly reactive and attack the gold to form soluble gold chloride complexes.",
+            "key_concepts": ["aqua regia", "gold dissolution"],
+            "marks": 5,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Differentiate between the properties of Diamond and Graphite as allotropes of a non-metal.",
+            "answer": "Diamond is a tetrahedral 3D structure, extremely hard, and a non-conductor. Graphite is a layered hexagonal structure, soft/slippery, and a good conductor due to free electrons.",
+            "key_concepts": ["allotropes", "carbon"],
+            "marks": 5,
+            "source_section": "Section 3.1.2"
+        }
+    ]
+}

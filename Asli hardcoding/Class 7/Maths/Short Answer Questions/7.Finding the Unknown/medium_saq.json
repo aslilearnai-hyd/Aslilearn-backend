@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Finding the Unknown",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T01:12:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Solve for x: 3x + 4 = 19.",
+            "answer": "3x = 19 - 4; 3x = 15; x = 5.",
+            "key_concepts": ["transposing terms", "two-step equations"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Translate and solve: 'Seven more than twice a number n is 21.'",
+            "answer": "2n + 7 = 21; 2n = 14; n = 7.",
+            "key_concepts": ["forming and solving equations"],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Solve: 4(p - 2) = 12.",
+            "answer": "p - 2 = 3; p = 5.",
+            "key_concepts": ["equations with brackets"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Solve for y: y/2 - 5 = 3.",
+            "answer": "y/2 = 8; y = 16.",
+            "key_concepts": ["inverse operations"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Find x if 5x - 7 = 2x + 8.",
+            "answer": "5x - 2x = 8 + 7; 3x = 15; x = 5.",
+            "key_concepts": ["variables on both sides"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "The sum of three consecutive integers is 33. Find the integers.",
+            "answer": "x + (x+1) + (x+2) = 33; 3x + 3 = 33; 3x = 30; x = 10. Integers are 10, 11, 12.",
+            "key_concepts": ["consecutive integers", "word problems"],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Solve: 10 - 3m = 1.",
+            "answer": "-3m = 1 - 10; -3m = -9; m = 3.",
+            "key_concepts": ["negative coefficients"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "If 1/3 of a number is added to 5, the result is 8. What is the number?",
+            "answer": "x/3 + 5 = 8; x/3 = 3; x = 9.",
+            "key_concepts": ["fractional coefficients"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Solve for a: 2a + 3/2 = 7/2.",
+            "answer": "2a = 7/2 - 3/2; 2a = 4/2; 2a = 2; a = 1.",
+            "key_concepts": ["rational numbers in equations"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "The length of a rectangle is twice its breadth. If the perimeter is 30 cm, find the dimensions.",
+            "answer": "2(2b + b) = 30; 2(3b) = 30; 6b = 30; b = 5, l = 10.",
+            "key_concepts": ["geometric applications"],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Solve: 15/4 - 7x = 9.",
+            "answer": "-7x = 9 - 15/4; -7x = (36-15)/4; -7x = 21/4; x = -3/4.",
+            "key_concepts": ["transposition with fractions"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the difference between an expression and an equation?",
+            "answer": "An expression is a combination of terms; an equation is a statement that two expressions are equal.",
+            "key_concepts": ["definitions"],
+            "marks": 2,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Solve: 3(2x + 1) = 21.",
+            "answer": "2x + 1 = 7; 2x = 6; x = 3.",
+            "key_concepts": ["distributive property"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Subtracting 5 from 3 times a number gives 16. Find the number.",
+            "answer": "3x - 5 = 16; 3x = 21; x = 7.",
+            "key_concepts": ["word problem translation"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Solve for z: 4z + 10 = -2.",
+            "answer": "4z = -12; z = -3.",
+            "key_concepts": ["negative solutions"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "If 7x + 1 = 15, find the value of 2x.",
+            "answer": "7x = 14, so x = 2. Therefore, 2x = 4.",
+            "key_concepts": ["multi-step logic"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The age of a father is 5 years more than three times his son's age. If the father is 44, find the son's age.",
+            "answer": "3s + 5 = 44; 3s = 39; s = 13.",
+            "key_concepts": ["age problems"],
+            "marks": 3,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Solve: x/3 + 5/2 = -3/2.",
+            "answer": "x/3 = -3/2 - 5/2; x/3 = -8/2; x/3 = -4; x = -12.",
+            "key_concepts": ["equations with rational numbers"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Write 'Add 4 to one-third of z to get 10' as an equation.",
+            "answer": "1/3z + 4 = 10.",
+            "key_concepts": ["complex statements"],
+            "marks": 1,
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Solve: 3(x-1) + 2(x-1) = 10.",
+            "answer": "5(x-1) = 10; x-1 = 2; x = 3.",
+            "key_concepts": ["combining like terms"],
+            "marks": 3,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the value of k if 4k = 2k + 10.",
+            "answer": "2k = 10; k = 5.",
+            "key_concepts": ["variables on both sides"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Check if x = -2 is a solution for 5x + 3 = -7.",
+            "answer": "5(-2) + 3 = -10 + 3 = -7. Yes, it is.",
+            "key_concepts": ["verifying solutions"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "A number p is multiplied by 4 and then 9 is subtracted. The result is 11. Find p.",
+            "answer": "4p - 9 = 11; 4p = 20; p = 5.",
+            "key_concepts": ["forming equations"],
+            "marks": 2,
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Solve: 2y + 5 = 5.",
+            "answer": "2y = 0; y = 0.",
+            "key_concepts": ["solving for zero"],
+            "marks": 1,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain 'transposition' in your own words.",
+            "answer": "Moving a term from one side of an equation to another while changing its sign.",
+            "key_concepts": ["methodology"],
+            "marks": 2,
+            "source_section": "Section 5.2"
+        }
+    ]
+}

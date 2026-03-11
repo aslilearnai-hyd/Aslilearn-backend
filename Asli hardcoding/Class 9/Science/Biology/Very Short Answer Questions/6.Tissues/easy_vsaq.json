@@ -1,0 +1,240 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-05T23:55:00",
+    "difficulty": "easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a tissue?",
+            "answer": "A tissue is a group of similar cells that perform a specific function.",
+            "key_points": [
+                "group of cells",
+                "specific function"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the basic unit of life?",
+            "answer": "The cell is the basic unit of life.",
+            "key_points": [
+                "cell"
+            ],
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the two main types of plant tissues.",
+            "answer": "Meristematic tissue and permanent tissue.",
+            "key_points": [
+                "plant tissues",
+                "meristematic",
+                "permanent"
+            ],
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is meristematic tissue?",
+            "answer": "Meristematic tissue is plant tissue that actively divides and helps in growth.",
+            "key_points": [
+                "cell division",
+                "plant growth"
+            ],
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Where is apical meristem found?",
+            "answer": "Apical meristem is found at the tips of roots and stems.",
+            "key_points": [
+                "root tips",
+                "stem tips"
+            ],
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What are permanent tissues?",
+            "answer": "Permanent tissues are tissues that have lost the ability to divide.",
+            "key_points": [
+                "non-dividing cells"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Name one simple permanent tissue.",
+            "answer": "Parenchyma.",
+            "key_points": [
+                "simple tissue"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which tissue stores food in plants?",
+            "answer": "Parenchyma tissue stores food.",
+            "key_points": [
+                "food storage"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which tissue provides flexibility to plants?",
+            "answer": "Collenchyma tissue provides flexibility.",
+            "key_points": [
+                "flexibility"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which tissue provides strength to plants?",
+            "answer": "Sclerenchyma tissue provides strength.",
+            "key_points": [
+                "mechanical strength"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which plant tissue transports water?",
+            "answer": "Xylem transports water in plants.",
+            "key_points": [
+                "water transport"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which plant tissue transports food?",
+            "answer": "Phloem transports food in plants.",
+            "key_points": [
+                "food transport"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What are stomata?",
+            "answer": "Stomata are small pores on the surface of leaves.",
+            "key_points": [
+                "leaf pores",
+                "gas exchange"
+            ],
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Name the four types of animal tissues.",
+            "answer": "Epithelial, connective, muscular and nervous tissues.",
+            "key_points": [
+                "animal tissues"
+            ],
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is epithelial tissue?",
+            "answer": "Epithelial tissue forms the covering of body surfaces and organs.",
+            "key_points": [
+                "protective covering"
+            ],
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Give one example of connective tissue.",
+            "answer": "Bone.",
+            "key_points": [
+                "connective tissue example"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which connective tissue transports substances in the body?",
+            "answer": "Blood transports substances in the body.",
+            "key_points": [
+                "blood transport"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is muscular tissue?",
+            "answer": "Muscular tissue helps in movement by contraction and relaxation.",
+            "key_points": [
+                "movement"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Name one type of muscle tissue.",
+            "answer": "Striated muscle.",
+            "key_points": [
+                "muscle type"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which muscle tissue is found in the heart?",
+            "answer": "Cardiac muscle.",
+            "key_points": [
+                "heart muscle"
+            ],
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is nervous tissue?",
+            "answer": "Nervous tissue transmits nerve impulses in the body.",
+            "key_points": [
+                "nerve impulses"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the basic unit of nervous tissue?",
+            "answer": "Neuron.",
+            "key_points": [
+                "neuron"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which part of neuron carries impulses away from the cell body?",
+            "answer": "Axon.",
+            "key_points": [
+                "axon"
+            ],
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Which connective tissue stores fat?",
+            "answer": "Adipose tissue stores fat.",
+            "key_points": [
+                "fat storage"
+            ],
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which tissue connects muscles to bones?",
+            "answer": "Tendon connects muscles to bones.",
+            "key_points": [
+                "tendon"
+            ],
+            "source_section": "Section 6.3.2"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Work and Energy",
+    "difficulty": "Medium",
+    "short_notes": {
+        "key_points": [
+            "Work is the product of force and displacement in the direction of force: W = F × d × cosθ.",
+            "Positive work: force and displacement in same direction; Negative work: opposite directions; Zero work: displacement perpendicular to force.",
+            "Kinetic energy (KE) depends on mass and velocity: KE = 1/2 mv².",
+            "Potential energy (PE) depends on mass and height: PE = mgh.",
+            "Elastic potential energy stored in springs: PE_spring = 1/2 k x².",
+            "Work-energy theorem: Work done = change in kinetic energy, W = ΔKE.",
+            "Law of conservation of energy: Total energy in an isolated system remains constant.",
+            "Power is the rate of doing work: P = W / t.",
+            "Efficiency of a machine: Efficiency = (Useful work output / Total work input) × 100%."
+        ],
+        "formulas": [
+            "Work: W = F × d × cosθ",
+            "Kinetic energy: KE = 1/2 mv²",
+            "Potential energy: PE = mgh",
+            "Elastic potential energy: PE_spring = 1/2 k x²",
+            "Work-energy theorem: W = ΔKE = KE_final − KE_initial",
+            "Power: P = W / t",
+            "Efficiency: Efficiency (%) = (Useful work output / Total work input) × 100%"
+        ],
+        "examples": [
+            "A 3 kg body moving at 4 m/s: KE = 1/2 × 3 × 4² = 24 J",
+            "A 5 kg mass lifted 8 m: PE = 5 × 9.8 × 8 = 392 J",
+            "Spring stretched 0.2 m with k = 100 N/m: PE_spring = 1/2 × 100 × 0.2² = 2 J",
+            "Force of 12 N moves body 6 m at 30° to displacement: W = 12 × 6 × cos30° ≈ 62.4 J",
+            "Machine uses 500 J input energy, does 400 J useful work → Efficiency = (400/500)×100 = 80%"
+        ],
+        "exam_tips": [
+            "Always resolve forces along the displacement for work calculations.",
+            "Use W = ΔKE when force and motion are variable.",
+            "For inclined planes, use energy conservation: PE_top = KE_bottom.",
+            "Check angles carefully: cosθ affects work value.",
+            "Draw energy bar diagrams for combined KE and PE problems."
+        ]
+    }
+}

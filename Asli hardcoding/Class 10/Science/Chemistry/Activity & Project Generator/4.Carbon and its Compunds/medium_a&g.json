@@ -1,0 +1,196 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Carbon and its Compounds",
+    "difficulty": "Medium",
+    "source_pdf": "carbon_compounds_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Electron Dot Structures of Complex Molecules",
+            "objective": "Master the representation of double and triple covalent bonds",
+            "materials": [
+                "Notebook",
+                "Compass",
+                "Colored pencils"
+            ],
+            "steps": [
+                "Draw the valence electrons for Carbon (4) and Oxygen (6)",
+                "Construct the electron-dot structure for Carbon dioxide ($CO_2$), showing the sharing of 4 electrons between C and each O",
+                "Repeat the process for Ethene ($C_2H_4$) and Ethyne ($C_2H_2$)",
+                "Label the number of shared pairs (single, double, or triple bonds)"
+            ],
+            "learning_outcome": "Visualizes how carbon achieves an octet through multiple bonding with itself and other atoms",
+            "evaluation": "Accuracy of the dot structures and correct count of shared electron pairs (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Isomerism Modeling: The Pentane Challenge",
+            "objective": "Identify different structural arrangements for the same molecular formula",
+            "materials": [
+                "Molecular model kit (or clay balls and toothpicks)",
+                "Notebook"
+            ],
+            "steps": [
+                "Using 5 carbon balls and 12 hydrogen sticks, construct a straight-chain (n-pentane)",
+                "Rearrange the same atoms to form a branched chain with one side group (isopentane)",
+                "Try to form a structure with a central carbon attached to four others (neopentane)",
+                "Draw the structural formula for each and name them"
+            ],
+            "learning_outcome": "Understands that compounds with the same molecular formula but different structures have different properties",
+            "evaluation": "Successful construction and drawing of all three isomers of pentane (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Bromine Water Test (Simulation)",
+            "objective": "Distinguish between saturated and unsaturated hydrocarbons chemically",
+            "materials": [
+                "Cooking oil (unsaturated)",
+                "Butter or Ghee (saturated)",
+                "Tincture of Iodine (as a substitute for Bromine water)",
+                "Test tubes"
+            ],
+            "steps": [
+                "Take 2ml of cooking oil in one tube and melted butter in another",
+                "Add a few drops of Iodine solution to both",
+                "Shake well and observe which one decolourises the brown color of Iodine",
+                "Research why 'Addition Reactions' occur only in unsaturated compounds"
+            ],
+            "learning_outcome": "Recognizes that double bonds in unsaturated fats react with halogens, leading to decolourisation",
+            "evaluation": "Correct observation of color change in oil vs. butter and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Investigating Functional Groups",
+            "objective": "Learn the suffixes and structures of common functional groups",
+            "materials": [
+                "Flashcards",
+                "Markers"
+            ],
+            "steps": [
+                "Create cards for 'Alcohol (-OH)', 'Aldehyde (-CHO)', 'Ketone (>C=O)', and 'Carboxylic Acid (-COOH)'",
+                "On the reverse, write the IUPAC suffix (ol, al, one, oic acid)",
+                "Draw the structure of Propanol, Propanal, Propanone, and Propanoic acid",
+                "Identify which group must always be at the end of a carbon chain"
+            ],
+            "learning_outcome": "Categorizes organic compounds based on their functional groups and nomenclature",
+            "evaluation": "Correct matching of structures to their respective names and suffixes (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Oxidation of Ethanol to Ethanoic Acid",
+            "objective": "Observe the chemical transformation of an alcohol",
+            "materials": [
+                "Ethanol",
+                "Alkaline Potassium Permanganate ($KMnO_4$)",
+                "Test tube",
+                "Water bath",
+                "Dropper"
+            ],
+            "steps": [
+                "Take 3ml of ethanol in a test tube and warm it in a water bath",
+                "Add a 5% solution of alkaline $KMnO_4$ drop by drop",
+                "Observe the initial purple color of $KMnO_4$ disappearing",
+                "Note the color when $KMnO_4$ is added in excess"
+            ],
+            "learning_outcome": "Understands that alcohols can be oxidized to carboxylic acids using oxidizing agents",
+            "evaluation": "Explaining why the purple color disappears and identifying the product formed (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The Esterification-Saponification Cycle",
+            "objective": "Understand the reversible nature of ester formation and its use in soap making",
+            "materials": [
+                "Glacial acetic acid",
+                "Ethanol",
+                "Conc. $H_2SO_4$",
+                "Sodium Hydroxide ($NaOH$)"
+            ],
+            "steps": [
+                "Create an ester (Ethyl Acetate) by heating acid and alcohol with $H_2SO_4$",
+                "Note the fruity smell",
+                "Add $NaOH$ to the ester and heat it again",
+                "Observe the disappearance of the fruity smell as the alcohol and sodium salt of the acid are recovered"
+            ],
+            "learning_outcome": "Learns the chemical basis of saponification used in the soap industry",
+            "evaluation": "Writing the balanced equations for both esterification and saponification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Properties of Ethanoic Acid",
+            "objective": "Test the acidity and reaction with weak bases",
+            "materials": [
+                "Ethanoic acid (Glacial or Vinegar)",
+                "Universal indicator",
+                "Sodium hydrogen carbonate",
+                "Lime water"
+            ],
+            "steps": [
+                "Test the pH of ethanoic acid using universal indicator paper",
+                "Add a pinch of $NaHCO_3$ to the acid in a test tube fitted with a delivery tube",
+                "Pass the gas through lime water",
+                "Record the observation and the time taken for lime water to turn milky"
+            ],
+            "learning_outcome": "Confirms the acidic nature of ethanoic acid and its ability to release $CO_2$",
+            "evaluation": "Comparing the acidity of ethanoic acid with HCl based on pH paper color (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Micelle Formation Model",
+            "objective": "Visualize the cleaning mechanism of soap",
+            "materials": [
+                "Beaker",
+                "Water",
+                "Oil/Grease",
+                "Soap solution",
+                "Laser pointer (optional for Tyndall effect)"
+            ],
+            "steps": [
+                "Add a drop of oil to water (it floats)",
+                "Add soap solution and stir vigorously",
+                "Observe how the oil 'disappears' into the water forming an emulsion",
+                "Draw a diagram of a soap molecule showing the hydrophilic head and hydrophobic tail"
+            ],
+            "learning_outcome": "Explains how micelles trap dirt/oil and make them soluble in water",
+            "evaluation": "Quality of the micelle diagram and explanation of the 'tail-in-oil' orientation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Detergents vs. Scum Formation",
+            "objective": "Analyze why synthetic detergents are superior in hard water",
+            "materials": [
+                "Hard water sample",
+                "Soap solution",
+                "Detergent solution",
+                "Two test tubes"
+            ],
+            "steps": [
+                "Add soap to hard water and shake; look for 'scum'",
+                "Add detergent to hard water and shake; look for 'lather'",
+                "Research the chemical difference (Carboxylate vs. Sulphonate groups)",
+                "Discuss the environmental impact of non-biodegradable detergents"
+            ],
+            "learning_outcome": "Differentiates between soaps and detergents based on their reaction with Calcium/Magnesium ions",
+            "evaluation": "Explaining why detergents do not form insoluble precipitates in hard water (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Carbon's Allotropes: Conductive Graphite",
+            "objective": "Verify the electrical conductivity of graphite",
+            "materials": [
+                "Pencil sharpened at both ends",
+                "9V Battery",
+                "LED or Bulb",
+                "Connecting wires"
+            ],
+            "steps": [
+                "Connect the battery and LED in a series circuit, leaving a gap",
+                "Touch the two ends of the pencil 'lead' to the circuit clips",
+                "Observe if the LED glows",
+                "Explain why the free electrons in graphite's layers allow this, unlike diamond"
+            ],
+            "learning_outcome": "Links the physical property of conductivity to the specific allotropic structure of carbon",
+            "evaluation": "Correct conclusion regarding the presence of free electrons in graphite (10 marks)"
+        }
+    ]
+}

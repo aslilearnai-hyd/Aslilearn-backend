@@ -1,0 +1,39 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Heron's Formula",
+    "difficulty": "Hard",
+    "short_notes": {
+        "key_points": [
+            "Heron's formula: Area = √[s(s-a)(s-b)(s-c)], with s = (a+b+c)/2.",
+            "Can be applied to scalene, isosceles, equilateral, right-angled, obtuse, and triangles with sides in arithmetic progression.",
+            "Used to find inradius r = Area/s and circumradius R = (a×b×c)/(4×Area).",
+            "Can calculate altitudes: h = 2×Area/base.",
+            "Essential for triangles with decimal sides or where altitudes and angles are unknown.",
+            "Can verify triangle properties: right-angle (Pythagoras), obtuse (c² > a² + b²), acute (all angles < 90°)."
+        ],
+        "formulas": [
+            "Semi-perimeter: s = (a+b+c)/2",
+            "Area: √[s(s-a)(s-b)(s-c)]",
+            "Inradius: r = Area/s",
+            "Circumradius: R = (a×b×c)/(4×Area)",
+            "Altitude from base a: h = 2×Area/a",
+            "Equilateral triangle: Area = (√3/4) a²"
+        ],
+        "examples": [
+            "Triangle sides 13.5, 14.2, 15.1 → s = 21.4; Area ≈ √[21.4×7.9×7.2×6.3] ≈ 87.4 cm²",
+            "Triangle sides in AP: 7, 10, 13 → s = 15; Area = √[15×8×5×2] ≈ 34.64 cm²",
+            "Isosceles triangle 9, 9, 12 → s = 15; Area ≈ 40.25 cm²; Altitude from base 12 → h ≈ 6.71 cm",
+            "Equilateral triangle side 8 → Area = (√3/4)×8² ≈ 27.71 cm²",
+            "Right-angled triangle 7, 24, 25 → Area = 84 cm²; Circumradius R = 7.5 cm"
+        ],
+        "exam_tips": [
+            "Always calculate semi-perimeter s first.",
+            "Check if triangle is right-angled or obtuse using side squares.",
+            "For triangles in AP, verify triangle inequality before applying Heron's formula.",
+            "For decimal sides, carefully multiply (s-a)(s-b)(s-c) to reduce rounding errors.",
+            "Use altitude, inradius, and circumradius formulas to answer extended questions.",
+            "For equilateral triangles, Heron's formula simplifies to (√3/4) a²."
+        ]
+    }
+}

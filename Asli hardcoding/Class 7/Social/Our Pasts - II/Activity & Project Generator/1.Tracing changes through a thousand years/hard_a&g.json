@@ -1,0 +1,170 @@
+{
+    "class": "Class 7",
+    "subject": "History (Our Pasts - II)",
+    "chapter": "Tracing Changes Through a Thousand Years",
+    "difficulty": "Hard",
+    "source_pdf": "our_pasts_2_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Epistemological Shift in Cartography",
+            "objective": "Analyze the impact of Eurocentrism and maritime technology on geography",
+            "materials": [
+                "Comparative map analysis worksheet",
+                "High-resolution images of Map 1 and Map 2"
+            ],
+            "steps": [
+                "Deconstruct why Al-Idrisi used an inverted perspective (South at top) and its roots in Arab geographical traditions",
+                "Contrast this with the 18th-century French map used by the 'Atlas Nouveau'",
+                "Evaluate how 'scientific' accuracy in the second map was a byproduct of colonial and commercial exploration needs",
+                "Write a thesis on how maps are not neutral but are 'socially constructed' by the cartographer's context"
+            ],
+            "learning_outcome": "Critically evaluates how power and utility dictate the representation of geographical space",
+            "evaluation": "Depth of analysis regarding the intent and cultural context of map-makers (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Semantics of 'Hindustan': A Political Inquiry",
+            "objective": "Trace the territorial and cultural fluidity of national identity",
+            "materials": [
+                "Excerpts from Minhaj-i-Siraj and Amir Khusrau"
+            ],
+            "steps": [
+                "Compare Minhaj-i-Siraj’s political definition (Punjab, Haryana, lands between Ganga-Yamuna) with Babur's cultural-geographical definition",
+                "Analyze why Minhaj-i-Siraj specifically excluded South India from his definition",
+                "Investigate how the 14th-century term 'Hind' differed from the 13th-century 'Hindustan'",
+                "Draft a paper on the dangers of 'Anachronism'—applying modern borders to medieval terminology"
+            ],
+            "learning_outcome": "Internalizes the complexity of historical geography and the evolution of the concept of India",
+            "evaluation": "Logical consistency in explaining the shifting borders of political terminology (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Textual Criticism and Manuscript Mutation",
+            "objective": "Understand the methodology of 'Philology' in historical research",
+            "materials": [
+                "Two versions of a text with subtle variations"
+            ],
+            "steps": [
+                "Analyze the two versions of Ziyauddin Barani’s 'Tarikh-i Firoz Shahi' (1356 vs 1358)",
+                "Explain the 'Scribal error' phenomenon and how it transforms an original manuscript over centuries",
+                "Discuss the challenges historians face when the 'archetype' (original) is lost and only varied copies remain",
+                "Create a 'Stemmatic' diagram showing how errors propagate in manual copying"
+            ],
+            "learning_outcome": "Applies critical thinking to assess the reliability and authenticity of textual sources",
+            "evaluation": "Technical understanding of manuscript variance and Barani's revisionist history (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Socio-Technological Synthesis (700-1750)",
+            "objective": "Link technological diffusion to demographic and economic shifts",
+            "materials": [
+                "Research data on the Persian Wheel and Fire-arms"
+            ],
+            "steps": [
+                "Research the origins of the Persian Wheel (Saqiya) and its impact on the agricultural expansion into forested zones",
+                "Analyze the correlation between the 'Clearing of Forests' and the social transformation of forest-dwellers into peasants",
+                "Explain how the Spinning Wheel changed the economic status of weaver communities",
+                "Present a case for the medieval period being an 'Age of Innovation' rather than a 'Dark Age'"
+            ],
+            "learning_outcome": "Correlates environmental changes with the emergence of new social classes and peasant societies",
+            "evaluation": "Ability to link technological arrival with specific social outcomes (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Jati Hierarchies and Local Autonomy",
+            "objective": "Investigate the interaction between self-governing Jatis and State authority",
+            "materials": [
+                "Sociological case studies on Jati Panchayats"
+            ],
+            "steps": [
+                "Analyze the statement 'ranks were not fixed permanently' in the Jati system during this period",
+                "Investigate how 'Jati Panchayats' functioned as a proto-legal system independent of the King’s courts",
+                "Explain the 'Interlocking Relationship' between Jati rules and Village (Gram) administration",
+                "Discuss how the accumulation of 'Power and Wealth' allowed certain Jatis to move up the social ladder"
+            ],
+            "learning_outcome": "Analyzes the non-static and decentralized nature of medieval Indian social structures",
+            "evaluation": "Clarity in explaining social mobility and local judicial autonomy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "The Political Economy of Patronage",
+            "objective": "Analyze the symbiotic relationship between Brahmanas and emerging dynasties",
+            "materials": [
+                "Historical records of land grants (Agraharas)"
+            ],
+            "steps": [
+                "Research why 'New Monarchs' (like Rajputs) required the validation of Brahmanas",
+                "Evaluate how the mastery of Sanskrit served as 'Cultural Capital' for the priestly class",
+                "Analyze the impact of 'Land Grants' on the economic power and prestige of temples",
+                "Argue how patronage transformed Brahmanas into a dominant socio-political force"
+            ],
+            "learning_outcome": "Synthesizes the link between religious legitimacy, linguistic monopoly, and political consolidation",
+            "evaluation": "Critical analysis of the social contract between the ruler and the scholar (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Islamic Legal Schools and Indian Integration",
+            "objective": "Study the intellectual diversity within medieval Islam in India",
+            "materials": [
+                "Comparative notes on Hanafi and Shafi'i schools"
+            ],
+            "steps": [
+                "Distinguish between the theology of Shia and Sunni sects in the Indian context",
+                "Investigate the Hanafi and Shafi’i schools of law and their influence on the Delhi Sultanate",
+                "Explain the role of the 'Ulama' in advising the state on Sharia and governance",
+                "Discuss how Islam adapted to the pluralistic environment of the subcontinent"
+            ],
+            "learning_outcome": "Evaluates the legal and theological diversity within Islam and its institutional role in India",
+            "evaluation": "Accuracy in distinguishing legal schools and their impact on state policy (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Bhakti: A Deconstruction of Ritualism",
+            "objective": "Analyze Bhakti as an egalitarian response to social stratification",
+            "materials": [
+                "Verses from Bhakti saints"
+            ],
+            "steps": [
+                "Critique the 'Temple-Priest' monopoly on salvation during the 7th-14th centuries",
+                "Explain how the Bhakti concept of a 'Personal God' democratized spirituality",
+                "Analyze why the Bhakti movement coincided with the rise of lower-caste social movements",
+                "Discuss the long-term impact of Bhakti on the breakdown of rigid caste barriers in worship"
+            ],
+            "learning_outcome": "Recognizes Bhakti as a subaltern movement that challenged traditional religious authority",
+            "evaluation": "Depth of reflection on the social implications of personal devotion (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Historiographical Critique of Periodization",
+            "objective": "Evaluate the bias in James Mill’s tripartite division of history",
+            "materials": [
+                "James Mill’s 'The History of British India' excerpts"
+            ],
+            "steps": [
+                "Deconstruct the 'Communal' basis of Mill’s division (Hindu, Muslim, British)",
+                "Analyze why modern historians prefer 'Ancient, Medieval, Modern' over religious labels",
+                "Explain the economic and social continuities that make the 'Medieval' label problematic",
+                "Write a critique on how periodization can be used as a tool for colonial justification"
+            ],
+            "learning_outcome": "Develops a critical understanding of how the 'naming' of time influences historical narrative",
+            "evaluation": "Strength of the historiographical argument against Mill's periodization (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The 'Paper Revolution' and Archival Statecraft",
+            "objective": "Trace the impact of affordable writing material on governance",
+            "materials": [
+                "Data on paper production and manuscript availability"
+            ],
+            "steps": [
+                "Analyze how the plummeting price of paper in the 13th century led to a 'Textual Explosion'",
+                "Investigate how this shift allowed for more complex administrative records (Farmans, Petitions)",
+                "Explain the concept of an 'Archive' as a repository of state power and memory",
+                "Discuss why oral traditions began to lose primacy to written records during this millennium"
+            ],
+            "learning_outcome": "Connects material technology (paper) to the growth of the bureaucratic and archival state",
+            "evaluation": "Logic in linking technological change to administrative complexity (10 marks)"
+        }
+    ]
+}

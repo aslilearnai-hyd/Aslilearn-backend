@@ -1,0 +1,169 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Improvement in Food Resources",
+    "difficulty": "Hard",
+    "source_pdf": "s9_12.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Sustainable Farming Model",
+            "objective": "Understand sustainable agricultural practices",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Research sustainable farming practices",
+                "Create a flow diagram showing crop production and livestock integration",
+                "Explain benefits for environment and farmers"
+            ],
+            "learning_outcome": "Explains sustainable agriculture systems",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Hybridisation Case Study",
+            "objective": "Understand plant breeding methods",
+            "materials": [
+                "Notebook",
+                "Reference sources"
+            ],
+            "steps": [
+                "Study hybridisation in crop plants",
+                "Write a case study on improved crop varieties",
+                "Explain benefits such as disease resistance"
+            ],
+            "learning_outcome": "Analyzes crop breeding techniques",
+            "evaluation": "Quality of case study (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Soil Fertility Investigation",
+            "objective": "Study factors affecting soil fertility",
+            "materials": [
+                "Soil samples",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect soil samples from different locations",
+                "Observe color, texture and moisture",
+                "Discuss how soil fertility affects crop yield"
+            ],
+            "learning_outcome": "Understands factors influencing soil fertility",
+            "evaluation": "Observation and interpretation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Integrated Farming Plan",
+            "objective": "Design an integrated farming system",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Plan a farm including crops, livestock and fish farming",
+                "Draw the layout",
+                "Explain how each component supports the other"
+            ],
+            "learning_outcome": "Understands integrated farming systems",
+            "evaluation": "Design quality and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Pest Control Strategy Report",
+            "objective": "Analyze pest management techniques",
+            "materials": [
+                "Notebook",
+                "Internet resources"
+            ],
+            "steps": [
+                "Research chemical and biological pest control methods",
+                "Compare their advantages",
+                "Write a report recommending best practices"
+            ],
+            "learning_outcome": "Evaluates pest management strategies",
+            "evaluation": "Depth of comparison (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Animal Feed Analysis",
+            "objective": "Understand nutritional requirements of livestock",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "List components of animal feed",
+                "Explain roughage and concentrates",
+                "Describe how balanced diet improves productivity"
+            ],
+            "learning_outcome": "Analyzes importance of balanced animal nutrition",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Poultry Farm Management Plan",
+            "objective": "Understand large-scale poultry management",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Design a poultry farm layout",
+                "Include feeding, housing and disease control",
+                "Explain management practices"
+            ],
+            "learning_outcome": "Understands scientific poultry farm management",
+            "evaluation": "Practicality of plan (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Aquaculture Research Project",
+            "objective": "Study modern fish farming methods",
+            "materials": [
+                "Notebook",
+                "Internet resources"
+            ],
+            "steps": [
+                "Research aquaculture systems",
+                "Explain benefits compared to capture fishing",
+                "Prepare a short project report"
+            ],
+            "learning_outcome": "Explains modern aquaculture techniques",
+            "evaluation": "Research quality (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Honey Production Process Diagram",
+            "objective": "Understand honey production in beekeeping",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "Draw stages of honey production",
+                "Label nectar collection, hive storage and extraction",
+                "Explain each stage"
+            ],
+            "learning_outcome": "Understands honey production process",
+            "evaluation": "Accuracy of diagram (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Future of Food Production Essay",
+            "objective": "Analyze challenges in food production",
+            "materials": [
+                "Notebook",
+                "Reference materials"
+            ],
+            "steps": [
+                "Research challenges such as population growth and resource limitations",
+                "Write an essay discussing solutions",
+                "Include sustainable agriculture methods"
+            ],
+            "learning_outcome": "Analyzes future challenges in agriculture",
+            "evaluation": "Depth of argument and clarity (10 marks)"
+        }
+    ]
+}

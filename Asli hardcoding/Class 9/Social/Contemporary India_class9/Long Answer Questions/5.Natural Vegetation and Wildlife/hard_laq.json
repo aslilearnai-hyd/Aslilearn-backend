@@ -1,0 +1,412 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 5: Natural Vegetation and Wildlife",
+    "generated_at": "2026-03-07T23:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how climate influences natural vegetation.",
+            "answer": "Climate plays a major role in determining the type of vegetation in a region. Factors such as temperature, rainfall and humidity influence the growth of plants.",
+            "answer_outline": [
+                "Role of temperature",
+                "Rainfall influence",
+                "Humidity and plant growth"
+            ],
+            "key_concepts": [
+                "climate",
+                "vegetation distribution"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the importance of biodiversity for ecological balance.",
+            "answer": "Biodiversity ensures stability in ecosystems by supporting food chains, maintaining ecological processes and providing natural resources.",
+            "answer_outline": [
+                "Food chain stability",
+                "Ecosystem balance",
+                "Resource availability"
+            ],
+            "key_concepts": [
+                "biodiversity",
+                "ecosystem balance"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the structure and characteristics of tropical evergreen forests.",
+            "answer": "Tropical evergreen forests are dense forests found in regions with heavy rainfall. They have multilayered vegetation and remain green throughout the year.",
+            "answer_outline": [
+                "Heavy rainfall regions",
+                "Multilayer vegetation",
+                "Evergreen tree cover"
+            ],
+            "key_concepts": [
+                "evergreen forests"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the classification of tropical deciduous forests.",
+            "answer": "Tropical deciduous forests are divided into moist and dry deciduous forests based on rainfall conditions.",
+            "answer_outline": [
+                "Moist deciduous forests",
+                "Dry deciduous forests",
+                "Rainfall conditions"
+            ],
+            "key_concepts": [
+                "deciduous forests"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the adaptations of plants in thorn forests.",
+            "answer": "Plants in thorn forests have long roots to reach underground water and small leaves to reduce evaporation.",
+            "answer_outline": [
+                "Deep root system",
+                "Small leaves",
+                "Water conservation"
+            ],
+            "key_concepts": [
+                "plant adaptation"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how altitude affects vegetation in mountainous regions.",
+            "answer": "Vegetation changes with increasing altitude due to changes in temperature and climate conditions.",
+            "answer_outline": [
+                "Temperature variation",
+                "Altitude zones",
+                "Vegetation belts"
+            ],
+            "key_concepts": [
+                "montane forests",
+                "altitude"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe the importance of mangrove forests in coastal ecosystems.",
+            "answer": "Mangrove forests protect coastal areas from erosion and storms and support marine biodiversity.",
+            "answer_outline": [
+                "Coastal protection",
+                "Storm barriers",
+                "Marine biodiversity"
+            ],
+            "key_concepts": [
+                "mangroves",
+                "coastal ecosystems"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the distribution of wildlife in different regions of India.",
+            "answer": "Wildlife distribution depends on climate, vegetation and habitat conditions in different regions.",
+            "answer_outline": [
+                "Forest habitats",
+                "Mountain wildlife",
+                "Desert animals"
+            ],
+            "key_concepts": [
+                "wildlife distribution"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of forests in supporting wildlife.",
+            "answer": "Forests provide food, shelter and breeding grounds for animals, supporting biodiversity.",
+            "answer_outline": [
+                "Food resources",
+                "Shelter and habitat",
+                "Breeding grounds"
+            ],
+            "key_concepts": [
+                "wildlife habitat"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the importance of medicinal plants in traditional medicine.",
+            "answer": "Medicinal plants are used to prepare medicines for treating various diseases and maintaining health.",
+            "answer_outline": [
+                "Traditional medicine",
+                "Disease treatment",
+                "Health benefits"
+            ],
+            "key_concepts": [
+                "medicinal plants"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the major threats to biodiversity.",
+            "answer": "Major threats include deforestation, hunting, pollution and introduction of alien species.",
+            "answer_outline": [
+                "Deforestation",
+                "Hunting",
+                "Pollution"
+            ],
+            "key_concepts": [
+                "biodiversity threats"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the importance of biosphere reserves in biodiversity conservation.",
+            "answer": "Biosphere reserves protect ecosystems, support conservation and allow research on biodiversity.",
+            "answer_outline": [
+                "Protected ecosystems",
+                "Conservation",
+                "Research activities"
+            ],
+            "key_concepts": [
+                "biosphere reserves"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the role of national parks in protecting wildlife.",
+            "answer": "National parks conserve wildlife, protect habitats and preserve biodiversity.",
+            "answer_outline": [
+                "Wildlife protection",
+                "Habitat conservation",
+                "Biodiversity preservation"
+            ],
+            "key_concepts": [
+                "national parks"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the role of wildlife sanctuaries in environmental protection.",
+            "answer": "Wildlife sanctuaries provide safe habitats for animals and protect endangered species.",
+            "answer_outline": [
+                "Animal protection",
+                "Habitat preservation",
+                "Species conservation"
+            ],
+            "key_concepts": [
+                "wildlife sanctuaries"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the objectives of Project Tiger.",
+            "answer": "Project Tiger aims to protect tigers, conserve habitats and maintain ecological balance.",
+            "answer_outline": [
+                "Tiger conservation",
+                "Habitat protection",
+                "Ecological balance"
+            ],
+            "key_concepts": [
+                "Project Tiger"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how deforestation affects biodiversity.",
+            "answer": "Deforestation destroys habitats and reduces plant and animal populations.",
+            "answer_outline": [
+                "Habitat loss",
+                "Species decline",
+                "Environmental imbalance"
+            ],
+            "key_concepts": [
+                "deforestation"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the role of forests in maintaining climate balance.",
+            "answer": "Forests regulate temperature, absorb carbon dioxide and maintain rainfall patterns.",
+            "answer_outline": [
+                "Temperature control",
+                "Carbon absorption",
+                "Rainfall regulation"
+            ],
+            "key_concepts": [
+                "climate regulation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how wildlife contributes to ecosystem stability.",
+            "answer": "Wildlife helps maintain food chains and ecological processes in ecosystems.",
+            "answer_outline": [
+                "Food chain balance",
+                "Ecological processes",
+                "Species interactions"
+            ],
+            "key_concepts": [
+                "ecosystem stability"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the ecological importance of wetlands.",
+            "answer": "Wetlands support biodiversity, store water and provide habitats for migratory birds.",
+            "answer_outline": [
+                "Water storage",
+                "Bird habitats",
+                "Biodiversity support"
+            ],
+            "key_concepts": [
+                "wetlands"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the significance of migratory birds in ecosystems.",
+            "answer": "Migratory birds contribute to biodiversity and ecological balance by moving between ecosystems.",
+            "answer_outline": [
+                "Seasonal migration",
+                "Ecosystem balance",
+                "Biodiversity contribution"
+            ],
+            "key_concepts": [
+                "migratory birds"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why conservation of forests is essential for sustainable development.",
+            "answer": "Forest conservation protects biodiversity and ensures availability of resources for future generations.",
+            "answer_outline": [
+                "Resource sustainability",
+                "Biodiversity protection",
+                "Environmental stability"
+            ],
+            "key_concepts": [
+                "sustainable development"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the impact of pollution on wildlife.",
+            "answer": "Pollution contaminates habitats and harms animals and plants.",
+            "answer_outline": [
+                "Habitat contamination",
+                "Species harm",
+                "Ecosystem damage"
+            ],
+            "key_concepts": [
+                "pollution"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the relationship between vegetation and wildlife.",
+            "answer": "Vegetation provides habitat and food for wildlife, while animals help maintain ecological processes.",
+            "answer_outline": [
+                "Food sources",
+                "Habitat support",
+                "Ecological interaction"
+            ],
+            "key_concepts": [
+                "vegetation and wildlife"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why biodiversity conservation is important for future generations.",
+            "answer": "Conservation ensures survival of species and maintains environmental stability for the future.",
+            "answer_outline": [
+                "Species survival",
+                "Environmental stability",
+                "Future sustainability"
+            ],
+            "key_concepts": [
+                "biodiversity conservation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the role of government policies in protecting forests and wildlife.",
+            "answer": "Government policies establish protected areas, conservation programs and wildlife protection laws.",
+            "answer_outline": [
+                "Protected areas",
+                "Conservation programs",
+                "Wildlife laws"
+            ],
+            "key_concepts": [
+                "government conservation policies"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter 1: Exploring the Investigative World of Science",
+  "difficulty": "Hard",
+  "source_pdf": "hecu101.pdf",
+  "short_notes": {
+    "key_points": [
+      "Scientific investigation is a systematic method used to understand natural phenomena through observation, experimentation, and analysis",
+      "A hypothesis is a testable explanation proposed before conducting an experiment",
+      "Variables in an investigation include independent, dependent, and controlled variables",
+      "Reliable scientific results require repeated experiments and accurate data collection",
+      "Scientific investigations rely on logical reasoning and evidence rather than assumptions"
+    ],
+    "examples": [
+      "Investigating how temperature affects the rate of evaporation",
+      "Testing how different surfaces affect the speed of a moving object",
+      "Observing how light intensity influences plant growth",
+      "Studying how the length of a pendulum affects its time period"
+    ],
+    "formulas": [
+      "Scientific investigation cycle → Observation → Question → Hypothesis → Experiment → Data Collection → Analysis → Conclusion",
+      "Speed formula → Speed = Distance / Time",
+      "Average calculation → Average = Total values / Number of observations"
+    ],
+    "exam_tips": [
+      "Clearly identify variables when describing an investigation",
+      "Explain the difference between hypothesis and conclusion",
+      "Support answers with examples of real experiments",
+      "Mention the importance of repeated trials for reliable results"
+    ]
+  }
+}

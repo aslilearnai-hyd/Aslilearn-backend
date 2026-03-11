@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Metals and Non-metals",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-10T23:48:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is malleability?",
+            "answer": "Malleability is the property of metals that allows them to be beaten into thin sheets.",
+            "key_concepts": ["physical properties", "malleability"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is ductility?",
+            "answer": "Ductility is the property of metals by which they can be drawn into thin wires.",
+            "key_concepts": ["physical properties", "ductility"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the most malleable and ductile metal.",
+            "answer": "Gold is the most malleable and ductile metal.",
+            "key_concepts": ["gold", "physical properties"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which metal is a liquid at room temperature?",
+            "answer": "Mercury.",
+            "key_concepts": ["mercury", "liquid metals"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Name two metals that are best conductors of heat.",
+            "answer": "Silver and copper.",
+            "key_concepts": ["thermal conductivity"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What does it mean for a metal to be 'sonorous'?",
+            "answer": "It means the metal produces a ringing sound when struck with a hard object.",
+            "key_concepts": ["sonority"],
+            "marks": 1,
+            "source_section": "Section 3.1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Name a non-metal that is a good conductor of electricity.",
+            "answer": "Graphite (an allotrope of carbon).",
+            "key_concepts": ["graphite", "electrical conductivity"],
+            "marks": 1,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which non-metal is a liquid at room temperature?",
+            "answer": "Bromine.",
+            "key_concepts": ["bromine", "non-metals"],
+            "marks": 1,
+            "source_section": "Section 3.1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What are amphoteric oxides?",
+            "answer": "Metal oxides which show both acidic as well as basic behavior are called amphoteric oxides.",
+            "key_concepts": ["amphoteric oxides"],
+            "marks": 1,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Give two examples of amphoteric oxides.",
+            "answer": "Aluminium oxide ($Al_2O_3$) and Zinc oxide ($ZnO$).",
+            "key_concepts": ["aluminium oxide", "zinc oxide"],
+            "marks": 1,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are sodium and potassium stored under kerosene oil?",
+            "answer": "They are highly reactive and react vigorously with oxygen and moisture in the air, which can lead to a fire.",
+            "key_concepts": ["reactivity", "alkali metals"],
+            "marks": 1,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is Anodising?",
+            "answer": "Anodising is the process of forming a thick oxide layer of aluminium to make it resistant to further corrosion.",
+            "key_concepts": ["anodising", "aluminium"],
+            "marks": 1,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is Aqua regia?",
+            "answer": "It is a freshly prepared mixture of concentrated hydrochloric acid and concentrated nitric acid in the ratio of 3:1.",
+            "key_concepts": ["aqua regia"],
+            "marks": 1,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when a metal reacts with dilute acid?",
+            "answer": "A salt and hydrogen gas are formed.",
+            "key_concepts": ["acid-metal reaction"],
+            "marks": 1,
+            "source_section": "Section 3.2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What are ionic compounds?",
+            "answer": "Compounds formed by the transfer of electrons from a metal to a non-metal are called ionic or electrovalent compounds.",
+            "key_concepts": ["ionic compounds"],
+            "marks": 1,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Why do ionic compounds have high melting points?",
+            "answer": "Because of the strong electrostatic forces of attraction between the oppositely charged ions.",
+            "key_concepts": ["melting point", "ionic bond"],
+            "marks": 1,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is an ore?",
+            "answer": "Ores are minerals from which a metal can be extracted profitably and conveniently.",
+            "key_concepts": ["ore", "extraction"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is gangue?",
+            "answer": "Gangue refers to the earthy impurities like soil and sand present in an ore.",
+            "key_concepts": ["gangue", "impurities"],
+            "marks": 1,
+            "source_section": "Section 3.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Define Roasting.",
+            "answer": "The process of heating sulphide ores strongly in the presence of excess air to convert them into oxides.",
+            "key_concepts": ["roasting", "sulphide ore"],
+            "marks": 1,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Define Calcination.",
+            "answer": "The process of heating carbonate ores strongly in limited air to convert them into oxides.",
+            "key_concepts": ["calcination", "carbonate ore"],
+            "marks": 1,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is an alloy?",
+            "answer": "An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal.",
+            "key_concepts": ["alloy"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is an amalgam?",
+            "answer": "An amalgam is an alloy in which one of the metals is mercury.",
+            "key_concepts": ["amalgam", "mercury"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Name the alloy made of copper and zinc.",
+            "answer": "Brass.",
+            "key_concepts": ["brass", "alloys"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Name the alloy made of copper and tin.",
+            "answer": "Bronze.",
+            "key_concepts": ["bronze", "alloys"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "What is galvanisation?",
+            "answer": "It is a method of protecting steel and iron from rusting by coating them with a thin layer of zinc.",
+            "key_concepts": ["galvanisation", "corrosion prevention"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

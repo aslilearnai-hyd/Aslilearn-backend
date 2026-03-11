@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Amazing World of Solute, Solvent, and Solutions",
+  "difficulty": "Easy",
+  "source_pdf": "Amazing_World_of_Solute_Solvent_Solutions.pdf",
+  "short_notes": {
+    "key_points": [
+      "A solution is a homogeneous mixture of two or more substances",
+      "The substance that dissolves is called the solute",
+      "The substance that dissolves the solute is called the solvent",
+      "Water is commonly called the universal solvent",
+      "Solutions can exist in solid, liquid, or gaseous states"
+    ],
+    "examples": [
+      "Salt dissolved in water forms a salt solution",
+      "Sugar dissolved in water forms a sugar solution",
+      "Air is a solution of gases",
+      "Carbon dioxide dissolved in water forms soda water",
+      "Brass is a solid solution of copper and zinc"
+    ],
+    "formulas_or_processes": [
+      "Solute: Substance that dissolves in a solvent",
+      "Solvent: Substance that dissolves the solute",
+      "Solution: Homogeneous mixture of solute and solvent",
+      "Dissolving: Process in which solute particles mix uniformly in solvent"
+    ],
+    "exam_tips": [
+      "Remember the difference between solute, solvent, and solution",
+      "Learn common examples of solutions in daily life",
+      "Understand that solutions are homogeneous mixtures",
+      "Identify the solvent as the component present in larger amount"
+    ]
+  }
+}

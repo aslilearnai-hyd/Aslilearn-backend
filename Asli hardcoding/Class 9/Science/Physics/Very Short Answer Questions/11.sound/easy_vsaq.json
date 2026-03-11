@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 11: Sound",
+  "difficulty": "Easy",
+  "generated_at": "2026-03-06T23:59:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is sound?",
+      "answer": "Sound is a form of energy produced by vibrating bodies and propagated through a medium as longitudinal waves.",
+      "key_points": ["sound", "energy", "vibration", "waves"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 2,
+      "question": "How does sound travel?",
+      "answer": "Sound travels as a longitudinal wave through solids, liquids, and gases.",
+      "key_points": ["sound", "longitudinal wave", "medium"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the speed of sound in air at 0°C?",
+      "answer": "The speed of sound in air at 0°C is approximately 331 m/s.",
+      "key_points": ["speed of sound", "air", "0°C"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 4,
+      "question": "Which medium allows sound to travel fastest?",
+      "answer": "Sound travels fastest in solids, slower in liquids, and slowest in gases.",
+      "key_points": ["medium", "sound speed", "solids", "liquids", "gases"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Define frequency of sound.",
+      "answer": "Frequency of sound is the number of vibrations per second of the vibrating body producing sound.",
+      "key_points": ["frequency", "sound", "vibrations"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 6,
+      "question": "What is amplitude of sound?",
+      "answer": "Amplitude of sound is the maximum displacement of particles of the medium from their mean position.",
+      "key_points": ["amplitude", "sound", "vibration", "displacement"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 7,
+      "question": "What determines the pitch of a sound?",
+      "answer": "Pitch of a sound is determined by the frequency of the vibrating body; higher frequency → higher pitch.",
+      "key_points": ["pitch", "frequency", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 8,
+      "question": "What determines loudness of a sound?",
+      "answer": "Loudness of a sound is determined by the amplitude of vibrations; larger amplitude → louder sound.",
+      "key_points": ["loudness", "amplitude", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is infrasound?",
+      "answer": "Infrasound refers to sound waves having frequency below 20 Hz, which is below the audible range of humans.",
+      "key_points": ["infrasound", "frequency", "below 20 Hz"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 10,
+      "question": "What is ultrasound?",
+      "answer": "Ultrasound refers to sound waves having frequency above 20,000 Hz, which is above the audible range of humans.",
+      "key_points": ["ultrasound", "frequency", "above 20,000 Hz"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 11,
+      "question": "Give one example of ultrasound application.",
+      "answer": "Ultrasound is used in medical imaging, such as scanning a baby in the womb.",
+      "key_points": ["ultrasound", "medical imaging", "example"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Define echo.",
+      "answer": "An echo is a reflected sound that is heard again after the original sound has stopped.",
+      "key_points": ["echo", "reflection", "sound"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 13,
+      "question": "What is reverberation?",
+      "answer": "Reverberation is the persistence of sound in a hall due to multiple reflections after the sound source has stopped.",
+      "key_points": ["reverberation", "reflections", "sound persistence"],
+      "source_section": "Section 11.6"
+    },
+    {
+      "question_number": 14,
+      "question": "What is meant by the audible range of humans?",
+      "answer": "The audible range of humans is the range of sound frequencies that can be heard, from 20 Hz to 20,000 Hz.",
+      "key_points": ["audible range", "humans", "frequency"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 15,
+      "question": "What kind of waves are sound waves?",
+      "answer": "Sound waves are longitudinal waves in which particles of the medium vibrate along the direction of wave propagation.",
+      "key_points": ["longitudinal waves", "sound", "vibration direction"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 16,
+      "question": "What is a noise?",
+      "answer": "Noise is an unwanted, unpleasant, or irregular sound.",
+      "key_points": ["noise", "sound", "unpleasant"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Why can sound not travel in vacuum?",
+      "answer": "Sound cannot travel in vacuum because it requires a material medium to propagate.",
+      "key_points": ["sound", "vacuum", "medium required"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the effect of temperature on speed of sound in air?",
+      "answer": "Speed of sound increases with increase in temperature of air.",
+      "key_points": ["temperature", "speed of sound", "air"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the unit of frequency of sound?",
+      "answer": "The unit of frequency is Hertz (Hz), which is equal to one vibration per second.",
+      "key_points": ["frequency", "unit", "Hertz", "Hz"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 20,
+      "question": "Define wavelength of sound.",
+      "answer": "Wavelength is the distance between two consecutive compressions or rarefactions in a sound wave.",
+      "key_points": ["wavelength", "sound", "compression", "rarefaction"],
+      "source_section": "Section 11.2"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the relationship between speed, frequency, and wavelength of sound?",
+      "answer": "Speed of sound = frequency × wavelength (v = f × λ).",
+      "key_points": ["speed", "frequency", "wavelength", "sound"],
+      "source_section": "Section 11.3"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the difference between loudness and intensity of sound?",
+      "answer": "Loudness is subjective perception of sound, while intensity is the energy transmitted per unit area per second.",
+      "key_points": ["loudness", "intensity", "sound"],
+      "source_section": "Section 11.4"
+    },
+    {
+      "question_number": 23,
+      "question": "Give one example of infrasound application.",
+      "answer": "Infrasound is used to detect earthquakes and volcanic eruptions.",
+      "key_points": ["infrasound", "application", "earthquake detection"],
+      "source_section": "Section 11.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Give one example of noise pollution.",
+      "answer": "Loud traffic, industrial machines, or construction work are examples of noise pollution.",
+      "key_points": ["noise pollution", "example", "sound"],
+      "source_section": "Section 11.1"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the effect of distance on loudness of sound?",
+      "answer": "Loudness decreases as distance from the source of sound increases.",
+      "key_points": ["distance", "loudness", "sound"],
+      "source_section": "Section 11.4"
+    }
+  ]
+}

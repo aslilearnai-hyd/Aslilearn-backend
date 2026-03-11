@@ -1,0 +1,28 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Coordinate Geometry",
+    "difficulty": "Hard",
+    "source_pdf": "jemh107.pdf",
+    "short_notes": {
+        "key_points": [
+            "Logical reasoning is required in complex coordinate problems",
+            "Word problems may require interpretation into coordinate form",
+            "Multiple points may be used together for reasoning-based questions",
+            "Accuracy in plotting is essential for diagram-based questions"
+        ],
+        "examples": [
+            "Identifying location of points using given conditions",
+            "Case-study problems involving coordinate positions"
+        ],
+        "formulas": [
+            "Distance from X-axis = |y|",
+            "Distance from Y-axis = |x|"
+        ],
+        "exam_tips": [
+            "Draw a rough graph before solving reasoning questions",
+            "Label points clearly in diagrams",
+            "Read word problems carefully to extract coordinates"
+        ]
+    }
+}

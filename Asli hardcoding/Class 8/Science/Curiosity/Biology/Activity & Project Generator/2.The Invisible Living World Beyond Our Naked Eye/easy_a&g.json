@@ -1,0 +1,199 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "The Invisible Living World: Beyond Our Naked Eye",
+  "difficulty": "Easy",
+  "source_pdf": "The Invisible Living World Beyond Our Naked Eye.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Water Flask Magnification Activity",
+      "objective": "Understand how lenses and magnification help us see small objects",
+      "materials": [
+        "Round-bottom glass flask",
+        "Water",
+        "Book"
+      ],
+      "steps": [
+        "Fill a round-bottom flask with water",
+        "Place it on an open book",
+        "Look at the letters through the flask",
+        "Observe how the letters appear larger"
+      ],
+      "learning_outcome": "Students understand the concept of magnification and the role of lenses",
+      "evaluation": "Observation and explanation of magnification (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Observation of Onion Peel Cells",
+      "objective": "Observe plant cells using a microscope",
+      "materials": [
+        "Onion bulb",
+        "Forceps",
+        "Glass slide",
+        "Safranin stain",
+        "Glycerin",
+        "Microscope"
+      ],
+      "steps": [
+        "Take a thin onion peel from the inner layer",
+        "Place it in safranin stain for 30 seconds",
+        "Rinse with water and place on a slide",
+        "Add glycerin and cover with a coverslip",
+        "Observe under a microscope"
+      ],
+      "learning_outcome": "Students learn the structure of plant cells",
+      "evaluation": "Accuracy of cell diagram and observations (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Observation of Human Cheek Cells",
+      "objective": "Understand the structure of animal cells",
+      "materials": [
+        "Clean toothpick",
+        "Glass slide",
+        "Water",
+        "Methylene blue stain",
+        "Microscope"
+      ],
+      "steps": [
+        "Gently scrape the inside of the cheek using a toothpick",
+        "Spread the sample on a slide with water",
+        "Add methylene blue stain",
+        "Cover with a coverslip",
+        "Observe under the microscope"
+      ],
+      "learning_outcome": "Students identify nucleus, cytoplasm, and cell membrane",
+      "evaluation": "Correct observation and labeled diagram (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Observation of Pond Water Microorganisms",
+      "objective": "Identify microorganisms in stagnant water",
+      "materials": [
+        "Pond or stagnant water",
+        "Dropper",
+        "Microscope slide",
+        "Microscope"
+      ],
+      "steps": [
+        "Collect pond water in a container",
+        "Place a drop of water on a slide",
+        "Cover with a coverslip",
+        "Observe under a microscope"
+      ],
+      "learning_outcome": "Students learn about microorganisms like Amoeba and Paramecium",
+      "evaluation": "Identification and drawings of microorganisms (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Soil Suspension Observation",
+      "objective": "Explore microorganisms present in soil",
+      "materials": [
+        "Soil sample",
+        "Beaker",
+        "Water",
+        "Glass rod",
+        "Microscope"
+      ],
+      "steps": [
+        "Mix soil with water to form soil suspension",
+        "Allow the mixture to settle",
+        "Take a drop of the top liquid",
+        "Observe under a microscope"
+      ],
+      "learning_outcome": "Students understand that soil contains many microorganisms",
+      "evaluation": "Correct observation notes (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Compost Formation Activity",
+      "objective": "Understand the role of microbes in decomposition",
+      "materials": [
+        "Container",
+        "Garden soil",
+        "Fruit and vegetable peels"
+      ],
+      "steps": [
+        "Fill a container halfway with soil",
+        "Add fruit and vegetable peels",
+        "Cover with soil",
+        "Observe after 2–3 weeks"
+      ],
+      "learning_outcome": "Students learn how microorganisms convert waste into manure",
+      "evaluation": "Observation of compost formation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Yeast and Dough Fermentation",
+      "objective": "Understand fermentation using yeast",
+      "materials": [
+        "Flour",
+        "Sugar",
+        "Yeast",
+        "Warm water",
+        "Two bowls"
+      ],
+      "steps": [
+        "Prepare dough in two bowls",
+        "Add yeast to one bowl only",
+        "Cover both bowls with a damp cloth",
+        "Observe changes after 4–5 hours"
+      ],
+      "learning_outcome": "Students understand fermentation and gas production by yeast",
+      "evaluation": "Observation of dough rising (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Curd Formation Experiment",
+      "objective": "Study the role of bacteria in milk fermentation",
+      "materials": [
+        "Milk",
+        "Curd starter",
+        "Two bowls"
+      ],
+      "steps": [
+        "Add curd to warm milk in bowl A",
+        "Add curd to cold milk in bowl B",
+        "Leave both bowls for several hours",
+        "Observe which milk turns into curd"
+      ],
+      "learning_outcome": "Students understand the role of Lactobacillus bacteria",
+      "evaluation": "Explanation of curd formation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Bread Mould Growth",
+      "objective": "Observe fungal growth on food",
+      "materials": [
+        "Two bread slices",
+        "Plate",
+        "Refrigerator"
+      ],
+      "steps": [
+        "Place one bread slice at room temperature",
+        "Place another in the refrigerator",
+        "Observe both slices after three days"
+      ],
+      "learning_outcome": "Students understand environmental conditions affecting microbial growth",
+      "evaluation": "Observation comparison (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Study of Root Nodules in Legume Plants",
+      "objective": "Understand nitrogen fixation by bacteria",
+      "materials": [
+        "Legume plant (bean or pea)",
+        "Magnifying glass"
+      ],
+      "steps": [
+        "Carefully remove a legume plant from soil",
+        "Observe the roots",
+        "Identify swollen nodules on the roots",
+        "Discuss the role of Rhizobium bacteria"
+      ],
+      "learning_outcome": "Students learn about nitrogen fixation and soil fertility",
+      "evaluation": "Correct explanation and identification (10 marks)"
+    }
+  ]
+}

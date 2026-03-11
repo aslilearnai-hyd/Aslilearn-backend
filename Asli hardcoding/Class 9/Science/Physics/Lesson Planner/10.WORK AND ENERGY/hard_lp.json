@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter_name": "Work and Energy",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply work and energy concepts in complex situations",
+        "Calculate work done by variable or angled forces",
+        "Analyze energy transformations in real-life systems",
+        "Understand efficiency of machines with multiple components",
+        "Apply conservation of energy in experiments",
+        "Solve advanced numerical problems involving work, energy, and power"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Work Done by Variable and Angled Forces",
+            "topics_covered": [
+                "Work formula with angle and variable force",
+                "Stepwise calculation of work for changing forces",
+                "Practical examples in daily life"
+            ],
+            "teaching_strategy": [
+                "Board demonstration with diagrams and calculations",
+                "Class discussion on complex scenarios"
+            ],
+            "student_activities": [
+                "Solve numerical problems involving force at an angle",
+                "Calculate work done with variable forces"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook verification"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced Energy Transformations",
+            "topics_covered": [
+                "Energy conversion in multi-step systems",
+                "Examples: pendulum with spring, roller coaster, machines",
+                "Calculation of kinetic and potential energy changes"
+            ],
+            "teaching_strategy": [
+                "Demonstration using pendulum or spring systems",
+                "Stepwise calculation on board"
+            ],
+            "student_activities": [
+                "Draw energy transformation diagrams for complex systems",
+                "Solve related numerical problems"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Peer discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Conservation of Energy in Experiments",
+            "topics_covered": [
+                "Law of conservation of energy in real systems",
+                "Measuring energy transfer and losses",
+                "Application in mechanical systems"
+            ],
+            "teaching_strategy": [
+                "Use pendulum, ball drop, or spring experiments",
+                "Board calculations showing energy changes"
+            ],
+            "student_activities": [
+                "Record and calculate PE and KE in experiments",
+                "Analyze energy loss due to friction or air resistance"
+            ],
+            "assessment": [
+                "Notebook verification",
+                "Short written exercises"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Power in Complex Scenarios",
+            "topics_covered": [
+                "Work done over different time intervals",
+                "Calculating average and instantaneous power",
+                "Numerical examples with machines"
+            ],
+            "teaching_strategy": [
+                "Board demonstration with stepwise calculations",
+                "Discussion on units and real-life examples"
+            ],
+            "student_activities": [
+                "Solve numerical problems involving power",
+                "Measure and calculate power in simple classroom experiments"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Efficiency of Combined Machines",
+            "topics_covered": [
+                "Work input vs work output",
+                "Calculating efficiency for multi-step machines",
+                "Energy loss due to friction"
+            ],
+            "teaching_strategy": [
+                "Demonstration using pulleys, levers, and weights",
+                "Board calculations with multiple steps"
+            ],
+            "student_activities": [
+                "Calculate efficiency for given systems",
+                "Compare efficiencies and analyze energy losses"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Peer verification"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Problem Solving Session",
+            "topics_covered": [
+                "Numerical problems involving work, energy, power, and efficiency",
+                "Multi-step calculations",
+                "Real-life application questions"
+            ],
+            "teaching_strategy": [
+                "Stepwise problem solving on board",
+                "Group discussion and solution sharing"
+            ],
+            "student_activities": [
+                "Solve advanced numerical problems individually",
+                "Discuss alternate methods with peers"
+            ],
+            "assessment": [
+                "Class exercises",
+                "Notebook check"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Concept Integration",
+            "topics_covered": [
+                "Recap of work, energy, power, efficiency, and conservation",
+                "Integration of concepts in practical examples",
+                "Common errors and problem-solving tips"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Problem-solving on board"
+            ],
+            "student_activities": [
+                "Group quiz on advanced problems",
+                "Solve revision worksheets individually"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "NCERT Science Textbook",
+        "Spring, pendulum, pulleys, weights, measuring scale"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class exercises",
+        "MCQs",
+        "Short answer tests"
+    ],
+    "teacher_tip": "Emphasize stepwise calculations, real-life applications, and energy transformations in multi-step systems to challenge students."
+}

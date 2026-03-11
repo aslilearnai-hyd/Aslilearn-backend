@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Civics",
+  "chapter": "Law and Social Justice",
+  "difficulty": "Hard",
+  "source_pdf": "Class-8-Political_life_III.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Analysis of Labour Laws",
+      "objective": "Understand how laws protect workers from exploitation",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the section about labour laws in the chapter",
+        "Identify two laws that protect workers",
+        "Explain how these laws improve working conditions"
+      ],
+      "learning_outcome": "Analyses the role of laws in protecting workers",
+      "evaluation": "Depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Case Study: Minimum Wage Law",
+      "objective": "Understand the importance of minimum wage laws",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine a situation where workers are paid very low wages",
+        "Explain how minimum wage laws help them",
+        "Describe what might happen if such laws did not exist"
+      ],
+      "learning_outcome": "Applies legal concepts to real-life situations",
+      "evaluation": "Logical explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Debate on Corporate Responsibility",
+      "objective": "Evaluate the role of companies in ensuring social justice",
+      "materials": ["Notebook"],
+      "steps": [
+        "Organise a class debate on the topic 'Companies should be responsible for worker safety'",
+        "Prepare arguments supporting the statement",
+        "Write a summary of the main points discussed"
+      ],
+      "learning_outcome": "Develops critical thinking on corporate responsibility",
+      "evaluation": "Quality of arguments and summary (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Comparing Worker Rights",
+      "objective": "Understand different rights given to workers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write two rights workers should have in workplaces",
+        "Explain why these rights are important",
+        "Compare these rights with situations where workers may be exploited"
+      ],
+      "learning_outcome": "Analyses worker rights and exploitation",
+      "evaluation": "Quality of comparison (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Research on a Workplace Safety Law",
+      "objective": "Understand laws that ensure safety in workplaces",
+      "materials": ["Notebook", "Reference materials"],
+      "steps": [
+        "Find a law related to workplace safety",
+        "Write what the law requires employers to do",
+        "Explain how it protects workers"
+      ],
+      "learning_outcome": "Understands the importance of workplace safety laws",
+      "evaluation": "Accuracy of research (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Role of Government in Social Justice",
+      "objective": "Understand how government ensures fairness in society",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the section about government responsibility",
+        "Write two ways the government protects workers and consumers",
+        "Explain why enforcement of laws is necessary"
+      ],
+      "learning_outcome": "Analyses the role of government in ensuring justice",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Mock Court on Worker Rights",
+      "objective": "Understand how legal systems solve disputes",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a scenario where workers are treated unfairly",
+        "Assign roles such as judge, worker and employer",
+        "Discuss how the law would solve the problem"
+      ],
+      "learning_outcome": "Applies legal concepts to workplace situations",
+      "evaluation": "Participation and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Comparing Social Justice in Different Sectors",
+      "objective": "Understand how laws affect workers in different industries",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose two sectors such as factories and construction",
+        "Write problems workers may face in each sector",
+        "Explain how laws can improve their conditions"
+      ],
+      "learning_outcome": "Analyses the need for labour laws in different sectors",
+      "evaluation": "Quality of analysis (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Critical Thinking: Society Without Labour Laws",
+      "objective": "Evaluate the consequences of lack of labour protection",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine a society without labour laws",
+        "Write three problems workers might face",
+        "Explain how labour laws help prevent these problems"
+      ],
+      "learning_outcome": "Develops critical thinking about labour protection",
+      "evaluation": "Logical reasoning (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Essay on Law and Social Justice",
+      "objective": "Summarise the importance of laws in promoting justice",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write an essay explaining how laws promote social justice",
+        "Include examples such as minimum wage and workplace safety",
+        "Explain why government enforcement is important"
+      ],
+      "learning_outcome": "Synthesises understanding of law and social justice",
+      "evaluation": "Clarity, structure and depth (10 marks)"
+    }
+  ]
+}

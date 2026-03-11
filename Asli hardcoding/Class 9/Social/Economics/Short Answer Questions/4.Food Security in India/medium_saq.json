@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 4: Food Security in India",
+  "generated_at": "2026-03-07T00:43:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How is food security ensured in a country?",
+      "answer": "Food security is ensured only if: (1) Enough food is available for all persons, (2) All persons have the capacity to buy food of acceptable quality, and (3) There is no barrier on access to food.",
+      "key_concepts": ["availability", "accessibility", "affordability"],
+      "marks": 3,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the role of the Food Corporation of India (FCI).",
+      "answer": "The FCI is responsible for procuring foodgrains (wheat and rice) from farmers in surplus states at the Minimum Support Price (MSP). It then stores these grains in granaries to build a buffer stock for the nation.",
+      "key_concepts": ["FCI", "procurement", "storage"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Why is 'Buffer Stock' created by the government?",
+      "answer": "Buffer Stock is created to distribute foodgrains in deficit areas and among the poorer strata of society at a lower price. It also helps resolve food shortages during adverse weather conditions or natural calamities.",
+      "key_concepts": ["buffer stock", "deficit areas", "calamities"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is Minimum Support Price (MSP)?",
+      "answer": "MSP is the price pre-announced by the government before the sowing season to provide incentives to farmers for raising the production of crops. It protects farmers from price fluctuations in the market.",
+      "key_concepts": ["MSP", "incentives", "price protection"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Distinguish between Chronic Hunger and Seasonal Hunger.",
+      "answer": "Chronic hunger is a result of diets persistently inadequate in terms of quantity or quality, often due to low income. Seasonal hunger is related to cycles of food growing and harvesting, common in rural areas during the off-season.",
+      "key_concepts": ["chronic hunger", "seasonal hunger", "income"],
+      "marks": 3,
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What are the three types of ration cards issued in India?",
+      "answer": "1. Antyodaya cards for the poorest of the poor. 2. BPL cards for those below the poverty line. 3. APL cards for those above the poverty line.",
+      "key_concepts": ["Antyodaya", "BPL", "APL"],
+      "marks": 3,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Briefly explain the National Food Security Act, 2013.",
+      "answer": "This act provides for food and nutritional security by ensuring access to adequate quality food at affordable prices. it covers 75% of the rural and 50% of the urban population.",
+      "key_concepts": ["NFSA 2013", "legal right", "population coverage"],
+      "marks": 3,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 8,
+      "question": "How did the Green Revolution help India achieve self-sufficiency?",
+      "answer": "The Green Revolution introduced HYV seeds and modern farming methods, leading to a massive increase in wheat and rice production. This allowed India to build significant buffer stocks and avoid importing food grains.",
+      "key_concepts": ["Green Revolution", "HYV seeds", "self-sufficiency"],
+      "marks": 3,
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the problems with the functioning of Ration Shops?",
+      "answer": "Dealers often divert grains to the open market for higher profits, sell poor quality grain, and open shops irregularly, which prevents the poor from accessing their entitlements.",
+      "key_concepts": ["malpractices", "black marketing", "quality issues"],
+      "marks": 3,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the importance of cooperatives in food security.",
+      "answer": "Cooperatives like Amul and Mother Dairy set up shops to sell controlled goods at reasonable prices. They ensure that essential items like milk and vegetables are affordable and available to common people.",
+      "key_concepts": ["cooperatives", "fair price", "Mother Dairy"],
+      "marks": 3,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is 'Antyodaya Anna Yojana' (AAY)?",
+      "answer": "Launched in 2000, AAY targets the poorest BPL families. Each family is entitled to 35 kg of foodgrains at highly subsidized rates—Rs. 2 per kg for wheat and Rs. 3 per kg for rice.",
+      "key_concepts": ["AAY", "poorest poor", "subsidized rates"],
+      "marks": 3,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 12,
+      "question": "How does a natural calamity like drought affect food security?",
+      "answer": "Drought leads to a decline in total food production, causing a shortage and rising prices. High prices make food unaffordable for the poorest sections, potentially leading to starvation.",
+      "key_concepts": ["drought", "price rise", "unaffordability"],
+      "marks": 3,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Describe the term 'Issue Price'.",
+      "answer": "The Issue Price is the subsidized price at which the government sells foodgrains from its buffer stock to the poor through ration shops. It is kept much lower than the market price.",
+      "key_concepts": ["issue price", "subsidy", "PDS"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Who are the most food-insecure people in urban areas?",
+      "answer": "Urban food-insecure groups include casual laborers, workers in ill-paid occupations, and seasonal workers whose earnings are low and unstable.",
+      "key_concepts": ["urban insecure", "casual labor", "low wages"],
+      "marks": 3,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 15,
+      "question": "What are the components of the Food Security System in India?",
+      "answer": "The system consists of two main components: (1) Buffer Stock, managed by the FCI for storage, and (2) The Public Distribution System (PDS) for distributing grains to the public.",
+      "key_concepts": ["buffer stock", "PDS", "system components"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 16,
+      "question": "How did Amul revolutionise food security in India?",
+      "answer": "Through the White Revolution, Amul organized dairy farmers into cooperatives, ensuring milk products reached consumers at reasonable prices and farmers received fair payment.",
+      "key_concepts": ["Amul", "White Revolution", "cooperatives"],
+      "marks": 3,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the significance of the 'Mid-day Meal Scheme'?",
+      "answer": "It provides cooked meals to children in schools, improving their nutritional status and acting as an incentive for poor parents to send their children to school regularly.",
+      "key_concepts": ["mid-day meal", "nutrition", "attendance"],
+      "marks": 3,
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Why is 'Affordability' a barrier to food security for the poor?",
+      "answer": "Affordability depends on purchasing power. If prices of food grains rise or incomes are too low, people cannot buy enough nutritious food even if it is available in the market.",
+      "key_concepts": ["affordability", "purchasing power", "inflation"],
+      "marks": 3,
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain 'Grain Banks' facilitated by NGOs.",
+      "answer": "Grain banks allow tribal or rural communities to deposit surplus grain and borrow it during lean seasons. This reduces dependency on moneylenders and ensures local food security.",
+      "key_concepts": ["grain banks", "NGOs", "community security"],
+      "marks": 3,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the difference between BPL and APL ration cards?",
+      "answer": "BPL (Below Poverty Line) cards provide higher subsidies for families with low income. APL (Above Poverty Line) cards provide grains at a higher 'Issue Price' closer to the market rate.",
+      "key_concepts": ["BPL", "APL", "differential pricing"],
+      "marks": 3,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Mention some states in India that face high food insecurity.",
+      "answer": "States like Bihar, Odisha, Uttar Pradesh, West Bengal, and Chhattisgarh have high concentrations of food-insecure people due to high poverty levels.",
+      "key_concepts": ["regional disparity", "food-insecure states"],
+      "marks": 3,
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What is a 'Subsidy' in the context of food security?",
+      "answer": "A subsidy is a payment made by the government to bridge the gap between the high cost of procuring food (MSP) and the low price at which it is sold to the poor (Issue Price).",
+      "key_concepts": ["subsidy", "price control", "government spending"],
+      "marks": 3,
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is the PDS sometimes considered a failure despite high stocks?",
+      "answer": "Administrative leakages, corruption by dealers, and 'inclusion/exclusion' errors often mean that the truly needy are left out while non-poor families get the benefits.",
+      "key_concepts": ["PDS failure", "leakages", "targeting errors"],
+      "marks": 3,
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 24,
+      "question": "What role does the Academy of Development Science (ADS) play in Maharashtra?",
+      "answer": "ADS has facilitated a network of NGOs to set up grain banks, providing training and influencing the government's food security policy through successful community models.",
+      "key_concepts": ["ADS", "grain banks", "Maharashtra"],
+      "marks": 3,
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 25,
+      "question": "What are the social groups most vulnerable to food insecurity?",
+      "answer": "Scheduled Castes, Scheduled Tribes, and sections of the OBCs who have a poor land-base or very low land productivity are the most vulnerable.",
+      "key_concepts": ["SC", "ST", "OBC", "vulnerability"],
+      "marks": 3,
+      "source_section": "Section 4.2"
+    }
+  ]
+}

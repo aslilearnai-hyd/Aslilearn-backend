@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "The Snake and the Mirror",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the story and characters in the chapter",
+        "Identify the main events and plot development",
+        "Recognize the psychological and emotional state of the protagonist",
+        "Develop basic comprehension and summarization skills",
+        "Learn and use new vocabulary from the chapter"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Author: Anthony Hope",
+                "Setting and background of the story",
+                "Introduction to the main character, Apoorva"
+            ],
+            "teaching_strategy": [
+                "Teacher-led discussion about fears and phobias",
+                "Board notes on story context"
+            ],
+            "student_activities": [
+                "Discuss what causes fear and anxiety",
+                "Predict the events of the story based on title"
+            ],
+            "assessment": [
+                "Class participation",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Reading – Initial Situation",
+            "topics_covered": [
+                "Apoorva’s environment and habits",
+                "Description of his personality and fears",
+                "Introduction to the mirror and snake imagery"
+            ],
+            "teaching_strategy": [
+                "Read aloud by students",
+                "Explain difficult words and phrases"
+            ],
+            "student_activities": [
+                "Underline key sentences describing fear",
+                "Write 2–3 sentences about Apoorva’s personality"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Rising Action and Conflict",
+            "topics_covered": [
+                "Apoorva sees the snake in the mirror",
+                "His panic and imagination",
+                "Emotional and psychological impact"
+            ],
+            "teaching_strategy": [
+                "Discussion on cause-and-effect between perception and fear",
+                "Teacher explanation of psychological aspect"
+            ],
+            "student_activities": [
+                "List the events leading to Apoorva’s fear",
+                "Explain in own words why he reacts strongly"
+            ],
+            "assessment": [
+                "Class discussion",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Climax and Resolution",
+            "topics_covered": [
+                "Apoorva realizes the snake is a reflection",
+                "His reaction and relief",
+                "Lesson about fear and perception"
+            ],
+            "teaching_strategy": [
+                "Board flowchart of events from conflict to resolution",
+                "Class discussion on lesson learned"
+            ],
+            "student_activities": [
+                "Write a short paragraph describing the climax",
+                "Discuss what Apoorva learns from the experience"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Themes, Characters, and Summary",
+            "topics_covered": [
+                "Main theme: Fear and its effects on human mind",
+                "Character traits of Apoorva",
+                "Writing a simple summary of the story"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation of themes and character traits",
+                "Guided discussion for summary writing"
+            ],
+            "student_activities": [
+                "List key events in sequence",
+                "Write a 6–8 sentence summary of the chapter"
+            ],
+            "assessment": [
+                "Sequence accuracy",
+                "Quality of summary"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary, Reflection, and Application",
+            "topics_covered": [
+                "Important words and phrases from the chapter",
+                "Reflecting on fear and handling it",
+                "Applying story lessons to real life"
+            ],
+            "teaching_strategy": [
+                "Board explanation of vocabulary with examples",
+                "Reflective discussion prompts for students"
+            ],
+            "student_activities": [
+                "List new words with meanings and use in sentences",
+                "Write a reflection on how fear can be managed",
+                "Class discussion on handling imagination and perception"
+            ],
+            "assessment": [
+                "Written reflection evaluation",
+                "Vocabulary quiz",
+                "Class discussion participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Blackboard or Whiteboard",
+        "Markers or Chalk",
+        "Printed story excerpts",
+        "Flowchart of events"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Class participation",
+        "Oral questioning",
+        "Short written exercises",
+        "Summary and reflection evaluation"
+    ],
+    "teacher_tip": "Encourage students to connect the story to real-life fears, and discuss how perception can affect emotions and reactions."
+}

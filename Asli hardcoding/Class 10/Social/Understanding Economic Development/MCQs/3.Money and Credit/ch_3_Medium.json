@@ -1,0 +1,310 @@
+{
+  "content_type": "MCQs",
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Money and Credit",
+  "difficulty": "Medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is money considered a medium of exchange?",
+      "options": {
+        "A": "It increases production",
+        "B": "It eliminates double coincidence of wants",
+        "C": "It stores goods",
+        "D": "It reduces population"
+      },
+      "correct_answer": "B",
+      "explanation": "Money removes the need for double coincidence of wants in barter."
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is NOT a function of money?",
+      "options": {
+        "A": "Medium of exchange",
+        "B": "Measure of value",
+        "C": "Store of value",
+        "D": "Production of goods"
+      },
+      "correct_answer": "D",
+      "explanation": "Money does not produce goods; it facilitates exchange."
+    },
+    {
+      "question_number": 3,
+      "question": "Why do banks ask for collateral while giving loans?",
+      "options": {
+        "A": "To increase interest",
+        "B": "To ensure loan repayment",
+        "C": "To reduce deposits",
+        "D": "To avoid paperwork"
+      },
+      "correct_answer": "B",
+      "explanation": "Collateral acts as security if the borrower fails to repay."
+    },
+    {
+      "question_number": 4,
+      "question": "Which situation represents productive credit?",
+      "options": {
+        "A": "Loan for medical emergency",
+        "B": "Loan for buying luxury goods",
+        "C": "Loan for setting up a small business",
+        "D": "Loan for a party"
+      },
+      "correct_answer": "C",
+      "explanation": "Productive credit generates income."
+    },
+    {
+      "question_number": 5,
+      "question": "Why is informal credit considered risky?",
+      "options": {
+        "A": "Low interest rates",
+        "B": "Regulated by RBI",
+        "C": "High interest rates and no regulation",
+        "D": "Government support"
+      },
+      "correct_answer": "C",
+      "explanation": "Informal lenders often charge high interest without regulation."
+    },
+    {
+      "question_number": 6,
+      "question": "Demand deposits are important because they:",
+      "options": {
+        "A": "Cannot be withdrawn",
+        "B": "Act as money",
+        "C": "Are stored at home",
+        "D": "Have no value"
+      },
+      "correct_answer": "B",
+      "explanation": "Demand deposits can be used through cheques and act as money."
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following is regulated by RBI?",
+      "options": {
+        "A": "Moneylender",
+        "B": "Commercial bank",
+        "C": "Friend lending money",
+        "D": "Trader"
+      },
+      "correct_answer": "B",
+      "explanation": "Commercial banks are regulated by RBI."
+    },
+    {
+      "question_number": 8,
+      "question": "What is the main objective of Self Help Groups?",
+      "options": {
+        "A": "Provide large industrial loans",
+        "B": "Provide small credit to members",
+        "C": "Control RBI",
+        "D": "Export goods"
+      },
+      "correct_answer": "B",
+      "explanation": "SHGs provide small loans to members."
+    },
+    {
+      "question_number": 9,
+      "question": "Which example shows a debt trap?",
+      "options": {
+        "A": "Loan repaid on time",
+        "B": "Borrowing at low interest",
+        "C": "Borrowing repeatedly to repay old loans",
+        "D": "Saving money regularly"
+      },
+      "correct_answer": "C",
+      "explanation": "Debt trap occurs when borrower cannot repay and borrows again."
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following improves access to formal credit?",
+      "options": {
+        "A": "Opening more bank branches",
+        "B": "Increasing moneylenders",
+        "C": "Reducing savings",
+        "D": "Increasing barter"
+      },
+      "correct_answer": "A",
+      "explanation": "More bank branches improve credit access."
+    },
+    {
+      "question_number": 11,
+      "question": "Why is bank credit considered cheaper than moneylender credit?",
+      "options": {
+        "A": "Lower interest rates",
+        "B": "No repayment needed",
+        "C": "Higher interest rates",
+        "D": "No documentation"
+      },
+      "correct_answer": "A",
+      "explanation": "Banks generally charge lower interest."
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is an example of formal credit?",
+      "options": {
+        "A": "Borrowing from relative",
+        "B": "Loan from cooperative bank",
+        "C": "Money from trader",
+        "D": "Loan from friend"
+      },
+      "correct_answer": "B",
+      "explanation": "Cooperative banks are part of formal sector."
+    },
+    {
+      "question_number": 13,
+      "question": "Why is credit important for farmers?",
+      "options": {
+        "A": "To pay taxes only",
+        "B": "To buy seeds and fertilizers",
+        "C": "To reduce crops",
+        "D": "To avoid markets"
+      },
+      "correct_answer": "B",
+      "explanation": "Farmers need credit for agricultural inputs."
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following reflects legal tender?",
+      "options": {
+        "A": "Gold coin",
+        "B": "RBI issued currency",
+        "C": "Foreign currency",
+        "D": "Cheque only"
+      },
+      "correct_answer": "B",
+      "explanation": "RBI issued currency is legal tender."
+    },
+    {
+      "question_number": 15,
+      "question": "What happens if borrower fails to repay a secured loan?",
+      "options": {
+        "A": "Bank loses money only",
+        "B": "Collateral is taken by lender",
+        "C": "Interest is cancelled",
+        "D": "Loan becomes free"
+      },
+      "correct_answer": "B",
+      "explanation": "Collateral is seized if loan is unpaid."
+    },
+    {
+      "question_number": 16,
+      "question": "Which form of money is easiest for online shopping?",
+      "options": {
+        "A": "Cash",
+        "B": "Barter",
+        "C": "Digital payment",
+        "D": "Gold"
+      },
+      "correct_answer": "C",
+      "explanation": "Digital payments are used for online transactions."
+    },
+    {
+      "question_number": 17,
+      "question": "Which credit situation can lead to poverty?",
+      "options": {
+        "A": "Low interest loan",
+        "B": "High interest informal loan",
+        "C": "Bank loan for business",
+        "D": "Savings account"
+      },
+      "correct_answer": "B",
+      "explanation": "High interest loans can trap borrowers in debt."
+    },
+    {
+      "question_number": 18,
+      "question": "Why are banks able to give loans?",
+      "options": {
+        "A": "They print money",
+        "B": "They use deposits of customers",
+        "C": "They borrow from moneylenders",
+        "D": "They avoid RBI rules"
+      },
+      "correct_answer": "B",
+      "explanation": "Banks lend money from deposits collected."
+    },
+    {
+      "question_number": 19,
+      "question": "Which function of money helps in saving for future?",
+      "options": {
+        "A": "Medium of exchange",
+        "B": "Store of value",
+        "C": "Measure of value",
+        "D": "Production"
+      },
+      "correct_answer": "B",
+      "explanation": "Money stores value for future use."
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is an advantage of formal credit?",
+      "options": {
+        "A": "Very high interest",
+        "B": "No regulation",
+        "C": "Legal protection",
+        "D": "No documentation"
+      },
+      "correct_answer": "C",
+      "explanation": "Formal credit provides legal protection."
+    },
+    {
+      "question_number": 21,
+      "question": "Which of the following increases financial inclusion?",
+      "options": {
+        "A": "Opening Jan Dhan accounts",
+        "B": "Increasing barter",
+        "C": "Closing banks",
+        "D": "Encouraging moneylenders"
+      },
+      "correct_answer": "A",
+      "explanation": "Jan Dhan Yojana promotes bank account access."
+    },
+    {
+      "question_number": 22,
+      "question": "Why is documentation required for bank loans?",
+      "options": {
+        "A": "To delay loan",
+        "B": "To ensure transparency and repayment",
+        "C": "To increase taxes",
+        "D": "To reduce savings"
+      },
+      "correct_answer": "B",
+      "explanation": "Documentation ensures accountability."
+    },
+    {
+      "question_number": 23,
+      "question": "Which situation reflects measure of value function?",
+      "options": {
+        "A": "Comparing prices of goods",
+        "B": "Saving cash",
+        "C": "Paying interest",
+        "D": "Borrowing money"
+      },
+      "correct_answer": "A",
+      "explanation": "Money helps compare values of goods."
+    },
+    {
+      "question_number": 24,
+      "question": "Why is saving important in banking?",
+      "options": {
+        "A": "Reduces credit",
+        "B": "Provides funds for loans",
+        "C": "Stops trade",
+        "D": "Increases barter"
+      },
+      "correct_answer": "B",
+      "explanation": "Savings provide funds for bank lending."
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following is safest for long-term borrowing?",
+      "options": {
+        "A": "Moneylender",
+        "B": "Formal bank loan",
+        "C": "Friend",
+        "D": "Trader"
+      },
+      "correct_answer": "B",
+      "explanation": "Formal bank loans are regulated and safer."
+    }
+  ]
+}

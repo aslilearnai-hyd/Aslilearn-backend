@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Statistics",
+    "generated_at": "2026-02-28T00:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Statistics is the study of?",
+            "options": {
+                "A": "Numbers only",
+                "B": "Data collection and analysis",
+                "C": "Algebra",
+                "D": "Geometry"
+            },
+            "correct_answer": "B",
+            "explanation": "Statistics deals with collection, organisation, and analysis of data.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is called raw data?",
+            "options": {
+                "A": "Organised data",
+                "B": "Grouped data",
+                "C": "Unorganised data",
+                "D": "Tabulated data"
+            },
+            "correct_answer": "C",
+            "explanation": "Unorganised data is known as raw data.",
+            "difficulty": "easy",
+            "source_section": "Data"
+        },
+        {
+            "question_number": 3,
+            "question": "The value that occurs most frequently is called?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is the most frequent value.",
+            "difficulty": "easy",
+            "source_section": "Measures of Central Tendency"
+        },
+        {
+            "question_number": 4,
+            "question": "The arithmetic mean is found by?",
+            "options": {
+                "A": "Adding all values",
+                "B": "Dividing highest by lowest",
+                "C": "Sum of values ÷ number of values",
+                "D": "Middle value"
+            },
+            "correct_answer": "C",
+            "explanation": "Mean = sum of observations divided by number of observations.",
+            "difficulty": "easy",
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 5,
+            "question": "The middle value of arranged data is called?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Average"
+            },
+            "correct_answer": "B",
+            "explanation": "Median is the middle value.",
+            "difficulty": "easy",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 6,
+            "question": "Which measure is affected most by extreme values?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "A",
+            "explanation": "Mean is highly affected by extreme values.",
+            "difficulty": "easy",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 7,
+            "question": "Which measure of central tendency may not exist?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "All exist always"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode may not exist if no value repeats.",
+            "difficulty": "easy",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 8,
+            "question": "Which graphical representation uses bars?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "B",
+            "explanation": "Bar graph uses bars to represent data.",
+            "difficulty": "easy",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 9,
+            "question": "Which graph represents cumulative frequency?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Ogive",
+                "D": "Pie chart"
+            },
+            "correct_answer": "C",
+            "explanation": "Ogive represents cumulative frequency.",
+            "difficulty": "easy",
+            "source_section": "Ogive"
+        },
+        {
+            "question_number": 10,
+            "question": "Which measure is also called average?",
+            "options": {
+                "A": "Median",
+                "B": "Mode",
+                "C": "Mean",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mean is commonly referred to as average.",
+            "difficulty": "easy",
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the sum of frequencies called?",
+            "options": {
+                "A": "Mean",
+                "B": "Total frequency",
+                "C": "Mode",
+                "D": "Median"
+            },
+            "correct_answer": "B",
+            "explanation": "Sum of frequencies gives total frequency.",
+            "difficulty": "easy",
+            "source_section": "Frequency"
+        },
+        {
+            "question_number": 12,
+            "question": "Which measure divides the data into two equal parts?",
+            "options": {
+                "A": "Mean",
+                "B": "Mode",
+                "C": "Median",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Median divides data into two equal parts.",
+            "difficulty": "easy",
+            "source_section": "Median"
+        },
+        {
+            "question_number": 13,
+            "question": "Which type of data can be arranged in class intervals?",
+            "options": {
+                "A": "Grouped data",
+                "B": "Raw data",
+                "C": "Ungrouped data",
+                "D": "None"
+            },
+            "correct_answer": "A",
+            "explanation": "Grouped data is arranged in class intervals.",
+            "difficulty": "easy",
+            "source_section": "Grouped Data"
+        },
+        {
+            "question_number": 14,
+            "question": "Which measure is least affected by extreme values?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "B",
+            "explanation": "Median is least affected by extreme values.",
+            "difficulty": "easy",
+            "source_section": "Comparison"
+        },
+        {
+            "question_number": 15,
+            "question": "Which graph is circular in shape?",
+            "options": {
+                "A": "Bar graph",
+                "B": "Histogram",
+                "C": "Pie chart",
+                "D": "Ogive"
+            },
+            "correct_answer": "C",
+            "explanation": "Pie chart is circular.",
+            "difficulty": "easy",
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 16,
+            "question": "What does frequency mean?",
+            "options": {
+                "A": "Value of data",
+                "B": "Number of times a value occurs",
+                "C": "Average",
+                "D": "Middle value"
+            },
+            "correct_answer": "B",
+            "explanation": "Frequency is the number of times a value occurs.",
+            "difficulty": "easy",
+            "source_section": "Frequency"
+        },
+        {
+            "question_number": 17,
+            "question": "Which measure is useful when data has a clear most frequent value?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode is best when a value repeats frequently.",
+            "difficulty": "easy",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is NOT a measure of central tendency?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "D",
+            "explanation": "Range is a measure of dispersion.",
+            "difficulty": "easy",
+            "source_section": "Concepts"
+        },
+        {
+            "question_number": 19,
+            "question": "Data collected for a specific purpose is called?",
+            "options": {
+                "A": "Secondary data",
+                "B": "Primary data",
+                "C": "Grouped data",
+                "D": "Raw data"
+            },
+            "correct_answer": "B",
+            "explanation": "Primary data is collected directly.",
+            "difficulty": "easy",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following best represents continuous data?",
+            "options": {
+                "A": "Number of students",
+                "B": "Marks obtained",
+                "C": "Heights of students",
+                "D": "Roll numbers"
+            },
+            "correct_answer": "C",
+            "explanation": "Heights are continuous data.",
+            "difficulty": "easy",
+            "source_section": "Data Types"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the first step in statistical study?",
+            "options": {
+                "A": "Analysis",
+                "B": "Interpretation",
+                "C": "Collection of data",
+                "D": "Presentation"
+            },
+            "correct_answer": "C",
+            "explanation": "Data collection is the first step.",
+            "difficulty": "easy",
+            "source_section": "Process"
+        },
+        {
+            "question_number": 22,
+            "question": "Which measure gives the most typical value?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Mode",
+                "D": "Range"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode represents the most typical value.",
+            "difficulty": "easy",
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 23,
+            "question": "Which frequency curve is always increasing?",
+            "options": {
+                "A": "Histogram",
+                "B": "Bar graph",
+                "C": "Ogive",
+                "D": "Pie chart"
+            },
+            "correct_answer": "C",
+            "explanation": "Ogive always increases cumulatively.",
+            "difficulty": "easy",
+            "source_section": "Ogive"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the total of all class frequencies equal to?",
+            "options": {
+                "A": "Mean",
+                "B": "Median",
+                "C": "Total observations",
+                "D": "Mode"
+            },
+            "correct_answer": "C",
+            "explanation": "Sum of frequencies equals total observations.",
+            "difficulty": "easy",
+            "source_section": "Frequency"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "Mean is always a value from data",
+                "B": "Median is affected by extreme values",
+                "C": "Mode may not exist",
+                "D": "Range is a central tendency"
+            },
+            "correct_answer": "C",
+            "explanation": "Mode may not exist if no repetition occurs.",
+            "difficulty": "easy",
+            "source_section": "Summary"
+        }
+    ]
+}

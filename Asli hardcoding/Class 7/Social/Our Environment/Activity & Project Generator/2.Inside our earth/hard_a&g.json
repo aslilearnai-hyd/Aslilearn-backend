@@ -1,0 +1,185 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Inside Our Earth",
+    "difficulty": "Hard",
+    "source_pdf": "our_environment_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Seismic Wave Velocity Simulation",
+            "objective": "Understand how density differences in Earth's layers affect wave travel",
+            "materials": [
+                "Slinky spring",
+                "Water",
+                "Thick honey or syrup",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Stretch a slinky and send a longitudinal pulse (P-wave) through air",
+                "Attempt to send a transverse wave (S-wave) through water and honey",
+                "Research why S-waves cannot pass through the liquid Outer Core",
+                "Calculate the hypothetical time a P-wave takes to cross the 2900 km Mantle at 8 km/s"
+            ],
+            "learning_outcome": "Analyzes how the physical state of Earth's interior (solid vs. liquid) is determined",
+            "evaluation": "Logical explanation of wave behavior in different densities (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Crystal Lattice & Cooling Kinetics",
+            "objective": "Investigate the molecular structure of Intrusive vs. Extrusive rocks",
+            "materials": [
+                "Alum (Potash Alum)",
+                "Boiling water",
+                "Insulated thermos",
+                "Ice bath"
+            ],
+            "steps": [
+                "Create two supersaturated alum solutions",
+                "Cool one rapidly in an ice bath (Extrusive/Basalt simulation)",
+                "Cool the other inside a thermos over 48 hours (Intrusive/Granite simulation)",
+                "Examine the geometry and size of crystals under a microscope"
+            ],
+            "learning_outcome": "Relates the thermodynamic cooling rate to the mineral grain size in Igneous rocks",
+            "evaluation": "Detailed sketch of crystal structures and cooling time correlation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Lithostatic Pressure Calculation",
+            "objective": "Understand the weight of the Crust on the Mantle",
+            "materials": [
+                "Scale",
+                "Bricks or heavy tiles",
+                "Sponge"
+            ],
+            "steps": [
+                "Calculate the density of a standard rock sample ($Density = Mass / Volume$)",
+                "Estimate the pressure exerted by a 35 km thick Sial column ($P = h \times d \times g$)",
+                "Observe the compression of a sponge under increasing weight to simulate the Mantle",
+                "Discuss how this pressure prevents rocks from melting despite high temperatures"
+            ],
+            "learning_outcome": "Applies physics concepts to understand the stability of Earth's interior layers",
+            "evaluation": "Accuracy of density and pressure calculations (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Sedimentary Facies & Environment Mapping",
+            "objective": "Determine the origin of a rock based on its sedimentary features",
+            "materials": [
+                "Sandstone, Limestone, and Conglomerate samples (or HD photos)",
+                "Dilute acid (Vinegar)"
+            ],
+            "steps": [
+                "Perform an acid test on Limestone to identify Calcium Carbonate ($CaCO_3$)",
+                "Research which of these rocks formed in a deep ocean vs. a fast river",
+                "Identify 'Cross-bedding' or 'Ripple marks' in the samples",
+                "Create a 'Paleo-environment Map' based on the rock types found"
+            ],
+            "learning_outcome": "Reconstructs ancient Earth environments using sedimentary rock properties",
+            "evaluation": "Correct identification of depositional environments (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Metamorphic Isograds & Parent Rocks",
+            "objective": "Trace the chemical lineage of Metamorphic transformations",
+            "materials": [
+                "Identification chart",
+                "Samples of Shale, Slate, Phyllite, and Schist"
+            ],
+            "steps": [
+                "Arrange the samples in order of increasing heat and pressure (Grade of Metamorphism)",
+                "Trace the transition: Clay $\rightarrow$ Shale $\rightarrow$ Slate $\rightarrow$ Schist",
+                "Identify the 'Parent Rock' for Marble and Quartzite",
+                "Discuss why Metamorphic rocks are often harder and more resistant to erosion"
+            ],
+            "learning_outcome": "Understands the progressive nature of mineral realignment under stress",
+            "evaluation": "Correct sequencing of the metamorphic series (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Magmatic Differentiation Model",
+            "objective": "Study how different minerals crystallize at different temperatures",
+            "materials": [
+                "Wax of different melting points",
+                "Sand",
+                "Heat source"
+            ],
+            "steps": [
+                "Mix materials and melt them completely",
+                "Allow them to cool slowly and observe which components solidify first",
+                "Relate this to 'Bowen's Reaction Series' in the formation of various Igneous rocks",
+                "Explain why the Crust has more Silica than the Mantle"
+            ],
+            "learning_outcome": "Explains the chemical evolution of Magma into different rock types",
+            "evaluation": "Quality of observations on fractional crystallization (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Geothermal Gradient Chart",
+            "objective": "Analyze the increase in temperature with depth",
+            "materials": [
+                "Graph paper",
+                "Earth layer data (Crust, Mantle, Core temperatures)"
+            ],
+            "steps": [
+                "Plot a graph with Depth (km) on the x-axis and Temperature (°C) on the y-axis",
+                "Identify the 'Geothermal Gradient' ($^{\circ}C$ per km) in the Crust",
+                "Research the source of this heat (Radioactive decay and Primordial heat)",
+                "Calculate the temperature at 100 km depth based on your gradient"
+            ],
+            "learning_outcome": "Quantifies the thermal energy profile of the Earth's interior",
+            "evaluation": "Precision of the graph and gradient calculation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Fossilization Probability Analysis",
+            "objective": "Evaluate why the fossil record is inherently biased",
+            "materials": [
+                "Various biological samples (bone, leaf, soft fruit)",
+                "Sand/Mud containers"
+            ],
+            "steps": [
+                "Bury samples in moist sand and leave for a week",
+                "Examine which parts decayed and which left an impression",
+                "Discuss the 'Gaps' in the Rock Cycle where fossils are destroyed",
+                "Calculate the probability of a land animal vs. a sea animal becoming a fossil"
+            ],
+            "learning_outcome": "Critically assesses the limitations of using rocks to study life history",
+            "evaluation": "Depth of analysis regarding taphonomy and rock destruction (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Isostasy: The Floating Crust",
+            "objective": "Understand how the Lithosphere 'floats' on the Astenosphere",
+            "materials": [
+                "Wooden blocks of different thicknesses",
+                "Water tub"
+            ],
+            "steps": [
+                "Float a thick block (Mountains) and a thin block (Oceanic Crust) in water",
+                "Measure the 'root' of the block below the water line",
+                "Explain how the Mantle (plastic state) supports the weight of the Crust",
+                "Relate this to why the deepest part of the crust is under mountains"
+            ],
+            "learning_outcome": "Visualizes the principle of buoyancy and gravitational balance in Earth's layers",
+            "evaluation": "Measurement of 'crustal roots' and application to real-world geography (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Industrial Mineral Synthesis",
+            "objective": "Identify the industrial importance of rare minerals in the Core/Mantle",
+            "materials": [
+                "Periodic table",
+                "Reference books"
+            ],
+            "steps": [
+                "Research the availability of 'Rare Earth Elements' in the Crust",
+                "Identify the role of Nickel and Iron (Nife) in creating Earth's Magnetosphere",
+                "Discuss the feasibility and environmental impact of 'Deep Crustal Mining'",
+                "Present a report on 'Rocks as the Foundation of Modern Technology'"
+            ],
+            "learning_outcome": "Connects deep Earth geology to global resource management and technology",
+            "evaluation": "Research depth on mineral applications and extraction ethics (10 marks)"
+        }
+    ]
+}

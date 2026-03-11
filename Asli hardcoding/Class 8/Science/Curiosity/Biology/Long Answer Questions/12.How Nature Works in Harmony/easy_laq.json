@@ -1,0 +1,245 @@
+{
+  "content_type": "Long Questions",
+  "difficulty_level": "Easy",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-11T19:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why do elephants sometimes enter human settlements?",
+      "answer": "Elephants enter human settlements when forests lose food and water due to deforestation or low rainfall.",
+      "answer_outline": [
+        "Less food in forest",
+        "Search for water",
+        "Move to farms or villages"
+      ],
+      "key_concepts": ["habitat loss"],
+      "marks": 5,
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are biotic and abiotic components? Give examples.",
+      "answer": "Biotic components are living things like plants and animals. Abiotic components are non-living things like sunlight, water, and soil.",
+      "answer_outline": [
+        "Definition of biotic",
+        "Definition of abiotic",
+        "Examples"
+      ],
+      "key_concepts": ["biotic", "abiotic"],
+      "marks": 4,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 3,
+      "question": "What is an ecosystem?",
+      "answer": "An ecosystem is a system where living organisms interact with each other and with the environment.",
+      "answer_outline": ["Living organisms", "Environment", "Interaction"],
+      "key_concepts": ["ecosystem"],
+      "marks": 4,
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 4,
+      "question": "What is population in an ecosystem?",
+      "answer": "Population is a group of organisms of the same species living in the same area.",
+      "answer_outline": ["Same species", "Same area"],
+      "key_concepts": ["population"],
+      "marks": 3,
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a food chain?",
+      "answer": "A food chain shows how energy moves from plants to animals through eating relationships.",
+      "answer_outline": ["Plants", "Animals", "Energy transfer"],
+      "key_concepts": ["food chain"],
+      "marks": 4,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 6,
+      "question": "Who are producers in a food chain?",
+      "answer": "Producers are green plants that make their own food using sunlight through photosynthesis.",
+      "answer_outline": ["Green plants", "Photosynthesis"],
+      "key_concepts": ["producers"],
+      "marks": 3,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 7,
+      "question": "What are decomposers? Give examples.",
+      "answer": "Decomposers break down dead plants and animals into simpler substances. Examples include bacteria and fungi.",
+      "answer_outline": ["Break down dead matter", "Return nutrients to soil"],
+      "key_concepts": ["decomposers"],
+      "marks": 4,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a food web?",
+      "answer": "A food web is a network of many interconnected food chains.",
+      "answer_outline": [
+        "Multiple food chains",
+        "Connected feeding relationships"
+      ],
+      "key_concepts": ["food web"],
+      "marks": 3,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "What is competition in an ecosystem?",
+      "answer": "Competition occurs when organisms fight for the same resources like food, water, or space.",
+      "answer_outline": ["Limited resources", "Organisms compete"],
+      "key_concepts": ["competition"],
+      "marks": 3,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 10,
+      "question": "What is mutualism? Give an example.",
+      "answer": "Mutualism is a relationship where both organisms benefit. Example: bees and flowers.",
+      "answer_outline": ["Both benefit", "Example"],
+      "key_concepts": ["mutualism"],
+      "marks": 3,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 11,
+      "question": "What is parasitism?",
+      "answer": "Parasitism is a relationship where one organism benefits while the other is harmed.",
+      "answer_outline": ["One benefits", "Other harmed"],
+      "key_concepts": ["parasitism"],
+      "marks": 3,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 12,
+      "question": "What are trophic levels?",
+      "answer": "Trophic levels are the different feeding levels in a food chain.",
+      "answer_outline": ["Levels in food chain", "Energy transfer"],
+      "key_concepts": ["trophic levels"],
+      "marks": 3,
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Why are decomposers important in nature?",
+      "answer": "Decomposers recycle nutrients from dead organisms back to the soil.",
+      "answer_outline": ["Nutrient recycling", "Soil fertility"],
+      "key_concepts": ["nutrient cycle"],
+      "marks": 4,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 14,
+      "question": "How do birds help ecosystems?",
+      "answer": "Birds help ecosystems by eating insects and spreading seeds.",
+      "answer_outline": ["Insect control", "Seed dispersal"],
+      "key_concepts": ["ecosystem balance"],
+      "marks": 3,
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 15,
+      "question": "What is pollution?",
+      "answer": "Pollution is the contamination of air, water, or land by harmful substances.",
+      "answer_outline": ["Environmental contamination", "Harmful substances"],
+      "key_concepts": ["pollution"],
+      "marks": 3,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are frogs useful for farmers?",
+      "answer": "Frogs eat insects that damage crops, helping farmers control pests.",
+      "answer_outline": ["Eat insects", "Protect crops"],
+      "key_concepts": ["pest control"],
+      "marks": 3,
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 17,
+      "question": "What is biodiversity?",
+      "answer": "Biodiversity is the variety of plants, animals, and microorganisms in an ecosystem.",
+      "answer_outline": ["Variety of life", "Importance"],
+      "key_concepts": ["biodiversity"],
+      "marks": 3,
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 18,
+      "question": "How do forests help the environment?",
+      "answer": "Forests produce oxygen, absorb carbon dioxide, and provide habitats for many organisms.",
+      "answer_outline": ["Oxygen production", "Habitat"],
+      "key_concepts": ["forests"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 19,
+      "question": "What are mangrove forests?",
+      "answer": "Mangrove forests are forests that grow in coastal areas and protect the coast from strong waves.",
+      "answer_outline": ["Coastal forests", "Protection from waves"],
+      "key_concepts": ["mangroves"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "What is unsustainable farming?",
+      "answer": "Unsustainable farming harms soil and environment by using too many chemicals.",
+      "answer_outline": ["Chemical overuse", "Environmental damage"],
+      "key_concepts": ["unsustainable farming"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 21,
+      "question": "What is organic farming?",
+      "answer": "Organic farming is farming that uses natural fertilizers instead of chemicals.",
+      "answer_outline": ["Natural fertilizers", "Eco-friendly farming"],
+      "key_concepts": ["organic farming"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "What are protected areas?",
+      "answer": "Protected areas are places where wildlife and plants are protected from human activities.",
+      "answer_outline": ["Wildlife protection", "Habitat conservation"],
+      "key_concepts": ["protected areas"],
+      "marks": 3,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "What are ecosystem services?",
+      "answer": "Ecosystem services are benefits humans get from nature like clean air, water, and food.",
+      "answer_outline": ["Benefits from nature", "Examples"],
+      "key_concepts": ["ecosystem services"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 24,
+      "question": "Give two examples of human activities that disturb ecosystems.",
+      "answer": "Deforestation and pollution disturb ecosystems.",
+      "answer_outline": ["Deforestation", "Pollution"],
+      "key_concepts": ["human impact"],
+      "marks": 3,
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 25,
+      "question": "Why should we protect ecosystems?",
+      "answer": "Protecting ecosystems ensures resources and a healthy environment for future generations.",
+      "answer_outline": ["Resource protection", "Sustainability"],
+      "key_concepts": ["conservation"],
+      "marks": 4,
+      "source_section": "Section 12.9"
+    }
+  ]
+}

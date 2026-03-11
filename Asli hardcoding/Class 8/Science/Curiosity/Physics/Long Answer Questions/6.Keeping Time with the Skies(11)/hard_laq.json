@@ -1,0 +1,242 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Keeping Time with the Skies",
+  "generated_at": "2026-03-05T20:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how the rotation of the Earth leads to the cycle of day and night.",
+      "answer": "The Earth rotates on its axis from west to east once every 24 hours. The side of the Earth facing the Sun experiences daylight while the opposite side experiences night. As the Earth rotates continuously, different regions move into and out of sunlight, producing the cycle of day and night.",
+      "answer_outline": [
+        "Earth’s rotation",
+        "Sunlight on one side",
+        "Darkness on the opposite side",
+        "24-hour cycle"
+      ],
+      "key_concepts": ["Earth rotation", "day-night cycle"],
+      "marks": 5,
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how ancient civilizations used the Sun to measure time.",
+      "answer": "Ancient civilizations observed the Sun’s movement across the sky. By studying sunrise, sunset and the changing length and direction of shadows during the day, they estimated time and developed early time-keeping systems such as sundials.",
+      "answer_outline": ["Sun movement", "Shadow observation", "Sundials"],
+      "key_concepts": ["Sun", "time measurement"],
+      "marks": 5,
+      "source_section": "Sun and Time"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the working principle of a sundial in detail.",
+      "answer": "A sundial uses a stick or pointer called a gnomon that casts a shadow on a marked surface. As the Sun appears to move across the sky due to Earth’s rotation, the shadow changes position and points to different time markings on the dial.",
+      "answer_outline": ["Gnomon", "Shadow movement", "Time markings"],
+      "key_concepts": ["sundial"],
+      "marks": 5,
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain why shadows change length and direction during the day.",
+      "answer": "Shadows change because the position of the Sun in the sky changes due to Earth’s rotation. In the morning and evening shadows are long, while at noon they are shortest.",
+      "answer_outline": ["Sun’s changing position", "Effect on shadow"],
+      "key_concepts": ["shadow movement"],
+      "marks": 4,
+      "source_section": "Shadow and Time"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the cycle of the Moon’s phases and how it helps in measuring time.",
+      "answer": "As the Moon revolves around Earth, different portions of its sunlit surface become visible from Earth. This creates phases such as new moon, crescent, quarter and full moon. The complete cycle takes about 29.5 days and forms the basis of lunar months.",
+      "answer_outline": ["Moon revolution", "Different phases", "Lunar month"],
+      "key_concepts": ["Moon phases"],
+      "marks": 5,
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the difference between solar calendars and lunar calendars.",
+      "answer": "Solar calendars are based on the Earth’s revolution around the Sun, while lunar calendars are based on the phases of the Moon. Solar calendars have about 365 days and lunar calendars about 354 days in a year.",
+      "answer_outline": ["Solar calendar", "Lunar calendar", "Time difference"],
+      "key_concepts": ["calendars"],
+      "marks": 5,
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how constellations helped ancient people in navigation and timekeeping.",
+      "answer": "Ancient people observed constellations to identify directions and seasons. Certain constellations appear in specific seasons, helping them estimate time and navigate during travel.",
+      "answer_outline": [
+        "Star patterns",
+        "Navigation",
+        "Season identification"
+      ],
+      "key_concepts": ["constellations"],
+      "marks": 5,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the constellation Orion and its importance.",
+      "answer": "Orion is a well-known constellation that appears during winter in many regions. It contains three bright stars forming Orion’s belt, making it easy to identify in the night sky.",
+      "answer_outline": ["Pattern of stars", "Identification"],
+      "key_concepts": ["Orion"],
+      "marks": 4,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why different constellations are visible in different seasons.",
+      "answer": "As the Earth revolves around the Sun, our view of the night sky changes. Therefore different constellations become visible at different times of the year.",
+      "answer_outline": ["Earth revolution", "Changing sky view"],
+      "key_concepts": ["constellations"],
+      "marks": 4,
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how eclipses occur and describe the difference between solar and lunar eclipses.",
+      "answer": "Eclipses occur when the Sun, Earth and Moon align. In a solar eclipse the Moon blocks sunlight reaching Earth, while in a lunar eclipse Earth’s shadow falls on the Moon.",
+      "answer_outline": ["Alignment", "Solar eclipse", "Lunar eclipse"],
+      "key_concepts": ["eclipses"],
+      "marks": 5,
+      "source_section": "Eclipses"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why solar eclipses occur only during new moon.",
+      "answer": "Solar eclipses occur during new moon because the Moon is positioned between the Earth and the Sun at that time.",
+      "answer_outline": ["Moon position", "Sun-Earth alignment"],
+      "key_concepts": ["solar eclipse"],
+      "marks": 4,
+      "source_section": "Eclipses"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why lunar eclipses occur only during full moon.",
+      "answer": "Lunar eclipses occur during full moon because the Earth lies between the Sun and the Moon, allowing Earth’s shadow to fall on the Moon.",
+      "answer_outline": ["Earth position", "Moon illumination"],
+      "key_concepts": ["lunar eclipse"],
+      "marks": 4,
+      "source_section": "Eclipses"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how observing the sky helped early humans understand seasons.",
+      "answer": "Early humans noticed changes in the position of the Sun and appearance of certain stars during different seasons. These patterns helped them predict seasonal changes for agriculture and travel.",
+      "answer_outline": ["Sun position", "Star patterns", "Season prediction"],
+      "key_concepts": ["seasons"],
+      "marks": 5,
+      "source_section": "Astronomy and Seasons"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how Earth’s rotation causes the apparent movement of stars across the sky.",
+      "answer": "Although stars appear to move across the sky, this is due to Earth rotating on its axis. As Earth rotates, different parts of the sky become visible.",
+      "answer_outline": ["Earth rotation", "Apparent star movement"],
+      "key_concepts": ["apparent motion"],
+      "marks": 4,
+      "source_section": "Night Sky Observation"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how modern clocks improved time measurement compared to sky-based methods.",
+      "answer": "Modern clocks measure time precisely using mechanical or electronic systems. Unlike sky-based methods, they can measure time accurately even at night or during cloudy weather.",
+      "answer_outline": ["Accuracy", "Reliability"],
+      "key_concepts": ["timekeeping"],
+      "marks": 4,
+      "source_section": "History of Timekeeping"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how astronomy contributes to accurate calendar systems.",
+      "answer": "Astronomical observations of Earth’s rotation, Moon phases and Earth’s revolution help create accurate calendars used worldwide.",
+      "answer_outline": ["Astronomical cycles", "Calendar formation"],
+      "key_concepts": ["astronomy", "calendar"],
+      "marks": 4,
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why studying the sky is important for understanding Earth’s motion.",
+      "answer": "Observations of the Sun, Moon and stars help scientists understand Earth’s rotation and revolution and how these motions affect time and seasons.",
+      "answer_outline": ["Earth motion", "Sky observations"],
+      "key_concepts": ["astronomy"],
+      "marks": 4,
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the role of the Moon in traditional timekeeping systems.",
+      "answer": "Traditional calendars used the Moon’s phases to divide time into months and plan festivals and agricultural activities.",
+      "answer_outline": ["Moon phases", "Cultural calendars"],
+      "key_concepts": ["lunar calendar"],
+      "marks": 4,
+      "source_section": "Moon Phases"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain how changes in the sky influenced early scientific discoveries.",
+      "answer": "Observations of planetary motion, star patterns and eclipses helped scientists develop early theories about Earth’s motion and the structure of the universe.",
+      "answer_outline": ["Observations", "Scientific discoveries"],
+      "key_concepts": ["astronomy"],
+      "marks": 5,
+      "source_section": "History of Astronomy"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how modern technology helps scientists study the sky and measure time.",
+      "answer": "Modern telescopes, satellites and atomic clocks allow scientists to observe celestial bodies accurately and measure time precisely.",
+      "answer_outline": ["Telescopes", "Satellites", "Atomic clocks"],
+      "key_concepts": ["astronomy technology"],
+      "marks": 5,
+      "source_section": "Modern Astronomy"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain why the study of celestial bodies is important in science.",
+      "answer": "Studying celestial bodies helps scientists understand the universe, time measurement and the movement of Earth.",
+      "answer_outline": ["Universe understanding", "Scientific knowledge"],
+      "key_concepts": ["astronomy"],
+      "marks": 4,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain how the Sun, Moon and stars together help humans measure time.",
+      "answer": "The Sun determines day and year cycles, the Moon determines months through its phases, and stars help identify seasons and directions.",
+      "answer_outline": ["Sun cycle", "Moon cycle", "Star patterns"],
+      "key_concepts": ["astronomy", "time measurement"],
+      "marks": 5,
+      "source_section": "Astronomy"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why accurate timekeeping is important for society.",
+      "answer": "Accurate timekeeping is important for communication, transportation, science and daily life activities.",
+      "answer_outline": ["Practical importance"],
+      "key_concepts": ["timekeeping"],
+      "marks": 4,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how studying the sky contributed to the development of modern science.",
+      "answer": "Sky observations led to discoveries about Earth’s motion, gravity, planetary systems and the structure of the universe.",
+      "answer_outline": ["Scientific discoveries"],
+      "key_concepts": ["astronomy history"],
+      "marks": 5,
+      "source_section": "History of Astronomy"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of astronomical observations for future scientific research.",
+      "answer": "Astronomical observations help scientists explore space, understand cosmic phenomena and develop technologies for future space exploration.",
+      "answer_outline": ["Space research", "Scientific progress"],
+      "key_concepts": ["astronomy"],
+      "marks": 5,
+      "source_section": "Modern Astronomy"
+    }
+  ]
+}

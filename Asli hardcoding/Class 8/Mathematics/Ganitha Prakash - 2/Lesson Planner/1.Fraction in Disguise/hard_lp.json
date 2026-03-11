@@ -1,0 +1,157 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "Fractions in Disguise (Percentages)",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve multi-step percentage problems",
+        "Interpret percentage data",
+        "Apply percentage change in real-life contexts",
+        "Solve complex profit and loss problems",
+        "Understand compound growth",
+        "Apply percentage reasoning to ratios and proportions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Fraction–Percentage Conversion",
+            "topics_covered": [
+                "Conversion of complex fractions into percentages",
+                "Estimation techniques"
+            ],
+            "teaching_strategy": [
+                "Worked examples",
+                "Student participation"
+            ],
+            "student_activities": [
+                "Convert 7/11 and 9/13 into percentages",
+                "Estimate percentage values"
+            ],
+            "assessment": [
+                "Problem solving exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Multi-Step Percentage Calculations",
+            "topics_covered": [
+                "Sequential percentage changes",
+                "Compound percentage effects"
+            ],
+            "teaching_strategy": [
+                "Step-by-step demonstrations",
+                "Problem discussion"
+            ],
+            "student_activities": [
+                "Increase a number by 20% then decrease by 10%",
+                "Compare with original value"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Percentage in Data Analysis",
+            "topics_covered": [
+                "Percentage representation of survey data",
+                "Ranking using percentages"
+            ],
+            "teaching_strategy": [
+                "Group data analysis",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Collect class data and convert to percentages"
+            ],
+            "assessment": [
+                "Group report"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Complex Percentage Increase and Decrease",
+            "topics_covered": [
+                "Multiple percentage changes",
+                "Applications in population and prices"
+            ],
+            "teaching_strategy": [
+                "Problem solving session"
+            ],
+            "student_activities": [
+                "Solve population growth problems",
+                "Analyze inflation examples"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Profit, Loss, and Discount Analysis",
+            "topics_covered": [
+                "Successive discounts",
+                "Profit-loss comparison"
+            ],
+            "teaching_strategy": [
+                "Case study discussion"
+            ],
+            "student_activities": [
+                "Calculate final price after two discounts"
+            ],
+            "assessment": [
+                "Application-based questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Compound Interest Concept",
+            "topics_covered": [
+                "Annual compounding",
+                "Growth factor concept"
+            ],
+            "teaching_strategy": [
+                "Mathematical modelling"
+            ],
+            "student_activities": [
+                "Calculate compound growth for 3 years"
+            ],
+            "assessment": [
+                "Numerical problems"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Advanced Revision and Problem Solving",
+            "topics_covered": [
+                "Mixed percentage problems",
+                "Concept integration"
+            ],
+            "teaching_strategy": [
+                "Problem solving workshop"
+            ],
+            "student_activities": [
+                "Solve complex percentage puzzles",
+                "Participate in group challenge"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Whiteboard",
+        "Markers",
+        "NCERT Mathematics textbook",
+        "Data charts"
+    ],
+    "evaluation_methods": [
+        "Written assignments",
+        "Problem solving tests",
+        "Group presentations",
+        "Teacher observation"
+    ],
+    "teacher_tip": "Encourage students to estimate answers before calculating to develop strong number sense."
+}

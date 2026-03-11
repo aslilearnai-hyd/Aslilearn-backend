@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Human Resources",
+  "generated_at": "2026-03-07T10:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are human resources?",
+      "answer": "People and their skills, knowledge, and abilities.",
+      "key_points": ["human resources definition"],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What does population distribution mean?",
+      "answer": "The way people are spread across the Earth.",
+      "key_points": ["population distribution"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is population density?",
+      "answer": "Number of people living per unit area of land.",
+      "key_points": ["population density"],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "Which region is densely populated?",
+      "answer": "South Asia.",
+      "key_points": ["dense population"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which region is sparsely populated?",
+      "answer": "Polar regions.",
+      "key_points": ["sparse population"],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "Name one physical factor affecting population distribution.",
+      "answer": "Climate.",
+      "key_points": ["physical factor"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 7,
+      "question": "Name one human factor affecting population distribution.",
+      "answer": "Job opportunities.",
+      "key_points": ["human factor"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 8,
+      "question": "What is migration?",
+      "answer": "Movement of people from one place to another.",
+      "key_points": ["migration"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 9,
+      "question": "What are push factors?",
+      "answer": "Conditions that force people to leave their homes.",
+      "key_points": ["push factors"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "What are pull factors?",
+      "answer": "Conditions that attract people to a new place.",
+      "key_points": ["pull factors"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "What is population composition?",
+      "answer": "Structure of population based on age, gender, literacy, and occupation.",
+      "key_points": ["population composition"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "What is age structure?",
+      "answer": "Distribution of population among different age groups.",
+      "key_points": ["age structure"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 13,
+      "question": "What is literacy rate?",
+      "answer": "Percentage of people who can read and write.",
+      "key_points": ["literacy rate"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "What is a population pyramid?",
+      "answer": "A diagram showing the age and gender structure of population.",
+      "key_points": ["population pyramid"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "What does HRD stand for?",
+      "answer": "Human Resource Development.",
+      "key_points": ["HRD"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 16,
+      "question": "Name one factor that improves human resources.",
+      "answer": "Education.",
+      "key_points": ["education"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 17,
+      "question": "Name one factor that keeps people healthy and productive.",
+      "answer": "Healthcare.",
+      "key_points": ["healthcare"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are cities densely populated?",
+      "answer": "Because they provide better job opportunities.",
+      "key_points": ["urban population"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 19,
+      "question": "Which sector mainly attracts migrants to cities?",
+      "answer": "Industries and services.",
+      "key_points": ["industries"],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 20,
+      "question": "What is internal migration?",
+      "answer": "Migration within a country.",
+      "key_points": ["internal migration"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 21,
+      "question": "What is international migration?",
+      "answer": "Migration between countries.",
+      "key_points": ["international migration"],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 22,
+      "question": "Which population group forms the workforce?",
+      "answer": "Working-age adults.",
+      "key_points": ["workforce"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is education important for human resources?",
+      "answer": "It improves knowledge and skills.",
+      "key_points": ["education importance"],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is population data important?",
+      "answer": "It helps governments plan development programs.",
+      "key_points": ["population data"],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the role of human resources in development?",
+      "answer": "They use skills and knowledge to improve productivity and economic growth.",
+      "key_points": ["development"],
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Tribals, Dikus and the Vision of a Golden Age",
+  "generated_at": "2026-03-06T10:20:00",
+  "difficulty": "easy",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who are tribals?",
+      "options": {
+        "A": "People living in cities",
+        "B": "People living in forests and hills",
+        "C": "Factory workers",
+        "D": "Traders"
+      },
+      "correct_answer": "B",
+      "explanation": "Tribals are communities that traditionally lived in forests, hills and rural regions.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which resource was most important for tribal communities?",
+      "options": {
+        "A": "Forests",
+        "B": "Factories",
+        "C": "Railways",
+        "D": "Markets"
+      },
+      "correct_answer": "A",
+      "explanation": "Forests were the main source of food, fuel and livelihood for tribals.",
+      "difficulty": "easy",
+      "source_section": "Tribal Life"
+    },
+    {
+      "question_number": 3,
+      "question": "What does the term 'Diku' mean?",
+      "options": {
+        "A": "Tribal leader",
+        "B": "Outsider who exploited tribals",
+        "C": "Forest officer",
+        "D": "Village farmer"
+      },
+      "correct_answer": "B",
+      "explanation": "Dikus were outsiders such as traders and moneylenders who exploited tribal communities.",
+      "difficulty": "easy",
+      "source_section": "Dikus"
+    },
+    {
+      "question_number": 4,
+      "question": "Which tribal leader led a movement against British rule?",
+      "options": {
+        "A": "Birsa Munda",
+        "B": "Tipu Sultan",
+        "C": "Shivaji",
+        "D": "Akbar"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda was a famous tribal leader who led a rebellion against British rule.",
+      "difficulty": "easy",
+      "source_section": "Birsa Munda"
+    },
+    {
+      "question_number": 5,
+      "question": "Where did many tribal communities live?",
+      "options": {
+        "A": "Cities",
+        "B": "Forests and hills",
+        "C": "Ports",
+        "D": "Factories"
+      },
+      "correct_answer": "B",
+      "explanation": "Many tribal communities lived in forests and hilly regions.",
+      "difficulty": "easy",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 6,
+      "question": "Which activity was common among tribal communities?",
+      "options": {
+        "A": "Shifting cultivation",
+        "B": "Working in factories",
+        "C": "Running banks",
+        "D": "Operating trains"
+      },
+      "correct_answer": "A",
+      "explanation": "Many tribal communities practiced shifting cultivation.",
+      "difficulty": "easy",
+      "source_section": "Tribal Economy"
+    },
+    {
+      "question_number": 7,
+      "question": "Which occupation was common among tribals?",
+      "options": {
+        "A": "Hunting and gathering",
+        "B": "Software development",
+        "C": "Banking",
+        "D": "Teaching in universities"
+      },
+      "correct_answer": "A",
+      "explanation": "Hunting and gathering were common occupations among tribals.",
+      "difficulty": "easy",
+      "source_section": "Tribal Economy"
+    },
+    {
+      "question_number": 8,
+      "question": "Which group often exploited tribal people?",
+      "options": {
+        "A": "Moneylenders",
+        "B": "Teachers",
+        "C": "Doctors",
+        "D": "Scientists"
+      },
+      "correct_answer": "A",
+      "explanation": "Moneylenders often trapped tribals in debt and exploited them.",
+      "difficulty": "easy",
+      "source_section": "Dikus"
+    },
+    {
+      "question_number": 9,
+      "question": "Which law restricted tribal access to forests during British rule?",
+      "options": {
+        "A": "Forest laws",
+        "B": "Education laws",
+        "C": "Trade laws",
+        "D": "Transport laws"
+      },
+      "correct_answer": "A",
+      "explanation": "British forest laws restricted tribal access to forests.",
+      "difficulty": "easy",
+      "source_section": "Forest Policies"
+    },
+    {
+      "question_number": 10,
+      "question": "Which tribal community was associated with Birsa Munda?",
+      "options": {
+        "A": "Munda",
+        "B": "Rajput",
+        "C": "Maratha",
+        "D": "Mughal"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda belonged to the Munda tribal community.",
+      "difficulty": "easy",
+      "source_section": "Birsa Munda"
+    },
+    {
+      "question_number": 11,
+      "question": "What was the main demand of tribal rebellions?",
+      "options": {
+        "A": "Protection of land and forest rights",
+        "B": "More factories",
+        "C": "More schools",
+        "D": "More railways"
+      },
+      "correct_answer": "A",
+      "explanation": "Tribal rebellions demanded restoration of land and forest rights.",
+      "difficulty": "easy",
+      "source_section": "Tribal Resistance"
+    },
+    {
+      "question_number": 12,
+      "question": "What did Birsa Munda dream of restoring?",
+      "options": {
+        "A": "Golden Age",
+        "B": "Industrial Age",
+        "C": "Modern Age",
+        "D": "Digital Age"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda dreamed of restoring a Golden Age for tribal communities.",
+      "difficulty": "easy",
+      "source_section": "Vision of Golden Age"
+    },
+    {
+      "question_number": 13,
+      "question": "What was the main livelihood source for tribals?",
+      "options": {
+        "A": "Forest resources",
+        "B": "Factories",
+        "C": "Shipping",
+        "D": "Mining companies"
+      },
+      "correct_answer": "A",
+      "explanation": "Tribals depended heavily on forest resources for survival.",
+      "difficulty": "easy",
+      "source_section": "Tribal Life"
+    },
+    {
+      "question_number": 14,
+      "question": "Which system forced tribals to lose their lands?",
+      "options": {
+        "A": "Land revenue system",
+        "B": "School system",
+        "C": "Transport system",
+        "D": "Health system"
+      },
+      "correct_answer": "A",
+      "explanation": "Colonial land revenue systems often caused tribals to lose their lands.",
+      "difficulty": "easy",
+      "source_section": "Colonial Impact"
+    },
+    {
+      "question_number": 15,
+      "question": "Which activity did tribals practice for farming?",
+      "options": {
+        "A": "Shifting cultivation",
+        "B": "Factory farming",
+        "C": "Urban farming",
+        "D": "Industrial farming"
+      },
+      "correct_answer": "A",
+      "explanation": "Shifting cultivation was widely practiced among tribal communities.",
+      "difficulty": "easy",
+      "source_section": "Tribal Economy"
+    },
+    {
+      "question_number": 16,
+      "question": "Which British policy restricted tribal forest use?",
+      "options": {
+        "A": "Forest laws",
+        "B": "Education policy",
+        "C": "Railway policy",
+        "D": "Industrial policy"
+      },
+      "correct_answer": "A",
+      "explanation": "Forest laws limited the use of forests by tribal communities.",
+      "difficulty": "easy",
+      "source_section": "Forest Policies"
+    },
+    {
+      "question_number": 17,
+      "question": "Which tribe was led by Birsa Munda in rebellion?",
+      "options": {
+        "A": "Munda tribe",
+        "B": "Rajput tribe",
+        "C": "Maratha tribe",
+        "D": "Sikh tribe"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda led the Munda tribe in rebellion.",
+      "difficulty": "easy",
+      "source_section": "Birsa Munda"
+    },
+    {
+      "question_number": 18,
+      "question": "What was the main cause of tribal revolts?",
+      "options": {
+        "A": "Loss of land and forests",
+        "B": "Lack of festivals",
+        "C": "Lack of sports",
+        "D": "Lack of schools"
+      },
+      "correct_answer": "A",
+      "explanation": "Tribals revolted mainly due to loss of land and forest rights.",
+      "difficulty": "easy",
+      "source_section": "Tribal Resistance"
+    },
+    {
+      "question_number": 19,
+      "question": "Who were traders and moneylenders called in tribal areas?",
+      "options": {
+        "A": "Dikus",
+        "B": "Zamindars",
+        "C": "Nawabs",
+        "D": "Mansabdars"
+      },
+      "correct_answer": "A",
+      "explanation": "Tribals called outsiders like traders and moneylenders 'Dikus'.",
+      "difficulty": "easy",
+      "source_section": "Dikus"
+    },
+    {
+      "question_number": 20,
+      "question": "Which type of rebellion did Birsa Munda lead?",
+      "options": {
+        "A": "Tribal rebellion",
+        "B": "Industrial rebellion",
+        "C": "Trade rebellion",
+        "D": "Urban rebellion"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda led a tribal rebellion against British rule.",
+      "difficulty": "easy",
+      "source_section": "Tribal Resistance"
+    },
+    {
+      "question_number": 21,
+      "question": "Which natural resource was central to tribal livelihood?",
+      "options": {
+        "A": "Forests",
+        "B": "Factories",
+        "C": "Railways",
+        "D": "Ports"
+      },
+      "correct_answer": "A",
+      "explanation": "Forests were the most important resource for tribal livelihood.",
+      "difficulty": "easy",
+      "source_section": "Tribal Life"
+    },
+    {
+      "question_number": 22,
+      "question": "What did tribal communities depend on for food and shelter?",
+      "options": {
+        "A": "Forests",
+        "B": "Factories",
+        "C": "Cities",
+        "D": "Ports"
+      },
+      "correct_answer": "A",
+      "explanation": "Forests provided food, shelter and resources for tribals.",
+      "difficulty": "easy",
+      "source_section": "Tribal Life"
+    },
+    {
+      "question_number": 23,
+      "question": "Which British policy limited tribal traditional practices?",
+      "options": {
+        "A": "Forest laws",
+        "B": "Education policies",
+        "C": "Trade laws",
+        "D": "Transport laws"
+      },
+      "correct_answer": "A",
+      "explanation": "Forest laws restricted traditional tribal activities.",
+      "difficulty": "easy",
+      "source_section": "Forest Policies"
+    },
+    {
+      "question_number": 24,
+      "question": "What type of leader was Birsa Munda?",
+      "options": {
+        "A": "Tribal leader",
+        "B": "Factory owner",
+        "C": "Merchant",
+        "D": "Governor"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda was a famous tribal leader.",
+      "difficulty": "easy",
+      "source_section": "Birsa Munda"
+    },
+    {
+      "question_number": 25,
+      "question": "What was Birsa Munda remembered for?",
+      "options": {
+        "A": "Leading a tribal movement",
+        "B": "Building factories",
+        "C": "Trading goods",
+        "D": "Writing books"
+      },
+      "correct_answer": "A",
+      "explanation": "Birsa Munda is remembered for leading a tribal movement against British rule.",
+      "difficulty": "easy",
+      "source_section": "Conclusion"
+    }
+  ]
+}

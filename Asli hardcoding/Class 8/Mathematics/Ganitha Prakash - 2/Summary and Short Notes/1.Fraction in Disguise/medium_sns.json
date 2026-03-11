@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Fractions in Disguise (Percentages)",
+  "difficulty": "Medium",
+  "source_pdf": "hegp201.pdf",
+  "short_notes": {
+    "key_points": [
+      "Percentages can be converted into fractions and decimals easily",
+      "To find percentage of a number multiply the number by the percentage fraction",
+      "Percentage increase compares the increase with the original value",
+      "Percentage decrease compares the decrease with the original value",
+      "Profit and loss help determine gain or loss in a transaction"
+    ],
+    "examples": [
+      "3/4 = 75%",
+      "0.6 = 60%",
+      "20% of 150 = 30",
+      "Increase from 100 to 120 → 20% increase",
+      "Decrease from 200 to 150 → 25% decrease"
+    ],
+    "formulas": [
+      "Percentage = (Part / Whole) × 100",
+      "Percentage increase = (Increase / Original Value) × 100",
+      "Percentage decrease = (Decrease / Original Value) × 100",
+      "Selling Price = Cost Price + Profit",
+      "Selling Price = Cost Price − Loss"
+    ],
+    "exam_tips": [
+      "Always identify the original value before calculating percentage change",
+      "Write percentage values correctly with the % symbol",
+      "Convert decimals to percentages carefully",
+      "Check whether the problem is about increase or decrease"
+    ]
+  }
+}

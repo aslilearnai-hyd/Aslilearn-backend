@@ -1,0 +1,178 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Force and Laws of Motion",
+    "difficulty": "Medium",
+    "source_pdf": "s9_8.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Friction and Motion Experiment",
+            "objective": "Understand the effect of friction on motion",
+            "materials": [
+                "Toy car",
+                "Smooth board",
+                "Rough cloth"
+            ],
+            "steps": [
+                "Place a smooth board and a rough cloth surface",
+                "Roll a toy car on both surfaces",
+                "Measure the distance travelled in each case",
+                "Compare the results"
+            ],
+            "learning_outcome": "Students understand that friction opposes motion",
+            "evaluation": "Comparison analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Acceleration by Different Forces",
+            "objective": "Observe relation between force and acceleration",
+            "materials": [
+                "Toy cart",
+                "Rubber bands",
+                "Ruler"
+            ],
+            "steps": [
+                "Attach one rubber band to pull the cart",
+                "Measure distance travelled",
+                "Repeat using two rubber bands",
+                "Compare acceleration results"
+            ],
+            "learning_outcome": "Students relate force with acceleration",
+            "evaluation": "Data interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Mass and Inertia Activity",
+            "objective": "Understand relation between mass and inertia",
+            "materials": [
+                "Two boxes",
+                "Books"
+            ],
+            "steps": [
+                "Push an empty box",
+                "Fill another box with books",
+                "Push both boxes with equal force",
+                "Compare movement"
+            ],
+            "learning_outcome": "Students learn heavier objects have greater inertia",
+            "evaluation": "Observation explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Momentum Demonstration",
+            "objective": "Understand effect of mass and velocity on momentum",
+            "materials": [
+                "Two balls of different masses",
+                "Ramp"
+            ],
+            "steps": [
+                "Release both balls from the same ramp",
+                "Observe impact on a soft object",
+                "Compare effects"
+            ],
+            "learning_outcome": "Students understand momentum depends on mass and velocity",
+            "evaluation": "Concept explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Newton's Second Law Observation",
+            "objective": "Relate force, mass, and acceleration",
+            "materials": [
+                "Toy cart",
+                "Weights",
+                "Spring balance"
+            ],
+            "steps": [
+                "Attach a spring balance to a cart",
+                "Pull the cart with constant force",
+                "Add extra weights and repeat",
+                "Observe acceleration change"
+            ],
+            "learning_outcome": "Students understand acceleration decreases with increasing mass",
+            "evaluation": "Observation record (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Balloon Reaction Force Experiment",
+            "objective": "Demonstrate Newton’s third law",
+            "materials": [
+                "Balloon",
+                "Thread",
+                "Straw",
+                "Tape"
+            ],
+            "steps": [
+                "Insert straw through thread",
+                "Attach balloon to straw",
+                "Release air",
+                "Observe direction of balloon movement"
+            ],
+            "learning_outcome": "Students understand action-reaction forces",
+            "evaluation": "Explanation of concept (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Collision Investigation",
+            "objective": "Observe force during collision",
+            "materials": [
+                "Two toy cars"
+            ],
+            "steps": [
+                "Roll two cars towards each other",
+                "Observe collision behavior",
+                "Discuss action-reaction forces"
+            ],
+            "learning_outcome": "Students observe Newton’s third law during collision",
+            "evaluation": "Discussion summary (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Stopping Distance Experiment",
+            "objective": "Understand force required to stop motion",
+            "materials": [
+                "Toy car",
+                "Ramp",
+                "Soft barrier"
+            ],
+            "steps": [
+                "Roll a toy car down a ramp",
+                "Stop it with a soft barrier",
+                "Observe stopping distance"
+            ],
+            "learning_outcome": "Students understand momentum and stopping force",
+            "evaluation": "Observation notes (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Walking and Reaction Forces",
+            "objective": "Study action-reaction forces in walking",
+            "materials": [
+                "Flat ground"
+            ],
+            "steps": [
+                "Observe a person walking",
+                "Note the direction of force applied by feet",
+                "Discuss how ground pushes back"
+            ],
+            "learning_outcome": "Students understand real-life application of Newton’s third law",
+            "evaluation": "Concept explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Seatbelt Safety Demonstration",
+            "objective": "Understand inertia in vehicles",
+            "materials": [
+                "Toy car",
+                "Small figure"
+            ],
+            "steps": [
+                "Place toy figure on moving toy car",
+                "Stop the car suddenly",
+                "Observe movement of the figure"
+            ],
+            "learning_outcome": "Students understand inertia and safety importance",
+            "evaluation": "Explanation of observation (10 marks)"
+        }
+    ]
+}

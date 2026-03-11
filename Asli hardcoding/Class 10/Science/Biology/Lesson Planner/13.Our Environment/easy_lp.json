@@ -1,0 +1,170 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Our Environment",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand what an ecosystem is and its basic parts",
+        "Learn simple food chains and how energy moves in nature",
+        "Know the difference between biodegradable and non-biodegradable waste",
+        "Understand why the ozone layer is important and what harms it",
+        "Recognize how humans affect the environment and why we should care",
+        "Enjoy learning about nature through pictures, lists, and easy activities"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "What is an Ecosystem?",
+            "topics_covered": [
+                "Simple meaning of ecosystem",
+                "Living (biotic) and non-living (abiotic) things",
+                "Examples: garden, pond, forest"
+            ],
+            "teaching_strategy": [
+                "Show pictures or draw simple ecosystem on board",
+                "Ask students to name things they see in a garden/pond",
+                "Fun group talk"
+            ],
+            "student_activities": [
+                "Draw a simple garden or pond ecosystem",
+                "List 5 living things and 5 non-living things in it",
+                "Color the drawing"
+            ],
+            "assessment": [
+                "Drawing and list completeness",
+                "Happy participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Food Chain – Who Eats Whom?",
+            "topics_covered": [
+                "What is a food chain?",
+                "Producer → Herbivore → Carnivore",
+                "Sun gives energy to plants"
+            ],
+            "teaching_strategy": [
+                "Draw big arrows on board",
+                "Use animal pictures or toys",
+                "Tell simple story examples (grass → rabbit → fox)"
+            ],
+            "student_activities": [
+                "Draw 3 simple food chains (e.g., grass → deer → tiger)",
+                "Color the plants green, animals accordingly",
+                "Tell which one is producer/consumer"
+            ],
+            "assessment": [
+                "Correct arrows and labels",
+                "Neat drawing"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Waste – What Happens to It?",
+            "topics_covered": [
+                "Biodegradable (rots easily) vs non-biodegradable (does not rot)",
+                "Examples: banana peel vs plastic bag",
+                "Why we should not throw plastic everywhere"
+            ],
+            "teaching_strategy": [
+                "Show real items (paper, peel, plastic, bottle)",
+                "Ask students to sort them",
+                "Simple talk on garbage problem"
+            ],
+            "student_activities": [
+                "Make two lists: biodegradable and non-biodegradable (10 items each)",
+                "Draw happy earth for biodegradable and sad earth for plastic",
+                "Share one idea to reduce plastic"
+            ],
+            "assessment": [
+                "Correct sorting in lists",
+                "Fun drawings and one good idea"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Ozone Layer – Our Sun Shield",
+            "topics_covered": [
+                "Ozone protects us from bad sun rays",
+                "CFCs (from old sprays, fridges) harm ozone",
+                "Ozone hole and simple effects"
+            ],
+            "teaching_strategy": [
+                "Draw Earth with umbrella (ozone) and sun rays",
+                "Show before-after picture of ozone hole",
+                "Easy explanation with gestures"
+            ],
+            "student_activities": [
+                "Draw Earth with ozone layer as shield",
+                "Color harmful rays red and good rays yellow",
+                "Write 2 ways to help ozone (e.g., no extra sprays)"
+            ],
+            "assessment": [
+                "Clear drawing with labels",
+                "2 correct ideas"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "We and Our Environment",
+            "topics_covered": [
+                "How people harm nature (too much waste, cutting trees)",
+                "How to help (plant trees, save water, reuse)",
+                "Everyone can make small changes"
+            ],
+            "teaching_strategy": [
+                "Show happy vs sad nature pictures",
+                "Group promise activity",
+                "Positive motivational talk"
+            ],
+            "student_activities": [
+                "Draw one way they can help nature (planting, not littering)",
+                "Write or say “I promise to…” sentence",
+                "Share in small groups"
+            ],
+            "assessment": [
+                "Nice drawing and promise sentence",
+                "Willingness to share"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Fun Revision and Quiz Game",
+            "topics_covered": [
+                "Quick recap of all topics",
+                "Easy questions on ecosystem, food chain, waste, ozone",
+                "Why we love and protect nature"
+            ],
+            "teaching_strategy": [
+                "Big colorful mind map on board",
+                "Fun quiz game (hands up, team points)",
+                "Clap for correct answers"
+            ],
+            "student_activities": [
+                "Answer simple quiz questions (oral or show fingers)",
+                "Add one drawing or word to class mind map",
+                "Say one thing they learned and liked"
+            ],
+            "assessment": [
+                "Quiz enjoyment and correct answers",
+                "Participation and smiley faces"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Colorful charts/pictures of ecosystems, food chains, waste items",
+        "Real waste samples (safe ones: paper, peel, plastic piece)",
+        "Crayons, chart paper, markers",
+        "Simple projector or phone pictures/videos",
+        "Stickers or smiley stamps for encouragement"
+    ],
+    "evaluation_methods": [
+        "Drawings and coloring neatness",
+        "Simple lists and sentences",
+        "Oral answers and participation",
+        "Happy involvement in activities"
+    ],
+    "teacher_tip": "Keep everything light and positive. Use lots of pictures, colors, and stories. Praise every effort. Connect to students’ daily life (home waste, school garden, seeing plastic in streets). Make students feel they can really help nature."
+}

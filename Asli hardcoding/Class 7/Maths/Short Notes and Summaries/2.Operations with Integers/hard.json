@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Operations with Integers",
+    "difficulty": "Hard",
+    "source_pdf": "jemh101.pdf",
+    "short_notes": {
+        "key_points": [
+            "Closure Property: Integers are closed under addition, subtraction, and multiplication",
+            "Commutative and Associative properties do not apply to subtraction and division",
+            "Distributive Property: $a \\times (b + c) = ab + ac$ is used for simplifying expressions",
+            "BODMAS/PEMDAS rule must be followed for multiple operations",
+            "Applications involve calculating net change in temperature, elevation, or finance"
+        ],
+        "examples": [
+            "Distributive Property: $15 \\times [10 + (-2)] = (15 \\times 10) + (15 \\times -2) = 150 - 30 = 120$ ",
+            "BODMAS: $(-20) + (-8) \\div (-2) = -20 + 4 = -16$",
+            "Real-life: Temperature at $-10^\\circ\\text{C}$ rising by $15^\\circ\\text{C}$ results in $5^\\circ\\text{C}$",
+            "Non-Commutative: $8 \\div (-2) \\neq (-2) \\div 8$"
+        ],
+        "formulas": [
+            "Distributive Law $\\rightarrow a(b + c) = ab + ac$",
+            "BODMAS $\\rightarrow$ Brackets, Of, Division/Multiplication, Addition/Subtraction"
+        ],
+        "exam_tips": [
+            "Use the distributive property to make large multiplications easier (e.g., $99 \\times 5$ as $(100-1) \\times 5$)",
+            "Always solve parentheses first in complex integer expressions",
+            "Check closure: $5 \\div 2 = 2.5$ (not an integer), so division is not closed",
+            "Watch out for double negatives in word problems (e.g., 'descending' a 'negative' depth)"
+        ]
+    }
+}

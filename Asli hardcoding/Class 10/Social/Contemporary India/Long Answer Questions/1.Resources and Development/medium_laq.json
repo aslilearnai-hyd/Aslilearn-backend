@@ -1,0 +1,299 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: Resources and Development",
+  "lesson_level": "Medium",
+  "generated_at": "2026-03-11T14:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is meant by a resource? Explain with examples.",
+      "answer": "A resource is anything available in the environment that can be used to satisfy human needs if it is technologically accessible, economically feasible, and culturally acceptable.",
+      "answer_outline": [
+        "Definition of resource",
+        "Conditions for something to become a resource",
+        "Examples"
+      ],
+      "key_concepts": ["resource"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why resources are considered a function of human activities.",
+      "answer": "Resources become useful only when humans use technology and knowledge to transform natural materials into useful products.",
+      "answer_outline": [
+        "Human interaction with nature",
+        "Role of technology",
+        "Transformation into usable resources"
+      ],
+      "key_concepts": ["human role in resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the classification of resources based on origin.",
+      "answer": "Resources are classified into biotic and abiotic based on their origin. Biotic resources come from living organisms while abiotic resources come from non-living elements.",
+      "answer_outline": [
+        "Definition of biotic resources",
+        "Definition of abiotic resources",
+        "Examples"
+      ],
+      "key_concepts": ["biotic resources", "abiotic resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Differentiate between renewable and non-renewable resources.",
+      "answer": "Renewable resources can be replenished naturally within a short period, while non-renewable resources take millions of years to form and cannot be easily replaced.",
+      "answer_outline": [
+        "Definition of renewable resources",
+        "Definition of non-renewable resources",
+        "Examples"
+      ],
+      "key_concepts": ["renewable resources", "non-renewable resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of sustainable development.",
+      "answer": "Sustainable development means using resources in a way that meets present needs without compromising the ability of future generations to meet their needs.",
+      "answer_outline": [
+        "Definition",
+        "Importance of conservation",
+        "Long-term benefits"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What was the purpose of the Rio Earth Summit of 1992?",
+      "answer": "The Rio Earth Summit was organized to address global environmental issues and promote sustainable development through international cooperation.",
+      "answer_outline": [
+        "Global environmental problems",
+        "International cooperation",
+        "Sustainable development goals"
+      ],
+      "key_concepts": ["Rio Earth Summit"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of resource planning.",
+      "answer": "Resource planning refers to the systematic strategy for the proper utilization and conservation of resources.",
+      "answer_outline": ["Definition", "Importance", "Examples"],
+      "key_concepts": ["resource planning"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the steps involved in resource planning in India.",
+      "answer": "The steps include identification of resources, developing planning structures with technology and institutions, and implementing development plans.",
+      "answer_outline": [
+        "Identification of resources",
+        "Planning structure",
+        "Implementation"
+      ],
+      "key_concepts": ["resource planning steps"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain why resource planning is essential for sustainable development.",
+      "answer": "Resource planning helps ensure balanced use of resources and prevents their overexploitation.",
+      "answer_outline": [
+        "Balanced development",
+        "Prevention of resource depletion",
+        "Environmental protection"
+      ],
+      "key_concepts": ["resource planning"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why land is considered an important natural resource.",
+      "answer": "Land supports agriculture, settlements, transportation, industries, and many economic activities.",
+      "answer_outline": [
+        "Supports human life",
+        "Supports economic activities",
+        "Finite resource"
+      ],
+      "key_concepts": ["land resource"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Describe the different categories of land use.",
+      "answer": "Land is used for forests, agriculture, grazing, settlements, industries, and transportation.",
+      "answer_outline": [
+        "Forest land",
+        "Agricultural land",
+        "Barren land",
+        "Land used for settlements"
+      ],
+      "key_concepts": ["land use"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the factors that influence land use patterns.",
+      "answer": "Land use patterns are influenced by physical factors such as climate, soil, and relief, and human factors such as population and technology.",
+      "answer_outline": ["Physical factors", "Human factors"],
+      "key_concepts": ["land use pattern"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 13,
+      "question": "What is land degradation? Explain its causes.",
+      "answer": "Land degradation refers to the decline in land productivity due to human and natural factors such as deforestation, mining, and overgrazing.",
+      "answer_outline": ["Definition", "Human causes", "Environmental effects"],
+      "key_concepts": ["land degradation"],
+      "marks": 5,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the measures taken to control land degradation.",
+      "answer": "Measures include afforestation, controlled grazing, proper waste management, and regulation of mining activities.",
+      "answer_outline": [
+        "Afforestation",
+        "Controlled grazing",
+        "Industrial waste management"
+      ],
+      "key_concepts": ["land conservation"],
+      "marks": 5,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how soil is formed.",
+      "answer": "Soil is formed by weathering of rocks over millions of years under the influence of climate, vegetation, and organisms.",
+      "answer_outline": [
+        "Weathering",
+        "Climate influence",
+        "Vegetation influence"
+      ],
+      "key_concepts": ["soil formation"],
+      "marks": 5,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 16,
+      "question": "Describe the soil profile.",
+      "answer": "A soil profile is the vertical section of soil showing different layers such as topsoil, subsoil, substratum, and bedrock.",
+      "answer_outline": ["Topsoil", "Subsoil", "Substratum", "Bedrock"],
+      "key_concepts": ["soil profile"],
+      "marks": 5,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the characteristics of alluvial soil.",
+      "answer": "Alluvial soil is fertile and composed of sand, silt, and clay deposited by rivers.",
+      "answer_outline": ["Formation", "Fertility", "Location"],
+      "key_concepts": ["alluvial soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the characteristics of black soil.",
+      "answer": "Black soil retains moisture and is ideal for cotton cultivation.",
+      "answer_outline": [
+        "Moisture retention",
+        "Cotton cultivation",
+        "Nutrient content"
+      ],
+      "key_concepts": ["black soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the characteristics of red and yellow soil.",
+      "answer": "Red and yellow soils develop from crystalline rocks and get their color from iron content.",
+      "answer_outline": ["Formation", "Iron oxide presence", "Distribution"],
+      "key_concepts": ["red soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the characteristics of laterite soil.",
+      "answer": "Laterite soil forms in tropical areas with heavy rainfall and is suitable for plantation crops.",
+      "answer_outline": [
+        "Formation through leaching",
+        "Location",
+        "Agricultural use"
+      ],
+      "key_concepts": ["laterite soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the characteristics of arid soil.",
+      "answer": "Arid soil is sandy, saline, and found in desert regions with low rainfall.",
+      "answer_outline": ["Dry climate", "Low moisture", "High salt content"],
+      "key_concepts": ["arid soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the causes of soil erosion.",
+      "answer": "Soil erosion occurs due to wind, water, deforestation, overgrazing, and improper agricultural practices.",
+      "answer_outline": ["Natural causes", "Human causes"],
+      "key_concepts": ["soil erosion"],
+      "marks": 5,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain terrace farming as a soil conservation method.",
+      "answer": "Terrace farming involves cutting steps on slopes to reduce water flow and prevent soil erosion.",
+      "answer_outline": ["Method", "Purpose", "Benefits"],
+      "key_concepts": ["terrace farming"],
+      "marks": 5,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain contour ploughing and strip cropping.",
+      "answer": "Contour ploughing follows the natural contour lines to slow water flow, while strip cropping involves growing crops in strips to reduce erosion.",
+      "answer_outline": [
+        "Definition of contour ploughing",
+        "Definition of strip cropping",
+        "Benefits"
+      ],
+      "key_concepts": ["contour ploughing", "strip cropping"],
+      "marks": 5,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the importance of conserving natural resources.",
+      "answer": "Conserving natural resources ensures environmental balance, sustainable development, and availability of resources for future generations.",
+      "answer_outline": [
+        "Environmental protection",
+        "Sustainable development",
+        "Future resource availability"
+      ],
+      "key_concepts": ["resource conservation"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    }
+  ]
+}

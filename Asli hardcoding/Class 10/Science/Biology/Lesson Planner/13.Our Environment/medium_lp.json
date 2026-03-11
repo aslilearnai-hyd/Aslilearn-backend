@@ -1,0 +1,170 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Our Environment",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand ecosystem components, food chains/webs, and energy flow",
+        "Explain the 10% law and its implications for trophic levels",
+        "Describe biological magnification and its dangers",
+        "Analyze ozone layer depletion causes, effects, and protection measures",
+        "Differentiate biodegradable and non-biodegradable waste and discuss management",
+        "Apply concepts to real-life environmental issues through examples and discussions"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Ecosystem – Components and Structure",
+            "topics_covered": [
+                "Definition of ecosystem",
+                "Biotic (producers, consumers, decomposers) and abiotic components",
+                "Examples: pond, forest, grassland ecosystems"
+            ],
+            "teaching_strategy": [
+                "Lecture with diagrams and real-life examples",
+                "Interactive discussion on local ecosystems",
+                "Show video/chart of pond ecosystem"
+            ],
+            "student_activities": [
+                "Draw and label components of a pond ecosystem",
+                "List biotic and abiotic factors in school garden",
+                "Discuss interactions"
+            ],
+            "assessment": [
+                "Diagram accuracy and labeling",
+                "Short written list with explanations"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Food Chains, Food Webs, and Energy Flow",
+            "topics_covered": [
+                "Food chain and food web differences",
+                "Trophic levels: producers to decomposers",
+                "10% law of energy transfer"
+            ],
+            "teaching_strategy": [
+                "Board diagrams of chains/webs",
+                "Explain energy loss with pyramid illustration",
+                "Group activity on building chains"
+            ],
+            "student_activities": [
+                "Construct 2 food chains and convert to food web",
+                "Draw energy pyramid showing 10% rule",
+                "Explain why top carnivores are fewer"
+            ],
+            "assessment": [
+                "Diagram correctness",
+                "Explanation of energy flow"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Biological Magnification and Ozone Depletion",
+            "topics_covered": [
+                "Biomagnification: toxin accumulation in food chain",
+                "Ozone layer: role, depletion by CFCs, effects (UV increase)",
+                "Montreal Protocol basics"
+            ],
+            "teaching_strategy": [
+                "Illustration of biomagnification with DDT example",
+                "Diagram of ozone hole formation",
+                "Discussion on global impact"
+            ],
+            "student_activities": [
+                "Draw biomagnification model with toxin levels",
+                "Illustrate ozone depletion process",
+                "List 3 effects and 2 preventive measures"
+            ],
+            "assessment": [
+                "Model/diagram quality",
+                "Key points explanation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Waste Management and Biodegradable Substances",
+            "topics_covered": [
+                "Biodegradable vs non-biodegradable wastes",
+                "Decomposition process and role of decomposers",
+                "5R principles: Reduce, Reuse, Recycle, Refuse, Recover"
+            ],
+            "teaching_strategy": [
+                "Demonstration of waste classification",
+                "Discuss composting vs plastic persistence",
+                "Real-life examples (plastic pollution)"
+            ],
+            "student_activities": [
+                "Classify 15 waste items as biodegradable/non-biodegradable",
+                "Estimate decomposition times",
+                "Propose school waste reduction plan"
+            ],
+            "assessment": [
+                "Classification accuracy",
+                "Plan practicality"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Environmental Balance and Human Impact",
+            "topics_covered": [
+                "Role of humans in disturbing balance",
+                "Consequences: pollution, loss of biodiversity",
+                "Need for sustainable practices"
+            ],
+            "teaching_strategy": [
+                "Case studies (overfishing, deforestation)",
+                "Group debate on development vs conservation",
+                "Link to ozone and waste issues"
+            ],
+            "student_activities": [
+                "Discuss one human activity disrupting balance",
+                "Prepare points for debate",
+                "Write short note on sustainability"
+            ],
+            "assessment": [
+                "Participation and reasoning",
+                "Written note quality"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision, Application Quiz, and Project Ideas",
+            "topics_covered": [
+                "Recap full chapter: ecosystem to waste",
+                "Exam-oriented questions (diagrams, differences, explanations)",
+                "Real-world applications"
+            ],
+            "teaching_strategy": [
+                "Mind map revision on board",
+                "Quiz with MCQs, short/long answers",
+                "Doubt clearing and project suggestions"
+            ],
+            "student_activities": [
+                "Solve quiz questions",
+                "Create chapter mind map",
+                "Suggest one eco-project (e.g., composting model)"
+            ],
+            "assessment": [
+                "Quiz performance",
+                "Mind map and notebook check"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Charts: ecosystem, food web, ozone layer, waste types",
+        "Whiteboard/markers for diagrams",
+        "Video clips on food chains/ozone depletion",
+        "Waste samples for classification",
+        "Worksheets and question bank"
+    ],
+    "evaluation_methods": [
+        "Diagrams and labeling",
+        "Short answers and explanations",
+        "Group participation",
+        "Quiz and notebook evaluation"
+    ],
+    "teacher_tip": "Use local examples (e.g., nearby pond/river pollution) to connect concepts. Encourage diagram practice for exams. Balance theory with discussions on current issues like plastic bans for relevance."
+}

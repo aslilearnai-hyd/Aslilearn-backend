@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 6: Social and Political Life – II: Understanding Media",
+    "generated_at": "2026-03-07T18:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between print media and electronic media.",
+            "answer": "Print media includes newspapers, magazines, and journals, while electronic media includes radio, television, and online platforms. Print media is slower but permanent, while electronic media is fast and reaches larger audiences.",
+            "key_concepts": ["print media", "electronic media"],
+            "marks": 4,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the main functions of media in society?",
+            "answer": "Media informs the public, educates citizens, entertains audiences, and acts as a watchdog over government and institutions.",
+            "key_concepts": ["inform", "educate", "watchdog"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "How does media shape political opinions?",
+            "answer": "By highlighting certain issues, providing expert opinions, and framing news stories, media influences how people perceive political events and leaders.",
+            "key_concepts": ["framing", "opinion shaping"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Give two examples of misinformation spread through media.",
+            "answer": "Examples include fake social media posts about elections and false health advice circulated online.",
+            "key_concepts": ["misinformation", "fake news"],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What are the responsibilities of journalists?",
+            "answer": "Journalists should report accurately, verify facts, avoid bias, respect privacy, and follow ethical guidelines.",
+            "key_concepts": ["journalistic responsibility", "ethics"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the concept of citizen journalism with an example.",
+            "answer": "Citizen journalism is when ordinary people report news or events, often via blogs or social media. For example, a local resident filming a protest and sharing it online.",
+            "key_concepts": ["citizen journalism", "digital reporting"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What are the advantages of digital media over traditional media?",
+            "answer": "Digital media is faster, accessible worldwide, allows interaction and feedback, and can present multimedia content like videos and graphics.",
+            "key_concepts": ["digital media", "advantages"],
+            "marks": 4,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 8,
+            "question": "How can fake news be identified?",
+            "answer": "By checking multiple sources, looking for credible authors, verifying dates and facts, and reading beyond headlines.",
+            "key_concepts": ["fake news detection", "verification"],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the impact of advertisements on society?",
+            "answer": "Advertisements influence buying decisions, shape cultural norms, and can promote both positive messages and consumerism.",
+            "key_concepts": ["advertisements", "social impact"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the term ‘media ethics’ with an example.",
+            "answer": "Media ethics refers to principles guiding responsible reporting, such as avoiding sensationalism. For example, not publishing unverified rumors about a person.",
+            "key_concepts": ["media ethics", "responsibility"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 11,
+            "question": "How does social media influence political participation?",
+            "answer": "Social media informs citizens, mobilizes them for campaigns, and allows discussion and debate on political issues.",
+            "key_concepts": ["social media", "political participation"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What are echo chambers in media?",
+            "answer": "Echo chambers occur when people are exposed only to information that reinforces their beliefs, often online through algorithms.",
+            "key_concepts": ["echo chamber", "information bias"],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe how media can raise awareness about social issues.",
+            "answer": "Media can highlight issues like poverty, health, and environmental problems through reports, documentaries, and campaigns, encouraging public action.",
+            "key_concepts": ["social awareness", "media role"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is investigative journalism and why is it important?",
+            "answer": "Investigative journalism uncovers hidden truths, corruption, or wrongdoing. It is important because it holds powerful institutions accountable.",
+            "key_concepts": ["investigative journalism", "accountability"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "How do algorithms affect the kind of news we see?",
+            "answer": "Algorithms filter and prioritize news based on preferences, which can limit exposure to diverse viewpoints and reinforce existing beliefs.",
+            "key_concepts": ["algorithms", "digital media"],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the term ‘media watchdog’ with an example.",
+            "answer": "A media watchdog monitors government and institutions, exposing corruption or malpractice. For example, newspapers reporting scams or mismanagement.",
+            "key_concepts": ["watchdog", "media accountability"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What are the challenges of reporting during emergencies?",
+            "answer": "Challenges include verifying information quickly, avoiding panic, limited access to affected areas, and ensuring accurate communication.",
+            "key_concepts": ["emergency reporting", "challenges"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is it important to cross-check news before sharing?",
+            "answer": "Cross-checking prevents spreading fake news, misinformation, and misunderstanding among people.",
+            "key_concepts": ["cross-checking", "responsible sharing"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Give an example of media framing influencing public opinion.",
+            "answer": "News reports highlighting a protest as violent rather than peaceful can create fear or negative perception, showing the effect of framing.",
+            "key_concepts": ["media framing", "public opinion"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "How can media literacy help in a digital world?",
+            "answer": "Media literacy allows individuals to critically analyze content, distinguish fact from opinion, and recognize bias and fake news.",
+            "key_concepts": ["media literacy", "critical thinking"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the difference between news and opinion articles?",
+            "answer": "News articles present factual events, while opinion articles express personal views or interpretations about issues.",
+            "key_concepts": ["news", "opinion"],
+            "marks": 4,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is media considered the fourth pillar of democracy?",
+            "answer": "Media supports democracy by informing citizens, encouraging debate, and holding governments accountable alongside legislature, executive, and judiciary.",
+            "key_concepts": ["fourth pillar", "democracy"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the role of editors in shaping news content.",
+            "answer": "Editors decide which news to publish, check facts, remove bias, and ensure clarity, influencing what the public reads or watches.",
+            "key_concepts": ["editors", "news shaping"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 24,
+            "question": "How can critical thinking reduce the spread of fake news?",
+            "answer": "Critical thinking allows people to question sources, verify facts, and avoid blindly believing or sharing false information.",
+            "key_concepts": ["critical thinking", "fake news prevention"],
+            "marks": 4,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Give an example of a successful social campaign run via media.",
+            "answer": "Campaigns like Swachh Bharat Abhiyan or anti-smoking drives use TV, newspapers, and social media to educate and motivate citizens.",
+            "key_concepts": ["media campaigns", "social change"],
+            "marks": 4,
+            "source_section": "Section 6.2"
+        }
+    ]
+}

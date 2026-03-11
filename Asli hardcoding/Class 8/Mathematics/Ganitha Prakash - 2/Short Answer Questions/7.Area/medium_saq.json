@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Area",
+  "generated_at": "2026-03-05T12:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Find the area of a rectangle whose length is 12 cm and width is 8 cm.",
+      "answer": "Area = 12 × 8 = 96 cm².",
+      "key_concepts": ["rectangle area"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Find the area of a square whose side is 13 cm.",
+      "answer": "Area = 13² = 169 cm².",
+      "key_concepts": ["square area"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Find the area of a triangle with base 20 cm and height 9 cm.",
+      "answer": "Area = ½ × 20 × 9 = 90 cm².",
+      "key_concepts": ["triangle area"],
+      "marks": 2,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Find the area of a parallelogram with base 16 cm and height 7 cm.",
+      "answer": "Area = 16 × 7 = 112 cm².",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Find the area of a rhombus whose diagonals are 14 cm and 10 cm.",
+      "answer": "Area = ½ × 14 × 10 = 70 cm².",
+      "key_concepts": ["rhombus"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Find the area of a trapezium whose parallel sides are 9 cm and 15 cm and height is 6 cm.",
+      "answer": "Area = ½ × 6 × (9 + 15) = 72 cm².",
+      "key_concepts": ["trapezium area"],
+      "marks": 2,
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 7,
+      "question": "If the area of a rectangle is 180 cm² and its length is 15 cm, find its width.",
+      "answer": "Width = 180 ÷ 15 = 12 cm.",
+      "key_concepts": ["rectangle"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Find the side of a square whose area is 196 cm².",
+      "answer": "Side = √196 = 14 cm.",
+      "key_concepts": ["square"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Find the height of a triangle whose area is 60 cm² and base is 10 cm.",
+      "answer": "60 = ½ × 10 × h → h = 12 cm.",
+      "key_concepts": ["triangle"],
+      "marks": 2,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Find the base of a parallelogram whose area is 96 cm² and height is 8 cm.",
+      "answer": "Base = 96 ÷ 8 = 12 cm.",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Find the area of a rhombus with diagonals 18 cm and 12 cm.",
+      "answer": "Area = ½ × 18 × 12 = 108 cm².",
+      "key_concepts": ["rhombus"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Find the area of a trapezium with parallel sides 20 cm and 12 cm and height 5 cm.",
+      "answer": "Area = ½ × 5 × (20 + 12) = 80 cm².",
+      "key_concepts": ["trapezium"],
+      "marks": 2,
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Find the area of a triangle with base 15 cm and height 8 cm.",
+      "answer": "Area = ½ × 15 × 8 = 60 cm².",
+      "key_concepts": ["triangle"],
+      "marks": 2,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the area of a rectangle with length 18 cm and width 9 cm.",
+      "answer": "Area = 18 × 9 = 162 cm².",
+      "key_concepts": ["rectangle"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Find the area of a square whose side is 17 cm.",
+      "answer": "Area = 17² = 289 cm².",
+      "key_concepts": ["square"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Find the height of a parallelogram whose area is 150 cm² and base is 15 cm.",
+      "answer": "Height = 150 ÷ 15 = 10 cm.",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Find the area of a rhombus whose diagonals are 24 cm and 16 cm.",
+      "answer": "Area = ½ × 24 × 16 = 192 cm².",
+      "key_concepts": ["rhombus"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Find the area of a trapezium whose parallel sides are 18 cm and 10 cm and height is 7 cm.",
+      "answer": "Area = ½ × 7 × (18 + 10) = 98 cm².",
+      "key_concepts": ["trapezium"],
+      "marks": 2,
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Find the base of a triangle whose area is 72 cm² and height is 9 cm.",
+      "answer": "72 = ½ × b × 9 → b = 16 cm.",
+      "key_concepts": ["triangle"],
+      "marks": 2,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Find the width of a rectangle whose area is 210 cm² and length is 14 cm.",
+      "answer": "Width = 210 ÷ 14 = 15 cm.",
+      "key_concepts": ["rectangle"],
+      "marks": 2,
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Find the area of a triangle with base 25 cm and height 12 cm.",
+      "answer": "Area = ½ × 25 × 12 = 150 cm².",
+      "key_concepts": ["triangle"],
+      "marks": 2,
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Find the area of a parallelogram with base 20 cm and height 9 cm.",
+      "answer": "Area = 20 × 9 = 180 cm².",
+      "key_concepts": ["parallelogram"],
+      "marks": 2,
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Find the area of a rhombus with diagonals 30 cm and 12 cm.",
+      "answer": "Area = ½ × 30 × 12 = 180 cm².",
+      "key_concepts": ["rhombus"],
+      "marks": 2,
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Find the area of a trapezium whose parallel sides are 24 cm and 14 cm and height is 8 cm.",
+      "answer": "Area = ½ × 8 × (24 + 14) = 152 cm².",
+      "key_concepts": ["trapezium"],
+      "marks": 2,
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how irregular shapes can be used to calculate area.",
+      "answer": "Irregular shapes can be divided into triangles or rectangles and the areas of the smaller shapes are added.",
+      "key_concepts": ["polygon area"],
+      "marks": 2,
+      "source_section": "Section 7.6"
+    }
+  ]
+}

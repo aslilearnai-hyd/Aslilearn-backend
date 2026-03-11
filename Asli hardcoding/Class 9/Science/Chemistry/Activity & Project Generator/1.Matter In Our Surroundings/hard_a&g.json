@@ -1,0 +1,185 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Matter in Our Surroundings",
+    "difficulty": "Hard",
+    "source_pdf": "iesc101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Analysis of Inter-particle Spaces",
+            "objective": "To explain the lack of volume expansion during dissolution using particle theory[cite: 436, 442].",
+            "materials": [
+                "100 mL Beaker",
+                "Graduated Cylinder",
+                "Salt/Sugar",
+                "Electronic Balance"
+            ],
+            "steps": [
+                "Measure exactly 50 mL of water and record its mass[cite: 431].",
+                "Measure 10 g of salt and dissolve it completely in the water[cite: 432].",
+                "Record the new total mass and the final volume accurately[cite: 433].",
+                "Analyze why mass is additive while volume remains nearly constant[cite: 442]."
+            ],
+            "learning_outcome": "Demonstrates that particles of salt occupy specific voids between water particles without displacing the bulk volume[cite: 442].",
+            "evaluation": "Calculate the theoretical vs. observed density of the solution (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Microscopic Scale Estimation through Serial Dilution",
+            "objective": "To mathematically estimate the extreme smallness of particles beyond human imagination[cite: 476, 479].",
+            "materials": [
+                "2 crystals of Potassium Permanganate [cite: 446]",
+                "Five 100 mL beakers [cite: 450]",
+                "10 mL Pipette [cite: 450]"
+            ],
+            "steps": [
+                "Perform a 1:10 serial dilution five times as per Activity 1.2[cite: 450, 451].",
+                "Observe the threshold where the color is barely visible to the naked eye[cite: 474].",
+                "Calculate the dilution factor (e.g., $10^{-5}$) of the final solution[cite: 452].",
+                "Infer the minimum number of particles originally present in one crystal[cite: 476]."
+            ],
+            "learning_outcome": "Concludes that matter is particulate and particles are infinitesimally small[cite: 476, 479].",
+            "evaluation": "Derive a mathematical estimate of particles in the original crystal based on the dilution limit (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Kinetic Energy and Diffusion Dynamics",
+            "objective": "To correlate temperature increases with increased kinetic energy and diffusion rates[cite: 504, 508].",
+            "materials": [
+                "Copper Sulphate crystals [cite: 493]",
+                "Hot and Cold water glasses [cite: 493]",
+                "Thermometer",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Record temperatures of both hot and cold water[cite: 493].",
+                "Add crystals simultaneously and measure the distance color travels per minute without stirring[cite: 494, 497].",
+                "Analyze the relationship between thermal energy and the speed of particles[cite: 503, 504]."
+            ],
+            "learning_outcome": "Establishes that heating provides energy to overcome inter-particle attractions faster[cite: 504, 508].",
+            "evaluation": "Graph the rate of diffusion against temperature (10 marks)."
+        },
+        {
+            "sl_no": 4,
+            "title": "Force Variation and State Rigidity",
+            "objective": "To investigate how the strength of inter-particle attraction determines the physical state and rigidity[cite: 533, 563].",
+            "materials": [
+                "Iron nail, chalk, rubber band [cite: 516]",
+                "Hammer [cite: 517]",
+                "Calibrated weights"
+            ],
+            "steps": [
+                "Apply measured force to break each substance[cite: 517].",
+                "Classify substances by their resistance to shape change (rigidity)[cite: 563].",
+                "Compare these to liquids, which have no fixed shape due to weaker forces[cite: 585, 596]."
+            ],
+            "learning_outcome": "Identifies that force of attraction varies significantly across different types of matter[cite: 533].",
+            "evaluation": "Scientific report on why solids are rigid while liquids are fluids based on force strength (10 marks)."
+        },
+        {
+            "sl_no": 5,
+            "title": "Compression Gradient in Three States",
+            "objective": "To determine the relationship between inter-particle distance and compressibility[cite: 608, 616].",
+            "materials": [
+                "Three 100 mL syringes with rubber corks [cite: 603]",
+                "Weights",
+                "Water, Chalk, and Air [cite: 605]"
+            ],
+            "steps": [
+                "Apply varying weights to the pistons of syringes filled with solid, liquid, and gas[cite: 607].",
+                "Measure the volume change for each increment of weight.",
+                "Observe the high speed and random movement of gas particles allowing high compression[cite: 616, 617]."
+            ],
+            "learning_outcome": "Proves that gases have maximum space between particles, allowing for high-pressure storage like LPG[cite: 608, 609].",
+            "evaluation": "Calculate the compression percentage for each state (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "Latent Heat and Phase Change Analysis",
+            "objective": "To analyze why temperature remains constant during phase transitions despite heat application[cite: 696, 701].",
+            "materials": [
+                "Ice [cite: 650]",
+                "Burner and Beaker [cite: 672, 675]",
+                "Precision Thermometer [cite: 650]",
+                "Glass Stirrer [cite: 668]"
+            ],
+            "steps": [
+                "Heat ice and record temperature every 30 seconds until 5 minutes after boiling starts[cite: 682, 686].",
+                "Observe the 'hidden' energy (latent heat) used to break inter-particle bonds[cite: 701, 711].",
+                "Compare the energy levels of steam vs. water at 373 K[cite: 710]."
+            ],
+            "learning_outcome": "Understands latent heat of fusion and vaporisation as energy used for changing state, not temperature[cite: 702, 709].",
+            "evaluation": "Construct a phase change diagram (Heating Curve) and label the latent heat plateaus (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Direct Phase Transitions: Sublimation and Deposition",
+            "objective": "To observe state changes occurring without a liquid intermediary[cite: 724, 743].",
+            "materials": [
+                "Camphor/Ammonium Chloride [cite: 727]",
+                "China dish, Inverted funnel, Cotton plug [cite: 728, 729, 731]",
+                "Burner [cite: 740]"
+            ],
+            "steps": [
+                "Setup the sublimation apparatus as shown in Fig. 1.7[cite: 741].",
+                "Heat slowly and observe the formation of vapors (sublimation)[cite: 742, 743].",
+                "Observe the solid deposit on the cool inner walls of the funnel (deposition)[cite: 743]."
+            ],
+            "learning_outcome": "Identifies substances that bypass the liquid state based on pressure and temperature[cite: 743, 750].",
+            "evaluation": "Diagrammatic comparison of the particles in the solid and gaseous phases during this process (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Pressure-Induced Liquefaction",
+            "objective": "To demonstrate how increasing pressure and decreasing temperature can liquefy gases[cite: 734, 746].",
+            "materials": [
+                "Syringe",
+                "Coolant (Ice-salt mixture)",
+                "Gas sample"
+            ],
+            "steps": [
+                "Compress air in a syringe while keeping it in a cold bath[cite: 734, 746].",
+                "Research the industrial conversion of $CO_{2}$ to dry ice through pressure decrease[cite: 747, 748].",
+                "Analyze how state is determined by both pressure and temperature[cite: 750]."
+            ],
+            "learning_outcome": "Explains how the distance between particles can be forced to change through external pressure[cite: 745, 757].",
+            "evaluation": "Explain the logic behind naming solid $CO_{2}$ 'dry ice' (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Evaporation Kinetics and Surface Phenomena",
+            "objective": "To distinguish evaporation from boiling as a surface phenomenon[cite: 789, 851].",
+            "materials": [
+                "Varying surface area containers [cite: 794, 796]",
+                "Water [cite: 794]",
+                "Hygrometer (optional)",
+                "Fan [cite: 794]"
+            ],
+            "steps": [
+                "Measure the evaporation rate in different humidities and wind speeds[cite: 807, 810].",
+                "Compare water loss in a test tube vs. an open china dish[cite: 794, 795].",
+                "Explain how high kinetic energy surface particles break free from attraction[cite: 788]."
+            ],
+            "learning_outcome": "Concludes that evaporation rate depends on surface area, temperature, wind speed, and humidity[cite: 853].",
+            "evaluation": "Develop a multi-variable equation to represent the factors affecting evaporation (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Thermodynamics of Evaporative Cooling",
+            "objective": "To explain the cooling effect through the absorption of latent heat from surroundings[cite: 814, 825].",
+            "materials": [
+                "Acetone/Petrol [cite: 818, 833]",
+                "Cotton clothes and Synthetic clothes [cite: 822]",
+                "Two Thermometers"
+            ],
+            "steps": [
+                "Measure the temperature drop on a surface after applying acetone[cite: 818, 819].",
+                "Analyze why cotton is a better absorber for sweat-induced cooling in summer[cite: 826].",
+                "Observe water droplets on an ice-cold glass to understand energy loss from water vapor in air[cite: 827, 829]."
+            ],
+            "learning_outcome": "Relates the sensation of 'cold' to the loss of energy to the evaporating liquid[cite: 815, 819].",
+            "evaluation": "Explain why a desert cooler is more effective on a hot, dry day vs. a rainy day (10 marks)."
+        }
+    ]
+}

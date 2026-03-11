@@ -1,0 +1,193 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Life Processes in Plants",
+    "difficulty": "Easy",
+    "source_pdf": "life_processes_plants_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Chlorophyll and Sunlight",
+            "objective": "To show that sunlight is necessary for photosynthesis",
+            "materials": [
+                "Potted plant",
+                "Black paper",
+                "Paper clips",
+                "Iodine solution"
+            ],
+            "steps": [
+                "Take a healthy potted plant and keep it in the dark for 24 hours",
+                "Cover a part of one leaf with black paper using clips",
+                "Keep the plant in sunlight for 6 hours",
+                "Remove the leaf and test it for starch using iodine solution"
+            ],
+            "learning_outcome": "Observes that starch is only formed in the parts of the leaf exposed to sunlight",
+            "evaluation": "Correct identification of the blue-black color change location (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Water Transport in Stems",
+            "objective": "Observe how water moves upward through the stem",
+            "materials": [
+                "A white flower with a stem (like a balsam or carnation)",
+                "Glass of water",
+                "Red ink or food color"
+            ],
+            "steps": [
+                "Fill a glass halfway with water and add a few drops of red ink",
+                "Cut the base of the flower stem and place it in the colored water",
+                "Leave it undisturbed for a few hours or overnight",
+                "Observe the change in the color of the flower petals"
+            ],
+            "learning_outcome": "Visualizes the upward movement of water through xylem vessels",
+            "evaluation": "Description of how the color reached the petals (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Transpiration in Plants",
+            "objective": "Demonstrate that plants release water vapor into the air",
+            "materials": [
+                "Potted plant",
+                "Transparent polythene bag",
+                "Thread"
+            ],
+            "steps": [
+                "Tie a polythene bag around a leafy branch of a healthy potted plant",
+                "Keep the plant in the sun for 1-2 hours",
+                "Observe the inner surface of the bag for water droplets",
+                "Compare with an empty bag tied to a stick nearby"
+            ],
+            "learning_outcome": "Identifies transpiration as the process of water loss from leaves",
+            "evaluation": "Successful observation and recording of water droplets (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Stomata Observation",
+            "objective": "Identify the tiny pores on the leaf surface",
+            "materials": [
+                "A fleshy leaf (like Tradescantia or Lily)",
+                "Magnifying glass",
+                "Forceps"
+            ],
+            "steps": [
+                "Peel off a thin layer from the underside of the leaf",
+                "Place the peel on a flat surface",
+                "Examine the peel closely using a magnifying glass",
+                "Look for tiny dots or openings"
+            ],
+            "learning_outcome": "Recognizes stomata as the sites for gas exchange and transpiration",
+            "evaluation": "Correct description of the appearance of leaf pores (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Root Absorption Experiment",
+            "objective": "Demonstrate that roots absorb water for the plant",
+            "materials": [
+                "Two test tubes",
+                "Water",
+                "Oil",
+                "A small plant with roots"
+            ],
+            "steps": [
+                "Fill both test tubes with equal amounts of water",
+                "Place a small plant in Test Tube A with its roots submerged",
+                "Add a layer of oil in both tubes to prevent evaporation",
+                "Mark the water level and check after 24 hours"
+            ],
+            "learning_outcome": "Observes that the water level drops only in the tube with the plant",
+            "evaluation": "Accurate marking and explanation of the water level change (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Starch in Leaves",
+            "objective": "Test different leaves for the presence of stored food",
+            "materials": [
+                "Fresh green leaf",
+                "Boiling water",
+                "Spirit/Alcohol",
+                "Iodine solution"
+            ],
+            "steps": [
+                "Boil the leaf in water for a few minutes to soften it",
+                "Place the leaf in a tube of alcohol and heat it in a water bath to remove chlorophyll",
+                "Wash the leaf in cold water",
+                "Add a few drops of iodine and observe the color change"
+            ],
+            "learning_outcome": "Confirms that plants store food in the form of starch",
+            "evaluation": "Understanding of the chemical test for starch (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Growing Plants from Scraps",
+            "objective": "Observe vegetative propagation in common vegetables",
+            "materials": [
+                "Potato with 'eyes'",
+                "Money plant cutting",
+                "Onion bulb",
+                "Glass of water/Pot with soil"
+            ],
+            "steps": [
+                "Cut a piece of potato containing at least one 'eye'",
+                "Plant it in moist soil",
+                "Place a money plant cutting in a glass of water",
+                "Observe the growth of new roots and shoots over two weeks"
+            ],
+            "learning_outcome": "Learns that plants can reproduce through parts other than seeds",
+            "evaluation": "Weekly log of growth observations (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Autotroph vs. Heterotroph Chart",
+            "objective": "Classify organisms based on their mode of nutrition",
+            "materials": [
+                "Chart paper",
+                "Pictures of various plants and animals",
+                "Glue"
+            ],
+            "steps": [
+                "Divide the chart into two columns: Autotrophs and Heterotrophs",
+                "Categorize pictures of green plants, mushrooms, and animals",
+                "Write one sentence on why green plants are called producers"
+            ],
+            "learning_outcome": "Distinguishes between organisms that make food and those that depend on others",
+            "evaluation": "Correct classification of at least 10 organisms (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Saprotrophic Observation",
+            "objective": "Observe how fungi obtain nutrition from dead matter",
+            "materials": [
+                "Bread slice",
+                "Water",
+                "Container with lid"
+            ],
+            "steps": [
+                "Moisten a slice of bread with a little water",
+                "Keep it in a warm, dark place inside a closed container",
+                "Observe the bread for 3-4 days for any fluffy growth",
+                "Use a magnifying glass to see the thread-like structures"
+            ],
+            "learning_outcome": "Identifies fungi as saprotrophs that feed on decaying matter",
+            "evaluation": "Description of the fungal growth and its source of nutrition (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Oxygen Bubbles Experiment",
+            "objective": "Observe plants giving out oxygen during the day",
+            "materials": [
+                "An aquarium plant (like Hydrilla)",
+                "Glass funnel",
+                "Beaker",
+                "Water"
+            ],
+            "steps": [
+                "Place the plant in a beaker filled with water",
+                "Invert a funnel over the plant",
+                "Keep the setup in bright sunlight",
+                "Observe the tiny bubbles rising from the plant surface"
+            ],
+            "learning_outcome": "Demonstrates that oxygen is a byproduct of photosynthesis",
+            "evaluation": "Connection between light and bubble production (10 marks)"
+        }
+    ]
+}

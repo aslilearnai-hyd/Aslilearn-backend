@@ -1,0 +1,176 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science (CBSE - Geography)",
+    "chapter": "Human Environment Interactions",
+    "difficulty": "Medium",
+    "source_pdf": "cbse_class7_geography_ch6.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Comparative Land Use Study",
+            "objective": "Analyze land use patterns across different regions",
+            "materials": [
+                "Political maps of 2–3 states",
+                "Color pencils",
+                "Notebook"
+            ],
+            "steps": [
+                "Mark agricultural, forest, settlement, and industrial areas on each state map",
+                "Compare the patterns and identify differences",
+                "Explain reasons for these differences based on environment and resources"
+            ],
+            "learning_outcome": "Students develop analytical skills about land use variations",
+            "evaluation": "Accuracy of marking and quality of explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Resource Dependency Chart",
+            "objective": "Understand human dependence on specific natural resources",
+            "materials": [
+                "Chart paper",
+                "Markers",
+                "Reference books"
+            ],
+            "steps": [
+                "Choose 4–5 resources like water, soil, forest, minerals",
+                "List occupations or products that depend on each resource",
+                "Use arrows or diagrams to show the connection"
+            ],
+            "learning_outcome": "Students understand links between environment and livelihoods",
+            "evaluation": "Clarity and completeness of the chart (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Case Study: Local Environmental Issue",
+            "objective": "Investigate a human-environment conflict",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Internet or newspapers"
+            ],
+            "steps": [
+                "Select an issue like deforestation, water scarcity, or pollution in your area",
+                "Research causes, effects, and solutions",
+                "Write a short report summarizing your findings"
+            ],
+            "learning_outcome": "Students understand environmental challenges and problem-solving",
+            "evaluation": "Depth of research and clarity of report (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Traditional Knowledge vs Modern Practices Poster",
+            "objective": "Compare traditional environmental practices with modern ones",
+            "materials": [
+                "A3 paper",
+                "Colors",
+                "Reference materials"
+            ],
+            "steps": [
+                "Research traditional methods like rainwater harvesting or crop rotation",
+                "Compare with modern techniques like drip irrigation or mechanized farming",
+                "Create a poster showing both methods and their benefits"
+            ],
+            "learning_outcome": "Students learn how traditional knowledge influences modern practices",
+            "evaluation": "Creativity and accuracy of information (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Field Observation: Impact of Human Activity",
+            "objective": "Observe and record human impact on local environment",
+            "materials": [
+                "Notebook",
+                "Pen",
+                "Camera (optional)"
+            ],
+            "steps": [
+                "Visit a local park, river, or forest",
+                "Observe evidence of pollution, construction, or deforestation",
+                "Take notes and photographs (if possible) and suggest mitigation measures"
+            ],
+            "learning_outcome": "Students develop observational and critical thinking skills",
+            "evaluation": "Observation detail and proposed solutions (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Interactive Map: Resource Distribution",
+            "objective": "Study spatial distribution of natural resources in India",
+            "materials": [
+                "Map of India",
+                "Markers",
+                "Textbook or atlas"
+            ],
+            "steps": [
+                "Mark regions rich in minerals, water bodies, forests, and agriculture",
+                "Create symbols or color codes for each resource",
+                "Analyze patterns and relate them to human settlements and occupations"
+            ],
+            "learning_outcome": "Students connect geography with resource use and settlement patterns",
+            "evaluation": "Map clarity and quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Debate: Environment vs Development",
+            "objective": "Develop critical thinking and argumentation skills",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Divide students into two groups: one for development, one for environment",
+                "Research arguments for each side",
+                "Hold a classroom debate and present conclusions"
+            ],
+            "learning_outcome": "Students understand trade-offs in human-environment interactions",
+            "evaluation": "Quality of arguments and participation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Role Play: Water Management Committee",
+            "objective": "Simulate decision-making for sustainable resource use",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Assign roles: farmers, villagers, government officials",
+                "Discuss water allocation for agriculture, domestic use, and industry",
+                "Decide on sustainable measures and present solutions"
+            ],
+            "learning_outcome": "Students learn negotiation and problem-solving related to environment",
+            "evaluation": "Participation and practicality of solutions (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Climate Impact Story Writing",
+            "objective": "Understand human adaptation to environmental changes",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Imagine a village facing drought or flood",
+                "Write a story showing how people adapt and survive",
+                "Include methods to protect resources and livelihoods"
+            ],
+            "learning_outcome": "Students explore adaptation strategies creatively",
+            "evaluation": "Relevance and creativity of the story (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Quiz with Map Questions",
+            "objective": "Test knowledge on human-environment interactions with spatial understanding",
+            "materials": [
+                "Map of India",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Prepare 10 questions combining facts and map locations (e.g., where certain crops grow, mineral locations)",
+                "Ask classmates to answer and mark locations on the map",
+                "Keep score for accuracy"
+            ],
+            "learning_outcome": "Students reinforce knowledge through interactive peer learning",
+            "evaluation": "Accuracy and completeness of answers (10 marks)"
+        }
+    ]
+}

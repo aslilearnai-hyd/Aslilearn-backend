@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Metals and Non-metals",
+  "generated_at": "2026-03-10T23:42:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following reaction conditions is essential for the reduction of $Al_2O_3$ to Aluminium metal?",
+      "options": {
+        "A": "Reduction using Carbon at high temperature",
+        "B": "Reduction using Carbon Monoxide",
+        "C": "Electrolytic reduction of molten $Al_2O_3$",
+        "D": "Heating with Magnesium metal"
+      },
+      "correct_answer": "C",
+      "explanation": "Aluminium has a higher affinity for oxygen than carbon; therefore, it cannot be reduced by carbon. It is extracted by the electrolysis of its molten oxide.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.4"
+    },
+    {
+      "question_number": 2,
+      "question": "During the electrolytic refining of a metal M, the behavior of impurities like Gold and Silver is as follows:",
+      "options": {
+        "A": "They dissolve in the electrolyte",
+        "B": "They get deposited at the cathode",
+        "C": "They settle down as 'anode mud'",
+        "D": "They remain in the impure anode"
+      },
+      "correct_answer": "C",
+      "explanation": "Less reactive impurities (noble metals) do not get oxidized at the anode and settle at the bottom as anode mud.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.5"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following represents the correct decreasing order of reactivity of the metals $Al$, $Cu$, $Zn$, and $Fe$ towards water/steam?",
+      "options": {
+        "A": "$Al > Zn > Fe > Cu$",
+        "B": "$Zn > Al > Cu > Fe$",
+        "C": "$Al > Fe > Zn > Cu$",
+        "D": "$Cu > Fe > Zn > Al$"
+      },
+      "correct_answer": "A",
+      "explanation": "Aluminium reacts with steam faster than Zinc. Iron reacts slowly with steam. Copper does not react with water or steam at all.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 4,
+      "question": "A metal 'X' forms a water-soluble oxide 'XO'. When this oxide is dissolved in water, the resulting solution turns phenolphthalein pink. The element 'X' is likely to be:",
+      "options": {
+        "A": "Magnesium",
+        "B": "Calcium",
+        "C": "Aluminium",
+        "D": "Iron"
+      },
+      "correct_answer": "B",
+      "explanation": "Calcium forms $CaO$ (soluble in water to form basic $Ca(OH)_2$). $MgO$ is only slightly soluble, and oxides of $Al$ and $Fe$ are insoluble.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following is the correct reason why ionic compounds do not conduct electricity in the solid state?",
+      "options": {
+        "A": "They do not contain ions",
+        "B": "The ions are held in a fixed position by strong electrostatic forces",
+        "C": "The electrons are shared between atoms",
+        "D": "They are made of neutral molecules"
+      },
+      "correct_answer": "B",
+      "explanation": "In the solid state, the rigid lattice structure prevents the movement of ions, which is necessary for the conduction of electricity.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3.1"
+    },
+    {
+      "question_number": 6,
+      "question": "In the thermite process, which property of Aluminium is utilized?",
+      "options": {
+        "A": "Its high melting point",
+        "B": "Its ability to act as a strong reducing agent",
+        "C": "Its malleability",
+        "D": "Its low reactivity"
+      },
+      "correct_answer": "B",
+      "explanation": "Aluminium is more reactive than Iron and can displace it from $Fe_2O_3$ in a highly exothermic displacement reaction.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "An element 'A' is soft and can be cut with a knife. It is very reactive and cannot be kept open in air. It reacts vigorously with water. Identify the element:",
+      "options": {
+        "A": "$Mg$",
+        "B": "$Na$",
+        "C": "$P$",
+        "D": "$Ca$"
+      },
+      "correct_answer": "B",
+      "explanation": "Sodium ($Na$) is a soft metal that reacts explosively with water and oxygen; hence it is stored in kerosene.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following pairs will show the most vigorous reaction when added to cold water?",
+      "options": {
+        "A": "$Na$ and $K$",
+        "B": "$Mg$ and $Ca$",
+        "C": "$Al$ and $Fe$",
+        "D": "$Cu$ and $Ag$"
+      },
+      "correct_answer": "A",
+      "explanation": "Sodium and Potassium are at the top of the reactivity series and react violently with cold water, often catching fire.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 9,
+      "question": "The process of 'Anodising' involves the formation of a layer of:",
+      "options": {
+        "A": "$Zn$ on $Fe$",
+        "B": "$Al_2O_3$ on $Al$",
+        "C": "$Cr$ on $Fe$",
+        "D": "$Cu$ on $Ag$"
+      },
+      "correct_answer": "B",
+      "explanation": "Anodising is the process of forming a thick protective oxide layer on aluminium using electrolysis.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following is true for the extraction of Mercury from Cinnabar ($HgS$)?",
+      "options": {
+        "A": "It requires reduction with carbon",
+        "B": "It is reduced by heating in air alone",
+        "C": "It requires electrolytic reduction",
+        "D": "It is found in nature in the native state"
+      },
+      "correct_answer": "B",
+      "explanation": "Mercury is a low reactivity metal. $HgS$ is first heated in air to form $HgO$, and further heating reduces $HgO$ to $Hg$.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Which among the following is not an ionic compound?",
+      "options": {
+        "A": "$KCl$",
+        "B": "$HCl$",
+        "C": "$CCl_4$",
+        "D": "Both B and C"
+      },
+      "correct_answer": "D",
+      "explanation": "$HCl$ (in gaseous state) and $CCl_4$ are covalent compounds formed by sharing electrons. $KCl$ is ionic.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 12,
+      "question": "What is 'Froth Flotation' primarily used for in metallurgy?",
+      "options": {
+        "A": "Reduction of oxides",
+        "B": "Concentration of sulfide ores",
+        "C": "Refining of impure metals",
+        "D": "Calcination of carbonates"
+      },
+      "correct_answer": "B",
+      "explanation": "Froth flotation is a common method for the concentration of sulfide ores based on their preferential wetting properties.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 13,
+      "question": "The solubility of ionic compounds in water is due to:",
+      "options": {
+        "A": "Interaction with non-polar molecules",
+        "B": "Solvation of ions by polar water molecules",
+        "C": "Formation of covalent bonds with water",
+        "D": "Low lattice energy"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is a polar solvent that pulls the ions apart from the crystal lattice, leading to dissolution.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following metals occurs in nature as a carbonate ore?",
+      "options": {
+        "A": "Cinnabar",
+        "B": "Calamine",
+        "C": "Bauxite",
+        "D": "Galena"
+      },
+      "correct_answer": "B",
+      "explanation": "Calamine is Zinc carbonate ($ZnCO_3$). Cinnabar and Galena are sulfides; Bauxite is an oxide.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 15,
+      "question": "In the reaction $3MnO_2 + 4Al \rightarrow 3Mn + 2Al_2O_3 + \text{Heat}$, which of the following is correct?",
+      "options": {
+        "A": "$Mn$ is being oxidized",
+        "B": "$Al$ is the oxidizing agent",
+        "C": "The reaction is endothermic",
+        "D": "$Al$ is more reactive than $Mn$"
+      },
+      "correct_answer": "D",
+      "explanation": "Aluminium displaces Manganese from its oxide because it is more reactive. The reaction is highly exothermic.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is the melting point of $NaCl$ ($1074 \text{ K}$) so much higher than that of methane ($90 \text{ K}$)?",
+      "options": {
+        "A": "$NaCl$ is a metal",
+        "B": "Methane has no electrons",
+        "C": "Ionic bonds are stronger than van der Waals forces in methane",
+        "D": "Methane is a liquid at room temperature"
+      },
+      "correct_answer": "C",
+      "explanation": "Ionic compounds have strong electrostatic attractions between ions, requiring high energy to break the lattice.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which metal is used as a sacrificial anode to prevent the corrosion of iron pipes?",
+      "options": {
+        "A": "Copper",
+        "B": "Silver",
+        "C": "Magnesium",
+        "D": "Lead"
+      },
+      "correct_answer": "C",
+      "explanation": "Magnesium is more reactive than Iron and will corrode first (sacrificing itself) to protect the iron.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "What happens when Calcium reacts with water?",
+      "options": {
+        "A": "It reacts violently and catches fire",
+        "B": "The reaction is less violent and the metal floats",
+        "C": "It does not react with cold water",
+        "D": "It forms Calcium Oxide and $H_2$"
+      },
+      "correct_answer": "B",
+      "explanation": "The reaction of Calcium with water is less violent; the $H_2$ bubbles stick to the metal surface, causing it to float.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Identify the incorrect statement about the reactivity series:",
+      "options": {
+        "A": "Metals above Hydrogen can displace it from acids",
+        "B": "Gold and Platinum are at the bottom of the series",
+        "C": "Metals at the bottom are found in combined state in nature",
+        "D": "Reactivity decreases as we go down the series"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals at the bottom of the series (Gold, Silver, Platinum) are the least reactive and are typically found in the free (native) state.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.4"
+    },
+    {
+      "question_number": 20,
+      "question": "A substance 'X' has a high melting point and conducts electricity only in its molten or aqueous form. 'X' is likely to be:",
+      "options": {
+        "A": "Diamond",
+        "B": "Potassium Chloride",
+        "C": "Graphite",
+        "D": "Sulphur"
+      },
+      "correct_answer": "B",
+      "explanation": "These are characteristic properties of an ionic compound like $KCl$.",
+      "difficulty": "hard",
+      "source_section": "Section 3.3.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which of the following metals will not displace $H_2$ from dilute $HCl$?",
+      "options": {
+        "A": "Zinc",
+        "B": "Aluminium",
+        "C": "Copper",
+        "D": "Magnesium"
+      },
+      "correct_answer": "C",
+      "explanation": "Copper is below Hydrogen in the reactivity series and cannot displace it from dilute acids.",
+      "difficulty": "hard",
+      "source_section": "Section 3.2.3"
+    },
+    {
+      "question_number": 22,
+      "question": "The alloy 'Duralumin' consists of Aluminium mixed with:",
+      "options": {
+        "A": "Copper, Manganese, and Magnesium",
+        "B": "Zinc and Tin",
+        "C": "Lead and Nickel",
+        "D": "Carbon and Iron"
+      },
+      "correct_answer": "A",
+      "explanation": "Duralumin is a light and strong alloy used in aircraft construction.",
+      "difficulty": "hard",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Identify the non-metal that is non-lustrous but very essential for life:",
+      "options": {
+        "A": "Iodine",
+        "B": "Oxygen",
+        "C": "Carbon",
+        "D": "Bromine"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxygen is a non-lustrous non-metal essential for respiration. (Note: Iodine is lustrous).",
+      "difficulty": "hard",
+      "source_section": "Section 3.1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "In the extraction of Zinc, the reduction of Zinc Oxide is done using:",
+      "options": {
+        "A": "Hydrogen gas",
+        "B": "Coke (Carbon)",
+        "C": "Electrolysis",
+        "D": "Self-reduction"
+      },
+      "correct_answer": "B",
+      "explanation": "Zinc is a metal of medium reactivity; its oxide is reduced to metal by heating with carbon.",
+      "difficulty": "hard",
+      "source_section": "Section 3.4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "The melting point of Gallium is so low that it melts:",
+      "options": {
+        "A": "In the freezer",
+        "B": "On your palm",
+        "C": "Only in boiling water",
+        "D": "In sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Gallium and Caesium have very low melting points and will melt if you keep them on your palm.",
+      "difficulty": "hard",
+      "source_section": "Section 3.1"
+    }
+  ]
+}

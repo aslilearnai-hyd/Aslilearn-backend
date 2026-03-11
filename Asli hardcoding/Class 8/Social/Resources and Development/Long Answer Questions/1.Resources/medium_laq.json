@@ -1,0 +1,327 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Resources",
+  "generated_at": "2026-03-06T13:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define resources and explain their characteristics.",
+      "answer": "Resources are anything available in the environment that can satisfy human needs. A resource must have utility, value, and should be technologically accessible, economically feasible, and culturally acceptable.",
+      "answer_outline": [
+        "Definition of resources",
+        "Utility and value",
+        "Conditions for becoming a resource"
+      ],
+      "key_concepts": ["resources"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the importance of resources for human development.",
+      "answer": "Resources provide food, shelter, energy, and raw materials for industries. They are essential for economic development and improving the standard of living.",
+      "answer_outline": [
+        "Basic human needs",
+        "Industrial development",
+        "Economic growth"
+      ],
+      "key_concepts": ["importance of resources"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the different types of resources.",
+      "answer": "Resources are classified into natural resources, human-made resources, and human resources. Natural resources come from nature, human-made resources are created by humans, and human resources refer to the skills and abilities of people.",
+      "answer_outline": [
+        "Natural resources",
+        "Human-made resources",
+        "Human resources"
+      ],
+      "key_concepts": ["types of resources"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain natural resources with suitable examples.",
+      "answer": "Natural resources are resources obtained from nature without human involvement. Examples include air, water, soil, forests, wildlife, and minerals.",
+      "answer_outline": ["Definition", "Examples", "Importance"],
+      "key_concepts": ["natural resources"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain renewable and non-renewable resources with examples.",
+      "answer": "Renewable resources can be replenished naturally, such as solar and wind energy. Non-renewable resources take millions of years to form and include coal and petroleum.",
+      "answer_outline": [
+        "Renewable resources",
+        "Non-renewable resources",
+        "Examples"
+      ],
+      "key_concepts": ["renewable resources", "non-renewable resources"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain human-made resources and their role in development.",
+      "answer": "Human-made resources are created using natural resources and technology. Examples include roads, buildings, and machines that support economic activities.",
+      "answer_outline": ["Definition", "Examples", "Role in development"],
+      "key_concepts": ["human-made resources"],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain human resources and their importance.",
+      "answer": "Human resources refer to people's knowledge, skills, and abilities. Education and training improve human resources and increase productivity.",
+      "answer_outline": [
+        "Definition",
+        "Role of education",
+        "Importance in development"
+      ],
+      "key_concepts": ["human resources"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of resource conservation.",
+      "answer": "Resource conservation means using resources carefully and responsibly so that they remain available for future generations.",
+      "answer_outline": ["Meaning of conservation", "Importance", "Examples"],
+      "key_concepts": ["resource conservation"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of sustainable development.",
+      "answer": "Sustainable development means meeting present needs without compromising the ability of future generations to meet their own needs.",
+      "answer_outline": [
+        "Definition",
+        "Importance",
+        "Balance between development and environment"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why resources are unevenly distributed across the world.",
+      "answer": "Resources are unevenly distributed because of differences in climate, geological conditions, and geographical features.",
+      "answer_outline": [
+        "Geographical factors",
+        "Climate influence",
+        "Examples"
+      ],
+      "key_concepts": ["resource distribution"],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Explain the relationship between technology and resources.",
+      "answer": "Technology helps humans use natural materials efficiently. It transforms natural materials into useful resources.",
+      "answer_outline": [
+        "Role of technology",
+        "Resource transformation",
+        "Examples"
+      ],
+      "key_concepts": ["technology"],
+      "marks": 4,
+      "source_section": "Section 1"
+    },
+
+    {
+      "question_number": 12,
+      "question": "Explain how education improves human resources.",
+      "answer": "Education increases knowledge and skills, making people more productive and capable of managing resources effectively.",
+      "answer_outline": [
+        "Education and skills",
+        "Improved productivity",
+        "Contribution to development"
+      ],
+      "key_concepts": ["education"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Explain the importance of natural resources for industries.",
+      "answer": "Natural resources provide raw materials such as minerals, metals, and energy that industries require for production.",
+      "answer_outline": [
+        "Industrial raw materials",
+        "Production support",
+        "Economic growth"
+      ],
+      "key_concepts": ["industries"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Explain the causes of resource depletion.",
+      "answer": "Resource depletion occurs due to excessive use, population growth, industrial development, and poor resource management.",
+      "answer_outline": [
+        "Overuse of resources",
+        "Population growth",
+        "Industrialization"
+      ],
+      "key_concepts": ["resource depletion"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 15,
+      "question": "Explain the environmental effects of resource overuse.",
+      "answer": "Overuse of resources leads to problems such as pollution, deforestation, loss of biodiversity, and climate change.",
+      "answer_outline": ["Pollution", "Deforestation", "Climate change"],
+      "key_concepts": ["environmental impact"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain the importance of renewable energy resources.",
+      "answer": "Renewable energy resources such as solar and wind energy are environmentally friendly and sustainable sources of power.",
+      "answer_outline": [
+        "Clean energy",
+        "Environmental benefits",
+        "Long-term availability"
+      ],
+      "key_concepts": ["renewable energy"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+
+    {
+      "question_number": 17,
+      "question": "Explain the role of individuals in conserving resources.",
+      "answer": "Individuals can conserve resources by saving electricity, reducing waste, recycling materials, and using water responsibly.",
+      "answer_outline": ["Reducing waste", "Recycling", "Saving resources"],
+      "key_concepts": ["individual responsibility"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Explain the importance of forests as natural resources.",
+      "answer": "Forests provide timber, medicines, and fuel, and help maintain ecological balance and biodiversity.",
+      "answer_outline": [
+        "Forest products",
+        "Environmental importance",
+        "Ecological balance"
+      ],
+      "key_concepts": ["forests"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Explain the importance of water resources.",
+      "answer": "Water is essential for drinking, agriculture, industry, and maintaining ecosystems.",
+      "answer_outline": [
+        "Basic human needs",
+        "Agricultural use",
+        "Industrial use"
+      ],
+      "key_concepts": ["water resources"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Explain the role of governments in managing resources.",
+      "answer": "Governments create laws, conservation programs, and sustainable policies to ensure responsible use of resources.",
+      "answer_outline": [
+        "Policies",
+        "Conservation programs",
+        "Sustainable management"
+      ],
+      "key_concepts": ["resource management"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain how sustainable practices protect natural resources.",
+      "answer": "Sustainable practices reduce waste, promote renewable energy use, and encourage responsible consumption.",
+      "answer_outline": [
+        "Reduced waste",
+        "Renewable energy",
+        "Responsible use"
+      ],
+      "key_concepts": ["sustainable practices"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Explain the importance of responsible resource use.",
+      "answer": "Responsible resource use ensures that resources remain available for future generations while supporting economic growth.",
+      "answer_outline": [
+        "Avoiding waste",
+        "Future availability",
+        "Sustainable development"
+      ],
+      "key_concepts": ["responsible use"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Explain the relationship between population growth and resource demand.",
+      "answer": "As population increases, the demand for food, water, and energy also increases, putting pressure on natural resources.",
+      "answer_outline": [
+        "Population growth",
+        "Increased demand",
+        "Pressure on resources"
+      ],
+      "key_concepts": ["population"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Explain the importance of minerals as natural resources.",
+      "answer": "Minerals provide essential raw materials for industries and manufacturing processes.",
+      "answer_outline": [
+        "Industrial raw materials",
+        "Manufacturing importance"
+      ],
+      "key_concepts": ["minerals"],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 25,
+      "question": "Explain the importance of sustainable use of resources for future development.",
+      "answer": "Sustainable use ensures long-term availability of resources while protecting the environment and supporting economic growth.",
+      "answer_outline": [
+        "Long-term availability",
+        "Environmental protection",
+        "Sustainable development"
+      ],
+      "key_concepts": ["sustainability"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

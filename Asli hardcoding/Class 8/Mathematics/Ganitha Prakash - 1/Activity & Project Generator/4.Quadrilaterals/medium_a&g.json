@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Quadrilaterals",
+  "difficulty": "Medium",
+  "source_pdf": "ch-4_QUADRILATERALS.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Angle Deduction Challenge",
+      "objective": "Apply the angle sum property of quadrilaterals",
+      "materials": ["Notebook", "Protractor"],
+      "steps": [
+        "Draw a quadrilateral",
+        "Measure three angles",
+        "Calculate the fourth angle using the angle sum rule"
+      ],
+      "learning_outcome": "Uses the fact that the sum of angles in a quadrilateral is 360°",
+      "evaluation": "Correct calculation and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Rectangle Diagonal Investigation",
+      "objective": "Verify properties of diagonals in a rectangle",
+      "materials": ["Notebook", "Ruler"],
+      "steps": [
+        "Draw a rectangle",
+        "Measure both diagonals",
+        "Check if the diagonals are equal"
+      ],
+      "learning_outcome": "Understands that rectangle diagonals are equal and bisect each other",
+      "evaluation": "Accuracy of measurement and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Square Diagonal Analysis",
+      "objective": "Explore properties of diagonals in a square",
+      "materials": ["Notebook", "Ruler", "Protractor"],
+      "steps": [
+        "Draw a square",
+        "Draw both diagonals",
+        "Measure the angles between diagonals"
+      ],
+      "learning_outcome": "Observes that diagonals of a square intersect at right angles",
+      "evaluation": "Correct measurements and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Parallelogram Angle Proof",
+      "objective": "Verify properties of angles in a parallelogram",
+      "materials": ["Notebook", "Protractor"],
+      "steps": [
+        "Draw a parallelogram",
+        "Measure all four angles",
+        "Check if opposite angles are equal and adjacent angles add to 180°"
+      ],
+      "learning_outcome": "Understands angle relationships in parallelograms",
+      "evaluation": "Correct observations (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Diagonal Bisector Activity",
+      "objective": "Investigate diagonal properties of parallelograms",
+      "materials": ["Notebook", "Ruler"],
+      "steps": [
+        "Draw a parallelogram",
+        "Draw both diagonals",
+        "Measure segments created by their intersection"
+      ],
+      "learning_outcome": "Learns that diagonals of a parallelogram bisect each other",
+      "evaluation": "Correct verification (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Construct Your Own Parallelogram",
+      "objective": "Construct a parallelogram using given side lengths and angle",
+      "materials": ["Notebook", "Ruler", "Protractor"],
+      "steps": [
+        "Draw two adjacent sides with given lengths",
+        "Create a given angle between them",
+        "Complete the parallelogram using parallel lines"
+      ],
+      "learning_outcome": "Understands geometric construction of parallelograms",
+      "evaluation": "Correct construction (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Quadrilateral Classification Tree",
+      "objective": "Understand relationships between quadrilaterals",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write types of quadrilaterals such as square, rectangle, and parallelogram",
+        "Create a classification diagram",
+        "Show relationships using arrows"
+      ],
+      "learning_outcome": "Recognises hierarchy of quadrilaterals",
+      "evaluation": "Logical classification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Angle Puzzle Quadrilateral",
+      "objective": "Solve unknown angles in quadrilaterals",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a quadrilateral with three known angles",
+        "Use the angle sum property",
+        "Find the missing angle"
+      ],
+      "learning_outcome": "Applies quadrilateral angle rules",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Real-Life Quadrilateral Investigation",
+      "objective": "Identify quadrilaterals in real-world structures",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe buildings, tables, windows, or boards",
+        "Identify quadrilateral shapes",
+        "Classify them based on their properties"
+      ],
+      "learning_outcome": "Applies geometric knowledge to real-world objects",
+      "evaluation": "Correct identification and explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Quadrilateral Property Proof Poster",
+      "objective": "Explain and present properties of quadrilaterals",
+      "materials": ["Chart paper", "Colours", "Ruler"],
+      "steps": [
+        "Choose one quadrilateral type",
+        "Draw the shape clearly",
+        "Write and explain its properties"
+      ],
+      "learning_outcome": "Develops reasoning and presentation skills",
+      "evaluation": "Clarity of explanation and accuracy (10 marks)"
+    }
+  ]
+}

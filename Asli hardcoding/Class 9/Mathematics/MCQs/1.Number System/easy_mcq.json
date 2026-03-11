@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: Number Systems",
+    "generated_at": "2026-03-05T22:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is a natural number?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "-2",
+                "D": "1/2"
+            },
+            "correct_answer": "B",
+            "explanation": "Natural numbers start from 1.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is a whole number?",
+            "options": {
+                "A": "-1",
+                "B": "0",
+                "C": "1/3",
+                "D": "-5"
+            },
+            "correct_answer": "B",
+            "explanation": "Whole numbers include zero and all natural numbers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is an integer?",
+            "options": {
+                "A": "2.5",
+                "B": "-4",
+                "C": "3/2",
+                "D": "√2"
+            },
+            "correct_answer": "B",
+            "explanation": "Integers include negative numbers, zero, and positive numbers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following is a rational number?",
+            "options": {
+                "A": "√3",
+                "B": "π",
+                "C": "5/7",
+                "D": "√5"
+            },
+            "correct_answer": "C",
+            "explanation": "Rational numbers can be written in the form p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is irrational?",
+            "options": {
+                "A": "3/4",
+                "B": "0.5",
+                "C": "√2",
+                "D": "7"
+            },
+            "correct_answer": "C",
+            "explanation": "√2 cannot be expressed in the form p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Which set contains both rational and irrational numbers?",
+            "options": {
+                "A": "Natural numbers",
+                "B": "Integers",
+                "C": "Real numbers",
+                "D": "Whole numbers"
+            },
+            "correct_answer": "C",
+            "explanation": "Real numbers include rational and irrational numbers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which decimal is terminating?",
+            "options": {
+                "A": "0.5",
+                "B": "0.333...",
+                "C": "0.121212...",
+                "D": "0.777..."
+            },
+            "correct_answer": "A",
+            "explanation": "0.5 ends after a finite number of digits.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which decimal is non-terminating repeating?",
+            "options": {
+                "A": "0.25",
+                "B": "0.333...",
+                "C": "0.125",
+                "D": "0.75"
+            },
+            "correct_answer": "B",
+            "explanation": "0.333... repeats infinitely.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following is an irrational number?",
+            "options": {
+                "A": "√5",
+                "B": "3/4",
+                "C": "0.25",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "√5 is not expressible as p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which number lies between 1 and 2?",
+            "options": {
+                "A": "3/2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "A",
+            "explanation": "3/2 = 1.5 lies between 1 and 2.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is √4?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "4",
+                "D": "8"
+            },
+            "correct_answer": "B",
+            "explanation": "√4 = 2.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is a perfect square?",
+            "options": {
+                "A": "18",
+                "B": "20",
+                "C": "25",
+                "D": "27"
+            },
+            "correct_answer": "C",
+            "explanation": "25 = 5².",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following is not an integer?",
+            "options": {
+                "A": "6",
+                "B": "-3",
+                "C": "0",
+                "D": "2.5"
+            },
+            "correct_answer": "D",
+            "explanation": "2.5 is a decimal number.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following numbers is negative?",
+            "options": {
+                "A": "-7",
+                "B": "3",
+                "C": "0",
+                "D": "4"
+            },
+            "correct_answer": "A",
+            "explanation": "-7 is less than zero.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Which number is between 0 and 1?",
+            "options": {
+                "A": "1/2",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "A",
+            "explanation": "1/2 = 0.5 lies between 0 and 1.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following is an irrational constant?",
+            "options": {
+                "A": "π",
+                "B": "3/4",
+                "C": "0.25",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "π is irrational.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Which number represents zero?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "-1",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "0 represents no quantity.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following numbers is closest to √2?",
+            "options": {
+                "A": "1.41",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "A",
+            "explanation": "√2 ≈ 1.414.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following is a rational decimal?",
+            "options": {
+                "A": "0.25",
+                "B": "π",
+                "C": "√2",
+                "D": "√5"
+            },
+            "correct_answer": "A",
+            "explanation": "0.25 is a terminating decimal.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which number is the square root of 9?",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "√9 = 3.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following numbers is rational?",
+            "options": {
+                "A": "√3",
+                "B": "π",
+                "C": "7/8",
+                "D": "√7"
+            },
+            "correct_answer": "C",
+            "explanation": "7/8 can be written as p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following is an irrational number?",
+            "options": {
+                "A": "3/5",
+                "B": "√7",
+                "C": "0.25",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "√7 cannot be written as p/q.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following statements is correct?",
+            "options": {
+                "A": "All rational numbers are integers",
+                "B": "All integers are rational numbers",
+                "C": "All irrational numbers are integers",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Every integer can be written as p/1.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Which number is an example of a repeating decimal?",
+            "options": {
+                "A": "0.25",
+                "B": "0.333...",
+                "C": "0.125",
+                "D": "0.5"
+            },
+            "correct_answer": "B",
+            "explanation": "0.333... repeats infinitely.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following numbers belongs to the set of real numbers?",
+            "options": {
+                "A": "√2",
+                "B": "3/4",
+                "C": "5",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Real numbers include rational and irrational numbers.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        }
+    ]
+}

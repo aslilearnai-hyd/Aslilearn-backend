@@ -1,0 +1,184 @@
+{
+    "content_type": "Very Short Questions",
+    "difficulty": "Hard",
+    "chapter": "Chapter 2: The Baudhāyana-Pythagoras Theorem",
+    "generated_at": "2026-03-05T20:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the diagonal of a square whose area is 98 cm².",
+            "answer": "14 cm.",
+            "key_points": ["square area", "diagonal"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the hypotenuse of a right triangle with sides 18 cm and 24 cm.",
+            "answer": "30 cm.",
+            "key_points": ["Pythagorean triple"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the height reached by a 13 m ladder placed 5 m away from a wall.",
+            "answer": "12 m.",
+            "key_points": ["real-life application"],
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the diagonal of a rectangle with length 20 cm and breadth 21 cm.",
+            "answer": "29 cm.",
+            "key_points": ["rectangle diagonal"],
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the side of a square whose diagonal is 12√2 cm.",
+            "answer": "12 cm.",
+            "key_points": ["square diagonal relation"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Verify whether (16, 30, 34) forms a Pythagorean triple.",
+            "answer": "Yes.",
+            "key_points": ["triple verification"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the diagonal of a square with side 18 cm.",
+            "answer": "18√2 cm.",
+            "key_points": ["square diagonal"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the missing side if the hypotenuse is 25 cm and one side is 7 cm.",
+            "answer": "24 cm.",
+            "key_points": ["right triangle"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Find the diagonal of a rectangle with sides 24 cm and 7 cm.",
+            "answer": "25 cm.",
+            "key_points": ["rectangle diagonal"],
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 10,
+            "question": "Find the hypotenuse when the sides are 33 cm and 56 cm.",
+            "answer": "65 cm.",
+            "key_points": ["Pythagorean triples"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the diagonal of a square whose side is 30 cm.",
+            "answer": "30√2 cm.",
+            "key_points": ["square diagonal"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Check whether the triangle with sides 20, 48 and 52 is right-angled.",
+            "answer": "Yes.",
+            "key_points": ["Pythagoras verification"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the diagonal of a square whose area is 162 cm².",
+            "answer": "18 cm.",
+            "key_points": ["square area"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the side of a square whose diagonal is 20√2 cm.",
+            "answer": "20 cm.",
+            "key_points": ["square relation"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Find the hypotenuse if the other two sides are 12 cm and 16 cm.",
+            "answer": "20 cm.",
+            "key_points": ["Pythagoras theorem"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the diagonal of a square with side 25 cm.",
+            "answer": "25√2 cm.",
+            "key_points": ["square diagonal"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the missing side of a right triangle if the hypotenuse is 29 cm and one side is 20 cm.",
+            "answer": "21 cm.",
+            "key_points": ["right triangle"],
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the diagonal of a rectangle whose sides are 12 cm and 16 cm.",
+            "answer": "20 cm.",
+            "key_points": ["rectangle diagonal"],
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the hypotenuse when the sides are 28 cm and 45 cm.",
+            "answer": "53 cm.",
+            "key_points": ["Pythagorean triples"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the side of a square whose area is 200 cm².",
+            "answer": "10√2 cm.",
+            "key_points": ["square area"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the diagonal of a square with side 50 cm.",
+            "answer": "50√2 cm.",
+            "key_points": ["square diagonal"],
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Verify whether (9, 40, 41) is a Pythagorean triple.",
+            "answer": "Yes.",
+            "key_points": ["triple verification"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the diagonal of a rectangle with sides 15 cm and 20 cm.",
+            "answer": "25 cm.",
+            "key_points": ["rectangle diagonal"],
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the hypotenuse if the sides are 11 cm and 60 cm.",
+            "answer": "61 cm.",
+            "key_points": ["Pythagorean triples"],
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Find the diagonal of a square whose side is 40 cm.",
+            "answer": "40√2 cm.",
+            "key_points": ["square diagonal"],
+            "source_section": "Section 2.3"
+        }
+    ]
+}

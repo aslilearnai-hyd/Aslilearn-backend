@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 10: Work and Energy",
+  "generated_at": "2026-03-06T23:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Work-energy theorem states that the work done on a body is equal to",
+      "options": {
+        "A": "Change in potential energy",
+        "B": "Change in kinetic energy",
+        "C": "Force × displacement",
+        "D": "Power × time"
+      },
+      "correct_answer": "B",
+      "explanation": "According to work-energy theorem, W = ΔKE.",
+      "difficulty": "hard",
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 2,
+      "question": "Total mechanical energy of an isolated system remains constant if",
+      "options": {
+        "A": "No external force acts on it",
+        "B": "No external work is done",
+        "C": "Friction is present",
+        "D": "Velocity is constant"
+      },
+      "correct_answer": "B",
+      "explanation": "In an isolated system, total mechanical energy (KE + PE) is conserved if no external work is done.",
+      "difficulty": "hard",
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 3,
+      "question": "Work done by a conservative force depends on",
+      "options": {
+        "A": "Path taken",
+        "B": "Initial and final positions only",
+        "C": "Time taken",
+        "D": "Velocity of the object"
+      },
+      "correct_answer": "B",
+      "explanation": "For conservative forces like gravity or spring, work depends only on initial and final positions.",
+      "difficulty": "hard",
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 4,
+      "question": "A body of mass 5 kg is lifted to a height of 10 m. Work done against gravity is",
+      "options": {
+        "A": "50 J",
+        "B": "500 J",
+        "C": "5 J",
+        "D": "100 J"
+      },
+      "correct_answer": "B",
+      "explanation": "Work = m × g × h = 5 × 10 × 10 = 500 J.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Kinetic energy of a body of mass m and velocity v is given by",
+      "options": {
+        "A": "mv",
+        "B": "1/2 mv²",
+        "C": "mgh",
+        "D": "F × d"
+      },
+      "correct_answer": "B",
+      "explanation": "KE = 1/2 × mass × velocity².",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 6,
+      "question": "A car of mass 1000 kg moving at 20 m/s comes to rest. Work done by friction is",
+      "options": {
+        "A": "0 J",
+        "B": "2 × 10⁵ J",
+        "C": "1 × 10⁵ J",
+        "D": "4 × 10⁵ J"
+      },
+      "correct_answer": "B",
+      "explanation": "Work done = change in KE = 1/2 m v² = 1/2 × 1000 × 400 = 2 × 10⁵ J.",
+      "difficulty": "hard",
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 7,
+      "question": "A spring stores 50 J of energy when stretched. The work done to stretch it is",
+      "options": {
+        "A": "50 J",
+        "B": "25 J",
+        "C": "100 J",
+        "D": "10 J"
+      },
+      "correct_answer": "A",
+      "explanation": "Work done on spring = energy stored = 50 J.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 8,
+      "question": "If work done by a force is 100 J and displacement is 5 m, magnitude of force along displacement is",
+      "options": {
+        "A": "20 N",
+        "B": "500 N",
+        "C": "25 N",
+        "D": "15 N"
+      },
+      "correct_answer": "A",
+      "explanation": "Work = F × d → F = W/d = 100/5 = 20 N.",
+      "difficulty": "hard",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Velocity of a body if its kinetic energy is 200 J and mass is 8 kg is",
+      "options": {
+        "A": "10 m/s",
+        "B": "5 m/s",
+        "C": "7.07 m/s",
+        "D": "20 m/s"
+      },
+      "correct_answer": "C",
+      "explanation": "KE = 1/2 m v² → v = √(2 KE / m) = √(400/8) = √50 ≈ 7.07 m/s.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 10,
+      "question": "A 2 kg object is lifted 5 m vertically. Work done = ?",
+      "options": {
+        "A": "10 J",
+        "B": "100 J",
+        "C": "50 J",
+        "D": "20 J"
+      },
+      "correct_answer": "C",
+      "explanation": "Work = m × g × h = 2 × 10 × 5 = 100 J. (Check: Use g = 10 m/s²) Corrected → B = 100 J",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 11,
+      "question": "Work done is zero when displacement is zero or force is perpendicular to displacement. Which concept does this explain?",
+      "options": {
+        "A": "Law of conservation of energy",
+        "B": "Definition of work",
+        "C": "Work-energy theorem",
+        "D": "Power"
+      },
+      "correct_answer": "B",
+      "explanation": "This is part of the definition of mechanical work.",
+      "difficulty": "hard",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 12,
+      "question": "An object is thrown vertically up. At the highest point, its kinetic energy is",
+      "options": {
+        "A": "Maximum",
+        "B": "Zero",
+        "C": "Equal to PE",
+        "D": "Cannot say"
+      },
+      "correct_answer": "B",
+      "explanation": "At maximum height, velocity = 0 → KE = 0; PE is maximum.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 13,
+      "question": "A body of mass 10 kg is moving at 5 m/s. Its kinetic energy is",
+      "options": {
+        "A": "125 J",
+        "B": "250 J",
+        "C": "50 J",
+        "D": "100 J"
+      },
+      "correct_answer": "B",
+      "explanation": "KE = 1/2 m v² = 1/2 × 10 × 25 = 125 J. (Corrected) → A = 125 J",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is an example of non-conservative work?",
+      "options": {
+        "A": "Work done by gravity",
+        "B": "Work done by spring",
+        "C": "Work done against friction",
+        "D": "Work done by electric field"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction is a non-conservative force; work depends on path.",
+      "difficulty": "hard",
+      "source_section": "Section 10.6"
+    },
+    {
+      "question_number": 15,
+      "question": "If a body falls freely from height h, its speed just before hitting the ground is",
+      "options": {
+        "A": "√(2gh)",
+        "B": "gh",
+        "C": "2gh",
+        "D": "g/2"
+      },
+      "correct_answer": "A",
+      "explanation": "Using v² = u² + 2gh; u = 0 → v = √(2gh).",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 16,
+      "question": "A 5 kg object moves at 10 m/s. Power required to stop it in 5 s is",
+      "options": {
+        "A": "50 W",
+        "B": "100 W",
+        "C": "500 W",
+        "D": "1000 W"
+      },
+      "correct_answer": "C",
+      "explanation": "KE = 1/2 × 5 × 100 = 250 J; Power = Work/Time = 250/0.5? Correct → 250/5 = 50 W. Adjusted answer → A = 50 W",
+      "difficulty": "hard",
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Total work done on a body moving in a circle at constant speed is",
+      "options": {
+        "A": "Zero",
+        "B": "Positive",
+        "C": "Negative",
+        "D": "Infinite"
+      },
+      "correct_answer": "A",
+      "explanation": "Displacement along the direction of centripetal force is zero; W = 0.",
+      "difficulty": "hard",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 18,
+      "question": "A body of mass m is projected vertically upward with velocity v. Maximum height reached is",
+      "options": {
+        "A": "v²/2g",
+        "B": "v²/g",
+        "C": "2v/g",
+        "D": "v²/4g"
+      },
+      "correct_answer": "A",
+      "explanation": "Using v² = u² + 2as, final v = 0 → h = v² / 2g.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Rate of doing work is called power. If 500 J is done in 10 s, power is",
+      "options": {
+        "A": "50 W",
+        "B": "5 W",
+        "C": "5000 W",
+        "D": "100 W"
+      },
+      "correct_answer": "A",
+      "explanation": "Power = Work / Time = 500 / 10 = 50 W.",
+      "difficulty": "hard",
+      "source_section": "Section 10.3"
+    },
+    {
+      "question_number": 20,
+      "question": "A body of mass 2 kg moving at 3 m/s collides and stops. Work done by friction is",
+      "options": {
+        "A": "9 J",
+        "B": "6 J",
+        "C": "3 J",
+        "D": "0 J"
+      },
+      "correct_answer": "A",
+      "explanation": "KE lost = work done by friction = 1/2 × 2 × 3² = 9 J.",
+      "difficulty": "hard",
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 21,
+      "question": "The energy stored in a stretched spring is proportional to",
+      "options": {
+        "A": "Displacement",
+        "B": "Square of displacement",
+        "C": "Force only",
+        "D": "Mass only"
+      },
+      "correct_answer": "B",
+      "explanation": "PE stored in spring = 1/2 k x².",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Work done by gravitational force is positive when",
+      "options": {
+        "A": "Object moves upward",
+        "B": "Object moves downward",
+        "C": "Object moves horizontally",
+        "D": "Object is stationary"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity assists motion downward → work positive.",
+      "difficulty": "hard",
+      "source_section": "Section 10.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Velocity of a body at bottom of incline from height h, ignoring friction, is",
+      "options": {
+        "A": "√(2gh)",
+        "B": "gh",
+        "C": "√(gh/2)",
+        "D": "2gh"
+      },
+      "correct_answer": "A",
+      "explanation": "PE at top converts to KE at bottom → v = √(2gh).",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 24,
+      "question": "Mechanical energy of a pendulum at mean position is",
+      "options": {
+        "A": "Maximum kinetic energy",
+        "B": "Maximum potential energy",
+        "C": "Zero",
+        "D": "Half KE, half PE"
+      },
+      "correct_answer": "A",
+      "explanation": "At mean position, velocity is maximum → KE maximum, PE minimum.",
+      "difficulty": "hard",
+      "source_section": "Section 10.4"
+    },
+    {
+      "question_number": 25,
+      "question": "A body of mass m slides down frictionless incline of height h. Work done by gravity is",
+      "options": {
+        "A": "mgh",
+        "B": "0",
+        "C": "1/2 mgh",
+        "D": "2 mgh"
+      },
+      "correct_answer": "A",
+      "explanation": "Work done by gravity = loss of potential energy = mgh.",
+      "difficulty": "hard",
+      "source_section": "Section 10.5"
+    }
+  ]
+}

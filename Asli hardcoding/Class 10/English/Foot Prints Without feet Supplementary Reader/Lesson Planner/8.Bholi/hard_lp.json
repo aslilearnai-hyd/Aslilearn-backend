@@ -1,0 +1,157 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "Bholi",
+    "title": "Lesson Planner – Bholi",
+    "author": "K.A. Abbas",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Critical literary analysis",
+        "Evaluate themes and values",
+        "Develop argumentative writing",
+        "Relate literature to society"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Literary Context",
+            "topics_covered": [
+                "Social realism"
+            ],
+            "teaching_strategy": [
+                "Lecture"
+            ],
+            "student_activities": [
+                "Discussion"
+            ],
+            "assessment": [
+                "Oral"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Transformation",
+            "topics_covered": [
+                "Before and after education"
+            ],
+            "teaching_strategy": [
+                "Analysis"
+            ],
+            "student_activities": [
+                "Comparison"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Teacher as Reformer",
+            "topics_covered": [
+                "Moral influence"
+            ],
+            "teaching_strategy": [
+                "Discussion"
+            ],
+            "student_activities": [
+                "Critical response"
+            ],
+            "assessment": [
+                "Evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Gender and Society",
+            "topics_covered": [
+                "Discrimination"
+            ],
+            "teaching_strategy": [
+                "Debate"
+            ],
+            "student_activities": [
+                "Argument building"
+            ],
+            "assessment": [
+                "Participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Dowry System Critique",
+            "topics_covered": [
+                "Social evil"
+            ],
+            "teaching_strategy": [
+                "Case analysis"
+            ],
+            "student_activities": [
+                "Essay writing"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Climax Interpretation",
+            "topics_covered": [
+                "Symbolism"
+            ],
+            "teaching_strategy": [
+                "Textual analysis"
+            ],
+            "student_activities": [
+                "Explanation"
+            ],
+            "assessment": [
+                "Written"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Theme and Title Justification",
+            "topics_covered": [
+                "Title relevance"
+            ],
+            "teaching_strategy": [
+                "Critical thinking"
+            ],
+            "student_activities": [
+                "Justification"
+            ],
+            "assessment": [
+                "Evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Full lesson review"
+            ],
+            "teaching_strategy": [
+                "Recap"
+            ],
+            "student_activities": [
+                "Test"
+            ],
+            "assessment": [
+                "Unit test"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Textbook",
+        "Board",
+        "Reference notes"
+    ],
+    "evaluation_methods": [
+        "Analytical answers",
+        "Essays",
+        "Unit test"
+    ],
+    "teacher_tip": "Encourage independent thinking and value-based judgement while analysing the story."
+}

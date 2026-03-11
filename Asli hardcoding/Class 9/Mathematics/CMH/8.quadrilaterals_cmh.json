@@ -1,0 +1,121 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 8: Quadrilaterals",
+    "generated_at": "2026-03-05T17:45:00",
+    "concepts": [
+        {
+            "concept_name": "Basic Properties of Quadrilaterals",
+            "difficulty": "easy",
+            "lesson": "A quadrilateral is a polygon with four sides and four angles. The sum of interior angles of any quadrilateral is always 360°. Quadrilaterals are classified as square, rectangle, parallelogram, rhombus, trapezium, and kite. Understanding these properties helps in identifying and differentiating quadrilaterals based on sides and angles.",
+            "real_example": "A quadrilateral with opposite sides equal and angles 90° is a rectangle.",
+            "key_points": [
+                "Four sides and four angles",
+                "Sum of angles = 360°",
+                "Classified by sides and angles"
+            ],
+            "source_section": "Section 8.1"
+        },
+        {
+            "concept_name": "Parallelogram Properties",
+            "difficulty": "medium",
+            "lesson": "A parallelogram has opposite sides equal and parallel, and opposite angles equal. Diagonals bisect each other but are generally not equal. These properties are used to prove equality of triangles, solve geometric problems, and construct parallelograms accurately.",
+            "real_example": "In parallelogram ABCD, AB = CD, AD = BC, diagonals bisect each other at point O.",
+            "key_points": [
+                "Opposite sides equal and parallel",
+                "Opposite angles equal",
+                "Diagonals bisect each other"
+            ],
+            "source_section": "Section 8.2"
+        },
+        {
+            "concept_name": "Rectangle and Square Properties",
+            "difficulty": "easy",
+            "lesson": "A rectangle is a parallelogram with all angles 90°. A square is a rectangle with all sides equal. Diagonals of a rectangle or square are equal and bisect each other. These properties simplify construction and calculation of areas and perimeters.",
+            "real_example": "A rectangle with length 8 cm and width 5 cm has diagonals = √(8² + 5²) = √89 cm.",
+            "key_points": [
+                "Rectangle: angles 90°, opposite sides equal",
+                "Square: sides equal, angles 90°",
+                "Diagonals equal and bisect each other"
+            ],
+            "source_section": "Section 8.3"
+        },
+        {
+            "concept_name": "Rhombus Properties",
+            "difficulty": "medium",
+            "lesson": "A rhombus has all sides equal and opposite angles equal. Diagonals are perpendicular and bisect opposite angles. These properties help in proving congruence, calculating area, and solving construction problems.",
+            "real_example": "Rhombus with sides 6 cm and one diagonal 8 cm has other diagonal calculated using Pythagoras.",
+            "key_points": [
+                "All sides equal",
+                "Opposite angles equal",
+                "Diagonals perpendicular and bisect angles"
+            ],
+            "source_section": "Section 8.4"
+        },
+        {
+            "concept_name": "Trapezium Properties",
+            "difficulty": "medium",
+            "lesson": "A trapezium has only one pair of opposite sides parallel. The sum of interior angles is 360°. In an isosceles trapezium, non-parallel sides are equal and base angles are equal. These properties are used for calculating areas, angles, and constructing trapeziums.",
+            "real_example": "Trapezium with bases 10 cm and 6 cm, height 4 cm, area = ½ × (10+6) × 4 = 32 cm².",
+            "key_points": [
+                "One pair of sides parallel",
+                "Sum of angles = 360°",
+                "Isosceles trapezium has equal non-parallel sides and angles"
+            ],
+            "source_section": "Section 8.5"
+        },
+        {
+            "concept_name": "Kite Properties",
+            "difficulty": "medium",
+            "lesson": "A kite has two distinct pairs of adjacent sides equal. One diagonal is the axis of symmetry and diagonals are perpendicular. Kites are used in geometric constructions and calculating areas using diagonals.",
+            "real_example": "Kite with diagonals 8 cm and 6 cm has area = ½ × 8 × 6 = 24 cm².",
+            "key_points": [
+                "Two pairs of adjacent sides equal",
+                "Diagonals perpendicular",
+                "One diagonal bisects the other"
+            ],
+            "source_section": "Section 8.6"
+        },
+        {
+            "concept_name": "Area of Quadrilaterals",
+            "difficulty": "medium",
+            "lesson": "Area of parallelogram = base × height; rectangle = length × width; square = side²; rhombus = ½ × (product of diagonals); trapezium = ½ × (sum of parallel sides) × height; kite = ½ × (product of diagonals). These formulas are used in practical applications and geometric problem-solving.",
+            "real_example": "Square with side 5 cm has area = 5² = 25 cm²; rhombus with diagonals 6 cm and 8 cm has area = ½ × 6 × 8 = 24 cm².",
+            "key_points": [
+                "Parallelogram: base × height",
+                "Rectangle: length × width",
+                "Square: side²",
+                "Rhombus/Kite: ½ × diagonals product",
+                "Trapezium: ½ × (sum of bases) × height"
+            ],
+            "source_section": "Section 8.7"
+        },
+        {
+            "concept_name": "Diagonals in Quadrilaterals",
+            "difficulty": "hard",
+            "lesson": "The properties of diagonals vary: in parallelogram they bisect each other; in rectangle and square they are equal and bisect each other; in rhombus they are perpendicular; in kite one diagonal bisects the other. Understanding diagonals is crucial for proving congruence, similarity, and area calculation.",
+            "real_example": "In rhombus ABCD, diagonals AC ⊥ BD and bisect each other at O.",
+            "key_points": [
+                "Parallelogram: diagonals bisect each other",
+                "Rectangle/Square: diagonals equal and bisect each other",
+                "Rhombus: diagonals perpendicular",
+                "Kite: one diagonal bisects the other"
+            ],
+            "source_section": "Section 8.8"
+        },
+        {
+            "concept_name": "Properties of Special Quadrilaterals",
+            "difficulty": "hard",
+            "lesson": "Special quadrilaterals have unique properties: all angles of square and rectangle = 90°, opposite sides of parallelogram equal, diagonals of rhombus perpendicular, angles of kite equal along symmetry, trapezium has one pair of parallel sides. These properties are essential in proofs, constructions, and problem-solving.",
+            "real_example": "Rectangle with length 10 cm and width 6 cm has all angles 90°, diagonals = √(10²+6²) = √136 cm.",
+            "key_points": [
+                "Square: sides equal, angles 90°, diagonals equal",
+                "Rectangle: opposite sides equal, angles 90°, diagonals equal",
+                "Parallelogram: opposite sides equal, opposite angles equal",
+                "Rhombus: sides equal, diagonals perpendicular",
+                "Kite: two pairs adjacent sides equal, diagonals perpendicular",
+                "Trapezium: one pair sides parallel"
+            ],
+            "source_section": "Section 8.9"
+        }
+    ]
+}

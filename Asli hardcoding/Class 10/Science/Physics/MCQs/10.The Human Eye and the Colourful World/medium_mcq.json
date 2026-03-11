@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 10: The Human Eye and the Colourful World",
+  "generated_at": "2026-03-11T04:45:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What happens to the eye lens when focusing on a near object?",
+      "options": {
+        "A": "It becomes thinner",
+        "B": "It becomes thicker",
+        "C": "It moves backward",
+        "D": "It moves forward"
+      },
+      "correct_answer": "B",
+      "explanation": "Ciliary muscles contract, making the lens thicker to focus on near objects.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Why do stars appear twinkling from Earth?",
+      "options": {
+        "A": "Stars emit varying brightness",
+        "B": "Atmospheric refraction causes apparent twinkling",
+        "C": "Stars are moving rapidly",
+        "D": "Earth’s rotation causes blinking"
+      },
+      "correct_answer": "B",
+      "explanation": "Twinkling occurs due to atmospheric refraction of starlight.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which cells in the retina are more sensitive to dim light?",
+      "options": {
+        "A": "Cone cells",
+        "B": "Rod cells",
+        "C": "Ganglion cells",
+        "D": "Bipolar cells"
+      },
+      "correct_answer": "B",
+      "explanation": "Rod cells function well in dim light but do not detect color.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which phenomenon splits white light into its component colors?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Dispersion",
+        "D": "Scattering"
+      },
+      "correct_answer": "C",
+      "explanation": "Dispersion occurs when light passes through a prism, separating it into colors.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Why does a red object appear red?",
+      "options": {
+        "A": "It absorbs red light",
+        "B": "It reflects red light and absorbs other colors",
+        "C": "It emits red light",
+        "D": "It refracts red light"
+      },
+      "correct_answer": "B",
+      "explanation": "Objects reflect certain wavelengths (colors) and absorb others; red objects reflect red light.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the principal focus of a convex lens?",
+      "options": {
+        "A": "Point where parallel rays diverge",
+        "B": "Point where parallel rays converge",
+        "C": "Point where light is absorbed",
+        "D": "Point where rays scatter"
+      },
+      "correct_answer": "B",
+      "explanation": "A convex lens converges parallel rays to its principal focus.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which defect of vision can be corrected by a concave lens?",
+      "options": {
+        "A": "Hypermetropia",
+        "B": "Myopia",
+        "C": "Astigmatism",
+        "D": "Color blindness"
+      },
+      "correct_answer": "B",
+      "explanation": "A concave lens diverges light rays to correct myopia (short-sightedness).",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which optical phenomenon explains the formation of a rainbow?",
+      "options": {
+        "A": "Reflection only",
+        "B": "Refraction only",
+        "C": "Refraction and dispersion",
+        "D": "Diffraction"
+      },
+      "correct_answer": "C",
+      "explanation": "Rainbows are formed due to refraction, dispersion, and internal reflection of sunlight in water droplets.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does the sun appear white at noon?",
+      "options": {
+        "A": "All colors scatter equally at noon",
+        "B": "Sun emits only white light",
+        "C": "No atmosphere at noon",
+        "D": "Blue light is absorbed"
+      },
+      "correct_answer": "A",
+      "explanation": "At noon, the path of sunlight is shorter; minimal scattering makes the sun appear white.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the function of the fovea in the retina?",
+      "options": {
+        "A": "Detect dim light",
+        "B": "Detect color and provide sharp vision",
+        "C": "Transmit signals to brain",
+        "D": "Control pupil size"
+      },
+      "correct_answer": "B",
+      "explanation": "The fovea has a high concentration of cone cells for color vision and sharp images.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Why does the sun appear orange/red during sunset?",
+      "options": {
+        "A": "Due to dispersion of red light",
+        "B": "Longer atmospheric path scatters shorter wavelengths",
+        "C": "The sun emits more red light in evening",
+        "D": "Due to reflection from clouds"
+      },
+      "correct_answer": "B",
+      "explanation": "Shorter wavelengths (blue/green) scatter more, leaving red/orange light.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which cells in the retina detect brightness but not color?",
+      "options": {
+        "A": "Rod cells",
+        "B": "Cone cells",
+        "C": "Bipolar cells",
+        "D": "Ganglion cells"
+      },
+      "correct_answer": "A",
+      "explanation": "Rod cells are sensitive to dim light and detect intensity but not color.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Which phenomenon is responsible for the red color of sunrise and sunset?",
+      "options": {
+        "A": "Reflection",
+        "B": "Tyndall effect",
+        "C": "Scattering of shorter wavelengths",
+        "D": "Dispersion only"
+      },
+      "correct_answer": "C",
+      "explanation": "Blue/green light is scattered, leaving red/orange to reach the observer.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which part of the eye adjusts the focal length of the lens?",
+      "options": {
+        "A": "Cornea",
+        "B": "Ciliary muscles",
+        "C": "Pupil",
+        "D": "Retina"
+      },
+      "correct_answer": "B",
+      "explanation": "Ciliary muscles contract or relax to change the lens curvature for focusing.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Why does the sky appear blue and not violet, despite violet light scattering more?",
+      "options": {
+        "A": "Violet light is absorbed by clouds",
+        "B": "Human eyes are more sensitive to blue light",
+        "C": "Blue light scatters less",
+        "D": "Violet light does not reach the atmosphere"
+      },
+      "correct_answer": "B",
+      "explanation": "The human eye detects blue more efficiently than violet.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Which type of lens is used in spectacles for hypermetropia?",
+      "options": {
+        "A": "Concave lens",
+        "B": "Convex lens",
+        "C": "Cylindrical lens",
+        "D": "Plane lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex lenses converge light rays to correct long-sightedness.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 17,
+      "question": "Which phenomenon explains the splitting of light into a spectrum through a prism?",
+      "options": {
+        "A": "Refraction",
+        "B": "Dispersion",
+        "C": "Scattering",
+        "D": "Reflection"
+      },
+      "correct_answer": "B",
+      "explanation": "Dispersion occurs due to varying refractive indices for different colors.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Why do objects appear colored?",
+      "options": {
+        "A": "Due to absorption and reflection of certain wavelengths",
+        "B": "Due to emission of light",
+        "C": "Due to refraction only",
+        "D": "Due to scattering of all light"
+      },
+      "correct_answer": "A",
+      "explanation": "Objects absorb some colors and reflect others, which is perceived by our eyes.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which structure in the eye provides sharp central vision?",
+      "options": {
+        "A": "Retina",
+        "B": "Fovea",
+        "C": "Lens",
+        "D": "Iris"
+      },
+      "correct_answer": "B",
+      "explanation": "Fovea has high cone density for detailed central vision.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which defect of vision is caused by irregular curvature of the cornea?",
+      "options": {
+        "A": "Myopia",
+        "B": "Hypermetropia",
+        "C": "Astigmatism",
+        "D": "Presbyopia"
+      },
+      "correct_answer": "C",
+      "explanation": "Astigmatism occurs due to uneven curvature of the cornea or lens, causing blurred vision.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which lens converges parallel light rays to a point?",
+      "options": {
+        "A": "Concave lens",
+        "B": "Convex lens",
+        "C": "Cylindrical lens",
+        "D": "Plane lens"
+      },
+      "correct_answer": "B",
+      "explanation": "Convex lenses converge parallel rays to their principal focus.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which effect is responsible for seeing light beams in foggy conditions?",
+      "options": {
+        "A": "Dispersion",
+        "B": "Tyndall effect",
+        "C": "Reflection",
+        "D": "Refraction"
+      },
+      "correct_answer": "B",
+      "explanation": "Tyndall effect makes light beams visible by scattering from small particles.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which part of the eye protects it from dust and injury while allowing light to enter?",
+      "options": {
+        "A": "Lens",
+        "B": "Cornea",
+        "C": "Retina",
+        "D": "Iris"
+      },
+      "correct_answer": "B",
+      "explanation": "The cornea is transparent, allowing light in and protecting the eye.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Which type of vision defect is corrected by cylindrical lenses?",
+      "options": {
+        "A": "Astigmatism",
+        "B": "Myopia",
+        "C": "Hypermetropia",
+        "D": "Color blindness"
+      },
+      "correct_answer": "A",
+      "explanation": "Cylindrical lenses compensate for irregular curvature of the cornea in astigmatism.",
+      "difficulty": "medium",
+      "source_section": "Section 10.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Which phenomenon causes the red color of a clear sunset?",
+      "options": {
+        "A": "Reflection",
+        "B": "Refraction",
+        "C": "Scattering of shorter wavelengths",
+        "D": "Dispersion"
+      },
+      "correct_answer": "C",
+      "explanation": "Shorter wavelengths are scattered out by the atmosphere, leaving red light to reach the observer.",
+      "difficulty": "medium",
+      "source_section": "Section 10.2"
+    }
+  ]
+}

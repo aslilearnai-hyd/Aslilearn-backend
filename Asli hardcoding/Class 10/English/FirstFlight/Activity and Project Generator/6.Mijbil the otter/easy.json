@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Mijbil the Otter",
+  "difficulty": "Easy",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Otter Drawing Activity",
+      "objective": "Visualize Mijbil and his playful behavior.",
+      "materials": ["Drawing sheet", "Crayons or colored pencils", "Pencil"],
+      "steps": [
+        "Draw Mijbil in his cage or while playing in water",
+        "Label parts of the otter and some actions",
+        "Add surroundings like toys or water if mentioned"
+      ],
+      "learning_outcome": "Students will understand Mijbil’s appearance and playful nature.",
+      "evaluation": "Neatness, relevance, and correct labeling"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Traits List",
+      "objective": "Identify qualities of Mijbil and his owners.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List 5 qualities of Mijbil (e.g., playful, curious)",
+        "List 3 qualities of the owner or family",
+        "Give one example from the chapter for each trait"
+      ],
+      "learning_outcome": "Students will recognize character traits and provide textual support.",
+      "evaluation": "Correct traits and examples"
+    },
+    {
+      "sl_no": 3,
+      "title": "Sequence of Events",
+      "objective": "Understand the story’s events in order.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write 6–8 main events in the story",
+        "Arrange them in chronological order",
+        "Read them aloud to the class"
+      ],
+      "learning_outcome": "Students will recall events and organize them logically.",
+      "evaluation": "Accuracy of sequence"
+    },
+    {
+      "sl_no": 4,
+      "title": "Diary Entry – Mijbil",
+      "objective": "Write creatively from Mijbil’s perspective.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are Mijbil for a day",
+        "Write a short diary entry describing your activities and feelings",
+        "Include interactions with humans and playful moments"
+      ],
+      "learning_outcome": "Students will enhance creative writing and perspective-taking skills.",
+      "evaluation": "Creativity and relevance to the story"
+    },
+    {
+      "sl_no": 5,
+      "title": "New Vocabulary List",
+      "objective": "Learn and apply new words from the chapter.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Pick 10 new words from the chapter",
+        "Write their meanings",
+        "Use each word in a simple sentence"
+      ],
+      "learning_outcome": "Students will improve vocabulary and sentence construction skills.",
+      "evaluation": "Correct meanings and usage"
+    },
+    {
+      "sl_no": 6,
+      "title": "Short Speech – My Pet Otter",
+      "objective": "Practice speaking and expressing feelings.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Prepare a 1–2 minute speech imagining you own Mijbil",
+        "Include his habits, playful nature, and care requirements",
+        "Present confidently in class"
+      ],
+      "learning_outcome": "Students will develop oral communication and empathy.",
+      "evaluation": "Confidence, clarity, and relevance"
+    },
+    {
+      "sl_no": 7,
+      "title": "Moral of the Story Poster",
+      "objective": "Identify and present the story’s message.",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write the main moral (e.g., care and love for animals)",
+        "Add illustrations of Mijbil and key scenes",
+        "Present to the class"
+      ],
+      "learning_outcome": "Students will understand story themes and express them visually.",
+      "evaluation": "Clarity, relevance, and creativity"
+    },
+    {
+      "sl_no": 8,
+      "title": "Role Play – Mijbil’s Day",
+      "objective": "Experience the story through enactment.",
+      "materials": ["Simple props if needed", "Notebook"],
+      "steps": [
+        "Assign roles (Mijbil, owner, family)",
+        "Act out one playful or memorable scene from the story",
+        "Express emotions clearly"
+      ],
+      "learning_outcome": "Students will develop empathy, expression, and teamwork.",
+      "evaluation": "Participation and emotional expression"
+    },
+    {
+      "sl_no": 9,
+      "title": "Observation & Description Task",
+      "objective": "Develop descriptive writing skills.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Describe Mijbil’s appearance, habits, and playful actions in 5–6 sentences",
+        "Include sensory details (sight, sound, touch)",
+        "Read aloud to class or share in small groups"
+      ],
+      "learning_outcome": "Students will improve observation and descriptive writing.",
+      "evaluation": "Detail, clarity, and relevance"
+    },
+    {
+      "sl_no": 10,
+      "title": "Question-Answer Activity",
+      "objective": "Enhance comprehension and recall.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write 5 questions about the story (e.g., about Mijbil’s habits or incidents)",
+        "Answer them in full sentences",
+        "Pair up and exchange Q&A for discussion"
+      ],
+      "learning_outcome": "Students will improve reading comprehension and critical thinking.",
+      "evaluation": "Correct answers and sentence formation"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-05T18:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is electric current?",
+      "answer": "Electric current is the flow of electric charges through a conductor such as a wire.",
+      "answer_outline": ["Definition of electric current"],
+      "key_concepts": ["electric current"],
+      "marks": 3,
+      "source_section": "Electric Current"
+    },
+    {
+      "question_number": 2,
+      "question": "What is an electric circuit?",
+      "answer": "An electric circuit is a complete path through which electric current flows.",
+      "answer_outline": ["Definition", "Current flow"],
+      "key_concepts": ["electric circuit"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 3,
+      "question": "Name the main components of an electric circuit.",
+      "answer": "The main components are battery, wires, switch and an electrical device such as a bulb.",
+      "answer_outline": ["Battery", "Wires", "Switch", "Bulb"],
+      "key_concepts": ["circuit components"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a closed circuit?",
+      "answer": "A closed circuit is a circuit in which the path is complete and electric current flows.",
+      "answer_outline": ["Complete path", "Current flows"],
+      "key_concepts": ["closed circuit"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 5,
+      "question": "What is an open circuit?",
+      "answer": "An open circuit is a circuit in which the path is broken and current does not flow.",
+      "answer_outline": ["Broken path", "No current flow"],
+      "key_concepts": ["open circuit"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the heating effect of electric current.",
+      "answer": "When electric current flows through a conductor, electrical energy is converted into heat energy. This is called the heating effect of electric current.",
+      "answer_outline": ["Electric current", "Heat energy"],
+      "key_concepts": ["heating effect"],
+      "marks": 4,
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 7,
+      "question": "Give two examples of appliances that use the heating effect of current.",
+      "answer": "Electric iron and electric heater use the heating effect of electric current.",
+      "answer_outline": ["Electric iron", "Electric heater"],
+      "key_concepts": ["heating appliances"],
+      "marks": 3,
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 8,
+      "question": "What is an electric fuse?",
+      "answer": "An electric fuse is a safety device that protects electrical circuits by melting when excessive current flows.",
+      "answer_outline": ["Safety device", "Melts on excess current"],
+      "key_concepts": ["electric fuse"],
+      "marks": 4,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is a fuse important in electrical circuits?",
+      "answer": "A fuse prevents damage to electrical appliances by breaking the circuit when excessive current flows.",
+      "answer_outline": ["Prevents damage", "Breaks circuit"],
+      "key_concepts": ["electrical safety"],
+      "marks": 4,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the magnetic effect of electric current.",
+      "answer": "When electric current flows through a conductor, it produces a magnetic field around it. This is called the magnetic effect of electric current.",
+      "answer_outline": ["Current flow", "Magnetic field"],
+      "key_concepts": ["magnetic effect"],
+      "marks": 4,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 11,
+      "question": "What is an electromagnet?",
+      "answer": "An electromagnet is a temporary magnet produced when electric current flows through a coil of wire.",
+      "answer_outline": ["Temporary magnet", "Current through coil"],
+      "key_concepts": ["electromagnet"],
+      "marks": 4,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 12,
+      "question": "Give one use of an electromagnet.",
+      "answer": "Electromagnets are used in electric bells.",
+      "answer_outline": ["Application example"],
+      "key_concepts": ["electromagnets"],
+      "marks": 3,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how an electromagnet works.",
+      "answer": "When electric current flows through a coil wrapped around an iron core, the core becomes magnetized and acts as a magnet.",
+      "answer_outline": ["Current flow", "Magnetization"],
+      "key_concepts": ["electromagnet"],
+      "marks": 4,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 14,
+      "question": "What happens when current stops flowing in an electromagnet?",
+      "answer": "When current stops, the electromagnet loses its magnetism.",
+      "answer_outline": ["Temporary magnetism"],
+      "key_concepts": ["electromagnet"],
+      "marks": 3,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the working of an electric bell.",
+      "answer": "An electric bell works using an electromagnet which attracts a metal armature and produces sound when the bell is struck repeatedly.",
+      "answer_outline": ["Electromagnet", "Armature movement"],
+      "key_concepts": ["electric bell"],
+      "marks": 4,
+      "source_section": "Electric Bell"
+    },
+    {
+      "question_number": 16,
+      "question": "Name two devices that use electromagnets.",
+      "answer": "Electric bells and cranes used for lifting scrap iron use electromagnets.",
+      "answer_outline": ["Electric bell", "Industrial crane"],
+      "key_concepts": ["electromagnet applications"],
+      "marks": 3,
+      "source_section": "Applications"
+    },
+    {
+      "question_number": 17,
+      "question": "Why is electricity important in daily life?",
+      "answer": "Electricity is important because it powers many devices such as lights, fans, heaters and electronic appliances.",
+      "answer_outline": ["Examples of usage"],
+      "key_concepts": ["importance of electricity"],
+      "marks": 3,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why wires are used in electric circuits.",
+      "answer": "Wires are conductors that allow electric current to flow between different components of the circuit.",
+      "answer_outline": ["Conductor", "Current flow"],
+      "key_concepts": ["conductors"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain why switches are used in electric circuits.",
+      "answer": "Switches are used to open or close the circuit, controlling the flow of electric current.",
+      "answer_outline": ["Control current flow"],
+      "key_concepts": ["switch"],
+      "marks": 3,
+      "source_section": "Electric Circuits"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how electricity produces heat.",
+      "answer": "Electric current flowing through a wire meets resistance, which converts electrical energy into heat.",
+      "answer_outline": ["Current", "Resistance", "Heat"],
+      "key_concepts": ["heating effect"],
+      "marks": 4,
+      "source_section": "Heating Effect"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how electricity produces magnetism.",
+      "answer": "When electric current flows through a conductor, it creates a magnetic field around the conductor.",
+      "answer_outline": ["Current flow", "Magnetic field"],
+      "key_concepts": ["magnetic effect"],
+      "marks": 4,
+      "source_section": "Magnetic Effect"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are electromagnets useful?",
+      "answer": "Electromagnets are useful because their magnetism can be switched on and off by controlling the electric current.",
+      "answer_outline": ["Control of magnetism"],
+      "key_concepts": ["electromagnet"],
+      "marks": 4,
+      "source_section": "Electromagnets"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why electric bells make sound repeatedly.",
+      "answer": "The electromagnet repeatedly attracts and releases the armature, causing the bell to strike continuously.",
+      "answer_outline": ["Electromagnet", "Repeated movement"],
+      "key_concepts": ["electric bell"],
+      "marks": 4,
+      "source_section": "Electric Bell"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain why too much current can be dangerous.",
+      "answer": "Excessive current can cause overheating of wires, which may damage appliances or cause fires.",
+      "answer_outline": ["Overheating", "Safety risk"],
+      "key_concepts": ["electrical safety"],
+      "marks": 4,
+      "source_section": "Electric Safety"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how electricity and magnetism are related.",
+      "answer": "Electric current flowing through a conductor produces a magnetic field, showing the relationship between electricity and magnetism.",
+      "answer_outline": ["Electric current", "Magnetic field"],
+      "key_concepts": ["electricity", "magnetism"],
+      "marks": 4,
+      "source_section": "Magnetic Effect"
+    }
+  ]
+}

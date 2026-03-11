@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter_name": "Feathered Friend",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the story set in a space station and the role of Claribel the canary",
+    "Learn how observation and quick thinking can help detect dangers",
+    "Identify the main characters such as Sven Olsen and the narrator",
+    "Understand how animals can help humans in scientific situations",
+    "Recognize the importance of safety systems in space stations",
+    "Develop reading comprehension and vocabulary skills"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Feathered Friends",
+      "topics_covered": [
+        "Meaning of a feathered friend",
+        "Different types of birds kept as pets",
+        "Discussion about animals in unusual environments like space"
+      ],
+      "teaching_strategy": [
+        "Class discussion about birds and pets",
+        "Question–answer session from the pre-reading activity",
+        "Teacher introduction to the story setting"
+      ],
+      "student_activities": [
+        "Discuss questions about feathered and furry friends",
+        "Share favourite birds and reasons for liking them"
+      ],
+      "assessment": ["Oral questioning", "Pair discussion"]
+    },
+    {
+      "period": 2,
+      "title": "Background of the Story",
+      "topics_covered": [
+        "Life in a space station",
+        "Role of astronauts and construction workers in space",
+        "Introduction to Sven Olsen and Claribel"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation of space station environment",
+        "Reading the beginning of the story aloud"
+      ],
+      "student_activities": [
+        "Read the opening paragraphs of the story",
+        "Identify the main characters"
+      ],
+      "assessment": ["Short oral questions", "Character identification"]
+    },
+    {
+      "period": 3,
+      "title": "Understanding the Main Events",
+      "topics_covered": [
+        "Claribel the canary in the space station",
+        "How Claribel adapts to zero gravity",
+        "Crew members’ reactions to the bird"
+      ],
+      "teaching_strategy": [
+        "Guided reading of the story",
+        "Teacher explanation of the setting and events"
+      ],
+      "student_activities": [
+        "Describe how Claribel moves in zero gravity",
+        "Discuss why Sven brought the bird to the station"
+      ],
+      "assessment": ["Comprehension questions", "Group discussion"]
+    },
+    {
+      "period": 4,
+      "title": "The Air Problem and Discovery",
+      "topics_covered": [
+        "Claribel suddenly collapsing",
+        "Realization that something is wrong with the air",
+        "Connection with canaries used in coal mines"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation of the turning point in the story",
+        "Discussion about how animals can detect danger"
+      ],
+      "student_activities": [
+        "Explain why the crew suspected an air problem",
+        "Discuss the historical use of canaries in mines"
+      ],
+      "assessment": ["Short written answers", "Class discussion"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Message",
+      "topics_covered": [
+        "Discovery of the air purifier failure",
+        "How the crew fixed the problem",
+        "Importance of observation and quick thinking"
+      ],
+      "teaching_strategy": [
+        "Teacher explanation of the ending of the story",
+        "Discussion on the message of the story"
+      ],
+      "student_activities": [
+        "Write what lesson the story teaches",
+        "Share examples of animals helping humans"
+      ],
+      "assessment": ["Short paragraph writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Language and Revision Activities",
+      "topics_covered": [
+        "Vocabulary from the story",
+        "Merged words such as brunch, smog, and motel",
+        "Future tense usage"
+      ],
+      "teaching_strategy": ["Grammar exercises from textbook", "Revision quiz"],
+      "student_activities": [
+        "Match words to form merged words",
+        "Complete sentences using future tense forms"
+      ],
+      "assessment": ["Worksheet activity", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "Pictures of birds",
+    "Chart explaining canaries used in coal mines"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension questions",
+    "Group discussions",
+    "Vocabulary exercises",
+    "Short quizzes"
+  ],
+  "teacher_tip": "Encourage students to discuss how Claribel helped detect the air problem. Connecting the story with the real-life practice of using canaries in coal mines will help students understand the scientific idea behind the story."
+}

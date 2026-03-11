@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-02-27T19:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the degree of polynomial 4x³ − 2x² + x − 7?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "Highest power of x is 3.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "How many zeroes can a cubic polynomial have at most?",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "Maximum zeroes equals degree.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "If p(2) = 0, then 2 is called",
+            "options": {
+                "A": "Coefficient",
+                "B": "Zero",
+                "C": "Degree",
+                "D": "Constant"
+            },
+            "correct_answer": "B",
+            "explanation": "Value where polynomial becomes zero is called zero.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which polynomial has exactly two zeroes?",
+            "options": {
+                "A": "x",
+                "B": "x² − 1",
+                "C": "x³",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "x² − 1 has two real zeroes.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Graph of a cubic polynomial may cut x-axis at",
+            "options": {
+                "A": "One point",
+                "B": "Two points",
+                "C": "Three points",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "Cubic polynomial can have 1, 2 or 3 real zeroes.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "If degree of polynomial is zero, it represents",
+            "options": {
+                "A": "Zero polynomial",
+                "B": "Linear polynomial",
+                "C": "Constant polynomial",
+                "D": "Quadratic polynomial"
+            },
+            "correct_answer": "C",
+            "explanation": "Degree zero means constant.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Number of terms in polynomial 5x³ + 2x − 1 is",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "C",
+            "explanation": "There are three terms.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Which polynomial has no real zero?",
+            "options": {
+                "A": "x² − 4",
+                "B": "x² + 1",
+                "C": "x − 3",
+                "D": "x"
+            },
+            "correct_answer": "B",
+            "explanation": "x² + 1 > 0 always.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "If p(x) = x² − 9, then p(3) equals",
+            "options": {
+                "A": "0",
+                "B": "9",
+                "C": "−9",
+                "D": "6"
+            },
+            "correct_answer": "A",
+            "explanation": "3² − 9 = 0.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Polynomial x² − 5x + 6 has zeroes",
+            "options": {
+                "A": "1 and 6",
+                "B": "2 and 3",
+                "C": "−2 and −3",
+                "D": "0 and 6"
+            },
+            "correct_answer": "B",
+            "explanation": "Factorisation gives (x−2)(x−3).",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which graph represents quadratic polynomial?",
+            "options": {
+                "A": "Straight line",
+                "B": "Parabola",
+                "C": "Circle",
+                "D": "Ellipse"
+            },
+            "correct_answer": "B",
+            "explanation": "Quadratic graph is parabola.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "If polynomial has degree 4, maximum zeroes are",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "C",
+            "explanation": "Maximum zeroes equals degree.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which is NOT a polynomial?",
+            "options": {
+                "A": "x³ + 2",
+                "B": "x² − 1",
+                "C": "1/x",
+                "D": "5x"
+            },
+            "correct_answer": "C",
+            "explanation": "Negative power of x.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Zero polynomial has degree",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "Undefined",
+                "D": "2"
+            },
+            "correct_answer": "C",
+            "explanation": "Degree of zero polynomial is not defined.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Coefficient of x² in 7x² − 3x is",
+            "options": {
+                "A": "7",
+                "B": "−3",
+                "C": "2",
+                "D": "0"
+            },
+            "correct_answer": "A",
+            "explanation": "Coefficient of x² is 7.",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Polynomial whose graph cuts x-axis twice is",
+            "options": {
+                "A": "Linear",
+                "B": "Quadratic",
+                "C": "Constant",
+                "D": "Cubic only"
+            },
+            "correct_answer": "B",
+            "explanation": "Quadratic can have two zeroes.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "If p(1) = p(−1), then p(x) may be",
+            "options": {
+                "A": "Even polynomial",
+                "B": "Odd polynomial",
+                "C": "Linear",
+                "D": "Constant only"
+            },
+            "correct_answer": "A",
+            "explanation": "Even polynomials satisfy p(x)=p(−x).",
+            "difficulty": "medium",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which polynomial has exactly one zero?",
+            "options": {
+                "A": "x² − 1",
+                "B": "x",
+                "C": "x² + 1",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "Linear polynomial has one zero.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Value of p(0) represents",
+            "options": {
+                "A": "Degree",
+                "B": "y-intercept",
+                "C": "Zero",
+                "D": "Slope"
+            },
+            "correct_answer": "B",
+            "explanation": "p(0) is y-intercept.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Polynomial of form ax + b represents",
+            "options": {
+                "A": "Parabola",
+                "B": "Line",
+                "C": "Circle",
+                "D": "Curve"
+            },
+            "correct_answer": "B",
+            "explanation": "Linear polynomial forms line.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "If degree of polynomial is n, maximum zeroes are",
+            "options": {
+                "A": "n − 1",
+                "B": "n",
+                "C": "n + 1",
+                "D": "2n"
+            },
+            "correct_answer": "B",
+            "explanation": "Maximum zeroes equals degree.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Polynomial x² − 4x + 4 has zeroes",
+            "options": {
+                "A": "2 and 2",
+                "B": "2 and −2",
+                "C": "−2 and −2",
+                "D": "0 and 4"
+            },
+            "correct_answer": "A",
+            "explanation": "Perfect square polynomial.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which polynomial represents a horizontal line?",
+            "options": {
+                "A": "x",
+                "B": "x²",
+                "C": "5",
+                "D": "2x"
+            },
+            "correct_answer": "C",
+            "explanation": "Constant polynomial forms horizontal line.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Number of real zeroes equals number of times graph cuts",
+            "options": {
+                "A": "y-axis",
+                "B": "origin",
+                "C": "x-axis",
+                "D": "any axis"
+            },
+            "correct_answer": "C",
+            "explanation": "Zeroes are x-intercepts.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Polynomial of degree 1 always has",
+            "options": {
+                "A": "Two zeroes",
+                "B": "One zero",
+                "C": "No zero",
+                "D": "Infinite zeroes"
+            },
+            "correct_answer": "B",
+            "explanation": "Linear polynomial has one zero.",
+            "difficulty": "medium",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

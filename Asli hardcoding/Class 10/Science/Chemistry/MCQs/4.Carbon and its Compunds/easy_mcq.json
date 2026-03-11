@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Carbon and its Compounds",
+  "generated_at": "2026-03-10T23:42:45",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Carbon forms bonds with other atoms by:",
+      "options": {
+        "A": "Losing electrons",
+        "B": "Gaining electrons",
+        "C": "Sharing electrons",
+        "D": "Transferring protons"
+      },
+      "correct_answer": "C",
+      "explanation": "Carbon has 4 valence electrons and forms covalent bonds by sharing electrons to achieve a stable octet configuration.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The atomic number of carbon is:",
+      "options": {
+        "A": "4",
+        "B": "6",
+        "C": "12",
+        "D": "14"
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon is the sixth element in the periodic table, meaning it has 6 protons and an atomic number of 6.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "A molecule of ammonia ($NH_3$) has:",
+      "options": {
+        "A": "Only single bonds",
+        "B": "Only double bonds",
+        "C": "Only triple bonds",
+        "D": "Two double bonds and one single bond"
+      },
+      "correct_answer": "A",
+      "explanation": "In ammonia, the nitrogen atom shares one electron with each of the three hydrogen atoms, forming three single covalent bonds.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is an allotrope of carbon?",
+      "options": {
+        "A": "Gold",
+        "B": "Diamond",
+        "C": "Silver",
+        "D": "Copper"
+      },
+      "correct_answer": "B",
+      "explanation": "Allotropes are different physical forms of the same element. Diamond, Graphite, and Fullerenes are allotropes of carbon.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "The property of self-linking of carbon atoms to form long chains is called:",
+      "options": {
+        "A": "Tetravalency",
+        "B": "Catenation",
+        "C": "Isomerism",
+        "D": "Hydrogenation"
+      },
+      "correct_answer": "B",
+      "explanation": "Catenation is the unique ability of carbon to form bonds with other atoms of carbon, giving rise to large molecules.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Hydrocarbons which contain only single bonds between carbon atoms are called:",
+      "options": {
+        "A": "Alkenes",
+        "B": "Alkynes",
+        "C": "Alkanes",
+        "D": "Arenes"
+      },
+      "correct_answer": "C",
+      "explanation": "Saturated hydrocarbons with single C-C bonds are called alkanes.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the general formula for Alkanes?",
+      "options": {
+        "A": "$C_nH_{2n}$",
+        "B": "$C_nH_{2n+2}$",
+        "C": "$C_nH_{2n-2}$",
+        "D": "$C_nH_n$"
+      },
+      "correct_answer": "B",
+      "explanation": "The general formula for the alkane homologous series is $C_nH_{2n+2}$.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.4"
+    },
+    {
+      "question_number": 8,
+      "question": "The first member of the alkyne homologous series is:",
+      "options": {
+        "A": "Methane",
+        "B": "Ethane",
+        "C": "Ethene",
+        "D": "Ethyne"
+      },
+      "correct_answer": "D",
+      "explanation": "Alkynes contain a triple bond, which requires at least two carbon atoms. Ethyne ($C_2H_2$) is the first member.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.4"
+    },
+    {
+      "question_number": 9,
+      "question": "Which gas is the major constituent of Biogas and Compressed Natural Gas (CNG)?",
+      "options": {
+        "A": "Ethane",
+        "B": "Methane",
+        "C": "Propane",
+        "D": "Butane"
+      },
+      "correct_answer": "B",
+      "explanation": "Methane ($CH_4$) is the simplest hydrocarbon and the main component of Biogas and CNG.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Unsaturated hydrocarbons contain:",
+      "options": {
+        "A": "Only single bonds",
+        "B": "Double or triple bonds",
+        "C": "Ionic bonds",
+        "D": "No bonds"
+      },
+      "correct_answer": "B",
+      "explanation": "Compounds of carbon containing double or triple bonds between carbon atoms are called unsaturated compounds.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 11,
+      "question": "The functional group present in carboxylic acids is:",
+      "options": {
+        "A": "$-OH$",
+        "B": "$-CHO$",
+        "C": "$-COOH$",
+        "D": "$-CO-$"
+      },
+      "correct_answer": "C",
+      "explanation": "The carboxyl group ($-COOH$) is the characteristic functional group of organic acids.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is used as an industrial solvent and in alcoholic drinks?",
+      "options": {
+        "A": "Ethanoic acid",
+        "B": "Methanol",
+        "C": "Ethanol",
+        "D": "Propanone"
+      },
+      "correct_answer": "C",
+      "explanation": "Ethanol ($C_2H_5OH$) is the active ingredient in all alcoholic drinks and a widely used solvent.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Vinegar is a solution of:",
+      "options": {
+        "A": "50-60% acetic acid in alcohol",
+        "B": "5-8% acetic acid in water",
+        "C": "5-8% alcohol in water",
+        "D": "15-20% acetic acid in water"
+      },
+      "correct_answer": "B",
+      "explanation": "Vinegar is a dilute solution of ethanoic acid (acetic acid) in water.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 14,
+      "question": "The process of converting vegetable oils into vegetable ghee (solid fats) is called:",
+      "options": {
+        "A": "Oxidation",
+        "B": "Hydrogenation",
+        "C": "Combustion",
+        "D": "Substitution"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydrogenation is the addition of hydrogen to unsaturated vegetable oils in the presence of a catalyst to make them saturated (fats).",
+      "difficulty": "easy",
+      "source_section": "Section 4.3.3"
+    },
+    {
+      "question_number": 15,
+      "question": "Soap molecules have a:",
+      "options": {
+        "A": "Hydrophilic head and Hydrophobic tail",
+        "B": "Hydrophobic head and Hydrophilic tail",
+        "C": "Two hydrophilic ends",
+        "D": "Two hydrophobic ends"
+      },
+      "correct_answer": "A",
+      "explanation": "A soap molecule has a polar hydrophilic (water-loving) head and a non-polar hydrophobic (water-fearing) hydrocarbon tail.",
+      "difficulty": "easy",
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following is the formula of ethanoic acid?",
+      "options": {
+        "A": "$CH_3OH$",
+        "B": "$CH_3COOH$",
+        "C": "$HCOOH$",
+        "D": "$C_2H_5OH$"
+      },
+      "correct_answer": "B",
+      "explanation": "Ethanoic acid (commonly known as acetic acid) has the formula $CH_3COOH$.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 17,
+      "question": "A series of compounds in which the same functional group substitutes for hydrogen in a carbon chain is called:",
+      "options": {
+        "A": "Isomeric series",
+        "B": "Homologous series",
+        "C": "Allotropic series",
+        "D": "Hydrocarbon series"
+      },
+      "correct_answer": "B",
+      "explanation": "A homologous series is a group of organic compounds having similar structures and chemical properties.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.4"
+    },
+    {
+      "question_number": 18,
+      "question": "The number of single covalent bonds in pentane ($C_5H_{12}$) is:",
+      "options": {
+        "A": "12",
+        "B": "14",
+        "C": "16",
+        "D": "17"
+      },
+      "correct_answer": "C",
+      "explanation": "Pentane has 4 C-C bonds and 12 C-H bonds, totaling 16 single covalent bonds.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following will give a blue flame on combustion?",
+      "options": {
+        "A": "Saturated hydrocarbons",
+        "B": "Unsaturated hydrocarbons",
+        "C": "Coal",
+        "D": "Wood"
+      },
+      "correct_answer": "A",
+      "explanation": "Saturated hydrocarbons generally burn with a clean blue flame due to complete combustion.",
+      "difficulty": "easy",
+      "source_section": "Section 4.3.1"
+    },
+    {
+      "question_number": 20,
+      "question": "The suffix used for naming an aldehyde is:",
+      "options": {
+        "A": "-ol",
+        "B": "-al",
+        "C": "-one",
+        "D": "-oic acid"
+      },
+      "correct_answer": "B",
+      "explanation": "According to IUPAC nomenclature, aldehydes end with the suffix '-al'.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Butanone is a four-carbon compound with the functional group:",
+      "options": {
+        "A": "Carboxylic acid",
+        "B": "Aldehyde",
+        "C": "Ketone",
+        "D": "Alcohol"
+      },
+      "correct_answer": "C",
+      "explanation": "The suffix '-one' indicates the presence of a ketone group.",
+      "difficulty": "easy",
+      "source_section": "Section 4.2.5"
+    },
+    {
+      "question_number": 22,
+      "question": "The melting point of pure ethanoic acid is 290 K, and hence it often freezes during winter in cold climates. For this reason, it is named:",
+      "options": {
+        "A": "Cold acetic acid",
+        "B": "Glacial acetic acid",
+        "C": "Frozen acid",
+        "D": "Winter acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Pure ethanoic acid is called glacial acetic acid because it forms ice-like crystals at low temperatures.",
+      "difficulty": "easy",
+      "source_section": "Section 4.4.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Soaps react with hard water to form an insoluble substance called:",
+      "options": {
+        "A": "Lather",
+        "B": "Foam",
+        "C": "Scum",
+        "D": "Micelle"
+      },
+      "correct_answer": "C",
+      "explanation": "The reaction of soap with calcium and magnesium salts in hard water creates a sticky, insoluble precipitate called scum.",
+      "difficulty": "easy",
+      "source_section": "Section 4.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of the following represents a triple bond?",
+      "options": {
+        "A": "$C_2H_6$",
+        "B": "$C_2H_4$",
+        "C": "$C_2H_2$",
+        "D": "$CH_4$"
+      },
+      "correct_answer": "C",
+      "explanation": "Ethyne ($C_2H_2$) is an alkyne and contains a triple bond between the two carbon atoms.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 25,
+      "question": "The valence of Carbon is:",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "8"
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon has four electrons in its outermost shell and needs four more to complete its octet, hence its valency is 4.",
+      "difficulty": "easy",
+      "source_section": "Section 4.1"
+    }
+  ]
+}

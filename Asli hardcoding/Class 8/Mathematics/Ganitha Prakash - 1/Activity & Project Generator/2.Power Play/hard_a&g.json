@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Power Play",
+  "difficulty": "Hard",
+  "source_pdf": "ch-2_POWER_PLAY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Large Exponent Challenge",
+      "objective": "Evaluate expressions with large exponents",
+      "materials": ["Notebook", "Calculator (optional)"],
+      "steps": [
+        "Write expressions like 2^6, 3^5, 5^4",
+        "Expand them step by step",
+        "Find the final values"
+      ],
+      "learning_outcome": "Develops skill in calculating larger powers",
+      "evaluation": "Accuracy of calculations (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Exponent Law Investigation",
+      "objective": "Apply multiple exponent rules in one problem",
+      "materials": ["Notebook"],
+      "steps": [
+        "Solve expressions like (2^3 × 2^4) ÷ 2^2",
+        "Write each step clearly using exponent rules",
+        "Verify the simplified answer"
+      ],
+      "learning_outcome": "Understands and applies exponent laws",
+      "evaluation": "Correct use of rules (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Power Comparison Puzzle",
+      "objective": "Compare numbers with different bases and powers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write pairs such as 2^6 and 4^3",
+        "Convert them into comparable forms",
+        "Determine which is greater"
+      ],
+      "learning_outcome": "Develops analytical thinking with powers",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Missing Exponent Finder",
+      "objective": "Find unknown exponents in equations",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write equations like 2^x = 16",
+        "Find the value of x",
+        "Verify by substitution"
+      ],
+      "learning_outcome": "Understands relationship between base and exponent",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Power Pattern Exploration",
+      "objective": "Identify patterns in powers of numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write powers of 2 from 2^1 to 2^8",
+        "Observe the pattern in results",
+        "Describe the pattern in your own words"
+      ],
+      "learning_outcome": "Recognises mathematical patterns",
+      "evaluation": "Clarity of pattern explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Scientific Notation Activity",
+      "objective": "Express large numbers using powers of 10",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write large numbers such as 100000 and 5000000",
+        "Convert them into powers of 10",
+        "Explain how powers help represent large numbers"
+      ],
+      "learning_outcome": "Understands use of powers in large numbers",
+      "evaluation": "Correct representation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Exponent Equation Puzzle",
+      "objective": "Solve complex exponent expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Solve expressions like (3^2 × 3^3) ÷ 3^2",
+        "Simplify step by step",
+        "Write the final answer"
+      ],
+      "learning_outcome": "Improves algebraic manipulation with powers",
+      "evaluation": "Accuracy of simplification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Real-Life Power Investigation",
+      "objective": "Explore real-world applications of powers",
+      "materials": ["Notebook", "Internet or textbook"],
+      "steps": [
+        "Find examples where powers are used (computers, science)",
+        "Write two examples",
+        "Explain how powers simplify large values"
+      ],
+      "learning_outcome": "Connects exponent concepts with real life",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Power of Zero and One Analysis",
+      "objective": "Understand special exponent cases",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 7^0, 9^1, 15^0",
+        "Calculate their values",
+        "Explain why these results occur"
+      ],
+      "learning_outcome": "Understands special exponent rules",
+      "evaluation": "Concept explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Exponent Word Problem",
+      "objective": "Apply powers in problem solving",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a real-life situation involving powers",
+        "Write the mathematical expression",
+        "Solve and explain the result"
+      ],
+      "learning_outcome": "Applies exponent concepts in practical problems",
+      "evaluation": "Correct reasoning and answer (10 marks)"
+    }
+  ]
+}

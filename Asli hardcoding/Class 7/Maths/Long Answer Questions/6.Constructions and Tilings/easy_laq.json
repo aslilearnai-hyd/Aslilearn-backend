@@ -1,0 +1,382 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Constructions and Tilings",
+    "generated_at": "2026-03-05T01:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are the two primary tools used in basic geometric constructions? What is the specific purpose of each?",
+            "answer": "The two primary tools are the Ruler (straightedge) and the Compass. The ruler is used to draw straight lines and measure lengths, while the compass is used to draw circles and arcs of a specific radius.",
+            "answer_outline": [
+                "Identify the two tools",
+                "Explain the function of the ruler",
+                "Explain the function of the compass"
+            ],
+            "key_concepts": [
+                "geometric tools",
+                "compass",
+                "ruler"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is 'Tiling' (also known as Tessellation)?",
+            "answer": "Tiling is the process of covering a flat surface using one or more geometric shapes (tiles) with no overlaps and no gaps.",
+            "answer_outline": [
+                "Define tiling",
+                "Mention the 'no gap' rule",
+                "Mention the 'no overlap' rule"
+            ],
+            "key_concepts": [
+                "tiling",
+                "tessellation"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Give two examples of tilings you might see in everyday life.",
+            "answer": "1. A bathroom floor covered in square tiles. 2. A honeycomb structure made of hexagons. 3. A brick wall pattern.",
+            "answer_outline": [
+                "Provide two distinct real-world examples"
+            ],
+            "key_concepts": [
+                "real-life geometry",
+                "patterns"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe the steps to construct a circle of a given radius (e.g., 4 cm) using a compass.",
+            "answer": "1. Open the compass and use a ruler to set the distance between the needle and the pencil to 4 cm. 2. Mark a point 'O' to be the center. 3. Place the needle on 'O'. 4. Rotate the compass to draw a complete curve until it meets the starting point.",
+            "answer_outline": [
+                "Setting the radius",
+                "Marking the center",
+                "Drawing the arc/circle"
+            ],
+            "key_concepts": [
+                "circle construction",
+                "radius"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is an 'Arc' in geometric construction?",
+            "answer": "An arc is a part or a portion of the circumference of a circle. It is created by moving a compass between two points without completing a full circle.",
+            "answer_outline": [
+                "Define arc",
+                "Relate it to a circle"
+            ],
+            "key_concepts": [
+                "arc",
+                "compass"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is a sharpened pencil important for geometric constructions?",
+            "answer": "A sharpened pencil is necessary to ensure thin, precise lines. Thick lines can lead to inaccuracies in measurements and the placement of intersection points.",
+            "answer_outline": [
+                "Mention precision",
+                "Explain the problem with thick lines"
+            ],
+            "key_concepts": [
+                "accuracy",
+                "precision"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of these shapes will tile a floor perfectly by themselves: (a) Regular Hexagons, (b) Circles?",
+            "answer": "Regular hexagons will tile a floor perfectly. Circles will not because they leave gaps (empty spaces) between them when placed side-by-side.",
+            "answer_outline": [
+                "Choose hexagon",
+                "Explain why circles fail (gaps)"
+            ],
+            "key_concepts": [
+                "tiling",
+                "regular polygons"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 8,
+            "question": "What is a 'Bisector' in construction?",
+            "answer": "A bisector is a line or ray that divides a geometric figure (like a line segment or an angle) into two equal parts.",
+            "answer_outline": [
+                "Define bisector",
+                "Mention 'two equal parts'"
+            ],
+            "key_concepts": [
+                "bisector",
+                "division"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Can you tile a surface using only squares? Why or why not?",
+            "answer": "Yes, squares can tile a surface perfectly. This is because four squares meeting at a vertex create a total of 360° ($4 \\times 90°$), leaving no gaps.",
+            "answer_outline": [
+                "Answer Yes",
+                "Explain via the 360 degree vertex rule"
+            ],
+            "key_concepts": [
+                "square tiling",
+                "vertex sum"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the 'Point of Concurrence' in a construction involving three bisectors?",
+            "answer": "The point of concurrence is the single point where three or more lines (such as the bisectors of a triangle) intersect or meet.",
+            "answer_outline": [
+                "Define concurrence",
+                "Mention the intersection point"
+            ],
+            "key_concepts": [
+                "concurrence",
+                "intersection"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "How do you copy a line segment $AB$ onto a new line 'l' using a compass?",
+            "answer": "1. Place the compass needle on point $A$ and the pencil on point $B$. 2. Without changing the compass width, place the needle on a point $P$ on line 'l'. 3. Draw an arc to intersect line 'l' at point $Q$. $PQ$ is now equal to $AB$.",
+            "answer_outline": [
+                "Measure with compass",
+                "Transfer to new line",
+                "Mark the intersection"
+            ],
+            "key_concepts": [
+                "copying segments",
+                "compass use"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a 'Line of Symmetry' in a tiled pattern?",
+            "answer": "A line of symmetry is an imaginary line that divides a pattern into two identical halves that are mirror images of each other.",
+            "answer_outline": [
+                "Define symmetry line",
+                "Explain mirror image concept"
+            ],
+            "key_concepts": [
+                "symmetry",
+                "tilings"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 13,
+            "question": "True or False: A ruler can be used to draw a curved line. Explain.",
+            "answer": "False. A ruler (straightedge) is designed specifically to draw straight paths between points. To draw a curved line like a circle, a compass must be used.",
+            "answer_outline": [
+                "State False",
+                "Explain ruler's purpose",
+                "Mention compass for curves"
+            ],
+            "key_concepts": [
+                "geometric tools",
+                "straight vs curved"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the difference between a 'Line Segment' and an 'Arc' in a drawing?",
+            "answer": "A line segment is the shortest straight path between two points. An arc is a curved path that follows the edge of a circle between two points.",
+            "answer_outline": [
+                "Straight vs Curved",
+                "Reference to circle for arc"
+            ],
+            "key_concepts": [
+                "geometry definitions",
+                "lines and curves"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How many endpoints does a line segment have? How many does a circle have?",
+            "answer": "A line segment has two endpoints. A circle has no endpoints because it is a closed continuous curve.",
+            "answer_outline": [
+                "State count for segment (2)",
+                "State count for circle (0)"
+            ],
+            "key_concepts": [
+                "endpoints",
+                "closed curves"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name two polygons that can tile a surface together (a 'semi-regular' tiling).",
+            "answer": "Octagons and Squares are commonly used together to tile a surface, where the squares fill the small gaps between the octagons.",
+            "answer_outline": [
+                "Identify octagons and squares"
+            ],
+            "key_concepts": [
+                "semi-regular tiling",
+                "polygon combinations"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What does it mean to 'Perpendicularly Bisect' a line?",
+            "answer": "It means to draw a line that passes through the exact center (midpoint) of a segment and crosses it at a 90-degree angle.",
+            "answer_outline": [
+                "Mention midpoint",
+                "Mention 90-degree angle"
+            ],
+            "key_concepts": [
+                "perpendicular bisector"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe a 'Checkerboard' pattern in terms of tiling.",
+            "answer": "A checkerboard is a tiling of squares where two different colors (usually black and white) alternate so that no two tiles of the same color share a side.",
+            "answer_outline": [
+                "Identify shape (square)",
+                "Explain the color alternation"
+            ],
+            "key_concepts": [
+                "tiling patterns",
+                "checkerboard"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the center of a circle in a construction?",
+            "answer": "The center is the fixed point where the needle of the compass is placed. Every point on the circle is an equal distance from this center.",
+            "answer_outline": [
+                "Identify needle placement",
+                "Explain equidistant property"
+            ],
+            "key_concepts": [
+                "center",
+                "equidistant"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "When constructing an angle bisector, where do the arcs intersect?",
+            "answer": "The arcs intersect in the 'interior' or the open space between the two arms of the angle.",
+            "answer_outline": [
+                "Specify the location (interior)"
+            ],
+            "key_concepts": [
+                "angle bisector",
+                "intersection"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why can't regular pentagons tile a surface by themselves?",
+            "answer": "The interior angle of a regular pentagon is 108°. Since 360 is not divisible by 108, the pentagons cannot meet at a point without leaving gaps or overlapping.",
+            "answer_outline": [
+                "State angle (108°)",
+                "Explain why they don't fit (360 division)"
+            ],
+            "key_concepts": [
+                "pentagon tiling",
+                "vertex sum"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a 'Straightedge'?",
+            "answer": "A straightedge is a tool (like a ruler without markings) used solely for drawing straight lines.",
+            "answer_outline": [
+                "Define the tool",
+                "Clarify no-markings aspect"
+            ],
+            "key_concepts": [
+                "straightedge",
+                "construction"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "In a tiling, can tiles overlap?",
+            "answer": "No. By definition, a tiling must cover the surface completely without any tiles laying on top of one another.",
+            "answer_outline": [
+                "State No",
+                "Explain the overlap rule"
+            ],
+            "key_concepts": [
+                "tiling rules"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 24,
+            "question": "If you use a compass to draw a circle with the needle at point A and the pencil at point B, what is the length of the radius?",
+            "answer": "The length of the radius is equal to the distance between points A and B (the length of segment $AB$).",
+            "answer_outline": [
+                "Identify radius as segment AB"
+            ],
+            "key_concepts": [
+                "radius",
+                "segment distance"
+            ],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Name three regular polygons that can tile a surface perfectly on their own.",
+            "answer": "1. Equilateral Triangles, 2. Squares, 3. Regular Hexagons.",
+            "answer_outline": [
+                "List the three polygons"
+            ],
+            "key_concepts": [
+                "regular tilings",
+                "polygons"
+            ],
+            "marks": 3,
+            "source_section": "Section 7.5"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 12: Earth, Moon, and the Sun",
+    "generated_at": "2026-03-06T19:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What causes day and night on Earth?",
+                "correct_answer": "Rotation of Earth on its axis",
+                "explanation": "The side facing the Sun experiences day, and the opposite side experiences night.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "question": "What is Earth's revolution?",
+                "correct_answer": "Earth's orbit around the Sun once every 365.25 days",
+                "explanation": "Earth’s revolution, along with axial tilt, causes seasons.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "question": "Why do we have seasons?",
+                "correct_answer": "Because Earth’s axis is tilted at 23.5° relative to its orbit around the Sun",
+                "explanation": "Tilt changes the angle and intensity of sunlight, leading to seasonal variations.",
+                "source_section": "Section 12.3"
+            },
+            {
+                "question": "What are the phases of the Moon?",
+                "correct_answer": "New Moon, crescent, first quarter, gibbous, and full Moon",
+                "explanation": "Moon phases are due to its position relative to Earth and Sun.",
+                "source_section": "Section 12.4"
+            },
+            {
+                "question": "When does a solar eclipse occur?",
+                "correct_answer": "When the Moon comes between Earth and the Sun",
+                "explanation": "This happens only during a new Moon and can be partial or total.",
+                "source_section": "Section 12.5"
+            },
+            {
+                "question": "When does a lunar eclipse occur?",
+                "correct_answer": "When Earth comes between the Sun and Moon",
+                "explanation": "Earth’s shadow falls on the Moon, happening only during a full Moon.",
+                "source_section": "Section 12.6"
+            },
+            {
+                "question": "What is a synodic month?",
+                "correct_answer": "The time taken for the Moon to complete a full cycle of phases (~29.5 days)",
+                "explanation": "It is measured from one new Moon to the next.",
+                "source_section": "Section 12.9"
+            },
+            {
+                "question": "Why do eclipses not occur every month?",
+                "correct_answer": "Because the Moon’s orbit is tilted about 5° to the ecliptic plane",
+                "explanation": "Most months, the Moon passes above or below the Sun-Earth line, preventing eclipses.",
+                "source_section": "Section 12.10"
+            },
+            {
+                "question": "Why are day and night lengths different at different latitudes?",
+                "correct_answer": "Because of Earth’s tilt and revolution around the Sun",
+                "explanation": "Polar regions can have continuous daylight or darkness, while equator has nearly equal day-night lengths.",
+                "source_section": "Section 12.7"
+            },
+            {
+                "question": "Do seasons depend on Earth’s distance from the Sun?",
+                "correct_answer": "No, seasons are caused by the tilt of Earth’s axis",
+                "explanation": "Even though Earth’s orbit is elliptical, tilt determines sunlight angle and temperature variations.",
+                "source_section": "Section 12.8"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Rotation of Earth",
+                "content": "Causes day and night; completes one rotation in 24 hours.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "title": "Revolution of Earth",
+                "content": "Earth orbits the Sun in ~365.25 days; causes seasons.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "title": "Tilt of Earth’s Axis",
+                "content": "Tilted at 23.5°, affects sunlight angle and causes seasonal variations.",
+                "source_section": "Section 12.3"
+            },
+            {
+                "title": "Moon Phases",
+                "content": "Changes from new Moon to full Moon over ~29.5 days due to relative positions of Sun, Earth, and Moon.",
+                "source_section": "Section 12.4"
+            },
+            {
+                "title": "Solar and Lunar Eclipses",
+                "content": "Solar: Moon blocks Sun (new Moon). Lunar: Earth blocks Sun’s light on Moon (full Moon).",
+                "source_section": "Sections 12.5-12.6"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Earth rotates once every 24 hours, causing day and night.",
+                "source_section": "Section 12.1"
+            },
+            {
+                "fact": "Earth revolves around the Sun in an elliptical orbit once every 365.25 days.",
+                "source_section": "Section 12.2"
+            },
+            {
+                "fact": "Moon phases cycle every 29.5 days (synodic month).",
+                "source_section": "Section 12.9"
+            },
+            {
+                "fact": "Solar eclipses occur only during new Moon; lunar eclipses occur only during full Moon.",
+                "source_section": "Sections 12.5-12.6"
+            },
+            {
+                "fact": "Tilt of Earth’s axis, not distance from Sun, causes seasons.",
+                "source_section": "Section 12.8"
+            }
+        ]
+    }
+}

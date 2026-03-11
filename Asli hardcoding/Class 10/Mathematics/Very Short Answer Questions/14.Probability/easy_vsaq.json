@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 14: Probability",
+    "level": "Easy",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is probability?",
+            "answer": "Probability is a measure of the chance of an event occurring.",
+            "key_points": [
+                "probability",
+                "chance"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is a random experiment?",
+            "answer": "An experiment whose outcome cannot be predicted with certainty.",
+            "key_points": [
+                "random experiment"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How many outcomes are possible when a coin is tossed once?",
+            "answer": "Two outcomes.",
+            "key_points": [
+                "coin toss"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name the outcomes of a coin toss.",
+            "answer": "Head and Tail.",
+            "key_points": [
+                "outcomes"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a sure event?",
+            "answer": "An event that is certain to occur.",
+            "key_points": [
+                "sure event"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the probability of a sure event?",
+            "answer": "1",
+            "key_points": [
+                "probability value"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is an impossible event?",
+            "answer": "An event that cannot occur.",
+            "key_points": [
+                "impossible event"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the probability of an impossible event?",
+            "answer": "0",
+            "key_points": [
+                "probability value"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an elementary event?",
+            "answer": "An event having only one outcome.",
+            "key_points": [
+                "elementary event"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the total probability of all outcomes of an experiment?",
+            "answer": "1",
+            "key_points": [
+                "total probability"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is meant by equally likely outcomes?",
+            "answer": "Outcomes having the same chance of occurring.",
+            "key_points": [
+                "equally likely"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 12,
+            "question": "How many outcomes are possible when a die is thrown once?",
+            "answer": "Six outcomes.",
+            "key_points": [
+                "die"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the probability of getting a head in a fair coin toss?",
+            "answer": "1/2",
+            "key_points": [
+                "coin probability"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What does P(E) denote?",
+            "answer": "Probability of event E.",
+            "key_points": [
+                "notation"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a sample space?",
+            "answer": "The set of all possible outcomes of an experiment.",
+            "key_points": [
+                "sample space"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the probability range of any event?",
+            "answer": "Between 0 and 1.",
+            "key_points": [
+                "range"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is meant by a fair die?",
+            "answer": "A die with all outcomes equally likely.",
+            "key_points": [
+                "fair die"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is meant by classical probability?",
+            "answer": "Probability based on equally likely outcomes.",
+            "key_points": [
+                "classical probability"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the probability of getting a number less than 7 on a die?",
+            "answer": "1",
+            "key_points": [
+                "die probability"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Can probability be negative?",
+            "answer": "No.",
+            "key_points": [
+                "probability value"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is meant by an event?",
+            "answer": "A collection of outcomes of an experiment.",
+            "key_points": [
+                "event"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the probability of getting 7 on a die?",
+            "answer": "0",
+            "key_points": [
+                "impossible event"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the complement of an event?",
+            "answer": "The event that the given event does not occur.",
+            "key_points": [
+                "complement"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is P(not E) equal to?",
+            "answer": "1 − P(E)",
+            "key_points": [
+                "complement rule"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the probability of getting tail in a fair coin toss?",
+            "answer": "1/2",
+            "key_points": [
+                "coin probability"
+            ],
+            "source_section": "14.1"
+        }
+    ]
+}

@@ -1,0 +1,399 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 6: Population",
+    "generated_at": "2026-03-08T22:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the role of population in the development of resources.",
+            "answer": "Population plays a key role in developing resources. People discover, use and manage resources through technology and skills.",
+            "answer_outline": [
+                "People as resource developers",
+                "Use of technology",
+                "Resource management"
+            ],
+            "key_concepts": [
+                "population and resources"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the importance of census in a country.",
+            "answer": "Census provides accurate data about population size, distribution and characteristics. Governments use it for development planning.",
+            "answer_outline": [
+                "Population data collection",
+                "Planning and development",
+                "Demographic information"
+            ],
+            "key_concepts": [
+                "census"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the main features of India's population size.",
+            "answer": "India has a very large population of over 1.21 billion people according to the 2011 Census and it accounts for more than 17% of the world's population.",
+            "answer_outline": [
+                "Large population",
+                "Share of world population",
+                "Population growth"
+            ],
+            "key_concepts": [
+                "population size"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of population distribution with examples.",
+            "answer": "Population distribution refers to how people are spread across regions. Northern Plains are densely populated while mountainous areas are sparsely populated.",
+            "answer_outline": [
+                "Meaning of distribution",
+                "Dense population regions",
+                "Sparse population regions"
+            ],
+            "key_concepts": [
+                "population distribution"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain why population density varies across India.",
+            "answer": "Population density varies due to differences in terrain, climate, soil fertility, and economic opportunities.",
+            "answer_outline": [
+                "Terrain",
+                "Climate",
+                "Economic activities"
+            ],
+            "key_concepts": [
+                "population density variation"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the significance of population density.",
+            "answer": "Population density helps understand how crowded a region is and how resources and services should be distributed.",
+            "answer_outline": [
+                "Measure of crowding",
+                "Planning importance",
+                "Resource distribution"
+            ],
+            "key_concepts": [
+                "population density"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the meaning and measurement of population growth.",
+            "answer": "Population growth refers to the increase in population over time and is measured through absolute increase and growth rate.",
+            "answer_outline": [
+                "Population increase",
+                "Absolute increase",
+                "Growth rate"
+            ],
+            "key_concepts": [
+                "population growth"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the concept of annual growth rate of population.",
+            "answer": "Annual growth rate shows the percentage increase in population each year.",
+            "answer_outline": [
+                "Percentage increase",
+                "Annual measurement"
+            ],
+            "key_concepts": [
+                "growth rate"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why India's population increased rapidly after 1951.",
+            "answer": "India's population increased due to high birth rates and declining death rates resulting from better healthcare.",
+            "answer_outline": [
+                "High birth rate",
+                "Decline in death rate",
+                "Improved healthcare"
+            ],
+            "key_concepts": [
+                "population increase"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the three main processes of population change.",
+            "answer": "Population change occurs through birth rate, death rate and migration.",
+            "answer_outline": [
+                "Birth rate",
+                "Death rate",
+                "Migration"
+            ],
+            "key_concepts": [
+                "population change"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the impact of birth rate on population growth.",
+            "answer": "High birth rate increases population size and contributes to rapid population growth.",
+            "answer_outline": [
+                "Birth rate definition",
+                "Impact on population size"
+            ],
+            "key_concepts": [
+                "birth rate"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the impact of death rate on population growth.",
+            "answer": "A decline in death rate increases population because fewer people die each year.",
+            "answer_outline": [
+                "Death rate definition",
+                "Declining death rate"
+            ],
+            "key_concepts": [
+                "death rate"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain migration and its types.",
+            "answer": "Migration is the movement of people from one place to another. It can be internal or international migration.",
+            "answer_outline": [
+                "Definition",
+                "Internal migration",
+                "International migration"
+            ],
+            "key_concepts": [
+                "migration"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain rural to urban migration with reasons.",
+            "answer": "Rural to urban migration occurs due to better employment opportunities, education and living conditions in cities.",
+            "answer_outline": [
+                "Village to city movement",
+                "Employment opportunities",
+                "Better facilities"
+            ],
+            "key_concepts": [
+                "urban migration"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain push factors of migration with examples.",
+            "answer": "Push factors include poverty, unemployment and lack of facilities in rural areas.",
+            "answer_outline": [
+                "Poverty",
+                "Unemployment",
+                "Lack of services"
+            ],
+            "key_concepts": [
+                "push factors"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain pull factors of migration with examples.",
+            "answer": "Pull factors include better jobs, education and healthcare facilities in urban areas.",
+            "answer_outline": [
+                "Employment",
+                "Education",
+                "Healthcare"
+            ],
+            "key_concepts": [
+                "pull factors"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the growth of urban population in India.",
+            "answer": "Urban population in India has increased due to migration and better economic opportunities in cities.",
+            "answer_outline": [
+                "Migration",
+                "Urban employment",
+                "Urban development"
+            ],
+            "key_concepts": [
+                "urban population"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the concept of million-plus cities.",
+            "answer": "Million-plus cities are cities with population exceeding one million people.",
+            "answer_outline": [
+                "Definition",
+                "Urban growth indicator"
+            ],
+            "key_concepts": [
+                "million plus cities"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the concept of adolescent population.",
+            "answer": "Adolescent population refers to people in the age group of 10–19 years.",
+            "answer_outline": [
+                "Age group definition",
+                "Population segment"
+            ],
+            "key_concepts": [
+                "adolescents"
+            ],
+            "marks": 4,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the importance of adolescent population in development.",
+            "answer": "Adolescents are important because they form the future workforce and contribute to economic development.",
+            "answer_outline": [
+                "Future workforce",
+                "Economic contribution"
+            ],
+            "key_concepts": [
+                "adolescent importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain health challenges faced by adolescents in India.",
+            "answer": "Adolescents often suffer from poor nutrition and anaemia due to lack of balanced diet.",
+            "answer_outline": [
+                "Poor nutrition",
+                "Anaemia"
+            ],
+            "key_concepts": [
+                "adolescent health"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of awareness among adolescent girls.",
+            "answer": "Awareness helps improve health, education and life opportunities for adolescent girls.",
+            "answer_outline": [
+                "Health awareness",
+                "Education",
+                "Empowerment"
+            ],
+            "key_concepts": [
+                "awareness"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the objectives of the Family Planning Programme.",
+            "answer": "The programme promotes responsible parenthood and helps control population growth.",
+            "answer_outline": [
+                "Family welfare",
+                "Population control"
+            ],
+            "key_concepts": [
+                "family planning"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the objectives of National Population Policy 2000.",
+            "answer": "The policy aims to improve healthcare, education and control population growth.",
+            "answer_outline": [
+                "Health",
+                "Education",
+                "Population control"
+            ],
+            "key_concepts": [
+                "NPP 2000"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of population planning.",
+            "answer": "Population planning helps balance population growth with available resources and ensures sustainable development.",
+            "answer_outline": [
+                "Resource balance",
+                "Sustainable development"
+            ],
+            "key_concepts": [
+                "population planning"
+            ],
+            "marks": 5,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2"
+        }
+    ]
+}

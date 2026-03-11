@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Health – The Ultimate Treasure",
+  "generated_at": "2026-03-05T18:10:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is health?",
+      "answer": "Health is a state of complete physical, mental, and social well-being.",
+      "key_points": ["health definition"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Name the three components of health.",
+      "answer": "Physical, mental, and social well-being.",
+      "key_points": ["components of health"],
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a balanced diet?",
+      "answer": "A diet that contains all essential nutrients in proper amounts.",
+      "key_points": ["balanced diet"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a disease?",
+      "answer": "A condition that disrupts normal body functioning.",
+      "key_points": ["disease"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 5,
+      "question": "What are symptoms?",
+      "answer": "Changes in the body felt by the patient.",
+      "key_points": ["symptoms"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 6,
+      "question": "What are signs of disease?",
+      "answer": "Observable changes detected by doctors.",
+      "key_points": ["signs"],
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "What are pathogens?",
+      "answer": "Microorganisms that cause diseases.",
+      "key_points": ["pathogens"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "Name one type of pathogen.",
+      "answer": "Bacteria.",
+      "key_points": ["pathogens types"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What are communicable diseases?",
+      "answer": "Diseases that spread from one person to another.",
+      "key_points": ["communicable diseases"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 10,
+      "question": "Give one example of a communicable disease.",
+      "answer": "Malaria.",
+      "key_points": ["communicable disease example"],
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 11,
+      "question": "What are non-communicable diseases?",
+      "answer": "Diseases that do not spread from person to person.",
+      "key_points": ["non communicable diseases"],
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Give one example of a non-communicable disease.",
+      "answer": "Diabetes.",
+      "key_points": ["non communicable example"],
+      "source_section": "Section 3.4.2"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a vector?",
+      "answer": "An organism that carries and spreads pathogens.",
+      "key_points": ["vector"],
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Give one example of a vector.",
+      "answer": "Mosquito.",
+      "key_points": ["vector example"],
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is immunity?",
+      "answer": "The body's ability to fight infections.",
+      "key_points": ["immunity"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 16,
+      "question": "What is vaccination?",
+      "answer": "The process of giving vaccines to protect against diseases.",
+      "key_points": ["vaccination"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Who discovered the smallpox vaccine?",
+      "answer": "Edward Jenner.",
+      "key_points": ["vaccination history"],
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 18,
+      "question": "What are antibiotics?",
+      "answer": "Medicines that kill or stop the growth of bacteria.",
+      "key_points": ["antibiotics"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Who discovered penicillin?",
+      "answer": "Alexander Fleming.",
+      "key_points": ["antibiotics discovery"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Can antibiotics cure viral infections?",
+      "answer": "No.",
+      "key_points": ["antibiotics limitation"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 21,
+      "question": "What is antibiotic resistance?",
+      "answer": "When bacteria stop responding to antibiotics.",
+      "key_points": ["antibiotic resistance"],
+      "source_section": "Section 3.5.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Name one mosquito-borne disease.",
+      "answer": "Dengue.",
+      "key_points": ["vector borne diseases"],
+      "source_section": "Section 3.4.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is clean water important for health?",
+      "answer": "It prevents waterborne diseases.",
+      "key_points": ["clean water"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Name one healthy habit.",
+      "answer": "Regular exercise.",
+      "key_points": ["healthy lifestyle"],
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 25,
+      "question": "How can communicable diseases be prevented?",
+      "answer": "Through hygiene and vaccination.",
+      "key_points": ["disease prevention"],
+      "source_section": "Section 3.5"
+    }
+  ]
+}

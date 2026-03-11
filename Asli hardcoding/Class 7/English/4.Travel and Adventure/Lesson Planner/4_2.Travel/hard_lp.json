@@ -1,0 +1,139 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "Travel",
+  "lesson_level": "Hard",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze the story in detail",
+    "Interpret themes such as adventure, curiosity, and teamwork",
+    "Examine character motivations and decisions",
+    "Develop critical thinking and creative writing skills",
+    "Enhance advanced vocabulary and sentence construction",
+    "Understand cause-effect relationships in the story"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction and Predictive Reading",
+      "topics_covered": [
+        "Overview of the story",
+        "Characters and setting",
+        "Prediction based on title and illustrations"
+      ],
+      "teaching_strategy": [
+        "Class discussion on adventure and exploration",
+        "Prediction exercises"
+      ],
+      "student_activities": [
+        "Analyze the title and illustrations to predict the story",
+        "Discuss potential challenges and outcomes"
+      ],
+      "assessment": ["Oral discussion", "Prediction accuracy"]
+    },
+    {
+      "period": 2,
+      "title": "Character Analysis",
+      "topics_covered": [
+        "Traits and motivations of narrator and companions",
+        "Decision-making under challenges",
+        "Behavioral analysis in problem situations"
+      ],
+      "teaching_strategy": [
+        "Guided reading with teacher prompts"
+      ],
+      "student_activities": [
+        "List character traits with textual evidence",
+        "Discuss influence of traits on journey outcomes"
+      ],
+      "assessment": ["Written analysis", "Oral discussion"]
+    },
+    {
+      "period": 3,
+      "title": "Journey Sequencing and Cause-Effect Mapping",
+      "topics_covered": [
+        "Sequence of events",
+        "Challenges and their consequences",
+        "Analysis of decision-making"
+      ],
+      "teaching_strategy": [
+        "Cause-effect diagram creation",
+        "Class discussion"
+      ],
+      "student_activities": [
+        "Draw cause-effect diagrams for key events",
+        "Explain how choices affected outcomes"
+      ],
+      "assessment": ["Diagram accuracy", "Oral explanation"]
+    },
+    {
+      "period": 4,
+      "title": "Problem Solving and Critical Thinking",
+      "topics_covered": [
+        "Difficult situations in travel",
+        "Teamwork and planning",
+        "Evaluating alternative solutions"
+      ],
+      "teaching_strategy": [
+        "Role-play scenarios",
+        "Discussion on critical thinking"
+      ],
+      "student_activities": [
+        "Role-play challenging travel scenarios",
+        "Propose alternative solutions and justify them"
+      ],
+      "assessment": ["Role-play performance", "Analytical responses"]
+    },
+    {
+      "period": 5,
+      "title": "Descriptive and Creative Writing",
+      "topics_covered": [
+        "Advanced vocabulary usage",
+        "Descriptive passages",
+        "Creative alternate endings"
+      ],
+      "teaching_strategy": [
+        "Guided writing exercises",
+        "Teacher explains figurative language usage"
+      ],
+      "student_activities": [
+        "Write descriptive passages about the journey",
+        "Create an alternate ending to the story"
+      ],
+      "assessment": ["Writing clarity and creativity", "Vocabulary usage"]
+    },
+    {
+      "period": 6,
+      "title": "Reflection and Analysis",
+      "topics_covered": [
+        "Themes and morals of the story",
+        "Critical thinking and discussion",
+        "Personal reflections on travel"
+      ],
+      "teaching_strategy": [
+        "Class discussion and analytical writing"
+      ],
+      "student_activities": [
+        "Write a paragraph analyzing the theme or moral",
+        "Present personal travel lessons or reflections"
+      ],
+      "assessment": ["Analytical depth", "Presentation clarity"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Whiteboard/Blackboard",
+    "Markers/Chalk",
+    "Travel map charts",
+    "Printed vocabulary lists and exercises"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Reading comprehension",
+    "Role-play",
+    "Creative and analytical writing",
+    "Vocabulary exercises and quizzes"
+  ],
+  "teacher_tip": "Encourage students to analyze the story in depth, focusing on cause-effect relationships, decision-making, and alternative solutions. Let them practice descriptive and creative writing using advanced vocabulary."
+}

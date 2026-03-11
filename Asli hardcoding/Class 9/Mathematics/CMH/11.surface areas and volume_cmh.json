@@ -1,0 +1,127 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 11: Surface Areas and Volumes",
+    "generated_at": "2026-03-05T18:35:00",
+    "concepts": [
+        {
+            "concept_name": "Surface Area of a Cuboid and Cube",
+            "difficulty": "easy",
+            "lesson": "The total surface area (TSA) of a cuboid = 2(lb + bh + hl), where l = length, b = breadth, h = height. For a cube with side a, TSA = 6a². These formulas help calculate the total area that covers the solid.",
+            "real_example": "Cuboid with l=5 cm, b=3 cm, h=2 cm: TSA = 2(5×3 + 3×2 + 2×5) = 62 cm².",
+            "key_points": [
+                "Cuboid TSA = 2(lb + bh + hl)",
+                "Cube TSA = 6a²",
+                "Used to find total covering area"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "concept_name": "Lateral Surface Area of Cuboid and Cube",
+            "difficulty": "medium",
+            "lesson": "The lateral surface area (LSA) is the sum of areas of vertical faces only. For cuboid LSA = 2h(l+b), and for cube LSA = 4a². Useful in problems where only side walls are considered.",
+            "real_example": "Cube with side 4 cm: LSA = 4×4² = 64 cm².",
+            "key_points": [
+                "Cuboid LSA = 2h(l+b)",
+                "Cube LSA = 4a²",
+                "Excludes top and bottom faces"
+            ],
+            "source_section": "Section 11.2"
+        },
+        {
+            "concept_name": "Surface Area of Cylinder",
+            "difficulty": "medium",
+            "lesson": "Cylinder has radius r and height h. LSA = 2πrh, TSA = 2πr(h+r). These formulas are used for curved surfaces and total covering of cylindrical objects.",
+            "real_example": "Cylinder r=3 cm, h=7 cm: LSA = 2π×3×7 = 132 cm², TSA = 2π×3×(7+3)=188.4 cm².",
+            "key_points": [
+                "LSA = 2πrh",
+                "TSA = 2πr(h+r)",
+                "Useful for pipes, cans"
+            ],
+            "source_section": "Section 11.3"
+        },
+        {
+            "concept_name": "Surface Area of Cone",
+            "difficulty": "medium",
+            "lesson": "Cone with base radius r and slant height l has LSA = πrl, TSA = πr(l+r). Understanding slant height is essential for correct calculation of areas.",
+            "real_example": "Cone r=4 cm, l=5 cm: LSA = π×4×5 = 62.8 cm², TSA = π×4×(5+4)=113.1 cm².",
+            "key_points": [
+                "LSA = πrl",
+                "TSA = πr(l+r)",
+                "Slant height required for curved surface"
+            ],
+            "source_section": "Section 11.4"
+        },
+        {
+            "concept_name": "Surface Area of Sphere and Hemisphere",
+            "difficulty": "medium",
+            "lesson": "Sphere with radius r: TSA = 4πr². Hemisphere: curved surface area = 2πr², TSA = 3πr². These formulas are widely applied in engineering, balls, domes, and round objects.",
+            "real_example": "Sphere r=6 cm: TSA = 4π×6² = 452.4 cm².",
+            "key_points": [
+                "Sphere TSA = 4πr²",
+                "Hemisphere curved = 2πr², TSA = 3πr²",
+                "Used in round objects"
+            ],
+            "source_section": "Section 11.5"
+        },
+        {
+            "concept_name": "Volume of Cuboid and Cube",
+            "difficulty": "easy",
+            "lesson": "Volume of cuboid = l × b × h, volume of cube = a³. Volume measures the capacity or space occupied by the solid.",
+            "real_example": "Cuboid l=5 cm, b=3 cm, h=2 cm: V = 5×3×2 = 30 cm³.",
+            "key_points": [
+                "Cuboid V = l×b×h",
+                "Cube V = a³",
+                "Represents space occupied"
+            ],
+            "source_section": "Section 11.6"
+        },
+        {
+            "concept_name": "Volume of Cylinder",
+            "difficulty": "medium",
+            "lesson": "Volume of cylinder = πr²h. Height must be perpendicular to the base. Applies to pipes, tanks, and cylindrical solids.",
+            "real_example": "Cylinder r=3 cm, h=7 cm: V = π×3²×7 = 197.9 cm³.",
+            "key_points": [
+                "V = πr²h",
+                "Height perpendicular to base",
+                "Used in real-life cylinders"
+            ],
+            "source_section": "Section 11.7"
+        },
+        {
+            "concept_name": "Volume of Cone",
+            "difficulty": "medium",
+            "lesson": "Volume of cone = 1/3 × πr²h. h is perpendicular height. This formula is applied to ice-cream cones, funnels, and geometric problems.",
+            "real_example": "Cone r=4 cm, h=9 cm: V = 1/3 × π×4²×9 = 150.8 cm³.",
+            "key_points": [
+                "V = 1/3 × πr²h",
+                "h is perpendicular height",
+                "Applies to real-life cones"
+            ],
+            "source_section": "Section 11.8"
+        },
+        {
+            "concept_name": "Volume of Sphere and Hemisphere",
+            "difficulty": "medium",
+            "lesson": "Sphere volume = 4/3 × πr³, hemisphere volume = 2/3 × πr³. These are used in calculations for balls, domes, and round containers.",
+            "real_example": "Sphere r=6 cm: V = 4/3 × π×6³ = 904.32 cm³.",
+            "key_points": [
+                "Sphere V = 4/3 × πr³",
+                "Hemisphere V = 2/3 × πr³",
+                "Used in round solids"
+            ],
+            "source_section": "Section 11.9"
+        },
+        {
+            "concept_name": "Combined Solids and Applications",
+            "difficulty": "hard",
+            "lesson": "Many problems involve combination of solids like cylinder with hemisphere on top, frustum of cone, or hollow solids. Surface area and volume formulas are combined accordingly. Understanding these is crucial for real-life applications like tanks, containers, and engineering designs.",
+            "real_example": "A hemispherical dome radius 7 m on top of a cylindrical tank height 10 m and same radius: TSA = 2πr(h+r) + 2πr² = 2π×7(10+7)+2π×7² = 2π×7×17 + 98π = 238π + 98π = 336π ≈ 1054.1 m².",
+            "key_points": [
+                "Combine formulas of individual solids",
+                "Apply TSA and V accordingly",
+                "Used in engineering and practical problems"
+            ],
+            "source_section": "Section 11.10"
+        }
+    ]
+}

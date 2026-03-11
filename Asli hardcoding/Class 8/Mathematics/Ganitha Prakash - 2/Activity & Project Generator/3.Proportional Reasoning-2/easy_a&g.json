@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Proportional Reasoning – 2",
+  "difficulty": "Easy",
+  "source_pdf": "hegp203.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Ratio Comparison",
+      "objective": "Understand proportional ratios using cross multiplication",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write two ratios such as 6:3 and 4:2",
+        "Multiply across the ratios",
+        "Check if the products are equal"
+      ],
+      "learning_outcome": "Understands proportional relationships",
+      "evaluation": "Correct verification of ratios (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Map Distance Activity",
+      "objective": "Learn map scale and representative fraction",
+      "materials": ["Atlas or map", "Ruler", "Notebook"],
+      "steps": [
+        "Find the scale written on the map",
+        "Measure distance between two cities with a ruler",
+        "Calculate the real distance using the scale"
+      ],
+      "learning_outcome": "Understands map ratios",
+      "evaluation": "Correct distance calculation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Spice Mix Ratio",
+      "objective": "Understand ratios with more than two terms",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write ingredients ratio such as 8:4:2:1",
+        "Reduce the ratio by dividing by 2",
+        "Write the simplified ratio"
+      ],
+      "learning_outcome": "Learns multi-term ratios",
+      "evaluation": "Correct simplified ratio (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Paint Mixing",
+      "objective": "Understand proportional mixing",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Take ratio Red:Blue:White = 2:3:5",
+        "Assume white paint is 10 litres",
+        "Find red and blue quantities"
+      ],
+      "learning_outcome": "Applies ratio concept in real situations",
+      "evaluation": "Correct calculation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Divide a Quantity",
+      "objective": "Learn dividing a number in a given ratio",
+      "materials": ["Notebook"],
+      "steps": [
+        "Take a number such as 50",
+        "Divide it in the ratio 2:3:5",
+        "Calculate each part"
+      ],
+      "learning_outcome": "Understands division of quantities in ratios",
+      "evaluation": "Correct answers (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Triangle Angle Ratio",
+      "objective": "Understand angles of a triangle in ratio",
+      "materials": ["Notebook", "Protractor"],
+      "steps": [
+        "Take ratio 1:3:5",
+        "Find angles using total 180°",
+        "Draw the triangle"
+      ],
+      "learning_outcome": "Connects ratios with geometry",
+      "evaluation": "Correct triangle construction (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Pie Chart Drawing",
+      "objective": "Understand representation of data using pie charts",
+      "materials": ["Compass", "Protractor", "Chart paper"],
+      "steps": [
+        "Collect data of favourite subjects",
+        "Convert the numbers into angles",
+        "Draw and colour a pie chart"
+      ],
+      "learning_outcome": "Understands data representation",
+      "evaluation": "Correct pie chart (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Speed and Time Table",
+      "objective": "Understand inverse proportion",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write speeds such as 30 km/h and 60 km/h",
+        "Find the time taken for the same distance",
+        "Observe the inverse relationship"
+      ],
+      "learning_outcome": "Identifies inverse proportionality",
+      "evaluation": "Correct table values (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Workers and Days",
+      "objective": "Apply inverse proportion in real life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Assume 20 workers complete work in 4 days",
+        "Calculate days needed if workers reduce to 10",
+        "Explain the relationship"
+      ],
+      "learning_outcome": "Applies inverse proportion concept",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Pump Filling Tank",
+      "objective": "Understand work and time relation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write problem with 2 pumps filling tank in 18 hours",
+        "Find time if pumps increase to 4",
+        "Explain the change in time"
+      ],
+      "learning_outcome": "Understands inverse proportion in work problems",
+      "evaluation": "Correct solution (10 marks)"
+    }
+  ]
+}

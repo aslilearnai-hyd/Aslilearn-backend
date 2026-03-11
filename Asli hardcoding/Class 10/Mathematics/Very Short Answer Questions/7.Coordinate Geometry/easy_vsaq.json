@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 7: Coordinate Geometry",
+    "generated_at": "2026-03-01T19:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the x-coordinate of a point called?",
+            "answer": "The x-coordinate of a point is called its abscissa.",
+            "key_points": [
+                "abscissa"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the y-coordinate of a point called?",
+            "answer": "The y-coordinate of a point is called its ordinate.",
+            "key_points": [
+                "ordinate"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are the coordinates of a point on the x-axis?",
+            "answer": "The coordinates are of the form (x, 0).",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What are the coordinates of a point on the y-axis?",
+            "answer": "The coordinates are of the form (0, y).",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the coordinate of the origin?",
+            "answer": "The coordinate of the origin is (0, 0).",
+            "key_points": [
+                "origin"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What theorem is used to derive the distance formula?",
+            "answer": "The Pythagoras theorem is used.",
+            "key_points": [
+                "distance formula"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the distance of a point from the origin?",
+            "answer": "The distance is √(x² + y²).",
+            "key_points": [
+                "distance from origin"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the distance between the points (x₁, y₁) and (x₂, y₂)?",
+            "answer": "The distance is √[(x₂ − x₁)² + (y₂ − y₁)²].",
+            "key_points": [
+                "distance formula"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Can distance between two points be negative?",
+            "answer": "No, distance is always non-negative.",
+            "key_points": [
+                "distance"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What shape is formed by the graph of ax + by + c = 0?",
+            "answer": "It represents a straight line.",
+            "key_points": [
+                "linear equation"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is coordinate geometry also called?",
+            "answer": "It is also called analytical geometry.",
+            "key_points": [
+                "coordinate geometry"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What does a pair of perpendicular axes form?",
+            "answer": "They form the coordinate plane.",
+            "key_points": [
+                "coordinate plane"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the formula for the midpoint of a line segment?",
+            "answer": "((x₁ + x₂)/2, (y₁ + y₂)/2).",
+            "key_points": [
+                "midpoint formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "In what ratio does the midpoint divide a line segment?",
+            "answer": "The midpoint divides the line segment in the ratio 1 : 1.",
+            "key_points": [
+                "midpoint"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the section formula used for?",
+            "answer": "It is used to find the coordinates of a point dividing a line segment.",
+            "key_points": [
+                "section formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What type of division does the section formula in this chapter deal with?",
+            "answer": "It deals with internal division.",
+            "key_points": [
+                "internal division"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What are the coordinates of a point on the y-axis?",
+            "answer": "The x-coordinate is zero.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Which axis represents the x-coordinate?",
+            "answer": "The x-axis represents the x-coordinate.",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which axis represents the y-coordinate?",
+            "answer": "The y-axis represents the y-coordinate.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the distance between the same point?",
+            "answer": "The distance is zero.",
+            "key_points": [
+                "distance"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Which triangle theorem helps identify right triangles using coordinates?",
+            "answer": "The Pythagoras theorem.",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the shape formed when three non-collinear points are joined?",
+            "answer": "They form a triangle.",
+            "key_points": [
+                "triangle"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What does it mean if three points are collinear?",
+            "answer": "They lie on the same straight line.",
+            "key_points": [
+                "collinear points"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which formula helps check collinearity of points?",
+            "answer": "The distance formula.",
+            "key_points": [
+                "collinearity"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the coordinate geometry chapter number in NCERT Class 10?",
+            "answer": "It is Chapter 7.",
+            "key_points": [
+                "chapter number"
+            ],
+            "source_section": "Chapter Title"
+        }
+    ]
+}

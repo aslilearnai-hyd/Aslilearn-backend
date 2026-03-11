@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Electricity: Circuits and their Components",
+    "difficulty": "Medium",
+    "source_pdf": "jess703.pdf",
+    "short_notes": {
+        "key_points": [
+            "Electric current flows only when a circuit forms a complete closed path",
+            "Cells provide the electrical energy needed for the flow of current",
+            "Circuit components include cells, bulbs, switches, wires and resistive elements",
+            "Current flows from the positive terminal of a cell to the negative terminal through the circuit",
+            "Different materials act as conductors or insulators depending on their ability to allow current flow"
+        ],
+        "examples": [
+            "Closed circuit example: Cell → switch ON → bulb glows",
+            "Open circuit example: Switch OFF → bulb does not glow",
+            "Series connection: Two bulbs connected one after another in the same path",
+            "Testing materials: Using a simple circuit to check whether an object conducts electricity"
+        ],
+        "formulas": [
+            "Electric current → Flow of electric charges through a conductor",
+            "Circuit condition → Current flows only when circuit is closed",
+            "Conductor → Material that allows current to pass easily"
+        ],
+        "exam_tips": [
+            "Understand how current flows through a complete circuit",
+            "Learn the function of each component in a circuit",
+            "Practice identifying open and closed circuits in diagrams",
+            "Remember common examples of conductors and insulators"
+        ]
+    }
+}

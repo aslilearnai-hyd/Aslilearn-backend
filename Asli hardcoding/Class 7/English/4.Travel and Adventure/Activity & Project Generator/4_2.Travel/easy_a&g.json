@@ -1,0 +1,137 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "Travel",
+  "difficulty": "Easy",
+  "source_pdf": "honeycomb_ch5.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Identifying the Traveller’s Traits",
+      "objective": "Recognize simple personality traits of the traveller",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the chapter 'Travel' carefully",
+        "Identify basic traits like curious, observant, or adventurous",
+        "Write the traits in your notebook",
+        "Give one example from the story for each trait"
+      ],
+      "learning_outcome": "Students understand simple character traits",
+      "evaluation": "Correct identification of traits with examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Listing Journey Events",
+      "objective": "Understand the sequence of events in the traveller’s journey",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "List the main events of the journey in order",
+        "Write one sentence about each event",
+        "Share your list with a partner"
+      ],
+      "learning_outcome": "Students learn sequencing and comprehension",
+      "evaluation": "Correct order and clarity of events (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Understanding the Main Message",
+      "objective": "Identify the simple theme or lesson of the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss in class what the story teaches about travel or exploration",
+        "Write a short paragraph summarising the main message"
+      ],
+      "learning_outcome": "Students grasp the basic theme of the story",
+      "evaluation": "Correct identification of the lesson (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Descriptive Writing Practice",
+      "objective": "Write simple descriptions based on the journey",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a scene from the story",
+        "Write 3–4 sentences describing what the traveller sees or hears",
+        "Share your sentences with classmates"
+      ],
+      "learning_outcome": "Students improve basic descriptive writing",
+      "evaluation": "Clarity and completeness of description (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Vocabulary Practice",
+      "objective": "Learn and use simple new words from the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Find 5 new words in the chapter",
+        "Write the meaning of each word",
+        "Use each word in a simple sentence"
+      ],
+      "learning_outcome": "Students build vocabulary in context",
+      "evaluation": "Correct meanings and sentence usage (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Short Dialogue Writing",
+      "objective": "Practice simple dialogue writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Pick a short conversation in the story",
+        "Rewrite it as a dialogue in your notebook",
+        "Include who is speaking"
+      ],
+      "learning_outcome": "Students understand basic dialogue writing",
+      "evaluation": "Clarity and correctness of dialogue (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Travel Diary Entry",
+      "objective": "Write a simple diary entry",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are the traveller for a day",
+        "Write 4–5 sentences about your day",
+        "Include what you saw and how you felt"
+      ],
+      "learning_outcome": "Students practice simple narrative writing",
+      "evaluation": "Relevance and clarity of diary entry (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Sentence Type Practice",
+      "objective": "Identify and write simple sentence types",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Find 3 declarative, 2 interrogative, and 1 exclamatory sentence from the story",
+        "Write them in your notebook"
+      ],
+      "learning_outcome": "Students recognise basic sentence types",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Group Discussion on Travel",
+      "objective": "Share ideas about travel experiences",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Discuss in pairs why travel can be exciting",
+        "Share one interesting point from your discussion with the class"
+      ],
+      "learning_outcome": "Students practice speaking and listening skills",
+      "evaluation": "Participation and relevance of ideas (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Ending Activity",
+      "objective": "Write a simple alternate ending",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about how the story could end differently",
+        "Write 3–4 sentences describing your ending",
+        "Share your ending with the class"
+      ],
+      "learning_outcome": "Students practise simple creative writing",
+      "evaluation": "Clarity and creativity of ending (10 marks)"
+    }
+  ]
+}

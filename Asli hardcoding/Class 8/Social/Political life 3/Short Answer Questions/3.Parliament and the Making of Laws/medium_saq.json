@@ -1,0 +1,209 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Parliament and the Making of Laws",
+  "generated_at": "2026-03-08T00:45:00",
+  "difficulty": "medium",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why is Parliament considered an important institution in a democracy?",
+      "answer": "Parliament represents the people, makes laws and holds the government accountable.",
+      "key_concepts": ["parliament", "democracy"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "How are members of the Lok Sabha elected?",
+      "answer": "Members of the Lok Sabha are elected directly by the people through general elections.",
+      "key_concepts": ["lok sabha", "elections"],
+      "marks": 2,
+      "source_section": "Lok Sabha"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the role of Parliament in law making?",
+      "answer": "Parliament discusses, debates and passes bills which become laws.",
+      "key_concepts": ["law making"],
+      "marks": 2,
+      "source_section": "Making of Laws"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the main difference between Lok Sabha and Rajya Sabha?",
+      "answer": "Lok Sabha represents the people and is directly elected, while Rajya Sabha represents the states.",
+      "key_concepts": ["lok sabha", "rajya sabha"],
+      "marks": 2,
+      "source_section": "Structure of Parliament"
+    },
+    {
+      "question_number": 5,
+      "question": "Why are debates important in Parliament?",
+      "answer": "Debates help discuss issues, examine policies and make informed decisions.",
+      "key_concepts": ["debates"],
+      "marks": 2,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the role of the opposition in Parliament?",
+      "answer": "The opposition questions the government and ensures accountability.",
+      "key_concepts": ["opposition"],
+      "marks": 2,
+      "source_section": "Parliamentary Democracy"
+    },
+    {
+      "question_number": 7,
+      "question": "What is meant by a constituency?",
+      "answer": "A constituency is an area from which voters elect their representative.",
+      "key_concepts": ["constituency"],
+      "marks": 2,
+      "source_section": "Representation"
+    },
+    {
+      "question_number": 8,
+      "question": "Why do citizens elect Members of Parliament?",
+      "answer": "Citizens elect Members of Parliament to represent their interests and make laws on their behalf.",
+      "key_concepts": ["representation"],
+      "marks": 2,
+      "source_section": "Democracy"
+    },
+    {
+      "question_number": 9,
+      "question": "Who presides over the Lok Sabha and what is their role?",
+      "answer": "The Speaker presides over the Lok Sabha and ensures that debates are conducted in an orderly manner.",
+      "key_concepts": ["speaker"],
+      "marks": 2,
+      "source_section": "Lok Sabha"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is the Rajya Sabha called the Council of States?",
+      "answer": "It represents the states and union territories of India.",
+      "key_concepts": ["rajya sabha"],
+      "marks": 2,
+      "source_section": "Rajya Sabha"
+    },
+    {
+      "question_number": 11,
+      "question": "What is a bill in Parliament?",
+      "answer": "A bill is a proposal for a new law or change in an existing law.",
+      "key_concepts": ["bill"],
+      "marks": 2,
+      "source_section": "Making of Laws"
+    },
+    {
+      "question_number": 12,
+      "question": "What happens to a bill after it is passed by Parliament?",
+      "answer": "After approval by Parliament and the President, the bill becomes a law.",
+      "key_concepts": ["law making"],
+      "marks": 2,
+      "source_section": "Law Making Process"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is the Prime Minister important in Parliament?",
+      "answer": "The Prime Minister leads the government and is responsible to Parliament.",
+      "key_concepts": ["prime minister"],
+      "marks": 2,
+      "source_section": "Government"
+    },
+    {
+      "question_number": 14,
+      "question": "How does Parliament control the government?",
+      "answer": "Parliament questions ministers, debates policies and holds the government accountable.",
+      "key_concepts": ["government accountability"],
+      "marks": 2,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the importance of question hour in Parliament?",
+      "answer": "During question hour, members ask questions to ministers about government activities.",
+      "key_concepts": ["question hour"],
+      "marks": 2,
+      "source_section": "Parliamentary Procedures"
+    },
+    {
+      "question_number": 16,
+      "question": "Why are committees formed in Parliament?",
+      "answer": "Committees examine issues in detail and help Parliament function effectively.",
+      "key_concepts": ["parliamentary committees"],
+      "marks": 2,
+      "source_section": "Parliamentary Committees"
+    },
+    {
+      "question_number": 17,
+      "question": "How does Parliament represent different groups of people?",
+      "answer": "Through elected representatives from different constituencies and states.",
+      "key_concepts": ["representation"],
+      "marks": 2,
+      "source_section": "Representation"
+    },
+    {
+      "question_number": 18,
+      "question": "Why are laws necessary in a country?",
+      "answer": "Laws maintain order, protect rights and ensure justice in society.",
+      "key_concepts": ["laws"],
+      "marks": 2,
+      "source_section": "Law"
+    },
+    {
+      "question_number": 19,
+      "question": "How does Parliament help in solving national problems?",
+      "answer": "Members discuss issues and propose laws and policies to address them.",
+      "key_concepts": ["debates", "policy making"],
+      "marks": 2,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 20,
+      "question": "What role do Members of Parliament play for their constituencies?",
+      "answer": "They raise issues of their constituencies and represent people's concerns.",
+      "key_concepts": ["members of parliament"],
+      "marks": 2,
+      "source_section": "Representation"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are elections important for Parliament?",
+      "answer": "Elections allow citizens to choose their representatives.",
+      "key_concepts": ["elections"],
+      "marks": 2,
+      "source_section": "Democracy"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the importance of parliamentary debates?",
+      "answer": "Debates allow different opinions to be discussed before decisions are made.",
+      "key_concepts": ["debates"],
+      "marks": 2,
+      "source_section": "Functions"
+    },
+    {
+      "question_number": 23,
+      "question": "How does Parliament reflect democratic values?",
+      "answer": "It allows elected representatives to discuss issues and make decisions for the country.",
+      "key_concepts": ["democracy"],
+      "marks": 2,
+      "source_section": "Democracy"
+    },
+    {
+      "question_number": 24,
+      "question": "What role does the President play in law making?",
+      "answer": "The President approves bills passed by Parliament before they become laws.",
+      "key_concepts": ["president"],
+      "marks": 2,
+      "source_section": "Law Making Process"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is Parliament called the central institution of democracy?",
+      "answer": "Because it represents the people, makes laws and ensures accountability of the government.",
+      "key_concepts": ["parliament", "democracy"],
+      "marks": 2,
+      "source_section": "Conclusion"
+    }
+  ]
+}

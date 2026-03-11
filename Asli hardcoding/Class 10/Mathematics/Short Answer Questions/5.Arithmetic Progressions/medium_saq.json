@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 5: Arithmetic Progressions",
+    "generated_at": "2026-03-01T22:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the 10th term of an AP whose first term is 2 and common difference is 3.",
+            "answer": "The 10th term is 29.",
+            "key_concepts": [
+                "nth term"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the 5th term of the AP 7, 10, 13, …",
+            "answer": "The 5th term is 19.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the common difference of the AP 100, 90, 80, …",
+            "answer": "The common difference is −10.",
+            "key_concepts": [
+                "example"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the nth term of an AP with a = 4 and d = 5.",
+            "answer": "The nth term is 4 + (n − 1)5.",
+            "key_concepts": [
+                "nth term formula"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the 8th term of the AP 1, 4, 7, …?",
+            "answer": "The 8th term is 22.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the first term if a₄ = 14 and d = 3.",
+            "answer": "The first term is 5.",
+            "key_concepts": [
+                "reverse calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What type of AP represents yearly salary increments?",
+            "answer": "An increasing AP represents yearly salary increments.",
+            "key_concepts": [
+                "application"
+            ],
+            "marks": 2,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What type of AP represents depreciation?",
+            "answer": "A decreasing AP represents depreciation.",
+            "key_concepts": [
+                "application"
+            ],
+            "marks": 2,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the common difference if a₆ − a₅ = 4?",
+            "answer": "The common difference is 4.",
+            "key_concepts": [
+                "definition"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the nature of AP if d = 0?",
+            "answer": "It is a constant AP.",
+            "key_concepts": [
+                "constant AP"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the 1st term if a₂ = 9 and d = 2?",
+            "answer": "The first term is 7.",
+            "key_concepts": [
+                "reverse calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the 6th term of the AP 3, 6, 9, …",
+            "answer": "The 6th term is 18.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the common difference of multiples of 7?",
+            "answer": "The common difference is 7.",
+            "key_concepts": [
+                "pattern"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the nth term of the AP 2, 5, 8, …?",
+            "answer": "The nth term is 3n − 1.",
+            "key_concepts": [
+                "general term"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What does aₙ depend on in an AP?",
+            "answer": "aₙ depends on a, d, and n.",
+            "key_concepts": [
+                "variables"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the graph of AP terms against term numbers?",
+            "answer": "It is a straight line.",
+            "key_concepts": [
+                "graph"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Find the 9th term of the AP where a = 2 and d = 3.",
+            "answer": "The 9th term is 26.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What type of AP is 1, 1.5, 2, 2.5, …?",
+            "answer": "It is an increasing AP.",
+            "key_concepts": [
+                "classification"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What happens to AP terms if d is fractional?",
+            "answer": "They increase or decrease uniformly by a fraction.",
+            "key_concepts": [
+                "fractional d"
+            ],
+            "marks": 2,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What does uniform increase mean?",
+            "answer": "It means increase by the same amount each time.",
+            "key_concepts": [
+                "uniform change"
+            ],
+            "marks": 2,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the 7th term of the AP 4, 9, 14, …?",
+            "answer": "The 7th term is 34.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Find d if a₁ = 5 and a₃ = 11.",
+            "answer": "The common difference is 3.",
+            "key_concepts": [
+                "calculation"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the first term of the AP −3, 0, 3, …?",
+            "answer": "The first term is −3.",
+            "key_concepts": [
+                "example"
+            ],
+            "marks": 1,
+            "source_section": "5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What kind of growth is shown by AP?",
+            "answer": "AP shows linear growth.",
+            "key_concepts": [
+                "growth"
+            ],
+            "marks": 2,
+            "source_section": "5.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the nth term used for?",
+            "answer": "To find any required term of an AP.",
+            "key_concepts": [
+                "usage"
+            ],
+            "marks": 2,
+            "source_section": "5.3"
+        }
+    ]
+}

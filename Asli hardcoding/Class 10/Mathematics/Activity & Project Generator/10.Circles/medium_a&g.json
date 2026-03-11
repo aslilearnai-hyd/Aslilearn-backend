@@ -1,0 +1,146 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Medium",
+    "source_pdf": "jemh110.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Tangent Property Proof",
+            "objective": "Understand tangent properties",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw tangent",
+                "Explain property"
+            ],
+            "learning_outcome": "Property understanding",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Radius–Tangent Relation",
+            "objective": "Verify perpendicularity",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw radius",
+                "Check angle"
+            ],
+            "learning_outcome": "Geometric reasoning",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Multiple Tangents",
+            "objective": "Analyse tangents from external point",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Draw tangents",
+                "Compare lengths"
+            ],
+            "learning_outcome": "Tangent properties",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Circle Construction",
+            "objective": "Construct circle with tangent",
+            "materials": [
+                "Compass"
+            ],
+            "steps": [
+                "Draw circle",
+                "Draw tangent"
+            ],
+            "learning_outcome": "Construction skill",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Real-Life Tangents",
+            "objective": "Identify tangents in life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List examples",
+                "Explain"
+            ],
+            "learning_outcome": "Application",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Error Analysis",
+            "objective": "Find construction errors",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse diagram",
+                "Correct errors"
+            ],
+            "learning_outcome": "Critical thinking",
+            "evaluation": "Correct correction (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Concept Comparison",
+            "objective": "Differentiate secant and tangent",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct points (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Diagram Interpretation",
+            "objective": "Interpret circle diagrams",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse diagram",
+                "Answer questions"
+            ],
+            "learning_outcome": "Diagram literacy",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Property Summary",
+            "objective": "Summarise circle properties",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write summary"
+            ],
+            "learning_outcome": "Concept consolidation",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Reflection Note",
+            "objective": "Reflect on circle concepts",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write reflections"
+            ],
+            "learning_outcome": "Deep understanding",
+            "evaluation": "Depth (10 marks)"
+        }
+    ]
+}

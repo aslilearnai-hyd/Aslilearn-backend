@@ -1,0 +1,334 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 1: How, When and Where",
+  "generated_at": "2026-03-06T00:40:00",
+  "total_questions": 25,
+  "difficulty": "medium",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Why do historians study history?",
+      "options": {
+        "A": "To understand how societies changed over time",
+        "B": "To memorize stories only",
+        "C": "To draw pictures",
+        "D": "To avoid learning about the present"
+      },
+      "correct_answer": "A",
+      "explanation": "History helps us understand how societies, cultures and economies have changed over time.",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which term refers to arranging historical events in the order in which they occurred?",
+      "options": {
+        "A": "Chronology",
+        "B": "Colonialism",
+        "C": "Revolution",
+        "D": "Exploration"
+      },
+      "correct_answer": "A",
+      "explanation": "Chronology means arranging events in time order.",
+      "source_section": "How Important are Dates?"
+    },
+    {
+      "question_number": 3,
+      "question": "Why do historians say that dates alone cannot explain history?",
+      "options": {
+        "A": "Dates only show when events happened",
+        "B": "Dates are always incorrect",
+        "C": "Dates are not used in history",
+        "D": "Dates are not important"
+      },
+      "correct_answer": "A",
+      "explanation": "Dates show when events occurred but do not explain causes or consequences.",
+      "source_section": "How Important are Dates?"
+    },
+    {
+      "question_number": 4,
+      "question": "Which historian divided Indian history into three periods based on religion?",
+      "options": {
+        "A": "James Mill",
+        "B": "Karl Marx",
+        "C": "Jawaharlal Nehru",
+        "D": "Romila Thapar"
+      },
+      "correct_answer": "A",
+      "explanation": "James Mill divided Indian history into Hindu, Muslim and British periods.",
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 5,
+      "question": "What was the main problem with James Mill’s classification of Indian history?",
+      "options": {
+        "A": "It focused mainly on religion",
+        "B": "It ignored British rule",
+        "C": "It included too many periods",
+        "D": "It used wrong dates"
+      },
+      "correct_answer": "A",
+      "explanation": "Historians criticise Mill’s classification because it focused mainly on religion.",
+      "source_section": "How do We Periodise?"
+    },
+    {
+      "question_number": 6,
+      "question": "Which system refers to the rule of one country over another?",
+      "options": {
+        "A": "Colonialism",
+        "B": "Democracy",
+        "C": "Republic",
+        "D": "Socialism"
+      },
+      "correct_answer": "A",
+      "explanation": "Colonialism means political and economic control by one country over another.",
+      "source_section": "What is Colonial?"
+    },
+    {
+      "question_number": 7,
+      "question": "Why did the British maintain extensive official records?",
+      "options": {
+        "A": "To manage administration efficiently",
+        "B": "To entertain people",
+        "C": "To decorate offices",
+        "D": "To publish novels"
+      },
+      "correct_answer": "A",
+      "explanation": "Records helped the British manage administration and governance.",
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 8,
+      "question": "Which place preserves important government documents and records?",
+      "options": {
+        "A": "Archives",
+        "B": "Factories",
+        "C": "Hospitals",
+        "D": "Markets"
+      },
+      "correct_answer": "A",
+      "explanation": "Archives are places where historical documents are stored and preserved.",
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is considered a written historical source?",
+      "options": {
+        "A": "Letters",
+        "B": "Coins",
+        "C": "Statues",
+        "D": "Buildings"
+      },
+      "correct_answer": "A",
+      "explanation": "Letters are written documents that provide historical information.",
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 10,
+      "question": "Which historical source helps historians understand geographical boundaries?",
+      "options": {
+        "A": "Maps",
+        "B": "Songs",
+        "C": "Poems",
+        "D": "Coins"
+      },
+      "correct_answer": "A",
+      "explanation": "Maps show locations and boundaries of regions.",
+      "source_section": "Sources"
+    },
+    {
+      "question_number": 11,
+      "question": "Why are newspapers important sources of history?",
+      "options": {
+        "A": "They provide information about events and opinions",
+        "B": "They only provide entertainment",
+        "C": "They show pictures only",
+        "D": "They contain fictional stories"
+      },
+      "correct_answer": "A",
+      "explanation": "Newspapers record daily events and public opinions of the time.",
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 12,
+      "question": "Which type of source provides visual evidence about the past?",
+      "options": {
+        "A": "Photographs",
+        "B": "Songs",
+        "C": "Poems",
+        "D": "Stories"
+      },
+      "correct_answer": "A",
+      "explanation": "Photographs show real images of past events and people.",
+      "source_section": "Sources"
+    },
+    {
+      "question_number": 13,
+      "question": "Why must historians analyse sources critically?",
+      "options": {
+        "A": "Sources may contain bias",
+        "B": "Sources are always incorrect",
+        "C": "Sources are difficult to read",
+        "D": "Sources are too long"
+      },
+      "correct_answer": "A",
+      "explanation": "Sources may reflect the perspective or bias of the writer.",
+      "source_section": "Historical Interpretation"
+    },
+    {
+      "question_number": 14,
+      "question": "Which type of source includes objects such as coins and tools?",
+      "options": {
+        "A": "Material sources",
+        "B": "Written sources",
+        "C": "Oral sources",
+        "D": "Digital sources"
+      },
+      "correct_answer": "A",
+      "explanation": "Material sources include physical objects used in the past.",
+      "source_section": "Sources"
+    },
+    {
+      "question_number": 15,
+      "question": "Why do historians compare different historical sources?",
+      "options": {
+        "A": "To verify accuracy",
+        "B": "To create stories",
+        "C": "To draw pictures",
+        "D": "To memorize facts"
+      },
+      "correct_answer": "A",
+      "explanation": "Comparing sources helps historians confirm facts.",
+      "source_section": "Historical Research"
+    },
+    {
+      "question_number": 16,
+      "question": "Which historical source provides personal experiences of individuals?",
+      "options": {
+        "A": "Diaries",
+        "B": "Coins",
+        "C": "Maps",
+        "D": "Buildings"
+      },
+      "correct_answer": "A",
+      "explanation": "Diaries describe personal experiences and opinions.",
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 17,
+      "question": "What was the main aim of colonial rule?",
+      "options": {
+        "A": "Economic profit and control",
+        "B": "Education only",
+        "C": "Cultural exchange",
+        "D": "Scientific research"
+      },
+      "correct_answer": "A",
+      "explanation": "Colonial powers often ruled other regions for economic and political benefits.",
+      "source_section": "What is Colonial?"
+    },
+    {
+      "question_number": 18,
+      "question": "Which source can show changes in territorial boundaries over time?",
+      "options": {
+        "A": "Historical maps",
+        "B": "Songs",
+        "C": "Poems",
+        "D": "Letters"
+      },
+      "correct_answer": "A",
+      "explanation": "Maps help historians study changes in geographical boundaries.",
+      "source_section": "Sources"
+    },
+    {
+      "question_number": 19,
+      "question": "What does historical evidence help historians do?",
+      "options": {
+        "A": "Reconstruct the past",
+        "B": "Predict the future",
+        "C": "Create fictional stories",
+        "D": "Ignore events"
+      },
+      "correct_answer": "A",
+      "explanation": "Evidence from sources helps historians reconstruct past events.",
+      "source_section": "Historical Evidence"
+    },
+    {
+      "question_number": 20,
+      "question": "Which historical source is most useful for understanding public opinion in the past?",
+      "options": {
+        "A": "Newspapers",
+        "B": "Coins",
+        "C": "Statues",
+        "D": "Maps"
+      },
+      "correct_answer": "A",
+      "explanation": "Newspapers provide information about events and opinions of the time.",
+      "source_section": "How do We Know?"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are archives important for historians?",
+      "options": {
+        "A": "They preserve historical documents",
+        "B": "They display paintings",
+        "C": "They store food",
+        "D": "They organise festivals"
+      },
+      "correct_answer": "A",
+      "explanation": "Archives store and protect historical documents for research.",
+      "source_section": "Administration Produces Records"
+    },
+    {
+      "question_number": 22,
+      "question": "What skill is important for analysing historical sources?",
+      "options": {
+        "A": "Critical thinking",
+        "B": "Guessing",
+        "C": "Ignoring information",
+        "D": "Memorising only"
+      },
+      "correct_answer": "A",
+      "explanation": "Critical thinking helps historians interpret evidence carefully.",
+      "source_section": "Historical Thinking"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is studying history important for students?",
+      "options": {
+        "A": "It helps understand past societies and changes",
+        "B": "It is only for entertainment",
+        "C": "It is only about dates",
+        "D": "It has no connection to present"
+      },
+      "correct_answer": "A",
+      "explanation": "History helps students understand past developments and their impact on the present.",
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 24,
+      "question": "Which source can show political boundaries during colonial rule?",
+      "options": {
+        "A": "Maps",
+        "B": "Songs",
+        "C": "Stories",
+        "D": "Poems"
+      },
+      "correct_answer": "A",
+      "explanation": "Maps provide geographical and political boundary information.",
+      "source_section": "Sources"
+    },
+    {
+      "question_number": 25,
+      "question": "Why do historians study different types of sources?",
+      "options": {
+        "A": "To gain a complete understanding of the past",
+        "B": "To write novels",
+        "C": "To create myths",
+        "D": "To memorize dates only"
+      },
+      "correct_answer": "A",
+      "explanation": "Different sources provide different perspectives about historical events.",
+      "source_section": "Historical Research"
+    }
+  ]
+}

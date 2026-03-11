@@ -1,0 +1,154 @@
+{
+  "class": "Class 8",
+  "subject": "Science",
+  "chapter": "Our Home: Earth, a Unique Life Sustaining Planet",
+  "difficulty": "Hard",
+  "source_pdf": "Our Home Earth A Unique Life Sustaining Planet.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Designing a Model Habitable Planet",
+      "objective": "Understand the factors required for a planet to support life",
+      "materials": [
+        "Chart paper",
+        "Markers",
+        "Reference books or internet",
+        "Calculator"
+      ],
+      "steps": [
+        "Study conditions required for life such as atmosphere, temperature, water, and gravity",
+        "Design a hypothetical planet that could support life",
+        "Specify its distance from the star, atmosphere composition, and temperature range",
+        "Present the model and justify why it could support life"
+      ],
+      "learning_outcome": "Students integrate scientific concepts to design a life-supporting planet",
+      "evaluation": "Scientific reasoning and design explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Mars Habitat Planning Project",
+      "objective": "Explore challenges of sustaining human life on Mars",
+      "materials": ["Internet resources", "Chart paper", "Markers"],
+      "steps": [
+        "Research Mars conditions such as temperature, atmosphere, and gravity",
+        "Identify challenges humans would face on Mars",
+        "Design a settlement that provides oxygen, water, food, and protection from radiation",
+        "Present a detailed survival plan"
+      ],
+      "learning_outcome": "Students understand planetary habitability and technological solutions",
+      "evaluation": "Completeness of plan and scientific accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Modeling the Carbon Cycle",
+      "objective": "Understand the movement of carbon between Earth’s systems",
+      "materials": ["Chart paper", "Markers", "Reference materials"],
+      "steps": [
+        "Research the carbon cycle processes",
+        "Create a diagram showing carbon movement between atmosphere, biosphere, hydrosphere, and geosphere",
+        "Explain the role of plants, oceans, and fossil fuels",
+        "Discuss how human activities affect the carbon cycle"
+      ],
+      "learning_outcome": "Students analyze interactions among Earth systems",
+      "evaluation": "Accuracy of carbon cycle explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Climate Change Impact Investigation",
+      "objective": "Analyze how climate change affects ecosystems",
+      "materials": ["Temperature and rainfall data", "Graph paper", "Notebook"],
+      "steps": [
+        "Collect temperature and rainfall data for your region",
+        "Plot graphs showing trends",
+        "Analyze possible changes in plant or animal populations",
+        "Suggest measures to reduce climate change effects"
+      ],
+      "learning_outcome": "Students interpret environmental data and propose solutions",
+      "evaluation": "Data analysis and interpretation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Atmosphere Protection Simulation",
+      "objective": "Understand how the ozone layer protects life",
+      "materials": ["UV flashlight", "Sunscreen or transparent sheet", "Paper"],
+      "steps": [
+        "Shine UV light on plain paper",
+        "Place sunscreen or transparent sheet between the light and paper",
+        "Observe the change in intensity",
+        "Relate the results to ozone layer protection"
+      ],
+      "learning_outcome": "Students understand how atmospheric layers protect living organisms",
+      "evaluation": "Observation explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Ecosystem Interdependence Study",
+      "objective": "Investigate how organisms depend on each other",
+      "materials": ["Notebook", "Reference books", "Chart paper"],
+      "steps": [
+        "Select an ecosystem such as forest, pond, or grassland",
+        "List producers, consumers, and decomposers",
+        "Create a food web diagram",
+        "Explain what would happen if one species disappeared"
+      ],
+      "learning_outcome": "Students understand ecological balance and biodiversity",
+      "evaluation": "Food web accuracy and analysis (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Magnetic Field Shield Experiment",
+      "objective": "Demonstrate how magnetic fields deflect charged particles",
+      "materials": ["Bar magnet", "Iron filings", "Compass"],
+      "steps": [
+        "Observe magnetic field patterns using iron filings",
+        "Use a compass to track field direction",
+        "Discuss how Earth's magnetic field deflects solar wind",
+        "Relate the model to planetary protection"
+      ],
+      "learning_outcome": "Students understand the protective function of Earth's magnetic field",
+      "evaluation": "Diagram and conceptual explanation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Reproduction Strategy Comparison",
+      "objective": "Analyze advantages and disadvantages of different reproductive strategies",
+      "materials": ["Reference materials", "Notebook"],
+      "steps": [
+        "Study examples of asexual and sexual reproduction",
+        "Compare characteristics such as genetic variation and survival rate",
+        "Discuss examples like plants, fish, birds, and mammals",
+        "Prepare a comparative report"
+      ],
+      "learning_outcome": "Students understand evolutionary advantages of reproduction types",
+      "evaluation": "Comparative analysis (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Local Pollution Survey",
+      "objective": "Investigate pollution sources in the local environment",
+      "materials": ["Notebook", "Camera or phone", "Survey questionnaire"],
+      "steps": [
+        "Identify sources of air, water, or soil pollution in your area",
+        "Collect evidence through observation or photographs",
+        "Interview local residents about environmental issues",
+        "Prepare a report with suggested solutions"
+      ],
+      "learning_outcome": "Students develop environmental awareness and research skills",
+      "evaluation": "Survey report and recommendations (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Earth System Interaction Model",
+      "objective": "Understand interactions among atmosphere, hydrosphere, biosphere, and geosphere",
+      "materials": ["Chart paper", "Markers", "Reference materials"],
+      "steps": [
+        "Draw a model showing the four Earth systems",
+        "Show how energy and matter move between them",
+        "Explain examples such as rainfall, plant growth, and soil formation",
+        "Discuss how human actions disturb these interactions"
+      ],
+      "learning_outcome": "Students analyze complex Earth system interactions",
+      "evaluation": "Model accuracy and explanation (10 marks)"
+    }
+  ]
+}

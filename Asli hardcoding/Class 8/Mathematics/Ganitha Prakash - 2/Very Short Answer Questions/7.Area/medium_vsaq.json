@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Area",
+  "generated_at": "2026-03-05T13:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the area of a rectangle with length 12 cm and width 7 cm?",
+      "answer": "84 cm².",
+      "key_points": ["rectangle area formula"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Find the area of a square whose side is 9 cm.",
+      "answer": "81 cm².",
+      "key_points": ["square area"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the area of a triangle with base 14 cm and height 5 cm?",
+      "answer": "35 cm².",
+      "key_points": ["triangle area formula"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Find the area of a parallelogram with base 15 cm and height 6 cm.",
+      "answer": "90 cm².",
+      "key_points": ["parallelogram area"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Find the area of a rhombus with diagonals 10 cm and 12 cm.",
+      "answer": "60 cm².",
+      "key_points": ["rhombus area"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Find the area of a trapezium with parallel sides 8 cm and 14 cm and height 5 cm.",
+      "answer": "55 cm².",
+      "key_points": ["trapezium area"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the area of a triangle with base 20 cm and height 8 cm?",
+      "answer": "80 cm².",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Find the area of a rectangle with dimensions 18 cm and 4 cm.",
+      "answer": "72 cm².",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the area of a square with side 11 cm?",
+      "answer": "121 cm².",
+      "key_points": ["square"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Find the area of a parallelogram with base 9 cm and height 7 cm.",
+      "answer": "63 cm².",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Find the area of a rhombus with diagonals 14 cm and 10 cm.",
+      "answer": "70 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the area of a triangle with base 16 cm and height 9 cm?",
+      "answer": "72 cm².",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Find the area of a trapezium with parallel sides 12 cm and 18 cm and height 6 cm.",
+      "answer": "90 cm².",
+      "key_points": ["trapezium"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Find the area of a rectangle with length 25 cm and width 3 cm.",
+      "answer": "75 cm².",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Find the area of a square with side 15 cm.",
+      "answer": "225 cm².",
+      "key_points": ["square"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Find the area of a triangle with base 18 cm and height 10 cm.",
+      "answer": "90 cm².",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Find the area of a parallelogram with base 20 cm and height 9 cm.",
+      "answer": "180 cm².",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Find the area of a rhombus with diagonals 20 cm and 16 cm.",
+      "answer": "160 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Find the area of a trapezium with sides 10 cm and 16 cm and height 7 cm.",
+      "answer": "91 cm².",
+      "key_points": ["trapezium"],
+      "source_section": "Section 7.5"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the area of a rectangle with sides 30 cm and 5 cm?",
+      "answer": "150 cm².",
+      "key_points": ["rectangle"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Find the area of a square with side 20 cm.",
+      "answer": "400 cm².",
+      "key_points": ["square"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Find the area of a triangle with base 24 cm and height 8 cm.",
+      "answer": "96 cm².",
+      "key_points": ["triangle"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Find the area of a parallelogram with base 14 cm and height 11 cm.",
+      "answer": "154 cm².",
+      "key_points": ["parallelogram"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Find the area of a rhombus with diagonals 18 cm and 12 cm.",
+      "answer": "108 cm².",
+      "key_points": ["rhombus"],
+      "source_section": "Section 7.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Find the area of a trapezium with sides 15 cm and 21 cm and height 8 cm.",
+      "answer": "144 cm².",
+      "key_points": ["trapezium"],
+      "source_section": "Section 7.5"
+    }
+  ]
+}

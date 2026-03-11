@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science (Civics)",
+  "chapter": "Judiciary",
+  "difficulty": "Medium",
+  "source_pdf": "class8_political_life_III.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Structure of the Indian Judiciary",
+      "objective": "Understand the hierarchy of courts in India",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Draw a diagram showing Supreme Court, High Court and District Court",
+        "Write one function of each court",
+        "Explain why this hierarchy is important"
+      ],
+      "learning_outcome": "Understands the judicial hierarchy in India",
+      "evaluation": "Correct diagram and explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Independence of the Judiciary",
+      "objective": "Understand why the judiciary must be independent",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write what judicial independence means",
+        "List two reasons why courts must be independent",
+        "Explain how it helps citizens"
+      ],
+      "learning_outcome": "Understands the importance of judicial independence",
+      "evaluation": "Clarity and correctness (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Types of Cases in Courts",
+      "objective": "Learn about different types of legal cases",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the meaning of civil and criminal cases",
+        "Give one example of each type",
+        "Explain which court may hear these cases"
+      ],
+      "learning_outcome": "Understands types of cases handled by courts",
+      "evaluation": "Correct examples (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Public Interest Litigation Study",
+      "objective": "Understand the concept of Public Interest Litigation (PIL)",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Write what Public Interest Litigation means",
+        "Explain why PIL is important for people",
+        "Give one example of a situation where PIL can be filed"
+      ],
+      "learning_outcome": "Understands how PIL helps protect public rights",
+      "evaluation": "Accuracy of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Role of Courts in Protecting Rights",
+      "objective": "Understand how courts protect Fundamental Rights",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Write two Fundamental Rights",
+        "Explain how courts protect these rights",
+        "Give a short example"
+      ],
+      "learning_outcome": "Recognises the judiciary’s role in protecting rights",
+      "evaluation": "Quality of explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Case Study: Solving a Dispute",
+      "objective": "Understand how courts settle disputes",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a short situation involving a dispute",
+        "Explain how the case would reach the court",
+        "Explain how the judge might solve it"
+      ],
+      "learning_outcome": "Understands the process of dispute resolution",
+      "evaluation": "Logical explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Legal Vocabulary List",
+      "objective": "Learn key terms used in the judiciary",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write words like appeal, verdict, witness, evidence",
+        "Write their meanings",
+        "Use one word in a sentence"
+      ],
+      "learning_outcome": "Improves understanding of legal terms",
+      "evaluation": "Correct meanings (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Importance of Evidence",
+      "objective": "Understand the role of evidence in court cases",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write what evidence means in a court case",
+        "List two types of evidence",
+        "Explain why evidence is important for justice"
+      ],
+      "learning_outcome": "Understands how evidence helps courts make decisions",
+      "evaluation": "Clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Courtroom Roles",
+      "objective": "Understand the roles of different people in a courtroom",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write the roles of judge, lawyer, and witness",
+        "Explain how each helps in a court case",
+        "Give an example situation"
+      ],
+      "learning_outcome": "Understands courtroom roles",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Discussion: Justice for All",
+      "objective": "Encourage thinking about fairness in society",
+      "materials": ["Notebook"],
+      "steps": [
+        "Discuss why courts are important in a democracy",
+        "Write two points from the discussion",
+        "Write a short summary"
+      ],
+      "learning_outcome": "Develops understanding of justice and democracy",
+      "evaluation": "Participation and summary quality (10 marks)"
+    }
+  ]
+}

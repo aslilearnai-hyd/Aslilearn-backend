@@ -1,0 +1,170 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Lines and Angles",
+    "difficulty": "Easy",
+    "source_pdf": "m9_6.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Angle Type Identification",
+            "objective": "Identify different types of angles",
+            "materials": [
+                "Notebook",
+                "Protractor",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw five different angles",
+                "Measure each angle using a protractor",
+                "Label them as acute, right, obtuse, straight or reflex"
+            ],
+            "learning_outcome": "Understands different types of angles",
+            "evaluation": "Correct identification of angle types (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Complementary Angle Activity",
+            "objective": "Understand complementary angles",
+            "materials": [
+                "Notebook",
+                "Protractor"
+            ],
+            "steps": [
+                "Draw an angle of 30°",
+                "Find another angle that adds up to 90°",
+                "Write the pair of complementary angles"
+            ],
+            "learning_outcome": "Recognises complementary angles",
+            "evaluation": "Correct angle pair (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Supplementary Angle Drawing",
+            "objective": "Learn supplementary angles",
+            "materials": [
+                "Notebook",
+                "Protractor"
+            ],
+            "steps": [
+                "Draw an angle of 110°",
+                "Calculate the supplementary angle",
+                "Draw it next to the first angle"
+            ],
+            "learning_outcome": "Understands supplementary angles",
+            "evaluation": "Correct calculation and drawing (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Adjacent Angle Sketch",
+            "objective": "Identify adjacent angles",
+            "materials": [
+                "Notebook",
+                "Ruler",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw two rays with a common vertex",
+                "Label the angles formed",
+                "Show which angles are adjacent"
+            ],
+            "learning_outcome": "Identifies adjacent angles",
+            "evaluation": "Correct diagram and labeling (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Linear Pair Demonstration",
+            "objective": "Understand linear pair of angles",
+            "materials": [
+                "Notebook",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw a straight line",
+                "Draw a ray standing on the line",
+                "Measure the two angles formed"
+            ],
+            "learning_outcome": "Understands linear pair axiom",
+            "evaluation": "Angles sum to 180° correctly (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Vertically Opposite Angle Model",
+            "objective": "Verify vertically opposite angles",
+            "materials": [
+                "Notebook",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw two intersecting lines",
+                "Label the four angles",
+                "Measure the vertically opposite angles"
+            ],
+            "learning_outcome": "Recognises vertically opposite angles are equal",
+            "evaluation": "Correct measurement (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Intersecting Line Diagram",
+            "objective": "Understand intersecting lines",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw two lines intersecting at a point",
+                "Mark the intersection point",
+                "Label the angles formed"
+            ],
+            "learning_outcome": "Understands intersecting lines",
+            "evaluation": "Clear diagram (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Parallel Line Illustration",
+            "objective": "Understand parallel lines",
+            "materials": [
+                "Notebook",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw two parallel lines",
+                "Draw a transversal line",
+                "Label corresponding angles"
+            ],
+            "learning_outcome": "Identifies parallel line angle relations",
+            "evaluation": "Correct labeling (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Angle Sum Around a Point",
+            "objective": "Verify angles around a point",
+            "materials": [
+                "Notebook",
+                "Protractor"
+            ],
+            "steps": [
+                "Draw four rays from a single point",
+                "Measure all angles",
+                "Add them to verify the sum is 360°"
+            ],
+            "learning_outcome": "Understands angle sum property",
+            "evaluation": "Correct total (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Angle Observation in Real Life",
+            "objective": "Observe angles in daily life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe objects like doors, windows or books",
+                "Identify angles formed",
+                "Write their approximate measures"
+            ],
+            "learning_outcome": "Connects geometry with real life",
+            "evaluation": "Correct observations (10 marks)"
+        }
+    ]
+}

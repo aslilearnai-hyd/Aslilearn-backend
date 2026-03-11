@@ -1,0 +1,108 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: Electricity – Magnetic and Heating Effects",
+  "generated_at": "2026-03-05T16:40:00",
+  "concepts": [
+    {
+      "concept_name": "Electric Current",
+      "difficulty": "easy",
+      "lesson": "Electric current is the flow of electric charges through a conductor such as a metal wire. When a source of electrical energy like a battery is connected to a closed circuit, electrons begin to move through the conductor, creating a current. The direction of current is traditionally considered from the positive terminal of the battery to the negative terminal, although electrons move in the opposite direction. Electric current is responsible for operating electrical devices such as bulbs, fans, heaters, and electronic gadgets. Understanding electric current helps explain how electrical energy is transferred through circuits to perform useful work.",
+      "real_example": "A bulb glows when it is connected to a battery in a closed circuit.",
+      "key_points": [
+        "Flow of electric charges",
+        "Requires a closed circuit",
+        "Provides energy to electrical devices",
+        "Measured in amperes"
+      ],
+      "source_section": "Section 2.1"
+    },
+    {
+      "concept_name": "Electric Circuit",
+      "difficulty": "easy",
+      "lesson": "An electric circuit is a complete and continuous path through which electric current flows. A basic circuit usually consists of a power source such as a battery, conducting wires, a switch, and an electrical component like a bulb or motor. When the switch is closed, the circuit becomes complete and current flows through it. If the circuit is broken or the switch is open, the current stops flowing. Electric circuits form the foundation of all electrical and electronic devices, from simple household appliances to complex electronic systems.",
+      "real_example": "Connecting a battery, switch, and bulb with wires to form a working circuit.",
+      "key_points": [
+        "Closed path for current flow",
+        "Includes battery, wires, and device",
+        "Current stops in an open circuit"
+      ],
+      "source_section": "Section 2.1"
+    },
+    {
+      "concept_name": "Heating Effect of Electric Current",
+      "difficulty": "medium",
+      "lesson": "When electric current passes through a conductor, electrical energy is partly converted into heat energy. This phenomenon is known as the heating effect of electric current. The heat is produced due to resistance in the conductor which opposes the flow of electric charges. Materials with higher resistance generate more heat when current flows through them. This principle is widely used in appliances such as electric heaters, irons, toasters, and electric kettles. However, excessive heating can also be dangerous, as it may damage circuits or cause fires if not properly controlled.",
+      "real_example": "Electric iron becoming hot when it is switched on.",
+      "key_points": [
+        "Electric energy converts to heat",
+        "Caused by resistance in conductors",
+        "Used in heating appliances",
+        "Can be dangerous if uncontrolled"
+      ],
+      "source_section": "Section 2.2"
+    },
+    {
+      "concept_name": "Electric Fuse",
+      "difficulty": "medium",
+      "lesson": "An electric fuse is a safety device used in electrical circuits to prevent damage caused by excessive current. It consists of a thin wire made of a material with a low melting point. When too much current flows through the circuit, the fuse wire heats up and melts, breaking the circuit and stopping the current flow. This protects electrical appliances and prevents overheating or fire hazards. Fuses are commonly used in homes, electrical equipment, and power systems as a protective mechanism.",
+      "real_example": "A fuse melting during a short circuit and protecting household appliances.",
+      "key_points": [
+        "Safety device in circuits",
+        "Melts when current is too high",
+        "Breaks the circuit automatically",
+        "Prevents damage to appliances"
+      ],
+      "source_section": "Section 2.2"
+    },
+    {
+      "concept_name": "Magnetic Effect of Electric Current",
+      "difficulty": "medium",
+      "lesson": "The magnetic effect of electric current refers to the phenomenon in which a current-carrying conductor produces a magnetic field around it. This discovery showed that electricity and magnetism are closely related. When electric current flows through a wire, it behaves like a magnet and can influence nearby magnetic materials or compass needles. This principle is the basis for many important technologies such as electric motors, generators, and electromagnets. Understanding the magnetic effect of current helps explain how electrical energy can produce mechanical motion.",
+      "real_example": "A compass needle deflecting when placed near a current-carrying wire.",
+      "key_points": [
+        "Current produces magnetic field",
+        "Discovered through compass experiments",
+        "Links electricity and magnetism",
+        "Used in motors and electromagnets"
+      ],
+      "source_section": "Section 2.3"
+    },
+    {
+      "concept_name": "Electromagnet",
+      "difficulty": "medium",
+      "lesson": "An electromagnet is a temporary magnet produced when electric current flows through a coil of wire wrapped around a soft iron core. The magnetic field exists only while the current flows through the coil. Unlike permanent magnets, electromagnets can be turned on or off by controlling the electric current. The strength of an electromagnet depends on factors such as the number of turns in the coil, the amount of current passing through the wire, and the type of core material used. Electromagnets are widely used in devices such as electric bells, cranes, relays, and motors.",
+      "real_example": "Electromagnets used in cranes to lift heavy iron scrap.",
+      "key_points": [
+        "Temporary magnet",
+        "Created by electric current",
+        "Strength depends on coil turns and current",
+        "Used in electric bells and cranes"
+      ],
+      "source_section": "Section 2.3"
+    },
+    {
+      "concept_name": "Electric Bell",
+      "difficulty": "medium",
+      "lesson": "An electric bell is a device that uses an electromagnet to produce sound. When the switch is pressed, electric current flows through the coil, turning it into an electromagnet. The electromagnet attracts an iron armature which strikes the bell and produces a ringing sound. As the armature moves, it breaks the circuit temporarily, causing the electromagnet to lose its magnetism. The armature then returns to its original position and the process repeats rapidly, producing continuous ringing. This device demonstrates the practical use of electromagnets in everyday applications.",
+      "real_example": "Doorbells used in homes and schools.",
+      "key_points": [
+        "Uses electromagnet principle",
+        "Armature strikes bell repeatedly",
+        "Circuit repeatedly breaks and reconnects"
+      ],
+      "source_section": "Section 2.3 Applications"
+    },
+    {
+      "concept_name": "Applications of Electromagnets",
+      "difficulty": "easy",
+      "lesson": "Electromagnets have many practical applications because their magnetic strength can be controlled by electricity. They are used in electric bells, relays, motors, generators, and cranes used in scrap yards. In industrial settings, electromagnets are particularly useful for lifting and moving heavy iron objects. Because they can be switched on and off, they provide greater control compared to permanent magnets. Their ability to convert electrical energy into magnetic effects makes them essential in modern technology.",
+      "real_example": "Industrial cranes using electromagnets to lift metal pieces.",
+      "key_points": [
+        "Used in cranes and electric bells",
+        "Magnetic field can be controlled",
+        "Important in modern electrical devices"
+      ],
+      "source_section": "Section 2.3 Applications"
+    }
+  ]
+}

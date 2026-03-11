@@ -1,0 +1,24 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Circles",
+    "difficulty": "Medium",
+    "source_pdf": "jemh110.pdf",
+    "short_notes": {
+        "key_points": [
+            "Tangent touches the circle at only one point",
+            "Radius is perpendicular to the tangent at point of contact",
+            "Tangents from an external point are equal"
+        ],
+        "examples": [
+            "Drawing tangent from a point outside circle"
+        ],
+        "formulas": [
+            "Radius ⟂ Tangent"
+        ],
+        "exam_tips": [
+            "Draw accurate diagrams",
+            "Mention theorem statements"
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Electricity – Magnetic and Heating Effects",
+  "difficulty": "Hard",
+  "source_pdf": "hecu104.pdf",
+  "short_notes": {
+    "key_points": [
+      "Electric current produces both heating and magnetic effects when it flows through a conductor",
+      "The heating effect occurs because electrical energy converts into heat due to resistance in the conductor",
+      "The magnetic effect of electric current creates a magnetic field around a current-carrying wire",
+      "An electromagnet is created when electric current flows through a coil wrapped around a soft iron core",
+      "Electromagnets are temporary magnets and lose magnetism when current stops",
+      "Safety devices like fuses protect circuits from damage caused by excessive current"
+    ],
+    "examples": [
+      "Electric heaters and irons work using the heating effect of electric current",
+      "A fuse wire melts when too much current flows through the circuit",
+      "A compass needle deflects when placed near a current-carrying wire",
+      "Electric cranes use electromagnets to lift heavy iron objects",
+      "Electric bells use electromagnets to produce sound"
+    ],
+    "formulas": [
+      "Pressure-like relation in circuits: Heat produced ∝ current × resistance (conceptual relation)",
+      "Magnetic field forms around a current-carrying conductor",
+      "Strength of electromagnet increases with number of coil turns and current"
+    ],
+    "exam_tips": [
+      "Explain clearly the difference between heating effect and magnetic effect of current",
+      "Use examples like electric bell and electric crane to explain electromagnets",
+      "Remember why fuse wires have low melting points",
+      "Understand how increasing current or coil turns affects electromagnet strength"
+    ]
+  }
+}

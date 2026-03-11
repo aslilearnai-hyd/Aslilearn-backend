@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 5: Arithmetic Progressions",
+    "generated_at": "2026-02-28T22:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is an arithmetic progression?",
+                "correct_answer": "A sequence in which the difference between consecutive terms is constant",
+                "explanation": "The constant difference is called common difference.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What is the common difference of an AP?",
+                "correct_answer": "The difference between any term and its preceding term",
+                "explanation": "d = a₂ − a₁.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What is the formula for the nth term of an AP?",
+                "correct_answer": "aₙ = a + (n − 1)d",
+                "explanation": "It gives the general term of the AP.",
+                "source_section": "Section 5.3"
+            },
+            {
+                "question": "What type of AP has d > 0?",
+                "correct_answer": "Increasing AP",
+                "explanation": "Terms increase as n increases.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What type of AP has d < 0?",
+                "correct_answer": "Decreasing AP",
+                "explanation": "Terms decrease as n increases.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What type of AP has d = 0?",
+                "correct_answer": "Constant AP",
+                "explanation": "All terms are equal.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "Can an AP be finite or infinite?",
+                "correct_answer": "An AP can be finite or infinite",
+                "explanation": "It depends on whether the sequence ends.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "What does the graph of an AP represent?",
+                "correct_answer": "A straight line",
+                "explanation": "AP terms lie on a linear graph.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "question": "Which real-life situation follows an AP?",
+                "correct_answer": "Fixed yearly salary increment",
+                "explanation": "Increase is by a constant amount.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "question": "What is the first term of an AP denoted by?",
+                "correct_answer": "a",
+                "explanation": "a represents the starting term.",
+                "source_section": "Section 5.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Definition of AP",
+                "content": "AP is defined by a constant difference between consecutive terms.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Types of AP",
+                "content": "AP can be increasing, decreasing or constant.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "nth Term Formula",
+                "content": "The nth term formula helps find any term of an AP.",
+                "source_section": "Section 5.3"
+            },
+            {
+                "title": "Graph of AP",
+                "content": "Graph of an AP is linear in nature.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "title": "Applications of AP",
+                "content": "APs are used to model patterns with fixed change.",
+                "source_section": "Section 5.1"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "AP is based on constant difference, not ratio.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "fact": "If d = 0, all terms are equal.",
+                "source_section": "Section 5.2"
+            },
+            {
+                "fact": "AP is a type of numerical sequence.",
+                "source_section": "Section 5.1"
+            },
+            {
+                "fact": "nth term formula is used frequently in exams.",
+                "source_section": "Section 5.3"
+            }
+        ]
+    }
+}

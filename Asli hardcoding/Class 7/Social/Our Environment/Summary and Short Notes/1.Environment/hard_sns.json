@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Environment",
+    "difficulty": "Hard",
+    "source_pdf": "jegy101.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Biosphere is a complex biotic web existing within the narrow interface of the three abiotic domains (Lithosphere, Hydrosphere, and Atmosphere).",
+            "Ecological Balance is maintained when the flow of energy and the cycling of nutrients between biotic and abiotic components remain stable.",
+            "Anthropogenic modification refers to the human-driven changes to the natural environment, such as industrialization and urbanization, which can lead to climate change.",
+            "The Atmosphere's composition is dynamic; changes in the proportion of gases (like increased $CO_2$) alter the earth's weather and climate patterns.",
+            "Sustainable Development is the conceptual bridge required to balance human needs with the preservation of the natural environment for future generations."
+        ],
+        "examples": [
+            "Biotic Interaction: The dependence of plants on $CO_2$ from animals and animals on $O_2$ and food from plants.",
+            "Human Modification: The Industrial Revolution leading to the mass production of goods and the transformation of natural landscapes into 'built' environments.",
+            "Global Warming: An example of an environmental imbalance caused by excessive smoke and fumes from factories and vehicles.",
+            "Sustainable Living: The shift from the 'Barter System' to modern trade and the ongoing need to harmonize with the natural world."
+        ],
+        "formulas": [
+            "Ecological Equilibrium: $\\text{Rate of Natural Resource Regeneration} \\geq \\text{Rate of Human Consumption}$",
+            "Atmospheric Stability: $\\text{Gravitational Force} \\rightarrow \\text{Atmospheric Retention} \\rightarrow \\text{Thermal Regulation}$"
+        ],
+        "exam_tips": [
+            "Analyze the 'Cause and Effect' relationship: How human activities like deforestation directly impact the hydrological and atmospheric cycles.",
+            "Distinguish between 'Natural' changes (like seasons) and 'Human-induced' changes (like pollution).",
+            "Understand that the 'Biosphere' is not just a place, but a living system of interdependence.",
+            "Be prepared to explain why a 'perfect balance' between the natural and human environment is necessary for survival."
+        ]
+    }
+}

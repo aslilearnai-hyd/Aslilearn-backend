@@ -1,0 +1,137 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "A Legend of the Northland",
+    "lesson_level": "Medium",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the story and its deeper meaning",
+        "Analyze characters and their motivations",
+        "Interpret symbolism in the poem",
+        "Identify poetic devices like rhyme, rhythm, and repetition",
+        "Connect moral lessons to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Context",
+            "topics_covered": [
+                "Overview of folklore and legend poems",
+                "Poet’s approach in teaching morals through stories",
+                "Introduction to main characters and setting"
+            ],
+            "teaching_strategy": [
+                "Teacher reads the poem aloud with intonation",
+                "Class discussion on legends and moral lessons"
+            ],
+            "student_activities": [
+                "Take notes on characters and setting",
+                "Discuss in pairs the idea of legends in their culture"
+            ],
+            "assessment": [
+                "Oral participation",
+                "Notebook notes checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Character Analysis",
+            "topics_covered": [
+                "Little woman: traits, actions, and consequences",
+                "Saint Peter: role and symbolism",
+                "Character motivation and behavior analysis"
+            ],
+            "teaching_strategy": [
+                "Explain character traits using examples from poem",
+                "Ask students why characters act in certain ways"
+            ],
+            "student_activities": [
+                "Write character traits with supporting lines from poem",
+                "Share examples in class discussion"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Story Events and Plot Analysis",
+            "topics_covered": [
+                "Sequence of events and cause-effect relationship",
+                "Transformation as a consequence of actions",
+                "Understanding narrative flow"
+            ],
+            "teaching_strategy": [
+                "Break poem into events and discuss each stanza",
+                "Encourage students to create a plot map"
+            ],
+            "student_activities": [
+                "Draw a plot diagram showing cause and effect",
+                "Explain in own words the sequence of events"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral explanation of plot map"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Poetic Devices and Literary Techniques",
+            "topics_covered": [
+                "Rhyme, rhythm, repetition, and alliteration",
+                "How devices enhance storytelling and moral",
+                "Imagery and descriptive language"
+            ],
+            "teaching_strategy": [
+                "Highlight examples from poem",
+                "Discuss effect of devices on mood and meaning"
+            ],
+            "student_activities": [
+                "Identify poetic devices in the poem",
+                "Explain how these devices help convey moral and story"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class discussion participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Moral Lessons and Reflection",
+            "topics_covered": [
+                "Understanding moral lessons about selfishness and consequences",
+                "Application of moral lessons to daily life",
+                "Discussion on cultural significance of legends"
+            ],
+            "teaching_strategy": [
+                "Class discussion on moral and ethical reflections",
+                "Encourage students to relate to real-life situations"
+            ],
+            "student_activities": [
+                "Write a paragraph explaining the moral lesson",
+                "Share examples from personal experience where selfishness led to consequences"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Class participation",
+                "Oral reflection"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing plot and character relationships",
+        "Handouts for poetic devices and moral reflections"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Class discussion participation",
+        "Reflective writing submission"
+    ],
+    "teacher_tip": "Encourage students to analyze characters, connect plot to moral lessons, and identify poetic devices that enhance the storytelling."
+}

@@ -1,0 +1,285 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-06T00:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of division of labour in multicellular organisms.",
+            "answer": "Division of labour means different groups of cells perform specific functions. This increases efficiency and helps organisms perform complex activities.",
+            "key_concepts": [
+                "division of labour"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between unicellular and multicellular organisms.",
+            "answer": "Unicellular organisms have a single cell performing all functions, whereas multicellular organisms have many cells organized into tissues and organs.",
+            "key_concepts": [
+                "unicellular",
+                "multicellular"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Write two characteristics of meristematic tissue.",
+            "answer": "Cells divide continuously and have dense cytoplasm with a prominent nucleus.",
+            "key_concepts": [
+                "meristematic characteristics"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Differentiate between apical and lateral meristem.",
+            "answer": "Apical meristem increases length of roots and stems, while lateral meristem increases thickness or girth.",
+            "key_concepts": [
+                "meristem types"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the structure of parenchyma tissue.",
+            "answer": "Parenchyma cells are living, thin-walled, loosely packed and have large vacuoles.",
+            "key_concepts": [
+                "parenchyma structure"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What are the functions of collenchyma?",
+            "answer": "Collenchyma provides support and flexibility to growing plant parts.",
+            "key_concepts": [
+                "collenchyma function"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe sclerenchyma tissue.",
+            "answer": "Sclerenchyma cells are dead with thick lignified walls that provide strength.",
+            "key_concepts": [
+                "sclerenchyma"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What are complex permanent tissues?",
+            "answer": "They are tissues composed of different types of cells working together to perform a common function.",
+            "key_concepts": [
+                "complex tissues"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Write the functions of xylem.",
+            "answer": "Xylem transports water and minerals and provides mechanical support.",
+            "key_concepts": [
+                "xylem"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Write the functions of phloem.",
+            "answer": "Phloem transports prepared food from leaves to other plant parts.",
+            "key_concepts": [
+                "phloem"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the role of epidermis in plants.",
+            "answer": "Epidermis protects plant parts and reduces water loss with the help of cuticle.",
+            "key_concepts": [
+                "epidermis"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the function of stomata?",
+            "answer": "Stomata help in gaseous exchange and transpiration.",
+            "key_concepts": [
+                "stomata"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Define epithelial tissue with its function.",
+            "answer": "Epithelial tissue forms protective coverings and lines organs and cavities.",
+            "key_concepts": [
+                "epithelial tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Give two functions of connective tissue.",
+            "answer": "Connective tissue supports organs and connects different body parts.",
+            "key_concepts": [
+                "connective tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Differentiate between tendon and ligament.",
+            "answer": "Tendon connects muscle to bone while ligament connects bone to bone.",
+            "key_concepts": [
+                "tendon",
+                "ligament"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain adipose tissue.",
+            "answer": "Adipose tissue stores fat and acts as an insulator.",
+            "key_concepts": [
+                "adipose tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Write the functions of bone tissue.",
+            "answer": "Bone tissue provides support and protects internal organs.",
+            "key_concepts": [
+                "bone tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain muscular tissue.",
+            "answer": "Muscular tissue contracts and relaxes to cause movement.",
+            "key_concepts": [
+                "muscular tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Name the types of muscular tissue.",
+            "answer": "Striated, smooth and cardiac muscles.",
+            "key_concepts": [
+                "muscle types"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe cardiac muscle.",
+            "answer": "Cardiac muscles are branched involuntary muscles found in the heart.",
+            "key_concepts": [
+                "cardiac muscle"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Define nervous tissue.",
+            "answer": "Nervous tissue receives stimuli and transmits impulses throughout the body.",
+            "key_concepts": [
+                "nervous tissue"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a neuron?",
+            "answer": "Neuron is the structural and functional unit of the nervous system.",
+            "key_concepts": [
+                "neuron"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Write the parts of a neuron.",
+            "answer": "Cell body, dendrites and axon.",
+            "key_concepts": [
+                "neuron structure"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the function of axon?",
+            "answer": "Axon carries nerve impulses away from the cell body.",
+            "key_concepts": [
+                "axon"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the role of nervous tissue in coordination.",
+            "answer": "Nervous tissue transmits signals rapidly to coordinate body activities.",
+            "key_concepts": [
+                "coordination"
+            ],
+            "marks": 3,
+            "difficulty_level": "medium",
+            "source_section": "Section 6.3.4"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 4: Structure of the Atom",
+    "generated_at": "2026-03-06T18:57:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following observations in Rutherford's experiment was most unexpected?",
+            "options": {
+                "A": "Most alpha particles passed straight through the foil.",
+                "B": "Some alpha particles were deflected by small angles.",
+                "C": "One out of 12,000 particles appeared to rebound (deflected by 180°).",
+                "D": "Alpha particles were absorbed by the gold atoms."
+            },
+            "correct_answer": "C",
+            "explanation": "Rutherford described this result as 'incredible,' as if you fired a 15-inch shell at a piece of tissue paper and it came back and hit you.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "An element has an atomic number of 15. Its electronic configuration and valency will be:",
+            "options": {
+                "A": "2, 8, 5; Valency = 5",
+                "B": "2, 8, 5; Valency = 3",
+                "C": "2, 7, 6; Valency = 2",
+                "D": "2, 8, 3; Valency = 3"
+            },
+            "correct_answer": "B",
+            "explanation": "The element is Phosphorus (Z=15). Configuration is 2, 8, 5. Since it has 5 valence electrons, it gains 3 to complete its octet. Valency = 8 - 5 = 3.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 3,
+            "question": "The K and L shells of an atom are full. What is the total number of electrons in the atom?",
+            "options": {
+                "A": "8",
+                "B": "10",
+                "C": "12",
+                "D": "18"
+            },
+            "correct_answer": "B",
+            "explanation": "K shell holds 2 and L shell holds 8. Total = 2 + 8 = 10 (Neon).",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What prevents an atom from collapsing if the electrons are revolving around a positive nucleus?",
+            "options": {
+                "A": "Electrons revolve in discrete orbits with fixed energy levels.",
+                "B": "The nucleus is too small to pull the electrons.",
+                "C": "Electrons have no mass.",
+                "D": "Centrifugal force pushes electrons away."
+            },
+            "correct_answer": "A",
+            "explanation": "Neils Bohr proposed that while revolving in discrete orbits, electrons do not radiate energy, thus remaining stable.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "If Z = 3, what would be the valency of the element?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Z=3 is Lithium. Configuration is 2, 1. It loses 1 electron to become stable, so valency is 1.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How many neutrons are present in the nucleus of a Deuterium atom?",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Deuterium is an isotope of Hydrogen with Mass Number 2 and Atomic Number 1. Neutrons = 2 - 1 = 1.",
+            "difficulty": "medium",
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following is true for Isobars?",
+            "options": {
+                "A": "They have same chemical properties.",
+                "B": "They have same number of protons.",
+                "C": "They have different atomic numbers but same mass number.",
+                "D": "They belong to the same element."
+            },
+            "correct_answer": "C",
+            "explanation": "Isobars are atoms of different elements (e.g., Calcium and Argon) that share the same mass number.",
+            "difficulty": "medium",
+            "source_section": "Section 4.6.1"
+        },
+        {
+            "question_number": 8,
+            "question": "An ion $M^{3+}$ has 10 electrons and 14 neutrons. What is the mass number of M?",
+            "options": {
+                "A": "24",
+                "B": "27",
+                "C": "13",
+                "D": "23"
+            },
+            "correct_answer": "B",
+            "explanation": "$M^{3+}$ means it lost 3 electrons. Original protons = 10 + 3 = 13. Mass Number = Protons + Neutrons = 13 + 14 = 27.",
+            "difficulty": "medium",
+            "source_section": "Section 4.5.2"
+        },
+        {
+            "question_number": 9,
+            "question": "The average atomic mass of a sample of element X is 16.2 u. It has two isotopes with mass 16 u and 18 u. What is the percentage of the isotope with mass 16 u?",
+            "options": {
+                "A": "90%",
+                "B": "10%",
+                "C": "75%",
+                "D": "50%"
+            },
+            "correct_answer": "A",
+            "explanation": "Using average mass formula: $16(x) + 18(1-x) = 16.2$. Solving gives $x = 0.9$ or 90%.",
+            "difficulty": "medium",
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 10,
+            "question": "In the notation ${}_{17}^{35}\text{Cl}$, what does the number 35 represent?",
+            "options": {
+                "A": "Atomic number",
+                "B": "Number of electrons",
+                "C": "Mass number",
+                "D": "Number of neutrons"
+            },
+            "correct_answer": "C",
+            "explanation": "In standard notation ${}_{Z}^{A}\text{X}$, 'A' represents the Mass Number.",
+            "difficulty": "medium",
+            "source_section": "Section 4.5.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Which isotope is used as a fuel in nuclear reactors?",
+            "options": {
+                "A": "Uranium-235",
+                "B": "Cobalt-60",
+                "C": "Iodine-131",
+                "D": "Carbon-14"
+            },
+            "correct_answer": "A",
+            "explanation": "Uranium isotopes are used for nuclear fission to generate energy.",
+            "difficulty": "medium",
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 12,
+            "question": "An atom has 2 electrons in the K shell, 8 in the L shell, and 6 in the M shell. This atom is:",
+            "options": {
+                "A": "Oxygen",
+                "B": "Sulphur",
+                "C": "Chlorine",
+                "D": "Phosphorus"
+            },
+            "correct_answer": "B",
+            "explanation": "Total electrons = 2 + 8 + 6 = 16. Atomic number 16 is Sulphur.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following describes the distribution of electrons in a Chlorine atom?",
+            "options": {
+                "A": "2, 8, 8",
+                "B": "2, 8, 7",
+                "C": "2, 8, 1",
+                "D": "8, 7, 2"
+            },
+            "correct_answer": "B",
+            "explanation": "Chlorine (Z=17) fills shells as 2 (K), 8 (L), and 7 (M).",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "The valency of an element with 4 valence electrons is usually:",
+            "options": {
+                "A": "4",
+                "B": "0",
+                "C": "2",
+                "D": "8"
+            },
+            "correct_answer": "A",
+            "explanation": "Elements like Carbon (Z=6, config 2,4) share 4 electrons, thus having a valency of 4.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "The mass of which subatomic particle is considered as one unit?",
+            "options": {
+                "A": "Proton only",
+                "B": "Neutron only",
+                "C": "Proton and Neutron",
+                "D": "Proton and Electron"
+            },
+            "correct_answer": "C",
+            "explanation": "Both protons and neutrons have a mass of approximately 1 amu, while electrons are negligible.",
+            "difficulty": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Valence electrons for $Cl^{-}$ ion are:",
+            "options": {
+                "A": "7",
+                "B": "8",
+                "C": "17",
+                "D": "18"
+            },
+            "correct_answer": "B",
+            "explanation": "Neutral Chlorine has 7 valence electrons. $Cl^{-}$ gained one, completing the octet to 8.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which model suggested that electrons are embedded in a positive charge?",
+            "options": {
+                "A": "Rutherford's",
+                "B": "Thomson's",
+                "C": "Bohr's",
+                "D": "Chadwick's"
+            },
+            "correct_answer": "B",
+            "explanation": "This is the Plum Pudding model.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "An alpha particle is:",
+            "options": {
+                "A": "A hydrogen atom",
+                "B": "A doubly charged helium ion ($He^{2+}$)",
+                "C": "A neutron",
+                "D": "A fast moving electron"
+            },
+            "correct_answer": "B",
+            "explanation": "It has a mass of 4 u and a charge of +2.",
+            "difficulty": "medium",
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 19,
+            "question": "The ratio of mass of a proton to an electron is approximately:",
+            "options": {
+                "A": "2000:1",
+                "B": "1:2000",
+                "C": "1:1",
+                "D": "100:1"
+            },
+            "correct_answer": "A",
+            "explanation": "A proton is about 2000 times heavier than an electron.",
+            "difficulty": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are Noble gases chemically unreactive?",
+            "options": {
+                "A": "They are gases.",
+                "B": "They have a stable octet (or duplet) configuration.",
+                "C": "They are found in very small quantities.",
+                "D": "They have no nucleus."
+            },
+            "correct_answer": "B",
+            "explanation": "With full outer shells, they have no tendency to gain or lose electrons.",
+            "difficulty": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the number of protons in ${}_{18}^{40}\text{Ar}$?",
+            "options": {
+                "A": "40",
+                "B": "18",
+                "C": "22",
+                "D": "58"
+            },
+            "correct_answer": "B",
+            "explanation": "The atomic number (subscript) is 18, which is the number of protons.",
+            "difficulty": "medium",
+            "source_section": "Section 4.5.1"
+        },
+        {
+            "question_number": 22,
+            "question": "A change in which of the following results in a different isotope?",
+            "options": {
+                "A": "Protons",
+                "B": "Electrons",
+                "C": "Neutrons",
+                "D": "Shells"
+            },
+            "correct_answer": "C",
+            "explanation": "Isotopes are same element (same protons) with different neutrons.",
+            "difficulty": "medium",
+            "source_section": "Section 4.6"
+        },
+        {
+            "question_number": 23,
+            "question": "The formula $2n^2$ was given by:",
+            "options": {
+                "A": "Bohr and Bury",
+                "B": "Rutherford",
+                "C": "Dalton",
+                "D": "Thomson"
+            },
+            "correct_answer": "A",
+            "explanation": "Bohr-Bury scheme governs electron distribution.",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "If an atom's M-shell is the outermost and contains 1 electron, its atomic number is:",
+            "options": {
+                "A": "1",
+                "B": "11",
+                "C": "19",
+                "D": "3"
+            },
+            "correct_answer": "B",
+            "explanation": "Configuration: K=2, L=8, M=1. Total = 11 (Sodium).",
+            "difficulty": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "E. Goldstein discovered which radiations?",
+            "options": {
+                "A": "Cathode rays",
+                "B": "Canal rays",
+                "C": "X-rays",
+                "D": "Gamma rays"
+            },
+            "correct_answer": "B",
+            "explanation": "Canal rays led to the discovery of the proton.",
+            "difficulty": "medium",
+            "source_section": "Section 4.1"
+        }
+    ]
+}

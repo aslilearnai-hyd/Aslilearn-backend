@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-06T10:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why science is considered a continuously evolving field.",
+            "answer": "Science evolves continuously because new discoveries, improved technology, and fresh evidence allow scientists to refine or replace earlier explanations about natural phenomena.",
+            "key_concepts": ["evolving science", "scientific progress", "new evidence"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Discuss the importance of evidence in validating scientific ideas.",
+            "answer": "Evidence is essential because scientific ideas must be supported by observations, data, and experiments. Without evidence, scientific claims cannot be accepted or verified.",
+            "key_concepts": ["scientific evidence", "validation"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how scientific investigations contribute to the growth of knowledge.",
+            "answer": "Scientific investigations allow scientists to test ideas, collect data, and analyze results. This process leads to new discoveries and a deeper understanding of the natural world.",
+            "key_concepts": ["scientific investigation", "knowledge growth"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is it important for scientific experiments to be repeatable?",
+            "answer": "Repeatable experiments confirm the reliability and accuracy of results. If different scientists obtain the same results, the findings become more trustworthy.",
+            "key_concepts": ["repeatability", "reliability"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how new technology influences scientific discoveries.",
+            "answer": "New technology provides advanced tools and instruments that allow scientists to observe, measure, and analyze phenomena that were previously difficult or impossible to study.",
+            "key_concepts": ["technology", "scientific tools"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss the relationship between observation and hypothesis formation.",
+            "answer": "Observation helps scientists identify patterns or phenomena. Based on these observations, scientists propose hypotheses that can be tested through experiments.",
+            "key_concepts": ["observation", "hypothesis"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is critical thinking important in scientific research?",
+            "answer": "Critical thinking helps scientists analyze data carefully, evaluate evidence, and avoid errors or biases in their conclusions.",
+            "key_concepts": ["critical thinking", "analysis"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how scientific models help scientists understand complex systems.",
+            "answer": "Scientific models simplify complex systems by representing them visually or mathematically, allowing scientists to study and predict their behavior.",
+            "key_concepts": ["scientific models", "representation"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the role of collaboration in scientific progress.",
+            "answer": "Collaboration allows scientists to share ideas, combine expertise, and work together on complex problems, leading to faster and more effective discoveries.",
+            "key_concepts": ["collaboration", "scientific teamwork"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "How do scientific theories differ from hypotheses?",
+            "answer": "A hypothesis is a testable prediction, while a scientific theory is a well-supported explanation developed after extensive testing and evidence.",
+            "key_concepts": ["hypothesis", "scientific theory"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the role of data analysis in scientific research.",
+            "answer": "Data analysis helps scientists identify patterns, interpret results, and determine whether their hypothesis is supported or rejected.",
+            "key_concepts": ["data analysis", "scientific results"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Why must scientific explanations be based on evidence rather than opinion?",
+            "answer": "Scientific explanations must rely on measurable evidence and verified observations so that conclusions remain objective and reliable.",
+            "key_concepts": ["evidence-based science", "objectivity"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how creativity contributes to scientific innovation.",
+            "answer": "Creativity allows scientists to develop new ideas, design innovative experiments, and propose novel solutions to scientific problems.",
+            "key_concepts": ["creativity", "innovation"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Discuss how scientific discoveries influence society.",
+            "answer": "Scientific discoveries improve healthcare, technology, transportation, and communication, leading to better living standards and societal progress.",
+            "key_concepts": ["science and society", "development"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why accuracy and precision are important in measurements.",
+            "answer": "Accuracy ensures measurements are close to the true value, while precision ensures consistent results. Both are necessary for reliable scientific conclusions.",
+            "key_concepts": ["accuracy", "precision"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is peer review important in scientific research?",
+            "answer": "Peer review allows other scientists to evaluate research methods and findings, ensuring reliability and credibility before publication.",
+            "key_concepts": ["peer review", "scientific validation"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how errors can affect scientific experiments.",
+            "answer": "Errors can lead to incorrect measurements or misleading conclusions. Identifying and minimizing errors improves the reliability of results.",
+            "key_concepts": ["experimental error", "reliability"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "How does scientific knowledge build upon previous discoveries?",
+            "answer": "Scientists use existing research as a foundation and expand it through further experiments and observations.",
+            "key_concepts": ["scientific progress", "research development"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of questioning assumptions in science.",
+            "answer": "Questioning assumptions encourages scientists to test ideas thoroughly and prevents the acceptance of incorrect conclusions.",
+            "key_concepts": ["scientific questioning", "critical analysis"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Discuss how science helps solve real-world problems.",
+            "answer": "Science provides methods and technologies that help address issues such as disease control, environmental protection, and energy production.",
+            "key_concepts": ["problem solving", "scientific applications"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is systematic investigation important in science?",
+            "answer": "Systematic investigation ensures that scientific studies follow organized steps, making results reliable and reproducible.",
+            "key_concepts": ["systematic investigation", "scientific method"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of predictions in scientific studies.",
+            "answer": "Predictions help scientists test hypotheses by anticipating results that can be compared with experimental findings.",
+            "key_concepts": ["prediction", "hypothesis testing"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "How does communication contribute to scientific advancement?",
+            "answer": "Sharing research through journals, conferences, and reports allows scientists worldwide to learn from each other and advance knowledge collectively.",
+            "key_concepts": ["scientific communication", "knowledge sharing"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how scientific thinking differs from everyday thinking.",
+            "answer": "Scientific thinking relies on evidence, experimentation, and logical reasoning, whereas everyday thinking may rely on personal beliefs or assumptions.",
+            "key_concepts": ["scientific reasoning", "evidence-based thinking"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why must scientists remain open to revising their conclusions?",
+            "answer": "New evidence may contradict earlier findings, so scientists must revise conclusions to ensure that scientific knowledge remains accurate and reliable.",
+            "key_concepts": ["scientific revision", "new evidence"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

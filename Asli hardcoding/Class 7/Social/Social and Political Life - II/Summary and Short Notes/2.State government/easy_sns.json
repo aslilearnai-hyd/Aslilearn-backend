@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Civics (Social and Political Life II)",
+    "chapter": "How the State Government Works",
+    "difficulty": "Easy",
+    "source_pdf": "jess303.pdf",
+    "short_notes": {
+        "key_points": [
+            "Every state in India has a Legislative Assembly where representatives are elected by the people.",
+            "MLA stands for Member of Legislative Assembly; they are elected by the people of a specific constituency.",
+            "A constituency is a particular area from which all the voters living there choose their representatives.",
+            "The political party whose MLAs have won more than half the number of constituencies in a state is called the 'Majority' party.",
+            "The Majority party forms the government, and all the other members are called the 'Opposition'."
+        ],
+        "examples": [
+            "Chief Minister (CM): The leader of the ruling party who is chosen by the elected MLAs.",
+            "Governor: The head of the State who is appointed by the Central Government to ensure the state follows the Constitution.",
+            "Cabinet Ministers: MLAs who are given specific departments like Health, Education, or Agriculture by the CM.",
+            "Press Conference: A meeting where ministers explain government steps to reporters and the public."
+        ],
+        "formulas": [
+            "Majority = (Total Number of Constituencies / 2) + 1",
+            "State Government = Chief Minister + Council of Ministers"
+        ],
+        "exam_tips": [
+            "Remember that every MLA belongs to a political party, even if they are 'Independent'.",
+            "Note that the Legislative Assembly is the place where all MLAs (ruling and opposition) meet to discuss various things.",
+            "Understand that the CM and other ministers have the 'Executive' power to run the government.",
+            "Identify that 'Coalition' occurs when no single party gets a majority and two or more parties join together."
+        ]
+    }
+}

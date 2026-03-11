@@ -1,0 +1,179 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Gravitation",
+    "difficulty": "Easy",
+    "source_pdf": "s9_9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Stone and Thread Circular Motion Activity",
+            "objective": "Understand centripetal force and motion under gravitational influence",
+            "materials": [
+                "Small stone",
+                "Thread"
+            ],
+            "steps": [
+                "Tie a small stone to one end of a thread",
+                "Hold the other end and whirl the stone in a circular path",
+                "Observe the circular motion",
+                "Release the thread and observe the direction of motion"
+            ],
+            "learning_outcome": "Students understand centripetal force and motion of objects under force",
+            "evaluation": "Observation explanation and diagram (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Free Fall Demonstration",
+            "objective": "Understand the concept of free fall",
+            "materials": [
+                "Small stone"
+            ],
+            "steps": [
+                "Hold a stone at a height",
+                "Release the stone without applying force",
+                "Observe its downward motion",
+                "Discuss the reason for the motion"
+            ],
+            "learning_outcome": "Understands that objects fall due to gravitational force",
+            "evaluation": "Correct explanation of free fall (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Paper and Stone Falling Experiment",
+            "objective": "Compare falling speeds of objects",
+            "materials": [
+                "Paper sheet",
+                "Small stone"
+            ],
+            "steps": [
+                "Drop a paper sheet and a stone from the same height",
+                "Observe which reaches the ground first",
+                "Crumple the paper and repeat the experiment",
+                "Compare the observations"
+            ],
+            "learning_outcome": "Recognizes the effect of air resistance on falling objects",
+            "evaluation": "Observation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Weight Calculation Activity",
+            "objective": "Learn relation between mass and weight",
+            "materials": [
+                "Calculator",
+                "Notebook"
+            ],
+            "steps": [
+                "Write the formula W = m × g",
+                "Take different mass values such as 2 kg, 5 kg and 10 kg",
+                "Calculate weight using g = 9.8 m/s²",
+                "Record results in a table"
+            ],
+            "learning_outcome": "Understands relationship between mass and weight",
+            "evaluation": "Accuracy of calculations (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Mass vs Weight Comparison Chart",
+            "objective": "Differentiate mass and weight",
+            "materials": [
+                "Chart paper",
+                "Sketch pens"
+            ],
+            "steps": [
+                "Draw a comparison table for mass and weight",
+                "Write definitions of both terms",
+                "Include SI units and measuring instruments",
+                "Provide examples"
+            ],
+            "learning_outcome": "Understands differences between mass and weight",
+            "evaluation": "Clarity of comparison chart (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Standing vs Lying on Sand Activity",
+            "objective": "Understand pressure concept",
+            "materials": [
+                "Sand surface"
+            ],
+            "steps": [
+                "Stand on loose sand and observe the depth of footprints",
+                "Lie down on the sand",
+                "Observe the difference in sinking depth",
+                "Discuss why the results differ"
+            ],
+            "learning_outcome": "Learns that pressure depends on area",
+            "evaluation": "Explanation of pressure concept (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Drawing Pin Pressure Activity",
+            "objective": "Demonstrate pressure due to small area",
+            "materials": [
+                "Drawing pin",
+                "Board"
+            ],
+            "steps": [
+                "Press a drawing pin into a board",
+                "Observe the sharp tip penetrating easily",
+                "Compare with pressing using the head",
+                "Discuss the effect of area on pressure"
+            ],
+            "learning_outcome": "Understands pressure = thrust / area",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Floating Bottle Experiment",
+            "objective": "Understand buoyancy",
+            "materials": [
+                "Plastic bottle",
+                "Water bucket"
+            ],
+            "steps": [
+                "Place a sealed empty bottle in a bucket of water",
+                "Observe that the bottle floats",
+                "Push the bottle deeper into water",
+                "Release it and observe its movement"
+            ],
+            "learning_outcome": "Recognizes buoyant force acting upward in fluids",
+            "evaluation": "Observation explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Nail and Cork Floating Test",
+            "objective": "Understand density and floating",
+            "materials": [
+                "Iron nail",
+                "Cork",
+                "Beaker of water"
+            ],
+            "steps": [
+                "Place an iron nail in water",
+                "Observe that it sinks",
+                "Place a cork on the water surface",
+                "Observe that it floats"
+            ],
+            "learning_outcome": "Understands that density determines floating or sinking",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Archimedes Principle Demonstration",
+            "objective": "Understand buoyant force and displaced water",
+            "materials": [
+                "Stone",
+                "Rubber string or spring balance",
+                "Container with water"
+            ],
+            "steps": [
+                "Tie a stone to a spring balance",
+                "Note the reading in air",
+                "Slowly immerse the stone in water",
+                "Observe the change in reading"
+            ],
+            "learning_outcome": "Understands Archimedes’ principle and buoyant force",
+            "evaluation": "Correct observation and explanation (10 marks)"
+        }
+    ]
+}

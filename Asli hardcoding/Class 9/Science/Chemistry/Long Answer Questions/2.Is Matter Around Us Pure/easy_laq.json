@@ -1,0 +1,422 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Is Matter Around Us Pure",
+    "generated_at": "2026-03-06T19:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a pure substance? Explain with examples from daily life.",
+            "answer": "A pure substance consists of a single type of particles. All the constituent particles of a pure substance are the same in their chemical nature. In daily life, we consider things like sugar or distilled water as pure because they are made up of only one type of molecule throughout.",
+            "answer_outline": [
+                "Definition of pure substance",
+                "Chemical nature of particles",
+                "Examples (Sugar, Distilled Water)"
+            ],
+            "key_concepts": [
+                "pure substance",
+                "chemical nature"
+            ],
+            "marks": 4,
+            "source_section": "2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define a mixture and explain its two main types.",
+            "answer": "Mixtures are substances that contain more than one substance (elements or compounds) mixed together in any proportion. They are divided into two types: 1. Homogeneous mixtures, which have a uniform composition (e.g., salt in water). 2. Heterogeneous mixtures, which have non-uniform composition and visible boundaries of separation (e.g., oil and water).",
+            "answer_outline": [
+                "Definition of mixture",
+                "Homogeneous vs Heterogeneous",
+                "Daily life examples"
+            ],
+            "key_concepts": [
+                "mixture",
+                "homogeneous",
+                "heterogeneous"
+            ],
+            "marks": 5,
+            "source_section": "2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a solution? Describe its two components.",
+            "answer": "A solution is a homogeneous mixture of two or more substances. It consists of two parts: 1. Solvent: The component that dissolves the other component (usually present in larger quantity). 2. Solute: The component that is dissolved in the solvent (usually present in lesser quantity).",
+            "answer_outline": [
+                "Definition of solution",
+                "Role of solvent",
+                "Role of solute",
+                "Example (Lemonade)"
+            ],
+            "key_concepts": [
+                "solution",
+                "solvent",
+                "solute"
+            ],
+            "marks": 5,
+            "source_section": "2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "List four properties of a true solution.",
+            "answer": "1. It is a homogeneous mixture. 2. The particles are smaller than 1 nm in diameter and cannot be seen by the naked eye. 3. They do not scatter a beam of light passing through them (no Tyndall effect). 4. The solute particles do not settle down when left undisturbed (stable).",
+            "answer_outline": [
+                "Homogeneity",
+                "Particle size",
+                "Light scattering behavior",
+                "Stability"
+            ],
+            "key_concepts": [
+                "properties of solution",
+                "stability",
+                "particle size"
+            ],
+            "marks": 4,
+            "source_section": "2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What are alloys? Why are they considered mixtures even though they have uniform composition?",
+            "answer": "Alloys are homogeneous mixtures of metals or a metal and a non-metal that cannot be separated into their components by physical methods. They are considered mixtures because they show the properties of their constituents and can have variable compositions (e.g., Brass is 30% Zinc and 70% Copper).",
+            "answer_outline": [
+                "Definition of alloys",
+                "Constituent properties",
+                "Variable composition",
+                "Example (Brass)"
+            ],
+            "key_concepts": [
+                "alloys",
+                "brass",
+                "mixture"
+            ],
+            "marks": 4,
+            "source_section": "2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the difference between a saturated and an unsaturated solution.",
+            "answer": "A saturated solution is one in which no more solute can be dissolved at a particular temperature. An unsaturated solution is one where the amount of solute contained is less than the saturation level, meaning more solute can still be dissolved without changing the temperature.",
+            "answer_outline": [
+                "Definition of saturated solution",
+                "Definition of unsaturated solution",
+                "Role of temperature"
+            ],
+            "key_concepts": [
+                "saturated solution",
+                "unsaturated solution",
+                "solubility"
+            ],
+            "marks": 5,
+            "source_section": "2.2.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is solubility? How does it change with temperature?",
+            "answer": "Solubility is the maximum amount of solute that can be dissolved in a specific amount of solvent at a given temperature. Generally, for solids in liquids, solubility increases with an increase in temperature, while for gases in liquids, it decreases with an increase in temperature.",
+            "answer_outline": [
+                "Definition of solubility",
+                "Effect of heating",
+                "Solid vs Gas behavior"
+            ],
+            "key_concepts": [
+                "solubility",
+                "temperature effect"
+            ],
+            "marks": 4,
+            "source_section": "2.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe a suspension and state three of its characteristics.",
+            "answer": "A suspension is a heterogeneous mixture in which the solute particles do not dissolve but remain suspended throughout the bulk of the medium. Characteristics: 1. Particles are visible to the naked eye. 2. It scatters a beam of light (Tyndall effect). 3. It is unstable; particles settle down over time.",
+            "answer_outline": [
+                "Definition of suspension",
+                "Visibility",
+                "Stability",
+                "Tyndall effect"
+            ],
+            "key_concepts": [
+                "suspension",
+                "unstable",
+                "heterogeneous"
+            ],
+            "marks": 5,
+            "source_section": "2.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a colloid? Give three examples from your surroundings.",
+            "answer": "A colloid is a mixture where the particle size is intermediate between a true solution and a suspension. Though it appears homogeneous, it is actually heterogeneous. Examples include milk, fog, and clouds.",
+            "answer_outline": [
+                "Definition of colloid",
+                "Microscopic nature",
+                "Daily life examples"
+            ],
+            "key_concepts": [
+                "colloid",
+                "milk",
+                "fog"
+            ],
+            "marks": 4,
+            "source_section": "2.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the Tyndall effect with a diagrammatic description.",
+            "answer": "The Tyndall effect is the scattering of a beam of light by colloidal particles. Because the particles in a colloid are large enough to deflect light, the path of the beam becomes visible. This can be seen when sunlight enters a dusty room through a small hole or passes through a dense forest canopy.",
+            "answer_outline": [
+                "Definition",
+                "Cause (Particle size)",
+                "Examples in nature"
+            ],
+            "key_concepts": [
+                "Tyndall effect",
+                "light scattering"
+            ],
+            "marks": 5,
+            "source_section": "2.2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Differentiate between the dispersed phase and the dispersion medium in a colloid.",
+            "answer": "The solute-like component or the particles dispersed in a colloid is called the dispersed phase. The component in which the dispersed phase is suspended is called the dispersing medium. For example, in fog, water droplets are the dispersed phase and air is the dispersing medium.",
+            "answer_outline": [
+                "Definition of dispersed phase",
+                "Definition of dispersing medium",
+                "Example (Fog or Milk)"
+            ],
+            "key_concepts": [
+                "dispersed phase",
+                "dispersion medium"
+            ],
+            "marks": 4,
+            "source_section": "2.2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "How can we separate cream from milk? Explain the principle involved.",
+            "answer": "Cream is separated from milk using the process of centrifugation. The milk is spun rapidly in a centrifuge machine. The principle is that the denser particles are forced to the bottom and the lighter particles (like cream) stay at the top.",
+            "answer_outline": [
+                "Separation method",
+                "Principle of density",
+                "Resulting layers"
+            ],
+            "key_concepts": [
+                "centrifugation",
+                "cream separation"
+            ],
+            "marks": 5,
+            "source_section": "2.3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe the method to separate two immiscible liquids using a separating funnel.",
+            "answer": "Immiscible liquids (like oil and water) form distinct layers based on their densities. In a separating funnel, the mixture is allowed to stand. The heavier liquid (water) forms the bottom layer and can be drained out by opening the stopcock, leaving the lighter liquid (oil) in the funnel.",
+            "answer_outline": [
+                "Property of immiscibility",
+                "Density layers",
+                "Stopcock mechanism"
+            ],
+            "key_concepts": [
+                "separating funnel",
+                "immiscible liquids"
+            ],
+            "marks": 5,
+            "source_section": "2.3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is sublimation? How can it be used to separate salt from ammonium chloride?",
+            "answer": "Sublimation is the transition of a substance directly from solid to gas. Ammonium chloride sublimes, while salt does not. By heating the mixture, ammonium chloride turns into vapour and solidifies on the cooler parts of the apparatus, leaving the salt behind in the dish.",
+            "answer_outline": [
+                "Definition of sublimation",
+                "Sublimable vs non-sublimable components",
+                "Apparatus setup"
+            ],
+            "key_concepts": [
+                "sublimation",
+                "ammonium chloride",
+                "purification"
+            ],
+            "marks": 5,
+            "source_section": "2.3.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is chromatography? Give two applications of this technique.",
+            "answer": "Chromatography is a technique used for the separation of solutes that dissolve in the same solvent but at different rates. Applications: 1. To separate colours in a dye. 2. To separate drugs from blood samples.",
+            "answer_outline": [
+                "Definition",
+                "Principle of solubility",
+                "Two applications"
+            ],
+            "key_concepts": [
+                "chromatography",
+                "pigment separation"
+            ],
+            "marks": 5,
+            "source_section": "2.3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the process of simple distillation to separate acetone and water.",
+            "answer": "Distillation is used to separate miscible liquids with sufficient difference in boiling points. The mixture is heated in a flask. Acetone, having a lower boiling point, vaporizes first, passes through a condenser where it cools into a liquid, and is collected in a separate beaker, while water remains in the flask.",
+            "answer_outline": [
+                "Definition of miscible liquids",
+                "Boiling point difference",
+                "Role of condenser"
+            ],
+            "key_concepts": [
+                "distillation",
+                "boiling point",
+                "condenser"
+            ],
+            "marks": 5,
+            "source_section": "2.3.7"
+        },
+        {
+            "question_number": 17,
+            "question": "When is fractional distillation used instead of simple distillation?",
+            "answer": "Fractional distillation is used to separate a mixture of two or more miscible liquids for which the difference in boiling points is less than 25 K. It uses a fractionating column which provides extra surface area for condensation and more efficient separation.",
+            "answer_outline": [
+                "Boiling point constraint (< 25 K)",
+                "Role of fractionating column",
+                "Example (Air separation)"
+            ],
+            "key_concepts": [
+                "fractional distillation",
+                "fractionating column"
+            ],
+            "marks": 5,
+            "source_section": "2.3.7"
+        },
+        {
+            "question_number": 18,
+            "question": "How are different gases separated from air? Outline the steps.",
+            "answer": "Air is a homogeneous mixture separated by fractional distillation. Steps: 1. Compress and cool air to get liquid air. 2. Allow liquid air to warm up slowly in a fractional distillation column. 3. Gases get separated at different heights based on their specific boiling points.",
+            "answer_outline": [
+                "Compression and cooling",
+                "Liquid air formation",
+                "Warming and height separation"
+            ],
+            "key_concepts": [
+                "air separation",
+                "liquid air",
+                "boiling points"
+            ],
+            "marks": 5,
+            "source_section": "2.3.7"
+        },
+        {
+            "question_number": 19,
+            "question": "What is crystallization? Why is it better than evaporation for obtaining pure solids?",
+            "answer": "Crystallization is a process that separates a pure solid from a solution in the form of its crystals. It is better than evaporation because: 1. Some solids decompose or char upon heating to dryness. 2. Some impurities may remain in the solution even after evaporation, whereas crystallization removes them.",
+            "answer_outline": [
+                "Definition",
+                "Advantage over heating to dryness",
+                "Removal of impurities"
+            ],
+            "key_concepts": [
+                "crystallization",
+                "purification"
+            ],
+            "marks": 5,
+            "source_section": "2.3.8"
+        },
+        {
+            "question_number": 20,
+            "question": "Differentiate between physical and chemical changes with two examples each.",
+            "answer": "Physical changes occur without a change in composition (e.g., melting of ice, cutting of wood). Chemical changes result in the formation of new substances with different properties (e.g., burning of paper, rusting of iron).",
+            "answer_outline": [
+                "Definition of physical change",
+                "Definition of chemical change",
+                "Examples for both"
+            ],
+            "key_concepts": [
+                "physical change",
+                "chemical change"
+            ],
+            "marks": 5,
+            "source_section": "2.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Define an element and categorize them into three groups.",
+            "answer": "An element is a basic form of matter that cannot be broken down into simpler substances by chemical reactions. They are categorized as: 1. Metals (shiny, ductile). 2. Non-metals (dull, brittle). 3. Metalloids (properties intermediate between metals and non-metals).",
+            "answer_outline": [
+                "Dalton/Lavoisier definition",
+                "Metals, Non-metals, Metalloids",
+                "General properties"
+            ],
+            "key_concepts": [
+                "element",
+                "metalloids",
+                "metals"
+            ],
+            "marks": 5,
+            "source_section": "2.5"
+        },
+        {
+            "question_number": 22,
+            "question": "List three properties of metals and three of non-metals.",
+            "answer": "Metals: 1. Lustrous (shiny). 2. Good conductors of heat/electricity. 3. Malleable and ductile. Non-metals: 1. Variety of colours. 2. Poor conductors. 3. Not lustrous or sonorous.",
+            "answer_outline": [
+                "Lustre and conductivity",
+                "Malleability vs Brittleness",
+                "Appearance"
+            ],
+            "key_concepts": [
+                "properties of metals",
+                "properties of non-metals"
+            ],
+            "marks": 5,
+            "source_section": "2.5"
+        },
+        {
+            "question_number": 23,
+            "question": "What is a compound? How is it different from a mixture?",
+            "answer": "A compound is a substance composed of two or more elements chemically combined in a fixed proportion. Difference: A compound has a fixed composition and its properties are entirely different from its constituents, while a mixture has variable composition and shows the properties of its constituents.",
+            "answer_outline": [
+                "Definition",
+                "Fixed vs variable composition",
+                "Separation methods"
+            ],
+            "key_concepts": [
+                "compound",
+                "mixture comparison"
+            ],
+            "marks": 5,
+            "source_section": "2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the step-by-step process of purifying water in a water works system.",
+            "answer": "1. Sedimentation: To allow solids to settle. 2. Loading: To settle suspended impurities. 3. Filtration: Through layers of gravel and sand. 4. Chlorination: To kill bacteria before pumping to households.",
+            "answer_outline": [
+                "Sedimentation",
+                "Filtration",
+                "Chlorination"
+            ],
+            "key_concepts": [
+                "water purification",
+                "chlorination"
+            ],
+            "marks": 5,
+            "source_section": "2.3.9"
+        },
+        {
+            "question_number": 25,
+            "question": "Classify the following as pure substances or mixtures: Air, Water, Iron, Soil, Milk.",
+            "answer": "Pure substances: Iron (element), Water (compound). Mixtures: Air (homogeneous gas mixture), Soil (heterogeneous), Milk (colloid mixture).",
+            "answer_outline": [
+                "Identification of elements/compounds",
+                "Identification of mixtures"
+            ],
+            "key_concepts": [
+                "classification",
+                "substances vs mixtures"
+            ],
+            "marks": 5,
+            "source_section": "2.1 & 2.5"
+        }
+    ]
+}

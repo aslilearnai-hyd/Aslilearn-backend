@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Triangles",
+    "generated_at": "2026-02-27T21:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which triangles have the same shape but not necessarily the same size?",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Scalene",
+                "D": "Isosceles"
+            },
+            "correct_answer": "B",
+            "explanation": "Similar triangles have the same shape.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Which of the following is a criterion for similarity of triangles?",
+            "options": {
+                "A": "SSS",
+                "B": "SAS",
+                "C": "AAA",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "SSS, SAS, and AAA are similarity criteria.",
+            "difficulty": "easy",
+            "source_section": "Similarity Criteria"
+        },
+        {
+            "question_number": 3,
+            "question": "If two angles of one triangle are equal to two angles of another triangle, the triangles are?",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Right triangles",
+                "D": "Isosceles"
+            },
+            "correct_answer": "B",
+            "explanation": "Equality of two angles ensures similarity.",
+            "difficulty": "easy",
+            "source_section": "AAA Criterion"
+        },
+        {
+            "question_number": 4,
+            "question": "In similar triangles, the ratio of corresponding sides is called?",
+            "options": {
+                "A": "Area ratio",
+                "B": "Scale factor",
+                "C": "Height ratio",
+                "D": "Angle ratio"
+            },
+            "correct_answer": "B",
+            "explanation": "Scale factor is the ratio of corresponding sides.",
+            "difficulty": "easy",
+            "source_section": "Scale Factor"
+        },
+        {
+            "question_number": 5,
+            "question": "If the scale factor of two similar triangles is 2:1, the ratio of their areas is?",
+            "options": {
+                "A": "2:1",
+                "B": "4:1",
+                "C": "1:2",
+                "D": "1:4"
+            },
+            "correct_answer": "B",
+            "explanation": "Area ratio is the square of the scale factor.",
+            "difficulty": "easy",
+            "source_section": "Area of Similar Triangles"
+        },
+        {
+            "question_number": 6,
+            "question": "Which sides are compared in similar triangles?",
+            "options": {
+                "A": "Adjacent sides",
+                "B": "Equal sides",
+                "C": "Corresponding sides",
+                "D": "Parallel sides"
+            },
+            "correct_answer": "C",
+            "explanation": "Corresponding sides are compared.",
+            "difficulty": "easy",
+            "source_section": "Similarity"
+        },
+        {
+            "question_number": 7,
+            "question": "If two triangles are similar, their corresponding angles are?",
+            "options": {
+                "A": "Unequal",
+                "B": "Right angles",
+                "C": "Equal",
+                "D": "Acute"
+            },
+            "correct_answer": "C",
+            "explanation": "Corresponding angles are equal.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 8,
+            "question": "Which theorem relates similarity to right triangles?",
+            "options": {
+                "A": "Pythagoras theorem",
+                "B": "Thales theorem",
+                "C": "Midpoint theorem",
+                "D": "Angle sum theorem"
+            },
+            "correct_answer": "A",
+            "explanation": "Pythagoras theorem can be derived using similarity.",
+            "difficulty": "easy",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 9,
+            "question": "In similar triangles, the ratio of corresponding heights is equal to?",
+            "options": {
+                "A": "Area ratio",
+                "B": "Square of scale factor",
+                "C": "Scale factor",
+                "D": "Angle ratio"
+            },
+            "correct_answer": "C",
+            "explanation": "Heights follow the same ratio as sides.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 10,
+            "question": "Which triangles always have equal corresponding angles?",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Right",
+                "D": "Isosceles"
+            },
+            "correct_answer": "B",
+            "explanation": "Similarity ensures equal angles.",
+            "difficulty": "easy",
+            "source_section": "Similarity"
+        },
+        {
+            "question_number": 11,
+            "question": "If two sides of a triangle are proportional and included angles are equal, triangles are?",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "This is SAS similarity criterion.",
+            "difficulty": "easy",
+            "source_section": "SAS Criterion"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the sum of interior angles of a triangle?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "360°"
+            },
+            "correct_answer": "B",
+            "explanation": "Sum of angles of a triangle is 180°.",
+            "difficulty": "easy",
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 13,
+            "question": "If two triangles are similar, the ratio of their perimeters is equal to?",
+            "options": {
+                "A": "Area ratio",
+                "B": "Square of scale factor",
+                "C": "Scale factor",
+                "D": "Angle ratio"
+            },
+            "correct_answer": "C",
+            "explanation": "Perimeter follows the same ratio as sides.",
+            "difficulty": "easy",
+            "source_section": "Properties"
+        },
+        {
+            "question_number": 14,
+            "question": "Which triangle has all sides unequal?",
+            "options": {
+                "A": "Isosceles",
+                "B": "Equilateral",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "C",
+            "explanation": "Scalene triangle has unequal sides.",
+            "difficulty": "easy",
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 15,
+            "question": "In an equilateral triangle, each angle is?",
+            "options": {
+                "A": "45°",
+                "B": "60°",
+                "C": "90°",
+                "D": "30°"
+            },
+            "correct_answer": "B",
+            "explanation": "All angles are 60°.",
+            "difficulty": "easy",
+            "source_section": "Types of Triangles"
+        },
+        {
+            "question_number": 16,
+            "question": "Which property is preserved in similar triangles?",
+            "options": {
+                "A": "Size",
+                "B": "Area",
+                "C": "Shape",
+                "D": "Perimeter"
+            },
+            "correct_answer": "C",
+            "explanation": "Shape remains the same.",
+            "difficulty": "easy",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 17,
+            "question": "Which criterion uses only angles?",
+            "options": {
+                "A": "SSS",
+                "B": "SAS",
+                "C": "AAA",
+                "D": "RHS"
+            },
+            "correct_answer": "C",
+            "explanation": "AAA uses only angles.",
+            "difficulty": "easy",
+            "source_section": "Criteria"
+        },
+        {
+            "question_number": 18,
+            "question": "Two congruent triangles are always?",
+            "options": {
+                "A": "Similar",
+                "B": "Scalene",
+                "C": "Right triangles",
+                "D": "Isosceles"
+            },
+            "correct_answer": "A",
+            "explanation": "Congruent triangles are a special case of similar triangles.",
+            "difficulty": "easy",
+            "source_section": "Relation"
+        },
+        {
+            "question_number": 19,
+            "question": "If scale factor is 1, triangles are?",
+            "options": {
+                "A": "Similar",
+                "B": "Congruent",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "Same size and shape means congruent.",
+            "difficulty": "easy",
+            "source_section": "Scale Factor"
+        },
+        {
+            "question_number": 20,
+            "question": "Which triangles are used to prove Pythagoras theorem?",
+            "options": {
+                "A": "Congruent",
+                "B": "Isosceles",
+                "C": "Similar",
+                "D": "Scalene"
+            },
+            "correct_answer": "C",
+            "explanation": "Similarity is used in the proof.",
+            "difficulty": "easy",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 21,
+            "question": "Which triangle has one angle equal to 90°?",
+            "options": {
+                "A": "Acute",
+                "B": "Obtuse",
+                "C": "Right",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Right triangle has one right angle.",
+            "difficulty": "easy",
+            "source_section": "Types"
+        },
+        {
+            "question_number": 22,
+            "question": "If two triangles have proportional sides and equal included angle, they are?",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Scalene",
+                "D": "Right"
+            },
+            "correct_answer": "B",
+            "explanation": "SAS similarity criterion applies.",
+            "difficulty": "easy",
+            "source_section": "SAS Criterion"
+        },
+        {
+            "question_number": 23,
+            "question": "Which triangle has two equal sides?",
+            "options": {
+                "A": "Scalene",
+                "B": "Right",
+                "C": "Isosceles",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Isosceles triangle has two equal sides.",
+            "difficulty": "easy",
+            "source_section": "Types"
+        },
+        {
+            "question_number": 24,
+            "question": "Area ratio of similar triangles depends on?",
+            "options": {
+                "A": "Angles",
+                "B": "Sides",
+                "C": "Square of scale factor",
+                "D": "Perimeter"
+            },
+            "correct_answer": "C",
+            "explanation": "Area ratio equals square of scale factor.",
+            "difficulty": "easy",
+            "source_section": "Area Relation"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "All similar triangles are congruent",
+                "B": "All congruent triangles are similar",
+                "C": "Similar triangles have equal areas",
+                "D": "Congruent triangles have different shapes"
+            },
+            "correct_answer": "B",
+            "explanation": "Congruent triangles are always similar.",
+            "difficulty": "easy",
+            "source_section": "Summary"
+        }
+    ]
+}

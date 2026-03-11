@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 2: Wind",
+    "generated_at": "2026-03-08T23:58:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the speaker in the poem?",
+            "answer": "The speaker is the poet or narrator who addresses the wind directly.",
+            "answer_outline": ["Speaker identification"],
+            "key_concepts": ["speaker", "narrator"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 2,
+            "question": "What natural phenomenon is described in the poem?",
+            "answer": "The poem describes the strong and powerful wind.",
+            "answer_outline": ["Natural phenomenon"],
+            "key_concepts": ["wind", "nature"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 3,
+            "question": "How does the poet personify the wind?",
+            "answer": "The wind is addressed as if it can hear and act, giving it human-like qualities.",
+            "answer_outline": ["Personification", "Example"],
+            "key_concepts": ["personification", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 4,
+            "question": "What effect does the wind have on nature according to the poem?",
+            "answer": "It shakes trees, moves branches, and affects all living things in its path.",
+            "answer_outline": ["Effect on nature", "Examples"],
+            "key_concepts": ["wind", "nature", "impact"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 5,
+            "question": "Which poetic device is used in 'Wild, wild wind'?",
+            "answer": "Repetition is used to emphasize the intensity of the wind.",
+            "answer_outline": ["Poetic device", "Example"],
+            "key_concepts": ["repetition", "emphasis"],
+            "marks": 4,
+            "source_section": "Line 1"
+        },
+        {
+            "question_number": 6,
+            "question": "Identify the rhyme scheme of the poem.",
+            "answer": "The rhyme scheme is simple and repetitive, often AABB.",
+            "answer_outline": ["Rhyme scheme", "Pattern"],
+            "key_concepts": ["rhyme", "poetic form"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the mood of the poem?",
+            "answer": "The mood is energetic, lively, and full of motion, reflecting the wind’s activity.",
+            "answer_outline": ["Mood", "Effect"],
+            "key_concepts": ["mood", "energy", "motion"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does the poet address the wind directly?",
+            "answer": "To give emphasis to its power and create a sense of immediacy.",
+            "answer_outline": ["Direct address", "Effect"],
+            "key_concepts": ["apostrophe", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the overall theme of the poem?",
+            "answer": "The poem celebrates the force and movement of nature, particularly the wind.",
+            "answer_outline": ["Theme", "Summary"],
+            "key_concepts": ["nature", "wind", "force"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 10,
+            "question": "Give one example of alliteration in the poem.",
+            "answer": "'Wild, wild wind' is an example of alliteration.",
+            "answer_outline": ["Alliteration", "Example"],
+            "key_concepts": ["alliteration", "sound effect"],
+            "marks": 4,
+            "source_section": "Line 1"
+        },
+        {
+            "question_number": 11,
+            "question": "How does the poet show the speed of the wind?",
+            "answer": "Through words like 'swift', 'rush', and 'whirling', the poet conveys rapid movement.",
+            "answer_outline": ["Speed", "Word choice"],
+            "key_concepts": ["speed", "wind", "movement"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 12,
+            "question": "How does the poem reflect the power of nature?",
+            "answer": "It shows the wind affecting trees, hills, and animals, demonstrating nature’s uncontrollable force.",
+            "answer_outline": ["Power of nature", "Examples"],
+            "key_concepts": ["nature", "power", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the use of imagery in the poem.",
+            "answer": "The poet uses visual and auditory images like shaking trees and whistling wind to make the reader experience it.",
+            "answer_outline": ["Imagery", "Effect"],
+            "key_concepts": ["imagery", "wind", "experience"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the tone of the poem?",
+            "answer": "The tone is lively, enthusiastic, and celebratory of the wind.",
+            "answer_outline": ["Tone", "Examples"],
+            "key_concepts": ["tone", "enthusiasm", "celebration"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is the wind described as 'wild'?",
+            "answer": "To emphasize its uncontrolled, untamed, and powerful nature.",
+            "answer_outline": ["Description", "Effect"],
+            "key_concepts": ["wild", "wind", "power"],
+            "marks": 4,
+            "source_section": "Line 1"
+        },
+        {
+            "question_number": 16,
+            "question": "Mention one example of onomatopoeia in the poem.",
+            "answer": "Words like 'whistle' imitate the sound of the wind.",
+            "answer_outline": ["Onomatopoeia", "Example"],
+            "key_concepts": ["sound words", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the poem create a sense of movement?",
+            "answer": "Through active verbs like 'rush', 'whirling', and 'blow', giving dynamic energy to the wind.",
+            "answer_outline": ["Movement", "Verbs", "Effect"],
+            "key_concepts": ["movement", "action verbs", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 18,
+            "question": "What does the wind symbolize in the poem?",
+            "answer": "The wind symbolizes freedom, energy, and the unstoppable force of nature.",
+            "answer_outline": ["Symbolism", "Meaning"],
+            "key_concepts": ["symbolism", "wind", "nature"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 19,
+            "question": "How does the poet engage the reader’s senses?",
+            "answer": "By describing sounds and sights like whistling wind and swaying trees, engaging auditory and visual senses.",
+            "answer_outline": ["Sensory engagement", "Examples"],
+            "key_concepts": ["senses", "auditory", "visual"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 20,
+            "question": "Give one example of hyperbole in the poem.",
+            "answer": "The poet exaggerates the wind’s strength as unstoppable and wild.",
+            "answer_outline": ["Hyperbole", "Example"],
+            "key_concepts": ["hyperbole", "wind", "exaggeration"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 21,
+            "question": "How does the poet convey the wind’s energy?",
+            "answer": "Through fast-paced words, repetition, and strong verbs, the wind’s energy is vividly felt.",
+            "answer_outline": ["Energy", "Word choice", "Effect"],
+            "key_concepts": ["energy", "wind", "word choice"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 22,
+            "question": "What literary devices are used to depict the wind?",
+            "answer": "Personification, alliteration, onomatopoeia, and repetition are used to bring the wind alive.",
+            "answer_outline": ["Literary devices", "Examples"],
+            "key_concepts": ["personification", "alliteration", "onomatopoeia", "repetition"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 23,
+            "question": "Why does the poet focus on natural elements?",
+            "answer": "To highlight nature’s power and to evoke appreciation and awe in the reader.",
+            "answer_outline": ["Nature focus", "Effect"],
+            "key_concepts": ["nature", "power", "awe"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 24,
+            "question": "How does the poem inspire imagination?",
+            "answer": "By describing vivid actions of the wind, readers can visualize and imagine its force.",
+            "answer_outline": ["Imagination", "Imagery"],
+            "key_concepts": ["imagination", "visualization", "wind"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the poem in two sentences.",
+            "answer": "The poem celebrates the wind as a powerful, lively force of nature that moves freely and affects everything around it. It uses vivid imagery and literary devices to make the reader experience its energy.",
+            "answer_outline": ["Summary", "Key points"],
+            "key_concepts": ["summary", "wind", "imagery"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        }
+    ]
+}

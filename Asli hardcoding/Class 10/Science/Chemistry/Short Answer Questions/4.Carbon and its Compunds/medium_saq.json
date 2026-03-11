@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-10T23:44:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why does carbon form compounds mainly by covalent bonding?",
+            "answer": "Carbon has 4 electrons in its valence shell. It cannot lose 4 electrons (requires too much energy) or gain 4 electrons (difficult for 6 protons to hold 10 electrons). Therefore, it shares electrons to achieve stability.",
+            "key_concepts": ["covalent bonding", "tetravalency"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the nature of the covalent bond using the bond formation in $CH_4$.",
+            "answer": "In methane, one carbon atom shares its 4 valence electrons with 4 hydrogen atoms (each sharing 1 electron). This results in 4 single covalent bonds, allowing all atoms to achieve noble gas configuration.",
+            "key_concepts": ["methane", "electron sharing"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are the two properties of carbon which lead to the huge number of carbon compounds?",
+            "answer": "1. Catenation: The ability to form bonds with other carbon atoms. 2. Tetravalency: The ability to bond with four other atoms.",
+            "key_concepts": ["catenation", "tetravalency"],
+            "marks": 2,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Saturated hydrocarbons burn with a blue flame while unsaturated ones burn with a yellow sooty flame. Why?",
+            "answer": "Saturated hydrocarbons undergo complete combustion due to high carbon-hydrogen ratio. Unsaturated ones have more carbon, leading to incomplete combustion and unburnt carbon particles (soot).",
+            "key_concepts": ["combustion", "sooty flame"],
+            "marks": 2,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a homologous series? State any two characteristics.",
+            "answer": "A series of compounds with the same functional group and chemical properties. Characteristics: 1. Members differ by a $-CH_2$ group. 2. Members differ by 14u in molecular mass.",
+            "key_concepts": ["homologous series", "functional group"],
+            "marks": 2,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How can ethanol and ethanoic acid be differentiated on the basis of their physical and chemical properties?",
+            "answer": "Physical: Ethanol has a pleasant smell; Ethanoic acid smells like vinegar. Chemical: Ethanoic acid reacts with sodium bicarbonate to evolve $CO_2$ gas (brisk effervescence), whereas ethanol does not.",
+            "key_concepts": ["ethanol", "ethanoic acid", "sodium bicarbonate test"],
+            "marks": 3,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 7,
+            "question": "What is hydrogenation? What is its industrial application?",
+            "answer": "Hydrogenation is the addition of hydrogen to unsaturated hydrocarbons in the presence of catalysts like Nickel. Industrial application: Conversion of vegetable oils (unsaturated) into vegetable ghee (saturated).",
+            "key_concepts": ["addition reaction", "hydrogenation"],
+            "marks": 2,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is the conversion of ethanol to ethanoic acid an oxidation reaction?",
+            "answer": "Because it involves the addition of oxygen and the removal of hydrogen from the ethanol molecule, usually facilitated by alkaline $KMnO_4$ or acidified $K_2Cr_2O_7$.",
+            "key_concepts": ["oxidation", "oxidizing agents"],
+            "marks": 2,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is an esterification reaction? Write the equation.",
+            "answer": "The reaction of a carboxylic acid with an alcohol in the presence of an acid catalyst to form an ester. $CH_3COOH + C_2H_5OH \\xrightarrow{Acid} CH_3COOC_2H_5 + H_2O$.",
+            "key_concepts": ["esterification", "esters"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is saponification? Why is it called so?",
+            "answer": "It is the alkaline hydrolysis of an ester to give back the alcohol and the sodium salt of carboxylic acid. It is used in the preparation of soaps.",
+            "key_concepts": ["saponification", "soap"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the cleansing action of soap with the help of a diagram description.",
+            "answer": "Soap molecules have a hydrophilic head and a hydrophobic tail. The tails attach to dirt/oil, while heads stay in water, forming a structure called a micelle that pulls dirt away.",
+            "key_concepts": ["micelle", "cleansing action"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does soap form scum with hard water while detergents do not?",
+            "answer": "Soap reacts with Calcium and Magnesium ions in hard water to form insoluble precipitates (scum). Detergents do not form insoluble salts with these ions.",
+            "key_concepts": ["hard water", "detergents", "scum"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Draw the electron dot structure for ethyne ($C_2H_2$).",
+            "answer": "Ethyne has a triple bond between the two carbon atoms ($H-C \\equiv C-H$). Each Carbon shares 3 electrons with the other Carbon and 1 with Hydrogen.",
+            "key_concepts": ["electron dot structure", "ethyne"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What are isomers? Draw the structures of two isomers of butane.",
+            "answer": "Compounds with the same molecular formula but different structural arrangements. Butane ($C_4H_{10}$) has n-butane (straight chain) and isobutane (branched chain).",
+            "key_concepts": ["isomerism", "butane"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What will be the formula and electron dot structure of cyclopentane?",
+            "answer": "Formula: $C_5H_{10}$. It forms a closed ring of 5 carbon atoms, each bonded to 2 hydrogen atoms.",
+            "key_concepts": ["cyclopentane", "cyclic hydrocarbons"],
+            "marks": 2,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the functional groups present in: (i) $CH_3COCH_3$ (ii) $CH_3CHO$.",
+            "answer": "(i) Ketone ($-CO-$) (ii) Aldehyde ($-CHO$).",
+            "key_concepts": ["functional groups"],
+            "marks": 1,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is 'denatured alcohol'?",
+            "answer": "Ethanol to which poisonous substances like methanol or dyes (copper sulphate) are added to make it unfit for drinking and prevent its industrial misuse.",
+            "key_concepts": ["ethanol", "denaturation"],
+            "marks": 2,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why are coal and petroleum called fossil fuels?",
+            "answer": "Because they were formed from the biomass of plants and animals that lived millions of years ago and were buried under the earth.",
+            "key_concepts": ["fossil fuels"],
+            "marks": 1,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is a catalyst? Give an example of its use in carbon compounds.",
+            "answer": "A substance that changes the rate of a reaction without being consumed. Example: Nickel or Palladium used in the hydrogenation of oils.",
+            "key_concepts": ["catalyst", "hydrogenation"],
+            "marks": 2,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is pure ethanoic acid called glacial acetic acid?",
+            "answer": "Because it has a melting point of 290K and often freezes during winter in cold climates, looking like a glacier.",
+            "key_concepts": ["ethanoic acid", "glacial acetic acid"],
+            "marks": 1,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Write the chemical equation for the reaction of ethanoic acid with Sodium Carbonate.",
+            "answer": "$2CH_3COOH + Na_2CO_3 \\rightarrow 2CH_3COONa + H_2O + CO_2$.",
+            "key_concepts": ["chemical properties", "ethanoic acid"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Compare the structure of Diamond and Graphite.",
+            "answer": "In Diamond, each carbon is bonded to 4 others in a 3D structure (hard). In Graphite, each carbon is bonded to 3 others in layers (soft, conducts electricity).",
+            "key_concepts": ["allotropes", "diamond", "graphite"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the role of concentrated sulphuric acid in the esterification reaction?",
+            "answer": "It acts as both a catalyst and a dehydrating agent, helping to remove the water formed and shifting the equilibrium to produce more ester.",
+            "key_concepts": ["esterification", "dehydrating agent"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Name the reaction: $CH_4 + Cl_2 \\xrightarrow{Sunlight} CH_3Cl + HCl$.",
+            "answer": "Substitution reaction.",
+            "key_concepts": ["substitution reaction", "chlorination"],
+            "marks": 1,
+            "source_section": "Section 4.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "What are buckminsterfullerenes?",
+            "answer": "An allotrope of carbon where carbon atoms are arranged in the shape of a football. The first identified was C-60.",
+            "key_concepts": ["fullerenes", "allotropes"],
+            "marks": 1,
+            "source_section": "Section 4.1"
+        }
+    ]
+}

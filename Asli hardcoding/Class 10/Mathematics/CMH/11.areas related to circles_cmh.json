@@ -1,0 +1,67 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter: Areas Related to Circles",
+    "generated_at": "2026-02-28T10:25:00",
+    "concepts": [
+        {
+            "concept_name": "Area of a Circle",
+            "difficulty": "easy",
+            "lesson": "The area of a circle is the region enclosed by its circumference and is calculated using the formula πr². The area depends on the square of the radius, meaning small changes in radius lead to significant changes in area. This concept is widely used in real-life measurements and design problems.",
+            "real_example": "Finding the area of a circular garden to buy grass seeds.",
+            "key_points": [
+                "Formula: Area = πr²",
+                "Depends on square of radius",
+                "Unit is square units"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "concept_name": "Circumference of a Circle",
+            "difficulty": "easy",
+            "lesson": "The circumference of a circle is the total distance around its boundary. It is calculated using the formula 2πr or πd. Circumference represents a linear measurement and is used in problems involving distance around circular objects.",
+            "real_example": "Measuring the length of a circular running track.",
+            "key_points": [
+                "Formula: Circumference = 2πr",
+                "Also written as πd",
+                "Linear measurement"
+            ],
+            "source_section": "Section 11.1"
+        },
+        {
+            "concept_name": "Area of a Sector",
+            "difficulty": "medium",
+            "lesson": "A sector is a part of a circle bounded by two radii and an arc. The area of a sector depends on the angle subtended at the centre. This concept helps calculate areas of portions of circular regions.",
+            "real_example": "Finding the area of a pizza slice.",
+            "key_points": [
+                "Area = (θ/360) × πr²",
+                "θ is central angle",
+                "Part of a circle"
+            ],
+            "source_section": "Section 11.2"
+        },
+        {
+            "concept_name": "Length of an Arc",
+            "difficulty": "medium",
+            "lesson": "The length of an arc is a fraction of the circumference corresponding to the central angle. Arc length represents curved distance and is widely used in practical problems involving circular paths.",
+            "real_example": "Calculating the curved length of a race track bend.",
+            "key_points": [
+                "Arc length = (θ/360) × 2πr",
+                "Measured in linear units",
+                "Related to circumference"
+            ],
+            "source_section": "Section 11.2"
+        },
+        {
+            "concept_name": "Area of a Segment",
+            "difficulty": "hard",
+            "lesson": "A segment of a circle is the region bounded by a chord and the corresponding arc. The area of a segment is found by subtracting the area of the triangle from the area of the sector. Segment problems often involve careful calculation and diagram analysis.",
+            "real_example": "Finding the shaded area between a chord and an arc.",
+            "key_points": [
+                "Segment = Sector − Triangle",
+                "Can be minor or major segment",
+                "Used in complex area problems"
+            ],
+            "source_section": "Section 11.3"
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science - Geography",
+  "chapter": "Resources",
+  "difficulty": "Easy",
+  "source_pdf": "Resources.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Identifying Types of Resources",
+      "objective": "Understand the classification of resources",
+      "materials": ["Notebook", "Textbook", "Pen"],
+      "steps": [
+        "Teacher explains the concept of resources",
+        "Students list examples of natural, human-made, and human resources",
+        "Classify each example into the correct category",
+        "Discuss the importance of each type"
+      ],
+      "learning_outcome": "Students identify different types of resources and their uses",
+      "evaluation": "Correct classification of resources (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Resource Sorting Activity",
+      "objective": "Learn how resources are categorized based on origin",
+      "materials": ["Flash cards", "Chart paper", "Markers"],
+      "steps": [
+        "Teacher prepares flash cards with names of resources",
+        "Students work in groups",
+        "Sort the resources into renewable and non-renewable categories",
+        "Paste them on chart paper and present to the class"
+      ],
+      "learning_outcome": "Students understand the difference between renewable and non-renewable resources",
+      "evaluation": "Accuracy of sorting and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Map Activity: Natural Resources of India",
+      "objective": "Locate major natural resources in India",
+      "materials": ["Map of India", "Atlas", "Pencil"],
+      "steps": [
+        "Provide a blank map of India",
+        "Mark regions rich in coal, iron, and petroleum",
+        "Label the locations clearly",
+        "Discuss the importance of these resources"
+      ],
+      "learning_outcome": "Students learn the distribution of major natural resources in India",
+      "evaluation": "Accuracy of map marking (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Poster on Resource Conservation",
+      "objective": "Create awareness about conserving resources",
+      "materials": ["Chart paper", "Color pencils", "Markers"],
+      "steps": [
+        "Students design posters on saving natural resources",
+        "Include slogans about conservation",
+        "Add illustrations related to water, forests, and minerals",
+        "Display posters in the classroom"
+      ],
+      "learning_outcome": "Students develop awareness about sustainable use of resources",
+      "evaluation": "Creativity and relevance of poster (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Group Discussion on Sustainable Development",
+      "objective": "Understand the concept of sustainable development",
+      "materials": ["Notebook", "Blackboard"],
+      "steps": [
+        "Divide the class into small groups",
+        "Discuss the meaning of sustainable development",
+        "List ways to conserve resources",
+        "Present ideas to the class"
+      ],
+      "learning_outcome": "Students understand the importance of using resources wisely",
+      "evaluation": "Participation and clarity of ideas (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Household Resource Survey",
+      "objective": "Identify resources used in daily life",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Students list resources used at home",
+        "Classify them as natural or human-made",
+        "Identify which resources are renewable",
+        "Present findings in class"
+      ],
+      "learning_outcome": "Students connect textbook concepts with real-life resource use",
+      "evaluation": "Completeness of survey (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Resource Conservation Pledge",
+      "objective": "Encourage responsible use of resources",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Students write a pledge to conserve resources",
+        "Include actions like saving water and electricity",
+        "Share the pledge with classmates",
+        "Display pledges on the classroom board"
+      ],
+      "learning_outcome": "Students develop responsibility toward protecting resources",
+      "evaluation": "Clarity and commitment in pledge (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Reading and Reflection on Resource Use",
+      "objective": "Analyze the impact of resource overuse",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read a section on resource depletion",
+        "Identify reasons for overuse of resources",
+        "Write a short reflection on conservation",
+        "Discuss answers in class"
+      ],
+      "learning_outcome": "Students understand the consequences of excessive resource use",
+      "evaluation": "Quality of reflection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Role Play on Resource Management",
+      "objective": "Understand how communities manage resources",
+      "materials": ["Simple props", "Dialogue notes"],
+      "steps": [
+        "Assign roles such as farmers, villagers, and government officials",
+        "Discuss problems caused by resource depletion",
+        "Suggest solutions for sustainable management",
+        "Act out the scenario"
+      ],
+      "learning_outcome": "Students learn collaborative solutions for managing resources",
+      "evaluation": "Creativity and understanding (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Project: Resource Conservation at School",
+      "objective": "Promote conservation practices in school",
+      "materials": ["Notebook", "Chart paper", "Markers"],
+      "steps": [
+        "Observe how water and electricity are used in school",
+        "Identify areas where resources are wasted",
+        "Suggest ways to reduce wastage",
+        "Prepare a report and present it"
+      ],
+      "learning_outcome": "Students learn practical ways to conserve resources",
+      "evaluation": "Quality of observation and suggestions (10 marks)"
+    }
+  ]
+}

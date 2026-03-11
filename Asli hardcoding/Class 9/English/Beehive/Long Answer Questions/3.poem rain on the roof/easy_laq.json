@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem 3: Rain on the Roof",
+    "generated_at": "2026-03-08T23:59:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the poet of 'Rain on the Roof'?",
+            "answer": "The poet is Coates Kinney.",
+            "answer_outline": ["Poet name"],
+            "key_concepts": ["Coates Kinney"],
+            "marks": 2,
+            "source_section": "Title/Author"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the central theme of the poem?",
+            "answer": "The poem expresses the soothing and reflective effect of rain on a roof, invoking feelings of nostalgia and contemplation.",
+            "answer_outline": ["Theme", "Explanation"],
+            "key_concepts": ["rain", "reflection", "nostalgia"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 3,
+            "question": "What does the poet hear during the rainy night?",
+            "answer": "The poet hears the continuous pattering of raindrops on the roof.",
+            "answer_outline": ["Observation", "Effect"],
+            "key_concepts": ["sound", "rain"],
+            "marks": 2,
+            "source_section": "First stanza"
+        },
+        {
+            "question_number": 4,
+            "question": "How does the rain make the poet feel?",
+            "answer": "The rain evokes peaceful, calm, and reflective feelings, reminding him of past events and memories.",
+            "answer_outline": ["Emotions", "Examples"],
+            "key_concepts": ["calm", "reflection", "nostalgia"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the poet’s use of sound in the poem.",
+            "answer": "The poet uses the sound of rain as a motif to create rhythm and evoke feelings of peace and contemplation.",
+            "answer_outline": ["Sound imagery", "Effect"],
+            "key_concepts": ["sound", "imagery", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 6,
+            "question": "What memories or thoughts does the rain bring to the poet?",
+            "answer": "The rain reminds the poet of the past, including childhood memories and the passage of time.",
+            "answer_outline": ["Memories", "Explanation"],
+            "key_concepts": ["nostalgia", "reflection", "time"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 7,
+            "question": "How does the poet describe the effect of rain on the roof?",
+            "answer": "The poet describes it as gentle, rhythmic, and comforting, emphasizing its soothing impact.",
+            "answer_outline": ["Description", "Effect"],
+            "key_concepts": ["rain", "soothing", "roof"],
+            "marks": 2,
+            "source_section": "First stanza"
+        },
+        {
+            "question_number": 8,
+            "question": "Identify any two literary devices used in the poem.",
+            "answer": "1. Onomatopoeia – 'patter' imitates the sound of rain. 2. Imagery – visual and auditory images of rain and roof create a vivid effect.",
+            "answer_outline": ["Literary devices", "Examples"],
+            "key_concepts": ["onomatopoeia", "imagery"],
+            "marks": 4,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 9,
+            "question": "What does the rain symbolize in the poem?",
+            "answer": "The rain symbolizes calmness, reflection, and the continuity of life.",
+            "answer_outline": ["Symbolism", "Explanation"],
+            "key_concepts": ["symbolism", "rain", "reflection"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the poet finds rain comforting.",
+            "answer": "The steady rhythm and soft sound of rain on the roof create a peaceful atmosphere, helping the poet to relax and reflect.",
+            "answer_outline": ["Comfort", "Explanation"],
+            "key_concepts": ["rain", "comfort", "peace"],
+            "marks": 3,
+            "source_section": "First stanza"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the mood of the poem.",
+            "answer": "The mood is calm, reflective, nostalgic, and serene.",
+            "answer_outline": ["Mood", "Explanation"],
+            "key_concepts": ["mood", "serenity", "reflection"],
+            "marks": 2,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 12,
+            "question": "What effect does the repetition of the sound of rain have?",
+            "answer": "It emphasizes rhythm and consistency, making the poem soothing and meditative.",
+            "answer_outline": ["Repetition", "Effect"],
+            "key_concepts": ["repetition", "rhythm", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how the poem reflects human emotions.",
+            "answer": "The poem mirrors human feelings of nostalgia, longing, and peace through the poet’s reflections on rain and past memories.",
+            "answer_outline": ["Emotions", "Explanation"],
+            "key_concepts": ["human emotion", "reflection", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 14,
+            "question": "Why does the poet pay attention to the sound of rain?",
+            "answer": "The sound triggers memories and emotions, highlighting the connection between nature and human experience.",
+            "answer_outline": ["Sound", "Effect"],
+            "key_concepts": ["rain", "memory", "emotion"],
+            "marks": 2,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the use of visual imagery in the poem.",
+            "answer": "The poet creates images of raindrops falling, darkened skies, and roofs wet with rain, helping readers visualize the scene.",
+            "answer_outline": ["Visual imagery", "Examples"],
+            "key_concepts": ["imagery", "visual", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 16,
+            "question": "How does the poet connect rain with reflection on life?",
+            "answer": "The quiet, rhythmic rain allows the poet to think about past experiences, mortality, and the passage of time.",
+            "answer_outline": ["Reflection", "Examples"],
+            "key_concepts": ["rain", "reflection", "life"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 17,
+            "question": "Identify one example of personification in the poem.",
+            "answer": "The rain is described as 'tapping at my window' as if it has intentional action, giving it human-like qualities.",
+            "answer_outline": ["Personification", "Example"],
+            "key_concepts": ["personification", "rain"],
+            "marks": 2,
+            "source_section": "First stanza"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the poem considered a reflection on nature?",
+            "answer": "It emphasizes how a natural element, rain, influences human emotions, memory, and inner thoughts.",
+            "answer_outline": ["Nature", "Reflection", "Explanation"],
+            "key_concepts": ["nature", "rain", "reflection"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the poet’s tone in 'Rain on the Roof'.",
+            "answer": "The tone is calm, nostalgic, and contemplative, expressing gentle emotions and reflection.",
+            "answer_outline": ["Tone", "Explanation"],
+            "key_concepts": ["tone", "nostalgia", "calm"],
+            "marks": 2,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 20,
+            "question": "What lesson can readers learn from the poem?",
+            "answer": "Readers learn to appreciate nature, reflect on memories, and find peace in simple experiences.",
+            "answer_outline": ["Lesson", "Examples"],
+            "key_concepts": ["lesson", "reflection", "nature"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 21,
+            "question": "Describe how the poet uses auditory imagery.",
+            "answer": "The poet describes 'rain pattering,' 'tapping,' and 'falling' to create sounds that evoke a peaceful and reflective atmosphere.",
+            "answer_outline": ["Auditory imagery", "Examples", "Effect"],
+            "key_concepts": ["sound", "imagery", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the poem create a sense of nostalgia?",
+            "answer": "Through memories triggered by the sound of rain, the poet evokes longing for the past and the simplicity of earlier times.",
+            "answer_outline": ["Nostalgia", "Examples", "Effect"],
+            "key_concepts": ["nostalgia", "reflection", "memory"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 23,
+            "question": "What effect does the imagery of 'darkened sky' have on the poem?",
+            "answer": "It emphasizes the rain’s presence, creates a cozy indoor feeling, and highlights introspection and calmness.",
+            "answer_outline": ["Imagery", "Effect", "Explanation"],
+            "key_concepts": ["imagery", "sky", "rain"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        },
+        {
+            "question_number": 24,
+            "question": "Why does the poet focus on the roof rather than the rain itself?",
+            "answer": "The roof acts as a medium through which the poet experiences the rain, making the sound more personal and reflective.",
+            "answer_outline": ["Focus", "Explanation", "Effect"],
+            "key_concepts": ["roof", "medium", "reflection"],
+            "marks": 2,
+            "source_section": "First stanza"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the poem in your own words.",
+            "answer": "The poet describes the calming sound of rain on the roof, reflecting on memories and life while finding peace and tranquility in nature.",
+            "answer_outline": ["Summary", "Main idea"],
+            "key_concepts": ["summary", "rain", "reflection"],
+            "marks": 3,
+            "source_section": "Whole Poem"
+        }
+    ]
+}

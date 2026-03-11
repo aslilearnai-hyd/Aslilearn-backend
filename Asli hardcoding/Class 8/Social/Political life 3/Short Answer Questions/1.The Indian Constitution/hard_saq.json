@@ -1,0 +1,209 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: The Indian Constitution",
+  "generated_at": "2026-03-08T00:10:00",
+  "difficulty": "hard",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain why a Constitution is necessary for a democratic country.",
+      "answer": "A Constitution provides a framework for governance, limits government power and protects the rights of citizens in a democracy.",
+      "key_concepts": ["constitution", "democracy"],
+      "marks": 3,
+      "source_section": "Why Does a Country Need a Constitution?"
+    },
+    {
+      "question_number": 2,
+      "question": "How does the Constitution prevent the misuse of power by the government?",
+      "answer": "It sets rules and divides power among different institutions so that no single authority becomes too powerful.",
+      "key_concepts": ["limited government", "separation of powers"],
+      "marks": 3,
+      "source_section": "Importance of Constitution"
+    },
+    {
+      "question_number": 3,
+      "question": "What was the role of the Constituent Assembly in India?",
+      "answer": "The Constituent Assembly debated and drafted the Constitution of India after independence.",
+      "key_concepts": ["constituent assembly"],
+      "marks": 2,
+      "source_section": "Making of the Constitution"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is the Indian Constitution considered a living document?",
+      "answer": "It can be amended to adapt to changing needs and circumstances of society.",
+      "key_concepts": ["amendment", "living document"],
+      "marks": 3,
+      "source_section": "Constitutional Flexibility"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the importance of Fundamental Rights in the Constitution.",
+      "answer": "Fundamental Rights protect individual freedom, ensure equality and safeguard citizens against unfair treatment.",
+      "key_concepts": ["fundamental rights"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the significance of secularism in the Indian Constitution?",
+      "answer": "Secularism ensures that the state treats all religions equally and protects religious freedom.",
+      "key_concepts": ["secularism"],
+      "marks": 3,
+      "source_section": "Secularism"
+    },
+    {
+      "question_number": 7,
+      "question": "How does the Constitution promote equality in society?",
+      "answer": "It guarantees equal rights and prohibits discrimination based on religion, caste, gender or place of birth.",
+      "key_concepts": ["equality"],
+      "marks": 3,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of federalism in the Indian Constitution.",
+      "answer": "Federalism divides powers between the central government and state governments.",
+      "key_concepts": ["federalism"],
+      "marks": 3,
+      "source_section": "Federalism"
+    },
+    {
+      "question_number": 9,
+      "question": "Why is separation of powers important in a democratic system?",
+      "answer": "It prevents concentration of power and ensures checks and balances among government institutions.",
+      "key_concepts": ["separation of powers"],
+      "marks": 3,
+      "source_section": "Separation of Powers"
+    },
+    {
+      "question_number": 10,
+      "question": "What role does the judiciary play in protecting the Constitution?",
+      "answer": "The judiciary interprets the Constitution and ensures laws follow constitutional principles.",
+      "key_concepts": ["judiciary"],
+      "marks": 3,
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 11,
+      "question": "What is meant by the rule of law?",
+      "answer": "Rule of law means that all individuals and authorities are subject to the law equally.",
+      "key_concepts": ["rule of law"],
+      "marks": 2,
+      "source_section": "Principles"
+    },
+    {
+      "question_number": 12,
+      "question": "How does the Constitution ensure justice for citizens?",
+      "answer": "It establishes legal institutions and protects rights to ensure fairness and equality.",
+      "key_concepts": ["justice"],
+      "marks": 3,
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 13,
+      "question": "Why was it important for India to adopt a Constitution after independence?",
+      "answer": "It provided a system of governance and ensured democratic principles for the new nation.",
+      "key_concepts": ["constitution making"],
+      "marks": 3,
+      "source_section": "Making of Constitution"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the importance of equality before the law.",
+      "answer": "It ensures that all citizens are treated equally regardless of social status or background.",
+      "key_concepts": ["equality before law"],
+      "marks": 3,
+      "source_section": "Equality"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the relationship between democracy and the Constitution?",
+      "answer": "The Constitution provides rules that ensure democratic governance and protect citizens' rights.",
+      "key_concepts": ["democracy"],
+      "marks": 3,
+      "source_section": "Democratic Principles"
+    },
+    {
+      "question_number": 16,
+      "question": "How does the Constitution protect minority rights?",
+      "answer": "It guarantees equality, freedom of religion and protection against discrimination.",
+      "key_concepts": ["minority rights"],
+      "marks": 3,
+      "source_section": "Rights"
+    },
+    {
+      "question_number": 17,
+      "question": "Why are laws important in a democratic society?",
+      "answer": "Laws maintain order, protect rights and ensure fairness in society.",
+      "key_concepts": ["laws"],
+      "marks": 2,
+      "source_section": "Law"
+    },
+    {
+      "question_number": 18,
+      "question": "How does the Constitution ensure accountability of the government?",
+      "answer": "It establishes institutions and rules that hold the government responsible for its actions.",
+      "key_concepts": ["accountability"],
+      "marks": 3,
+      "source_section": "Governance"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the role of Parliament in a constitutional democracy.",
+      "answer": "Parliament makes laws and represents the people in governance.",
+      "key_concepts": ["parliament"],
+      "marks": 3,
+      "source_section": "Democratic Government"
+    },
+    {
+      "question_number": 20,
+      "question": "Why is the Constitution considered the foundation of governance?",
+      "answer": "It defines the structure, powers and functions of government institutions.",
+      "key_concepts": ["governance"],
+      "marks": 3,
+      "source_section": "Importance"
+    },
+    {
+      "question_number": 21,
+      "question": "What does the Constitution say about citizens' freedoms?",
+      "answer": "It guarantees fundamental freedoms such as speech, equality and religion.",
+      "key_concepts": ["freedom"],
+      "marks": 3,
+      "source_section": "Fundamental Rights"
+    },
+    {
+      "question_number": 22,
+      "question": "How does the Constitution promote social justice?",
+      "answer": "It ensures equality, protects rights and prevents discrimination.",
+      "key_concepts": ["social justice"],
+      "marks": 3,
+      "source_section": "Justice"
+    },
+    {
+      "question_number": 23,
+      "question": "Why must citizens respect the Constitution?",
+      "answer": "Respecting the Constitution ensures democratic values and stability in the country.",
+      "key_concepts": ["citizenship"],
+      "marks": 2,
+      "source_section": "Civic Responsibility"
+    },
+    {
+      "question_number": 24,
+      "question": "What role do courts play in constitutional governance?",
+      "answer": "Courts ensure laws and government actions follow the Constitution.",
+      "key_concepts": ["courts"],
+      "marks": 3,
+      "source_section": "Judiciary"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the Constitution important for maintaining unity in a diverse country like India?",
+      "answer": "It ensures equal rights and representation for all communities.",
+      "key_concepts": ["unity", "diversity"],
+      "marks": 3,
+      "source_section": "Conclusion"
+    }
+  ]
+}

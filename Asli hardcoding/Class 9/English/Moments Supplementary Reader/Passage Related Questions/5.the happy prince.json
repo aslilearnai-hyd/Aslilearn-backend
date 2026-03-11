@@ -1,0 +1,120 @@
+{
+    "subject": "English",
+    "course_code": "ENG9_5",
+    "chapter": "The Happy Prince",
+    "title": "Extended Reading Passages with Questions – The Happy Prince",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "High above the city stood the statue of the Happy Prince. It was covered with thin leaves of fine gold. For eyes it had two bright sapphires, and a large red ruby glowed on the hilt of its sword. The people admired the statue because of its beauty and splendour.",
+            "questions": [
+                "Where was the statue of the Happy Prince placed?",
+                "What covered the statue?",
+                "What were the prince’s eyes made of?",
+                "What jewel was fixed on the prince’s sword?",
+                "Why did people admire the statue?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "One night a little swallow flew over the city. His friends had already gone to Egypt, but he stayed behind because he had fallen in love with a beautiful reed. When the weather became cold, he decided to fly to Egypt and stopped near the statue of the Happy Prince to rest for the night.",
+            "questions": [
+                "Who flew over the city one night?",
+                "Where had the swallow’s friends gone?",
+                "Why had the swallow stayed behind earlier?",
+                "Why did he decide to fly to Egypt later?",
+                "Where did he stop to rest?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "As the swallow rested between the feet of the statue, drops of water fell on him. The night was clear, so he wondered where the water came from. Looking up, he saw that the Happy Prince was crying. The prince explained that he could see the misery and suffering of the people in the city.",
+            "questions": [
+                "Where was the swallow resting?",
+                "What fell on the swallow?",
+                "Why was the swallow surprised?",
+                "What did he see when he looked up?",
+                "Why was the Happy Prince crying?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "The Happy Prince told the swallow about a poor seamstress whose child was ill with fever. She was very poor and could not buy medicine for her child. The prince asked the swallow to take the ruby from his sword and give it to the woman to help her.",
+            "questions": [
+                "Who did the prince want to help first?",
+                "What problem did the seamstress’s child have?",
+                "Why could the woman not help her child?",
+                "What did the prince ask the swallow to take?",
+                "What was the purpose of giving the ruby?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "The swallow flew to the poor woman’s house and placed the ruby on the table beside her. The boy was tossing with fever on the bed. The swallow gently fanned the boy with his wings, and soon the child fell into a peaceful sleep.",
+            "questions": [
+                "Where did the swallow go with the ruby?",
+                "Where did he place the ruby?",
+                "What condition was the boy in?",
+                "How did the swallow help the child?",
+                "What happened to the child afterward?"
+            ]
+        },
+        {
+            "passage_number": 6,
+            "paragraph": "The next day the prince saw a young playwright who was trying to finish his play. He was very cold and hungry because he had no firewood or food. The prince asked the swallow to take one of his sapphire eyes and give it to the young man.",
+            "questions": [
+                "Who was the second person helped by the prince?",
+                "What work was the young man doing?",
+                "Why was he suffering?",
+                "What did the prince ask the swallow to take?",
+                "Why did the prince want to help him?"
+            ]
+        },
+        {
+            "passage_number": 7,
+            "paragraph": "Later the prince saw a little match girl standing in the street. Her matches had fallen into the gutter and were spoiled. She was afraid to go home because her father would beat her. The prince asked the swallow to give his other sapphire eye to the girl.",
+            "questions": [
+                "Who was the third person helped by the prince?",
+                "What happened to the girl’s matches?",
+                "Why was the girl afraid to go home?",
+                "What did the prince give to the girl?",
+                "Why did the prince help her?"
+            ]
+        },
+        {
+            "passage_number": 8,
+            "paragraph": "After giving away both his eyes, the prince became blind. However, he asked the swallow to remove the gold leaves from his body and distribute them among the poor people of the city. The swallow obeyed and soon the children had bread and the poor people felt happier.",
+            "questions": [
+                "Why did the prince become blind?",
+                "What did he ask the swallow to remove?",
+                "Who received the gold leaves?",
+                "What change happened among the children?",
+                "How did the poor people feel afterward?"
+            ]
+        },
+        {
+            "passage_number": 9,
+            "paragraph": "Winter arrived and the weather became very cold. The swallow grew weaker each day because he had little food. One night he kissed the prince on the lips and fell dead at his feet. At that moment the prince’s lead heart broke into two pieces.",
+            "questions": [
+                "Which season arrived in the city?",
+                "Why did the swallow become weak?",
+                "What did the swallow do before dying?",
+                "Where did the swallow die?",
+                "What happened to the prince’s heart?"
+            ]
+        },
+        {
+            "passage_number": 10,
+            "paragraph": "The mayor and councillors later decided to pull down the statue because it was no longer beautiful. The statue was melted in a furnace, but the lead heart did not melt and was thrown on a dust heap. God asked an angel to bring the two most precious things in the city, and the angel brought the lead heart and the dead swallow.",
+            "questions": [
+                "Why did the mayor order the statue to be removed?",
+                "What happened to the statue afterward?",
+                "Which part of the statue did not melt?",
+                "Where was the heart thrown?",
+                "What two things did the angel take to God?"
+            ]
+        }
+    ]
+}

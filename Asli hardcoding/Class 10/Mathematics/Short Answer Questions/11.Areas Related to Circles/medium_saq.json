@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 11: Areas Related to Circles",
+    "difficulty": "Medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State the formula for the area of a sector of a circle.",
+            "answer": "Area of a sector = (θ/360) × πr², where θ is the angle at the centre.",
+            "key_concepts": [
+                "area of sector"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Write the formula for the length of an arc of a sector.",
+            "answer": "Length of an arc = (θ/360) × 2πr.",
+            "key_concepts": [
+                "arc length"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the area of a quadrant of radius r?",
+            "answer": "Area of a quadrant = (1/4) × πr².",
+            "key_concepts": [
+                "quadrant area"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How is the area of a segment of a circle found?",
+            "answer": "Area of segment = Area of sector − Area of triangle formed by radii.",
+            "key_concepts": [
+                "segment area"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 5,
+            "question": "State the relationship between major and minor sectors.",
+            "answer": "Area of major sector = Area of circle − Area of minor sector.",
+            "key_concepts": [
+                "major sector"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the area of a semicircle of radius r?",
+            "answer": "Area of a semicircle = (1/2) × πr².",
+            "key_concepts": [
+                "semicircle area"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the angle subtended by a quadrant at the centre?",
+            "answer": "The angle subtended is 90 degrees.",
+            "key_concepts": [
+                "quadrant angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the area of a circle if the radius is r?",
+            "answer": "The area of the circle is πr².",
+            "key_concepts": [
+                "circle area"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which method is used to derive the area of a sector?",
+            "answer": "The unitary method is used.",
+            "key_concepts": [
+                "unitary method"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the relationship between major and minor segments?",
+            "answer": "Area of major segment = Area of circle − Area of minor segment.",
+            "key_concepts": [
+                "major segment"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What happens to the area of a sector if the angle increases?",
+            "answer": "The area of the sector increases.",
+            "key_concepts": [
+                "sector area"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the angle of a semicircle?",
+            "answer": "The angle of a semicircle is 180 degrees.",
+            "key_concepts": [
+                "semicircle angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Which triangle is formed while calculating the area of a segment?",
+            "answer": "A triangle formed by two radii and a chord.",
+            "key_concepts": [
+                "triangle in segment"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the arc length of a full circle?",
+            "answer": "The arc length of a full circle is 2πr.",
+            "key_concepts": [
+                "circumference"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the unit of arc length?",
+            "answer": "The unit of arc length is the same as length units.",
+            "key_concepts": [
+                "arc length unit"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the angle at the centre for a full circle?",
+            "answer": "The angle at the centre is 360 degrees.",
+            "key_concepts": [
+                "central angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the base of the triangle used in segment calculation?",
+            "answer": "The base is the chord of the circle.",
+            "key_concepts": [
+                "triangle base"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the area of a circle if diameter is 14 cm?",
+            "answer": "Radius = 7 cm, so area = π × 7² = 49π cm².",
+            "key_concepts": [
+                "area calculation"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Which angle is considered in sector formulas?",
+            "answer": "The angle at the centre is considered.",
+            "key_concepts": [
+                "central angle"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the area of a sector if θ = 360°?",
+            "answer": "The area is equal to the area of the circle, πr².",
+            "key_concepts": [
+                "full sector"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the arc length if θ = 0°?",
+            "answer": "The arc length is zero.",
+            "key_concepts": [
+                "zero arc"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the area of a sector if θ = 0°?",
+            "answer": "The area of the sector is zero.",
+            "key_concepts": [
+                "zero area"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which value of π is preferred for exact calculations?",
+            "answer": "The value 22/7 is preferred.",
+            "key_concepts": [
+                "pi value"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What type of triangle is formed by two radii and a chord?",
+            "answer": "An isosceles triangle is formed.",
+            "key_concepts": [
+                "isosceles triangle"
+            ],
+            "marks": 2,
+            "source_section": "Section 11.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the unit of area of a sector?",
+            "answer": "The unit of area is square units.",
+            "key_concepts": [
+                "area unit"
+            ],
+            "marks": 1,
+            "source_section": "Section 11.1"
+        }
+    ]
+}

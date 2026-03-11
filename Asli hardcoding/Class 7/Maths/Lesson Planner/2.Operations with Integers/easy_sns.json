@@ -1,0 +1,71 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter_name": "Operations with Integers",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Recall the definition of integers and their position on a number line",
+        "Add and subtract integers with the same sign",
+        "Understand the concept of absolute value",
+        "Identify the additive inverse of any given integer",
+        "Use the number line to visualize basic operations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Integers and the Number Line",
+            "topics_covered": [
+                "Review of positive and negative numbers",
+                "Zero as the origin",
+                "Representing integers on a horizontal and vertical number line"
+            ],
+            "teaching_strategy": [
+                "Visual demonstration using a large floor number line",
+                "Real-world analogies (Temperature, Lift/Elevator floors)"
+            ],
+            "student_activities": [
+                "Mark -5, 0, and 3 on a provided number line",
+                "Step forward for positive and backward for negative numbers"
+            ],
+            "assessment": [
+                "Oral quiz on 'Which is greater: -2 or -5?'",
+                "Number line marking worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Addition of Integers (Same Sign)",
+            "topics_covered": [
+                "Adding two positive integers",
+                "Adding two negative integers",
+                "Rule: Add absolute values and keep the common sign"
+            ],
+            "teaching_strategy": [
+                "Pattern recognition (e.g., -1 + -1 = -2)",
+                "Using 'Money' (Credit/Debit) analogy"
+            ],
+            "student_activities": [
+                "Solve: (-10) + (-5) and 12 + 8",
+                "Create a 'Bank Ledger' with simple deposits and withdrawals"
+            ],
+            "assessment": [
+                "Quick calculation round",
+                "Notebook check for correct sign usage"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Number line charts",
+        "Thermometer model",
+        "Colored counters (Red for negative, Blue for positive)",
+        "NCERT Textbook"
+    ],
+    "evaluation_methods": [
+        "Direct observation",
+        "Short calculation tests",
+        "Peer grading of number line drawings"
+    ],
+    "teacher_tip": "Always remind students that -10 is smaller than -2, even though 10 is bigger than 2. Use the 'debt' analogy: owing 10 rupees is worse than owing 2."
+}

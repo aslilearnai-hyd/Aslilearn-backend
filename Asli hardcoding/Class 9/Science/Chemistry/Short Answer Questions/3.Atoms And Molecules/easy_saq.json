@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 3: Atoms and Molecules",
+  "generated_at": "2026-03-06T19:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is an atom?",
+      "answer": "An atom is the smallest particle of an element that can take part in a chemical reaction.",
+      "key_concepts": ["atom", "definition"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Who proposed the atomic theory?",
+      "answer": "John Dalton proposed the atomic theory.",
+      "key_concepts": ["Dalton", "atomic theory"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a molecule?",
+      "answer": "A molecule is the smallest particle of a substance that can exist independently and shows all the properties of that substance.",
+      "key_concepts": ["molecule", "definition"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the law of conservation of mass?",
+      "answer": "The law of conservation of mass states that mass can neither be created nor destroyed in a chemical reaction.",
+      "key_concepts": ["law of conservation of mass"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 5,
+      "question": "State the law of constant proportions.",
+      "answer": "The law of constant proportions states that a chemical compound always contains the same elements combined in the same fixed proportion by mass.",
+      "key_concepts": ["law of constant proportions"],
+      "marks": 2,
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What is a chemical formula?",
+      "answer": "A chemical formula represents the composition of a substance using symbols of elements and numbers.",
+      "key_concepts": ["chemical formula"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 7,
+      "question": "What is an atomic mass?",
+      "answer": "Atomic mass is the mass of an atom of an element expressed in atomic mass units (u).",
+      "key_concepts": ["atomic mass"],
+      "marks": 2,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "What is a molecular mass?",
+      "answer": "Molecular mass is the sum of the atomic masses of all the atoms present in a molecule.",
+      "key_concepts": ["molecular mass"],
+      "marks": 2,
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a mole?",
+      "answer": "A mole is the amount of substance that contains 6.022 × 10²³ particles.",
+      "key_concepts": ["mole", "Avogadro number"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "What is Avogadro's number?",
+      "answer": "Avogadro's number is 6.022 × 10²³ particles present in one mole of a substance.",
+      "key_concepts": ["Avogadro number"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is molar mass?",
+      "answer": "Molar mass is the mass of one mole of a substance expressed in grams.",
+      "key_concepts": ["molar mass"],
+      "marks": 2,
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Name the molecule formed by two atoms.",
+      "answer": "A molecule formed by two atoms is called a diatomic molecule.",
+      "key_concepts": ["diatomic molecule"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Give an example of a triatomic molecule.",
+      "answer": "Water (H2O) is an example of a triatomic molecule.",
+      "key_concepts": ["triatomic molecule"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is an ion?",
+      "answer": "An ion is a charged particle formed when an atom gains or loses electrons.",
+      "key_concepts": ["ion"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 15,
+      "question": "What is a cation?",
+      "answer": "A cation is a positively charged ion formed when an atom loses electrons.",
+      "key_concepts": ["cation"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What is an anion?",
+      "answer": "An anion is a negatively charged ion formed when an atom gains electrons.",
+      "key_concepts": ["anion"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Give one example of a polyatomic ion.",
+      "answer": "Sulfate (SO₄²⁻) is an example of a polyatomic ion.",
+      "key_concepts": ["polyatomic ion"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the formula of water?",
+      "answer": "The chemical formula of water is H₂O.",
+      "key_concepts": ["water formula"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the formula of carbon dioxide?",
+      "answer": "The chemical formula of carbon dioxide is CO₂.",
+      "key_concepts": ["carbon dioxide formula"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the formula of sodium chloride?",
+      "answer": "The chemical formula of sodium chloride is NaCl.",
+      "key_concepts": ["sodium chloride"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the atomicity of oxygen?",
+      "answer": "The atomicity of oxygen is 2 because it exists as O₂.",
+      "key_concepts": ["atomicity"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the atomicity of ozone?",
+      "answer": "The atomicity of ozone is 3 because its formula is O₃.",
+      "key_concepts": ["atomicity", "ozone"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 23,
+      "question": "What is meant by atomicity?",
+      "answer": "Atomicity is the number of atoms present in one molecule of an element.",
+      "key_concepts": ["atomicity", "definition"],
+      "marks": 2,
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the chemical formula of ammonia?",
+      "answer": "The chemical formula of ammonia is NH₃.",
+      "key_concepts": ["ammonia formula"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the chemical formula of methane?",
+      "answer": "The chemical formula of methane is CH₄.",
+      "key_concepts": ["methane formula"],
+      "marks": 2,
+      "source_section": "Section 3.3"
+    }
+  ]
+}

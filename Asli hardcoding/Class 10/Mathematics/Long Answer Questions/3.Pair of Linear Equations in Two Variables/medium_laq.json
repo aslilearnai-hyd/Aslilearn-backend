@@ -1,0 +1,359 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Pair of Linear Equations in Two Variables",
+    "generated_at": "2026-03-02T11:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the conditions for a pair of linear equations to have a unique solution.",
+            "answer": "A pair of linear equations has a unique solution when their graphs intersect at exactly one point. Algebraically, this happens when a₁/a₂ ≠ b₁/b₂.",
+            "answer_outline": [
+                "Condition",
+                "Graphical explanation",
+                "Algebraic condition"
+            ],
+            "key_concepts": [
+                "unique solution"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the conditions under which a pair of linear equations has no solution.",
+            "answer": "A pair of linear equations has no solution when their graphs are parallel. Algebraically, this happens when a₁/a₂ = b₁/b₂ ≠ c₁/c₂.",
+            "answer_outline": [
+                "Parallel lines",
+                "Ratio condition"
+            ],
+            "key_concepts": [
+                "no solution"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the conditions under which a pair of linear equations has infinitely many solutions.",
+            "answer": "A pair of linear equations has infinitely many solutions when their graphs coincide completely. Algebraically, this happens when a₁/a₂ = b₁/b₂ = c₁/c₂.",
+            "answer_outline": [
+                "Coincident lines",
+                "Ratio condition"
+            ],
+            "key_concepts": [
+                "infinitely many solutions"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the consistency of a pair of linear equations.",
+            "answer": "A pair of linear equations is consistent if it has at least one solution. It may have either a unique solution or infinitely many solutions.",
+            "answer_outline": [
+                "Definition",
+                "Types"
+            ],
+            "key_concepts": [
+                "consistent system"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the inconsistency of a pair of linear equations.",
+            "answer": "A pair of linear equations is inconsistent if it has no solution. Graphically, this is represented by parallel lines.",
+            "answer_outline": [
+                "Definition",
+                "Graphical explanation"
+            ],
+            "key_concepts": [
+                "inconsistent system"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the elimination method of solving a pair of linear equations.",
+            "answer": "In the elimination method, one variable is eliminated by making the coefficients equal and then adding or subtracting the equations to solve for the remaining variable.",
+            "answer_outline": [
+                "Steps",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "elimination method"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the substitution method of solving a pair of linear equations.",
+            "answer": "In the substitution method, one variable is expressed in terms of the other using one equation and substituted into the second equation to find the solution.",
+            "answer_outline": [
+                "Steps",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "substitution method"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the cross-multiplication method of solving a pair of linear equations.",
+            "answer": "The cross-multiplication method uses determinants to directly find the values of x and y when equations are in standard form.",
+            "answer_outline": [
+                "Standard form",
+                "Determinants"
+            ],
+            "key_concepts": [
+                "cross-multiplication"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why graphical method gives only approximate solutions.",
+            "answer": "Graphical method gives approximate solutions because accuracy depends on the scale of the graph and precision of plotting.",
+            "answer_outline": [
+                "Reason",
+                "Limitation"
+            ],
+            "key_concepts": [
+                "graphical method"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why algebraic methods are preferred over graphical method.",
+            "answer": "Algebraic methods are preferred because they provide exact solutions and are not affected by drawing inaccuracies.",
+            "answer_outline": [
+                "Comparison",
+                "Reason"
+            ],
+            "key_concepts": [
+                "algebraic methods"
+            ],
+            "marks": 4,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the role of slope in determining the nature of solutions.",
+            "answer": "Slope determines whether lines intersect, are parallel, or coincide, which decides the number of solutions.",
+            "answer_outline": [
+                "Slope",
+                "Solution nature"
+            ],
+            "key_concepts": [
+                "slope"
+            ],
+            "marks": 5,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why two equations are necessary to solve two unknowns.",
+            "answer": "One equation alone cannot uniquely determine the values of two variables; hence two equations are required.",
+            "answer_outline": [
+                "Reason",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "two unknowns"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain what is meant by dependent and independent systems.",
+            "answer": "An independent system has a unique solution, while a dependent system has infinitely many solutions.",
+            "answer_outline": [
+                "Definitions",
+                "Difference"
+            ],
+            "key_concepts": [
+                "dependent and independent systems"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how linear equations are used in real-life situations.",
+            "answer": "Linear equations are used in problems related to cost, distance, speed, time, and resource allocation.",
+            "answer_outline": [
+                "Applications",
+                "Examples"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the meaning of simultaneous equations with examples.",
+            "answer": "Simultaneous equations are equations solved together to find common solutions, such as x + y = 5 and x − y = 1.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "simultaneous equations"
+            ],
+            "marks": 4,
+            "source_section": "3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the graphical interpretation of consistency.",
+            "answer": "Graphically, consistent systems are represented by intersecting or coincident lines.",
+            "answer_outline": [
+                "Graphical view",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "consistency"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the graphical interpretation of inconsistency.",
+            "answer": "Graphically, inconsistent systems are represented by parallel lines.",
+            "answer_outline": [
+                "Graphical view",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "inconsistency"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why cross-multiplication method fails for parallel lines.",
+            "answer": "For parallel lines, the determinant becomes zero, making the method invalid.",
+            "answer_outline": [
+                "Determinant",
+                "Reason"
+            ],
+            "key_concepts": [
+                "cross-multiplication limitation"
+            ],
+            "marks": 5,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why coincident lines represent dependent equations.",
+            "answer": "Because one equation is a multiple of the other, making them dependent.",
+            "answer_outline": [
+                "Reason",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "dependent equations"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how ratio conditions help classify solutions.",
+            "answer": "Ratio conditions help determine whether equations have unique, no, or infinitely many solutions.",
+            "answer_outline": [
+                "Ratios",
+                "Classification"
+            ],
+            "key_concepts": [
+                "ratio conditions"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of graphical representation in understanding solutions.",
+            "answer": "Graphs help visualize the nature of solutions and relationships between equations.",
+            "answer_outline": [
+                "Visualization",
+                "Understanding"
+            ],
+            "key_concepts": [
+                "graphical representation"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why linear equations model uniform change.",
+            "answer": "Because the rate of change remains constant.",
+            "answer_outline": [
+                "Uniform change",
+                "Reason"
+            ],
+            "key_concepts": [
+                "uniform change"
+            ],
+            "marks": 4,
+            "source_section": "3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how determinant helps in solving equations.",
+            "answer": "Determinant helps check whether a unique solution exists and is used in cross-multiplication.",
+            "answer_outline": [
+                "Determinant",
+                "Use"
+            ],
+            "key_concepts": [
+                "determinant"
+            ],
+            "marks": 4,
+            "source_section": "3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why graphical solutions may differ slightly from algebraic solutions.",
+            "answer": "Because graphical solutions depend on drawing accuracy and scale.",
+            "answer_outline": [
+                "Reason",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "approximation"
+            ],
+            "marks": 4,
+            "source_section": "3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the educational importance of studying pair of linear equations.",
+            "answer": "They form the basis for solving real-life problems and higher algebra.",
+            "answer_outline": [
+                "Importance",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 5,
+            "source_section": "3.4"
+        }
+    ]
+}

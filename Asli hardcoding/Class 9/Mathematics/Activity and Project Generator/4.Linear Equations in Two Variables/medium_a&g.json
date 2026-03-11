@@ -1,0 +1,162 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Linear Equations in Two Variables",
+    "difficulty": "Medium",
+    "source_pdf": "m9_4.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Equation Form Practice",
+            "objective": "Convert equations into ax + by + c = 0 form",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Write 8 equations such as x + 2y = 5",
+                "Convert each into ax + by + c = 0 form",
+                "Identify values of a, b and c"
+            ],
+            "learning_outcome": "Understands equation standard form",
+            "evaluation": "Correct conversions (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Solution Pair Table",
+            "objective": "Create solution tables for equations",
+            "materials": [
+                "Notebook",
+                "Scale"
+            ],
+            "steps": [
+                "Take equation 2x + y = 10",
+                "Choose five values for x",
+                "Find corresponding y values",
+                "Record them in a table"
+            ],
+            "learning_outcome": "Understands relationship between variables",
+            "evaluation": "Correct table (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Graph Preparation",
+            "objective": "Prepare ordered pairs for graphing",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose equation x + 2y = 8",
+                "Find five solutions",
+                "Write them as ordered pairs"
+            ],
+            "learning_outcome": "Develops graph preparation skills",
+            "evaluation": "Correct ordered pairs (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Real-Life Linear Equation",
+            "objective": "Form equations from daily life situations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Create a story involving two unknown quantities",
+                "Example: total cost of two items",
+                "Represent the situation using x and y"
+            ],
+            "learning_outcome": "Applies equations to real situations",
+            "evaluation": "Correct equation formation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Solution Verification",
+            "objective": "Verify whether ordered pairs satisfy equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation 3x + y = 9",
+                "Check pairs such as (2,3), (1,6), (0,9)",
+                "Verify by substitution"
+            ],
+            "learning_outcome": "Understands solution verification",
+            "evaluation": "Correct verification (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Equation Construction",
+            "objective": "Create equations using given solutions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Given solution (2,3)",
+                "Construct an equation satisfied by this pair",
+                "Check your equation"
+            ],
+            "learning_outcome": "Develops equation formation skill",
+            "evaluation": "Correct equation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Multiple Solution Search",
+            "objective": "Find multiple solutions of an equation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation x + 3y = 12",
+                "Find six different solutions",
+                "Write them as ordered pairs"
+            ],
+            "learning_outcome": "Understands infinite solution concept",
+            "evaluation": "Correct solutions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Coefficient Identification",
+            "objective": "Identify coefficients in equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write five equations in ax + by + c = 0 form",
+                "Identify values of a, b and c",
+                "Explain their meaning"
+            ],
+            "learning_outcome": "Understands equation structure",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Zero Method Exploration",
+            "objective": "Use x = 0 and y = 0 method",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Take equation 4x + 2y = 8",
+                "Put x = 0 and find y",
+                "Put y = 0 and find x"
+            ],
+            "learning_outcome": "Learns shortcut solution methods",
+            "evaluation": "Correct values (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Equation Comparison",
+            "objective": "Compare different linear equations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write three linear equations",
+                "Find two solutions for each",
+                "Compare their solution sets"
+            ],
+            "learning_outcome": "Analyses equation behaviour",
+            "evaluation": "Correct comparison (10 marks)"
+        }
+    ]
+}

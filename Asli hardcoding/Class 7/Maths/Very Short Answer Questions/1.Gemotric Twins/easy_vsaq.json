@@ -1,0 +1,208 @@
+{
+    "content_type": "Multiple Choice Questions",
+    "chapter": "Chapter: GEOMETRIC TWINS (SYMMETRY & CONGRUENCE)",
+    "generated_at": "2026-03-05T03:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Two figures are said to be congruent if they have the same:",
+            "answer": "Shape and size",
+            "key_concepts": ["definition of congruence"],
+            "marks": 1,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which symbol is used to represent congruence between two triangles?",
+            "answer": "≅",
+            "key_concepts": ["congruence notation"],
+            "marks": 1,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "If ∆ABC ≅ ∆PQR, then side AB is equal to which side of ∆PQR?",
+            "answer": "PQ",
+            "key_concepts": ["corresponding parts of congruent triangles"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Two line segments are congruent if they have:",
+            "answer": "The same length",
+            "key_concepts": ["congruence of line segments"],
+            "marks": 1,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Two circles are congruent if they have the same:",
+            "answer": "Radius",
+            "key_concepts": ["congruence of circles"],
+            "marks": 1,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 6,
+            "question": "How many lines of symmetry does a regular pentagon have?",
+            "answer": "5",
+            "key_concepts": ["lines of symmetry in regular polygons"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "A figure that looks exactly the same after a partial rotation has:",
+            "answer": "Rotational symmetry",
+            "key_concepts": ["rotational symmetry"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the order of rotational symmetry for a square?",
+            "answer": "4",
+            "key_concepts": ["order of rotational symmetry"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Which English alphabet has both horizontal and vertical lines of symmetry?",
+            "answer": "H",
+            "key_concepts": ["reflectional symmetry"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "In ∆ABC ≅ ∆XYZ, which angle corresponds to ∠B?",
+            "answer": "∠Y",
+            "key_concepts": ["corresponding angles"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "SSS congruence stands for:",
+            "answer": "Side-Side-Side",
+            "key_concepts": ["congruence criteria"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Two rectangles are congruent if they have the same:",
+            "answer": "Length and breadth",
+            "key_concepts": ["congruence of quadrilaterals"],
+            "marks": 1,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following has no line of symmetry?",
+            "answer": "Scalene triangle",
+            "key_concepts": ["symmetry in triangles"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "The angle of rotation for a figure with rotational symmetry of order 2 is:",
+            "answer": "180°",
+            "key_concepts": ["angle of rotation"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "SAS congruence criterion requires two sides and the _______ angle to be equal.",
+            "answer": "Included",
+            "key_concepts": ["SAS congruence rule"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 16,
+            "question": "An equilateral triangle has ______ lines of symmetry.",
+            "answer": "3",
+            "key_concepts": ["symmetry in triangles"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "In RHS congruence, 'H' stands for:",
+            "answer": "Hypotenuse",
+            "key_concepts": ["RHS congruence rule"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of these letters shows only rotational symmetry but no line symmetry?",
+            "answer": "Z",
+            "key_concepts": ["rotational vs reflectional symmetry"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "If two triangles are congruent, their areas are always:",
+            "answer": "Equal",
+            "key_concepts": ["properties of congruent figures"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "A circle has ______ number of lines of symmetry.",
+            "answer": "Infinite",
+            "key_concepts": ["symmetry in circles"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "ASA criterion stands for:",
+            "answer": "Angle-Side-Angle",
+            "key_concepts": ["congruence criteria"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 22,
+            "question": "The point about which a figure is rotated is called the:",
+            "answer": "Center of rotation",
+            "key_concepts": ["rotational symmetry basics"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "A regular hexagon has an order of rotational symmetry equal to:",
+            "answer": "6",
+            "key_concepts": ["order of rotation"],
+            "marks": 1,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 24,
+            "question": "If ∆PQR ≅ ∆LMN, then ∠R corresponds to:",
+            "answer": "∠N",
+            "key_concepts": ["corresponding parts"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following is NOT a congruence criterion for triangles?",
+            "answer": "AAA",
+            "key_concepts": ["congruence rules"],
+            "marks": 1,
+            "source_section": "Section 2.5"
+        }
+    ]
+}

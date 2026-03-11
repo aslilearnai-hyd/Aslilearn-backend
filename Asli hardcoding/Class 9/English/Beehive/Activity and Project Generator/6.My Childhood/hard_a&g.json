@@ -1,0 +1,139 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "My Childhood",
+  "difficulty": "Hard",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Analysis Essay",
+      "objective": "Analyze the author’s childhood experiences critically",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Examine the author’s memories and experiences in depth",
+        "Discuss how these experiences shaped the author’s personality",
+        "Write a 150–200 word essay evaluating narrative style, themes, and insights"
+      ],
+      "learning_outcome": "Enhances critical thinking, literary analysis, and writing skills",
+      "evaluation": "Depth of analysis, clarity, and textual support (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Comparative Study",
+      "objective": "Compare the author’s childhood with another literary or real-life figure",
+      "materials": ["Notebook", "Textbook", "Reference material"],
+      "steps": [
+        "Select another person or literary character with similar childhood experiences",
+        "Compare experiences, reactions, and lessons learned",
+        "Present the comparison in a structured essay or table"
+      ],
+      "learning_outcome": "Develops analytical and comparative thinking skills",
+      "evaluation": "Accuracy, depth, and examples (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Perspective Writing",
+      "objective": "Explore the story from another character’s viewpoint",
+      "materials": ["Notebook"],
+      "steps": [
+        "Rewrite a key incident from the perspective of a parent, sibling, or friend",
+        "Include thoughts, feelings, and observations",
+        "Write 10–12 sentences reflecting this perspective"
+      ],
+      "learning_outcome": "Encourages empathy, creativity, and analytical skills",
+      "evaluation": "Consistency with character traits and depth of insight (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Theme and Symbolism Analysis",
+      "objective": "Identify underlying themes and symbolic elements",
+      "materials": ["Notebook"],
+      "steps": [
+        "Identify themes such as innocence, learning, growth, and curiosity",
+        "Find symbolic elements like toys, games, or routines described",
+        "Explain the significance of each theme and symbol in 2–3 sentences"
+      ],
+      "learning_outcome": "Enhances literary interpretation and thematic understanding",
+      "evaluation": "Depth of analysis, clarity, and textual support (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Advanced Vocabulary and Contextual Usage",
+      "objective": "Expand advanced vocabulary from the chapter",
+      "materials": ["Notebook", "Dictionary"],
+      "steps": [
+        "Select 10 challenging words from the chapter",
+        "Write meanings, synonyms, antonyms, and usage in context",
+        "Construct original sentences demonstrating nuanced understanding"
+      ],
+      "learning_outcome": "Improves advanced vocabulary, language precision, and contextual usage",
+      "evaluation": "Correct meanings, sentence construction, and creativity (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Literary Device Exploration",
+      "objective": "Analyze literary techniques used by the author",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Identify examples of imagery, humor, nostalgia, or descriptive language in the chapter",
+        "Explain their effect on reader perception and character portrayal",
+        "Present examples in a table with 2–3 sentences each"
+      ],
+      "learning_outcome": "Develops understanding of literary devices and their impact",
+      "evaluation": "Accuracy, clarity, and depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Predictive Writing",
+      "objective": "Predict the author’s future based on childhood experiences",
+      "materials": ["Notebook"],
+      "steps": [
+        "Imagine how the lessons and experiences from childhood shaped the author’s later life",
+        "Write a 10–12 sentence narrative predicting personality, interests, or achievements",
+        "Justify your predictions using evidence from the chapter"
+      ],
+      "learning_outcome": "Enhances imagination, inference, and reasoning skills",
+      "evaluation": "Creativity, plausibility, and textual justification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Interpersonal Analysis Debate",
+      "objective": "Critically evaluate the values and lessons from the author’s childhood",
+      "materials": ["Notebook", "Classroom group"],
+      "steps": [
+        "Form groups to debate the relevance of childhood experiences in shaping personality",
+        "Use examples from the text to support arguments",
+        "Write a reflective paragraph summarizing your stance after the debate"
+      ],
+      "learning_outcome": "Enhances discussion, critical thinking, and analytical skills",
+      "evaluation": "Quality of arguments, reasoning, and reflection (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Creative Scene Illustration",
+      "objective": "Visualize a significant childhood scene creatively",
+      "materials": ["Drawing sheet", "Pencil", "Colors"],
+      "steps": [
+        "Select a memorable scene from the chapter",
+        "Draw it creatively highlighting emotions and surroundings",
+        "Write a 3–4 sentence explanation of the scene and its significance"
+      ],
+      "learning_outcome": "Combines creativity with literary understanding",
+      "evaluation": "Creativity, clarity, and depth of interpretation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Intertextual Connection Writing",
+      "objective": "Connect the chapter to other literature or personal experiences",
+      "materials": ["Notebook", "Textbook", "Reference material"],
+      "steps": [
+        "Identify another story, poem, or personal experience related to childhood lessons",
+        "Write a 120–150 word piece connecting it to the author’s experiences",
+        "Highlight similarities, differences, and lessons learned"
+      ],
+      "learning_outcome": "Develops analytical thinking, literary connections, and writing skills",
+      "evaluation": "Depth of insight, clarity, and relevance (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "Social Science - Geography",
+  "chapter": "Human Resources",
+  "difficulty": "Easy",
+  "source_pdf": "Human_Resources.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Understanding Human Resources",
+      "objective": "Learn the meaning of human resources",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Teacher explains the concept of human resources",
+        "Students read the definition from the textbook",
+        "List examples of human resources such as doctors, teachers, and farmers",
+        "Discuss why people are considered a valuable resource"
+      ],
+      "learning_outcome": "Students understand that people and their skills form human resources",
+      "evaluation": "Correct examples and participation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Population Distribution Activity",
+      "objective": "Understand how population is distributed in the world",
+      "materials": ["World map", "Atlas", "Pencil"],
+      "steps": [
+        "Teacher shows densely and sparsely populated regions",
+        "Students locate countries with high population",
+        "Mark them on the map",
+        "Discuss reasons for dense population"
+      ],
+      "learning_outcome": "Students understand uneven population distribution",
+      "evaluation": "Accuracy of map marking (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Population Density Calculation",
+      "objective": "Learn how population density is calculated",
+      "materials": ["Notebook", "Calculator", "Textbook"],
+      "steps": [
+        "Teacher explains the formula for population density",
+        "Provide population and area data of a region",
+        "Students calculate population density",
+        "Compare results with classmates"
+      ],
+      "learning_outcome": "Students learn to calculate population density",
+      "evaluation": "Correct calculation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Factors Affecting Population Distribution",
+      "objective": "Identify factors influencing where people live",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Discuss physical factors such as climate and water",
+        "Discuss human factors such as jobs and industries",
+        "Create a chart showing different factors",
+        "Present the chart to the class"
+      ],
+      "learning_outcome": "Students understand the factors affecting population distribution",
+      "evaluation": "Clarity and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Population Change Discussion",
+      "objective": "Understand population growth and decline",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Teacher explains birth rate and death rate",
+        "Students discuss reasons for population growth",
+        "List factors causing population decline",
+        "Share answers with the class"
+      ],
+      "learning_outcome": "Students understand reasons for population change",
+      "evaluation": "Participation and correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Migration Case Study",
+      "objective": "Learn about migration and its causes",
+      "materials": ["Notebook", "Textbook"],
+      "steps": [
+        "Teacher explains migration",
+        "Students identify push and pull factors",
+        "Write examples of migration in India",
+        "Discuss the effects of migration"
+      ],
+      "learning_outcome": "Students understand the causes and effects of migration",
+      "evaluation": "Quality of examples (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Population Pyramid Activity",
+      "objective": "Understand age and gender structure",
+      "materials": ["Graph paper", "Pencil", "Ruler"],
+      "steps": [
+        "Teacher explains the population pyramid",
+        "Provide sample population data",
+        "Students draw a simple population pyramid",
+        "Interpret the structure"
+      ],
+      "learning_outcome": "Students understand age distribution in population",
+      "evaluation": "Accuracy of diagram (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Local Population Survey",
+      "objective": "Observe population characteristics in the local area",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Students collect information from neighbors",
+        "Record family size and occupations",
+        "Classify occupations into different sectors",
+        "Present findings in class"
+      ],
+      "learning_outcome": "Students connect population concepts with real-life situations",
+      "evaluation": "Completeness of survey (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Role Play on Migration",
+      "objective": "Understand reasons behind migration",
+      "materials": ["Simple props", "Dialogue notes"],
+      "steps": [
+        "Assign roles such as migrant worker and employer",
+        "Act out reasons for moving to cities",
+        "Discuss benefits and problems of migration",
+        "Share ideas for improving living conditions"
+      ],
+      "learning_outcome": "Students understand migration challenges",
+      "evaluation": "Creativity and understanding (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Poster on Population Awareness",
+      "objective": "Create awareness about population issues",
+      "materials": ["Chart paper", "Color pencils", "Markers"],
+      "steps": [
+        "Students design posters about population growth",
+        "Include slogans about education and health",
+        "Add illustrations",
+        "Display posters in the classroom"
+      ],
+      "learning_outcome": "Students develop awareness about responsible population growth",
+      "evaluation": "Creativity and relevance (10 marks)"
+    }
+  ]
+}

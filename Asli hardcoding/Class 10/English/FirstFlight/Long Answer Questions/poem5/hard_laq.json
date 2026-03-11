@@ -1,0 +1,93 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Poem – The Trees",
+    "generated_at": "2026-03-09T12:53:15",
+    "total_questions": 5,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Examine the metaphorical significance of the trees’ departure from the house in Adrienne Rich’s poem.",
+            "answer": "The departure of the trees serves as a potent metaphor for the reclamation of autonomy and the subversion of domesticity. The house represents a space of human control and artificial order, where nature has been 'tamed' for decorative purposes. The trees’ laborious journey back to the forest symbolizes a broader struggle for liberation—be it environmental, where nature heals itself from human encroachment, or social, where marginalized groups break free from restrictive roles. Their movement signifies that the vital force of life cannot be permanently suppressed by man-made structures; it will eventually fracture those boundaries to return to its authentic state of wildness.",
+            "answer_outline": [
+                "The house as a symbol of domestic confinement",
+                "Metaphor of liberation (Environmental and Social)",
+                "The inevitable triumph of natural vitality over human artifice"
+            ],
+            "key_concepts": [
+                "metaphor of liberation",
+                "subversion of domesticity",
+                "natural vitality"
+            ],
+            "marks": 6,
+            "source_section": "Thematic Analysis"
+        },
+        {
+            "question_number": 2,
+            "question": "How does Adrienne Rich explore the interplay between human perception and natural agency in the poem?",
+            "answer": "Rich explores this interplay through the sharp juxtaposition of the passive 'I' (the narrator) and the active 'Trees.' The narrator sits safely inside, engaged in the mundane, intellectual task of writing 'long letters,' deliberately barely mentioning the trees' departure. This reflects a state of human denial or detachment from the actual power of nature. Meanwhile, the trees possess a silent, relentless agency, working through the night without human permission or assistance. This contrast highlights that the natural world operates on a scale of time and energy that is independent of—and often invisible to—human awareness and control.",
+            "answer_outline": [
+                "Contrast between human passivity (writing) and natural activity (moving)",
+                "Human detachment as a sign of limited perception",
+                "Independent agency of nature"
+            ],
+            "key_concepts": [
+                "human perception",
+                "natural agency",
+                "juxtaposition"
+            ],
+            "marks": 5,
+            "source_section": "Comparative Characterization"
+        },
+        {
+            "question_number": 3,
+            "question": "Analyze the use of night and moon imagery to enhance the poem’s themes.",
+            "answer": "The 'night' provides a cloak of secrecy for the trees' rebellion, suggesting that nature's most transformative work often happens beyond the gaze of human authority. The imagery of the moon undergoes a significant transformation: from a whole 'full moon' seen through the window to a 'shattered mirror' in the oak's crown. This shattering symbolizes the disruption of the 'perfect' human view of nature. When the trees reach the forest, their branches fragment the light, suggesting that true beauty and power are found in the wild complexity of the natural world rather than the sanitized, singular view provided by a domestic window.",
+            "answer_outline": [
+                "Night as a setting for transformative secrecy",
+                "The shift from a 'full' to a 'shattered' moon",
+                "Symbolism of the shattered mirror in the oak's crown"
+            ],
+            "key_concepts": [
+                "moon imagery",
+                "transformation",
+                "visual fragmentation"
+            ],
+            "marks": 6,
+            "source_section": "Poetic Imagery"
+        },
+        {
+            "question_number": 4,
+            "question": "Discuss the role of rhythm and sentence structure in conveying the trees’ movement and effort.",
+            "answer": "Rich utilizes enjambment and long, breathless sentence structures to mirror the continuous, exhausting effort of the trees. The lists of actions ('roots work,' 'leaves strain,' 'twigs stiffen') create a sense of cumulative tension and mechanical struggle. The rhythm is not smooth; it is punctuated by 'shuffling' and 'stumbling' descriptions that mimic the physical difficulty of moving through a cramped space. This stylistic choice immerses the reader in the 'physicality' of the exodus, making the trees' journey feel like a monumental, slow-motion breakout rather than a quick escape.",
+            "answer_outline": [
+                "Use of enjambment to show continuous effort",
+                "Listing of verbs to emphasize cumulative struggle",
+                "Rhythm mimicking the 'shuffling' and 'stumbling' of boughs"
+            ],
+            "key_concepts": [
+                "enjambment",
+                "rhythmic mimicry",
+                "kinetic structure"
+            ],
+            "marks": 5,
+            "source_section": "Literary Style"
+        },
+        {
+            "question_number": 5,
+            "question": "Interpret the thematic significance of human detachment juxtaposed with natural vitality in the poem.",
+            "answer": "The observer’s detachment—evidenced by the triviality of writing letters while a forest is being born in the veranda—serves as a critique of modern human existence. We are often so preoccupied with our own artificial communications that we ignore the 'vitality' of the living world around us. This juxtaposition underscores the resilience of nature; it does not require human validation to grow or to reclaim its space. The poem concludes with the trees breaking through the glass, suggesting that human detachment will eventually be forcibly ended by the sublime power of the natural world as it asserts its rightful place.",
+            "answer_outline": [
+                "Critique of human preoccupation with the trivial",
+                "Resilience of nature independent of human validation",
+                "The inevitable confrontation between human structures and natural growth"
+            ],
+            "key_concepts": [
+                "human detachment",
+                "natural vitality",
+                "environmental sublime"
+            ],
+            "marks": 6,
+            "source_section": "Overall Message"
+        }
+    ]
+}

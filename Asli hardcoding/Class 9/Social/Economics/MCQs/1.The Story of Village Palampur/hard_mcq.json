@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: The Story of Village Palampur",
+    "generated_at": "2026-03-07T00:16:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following describes the relationship between 'Marketable Surplus' and capital formation for large farmers?",
+            "options": {
+                "A": "Surplus is consumed by the family, leading to zero savings",
+                "B": "Surplus is sold, and earnings provide the capital for the next season",
+                "C": "Surplus is given to small farmers for free",
+                "D": "Surplus is stored indefinitely to increase land value"
+            },
+            "correct_answer": "B",
+            "explanation": "Large farmers have substantial surplus to sell, which generates the savings necessary to buy fixed and working capital for future production.",
+            "difficulty": "hard",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 2,
+            "question": "The 'Green Revolution' package is characterized by a high degree of interdependence between which inputs?",
+            "options": {
+                "A": "Traditional seeds and organic manure",
+                "B": "HYV seeds, chemical fertilizers, and assured irrigation",
+                "C": "Rainfall and wooden ploughs",
+                "D": "Land fragmentation and family labor"
+            },
+            "correct_answer": "B",
+            "explanation": "HYV seeds require a specific 'package' of chemical fertilizers, pesticides, and a well-developed irrigation system to achieve high yields.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is 'Human Capital' considered the most crucial factor in the 'Organisation of Production'?",
+            "options": {
+                "A": "Because it is the most expensive factor",
+                "B": "Because it is required to coordinate and activate the other three factors",
+                "C": "Because it does not require land",
+                "D": "Because it is naturally available in large quantities"
+            },
+            "correct_answer": "B",
+            "explanation": "Human capital—knowledge and enterprise—is essential to combine land, labour, and physical capital to create an output.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Analyze the impact of land fragmentation as seen in the case of Gobind’s sons. What is the primary economic disadvantage?",
+            "options": {
+                "A": "Total land area decreases over time",
+                "B": "Small plot sizes make modern farming methods less effective",
+                "C": "Fragmentation leads to higher soil fertility",
+                "D": "Laborers refuse to work on small plots"
+            },
+            "correct_answer": "B",
+            "explanation": "When land is divided into tiny plots, even with improved irrigation and seeds, the yield is often not enough to provide a comfortable living.",
+            "difficulty": "hard",
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following is a long-term environmental externality of the Green Revolution in Palampur?",
+            "options": {
+                "A": "Increase in biodiversity",
+                "B": "Rise in the water table",
+                "C": "Depletion of groundwater and loss of soil fertility",
+                "D": "Decreased use of pesticides"
+            },
+            "correct_answer": "C",
+            "explanation": "Intensive tubewell irrigation and chemical use have led to falling water tables and environmental degradation that is hard to restore.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "How does the 'interest rate' differ between the informal and formal credit markets in Palampur?",
+            "options": {
+                "A": "Moneylenders charge lower rates than banks",
+                "B": "Banks charge around 24% per month",
+                "C": "Moneylenders charge very high rates (e.g., 24% for 4 months) compared to banks",
+                "D": "Interest rates are the same in both markets"
+            },
+            "correct_answer": "C",
+            "explanation": "Small farmers often lack collateral for bank loans and are forced to pay high interest to village moneylenders.",
+            "difficulty": "hard",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 7,
+            "question": "Mishrilal’s jaggery production is an example of 'Value Addition'. How does this benefit the village economy?",
+            "options": {
+                "A": "It converts a primary product into a processed secondary product",
+                "B": "It reduces the need for electricity",
+                "C": "It encourages farmers to grow less sugarcane",
+                "D": "It eliminates the need for traders"
+            },
+            "correct_answer": "A",
+            "explanation": "By processing sugarcane into jaggery, Mishrilal adds value to the agricultural output and creates a small-scale manufacturing unit.",
+            "difficulty": "hard",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 8,
+            "question": "Which factor explains why large farmers can earn interest on their savings while small farmers pay interest on loans?",
+            "options": {
+                "A": "Distribution of land and marketable surplus",
+                "B": "Number of family members",
+                "C": "The type of crop grown",
+                "D": "Distance from Raiganj"
+            },
+            "correct_answer": "A",
+            "explanation": "Large landholders generate surplus income (savings), whereas small farmers lack surplus and must borrow to survive.",
+            "difficulty": "hard",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 9,
+            "question": "In the context of the 'Labour' factor, what creates the 'wage-suppression' observed in Palampur?",
+            "options": {
+                "A": "Government regulations",
+                "B": "Heavy competition due to labor surplus",
+                "C": "Lack of physical capital",
+                "D": "High productivity of laborers"
+            },
+            "correct_answer": "B",
+            "explanation": "Since there are many more laborers than available jobs, workers are forced to accept wages lower than the government-mandated minimum.",
+            "difficulty": "hard",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Identify the 'Working Capital' in the case of Mishrilal’s jaggery production.",
+            "options": {
+                "A": "The mechanical crusher",
+                "B": "The building where production happens",
+                "C": "Sugarcane and cash to pay for electricity/transport",
+                "D": "His knowledge of jaggery making"
+            },
+            "correct_answer": "C",
+            "explanation": "Working capital consists of raw materials (sugarcane) and cash used during the production cycle.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Multiple cropping increases production by:",
+            "options": {
+                "A": "Increasing the area of land under cultivation",
+                "B": "Growing more than one crop on the same plot annually",
+                "C": "Using higher amounts of pesticides",
+                "D": "Employing fewer laborers"
+            },
+            "correct_answer": "B",
+            "explanation": "Multiple cropping maximizes the utility of a fixed land area by utilizing different seasons (Kharif and Rabi).",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following describes the 'Physical Capital' of a shopkeeper in Palampur?",
+            "options": {
+                "A": "The knowledge of customer preferences",
+                "B": "The stock of notebooks, biscuits, and soap",
+                "C": "The transport services used to bring goods",
+                "D": "The electricity used in the shop"
+            },
+            "correct_answer": "B",
+            "explanation": "The inventory (stock) is the working capital, which is a part of physical capital.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is land considered a 'fixed' resource even though wasteland was converted in the past?",
+            "options": {
+                "A": "Because it cannot be moved",
+                "B": "Because there is no further scope for expansion of cultivable land since 1960",
+                "C": "Because the government has banned land conversion",
+                "D": "Because the population is decreasing"
+            },
+            "correct_answer": "B",
+            "explanation": "In Palampur, all available wasteland has already been brought under cultivation, leaving land as a fixed constraint for production.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Large farmers like Tejpal Singh acts as 'Capital Providers' for small farmers. This relationship often leads to:",
+            "options": {
+                "A": "Equal distribution of wealth",
+                "B": "Debt cycles for small farmers",
+                "C": "Bankruptcy of large farmers",
+                "D": "Lower interest rates in the village"
+            },
+            "correct_answer": "B",
+            "explanation": "High interest rates and low productivity often trap small farmers in a cycle of debt to the large landowners.",
+            "difficulty": "hard",
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Modern farming methods shift the farmer's dependence from 'Nature' to 'Industry'. Why?",
+            "options": {
+                "A": "Because rain is no longer needed",
+                "B": "Because inputs like fertilizers and machinery are industrially produced",
+                "C": "Because farmers move to cities",
+                "D": "Because soil is replaced by industrial chemicals"
+            },
+            "correct_answer": "B",
+            "explanation": "Traditional farming uses on-farm inputs (dung/seeds), while modern farming relies on industrial products (fertilizers/tractors).",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which statement best summarizes the 'Organisation of Production'?",
+            "options": {
+                "A": "The process of selling goods in the market",
+                "B": "The combination of land, labor, and capital using human enterprise",
+                "C": "The distribution of wages to workers",
+                "D": "The management of government regulations"
+            },
+            "correct_answer": "B",
+            "explanation": "Production is the result of combining four essential requirements: land, labour, physical capital, and human capital.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The 'Vicious Cycle' of poverty for landless laborers is perpetuated by:",
+            "options": {
+                "A": "High wages and low prices",
+                "B": "Low wages, lack of assets, and debt",
+                "C": "Access to bank loans",
+                "D": "Modern farming methods"
+            },
+            "correct_answer": "B",
+            "explanation": "Without land or capital, laborers earn low wages and often fall into debt, preventing any accumulation of savings.",
+            "difficulty": "hard",
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 18,
+            "question": "What role does 'Infrastructure' (electricity/roads) play in diversifying the Palampur economy?",
+            "options": {
+                "A": "It limits production to farming only",
+                "B": "It enables non-farm activities like computer centers and transport",
+                "C": "It increases the cost of production indefinitely",
+                "D": "It encourages people to move away from the village"
+            },
+            "correct_answer": "B",
+            "explanation": "Infrastructure like electricity and connectivity to Raiganj facilitates the growth of tertiary and secondary sectors.",
+            "difficulty": "hard",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 19,
+            "question": "Chemical fertilizers are 'soluble in water' and 'leach' into the soil. What is the consequence of this?",
+            "options": {
+                "A": "Groundwater becomes cleaner",
+                "B": "Groundwater becomes polluted and soil health declines",
+                "C": "The soil becomes permanently fertile",
+                "D": "Crop yields increase forever"
+            },
+            "correct_answer": "B",
+            "explanation": "Chemicals that leach through the soil contaminate groundwater and kill soil-enriching bacteria.",
+            "difficulty": "hard",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "In the 'Physical Capital' hierarchy, why is a tractor considered 'Fixed' while diesel is 'Working'?",
+            "options": {
+                "A": "Fixed capital is more expensive than working capital",
+                "B": "Fixed capital is used over many years, while working capital is consumed in one cycle",
+                "C": "Diesel is a natural resource",
+                "D": "Fixed capital belongs to the government"
+            },
+            "correct_answer": "B",
+            "explanation": "The distinction lies in the duration of use; machines are durable assets, while fuel is used up during the production process.",
+            "difficulty": "hard",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Agricultural growth in Palampur is 'Intensive' rather than 'Extensive'. This means:",
+            "options": {
+                "A": "Increasing output by clearing more forests",
+                "B": "Increasing output by getting more yield from the same land",
+                "C": "Increasing output by hiring more people",
+                "D": "Decreasing the use of capital"
+            },
+            "correct_answer": "B",
+            "explanation": "Intensive farming focuses on maximizing productivity from a fixed land area through modern inputs and multiple cropping.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why do large farmers produce more surplus despite having similar family consumption as small farmers?",
+            "options": {
+                "A": "Because they eat less",
+                "B": "Because their total production is significantly higher due to larger landholdings",
+                "C": "Because they hide their grain",
+                "D": "Because they only grow cash crops"
+            },
+            "correct_answer": "B",
+            "explanation": "Surplus = Total Production - Family Consumption. With much larger land, the 'Total Production' is high enough to leave a massive surplus.",
+            "difficulty": "hard",
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 23,
+            "question": "The transition from Persian wheels to tubewells changed the 'Caste Dynamics' of water access by:",
+            "options": {
+                "A": "Making water free for everyone",
+                "B": "Favoring those who had the capital to install electric tubewells",
+                "C": "Removing the need for electricity",
+                "D": "Decreasing the land under irrigation"
+            },
+            "correct_answer": "B",
+            "explanation": "Technological shifts often favor those with the capital (large/medium farmers) to invest in new infrastructure first.",
+            "difficulty": "hard",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the primary constraint to starting a non-farm business for a landless laborer?",
+            "options": {
+                "A": "Lack of time",
+                "B": "Lack of 'Initial Capital' and 'Market Knowledge'",
+                "C": "The government prevents non-farm work",
+                "D": "Laborers are only allowed to farm"
+            },
+            "correct_answer": "B",
+            "explanation": "Starting a shop or manufacturing unit requires capital and education/enterprise (human capital), which laborers often lack.",
+            "difficulty": "hard",
+            "source_section": "Section 1.9"
+        },
+        {
+            "question_number": 25,
+            "question": "Identify the 'Tertiary Sector' activity in Palampur.",
+            "options": {
+                "A": "Jaggery making (Mishrilal)",
+                "B": "Kishora’s transport service (Buffalo cart)",
+                "C": "Sowing wheat",
+                "D": "Harvesting jowar"
+            },
+            "correct_answer": "B",
+            "explanation": "Transport is a service-based activity, which falls under the tertiary sector of the economy.",
+            "difficulty": "hard",
+            "source_section": "Section 1.9"
+        }
+    ]
+}

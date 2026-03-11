@@ -1,0 +1,176 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Measurement of Time and Motion",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand time and its precise measurement",
+        "Understand motion with distance, displacement, and speed",
+        "Construct distance-time tables and graphs",
+        "Learn average speed calculation",
+        "Analyze motion through practical examples"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Units of Time",
+            "topics_covered": [
+                "Review of seconds, minutes, hours",
+                "Using stopwatch for precise measurements",
+                "Importance of accuracy"
+            ],
+            "teaching_strategy": [
+                "Board demonstration",
+                "Hands-on activity with stopwatch"
+            ],
+            "student_activities": [
+                "Measure time for different tasks using stopwatch",
+                "Record in a table"
+            ],
+            "assessment": [
+                "Observation of measurements",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Motion and Distance",
+            "topics_covered": [
+                "Concept of distance and displacement",
+                "Measuring motion of objects",
+                "Units of measurement (meters, kilometers)"
+            ],
+            "teaching_strategy": [
+                "Demonstration with moving objects",
+                "Step-by-step measurement"
+            ],
+            "student_activities": [
+                "Measure distance traveled by a ball",
+                "Record distance and displacement"
+            ],
+            "assessment": [
+                "Practical evaluation",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Speed Calculation",
+            "topics_covered": [
+                "Formula: speed = distance / time",
+                "Units of speed",
+                "Practical examples of motion"
+            ],
+            "teaching_strategy": [
+                "Worked examples on board",
+                "Hands-on calculation activity"
+            ],
+            "student_activities": [
+                "Calculate speed of walking/running students",
+                "Compare results"
+            ],
+            "assessment": [
+                "Class exercise evaluation",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Distance-Time Table and Graph",
+            "topics_covered": [
+                "Recording motion data in a table",
+                "Plotting distance-time graph",
+                "Interpreting graphs"
+            ],
+            "teaching_strategy": [
+                "Demonstration with sample data",
+                "Stepwise graph plotting"
+            ],
+            "student_activities": [
+                "Fill distance-time table for given data",
+                "Draw and interpret graph"
+            ],
+            "assessment": [
+                "Graph correctness",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Average Speed",
+            "topics_covered": [
+                "Definition and calculation of average speed",
+                "Examples of varied motion"
+            ],
+            "teaching_strategy": [
+                "Board explanation",
+                "Worked numerical examples"
+            ],
+            "student_activities": [
+                "Calculate average speed from distance-time data",
+                "Compare different speeds"
+            ],
+            "assessment": [
+                "Short calculation exercises",
+                "Observation of participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Real-life Applications",
+            "topics_covered": [
+                "Transport and travel",
+                "Timing sports events",
+                "Time management in daily life"
+            ],
+            "teaching_strategy": [
+                "Discussion with examples",
+                "Class activity analysis"
+            ],
+            "student_activities": [
+                "Time a short race",
+                "Calculate speed and discuss"
+            ],
+            "assessment": [
+                "Practical demonstration",
+                "Notebook record checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Assessment",
+            "topics_covered": [
+                "Complete chapter recap",
+                "Distance, displacement, speed, and graph",
+                "Simple numerical problems"
+            ],
+            "teaching_strategy": [
+                "Quiz-based revision",
+                "Rapid-fire oral questions"
+            ],
+            "student_activities": [
+                "Participate in quiz",
+                "Solve mixed numerical problems"
+            ],
+            "assessment": [
+                "Short written test",
+                "Class participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Stopwatch/timer",
+        "Meter scale",
+        "Graph paper",
+        "Board and markers/chalk"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Practical demonstration",
+        "Short numerical exercises"
+    ],
+    "teacher_tip": "Encourage hands-on measurements and graph plotting to strengthen understanding of motion concepts."
+}

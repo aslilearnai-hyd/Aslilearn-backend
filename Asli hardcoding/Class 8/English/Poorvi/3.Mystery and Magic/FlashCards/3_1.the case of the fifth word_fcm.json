@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter: The Case of the Fifth Word",
+  "generated_at": "2026-03-09T15:20:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "Who is Encyclopedia Brown?",
+        "correct_answer": "A young boy detective who helps solve mysteries",
+        "explanation": "Encyclopedia Brown is known for his intelligence and ability to remember facts, which helps him solve difficult cases.",
+        "source_section": "Introduction"
+      },
+      {
+        "question": "What was the profession of Encyclopedia Brown’s father?",
+        "correct_answer": "Chief of Police",
+        "explanation": "Chief Brown often discussed unsolved cases with his son during dinner.",
+        "source_section": "Story Background"
+      },
+      {
+        "question": "Who was Tim Nolan?",
+        "correct_answer": "A man suspected of being involved in a jewellery robbery",
+        "explanation": "Although Nolan was suspected of robbery, the stolen jewellery was never found during his lifetime.",
+        "source_section": "Story Conflict"
+      },
+      {
+        "question": "Who was Daniel Davenport?",
+        "correct_answer": "Tim Nolan’s friend who was suspected of being his partner in the robbery",
+        "explanation": "Davenport disappeared after the jewellery store robbery, making him a suspicious character.",
+        "source_section": "Story Conflict"
+      },
+      {
+        "question": "What unusual message did Nolan leave behind?",
+        "correct_answer": "The words 'Nom Utes Sweden Hurts'",
+        "explanation": "These words were part of a coded message attached to Nolan’s will.",
+        "source_section": "Climax"
+      },
+      {
+        "question": "What did the coded words represent?",
+        "correct_answer": "The days of the week",
+        "explanation": "The words represented Monday, Tuesday, Wednesday, and Thursday after removing the letters 'day'.",
+        "source_section": "Climax"
+      },
+      {
+        "question": "What was the missing fifth word in the code?",
+        "correct_answer": "Fir",
+        "explanation": "The fifth word represented Friday and pointed to a young fir tree in Nolan’s nursery.",
+        "source_section": "Climax"
+      },
+      {
+        "question": "Where was the stolen jewellery hidden?",
+        "correct_answer": "Under a young fir tree in Nolan’s nursery",
+        "explanation": "The coded message helped Encyclopedia Brown discover the location of the hidden jewellery.",
+        "source_section": "Resolution"
+      },
+      {
+        "question": "How did Encyclopedia Brown solve the mystery?",
+        "correct_answer": "By recognising the coded pattern related to days of the week",
+        "explanation": "His logical reasoning helped him decode the message and locate the jewellery.",
+        "source_section": "Resolution"
+      },
+      {
+        "question": "What important skill helped Encyclopedia solve the case?",
+        "correct_answer": "Observation and logical reasoning",
+        "explanation": "Detective stories often highlight the importance of careful observation and logical thinking.",
+        "source_section": "Theme"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Encyclopedia Brown",
+        "content": "Encyclopedia Brown is a young boy with exceptional intelligence who helps solve mysteries using logic and observation.",
+        "source_section": "Introduction"
+      },
+      {
+        "title": "Chief Brown",
+        "content": "Chief Brown is the Chief of Police and often consults his son when he encounters difficult cases.",
+        "source_section": "Story Background"
+      },
+      {
+        "title": "The Coded Message",
+        "content": "Nolan left a coded message using anagrams of the days of the week after removing the word 'day'.",
+        "source_section": "Climax"
+      },
+      {
+        "title": "The Fifth Word",
+        "content": "The missing fifth word represented Friday and pointed to the fir tree where the jewellery was hidden.",
+        "source_section": "Climax"
+      },
+      {
+        "title": "Mystery Resolution",
+        "content": "Encyclopedia Brown decoded the message and solved the mystery of the missing jewellery.",
+        "source_section": "Resolution"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Encyclopedia Brown is known for remembering facts from books he reads.",
+        "source_section": "Introduction"
+      },
+      {
+        "fact": "Tim Nolan and Daniel Davenport were suspected of robbing a jewellery store years earlier.",
+        "source_section": "Story Conflict"
+      },
+      {
+        "fact": "The coded words represented days of the week without the letters 'day'.",
+        "source_section": "Climax"
+      },
+      {
+        "fact": "Logical reasoning and pattern recognition helped solve the mystery.",
+        "source_section": "Conclusion"
+      }
+    ]
+  }
+}

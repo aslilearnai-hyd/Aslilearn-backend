@@ -1,0 +1,35 @@
+{
+  "class": "Class 7",
+  "subject": "English / Geography",
+  "chapter": "North, South, East, West",
+  "difficulty": "Easy",
+  "source_pdf": "North, South, East, West.pdf",
+  "short_notes": {
+    "key_points": [
+      "The chapter introduces the four main directions, also known as the 'Cardinal Directions'.",
+      "These directions help us find our way and describe the location of places on a map.",
+      "The Sun is the most natural tool for finding directions during the day.",
+      "The North Star (Pole Star) has been used for centuries by sailors to find their way at night.",
+      "A Compass is a special tool with a magnetic needle that always points toward the North."
+    ],
+    "examples": [
+      "If you stand facing the **Rising Sun** in the morning, you are facing **East**.",
+      "When facing East, your back is toward the **West** (where the sun sets).",
+      "Your left hand will point toward the **North**, and your right hand will point toward the **South**.",
+      "Maps are usually drawn with **North** at the top and **South** at the bottom.",
+      "The 'East' is often called the 'Orient,' and the 'West' is called the 'Occident'."
+    ],
+    "formulas_or_processes": [
+      "The Sun Method → Face Sunrise (East) → Back is West → Left is North → Right is South.",
+      "The Compass Rule → Magnetic Needle → Attraction to Earth's Pole → Always settles at North-South line.",
+      "Map Reading → Look for the 'Compass Rose' (the star symbol) to see which way is North.",
+      "Clockwise Order → North → East → South → West (Never Eat Shredded Wheat)."
+    ],
+    "exam_tips": [
+      "Know the four cardinal directions by heart.",
+      "Remember that the Sun always rises in the East and sets in the West.",
+      "If a question asks which way North is on a standard map, the answer is always 'at the top'.",
+      "Understand that directions are 'relative'—what is East to you might be West to someone else far away."
+    ]
+  }
+}

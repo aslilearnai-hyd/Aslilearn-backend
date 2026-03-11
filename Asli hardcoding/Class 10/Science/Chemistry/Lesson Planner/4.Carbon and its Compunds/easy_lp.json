@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Carbon and its Compounds",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the unique nature of carbon and its ability to form bonds",
+        "Identify the difference between saturated and unsaturated hydrocarbons",
+        "Recognize the various allotropes of carbon",
+        "Understand the basic naming of simple carbon compounds",
+        "Identify common carbon-based substances in daily life",
+        "Recognize the importance of soap and detergents in cleaning"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Bonding in Carbon: The Covalent Bond",
+            "topics_covered": [
+                "Carbon as a versatile element",
+                "Covalent bonding (sharing of electrons)",
+                "Tetravalency of carbon"
+            ],
+            "teaching_strategy": [
+                "Analogy: Sharing of snacks to represent electron sharing",
+                "Visual aids showing the atomic structure of Carbon",
+                "Drawing simple molecules like $H_{2}$, $O_{2}$, and $CH_{4}$"
+            ],
+            "student_activities": [
+                "Draw electron-dot structures for Hydrogen and Chlorine",
+                "List 5 items used since morning that contain carbon"
+            ],
+            "assessment": [
+                "Oral questioning on valency",
+                "Worksheet on simple electron-dot structures"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Allotropes of Carbon",
+            "topics_covered": [
+                "Diamond: Structure and hardness",
+                "Graphite: Structure and conductivity",
+                "Fullerenes (C-60) introduction"
+            ],
+            "teaching_strategy": [
+                "Show and Tell: A diamond ring (image) vs. pencil lead (graphite)",
+                "Comparison table of physical properties",
+                "3D models of Diamond and Graphite lattices"
+            ],
+            "student_activities": [
+                "Touch and feel graphite from a pencil",
+                "List the uses of diamond and graphite based on their properties"
+            ],
+            "assessment": [
+                "Table completion: Diamond vs. Graphite",
+                "Quick-fire round: 'Which allotrope conducts electricity?'"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Versatile Nature of Carbon",
+            "topics_covered": [
+                "Catenation (Self-linking)",
+                "Saturated vs. Unsaturated hydrocarbons",
+                "Straight chains, branched chains, and rings"
+            ],
+            "teaching_strategy": [
+                "Building block analogy (Lego) for catenation",
+                "Drawing structures of Methane, Ethane, and Ethene",
+                "Visual charts of different chain types"
+            ],
+            "student_activities": [
+                "Identify saturated vs. unsaturated bonds in given drawings",
+                "Draw a simple 3-carbon straight chain"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Defining 'Catenation' in simple words"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Homologous Series and Naming",
+            "topics_covered": [
+                "Concept of Homologous Series",
+                "Prefixes: Meth-, Eth-, Prop-, But-",
+                "Suffixes for Alkanes (-ane)"
+            ],
+            "teaching_strategy": [
+                "Family analogy for the homologous series",
+                "Step-by-step guide to naming the first four alkanes",
+                "Flashcards for naming practice"
+            ],
+            "student_activities": [
+                "Calculate the difference in molecular formula between $CH_{4}$ and $C_{2}H_{6}$",
+                "Name the compound with the formula $C_{3}H_{8}$"
+            ],
+            "assessment": [
+                "Naming quiz",
+                "Matching formulas to names"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Chemical Properties: Combustion and Oxidation",
+            "topics_covered": [
+                "Burning of carbon and its compounds",
+                "Clean flame vs. Sooty flame",
+                "Introduction to oxidation"
+            ],
+            "teaching_strategy": [
+                "Demonstration: Lighting a candle vs. a Bunsen burner (Blue vs. Yellow flame)",
+                "Discussion on why gas stoves have holes for air",
+                "Simple word equations for combustion"
+            ],
+            "student_activities": [
+                "Observe the bottom of a vessel used on a wood fire vs. a gas stove",
+                "Record observations of soot formation"
+            ],
+            "assessment": [
+                "Short answer: Why does coal burn without a flame?",
+                "Exit slip: What are the products of combustion?"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Ethanol and Ethanoic Acid",
+            "topics_covered": [
+                "Common uses of Ethanol",
+                "Ethanoic Acid (Vinegar)",
+                "Basic safety around chemicals"
+            ],
+            "teaching_strategy": [
+                "Displaying a bottle of vinegar and hand sanitizer",
+                "Discussion on why drinking alcohol is harmful",
+                "Simple physical properties (smell, state)"
+            ],
+            "student_activities": [
+                "Smell vinegar and record the observation",
+                "List two uses for Ethanol in daily life"
+            ],
+            "assessment": [
+                "True/False on uses of Ethanol",
+                "Identifying the acid present in vinegar"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Soaps and Detergents",
+            "topics_covered": [
+                "Structure of soap molecules (Head and Tail)",
+                "How soap removes dirt (Micelle formation - simple)",
+                "Difference between soap and detergent (hard water context)"
+            ],
+            "teaching_strategy": [
+                "Drawing a 'Tadpole' shape for soap molecules",
+                "Demonstration: Mixing oil and water with and without soap",
+                "Visual aid showing a Micelle"
+            ],
+            "student_activities": [
+                "Draw a simple soap molecule and label the water-loving head",
+                "Observe the 'lather' formation in a soap solution"
+            ],
+            "assessment": [
+                "Labeling a Micelle diagram",
+                "Chapter revision quiz"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ball-and-stick molecular models",
+        "Samples: Graphite (pencil), Diamond (image), Vinegar, Soap",
+        "NCERT Science Textbook",
+        "Bunsen burner and spirit lamp",
+        "Chart of first 10 Alkanes"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Diagrammatic evaluation (Electron-dot structures)",
+        "Matching formulas to names",
+        "Worksheet on soap action",
+        "Short multiple-choice test"
+    ],
+    "teacher_tip": "Carbon chemistry can be abstract. Use lots of 'ball-and-stick' models or even clay and toothpicks so students can physically build the 4-bond structure of carbon. This makes the concept of 'tetravalency' much easier to grasp."
+}

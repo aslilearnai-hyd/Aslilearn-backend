@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Answer Questions",
+    "chapter": "Chapter 1: The Ever-Evolving World of Science",
+    "generated_at": "2026-03-06T10:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how science helps us understand the natural world.",
+            "answer": "Science helps us understand the natural world by studying patterns, conducting experiments, and developing explanations based on evidence. It allows us to explain natural phenomena and predict outcomes.",
+            "key_concepts": ["scientific understanding", "natural phenomena", "evidence"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Describe the importance of scientific inquiry in everyday life.",
+            "answer": "Scientific inquiry encourages logical thinking and problem solving. It helps people make informed decisions, understand everyday phenomena, and develop new technologies.",
+            "key_concepts": ["scientific inquiry", "problem solving", "technology"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What are the main steps involved in scientific investigation?",
+            "answer": "The main steps include observation, asking questions, forming a hypothesis, conducting experiments, collecting data, analyzing results, and drawing conclusions.",
+            "key_concepts": ["scientific method", "experiments", "analysis"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is evidence important in science?",
+            "answer": "Evidence supports scientific explanations and conclusions. Without evidence, scientific claims cannot be verified or accepted.",
+            "key_concepts": ["evidence", "scientific explanation"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "How do scientific discoveries change over time?",
+            "answer": "Scientific discoveries change as new evidence and improved technologies become available. This allows scientists to refine or replace earlier ideas.",
+            "key_concepts": ["scientific progress", "new evidence"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the role of experiments in science.",
+            "answer": "Experiments help scientists test hypotheses and observe outcomes under controlled conditions to confirm or reject ideas.",
+            "key_concepts": ["experiments", "hypothesis testing"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a hypothesis?",
+            "answer": "A hypothesis is a possible explanation or prediction that can be tested through experiments and observations.",
+            "key_concepts": ["hypothesis", "prediction"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How does technology influence scientific progress?",
+            "answer": "Technology provides advanced tools and instruments that help scientists observe, measure, and analyze phenomena more accurately.",
+            "key_concepts": ["technology", "scientific tools"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the relationship between science and society?",
+            "answer": "Science contributes to societal development by improving health, communication, transportation, and overall quality of life.",
+            "key_concepts": ["science and society", "development"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Why must scientific results be tested repeatedly?",
+            "answer": "Repeated testing ensures that results are reliable and accurate. It confirms that the findings are not due to chance.",
+            "key_concepts": ["reliability", "scientific testing"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the term scientific model.",
+            "answer": "A scientific model is a representation used to explain and understand complex systems or processes in science.",
+            "key_concepts": ["scientific model", "representation"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why are measurements important in scientific studies?",
+            "answer": "Measurements provide accurate and quantitative data, which help scientists compare results and draw valid conclusions.",
+            "key_concepts": ["measurement", "data"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How do scientists communicate their discoveries?",
+            "answer": "Scientists communicate discoveries through research papers, conferences, journals, and presentations.",
+            "key_concepts": ["scientific communication", "research"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of questioning in science.",
+            "answer": "Questioning helps identify problems and leads to investigations that expand scientific knowledge.",
+            "key_concepts": ["questioning", "scientific thinking"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the role of creativity in scientific work?",
+            "answer": "Creativity helps scientists design experiments, develop models, and propose innovative solutions to problems.",
+            "key_concepts": ["creativity", "innovation"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is collaboration important in science?",
+            "answer": "Collaboration allows scientists to share ideas, resources, and expertise, leading to better research outcomes.",
+            "key_concepts": ["collaboration", "research teamwork"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "What is scientific evidence?",
+            "answer": "Scientific evidence refers to observations, measurements, and data collected during experiments that support or refute scientific ideas.",
+            "key_concepts": ["scientific evidence", "data"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 18,
+            "question": "How does science influence technology?",
+            "answer": "Scientific discoveries lead to new technologies that improve tools, machines, and systems used in everyday life.",
+            "key_concepts": ["science and technology", "innovation"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the term scientific theory.",
+            "answer": "A scientific theory is a well-supported explanation based on extensive evidence and repeated testing.",
+            "key_concepts": ["scientific theory", "evidence"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Why must scientists remain open to new ideas?",
+            "answer": "New discoveries may challenge existing knowledge, so scientists must remain open to revising their ideas based on evidence.",
+            "key_concepts": ["scientific openness", "new discoveries"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "How does science improve human life?",
+            "answer": "Science improves life through medical advancements, better technologies, improved agriculture, and environmental protection.",
+            "key_concepts": ["human welfare", "scientific advancements"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of data in scientific investigations.",
+            "answer": "Data collected during experiments help scientists analyze patterns and draw meaningful conclusions.",
+            "key_concepts": ["data analysis", "investigation"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is accuracy important in scientific experiments?",
+            "answer": "Accuracy ensures that measurements and results closely match the true values, improving the reliability of conclusions.",
+            "key_concepts": ["accuracy", "measurement"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the significance of scientific discoveries?",
+            "answer": "Scientific discoveries expand knowledge, solve problems, and lead to technological and societal progress.",
+            "key_concepts": ["scientific discovery", "progress"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is science considered an evolving field?",
+            "answer": "Science evolves because new observations, experiments, and technologies continually refine existing knowledge.",
+            "key_concepts": ["evolving science", "scientific progress"],
+            "marks": 3,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

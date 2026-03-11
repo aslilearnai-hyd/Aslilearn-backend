@@ -1,0 +1,434 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T18:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define heat transfer and explain its importance in nature.",
+            "answer": "Heat transfer is the process by which heat energy moves from a hotter object or region to a cooler one. It is important in nature for regulating temperature, maintaining ecosystems, and driving weather patterns.",
+            "answer_outline": [
+                "Definition of heat transfer",
+                "Importance in nature"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "temperature regulation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the three modes of heat transfer with examples.",
+            "answer": "The three modes of heat transfer are:\n1. Conduction – transfer of heat through a solid (e.g., metal rod heated at one end).\n2. Convection – transfer of heat through liquids and gases by circulation (e.g., sea breeze).\n3. Radiation – transfer of heat through electromagnetic waves without a medium (e.g., sunlight).",
+            "answer_outline": [
+                "Conduction definition and example",
+                "Convection definition and example",
+                "Radiation definition and example"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "radiation"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe an experiment to demonstrate conduction.",
+            "answer": "Place a metal rod with wax drops on it. Heat one end of the rod. Observe the wax melting gradually along the rod. This shows heat transfer through conduction.",
+            "answer_outline": [
+                "Experiment setup",
+                "Observation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "conduction",
+                "heat transfer in solids"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe an experiment to demonstrate convection.",
+            "answer": "Fill a beaker with water and add a few drops of food color. Heat the water from the bottom. Observe colored currents moving upwards. This shows heat transfer by convection in liquids.",
+            "answer_outline": [
+                "Experiment setup",
+                "Observation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "convection",
+                "heat transfer in liquids"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe an experiment to demonstrate radiation.",
+            "answer": "Place two thermometers under sunlight, one on black paper and one on white paper. The black paper thermometer shows a higher temperature, demonstrating heat transfer by radiation and effect of color on absorption.",
+            "answer_outline": [
+                "Experiment setup",
+                "Observation",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "radiation",
+                "heat absorption",
+                "effect of color"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the effect of color and surface on heat absorption by radiation.",
+            "answer": "Dark-colored and rough surfaces absorb more heat, while light-colored and shiny surfaces reflect heat. Example: Black asphalt gets hotter than white concrete under sunlight.",
+            "answer_outline": [
+                "Effect of color",
+                "Effect of surface",
+                "Examples"
+            ],
+            "key_concepts": [
+                "radiation",
+                "surface properties",
+                "color effect"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why metals are good conductors of heat.",
+            "answer": "Metals have free electrons that can move easily, transferring energy quickly from hot to cold regions. Example: A metal rod heats faster than a wooden stick.",
+            "answer_outline": [
+                "Explanation using free electrons",
+                "Example comparison"
+            ],
+            "key_concepts": [
+                "conduction",
+                "metals",
+                "heat transfer"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why liquids and gases transfer heat mainly by convection.",
+            "answer": "In liquids and gases, molecules move freely. When heated, less dense molecules rise and denser molecules sink, creating convection currents that transfer heat.",
+            "answer_outline": [
+                "Molecular motion",
+                "Density differences",
+                "Convection current formation"
+            ],
+            "key_concepts": [
+                "convection",
+                "density",
+                "heat transfer in fluids"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how heat transfer by conduction, convection, and radiation occurs in a house during summer.",
+            "answer": "Conduction occurs through walls and roof, heating the interior. Convection moves warm air inside rooms. Radiation from sunlight heats the roof and walls. Proper insulation reduces heat transfer.",
+            "answer_outline": [
+                "Conduction example",
+                "Convection example",
+                "Radiation example",
+                "Insulation effect"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "radiation",
+                "insulation"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the role of heat transfer in weather patterns.",
+            "answer": "Heat transfer causes air movement and temperature differences. Convection drives wind and sea breezes, while radiation from the sun heats the Earth's surface, influencing climate and weather patterns.",
+            "answer_outline": [
+                "Heat transfer and air movement",
+                "Convection and wind",
+                "Radiation and surface heating"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "convection",
+                "radiation",
+                "weather"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 11,
+            "question": "What are insulators? Give examples and their importance.",
+            "answer": "Insulators are materials that do not conduct heat well, like wood, plastic, and rubber. They are important for reducing unwanted heat transfer, e.g., in thermos flasks and building insulation.",
+            "answer_outline": [
+                "Definition of insulators",
+                "Examples",
+                "Importance"
+            ],
+            "key_concepts": [
+                "insulators",
+                "heat transfer",
+                "applications"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the difference between heat transfer in solids, liquids, and gases.",
+            "answer": "In solids, heat is transferred mainly by conduction. In liquids, heat is transferred mainly by convection, though conduction also occurs. In gases, heat is transferred mainly by convection and radiation.",
+            "answer_outline": [
+                "Conduction in solids",
+                "Convection in liquids",
+                "Convection and radiation in gases"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "radiation",
+                "states of matter"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how thermos flasks reduce heat transfer.",
+            "answer": "Thermos flasks reduce conduction using a vacuum layer, reduce convection by preventing air movement, and reduce radiation with reflective surfaces, keeping liquids hot or cold longer.",
+            "answer_outline": [
+                "Vacuum reduces conduction",
+                "Prevents convection",
+                "Reflective surface reduces radiation"
+            ],
+            "key_concepts": [
+                "insulation",
+                "conduction",
+                "convection",
+                "radiation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain how black and white surfaces affect heat absorption during radiation experiments.",
+            "answer": "Black surfaces absorb more heat, becoming hotter, while white surfaces reflect heat and remain cooler. This demonstrates the effect of color on radiation absorption.",
+            "answer_outline": [
+                "Black surfaces absorb heat",
+                "White surfaces reflect heat",
+                "Experimental observation"
+            ],
+            "key_concepts": [
+                "radiation",
+                "color effect",
+                "heat absorption"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why metals feel hotter than wood when placed under sunlight.",
+            "answer": "Metals conduct heat better than wood due to free electrons, so they transfer heat quickly to our hands, feeling hotter, while wood is an insulator and heats slowly.",
+            "answer_outline": [
+                "Conduction in metals",
+                "Insulation in wood",
+                "Observation"
+            ],
+            "key_concepts": [
+                "conduction",
+                "insulators",
+                "heat transfer"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how sea breeze is caused by heat transfer.",
+            "answer": "During day, land heats faster than water. Air above land rises due to convection, and cooler air from the sea moves in, creating sea breeze. Heat transfer drives this movement.",
+            "answer_outline": [
+                "Land and water heating",
+                "Convection of air",
+                "Sea breeze formation"
+            ],
+            "key_concepts": [
+                "convection",
+                "heat transfer",
+                "weather"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why vacuum is a good insulator.",
+            "answer": "A vacuum has no particles to transfer heat by conduction or convection. It reduces heat loss, making it an effective insulator.",
+            "answer_outline": [
+                "Absence of particles",
+                "Reduction of conduction and convection",
+                "Practical use"
+            ],
+            "key_concepts": [
+                "vacuum",
+                "insulation",
+                "heat transfer"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how heat transfer affects climate on Earth.",
+            "answer": "Radiation from the Sun heats Earth unevenly. Convection in the atmosphere redistributes heat, causing winds and weather patterns. Oceans transfer heat through currents, influencing climate.",
+            "answer_outline": [
+                "Radiation heating",
+                "Atmospheric convection",
+                "Ocean currents"
+            ],
+            "key_concepts": [
+                "heat transfer",
+                "climate",
+                "convection",
+                "radiation"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the difference between conduction and convection with examples.",
+            "answer": "Conduction is heat transfer through solids without movement of particles, e.g., metal rod. Convection is heat transfer through fluids via particle movement, e.g., heated water forming currents.",
+            "answer_outline": [
+                "Definition of conduction",
+                "Definition of convection",
+                "Examples"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain how heat transfer is used in cooking.",
+            "answer": "Cooking uses conduction in utensils, convection in boiling water and hot air ovens, and radiation in grills and tandoors to cook food efficiently.",
+            "answer_outline": [
+                "Conduction in utensils",
+                "Convection in liquids/air",
+                "Radiation in grills"
+            ],
+            "key_concepts": [
+                "conduction",
+                "convection",
+                "radiation",
+                "cooking"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how reflective surfaces reduce heat transfer.",
+            "answer": "Reflective surfaces reflect radiant heat away, reducing absorption and preventing heating. Example: Silvered thermos surface reduces heat loss by radiation.",
+            "answer_outline": [
+                "Reflection of radiation",
+                "Reduction of heat absorption",
+                "Example"
+            ],
+            "key_concepts": [
+                "radiation",
+                "reflection",
+                "insulation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the concept of convection currents in the atmosphere.",
+            "answer": "Uneven heating of Earth's surface causes warm air to rise and cool air to sink, forming convection currents. These drive winds and affect weather.",
+            "answer_outline": [
+                "Uneven heating",
+                "Rising and sinking air",
+                "Wind formation"
+            ],
+            "key_concepts": [
+                "convection",
+                "atmosphere",
+                "heat transfer"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why snow and ice reflect more sunlight than soil.",
+            "answer": "Snow and ice are light-colored and reflective, so they absorb less radiation. Soil is darker and absorbs more heat, demonstrating effect of surface color on radiation.",
+            "answer_outline": [
+                "Light vs dark surfaces",
+                "Absorption and reflection",
+                "Example observation"
+            ],
+            "key_concepts": [
+                "radiation",
+                "color effect",
+                "reflection"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how heat transfer affects ocean currents.",
+            "answer": "Sun heats water unevenly; warm water rises and cold water sinks, creating convection currents in oceans. These currents regulate climate and distribute nutrients.",
+            "answer_outline": [
+                "Uneven heating of water",
+                "Convection in oceans",
+                "Climate and nutrients"
+            ],
+            "key_concepts": [
+                "convection",
+                "ocean currents",
+                "heat transfer"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of understanding heat transfer in everyday life and technology.",
+            "answer": "Understanding heat transfer helps design efficient buildings, cooking appliances, thermos flasks, HVAC systems, and predict weather. It improves energy efficiency and safety.",
+            "answer_outline": [
+                "Applications in daily life",
+                "Applications in technology",
+                "Importance for energy efficiency"
+            ],
+            "key_concepts": [
+                "applications",
+                "heat transfer",
+                "technology"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

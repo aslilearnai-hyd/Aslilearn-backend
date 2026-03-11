@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Social and Political Life - II",
+    "chapter_name": "State Government",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand that health is more than just being free of illness",
+        "Differentiate between Public and Private health services in simple terms",
+        "Identify the role of the State Government in providing healthcare",
+        "Understand the problems faced by poor people in getting medical treatment",
+        "Learn about the 'Costa Rican' approach to health as a global example",
+        "Recognize the importance of clean water and sanitation for health",
+        "Identify the basic functions of a Public Health Centre (PHC)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "What is Health?",
+            "topics_covered": [
+                "Definition of health: Physical and Mental well-being",
+                "Factors affecting health (Clean water, pollution-free environment, food)",
+                "Comparison: Health facilities in India (The good and the bad)"
+            ],
+            "teaching_strategy": [
+                "Brainstorming: 'What makes us healthy?'",
+                "Discussion on the paradox of India (many doctors but poor facilities in villages)",
+                "Visual aids showing clean vs. dirty surroundings"
+            ],
+            "student_activities": [
+                "Make a list of 5 things needed to stay healthy besides medicine",
+                "Discuss: 'Why do we fall ill even when we have doctors?'"
+            ],
+            "assessment": [
+                "Oral quiz: Is health only about diseases?",
+                "Identify two factors that prevent us from being healthy"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Story of Hakim Sheikh",
+            "topics_covered": [
+                "Case study of Hakim Sheikh and his accident",
+                "Difficulty in getting admitted to government hospitals",
+                "The Supreme Court's ruling on the 'Right to Life'"
+            ],
+            "teaching_strategy": [
+                "Storytelling based on the NCERT case study",
+                "Role-play: Hakim Sheikh at the hospital gate",
+                "Explaining that the government must protect our lives"
+            ],
+            "student_activities": [
+                "Write a short 'Letter of Complaint' from Hakim Sheikh to the Health Minister",
+                "Discuss: 'Why was it wrong to turn Hakim Sheikh away?'"
+            ],
+            "assessment": [
+                "Short answer: Why did Hakim Sheikh go to court?",
+                "Defining 'Right to Life' in simple words"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Public Health Services",
+            "topics_covered": [
+                "What are Public Health Services?",
+                "Public Health Centres (PHC) and District Hospitals",
+                "Why are they called 'Public'?"
+            ],
+            "teaching_strategy": [
+                "Flowchart of public health (Village $\rightarrow$ District $\rightarrow$ City)",
+                "Discussion on why government hospitals are cheap or free",
+                "Explaining how the government gets money (Taxes)"
+            ],
+            "student_activities": [
+                "Draw a simple map showing a village PHC and a city hospital",
+                "List 3 reasons why these services are called 'Public'"
+            ],
+            "assessment": [
+                "Matching: PHC vs. District Hospital jobs",
+                "Oral quiz: Where does the government get money for hospitals?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Private Health Services",
+            "topics_covered": [
+                "What are Private Health Services?",
+                "Doctors in private clinics and nursing homes",
+                "Cost difference between Public and Private"
+            ],
+            "teaching_strategy": [
+                "Comparing the stories of Aman (Public) and Ranjan (Private)",
+                "Discussion on the 'Cost of Treatment'",
+                "Using the textbook comic strip to show the two experiences"
+            ],
+            "student_activities": [
+                "Table: Compare Public vs. Private hospitals (Cost, Cleanliness, Waiting time)",
+                "Draw a scene from a private hospital vs. a public hospital"
+            ],
+            "assessment": [
+                "Identifying which service is more expensive",
+                "Naming one benefit of a private hospital"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Is Healthcare Available to All?",
+            "topics_covered": [
+                "The rising cost of private medicine",
+                "Hardships of the poor (Selling belongings for treatment)",
+                "Inequality in health: Women and tribal areas"
+            ],
+            "teaching_strategy": [
+                "Discussion on why poor people avoid going to doctors",
+                "Explaining that 40% of people borrow money for medical bills",
+                "Talking about medical stores and high-cost medicines"
+            ],
+            "student_activities": [
+                "Brainstorm: 'How can we help poor people get medicine?'",
+                "Poster making: 'Health for All'"
+            ],
+            "assessment": [
+                "Exit slip: Name one group of people who find it hard to get healthcare",
+                "True/False on health equality"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "What Can Be Done? (Kerala & Costa Rica)",
+            "topics_covered": [
+                "The Kerala Experience (1996): Giving power to Panchayats",
+                "Costa Rica: Choosing health over an army",
+                "Importance of safe drinking water"
+            ],
+            "teaching_strategy": [
+                "Story of the 'Healthiest Country' (Costa Rica)",
+                "Discussion on how Kerala improved its villages",
+                "Explaining 'Prevention is better than cure'"
+            ],
+            "student_activities": [
+                "Locate Kerala on an India map and Costa Rica on a world map",
+                "Write 2 lines on why Costa Rica has no army"
+            ],
+            "assessment": [
+                "Oral quiz: Which state gave 40% of its budget to Panchayats?",
+                "Identify the key to Costa Rica's health"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Summary",
+            "topics_covered": [
+                "Recap of Public vs. Private",
+                "Recap of Hakim Sheikh and Costa Rica",
+                "Final vocabulary check: Taxes, PHC, Communicable diseases"
+            ],
+            "teaching_strategy": [
+                "Fun game: 'Public or Private?' scenario cards",
+                "Reviewing NCERT back-exercises",
+                "Final doubt-clearing session"
+            ],
+            "student_activities": [
+                "Complete the crossword puzzle in the notebook",
+                "Participate in the 'Health Role' class quiz"
+            ],
+            "assessment": [
+                "Short Unit Test (15 marks)",
+                "Evaluation of the comparison table"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Social and Political Life - II Textbook",
+        "Pictures of PHCs and Private Hospitals",
+        "India and World Maps",
+        "Chart on Taxes and Government services",
+        "Comic strips from the textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and interaction",
+        "Comparison tables (Public vs. Private)",
+        "Short-answer definitions",
+        "True/False and MCQ worksheets",
+        "Poster/Drawing evaluation"
+    ],
+    "teacher_tip": "At this easy level, use the story of Aman and Ranjan extensively. It is the best way for students to relate to the difference between public and private sectors without getting bogged down in difficult terminology."
+}

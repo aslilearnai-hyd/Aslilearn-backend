@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Constructions and Tilings",
+    "generated_at": "2026-03-06T00:33:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which instrument is primarily used to draw arcs and circles in geometric constructions?",
+            "options": {
+                "A": "Ruler",
+                "B": "Protractor",
+                "C": "Compass",
+                "D": "Set-square"
+            },
+            "correct_answer": "C",
+            "explanation": "A compass is used to draw arcs of a specific radius by rotating around a fixed center point.",
+            "difficulty": "easy",
+            "source_section": "Basic Tools"
+        },
+        {
+            "question_number": 2,
+            "question": "A tiling is a pattern of shapes that covers a flat surface without leaving any gaps or:",
+            "options": {
+                "A": "Colors",
+                "B": "Overlaps",
+                "C": "Lines",
+                "D": "Vertices"
+            },
+            "correct_answer": "B",
+            "explanation": "By definition, a tiling (tessellation) must cover a plane perfectly without any gaps or overlapping shapes.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of these shapes is a regular polygon that can tile the plane by itself?",
+            "options": {
+                "A": "Regular Pentagon",
+                "B": "Regular Octagon",
+                "C": "Square",
+                "D": "Circle"
+            },
+            "correct_answer": "C",
+            "explanation": "Squares have interior angles of 90°, and four squares meet at a vertex to sum to 360°, allowing them to tile perfectly.",
+            "difficulty": "easy",
+            "source_section": "Regular Tilings"
+        },
+        {
+            "question_number": 4,
+            "question": "The process of dividing a line segment into two equal parts is called:",
+            "options": {
+                "A": "Trisection",
+                "B": "Bisection",
+                "C": "Intersection",
+                "D": "Construction"
+            },
+            "correct_answer": "B",
+            "explanation": "Bisection means 'cutting into two equal parts'.",
+            "difficulty": "easy",
+            "source_section": "Geometric Constructions"
+        },
+        {
+            "question_number": 5,
+            "question": "A line that cuts a segment into two equal parts at a 90-degree angle is known as the:",
+            "options": {
+                "A": "Parallel Bisector",
+                "B": "Angle Bisector",
+                "C": "Perpendicular Bisector",
+                "D": "Vertical Line"
+            },
+            "correct_answer": "C",
+            "explanation": "The perpendicular bisector is a line at right angles (perpendicular) to a segment passing through its midpoint.",
+            "difficulty": "easy",
+            "source_section": "Geometric Constructions"
+        },
+        {
+            "question_number": 6,
+            "question": "When constructing an angle bisector, the arcs drawn from the intersection points on the arms must have:",
+            "options": {
+                "A": "The same radius",
+                "B": "Different radii",
+                "C": "No radius",
+                "D": "A zero radius"
+            },
+            "correct_answer": "A",
+            "explanation": "Using the same radius ensures the intersection point is equidistant from both arms of the angle.",
+            "difficulty": "easy",
+            "source_section": "Angle Bisection"
+        },
+        {
+            "question_number": 7,
+            "question": "Which regular polygon can NOT tile the plane on its own?",
+            "options": {
+                "A": "Equilateral Triangle",
+                "B": "Regular Hexagon",
+                "C": "Regular Pentagon",
+                "D": "Square"
+            },
+            "correct_answer": "C",
+            "explanation": "A regular pentagon's interior angle is 108°, which does not divide 360° evenly, leaving a gap.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 8,
+            "question": "In a tiling of equilateral triangles, how many triangles meet at each vertex?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "D",
+            "explanation": "Since each angle is 60°, $360 / 60 = 6$ triangles are needed to fill the space around a point.",
+            "difficulty": "easy",
+            "source_section": "Regular Tilings"
+        },
+        {
+            "question_number": 9,
+            "question": "To draw a perpendicular to a line through a point on the line, we first draw an arc with the point as center to find:",
+            "options": {
+                "A": "One point on the line",
+                "B": "Two points equidistant from the center",
+                "C": "The midpoint",
+                "D": "The end of the line"
+            },
+            "correct_answer": "B",
+            "explanation": "The initial arc marks two points on the line that serve as centers for the next set of arcs.",
+            "difficulty": "easy",
+            "source_section": "Perpendiculars"
+        },
+        {
+            "question_number": 10,
+            "question": "How many regular tilings (using only one type of regular polygon) exist?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "Infinite"
+            },
+            "correct_answer": "A",
+            "explanation": "Only equilateral triangles, squares, and regular hexagons can form regular tilings.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 11,
+            "question": "The sum of the angles around any vertex in a complete tiling must be:",
+            "options": {
+                "A": "180°",
+                "B": "90°",
+                "C": "360°",
+                "D": "270°"
+            },
+            "correct_answer": "C",
+            "explanation": "To leave no gaps, the angles of the shapes meeting at a vertex must complete a full circle (360°).",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 12,
+            "question": "A 'straightedge' in geometric constructions is a ruler used specifically to draw:",
+            "options": {
+                "A": "Measurements",
+                "B": "Straight lines",
+                "C": "Circles",
+                "D": "Angles"
+            },
+            "correct_answer": "B",
+            "explanation": "In formal constructions, a straightedge is used to draw lines, not to measure lengths.",
+            "difficulty": "easy",
+            "source_section": "Basic Tools"
+        },
+        {
+            "question_number": 13,
+            "question": "Which shape is often seen in honeycombs, representing a natural tiling?",
+            "options": {
+                "A": "Square",
+                "B": "Triangle",
+                "C": "Hexagon",
+                "D": "Octagon"
+            },
+            "correct_answer": "C",
+            "explanation": "Bees build honeycombs using hexagonal cells, which is a highly efficient regular tiling.",
+            "difficulty": "easy",
+            "source_section": "Real-world Tilings"
+        },
+        {
+            "question_number": 14,
+            "question": "When bisecting a line segment AB, the radius of the arcs drawn from A and B must be:",
+            "options": {
+                "A": "Exactly half of AB",
+                "B": "Less than half of AB",
+                "C": "More than half of AB",
+                "D": "Any length"
+            },
+            "correct_answer": "C",
+            "explanation": "If the radius is less than half, the arcs will not intersect.",
+            "difficulty": "easy",
+            "source_section": "Geometric Constructions"
+        },
+        {
+            "question_number": 15,
+            "question": "If we tile a floor with regular hexagons, how many hexagons meet at one vertex?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "6",
+                "D": "2"
+            },
+            "correct_answer": "A",
+            "explanation": "Each hexagon has an interior angle of 120°. Since $120 \times 3 = 360$, three hexagons meet at a vertex.",
+            "difficulty": "easy",
+            "source_section": "Regular Tilings"
+        },
+        {
+            "question_number": 16,
+            "question": "The point where the perpendicular bisector meets the line segment is its:",
+            "options": {
+                "A": "Vertex",
+                "B": "Apex",
+                "C": "Midpoint",
+                "D": "Origin"
+            },
+            "correct_answer": "C",
+            "explanation": "By definition, the bisector cuts the segment at its exact middle point.",
+            "difficulty": "easy",
+            "source_section": "Geometric Constructions"
+        },
+        {
+            "question_number": 17,
+            "question": "Tilings found in historical buildings are often called:",
+            "options": {
+                "A": "Paintings",
+                "B": "Mosaics",
+                "C": "Sketches",
+                "D": "Frames"
+            },
+            "correct_answer": "B",
+            "explanation": "Mosaics are decorative tilings made from small pieces of stone, glass, or tile.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 18,
+            "question": "An angle bisector divides a 60-degree angle into two angles of:",
+            "options": {
+                "A": "20° each",
+                "B": "40° each",
+                "C": "30° each",
+                "D": "15° each"
+            },
+            "correct_answer": "C",
+            "explanation": "Bisection divides the value by 2: $60 / 2 = 30$.",
+            "difficulty": "easy",
+            "source_section": "Angle Bisection"
+        },
+        {
+            "question_number": 19,
+            "question": "Which polygon is used in a 'Checkerboard' tiling?",
+            "options": {
+                "A": "Hexagon",
+                "B": "Triangle",
+                "C": "Square",
+                "D": "Rhombus"
+            },
+            "correct_answer": "C",
+            "explanation": "A checkerboard is a regular tiling of squares of two alternating colors.",
+            "difficulty": "easy",
+            "source_section": "Real-world Tilings"
+        },
+        {
+            "question_number": 20,
+            "question": "To construct a 90° angle, we can bisect a:",
+            "options": {
+                "A": "Straight angle (180°)",
+                "B": "Acute angle",
+                "C": "Square",
+                "D": "Circle"
+            },
+            "correct_answer": "A",
+            "explanation": "Bisecting a straight line (180°) creates two 90° angles.",
+            "difficulty": "easy",
+            "source_section": "Angle Bisection"
+        },
+        {
+            "question_number": 21,
+            "question": "The 'eye' shape construction is created by the intersection of two:",
+            "options": {
+                "A": "Squares",
+                "B": "Circles/Arcs",
+                "C": "Parallel lines",
+                "D": "Triangles"
+            },
+            "correct_answer": "B",
+            "explanation": "Drawing arcs from two points that intersect at two spots creates a lens or 'eye' shape.",
+            "difficulty": "easy",
+            "source_section": "Arcs and Shapes"
+        },
+        {
+            "question_number": 22,
+            "question": "A tiling that uses more than one type of regular polygon is called a:",
+            "options": {
+                "A": "Regular tiling",
+                "B": "Semi-regular tiling",
+                "C": "Broken tiling",
+                "D": "Circle tiling"
+            },
+            "correct_answer": "B",
+            "explanation": "Semi-regular tilings use two or more regular polygons that meet at vertices in the same arrangement.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 23,
+            "question": "The distance between the needle and the pencil of a compass determines the:",
+            "options": {
+                "A": "Diameter",
+                "B": "Radius",
+                "C": "Circumference",
+                "D": "Area"
+            },
+            "correct_answer": "B",
+            "explanation": "The setting of the compass is the radius of the circle or arc being drawn.",
+            "difficulty": "easy",
+            "source_section": "Basic Tools"
+        },
+        {
+            "question_number": 24,
+            "question": "If four identical shapes meet at a point and tile the plane, each angle at that point is:",
+            "options": {
+                "A": "60°",
+                "B": "120°",
+                "C": "90°",
+                "D": "180°"
+            },
+            "correct_answer": "C",
+            "explanation": "$360 / 4 = 90$.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of these is NOT allowed in a mathematical tiling?",
+            "options": {
+                "A": "Colors",
+                "B": "Empty spaces",
+                "C": "Different sizes",
+                "D": "Curved edges"
+            },
+            "correct_answer": "B",
+            "explanation": "A fundamental rule of tiling is that the entire surface must be covered without any gaps.",
+            "difficulty": "easy",
+            "source_section": "Tilings"
+        }
+    ]
+}

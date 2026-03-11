@@ -1,0 +1,212 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Life Processes",
+    "difficulty": "Hard",
+    "source_pdf": "life_processes_class10_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Measurement of Respiration Rate",
+            "objective": "Calculate the volume of oxygen consumed by germinating seeds using a respirometer",
+            "materials": [
+                "Conical flask",
+                "Germinating gram seeds",
+                "U-shaped delivery tube",
+                "Beaker with colored water",
+                "Potassium Hydroxide (KOH) pellets",
+                "Airtight corks",
+                "Graph paper"
+            ],
+            "steps": [
+                "Place germinating seeds in the flask and a small tube of KOH to absorb all evolved $CO_2$.",
+                "Seal the flask with a one-holed cork and insert one end of the U-tube.",
+                "Dip the other end of the U-tube into the colored water.",
+                "Record the rise in water level in the tube every 5 minutes for one hour.",
+                "Plot a graph of 'Rise in Water Level' vs 'Time' and calculate the rate of $O_2$ consumption."
+            ],
+            "learning_outcome": "Quantifies the metabolic rate of aerobic respiration and understands partial pressure changes in a closed system.",
+            "evaluation": "Mathematical calculation of the rate of respiration based on the volume displacement in the tube (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Chromatography of Leaf Pigments",
+            "objective": "Separate and identify different photosynthetic pigments beyond Chlorophyll-a",
+            "materials": [
+                "Green leaves (Spinach)",
+                "Acetone or Ethanol",
+                "Chromatography paper or Filter paper",
+                "Mortar and pestle",
+                "Capillary tube",
+                "Glass jar"
+            ],
+            "steps": [
+                "Grind leaves in acetone to extract a concentrated pigment solution.",
+                "Apply a small drop of the extract on a line drawn 2cm from the bottom of the chromatography paper.",
+                "Suspend the paper in a jar containing a solvent (Ether/Acetone) so that only the tip touches the liquid.",
+                "Observe the separation into Chlorophyll-a (blue-green), Chlorophyll-b (yellow-green), Xanthophylls (yellow), and Carotenoids (orange).",
+                "Calculate the Retention Factor ($R_f$) for each pigment."
+            ],
+            "learning_outcome": "Analyzes the complex composition of the photosystem and the chemical properties of different pigments.",
+            "evaluation": "Identification of at least four pigments and calculation of their $R_f$ values (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "In-depth Study of Nephron Filtration",
+            "objective": "Model the selective reabsorption and filtration of the kidney",
+            "materials": [
+                "Dialysis tubing (as a semi-permeable membrane)",
+                "Starch solution",
+                "Glucose solution",
+                "Iodine",
+                "Benedict’s solution",
+                "Beaker of water"
+            ],
+            "steps": [
+                "Fill the dialysis bag with a mixture of starch and glucose (representing blood proteins and nutrients).",
+                "Place the bag in a beaker of pure water (representing the Bowman's capsule).",
+                "Test the water in the beaker after 30 minutes for starch (using Iodine) and glucose (using Benedict's).",
+                "Analyze why glucose passed through but starch did not, relating it to the size of pores in the glomerulus.",
+                "Research the role of ADH in the Distal Convoluted Tubule (DCT)."
+            ],
+            "learning_outcome": "Evaluates the molecular basis of ultrafiltration and the significance of size-selective membranes in excretion.",
+            "evaluation": "Technical report on why proteins (modeled by starch) are not found in healthy urine (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Action of Pepsin on Protein",
+            "objective": "Investigate the pH dependency of stomach enzymes",
+            "materials": [
+                "Egg white (boiled and chopped into cubes)",
+                "Pepsin powder/solution",
+                "Dilute $HCl$",
+                "Sodium Bicarbonate",
+                "Test tubes",
+                "Water bath ($37^\circ C$)"
+            ],
+            "steps": [
+                "Label 3 tubes: A (Pepsin + Water), B (Pepsin + $HCl$), C (Pepsin + $NaOH$).",
+                "Add equal cubes of egg white to each and incubate in a water bath at body temperature for 2 hours.",
+                "Observe the degree of breakdown/turbidity change in each tube.",
+                "Discuss why Pepsin requires an acidic medium for activation from Pepsinogen."
+            ],
+            "learning_outcome": "Analyzes the biochemical environment required for protein digestion in the human stomach.",
+            "evaluation": "Explanation of the optimum pH for Pepsin activity and the role of $HCl$ (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Hemolysis and Plasmolysis in Blood Cells",
+            "objective": "Observe the effect of tonicity on animal cells (red blood cells)",
+            "materials": [
+                "Fresh goat blood (from butcher) or prepared RBC slide",
+                "0.9% NaCl (Isotonic)",
+                "2.0% NaCl (Hypertonic)",
+                "Distilled water (Hypotonic)",
+                "Microscope"
+            ],
+            "steps": [
+                "Place a drop of blood on three slides.",
+                "Add a drop of isotonic, hypertonic, and hypotonic solution to respective slides.",
+                "Observe under high power: look for 'crenation' in hypertonic and 'bursting/ghost cells' in hypotonic.",
+                "Explain why plant cells do not burst in distilled water unlike animal cells."
+            ],
+            "learning_outcome": "Synthesizes knowledge of osmosis, cell wall function, and blood pressure regulation.",
+            "evaluation": "Comparison of animal cell vs. plant cell behavior in different osmotic environments (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Double Circulation Flowchart & Pressure Analysis",
+            "objective": "Analyze the blood pressure differences between Pulmonary and Systemic circuits",
+            "materials": [
+                "Sphygmomanometer (Digital or Manual)",
+                "Notebook",
+                "Research data on Arterial vs. Venous pressure"
+            ],
+            "steps": [
+                "Draw a detailed 'Double Circulation' diagram including Pulmonary and Systemic loops.",
+                "Research why the left ventricle wall is thicker than the right ventricle.",
+                "Measure blood pressure in a volunteer and discuss the significance of Systolic and Diastolic readings.",
+                "Analyze why backflow is prevented in veins but not in arteries."
+            ],
+            "learning_outcome": "Understands the fluid dynamics of the heart and the efficiency of oxygen delivery in mammals.",
+            "evaluation": "Diagram accuracy and explanation of ventricular hypertrophy in relation to pressure (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Effect of $CO_2$ Concentration on Photosynthesis",
+            "objective": "Study the 'Law of Limiting Factors' in a controlled environment",
+            "materials": [
+                "Hydrilla plant",
+                "Sodium Bicarbonate ($NaHCO_3$)",
+                "Light source",
+                "Beaker and Funnel"
+            ],
+            "steps": [
+                "Set up the Hydrilla funnel experiment under constant light.",
+                "Vary the $CO_2$ concentration by adding 0.1g, 0.5g, and 1.0g of $NaHCO_3$ to the water.",
+                "Count the oxygen bubbles per minute for each concentration.",
+                "Determine the point where the rate levels off (Saturation point).",
+                "Explain the results using Blackman's Law of Limiting Factors."
+            ],
+            "learning_outcome": "Mastery of how environmental variables interact to determine the overall rate of life processes.",
+            "evaluation": "Graph showing the effect of $CO_2$ concentration on the rate of bubble production (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Analysis of Vital Capacity",
+            "objective": "Measure and compare the lung volume of different individuals",
+            "materials": [
+                "Large balloon",
+                "Measuring tape",
+                "Water displacement tub (optional)",
+                "Notebook"
+            ],
+            "steps": [
+                "Take a deep breath and exhale fully into a balloon.",
+                "Measure the diameter of the balloon or the volume of water it displaces.",
+                "Repeat for athletes and non-athletes (or smokers vs. non-smokers via research data).",
+                "Relate 'Vital Capacity' to the efficiency of cellular respiration and ATP production."
+            ],
+            "learning_outcome": "Links respiratory volume to overall physical health and metabolic efficiency.",
+            "evaluation": "Calculation of approximate lung volume and comparative analysis (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Bile and Lipase: Synergistic Digestion",
+            "objective": "Quantify the time taken for fat digestion with and without bile",
+            "materials": [
+                "Milk (as a source of fat)",
+                "Lipase enzyme",
+                "Bile salts (or soap)",
+                "Phenolphthalein/pH meter",
+                "Sodium carbonate"
+            ],
+            "steps": [
+                "Add sodium carbonate to milk to make it alkaline (pink with phenolphthalein).",
+                "Tube A: Milk + Lipase. Tube B: Milk + Lipase + Bile salts.",
+                "Record the time taken for the pink color to disappear (due to fatty acid production lowering pH).",
+                "Calculate the rate of reaction for both tubes."
+            ],
+            "learning_outcome": "Provides kinetic evidence for the role of emulsification in enzymatic digestion.",
+            "evaluation": "Rate calculation ($1/t$) comparison for both experimental conditions (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Transpiration Pull vs. Root Pressure",
+            "objective": "Research and model the 'Cohesion-Tension Theory'",
+            "materials": [
+                "Capillary tubes of different diameters",
+                "Colored water",
+                "Research on 'Guttation'"
+            ],
+            "steps": [
+                "Observe the rise of water in different sized capillary tubes.",
+                "Relate the 'surface tension' and 'cohesion' to the movement of water in tall trees.",
+                "Research the phenomenon of 'Guttation' and explain why it occurs only at night or in high humidity.",
+                "Diagram the 'Transpiration-Photosynthesis' compromise."
+            ],
+            "learning_outcome": "Integrates physical laws (capillarity, tension) with biological transport in xylem.",
+            "evaluation": "Technical explanation of how water reaches the top of a 100-meter Sequoia tree (10 marks)"
+        }
+    ]
+}

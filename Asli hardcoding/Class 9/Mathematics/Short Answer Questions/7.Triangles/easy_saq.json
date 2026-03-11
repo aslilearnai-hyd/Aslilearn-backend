@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 7: Triangles",
+    "generated_at": "2026-03-06T04:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a triangle?",
+            "answer": "A triangle is a polygon with three sides and three angles.",
+            "key_concepts": ["triangle", "definition"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the types of triangles based on sides?",
+            "answer": "Triangles based on sides are: equilateral (all sides equal), isosceles (two sides equal), and scalene (all sides unequal).",
+            "key_concepts": ["triangle types", "sides"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What are the types of triangles based on angles?",
+            "answer": "Triangles based on angles are: acute-angled (all angles < 90°), right-angled (one angle = 90°), and obtuse-angled (one angle > 90°).",
+            "key_concepts": ["triangle types", "angles"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "State the sum of angles in a triangle.",
+            "answer": "The sum of the interior angles of a triangle is 180°.",
+            "key_concepts": ["sum of angles", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a right-angled triangle?",
+            "answer": "A triangle in which one of the angles is 90° is called a right-angled triangle.",
+            "key_concepts": ["right-angled triangle"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Define an equilateral triangle.",
+            "answer": "A triangle in which all three sides are equal is called an equilateral triangle.",
+            "key_concepts": ["equilateral triangle"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Define an isosceles triangle.",
+            "answer": "A triangle in which two sides are equal is called an isosceles triangle.",
+            "key_concepts": ["isosceles triangle"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Define a scalene triangle.",
+            "answer": "A triangle in which all three sides are unequal is called a scalene triangle.",
+            "key_concepts": ["scalene triangle"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the perimeter of a triangle?",
+            "answer": "The perimeter of a triangle is the sum of the lengths of its three sides.",
+            "key_concepts": ["perimeter", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the altitude of a triangle?",
+            "answer": "The altitude of a triangle is the perpendicular distance from a vertex to the opposite side or its extension.",
+            "key_concepts": ["altitude", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a median of a triangle?",
+            "answer": "A median of a triangle is a line segment joining a vertex to the midpoint of the opposite side.",
+            "key_concepts": ["median", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is a centroid of a triangle?",
+            "answer": "The point of intersection of the medians of a triangle is called the centroid.",
+            "key_concepts": ["centroid", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is an angle bisector of a triangle?",
+            "answer": "An angle bisector of a triangle is a line that divides an angle into two equal angles.",
+            "key_concepts": ["angle bisector", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the incentre of a triangle?",
+            "answer": "The point where the angle bisectors of a triangle intersect is called the incentre.",
+            "key_concepts": ["incentre", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the circumcentre of a triangle?",
+            "answer": "The point where the perpendicular bisectors of the sides of a triangle intersect is called the circumcentre.",
+            "key_concepts": ["circumcentre", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the orthocentre of a triangle?",
+            "answer": "The point where the altitudes of a triangle intersect is called the orthocentre.",
+            "key_concepts": ["orthocentre", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Define similar triangles.",
+            "answer": "Two triangles are similar if their corresponding angles are equal and corresponding sides are proportional.",
+            "key_concepts": ["similar triangles", "definition"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "State the criteria for similarity of triangles.",
+            "answer": "Triangles are similar if: (i) AAA (all angles equal), (ii) SAS (two sides proportional and included angle equal), or (iii) SSS (all sides proportional).",
+            "key_concepts": ["triangle similarity", "criteria"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the Pythagoras theorem?",
+            "answer": "In a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides.",
+            "key_concepts": ["Pythagoras theorem", "right-angled triangle"],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Define the hypotenuse of a right-angled triangle.",
+            "answer": "The hypotenuse is the side opposite the right angle in a right-angled triangle.",
+            "key_concepts": ["hypotenuse", "right-angled triangle"],
+            "marks": 2,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Define an exterior angle of a triangle.",
+            "answer": "An exterior angle is formed when a side of a triangle is extended. It equals the sum of the two opposite interior angles.",
+            "key_concepts": ["exterior angle", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "State the mid-point theorem.",
+            "answer": "The line joining the midpoints of two sides of a triangle is parallel to the third side and half of it.",
+            "key_concepts": ["mid-point theorem", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Define altitude, median, and angle bisector.",
+            "answer": "Altitude: perpendicular from vertex to opposite side, Median: vertex to midpoint of opposite side, Angle bisector: divides angle into two equal angles.",
+            "key_concepts": ["altitude", "median", "angle bisector"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the relation between sides and angles in a triangle?",
+            "answer": "In a triangle, the larger side lies opposite the larger angle and vice versa.",
+            "key_concepts": ["triangle properties", "sides and angles"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the sum of exterior angles of a triangle?",
+            "answer": "The sum of the exterior angles of a triangle, one at each vertex, is 360°.",
+            "key_concepts": ["exterior angles", "triangle"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        }
+    ]
+}

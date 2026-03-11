@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Food Security in India",
+  "generated_at": "2026-03-07T00:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following describes the 'Accessibility' dimension of food security?",
+      "options": {
+        "A": "Food production within the country plus imports",
+        "B": "Food is within reach of every person without any barrier",
+        "C": "Individuals having enough money to buy nutritious food",
+        "D": "Government maintaining sufficient buffer stocks"
+      },
+      "correct_answer": "B",
+      "explanation": "Accessibility means food is within reach of every person without any physical or social barrier.",
+      "difficulty": "medium",
+      "source_section": "4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Socially, which groups are most prone to food insecurity in India?",
+      "options": {
+        "A": "Urban high-income professionals",
+        "B": "Scheduled Castes, Scheduled Tribes, and sections of OBCs with low land productivity",
+        "C": "Large landowners in Punjab",
+        "D": "Employees in the organized sector"
+      },
+      "correct_answer": "B",
+      "explanation": "Marginalized social groups often have a poor land-base or very low land productivity, making them vulnerable to food insecurity.",
+      "difficulty": "medium",
+      "source_section": "4.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Identify the difference between Chronic and Seasonal hunger.",
+      "options": {
+        "A": "Chronic is related to crop cycles; Seasonal is related to low income",
+        "B": "Chronic is persistent inadequacy of diet; Seasonal is related to agricultural cycles",
+        "C": "Both are the same in rural areas",
+        "D": "Seasonal hunger only exists in urban areas"
+      },
+      "correct_answer": "B",
+      "explanation": "Chronic hunger is a result of persistent poverty, while seasonal hunger occurs during the months when no agricultural work is available.",
+      "difficulty": "medium",
+      "source_section": "4.2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What was the immediate impact of the 1943 Bengal Famine on the population?",
+      "options": {
+        "A": "Increase in birth rate",
+        "B": "30 lakh people died due to starvation and epidemics",
+        "C": "Successful implementation of PDS",
+        "D": "Migration to foreign countries"
+      },
+      "correct_answer": "B",
+      "explanation": "The famine led to mass deaths, highlighting the catastrophic failure of food availability and accessibility.",
+      "difficulty": "medium",
+      "source_section": "4.1"
+    },
+    {
+      "question_number": 5,
+      "question": "The Food Corporation of India (FCI) purchases wheat and rice from farmers in states where there is surplus production at ________.",
+      "options": {
+        "A": "Market Price",
+        "B": "Issue Price",
+        "C": "Minimum Support Price (MSP)",
+        "D": "Export Price"
+      },
+      "correct_answer": "C",
+      "explanation": "MSP is the government-guaranteed price that provides an incentive to farmers to produce more.",
+      "difficulty": "medium",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is 'Issue Price' in the context of the Public Distribution System?",
+      "options": {
+        "A": "The price at which FCI buys from farmers",
+        "B": "The price at which grain is sold in the open market",
+        "C": "The subsidized price at which grain is sold to the poor through ration shops",
+        "D": "The price of seeds sold to farmers"
+      },
+      "correct_answer": "C",
+      "explanation": "The Issue Price is kept lower than the market price to ensure affordability for the poor.",
+      "difficulty": "medium",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which state has notably used 'Human Resource Development' as a tool for food security and poverty reduction?",
+      "options": {
+        "A": "Punjab",
+        "B": "Kerala",
+        "C": "West Bengal",
+        "D": "Bihar"
+      },
+      "correct_answer": "B",
+      "explanation": "Kerala's focus on education and health has significantly improved the capacity of its people to access food.",
+      "difficulty": "medium",
+      "source_section": "4.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Under the National Food Security Act (2013), what percentage of the rural population is covered?",
+      "options": {
+        "A": "50%",
+        "B": "75%",
+        "C": "90%",
+        "D": "100%"
+      },
+      "correct_answer": "B",
+      "explanation": "The NFSA 2013 covers 75% of the rural and 50% of the urban population.",
+      "difficulty": "medium",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the primary objective of maintaining a 'Buffer Stock'?",
+      "options": {
+        "A": "To export grains to other countries for profit",
+        "B": "To distribute grains in deficit areas and during calamities",
+        "C": "To keep prices in the market very high",
+        "D": "To replace the need for farming"
+      },
+      "correct_answer": "B",
+      "explanation": "Buffer stock acts as a safety net during periods of food shortage or natural disasters.",
+      "difficulty": "medium",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Targeted Public Distribution System (TPDS) was introduced in 1997 to focus on:",
+      "options": {
+        "A": "All citizens regardless of income",
+        "B": "The poor in all areas (BPL category)",
+        "C": "Farmers only",
+        "D": "Urban residents only"
+      },
+      "correct_answer": "B",
+      "explanation": "TPDS shifted the focus from universal coverage to targeting the poor specifically.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which factor does 'Affordability' in food security primarily depend on?",
+      "options": {
+        "A": "Distance to the market",
+        "B": "Purchasing power of an individual",
+        "C": "Total imports of the country",
+        "D": "Number of ration shops"
+      },
+      "correct_answer": "B",
+      "explanation": "Affordability implies that individuals have enough money to buy sufficient, safe, and nutritious food.",
+      "difficulty": "medium",
+      "source_section": "4.1"
+    },
+    {
+      "question_number": 12,
+      "question": "The 'Annapurna Scheme' (APS) targets which specific group?",
+      "options": {
+        "A": "Pregnant mothers",
+        "B": "Indigent senior citizens",
+        "C": "School-going children",
+        "D": "Small farmers"
+      },
+      "correct_answer": "B",
+      "explanation": "APS provides 10 kg of food grains free of cost to indigent senior citizens not covered under pensions.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Why is the PDS system criticized despite high levels of buffer stocks?",
+      "options": {
+        "A": "The grain is too expensive for the government to buy",
+        "B": "Hunger persists despite overflowing granaries and high carrying costs",
+        "C": "Farmers refuse to sell to FCI",
+        "D": "There are too few people below the poverty line"
+      },
+      "correct_answer": "B",
+      "explanation": "Inefficiency in distribution and storage leads to the paradox of hunger amidst plenty.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "In Maharashtra, the Academy of Development Science (ADS) facilitated a network of NGOs for setting up:",
+      "options": {
+        "A": "Fertilizer plants",
+        "B": "Grain Banks",
+        "C": "Tractor factories",
+        "D": "Milk chilling centers"
+      },
+      "correct_answer": "B",
+      "explanation": "ADS grain banks provide food security to tribal communities and serve as a model for decentralized security.",
+      "difficulty": "medium",
+      "source_section": "4.5"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the result of 'Open-ended Procurement' by the FCI?",
+      "options": {
+        "A": "Shortage of grain in the country",
+        "B": "Stocks far exceeding the buffer norms and increasing carrying costs",
+        "C": "Lowering of the MSP for farmers",
+        "D": "Complete elimination of hunger"
+      },
+      "correct_answer": "B",
+      "explanation": "Excessive procurement leads to storage problems and a high fiscal burden due to carrying costs.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 16,
+      "question": "The 'Mid-day Meal Scheme' primarily addresses which two issues simultaneously?",
+      "options": {
+        "A": "Unemployment and Inflation",
+        "B": "Nutritional status of children and school attendance",
+        "C": "Agriculture and Industrial growth",
+        "D": "Imports and Exports"
+      },
+      "correct_answer": "B",
+      "explanation": "It provides nutritional support and serves as an incentive for parents to send children to school.",
+      "difficulty": "medium",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which state's cooperative success led to the 'White Revolution'?",
+      "options": {
+        "A": "Punjab",
+        "B": "Gujarat",
+        "C": "Tamil Nadu",
+        "D": "Maharashtra"
+      },
+      "correct_answer": "B",
+      "explanation": "Amul in Gujarat revolutionized the dairy industry, ensuring milk security and income for farmers.",
+      "difficulty": "medium",
+      "source_section": "4.5"
+    },
+    {
+      "question_number": 18,
+      "question": "What happens to the price of food grains during a drought?",
+      "options": {
+        "A": "Prices decrease due to low demand",
+        "B": "Prices increase due to shortage of supply",
+        "C": "Prices remain constant due to MSP",
+        "D": "Prices fluctuate based on international trade"
+      },
+      "correct_answer": "B",
+      "explanation": "Reduced production creates a supply-demand gap, driving prices up and hurting affordability.",
+      "difficulty": "medium",
+      "source_section": "4.1"
+    },
+    {
+      "question_number": 19,
+      "question": "The Antyodaya Anna Yojana (AAY) provides how many kilograms of food grains to each eligible family?",
+      "options": {
+        "A": "5 kg",
+        "B": "25 kg",
+        "C": "35 kg",
+        "D": "50 kg"
+      },
+      "correct_answer": "C",
+      "explanation": "The quantity was increased from 25 kg to 35 kg in 2002 to further support the poorest of the poor.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 20,
+      "question": "A 'Subsidy' is a payment made by the government to:",
+      "options": {
+        "A": "Increase the market price of goods",
+        "B": "Keep the price of a commodity low for consumers",
+        "C": "Tax the rich citizens",
+        "D": "Import luxury items"
+      },
+      "correct_answer": "B",
+      "explanation": "Subsidies bridge the gap between production/procurement costs and the price paid by consumers.",
+      "difficulty": "medium",
+      "source_section": "4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which two states were the primary beneficiaries of the Green Revolution in terms of wheat production?",
+      "options": {
+        "A": "Bihar and Odisha",
+        "B": "Punjab and Haryana",
+        "C": "Kerala and Tamil Nadu",
+        "D": "Maharashtra and Gujarat"
+      },
+      "correct_answer": "B",
+      "explanation": "These states had the best irrigation infrastructure to support HYV wheat seeds.",
+      "difficulty": "medium",
+      "source_section": "4.2.2"
+    },
+    {
+      "question_number": 22,
+      "question": "One of the malpractices of PDS dealers is 'Black Marketing,' which means:",
+      "options": {
+        "A": "Selling grains at the government-fixed issue price",
+        "B": "Diverting grains to the open market to sell at a higher profit",
+        "C": "Selling only black-colored grains",
+        "D": "Giving free grains to poor people"
+      },
+      "correct_answer": "B",
+      "explanation": "Black marketing is the illegal sale of subsidized goods in the open market.",
+      "difficulty": "medium",
+      "source_section": "4.4.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is 'Nutritional Security' considered as important as 'Food Security'?",
+      "options": {
+        "A": "To increase the weight of the population",
+        "B": "To ensure that diets are adequate in vitamins and minerals, not just calories",
+        "C": "To help food processing industries",
+        "D": "To reduce the cost of imports"
+      },
+      "correct_answer": "B",
+      "explanation": "Calories prevent hunger, but nutrition prevents hidden hunger and long-term health issues.",
+      "difficulty": "medium",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the 'Food for Work' (FFW) programme's primary goal?",
+      "options": {
+        "A": "To provide office jobs to graduates",
+        "B": "To provide employment and food grains as wages to the poor",
+        "C": "To teach cooking skills to workers",
+        "D": "To increase the export of food"
+      },
+      "correct_answer": "B",
+      "explanation": "FFW combines income generation with immediate nutritional support.",
+      "difficulty": "medium",
+      "source_section": "4.4"
+    },
+    {
+      "question_number": 25,
+      "question": "The 1943 Famine of Bengal was primarily caused by the shortage of which crop?",
+      "options": {
+        "A": "Wheat",
+        "B": "Rice",
+        "C": "Maize",
+        "D": "Jowar"
+      },
+      "correct_answer": "B",
+      "explanation": "Rice was the staple food of the region, and its shortage led to mass starvation.",
+      "difficulty": "medium",
+      "source_section": "4.1"
+    }
+  ]
+}

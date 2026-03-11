@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 3: Proportional Reasoning – 2",
+    "generated_at": "2026-03-05T13:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Simplify the ratio 12:18.",
+            "answer": "2:3",
+            "key_points": ["ratio simplification"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Are the ratios 6:9 and 2:3 proportional?",
+            "answer": "Yes, they are proportional.",
+            "key_points": ["proportion"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the actual distance if 2 cm on a map represents 60 km?",
+            "answer": "120 km",
+            "key_points": ["map scale"],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Simplify the ratio 18:24:30.",
+            "answer": "3:4:5",
+            "key_points": ["multi-term ratios"],
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Divide 50 in the ratio 2:3.",
+            "answer": "20 and 30",
+            "key_points": ["division in ratio"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the sum of the ratio parts in 2:3:5?",
+            "answer": "10",
+            "key_points": ["ratio parts"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the sector angle representing 1/4 of a pie chart.",
+            "answer": "90°",
+            "key_points": ["pie chart"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 8,
+            "question": "What percentage of a pie chart does 180° represent?",
+            "answer": "50%",
+            "key_points": ["pie chart percentage"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "If x and y are directly proportional, what remains constant?",
+            "answer": "x/y",
+            "key_points": ["direct proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 10,
+            "question": "If x and y are inversely proportional, what remains constant?",
+            "answer": "x × y",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 11,
+            "question": "If 4 workers complete work in 12 days, how many days will 8 workers take?",
+            "answer": "6 days",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the sector angle for 25% of data in a pie chart?",
+            "answer": "90°",
+            "key_points": ["pie chart calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 13,
+            "question": "If 5 pens cost ₹50, what is the cost of one pen?",
+            "answer": "₹10",
+            "key_points": ["direct proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 14,
+            "question": "What fraction of the pie chart is represented by 72°?",
+            "answer": "1/5",
+            "key_points": ["pie chart fractions"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 15,
+            "question": "If the ratio of boys to girls is 3:2 and total students are 25, how many girls are there?",
+            "answer": "10",
+            "key_points": ["ratio problems"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the sector angle representing 50% in a pie chart?",
+            "answer": "180°",
+            "key_points": ["pie chart"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "If 10 pencils cost ₹40, what is the cost of one pencil?",
+            "answer": "₹4",
+            "key_points": ["direct proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 18,
+            "question": "What happens to time when speed increases for a fixed distance?",
+            "answer": "Time decreases",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the ratio equivalent to 4:6.",
+            "answer": "2:3",
+            "key_points": ["equivalent ratios"],
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 20,
+            "question": "If 1 cm represents 50 km on a map, what distance does 3 cm represent?",
+            "answer": "150 km",
+            "key_points": ["map scale"],
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What fraction of a pie chart does 45° represent?",
+            "answer": "1/8",
+            "key_points": ["pie chart"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "If 6 workers finish work in 10 days, how long will 3 workers take?",
+            "answer": "20 days",
+            "key_points": ["inverse proportion"],
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the sector angle representing 20% in a pie chart?",
+            "answer": "72°",
+            "key_points": ["pie chart calculation"],
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "If the ratio of red:blue balls is 2:3 and total balls are 25, how many blue balls are there?",
+            "answer": "15",
+            "key_points": ["ratio problems"],
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "If 8 machines produce 160 items, how many items does one machine produce?",
+            "answer": "20 items",
+            "key_points": ["direct proportion"],
+            "source_section": "Section 3.6"
+        }
+    ]
+}

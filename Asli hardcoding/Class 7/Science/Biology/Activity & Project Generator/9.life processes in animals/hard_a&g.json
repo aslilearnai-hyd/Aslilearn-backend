@@ -1,0 +1,190 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Life Processes in Animals",
+    "difficulty": "Hard",
+    "source_pdf": "life_processes_animals_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Vital Capacity Analysis",
+            "objective": "Measure and compare the lung capacity of individuals",
+            "materials": [
+                "Large plastic jar (5L) with volume markings",
+                "Water tub",
+                "Plastic tube",
+                "Measuring cylinder"
+            ],
+            "steps": [
+                "Fill the jar with water and invert it into the water tub without letting air in",
+                "Take a deep breath and exhale completely into the jar through the tube",
+                "Measure the volume of air that displaced the water (Vital Capacity)",
+                "Compare data among different age groups and analyze factors affecting capacity"
+            ],
+            "learning_outcome": "Evaluates the efficiency of gas exchange based on lung volume",
+            "evaluation": "Precision in measurement and logical analysis of volume variations (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Enzymatic Breakdown Kinetics",
+            "objective": "Investigate the effect of temperature on salivary amylase activity",
+            "materials": [
+                "Starch solution",
+                "Saliva sample",
+                "Iodine solution",
+                "Ice, Room temperature water, Hot water (60°C)",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Prepare three test tubes with starch and saliva mixture",
+                "Place them in ice, room temperature, and hot water respectively",
+                "Perform an iodine test every 2 minutes for each tube",
+                "Record the time taken for the blue color to stop appearing (indicating complete digestion)"
+            ],
+            "learning_outcome": "Understands that life processes are temperature-dependent chemical reactions",
+            "evaluation": "Detailed data table and conclusion on optimum enzyme temperature (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Simulating Double Circulation",
+            "objective": "Model the independent pathways of pulmonary and systemic circulation",
+            "materials": [
+                "Two different colored liquids (e.g., blue and red dyed water)",
+                "Four pumps (syringes)",
+                "Plastic tubing",
+                "Valves"
+            ],
+            "steps": [
+                "Construct a circuit where 'blood' must pass through the heart twice to complete one cycle",
+                "Demonstrate the separation of oxygenated and deoxygenated blood",
+                "Simulate a 'septal defect' (hole in the heart) and observe the mixing of colors",
+                "Explain the efficiency of 4-chambered hearts vs 3-chambered hearts"
+            ],
+            "learning_outcome": "Analyzes the evolutionary advantage of double circulation in mammals",
+            "evaluation": "Accuracy of the model flow and explanation of septal function (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Microscopic Examination of Blood Smears",
+            "objective": "Identify different types of blood cells and their morphologies",
+            "materials": [
+                "Compound microscope",
+                "Prepared slides of human blood",
+                "Notebook"
+            ],
+            "steps": [
+                "Focus the slide under low and then high power magnification",
+                "Identify and sketch Biconcave RBCs and varied shapes of WBCs",
+                "Count the approximate ratio of RBCs to WBCs in one field of view",
+                "Research why RBCs lack a nucleus in mature mammals"
+            ],
+            "learning_outcome": "Relates cellular structure to physiological function (oxygen transport vs. immunity)",
+            "evaluation": "Detail of sketches and accuracy in identifying cell types (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Osmoregulation and Kidney Load",
+            "objective": "Calculate the effect of salt intake on urine concentration (Theoretical)",
+            "materials": [
+                "Case study data",
+                "Graph paper",
+                "Calculator"
+            ],
+            "steps": [
+                "Analyze a dataset showing water intake vs. urine output volume",
+                "Calculate the 'Concentration Factor' of urea in different scenarios",
+                "Plot the relationship between salt consumption and the workload on nephrons",
+                "Explain the role of ADH (Antidiuretic Hormone) in this process"
+            ],
+            "learning_outcome": "Understands the homeostatic role of kidneys in maintaining fluid balance",
+            "evaluation": "Mathematical accuracy and depth of homeostatic reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Investigating Capillary Exchange",
+            "objective": "Study the rate of diffusion across semi-permeable membranes",
+            "materials": [
+                "Dialysis tubing",
+                "Glucose solution",
+                "Starch solution",
+                "Iodine and Benedict's reagent"
+            ],
+            "steps": [
+                "Fill dialysis tubing with a starch-glucose mixture and place in a beaker of water",
+                "Test the beaker water for glucose and starch after 30 minutes",
+                "Explain why glucose passed through but starch did not",
+                "Relate this to nutrient exchange in human capillaries"
+            ],
+            "learning_outcome": "Explains the molecular basis of nutrient transport in tissues",
+            "evaluation": "Correct interpretation of diffusion based on molecular size (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Haemoglobin-Oxygen Dissociation Research",
+            "objective": "Explore the chemical affinity of haemoglobin for various gases",
+            "materials": [
+                "Reference charts",
+                "Internet resources"
+            ],
+            "steps": [
+                "Research why Carbon Monoxide ($CO$) is more dangerous than $CO_2$",
+                "Analyze the 'Oxygen Dissociation Curve' and how pH affects it (Bohr Effect)",
+                "Explain why high-altitude dwellers have higher RBC counts",
+                "Draft a report on 'Chemical Adaptations for Respiration'"
+            ],
+            "learning_outcome": "Integrates chemistry and biology to understand gas transport at molecular levels",
+            "evaluation": "Scientific depth of the report and understanding of gas affinity (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Anatomy of Cardiac Rhythm",
+            "objective": "Understand the electrical conduction system of the heart",
+            "materials": [
+                "Conductivity sensor (or simulation software)",
+                "Heart model"
+            ],
+            "steps": [
+                "Trace the electrical path from the SA Node to the AV Node and Purkinje fibers",
+                "Explain the delay at the AV node and why it is essential for ventricular filling",
+                "Research the function of an artificial pacemaker",
+                "Diagram the sequence of a single cardiac cycle"
+            ],
+            "learning_outcome": "Analyzes the coordination between electrical signals and muscular contraction",
+            "evaluation": "Clarity of the conduction pathway diagram and timing logic (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Anaerobic Threshold in Muscles",
+            "objective": "Investigate lactic acid buildup during strenuous activity",
+            "materials": [
+                "Spring-type hand exerciser",
+                "Stopwatch"
+            ],
+            "steps": [
+                "Perform rapid repetitions of the hand exerciser until muscle fatigue occurs",
+                "Record the time and number of reps to reach 'failure'",
+                "Explain the chemical transition from aerobic to anaerobic respiration in muscle cells",
+                "Research the fate of lactic acid in the liver (Cori Cycle)"
+            ],
+            "learning_outcome": "Understands metabolic shifts and the concept of 'Oxygen Debt'",
+            "evaluation": "Scientific explanation of muscle fatigue and recovery (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Evolution of Excretory Products",
+            "objective": "Compare Ammonia, Urea, and Uric Acid across animal groups",
+            "materials": [
+                "World map",
+                "Animal classification charts"
+            ],
+            "steps": [
+                "Categorize animals as Ammonotelic, Ureotelic, or Uricotelic",
+                "Correlate the type of waste produced with the availability of water in the animal's habitat",
+                "Explain why birds produce uric acid instead of liquid urine",
+                "Calculate the energy cost vs. water-saving benefits for each product"
+            ],
+            "learning_outcome": "Applies ecological principles to understand physiological adaptations",
+            "evaluation": "Logical correlation between habitat and excretory chemistry (10 marks)"
+        }
+    ]
+}

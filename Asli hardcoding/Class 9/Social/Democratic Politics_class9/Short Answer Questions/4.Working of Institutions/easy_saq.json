@@ -1,0 +1,293 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 4: Working of Institutions",
+    "generated_at": "2026-03-07T20:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What are political institutions? Give one example.",
+            "answer": "Political institutions are organizations that help in governing a country and making decisions. Example: Parliament.",
+            "key_concepts": [
+                "political institutions",
+                "Parliament"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are institutions important in a democracy?",
+            "answer": "Institutions ensure that decisions are taken according to rules and procedures and involve many people.",
+            "key_concepts": [
+                "institutions",
+                "democracy"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Overview"
+        },
+        {
+            "question_number": 3,
+            "question": "What is Parliament?",
+            "answer": "Parliament is the highest law-making body in India that represents the people.",
+            "key_concepts": [
+                "Parliament",
+                "law making"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Name the two houses of the Indian Parliament.",
+            "answer": "The two houses of Parliament are Lok Sabha and Rajya Sabha.",
+            "key_concepts": [
+                "Lok Sabha",
+                "Rajya Sabha"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the function of Parliament?",
+            "answer": "The main function of Parliament is to make laws and control the government.",
+            "key_concepts": [
+                "law making",
+                "government control"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Who elects the members of Lok Sabha?",
+            "answer": "The people of India elect the members of Lok Sabha.",
+            "key_concepts": [
+                "Lok Sabha",
+                "election"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the term of the Lok Sabha?",
+            "answer": "The term of the Lok Sabha is five years.",
+            "key_concepts": [
+                "Lok Sabha",
+                "five years"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is Rajya Sabha called a permanent house?",
+            "answer": "Rajya Sabha is called a permanent house because it is never dissolved.",
+            "key_concepts": [
+                "Rajya Sabha",
+                "permanent"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Who is the head of the government in India?",
+            "answer": "The Prime Minister is the head of the government in India.",
+            "key_concepts": [
+                "Prime Minister"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Who appoints the Prime Minister of India?",
+            "answer": "The President appoints the Prime Minister.",
+            "key_concepts": [
+                "President",
+                "Prime Minister"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the Council of Ministers?",
+            "answer": "The Council of Ministers is a group of ministers headed by the Prime Minister to run the government.",
+            "key_concepts": [
+                "Council of Ministers"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the executive?",
+            "answer": "The executive is the branch of government that implements laws and policies.",
+            "key_concepts": [
+                "executive"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Who are civil servants?",
+            "answer": "Civil servants are government officials who help in implementing policies and administration.",
+            "key_concepts": [
+                "civil servants"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Who is the head of the state in India?",
+            "answer": "The President is the head of the state.",
+            "key_concepts": [
+                "President"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "How is the President of India elected?",
+            "answer": "The President is elected by the elected MPs and MLAs.",
+            "key_concepts": [
+                "President election"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the judiciary?",
+            "answer": "The judiciary is the system of courts that interprets laws and settles disputes.",
+            "key_concepts": [
+                "judiciary"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Name the highest court in India.",
+            "answer": "The Supreme Court is the highest court in India.",
+            "key_concepts": [
+                "Supreme Court"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "What is judicial review?",
+            "answer": "Judicial review is the power of courts to examine laws and declare them unconstitutional.",
+            "key_concepts": [
+                "judicial review"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is Public Interest Litigation?",
+            "answer": "Public Interest Litigation is a legal action filed in court to protect public interest.",
+            "key_concepts": [
+                "PIL"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the Cabinet?",
+            "answer": "The Cabinet is a group of senior ministers who take important government decisions.",
+            "key_concepts": [
+                "Cabinet"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Who chairs the Cabinet meetings?",
+            "answer": "The Prime Minister chairs the Cabinet meetings.",
+            "key_concepts": [
+                "Prime Minister"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which institution controls government money?",
+            "answer": "Parliament controls government money.",
+            "key_concepts": [
+                "Parliament",
+                "financial control"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which house has more power in money matters?",
+            "answer": "Lok Sabha has more power in money matters.",
+            "key_concepts": [
+                "Lok Sabha"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens if the Lok Sabha passes a no-confidence motion?",
+            "answer": "The Council of Ministers must resign.",
+            "key_concepts": [
+                "no confidence motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is an independent judiciary important?",
+            "answer": "An independent judiciary ensures fair justice and protects citizens' rights.",
+            "key_concepts": [
+                "judicial independence"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        }
+    ]
+}

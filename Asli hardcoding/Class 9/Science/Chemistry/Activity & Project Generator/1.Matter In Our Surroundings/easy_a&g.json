@@ -1,0 +1,183 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Matter in Our Surroundings",
+    "difficulty": "Easy",
+    "source_pdf": "iesc101.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Particle Nature of Matter",
+            "objective": "To prove that matter is made up of particles",
+            "materials": [
+                "100 mL Beaker",
+                "Water",
+                "Salt or Sugar",
+                "Glass rod"
+            ],
+            "steps": [
+                "Take a 100 mL beaker and fill it halfway with water [cite: 2341]",
+                "Mark the initial level of water on the beaker [cite: 2341]",
+                "Add a spoonful of salt and stir well with a glass rod [cite: 2342]",
+                "Observe if the water level rises or stays the same [cite: 2343]"
+            ],
+            "learning_outcome": "Understands that salt particles occupy the spaces between water particles [cite: 2352]",
+            "evaluation": "Correct observation of water level and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Smallness of Particles",
+            "objective": "To demonstrate how small the particles of matter are",
+            "materials": [
+                "Potassium permanganate (or Dettol)",
+                "Water",
+                "Test tubes",
+                "Beakers"
+            ],
+            "steps": [
+                "Dissolve 2-3 crystals of potassium permanganate in 100 mL water [cite: 2356]",
+                "Take 10 mL of this deep colored solution and add it to 90 mL clear water [cite: 3260]",
+                "Repeat this dilution process 5 to 8 times [cite: 2362]",
+                "Observe if the water is still colored [cite: 2363]"
+            ],
+            "learning_outcome": "Concludes that a few crystals contain millions of tiny particles [cite: 2386]",
+            "evaluation": "Recording color intensity changes across dilutions (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Diffusion in Gases",
+            "objective": "To observe the movement of gas particles",
+            "materials": [
+                "Incense stick",
+                "Matchbox"
+            ],
+            "steps": [
+                "Place an unlit incense stick in a corner and try to smell it [cite: 2372, 2373]",
+                "Light the incense stick using a matchbox [cite: 2374]",
+                "Check if you can get the smell while sitting at a distance [cite: 2374]"
+            ],
+            "learning_outcome": "Observes that particles move faster when kinetic energy increases [cite: 2413, 2414]",
+            "evaluation": "Explanation of how smell spreads in the room (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Intermixing of Liquids",
+            "objective": "To compare the rate of diffusion in different liquids",
+            "materials": [
+                "Two beakers of water",
+                "Ink",
+                "Honey"
+            ],
+            "steps": [
+                "Put a drop of blue/red ink slowly along the side of the first beaker [cite: 2396]",
+                "Put a drop of honey in the same way in the second beaker [cite: 2396]",
+                "Leave them undisturbed and record the time taken to spread evenly [cite: 2397, 2400]"
+            ],
+            "learning_outcome": "Identifies that different liquids diffuse at different rates [cite: 2406]",
+            "evaluation": "Comparing the diffusion time of ink vs honey (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Temperature and Diffusion",
+            "objective": "To study the effect of temperature on the rate of mixing",
+            "materials": [
+                "Glass of hot water",
+                "Glass of cold water",
+                "Copper sulphate or Potassium permanganate"
+            ],
+            "steps": [
+                "Drop a crystal into a glass of hot water [cite: 2403]",
+                "Drop a crystal into a glass of cold water at the same time [cite: 2403]",
+                "Observe the rate of mixing in both without stirring [cite: 2404]"
+            ],
+            "learning_outcome": "Discovers that diffusion becomes faster on heating [cite: 2418]",
+            "evaluation": "Explaining why hot water mixes faster (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Force of Attraction",
+            "objective": "To understand that particles of matter attract each other",
+            "materials": [
+                "Iron nail",
+                "Piece of chalk",
+                "Rubber band"
+            ],
+            "steps": [
+                "Try breaking the iron nail by hammering [cite: 2426, 2427]",
+                "Try breaking the chalk by cutting it [cite: 2427]",
+                "Try breaking the rubber band by stretching it [cite: 2427]"
+            ],
+            "learning_outcome": "Recognizes that the strength of attraction varies between substances [cite: 2443]",
+            "evaluation": "Identifying which substance has the strongest force (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Compressibility Test",
+            "objective": "To compare compressibility of solids, liquids, and gases",
+            "materials": [
+                "Three 100 mL syringes",
+                "Rubber corks",
+                "Water",
+                "Chalk pieces"
+            ],
+            "steps": [
+                "Close syringe nozzles with rubber corks [cite: 2513]",
+                "Fill one with air, second with water, and third with chalk [cite: 2515]",
+                "Push the pistons and observe which is easiest to compress [cite: 2517]"
+            ],
+            "learning_outcome": "Observes that gases are highly compressible compared to solids/liquids [cite: 2518]",
+            "evaluation": "Ranking the three states by compressibility (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Sublimation Observation",
+            "objective": "To see solid changing directly to gas",
+            "materials": [
+                "Camphor or Ammonium chloride",
+                "China dish",
+                "Inverted funnel",
+                "Cotton plug",
+                "Burner"
+            ],
+            "steps": [
+                "Put crushed camphor in a china dish and cover with an inverted funnel [cite: 2637, 2638]",
+                "Plug the funnel stem with cotton [cite: 2639]",
+                "Heat slowly and observe the changes inside the funnel [cite: 2652]"
+            ],
+            "learning_outcome": "Defines sublimation as change from solid to gas without liquid phase [cite: 2653]",
+            "evaluation": "Drawing the sublimation setup and labeling (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Evaporation and Surface Area",
+            "objective": "To see how surface area affects evaporation",
+            "materials": [
+                "Test tube",
+                "China dish",
+                "Water"
+            ],
+            "steps": [
+                "Take 5 mL water in a test tube and 5 mL in an open china dish [cite: 2704, 2705]",
+                "Place both under a fan [cite: 2705]",
+                "Record the time taken for water to evaporate in each [cite: 2708]"
+            ],
+            "learning_outcome": "Learns that increasing surface area increases the rate of evaporation [cite: 2714]",
+            "evaluation": "Data table showing evaporation times (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Evaporation and Cooling",
+            "objective": "To experience the cooling effect of evaporation",
+            "materials": [
+                "Acetone (nail polish remover) or perfume"
+            ],
+            "steps": [
+                "Pour a few drops of acetone on your palm [cite: 2728]",
+                "Wait for a few seconds [cite: 2729]",
+                "Note the sensation on your palm [cite: 2729]"
+            ],
+            "learning_outcome": "Understands that particles absorb energy from surroundings to evaporate [cite: 2724, 2725]",
+            "evaluation": "Scientific explanation of the cold sensation (10 marks)"
+        }
+    ]
+}

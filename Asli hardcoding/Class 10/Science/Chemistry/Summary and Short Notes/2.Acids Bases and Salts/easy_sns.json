@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Acids, Bases and Salts",
+    "difficulty": "Easy",
+    "source_pdf": "jesc102.pdf",
+    "short_notes": {
+        "key_points": [
+            "Acids are sour in taste and turn blue litmus red, while bases are bitter and turn red litmus blue.",
+            "An indicator is a substance that changes color in acidic or basic media (e.g., Litmus, Phenolphthalein, Methyl Orange).",
+            "Acids react with metals to produce hydrogen gas and a corresponding salt.",
+            "The reaction between an acid and a base to form salt and water is called a Neutralization reaction.",
+            "The pH scale (0 to 14) measures the strength of an acid or base; 7 is neutral, below 7 is acidic, and above 7 is basic."
+        ],
+        "examples": [
+            "Natural Indicators: Turmeric (turns reddish-brown in base) and Litmus (extracted from Lichens).",
+            "Reaction with Metal: $Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2$ (Hydrogen gas burns with a pop sound).",
+            "Neutralization: $HCl(aq) + NaOH(aq) \rightarrow NaCl(aq) + H_2O(l)$.",
+            "Common Salts: Sodium Chloride (Common Salt), Sodium Bicarbonate (Baking Soda), and Bleaching Powder.",
+            "pH in Daily Life: Tooth decay starts when mouth pH is lower than 5.5."
+        ],
+        "formulas": [
+            "Neutralization Formula: $\text{Acid} + \text{Base} \rightarrow \text{Salt} + \text{Water}$",
+            "Acid + Metal: $\text{Acid} + \text{Metal} \rightarrow \text{Salt} + \text{Hydrogen gas}$",
+            "pH Scale: $0 \leftarrow \text{Acidic} \dots 7 (\text{Neutral}) \dots \text{Basic} \rightarrow 14$"
+        ],
+        "exam_tips": [
+            "Remember that 'Alkali' is a special name for bases that are soluble in water, like $NaOH$.",
+            "Note that dry $HCl$ gas does not change the color of dry litmus paper because it doesn't release $H^+$ ions without water.",
+            "Identify 'Antacids' like Milk of Magnesia as mild bases used to treat indigestion.",
+            "Keep in mind that adding water to acid is dangerous; always add acid to water slowly with constant stirring."
+        ]
+    }
+}

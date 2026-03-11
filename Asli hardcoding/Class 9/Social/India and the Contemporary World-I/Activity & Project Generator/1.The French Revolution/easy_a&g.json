@@ -1,0 +1,139 @@
+{
+    "class": "Class 9",
+    "subject": "History",
+    "chapter": "The French Revolution",
+    "difficulty": "Easy",
+    "source_pdf": "iess301.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Visualizing the Three Estates",
+            "objective": "Understand the social hierarchy and tax burden in 18th-century France",
+            "materials": ["Chart paper", "Colored markers", "Ruler"],
+            "steps": [
+                "Review Fig. 2 'A Society of Estates' in the text [cite: 73, 92]",
+                "Create a pyramid diagram representing the Clergy, Nobility, and the Third Estate [cite: 84, 86, 88]",
+                "Shade the Third Estate differently to show they were the only group paying taxes [cite: 70, 83]"
+            ],
+            "learning_outcome": "Identifies the inequality of the 'Old Regime' social structure [cite: 72, 77]",
+            "evaluation": "Correct labeling and representation of the three estates (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Decoding Revolutionary Symbols",
+            "objective": "Learn how symbols were used to communicate ideas to an uneducated population",
+            "materials": ["Drawing sheets", "Pencils", "Flashcards"],
+            "steps": [
+                "List five symbols from 'Box 1: Reading political symbols' (e.g., broken chain, red cap, Sceptre) [cite: 365, 373, 377, 384]",
+                "Draw each symbol and write its meaning next to it [cite: 369]",
+                "Explain why symbols were more effective than books for the majority of people in 1789 [cite: 366, 367]"
+            ],
+            "learning_outcome": "Translates visual political metaphors into abstract concepts like freedom and unity [cite: 375, 377]",
+            "evaluation": "Accuracy of symbol meanings and quality of drawings (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Bread Price Crisis Timeline",
+            "objective": "Trace the economic causes that led to the storming of the Bastille",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Identify the population growth figures between 1715 and 1789 [cite: 122]",
+                "Create a flow chart showing the link between bad harvests, rising bread prices, and food riots [cite: 124, 127, 138]",
+                "Define 'Subsistence Crisis' based on the text [cite: 128, 130]"
+            ],
+            "learning_outcome": "Analyzes how economic hardship triggers political revolt [cite: 48, 142]",
+            "evaluation": "Logical sequencing of the economic 'chain of events' (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Defining the Rights of Man",
+            "objective": "Familiarize students with the foundational democratic rights established in 1791",
+            "materials": ["Notebook", "Chart paper"],
+            "steps": [
+                "Select four key rights from the 'Declaration of the Rights of Man and Citizen' (Source C) [cite: 344, 345]",
+                "Write these rights in simplified, modern language [cite: 346, 351, 356]",
+                "Discuss why the state considered these rights 'natural and inalienable' [cite: 334, 335]"
+            ],
+            "learning_outcome": "Understands the origin of modern democratic principles [cite: 12, 13, 655]",
+            "evaluation": "Clear simplification and understanding of the 'natural rights' concept (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Mapping the 'Great Fear'",
+            "objective": "Understand the spread of the revolution from Paris to the countryside",
+            "materials": ["Outline map of France", "Crayons", "Textbook map"],
+            "steps": [
+                "Refer to Fig. 6: 'The spread of the Great Fear' [cite: 277]",
+                "Mark the epicenters of panic and use arrows to show the direction of movement [cite: 275]",
+                "Briefly describe what peasants did when they attacked 'chateaux' [cite: 238, 239]"
+            ],
+            "learning_outcome": "Visualizes the geographic scale and intensity of the agrarian revolt [cite: 47, 237]",
+            "evaluation": "Accuracy of map markings and description of peasant actions (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Active vs. Passive Citizens Comparison",
+            "objective": "Analyze the limitations of the 1791 Constitution",
+            "materials": ["Notebook", "T-Chart"],
+            "steps": [
+                "Create a T-chart comparing 'Active Citizens' and 'Passive Citizens' [cite: 304, 305]",
+                "List the criteria for voting (age, gender, tax bracket) [cite: 311, 312]",
+                "Explain Marat's criticism regarding the influence of wealth on law (Source B) [cite: 337, 339]"
+            ],
+            "learning_outcome": "Recognizes that early revolutionary reforms did not grant equality to everyone [cite: 417, 535]",
+            "evaluation": "Correct categorization of citizen groups (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "A Day in the Life of a Revolutionary Woman",
+            "objective": "Explore the role and challenges of women during the revolution",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "List the typical jobs and daily tasks of women of the Third Estate [cite: 516, 517, 520]",
+                "Write a short diary entry from the perspective of a woman marching to Versailles on 5 October 1789 [cite: 512, 513]",
+                "Mention one law passed by the revolutionary government to help women [cite: 538, 539, 542]"
+            ],
+            "learning_outcome": "Appreciates the active participation of women despite limited political rights [cite: 514, 534]",
+            "evaluation": "Historical accuracy and empathy in the diary entry (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "The Jacobin Wardrobe",
+            "objective": "Understand how clothing was used as a political statement",
+            "materials": ["Drawing paper", "Colored pencils"],
+            "steps": [
+                "Sketch a 'sans-culottes' couple based on Fig. 9 [cite: 429]",
+                "Label the long striped trousers and the red cap [cite: 425, 445]",
+                "Explain why they refused to wear 'knee breeches' [cite: 426, 443]"
+            ],
+            "learning_outcome": "Connects fashion choices to political identity and social class [cite: 423, 444]",
+            "evaluation": "Correct identification of clothing items and their significance (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Rise and Fall of Robespierre",
+            "objective": "Analyze the 'Reign of Terror' and its methods",
+            "materials": ["Notebook", "Dictionary"],
+            "steps": [
+                "Define 'Guillotine' and explain why it was used [cite: 462, 463]",
+                "List three changes Robespierre made to everyday life (e.g., bread, address, churches) [cite: 466, 468, 469]",
+                "State why even his supporters eventually turned against him [cite: 470, 471]"
+            ],
+            "learning_outcome": "Evaluates the transition from democracy to a period of severe control [cite: 459, 461]",
+            "evaluation": "Clarity in defining terms and listing government measures (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Napoleon’s Legacy Report",
+            "objective": "Summarize the impact of Napoleon Bonaparte on France and Europe",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Note the year Napoleon crowned himself Emperor [cite: 650]",
+                "List two modernizing laws he introduced (e.g., weights and measures) [cite: 651]",
+                "Discuss why he was initially seen as a 'liberator' and later as an 'invader' [cite: 652, 653]"
+            ],
+            "learning_outcome": "Identifies Napoleon's role as both a conqueror and a modernizer [cite: 505, 654]",
+            "evaluation": "Quality of the summary of Napoleon's dual impact (10 marks)"
+        }
+    ]
+}

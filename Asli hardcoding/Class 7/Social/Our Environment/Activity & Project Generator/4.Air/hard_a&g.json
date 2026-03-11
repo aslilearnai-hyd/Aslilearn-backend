@@ -1,0 +1,191 @@
+{
+    "class": "Class 7",
+    "subject": "Geography",
+    "chapter": "Air",
+    "difficulty": "Hard",
+    "source_pdf": "our_environment_class7_ncert.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Adiabatic Temperature Lapse Rate Model",
+            "objective": "Calculate the temperature drop as air rises through the Troposphere",
+            "materials": [
+                "Altimeter data (online)",
+                "Thermometer",
+                "Graph paper",
+                "Calculator"
+            ],
+            "steps": [
+                "Research the 'Normal Lapse Rate' (approx. 6.5°C per 1000m)",
+                "Calculate the hypothetical temperature at the peak of Mt. Everest if the base temperature is 30°C",
+                "Plot a graph showing the inverse relationship between Altitude and Temperature in the Troposphere",
+                "Explain why the temperature trend reverses in the Stratosphere"
+            ],
+            "learning_outcome": "Analyzes the vertical thermal structure of the atmosphere and its mathematical decline",
+            "evaluation": "Accuracy of the temperature calculations and graph interpretation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Coriolis Force and Wind Deflection",
+            "objective": "Demonstrate why winds do not move in a straight line",
+            "materials": [
+                "Rotating turntable or globe",
+                "Marker",
+                "Ruler"
+            ],
+            "steps": [
+                "Attempt to draw a straight line from the North Pole to the Equator on a stationary globe",
+                "Spin the globe slowly and try to draw the same straight line",
+                "Observe the curve (deflection) created by the rotation",
+                "Apply 'Ferrel’s Law' to explain why winds deflect to the right in the Northern Hemisphere"
+            ],
+            "learning_outcome": "Evaluates the impact of Earth's rotation on planetary wind directions",
+            "evaluation": "Correct demonstration of deflection and application of Ferrel’s Law (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Cyclonic vs. Anticyclonic Pressure Gradients",
+            "objective": "Analyze isobaric patterns in low and high-pressure systems",
+            "materials": [
+                "Weather maps with Isobars",
+                "Compass",
+                "Tracing paper"
+            ],
+            "steps": [
+                "Identify 'Isobars' (lines of equal pressure) on a meteorological chart",
+                "Determine the 'Pressure Gradient' by measuring the distance between isobars",
+                "Map the inward-spiraling wind of a Cyclone vs. the outward-spiraling wind of an Anticyclone",
+                "Explain why closer isobars indicate higher wind speeds"
+            ],
+            "learning_outcome": "Synthesizes the relationship between air pressure intensity and wind velocity",
+            "evaluation": "Technical accuracy of the wind flow diagrams and gradient analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Hygroscopic Nuclei and Rain Initiation",
+            "objective": "Investigate the role of dust and smoke in cloud formation",
+            "materials": [
+                "Transparent 2-liter bottle",
+                "Warm water",
+                "Matches",
+                "Pressure pump"
+            ],
+            "steps": [
+                "Add warm water to the bottle and seal it; observe that no cloud forms despite pressure changes",
+                "Drop a lit match inside to provide 'smoke particles' (Hygroscopic nuclei)",
+                "Squeeze and release the bottle rapidly",
+                "Observe the sudden appearance of a thick cloud only when nuclei are present"
+            ],
+            "learning_outcome": "Concludes that moisture requires physical particles to condense into clouds",
+            "evaluation": "Scientific explanation of why smoke was necessary for cloud visibility (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Global Warming & Carbon Footprint Calculus",
+            "objective": "Quantify the impact of Greenhouse Gases ($CO_2$) on the atmosphere",
+            "materials": [
+                "Utility bills (Electricity/Gas)",
+                "Carbon calculator tables",
+                "Research data on methane"
+            ],
+            "steps": [
+                "Calculate the $CO_2$ emissions of your household based on monthly energy units",
+                "Research the 'Global Warming Potential' (GWP) of Methane vs. $CO_2$",
+                "Discuss the 'Albedo Effect'—how melting ice in the Polar regions leads to further warming",
+                "Formulate a strategy to reduce the atmospheric carbon load of your school"
+            ],
+            "learning_outcome": "Applies mathematical modeling to environmental conservation and the Greenhouse Effect",
+            "evaluation": "Precision of the footprint calculation and logic of the reduction strategy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Orographic Rainfall & Rain Shadow Quantitative Study",
+            "objective": "Analyze the moisture disparity between windward and leeward sides",
+            "materials": [
+                "Rainfall data for Mumbai vs. Pune",
+                "Physical map of the Western Ghats",
+                "Graph paper"
+            ],
+            "steps": [
+                "Plot the annual rainfall of a coastal city (Windward) vs. an inland city (Leeward) behind a mountain",
+                "Explain the 'Rain Shadow' effect in terms of descending dry air and warming",
+                "Calculate the percentage difference in precipitation between the two zones",
+                "Discuss the vegetation changes observed in these two areas"
+            ],
+            "learning_outcome": "Understands how topography alters atmospheric moisture distribution",
+            "evaluation": "Statistical comparison of rainfall and topographical reasoning (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Ionosphere and Long-Range Communication",
+            "objective": "Investigate the role of the Thermosphere in radio transmission",
+            "materials": [
+                "AM/FM Radio",
+                "Research papers on Ionospheric layers"
+            ],
+            "steps": [
+                "Research why AM radio signals travel further at night",
+                "Diagram how the 'Ionosphere' reflects radio waves back to Earth",
+                "Explain the impact of Solar Flares on satellite communication in the Exosphere",
+                "Describe the molecular state of air in the Thermosphere where temperatures reach 1,500°C"
+            ],
+            "learning_outcome": "Relates the chemical and electrical properties of upper layers to modern technology",
+            "evaluation": "Quality of the radio-wave reflection diagram and technical explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Frontal Systems Simulation",
+            "objective": "Study the interaction between different air masses",
+            "materials": [
+                "Rectangular glass tank",
+                "Hot water (dyed red)",
+                "Cold water (dyed blue)",
+                "Divider"
+            ],
+            "steps": [
+                "Fill one side of the tank with cold blue water and the other with hot red water",
+                "Slowly remove the divider",
+                "Observe how the cold air mass (blue) slides under the warm air mass (red)",
+                "Identify the 'Front' and predict the type of weather it would produce"
+            ],
+            "learning_outcome": "Visualizes the formation of Cyclonic (Frontal) rainfall and air mass boundaries",
+            "evaluation": "Detailed observation of the water interface and front identification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Anemometer Calibration and Beaufort Scale",
+            "objective": "Convert physical rotations into standardized wind speed units",
+            "materials": [
+                "DIY Anemometer (4 cups on a spindle)",
+                "Stopwatch",
+                "Moving vehicle (with adult help) or a fan"
+            ],
+            "steps": [
+                "Count the Rotations Per Minute (RPM) at a known speed (e.g., 20 km/h)",
+                "Create a conversion table for RPM to km/h",
+                "Observe local wind effects (leaves moving vs. branches breaking)",
+                "Classify the wind using the 'Beaufort Scale' from 0 to 12"
+            ],
+            "learning_outcome": "Standardizes observational data into scientific meteorological units",
+            "evaluation": "Accuracy of the calibration table and Beaufort classification (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Sustainable Atmosphere: Air Quality Index (AQI) Project",
+            "objective": "Analyze particulate matter (PM) concentrations in different zones",
+            "materials": [
+                "White tape or Vaseline-coated slides",
+                "Magnifying glass",
+                "Map of the town"
+            ],
+            "steps": [
+                "Place 'Soot Traps' (slides) in a residential area, a park, and a busy traffic junction for 24 hours",
+                "Observe the density of particles under a magnifying glass",
+                "Research the health impacts of $PM_{2.5}$ and $PM_{10}$",
+                "Propose an urban planning layout to improve air circulation and reduce AQI"
+            ],
+            "learning_outcome": "Evaluates the human-made (Anthropogenic) changes to air composition",
+            "evaluation": "Comparative slide analysis and scientific urban planning proposal (10 marks)"
+        }
+    ]
+}

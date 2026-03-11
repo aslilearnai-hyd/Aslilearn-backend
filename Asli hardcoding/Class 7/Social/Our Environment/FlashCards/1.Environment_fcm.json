@@ -1,0 +1,100 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 1: Environment",
+    "generated_at": "2026-03-07T18:09:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is the meaning of the term 'Environment'?",
+                "correct_answer": "Everything that we see in our surroundings",
+                "explanation": "It is our basic life support system, providing the air we breathe, the water we drink, and the land where we live.",
+                "source_section": "What is Environment?"
+            },
+            {
+                "question": "What are the three main components of the environment?",
+                "correct_answer": "Natural, Human-made, and Human",
+                "explanation": "Natural includes land and air; Human-made includes buildings and roads; Human includes individuals and society.",
+                "source_section": "Components of Environment"
+            },
+            {
+                "question": "Differentiate between Biotic and Abiotic environments.",
+                "correct_answer": "Biotic is the world of living organisms; Abiotic is the world of non-living elements",
+                "explanation": "Plants and animals are Biotic; Land and water are Abiotic.",
+                "source_section": "Natural Environment"
+            },
+            {
+                "question": "What is the Lithosphere?",
+                "correct_answer": "The solid crust or the hard top layer of the earth",
+                "explanation": "It is made up of rocks and minerals and covered by a thin layer of soil.",
+                "source_section": "Domains of the Environment"
+            },
+            {
+                "question": "Which domain of the environment is a source of mineral wealth?",
+                "correct_answer": "Lithosphere",
+                "explanation": "The lithosphere provides us with forests, grasslands, land for agriculture, and mineral deposits.",
+                "source_section": "Domains of the Environment"
+            },
+            {
+                "question": "Define the Hydrosphere.",
+                "correct_answer": "The domain of water",
+                "explanation": "It comprises various sources of water like rivers, lakes, seas, and oceans.",
+                "source_section": "Domains of the Environment"
+            },
+            {
+                "question": "What holds the Atmosphere around the earth?",
+                "correct_answer": "The gravitational force of the earth",
+                "explanation": "The atmosphere is the thin layer of air that surrounds the earth and protects us from harmful rays.",
+                "source_section": "Domains of the Environment"
+            },
+            {
+                "question": "What is the Biosphere?",
+                "correct_answer": "A narrow zone of the earth where land, water, and air interact to support life",
+                "explanation": "Both plant and animal kingdom together make biosphere or the living world.",
+                "source_section": "Domains of the Environment"
+            },
+            {
+                "question": "What is an Ecosystem?",
+                "correct_answer": "The system formed by the interaction of all living organisms with each other and their physical environment",
+                "explanation": "All plants, animals, and human beings depend on their immediate surroundings and each other.",
+                "source_section": "What is Ecosystem?"
+            },
+            {
+                "question": "Why do humans modify their environment?",
+                "correct_answer": "To fulfill their needs and adapt to their surroundings",
+                "explanation": "Humans have learned to grow crops, domesticate animals, and lead a settled life, creating things like industries and transport.",
+                "source_section": "Human Environment"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Origin of Environment",
+                "content": "The word Environment comes from the French word 'Environer' meaning 'Neighborhood'.",
+                "source_section": "Glossary"
+            },
+            {
+                "title": "Atmosphere Function",
+                "content": "It protects us from the scorching heat and harmful UV rays of the sun.",
+                "source_section": "Natural Environment"
+            },
+            {
+                "title": "Human Environment",
+                "content": "Early humans adapted themselves to natural surroundings; modern humans modify it through technology.",
+                "source_section": "Human Environment"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "World Environment Day is celebrated on 5th June every year.",
+                "source_section": "Did you know?"
+            },
+            {
+                "fact": "Barter System is a trade in which goods are exchanged without the use of money.",
+                "source_section": "Glossary"
+            },
+            {
+                "fact": "The atmosphere consists of a number of gases, dust, and water vapour.",
+                "source_section": "Natural Environment"
+            }
+        ]
+    }
+}

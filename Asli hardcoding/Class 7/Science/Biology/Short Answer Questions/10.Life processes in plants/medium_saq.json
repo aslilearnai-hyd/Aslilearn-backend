@@ -1,0 +1,55 @@
+{
+  "chapter_title": "Life Processes in Plants",
+  "grade_level": 7,
+  "curriculum": "NCERT",
+  "difficulty": "Medium",
+  "assessment_data": {
+    "section_a_conceptual_analysis": [
+      {
+        "question_id": "Q1",
+        "question_type": "Mechanism Analysis",
+        "question_text": "Explain how the opening and closing of stomata are regulated in plants and why this process is vital for survival.",
+        "key_concepts": ["Guard Cells", "Turgidity", "Transpiration"],
+        "answer_key": "The opening and closing of stomata are controlled by guard cells. When water flows into them, they swell (become turgid) and curve, opening the pore. When they lose water, they shrink and close the pore. This regulates gas exchange for photosynthesis while preventing excessive water loss."
+      },
+      {
+        "question_id": "Q2",
+        "question_type": "Assertion-Reason",
+        "assertion": "Saprophytic plants like fungi do not contain chlorophyll.",
+        "reason": "Saprophytes obtain their nutrients from dead and decaying organic matter.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer_key": "Both A and R are true and R is the correct explanation of A"
+      }
+    ],
+    "section_b_system_mechanics": [
+      {
+        "question_id": "Q3",
+        "subject": "Symbiotic Nutrition",
+        "task": "Describe the symbiotic relationship in Lichens. How do the two organisms benefit from each other?",
+        "complexity_note": "Focus on the exchange of specific resources.",
+        "answer_key": "Lichens consist of an Alga (or Cyanobacterium) and a Fungus. The alga provides food through photosynthesis, while the fungus provides shelter, water, and minerals to the alga."
+      }
+    ],
+    "section_c_data_interpretation": [
+      {
+        "question_id": "Q4",
+        "scenario": "A student covers a leaf of a potted plant with a black paper strip and leaves it in the sun for 6 hours.",
+        "question_text": "Based on the photosynthesis equation, why does only the exposed part of the leaf show a positive starch test?",
+        "formula": "$$6CO_2 + 6H_2O \\xrightarrow{\\text{Light/Chlorophyll}} C_6H_{12}O_6 + 6O_2$$",
+        "answer_key": "Light is a necessary reactant for the process. The covered part could not synthesize glucose ($C_6H_{12}O_6$), meaning no starch was stored there."
+      }
+    ]
+  },
+  "vocabulary_challenge": [
+    "Symbiosis",
+    "Rhizobium",
+    "Host",
+    "Heterotroph",
+    "Parasite"
+  ]
+}

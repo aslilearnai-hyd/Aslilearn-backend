@@ -1,0 +1,127 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 12: Magnetic Effects of Electric Current",
+  "generated_at": "2026-03-11T04:00:00",
+  "concepts": [
+    {
+      "concept_name": "Magnetic Effect of Electric Current",
+      "difficulty": "easy",
+      "lesson": "When electric current flows through a conductor, it produces a magnetic field around it. This phenomenon is known as the magnetic effect of electric current.",
+      "real_example": "A compass needle placed near a current-carrying wire deflects due to the magnetic field produced by the current.",
+      "key_points": [
+        "Current produces magnetic field",
+        "Discovered by Hans Christian Ørsted",
+        "Magnetic field surrounds current-carrying conductor"
+      ],
+      "source_section": "Section 12.1"
+    },
+    {
+      "concept_name": "Magnetic Field Lines",
+      "difficulty": "easy",
+      "lesson": "Magnetic field lines represent the direction and strength of a magnetic field. They form closed curves and never intersect each other.",
+      "real_example": "Iron filings sprinkled around a magnet form patterns that show the magnetic field lines.",
+      "key_points": [
+        "Represent direction of magnetic field",
+        "Form closed loops",
+        "Closer lines indicate stronger field"
+      ],
+      "source_section": "Section 12.1"
+    },
+    {
+      "concept_name": "Right-Hand Thumb Rule",
+      "difficulty": "medium",
+      "lesson": "The right-hand thumb rule helps determine the direction of magnetic field around a straight current-carrying conductor. If the thumb points in the direction of current, the curled fingers show the direction of the magnetic field.",
+      "real_example": "Using the rule to predict the circular magnetic field around a vertical current-carrying wire.",
+      "key_points": [
+        "Thumb shows direction of current",
+        "Fingers show direction of magnetic field",
+        "Used for straight conductors"
+      ],
+      "source_section": "Section 12.1"
+    },
+    {
+      "concept_name": "Magnetic Field Due to a Solenoid",
+      "difficulty": "medium",
+      "lesson": "A solenoid is a long coil of insulated wire. When current flows through it, it produces a magnetic field similar to that of a bar magnet with distinct north and south poles.",
+      "real_example": "A solenoid connected to a battery acts like a magnet and can attract iron objects.",
+      "key_points": [
+        "Long coil of wire",
+        "Produces strong magnetic field inside",
+        "Acts like a bar magnet"
+      ],
+      "source_section": "Section 12.2"
+    },
+    {
+      "concept_name": "Electromagnets",
+      "difficulty": "easy",
+      "lesson": "An electromagnet is a temporary magnet produced when electric current flows through a coil wound around a soft iron core. It loses magnetism when the current stops.",
+      "real_example": "Electromagnets are used in cranes to lift heavy iron scrap in factories.",
+      "key_points": [
+        "Temporary magnet",
+        "Uses soft iron core",
+        "Magnetism disappears when current stops"
+      ],
+      "source_section": "Section 12.2"
+    },
+    {
+      "concept_name": "Force on a Current-Carrying Conductor",
+      "difficulty": "hard",
+      "lesson": "When a current-carrying conductor is placed in a magnetic field, it experiences a force. The direction of this force depends on the direction of current and the magnetic field.",
+      "real_example": "A wire carrying current placed between two magnetic poles moves due to magnetic force.",
+      "key_points": [
+        "Force acts on current-carrying conductor",
+        "Depends on direction of current and field",
+        "Principle used in electric motors"
+      ],
+      "source_section": "Section 12.3"
+    },
+    {
+      "concept_name": "Fleming's Left-Hand Rule",
+      "difficulty": "medium",
+      "lesson": "Fleming's left-hand rule determines the direction of force on a current-carrying conductor placed in a magnetic field. The thumb, forefinger and middle finger of the left hand are kept perpendicular to each other.",
+      "real_example": "Engineers use this rule to determine the direction of motion in electric motors.",
+      "key_points": [
+        "Thumb → direction of force",
+        "Forefinger → magnetic field",
+        "Middle finger → current"
+      ],
+      "source_section": "Section 12.3"
+    },
+    {
+      "concept_name": "Electric Motor",
+      "difficulty": "medium",
+      "lesson": "An electric motor is a device that converts electrical energy into mechanical energy using the interaction between magnetic fields and electric current.",
+      "real_example": "Electric fans, mixers and washing machines use electric motors.",
+      "key_points": [
+        "Converts electrical energy to mechanical energy",
+        "Uses magnetic force on current-carrying coil",
+        "Contains coil, magnet, split ring and brushes"
+      ],
+      "source_section": "Section 12.3"
+    },
+    {
+      "concept_name": "Electromagnetic Induction",
+      "difficulty": "hard",
+      "lesson": "Electromagnetic induction is the process of generating electric current in a conductor by changing the magnetic field around it.",
+      "real_example": "Moving a magnet inside a coil connected to a galvanometer produces current in the coil.",
+      "key_points": [
+        "Discovered by Michael Faraday",
+        "Change in magnetic field induces current",
+        "Basis of electric generators"
+      ],
+      "source_section": "Section 12.4"
+    },
+    {
+      "concept_name": "Electric Generator and Electrical Safety",
+      "difficulty": "medium",
+      "lesson": "An electric generator converts mechanical energy into electrical energy using electromagnetic induction. Electrical safety devices such as fuses and earthing protect circuits and appliances from damage.",
+      "real_example": "Hydroelectric power plants use generators to produce electricity, while fuses protect household appliances from excessive current.",
+      "key_points": [
+        "Generator converts mechanical energy to electrical energy",
+        "Works on electromagnetic induction",
+        "Fuse and earthing ensure electrical safety"
+      ],
+      "source_section": "Section 12.5"
+    }
+  ]
+}

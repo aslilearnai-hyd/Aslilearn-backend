@@ -1,0 +1,119 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter": "Triangles",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class9_math.pdf",
+    "mcqs": [
+        {
+            "question": "In a triangle, the lengths of two medians are 5 cm and 12 cm. If the triangle is right-angled at the vertex from which the medians are drawn, the length of the third median is:",
+            "options": [
+                "13 cm",
+                "10 cm",
+                "9 cm",
+                "15 cm"
+            ],
+            "correct_answer": "13 cm",
+            "explanation": "In a right-angled triangle, the medians from the right angle and another vertex satisfy the Pythagorean relation: m₁² + m₂² = m₃²."
+        },
+        {
+            "question": "If a triangle has sides in the ratio 7:24:25, then its area is:",
+            "options": [
+                "84 sq.cm",
+                "84 units²",
+                "84",
+                "Cannot be determined"
+            ],
+            "correct_answer": "84 sq.cm",
+            "explanation": "Use Heron’s formula: semi-perimeter s = (7+24+25)/2 = 28, area = √[s(s-a)(s-b)(s-c)] = √[28×21×4×0] = 84 sq.cm."
+        },
+        {
+            "question": "In ΔABC, the medians AD, BE, CF meet at G. If AG : GD = 2:1 and area of ΔABC = 54 cm², then area of ΔABG is:",
+            "options": [
+                "36 cm²",
+                "18 cm²",
+                "12 cm²",
+                "24 cm²"
+            ],
+            "correct_answer": "36 cm²",
+            "explanation": "Centroid divides triangle into three smaller triangles of equal area in 2:1 ratio along medians."
+        },
+        {
+            "question": "If sides of a triangle are 13 cm, 14 cm, and 15 cm, its area is:",
+            "options": [
+                "84 cm²",
+                "84.5 cm²",
+                "84.7 cm²",
+                "Cannot determine"
+            ],
+            "correct_answer": "84 cm²",
+            "explanation": "Use Heron’s formula: s = (13+14+15)/2 = 21, Area = √[21×8×7×6] = 84 cm²."
+        },
+        {
+            "question": "The circumcenter of a triangle lies outside the triangle. Which type of triangle is it?",
+            "options": [
+                "Acute triangle",
+                "Right triangle",
+                "Obtuse triangle",
+                "Equilateral triangle"
+            ],
+            "correct_answer": "Obtuse triangle",
+            "explanation": "In an obtuse triangle, perpendicular bisectors meet outside the triangle, forming the circumcenter outside."
+        },
+        {
+            "question": "In a triangle, the lengths of sides are 5 cm, 12 cm, and 13 cm. The length of the median to the longest side is:",
+            "options": [
+                "6.5 cm",
+                "7 cm",
+                "6 cm",
+                "5 cm"
+            ],
+            "correct_answer": "6.5 cm",
+            "explanation": "Median length formula: m = ½√(2b² + 2c² − a²), with a = longest side = 13."
+        },
+        {
+            "question": "A triangle has vertices A(0,0), B(6,0), C(3,3√3). What type of triangle is ABC?",
+            "options": [
+                "Equilateral",
+                "Isosceles",
+                "Scalene",
+                "Right-angled"
+            ],
+            "correct_answer": "Equilateral",
+            "explanation": "Distance AB=6, BC=6, AC=6 → all sides equal."
+        },
+        {
+            "question": "If a triangle has sides 8 cm, 15 cm, and 17 cm, the medians to sides 8 cm and 15 cm are equal. Find length of median to 17 cm side.",
+            "options": [
+                "12 cm",
+                "10 cm",
+                "13 cm",
+                "11 cm"
+            ],
+            "correct_answer": "12 cm",
+            "explanation": "Use median formula: mₐ = ½√(2b²+2c²−a²)."
+        },
+        {
+            "question": "In a triangle, the altitudes from vertices A and B are equal. If AB = 8 cm, BC = 6 cm, then AC = ?",
+            "options": [
+                "6 cm",
+                "8 cm",
+                "10 cm",
+                "Cannot determine"
+            ],
+            "correct_answer": "6 cm",
+            "explanation": "Altitudes equality implies sides opposite to equal altitudes are equal."
+        },
+        {
+            "question": "The incentre of a triangle is equidistant from:",
+            "options": [
+                "Vertices",
+                "Sides",
+                "Centroid",
+                "Medians"
+            ],
+            "correct_answer": "Sides",
+            "explanation": "The incentre is the point from which perpendiculars to all sides are equal (inradius)."
+        }
+    ]
+}

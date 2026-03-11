@@ -1,0 +1,174 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics (NCERT - Ganita Prakash)",
+    "chapter": "Another Peek Beyond the Point (Decimals - Multiplication and Division)",
+    "difficulty": "Hard",
+    "source_pdf": "ncert_class7_maths_another_peek_beyond_the_point.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Reciprocal Decimal Discovery",
+            "objective": "Explore the relationship between fractions and terminating/recurring decimals",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Divide 1 by 7 using long division up to 8 decimal places",
+                "Identify the repeating block of digits in the quotient",
+                "Predict the decimal value of $2 \div 7$ by multiplying your first answer by 2",
+                "Verify your prediction with actual division"
+            ],
+            "learning_outcome": "Understands patterns in non-terminating recurring decimals",
+            "evaluation": "Accuracy of division and pattern prediction (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "The Infinite Zoom (Unit Conversion)",
+            "objective": "Convert small units through multiple decimal steps",
+            "materials": [
+                "Ruler",
+                "Notebook"
+            ],
+            "steps": [
+                "Measure the thickness of a stack of 10 paper sheets in mm (e.g., 0.8 mm)",
+                "Calculate the thickness of a single sheet in mm ($0.8 \div 10$)",
+                "Convert this thickness into cm ($mm \div 10$) and then meters ($cm \div 100$)",
+                "Express the final answer in scientific notation if possible"
+            ],
+            "learning_outcome": "Masters multi-step decimal division for unit conversions",
+            "evaluation": "Precision in decimal placement across conversions (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Algebraic Decimals",
+            "objective": "Solve equations involving decimal coefficients",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Solve for $x$: $0.25x + 1.5 = 4.75$",
+                "Show the subtraction and division steps clearly",
+                "Create a word problem where $0.5x = 12.75$ and solve it",
+                "Explain how to clear decimals by multiplying the whole equation by 100"
+            ],
+            "learning_outcome": "Integrates algebra with decimal operations",
+            "evaluation": "Correct solving of the linear equation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "The Pendulum Period Average",
+            "objective": "Calculate mean and error in decimal measurements",
+            "materials": [
+                "String",
+                "Small weight",
+                "Timer"
+            ],
+            "steps": [
+                "Time 10 swings of a pendulum and divide by 10 to get the 'period' (e.g., 1.24s)",
+                "Repeat this 5 times to get 5 decimal values",
+                "Calculate the mean period to 3 decimal places",
+                "Determine the difference between your highest and lowest measurement"
+            ],
+            "learning_outcome": "Applies high-precision decimal division to physics experiments",
+            "evaluation": "Accuracy of the mean to specified decimal places (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Complex Area: The L-Shaped Floor",
+            "objective": "Calculate area of composite shapes with decimal dimensions",
+            "materials": [
+                "Graph paper",
+                "Ruler"
+            ],
+            "steps": [
+                "Draw an L-shaped figure made of two rectangles with sides like 2.3m, 4.5m, 1.2m, and 2.1m",
+                "Split the figure into two parts and calculate each area using $L \times W$",
+                "Sum the areas and find the total cost of flooring if 1 $m^2$ costs ₹450.75",
+                "Round the final cost to the nearest rupee"
+            ],
+            "learning_outcome": "Solves multi-step real-world geometry problems using decimals",
+            "evaluation": "Correct decomposition and total cost calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Chemical Concentration Task",
+            "objective": "Calculate proportions using decimal division",
+            "materials": [
+                "Measuring cylinder (or marked bottle)",
+                "Water"
+            ],
+            "steps": [
+                "If a solution has 0.045 kg of salt in 1.5 liters of water, find the salt per liter",
+                "Calculate how much salt is needed for 0.25 liters of the same solution",
+                "Express the concentration as a percentage ($salt \div water \times 100$)"
+            ],
+            "learning_outcome": "Uses decimals to calculate ratios and concentrations",
+            "evaluation": "Accuracy of the 'per liter' unit rate (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "The Decaying Decimal Pattern",
+            "objective": "Observe geometric progression with decimals",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Start with the number 100. Multiply it by 0.5 repeatedly 6 times",
+                "List the sequence: 100, 50, 25...",
+                "Identify at which step the number becomes less than 1",
+                "Discuss why the product never actually reaches zero"
+            ],
+            "learning_outcome": "Understands the behavior of repeated multiplication by decimals $< 1$",
+            "evaluation": "Correct identification of the sequence terms (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Fuel Efficiency & Speed",
+            "objective": "Solve complex rate problems",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "A vehicle covers 43.2 km in 2.4 liters of petrol",
+                "Calculate the distance covered in 1 liter",
+                "If the car travels at 40.5 km/hr, calculate the time taken to empty a full 15.5-liter tank",
+                "Show all division steps involving decimal divisors"
+            ],
+            "learning_outcome": "Masters multi-variable problems involving decimal rates",
+            "evaluation": "Logical multi-step computation and accuracy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "The Gold Smith's Precision",
+            "objective": "Add, subtract, and multiply high-precision decimals",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "A goldsmith has 15.450g of gold. He uses 3.125g for a ring and 5.05g for a chain",
+                "Calculate the remaining gold",
+                "If he buys 2.5 times the remaining gold, how much does he have now?",
+                "Calculate the total value if gold is ₹6250.50 per gram"
+            ],
+            "learning_outcome": "Handles high-value decimal precision in financial contexts",
+            "evaluation": "Zero-error calculation in the multi-step process (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "The Decimal Divider Challenge",
+            "objective": "Verify the relationship between dividend, divisor, and quotient",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Pick two decimals: $1.44$ and $1.2$. Divide $1.44 \div 1.2$",
+                "Now divide $1.2 \div 1.44$ up to 4 decimal places",
+                "Multiply the two results together",
+                "Explain why the product of $(a/b) \times (b/a)$ is always 1, even with decimals"
+            ],
+            "learning_outcome": "Explores the property of reciprocals in the decimal system",
+            "evaluation": "Correct division and verification of the product (10 marks)"
+        }
+    ]
+}

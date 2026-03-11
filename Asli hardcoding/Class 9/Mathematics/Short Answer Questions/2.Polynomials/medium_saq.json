@@ -1,0 +1,284 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 2: Polynomials",
+    "generated_at": "2026-03-06T01:05:00",
+    "difficulty": "medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the degree of the polynomial 5x³ + 2x² + x + 7.",
+            "answer": "The degree is 3 because the highest power of x is 3.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Identify the coefficient of x² in 6x² + 4x + 9.",
+            "answer": "The coefficient of x² is 6.",
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Find p(2) if p(x)=3x²−x+2.",
+            "answer": "p(2)=3(4)−2+2=12.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the zero of the polynomial x + 6.",
+            "answer": "x + 6 = 0 ⇒ x = −6.",
+            "key_concepts": [
+                "zero of polynomial"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Find p(−1) if p(x)=x² + 2x + 1.",
+            "answer": "p(−1)=1−2+1=0.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Factorise x² − 25.",
+            "answer": "(x − 5)(x + 5).",
+            "key_concepts": [
+                "difference of squares"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Identify whether 2x³ + x² + 4 is cubic or quadratic.",
+            "answer": "It is cubic because the highest power is 3.",
+            "key_concepts": [
+                "degree classification"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the constant term of 4x³ + 7x² + 2.",
+            "answer": "The constant term is 2.",
+            "key_concepts": [
+                "constant term"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Expand (x + 4)².",
+            "answer": "x² + 8x + 16.",
+            "key_concepts": [
+                "algebraic identities"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Find p(3) if p(x)=x²−4.",
+            "answer": "p(3)=9−4=5.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the number of terms in 3x³ + 4x² + x + 1.",
+            "answer": "There are four terms.",
+            "key_concepts": [
+                "terms"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find p(0) if p(x)=5x²+7.",
+            "answer": "p(0)=7.",
+            "key_concepts": [
+                "constant term"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Write the identity for (a − b)².",
+            "answer": "a² − 2ab + b².",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Factorise x² − 16.",
+            "answer": "(x − 4)(x + 4).",
+            "key_concepts": [
+                "difference of squares"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Find p(1) if p(x)=2x²+3x+1.",
+            "answer": "p(1)=2+3+1=6.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Identify the degree of 7x⁵ + 2x².",
+            "answer": "The degree is 5.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Write the identity for x² − y².",
+            "answer": "(x+y)(x−y).",
+            "key_concepts": [
+                "difference of squares"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Find p(−2) if p(x)=x².",
+            "answer": "p(−2)=4.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Identify whether x² + 2x + 1 is quadratic.",
+            "answer": "Yes, because the degree is 2.",
+            "key_concepts": [
+                "quadratic polynomial"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the coefficient of x³ in 9x³ + 4x.",
+            "answer": "9.",
+            "key_concepts": [
+                "coefficients"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Find p(4) if p(x)=x−4.",
+            "answer": "p(4)=0.",
+            "key_concepts": [
+                "zero"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the degree of 8x⁶ + 3x² + 1.",
+            "answer": "6.",
+            "key_concepts": [
+                "degree"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Expand (x+2)².",
+            "answer": "x² + 4x + 4.",
+            "key_concepts": [
+                "identity"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Factorise x² − 36.",
+            "answer": "(x − 6)(x + 6).",
+            "key_concepts": [
+                "difference of squares"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Find p(5) if p(x)=x².",
+            "answer": "p(5)=25.",
+            "key_concepts": [
+                "evaluation"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 2.3"
+        }
+    ]
+}

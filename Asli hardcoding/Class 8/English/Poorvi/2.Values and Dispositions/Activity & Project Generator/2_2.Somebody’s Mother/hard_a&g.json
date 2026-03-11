@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Somebody’s Mother",
+  "difficulty": "Hard",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Critical Interpretation of the Poem",
+      "objective": "Develop deeper interpretation of the poem’s message",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the poem carefully and identify the central message",
+        "Analyse how the poet builds the message through events",
+        "Explain how the boy’s action represents empathy and humanity",
+        "Write a short analytical paragraph explaining the poem’s moral significance"
+      ],
+      "learning_outcome": "Students develop analytical thinking and interpret literary messages",
+      "evaluation": "Depth of interpretation and clarity of argument (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Symbolism in the Poem",
+      "objective": "Understand symbolic elements used by the poet",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify elements such as winter, snow, and the crowded street",
+        "Discuss what these elements symbolise in the poem",
+        "Explain how these symbols represent society’s attitude toward the elderly",
+        "Present your interpretation in class"
+      ],
+      "learning_outcome": "Students recognise symbolism and interpret deeper meanings",
+      "evaluation": "Quality of interpretation and explanation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Comparative Character Analysis",
+      "objective": "Compare the actions and attitudes of different characters",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Describe the behaviour of the group of boys in the poem",
+        "Analyse the behaviour of the young boy who helped the woman",
+        "Compare these behaviours and explain their moral implications",
+        "Write a paragraph discussing how individual actions can influence society"
+      ],
+      "learning_outcome": "Students develop comparative analysis and ethical reasoning",
+      "evaluation": "Logical comparison and supporting arguments (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Exploring Poetic Devices in Depth",
+      "objective": "Analyse the effect of poetic devices used in the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify poetic devices such as simile, imagery, and repetition",
+        "Explain how each device enhances the emotional tone of the poem",
+        "Analyse how these devices influence the reader’s understanding",
+        "Write a brief explanation of their literary significance"
+      ],
+      "learning_outcome": "Students understand how literary techniques shape meaning",
+      "evaluation": "Accuracy and depth of literary analysis (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Empathy and Social Responsibility Debate",
+      "objective": "Encourage critical thinking about social responsibility",
+      "materials": ["Notebook"],
+      "steps": [
+        "Form two groups in the class",
+        "Debate whether society today shows enough empathy toward the elderly",
+        "Use examples from the poem and real-life situations",
+        "Conclude with suggestions for improving empathy in society"
+      ],
+      "learning_outcome": "Students develop critical thinking and debating skills",
+      "evaluation": "Quality of arguments and participation (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Imagery and Atmosphere Analysis",
+      "objective": "Understand how imagery builds the atmosphere of the poem",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify phrases describing the winter setting",
+        "Explain how the imagery creates a feeling of loneliness and difficulty",
+        "Analyse how the environment influences the old woman’s situation",
+        "Write a short explanation connecting imagery with the poem’s theme"
+      ],
+      "learning_outcome": "Students analyse how setting influences emotional impact",
+      "evaluation": "Depth of explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Perspective Writing",
+      "objective": "Develop creative thinking through perspective writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are the old woman in the poem",
+        "Write a short reflection describing how you felt before and after the boy helped you",
+        "Explain how the boy’s action changed your day",
+        "Share your reflection with classmates"
+      ],
+      "learning_outcome": "Students develop empathy and creative writing skills",
+      "evaluation": "Creativity, emotional depth, and clarity (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Modern Society Reflection",
+      "objective": "Relate the poem’s message to present-day society",
+      "materials": ["Notebook"],
+      "steps": [
+        "Discuss whether people today help strangers as shown in the poem",
+        "Identify challenges that prevent people from helping others",
+        "Suggest ways students can encourage kindness in society",
+        "Present your ideas in a short class discussion"
+      ],
+      "learning_outcome": "Students connect literature with modern social issues",
+      "evaluation": "Critical thinking and originality of ideas (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Ethical Decision-Making Activity",
+      "objective": "Explore moral decision-making through literature",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you were one of the boys who ignored the woman",
+        "Reflect on why the group did not help her",
+        "Describe what you would do differently in that situation",
+        "Write a short reflection explaining your decision"
+      ],
+      "learning_outcome": "Students evaluate ethical choices and moral responsibility",
+      "evaluation": "Depth of reasoning and reflection (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Poetry Extension",
+      "objective": "Encourage creative expression inspired by the poem",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a short poem inspired by the theme of kindness",
+        "Use at least one poetic device such as repetition or imagery",
+        "Share your poem with the class",
+        "Explain how your poem reflects the message of helping others"
+      ],
+      "learning_outcome": "Students develop creative writing and appreciation of poetic form",
+      "evaluation": "Creativity, use of poetic devices, and thematic clarity (10 marks)"
+    }
+  ]
+}

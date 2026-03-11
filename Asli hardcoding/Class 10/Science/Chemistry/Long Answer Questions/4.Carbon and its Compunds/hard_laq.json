@@ -1,0 +1,199 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "generated_at": "2026-03-10T23:48:00",
+    "total_questions": 10,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "An organic compound 'A' is a constituent of wine and beer. Oxidation of 'A' yields compound 'B' which turns blue litmus red. (i) Identify 'A' and 'B'. (ii) Write the chemical equation for the conversion of 'A' to 'B'. (iii) What happens when 'A' and 'B' react in the presence of an acid catalyst?",
+            "answer": "(i) 'A' is Ethanol ($C_2H_5OH$) and 'B' is Ethanoic acid ($CH_3COOH$). (ii) $CH_3CH_2OH \xrightarrow{alkaline KMnO_4 + heat} CH_3COOH$. (iii) They undergo esterification to form Ethyl Ethanoate (a sweet-smelling ester): $CH_3COOH + C_2H_5OH \xrightarrow{H^+} CH_3COOC_2H_5 + H_2O$.",
+            "answer_outline": [
+                "Identification of Ethanol and Ethanoic acid",
+                "Equation for controlled oxidation",
+                "Explanation of esterification",
+                "Balanced equation for ester formation"
+            ],
+            "key_concepts": [
+                "oxidation",
+                "ethanol",
+                "ethanoic acid",
+                "esterification"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3.2 & 4.4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "How can you differentiate between butter and cooking oil using a chemical test? Explain the principle behind the test.",
+            "answer": "Cooking oil is unsaturated (contains double bonds), while butter is saturated. We can use the 'Bromine Water Test'. Cooking oil will decolorize the brown color of bromine water because it undergoes an addition reaction. Butter, being saturated, will not decolorize bromine water. This is based on the principle that only unsaturated hydrocarbons show addition reactions.",
+            "answer_outline": [
+                "Nature of butter (saturated) vs oil (unsaturated)",
+                "Description of Bromine Water Test",
+                "Visual observation (decolorization)",
+                "Principle of addition reaction"
+            ],
+            "key_concepts": [
+                "bromine water test",
+                "addition reaction",
+                "saturation",
+                "unsaturation"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A salt 'X' is formed when a carboxylic acid reacts with a base. When 'X' is heated with soda-lime, it gives a gas 'Y' which is the first member of the alkane series. Identify 'X' and 'Y' and write the equations.",
+            "answer": "'X' is Sodium Acetate ($CH_3COONa$) and 'Y' is Methane ($CH_4$). The process of removing $CO_2$ is called decarboxylation. Equations: 1. $CH_3COOH + NaOH \rightarrow CH_3COONa + H_2O$. 2. $CH_3COONa + NaOH \xrightarrow{CaO, \Delta} CH_4 + Na_2CO_3$.",
+            "answer_outline": [
+                "Identification of Sodium Acetate",
+                "Identification of Methane",
+                "Formation of salt 'X'",
+                "Decarboxylation reaction equation"
+            ],
+            "key_concepts": [
+                "methane",
+                "sodium acetate",
+                "decarboxylation",
+                "alkanes"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is the mixture of ethyne and air not used for welding, but a mixture of ethyne and oxygen is used? Explain in terms of combustion.",
+            "answer": "Ethyne is an unsaturated hydrocarbon. When burnt in air (which has limited oxygen), it undergoes incomplete combustion, producing a sooty yellow flame with low temperature. However, in pure oxygen, it undergoes complete combustion, producing a very hot blue flame (oxy-acetylene flame) that reaches temperatures high enough to melt metals for welding.",
+            "answer_outline": [
+                "Limited oxygen in air vs pure oxygen",
+                "Incomplete vs Complete combustion",
+                "Flame characteristics (Sooty/Yellow vs Blue)",
+                "Temperature requirement for welding"
+            ],
+            "key_concepts": [
+                "combustion",
+                "ethyne",
+                "oxy-acetylene",
+                "sooty flame"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What are structural isomers? Draw all possible isomers for Pentane ($C_5H_{12}$) and name them.",
+            "answer": "Structural isomers are compounds with the same molecular formula but different structural arrangements. For Pentane: 1. n-pentane (straight chain). 2. Isopentane (2-methylbutane; one branch). 3. Neopentane (2,2-dimethylpropane; two branches from the same carbon).",
+            "answer_outline": [
+                "Definition of structural isomerism",
+                "Drawing n-pentane",
+                "Drawing isopentane",
+                "Drawing neopentane",
+                "IUPAC nomenclature for each"
+            ],
+            "key_concepts": [
+                "isomers",
+                "pentane",
+                "branching",
+                "IUPAC nomenclature"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the mechanism of the cleaning action of soaps. Why does soap fail in hard water while detergents succeed?",
+            "answer": "Soap molecules form micelles where the hydrophobic ends attach to oil/dirt and hydrophilic ends face water. Agitation lifts the oily dirt. Hard water contains $Ca^{2+}$ and $Mg^{2+}$ ions which react with soap to form 'scum' (insoluble precipitate). Detergents (ammonium or sulphonate salts) do not form scum with these ions, remaining effective.",
+            "answer_outline": [
+                "Micelle formation mechanism",
+                "Hydrophilic/Hydrophobic interactions",
+                "Definition of scum in hard water",
+                "Chemical advantage of detergents"
+            ],
+            "key_concepts": [
+                "micelles",
+                "hard water",
+                "scum",
+                "detergents"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 7,
+            "question": "An organic compound 'P' has the molecular formula $C_3H_6$. (i) To which homologous series does it belong? (ii) What is the next member of this series? (iii) Write the equation for the reaction of 'P' with $H_2$ in the presence of Nickel.",
+            "answer": "(i) 'P' is Propene; it belongs to the Alkene series ($C_nH_{2n}$). (ii) The next member is Butene ($C_4H_8$). (iii) It undergoes an addition reaction: $CH_3-CH=CH_2 + H_2 \xrightarrow{Ni} CH_3-CH_2-CH_3$ (Propane).",
+            "answer_outline": [
+                "General formula identification",
+                "Homologous series naming",
+                "Next member prediction",
+                "Hydrogenation equation"
+            ],
+            "key_concepts": [
+                "alkenes",
+                "propene",
+                "hydrogenation",
+                "homologous series"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2 & 4.3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Compare the properties of Diamond and Graphite. Why is graphite a conductor while diamond is an insulator?",
+            "answer": "Diamond has a rigid 3D tetrahedral structure with no free electrons, making it the hardest substance and an insulator. Graphite has hexagonal layers with each carbon bonded to 3 others. The 4th valence electron is free to move between layers, allowing it to conduct electricity and act as a lubricant.",
+            "answer_outline": [
+                "Bonding in Diamond (4 bonds)",
+                "Bonding in Graphite (3 bonds)",
+                "Explanation of free electrons in Graphite",
+                "Physical property comparison (Hardness vs Lubricity)"
+            ],
+            "key_concepts": [
+                "allotropes",
+                "diamond",
+                "graphite",
+                "delocalized electrons"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is 'Denatured Alcohol'? Why is it prepared, and what is added to it?",
+            "answer": "To prevent the misuse of ethanol produced for industrial use, it is made unfit for drinking by adding poisonous substances like methanol or dyes like copper sulphate (which gives it a blue color). This is called denatured alcohol. It is a regulatory measure to protect industrial supply from consumption.",
+            "answer_outline": [
+                "Definition of denatured alcohol",
+                "Additives (Methanol/Pyridine/CuSO4)",
+                "Reason (Industrial protection/Preventing consumption)",
+                "Safety significance"
+            ],
+            "key_concepts": [
+                "ethanol",
+                "methanol",
+                "denaturing",
+                "industrial alcohol"
+            ],
+            "marks": 3,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Describe the formation of 'Baking Powder' from 'Baking Soda'. What chemical reaction occurs during the baking of a cake?",
+            "answer": "Baking powder is a mixture of baking soda ($NaHCO_3$) and a mild edible acid like tartaric acid. When heated or mixed with water, the acid reacts with $NaHCO_3$ to release $CO_2$. Reaction: $NaHCO_3 + H^+ \rightarrow Na^+ + H_2O + CO_2$. The $CO_2$ gas causes the bread or cake to rise, making them soft and spongy.",
+            "answer_outline": [
+                "Difference between soda and powder",
+                "Role of tartaric acid",
+                "Chemical equation of CO2 release",
+                "Effect on the texture of food"
+            ],
+            "key_concepts": [
+                "baking powder",
+                "sodium hydrogencarbonate",
+                "tartaric acid",
+                "neutralization"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.4.2 (and Chapter 2 linkage)"
+        }
+    ]
+}

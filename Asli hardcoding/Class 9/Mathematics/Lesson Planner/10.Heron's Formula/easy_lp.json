@@ -1,0 +1,133 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Heron’s Formula",
+    "lesson_level": "Easy",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of semi-perimeter",
+        "Apply Heron’s formula to find the area of a triangle",
+        "Identify when Heron’s formula is useful",
+        "Solve basic numerical problems involving area of triangles"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Triangle Area",
+            "topics_covered": [
+                "Revision of triangles and types",
+                "Area of triangles using base × height / 2",
+                "Limitations when height is unknown"
+            ],
+            "teaching_strategy": [
+                "Demonstration with simple examples",
+                "Comparison of different methods of finding area"
+            ],
+            "student_activities": [
+                "Calculate area of triangles using base and height",
+                "Discuss situations where height is not given"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short numerical exercises"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Introduction to Semi-Perimeter",
+            "topics_covered": [
+                "Definition of semi-perimeter: s = (a+b+c)/2",
+                "Understanding sides a, b, c of a triangle"
+            ],
+            "teaching_strategy": [
+                "Illustration using a drawn triangle",
+                "Stepwise calculation of semi-perimeter"
+            ],
+            "student_activities": [
+                "Calculate semi-perimeter for given triangles",
+                "Label sides and find s"
+            ],
+            "assessment": [
+                "Check calculations in notebook",
+                "Short class exercise"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Heron’s Formula",
+            "topics_covered": [
+                "Statement: Area = √(s(s-a)(s-b)(s-c))",
+                "Explanation of terms",
+                "Stepwise calculation"
+            ],
+            "teaching_strategy": [
+                "Demonstration with simple triangle examples",
+                "Show calculation steps clearly"
+            ],
+            "student_activities": [
+                "Apply formula to triangles with sides (3,4,5), (5,6,7)",
+                "Write stepwise solution in notebook"
+            ],
+            "assessment": [
+                "Check stepwise solutions",
+                "Short oral questioning"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Numerical Practice",
+            "topics_covered": [
+                "Simple numerical problems using Heron’s formula",
+                "Verification using base × height for right triangles"
+            ],
+            "teaching_strategy": [
+                "Guided problem solving",
+                "Encourage comparison of results with basic area formula"
+            ],
+            "student_activities": [
+                "Solve 4–5 numerical problems",
+                "Verify correctness of answers"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Peer discussion for error correction"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Chapter Revision and Quiz",
+            "topics_covered": [
+                "Review semi-perimeter and Heron’s formula",
+                "Mixed practice problems",
+                "Quick quiz on area calculation"
+            ],
+            "teaching_strategy": [
+                "Group quiz and individual exercises",
+                "Discuss common mistakes"
+            ],
+            "student_activities": [
+                "Participate in quiz",
+                "Solve 2–3 mixed problems individually"
+            ],
+            "assessment": [
+                "Quiz scoring",
+                "Evaluation of numerical accuracy"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ruler and protractor",
+        "Graph paper",
+        "Blackboard/Whiteboard",
+        "Chalk/Markers",
+        "NCERT Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Oral questioning",
+        "Short numerical tests",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Use simple triangles first to build confidence. Encourage students to write all steps for clarity and error-free calculation."
+}

@@ -1,0 +1,287 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 2: Constitutional Design",
+    "generated_at": "2026-03-07T20:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a constitution?",
+            "answer": "A constitution is a set of fundamental rules that determine how a country is governed and how citizens and government relate to each other.",
+            "key_concepts": [
+                "constitution",
+                "basic rules"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What was apartheid?",
+            "answer": "Apartheid was a system of racial discrimination practiced in South Africa where non-white people were denied basic rights.",
+            "key_concepts": [
+                "apartheid",
+                "racial discrimination"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Who was Nelson Mandela?",
+            "answer": "Nelson Mandela was a leader of the anti-apartheid movement and later became the first black President of South Africa.",
+            "key_concepts": [
+                "Nelson Mandela"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name the organization that led the struggle against apartheid.",
+            "answer": "The African National Congress (ANC) led the struggle against apartheid.",
+            "key_concepts": [
+                "ANC"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Why do countries need a constitution?",
+            "answer": "Countries need a constitution to define government powers, protect citizen rights and maintain order.",
+            "key_concepts": [
+                "government powers",
+                "citizen rights"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What does a constitution determine?",
+            "answer": "A constitution determines the structure of government, powers of institutions and rights of citizens.",
+            "key_concepts": [
+                "government structure"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the Constituent Assembly?",
+            "answer": "The Constituent Assembly was a body of elected representatives that drafted the Constitution of India.",
+            "key_concepts": [
+                "Constituent Assembly"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "When was the Constituent Assembly formed?",
+            "answer": "The Constituent Assembly was formed in 1946.",
+            "key_concepts": [
+                "1946"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Who was the chairman of the Drafting Committee?",
+            "answer": "Dr. B.R. Ambedkar was the chairman of the Drafting Committee.",
+            "key_concepts": [
+                "B.R. Ambedkar"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "When was the Constitution of India adopted?",
+            "answer": "The Constitution of India was adopted on 26 November 1949.",
+            "key_concepts": [
+                "26 November 1949"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "When did the Constitution of India come into effect?",
+            "answer": "The Constitution came into effect on 26 January 1950.",
+            "key_concepts": [
+                "26 January 1950"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is 26 January celebrated as Republic Day?",
+            "answer": "Because the Constitution of India came into effect on that day in 1950.",
+            "key_concepts": [
+                "Republic Day"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the Preamble?",
+            "answer": "The Preamble is the introductory statement of the Constitution that explains its values and objectives.",
+            "key_concepts": [
+                "Preamble"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Which words begin the Preamble of India?",
+            "answer": "The Preamble begins with the words 'We, the People of India'.",
+            "key_concepts": [
+                "We the People"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What does 'Sovereign' mean?",
+            "answer": "Sovereign means that India has the power to make its own decisions independently.",
+            "key_concepts": [
+                "sovereign"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 16,
+            "question": "What does 'Secular' mean?",
+            "answer": "Secular means the state has no official religion and treats all religions equally.",
+            "key_concepts": [
+                "secular"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 17,
+            "question": "What does 'Republic' mean?",
+            "answer": "Republic means the head of the state is elected and not a hereditary ruler.",
+            "key_concepts": [
+                "republic"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 18,
+            "question": "What does justice mean in the Constitution?",
+            "answer": "Justice means fairness and equality for all citizens.",
+            "key_concepts": [
+                "justice"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 19,
+            "question": "What does liberty mean?",
+            "answer": "Liberty means freedom of thought, expression and belief.",
+            "key_concepts": [
+                "liberty"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 20,
+            "question": "What does equality mean in the Constitution?",
+            "answer": "Equality means that all citizens are equal before the law.",
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 21,
+            "question": "What does fraternity mean?",
+            "answer": "Fraternity means a sense of brotherhood and unity among citizens.",
+            "key_concepts": [
+                "fraternity"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 22,
+            "question": "How many members were there in the Constituent Assembly?",
+            "answer": "There were 299 members in the Constituent Assembly of India.",
+            "key_concepts": [
+                "299 members"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What does democracy mean?",
+            "answer": "Democracy means a system where people elect their rulers and participate in governance.",
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 24,
+            "question": "What is a constitutional amendment?",
+            "answer": "A constitutional amendment is a change made to the Constitution.",
+            "key_concepts": [
+                "constitutional amendment"
+            ],
+            "marks": 1,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is the Constitution important in a democracy?",
+            "answer": "It ensures rule of law, protects rights and guides the functioning of government.",
+            "key_concepts": [
+                "rule of law",
+                "rights"
+            ],
+            "marks": 2,
+            "difficulty_level": "easy",
+            "source_section": "Section 2.2"
+        }
+    ]
+}

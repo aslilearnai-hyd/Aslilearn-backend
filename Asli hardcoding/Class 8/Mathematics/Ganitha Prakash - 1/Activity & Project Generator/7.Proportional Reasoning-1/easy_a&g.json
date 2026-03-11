@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Proportional Reasoning - 1",
+  "difficulty": "Easy",
+  "source_pdf": "ch-7_PROPORTINAL_REASONING-1.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Ratio Identification",
+      "objective": "Understand ratios using simple examples",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write five pairs of numbers",
+        "Express them as ratios",
+        "Read the ratios aloud"
+      ],
+      "learning_outcome": "Understands basic ratio representation",
+      "evaluation": "Correct ratios written (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Classroom Ratio Count",
+      "objective": "Find ratios in real life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Count the number of boys and girls in the class",
+        "Write the ratio of boys to girls",
+        "Simplify the ratio"
+      ],
+      "learning_outcome": "Applies ratios to real-life situations",
+      "evaluation": "Correct ratio and simplification (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Simplest Form Practice",
+      "objective": "Reduce ratios to simplest form",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write ratios such as 12:18, 20:30 and 16:24",
+        "Find the HCF of each pair",
+        "Reduce each ratio to simplest form"
+      ],
+      "learning_outcome": "Understands simplification of ratios",
+      "evaluation": "Correct simplified ratios (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Proportion Match",
+      "objective": "Identify proportional ratios",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write pairs of ratios such as 2:3 and 4:6",
+        "Check if they are proportional",
+        "Explain your answer"
+      ],
+      "learning_outcome": "Recognises proportional relationships",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Rectangle Ratio Drawing",
+      "objective": "Understand proportional shapes",
+      "materials": ["Graph paper", "Pencil"],
+      "steps": [
+        "Draw a rectangle with width 6 cm and height 4 cm",
+        "Draw another rectangle with width 12 cm and height 8 cm",
+        "Compare their width to height ratios"
+      ],
+      "learning_outcome": "Understands proportional dimensions",
+      "evaluation": "Correct drawings and ratios (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Proportion Table",
+      "objective": "Observe proportional relationships",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a table with two columns",
+        "Write proportional pairs like 3:6, 4:8, 5:10",
+        "Explain the pattern observed"
+      ],
+      "learning_outcome": "Understands proportional patterns",
+      "evaluation": "Correct observations (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Recipe Ratio Activity",
+      "objective": "Apply ratios in cooking examples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a simple recipe with ingredient ratios",
+        "Double the quantities",
+        "Write the new ratios"
+      ],
+      "learning_outcome": "Applies ratios in daily life",
+      "evaluation": "Correct ratio adjustment (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Equivalent Ratio Chart",
+      "objective": "Identify equivalent ratios",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose a ratio like 3:4",
+        "Write five equivalent ratios",
+        "Display them on a chart"
+      ],
+      "learning_outcome": "Understands equivalent ratios",
+      "evaluation": "Correct ratios and presentation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "School Ratio Survey",
+      "objective": "Collect real-life ratio data",
+      "materials": ["Notebook"],
+      "steps": [
+        "Count the number of teachers and students",
+        "Write the ratio",
+        "Compare with another class"
+      ],
+      "learning_outcome": "Applies ratios in real-world data",
+      "evaluation": "Correct ratio representation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Proportion Puzzle",
+      "objective": "Solve simple proportion problems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write proportions like 2:3 :: 4:x",
+        "Find the missing number",
+        "Verify by cross multiplication"
+      ],
+      "learning_outcome": "Understands solving proportions",
+      "evaluation": "Correct solutions (10 marks)"
+    }
+  ]
+}

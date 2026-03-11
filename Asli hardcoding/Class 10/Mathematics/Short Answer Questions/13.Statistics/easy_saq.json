@@ -1,0 +1,258 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "JEMH113",
+    "generated_at": "2026-03-01T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define statistics.",
+            "answer": "Statistics is the branch of mathematics concerned with the collection, organisation, presentation, analysis and interpretation of data.",
+            "key_concepts": [
+                "statistics"
+            ],
+            "marks": 2,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "What is meant by data?",
+            "answer": "Data are numerical facts or figures collected for a specific purpose.",
+            "key_concepts": [
+                "data"
+            ],
+            "marks": 2,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 3,
+            "question": "Define frequency.",
+            "answer": "Frequency is the number of times an observation occurs in a data set.",
+            "key_concepts": [
+                "frequency"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 4,
+            "question": "What is grouped data?",
+            "answer": "Grouped data is data arranged into class intervals.",
+            "key_concepts": [
+                "grouped data"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 5,
+            "question": "What is ungrouped data?",
+            "answer": "Ungrouped data is data presented without class intervals.",
+            "key_concepts": [
+                "ungrouped data"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 6,
+            "question": "Define class interval.",
+            "answer": "A class interval is the range of values in which data is grouped.",
+            "key_concepts": [
+                "class interval"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 7,
+            "question": "What is class size?",
+            "answer": "Class size is the difference between the upper and lower class limits.",
+            "key_concepts": [
+                "class size"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 8,
+            "question": "Define class mark.",
+            "answer": "Class mark is the mid-point of a class interval.",
+            "key_concepts": [
+                "class mark"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 9,
+            "question": "What is mean?",
+            "answer": "Mean is the average value of a given data set.",
+            "key_concepts": [
+                "mean"
+            ],
+            "marks": 2,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 10,
+            "question": "Define median.",
+            "answer": "Median is the middle value of an ordered data set.",
+            "key_concepts": [
+                "median"
+            ],
+            "marks": 2,
+            "source_section": "Median"
+        },
+        {
+            "question_number": 11,
+            "question": "Define mode.",
+            "answer": "Mode is the value that occurs most frequently in the data.",
+            "key_concepts": [
+                "mode"
+            ],
+            "marks": 2,
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 12,
+            "question": "What is cumulative frequency?",
+            "answer": "Cumulative frequency is the running total of frequencies.",
+            "key_concepts": [
+                "cumulative frequency"
+            ],
+            "marks": 2,
+            "source_section": "Cumulative Frequency"
+        },
+        {
+            "question_number": 13,
+            "question": "What is raw data?",
+            "answer": "Raw data is the original unorganised data collected.",
+            "key_concepts": [
+                "raw data"
+            ],
+            "marks": 2,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a bar graph?",
+            "answer": "A bar graph represents data using rectangular bars.",
+            "key_concepts": [
+                "bar graph"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a histogram?",
+            "answer": "A histogram is a graph used to represent continuous data.",
+            "key_concepts": [
+                "histogram"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 16,
+            "question": "What is an ogive?",
+            "answer": "An ogive is a cumulative frequency curve.",
+            "key_concepts": [
+                "ogive"
+            ],
+            "marks": 2,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 17,
+            "question": "What is population?",
+            "answer": "Population is the complete set of items under study.",
+            "key_concepts": [
+                "population"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a sample?",
+            "answer": "A sample is a part of the population selected for study.",
+            "key_concepts": [
+                "sample"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 19,
+            "question": "What is discrete data?",
+            "answer": "Discrete data consists of distinct, countable values.",
+            "key_concepts": [
+                "discrete data"
+            ],
+            "marks": 2,
+            "source_section": "Types of Data"
+        },
+        {
+            "question_number": 20,
+            "question": "What is continuous data?",
+            "answer": "Continuous data can take any value within a range.",
+            "key_concepts": [
+                "continuous data"
+            ],
+            "marks": 2,
+            "source_section": "Types of Data"
+        },
+        {
+            "question_number": 21,
+            "question": "Define tally marks.",
+            "answer": "Tally marks are used to count frequencies easily.",
+            "key_concepts": [
+                "tally marks"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 22,
+            "question": "What is tabulation?",
+            "answer": "Tabulation is the systematic arrangement of data in tables.",
+            "key_concepts": [
+                "tabulation"
+            ],
+            "marks": 2,
+            "source_section": "Presentation"
+        },
+        {
+            "question_number": 23,
+            "question": "What is observation?",
+            "answer": "Each value in the data set is called an observation.",
+            "key_concepts": [
+                "observation"
+            ],
+            "marks": 2,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 24,
+            "question": "What is statistical enquiry?",
+            "answer": "Statistical enquiry is the systematic collection of data.",
+            "key_concepts": [
+                "statistical enquiry"
+            ],
+            "marks": 2,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 25,
+            "question": "What is frequency distribution?",
+            "answer": "A frequency distribution shows how often values occur.",
+            "key_concepts": [
+                "frequency distribution"
+            ],
+            "marks": 2,
+            "source_section": "Presentation"
+        }
+    ]
+}

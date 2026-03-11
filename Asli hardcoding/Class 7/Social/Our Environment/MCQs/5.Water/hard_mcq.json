@@ -1,0 +1,333 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: WATER: OUR LIFELINE",
+    "generated_at": "2026-03-07T23:57:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which of the following is a primary cause of declining groundwater levels in urban areas?",
+            "options": {
+                "A": "Increased pervious surfaces",
+                "B": "Over-extraction and reduced recharge",
+                "C": "Rainwater harvesting",
+                "D": "Afforestation"
+            },
+            "correct_answer": "B",
+            "explanation": "Excessive withdrawal of groundwater combined with reduced percolation leads to falling water tables.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Which factor significantly affects the quality of river water in India?",
+            "options": {
+                "A": "Industrial effluents and domestic sewage",
+                "B": "Rainwater harvesting",
+                "C": "Terrace farming",
+                "D": "Check dams"
+            },
+            "correct_answer": "A",
+            "explanation": "Industrial and domestic waste introduces chemicals and pathogens, degrading river water quality.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the main reason behind the salinization of groundwater in coastal areas?",
+            "options": {
+                "A": "Excessive pumping of groundwater",
+                "B": "Rainwater harvesting",
+                "C": "Afforestation",
+                "D": "Use of fertilizers inland"
+            },
+            "correct_answer": "A",
+            "explanation": "Over-extraction allows seawater to intrude into aquifers, increasing salinity.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which of the following human interventions reduces natural groundwater recharge?",
+            "options": {
+                "A": "Urbanization with concrete surfaces",
+                "B": "Planting trees",
+                "C": "Creating ponds",
+                "D": "Rainwater harvesting"
+            },
+            "correct_answer": "A",
+            "explanation": "Paved areas prevent water from infiltrating into the soil, reducing recharge.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which type of irrigation is most effective in minimizing water loss due to evaporation?",
+            "options": {
+                "A": "Flood irrigation",
+                "B": "Drip irrigation",
+                "C": "Open canal irrigation",
+                "D": "Surface furrow irrigation"
+            },
+            "correct_answer": "B",
+            "explanation": "Drip irrigation delivers water directly to roots, minimizing evaporation and wastage.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the role of wetlands in water management?",
+            "options": {
+                "A": "Filter pollutants and store excess water",
+                "B": "Increase industrial discharge",
+                "C": "Reduce rainfall",
+                "D": "Cause soil erosion"
+            },
+            "correct_answer": "A",
+            "explanation": "Wetlands act as natural filters and help absorb excess water, reducing floods.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which of the following contributes most to water scarcity in India?",
+            "options": {
+                "A": "Uneven distribution of rainfall, population growth, and overuse",
+                "B": "Rainwater harvesting",
+                "C": "Restoring wetlands",
+                "D": "Building check dams"
+            },
+            "correct_answer": "A",
+            "explanation": "Water scarcity arises due to uneven rainfall, rising demand, and over-extraction of resources.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which process primarily maintains the water cycle on Earth?",
+            "options": {
+                "A": "Evaporation, condensation, precipitation, and runoff",
+                "B": "Deforestation and urbanization",
+                "C": "Industrial water discharge",
+                "D": "Overuse of groundwater"
+            },
+            "correct_answer": "A",
+            "explanation": "The water cycle is driven by evaporation, condensation, precipitation, and surface runoff.",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following strategies is most effective for flood control in hilly regions?",
+            "options": {
+                "A": "Terrace farming and check dams",
+                "B": "Paving hillsides",
+                "C": "Deforestation",
+                "D": "Industrial expansion"
+            },
+            "correct_answer": "A",
+            "explanation": "Terraces and check dams slow water flow and reduce soil erosion and flood risk.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which of the following is an indirect effect of water pollution?",
+            "options": {
+                "A": "Spread of water-borne diseases",
+                "B": "Increase in rainfall",
+                "C": "Increase in groundwater recharge",
+                "D": "Growth of vegetation"
+            },
+            "correct_answer": "A",
+            "explanation": "Polluted water carries pathogens, leading to diseases like cholera and typhoid.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Which of the following measures conserves both water and soil in river valleys?",
+            "options": {
+                "A": "Planting trees and contour bunding",
+                "B": "Paving riverbanks",
+                "C": "Dumping industrial waste",
+                "D": "Diverting rivers to cities"
+            },
+            "correct_answer": "A",
+            "explanation": "Vegetation and contour bunds reduce soil erosion and help retain water.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which of the following is a sustainable solution to over-extraction of groundwater?",
+            "options": {
+                "A": "Rainwater harvesting and artificial recharge",
+                "B": "Excessive pumping of wells",
+                "C": "Diverting rivers",
+                "D": "Building dams without planning"
+            },
+            "correct_answer": "A",
+            "explanation": "Recharging aquifers through rainwater harvesting balances groundwater levels.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following human activities increases soil erosion and water loss?",
+            "options": {
+                "A": "Deforestation and overgrazing",
+                "B": "Afforestation",
+                "C": "Terrace farming",
+                "D": "Constructing check dams"
+            },
+            "correct_answer": "A",
+            "explanation": "Removal of vegetation exposes soil to erosion and increases runoff.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which of the following is a key benefit of watershed management?",
+            "options": {
+                "A": "Ensures sustainable water supply and reduces floods",
+                "B": "Pollutes rivers",
+                "C": "Causes water scarcity",
+                "D": "Promotes over-extraction of groundwater"
+            },
+            "correct_answer": "A",
+            "explanation": "Watershed management helps conserve water, improve groundwater recharge, and reduce floods.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following is a major source of water contamination in rural areas?",
+            "options": {
+                "A": "Open defecation and agricultural runoff",
+                "B": "Rainwater harvesting",
+                "C": "Afforestation",
+                "D": "Check dams"
+            },
+            "correct_answer": "A",
+            "explanation": "Improper sanitation and chemical runoff pollute water sources.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which of the following practices ensures equitable water distribution among farmers?",
+            "options": {
+                "A": "Community-based irrigation management",
+                "B": "Overuse of private wells",
+                "C": "Flooding fields unnecessarily",
+                "D": "Industrial water consumption"
+            },
+            "correct_answer": "A",
+            "explanation": "Community management ensures fair access and efficient water use.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following strategies prevents seawater intrusion into coastal aquifers?",
+            "options": {
+                "A": "Reducing groundwater extraction",
+                "B": "Excessive pumping",
+                "C": "Dumping industrial effluents",
+                "D": "Deforestation near coasts"
+            },
+            "correct_answer": "A",
+            "explanation": "Controlled groundwater use prevents seawater from contaminating freshwater aquifers.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which of the following is a long-term consequence of unchecked water pollution?",
+            "options": {
+                "A": "Loss of aquatic biodiversity",
+                "B": "Increase in rainfall",
+                "C": "Rising groundwater levels",
+                "D": "Enhanced soil fertility"
+            },
+            "correct_answer": "A",
+            "explanation": "Pollutants harm aquatic organisms, leading to loss of biodiversity.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Which of the following is most effective for flood mitigation in urban areas?",
+            "options": {
+                "A": "Creating retention basins and improving drainage",
+                "B": "Paving all open spaces",
+                "C": "Discharging untreated sewage",
+                "D": "Cutting urban trees"
+            },
+            "correct_answer": "A",
+            "explanation": "Retention basins store excess rainwater and proper drainage prevents urban flooding.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following activities directly reduces surface water availability?",
+            "options": {
+                "A": "Construction of large dams without planning",
+                "B": "Rainwater harvesting",
+                "C": "Creating ponds",
+                "D": "Afforestation"
+            },
+            "correct_answer": "A",
+            "explanation": "Poorly planned dams disrupt river flow and reduce downstream water availability.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following ensures long-term water security?",
+            "options": {
+                "A": "Integrated water resources management",
+                "B": "Over-extraction of groundwater",
+                "C": "Polluting rivers",
+                "D": "Flood irrigation"
+            },
+            "correct_answer": "A",
+            "explanation": "Integrated management balances supply, demand, and conservation of water resources.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following is an environmental benefit of restoring mangroves along coasts?",
+            "options": {
+                "A": "Reduces storm surges and filters water pollutants",
+                "B": "Increases soil erosion",
+                "C": "Pollutes rivers",
+                "D": "Over-extracts groundwater"
+            },
+            "correct_answer": "A",
+            "explanation": "Mangroves act as buffers, reducing floods and improving water quality.",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which of the following strategies is most effective for managing scarce water in agriculture?",
+            "options": {
+                "A": "Using drought-resistant crops and drip irrigation",
+                "B": "Flooding fields",
+                "C": "Over-extracting wells",
+                "D": "Using untreated wastewater"
+            },
+            "correct_answer": "A",
+            "explanation": "Efficient irrigation and suitable crops reduce water demand while maintaining yield.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following actions helps in maintaining groundwater quality?",
+            "options": {
+                "A": "Preventing industrial and domestic pollution",
+                "B": "Excess pumping",
+                "C": "Dumping chemicals into wells",
+                "D": "Deforestation near aquifers"
+            },
+            "correct_answer": "A",
+            "explanation": "Protecting aquifers from pollutants maintains safe drinking water and ecosystem balance.",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following best represents sustainable water use in the long term?",
+            "options": {
+                "A": "Balancing extraction with natural recharge and conservation",
+                "B": "Over-extracting aquifers for short-term use",
+                "C": "Ignoring pollution control",
+                "D": "Building dams without planning"
+            },
+            "correct_answer": "A",
+            "explanation": "Sustainable use ensures water availability for both present and future generations.",
+            "source_section": "Section 5.3"
+        }
+    ]
+}

@@ -1,0 +1,167 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Arithmetic Progressions",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply the concept of arithmetic progression in problem solving",
+        "Find the nth term of an AP using the formula",
+        "Determine missing terms in an AP",
+        "Classify APs as increasing, decreasing, or constant",
+        "Solve moderate application-based problems involving APs"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Concept Revision and Strengthening",
+            "topics_covered": [
+                "Definition of arithmetic progression",
+                "Common difference",
+                "Revision of sequences"
+            ],
+            "teaching_strategy": [
+                "Revision discussion",
+                "Pattern-based examples"
+            ],
+            "student_activities": [
+                "Identify APs from given sequences",
+                "Find common difference"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "nth Term of an AP",
+            "topics_covered": [
+                "Formula aₙ = a + (n−1)d",
+                "Substitution of values"
+            ],
+            "teaching_strategy": [
+                "Formula explanation",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Find nth term for given APs",
+                "Practice similar problems"
+            ],
+            "assessment": [
+                "Classwork evaluation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Finding Missing Terms",
+            "topics_covered": [
+                "Using nth term formula",
+                "Understanding position of terms"
+            ],
+            "teaching_strategy": [
+                "Step-by-step solving",
+                "Guided reasoning"
+            ],
+            "student_activities": [
+                "Find missing terms in an AP",
+                "Explain steps"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Types of Arithmetic Progressions",
+            "topics_covered": [
+                "Increasing AP",
+                "Decreasing AP",
+                "Constant AP"
+            ],
+            "teaching_strategy": [
+                "Comparison table",
+                "Illustrative examples"
+            ],
+            "student_activities": [
+                "Classify APs",
+                "Justify classification"
+            ],
+            "assessment": [
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Application-Based Problems",
+            "topics_covered": [
+                "Word problems",
+                "Daily-life examples"
+            ],
+            "teaching_strategy": [
+                "Problem-solving approach",
+                "Think–solve–explain method"
+            ],
+            "student_activities": [
+                "Solve application problems",
+                "Discuss solutions"
+            ],
+            "assessment": [
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Graphical Representation of AP",
+            "topics_covered": [
+                "Plotting AP terms",
+                "Linear nature of AP graph"
+            ],
+            "teaching_strategy": [
+                "Graph plotting demonstration",
+                "Visual explanation"
+            ],
+            "student_activities": [
+                "Plot AP on graph paper",
+                "Observe pattern"
+            ],
+            "assessment": [
+                "Graph-based questions"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Revision and Assessment",
+            "topics_covered": [
+                "Formulas",
+                "Types of AP",
+                "Applications"
+            ],
+            "teaching_strategy": [
+                "Quick recap",
+                "Mixed problem practice"
+            ],
+            "student_activities": [
+                "Revision worksheet",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Short test (15 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "NCERT Mathematics Textbook",
+        "Number charts",
+        "Graph paper"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Written tests",
+        "Worksheet evaluation"
+    ],
+    "teacher_tip": "Emphasize understanding of the formula for nth term to help students handle application problems confidently."
+}

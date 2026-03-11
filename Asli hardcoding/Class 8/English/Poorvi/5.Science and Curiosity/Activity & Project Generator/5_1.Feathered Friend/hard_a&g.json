@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Feathered Friend",
+  "difficulty": "Hard",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Scientific Reasoning Discussion",
+      "objective": "Analyze the relationship between scientific observation and survival in space",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the part of the story where Claribel collapses",
+        "Discuss how the crew realised something was wrong with the air",
+        "Explain the scientific principle behind using canaries to detect dangerous gases",
+        "Write a short explanation connecting the story with real-life mining practices"
+      ],
+      "learning_outcome": "Students understand how animals can act as early warning systems in scientific contexts",
+      "evaluation": "Logical explanation and connection with real-life examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Critical Character Analysis",
+      "objective": "Evaluate the character traits and motivations of Sven",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify actions taken by Sven in the story",
+        "Analyze whether Sven’s decision to bring Claribel was responsible or risky",
+        "Provide textual evidence to support your opinion",
+        "Write a short paragraph evaluating Sven’s character"
+      ],
+      "learning_outcome": "Students develop critical thinking and character analysis skills",
+      "evaluation": "Quality of arguments and textual references (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Cause and Effect Mapping",
+      "objective": "Understand the chain of events leading to the discovery of the air problem",
+      "materials": ["Chart paper", "Markers", "Textbook"],
+      "steps": [
+        "Identify the key events in the story",
+        "Create a cause-and-effect diagram showing how each event leads to the next",
+        "Highlight how Claribel’s behavior helped the crew",
+        "Present the diagram to the class"
+      ],
+      "learning_outcome": "Students learn to analyse narrative structure and logical sequences",
+      "evaluation": "Accuracy and clarity of cause–effect relationships (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Science Fiction Exploration",
+      "objective": "Examine how science fiction combines imagination with scientific ideas",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Identify elements of science fiction in the story",
+        "Explain how the writer uses realistic scientific ideas in the narrative",
+        "Compare the story with real-life space missions",
+        "Write a short analysis on how science fiction helps people imagine future technologies"
+      ],
+      "learning_outcome": "Students understand the role of imagination in scientific storytelling",
+      "evaluation": "Depth of analysis and clarity of explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Problem-Solving Simulation",
+      "objective": "Develop decision-making and problem-solving skills",
+      "materials": ["Scenario cards", "Notebook"],
+      "steps": [
+        "Imagine you are a member of the space station crew",
+        "Identify possible actions after noticing Claribel’s unusual behavior",
+        "Discuss different solutions with your group",
+        "Present the best solution and justify your decision"
+      ],
+      "learning_outcome": "Students learn collaborative problem-solving and logical reasoning",
+      "evaluation": "Effectiveness of solution and reasoning (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Inference-Based Question Activity",
+      "objective": "Develop advanced reading comprehension skills",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the extract about the alarm failure carefully",
+        "Identify clues that explain why the air purifier malfunctioned",
+        "Infer the consequences if Claribel had not been present",
+        "Write your conclusions with supporting evidence"
+      ],
+      "learning_outcome": "Students improve inference and evidence-based reasoning",
+      "evaluation": "Accuracy of interpretation and use of evidence (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Comparative Study – Animals as Safety Indicators",
+      "objective": "Explore real-world applications of animal behavior in safety systems",
+      "materials": ["Internet resources", "Notebook"],
+      "steps": [
+        "Research examples of animals used to detect environmental dangers",
+        "Compare them with the canary in the story",
+        "Prepare a short report explaining similarities and differences",
+        "Present your findings in class"
+      ],
+      "learning_outcome": "Students understand interdisciplinary links between literature and science",
+      "evaluation": "Quality of research and presentation (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Advanced Vocabulary Application",
+      "objective": "Understand and apply advanced vocabulary from the story",
+      "materials": ["Textbook", "Dictionary"],
+      "steps": [
+        "Identify difficult words from the story",
+        "Write their meanings using a dictionary",
+        "Create sentences that demonstrate their usage",
+        "Share your sentences with the class"
+      ],
+      "learning_outcome": "Students enhance vocabulary and contextual understanding",
+      "evaluation": "Accuracy and creativity in sentence construction (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Future Technology Debate",
+      "objective": "Encourage critical thinking about technological safety systems",
+      "materials": ["Notebook", "Debate topics"],
+      "steps": [
+        "Divide the class into two groups",
+        "Debate whether animals should be used in scientific experiments",
+        "Use examples from the story and real-life situations",
+        "Summarize the main arguments presented"
+      ],
+      "learning_outcome": "Students develop argumentation and ethical reasoning skills",
+      "evaluation": "Strength of arguments and participation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Science Fiction Writing",
+      "objective": "Encourage imaginative thinking and creative writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine a future space mission with an unusual companion animal",
+        "Describe how the animal helps astronauts solve a problem",
+        "Write a short science fiction story",
+        "Share your story with the class"
+      ],
+      "learning_outcome": "Students develop creativity and narrative writing skills",
+      "evaluation": "Creativity, structure, and clarity of the story (10 marks)"
+    }
+  ]
+}

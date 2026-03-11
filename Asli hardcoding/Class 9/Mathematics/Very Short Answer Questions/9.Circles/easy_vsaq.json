@@ -1,0 +1,247 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 9: Circles",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-06T00:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a circle?",
+            "answer": "A circle is the set of all points in a plane at a fixed distance from a fixed point called the center.",
+            "key_points": [
+                "definition",
+                "center",
+                "radius"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the radius of a circle?",
+            "answer": "The distance from the center to any point on the circle is called the radius.",
+            "key_points": [
+                "radius"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the diameter of a circle?",
+            "answer": "The diameter is twice the radius, a line segment passing through the center and touching two points on the circle.",
+            "key_points": [
+                "diameter",
+                "relation with radius"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is a chord of a circle?",
+            "answer": "A chord is a line segment joining any two points on the circle.",
+            "key_points": [
+                "chord"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is a secant of a circle?",
+            "answer": "A secant is a line that intersects a circle at two points.",
+            "key_points": [
+                "secant"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is a tangent of a circle?",
+            "answer": "A tangent is a line which touches the circle at exactly one point.",
+            "key_points": [
+                "tangent"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the center of a circle?",
+            "answer": "The center is the fixed point from which all points on the circle are at equal distance.",
+            "key_points": [
+                "center",
+                "definition"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Define a major arc and a minor arc.",
+            "answer": "A minor arc is smaller than a semicircle, a major arc is larger than a semicircle.",
+            "key_points": [
+                "arc",
+                "major and minor"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is a semicircle?",
+            "answer": "A semicircle is half of a circle formed by a diameter.",
+            "key_points": [
+                "semicircle",
+                "diameter"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is a segment of a circle?",
+            "answer": "A segment is the region of a circle bounded by a chord and the corresponding arc.",
+            "key_points": [
+                "segment",
+                "chord and arc"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is a sector of a circle?",
+            "answer": "A sector is the region bounded by two radii and the corresponding arc.",
+            "key_points": [
+                "sector",
+                "radii and arc"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the circumference of a circle?",
+            "answer": "The circumference is the distance around the circle, given by 2πr.",
+            "key_points": [
+                "circumference",
+                "formula"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the area of a circle?",
+            "answer": "Area = πr², where r is the radius.",
+            "key_points": [
+                "area",
+                "formula"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a concentric circle?",
+            "answer": "Two or more circles having the same center are called concentric circles.",
+            "key_points": [
+                "concentric circles"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the relationship between radius and diameter?",
+            "answer": "Diameter = 2 × Radius",
+            "key_points": [
+                "radius",
+                "diameter"
+            ],
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 16,
+            "question": "A tangent is perpendicular to which line at the point of contact?",
+            "answer": "The radius at the point of contact.",
+            "key_points": [
+                "tangent property",
+                "radius"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 17,
+            "question": "How many tangents can be drawn from a point outside the circle?",
+            "answer": "Two tangents.",
+            "key_points": [
+                "tangent from external point"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Can a tangent intersect a circle at more than one point?",
+            "answer": "No, a tangent touches the circle at exactly one point.",
+            "key_points": [
+                "tangent definition"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the angle subtended by a semicircle at the center?",
+            "answer": "180°",
+            "key_points": [
+                "angle at center",
+                "semicircle"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the angle subtended by a semicircle on the circumference?",
+            "answer": "90°",
+            "key_points": [
+                "angle in semicircle"
+            ],
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the perimeter of a semicircle with radius r?",
+            "answer": "Perimeter = πr + 2r",
+            "key_points": [
+                "semicircle perimeter"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 22,
+            "question": "If the radius of a circle is 7 cm, find its circumference.",
+            "answer": "Circumference = 2 × π × 7 = 14π cm",
+            "key_points": [
+                "circumference calculation"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 23,
+            "question": "If the radius of a circle is 5 cm, find its area.",
+            "answer": "Area = π × 5² = 25π cm²",
+            "key_points": [
+                "area calculation"
+            ],
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Define a tangent and secant with a figure if possible.",
+            "answer": "A tangent touches the circle at one point, a secant intersects at two points.",
+            "key_points": [
+                "tangent and secant"
+            ],
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Two circles have the same center. What are they called?",
+            "answer": "Concentric circles",
+            "key_points": [
+                "concentric circles"
+            ],
+            "source_section": "Section 9.1"
+        }
+    ]
+}

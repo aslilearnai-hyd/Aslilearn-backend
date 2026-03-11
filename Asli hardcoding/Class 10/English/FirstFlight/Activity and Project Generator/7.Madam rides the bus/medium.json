@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Madam Rides the Bus",
+  "difficulty": "Medium",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Analysis – Madam’s Growth",
+      "objective": "Analyze how Madam changes during the story.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List Madam’s qualities at the beginning of the story",
+        "List qualities displayed during the bus ride",
+        "Write a short paragraph explaining how her experiences shaped her"
+      ],
+      "learning_outcome": "Students will understand character development and its impact on actions.",
+      "evaluation": "Depth of analysis, textual support, and clarity"
+    },
+    {
+      "sl_no": 2,
+      "title": "Theme Exploration Chart",
+      "objective": "Identify and explain major themes such as independence and courage.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "Identify 2–3 themes from the story",
+        "Provide examples from the text supporting each theme",
+        "Create a chart showing themes and corresponding examples"
+      ],
+      "learning_outcome": "Students will connect textual events to themes effectively.",
+      "evaluation": "Correct theme identification, textual evidence, and visual clarity"
+    },
+    {
+      "sl_no": 3,
+      "title": "Dialogue Writing Exercise",
+      "objective": "Understand character interactions and expression.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Select a key conversation in the story (e.g., Madam and the conductor)",
+        "Rewrite the dialogue with additional details and emotions",
+        "Present your dialogue in class"
+      ],
+      "learning_outcome": "Students will improve creative writing and understanding of character voices.",
+      "evaluation": "Creativity, emotional expression, and relevance to the story"
+    },
+    {
+      "sl_no": 4,
+      "title": "Comparative Study – Madam vs Real-life Experiences",
+      "objective": "Relate literary experience to real-life courage and independence.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Describe a personal or known experience similar to Madam’s first bus ride",
+        "Compare feelings, challenges, and learning outcomes",
+        "Write a short comparison paragraph"
+      ],
+      "learning_outcome": "Students will relate literature to personal experiences and develop reflective skills.",
+      "evaluation": "Clarity, relevance, and analytical depth"
+    },
+    {
+      "sl_no": 5,
+      "title": "Event Sequencing and Cause-Effect",
+      "objective": "Analyze how Madam’s decisions lead to consequences.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List 5 major events during Madam’s bus ride",
+        "Explain the cause and effect of each event",
+        "Share findings in class discussion"
+      ],
+      "learning_outcome": "Students will develop analytical thinking and comprehension skills.",
+      "evaluation": "Accuracy of cause-effect relationships and logical sequencing"
+    },
+    {
+      "sl_no": 6,
+      "title": "Creative Letter to Madam",
+      "objective": "Express empathy and imagination through letter writing.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are a friend of Madam",
+        "Write a letter praising her courage and giving advice for future adventures",
+        "Include reflections on her bus ride experience"
+      ],
+      "learning_outcome": "Students will practice creative and empathetic writing.",
+      "evaluation": "Creativity, emotional tone, and connection to story"
+    },
+    {
+      "sl_no": 7,
+      "title": "Perspective Writing – Conductor or Passenger",
+      "objective": "Explore different viewpoints in the story.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a secondary character (conductor or passenger)",
+        "Write a short passage describing Madam’s bus ride from that character’s perspective",
+        "Highlight observations and feelings"
+      ],
+      "learning_outcome": "Students will develop perspective-taking and narrative writing skills.",
+      "evaluation": "Accuracy, creativity, and character understanding"
+    },
+    {
+      "sl_no": 8,
+      "title": "Theme-Based Poster",
+      "objective": "Visualize independence and courage through art.",
+      "materials": ["Chart paper", "Colors or markers", "Notebook"],
+      "steps": [
+        "Select one major theme (e.g., independence, courage)",
+        "Design a poster illustrating the theme with symbols or scenes from the story",
+        "Present your poster to the class"
+      ],
+      "learning_outcome": "Students will connect themes to visual representation creatively.",
+      "evaluation": "Creativity, relevance, and clarity of depiction"
+    },
+    {
+      "sl_no": 9,
+      "title": "Vocabulary Enhancement Activity",
+      "objective": "Learn and use new words from the chapter in context.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Choose 10 new words from the story",
+        "Write meanings and synonyms",
+        "Use them in a short paragraph describing Madam’s bus ride"
+      ],
+      "learning_outcome": "Students will improve vocabulary usage in meaningful context.",
+      "evaluation": "Correct usage, spelling, and sentence formation"
+    },
+    {
+      "sl_no": 10,
+      "title": "Reflective Essay – Lessons from Madam",
+      "objective": "Internalize story lessons and apply personally.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify two lessons from Madam’s bus ride",
+        "Write a short essay on how these lessons can guide personal behavior",
+        "Include real-life examples if possible"
+      ],
+      "learning_outcome": "Students will connect literature with personal growth and reflection.",
+      "evaluation": "Reflection depth, clarity, and personal connection"
+    }
+  ]
+}

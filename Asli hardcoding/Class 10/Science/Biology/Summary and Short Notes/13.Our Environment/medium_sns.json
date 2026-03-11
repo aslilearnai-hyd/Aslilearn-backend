@@ -1,0 +1,38 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Our Environment",
+    "difficulty": "Medium",
+    "source_book": "NCERT Science Textbook",
+    "short_notes": {
+        "key_points": [
+            "An ecosystem consists of living organisms interacting with their physical environment",
+            "Biotic components include plants, animals and microorganisms",
+            "Abiotic components include air, water, soil, sunlight and temperature",
+            "Green plants are producers as they prepare food using photosynthesis",
+            "Consumers depend on other organisms for food",
+            "Decomposers break down dead organisms and recycle nutrients back to the soil",
+            "Food chains and food webs show feeding relationships in ecosystems"
+        ],
+        "examples": [
+            "Food chain example: Grass → Deer → Tiger",
+            "Plants are producers in most ecosystems",
+            "Herbivores such as cows and deer are primary consumers",
+            "Carnivores such as lions and tigers are secondary or tertiary consumers",
+            "Bacteria and fungi act as decomposers in ecosystems"
+        ],
+        "formulas": [
+            "Food chain → A sequence of organisms where each organism feeds on the previous one",
+            "Food web → A network of interconnected food chains",
+            "Trophic level → Each step in a food chain",
+            "Biological magnification → Increase in concentration of harmful chemicals along the food chain"
+        ],
+        "exam_tips": [
+            "Understand the structure of ecosystems and their components",
+            "Learn the roles of producers, consumers and decomposers",
+            "Practice drawing food chains and food webs",
+            "Remember the concept of trophic levels",
+            "Understand the concept of biological magnification"
+        ]
+    }
+}

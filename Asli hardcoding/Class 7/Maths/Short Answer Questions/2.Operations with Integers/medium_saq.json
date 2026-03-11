@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Operations with Integers",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T01:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the product of (-18) × (-10) × 9.",
+            "answer": "1620",
+            "key_concepts": ["multiplication of integers"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Verify: a + (b + c) = (a + b) + c for a = -5, b = -3, c = 2.",
+            "answer": "LHS: -5 + (-3 + 2) = -6; RHS: (-5 + -3) + 2 = -6. Both are equal.",
+            "key_concepts": ["associative property"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A plane is flying at 5000 m above sea level. At a particular point, it is directly above a submarine floating 1200 m below sea level. What is the vertical distance between them?",
+            "answer": "5000 - (-1200) = 6200 m.",
+            "key_concepts": ["subtraction of integers", "application"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Solve using distributive property: 26 × (-48) + (-48) × (-36).",
+            "answer": "-48 × [26 + (-36)] = -48 × (-10) = 480.",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Evaluate: [(-36) ÷ 12] ÷ 3.",
+            "answer": "(-3) ÷ 3 = -1.",
+            "key_concepts": ["division of integers"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the result when the sum of -1050 and 813 is subtracted from -23?",
+            "answer": "-1050 + 813 = -237. Then, -23 - (-237) = 214.",
+            "key_concepts": ["addition and subtraction"],
+            "marks": 3,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Find the value of: (-1) × (-2) × (-3) × (-4) × (-5).",
+            "answer": "-120 (Odd number of negative signs).",
+            "key_concepts": ["multiplication signs"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 8,
+            "question": "In a test, (+5) marks are given for every correct answer and (-2) marks are given for every incorrect answer. Radhika answered all questions and scored 30 marks though she got 10 correct answers. How many incorrect answers had she attempted?",
+            "answer": "Marks from correct: 10 * 5 = 50. Incorrect marks: 30 - 50 = -20. Incorrect answers: -20 / -2 = 10.",
+            "key_concepts": ["integer application"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Solve: 13 ÷ [(-2) + 1].",
+            "answer": "13 ÷ (-1) = -13.",
+            "key_concepts": ["BODMAS with integers"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Is division of integers commutative? Give an example.",
+            "answer": "No. For example, (-8) ÷ (-4) = 2, but (-4) ÷ (-8) = 0.5.",
+            "key_concepts": ["commutative property"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the product using suitable properties: (-17) × (-29).",
+            "answer": "-17 × [(-30) + 1] = 510 - 17 = 493.",
+            "key_concepts": ["distributive property"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Write a pair of integers whose sum is -7.",
+            "answer": "Example: -10 and 3.",
+            "key_concepts": ["integer pairs"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Starting from (-5) × 4, find (-5) × (-3) using a pattern.",
+            "answer": "-20, -15, -10, -5, 0, 5, 10, 15.",
+            "key_concepts": ["multiplication patterns"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find: (-31) ÷ [(-30) + (-1)].",
+            "answer": "(-31) ÷ (-31) = 1.",
+            "key_concepts": ["division"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "The temperature at 12 noon was 10°C above zero. If it decreases at 2°C per hour until midnight, at what time would the temperature be 8°C below zero?",
+            "answer": "Total change = 10 - (-8) = 18. Time taken = 18 / 2 = 9 hours. Time: 9 PM.",
+            "key_concepts": ["rate of change"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Verify: 18 × [7 + (-3)] = [18 × 7] + [18 × (-3)].",
+            "answer": "LHS: 18 × 4 = 72; RHS: 126 + (-54) = 72. Verified.",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Solve: (-100) ÷ 5.",
+            "answer": "-20",
+            "key_concepts": ["division"],
+            "marks": 1,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which integer multiplied by -1 gives 47?",
+            "answer": "-47",
+            "key_concepts": ["multiplicative identity"],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Simplify: [(-6) + 5] ÷ [(-2) + 1].",
+            "answer": "(-1) ÷ (-1) = 1.",
+            "key_concepts": ["simplification"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Determine the integer whose product with (-1) is 0.",
+            "answer": "0",
+            "key_concepts": ["multiplication by zero"],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the value of (-3) × (-6) × (-2) × (-1)?",
+            "answer": "36",
+            "key_concepts": ["multiplication of four integers"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the value of (-20) × (-2) × (-5) × 7.",
+            "answer": "-1400",
+            "key_concepts": ["multiplication"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Solve: (-41) + [(-41) × 99].",
+            "answer": "-41 × (1 + 99) = -41 × 100 = -4100.",
+            "key_concepts": ["distributive property"],
+            "marks": 3,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "An elevator descends into a mine shaft at 6 m/min. If it starts from 10 m above ground, how long will it take to reach -350 m?",
+            "answer": "Total distance = 10 - (-350) = 360 m. Time = 360 / 6 = 60 min (1 hour).",
+            "key_concepts": ["integer application"],
+            "marks": 3,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Is (-10) + 3 = 3 + (-10)? Name the property.",
+            "answer": "Yes, -7 = -7. Commutative property of addition.",
+            "key_concepts": ["commutative property"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        }
+    ]
+}

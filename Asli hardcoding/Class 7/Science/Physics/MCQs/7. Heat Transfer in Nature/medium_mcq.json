@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Heat Transfer in Nature",
+    "generated_at": "2026-03-05T19:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which process explains how heat travels along a metal rod when one end is heated?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Evaporation"
+            },
+            "correct_answer": "A",
+            "explanation": "Heat moves through the metal by particle vibration and direct contact, which is conduction.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why are sea breezes stronger during hot afternoons?",
+            "options": {
+                "A": "Land cools faster than sea",
+                "B": "Land heats faster than sea creating pressure difference",
+                "C": "Sea water evaporates quickly",
+                "D": "Clouds block sunlight"
+            },
+            "correct_answer": "B",
+            "explanation": "During the afternoon, land becomes much hotter than the sea, causing warm air over land to rise and cooler air from the sea to move inland.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Which material would be most suitable for the handle of a cooking pot?",
+            "options": {
+                "A": "Copper",
+                "B": "Iron",
+                "C": "Wood",
+                "D": "Aluminium"
+            },
+            "correct_answer": "C",
+            "explanation": "Wood is a poor conductor of heat, so it prevents heat from reaching the hands.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why do dark colored clothes feel warmer in sunlight?",
+            "options": {
+                "A": "They reflect heat",
+                "B": "They absorb more radiation",
+                "C": "They produce heat",
+                "D": "They block convection"
+            },
+            "correct_answer": "B",
+            "explanation": "Dark colors absorb more heat radiation compared to light colors.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 5,
+            "question": "In convection currents formed in water, what happens to the heated water?",
+            "options": {
+                "A": "It sinks",
+                "B": "It rises",
+                "C": "It remains still",
+                "D": "It freezes"
+            },
+            "correct_answer": "B",
+            "explanation": "Heated water becomes less dense and rises, forming convection currents.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which factor mainly determines the direction of sea breeze and land breeze?",
+            "options": {
+                "A": "Rotation of Earth",
+                "B": "Difference in heating of land and sea",
+                "C": "Ocean currents",
+                "D": "Gravity"
+            },
+            "correct_answer": "B",
+            "explanation": "Unequal heating of land and sea creates convection currents in the atmosphere.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Which example represents heat transfer by radiation?",
+            "options": {
+                "A": "Iron rod getting hot in fire",
+                "B": "Hot soup circulating in bowl",
+                "C": "Sun warming the Earth",
+                "D": "Water boiling in pot"
+            },
+            "correct_answer": "C",
+            "explanation": "Heat from the Sun travels through space without a medium by radiation.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are shiny surfaces used in thermos flasks?",
+            "options": {
+                "A": "They absorb heat",
+                "B": "They reflect heat radiation",
+                "C": "They increase convection",
+                "D": "They create conduction"
+            },
+            "correct_answer": "B",
+            "explanation": "Shiny surfaces reflect heat radiation, reducing heat loss.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Which statement about convection is correct?",
+            "options": {
+                "A": "It occurs only in solids",
+                "B": "It requires movement of particles",
+                "C": "It occurs without a medium",
+                "D": "It occurs only in vacuum"
+            },
+            "correct_answer": "B",
+            "explanation": "Convection occurs when heated particles move within liquids or gases.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why do coastal areas experience moderate temperatures?",
+            "options": {
+                "A": "Mountains block winds",
+                "B": "Land and sea breezes regulate temperature",
+                "C": "Oceans absorb sunlight completely",
+                "D": "There is no convection"
+            },
+            "correct_answer": "B",
+            "explanation": "Sea breeze and land breeze help balance temperature differences near coasts.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Which process transfers heat through electromagnetic waves?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Evaporation"
+            },
+            "correct_answer": "C",
+            "explanation": "Radiation transfers heat through electromagnetic waves.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Why do metal spoons feel colder than wooden spoons at the same temperature?",
+            "options": {
+                "A": "Metal produces cold",
+                "B": "Metal conducts heat away from the hand faster",
+                "C": "Wood absorbs heat faster",
+                "D": "Wood reflects heat"
+            },
+            "correct_answer": "B",
+            "explanation": "Metal conducts heat quickly from the hand, making it feel colder.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which situation best demonstrates convection in air?",
+            "options": {
+                "A": "Heating a metal rod",
+                "B": "Warm air rising above a heater",
+                "C": "Sunlight warming Earth",
+                "D": "Iron pan on stove"
+            },
+            "correct_answer": "B",
+            "explanation": "Warm air rises and cooler air moves in to replace it, forming convection currents.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Which material would transfer heat the fastest?",
+            "options": {
+                "A": "Rubber",
+                "B": "Copper",
+                "C": "Plastic",
+                "D": "Wood"
+            },
+            "correct_answer": "B",
+            "explanation": "Copper is a very good conductor of heat.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Why does smoke rise above a flame?",
+            "options": {
+                "A": "Radiation",
+                "B": "Conduction",
+                "C": "Convection",
+                "D": "Reflection"
+            },
+            "correct_answer": "C",
+            "explanation": "Hot air carrying smoke rises due to convection currents.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why are light colored clothes preferred in summer?",
+            "options": {
+                "A": "They absorb heat",
+                "B": "They reflect most heat radiation",
+                "C": "They increase convection",
+                "D": "They produce cooling"
+            },
+            "correct_answer": "B",
+            "explanation": "Light colors reflect more radiation and absorb less heat.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Which heat transfer method occurs in a vacuum?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Evaporation"
+            },
+            "correct_answer": "C",
+            "explanation": "Radiation does not require any material medium.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 18,
+            "question": "In which situation does conduction mainly occur?",
+            "options": {
+                "A": "Sun heating Earth",
+                "B": "Hot air rising",
+                "C": "Heat passing through a metal rod",
+                "D": "Wind blowing"
+            },
+            "correct_answer": "C",
+            "explanation": "Conduction occurs through direct contact between particles.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does hot air rise in the atmosphere?",
+            "options": {
+                "A": "It becomes denser",
+                "B": "It becomes lighter",
+                "C": "It absorbs light",
+                "D": "It becomes solid"
+            },
+            "correct_answer": "B",
+            "explanation": "Hot air expands and becomes less dense, causing it to rise.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which example shows radiation clearly?",
+            "options": {
+                "A": "Iron rod heating",
+                "B": "Steam rising",
+                "C": "Feeling warmth from a fire",
+                "D": "Boiling water"
+            },
+            "correct_answer": "C",
+            "explanation": "Heat from fire reaches the body through radiation.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which breeze blows from sea to land during daytime?",
+            "options": {
+                "A": "Land breeze",
+                "B": "Sea breeze",
+                "C": "Mountain breeze",
+                "D": "Storm wind"
+            },
+            "correct_answer": "B",
+            "explanation": "Sea breeze forms during daytime when cooler air from sea moves toward land.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Which of the following is a poor conductor?",
+            "options": {
+                "A": "Aluminium",
+                "B": "Copper",
+                "C": "Steel",
+                "D": "Rubber"
+            },
+            "correct_answer": "D",
+            "explanation": "Rubber is an insulator and does not conduct heat well.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which process mainly heats the upper atmosphere from Earth's surface?",
+            "options": {
+                "A": "Conduction",
+                "B": "Convection",
+                "C": "Radiation",
+                "D": "Evaporation"
+            },
+            "correct_answer": "B",
+            "explanation": "Warm air rising from the surface transfers heat upward by convection.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which statement is true about conductors?",
+            "options": {
+                "A": "They block heat completely",
+                "B": "They allow heat to pass easily",
+                "C": "They absorb radiation only",
+                "D": "They produce heat"
+            },
+            "correct_answer": "B",
+            "explanation": "Conductors allow heat to transfer quickly.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does land cool faster than sea at night?",
+            "options": {
+                "A": "Land absorbs more heat",
+                "B": "Water retains heat longer",
+                "C": "Sea reflects heat",
+                "D": "Land blocks radiation"
+            },
+            "correct_answer": "B",
+            "explanation": "Water has a higher heat capacity, so it cools more slowly than land.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        }
+    ]
+}

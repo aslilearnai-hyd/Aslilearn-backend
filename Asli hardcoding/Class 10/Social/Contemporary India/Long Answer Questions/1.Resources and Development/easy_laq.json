@@ -1,0 +1,314 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: Resources and Development",
+  "generated_at": "2026-03-11T13:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Define the term resource and explain its characteristics.",
+      "answer": "A resource is anything available in the environment that can be used to satisfy human needs, provided it is technologically accessible, economically feasible, and culturally acceptable.",
+      "answer_outline": [
+        "Definition of resource",
+        "Technological accessibility",
+        "Economic feasibility",
+        "Cultural acceptability"
+      ],
+      "key_concepts": ["resource"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the relationship between nature, technology, and institutions in resource creation.",
+      "answer": "Resources are created through the interaction of nature, technology, and institutions. Humans use technology to transform natural materials into useful resources.",
+      "answer_outline": [
+        "Nature provides raw materials",
+        "Technology transforms materials",
+        "Institutions organize and regulate usage"
+      ],
+      "key_concepts": ["resource creation"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the different ways resources can be classified.",
+      "answer": "Resources can be classified based on origin, exhaustibility, ownership, and status of development.",
+      "answer_outline": [
+        "Origin classification",
+        "Exhaustibility classification",
+        "Ownership classification",
+        "Status of development classification"
+      ],
+      "key_concepts": ["classification of resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Differentiate between biotic and abiotic resources with examples.",
+      "answer": "Biotic resources come from living organisms such as plants and animals, while abiotic resources come from non-living elements like minerals and water.",
+      "answer_outline": [
+        "Definition of biotic resources",
+        "Definition of abiotic resources",
+        "Examples"
+      ],
+      "key_concepts": ["biotic resources", "abiotic resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain renewable and non-renewable resources with examples.",
+      "answer": "Renewable resources can be replenished naturally, while non-renewable resources take millions of years to form and cannot be easily replaced.",
+      "answer_outline": [
+        "Definition of renewable resources",
+        "Definition of non-renewable resources",
+        "Examples"
+      ],
+      "key_concepts": ["renewable resources", "non-renewable resources"],
+      "marks": 5,
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the concept of sustainable development.",
+      "answer": "Sustainable development refers to development that meets present needs without compromising the ability of future generations to meet their needs.",
+      "answer_outline": [
+        "Definition",
+        "Need for conservation",
+        "Long-term environmental protection"
+      ],
+      "key_concepts": ["sustainable development"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the objectives of Agenda 21.",
+      "answer": "Agenda 21 aims to promote sustainable development by addressing environmental issues, poverty, and resource management through global cooperation.",
+      "answer_outline": [
+        "Global cooperation",
+        "Environmental protection",
+        "Sustainable development goals"
+      ],
+      "key_concepts": ["Agenda 21"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain why resource planning is important for a country like India.",
+      "answer": "Resource planning ensures proper use of resources, balanced regional development, and sustainable economic growth.",
+      "answer_outline": [
+        "Uneven resource distribution",
+        "Need for balanced development",
+        "Efficient resource utilization"
+      ],
+      "key_concepts": ["resource planning"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the steps involved in resource planning.",
+      "answer": "Resource planning involves identifying resources, developing planning structures with technology and institutions, and implementing development plans.",
+      "answer_outline": [
+        "Identification and inventory of resources",
+        "Planning structure development",
+        "Implementation of plans"
+      ],
+      "key_concepts": ["resource planning steps"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain why some regions are resource-rich but economically backward.",
+      "answer": "Regions may remain economically backward due to lack of technology, infrastructure, skilled manpower, or proper planning.",
+      "answer_outline": [
+        "Resource availability",
+        "Lack of development infrastructure",
+        "Need for technology and planning"
+      ],
+      "key_concepts": ["regional disparities"],
+      "marks": 5,
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain why land is considered an important natural resource.",
+      "answer": "Land supports agriculture, settlements, transportation, and economic activities, making it essential for human survival.",
+      "answer_outline": [
+        "Supports vegetation and wildlife",
+        "Supports economic activities",
+        "Essential for human life"
+      ],
+      "key_concepts": ["land resources"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe the different categories of land use.",
+      "answer": "Land is used for forests, agriculture, grazing, settlements, industries, and other purposes.",
+      "answer_outline": [
+        "Forests",
+        "Agricultural land",
+        "Barren land",
+        "Land for settlements"
+      ],
+      "key_concepts": ["land use"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the factors that influence land use patterns.",
+      "answer": "Land use is influenced by physical factors such as climate, soil, and relief, and human factors such as population density and technology.",
+      "answer_outline": ["Physical factors", "Human factors"],
+      "key_concepts": ["land use pattern"],
+      "marks": 5,
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the major causes of land degradation.",
+      "answer": "Major causes include deforestation, overgrazing, mining, and improper irrigation practices.",
+      "answer_outline": [
+        "Deforestation",
+        "Overgrazing",
+        "Mining",
+        "Industrial pollution"
+      ],
+      "key_concepts": ["land degradation"],
+      "marks": 5,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the methods used to control land degradation.",
+      "answer": "Land degradation can be controlled through afforestation, controlled grazing, proper waste management, and regulating mining activities.",
+      "answer_outline": [
+        "Afforestation",
+        "Controlled grazing",
+        "Industrial waste management"
+      ],
+      "key_concepts": ["land conservation"],
+      "marks": 5,
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain the process of soil formation.",
+      "answer": "Soil forms over millions of years through weathering of rocks and the action of climate, vegetation, and living organisms.",
+      "answer_outline": [
+        "Weathering process",
+        "Role of climate and vegetation",
+        "Time factor"
+      ],
+      "key_concepts": ["soil formation"],
+      "marks": 5,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 17,
+      "question": "Describe the soil profile and its layers.",
+      "answer": "A soil profile includes layers such as topsoil, subsoil, substratum, and bedrock, each having different properties.",
+      "answer_outline": ["Topsoil", "Subsoil", "Substratum", "Bedrock"],
+      "key_concepts": ["soil profile"],
+      "marks": 5,
+      "source_section": "Section 1.6"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the characteristics of alluvial soil.",
+      "answer": "Alluvial soil is fertile and found in river plains. It contains sand, silt, and clay and is suitable for growing crops like wheat and rice.",
+      "answer_outline": ["Formation", "Location", "Agricultural importance"],
+      "key_concepts": ["alluvial soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the characteristics of black soil.",
+      "answer": "Black soil retains moisture well and is ideal for cotton cultivation. It is rich in nutrients like calcium and magnesium.",
+      "answer_outline": [
+        "Moisture retention",
+        "Mineral content",
+        "Cotton cultivation"
+      ],
+      "key_concepts": ["black soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain the characteristics of red and yellow soils.",
+      "answer": "Red and yellow soils are formed on crystalline rocks and get their color from iron content.",
+      "answer_outline": ["Formation", "Iron content", "Distribution"],
+      "key_concepts": ["red soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the characteristics of laterite soil.",
+      "answer": "Laterite soil develops in tropical areas with heavy rainfall and is suitable for crops like tea and coffee after proper conservation.",
+      "answer_outline": [
+        "Formation through leaching",
+        "Location",
+        "Agricultural use"
+      ],
+      "key_concepts": ["laterite soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the characteristics of arid soil.",
+      "answer": "Arid soils are sandy, saline, and found in desert regions with low rainfall.",
+      "answer_outline": ["Dry climate", "High salt content", "Low humus"],
+      "key_concepts": ["arid soil"],
+      "marks": 5,
+      "source_section": "Section 1.7"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain the causes of soil erosion.",
+      "answer": "Soil erosion is caused by wind, water, deforestation, overgrazing, and improper farming practices.",
+      "answer_outline": ["Wind erosion", "Water erosion", "Human activities"],
+      "key_concepts": ["soil erosion"],
+      "marks": 5,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain different methods of soil conservation.",
+      "answer": "Soil conservation methods include terrace farming, contour ploughing, strip cropping, and shelter belts.",
+      "answer_outline": [
+        "Terrace farming",
+        "Contour ploughing",
+        "Strip cropping",
+        "Shelter belts"
+      ],
+      "key_concepts": ["soil conservation"],
+      "marks": 5,
+      "source_section": "Section 1.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain why conservation of resources is important for sustainable development.",
+      "answer": "Conservation ensures that resources remain available for future generations and helps maintain ecological balance.",
+      "answer_outline": [
+        "Future resource availability",
+        "Environmental protection",
+        "Sustainable growth"
+      ],
+      "key_concepts": ["resource conservation"],
+      "marks": 5,
+      "source_section": "Section 1.2"
+    }
+  ]
+}

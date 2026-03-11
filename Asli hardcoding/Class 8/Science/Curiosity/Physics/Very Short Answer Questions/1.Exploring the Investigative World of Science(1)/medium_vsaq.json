@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Exploring the Investigative World of Science",
+  "generated_at": "2026-03-06T02:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a scientific investigation?",
+      "answer": "A scientific investigation is a systematic process used to study natural events through observation and experiments.",
+      "key_points": ["scientific investigation"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the purpose of observation in science?",
+      "answer": "Observation helps scientists gather information about objects or events.",
+      "key_points": ["observation"],
+      "source_section": "Observation"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a hypothesis in an investigation?",
+      "answer": "A hypothesis is a testable explanation for an observation.",
+      "key_points": ["hypothesis"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 4,
+      "question": "What is meant by collecting data?",
+      "answer": "Collecting data means recording measurements and observations during an experiment.",
+      "key_points": ["data collection"],
+      "source_section": "Data Collection"
+    },
+    {
+      "question_number": 5,
+      "question": "Why is measurement important in experiments?",
+      "answer": "Measurement ensures accuracy and allows scientists to compare results.",
+      "key_points": ["measurement"],
+      "source_section": "Scientific Tools"
+    },
+    {
+      "question_number": 6,
+      "question": "What is meant by a variable in an experiment?",
+      "answer": "A variable is a factor that can change during an experiment.",
+      "key_points": ["variables"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 7,
+      "question": "What is a controlled variable?",
+      "answer": "A controlled variable is a factor kept constant to ensure a fair test.",
+      "key_points": ["controlled variables"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the independent variable?",
+      "answer": "The independent variable is the factor that the scientist changes in an experiment.",
+      "key_points": ["independent variable"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the dependent variable?",
+      "answer": "The dependent variable is the factor that changes as a result of the independent variable.",
+      "key_points": ["dependent variable"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 10,
+      "question": "Why is repeating experiments important?",
+      "answer": "Repeating experiments helps confirm that the results are reliable.",
+      "key_points": ["reliability"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 11,
+      "question": "What is meant by analyzing data?",
+      "answer": "Analyzing data means studying the collected information to find patterns or relationships.",
+      "key_points": ["data analysis"],
+      "source_section": "Data Analysis"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the role of graphs in scientific investigations?",
+      "answer": "Graphs help display data clearly and show patterns in results.",
+      "key_points": ["graphs"],
+      "source_section": "Data Representation"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a fair test?",
+      "answer": "A fair test is an experiment where only one variable is changed while others remain constant.",
+      "key_points": ["fair test"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 14,
+      "question": "Why do scientists use instruments in experiments?",
+      "answer": "Scientists use instruments to make accurate measurements.",
+      "key_points": ["scientific instruments"],
+      "source_section": "Scientific Tools"
+    },
+    {
+      "question_number": 15,
+      "question": "What is a conclusion in an investigation?",
+      "answer": "A conclusion is the explanation of results based on data collected during the experiment.",
+      "key_points": ["conclusion"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 16,
+      "question": "Why is recording observations important?",
+      "answer": "Recording observations helps scientists analyze and verify results.",
+      "key_points": ["observations"],
+      "source_section": "Data Collection"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the role of evidence in science?",
+      "answer": "Evidence supports scientific explanations and conclusions.",
+      "key_points": ["evidence"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 18,
+      "question": "What helps scientists compare results in experiments?",
+      "answer": "Measurements and recorded data help scientists compare results.",
+      "key_points": ["data comparison"],
+      "source_section": "Data Analysis"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the importance of asking questions in science?",
+      "answer": "Asking questions helps scientists identify problems to investigate.",
+      "key_points": ["scientific questions"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 20,
+      "question": "Why are predictions made before experiments?",
+      "answer": "Predictions help guide the experiment and test the hypothesis.",
+      "key_points": ["prediction"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the purpose of scientific models?",
+      "answer": "Scientific models help explain complex processes or systems.",
+      "key_points": ["models"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 22,
+      "question": "How do scientists communicate their findings?",
+      "answer": "Scientists communicate findings through reports, graphs, and presentations.",
+      "key_points": ["communication"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 23,
+      "question": "Why is accuracy important in scientific investigations?",
+      "answer": "Accuracy ensures that the results are reliable and correct.",
+      "key_points": ["accuracy"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 24,
+      "question": "What helps scientists test their ideas?",
+      "answer": "Experiments help scientists test their ideas and hypotheses.",
+      "key_points": ["experiments"],
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 25,
+      "question": "Why is the scientific method important?",
+      "answer": "The scientific method provides a structured way to investigate and understand natural phenomena.",
+      "key_points": ["scientific method"],
+      "source_section": "Scientific Investigation"
+    }
+  ]
+}

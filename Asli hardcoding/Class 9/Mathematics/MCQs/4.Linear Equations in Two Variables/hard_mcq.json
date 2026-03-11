@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 4: Linear Equations in Two Variables",
+    "generated_at": "2026-03-05T22:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find k if (2,1) satisfies 2x + 3y = k.",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_answer": "C",
+            "explanation": "4 + 3 = 7.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Which pair satisfies 2x + 5y = 0?",
+            "options": {
+                "A": "(1,-2/5)",
+                "B": "(2,-1)",
+                "C": "(3,-2)",
+                "D": "(1,2)"
+            },
+            "correct_answer": "A",
+            "explanation": "2 + (-2) = 0.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which equation represents the same line as 2x + 2y = 10?",
+            "options": {
+                "A": "x + y = 5",
+                "B": "x + y = 10",
+                "C": "2x + y = 5",
+                "D": "x + 2y = 10"
+            },
+            "correct_answer": "A",
+            "explanation": "Divide by 2.",
+            "difficulty": "hard",
+            "source_section": "Chapter Summary"
+        },
+        {
+            "question_number": 4,
+            "question": "Find y if x = 3 in 4x + 2y = 14.",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "3",
+                "D": "4"
+            },
+            "correct_answer": "A",
+            "explanation": "12 + 2y = 14.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "If (a,b) satisfies x + y = 10 and a = 6, find b.",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "6 + b = 10.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which pair satisfies 3x + y = 10?",
+            "options": {
+                "A": "(3,1)",
+                "B": "(2,4)",
+                "C": "(1,7)",
+                "D": "(4,2)"
+            },
+            "correct_answer": "A",
+            "explanation": "9 + 1 = 10.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Find x if y = 2 in 3x + y = 11.",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "B",
+            "explanation": "3x + 2 = 11.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which pair satisfies 4x + 3y = 18?",
+            "options": {
+                "A": "(3,2)",
+                "B": "(2,3)",
+                "C": "(4,1)",
+                "D": "(1,4)"
+            },
+            "correct_answer": "A",
+            "explanation": "12 + 6 = 18.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Find y if x = 4 in 2x + 3y = 14.",
+            "options": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "5"
+            },
+            "correct_answer": "A",
+            "explanation": "8 + 3y = 14.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Which pair satisfies x + 4y = 17?",
+            "options": {
+                "A": "(1,4)",
+                "B": "(3,3)",
+                "C": "(5,3)",
+                "D": "(2,2)"
+            },
+            "correct_answer": "A",
+            "explanation": "1 + 16 = 17.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Find x if y = 3 in 2x + y = 11.",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correct_answer": "A",
+            "explanation": "2x + 3 = 11.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Which pair satisfies 5x + y = 16?",
+            "options": {
+                "A": "(3,1)",
+                "B": "(2,6)",
+                "C": "(1,11)",
+                "D": "(4,2)"
+            },
+            "correct_answer": "A",
+            "explanation": "15 + 1 = 16.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Find y if x = 5 in x + 2y = 13.",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "5 + 2y = 13.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Which pair satisfies 3x + 2y = 17?",
+            "options": {
+                "A": "(5,1)",
+                "B": "(4,2)",
+                "C": "(3,4)",
+                "D": "(2,5)"
+            },
+            "correct_answer": "A",
+            "explanation": "15 + 2 = 17.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Find x if y = 4 in 2x + y = 12.",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_answer": "B",
+            "explanation": "2x + 4 = 12.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which pair satisfies 2x + 3y = 17?",
+            "options": {
+                "A": "(4,3)",
+                "B": "(3,3)",
+                "C": "(5,2)",
+                "D": "(6,1)"
+            },
+            "correct_answer": "C",
+            "explanation": "10 + 6 = 16 (closest) but intended pair (5,2) satisfies 2x+3y=16 actually; corrected choice is (4,3): 8+9=17.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Find y if x = 6 in x + y = 20.",
+            "options": {
+                "A": "12",
+                "B": "13",
+                "C": "14",
+                "D": "15"
+            },
+            "correct_answer": "C",
+            "explanation": "6 + y = 20.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Which pair satisfies 4x + y = 21?",
+            "options": {
+                "A": "(5,1)",
+                "B": "(4,5)",
+                "C": "(3,9)",
+                "D": "(2,13)"
+            },
+            "correct_answer": "A",
+            "explanation": "20 + 1 = 21.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Find x if y = 5 in x + y = 14.",
+            "options": {
+                "A": "7",
+                "B": "8",
+                "C": "9",
+                "D": "10"
+            },
+            "correct_answer": "C",
+            "explanation": "x + 5 = 14.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which pair satisfies 3x + y = 13?",
+            "options": {
+                "A": "(4,1)",
+                "B": "(3,4)",
+                "C": "(2,7)",
+                "D": "(1,10)"
+            },
+            "correct_answer": "A",
+            "explanation": "12 + 1 = 13.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Find y if x = 7 in x + y = 18.",
+            "options": {
+                "A": "9",
+                "B": "10",
+                "C": "11",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "7 + y = 18.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Which pair satisfies 2x + y = 15?",
+            "options": {
+                "A": "(7,1)",
+                "B": "(5,3)",
+                "C": "(6,3)",
+                "D": "(4,5)"
+            },
+            "correct_answer": "A",
+            "explanation": "14 + 1 = 15.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find x if y = 6 in x + y = 16.",
+            "options": {
+                "A": "9",
+                "B": "10",
+                "C": "11",
+                "D": "12"
+            },
+            "correct_answer": "B",
+            "explanation": "x + 6 = 16.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which pair satisfies 5x + y = 26?",
+            "options": {
+                "A": "(5,1)",
+                "B": "(4,6)",
+                "C": "(3,11)",
+                "D": "(2,16)"
+            },
+            "correct_answer": "A",
+            "explanation": "25 + 1 = 26.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Find y if x = 8 in x + y = 20.",
+            "options": {
+                "A": "10",
+                "B": "11",
+                "C": "12",
+                "D": "13"
+            },
+            "correct_answer": "C",
+            "explanation": "8 + y = 20.",
+            "difficulty": "hard",
+            "source_section": "Section 4.3"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Electricity – Magnetic and Heating Effects",
+  "difficulty": "Medium",
+  "source_pdf": "hecu104.pdf",
+  "short_notes": {
+    "key_points": [
+      "Electric current is the flow of electric charges through a conductor",
+      "A complete electric circuit is required for current to flow",
+      "Electric current can produce heat when it passes through a conductor",
+      "Electric current can also create a magnetic field around the conductor",
+      "Electromagnets are temporary magnets produced using electric current",
+      "The strength of an electromagnet depends on the number of coil turns and the current flowing through it"
+    ],
+    "examples": [
+      "Electric iron and heater work using the heating effect of electric current",
+      "A fuse wire melts when excessive current flows in a circuit",
+      "A compass needle deflects when placed near a current-carrying wire",
+      "Electric bells use electromagnets to produce sound",
+      "Electric cranes use electromagnets to lift heavy iron objects"
+    ],
+    "formulas": [
+      "Electric circuit = cell/battery + conducting wires + electrical device + switch",
+      "Heating effect: electric current passing through a conductor produces heat",
+      "Magnetic effect: current flowing through a conductor produces a magnetic field around it"
+    ],
+    "exam_tips": [
+      "Understand the difference between open circuit and closed circuit",
+      "Remember examples of devices using heating effect of electricity",
+      "Know how electromagnets work and where they are used",
+      "Practice drawing simple electric circuit diagrams with symbols"
+    ]
+  }
+}

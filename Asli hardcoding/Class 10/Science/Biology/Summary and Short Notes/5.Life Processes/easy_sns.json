@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Life Processes",
+    "difficulty": "Easy",
+    "source_pdf": "jesc105.pdf",
+    "short_notes": {
+        "key_points": [
+            "Life processes are the basic essential functions performed by living organisms to maintain their life on earth.",
+            "Nutrition is the process of intake of nutrients and its utilization by the body for energy and growth.",
+            "Autotrophic nutrition involves organisms making their own food (like plants), while Heterotrophic nutrition involves depending on others for food.",
+            "Respiration is the process of breaking down food (glucose) to release energy in the form of ATP.",
+            "Transportation is the movement of food, water, and waste from one part of the body to another."
+        ],
+        "examples": [
+            "Autotrophs: Green plants and some bacteria that perform photosynthesis.",
+            "Heterotrophs: Animals, fungi, and humans.",
+            "Parasitic Nutrition: Organisms like Cuscuta (Amarbel) or leeches that derive nutrition from a host without killing it.",
+            "Saprotrophic Nutrition: Fungi like bread moulds and mushrooms that break down food outside the body.",
+            "Excretion: Removal of toxic metabolic wastes like urea from the body."
+        ],
+        "formulas": [
+            "Photosynthesis Equation: $6CO_2 + 12H_2O \xrightarrow{\text{Chlorophyll/Sunlight}} C_6H_{12}O_6 + 6H_2O + 6O_2$",
+            "Energy Currency: $\text{ADP} + \text{Phosphate} \xrightarrow{\text{Energy}} \text{ATP}$",
+            "Aerobic Respiration: $\text{Glucose} \xrightarrow{\text{Cytoplasm}} \text{Pyruvate} \xrightarrow{\text{Mitochondria}} CO_2 + H_2O + \text{Energy}$"
+        ],
+        "exam_tips": [
+            "Remember that the site of photosynthesis in a cell is the chloroplast.",
+            "Identify the 'stomata' as the tiny pores on the surface of leaves responsible for gas exchange.",
+            "Note that the main purpose of digestion is to break down complex food into simple, absorbable molecules.",
+            "Keep in mind that even when we are asleep, life processes like breathing and heartbeat continue to maintain the body."
+        ]
+    }
+}

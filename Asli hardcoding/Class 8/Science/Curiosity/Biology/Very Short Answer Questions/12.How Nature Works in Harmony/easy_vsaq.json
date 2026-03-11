@@ -1,0 +1,184 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "difficulty": "Easy",
+  "generated_at": "2026-03-05T23:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a habitat?",
+      "answer": "The natural place where an organism lives.",
+      "key_points": ["habitat"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are biotic components?",
+      "answer": "The living parts of an ecosystem.",
+      "key_points": ["biotic components"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What are abiotic components?",
+      "answer": "The non-living parts of an ecosystem.",
+      "key_points": ["abiotic components"],
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a population?",
+      "answer": "A group of organisms of the same species living in one area.",
+      "key_points": ["population"],
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a community?",
+      "answer": "Different populations living together in a habitat.",
+      "key_points": ["community"],
+      "source_section": "Section 12.2"
+    },
+    {
+      "question_number": 6,
+      "question": "What is an ecosystem?",
+      "answer": "A system formed by interactions between organisms and their environment.",
+      "key_points": ["ecosystem"],
+      "source_section": "Section 12.4"
+    },
+    {
+      "question_number": 7,
+      "question": "Who are producers?",
+      "answer": "Organisms that make their own food using sunlight.",
+      "key_points": ["producers"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 8,
+      "question": "Who are consumers?",
+      "answer": "Organisms that depend on other organisms for food.",
+      "key_points": ["consumers"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 9,
+      "question": "What are decomposers?",
+      "answer": "Organisms that break down dead plants and animals.",
+      "key_points": ["decomposers"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 10,
+      "question": "What is a food chain?",
+      "answer": "A sequence showing how energy passes from one organism to another.",
+      "key_points": ["food chain"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is a food web?",
+      "answer": "A network of interconnected food chains.",
+      "key_points": ["food web"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is a trophic level?",
+      "answer": "The position of an organism in a food chain.",
+      "key_points": ["trophic level"],
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is decomposition?",
+      "answer": "The process of breaking down dead organisms.",
+      "key_points": ["decomposition"],
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 14,
+      "question": "What is biodiversity?",
+      "answer": "The variety of living organisms in an ecosystem.",
+      "key_points": ["biodiversity"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 15,
+      "question": "What is ecological balance?",
+      "answer": "The stable interaction between organisms and their environment.",
+      "key_points": ["ecosystem balance"],
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 16,
+      "question": "What is mutualism?",
+      "answer": "A relationship where both organisms benefit.",
+      "key_points": ["mutualism"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 17,
+      "question": "What is commensalism?",
+      "answer": "A relationship where one organism benefits and the other is unaffected.",
+      "key_points": ["commensalism"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 18,
+      "question": "What is parasitism?",
+      "answer": "A relationship where one organism benefits and the other is harmed.",
+      "key_points": ["parasitism"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 19,
+      "question": "What is deforestation?",
+      "answer": "The large-scale cutting down of forests.",
+      "key_points": ["deforestation"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 20,
+      "question": "What are protected areas?",
+      "answer": "Places set aside to conserve wildlife and habitats.",
+      "key_points": ["protected areas"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 21,
+      "question": "Why are forests important?",
+      "answer": "They provide habitat and maintain environmental balance.",
+      "key_points": ["forests"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 22,
+      "question": "Why are mangroves important?",
+      "answer": "They protect coastlines from erosion and storms.",
+      "key_points": ["mangroves"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 23,
+      "question": "What is conservation?",
+      "answer": "The protection of natural resources and ecosystems.",
+      "key_points": ["conservation"],
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is biodiversity important?",
+      "answer": "It helps maintain ecosystem stability.",
+      "key_points": ["biodiversity importance"],
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are ecosystems important for humans?",
+      "answer": "They provide essential resources such as food, water, and oxygen.",
+      "key_points": ["ecosystem importance"],
+      "source_section": "Section 12.9"
+    }
+  ]
+}

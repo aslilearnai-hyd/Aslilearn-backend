@@ -1,0 +1,140 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Work and Energy",
+    "difficulty": "Medium",
+    "source_pdf": "ncert_class9_science_ch10.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Work Calculation with Angled Force",
+            "objective": "Compute work done when force is applied at an angle",
+            "materials": ["Notebook", "Pencil", "Spring balance", "Ruler"],
+            "steps": [
+                "Apply a known force at an angle to move an object",
+                "Measure the distance moved",
+                "Calculate work done using W = F × d × cosθ"
+            ],
+            "learning_outcome": "Understands effect of force direction on work",
+            "evaluation": "Correct calculation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Comparing Work Done by Different Forces",
+            "objective": "Analyze work done by different magnitudes of force",
+            "materials": ["Notebook", "Pencil", "Weights", "Spring balance", "Ruler"],
+            "steps": [
+                "Move the same object using different forces",
+                "Measure distance each time",
+                "Calculate work done in each case and compare"
+            ],
+            "learning_outcome": "Connects force magnitude and work done",
+            "evaluation": "Correct comparison and analysis (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Energy Transformation in Pendulum",
+            "objective": "Observe potential to kinetic energy conversion",
+            "materials": ["Notebook", "Pencil", "Pendulum setup"],
+            "steps": [
+                "Pull pendulum to a certain height and release",
+                "Observe speed at lowest point",
+                "Explain energy transformation from PE to KE"
+            ],
+            "learning_outcome": "Understands practical energy transformations",
+            "evaluation": "Correct explanation with observations (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Kinetic Energy Calculation",
+            "objective": "Calculate kinetic energy for different masses and speeds",
+            "materials": ["Notebook", "Pencil", "Toy car", "Stopwatch", "Ruler", "Weights"],
+            "steps": [
+                "Push toy car at different speeds and with different masses",
+                "Measure speed using stopwatch and track",
+                "Calculate kinetic energy using KE = 1/2 mv^2"
+            ],
+            "learning_outcome": "Analyzes effect of mass and velocity on KE",
+            "evaluation": "Accurate calculations and observations (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Potential Energy at Heights",
+            "objective": "Calculate potential energy at varying heights",
+            "materials": ["Notebook", "Pencil", "Weights", "Meter scale"],
+            "steps": [
+                "Lift weight to different heights",
+                "Record mass and height",
+                "Calculate potential energy using PE = mgh and compare"
+            ],
+            "learning_outcome": "Understands relationship between height, mass, and PE",
+            "evaluation": "Correct calculation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Efficiency of Simple Machines",
+            "objective": "Calculate work input and output to find efficiency",
+            "materials": ["Notebook", "Pencil", "Pulley or lever", "Weights", "Spring balance", "Ruler"],
+            "steps": [
+                "Use simple machine to lift weight",
+                "Measure effort and distance moved (input work)",
+                "Measure load lifted and height (output work)",
+                "Calculate efficiency = (Output work/Input work) × 100%"
+            ],
+            "learning_outcome": "Understands practical efficiency concept",
+            "evaluation": "Correct calculation and observation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Work Done Against Friction",
+            "objective": "Analyze work done overcoming friction",
+            "materials": ["Notebook", "Pencil", "Wooden block", "Ruler", "Weights", "Spring balance"],
+            "steps": [
+                "Pull block across rough surface with known force",
+                "Measure distance moved",
+                "Calculate work done to overcome friction using W = F × d"
+            ],
+            "learning_outcome": "Relates friction to energy expenditure",
+            "evaluation": "Accurate measurement and calculation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Energy Loss in Real Systems",
+            "objective": "Observe energy dissipation in motion",
+            "materials": ["Notebook", "Pencil", "Ball", "Ramp", "Stopwatch"],
+            "steps": [
+                "Roll a ball down a ramp onto different surfaces",
+                "Observe final height or speed",
+                "Explain loss of mechanical energy due to friction or air resistance"
+            ],
+            "learning_outcome": "Understands real-world energy loss",
+            "evaluation": "Correct observations and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Comparing Kinetic and Potential Energy",
+            "objective": "Relate KE and PE at different positions",
+            "materials": ["Notebook", "Pencil", "Pendulum or toy car ramp"],
+            "steps": [
+                "Release pendulum or car from height",
+                "Record speed at different points",
+                "Calculate KE and PE and verify total mechanical energy remains approximately constant"
+            ],
+            "learning_outcome": "Understands conservation of mechanical energy concept",
+            "evaluation": "Correct calculations and explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Work Done in Lifting Objects",
+            "objective": "Calculate work done when lifting objects vertically",
+            "materials": ["Notebook", "Pencil", "Weights", "Ruler"],
+            "steps": [
+                "Lift weights of different masses to various heights",
+                "Record mass and height",
+                "Calculate work done using W = mgh"
+            ],
+            "learning_outcome": "Analyzes effect of mass and height on work done",
+            "evaluation": "Accurate calculation and reasoning (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter_name": "India – Size and Location",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the geographical location of India",
+        "Understand the latitudinal and longitudinal extent of India",
+        "Analyze the importance of the Tropic of Cancer",
+        "Describe India's size and global rank",
+        "Explain Indian Standard Time and its significance",
+        "Identify neighbouring countries and island groups",
+        "Understand India's importance in international trade routes"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to India's Geographical Location",
+            "topics_covered": [
+                "Location of India in Asia",
+                "Northern Hemisphere",
+                "Basic concept of latitude and longitude"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Map-based explanation",
+                "Board illustration"
+            ],
+            "student_activities": [
+                "Locate India on the world map",
+                "Write India's geographical coordinates"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Concept checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Latitudinal and Longitudinal Extent",
+            "topics_covered": [
+                "Latitudinal extent of India",
+                "Longitudinal extent of India",
+                "Meaning of geographical coordinates"
+            ],
+            "teaching_strategy": [
+                "Atlas demonstration",
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Mark coordinates in atlas",
+                "Write short notes on India's extent"
+            ],
+            "assessment": [
+                "Short written questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Tropic of Cancer",
+            "topics_covered": [
+                "Location of Tropic of Cancer",
+                "Division of India into tropical and subtropical regions",
+                "States through which it passes"
+            ],
+            "teaching_strategy": [
+                "Map marking activity",
+                "Discussion"
+            ],
+            "student_activities": [
+                "Mark Tropic of Cancer on map",
+                "List states through which it passes"
+            ],
+            "assessment": [
+                "Map checking",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Size of India",
+            "topics_covered": [
+                "Total geographical area of India",
+                "India's rank among largest countries",
+                "Length of land boundary and coastline"
+            ],
+            "teaching_strategy": [
+                "Chart explanation",
+                "Comparative discussion"
+            ],
+            "student_activities": [
+                "List countries larger than India",
+                "Write India's area"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Indian Standard Time",
+            "topics_covered": [
+                "Standard Meridian 82°30'E",
+                "Importance of standard time",
+                "Time difference across India"
+            ],
+            "teaching_strategy": [
+                "Map demonstration",
+                "Problem explanation"
+            ],
+            "student_activities": [
+                "Locate Mirzapur on the map",
+                "Discuss sunrise difference in Arunachal Pradesh and Gujarat"
+            ],
+            "assessment": [
+                "Concept questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "India and the World",
+            "topics_covered": [
+                "India's central location in Asia",
+                "Ancient trade routes",
+                "Cultural exchanges"
+            ],
+            "teaching_strategy": [
+                "Discussion",
+                "Historical examples"
+            ],
+            "student_activities": [
+                "Identify trade routes on map",
+                "Write two advantages of India's location"
+            ],
+            "assessment": [
+                "Written responses",
+                "Participation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "India's Neighbours and Revision",
+            "topics_covered": [
+                "Neighbouring countries",
+                "Island groups of India",
+                "Chapter recap"
+            ],
+            "teaching_strategy": [
+                "Map labeling activity",
+                "Summary discussion"
+            ],
+            "student_activities": [
+                "Label neighbouring countries",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "World map",
+        "Atlas",
+        "Outline map of India",
+        "Blackboard",
+        "Markers",
+        "Geography textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Map work",
+        "Notebook checking",
+        "Short quizzes",
+        "Class participation"
+    ],
+    "teacher_tip": "Encourage students to frequently use atlases so they develop strong map reading skills."
+}

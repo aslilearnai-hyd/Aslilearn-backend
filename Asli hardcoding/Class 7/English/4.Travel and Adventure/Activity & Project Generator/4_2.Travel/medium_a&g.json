@@ -1,0 +1,145 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "Travel",
+  "difficulty": "Medium",
+  "source_pdf": "honeycomb_ch5.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Character Analysis of the Traveller",
+      "objective": "Understand the traveller’s personality and observations",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the chapter 'Travel' carefully",
+        "Identify key traits of the traveller such as curiosity and attentiveness",
+        "Write at least five qualities with examples from the story",
+        "Discuss your findings in small groups"
+      ],
+      "learning_outcome": "Students learn to analyse character behaviour and traits",
+      "evaluation": "Correct identification of traits with examples (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Understanding the Journey",
+      "objective": "Recognize stages and experiences in the traveller’s journey",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "List the major events of the journey",
+        "Identify challenges faced and observations made by the traveller",
+        "Write a paragraph summarising the journey",
+        "Share your summary with classmates"
+      ],
+      "learning_outcome": "Students improve comprehension and narrative skills",
+      "evaluation": "Completeness and clarity of the summary (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Theme Exploration",
+      "objective": "Identify the themes conveyed through travel and exploration",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss in pairs what the journey teaches about curiosity, patience, or discovery",
+        "Write a short paragraph explaining the theme",
+        "Present your ideas in class"
+      ],
+      "learning_outcome": "Students learn to identify and explain themes in literature",
+      "evaluation": "Relevance and clarity of theme explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Descriptive Writing Activity",
+      "objective": "Develop descriptive writing based on the traveller’s experiences",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Choose a scene from the traveller’s journey",
+        "Write a paragraph describing what is seen, heard, and felt",
+        "Use descriptive words and expressions",
+        "Share your writing with the class"
+      ],
+      "learning_outcome": "Students enhance observation and descriptive writing skills",
+      "evaluation": "Use of descriptive language and clarity (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Dialogue Recreation",
+      "objective": "Improve understanding of dialogue and character interaction",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Select a short interaction from the story",
+        "Rewrite it as a dialogue between characters",
+        "Include emotions and expressions",
+        "Read the dialogue aloud to classmates"
+      ],
+      "learning_outcome": "Students develop writing and communication skills",
+      "evaluation": "Relevance, clarity, and creativity (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Vocabulary Enhancement",
+      "objective": "Learn new words related to travel",
+      "materials": ["Textbook", "Dictionary", "Notebook"],
+      "steps": [
+        "Identify at least 10 new or challenging words from the chapter",
+        "Write meanings and use them in sentences",
+        "Discuss meanings with a partner"
+      ],
+      "learning_outcome": "Students improve vocabulary and usage",
+      "evaluation": "Correct meanings and sentence usage (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Travel Diary",
+      "objective": "Practice reflective and narrative writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine you are the traveller",
+        "Write a diary entry describing a day from your journey",
+        "Include experiences, observations, and feelings",
+        "Share your diary entry with a classmate"
+      ],
+      "learning_outcome": "Students develop narrative and reflective writing skills",
+      "evaluation": "Content, clarity, and reflection (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Grammar Activity: Sentence Types",
+      "objective": "Identify and write complex and compound sentences",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Find examples of complex sentences in the chapter",
+        "Underline the main clause and subordinate clause",
+        "Write three new sentences about the journey using complex structures"
+      ],
+      "learning_outcome": "Students improve grammar and sentence construction skills",
+      "evaluation": "Correctness and clarity of sentences (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Compare Journeys",
+      "objective": "Develop analytical skills through comparison",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Discuss with a partner how the traveller’s journey differs from your own travel experience",
+        "Write a paragraph highlighting similarities and differences",
+        "Share your comparison with the class"
+      ],
+      "learning_outcome": "Students learn comparative thinking and writing",
+      "evaluation": "Relevance and clarity of comparison (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Creative Alternate Ending",
+      "objective": "Encourage imaginative writing",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Think about an alternate ending for the traveller’s journey",
+        "Write a short narrative explaining the new ending",
+        "Include reflections on experiences and lessons learned",
+        "Share your alternate ending with the class"
+      ],
+      "learning_outcome": "Students develop creativity and storytelling skills",
+      "evaluation": "Creativity, coherence, and relevance to the story (10 marks)"
+    }
+  ]
+}

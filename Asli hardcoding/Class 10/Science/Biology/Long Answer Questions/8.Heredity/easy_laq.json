@@ -1,0 +1,432 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Heredity",
+    "generated_at": "2026-03-10T22:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define heredity and explain its importance in living organisms.",
+            "answer": "Heredity is the process by which traits and characteristics are passed from parents to offspring through genes. It is important as it maintains continuity of species, ensures resemblance between generations, and provides the basis for variations that help in adaptation and evolution.",
+            "answer_outline": [
+                "Definition of heredity",
+                "Role of genes/chromosomes",
+                "Importance for species continuity and variation"
+            ],
+            "key_concepts": [
+                "heredity",
+                "traits transmission",
+                "species continuity"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how variations are created and accumulated during reproduction.",
+            "answer": "Variations arise during reproduction due to errors in DNA copying and sexual reproduction (crossing over, independent assortment). In asexual reproduction, minor variations occur; in sexual, greater diversity from two parents. Over generations, useful variations accumulate, leading to evolution.",
+            "answer_outline": [
+                "Sources of variation",
+                "Asexual vs sexual reproduction",
+                "Accumulation over generations"
+            ],
+            "key_concepts": [
+                "variation",
+                "DNA copying",
+                "sexual reproduction"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe Gregor Mendel's contributions to the study of heredity.",
+            "answer": "Gregor Mendel, known as the father of genetics, conducted experiments on pea plants. He discovered laws of inheritance by studying contrasting traits. His monohybrid and dihybrid crosses showed dominance, segregation, and independent assortment, laying the foundation for modern genetics.",
+            "answer_outline": [
+                "Mendel's experiments on pea plants",
+                "Key observations",
+                "Laws discovered"
+            ],
+            "key_concepts": [
+                "Mendel",
+                "inheritance laws",
+                "pea plant experiments"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain Mendel's law of dominance with an example from pea plants.",
+            "answer": "Law of dominance states that in a heterozygous individual, only the dominant trait is expressed, while the recessive trait remains hidden. Example: When tall (TT) pea plant is crossed with short (tt), all F1 plants are tall (Tt), showing tallness is dominant.",
+            "answer_outline": [
+                "Statement of law",
+                "Monohybrid cross example",
+                "F1 generation observation"
+            ],
+            "key_concepts": [
+                "law of dominance",
+                "dominant trait",
+                "recessive trait"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain Mendel's law of segregation with a suitable example.",
+            "answer": "Law of segregation states that during gamete formation, the two alleles of a trait separate so each gamete carries only one allele. Example: In F1 tall plants (Tt), gametes are T and t; self-pollination gives F2 ratio 3 tall : 1 short, showing alleles segregate.",
+            "answer_outline": [
+                "Statement of law",
+                "Gamete formation",
+                "F2 ratio explanation"
+            ],
+            "key_concepts": [
+                "law of segregation",
+                "alleles",
+                "gametes"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe Mendel's dihybrid cross experiment and state the law derived from it.",
+            "answer": "Mendel crossed round yellow (RRYY) with wrinkled green (rryy) peas. F1 all round yellow (RrYy). F2 showed 9:3:3:1 phenotypic ratio. This led to the law of independent assortment: alleles of different traits assort independently during gamete formation.",
+            "answer_outline": [
+                "Parental cross and F1",
+                "F2 phenotypic ratio",
+                "Law of independent assortment"
+            ],
+            "key_concepts": [
+                "dihybrid cross",
+                "independent assortment",
+                "9:3:3:1 ratio"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the terms: gene, allele, dominant trait, recessive trait, homozygous, heterozygous.",
+            "answer": "Gene: segment of DNA controlling a trait. Allele: alternative forms of a gene. Dominant trait: expressed in heterozygous condition. Recessive trait: expressed only in homozygous condition. Homozygous: both alleles same (TT or tt). Heterozygous: alleles different (Tt).",
+            "answer_outline": [
+                "Definition of each term",
+                "Examples from pea traits"
+            ],
+            "key_concepts": [
+                "gene",
+                "allele",
+                "dominant/recessive",
+                "homozygous/heterozygous"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 8,
+            "question": "How do Mendel's experiments demonstrate independent inheritance of traits?",
+            "answer": "In dihybrid cross, round/yellow and wrinkled/green traits assorted independently in F2, giving 9:3:3:1 ratio instead of linked patterns. This showed that inheritance of one trait does not affect another when genes are on different chromosomes.",
+            "answer_outline": [
+                "Dihybrid cross observation",
+                "Ratio explanation",
+                "Independent inheritance conclusion"
+            ],
+            "key_concepts": [
+                "independent assortment",
+                "dihybrid inheritance"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain sex determination in human beings with the help of a diagram.",
+            "answer": "Humans have 23 pairs of chromosomes; 22 autosomes + 1 sex pair. Females XX, males XY. Mother contributes X, father X or Y. Punnett square shows 50% XX (girl), 50% XY (boy). Sex is determined by father's gamete.",
+            "answer_outline": [
+                "Chromosome pairs",
+                "Gamete contribution",
+                "Punnett square and ratio"
+            ],
+            "key_concepts": [
+                "sex determination",
+                "XX/XY",
+                "Punnett square"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Differentiate between inherited traits and acquired traits with examples.",
+            "answer": "Inherited traits: passed genetically from parents to offspring, e.g., eye colour, blood group. Acquired traits: developed during lifetime due to environment/use, not inherited, e.g., muscular body from exercise, learned skills like swimming.",
+            "answer_outline": [
+                "Definition and basis",
+                "Examples of each",
+                "Why acquired not inherited"
+            ],
+            "key_concepts": [
+                "inherited traits",
+                "acquired traits",
+                "germ cells vs somatic cells"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why acquired traits are not inherited.",
+            "answer": "Acquired traits develop in somatic cells due to environment or use, not in germ cells (gametes). Only changes in germ cells are passed to offspring. Example: A person losing a limb in accident does not pass limb-less trait to children.",
+            "answer_outline": [
+                "Somatic vs germ cells",
+                "Mechanism of inheritance",
+                "Example explanation"
+            ],
+            "key_concepts": [
+                "acquired traits",
+                "germ cells",
+                "Weismann theory"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the role of variations in the survival of species over time.",
+            "answer": "Variations provide diversity; useful ones help individuals survive environmental changes (natural selection). Over generations, advantageous variations accumulate, leading to adaptation and evolution, preventing extinction.",
+            "answer_outline": [
+                "Source of variations",
+                "Natural selection",
+                "Adaptation and evolution"
+            ],
+            "key_concepts": [
+                "variation",
+                "natural selection",
+                "species survival"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Describe how sex-linked traits are inherited, with an example.",
+            "answer": "Sex-linked traits are on sex chromosomes (mostly X). Example: Colour blindness (recessive on X). Carrier mother (X^c X) and normal father (XY) can have colour-blind son (X^c Y) but normal daughter. More common in males due to single X.",
+            "answer_outline": [
+                "Location on X chromosome",
+                "Inheritance pattern",
+                "Example: colour blindness"
+            ],
+            "key_concepts": [
+                "sex-linked traits",
+                "X-linked recessive",
+                "inheritance in males/females"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the concept of homologous chromosomes and their role in inheritance.",
+            "answer": "Homologous chromosomes are pairs with similar genes (one from each parent). During meiosis, they segregate, ensuring offspring get one allele from each parent. This maintains chromosome number and allows trait variation.",
+            "answer_outline": [
+                "Definition and pairing",
+                "Role in meiosis",
+                "Inheritance of alleles"
+            ],
+            "key_concepts": [
+                "homologous chromosomes",
+                "meiosis",
+                "allele segregation"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How does sexual reproduction promote genetic variation compared to asexual reproduction?",
+            "answer": "Sexual reproduction involves two parents, fusion of gametes, crossing over, and independent assortment, creating new gene combinations. Asexual reproduction copies DNA with minor variations only, leading to less diversity.",
+            "answer_outline": [
+                "Mechanisms in sexual reproduction",
+                "Comparison with asexual",
+                "Advantage for adaptation"
+            ],
+            "key_concepts": [
+                "sexual reproduction",
+                "genetic variation",
+                "crossing over"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain blood group inheritance in humans as an example of multiple alleles.",
+            "answer": "ABO blood groups controlled by 3 alleles: IA, IB (codominant), i (recessive). IA and IB show codominance (AB blood). Possible groups from parents depend on genotypes, e.g., A (IAi) × B (IBi) can give A, B, AB, O.",
+            "answer_outline": [
+                "Multiple alleles explanation",
+                "Codominance in ABO",
+                "Possible offspring groups"
+            ],
+            "key_concepts": [
+                "multiple alleles",
+                "codominance",
+                "blood groups"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is variation beneficial to the species but not necessarily to the individual?",
+            "answer": "Variation provides raw material for natural selection; some help species adapt to changes, ensuring survival. For individual, harmful variation may reduce fitness, but population-level diversity prevents extinction.",
+            "answer_outline": [
+                "Benefit at species level",
+                "Natural selection",
+                "Individual vs population"
+            ],
+            "key_concepts": [
+                "variation",
+                "natural selection",
+                "species adaptation"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how Mendel's work was ahead of its time and rediscovered later.",
+            "answer": "Mendel's laws (1865) were ignored due to no knowledge of chromosomes/genes. Rediscovered in 1900 by de Vries, Correns, Tschermak when chromosome behaviour matched his ratios, leading to modern genetics birth.",
+            "answer_outline": [
+                "Mendel's era and ignorance",
+                "Rediscovery in 1900",
+                "Link to chromosomes"
+            ],
+            "key_concepts": [
+                "Mendel's laws",
+                "rediscovery",
+                "genetics history"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe a monohybrid cross between tall and dwarf pea plants and interpret the results.",
+            "answer": "Cross TT (tall) × tt (dwarf) → F1 all Tt (tall). Self F1 → F2: 3 tall : 1 dwarf (phenotypic), 1 TT : 2 Tt : 1 tt (genotypic). Shows dominance and segregation.",
+            "answer_outline": [
+                "Parental cross",
+                "F1 and F2 results",
+                "Ratio interpretation"
+            ],
+            "key_concepts": [
+                "monohybrid cross",
+                "3:1 ratio",
+                "genotype vs phenotype"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the chromosomal basis of Mendel's laws.",
+            "answer": "Law of segregation: homologous chromosomes separate during meiosis (anaphase I). Law of independent assortment: different chromosome pairs align independently at metaphase I. This explains allele separation and trait independence.",
+            "answer_outline": [
+                "Chromosomes in meiosis",
+                "Link to segregation",
+                "Link to independent assortment"
+            ],
+            "key_concepts": [
+                "chromosomal basis",
+                "meiosis",
+                "Mendel's laws"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 21,
+            "question": "How do environmental factors influence trait expression? Give examples.",
+            "answer": "Genes provide potential, but environment affects expression. Example: Hydrangea flower colour changes with soil pH; human skin tanning from sun; nutrition affects height potential in genetically tall individuals.",
+            "answer_outline": [
+                "Gene-environment interaction",
+                "Examples from plants/humans",
+                "Phenotype determination"
+            ],
+            "key_concepts": [
+                "environment",
+                "trait expression",
+                "phenotype"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of pedigrees in studying human inheritance.",
+            "answer": "Pedigrees trace trait inheritance over generations using symbols. Help identify patterns (autosomal dominant/recessive, sex-linked), predict risks for genetic disorders, and study family history for counselling.",
+            "answer_outline": [
+                "Pedigree definition",
+                "Symbols and patterns",
+                "Applications in humans"
+            ],
+            "key_concepts": [
+                "pedigree analysis",
+                "inheritance patterns",
+                "genetic counselling"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why do offspring resemble parents but are not identical?",
+            "answer": "Offspring inherit genes from both parents, leading to resemblance. Sexual reproduction causes recombination, crossing over, and independent assortment, creating unique combinations, hence variations and non-identical individuals.",
+            "answer_outline": [
+                "Genetic contribution from parents",
+                "Sources of variation",
+                "Resulting differences"
+            ],
+            "key_concepts": [
+                "resemblance",
+                "variation",
+                "sexual reproduction"
+            ],
+            "marks": 4,
+            "source_section": "Section 8.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of DNA in heredity.",
+            "answer": "DNA carries genetic information as genes. It replicates accurately during cell division, passing traits. Changes (mutations) cause variations. DNA controls protein synthesis, determining traits via enzymes and structures.",
+            "answer_outline": [
+                "DNA as genetic material",
+                "Replication and transmission",
+                "Role in trait determination"
+            ],
+            "key_concepts": [
+                "DNA",
+                "genes",
+                "replication"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the significance of heredity and variation in evolution.",
+            "answer": "Heredity transmits favourable traits; variation provides raw material. Natural selection acts on variations, favouring adaptive ones. Over time, this leads to speciation, adaptation, and evolution of new forms from common ancestors.",
+            "answer_outline": [
+                "Heredity for continuity",
+                "Variation for diversity",
+                "Natural selection and evolution"
+            ],
+            "key_concepts": [
+                "heredity",
+                "variation",
+                "evolution"
+            ],
+            "marks": 5,
+            "source_section": "Section 8.1"
+        }
+    ]
+}

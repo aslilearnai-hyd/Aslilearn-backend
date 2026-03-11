@@ -1,0 +1,407 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 6: Tissues",
+    "generated_at": "2026-03-06T02:25:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the importance of tissues in multicellular organisms.",
+            "answer": "Tissues allow groups of similar cells to perform specific functions efficiently. This leads to division of labour and better organization in multicellular organisms.",
+            "answer_outline": [
+                "Definition of tissues",
+                "Division of labour",
+                "Importance in multicellular organisms"
+            ],
+            "key_concepts": [
+                "tissue",
+                "division of labour"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between plant tissues and animal tissues.",
+            "answer": "Plant tissues mainly provide support and transport materials, while animal tissues enable movement and coordination. Plant tissues include meristematic and permanent tissues, whereas animal tissues include epithelial, connective, muscular and nervous tissues.",
+            "answer_outline": [
+                "Plant tissues",
+                "Animal tissues",
+                "Key differences"
+            ],
+            "key_concepts": [
+                "plant tissues",
+                "animal tissues"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the structure, characteristics and functions of meristematic tissues.",
+            "answer": "Meristematic tissues consist of actively dividing cells with dense cytoplasm and prominent nucleus. They are responsible for plant growth and formation of new tissues.",
+            "answer_outline": [
+                "Structure of meristematic cells",
+                "Characteristics",
+                "Role in growth"
+            ],
+            "key_concepts": [
+                "meristematic tissue"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the process of differentiation in plants.",
+            "answer": "Differentiation is the process by which meristematic cells develop into permanent tissues with specific shapes, sizes and functions.",
+            "answer_outline": [
+                "Definition",
+                "Transformation of meristematic cells",
+                "Formation of permanent tissues"
+            ],
+            "key_concepts": [
+                "differentiation"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe parenchyma tissue and its functions.",
+            "answer": "Parenchyma tissue consists of living thin-walled cells that store food and perform photosynthesis when chloroplasts are present.",
+            "answer_outline": [
+                "Structure",
+                "Food storage",
+                "Photosynthesis"
+            ],
+            "key_concepts": [
+                "parenchyma"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain collenchyma tissue and its functions.",
+            "answer": "Collenchyma tissue is made of living cells with unevenly thickened walls and provides flexibility and support to plants.",
+            "answer_outline": [
+                "Structure",
+                "Location",
+                "Support and flexibility"
+            ],
+            "key_concepts": [
+                "collenchyma"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe sclerenchyma tissue with its importance.",
+            "answer": "Sclerenchyma consists of dead cells with thick lignified walls which provide mechanical strength to plants.",
+            "answer_outline": [
+                "Dead cells",
+                "Lignified walls",
+                "Strength"
+            ],
+            "key_concepts": [
+                "sclerenchyma"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain complex permanent tissues in plants.",
+            "answer": "Complex permanent tissues consist of different types of cells working together to perform a common function such as transport.",
+            "answer_outline": [
+                "Definition",
+                "Examples",
+                "Functions"
+            ],
+            "key_concepts": [
+                "complex tissues"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the structure and function of xylem.",
+            "answer": "Xylem is composed of tracheids, vessels, xylem fibres and xylem parenchyma. It transports water and minerals from roots to other plant parts.",
+            "answer_outline": [
+                "Components",
+                "Transport of water",
+                "Mechanical support"
+            ],
+            "key_concepts": [
+                "xylem"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the structure and function of phloem.",
+            "answer": "Phloem consists of sieve tubes, companion cells, phloem fibres and phloem parenchyma which transport food in plants.",
+            "answer_outline": [
+                "Components",
+                "Transport of food"
+            ],
+            "key_concepts": [
+                "phloem"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain epidermal tissue and its functions.",
+            "answer": "Epidermal tissue forms the outer protective layer of plants and prevents water loss through cuticle.",
+            "answer_outline": [
+                "Structure",
+                "Protection",
+                "Water loss prevention"
+            ],
+            "key_concepts": [
+                "epidermis"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the structure and function of stomata.",
+            "answer": "Stomata are small pores surrounded by guard cells that regulate gaseous exchange and transpiration.",
+            "answer_outline": [
+                "Structure",
+                "Gas exchange",
+                "Transpiration"
+            ],
+            "key_concepts": [
+                "stomata"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain epithelial tissue and its functions.",
+            "answer": "Epithelial tissue covers body surfaces and lines organs. It protects the body and helps in absorption and secretion.",
+            "answer_outline": [
+                "Definition",
+                "Protection",
+                "Absorption and secretion"
+            ],
+            "key_concepts": [
+                "epithelial tissue"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Describe connective tissue with examples.",
+            "answer": "Connective tissue connects and supports different body parts. Examples include bone, cartilage, blood and adipose tissue.",
+            "answer_outline": [
+                "Definition",
+                "Examples",
+                "Functions"
+            ],
+            "key_concepts": [
+                "connective tissue"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain bone tissue and its importance.",
+            "answer": "Bone tissue forms the skeletal framework of the body. It provides support, protection and helps in movement.",
+            "answer_outline": [
+                "Structure",
+                "Support",
+                "Protection"
+            ],
+            "key_concepts": [
+                "bone"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain cartilage and its functions.",
+            "answer": "Cartilage is a flexible connective tissue that supports structures and reduces friction in joints.",
+            "answer_outline": [
+                "Structure",
+                "Location",
+                "Functions"
+            ],
+            "key_concepts": [
+                "cartilage"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain adipose tissue and its functions.",
+            "answer": "Adipose tissue stores fat and provides insulation and protection to organs.",
+            "answer_outline": [
+                "Fat storage",
+                "Insulation",
+                "Protection"
+            ],
+            "key_concepts": [
+                "adipose"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Describe muscular tissue and its role in movement.",
+            "answer": "Muscular tissue consists of elongated muscle fibres that contract and relax to produce movement.",
+            "answer_outline": [
+                "Structure",
+                "Contraction",
+                "Movement"
+            ],
+            "key_concepts": [
+                "muscle"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the three types of muscular tissues.",
+            "answer": "The three types are striated muscles, smooth muscles and cardiac muscles which differ in structure and function.",
+            "answer_outline": [
+                "Striated muscles",
+                "Smooth muscles",
+                "Cardiac muscles"
+            ],
+            "key_concepts": [
+                "muscle types"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the structure and function of cardiac muscles.",
+            "answer": "Cardiac muscles are branched involuntary muscles found only in the heart and work continuously.",
+            "answer_outline": [
+                "Structure",
+                "Location",
+                "Function"
+            ],
+            "key_concepts": [
+                "cardiac muscle"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain nervous tissue and its importance.",
+            "answer": "Nervous tissue transmits electrical impulses and coordinates body activities.",
+            "answer_outline": [
+                "Impulse transmission",
+                "Coordination"
+            ],
+            "key_concepts": [
+                "nervous tissue"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Describe the structure of a neuron.",
+            "answer": "A neuron consists of cell body, dendrites and axon which help transmit nerve impulses.",
+            "answer_outline": [
+                "Cell body",
+                "Dendrites",
+                "Axon"
+            ],
+            "key_concepts": [
+                "neuron"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the functions of dendrites and axon.",
+            "answer": "Dendrites receive impulses from other neurons while axon carries impulses away from the cell body.",
+            "answer_outline": [
+                "Dendrite function",
+                "Axon function"
+            ],
+            "key_concepts": [
+                "neuron parts"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of nervous tissue in coordination.",
+            "answer": "Nervous tissue transmits signals rapidly allowing quick responses to stimuli and coordination of body activities.",
+            "answer_outline": [
+                "Signal transmission",
+                "Coordination"
+            ],
+            "key_concepts": [
+                "coordination"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how different tissues work together in animals.",
+            "answer": "Epithelial tissues protect surfaces, connective tissues support structures, muscular tissues produce movement and nervous tissues coordinate body functions.",
+            "answer_outline": [
+                "Epithelial function",
+                "Connective function",
+                "Muscular function",
+                "Nervous function"
+            ],
+            "key_concepts": [
+                "tissue coordination"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 6.3"
+        }
+    ]
+}

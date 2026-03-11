@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Operations with Integers",
+    "difficulty": "Medium",
+    "source_pdf": "jemh101.pdf",
+    "short_notes": {
+        "key_points": [
+            "To add integers with different signs, find the difference of their absolute values",
+            "Subtraction is the addition of the additive inverse",
+            "Product of two integers with the same sign is positive",
+            "Product of two integers with different signs is negative",
+            "Division follows the same sign rules as multiplication"
+        ],
+        "examples": [
+            "Different signs: $(-10) + 4 = -6$ (Since $10-4=6$ and $10$ is larger)",
+            "Subtraction: $5 - (-3) = 5 + 3 = 8$",
+            "Multiplication: $(-5) \\times (-4) = 20$ ",
+            "Division: $(-15) \\div 3 = -5$"
+        ],
+        "formulas": [
+            "Subtraction $\\rightarrow a - b = a + (-b)$",
+            "Sign rules $\\rightarrow (-) \\times (-) = (+)$ and $(+) \\times (-) = (-)$"
+        ],
+        "exam_tips": [
+            "When subtracting, 'change the sign and add'",
+            "Count the number of negative signs in multiplication; even = positive, odd = negative",
+            "Division by zero is undefined",
+            "Be careful with the sign of the larger absolute value in addition"
+        ]
+    }
+}

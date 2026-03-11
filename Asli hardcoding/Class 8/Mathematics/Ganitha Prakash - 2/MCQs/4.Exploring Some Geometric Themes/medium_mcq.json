@@ -1,0 +1,373 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Exploring Some Geometric Themes",
+  "generated_at": "2026-03-04T15:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "How many smaller squares remain after Step 1 in the Sierpinski Carpet?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9"
+      },
+      "correct_answer": "C",
+      "explanation": "The center square is removed leaving 8 squares.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which property is essential for fractal geometry?",
+      "options": {
+        "A": "Symmetry",
+        "B": "Self similarity",
+        "C": "Parallelism",
+        "D": "Congruence"
+      },
+      "correct_answer": "B",
+      "explanation": "Fractals repeat similar patterns at different scales.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 3,
+      "question": "How many sides are present in the Koch Snowflake after Step 1?",
+      "options": {
+        "A": "6",
+        "B": "9",
+        "C": "12",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "explanation": "Each of the 3 sides becomes 4 segments giving 12 sides.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Which view shows the height and width of an object?",
+      "options": {
+        "A": "Front view",
+        "B": "Top view",
+        "C": "Side view",
+        "D": "Bottom view"
+      },
+      "correct_answer": "A",
+      "explanation": "Front view displays height and width.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which solid has rectangular faces and two identical polygon bases?",
+      "options": {
+        "A": "Pyramid",
+        "B": "Prism",
+        "C": "Cone",
+        "D": "Sphere"
+      },
+      "correct_answer": "B",
+      "explanation": "A prism has two identical bases connected by rectangular faces.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Which view shows the object as seen from above?",
+      "options": {
+        "A": "Top view",
+        "B": "Front view",
+        "C": "Side view",
+        "D": "Back view"
+      },
+      "correct_answer": "A",
+      "explanation": "Top view represents the object as seen from above.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following shapes can be formed from a cube net?",
+      "options": {
+        "A": "Sphere",
+        "B": "Cube",
+        "C": "Cylinder",
+        "D": "Cone"
+      },
+      "correct_answer": "B",
+      "explanation": "Folding a cube net forms a cube.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which concept helps convert a 3D shape into a flat pattern?",
+      "options": {
+        "A": "Projection",
+        "B": "Net",
+        "C": "Fractal",
+        "D": "Rotation"
+      },
+      "correct_answer": "B",
+      "explanation": "A net is a flattened representation of a solid.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 9,
+      "question": "How many faces meet at a vertex of a cube?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "B",
+      "explanation": "Three faces meet at each vertex of a cube.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the main purpose of isometric drawing?",
+      "options": {
+        "A": "Represent 3D objects on a 2D surface",
+        "B": "Measure angles",
+        "C": "Find volume",
+        "D": "Calculate area"
+      },
+      "correct_answer": "A",
+      "explanation": "Isometric drawings represent three dimensional objects on paper.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Which of the following solids has triangular faces meeting at a single vertex?",
+      "options": {
+        "A": "Prism",
+        "B": "Cube",
+        "C": "Pyramid",
+        "D": "Cylinder"
+      },
+      "correct_answer": "C",
+      "explanation": "In a pyramid triangular faces meet at one vertex.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 12,
+      "question": "What type of lines are used in isometric grids?",
+      "options": {
+        "A": "Parallel lines at equal angles",
+        "B": "Perpendicular lines",
+        "C": "Circular arcs",
+        "D": "Random lines"
+      },
+      "correct_answer": "A",
+      "explanation": "Isometric grids use three sets of parallel lines.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Which concept explains the shadow of an object on a surface?",
+      "options": {
+        "A": "Fractal",
+        "B": "Projection",
+        "C": "Net",
+        "D": "Symmetry"
+      },
+      "correct_answer": "B",
+      "explanation": "Projection represents the shadow or outline of an object.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Which property remains unchanged in projection?",
+      "options": {
+        "A": "Color",
+        "B": "Parallelism",
+        "C": "Area",
+        "D": "Volume"
+      },
+      "correct_answer": "B",
+      "explanation": "Parallel lines remain parallel after projection.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 15,
+      "question": "Which mathematical structure repeats infinitely in fractals?",
+      "options": {
+        "A": "Pattern",
+        "B": "Line",
+        "C": "Circle",
+        "D": "Angle"
+      },
+      "correct_answer": "A",
+      "explanation": "Fractals repeat patterns infinitely.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which figure has exactly 12 edges?",
+      "options": {
+        "A": "Cube",
+        "B": "Cone",
+        "C": "Sphere",
+        "D": "Cylinder"
+      },
+      "correct_answer": "A",
+      "explanation": "A cube has 12 edges.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 17,
+      "question": "What type of faces does a triangular prism have?",
+      "options": {
+        "A": "Only rectangular",
+        "B": "Only triangular",
+        "C": "Triangular and rectangular",
+        "D": "Circular"
+      },
+      "correct_answer": "C",
+      "explanation": "A triangular prism has triangular bases and rectangular faces.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Which method helps determine shortest paths on a cube surface?",
+      "options": {
+        "A": "Projection",
+        "B": "Using nets",
+        "C": "Rotation",
+        "D": "Translation"
+      },
+      "correct_answer": "B",
+      "explanation": "The cube is unfolded into a net to find shortest paths.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Which view displays depth and height of an object?",
+      "options": {
+        "A": "Side view",
+        "B": "Top view",
+        "C": "Front view",
+        "D": "Bottom view"
+      },
+      "correct_answer": "A",
+      "explanation": "Side view shows height and depth.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Which geometric topic combines mathematics and art patterns?",
+      "options": {
+        "A": "Fractals",
+        "B": "Prisms",
+        "C": "Pyramids",
+        "D": "Cubes"
+      },
+      "correct_answer": "A",
+      "explanation": "Fractals produce artistic patterns based on mathematical rules.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Which drawing technique uses equal angles between axes?",
+      "options": {
+        "A": "Orthographic drawing",
+        "B": "Isometric drawing",
+        "C": "Perspective drawing",
+        "D": "Plan drawing"
+      },
+      "correct_answer": "B",
+      "explanation": "Isometric drawing uses equal angles between axes.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Which structure has five faces including the base?",
+      "options": {
+        "A": "Square pyramid",
+        "B": "Cube",
+        "C": "Cylinder",
+        "D": "Sphere"
+      },
+      "correct_answer": "A",
+      "explanation": "A square pyramid has four triangular faces and one base.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Which figure forms repeating triangular holes in fractals?",
+      "options": {
+        "A": "Sierpinski Triangle",
+        "B": "Circle",
+        "C": "Square",
+        "D": "Rectangle"
+      },
+      "correct_answer": "A",
+      "explanation": "The Sierpinski Triangle contains repeating triangular holes.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Which object helps visualize projections easily?",
+      "options": {
+        "A": "Stacked cubes",
+        "B": "Circle",
+        "C": "Triangle",
+        "D": "Line segment"
+      },
+      "correct_answer": "A",
+      "explanation": "Stacked cubes help understand projections.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+
+    {
+      "question_number": 25,
+      "question": "Which property of fractals allows patterns to repeat infinitely?",
+      "options": {
+        "A": "Rotation",
+        "B": "Translation",
+        "C": "Self similarity",
+        "D": "Reflection"
+      },
+      "correct_answer": "C",
+      "explanation": "Self similarity allows patterns to repeat infinitely.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    }
+  ]
+}

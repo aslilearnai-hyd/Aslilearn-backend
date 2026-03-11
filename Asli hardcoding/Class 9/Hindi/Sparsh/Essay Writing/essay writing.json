@@ -1,0 +1,725 @@
+{
+  "subject": "Hindi",
+  "book": "Sparsh (Bhag 1)",
+  "content": "Essay Writing",
+  "class": "9",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "दुःख का अधिकार",
+      "source": "Sparsh – Chapter 1",
+      "title": "समाज में अमीर-गरीब का भेद",
+      "question": "‘दुःख का अधिकार’ पाठ के आधार पर समाज में व्याप्त आर्थिक विषमता पर निबंध लिखिए।"
+    },
+    {
+      "id": 2,
+      "chapter": "दुःख का अधिकार",
+      "source": "Sparsh – Chapter 1",
+      "title": "पोशाक का सामाजिक महत्व",
+      "question": "मनुष्य की पोशाक उसके सामाजिक स्तर को कैसे निर्धारित करती है? निबंध लिखिए।"
+    },
+    {
+      "id": 3,
+      "chapter": "दुःख का अधिकार",
+      "source": "Sparsh – Chapter 1",
+      "title": "शोक मनाने का अधिकार",
+      "question": "क्या दुःख मनाने के लिए भी धन और समय की आवश्यकता होती है? विचार व्यक्त करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 4,
+      "chapter": "दुःख का अधिकार",
+      "source": "Sparsh – Chapter 1",
+      "title": "मानवीय संवेदना और गरीबी",
+      "question": "गरीबों के प्रति समाज की संवेदनहीनता विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 5,
+      "chapter": "एवरेस्ट: मेरी शिखर यात्रा",
+      "source": "Sparsh – Chapter 2",
+      "title": "महिला सशक्तिकरण और साहस",
+      "question": "बचेंद्री पाल की सफलता के आधार पर महिला सशक्तिकरण पर निबंध लिखिए।"
+    },
+    {
+      "id": 6,
+      "chapter": "एवरेस्ट: मेरी शिखर यात्रा",
+      "source": "Sparsh – Chapter 2",
+      "title": "लक्ष्य के प्रति दृढ़ निश्चय",
+      "question": "सफलता प्राप्त करने के लिए दृढ़ संकल्प का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "एवरेस्ट: मेरी शिखर यात्रा",
+      "source": "Sparsh – Chapter 2",
+      "title": "पर्वतारोहण की चुनौतियाँ",
+      "question": "साहसिक खेलों और पर्वतारोहण के दौरान आने वाली कठिनाइयों पर निबंध लिखिए।"
+    },
+    {
+      "id": 8,
+      "chapter": "एवरेस्ट: मेरी शिखर यात्रा",
+      "source": "Sparsh – Chapter 2",
+      "title": "टीम वर्क का महत्व",
+      "question": "किसी कठिन अभियान में सामूहिक प्रयास और सहयोग के महत्व पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 9,
+      "chapter": "तुम कब जाओगे, अतिथि",
+      "source": "Sparsh – Chapter 3",
+      "title": "अतिथि देवो भव: की सीमा",
+      "question": "अतिथि सत्कार की भारतीय परंपरा और उसकी सीमाओं पर निबंध लिखिए।"
+    },
+    {
+      "id": 10,
+      "chapter": "तुम कब जाओगे, अतिथि",
+      "source": "Sparsh – Chapter 3",
+      "title": "मध्यमवर्गीय परिवारों का संघर्ष",
+      "question": "अनचाहे मेहमानों के कारण मध्यमवर्गीय परिवारों पर पड़ने वाले बोझ पर निबंध लिखिए।"
+    },
+    {
+      "id": 11,
+      "chapter": "तुम कब जाओगे, अतिथि",
+      "source": "Sparsh – Chapter 3",
+      "title": "निजता का महत्व",
+      "question": "आज के जीवन में प्राइवेसी (निजता) के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 12,
+      "chapter": "तुम कब जाओगे, अतिथि",
+      "source": "Sparsh – Chapter 3",
+      "title": "आधुनिक जीवन और औपचारिकता",
+      "question": "बदलती जीवनशैली में रिश्तों के बीच बढ़ती औपचारिकताओं पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 13,
+      "chapter": "वैज्ञानिक चेतना के वाहक",
+      "source": "Sparsh – Chapter 4",
+      "title": "विज्ञान और जिज्ञासा",
+      "question": "सी.वी. रामन् के जीवन के आधार पर वैज्ञानिक दृष्टिकोण के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "वैज्ञानिक चेतना के वाहक",
+      "source": "Sparsh – Chapter 4",
+      "title": "सीमित साधनों में बड़ी सफलता",
+      "question": "इच्छाशक्ति और परिश्रम के बल पर अभावों में भी महान कार्य संभव हैं – निबंध लिखिए।"
+    },
+    {
+      "id": 15,
+      "chapter": "वैज्ञानिक चेतना के वाहक",
+      "source": "Sparsh – Chapter 4",
+      "title": "भारत का गौरव: रामन् प्रभाव",
+      "question": "विश्व स्तर पर भारतीय विज्ञान के योगदान पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 16,
+      "chapter": "शुक्रतारे के समान",
+      "source": "Sparsh – Chapter 5",
+      "title": "सेवा और समर्पण",
+      "question": "महादेव भाई देसाई के जीवन से मिलने वाली सेवा भाव की प्रेरणा पर निबंध लिखिए।"
+    },
+    {
+      "id": 17,
+      "chapter": "शुक्रतारे के समान",
+      "source": "Sparsh – Chapter 5",
+      "title": "एक आदर्श सहायक",
+      "question": "किसी महान व्यक्तित्व के पीछे उसके सहायकों की भूमिका पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 18,
+      "chapter": "रैदास के पद",
+      "source": "Sparsh – Chapter 6",
+      "title": "सच्ची भक्ति का स्वरूप",
+      "question": "रैदास के पदों के आधार पर भक्त और भगवान के अटूट संबंध पर निबंध लिखिए।"
+    },
+    {
+      "id": 19,
+      "chapter": "रैदास के पद",
+      "source": "Sparsh – Chapter 6",
+      "title": "समानता और ईश्वर",
+      "question": "ईश्वर की नज़र में सब समान हैं – इस विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 20,
+      "chapter": "रहीम के दोहे",
+      "source": "Sparsh – Chapter 7",
+      "title": "नीति और जीवन मूल्य",
+      "question": "रहीम के दोहों से मिलने वाली व्यवहारिक जीवन की सीख पर निबंध लिखिए।"
+    },
+    {
+      "id": 21,
+      "chapter": "रहीम के दोहे",
+      "source": "Sparsh – Chapter 7",
+      "title": "परोपकार का महत्व",
+      "question": "वृक्ष और सरोवर के उदाहरण से परोपकार की महिमा पर निबंध लिखिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "रहीम के दोहे",
+      "source": "Sparsh – Chapter 7",
+      "title": "वाणी की मधुरता",
+      "question": "मधुर वचन का जीवन में महत्व विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 23,
+      "chapter": "गीत-अगीत",
+      "source": "Sparsh – Chapter 8",
+      "title": "प्रकृति का सौंदर्य",
+      "question": "प्रकृति के कण-कण में बसे संगीत और सौंदर्य पर निबंध लिखिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "गीत-अगीत",
+      "source": "Sparsh – Chapter 8",
+      "title": "व्यक्त और अव्यक्त प्रेम",
+      "question": "अनुभूति की सुंदरता व्यक्त करने से अधिक अनकही रहने में है – चर्चा करते हुए निबंध लिखिए।"
+    },
+
+    {
+      "id": 25,
+      "chapter": "अग्नि पथ",
+      "source": "Sparsh – Chapter 9",
+      "title": "जीवन एक संघर्ष",
+      "question": "‘अग्नि पथ’ कविता के संदेश 'संघर्ष ही जीवन है' पर निबंध लिखिए।"
+    },
+    {
+      "id": 26,
+      "chapter": "अग्नि पथ",
+      "source": "Sparsh – Chapter 9",
+      "title": "आत्मनिर्भरता",
+      "question": "बिना किसी सहारे के आगे बढ़ना ही सच्ची वीरता है – निबंध लिखिए।"
+    },
+
+    {
+      "id": 27,
+      "chapter": "नए इलाके में / खुशबू रचते हैं हाथ",
+      "source": "Sparsh – Chapter 10",
+      "title": "शहरीकरण का बदलता स्वरूप",
+      "question": "तीव्र शहरीकरण और पुरानी पहचान खोने की समस्या पर निबंध लिखिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "नए इलाके में / खुशबू रचते हैं हाथ",
+      "source": "Sparsh – Chapter 10",
+      "title": "मजदूर वर्ग की विडंबना",
+      "question": "दुनिया को खुशबू देने वालों का जीवन गंदगी में बीतता है – इस विषमता पर निबंध लिखिए।"
+    },
+    {
+      "id": 29,
+      "chapter": "नए इलाके में / खुशबू रचते हैं हाथ",
+      "source": "Sparsh – Chapter 10",
+      "title": "श्रम की गरिमा",
+      "question": "श्रम करने वाले हाथों के सम्मान और उनके अधिकारों पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 30,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Sparsh",
+      "title": "साहित्य और समाज",
+      "question": "हिंदी साहित्य समाज का दर्पण है – स्पर्श के पाठों के आधार पर निबंध लिखिए।"
+    },
+    {
+      "id": 31,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Sparsh",
+      "title": "मानवीय संवेदनाएं",
+      "question": "कहानियों और कविताओं के माध्यम से मानवीय संवेदनाओं के विकास पर निबंध लिखिए।"
+    },
+    {
+      "id": 32,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Sparsh",
+      "title": "नैतिकता और छात्र",
+      "question": "पाठ्यक्रम में नैतिक शिक्षा की आवश्यकता पर निबंध लिखिए।"
+    },
+    {
+      "id": 33,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Sparsh",
+      "title": "प्रकृति के प्रति हमारा कर्तव्य",
+      "question": "स्पर्श की कविताओं के संदर्भ में प्रकृति संरक्षण पर निबंध लिखिए।"
+    },
+    {
+      "id": 34,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Sparsh",
+      "title": "अंधविश्वास बनाम विज्ञान",
+      "question": "समाज में बढ़ती वैज्ञानिक सोच और घटते अंधविश्वास पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 35,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "सफलता का रहस्य",
+      "question": "परिश्रम और धैर्य ही सफलता के सोपान हैं – निबंध लिखिए।"
+    },
+    {
+      "id": 36,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "सत्य और ईमानदारी",
+      "question": "नैतिक मूल्यों का जीवन में स्थान विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 37,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "गरीबों की सेवा",
+      "question": "नर सेवा ही नारायण सेवा है – इस भाव पर निबंध लिखिए।"
+    },
+    {
+      "id": 38,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "समय का सदुपयोग",
+      "question": "जीवन में समय के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 39,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "अहिंसा और प्रेम",
+      "question": "शांतिपूर्ण सह-अस्तित्व के लिए प्रेम का महत्व विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 40,
+      "chapter": "Social Issues",
+      "source": "All Chapters – Sparsh",
+      "title": "जातिवाद एक अभिशाप",
+      "question": "रैदास और रहीम के पदों के प्रकाश में जातिवाद की समस्या पर निबंध लिखिए।"
+    },
+    {
+      "id": 41,
+      "chapter": "Social Issues",
+      "source": "All Chapters – Sparsh",
+      "title": "बाल श्रम",
+      "question": "‘खुशबू रचते हैं हाथ’ के संदर्भ में बाल श्रम की समस्या पर निबंध लिखिए।"
+    },
+    {
+      "id": 42,
+      "chapter": "Social Issues",
+      "source": "All Chapters – Sparsh",
+      "title": "शिक्षा का प्रसार",
+      "question": "समाज के पिछड़े वर्गों के लिए शिक्षा की अनिवार्यता पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 43,
+      "chapter": "Creative",
+      "source": "All Chapters – Sparsh",
+      "title": "यदि मैं बचेंद्री पाल होता/होती",
+      "question": "कल्पना कीजिए कि आप एवरेस्ट पर हैं, अपनी भावनाओं पर निबंध लिखिए।"
+    },
+    {
+      "id": 44,
+      "chapter": "Creative",
+      "source": "All Chapters – Sparsh",
+      "title": "आधुनिक अतिथि",
+      "question": "आज के डिजिटल युग में 'अतिथि सत्कार' कैसा होना चाहिए? निबंध लिखिए।"
+    },
+    {
+      "id": 45,
+      "chapter": "Creative",
+      "source": "All Chapters – Sparsh",
+      "title": "मेरा प्रिय वैज्ञानिक",
+      "question": "सी.वी. रामन् के योगदान पर प्रकाश डालते हुए अपने प्रिय वैज्ञानिक पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 46,
+      "chapter": "Nature",
+      "source": "All Chapters – Sparsh",
+      "title": "नदियों का महत्व",
+      "question": "भारतीय संस्कृति और अर्थव्यवस्था में नदियों की भूमिका पर निबंध लिखिए।"
+    },
+    {
+      "id": 47,
+      "chapter": "Nature",
+      "source": "All Chapters – Sparsh",
+      "title": "हिमालय: हमारा गौरव",
+      "question": "हिमालय के महत्व और उसकी सुरक्षा पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 48,
+      "chapter": "Student Perspective",
+      "source": "All Chapters – Sparsh",
+      "title": "छात्र और अनुशासन",
+      "question": "सफलता के लिए अनुशासन की आवश्यकता पर निबंध लिखिए।"
+    },
+    {
+      "id": 49,
+      "chapter": "Student Perspective",
+      "source": "All Chapters – Sparsh",
+      "title": "पुस्तकालय का महत्व",
+      "question": "ज्ञान अर्जन में पुस्तकों की भूमिका पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 50,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Sparsh",
+      "title": "स्पर्शात्मक अनुभव",
+      "question": "‘स्पर्श’ पुस्तक के विभिन्न पाठों से आपने क्या सीखा? सार रूप में निबंध लिखिए।"
+    },
+    {
+      "id": 51,
+      "chapter": "Value Based",
+      "source": "All Chapters – Sparsh",
+      "title": "मातृभाषा का सम्मान",
+      "question": "हिंदी भाषा और उसके साहित्य के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 52,
+      "chapter": "Social Issues",
+      "source": "All Chapters – Sparsh",
+      "title": "अमीर और गरीब की खाई",
+      "question": "समाज में बढ़ती आर्थिक असमानता के कारणों और निवारण पर निबंध लिखिए।"
+    },
+    {
+      "id": 53,
+      "chapter": "Life Skills",
+      "source": "All Chapters – Sparsh",
+      "title": "विपत्ति में धैर्य",
+      "question": "संकट के समय मानसिक दृढ़ता कैसे बनाए रखें? निबंध लिखिए।"
+    },
+    {
+      "id": 54,
+      "chapter": "Humanity",
+      "source": "All Chapters – Sparsh",
+      "title": "परोपकार ही धर्म है",
+      "question": "रहीम के दोहों के प्रकाश में परोपकार की सार्थकता पर निबंध लिखिए।"
+    },
+    {
+      "id": 55,
+      "chapter": "Science",
+      "source": "All Chapters – Sparsh",
+      "title": "अंधविश्वास एक सामाजिक बुराई",
+      "question": "वैज्ञानिक सोच के माध्यम से अंधविश्वासों को दूर करने पर निबंध लिखिए।"
+    },
+    {
+      "id": 56,
+      "chapter": "Nature",
+      "source": "All Chapters – Sparsh",
+      "title": "पर्यावरण और हम",
+      "question": "प्रकृति के साथ सामंजस्य बिठाने की आवश्यकता पर निबंध लिखिए।"
+    },
+    {
+      "id": 57,
+      "chapter": "Patriotism",
+      "source": "All Chapters – Sparsh",
+      "title": "देशभक्ति का असली अर्थ",
+      "question": "केवल सीमा पर लड़ना ही नहीं, बल्कि कर्तव्य पालन भी देशभक्ति है – निबंध लिखिए।"
+    },
+    {
+      "id": 58,
+      "chapter": "Education",
+      "source": "All Chapters – Sparsh",
+      "title": "किताबी ज्ञान और व्यवहारिक ज्ञान",
+      "question": "रामन् और बचेंद्री पाल के उदाहरणों से ज्ञान के प्रयोग पर निबंध लिखिए।"
+    },
+    {
+      "id": 59,
+      "chapter": "Inspiration",
+      "source": "All Chapters – Sparsh",
+      "title": "आदर्श व्यक्तित्व",
+      "question": "महादेव भाई देसाई के गुणों पर आधारित एक आदर्श व्यक्तित्व के गुणों पर निबंध लिखिए।"
+    },
+    {
+      "id": 60,
+      "chapter": "Culture",
+      "source": "All Chapters – Sparsh",
+      "title": "भारतीय संस्कृति में अतिथि",
+      "question": "अतिथि सत्कार: कल और आज – एक तुलनात्मक निबंध लिखिए।"
+    },
+    {
+      "id": 61,
+      "chapter": "Literature",
+      "source": "All Chapters – Sparsh",
+      "title": "दोहों की प्रासंगिकता",
+      "question": "आज के युग में रहीम और रैदास की वाणी कितनी सार्थक है? निबंध लिखिए।"
+    },
+    {
+      "id": 62,
+      "chapter": "Motivation",
+      "source": "All Chapters – Sparsh",
+      "title": "सफलता का मूलमंत्र: एकाग्रता",
+      "question": "एकै साधै सब सधै – लक्ष्य के प्रति एकाग्रता पर निबंध लिखिए।"
+    },
+    {
+      "id": 63,
+      "chapter": "Self Confidence",
+      "source": "All Chapters – Sparsh",
+      "title": "आत्मविश्वास की शक्ति",
+      "question": "पर्वतारोहण के संदर्भ में आत्मविश्वास के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 64,
+      "chapter": "Social Harmony",
+      "source": "All Chapters – Sparsh",
+      "title": "धार्मिक एकता",
+      "question": "भक्ति काल के कवियों द्वारा दिए गए एकता के संदेश पर निबंध लिखिए।"
+    },
+    {
+      "id": 65,
+      "chapter": "Child Labor",
+      "source": "All Chapters – Sparsh",
+      "title": "बचपन और मजबूरी",
+      "question": "मजदूर बच्चों के भविष्य और समाज की जिम्मेदारी पर निबंध लिखिए।"
+    },
+    {
+      "id": 66,
+      "chapter": "Urbanization",
+      "source": "All Chapters – Sparsh",
+      "title": "महानगरीय जीवन की विडंबना",
+      "question": "‘नए इलाके में’ कविता के आधार पर शहरी जीवन की भागदौड़ पर निबंध लिखिए।"
+    },
+    {
+      "id": 67,
+      "chapter": "Responsibility",
+      "source": "All Chapters – Sparsh",
+      "title": "नागरिक कर्तव्य",
+      "question": "एक जिम्मेदार नागरिक के रूप में हमारे समाज के प्रति कर्तव्य – निबंध लिखिए।"
+    },
+    {
+      "id": 68,
+      "chapter": "Hard Work",
+      "source": "All Chapters – Sparsh",
+      "title": "श्रम की पूजा",
+      "question": "शारीरिक श्रम करने वालों के प्रति हमारे दृष्टिकोण पर निबंध लिखिए।"
+    },
+    {
+      "id": 69,
+      "chapter": "Emotions",
+      "source": "All Chapters – Sparsh",
+      "title": "संवेदनाओं का लोप",
+      "question": "क्या आज का मनुष्य मशीनी हो गया है? संवेदनाओं के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 70,
+      "chapter": "Communication",
+      "source": "All Chapters – Sparsh",
+      "title": "वाणी का प्रभाव",
+      "question": "ऐसी बानी बोलिए मन का आपा खोय – मधुर वाणी पर निबंध लिखिए।"
+    },
+    {
+      "id": 71,
+      "chapter": "History",
+      "source": "All Chapters – Sparsh",
+      "title": "आजादी का आंदोलन और साहित्य",
+      "question": "गांधीजी और उनके सहयोगियों के संघर्ष पर निबंध लिखिए।"
+    },
+    {
+      "id": 72,
+      "chapter": "Values",
+      "source": "All Chapters – Sparsh",
+      "title": "विनम्रता: एक आभूषण",
+      "question": "बचेंद्री पाल की सफलता और उनकी विनम्रता पर निबंध लिखिए।"
+    },
+    {
+      "id": 73,
+      "chapter": "Ethics",
+      "source": "All Chapters – Sparsh",
+      "title": "स्वार्थ और परमार्थ",
+      "question": "स्वार्थ से ऊपर उठकर समाज हित में कार्य करने की प्रेरणा पर निबंध लिखिए।"
+    },
+    {
+      "id": 74,
+      "chapter": "Health",
+      "source": "All Chapters – Sparsh",
+      "title": "स्वच्छता और हम",
+      "question": "गंदी बस्तियों की समस्या और स्वच्छता अभियान पर निबंध लिखिए।"
+    },
+    {
+      "id": 75,
+      "chapter": "Science",
+      "source": "All Chapters – Sparsh",
+      "title": "विज्ञान के चमत्कार और अभिशाप",
+      "question": "रामन् की खोजों के संदर्भ में आधुनिक विज्ञान पर निबंध लिखिए।"
+    },
+    {
+      "id": 76,
+      "chapter": "Equality",
+      "source": "All Chapters – Sparsh",
+      "title": "सबै भूमि गोपाल की",
+      "question": "जाति और धर्म से ऊपर उठकर मानवता के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 77,
+      "chapter": "Resilience",
+      "source": "All Chapters – Sparsh",
+      "title": "हार नहीं मानूँगा",
+      "question": "विपरीत परिस्थितियों में रास्ता बनाने की कला पर निबंध लिखिए।"
+    },
+    {
+      "id": 78,
+      "chapter": "Nature",
+      "source": "All Chapters – Sparsh",
+      "title": "वृक्ष धरा के भूषण हैं",
+      "question": "पर्यावरण संतुलन में पेड़ों की भूमिका पर निबंध लिखिए।"
+    },
+    {
+      "id": 79,
+      "chapter": "Society",
+      "source": "All Chapters – Sparsh",
+      "title": "पड़ोसी का महत्व",
+      "question": "सामाजिक जीवन में पड़ोसियों के साथ संबंधों पर निबंध लिखिए।"
+    },
+    {
+      "id": 80,
+      "chapter": "Inspiration",
+      "source": "All Chapters – Sparsh",
+      "title": "मेरे प्रेरणास्रोत",
+      "question": "स्पर्श के किसी एक महान व्यक्तित्व पर आधारित निबंध लिखिए।"
+    },
+    {
+      "id": 81,
+      "chapter": "Ethics",
+      "source": "All Chapters – Sparsh",
+      "title": "चरित्र निर्माण",
+      "question": "विद्यार्थी जीवन और चरित्र निर्माण पर निबंध लिखिए।"
+    },
+    {
+      "id": 82,
+      "chapter": "Environment",
+      "source": "All Chapters – Sparsh",
+      "title": "जल संरक्षण",
+      "question": "‘रहिमन पानी राखिये’ के संदर्भ में जल के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 83,
+      "chapter": "Social Media",
+      "source": "All Chapters – Sparsh",
+      "title": "डिजिटल युग और रिश्ते",
+      "question": "तकनीक के दौर में मानवीय संवेदनाओं की स्थिति पर निबंध लिखिए।"
+    },
+    {
+      "id": 84,
+      "chapter": "Equality",
+      "source": "All Chapters – Sparsh",
+      "title": "स्त्री-पुरुष समानता",
+      "question": "बचेंद्री पाल के साहसी कदम और लैंगिक समानता पर निबंध लिखिए।"
+    },
+    {
+      "id": 85,
+      "chapter": "Kindness",
+      "source": "All Chapters – Sparsh",
+      "title": "पशु-पक्षियों के प्रति करुणा",
+      "question": "प्रकृति के जीवों के प्रति मनुष्य की संवेदनशीलता पर निबंध लिखिए।"
+    },
+    {
+      "id": 86,
+      "chapter": "Determination",
+      "source": "All Chapters – Sparsh",
+      "title": "श्रम की गरिमा",
+      "question": "मजदूर वर्ग के योगदान और उनकी समस्याओं पर निबंध लिखिए।"
+    },
+    {
+      "id": 87,
+      "chapter": "Philosophy",
+      "source": "All Chapters – Sparsh",
+      "title": "दुःख और सुख का चक्र",
+      "question": "जीवन में सुख-दुःख की अनिवार्यता पर निबंध लिखिए।"
+    },
+    {
+      "id": 88,
+      "chapter": "Literature",
+      "source": "All Chapters – Sparsh",
+      "title": "कविता का प्रभाव",
+      "question": "कविताएँ कैसे हमारे भावों को जगाती हैं? निबंध लिखिए।"
+    },
+    {
+      "id": 89,
+      "chapter": "Motivation",
+      "source": "All Chapters – Sparsh",
+      "title": "कोशिश करने वालों की हार नहीं होती",
+      "question": "एवरेस्ट यात्रा के आधार पर सफलता के संघर्ष पर निबंध लिखिए।"
+    },
+    {
+      "id": 90,
+      "chapter": "Tradition",
+      "source": "All Chapters – Sparsh",
+      "title": "आतिथ्य सत्कार: एक गौरव",
+      "question": "भारतीय संस्कृति में मेहमानों का स्थान विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 91,
+      "chapter": "Development",
+      "source": "All Chapters – Sparsh",
+      "title": "आधुनिकता बनाम परंपरा",
+      "question": "तेजी से बदलते समाज में पुरानी मान्यताओं के स्थान पर निबंध लिखिए।"
+    },
+    {
+      "id": 92,
+      "chapter": "Ethics",
+      "source": "All Chapters – Sparsh",
+      "title": "मन की शांति",
+      "question": "भौतिक सुखों के बीच मानसिक शांति की तलाश पर निबंध लिखिए।"
+    },
+    {
+      "id": 93,
+      "chapter": "Social Responsibility",
+      "source": "All Chapters – Sparsh",
+      "title": "मदद का हाथ",
+      "question": "समाज के कमजोर वर्गों के उत्थान में हमारी भूमिका पर निबंध लिखिए।"
+    },
+    {
+      "id": 94,
+      "chapter": "Human Rights",
+      "source": "All Chapters – Sparsh",
+      "title": "सम्मान के साथ जीने का अधिकार",
+      "question": "बुढ़िया की त्रासदी के संदर्भ में मानवीय अधिकारों पर निबंध लिखिए।"
+    },
+    {
+      "id": 95,
+      "chapter": "Spirituality",
+      "source": "All Chapters – Sparsh",
+      "title": "भक्ति और शांति",
+      "question": "रैदास के पदों से मिलने वाली मानसिक शांति पर निबंध लिखिए।"
+    },
+    {
+      "id": 96,
+      "chapter": "Art",
+      "source": "All Chapters – Sparsh",
+      "title": "संगीत और प्रकृति",
+      "question": "प्रकृति के कण-कण में व्याप्त कला और संगीत पर निबंध लिखिए।"
+    },
+    {
+      "id": 97,
+      "chapter": "Success",
+      "source": "All Chapters – Sparsh",
+      "title": "सफलता का पैमाना",
+      "question": "केवल पद ही नहीं, चरित्र भी सफलता है – निबंध लिखिए।"
+    },
+    {
+      "id": 98,
+      "chapter": "Global Peace",
+      "source": "All Chapters – Sparsh",
+      "title": "वसुधैव कुटुंबकम",
+      "question": "विश्व बंधुत्व की भावना और रहीम के विचार पर निबंध लिखिए।"
+    },
+    {
+      "id": 99,
+      "chapter": "Education",
+      "source": "All Chapters – Sparsh",
+      "title": "मेरा प्रिय विषय: हिंदी",
+      "question": "साहित्य के विद्यार्थी के रूप में अपने अनुभवों पर निबंध लिखिए।"
+    },
+    {
+      "id": 100,
+      "chapter": "Conclusion",
+      "source": "All Chapters – Sparsh",
+      "title": "स्पर्श का सार",
+      "question": "‘स्पर्श’ पुस्तक के नैतिक संदेशों का हमारे जीवन पर प्रभाव – निबंध लिखिए।"
+    }
+  ]
+}

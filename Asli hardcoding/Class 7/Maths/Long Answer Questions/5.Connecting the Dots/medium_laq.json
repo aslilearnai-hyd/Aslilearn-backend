@@ -1,0 +1,116 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Connecting the Dots (Understanding Elementary Shapes)",
+    "generated_at": "2026-03-05T01:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A clock shows 3:40. Calculate the exact angle between the hour hand and the minute hand.",
+            "answer": "At 3:40, the minute hand is at 8 (240°). The hour hand moves 0.5° per minute. At 3:00, it was at 90°. In 40 mins, it moved $40 \\times 0.5 = 20°$. So, hour hand is at $90 + 20 = 110°$. Angle = $240° - 110° = 130°$.",
+            "answer_outline": [
+                "Find minute hand position in degrees",
+                "Calculate hour hand shift from the base hour",
+                "Find the difference between the two positions"
+            ],
+            "key_concepts": [
+                "clock angles",
+                "angular velocity"
+            ],
+            "marks": 6,
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "State and verify Euler's Formula for a Pentagonal Prism.",
+            "answer": "Euler's Formula: $F + V - E = 2$. For a Pentagonal Prism: Faces ($F$) = 7, Vertices ($V$) = 10, Edges ($E$) = 15. Verification: $7 + 10 - 15 = 17 - 15 = 2$. Formula holds true.",
+            "answer_outline": [
+                "State Euler's Formula",
+                "Identify F, V, E for the specific solid",
+                "Perform the calculation to verify"
+            ],
+            "key_concepts": [
+                "Euler's Formula",
+                "3D solids"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that a regular hexagon can be divided into six congruent equilateral triangles.",
+            "answer": "In a regular hexagon, the internal angle is 120°. When diagonals are drawn from the center to each vertex, six triangles are formed. The angle at the center is $360/6 = 60°$. Since the radii are equal, the base angles are also 60°. Thus, each triangle is equilateral.",
+            "answer_outline": [
+                "Calculate central angle",
+                "Use properties of regular polygons",
+                "Apply triangle angle sum property"
+            ],
+            "key_concepts": [
+                "regular hexagon",
+                "equilateral triangles"
+            ],
+            "marks": 6,
+            "source_section": "Section 5.8"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why it is impossible to have a triangle with two obtuse angles.",
+            "answer": "The sum of angles in a triangle is exactly 180°. An obtuse angle is $> 90°$. If there were two, their sum would be $> 180°$, leaving no room for a third angle or even a closed shape. Thus, a triangle can have at most one obtuse angle.",
+            "answer_outline": [
+                "State Angle Sum Property",
+                "Define obtuse angle range",
+                "Show the contradiction"
+            ],
+            "key_concepts": [
+                "angle sum property",
+                "obtuse triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.6"
+        },
+        {
+            "question_number": 5,
+            "question": "A line segment $PQ$ is 10 cm long. A point $R$ is on the perpendicular bisector of $PQ$. If $R$ is 12 cm away from the midpoint of $PQ$, calculate the length of $PR$.",
+            "answer": "Let $M$ be the midpoint. $PM = 5$ cm. $RM = 12$ cm. Since $RM \\perp PM$, we use Pythagoras: $PR^2 = PM^2 + RM^2 = 5^2 + 12^2 = 25 + 144 = 169$. $PR = 13$ cm.",
+            "answer_outline": [
+                "Identify the right-angled triangle",
+                "Apply Pythagorean Theorem",
+                "Calculate distance"
+            ],
+            "key_concepts": [
+                "perpendicular bisector",
+                "Pythagoras theorem"
+            ],
+            "marks": 6,
+            "source_section": "Section 5.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Compare a Square Pyramid and a Triangular Prism in terms of Faces, Edges, and Vertices. Which has more edges?",
+            "answer": "Square Pyramid: $F=5, V=5, E=8$. Triangular Prism: $F=5, V=6, E=9$. The Triangular Prism has more edges.",
+            "answer_outline": [
+                "Tally F, V, E for both solids",
+                "Compare the specific counts"
+            ],
+            "key_concepts": [
+                "polyhedrons",
+                "solid comparison"
+            ],
+            "marks": 5,
+            "source_section": "Section 5.9"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the measure of each interior angle of a regular Octagon?",
+            "answer": "Formula: $((n-2) \\times 180) / n$. For an octagon ($n=8$): $(6 \\times 180) / 8 = 1080 / 8 = 135°$.",
+            "answer_outline": [
+                "Apply polygon angle formula",
+                "Calculate for $n=8$"
+            ],
+            "key_concepts": [
+                "regular polygon",
+                "interior angles"
+            ],
+            "marks": 4,
+            "source_section": "Section 5.8"
+        },

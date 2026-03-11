@@ -1,0 +1,79 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 3: Proportional Reasoning – 2",
+  "generated_at": "2026-03-05T12:45:00",
+  "concepts": [
+    {
+      "concept_name": "Ratio and Proportion",
+      "difficulty": "easy",
+      "lesson": "A ratio is a comparison of two quantities using division. It shows how many times one value contains another. When two ratios are equal, they form a proportion. Ratios and proportions are widely used in mathematics to compare quantities and solve practical problems such as mixtures, sharing quantities, and scaling. Understanding ratios helps in solving many real-life mathematical problems involving comparison and distribution.",
+      "real_example": "The ratio of boys to girls in a class is 3:2.",
+      "key_points": [
+        "Ratio compares two quantities",
+        "Proportion means equality of two ratios",
+        "Cross multiplication verifies proportions"
+      ],
+      "source_section": "Section 3.1"
+    },
+    {
+      "concept_name": "Map Scale and Representative Fraction",
+      "difficulty": "medium",
+      "lesson": "A map scale represents the relationship between the distance on a map and the actual distance on the ground. It allows large distances to be represented in a small space. The representative fraction (RF) expresses this relationship as a ratio. By using map scales, we can calculate actual distances between places based on the measurements taken from the map. This concept is commonly used in geography, navigation, and planning.",
+      "real_example": "A scale of 1 : 6000000 means 1 cm on the map represents 60 km in reality.",
+      "key_points": [
+        "Scale relates map distance to real distance",
+        "Expressed as a ratio or fraction",
+        "Used to estimate real distances"
+      ],
+      "source_section": "Section 3.2"
+    },
+    {
+      "concept_name": "Multi-Term Ratios and Simplification",
+      "difficulty": "medium",
+      "lesson": "Sometimes ratios involve more than two quantities, which are called multi-term ratios. These ratios can represent relationships among several quantities simultaneously. Simplifying a ratio means reducing it to its simplest form by dividing all terms by their greatest common divisor. Simplified ratios make comparisons easier and help in solving problems involving sharing and mixtures.",
+      "real_example": "The ratio 12:18:24 simplifies to 2:3:4.",
+      "key_points": [
+        "Ratios may have more than two terms",
+        "Simplification uses common factors",
+        "Helps in easier comparison of quantities"
+      ],
+      "source_section": "Section 3.3"
+    },
+    {
+      "concept_name": "Division of Quantities in a Given Ratio",
+      "difficulty": "medium",
+      "lesson": "Dividing a quantity in a given ratio means distributing a total amount into parts according to specified proportions. To divide a quantity, first find the sum of the ratio terms and then calculate each share by multiplying the fraction of each term with the total quantity. This concept is used in sharing resources, profit distribution, mixtures, and various financial calculations.",
+      "real_example": "Dividing ₹120 in the ratio 2:3 gives ₹48 and ₹72.",
+      "key_points": [
+        "Add ratio terms to find total parts",
+        "Each share = (ratio part / total parts) × total quantity",
+        "Used in sharing and distribution problems"
+      ],
+      "source_section": "Section 3.4"
+    },
+    {
+      "concept_name": "Pie Charts and Data Representation",
+      "difficulty": "medium",
+      "lesson": "A pie chart is a circular diagram used to represent data visually as sectors of a circle. Each sector represents a proportion of the total data. The angle of each sector is calculated by multiplying the fraction of the data by 360 degrees. Pie charts help in understanding data distribution quickly and are commonly used in statistics, surveys, and reports.",
+      "real_example": "If 25% of students like sports, the pie chart sector angle is 90°.",
+      "key_points": [
+        "Total circle represents 360°",
+        "Sector angle = (value / total) × 360°",
+        "Useful for visual comparison of data"
+      ],
+      "source_section": "Section 3.5"
+    },
+    {
+      "concept_name": "Direct and Inverse Proportion",
+      "difficulty": "hard",
+      "lesson": "In direct proportion, two quantities increase or decrease together in the same ratio. If one quantity doubles, the other also doubles. In inverse proportion, one quantity increases while the other decreases in such a way that their product remains constant. Understanding these relationships helps solve many real-life problems such as work, speed, time, and resource allocation. Recognizing whether a situation involves direct or inverse proportion is an important reasoning skill in mathematics.",
+      "real_example": "Number of workers and time taken to complete a job are inversely proportional.",
+      "key_points": [
+        "Direct proportion → ratio remains constant",
+        "Inverse proportion → product remains constant",
+        "Common in work, speed, and resource problems"
+      ],
+      "source_section": "Section 3.6"
+    }
+  ]
+}

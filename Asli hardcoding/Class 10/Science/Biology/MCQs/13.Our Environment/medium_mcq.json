@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 13: Our Environment",
+  "generated_at": "2026-03-11T06:15:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is an abiotic component of the environment?",
+      "options": {
+        "A": "Animals",
+        "B": "Plants",
+        "C": "Water",
+        "D": "Fungi"
+      },
+      "correct_answer": "C",
+      "explanation": "Water is a non-living component, making it abiotic.",
+      "difficulty": "medium",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Deforestation mainly affects which of the following?",
+      "options": {
+        "A": "Wind speed",
+        "B": "Soil fertility and local rainfall",
+        "C": "Sunlight intensity",
+        "D": "Global temperature only"
+      },
+      "correct_answer": "B",
+      "explanation": "Removing trees reduces soil binding and decreases transpiration, affecting rainfall.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Which human activity increases carbon dioxide in the atmosphere?",
+      "options": {
+        "A": "Using solar panels",
+        "B": "Burning fossil fuels",
+        "C": "Planting trees",
+        "D": "Rainwater harvesting"
+      },
+      "correct_answer": "B",
+      "explanation": "Burning coal, petrol, and natural gas releases CO₂, enhancing greenhouse effect.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the effect of algal blooms in water bodies?",
+      "options": {
+        "A": "Increase oxygen level",
+        "B": "Decrease oxygen level and harm aquatic life",
+        "C": "Increase fish population",
+        "D": "Purify water"
+      },
+      "correct_answer": "B",
+      "explanation": "Excess nutrients cause algae to grow rapidly, depleting oxygen and killing aquatic organisms.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which gas contributes to the greenhouse effect the most?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Helium"
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon dioxide traps heat in the atmosphere, leading to global warming.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is a renewable source of energy?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Wind",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Wind is continuously available and does not deplete, making it renewable.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of these is a biotic factor affecting an ecosystem?",
+      "options": {
+        "A": "Soil",
+        "B": "Sunlight",
+        "C": "Predators",
+        "D": "Water"
+      },
+      "correct_answer": "C",
+      "explanation": "Predators are living organisms influencing population dynamics, a biotic factor.",
+      "difficulty": "medium",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Acid rain is mainly caused by the release of:",
+      "options": {
+        "A": "Oxygen and nitrogen",
+        "B": "Sulfur dioxide and nitrogen oxides",
+        "C": "Carbon dioxide and methane",
+        "D": "Water vapor"
+      },
+      "correct_answer": "B",
+      "explanation": "SO₂ and NO₂ from industries and vehicles react with water to form acidic rain.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Which activity helps in maintaining soil fertility?",
+      "options": {
+        "A": "Overgrazing",
+        "B": "Crop rotation",
+        "C": "Deforestation",
+        "D": "Soil mining"
+      },
+      "correct_answer": "B",
+      "explanation": "Rotating crops prevents nutrient depletion and keeps soil fertile.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the role of decomposers in an ecosystem?",
+      "options": {
+        "A": "Produce energy",
+        "B": "Break down dead matter and recycle nutrients",
+        "C": "Eat living plants",
+        "D": "Absorb sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposers like bacteria and fungi recycle nutrients back into the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which human activity accelerates soil erosion?",
+      "options": {
+        "A": "Afforestation",
+        "B": "Deforestation",
+        "C": "Rainwater harvesting",
+        "D": "Terrace farming"
+      },
+      "correct_answer": "B",
+      "explanation": "Removing trees exposes soil to wind and water erosion.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is a consequence of water pollution?",
+      "options": {
+        "A": "Increased oxygen in water",
+        "B": "Death of aquatic organisms",
+        "C": "Improved water quality",
+        "D": "Increased groundwater recharge"
+      },
+      "correct_answer": "B",
+      "explanation": "Pollutants deplete oxygen and introduce toxins, harming aquatic life.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 13,
+      "question": "Which of the following is a non-renewable resource?",
+      "options": {
+        "A": "Solar energy",
+        "B": "Wind energy",
+        "C": "Coal",
+        "D": "Water energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Coal takes millions of years to form and cannot be quickly replenished.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 14,
+      "question": "Excessive nutrient enrichment in water bodies leads to:",
+      "options": {
+        "A": "Eutrophication",
+        "B": "Deforestation",
+        "C": "Ozone depletion",
+        "D": "Acid rain"
+      },
+      "correct_answer": "A",
+      "explanation": "High nutrient levels cause rapid algal growth, reducing oxygen in water.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 15,
+      "question": "Which practice reduces air pollution in urban areas?",
+      "options": {
+        "A": "Increasing vehicle use",
+        "B": "Planting trees",
+        "C": "Burning waste openly",
+        "D": "Industrial emissions without filters"
+      },
+      "correct_answer": "B",
+      "explanation": "Trees absorb CO₂ and pollutants, improving air quality.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of these is a biotic factor in soil?",
+      "options": {
+        "A": "Minerals",
+        "B": "Bacteria",
+        "C": "Water",
+        "D": "Air"
+      },
+      "correct_answer": "B",
+      "explanation": "Bacteria are living organisms in soil, making them biotic.",
+      "difficulty": "medium",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the effect of removing predators from an ecosystem?",
+      "options": {
+        "A": "Population of prey may increase",
+        "B": "Ecosystem becomes more balanced",
+        "C": "Increased soil fertility",
+        "D": "Increased rainfall"
+      },
+      "correct_answer": "A",
+      "explanation": "Predator removal allows prey species to multiply, potentially disrupting balance.",
+      "difficulty": "medium",
+      "source_section": "Section 13.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which energy source is clean and does not pollute?",
+      "options": {
+        "A": "Coal",
+        "B": "Petroleum",
+        "C": "Solar",
+        "D": "Natural gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Solar energy produces no emissions during use, making it clean.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 19,
+      "question": "Overgrazing mainly affects:",
+      "options": {
+        "A": "Air quality",
+        "B": "Soil and vegetation cover",
+        "C": "Water bodies only",
+        "D": "Sunlight availability"
+      },
+      "correct_answer": "B",
+      "explanation": "Excess grazing removes vegetation, leading to soil degradation.",
+      "difficulty": "medium",
+      "source_section": "Section 13.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is an example of conserving biodiversity?",
+      "options": {
+        "A": "Polluting rivers",
+        "B": "Protecting forests and wildlife",
+        "C": "Urban sprawl",
+        "D": "Deforestation"
+      },
+      "correct_answer": "B",
+      "explanation": "Preserving habitats and reducing human impact conserves biodiversity.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Which practice helps prevent water pollution?",
+      "options": {
+        "A": "Disposing industrial waste properly",
+        "B": "Dumping untreated sewage",
+        "C": "Using pesticides excessively",
+        "D": "Deforestation near rivers"
+      },
+      "correct_answer": "A",
+      "explanation": "Proper disposal of waste reduces chemical contamination in water bodies.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of these is an effect of ozone layer depletion?",
+      "options": {
+        "A": "Global warming only",
+        "B": "Increased UV radiation on Earth",
+        "C": "Soil erosion",
+        "D": "Floods"
+      },
+      "correct_answer": "B",
+      "explanation": "Thinning of ozone allows more harmful UV rays to reach the Earth’s surface.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Which human activity reduces CO₂ levels in the atmosphere?",
+      "options": {
+        "A": "Planting trees",
+        "B": "Burning fossil fuels",
+        "C": "Industrialization",
+        "D": "Deforestation"
+      },
+      "correct_answer": "A",
+      "explanation": "Trees absorb carbon dioxide during photosynthesis, reducing greenhouse gases.",
+      "difficulty": "medium",
+      "source_section": "Section 13.5"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of the following is a water pollutant?",
+      "options": {
+        "A": "Excess fertilizers",
+        "B": "Solar panels",
+        "C": "Wind turbines",
+        "D": "Rocks"
+      },
+      "correct_answer": "A",
+      "explanation": "Fertilizers runoff into water bodies causes nutrient pollution and eutrophication.",
+      "difficulty": "medium",
+      "source_section": "Section 13.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following is an effect of air pollution on human health?",
+      "options": {
+        "A": "Respiratory problems",
+        "B": "Stronger immunity",
+        "C": "Better vision",
+        "D": "Increased height"
+      },
+      "correct_answer": "A",
+      "explanation": "Pollutants in air can cause breathing difficulties, asthma, and other respiratory issues.",
+      "difficulty": "medium",
+      "source_section": "Section 13.3"
+    }
+  ]
+}

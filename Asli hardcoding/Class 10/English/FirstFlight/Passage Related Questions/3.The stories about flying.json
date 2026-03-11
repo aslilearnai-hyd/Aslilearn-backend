@@ -1,0 +1,70 @@
+{
+   "subject": "English",
+    "course_code": "JEF P101",
+    "chapter": "Chapter 3: Two Stories About Flying",
+    "title": "Extended Reading Passages with Questions – Two Stories About Flying",
+    "total_passages": 10,
+    "instructions": "Read each passage carefully. Answer the questions using information only from the given paragraph.",
+    "Passages": [
+      {
+        "passage_number": 1,
+        "chapter_name": "Two Stories About Flying",
+        "paragraph": "In the first story, a young boy named Fredrick fears heights. His father encourages him to face his fear and climb a hill. Fredrick experiences both fear and excitement as he reaches the top.",
+        "questions": [
+          "Who is Fredrick and what fear does he have?",
+          "How does his father help him confront the fear?",
+          "What emotions does Fredrick experience?",
+          "Identify words that show fear and excitement.",
+          "How does this paragraph set the scene for courage?"
+        ]
+      },
+      {
+        "passage_number": 2,
+        "chapter_name": "Two Stories About Flying",
+        "paragraph": "The second story follows Richard Bach, who learns to fly. He practices with patience and determination. The thrill of flying gives him a sense of freedom and achievement.",
+        "questions": [
+          "Who is Richard Bach and what skill does he learn?",
+          "How does he practice and improve?",
+          "What feelings does flying give him?",
+          "Which words show his determination?",
+          "How does this paragraph highlight the theme of perseverance?"
+        ]
+      },
+      {
+        "passage_number": 3,
+        "chapter_name": "Two Stories About Flying",
+        "paragraph": "Both stories highlight human courage and the joy of overcoming fears. The lessons show that facing challenges leads to personal growth and self-confidence.",
+        "questions": [
+          "What is the common theme in both stories?",
+          "How is courage portrayed in the stories?",
+          "What lesson do the stories teach?",
+          "Which words indicate personal growth?",
+          "Why is overcoming fear important in these stories?"
+        ]
+      },
+      {
+        "passage_number": 4,
+        "chapter_name": "Two Stories About Flying",
+        "paragraph": "Fredrick’s story shows that confronting fears gradually can lead to confidence. The support of family and guidance helps individuals overcome difficult situations.",
+        "questions": [
+          "What does Fredrick’s story teach about facing fears?",
+          "How does family support help him?",
+          "Which words show his growing confidence?",
+          "Why is gradual practice important?",
+          "How does this paragraph connect to the theme of courage?"
+        ]
+      },
+      {
+        "passage_number": 5,
+        "chapter_name": "Two Stories About Flying",
+        "paragraph": "Richard Bach’s story emphasizes self-discipline and persistence. Learning to fly requires patience and repeated effort. The joy of achievement makes the challenges worthwhile.",
+        "questions": [
+          "What is emphasized in Richard Bach’s story?",
+          "How does persistence play a role?",
+          "Which words show the importance of patience?",
+          "What makes the challenges worthwhile?",
+          "How does this paragraph reinforce the theme of perseverance?"
+        ]
+      }
+    ]
+  }

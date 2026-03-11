@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "The Beggar",
+    "author": "Anton Chekhov",
+    "difficulty": "Medium",
+    "source_pdf": "eng9_9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Character Analysis of Lushkoff",
+            "objective": "Analyse the character development of Lushkoff",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "Identify Lushkoff’s behaviour at the beginning",
+                "Write how his character changes by the end"
+            ],
+            "learning_outcome": "Understands character transformation",
+            "evaluation": "Clear explanation with examples (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Sergei’s Advice",
+            "objective": "Understand the importance of Sergei’s advice",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find the part where Sergei advises Lushkoff to work",
+                "Explain why Sergei insists on honest work",
+                "Write 4–5 sentences on its importance"
+            ],
+            "learning_outcome": "Recognises value of honest labour",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Olga’s Compassion",
+            "objective": "Understand Olga’s emotional support",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part describing Olga’s actions",
+                "Write how her behaviour affects Lushkoff",
+                "Explain why her kindness is important"
+            ],
+            "learning_outcome": "Understands the power of kindness",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Identify Important Events",
+            "objective": "Understand the major events in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List five important events in the story",
+                "Write them in chronological order",
+                "Explain one event briefly"
+            ],
+            "learning_outcome": "Improves understanding of story structure",
+            "evaluation": "Correct sequence and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Cause and Effect in the Story",
+            "objective": "Understand cause–effect relationships",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify two causes that led to Lushkoff begging",
+                "Explain the effects of Sergei and Olga’s help"
+            ],
+            "learning_outcome": "Understands cause and consequence",
+            "evaluation": "Clear reasoning (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Title Interpretation",
+            "objective": "Explain why the title 'The Beggar' is appropriate",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the story and its message",
+                "Write 4–5 sentences explaining the title"
+            ],
+            "learning_outcome": "Understands title significance",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Dialogue Reflection",
+            "objective": "Analyse a dialogue from the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Choose a dialogue between Sergei and Lushkoff",
+                "Write what it reveals about their characters"
+            ],
+            "learning_outcome": "Improves interpretation skills",
+            "evaluation": "Accurate interpretation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary Study",
+            "objective": "Improve vocabulary using the lesson",
+            "materials": [
+                "Textbook",
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select five difficult words from the lesson",
+                "Write meanings and make sentences"
+            ],
+            "learning_outcome": "Develops vocabulary skills",
+            "evaluation": "Correct meanings and usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Compare Sergei and Olga",
+            "objective": "Compare the roles of Sergei and Olga",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write two points about Sergei’s role",
+                "Write two points about Olga’s role"
+            ],
+            "learning_outcome": "Understands different character roles",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Life Lesson",
+            "objective": "Understand the lesson learned from the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about what the story teaches us",
+                "Write the lesson in 4–5 sentences"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear explanation (10 marks)"
+        }
+    ]
+}

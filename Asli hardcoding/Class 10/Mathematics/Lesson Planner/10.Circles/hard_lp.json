@@ -1,0 +1,158 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Circles",
+    "lesson_level": "Hard",
+    "total_periods": 9,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Prove properties related to tangents",
+        "Apply logical reasoning in geometry proofs",
+        "Solve HOTS and exam-level circle problems",
+        "Handle case-study and assertion–reason questions confidently"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Tangent Concepts",
+            "topics_covered": [
+                "Deeper understanding of tangents"
+            ],
+            "teaching_strategy": [
+                "Concept discussion"
+            ],
+            "student_activities": [
+                "Analyse given diagrams"
+            ],
+            "assessment": [
+                "HOTS worksheet"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Proof: Radius ⟂ Tangent",
+            "topics_covered": [
+                "Logical proof of perpendicularity"
+            ],
+            "teaching_strategy": [
+                "Step-by-step proof explanation"
+            ],
+            "student_activities": [
+                "Write proof in own words"
+            ],
+            "assessment": [
+                "Proof writing evaluation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Proof: Tangents from External Point",
+            "topics_covered": [
+                "Equality of tangents proof"
+            ],
+            "teaching_strategy": [
+                "Board proof demonstration"
+            ],
+            "student_activities": [
+                "Complete proof steps"
+            ],
+            "assessment": [
+                "Proof worksheet"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Complex Diagram-Based Problems",
+            "topics_covered": [
+                "Multiple tangents",
+                "Combined properties"
+            ],
+            "teaching_strategy": [
+                "Diagram analysis"
+            ],
+            "student_activities": [
+                "Solve HOTS problems"
+            ],
+            "assessment": [
+                "Numerical test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Case Study Problems",
+            "topics_covered": [
+                "Real-life geometry cases"
+            ],
+            "teaching_strategy": [
+                "Case discussion"
+            ],
+            "student_activities": [
+                "Interpret and solve case problems"
+            ],
+            "assessment": [
+                "Case-study evaluation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Assertion–Reason & MCQs",
+            "topics_covered": [
+                "Exam-oriented questions"
+            ],
+            "teaching_strategy": [
+                "Exam pattern practice"
+            ],
+            "student_activities": [
+                "Solve HOTS MCQs"
+            ],
+            "assessment": [
+                "MCQ test"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Previous Year Question Practice",
+            "topics_covered": [
+                "Board-level geometry questions"
+            ],
+            "teaching_strategy": [
+                "Answer writing guidance"
+            ],
+            "student_activities": [
+                "Write complete solutions"
+            ],
+            "assessment": [
+                "Answer evaluation"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Mock Test",
+            "topics_covered": [
+                "Complete chapter assessment"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 9,
+            "title": "Analysis and Remedial Teaching",
+            "topics_covered": [
+                "Error analysis",
+                "Doubt clearing"
+            ],
+            "teaching_strategy": [
+                "Feedback-based teaching"
+            ],
+            "student_activities": [
+                "Correct mistakes",
+                "Re-attempt problems"
+            ],
+            "assessment": [
+                "Improvement task"
+            ]
+        }
+    ],
+    "teacher_tip": "Encourage clear proof writing with proper reasoning statements, as geometry proofs carry high weight in exams."
+}

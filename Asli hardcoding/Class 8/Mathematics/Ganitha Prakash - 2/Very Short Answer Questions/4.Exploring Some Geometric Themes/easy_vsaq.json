@@ -1,0 +1,234 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-05T18:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a fractal?",
+            "answer": "A fractal is a geometric pattern that repeats itself at different scales.",
+            "key_points": [
+                "fractals",
+                "self similarity"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is self-similarity?",
+            "answer": "Self-similarity means a shape looks similar at different magnifications.",
+            "key_points": [
+                "self similarity"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Give one example of a fractal.",
+            "answer": "Sierpinski Triangle.",
+            "key_points": [
+                "fractal example"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Which shape is used to start the Sierpinski Triangle?",
+            "answer": "An equilateral triangle.",
+            "key_points": [
+                "Sierpinski triangle"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which shape is used to start the Sierpinski Carpet?",
+            "answer": "A square.",
+            "key_points": [
+                "Sierpinski carpet"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the Koch Snowflake?",
+            "answer": "A fractal formed by repeatedly modifying the sides of an equilateral triangle.",
+            "key_points": [
+                "Koch snowflake"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is a polyhedron?",
+            "answer": "A polyhedron is a solid with flat polygonal faces.",
+            "key_points": [
+                "polyhedron"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What are faces of a solid?",
+            "answer": "Faces are the flat surfaces of a solid.",
+            "key_points": [
+                "faces"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What are edges of a solid?",
+            "answer": "Edges are line segments where two faces meet.",
+            "key_points": [
+                "edges"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What are vertices of a solid?",
+            "answer": "Vertices are points where edges meet.",
+            "key_points": [
+                "vertices"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "How many faces does a cube have?",
+            "answer": "A cube has 6 faces.",
+            "key_points": [
+                "cube faces"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "How many edges does a cube have?",
+            "answer": "A cube has 12 edges.",
+            "key_points": [
+                "cube edges"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How many vertices does a cube have?",
+            "answer": "A cube has 8 vertices.",
+            "key_points": [
+                "cube vertices"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a net of a solid?",
+            "answer": "A net is a flat pattern that can be folded to form a solid.",
+            "key_points": [
+                "nets"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "How many nets does a cube have?",
+            "answer": "A cube has 11 nets.",
+            "key_points": [
+                "cube nets"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is projection in geometry?",
+            "answer": "Projection is the representation of a three-dimensional object on a two-dimensional plane.",
+            "key_points": [
+                "projection"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What is meant by front view?",
+            "answer": "Front view shows how an object appears from the front.",
+            "key_points": [
+                "front view"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is meant by top view?",
+            "answer": "Top view shows how an object appears from above.",
+            "key_points": [
+                "top view"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is meant by side view?",
+            "answer": "Side view shows how an object appears from the side.",
+            "key_points": [
+                "side view"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 20,
+            "question": "What is an isometric drawing?",
+            "answer": "An isometric drawing represents a 3D object on a 2D plane using equal angles.",
+            "key_points": [
+                "isometric drawing"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is an isometric grid?",
+            "answer": "An isometric grid is a pattern of lines used to draw 3D objects accurately.",
+            "key_points": [
+                "isometric grid"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "How does a cube appear in isometric projection?",
+            "answer": "It appears as a hexagon outline.",
+            "key_points": [
+                "isometric projection"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What does a shadow represent in geometry?",
+            "answer": "A shadow represents the projection of an object.",
+            "key_points": [
+                "shadow projection"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Where are fractals used in real life?",
+            "answer": "Fractals are used in computer graphics and modeling natural patterns.",
+            "key_points": [
+                "fractal applications"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why are projections important in engineering?",
+            "answer": "They help represent 3D objects clearly on 2D drawings.",
+            "key_points": [
+                "engineering projections"
+            ],
+            "source_section": "Section 4.2"
+        }
+    ]
+}

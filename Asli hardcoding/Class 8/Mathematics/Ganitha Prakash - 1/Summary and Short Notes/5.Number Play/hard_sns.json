@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 7: Proportional Reasoning - 1",
+  "difficulty": "Easy",
+  "source_pdf": "ch-7_PROPORTINAL_REASONING-1.pdf",
+  "short_notes": {
+    "key_points": [
+      "A ratio compares two quantities using division",
+      "Ratios can be written in the form a:b",
+      "Equivalent ratios represent the same relationship between quantities",
+      "A proportion states that two ratios are equal",
+      "Proportional quantities increase or decrease in the same ratio"
+    ],
+    "examples": [
+      "Ratio example: 2:3",
+      "Equivalent ratios: 2:3 = 4:6",
+      "Proportion example: 3:4 = 6:8",
+      "Real life example: ratio of boys to girls in a class"
+    ],
+    "formulas": [
+      "Ratio → a:b = a/b",
+      "Equivalent ratios → multiply or divide both terms by the same number",
+      "Proportion rule → a:b = c:d if a × d = b × c"
+    ],
+    "exam_tips": [
+      "Always simplify ratios to their simplest form",
+      "Check proportions using cross multiplication",
+      "Write ratios in the same units before comparing",
+      "Practice identifying ratios in real-life situations"
+    ]
+  }
+}

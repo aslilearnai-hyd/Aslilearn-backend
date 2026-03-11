@@ -1,0 +1,208 @@
+{
+    "content_type": "Long Answer Questions",
+    "chapter": "Chapter 6: HUMAN ENVIRONMENT INTERACTIONS",
+    "generated_at": "2026-03-07T15:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of human-environment interaction.",
+            "answer": "Human-environment interaction refers to the ways in which people adapt to, modify, and depend on their environment. It includes using natural resources for livelihood, altering landscapes for settlements, and managing environmental challenges.",
+            "key_concepts": ["human-environment interaction", "adaptation", "modification"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Discuss the different types of natural resources and their importance.",
+            "answer": "Natural resources are classified into renewable (like water, forests) and non-renewable (like minerals, fossil fuels). They provide food, raw materials, energy, and livelihood, and are essential for economic development.",
+            "key_concepts": ["renewable resources", "non-renewable resources", "economic importance"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how agriculture depends on the environment.",
+            "answer": "Agriculture depends on soil fertility, climate, rainfall, temperature, and availability of water. Farmers select crops and practices according to environmental conditions to ensure good yield.",
+            "key_concepts": ["agriculture", "soil", "climate dependence"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Describe how forests contribute to human life.",
+            "answer": "Forests provide timber, firewood, fruits, and medicinal plants. They help maintain ecological balance, prevent soil erosion, and support biodiversity which benefits human societies.",
+            "key_concepts": ["forests", "resources", "ecological balance"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the importance of water resources in human settlements.",
+            "answer": "Water is essential for drinking, irrigation, industry, and sanitation. Settlements are usually located near rivers, lakes, or wells to ensure access to water for survival and economic activities.",
+            "key_concepts": ["water resources", "human settlements"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Discuss how geography influences human occupation.",
+            "answer": "Geography affects the choice of occupation. People in fertile plains practice farming, those near rivers fish, hill dwellers engage in terrace farming or herding, and mineral-rich areas encourage mining and industry.",
+            "key_concepts": ["geography", "occupations", "adaptation"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of traditional knowledge in managing natural resources.",
+            "answer": "Traditional knowledge includes local practices like rainwater harvesting, crop rotation, and forest management. These methods help communities use resources sustainably and adapt to environmental conditions.",
+            "key_concepts": ["traditional knowledge", "sustainable practices"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the impact of human activities on the environment.",
+            "answer": "Human activities such as deforestation, mining, industrialization, and urbanization lead to pollution, soil degradation, loss of biodiversity, and climate change, affecting ecosystems and human health.",
+            "key_concepts": ["pollution", "deforestation", "climate change"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how water scarcity affects agriculture and livelihoods.",
+            "answer": "Water scarcity limits crop production, reduces irrigation, and forces farmers to rely on rain-fed agriculture. It affects livestock and household water supply, reducing income and food security.",
+            "key_concepts": ["water scarcity", "agriculture", "livelihood"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Discuss the importance of soil conservation.",
+            "answer": "Soil conservation prevents erosion, maintains fertility, and supports sustainable agriculture. Methods include terracing, afforestation, crop rotation, and constructing check dams.",
+            "key_concepts": ["soil conservation", "sustainable agriculture"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the effects of industrialization on human-environment interaction.",
+            "answer": "Industrialization increases resource use, pollution, and land degradation. It provides jobs and economic growth but can harm ecosystems, health, and sustainability if not managed properly.",
+            "key_concepts": ["industrialization", "environmental impact", "economic development"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain how renewable energy sources help in sustainable development.",
+            "answer": "Renewable energy sources like solar, wind, and hydro provide clean energy without depleting resources, reduce pollution, and help meet energy needs sustainably for future generations.",
+            "key_concepts": ["renewable energy", "sustainability"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Discuss the challenges in managing forest resources.",
+            "answer": "Challenges include deforestation for agriculture and timber, illegal logging, overgrazing, and forest fires. Balancing human needs and conservation requires proper planning and community participation.",
+            "key_concepts": ["forest management", "conservation challenges"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the role of community participation in environmental protection.",
+            "answer": "Community participation involves local people in managing resources, planting trees, conserving water, and protecting forests. It ensures sustainable practices and strengthens environmental awareness.",
+            "key_concepts": ["community participation", "environmental protection"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Describe how urbanization affects natural resources.",
+            "answer": "Urbanization increases demand for land, water, and energy, leading to deforestation, water scarcity, and pollution. It can strain local ecosystems and reduce resource availability for rural areas.",
+            "key_concepts": ["urbanization", "resource pressure", "environmental impact"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the significance of water conservation methods.",
+            "answer": "Water conservation methods such as rainwater harvesting, check dams, and drip irrigation ensure sustainable water supply, reduce wastage, and support agriculture and daily needs.",
+            "key_concepts": ["water conservation", "sustainability"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Discuss the relationship between climate and agriculture.",
+            "answer": "Climate determines crop types, sowing and harvesting periods, and irrigation needs. Changes in rainfall and temperature patterns affect crop yields and food security.",
+            "key_concepts": ["climate", "agriculture", "adaptation"],
+            "marks": 6,
+            "source_section": "Section 6.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how human settlements adapt to environmental conditions.",
+            "answer": "Settlements adapt by choosing locations with water access, fertile soil, and safety from natural hazards. Architecture, building materials, and infrastructure also reflect environmental adaptation.",
+            "key_concepts": ["human settlements", "adaptation"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Describe the impact of deforestation on ecosystems and humans.",
+            "answer": "Deforestation leads to loss of biodiversity, soil erosion, disruption of water cycles, and climate change, affecting both ecosystems and human livelihoods dependent on forest resources.",
+            "key_concepts": ["deforestation", "ecosystem impact", "human impact"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of technology in sustainable resource management.",
+            "answer": "Technology aids in efficient irrigation, renewable energy, soil conservation, and monitoring of natural resources. It supports sustainable use and reduces environmental degradation.",
+            "key_concepts": ["technology", "resource management", "sustainability"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Discuss the importance of protecting water bodies for human survival.",
+            "answer": "Protecting rivers, lakes, and ponds ensures clean water for drinking, agriculture, and industry. It prevents pollution, preserves ecosystems, and maintains biodiversity.",
+            "key_concepts": ["water protection", "human survival"],
+            "marks": 6,
+            "source_section": "Section 6.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the concept of sustainable development.",
+            "answer": "Sustainable development involves meeting present needs without compromising the ability of future generations to meet their own needs. It balances economic growth, resource use, and environmental protection.",
+            "key_concepts": ["sustainable development", "future resources"],
+            "marks": 6,
+            "source_section": "Section 6.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Describe the effects of mining on the environment and society.",
+            "answer": "Mining can cause deforestation, soil erosion, water pollution, and displacement of people. It provides employment and raw materials but must be managed to minimize negative impacts.",
+            "key_concepts": ["mining impact", "environment", "society"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how human activity contributes to climate change.",
+            "answer": "Activities like burning fossil fuels, deforestation, and industrial emissions release greenhouse gases, increasing global temperatures and causing extreme weather, sea level rise, and environmental disruption.",
+            "key_concepts": ["climate change", "human activity", "greenhouse gases"],
+            "marks": 6,
+            "source_section": "Section 6.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is it important to study human-environment interactions in geography?",
+            "answer": "Studying human-environment interactions helps understand how people adapt, use, and impact their environment. It informs sustainable development, disaster management, and resource conservation.",
+            "key_concepts": ["geography", "human-environment interaction", "sustainability"],
+            "marks": 6,
+            "source_section": "Section 6.1"
+        }
+    ]
+}

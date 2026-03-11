@@ -1,0 +1,155 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Quadrilaterals",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand and apply properties of quadrilaterals",
+        "Prove basic angle properties using diagrams",
+        "Solve problems involving sides, angles, and diagonals",
+        "Learn conditions for a quadrilateral to be a parallelogram, rectangle, rhombus, square, trapezium, or kite",
+        "Enhance logical reasoning through geometric proofs"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revisiting Quadrilaterals and Their Properties",
+            "topics_covered": [
+                "Review of types of quadrilaterals",
+                "Sum of interior and exterior angles",
+                "Properties of opposite sides and angles"
+            ],
+            "teaching_strategy": [
+                "Diagram-based explanation",
+                "Class discussion of properties"
+            ],
+            "student_activities": [
+                "Draw different quadrilaterals",
+                "Identify and mark sides, angles, and diagonals"
+            ],
+            "assessment": [
+                "Oral questioning on properties",
+                "Quick diagram labeling exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Parallelogram Properties",
+            "topics_covered": [
+                "Opposite sides parallel and equal",
+                "Opposite angles equal",
+                "Diagonals bisect each other"
+            ],
+            "teaching_strategy": [
+                "Stepwise proofs on board",
+                "Use colored pencils for clarity"
+            ],
+            "student_activities": [
+                "Verify properties using drawn parallelogram",
+                "Solve numerical examples involving sides and diagonals"
+            ],
+            "assessment": [
+                "Short problems on board",
+                "Peer checking of diagrams"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Properties of Special Quadrilaterals",
+            "topics_covered": [
+                "Rectangle: diagonals equal and bisect",
+                "Rhombus: all sides equal, diagonals perpendicular",
+                "Square: combination of rectangle and rhombus",
+                "Kite and Trapezium: unique properties"
+            ],
+            "teaching_strategy": [
+                "Diagrammatic comparisons",
+                "Group discussion for reasoning"
+            ],
+            "student_activities": [
+                "Draw each special quadrilateral",
+                "List and label their properties"
+            ],
+            "assessment": [
+                "Diagram accuracy",
+                "Checklist of properties observed"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Angle Problems in Quadrilaterals",
+            "topics_covered": [
+                "Finding unknown angles using sum of interior angles",
+                "Application in special quadrilaterals"
+            ],
+            "teaching_strategy": [
+                "Stepwise explanation on board",
+                "Guided problem solving"
+            ],
+            "student_activities": [
+                "Solve 3–4 angle problems",
+                "Verify sum of angles in each case"
+            ],
+            "assessment": [
+                "Class exercise checking",
+                "Quick oral quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Diagonal Problems",
+            "topics_covered": [
+                "Length of diagonals in rectangles and rhombus",
+                "Using Pythagoras theorem for diagonals"
+            ],
+            "teaching_strategy": [
+                "Example-based demonstration",
+                "Encourage students to solve stepwise"
+            ],
+            "student_activities": [
+                "Measure diagonals of drawn shapes",
+                "Solve numerical problems"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Accuracy of calculations"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Problem Solving",
+            "topics_covered": [
+                "Mixed exercise covering all types and properties",
+                "Simple proof-based problems"
+            ],
+            "teaching_strategy": [
+                "Group discussion and problem-solving",
+                "Teacher-guided corrections"
+            ],
+            "student_activities": [
+                "Solve mixed problems from textbook",
+                "Participate in group quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Peer discussion feedback"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ruler, Protractor, Compass",
+        "Graph paper",
+        "Colored pencils",
+        "Blackboard or Whiteboard",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Problem-solving exercises",
+        "Diagram accuracy assessment"
+    ],
+    "teacher_tip": "Encourage students to always mark sides, angles, and diagonals clearly; visual understanding strengthens logical reasoning for proofs."
+}

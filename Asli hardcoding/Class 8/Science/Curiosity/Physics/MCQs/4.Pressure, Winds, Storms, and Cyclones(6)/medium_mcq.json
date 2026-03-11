@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Pressure, Winds, Storms and Cyclones",
+  "generated_at": "2026-03-05T22:30:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What happens to pressure if the force acting on a surface increases while the area remains constant?",
+      "options": {
+        "A": "Pressure decreases",
+        "B": "Pressure remains constant",
+        "C": "Pressure increases",
+        "D": "Pressure becomes zero"
+      },
+      "correct_answer": "C",
+      "explanation": "Pressure = Force ÷ Area. If force increases and area stays the same, pressure increases.",
+      "difficulty": "medium",
+      "source_section": "Pressure"
+    },
+    {
+      "question_number": 2,
+      "question": "Why do tractors have large and broad tyres?",
+      "options": {
+        "A": "To increase pressure",
+        "B": "To reduce pressure on the soil",
+        "C": "To move faster",
+        "D": "To increase friction"
+      },
+      "correct_answer": "B",
+      "explanation": "Large tyres increase the contact area and reduce pressure on the ground.",
+      "difficulty": "medium",
+      "source_section": "Applications of Pressure"
+    },
+    {
+      "question_number": 3,
+      "question": "What happens to atmospheric pressure as altitude increases?",
+      "options": {
+        "A": "It increases",
+        "B": "It decreases",
+        "C": "It stays constant",
+        "D": "It doubles"
+      },
+      "correct_answer": "B",
+      "explanation": "Atmospheric pressure decreases as altitude increases because the air becomes thinner.",
+      "difficulty": "medium",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 4,
+      "question": "Why do mountaineers carry oxygen cylinders at high altitudes?",
+      "options": {
+        "A": "Because temperature is high",
+        "B": "Because atmospheric pressure and oxygen levels are low",
+        "C": "Because wind is strong",
+        "D": "Because gravity is weak"
+      },
+      "correct_answer": "B",
+      "explanation": "At high altitudes air pressure and oxygen concentration decrease.",
+      "difficulty": "medium",
+      "source_section": "Atmospheric Pressure"
+    },
+    {
+      "question_number": 5,
+      "question": "Liquid pressure at a certain point depends mainly on:",
+      "options": {
+        "A": "Color of the liquid",
+        "B": "Depth of the liquid",
+        "C": "Shape of container",
+        "D": "Surface area of container"
+      },
+      "correct_answer": "B",
+      "explanation": "Liquid pressure increases with depth.",
+      "difficulty": "medium",
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are submarine walls made very strong?",
+      "options": {
+        "A": "To reduce weight",
+        "B": "To withstand high water pressure at great depths",
+        "C": "To increase speed",
+        "D": "To produce electricity"
+      },
+      "correct_answer": "B",
+      "explanation": "Water pressure increases with depth, so submarines must be strong.",
+      "difficulty": "medium",
+      "source_section": "Liquid Pressure"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does air move from high pressure regions to low pressure regions?",
+      "options": {
+        "A": "Because air is heavy",
+        "B": "Because of pressure difference",
+        "C": "Because of gravity",
+        "D": "Because of sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Air moves from high pressure to low pressure areas due to pressure differences.",
+      "difficulty": "medium",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 8,
+      "question": "Which factor mainly causes wind movement on Earth?",
+      "options": {
+        "A": "Difference in atmospheric pressure",
+        "B": "Color of clouds",
+        "C": "Moonlight",
+        "D": "Ocean depth"
+      },
+      "correct_answer": "A",
+      "explanation": "Wind is caused by pressure differences in the atmosphere.",
+      "difficulty": "medium",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 9,
+      "question": "During the daytime, land becomes warmer than sea. What does this cause?",
+      "options": {
+        "A": "Land breeze",
+        "B": "Sea breeze",
+        "C": "Cyclone",
+        "D": "Storm"
+      },
+      "correct_answer": "B",
+      "explanation": "Warm air over land rises and cool air from sea moves toward land forming sea breeze.",
+      "difficulty": "medium",
+      "source_section": "Sea Breeze"
+    },
+    {
+      "question_number": 10,
+      "question": "Land breeze usually occurs during:",
+      "options": {
+        "A": "Morning",
+        "B": "Daytime",
+        "C": "Night",
+        "D": "Afternoon"
+      },
+      "correct_answer": "C",
+      "explanation": "At night land cools faster and air moves from land to sea.",
+      "difficulty": "medium",
+      "source_section": "Land Breeze"
+    },
+    {
+      "question_number": 11,
+      "question": "Cyclones generally develop over:",
+      "options": {
+        "A": "Cold mountains",
+        "B": "Warm ocean waters",
+        "C": "Forests",
+        "D": "Deserts"
+      },
+      "correct_answer": "B",
+      "explanation": "Warm ocean waters provide energy needed for cyclone formation.",
+      "difficulty": "medium",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the calm central part of a cyclone called?",
+      "options": {
+        "A": "Storm wall",
+        "B": "Eye",
+        "C": "Core",
+        "D": "Ring"
+      },
+      "correct_answer": "B",
+      "explanation": "The center of a cyclone where winds are calm is called the eye.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Structure"
+    },
+    {
+      "question_number": 13,
+      "question": "Which instrument helps meteorologists predict storms?",
+      "options": {
+        "A": "Barometer",
+        "B": "Compass",
+        "C": "Thermometer",
+        "D": "Scale"
+      },
+      "correct_answer": "A",
+      "explanation": "Barometers measure atmospheric pressure used in weather forecasting.",
+      "difficulty": "medium",
+      "source_section": "Weather Instruments"
+    },
+    {
+      "question_number": 14,
+      "question": "Which region of a cyclone experiences the strongest winds?",
+      "options": {
+        "A": "Eye",
+        "B": "Outer region",
+        "C": "Eye wall",
+        "D": "Center core"
+      },
+      "correct_answer": "C",
+      "explanation": "The eyewall surrounding the eye contains the strongest winds.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Structure"
+    },
+    {
+      "question_number": 15,
+      "question": "What mainly powers a cyclone?",
+      "options": {
+        "A": "Solar radiation and warm ocean water",
+        "B": "Gravity",
+        "C": "Moonlight",
+        "D": "Cold air"
+      },
+      "correct_answer": "A",
+      "explanation": "Warm ocean water provides energy for cyclone formation.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Formation"
+    },
+    {
+      "question_number": 16,
+      "question": "Which natural process can cause severe flooding and damage to coastal areas?",
+      "options": {
+        "A": "Sea breeze",
+        "B": "Cyclone",
+        "C": "Fog",
+        "D": "Dew"
+      },
+      "correct_answer": "B",
+      "explanation": "Cyclones bring strong winds, heavy rain and storm surges.",
+      "difficulty": "medium",
+      "source_section": "Cyclones"
+    },
+    {
+      "question_number": 17,
+      "question": "Storm surges during cyclones mainly affect:",
+      "options": {
+        "A": "Mountains",
+        "B": "Coastal areas",
+        "C": "Deserts",
+        "D": "Forests"
+      },
+      "correct_answer": "B",
+      "explanation": "Storm surges raise sea levels and flood coastal regions.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Effects"
+    },
+    {
+      "question_number": 18,
+      "question": "What happens when warm air rises rapidly in the atmosphere?",
+      "options": {
+        "A": "Pressure increases",
+        "B": "Low pressure area forms",
+        "C": "Air becomes cold instantly",
+        "D": "Winds stop"
+      },
+      "correct_answer": "B",
+      "explanation": "Rising warm air creates a low pressure region.",
+      "difficulty": "medium",
+      "source_section": "Wind Formation"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor strongly influences wind direction and movement?",
+      "options": {
+        "A": "Atmospheric pressure difference",
+        "B": "Earth’s color",
+        "C": "Ocean color",
+        "D": "Cloud shape"
+      },
+      "correct_answer": "A",
+      "explanation": "Wind movement is primarily controlled by pressure differences.",
+      "difficulty": "medium",
+      "source_section": "Winds"
+    },
+    {
+      "question_number": 20,
+      "question": "Which safety measure is important during cyclones?",
+      "options": {
+        "A": "Going near the sea",
+        "B": "Staying in strong shelters",
+        "C": "Climbing trees",
+        "D": "Swimming"
+      },
+      "correct_answer": "B",
+      "explanation": "Strong shelters protect people from high winds and debris.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Safety"
+    },
+    {
+      "question_number": 21,
+      "question": "What happens to air pressure during a storm?",
+      "options": {
+        "A": "It increases",
+        "B": "It decreases significantly",
+        "C": "It becomes zero",
+        "D": "It remains constant"
+      },
+      "correct_answer": "B",
+      "explanation": "Storms are usually associated with low pressure systems.",
+      "difficulty": "medium",
+      "source_section": "Storms"
+    },
+    {
+      "question_number": 22,
+      "question": "Which factor contributes to cyclone intensity?",
+      "options": {
+        "A": "Warm ocean temperature",
+        "B": "Cold land surfaces",
+        "C": "Mountain height",
+        "D": "Cloud color"
+      },
+      "correct_answer": "A",
+      "explanation": "Warmer ocean water strengthens cyclones.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Formation"
+    },
+    {
+      "question_number": 23,
+      "question": "Why are weather satellites useful?",
+      "options": {
+        "A": "They measure soil",
+        "B": "They monitor storms and cyclone movement",
+        "C": "They measure temperature of oceans only",
+        "D": "They measure gravity"
+      },
+      "correct_answer": "B",
+      "explanation": "Satellites help track cyclone formation and movement.",
+      "difficulty": "medium",
+      "source_section": "Weather Monitoring"
+    },
+    {
+      "question_number": 24,
+      "question": "What type of pressure system usually forms during cyclone development?",
+      "options": {
+        "A": "High pressure",
+        "B": "Low pressure",
+        "C": "Neutral pressure",
+        "D": "Constant pressure"
+      },
+      "correct_answer": "B",
+      "explanation": "Cyclones develop in regions of low atmospheric pressure.",
+      "difficulty": "medium",
+      "source_section": "Cyclone Formation"
+    },
+    {
+      "question_number": 25,
+      "question": "Which factor makes coastal areas more vulnerable to cyclones?",
+      "options": {
+        "A": "Proximity to warm ocean waters",
+        "B": "Height of mountains",
+        "C": "Forest density",
+        "D": "Soil color"
+      },
+      "correct_answer": "A",
+      "explanation": "Cyclones form over warm ocean waters and affect nearby coastal regions.",
+      "difficulty": "medium",
+      "source_section": "Cyclones"
+    }
+  ]
+}

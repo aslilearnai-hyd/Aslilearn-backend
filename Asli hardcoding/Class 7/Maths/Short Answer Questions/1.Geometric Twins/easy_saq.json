@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Congruence of Triangles",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-06T00:58:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What does it mean for two geometric figures to be congruent?",
+            "answer": "Two figures are congruent if they have the same shape and the same size.",
+            "key_concepts": ["congruence"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "If two line segments have the same length, are they congruent?",
+            "answer": "Yes, two line segments are congruent if they have equal lengths.",
+            "key_concepts": ["congruence of line segments"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the symbol used to denote congruence?",
+            "answer": "The symbol is ≅.",
+            "key_concepts": ["notation"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "If ΔABC ≅ ΔPQR, which side corresponds to BC?",
+            "answer": "The side QR corresponds to BC.",
+            "key_concepts": ["correspondence"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "State the SSS congruence criterion.",
+            "answer": "If three sides of one triangle are equal to the three sides of another triangle, the triangles are congruent.",
+            "key_concepts": ["SSS criterion"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "What does SAS stand for in triangle congruence?",
+            "answer": "SAS stands for Side-Angle-Side.",
+            "key_concepts": ["SAS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Two squares are congruent if they have the same __________.",
+            "answer": "Side length.",
+            "key_concepts": ["congruence of squares"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "In SAS congruence, where must the angle be located?",
+            "answer": "The angle must be the included angle between the two equal sides.",
+            "key_concepts": ["SAS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 9,
+            "question": "State the ASA congruence criterion.",
+            "answer": "If two angles and the included side of one triangle are equal to two angles and the included side of another, they are congruent.",
+            "key_concepts": ["ASA criterion"],
+            "marks": 2,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_code": 10,
+            "question": "If ΔXYZ ≅ ΔLMN, which angle corresponds to ∠Y?",
+            "answer": "∠M.",
+            "key_concepts": ["correspondence"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What does RHS stand for in the context of right-angled triangles?",
+            "answer": "Right angle-Hypotenuse-Side.",
+            "key_concepts": ["RHS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Are two rectangles with the same area always congruent?",
+            "answer": "No, they must have the same length and breadth to be congruent.",
+            "key_concepts": ["congruence"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "In RHS congruence, which is the longest side that must be equal in both triangles?",
+            "answer": "The Hypotenuse.",
+            "key_concepts": ["RHS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "If ΔABC ≅ ΔFED, write the part of ΔFED that corresponds to ∠A.",
+            "answer": "∠F.",
+            "key_concepts": ["correspondence"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "answer": "Two circles are congruent if they have the same __________.",
+            "question": "Radius.",
+            "key_concepts": ["congruence of circles"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Can two triangles be congruent if all three angles are equal (AAA)?",
+            "answer": "Not necessarily; they have the same shape but might be different sizes.",
+            "key_concepts": ["AAA condition"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 17,
+            "question": "If ΔPQR ≅ ΔSTU, then side PR is equal to which side?",
+            "answer": "Side SU.",
+            "key_concepts": ["correspondence"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the relation between the areas of two congruent figures?",
+            "answer": "Two congruent figures always have equal areas.",
+            "key_concepts": ["properties of congruence"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 19,
+            "question": "If AB = XY, BC = YZ, and AC = XZ, why is ΔABC ≅ ΔXYZ?",
+            "answer": "By the SSS (Side-Side-Side) congruence criterion.",
+            "key_concepts": ["SSS criterion"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 20,
+            "question": "True or False: Congruent figures can be superimposed on each other.",
+            "answer": "True.",
+            "key_concepts": ["superimposition"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "In ΔABC, if ∠B = 90°, which side is the hypotenuse?",
+            "answer": "Side AC.",
+            "key_concepts": ["RHS components"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 22,
+            "question": "If two angles are congruent, what can you say about their measures?",
+            "answer": "Their measures (degrees) are equal.",
+            "key_concepts": ["congruence of angles"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Is 'SSA' a valid congruence criterion?",
+            "answer": "No, SSA is not a valid criterion for congruence.",
+            "key_concepts": ["criteria validation"],
+            "marks": 1,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 24,
+            "question": "How many pairs of corresponding parts are there in two congruent triangles?",
+            "answer": "Six pairs (3 sides and 3 angles).",
+            "key_concepts": ["CPCT"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What does CPCT stand for?",
+            "answer": "Corresponding Parts of Congruent Triangles.",
+            "key_concepts": ["CPCT"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

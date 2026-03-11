@@ -1,0 +1,359 @@
+{
+    "content_type": "बहुविकल्पीय प्रश्न",
+    "chapter": "IHKS108 – ललद्यद",
+    "title": "ललद्यद – सरल स्तर MCQs",
+    "generated_at": "2026-03-11T03:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "ललद्यद कौन थीं?",
+            "options": {
+                "A": "संत-कवयित्री",
+                "B": "उपन्यासकार",
+                "C": "नाटककार",
+                "D": "कहानीकार"
+            },
+            "correct_answer": "A",
+            "explanation": "ललद्यद कश्मीरी भाषा की प्रसिद्ध संत-कवयित्री थीं।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 2,
+            "question": "ललद्यद का जन्म कहाँ हुआ माना जाता है?",
+            "options": {
+                "A": "दिल्ली",
+                "B": "कश्मीर",
+                "C": "पंजाब",
+                "D": "राजस्थान"
+            },
+            "correct_answer": "B",
+            "explanation": "ललद्यद का जन्म कश्मीर के पांपोर क्षेत्र में हुआ माना जाता है।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 3,
+            "question": "ललद्यद की रचनाएँ किस भाषा में प्रसिद्ध हैं?",
+            "options": {
+                "A": "हिंदी",
+                "B": "संस्कृत",
+                "C": "कश्मीरी",
+                "D": "उर्दू"
+            },
+            "correct_answer": "C",
+            "explanation": "ललद्यद की रचनाएँ कश्मीरी भाषा में प्रसिद्ध हैं।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 4,
+            "question": "ललद्यद की काव्य शैली को क्या कहा जाता है?",
+            "options": {
+                "A": "गीत",
+                "B": "वाख",
+                "C": "दोहा",
+                "D": "सवैया"
+            },
+            "correct_answer": "B",
+            "explanation": "ललद्यद की काव्य शैली को वाख कहा जाता है।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 5,
+            "question": "वाख में सामान्यतः कितनी पंक्तियाँ होती हैं?",
+            "options": {
+                "A": "दो",
+                "B": "तीन",
+                "C": "चार",
+                "D": "पाँच"
+            },
+            "correct_answer": "C",
+            "explanation": "वाख चार पंक्तियों की काव्य रचना होती है।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 6,
+            "question": "‘भवसागर’ किसका प्रतीक है?",
+            "options": {
+                "A": "संसार",
+                "B": "समुद्र",
+                "C": "नदी",
+                "D": "पर्वत"
+            },
+            "correct_answer": "A",
+            "explanation": "भवसागर संसार और जीवन की कठिनाइयों का प्रतीक है।",
+            "difficulty": "easy",
+            "source_section": "पहला वाख"
+        },
+        {
+            "question_number": 7,
+            "question": "‘नाव’ किसका प्रतीक है?",
+            "options": {
+                "A": "जीवन",
+                "B": "समुद्र",
+                "C": "आकाश",
+                "D": "जंगल"
+            },
+            "correct_answer": "A",
+            "explanation": "नाव जीवन का प्रतीक है।",
+            "difficulty": "easy",
+            "source_section": "पहला वाख"
+        },
+        {
+            "question_number": 8,
+            "question": "दूसरे वाख में किसका महत्व बताया गया है?",
+            "options": {
+                "A": "धन",
+                "B": "संयम",
+                "C": "युद्ध",
+                "D": "क्रोध"
+            },
+            "correct_answer": "B",
+            "explanation": "दूसरे वाख में संयम और समभाव का महत्व बताया गया है।",
+            "difficulty": "easy",
+            "source_section": "दूसरा वाख"
+        },
+        {
+            "question_number": 9,
+            "question": "समभाव का अर्थ क्या है?",
+            "options": {
+                "A": "समान दृष्टि",
+                "B": "क्रोध",
+                "C": "ईर्ष्या",
+                "D": "घृणा"
+            },
+            "correct_answer": "A",
+            "explanation": "समभाव का अर्थ है सभी के प्रति समान दृष्टि रखना।",
+            "difficulty": "easy",
+            "source_section": "दूसरा वाख"
+        },
+        {
+            "question_number": 10,
+            "question": "तीसरे वाख में कौन-सा भाव व्यक्त हुआ है?",
+            "options": {
+                "A": "आत्मालोचन",
+                "B": "क्रोध",
+                "C": "घृणा",
+                "D": "डर"
+            },
+            "correct_answer": "A",
+            "explanation": "तीसरे वाख में आत्मालोचन का भाव व्यक्त हुआ है।",
+            "difficulty": "easy",
+            "source_section": "तीसरा वाख"
+        },
+        {
+            "question_number": 11,
+            "question": "‘जेब टटोली कौड़ी न पाई’ का अर्थ क्या है?",
+            "options": {
+                "A": "बहुत धन मिला",
+                "B": "कुछ भी प्राप्त नहीं हुआ",
+                "C": "खुशी मिली",
+                "D": "ज्ञान मिला"
+            },
+            "correct_answer": "B",
+            "explanation": "इसका अर्थ है कि प्रयास करने पर भी कुछ प्राप्त नहीं हुआ।",
+            "difficulty": "easy",
+            "source_section": "तीसरा वाख"
+        },
+        {
+            "question_number": 12,
+            "question": "चौथे वाख में किसका वर्णन है?",
+            "options": {
+                "A": "ईश्वर की सर्वव्यापकता",
+                "B": "युद्ध",
+                "C": "धन",
+                "D": "व्यापार"
+            },
+            "correct_answer": "A",
+            "explanation": "चौथे वाख में ईश्वर के हर जगह उपस्थित होने की बात कही गई है।",
+            "difficulty": "easy",
+            "source_section": "चौथा वाख"
+        },
+        {
+            "question_number": 13,
+            "question": "ललद्यद ने किनके बीच भेदभाव न करने की बात कही?",
+            "options": {
+                "A": "राजा और प्रजा",
+                "B": "हिंदू और मुसलमान",
+                "C": "गुरु और शिष्य",
+                "D": "अमीर और गरीब"
+            },
+            "correct_answer": "B",
+            "explanation": "ललद्यद ने हिंदू और मुसलमान के बीच भेदभाव न करने का संदेश दिया।",
+            "difficulty": "easy",
+            "source_section": "चौथा वाख"
+        },
+        {
+            "question_number": 14,
+            "question": "ललद्यद के अनुसार सच्चा ज्ञान क्या है?",
+            "options": {
+                "A": "धन",
+                "B": "शक्ति",
+                "C": "आत्मज्ञान",
+                "D": "प्रसिद्धि"
+            },
+            "correct_answer": "C",
+            "explanation": "ललद्यद के अनुसार आत्मज्ञान ही सच्चा ज्ञान है।",
+            "difficulty": "easy",
+            "source_section": "चौथा वाख"
+        },
+        {
+            "question_number": 15,
+            "question": "‘माँझी’ किसका प्रतीक है?",
+            "options": {
+                "A": "ईश्वर या गुरु",
+                "B": "राजा",
+                "C": "सैनिक",
+                "D": "व्यापारी"
+            },
+            "correct_answer": "A",
+            "explanation": "माँझी ईश्वर या गुरु का प्रतीक माना गया है।",
+            "difficulty": "easy",
+            "source_section": "शब्दार्थ"
+        },
+        {
+            "question_number": 16,
+            "question": "ललद्यद की रचनाओं का मुख्य विषय क्या है?",
+            "options": {
+                "A": "भक्ति और आत्मज्ञान",
+                "B": "युद्ध",
+                "C": "व्यापार",
+                "D": "राजनीति"
+            },
+            "correct_answer": "A",
+            "explanation": "उनकी रचनाओं का मुख्य विषय भक्ति और आत्मज्ञान है।",
+            "difficulty": "easy",
+            "source_section": "समग्र पाठ"
+        },
+        {
+            "question_number": 17,
+            "question": "ललद्यद की भाषा कैसी है?",
+            "options": {
+                "A": "कठिन",
+                "B": "सरल",
+                "C": "अस्पष्ट",
+                "D": "विदेशी"
+            },
+            "correct_answer": "B",
+            "explanation": "ललद्यद की भाषा सरल और लोकजीवन से जुड़ी है।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 18,
+            "question": "ललद्यद की रचनाएँ क्यों लोकप्रिय हैं?",
+            "options": {
+                "A": "सरल भाषा के कारण",
+                "B": "कठिन भाषा के कारण",
+                "C": "विदेशी भाषा के कारण",
+                "D": "लंबाई के कारण"
+            },
+            "correct_answer": "A",
+            "explanation": "सरल भाषा और लोकजीवन के कारण उनकी रचनाएँ लोकप्रिय हैं।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 19,
+            "question": "ललद्यद की कविताओं में किसका संदेश मिलता है?",
+            "options": {
+                "A": "भक्ति और मानवता",
+                "B": "युद्ध",
+                "C": "राजनीति",
+                "D": "व्यापार"
+            },
+            "correct_answer": "A",
+            "explanation": "उनकी कविताएँ भक्ति और मानवता का संदेश देती हैं।",
+            "difficulty": "easy",
+            "source_section": "समग्र पाठ"
+        },
+        {
+            "question_number": 20,
+            "question": "ललद्यद का साहित्य किस भाषा के विकास में महत्वपूर्ण है?",
+            "options": {
+                "A": "हिंदी",
+                "B": "कश्मीरी",
+                "C": "संस्कृत",
+                "D": "उर्दू"
+            },
+            "correct_answer": "B",
+            "explanation": "ललद्यद को कश्मीरी भाषा का प्रमुख स्तंभ माना जाता है।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 21,
+            "question": "ललद्यद ने किसका विरोध किया?",
+            "options": {
+                "A": "धार्मिक आडंबर",
+                "B": "ज्ञान",
+                "C": "शिक्षा",
+                "D": "भक्ति"
+            },
+            "correct_answer": "A",
+            "explanation": "उन्होंने धार्मिक आडंबरों का विरोध किया।",
+            "difficulty": "easy",
+            "source_section": "परिचय"
+        },
+        {
+            "question_number": 22,
+            "question": "ललद्यद की रचनाओं में कौन-सा भाव प्रमुख है?",
+            "options": {
+                "A": "आध्यात्मिकता",
+                "B": "युद्ध",
+                "C": "राजनीति",
+                "D": "व्यापार"
+            },
+            "correct_answer": "A",
+            "explanation": "उनकी कविताओं में आध्यात्मिकता प्रमुख है।",
+            "difficulty": "easy",
+            "source_section": "समग्र पाठ"
+        },
+        {
+            "question_number": 23,
+            "question": "ललद्यद के अनुसार मोक्ष का मार्ग क्या है?",
+            "options": {
+                "A": "भक्ति और आत्मज्ञान",
+                "B": "धन",
+                "C": "युद्ध",
+                "D": "राजनीति"
+            },
+            "correct_answer": "A",
+            "explanation": "उनके अनुसार भक्ति और आत्मज्ञान से मोक्ष प्राप्त होता है।",
+            "difficulty": "easy",
+            "source_section": "समग्र पाठ"
+        },
+        {
+            "question_number": 24,
+            "question": "ललद्यद का संदेश क्या है?",
+            "options": {
+                "A": "समानता और मानवता",
+                "B": "क्रोध",
+                "C": "ईर्ष्या",
+                "D": "स्वार्थ"
+            },
+            "correct_answer": "A",
+            "explanation": "उनकी रचनाएँ समानता और मानवता का संदेश देती हैं।",
+            "difficulty": "easy",
+            "source_section": "समग्र पाठ"
+        },
+        {
+            "question_number": 25,
+            "question": "ललद्यद की शिक्षाएँ हमें क्या सिखाती हैं?",
+            "options": {
+                "A": "भक्ति और आत्मज्ञान का महत्व",
+                "B": "युद्ध करना",
+                "C": "धन कमाना",
+                "D": "लड़ाई करना"
+            },
+            "correct_answer": "A",
+            "explanation": "ललद्यद की शिक्षाएँ भक्ति और आत्मज्ञान का महत्व बताती हैं।",
+            "difficulty": "easy",
+            "source_section": "निष्कर्ष"
+        }
+    ]
+}

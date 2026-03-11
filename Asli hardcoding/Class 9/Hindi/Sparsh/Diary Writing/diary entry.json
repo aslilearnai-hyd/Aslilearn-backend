@@ -1,0 +1,327 @@
+{
+  "subject": "Hindi",
+  "book": "Sparsh (Bhag 1)",
+  "content": "Diary Entry",
+  "class": "9",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "बुढ़िया की लाचारी",
+      "question": "बाज़ार में खरबूजे बेचती उस बुढ़िया की बेबसी देखकर आपके मन में क्या विचार आए? डायरी में लिखिए।"
+    },
+    {
+      "id": 2,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "सामाजिक भेदभाव",
+      "question": "समाज में अमीर और गरीब के शोक मनाने के अलग-अलग तरीकों पर अपने विचार डायरी में व्यक्त कीजिए।"
+    },
+    {
+      "id": 3,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "पुत्र वियोग",
+      "question": "एक माँ के लिए अपने जवान बेटे को खोने का दुःख सबसे बड़ा है। बुढ़िया के दुःख पर अपनी संवेदनाएँ डायरी में लिखिए।"
+    },
+    {
+      "id": 4,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "पोशाक की बाधा",
+      "question": "लेखक की अच्छी पोशाक उसे गरीब की मदद करने से रोकती है। इस सामाजिक विडंबना पर डायरी लेख लिखिए।"
+    },
+    {
+      "id": 5,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "लोगों की कठोरता",
+      "question": "बाज़ार के लोगों द्वारा बुढ़िया को 'बेहया' कहने पर अपनी प्रतिक्रिया डायरी में लिखिए।"
+    },
+    {
+      "id": 6,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "भूख और शोक",
+      "question": "जब पेट की भूख शोक मनाने का समय भी नहीं देती, उस स्थिति पर अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "अंधविश्वास का प्रभाव",
+      "question": "बुढ़िया के घर में ओझा को बुलाने और दान-पुण्य से हुई आर्थिक बर्बादी पर डायरी लिखिए।"
+    },
+    {
+      "id": 8,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "मानवीय गरिमा",
+      "question": "क्या किसी की गरीबी उसके दुःख को कम कर देती है? इस गंभीर सवाल पर डायरी लेख लिखिए।"
+    },
+    {
+      "id": 9,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "लेखक का पश्चाताप",
+      "question": "लेखक के मन में जो कसक रह गई कि वह बुढ़िया से बात नहीं कर पाया, उस पर डायरी लिखिए।"
+    },
+    {
+      "id": 10,
+      "chapter": "Dukh Ka Adhikar",
+      "source": "Sparsh – Chapter 1",
+      "title": "समाज का परिवर्तन",
+      "question": "आज के समाज में गरीबों के प्रति संवेदना कितनी बची है? डायरी के माध्यम से विचार व्यक्त करें।"
+    },
+
+    {
+      "id": 11,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "साहस और संकल्प",
+      "question": "बचेंद्री पाल की पहली एवरेस्ट यात्रा के उत्साह को उनकी जगह कल्पना करते हुए डायरी में लिखिए।"
+    },
+    {
+      "id": 12,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "बर्फीला खतरा",
+      "question": "खुंभु हिम्पात के खतरनाक दृश्यों को देखकर होने वाली घबराहट को डायरी में व्यक्त कीजिए।"
+    },
+    {
+      "id": 13,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "साथी का खोना",
+      "question": "एक कुली की मृत्यु और रसोई सहायक के घायल होने की खबर सुनकर मन में आए विचारों को डायरी में लिखिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "लोहत्से की आपदा",
+      "question": "जब रात में बर्फ का विशाल पिंड कैंप पर गिरा, उस डरावने अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 15,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "टीम वर्क",
+      "question": "बचेंद्री द्वारा अपने साथियों (जय, मीनू) की मदद के लिए नीचे उतरने के अनुभव पर डायरी लिखिए।"
+    },
+    {
+      "id": 16,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "अंग दोरजी के साथ",
+      "question": "बिना ऑक्सीजन के चढ़ाई करने वाले अंग दोरजी के साहस पर अपनी डायरी में टिप्पणी लिखिए।"
+    },
+    {
+      "id": 17,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "शिखर पर तिरंगा",
+      "question": "एवरेस्ट की चोटी पर भारत का झंडा फहराते समय महसूस किए गए राष्ट्रीय गर्व को डायरी में लिखिए।"
+    },
+    {
+      "id": 18,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "सागरमाथा को चूमना",
+      "question": "शिखर पर पहुँचकर घुटनों के बल बैठकर माथा टेकने के भावुक क्षणों को डायरी में लिखिए।"
+    },
+    {
+      "id": 19,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "पिता से बात",
+      "question": "सफलता के बाद अपने पिता को कर्नल खुल्लर के माध्यम से सूचना देने की खुशी पर डायरी लिखिए।"
+    },
+    {
+      "id": 20,
+      "chapter": "Everest: Meri Shikhar Yatra",
+      "source": "Sparsh – Chapter 2",
+      "title": "महिला सशक्तिकरण",
+      "question": "पहली भारतीय महिला पर्वतारोही बनने के बाद आने वाली पीढ़ी के लिए अपना संदेश डायरी में लिखिए।"
+    },
+
+    {
+      "id": 21,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "अतिथि का आगमन",
+      "question": "अतिथि के अचानक आने पर पहले दिन की खुशी और स्वागत के अनुभव को डायरी में लिखिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "बजट की चिंता",
+      "question": "अतिथि के रुकने से घर के बिगड़ते आर्थिक बजट पर अपनी चिंताओं को डायरी में लिखिए।"
+    },
+    {
+      "id": 23,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "भोजन का स्तर",
+      "question": "डिनर से शुरू होकर खिचड़ी तक पहुँचने वाले खाने के सफर पर व्यंग्यात्मक डायरी लिखिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "कैलेंडर की तारीखें",
+      "question": "अतिथि के सामने कैलेंडर फड़काने के बावजूद उसके न जाने की झुंझलाहट को डायरी में लिखिए।"
+    },
+    {
+      "id": 25,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "धोबी और कपड़े",
+      "question": "जब अतिथि ने कपड़े धोने के लिए दिए, तो उस पल की अपनी मानसिक स्थिति डायरी में लिखिए।"
+    },
+    {
+      "id": 26,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "सत्कार की समाप्ति",
+      "question": "मेजबान और अतिथि के बीच बातचीत के विषय खत्म होने पर आए सन्नाटे को डायरी में लिखिए।"
+    },
+    {
+      "id": 27,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "निजता का हनन",
+      "question": "किसी बाहरी व्यक्ति के लंबे समय तक रहने से खत्म हुई निजी स्वतंत्रता पर डायरी लिखिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "अतिथि देवो भव?",
+      "question": "क्या अतिथि हमेशा देवता होता है? इस पर एक आलोचनात्मक डायरी लेख लिखिए।"
+    },
+    {
+      "id": 29,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "अंतिम प्रार्थना",
+      "question": "अतिथि के जाने के लिए ईश्वर से की गई प्रार्थना को डायरी के पन्नों पर उतारिए।"
+    },
+    {
+      "id": 30,
+      "chapter": "Tum Kab Jaoge, Atithi",
+      "source": "Sparsh – Chapter 3",
+      "title": "स्वयं एक अतिथि",
+      "question": "यदि आप किसी के घर अतिथि बनकर जाएँ, तो मर्यादाओं का ध्यान कैसे रखेंगे? डायरी में लिखें।"
+    },
+
+    {
+      "id": 31,
+      "chapter": "Vaigyanik Chetna ke Vahak",
+      "source": "Sparsh – Chapter 4",
+      "title": "जिज्ञासु मन",
+      "question": "रामन् के मन में उठी वैज्ञानिक जिज्ञासाओं से मिली प्रेरणा पर डायरी लेख लिखिए।"
+    },
+    {
+      "id": 36,
+      "chapter": "Shukratare ke Saman",
+      "source": "Sparsh – Chapter 5",
+      "title": "समर्पण का भाव",
+      "question": "महादेव भाई देसाई की गांधीजी के प्रति अटूट निष्ठा पर अपने विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 41,
+      "chapter": "Raidas ke Pad",
+      "source": "Sparsh – Chapter 6",
+      "title": "अटूट भक्ति",
+      "question": "'चंदन और पानी' के उदाहरण से समझाई गई भक्ति पर अपने आध्यात्मिक विचार डायरी में लिखिए।"
+    },
+    {
+      "id": 46,
+      "chapter": "Rahim ke Dohe",
+      "source": "Sparsh – Chapter 7",
+      "title": "जीवन की सीख",
+      "question": "रहीम के दोहों से मिली किन्हीं तीन नैतिक शिक्षाओं को अपने जीवन से जोड़कर डायरी में लिखिए।"
+    },
+    {
+      "id": 51,
+      "chapter": "Geet-Ageet",
+      "source": "Sparsh – Chapter 8",
+      "title": "मौन संगीत",
+      "question": "क्या अनकहा भाव (अगीत) गाए हुए गीत से अधिक सुंदर है? इस पर डायरी लिखिए।"
+    },
+    {
+      "id": 56,
+      "chapter": "Agneepath",
+      "source": "Sparsh – Chapter 9",
+      "title": "दृढ़ संकल्प",
+      "question": "जीवन के कठिन मार्ग पर 'बिना थके' आगे बढ़ने के अपने संकल्प को डायरी में लिखिए।"
+    },
+    {
+      "id": 61,
+      "chapter": "Naye Ilaake Mein",
+      "source": "Sparsh – Chapter 10",
+      "title": "बदलता परिवेश",
+      "question": "अपने आसपास की पुरानी चीजों के खो जाने और नए निर्माण के डर पर डायरी लिखिए।"
+    },
+    {
+      "id": 66,
+      "chapter": "Khushboo Rachte Hain Haath",
+      "source": "Sparsh – Chapter 10",
+      "title": "श्रम की विडंबना",
+      "question": "दुनिया को महकाने वाली अगरबत्ती बनाने वाले हाथों की दयनीय स्थिति पर डायरी लिखिए।"
+    },
+    {
+      "id": 71,
+      "chapter": "General Reflection",
+      "source": "Sparsh",
+      "title": "साहित्यिक यात्रा",
+      "question": "स्पर्श पुस्तक के पाठों को पढ़कर आपके सोचने के तरीके में आए बदलाव को डायरी में लिखिए।"
+    },
+    {
+      "id": 76,
+      "chapter": "Revision Diary",
+      "source": "Sparsh",
+      "title": "परीक्षा का तनाव",
+      "question": "हिंदी परीक्षा के लिए स्पर्श के सभी अध्यायों को दोहराते समय की अनुभूतियाँ डायरी में लिखिए।"
+    },
+    {
+      "id": 81,
+      "chapter": "Character Analysis",
+      "source": "All Chapters",
+      "title": "मेरा पसंदीदा पात्र",
+      "question": "पूरी पुस्तक में आपको किस पात्र ने सबसे अधिक प्रभावित किया और क्यों? डायरी में लिखिए।"
+    },
+    {
+      "id": 86,
+      "chapter": "Emotional Growth",
+      "source": "All Chapters",
+      "title": "सहानुभूति",
+      "question": "गरीबों और मजदूरों के प्रति सहानुभूति विकसित करने में साहित्य की भूमिका पर डायरी लिखिए।"
+    },
+    {
+      "id": 91,
+      "chapter": "Creative Writing",
+      "source": "All Chapters",
+      "title": "यदि मैं लेखक होता",
+      "question": "किसी एक पाठ का अंत यदि आप बदलते, तो वह कैसा होता? अपनी कल्पना डायरी में लिखिए।"
+    },
+    {
+      "id": 96,
+      "chapter": "Environmental Concern",
+      "source": "Everest/Geet-Ageet",
+      "title": "प्रकृति और हम",
+      "question": "पर्वतों और नदियों की सुरक्षा के प्रति अपनी जिम्मेदारी पर एक डायरी लेख लिखिए।"
+    },
+    {
+      "id": 100,
+      "chapter": "Life Lessons",
+      "source": "Final Conclusion",
+      "title": "सबसे बड़ी सीख",
+      "question": "नौवीं कक्षा की हिंदी (स्पर्श) से आपने जीवन की जो सबसे बड़ी सीख ली, उसे डायरी में लिखिए।"
+    }
+  ]
+}

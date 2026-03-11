@@ -1,0 +1,149 @@
+{
+  "class": "Class 8",
+  "subject": "English",
+  "chapter": "Feathered Friend",
+  "difficulty": "Medium",
+  "source_pdf": "hepr101.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Discussion on Feathered and Furry Friends",
+      "objective": "Encourage students to think critically about animals as companions and their role in space exploration",
+      "materials": ["Textbook questions", "Notebook", "Pen"],
+      "steps": [
+        "Work in pairs and read the questions given before the story",
+        "Discuss who a feathered friend could be and give examples",
+        "Compare feathered and furry pets and their advantages",
+        "Share opinions about whether birds could accompany astronauts to space"
+      ],
+      "learning_outcome": "Students develop communication skills and analytical thinking",
+      "evaluation": "Quality of reasoning and participation in discussion (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Vocabulary Development Activity",
+      "objective": "Improve vocabulary and word recognition skills",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the meanings given in the exercise",
+        "Identify the correct word by inserting vowels",
+        "Write the complete word in the notebook",
+        "Use each word in a meaningful sentence"
+      ],
+      "learning_outcome": "Students learn vocabulary such as regulation, forbid, fuse, abruptly, confess, and dietitian",
+      "evaluation": "Correct spelling and appropriate sentence usage (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Story Comprehension Analysis",
+      "objective": "Understand key events and scientific ideas presented in the story",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Read the story carefully",
+        "Identify why Sven secretly brought the canary Claribel to the space station",
+        "Explain how Claribel adapted to zero gravity",
+        "Discuss how Claribel helped the crew detect a problem with the air system"
+      ],
+      "learning_outcome": "Students connect literary narrative with scientific concepts",
+      "evaluation": "Accuracy of explanation and understanding of the story (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Character Study of Sven",
+      "objective": "Analyse the personality traits of Sven in the story",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "List the qualities of Sven from the story",
+        "Identify examples that show his curiosity and responsibility",
+        "Explain how Sven's decision contributed to saving the crew",
+        "Present your analysis to the class"
+      ],
+      "learning_outcome": "Students develop analytical reading and interpretation skills",
+      "evaluation": "Clarity of explanation and textual evidence (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Role Play – Claribel Detects the Danger",
+      "objective": "Enhance speaking and performance skills",
+      "materials": ["Story script", "Simple props (optional)"],
+      "steps": [
+        "Form groups of four or five students",
+        "Assign roles such as narrator, Sven, Jim, and crew members",
+        "Recreate the scene where Claribel collapses and the crew investigates the air problem",
+        "Perform the role play before the class"
+      ],
+      "learning_outcome": "Students understand the story through dramatization",
+      "evaluation": "Expression, teamwork, and clarity of dialogue (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "True or False Critical Thinking Activity",
+      "objective": "Develop comprehension and reasoning skills",
+      "materials": ["Textbook exercise", "Notebook"],
+      "steps": [
+        "Read the statements provided in the exercise",
+        "Identify whether each statement is true or false",
+        "Write the correct answers and justify them using the text",
+        "Discuss the answers with classmates"
+      ],
+      "learning_outcome": "Students improve analytical reading and reasoning abilities",
+      "evaluation": "Correct identification and justification (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Adjective Matching Exercise",
+      "objective": "Understand the use of descriptive adjectives in context",
+      "materials": ["Word list from textbook", "Notebook"],
+      "steps": [
+        "Read the adjectives given in the box",
+        "Match them with the appropriate nouns",
+        "Write the completed phrases in your notebook",
+        "Find sentences in the story where these adjectives appear"
+      ],
+      "learning_outcome": "Students learn contextual usage of descriptive words",
+      "evaluation": "Correct matching and identification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Merged Words Formation",
+      "objective": "Understand how blended words are formed and used",
+      "materials": ["Textbook table", "Notebook"],
+      "steps": [
+        "Study the example of merged words provided",
+        "Combine words from Column 1 and Column 2",
+        "Write the merged word and its meaning",
+        "Create a sentence using each merged word"
+      ],
+      "learning_outcome": "Students learn word formation like motel, smog, sitcom, vlog, spork, and webinar",
+      "evaluation": "Correct word formation and sentence usage (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Future Tense Grammar Practice",
+      "objective": "Learn different ways of expressing future time",
+      "materials": ["Textbook", "Notebook"],
+      "steps": [
+        "Study the table showing different future tense forms",
+        "Fill in the blanks using the correct verb forms",
+        "Write additional sentences describing future events",
+        "Discuss your answers with the teacher"
+      ],
+      "learning_outcome": "Students understand grammatical structures for future references",
+      "evaluation": "Accuracy of grammar usage (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Article Writing – Importance of Internet",
+      "objective": "Develop structured writing and critical thinking",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Study the social media web provided in the textbook",
+        "Identify different uses of the internet",
+        "Write an article titled 'The Importance of Internet'",
+        "Include introduction, explanation of uses, and conclusion"
+      ],
+      "learning_outcome": "Students improve writing organisation and expression",
+      "evaluation": "Creativity, clarity, grammar, and structure (10 marks)"
+    }
+  ]
+}

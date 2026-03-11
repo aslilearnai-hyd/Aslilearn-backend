@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "Bholi",
+    "author": "K.A. Abbas",
+    "difficulty": "Easy",
+    "source_pdf": "jefp108.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Lesson Title and Theme",
+            "objective": "Identify the title and basic theme of the lesson",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson title carefully",
+                "Write the title in your notebook",
+                "Write 2–3 lines about what the lesson is about"
+            ],
+            "learning_outcome": "Understands lesson theme",
+            "evaluation": "Relevant description of theme (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Main Idea of the Lesson",
+            "objective": "Understand the central idea of the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson once",
+                "Identify the main idea",
+                "Write it in 3–4 simple sentences"
+            ],
+            "learning_outcome": "Identifies central idea",
+            "evaluation": "Clarity of main idea (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Characters Identification",
+            "objective": "Identify important characters in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "List the main characters from the lesson",
+                "Write one line about each character"
+            ],
+            "learning_outcome": "Recognises characters and their roles",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Sequence of Events",
+            "objective": "Understand the flow of the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "Write any four important events in the correct order"
+            ],
+            "learning_outcome": "Understands story sequence",
+            "evaluation": "Correct sequencing (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Vocabulary Builder",
+            "objective": "Improve vocabulary from the lesson",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Choose five new words from the lesson",
+                "Write their meanings",
+                "Frame one sentence for each word"
+            ],
+            "learning_outcome": "Enhances vocabulary skills",
+            "evaluation": "Correct meaning and usage (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Favourite Line Activity",
+            "objective": "Encourage personal response to the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Select one favourite line from the lesson",
+                "Write 2–3 lines explaining why you liked it"
+            ],
+            "learning_outcome": "Expresses personal opinion",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Moral of the Story",
+            "objective": "Understand the moral or message of the lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the message of the story",
+                "Write the moral in your own words"
+            ],
+            "learning_outcome": "Understands moral values",
+            "evaluation": "Clear moral explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Short Summary Writing",
+            "objective": "Develop summarising skills",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson again",
+                "Write a short summary in 5–6 lines"
+            ],
+            "learning_outcome": "Summarises lesson effectively",
+            "evaluation": "Coverage of main points (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Real-Life Connection",
+            "objective": "Relate the story to real-life situations",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about how the lesson connects to real life",
+                "Write 3–4 sentences explaining the connection"
+            ],
+            "learning_outcome": "Applies learning to real life",
+            "evaluation": "Meaningful connection (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Scene Drawing Activity",
+            "objective": "Express understanding through drawing",
+            "materials": [
+                "Drawing book",
+                "Colour pencils"
+            ],
+            "steps": [
+                "Draw a scene from the story Bholi",
+                "Write one sentence explaining the scene"
+            ],
+            "learning_outcome": "Visual understanding of the lesson",
+            "evaluation": "Relevance and creativity (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Mijbil the Otter",
+  "difficulty": "Hard",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Behavioral Psychology Study",
+      "objective": "Analyze Mijbil’s behavior using principles of animal psychology.",
+      "materials": ["Notebook", "Reference books/articles"],
+      "steps": [
+        "Select 4 behaviors of Mijbil described in the chapter",
+        "Research psychological reasons for each behavior in otters or similar animals",
+        "Write a detailed comparative analysis linking text and psychology"
+      ],
+      "learning_outcome": "Students will connect literary observation with scientific understanding of animal behavior.",
+      "evaluation": "Depth of analysis, clarity, and research support"
+    },
+    {
+      "sl_no": 2,
+      "title": "Critical Character Study",
+      "objective": "Examine the development of Mijbil’s character through events.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Identify key turning points in Mijbil’s life as described",
+        "Analyze how each event shaped his personality and habits",
+        "Write a structured essay with textual examples"
+      ],
+      "learning_outcome": "Students will enhance critical thinking and literary analysis skills.",
+      "evaluation": "Insightfulness, textual support, and organization"
+    },
+    {
+      "sl_no": 3,
+      "title": "Comparative Study – Pet vs Wild Animal",
+      "objective": "Compare Mijbil’s behavior with that of a wild animal.",
+      "materials": ["Notebook", "Research sources"],
+      "steps": [
+        "Choose a wild animal to study",
+        "List similarities and differences in behaviors and adaptability",
+        "Write a comparative essay linking observations to the story"
+      ],
+      "learning_outcome": "Students will develop research, analytical, and comparative skills.",
+      "evaluation": "Accuracy, depth, and clarity of comparison"
+    },
+    {
+      "sl_no": 4,
+      "title": "Ethical Reflection Essay",
+      "objective": "Evaluate human responsibilities when keeping wild animals as pets.",
+      "materials": ["Notebook", "Pen", "Reference materials"],
+      "steps": [
+        "Analyze the ethical implications of keeping Mijbil as a pet",
+        "Discuss potential challenges and risks for both animal and owner",
+        "Write a structured essay with reasoned arguments"
+      ],
+      "learning_outcome": "Students will develop ethical reasoning and structured essay writing skills.",
+      "evaluation": "Logic, depth, and clarity of argument"
+    },
+    {
+      "sl_no": 5,
+      "title": "Symbolism and Metaphor Analysis",
+      "objective": "Identify literary devices representing freedom, curiosity, and companionship.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Identify metaphors and symbolic descriptions in the chapter",
+        "Explain their purpose and effect on reader perception",
+        "Write a report with textual evidence and analysis"
+      ],
+      "learning_outcome": "Students will strengthen literary analysis and interpretive skills.",
+      "evaluation": "Accuracy, depth, and clarity of analysis"
+    },
+    {
+      "sl_no": 6,
+      "title": "Behavior Prediction Experiment",
+      "objective": "Predict animal behavior in unfamiliar situations.",
+      "materials": ["Notebook", "Reference articles", "Pen"],
+      "steps": [
+        "Identify an event not described in the story (e.g., Mijbil in a new environment)",
+        "Predict how Mijbil might behave based on observed traits",
+        "Justify predictions with reasoning and textual evidence"
+      ],
+      "learning_outcome": "Students will apply observation and reasoning to predict outcomes.",
+      "evaluation": "Logical reasoning, justification, and textual support"
+    },
+    {
+      "sl_no": 7,
+      "title": "Research Presentation – Otters Around the World",
+      "objective": "Explore scientific knowledge of otters and relate to Mijbil.",
+      "materials": ["Notebook", "Internet/books for research", "Presentation tools"],
+      "steps": [
+        "Research habitat, diet, and social behavior of otters",
+        "Compare findings with Mijbil’s behavior",
+        "Prepare and present a visual report or slide presentation"
+      ],
+      "learning_outcome": "Students will link literature with real-world biological studies and presentation skills.",
+      "evaluation": "Accuracy, presentation quality, and connection to the story"
+    },
+    {
+      "sl_no": 8,
+      "title": "Narrative Techniques Critique",
+      "objective": "Analyze how the author narrates Mijbil’s story.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Identify narrative perspective, tone, and style",
+        "Discuss how it influences reader understanding of Mijbil",
+        "Write a critique with examples from the text"
+      ],
+      "learning_outcome": "Students will strengthen literary critique and analytical skills.",
+      "evaluation": "Insight, textual support, and clarity"
+    },
+    {
+      "sl_no": 9,
+      "title": "Ethical Campaign Design",
+      "objective": "Promote responsible pet ownership through a campaign.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "Design a campaign encouraging awareness about keeping wild animals as pets",
+        "Include slogans, visuals, and key messages",
+        "Present the campaign to the class"
+      ],
+      "learning_outcome": "Students will develop ethical awareness, creativity, and communication skills.",
+      "evaluation": "Relevance, creativity, and clarity"
+    },
+    {
+      "sl_no": 10,
+      "title": "Analytical Essay – Human-Animal Bond",
+      "objective": "Critically evaluate the relationship between Mijbil and the author.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Describe the interactions and mutual influence between Mijbil and the author",
+        "Analyze the emotional and practical significance of their bond",
+        "Write an analytical essay connecting observations to broader themes of companionship"
+      ],
+      "learning_outcome": "Students will enhance critical thinking, analytical writing, and understanding of human-animal relationships.",
+      "evaluation": "Depth of analysis, textual support, and organization"
+    }
+  ]
+}

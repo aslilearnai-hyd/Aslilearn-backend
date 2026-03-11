@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "English",
+  "chapter": "Poem – Amanda",
+  "difficulty": "Hard",
+  "source_pdf": "first_flight.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "In-depth Character Analysis",
+      "objective": "Analyze Amanda’s personality and psyche deeply.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify Amanda’s traits, emotions, and contradictions.",
+        "Cite lines from the poem that reveal her imagination, fear, and frustration.",
+        "Write a 1-paragraph critical analysis connecting her personality to the poet’s message."
+      ],
+      "learning_outcome": "Students will critically evaluate the character using textual evidence.",
+      "evaluation": "Depth of analysis, textual references, and insightfulness."
+    },
+    {
+      "sl_no": 2,
+      "title": "Exploring Poetic Devices",
+      "objective": "Examine the poet’s use of literary techniques.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify devices like repetition, imagery, parenthesis, and tone.",
+        "Explain how each device reflects Amanda’s inner thoughts and emotions.",
+        "Write examples from the text with detailed explanations."
+      ],
+      "learning_outcome": "Students will develop analytical skills in literary techniques.",
+      "evaluation": "Correct identification, relevance, and depth of explanation."
+    },
+    {
+      "sl_no": 3,
+      "title": "Parent-Child Perspective Essay",
+      "objective": "Analyze the poem from dual perspectives.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write an essay exploring the parent’s expectations versus Amanda’s imagination.",
+        "Explain how the parent’s tone influences Amanda’s feelings.",
+        "Include textual examples to support your argument."
+      ],
+      "learning_outcome": "Students will develop critical thinking by examining multiple perspectives.",
+      "evaluation": "Coherence, use of textual evidence, and depth of analysis."
+    },
+    {
+      "sl_no": 4,
+      "title": "Comparative Study of Imagination",
+      "objective": "Compare Amanda’s imagination with real-life constraints.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "List her imagined characters and scenarios.",
+        "Analyze how these reflect her desire for freedom and escape.",
+        "Write a 5–6 sentence commentary linking imagination to psychological growth."
+      ],
+      "learning_outcome": "Students will connect imagination with character development and thematic depth.",
+      "evaluation": "Insightfulness and clarity in linking imagination to themes."
+    },
+    {
+      "sl_no": 5,
+      "title": "Theme-based Critical Analysis",
+      "objective": "Examine underlying themes like freedom, restriction, and growing up.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Identify at least three central themes of the poem.",
+        "Provide lines from the poem that highlight each theme.",
+        "Write a short critical paragraph analyzing how the themes are conveyed."
+      ],
+      "learning_outcome": "Students will strengthen literary interpretation and thematic understanding.",
+      "evaluation": "Depth of thematic analysis, textual evidence, and clarity."
+    },
+    {
+      "sl_no": 6,
+      "title": "Creative Perspective Writing",
+      "objective": "Write from Amanda’s perspective creatively.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Imagine a day in Amanda’s life not mentioned in the poem.",
+        "Write a diary entry reflecting her thoughts, dreams, and frustrations.",
+        "Include advanced vocabulary and literary techniques like metaphor or imagery."
+      ],
+      "learning_outcome": "Students will enhance creative writing and perspective-taking skills.",
+      "evaluation": "Creativity, depth of character voice, and literary quality."
+    },
+    {
+      "sl_no": 7,
+      "title": "Poetic Device Presentation",
+      "objective": "Teach peers about literary devices in the poem.",
+      "materials": ["Chart paper", "Markers", "Notebook"],
+      "steps": [
+        "Prepare a presentation identifying all poetic devices used in 'Amanda'.",
+        "Explain how each device contributes to meaning and emotion.",
+        "Present findings to the class with examples."
+      ],
+      "learning_outcome": "Students develop presentation skills and deepen literary analysis.",
+      "evaluation": "Accuracy, clarity, and ability to explain devices."
+    },
+    {
+      "sl_no": 8,
+      "title": "Analytical Poster – Parent vs Child",
+      "objective": "Visualize conflict and interaction between parent and child.",
+      "materials": ["Chart paper", "Colors", "Markers"],
+      "steps": [
+        "Create a poster showing the parent’s instructions and Amanda’s responses.",
+        "Use quotes, symbols, and colors to depict emotions.",
+        "Write 2–3 lines summarizing the parent-child dynamic."
+      ],
+      "learning_outcome": "Students synthesize textual understanding into visual representation.",
+      "evaluation": "Creativity, accuracy, and analytical clarity."
+    },
+    {
+      "sl_no": 9,
+      "title": "Critical Discussion",
+      "objective": "Discuss deeper meanings and societal implications.",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Discuss why children’s imagination is important in growing up.",
+        "Analyze societal or parental pressures reflected in the poem.",
+        "Share your opinions with textual support in class discussion."
+      ],
+      "learning_outcome": "Students will engage in critical thinking and discussion skills.",
+      "evaluation": "Insightfulness, textual support, and active participation."
+    },
+    {
+      "sl_no": 10,
+      "title": "Comparative Essay – Childhood in Literature",
+      "objective": "Compare Amanda with another child character in literature.",
+      "materials": ["Notebook", "Pen", "Textbook"],
+      "steps": [
+        "Choose a child character from any other poem or story you have read.",
+        "Compare their thoughts, imagination, and reactions to Amanda.",
+        "Write a structured essay highlighting similarities, differences, and lessons learned."
+      ],
+      "learning_outcome": "Students will strengthen comparative literary skills and critical reasoning.",
+      "evaluation": "Depth of comparison, textual references, and coherence."
+    }
+  ]
+}

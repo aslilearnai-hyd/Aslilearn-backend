@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Fractions in Disguise (Percentages)",
+  "difficulty": "Easy",
+  "source_pdf": "hegp201.pdf",
+  "short_notes": {
+    "key_points": [
+      "Percentage means per hundred",
+      "Percentages can be converted into fractions and decimals",
+      "To find percentage of a quantity multiply the number by the percentage fraction",
+      "Profit occurs when selling price is greater than cost price",
+      "Loss occurs when selling price is less than cost price"
+    ],
+    "examples": [
+      "50% = 50/100 = 1/2",
+      "0.75 = 75%",
+      "25% of 200 = 50",
+      "Profit example: CP = 100, SP = 120",
+      "Loss example: CP = 200, SP = 180"
+    ],
+    "formulas": [
+      "Percentage = (Part / Whole) × 100",
+      "Profit = Selling Price − Cost Price",
+      "Loss = Cost Price − Selling Price",
+      "Profit % = (Profit / Cost Price) × 100",
+      "Loss % = (Loss / Cost Price) × 100"
+    ],
+    "exam_tips": [
+      "Always convert percentage to fraction or decimal before calculation",
+      "Remember that 100% represents the whole quantity",
+      "Profit and loss percentage are calculated using cost price",
+      "Write units clearly in answers"
+    ]
+  }
+}

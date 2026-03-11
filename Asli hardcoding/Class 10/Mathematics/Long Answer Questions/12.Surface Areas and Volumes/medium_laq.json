@@ -1,0 +1,364 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 12: Surface Areas and Volumes",
+    "generated_at": "2026-03-01T22:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain why the total surface area of a solid formed by combining two solids is not equal to the sum of their individual total surface areas.",
+            "answer": "When two solids are joined together, some surfaces become common and are no longer exposed. These common surfaces are not included in the total surface area, hence TSA is not the sum of individual TSAs.",
+            "answer_outline": [
+                "Combined solids",
+                "Disappearing surfaces",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "combined solids"
+            ],
+            "marks": 6,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the method to find the surface area of a solid formed by a cylinder surmounted by two hemispheres.",
+            "answer": "The surface area is found by adding the curved surface area of the cylinder and the curved surface areas of the two hemispheres.",
+            "answer_outline": [
+                "Identify shapes",
+                "CSA of cylinder",
+                "CSA of hemispheres"
+            ],
+            "key_concepts": [
+                "surface area"
+            ],
+            "marks": 6,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why slant height is used instead of height in finding the curved surface area of a cone.",
+            "answer": "The curved surface of a cone extends along the slant height, not the vertical height, so slant height is used in CSA calculation.",
+            "answer_outline": [
+                "Cone structure",
+                "Slant height",
+                "CSA logic"
+            ],
+            "key_concepts": [
+                "slant height"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how to find the volume of a solid formed by combining two basic solids.",
+            "answer": "The volume of the combined solid is found by adding the volumes of the individual solids since no volume is lost.",
+            "answer_outline": [
+                "Individual volumes",
+                "Addition",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "volume of combined solids"
+            ],
+            "marks": 6,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the concept of apparent capacity and actual capacity with an example.",
+            "answer": "Apparent capacity is the volume calculated assuming the container is completely hollow, while actual capacity is less due to raised or hollow portions.",
+            "answer_outline": [
+                "Definition",
+                "Difference",
+                "Example"
+            ],
+            "key_concepts": [
+                "capacity"
+            ],
+            "marks": 6,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the base area is not included while calculating the curved surface area.",
+            "answer": "Curved surface area includes only the curved portion of a solid and excludes flat base areas.",
+            "answer_outline": [
+                "CSA meaning",
+                "Base exclusion"
+            ],
+            "key_concepts": [
+                "CSA"
+            ],
+            "marks": 5,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the shape and structure of a medicine capsule.",
+            "answer": "A medicine capsule is shaped like a cylinder with two hemispherical ends joined to it.",
+            "answer_outline": [
+                "Cylinder",
+                "Hemispheres"
+            ],
+            "key_concepts": [
+                "capsule"
+            ],
+            "marks": 5,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why the base of a tent is not included while finding the area of canvas required.",
+            "answer": "The base of the tent rests on the ground and is not covered with canvas.",
+            "answer_outline": [
+                "Tent structure",
+                "Base exclusion"
+            ],
+            "key_concepts": [
+                "tent"
+            ],
+            "marks": 5,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain why volume is always conserved when solids are combined.",
+            "answer": "Volume is conserved because no part of the space occupied by the solids disappears.",
+            "answer_outline": [
+                "Volume conservation",
+                "Reason"
+            ],
+            "key_concepts": [
+                "volume"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why curved surfaces are stronger than flat surfaces.",
+            "answer": "Curved surfaces distribute stress uniformly and do not have sharp edges where stress concentrates.",
+            "answer_outline": [
+                "Stress distribution",
+                "Strength"
+            ],
+            "key_concepts": [
+                "curved surfaces"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why volume is measured in cubic units.",
+            "answer": "Volume measures three-dimensional space, so it is measured in cubic units.",
+            "answer_outline": [
+                "3D space",
+                "Units"
+            ],
+            "key_concepts": [
+                "volume"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the importance of surface area in daily life.",
+            "answer": "Surface area helps in calculating paint required, wrapping materials, insulation and heat loss.",
+            "answer_outline": [
+                "Paint",
+                "Wrapping",
+                "Insulation"
+            ],
+            "key_concepts": [
+                "surface area"
+            ],
+            "marks": 6,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why hemispherical ends are used in tanks.",
+            "answer": "Hemispherical ends reduce pressure concentration and increase strength.",
+            "answer_outline": [
+                "Pressure distribution",
+                "Strength"
+            ],
+            "key_concepts": [
+                "applications"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the relation between the volume of a cone and a cylinder.",
+            "answer": "The volume of a cone is one-third the volume of a cylinder having the same base and height.",
+            "answer_outline": [
+                "Comparison",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "cone volume"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why the curved surface area of a hemisphere is half that of a sphere.",
+            "answer": "A hemisphere is exactly half of a sphere, so its curved surface area is half.",
+            "answer_outline": [
+                "Hemisphere",
+                "Sphere"
+            ],
+            "key_concepts": [
+                "hemisphere"
+            ],
+            "marks": 5,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the importance of slant height in cone-related problems.",
+            "answer": "Slant height is essential to calculate the curved surface area of a cone accurately.",
+            "answer_outline": [
+                "Slant height",
+                "CSA"
+            ],
+            "key_concepts": [
+                "slant height"
+            ],
+            "marks": 5,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why spherical shape is preferred for balls.",
+            "answer": "Spherical shape allows uniform motion and minimum air resistance.",
+            "answer_outline": [
+                "Uniform shape",
+                "Applications"
+            ],
+            "key_concepts": [
+                "sphere"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain how hollowing affects the volume of a solid.",
+            "answer": "Hollowing removes material from the solid, reducing its volume.",
+            "answer_outline": [
+                "Hollowing",
+                "Volume reduction"
+            ],
+            "key_concepts": [
+                "hollow solids"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why cylindrical containers are commonly used for storage.",
+            "answer": "Cylindrical containers provide large volume with structural stability.",
+            "answer_outline": [
+                "Storage",
+                "Stability"
+            ],
+            "key_concepts": [
+                "cylinders"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of height in determining the volume of a solid.",
+            "answer": "Height determines the vertical extent of space occupied by a solid.",
+            "answer_outline": [
+                "Height",
+                "Volume"
+            ],
+            "key_concepts": [
+                "height"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why sphere has no edges or vertices.",
+            "answer": "A sphere has a completely curved surface without flat faces, edges or vertices.",
+            "answer_outline": [
+                "Curved surface",
+                "No edges"
+            ],
+            "key_concepts": [
+                "sphere"
+            ],
+            "marks": 5,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why the total surface area is important in insulation problems.",
+            "answer": "Heat loss or gain depends on the exposed surface area of the object.",
+            "answer_outline": [
+                "Heat transfer",
+                "Surface area"
+            ],
+            "key_concepts": [
+                "insulation"
+            ],
+            "marks": 6,
+            "source_section": "12.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why curved surfaces reduce air resistance.",
+            "answer": "Curved surfaces allow smooth flow of air, reducing drag.",
+            "answer_outline": [
+                "Air flow",
+                "Drag reduction"
+            ],
+            "key_concepts": [
+                "aerodynamics"
+            ],
+            "marks": 6,
+            "source_section": "12.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why volume is more important than surface area in storage design.",
+            "answer": "Storage design focuses on maximizing capacity, which depends on volume.",
+            "answer_outline": [
+                "Capacity",
+                "Volume"
+            ],
+            "key_concepts": [
+                "storage"
+            ],
+            "marks": 5,
+            "source_section": "12.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of combined solids in real-life applications.",
+            "answer": "Many real-life objects are combinations of basic solids, making their study important.",
+            "answer_outline": [
+                "Examples",
+                "Applications"
+            ],
+            "key_concepts": [
+                "combined solids"
+            ],
+            "marks": 6,
+            "source_section": "12.2"
+        }
+    ]
+}

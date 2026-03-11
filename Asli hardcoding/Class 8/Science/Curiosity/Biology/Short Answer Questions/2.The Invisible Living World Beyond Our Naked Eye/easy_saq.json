@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+  "generated_at": "2026-03-05T15:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What are microorganisms?",
+      "answer": "Microorganisms are tiny living organisms that cannot be seen with the naked eye.",
+      "key_concepts": ["microorganisms"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 2,
+      "question": "Which instrument is used to observe microorganisms?",
+      "answer": "A microscope is used to observe microorganisms.",
+      "key_concepts": ["microscope"],
+      "marks": 2,
+      "source_section": "Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "Who discovered cells?",
+      "answer": "Robert Hooke discovered cells by observing cork under a microscope.",
+      "key_concepts": ["cell discovery"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Who is known as the Father of Microbiology?",
+      "answer": "Antonie van Leeuwenhoek is known as the Father of Microbiology.",
+      "key_concepts": ["microbiology"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a cell?",
+      "answer": "A cell is the basic unit of life.",
+      "key_concepts": ["cell"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Name the three main parts of a cell.",
+      "answer": "Cell membrane, cytoplasm, and nucleus.",
+      "key_concepts": ["cell structure"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which part of the cell controls its activities?",
+      "answer": "The nucleus controls the activities of the cell.",
+      "key_concepts": ["nucleus"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the function of the cell membrane?",
+      "answer": "The cell membrane controls the movement of substances into and out of the cell.",
+      "key_concepts": ["cell membrane"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Which structure is present in plant cells but absent in animal cells?",
+      "answer": "Cell wall.",
+      "key_concepts": ["plant cell"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What is cytoplasm?",
+      "answer": "Cytoplasm is the jelly-like substance inside the cell where most life processes occur.",
+      "key_concepts": ["cytoplasm"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What are unicellular organisms?",
+      "answer": "Unicellular organisms are organisms made up of a single cell.",
+      "key_concepts": ["unicellular"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Give one example of a unicellular organism.",
+      "answer": "Amoeba.",
+      "key_concepts": ["amoeba"],
+      "marks": 2,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 13,
+      "question": "What is decomposition?",
+      "answer": "Decomposition is the process by which microorganisms break down dead plants and animals.",
+      "key_concepts": ["decomposition"],
+      "marks": 2,
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 14,
+      "question": "What is compost?",
+      "answer": "Compost is nutrient-rich manure formed by decomposition of organic waste.",
+      "key_concepts": ["compost"],
+      "marks": 2,
+      "source_section": "Section 2.4.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Which microorganism is used in bread making?",
+      "answer": "Yeast.",
+      "key_concepts": ["yeast"],
+      "marks": 2,
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "What gas is produced during yeast fermentation?",
+      "answer": "Carbon dioxide.",
+      "key_concepts": ["fermentation"],
+      "marks": 2,
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which bacteria convert milk into curd?",
+      "answer": "Lactobacillus bacteria.",
+      "key_concepts": ["lactobacillus"],
+      "marks": 2,
+      "source_section": "Section 2.4.2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is nitrogen fixation?",
+      "answer": "Nitrogen fixation is the process of converting atmospheric nitrogen into usable forms for plants.",
+      "key_concepts": ["nitrogen fixation"],
+      "marks": 2,
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Which bacteria fix nitrogen in leguminous plants?",
+      "answer": "Rhizobium bacteria.",
+      "key_concepts": ["rhizobium"],
+      "marks": 2,
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 20,
+      "question": "What are microalgae?",
+      "answer": "Microalgae are microscopic algae that perform photosynthesis.",
+      "key_concepts": ["microalgae"],
+      "marks": 2,
+      "source_section": "Section 2.4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the main function of microorganisms in ecosystems?",
+      "answer": "They recycle nutrients by decomposing organic matter.",
+      "key_concepts": ["ecosystem role"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 22,
+      "question": "What are tissues?",
+      "answer": "Tissues are groups of similar cells working together to perform a function.",
+      "key_concepts": ["tissue"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 23,
+      "question": "What are organs?",
+      "answer": "Organs are structures made up of different tissues working together.",
+      "key_concepts": ["organ"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Why are microorganisms important in agriculture?",
+      "answer": "They improve soil fertility through decomposition and nitrogen fixation.",
+      "key_concepts": ["agriculture microbes"],
+      "marks": 2,
+      "source_section": "Section 2.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are cells called the basic unit of life?",
+      "answer": "Because all living organisms are made of cells and life processes occur in cells.",
+      "key_concepts": ["cell"],
+      "marks": 2,
+      "source_section": "Section 2.5"
+    }
+  ]
+}

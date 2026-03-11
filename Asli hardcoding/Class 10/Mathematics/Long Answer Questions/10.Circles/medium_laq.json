@@ -1,0 +1,361 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Circles",
+    "generated_at": "2026-03-01T22:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of a tangent to a circle.",
+            "answer": "A tangent to a circle is a line that touches the circle at exactly one point called the point of contact.",
+            "answer_outline": [
+                "Definition of tangent",
+                "Point of contact",
+                "Difference from secant"
+            ],
+            "key_concepts": [
+                "tangent"
+            ],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why a tangent touches a circle at only one point.",
+            "answer": "If a line touches the circle at more than one point, it becomes a secant. Hence a tangent touches the circle at only one point.",
+            "answer_outline": [
+                "Single point contact",
+                "Secant comparison"
+            ],
+            "key_concepts": [
+                "tangent property"
+            ],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the difference between a secant and a tangent.",
+            "answer": "A secant intersects the circle at two points, whereas a tangent touches the circle at only one point.",
+            "answer_outline": [
+                "Definition of secant",
+                "Definition of tangent",
+                "Comparison"
+            ],
+            "key_concepts": [
+                "secant",
+                "tangent"
+            ],
+            "marks": 5,
+            "source_section": "10.1, 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the term point of contact of a tangent.",
+            "answer": "The point at which the tangent touches the circle is called the point of contact.",
+            "answer_outline": [
+                "Meaning",
+                "Significance"
+            ],
+            "key_concepts": [
+                "point of contact"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the normal to a circle.",
+            "answer": "The normal to a circle is the line containing the radius through the point of contact of the tangent.",
+            "answer_outline": [
+                "Definition",
+                "Relation with radius"
+            ],
+            "key_concepts": [
+                "normal"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain why the radius is perpendicular to the tangent at the point of contact.",
+            "answer": "The radius is the shortest distance from the centre to the tangent, hence it is perpendicular.",
+            "answer_outline": [
+                "Shortest distance",
+                "Perpendicularity"
+            ],
+            "key_concepts": [
+                "tangent theorem"
+            ],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the number of tangents that can be drawn from a point inside a circle.",
+            "answer": "No tangent can be drawn from a point inside a circle because all lines through the point intersect the circle at two points.",
+            "answer_outline": [
+                "Internal point",
+                "Intersection"
+            ],
+            "key_concepts": [
+                "internal point"
+            ],
+            "marks": 5,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the number of tangents that can be drawn from a point on a circle.",
+            "answer": "Only one tangent can be drawn at a point on a circle.",
+            "answer_outline": [
+                "On circle",
+                "Uniqueness"
+            ],
+            "key_concepts": [
+                "unique tangent"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the number of tangents that can be drawn from a point outside a circle.",
+            "answer": "Two tangents can be drawn from a point outside the circle.",
+            "answer_outline": [
+                "External point",
+                "Two tangents"
+            ],
+            "key_concepts": [
+                "external point"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the term length of a tangent.",
+            "answer": "The distance from the external point to the point of contact is called the length of the tangent.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "length of tangent"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why the two tangents from an external point are equal.",
+            "answer": "The triangles formed by joining the centre with points of contact are congruent by RHS congruence.",
+            "answer_outline": [
+                "Right triangles",
+                "RHS congruence"
+            ],
+            "key_concepts": [
+                "equal tangents"
+            ],
+            "marks": 5,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the role of congruence in tangent theorems.",
+            "answer": "Congruence helps in proving equality of tangent lengths.",
+            "answer_outline": [
+                "Congruence",
+                "Application"
+            ],
+            "key_concepts": [
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why only one tangent can be drawn at a point on a circle.",
+            "answer": "Because only one perpendicular can be drawn to the radius at a given point.",
+            "answer_outline": [
+                "Perpendicularity",
+                "Uniqueness"
+            ],
+            "key_concepts": [
+                "unique tangent"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why a tangent does not pass through the interior of a circle.",
+            "answer": "A tangent only touches the boundary of the circle and does not enter the interior.",
+            "answer_outline": [
+                "Boundary contact",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "boundary"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why a tangent is a limiting case of a secant.",
+            "answer": "When the two points of intersection of a secant coincide, it becomes a tangent.",
+            "answer_outline": [
+                "Secant",
+                "Limiting case"
+            ],
+            "key_concepts": [
+                "secant"
+            ],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the significance of Theorem 10.1.",
+            "answer": "It establishes that the tangent is perpendicular to the radius at the point of contact.",
+            "answer_outline": [
+                "Statement",
+                "Importance"
+            ],
+            "key_concepts": [
+                "Theorem 10.1"
+            ],
+            "marks": 5,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the significance of Theorem 10.2.",
+            "answer": "It proves that tangents drawn from an external point to a circle are equal in length.",
+            "answer_outline": [
+                "Statement",
+                "Application"
+            ],
+            "key_concepts": [
+                "Theorem 10.2"
+            ],
+            "marks": 5,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the angle between the two tangents from an external point.",
+            "answer": "The angle between the two tangents is related to the angle subtended at the centre.",
+            "answer_outline": [
+                "Angle relation",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "angle between tangents"
+            ],
+            "marks": 5,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why the centre lies on the angle bisector of the two tangents.",
+            "answer": "Because the tangents from an external point are equal.",
+            "answer_outline": [
+                "Equal tangents",
+                "Angle bisector"
+            ],
+            "key_concepts": [
+                "angle bisector"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the real-life application of tangents.",
+            "answer": "A wheel touching the ground forms a tangent at the point of contact.",
+            "answer_outline": [
+                "Example",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "real-life application"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain why perpendicular distance is the shortest distance.",
+            "answer": "Any other distance from the point to the line is longer than the perpendicular.",
+            "answer_outline": [
+                "Shortest distance",
+                "Geometry principle"
+            ],
+            "key_concepts": [
+                "shortest distance"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain concentric circles.",
+            "answer": "Circles having the same centre but different radii are called concentric circles.",
+            "answer_outline": [
+                "Definition",
+                "Example"
+            ],
+            "key_concepts": [
+                "concentric circles"
+            ],
+            "marks": 4,
+            "source_section": "10.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain parallel tangents to a circle.",
+            "answer": "Parallel tangents touch the circle on opposite sides and never intersect.",
+            "answer_outline": [
+                "Definition",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "parallel tangents"
+            ],
+            "marks": 4,
+            "source_section": "10.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why radii are equal in all tangent constructions.",
+            "answer": "All radii of the same circle are equal by definition.",
+            "answer_outline": [
+                "Radii equality",
+                "Explanation"
+            ],
+            "key_concepts": [
+                "radii"
+            ],
+            "marks": 3,
+            "source_section": "10.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of tangents in circle geometry.",
+            "answer": "Tangents help in understanding contact, boundary and geometric constructions.",
+            "answer_outline": [
+                "Importance",
+                "Applications"
+            ],
+            "key_concepts": [
+                "importance"
+            ],
+            "marks": 4,
+            "source_section": "10.4"
+        }
+    ]
+}

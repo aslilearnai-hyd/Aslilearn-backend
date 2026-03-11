@@ -1,0 +1,401 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Integers (Operations)",
+    "generated_at": "2026-03-05T01:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "An elevator descends into a mine shaft at the rate of 5 m/min. If it begins its descent 15 m above the ground level, what will be its position after 45 minutes? Represent the final position with a signed integer and explain its meaning.",
+            "answer": "The rate of descent is -5 m/min. In 45 minutes, the total distance covered is $45 \\times (-5) = -225$ m. Starting position is +15 m. Final position = $+15 + (-225) = -210$ m. This means the elevator is 210 meters below ground level.",
+            "answer_outline": [
+                "Define descent as a negative rate",
+                "Calculate total displacement",
+                "Add displacement to starting height",
+                "Interpret the negative sign"
+            ],
+            "key_concepts": [
+                "displacement",
+                "rate of change"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that for any three integers $a$, $b$, and $c$, $a \\times (b - c) = (a \\times b) - (a \\times c)$. Use $a = -5, b = -2, c = 4$ for verification.",
+            "answer": "LHS: $-5 \\times (-2 - 4) = -5 \\times (-6) = 30$. RHS: $(-5 \\times -2) - (-5 \\times 4) = 10 - (-20) = 10 + 20 = 30$. Since LHS = RHS, the distributive property of multiplication over subtraction is verified.",
+            "answer_outline": [
+                "Identify the distributive property",
+                "Substitute values into LHS and simplify",
+                "Substitute values into RHS and simplify",
+                "Verify equality"
+            ],
+            "key_concepts": [
+                "distributive property",
+                "subtraction of integers"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 3,
+            "question": "In a test, (+5) marks are given for every correct answer and (-2) marks are given for every incorrect answer. Rohit answered all questions and scored 30 marks, despite getting 10 correct answers. How many questions did he answer incorrectly?",
+            "answer": "Marks from correct answers = $10 \\times 5 = 50$. Total score = 30. Marks lost for incorrect answers = $30 - 50 = -20$. Penalty per incorrect answer = -2. Number of incorrect answers = $(-20) \\div (-2) = 10$ questions.",
+            "answer_outline": [
+                "Calculate positive component of score",
+                "Calculate total negative marks needed",
+                "Divide total penalty by unit penalty",
+                "State the count of errors"
+            ],
+            "key_concepts": [
+                "division of integers",
+                "problem solving"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 4,
+            "question": "Determine the integer whose product with (-1) is: (i) -22 (ii) 37 (iii) 0. Explain the rule used.",
+            "answer": "(i) $22$ because $22 \\times (-1) = -22$. (ii) $-37$ because $(-37) \\times (-1) = 37$. (iii) $0$ because $0 \\times (-1) = 0$. The rule is that multiplying by -1 gives the additive inverse of the number.",
+            "answer_outline": [
+                "Calculate each value",
+                "Explain the concept of additive inverse in multiplication"
+            ],
+            "key_concepts": [
+                "multiplicative identity",
+                "additive inverse"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.6.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Simplify using properties: $(-18) \\times [(-10) + (-5) + 15]$.",
+            "answer": "First, simplify the bracket: $(-10) + (-5) + 15 = -15 + 15 = 0$. Then, $(-18) \\times 0 = 0$. This demonstrates the property of multiplication by zero.",
+            "answer_outline": [
+                "Solve inner bracket using addition rules",
+                "Apply zero property of multiplication"
+            ],
+            "key_concepts": [
+                "zero property",
+                "BODMAS"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.6.3"
+        },
+        {
+            "question_number": 6,
+            "question": "A shopkeeper earns a profit of ₹5 per bag of white cement sold and a loss of ₹3 per bag of grey cement sold. If he sells 3000 bags of white cement and 5000 bags of grey cement in a month, what is his profit or loss? Represent loss as a negative integer.",
+            "answer": "Profit from white cement = $3000 \\times 5 = 15000$. Loss from grey cement = $5000 \\times (-3) = -15000$. Total = $15000 + (-15000) = 0$. The shopkeeper has neither profit nor loss.",
+            "answer_outline": [
+                "Assign signs to profit (+) and loss (-)",
+                "Calculate total profit and total loss",
+                "Sum them for net result"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "addition of opposites"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Following Question 6, what is the number of white cement bags he must sell to have neither profit nor loss, if the number of grey bags sold is 6400?",
+            "answer": "Loss on grey bags = $6400 \\times 3 = 19200$. To have no profit/loss, white bag profit must be 19200. Let number of white bags be $x$. $5x = 19200 \\implies x = 19200 \\div 5 = 3840$ bags.",
+            "answer_outline": [
+                "Calculate total loss",
+                "Set up the equation for break-even",
+                "Solve for the unknown variable"
+            ],
+            "key_concepts": [
+                "algebraic logic",
+                "division"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 8,
+            "question": "Can you find a pattern? $(-1) \\times (-1) = 1$; $(-1) \\times (-1) \\times (-1) = -1$. What is the result of $(-1)$ multiplied by itself 100 times? And 101 times?",
+            "answer": "If -1 is multiplied an even number of times, the result is 1. If multiplied an odd number of times, the result is -1. 100 is even, so the result is 1. 101 is odd, so the result is -1.",
+            "answer_outline": [
+                "Observe the given pattern",
+                "Define the rule for even/odd powers of -1",
+                "Apply to 100 and 101"
+            ],
+            "key_concepts": [
+                "patterns",
+                "exponent logic"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Simplify: $(-20) + (-8) \\div (-2) \\times 3$. Follow the order of operations strictly.",
+            "answer": "Step 1 (Division): $(-8) \\div (-2) = 4$. Equation becomes: $-20 + 4 \\times 3$. Step 2 (Multiplication): $4 \\times 3 = 12$. Equation becomes: $-20 + 12$. Step 3 (Addition): $-20 + 12 = -8$.",
+            "answer_outline": [
+                "Apply BODMAS/PEMDAS",
+                "Divide first",
+                "Multiply second",
+                "Add/Subtract last"
+            ],
+            "key_concepts": [
+                "BODMAS",
+                "order of operations"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 10,
+            "question": "If $a$ and $b$ are two integers such that $a \\div b = -3$, find three possible pairs of $(a, b)$.",
+            "answer": "For the quotient to be -3, the signs must be different. Pairs could be: (9, -3), (-15, 5), (30, -10).",
+            "answer_outline": [
+                "Apply rules of division for signs",
+                "Select multiples of 3 for $a$ and divide by $b$"
+            ],
+            "key_concepts": [
+                "division",
+                "sign rules"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 11,
+            "question": "A plane is flying at the height of 5000 m above sea level. At a particular point, it is exactly above a submarine floating 1200 m below sea level. What is the vertical distance between them?",
+            "answer": "Plane height = +5000. Submarine depth = -1200. Distance = $|5000 - (-1200)| = 5000 + 1200 = 6200$ m.",
+            "answer_outline": [
+                "Represent positions as integers",
+                "Calculate the difference",
+                "State the absolute distance"
+            ],
+            "key_concepts": [
+                "subtraction",
+                "absolute distance"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Evaluate using properties: $26 \\times (-48) + (-48) \\times (-36)$.",
+            "answer": "$(-48) \\times [26 + (-36)] = (-48) \\times (-10) = 480$.",
+            "answer_outline": [
+                "Identify common factor",
+                "Use distributive property to factor out -48",
+                "Simplify bracket and multiply"
+            ],
+            "key_concepts": [
+                "distributive property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.6.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that the product of three negative integers is a negative integer, but the product of four negative integers is a positive integer.",
+            "answer": "$(-a) \\times (-b) \\times (-c) = [(-a) \\times (-b)] \\times (-c) = (ab) \\times (-c) = -abc$. For four: $(-a) \\times (-b) \\times (-c) \\times (-d) = (ab) \\times (cd) = abcd$. Pairwise multiplication of negatives results in positives.",
+            "answer_outline": [
+                "Group the integers in pairs",
+                "Show sign change after each multiplication",
+                "Conclude based on even/odd count"
+            ],
+            "key_concepts": [
+                "multiplication rules",
+                "generalization"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the value of $x$ in the equation: $x \\div (-5) = -12$.",
+            "answer": "$x = (-12) \\times (-5) = 60$.",
+            "answer_outline": [
+                "Inverse operation (multiplication)",
+                "Apply negative $\\times$ negative rule"
+            ],
+            "key_concepts": [
+                "equation solving",
+                "division inverse"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Starting from (-5) $\\times$ 4, write various products showing some pattern to show that (-5) $\\times$ (-3) = 15.",
+            "answer": "$-5 \\times 4 = -20$; $-5 \\times 3 = -15$ (increased by 5); $-5 \\times 2 = -10$ (increased by 5); $-5 \\times 1 = -5$; $-5 \\times 0 = 0$; $-5 \\times (-1) = 5$; $-5 \\times (-2) = 10$; $-5 \\times (-3) = 15$.",
+            "answer_outline": [
+                "Create a decreasing sequence of multipliers",
+                "Show the consistent addition of 5 to the product",
+                "Reach the target negative multiplier"
+            ],
+            "key_concepts": [
+                "patterns",
+                "multiplication logic"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Verify if $a \\div (b + c) = (a \\div b) + (a \\div c)$ for $a = 12, b = -4, c = 2$.",
+            "answer": "LHS: $12 \\div (-4 + 2) = 12 \\div (-2) = -6$. RHS: $(12 \\div -4) + (12 \\div 2) = -3 + 6 = 3$. Since $-6 \\neq 3$, the distributive property does not apply to division.",
+            "answer_outline": [
+                "Calculate LHS",
+                "Calculate RHS",
+                "Compare and state conclusion"
+            ],
+            "key_concepts": [
+                "division properties",
+                "counter-example"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.8.1"
+        },
+        {
+            "question_number": 17,
+            "question": "The temperature at 12 noon was 10°C above zero. If it decreases at the rate of 2°C per hour until midnight, at what time would the temperature be 8°C below zero?",
+            "answer": "Initial = +10. Target = -8. Total drop needed = $10 - (-8) = 18$°C. Time taken = $18 \\div 2 = 9$ hours. Time = 12 noon + 9 hours = 9 PM.",
+            "answer_outline": [
+                "Identify displacement on temperature scale",
+                "Divide total change by hourly rate",
+                "Calculate clock time"
+            ],
+            "key_concepts": [
+                "rate",
+                "time calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What will be the temperature at midnight in the previous question?",
+            "answer": "From 12 noon to midnight is 12 hours. Total decrease = $12 \\times (-2) = -24$°C. Initial = +10. Final = $10 + (-24) = -14$°C.",
+            "answer_outline": [
+                "Identify time span",
+                "Calculate total drop",
+                "Subtract from starting point"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "subtraction"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Simplify: $(-1) \\times (-2) \\times (-3) \\times (-4) \\times (-5) \\times (-6)$.",
+            "answer": "Product of values = 720. There are 6 negative signs (even). Result = +720.",
+            "answer_outline": [
+                "Multiply numerical values",
+                "Count negative factors to determine sign"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "even count of negatives"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Show that closure property holds for addition and subtraction of integers but not necessarily for division.",
+            "answer": "Addition: $2 + (-3) = -1$ (integer). Subtraction: $2 - 5 = -3$ (integer). Division: $2 \\div 5 = 0.4$ (not an integer). Closure means the result remains in the same set.",
+            "answer_outline": [
+                "Define closure property",
+                "Provide examples for $+$, $-$, and $\\div$",
+                "Conclude for division"
+            ],
+            "key_concepts": [
+                "closure property"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.4.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Simplify: $(-4) + (-12) \\div (-4) - (-3) \\times (-2)$.",
+            "answer": "$(-4) + 3 - (6) = -4 + 3 - 6 = -1 - 6 = -7$.",
+            "answer_outline": [
+                "Divide first",
+                "Multiply second",
+                "Add/Subtract from left to right"
+            ],
+            "key_concepts": [
+                "order of operations",
+                "signs"
+            ],
+            "marks": 5,
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 22,
+            "question": "Is $0 \\div (-5)$ the same as $(-5) \\div 0$? Explain.",
+            "answer": "$0 \\div (-5) = 0$. However, $(-5) \\div 0$ is not defined. Therefore, they are not the same.",
+            "answer_outline": [
+                "Solve both divisions",
+                "Explain the 'not defined' status of division by zero"
+            ],
+            "key_concepts": [
+                "zero in division"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Using properties, find: $8 \\times 53 \\times (-125)$.",
+            "answer": "$[8 \\times (-125)] \\times 53 = -1000 \\times 53 = -53000$.",
+            "answer_outline": [
+                "Apply associative/commutative property to group 8 and -125",
+                "Multiply for a round number",
+                "Complete final multiplication"
+            ],
+            "key_concepts": [
+                "associative property",
+                "commutative property"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.6.5"
+        },
+        {
+            "question_number": 24,
+            "question": "In a competitive exam, 5 marks are awarded for a correct answer and -2 for wrong. If a student gets 11 correct and 11 wrong, what is the net score?",
+            "answer": "Correct: $11 \\times 5 = 55$. Wrong: $11 \\times (-2) = -22$. Net: $55 - 22 = 33$.",
+            "answer_outline": [
+                "Calculate both components",
+                "Find the sum"
+            ],
+            "key_concepts": [
+                "multiplication",
+                "addition"
+            ],
+            "marks": 4,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 25,
+            "question": "If the product of two integers is -150 and one of them is 25, find the other integer.",
+            "answer": "Other integer $= (-150) \\div 25 = -6$.",
+            "answer_outline": [
+                "Set up division problem",
+                "Apply sign rules"
+            ],
+            "key_concepts": [
+                "division",
+                "sign rules"
+            ],
+            "marks": 3,
+            "source_section": "Section 1.7"
+        }
+    ]
+}

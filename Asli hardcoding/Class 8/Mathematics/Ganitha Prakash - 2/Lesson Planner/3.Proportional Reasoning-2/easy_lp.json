@@ -1,0 +1,180 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter_name": "Proportional Reasoning – 2",
+  "lesson_level": "Easy",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand proportional relationships using ratios",
+    "Interpret and use ratios in maps",
+    "Work with ratios having more than two terms",
+    "Divide quantities in a given ratio",
+    "Represent data using pie charts",
+    "Understand direct and inverse proportion",
+    "Solve real-life problems using proportional reasoning"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Introduction to Proportional Relationships",
+      "topics_covered": [
+        "Meaning of ratio",
+        "Proportional relationships",
+        "Cross multiplication method",
+        "Real-life examples of ratios"
+      ],
+      "teaching_strategy": [
+        "Class discussion",
+        "Examples using food recipes",
+        "Board demonstration"
+      ],
+      "student_activities": [
+        "Write ratios such as 6:3 and 4:2",
+        "Verify proportionality using cross multiplication"
+      ],
+      "assessment": [
+        "Oral questioning",
+        "Short written exercise"
+      ]
+    },
+    {
+      "period": 2,
+      "title": "Ratios in Maps",
+      "topics_covered": [
+        "Map scale",
+        "Representative fraction",
+        "Converting map distances to real distances"
+      ],
+      "teaching_strategy": [
+        "Use of map and ruler",
+        "Demonstration using example cities"
+      ],
+      "student_activities": [
+        "Measure distance between two cities on a map",
+        "Calculate real distance using map scale"
+      ],
+      "assessment": [
+        "Map distance calculation exercise"
+      ]
+    },
+    {
+      "period": 3,
+      "title": "Ratios with More Than Two Terms",
+      "topics_covered": [
+        "Multi-term ratios",
+        "Proportional relationships in recipes",
+        "Scaling ratios"
+      ],
+      "teaching_strategy": [
+        "Example using spice mixture ratios",
+        "Step-by-step explanation"
+      ],
+      "student_activities": [
+        "Write ratios like 8:4:2:1",
+        "Reduce ratio by dividing all terms"
+      ],
+      "assessment": [
+        "Short problem solving activity"
+      ]
+    },
+    {
+      "period": 4,
+      "title": "Dividing a Quantity in a Given Ratio",
+      "topics_covered": [
+        "Dividing a whole in ratios",
+        "Formula for dividing quantities",
+        "Practical examples"
+      ],
+      "teaching_strategy": [
+        "Worked examples on board",
+        "Guided problem solving"
+      ],
+      "student_activities": [
+        "Divide 50 in the ratio 2:3:5",
+        "Solve similar problems in notebook"
+      ],
+      "assessment": [
+        "Blackboard problems",
+        "Notebook checking"
+      ]
+    },
+    {
+      "period": 5,
+      "title": "Introduction to Pie Charts",
+      "topics_covered": [
+        "Meaning of pie chart",
+        "Representing data using angles",
+        "Converting ratios to angles"
+      ],
+      "teaching_strategy": [
+        "Demonstration using circle diagram",
+        "Step-by-step angle calculation"
+      ],
+      "student_activities": [
+        "Convert data to angles",
+        "Draw a simple pie chart"
+      ],
+      "assessment": [
+        "Pie chart drawing exercise"
+      ]
+    },
+    {
+      "period": 6,
+      "title": "Direct and Inverse Proportions",
+      "topics_covered": [
+        "Direct proportion",
+        "Inverse proportion",
+        "Real-life examples such as speed and time"
+      ],
+      "teaching_strategy": [
+        "Use of tables and examples",
+        "Discussion-based explanation"
+      ],
+      "student_activities": [
+        "Create a table of speed vs time",
+        "Identify whether relationship is direct or inverse"
+      ],
+      "assessment": [
+        "Short written problems",
+        "Class discussion"
+      ]
+    },
+    {
+      "period": 7,
+      "title": "Applications and Chapter Revision",
+      "topics_covered": [
+        "Work and time problems",
+        "Combined work examples",
+        "Revision of ratios and proportions"
+      ],
+      "teaching_strategy": [
+        "Mixed problem solving",
+        "Group discussion"
+      ],
+      "student_activities": [
+        "Solve worker and pump problems",
+        "Participate in revision quiz"
+      ],
+      "assessment": [
+        "Short test (10 marks)",
+        "Doubt clarification"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Mathematics Textbook",
+    "Atlas or Map",
+    "Compass and Protractor"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "MCQs",
+    "Short written tests",
+    "Group discussions"
+  ],
+  "teacher_tip": "Use real-life examples such as recipes, maps, and travel speeds to help students understand proportional reasoning concepts clearly."
+}

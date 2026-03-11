@@ -1,0 +1,149 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Arithmetic Progressions",
+    "difficulty": "Easy",
+    "source_pdf": "jemh105.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Pattern Observation",
+            "objective": "Identify number patterns",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe sequence",
+                "Note pattern"
+            ],
+            "learning_outcome": "Pattern recognition",
+            "evaluation": "Correct observation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "AP Identification",
+            "objective": "Identify arithmetic progressions",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Check difference",
+                "Confirm AP"
+            ],
+            "learning_outcome": "AP concept clarity",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "First Term Finder",
+            "objective": "Identify first term",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe AP",
+                "Write first term"
+            ],
+            "learning_outcome": "Understands first term",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Common Difference Finder",
+            "objective": "Find common difference",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Subtract terms",
+                "Write d"
+            ],
+            "learning_outcome": "Finds common difference",
+            "evaluation": "Correct d (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "AP Writing",
+            "objective": "Write AP for given a and d",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Use formula",
+                "Write terms"
+            ],
+            "learning_outcome": "AP formation",
+            "evaluation": "Correct sequence (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Life Examples",
+            "objective": "Identify AP in daily life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe examples",
+                "Write AP"
+            ],
+            "learning_outcome": "Real-life connection",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Term Counting",
+            "objective": "Count number of terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe list",
+                "Count terms"
+            ],
+            "learning_outcome": "Sequence understanding",
+            "evaluation": "Correct count (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "AP vs Non-AP",
+            "objective": "Differentiate AP and non-AP",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List sequences",
+                "Classify"
+            ],
+            "learning_outcome": "Classification skill",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Simple AP Extension",
+            "objective": "Extend AP by two terms",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Add d",
+                "Write next terms"
+            ],
+            "learning_outcome": "AP extension",
+            "evaluation": "Correct extension (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Zero Difference AP",
+            "objective": "Understand zero common difference",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe sequence",
+                "Explain"
+            ],
+            "learning_outcome": "Concept clarity",
+            "evaluation": "Correct explanation (10 marks)"
+        }
+    ]
+}

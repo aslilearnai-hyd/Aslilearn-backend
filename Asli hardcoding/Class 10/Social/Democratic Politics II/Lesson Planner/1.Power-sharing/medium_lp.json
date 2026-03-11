@@ -1,0 +1,160 @@
+{
+  "class": "Class 10",
+  "subject": "Political Science",
+  "chapter_name": "Power-sharing",
+  "lesson_level": "Medium",
+  "total_periods": 7,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Explain the concept and significance of power-sharing in democratic systems",
+    "Analyse how Belgium and Sri Lanka responded differently to ethnic diversity",
+    "Understand the idea of majoritarianism and its political consequences",
+    "Differentiate between prudential and moral reasons for power-sharing",
+    "Identify and explain different forms of power-sharing in modern democracies",
+    "Apply power-sharing concepts to real-world democratic institutions"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Understanding Power-sharing in Democracy",
+      "topics_covered": [
+        "Meaning of power-sharing",
+        "Importance of sharing power in democratic governance",
+        "Examples of power-sharing in everyday life"
+      ],
+      "teaching_strategy": [
+        "Interactive lecture with examples",
+        "Class brainstorming on situations where power is shared"
+      ],
+      "student_activities": [
+        "Students list examples of power-sharing in school or society",
+        "Short discussion on why power should not be concentrated in one person"
+      ],
+      "assessment": ["Oral questioning", "Quick written responses"]
+    },
+    {
+      "period": 2,
+      "title": "Ethnic Diversity and Conflict in Belgium",
+      "topics_covered": [
+        "Ethnic composition of Belgium",
+        "Dutch-speaking and French-speaking communities",
+        "Political tensions between linguistic groups"
+      ],
+      "teaching_strategy": [
+        "Map-based explanation",
+        "Teacher-led discussion on cultural diversity"
+      ],
+      "student_activities": [
+        "Identify linguistic communities using a map",
+        "Discuss reasons for conflicts between groups"
+      ],
+      "assessment": ["Short answer questions", "Notebook work"]
+    },
+    {
+      "period": 3,
+      "title": "The Belgian Power-sharing Model",
+      "topics_covered": [
+        "Equal representation in central government",
+        "State governments and community governments",
+        "Role of constitutional amendments"
+      ],
+      "teaching_strategy": [
+        "Diagram-based explanation of governance structure",
+        "Group discussion on benefits of the Belgian model"
+      ],
+      "student_activities": [
+        "Draw a structure diagram of Belgium’s power-sharing arrangement",
+        "Explain how the model prevents conflict"
+      ],
+      "assessment": ["Worksheet activity", "Concept explanation"]
+    },
+    {
+      "period": 4,
+      "title": "Majoritarianism in Sri Lanka",
+      "topics_covered": [
+        "Ethnic composition of Sri Lanka",
+        "Policies favouring the Sinhala majority",
+        "Political discrimination against Tamils"
+      ],
+      "teaching_strategy": [
+        "Narrative explanation of historical events",
+        "Comparison with Belgium"
+      ],
+      "student_activities": [
+        "Prepare a comparison chart between Belgium and Sri Lanka",
+        "Discuss why conflicts escalated in Sri Lanka"
+      ],
+      "assessment": ["Short written answers", "Group discussion participation"]
+    },
+    {
+      "period": 5,
+      "title": "Reasons for Power-sharing",
+      "topics_covered": [
+        "Prudential reasons",
+        "Moral reasons",
+        "Power-sharing as the spirit of democracy"
+      ],
+      "teaching_strategy": [
+        "Concept explanation with real-life examples",
+        "Think-pair-share discussion"
+      ],
+      "student_activities": [
+        "Students identify examples of prudential and moral reasons",
+        "Write a short paragraph explaining why power-sharing is necessary"
+      ],
+      "assessment": ["Concept-based questions", "Notebook checking"]
+    },
+    {
+      "period": 6,
+      "title": "Forms of Power-sharing",
+      "topics_covered": [
+        "Horizontal distribution of power",
+        "Vertical distribution of power",
+        "Power-sharing among social groups",
+        "Power-sharing among political parties"
+      ],
+      "teaching_strategy": [
+        "Use diagrams to illustrate power-sharing forms",
+        "Examples from Indian political system"
+      ],
+      "student_activities": [
+        "Create a table explaining each form of power-sharing",
+        "Identify examples from Indian democracy"
+      ],
+      "assessment": ["Worksheet questions", "Short written explanations"]
+    },
+    {
+      "period": 7,
+      "title": "Application and Chapter Revision",
+      "topics_covered": [
+        "Real-world examples of coalition governments",
+        "Review of key concepts",
+        "Practice questions from the chapter"
+      ],
+      "teaching_strategy": ["Case-study discussion", "Teacher-guided revision"],
+      "student_activities": [
+        "Analyse a recent example of coalition government",
+        "Answer textbook exercise questions"
+      ],
+      "assessment": [
+        "Short written test (10 marks)",
+        "Class discussion and doubt clarification"
+      ]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "NCERT Democratic Politics Textbook",
+    "World map",
+    "Charts illustrating power-sharing structures"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Worksheet activities",
+    "Group discussions",
+    "Short written tests"
+  ],
+  "teacher_tip": "Encourage students to compare different countries and analyse how power-sharing helps maintain unity in diverse societies."
+}

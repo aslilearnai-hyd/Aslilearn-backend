@@ -1,0 +1,34 @@
+{
+    "class": "Class 7",
+    "subject": "social",
+    "chapter": "Water",
+    "difficulty": "Hard",
+    "source_pdf": "jess705.pdf",
+    "short_notes": {
+        "key_points": [
+            "Water is essential for life, ecosystems, agriculture, and industry; it is unevenly distributed globally",
+            "The water cycle involves complex processes like transpiration, infiltration, runoff, and percolation",
+            "Groundwater depletion due to overuse and contamination is a major concern",
+            "Water pollution includes chemical, biological, and thermal pollution; affects humans and aquatic organisms",
+            "Methods like desalination, artificial recharge, and sustainable water management help address water scarcity"
+        ],
+        "examples": [
+            "Desalination plants convert seawater to freshwater in arid regions",
+            "Excess extraction of groundwater in Punjab and Rajasthan has caused lowering of water table",
+            "Eutrophication of lakes due to nutrient pollution from fertilizers harms aquatic life",
+            "Rainwater harvesting and check dams restore groundwater in drought-prone areas",
+            "Industrial chemical spills and untreated sewage pollute rivers and affect human health"
+        ],
+        "formulas": [
+            "Water cycle = Evaporation + Transpiration + Condensation + Precipitation + Infiltration + Runoff",
+            "Groundwater table depth = Initial water table – Extraction + Recharge",
+            "Flow rate (Q) = Cross-sectional area × Velocity"
+        ],
+        "exam_tips": [
+            "Understand advanced stages of the water cycle including percolation and transpiration",
+            "Learn human impact on water resources, including depletion and pollution",
+            "Include real-life examples of water management and conservation",
+            "Explain causes and effects of water scarcity with diagrams or case studies"
+        ]
+    }
+}

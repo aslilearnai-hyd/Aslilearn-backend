@@ -1,0 +1,182 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Arithmetic Progressions",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse arithmetic progressions using logical reasoning",
+        "Solve higher-order and non-routine AP problems",
+        "Interpret APs in real-life contexts",
+        "Apply AP concepts in exam-oriented and HOTS questions",
+        "Develop strong problem-solving strategies"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Advanced Concept Review",
+            "topics_covered": [
+                "Definition and properties of AP",
+                "Behaviour of AP with different common differences"
+            ],
+            "teaching_strategy": [
+                "Conceptual questioning",
+                "Case-based discussion"
+            ],
+            "student_activities": [
+                "Predict AP behaviour",
+                "Justify reasoning"
+            ],
+            "assessment": [
+                "Oral reasoning questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced nth Term Problems",
+            "topics_covered": [
+                "Finding position of a given term",
+                "General term reasoning"
+            ],
+            "teaching_strategy": [
+                "Problem-based learning",
+                "Guided strategy"
+            ],
+            "student_activities": [
+                "Find n for given term",
+                "Solve reasoning problems"
+            ],
+            "assessment": [
+                "Written exercise"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Complex Application Problems",
+            "topics_covered": [
+                "Multi-step word problems",
+                "Context-based AP questions"
+            ],
+            "teaching_strategy": [
+                "Problem decomposition",
+                "Think–solve–explain approach"
+            ],
+            "student_activities": [
+                "Frame AP models",
+                "Explain solution logic"
+            ],
+            "assessment": [
+                "Class discussion evaluation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Graphical and Algebraic Interpretation",
+            "topics_covered": [
+                "Linear representation of AP",
+                "Comparing multiple APs"
+            ],
+            "teaching_strategy": [
+                "Graph comparison",
+                "Visual reasoning"
+            ],
+            "student_activities": [
+                "Plot multiple APs",
+                "Draw conclusions"
+            ],
+            "assessment": [
+                "Graph-based reasoning questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Special Cases in AP",
+            "topics_covered": [
+                "Zero common difference",
+                "Negative common difference"
+            ],
+            "teaching_strategy": [
+                "Exception-based teaching",
+                "Illustrative examples"
+            ],
+            "student_activities": [
+                "Identify special AP cases",
+                "Explain reasoning"
+            ],
+            "assessment": [
+                "Short analytical answers"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Exam-Oriented HOTS Practice",
+            "topics_covered": [
+                "Board-exam level problems",
+                "Mixed difficulty questions"
+            ],
+            "teaching_strategy": [
+                "Worksheet-based practice",
+                "Teacher feedback"
+            ],
+            "student_activities": [
+                "Solve HOTS worksheet",
+                "Peer review"
+            ],
+            "assessment": [
+                "Worksheet evaluation"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Mock Test and Error Analysis",
+            "topics_covered": [
+                "Full chapter assessment",
+                "Common mistakes"
+            ],
+            "teaching_strategy": [
+                "Mock assessment",
+                "Error analysis discussion"
+            ],
+            "student_activities": [
+                "Attempt test",
+                "Analyse mistakes"
+            ],
+            "assessment": [
+                "Mock test (20 marks)"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Final Revision and Strategy Session",
+            "topics_covered": [
+                "Complete chapter recap",
+                "Exam strategy"
+            ],
+            "teaching_strategy": [
+                "Rapid recap",
+                "Strategy discussion"
+            ],
+            "student_activities": [
+                "Ask doubts",
+                "Participate in recap quiz"
+            ],
+            "assessment": [
+                "Oral assessment"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "Worksheets",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Reasoning-based questions",
+        "Written tests",
+        "Worksheet analysis",
+        "Peer discussion"
+    ],
+    "teacher_tip": "Encourage students to translate real-life situations into AP models before applying formulas."
+}

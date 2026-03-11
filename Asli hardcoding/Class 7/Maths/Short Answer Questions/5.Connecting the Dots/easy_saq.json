@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Connecting the Dots",
+    "difficulty": "Easy",
+    "generated_at": "2026-03-06T01:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is 'data' in mathematics?",
+            "answer": "A collection of facts, such as numbers, words, measurements, or observations.",
+            "key_concepts": ["definition of data"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Define the term 'Mean'.",
+            "answer": "The sum of all observations divided by the total number of observations.",
+            "key_concepts": ["arithmetic mean"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is the formula for finding the range of a data set?",
+            "answer": "Highest value - Lowest value.",
+            "key_concepts": ["range"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Find the mean of the first five natural numbers.",
+            "answer": "(1+2+3+4+5)/5 = 15/5 = 3.",
+            "key_concepts": ["mean calculation"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the 'Mode' of a data set?",
+            "answer": "The observation that occurs most frequently in the data.",
+            "key_concepts": ["mode"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the mode of: 2, 6, 5, 3, 0, 3, 4, 3, 2, 4, 5, 2, 4, 4.",
+            "answer": "4 (it appears 4 times).",
+            "key_concepts": ["identifying mode"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the 'Median' of a data set?",
+            "answer": "The middle value of a data set when arranged in ascending or descending order.",
+            "key_concepts": ["median"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the median of: 24, 36, 46, 17, 18, 25, 35.",
+            "answer": "Arranged: 17, 18, 24, 25, 35, 36, 46. Middle value is 25.",
+            "key_concepts": ["median calculation"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the purpose of a bar graph?",
+            "answer": "To represent data visually using rectangular bars of uniform width.",
+            "key_concepts": ["bar graph"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 10,
+            "question": "In a bar graph, what does the height of the bar represent?",
+            "answer": "The frequency or value of the observation.",
+            "key_concepts": ["graph interpretation"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Can a data set have more than one mode?",
+            "answer": "Yes, it is called bimodal or multimodal if multiple values have the same highest frequency.",
+            "key_concepts": ["mode properties"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the range of the ages: 12, 15, 11, 19, 21, 10.",
+            "answer": "21 - 10 = 11.",
+            "key_concepts": ["range calculation"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Is the mean always one of the numbers in the data?",
+            "answer": "No, it can be a decimal or a value not present in the data.",
+            "key_concepts": ["mean properties"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 14,
+            "question": "What are tally marks used for?",
+            "answer": "To count and organize frequencies of data quickly.",
+            "key_concepts": ["tally marks"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "How do you represent '5' using tally marks?",
+            "answer": "Four vertical lines and one diagonal line crossing them (||||).",
+            "key_concepts": ["tally marks"],
+            "marks": 1,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the mean of: 10, 20, 30, 40.",
+            "answer": "(100)/4 = 25.",
+            "key_concepts": ["mean"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "If the mean of 5, 7, x, and 10 is 7, find x.",
+            "answer": "(5+7+x+10)/4 = 7 -> 22+x = 28 -> x = 6.",
+            "key_concepts": ["finding missing value in mean"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 18,
+            "question": "What is a 'Double Bar Graph'?",
+            "answer": "A graph showing two sets of data simultaneously for comparison.",
+            "key_concepts": ["double bar graph"],
+            "marks": 1,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 19,
+            "question": "True or False: The median is always one of the numbers in a data set if the total number of observations is odd.",
+            "answer": "True.",
+            "key_concepts": ["median properties"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the mode of: 1, 1, 2, 4, 3, 2, 1, 2, 2, 4.",
+            "answer": "2 (appears 4 times).",
+            "key_concepts": ["mode"],
+            "marks": 1,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the average of 8, 0, and 4?",
+            "answer": "(8+0+4)/3 = 4.",
+            "key_concepts": ["mean with zero"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Arrange 5, 2, 9, 1, 7 in ascending order to find the median.",
+            "answer": "1, 2, 5, 7, 9. Median = 5.",
+            "key_concepts": ["median"],
+            "marks": 1,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "In a bar graph, what is the 'scale'?",
+            "answer": "The relationship between the units on the graph and the actual values.",
+            "key_concepts": ["graph scale"],
+            "marks": 1,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "If data is 8, 8, 8, 8, what is the range?",
+            "answer": "8 - 8 = 0.",
+            "key_concepts": ["range"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which measure of central tendency is most affected by extreme values?",
+            "answer": "Mean.",
+            "key_concepts": ["mean vs median"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        }
+    ]
+}

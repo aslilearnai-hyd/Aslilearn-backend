@@ -1,0 +1,157 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Iswaran the Storyteller",
+    "author": "R.K. Laxman",
+    "difficulty": "Easy",
+    "source_pdf": "eng9_3.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Main Characters List",
+            "objective": "Identify the characters in the story",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "List the characters mentioned in the story",
+                "Write one sentence about each character"
+            ],
+            "learning_outcome": "Identifies characters and their roles in the story",
+            "evaluation": "Correct identification of characters (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Sketch of Iswaran",
+            "objective": "Understand the personality of Iswaran",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the parts describing Iswaran",
+                "Write 4–5 lines about his qualities and behaviour"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Relevant description of character (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Mahendra’s Job",
+            "objective": "Understand Mahendra’s profession",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find the paragraph describing Mahendra’s work",
+                "Write 3–4 sentences about his job and responsibilities"
+            ],
+            "learning_outcome": "Understands the background of the story",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Iswaran as a Cook",
+            "objective": "Recognize Iswaran’s role in Mahendra’s life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the lesson carefully",
+                "Write three points showing how Iswaran helps Mahendra"
+            ],
+            "learning_outcome": "Understands the relationship between characters",
+            "evaluation": "Correct points written (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "The Story of the Elephant",
+            "objective": "Understand the incident narrated by Iswaran",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the part about the mad elephant",
+                "Write 4–5 sentences explaining the incident"
+            ],
+            "learning_outcome": "Understands important events in the story",
+            "evaluation": "Clear explanation of the incident (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Ghost Story Description",
+            "objective": "Understand the supernatural story told by Iswaran",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the ghost story narrated by Iswaran",
+                "Write 3–4 sentences describing the ghost"
+            ],
+            "learning_outcome": "Understands narrative description",
+            "evaluation": "Relevant points included (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Sequence of Events",
+            "objective": "Understand the order of events in the story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify four major events in the lesson",
+                "Write them in the correct order"
+            ],
+            "learning_outcome": "Understands story sequence",
+            "evaluation": "Correct ordering of events (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Vocabulary from the Lesson",
+            "objective": "Improve vocabulary using the story",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Choose five difficult words from the lesson",
+                "Write their meanings",
+                "Use them in sentences"
+            ],
+            "learning_outcome": "Builds vocabulary skills",
+            "evaluation": "Correct meanings and sentence usage (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Mahendra’s Fear",
+            "objective": "Understand Mahendra’s reaction to the ghost story",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the last part of the story",
+                "Write 3–4 sentences about why Mahendra became frightened"
+            ],
+            "learning_outcome": "Understands character reactions",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Moral of the Story",
+            "objective": "Understand the message of the lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about what the story teaches us",
+                "Write the moral in your own words"
+            ],
+            "learning_outcome": "Understands the lesson’s message",
+            "evaluation": "Logical explanation of the moral (10 marks)"
+        }
+    ]
+}

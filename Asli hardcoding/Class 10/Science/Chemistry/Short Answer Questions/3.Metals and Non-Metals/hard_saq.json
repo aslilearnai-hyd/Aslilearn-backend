@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Metals and Non-metals",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is sodium stored under kerosene, but phosphorus stored under water?",
+            "answer": "Sodium is a highly reactive metal that reacts vigorously with both air (oxygen) and water. Phosphorus is a highly reactive non-metal that catches fire in air but does not react with water.",
+            "key_concepts": ["reactivity", "alkali metals", "non-metals"],
+            "marks": 2,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why metals like Aluminium and Zinc do not corrode easily despite being high in the reactivity series.",
+            "answer": "These metals react with atmospheric oxygen to form a thin, strong, and stable protective layer of oxide on their surface, which prevents further oxygen from reaching the metal underneath.",
+            "key_concepts": ["protective oxide layer", "corrosion"],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Write the chemical equations for the reaction of Aluminium with (i) HCl and (ii) NaOH.",
+            "answer": "(i) $2Al + 6HCl \\rightarrow 2AlCl_3 + 3H_2$; (ii) $2Al + 2NaOH + 2H_2O \\rightarrow 2NaAlO_2 + 3H_2$. This proves its amphoteric nature.",
+            "key_concepts": ["amphoteric oxides", "chemical properties"],
+            "marks": 3,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is the reduction of Metal Oxides with Carbon not suitable for extracting Aluminum or Calcium?",
+            "answer": "Aluminium and Calcium have a higher affinity for oxygen than carbon does. Therefore, carbon cannot reduce these oxides to their respective metals.",
+            "key_concepts": ["affinity for oxygen", "reduction"],
+            "marks": 2,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Describe the Thermite process. Why is it used for joining railway tracks?",
+            "answer": "It is a highly exothermic displacement reaction: $Fe_2O_3 + 2Al \\rightarrow Al_2O_3 + 2Fe + Heat$. The heat produced is so high that the iron is obtained in a molten state, which flows into and seals the gaps in tracks.",
+            "key_concepts": ["thermite reaction", "exothermic"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How can you separate a mixture of Cu, Zn, and Ag using chemical methods?",
+            "answer": "Add dilute HCl; Zn reacts to form $ZnCl_2$ (soluble). Filter to get Cu and Ag. Add $AgNO_3$ solution to the residue; Cu will displace Ag from the solution.",
+            "key_concepts": ["reactivity series", "displacement"],
+            "marks": 3,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does the conductivity of an ionic compound change between its solid and molten states?",
+            "answer": "In solid state, ions are fixed in a rigid lattice and cannot move. In molten state, the electrostatic forces are overcome by heat, allowing ions to move freely and conduct electricity.",
+            "key_concepts": ["ionic compounds", "electrical conductivity"],
+            "marks": 2,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is 'Anodising'? How does it improve the utility of Aluminium?",
+            "answer": "It is an electrolytic process that thickens the natural oxide layer on Aluminium. This makes the metal even more resistant to corrosion and allows it to be dyed in various colors for decorative use.",
+            "key_concepts": ["anodising", "corrosion resistance"],
+            "marks": 2,
+            "source_section": "Section 3.2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "A metal 'M' does not react with cold or hot water but reacts with steam. Name 'M' and write the balanced equation.",
+            "answer": "The metal is Iron (Fe). $3Fe(s) + 4H_2O(g) \\rightarrow Fe_3O_4(s) + 4H_2(g)$.",
+            "key_concepts": ["reaction with steam", "iron"],
+            "marks": 2,
+            "source_section": "Section 3.2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the process of electrolytic refining of Copper with a labeled diagram description.",
+            "answer": "Anode is impure copper, Cathode is a pure copper strip. Electrolyte is acidified $CuSO_4$. Pure copper deposits on the cathode; impurities settle as anode mud.",
+            "key_concepts": ["electrolytic refining", "copper"],
+            "marks": 3,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Why are Sulphide and Carbonate ores converted into Oxides before reduction?",
+            "answer": "It is much easier to obtain a metal from its oxide by reduction than from its sulphides or carbonates.",
+            "key_concepts": ["roasting", "calcination", "reduction"],
+            "marks": 2,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the 'Self-reduction' of copper? Write the chemical equations involved.",
+            "answer": "Sulphide ore of copper is partially roasted; the resulting oxide then reacts with remaining sulphide: $2Cu_2O + Cu_2S \\rightarrow 6Cu + SO_2$.",
+            "key_concepts": ["self-reduction", "copper extraction"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is carbon not used to reduce Magnesium Oxide to Magnesium metal?",
+            "answer": "Magnesium is a very reactive metal and has a stronger affinity for oxygen than carbon does, making carbon an ineffective reducing agent for it.",
+            "key_concepts": ["affinity", "reducing agent"],
+            "marks": 2,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when an iron nail is kept in a copper sulphate solution for 20 minutes? Write the observation and equation.",
+            "answer": "The blue color of the solution turns light green and a brown coating of copper is deposited on the nail. $Fe + CuSO_4 \\rightarrow FeSO_4 + Cu$.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 3.2.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Differentiate between Calcination and Roasting with one example each.",
+            "answer": "Calcination: Heating carbonate ore in limited air ($ZnCO_3 \\rightarrow ZnO + CO_2$). Roasting: Heating sulphide ore in excess air ($2ZnS + 3O_2 \\rightarrow 2ZnO + 2SO_2$).",
+            "key_concepts": ["roasting", "calcination"],
+            "marks": 3,
+            "source_section": "Section 3.4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is Titanium called a 'Strategic Metal'?",
+            "answer": "Because it is as strong as steel but much lighter, highly resistant to corrosion, and used in critical aerospace and defense industries.",
+            "key_concepts": ["strategic metals", "properties"],
+            "marks": 1,
+            "source_section": "General Knowledge / Contextual"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the composition and use of Solder alloy?",
+            "answer": "It is an alloy of Lead and Tin (Pb and Sn). It has a low melting point and is used for welding electrical wires together.",
+            "key_concepts": ["solder", "alloys"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the term 'Anode Mud' in the context of electrolytic refining.",
+            "answer": "Insoluble impurities (often precious metals like Au, Ag, Pt) present in the impure anode that do not dissolve and settle at the bottom of the anode.",
+            "key_concepts": ["anode mud", "refining"],
+            "marks": 1,
+            "source_section": "Section 3.4.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does Silver turn black when kept in the open for a long time?",
+            "answer": "Silver reacts with sulphur compounds (like $H_2S$) in the air to form a layer of black Silver Sulphide ($Ag_2S$).",
+            "key_concepts": ["corrosion", "silver"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the difference between 22 carat and 24 carat gold?",
+            "answer": "24 carat is pure gold (very soft). 22 carat contains 22 parts gold and 2 parts of either copper or silver to make it hard enough for jewellery.",
+            "key_concepts": ["gold", "purity"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why are ionic compounds generally hard and brittle?",
+            "answer": "The strong electrostatic forces between ions create a rigid structure. When stress is applied, ions of like charges may align and repel, causing the crystal to shatter.",
+            "key_concepts": ["ionic bonds", "physical properties"],
+            "marks": 2,
+            "source_section": "Section 3.3.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Give the electronic dot structure of $MgCl_2$.",
+            "answer": "$Mg \\rightarrow Mg^{2+} + 2e^-$; $Cl + e^- \\rightarrow Cl^-$. Represented as $[Mg]^{2+} [:\\ddot{Cl}:]_2^-$.",
+            "key_concepts": ["electron dot structure", "ionic bond"],
+            "marks": 3,
+            "source_section": "Section 3.3.1"
+        },
+        {
+            "question_number": 23,
+            "question": "How is Sodium metal extracted from Sodium Chloride? Why can't we use aqueous NaCl?",
+            "answer": "By electrolysis of molten NaCl. Aqueous NaCl would produce $H_2$ at the cathode instead of Sodium because $H^+$ is reduced more easily than $Na^+$.",
+            "key_concepts": ["electrolysis", "extraction"],
+            "marks": 3,
+            "source_section": "Section 3.4.4"
+        },
+        {
+            "question_number": 24,
+            "question": "State the conditions necessary for the rusting of iron.",
+            "answer": "The simultaneous presence of both air (oxygen) and moisture (water) is essential for rusting.",
+            "key_concepts": ["rusting", "corrosion"],
+            "marks": 2,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the purpose of adding Cryolite during the electrolytic reduction of Alumina?",
+            "answer": "It lowers the melting point of Alumina ($Al_2O_3$) and increases its electrical conductivity.",
+            "key_concepts": ["cryolite", "electrolysis"],
+            "marks": 2,
+            "source_section": "Section 3.4.4"
+        }
+    ]
+}

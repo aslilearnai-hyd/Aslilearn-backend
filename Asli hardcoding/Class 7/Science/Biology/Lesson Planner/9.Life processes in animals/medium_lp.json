@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "Life Processes in Animals",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Explain the stages of holozoic nutrition in humans and ruminants",
+        "Describe the mechanical and chemical digestion occurring in different compartments of the alimentary canal",
+        "Differentiate between aerobic and anaerobic respiration in animals",
+        "Explain the mechanism of gas exchange in humans, insects, and aquatic animals",
+        "Identify the components of the human circulatory system and their functions",
+        "Understand the structure and function of the human excretory system",
+        "Relate the importance of transport and waste removal to the survival of organisms"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Nutrition and Digestion - I",
+            "topics_covered": [
+                "The process of digestion in the mouth (saliva and teeth)",
+                "The Oesophagus and stomach functions",
+                "Action of digestive juices (Bile and Pancreatic juice)"
+            ],
+            "teaching_strategy": [
+                "Functional diagram of the upper digestive tract",
+                "Interactive lecture on enzyme basics",
+                "Observation of tooth types using mirrors"
+            ],
+            "student_activities": [
+                "Identify and count different types of teeth in their own mouth",
+                "Demonstrate the effect of saliva on starch (Bread chewing activity)"
+            ],
+            "assessment": [
+                "Labeling the upper alimentary canal",
+                "Short quiz on digestive juices"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Nutrition and Digestion - II",
+            "topics_covered": [
+                "Absorption in the small intestine (Villi)",
+                "The large intestine and egestion",
+                "Digestion in Ruminants (Grass-eating animals)"
+            ],
+            "teaching_strategy": [
+                "Model of villi using a towel (surface area analogy)",
+                "Comparison chart: Human vs. Cow digestive system",
+                "Visualizing the 'cud' chewing process"
+            ],
+            "student_activities": [
+                "Draw a flowchart of food passing through a ruminant's stomach",
+                "Discuss why humans cannot digest cellulose"
+            ],
+            "assessment": [
+                "Comparison table: Small vs. Large intestine",
+                "Ruminant digestive pathway worksheet"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Respiration: The Energy Process",
+            "topics_covered": [
+                "Cellular respiration: Aerobic vs. Anaerobic",
+                "Muscle cramps and Lactic acid formation",
+                "The chemical equation for respiration"
+            ],
+            "teaching_strategy": [
+                "Comparative lecture",
+                "Real-life scenario: 'Why do athletes get cramps?'",
+                "Board work for chemical word equations"
+            ],
+            "student_activities": [
+                "Write the word equations for both types of respiration",
+                "Perform light exercise to observe increased heart/breathing rate"
+            ],
+            "assessment": [
+                "Differentiate between breathing and respiration",
+                "Equation completion test"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Mechanisms of Breathing",
+            "topics_covered": [
+                "Human respiratory system (Nasal cavity to Alveoli)",
+                "Inhalation and Exhalation mechanism (Diaphragm movement)",
+                "Breathing in cockroaches (Spiracles) and Fish (Gills)"
+            ],
+            "teaching_strategy": [
+                "Demonstration using a bell jar model",
+                "Comparison of respiratory organs across species",
+                "Instruction on the 'Pop' test for CO2 in exhaled air"
+            ],
+            "student_activities": [
+                "Blow into lime water to prove CO2 presence",
+                "Compare the trachea of an insect to human lungs through diagrams"
+            ],
+            "assessment": [
+                "Respiratory system labeling",
+                "Observation report on the lime water experiment"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Circulation: Transporting Materials",
+            "topics_covered": [
+                "Composition of Blood (RBC, WBC, Platelets, Plasma)",
+                "Types of Blood Vessels: Arteries, Veins, and Capillaries",
+                "Pulse and Heartbeat"
+            ],
+            "teaching_strategy": [
+                "Pulse rate measurement technique",
+                "Microscopic slide view of blood (if available) or high-res photos",
+                "Valve function demonstration using a one-way pump analogy"
+            ],
+            "student_activities": [
+                "Measure and record resting pulse rate vs. after-exercise pulse rate",
+                "Draw a cross-section of an artery vs. a vein"
+            ],
+            "assessment": [
+                "Table: Differences between Arteries and Veins",
+                "Quiz on blood components"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Excretion: Waste Management",
+            "topics_covered": [
+                "Human Urinary System (Kidneys, Ureters, Bladder, Urethra)",
+                "Mechanism of filtration in kidneys",
+                "Other excretory products (Sweat and CO2)"
+            ],
+            "teaching_strategy": [
+                "Functional diagram of the urinary system",
+                "Concept of 'Dialysis' as an artificial kidney",
+                "Discussion on how different animals excrete (Ammonia/Urea/Uric Acid)"
+            ],
+            "student_activities": [
+                "Label a diagram of the human excretory system",
+                "Analyze a table showing different waste products in aquatic vs. land animals"
+            ],
+            "assessment": [
+                "Diagram assessment",
+                "Matching waste products to specific animals"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Integration and Evaluation",
+            "topics_covered": [
+                "Interdependence of life processes",
+                "Summary of transport and removal",
+                "Health and hygiene related to body systems"
+            ],
+            "teaching_strategy": [
+                "Concept mapping of the whole chapter",
+                "Case-study: 'What happens if the kidneys fail?'",
+                "Jeopardy-style revision game"
+            ],
+            "student_activities": [
+                "Create a mind map linking Digestion, Respiration, and Circulation",
+                "Solve a multi-step logic puzzle on body system failures"
+            ],
+            "assessment": [
+                "Medium-level Unit Test (25 marks)",
+                "Evaluation of the integrated mind map"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human digestive and circulatory system charts",
+        "Bell jar model for lungs",
+        "Lime water and glass tubes",
+        "Stopwatch for pulse measurement",
+        "NCERT Science Textbook"
+    ],
+    "evaluation_methods": [
+        "Labeling and Diagrammatic tests",
+        "Observation-based lab reports",
+        "Comparative tables (Human vs. Animal systems)",
+        "Data analysis of pulse rates",
+        "Unit Test with MCQs and short-answer questions"
+    ],
+    "teacher_tip": "Use the 'City Analogy'—Digestion is the power plant, Circulation is the delivery trucks, Respiration is the engine in every house, and Excretion is the sewage system. This helps students visualize how these systems interact rather than seeing them as isolated topics."
+}

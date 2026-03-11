@@ -1,0 +1,139 @@
+{
+    "class": "Class 9",
+    "subject": "Economics",
+    "chapter": "The Story of Village Palampur",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class9_economics_ch01.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Identifying Factors of Production",
+            "objective": "Understand the four requirements for production of goods and services",
+            "materials": ["Notebook", "Pencil", "Local Map or Sketch"],
+            "steps": [
+                "Visit a local shop, farm, or small manufacturing unit",
+                "List the Land, Labour, Physical Capital (Fixed and Working), and Human Capital involved",
+                "Categorize tools and machines versus raw materials and cash"
+            ],
+            "learning_outcome": "Distinguishes between fixed capital and working capital",
+            "evaluation": "Correct categorization of the four factors (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Mapping Land Use",
+            "objective": "Understand how land is distributed and used in a village setting",
+            "materials": ["Graph paper", "Crayons", "Ruler"],
+            "steps": [
+                "Draw a hypothetical map of Palampur based on the chapter description",
+                "Shade areas for large farmers, small farmers, and landless laborers",
+                "Mark common resources like the village pond or grazing land"
+            ],
+            "learning_outcome": "Visualizes the inequality in land distribution",
+            "evaluation": "Accuracy of map according to chapter data (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "The Green Revolution Comparison",
+            "objective": "Compare traditional farming with modern farming methods",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Create a T-chart comparing 'Traditional Seeds' vs 'HYV Seeds'",
+                "List the inputs required for each (Water, Chemical fertilizers, Pesticides)",
+                "Note the difference in yield/output based on the text"
+            ],
+            "learning_outcome": "Analyzes the impact of the Green Revolution on productivity",
+            "evaluation": "Detailed comparison of inputs and outputs (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Multiple Cropping Simulation",
+            "objective": "Learn how farmers grow more than one crop on the same piece of land",
+            "materials": ["Calendar", "Chart paper"],
+            "steps": [
+                "Divide a year into Kharif, Rabi, and Zaid seasons",
+                "Assign specific crops (e.g., Jowar/Bajra, Wheat, Potato) to each season",
+                "Explain how irrigation makes this possible throughout the year"
+            ],
+            "learning_outcome": "Understand the concept and benefits of multiple cropping",
+            "evaluation": "Correct seasonal placement of crops (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Labour and Wages Survey",
+            "objective": "Understand the conditions of farm laborers and minimum wages",
+            "materials": ["Notebook", "Interview guide"],
+            "steps": [
+                "Role-play an interview between a landless laborer (like Dala) and a large farmer",
+                "Discuss why wages might be lower than the government-fixed minimum wage",
+                "List factors like competition for work and debt"
+            ],
+            "learning_outcome": "Identifies challenges faced by unorganized sector workers",
+            "evaluation": "Depth of reasoning in the role-play/interview notes (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Capital in Farming: The Interest Trap",
+            "objective": "Understand how small farmers arrange capital compared to large farmers",
+            "materials": ["Notebook", "Basic Calculator"],
+            "steps": [
+                "Calculate interest on a loan of ₹5,000 at 24% interest for 4 months (Money lender rate)",
+                "Compare it with a bank loan rate of 8% per annum",
+                "Write a short paragraph on why Savita (small farmer) struggles to save"
+            ],
+            "learning_outcome": "Connects lack of savings to the cycle of debt",
+            "evaluation": "Correct mathematical calculation and explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Market Surplus Case Study",
+            "objective": "Learn what happens to the wheat produced by large farmers",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Trace the journey of surplus wheat from Tejpal Singh's farm to the market at Raiganj",
+                "Explain how the earnings from the surplus are used (Buying tractors, lending money)",
+                "Contrast this with a small farmer who has no surplus"
+            ],
+            "learning_outcome": "Understands the concept of 'Marketable Surplus'",
+            "evaluation": "Logical flow of the surplus distribution process (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Non-Farm Activities Gallery",
+            "objective": "Identify economic activities other than farming in a village",
+            "materials": ["Chart paper", "Pictures/Drawings"],
+            "steps": [
+                "Identify the four non-farm activities mentioned in Palampur (Dairy, Small-scale manufacturing, Trade, Transport)",
+                "Describe the 'fixed capital' and 'labour' used in one of these activities",
+                "Note how these activities provide employment"
+            ],
+            "learning_outcome": "Recognizes the diversity of rural economy",
+            "evaluation": "Clear description of non-farm sectors (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Modern vs. Traditional Irrigation",
+            "objective": "Observe the transition from Persian wheels to electric tubewells",
+            "materials": ["Notebook", "Sketch pens"],
+            "steps": [
+                "Draw or describe a Persian wheel and an electric tubewell",
+                "List three advantages of electric-run tubewells for a farmer",
+                "Explain how electricity changed the life of people in Palampur"
+            ],
+            "learning_outcome": "Relates infrastructure (electricity) to economic growth",
+            "evaluation": "Comparison of efficiency (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Environmental Impact Report",
+            "objective": "Critically analyze the sustainability of modern farming",
+            "materials": ["Notebook", "Pencil"],
+            "steps": [
+                "Research or read about the depletion of groundwater due to tubewells",
+                "List the effects of chemical fertilizers on soil fertility",
+                "Suggest two ways to make farming in Palampur sustainable"
+            ],
+            "learning_outcome": "Understands the environmental cost of the Green Revolution",
+            "evaluation": "Critical thinking and quality of suggestions (10 marks)"
+        }
+    ]
+}

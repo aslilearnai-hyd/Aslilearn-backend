@@ -1,0 +1,34 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Chapter: Light – Mirrors and Lenses",
+  "difficulty": "Hard",
+  "source_pdf": "hecu110.pdf",
+  "short_notes": {
+    "key_points": [
+      "Light travels in straight lines and follows predictable laws when it reflects or refracts",
+      "The law of reflection states that the angle of incidence is equal to the angle of reflection",
+      "Concave mirrors can produce real, inverted images or virtual, magnified images depending on the position of the object",
+      "Convex mirrors always produce virtual, upright, and diminished images with a wide field of view",
+      "Convex lenses converge parallel light rays to a focal point, while concave lenses diverge light rays",
+      "Image formation by mirrors and lenses depends on the distance between the object and the optical device"
+    ],
+    "examples": [
+      "Concave mirrors used in headlights to produce strong beams of light",
+      "Convex mirrors used in security mirrors and vehicle rear-view mirrors",
+      "Convex lenses used in cameras, microscopes, and magnifying glasses",
+      "Concave lenses used in spectacles to correct short-sightedness"
+    ],
+    "formulas": [
+      "Law of reflection → Angle of incidence = Angle of reflection",
+      "Mirror image property → Distance of image from mirror = Distance of object from mirror",
+      "Refraction principle → Light bends when it passes between different media"
+    ],
+    "exam_tips": [
+      "Explain clearly how image formation changes with object position",
+      "Differentiate between real and virtual images in answers",
+      "Use diagrams when describing concave mirror or convex lens behavior",
+      "Remember practical applications of mirrors and lenses in instruments"
+    ]
+  }
+}

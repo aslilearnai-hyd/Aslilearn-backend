@@ -1,0 +1,204 @@
+{
+    "class": "Class 8",
+    "subject": "Mathematics",
+    "chapter_name": "Area",
+    "lesson_level": "Easy",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of area using unit squares",
+        "Calculate area of rectangles and triangles",
+        "Understand why perimeter cannot measure area",
+        "Apply formula for area of triangle",
+        "Calculate area of parallelogram",
+        "Understand area of rhombus using diagonals",
+        "Calculate area of trapezium",
+        "Find area of polygons by dividing them into triangles"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Area",
+            "topics_covered": [
+                "Meaning of area",
+                "Unit squares and measurement of area",
+                "Area of rectangle (length × width)"
+            ],
+            "teaching_strategy": [
+                "Use grid paper demonstration",
+                "Counting unit squares activity",
+                "Board examples"
+            ],
+            "student_activities": [
+                "Draw rectangles on graph paper",
+                "Count unit squares to find area"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Short written exercise"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Area of Rectangles and Comparison",
+            "topics_covered": [
+                "Area calculation of rectangles",
+                "Comparing areas of different rectangles"
+            ],
+            "teaching_strategy": [
+                "Solved examples",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Find area of rectangles (7 × 4) and (8 × 3)",
+                "Compare which rectangle has larger area"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "MCQ questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Area of Triangle",
+            "topics_covered": [
+                "Diagonal dividing rectangle into two triangles",
+                "Area of triangle = 1/2 × base × height"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Step-by-step examples"
+            ],
+            "student_activities": [
+                "Draw rectangle and divide into two triangles",
+                "Calculate triangle area"
+            ],
+            "assessment": [
+                "Blackboard problems",
+                "Short written exercise"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Triangles with Equal Areas",
+            "topics_covered": [
+                "Triangles with same base and height",
+                "Triangles between parallel lines"
+            ],
+            "teaching_strategy": [
+                "Diagram-based explanation",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Construct triangles on same base",
+                "Observe and compare areas"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Notebook activity review"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Area of Parallelogram",
+            "topics_covered": [
+                "Conversion of parallelogram into rectangle",
+                "Area of parallelogram = base × height"
+            ],
+            "teaching_strategy": [
+                "Cut-and-rearrange activity",
+                "Demonstration with chart paper"
+            ],
+            "student_activities": [
+                "Draw parallelogram",
+                "Transform it into rectangle using dissection"
+            ],
+            "assessment": [
+                "Observation of activity",
+                "Problem-solving questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Area of Rhombus",
+            "topics_covered": [
+                "Properties of rhombus",
+                "Area using diagonals",
+                "Formula: 1/2 × d1 × d2"
+            ],
+            "teaching_strategy": [
+                "Diagram explanation",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Draw rhombus and diagonals",
+                "Calculate area using given diagonal lengths"
+            ],
+            "assessment": [
+                "Short practice problems",
+                "Peer checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Area of Trapezium",
+            "topics_covered": [
+                "Definition of trapezium",
+                "Area formula",
+                "Area = 1/2 × height × (sum of parallel sides)"
+            ],
+            "teaching_strategy": [
+                "Breaking trapezium into rectangles and triangles",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Draw trapezium with given measurements",
+                "Calculate its area"
+            ],
+            "assessment": [
+                "Blackboard exercises",
+                "Exit slip question"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Area of Polygons and Chapter Revision",
+            "topics_covered": [
+                "Dividing polygons into triangles",
+                "Area of irregular shapes",
+                "Real-life applications of area",
+                "Chapter summary and revision"
+            ],
+            "teaching_strategy": [
+                "Group problem solving",
+                "Concept recap using diagrams"
+            ],
+            "student_activities": [
+                "Divide pentagon into triangles",
+                "Calculate total area",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Graph paper",
+        "Chart paper",
+        "Scissors for dissection activities",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Activity observation",
+        "Short answer tests",
+        "Group discussion"
+    ],
+    "teacher_tip": "Use diagrams and cut-and-paste activities to help students visually understand area formulas instead of memorizing them."
+}

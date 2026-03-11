@@ -1,0 +1,403 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Constitutional Design",
+    "generated_at": "2026-03-07T21:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the apartheid system in South Africa and its effects.",
+            "answer": "Apartheid was a system of racial segregation where white rulers denied political, social and economic rights to non-white people.",
+            "answer_outline": [
+                "Racial segregation",
+                "White minority rule",
+                "Denial of rights",
+                "Social inequality"
+            ],
+            "key_concepts": [
+                "apartheid"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the role of Nelson Mandela in ending apartheid.",
+            "answer": "Nelson Mandela led the struggle against apartheid, spent many years in prison and later helped establish democracy in South Africa.",
+            "answer_outline": [
+                "Leadership in struggle",
+                "27 years imprisonment",
+                "Promotion of democracy"
+            ],
+            "key_concepts": [
+                "Nelson Mandela"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe how South Africa became a democratic country.",
+            "answer": "South Africa became democratic through negotiations between white rulers and black leaders, leading to a new constitution guaranteeing equal rights.",
+            "answer_outline": [
+                "Negotiations",
+                "End of apartheid",
+                "New democratic constitution"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the need for a constitution in a democratic country.",
+            "answer": "A constitution is necessary to define government powers, protect citizens' rights and ensure rule of law.",
+            "answer_outline": [
+                "Define government powers",
+                "Protect rights",
+                "Ensure rule of law"
+            ],
+            "key_concepts": [
+                "constitution"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the four main functions of a constitution.",
+            "answer": "A constitution creates trust among citizens, defines government structure, limits government power and protects citizens' rights.",
+            "answer_outline": [
+                "Generate trust",
+                "Define structure",
+                "Limit power",
+                "Protect rights"
+            ],
+            "key_concepts": [
+                "functions of constitution"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain how a constitution generates trust among citizens.",
+            "answer": "It clearly defines rules, rights and responsibilities so citizens feel secure and confident in governance.",
+            "answer_outline": [
+                "Clear rules",
+                "Defined rights",
+                "Fair governance"
+            ],
+            "key_concepts": [
+                "trust"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the challenges faced during the making of the Indian Constitution.",
+            "answer": "India faced partition violence, diversity in society and the challenge of integrating princely states.",
+            "answer_outline": [
+                "Partition violence",
+                "Diverse population",
+                "Integration of states"
+            ],
+            "key_concepts": [
+                "constitution making"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the formation of the Constituent Assembly.",
+            "answer": "The Constituent Assembly was formed in 1946 with members elected by provincial legislatures to draft the Constitution.",
+            "answer_outline": [
+                "Formation in 1946",
+                "Elected representatives",
+                "Draft constitution"
+            ],
+            "key_concepts": [
+                "Constituent Assembly"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of Dr. B.R. Ambedkar in the making of the Constitution.",
+            "answer": "Dr. Ambedkar chaired the Drafting Committee and played a key role in preparing the Constitution.",
+            "answer_outline": [
+                "Chairman of Drafting Committee",
+                "Prepared constitution draft",
+                "Major contributions"
+            ],
+            "key_concepts": [
+                "Ambedkar"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why the Indian Constitution is considered legitimate.",
+            "answer": "It is considered legitimate because it was drafted after detailed debates and represented diverse groups.",
+            "answer_outline": [
+                "Broad representation",
+                "Debates",
+                "Consensus"
+            ],
+            "key_concepts": [
+                "constitutional legitimacy"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the importance of the Preamble.",
+            "answer": "The Preamble states the ideals and objectives of the Constitution and guides its interpretation.",
+            "answer_outline": [
+                "Introduction",
+                "Guiding principles",
+                "National ideals"
+            ],
+            "key_concepts": [
+                "Preamble"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the meaning of Sovereign, Socialist and Secular.",
+            "answer": "Sovereign means independent authority, Socialist means reducing economic inequality and Secular means equal respect for all religions.",
+            "answer_outline": [
+                "Sovereign",
+                "Socialist",
+                "Secular"
+            ],
+            "key_concepts": [
+                "Preamble terms"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the meaning of justice in the Constitution.",
+            "answer": "Justice ensures fairness and elimination of discrimination in social, economic and political life.",
+            "answer_outline": [
+                "Social justice",
+                "Economic justice",
+                "Political justice"
+            ],
+            "key_concepts": [
+                "justice"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of liberty.",
+            "answer": "Liberty ensures freedom of thought, belief, expression and faith.",
+            "answer_outline": [
+                "Freedom of thought",
+                "Freedom of expression",
+                "Freedom of belief"
+            ],
+            "key_concepts": [
+                "liberty"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the concept of equality in democracy.",
+            "answer": "Equality ensures that all citizens have equal rights and opportunities.",
+            "answer_outline": [
+                "Equal before law",
+                "Equal opportunity"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the concept of fraternity.",
+            "answer": "Fraternity promotes unity, brotherhood and national integration.",
+            "answer_outline": [
+                "Brotherhood",
+                "Unity",
+                "National integration"
+            ],
+            "key_concepts": [
+                "fraternity"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the importance of democratic values.",
+            "answer": "Democratic values ensure justice, liberty, equality and participation in governance.",
+            "answer_outline": [
+                "Justice",
+                "Liberty",
+                "Equality"
+            ],
+            "key_concepts": [
+                "democratic values"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the importance of constitutional amendments.",
+            "answer": "Amendments allow the Constitution to adapt to changing needs of society.",
+            "answer_outline": [
+                "Flexibility",
+                "Adaptation"
+            ],
+            "key_concepts": [
+                "constitutional amendment"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of Republic Day.",
+            "answer": "Republic Day marks the enforcement of the Constitution on 26 January 1950.",
+            "answer_outline": [
+                "26 January 1950",
+                "Constitution enforcement"
+            ],
+            "key_concepts": [
+                "Republic Day"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the concept of democracy.",
+            "answer": "Democracy is a system where people elect their rulers and participate in governance.",
+            "answer_outline": [
+                "People elect rulers",
+                "Citizen participation"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how democracy ensures accountability.",
+            "answer": "In democracy citizens elect representatives and can question or replace them through elections.",
+            "answer_outline": [
+                "Elections",
+                "Accountability"
+            ],
+            "key_concepts": [
+                "accountability"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of citizens in democracy.",
+            "answer": "Citizens vote, participate in debates and hold the government accountable.",
+            "answer_outline": [
+                "Voting",
+                "Participation",
+                "Accountability"
+            ],
+            "key_concepts": [
+                "citizen participation"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how the Constitution promotes unity.",
+            "answer": "It promotes unity by establishing common laws and encouraging fraternity among citizens.",
+            "answer_outline": [
+                "Common laws",
+                "Fraternity"
+            ],
+            "key_concepts": [
+                "unity"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of rule of law.",
+            "answer": "Rule of law ensures that everyone including the government follows the law.",
+            "answer_outline": [
+                "Equality before law",
+                "Fair governance"
+            ],
+            "key_concepts": [
+                "rule of law"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain the importance of constitutional design in democratic politics.",
+            "answer": "Constitutional design determines how power is distributed, rights are protected and governance is organized.",
+            "answer_outline": [
+                "Distribution of power",
+                "Rights protection",
+                "Governance structure"
+            ],
+            "key_concepts": [
+                "constitutional design"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+ {
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: HOW THE STATE GOVERNMENT WORKS",
+    "generated_at": "2026-03-08T01:59:45",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze the constitutional significance of the Governor as the link between the Union and the State.",
+            "answer": "The Governor is appointed by the Central Government to ensure the state government functions within the framework of the Constitution, acting as a representative of the Center.",
+            "key_concepts": ["Constitutional oversight"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between the 'Political Executive' and the 'Permanent Executive' at the state level.",
+            "answer": "The Political Executive consists of the CM and Ministers who are elected and change with elections, while the Permanent Executive consists of civil servants who implement policies and remain in office regardless of the ruling party.",
+            "key_concepts": ["Executive branches"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate why an MLA from the opposition party would raise a 'Point of Order' or demand a debate regarding public health.",
+            "answer": "Opposition MLAs utilize the Legislative Assembly to highlight government failures, demand accountability for negligence (like the Patalpuram water crisis), and pressure the ruling party to take corrective action.",
+            "key_concepts": ["Legislative accountability"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of 'Collective Responsibility' of the Council of Ministers.",
+            "answer": "It means all ministers are jointly responsible for the decisions made by the Cabinet; a decision taken in a cabinet meeting must be defended by all MLAs of the ruling party in the Assembly.",
+            "key_concepts": ["Collective responsibility"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "How does the 'Power of the Purse' reside with the Legislative Assembly?",
+            "answer": "The Executive (Ministers) cannot spend money on state projects or departments unless the budget and expenditure are debated and approved by the MLAs in the Legislative Assembly.",
+            "key_concepts": ["Financial control"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Analyze the impact of a 'Hung Assembly' on the formation of a Coalition Government.",
+            "answer": "When no single party achieves the $50\% + 1$ majority, parties with differing ideologies must negotiate to form a coalition, which can lead to a more consensus-based but sometimes less stable government.",
+            "key_concepts": ["Coalition dynamics"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Contrast the 'Legislative' and 'Deliberative' functions of the Legislative Assembly.",
+            "answer": "The Legislative function involves the formal passing of laws, while the Deliberative function involves debating public grievances and evaluating the efficiency of various government departments.",
+            "key_concepts": ["Legislative functions"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is the Chief Minister described as the 'Head of the Government' while the Governor is the 'Head of the State'?",
+            "answer": "The Chief Minister holds real executive power as the elected leader of the majority, whereas the Governor holds nominal or ceremonial power as the constitutional head.",
+            "key_concepts": ["Executive hierarchy"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the role of a 'Cabinet Minister' compared to a 'Minister of State'?",
+            "answer": "Cabinet Ministers are senior leaders who head major departments and attend cabinet meetings, whereas Ministers of State usually assist Cabinet Ministers or head smaller departments.",
+            "key_concepts": ["Ministerial hierarchy"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 10,
+            "question": "How does the 'Press Conference' serve as a mechanism for 'Public Accountability'?",
+            "answer": "It forces the government to justify its actions to the media; the questions asked by journalists represent public doubt, and the recorded answers are made part of the public record.",
+            "key_concepts": ["Transparency"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Analyze the phrase 'The government is not just the CM and Ministers' in the context of various departments.",
+            "answer": "The government is a vast network of specialized departments (Agriculture, Education, Health) where technical experts and bureaucrats do the actual work directed by political leaders.",
+            "key_concepts": ["Bureaucracy"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What happens if a Minister loses the 'Confidence of the House'?",
+            "answer": "If the Legislative Assembly passes a 'No-Confidence Motion' against a minister or the cabinet, the entire government is constitutionally obligated to resign.",
+            "key_concepts": ["Parliamentary sovereignty"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain why 'Independent Candidates' can be crucial in a close election scenario.",
+            "answer": "In cases where parties fall short of a majority, Independent MLAs can provide the critical support needed to form a ruling majority or a coalition.",
+            "key_concepts": ["Electoral politics"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "How does the Legislative Assembly act as a 'Miniature Public'?",
+            "answer": "Because it contains representatives from every corner of the state, the diversity of the state's problems and opinions is reflected within the house during debates.",
+            "key_concepts": ["Representation"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Evaluate the role of 'Opinion Polls' and 'Public Rallies' in influencing Legislative Assembly agendas.",
+            "answer": "Widespread public protest or media campaigns (like the Patalpuram incident) can force the government to introduce 'Adjournment Motions' to discuss urgent matters not on the original agenda.",
+            "key_concepts": ["Public influence"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the significance of the Governor’s signature on a Bill passed by the Assembly?",
+            "answer": "A Bill is merely a proposal; the Governor’s signature (Assent) is the final constitutional requirement that transforms a proposal into an enforceable Law.",
+            "key_concepts": ["Law-making process"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Assess the necessity of 'Delimitation' in maintaining the fairness of 'Constituencies'.",
+            "answer": "As population changes, constituencies must be redrawn to ensure that each MLA represents roughly the same number of people, maintaining the principle of 'one person, one vote'.",
+            "key_concepts": ["Constituency management"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the 'Speaker' of the Legislative Assembly considered a neutral figure?",
+            "answer": "The Speaker manages the debates, decides who speaks, and maintains order; once elected, they are expected to act impartially to protect the rights of both Ruling and Opposition members.",
+            "key_concepts": ["Legislative order"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "How can an MLA be held accountable by their specific constituency?",
+            "answer": "If an MLA fails to raise local issues (like school repairs or water) in the Assembly, the voters can exercise their power to vote them out in the next election cycle.",
+            "key_concepts": ["Constituent accountability"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of the 'Opposition Leader'.",
+            "answer": "The leader of the largest non-ruling party coordinates the opposition's strategy to scrutinize government bills and offer an alternative vision of governance.",
+            "key_concepts": ["Leadership"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Analyze the relationship between the 'State List' and the Legislative Assembly.",
+            "answer": "The Constitution provides a 'State List' of subjects (like Police, Health, Agriculture) on which only the State Legislative Assembly has the power to make laws.",
+            "key_concepts": ["Federal jurisdiction"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the purpose of an 'Inquiry Committee' formed by the Chief Minister?",
+            "answer": "It serves as a tool for the Executive to gather expert facts on a crisis (like a disease outbreak) before making long-term policy changes or laws in the Assembly.",
+            "key_concepts": ["Policy formulation"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is 'Voter Education' important for the functioning of the State Government?",
+            "answer": "Informed voters ensure that the 'Majority Party' is chosen based on policy and performance rather than superficial factors, leading to better quality governance.",
+            "key_concepts": ["Democratic awareness"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Evaluate the 'Check and Balance' system between the CM and the Governor.",
+            "answer": "While the CM runs the state, the Governor can withhold assent to a bill or report to the Center if they believe the CM's actions are unconstitutional.",
+            "key_concepts": ["Checks and balances"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "How does a 'Wall Magazine' project in a school reflect the learning of state government functions?",
+            "answer": "It mimics the 'Media' and 'Public Opinion' role by allowing students to research, analyze, and present information on how government departments impact their lives.",
+            "key_concepts": ["Civic education"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        }
+    ]
+}

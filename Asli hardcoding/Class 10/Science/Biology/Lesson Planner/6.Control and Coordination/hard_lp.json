@@ -1,0 +1,187 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter_name": "Control and Coordination",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Critically analyze the electrochemical mechanism of nerve impulse conduction and synaptic delay",
+        "Evaluate the hierarchical organization of the CNS and PNS in processing complex stimuli",
+        "Synthesize the biochemical role of phytohormones in differential growth and apical dominance",
+        "Analyze the hypothalamus-pituitary axis and the precision of multi-level feedback loops",
+        "Differentiate between electrical and chemical coordination based on speed, range, and persistence",
+        "Solve high-order thinking (HOTS) problems on neuro-hormonal integration and physiological disorders"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Neurophysiology: The Action Potential",
+            "topics_covered": [
+                "Bio-electric nature of the nerve impulse",
+                "Polarization, Depolarization, and Repolarization (Simplified)",
+                "The Synaptic cleft: Neurotransmitters and receptor binding"
+            ],
+            "teaching_strategy": [
+                "Analyzing the 'All-or-None' law of nerve conduction",
+                "Graphical representation of impulse transmission speed",
+                "Molecular view of the Sodium-Potassium pump (Introductory)"
+            ],
+            "student_activities": [
+                "Sketch the ionic changes across an axon membrane during an impulse",
+                "Research: Why do nerve impulses travel faster in myelinated neurons?"
+            ],
+            "assessment": [
+                "Worksheet on the sequence of synaptic transmission",
+                "HOTS: Why can an impulse only jump the synapse in one direction?"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Complex Reflexes and Neural Integration",
+            "topics_covered": [
+                "Cerebral vs. Spinal reflexes",
+                "Role of Relay Neurons in the white and grey matter of the Spinal Cord",
+                "Conditioned vs. Unconditioned reflexes (Pavlovian intro)"
+            ],
+            "teaching_strategy": [
+                "Case study: Coordination in professional athletes vs. basic reflexes",
+                "Comparative anatomy: Protection of brain vs. protection of spinal cord",
+                "Detailed anatomy of the Reflex Arc in 3D perspective"
+            ],
+            "student_activities": [
+                "Trace the neural pathway for a complex reflex like 'Catching a falling glass'",
+                "Differentiate between 'Thoughtful' actions and 'Reflexive' actions in a T-chart"
+            ],
+            "assessment": [
+                "Labeling the internal structure of the Spinal Cord",
+                "Reasoning: Why is the reflex arc more efficient for survival than conscious thought?"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Advanced Neuroanatomy",
+            "topics_covered": [
+                "The Cerebrum: Sensory, Motor, and Association areas",
+                "Hypothalamus: The link between Nervous and Endocrine systems",
+                "Involuntary centers of the Medulla: Cardiovascular and Respiratory"
+            ],
+            "teaching_strategy": [
+                "Analyzing brain lesions and their effect on behavior (Case study approach)",
+                "Discussion on how the Cerebellum processes 'Muscle Memory'",
+                "The role of the Blood-Brain Barrier (Conceptual)"
+            ],
+            "student_activities": [
+                "Map the specific lobes of the brain to complex tasks (e.g., decision making, visual processing)",
+                "Debate: Does the brain ever truly 'sleep'? (Center activity during REM)"
+            ],
+            "assessment": [
+                "Identification test based on clinical symptoms (e.g., 'If a person loses balance, which part is affected?')",
+                "Diagram check: Detailed brain cross-section"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Phytohormone Kinetics and Tropisms",
+            "topics_covered": [
+                "Auxin concentration gradients and Apical Dominance",
+                "Gibberellins and Bolting; Cytokinins and Senescence",
+                "Thigmotropism: Mechanism of tendril coiling"
+            ],
+            "teaching_strategy": [
+                "Analyzing Darwin’s experiment on Phototropism",
+                "Mathematical logic of differential growth in roots vs. shoots",
+                "Interactive simulation of plant responses to external stimuli"
+            ],
+            "student_activities": [
+                "Predict the growth pattern of a decapitated plant shoot",
+                "Design an experiment to prove Hydrotropism is stronger than Geotropism"
+            ],
+            "assessment": [
+                "Numerical/Logical problems on hormone concentration",
+                "Short answer: Why is Abscisic acid called the 'Stress Hormone'?"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Endocrine Axis",
+            "topics_covered": [
+                "The Hypothalamus-Pituitary-Target Gland axis",
+                "Trophic hormones and their regulatory roles",
+                "Synergistic and Antagonistic hormonal actions (Insulin vs. Glucagon)"
+            ],
+            "teaching_strategy": [
+                "Flowchart of the master gland's control over the Thyroid and Adrenals",
+                "Analyzing why hormones are required in 'trace amounts'",
+                "Discussion on why endocrine signaling is more persistent than neural signaling"
+            ],
+            "student_activities": [
+                "Draw a complex cascade of hormonal release from Hypothalamus to Peripheral gland",
+                "Research the role of the Pineal gland and Melatonin in circadian rhythms"
+            ],
+            "assessment": [
+                "Flowchart completion: The Endocrine Cascade",
+                "Quiz on antagonistic hormone pairs"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Feedback Loops and Pathophysiology",
+            "topics_covered": [
+                "Negative vs. Positive feedback loops",
+                "Endocrine disorders: Gigantism, Acromegaly, Goitre, Diabetes mellitus",
+                "The role of Iodine and the biochemical synthesis of Thyroxine"
+            ],
+            "teaching_strategy": [
+                "Analyzing patient case files for endocrine symptoms",
+                "Logic of 'Feedback Inhibition' using the Thermostat model",
+                "Comparison: Type 1 vs. Type 2 Diabetes (Simplified)"
+            ],
+            "student_activities": [
+                "Construct a feedback loop for the regulation of Thyroxine",
+                "Identify the specific gland and hormone missing in a set of deficiency symptoms"
+            ],
+            "assessment": [
+                "Case-study based test (10 marks)",
+                "Assertion-Reasoning on hormonal imbalances"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Integration and Board Excellence",
+            "topics_covered": [
+                "Neuro-endocrine integration recap",
+                "Solving NCERT Exemplar and HOTS questions",
+                "Board-pattern assertion-reasoning and passage-based questions"
+            ],
+            "teaching_strategy": [
+                "Mind-mapping the 'Control and Coordination' network",
+                "Solving integrated questions (e.g., 'How do nervous and chemical systems work together during a race?')",
+                "Reviewing common mistakes in labeling complex diagrams"
+            ],
+            "student_activities": [
+                "Solve a 25-mark advanced chapter test",
+                "Participate in a peer-review session of descriptive answers"
+            ],
+            "assessment": [
+                "Summative Assessment (25 Marks)",
+                "Detailed feedback on logic and scientific terminology"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Human Brain & Endocrine System 3D software",
+        "NCERT Exemplar Science and high-level reference material",
+        "Charts of Feedback Mechanisms and Reflex Arcs",
+        "Plant hormone application case studies",
+        "Microscope slides of Spinal Cord cross-section"
+    ],
+    "evaluation_methods": [
+        "Complex case-study analysis",
+        "Diagrammatic and functional accuracy tests",
+        "HOTS Problem Sets",
+        "Feedback loop construction tests",
+        "Final summative examination"
+    ],
+    "teacher_tip": "For Hard-level students, explain that the 'Brain' doesn't just receive signals; it 'filters' them. Mention that the Thalamus acts as a relay station to help them understand why we aren't constantly aware of the feel of our clothes on our skin."
+}

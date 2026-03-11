@@ -1,0 +1,233 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 8: Quadrilaterals",
+    "generated_at": "2026-03-06T12:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that in a parallelogram, the sum of the squares of the sides equals the sum of the squares of the diagonals.",
+            "answer": "Using vector or coordinate method, if sides are a and b, and diagonals are p and q, then p² + q² = 2(a² + b²).",
+            "answer_outline": ["Assign vectors", "Express diagonals in terms of sides", "Apply Pythagoras theorem", "Show equality"],
+            "key_concepts": ["parallelogram", "diagonals", "vector method"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that the diagonals of a rhombus bisect each other at right angles and each diagonal bisects opposite angles.",
+            "answer": "Use congruent triangles formed by diagonals to show right angle intersection and angle bisection.",
+            "answer_outline": ["Draw diagonals", "Identify congruent triangles", "Prove perpendicularity", "Prove angle bisection"],
+            "key_concepts": ["rhombus diagonals", "perpendicularity", "angle bisection"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that a quadrilateral with perpendicular diagonals and equal opposite sides is a rhombus.",
+            "answer": "Use congruence of triangles formed by diagonals and given conditions to show all sides are equal.",
+            "answer_outline": ["Draw diagonals", "Identify triangles", "Use perpendicularity and equality", "Conclude rhombus"],
+            "key_concepts": ["quadrilateral", "perpendicular diagonals", "rhombus condition"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that a quadrilateral is cyclic if and only if the sum of a pair of opposite angles is 180°.",
+            "answer": "Use inscribed angle theorem and its converse to show equivalence.",
+            "answer_outline": ["Draw quadrilateral", "Apply inscribed angle theorem", "Show equivalence condition", "Conclude cyclic nature"],
+            "key_concepts": ["cyclic quadrilateral", "opposite angles sum"],
+            "marks": 5,
+            "source_section": "8.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that the line joining midpoints of opposite sides of any quadrilateral forms a parallelogram.",
+            "answer": "Use vector or coordinate method to show that opposite sides of the new quadrilateral are parallel.",
+            "answer_outline": ["Identify midpoints", "Join midpoints", "Use vector/coordinate method", "Show parallelogram property"],
+            "key_concepts": ["midpoints", "parallelogram"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that a parallelogram circumscribed about a circle is a rhombus.",
+            "answer": "Use tangent lengths from vertices to the circle to show all sides are equal, hence rhombus.",
+            "answer_outline": ["Draw circle inside parallelogram", "Apply tangent length property", "Show all sides equal"],
+            "key_concepts": ["parallelogram", "inscribed circle", "rhombus"],
+            "marks": 5,
+            "source_section": "8.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that the area of a cyclic quadrilateral is √((s − a)(s − b)(s − c)(s − d)), where s is the semiperimeter.",
+            "answer": "Use Brahmagupta's formula derived from triangle areas and trigonometry.",
+            "answer_outline": ["Divide into triangles", "Use trigonometric relations", "Express area in terms of sides", "Apply formula"],
+            "key_concepts": ["cyclic quadrilateral", "Brahmagupta formula"],
+            "marks": 5,
+            "source_section": "8.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that the diagonals of a kite are perpendicular and one diagonal bisects the other.",
+            "answer": "Use congruence of triangles formed by diagonals to show perpendicular intersection and bisection of one diagonal.",
+            "answer_outline": ["Draw kite", "Identify congruent triangles", "Prove perpendicularity", "Prove bisection"],
+            "key_concepts": ["kite", "diagonals perpendicular", "bisection"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that a quadrilateral is a parallelogram if both pairs of opposite sides are equal.",
+            "answer": "Use triangle congruence to show that equal opposite sides imply diagonals bisect each other, hence parallelogram.",
+            "answer_outline": ["Draw diagonals", "Use triangle congruence", "Show sides equal", "Conclude parallelogram"],
+            "key_concepts": ["quadrilateral", "parallelogram condition"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that the medians of a quadrilateral divide it into four smaller quadrilaterals of equal area.",
+            "answer": "Use vector method or coordinate geometry to show equality of areas.",
+            "answer_outline": ["Identify medians", "Draw intersections", "Use coordinate method", "Show equal areas"],
+            "key_concepts": ["quadrilateral", "medians", "equal area"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove that the sum of the squares of the diagonals of a parallelogram equals the sum of the squares of all sides plus four times the square of the distance between midpoints of diagonals.",
+            "answer": "Use coordinate geometry to express sides and diagonals and apply Pythagoras theorem.",
+            "answer_outline": ["Assign coordinates", "Express diagonals and sides", "Apply Pythagoras", "Simplify equation"],
+            "key_concepts": ["parallelogram", "diagonal theorem"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that the line joining midpoints of diagonals of a quadrilateral passes through intersection point of the medians.",
+            "answer": "Use vector method to show that midpoint of diagonals coincides with intersection point of medians.",
+            "answer_outline": ["Assign vectors", "Find midpoints", "Use linear combination", "Prove intersection"],
+            "key_concepts": ["quadrilateral", "diagonals", "medians"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that the diagonals of a rectangle are equal and bisect each other.",
+            "answer": "Use congruence of triangles formed by diagonals to show equality and bisection.",
+            "answer_outline": ["Draw diagonals", "Identify triangles", "Apply congruence", "Show equality and bisection"],
+            "key_concepts": ["rectangle", "diagonals"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that a rhombus inscribed in a circle is a square.",
+            "answer": "Use perpendicularity of diagonals and equal sides to show all angles are 90°, hence a square.",
+            "answer_outline": ["Check rhombus properties", "Use circle properties", "Show right angles", "Conclude square"],
+            "key_concepts": ["rhombus", "circumscribed circle", "square"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the area of a kite is half the product of its diagonals.",
+            "answer": "Divide kite into four right triangles using diagonals, sum areas = 1/2 × d₁ × d₂.",
+            "answer_outline": ["Draw diagonals", "Divide into triangles", "Sum areas", "Conclude formula"],
+            "key_concepts": ["kite area", "diagonals"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that a trapezium's median line equals half the sum of the bases.",
+            "answer": "Use coordinate geometry or midpoints to derive median formula.",
+            "answer_outline": ["Identify midpoints", "Draw median", "Apply formula", "Simplify to show half-sum of bases"],
+            "key_concepts": ["trapezium median", "formula"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that a parallelogram is a rhombus if its diagonals are perpendicular.",
+            "answer": "Use congruence of triangles formed by diagonals to show all sides equal, hence rhombus.",
+            "answer_outline": ["Draw diagonals", "Identify triangles", "Apply congruence", "Show sides equal"],
+            "key_concepts": ["parallelogram", "perpendicular diagonals", "rhombus"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that a cyclic quadrilateral with perpendicular diagonals is a rectangle.",
+            "answer": "Use inscribed angle theorem and properties of diagonals to show all angles are 90°.",
+            "answer_outline": ["Draw cyclic quadrilateral", "Use perpendicular diagonals", "Apply angle theorem", "Conclude rectangle"],
+            "key_concepts": ["cyclic quadrilateral", "perpendicular diagonals", "rectangle"],
+            "marks": 5,
+            "source_section": "8.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that in any quadrilateral, the sum of squares of sides equals the sum of squares of diagonals plus four times the square of the line joining midpoints of opposite sides.",
+            "answer": "Use coordinate geometry and vector method to derive the relation.",
+            "answer_outline": ["Assign coordinates", "Express sides and diagonals", "Use vectors", "Prove relation"],
+            "key_concepts": ["quadrilateral", "sides-diagonals relation"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Prove that the sum of distances from any interior point to sides of an equilateral triangle is constant.",
+            "answer": "Use area method to show sum of perpendicular distances equals height of triangle.",
+            "answer_outline": ["Draw interior point", "Draw perpendiculars to sides", "Sum distances", "Use area to prove constant"],
+            "key_concepts": ["equilateral triangle", "perpendicular distances"],
+            "marks": 5,
+            "source_section": "7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that in a rectangle, the sum of squares of four sides equals sum of squares of diagonals multiplied by 2.",
+            "answer": "Use Pythagoras theorem on triangles formed by diagonals and sides.",
+            "answer_outline": ["Draw diagonals", "Apply Pythagoras", "Sum squares", "Prove relation"],
+            "key_concepts": ["rectangle sides-diagonals"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Prove that the centroid of a quadrilateral formed by joining midpoints of sides of any quadrilateral divides it into four equal areas.",
+            "answer": "Use coordinate geometry to show intersection point divides quadrilateral into four quadrilaterals of equal area.",
+            "answer_outline": ["Identify midpoints", "Draw quadrilateral", "Find centroid", "Show equal areas"],
+            "key_concepts": ["quadrilateral", "midpoints", "centroid", "equal areas"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that a rhomboid has diagonals that bisect each other but are not perpendicular.",
+            "answer": "Use triangle congruence to show diagonals bisect each other, angle between them not 90°.",
+            "answer_outline": ["Draw rhomboid", "Identify triangles", "Prove bisection", "Show non-perpendicular"],
+            "key_concepts": ["rhomboid diagonals"],
+            "marks": 5,
+            "source_section": "8.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that a trapezium is isosceles if and only if its diagonals are equal.",
+            "answer": "Use congruent triangles formed by diagonals to show equality implies isosceles and vice versa.",
+            "answer_outline": ["Draw diagonals", "Identify triangles", "Apply congruence", "Show equivalence"],
+            "key_concepts": ["trapezium", "isosceles condition", "diagonals equality"],
+            "marks": 5,
+            "source_section": "8.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that in a cyclic quadrilateral, the product of the diagonals equals the sum of the products of opposite sides.",
+            "answer": "Use Ptolemy's theorem to derive the relation.",
+            "answer_outline": ["Draw cyclic quadrilateral", "Apply Ptolemy's theorem", "Express diagonals and sides", "Prove equality"],
+            "key_concepts": ["cyclic quadrilateral", "Ptolemy theorem"],
+            "marks": 5,
+            "source_section": "8.4"
+        }
+    ]
+}

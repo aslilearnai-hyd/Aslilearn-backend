@@ -1,0 +1,103 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 10: Geometric Twins (Congruence)",
+    "generated_at": "2026-03-05T00:55:00",
+    "concepts": [
+        {
+            "concept_name": "Concept of Congruence",
+            "difficulty": "easy",
+            "lesson": "Congruence refers to the relationship between two figures that have exactly the same shape and the same size. If two figures are congruent, one can be superimposed on the other to cover it exactly. The symbol used to denote congruence is $\\cong$. For line segments, congruence means they have equal lengths; for angles, it means they have equal measures.",
+            "real_example": "Two identical sheets of A4 paper or two biscuits from the same pack are congruent.",
+            "key_points": [
+                "Same shape and same size",
+                "Superimposition test",
+                "Symbol: $\\cong$"
+            ],
+            "source_section": "Section 10.1"
+        },
+        {
+            "concept_name": "Congruence of Triangles",
+            "difficulty": "easy",
+            "lesson": "Two triangles are congruent if their corresponding sides and corresponding angles are equal. In congruent triangles, the vertices are matched in a specific order. This matching is called correspondence. For example, if $\\triangle ABC \\cong \\triangle PQR$, then side $AB$ corresponds to $PQ$, and $\\angle A$ corresponds to $\\angle P$.",
+            "real_example": " In $\\triangle ABC$ and $\\triangle DEF$, if all sides and angles match, we write $\\triangle ABC \\cong \\triangle DEF$.",
+            "key_points": [
+                "Corresponding parts are equal (CPCT)",
+                "Order of vertices matters",
+                "Six matching elements (3 sides, 3 angles)"
+            ],
+            "source_section": "Section 10.2"
+        },
+        {
+            "concept_name": "SSS Congruence Criterion",
+            "difficulty": "medium",
+            "lesson": "The Side-Side-Side (SSS) criterion states that if three sides of one triangle are equal to the three corresponding sides of another triangle, then the two triangles are congruent. You do not need to check the angles if all three sides are proven equal; the angles will automatically be equal.",
+            "real_example": "If $\\triangle ABC$ has sides 3cm, 4cm, 5cm and $\\triangle XYZ$ also has sides 3cm, 4cm, 5cm, then $\\triangle ABC \\cong \\triangle XYZ$.",
+            "key_points": [
+                "Only side lengths are compared",
+                "Three pairs of equal sides",
+                "Ensures identical shape and size"
+            ],
+            "source_section": "Section 10.3"
+        },
+        {
+            "concept_name": "SAS Congruence Criterion",
+            "difficulty": "medium",
+            "lesson": "The Side-Angle-Side (SAS) criterion states that if two sides and the included angle (the angle between them) of one triangle are equal to the corresponding two sides and the included angle of another triangle, the triangles are congruent. It is crucial that the angle is the 'included' one.",
+            "real_example": " If $AB = DE$, $AC = DF$, and $\\angle A = \\angle D$, then the triangles are congruent.",
+            "key_points": [
+                "Two sides and the angle between them",
+                "The angle must be 'included'",
+                "Sufficient to prove total congruence"
+            ],
+            "source_section": "Section 10.4"
+        },
+        {
+            "concept_name": "ASA Congruence Criterion",
+            "difficulty": "medium",
+            "lesson": "The Angle-Side-Angle (ASA) criterion states that if two angles and the included side of one triangle are equal to the corresponding two angles and the included side of another triangle, the triangles are congruent. Similar to SAS, the side must be the one connecting the two angles.",
+            "real_example": "In $\\triangle PQR$ and $\\triangle XYZ$, if $\\angle P = \\angle X$, $\\angle Q = \\angle Y$, and side $PQ = XY$, the triangles are congruent.",
+            "key_points": [
+                "Two angles and the side between them",
+                "The side must be 'included'",
+                "Related to AAS (Angle-Angle-Side) logic"
+            ],
+            "source_section": "Section 10.5"
+        },
+        {
+            "concept_name": "RHS Congruence Criterion",
+            "difficulty": "hard",
+            "lesson": "The Right angle-Hypotenuse-Side (RHS) criterion is specific to right-angled triangles. It states that if the hypotenuse and one side of a right-angled triangle are equal to the hypotenuse and one side of another right-angled triangle, then the triangles are congruent.",
+            "real_example": " Two triangles with a $90^{\\circ}$ angle, both having a 10cm hypotenuse and a 6cm base, are congruent.",
+            "key_points": [
+                "Only for right-angled triangles",
+                "Requires equal hypotenuse",
+                "Requires one other equal side"
+            ],
+            "source_section": "Section 10.6"
+        },
+        {
+            "concept_name": "CPCT (Corresponding Parts of Congruent Triangles)",
+            "difficulty": "medium",
+            "lesson": "CPCT is a powerful tool used after proving two triangles are congruent. It states that once congruence is established, every remaining corresponding part (side or angle) is also equal. It is often used in geometric proofs to show that specific segments or angles are equal.",
+            "real_example": "If we prove $\\triangle ABC \\cong \\triangle DEF$ using SSS, we can then say $\\angle B = \\angle E$ because of CPCT.",
+            "key_points": [
+                "Used after proving congruence",
+                "Applies to all 6 parts of the triangle",
+                "Standard abbreviation in proofs"
+            ],
+            "source_section": "Summary Section"
+        },
+        {
+            "concept_name": "Applications of Congruence",
+            "difficulty": "hard",
+            "lesson": "Congruence is used in architecture, engineering, and manufacturing to ensure parts are interchangeable and structures are symmetrical. It helps in creating stable trusses for bridges and ensuring that mass-produced items (like car doors) fit perfectly every time. It is the foundation of geometric design.",
+            "real_example": "The identical triangular sections of a bridge truss are designed using congruence to distribute weight evenly.",
+            "key_points": [
+                "Ensures symmetry",
+                "Vital for mass production",
+                "Used in structural stability"
+            ],
+            "source_section": "Applications Section"
+        }
+    ]
+}

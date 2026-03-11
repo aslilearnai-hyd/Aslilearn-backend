@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter: Exploring the Investigative World of Science",
+  "generated_at": "2026-03-06T00:05:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is scientific investigation?",
+      "answer": "Scientific investigation is the process of asking questions, conducting experiments, and analyzing results to understand natural phenomena.",
+      "key_concepts": ["scientific investigation"],
+      "marks": 2,
+      "source_section": "Scientific Investigation"
+    },
+    {
+      "question_number": 2,
+      "question": "What is an observation in science?",
+      "answer": "An observation is the careful noting and recording of information using the senses or instruments.",
+      "key_concepts": ["observation"],
+      "marks": 2,
+      "source_section": "Scientific Observation"
+    },
+    {
+      "question_number": 3,
+      "question": "Define hypothesis.",
+      "answer": "A hypothesis is a possible explanation or prediction that can be tested through experiments.",
+      "key_concepts": ["hypothesis"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 4,
+      "question": "What is an experiment?",
+      "answer": "An experiment is a scientific procedure carried out to test a hypothesis.",
+      "key_concepts": ["experiment"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 5,
+      "question": "What is meant by inference in science?",
+      "answer": "Inference is a logical explanation based on observations and prior knowledge.",
+      "key_concepts": ["inference"],
+      "marks": 2,
+      "source_section": "Observation and Inference"
+    },
+    {
+      "question_number": 6,
+      "question": "Why are observations important in science?",
+      "answer": "Observations help scientists gather accurate information about natural phenomena.",
+      "key_concepts": ["scientific observation"],
+      "marks": 2,
+      "source_section": "Scientific Observation"
+    },
+    {
+      "question_number": 7,
+      "question": "Name one tool used in scientific investigations.",
+      "answer": "A thermometer is one tool used in scientific investigations.",
+      "key_concepts": ["scientific tools"],
+      "marks": 1,
+      "source_section": "Scientific Tools"
+    },
+    {
+      "question_number": 8,
+      "question": "What is data in an experiment?",
+      "answer": "Data is the information collected during an experiment or observation.",
+      "key_concepts": ["data collection"],
+      "marks": 2,
+      "source_section": "Experiments"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the scientific method?",
+      "answer": "The scientific method is a step-by-step process used to investigate scientific questions.",
+      "key_concepts": ["scientific method"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 10,
+      "question": "What is curiosity in science?",
+      "answer": "Curiosity is the desire to learn and ask questions about the natural world.",
+      "key_concepts": ["curiosity"],
+      "marks": 2,
+      "source_section": "Nature of Science"
+    },
+    {
+      "question_number": 11,
+      "question": "Why do scientists repeat experiments?",
+      "answer": "Scientists repeat experiments to confirm results and ensure accuracy.",
+      "key_concepts": ["experiments"],
+      "marks": 2,
+      "source_section": "Experiments"
+    },
+    {
+      "question_number": 12,
+      "question": "What is a conclusion in an experiment?",
+      "answer": "A conclusion is the final explanation or result drawn from an experiment.",
+      "key_concepts": ["conclusion"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 13,
+      "question": "Give one example of observation in daily life.",
+      "answer": "Observing that ice melts when left in sunlight is an example of observation.",
+      "key_concepts": ["observation"],
+      "marks": 2,
+      "source_section": "Daily Observations"
+    },
+    {
+      "question_number": 14,
+      "question": "What is meant by recording observations?",
+      "answer": "Recording observations means writing down or documenting the results of an experiment.",
+      "key_concepts": ["recording data"],
+      "marks": 2,
+      "source_section": "Data Recording"
+    },
+    {
+      "question_number": 15,
+      "question": "What role do questions play in scientific investigation?",
+      "answer": "Questions help scientists identify problems and guide investigations.",
+      "key_concepts": ["scientific questions"],
+      "marks": 2,
+      "source_section": "Scientific Inquiry"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the first step of the scientific method?",
+      "answer": "The first step is asking a scientific question or identifying a problem.",
+      "key_concepts": ["scientific method"],
+      "marks": 1,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 17,
+      "question": "Why are experiments conducted under controlled conditions?",
+      "answer": "Controlled conditions help ensure that results are accurate and reliable.",
+      "key_concepts": ["controlled experiment"],
+      "marks": 2,
+      "source_section": "Experiments"
+    },
+    {
+      "question_number": 18,
+      "question": "What is meant by prediction in science?",
+      "answer": "Prediction is a statement about what might happen in an experiment based on knowledge or observation.",
+      "key_concepts": ["prediction"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 19,
+      "question": "Name one characteristic of a good scientific experiment.",
+      "answer": "A good experiment should be repeatable and give reliable results.",
+      "key_concepts": ["experiment design"],
+      "marks": 2,
+      "source_section": "Experiments"
+    },
+    {
+      "question_number": 20,
+      "question": "Why do scientists use measuring instruments?",
+      "answer": "Measuring instruments help scientists obtain accurate and precise data.",
+      "key_concepts": ["scientific instruments"],
+      "marks": 2,
+      "source_section": "Scientific Tools"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the difference between observation and inference?",
+      "answer": "Observation is what we see or measure, while inference is the explanation based on those observations.",
+      "key_concepts": ["observation", "inference"],
+      "marks": 2,
+      "source_section": "Observation and Inference"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the purpose of analyzing experimental data?",
+      "answer": "Analyzing data helps scientists understand patterns and draw conclusions.",
+      "key_concepts": ["data analysis"],
+      "marks": 2,
+      "source_section": "Scientific Method"
+    },
+    {
+      "question_number": 23,
+      "question": "Give one example of a simple scientific investigation.",
+      "answer": "Investigating whether plants grow faster in sunlight than in shade.",
+      "key_concepts": ["scientific investigation"],
+      "marks": 2,
+      "source_section": "Examples of Investigation"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is communication important in science?",
+      "answer": "Scientists share results so others can verify and learn from the findings.",
+      "key_concepts": ["scientific communication"],
+      "marks": 2,
+      "source_section": "Scientific Process"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the role of creativity in scientific investigations?",
+      "answer": "Creativity helps scientists design experiments and develop new ideas for solving problems.",
+      "key_concepts": ["scientific creativity"],
+      "marks": 2,
+      "source_section": "Nature of Science"
+    }
+  ]
+}

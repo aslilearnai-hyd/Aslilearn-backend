@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Applications of Trigonometry",
+    "difficulty_level": "Hard",
+    "generated_at": "2026-02-28T07:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the observer is 10 m away from the base, the height of the tower is?",
+            "options": {
+                "A": "5 m",
+                "B": "10 m",
+                "C": "15 m",
+                "D": "20 m"
+            },
+            "correct_answer": "B",
+            "explanation": "tan 45° = height / distance = 1 ⇒ height = 10 m.",
+            "difficulty": "hard",
+            "source_section": "Heights and Distances"
+        },
+        {
+            "question_number": 2,
+            "question": "Angle of depression is measured from the?",
+            "options": {
+                "A": "Vertical line",
+                "B": "Ground",
+                "C": "Horizontal line",
+                "D": "Object"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle of depression is measured from the horizontal.",
+            "difficulty": "hard",
+            "source_section": "Angles of Depression"
+        },
+        {
+            "question_number": 3,
+            "question": "If the angle of elevation of a cliff is 30° and the distance of the observer from its base is 20 m, the height of the cliff is?",
+            "options": {
+                "A": "10 m",
+                "B": "20/√3 m",
+                "C": "20√3 m",
+                "D": "40 m"
+            },
+            "correct_answer": "B",
+            "explanation": "tan 30° = h/20 ⇒ h = 20/√3.",
+            "difficulty": "hard",
+            "source_section": "Numerical Applications"
+        },
+        {
+            "question_number": 4,
+            "question": "Which trigonometric ratio is most commonly used in height and distance problems?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ directly relates height and distance.",
+            "difficulty": "hard",
+            "source_section": "Concepts"
+        },
+        {
+            "question_number": 5,
+            "question": "The line joining the observer’s eye and the top of the object is called?",
+            "options": {
+                "A": "Base",
+                "B": "Height",
+                "C": "Line of sight",
+                "D": "Horizontal line"
+            },
+            "correct_answer": "C",
+            "explanation": "This line is known as the line of sight.",
+            "difficulty": "hard",
+            "source_section": "Definitions"
+        },
+        {
+            "question_number": 6,
+            "question": "If the angle of depression of an object from the top of a tower is 60°, then the angle of elevation of the top of the tower from the object is?",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "C",
+            "explanation": "Angles of elevation and depression are equal.",
+            "difficulty": "hard",
+            "source_section": "Angle Properties"
+        },
+        {
+            "question_number": 7,
+            "question": "In height and distance problems, the horizontal distance is considered as which side of the triangle?",
+            "options": {
+                "A": "Opposite",
+                "B": "Hypotenuse",
+                "C": "Adjacent",
+                "D": "Perpendicular"
+            },
+            "correct_answer": "C",
+            "explanation": "Ground distance is adjacent to the angle.",
+            "difficulty": "hard",
+            "source_section": "Triangle Representation"
+        },
+        {
+            "question_number": 8,
+            "question": "The vertical height of an object represents which side of the right-angled triangle?",
+            "options": {
+                "A": "Adjacent",
+                "B": "Opposite",
+                "C": "Hypotenuse",
+                "D": "Base"
+            },
+            "correct_answer": "B",
+            "explanation": "Height is opposite to the angle of elevation.",
+            "difficulty": "hard",
+            "source_section": "Triangle Representation"
+        },
+        {
+            "question_number": 9,
+            "question": "If tan θ = height / distance, then θ represents?",
+            "options": {
+                "A": "Right angle",
+                "B": "Angle of depression",
+                "C": "Angle of elevation",
+                "D": "Obtuse angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle used in height problems is angle of elevation.",
+            "difficulty": "hard",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 10,
+            "question": "Which triangle is always formed in height and distance problems?",
+            "options": {
+                "A": "Acute triangle",
+                "B": "Isosceles triangle",
+                "C": "Right-angled triangle",
+                "D": "Equilateral triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Height problems are represented using right-angled triangles.",
+            "difficulty": "hard",
+            "source_section": "Representation"
+        },
+        {
+            "question_number": 11,
+            "question": "If the angle of elevation is 0°, the height of the object is?",
+            "options": {
+                "A": "Maximum",
+                "B": "Equal to distance",
+                "C": "Zero",
+                "D": "Infinite"
+            },
+            "correct_answer": "C",
+            "explanation": "tan 0° = 0 ⇒ height = 0.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 12,
+            "question": "Which trigonometric ratio relates height and hypotenuse?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "A",
+            "explanation": "sin θ = height / hypotenuse.",
+            "difficulty": "hard",
+            "source_section": "Ratio Selection"
+        },
+        {
+            "question_number": 13,
+            "question": "Which ratio relates base and hypotenuse?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "cosec θ"
+            },
+            "correct_answer": "B",
+            "explanation": "cos θ = base / hypotenuse.",
+            "difficulty": "hard",
+            "source_section": "Ratio Selection"
+        },
+        {
+            "question_number": 14,
+            "question": "The angle of elevation is always?",
+            "options": {
+                "A": "Obtuse",
+                "B": "Right",
+                "C": "Acute",
+                "D": "Straight"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle of elevation is always acute.",
+            "difficulty": "hard",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 15,
+            "question": "If the height of a pole is equal to the distance of the observer from the pole, the angle of elevation is?",
+            "options": {
+                "A": "30°",
+                "B": "45°",
+                "C": "60°",
+                "D": "90°"
+            },
+            "correct_answer": "B",
+            "explanation": "tan 45° = 1 ⇒ height = distance.",
+            "difficulty": "hard",
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 16,
+            "question": "Which assumption is generally made in height and distance problems?",
+            "options": {
+                "A": "Earth is curved",
+                "B": "Object is horizontal",
+                "C": "Ground is level",
+                "D": "Observer is tall"
+            },
+            "correct_answer": "C",
+            "explanation": "Ground is assumed to be level.",
+            "difficulty": "hard",
+            "source_section": "Assumptions"
+        },
+        {
+            "question_number": 17,
+            "question": "The line of sight forms which side of the triangle?",
+            "options": {
+                "A": "Opposite",
+                "B": "Adjacent",
+                "C": "Hypotenuse",
+                "D": "Base"
+            },
+            "correct_answer": "C",
+            "explanation": "Line of sight is the hypotenuse.",
+            "difficulty": "hard",
+            "source_section": "Triangle Representation"
+        },
+        {
+            "question_number": 18,
+            "question": "If the angle of elevation increases, the height of the object (for same distance) will?",
+            "options": {
+                "A": "Decrease",
+                "B": "Remain same",
+                "C": "Increase",
+                "D": "Become zero"
+            },
+            "correct_answer": "C",
+            "explanation": "tan θ increases with θ.",
+            "difficulty": "hard",
+            "source_section": "Concept Application"
+        },
+        {
+            "question_number": 19,
+            "question": "Angle of depression and angle of elevation are related because they are?",
+            "options": {
+                "A": "Vertically opposite",
+                "B": "Alternate interior",
+                "C": "Corresponding",
+                "D": "Equal angles"
+            },
+            "correct_answer": "D",
+            "explanation": "They are equal in measure.",
+            "difficulty": "hard",
+            "source_section": "Angle Properties"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following is NOT required to find height of an object?",
+            "options": {
+                "A": "Distance from object",
+                "B": "Angle of elevation",
+                "C": "Trigonometric ratio",
+                "D": "Area of object"
+            },
+            "correct_answer": "D",
+            "explanation": "Area is irrelevant in height problems.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 21,
+            "question": "If tan θ is very large, θ is close to?",
+            "options": {
+                "A": "0°",
+                "B": "30°",
+                "C": "45°",
+                "D": "90°"
+            },
+            "correct_answer": "D",
+            "explanation": "tan θ → ∞ as θ → 90°.",
+            "difficulty": "hard",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 22,
+            "question": "Which angle is taken at the observer’s eye?",
+            "options": {
+                "A": "Angle at base",
+                "B": "Angle at object",
+                "C": "Angle of elevation/depression",
+                "D": "Right angle"
+            },
+            "correct_answer": "C",
+            "explanation": "Angle is measured at observer’s eye.",
+            "difficulty": "hard",
+            "source_section": "Representation"
+        },
+        {
+            "question_number": 23,
+            "question": "If sin θ is used in a height problem, which two quantities are known?",
+            "options": {
+                "A": "Height and distance",
+                "B": "Base and hypotenuse",
+                "C": "Height and hypotenuse",
+                "D": "Distance and hypotenuse"
+            },
+            "correct_answer": "C",
+            "explanation": "sin θ = height / hypotenuse.",
+            "difficulty": "hard",
+            "source_section": "Ratio Selection"
+        },
+        {
+            "question_number": 24,
+            "question": "Which trigonometric ratio is least used in this chapter?",
+            "options": {
+                "A": "sin θ",
+                "B": "cos θ",
+                "C": "tan θ",
+                "D": "sec θ"
+            },
+            "correct_answer": "D",
+            "explanation": "sec θ is rarely used.",
+            "difficulty": "hard",
+            "source_section": "Concept Check"
+        },
+        {
+            "question_number": 25,
+            "question": "Height and distance problems are applications of?",
+            "options": {
+                "A": "Algebra",
+                "B": "Geometry",
+                "C": "Trigonometry",
+                "D": "Statistics"
+            },
+            "correct_answer": "C",
+            "explanation": "These problems are applications of trigonometry.",
+            "difficulty": "hard",
+            "source_section": "Summary"
+        }
+    ]
+}

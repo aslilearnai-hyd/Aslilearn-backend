@@ -1,0 +1,147 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "A Funny Man",
+  "lesson_level": "Easy",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Understand the whimsical and mysterious nature of the 'Funny Man' (Mr. Nobody)",
+    "Identify the cause-and-effect of common household mischief",
+    "Learn the structure of a humorous poem and its rhyming pattern",
+    "Recognize the use of personification in portraying an invisible character",
+    "Develop recitation skills with proper rhythm and expression",
+    "Practice using common household vocabulary and action verbs"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Who is Mr. Nobody?",
+      "topics_covered": [
+        "Introduction to the poem and its title",
+        "The concept of an invisible 'mischief-maker'",
+        "Initial impressions of the 'Funny Man'"
+      ],
+      "teaching_strategy": [
+        "Class discussion: 'Who gets blamed when things go missing at home?'",
+        "Introduce the character of Mr. Nobody as a quiet, invisible man",
+        "Predictive brainstorming: What kind of funny things does he do?"
+      ],
+      "student_activities": [
+        "Share funny incidents of broken things or misplaced items at home",
+        "Draw what they think 'Mr. Nobody' might look like if he were visible"
+      ],
+      "assessment": ["Oral participation", "Initial drawing"]
+    },
+    {
+      "period": 2,
+      "title": "Poem Recitation and Flow",
+      "topics_covered": [
+        "Reading the poem with the correct rhythm",
+        "Understanding the literal meaning of each stanza",
+        "Vocabulary: 'Quiet', 'Mischief', 'Agreed'"
+      ],
+      "teaching_strategy": [
+        "Model reading by the teacher to show the 'nursery rhyme' beat",
+        "Choral reading (boys read one stanza, girls read the next)",
+        "Explaining the simple narrative of the poem"
+      ],
+      "student_activities": [
+        "Read the poem aloud in pairs",
+        "Highlight all the action verbs (cracked, broke, mislaid)"
+      ],
+      "assessment": ["Recitation rhythm", "Verb identification"]
+    },
+    {
+      "period": 3,
+      "title": "The List of Mischief",
+      "topics_covered": [
+        "Identifying specific household accidents mentioned",
+        "Linking 'Mr. Nobody' to broken plates and scattered pins",
+        "Understanding that everyone 'blames' this funny man"
+      ],
+      "teaching_strategy": [
+        "Teacher-led discussion on the 'cracked plates' and 'torn books'",
+        "Use real objects (a plate, a book, a pin) to illustrate the poem",
+        "Explain the phrase 'He does the mischief that is done'"
+      ],
+      "student_activities": [
+        "List all the 'funny' crimes committed by Mr. Nobody in the poem",
+        "Match the object to the damage (e.g., Plate -> Cracked)"
+      ],
+      "assessment": ["Matching worksheet", "Short oral answers"]
+    },
+    {
+      "period": 4,
+      "title": "Rhyme and Rhythm",
+      "topics_covered": [
+        "Identifying rhyming pairs (e.g., mouse/house, agree/he)",
+        "Simple poetic structure",
+        "The repetition of the 'Nobody' theme"
+      ],
+      "teaching_strategy": [
+        "Highlighting rhyming words on the board using different colors",
+        "Clapping along to the rhythm of the stanzas",
+        "Introduction to the 'AABB' or 'ABCB' rhyme scheme"
+      ],
+      "student_activities": [
+        "Complete a rhyming word chain",
+        "Find the rhyming partner for words hidden in the classroom"
+      ],
+      "assessment": ["Rhyme worksheet", "Rhythm clapping activity"]
+    },
+    {
+      "period": 5,
+      "title": "The Moral: Taking Responsibility",
+      "topics_covered": [
+        "The humor behind blaming someone else",
+        "The difference between 'Mr. Nobody' and ourselves",
+        "Writing simple sentences about truthfulness"
+      ],
+      "teaching_strategy": [
+        "Discussion: 'Is there really a Mr. Nobody?'",
+        "Exploring why the poet calls him 'funny' and 'quiet'",
+        "Relating the poem to personal accountability"
+      ],
+      "student_activities": [
+        "Write a 3-line 'confession' for a time they accidentally broke something",
+        "Share why it's funny that we all agree 'Mr. Nobody' did it"
+      ],
+      "assessment": ["Short paragraph/sentence writing", "Class discussion"]
+    },
+    {
+      "period": 6,
+      "title": "Fun and Revision",
+      "topics_covered": [
+        "Vocabulary review",
+        "Final performance of the poem",
+        "Creative expression"
+      ],
+      "teaching_strategy": [
+        "Vocabulary Bingo using words from the poem",
+        "Group recitation competition",
+        "Final quiz on the 'crimes' of Mr. Nobody"
+      ],
+      "student_activities": [
+        "Play Vocabulary Bingo",
+        "Perform the poem with funny gestures for each 'mischief'"
+      ],
+      "assessment": ["Bingo participation", "Short quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Props: A cracked plate (safe), a torn paper, a pin, a boot",
+    "Rhyming word flashcards",
+    "Audio recording of the poem",
+    "Vocabulary Bingo cards"
+  ],
+  "evaluation_methods": [
+    "Recitation with gestures",
+    "Rhyming pair identification",
+    "Comprehension of cause-effect (Mischief -> Object)",
+    "Vocabulary worksheet",
+    "Participation in discussions"
+  ],
+  "teacher_tip": "Keep the energy light and humorous! When students list mischief, ask them with a wink, 'Was it Mr. Nobody, or was it you?' This helps them connect with the irony and wit of the poem."
+}

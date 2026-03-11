@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T21:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If all herbivores in an ecosystem suddenly disappeared, what would most likely happen first?",
+      "options": {
+        "A": "Plants would decrease rapidly",
+        "B": "Carnivores would increase rapidly",
+        "C": "Carnivores would eventually decline",
+        "D": "Decomposers would disappear"
+      },
+      "correct_answer": "C",
+      "explanation": "Carnivores depend on herbivores for food, so their population would eventually decline.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 2,
+      "question": "Which ecological process directly recycles nutrients back into the soil?",
+      "options": {
+        "A": "Photosynthesis",
+        "B": "Decomposition",
+        "C": "Respiration",
+        "D": "Predation"
+      },
+      "correct_answer": "B",
+      "explanation": "Decomposers break down dead organisms and return nutrients to the soil.",
+      "difficulty": "hard",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 3,
+      "question": "If pollution reduces the oxygen level in a pond, which organisms will be affected first?",
+      "options": {
+        "A": "Aquatic animals",
+        "B": "Aquatic plants",
+        "C": "Decomposers",
+        "D": "Soil organisms"
+      },
+      "correct_answer": "A",
+      "explanation": "Fish and other aquatic animals require dissolved oxygen for respiration.",
+      "difficulty": "hard",
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 4,
+      "question": "Which ecological interaction occurs when two species compete for the same limited resource?",
+      "options": {
+        "A": "Mutualism",
+        "B": "Competition",
+        "C": "Commensalism",
+        "D": "Parasitism"
+      },
+      "correct_answer": "B",
+      "explanation": "Competition occurs when organisms require the same limited resources.",
+      "difficulty": "hard",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following best explains why food webs are more stable than food chains?",
+      "options": {
+        "A": "They have fewer organisms",
+        "B": "They contain only producers",
+        "C": "They provide alternative feeding pathways",
+        "D": "They involve only herbivores"
+      },
+      "correct_answer": "C",
+      "explanation": "Food webs allow organisms to switch food sources if one disappears.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 6,
+      "question": "Which factor most strongly affects the distribution of organisms in a habitat?",
+      "options": {
+        "A": "Color of soil",
+        "B": "Availability of food and water",
+        "C": "Size of organisms",
+        "D": "Shape of leaves"
+      },
+      "correct_answer": "B",
+      "explanation": "Organisms survive where essential resources like food and water are available.",
+      "difficulty": "hard",
+      "source_section": "Section 12.1"
+    },
+    {
+      "question_number": 7,
+      "question": "Which trophic level contains organisms that feed directly on producers?",
+      "options": {
+        "A": "Primary consumers",
+        "B": "Secondary consumers",
+        "C": "Tertiary consumers",
+        "D": "Decomposers"
+      },
+      "correct_answer": "A",
+      "explanation": "Primary consumers are herbivores that feed directly on plants.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following would most likely increase biodiversity in an ecosystem?",
+      "options": {
+        "A": "Deforestation",
+        "B": "Habitat conservation",
+        "C": "Overfishing",
+        "D": "Industrial pollution"
+      },
+      "correct_answer": "B",
+      "explanation": "Conserving habitats allows more species to survive.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 9,
+      "question": "What would most likely happen if decomposers stopped functioning in a forest ecosystem?",
+      "options": {
+        "A": "Dead plants and animals would accumulate",
+        "B": "Producers would disappear immediately",
+        "C": "Animals would grow larger",
+        "D": "Photosynthesis would stop"
+      },
+      "correct_answer": "A",
+      "explanation": "Without decomposers, organic waste would not break down.",
+      "difficulty": "hard",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 10,
+      "question": "Which ecological interaction is seen between a tick and a dog?",
+      "options": {
+        "A": "Mutualism",
+        "B": "Commensalism",
+        "C": "Parasitism",
+        "D": "Competition"
+      },
+      "correct_answer": "C",
+      "explanation": "Ticks benefit by feeding on the dog's blood while harming it.",
+      "difficulty": "hard",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following organisms would most likely be a tertiary consumer?",
+      "options": {
+        "A": "Grasshopper",
+        "B": "Rabbit",
+        "C": "Snake",
+        "D": "Eagle"
+      },
+      "correct_answer": "D",
+      "explanation": "Tertiary consumers feed on secondary consumers.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 12,
+      "question": "Why are producers essential for the survival of ecosystems?",
+      "options": {
+        "A": "They control predators",
+        "B": "They recycle nutrients",
+        "C": "They convert solar energy into food",
+        "D": "They decompose organic matter"
+      },
+      "correct_answer": "C",
+      "explanation": "Producers convert sunlight into energy through photosynthesis.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 13,
+      "question": "Which environmental issue most directly threatens biodiversity?",
+      "options": {
+        "A": "Habitat destruction",
+        "B": "Rainfall",
+        "C": "Photosynthesis",
+        "D": "Pollination"
+      },
+      "correct_answer": "A",
+      "explanation": "Habitat destruction eliminates living spaces for species.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 14,
+      "question": "Which organism is most likely to be both a consumer and a predator?",
+      "options": {
+        "A": "Grass",
+        "B": "Rabbit",
+        "C": "Lion",
+        "D": "Fungus"
+      },
+      "correct_answer": "C",
+      "explanation": "Lions hunt other animals for food.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 15,
+      "question": "Which factor would most likely reduce ecosystem stability?",
+      "options": {
+        "A": "High biodiversity",
+        "B": "Balanced food chains",
+        "C": "Habitat destruction",
+        "D": "Natural nutrient cycles"
+      },
+      "correct_answer": "C",
+      "explanation": "Habitat destruction disrupts ecological interactions.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the main role of mangrove forests in coastal ecosystems?",
+      "options": {
+        "A": "Increasing rainfall",
+        "B": "Protecting coastlines from erosion",
+        "C": "Producing minerals",
+        "D": "Reducing sunlight"
+      },
+      "correct_answer": "B",
+      "explanation": "Mangroves protect coastlines from waves and storms.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 17,
+      "question": "Which ecosystem would likely have the highest biodiversity?",
+      "options": {
+        "A": "Desert",
+        "B": "Forest",
+        "C": "Arctic tundra",
+        "D": "Mountain peak"
+      },
+      "correct_answer": "B",
+      "explanation": "Forests support a wide variety of species.",
+      "difficulty": "hard",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following best explains ecosystem balance?",
+      "options": {
+        "A": "Stable interactions among organisms",
+        "B": "Absence of predators",
+        "C": "Unlimited resources",
+        "D": "No competition"
+      },
+      "correct_answer": "A",
+      "explanation": "Balanced ecosystems depend on stable interactions among species.",
+      "difficulty": "hard",
+      "source_section": "Section 12.7"
+    },
+    {
+      "question_number": 19,
+      "question": "Which factor would most likely increase population competition?",
+      "options": {
+        "A": "Abundant food",
+        "B": "Limited resources",
+        "C": "Large habitat",
+        "D": "High rainfall"
+      },
+      "correct_answer": "B",
+      "explanation": "Competition occurs when resources are limited.",
+      "difficulty": "hard",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 20,
+      "question": "Which organism plays a key role in maintaining nutrient cycles?",
+      "options": {
+        "A": "Producers",
+        "B": "Consumers",
+        "C": "Decomposers",
+        "D": "Predators"
+      },
+      "correct_answer": "C",
+      "explanation": "Decomposers recycle nutrients in ecosystems.",
+      "difficulty": "hard",
+      "source_section": "Section 12.6"
+    },
+    {
+      "question_number": 21,
+      "question": "Which ecological process allows plants to produce oxygen?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Fermentation",
+        "D": "Decomposition"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis releases oxygen as a by-product.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 22,
+      "question": "Which type of organism directly consumes plant matter?",
+      "options": {
+        "A": "Herbivore",
+        "B": "Carnivore",
+        "C": "Omnivore",
+        "D": "Decomposer"
+      },
+      "correct_answer": "A",
+      "explanation": "Herbivores feed directly on plants.",
+      "difficulty": "hard",
+      "source_section": "Section 12.5"
+    },
+    {
+      "question_number": 23,
+      "question": "Which factor would most likely increase ecosystem resilience?",
+      "options": {
+        "A": "High biodiversity",
+        "B": "Habitat destruction",
+        "C": "Pollution",
+        "D": "Overhunting"
+      },
+      "correct_answer": "A",
+      "explanation": "Greater biodiversity improves ecosystem resilience.",
+      "difficulty": "hard",
+      "source_section": "Section 12.8"
+    },
+    {
+      "question_number": 24,
+      "question": "Which action best supports ecosystem conservation?",
+      "options": {
+        "A": "Deforestation",
+        "B": "Industrial pollution",
+        "C": "Wildlife protection",
+        "D": "Overfishing"
+      },
+      "correct_answer": "C",
+      "explanation": "Protecting wildlife helps maintain ecological balance.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    },
+    {
+      "question_number": 25,
+      "question": "Why are ecosystems important for human survival?",
+      "options": {
+        "A": "They increase pollution",
+        "B": "They provide essential resources",
+        "C": "They eliminate animals",
+        "D": "They reduce rainfall"
+      },
+      "correct_answer": "B",
+      "explanation": "Ecosystems provide food, water, oxygen, and climate regulation.",
+      "difficulty": "hard",
+      "source_section": "Section 12.9"
+    }
+  ]
+}

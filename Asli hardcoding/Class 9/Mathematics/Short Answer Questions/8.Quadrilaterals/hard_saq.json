@@ -1,0 +1,208 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 8: Quadrilaterals",
+    "generated_at": "2026-03-06T05:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Prove that the diagonals of a rhombus bisect each other at right angles and also bisect its angles.",
+            "answer": "Let ABCD be a rhombus with diagonals AC and BD intersecting at O. Using triangle congruence, ∆AOB ≅ ∆COD, ∆AOD ≅ ∆BOC, we get AO = CO, BO = DO, and diagonals perpendicular, also bisect angles at vertices.",
+            "key_concepts": ["rhombus", "diagonals", "angle bisector", "perpendicular"],
+            "marks": 5,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove that the diagonals of a square are equal, perpendicular, and bisect the angles.",
+            "answer": "Since square is both a rhombus and rectangle, combine properties: diagonals equal (rectangle), perpendicular and bisect angles (rhombus).",
+            "key_concepts": ["square", "diagonals", "perpendicular", "angle bisector"],
+            "marks": 5,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that in a parallelogram, the sum of the squares of the sides equals the sum of the squares of the diagonals.",
+            "answer": "Let sides be AB = CD = a and AD = BC = b, diagonals AC = p and BD = q. Using law of cosines in triangles formed by diagonals, p² + q² = 2(a² + b²).",
+            "key_concepts": ["parallelogram", "diagonals", "sides", "law of cosines"],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Prove that the midpoints of the sides of any quadrilateral form a parallelogram.",
+            "answer": "Join midpoints of quadrilateral ABCD, use midpoint theorem: opposite sides of new quadrilateral are parallel, forming a parallelogram.",
+            "key_concepts": ["midpoint theorem", "quadrilateral", "parallelogram"],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Prove that a quadrilateral is a parallelogram if its diagonals bisect each other.",
+            "answer": "Let ABCD have diagonals intersect at O. If AO = CO and BO = DO, use triangle congruence to show opposite sides equal and parallel; hence ABCD is a parallelogram.",
+            "key_concepts": ["parallelogram", "diagonals", "condition"],
+            "marks": 5,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Prove that a parallelogram is a rectangle if its diagonals are equal.",
+            "answer": "Let ABCD be parallelogram with AC = BD. Using congruence of triangles formed by diagonals, show that each angle = 90°, hence rectangle.",
+            "key_concepts": ["rectangle", "parallelogram", "diagonals", "congruence"],
+            "marks": 5,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Prove that a parallelogram is a rhombus if its diagonals are perpendicular.",
+            "answer": "Let ABCD be parallelogram with diagonals AC ⟂ BD. Use congruent triangles formed by diagonals to show all sides equal; hence rhombus.",
+            "key_concepts": ["rhombus", "parallelogram", "diagonals", "perpendicular"],
+            "marks": 5,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Prove that a square is a rectangle with all sides equal.",
+            "answer": "Square has all angles 90° (rectangle) and all sides equal (rhombus); hence square = rectangle + equal sides.",
+            "key_concepts": ["square", "rectangle", "definition"],
+            "marks": 4,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Prove that a square is a rhombus with right angles.",
+            "answer": "Square has all sides equal (rhombus) and all angles 90°, satisfying rhombus with right angles.",
+            "key_concepts": ["square", "rhombus", "definition"],
+            "marks": 4,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Prove that the diagonals of a kite are perpendicular.",
+            "answer": "Draw kite ABCD. Using congruent triangles formed by diagonals, show diagonals intersect at 90°.",
+            "key_concepts": ["kite", "diagonals", "perpendicular"],
+            "marks": 4,
+            "source_section": "Section 8.8"
+        },
+        {
+            "question_number": 11,
+            "question": "Prove that a quadrilateral is a parallelogram if one pair of opposite sides is equal and parallel.",
+            "answer": "Let AB || CD and AB = CD. Use triangle congruence to prove opposite sides parallel, hence quadrilateral is a parallelogram.",
+            "key_concepts": ["parallelogram", "opposite sides", "condition"],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that a quadrilateral is a parallelogram if its opposite angles are equal.",
+            "answer": "Let ∠A = ∠C and ∠B = ∠D. Draw diagonals and use congruence of triangles to prove opposite sides parallel, hence parallelogram.",
+            "key_concepts": ["parallelogram", "opposite angles", "condition"],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Prove that the sum of interior angles of a quadrilateral is 360° using triangles.",
+            "answer": "Divide quadrilateral into two triangles using a diagonal. Each triangle sum = 180°, total = 360°.",
+            "key_concepts": ["interior angles", "quadrilateral", "triangles"],
+            "marks": 3,
+            "source_section": "Section 8.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Prove that a trapezium's diagonals are generally not equal and do not bisect each other.",
+            "answer": "Construct trapezium ABCD with AB || CD. Show by measurement or coordinate method that AC ≠ BD and diagonals do not bisect each other.",
+            "key_concepts": ["trapezium", "diagonals", "properties"],
+            "marks": 3,
+            "source_section": "Section 8.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Prove that the sum of angles on the same side of a transversal in a parallelogram is 180°.",
+            "answer": "Using AB || CD, AD || BC, apply co-interior angle theorem to show ∠A + ∠D = 180° and ∠B + ∠C = 180°.",
+            "key_concepts": ["parallelogram", "angles", "transversal"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Prove that the diagonals of a rhombus bisect opposite angles.",
+            "answer": "Let diagonals AC and BD intersect at O. Use triangle congruence to show each diagonal divides vertex angles into two equal parts.",
+            "key_concepts": ["rhombus", "diagonals", "angles"],
+            "marks": 3,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Prove that the diagonals of a rectangle bisect each other.",
+            "answer": "Diagonals AC and BD intersect at O. Use congruence of triangles formed by diagonals to show AO = CO and BO = DO.",
+            "key_concepts": ["rectangle", "diagonals", "bisect"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that in a parallelogram, each diagonal divides it into two congruent triangles.",
+            "answer": "Triangles formed by a diagonal share a common base and height. Using congruence criteria, triangles are congruent.",
+            "key_concepts": ["parallelogram", "diagonal", "congruence"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Prove that opposite sides of a parallelogram are equal using triangles.",
+            "answer": "Use diagonals to form triangles; by congruence of triangles, opposite sides are shown equal.",
+            "key_concepts": ["parallelogram", "opposite sides", "triangles"],
+            "marks": 3,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Prove that a kite has one axis of symmetry along a diagonal.",
+            "answer": "Draw kite ABCD; show that diagonal joining unequal angles bisects kite into congruent triangles, forming axis of symmetry.",
+            "key_concepts": ["kite", "symmetry", "diagonal"],
+            "marks": 3,
+            "source_section": "Section 8.8"
+        },
+        {
+            "question_number": 21,
+            "question": "Prove that the sum of squares of sides of a parallelogram equals the sum of squares of its diagonals.",
+            "answer": "Using vectors or parallelogram law, if sides are a and b, diagonals p and q, then p² + q² = 2(a² + b²).",
+            "key_concepts": ["parallelogram", "sides", "diagonals"],
+            "marks": 4,
+            "source_section": "Section 8.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Prove that a rectangle is a parallelogram with equal diagonals.",
+            "answer": "Rectangle has right angles and opposite sides equal. Use Pythagoras theorem to show diagonals equal.",
+            "key_concepts": ["rectangle", "parallelogram", "diagonals"],
+            "marks": 3,
+            "source_section": "Section 8.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Prove that a rhombus is a parallelogram with perpendicular diagonals.",
+            "answer": "Rhombus has all sides equal and opposite sides parallel. Diagonals intersect at right angles using triangle congruence.",
+            "key_concepts": ["rhombus", "parallelogram", "diagonals"],
+            "marks": 3,
+            "source_section": "Section 8.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Prove that a square is both a rectangle and a rhombus.",
+            "answer": "Square has all sides equal and angles 90°; hence satisfies properties of rectangle and rhombus.",
+            "key_concepts": ["square", "rectangle", "rhombus"],
+            "marks": 3,
+            "source_section": "Section 8.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Prove that the midpoints of sides of any quadrilateral form a parallelogram using coordinate method.",
+            "answer": "Assign coordinates to vertices ABCD, find midpoints of sides, join them to form quadrilateral; calculate slopes to prove opposite sides parallel.",
+            "key_concepts": ["midpoints", "coordinate method", "parallelogram"],
+            "marks": 5,
+            "source_section": "Section 8.2"
+        }
+    ]
+}

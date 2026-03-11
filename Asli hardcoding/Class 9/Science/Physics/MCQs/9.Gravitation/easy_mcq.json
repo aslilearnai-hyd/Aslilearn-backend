@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 9: Gravitation",
+    "generated_at": "2026-03-06T14:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who discovered the universal law of gravitation?",
+            "options": {
+                "A": "Albert Einstein",
+                "B": "Isaac Newton",
+                "C": "Galileo",
+                "D": "Archimedes"
+            },
+            "correct_answer": "B",
+            "explanation": "Isaac Newton proposed the universal law of gravitation.",
+            "difficulty": "easy",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Gravitation is the force of attraction between:",
+            "options": {
+                "A": "Two magnets",
+                "B": "Two charged objects",
+                "C": "Any two masses",
+                "D": "Two liquids"
+            },
+            "correct_answer": "C",
+            "explanation": "Gravitation is the force of attraction between any two masses.",
+            "difficulty": "easy",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The SI unit of gravitational force is:",
+            "options": {
+                "A": "Pascal",
+                "B": "Newton",
+                "C": "Joule",
+                "D": "Watt"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravitational force is measured in Newtons.",
+            "difficulty": "easy",
+            "source_section": "Section 9.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Acceleration due to gravity near Earth's surface is approximately:",
+            "options": {
+                "A": "8.9 m/s²",
+                "B": "9.8 m/s²",
+                "C": "10.8 m/s²",
+                "D": "7.8 m/s²"
+            },
+            "correct_answer": "B",
+            "explanation": "The value of acceleration due to gravity is about 9.8 m/s².",
+            "difficulty": "easy",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Free fall means motion under:",
+            "options": {
+                "A": "Magnetic force",
+                "B": "Electric force",
+                "C": "Gravity alone",
+                "D": "Air pressure"
+            },
+            "correct_answer": "C",
+            "explanation": "Free fall occurs when gravity is the only force acting.",
+            "difficulty": "easy",
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "The formula for weight is:",
+            "options": {
+                "A": "W = m × g",
+                "B": "W = m / g",
+                "C": "W = g / m",
+                "D": "W = m + g"
+            },
+            "correct_answer": "A",
+            "explanation": "Weight is calculated by multiplying mass with acceleration due to gravity.",
+            "difficulty": "easy",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 7,
+            "question": "The SI unit of mass is:",
+            "options": {
+                "A": "Newton",
+                "B": "Kilogram",
+                "C": "Gram",
+                "D": "Meter"
+            },
+            "correct_answer": "B",
+            "explanation": "The SI unit of mass is kilogram (kg).",
+            "difficulty": "easy",
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Weight of an object on the Moon is about:",
+            "options": {
+                "A": "1/2 of Earth weight",
+                "B": "1/3 of Earth weight",
+                "C": "1/6 of Earth weight",
+                "D": "Equal to Earth weight"
+            },
+            "correct_answer": "C",
+            "explanation": "Gravity on the Moon is about one-sixth of Earth's gravity.",
+            "difficulty": "easy",
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Thrust is defined as:",
+            "options": {
+                "A": "Force parallel to surface",
+                "B": "Force perpendicular to surface",
+                "C": "Force along motion",
+                "D": "Force in vacuum"
+            },
+            "correct_answer": "B",
+            "explanation": "Thrust is the force acting perpendicular to a surface.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Pressure is defined as:",
+            "options": {
+                "A": "Force × Area",
+                "B": "Force / Area",
+                "C": "Area / Force",
+                "D": "Force + Area"
+            },
+            "correct_answer": "B",
+            "explanation": "Pressure equals force divided by area.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 11,
+            "question": "The SI unit of pressure is:",
+            "options": {
+                "A": "Newton",
+                "B": "Pascal",
+                "C": "Joule",
+                "D": "Watt"
+            },
+            "correct_answer": "B",
+            "explanation": "Pressure is measured in Pascals.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Buoyancy is:",
+            "options": {
+                "A": "Downward force of fluid",
+                "B": "Sideways force of fluid",
+                "C": "Upward force exerted by fluid",
+                "D": "Magnetic force"
+            },
+            "correct_answer": "C",
+            "explanation": "Buoyancy is the upward force exerted by fluid on objects.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Buoyant force is also called:",
+            "options": {
+                "A": "Downthrust",
+                "B": "Upthrust",
+                "C": "Side thrust",
+                "D": "Gravity"
+            },
+            "correct_answer": "B",
+            "explanation": "Buoyant force is also known as upthrust.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "An object floats when:",
+            "options": {
+                "A": "Weight > buoyant force",
+                "B": "Weight < buoyant force",
+                "C": "Weight = buoyant force",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "Floating occurs when buoyant force equals or exceeds weight.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "An object sinks when:",
+            "options": {
+                "A": "Buoyant force > weight",
+                "B": "Weight > buoyant force",
+                "C": "Weight = buoyant force",
+                "D": "Density is zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Objects sink when their weight exceeds buoyant force.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Archimedes' principle relates to:",
+            "options": {
+                "A": "Magnetism",
+                "B": "Electricity",
+                "C": "Buoyancy",
+                "D": "Heat"
+            },
+            "correct_answer": "C",
+            "explanation": "Archimedes' principle explains buoyant force.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 17,
+            "question": "According to Archimedes' principle, buoyant force equals:",
+            "options": {
+                "A": "Weight of object",
+                "B": "Weight of displaced fluid",
+                "C": "Mass of object",
+                "D": "Pressure of fluid"
+            },
+            "correct_answer": "B",
+            "explanation": "Buoyant force equals the weight of displaced fluid.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Hydrometer is used to measure:",
+            "options": {
+                "A": "Temperature",
+                "B": "Density of liquids",
+                "C": "Pressure",
+                "D": "Mass"
+            },
+            "correct_answer": "B",
+            "explanation": "Hydrometers measure density of liquids.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Lactometer is used to measure:",
+            "options": {
+                "A": "Milk purity",
+                "B": "Temperature",
+                "C": "Pressure",
+                "D": "Weight"
+            },
+            "correct_answer": "A",
+            "explanation": "Lactometers measure the purity of milk.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Large ships float because:",
+            "options": {
+                "A": "They are hollow",
+                "B": "They displace large volume of water",
+                "C": "They are made of steel",
+                "D": "They are light"
+            },
+            "correct_answer": "B",
+            "explanation": "Ships float because they displace enough water to create buoyant force.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Camels walk easily on sand due to:",
+            "options": {
+                "A": "Large feet area",
+                "B": "Small weight",
+                "C": "High speed",
+                "D": "Less gravity"
+            },
+            "correct_answer": "A",
+            "explanation": "Large feet reduce pressure on sand.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Sharp knives cut better because:",
+            "options": {
+                "A": "Less pressure",
+                "B": "More pressure",
+                "C": "More area",
+                "D": "Less force"
+            },
+            "correct_answer": "B",
+            "explanation": "Sharp edges reduce area and increase pressure.",
+            "difficulty": "easy",
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Submarines control buoyancy using:",
+            "options": {
+                "A": "Engines",
+                "B": "Ballast tanks",
+                "C": "Propellers",
+                "D": "Radar"
+            },
+            "correct_answer": "B",
+            "explanation": "Ballast tanks adjust density and buoyancy.",
+            "difficulty": "easy",
+            "source_section": "Section 9.6"
+        },
+        {
+            "question_number": 24,
+            "question": "The force that keeps planets in orbit is:",
+            "options": {
+                "A": "Magnetic force",
+                "B": "Gravitational force",
+                "C": "Electric force",
+                "D": "Nuclear force"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravitational force keeps planets in orbit.",
+            "difficulty": "easy",
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is correct about gravity?",
+            "options": {
+                "A": "It acts only on Earth",
+                "B": "It acts between all masses",
+                "C": "It acts only in liquids",
+                "D": "It acts only in air"
+            },
+            "correct_answer": "B",
+            "explanation": "Gravity acts between any two masses in the universe.",
+            "difficulty": "easy",
+            "source_section": "Section 9.1"
+        }
+    ]
+}

@@ -1,0 +1,373 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Proportional Reasoning – 2",
+  "generated_at": "2026-03-05T12:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following ratios are proportional?",
+      "options": {
+        "A": "4:6 and 8:12",
+        "B": "3:5 and 4:6",
+        "C": "7:9 and 8:11",
+        "D": "5:7 and 9:10"
+      },
+      "correct_answer": "A",
+      "explanation": "4×12 = 6×8 = 48, so they are proportional.",
+      "difficulty": "medium",
+      "source_section": "Section 3.1"
+    },
+    {
+      "question_number": 2,
+      "question": "On a map scale 1:6000000, what real distance does 3 cm represent?",
+      "options": {
+        "A": "90 km",
+        "B": "120 km",
+        "C": "150 km",
+        "D": "180 km"
+      },
+      "correct_answer": "D",
+      "explanation": "1 cm = 60 km, therefore 3 cm = 180 km.",
+      "difficulty": "medium",
+      "source_section": "Section 3.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Simplify the ratio 18:12:6.",
+      "options": {
+        "A": "3:2:1",
+        "B": "6:4:2",
+        "C": "9:6:3",
+        "D": "2:3:1"
+      },
+      "correct_answer": "A",
+      "explanation": "Divide each term by 6.",
+      "difficulty": "medium",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 4,
+      "question": "If the ratio of red:blue:white paint is 2:3:5 and total paint is 50 L, white paint is:",
+      "options": {
+        "A": "20 L",
+        "B": "25 L",
+        "C": "30 L",
+        "D": "35 L"
+      },
+      "correct_answer": "B",
+      "explanation": "White = (5/10)×50 = 25 L.",
+      "difficulty": "medium",
+      "source_section": "Section 3.3"
+    },
+    {
+      "question_number": 5,
+      "question": "Divide 150 in the ratio 2:3.",
+      "options": {
+        "A": "60 and 90",
+        "B": "50 and 100",
+        "C": "75 and 75",
+        "D": "40 and 110"
+      },
+      "correct_answer": "A",
+      "explanation": "Total ratio = 5 → shares = 60 and 90.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Divide 90 in the ratio 3:2:1.",
+      "options": {
+        "A": "30,40,20",
+        "B": "45,30,15",
+        "C": "50,25,15",
+        "D": "60,20,10"
+      },
+      "correct_answer": "B",
+      "explanation": "Sum = 6 → shares = 45,30,15.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 7,
+      "question": "The angles of a triangle are in the ratio 1:2:3. The largest angle is:",
+      "options": {
+        "A": "60°",
+        "B": "90°",
+        "C": "100°",
+        "D": "120°"
+      },
+      "correct_answer": "B",
+      "explanation": "Angles = 30°, 60°, 90°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4"
+    },
+    {
+      "question_number": 8,
+      "question": "If 20 students out of 80 prefer sports, the sector angle in a pie chart is:",
+      "options": {
+        "A": "60°",
+        "B": "75°",
+        "C": "90°",
+        "D": "120°"
+      },
+      "correct_answer": "C",
+      "explanation": "(20/80)×360 = 90°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 9,
+      "question": "If 25% of students like science, the pie chart angle is:",
+      "options": {
+        "A": "45°",
+        "B": "60°",
+        "C": "75°",
+        "D": "90°"
+      },
+      "correct_answer": "D",
+      "explanation": "25% of 360° = 90°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+    {
+      "question_number": 10,
+      "question": "If x and y are directly proportional, which statement is true?",
+      "options": {
+        "A": "x+y = constant",
+        "B": "x/y = constant",
+        "C": "x×y = constant",
+        "D": "x−y = constant"
+      },
+      "correct_answer": "B",
+      "explanation": "Direct proportion means ratio remains constant.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 11,
+      "question": "If 6 workers finish a job in 8 days, how many days will 12 workers take?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "8"
+      },
+      "correct_answer": "B",
+      "explanation": "Workers doubled → time halves → 4 days.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 12,
+      "question": "If speed increases by 3 times, time becomes:",
+      "options": {
+        "A": "3 times",
+        "B": "1/3 times",
+        "C": "same",
+        "D": "double"
+      },
+      "correct_answer": "B",
+      "explanation": "Speed and time are inversely proportional.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 13,
+      "question": "If 8 pumps fill a tank in 6 hours, 4 pumps will fill it in:",
+      "options": {
+        "A": "3 hours",
+        "B": "6 hours",
+        "C": "12 hours",
+        "D": "18 hours"
+      },
+      "correct_answer": "C",
+      "explanation": "Half pumps → double time.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 14,
+      "question": "The ratio of boys:girls in a class is 3:2. If total students = 25, girls are:",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "15"
+      },
+      "correct_answer": "B",
+      "explanation": "Girls = (2/5)×25 = 10.",
+      "difficulty": "medium",
+      "source_section": "Section 3.4"
+    },
+
+    {
+      "question_number": 15,
+      "question": "If a pie chart sector is 72°, the fraction of total is:",
+      "options": {
+        "A": "1/3",
+        "B": "1/4",
+        "C": "1/5",
+        "D": "1/6"
+      },
+      "correct_answer": "C",
+      "explanation": "72/360 = 1/5.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Which situation represents direct proportion?",
+      "options": {
+        "A": "Speed and time",
+        "B": "Workers and time",
+        "C": "Distance and time at constant speed",
+        "D": "Pumps and time"
+      },
+      "correct_answer": "C",
+      "explanation": "Distance increases with time at constant speed.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 17,
+      "question": "If 12 pencils cost ₹60, cost of 18 pencils is:",
+      "options": {
+        "A": "₹70",
+        "B": "₹80",
+        "C": "₹90",
+        "D": "₹100"
+      },
+      "correct_answer": "C",
+      "explanation": "Cost per pencil = 5 → 18×5 = 90.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 18,
+      "question": "If a pie chart shows 15% for sports, the sector angle is:",
+      "options": {
+        "A": "45°",
+        "B": "54°",
+        "C": "60°",
+        "D": "72°"
+      },
+      "correct_answer": "B",
+      "explanation": "0.15×360 = 54°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+
+    {
+      "question_number": 19,
+      "question": "If 24 workers build a wall in 10 days, 12 workers will take:",
+      "options": {
+        "A": "15",
+        "B": "20",
+        "C": "24",
+        "D": "30"
+      },
+      "correct_answer": "B",
+      "explanation": "Half workers → double time.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 20,
+      "question": "The ratio 6:9 simplifies to:",
+      "options": {
+        "A": "1:2",
+        "B": "2:3",
+        "C": "3:4",
+        "D": "4:5"
+      },
+      "correct_answer": "B",
+      "explanation": "Divide by 3.",
+      "difficulty": "medium",
+      "source_section": "Section 3.1"
+    },
+
+    {
+      "question_number": 21,
+      "question": "If 4 kg rice costs ₹200, cost of 6 kg rice is:",
+      "options": {
+        "A": "₹250",
+        "B": "₹300",
+        "C": "₹320",
+        "D": "₹350"
+      },
+      "correct_answer": "B",
+      "explanation": "Cost per kg = 50 → 6×50 = 300.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 22,
+      "question": "If total pie chart angle is 360°, 30% represents:",
+      "options": {
+        "A": "90°",
+        "B": "100°",
+        "C": "108°",
+        "D": "120°"
+      },
+      "correct_answer": "C",
+      "explanation": "0.30×360 = 108°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Which pair is inversely proportional?",
+      "options": {
+        "A": "Distance and time",
+        "B": "Workers and time",
+        "C": "Speed and distance",
+        "D": "Height and age"
+      },
+      "correct_answer": "B",
+      "explanation": "More workers reduce time.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 24,
+      "question": "If 3 pumps fill a tank in 12 hours, 6 pumps will take:",
+      "options": {
+        "A": "4 hours",
+        "B": "6 hours",
+        "C": "8 hours",
+        "D": "12 hours"
+      },
+      "correct_answer": "B",
+      "explanation": "Double pumps → half time.",
+      "difficulty": "medium",
+      "source_section": "Section 3.6"
+    },
+
+    {
+      "question_number": 25,
+      "question": "If 1/8 of a pie chart represents mathematics, the sector angle is:",
+      "options": {
+        "A": "30°",
+        "B": "40°",
+        "C": "45°",
+        "D": "60°"
+      },
+      "correct_answer": "C",
+      "explanation": "360 × 1/8 = 45°.",
+      "difficulty": "medium",
+      "source_section": "Section 3.5"
+    }
+  ]
+}

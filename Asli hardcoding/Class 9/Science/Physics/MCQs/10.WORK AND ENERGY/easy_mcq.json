@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 10: Work and Energy",
+    "generated_at": "2026-03-06T22:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Work is said to be done when",
+            "options": {
+                "A": "A force is applied and the object is displaced",
+                "B": "Only a force is applied",
+                "C": "Only object is displaced",
+                "D": "Neither force nor displacement"
+            },
+            "correct_answer": "A",
+            "explanation": "Work requires both force and displacement in the direction of force.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Unit of work is",
+            "options": {
+                "A": "Newton (N)",
+                "B": "Joule (J)",
+                "C": "Watt (W)",
+                "D": "Pascal (Pa)"
+            },
+            "correct_answer": "B",
+            "explanation": "Work is measured in joules (J).",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 3,
+            "question": "If displacement is perpendicular to applied force, work done is",
+            "options": {
+                "A": "Maximum",
+                "B": "Zero",
+                "C": "Equal to force",
+                "D": "Equal to displacement"
+            },
+            "correct_answer": "B",
+            "explanation": "Work = F × d × cosθ; cos90° = 0 → Work = 0.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Formula for work done when force is at an angle θ with displacement",
+            "options": {
+                "A": "W = F × d",
+                "B": "W = F × d × sinθ",
+                "C": "W = F × d × cosθ",
+                "D": "W = F/d"
+            },
+            "correct_answer": "C",
+            "explanation": "Only the component of force along displacement does work.",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Power is defined as",
+            "options": {
+                "A": "Work × Time",
+                "B": "Work ÷ Time",
+                "C": "Force × Displacement",
+                "D": "Force ÷ Displacement"
+            },
+            "correct_answer": "B",
+            "explanation": "Power = Work / Time; unit is Watt (1 J/s).",
+            "difficulty": "medium",
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Unit of power is",
+            "options": {
+                "A": "Joule (J)",
+                "B": "Newton (N)",
+                "C": "Watt (W)",
+                "D": "Meter (m)"
+            },
+            "correct_answer": "C",
+            "explanation": "Power is measured in watts (W).",
+            "difficulty": "easy",
+            "source_section": "Section 10.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Kinetic energy of a body depends on",
+            "options": {
+                "A": "Mass only",
+                "B": "Velocity only",
+                "C": "Mass and square of velocity",
+                "D": "Mass and displacement"
+            },
+            "correct_answer": "C",
+            "explanation": "KE = 1/2 mv²; depends on mass and square of velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Potential energy of a body depends on",
+            "options": {
+                "A": "Mass, height and gravity",
+                "B": "Velocity only",
+                "C": "Force only",
+                "D": "Displacement only"
+            },
+            "correct_answer": "A",
+            "explanation": "PE = mgh; depends on mass, height, and acceleration due to gravity.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Work-energy theorem states",
+            "options": {
+                "A": "Work done = change in kinetic energy",
+                "B": "Work done = potential energy",
+                "C": "Work done = mass × velocity",
+                "D": "Work done = force × time"
+            },
+            "correct_answer": "A",
+            "explanation": "Work done on an object changes its kinetic energy: W = ΔKE.",
+            "difficulty": "hard",
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Total mechanical energy of an isolated system is",
+            "options": {
+                "A": "Constant",
+                "B": "Always increasing",
+                "C": "Always decreasing",
+                "D": "Zero"
+            },
+            "correct_answer": "A",
+            "explanation": "Energy is conserved; total mechanical energy (KE + PE) remains constant if no external work is done.",
+            "difficulty": "hard",
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 11,
+            "question": "Unit of work done in SI system is",
+            "options": {
+                "A": "Newton",
+                "B": "Joule",
+                "C": "Watt",
+                "D": "Pascal"
+            },
+            "correct_answer": "B",
+            "explanation": "1 joule = work done when 1 N force displaces an object by 1 m in direction of force.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 12,
+            "question": "If a body moves horizontally under a vertical force, work done by the force is",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Cannot say"
+            },
+            "correct_answer": "C",
+            "explanation": "Force perpendicular to displacement does no work.",
+            "difficulty": "easy",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following is an example of work done?",
+            "options": {
+                "A": "Holding a heavy bag without moving",
+                "B": "Pushing a cart",
+                "C": "Sitting on a chair",
+                "D": "Resting"
+            },
+            "correct_answer": "B",
+            "explanation": "Work is done only if object is displaced by applied force.",
+            "difficulty": "easy",
+            "source_section": "Section 10.1"
+        },
+        {
+            "question_number": 14,
+            "question": "A moving object stops; what happens to its kinetic energy?",
+            "options": {
+                "A": "Becomes zero",
+                "B": "Increases",
+                "C": "Remains same",
+                "D": "Cannot say"
+            },
+            "correct_answer": "A",
+            "explanation": "KE = 0 when object stops; work done by friction converts KE to other forms.",
+            "difficulty": "medium",
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Unit of energy is",
+            "options": {
+                "A": "Joule",
+                "B": "Newton",
+                "C": "Watt",
+                "D": "Pascal"
+            },
+            "correct_answer": "A",
+            "explanation": "Energy is measured in joules (J).",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Work done by a conservative force depends on",
+            "options": {
+                "A": "Path taken",
+                "B": "Initial and final positions",
+                "C": "Time taken",
+                "D": "Speed of object"
+            },
+            "correct_answer": "B",
+            "explanation": "Conservative forces depend only on initial and final positions (e.g., gravity, spring).",
+            "difficulty": "hard",
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following is an example of potential energy?",
+            "options": {
+                "A": "Moving car",
+                "B": "Stretched rubber band",
+                "C": "Flowing water",
+                "D": "Rolling ball"
+            },
+            "correct_answer": "B",
+            "explanation": "Stored energy due to position or configuration is potential energy.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 18,
+            "question": "If work done is negative, it means",
+            "options": {
+                "A": "Force assists motion",
+                "B": "Force opposes motion",
+                "C": "No displacement",
+                "D": "Force is zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Negative work occurs when force is opposite to displacement.",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Mechanical energy is sum of",
+            "options": {
+                "A": "Kinetic and thermal energy",
+                "B": "Potential and chemical energy",
+                "C": "Kinetic and potential energy",
+                "D": "Potential and nuclear energy"
+            },
+            "correct_answer": "C",
+            "explanation": "Mechanical energy = KE + PE.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Work done by friction is usually",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Infinite"
+            },
+            "correct_answer": "B",
+            "explanation": "Friction opposes motion → negative work.",
+            "difficulty": "medium",
+            "source_section": "Section 10.2"
+        },
+        {
+            "question_number": 21,
+            "question": "A ball at height h falls freely. Its potential energy at the top is",
+            "options": {
+                "A": "Zero",
+                "B": "mgh",
+                "C": "1/2 mv²",
+                "D": "mg"
+            },
+            "correct_answer": "B",
+            "explanation": "PE = mgh at height h.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 22,
+            "question": "A 2 kg object moves with 3 m/s. Its kinetic energy is",
+            "options": {
+                "A": "6 J",
+                "B": "9 J",
+                "C": "1/2 × 2 × 3² = 9 J",
+                "D": "3 J"
+            },
+            "correct_answer": "C",
+            "explanation": "KE = 1/2 mv² = 1/2 × 2 × 9 = 9 J.",
+            "difficulty": "medium",
+            "source_section": "Section 10.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Energy cannot be",
+            "options": {
+                "A": "Created",
+                "B": "Destroyed",
+                "C": "Transformed",
+                "D": "Measured"
+            },
+            "correct_answer": "A",
+            "explanation": "Law of conservation of energy: energy cannot be created or destroyed, only transformed.",
+            "difficulty": "hard",
+            "source_section": "Section 10.6"
+        },
+        {
+            "question_number": 24,
+            "question": "Work done by gravity on a freely falling body is",
+            "options": {
+                "A": "Positive",
+                "B": "Negative",
+                "C": "Zero",
+                "D": "Infinite"
+            },
+            "correct_answer": "A",
+            "explanation": "Gravity assists motion → positive work.",
+            "difficulty": "medium",
+            "source_section": "Section 10.5"
+        },
+        {
+            "question_number": 25,
+            "question": "A spring stores 20 J of energy when stretched. This is an example of",
+            "options": {
+                "A": "Kinetic energy",
+                "B": "Potential energy",
+                "C": "Mechanical energy",
+                "D": "Thermal energy"
+            },
+            "correct_answer": "B",
+            "explanation": "Energy stored in stretched spring = potential energy.",
+            "difficulty": "easy",
+            "source_section": "Section 10.4"
+        }
+    ]
+}

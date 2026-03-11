@@ -1,0 +1,34 @@
+{
+  "class": "Class 10",
+  "subject": "Geography",
+  "chapter": "Water Resources",
+  "difficulty": "Medium",
+  "source_pdf": "jess103.pdf",
+  "short_notes": {
+    "key_points": [
+      "Water scarcity is caused by population growth, industrialization, and urbanization",
+      "Multipurpose river projects provide irrigation, electricity, flood control, and water supply",
+      "Traditional water harvesting systems were designed according to local climate",
+      "Groundwater depletion occurs due to excessive extraction",
+      "Urban areas need rainwater harvesting to recharge groundwater"
+    ],
+    "examples": [
+      "Hirakud dam is built on the Mahanadi river",
+      "Sardar Sarovar project is built on the Narmada river",
+      "Johads are used in Rajasthan for rainwater storage",
+      "Kuls are irrigation channels used in the Western Himalayas",
+      "Tamil Nadu made rooftop rainwater harvesting compulsory"
+    ],
+    "formulas_or_concepts": [
+      "Multipurpose River Project: Dam used for irrigation, power, and flood control",
+      "Groundwater Recharge: Water entering the soil and replenishing aquifers",
+      "Water Conservation: Careful use and protection of water resources"
+    ],
+    "exam_tips": [
+      "Explain advantages and disadvantages of dams",
+      "Remember traditional water harvesting examples",
+      "Link causes of water scarcity with human activities",
+      "Use diagrams to explain rainwater harvesting"
+    ]
+  }
+}

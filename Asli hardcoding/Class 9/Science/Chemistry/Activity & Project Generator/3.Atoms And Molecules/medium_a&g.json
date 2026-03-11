@@ -1,0 +1,177 @@
+{
+    "class": "Class 9",
+    "subject": "Chemistry",
+    "chapter": "Atoms and Molecules",
+    "difficulty": "Medium",
+    "source_pdf": "iesc103.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Quantitative Validation of Mass Conservation",
+            "objective": "To experimentally verify that the total mass of reactants equals the total mass of products in a chemical reaction[cite: 1439, 1466].",
+            "materials": [
+                "Solutions of X and Y (e.g., Copper sulphate and Sodium carbonate) [cite: 1446]",
+                "Conical flask",
+                "Small ignition tube",
+                "Thread",
+                "Cork",
+                "Digital weighing balance [cite: 1451, 1458]"
+            ],
+            "steps": [
+                "Prepare 5% solutions of the chosen pair of chemicals separately[cite: 1448].",
+                "Place solution Y in the flask and solution X in the ignition tube[cite: 1449].",
+                "Suspend the tube in the flask using a thread and seal with a cork to prevent mass loss to the atmosphere[cite: 1450, 1464].",
+                "Weigh the entire assembly accurately[cite: 1460].",
+                "Tilt and swirl the flask to mix the solutions and observe the chemical change[cite: 1461, 1463].",
+                "Reweigh the flask and compare the results[cite: 1462]."
+            ],
+            "learning_outcome": "Demonstrates the Law of Conservation of Mass, proving mass is neither created nor destroyed during chemical transformations[cite: 1466].",
+            "evaluation": "Explain why a cork is necessary for the accuracy of this experiment [cite: 1464] (10 marks)."
+        },
+        {
+            "sl_no": 2,
+            "title": "Scale Modeling of Atomic Radii",
+            "objective": "To visualize and compare the nanometric scale of atoms and molecules relative to macroscopic objects[cite: 1516, 1517].",
+            "materials": [
+                "Ruler",
+                "Chart paper",
+                "Reference table of relative sizes [cite: 1519]"
+            ],
+            "steps": [
+                "Review the unit conversion: $1/10^{9}\text{m} = 1\text{ nm}$[cite: 1519].",
+                "Draw a line representing 1 meter.",
+                "Mark the relative positions of an ant ($10^{-3}\text{ m}$), a grain of sand ($10^{-4}\text{ m}$), and an atom of hydrogen ($10^{-10}\text{ m}$) on a logarithmic scale[cite: 1519].",
+                "Stack several sheets of paper and discuss how many millions of atoms would be required to reach that thickness[cite: 1518]."
+            ],
+            "learning_outcome": "Develops a conceptual understanding of the insignificance of atomic size in the macroscopic world[cite: 1517, 1520].",
+            "evaluation": "Convert the radius of a water molecule ($10^{-9}\text{ m}$) into nanometers [cite: 1519] (10 marks)."
+        },
+        {
+            "sl_no": 3,
+            "title": "Decoding Chemical Symbols and Origins",
+            "objective": "To identify elements by their symbols and understand their etymological origins[cite: 1526, 1549].",
+            "materials": [
+                "Table 3.1: Symbols for some elements [cite: 1574]",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify symbols derived from English names (e.g., H for Hydrogen, Al for Aluminium)[cite: 1553, 1556, 1558].",
+                "Identify symbols derived from Latin, Greek, or German (e.g., Fe from ferrum, Na from natrium)[cite: 1561, 1562].",
+                "Practice writing symbols following IUPAC rules: first letter capital, second letter small[cite: 1552, 1554]."
+            ],
+            "learning_outcome": "Mastery of chemical shorthand and the standardized naming conventions of elements[cite: 1552, 1563].",
+            "evaluation": "Write the Latin names and symbols for Iron, Sodium, and Potassium [cite: 1562] (10 marks)."
+        },
+        {
+            "sl_no": 4,
+            "title": "Ratio by Mass in Compounds",
+            "objective": "To verify the Law of Constant Proportions through mathematical analysis of compound compositions[cite: 1467, 1472].",
+            "materials": [
+                "Reference Table 3.4 [cite: 1628]",
+                "Calculator"
+            ],
+            "steps": [
+                "Analyze the mass ratio of Hydrogen to Oxygen in water ($1:8$)[cite: 1469].",
+                "Calculate the mass of oxygen required to react with a specific mass of hydrogen (e.g., 3 g)[cite: 1509].",
+                "Repeat the calculation for Ammonia ($NH_{3}$) using the ratio $14:3$[cite: 1471]."
+            ],
+            "learning_outcome": "Understands that elements are always present in definite proportions by mass in a chemical substance[cite: 1473].",
+            "evaluation": "Determine the mass of oxygen needed to react with 3 g of hydrogen to form water [cite: 1509] (10 marks)."
+        },
+        {
+            "sl_no": 5,
+            "title": "Valency-Based Formula Construction",
+            "objective": "To use the 'criss-cross' method and combining capacity (valency) to write chemical formulae[cite: 1666, 1670, 1693].",
+            "materials": [
+                "Table 3.6: Names and symbols of some ions [cite: 1679]",
+                "Placards for symbols and valencies [cite: 1889]"
+            ],
+            "steps": [
+                "Identify the valency or charge for given ions (e.g., $Mg^{2+}$, $Cl^{-}$)[cite: 1679].",
+                "Write the symbols of the cation first, followed by the anion[cite: 1702].",
+                "Criss-cross the valencies to determine the subscripts in the formula[cite: 1703].",
+                "Simplify ratios where necessary (e.g., $Ca_{2}O_{2}$ becomes $CaO$)[cite: 1744]."
+            ],
+            "learning_outcome": "Ability to predict and write the symbolic representation of a compound's composition[cite: 1667].",
+            "evaluation": "Write the chemical formulae for Aluminium oxide and Magnesium chloride [cite: 1716, 1705] (10 marks)."
+        },
+        {
+            "sl_no": 6,
+            "title": "Molecules vs. Ions: Classification",
+            "objective": "To differentiate between independent molecular units and charged ionic clusters[cite: 1602, 1656].",
+            "materials": [
+                "List of substances: $Ar, O_{2}, NaCl, NaOH, (NH_{4})_{2}SO_{4}$ [cite: 1618, 1620, 1659, 1796]"
+            ],
+            "steps": [
+                "Classify substances as monoatomic, diatomic, or polyatomic[cite: 1618, 1620, 1622].",
+                "Identify 'anions' and 'cations' in ionic compounds[cite: 1658].",
+                "Recognize polyatomic ions (groups of atoms with a net charge)[cite: 1662]."
+            ],
+            "learning_outcome": "Distinguishes between different ways atoms aggregate to form matter[cite: 1603].",
+            "evaluation": "Define 'atomicity' and list the atomicity of Argon and Oxygen [cite: 1620, 1622] (10 marks)."
+        },
+        {
+            "sl_no": 7,
+            "title": "Calculating Formula Unit and Molecular Mass",
+            "objective": "To determine the relative mass of a substance by summing atomic masses[cite: 1789, 1813].",
+            "materials": [
+                "Table 3.2: Atomic masses of a few elements [cite: 1600]",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the atomic mass for each element in the compound[cite: 1600].",
+                "For molecular substances ($H_{2}O$), sum the atomic masses of all atoms in the molecule[cite: 1804, 1809].",
+                "For ionic substances ($CaCl_{2}$), calculate the formula unit mass using the same summation method[cite: 1814, 1825]."
+            ],
+            "learning_outcome": "Applies the concept of relative atomic mass to find the total mass of molecules and ionic units[cite: 1790, 1818].",
+            "evaluation": "Calculate the molecular mass of $HNO_{3}$ [cite: 1811] (10 marks)."
+        },
+        {
+            "sl_no": 8,
+            "title": "Analyzing Postulates of Dalton's Theory",
+            "objective": "To link Dalton's atomic theory postulates to established laws of chemical combination[cite: 1478, 1487].",
+            "materials": [
+                "Dalton's postulates list [cite: 1488-1498]"
+            ],
+            "steps": [
+                "Read postulate (ii) regarding indivisible atoms and link it to the Law of Conservation of Mass[cite: 1494, 1510].",
+                "Read postulate (vi) regarding constant relative numbers of atoms and link it to the Law of Definite Proportions[cite: 1498, 1511].",
+                "Discuss how postulate (v) explains compound formation[cite: 1497]."
+            ],
+            "learning_outcome": "Understands the theoretical framework that provides the basis for chemical science laws[cite: 1484, 1486].",
+            "evaluation": "Which postulate of Dalton's theory is a result of the Law of Conservation of Mass? [cite: 1510] (10 marks)."
+        },
+        {
+            "sl_no": 9,
+            "title": "Polyatomic Ion Model Building",
+            "objective": "To visualize clusters of atoms acting as single charged units[cite: 1662, 1842].",
+            "materials": [
+                "Blister packs or paper cutouts [cite: 1894]",
+                "Glue or tape"
+            ],
+            "steps": [
+                "Model a single ion (e.g., $Na^{+}$) as a single unit[cite: 1898].",
+                "Model a polyatomic ion (e.g., $SO_{4}^{2-}$) as a cluster that moves together[cite: 1899].",
+                "Demonstrate how two sodium units fix onto one sulphate unit to balance the charge[cite: 1901, 1902]."
+            ],
+            "learning_outcome": "Clarifies the behavior of polyatomic ions in chemical combinations and formula writing[cite: 1688, 1846].",
+            "evaluation": "Define polyatomic ions and give two examples [cite: 1857] (10 marks)."
+        },
+        {
+            "sl_no": 10,
+            "title": "Predicting Ionic Compound Ratios",
+            "objective": "To use mass ratios to find the simplest numerical ratio of atoms in a molecule[cite: 1631].",
+            "materials": [
+                "Table 3.4 [cite: 1628]",
+                "Table 3.2 [cite: 1600]"
+            ],
+            "steps": [
+                "Note the mass ratio for water (H:O = 1:8)[cite: 1628].",
+                "Divide mass ratios by atomic masses ($1/1$ and $8/16$)[cite: 1634, 1638].",
+                "Find the simplest whole-number ratio to derive the H:O = 2:1 atomic ratio[cite: 1654]."
+            ],
+            "learning_outcome": "Bridges the gap between macroscopic mass measurements and microscopic atomic counts[cite: 1632, 1633].",
+            "evaluation": "Show the calculation to find the atomic ratio for a water molecule [cite: 1633] (10 marks)."
+        }
+    ]
+}

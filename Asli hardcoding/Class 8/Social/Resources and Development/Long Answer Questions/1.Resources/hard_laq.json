@@ -1,0 +1,329 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Resources",
+  "generated_at": "2026-03-06T13:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of resources and discuss the factors that make a substance a resource.",
+      "answer": "A resource is anything available in the environment that can satisfy human needs and has value. A substance becomes a resource when it is technologically accessible, economically feasible, and culturally acceptable.",
+      "answer_outline": [
+        "Definition of resources",
+        "Utility and value",
+        "Technological accessibility",
+        "Economic feasibility"
+      ],
+      "key_concepts": ["resources"],
+      "marks": 6,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Analyze the role of resources in economic development.",
+      "answer": "Resources provide raw materials for industries, energy for production, and support agriculture. Their proper utilization promotes economic growth and improves the standard of living.",
+      "answer_outline": [
+        "Raw materials",
+        "Industrial production",
+        "Economic development"
+      ],
+      "key_concepts": ["economic development"],
+      "marks": 6,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the classification of resources with suitable examples.",
+      "answer": "Resources are classified into natural resources, human-made resources, and human resources. Natural resources occur in nature, human-made resources are created by people using technology, and human resources refer to people's knowledge and skills.",
+      "answer_outline": [
+        "Natural resources",
+        "Human-made resources",
+        "Human resources",
+        "Examples"
+      ],
+      "key_concepts": ["resource classification"],
+      "marks": 6,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Evaluate the importance of natural resources in sustaining life and economic activities.",
+      "answer": "Natural resources such as air, water, soil, forests, and minerals are essential for survival. They support agriculture, industry, and energy production, making them vital for economic and social development.",
+      "answer_outline": [
+        "Basic human survival",
+        "Agriculture",
+        "Industrial use"
+      ],
+      "key_concepts": ["natural resources"],
+      "marks": 6,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "Differentiate between renewable and non-renewable resources and analyze their long-term implications.",
+      "answer": "Renewable resources can be replenished naturally, such as solar and wind energy, while non-renewable resources such as coal and petroleum take millions of years to form. Excessive use of non-renewable resources may lead to depletion and environmental issues.",
+      "answer_outline": [
+        "Definition of renewable resources",
+        "Definition of non-renewable resources",
+        "Environmental implications"
+      ],
+      "key_concepts": ["renewable resources", "non-renewable resources"],
+      "marks": 6,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how human-made resources contribute to economic development.",
+      "answer": "Human-made resources such as roads, buildings, machines, and infrastructure support transportation, production, and communication, thereby promoting economic growth.",
+      "answer_outline": ["Definition", "Examples", "Economic importance"],
+      "key_concepts": ["human-made resources"],
+      "marks": 5,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "Analyze the role of education in developing human resources.",
+      "answer": "Education improves knowledge and skills, enabling people to innovate, develop technology, and manage resources efficiently, which contributes to national development.",
+      "answer_outline": [
+        "Education and skill development",
+        "Improved productivity",
+        "Contribution to development"
+      ],
+      "key_concepts": ["human resources"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of resource conservation and its importance for sustainable development.",
+      "answer": "Resource conservation involves careful use and management of resources to prevent depletion. It ensures the availability of resources for future generations and supports sustainable development.",
+      "answer_outline": [
+        "Meaning of conservation",
+        "Importance",
+        "Future sustainability"
+      ],
+      "key_concepts": ["resource conservation"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "Evaluate the concept of sustainable development with examples.",
+      "answer": "Sustainable development focuses on meeting present needs without harming the ability of future generations to meet their needs. Examples include using renewable energy and conserving forests.",
+      "answer_outline": ["Definition", "Environmental balance", "Examples"],
+      "key_concepts": ["sustainable development"],
+      "marks": 6,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the factors responsible for the uneven distribution of resources across the world.",
+      "answer": "Resources are unevenly distributed due to differences in climate, geological structures, and geographical conditions.",
+      "answer_outline": ["Climate", "Geology", "Geography"],
+      "key_concepts": ["resource distribution"],
+      "marks": 5,
+      "source_section": "Section 9"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Analyze the relationship between technology and resource development.",
+      "answer": "Technology helps humans convert natural materials into useful resources and improves efficiency in extraction, production, and distribution.",
+      "answer_outline": [
+        "Technological advancement",
+        "Resource transformation",
+        "Efficiency"
+      ],
+      "key_concepts": ["technology"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+
+    {
+      "question_number": 12,
+      "question": "Explain how population growth affects the availability of resources.",
+      "answer": "Increasing population leads to greater demand for food, water, energy, and land, which can strain natural resources.",
+      "answer_outline": [
+        "Population growth",
+        "Increased demand",
+        "Resource pressure"
+      ],
+      "key_concepts": ["population growth"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 13,
+      "question": "Examine the role of natural resources in supporting industrial development.",
+      "answer": "Natural resources provide raw materials such as minerals, metals, and energy sources required for industrial production.",
+      "answer_outline": [
+        "Raw materials",
+        "Energy sources",
+        "Industrial growth"
+      ],
+      "key_concepts": ["industrial development"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 14,
+      "question": "Discuss the causes and consequences of resource depletion.",
+      "answer": "Resource depletion occurs due to overuse, industrialization, and population growth. It leads to environmental problems and scarcity of resources.",
+      "answer_outline": [
+        "Overuse",
+        "Industrialization",
+        "Environmental impact"
+      ],
+      "key_concepts": ["resource depletion"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 15,
+      "question": "Explain how environmental problems arise due to excessive use of resources.",
+      "answer": "Overuse of resources leads to deforestation, pollution, soil degradation, and climate change.",
+      "answer_outline": ["Deforestation", "Pollution", "Climate change"],
+      "key_concepts": ["environmental impact"],
+      "marks": 6,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Analyze the importance of renewable energy resources for future development.",
+      "answer": "Renewable energy sources such as solar and wind energy are sustainable, reduce environmental damage, and ensure long-term energy availability.",
+      "answer_outline": [
+        "Sustainability",
+        "Environmental protection",
+        "Energy security"
+      ],
+      "key_concepts": ["renewable energy"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+
+    {
+      "question_number": 17,
+      "question": "Evaluate the role of individuals and communities in conserving resources.",
+      "answer": "Individuals and communities can conserve resources by reducing waste, recycling materials, saving water and electricity, and promoting sustainable practices.",
+      "answer_outline": [
+        "Community participation",
+        "Waste reduction",
+        "Conservation practices"
+      ],
+      "key_concepts": ["community role"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 18,
+      "question": "Explain the importance of forests for environmental sustainability.",
+      "answer": "Forests help maintain ecological balance, support biodiversity, prevent soil erosion, and regulate climate.",
+      "answer_outline": [
+        "Biodiversity",
+        "Climate regulation",
+        "Soil protection"
+      ],
+      "key_concepts": ["forests"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 19,
+      "question": "Discuss the importance of water resources in economic and social development.",
+      "answer": "Water is essential for drinking, agriculture, industry, and maintaining ecosystems. It is a key resource for economic and social progress.",
+      "answer_outline": ["Agriculture", "Industry", "Human survival"],
+      "key_concepts": ["water resources"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 20,
+      "question": "Explain how governments contribute to resource conservation.",
+      "answer": "Governments implement laws, policies, and conservation programs to manage resources responsibly and protect the environment.",
+      "answer_outline": [
+        "Policies",
+        "Environmental regulations",
+        "Conservation programs"
+      ],
+      "key_concepts": ["government role"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain the importance of sustainable practices in modern society.",
+      "answer": "Sustainable practices help reduce environmental damage, promote renewable energy use, and ensure responsible consumption of resources.",
+      "answer_outline": [
+        "Reduced environmental impact",
+        "Efficient resource use",
+        "Future sustainability"
+      ],
+      "key_concepts": ["sustainability"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 22,
+      "question": "Explain how responsible resource use contributes to sustainable development.",
+      "answer": "Responsible use prevents resource depletion, protects ecosystems, and supports long-term development.",
+      "answer_outline": [
+        "Avoiding waste",
+        "Environmental protection",
+        "Long-term sustainability"
+      ],
+      "key_concepts": ["responsible use"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 23,
+      "question": "Analyze the relationship between population growth and resource demand.",
+      "answer": "Population growth increases demand for food, water, land, and energy, putting pressure on natural resources.",
+      "answer_outline": [
+        "Population growth",
+        "Resource demand",
+        "Environmental pressure"
+      ],
+      "key_concepts": ["population"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 24,
+      "question": "Explain the importance of minerals as resources for industrial development.",
+      "answer": "Minerals provide essential raw materials for industries and are used in manufacturing machinery, electronics, and infrastructure.",
+      "answer_outline": [
+        "Industrial raw materials",
+        "Manufacturing importance"
+      ],
+      "key_concepts": ["minerals"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+
+    {
+      "question_number": 25,
+      "question": "Evaluate the overall importance of responsible resource management for sustainable development.",
+      "answer": "Responsible resource management ensures efficient use of resources, environmental protection, and long-term development.",
+      "answer_outline": [
+        "Efficient use",
+        "Environmental protection",
+        "Sustainable future"
+      ],
+      "key_concepts": ["resource management"],
+      "marks": 6,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

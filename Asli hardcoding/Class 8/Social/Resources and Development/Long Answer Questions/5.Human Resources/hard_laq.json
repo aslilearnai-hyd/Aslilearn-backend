@@ -1,0 +1,273 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter: Human Resources",
+  "generated_at": "2026-03-06T15:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Analyze the importance of human resources in the development of a nation.",
+      "answer": "Human resources play a crucial role in national development because people use their knowledge, skills, and creativity to utilize natural resources effectively. Skilled and educated individuals contribute to innovation, productivity, and economic growth.",
+      "answer_outline": [
+        "Definition of human resources",
+        "Role of skills and education",
+        "Contribution to economic development"
+      ],
+      "key_concepts": ["human resources", "development"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Evaluate the relationship between human resources and natural resources.",
+      "answer": "Natural resources alone cannot produce goods without human intervention. Human resources apply knowledge and technology to utilize natural resources effectively, transforming them into valuable products.",
+      "answer_outline": [
+        "Natural resources",
+        "Role of human skills",
+        "Transformation into useful products"
+      ],
+      "key_concepts": ["natural resources", "human resources"],
+      "marks": 5,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Analyze the global patterns of population distribution and explain the reasons behind them.",
+      "answer": "Population distribution across the world is uneven due to variations in climate, availability of water, fertile land, and economic opportunities. Regions such as South Asia and East Asia are densely populated, while deserts and polar regions have sparse populations.",
+      "answer_outline": [
+        "Meaning of population distribution",
+        "Dense regions",
+        "Sparse regions",
+        "Reasons for variation"
+      ],
+      "key_concepts": ["population distribution"],
+      "marks": 5,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "Critically examine the factors that influence population distribution.",
+      "answer": "Population distribution is influenced by both physical and human factors. Physical factors include climate, water availability, and landforms, while human factors include industries, transportation, and employment opportunities.",
+      "answer_outline": ["Physical factors", "Human factors", "Examples"],
+      "key_concepts": ["population factors"],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how climate and water availability affect human settlement patterns.",
+      "answer": "Regions with moderate climates and sufficient water supply support agriculture and human settlement. In contrast, extreme climates such as deserts or polar regions discourage large populations.",
+      "answer_outline": ["Climate impact", "Water availability", "Examples"],
+      "key_concepts": ["climate", "settlement"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "Analyze the concept of population density and its significance in geographical studies.",
+      "answer": "Population density measures how crowded an area is and helps geographers understand settlement patterns, resource use, and planning needs for infrastructure.",
+      "answer_outline": ["Definition", "Calculation method", "Importance"],
+      "key_concepts": ["population density"],
+      "marks": 5,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the role of migration in shaping population distribution.",
+      "answer": "Migration redistributes population by moving people from one place to another. It influences urban growth, labor markets, and economic activities in both origin and destination regions.",
+      "answer_outline": [
+        "Definition of migration",
+        "Effects on urban areas",
+        "Effects on rural areas"
+      ],
+      "key_concepts": ["migration"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "Evaluate the push and pull factors responsible for migration.",
+      "answer": "Push factors such as unemployment, poverty, or natural disasters force people to leave their homes, while pull factors such as better jobs, education, and healthcare attract them to new locations.",
+      "answer_outline": ["Push factors", "Pull factors", "Examples"],
+      "key_concepts": ["push factors", "pull factors"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the socio-economic impacts of migration.",
+      "answer": "Migration may improve economic opportunities for individuals and support economic growth, but it may also lead to overcrowding in cities and strain on urban infrastructure.",
+      "answer_outline": [
+        "Economic benefits",
+        "Urban challenges",
+        "Social changes"
+      ],
+      "key_concepts": ["migration impact"],
+      "marks": 5,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "Analyze the concept of population composition and its importance.",
+      "answer": "Population composition refers to characteristics such as age, gender, literacy, and occupation. It helps governments plan policies related to education, employment, and healthcare.",
+      "answer_outline": ["Definition", "Components", "Planning importance"],
+      "key_concepts": ["population composition"],
+      "marks": 5,
+      "source_section": "Section 7"
+    },
+
+    {
+      "question_number": 11,
+      "question": "Explain the significance of age structure in population studies.",
+      "answer": "Age structure shows the proportion of children, adults, and elderly people in a population. It helps determine future workforce availability and economic planning.",
+      "answer_outline": [
+        "Age groups",
+        "Workforce implications",
+        "Planning importance"
+      ],
+      "key_concepts": ["age structure"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the importance of literacy in improving human resources.",
+      "answer": "Literacy increases knowledge, improves employment opportunities, and enhances social awareness, contributing to national development.",
+      "answer_outline": [
+        "Meaning of literacy",
+        "Benefits to individuals",
+        "Impact on society"
+      ],
+      "key_concepts": ["literacy"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 13,
+      "question": "Evaluate the role of education in human resource development.",
+      "answer": "Education improves skills, creativity, and innovation. It prepares individuals for productive work and contributes to economic and social development.",
+      "answer_outline": ["Skill development", "Innovation", "Economic growth"],
+      "key_concepts": ["education"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how healthcare contributes to human resource development.",
+      "answer": "Healthcare ensures a healthy workforce capable of working efficiently, which increases productivity and supports economic growth.",
+      "answer_outline": [
+        "Healthy workforce",
+        "Productivity benefits",
+        "Economic impact"
+      ],
+      "key_concepts": ["healthcare"],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 15,
+      "question": "Analyze the relationship between population growth and economic development.",
+      "answer": "Population growth can support economic development if there is adequate education and employment, but uncontrolled growth may strain resources.",
+      "answer_outline": ["Positive effects", "Challenges", "Need for planning"],
+      "key_concepts": ["population growth"],
+      "marks": 5,
+      "source_section": "Section 9"
+    },
+
+    {
+      "question_number": 16,
+      "question": "Explain why urban areas attract large populations.",
+      "answer": "Urban areas offer better employment opportunities, education, healthcare, and infrastructure, making them attractive for migrants.",
+      "answer_outline": ["Job opportunities", "Better facilities", "Migration"],
+      "key_concepts": ["urban population"],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain the role of industries in shaping population patterns.",
+      "answer": "Industries generate employment and economic activities, attracting workers and increasing urban population density.",
+      "answer_outline": ["Industrial employment", "Urbanization"],
+      "key_concepts": ["industries"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain how transportation systems influence population distribution.",
+      "answer": "Efficient transportation improves connectivity, encourages trade, and supports settlement growth in connected regions.",
+      "answer_outline": ["Connectivity", "Economic opportunities"],
+      "key_concepts": ["transportation"],
+      "marks": 4,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the significance of skilled workforce in modern economies.",
+      "answer": "A skilled workforce increases productivity, promotes innovation, and strengthens economic development in modern economies.",
+      "answer_outline": ["Productivity", "Innovation", "Economic growth"],
+      "key_concepts": ["skilled workforce"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how education and technology together improve human resources.",
+      "answer": "Education provides knowledge while technology enhances productivity. Together they improve the quality of human resources and economic development.",
+      "answer_outline": [
+        "Education benefits",
+        "Technology impact",
+        "Combined effect"
+      ],
+      "key_concepts": ["education", "technology"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+
+    {
+      "question_number": 21,
+      "question": "Explain the importance of demographic data in national planning.",
+      "answer": "Demographic data helps governments plan infrastructure such as schools, hospitals, housing, and employment programs effectively.",
+      "answer_outline": ["Population statistics", "Planning infrastructure"],
+      "key_concepts": ["demographic data"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the relationship between population quality and national progress.",
+      "answer": "Population quality depends on education, health, and skills. A highly skilled and healthy population contributes to faster national progress.",
+      "answer_outline": ["Education", "Health", "Skills"],
+      "key_concepts": ["population quality"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 23,
+      "question": "Analyze the role of youth population in economic development.",
+      "answer": "A large youth population can provide a strong workforce that boosts economic productivity if supported by education and employment opportunities.",
+      "answer_outline": ["Youth workforce", "Employment opportunities"],
+      "key_concepts": ["youth population"],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how human resources influence technological progress.",
+      "answer": "Educated and skilled individuals contribute to research, innovation, and technological advancements that improve productivity and development.",
+      "answer_outline": ["Innovation", "Technology development"],
+      "key_concepts": ["technology"],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 25,
+      "question": "Evaluate the overall role of human resources in shaping the future of a country.",
+      "answer": "Human resources determine a nation's ability to innovate, develop industries, and improve living standards. Investing in education and health strengthens national development.",
+      "answer_outline": ["Human skills", "Economic growth", "Social progress"],
+      "key_concepts": ["human resources development"],
+      "marks": 5,
+      "source_section": "Chapter Summary"
+    }
+  ]
+}

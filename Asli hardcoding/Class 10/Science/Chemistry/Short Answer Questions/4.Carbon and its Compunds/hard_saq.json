@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Carbon and its Compounds",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-10T23:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is it impossible for Carbon to form an ionic bond by forming $C^{4+}$ or $C^{4-}$ ions?",
+            "answer": "Forming $C^{4-}$ is difficult because 6 protons cannot easily hold 10 electrons due to inter-electronic repulsion. Forming $C^{4+}$ requires a massive amount of energy to remove four electrons from the small carbon atom, which is energetically unfavorable.",
+            "key_concepts": ["ionic vs covalent", "ionization energy"],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "An organic compound 'A' is a constituent of antifreeze and has the molecular formula $C_2H_6O$. Upon reaction with alkaline $KMnO_4$, it forms compound 'B'. Identify A and B and write the equation.",
+            "answer": "'A' is Ethanol ($C_2H_5OH$). 'B' is Ethanoic acid ($CH_3COOH$). Equation: $CH_3CH_2OH + 2[O] \\xrightarrow{alkaline \\: KMnO_4} CH_3COOH + H_2O$.",
+            "key_concepts": ["oxidation", "ethanol"],
+            "marks": 3,
+            "source_section": "Section 4.3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain why Diamond is a non-conductor of electricity while Graphite is a good conductor, despite both being made of Carbon.",
+            "answer": "In Diamond, all four valence electrons are used in four covalent bonds (no free electrons). In Graphite, each carbon is bonded to only three others, leaving one free 'delocalized' electron per atom to conduct electricity.",
+            "key_concepts": ["allotropes", "delocalized electrons"],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is 'Denatured Alcohol'? Why is it prepared, and what substances are typically added to it?",
+            "answer": "It is ethanol made unfit for drinking by adding poisonous substances like Methanol or dyes like Copper Sulphate. It is prepared to prevent the industrial-grade alcohol from being misused for consumption.",
+            "key_concepts": ["ethanol", "denaturation"],
+            "marks": 2,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "A gas 'X' is evolved with brisk effervescence when Ethanoic acid reacts with Sodium Hydrogencarbonate. How do you test this gas, and what is the balanced equation?",
+            "answer": "The gas 'X' is $CO_2$. Test: Pass it through lime water; it turns milky. Equation: $CH_3COOH + NaHCO_3 \\rightarrow CH_3COONa + H_2O + CO_2$.",
+            "key_concepts": ["chemical properties", "effervescence"],
+            "marks": 3,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How can you distinguish between an unsaturated cooking oil and a saturated animal fat using a chemical test?",
+            "answer": "Using the Bromine Water test. The unsaturated oil will decolorize the reddish-brown bromine water (addition reaction), while the saturated fat will not react or change the color.",
+            "key_concepts": ["addition reaction", "unsaturation test"],
+            "marks": 2,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Draw all possible structural isomers for Pentane ($C_5H_{12}$).",
+            "answer": "1. n-pentane (straight chain). 2. Isopentane (2-methylbutane). 3. Neopentane (2,2-dimethylpropane).",
+            "key_concepts": ["isomerism", "pentane"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the role of Concentrated Sulphuric acid in the esterification process.",
+            "answer": "It acts as a catalyst to speed up the reaction and as a dehydrating agent to remove water. Removing water shifts the equilibrium to the right, increasing the yield of the ester.",
+            "key_concepts": ["esterification", "catalyst"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do soaps not work effectively in hard water, while detergents do?",
+            "answer": "Soaps react with $Ca^{2+}$ and $Mg^{2+}$ ions in hard water to form insoluble 'scum'. Detergents have hydrophilic heads that do not form insoluble precipitates with these ions, remaining effective.",
+            "key_concepts": ["scum", "detergents"],
+            "marks": 3,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 10,
+            "question": "Define Saponification. Write the chemical equation for the saponification of Ethyl Ethanoate.",
+            "answer": "It is the alkaline hydrolysis of an ester. $CH_3COOC_2H_5 + NaOH \\rightarrow CH_3COONa + C_2H_5OH$.",
+            "key_concepts": ["saponification", "esters"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the 'Hydrogenation of Oils'? Why is it considered unhealthy in some contexts?",
+            "answer": "It is the addition of $H_2$ to vegetable oils (unsaturated) to make vegetable ghee (saturated). It is often criticized because the process can create 'trans-fats', which are harmful to heart health.",
+            "key_concepts": ["addition reaction", "catalytic hydrogenation"],
+            "marks": 2,
+            "source_section": "Section 4.3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the structure and bonding in Buckminsterfullerene ($C_{60}$).",
+            "answer": "It consists of 60 carbon atoms arranged in a series of interlocking hexagons and pentagons, forming a geodesic dome or 'soccer ball' shape.",
+            "key_concepts": ["fullerenes", "allotropes"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is the melting point of Ethanoic acid so low (290 K), and what is its common name in winter?",
+            "answer": "It has relatively weak intermolecular forces compared to ionic compounds. In winter, it often freezes, leading to its name 'Glacial Acetic Acid'.",
+            "key_concepts": ["ethanoic acid", "physical properties"],
+            "marks": 2,
+            "source_section": "Section 4.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Compare the combustion of Methane and Ethyne. Which produces more heat and smoke?",
+            "answer": "Methane ($CH_4$) undergoes cleaner combustion with a blue flame. Ethyne ($C_2H_2$) is highly unsaturated and burns with a yellow, sooty flame due to incomplete combustion of high carbon content.",
+            "key_concepts": ["combustion", "unsaturation"],
+            "marks": 2,
+            "source_section": "Section 4.3.1"
+        },
+        {
+            "question_number": 15,
+            "question": "How many structural isomers are possible for Bromopentane ($C_5H_{11}Br$)?",
+            "answer": "There are 8 structural isomers (considering different positions of the Br atom and different carbon skeletons like n-pentane, isopentane, and neopentane skeletons).",
+            "key_concepts": ["isomerism", "haloalkanes"],
+            "marks": 3,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens when Ethanol reacts with Sodium metal? Write the observation and equation.",
+            "answer": "Sodium ethoxide is formed and Hydrogen gas is evolved with effervescence. $2C_2H_5OH + 2Na \\rightarrow 2C_2H_5ONa + H_2$.",
+            "key_concepts": ["chemical properties", "sodium ethoxide"],
+            "marks": 2,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Why does Carbon not form a triple bond with Oxygen in $CO_2$, but does so in $CO$?",
+            "answer": "In $CO_2$, Carbon forms two double bonds ($O=C=O$) to complete its octet. In $CO$, a triple bond (including a coordinate bond) is required for both atoms to achieve stability.",
+            "key_concepts": ["bonding", "octet rule"],
+            "marks": 3,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain 'Substitution Reaction' with the example of Chlorination of Methane.",
+            "answer": "A reaction where one atom is replaced by another. $CH_4 + Cl_2 \\xrightarrow{sunlight} CH_3Cl + HCl$. In the presence of excess chlorine, all H atoms can be replaced.",
+            "key_concepts": ["substitution reaction"],
+            "marks": 2,
+            "source_section": "Section 4.3.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the difference between the 'hydrophilic' and 'hydrophobic' parts of a soap molecule?",
+            "answer": "The hydrophilic part is the ionic 'head' ($-COONa^+$) which is water-loving. The hydrophobic part is the long hydrocarbon 'tail' which is water-fearing but oil-loving.",
+            "key_concepts": ["micelles", "molecular structure"],
+            "marks": 2,
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Write the IUPAC names for: (a) $CH_3-CH(OH)-CH_3$, (b) $HCHO$, (c) $CH_3-C \\equiv C-CH_3$.",
+            "answer": "(a) Propan-2-ol, (b) Methanal, (c) But-2-yne.",
+            "key_concepts": ["IUPAC nomenclature"],
+            "marks": 3,
+            "source_section": "Section 4.2.5"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is the bond angle in Methane $109.5^\circ$ and not $90^\circ$?",
+            "answer": "To minimize repulsion between the four pairs of shared electrons, the C-H bonds push as far apart as possible into a 3D tetrahedral shape, rather than a 2D square.",
+            "key_concepts": ["tetrahedral structure", "electron repulsion"],
+            "marks": 2,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the formula of the next higher homologue of $C_3H_4$?",
+            "answer": "The next homologue is $C_4H_6$ (Butyne), obtained by adding a $-CH_2$ unit.",
+            "key_concepts": ["homologous series"],
+            "marks": 1,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the term 'Catenation' and why Silicon shows it to a much lesser extent than Carbon.",
+            "answer": "Catenation is self-linking of atoms. Carbon-Carbon bonds are very strong and stable. Silicon-Silicon bonds are weaker because the atoms are larger, making the bonds reactive and unstable.",
+            "key_concepts": ["catenation", "bond strength"],
+            "marks": 2,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "How is Ethanol converted to Ethene? Name the reagent and the type of reaction.",
+            "answer": "By heating ethanol with concentrated $H_2SO_4$ at $443 K$. Reagent: Conc. $H_2SO_4$ (dehydrating agent). Type: Dehydration reaction.",
+            "key_concepts": ["dehydration", "ethene"],
+            "marks": 2,
+            "source_section": "Section 4.4.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the 'Iodoform test' (Extra-NCERT context often asked)?",
+            "answer": "A test used to identify alcohols or ketones with a methyl group adjacent to the carbonyl/hydroxyl group, producing a yellow precipitate.",
+            "key_concepts": ["chemical tests", "identification"],
+            "marks": 1,
+            "source_section": "Application of Section 4.4"
+        }
+    ]
+}

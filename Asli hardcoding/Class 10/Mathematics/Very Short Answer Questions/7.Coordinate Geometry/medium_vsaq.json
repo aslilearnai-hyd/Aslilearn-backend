@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 7: Coordinate Geometry",
+    "generated_at": "2026-03-01T20:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Write the distance formula between two points P(x₁, y₁) and Q(x₂, y₂).",
+            "answer": "√[(x₂ − x₁)² + (y₂ − y₁)²].",
+            "key_points": [
+                "distance formula"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the distance of the point (x, y) from the origin?",
+            "answer": "√(x² + y²).",
+            "key_points": [
+                "distance from origin"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which theorem is the base for the distance formula?",
+            "answer": "Pythagoras theorem.",
+            "key_points": [
+                "pythagoras"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "State the condition for three points to be collinear using distance formula.",
+            "answer": "Sum of two distances equals the third distance.",
+            "key_points": [
+                "collinearity"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the midpoint formula?",
+            "answer": "((x₁ + x₂)/2, (y₁ + y₂)/2).",
+            "key_points": [
+                "midpoint"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which ratio is used to find midpoint using section formula?",
+            "answer": "1 : 1.",
+            "key_points": [
+                "section formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What type of division is discussed in Class 10 Coordinate Geometry?",
+            "answer": "Internal division.",
+            "key_points": [
+                "internal division"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "What does the section formula find?",
+            "answer": "Coordinates of a point dividing a line segment.",
+            "key_points": [
+                "section formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the x-coordinate of a point on the y-axis?",
+            "answer": "Zero.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the y-coordinate of a point on the x-axis?",
+            "answer": "Zero.",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Which quadrilateral has equal diagonals and equal sides?",
+            "answer": "Square.",
+            "key_points": [
+                "square"
+            ],
+            "source_section": "Section 7.2 Examples"
+        },
+        {
+            "question_number": 12,
+            "question": "What geometric figure is formed by equidistant points from two fixed points?",
+            "answer": "Perpendicular bisector.",
+            "key_points": [
+                "locus"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the ratio formula used in section formula?",
+            "answer": "m₁ : m₂.",
+            "key_points": [
+                "ratio"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the distance between two identical points?",
+            "answer": "Zero.",
+            "key_points": [
+                "distance"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What shape is formed if AB² + BC² = AC²?",
+            "answer": "Right-angled triangle.",
+            "key_points": [
+                "right triangle"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Which axis is horizontal?",
+            "answer": "x-axis.",
+            "key_points": [
+                "axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which axis is vertical?",
+            "answer": "y-axis.",
+            "key_points": [
+                "axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the distance between (a, b) and (−a, −b)?",
+            "answer": "2√(a² + b²).",
+            "key_points": [
+                "distance"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 19,
+            "question": "Which formula is used to verify a parallelogram?",
+            "answer": "Midpoint formula of diagonals.",
+            "key_points": [
+                "parallelogram"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Which coordinate remains constant for points on x-axis?",
+            "answer": "y-coordinate.",
+            "key_points": [
+                "x-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which coordinate remains constant for points on y-axis?",
+            "answer": "x-coordinate.",
+            "key_points": [
+                "y-axis"
+            ],
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the formula used to find a point dividing a line internally?",
+            "answer": "Section formula.",
+            "key_points": [
+                "section formula"
+            ],
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Which triangle property is used to verify collinearity?",
+            "answer": "Triangle inequality.",
+            "key_points": [
+                "collinearity"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What does √ symbol represent in distance formula?",
+            "answer": "Square root.",
+            "key_points": [
+                "square root"
+            ],
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Which chapter introduces coordinate geometry in Class 10?",
+            "answer": "Chapter 7.",
+            "key_points": [
+                "chapter"
+            ],
+            "source_section": "Chapter Title"
+        }
+    ]
+}

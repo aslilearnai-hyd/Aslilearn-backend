@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 7: Proportional Reasoning - 1",
+  "generated_at": "2026-03-05T06:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What condition must two ratios satisfy to form a proportion?",
+      "answer": "The cross products must be equal (a × d = b × c).",
+      "key_points": ["proportion", "cross multiplication"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 2,
+      "question": "If 4:5 = x:15, find x.",
+      "answer": "12.",
+      "key_points": ["proportion solving"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Simplify the ratio 18:24.",
+      "answer": "3:4.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Write the ratio of 45 minutes to 1 hour in simplest form.",
+      "answer": "3:4.",
+      "key_points": ["ratio with units"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 5,
+      "question": "If 3:7 = 6:x, find x.",
+      "answer": "14.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Are the ratios 6:9 and 10:15 equivalent?",
+      "answer": "Yes.",
+      "key_points": ["equivalent ratios"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Simplify the ratio 24:36.",
+      "answer": "2:3.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 8,
+      "question": "If 5:8 = 15:x, find x.",
+      "answer": "24.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Write the ratio of 500 g to 2 kg in simplest form.",
+      "answer": "1:4.",
+      "key_points": ["ratio with units"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 10,
+      "question": "If 9:12 = x:16, find x.",
+      "answer": "12.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Are 8:12 and 2:3 equivalent ratios?",
+      "answer": "Yes.",
+      "key_points": ["equivalent ratios"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Simplify the ratio 30:45.",
+      "answer": "2:3.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 13,
+      "question": "If 7:9 = 14:x, find x.",
+      "answer": "18.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Write the ratio of 2 hours to 30 minutes in simplest form.",
+      "answer": "4:1.",
+      "key_points": ["ratio with units"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Are the ratios 4:6 and 8:12 proportional?",
+      "answer": "Yes.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Simplify the ratio 16:40.",
+      "answer": "2:5.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 17,
+      "question": "If 2:5 = x:20, find x.",
+      "answer": "8.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 18,
+      "question": "Write the ratio of 750 ml to 1 litre.",
+      "answer": "3:4.",
+      "key_points": ["ratio with units"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Simplify the ratio 21:28.",
+      "answer": "3:4.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 20,
+      "question": "If 6:11 = 12:x, find x.",
+      "answer": "22.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Are the ratios 9:12 and 3:4 equivalent?",
+      "answer": "Yes.",
+      "key_points": ["equivalent ratios"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Simplify the ratio 42:56.",
+      "answer": "3:4.",
+      "key_points": ["ratio simplification"],
+      "source_section": "Section 7.2"
+    },
+    {
+      "question_number": 23,
+      "question": "If 10:15 = x:45, find x.",
+      "answer": "30.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Write the ratio of 3 km to 500 m in simplest form.",
+      "answer": "6:1.",
+      "key_points": ["ratio with units"],
+      "source_section": "Section 7.1"
+    },
+    {
+      "question_number": 25,
+      "question": "If 8:5 = 32:x, find x.",
+      "answer": "20.",
+      "key_points": ["proportion"],
+      "source_section": "Section 7.3"
+    }
+  ]
+}

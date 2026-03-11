@@ -1,0 +1,127 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 11: Sound",
+  "generated_at": "2026-03-06T21:02:00",
+  "concepts": [
+    {
+      "concept_name": "Production of Sound",
+      "difficulty": "easy",
+      "lesson": "Sound is produced by vibrating objects. Vibration is a rapid to and fro motion of an object. This can be achieved by striking, plucking, scratching, rubbing, blowing, or shaking objects. For example, the human voice is produced by vibrations in the vocal cords.",
+      "real_example": "A stretched rubber band when plucked vibrates and produces sound[cite: 46].",
+      "key_points": [
+        "Sound is a form of energy producing a sensation of hearing[cite: 4].",
+        "Vibration means rapid to and fro motion[cite: 43].",
+        "Various methods like plucking or striking can set objects vibrating[cite: 41, 42]."
+      ],
+      "source_section": "Section 11.1"
+    },
+    {
+      "concept_name": "Propagation of Sound",
+      "difficulty": "medium",
+      "lesson": "Sound travels through a medium (solid, liquid, or gas) as a wave. When an object vibrates, it displaces the adjacent particles of the medium, which then exert force on neighboring particles. The particles themselves do not travel from the source to the ear; rather, the disturbance moves forward.",
+      "real_example": "Air is the most common medium through which sound travels to our ears[cite: 65].",
+      "key_points": [
+        "Sound requires a medium to travel[cite: 51, 52].",
+        "Particles of the medium only oscillate; they don't move forward[cite: 62].",
+        "Sound waves are mechanical waves[cite: 64]."
+      ],
+      "source_section": "Section 11.2"
+    },
+    {
+      "concept_name": "Compressions and Rarefactions",
+      "difficulty": "medium",
+      "lesson": "As a vibrating object moves forward, it creates a region of high pressure/density called a compression (C). As it moves backward, it creates a region of low pressure/density called a rarefaction (R). A series of these makes up a sound wave.",
+      "real_example": "A vibrating tuning fork creating ripples of high and low pressure in the air[cite: 70, 76].",
+      "key_points": [
+        "Compression = high pressure/density[cite: 66, 67].",
+        "Rarefaction = low pressure/density[cite: 69].",
+        "Propagation is the movement of these density variations[cite: 82]."
+      ],
+      "source_section": "Section 11.2"
+    },
+    {
+      "concept_name": "Longitudinal Waves",
+      "difficulty": "medium",
+      "lesson": "Sound waves are longitudinal waves because the individual particles of the medium move in a direction parallel to the direction of propagation of the disturbance. This is contrasted with transverse waves, where particles move perpendicular to the wave direction.",
+      "real_example": "Pushing and pulling a slinky creates a longitudinal wave similar to sound[cite: 95, 107].",
+      "key_points": [
+        "Particles move parallel to wave direction[cite: 105].",
+        "Particles oscillate back and forth about rest positions[cite: 106].",
+        "Sound is a longitudinal wave[cite: 107]."
+      ],
+      "source_section": "Section 11.2.1"
+    },
+    {
+      "concept_name": "Wavelength and Frequency",
+      "difficulty": "medium",
+      "lesson": "Wavelength (λ) is the distance between two consecutive compressions or rarefactions. Frequency (v) is the number of complete oscillations per unit time, measured in Hertz (Hz). They are related to wave speed (V) by the formula $V = \\lambda v$.",
+      "real_example": "A 2 kHz sound wave with a 35 cm wavelength travels at 700 m/s[cite: 235, 242].",
+      "key_points": [
+        "Wavelength SI unit is metre (m)[cite: 127].",
+        "Frequency is represented by Greek letter nu (v)[cite: 174].",
+        "Frequency = 1 / Time Period ($v = 1/T$)[cite: 179]."
+      ],
+      "source_section": "Section 11.2.2"
+    },
+    {
+      "concept_name": "Pitch and Amplitude",
+      "difficulty": "medium",
+      "lesson": "Pitch is how the brain interprets frequency; higher frequency means higher pitch. Amplitude is the magnitude of the maximum disturbance; it determines the loudness or softness of a sound. Louder sounds have larger amplitudes and carry more energy.",
+      "real_example": "A violin and a flute have different pitches even if played at the same loudness[cite: 180, 183].",
+      "key_points": [
+        "Pitch depends on frequency[cite: 184, 185].",
+        "Loudness depends on amplitude[cite: 199].",
+        "Quality (timbre) helps distinguish sounds of the same pitch and loudness[cite: 219]."
+      ],
+      "source_section": "Section 11.2.2"
+    },
+    {
+      "concept_name": "Reflection of Sound (Echo)",
+      "difficulty": "medium",
+      "lesson": "Sound reflects off surfaces just like light. An echo is a reflected sound heard separately from the original. To hear a distinct echo, the reflected sound must reach the ear at least 0.1 s after the original, requiring a minimum distance of 17.2 m at 22°C.",
+      "real_example": "Shouting near a tall building or mountain and hearing the sound again[cite: 299].",
+      "key_points": [
+        "Sound follows laws of reflection[cite: 276].",
+        "Sensation of sound persists for 0.1 s[cite: 300].",
+        "Minimum obstacle distance for echo is 17.2 m[cite: 304]."
+      ],
+      "source_section": "Section 11.3"
+    },
+    {
+      "concept_name": "Reverberation",
+      "difficulty": "medium",
+      "lesson": "In large halls, sound persists due to repeated reflections from walls and ceilings. This is called reverberation. While some is good, excessive reverberation makes sound blurred and is reduced using sound-absorbent materials.",
+      "real_example": "Auditorium walls are covered with compressed fibreboard to reduce echoes[cite: 311].",
+      "key_points": [
+        "Reverberation is the persistence of sound due to repeated reflections[cite: 309].",
+        "Reduced using drapes or rough plaster[cite: 311].",
+        "Seat materials are chosen for absorption properties[cite: 312]."
+      ],
+      "source_section": "Section 11.3.2"
+    },
+    {
+      "concept_name": "Audible Range, Infrasound, and Ultrasound",
+      "difficulty": "easy",
+      "lesson": "The human ear hears frequencies between 20 Hz and 20,000 Hz. Frequencies below 20 Hz are infrasonic, and those above 20 kHz are ultrasonic. Animals like dogs and bats can hear frequencies much higher than humans.",
+      "real_example": "Bats use ultrasound to navigate and find prey[cite: 356, 360].",
+      "key_points": [
+        "Audible range: 20 Hz – 20 kHz[cite: 347].",
+        "Infrasound: < 20 Hz (e.g., whales, elephants)[cite: 350, 352].",
+        "Ultrasound: > 20 kHz (e.g., dolphins, bats)[cite: 355, 356]."
+      ],
+      "source_section": "Section 11.4"
+    },
+    {
+      "concept_name": "Applications of Ultrasound",
+      "difficulty": "hard",
+      "lesson": "Ultrasound is used for high-precision cleaning, detecting flaws in metal blocks, and medical imaging (ultrasonography/echocardiography). Its short wavelength allows it to travel along well-defined paths and reflect off small defects or internal organs.",
+      "real_example": "A doctor uses an ultrasound scanner to check for stones in a kidney[cite: 389, 390].",
+      "key_points": [
+        "Used to clean hard-to-reach parts[cite: 374].",
+        "Detects invisible cracks in metal structures[cite: 377, 382].",
+        "Used for fetal examination during pregnancy[cite: 436]."
+      ],
+      "source_section": "Section 11.5"
+    }
+  ]
+}

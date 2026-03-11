@@ -1,0 +1,150 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Hard",
+    "source_pdf": "jemh113.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Survey Data Collection",
+            "objective": "Conduct a real survey",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect data",
+                "Tabulate"
+            ],
+            "learning_outcome": "Data handling skill",
+            "evaluation": "Completeness (20 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Mean Method Comparison",
+            "objective": "Compare mean calculation methods",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Apply methods",
+                "Compare results"
+            ],
+            "learning_outcome": "Analytical thinking",
+            "evaluation": "Comparison accuracy (20 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Median Interpretation Study",
+            "objective": "Interpret median meaningfully",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Find median",
+                "Interpret result"
+            ],
+            "learning_outcome": "Data interpretation",
+            "evaluation": "Explanation clarity (20 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Mode Reliability Analysis",
+            "objective": "Analyse reliability of mode",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Study datasets",
+                "Analyse mode"
+            ],
+            "learning_outcome": "Critical thinking",
+            "evaluation": "Depth of analysis (20 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Graph Error Diagnosis",
+            "objective": "Detect errors in graphs",
+            "materials": [
+                "Graph paper"
+            ],
+            "steps": [
+                "Analyse graph",
+                "Correct it"
+            ],
+            "learning_outcome": "Error correction",
+            "evaluation": "Correct correction (20 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Real-Life Data Case Study",
+            "objective": "Analyse real-life dataset",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect data",
+                "Analyse statistically"
+            ],
+            "learning_outcome": "Application skill",
+            "evaluation": "Correct analysis (20 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Ogive Interpretation",
+            "objective": "Interpret cumulative curves",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse ogive",
+                "Answer questions"
+            ],
+            "learning_outcome": "Graph literacy",
+            "evaluation": "Accuracy (20 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Statistical Conclusion Writing",
+            "objective": "Write conclusions from data",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse results",
+                "Write conclusion"
+            ],
+            "learning_outcome": "Inference skill",
+            "evaluation": "Clarity (20 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Method Selection Justification",
+            "objective": "Justify statistical method choice",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Analyse dataset",
+                "Justify method"
+            ],
+            "learning_outcome": "Strategic reasoning",
+            "evaluation": "Justification quality (20 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Integrated Statistics Project",
+            "objective": "Complete a full statistics project",
+            "materials": [
+                "Project file"
+            ],
+            "steps": [
+                "Collect data",
+                "Analyse",
+                "Report"
+            ],
+            "learning_outcome": "End-to-end data handling",
+            "evaluation": "Overall quality (20 marks)"
+        }
+    ]
+}

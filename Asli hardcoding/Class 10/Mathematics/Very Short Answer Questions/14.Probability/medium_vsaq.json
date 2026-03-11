@@ -1,0 +1,233 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 14: Probability",
+    "level": "Medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the probability of getting an even number on a die?",
+            "answer": "1/2",
+            "key_points": [
+                "even number"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the probability of not getting a head in a coin toss?",
+            "answer": "1/2",
+            "key_points": [
+                "complement"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 3,
+            "question": "How many elementary events are there when a die is thrown?",
+            "answer": "Six.",
+            "key_points": [
+                "elementary events"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the probability of drawing a red card from a deck?",
+            "answer": "1/2",
+            "key_points": [
+                "cards"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the probability of drawing an ace from a deck of cards?",
+            "answer": "1/13",
+            "key_points": [
+                "ace"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the probability of getting a prime number on a die?",
+            "answer": "1/2",
+            "key_points": [
+                "prime"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the probability of not getting an ace from a deck?",
+            "answer": "12/13",
+            "key_points": [
+                "complement"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the probability of getting at least one head when two coins are tossed?",
+            "answer": "3/4",
+            "key_points": [
+                "two coins"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the probability of drawing a black card?",
+            "answer": "1/2",
+            "key_points": [
+                "black card"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the probability of getting a number greater than 4 on a die?",
+            "answer": "1/3",
+            "key_points": [
+                "die"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the probability of getting tail when head has probability 0.6?",
+            "answer": "0.4",
+            "key_points": [
+                "complement"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the probability of getting a face card from a deck?",
+            "answer": "3/13",
+            "key_points": [
+                "face card"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is the probability of getting an odd number on a die?",
+            "answer": "1/2",
+            "key_points": [
+                "odd number"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the probability of drawing a queen from a deck?",
+            "answer": "1/13",
+            "key_points": [
+                "queen"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the probability of getting sum 8 when two dice are thrown?",
+            "answer": "5/36",
+            "key_points": [
+                "two dice"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the probability of getting no head when two coins are tossed?",
+            "answer": "1/4",
+            "key_points": [
+                "no head"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the probability of drawing a spade from a deck?",
+            "answer": "1/4",
+            "key_points": [
+                "spade"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the probability of getting a number divisible by 3 on a die?",
+            "answer": "1/3",
+            "key_points": [
+                "divisible by 3"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the probability of drawing a non-face card?",
+            "answer": "10/13",
+            "key_points": [
+                "non-face"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the probability of getting a composite number on a die?",
+            "answer": "1/3",
+            "key_points": [
+                "composite"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the probability of getting sum 13 on two dice?",
+            "answer": "0",
+            "key_points": [
+                "impossible"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the probability of drawing a king of hearts?",
+            "answer": "1/52",
+            "key_points": [
+                "specific card"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the probability of getting all tails in three coin tosses?",
+            "answer": "1/8",
+            "key_points": [
+                "three tosses"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the probability of drawing a red face card?",
+            "answer": "3/26",
+            "key_points": [
+                "red face card"
+            ],
+            "source_section": "14.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the probability of getting at least one tail in two coin tosses?",
+            "answer": "3/4",
+            "key_points": [
+                "at least one tail"
+            ],
+            "source_section": "14.1"
+        }
+    ]
+}

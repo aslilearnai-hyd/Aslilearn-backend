@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 12: How Nature Works in Harmony",
+  "generated_at": "2026-03-05T12:00:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a habitat?",
+        "correct_answer": "A habitat is the natural place where an organism lives and grows.",
+        "explanation": "It provides food, water, shelter, and suitable conditions for survival.",
+        "source_section": "Section 12.1"
+      },
+      {
+        "question": "What are biotic components?",
+        "correct_answer": "Living organisms in an ecosystem",
+        "explanation": "Plants, animals, and microorganisms are examples of biotic components.",
+        "source_section": "Section 12.1"
+      },
+      {
+        "question": "What are abiotic components?",
+        "correct_answer": "Non-living factors in an ecosystem",
+        "explanation": "Examples include air, water, soil, sunlight, and temperature.",
+        "source_section": "Section 12.1"
+      },
+      {
+        "question": "What is a population?",
+        "correct_answer": "A group of organisms of the same species living in a particular area",
+        "explanation": "For example, many fish of the same type living in a pond form a population.",
+        "source_section": "Section 12.2"
+      },
+      {
+        "question": "What is a community?",
+        "correct_answer": "A group of different populations living together in the same habitat",
+        "explanation": "Plants, animals, and microorganisms together form a community.",
+        "source_section": "Section 12.2"
+      },
+      {
+        "question": "What is an ecosystem?",
+        "correct_answer": "An ecosystem is the interaction between living organisms and their environment.",
+        "explanation": "It includes both biotic and abiotic components interacting together.",
+        "source_section": "Section 12.4"
+      },
+      {
+        "question": "What are producers?",
+        "correct_answer": "Organisms that make their own food",
+        "explanation": "Plants are producers because they prepare food through photosynthesis.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "question": "What is a food chain?",
+        "correct_answer": "A sequence showing who eats whom in an ecosystem",
+        "explanation": "It shows the flow of energy from producers to consumers.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "question": "What is a food web?",
+        "correct_answer": "A network of interconnected food chains",
+        "explanation": "Food webs show multiple feeding relationships in an ecosystem.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "question": "What are decomposers?",
+        "correct_answer": "Organisms that break down dead plants and animals",
+        "explanation": "Fungi and bacteria recycle nutrients back into the soil.",
+        "source_section": "Section 12.6"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Habitat",
+        "content": "A habitat provides the right environmental conditions for organisms to survive and grow.",
+        "source_section": "Section 12.1"
+      },
+      {
+        "title": "Biotic and Abiotic Components",
+        "content": "Biotic components include living organisms while abiotic components include non-living environmental factors.",
+        "source_section": "Section 12.1"
+      },
+      {
+        "title": "Population and Community",
+        "content": "A population includes individuals of the same species, while a community includes different populations living together.",
+        "source_section": "Section 12.2"
+      },
+      {
+        "title": "Food Chain",
+        "content": "A food chain shows the transfer of energy from producers to consumers.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "title": "Decomposition",
+        "content": "Decomposition breaks down dead organic matter and recycles nutrients into the ecosystem.",
+        "source_section": "Section 12.6"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Every ecosystem contains both living and non-living components.",
+        "source_section": "Section 12.4"
+      },
+      {
+        "fact": "Plants are called producers because they make their own food.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "fact": "Food chains are interconnected to form food webs.",
+        "source_section": "Section 12.5"
+      },
+      {
+        "fact": "Decomposers play an important role in recycling nutrients in nature.",
+        "source_section": "Section 12.6"
+      }
+    ]
+  }
+}

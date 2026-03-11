@@ -1,0 +1,76 @@
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter": "My Dear Soldiers",
+  "difficulty": "Easy",
+  "source_pdf": "cbse_class7_english.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Identifying Soldier’s Qualities",
+      "objective": "Recognize the traits that make soldiers brave and responsible",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the chapter carefully",
+        "Underline or list the qualities of soldiers mentioned in the text",
+        "Discuss why these qualities are important",
+        "Write your observations in the notebook"
+      ],
+      "learning_outcome": "Students understand the personality traits of soldiers",
+      "evaluation": "Accuracy in identifying qualities and participation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Letter Reading and Discussion",
+      "objective": "Understand the emotions expressed in letters to soldiers",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Read the letter in the chapter carefully",
+        "Highlight expressions of courage, care, and hope",
+        "Discuss in pairs the feelings conveyed in the letter",
+        "Write a short paragraph summarizing your understanding"
+      ],
+      "learning_outcome": "Students improve comprehension and empathy",
+      "evaluation": "Clarity of summary and discussion participation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Riddle / Word Puzzle",
+      "objective": "Develop logical thinking using words from the chapter",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Choose 5 words related to soldiers and bravery from the text",
+        "Create a simple word puzzle or riddle using these words",
+        "Solve puzzles created by classmates"
+      ],
+      "learning_outcome": "Students strengthen vocabulary and reasoning",
+      "evaluation": "Correct creation and solving of puzzles (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Role Play: Letter Writing",
+      "objective": "Express understanding through performance",
+      "materials": ["Textbook", "Notebook", "Pen"],
+      "steps": [
+        "Imagine you are writing a reply to the letter in the chapter",
+        "Form pairs and act out reading the letter and your response",
+        "Discuss the emotions and qualities you included in your reply"
+      ],
+      "learning_outcome": "Students improve communication and empathy",
+      "evaluation": "Expression, teamwork, and clarity in role play (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Creative Paragraph Writing",
+      "objective": "Write creatively about soldiers’ lives",
+      "materials": ["Notebook", "Pen"],
+      "steps": [
+        "Write a short paragraph imagining a day in the life of a soldier",
+        "Include details about courage, challenges, and dedication",
+        "Share your paragraph with classmates"
+      ],
+      "learning_outcome": "Students enhance imagination and writing skills",
+      "evaluation": "Content, creativity, and clarity (10 marks)"
+    }
+  ]
+}

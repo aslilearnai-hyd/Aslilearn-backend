@@ -1,0 +1,423 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Electricity: Circuits and Their Components",
+    "generated_at": "2026-03-05T18:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Derive the formula for total resistance in a series circuit and solve a numerical problem with three resistors.",
+            "answer": "In series: R_total = R1 + R2 + R3. Example: R1=5Ω, R2=10Ω, R3=15Ω. R_total = 5+10+15 = 30Ω.",
+            "answer_outline": [
+                "Series resistance formula",
+                "Numerical calculation"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "resistance calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 2,
+            "question": "Derive the formula for total resistance in a parallel circuit and solve a numerical example with three resistors.",
+            "answer": "In parallel: 1/R_total = 1/R1 + 1/R2 + 1/R3. Example: R1=6Ω, R2=3Ω, R3=2Ω. 1/R_total = 1/6+1/3+1/2=1. R_total = 1Ω.",
+            "answer_outline": [
+                "Parallel resistance formula",
+                "Numerical calculation"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "resistance calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain with calculations how voltage divides among resistors in series.",
+            "answer": "Voltage across resistor in series: V = (R/R_total) × V_total. Example: R1=4Ω, R2=6Ω, V_total=10V. V1 = (4/10)×10 = 4V, V2 = (6/10)×10 = 6V.",
+            "answer_outline": [
+                "Voltage division formula",
+                "Example calculation"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "voltage division"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 4,
+            "question": "Calculate current drawn by a parallel circuit with a 12 V battery and two bulbs of 6Ω and 12Ω.",
+            "answer": "Current through 6Ω: I1=V/R=12/6=2A, through 12Ω: I2=12/12=1A. Total current I_total=2+1=3A.",
+            "answer_outline": [
+                "Use Ohm's law",
+                "Calculate current in each branch",
+                "Find total current"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "Ohm's law",
+                "current calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 5,
+            "question": "Calculate energy consumed by a 60 W bulb connected to 220 V mains for 5 hours.",
+            "answer": "Energy E = Power × Time = 60 × 5 = 300 Wh = 0.3 kWh.",
+            "answer_outline": [
+                "Energy formula",
+                "Substitute values",
+                "Convert units"
+            ],
+            "key_concepts": [
+                "electric energy",
+                "power",
+                "calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 6,
+            "question": "Calculate the current in a series circuit with three resistors of 5Ω, 10Ω, 15Ω connected to a 12 V battery.",
+            "answer": "R_total = 5+10+15=30Ω. Current I = V/R = 12/30 = 0.4A.",
+            "answer_outline": [
+                "Series resistance calculation",
+                "Use Ohm's law to find current"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "Ohm's law",
+                "current calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 7,
+            "question": "Calculate total resistance and current for two resistors 6Ω and 3Ω connected in parallel with a 12 V battery.",
+            "answer": "1/R_total = 1/6 + 1/3 = 0.5. R_total = 2Ω. I_total = V/R = 12/2 = 6A.",
+            "answer_outline": [
+                "Parallel resistance calculation",
+                "Current calculation using Ohm's law"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain with calculations why adding resistors in series reduces current through the circuit.",
+            "answer": "I = V/R_total. Series resistors: R_total = R1 + R2 + R3. As R_total increases, I decreases. Example: V=12V, R1=4Ω, R2=6Ω → R_total=10Ω, I=12/10=1.2A.",
+            "answer_outline": [
+                "Series resistance effect",
+                "Use Ohm's law",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain with calculations why adding resistors in parallel increases total current.",
+            "answer": "Parallel reduces total resistance: 1/R_total=1/R1+1/R2. Lower R_total → higher I_total = V/R_total. Example: R1=6Ω, R2=3Ω, V=12V, 1/R_total=1/6+1/3=0.5 → R_total=2Ω, I_total=12/2=6A.",
+            "answer_outline": [
+                "Parallel resistance effect",
+                "Use Ohm's law",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain why short circuits can cause fires with numerical reasoning.",
+            "answer": "Short circuit → very low resistance. Current I = V/R becomes very high, heating wires H = I²R. Example: V=220V, R=0.1Ω → I=220/0.1=2200A, generating extreme heat.",
+            "answer_outline": [
+                "Short circuit explanation",
+                "Numerical example",
+                "Heating effect"
+            ],
+            "key_concepts": [
+                "short circuit",
+                "overcurrent",
+                "fire hazard"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 11,
+            "question": "Calculate the voltage drop across two series resistors R1=4Ω, R2=6Ω connected to a 12 V battery.",
+            "answer": "R_total=10Ω, I=12/10=1.2A. V1=IR1=1.2×4=4.8V, V2=IR2=1.2×6=7.2V.",
+            "answer_outline": [
+                "Total resistance calculation",
+                "Current calculation",
+                "Voltage drop calculation"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "voltage division",
+                "Ohm's law"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Calculate current through each branch of a parallel circuit with R1=6Ω, R2=12Ω, R3=4Ω, V=12V.",
+            "answer": "I1=12/6=2A, I2=12/12=1A, I3=12/4=3A, Total I=6A.",
+            "answer_outline": [
+                "Current calculation using Ohm's law",
+                "Sum for total current"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "current",
+                "Ohm's law"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 13,
+            "question": "Calculate power dissipated in a resistor of 10Ω with 2A current.",
+            "answer": "Power P=I²R=2²×10=4×10=40W.",
+            "answer_outline": [
+                "Use P=I²R formula",
+                "Substitute values",
+                "Find power"
+            ],
+            "key_concepts": [
+                "electric power",
+                "resistor",
+                "calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why connecting high-wattage appliances without proper fuse rating is hazardous using calculations.",
+            "answer": "High wattage → higher current. Example: 2200W appliance, V=220V → I=2200/220=10A. Using 5A fuse → fuse blows; without fuse, wire may overheat causing fire.",
+            "answer_outline": [
+                "Calculate current",
+                "Compare with fuse rating",
+                "Explain hazard"
+            ],
+            "key_concepts": [
+                "fuse",
+                "current",
+                "electric safety"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 15,
+            "question": "Calculate total energy consumed by three bulbs of 60 W, 40 W, 100 W in parallel for 5 hours at 220 V supply.",
+            "answer": "Energy=Power×Time. E_total=(60+40+100)×5=200×5=1000Wh=1kWh.",
+            "answer_outline": [
+                "Sum power of bulbs",
+                "Multiply by time",
+                "Convert to kWh"
+            ],
+            "key_concepts": [
+                "electric energy",
+                "parallel circuit",
+                "calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain using calculations why high-resistance wires produce more heat for the same current.",
+            "answer": "H=I²R. I constant, higher R → higher H. Example: I=2A, R1=5Ω → H=20W, R2=10Ω → H=40W.",
+            "answer_outline": [
+                "Use H=I²R formula",
+                "Compare resistances",
+                "Explain heat effect"
+            ],
+            "key_concepts": [
+                "heating effect",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Draw and explain a complex series-parallel circuit with numerical calculations for total resistance and current.",
+            "answer": "Combine series and parallel resistors. Example: R1=4Ω series with R2=6Ω//R3=12Ω. R_parallel=1/(1/6+1/12)=4Ω. R_total=R1+R_parallel=4+4=8Ω. I=V/R_total=12/8=1.5A.",
+            "answer_outline": [
+                "Circuit diagram",
+                "Series-parallel calculation",
+                "Current calculation"
+            ],
+            "key_concepts": [
+                "series-parallel circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain using calculations how voltage and current are affected in a series circuit when one resistor is doubled.",
+            "answer": "Original R_total=R1+R2, I=V/R_total. Doubling R1 → new R_total, I decreases, voltage drop across each R changes: V1=IR1_new, V2=IR2.",
+            "answer_outline": [
+                "Series circuit formulas",
+                "Effect on current",
+                "Effect on voltage drop"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "voltage division",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain using calculations how current in parallel branches changes when one branch resistance is halved.",
+            "answer": "Current in each branch: I=V/R. Halving one branch resistance doubles its current. Total current increases. Example: V=12V, R1=6Ω→I1=2A, R2=12Ω→I2=1A. Halve R1: I1_new=12/3=4A, I_total=4+1+…",
+            "answer_outline": [
+                "Parallel current formula",
+                "Effect of resistance change",
+                "Numerical example"
+            ],
+            "key_concepts": [
+                "parallel circuit",
+                "current distribution",
+                "resistance"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain with diagram and calculation how a fuse protects a series circuit connected to a 12 V battery with a 10 Ω resistor.",
+            "answer": "Fuse rated 1A: I=V/R=12/10=1.2A > 1A → fuse blows, protecting resistor from excess current.",
+            "answer_outline": [
+                "Circuit diagram",
+                "Current calculation",
+                "Protection explanation"
+            ],
+            "key_concepts": [
+                "fuse",
+                "current protection",
+                "series circuit"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain with calculations why AC is used for power transmission and DC is used in electronic devices.",
+            "answer": "AC can be stepped up using transformers → low loss in transmission. DC provides constant voltage for devices. Example: Power transmitted 220V AC, small device needs 12V DC.",
+            "answer_outline": [
+                "AC transmission advantage",
+                "DC use in devices",
+                "Example calculation"
+            ],
+            "key_concepts": [
+                "AC current",
+                "DC current",
+                "power transmission"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.9"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the effect of connecting resistors in series and parallel on total power consumed, with calculations.",
+            "answer": "Series: P=V²/R_total → more R → less power. Parallel: R_total decreases → more total power. Example: Series R_total=10Ω, V=12V → P=144/10=14.4W. Parallel R_total=5Ω → P=144/5=28.8W.",
+            "answer_outline": [
+                "Series power calculation",
+                "Parallel power calculation",
+                "Compare results"
+            ],
+            "key_concepts": [
+                "series circuit",
+                "parallel circuit",
+                "power consumption"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain with calculations how an electric motor converts electrical energy to mechanical energy.",
+            "answer": "Electrical energy: Power = VI. Magnetic field generates torque on rotor → rotational motion. Example: V=12V, I=2A, Power=24W, used to rotate motor shaft.",
+            "answer_outline": [
+                "Electrical energy input",
+                "Magnetic interaction",
+                "Mechanical output"
+            ],
+            "key_concepts": [
+                "electric motor",
+                "energy conversion",
+                "power"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.8"
+        },
+        {
+            "question_number": 24,
+            "question": "Calculate the total current in a combination circuit with R1=4Ω series with (R2=6Ω parallel R3=12Ω) connected to 12 V battery.",
+            "answer": "R_parallel=1/(1/6+1/12)=4Ω, R_total=R1+R_parallel=4+4=8Ω, I=12/8=1.5A.",
+            "answer_outline": [
+                "Series-parallel resistance calculation",
+                "Current calculation using Ohm's law"
+            ],
+            "key_concepts": [
+                "series-parallel circuit",
+                "resistance",
+                "current"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain with calculations how to select proper fuse rating for an appliance of 220 V, 1.5 kW.",
+            "answer": "I = P/V = 1500/220 ≈ 6.82A. Fuse rating slightly above 6.82A, e.g., 7A, protects appliance safely.",
+            "answer_outline": [
+                "Calculate current",
+                "Select fuse rating",
+                "Safety importance"
+            ],
+            "key_concepts": [
+                "fuse selection",
+                "current calculation",
+                "safety"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.7"
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter 9: Light – Reflection and Refraction",
+    "generated_at": "2026-03-11T00:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is reflection of light?",
+            "answer": "Bouncing back of light rays from a surface into the same medium.",
+            "marks": 2,
+            "source_section": "Section 9.1"
+        },
+        {
+            "question_number": 2,
+            "question": "State the first law of reflection.",
+            "answer": "Angle of incidence equals angle of reflection.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 3,
+            "question": "State the second law of reflection.",
+            "answer": "Incident ray, reflected ray and normal lie in the same plane.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What type of image is formed by a plane mirror?",
+            "answer": "Virtual, erect and laterally inverted image.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is lateral inversion?",
+            "answer": "Left side of object appears as right side in the mirror image.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the focal length of a spherical mirror?",
+            "answer": "Half the radius of curvature (f = R/2).",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which mirror is used as a rear-view mirror in vehicles?",
+            "answer": "Convex mirror.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the nature of image formed by a convex mirror?",
+            "answer": "Virtual, erect and diminished.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is refraction of light?",
+            "answer": "Bending of light when it passes from one medium to another.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 10,
+            "question": "State Snell’s law.",
+            "answer": "sin i / sin r = constant (refractive index).",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 11,
+            "question": "What is refractive index?",
+            "answer": "Ratio of speed of light in vacuum to speed in the medium (n = c/v).",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does a pencil appear bent in water?",
+            "answer": "Due to refraction of light at water-air interface.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What is apparent depth?",
+            "answer": "The depth at which an object in water appears to be when viewed from air.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What is a convex lens?",
+            "answer": "Lens thicker at centre and thinner at edges that converges light rays.",
+            "marks": 2,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a concave lens?",
+            "answer": "Lens thinner at centre and thicker at edges that diverges light rays.",
+            "marks": 2,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the power of a lens?",
+            "answer": "Reciprocal of focal length in metres (P = 1/f).",
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the SI unit of power of a lens?",
+            "answer": "Dioptre (D).",
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 18,
+            "question": "State the lens formula.",
+            "answer": "1/f = 1/v – 1/u.",
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What is magnification?",
+            "answer": "Ratio of image height to object height (m = h'/h = v/u).",
+            "marks": 2,
+            "source_section": "Section 9.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Why do we see a rainbow after rain?",
+            "answer": "Due to refraction, dispersion and total internal reflection in water droplets.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What causes twinkling of stars?",
+            "answer": "Atmospheric refraction due to varying density of air layers.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why do convex lenses converge light rays?",
+            "answer": "Because they are thicker at the centre, causing rays to bend inwards.",
+            "marks": 2,
+            "source_section": "Section 9.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is a concave mirror used in solar cookers?",
+            "answer": "It converges sunlight to a point, producing high temperature.",
+            "marks": 2,
+            "source_section": "Section 9.2"
+        },
+        {
+            "question_number": 24,
+            "question": "What happens when light goes from denser to rarer medium?",
+            "answer": "It bends away from the normal.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What is total internal reflection?",
+            "answer": "Complete reflection of light inside denser medium when angle > critical angle.",
+            "marks": 2,
+            "source_section": "Section 9.3"
+        }
+    ]
+}

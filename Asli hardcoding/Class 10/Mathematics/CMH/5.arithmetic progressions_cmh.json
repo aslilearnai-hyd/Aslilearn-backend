@@ -1,0 +1,67 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 5: Arithmetic Progressions",
+    "generated_at": "2026-02-27T21:00:00",
+    "concepts": [
+        {
+            "concept_name": "Arithmetic Progression",
+            "difficulty": "easy",
+            "lesson": "An arithmetic progression (AP) is a sequence of numbers in which the difference between any two consecutive terms remains constant. This constant difference is known as the common difference. Arithmetic progressions are used to represent situations where a quantity increases or decreases by a fixed amount over equal intervals. The sequence may be finite or infinite, and the common difference may be positive, negative, or zero, which determines the overall pattern of the sequence.",
+            "real_example": "2, 5, 8, 11 is an AP with d = 3.",
+            "key_points": [
+                "Constant difference",
+                "Can be finite or infinite",
+                "Difference may be positive, negative or zero"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Common Difference",
+            "difficulty": "easy",
+            "lesson": "The common difference of an arithmetic progression is obtained by subtracting any term from the term that follows it. It represents the fixed amount by which each term changes. A positive common difference results in an increasing arithmetic progression, while a negative common difference results in a decreasing arithmetic progression. When the common difference is zero, all terms of the progression are equal, forming a constant sequence. Identifying the common difference is the first step in analysing any AP.",
+            "real_example": "In 7, 10, 13 → d = 3.",
+            "key_points": [
+                "d = a₂ − a₁",
+                "Positive d → increasing AP",
+                "Negative d → decreasing AP"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "nth Term of an AP",
+            "difficulty": "medium",
+            "lesson": "The nth term of an arithmetic progression is given by the formula aₙ = a + (n − 1)d, where a is the first term, d is the common difference, and n is the position of the term. This formula allows us to find any specific term of the sequence without listing all previous terms. It is widely used to determine missing terms, solve word problems, and analyse patterns involving linear growth or decline.",
+            "real_example": "10th term of 2, 5, 8, …",
+            "key_points": [
+                "a is first term",
+                "n is position",
+                "Used to find missing terms"
+            ],
+            "source_section": "Section 5.3"
+        },
+        {
+            "concept_name": "Types of Arithmetic Progressions",
+            "difficulty": "medium",
+            "lesson": "Arithmetic progressions can be classified based on the value of the common difference. If the common difference is positive, the sequence is increasing. If it is negative, the sequence is decreasing. If the common difference is zero, the sequence is constant. This classification helps in quickly understanding the behaviour of the sequence and choosing suitable methods for solving related problems.",
+            "real_example": "5, 5, 5 is a constant AP.",
+            "key_points": [
+                "d > 0 → increasing",
+                "d < 0 → decreasing",
+                "d = 0 → constant"
+            ],
+            "source_section": "Section 5.2"
+        },
+        {
+            "concept_name": "Real-Life Applications of AP",
+            "difficulty": "hard",
+            "lesson": "Arithmetic progressions are used to model real-life situations where a quantity changes by a fixed amount over regular intervals. Examples include fixed annual salary increments, savings deposited at regular intervals, and patterns in seating arrangements or designs. Understanding APs helps translate practical situations into mathematical expressions, enabling accurate predictions and calculations. Such applications strengthen problem-solving skills and connect mathematics to everyday life.",
+            "real_example": "Yearly salary increment by fixed amount.",
+            "key_points": [
+                "Used in finance",
+                "Used in patterns and sequences",
+                "Important application-based questions"
+            ],
+            "source_section": "Section 5.1"
+        }
+    ]
+}

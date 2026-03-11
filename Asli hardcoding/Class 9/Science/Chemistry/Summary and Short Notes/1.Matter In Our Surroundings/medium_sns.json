@@ -1,0 +1,37 @@
+{
+  "class": "Class 9",
+  "subject": "Science",
+  "chapter": "Chapter 1: Matter in Our Surroundings",
+  "difficulty": "Medium",
+  "short_notes": {
+    "key_points": [
+      "Matter is made up of tiny particles that are constantly moving",
+      "The kinetic energy of particles increases with increase in temperature",
+      "Diffusion is the process of intermixing of particles due to their motion",
+      "Solids have fixed shape and volume because their particles are tightly packed",
+      "Liquids have fixed volume but no fixed shape because particles can move freely",
+      "Gases have neither fixed shape nor fixed volume due to large spaces between particles",
+      "Intermolecular forces of attraction are strongest in solids and weakest in gases",
+      "Change of state occurs when energy is absorbed or released by particles"
+    ],
+    "examples": [
+      "Smell of incense stick spreading in a room shows diffusion in gases",
+      "Ink spreading in water demonstrates diffusion in liquids",
+      "Ice melting into water when heated is an example of melting",
+      "Water changing into steam on heating shows boiling or vaporization",
+      "Steam changing into water droplets shows condensation"
+    ],
+    "formulas": [
+      "Temperature (Kelvin) = Temperature (°C) + 273",
+      "Melting point: temperature at which solid changes into liquid",
+      "Boiling point: temperature at which liquid changes into gas"
+    ],
+    "exam_tips": [
+      "Understand particle arrangement in solids, liquids and gases",
+      "Explain diffusion with daily life examples",
+      "Remember the processes of change of state: melting, freezing, boiling, condensation and sublimation",
+      "Use Kelvin scale when writing temperature in scientific form",
+      "Write differences between solids, liquids and gases clearly in exams"
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+    "class": "Class 10",
+    "subject": "Science (CBSE)",
+    "chapter": "Light – Reflection and Refraction",
+    "difficulty": "Easy",
+    "source_pdf": "ncert_class10_science_ch9.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Laws of Reflection Verification",
+            "objective": "Verify the laws of reflection using a plane mirror",
+            "materials": [
+                "Plane mirror",
+                "Laser pointer or torch with narrow beam",
+                "Protractor",
+                "White sheet/paper",
+                "Scale"
+            ],
+            "steps": [
+                "Place the plane mirror vertically on white paper",
+                "Draw the normal and incident ray at different angles",
+                "Measure angle of incidence and reflection",
+                "Tabulate and confirm i = r"
+            ],
+            "learning_outcome": "Understands and verifies the laws of reflection experimentally",
+            "evaluation": "Accuracy of measurements and conclusion (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Image Formation in Plane Mirror",
+            "objective": "Observe characteristics of images formed by plane mirrors",
+            "materials": [
+                "Plane mirror",
+                "Object (pencil or toy)",
+                "Graph paper",
+                "Pins or markers"
+            ],
+            "steps": [
+                "Place object in front of mirror",
+                "Locate image position using ray method or no-parallax method",
+                "Measure object distance, image distance, and size",
+                "Note lateral inversion and virtual nature"
+            ],
+            "learning_outcome": "Recognizes properties like virtual, erect, same size, and laterally inverted images",
+            "evaluation": "Diagram accuracy and observations (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Concave Mirror Ray Diagram Poster",
+            "objective": "Illustrate image formation by concave mirrors for different object positions",
+            "materials": [
+                "Chart paper",
+                "Colors/sketch pens",
+                "Reference diagrams from textbook"
+            ],
+            "steps": [
+                "Draw ray diagrams for object at infinity, beyond C, at C, between C and F, at F, between F and P",
+                "Label principal axis, focus, center of curvature, image position, nature",
+                "Write real-life uses (e.g., solar cooker, shaving mirror)"
+            ],
+            "learning_outcome": "Understands image characteristics for concave mirrors",
+            "evaluation": "Accuracy, labeling, and creativity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Convex Mirror Rear-View Demonstration",
+            "objective": "Demonstrate field of view advantage of convex mirrors",
+            "materials": [
+                "Convex mirror (small makeup or toy mirror)",
+                "Plane mirror for comparison",
+                "Objects placed at sides",
+                "Notebook for recording"
+            ],
+            "steps": [
+                "Observe field of view in plane vs convex mirror",
+                "Place objects at different angles and note visibility",
+                "Record why convex mirrors are used in vehicles"
+            ],
+            "learning_outcome": "Appreciates wide field of view and virtual, diminished images in convex mirrors",
+            "evaluation": "Observation details and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Refraction through Glass Slab",
+            "objective": "Observe lateral shift in refraction through glass slab",
+            "materials": [
+                "Rectangular glass slab",
+                "Laser pointer or pins",
+                "White paper",
+                "Protractor"
+            ],
+            "steps": [
+                "Place slab on paper and trace outline",
+                "Draw incident ray at angle, mark emergent ray",
+                "Measure angle of incidence, refraction, and lateral shift",
+                "Repeat for different angles"
+            ],
+            "learning_outcome": "Understands refraction, bending of light, and apparent depth/shift",
+            "evaluation": "Ray tracing accuracy and shift calculation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Apparent Depth Experiment",
+            "objective": "Verify apparent depth in water and calculate refractive index",
+            "materials": [
+                "Coin",
+                "Beaker with water",
+                "Scale",
+                "Calculator"
+            ],
+            "steps": [
+                "Measure real depth of coin in empty beaker",
+                "Fill with water and measure apparent depth by looking from top",
+                "Calculate refractive index = real depth / apparent depth",
+                "Repeat with different depths"
+            ],
+            "learning_outcome": "Learns concept of apparent depth and refractive index",
+            "evaluation": "Calculation accuracy and inference (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Convex Lens Image Formation Activity",
+            "objective": "Study real image formation by convex lens",
+            "materials": [
+                "Convex lens",
+                "Torch or candle (light source)",
+                "Screen (white paper)",
+                "Meter scale"
+            ],
+            "steps": [
+                "Set up lens and move object/screen to get sharp image",
+                "Record object distance (u), image distance (v), nature for different positions",
+                "Draw ray diagrams for confirmation"
+            ],
+            "learning_outcome": "Understands image formation rules for convex lens",
+            "evaluation": "Table of observations and ray diagrams (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Refractive Index of Different Media",
+            "objective": "Compare refractive index of air, water, and glass",
+            "materials": [
+                "Laser pointer",
+                "Rectangular containers (air/water/glass slab)",
+                "Protractor",
+                "Paper"
+            ],
+            "steps": [
+                "Pass laser beam through each medium at same angle",
+                "Measure angle of refraction",
+                "Calculate refractive index (sin i / sin r)",
+                "Compare values"
+            ],
+            "learning_outcome": "Learns that refractive index depends on medium",
+            "evaluation": "Measurements and comparison table (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Mirror and Lens Uses Collage",
+            "objective": "Identify real-life applications of mirrors and lenses",
+            "materials": [
+                "Chart paper",
+                "Old magazines/newspapers",
+                "Glue",
+                "Markers"
+            ],
+            "steps": [
+                "Collect/cut pictures of concave mirror (torch, headlight), convex mirror (vehicle), convex lens (magnifier, spectacles), concave lens (myopia correction)",
+                "Paste and label with uses and chapter concepts",
+                "Write short notes on each"
+            ],
+            "learning_outcome": "Connects chapter concepts to daily life applications",
+            "evaluation": "Relevance, presentation, and explanations (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Simple Periscope Model",
+            "objective": "Build a model to demonstrate reflection in periscope",
+            "materials": [
+                "Cardboard box",
+                "Two small plane mirrors",
+                "Cutter",
+                "Tape/glue"
+            ],
+            "steps": [
+                "Cut holes in box for viewing and object",
+                "Fix mirrors at 45° angle inside box",
+                "Test by viewing object around corner",
+                "Explain using laws of reflection"
+            ],
+            "learning_outcome": "Applies laws of reflection to real optical device",
+            "evaluation": "Working model and explanation (10 marks)"
+        }
+    ]
+}

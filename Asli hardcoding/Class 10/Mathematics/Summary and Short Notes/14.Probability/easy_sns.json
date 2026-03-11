@@ -1,0 +1,26 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter": "Probability",
+    "difficulty": "Easy",
+    "source_pdf": "jemh114.pdf",
+    "short_notes": {
+        "key_points": [
+            "Probability measures chance of an event",
+            "Probability value lies between 0 and 1",
+            "Sample space is the set of all possible outcomes"
+        ],
+        "examples": [
+            "Tossing a coin",
+            "Rolling a die"
+        ],
+        "formulas": [
+            "P(E) = Number of favourable outcomes / Total outcomes"
+        ],
+        "exam_tips": [
+            "Write sample space clearly",
+            "Check favourable outcomes carefully",
+            "Simplify fractions properly"
+        ]
+    }
+}

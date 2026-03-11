@@ -1,0 +1,392 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 5: Democratic Rights",
+    "generated_at": "2026-03-07T22:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how democratic rights protect citizens from misuse of power.",
+            "answer": "Democratic rights limit government authority and allow citizens to challenge injustice through courts.",
+            "answer_outline": [
+                "Protection from misuse of power",
+                "Legal safeguards",
+                "Role of courts"
+            ],
+            "key_concepts": [
+                "democratic rights"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the importance of the Right to Equality in democracy.",
+            "answer": "The Right to Equality ensures equal treatment of citizens and prevents discrimination in society.",
+            "answer_outline": [
+                "Equality before law",
+                "Prohibition of discrimination",
+                "Equal opportunities"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the Right to Freedom and its reasonable restrictions.",
+            "answer": "The Right to Freedom provides several freedoms but also includes restrictions to maintain public order and national security.",
+            "answer_outline": [
+                "Freedom of speech",
+                "Freedom of movement",
+                "Reasonable restrictions"
+            ],
+            "key_concepts": [
+                "freedom"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the significance of minority rights in democracy.",
+            "answer": "Minority rights protect cultural identity and ensure minorities are not dominated by the majority.",
+            "answer_outline": [
+                "Protection of culture",
+                "Preservation of language",
+                "Equal opportunities"
+            ],
+            "key_concepts": [
+                "minorities"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the Right against Exploitation with examples.",
+            "answer": "This right protects individuals from forced labour, child labour and human trafficking.",
+            "answer_outline": [
+                "Human trafficking",
+                "Child labour",
+                "Forced labour"
+            ],
+            "key_concepts": [
+                "exploitation"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the role of judiciary in protecting Fundamental Rights.",
+            "answer": "The judiciary protects rights by issuing orders, writs and ensuring justice.",
+            "answer_outline": [
+                "Judicial review",
+                "Enforcement of rights"
+            ],
+            "key_concepts": [
+                "judiciary"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain why the Right to Constitutional Remedies is called the heart and soul of the Constitution.",
+            "answer": "Because it allows citizens to approach courts when their Fundamental Rights are violated.",
+            "answer_outline": [
+                "Protection of rights",
+                "Court access"
+            ],
+            "key_concepts": [
+                "constitutional remedies"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the concept of secularism in India.",
+            "answer": "Secularism means the state treats all religions equally and does not favor any religion.",
+            "answer_outline": [
+                "Equality of religions",
+                "Neutral state"
+            ],
+            "key_concepts": [
+                "secularism"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain Cultural and Educational Rights in detail.",
+            "answer": "These rights allow minorities to preserve their language, culture and establish educational institutions.",
+            "answer_outline": [
+                "Minority protection",
+                "Educational institutions"
+            ],
+            "key_concepts": [
+                "culture"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain Public Interest Litigation with an example.",
+            "answer": "Public Interest Litigation allows citizens to approach courts for issues affecting public welfare.",
+            "answer_outline": [
+                "Meaning of PIL",
+                "Purpose"
+            ],
+            "key_concepts": [
+                "PIL"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the functions of the National Human Rights Commission.",
+            "answer": "NHRC investigates violations of human rights and promotes their protection.",
+            "answer_outline": [
+                "Investigation",
+                "Protection"
+            ],
+            "key_concepts": [
+                "NHRC"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the importance of human rights.",
+            "answer": "Human rights ensure dignity, equality and freedom for all individuals.",
+            "answer_outline": [
+                "Dignity",
+                "Equality",
+                "Freedom"
+            ],
+            "key_concepts": [
+                "human rights"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain how democratic rights promote equality in society.",
+            "answer": "Rights ensure equal treatment and opportunities for all citizens.",
+            "answer_outline": [
+                "Equality before law",
+                "Equal opportunities"
+            ],
+            "key_concepts": [
+                "equality"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of freedom of speech in democracy.",
+            "answer": "Freedom of speech allows citizens to express opinions and criticize government policies.",
+            "answer_outline": [
+                "Expression",
+                "Criticism"
+            ],
+            "key_concepts": [
+                "speech"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the relationship between democracy and rights.",
+            "answer": "Rights are essential for democracy because they ensure freedom, equality and justice.",
+            "answer_outline": [
+                "Freedom",
+                "Equality",
+                "Justice"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the role of education in protecting rights.",
+            "answer": "Education increases awareness about rights and responsibilities.",
+            "answer_outline": [
+                "Awareness",
+                "Participation"
+            ],
+            "key_concepts": [
+                "education"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain how RTI strengthens democracy.",
+            "answer": "RTI promotes transparency and accountability in government.",
+            "answer_outline": [
+                "Transparency",
+                "Accountability"
+            ],
+            "key_concepts": [
+                "RTI"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why rights expand over time.",
+            "answer": "Rights expand as societies evolve and new needs arise.",
+            "answer_outline": [
+                "Social development",
+                "New rights"
+            ],
+            "key_concepts": [
+                "rights expansion"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the importance of courts in democracy.",
+            "answer": "Courts protect rights and ensure justice in society.",
+            "answer_outline": [
+                "Protection of rights",
+                "Justice"
+            ],
+            "key_concepts": [
+                "courts"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why minority rights are essential in democracy.",
+            "answer": "Minority rights prevent discrimination and ensure equality.",
+            "answer_outline": [
+                "Equality",
+                "Protection of identity"
+            ],
+            "key_concepts": [
+                "minorities"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain human trafficking and its prohibition.",
+            "answer": "Human trafficking refers to buying and selling of people and is prohibited by law.",
+            "answer_outline": [
+                "Definition",
+                "Legal prohibition"
+            ],
+            "key_concepts": [
+                "trafficking"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of democratic rights for citizens.",
+            "answer": "Democratic rights ensure freedom, equality and dignity for citizens.",
+            "answer_outline": [
+                "Freedom",
+                "Equality",
+                "Dignity"
+            ],
+            "key_concepts": [
+                "democratic rights"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of legal protection of rights.",
+            "answer": "Legal protection ensures that rights can be enforced through courts.",
+            "answer_outline": [
+                "Legal protection",
+                "Court enforcement"
+            ],
+            "key_concepts": [
+                "legal rights"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the role of the Constitution in protecting rights.",
+            "answer": "The Constitution guarantees Fundamental Rights and provides mechanisms for their enforcement.",
+            "answer_outline": [
+                "Fundamental Rights",
+                "Legal protection"
+            ],
+            "key_concepts": [
+                "constitution"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how democratic rights strengthen democracy.",
+            "answer": "They protect citizens, promote equality and ensure justice in society.",
+            "answer_outline": [
+                "Citizen protection",
+                "Equality",
+                "Justice"
+            ],
+            "key_concepts": [
+                "democracy"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 5.2"
+        }
+    ]
+}

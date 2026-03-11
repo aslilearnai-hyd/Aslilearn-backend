@@ -1,0 +1,285 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T12:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A car travels 120 m in 8 s. Calculate its speed.",
+            "answer": "Speed = distance / time = 120 / 8 = 15 m/s.",
+            "key_concepts": [
+                "speed calculation"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Convert 72 km/h into m/s.",
+            "answer": "72 ÷ 3.6 = 20 m/s.",
+            "key_concepts": [
+                "unit conversion"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "A train starts from rest and reaches 15 m/s in 5 s. Calculate acceleration.",
+            "answer": "a = (v − u)/t = (15 − 0)/5 = 3 m/s².",
+            "key_concepts": [
+                "acceleration formula"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "A car slows down from 25 m/s to 5 m/s in 10 s. Find acceleration.",
+            "answer": "a = (5 − 25)/10 = −2 m/s².",
+            "key_concepts": [
+                "retardation"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the three equations of motion.",
+            "answer": "v = u + at, s = ut + ½at², v² − u² = 2as.",
+            "key_concepts": [
+                "equations of motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the condition required for applying equations of motion.",
+            "answer": "The equations of motion are valid only for motion in a straight line with uniform acceleration.",
+            "key_concepts": [
+                "uniform acceleration"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "Why does a body moving in a circular path experience acceleration?",
+            "answer": "Because the direction of velocity changes continuously in circular motion.",
+            "key_concepts": [
+                "circular motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why velocity changes in circular motion even when speed remains constant.",
+            "answer": "Velocity changes because direction changes continuously.",
+            "key_concepts": [
+                "velocity direction"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain how speed is determined from a distance-time graph.",
+            "answer": "Speed is determined by calculating the slope of the distance-time graph.",
+            "key_concepts": [
+                "graph slope"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain how displacement can be determined from a velocity-time graph.",
+            "answer": "Displacement equals the area under the velocity-time graph.",
+            "key_concepts": [
+                "graph area"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is acceleration zero when velocity remains constant?",
+            "answer": "Because acceleration depends on change in velocity, and constant velocity means no change.",
+            "key_concepts": [
+                "constant velocity"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why a freely falling body has uniform acceleration.",
+            "answer": "Because gravity provides constant acceleration towards the Earth.",
+            "key_concepts": [
+                "free fall",
+                "gravity"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 13,
+            "question": "A body moves with velocity 12 m/s for 4 s. Calculate displacement.",
+            "answer": "Displacement = velocity × time = 12 × 4 = 48 m.",
+            "key_concepts": [
+                "displacement"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the meaning of negative acceleration.",
+            "answer": "Negative acceleration means velocity decreases with time and is also called retardation.",
+            "key_concepts": [
+                "negative acceleration"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What will be the displacement after completing one full round of a circular track?",
+            "answer": "Zero because the initial and final positions are the same.",
+            "key_concepts": [
+                "displacement"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is velocity-time graph important in studying motion?",
+            "answer": "It helps determine acceleration from slope and displacement from the area under the graph.",
+            "key_concepts": [
+                "graph analysis"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the difference between speed and velocity.",
+            "answer": "Speed is a scalar quantity while velocity is a vector quantity that includes direction.",
+            "key_concepts": [
+                "scalar",
+                "vector"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 18,
+            "question": "Why does circular motion involve acceleration?",
+            "answer": "Because the direction of velocity keeps changing.",
+            "key_concepts": [
+                "direction change"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 19,
+            "question": "What type of motion is shown by a satellite revolving around Earth?",
+            "answer": "Uniform circular motion.",
+            "key_concepts": [
+                "satellite motion"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why motion is considered relative.",
+            "answer": "Because an object may appear moving with respect to one reference point but stationary with respect to another.",
+            "key_concepts": [
+                "relative motion"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which instrument measures speed of vehicles?",
+            "answer": "Speedometer.",
+            "key_concepts": [
+                "speedometer"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Which instrument measures the distance travelled by a vehicle?",
+            "answer": "Odometer.",
+            "key_concepts": [
+                "odometer"
+            ],
+            "marks": 1,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What happens to velocity when acceleration is positive?",
+            "answer": "Velocity increases with time.",
+            "key_concepts": [
+                "positive acceleration"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Give two examples of uniform circular motion.",
+            "answer": "Motion of Earth around the Sun and motion of a satellite around Earth.",
+            "key_concepts": [
+                "circular motion examples"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is direction important in velocity but not in speed?",
+            "answer": "Velocity includes direction while speed depends only on magnitude.",
+            "key_concepts": [
+                "vector vs scalar"
+            ],
+            "marks": 2,
+            "difficulty_level": "hard",
+            "source_section": "Section 7.2.1"
+        }
+    ]
+}

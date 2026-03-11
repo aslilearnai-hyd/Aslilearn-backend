@@ -1,0 +1,158 @@
+{
+    "class": "Class 9",
+    "subject": "Mathematics",
+    "chapter_name": "Heron’s Formula",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Solve complex numerical problems using Heron’s formula",
+        "Apply Heron’s formula to obtuse, isosceles, and scalene triangles",
+        "Use Heron’s formula in coordinate geometry problems",
+        "Solve real-life application problems involving triangles",
+        "Verify area using alternate methods for accuracy"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Revision and Complex Triangles",
+            "topics_covered": [
+                "Recap of semi-perimeter and Heron’s formula",
+                "Identification of triangle types",
+                "Properties of obtuse, isosceles, and scalene triangles"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Draw challenging triangles on board"
+            ],
+            "student_activities": [
+                "Classify given triangles by sides and angles",
+                "Label sides and angles for calculation"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick notebook check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Advanced Numerical Problems",
+            "topics_covered": [
+                "Heron’s formula for scalene triangles with large sides",
+                "Stepwise problem-solving approach"
+            ],
+            "teaching_strategy": [
+                "Demonstrate 2–3 hard-level examples on board",
+                "Encourage systematic solution steps"
+            ],
+            "student_activities": [
+                "Solve 3–4 numerical problems involving large numbers",
+                "Use semi-perimeter and detailed calculation"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Peer verification for accuracy"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Application to Coordinate Geometry",
+            "topics_covered": [
+                "Find area of triangle using vertices coordinates",
+                "Heron’s formula vs coordinate method comparison"
+            ],
+            "teaching_strategy": [
+                "Demonstrate problem with triangle vertices",
+                "Stepwise comparison with Heron’s formula"
+            ],
+            "student_activities": [
+                "Find area of triangle with vertices (2,3), (5,7), (1,8)",
+                "Verify area using both methods"
+            ],
+            "assessment": [
+                "Accuracy check",
+                "Class discussion of results"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Real-life Word Problems",
+            "topics_covered": [
+                "Land measurement problems",
+                "Architectural problems involving triangles",
+                "Conversion of problem statements into triangle sides"
+            ],
+            "teaching_strategy": [
+                "Explain stepwise identification of sides",
+                "Discuss practical problem-solving approach"
+            ],
+            "student_activities": [
+                "Solve 2–3 word problems using Heron’s formula",
+                "Explain reasoning in notebook"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Class discussion for methods"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Mixed Hard-level Exercises",
+            "topics_covered": [
+                "Oblique triangles",
+                "Scalene triangles with non-integer sides",
+                "Problems combining Heron’s formula with trigonometric calculations"
+            ],
+            "teaching_strategy": [
+                "Solve sample problems on board",
+                "Highlight common mistakes and pitfalls"
+            ],
+            "student_activities": [
+                "Attempt 3–4 hard-level mixed problems",
+                "Check answers using alternate methods"
+            ],
+            "assessment": [
+                "Short written test",
+                "Peer review for solution steps"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision and Challenging Quiz",
+            "topics_covered": [
+                "Revision of all types of triangles",
+                "Mixed numerical and word problems",
+                "Application-based problem-solving"
+            ],
+            "teaching_strategy": [
+                "Quick quiz with challenging questions",
+                "Group discussion of methods"
+            ],
+            "student_activities": [
+                "Solve 5–6 challenging problems individually",
+                "Participate in group discussion for verification"
+            ],
+            "assessment": [
+                "Quiz scoring",
+                "Numerical accuracy checking",
+                "Evaluation of solution method"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Ruler and protractor",
+        "Graph paper",
+        "Blackboard/Whiteboard",
+        "Chalk/Markers",
+        "Scientific calculator",
+        "NCERT Mathematics textbook"
+    ],
+    "evaluation_methods": [
+        "Notebook checking",
+        "Oral questioning",
+        "Short numerical tests",
+        "Peer discussion and review",
+        "Quiz for challenging problem-solving"
+    ],
+    "teacher_tip": "Emphasize careful calculation of semi-perimeter and checking each step; students often make mistakes in square root or large numbers. Encourage alternative verification methods."
+}

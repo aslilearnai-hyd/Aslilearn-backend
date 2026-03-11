@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Triangles",
+    "generated_at": "2026-03-05T20:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "If a triangle has sides 5 cm, 12 cm, and 13 cm, it is a",
+            "options": {
+                "A": "Equilateral triangle",
+                "B": "Isosceles triangle",
+                "C": "Right-angled triangle",
+                "D": "Scalene triangle"
+            },
+            "correct_answer": "C",
+            "explanation": "Since 5² + 12² = 13², it satisfies Pythagoras theorem.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Two triangles are congruent if their corresponding sides and angles are equal. This is called",
+            "options": {
+                "A": "Similarity",
+                "B": "Congruency",
+                "C": "Equivalence",
+                "D": "Parallelism"
+            },
+            "correct_answer": "B",
+            "explanation": "Congruent triangles have exactly equal corresponding sides and angles.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Which of the following is a valid criterion for triangle congruence?",
+            "options": {
+                "A": "AAA",
+                "B": "SSS",
+                "C": "SSA",
+                "D": "ASS"
+            },
+            "correct_answer": "B",
+            "explanation": "SSS (Side-Side-Side) is a valid congruence criterion.",
+            "difficulty": "medium",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "In a triangle, the sum of any two sides is always",
+            "options": {
+                "A": "Equal to the third side",
+                "B": "Greater than the third side",
+                "C": "Less than the third side",
+                "D": "Cannot be determined"
+            },
+            "correct_answer": "B",
+            "explanation": "This is the triangle inequality theorem.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Two triangles are similar if",
+            "options": {
+                "A": "All sides are equal",
+                "B": "All angles are equal",
+                "C": "Two angles are equal",
+                "D": "Two sides are equal"
+            },
+            "correct_answer": "C",
+            "explanation": "AA criterion: Two triangles with two equal angles are similar.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "The centroid of a triangle is the point where",
+            "options": {
+                "A": "Altitudes meet",
+                "B": "Medians meet",
+                "C": "Angle bisectors meet",
+                "D": "Perpendicular bisectors meet"
+            },
+            "correct_answer": "B",
+            "explanation": "Centroid is the intersection of the medians.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 7,
+            "question": "The orthocenter of a triangle is",
+            "options": {
+                "A": "Intersection of medians",
+                "B": "Intersection of altitudes",
+                "C": "Intersection of angle bisectors",
+                "D": "Intersection of perpendicular bisectors"
+            },
+            "correct_answer": "B",
+            "explanation": "Orthocenter is where the altitudes intersect.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 8,
+            "question": "The incentre of a triangle is",
+            "options": {
+                "A": "Equidistant from vertices",
+                "B": "Equidistant from sides",
+                "C": "Always at centroid",
+                "D": "Always at orthocenter"
+            },
+            "correct_answer": "B",
+            "explanation": "Incentre is the intersection of angle bisectors and is equidistant from sides.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 9,
+            "question": "Which point of a triangle always lies inside the triangle?",
+            "options": {
+                "A": "Centroid",
+                "B": "Orthocenter",
+                "C": "Circumcenter",
+                "D": "All of the above"
+            },
+            "correct_answer": "A",
+            "explanation": "Centroid always lies inside the triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 10,
+            "question": "In a right-angled triangle, the orthocenter is located at",
+            "options": {
+                "A": "Inside the triangle",
+                "B": "At the right-angled vertex",
+                "C": "Circumcenter",
+                "D": "Centroid"
+            },
+            "correct_answer": "B",
+            "explanation": "For a right-angled triangle, altitudes from right-angled vertex meet at that vertex.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "In a triangle, the sum of angles is always",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "360°"
+            },
+            "correct_answer": "B",
+            "explanation": "The sum of interior angles of a triangle is 180°.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Two triangles with sides in proportion and corresponding angles equal are",
+            "options": {
+                "A": "Congruent",
+                "B": "Similar",
+                "C": "Right-angled",
+                "D": "Scalene"
+            },
+            "correct_answer": "B",
+            "explanation": "SSS similarity criterion is satisfied.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "If a median divides a triangle into two smaller triangles, their areas are",
+            "options": {
+                "A": "Equal",
+                "B": "Unequal",
+                "C": "Depends on triangle type",
+                "D": "Zero"
+            },
+            "correct_answer": "A",
+            "explanation": "A median divides a triangle into two equal-area triangles.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 14,
+            "question": "A triangle with all sides different is called",
+            "options": {
+                "A": "Equilateral",
+                "B": "Isosceles",
+                "C": "Scalene",
+                "D": "Right-angled"
+            },
+            "correct_answer": "C",
+            "explanation": "Scalene triangle has all sides unequal.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "A triangle with two equal sides is",
+            "options": {
+                "A": "Equilateral",
+                "B": "Isosceles",
+                "C": "Scalene",
+                "D": "Right-angled"
+            },
+            "correct_answer": "B",
+            "explanation": "Isosceles triangle has two sides equal.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 16,
+            "question": "If the sides of a triangle are in the ratio 3:4:5, the triangle is",
+            "options": {
+                "A": "Equilateral",
+                "B": "Right-angled",
+                "C": "Isosceles",
+                "D": "Acute-angled"
+            },
+            "correct_answer": "B",
+            "explanation": "Satisfies 3² + 4² = 5², a right-angled triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The line joining a vertex to the midpoint of opposite side is called",
+            "options": {
+                "A": "Altitude",
+                "B": "Median",
+                "C": "Angle bisector",
+                "D": "Perpendicular bisector"
+            },
+            "correct_answer": "B",
+            "explanation": "Definition of median.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "The point of intersection of angle bisectors is called",
+            "options": {
+                "A": "Centroid",
+                "B": "Orthocenter",
+                "C": "Incenter",
+                "D": "Circumcenter"
+            },
+            "correct_answer": "C",
+            "explanation": "Incenter is intersection of angle bisectors.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Which triangle has its circumcenter outside the triangle?",
+            "options": {
+                "A": "Acute-angled",
+                "B": "Right-angled",
+                "C": "Obtuse-angled",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "Circumcenter lies outside in obtuse triangles.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Triangle similarity can be tested using",
+            "options": {
+                "A": "AAA",
+                "B": "SAS",
+                "C": "SSS",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "AAA, SAS, and SSS are all similarity criteria.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following is not necessarily true for all triangles?",
+            "options": {
+                "A": "Sum of angles = 180°",
+                "B": "Two sides sum > third side",
+                "C": "All medians are equal",
+                "D": "Area = ½ × base × height"
+            },
+            "correct_answer": "C",
+            "explanation": "All medians equal only in equilateral triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 22,
+            "question": "If two triangles are similar, the ratio of their areas is",
+            "options": {
+                "A": "Equal to ratio of sides",
+                "B": "Square of ratio of sides",
+                "C": "Cube of ratio of sides",
+                "D": "Twice the ratio of sides"
+            },
+            "correct_answer": "B",
+            "explanation": "Area ratio = square of corresponding side ratio.",
+            "difficulty": "medium",
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 23,
+            "question": "A triangle with all angles less than 90° is called",
+            "options": {
+                "A": "Right-angled",
+                "B": "Obtuse-angled",
+                "C": "Acute-angled",
+                "D": "Equilateral"
+            },
+            "correct_answer": "C",
+            "explanation": "All angles < 90° defines an acute triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 24,
+            "question": "A triangle with one angle equal to 90° is called",
+            "options": {
+                "A": "Right-angled",
+                "B": "Acute-angled",
+                "C": "Obtuse-angled",
+                "D": "Equilateral"
+            },
+            "correct_answer": "A",
+            "explanation": "Right triangle has one angle = 90°.",
+            "difficulty": "medium",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Which point always lies inside an acute-angled triangle?",
+            "options": {
+                "A": "Orthocenter",
+                "B": "Circumcenter",
+                "C": "Centroid",
+                "D": "All of the above"
+            },
+            "correct_answer": "D",
+            "explanation": "All these points lie inside an acute triangle.",
+            "difficulty": "medium",
+            "source_section": "Section 7.5"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: CONSTRUCTIONS AND TILINGS",
+    "generated_at": "2026-03-06T00:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "State the specific vertex configuration for a semi-regular tiling composed of octagons and squares.",
+            "answer": "4.8.8 (One square and two octagons meeting at a vertex).",
+            "key_concepts": ["Vertex notation"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Prove why a regular 10-gon (decagon) cannot tile the plane by itself.",
+            "answer": "The interior angle is $144^{\\circ}$. Since $360$ is not divisible by $144$ (360/144 = 2.5), they cannot meet at a vertex without gaps or overlaps.",
+            "key_concepts": ["Tessellation constraints"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Which angle is impossible to trisect using only a classical compass and straightedge?",
+            "answer": "A $60^{\\circ}$ angle (to create a $20^{\\circ}$ angle) is a famous example of an impossible construction.",
+            "key_concepts": ["Classical construction limits"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How many regular tilings of the plane exist in total? Name them.",
+            "answer": "Three: 3.3.3.3.3.3 (Triangles), 4.4.4.4 (Squares), and 6.6.6 (Hexagons).",
+            "key_concepts": ["Regular tessellations"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "To construct a $105^{\\circ}$ angle, which two standard angles should be bisected or combined?",
+            "answer": "Construct a $90^{\\circ}$ angle and a $120^{\\circ}$ angle, then bisect the $30^{\\circ}$ gap between them ($90 + 15 = 105$).",
+            "key_concepts": ["Compound angle construction"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 6,
+            "question": "In a semi-regular tiling $(3, 12, 12)$, which shapes meet at each vertex?",
+            "answer": "One equilateral triangle and two regular dodecagons (12-sided polygons).",
+            "key_concepts": ["Semi-regular configurations"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the sum of the interior angles of a regular $n$-gon used in a tiling at a single vertex point?",
+            "answer": "The sum of all interior angles of the polygons meeting at the vertex must be exactly $360^{\\circ}$.",
+            "key_concepts": ["Vertex sum"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why any non-regular triangle can tile a plane.",
+            "answer": "Two identical triangles can form a parallelogram, and any parallelogram can tile the plane by translation.",
+            "key_concepts": ["Triangle tiling proof"],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 9,
+            "question": "How do you construct a perpendicular to a line $L$ from a point $P$ lying on the line?",
+            "answer": "Draw an arc centered at $P$ to find two points on $L$ equidistant from $P$, then construct the perpendicular bisector of the segment between those two points.",
+            "key_concepts": ["Perpendicular construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the measure of each interior angle of a regular dodecagon?",
+            "answer": "$150^{\\circ}$.",
+            "key_concepts": ["Polygon angles"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "Can a semi-regular tiling be made using a pentagon and other regular polygons? Explain.",
+            "answer": "No, because $108^{\\circ}$ (pentagon) combined with any other regular polygon interior angles cannot sum to $360^{\\circ}$.",
+            "key_concepts": ["Tessellation limits"],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Describe a tiling that is 'edge-to-edge'.",
+            "answer": "A tiling where two tiles either do not touch at all or share only a full edge or a single vertex.",
+            "key_concepts": ["Edge-to-edge tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 13,
+            "question": "In the construction of a $60^{\\circ}$ angle, what property of triangles is being utilized?",
+            "answer": "The construction creates an equilateral triangle, where all angles are $60^{\\circ}$.",
+            "key_concepts": ["Equilateral construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the number of equilateral triangles needed at a vertex to tile with one regular hexagon.",
+            "answer": "Four triangles ($120 + 4 \\times 60 = 360$). Configuration: (3, 3, 3, 3, 6).",
+            "key_concepts": ["Vertex arithmetic"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Is it possible to construct a square with the same area as a given circle (Squaring the Circle) using only a compass and straightedge?",
+            "answer": "No, it is a mathematically impossible construction because $\\pi$ is transcendental.",
+            "key_concepts": ["Impossible constructions"],
+            "marks": 2,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What happens to the tiling if the sum of angles at a vertex is less than $360^{\\circ}$?",
+            "answer": "The surface would curve into a 3D shape (like a polyhedron) rather than staying as a flat 2D tiling.",
+            "key_concepts": ["Curvature and tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Identify the Archimedean tiling denoted by $(4, 6, 12)$.",
+            "answer": "A tiling where one square, one hexagon, and one dodecagon meet at each vertex ($90 + 120 + 150 = 360$).",
+            "key_concepts": ["Archimedean tilings"],
+            "marks": 3,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "How do you construct a $135^{\\circ}$ angle?",
+            "answer": "Construct a $90^{\\circ}$ angle and then bisect one of its adjacent $90^{\\circ}$ angles ($90 + 45 = 135$).",
+            "key_concepts": ["Obtuse angle construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Can any convex hexagon tile the plane?",
+            "answer": "No, only specific types of hexagons (divided into three categories) can tile the plane.",
+            "key_concepts": ["Hexagonal tiling types"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the minimum number of polygons required to meet at a vertex in a tiling?",
+            "answer": "Three (e.g., three hexagons).",
+            "key_concepts": ["Vertex topology"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Name the tiling pattern that uses two different sizes of squares.",
+            "answer": "The Pythagorean tiling.",
+            "key_concepts": ["Non-regular tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "In constructing a parallel line, what is the 'Copying an Angle' method based on?",
+            "answer": "The converse of the Corresponding Angles Postulate.",
+            "key_concepts": ["Geometric postulates"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "How many semi-regular (Archimedean) tilings are there?",
+            "answer": "Eight.",
+            "key_concepts": ["Tessellation classification"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the interior angle of a regular polygon with $n$ sides?",
+            "answer": "$$180 - \\frac{360}{n}$$ or $$\\frac{(n-2)180}{n}$$",
+            "key_concepts": ["Polygon formula"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is the perpendicular bisector method used to find the center of a circle given three points on its circumference?",
+            "answer": "The perpendicular bisector of a chord always passes through the center of the circle; the intersection of two such bisectors is the center.",
+            "key_concepts": ["Circle construction"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        }
+    ]
+}

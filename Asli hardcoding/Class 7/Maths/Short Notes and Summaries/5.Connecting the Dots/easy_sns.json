@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Connecting the Dots (Data Handling)",
+    "difficulty": "Easy",
+    "source_pdf": "jemh111.pdf",
+    "short_notes": {
+        "key_points": [
+            "Data is a collection of facts or numbers gathered to provide information",
+            "Organising data using Tally Marks helps in quick counting and frequency calculation",
+            "Frequency is the number of times a particular observation occurs in the data",
+            "A pictograph represents data through pictures or symbols"
+        ],
+        "examples": [
+            "Tally Marks: 5 is represented as four vertical lines with a diagonal strike (||||) ",
+            "Frequency: If 10 students like Blue, the frequency of Blue is 10",
+            "Pictograph: Using 1 stick-figure icon to represent 5 students",
+            "Raw Data: A list of marks obtained by students in a random order"
+        ],
+        "formulas": [
+            "Frequency $\\rightarrow$ Total count of tally marks for a specific category",
+            "Observation $\\rightarrow$ Each individual entry in the data set"
+        ],
+        "exam_tips": [
+            "Always cross-check if the sum of frequencies matches the total number of observations",
+            "In tally marks, remember the 5th mark always crosses the first four",
+            "Read the 'Key' in a pictograph carefully before performing calculations",
+            "Ensure the data is grouped logically before making a frequency table"
+        ]
+    }
+}

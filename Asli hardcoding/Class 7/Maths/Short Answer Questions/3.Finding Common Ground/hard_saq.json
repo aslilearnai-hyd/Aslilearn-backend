@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Finding Common Ground",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T01:45:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Find the greatest number which can divide 257 and 329 leaving a remainder of 5 in each case.",
+            "answer": "Subtract the remainders first: 257 - 5 = 252 and 329 - 5 = 324. The HCF of 252 and 324 is 36.",
+            "key_concepts": ["HCF with remainders"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the least number which when divided by 20, 25, 35, and 40 leaves remainders 14, 19, 29, and 34 respectively.",
+            "answer": "The difference between divisor and remainder is constant: 20-14=6, 25-19=6, 35-29=6, 40-34=6. LCM of 20, 25, 35, 40 is 1400. Required number = 1400 - 6 = 1394.",
+            "key_concepts": ["LCM with varying remainders"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The HCF of two numbers is 16 and their product is 3072. Find their LCM.",
+            "answer": "LCM = Product / HCF = 3072 / 16 = 192.",
+            "key_concepts": ["HCF-LCM product rule"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Three boys step off together from the same spot. Their steps measure 63 cm, 70 cm, and 77 cm respectively. What is the minimum distance each should cover so that all can cover the distance in complete steps?",
+            "answer": "Find the LCM of 63, 70, and 77. LCM = 6930 cm or 69.3 m.",
+            "key_concepts": ["LCM word problem"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the HCF of 290 and 660 using the long division method.",
+            "answer": "Divide 660 by 290 (rem 80), then 290 by 80 (rem 50), then 80 by 50 (rem 30), then 50 by 30 (rem 20), then 30 by 20 (rem 10), then 20 by 10 (rem 0). HCF = 10.",
+            "key_concepts": ["Long division method for HCF"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Find the smallest 5-digit number which is exactly divisible by 20, 24, and 36.",
+            "answer": "LCM of 20, 24, 36 is 360. Smallest 5-digit number is 10000. 10000 ÷ 360 gives remainder 280. Required number = 10000 + (360 - 280) = 10080.",
+            "key_concepts": ["LCM", "5-digit divisibility"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 7,
+            "question": "Two numbers are in the ratio 3:4. If their HCF is 4, find the numbers and their LCM.",
+            "answer": "Numbers are 3 × 4 = 12 and 4 × 4 = 16. LCM of 12 and 16 is 48.",
+            "key_concepts": ["Ratio and HCF relationship"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the greatest number of 4 digits which is exactly divisible by 15, 24, and 36.",
+            "answer": "LCM of 15, 24, 36 is 360. Greatest 4-digit is 9999. 9999 ÷ 360 gives remainder 279. Required number = 9999 - 279 = 9720.",
+            "key_concepts": ["LCM", "4-digit divisibility"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 9,
+            "question": "The floor of a room is 5m 44cm long and 3m 74cm wide. It is to be paved with square tiles of the same size. Find the least number of tiles required.",
+            "answer": "HCF of 544 and 374 is 34 (size of tile). Area of floor = 544 × 374. Area of tile = 34 × 34. Number of tiles = (544 × 374) / (34 × 34) = 16 × 11 = 176.",
+            "key_concepts": ["HCF application in area"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Can two numbers have 18 as HCF and 380 as LCM? Justify.",
+            "answer": "No, because 18 is not a factor of 380 (380 ÷ 18 leaves a remainder of 2).",
+            "key_concepts": ["HCF as factor of LCM"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "If the sum of two numbers is 55 and their HCF is 5, find all possible pairs of such numbers.",
+            "answer": "Let numbers be 5x and 5y. 5x + 5y = 55 → x + y = 11. Pairs of (x,y) are (1,10), (2,9), (3,8), (4,7), (5,6). Numbers: (5,50), (10,45), (15,40), (20,35), (25,30).",
+            "key_concepts": ["Linear equations with HCF"],
+            "marks": 4,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the HCF of 2⁴ × 3² × 5³ and 2³ × 3³ × 5².",
+            "answer": "HCF is the product of lowest powers: 2³ × 3² × 5² = 8 × 9 × 25 = 1800.",
+            "key_concepts": ["HCF with exponents"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Find the LCM of 2² × 3³ × 5 and 2³ × 3² × 7.",
+            "answer": "LCM is the product of highest powers: 2³ × 3³ × 5 × 7 = 8 × 27 × 35 = 7560.",
+            "key_concepts": ["LCM with exponents"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Determine the longest tape which can be used to measure exactly the lengths 7m, 3m 85cm and 12m 95cm.",
+            "answer": "HCF of 700, 385, and 1295 is 35 cm.",
+            "key_concepts": ["HCF word problem"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Four lightships flash their lights at intervals of 8, 12, 16, and 24 seconds. They flashed together at 10:00:00 AM. When will they next flash together?",
+            "answer": "LCM of 8, 12, 16, 24 is 48 seconds. Time = 10:00:48 AM.",
+            "key_concepts": ["LCM synchronization"],
+            "marks": 3,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the HCF of any two consecutive odd numbers?",
+            "answer": "1 (Example: 3 and 5, 11 and 13).",
+            "key_concepts": ["HCF properties"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "The HCF and LCM of two numbers are 13 and 455 respectively. If one number lies between 75 and 125, find the numbers.",
+            "answer": "Product = 13 × 455 = 5915. Let numbers be 13x and 13y. 169xy = 5915 → xy = 35. Factors of 35 are (1,35) and (5,7). Numbers: (13, 455) or (65, 91). 91 lies between 75 and 125. Numbers are 65 and 91.",
+            "key_concepts": ["HCF-LCM product", "Factors"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the smallest number which leaves a remainder of 3 when divided by 14 and a remainder of 5 when divided by 16.",
+            "answer": "Multiple of 14 + 3 = Multiple of 16 + 5. By checking multiples: 14(3)+3 = 45; 16(2)+5 = 37. 14(8)+3 = 115; 16(7)+5 = 117. 14(11)+3 = 157. 16(10)+5 = 165. The difference approach: 14-3=11, 16-5=11. LCM(14,16) - 11 = 112 - 11 = 101.",
+            "key_concepts": ["LCM with remainders"],
+            "marks": 4,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Find the HCF of 72, 108, and 180 using the prime factorization method.",
+            "answer": "72=2³×3²; 108=2²×3³; 180=2²×3²×5. HCF = 2²×3² = 36.",
+            "key_concepts": ["Prime factorization of 3 numbers"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Find the largest number which can divide 70 and 125 leaving remainders 5 and 8 respectively.",
+            "answer": "70 - 5 = 65; 125 - 8 = 117. HCF of 65 and 117 is 13.",
+            "key_concepts": ["HCF with different remainders"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 21,
+            "question": "The LCM of two numbers is 12 times their HCF. The sum of HCF and LCM is 403. If one number is 93, find the other.",
+            "answer": "H + 12H = 403 → 13H = 403 → H = 31. LCM = 31 × 12 = 372. Other number = (31 × 372) / 93 = 124.",
+            "key_concepts": ["Algebraic HCF-LCM relationships"],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Show that the product of HCF and LCM of 14 and 21 is equal to the product of 14 and 21.",
+            "answer": "HCF = 7, LCM = 42. HCF × LCM = 7 × 42 = 294. 14 × 21 = 294. LHS = RHS.",
+            "key_concepts": ["Verification of product rule"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Find the LCM of 12, 15, 20, and 27.",
+            "answer": "540.",
+            "key_concepts": ["LCM calculation"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Reduce the fraction 289/391 to the lowest terms using HCF.",
+            "answer": "HCF of 289 and 391 is 17. 289÷17 = 17; 391÷17 = 23. Reduced fraction = 17/23.",
+            "key_concepts": ["HCF for simplification"],
+            "marks": 3,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the HCF of 0 and 5?",
+            "answer": "5 (since 5 is the largest number that divides both 5 and 0; any non-zero number divides 0).",
+            "key_concepts": ["HCF with zero"],
+            "marks": 1,
+            "source_section": "Section 3.2"
+        }
+    ]
+}

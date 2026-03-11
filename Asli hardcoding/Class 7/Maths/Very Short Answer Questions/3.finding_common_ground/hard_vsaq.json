@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: FINDING COMMON GROUND (HCF & LCM)",
+    "generated_at": "2026-03-05T03:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The HCF of two numbers is 145 and their LCM is 2175. If one number is 725, find the other.",
+            "answer": "Other number = (HCF × LCM) / First number = (145 × 2175) / 725 = 435.",
+            "key_concepts": ["HCF-LCM product rule"],
+            "marks": 2,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 2,
+            "question": "Find the least number which when divided by 20, 25, 35, and 40 leaves remainders 14, 19, 29, and 34 respectively.",
+            "answer": "Common difference (k) = 20-14 = 6. LCM(20, 25, 35, 40) = 1400. Required number = 1400 - 6 = 1394.",
+            "key_concepts": ["LCM with varying remainders"],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Find the greatest number of five digits exactly divisible by 12, 15, 18, and 27.",
+            "answer": "LCM(12, 15, 18, 27) = 540. Greatest 5-digit number 99999 ÷ 540 leaves rem 99. Required number = 99999 - 99 = 99900.",
+            "key_concepts": ["LCM and largest digit numbers"],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 4,
+            "question": "The HCF of two numbers is 16 and their product is 3072. Find their LCM.",
+            "answer": "LCM = Product / HCF = 3072 / 16 = 192.",
+            "key_concepts": ["relationship formula"],
+            "marks": 2,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Find the HCF of $2^3 \\times 3^2 \\times 5$ and $2^2 \\times 3^3 \\times 5^2$.",
+            "answer": "HCF = $2^2 \\times 3^2 \\times 5 = 4 \\times 9 \\times 5 = 180$.",
+            "key_concepts": ["HCF of exponential forms"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Three tankers contain 403, 434, and 465 litres of diesel respectively. Find the maximum capacity of a container that can measure the diesel of all three tankers exactly.",
+            "answer": "HCF of 403, 434, and 465 is 31 litres.",
+            "key_concepts": ["HCF in real-world capacity"],
+            "marks": 3,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Determine the smallest number which when reduced by 7 is divisible by both 12 and 16.",
+            "answer": "LCM(12, 16) = 48. Required number = 48 + 7 = 55.",
+            "key_concepts": ["LCM inverse application"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Find the LCM of $a^2b$ and $ab^2$.",
+            "answer": "$a^2b^2$",
+            "key_concepts": ["algebraic LCM"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Can the HCF of two numbers be 20 if their LCM is 500? Justify.",
+            "answer": "Yes, because 20 is a factor of 500.",
+            "key_concepts": ["divisibility of LCM by HCF"],
+            "marks": 2,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 10,
+            "question": "The HCF of two numbers is 23 and the other two factors of their LCM are 13 and 14. Find the larger of the two numbers.",
+            "answer": "Numbers are 23 × 13 and 23 × 14. Larger number = 23 × 14 = 322.",
+            "key_concepts": ["LCM factor components"],
+            "marks": 3,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Find the greatest number that will divide 445, 572, and 699 leaving remainders 4, 5, and 6 respectively.",
+            "answer": "HCF of (445-4), (572-5), and (699-6) = HCF(441, 567, 693) = 63.",
+            "key_concepts": ["HCF with specific remainders"],
+            "marks": 3,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Find the smallest number that leaves a remainder of 3 when divided by 7, 9, and 12.",
+            "answer": "LCM(7, 9, 12) = 252. Required number = 252 + 3 = 255.",
+            "key_concepts": ["LCM with common remainder"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "The ratio of two numbers is 15:11. If their HCF is 13, find the numbers.",
+            "answer": "Numbers are 15 × 13 = 195 and 11 × 13 = 143.",
+            "key_concepts": ["HCF and ratios"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the HCF of 1.2 and 0.18.",
+            "answer": "Convert to same decimals: 1.20 and 0.18. HCF of 120 and 18 is 6. Result = 0.06.",
+            "key_concepts": ["HCF of decimals"],
+            "marks": 3,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "In a morning walk, three people step off together. Their steps measure 80 cm, 85 cm, and 90 cm. What is the minimum distance each should walk so that all can cover the same distance in complete steps?",
+            "answer": "LCM of 80, 85, 90 = 12240 cm or 122.4 metres.",
+            "key_concepts": ["LCM word problem"],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Find the smallest number of 4 digits divisible by 18, 24, and 32.",
+            "answer": "LCM(18, 24, 32) = 288. Smallest 4-digit multiple of 288 is 288 × 4 = 1152.",
+            "key_concepts": ["LCM and digit constraints"],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the HCF of two consecutive even numbers?",
+            "answer": "2",
+            "key_concepts": ["number properties"],
+            "marks": 1,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Find the HCF of 513, 1134, and 1215.",
+            "answer": "27",
+            "key_concepts": ["HCF of large numbers"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "The sum of two numbers is 528 and their HCF is 33. How many pairs of such numbers are possible?",
+            "answer": "33x + 33y = 528 → x+y = 16. Co-prime pairs: (1,15), (3,13), (5,11), (7,9). Total 4 pairs.",
+            "key_concepts": ["number pairs from HCF"],
+            "marks": 4,
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Four bells toll at intervals of 6, 7, 8, and 9 seconds respectively. How many times will they toll together in 2 hours?",
+            "answer": "LCM(6, 7, 8, 9) = 504 seconds. 2 hours = 7200 seconds. 7200/504 = 14.28. Ans: 14 times.",
+            "key_concepts": ["periodic events"],
+            "marks": 3,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Find the HCF of $x^4 - y^4$ and $x^2 - y^2$.",
+            "answer": "$x^2 - y^2$",
+            "key_concepts": ["algebraic HCF"],
+            "marks": 2,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the least number which when divided by 15, 20, 36 and 48 leaves 3 as a remainder in each case.",
+            "answer": "LCM(15, 20, 36, 48) + 3 = 720 + 3 = 723.",
+            "key_concepts": ["LCM with common remainder"],
+            "marks": 2,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the HCF of any two consecutive numbers?",
+            "answer": "1",
+            "key_concepts": ["co-prime properties"],
+            "marks": 1,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Find the HCF of 2923 and 3239.",
+            "answer": "79 (using long division method).",
+            "key_concepts": ["Euclidean division"],
+            "marks": 3,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "The HCF and LCM of two numbers are 12 and 72 respectively. If the sum of the two numbers is 60, find the numbers.",
+            "answer": "Numbers are 24 and 36. (Check: 24+36=60; HCF is 12, LCM is 72).",
+            "key_concepts": ["HCF and LCM properties"],
+            "marks": 3,
+            "source_section": "Section 4.4"
+        }
+    ]
+}

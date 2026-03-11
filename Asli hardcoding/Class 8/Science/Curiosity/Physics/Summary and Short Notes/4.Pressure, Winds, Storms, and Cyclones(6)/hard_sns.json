@@ -1,0 +1,35 @@
+{
+  "class": "Class 8",
+  "subject": "Physics",
+  "chapter": "Pressure, Winds, Storms and Cyclones",
+  "difficulty": "Hard",
+  "source_pdf": "hecu106.pdf",
+  "short_notes": {
+    "key_points": [
+      "Pressure is the force acting per unit area and changes with variation in force or area",
+      "Atmospheric pressure results from the weight of air acting on Earth's surface due to gravity",
+      "Temperature differences cause unequal air pressure which leads to wind formation",
+      "Warm air expands, becomes less dense, and rises creating low-pressure regions",
+      "Cooler air moves toward low-pressure regions causing strong winds",
+      "Cyclones form when warm moist air rises rapidly over warm ocean waters creating a rotating low-pressure system",
+      "The Coriolis effect due to Earth's rotation influences the direction of cyclonic winds"
+    ],
+    "examples": [
+      "Mountaineers experience difficulty breathing at high altitudes because atmospheric pressure decreases",
+      "Barometers detect sudden drops in air pressure which can indicate approaching storms",
+      "Cyclones over the Bay of Bengal often bring heavy rainfall and strong winds to coastal areas",
+      "Aircraft cabins are pressurized to maintain suitable air pressure for passengers"
+    ],
+    "formulas": [
+      "Pressure = Force / Area",
+      "SI unit of pressure = Pascal (Pa)",
+      "Wind movement principle: Air flows from high pressure to low pressure regions"
+    ],
+    "exam_tips": [
+      "Explain clearly the relationship between temperature, pressure and wind movement",
+      "Understand how atmospheric pressure varies with altitude",
+      "Study the structure of cyclones including the eye and surrounding high-speed winds",
+      "Use real-world examples when explaining storms and cyclone formation"
+    ]
+  }
+}

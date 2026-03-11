@@ -1,0 +1,43 @@
+{
+    "class": "Class 9",
+    "subject": "Science",
+    "chapter": "Gravitation",
+    "difficulty": "Medium",
+    "source_pdf": "s9_9.pdf",
+    "short_notes": {
+        "key_points": [
+            "Gravitation is the universal force of attraction between any two objects with mass",
+            "The universal law of gravitation states that force between two bodies is proportional to the product of their masses and inversely proportional to the square of the distance between them",
+            "Gravitational constant (G) is a universal constant used in the gravitation formula",
+            "Free fall occurs when gravity is the only force acting on an object",
+            "Acceleration due to gravity (g) depends on Earth's mass and radius",
+            "The value of g decreases with increase in altitude and depth",
+            "Mass is constant everywhere but weight changes depending on gravity",
+            "Pressure exerted by solids depends on force and area of contact",
+            "Buoyant force depends on density of fluid and volume of fluid displaced",
+            "Archimedes' principle explains floating, sinking and apparent weight of objects"
+        ],
+        "examples": [
+            "Earth attracting objects toward its surface",
+            "Planets revolving around the Sun due to gravitational force",
+            "Astronauts experiencing weightlessness in orbit",
+            "Camels walking easily on sand due to reduced pressure",
+            "Ships floating due to displacement of large volume of water",
+            "Submarines adjusting ballast tanks to control buoyancy"
+        ],
+        "formulas": [
+            "Universal gravitation → F = G(Mm)/r²",
+            "Acceleration due to gravity → g = GM/R²",
+            "Weight of object → W = m × g",
+            "Pressure → P = F/A",
+            "Apparent weight → Actual weight − Buoyant force"
+        ],
+        "exam_tips": [
+            "Understand inverse square law for gravitational force",
+            "Remember that mass remains constant while weight varies with gravity",
+            "Practice numerical problems using W = mg",
+            "Use Archimedes' principle to solve buoyancy problems",
+            "Pressure decreases when area of contact increases"
+        ]
+    }
+}

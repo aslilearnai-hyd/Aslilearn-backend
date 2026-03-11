@@ -1,0 +1,404 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Finding Common Ground (Data Handling)",
+    "generated_at": "2026-03-05T01:18:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "The mean of a set of 20 observations is 45. If one observation '50' is replaced by '110', calculate the new mean and the percentage increase in the mean.",
+            "answer": "Original sum = $20 \\times 45 = 900$. New sum = $900 - 50 + 110 = 960$. New mean = $960 / 20 = 48$. Increase = $48 - 45 = 3$. Percentage increase = $(3/45) \\times 100 = 6.67\\%$.",
+            "answer_outline": [
+                "Find original sum",
+                "Adjust sum for replacement",
+                "Calculate new mean",
+                "Calculate percentage change"
+            ],
+            "key_concepts": [
+                "mean modification",
+                "percentage change"
+            ],
+            "marks": 6,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 2,
+            "question": "The mean of 8 observations is 25. If 5 is added to each of the first four observations and 3 is subtracted from each of the remaining four, what is the new mean?",
+            "answer": "Original sum = $8 \\times 25 = 200$. Total increase in first 4 = $4 \\times 5 = 20$. Total decrease in last 4 = $4 \\times 3 = 12$. Net change = $20 - 12 = 8$. New sum = $200 + 8 = 208$. New mean = $208 / 8 = 26$.",
+            "answer_outline": [
+                "Calculate initial sum",
+                "Find net change across all observations",
+                "Calculate final sum and mean"
+            ],
+            "key_concepts": [
+                "arithmetic mean",
+                "sum manipulation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 3,
+            "question": "A data set has 9 distinct integers. If the median is 15 and the range is 20, what is the maximum possible value for the largest integer in the set? (Assume integers are positive).",
+            "answer": "Let the sorted set be $x_1, x_2, x_3, x_4, 15, x_6, x_7, x_8, x_9$. For $x_9$ to be maximum, the lowest value $x_1$ must be as small as possible (1). Since Range = $x_9 - x_1$, then $20 = x_9 - 1$. Thus, the maximum possible value for $x_9$ is 21.",
+            "answer_outline": [
+                "Set up the data structure",
+                "Identify constraints for maximization",
+                "Use range formula to solve"
+            ],
+            "key_concepts": [
+                "median constraints",
+                "range optimization"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 4,
+            "question": "In a class of 40 students, the mean weight of boys is 50 kg and the mean weight of girls is 45 kg. If the total mean weight of the class is 47 kg, find the number of boys and girls in the class.",
+            "answer": "Let number of boys be $b$ and girls be $g$. $b + g = 40$. Total weight: $50b + 45g = 47 \\times 40 = 1880$. Substituting $g = 40 - b$: $50b + 45(40 - b) = 1880 \\implies 5b + 1800 = 1880 \\implies 5b = 80 \\implies b = 16$. Girls = $40 - 16 = 24$.",
+            "answer_outline": [
+                "Formulate linear equations",
+                "Apply weighted average concept",
+                "Solve for two variables"
+            ],
+            "key_concepts": [
+                "weighted mean",
+                "algebraic reasoning"
+            ],
+            "marks": 6,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain with a numerical example how the 'Mean' can be highly misleading when a data set has a massive outlier, while the 'Median' remains robust.",
+            "answer": "Consider incomes: ₹10k, ₹12k, ₹14k, ₹15k, ₹500k. Mean = ₹110.2k (No one earns near this). Median = ₹14k (Correctly represents the majority). The outlier (500k) inflates the mean but only shifts the median index slightly.",
+            "answer_outline": [
+                "Construct data with outlier",
+                "Calculate mean and median",
+                "Compare accuracy of representation"
+            ],
+            "key_concepts": [
+                "outliers",
+                "robustness of median"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 6,
+            "question": "The mean of $n$ observations is $\\bar{x}$. If one observation $k$ is removed, show that the new mean is $(n\\bar{x} - k) / (n - 1)$.",
+            "answer": "Sum of $n$ observations = $n \\times \\bar{x}$. If $k$ is removed, the new sum = $n\\bar{x} - k$. The number of observations is now $n-1$. Therefore, New Mean = $(n\\bar{x} - k) / (n - 1)$.",
+            "answer_outline": [
+                "Express total sum algebraically",
+                "Identify new count and new sum",
+                "Derive formula"
+            ],
+            "key_concepts": [
+                "algebraic derivation",
+                "mean formula"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "For the data: 10, 12, 15, 12, $x$, 15, 12, 10, 15, $y$. If the mode is 15, what relationship must exist between $x$ and $y$?",
+            "answer": "Current frequencies: 10 (2), 12 (3), 15 (3). For 15 to be the mode, its frequency must exceed 12. This happens if $x=15$ and $y=15$, or if at least one is 15 and the other is not 12.",
+            "answer_outline": [
+                "Tally current frequencies",
+                "Analyze mode requirement",
+                "Conclude on variable values"
+            ],
+            "key_concepts": [
+                "frequency",
+                "mode constraints"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Consider a set of 5 numbers where the mean, median, and mode are all 10. The range is 10. Provide one such set.",
+            "answer": "Let the set be 5, 10, 10, 10, 15. Mean = $(5+10+10+10+15)/5 = 50/5 = 10$. Median = 10. Mode = 10. Range = $15 - 5 = 10$.",
+            "answer_outline": [
+                "Test numbers fitting median/mode",
+                "Check range constraint",
+                "Verify mean"
+            ],
+            "key_concepts": [
+                "central tendency",
+                "data construction"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 9,
+            "question": "A student scored an average of 80 in 4 tests. In the 5th test, she scored 0 because she was absent. How did her average change? Is this a fair representation of her ability?",
+            "answer": "Original sum = $80 \\times 4 = 320$. New mean = $320 / 5 = 64$. The average dropped significantly. It is not necessarily fair as 0 is an outlier caused by absence, not performance ability.",
+            "answer_outline": [
+                "Calculate both means",
+                "Analyze the drop",
+                "Discuss representative fairness"
+            ],
+            "key_concepts": [
+                "mean accuracy",
+                "impact of zero"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "If the mean of $a, b, c$ is $M$ and $ab + bc + ca = 0$, find the mean of $a^2, b^2, c^2$.",
+            "answer": "$(a+b+c)/3 = M \\implies a+b+c = 3M$. We know $(a+b+c)^2 = a^2 + b^2 + c^2 + 2(ab+bc+ca)$. Substituting: $(3M)^2 = a^2 + b^2 + c^2 + 0 \\implies a^2 + b^2 + c^2 = 9M^2$. Mean of squares = $9M^2 / 3 = 3M^2$.",
+            "answer_outline": [
+                "Use mean definition",
+                "Apply algebraic identity",
+                "Simplify to find new mean"
+            ],
+            "key_concepts": [
+                "algebraic identities",
+                "mean of squares"
+            ],
+            "marks": 6,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Data Handling is often used in weather forecasting. If the mean temperature for a week is 30°C and the range is 2°C, can we conclude that every day was hot? Explain.",
+            "answer": "Yes. If the range is only 2°C, the highest possible temperature is 31°C and the lowest is 29°C (assuming the mean is exactly in the middle). Since all values are tightly clustered around 30°C, every day was consistently hot.",
+            "answer_outline": [
+                "Relate mean and range",
+                "Determine upper and lower bounds",
+                "Draw logical conclusion"
+            ],
+            "key_concepts": [
+                "range",
+                "data spread"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Prove that if we add a constant $k$ to every observation in a data set, the median also increases by $k$.",
+            "answer": "If data $x_1, x_2, ... x_n$ is sorted, the median is at the middle position. If we add $k$ to every term, the order remains the same (if $a < b$, then $a+k < b+k$). Thus, the same middle element is chosen, but its value is now $M+k$.",
+            "answer_outline": [
+                "Consider sorted sequence",
+                "Apply addition to each term",
+                "Show order preservation",
+                "Conclude on new median value"
+            ],
+            "key_concepts": [
+                "median properties",
+                "order preservation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 13,
+            "question": "A double bar graph shows that the gap between Term 1 and Term 2 marks in English is widening in a class. What does this suggest about the 'Common Ground' of the class performance?",
+            "answer": "A widening gap suggests that the students are not finding common ground; instead, the performance is becoming polarized. The variation/range is increasing, meaning the mean is becoming a less reliable representative of the whole class.",
+            "answer_outline": [
+                "Interpret gap widening",
+                "Discuss variability",
+                "Relate to representative values"
+            ],
+            "key_concepts": [
+                "double bar graph",
+                "variability"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.7"
+        },
+        {
+            "question_number": 14,
+            "question": "Find the range and mean of the first 10 multiples of 7.",
+            "answer": "Multiples: 7, 14, ..., 70. Mean = $7(1+2+...+10)/10 = 7(55)/10 = 38.5$. Range = $70 - 7 = 63$.",
+            "answer_outline": [
+                "List arithmetic progression",
+                "Calculate sum and mean",
+                "Calculate range"
+            ],
+            "key_concepts": [
+                "mean",
+                "multiples"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "There are 5 observations. The mean of the first three is 12 and the mean of the last three is 18. If the mean of all five is 15, find the third observation.",
+            "answer": "Sum of all 5 = $5 \\times 15 = 75$. Sum of first 3 ($x_1+x_2+x_3$) = 36. Sum of last 3 ($x_3+x_4+x_5$) = 54. Adding them: $x_1+x_2+2x_3+x_4+x_5 = 90$. Subtracting total sum: $x_3 = 90 - 75 = 15$.",
+            "answer_outline": [
+                "Identify overlapping observation",
+                "Set up total sum equations",
+                "Solve for the overlap"
+            ],
+            "key_concepts": [
+                "overlapping means",
+                "sum of observations"
+            ],
+            "marks": 6,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is the mode the only central tendency useful for categorical data like 'Favorite Ice Cream Flavor'?",
+            "answer": "Mean and Median require numerical values that can be added or ordered. Flavors like 'Vanilla' and 'Chocolate' cannot be added or averaged. Only the frequency of the category can be measured, making the mode (most popular) the only valid representative.",
+            "answer_outline": [
+                "Discuss limitations of mean/median",
+                "Explain nature of categorical data",
+                "Justify mode's utility"
+            ],
+            "key_concepts": [
+                "categorical data",
+                "mode application"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 17,
+            "question": "If the mean of $x_1, x_2, ... x_{10}$ is 20, find the mean of $3x_1, 3x_2, ... 3x_{10}$.",
+            "answer": "Old Mean = $\\sum x / 10 = 20$. New Mean = $\\sum (3x) / 10 = 3(\\sum x / 10) = 3 \\times 20 = 60$.",
+            "answer_outline": [
+                "Express mean algebraically",
+                "Factor out the constant",
+                "Calculate new result"
+            ],
+            "key_concepts": [
+                "scaling",
+                "mean properties"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Construct a data set of 6 observations where the Median is 15 but 15 is not present in the data.",
+            "answer": "Example: 10, 12, 14, 16, 18, 20. Count is even. Median = $(14+16)/2 = 15$.",
+            "answer_outline": [
+                "Use an even number of observations",
+                "Select two middle values whose average is 15"
+            ],
+            "key_concepts": [
+                "median for even count"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 19,
+            "question": "A athlete's distances in long jump are 6.2m, 6.5m, 6.3m, 0m (foul), 6.4m. If we exclude the foul, how much does the mean improve?",
+            "answer": "Mean with foul = $25.4 / 5 = 5.08$ m. Mean without foul = $25.4 / 4 = 6.35$ m. Improvement = $6.35 - 5.08 = 1.27$ m.",
+            "answer_outline": [
+                "Calculate mean with zero",
+                "Calculate mean without zero",
+                "Find difference"
+            ],
+            "key_concepts": [
+                "effect of outliers",
+                "mean calculation"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 20,
+            "question": "What is the relationship between Mean, Median, and Mode in a perfectly symmetrical data set?",
+            "answer": "In a perfectly symmetrical distribution (like a bell curve), the Mean, Median, and Mode are all exactly equal and located at the center of the distribution.",
+            "answer_outline": [
+                "Define symmetry",
+                "State equality of central tendencies"
+            ],
+            "key_concepts": [
+                "symmetry",
+                "central tendency"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 21,
+            "question": "A set of 11 observations is arranged in ascending order. If the 6th observation is increased by 5, what is the effect on the median?",
+            "answer": "In a set of 11, the 6th observation is the median. If it is increased by 5, the median increases by 5, provided it doesn't exceed the 7th observation. If it does, the new median will be the smaller of the new value or the 7th observation (which would then shift into 6th place).",
+            "answer_outline": [
+                "Identify median position",
+                "Assess impact of change",
+                "Discuss potential rank shift"
+            ],
+            "key_concepts": [
+                "median index",
+                "rank order"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 22,
+            "question": "Find the mean of the squares of the first three natural numbers.",
+            "answer": "Squares: $1^2, 2^2, 3^2 = 1, 4, 9$. Mean = $(1+4+9)/3 = 14/3 \\approx 4.67$.",
+            "answer_outline": [
+                "Identify the squares",
+                "Perform mean calculation"
+            ],
+            "key_concepts": [
+                "arithmetic mean"
+            ],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Compare the range of the first 50 natural numbers and the first 50 even natural numbers.",
+            "answer": "Natural: 1 to 50, Range = 49. Even: 2 to 100, Range = 98. The range of the even numbers is double that of the natural numbers.",
+            "answer_outline": [
+                "Find range for both sets",
+                "Compare the results"
+            ],
+            "key_concepts": [
+                "range",
+                "number sets"
+            ],
+            "marks": 4,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 24,
+            "question": "When collecting data for 'Finding Common Ground', why is a larger sample size usually better?",
+            "answer": "A larger sample size reduces the impact of outliers and anomalies. It provides a more stable mean and a more accurate representation of the true mode, ensuring the 'common ground' found is statistically significant and not just a fluke.",
+            "answer_outline": [
+                "Discuss outlier mitigation",
+                "Explain statistical stability",
+                "Relate to accuracy"
+            ],
+            "key_concepts": [
+                "sample size",
+                "statistical significance"
+            ],
+            "marks": 5,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "If the mean of 5 observations is 15 and the median is 18, is it possible for all observations to be less than 20? Prove your answer.",
+            "answer": "Let sorted data be $x_1, x_2, 18, x_4, x_5$. Sum = 75. If all were < 20, max possible sum = $x_1+x_2+18+x_4+x_5 \\approx 19+19+18+19+19 = 94$. Since 75 is well within this, yes, it is possible (e.g., 5, 15, 18, 18, 19).",
+            "answer_outline": [
+                "Set up constraints based on median",
+                "Check sum consistency",
+                "Provide example set"
+            ],
+            "key_concepts": [
+                "mean/median relationship",
+                "data boundaries"
+            ],
+            "marks": 6,
+            "source_section": "Section 3.5"
+        }
+    ]
+}

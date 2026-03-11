@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Areas Related to Circles",
+    "generated_at": "2026-02-27T23:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Which formula is used to find the area of a circle?",
+            "options": {
+                "A": "2πr",
+                "B": "πr²",
+                "C": "πd",
+                "D": "πr"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of a circle is πr².",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "What does r represent in the formula πr²?",
+            "options": {
+                "A": "Diameter",
+                "B": "Radius",
+                "C": "Circumference",
+                "D": "Area"
+            },
+            "correct_answer": "B",
+            "explanation": "r represents the radius of the circle.",
+            "difficulty": "easy",
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 3,
+            "question": "The region enclosed between two radii and the corresponding arc is called?",
+            "options": {
+                "A": "Segment",
+                "B": "Sector",
+                "C": "Chord",
+                "D": "Diameter"
+            },
+            "correct_answer": "B",
+            "explanation": "This region is called a sector.",
+            "difficulty": "easy",
+            "source_section": "Sectors"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the formula for the area of a sector of angle θ (in degrees)?",
+            "options": {
+                "A": "(θ/360) × πr²",
+                "B": "πr²",
+                "C": "2πr",
+                "D": "πr"
+            },
+            "correct_answer": "A",
+            "explanation": "Area of sector = (θ/360) × πr².",
+            "difficulty": "easy",
+            "source_section": "Sector Area"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the perimeter of a circle called?",
+            "options": {
+                "A": "Diameter",
+                "B": "Radius",
+                "C": "Arc",
+                "D": "Circumference"
+            },
+            "correct_answer": "D",
+            "explanation": "The perimeter of a circle is called circumference.",
+            "difficulty": "easy",
+            "source_section": "Circumference"
+        },
+        {
+            "question_number": 6,
+            "question": "Which formula is used to find the circumference of a circle?",
+            "options": {
+                "A": "πr²",
+                "B": "πd",
+                "C": "2πr",
+                "D": "Both B and C"
+            },
+            "correct_answer": "D",
+            "explanation": "Circumference = 2πr = πd.",
+            "difficulty": "easy",
+            "source_section": "Circumference"
+        },
+        {
+            "question_number": 7,
+            "question": "The region enclosed between a chord and its corresponding arc is called?",
+            "options": {
+                "A": "Sector",
+                "B": "Segment",
+                "C": "Radius",
+                "D": "Diameter"
+            },
+            "correct_answer": "B",
+            "explanation": "This region is called a segment.",
+            "difficulty": "easy",
+            "source_section": "Segments"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the formula for arc length of a circle with angle θ?",
+            "options": {
+                "A": "(θ/360) × 2πr",
+                "B": "πr²",
+                "C": "2πr",
+                "D": "πd"
+            },
+            "correct_answer": "A",
+            "explanation": "Arc length = (θ/360) × 2πr.",
+            "difficulty": "easy",
+            "source_section": "Arc Length"
+        },
+        {
+            "question_number": 9,
+            "question": "Which part of the circle is bounded by two radii and an arc?",
+            "options": {
+                "A": "Segment",
+                "B": "Sector",
+                "C": "Chord",
+                "D": "Diameter"
+            },
+            "correct_answer": "B",
+            "explanation": "That region is a sector.",
+            "difficulty": "easy",
+            "source_section": "Sectors"
+        },
+        {
+            "question_number": 10,
+            "question": "Which unit is used to measure area?",
+            "options": {
+                "A": "cm",
+                "B": "cm²",
+                "C": "cm³",
+                "D": "cm/sec"
+            },
+            "correct_answer": "B",
+            "explanation": "Area is measured in square units.",
+            "difficulty": "easy",
+            "source_section": "Units"
+        },
+        {
+            "question_number": 11,
+            "question": "If the radius of a circle is doubled, the area becomes?",
+            "options": {
+                "A": "Double",
+                "B": "Four times",
+                "C": "Half",
+                "D": "Same"
+            },
+            "correct_answer": "B",
+            "explanation": "Area ∝ r², so doubling r makes area four times.",
+            "difficulty": "easy",
+            "source_section": "Concepts"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the value of π (approximately)?",
+            "options": {
+                "A": "3.14",
+                "B": "3.41",
+                "C": "2.14",
+                "D": "4.13"
+            },
+            "correct_answer": "A",
+            "explanation": "π ≈ 3.14.",
+            "difficulty": "easy",
+            "source_section": "Constants"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following is NOT a unit of area?",
+            "options": {
+                "A": "m²",
+                "B": "cm²",
+                "C": "km²",
+                "D": "cm"
+            },
+            "correct_answer": "D",
+            "explanation": "cm is a unit of length, not area.",
+            "difficulty": "easy",
+            "source_section": "Units"
+        },
+        {
+            "question_number": 14,
+            "question": "Which formula is used to find the area of a semicircle?",
+            "options": {
+                "A": "πr²",
+                "B": "2πr",
+                "C": "½πr²",
+                "D": "πd"
+            },
+            "correct_answer": "C",
+            "explanation": "Area of semicircle = ½πr².",
+            "difficulty": "easy",
+            "source_section": "Semicircle"
+        },
+        {
+            "question_number": 15,
+            "question": "Which part of a circle is a straight line?",
+            "options": {
+                "A": "Arc",
+                "B": "Chord",
+                "C": "Circumference",
+                "D": "Sector"
+            },
+            "correct_answer": "B",
+            "explanation": "A chord is a straight line joining two points on a circle.",
+            "difficulty": "easy",
+            "source_section": "Chords"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the total angle at the centre of a circle?",
+            "options": {
+                "A": "90°",
+                "B": "180°",
+                "C": "270°",
+                "D": "360°"
+            },
+            "correct_answer": "D",
+            "explanation": "Total angle at centre is 360°.",
+            "difficulty": "easy",
+            "source_section": "Angles"
+        },
+        {
+            "question_number": 17,
+            "question": "Which formula gives the area of a quadrant?",
+            "options": {
+                "A": "πr²",
+                "B": "½πr²",
+                "C": "¼πr²",
+                "D": "2πr"
+            },
+            "correct_answer": "C",
+            "explanation": "Area of quadrant = ¼πr².",
+            "difficulty": "easy",
+            "source_section": "Quadrant"
+        },
+        {
+            "question_number": 18,
+            "question": "Arc length is measured in?",
+            "options": {
+                "A": "Square units",
+                "B": "Cubic units",
+                "C": "Linear units",
+                "D": "Angle units"
+            },
+            "correct_answer": "C",
+            "explanation": "Arc length is a length, so linear units.",
+            "difficulty": "easy",
+            "source_section": "Arc Length"
+        },
+        {
+            "question_number": 19,
+            "question": "If diameter is 14 cm, what is the radius?",
+            "options": {
+                "A": "14 cm",
+                "B": "7 cm",
+                "C": "28 cm",
+                "D": "21 cm"
+            },
+            "correct_answer": "B",
+            "explanation": "Radius is half of diameter.",
+            "difficulty": "easy",
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 20,
+            "question": "Which quantity remains constant for a given circle?",
+            "options": {
+                "A": "Radius",
+                "B": "Diameter",
+                "C": "Centre",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "All are fixed for a given circle.",
+            "difficulty": "easy",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following is curved?",
+            "options": {
+                "A": "Chord",
+                "B": "Radius",
+                "C": "Arc",
+                "D": "Diameter"
+            },
+            "correct_answer": "C",
+            "explanation": "Arc is curved.",
+            "difficulty": "easy",
+            "source_section": "Arcs"
+        },
+        {
+            "question_number": 22,
+            "question": "Which formula is used to find the area of a ring?",
+            "options": {
+                "A": "πr²",
+                "B": "π(R² − r²)",
+                "C": "2πr",
+                "D": "πd"
+            },
+            "correct_answer": "B",
+            "explanation": "Area of ring = π(R² − r²).",
+            "difficulty": "easy",
+            "source_section": "Ring"
+        },
+        {
+            "question_number": 23,
+            "question": "Which part of a circle has no area?",
+            "options": {
+                "A": "Sector",
+                "B": "Segment",
+                "C": "Arc",
+                "D": "Semicircle"
+            },
+            "correct_answer": "C",
+            "explanation": "Arc has length but no area.",
+            "difficulty": "easy",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 24,
+            "question": "Area depends on which measure of a circle?",
+            "options": {
+                "A": "Diameter",
+                "B": "Radius",
+                "C": "Circumference",
+                "D": "Arc"
+            },
+            "correct_answer": "B",
+            "explanation": "Area depends on radius.",
+            "difficulty": "easy",
+            "source_section": "Concept"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement is true?",
+            "options": {
+                "A": "Area is measured in linear units",
+                "B": "Circumference is measured in square units",
+                "C": "Area of circle is πr²",
+                "D": "Arc length is πr²"
+            },
+            "correct_answer": "C",
+            "explanation": "Area of circle = πr².",
+            "difficulty": "easy",
+            "source_section": "Summary"
+        }
+    ]
+}

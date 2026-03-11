@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter: Keeping Time with the Skies",
+  "generated_at": "2026-03-06T04:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What astronomical motion is responsible for the cycle of day and night?",
+      "answer": "The rotation of the Earth on its axis.",
+      "key_points": ["Earth rotation"],
+      "source_section": "Earth’s Motions"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the approximate duration of one Earth rotation?",
+      "answer": "About 24 hours.",
+      "key_points": ["rotation period"],
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 3,
+      "question": "Which celestial motion determines the length of a year?",
+      "answer": "The revolution of the Earth around the Sun.",
+      "key_points": ["Earth revolution"],
+      "source_section": "Earth’s Revolution"
+    },
+    {
+      "question_number": 4,
+      "question": "Why does the Sun appear to move across the sky?",
+      "answer": "Because the Earth rotates from west to east.",
+      "key_points": ["apparent motion"],
+      "source_section": "Daily Motion of the Sun"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the scientific reason for changes in shadow length during the day?",
+      "answer": "The change in the Sun’s apparent position due to Earth’s rotation.",
+      "key_points": ["shadow length"],
+      "source_section": "Shadows and Time"
+    },
+    {
+      "question_number": 6,
+      "question": "What natural cycle is used to determine a lunar month?",
+      "answer": "The cycle of phases of the Moon.",
+      "key_points": ["Moon phases"],
+      "source_section": "Moon Cycle"
+    },
+    {
+      "question_number": 7,
+      "question": "Approximately how long does a complete lunar cycle take?",
+      "answer": "About 29.5 days.",
+      "key_points": ["lunar cycle"],
+      "source_section": "Moon Cycle"
+    },
+    {
+      "question_number": 8,
+      "question": "What astronomical factor causes seasons on Earth?",
+      "answer": "The tilt of Earth’s axis combined with its revolution around the Sun.",
+      "key_points": ["seasons"],
+      "source_section": "Seasons"
+    },
+    {
+      "question_number": 9,
+      "question": "Why does the Pole Star appear nearly stationary in the sky?",
+      "answer": "Because it lies close to the direction of Earth's rotational axis.",
+      "key_points": ["Pole Star"],
+      "source_section": "Pole Star"
+    },
+    {
+      "question_number": 10,
+      "question": "What are constellations used for in astronomy?",
+      "answer": "They help identify patterns of stars and locate positions in the sky.",
+      "key_points": ["constellations"],
+      "source_section": "Constellations"
+    },
+    {
+      "question_number": 11,
+      "question": "Why were constellations important for early navigation?",
+      "answer": "They helped travelers determine direction during the night.",
+      "key_points": ["navigation"],
+      "source_section": "Navigation"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the relationship between astronomy and timekeeping?",
+      "answer": "Timekeeping is based on regular astronomical movements of celestial bodies.",
+      "key_points": ["astronomy", "timekeeping"],
+      "source_section": "Astronomy and Time"
+    },
+    {
+      "question_number": 13,
+      "question": "Why did ancient civilizations develop calendars?",
+      "answer": "To organize time for agriculture, festivals, and daily activities.",
+      "key_points": ["calendars"],
+      "source_section": "Calendars"
+    },
+    {
+      "question_number": 14,
+      "question": "What problem do leap years correct in the calendar system?",
+      "answer": "They correct the extra fraction of a day in Earth's yearly orbit.",
+      "key_points": ["leap year"],
+      "source_section": "Calendar Adjustment"
+    },
+    {
+      "question_number": 15,
+      "question": "Why are astronomical cycles reliable for measuring time?",
+      "answer": "Because celestial motions follow regular and predictable patterns.",
+      "key_points": ["astronomical cycles"],
+      "source_section": "Astronomical Time"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the scientific meaning of a solar day?",
+      "answer": "The time taken for the Sun to return to the same position in the sky.",
+      "key_points": ["solar day"],
+      "source_section": "Earth’s Rotation"
+    },
+    {
+      "question_number": 17,
+      "question": "Why does the Moon show different phases when viewed from Earth?",
+      "answer": "Because we see different portions of its illuminated surface.",
+      "key_points": ["Moon phases"],
+      "source_section": "Phases of the Moon"
+    },
+    {
+      "question_number": 18,
+      "question": "Why were sundials one of the earliest time-measuring devices?",
+      "answer": "Because they used the Sun’s shadow to indicate time during the day.",
+      "key_points": ["sundial"],
+      "source_section": "Sundials"
+    },
+    {
+      "question_number": 19,
+      "question": "What limitation did ancient sky-based timekeeping methods have?",
+      "answer": "They were affected by weather conditions and visibility.",
+      "key_points": ["timekeeping limitations"],
+      "source_section": "Ancient Timekeeping"
+    },
+    {
+      "question_number": 20,
+      "question": "Why do stars appear to move across the night sky?",
+      "answer": "Because of the rotation of the Earth.",
+      "key_points": ["star motion"],
+      "source_section": "Night Sky Motion"
+    },
+    {
+      "question_number": 21,
+      "question": "How does Earth’s revolution influence seasonal time cycles?",
+      "answer": "It changes the angle of sunlight reaching Earth throughout the year.",
+      "key_points": ["Earth revolution", "seasons"],
+      "source_section": "Seasons"
+    },
+    {
+      "question_number": 22,
+      "question": "Why is astronomy considered the foundation of early timekeeping systems?",
+      "answer": "Because early time measurement depended on celestial observations.",
+      "key_points": ["astronomy"],
+      "source_section": "History of Astronomy"
+    },
+    {
+      "question_number": 23,
+      "question": "What advantage did lunar calendars provide ancient societies?",
+      "answer": "They helped track months and plan agricultural cycles.",
+      "key_points": ["lunar calendar"],
+      "source_section": "Moon and Time"
+    },
+    {
+      "question_number": 24,
+      "question": "Why is the study of celestial movements important today?",
+      "answer": "It supports navigation, space exploration, and accurate timekeeping.",
+      "key_points": ["modern astronomy"],
+      "source_section": "Modern Astronomy"
+    },
+    {
+      "question_number": 25,
+      "question": "What fundamental idea connects astronomy with modern time measurement?",
+      "answer": "Regular celestial motions provide a universal reference for measuring time.",
+      "key_points": ["astronomy", "time measurement"],
+      "source_section": "Astronomical Time"
+    }
+  ]
+}

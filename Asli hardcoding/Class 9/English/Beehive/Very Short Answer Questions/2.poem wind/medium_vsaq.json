@@ -1,0 +1,182 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Poem 2: Wind",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What does the wind symbolize besides its physical presence?",
+            "answer": "The wind symbolizes nature’s power, freedom, and unpredictability.",
+            "key_points": ["nature's power", "freedom", "unpredictability"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 2,
+            "question": "How does the poet personify the wind?",
+            "answer": "The poet gives the wind human qualities, like moving with intention and laughing at human weakness.",
+            "key_points": ["personification", "human qualities"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 3,
+            "question": "How does the wind affect humans in the poem?",
+            "answer": "It shows humans as vulnerable and powerless against its force.",
+            "key_points": ["vulnerability", "powerlessness"],
+            "source_section": "Stanza 2-3"
+        },
+        {
+            "question_number": 4,
+            "question": "Which literary devices are used to describe the wind’s movement?",
+            "answer": "Imagery, personification, and alliteration are used.",
+            "key_points": ["imagery", "personification", "alliteration"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 5,
+            "question": "What mood does the poet create through the description of wind?",
+            "answer": "A mood of awe, respect, and alertness toward nature’s power.",
+            "key_points": ["awe", "respect", "alertness"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 6,
+            "question": "What does the poet suggest about the relationship between humans and nature?",
+            "answer": "Humans are small and must respect the uncontrollable forces of nature.",
+            "key_points": ["human-nature relationship", "respect", "smallness"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 7,
+            "question": "How does the poet convey the unpredictability of the wind?",
+            "answer": "By describing it as moving freely, shaking trees, and affecting everything in its path without warning.",
+            "key_points": ["unpredictability", "freedom", "effect on environment"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which sense is most emphasized in the poem to show the wind’s force?",
+            "answer": "Hearing, through the sounds of rustling trees and roaring movement.",
+            "key_points": ["auditory imagery", "sound of wind"],
+            "source_section": "Stanza 1-2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is ironic about the way the wind is described?",
+            "answer": "It moves freely yet has a visible impact that humans cannot control, showing the limits of human power.",
+            "key_points": ["irony", "human limitation"],
+            "source_section": "Stanza 2-3"
+        },
+        {
+            "question_number": 10,
+            "question": "How does visual imagery enhance the poem’s meaning?",
+            "answer": "It shows the wind’s effect on trees, clouds, and surroundings, making its power vivid.",
+            "key_points": ["visual imagery", "vivid effect", "power of wind"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 11,
+            "question": "What does the wind’s movement suggest about life according to the poet?",
+            "answer": "It suggests that life is unpredictable and full of uncontrollable forces.",
+            "key_points": ["unpredictability", "life metaphor"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 12,
+            "question": "Why does the poet use words like 'laughs' and 'roars'?",
+            "answer": "To personify the wind and show its strength and dominance over humans.",
+            "key_points": ["personification", "strength", "dominance"],
+            "source_section": "Stanza 2-3"
+        },
+        {
+            "question_number": 13,
+            "question": "How does alliteration contribute to the poem?",
+            "answer": "It emphasizes the energy, speed, and movement of the wind.",
+            "key_points": ["alliteration", "energy", "movement"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 14,
+            "question": "How does the poet make the wind seem unstoppable?",
+            "answer": "By describing its free movement and the inability of humans to control it.",
+            "key_points": ["unstoppable", "human powerlessness"],
+            "source_section": "Stanza 2-3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which emotion is most associated with the wind in the poem?",
+            "answer": "A mix of fear, awe, and respect.",
+            "key_points": ["fear", "awe", "respect"],
+            "source_section": "General"
+        },
+        {
+            "question_number": 16,
+            "question": "What lesson does the poem teach about respecting nature?",
+            "answer": "Nature’s forces are powerful and humans must acknowledge their limits.",
+            "key_points": ["respect nature", "human limits"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the wind affect the natural environment in detail?",
+            "answer": "It shakes trees, moves clouds, and influences other natural elements.",
+            "key_points": ["trees", "clouds", "environment"],
+            "source_section": "Stanza 1-2"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is the wind described as free and uncontrolled?",
+            "answer": "To highlight its unpredictability and dominance over humans and nature.",
+            "key_points": ["freedom", "dominance", "unpredictability"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 19,
+            "question": "What does the poet convey through the wind’s sound?",
+            "answer": "That nature’s force is mighty, impressive, and commands attention.",
+            "key_points": ["sound", "mighty force", "impressiveness"],
+            "source_section": "Stanza 1-2"
+        },
+        {
+            "question_number": 20,
+            "question": "Does the poem show any control over the wind by humans?",
+            "answer": "No, humans cannot control the wind.",
+            "key_points": ["human powerlessness", "nature control"],
+            "source_section": "Stanza 2-3"
+        },
+        {
+            "question_number": 21,
+            "question": "Which literary device makes the wind appear alive?",
+            "answer": "Personification makes the wind appear alive with intentions.",
+            "key_points": ["personification", "alive wind"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 22,
+            "question": "How does the wind create a sense of energy in the poem?",
+            "answer": "Through dynamic verbs, movement, and visual and auditory imagery.",
+            "key_points": ["energy", "dynamic verbs", "imagery"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 23,
+            "question": "How does the poet show both beauty and power of the wind?",
+            "answer": "By describing its movement and effect on nature in an impressive and vivid way.",
+            "key_points": ["beauty", "power", "vivid description"],
+            "source_section": "Stanza 1-3"
+        },
+        {
+            "question_number": 24,
+            "question": "What does the unpredictability of wind teach readers?",
+            "answer": "It teaches that some forces in life are beyond human control.",
+            "key_points": ["unpredictability", "life lesson", "control limits"],
+            "source_section": "Overall theme"
+        },
+        {
+            "question_number": 25,
+            "question": "Summarize the poet’s message about nature in one line.",
+            "answer": "Nature is powerful, unpredictable, and demands human respect and awe.",
+            "key_points": ["nature", "power", "unpredictable", "respect"],
+            "source_section": "Overall theme"
+        }
+    ]
+}

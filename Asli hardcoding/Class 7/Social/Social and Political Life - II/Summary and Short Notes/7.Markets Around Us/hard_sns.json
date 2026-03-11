@@ -1,0 +1,35 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter": "Markets Around Us",
+    "difficulty": "Hard",
+    "source_pdf": "jess707.pdf",
+    "short_notes": {
+        "key_points": [
+            "Markets are part of a larger economic system connecting production, distribution, and consumption",
+            "Goods often move through multiple intermediaries including wholesalers, distributors, and retailers before reaching consumers",
+            "Operational costs such as rent, electricity, transport, and storage influence the final price of goods",
+            "Different markets cater to different social and economic groups based on affordability and accessibility",
+            "Competition among sellers influences prices, product quality, and consumer choices"
+        ],
+        "examples": [
+            "Vegetables grown by farmers transported to wholesale markets and then sold to retail vendors",
+            "Supermarkets and malls offering branded goods at fixed prices due to higher operational costs",
+            "Mobile traders participating in different weekly markets across towns",
+            "Small neighbourhood stores providing credit facilities to regular customers",
+            "Street vendors selling affordable products to low-income consumers"
+        ],
+        "formulas": [
+            "Market System → Network of producers, traders, and consumers",
+            "Supply Chain → Production → Wholesale → Retail → Consumption",
+            "Retail Price = Cost Price + Transport Cost + Storage Cost + Seller Margin",
+            "Consumer Choice → Influenced by price, availability, and convenience"
+        ],
+        "exam_tips": [
+            "Understand how the chain of markets works from producer to consumer",
+            "Focus on the economic factors that influence market prices",
+            "Learn how different markets serve different groups of consumers",
+            "Be able to explain the role of intermediaries in distribution of goods"
+        ]
+    }
+}

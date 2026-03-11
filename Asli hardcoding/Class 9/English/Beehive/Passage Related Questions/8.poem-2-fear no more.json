@@ -1,0 +1,64 @@
+{
+    "chapter_code": "BEEHIVE_FEAR_NO_MORE",
+    "chapter_title": "Fear No More",
+    "content_type": "Reading Comprehension Passages",
+    "total_passages": 5,
+    "instruction": "Read each passage carefully and answer the questions that follow. Answers should be based only on the given paragraph.",
+    "passages": [
+        {
+            "passage_number": 1,
+            "paragraph": "Fear no more the heat o' the sun, nor the furious winter's rages.",
+            "questions": [
+                "What should people fear no more according to the poem?",
+                "Which season’s heat is mentioned in the passage?",
+                "What does 'winter’s rages' refer to?",
+                "What hardships of life are symbolized by the sun and winter?",
+                "What idea about death is suggested in this passage?"
+            ]
+        },
+        {
+            "passage_number": 2,
+            "paragraph": "Thou thy worldly task hast done, home art gone and ta'en thy wages.",
+            "questions": [
+                "What has the person completed according to the poem?",
+                "What does the phrase 'worldly task' mean?",
+                "Where has the person gone after completing the task?",
+                "What does 'ta'en thy wages' suggest?",
+                "What idea about life’s journey is presented here?"
+            ]
+        },
+        {
+            "passage_number": 3,
+            "paragraph": "Golden lads and girls all must, as chimney-sweepers, come to dust.",
+            "questions": [
+                "Who are referred to as 'golden lads and girls'?",
+                "Who are chimney sweepers in the poem?",
+                "What does the phrase 'come to dust' mean?",
+                "What comparison is made between rich and poor people?",
+                "What message about equality does the poet convey?"
+            ]
+        },
+        {
+            "passage_number": 4,
+            "paragraph": "Fear no more the lightning flash, nor the all-dreaded thunder stone.",
+            "questions": [
+                "Which natural forces are mentioned in this passage?",
+                "What does the lightning flash symbolize?",
+                "Why is thunder described as dreadful?",
+                "What does the poet say people should not fear anymore?",
+                "What idea about death is expressed here?"
+            ]
+        },
+        {
+            "passage_number": 5,
+            "paragraph": "Fear not slander, censure rash; thou hast finished joy and moan.",
+            "questions": [
+                "What two negative things are mentioned in this passage?",
+                "What does the phrase 'censure rash' mean?",
+                "What emotions are mentioned in the passage?",
+                "What does the poet say about joy and sorrow?",
+                "What message about life and death is conveyed here?"
+            ]
+        }
+    ]
+}

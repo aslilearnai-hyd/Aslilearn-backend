@@ -1,0 +1,103 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 5: Light – Mirrors and Lenses",
+  "generated_at": "2026-03-05T17:05:00",
+  "concepts": [
+    {
+      "concept_name": "Reflection of Light",
+      "difficulty": "easy",
+      "lesson": "Reflection of light is the phenomenon in which light rays bounce back after striking a surface. When light falls on smooth and shiny surfaces such as mirrors, a large portion of the light is reflected. Reflection allows us to see objects because light from a source reflects from objects and enters our eyes. Reflection is governed by two important laws: the angle of incidence is equal to the angle of reflection, and the incident ray, reflected ray, and the normal at the point of incidence lie in the same plane. These laws help scientists predict how light behaves when it strikes reflective surfaces.",
+      "real_example": "Seeing your image in a mirror.",
+      "key_points": [
+        "Light bounces off surfaces",
+        "Occurs on smooth reflective surfaces",
+        "Follows laws of reflection"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Plane Mirror",
+      "difficulty": "easy",
+      "lesson": "A plane mirror is a flat reflective surface that produces images through reflection of light. The image formed by a plane mirror has several special properties. It is virtual, meaning it cannot be projected on a screen. The image is upright and of the same size as the object. It is also laterally inverted, which means the left and right sides appear reversed. Plane mirrors are commonly used in homes, vehicles, and periscopes because they produce clear and accurate images.",
+      "real_example": "Looking at yourself in a bathroom mirror.",
+      "key_points": [
+        "Image is virtual and upright",
+        "Image size equals object size",
+        "Shows lateral inversion"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Concave Mirror",
+      "difficulty": "medium",
+      "lesson": "A concave mirror is a curved mirror whose reflecting surface bends inward like the inside of a bowl. Concave mirrors can converge light rays and form different types of images depending on the position of the object. When the object is far from the mirror, a real and inverted image may be formed. When the object is very close to the mirror, a virtual and enlarged image is produced. Because of their ability to focus light, concave mirrors are used in applications such as shaving mirrors, makeup mirrors, and headlights of vehicles.",
+      "real_example": "Shaving mirrors that magnify the face.",
+      "key_points": [
+        "Reflecting surface curves inward",
+        "Can form real or virtual images",
+        "Used for magnification"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Convex Mirror",
+      "difficulty": "medium",
+      "lesson": "A convex mirror is a curved mirror whose reflecting surface bulges outward. Unlike concave mirrors, convex mirrors spread out light rays and always form virtual, upright, and smaller images. Because convex mirrors provide a wider field of view, they are commonly used as rear-view mirrors in vehicles and as security mirrors in shops and parking areas. The wider field of view helps drivers see a larger area behind them, improving safety on roads.",
+      "real_example": "Rear-view mirrors in cars and motorcycles.",
+      "key_points": [
+        "Reflecting surface bulges outward",
+        "Forms virtual and diminished images",
+        "Provides wider field of view"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Image Formation by Mirrors",
+      "difficulty": "medium",
+      "lesson": "Images formed by mirrors depend on the type of mirror and the position of the object. Plane mirrors always form virtual, upright images of the same size as the object. Concave mirrors can form real and inverted images when the object is far away, or virtual and magnified images when the object is close. Convex mirrors always produce virtual and smaller images. Understanding image formation helps explain how mirrors are used in devices such as telescopes, microscopes, and vehicle mirrors.",
+      "real_example": "Using a concave mirror in a dentist’s mirror to see enlarged teeth.",
+      "key_points": [
+        "Depends on mirror type",
+        "Depends on object distance",
+        "Important for optical devices"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Lenses",
+      "difficulty": "medium",
+      "lesson": "A lens is a transparent object made of glass or plastic that bends light passing through it. This bending of light is called refraction. Lenses can form images by focusing or spreading light rays. There are two main types of lenses: convex lenses and concave lenses. Convex lenses bring light rays together and can produce magnified images, while concave lenses spread light rays apart. Lenses are important components of many optical instruments such as cameras, microscopes, telescopes, and eyeglasses.",
+      "real_example": "Camera lenses focusing light to capture images.",
+      "key_points": [
+        "Transparent object",
+        "Bends light through refraction",
+        "Used in optical instruments"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Convex Lens",
+      "difficulty": "medium",
+      "lesson": "A convex lens is thicker at the center and thinner at the edges. It converges or brings together parallel rays of light to a point called the focus. Convex lenses can produce both real and virtual images depending on the position of the object relative to the lens. When the object is far away, a real and inverted image is formed. When the object is placed very close to the lens, a virtual and enlarged image is produced. Convex lenses are used in magnifying glasses, microscopes, and cameras.",
+      "real_example": "Magnifying glass used to read small text.",
+      "key_points": [
+        "Thicker at the center",
+        "Converges light rays",
+        "Forms real or virtual images"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Concave Lens",
+      "difficulty": "easy",
+      "lesson": "A concave lens is thinner at the center and thicker at the edges. It diverges or spreads out light rays passing through it. Because of this property, concave lenses always form virtual, upright, and smaller images of objects. These lenses are commonly used in spectacles for people who have difficulty seeing distant objects clearly, a condition known as myopia or short-sightedness. Concave lenses help spread light rays so that the eye can focus them correctly.",
+      "real_example": "Spectacles used to correct short-sightedness.",
+      "key_points": [
+        "Thinner at the center",
+        "Diverges light rays",
+        "Forms virtual images"
+      ],
+      "source_section": "Section 3"
+    }
+  ]
+}

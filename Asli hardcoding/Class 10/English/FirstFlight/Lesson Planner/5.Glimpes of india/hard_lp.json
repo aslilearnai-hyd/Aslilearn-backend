@@ -1,0 +1,179 @@
+{
+    "class": "Class 10",
+    "subject": "English / First Flight",
+    "chapter_name": "Glimpses of India",
+    "lesson_level": "Hard",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze India’s historical, cultural, and geographical diversity in depth",
+        "Examine contributions of individuals and communities with reasoning",
+        "Interpret themes of courage, perseverance, innovation, and human values",
+        "Develop inferential and analytical skills using textual evidence",
+        "Evaluate the impact of historical and cultural events on contemporary India",
+        "Relate moral and ethical lessons from the stories to modern life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction and Historical Context",
+            "topics_covered": [
+                "Overview of India’s geography, culture, and history",
+                "Key historical events shaping India",
+                "Importance of analyzing stories within historical context"
+            ],
+            "teaching_strategy": [
+                "Use maps and timelines for historical and geographical context",
+                "Discuss why understanding history and geography is essential for interpretation"
+            ],
+            "student_activities": [
+                "Locate important landmarks and regions on the map",
+                "Discuss historical context of the events mentioned in the chapter"
+            ],
+            "assessment": [
+                "Oral Q&A on historical and geographical context",
+                "Short written note summarizing historical significance"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character and People Analysis",
+            "topics_covered": [
+                "Key individuals and their contributions",
+                "Analysis of traits like courage, perseverance, and innovation",
+                "Influence of ordinary people in shaping society"
+            ],
+            "teaching_strategy": [
+                "Character mapping and textual analysis",
+                "Use examples and quotes from stories to highlight traits"
+            ],
+            "student_activities": [
+                "Prepare a detailed character table with contributions and qualities",
+                "Discuss which traits are most inspiring and why"
+            ],
+            "assessment": [
+                "Oral Q&A on people and their qualities",
+                "Short written analysis of a chosen individual’s contribution"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Life, Culture, and Traditions",
+            "topics_covered": [
+                "Cultural diversity: festivals, customs, art, music",
+                "Regional differences and significance",
+                "Connection between culture and historical evolution"
+            ],
+            "teaching_strategy": [
+                "Discussion using images and videos of cultural practices",
+                "Analyze how culture reflects history and values"
+            ],
+            "student_activities": [
+                "Identify and explain cultural practices from different regions",
+                "Discuss importance of preserving cultural heritage"
+            ],
+            "assessment": [
+                "Oral Q&A on cultural diversity",
+                "Short written task analyzing one cultural practice in depth"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Analysis of Stories and Themes",
+            "topics_covered": [
+                "Major themes: courage, innovation, human values, perseverance",
+                "Analysis of moral and ethical lessons in stories",
+                "Understanding cause-effect in historical and personal narratives"
+            ],
+            "teaching_strategy": [
+                "Group discussion to identify themes in each story",
+                "Use textual evidence to support analysis"
+            ],
+            "student_activities": [
+                "Identify passages representing key themes",
+                "Analyze cause-effect relationships in the stories"
+            ],
+            "assessment": [
+                "Oral Q&A on themes and moral lessons",
+                "Short written task connecting themes to personal understanding"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Inferential and Critical Thinking",
+            "topics_covered": [
+                "Making inferences from events, character actions, and outcomes",
+                "Critical evaluation of contributions and societal impact",
+                "Reflecting on lessons for contemporary society"
+            ],
+            "teaching_strategy": [
+                "Pose higher-order thinking questions requiring reasoning",
+                "Encourage group discussions and debates on moral and ethical issues"
+            ],
+            "student_activities": [
+                "Answer inferential and analytical questions in groups",
+                "Discuss modern relevance of stories and values"
+            ],
+            "assessment": [
+                "Oral discussion on inferences and critical evaluation",
+                "Written answers to higher-order analytical questions"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Historical Significance and Reflection",
+            "topics_covered": [
+                "Impact of stories and events on Indian society",
+                "Relevance of historical and cultural lessons today",
+                "Reflection on moral and ethical values"
+            ],
+            "teaching_strategy": [
+                "Use timelines, visuals, and story summaries for reflection",
+                "Encourage students to share personal reflections and interpretations"
+            ],
+            "student_activities": [
+                "Prepare a summary of historical significance for each story",
+                "Write a reflection on lessons applicable to modern life"
+            ],
+            "assessment": [
+                "Oral Q&A on significance and reflections",
+                "Short written reflection connecting past and present lessons"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision, Synthesis, and Higher-Order Thinking",
+            "topics_covered": [
+                "Comprehensive review of geography, history, culture, and people",
+                "Synthesis of key themes and lessons",
+                "Evaluation through higher-order analytical and inferential questions"
+            ],
+            "teaching_strategy": [
+                "Use mind maps, charts, and timelines for review",
+                "Conduct debates, Q&A, and group discussions on complex questions"
+            ],
+            "student_activities": [
+                "Create a comprehensive mind map of the chapter",
+                "Answer higher-order analytical and inferential questions in groups"
+            ],
+            "assessment": [
+                "Oral quiz on events, people, and cultural aspects",
+                "Written responses to analytical, evaluative, and reflective questions"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Map of India with landmarks, states, and regions",
+        "Images and videos of monuments, festivals, art, and cultural practices",
+        "Timeline chart of historical events",
+        "Character and theme flashcards",
+        "Mind maps and story summaries"
+    ],
+    "evaluation_methods": [
+        "Oral questioning and discussion",
+        "Written analytical and inferential exercises",
+        "Class participation and group discussion",
+        "Quizzes on events, characters, themes, and cultural aspects"
+    ],
+    "teacher_tip": "Encourage students to analyze stories critically, interpret historical and cultural contexts, and draw moral lessons. Focus on inferential reasoning, analytical thinking, and connecting past events to contemporary life. Use textual evidence to support all answers."
+}

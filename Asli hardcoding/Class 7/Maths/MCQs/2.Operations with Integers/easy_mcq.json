@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter: Operations with Integers",
+    "generated_at": "2026-03-05T02:08:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is the value of (-5) + (-3)?",
+            "options": {
+                "A": "8",
+                "B": "-8",
+                "C": "2",
+                "D": "-2"
+            },
+            "correct_answer": "B",
+            "explanation": "When adding two negative integers, add their absolute values and put the negative sign.",
+            "difficulty": "easy",
+            "source_section": "Addition of Integers"
+        },
+        {
+            "question_number": 2,
+            "question": "The sum of an integer and its additive inverse is always:",
+            "options": {
+                "A": "1",
+                "B": "The integer itself",
+                "C": "0",
+                "D": "-1"
+            },
+            "correct_answer": "C",
+            "explanation": "An integer 'a' plus its inverse '-a' equals 0.",
+            "difficulty": "easy",
+            "source_section": "Additive Inverse"
+        },
+        {
+            "question_number": 3,
+            "question": "What is 10 - (-4)?",
+            "options": {
+                "A": "6",
+                "B": "-6",
+                "C": "14",
+                "D": "-14"
+            },
+            "correct_answer": "C",
+            "explanation": "Subtracting a negative is the same as adding a positive: 10 + 4 = 14.",
+            "difficulty": "easy",
+            "source_section": "Subtraction of Integers"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the product of (-4) × (-5)?",
+            "options": {
+                "A": "-20",
+                "B": "20",
+                "C": "9",
+                "D": "-9"
+            },
+            "correct_answer": "B",
+            "explanation": "The product of two negative integers is always positive.",
+            "difficulty": "easy",
+            "source_section": "Multiplication of Integers"
+        },
+        {
+            "question_number": 5,
+            "question": "What is (-12) ÷ 3?",
+            "options": {
+                "A": "4",
+                "B": "-4",
+                "C": "36",
+                "D": "-36"
+            },
+            "correct_answer": "B",
+            "explanation": "Dividing a negative by a positive results in a negative quotient.",
+            "difficulty": "easy",
+            "source_section": "Division of Integers"
+        },
+        {
+            "question_number": 6,
+            "question": "Which of the following is the smallest?",
+            "options": {
+                "A": "0",
+                "B": "-1",
+                "C": "1",
+                "D": "-10"
+            },
+            "correct_answer": "D",
+            "explanation": "On a number line, -10 is furthest to the left.",
+            "difficulty": "easy",
+            "source_section": "Comparing Integers"
+        },
+        {
+            "question_number": 7,
+            "question": "What is 0 × (-100)?",
+            "options": {
+                "A": "0",
+                "B": "-100",
+                "C": "100",
+                "D": "1"
+            },
+            "correct_answer": "A",
+            "explanation": "Any integer multiplied by zero is zero.",
+            "difficulty": "easy",
+            "source_section": "Multiplication Property"
+        },
+        {
+            "question_number": 8,
+            "question": "The absolute value of -15 is:",
+            "options": {
+                "A": "-15",
+                "B": "0",
+                "C": "15",
+                "D": "1"
+            },
+            "correct_answer": "C",
+            "explanation": "Absolute value is the distance from zero and is always non-negative.",
+            "difficulty": "easy",
+            "source_section": "Absolute Value"
+        },
+        {
+            "question_number": 9,
+            "question": "Solve: (-8) + 5",
+            "options": {
+                "A": "13",
+                "B": "-13",
+                "C": "3",
+                "D": "-3"
+            },
+            "correct_answer": "D",
+            "explanation": "Subtract the smaller absolute value from the larger and use the sign of the larger.",
+            "difficulty": "easy",
+            "source_section": "Addition of Integers"
+        },
+        {
+            "question_number": 10,
+            "question": "What is (-1) × (-1) × (-1)?",
+            "options": {
+                "A": "1",
+                "B": "-1",
+                "C": "3",
+                "D": "-3"
+            },
+            "correct_answer": "B",
+            "explanation": "An odd number of negative signs in multiplication results in a negative product.",
+            "difficulty": "easy",
+            "source_section": "Multiplication of Integers"
+        },
+        {
+            "question_number": 11,
+            "question": "In division, (-25) ÷ (-5) equals:",
+            "options": {
+                "A": "-5",
+                "B": "5",
+                "C": "20",
+                "D": "-20"
+            },
+            "correct_answer": "B",
+            "explanation": "Negative divided by negative is positive.",
+            "difficulty": "easy",
+            "source_section": "Division of Integers"
+        },
+        {
+            "question_number": 12,
+            "question": "Which property is shown by: a + b = b + a?",
+            "options": {
+                "A": "Associative",
+                "B": "Distributive",
+                "C": "Commutative",
+                "D": "Closure"
+            },
+            "correct_answer": "C",
+            "explanation": "The Commutative property states that the order of addition does not change the result.",
+            "difficulty": "easy",
+            "source_section": "Properties of Integers"
+        },
+        {
+            "question_number": 13,
+            "question": "What is 7 + (-7)?",
+            "options": {
+                "A": "14",
+                "B": "-14",
+                "C": "0",
+                "D": "1"
+            },
+            "correct_answer": "C",
+            "explanation": "Adding an integer and its opposite results in zero.",
+            "difficulty": "easy",
+            "source_section": "Addition"
+        },
+        {
+            "question_number": 14,
+            "question": "What is (-10) - 2?",
+            "options": {
+                "A": "-8",
+                "B": "8",
+                "C": "-12",
+                "D": "12"
+            },
+            "correct_answer": "C",
+            "explanation": "-10 - 2 is the same as -10 + (-2) = -12.",
+            "difficulty": "easy",
+            "source_section": "Subtraction"
+        },
+        {
+            "question_number": 15,
+            "question": "Identify the Multiplicative Identity for integers:",
+            "options": {
+                "A": "0",
+                "B": "1",
+                "C": "-1",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Any integer multiplied by 1 remains the same.",
+            "difficulty": "easy",
+            "source_section": "Properties of multiplication"
+        },
+        {
+            "question_number": 16,
+            "question": "Solve: 15 ÷ (-3)",
+            "options": {
+                "A": "5",
+                "B": "-5",
+                "C": "12",
+                "D": "-18"
+            },
+            "correct_answer": "B",
+            "explanation": "Positive divided by negative results in a negative.",
+            "difficulty": "easy",
+            "source_section": "Division"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the predecessor of -9?",
+            "options": {
+                "A": "-8",
+                "B": "-10",
+                "C": "8",
+                "D": "10"
+            },
+            "correct_answer": "B",
+            "explanation": "Predecessor is found by subtracting 1: -9 - 1 = -10.",
+            "difficulty": "easy",
+            "source_section": "Basic Concepts"
+        },
+        {
+            "question_number": 18,
+            "question": "The value of | -10 | + | 5 | is:",
+            "options": {
+                "A": "5",
+                "B": "-5",
+                "C": "15",
+                "D": "-15"
+            },
+            "correct_answer": "C",
+            "explanation": "10 + 5 = 15.",
+            "difficulty": "easy",
+            "source_section": "Absolute Value"
+        },
+        {
+            "question_number": 19,
+            "question": "Is subtraction of integers commutative?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Only for zero",
+                "D": "Only for positive integers"
+            },
+            "correct_answer": "B",
+            "explanation": "For example, 5 - 3 is not equal to 3 - 5.",
+            "difficulty": "easy",
+            "source_section": "Properties of Subtraction"
+        },
+        {
+            "question_number": 20,
+            "question": "What is (-6) × 2?",
+            "options": {
+                "A": "12",
+                "B": "-12",
+                "C": "-4",
+                "D": "4"
+            },
+            "correct_answer": "B",
+            "explanation": "One negative factor makes the product negative.",
+            "difficulty": "easy",
+            "source_section": "Multiplication"
+        },
+        {
+            "question_number": 21,
+            "question": "Solve: (-20) + (-20)",
+            "options": {
+                "A": "0",
+                "B": "40",
+                "C": "-40",
+                "D": "1"
+            },
+            "correct_answer": "C",
+            "explanation": "Adding two negatives gives a more negative number.",
+            "difficulty": "easy",
+            "source_section": "Addition"
+        },
+        {
+            "question_number": 22,
+            "question": "The successor of -1 is:",
+            "options": {
+                "A": "-2",
+                "B": "0",
+                "C": "1",
+                "D": "2"
+            },
+            "correct_answer": "B",
+            "explanation": "Successor is found by adding 1: -1 + 1 = 0.",
+            "difficulty": "easy",
+            "source_section": "Basic Concepts"
+        },
+        {
+            "question_number": 23,
+            "question": "What is 5 - 8?",
+            "options": {
+                "A": "3",
+                "B": "-3",
+                "C": "13",
+                "D": "-13"
+            },
+            "correct_answer": "B",
+            "explanation": "Subtracting a larger number from a smaller results in a negative.",
+            "difficulty": "easy",
+            "source_section": "Subtraction"
+        },
+        {
+            "question_number": 24,
+            "question": "What is (-2) × (-2) × (-2) × (-2)?",
+            "options": {
+                "A": "16",
+                "B": "-16",
+                "C": "8",
+                "D": "-8"
+            },
+            "correct_answer": "A",
+            "explanation": "An even number of negative signs results in a positive product.",
+            "difficulty": "easy",
+            "source_section": "Multiplication"
+        },
+        {
+            "question_number": 25,
+            "question": "Which of the following represents 'a profit of $50' as an integer?",
+            "options": {
+                "A": "-50",
+                "B": "50",
+                "C": "0",
+                "D": "1/50"
+            },
+            "correct_answer": "B",
+            "explanation": "Profit is represented by a positive integer.",
+            "difficulty": "easy",
+            "source_section": "Representation"
+        }
+    ]
+}

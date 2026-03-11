@@ -1,0 +1,166 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter": "Physical Features of India",
+    "difficulty": "Medium",
+    "source_pdf": "con9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Map Marking of Physiographic Divisions",
+            "objective": "Understand the spatial distribution of India’s major physical divisions",
+            "materials": [
+                "Outline map of India",
+                "Atlas",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw an outline map of India",
+                "Mark the Himalayas, Northern Plains, Peninsular Plateau, Indian Desert, Coastal Plains, and Islands",
+                "Label each division correctly"
+            ],
+            "learning_outcome": "Students understand the location of major physiographic divisions",
+            "evaluation": "Accuracy and completeness of labeling (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Comparison of Himalayan Ranges",
+            "objective": "Differentiate the three Himalayan ranges",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Draw a table with three columns",
+                "Write the names Himadri, Himachal, and Shiwaliks",
+                "List their height, features, and examples"
+            ],
+            "learning_outcome": "Students understand differences among Himalayan ranges",
+            "evaluation": "Correct comparison (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "River Systems Study",
+            "objective": "Understand how rivers form the Northern Plains",
+            "materials": [
+                "Notebook",
+                "Atlas"
+            ],
+            "steps": [
+                "List the three major river systems forming the Northern Plains",
+                "Identify two tributaries for each river",
+                "Explain their role in forming fertile plains"
+            ],
+            "learning_outcome": "Students understand river systems and alluvial plains",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Relief Features Diagram",
+            "objective": "Understand the relief divisions of Northern Plains",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw a diagram showing Bhabar, Terai, Bhangar, and Khadar",
+                "Label each region",
+                "Write one feature of each"
+            ],
+            "learning_outcome": "Students understand relief variations in plains",
+            "evaluation": "Correct labeling and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Plateau Regions Identification",
+            "objective": "Study the divisions of the Peninsular Plateau",
+            "materials": [
+                "Atlas",
+                "Notebook"
+            ],
+            "steps": [
+                "Locate Central Highlands and Deccan Plateau on a map",
+                "Write their boundaries",
+                "List two rivers flowing through each region"
+            ],
+            "learning_outcome": "Students understand the structure of the Peninsular Plateau",
+            "evaluation": "Correct identification and description (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Western and Eastern Ghats Study",
+            "objective": "Compare Western Ghats and Eastern Ghats",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences in height, continuity, and location",
+                "List one major peak from each",
+                "Explain their climatic importance"
+            ],
+            "learning_outcome": "Students understand the significance of Ghats",
+            "evaluation": "Accuracy of comparison (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Desert Landform Study",
+            "objective": "Understand desert landforms",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Write three characteristics of the Indian Desert",
+                "Explain the formation of sand dunes",
+                "Name the main river flowing in this region"
+            ],
+            "learning_outcome": "Students understand desert geography",
+            "evaluation": "Clarity of explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Coastal Plains Project",
+            "objective": "Study the divisions of coastal plains",
+            "materials": [
+                "Chart paper",
+                "Atlas"
+            ],
+            "steps": [
+                "Draw two columns for western and eastern coasts",
+                "List their divisions",
+                "Mention important rivers forming deltas"
+            ],
+            "learning_outcome": "Students understand coastal divisions",
+            "evaluation": "Accuracy and presentation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Island Group Study",
+            "objective": "Understand island formation",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write differences between Lakshadweep and Andaman & Nicobar Islands",
+                "Explain coral island formation",
+                "Mention one important feature of each island group"
+            ],
+            "learning_outcome": "Students understand island geography",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Physical Diversity Essay",
+            "objective": "Understand the importance of India’s physical diversity",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a short essay explaining the importance of mountains, plains, plateaus, and coasts",
+                "Include examples from the chapter"
+            ],
+            "learning_outcome": "Students understand the significance of diverse landforms",
+            "evaluation": "Content and clarity (10 marks)"
+        }
+    ]
+}

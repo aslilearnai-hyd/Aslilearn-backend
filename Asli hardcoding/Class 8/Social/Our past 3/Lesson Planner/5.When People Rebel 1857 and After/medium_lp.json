@@ -1,0 +1,128 @@
+{
+  "class": "Class 8",
+  "subject": "History",
+  "chapter_name": "When People Rebel: 1857 and After",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Explain the background of the Revolt of 1857",
+    "Identify the political, economic and military causes of the revolt",
+    "Describe the roles of major leaders in different regions",
+    "Understand how the revolt spread across North and Central India",
+    "Explain how the British suppressed the revolt",
+    "Analyse the administrative changes introduced after 1857"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Background of the Revolt of 1857",
+      "topics_covered": [
+        "Introduction to the Revolt of 1857",
+        "Growing dissatisfaction with British rule",
+        "Conditions of Indian soldiers and rulers"
+      ],
+      "teaching_strategy": [
+        "Interactive lecture",
+        "Guided questioning",
+        "Example-based explanation"
+      ],
+      "student_activities": [
+        "Discuss reasons why people oppose rulers",
+        "List factors that created dissatisfaction against British rule"
+      ],
+      "assessment": ["Oral questioning", "Class participation"]
+    },
+    {
+      "period": 2,
+      "title": "Causes of the Revolt",
+      "topics_covered": [
+        "Military causes: discontent among sepoys",
+        "Greased cartridge issue",
+        "Political and economic causes"
+      ],
+      "teaching_strategy": ["Concept explanation", "Cause–effect discussion"],
+      "student_activities": [
+        "Write the immediate cause of the revolt",
+        "Create a list of political and economic causes"
+      ],
+      "assessment": ["Short written activity", "Notebook checking"]
+    },
+    {
+      "period": 3,
+      "title": "Leaders of the Revolt",
+      "topics_covered": [
+        "Bahadur Shah Zafar in Delhi",
+        "Rani Lakshmibai in Jhansi",
+        "Nana Sahib in Kanpur",
+        "Begum Hazrat Mahal in Lucknow"
+      ],
+      "teaching_strategy": ["Storytelling", "Map-based explanation"],
+      "student_activities": [
+        "Match leaders with the regions they led",
+        "Write one contribution of each leader"
+      ],
+      "assessment": ["Teacher observation", "Student responses"]
+    },
+    {
+      "period": 4,
+      "title": "Spread of the Revolt",
+      "topics_covered": [
+        "Beginning at Meerut",
+        "Spread to Delhi, Kanpur, Lucknow and Jhansi",
+        "Participation of soldiers, rulers and peasants"
+      ],
+      "teaching_strategy": ["Map analysis", "Discussion-based explanation"],
+      "student_activities": [
+        "Mark important centres of the revolt on a map",
+        "Discuss why the revolt spread quickly"
+      ],
+      "assessment": ["Notebook activity", "Oral responses"]
+    },
+    {
+      "period": 5,
+      "title": "Suppression of the Revolt",
+      "topics_covered": [
+        "British military response",
+        "Defeat of rebel forces",
+        "Capture of important cities"
+      ],
+      "teaching_strategy": ["Narrative explanation", "Class discussion"],
+      "student_activities": [
+        "Write two reasons why the revolt failed",
+        "Discuss difficulties faced by the rebels"
+      ],
+      "assessment": ["Short written explanation", "Teacher feedback"]
+    },
+    {
+      "period": 6,
+      "title": "Aftermath of the Revolt and Revision",
+      "topics_covered": [
+        "End of East India Company rule",
+        "Beginning of direct British Crown rule",
+        "Reorganization of the army and administration"
+      ],
+      "teaching_strategy": ["Concept recap", "Quiz-based revision"],
+      "student_activities": [
+        "Write one administrative change after the revolt",
+        "Participate in a revision quiz"
+      ],
+      "assessment": ["Short test (10 marks)", "Doubt clarification"]
+    }
+  ],
+  "teaching_aids": [
+    "Blackboard or Whiteboard",
+    "Chalk or Markers",
+    "History textbook",
+    "Map of India",
+    "Pictures of revolt leaders"
+  ],
+  "evaluation_methods": [
+    "Oral questioning",
+    "Notebook checking",
+    "Short quizzes",
+    "Class discussion",
+    "Participation in activities"
+  ],
+  "teacher_tip": "Encourage students to connect different causes of the revolt so they understand it as a combination of political, economic and military factors."
+}

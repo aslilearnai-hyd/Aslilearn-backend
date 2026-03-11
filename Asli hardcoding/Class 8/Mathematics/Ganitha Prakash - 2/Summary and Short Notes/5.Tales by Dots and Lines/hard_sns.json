@@ -1,0 +1,33 @@
+{
+    "class": "Class 6",
+    "subject": "Mathematics",
+    "chapter": "Tales by Dots and Lines",
+    "difficulty": "Hard",
+    "source_pdf": "hegp205.pdf",
+    "short_notes": {
+        "key_points": [
+            "Mean summarizes an entire dataset but can be affected by extreme values",
+            "Median is useful for datasets containing outliers",
+            "Dot plots help identify distribution patterns and clusters in data",
+            "Line graphs reveal trends and changes in continuous data over time",
+            "Data visualization helps interpret large datasets efficiently"
+        ],
+        "examples": [
+            "Mean of 5, 10, 15, 20 = 12.5",
+            "Median of 3, 6, 9, 12, 15 = 9",
+            "Dot plot showing number of books read by students in a class",
+            "Line graph showing population growth over several years"
+        ],
+        "formulas": [
+            "Mean = Total sum of observations ÷ Number of observations",
+            "Median = Middle observation after arranging data in order",
+            "Median (even number of observations) = (n/2 th value + (n/2 + 1) th value) / 2"
+        ],
+        "exam_tips": [
+            "Check whether dataset has odd or even number of values before finding median",
+            "Verify calculations when finding mean to avoid arithmetic errors",
+            "Ensure scales are equal when plotting line graphs",
+            "Interpret graphs carefully before answering questions"
+        ]
+    }
+}

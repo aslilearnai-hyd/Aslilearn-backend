@@ -1,0 +1,31 @@
+{
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Finding the Unknown (Simple Equations)",
+    "difficulty": "Medium",
+    "source_pdf": "jemh104.pdf",
+    "short_notes": {
+        "key_points": [
+            "Solving an equation means finding the value of the variable",
+            "The Balancing Method involves doing the same operation to both sides",
+            "Inverse Operations: Addition $\leftrightarrow$ Subtraction and Multiplication $\leftrightarrow$ Division",
+            "Transposition is the process of moving a term to the other side of the '=' sign"
+        ],
+        "examples": [
+            "Balancing: To solve $x - 3 = 7$, add 3 to both sides: $x - 3 + 3 = 7 + 3 \implies x = 10$ ",
+            "Transposition (+ to -): $x + 8 = 15 \implies x = 15 - 8 = 7$",
+            "Transposition ($\times$ to $\div$): $4x = 20 \implies x = 20 \div 4 = 5$",
+            "Check: If $x = 5$, then $4(5) = 20$. Since LHS = RHS, the answer is correct."
+        ],
+        "formulas": [
+            "Balancing Rule $\rightarrow$ LHS Operation = RHS Operation",
+            "Inverse Rule $\rightarrow$ $+ \rightarrow -$, $- \rightarrow +$, $\times \rightarrow \div$, $\div \rightarrow \times$"
+        ],
+        "exam_tips": [
+            "When transposing a number, always change its sign immediately",
+            "Always verify your answer by substituting it back into the original equation",
+            "Treat the '=' sign like a bridge that changes the nature of the number crossing it",
+            "Keep the variable on one side and all numbers on the other"
+        ]
+    }
+}

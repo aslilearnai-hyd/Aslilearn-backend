@@ -1,0 +1,33 @@
+{
+  "class": "Class 10",
+  "subject": "Science",
+  "chapter": "Magnetic Effects of Electric Current",
+  "difficulty": "Medium",
+  "source_pdf": "jesc112.pdf",
+  "short_notes": {
+    "key_points": [
+      "A current-carrying conductor produces a magnetic field around it",
+      "The direction of magnetic field around a straight conductor can be determined using the right-hand thumb rule",
+      "A solenoid is a coil of wire that produces a magnetic field similar to a bar magnet when current flows through it",
+      "A current-carrying conductor placed in a magnetic field experiences a force",
+      "Electric motors convert electrical energy into mechanical energy"
+    ],
+    "examples": [
+      "Compass needle deflecting near a current-carrying wire",
+      "Electromagnets used in electric bells and cranes",
+      "Electric fan and mixer using electric motors",
+      "Generators producing electricity in power stations"
+    ],
+    "formulas": [
+      "Fleming's Left-Hand Rule → Determines direction of force on a current-carrying conductor",
+      "Electromagnetic Induction → Production of current due to changing magnetic field",
+      "Frequency of AC in India → 50 Hz"
+    ],
+    "exam_tips": [
+      "Understand the right-hand thumb rule clearly",
+      "Practice diagrams of magnetic field around a conductor and solenoid",
+      "Learn the working principle of electric motor and generator",
+      "Remember the difference between AC and DC"
+    ]
+  }
+}

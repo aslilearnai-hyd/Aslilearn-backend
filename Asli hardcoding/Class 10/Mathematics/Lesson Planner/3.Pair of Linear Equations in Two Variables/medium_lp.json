@@ -1,0 +1,186 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Pair of Linear Equations in Two Variables",
+    "lesson_level": "Medium",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Apply graphical method to solve pairs of linear equations",
+        "Understand algebraic methods of solving linear equations",
+        "Analyse consistency of systems using coefficient ratios",
+        "Solve word problems leading to linear equations",
+        "Interpret solutions algebraically and graphically"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Concept Reinforcement and Revision",
+            "topics_covered": [
+                "Linear equations in two variables",
+                "Graph of a linear equation",
+                "Revision of graphical solution"
+            ],
+            "teaching_strategy": [
+                "Question–answer discussion",
+                "Recap using examples"
+            ],
+            "student_activities": [
+                "Plot simple linear equations",
+                "Identify solutions from graphs"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Algebraic Solution – Substitution Method",
+            "topics_covered": [
+                "Substitution method",
+                "Step-by-step solving"
+            ],
+            "teaching_strategy": [
+                "Demonstration on board",
+                "Worked examples"
+            ],
+            "student_activities": [
+                "Solve given pairs using substitution",
+                "Verify solutions"
+            ],
+            "assessment": [
+                "Classwork evaluation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Algebraic Solution – Elimination Method",
+            "topics_covered": [
+                "Elimination of variables",
+                "Comparison with substitution method"
+            ],
+            "teaching_strategy": [
+                "Side-by-side method comparison",
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Solve equations using elimination",
+                "Explain steps orally"
+            ],
+            "assessment": [
+                "Board problems",
+                "Peer correction"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Cross-Multiplication Method",
+            "topics_covered": [
+                "Cross-multiplication formula",
+                "Conditions for applicability"
+            ],
+            "teaching_strategy": [
+                "Formula explanation",
+                "Shortcut-based examples"
+            ],
+            "student_activities": [
+                "Apply cross-multiplication",
+                "Solve selected problems"
+            ],
+            "assessment": [
+                "Short written test"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Consistency of Pair of Linear Equations",
+            "topics_covered": [
+                "Coefficient ratios",
+                "Consistent and inconsistent systems"
+            ],
+            "teaching_strategy": [
+                "Conceptual explanation",
+                "Case-based examples"
+            ],
+            "student_activities": [
+                "Classify systems based on ratios",
+                "Reasoning-based answers"
+            ],
+            "assessment": [
+                "Worksheet problems"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Application-Based Problems",
+            "topics_covered": [
+                "Word problems",
+                "Real-life situations"
+            ],
+            "teaching_strategy": [
+                "Problem-solving approach",
+                "Guided reasoning"
+            ],
+            "student_activities": [
+                "Frame equations from problems",
+                "Solve and interpret solutions"
+            ],
+            "assessment": [
+                "Classwork checking"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Comparison of Methods",
+            "topics_covered": [
+                "Graphical vs algebraic methods",
+                "Choosing suitable methods"
+            ],
+            "teaching_strategy": [
+                "Discussion-based learning",
+                "Comparison tables"
+            ],
+            "student_activities": [
+                "Solve same problem using two methods",
+                "Discuss efficiency"
+            ],
+            "assessment": [
+                "Oral assessment"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "Chapter Revision and Assessment",
+            "topics_covered": [
+                "All methods",
+                "Consistency conditions",
+                "Applications"
+            ],
+            "teaching_strategy": [
+                "Rapid recap",
+                "Mixed problem practice"
+            ],
+            "student_activities": [
+                "Revision worksheet",
+                "Doubt clarification"
+            ],
+            "assessment": [
+                "Chapter test (15 marks)"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Graph paper",
+        "Ruler",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Written tests",
+        "Worksheet evaluation"
+    ],
+    "teacher_tip": "Encourage students to justify why a particular method is suitable for a given problem."
+}

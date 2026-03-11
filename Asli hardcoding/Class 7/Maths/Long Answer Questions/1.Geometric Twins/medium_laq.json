@@ -1,0 +1,414 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: Geometric Twins (Congruence of Triangles)",
+    "generated_at": "2026-03-05T18:15:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "In $\\Delta ABC$ and $\\Delta PQR$, $AB = PQ$ and $BC = QR$. What additional information is needed to prove them congruent by the SAS criterion? Explain why.",
+            "answer": "To use the SAS (Side-Angle-Side) criterion, the equal angle must be the 'included angle' between the two equal sides. Since $AB=PQ$ and $BC=QR$, the included angles are $\\angle B$ and $\\angle Q$. Therefore, we need the information that $\\angle B = \\angle Q$.",
+            "answer_outline": [
+                "Identify given sides",
+                "Define included angle",
+                "State the specific angle equality required"
+            ],
+            "key_concepts": [
+                "SAS criterion",
+                "included angle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "If $\\Delta DEF \\cong \\Delta BCA$, write the part of $\\Delta BCA$ that corresponds to: (i) $\\angle E$ (ii) $EF$ (iii) $\\angle F$ (iv) $DF$.",
+            "answer": "Based on the correspondence $D \\leftrightarrow B$, $E \\leftrightarrow C$, and $F \\leftrightarrow A$: (i) $\\angle E$ corresponds to $\\angle C$, (ii) $EF$ corresponds to $CA$, (iii) $\\angle F$ corresponds to $\\angle A$, (iv) $DF$ corresponds to $BA$.",
+            "answer_outline": [
+                "Establish vertex correspondence",
+                "Match angles and sides based on order"
+            ],
+            "key_concepts": [
+                "correspondence",
+                "CPCT"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Prove that the diagonals of a rectangle are equal using the concept of congruence.",
+            "answer": "In rectangle $ABCD$, consider $\\Delta ABC$ and $\\Delta ABD$. $AB = AB$ (Common), $BC = AD$ (Opposite sides of rectangle), and $\\angle ABC = \\angle BAD = 90^\\circ$. By SAS criterion, $\\Delta ABC \\cong \\Delta ABD$. Thus, $AC = BD$ (By CPCT).",
+            "answer_outline": [
+                "Identify triangles to compare",
+                "List equal parts using rectangle properties",
+                "Apply SAS",
+                "Conclude using CPCT"
+            ],
+            "key_concepts": [
+                "SAS criterion",
+                "CPCT",
+                "rectangle properties"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Two triangles are congruent if two angles and any side of one triangle are equal to the corresponding angles and side of the other. Is this true? Name the criterion.",
+            "answer": "Yes, this is true. This is often referred to as the AAS (Angle-Angle-Side) criterion. While Class 7 focuses on ASA (included side), AAS is a valid extension because if two angles are equal, the third angle is also equal (by Angle Sum Property), making the given side 'included' between two angles.",
+            "answer_outline": [
+                "Validate the statement",
+                "Explain via Angle Sum Property",
+                "Link to ASA"
+            ],
+            "key_concepts": [
+                "AAS criterion",
+                "Angle Sum Property"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "In an isosceles triangle $ABC$ with $AB = AC$, $AD$ is the bisector of $\\angle A$. Prove that $\\Delta ABD \\cong \\Delta ACD$.",
+            "answer": "In $\\Delta ABD$ and $\\Delta ACD$: $AB = AC$ (Given), $\\angle BAD = \\angle CAD$ ($AD$ bisects $\\angle A$), and $AD = AD$ (Common). Therefore, $\\Delta ABD \\cong \\Delta ACD$ by SAS congruence criterion.",
+            "answer_outline": [
+                "List known equalities",
+                "Identify the common side",
+                "State the congruence criterion"
+            ],
+            "key_concepts": [
+                "SAS",
+                "angle bisector",
+                "isosceles triangle"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain with a diagram why SSA is not a standard congruence criterion.",
+            "answer": "SSA (Side-Side-Angle) is not a criterion because having two sides and a non-included angle equal can result in two differently shaped triangles. One could be acute and the other obtuse while sharing those three measurements.",
+            "answer_outline": [
+                "Definition of SSA",
+                "Problem with non-included angles",
+                "Case of 'ambiguous' triangles"
+            ],
+            "key_concepts": [
+                "SSA",
+                "congruence limitations"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "In a right-angled $\\Delta ABC$ and $\\Delta DEF$, $\\angle B = \\angle E = 90^\\circ$, $AC = DF$, and $BC = EF$. Which criterion proves their congruence?",
+            "answer": "The triangles are congruent by the RHS criterion. $AC$ and $DF$ are the hypotenuses (opposite to $90^\\circ$), $\\angle B = \\angle E$ are the right angles, and $BC, EF$ are corresponding sides. Thus, RHS (Right angle-Hypotenuse-Side) applies.",
+            "answer_outline": [
+                "Identify Right Angle",
+                "Identify Hypotenuse",
+                "Identify Side",
+                "State RHS criterion"
+            ],
+            "key_concepts": [
+                "RHS criterion",
+                "right triangle"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.4"
+        },
+        {
+            "question_number": 8,
+            "question": "If $\\Delta ABC \\cong \\Delta FED$ under the correspondence $ABC \\leftrightarrow FED$, write all the corresponding congruent parts of the triangles.",
+            "answer": "Angles: $\\angle A \\leftrightarrow \\angle F$, $\\angle B \\leftrightarrow \\angle E$, $\\angle C \\leftrightarrow \\angle D$. Sides: $AB \\leftrightarrow FE$, $BC \\leftrightarrow ED$, $AC \\leftrightarrow FD$.",
+            "answer_outline": [
+                "Map vertices correctly",
+                "List all 3 side pairs",
+                "List all 3 angle pairs"
+            ],
+            "key_concepts": [
+                "correspondence",
+                "congruent parts"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "In $\\Delta PQR$, $PQ = PR$ and $S$ is the mid-point of $QR$. Prove that $\\angle PQS = \\angle PRS$ using SSS.",
+            "answer": "In $\\Delta PQS$ and $\\Delta PRS$: $PQ = PR$ (Given), $QS = RS$ ($S$ is mid-point), and $PS = PS$ (Common). By SSS criterion, $\\Delta PQS \\cong \\Delta PRS$. By CPCT, $\\angle PQS = \\angle PRS$.",
+            "answer_outline": [
+                "Establish SSS conditions",
+                "Apply SSS criterion",
+                "Use CPCT for final proof"
+            ],
+            "key_concepts": [
+                "SSS criterion",
+                "mid-point",
+                "CPCT"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the ASA criterion and create a scenario where it is used to find an unknown side.",
+            "answer": "ASA states that if two angles and the included side are equal, triangles are congruent. Scenario: If $\\Delta ABC \\cong \\Delta PQR$ by ASA, and we know $BC=5$ cm, then $QR$ must also be $5$ cm by CPCT.",
+            "answer_outline": [
+                "Definition of ASA",
+                "Application to unknown side",
+                "Concept of CPCT"
+            ],
+            "key_concepts": [
+                "ASA criterion",
+                "CPCT"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is the RHS criterion considered a special case of congruence?",
+            "answer": "RHS is special because it specifically requires a $90^\\circ$ angle and the hypotenuse. While other criteria like SAS work for any triangle, RHS ensures that in right triangles, we don't necessarily need the 'included' angle if we have the hypotenuse and a side.",
+            "answer_outline": [
+                "Requirement of right angle",
+                "Importance of hypotenuse",
+                "Comparison with SAS"
+            ],
+            "key_concepts": [
+                "RHS",
+                "hypotenuse"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Can two equilateral triangles of different side lengths be congruent? Justify your answer.",
+            "answer": "No. Although all angles in equilateral triangles are $60^\\circ$ (satisfying shape), congruence requires equal size. If sides are different lengths, they won't cover each other when superimposed. This is a case of AAA which does not prove congruence.",
+            "answer_outline": [
+                "Identify shape vs size",
+                "Discuss side lengths",
+                "Reject AAA as congruence criterion"
+            ],
+            "key_concepts": [
+                "equilateral triangles",
+                "AAA"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Show that in an isosceles triangle, the angles opposite to equal sides are equal using SAS.",
+            "answer": "In $\\Delta ABC$ with $AB=AC$, draw bisector $AD$ of $\\angle A$. In $\\Delta ABD$ and $\\Delta ACD$: $AB=AC$, $\\angle BAD=\\angle CAD$, $AD=AD$. $\\Delta ABD \\cong \\Delta ACD$ (SAS). By CPCT, $\\angle B = \\angle C$.",
+            "answer_outline": [
+                "Construction of bisector",
+                "Proof of congruence",
+                "Conclusion via CPCT"
+            ],
+            "key_concepts": [
+                "SAS",
+                "isosceles triangle property"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "In $\\Delta ABC$, $\\angle A = 30^\\circ$, $\\angle B = 40^\\circ$ and $\\angle C = 110^\\circ$. In $\\Delta PQR$, $\\angle P = 30^\\circ$, $\\angle Q = 40^\\circ$ and $\\angle R = 110^\\circ$. A student says $\\Delta ABC \\cong \\Delta PQR$ by AAA. Is he right?",
+            "answer": "No, the student is not right. AAA is not a congruence criterion. The triangles have the same shape but could be of different sizes. Congruence requires at least one corresponding side length to be equal.",
+            "answer_outline": [
+                "Identify the student's error",
+                "Explain AAA limitation",
+                "State requirement for side equality"
+            ],
+            "key_concepts": [
+                "AAA",
+                "congruence vs similarity"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 15,
+            "question": "If two triangles are congruent, are their areas equal? Is the converse true?",
+            "answer": "If two triangles are congruent, their areas are always equal because they are identical. However, the converse is not true; two triangles can have equal area but different shapes (and thus not be congruent).",
+            "answer_outline": [
+                "Congruent $\\implies$ Equal Area",
+                "Equal Area $\\not\\implies$ Congruent",
+                "Brief explanation"
+            ],
+            "key_concepts": [
+                "congruence",
+                "area"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Describe a situation where the ASA criterion is used in real-life surveying.",
+            "answer": "Surveyors use ASA to find the distance to an unreachable point (like across a river). By measuring a baseline (side) and the two angles from the ends of the baseline to the point, they create a triangle congruent to a model, allowing them to calculate distance.",
+            "answer_outline": [
+                "Identify baseline and angles",
+                "Application of ASA",
+                "Resulting measurement"
+            ],
+            "key_concepts": [
+                "ASA application",
+                "surveying"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "In $\\Delta ABC$ and $\\Delta PQR$, $BC = QR$, $\\angle B = \\angle Q$ and $\\angle C = \\angle R$. Name the congruence criterion and the congruent triangles.",
+            "answer": "The triangles are congruent by the ASA (Angle-Side-Angle) criterion because the side $BC$ is included between $\\angle B$ and $\\angle C$. Notation: $\\Delta ABC \\cong \\Delta PQR$.",
+            "answer_outline": [
+                "Match angles and sides",
+                "Verify 'included' side",
+                "Write congruence statement"
+            ],
+            "key_concepts": [
+                "ASA",
+                "notation"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Prove that if the bisector of the vertical angle of a triangle bisects the base, the triangle is isosceles.",
+            "answer": "In $\\Delta ABC$, let $AD$ bisect $\\angle A$ and $BD=DC$. By comparing $\\Delta ABD$ and $\\Delta ACD$ using the side-angle-side logic (with a shared side $AD$), we find they are congruent. Thus $AB=AC$ by CPCT, making it isosceles.",
+            "answer_outline": [
+                "Setup the triangle and bisector",
+                "Identify congruent triangles",
+                "Conclude $AB=AC$"
+            ],
+            "key_concepts": [
+                "isosceles triangle",
+                "SAS",
+                "CPCT"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the difference between 'Equal' and 'Congruent' in geometry?",
+            "answer": "In geometry, 'Equal' usually refers to numbers (like length of a side or measure of an angle). 'Congruent' refers to figures. We say $AB = CD$ (lengths are equal), but Segment $AB \\cong$ Segment $CD$ (the shapes are congruent).",
+            "answer_outline": [
+                "Numerical equality vs figure congruence",
+                "Notation difference",
+                "Examples"
+            ],
+            "key_concepts": [
+                "equality",
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 20,
+            "question": "In $\\Delta ABC$, $AB=AC$. $D$ and $E$ are points on $BC$ such that $BD=CE$. Prove that $AD=AE$.",
+            "answer": "In $\\Delta ABD$ and $\\Delta ACE$: $AB=AC$ (Given), $\\angle B = \\angle C$ (Angles opposite to equal sides), $BD=CE$ (Given). By SAS criterion, $\\Delta ABD \\cong \\Delta ACE$. Therefore, $AD=AE$ by CPCT.",
+            "answer_outline": [
+                "Use isosceles properties for angles",
+                "Apply SAS",
+                "Use CPCT"
+            ],
+            "key_concepts": [
+                "SAS",
+                "CPCT",
+                "isosceles properties"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 21,
+            "question": "Can a triangle be congruent to its own mirror image? Explain.",
+            "answer": "Yes, every triangle is congruent to its mirror image. Reflection changes the orientation but preserves all side lengths and angle measures. Since the 'copy' is identical in shape and size, they are congruent.",
+            "answer_outline": [
+                "Discuss reflection",
+                "Preservation of dimensions",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "reflection",
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Two line segments are congruent if they have the same length. Is the same true for circles? Define congruence for circles.",
+            "answer": "Yes, two circles are congruent if they have the same radius. If the radius is the same, the circumference and area will also be the same, making them identical in size and shape.",
+            "answer_outline": [
+                "Analogy to line segments",
+                "Criterion for circle congruence",
+                "Reasoning (radius)"
+            ],
+            "key_concepts": [
+                "circle congruence",
+                "radius"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "In $\\Delta ABC$ and $\\Delta DEF$, $AB=DE$, $BC=EF$ and $\\angle B = \\angle E$. If $\\angle A = 50^\\circ$ and $\\angle B = 70^\\circ$, find $\\angle F$.",
+            "answer": "$\\Delta ABC \\cong \\Delta DEF$ by SAS criterion ($AB=DE$, $BC=EF$, $\\angle B=\\angle E$). By CPCT, $\\angle C = \\angle F$. In $\\Delta ABC$, $\\angle C = 180 - (50+70) = 60^\\circ$. Therefore, $\\angle F = 60^\\circ$.",
+            "answer_outline": [
+                "Prove congruence",
+                "Use Angle Sum Property",
+                "Link to $\\angle F$ via CPCT"
+            ],
+            "key_concepts": [
+                "SAS",
+                "Angle Sum Property",
+                "CPCT"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 24,
+            "question": "How does the 'Superposition' method help in understanding congruence?",
+            "answer": "Superposition is the physical or mental act of placing one figure over another. If they coincide perfectly, they are congruent. It helps us visualize that congruence is about 'perfect fit' rather than just having one or two equal parts.",
+            "answer_outline": [
+                "Definition of superposition",
+                "Visualizing perfect fit",
+                "Conceptual understanding"
+            ],
+            "key_concepts": [
+                "superposition"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 25,
+            "question": "If $\\Delta ABC \\cong \\Delta PQR$ and $\\Delta PQR \\cong \\Delta XYZ$, is $\\Delta ABC \\cong \\Delta XYZ$? Why?",
+            "answer": "Yes, $\\Delta ABC \\cong \\Delta XYZ$. This is because congruence follows the transitive property. If the first is a copy of the second, and the second is a copy of the third, the first is a copy of the third.",
+            "answer_outline": [
+                "Statement of transitivity",
+                "Logical reasoning",
+                "Conclusion"
+            ],
+            "key_concepts": [
+                "transitive property",
+                "congruence"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        }
+    ]
+}

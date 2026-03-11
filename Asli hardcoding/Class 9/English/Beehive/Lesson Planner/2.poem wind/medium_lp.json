@@ -1,0 +1,137 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter_name": "Wind",
+    "lesson_level": "Medium",
+    "total_periods": 5,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the theme of nature’s power",
+        "Analyze the poet’s tone and imagery",
+        "Identify poetic devices like personification and alliteration",
+        "Interpret the message about human resilience",
+        "Relate the poem to real-life lessons of preparation and strength"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Poem and Poet",
+            "topics_covered": [
+                "Background of the poet (Subramania Bharati)",
+                "Overview of the poem",
+                "Theme and context of 'Wind'"
+            ],
+            "teaching_strategy": [
+                "Brief discussion on storms and winds",
+                "Reading aloud of the poem",
+                "Initial interpretation of title and theme"
+            ],
+            "student_activities": [
+                "Listen and note key ideas",
+                "Discuss experiences of strong wind or storms"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Analysis of Stanzas 1 and 2",
+            "topics_covered": [
+                "Personification of wind",
+                "Imagery of destruction",
+                "Tone of warning and respect towards nature"
+            ],
+            "teaching_strategy": [
+                "Line-by-line explanation",
+                "Discussion on figurative language"
+            ],
+            "student_activities": [
+                "Underline examples of personification",
+                "Summarize each stanza in own words"
+            ],
+            "assessment": [
+                "Notebook work",
+                "Short oral answers"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Analysis of Stanzas 3 and 4",
+            "topics_covered": [
+                "Human resilience and preparation",
+                "Imagery of building strong homes and bodies",
+                "Moral lesson of coexistence with nature"
+            ],
+            "teaching_strategy": [
+                "Discussion of moral and life lesson",
+                "Identify symbolic meaning of wind and human actions"
+            ],
+            "student_activities": [
+                "Write examples of human resilience from the poem",
+                "Discuss in pairs how people can face challenges"
+            ],
+            "assessment": [
+                "Notebook submission",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Poetic Devices and Style",
+            "topics_covered": [
+                "Alliteration, repetition, and rhythm",
+                "Symbolism of wind",
+                "Emphasis on tone and mood"
+            ],
+            "teaching_strategy": [
+                "Highlight poetic devices on board",
+                "Interactive reading exercises"
+            ],
+            "student_activities": [
+                "Identify at least 3 poetic devices",
+                "Explain their effect on meaning and mood"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Short MCQs on poetic devices"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Revision, Reflection, and Recap",
+            "topics_covered": [
+                "Summary of all stanzas",
+                "Theme, tone, and moral lesson",
+                "Life application of poem’s message"
+            ],
+            "teaching_strategy": [
+                "Group discussion",
+                "Q&A session",
+                "Critical thinking exercises"
+            ],
+            "student_activities": [
+                "Write personal reflection connecting poem to life",
+                "Answer short questions on theme and devices"
+            ],
+            "assessment": [
+                "Short written test",
+                "Participation marks in discussion"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Textbook with poem",
+        "Charts showing poetic devices and examples"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written exercises",
+        "Group discussion participation"
+    ],
+    "teacher_tip": "Encourage students to visualize the wind’s power and relate it to human strength and preparedness to enhance understanding."
+}

@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: The French Revolution",
+  "generated_at": "2026-03-07T02:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What were the social conditions in France that led to the revolution in 1789?",
+      "answer": "French society was divided into three estates: the Clergy, the Nobility, and the Third Estate. The first two estates enjoyed birthright privileges and paid no taxes, while the Third Estate (90% of the population) bore the entire tax burden and had no political power.",
+      "answer_outline": ["Mention the division into three estates", "Highlight tax exemptions for the first two estates", "Discuss the lack of rights for the Third Estate"],
+      "key_concepts": ["Old Regime", "Three Estates", "Social Inequality"],
+      "marks": 5,
+      "source_section": "1.1 French Society During the Late Eighteenth Century"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the significance of the storming of the Bastille.",
+      "answer": "The Bastille was a fortress-prison that symbolized the despotic power of the King. On 14 July 1789, a mob stormed it to find gunpowder and release prisoners. Its fall marked the beginning of the open revolution and the end of absolute monarchy.",
+      "answer_outline": ["Identify the Bastille as a symbol of despotism", "Describe the events of 14 July 1789", "Explain its symbolic importance to the revolution"],
+      "key_concepts": ["Bastille", "Despotism", "Revolutionary Outbreak"],
+      "marks": 4,
+      "source_section": "1. Introduction"
+    },
+    {
+      "question_number": 3,
+      "question": "What was the 'Subsistence Crisis' in France and why did it happen?",
+      "answer": "It was an extreme situation where basic means of livelihood were endangered. It occurred due to rapid population growth (23 to 28 million), which led to food shortages, rising bread prices, and bad harvests caused by drought or hail.",
+      "answer_outline": ["Define subsistence crisis", "Link population growth to food demand", "Mention the role of bad harvests"],
+      "key_concepts": ["Subsistence Crisis", "Livelihood", "Economic Distress"],
+      "marks": 5,
+      "source_section": "1.1 The Struggle to Survive"
+    },
+    {
+      "question_number": 4,
+      "question": "Define 'Tithes' and 'Taille'.",
+      "answer": "Tithes was a tax levied by the Church, comprising one-tenth of the agricultural produce. Taille was a direct tax paid by the Third Estate to the state.",
+      "answer_outline": ["Identify Tithes as a Church tax", "Identify Taille as a state tax", "Mention who paid them"],
+      "key_concepts": ["Taxation", "Tithes", "Taille"],
+      "marks": 4,
+      "source_section": "1.1 French Society"
+    },
+    {
+      "question_number": 5,
+      "question": "How did the American War of Independence affect France's economy?",
+      "answer": "France helped the thirteen American colonies gain independence from Britain. This war added more than a billion livres to a debt that had already risen to 2 billion livres, forcing the state to increase taxes.",
+      "answer_outline": ["Mention French aid to American colonies", "Discuss the increase in state debt", "Link debt to the need for new taxes"],
+      "key_concepts": ["War Debt", "Livre", "Bankruptcy"],
+      "marks": 4,
+      "source_section": "1.1 French Society"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the role of the Middle Class in the revolution.",
+      "answer": "The 18th century saw the emergence of a middle class (merchants, lawyers, manufacturers) who were educated and believed that no group should be privileged by birth. They were influenced by philosophers and led the push for a merit-based society.",
+      "answer_outline": ["Identify the groups in the middle class", "Highlight their education and wealth", "Mention their belief in merit over birthright"],
+      "key_concepts": ["Bourgeoisie", "Meritocracy", "Social Change"],
+      "marks": 5,
+      "source_section": "1.3 A Growing Middle Class"
+    },
+    {
+      "question_number": 7,
+      "question": "Name the philosophers and their books that inspired the revolution.",
+      "answer": "John Locke (Two Treatises of Government), Jean Jacques Rousseau (The Social Contract), and Montesquieu (The Spirit of the Laws).",
+      "answer_outline": ["List the three main philosophers", "Pair them with their specific literary works"],
+      "key_concepts": ["Enlightenment", "Political Philosophy"],
+      "marks": 4,
+      "source_section": "1.3 A Growing Middle Class"
+    },
+    {
+      "question_number": 8,
+      "question": "What was the demand of the Third Estate at the Estates General meeting in 1789?",
+      "answer": "They demanded that voting be conducted by the assembly as a whole, where each member would have one vote, rather than the traditional system of 'one estate, one vote' which favored the first two estates.",
+      "answer_outline": ["Contrast the old voting system with the new demand", "Explain why the new system was fairer", "Mention the King's rejection"],
+      "key_concepts": ["Estates General", "Voting Rights", "Democracy"],
+      "marks": 4,
+      "source_section": "2.1 The Outbreak of the Revolution"
+    },
+    {
+      "question_number": 9,
+      "question": "What led to the formation of the National Assembly?",
+      "answer": "When the King rejected the Third Estate's demand for fair voting, they walked out in protest. On 20 June 1789, they met at an indoor tennis court and declared themselves the National Assembly, swearing to draft a constitution.",
+      "answer_outline": ["Mention the rejection of voting demands", "Describe the meeting at the tennis court", "State the goal of drafting a constitution"],
+      "key_concepts": ["Tennis Court Oath", "National Assembly", "Sovereignty"],
+      "marks": 5,
+      "source_section": "2.1 The Outbreak of the Revolution"
+    },
+    {
+      "question_number": 10,
+      "question": "How did France become a Constitutional Monarchy in 1791?",
+      "answer": "The National Assembly completed the draft of the constitution in 1791. Its main object was to limit the powers of the monarch and distribute power among different institutions—the legislature, executive, and judiciary.",
+      "answer_outline": ["Mention the completion of the 1791 constitution", "Explain the goal of limiting royal power", "Mention the separation of powers"],
+      "key_concepts": ["Constitutional Monarchy", "Separation of Powers"],
+      "marks": 5,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 11,
+      "question": "Differentiate between 'Active' and 'Passive' citizens.",
+      "answer": "Active citizens were men over 25 who paid taxes equal to at least 3 days of a labourer's wage and had the right to vote. Passive citizens (remaining men and all women) had no voting rights.",
+      "answer_outline": ["Define criteria for Active citizens", "Define Passive citizens", "Highlight the gender and wealth gap"],
+      "key_concepts": ["Voting Rights", "Active Citizens", "Passive Citizens"],
+      "marks": 4,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 12,
+      "question": "What rights were declared 'natural and inalienable' in 1789?",
+      "answer": "The Declaration of the Rights of Man and Citizen established the right to life, freedom of speech, freedom of opinion, and equality before law as rights belonging to each human by birth.",
+      "answer_outline": ["List the specific rights", "Explain the term 'natural and inalienable'", "State the role of the government in protecting them"],
+      "key_concepts": ["Human Rights", "Natural Rights", "Equality"],
+      "marks": 5,
+      "source_section": "2.1 France Becomes a Constitutional Monarchy"
+    },
+    {
+      "question_number": 13,
+      "question": "What were the political clubs in France, and which one was the most famous?",
+      "answer": "Political clubs became important rallying points for people to discuss government policies. The most successful was the Jacobin Club, led by Maximilian Robespierre.",
+      "answer_outline": ["Explain the purpose of political clubs", "Identify the Jacobin Club", "Mention its leader"],
+      "key_concepts": ["Jacobin Club", "Robespierre", "Political Mobilization"],
+      "marks": 4,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 14,
+      "question": "Who were the 'Sans-culottes'?",
+      "answer": "They were Jacobin members who wore long striped trousers (unlike the knee-breeches worn by nobles). The term literally means 'those without knee-breeches' and symbolized their opposition to the aristocracy.",
+      "answer_outline": ["Describe their clothing", "Explain the meaning of the name", "Discuss what they symbolized"],
+      "key_concepts": ["Sans-culottes", "Class Struggle", "Revolutionary Identity"],
+      "marks": 4,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 15,
+      "question": "Describe the events leading to France becoming a Republic.",
+      "answer": "In 1792, the Jacobins planned an insurrection due to food shortages. They stormed the Palace of the Tuileries and imprisoned the royal family. The newly elected assembly, called the Convention, abolished the monarchy and declared France a Republic on 21 September 1792.",
+      "answer_outline": ["Mention the 1792 insurrection", "Identify the 'Convention'", "State the date the Republic was declared"],
+      "key_concepts": ["Republic", "Convention", "Insurrection"],
+      "marks": 5,
+      "source_section": "3. France Abolishes Monarchy"
+    },
+    {
+      "question_number": 16,
+      "question": "What was the 'Reign of Terror'?",
+      "answer": "The period from 1793 to 1794 under Robespierre. It was characterized by severe control and punishment. Anyone seen as an 'enemy' of the republic was tried and guillotined.",
+      "answer_outline": ["State the time period", "Identify the leader", "Describe the methods used (guillotine)"],
+      "key_concepts": ["Reign of Terror", "Guillotine", "Robespierre"],
+      "marks": 5,
+      "source_section": "3.1 The Reign of Terror"
+    },
+    {
+      "question_number": 17,
+      "question": "List two laws introduced by Robespierre to bring equality.",
+      "answer": "1. Maximum ceiling on wages and prices. 2. Introduction of 'Equality Bread' made of whole wheat, forbidding white flour.",
+      "answer_outline": ["Mention economic controls (wages/prices)", "Discuss social changes (rationing/bread)"],
+      "key_concepts": ["Economic Equality", "Rationing"],
+      "marks": 4,
+      "source_section": "3.1 The Reign of Terror"
+    },
+    {
+      "question_number": 18,
+      "question": "What was the Directory?",
+      "answer": "After the fall of Robespierre, a new constitution introduced a Directory—an executive made up of five members—to prevent power from concentrating in one person.",
+      "answer_outline": ["Explain why the Directory was created", "State the number of members", "Mention the political instability it caused"],
+      "key_concepts": ["Directory", "Political Instability"],
+      "marks": 4,
+      "source_section": "3.2 A Directory Rules France"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the role of women in the French Revolution.",
+      "answer": "Women were active participants who started their own political clubs and newspapers. They demanded the right to vote, to be elected to the assembly, and to hold political office.",
+      "answer_outline": ["Discuss their active participation", "Mention the formation of women's clubs", "List their political demands"],
+      "key_concepts": ["Women's Rights", "Political Clubs"],
+      "marks": 5,
+      "source_section": "4. Did Women have a Revolution?"
+    },
+    {
+      "question_number": 20,
+      "question": "When did French women finally get the right to vote?",
+      "answer": "After a long struggle that lasted into the 20th century, women in France finally won the right to vote in 1944.",
+      "answer_outline": ["Mention the long duration of the struggle", "State the year (1944)"],
+      "key_concepts": ["Suffrage", "1944"],
+      "marks": 4,
+      "source_section": "4. Did Women have a Revolution?"
+    },
+    {
+      "question_number": 21,
+      "question": "Describe the 'Triangular Slave Trade'.",
+      "answer": "It was the trade of slaves between Europe, Africa, and the Americas. French merchants bought slaves from Africa and sold them to plantation owners in the Caribbean.",
+      "answer_outline": ["Identify the three continents involved", "Explain the process of the trade", "Discuss the demand for plantation labor"],
+      "key_concepts": ["Slavery", "Triangular Trade", "Colonialism"],
+      "marks": 5,
+      "source_section": "5. The Abolition of Slavery"
+    },
+    {
+      "question_number": 22,
+      "question": "When was slavery finally abolished in French colonies?",
+      "answer": "Slavery was abolished by the Convention in 1794, but reintroduced by Napoleon. It was finally abolished in 1848.",
+      "answer_outline": ["Mention the 1794 temporary abolition", "Mention Napoleon's reintroduction", "State the final date (1848)"],
+      "key_concepts": ["Abolition", "1848", "Napoleon"],
+      "marks": 4,
+      "source_section": "5. The Abolition of Slavery"
+    },
+    {
+      "question_number": 23,
+      "question": "What change did the 'Abolition of Censorship' bring to France?",
+      "answer": "The Declaration of Rights in 1789 made freedom of speech and press a natural right. This led to a flood of newspapers, books, and pamphlets in towns, allowing people to discuss and debate events.",
+      "answer_outline": ["Mention the removal of censorship", "Discuss freedom of press", "Explain how it spread ideas"],
+      "key_concepts": ["Censorship", "Freedom of Press", "Public Debate"],
+      "marks": 4,
+      "source_section": "6. The Revolution and Everyday Life"
+    },
+    {
+      "question_number": 24,
+      "question": "Who was Napoleon Bonaparte and how did he rise to power?",
+      "answer": "Napoleon was a military general who took advantage of the political instability of the Directory to crown himself Emperor of France in 1804. He saw himself as a modernizer of Europe.",
+      "answer_outline": ["Identify him as a general", "Link his rise to the Directory's failure", "Mention the year he became Emperor (1804)"],
+      "key_concepts": ["Napoleon", "Emperor", "Modernizer"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the global legacy of the French Revolution?",
+      "answer": "The ideas of liberty and democratic rights are the most important legacy. They spread across Europe and inspired colonized peoples (like in India) to fight for sovereign nation-states.",
+      "answer_outline": ["Highlight 'Liberty' and 'Democratic Rights'", "Mention the spread to other countries", "Mention influence on Indian leaders like Tipu Sultan"],
+      "key_concepts": ["Liberty", "Global Impact", "Democracy"],
+      "marks": 5,
+      "source_section": "Conclusion"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 1: Matter in Our Surroundings",
+    "generated_at": "2026-03-06T19:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is matter?",
+            "answer": "Matter is anything that occupies space and has mass.",
+            "key_points": ["definition", "mass", "space"],
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the three physical states of matter?",
+            "answer": "The three physical states of matter are solid, liquid, and gas.",
+            "key_points": ["states of matter", "solid", "liquid", "gas"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "What is diffusion?",
+            "answer": "Diffusion is the intermixing of particles of two different types of matter on their own.",
+            "key_points": ["diffusion", "intermixing", "particles"],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How does temperature affect the rate of diffusion?",
+            "answer": "The rate of diffusion increases with an increase in temperature.",
+            "key_points": ["diffusion", "temperature", "kinetic energy"],
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the SI unit of temperature?",
+            "answer": "The SI unit of temperature is Kelvin (K).",
+            "key_points": ["SI unit", "temperature", "Kelvin"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the melting point of ice in Kelvin?",
+            "answer": "The melting point of ice is 273.15 K (commonly taken as 273 K).",
+            "key_points": ["melting point", "ice", "273 K"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Define 'Melting Point'.",
+            "answer": "The minimum temperature at which a solid melts to become a liquid at atmospheric pressure is called its melting point.",
+            "key_points": ["melting point", "solid to liquid"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Define 'Boiling Point'.",
+            "answer": "The temperature at which a liquid starts boiling at atmospheric pressure is known as its boiling point.",
+            "key_points": ["boiling point", "liquid to gas"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What is sublimation?",
+            "answer": "Sublimation is the change of state directly from solid to gas without changing into liquid state (or vice versa).",
+            "key_points": ["sublimation", "solid to gas"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 10,
+            "question": "What is evaporation?",
+            "answer": "Evaporation is the phenomenon of change of a liquid into vapours at any temperature below its boiling point.",
+            "key_points": ["evaporation", "surface phenomenon", "below boiling point"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Which state of matter is the most rigid?",
+            "answer": "The solid state is the most rigid state of matter.",
+            "key_points": ["rigidity", "solids"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the process of change from liquid state to solid state.",
+            "answer": "The process is called solidification (or freezing).",
+            "key_points": ["solidification", "liquid to solid"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is 'Latent Heat'?",
+            "answer": "Latent heat is the heat energy which has to be supplied to change the state of a substance without raising its temperature.",
+            "key_points": ["latent heat", "hidden heat", "change of state"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What is dry ice?",
+            "answer": "Solid carbon dioxide ($CO_2$) is known as dry ice.",
+            "key_points": ["dry ice", "solid CO2"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Which state of matter has the highest compressibility?",
+            "answer": "The gaseous state has the highest compressibility.",
+            "key_points": ["compressibility", "gas"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What causes the cooling effect during evaporation?",
+            "answer": "Cooling is caused because the particles of liquid absorb energy from the surroundings to regain the energy lost during evaporation.",
+            "key_points": ["cooling", "evaporation", "absorption of energy"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Does evaporation increase or decrease with an increase in humidity?",
+            "answer": "Evaporation decreases with an increase in humidity.",
+            "key_points": ["evaporation", "humidity"],
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Give an example of a substance that undergoes sublimation.",
+            "answer": "Camphor (or Ammonium Chloride) is a substance that undergoes sublimation.",
+            "key_points": ["example", "sublimation", "camphor"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "What are the fourth and fifth states of matter?",
+            "answer": "The fourth state is Plasma and the fifth state is Bose-Einstein Condensate (BEC).",
+            "key_points": ["plasma", "BEC", "states of matter"],
+            "source_section": "Section 1.4 (More to Know)"
+        },
+        {
+            "question_number": 20,
+            "question": "How is the boiling point of water expressed in Kelvin?",
+            "answer": "The boiling point of water is 373 K ($100^\\circ C + 273 = 373 K$).",
+            "key_points": ["boiling point", "water", "373 K"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What determines the state of a substance?",
+            "answer": "Temperature and pressure determine the state of a substance.",
+            "key_points": ["temperature", "pressure", "state change"],
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Why do solids have a fixed shape?",
+            "answer": "Solids have a fixed shape because the particles are closely packed and have strong forces of attraction between them.",
+            "key_points": ["solids", "fixed shape", "attraction"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the full form of LPG and CNG?",
+            "answer": "LPG stands for Liquefied Petroleum Gas and CNG stands for Compressed Natural Gas.",
+            "key_points": ["LPG", "CNG", "compressed gas"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Which property of gases allows them to be filled in small cylinders despite their large volume?",
+            "answer": "High compressibility of gases allows them to be filled in small cylinders.",
+            "key_points": ["compressibility", "gas storage"],
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does a desert cooler cool better on a hot dry day?",
+            "answer": "On a hot dry day, temperature is high and humidity is low, which increases the rate of evaporation, resulting in better cooling.",
+            "key_points": ["desert cooler", "evaporation", "dry day"],
+            "source_section": "Section 1.5"
+        }
+    ]
+}

@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Control and Coordination",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-10T23:49:15",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How do muscle cells change their shape to effect movement upon receiving a nervous impulse?",
+            "answer": "Muscle cells contain specialized proteins (actin and myosin) that change both their shape and their arrangement in the cell in response to nervous electrical impulses. This results in the shortening or contraction of the muscle fiber.",
+            "key_concepts": ["muscle proteins", "contraction", "electrical impulses"],
+            "marks": 3,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Differentiate between the 'movement of a sensitive plant' and 'movement of our legs' in terms of the mechanism and speed.",
+            "answer": "Plant movement is a nastic response to touch involving rapid changes in water amount (turgidity) within cells to change shape, but lacks specialized nervous tissue. Leg movement is a voluntary action mediated by complex neuromuscular junctions, specialized muscle proteins, and the Central Nervous System.",
+            "key_concepts": ["nastic movement", "voluntary movement", "turgidity"],
+            "marks": 3,
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the 'Feedback Mechanism' of hormonal regulation with the example of Insulin secretion.",
+            "answer": "It is a self-regulating mechanism where the timing and amount of hormone released are controlled by the levels of the substance they regulate. If blood glucose levels rise, they are detected by the cells of the pancreas which respond by producing more insulin. As the blood sugar level falls, insulin secretion is reduced.",
+            "key_concepts": ["feedback mechanism", "insulin", "homeostasis"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 4,
+            "question": "Why is the flow of signals in a synapse unidirectional (from axon to dendrite only)?",
+            "answer": "Neurotransmitters are only stored in the synaptic vesicles at the axon terminals. When an impulse arrives, they are released and diffuse across the gap to bind with receptors located only on the dendrite of the next neuron, ensuring the signal cannot travel backward.",
+            "key_concepts": ["synapse", "neurotransmitters", "unidirectional flow"],
+            "marks": 2,
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Compare the response of a shoot toward light with the response of a root toward gravity, focusing on the role of Auxin.",
+            "answer": "In shoots, auxin promotes cell elongation; it accumulates on the shaded side, causing that side to grow faster and the shoot to bend toward light. In roots, a high concentration of auxin actually inhibits growth; it accumulates on the lower side due to gravity, causing the upper side to grow faster and the root to bend downward.",
+            "key_concepts": ["auxin", "differential growth", "phototropism", "geotropism"],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "What are the limitations of electrical impulses as a means of communication in multicellular organisms?",
+            "answer": "1. Electrical impulses reach only those cells connected by nervous tissue. 2. Once an impulse is generated and transmitted, the cell needs time to reset its mechanisms before generating a new one, meaning they cannot be continuous. 3. Plants lack a nervous system entirely.",
+            "key_concepts": ["electrical impulses", "limitations", "nervous tissue"],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe the physiological changes that occur when Adrenaline is secreted during an emergency.",
+            "answer": "Adrenaline increases heart rate to supply more oxygen to muscles. It diverts blood away from the digestive system and skin by contracting muscles around small arteries. It also increases breathing rate due to contractions of the diaphragm and rib muscles, preparing the body for 'fight or flight'.",
+            "key_concepts": ["adrenaline", "emergency response", "physiological changes"],
+            "marks": 3,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "How does the brain receive information about a reflex action? Does it participate in the immediate response?",
+            "answer": "The reflex arc is formed in the spinal cord for quick response, but the sensory information is also sent to the brain simultaneously. The brain does not participate in the immediate 'reflex' response but processes the event after it has occurred.",
+            "key_concepts": ["reflex arc", "spinal cord", "brain involvement"],
+            "marks": 2,
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the role of Abscisic Acid as a plant growth inhibitor.",
+            "answer": "Unlike auxins or gibberellins, Abscisic acid signals the plant to stop growth. It is responsible for the closing of stomata during water stress and the wilting and falling of leaves (abscission).",
+            "key_concepts": ["abscisic acid", "growth inhibition", "wilting"],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the use of iodised salt essential for the regulation of metabolic activities?",
+            "answer": "Iodine is a core component required by the thyroid gland to synthesize thyroxin. Thyroxin regulates carbohydrate, protein, and fat metabolism. Without enough iodine, thyroxin cannot be produced, leading to metabolic imbalance and physical conditions like goitre.",
+            "key_concepts": ["iodine", "thyroxin", "metabolism"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Differentiate between Tropic and Nastic movements in plants.",
+            "answer": "Tropic movements are directional and depend on the direction of the stimulus (e.g., phototropism). Nastic movements are non-directional and do not depend on the direction of the stimulus (e.g., folding of Mimosa leaves).",
+            "key_concepts": ["tropic movement", "nastic movement"],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the function of the Cerebrospinal Fluid (CSF)?",
+            "answer": "CSF acts as a shock absorber for the brain and spinal cord, protecting them from mechanical injuries. It also helps in the exchange of nutrients and waste products between the blood and the brain.",
+            "key_concepts": ["CSF", "protection", "shock absorber"],
+            "marks": 2,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "How is the 'Pollen Tube' growth toward the ovule categorized? Explain.",
+            "answer": "It is categorized as Chemotropism. It is a directional growth movement triggered by chemical secretions from the ovule that guide the pollen tube toward it for fertilization.",
+            "key_concepts": ["chemotropism", "pollen tube"],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Which part of the brain is the main thinking part, and how does it interpret sensory information?",
+            "answer": "The Forebrain (Cerebrum) is the main thinking part. It has separate areas specialized for hearing, smell, sight, etc., and association areas where sensory information is interpreted by putting it together with information from other receptors and previously stored information.",
+            "key_concepts": ["forebrain", "cerebrum", "association areas"],
+            "marks": 3,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is the difference between 'Cranial Nerves' and 'Spinal Nerves'?",
+            "answer": "Cranial nerves emerge directly from the brain and generally coordinate head and neck activities. Spinal nerves emerge from the spinal cord and coordinate activities in the rest of the body.",
+            "key_concepts": ["cranial nerves", "spinal nerves", "PNS"],
+            "marks": 2,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the significance of Cytokinins in plants.",
+            "answer": "Cytokinins promote cell division. They are found in greater concentrations in areas of rapid cell division, such as in fruits and seeds, and they also help in delaying leaf senescence.",
+            "key_concepts": ["cytokinins", "cell division"],
+            "marks": 2,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Why are hormones called 'Chemical Messengers'?",
+            "answer": "They are secreted by endocrine glands in one part of the body and travel through the blood to a target organ or tissue to trigger a specific physiological response or coordination.",
+            "key_concepts": ["hormones", "chemical messengers"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What part of the brain controls the precision of voluntary actions like picking up a pencil?",
+            "answer": "The Cerebellum, located in the hindbrain. It is responsible for the coordination and precision of voluntary movements and the maintenance of body posture.",
+            "key_concepts": ["cerebellum", "voluntary precision"],
+            "marks": 1,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "How does the hypothalamus link the nervous system to the endocrine system?",
+            "answer": "The hypothalamus receives nervous signals and responds by secreting hormones that stimulate or inhibit the pituitary gland, which in turn controls other endocrine glands.",
+            "key_concepts": ["hypothalamus", "pituitary", "neuro-endocrine link"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Define 'Gydrotropism' and provide an experimental example.",
+            "answer": "Hydrotropism is the growth movement of roots toward water. Experimentally, if a plant is grown in dry soil with a water source nearby, the roots will curve and grow toward the moist area.",
+            "key_concepts": ["hydrotropism", "root growth"],
+            "marks": 2,
+            "source_section": "Section 7.2.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the function of the 'Medulla' in the hindbrain regarding survival?",
+            "answer": "The medulla controls vital involuntary functions such as heartbeat, breathing, blood pressure, and digestive reflexes like swallowing and vomiting.",
+            "key_concepts": ["medulla", "involuntary survival"],
+            "marks": 1,
+            "source_section": "Section 7.1.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the pituitary gland often called the 'Master Gland'?",
+            "answer": "Because many of the hormones it secretes stimulate and regulate the activities of other endocrine glands, such as the thyroid, adrenal glands, and gonads.",
+            "key_concepts": ["pituitary", "master gland"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 23,
+            "question": "How do Auxins help a plant to bend towards a light source?",
+            "answer": "When light falls on one side of a shoot, auxin diffuses toward the shaded side. The high concentration of auxin on the shaded side stimulates cells to grow longer, causing the shoot to bend toward the light.",
+            "key_concepts": ["auxin", "phototropism", "cell elongation"],
+            "marks": 3,
+            "source_section": "Section 7.2.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Describe the location and function of the 'Adrenal Glands'.",
+            "answer": "They are located on top of both kidneys. They secrete adrenaline which prepares the body for emergency 'fight or flight' responses by increasing heart and breathing rates.",
+            "key_concepts": ["adrenal glands", "adrenaline"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the primary role of 'Gibberellins' in plant growth?",
+            "answer": "Gibberellins, like auxins, help in the growth of the stem, specifically promoting cell elongation and helping in seed germination.",
+            "key_concepts": ["gibberellins", "stem growth"],
+            "marks": 1,
+            "source_section": "Section 7.2.3"
+        }
+    ]
+}

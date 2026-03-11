@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 7: Motion",
+    "generated_at": "2026-03-06T14:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Motion is defined as:",
+            "options": {
+                "A": "Change in mass",
+                "B": "Change in position with time",
+                "C": "Change in temperature",
+                "D": "Change in color"
+            },
+            "correct_answer": "B",
+            "explanation": "Motion is the change in position of an object with respect to time.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "The SI unit of distance is:",
+            "options": {
+                "A": "Meter",
+                "B": "Second",
+                "C": "Kilogram",
+                "D": "Newton"
+            },
+            "correct_answer": "A",
+            "explanation": "Distance is measured in metre (m).",
+            "difficulty": "easy",
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Distance is a:",
+            "options": {
+                "A": "Vector quantity",
+                "B": "Scalar quantity",
+                "C": "Both",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Distance has magnitude only and no direction.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Displacement is:",
+            "options": {
+                "A": "Total path length",
+                "B": "Shortest distance between two points",
+                "C": "Always greater than distance",
+                "D": "Always zero"
+            },
+            "correct_answer": "B",
+            "explanation": "Displacement is the shortest distance between initial and final positions.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which type of motion covers equal distances in equal intervals of time?",
+            "options": {
+                "A": "Uniform motion",
+                "B": "Non-uniform motion",
+                "C": "Circular motion",
+                "D": "Random motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Uniform motion occurs when equal distances are covered in equal intervals of time.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Speed is defined as:",
+            "options": {
+                "A": "Distance per unit time",
+                "B": "Time per distance",
+                "C": "Acceleration per time",
+                "D": "Velocity per time"
+            },
+            "correct_answer": "A",
+            "explanation": "Speed is the distance travelled per unit time.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 7,
+            "question": "The SI unit of speed is:",
+            "options": {
+                "A": "m/s",
+                "B": "km/h",
+                "C": "m",
+                "D": "s"
+            },
+            "correct_answer": "A",
+            "explanation": "Speed is measured in metres per second.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Velocity differs from speed because it:",
+            "options": {
+                "A": "Includes direction",
+                "B": "Has no magnitude",
+                "C": "Is always constant",
+                "D": "Is always zero"
+            },
+            "correct_answer": "A",
+            "explanation": "Velocity includes both magnitude and direction.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Acceleration is the rate of change of:",
+            "options": {
+                "A": "Distance",
+                "B": "Velocity",
+                "C": "Mass",
+                "D": "Time"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration measures how quickly velocity changes.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "The SI unit of acceleration is:",
+            "options": {
+                "A": "m/s",
+                "B": "m/s²",
+                "C": "km/h",
+                "D": "m²"
+            },
+            "correct_answer": "B",
+            "explanation": "Acceleration is measured in metre per second squared.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Negative acceleration is called:",
+            "options": {
+                "A": "Velocity",
+                "B": "Retardation",
+                "C": "Speed",
+                "D": "Distance"
+            },
+            "correct_answer": "B",
+            "explanation": "Retardation means decrease in velocity.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 12,
+            "question": "The slope of a distance-time graph represents:",
+            "options": {
+                "A": "Acceleration",
+                "B": "Velocity",
+                "C": "Speed",
+                "D": "Distance"
+            },
+            "correct_answer": "C",
+            "explanation": "Slope of distance-time graph gives speed.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4.1"
+        },
+        {
+            "question_number": 13,
+            "question": "The slope of a velocity-time graph represents:",
+            "options": {
+                "A": "Acceleration",
+                "B": "Distance",
+                "C": "Speed",
+                "D": "Time"
+            },
+            "correct_answer": "A",
+            "explanation": "Slope of velocity-time graph represents acceleration.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 14,
+            "question": "The area under a velocity-time graph represents:",
+            "options": {
+                "A": "Speed",
+                "B": "Displacement",
+                "C": "Acceleration",
+                "D": "Time"
+            },
+            "correct_answer": "B",
+            "explanation": "Area under velocity-time graph gives displacement.",
+            "difficulty": "easy",
+            "source_section": "Section 7.4.2"
+        },
+        {
+            "question_number": 15,
+            "question": "The first equation of motion is:",
+            "options": {
+                "A": "v = u + at",
+                "B": "s = ut",
+                "C": "v² = u²",
+                "D": "a = vt"
+            },
+            "correct_answer": "A",
+            "explanation": "This equation relates velocity, acceleration and time.",
+            "difficulty": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 16,
+            "question": "The second equation of motion is:",
+            "options": {
+                "A": "s = ut + ½at²",
+                "B": "v = u + at",
+                "C": "v² − u² = 2as",
+                "D": "s = vt"
+            },
+            "correct_answer": "A",
+            "explanation": "It gives displacement for uniformly accelerated motion.",
+            "difficulty": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 17,
+            "question": "The third equation of motion is:",
+            "options": {
+                "A": "v = u + at",
+                "B": "s = ut + ½at²",
+                "C": "v² − u² = 2as",
+                "D": "a = vt"
+            },
+            "correct_answer": "C",
+            "explanation": "It relates velocity, acceleration and displacement.",
+            "difficulty": "easy",
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Motion along a circular path with constant speed is called:",
+            "options": {
+                "A": "Linear motion",
+                "B": "Uniform circular motion",
+                "C": "Random motion",
+                "D": "Oscillatory motion"
+            },
+            "correct_answer": "B",
+            "explanation": "Uniform circular motion occurs along a circular path with constant speed.",
+            "difficulty": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Earth moving around the Sun is an example of:",
+            "options": {
+                "A": "Uniform circular motion",
+                "B": "Linear motion",
+                "C": "Random motion",
+                "D": "Static motion"
+            },
+            "correct_answer": "A",
+            "explanation": "Earth revolves around the Sun in a circular path.",
+            "difficulty": "easy",
+            "source_section": "Section 7.6"
+        },
+        {
+            "question_number": 20,
+            "question": "The device used to measure vehicle speed is:",
+            "options": {
+                "A": "Thermometer",
+                "B": "Speedometer",
+                "C": "Odometer",
+                "D": "Barometer"
+            },
+            "correct_answer": "B",
+            "explanation": "Speedometer measures speed of vehicles.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "The device used to measure distance travelled by a vehicle is:",
+            "options": {
+                "A": "Speedometer",
+                "B": "Odometer",
+                "C": "Altimeter",
+                "D": "Thermometer"
+            },
+            "correct_answer": "B",
+            "explanation": "Odometer measures total distance travelled.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 22,
+            "question": "If displacement is zero, distance can be:",
+            "options": {
+                "A": "Zero only",
+                "B": "Greater than zero",
+                "C": "Negative",
+                "D": "Undefined"
+            },
+            "correct_answer": "B",
+            "explanation": "If the object returns to starting point, displacement is zero but distance is not.",
+            "difficulty": "easy",
+            "source_section": "Section 7.1.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Velocity is a:",
+            "options": {
+                "A": "Scalar quantity",
+                "B": "Vector quantity",
+                "C": "Constant quantity",
+                "D": "Unit"
+            },
+            "correct_answer": "B",
+            "explanation": "Velocity has magnitude and direction.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Acceleration can occur when:",
+            "options": {
+                "A": "Speed changes",
+                "B": "Direction changes",
+                "C": "Both A and B",
+                "D": "None"
+            },
+            "correct_answer": "C",
+            "explanation": "Acceleration occurs when speed or direction changes.",
+            "difficulty": "easy",
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which quantity has both magnitude and direction?",
+            "options": {
+                "A": "Distance",
+                "B": "Speed",
+                "C": "Velocity",
+                "D": "Time"
+            },
+            "correct_answer": "C",
+            "explanation": "Velocity is a vector quantity.",
+            "difficulty": "easy",
+            "source_section": "Section 7.2.1"
+        }
+    ]
+}

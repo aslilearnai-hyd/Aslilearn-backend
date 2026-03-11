@@ -1,0 +1,154 @@
+{
+    "class": "Class 9",
+    "subject": "English",
+    "chapter": "Kathmandu",
+    "author": "Vikram Seth",
+    "difficulty": "Hard",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Atmosphere Analysis",
+            "objective": "Analyse the atmosphere at Pashupatinath temple",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraph describing Pashupatinath",
+                "Identify different activities happening there",
+                "Write a paragraph explaining the chaotic atmosphere"
+            ],
+            "learning_outcome": "Develops analytical reading skills",
+            "evaluation": "Clear explanation with examples (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Contrast Study",
+            "objective": "Compare the atmosphere of Pashupatinath and Baudhnath",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the descriptions of both temples",
+                "List differences in atmosphere, people and surroundings",
+                "Write a comparison paragraph"
+            ],
+            "learning_outcome": "Develops comparison and analysis skills",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Imagery Identification",
+            "objective": "Identify visual imagery used in the prose",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find three examples of visual imagery",
+                "Explain how they help the reader imagine the scene"
+            ],
+            "learning_outcome": "Understands descriptive techniques",
+            "evaluation": "Correct examples with explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Sound Imagery Analysis",
+            "objective": "Analyse sound descriptions in Kathmandu",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify sounds mentioned in the busy streets",
+                "Explain their role in creating the scene"
+            ],
+            "learning_outcome": "Recognises sensory imagery",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Character Analysis of the Flute Seller",
+            "objective": "Analyse the personality of the flute seller",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the paragraph describing the flute seller",
+                "Write 6–7 lines analysing his character"
+            ],
+            "learning_outcome": "Develops character analysis skill",
+            "evaluation": "Detailed explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Symbolism of the Flute",
+            "objective": "Understand symbolic meaning of the flute",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the significance of flute music",
+                "Write a paragraph explaining its symbolic meaning"
+            ],
+            "learning_outcome": "Understands symbolism in literature",
+            "evaluation": "Logical interpretation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Author’s Travel Reflection",
+            "objective": "Analyse the author’s feelings about travel",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Read the final part of the lesson",
+                "Write how the author feels about returning home"
+            ],
+            "learning_outcome": "Understands emotional perspective",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Cultural Diversity Study",
+            "objective": "Understand cultural diversity in Kathmandu",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify cultural and religious elements described",
+                "Explain how they reflect diversity"
+            ],
+            "learning_outcome": "Recognises cultural representation",
+            "evaluation": "Clear explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Theme Interpretation",
+            "objective": "Interpret the theme of the lesson",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the author's observations",
+                "Write a paragraph explaining the theme"
+            ],
+            "learning_outcome": "Develops thematic interpretation",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Critical Reflection",
+            "objective": "Encourage critical thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain what the author learns from his experience",
+                "Write your opinion about the lesson"
+            ],
+            "learning_outcome": "Develops critical analysis",
+            "evaluation": "Thoughtful reflection (10 marks)"
+        }
+    ]
+}

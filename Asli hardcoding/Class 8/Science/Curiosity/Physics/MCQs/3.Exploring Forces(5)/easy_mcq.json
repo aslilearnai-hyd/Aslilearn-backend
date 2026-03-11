@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Exploring Forces",
+  "generated_at": "2026-03-05T21:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a force?",
+      "options": {
+        "A": "A push or pull",
+        "B": "A type of energy",
+        "C": "A measurement",
+        "D": "A type of machine"
+      },
+      "correct_answer": "A",
+      "explanation": "A force is defined as a push or pull acting on an object.",
+      "difficulty": "easy",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following is an example of applying force?",
+      "options": {
+        "A": "Pushing a door",
+        "B": "Sleeping",
+        "C": "Reading",
+        "D": "Watching television"
+      },
+      "correct_answer": "A",
+      "explanation": "Pushing a door involves applying a force.",
+      "difficulty": "easy",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which force pulls objects toward the Earth?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Frictional force",
+        "D": "Muscular force"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity pulls objects toward the Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which force acts between two magnets?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Frictional force",
+        "C": "Muscular force",
+        "D": "Gravitational force"
+      },
+      "correct_answer": "A",
+      "explanation": "Magnets exert magnetic force on each other.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Which force acts when two surfaces rub against each other?",
+      "options": {
+        "A": "Friction",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Electric force"
+      },
+      "correct_answer": "A",
+      "explanation": "Friction occurs when two surfaces move against each other.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following forces requires contact?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Muscular force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Muscular force requires physical contact with the object.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which force slows down moving objects?",
+      "options": {
+        "A": "Friction",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Electric force"
+      },
+      "correct_answer": "A",
+      "explanation": "Friction acts opposite to motion and slows objects down.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which force allows us to walk without slipping?",
+      "options": {
+        "A": "Friction",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Electric force"
+      },
+      "correct_answer": "A",
+      "explanation": "Friction between shoes and the ground allows us to walk.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Which type of force does not require physical contact?",
+      "options": {
+        "A": "Contact force",
+        "B": "Non-contact force",
+        "C": "Muscular force",
+        "D": "Frictional force"
+      },
+      "correct_answer": "B",
+      "explanation": "Non-contact forces act without direct contact.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following is a non-contact force?",
+      "options": {
+        "A": "Muscular force",
+        "B": "Friction",
+        "C": "Gravitational force",
+        "D": "Push"
+      },
+      "correct_answer": "C",
+      "explanation": "Gravity acts without physical contact.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 11,
+      "question": "What happens when a force is applied to an object?",
+      "options": {
+        "A": "It may change its shape",
+        "B": "It may change its speed",
+        "C": "It may change its direction",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "Force can change shape, speed or direction of an object.",
+      "difficulty": "easy",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 12,
+      "question": "Which force pulls a falling apple to the ground?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Friction",
+        "C": "Gravity",
+        "D": "Electric force"
+      },
+      "correct_answer": "C",
+      "explanation": "Gravity pulls objects toward the Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which example shows muscular force?",
+      "options": {
+        "A": "Lifting a bag",
+        "B": "A magnet attracting nails",
+        "C": "A stone falling",
+        "D": "A balloon sticking to a wall"
+      },
+      "correct_answer": "A",
+      "explanation": "Muscular force is produced by muscles when lifting objects.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which force acts between charged objects?",
+      "options": {
+        "A": "Gravitational force",
+        "B": "Magnetic force",
+        "C": "Electrostatic force",
+        "D": "Muscular force"
+      },
+      "correct_answer": "C",
+      "explanation": "Electrostatic force acts between electrically charged objects.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which force helps vehicles stop when brakes are applied?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Gravitational force",
+        "C": "Friction",
+        "D": "Electric force"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction between brake pads and wheels slows the vehicle.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 16,
+      "question": "Which type of force occurs when we pull a rope?",
+      "options": {
+        "A": "Muscular force",
+        "B": "Magnetic force",
+        "C": "Gravitational force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "A",
+      "explanation": "Pulling a rope uses muscular force.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which force keeps planets in orbit around the Sun?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Friction",
+        "C": "Gravitational force",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Gravity keeps planets moving in orbit.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Which example shows friction?",
+      "options": {
+        "A": "Rubbing hands together",
+        "B": "A magnet attracting iron",
+        "C": "Earth pulling objects",
+        "D": "A balloon sticking to hair"
+      },
+      "correct_answer": "A",
+      "explanation": "Rubbing surfaces together produces friction.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following forces can act at a distance?",
+      "options": {
+        "A": "Magnetic force",
+        "B": "Friction",
+        "C": "Muscular force",
+        "D": "Push"
+      },
+      "correct_answer": "A",
+      "explanation": "Magnetic force acts without physical contact.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a contact force?",
+      "options": {
+        "A": "Gravity",
+        "B": "Magnetism",
+        "C": "Friction",
+        "D": "Electrostatic force"
+      },
+      "correct_answer": "C",
+      "explanation": "Friction occurs only when two surfaces are in contact.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 21,
+      "question": "What is needed to move a stationary object?",
+      "options": {
+        "A": "Force",
+        "B": "Light",
+        "C": "Heat",
+        "D": "Sound"
+      },
+      "correct_answer": "A",
+      "explanation": "A force is required to move an object at rest.",
+      "difficulty": "easy",
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of the following is an example of gravitational force?",
+      "options": {
+        "A": "A magnet attracting iron",
+        "B": "An apple falling from a tree",
+        "C": "Rubbing hands together",
+        "D": "Pushing a cart"
+      },
+      "correct_answer": "B",
+      "explanation": "Gravity pulls objects toward the Earth.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Which force acts when we push a box across the floor?",
+      "options": {
+        "A": "Friction",
+        "B": "Magnetic force",
+        "C": "Electrostatic force",
+        "D": "Gravitational force"
+      },
+      "correct_answer": "A",
+      "explanation": "Friction acts between the box and the floor.",
+      "difficulty": "easy",
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 24,
+      "question": "Which example shows non-contact force?",
+      "options": {
+        "A": "Magnet attracting pins",
+        "B": "Lifting a bag",
+        "C": "Pushing a table",
+        "D": "Kicking a ball"
+      },
+      "correct_answer": "A",
+      "explanation": "Magnetic force acts without direct contact.",
+      "difficulty": "easy",
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 25,
+      "question": "What can force change in an object?",
+      "options": {
+        "A": "Shape",
+        "B": "Speed",
+        "C": "Direction",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "Force can change the shape, speed or direction of an object.",
+      "difficulty": "easy",
+      "source_section": "Section 5.1"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Fractions in Disguise (Percentages)",
+  "difficulty": "Hard",
+  "source_pdf": "hegp201.pdf",
+  "short_notes": {
+    "key_points": [
+      "Percentages are useful for comparing quantities with a common base of 100",
+      "Percentage calculations are widely used in business, statistics, and finance",
+      "Profit and loss percentages are always calculated on the cost price",
+      "Discount reduces the marked price of an item",
+      "Percentage concepts help analyse growth and reduction in quantities"
+    ],
+    "examples": [
+      "125% of 200 = 250",
+      "12.5% of 640 = 80",
+      "Profit example: CP = 500, SP = 600 → Profit = 20%",
+      "Loss example: CP = 400, SP = 360 → Loss = 10%",
+      "Discount example: MP = 1000, Discount = 20% → SP = 800"
+    ],
+    "formulas": [
+      "Profit % = (Profit / Cost Price) × 100",
+      "Loss % = (Loss / Cost Price) × 100",
+      "Discount = Marked Price − Selling Price",
+      "Discount % = (Discount / Marked Price) × 100",
+      "New Value = Original Value ± Percentage Change"
+    ],
+    "exam_tips": [
+      "Always identify CP, SP, and MP before applying formulas",
+      "Do not calculate profit percentage using selling price",
+      "Write complete calculation steps in percentage problems",
+      "Check units and verify the final answer"
+    ]
+  }
+}

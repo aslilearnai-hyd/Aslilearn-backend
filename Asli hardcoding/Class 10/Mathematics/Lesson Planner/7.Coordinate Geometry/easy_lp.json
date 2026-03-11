@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "Mathematics",
+    "chapter_name": "Coordinate Geometry",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the concept of coordinate geometry",
+        "Identify the Cartesian plane and axes",
+        "Locate points using ordered pairs",
+        "Understand quadrants and their sign conventions",
+        "Identify points lying on axes",
+        "Relate coordinate geometry to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Coordinate Geometry",
+            "topics_covered": [
+                "Meaning of coordinate geometry",
+                "Need for locating points",
+                "Real-life applications"
+            ],
+            "teaching_strategy": [
+                "Interactive discussion",
+                "Real-life examples using maps",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Discuss locations using directions",
+                "Identify positions on a classroom grid"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Quick recap questions"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Cartesian Plane and Axes",
+            "topics_covered": [
+                "Cartesian plane",
+                "X-axis and Y-axis",
+                "Origin"
+            ],
+            "teaching_strategy": [
+                "Diagram drawing on board",
+                "Explanation using graph paper"
+            ],
+            "student_activities": [
+                "Draw Cartesian plane in notebook",
+                "Mark X-axis, Y-axis, and origin"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Labeling exercise"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Coordinates of a Point",
+            "topics_covered": [
+                "Ordered pairs (x, y)",
+                "Abscissa and ordinate",
+                "Importance of order"
+            ],
+            "teaching_strategy": [
+                "Step-by-step plotting demonstration",
+                "Use of grid examples"
+            ],
+            "student_activities": [
+                "Plot points (2,3), (−1,4), (0,5)",
+                "Identify x and y coordinates"
+            ],
+            "assessment": [
+                "Short written exercise",
+                "Plotting accuracy check"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Quadrants of the Cartesian Plane",
+            "topics_covered": [
+                "Four quadrants",
+                "Sign convention of each quadrant",
+                "Naming of quadrants"
+            ],
+            "teaching_strategy": [
+                "Visual quadrant chart",
+                "Comparison-based explanation"
+            ],
+            "student_activities": [
+                "Identify quadrant of given points",
+                "Complete sign convention table"
+            ],
+            "assessment": [
+                "MCQs on quadrants",
+                "Classroom quiz"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Points on Axes",
+            "topics_covered": [
+                "Points on X-axis",
+                "Points on Y-axis",
+                "Special cases (0, y) and (x, 0)"
+            ],
+            "teaching_strategy": [
+                "Graph paper demonstration",
+                "Guided practice"
+            ],
+            "student_activities": [
+                "Plot points on axes",
+                "Identify whether points lie in a quadrant or on axes"
+            ],
+            "assessment": [
+                "Worksheet problems",
+                "Peer correction"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Chapter Revision and Practice",
+            "topics_covered": [
+                "Plotting mixed points",
+                "Quadrant identification",
+                "Overall chapter revision"
+            ],
+            "teaching_strategy": [
+                "Problem-solving session",
+                "Revision through questioning"
+            ],
+            "student_activities": [
+                "Plot a set of given points",
+                "Group discussion and revision quiz"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Graph paper",
+        "NCERT Mathematics Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "MCQs",
+        "Plotting exercises",
+        "Short written tests"
+    ],
+    "teacher_tip": "Spend extra time on plotting points and quadrant identification, as these form the foundation for distance formula and further coordinate geometry concepts."
+}

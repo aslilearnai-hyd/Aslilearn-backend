@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Light: Shadows and Reflections",
+    "difficulty": "Hard",
+    "source_pdf": "jess711.pdf",
+    "short_notes": {
+        "key_points": [
+            "Light travels in straight lines and this property helps explain shadow formation",
+            "The size and shape of a shadow depend on the relative positions of the light source, object and screen",
+            "Reflection occurs when light strikes a smooth surface and changes direction",
+            "Plane mirrors produce images that are upright, virtual and the same size as the object",
+            "Rough surfaces scatter light in different directions causing diffuse reflection"
+        ],
+        "examples": [
+            "Shadow length changes during the day due to the movement of the Sun",
+            "Image formed in a plane mirror appears laterally inverted",
+            "Smooth surfaces like mirrors give regular reflection",
+            "Rough surfaces like walls cause diffuse reflection"
+        ],
+        "formulas": [
+            "Law of reflection → Angle of incidence = Angle of reflection",
+            "Image in plane mirror → Distance of image from mirror = Distance of object from mirror"
+        ],
+        "exam_tips": [
+            "Understand how reflection forms images in mirrors",
+            "Practice ray diagrams for reflection",
+            "Remember properties of images formed by plane mirrors",
+            "Explain the difference between regular and diffuse reflection clearly"
+        ]
+    }
+}

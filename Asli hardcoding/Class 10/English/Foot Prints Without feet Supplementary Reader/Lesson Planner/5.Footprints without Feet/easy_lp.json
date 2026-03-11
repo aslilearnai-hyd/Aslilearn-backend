@@ -1,0 +1,154 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "Footprints Without Feet",
+    "title": "Lesson Planner – Footprints Without Feet (Easy)",
+    "author": "H.G. Wells",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the prose",
+        "Identify the main character",
+        "Understand basic themes of the lesson",
+        "Develop reading and comprehension skills",
+        "Learn new vocabulary",
+        "Relate the story to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Author and Prose",
+            "topics_covered": [
+                "Introduction to H.G. Wells",
+                "Background of the prose",
+                "Overview of the story"
+            ],
+            "teaching_strategy": [
+                "Story narration",
+                "Teacher explanation",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share ideas about science fiction"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Introduction to Griffin",
+            "topics_covered": [
+                "Character of Griffin",
+                "Scientific experiment of invisibility"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Explanation"
+            ],
+            "student_activities": [
+                "Identify main character",
+                "Write short notes on Griffin"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Footprints Mystery",
+            "topics_covered": [
+                "Footprints without feet",
+                "Reason behind the mystery"
+            ],
+            "teaching_strategy": [
+                "Cause–effect explanation",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Explain the mystery",
+                "Answer short questions"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class interaction"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Griffin’s Problems",
+            "topics_covered": [
+                "Difficulties faced by Griffin",
+                "Life without clothes and shelter"
+            ],
+            "teaching_strategy": [
+                "Explanation with examples",
+                "Storytelling"
+            ],
+            "student_activities": [
+                "List Griffin’s problems",
+                "Group discussion"
+            ],
+            "assessment": [
+                "Written exercise",
+                "Peer response"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Message",
+            "topics_covered": [
+                "Misuse of science",
+                "Message of the story"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Write the moral",
+                "Relate to real life"
+            ],
+            "assessment": [
+                "Short paragraph writing",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Vocabulary, Recap, and Assessment",
+            "topics_covered": [
+                "New vocabulary",
+                "Summary of the lesson",
+                "Revision"
+            ],
+            "teaching_strategy": [
+                "Vocabulary explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Write meanings of words",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short test",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests"
+    ],
+    "teacher_tip": "Use simple examples to explain how science should be used responsibly."
+}

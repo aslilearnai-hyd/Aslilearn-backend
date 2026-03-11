@@ -1,0 +1,171 @@
+{
+    "class": "Class 9",
+    "subject": "Hindi",
+    "chapter_name": "कबीर – साखियाँ और पद",
+    "title": "Lesson Planner – कबीर (साखियाँ और पद)",
+    "author": "कबीरदास",
+    "lesson_level": "Hard",
+    "total_periods": 8,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "कबीर के दर्शन और सामाजिक विचारों का गहन अध्ययन",
+        "साखियों और पदों का विश्लेषण करना",
+        "काव्य सौंदर्य और भाषा शैली को समझना",
+        "धार्मिक सद्भाव और मानवता के संदेश को समझना",
+        "रचनात्मक और आलोचनात्मक सोच विकसित करना",
+        "कबीर के विचारों की आधुनिक संदर्भ में प्रासंगिकता समझना"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "कबीर का जीवन और साहित्य",
+            "topics_covered": [
+                "कबीर का जीवन परिचय",
+                "भक्ति आंदोलन"
+            ],
+            "teaching_strategy": [
+                "व्याख्या",
+                "प्रश्न–उत्तर"
+            ],
+            "student_activities": [
+                "मुख्य बिंदु नोट करना"
+            ],
+            "assessment": [
+                "मौखिक प्रश्न"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "साखियों का गहन अध्ययन",
+            "topics_covered": [
+                "साखियों का भाव",
+                "मुख्य विचार"
+            ],
+            "teaching_strategy": [
+                "पाठ विश्लेषण"
+            ],
+            "student_activities": [
+                "साखियों का अर्थ लिखना"
+            ],
+            "assessment": [
+                "कॉपी जाँच"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "प्रेम और संत के गुण",
+            "topics_covered": [
+                "सच्चे प्रेम का महत्व",
+                "संत के गुण"
+            ],
+            "teaching_strategy": [
+                "समूह चर्चा"
+            ],
+            "student_activities": [
+                "उदाहरण ढूँढना"
+            ],
+            "assessment": [
+                "लघु लिखित उत्तर"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "धार्मिक विचार",
+            "topics_covered": [
+                "धार्मिक भेदभाव का विरोध",
+                "मानवता का संदेश"
+            ],
+            "teaching_strategy": [
+                "मूल्य आधारित चर्चा"
+            ],
+            "student_activities": [
+                "अपने विचार लिखना"
+            ],
+            "assessment": [
+                "मौखिक प्रस्तुति"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "‘मोको कहाँ ढूँढे रे बंदे’ पद विश्लेषण",
+            "topics_covered": [
+                "ईश्वर की सर्वव्यापकता",
+                "आध्यात्मिक विचार"
+            ],
+            "teaching_strategy": [
+                "व्याख्या",
+                "विश्लेषण"
+            ],
+            "student_activities": [
+                "भावार्थ लिखना"
+            ],
+            "assessment": [
+                "कॉपी जाँच"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "ज्ञान की आँधी",
+            "topics_covered": [
+                "रूपक का अर्थ",
+                "ज्ञान का प्रभाव"
+            ],
+            "teaching_strategy": [
+                "उदाहरण आधारित व्याख्या"
+            ],
+            "student_activities": [
+                "रूपक समझाना"
+            ],
+            "assessment": [
+                "लिखित उत्तर"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "काव्य सौंदर्य और भाषा",
+            "topics_covered": [
+                "भाषा शैली",
+                "अलंकार"
+            ],
+            "teaching_strategy": [
+                "पाठ विश्लेषण"
+            ],
+            "student_activities": [
+                "उदाहरण पहचानना"
+            ],
+            "assessment": [
+                "लघु परीक्षण"
+            ]
+        },
+        {
+            "period": 8,
+            "title": "पुनरावृत्ति और मूल्यांकन",
+            "topics_covered": [
+                "पूरे पाठ की पुनरावृत्ति",
+                "मुख्य प्रश्न"
+            ],
+            "teaching_strategy": [
+                "कक्षा चर्चा"
+            ],
+            "student_activities": [
+                "प्रश्नों के उत्तर देना"
+            ],
+            "assessment": [
+                "लिखित परीक्षा"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Hindi Textbook",
+        "Blackboard",
+        "Charts of Kabir Doha",
+        "Projector (optional)"
+    ],
+    "evaluation_methods": [
+        "मौखिक प्रश्न",
+        "कॉपी जाँच",
+        "लिखित परीक्षा",
+        "कक्षा प्रस्तुति"
+    ],
+    "teacher_tip": "विद्यार्थियों को कबीर के दोहों का आधुनिक जीवन से संबंध समझाने के लिए उदाहरण और चर्चा का उपयोग करें।"
+}

@@ -1,0 +1,103 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chemical Reactions and Equations: Fundamentals and Types",
+    "generated_at": "2026-03-11T00:36:00",
+    "concepts": [
+        {
+            "concept_name": "Chemical Equations and Balancing",
+            "difficulty": "easy",
+            "lesson": "A chemical equation represents a chemical reaction using symbols and formulas. Since mass can neither be created nor destroyed (Law of Conservation of Mass), the number of atoms of each element must be equal on both the reactant and product sides. This process of equalizing atoms is called balancing the equation.",
+            "real_example": "Burning of magnesium ribbon in air: $2Mg + O_2 \rightarrow 2MgO$.",
+            "key_points": [
+                "Reactants are on the left, products on the right",
+                "Law of Conservation of Mass must be followed",
+                "Coefficients are used to balance atoms"
+            ],
+            "source_section": "Section 1.1"
+        },
+        {
+            "concept_name": "Combination Reaction",
+            "difficulty": "easy",
+            "lesson": "A reaction in which a single product is formed from two or more reactants is known as a combination reaction. These reactions are often exothermic, meaning heat is released during the process.",
+            "real_example": "Calcium oxide (quick lime) reacting with water to form calcium hydroxide (slaked lime).",
+            "key_points": [
+                "Two or more reactants $\rightarrow$ One product",
+                "Often involves release of energy",
+                "Formation of water from $H_2$ and $O_2$ is a classic example"
+            ],
+            "source_section": "Section 1.2.1"
+        },
+        {
+            "concept_name": "Decomposition Reaction",
+            "difficulty": "medium",
+            "lesson": "In a decomposition reaction, a single reactant breaks down to give simpler products. This usually requires energy in the form of heat (Thermal), light (Photolytic), or electricity (Electrolytic). These are the opposite of combination reactions.",
+            "real_example": "Heating Ferrous Sulphate crystals or the breakdown of Silver Chloride in sunlight.",
+            "key_points": [
+                "One reactant $\rightarrow$ Two or more products",
+                "Requires energy input (Endothermic)",
+                "Electrolysis of water is an electrolytic decomposition"
+            ],
+            "source_section": "Section 1.2.2"
+        },
+        {
+            "concept_name": "Displacement Reaction",
+            "difficulty": "medium",
+            "lesson": "A chemical reaction in which a more reactive element displaces a less reactive element from its salt solution. This depends on the reactivity series of metals.",
+            "real_example": "An iron nail dipped in copper sulphate solution turns the blue solution light green as iron displaces copper.",
+            "key_points": [
+                "More reactive metal + Less reactive metal salt $\rightarrow$ More reactive metal salt + Less reactive metal",
+                "Color changes are common indicators",
+                "Follows the Reactivity Series"
+            ],
+            "source_section": "Section 1.2.3"
+        },
+        {
+            "concept_name": "Double Displacement Reaction",
+            "difficulty": "medium",
+            "lesson": "Reactions in which there is an exchange of ions between the reactants to form new compounds. Often, one of the products is an insoluble solid called a 'precipitate' that settles at the bottom.",
+            "real_example": "Reaction between Sodium Sulphate and Barium Chloride forming a white precipitate of Barium Sulphate.",
+            "key_points": [
+                "Exchange of ions ($AB + CD \rightarrow AD + CB$)",
+                "Formation of a precipitate (Precipitation reaction)",
+                "Occurs typically in aqueous solutions"
+            ],
+            "source_section": "Section 1.2.4"
+        },
+        {
+            "concept_name": "Oxidation and Reduction (Redox)",
+            "difficulty": "hard",
+            "lesson": "Oxidation is the gain of oxygen or loss of hydrogen. Reduction is the loss of oxygen or gain of hydrogen. When both occur simultaneously in a reaction, it is called a Redox reaction. The substance that gives oxygen is the oxidizing agent, and the one that removes it is the reducing agent.",
+            "real_example": "Copper oxide reacting with hydrogen: $CuO + H_2 \rightarrow Cu + H_2O$ (CuO is reduced, $H_2$ is oxidized).",
+            "key_points": [
+                "Oxidation: Gain $O_2$ / Lose $H_2$",
+                "Reduction: Lose $O_2$ / Gain $H_2$",
+                "Both always happen together"
+            ],
+            "source_section": "Section 1.2.5"
+        },
+        {
+            "concept_name": "Corrosion",
+            "difficulty": "easy",
+            "lesson": "When a metal is attacked by substances around it such as moisture, acids, etc., it is said to corrode and this process is called corrosion. It leads to the gradual deterioration of metal structures.",
+            "real_example": "The reddish-brown coating (rust) formed on iron or the green coating on copper.",
+            "key_points": [
+                "Caused by air and moisture",
+                "Damages bridges, iron railings, and car bodies",
+                "Prevented by painting, greasing, or galvanizing"
+            ],
+            "source_section": "Section 1.3.1"
+        },
+        {
+            "concept_name": "Rancidity",
+            "difficulty": "medium",
+            "lesson": "When fats and oils are oxidized, they become rancid and their smell and taste change. This is a common problem in food preservation.",
+            "real_example": "Potato chips tasting 'off' after being left in an open packet for too long.",
+            "key_points": [
+                "Oxidation of fats/oils in food",
+                "Prevented by using antioxidants",
+                "Flushing food containers with Nitrogen gas prevents oxidation"
+            ],
+            "source_section": "Section 1.3.2"
+        }
+    ]
+}

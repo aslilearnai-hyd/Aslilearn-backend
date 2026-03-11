@@ -1,0 +1,34 @@
+{
+    "class": "Class 10",
+    "subject": "Science",
+    "chapter": "Life Processes",
+    "difficulty": "Hard",
+    "source_pdf": "jesc105.pdf",
+    "short_notes": {
+        "key_points": [
+            "Human circulation is 'Double Circulation,' meaning blood passes through the heart twice (Pulmonary and Systemic) for every complete cycle, ensuring efficient oxygen delivery.",
+            "The heart's four-chambered structure prevents the mixing of oxygenated and deoxygenated blood, which is vital for high-energy-demand homeothermic (warm-blooded) animals.",
+            "Urine formation in the Nephron occurs through three distinct phases: Ultrafiltration, Selective Reabsorption, and Tubular Secretion.",
+            "Blood pressure is measured using a sphygmomanometer; Systolic pressure occurs during ventricular contraction and Diastolic during ventricular relaxation.",
+            "Translocation in Phloem is an active process utilizing ATP to create an osmotic pressure gradient, unlike the passive suction pull of Xylem."
+        ],
+        "examples": [
+            "Lymphatic System: A parallel transport system that carries digested fats and drains excess fluid from intercellular spaces back into the blood.",
+            "Nephron Function: Selective reabsorption of glucose, amino acids, and salts occurs in the tubular part, depending on the body's water requirement.",
+            "Aquatic Respiration: Fish have a much higher breathing rate than terrestrial animals because the concentration of dissolved oxygen in water is much lower than in air.",
+            "Artificial Kidney (Hemodialysis): A device that removes nitrogenous waste from the blood through semi-permeable tubes, based on the principle of diffusion.",
+            "Excretion in Plants: Waste is stored in cellular vacuoles, old leaves (which fall off), or excreted as resins and gums in old xylem."
+        ],
+        "formulas": [
+            "Blood Pressure Standard: $\text{Normal BP} = 120/80\ \text{mmHg}$",
+            "Urinary Excretion: $\text{Excretion} = \text{Filtration} - \text{Reabsorption} + \text{Secretion}$",
+            "ATP Hydrolysis Energy: $\text{ATP} \rightarrow \text{ADP} + \text{P} + 30.5\ \text{kJ/mol}$ (Energy released for cellular work)"
+        ],
+        "exam_tips": [
+            "Remember the path of blood: Vena Cava → Right Atrium → Right Ventricle → Pulmonary Artery → Lungs → Pulmonary Vein → Left Atrium → Left Ventricle → Aorta.",
+            "Note that Arteries have thick, elastic walls to handle high pressure, while Veins have valves to ensure one-way flow at lower pressure.",
+            "Understand that the Glomerulus acts as a high-pressure filter; large molecules like proteins and blood cells do not enter the Bowman's capsule.",
+            "Identify that the rate of transpiration is regulated by guard cells and is significantly affected by light intensity and humidity."
+        ]
+    }
+}

@@ -1,0 +1,129 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "chapter": "Consumer Rights",
+  "difficulty": "Hard",
+  "total_activities_projects": 10,
+  "activities_projects": [
+    {
+      "title": "Local Consumer Awareness Survey",
+      "objective": "To assess the level of consumer awareness in the local community.",
+      "materials": "Survey questionnaire, notebook, pen, calculator",
+      "steps": [
+        "Design a questionnaire covering consumer rights awareness and complaint procedures.",
+        "Survey at least 20 people from different age groups.",
+        "Analyze responses using tables and prepare a detailed report with suggestions."
+      ],
+      "learning_outcome": "Students evaluate real-world awareness levels and identify gaps in knowledge.",
+      "evaluation": "Assess survey design, data analysis accuracy, and quality of recommendations."
+    },
+    {
+      "title": "Consumer Court Case Study Research",
+      "objective": "To analyze a real consumer court case and understand legal procedures.",
+      "materials": "Internet research, notebook",
+      "steps": [
+        "Research a real consumer court case in India.",
+        "Identify the issue, rights violated, and final judgment.",
+        "Prepare a structured case analysis report."
+      ],
+      "learning_outcome": "Students understand legal redressal mechanisms and practical application of rights.",
+      "evaluation": "Evaluate research depth, clarity of explanation, and legal understanding."
+    },
+    {
+      "title": "Misleading Advertisement Investigation",
+      "objective": "To critically examine misleading advertisements and their impact.",
+      "materials": "Newspaper/online ads, notebook",
+      "steps": [
+        "Select an advertisement suspected of exaggeration.",
+        "Analyze claims with supporting facts.",
+        "Prepare a report explaining how it may violate consumer rights."
+      ],
+      "learning_outcome": "Students develop critical evaluation skills regarding advertising ethics.",
+      "evaluation": "Assess logical reasoning, evidence used, and clarity of analysis."
+    },
+    {
+      "title": "Digital Consumer Fraud Awareness Campaign",
+      "objective": "To create awareness about online consumer fraud.",
+      "materials": "Chart paper, markers, research materials",
+      "steps": [
+        "Research common online fraud cases.",
+        "Design posters or pamphlets suggesting preventive measures.",
+        "Present the campaign plan to classmates."
+      ],
+      "learning_outcome": "Students understand risks in digital transactions and preventive steps.",
+      "evaluation": "Evaluate creativity, accuracy of information, and effectiveness of message."
+    },
+    {
+      "title": "Quality Certification Marks Study",
+      "objective": "To research certification standards and their enforcement.",
+      "materials": "Internet research, product samples, notebook",
+      "steps": [
+        "Collect examples of products with ISI, AGMARK, Hallmark, FSSAI marks.",
+        "Research the authority behind each certification.",
+        "Prepare a report on their importance in consumer protection."
+      ],
+      "learning_outcome": "Students understand regulatory mechanisms ensuring product quality.",
+      "evaluation": "Assess research accuracy and depth of explanation."
+    },
+    {
+      "title": "Complaint Filing Procedure Project",
+      "objective": "To study the process of filing a complaint in consumer courts.",
+      "materials": "Internet research, notebook",
+      "steps": [
+        "Research steps required to file a consumer complaint online or offline.",
+        "Prepare a step-by-step flowchart.",
+        "Explain the required documents and fees."
+      ],
+      "learning_outcome": "Students gain practical knowledge of legal complaint procedures.",
+      "evaluation": "Check accuracy of steps and clarity of flowchart."
+    },
+    {
+      "title": "Comparative Study of Consumer Protection Laws",
+      "objective": "To compare Consumer Protection Act 1986 and 2019.",
+      "materials": "Internet research, textbook, notebook",
+      "steps": [
+        "List major provisions of both Acts.",
+        "Identify new features introduced in 2019.",
+        "Analyze how changes improved consumer protection."
+      ],
+      "learning_outcome": "Students understand evolution of consumer protection laws.",
+      "evaluation": "Evaluate comparison clarity and analytical reasoning."
+    },
+    {
+      "title": "Product Safety Audit Project",
+      "objective": "To examine product safety standards in local shops.",
+      "materials": "Observation sheet, notebook",
+      "steps": [
+        "Visit at least five shops to check expiry dates and certification marks.",
+        "Record unsafe or non-certified products.",
+        "Prepare a safety audit report with suggestions."
+      ],
+      "learning_outcome": "Students connect theoretical rights with real-world monitoring.",
+      "evaluation": "Assess thoroughness of audit and practicality of recommendations."
+    },
+    {
+      "title": "Consumer Rights Documentary",
+      "objective": "To creatively present consumer rights awareness.",
+      "materials": "Mobile phone camera, notebook, editing app (optional)",
+      "steps": [
+        "Research common consumer problems in the locality.",
+        "Record interviews or dramatize a consumer complaint scenario.",
+        "Create a 5–7 minute documentary explaining rights and solutions."
+      ],
+      "learning_outcome": "Students develop communication skills and awareness of rights.",
+      "evaluation": "Assess creativity, factual correctness, and clarity of message."
+    },
+    {
+      "title": "Policy Recommendation Report for Consumer Safety",
+      "objective": "To suggest improvements in consumer protection mechanisms.",
+      "materials": "Internet research, notebook",
+      "steps": [
+        "Identify common consumer issues in India.",
+        "Research current government measures.",
+        "Prepare a policy recommendation report suggesting improvements."
+      ],
+      "learning_outcome": "Students develop policy analysis and critical thinking skills.",
+      "evaluation": "Evaluate depth of research, feasibility of suggestions, and structured presentation."
+    }
+  ]
+}

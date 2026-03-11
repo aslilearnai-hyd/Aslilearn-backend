@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions",
+    "chapter": "Chapter: CONSTRUCTIONS AND TILINGS (PATTERNS & GEOMETRY)",
+    "generated_at": "2026-03-06T00:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What is a 'Tiling' (or Tessellation)?",
+            "answer": "A tiling is a pattern of shapes that fits together perfectly without any gaps or overlaps to cover a flat surface.",
+            "key_concepts": ["tessellation"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which tool is used to draw a circle or an arc?",
+            "answer": "A compass.",
+            "key_concepts": ["construction tools"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 3,
+            "question": "What is a 'Regular Tiling'?",
+            "answer": "A tiling made using only one type of regular polygon.",
+            "key_concepts": ["regular tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Name any two shapes that can tile a floor individually.",
+            "answer": "Squares and equilateral triangles.",
+            "key_concepts": ["tessellating shapes"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the use of a 'Ruler' in geometric constructions?",
+            "answer": "To draw straight lines and measure the length of line segments.",
+            "key_concepts": ["ruler"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Can a regular pentagon tile a plane by itself without gaps?",
+            "answer": "No, regular pentagons do not tessellate.",
+            "key_concepts": ["pentagon tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What do we call a line that divides an angle into two equal parts?",
+            "answer": "An angle bisector.",
+            "key_concepts": ["angle bisector"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Define a 'Perpendicular Bisector'.",
+            "answer": "A line that passes through the midpoint of a line segment and is at a right angle (90°) to it.",
+            "key_concepts": ["perpendicular bisector"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How many degrees are in each interior angle of a square?",
+            "answer": "90°",
+            "key_concepts": ["square properties"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Name the three regular polygons that can form a regular tiling.",
+            "answer": "Equilateral triangle, Square, and Regular Hexagon.",
+            "key_concepts": ["regular tessellation"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What tool do you use to measure or draw a specific angle like 75°?",
+            "answer": "A protractor.",
+            "key_concepts": ["protractor"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the sum of angles around a single point in a tiling?",
+            "answer": "360°",
+            "key_concepts": ["angles at a point"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 13,
+            "question": "True or False: A circle can be used to tile a flat surface without gaps.",
+            "answer": "False.",
+            "key_concepts": ["curves in tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 14,
+            "question": "What is the first step in constructing a perpendicular bisector of a line segment AB?",
+            "answer": "Place the compass pointer on point A and draw arcs above and below the line.",
+            "key_concepts": ["construction steps"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 15,
+            "question": "What is a 'Vertex' in a tiling?",
+            "answer": "A point where the corners of the tiling shapes meet.",
+            "key_concepts": ["tiling terminology"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 16,
+            "question": "When constructing a 60° angle, what distance should the compass be set to?",
+            "answer": "Any convenient radius (but it must remain the same for both arcs).",
+            "key_concepts": ["angle construction"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Name a real-life example of a hexagonal tiling.",
+            "answer": "A honeycomb made by bees.",
+            "key_concepts": ["hexagonal tiling"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 18,
+            "question": "How many arcs are needed to bisect an angle using a compass?",
+            "answer": "Three (one to mark the arms, and two to find the intersection point).",
+            "key_concepts": ["angle bisector construction"],
+            "marks": 2,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Define 'Symmetry' in a tiling pattern.",
+            "answer": "The property where a pattern remains unchanged after a transformation like rotation or reflection.",
+            "key_concepts": ["symmetry"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 20,
+            "question": "Can we use a set-square to draw a 45° angle?",
+            "answer": "Yes.",
+            "key_concepts": ["set-squares"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 21,
+            "question": "What shape is formed by the gap if you try to tile with regular octagons only?",
+            "answer": "A square gap.",
+            "key_concepts": ["octagonal tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is a 'Semi-regular Tiling'?",
+            "answer": "A tiling made of two or more types of regular polygons where the arrangement at every vertex is the same.",
+            "key_concepts": ["semi-regular tiling"],
+            "marks": 2,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which angle is half of a 90° angle?",
+            "answer": "45°",
+            "key_concepts": ["angles"],
+            "marks": 1,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the purpose of using a 'Divider'?",
+            "answer": "To compare the lengths of two line segments.",
+            "key_concepts": ["divider tool"],
+            "marks": 1,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Is a brick wall a form of tiling?",
+            "answer": "Yes, it is a tiling using rectangular shapes.",
+            "key_concepts": ["tessellation examples"],
+            "marks": 1,
+            "source_section": "Section 7.1"
+        }
+    ]
+}

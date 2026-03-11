@@ -1,0 +1,157 @@
+{
+  "class": "Class 9",
+  "subject": "English",
+  "chapter": "The Little Girl",
+  "difficulty": "Easy",
+  "source_pdf": "bee_hive.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Story Recall Activity",
+      "objective": "Understand the basic events of the story",
+      "materials": [
+        "Notebook",
+        "Textbook"
+      ],
+      "steps": [
+        "Read the story 'The Little Girl'",
+        "Write the name of the main character",
+        "Write who Kezia was afraid of"
+      ],
+      "learning_outcome": "Understands main characters and events",
+      "evaluation": "Correct answers (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Character Identification",
+      "objective": "Identify the characters in the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write the names Kezia, her father, mother, and grandmother",
+        "Write one line about each character"
+      ],
+      "learning_outcome": "Recognizes characters in the story",
+      "evaluation": "Correct description (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Father and Daughter Relationship",
+      "objective": "Understand the relationship between Kezia and her father",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write how Kezia felt about her father at the beginning",
+        "Write how she felt about him at the end"
+      ],
+      "learning_outcome": "Understands character emotions",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Vocabulary Activity",
+      "objective": "Improve vocabulary from the story",
+      "materials": [
+        "Notebook",
+        "Dictionary"
+      ],
+      "steps": [
+        "Find five new words from the chapter",
+        "Write their meanings",
+        "Use them in simple sentences"
+      ],
+      "learning_outcome": "Improves vocabulary skills",
+      "evaluation": "Correct meanings and sentences (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Event Sequencing",
+      "objective": "Understand the order of events in the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write four important events from the story",
+        "Arrange them in the correct order"
+      ],
+      "learning_outcome": "Understands chronological order",
+      "evaluation": "Correct sequence (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Reading Practice",
+      "objective": "Improve reading skills",
+      "materials": [
+        "Textbook"
+      ],
+      "steps": [
+        "Choose a paragraph from the story",
+        "Read it aloud clearly",
+        "Practice correct pronunciation"
+      ],
+      "learning_outcome": "Improves reading fluency",
+      "evaluation": "Pronunciation and clarity (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Draw Your Favorite Scene",
+      "objective": "Encourage creativity and imagination",
+      "materials": [
+        "Drawing sheet",
+        "Pencil",
+        "Colors"
+      ],
+      "steps": [
+        "Choose a scene you liked from the story",
+        "Draw the scene",
+        "Write one sentence describing it"
+      ],
+      "learning_outcome": "Improves creativity and understanding",
+      "evaluation": "Neatness and description (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Feelings Activity",
+      "objective": "Understand emotions in the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write how Kezia felt when her father punished her",
+        "Write how she felt when he comforted her during the nightmare"
+      ],
+      "learning_outcome": "Understands character emotions",
+      "evaluation": "Clear explanation (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Family Discussion",
+      "objective": "Understand family relationships",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Write three ways parents show love for their children",
+        "Share your ideas in class"
+      ],
+      "learning_outcome": "Understands importance of family relationships",
+      "evaluation": "Relevant points (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Moral of the Story",
+      "objective": "Identify the message of the story",
+      "materials": [
+        "Notebook"
+      ],
+      "steps": [
+        "Think about what Kezia learned about her father",
+        "Write the lesson of the story in 3–4 sentences"
+      ],
+      "learning_outcome": "Understands the theme of love and understanding in families",
+      "evaluation": "Correct explanation (10 marks)"
+    }
+  ]
+}

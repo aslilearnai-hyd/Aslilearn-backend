@@ -1,0 +1,368 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "JEMH113",
+    "generated_at": "2026-03-02T00:41:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain all the methods of calculating mean of grouped data.",
+            "answer": "Mean of grouped data can be calculated using direct method, assumed mean method and step deviation method.",
+            "answer_outline": [
+                "Direct method",
+                "Assumed mean method",
+                "Step deviation method"
+            ],
+            "key_concepts": [
+                "mean"
+            ],
+            "marks": 8,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the construction and interpretation of ogive.",
+            "answer": "Ogive is constructed using cumulative frequencies and helps in locating median and quartiles.",
+            "answer_outline": [
+                "Construction",
+                "Interpretation"
+            ],
+            "key_concepts": [
+                "ogive"
+            ],
+            "marks": 8,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain median of grouped data with formula.",
+            "answer": "Median is calculated using median class and cumulative frequency formula.",
+            "answer_outline": [
+                "Median class",
+                "Formula"
+            ],
+            "key_concepts": [
+                "median"
+            ],
+            "marks": 8,
+            "source_section": "Median"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain mode of grouped data with formula.",
+            "answer": "Mode is calculated using modal class and neighbouring frequencies.",
+            "answer_outline": [
+                "Modal class",
+                "Formula"
+            ],
+            "key_concepts": [
+                "mode"
+            ],
+            "marks": 8,
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the differences between histogram and bar diagram.",
+            "answer": "Histogram represents continuous data while bar diagram represents discrete data.",
+            "answer_outline": [
+                "Histogram",
+                "Bar diagram"
+            ],
+            "key_concepts": [
+                "histogram",
+                "bar diagram"
+            ],
+            "marks": 8,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain frequency density and its necessity.",
+            "answer": "Frequency density is necessary when class intervals are unequal in histograms.",
+            "answer_outline": [
+                "Definition",
+                "Necessity"
+            ],
+            "key_concepts": [
+                "frequency density"
+            ],
+            "marks": 8,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the complete process of statistical investigation.",
+            "answer": "Statistical investigation includes collection, classification, presentation, analysis and interpretation.",
+            "answer_outline": [
+                "Collection",
+                "Classification",
+                "Analysis",
+                "Interpretation"
+            ],
+            "key_concepts": [
+                "statistical investigation"
+            ],
+            "marks": 8,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain classification and tabulation of data with advantages.",
+            "answer": "Classification and tabulation simplify large data and improve clarity.",
+            "answer_outline": [
+                "Classification",
+                "Tabulation",
+                "Advantages"
+            ],
+            "key_concepts": [
+                "classification",
+                "tabulation"
+            ],
+            "marks": 8,
+            "source_section": "Presentation"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain measures of central tendency and their significance.",
+            "answer": "Mean, median and mode summarise data using single representative values.",
+            "answer_outline": [
+                "Mean",
+                "Median",
+                "Mode"
+            ],
+            "key_concepts": [
+                "central tendency"
+            ],
+            "marks": 8,
+            "source_section": "Measures"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain importance and limitations of statistics.",
+            "answer": "Statistics is important for decision making but depends on quality of data.",
+            "answer_outline": [
+                "Importance",
+                "Limitations"
+            ],
+            "key_concepts": [
+                "importance of statistics"
+            ],
+            "marks": 8,
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain cumulative frequency curves and their types.",
+            "answer": "Cumulative frequency curves include less-than and more-than ogives.",
+            "answer_outline": [
+                "Less-than ogive",
+                "More-than ogive"
+            ],
+            "key_concepts": [
+                "cumulative frequency"
+            ],
+            "marks": 8,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain bivariate data with examples.",
+            "answer": "Bivariate data involves two related variables such as height and weight.",
+            "answer_outline": [
+                "Definition",
+                "Examples"
+            ],
+            "key_concepts": [
+                "bivariate data"
+            ],
+            "marks": 8,
+            "source_section": "Advanced Topics"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain data summarisation techniques.",
+            "answer": "Data summarisation includes averages, tables and graphs.",
+            "answer_outline": [
+                "Averages",
+                "Tables",
+                "Graphs"
+            ],
+            "key_concepts": [
+                "summarisation"
+            ],
+            "marks": 8,
+            "source_section": "Analysis"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain frequency curve and its significance.",
+            "answer": "Frequency curve gives a smooth representation of frequency distribution.",
+            "answer_outline": [
+                "Definition",
+                "Significance"
+            ],
+            "key_concepts": [
+                "frequency curve"
+            ],
+            "marks": 8,
+            "source_section": "Graphs"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain statistical error and its sources.",
+            "answer": "Statistical error arises due to sampling and measurement errors.",
+            "answer_outline": [
+                "Definition",
+                "Sources"
+            ],
+            "key_concepts": [
+                "statistical error"
+            ],
+            "marks": 8,
+            "source_section": "Analysis"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain population census and sample survey.",
+            "answer": "Census studies entire population while sample survey studies a part.",
+            "answer_outline": [
+                "Census",
+                "Sample survey"
+            ],
+            "key_concepts": [
+                "population",
+                "sample"
+            ],
+            "marks": 8,
+            "source_section": "Basics"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the limitations of mean.",
+            "answer": "Mean is affected by extreme values and may not represent skewed data.",
+            "answer_outline": [
+                "Effect of extremes",
+                "Skewed data"
+            ],
+            "key_concepts": [
+                "mean"
+            ],
+            "marks": 8,
+            "source_section": "Mean"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain advantages and disadvantages of median.",
+            "answer": "Median is not affected by extreme values but lacks algebraic use.",
+            "answer_outline": [
+                "Advantages",
+                "Disadvantages"
+            ],
+            "key_concepts": [
+                "median"
+            ],
+            "marks": 8,
+            "source_section": "Median"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain advantages and disadvantages of mode.",
+            "answer": "Mode shows most common value but may not be unique.",
+            "answer_outline": [
+                "Advantages",
+                "Disadvantages"
+            ],
+            "key_concepts": [
+                "mode"
+            ],
+            "marks": 8,
+            "source_section": "Mode"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the role of statistics in economics.",
+            "answer": "Statistics helps in analysis of production, consumption and income.",
+            "answer_outline": [
+                "Economic analysis",
+                "Planning"
+            ],
+            "key_concepts": [
+                "applications of statistics"
+            ],
+            "marks": 8,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the role of statistics in business.",
+            "answer": "Statistics aids in forecasting, quality control and decision making.",
+            "answer_outline": [
+                "Forecasting",
+                "Decision making"
+            ],
+            "key_concepts": [
+                "business statistics"
+            ],
+            "marks": 8,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the role of statistics in social sciences.",
+            "answer": "Statistics helps in analysing social data and trends.",
+            "answer_outline": [
+                "Social research",
+                "Trends"
+            ],
+            "key_concepts": [
+                "social statistics"
+            ],
+            "marks": 8,
+            "source_section": "Applications"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain interpretation and inference in statistics.",
+            "answer": "Interpretation explains data while inference draws conclusions about population.",
+            "answer_outline": [
+                "Interpretation",
+                "Inference"
+            ],
+            "key_concepts": [
+                "interpretation",
+                "inference"
+            ],
+            "marks": 8,
+            "source_section": "Analysis"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain importance of accurate data collection.",
+            "answer": "Accurate data ensures reliability and correctness of statistical results.",
+            "answer_outline": [
+                "Accuracy",
+                "Reliability"
+            ],
+            "key_concepts": [
+                "data collection"
+            ],
+            "marks": 8,
+            "source_section": "Data Collection"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain ethical issues in statistics.",
+            "answer": "Ethical issues include data manipulation, bias and misrepresentation.",
+            "answer_outline": [
+                "Bias",
+                "Misrepresentation"
+            ],
+            "key_concepts": [
+                "ethics in statistics"
+            ],
+            "marks": 8,
+            "source_section": "Applications"
+        }
+    ]
+}
